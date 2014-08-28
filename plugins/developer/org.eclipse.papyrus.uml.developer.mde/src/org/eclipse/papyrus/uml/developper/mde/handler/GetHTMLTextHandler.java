@@ -53,8 +53,9 @@ public class GetHTMLTextHandler extends IDMAbstractHandler {
 		IWorkspaceRoot root = workspace.getRoot();
 		IProject project  = root.getProject();
 		String path=getSelection().eResource().getURI().path();
+		String tmpPath=path.replaceAll("/resource/","");
 		for(IProject currentProject : root.getProjects()) {
-			if( path.contains(currentProject.getName())){
+			if( tmpPath.startsWith(currentProject.getName())){
 				project=currentProject;
 			}
 		}

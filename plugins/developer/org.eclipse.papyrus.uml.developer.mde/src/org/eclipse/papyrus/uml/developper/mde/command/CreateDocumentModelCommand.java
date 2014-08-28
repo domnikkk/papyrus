@@ -169,6 +169,8 @@ public class CreateDocumentModelCommand extends RecordingCommand {
 			for(Iterator<Comment> iteComment = (useCaseIN).getOwnedComments().iterator(); iteComment.hasNext();) {
 				Comment currentComment = (Comment)iteComment.next();
 				transformToContentComment(useCaseModelOUT, currentComment);
+				createImageFromHyperLink(copyImageUtil, useCaseModelOUT, currentComment);
+				
 
 			}
 
@@ -199,6 +201,7 @@ public class CreateDocumentModelCommand extends RecordingCommand {
 		}
 		else{
 			transformToContentComment(useCaseSectionOUT, currentComment);
+			createImageFromHyperLink(copyImageUtil, useCaseSectionOUT, currentComment);
 		}
 	}
 
