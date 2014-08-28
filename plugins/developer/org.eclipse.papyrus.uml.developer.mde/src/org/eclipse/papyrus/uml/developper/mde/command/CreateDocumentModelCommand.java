@@ -172,7 +172,7 @@ public class CreateDocumentModelCommand extends RecordingCommand {
 				Comment currentComment = iteComment.next();
 				transformToContentComment(useCaseModelOUT, currentComment);
 				createImageFromHyperLink(copyImageUtil, useCaseModelOUT, currentComment);
-				
+
 
 			}
 

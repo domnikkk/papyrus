@@ -51,20 +51,13 @@ public class GetHTMLTextHandler extends IDMAbstractHandler {
 	private IProject getCurrentProject() {
 		IWorkspace workspace = ResourcesPlugin.getWorkspace();
 		IWorkspaceRoot root = workspace.getRoot();
-<<<<<<< HEAD
-		IProject project  = root.getProject();
-		String path=getSelection().eResource().getURI().path();
-		String tmpPath=path.replaceAll("/resource/","");
-		for(IProject currentProject : root.getProjects()) {
-			if( tmpPath.startsWith(currentProject.getName())){
-				project=currentProject;
-=======
 		IProject project = root.getProject();
 		String path = getSelection().eResource().getURI().path();
+		String tmpPath = path.replaceAll("/resource/", "");
 		for (IProject currentProject : root.getProjects()) {
-			if (path.contains(currentProject.getName())) {
+			if (tmpPath.startsWith(currentProject.getName())) {
 				project = currentProject;
->>>>>>> branch 'master' of ssh://ptessier@git.eclipse.org:29418/papyrus/org.eclipse.papyrus
+
 			}
 		}
 		return project;
