@@ -1,0 +1,92 @@
+= Alignment Tool =
+== Introduction ==
+Alignment Tool is available in the Papyrus toolbar:<br/>
+[[File:images/Alignment/Alignment_Toolbar.JPG]]<br/>
+Alignment allows to align the different objects of the model based on a reference object.
+The reference object is basically the last object selected (primary selection) and can be identified with the handles color:<br/>
+{|style="margin: auto;"
+|   [[File:images/Alignment/normal_Align_selection.JPG|frame|Normal Selection]]   
+|   [[File:images/Alignment/Reference_Align_selection.JPG|frame|Primary Selection]]   
+|}
+<br/>
+To implement Alignment, some rules have been defined. 
+
+== General Rules ==
+The Alignment Tools allows 6 types of alignment:
+[[File:images/Alignment/Alignment_Toolbar.JPG|right|Alignment Types]]
+*Horizontally
+**Left
+**Center
+**Right
+*Vertically
+**Top
+**Middle
+**Bottom
+
+
+These types can be disable if the alignment is not possible.
+Here is the different rules on which the alignment is based:
+#The alignment is available only if the selected object can be moved on the reference
+#When an object and one or several children should be aligned on a third object, only the parent is aligned
+#An object can only be aligned inside of its container's bounds.(In order to avoid scrollbar and invisible objects) 
+#An object cannot be aligned on one of its children.
+
+ 
+== Using of Alignment Tool ==
+Here under, some examples of using of alignment tool. <br/>
+=== General Case ===
+Basically, alignment is used in order to make the model easier to be read and more aesthetic.
+To align objects:
+* Select the object to be aligned
+* Click on the align tool button [[File:images/Alignment/Align_button.JPG]]  
+* Choose the proper type of alignment 
+<br/>
+#Example A: Standard alignment
+#:[[File:images/Alignment/General_Align1_before.JPG]] 
+#:[[File:images/Alignment/General_Align1_after.JPG]]
+#:In this case the reference object is the right one. <br/>
+#Example B: Parent alignment
+#:In this second example, the object (the Class ) is aligned on his parent (the Package),  the unauthorized alignment appears disable (in grey)
+#:[[File:images/Alignment/General_Align2_before.JPG]] 
+#:[[File:images/Alignment/General_Align2_after.JPG]]
+
+=== Hierarchy ===
+In this section, some examples of alignment in case of hierarchy between objects (parent / children).
+#Example A: Only the parent is aligned 
+#:[[File:images/Alignment/Hierarchy_Align1_before.JPG]] 
+#:As shown in the result screenshot below , only the parent (the Package) has been aligned. 
+#:[[File:images/Alignment/Hierarchy_Align1_after.JPG]]
+#Example B: Alignment inside the Container bounds is available
+#:[[File:images/Alignment/Hierarchy_Align2_before.JPG]] 
+#:In the align options list, only the ones that keep the objects inside his container are enable.
+#:[[File:images/Alignment/Hierarchy_Align2_after.JPG]]
+
+=== Labels ===
+In this section, some examples of labels alignments.
+#Example A: Standard label alignment
+#:[[File:images/Alignment/Label_Align1_before.JPG]] 
+#:[[File:images/Alignment/Label_Align1_after.JPG]]
+#Example B: Dependency with another selected object
+#:[[File:images/Alignment/Label_Align2_before.JPG]] 
+#:As shown in the result screenshot below, only the class is aligned. The label moves according to the connection move.
+#:[[File:images/Alignment/Label_Align2_after.JPG]]
+
+=== Edges ===
+Edges alignment could sound not realistic. Actually, edge alignment is an alignment between the extremities of the edge, to make the edge horizontal or vertical. 
+Example: Standard edge alignment
+:[[File:images/Alignment/Link_Align1_before.JPG]] 
+The extremities are alignment in order to have an horizontal connection. The connection handles remained at the same place on the object
+:[[File:images/Alignment/Link_Align1_after.JPG]]
+
+== Limitation ==
+This section will describe some limitations of the alignment tool.
+=== Hierarchy ===
+A parent cannot be aligned on one of his child:
+[[File:images/Alignment/Hierarchy_Align3_limitation.JPG]]
+=== Label ===
+The extremities (source or target )of a connection cannot be aligned on any Labels of this connection.
+[[File:images/Alignment/Label_Align3_limitation.JPG]]
+=== Edge ===
+To make the edge alignment available, the edge handles should correspond to the same direction (horizontal or vertical).
+In the following case, source handle is on TOP and target handle is on LEFT. it is then impossible to align the edge.
+[[File:images/Alignment/Link_Align2_Limitation.JPG]]
