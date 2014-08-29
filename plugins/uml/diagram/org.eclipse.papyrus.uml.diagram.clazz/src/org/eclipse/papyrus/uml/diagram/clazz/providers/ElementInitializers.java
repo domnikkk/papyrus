@@ -324,9 +324,7 @@ public class ElementInitializers {
 				instance.setName((String) value_0);
 			}
 			instance.setLower(0);
-
 			instance.setUpper(1);
-
 		} catch (RuntimeException e) {
 			UMLDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$
 		}
@@ -1096,91 +1094,91 @@ public class ElementInitializers {
 	 * @generated
 	 */
 	private String name_AssociationClass_2013(AssociationClass it) {
-		return NamedElementUtil.getDefaultNameWithIncrement(it, it.getOwner().eContents());
+		return NamedElementUtil.getDefaultNameWithIncrementFromBase(it.eClass().getName(), it.getOwner().eContents());
 	}
 
 	/**
 	 * @generated
 	 */
 	private String name_InstanceSpecification_2001(InstanceSpecification it) {
-		return NamedElementUtil.getDefaultNameWithIncrement(it, it.getOwner().eContents());
+		return NamedElementUtil.getDefaultNameWithIncrementFromBase(it.eClass().getName(), it.getOwner().eContents());
 	}
 
 	/**
 	 * @generated
 	 */
 	private String name_Component_2002(Component it) {
-		return NamedElementUtil.getDefaultNameWithIncrement(it, it.getOwner().eContents());
+		return NamedElementUtil.getDefaultNameWithIncrementFromBase(it.eClass().getName(), it.getOwner().eContents());
 	}
 
 	/**
 	 * @generated
 	 */
 	private String name_Signal_2003(Signal it) {
-		return NamedElementUtil.getDefaultNameWithIncrement(it, it.getOwner().eContents());
+		return NamedElementUtil.getDefaultNameWithIncrementFromBase(it.eClass().getName(), it.getOwner().eContents());
 	}
 
 	/**
 	 * @generated
 	 */
 	private String name_Interface_2004(Interface it) {
-		return NamedElementUtil.getDefaultNameWithIncrement(it, it.getOwner().eContents());
+		return NamedElementUtil.getDefaultNameWithIncrementFromBase(it.eClass().getName(), it.getOwner().eContents());
 	}
 
 	/**
 	 * @generated
 	 */
 	private String name_Model_2005(Model it) {
-		return NamedElementUtil.getDefaultNameWithIncrement(it, it.getOwner().eContents());
+		return NamedElementUtil.getDefaultNameWithIncrementFromBase(it.eClass().getName(), it.getOwner().eContents());
 	}
 
 	/**
 	 * @generated
 	 */
 	private String name_Enumeration_2006(Enumeration it) {
-		return NamedElementUtil.getDefaultNameWithIncrement(it, it.getOwner().eContents());
+		return NamedElementUtil.getDefaultNameWithIncrementFromBase(it.eClass().getName(), it.getOwner().eContents());
 	}
 
 	/**
 	 * @generated
 	 */
 	private String name_Package_2007(Package it) {
-		return NamedElementUtil.getDefaultNameWithIncrement(it, it.getOwner().eContents());
+		return NamedElementUtil.getDefaultNameWithIncrementFromBase(it.eClass().getName(), it.getOwner().eContents());
 	}
 
 	/**
 	 * @generated
 	 */
 	private String name_InformationItem_2099(InformationItem it) {
-		return NamedElementUtil.getDefaultNameWithIncrement(it, it.getOwner().eContents());
+		return NamedElementUtil.getDefaultNameWithIncrementFromBase(it.eClass().getName(), it.getOwner().eContents());
 	}
 
 	/**
 	 * @generated
 	 */
 	private String name_Class_2008(Class it) {
-		return NamedElementUtil.getDefaultNameWithIncrement(it, it.getOwner().eContents());
+		return NamedElementUtil.getDefaultNameWithIncrementFromBase(it.eClass().getName(), it.getOwner().eContents());
 	}
 
 	/**
 	 * @generated
 	 */
 	private String name_PrimitiveType_2009(PrimitiveType it) {
-		return NamedElementUtil.getDefaultNameWithIncrement(it, it.getOwner().eContents());
+		return NamedElementUtil.getDefaultNameWithIncrementFromBase(it.eClass().getName(), it.getOwner().eContents());
 	}
 
 	/**
 	 * @generated
 	 */
 	private String name_DataType_2010(DataType it) {
-		return NamedElementUtil.getDefaultNameWithIncrement(it, it.getOwner().eContents());
+		return NamedElementUtil.getDefaultNameWithIncrementFromBase(it.eClass().getName(), it.getOwner().eContents());
 	}
 
 	/**
 	 * @generated
 	 */
 	private String name_Constraint_2011(Constraint it) {
-		return NamedElementUtil.getDefaultNameWithIncrement(it, it.getOwner().eContents());
+		return NamedElementUtil.getDefaultNameWithIncrementFromBase(it.eClass().getName(), it.getOwner().eContents());
 	}
 
 	/**
@@ -1196,224 +1194,224 @@ public class ElementInitializers {
 	 * @generated
 	 */
 	private String name_DurationObservation_2095(DurationObservation it) {
-		return NamedElementUtil.getDefaultNameWithIncrement(it, it.getOwner().eContents());
+		return NamedElementUtil.getDefaultNameWithIncrementFromBase(it.eClass().getName(), it.getOwner().eContents());
 	}
 
 	/**
 	 * @generated
 	 */
 	private String name_TimeObservation_2096(TimeObservation it) {
-		return NamedElementUtil.getDefaultNameWithIncrement(it, it.getOwner().eContents());
+		return NamedElementUtil.getDefaultNameWithIncrementFromBase(it.eClass().getName(), it.getOwner().eContents());
 	}
 
 	/**
 	 * @generated
 	 */
 	private String name_Property_3012(Property it) {
-		return NamedElementUtil.getDefaultNameWithIncrement(it, it.getOwner().eContents());
+		return NamedElementUtil.getDefaultNameWithIncrementFromBase(it.eClass().getName(), it.getOwner().eContents());
 	}
 
 	/**
 	 * @generated
 	 */
 	private String name_Property_3002(Property it) {
-		return NamedElementUtil.getDefaultNameWithIncrement(it, it.getOwner().eContents());
+		return NamedElementUtil.getDefaultNameWithIncrementFromBase(it.eClass().getName(), it.getOwner().eContents());
 	}
 
 	/**
 	 * @generated
 	 */
 	private String name_Property_3005(Property it) {
-		return NamedElementUtil.getDefaultNameWithIncrement(it, it.getOwner().eContents());
+		return NamedElementUtil.getDefaultNameWithIncrementFromBase(it.eClass().getName(), it.getOwner().eContents());
 	}
 
 	/**
 	 * @generated
 	 */
 	private String name_Property_3006(Property it) {
-		return NamedElementUtil.getDefaultNameWithIncrement(it, it.getOwner().eContents());
+		return NamedElementUtil.getDefaultNameWithIncrementFromBase(it.eClass().getName(), it.getOwner().eContents());
 	}
 
 	/**
 	 * @generated
 	 */
 	private String name_Property_3041(Property it) {
-		return NamedElementUtil.getDefaultNameWithIncrement(it, it.getOwner().eContents());
+		return NamedElementUtil.getDefaultNameWithIncrementFromBase(it.eClass().getName(), it.getOwner().eContents());
 	}
 
 	/**
 	 * @generated
 	 */
 	private String name_Property_3018(Property it) {
-		return NamedElementUtil.getDefaultNameWithIncrement(it, it.getOwner().eContents());
+		return NamedElementUtil.getDefaultNameWithIncrementFromBase(it.eClass().getName(), it.getOwner().eContents());
 	}
 
 	/**
 	 * @generated
 	 */
 	private String name_Class_3014(Class it) {
-		return NamedElementUtil.getDefaultNameWithIncrement(it, it.getOwner().eContents());
+		return NamedElementUtil.getDefaultNameWithIncrementFromBase(it.eClass().getName(), it.getOwner().eContents());
 	}
 
 	/**
 	 * @generated
 	 */
 	private String name_Class_3004(Class it) {
-		return NamedElementUtil.getDefaultNameWithIncrement(it, it.getOwner().eContents());
+		return NamedElementUtil.getDefaultNameWithIncrementFromBase(it.eClass().getName(), it.getOwner().eContents());
 	}
 
 	/**
 	 * @generated
 	 */
 	private String name_Class_3008(Class it) {
-		return NamedElementUtil.getDefaultNameWithIncrement(it, it.getOwner().eContents());
+		return NamedElementUtil.getDefaultNameWithIncrementFromBase(it.eClass().getName(), it.getOwner().eContents());
 	}
 
 	/**
 	 * @generated
 	 */
 	private String name_Operation_3013(Operation it) {
-		return NamedElementUtil.getDefaultNameWithIncrement(it, it.getOwner().eContents());
+		return NamedElementUtil.getDefaultNameWithIncrementFromBase(it.eClass().getName(), it.getOwner().eContents());
 	}
 
 	/**
 	 * @generated
 	 */
 	private String name_Operation_3003(Operation it) {
-		return NamedElementUtil.getDefaultNameWithIncrement(it, it.getOwner().eContents());
+		return NamedElementUtil.getDefaultNameWithIncrementFromBase(it.eClass().getName(), it.getOwner().eContents());
 	}
 
 	/**
 	 * @generated
 	 */
 	private String name_Operation_3007(Operation it) {
-		return NamedElementUtil.getDefaultNameWithIncrement(it, it.getOwner().eContents());
+		return NamedElementUtil.getDefaultNameWithIncrementFromBase(it.eClass().getName(), it.getOwner().eContents());
 	}
 
 	/**
 	 * @generated
 	 */
 	private String name_Operation_3042(Operation it) {
-		return NamedElementUtil.getDefaultNameWithIncrement(it, it.getOwner().eContents());
+		return NamedElementUtil.getDefaultNameWithIncrementFromBase(it.eClass().getName(), it.getOwner().eContents());
 	}
 
 	/**
 	 * @generated
 	 */
 	private String name_Operation_3019(Operation it) {
-		return NamedElementUtil.getDefaultNameWithIncrement(it, it.getOwner().eContents());
+		return NamedElementUtil.getDefaultNameWithIncrementFromBase(it.eClass().getName(), it.getOwner().eContents());
 	}
 
 	/**
 	 * @generated
 	 */
 	private String name_EnumerationLiteral_3017(EnumerationLiteral it) {
-		return NamedElementUtil.getDefaultNameWithIncrement(it, it.getOwner().eContents());
+		return NamedElementUtil.getDefaultNameWithIncrementFromBase(it.eClass().getName(), it.getOwner().eContents());
 	}
 
 	/**
 	 * @generated
 	 */
 	private String name_Reception_3011(Reception it) {
-		return NamedElementUtil.getDefaultNameWithIncrement(it, it.getOwner().eContents());
+		return NamedElementUtil.getDefaultNameWithIncrementFromBase(it.eClass().getName(), it.getOwner().eContents());
 	}
 
 	/**
 	 * @generated
 	 */
 	private String name_Reception_3039(Reception it) {
-		return NamedElementUtil.getDefaultNameWithIncrement(it, it.getOwner().eContents());
+		return NamedElementUtil.getDefaultNameWithIncrementFromBase(it.eClass().getName(), it.getOwner().eContents());
 	}
 
 	/**
 	 * @generated
 	 */
 	private String name_RedefinableTemplateSignature_3015(RedefinableTemplateSignature it) {
-		return NamedElementUtil.getDefaultNameWithIncrement(it, it.getOwner().eContents());
+		return NamedElementUtil.getDefaultNameWithIncrementFromBase(it.eClass().getName(), it.getOwner().eContents());
 	}
 
 	/**
 	 * @generated
 	 */
 	private String name_InstanceSpecification_3020(InstanceSpecification it) {
-		return NamedElementUtil.getDefaultNameWithIncrement(it, it.getOwner().eContents());
+		return NamedElementUtil.getDefaultNameWithIncrementFromBase(it.eClass().getName(), it.getOwner().eContents());
 	}
 
 	/**
 	 * @generated
 	 */
 	private String name_Component_3021(Component it) {
-		return NamedElementUtil.getDefaultNameWithIncrement(it, it.getOwner().eContents());
+		return NamedElementUtil.getDefaultNameWithIncrementFromBase(it.eClass().getName(), it.getOwner().eContents());
 	}
 
 	/**
 	 * @generated
 	 */
 	private String name_Signal_3022(Signal it) {
-		return NamedElementUtil.getDefaultNameWithIncrement(it, it.getOwner().eContents());
+		return NamedElementUtil.getDefaultNameWithIncrementFromBase(it.eClass().getName(), it.getOwner().eContents());
 	}
 
 	/**
 	 * @generated
 	 */
 	private String name_Interface_3023(Interface it) {
-		return NamedElementUtil.getDefaultNameWithIncrement(it, it.getOwner().eContents());
+		return NamedElementUtil.getDefaultNameWithIncrementFromBase(it.eClass().getName(), it.getOwner().eContents());
 	}
 
 	/**
 	 * @generated
 	 */
 	private String name_Model_3024(Model it) {
-		return NamedElementUtil.getDefaultNameWithIncrement(it, it.getOwner().eContents());
+		return NamedElementUtil.getDefaultNameWithIncrementFromBase(it.eClass().getName(), it.getOwner().eContents());
 	}
 
 	/**
 	 * @generated
 	 */
 	private String name_Enumeration_3025(Enumeration it) {
-		return NamedElementUtil.getDefaultNameWithIncrement(it, it.getOwner().eContents());
+		return NamedElementUtil.getDefaultNameWithIncrementFromBase(it.eClass().getName(), it.getOwner().eContents());
 	}
 
 	/**
 	 * @generated
 	 */
 	private String name_Package_3009(Package it) {
-		return NamedElementUtil.getDefaultNameWithIncrement(it, it.getOwner().eContents());
+		return NamedElementUtil.getDefaultNameWithIncrementFromBase(it.eClass().getName(), it.getOwner().eContents());
 	}
 
 	/**
 	 * @generated
 	 */
 	private String name_InformationItem_3040(InformationItem it) {
-		return NamedElementUtil.getDefaultNameWithIncrement(it, it.getOwner().eContents());
+		return NamedElementUtil.getDefaultNameWithIncrementFromBase(it.eClass().getName(), it.getOwner().eContents());
 	}
 
 	/**
 	 * @generated
 	 */
 	private String name_Class_3010(Class it) {
-		return NamedElementUtil.getDefaultNameWithIncrement(it, it.getOwner().eContents());
+		return NamedElementUtil.getDefaultNameWithIncrementFromBase(it.eClass().getName(), it.getOwner().eContents());
 	}
 
 	/**
 	 * @generated
 	 */
 	private String name_PrimitiveType_3026(PrimitiveType it) {
-		return NamedElementUtil.getDefaultNameWithIncrement(it, it.getOwner().eContents());
+		return NamedElementUtil.getDefaultNameWithIncrementFromBase(it.eClass().getName(), it.getOwner().eContents());
 	}
 
 	/**
 	 * @generated
 	 */
 	private String name_DataType_3027(DataType it) {
-		return NamedElementUtil.getDefaultNameWithIncrement(it, it.getOwner().eContents());
+		return NamedElementUtil.getDefaultNameWithIncrementFromBase(it.eClass().getName(), it.getOwner().eContents());
 	}
 
 	/**
 	 * @generated
 	 */
 	private String name_Constraint_3029(Constraint it) {
-		return NamedElementUtil.getDefaultNameWithIncrement(it, it.getOwner().eContents());
+		return NamedElementUtil.getDefaultNameWithIncrementFromBase(it.eClass().getName(), it.getOwner().eContents());
 	}
 
 	/**
@@ -1429,168 +1427,168 @@ public class ElementInitializers {
 	 * @generated
 	 */
 	private String name_Interface_3036(Interface it) {
-		return NamedElementUtil.getDefaultNameWithIncrement(it, it.getOwner().eContents());
+		return NamedElementUtil.getDefaultNameWithIncrementFromBase(it.eClass().getName(), it.getOwner().eContents());
 	}
 
 	/**
 	 * @generated
 	 */
 	private String name_Interface_3037(Interface it) {
-		return NamedElementUtil.getDefaultNameWithIncrement(it, it.getOwner().eContents());
+		return NamedElementUtil.getDefaultNameWithIncrementFromBase(it.eClass().getName(), it.getOwner().eContents());
 	}
 
 	/**
 	 * @generated
 	 */
 	private String name_Interface_3038(Interface it) {
-		return NamedElementUtil.getDefaultNameWithIncrement(it, it.getOwner().eContents());
+		return NamedElementUtil.getDefaultNameWithIncrementFromBase(it.eClass().getName(), it.getOwner().eContents());
 	}
 
 	/**
 	 * @generated
 	 */
 	private String name_Enumeration_3052(Enumeration it) {
-		return NamedElementUtil.getDefaultNameWithIncrement(it, it.getOwner().eContents());
+		return NamedElementUtil.getDefaultNameWithIncrementFromBase(it.eClass().getName(), it.getOwner().eContents());
 	}
 
 	/**
 	 * @generated
 	 */
 	private String name_Enumeration_3053(Enumeration it) {
-		return NamedElementUtil.getDefaultNameWithIncrement(it, it.getOwner().eContents());
+		return NamedElementUtil.getDefaultNameWithIncrementFromBase(it.eClass().getName(), it.getOwner().eContents());
 	}
 
 	/**
 	 * @generated
 	 */
 	private String name_Enumeration_3054(Enumeration it) {
-		return NamedElementUtil.getDefaultNameWithIncrement(it, it.getOwner().eContents());
+		return NamedElementUtil.getDefaultNameWithIncrementFromBase(it.eClass().getName(), it.getOwner().eContents());
 	}
 
 	/**
 	 * @generated
 	 */
 	private String name_PrimitiveType_3047(PrimitiveType it) {
-		return NamedElementUtil.getDefaultNameWithIncrement(it, it.getOwner().eContents());
+		return NamedElementUtil.getDefaultNameWithIncrementFromBase(it.eClass().getName(), it.getOwner().eContents());
 	}
 
 	/**
 	 * @generated
 	 */
 	private String name_PrimitiveType_3046(PrimitiveType it) {
-		return NamedElementUtil.getDefaultNameWithIncrement(it, it.getOwner().eContents());
+		return NamedElementUtil.getDefaultNameWithIncrementFromBase(it.eClass().getName(), it.getOwner().eContents());
 	}
 
 	/**
 	 * @generated
 	 */
 	private String name_PrimitiveType_3048(PrimitiveType it) {
-		return NamedElementUtil.getDefaultNameWithIncrement(it, it.getOwner().eContents());
+		return NamedElementUtil.getDefaultNameWithIncrementFromBase(it.eClass().getName(), it.getOwner().eContents());
 	}
 
 	/**
 	 * @generated
 	 */
 	private String name_DataType_3044(DataType it) {
-		return NamedElementUtil.getDefaultNameWithIncrement(it, it.getOwner().eContents());
+		return NamedElementUtil.getDefaultNameWithIncrementFromBase(it.eClass().getName(), it.getOwner().eContents());
 	}
 
 	/**
 	 * @generated
 	 */
 	private String name_DataType_3045(DataType it) {
-		return NamedElementUtil.getDefaultNameWithIncrement(it, it.getOwner().eContents());
+		return NamedElementUtil.getDefaultNameWithIncrementFromBase(it.eClass().getName(), it.getOwner().eContents());
 	}
 
 	/**
 	 * @generated
 	 */
 	private String name_DataType_3043(DataType it) {
-		return NamedElementUtil.getDefaultNameWithIncrement(it, it.getOwner().eContents());
+		return NamedElementUtil.getDefaultNameWithIncrementFromBase(it.eClass().getName(), it.getOwner().eContents());
 	}
 
 	/**
 	 * @generated
 	 */
 	private String name_Signal_3050(Signal it) {
-		return NamedElementUtil.getDefaultNameWithIncrement(it, it.getOwner().eContents());
+		return NamedElementUtil.getDefaultNameWithIncrementFromBase(it.eClass().getName(), it.getOwner().eContents());
 	}
 
 	/**
 	 * @generated
 	 */
 	private String name_Signal_3051(Signal it) {
-		return NamedElementUtil.getDefaultNameWithIncrement(it, it.getOwner().eContents());
+		return NamedElementUtil.getDefaultNameWithIncrementFromBase(it.eClass().getName(), it.getOwner().eContents());
 	}
 
 	/**
 	 * @generated
 	 */
 	private String name_Signal_3049(Signal it) {
-		return NamedElementUtil.getDefaultNameWithIncrement(it, it.getOwner().eContents());
+		return NamedElementUtil.getDefaultNameWithIncrementFromBase(it.eClass().getName(), it.getOwner().eContents());
 	}
 
 	/**
 	 * @generated
 	 */
 	private String name_AssociationClass_4017(AssociationClass it) {
-		return NamedElementUtil.getDefaultNameWithIncrement(it, it.getOwner().eContents());
+		return NamedElementUtil.getDefaultNameWithIncrementFromBase(it.eClass().getName(), it.getOwner().eContents());
 	}
 
 	/**
 	 * @generated
 	 */
 	private String name_Association_4001(Association it) {
-		return NamedElementUtil.getDefaultNameWithIncrement(it, it.getOwner().eContents());
+		return NamedElementUtil.getDefaultNameWithIncrementFromBase(it.eClass().getName(), it.getOwner().eContents());
 	}
 
 	/**
 	 * @generated
 	 */
 	private String name_InterfaceRealization_4003(InterfaceRealization it) {
-		return NamedElementUtil.getDefaultNameWithIncrement(it, it.getOwner().eContents());
+		return NamedElementUtil.getDefaultNameWithIncrementFromBase(it.eClass().getName(), it.getOwner().eContents());
 	}
 
 	/**
 	 * @generated
 	 */
 	private String name_Substitution_4004(Substitution it) {
-		return NamedElementUtil.getDefaultNameWithIncrement(it, it.getOwner().eContents());
+		return NamedElementUtil.getDefaultNameWithIncrementFromBase(it.eClass().getName(), it.getOwner().eContents());
 	}
 
 	/**
 	 * @generated
 	 */
 	private String name_Realization_4005(Realization it) {
-		return NamedElementUtil.getDefaultNameWithIncrement(it, it.getOwner().eContents());
+		return NamedElementUtil.getDefaultNameWithIncrementFromBase(it.eClass().getName(), it.getOwner().eContents());
 	}
 
 	/**
 	 * @generated
 	 */
 	private String name_Abstraction_4006(Abstraction it) {
-		return NamedElementUtil.getDefaultNameWithIncrement(it, it.getOwner().eContents());
+		return NamedElementUtil.getDefaultNameWithIncrementFromBase(it.eClass().getName(), it.getOwner().eContents());
 	}
 
 	/**
 	 * @generated
 	 */
 	private String name_Usage_4007(Usage it) {
-		return NamedElementUtil.getDefaultNameWithIncrement(it, it.getOwner().eContents());
+		return NamedElementUtil.getDefaultNameWithIncrementFromBase(it.eClass().getName(), it.getOwner().eContents());
 	}
 
 	/**
 	 * @generated
 	 */
 	private String name_Dependency_4008(Dependency it) {
-		return NamedElementUtil.getDefaultNameWithIncrement(it, it.getOwner().eContents());
+		return NamedElementUtil.getDefaultNameWithIncrementFromBase(it.eClass().getName(), it.getOwner().eContents());
 	}
 
 	/**
 	 * @generated
 	 */
 	private String name_Dependency_4018(Dependency it) {
-		return NamedElementUtil.getDefaultNameWithIncrement(it, it.getOwner().eContents());
+		return NamedElementUtil.getDefaultNameWithIncrementFromBase(it.eClass().getName(), it.getOwner().eContents());
 	}
 
 	/**
@@ -1607,7 +1605,7 @@ public class ElementInitializers {
 	 * @generated
 	 */
 	private String name_InformationFlow_4026(InformationFlow it) {
-		return NamedElementUtil.getDefaultNameWithIncrement(it, it.getOwner().eContents());
+		return NamedElementUtil.getDefaultNameWithIncrementFromBase(it.eClass().getName(), it.getOwner().eContents());
 	}
 
 	/**

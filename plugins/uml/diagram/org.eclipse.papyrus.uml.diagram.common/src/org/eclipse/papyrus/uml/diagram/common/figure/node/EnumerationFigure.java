@@ -21,7 +21,7 @@ import org.eclipse.draw2d.IFigure;
 /**
  * Represents an enumeration
  */
-public class EnumerationFigure extends CompartmentFigure {
+public class EnumerationFigure extends RoundedCompartmentFigure {
 
 	/** The Literals Compartment */
 	private static final String LITERALS_COMPARTMENT = "literalsCompartment";

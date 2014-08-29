@@ -37,6 +37,7 @@ import org.eclipse.gmf.runtime.notation.View;
  * The expected behavior is to provide an external label that can freely move and with a link feedback
  * towards its parent figure during the move.
  */
+//TODO: Use ExternalLabelPrimaryDragRoleEditPolicy moved on common
 public class ExternalLabelPrimaryDragRoleEditPolicy extends NonResizableLabelEditPolicy {
 
 	@Override

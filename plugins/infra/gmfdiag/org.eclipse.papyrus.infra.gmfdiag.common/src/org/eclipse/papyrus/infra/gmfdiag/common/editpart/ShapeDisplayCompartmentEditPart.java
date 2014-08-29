@@ -230,7 +230,8 @@ public class ShapeDisplayCompartmentEditPart extends ResizableCompartmentEditPar
 		protected Dimension calculatePreferredSize(IFigure figure, int wHint, int hHint) {
 			Dimension dim = super.calculatePreferredSize(figure, wHint, hHint);
 
-			dim.height = Math.max(MIN_PREFERRED_SIZE, dim.height);
+			if(figure.getParent().getBounds().height > MIN_PREFERRED_SIZE) //Patch to permit to have shape dimension < 40
+				dim.height = Math.max(MIN_PREFERRED_SIZE, dim.height);
 
 			return dim;
 		}
@@ -247,8 +248,8 @@ public class ShapeDisplayCompartmentEditPart extends ResizableCompartmentEditPar
 		@Override
 		protected Dimension calculatePreferredSize(IFigure container, int hint, int hint2) {
 
-			int minimumWith = 50;
-			int minimumHeight = 50;
+			int minimumWith = 16;
+			int minimumHeight = 16;
 
 			return new Dimension(minimumWith, minimumHeight);
 		}

@@ -9,9 +9,13 @@
  *
  * Contributors:
  *  Patrick Tessier (CEA LIST) Patrick.tessier@cea.fr - Initial API and implementation
+ *  Micka�l ADAM (ALL4TEC) mickael.adam@all4tec.net - set the border to null of the first Compartment of an editPart.
  *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.gmfdiag.common.editpolicies;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import org.eclipse.core.databinding.observable.ChangeEvent;
 import org.eclipse.core.databinding.observable.IChangeListener;
@@ -24,7 +28,11 @@ import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.diagram.core.listener.DiagramEventBroker;
 import org.eclipse.gmf.runtime.diagram.core.listener.NotificationListener;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.CompartmentEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.figures.ResizableCompartmentFigure;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.OneLineBorder;
 import org.eclipse.gmf.runtime.gef.ui.internal.editpolicies.GraphicalEditPolicyEx;
 import org.eclipse.gmf.runtime.notation.BooleanValueStyle;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
@@ -154,38 +162,69 @@ public class BorderDisplayEditPolicy extends GraphicalEditPolicyEx implements IC
 
 		BooleanValueStyle displayBorderStyle = findDisplayBorderStyle(view);
 
+		//if not diplayBorder
 		if (displayBorderStyle != null && !displayBorderStyle.isBooleanValue()) {
 			if (defaultBorder == null) {
 				defaultBorder = getPrimaryShape().getBorder();
 			}
 			getPrimaryShape().setBorder(null);
-
-			// TODO: This edit policy should be installed on all compartments. We shouldn't need to refresh them from here
-			// for(Object currentEditPart : getHost().getChildren()) {
-			// if(currentEditPart instanceof ResizableCompartmentEditPart) {
-			// ((ResizableCompartmentEditPart)currentEditPart).getFigure().setBorder(null);
-			// }
-			// }
-			//
-
-
-		} else {
+		} else {//if diplayBorder
 			if (defaultBorder != null) {
 				getPrimaryShape().setBorder(defaultBorder);
 			}
 			defaultBorder = null;
 
-			// TODO: This edit policy should be installed on all compartments. We shouldn't need to refresh them from here
-			// for(Object currentEditPart : getHost().getChildren()) {
-			// if(currentEditPart instanceof ResizableCompartmentEditPart) {
-			// ((ResizableCompartmentEditPart)currentEditPart).getFigure().setBorder(new OneLineBorder());
-			// }
-			// }
-			//
+			//If the shape is a compartment and it's the first one, set border to null.
+			if(getPrimaryShape() instanceof ResizableCompartmentFigure) {
 
+				//Get all visible compartment
+				final List<View> allVisibleCompartments = getAllVisibleCompartments(view, getHost().getParent());
+				//If the view is the first compartment set border to null
+				if(allVisibleCompartments.size() > 0 && allVisibleCompartments.get(0).equals(view)) {
+					getPrimaryShape().setBorder(null);
+				} else {
+					if(getPrimaryShape().getBorder() == null) {
+						getPrimaryShape().setBorder(new OneLineBorder());
+		}
+	}
+			}
 		}
 	}
 
+	/**
+	 * Returns all the displayed compartments for the EditPart
+	 * 
+	 * @param view
+	 * 
+	 * @param editpart
+	 *        an editpart
+	 * @param includeTitleCompartment
+	 *        if <code>true</code> we return the title compartment too
+	 * @return all the displayed compartments for the EditPart
+	 */
+	public static List<View> getAllVisibleCompartments(View view, EditPart editpart) {
+		List<View> visibleCompartments = new ArrayList<View>();
+		if (editpart == null)
+			return visibleCompartments;
+		List<?> localChildren = editpart.getChildren();
+		for (Object current : localChildren) {
+			if (current instanceof CompartmentEditPart) {
+				// If the height is > to 0 (for name compartment which is hide by set the height to 0)
+				BooleanValueStyle displayNameStyle = (BooleanValueStyle) view.getNamedStyle(NotationPackage.eINSTANCE.getBooleanValueStyle(), NameDisplayEditPolicy.DISPLAY_NAME);
+				final boolean isNameDiplayed = displayNameStyle != null ? displayNameStyle.isBooleanValue() : true;
+
+				// if it's the name compartment and it is diplayed
+				if (current instanceof ITextAwareEditPart) {
+					if (isNameDiplayed) {
+						visibleCompartments.add(((View) ((CompartmentEditPart) current).getModel()));
+					}
+				} else {
+					visibleCompartments.add(((View) ((CompartmentEditPart) current).getModel()));
+				}
+			}
+		}
+		return visibleCompartments;
+	}
 
 	private BooleanValueStyle findDisplayBorderStyle(View view) {
 		View parentView = view;
