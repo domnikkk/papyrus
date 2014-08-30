@@ -84,6 +84,8 @@ public abstract class AbstractValueEditor extends AbstractEditor {
 
 	protected static final Color ERROR = new Color(Display.getCurrent(), 255, 153, 153); // Red
 
+	private boolean initialValidation;
+
 	protected AbstractValueEditor(Composite parent) {
 		super(parent);
 	}
@@ -226,7 +228,12 @@ public abstract class AbstractValueEditor extends AbstractEditor {
 					if (!AbstractValueEditor.this.isDisposed() && !isReadOnly()) { // Bug 434787 : Shouldn't not execute the timer thread if the widget is disposed
 						IStatus status = (IStatus) binding.getValidationStatus().getValue(); // Bug 435415 : Update the status only if the widget isn't disposed
 						updateStatus(status);
-						changeColorField();
+
+						// Don't kick the colour if we're just doing the initial validation to show the decoration.
+						// Only trigger the colours on user-initiated edits
+						if (!initialValidation) {
+							changeColorField();
+						}
 					}
 				}
 			}
@@ -258,6 +265,17 @@ public abstract class AbstractValueEditor extends AbstractEditor {
 		this.modelValidator = targetToModelValidator;
 		targetToModelStrategy.setBeforeSetValidator(targetToModelValidator);
 		modelToTargetStrategy.setAfterGetValidator(targetToModelValidator);
+
+		if ((binding != null) && (this.modelValidator != null)) {
+			final boolean wasInitialValidation = initialValidation;
+			initialValidation = true;
+
+			try {
+				binding.validateModelToTarget();
+			} finally {
+				initialValidation = wasInitialValidation;
+			}
+		}
 	}
 
 	/**
