@@ -593,23 +593,36 @@ public abstract class AbstractPropertyEditor implements IChangeListener, Customi
 					// The data source's selection changed. Update my validator or clear it if now there is none
 					IObservableValue observable = AbstractPropertyEditor.this.observableValue;
 
-					if ((observable != null) && (modelValidator != null) && (valueEditor != null) && !valueEditor.isDisposed()) {
-						modelValidator = null;
+					if (observable != null) {
+						if ((modelValidator != null) && (valueEditor != null) && !valueEditor.isDisposed()) {
+							modelValidator = null;
 
-						// First, clear the validator to disable validation
-						valueEditor.setStrategies();
-						valueEditor.setModelValidator(null);
+							// First, clear the validator to disable validation
+							valueEditor.setStrategies();
+							valueEditor.setModelValidator(null);
 
-						// Then re-enable to later when ready for user input
-						observable.getRealm().asyncExec(new Runnable() {
+							// Then re-enable to later when ready for user input
+							observable.getRealm().asyncExec(new Runnable() {
 
-							public void run() {
-								if ((valueEditor != null) && !valueEditor.isDisposed()) {
-									valueEditor.setStrategies();
-									valueEditor.setModelValidator(getValidator());
+								public void run() {
+									if ((valueEditor != null) && !valueEditor.isDisposed()) {
+										valueEditor.setStrategies();
+										valueEditor.setModelValidator(getValidator());
+									}
 								}
-							}
-						});
+							});
+						}
+
+						// And refresh the read-only state
+						if ((propertyPath != null) && (input != null)) {
+							observable.getRealm().asyncExec(new Runnable() {
+
+								public void run() {
+									isEditable = input.isEditable(propertyPath);
+									applyReadOnly(getReadOnly());
+								}
+							});
+						}
 					}
 				}
 			};
