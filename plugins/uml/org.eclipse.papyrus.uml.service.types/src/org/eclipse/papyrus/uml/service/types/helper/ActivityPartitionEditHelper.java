@@ -20,7 +20,8 @@ public class ActivityPartitionEditHelper extends ActivityGroupHelper {
 
 	@Override
 	protected ICommand getCreateCommand(CreateElementRequest req) {
-		return super.getCreateCommand(getCreatePartitionChildRequest(req));
+		CreateElementRequest createRequest = isActivityNode(req.getElementType()) ? getCreatePartitionChildRequest(req) : req;
+		return super.getCreateCommand(createRequest);
 	}
 
 	/**
