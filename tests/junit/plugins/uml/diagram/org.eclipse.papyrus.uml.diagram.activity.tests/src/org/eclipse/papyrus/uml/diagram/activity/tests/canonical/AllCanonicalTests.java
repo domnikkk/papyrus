@@ -25,7 +25,8 @@ import org.junit.runners.Suite.SuiteClasses;
 TestActivityDiagramChildNode.class, 
 // TestActivityDiagramChildWithOtherCreationNode.class, 
 TestActivityChildNodeInStructuredActivity.class,
-TestActivityGroup.class
+TestActivityGroup.class,
+TestDropObjects.class
 })
 public class AllCanonicalTests {
 

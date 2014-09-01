@@ -27,7 +27,7 @@ import org.eclipse.gmf.runtime.diagram.ui.figures.ResizableCompartmentFigure;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.papyrus.uml.diagram.activity.edit.policies.ActivityGroupCustomDragAndDropEditPolicy;
+import org.eclipse.papyrus.uml.diagram.activity.activitygroup.editpolicy.ExpansionRegionCompartmentDnDEditPolicy;
 import org.eclipse.papyrus.uml.diagram.activity.edit.policies.CustomExpansionRegionStructuredActivityNodeContentCompartmentItemSemanticEditPolicy;
 import org.eclipse.papyrus.uml.diagram.activity.edit.policies.ExpansionRegionStructuredActivityNodeContentCompartmentItemSemanticEditPolicy;
 import org.eclipse.papyrus.uml.diagram.activity.edit.policies.RemoveOrphanViewPolicy;
@@ -85,7 +85,7 @@ public class ExpansionRegionStructuredActivityNodeContentCompartmentEditPart ext
 		installEditPolicy(DuplicatePasteEditPolicy.PASTE_ROLE, new DuplicatePasteEditPolicy());
 		// in Papyrus diagrams are not strongly synchronised
 		// installEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CANONICAL_ROLE, new org.eclipse.papyrus.uml.diagram.activity.edit.policies.ExpansionRegionStructuredActivityNodeContentCompartmentCanonicalEditPolicy());
-		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new ActivityGroupCustomDragAndDropEditPolicy());
+		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new ExpansionRegionCompartmentDnDEditPolicy());
 		installEditPolicy("RemoveOrphanView", new RemoveOrphanViewPolicy()); //$NON-NLS-1$
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new CustomExpansionRegionStructuredActivityNodeContentCompartmentItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.GRAPHICAL_NODE_ROLE, new CustomContainerEditPolicy());
