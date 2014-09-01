@@ -13,6 +13,9 @@ package org.eclipse.papyrus.infra.gmfdiag.common.editpolicies;
  * Céline Janssens (ALL4TEC) celine.janssens@all4tec.net - Initial API and implementation
  *
  *****************************************************************************/
+import java.util.Iterator;
+import java.util.List;
+
 import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.draw2d.geometry.Rectangle;
@@ -140,7 +143,14 @@ public class LabelAlignmentEditPolicy extends AbstractEditPolicy{
 			int sourceSelectionType = ((ConnectionEditPart)label.getParent()).getSource().getSelected();
 			int targetSelectionType = ((ConnectionEditPart)label.getParent()).getTarget().getSelected();
 
-			isAllow = !((sourceSelectionType == EditPart.SELECTED)||(targetSelectionType == EditPart.SELECTED)) ;
+			
+			boolean isRefDependent = isRefSibling(parent);
+			
+			if (!isRefDependent) {
+				boolean isExtremitiesSelected = (sourceSelectionType == EditPart.SELECTED)||(targetSelectionType == EditPart.SELECTED);
+				isAllow = !isExtremitiesSelected;
+			}
+			
 
 		} else if (parent instanceof AbstractBorderItemEditPart) {
 			// if the label is an affixed label and if the affixed node is part of the selection, the label is not aligned
@@ -150,6 +160,28 @@ public class LabelAlignmentEditPolicy extends AbstractEditPolicy{
 		return isAllow;
 	}
 
+	/**
+	 * Define if the Label is sibling of the Reference object.
+	 * @param parent Label's Parent
+	 * @return true if the reference is a sibling of the Label
+	 */
+	private boolean isRefSibling(EditPart parent) {
+
+		boolean isRefSibling = false;
+		if (parent instanceof AbstractConnectionEditPart){
+
+			List<?> children = parent.getChildren();
+			Iterator<?> iter = children.iterator();
+
+			while(iter.hasNext() && !isRefSibling ){
+				Object child =  iter.next();
+				if (((EditPart)child).getSelected() == EditPart.SELECTED_PRIMARY){
+					isRefSibling = true;
+				}
+			}
+		}
+		return isRefSibling;
+	}
 
 	/**
 	 * 

@@ -13,21 +13,21 @@ package org.eclipse.papyrus.uml.diagram.menu.actions;
  *  Céline Janssens (ALL4TEC)  celine.janssens@all4tec.net 	- Code refractor and documentation
  *
  *****************************************************************************/
-import java.util.ArrayList;
-import java.util.Enumeration;
 import java.util.Iterator;
 import java.util.List;
 
 import org.eclipse.draw2d.PositionConstants;
+import org.eclipse.draw2d.geometry.Insets;
+import org.eclipse.draw2d.geometry.PrecisionPoint;
 import org.eclipse.draw2d.geometry.PrecisionRectangle;
+import org.eclipse.gef.ConnectionEditPart;
 import org.eclipse.gef.EditPart;
-import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.editparts.AbstractConnectionEditPart;
-import org.eclipse.gef.tools.ToolUtilities;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.CompartmentEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderItemEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.LabelEditPart;
-import org.eclipse.papyrus.uml.diagram.common.layout.EditPartTree;
+import org.eclipse.papyrus.infra.gmfdiag.common.utils.DiagramEditPartsUtil;
 import org.eclipse.papyrus.uml.diagram.common.layout.LayoutUtils;
 
 
@@ -41,8 +41,14 @@ import org.eclipse.papyrus.uml.diagram.common.layout.LayoutUtils;
  */
 public class AlignActionHelper {
 
-	//private CustomAlignAction action;
-	private CustomAlignAction action;
+
+	/** The alignment. */
+	private int alignment;
+	
+	private EditPart refEditPart;
+	
+	private List<IGraphicalEditPart> selectedElements;
+
 
 	/**
 	 * Default Constructor
@@ -51,85 +57,22 @@ public class AlignActionHelper {
 		// Default constructor
 	}
 
-	/**
-	 * Constructor
-	 * @param customAlignAction
-	 */
-	public AlignActionHelper(CustomAlignAction customAlignAction){
-		this.action = customAlignAction;
-
-	}
 	
+/** 
+ * Constructor
+ *
+ * @param customAlignAction 
+ * @param alignment
+ * @param refEditPart
+ *
+ */
+	public AlignActionHelper(int alignment, List<IGraphicalEditPart> selectedElements) {
+		this.alignment = alignment;
+		this.selectedElements = selectedElements;
+		this.refEditPart = getRefEditPart();
+	}
+
 	
-
-	/**
-	 * Create the new bounds of the unselected child of an EditPartTree compare to the RefEP.
-	 * 
-	 * @param ept EditPartTree where there is an Unselected Child
-	 * @param refEP Reference EditPart
-	 * @return Bounds Rectangle of the unselected Child
-	 */
-	protected PrecisionRectangle getUnselectedChildNewBounds(EditPartTree ept, EditPart refEP) {
-		PrecisionRectangle boundsLimit = null;
-		List<EditPart> parent = new ArrayList<EditPart>(1);
-		parent.add(ept.getEditPart());
-		int distance = ept.getDistanceWithTheFirstUnselectedChild();
-		EditPartTree unselectedTree = ept.getFirstUnselectedChild();
-
-		//we don't need to correct unselected element location when the reference is not inside them
-		if(ToolUtilities.isAncestorContainedIn(parent, refEP)) {
-			boundsLimit = new PrecisionRectangle(LayoutUtils.getAbsolutePosition(unselectedTree.getEditPart()));
-			//we increase the size of the child, to avoid scrollbar in its parent
-			boundsLimit.setPreciseX(boundsLimit.x - (distance * LayoutUtils.scrollBarSize));
-			boundsLimit.setPreciseY(boundsLimit.y - (distance * LayoutUtils.scrollBarSize));
-			boundsLimit.setPreciseWidth(boundsLimit.width + (2 * distance * LayoutUtils.scrollBarSize));
-			boundsLimit.setPreciseHeight(boundsLimit.height + (2 * distance * LayoutUtils.scrollBarSize));
-			if(action.getAlignment() == PositionConstants.TOP) {
-				double dist = getLabelHeightToRemove(ept);
-				boundsLimit.setPreciseY(boundsLimit.y() - dist);
-			}
-		}
-		return boundsLimit;
-	}
-
-
-	/**
-	 * Returns the height of the label for the current editpart contained in {@code ept}, more the height of the children's label
-	 * 
-	 * @param ept
-	 *        The {@link EditPartTree} containing the {@link EditPart} used to calculate height
-	 * @return
-	 *         The height of the label for the current editpart, more the height of the children's label
-	 * 
-	 */
-	protected double getLabelHeightToRemove(EditPartTree ept) {
-		double dist = 0;
-		List<?> children = ept.getEditPart().getChildren();
-		//we search the correct compartment
-		for(int iter = 0; iter < children.size(); iter++) {
-			if(children.get(iter) instanceof CompartmentEditPart) {
-				CompartmentEditPart child = (CompartmentEditPart)children.get(iter);
-				EditPolicy policy = child.getEditPolicy(EditPolicy.LAYOUT_ROLE);
-				if(policy != null) {
-					PrecisionRectangle cptSize = LayoutUtils.getAbsolutePosition(child);
-					dist += cptSize.y() - LayoutUtils.getAbsolutePosition(ept.getEditPart()).y();
-					break;
-				}
-			}
-		}
-		Enumeration<?> eptChildren = ept.children();
-		double max = 0;
-		while(eptChildren.hasMoreElements()) {
-			EditPartTree currentElement = (EditPartTree)eptChildren.nextElement();
-			if(currentElement.isSelected() && (!currentElement.isReference())) {
-				double tmp = getLabelHeightToRemove(currentElement);
-				max = (tmp > max) ? tmp : max;
-			}
-		}
-		dist += max;
-		return dist;
-	}
-
 
 	/**
 	 * Tests the selection (nodes and edges). If Selection contains nodes (or Labels) and edges the method returns true
@@ -163,60 +106,7 @@ public class AlignActionHelper {
 
 	}
 
-	/**
-	 * Create a List of editPart from an EditPartTree from the root element to the passed element.
-	 * @param ept The EditPartTree we want the Path from the root
-	 * @return the List of EditPart with the Path from the root to the EditPartTree
-	 */
-	protected List<EditPart> getPathRootEditPartList(EditPartTree ept) {
-		List<EditPart> nodeChild  = new ArrayList<EditPart>();
-
-		//used to calculate the shift between each element!
-		Enumeration<?> vectorisedChildren = ((EditPartTree)ept.getPath()[1]).breadthFirstEnumeration();
-		while(vectorisedChildren.hasMoreElements()) {
-			nodeChild.add(((EditPartTree)vectorisedChildren.nextElement()).getEditPart());
-		}
-		return nodeChild;
-	}
-
-	/**
-	 * Add scrollbar width to the Rectangle bounds to avoid to show them
-	 * @param containerBounds
-	 */
-	protected void addScrollBar(PrecisionRectangle containerBounds) {
-		containerBounds.setPreciseX(containerBounds.x + LayoutUtils.scrollBarSize);
-		containerBounds.setPreciseY(containerBounds.y + LayoutUtils.scrollBarSize);
-		containerBounds.setPreciseWidth(containerBounds.width - 2 * LayoutUtils.scrollBarSize);
-		containerBounds.setPreciseHeight(containerBounds.height - 2 * LayoutUtils.scrollBarSize);
-
-	}
-
-	/**
-	 * Calculate the shift (level) between the EditPartTree and the Reference EP.
-	 * 
-	 * @param ept EditPartTree
-	 * @param refEP Reference EditPart
-	 * @return shift (number of level) between ept and refEP
-	 */
-	protected int getShift(EditPartTree ept, EditPart refEP) {
-		/*
-		 * calculus of the shift
-		 * 
-		 * the shift is the first selected element when the reference is not a child of the editpart
-		 * the shift is the number of levels between the current editpart and the reference if this reference is a child
-		 */
-		int level;
-		if(ToolUtilities.isAncestorContainedIn(getPathRootEditPartList(ept), refEP)) {
-			level = action.getRootTree().getTree(refEP).getLevel();
-			int currentLevel = ept.getLevel();
-			level = level - currentLevel + 1;
-
-		} else{
-			level = ept.getLevelForFirstSelectedElement();
-		}
-		return level;
-	}
-
+	
 
 
 	/**
@@ -230,130 +120,227 @@ public class AlignActionHelper {
 	 *         <li>{@code false}</li> if not
 	 *         </ul>
 	 */
-	protected boolean isLinkSelection(List<?> editparts) {
+	protected boolean isLinkSelection(List<IGraphicalEditPart> editparts) {
+		boolean isEdgeOnly = true;
+		// if no selection
 		if(editparts.size() == 0) {
-			return false;
-		}
-		for(Object object : editparts) {
-			if(!(object instanceof AbstractConnectionEditPart)) {
-				return false;
+			isEdgeOnly = false;
+		// at least one object is selected
+		} else {
+
+			for(Object object : editparts) {
+				if(!(object instanceof AbstractConnectionEditPart)) {
+					isEdgeOnly= false;
+				}
 			}
 		}
-		return true;
+		return isEdgeOnly;
 	}
 
 
 	/**
 	 * Define if Alignment is allowed.
-	 * @param editparts 
+	 * @param selectedElements 
 	 * @return
 	 */
-	protected boolean isAlignAllowed(List<EditPart> editparts) {
+	protected boolean isAlignAllowed(List<IGraphicalEditPart> selectedElements) {
 
 		boolean alignAllowable = true;
 		// Alignment is not allowed if selection is a mixed with edges and nodes (or labels)
-		alignAllowable = alignAllowable && !isMixedSelection(editparts);
-
+		alignAllowable = alignAllowable && !isMixedSelection(selectedElements);
+		alignAllowable = alignAllowable && (selectedElements.size() >= 2);
+		
 		return alignAllowable;
 	}
 
 	/**
-	 * Return the list of Edit Parts based on the selected Elements.
-	 * @return
-	 * List of EditParts
+	 * Define if the New calculated position is allowed for the Alignment
+	 * 
+	 * @param currentEP current Edit Part to be aligned
+	 * @param newPosition theoretical position after alignment
+	 * @return true if the new Position fits to the alignment rules
 	 */
-	protected List<EditPart> getEditPartList() {
-		List<EditPart> editparts = new ArrayList<EditPart>();
-		for(IGraphicalEditPart current : action.getSelectedElements()) {
-			editparts.add(current);
+	protected boolean isPositionAllowed(EditPart currentEP, PrecisionRectangle newPosition) {
+
+		boolean isAllow = true;
+
+		isAllow = isAllow && isContained(newPosition, currentEP);
+		isAllow = isAllow && !isRefChild(refEditPart, currentEP);
+		isAllow = isAllow && isPortPositionAllowed(newPosition, currentEP);
+		isAllow = isAllow && !isDependent(refEditPart, currentEP);
+		
+		
+		return isAllow;
+
+	}
+
+	/**
+	 * Define if the EditPart position depends on the other EditPart position
+	 * @param ref
+	 * @param currentEP
+	 * @return
+	 */
+	private boolean isDependent(EditPart ref, EditPart currentEP) {
+		boolean isDependent = false;
+		// If The reference is a Connection Label   
+		if (ref instanceof LabelEditPart) {
+			if (ref.getParent() instanceof AbstractConnectionEditPart){
+				// Alignment is not allowed if it should moves at the same time as the connector
+				// That means if the Extremities of the Edge have to be aligned.
+				EditPart source = ((ConnectionEditPart)ref.getParent()).getSource();
+				EditPart target = ((ConnectionEditPart)ref.getParent()).getTarget();
+				//If extremities EditPart cannot be a child of the Current Edit part
+				if (currentEP.equals(source) || currentEP.equals(target) ) {
+					isDependent = true ;
+				} else if (isRefChild(source, currentEP) || isRefChild(target, currentEP)) {
+					isDependent = true ;
+				}
+			}
 		}
-		return editparts;
+		return isDependent;
 	}
 
 
 	/**
-	 * Adjust AlignBounds to take scrollBar size into account in order to avoid to show them.
-	 * 
-	 * @param alignRef The reference bounds to modify 
-	 * @param boundsRef Absolute bounds of reference EP
-	 * @param ept EditPartTree 
-	 * @param refEP Reference EditPart
+	 * Alignment Rule: In case of a Border Item, the Alignment is allowed only if the Port Position stay on his Parent Bounds.
+	 * @param newPosition
+	 * @param currentEP
+	 * @return
 	 */
-	protected void adjustAlignRefBounds(PrecisionRectangle alignRef,
-			PrecisionRectangle boundsRef, EditPartTree ept, EditPart refEP) {
+	private boolean isPortPositionAllowed(PrecisionRectangle newPosition,
+			EditPart currentEP) {
+		boolean isPortAllow ;
+	
+		if (currentEP instanceof AbstractBorderItemEditPart){
 
-		// AlignRef Bounds should not be adjust in case of LabelEdit Part 
-		if( !(ept.getEditPart() instanceof LabelEditPart) ){
+			
+			PrecisionPoint portCenter = (PrecisionPoint) newPosition.getCenter();
+			PrecisionRectangle parentBounds = LayoutUtils.getAbsolutePosition(currentEP.getParent());
 
-			int level = getShift(ept, refEP);
+			boolean isOnVerticalBounds = (portCenter.preciseX() == parentBounds.preciseX()) || (portCenter.preciseX() == parentBounds.preciseX()+ parentBounds.preciseWidth() );
+			boolean isOnHorizontalBounds = (portCenter.preciseY() == parentBounds.preciseY()) || (portCenter.preciseY() == parentBounds.preciseY()+ parentBounds.preciseHeight() );
+			boolean isBetweenHorizontalBounds = (portCenter.preciseY() >= parentBounds.preciseY()) && (portCenter.preciseY() <= parentBounds.preciseY()+parentBounds.preciseHeight());
+			boolean isBetweenVerticalBounds = (portCenter.preciseX() >= parentBounds.preciseX()) && (portCenter.preciseX() <= parentBounds.preciseX()+parentBounds.preciseWidth());
 
-			// depends on the alignment modify the reference rectangle
-			switch(action.getAlignment()) {
-			case PositionConstants.LEFT:
-				alignRef.setPreciseX(boundsRef.x - ((level - 1) * LayoutUtils.scrollBarSize));
-				alignRef.setPreciseWidth(boundsRef.width + 2 * ((level - 1) * LayoutUtils.scrollBarSize));
-				break;
-			case PositionConstants.CENTER:
-				break;
-			case PositionConstants.RIGHT:
-
-				alignRef.setPreciseX(boundsRef.x + ((-level + 1) * LayoutUtils.scrollBarSize));
-				alignRef.setPreciseWidth(boundsRef.preciseWidth() - 2 * ((-level + 1) * LayoutUtils.scrollBarSize));
-				break;
-
-			case PositionConstants.BOTTOM:
-				alignRef.setPreciseY(boundsRef.y + ((-level + 1) * LayoutUtils.scrollBarSize));
-				alignRef.setPreciseHeight(boundsRef.preciseHeight() - 2 * ((-level + 1) * LayoutUtils.scrollBarSize));
-				break;
-			case PositionConstants.MIDDLE:
-				// get the size of the highest child
-				double heightMax = 0;
-				Enumeration<?> children = ept.children();
-				while(children.hasMoreElements()) {
-					EditPartTree currentChild = (EditPartTree)children.nextElement();
-					double height = LayoutUtils.getAbsolutePosition(currentChild.getEditPart()).preciseHeight();
-					heightMax = Math.max(height, heightMax);
-				}
-
-
-				// get the size of the compartment for this figure! 
-				List<?> childrenEP = ept.getEditPart().getChildren();
-				double compartmentHeight = 0;
-				Iterator<?> iter = childrenEP.iterator();
-				while(iter.hasNext() && compartmentHeight == 0){
-					if(iter.next() instanceof CompartmentEditPart) {
-						CompartmentEditPart child = (CompartmentEditPart)iter.next();
-						EditPolicy policy = child.getEditPolicy(EditPolicy.LAYOUT_ROLE);
-						if(policy != null) {
-							compartmentHeight = LayoutUtils.getAbsolutePosition(child).preciseHeight();
-						}
-					}
-				}
-
-				double heightToRemove = getLabelHeightToRemove(ept);
-				//test to know if the initial alignment is possible without seeing the scrollbar
-				if(compartmentHeight < (heightMax + LayoutUtils.scrollBarSize + heightToRemove)) {
-					alignRef.setPreciseY(alignRef.y - heightToRemove);
-					alignRef.setPreciseHeight(alignRef.preciseHeight() + heightToRemove);
-				}
-
-				break;
-			case PositionConstants.TOP: //here we can have a problem with the label for the element inheriting from Package
-				alignRef.setPreciseY(boundsRef.y - ((level - 1) * LayoutUtils.scrollBarSize));
-				alignRef.setPreciseHeight(boundsRef.preciseHeight() + 2 * ((level - 1) * LayoutUtils.scrollBarSize));
-
-				// we don't want that the scrollbar appears, with the top alignment, we need to consider the label of the container element
-				if(ept.children().hasMoreElements()) {
-					double dist = getLabelHeightToRemove(ept);
-					alignRef.setPreciseY(alignRef.y() - dist);
-				}
-				break;
-			default:
-				break;
+			if ((isOnHorizontalBounds) && (isBetweenVerticalBounds)) {
+				isPortAllow = true;
+			} else if ((isOnVerticalBounds) && (isBetweenHorizontalBounds)) {
+				isPortAllow = true;
+			} else {
+				isPortAllow = false;
 			}
+
+		} else {
+			
+			isPortAllow = true;
 		}
+
+		return isPortAllow;
+	}
+
+
+	/**
+	 * Alignment Rule: the EditPart should be still contained in its parent after the alignment
+	 * @param newPosition
+	 * @param currentEP
+	 * @return
+	 */
+	protected boolean isContained(PrecisionRectangle newPosition, EditPart currentEP) {
+
+		boolean isContained;
+
+		EditPart container = DiagramEditPartsUtil.getContainerEditPart((GraphicalEditPart) currentEP);
+		PrecisionRectangle containerBounds = LayoutUtils.getAbsolutePosition(container);
+		//reduce the reference of 1 pixel in order to avoid the Scrollbar apparition when trying to Align on the parent.
+		containerBounds.expand(new Insets(-1));
+		isContained = containerBounds.contains(newPosition.getBottomLeft()) && containerBounds.contains(newPosition.getTopRight())  ;
+
+		return isContained;
 
 	}
 
+	/**
+	 * Alignment Rule : The parent cannot be aligned on its children
+	 * @param ref
+	 * @param ep
+	 * @return
+	 */
+	protected boolean isRefChild(EditPart ref, EditPart ep) {
+
+		boolean refIsChild = false;
+		List<?> children = ep.getChildren();
+		Iterator<?> iter = children.iterator();
+		while(iter.hasNext() && !refIsChild ){
+
+			Object child =  iter.next();
+			if (ref.equals(child)){
+				refIsChild = true;
+
+			} else if (child instanceof EditPart){
+				refIsChild = isRefChild(ref, (EditPart) child);
+			} 
+
+		}
+		return refIsChild;
+	}
+
+	/**
+	 * Get the reference Edit part for the alignment.
+	 * @return reference edit part for the alignment
+	 */
+	protected EditPart getRefEditPart() {
+		Iterator<IGraphicalEditPart> iter = selectedElements.iterator();
+		EditPart ref = null;
+
+		while (iter.hasNext() && ref == null){
+			EditPart ep = iter.next();
+			if (ep.getSelected() == EditPart.SELECTED_PRIMARY){
+				ref = ep;
+			}
+		}
+		return ref;
+	}
+	
+	/**
+	 * 
+	 * @param currentEPBounds
+	 * @param refBounds
+	 * @return
+	 */
+	protected PrecisionRectangle getNewPosition(
+			PrecisionRectangle currentEPBounds, PrecisionRectangle refBounds) {
+
+		// Initialise new Position with the current Position
+		PrecisionRectangle newPosition = new PrecisionRectangle(currentEPBounds);
+		PrecisionPoint distance = new PrecisionPoint (0.0,0.0);
+		switch(this.alignment) {
+		case PositionConstants.LEFT:
+			newPosition.setPreciseX(refBounds.preciseX());
+			break;
+		case PositionConstants.CENTER:
+			distance.setPreciseX(refBounds.getCenter().preciseX() - currentEPBounds.getCenter().preciseX());
+			newPosition.translate(distance);
+			break;
+		case PositionConstants.RIGHT:
+			distance.setPreciseX(refBounds.getTopRight().preciseX() - currentEPBounds.getTopRight().preciseX());
+			newPosition.translate(distance);
+			break;
+		case PositionConstants.TOP:
+			newPosition.setPreciseY(refBounds.preciseY());
+			break;
+		case PositionConstants.MIDDLE:
+			distance.setPreciseY(refBounds.getCenter().preciseY() - currentEPBounds.getCenter().preciseY());
+			newPosition.translate(distance);
+			break;
+		case PositionConstants.BOTTOM:
+			distance.setPreciseY( refBounds.getBottomLeft().preciseY() - currentEPBounds.getBottomLeft().preciseY());
+			newPosition.translate(distance);
+			break;
+		default:
+			break;
+		}
+
+		return newPosition;
+	}
 
 }
