@@ -10,6 +10,10 @@
       <toc
             file="resource/tools-toc.xml"
             primary="false">
+      </toc>
+      <toc
+            file="resource/alignmentTool-toc.xml"
+            primary="false">
       </toc>      
    </extension>
 </plugin>
