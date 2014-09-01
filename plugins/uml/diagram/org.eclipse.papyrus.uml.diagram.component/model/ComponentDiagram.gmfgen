@@ -133,6 +133,10 @@
               xsi:type="gmfgen:CustomBehaviour"
               key="org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.IndirectMaskLabelEditPolicy.INDRIRECT_MASK_MANAGED_LABEL"
               editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.common.editpolicies.IndirectPortLabelEditPolicy"/>
+          <behaviour
+              xsi:type="gmfgen:CustomBehaviour"
+              key="org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.LabelAlignmentEditPolicy.LABEL_ALIGNMENT_KEY"
+              editPolicyQualifiedClassName="org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.LabelAlignmentEditPolicy"/>
           <modelFacet
               xsi:type="gmfgen:FeatureLabelModelFacet"
               parser="/0/@labelParsers/@implementations.0">

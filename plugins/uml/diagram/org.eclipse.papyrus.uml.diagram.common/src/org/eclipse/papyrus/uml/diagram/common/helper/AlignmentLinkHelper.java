@@ -66,6 +66,7 @@ public class AlignmentLinkHelper {
 	 *         </ul>
 	 */
 	public Command createCommand() {
+		// Only TOP, BOTTOM, LEFT, and RIGHT align are allowed
 		if (this.alignment == PositionConstants.MIDDLE || this.alignment == PositionConstants.CENTER || this.linkEditparts.size() == 0) {
 			return UnexecutableCommand.INSTANCE;
 		}
