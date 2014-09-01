@@ -23,8 +23,10 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.edit.command.DeleteCommand;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
+import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
+import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * this is an helper that redirect destroy request to get destroy command from uml plugin
@@ -40,6 +42,10 @@ public class ActivityGroupHelper extends ElementEditHelper {
 		return result;
 	}
 
+	protected boolean isActivityNode(IElementType type) {
+		return UMLPackage.eINSTANCE.getActivityNode().isSuperTypeOf(type.getEClass());
+	}
+	
 	/**
 	 * inner class for the destruction of element
 	 *

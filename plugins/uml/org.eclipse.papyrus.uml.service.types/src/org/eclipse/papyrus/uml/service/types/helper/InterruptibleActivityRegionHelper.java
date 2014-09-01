@@ -6,7 +6,6 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.edit.command.MoveCommand;
 import org.eclipse.gmf.runtime.common.core.command.CompositeCommand;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
-import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.type.core.commands.MoveElementsCommand;
 import org.eclipse.gmf.runtime.emf.type.core.commands.SetValueCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
@@ -56,10 +55,6 @@ public class InterruptibleActivityRegionHelper extends ActivityGroupHelper {
 			return UMLPackage.eINSTANCE.getActivity_StructuredNode();
 		}
 		return UMLPackage.eINSTANCE.getActivity_OwnedNode();
-	}
-
-	private boolean isActivityNode(IElementType type) {
-		return UMLPackage.eINSTANCE.getActivityNode().isSuperTypeOf(type.getEClass());
 	}
 
 	@Override
