@@ -22,6 +22,7 @@ import org.eclipse.core.databinding.observable.IChangeListener;
 import org.eclipse.core.databinding.observable.value.IObservableValue;
 import org.eclipse.draw2d.Border;
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
@@ -162,31 +163,31 @@ public class BorderDisplayEditPolicy extends GraphicalEditPolicyEx implements IC
 
 		BooleanValueStyle displayBorderStyle = findDisplayBorderStyle(view);
 
-		//if not diplayBorder
+		// if not diplayBorder
 		if (displayBorderStyle != null && !displayBorderStyle.isBooleanValue()) {
 			if (defaultBorder == null) {
 				defaultBorder = getPrimaryShape().getBorder();
 			}
 			getPrimaryShape().setBorder(null);
-		} else {//if diplayBorder
+		} else {// if diplayBorder
 			if (defaultBorder != null) {
 				getPrimaryShape().setBorder(defaultBorder);
 			}
 			defaultBorder = null;
 
-			//If the shape is a compartment and it's the first one, set border to null.
-			if(getPrimaryShape() instanceof ResizableCompartmentFigure) {
+			// If the shape is a compartment and it's the first one, set border to null.
+			if (getPrimaryShape() instanceof ResizableCompartmentFigure) {
 
-				//Get all visible compartment
+				// Get all visible compartment
 				final List<View> allVisibleCompartments = getAllVisibleCompartments(view, getHost().getParent());
-				//If the view is the first compartment set border to null
-				if(allVisibleCompartments.size() > 0 && allVisibleCompartments.get(0).equals(view)) {
+				// If the view is the first compartment set border to null
+				if (allVisibleCompartments.size() > 0 && allVisibleCompartments.get(0).equals(view)) {
 					getPrimaryShape().setBorder(null);
 				} else {
-					if(getPrimaryShape().getBorder() == null) {
-						getPrimaryShape().setBorder(new OneLineBorder());
-		}
-	}
+					if (getPrimaryShape().getBorder() == null) {
+						getPrimaryShape().setBorder(new OneLineBorder(2, PositionConstants.TOP));
+					}
+				}
 			}
 		}
 	}
@@ -197,9 +198,9 @@ public class BorderDisplayEditPolicy extends GraphicalEditPolicyEx implements IC
 	 * @param view
 	 * 
 	 * @param editpart
-	 *        an editpart
+	 *            an editpart
 	 * @param includeTitleCompartment
-	 *        if <code>true</code> we return the title compartment too
+	 *            if <code>true</code> we return the title compartment too
 	 * @return all the displayed compartments for the EditPart
 	 */
 	public static List<View> getAllVisibleCompartments(View view, EditPart editpart) {

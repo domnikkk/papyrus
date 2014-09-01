@@ -29,11 +29,13 @@ import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.IPapyrusNodeFigure;
 import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.SelectableBorderedNodeFigure;
+import org.eclipse.papyrus.uml.diagram.common.editparts.ClassEditPart;
 import org.eclipse.papyrus.uml.diagram.common.editparts.ClassifierEditPart;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeLabelDisplayEditPolicy;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeNodeLabelDisplayEditPolicy;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.ConstrainedItemBorderLayoutEditPolicy;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.QualifiedNameDisplayEditPolicy;
+import org.eclipse.papyrus.uml.diagram.common.figure.node.ClassFigure;
 import org.eclipse.papyrus.uml.diagram.common.figure.node.ClassifierFigure;
 import org.eclipse.papyrus.uml.diagram.profile.custom.policies.itemsemantic.CustomMetaclassItemSemanticEditPolicyCN;
 import org.eclipse.papyrus.uml.diagram.profile.edit.policies.MetaclassItemSemanticEditPolicyCN;
@@ -43,7 +45,7 @@ import org.eclipse.swt.graphics.Color;
 /**
  * @generated
  */
-public class MetaclassEditPartCN extends ClassifierEditPart {
+public class MetaclassEditPartCN extends ClassEditPart {
 
 	/**
 	 * @generated
@@ -89,7 +91,6 @@ public class MetaclassEditPartCN extends ClassifierEditPart {
 	protected LayoutEditPolicy createLayoutEditPolicy() {
 		org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy lep = new org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy() {
 
-			@Override
 			protected EditPolicy createChildEditPolicy(EditPart child) {
 				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 				if (result == null) {
@@ -98,12 +99,10 @@ public class MetaclassEditPartCN extends ClassifierEditPart {
 				return result;
 			}
 
-			@Override
 			protected Command getMoveChildrenCommand(Request request) {
 				return null;
 			}
 
-			@Override
 			protected Command getCreateCommand(CreateRequest request) {
 				return null;
 			}
@@ -119,10 +118,10 @@ public class MetaclassEditPartCN extends ClassifierEditPart {
 	@Override
 	protected void handleNotificationEvent(Notification event) {
 		super.handleNotificationEvent(event);
-		// set the figure active when the feature of the of a class is true
+		//set the figure active when the feature of the of a class is true
 		if (resolveSemanticElement() != null) {
 			if (resolveSemanticElement().equals(event.getNotifier()) && (event.getFeature() instanceof EAttribute) && ((EAttribute) (event.getFeature())).getName().equals("isActive")) {
-				((ClassifierFigure) getFigure()).setActive(event.getNewBooleanValue());
+				((ClassFigure) getFigure()).setActive(event.getNewBooleanValue());
 				refreshVisuals();
 			}
 		}
@@ -133,7 +132,7 @@ public class MetaclassEditPartCN extends ClassifierEditPart {
 	 */
 	@Override
 	protected IFigure createNodeShape() {
-		return primaryShape = new ClassifierFigure();
+		return primaryShape = new ClassFigure();
 	}
 
 	/**
@@ -142,8 +141,8 @@ public class MetaclassEditPartCN extends ClassifierEditPart {
 	 * @generated
 	 */
 	@Override
-	public ClassifierFigure getPrimaryShape() {
-		return (ClassifierFigure) primaryShape;
+	public ClassFigure getPrimaryShape() {
+		return (ClassFigure) primaryShape;
 	}
 
 	/**

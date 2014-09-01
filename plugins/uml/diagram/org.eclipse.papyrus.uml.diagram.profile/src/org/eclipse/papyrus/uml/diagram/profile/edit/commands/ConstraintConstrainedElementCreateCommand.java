@@ -76,7 +76,8 @@ public class ConstraintConstrainedElementCreateCommand extends EditElementComman
 			throw new ExecutionException("Invalid arguments in create link command"); //$NON-NLS-1$
 		}
 		if (getSource() != null && getTarget() != null) {
-			getSource().getConstrainedElements().add(getTarget());
+			getSource().getConstrainedElements()
+					.add(getTarget());
 		}
 		return CommandResult.newOKCommandResult();
 	}

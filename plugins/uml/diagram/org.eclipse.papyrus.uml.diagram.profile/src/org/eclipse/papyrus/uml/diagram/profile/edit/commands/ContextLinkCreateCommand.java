@@ -76,7 +76,9 @@ public class ContextLinkCreateCommand extends EditElementCommand {
 			throw new ExecutionException("Invalid arguments in create link command"); //$NON-NLS-1$
 		}
 		if (getSource() != null && getTarget() != null) {
-			getSource().setContext(getTarget());
+			getSource().setContext(
+					getTarget()
+					);
 		}
 		return CommandResult.newOKCommandResult();
 	}

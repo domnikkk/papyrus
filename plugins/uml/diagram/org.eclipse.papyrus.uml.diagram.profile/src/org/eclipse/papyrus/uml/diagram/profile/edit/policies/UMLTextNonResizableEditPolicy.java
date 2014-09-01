@@ -166,7 +166,6 @@ public class UMLTextNonResizableEditPolicy extends NonResizableEditPolicyEx impl
 	protected IFigure createFocusFeedbackFigure() {
 		return new Figure() {
 
-			@Override
 			protected void paintFigure(Graphics graphics) {
 				graphics.drawFocus(getBounds().getResized(-1, -1));
 			}
@@ -234,7 +233,8 @@ public class UMLTextNonResizableEditPolicy extends NonResizableEditPolicyEx impl
 	 */
 	@Override
 	protected List<?> createSelectionHandles() {
-		MoveHandle moveHandle = new MoveHandle((GraphicalEditPart) getHost());
+		MoveHandle moveHandle =
+				new MoveHandle((GraphicalEditPart) getHost());
 		moveHandle.setBorder(null);
 		moveHandle.setDragTracker(new DragEditPartsTrackerEx(getHost()));
 		return Collections.singletonList(moveHandle);

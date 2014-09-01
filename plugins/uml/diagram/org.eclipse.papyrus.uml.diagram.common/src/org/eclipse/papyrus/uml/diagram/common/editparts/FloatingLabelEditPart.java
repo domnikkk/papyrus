@@ -16,6 +16,8 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.LabelEditPart;
 import org.eclipse.gmf.runtime.notation.BooleanValueStyle;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.IndirectMaskLabelEditPolicy;
+import org.eclipse.papyrus.uml.diagram.common.editpolicies.FloatingLabelEditPolicy;
 
 /**
  * The Class FloatingNameEditPart.
@@ -30,13 +32,24 @@ public class FloatingLabelEditPart extends LabelEditPart {
 	private static final boolean DEFAULT_LABEL_DISPLAYED = false;
 
 	/**
-	 * Instantiates a new floating name edit part.
+	 * Instantiates a new floating label edit part.
 	 *
 	 * @param view
-	 *        the view
+	 *            the view
 	 */
 	public FloatingLabelEditPart(View view) {
 		super(view);
+	}
+
+	/**
+	 * @see org.eclipse.gmf.runtime.diagram.ui.editparts.LabelEditPart#createDefaultEditPolicies()
+	 *
+	 */
+	@Override
+	protected void createDefaultEditPolicies() {
+		super.createDefaultEditPolicies();
+		// installEditPolicy(org.eclipse.papyrus.uml.diagram.common.editpolicies.ExternalLabelDisplayEditPolicy.EXTERNAL_LABEL_POLICY, new ExternalLabelDisplayEditPolicy());
+		installEditPolicy(IndirectMaskLabelEditPolicy.INDRIRECT_MASK_MANAGED_LABEL, new FloatingLabelEditPolicy());
 	}
 
 	/**
@@ -46,12 +59,12 @@ public class FloatingLabelEditPart extends LabelEditPart {
 	@Override
 	protected void refreshVisibility() {
 		super.refreshVisibility();
-		//get the value of the CSS property
-		BooleanValueStyle isLabelDisplayedValue = (BooleanValueStyle)((View)((View)getModel()).eContainer()).getNamedStyle(NotationPackage.eINSTANCE.getBooleanValueStyle(), getDisplayFloatingLabel());
+		// get the value of the CSS property
+		BooleanValueStyle isLabelDisplayedValue = (BooleanValueStyle) ((View) ((View) getModel()).eContainer()).getNamedStyle(NotationPackage.eINSTANCE.getBooleanValueStyle(), getDisplayFloatingLabel());
 
-		//if the property exist set the visibility of the floating name
+		// if the property exist set the visibility of the floating label
 		boolean isLabelDisplayed;
-		if(isLabelDisplayedValue == null) {
+		if (isLabelDisplayedValue == null) {
 			isLabelDisplayed = getDefaultLabelDisplayedValue();
 		} else {
 			isLabelDisplayed = isLabelDisplayedValue.isBooleanValue();

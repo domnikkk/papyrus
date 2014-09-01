@@ -26,13 +26,13 @@ import org.eclipse.papyrus.uml.diagram.common.editpolicies.ShowHideCompartmentEd
 public abstract class RoundedCompartmentEditPart extends NamedElementEditPart {
 
 	/** The Constant FLOATING_NAME_OFFSET_HEIGHT. */
-	protected static final String FLOATING_NAME_OFFSET_HEIGHT = "floatingNameOffsetHeight";
+	protected static final String FLOATING_LABEL_OFFSET_HEIGHT = "floatingLabelOffsetHeight";
 
 	/** The Constant FLOATING_NAME_OFFSET_WIDTH. */
-	protected static final String FLOATING_NAME_OFFSET_WIDTH = "floatingNameOffsetWidth";
+	protected static final String FLOATING_LABEL_OFFSET_WIDTH = "floatingLabelOffsetWidth";
 
 	/** CSS boolean property controlling whether label should be constrained. */
-	public static final String FLOATING_NAME_CONSTRAINED = "isFloatingNameConstrained";
+	public static final String FLOATING_LABEL_CONSTRAINED = "isFloatingLabelConstrained";
 
 	/** CSS boolean property controlling whether. */
 	public static final String RADIUS_WIDTH = "radiusWidth";
@@ -43,11 +43,11 @@ public abstract class RoundedCompartmentEditPart extends NamedElementEditPart {
 	/** CSS boolean property controlling whether. */
 	public static final String IS_OVAL = "isOval";
 
-	private static final boolean DEFAULT_IS_FLOATING_NAME_CONSTRAINED = false;
+	private static final boolean DEFAULT_IS_FLOATING_LABEL_CONSTRAINED = false;
 
-	private static final int DEFAULT_FLOATING_NAME_OFFSET_WIDTH = 0;
+	private static final int DEFAULT_FLOATING_LABEL_OFFSET_WIDTH = 0;
 
-	private static final int DEFAULT_FLOATING_NAME_OFFSET_HEIGHT = 0;
+	private static final int DEFAULT_FLOATING_LABEL_OFFSET_HEIGHT = 0;
 
 	private static final int DEFAULT_CORNER_WIDTH = 0;
 
@@ -59,7 +59,7 @@ public abstract class RoundedCompartmentEditPart extends NamedElementEditPart {
 	 * Instantiates a new rounded compartment edit part.
 	 *
 	 * @param view
-	 *        the view
+	 *            the view
 	 */
 	public RoundedCompartmentEditPart(View view) {
 		super(view);
@@ -69,7 +69,7 @@ public abstract class RoundedCompartmentEditPart extends NamedElementEditPart {
 	@Override
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		//Install Edit Policy to Hide/show compartment, in particular for the symbol compartment
+		// Install Edit Policy to Hide/show compartment, in particular for the symbol compartment
 		installEditPolicy(ShowHideCompartmentEditPolicy.SHOW_HIDE_COMPARTMENT_POLICY, new ShowHideCompartmentEditPolicy());
 	}
 
@@ -90,32 +90,32 @@ public abstract class RoundedCompartmentEditPart extends NamedElementEditPart {
 	 * Refresh floating name.
 	 */
 	protected void refreshFloatingName() {
-		if(getPrimaryShape() instanceof IRoundedRectangleFigure) {
-			//The figure
-			IRoundedRectangleFigure roundedRectangleFigure = (IRoundedRectangleFigure)getPrimaryShape();
+		if (getPrimaryShape() instanceof IRoundedRectangleFigure) {
+			// The figure
+			IRoundedRectangleFigure roundedRectangleFigure = (IRoundedRectangleFigure) getPrimaryShape();
 
-			//Get CSS value for the name attached properties
-			BooleanValueStyle isNameConstrainedValue = (BooleanValueStyle)((View)getModel()).getNamedStyle(NotationPackage.eINSTANCE.getBooleanValueStyle(), FLOATING_NAME_CONSTRAINED);
+			// Get CSS value for the name attached properties
+			BooleanValueStyle isNameConstrainedValue = (BooleanValueStyle) ((View) getModel()).getNamedStyle(NotationPackage.eINSTANCE.getBooleanValueStyle(), FLOATING_LABEL_CONSTRAINED);
 			boolean isNameConstrained;
-			//if no css property set to default value
-			if(isNameConstrainedValue == null) {
+			// if no css property set to default value
+			if (isNameConstrainedValue == null) {
 				isNameConstrained = getDefaultIsFloatingNameConstrained();
 			} else {
 				isNameConstrained = isNameConstrainedValue.isBooleanValue();
 			}
-			//Set the name attached properties in figure
+			// Set the name attached properties in figure
 			roundedRectangleFigure.setFloatingNameConstrained(isNameConstrained);
 
-			//get Offset
-			//get CSS the value of offset Width
-			IntValueStyle offsetWidth = (IntValueStyle)((View)getModel()).getNamedStyle(NotationPackage.eINSTANCE.getIntValueStyle(), FLOATING_NAME_OFFSET_WIDTH);
+			// get Offset
+			// get CSS the value of offset Width
+			IntValueStyle offsetWidth = (IntValueStyle) ((View) getModel()).getNamedStyle(NotationPackage.eINSTANCE.getIntValueStyle(), FLOATING_LABEL_OFFSET_WIDTH);
 			int width = offsetWidth != null ? offsetWidth.getIntValue() : getDefaultFloatingNameOffsetWidth();
 
-			//get CSS the value of offset Height
-			IntValueStyle offsetHeight = (IntValueStyle)((View)getModel()).getNamedStyle(NotationPackage.eINSTANCE.getIntValueStyle(), FLOATING_NAME_OFFSET_HEIGHT);
+			// get CSS the value of offset Height
+			IntValueStyle offsetHeight = (IntValueStyle) ((View) getModel()).getNamedStyle(NotationPackage.eINSTANCE.getIntValueStyle(), FLOATING_LABEL_OFFSET_HEIGHT);
 			int height = offsetHeight != null ? offsetHeight.getIntValue() : getDefaultFloatingNameOffsetHeight();
 
-			//Set the floating name offset
+			// Set the floating name offset
 			roundedRectangleFigure.setFloatingNameOffset(new Dimension(width, height));
 
 		}
@@ -128,7 +128,7 @@ public abstract class RoundedCompartmentEditPart extends NamedElementEditPart {
 	 * @return the default is name constrained
 	 */
 	protected boolean getDefaultIsFloatingNameConstrained() {
-		return DEFAULT_IS_FLOATING_NAME_CONSTRAINED;
+		return DEFAULT_IS_FLOATING_LABEL_CONSTRAINED;
 	}
 
 	/**
@@ -137,7 +137,7 @@ public abstract class RoundedCompartmentEditPart extends NamedElementEditPart {
 	 * @return the default floating name offset height
 	 */
 	protected int getDefaultFloatingNameOffsetHeight() {
-		return DEFAULT_FLOATING_NAME_OFFSET_HEIGHT;
+		return DEFAULT_FLOATING_LABEL_OFFSET_HEIGHT;
 	}
 
 	/**
@@ -146,28 +146,28 @@ public abstract class RoundedCompartmentEditPart extends NamedElementEditPart {
 	 * @return the default floating name offset width
 	 */
 	protected int getDefaultFloatingNameOffsetWidth() {
-		return DEFAULT_FLOATING_NAME_OFFSET_WIDTH;
+		return DEFAULT_FLOATING_LABEL_OFFSET_WIDTH;
 	}
 
 	/**
 	 * Refresh radius.
 	 */
 	protected void refreshRadius() {
-		if(getPrimaryShape() instanceof IRoundedRectangleFigure) {
-			//The figure
-			IRoundedRectangleFigure roundedRectangleFigure = (IRoundedRectangleFigure)getPrimaryShape();
+		if (getPrimaryShape() instanceof IRoundedRectangleFigure) {
+			// The figure
+			IRoundedRectangleFigure roundedRectangleFigure = (IRoundedRectangleFigure) getPrimaryShape();
 
 			Dimension radiusDimension = new Dimension();
 
-			//get CSS the value of radius Width
-			IntValueStyle radiusWidth = (IntValueStyle)((View)getModel()).getNamedStyle(NotationPackage.eINSTANCE.getIntValueStyle(), RADIUS_WIDTH);
+			// get CSS the value of radius Width
+			IntValueStyle radiusWidth = (IntValueStyle) ((View) getModel()).getNamedStyle(NotationPackage.eINSTANCE.getIntValueStyle(), RADIUS_WIDTH);
 			radiusDimension.width = radiusWidth != null ? radiusWidth.getIntValue() : getDefaultCornerWidth();
 
-			//get CSS the value of radius Height
-			IntValueStyle radiusHeight = (IntValueStyle)((View)getModel()).getNamedStyle(NotationPackage.eINSTANCE.getIntValueStyle(), RADIUS_HEIGHT);
+			// get CSS the value of radius Height
+			IntValueStyle radiusHeight = (IntValueStyle) ((View) getModel()).getNamedStyle(NotationPackage.eINSTANCE.getIntValueStyle(), RADIUS_HEIGHT);
 			radiusDimension.height = radiusHeight != null ? radiusHeight.getIntValue() : getDefaultCornerHeight();
 
-			//Set the corner dimension
+			// Set the corner dimension
 			roundedRectangleFigure.setCornerDimensions(radiusDimension);
 		}
 	}
@@ -194,18 +194,18 @@ public abstract class RoundedCompartmentEditPart extends NamedElementEditPart {
 	 * Refresh oval.
 	 */
 	protected void refreshOval() {
-		if(getPrimaryShape() instanceof IRoundedRectangleFigure) {
-			//The figure
-			IRoundedRectangleFigure roundedRectangleFigure = (IRoundedRectangleFigure)getPrimaryShape();
-			//get the CSS value of isOval
-			BooleanValueStyle isOvalValue = (BooleanValueStyle)((View)getModel()).getNamedStyle(NotationPackage.eINSTANCE.getBooleanValueStyle(), IS_OVAL);
+		if (getPrimaryShape() instanceof IRoundedRectangleFigure) {
+			// The figure
+			IRoundedRectangleFigure roundedRectangleFigure = (IRoundedRectangleFigure) getPrimaryShape();
+			// get the CSS value of isOval
+			BooleanValueStyle isOvalValue = (BooleanValueStyle) ((View) getModel()).getNamedStyle(NotationPackage.eINSTANCE.getBooleanValueStyle(), IS_OVAL);
 			boolean isOval;
-			if(isOvalValue == null) {
+			if (isOvalValue == null) {
 				isOval = getDefaultIsOvalValue();
 			} else {
 				isOval = isOvalValue.isBooleanValue();
 			}
-			//Set isOval
+			// Set isOval
 			roundedRectangleFigure.setOval(isOval);
 		}
 	}

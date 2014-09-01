@@ -83,12 +83,12 @@ public class EnumerationLiteralCreateCommand extends EditElementCommand {
 		ModelAddData data = PolicyChecker.getCurrent().getChildAddData(diagram, target, newElement);
 		if (data.isPermitted()) {
 			if (data.isPathDefined()) {
-				if (!data.execute(target, newElement)) {
+				if (!data.execute(target, newElement))
 					return CommandResult.newErrorCommandResult("Failed to follow the policy-specified for the insertion of the new element");
-				}
 			} else {
 				Enumeration qualifiedTarget = (Enumeration) target;
-				qualifiedTarget.getOwnedLiterals().add(newElement);
+				qualifiedTarget.getOwnedLiterals()
+						.add(newElement);
 			}
 		} else {
 			return CommandResult.newErrorCommandResult("The active policy restricts the addition of this element");

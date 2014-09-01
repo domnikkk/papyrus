@@ -63,10 +63,10 @@ public class ExtensionReorientCommand extends EditElementCommand {
 		if (false == getElementToEdit() instanceof Extension) {
 			return false;
 		}
-		if (reorientDirection == ReorientRequest.REORIENT_SOURCE) {
+		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
 			return canReorientSource();
 		}
-		if (reorientDirection == ReorientRequest.REORIENT_TARGET) {
+		if (reorientDirection == ReorientRelationshipRequest.REORIENT_TARGET) {
 			return canReorientTarget();
 		}
 		return false;
@@ -94,10 +94,12 @@ public class ExtensionReorientCommand extends EditElementCommand {
 		if (!(oldEnd instanceof Class && newEnd instanceof Class)) {
 			return false;
 		}
-		if (getLink().getOwnedEnds().size() != 1) {
+		if (getLink().getOwnedEnds()
+				.size() != 1) {
 			return false;
 		}
-		Property source = getLink().getOwnedEnds().get(0);
+		Property source = (Property) getLink().getOwnedEnds()
+				.get(0);
 		if (!(getLink().eContainer() instanceof Package)) {
 			return false;
 		}
@@ -113,10 +115,10 @@ public class ExtensionReorientCommand extends EditElementCommand {
 		if (!canExecute()) {
 			throw new ExecutionException("Invalid arguments in reorient link command"); //$NON-NLS-1$
 		}
-		if (reorientDirection == ReorientRequest.REORIENT_SOURCE) {
+		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
 			return reorientSource();
 		}
-		if (reorientDirection == ReorientRequest.REORIENT_TARGET) {
+		if (reorientDirection == ReorientRelationshipRequest.REORIENT_TARGET) {
 			return reorientTarget();
 		}
 		throw new IllegalStateException();
@@ -126,8 +128,10 @@ public class ExtensionReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected CommandResult reorientSource() throws ExecutionException {
-		getLink().getOwnedEnds().remove(getOldSource());
-		getLink().getOwnedEnds().add(getNewSource());
+		getLink().getOwnedEnds()
+				.remove(getOldSource());
+		getLink().getOwnedEnds()
+				.add(getNewSource());
 		return CommandResult.newOKCommandResult(getLink());
 	}
 

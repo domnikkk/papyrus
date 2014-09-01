@@ -92,9 +92,14 @@ public class ElementImportCreateCommand extends EditElementCommand {
 			throw new ExecutionException("Invalid arguments in create link command"); //$NON-NLS-1$
 		}
 		ElementImport newElement = UMLFactory.eINSTANCE.createElementImport();
-		getContainer().getElementImports().add(newElement);
-		newElement.setImportingNamespace(getSource());
-		newElement.setImportedElement(getTarget());
+		getContainer().getElementImports()
+				.add(newElement);
+		newElement.setImportingNamespace(
+				getSource()
+				);
+		newElement.setImportedElement(
+				getTarget()
+				);
 		ElementInitializers.getInstance().init_ElementImport_1064(newElement);
 		doConfigure(newElement, monitor, info);
 		((CreateElementRequest) getRequest()).setNewElement(newElement);

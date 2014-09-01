@@ -62,10 +62,10 @@ public class AssociationBranchReorientCommand extends EditElementCommand {
 		if (false == getElementToEdit() instanceof Association) {
 			return false;
 		}
-		if (reorientDirection == ReorientRequest.REORIENT_SOURCE) {
+		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
 			return canReorientSource();
 		}
-		if (reorientDirection == ReorientRequest.REORIENT_TARGET) {
+		if (reorientDirection == ReorientRelationshipRequest.REORIENT_TARGET) {
 			return canReorientTarget();
 		}
 		return false;
@@ -78,10 +78,12 @@ public class AssociationBranchReorientCommand extends EditElementCommand {
 		if (!(oldEnd instanceof Type && newEnd instanceof Type)) {
 			return false;
 		}
-		if (getLink().getEndTypes().size() != 1) {
+		if (getLink().getEndTypes()
+				.size() != 1) {
 			return false;
 		}
-		Type target = getLink().getEndTypes().get(0);
+		Type target = (Type) getLink().getEndTypes()
+				.get(0);
 		if (!(getLink().eContainer() instanceof Package)) {
 			return false;
 		}
@@ -96,10 +98,12 @@ public class AssociationBranchReorientCommand extends EditElementCommand {
 		if (!(oldEnd instanceof Type && newEnd instanceof Type)) {
 			return false;
 		}
-		if (getLink().getEndTypes().size() != 1) {
+		if (getLink().getEndTypes()
+				.size() != 1) {
 			return false;
 		}
-		Type source = getLink().getEndTypes().get(0);
+		Type source = (Type) getLink().getEndTypes()
+				.get(0);
 		if (!(getLink().eContainer() instanceof Package)) {
 			return false;
 		}
@@ -115,10 +119,10 @@ public class AssociationBranchReorientCommand extends EditElementCommand {
 		if (!canExecute()) {
 			throw new ExecutionException("Invalid arguments in reorient link command"); //$NON-NLS-1$
 		}
-		if (reorientDirection == ReorientRequest.REORIENT_SOURCE) {
+		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
 			return reorientSource();
 		}
-		if (reorientDirection == ReorientRequest.REORIENT_TARGET) {
+		if (reorientDirection == ReorientRelationshipRequest.REORIENT_TARGET) {
 			return reorientTarget();
 		}
 		throw new IllegalStateException();

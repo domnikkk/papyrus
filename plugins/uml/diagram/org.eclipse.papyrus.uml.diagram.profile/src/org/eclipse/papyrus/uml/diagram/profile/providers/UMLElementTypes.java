@@ -393,7 +393,7 @@ public class UMLElementTypes {
 			elements.put(ConstraintConstrainedElement_4014, UMLPackage.eINSTANCE.getConstraint_ConstrainedElement());
 			elements.put(ConstraintContext_8500, UMLPackage.eINSTANCE.getConstraint_Context());
 		}
-		return elements.get(type);
+		return (ENamedElement) elements.get(type);
 	}
 
 	/**

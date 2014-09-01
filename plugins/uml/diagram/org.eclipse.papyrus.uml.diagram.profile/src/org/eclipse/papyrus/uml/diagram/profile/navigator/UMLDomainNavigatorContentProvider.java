@@ -26,6 +26,7 @@ import org.eclipse.emf.edit.ui.provider.AdapterFactoryContentProvider;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.workspace.WorkspaceEditingDomainFactory;
 import org.eclipse.emf.workspace.util.WorkspaceSynchronizer;
+import org.eclipse.gmf.runtime.emf.core.GMFEditingDomainFactory;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.papyrus.uml.diagram.profile.part.UMLDiagramEditorPlugin;
 import org.eclipse.ui.IMemento;
@@ -72,12 +73,11 @@ public class UMLDomainNavigatorContentProvider implements ICommonContentProvider
 	 */
 	public UMLDomainNavigatorContentProvider() {
 		myAdapterFctoryContentProvier = new AdapterFactoryContentProvider(UMLDiagramEditorPlugin.getInstance().getItemProvidersAdapterFactory());
-		TransactionalEditingDomain editingDomain = WorkspaceEditingDomainFactory.INSTANCE.createEditingDomain();
+		TransactionalEditingDomain editingDomain = GMFEditingDomainFactory.INSTANCE.createEditingDomain();
 		myEditingDomain = (AdapterFactoryEditingDomain) editingDomain;
 		@SuppressWarnings("serial")
 		Map<Resource, Boolean> map = new HashMap<Resource, Boolean>() {
 
-			@Override
 			public Boolean get(java.lang.Object key) {
 				if (!containsKey(key)) {
 					if (key instanceof Resource) {
@@ -103,7 +103,7 @@ public class UMLDomainNavigatorContentProvider implements ICommonContentProvider
 
 			public boolean handleResourceChanged(final Resource resource) {
 				for (Iterator<Resource> it = myEditingDomain.getResourceSet().getResources().iterator(); it.hasNext();) {
-					Resource nextResource = it.next();
+					Resource nextResource = (Resource) it.next();
 					nextResource.unload();
 				}
 				if (myViewer != null) {
@@ -114,7 +114,7 @@ public class UMLDomainNavigatorContentProvider implements ICommonContentProvider
 
 			public boolean handleResourceDeleted(Resource resource) {
 				for (Iterator<Resource> it = myEditingDomain.getResourceSet().getResources().iterator(); it.hasNext();) {
-					Resource nextResource = it.next();
+					Resource nextResource = (Resource) it.next();
 					nextResource.unload();
 				}
 				if (myViewer != null) {
@@ -125,7 +125,7 @@ public class UMLDomainNavigatorContentProvider implements ICommonContentProvider
 
 			public boolean handleResourceMoved(Resource resource, final URI newURI) {
 				for (Iterator<Resource> it = myEditingDomain.getResourceSet().getResources().iterator(); it.hasNext();) {
-					Resource nextResource = it.next();
+					Resource nextResource = (Resource) it.next();
 					nextResource.unload();
 				}
 				if (myViewer != null) {
@@ -144,7 +144,7 @@ public class UMLDomainNavigatorContentProvider implements ICommonContentProvider
 		myWorkspaceSynchronizer = null;
 		myViewerRefreshRunnable = null;
 		for (Iterator<Resource> it = myEditingDomain.getResourceSet().getResources().iterator(); it.hasNext();) {
-			Resource resource = it.next();
+			Resource resource = (Resource) it.next();
 			resource.unload();
 		}
 		((TransactionalEditingDomain) myEditingDomain).dispose();
