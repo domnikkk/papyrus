@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2011 Mia-Software
+ * Copyright (c) 2011, 2014 Mia-Software, CEA, and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -17,6 +17,7 @@
  *     Gregoire Dupe (Mia-software) - Bug 420093 - [EFacet] The facetManger list doesn't deal with uniqueness
  *     Thomas Cicognani (Soft-Maint) - Bug 420193 - Listener on FacetManager
  *     Fabien Treguer (Soft-Maint) - Bug 423285 - [Table] FacetSets not stored in a resource cause model manager crashes
+ *     Christian W. Damus (CEA) - Bug 441857 - [Performances - Model Explorer] Severe performance problems for larger models
  *******************************************************************************/
 
 package org.eclipse.papyrus.emf.facet.efacet.core.internal;
@@ -31,12 +32,17 @@ import java.util.List;
 import java.util.ListIterator;
 import java.util.Set;
 
+import org.eclipse.emf.common.notify.Adapter;
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.util.BasicEList;
+import org.eclipse.emf.common.util.ECollections;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.ETypedElement;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.util.EContentAdapter;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.papyrus.emf.facet.efacet.core.FacetUtils;
 import org.eclipse.papyrus.emf.facet.efacet.core.IFacetManagerListener;
@@ -70,8 +76,36 @@ class FacetManagerContext implements List<FacetSet> {
 
 	// We cannot use the interface (i.e, List) instead because we need to use
 	// the methods addLast and addFirst
-	private LinkedList<FacetSet> managedFacetSets = new LinkedList<FacetSet>(); // NOPMD by gdupe on 15/03/12 10:36
+	private final EList<FacetSet> managedFacetSets = new BasicEList<FacetSet>() {
+		private static final long serialVersionUID = 1L;
+
+		@Override
+		protected void didRemove(int index, FacetSet oldObject) {
+			unconfigure(oldObject);
+		}
+
+		@Override
+		protected void didAdd(int index, FacetSet newObject) {
+			configure(newObject);
+		}
+
+		@Override
+		protected void didSet(int index, FacetSet newObject, FacetSet oldObject) {
+			unconfigure(oldObject);
+			configure(newObject);
+		}
+
+		@Override
+		protected void didChange() {
+			facetsUpdated();
+		}
+	};
 	private final transient FacetManager manager;
+
+	private transient Adapter facetAdapter; // Facets aren't serializable so no need for transient, but be consistent with the manager
+	transient long facetGeneration; // Likewise
+	private transient boolean updateEnabled = true;
+
 	/**
 	 * This field is used to avoid to have to many error messages in the log.
 	 */
@@ -123,31 +157,41 @@ class FacetManagerContext implements List<FacetSet> {
 	public <T extends DerivedTypedElement> T resolveOverrides(
 			final T baseFeature, final EObject eObject)
 			throws FacetManagerException {
-		try {
-			// -- Find master override
-			// If the baseFeature overrides another feature, then we follow the
-			// override chain to find the top feature
-			// The main idea behind this is that the baseFeature does not really
-			// represents a specific feature but a
-			// feature signature (as in java method invocation)
-			final T signatureFeature = FacetUtils
-					.getTopOverrideFeature(baseFeature);
 
-			// -- Find all candidates
-			// Get all Facet referenced by the FacetManager to get all features
-			// matching this signature
-			// Note : candidates are searched ine the order provided by the current
-			// FacetManager,
-			// so they are already ordered by the wanted priority
-			// XXX : Debug check that DerivedTypedElement only contained by Facet
-			final List<T> orderedCandidates = getOverrideCandidateFeatures(eObject,
-					signatureFeature);
+		final FacetCache cache = FacetCache.getInstance(eObject, this);
+		T result = cache.resolve(baseFeature);
 
-			// -- Find the most specific feature
-			return findMostSpecificFeature(orderedCandidates);
-		} catch (Exception e) {
-			throw new FacetManagerException(e);
+		if (result == null) {
+			try {
+				// -- Find master override
+				// If the baseFeature overrides another feature, then we follow the
+				// override chain to find the top feature
+				// The main idea behind this is that the baseFeature does not really
+				// represents a specific feature but a
+				// feature signature (as in java method invocation)
+				final T signatureFeature = FacetUtils
+						.getTopOverrideFeature(baseFeature);
+
+				// -- Find all candidates
+				// Get all Facet referenced by the FacetManager to get all features
+				// matching this signature
+				// Note : candidates are searched ine the order provided by the current
+				// FacetManager,
+				// so they are already ordered by the wanted priority
+				// XXX : Debug check that DerivedTypedElement only contained by Facet
+				final List<T> orderedCandidates = getOverrideCandidateFeatures(eObject,
+						signatureFeature);
+
+				// -- Find the most specific feature
+				result = findMostSpecificFeature(orderedCandidates);
+
+				cache.add(baseFeature, result);
+			} catch (Exception e) {
+				throw new FacetManagerException(e);
+			}
 		}
+
+		return result;
 	}
 
 	public List<FacetSet> getManagedFacetSets() {
@@ -155,25 +199,24 @@ class FacetManagerContext implements List<FacetSet> {
 	}
 
 	public void setManagedFacetSets(final List<FacetSet> facetSets) {
-		this.managedFacetSets = new LinkedList<FacetSet>(facetSets);
-		notifyListeners();
+		// Don't increment the generation and notify listeners multiple times in this composite operation
+		final boolean enableUpdate = updateEnabled;
+		updateEnabled = false;
+		try {
+			ECollections.setEList(this.managedFacetSets, facetSets);
+		} finally {
+			updateEnabled = enableUpdate;
+		}
+
+		facetsUpdated();
 	}
 
 	public void addBackManagedFacetSet(final FacetSet facetSet) {
-		// adding an already managed FacetSet again moves it to the right position
-		this.managedFacetSets.remove(facetSet);
-		this.managedFacetSets.addLast(facetSet);
-		notifyListeners();
+		add(facetSet);
 	}
 
 	public void addFrontManagedFacetSet(final FacetSet facetSet) {
-		if (this.managedFacetSets == null) {
-			this.managedFacetSets = new LinkedList<FacetSet>();
-		}
-		// adding an already managed FacetSet again moves it to the right position
-		this.managedFacetSets.remove(facetSet);
-		this.managedFacetSets.addFirst(facetSet);
-		notifyListeners();
+		add(0, facetSet);
 	}
 
 	/**
@@ -380,18 +423,11 @@ class FacetManagerContext implements List<FacetSet> {
 	}
 
 	public void removeFacetSet(final FacetSet facetSet) {
-		final boolean removed = this.managedFacetSets.remove(facetSet);
-		if (removed) {
-			notifyListeners();
-		}
+		this.managedFacetSets.remove(facetSet);
 	}
 
 	public void clear() {
-		final boolean empty = this.managedFacetSets.isEmpty();
-		if (!empty) {
-			this.managedFacetSets.clear();
-			notifyListeners();
-		}
+		this.managedFacetSets.clear();
 	}
 
 	public int size() {
@@ -420,22 +456,26 @@ class FacetManagerContext implements List<FacetSet> {
 
 	public boolean add(final FacetSet object) {
 		boolean result = false;
-		this.managedFacetSets.remove(object);
+
 		if (object != null) {
-			result = this.managedFacetSets.add(object);
+			// adding an already managed FacetSet again moves it to the last position
+			int existing = managedFacetSets.indexOf(object);
+			int last = size() - 1;
+			if (existing >= 0) {
+				if (existing != last) {
+					managedFacetSets.move(last, existing);
+					result = true;
+				}
+			} else {
+				result = managedFacetSets.add(object);
+			}
 		}
-		if (result) {
-			notifyListeners();
-		}
+
 		return result;
 	}
 
 	public boolean remove(final Object object) {
-		final boolean isRemoved = this.managedFacetSets.remove(object);
-		if (isRemoved) {
-			notifyListeners();
-		}
-		return isRemoved;
+		return this.managedFacetSets.remove(object);
 	}
 
 	public boolean containsAll(final Collection<?> collection) {
@@ -443,51 +483,58 @@ class FacetManagerContext implements List<FacetSet> {
 	}
 
 	public boolean addAll(final Collection<? extends FacetSet> collection) {
-		boolean result = false;
-		for (FacetSet facetSet : collection) {
-			this.managedFacetSets.remove(facetSet);
-			if (facetSet != null) {
-				final boolean addResult = this.managedFacetSets.add(facetSet);
-				result = result || addResult;
-			}
+		// Don't increment the generation and notify listeners multiple times in this composite operation
+		final boolean result;
+		final boolean enableUpdate = updateEnabled;
+		updateEnabled = false;
+		try {
+			final boolean removed = this.managedFacetSets.removeAll(collection);
+			final boolean added = this.managedFacetSets.addAll(collection);
+			result = removed || added;
+		} finally {
+			updateEnabled = enableUpdate;
 		}
+
 		if (result) {
-			notifyListeners();
+			facetsUpdated();
 		}
+
 		return result;
 	}
 
-	public boolean addAll(final int index,
-			final Collection<? extends FacetSet> collection) {
+	public boolean addAll(final int index, final Collection<? extends FacetSet> collection) {
 		final List<FacetSet> filtered = new ArrayList<FacetSet>();
 		for (FacetSet facetSet : collection) {
 			if (!filtered.contains(facetSet)) {
 				filtered.add(facetSet);
 			}
 		}
-		this.managedFacetSets.removeAll(filtered);
-		final boolean isAdded = this.managedFacetSets.addAll(index,
-				ListUtils.cleanList(filtered));
-		if (isAdded) {
-			notifyListeners();
+
+		// Don't increment the generation and notify listeners multiple times in this composite operation
+		final boolean result;
+		final boolean enableUpdate = updateEnabled;
+		updateEnabled = false;
+		try {
+			final boolean removed = this.managedFacetSets.removeAll(filtered);
+			final boolean added = this.managedFacetSets.addAll(index, ListUtils.cleanList(filtered));
+			result = removed || added;
+		} finally {
+			updateEnabled = enableUpdate;
 		}
-		return isAdded;
+
+		if (result) {
+			facetsUpdated();
+		}
+
+		return result;
 	}
 
 	public boolean removeAll(final Collection<?> collection) {
-		final boolean isRemoved = this.managedFacetSets.removeAll(collection);
-		if (isRemoved) {
-			notifyListeners();
-		}
-		return isRemoved;
+		return this.managedFacetSets.removeAll(collection);
 	}
 
 	public boolean retainAll(final Collection<?> collection) {
-		final boolean isRetained = this.managedFacetSets.retainAll(collection);
-		if (isRetained) {
-			notifyListeners();
-		}
-		return isRetained;
+		return this.managedFacetSets.retainAll(collection);
 	}
 
 	public FacetSet get(final int index) {
@@ -495,25 +542,24 @@ class FacetManagerContext implements List<FacetSet> {
 	}
 
 	public FacetSet set(final int index, final FacetSet element) {
-		final FacetSet oldElement = this.managedFacetSets.set(index, element);
-		if (!oldElement.equals(element)) {
-			notifyListeners();
-		}
-		return oldElement;
+		return this.managedFacetSets.set(index, element);
 	}
 
 	public void add(final int index, final FacetSet element) {
-		this.managedFacetSets.remove(element);
 		if (element != null) {
-			this.managedFacetSets.add(index, element);
-			notifyListeners();
+			int existing = managedFacetSets.indexOf(element);
+			if (existing >= 0) {
+				if (existing != index) {
+					managedFacetSets.move(index, existing);
+				}
+			} else {
+				managedFacetSets.add(index, element);
+			}
 		}
 	}
 
 	public FacetSet remove(final int index) {
-		final FacetSet oldElement = this.managedFacetSets.remove(index);
-		notifyListeners();
-		return oldElement;
+		return this.managedFacetSets.remove(index);
 	}
 
 	public int indexOf(final Object object) {
@@ -548,5 +594,47 @@ class FacetManagerContext implements List<FacetSet> {
 		for (IFacetManagerListener listener : this.listeners) {
 			listener.facetManagerChanged();
 		}
+	}
+
+	private void facetsUpdated() {
+		if (updateEnabled) {
+			incrementGeneration();
+			notifyListeners();
+		}
+	}
+
+	private void incrementGeneration() {
+		facetGeneration++;
+	}
+
+	private FacetSet configure(FacetSet facetSet) {
+		if ((facetSet != null) && !facetSet.eAdapters().contains(getFacetSetAdapter())) {
+			facetSet.eAdapters().add(getFacetSetAdapter());
+		}
+		return facetSet;
+	}
+
+	private <T> T unconfigure(T facetSet) {
+		if (facetSet instanceof FacetSet) {
+			((FacetSet) facetSet).eAdapters().remove(getFacetSetAdapter());
+		}
+		return facetSet;
+	}
+
+	private Adapter getFacetSetAdapter() {
+		if (facetAdapter == null) {
+			facetAdapter = new EContentAdapter() {
+				@Override
+				protected void selfAdapt(Notification notification) {
+					if (!notification.isTouch()) {
+						incrementGeneration();
+					}
+
+					super.selfAdapt(notification);
+				}
+			};
+		}
+
+		return facetAdapter;
 	}
 }
