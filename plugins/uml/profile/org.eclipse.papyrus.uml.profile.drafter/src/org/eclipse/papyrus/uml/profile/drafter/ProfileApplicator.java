@@ -42,9 +42,9 @@ import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.papyrus.infra.core.resource.ModelSet;
 import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 import org.eclipse.papyrus.uml.profile.Activator;
-import org.eclipse.papyrus.uml.profile.definition.PapyrusDefinitionAnnotation;
-import org.eclipse.papyrus.uml.profile.definition.ProfileRedefinition;
-import org.eclipse.papyrus.uml.profile.definition.Version;
+import org.eclipse.papyrus.uml.tools.profile.definition.PapyrusDefinitionAnnotation;
+import org.eclipse.papyrus.uml.tools.profile.definition.ProfileRedefinition;
+import org.eclipse.papyrus.uml.tools.profile.definition.Version;
 import org.eclipse.papyrus.uml.profile.drafter.commands.CreateProfileAndProfileResourceCommand;
 import org.eclipse.papyrus.uml.profile.drafter.exceptions.DraftProfileException;
 import org.eclipse.papyrus.uml.profile.drafter.exceptions.NotFoundException;
@@ -165,7 +165,7 @@ public class ProfileApplicator {
 		
 		// update metaclasses by adding missing metaclasses
 		if( ! updateArgs.getExtendedMetaclasses().isEmpty() ) {
-			isProfileModified = isProfileModified || updateStereotypeMetaclasses( stereotype, updateArgs.getExtendedMetaclasses());
+			isProfileModified = updateStereotypeMetaclasses( stereotype, updateArgs.getExtendedMetaclasses()) || isProfileModified  ;
 		}
 		
 		// Do we need to reapply the profile ?
