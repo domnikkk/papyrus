@@ -303,8 +303,8 @@
 		<module>main</module>
 	</modules>
 	<properties>
-		<tycho-version>0.20.0</tycho-version>
-		<tychoExtrasVersion>0.20.0</tychoExtrasVersion>
+		<tycho-version>0.21.0</tycho-version>
+		<tychoExtrasVersion>0.21.0</tychoExtrasVersion>
 		<findbugs.version>2.5.3</findbugs.version>
 	</properties>
 	<repositories>
@@ -542,6 +542,7 @@
 			<plugin>
 				<groupId>org.eclipse.tycho.extras</groupId>
 				<artifactId>tycho-pack200a-plugin</artifactId>
+				<version>${tychoExtrasVersion}</version>
 				<executions>
 					<execution>
 						<id>pack200-normalize</id>
