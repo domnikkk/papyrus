@@ -62,10 +62,10 @@ public class InformationFlowReorientCommand extends EditElementCommand {
 		if (false == getElementToEdit() instanceof InformationFlow) {
 			return false;
 		}
-		if (reorientDirection == ReorientRequest.REORIENT_SOURCE) {
+		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
 			return canReorientSource();
 		}
-		if (reorientDirection == ReorientRequest.REORIENT_TARGET) {
+		if (reorientDirection == ReorientRelationshipRequest.REORIENT_TARGET) {
 			return canReorientTarget();
 		}
 		return false;
@@ -78,10 +78,12 @@ public class InformationFlowReorientCommand extends EditElementCommand {
 		if (!(oldEnd instanceof NamedElement && newEnd instanceof NamedElement)) {
 			return false;
 		}
-		if (getLink().getInformationTargets().size() != 1) {
+		if (getLink().getInformationTargets()
+				.size() != 1) {
 			return false;
 		}
-		NamedElement target = getLink().getInformationTargets().get(0);
+		NamedElement target = (NamedElement) getLink().getInformationTargets()
+				.get(0);
 		if (!(getLink().eContainer() instanceof Package)) {
 			return false;
 		}
@@ -96,10 +98,12 @@ public class InformationFlowReorientCommand extends EditElementCommand {
 		if (!(oldEnd instanceof NamedElement && newEnd instanceof NamedElement)) {
 			return false;
 		}
-		if (getLink().getInformationSources().size() != 1) {
+		if (getLink().getInformationSources()
+				.size() != 1) {
 			return false;
 		}
-		NamedElement source = getLink().getInformationSources().get(0);
+		NamedElement source = (NamedElement) getLink().getInformationSources()
+				.get(0);
 		if (!(getLink().eContainer() instanceof Package)) {
 			return false;
 		}
@@ -115,10 +119,10 @@ public class InformationFlowReorientCommand extends EditElementCommand {
 		if (!canExecute()) {
 			throw new ExecutionException("Invalid arguments in reorient link command"); //$NON-NLS-1$
 		}
-		if (reorientDirection == ReorientRequest.REORIENT_SOURCE) {
+		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
 			return reorientSource();
 		}
-		if (reorientDirection == ReorientRequest.REORIENT_TARGET) {
+		if (reorientDirection == ReorientRelationshipRequest.REORIENT_TARGET) {
 			return reorientTarget();
 		}
 		throw new IllegalStateException();
@@ -128,8 +132,10 @@ public class InformationFlowReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected CommandResult reorientSource() throws ExecutionException {
-		getLink().getInformationSources().remove(getOldSource());
-		getLink().getInformationSources().add(getNewSource());
+		getLink().getInformationSources()
+				.remove(getOldSource());
+		getLink().getInformationSources()
+				.add(getNewSource());
 		return CommandResult.newOKCommandResult(getLink());
 	}
 
@@ -137,8 +143,10 @@ public class InformationFlowReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected CommandResult reorientTarget() throws ExecutionException {
-		getLink().getInformationTargets().remove(getOldTarget());
-		getLink().getInformationTargets().add(getNewTarget());
+		getLink().getInformationTargets()
+				.remove(getOldTarget());
+		getLink().getInformationTargets()
+				.add(getNewTarget());
 		return CommandResult.newOKCommandResult(getLink());
 	}
 

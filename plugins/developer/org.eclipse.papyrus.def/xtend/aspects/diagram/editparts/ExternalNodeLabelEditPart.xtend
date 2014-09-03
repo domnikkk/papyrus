@@ -32,7 +32,7 @@ import xpt.Common
 			«ENDFOR»
 		«««END: PapyrusGenCode
 	«ELSE»
-			extends org.eclipse.gmf.runtime.diagram.ui.editparts.LabelEditPart
+			extends org.eclipse.papyrus.infra.gmfdiag.common.editpart.PapyrusLabelEditPart
 		«ENDIF»
 	'''
 

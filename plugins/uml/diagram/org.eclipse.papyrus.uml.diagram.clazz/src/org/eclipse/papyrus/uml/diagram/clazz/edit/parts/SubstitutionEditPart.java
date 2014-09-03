@@ -59,10 +59,12 @@ public class SubstitutionEditPart extends UMLConnectionNodeEditPart implements I
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof AppliedStereotypeSubstitutionEditPart) {
-			((AppliedStereotypeSubstitutionEditPart) childEditPart).setLabel(getPrimaryShape().getAppliedStereotypeLabel());
+			((AppliedStereotypeSubstitutionEditPart) childEditPart).setLabel(
+					getPrimaryShape().getAppliedStereotypeLabel());
 		}
 		if (childEditPart instanceof SubstitutionNameEditPart) {
-			((SubstitutionNameEditPart) childEditPart).setLabel(getPrimaryShape().getNameLabel());
+			((SubstitutionNameEditPart) childEditPart).setLabel(
+					getPrimaryShape().getNameLabel());
 		}
 		return false;
 	}

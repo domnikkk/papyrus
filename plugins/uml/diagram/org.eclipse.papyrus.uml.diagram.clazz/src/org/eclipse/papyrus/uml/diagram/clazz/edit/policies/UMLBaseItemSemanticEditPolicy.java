@@ -371,6 +371,7 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		} else {
 			return getGEFWrapper(new MoveElementsCommand(req));
 		}
+
 	}
 
 	/**
@@ -452,105 +453,120 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 * @generated
 		 */
 		public boolean canCreateAssociationClass_4017(Package container, Type source, Type target) {
-			return canExistAssociationClass_4017(container, null, source, target);
+			return canExistAssociationClass_4017(
+					container, null, source, target);
 		}
 
 		/**
 		 * @generated
 		 */
 		public boolean canCreateAssociation_4001(Package container, Type source, Type target) {
-			return canExistAssociation_4001(container, null, source, target);
+			return canExistAssociation_4001(
+					container, null, source, target);
 		}
 
 		/**
 		 * @generated
 		 */
 		public boolean canCreateAssociation_4019(Package container, Type source, Type target) {
-			return canExistAssociation_4019(container, null, source, target);
+			return canExistAssociation_4019(
+					container, null, source, target);
 		}
 
 		/**
 		 * @generated
 		 */
 		public boolean canCreateGeneralization_4002(Classifier source, Classifier target) {
-			return canExistGeneralization_4002(null, source, target);
+			return canExistGeneralization_4002(
+					null, source, target);
 		}
 
 		/**
 		 * @generated
 		 */
 		public boolean canCreateInterfaceRealization_4003(BehavioredClassifier source, Interface target) {
-			return canExistInterfaceRealization_4003(null, source, target);
+			return canExistInterfaceRealization_4003(
+					null, source, target);
 		}
 
 		/**
 		 * @generated
 		 */
 		public boolean canCreateSubstitution_4004(Classifier container, Classifier source, Classifier target) {
-			return canExistSubstitution_4004(container, null, source, target);
+			return canExistSubstitution_4004(
+					container, null, source, target);
 		}
 
 		/**
 		 * @generated
 		 */
 		public boolean canCreateRealization_4005(Package container, NamedElement source, NamedElement target) {
-			return canExistRealization_4005(container, null, source, target);
+			return canExistRealization_4005(
+					container, null, source, target);
 		}
 
 		/**
 		 * @generated
 		 */
 		public boolean canCreateAbstraction_4006(Package container, NamedElement source, NamedElement target) {
-			return canExistAbstraction_4006(container, null, source, target);
+			return canExistAbstraction_4006(
+					container, null, source, target);
 		}
 
 		/**
 		 * @generated
 		 */
 		public boolean canCreateUsage_4007(Package container, NamedElement source, NamedElement target) {
-			return canExistUsage_4007(container, null, source, target);
+			return canExistUsage_4007(
+					container, null, source, target);
 		}
 
 		/**
 		 * @generated
 		 */
 		public boolean canCreateDependency_4008(Package container, NamedElement source, NamedElement target) {
-			return canExistDependency_4008(container, null, source, target);
+			return canExistDependency_4008(
+					container, null, source, target);
 		}
 
 		/**
 		 * @generated
 		 */
 		public boolean canCreateDependency_4018(Package container, NamedElement source, NamedElement target) {
-			return canExistDependency_4018(container, null, source, target);
+			return canExistDependency_4018(
+					container, null, source, target);
 		}
 
 		/**
 		 * @generated
 		 */
 		public boolean canCreateElementImport_4009(Namespace source, PackageableElement target) {
-			return canExistElementImport_4009(null, source, target);
+			return canExistElementImport_4009(
+					null, source, target);
 		}
 
 		/**
 		 * @generated
 		 */
 		public boolean canCreatePackageImport_4010(Namespace source, Package target) {
-			return canExistPackageImport_4010(null, source, target);
+			return canExistPackageImport_4010(
+					null, source, target);
 		}
 
 		/**
 		 * @generated
 		 */
 		public boolean canCreatePackageMerge_4011(Package container, Package source, Package target) {
-			return canExistPackageMerge_4011(container, null, source, target);
+			return canExistPackageMerge_4011(
+					container, null, source, target);
 		}
 
 		/**
 		 * @generated
 		 */
 		public boolean canCreateProfileApplication_4012(Package source, Profile target) {
-			return canExistProfileApplication_4012(null, source, target);
+			return canExistProfileApplication_4012(
+					null, source, target);
 		}
 
 		/**
@@ -558,11 +574,14 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 */
 		public boolean canCreateCommentAnnotatedElement_4013(Comment source, Element target) {
 			if (source != null) {
-				if (source.getAnnotatedElements().contains(target)) {
+				if (source.getAnnotatedElements()
+						.contains(target)) {
 					return false;
 				}
 			}
-			return canExistCommentAnnotatedElement_4013(source, target);
+
+			return canExistCommentAnnotatedElement_4013(
+					source, target);
 		}
 
 		/**
@@ -570,32 +589,38 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 */
 		public boolean canCreateConstraintConstrainedElement_4014(Constraint source, Element target) {
 			if (source != null) {
-				if (source.getConstrainedElements().contains(target)) {
+				if (source.getConstrainedElements()
+						.contains(target)) {
 					return false;
 				}
 			}
-			return canExistConstraintConstrainedElement_4014(source, target);
+
+			return canExistConstraintConstrainedElement_4014(
+					source, target);
 		}
 
 		/**
 		 * @generated
 		 */
 		public boolean canCreateTemplateBinding_4015(TemplateableElement container, TemplateableElement source, TemplateableElement target) {
-			return canExistTemplateBinding_4015(container, null, source, target);
+			return canExistTemplateBinding_4015(
+					container, null, source, target);
 		}
 
 		/**
 		 * @generated
 		 */
 		public boolean canCreateGeneralizationSet_4020(Package container, Generalization source, Generalization target) {
-			return canExistGeneralizationSet_4020(container, null, source, target);
+			return canExistGeneralizationSet_4020(
+					container, null, source, target);
 		}
 
 		/**
 		 * @generated
 		 */
 		public boolean canCreateInstanceSpecification_4021(Package container, Slot source, Slot target) {
-			return canExistInstanceSpecification_4021(container, null, source, target);
+			return canExistInstanceSpecification_4021(
+					container, null, source, target);
 		}
 
 		/**
@@ -617,11 +642,14 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 */
 		public boolean canCreateTimeObservationEvent_4024(TimeObservation source, NamedElement target) {
 			if (source != null) {
-				if (source.getEvent() != null) {
+				if (source.getEvent()
+					!= null) {
 					return false;
 				}
 			}
-			return canExistTimeObservationEvent_4024(source, target);
+
+			return canExistTimeObservationEvent_4024(
+					source, target);
 		}
 
 		/**
@@ -629,18 +657,25 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 */
 		public boolean canCreateDurationObservationEvent_4025(DurationObservation source, NamedElement target) {
 			if (source != null) {
-				if (source.getEvents().size() >= 2 || source.getEvents().contains(target)) {
+				if (source.getEvents()
+						.size() >= 2
+						||
+						source.getEvents()
+								.contains(target)) {
 					return false;
 				}
 			}
-			return canExistDurationObservationEvent_4025(source, target);
+
+			return canExistDurationObservationEvent_4025(
+					source, target);
 		}
 
 		/**
 		 * @generated
 		 */
 		public boolean canCreateInformationFlow_4026(Package container, NamedElement source, NamedElement target) {
-			return canExistInformationFlow_4026(container, null, source, target);
+			return canExistInformationFlow_4026(
+					container, null, source, target);
 		}
 
 		/**
@@ -648,14 +683,19 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 */
 		public boolean canCreateConstraintContext_8500(Constraint source, Namespace target) {
 			if (source != null) {
-				if (source.getContext() != null) {
+				if (source.getContext()
+					!= null) {
 					return false;
 				}
 			}
-			if (target != null && (target.getOwnedRules().contains(target))) {
+			if (target != null && (target.getOwnedRules()
+					.contains(target)
+					)) {
 				return false;
 			}
-			return canExistConstraintContext_8500(source, target);
+
+			return canExistConstraintContext_8500(
+					source, target);
 		}
 
 		/**
@@ -838,11 +878,23 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 */
 		public boolean canExistInformationFlow_4026(Package container, InformationFlow linkInstance, NamedElement source, NamedElement target) {
 			try {
-				// Information Flow source constraint
+				//Information Flow source constraint
 				if (source != null) {
-					if (!((source instanceof Actor) || (source instanceof Node) || (source instanceof UseCase) || (source instanceof Artifact) || (source instanceof Class) || (source instanceof Component) || (source instanceof Port)
-							|| (source instanceof Property) || (source instanceof Interface) || (source instanceof Package) || (source instanceof ActivityNode) || (source instanceof ActivityPartition) || (source instanceof InstanceSpecification))) {
+					if (!((source instanceof Actor)
+							|| (source instanceof Node)
+							|| (source instanceof UseCase)
+							|| (source instanceof Artifact)
+							|| (source instanceof Class)
+							|| (source instanceof Component)
+							|| (source instanceof Port)
+							|| (source instanceof Property)
+							|| (source instanceof Interface)
+							|| (source instanceof Package)
+							|| (source instanceof ActivityNode)
+							|| (source instanceof ActivityPartition) || (source instanceof InstanceSpecification))) {
+
 						return false;
+
 					}
 					if (source instanceof InstanceSpecification) {
 						EList<Classifier> classes = ((InstanceSpecification) source).getClassifiers();
@@ -853,11 +905,23 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 						}
 					}
 				}
-				// Information Flow target constraint
+				//Information Flow target constraint
 				if (target != null) {
-					if (!((target instanceof Actor) || (target instanceof Node) || (target instanceof UseCase) || (target instanceof Artifact) || (target instanceof Class) || (target instanceof Component) || (target instanceof Port)
-							|| (target instanceof Property) || (target instanceof Interface) || (target instanceof Package) || (target instanceof ActivityNode) || (target instanceof ActivityPartition) || (target instanceof InstanceSpecification))) {
+					if (!((target instanceof Actor)
+							|| (target instanceof Node)
+							|| (target instanceof UseCase)
+							|| (target instanceof Artifact)
+							|| (target instanceof Class)
+							|| (target instanceof Component)
+							|| (target instanceof Port)
+							|| (target instanceof Property)
+							|| (target instanceof Interface)
+							|| (target instanceof Package)
+							|| (target instanceof ActivityNode)
+							|| (target instanceof ActivityPartition) || (target instanceof InstanceSpecification))) {
+
 						return false;
+
 					}
 					if (target instanceof InstanceSpecification) {
 						EList<Classifier> classes = ((InstanceSpecification) target).getClassifiers();

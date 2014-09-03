@@ -13,15 +13,22 @@
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.common.editparts;
 
+import java.util.List;
+
+import org.eclipse.draw2d.IFigure;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.BooleanValueStyle;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.infra.emf.appearance.helper.AppearanceHelper;
+import org.eclipse.papyrus.infra.gmfdiag.common.editpart.IPapyrusEditPart;
 import org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.FollowSVGSymbolEditPolicy;
 import org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.NameDisplayEditPolicy;
+import org.eclipse.papyrus.infra.gmfdiag.common.figure.IPapyrusWrappingLabel;
 import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.SelectableBorderedNodeFigure;
+import org.eclipse.papyrus.infra.gmfdiag.common.model.NotationUtils;
+import org.eclipse.papyrus.infra.gmfdiag.common.utils.FigureUtils;
 import org.eclipse.papyrus.uml.diagram.common.figure.node.IPapyrusNodeNamedElementFigure;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Font;
@@ -42,8 +49,24 @@ public abstract class NamedElementEditPart extends UMLNodeEditPart implements IU
 	/**
 	 * CSS boolean property controlling whether tags should be displayed
 	 */
-	public static final String DISPLAY_TAGS = "displayTags";
+	public static final String DISPLAY_TAGS = "displayTags"; 
 
+	/**
+	 * Default Margin when not present in CSS
+	 */
+	static final int DEFAULT_MARGIN = 1;
+	
+	/**
+	 * CSS Integer property to define the horizontal Label Margin
+	 */
+	static final String X_MARGIN_PROPERTY = "xMarginLabel"; //$NON-NLS$
+	
+	/**
+	 * CSS Integer property to define the vertical Label Margin
+	 */
+	static final String Y_MARGIN_PROPERTY = "yMarginLabel"; //$NON-NLS$
+	
+	
 	/**
 	 * {@inheritDoc}
 	 */
@@ -75,6 +98,7 @@ public abstract class NamedElementEditPart extends UMLNodeEditPart implements IU
 		getNodeNamedElementFigure().setNameLabelIcon(AppearanceHelper.showElementIcon((View) getModel()));
 	}
 
+	
 	@Override
 	protected void refreshVisuals() {
 		super.refreshVisuals();
@@ -82,7 +106,45 @@ public abstract class NamedElementEditPart extends UMLNodeEditPart implements IU
 			refreshIconNamedLabel();
 			refreshFontColor();
 			refreshLabelDisplay();
+			refreshLabelMargin();
 		}
+
+	}
+
+	
+
+	/**
+	 * Refresh margin of named element children labels
+	 * <ul>
+	 * <li> Get Css values </li>
+	 * <li> Get all the children figure </li>
+	 * <li> If the child is a label then apply the margin </li>
+	 * </ul>
+	 */
+	private void refreshLabelMargin() {
+		IFigure figure = null;
+
+		int horizontalMargin = DEFAULT_MARGIN;
+		int verticalMargin= DEFAULT_MARGIN;
+
+		Object model = this.getModel();
+
+		if (model instanceof View) {
+			horizontalMargin = NotationUtils.getIntValue((View)model, X_MARGIN_PROPERTY, DEFAULT_MARGIN);
+			verticalMargin = NotationUtils.getIntValue((View)model, Y_MARGIN_PROPERTY, DEFAULT_MARGIN);
+		}
+
+		if (this instanceof IPapyrusEditPart){
+			figure = ((IPapyrusEditPart) this).getPrimaryShape();
+			List<IPapyrusWrappingLabel> labelChildFigureList = FigureUtils.findChildFigureInstances(figure, IPapyrusWrappingLabel.class);
+
+			for (IPapyrusWrappingLabel label : labelChildFigureList){
+				if (label != null){
+					label.setMarginLabel(horizontalMargin, verticalMargin);
+				}
+			}
+		}
+
 
 	}
 

@@ -61,7 +61,7 @@ public class UMLVisualIDRegistry {
 		while (view != diagram) {
 			EAnnotation annotation = view.getEAnnotation("Shortcut"); //$NON-NLS-1$
 			if (annotation != null) {
-				return annotation.getDetails().get("modelID"); //$NON-NLS-1$
+				return (String) annotation.getDetails().get("modelID"); //$NON-NLS-1$
 			}
 			view = (View) view.eContainer();
 		}
@@ -5753,7 +5753,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isProperty_3070(View containerView, Property domainElement) {
-		// Property / CollaborationRole constraint
+		// Property / CollaborationRole constraint		
 		// Restriction for the case where domainElement owner is a Collaboration
 		// If the domainElement is not referenced as one of its owner role
 		// then it should be considered as a Property creation on Collaboration,
@@ -5765,6 +5765,7 @@ public class UMLVisualIDRegistry {
 				return false;
 			}
 		}
+
 		// General case : no restriction
 		return true;
 	}
@@ -5802,7 +5803,7 @@ public class UMLVisualIDRegistry {
 	 */
 	public static boolean checkNodeVisualID(View containerView, EObject domainElement, int candidate) {
 		if (candidate == -1) {
-			// unrecognized id is always bad
+			//unrecognized id is always bad
 			return false;
 		}
 		int basic = getNodeVisualID(containerView, domainElement);
@@ -5927,7 +5928,6 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	public static final DiagramStructure TYPED_INSTANCE = new DiagramStructure() {
-
 		/**
 		 * @generated
 		 */

@@ -46,7 +46,7 @@ public class RoleBindingEditPart extends UMLConnectionNodeEditPart implements IT
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new RoleBindingItemSemanticEditPolicy());
-		installEditPolicy(AppliedStereotypeLabelDisplayEditPolicy.STEREOTYPE_LABEL_POLICY, new AppliedStereotypeLinkLabelDisplayEditPolicy());
+		installEditPolicy(AppliedStereotypeLinkLabelDisplayEditPolicy.STEREOTYPE_LABEL_POLICY, new AppliedStereotypeLinkLabelDisplayEditPolicy());
 	}
 
 	/**
@@ -54,10 +54,12 @@ public class RoleBindingEditPart extends UMLConnectionNodeEditPart implements IT
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof RoleBindingRoleNameEditPart) {
-			((RoleBindingRoleNameEditPart) childEditPart).setLabel(getPrimaryShape().getRoleLabel());
+			((RoleBindingRoleNameEditPart) childEditPart).setLabel(
+					getPrimaryShape().getRoleLabel());
 		}
 		if (childEditPart instanceof RoleBindingAppliedStereotypeEditPart) {
-			((RoleBindingAppliedStereotypeEditPart) childEditPart).setLabel(getPrimaryShape().getAppliedStereotypeLabel());
+			((RoleBindingAppliedStereotypeEditPart) childEditPart).setLabel(
+					getPrimaryShape().getAppliedStereotypeLabel());
 		}
 		return false;
 	}

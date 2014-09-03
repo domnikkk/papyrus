@@ -13,11 +13,18 @@
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.common.editparts;
 
+import java.util.List;
+
+import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Label;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.BorderedBorderItemEditPart;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.infra.emf.appearance.helper.NameLabelIconHelper;
+import org.eclipse.papyrus.infra.gmfdiag.common.editpart.IPapyrusEditPart;
+import org.eclipse.papyrus.infra.gmfdiag.common.figure.IPapyrusWrappingLabel;
+import org.eclipse.papyrus.infra.gmfdiag.common.model.NotationUtils;
+import org.eclipse.papyrus.infra.gmfdiag.common.utils.FigureUtils;
 import org.eclipse.papyrus.uml.diagram.common.figure.node.IPapyrusNodeNamedElementFigure;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Font;
@@ -81,7 +88,50 @@ public abstract class BorderNamedElementEditPart extends BorderUMLNodeEditPart i
 			refreshIconNamedLabel();
 			refreshFontColor();
 		}
+		refreshLabelMargin();
 		refreshBounds();
+	}
+	
+	static final int DEFAULT_MARGIN = 10;
+	static final String X_MARGIN_PROPERTY = "xMarginLabel"; 
+	static final String Y_MARGIN_PROPERTY = "yMarginLabel";
+
+	/**
+	 * Refresh margin of bordered named element children labels
+	 * <ul>
+	 * <li> Get Css values </li>
+	 * <li> Get all the children figure </li>
+	 * <li> If the child is a label then apply the margin </li>
+	 * </ul>
+	 */
+	private void refreshLabelMargin() {
+		IFigure figure = null;
+
+		int horizontalMargin = DEFAULT_MARGIN;
+		int verticalMargin= DEFAULT_MARGIN;
+
+		Object model = this.getModel();
+
+
+		// Get notation Margin values (from CSS)
+		if (model instanceof View) {
+			horizontalMargin = NotationUtils.getIntValue((View)model, X_MARGIN_PROPERTY, DEFAULT_MARGIN);
+			verticalMargin = NotationUtils.getIntValue((View)model, Y_MARGIN_PROPERTY, DEFAULT_MARGIN);
+		}
+
+		// Get all children figures of the Edit Part and set margin according to the retrieve values
+		if (this instanceof IPapyrusEditPart){
+			figure = ((IPapyrusEditPart) this).getPrimaryShape();
+			List<IPapyrusWrappingLabel> labelChildFigureList = FigureUtils.findChildFigureInstances(figure, IPapyrusWrappingLabel.class);
+
+			for (IPapyrusWrappingLabel label : labelChildFigureList){
+				if (label != null){
+					label.setMarginLabel(horizontalMargin, verticalMargin);
+				}
+			}
+		}
+
+
 	}
 
 	/**

@@ -74,6 +74,7 @@ public class UMLNavigatorLinkHelper implements ILinkHelper {
 		if (false == aSelection.getFirstElement() instanceof UMLAbstractNavigatorItem) {
 			return;
 		}
+
 		UMLAbstractNavigatorItem abstractNavigatorItem = (UMLAbstractNavigatorItem) aSelection.getFirstElement();
 		View navigatorView = null;
 		if (abstractNavigatorItem instanceof UMLNavigatorItem) {

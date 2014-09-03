@@ -7920,7 +7920,8 @@
     </diagram>
     <plugin
         iD="org.eclipse.papyrus.uml.diagram.clazz"
-        name="PapyrusUMLClassDiagram"/>
+        name="PapyrusUMLClassDiagram"
+        version="1.0.1.qualifier"/>
     <editor/>
     <navigator/>
     <diagramUpdater/>

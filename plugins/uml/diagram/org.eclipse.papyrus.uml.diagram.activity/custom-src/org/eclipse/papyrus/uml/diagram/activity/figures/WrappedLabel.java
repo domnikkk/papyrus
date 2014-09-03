@@ -15,7 +15,7 @@ package org.eclipse.papyrus.uml.diagram.activity.figures;
 
 import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
-import org.eclipse.papyrus.uml.diagram.common.figure.node.PapyrusWrappingLabel;
+import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.PapyrusWrappingLabel;
 
 /**
  * This class is a {@link WrappingLabel}, which default behavior is set

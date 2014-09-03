@@ -10,18 +10,22 @@
  * Contributors:
  *   Atos Origin - Initial API and implementation
  *   Arthur Daussy - Bug 354622 - [ActivityDiagram] Object Flows selection prevent selecting other close elements.
+ *   Céline Janssens (ALL4TEC) celine.janssens@all4tec.net - Bug 440230 - Margin Label
  *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.gmfdiag.common.figure.node;
 
+import org.eclipse.draw2d.MarginBorder;
+import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
+import org.eclipse.papyrus.infra.gmfdiag.common.figure.IPapyrusWrappingLabel;
 
 /**
  * This correct the bug where invisible label can be selected
  *
  * @author arthur daussy
  */
-public class PapyrusWrappingLabel extends WrappingLabel {
+public class PapyrusWrappingLabel extends WrappingLabel implements IPapyrusWrappingLabel{
 
 	/**
 	 * Bug 354622 - [ActivityDiagram] Object Flows selection prevent selecting other close elements.
@@ -43,5 +47,23 @@ public class PapyrusWrappingLabel extends WrappingLabel {
 		}
 		return false;
 	}
+
+	/**
+	 * @see org.eclipse.papyrus.infra.gmfdiag.common.figure.IPapyrusWrappingLabel#setMarginLabel(int, int)
+	 *
+	 * @param xMargin Horizontal margin
+	 * @param yMargin Vertical margin
+	 */
+	@Override
+	public void setMarginLabel(int xMargin, int yMargin) {
+
+		MarginBorder mb = new MarginBorder(xMargin, yMargin, xMargin, yMargin);
+		this.setBorder(mb);
+		
+		
+		
+		
+	}
+
 
 }

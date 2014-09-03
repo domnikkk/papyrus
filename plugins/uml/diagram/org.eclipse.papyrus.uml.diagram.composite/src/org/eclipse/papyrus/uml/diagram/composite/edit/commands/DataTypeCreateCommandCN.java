@@ -68,9 +68,12 @@ public class DataTypeCreateCommandCN extends EditElementCommand {
 	 */
 	@Override
 	public boolean canExecute() {
+
 		EObject target = getElementToEdit();
 		ModelAddData data = PolicyChecker.getCurrent().getChildAddData(diagram, target.eClass(), UMLPackage.eINSTANCE.getDataType());
 		return data.isPermitted();
+
+
 	}
 
 	/**
@@ -78,23 +81,31 @@ public class DataTypeCreateCommandCN extends EditElementCommand {
 	 */
 	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+
 		DataType newElement = UMLFactory.eINSTANCE.createDataType();
+
 		EObject target = getElementToEdit();
 		ModelAddData data = PolicyChecker.getCurrent().getChildAddData(diagram, target, newElement);
 		if (data.isPermitted()) {
 			if (data.isPathDefined()) {
-				if (!data.execute(target, newElement)) {
+				if (!data.execute(target, newElement))
 					return CommandResult.newErrorCommandResult("Failed to follow the policy-specified for the insertion of the new element");
-				}
 			} else {
+
 				Class qualifiedTarget = (Class) target;
-				qualifiedTarget.getNestedClassifiers().add(newElement);
+				qualifiedTarget.getNestedClassifiers()
+						.add(newElement);
+
 			}
 		} else {
 			return CommandResult.newErrorCommandResult("The active policy restricts the addition of this element");
 		}
+
+
 		ElementInitializers.getInstance().init_DataType_3080(newElement);
+
 		doConfigure(newElement, monitor, info);
+
 		((CreateElementRequest) getRequest()).setNewElement(newElement);
 		return CommandResult.newOKCommandResult(newElement);
 	}
