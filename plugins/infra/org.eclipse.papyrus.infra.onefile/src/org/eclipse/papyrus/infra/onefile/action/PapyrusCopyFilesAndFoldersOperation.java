@@ -15,7 +15,9 @@
 package org.eclipse.papyrus.infra.onefile.action;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
@@ -29,8 +31,11 @@ import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.papyrus.infra.core.resource.ModelMultiException;
 import org.eclipse.papyrus.infra.core.resource.ModelSet;
 import org.eclipse.papyrus.infra.core.resource.sasheditor.DiModel;
+import org.eclipse.papyrus.infra.core.resource.sasheditor.SashModel;
+import org.eclipse.papyrus.infra.core.resource.sasheditor.SashModelUtils;
 import org.eclipse.papyrus.infra.core.utils.DiResourceSet;
 import org.eclipse.papyrus.infra.emf.resource.DependencyManagementHelper;
 import org.eclipse.papyrus.infra.emf.resource.MoveFileURIReplacementStrategy;
@@ -61,7 +66,7 @@ public class PapyrusCopyFilesAndFoldersOperation extends CopyFilesAndFoldersOper
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see org.eclipse.papyrus.infra.onefile.action.CopyFilesAndFoldersOperation#performCopyWithAutoRename(org.eclipse.core.resources.IResource[],
 	 * org.eclipse.core.runtime.IPath, org.eclipse.core.runtime.IProgressMonitor)
 	 */
@@ -109,7 +114,7 @@ public class PapyrusCopyFilesAndFoldersOperation extends CopyFilesAndFoldersOper
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see org.eclipse.papyrus.infra.onefile.action.CopyFilesAndFoldersOperation#performCopy(org.eclipse.core.resources.IResource[],
 	 * org.eclipse.core.runtime.IPath, org.eclipse.core.runtime.IProgressMonitor)
 	 */
@@ -129,7 +134,7 @@ public class PapyrusCopyFilesAndFoldersOperation extends CopyFilesAndFoldersOper
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see org.eclipse.papyrus.infra.onefile.action.CopyFilesAndFoldersOperation#copyResources(org.eclipse.core.resources.IResource[],
 	 * org.eclipse.core.resources.IContainer)
 	 */
@@ -138,11 +143,13 @@ public class PapyrusCopyFilesAndFoldersOperation extends CopyFilesAndFoldersOper
 	public IResource[] copyResources(IResource[] resources, IContainer destination) {
 		IResource[] copyResources = super.copyResources(resources, destination);
 		try {
-			ModelSet modelSet = initModelSet(copyResources);
+			List<ModelSet> modelSetList = initModelSet(copyResources);
 			Map<URI, URI> constructInternalMapping = constructInternalMapping(copyResources);
 			for (int i = 0; i < resources.length; i++) {
-				if (checkResource(modelSet, resources[i])) {
-					restoreAllLink(modelSet, constructInternalMapping, copyResources[i], destinationPaths[i]);
+				for (ModelSet modelSet : modelSetList) {
+					if (checkResource(modelSet, resources[i])) {
+						restoreAllLink(modelSet, constructInternalMapping, copyResources[i], destinationPaths[i]);
+					}
 				}
 			}
 		} catch (IOException e) {
@@ -157,17 +164,23 @@ public class PapyrusCopyFilesAndFoldersOperation extends CopyFilesAndFoldersOper
 	 * @param resources
 	 * @return
 	 */
-	protected ModelSet initModelSet(IResource[] resources) {
-		ModelSet modelSet = new DiResourceSet();
+	protected List<ModelSet> initModelSet(IResource[] resources) {
+		List<ModelSet> modelSetList = new ArrayList<ModelSet>();
 		for (IResource iResource : resources) {
 			IPath fullPath = iResource.getFullPath();
 			if (DiModel.MODEL_FILE_EXTENSION.equals(fullPath.getFileExtension())) {
 				if (iResource instanceof IFile) {
-					modelSet.createsModels((IFile) iResource);
+					try {
+						ModelSet modelSet = new DiResourceSet();
+						modelSet.loadModels((IFile) iResource);
+						modelSetList.add(modelSet);
+					} catch (ModelMultiException e) {
+						Activator.log.error("It was not possible to load models", e); //$NON-NLS-1$
+					}
 				}
 			}
 		}
-		return modelSet;
+		return modelSetList;
 	}
 
 	/**
@@ -210,8 +223,27 @@ public class PapyrusCopyFilesAndFoldersOperation extends CopyFilesAndFoldersOper
 			DependencyManagementHelper.updateDependencies(oneInternalCopyMapping.getKey(), oneInternalCopyMapping.getValue(), resource);
 		}
 		resource.save(ResourceUtils.getSaveOptions());
-	}
+		IPath fullPath = copyResources.getFullPath();
+		Resource sashResource = null;
 
+		// restore links for sash
+		if (DiModel.MODEL_FILE_EXTENSION.equals(fullPath.getFileExtension())) {
+			SashModel sashModel = SashModelUtils.getSashModel(modelSet);
+			if (sashModel != null && !constructInternalMapping.containsKey(sashModel.getURI())) { // Kepler and earlier stored the sash model in the DI
+				sashResource = sashModel.getResource();
+				for (Entry<URI, URI> oneInternalCopyMapping : constructInternalMapping.entrySet()) {
+					DependencyManagementHelper.updateDependencies(oneInternalCopyMapping.getKey(), oneInternalCopyMapping.getValue(), sashResource);
+				}
+			}
+			if (sashResource != null) { // save new sash model
+				ModelSet tempModelSet = new DiResourceSet();
+				tempModelSet.createModels(uri);
+				URI newsashModelURI = SashModelUtils.getSashModel(tempModelSet).getURI();
+				sashResource.setURI(newsashModelURI);
+				sashResource.save(ResourceUtils.getSaveOptions());
+			}
+		}
+	}
 
 	/**
 	 * Construct an URI mapping from source to target
@@ -230,5 +262,4 @@ public class PapyrusCopyFilesAndFoldersOperation extends CopyFilesAndFoldersOper
 		}
 		return internalCopyMapping;
 	}
-
 }

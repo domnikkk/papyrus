@@ -60,6 +60,8 @@ import org.eclipse.papyrus.infra.core.resource.ModelSet;
 import org.eclipse.papyrus.infra.core.resource.ModelsReader;
 import org.eclipse.papyrus.infra.core.resource.ReadOnlyAxis;
 import org.eclipse.papyrus.infra.core.resource.sasheditor.DiModelUtils;
+import org.eclipse.papyrus.infra.core.resource.sasheditor.SashModel;
+import org.eclipse.papyrus.infra.core.resource.sasheditor.SashModelUtils;
 import org.eclipse.papyrus.infra.core.services.ServiceException;
 import org.eclipse.papyrus.infra.core.utils.EditorUtils;
 import org.eclipse.papyrus.infra.emf.readonly.ReadOnlyManager;
@@ -281,6 +283,27 @@ public class RenameModelChange extends Change {
 				}
 			}
 			pm.worked(5);
+
+
+			try {
+				SashModel oldSash = SashModelUtils.getSashModel(resourceSet);
+				URI oldSashURI = oldSash.getResourceURI();
+				Resource resource = oldSash.getResource();
+				resourceSet.loadModels(newFile);
+				SashModel sashModel = SashModelUtils.getSashModel(resourceSet);
+				URI stashNewFile = sashModel.getResourceURI();
+				resource.setURI(stashNewFile);
+				resource.save(ResourceUtils.getSaveOptions());
+				if(oldSash != null) { // delete old stash
+					try {
+						resourceSet.getURIConverter().delete(oldSashURI, null);
+					} catch (IOException e) {
+						log.error(Messages.bind(Messages.RenameModelChange_ErrorLoading, oldSashURI), e);
+					}
+				}
+			} catch (Exception e) {
+				log.error(e);
+			}
 
 			// Do not forget to unload all the resources to avoid memory leak
 			pm.subTask(Messages.RenameModelChange_Unloading);
