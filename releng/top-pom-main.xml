@@ -549,6 +549,32 @@
 		pack: produce a simple update site (Packed). Used for nightly or feature branch builds. Activation: SIGN=false
 	 -->
 	<profiles>
+		
+		<profile>
+			<id>defaultProfile</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.eclipse.tycho</groupId>
+						<artifactId>tycho-p2-plugin</artifactId>
+						<version>${tycho-version}</version>
+						<executions>
+							<execution>
+								<id>attach-p2-metadata</id>
+								<phase>package</phase>
+								<goals>
+									<goal>p2-metadata</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+		</profile>
+	
 		<profile>
 		  	<id>findBugs</id> <!-- Analysis profile. Takes +1h -->
 		  	<build>
@@ -565,6 +591,20 @@
 							<execution>
 								<goals>
 									<goal>check</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<groupId>org.eclipse.tycho</groupId>
+						<artifactId>tycho-p2-plugin</artifactId>
+						<version>${tycho-version}</version>
+						<executions>
+							<execution>
+								<id>attach-p2-metadata</id>
+								<phase>package</phase>
+								<goals>
+									<goal>p2-metadata</goal>
 								</goals>
 							</execution>
 						</executions>
