@@ -16,8 +16,6 @@ package org.eclipse.papyrus.uml.profile.drafter.ui.model;
 
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
-import java.util.ArrayList;
-import java.util.List;
 
 import org.eclipse.uml2.uml.Stereotype;
 
@@ -38,15 +36,15 @@ public class StereotypeURL {
 	final static String RESOURCE = "resourceName";
 	
 	
-	protected String qualifiedName;
-	protected List<String> profileNames = new ArrayList<String>();
-	protected String stereotypeName;
+	protected String qualifiedName = "";
+	protected String profileName = "";
+	protected String stereotypeName = "";
 	/**
 	 * The resource that should contains the Stereotype.
 	 * Not yet used
 	 * TODO : used this extra property
 	 */
-	protected String resourceName;
+	protected String resourceName = "";
 	
 	/**
 	 * Event manager
@@ -72,17 +70,6 @@ public class StereotypeURL {
 	}
 
 
-	/**
-	 * Constructor.
-	 *
-	 * @param profileNames
-	 * @param stereotypeName
-	 */
-	public StereotypeURL(List<String> profileNames, String stereotypeName) {
-		this.profileNames = profileNames;
-		this.stereotypeName = stereotypeName;
-		this.qualifiedName = computeQualifiedName();
-	}
 
 	/**
 	 * Constructor.
@@ -91,7 +78,7 @@ public class StereotypeURL {
 	 * @param stereotypeName
 	 */
 	public StereotypeURL(String profileName, String stereotypeName) {
-		this.profileNames.add(profileName);
+		this.profileName = profileName;
 		this.stereotypeName = stereotypeName;
 		this.qualifiedName = computeQualifiedName();
 	}
@@ -114,55 +101,50 @@ public class StereotypeURL {
 	 */
 	public void setQualifiedName(String qualifiedName) {
 		
+		if(qualifiedName == null) {
+			return;
+		}
+		
 		if(this.qualifiedName != null && this.qualifiedName.equals(qualifiedName)) {
 			// No change
 			return;
 		}
 		
-		if(qualifiedName == null ) {
-			clear();
-			return;
-		}
+		// Remember old values
+		String oldStereotypeName = stereotypeName;
+		String oldProfileName = profileName;
 		
 		// Parse the qualifiedName and set other names accordingly.
-		
-		String[] paths = qualifiedName.split("::");
-		// stereotype name = last segment
-		String oldStereotypeName = this.stereotypeName;
-		stereotypeName = paths[paths.length-1];
-		
-		// profile names = first segments
-		profileNames.clear();
-		for( int i=0; i<paths.length-1; i++) {
-			profileNames.add(paths[i]);
+		int index = qualifiedName.lastIndexOf("::");
+		if(index == -1) {
+			// no profile names
+			stereotypeName = qualifiedName;
+			profileName = "";
+		}
+		else {
+			stereotypeName = qualifiedName.substring(index+2);
+			profileName = qualifiedName.substring(0, index);
 		}
 		
-		this.qualifiedName = qualifiedName;
-		// Now, fire events
-		firePropertyChange(STEREOTYPE, oldStereotypeName, stereotypeName);
-		// TODO : improve this event ?
-		firePropertyChange(PROFILE_PATHS, null, profileNames); 
-		firePropertyChange(QUALIFIED_NAME, this.qualifiedName, this.qualifiedName = qualifiedName);
-	}
+		StereotypeURLChangeEvent ev = createStereotypeURLChangeEvent(this.qualifiedName, this.qualifiedName=computeQualifiedName());
+		ev.setStereotypeNameValues(oldStereotypeName, stereotypeName);
+		ev.setProfileNameValues(oldProfileName, profileName);
+		
+		qualifiedNameChanged(ev);
+		}
 
 	
 	/**
 	 * Clear this URL. All segments are set to null or empty.
 	 */
 	public void clear() {
-		if( qualifiedName != null) {
-			firePropertyChange(QUALIFIED_NAME, this.qualifiedName, this.qualifiedName = null);
-		}
 		
-		if(profileNames.size()>0) {
-			// TODO : improve this event ?
-			profileNames.clear();
-			firePropertyChange(PROFILE_PATHS, profileNames, profileNames); 
-		}
+		StereotypeURLChangeEvent ev = createStereotypeURLChangeEvent(qualifiedName, qualifiedName = "");
+		ev.setProfileNameValues(profileName, profileName= ""); 
+		ev.setStereotypeNameValues(stereotypeName, stereotypeName= ""); 
+		ev.setResourceNameValues(resourceName, resourceName= "");
 		
-		if(stereotypeName != null) {
-			firePropertyChange(STEREOTYPE, stereotypeName, stereotypeName=null);			
-		}
+		qualifiedNameChanged(ev);
 	}
 
 
@@ -178,66 +160,82 @@ public class StereotypeURL {
 	 * @param stereotypeName the stereotypeName to set
 	 */
 	public void setStereotypeName(String stereotypeName) {
+		
+		// StereotypeName should be set.
+		if(stereotypeName == null) {
+			return;
+		}
+		
 		if(this.stereotypeName != null && this.stereotypeName.equals(stereotypeName)) {
 			// No change
 			return;
 		}
 		
-		if(this.stereotypeName == null && stereotypeName == null) {
+		String oldStereotypeName = this.stereotypeName;
+		this.stereotypeName = stereotypeName;
+		
+		StereotypeURLChangeEvent ev = createStereotypeURLChangeEvent(qualifiedName, qualifiedName = computeQualifiedName());
+		ev.setStereotypeNameValues( oldStereotypeName, stereotypeName);
+		
+		qualifiedNameChanged(ev);
+	}
+
+
+	
+
+	/**
+	 * @return the profileNames
+	 */
+	public String getProfileName() {
+		return profileName;
+	}
+	
+	/**
+	 * @param profilePath The name of the profile to add to {@link #profileNames}.
+	 * @return the profileNames
+	 */
+	public void setProfileName(String profileName) {
+		// parameter should be set.
+		if(profileName == null) {
+			return;
+		}
+		
+		if(this.profileName != null && this.profileName.equals(profileName)) {
 			// No change
 			return;
 		}
 		
+		String oldProfileName = this.profileName;
+		this.profileName = profileName;
+
+		StereotypeURLChangeEvent ev = createStereotypeURLChangeEvent(qualifiedName, qualifiedName = computeQualifiedName());
+		ev.setProfileNameValues( oldProfileName, profileName);
 		
-		String oldStereotypeName = this.stereotypeName;
-		this.stereotypeName = stereotypeName;
-		String oldQualifiedName = qualifiedName;
-		qualifiedName = computeQualifiedName();
-		
-		// Now, fire events
-		firePropertyChange(STEREOTYPE, oldStereotypeName, stereotypeName);
-		firePropertyChange(QUALIFIED_NAME, oldQualifiedName, qualifiedName);
-	}
-
-
-	
-
-	/**
-	 * @return the profileNames
-	 */
-	public List<String> getProfileNames() {
-		return profileNames;
+		qualifiedNameChanged(ev);
 	}
 	
 	/**
-	 * @param profilePath The name of the profile to add to {@link #profileNames}.
-	 * @return the profileNames
+	 * Method called when the {@link #qualifiedName} property has changed. This method is called directly by methods
+	 * modifying the properties.
+	 * The provided parameter is the event that has been created and filled with appropriate values. It is ready to be fired.
+	 * 
+	 * 
+	 * @param event The event indicating the changes. This event is not yet fired. The method should fire the event.
+	 * 
 	 */
-	public void addProfilePath(String profilePath) {
-		
-		int index = profileNames.size();
-		String oldValue = null;
-		profileNames.add(profilePath);
-		
-		String oldQualifiedName = qualifiedName;
-		qualifiedName = computeQualifiedName();
-		
-		fireIndexedPropertyChange(PROFILE_PATHS, index, oldValue, profilePath);
-		firePropertyChange(QUALIFIED_NAME, oldQualifiedName, qualifiedName);
+	protected void qualifiedNameChanged( StereotypeURLChangeEvent event) {
+		changeSupport.firePropertyChange(event);
 	}
 	
 	/**
-	 * @param profilePath The name of the profile to add to {@link #profileNames}.
-	 * @return the profileNames
+	 * Create a new {@link StereotypeURLChangeEvent} initialized with provided values.
+	 * 
+	 * @param oldValue The old {@link #qualifiedName} value
+	 * @param newValue The new {@link #qualifiedName} value
+	 * @return
 	 */
-	public void setProfilePath(int index, String profilePath) {
-		String oldValue = profileNames.set(index, profilePath);
-		
-		String oldQualifiedName = qualifiedName;
-		qualifiedName = computeQualifiedName();
-		
-		fireIndexedPropertyChange(PROFILE_PATHS, index, oldValue, profilePath);
-		firePropertyChange(QUALIFIED_NAME, oldQualifiedName, qualifiedName);
+	protected StereotypeURLChangeEvent createStereotypeURLChangeEvent( Object oldValue, Object newValue) {
+		return new StereotypeURLChangeEvent(this,  oldValue, newValue);
 	}
 	
 	/**
@@ -250,20 +248,16 @@ public class StereotypeURL {
 	 */
 	public String computeQualifiedName() {
 		
-		StringBuffer buf = new StringBuffer();
+		StringBuilder buf = new StringBuilder();
 		
-		if( resourceName != null) {
+		if( resourceName != null && resourceName.length()>0) {
 			buf.append("url://").append(resourceName).append("/");
 		}
-		if( ! profileNames.isEmpty()) {
-			for( int i=0; i<profileNames.size()-1; i++) {
-				buf.append(profileNames.get(i)).append("::");
-			}
-			// Last segment without separator
-			buf.append(profileNames.get(profileNames.size()-1));
+		if( profileName != null && profileName.length()>0) {
+			buf.append(profileName);
 		}
 		
-		if( stereotypeName != null) {
+		if( stereotypeName != null && stereotypeName.length()>0) {
 			if(buf.length()>0 && buf.charAt(buf.length()-1)!='/' ) {
 				buf.append("::");
 			}

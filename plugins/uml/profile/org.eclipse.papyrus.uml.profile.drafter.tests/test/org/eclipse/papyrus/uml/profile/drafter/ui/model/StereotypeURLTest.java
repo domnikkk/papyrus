@@ -132,9 +132,8 @@ public class StereotypeURLTest {
 		assertNotNull("stereotype set", url.getStereotypeName());
 		assertNotNull("qualifiedName set", url.getQualifiedName());
 		assertEquals("stereotype set", stereotypeName, url.getStereotypeName());
+		assertEquals("paths", profileName, url.getProfileName());
 		assertEquals("qualifiedName set", qualifiedName, url.getQualifiedName());
-		assertEquals("path set", 1, url.getProfileNames().size());
-		assertEquals("paths", profileName, url.getProfileNames().get(0) );
 		
 	}
 
@@ -164,8 +163,9 @@ public class StereotypeURLTest {
 		
 		url.clear();
 		
-		assertNull("stereotype set", url.getStereotypeName());
-		assertNull("qualifiedName set", url.getQualifiedName());
+		assertEquals("qualifiedName reset", "",  url.getQualifiedName());
+		assertEquals("ProfileName reset", "",  url.getProfileName());
+		assertEquals("StereotypeName reset", "",  url.getStereotypeName());
 		
 	}
 
@@ -200,10 +200,10 @@ public class StereotypeURLTest {
 	}
 
 	/**
-	 * Test method for {@link org.eclipse.papyrus.uml.profile.drafter.ui.model.StereotypeURL#getProfileNames()}.
+	 * Test method for {@link org.eclipse.papyrus.uml.profile.drafter.ui.model.StereotypeURL#getProfileName()}.
 	 */
 	@Test
-	public void testGetProfileNames() {
+	public void testGetProfileName() {
 		String profile1 = "profile1";
 		String profile2 = "profile2";
 		String profile3 = "profile3";
@@ -218,68 +218,29 @@ public class StereotypeURLTest {
 		assertNotNull("qualifiedName set", url.getQualifiedName());
 		assertEquals("stereotype set", stereotypeName, url.getStereotypeName());
 		assertEquals("qualifiedName set", qualifiedName, url.getQualifiedName());
-		assertEquals("path set", 3, url.getProfileNames().size());
-		int index = 0;
-		assertEquals("paths", profile1, url.getProfileNames().get(index++) );
-		assertEquals("paths", profile2, url.getProfileNames().get(index++) );
-		assertEquals("paths", profile3, url.getProfileNames().get(index++) );
+		assertEquals("paths", profileNames, url.getProfileName() );
 	}
 
 	/**
-	 * Test method for {@link org.eclipse.papyrus.uml.profile.drafter.ui.model.StereotypeURL#addProfilePath(java.lang.String)}.
+	 * Test method for {@link org.eclipse.papyrus.uml.profile.drafter.ui.model.StereotypeURL#setProfileName(String)}.
 	 */
 	@Test
-	public void testAddProfilePath() {
-		String profile1 = "profile1";
-		String profile2 = "profile2";
-		String profile3 = "profile3";
-		String profileNames = profile1 + "::" + profile2 ;
+	public void testSetProfileName() {
+		String oldProfileName = "oldProfileName";
+		String newProfileName = "newProfileName";
 		String stereotypeName = "Town";
-		String qualifiedName = profileNames + "::" + stereotypeName;
-		String expectedQualifiedName = profileNames + "::" + profile3 + "::" + stereotypeName;
+		String qualifiedName = oldProfileName + "::" + stereotypeName;
+		String expectedQualifiedName = newProfileName + "::" + stereotypeName;
 		StereotypeURL url = new StereotypeURL();
 		
 		url.setQualifiedName(qualifiedName);
-		url.addProfilePath(profile3);
+		url.setProfileName(newProfileName);
 		
 		assertNotNull("stereotype set", url.getStereotypeName());
 		assertNotNull("qualifiedName set", url.getQualifiedName());
 		assertEquals("stereotype set", stereotypeName, url.getStereotypeName());
+		assertEquals("paths", newProfileName, url.getProfileName() );
 		assertEquals("qualifiedName set", expectedQualifiedName, url.getQualifiedName());
-		assertEquals("path set", 3, url.getProfileNames().size());
-		int index = 0;
-		assertEquals("paths", profile1, url.getProfileNames().get(index++) );
-		assertEquals("paths", profile2, url.getProfileNames().get(index++) );
-		assertEquals("paths", profile3, url.getProfileNames().get(index++) );
-	}
-
-	/**
-	 * Test method for {@link org.eclipse.papyrus.uml.profile.drafter.ui.model.StereotypeURL#setProfilePath(int, java.lang.String)}.
-	 */
-	@Test
-	public void testSetProfilePath() {
-		String profile1 = "profile1";
-		String profile2 = "profile2";
-		String profile3 = "profile3";
-		String profile4 = "profile4";
-		String profileNames = profile1 + "::" + profile2+ "::" + profile3 ;
-		String stereotypeName = "Town";
-		String qualifiedName = profileNames + "::" + stereotypeName;
-		String expectedQualifiedName = profile1 + "::" + profile2+ "::" + profile4 + "::" + stereotypeName;
-		StereotypeURL url = new StereotypeURL();
-		
-		url.setQualifiedName(qualifiedName);
-		url.setProfilePath(2, profile4);
-		
-		assertNotNull("stereotype set", url.getStereotypeName());
-		assertNotNull("qualifiedName set", url.getQualifiedName());
-		assertEquals("stereotype set", stereotypeName, url.getStereotypeName());
-		assertEquals("qualifiedName set", expectedQualifiedName, url.getQualifiedName());
-		assertEquals("path set", 3, url.getProfileNames().size());
-		int index = 0;
-		assertEquals("paths", profile1, url.getProfileNames().get(index++) );
-		assertEquals("paths", profile2, url.getProfileNames().get(index++) );
-		assertEquals("paths", profile4, url.getProfileNames().get(index++) );
 	}
 
 	/**
@@ -292,9 +253,11 @@ public class StereotypeURLTest {
 		String qualifiedName = profileName + "::" + stereotypeName;
 		StereotypeURL url = new StereotypeURL();
 		
-		url.setQualifiedName(qualifiedName);
+//		url.setQualifiedName(qualifiedName);
+		url.setProfileName(profileName);
+		url.setStereotypeName(stereotypeName);
 		
-		assertEquals("stereotype set", qualifiedName, url.computeQualifiedName());
+		assertEquals("qualifiedName computed correctly", qualifiedName, url.computeQualifiedName());
 	}
 
 	/**
