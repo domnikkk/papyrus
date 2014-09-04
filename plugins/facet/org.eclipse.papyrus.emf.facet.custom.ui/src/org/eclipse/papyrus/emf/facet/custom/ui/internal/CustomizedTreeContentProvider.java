@@ -11,6 +11,7 @@
  *    Gregoire Dupe (Mia-Software) - Bug 386387 - [CustomizedTreeContentProvider] The TreeElements are not preserved between two calls to getElements()
  *    Christian W. Damus (CEA) - bug 430700
  *    Christian W. Damus (CEA) - bug 440795
+ *    Christian W. Damus (CEA) - bug 441857
  *
  *******************************************************************************/
 package org.eclipse.papyrus.emf.facet.custom.ui.internal;
@@ -20,15 +21,14 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.IdentityHashMap;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
 import org.eclipse.emf.ecore.EAttribute;
-import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.ETypedElement;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.papyrus.emf.facet.custom.core.ICustomizationManager;
@@ -209,9 +209,17 @@ public class CustomizedTreeContentProvider implements ICustomizedTreeContentProv
 	}
 
 	public Object[] getChildren(final EObjectTreeElement treeElement) {
+		Set<EStructuralFeature> facetFeatures;
+		try {
+			facetFeatures = FacetUtils.getETypedElements(treeElement.getEObject(), EStructuralFeature.class, customManager.getFacetManager());
+		} catch (FacetManagerException e) {
+			facetFeatures = Collections.emptySet();
+			Logger.logError(e, Activator.getDefault());
+		}
+
 		final ArrayList<Object> children = new ArrayList<Object>();
-		children.addAll(createAttributes(treeElement));
-		children.addAll(createReferences(treeElement));
+		createAttributes(treeElement, facetFeatures, children);
+		createReferences(treeElement, facetFeatures, children);
 		return children.toArray();
 	}
 
@@ -364,67 +372,57 @@ public class CustomizedTreeContentProvider implements ICustomizedTreeContentProv
 
 
 
-	private Collection<? extends Object> createReferences(final EObjectTreeElement treeElement) {
+	private void createReferences(final EObjectTreeElement treeElement, Collection<EStructuralFeature> facetFeatures, Collection<Object> children) {
 		final EObject eObject = treeElement.getEObject();
-		final EClass eClass = eObject.eClass();
-		final IFacetManager facetManager = this.customManager.getFacetManager();
-		final List<EReference> allReferences = new ArrayList<EReference>();
-		allReferences.addAll(eClass.getEAllReferences());
-		try {
-			final Set<EReference> facetReferences = FacetUtils.getETypedElements(eObject, EReference.class, facetManager);
-			allReferences.addAll(facetReferences);
-		} catch (final FacetManagerException e) {
-			Logger.logError(e, Activator.getDefault());
+
+		for (EReference next : eObject.eClass().getEAllReferences()) {
+			createReference(treeElement, eObject, next, children);
 		}
+		for (EStructuralFeature next : facetFeatures) {
+			if (next instanceof EReference) {
+				createReference(treeElement, eObject, (EReference) next, children);
+			}
+		}
+	}
 
-		Collection<Object> result = new LinkedList<Object>();
-
-		for (EReference reference : allReferences) {
-			if (isVisible(eObject, reference)) {
-				if (collapseLink(eObject, reference)) {
-					if (reference.getUpperBound() != 1) {
-						result.addAll(getMultiValuedReferenceChildren(reference, eObject, treeElement));
-					} else {
-						Object child = getSingleValuedReferenceChild(reference, eObject, treeElement);
-						if (child != null) {
-							result.add(child);
-						}
-					}
+	private void createReference(EObjectTreeElement treeElement, EObject eObject, EReference eReference, Collection<Object> children) {
+		if (isVisible(eObject, eReference)) {
+			if (collapseLink(eObject, eReference)) {
+				if (eReference.getUpperBound() != 1) {
+					collectMultiValuedReferenceChildren(eReference, eObject, treeElement, children);
 				} else {
-					result.add(getEReferenceProxy(reference, treeElement));
+					Object child = getSingleValuedReferenceChild(eReference, eObject, treeElement);
+					if (child != null) {
+						children.add(child);
+					}
 				}
+			} else {
+				children.add(getEReferenceProxy(eReference, treeElement));
 			}
 		}
-
-		return result;
 	}
 
-	private Collection<? extends Object> createAttributes(final EObjectTreeElement treeElement) {
+	private void createAttributes(final EObjectTreeElement treeElement, Collection<EStructuralFeature> facetFeatures, Collection<? super TreeElement> children) {
 		final EObject eObject = treeElement.getEObject();
-		final EClass eClass = eObject.eClass();
-		final IFacetManager facetManager = this.customManager.getFacetManager();
-		final List<EAttribute> allAttributes = new ArrayList<EAttribute>();
-		allAttributes.addAll(eClass.getEAllAttributes());
-		try {
-			final Set<EAttribute> facetAttributes = FacetUtils.getETypedElements(eObject, EAttribute.class, facetManager);
-			allAttributes.addAll(facetAttributes);
-		} catch (final FacetManagerException e) {
-			Logger.logError(e, Activator.getDefault());
+
+		for (EAttribute next : eObject.eClass().getEAllAttributes()) {
+			createAttribute(treeElement, eObject, next, children);
 		}
-
-
-		List<TreeElement> result = new LinkedList<TreeElement>();
-		for (EAttribute eAttribute : allAttributes) {
-			if (isVisible(eObject, eAttribute)) {
-				TreeElement eAttributeTreeElement = getEAttributeProxy(eAttribute, treeElement);
-				if (eAttributeTreeElement != null) {
-					result.add(eAttributeTreeElement);
-				}
+		for (EStructuralFeature next : facetFeatures) {
+			if (next instanceof EAttribute) {
+				createAttribute(treeElement, eObject, (EAttribute) next, children);
 			}
 		}
-		return result;
 	}
 
+	private void createAttribute(EObjectTreeElement treeElement, EObject eObject, EAttribute eAttribute, Collection<? super TreeElement> children) {
+		if (isVisible(eObject, eAttribute)) {
+			TreeElement eAttributeTreeElement = getEAttributeProxy(eAttribute, treeElement);
+			if (eAttributeTreeElement != null) {
+				children.add(eAttributeTreeElement);
+			}
+		}
+	}
 
 
 	private EReferenceTreeElement createReferenceProxy(final EReference reference, final EObjectTreeElement parent) {
@@ -464,8 +462,7 @@ public class CustomizedTreeContentProvider implements ICustomizedTreeContentProv
 		return child;
 	}
 
-	private List<Object> getMultiValuedReferenceChildren(final EReference eReference, final EObject eObject, final TreeElement parent) {
-		final List<Object> children = new ArrayList<Object>();
+	private void collectMultiValuedReferenceChildren(final EReference eReference, final EObject eObject, final TreeElement parent, Collection<Object> children) {
 		try {
 			final IFacetManager facetManager = this.customManager.getFacetManager();
 			final List<Object> result = facetManager.getOrInvokeMultiValued(eObject, eReference, null);
@@ -478,7 +475,6 @@ public class CustomizedTreeContentProvider implements ICustomizedTreeContentProv
 		} catch (final FacetManagerException e) {
 			Logger.logError(e, Activator.getDefault());
 		}
-		return children;
 	}
 
 	protected EObjectTreeElement getEObjectProxy(final Object element, final TreeElement parent) {
