@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?><!--
+    Copyright (c) 2011-2014 Mia-Software, CEA LIST.
+    All rights reserved. This program and the accompanying materials
+    are made available under the terms of the Eclipse Public License v1.0
+    which accompanies this distribution, and is available at
+    http://www.eclipse.org/legal/epl-v10.html
+   
+    Contributors:
+        Nicolas Bros (Mia-Software) - initial API and implementation
+        Camille Letavernier (CEA LIST) - Reimplement with Eclipse Menu/Handlers
+ -->
+
+<plugin>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:org.eclipse.ui.popup.any?after=additions">
+         <command
+               commandId="org.eclipse.papyrus.releng.tools.updateRmap"
+               style="push">
+            <visibleWhen
+                  checkEnabled="false">
+                  <iterate
+                        operator="or">
+               <adapt
+                     type="org.eclipse.core.resources.IFile">
+                  <or>
+                     <test
+                           property="org.eclipse.core.resources.extension"
+                           value="rmap">
+                     </test>
+                  </or>
+               </adapt>
+               </iterate>
+            </visibleWhen>
+         </command>
+         <command
+               commandId="org.eclipse.papyrus.releng.tools.updatePom"
+               style="push">
+            <visibleWhen
+                  checkEnabled="false">
+               <iterate
+                     operator="or">
+                  <adapt
+                        type="org.eclipse.core.resources.IFile">
+                     <or>
+                        <test
+                              property="org.eclipse.core.resources.name"
+                              value="*pom*.xml">
+                        </test>
+                     </or>
+                  </adapt>
+               </iterate>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            defaultHandler="org.eclipse.papyrus.releng.tools.internal.handler.UpdateMapHandler"
+            id="org.eclipse.papyrus.releng.tools.updateRmap"
+            name="Update RMap from Aggregation Build Model">
+      </command>
+      <command
+            defaultHandler="org.eclipse.papyrus.releng.tools.internal.handler.UpdatePOMHandler"
+            id="org.eclipse.papyrus.releng.tools.updatePom"
+            name="Update POM from Aggregation Build Model">
+      </command>
+   </extension>
+
+</plugin>
