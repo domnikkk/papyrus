@@ -689,7 +689,7 @@ public class ModelSet extends ResourceSetImpl {
 	 * Create models that are not already created or loaded.
 	 */
 	public void createMissingModels() throws ModelException {
-		throw new UnsupportedOperationException("Not yet implemented");
+		throw new UnsupportedOperationException("Not yet implemented"); // TODO
 
 	}
 
@@ -697,7 +697,7 @@ public class ModelSet extends ResourceSetImpl {
 	 * Load models that are not already created or loaded.
 	 */
 	public void loadMissingModels() throws ModelException {
-		throw new UnsupportedOperationException("Not yet implemented");
+		throw new UnsupportedOperationException("Not yet implemented"); // TODO
 
 	}
 
