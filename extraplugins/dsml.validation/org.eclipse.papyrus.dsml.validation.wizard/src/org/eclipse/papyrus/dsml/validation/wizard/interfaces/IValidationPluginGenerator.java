@@ -17,7 +17,7 @@ import org.eclipse.pde.internal.ui.wizards.plugin.NewPluginProjectWizard;
 
 public interface IValidationPluginGenerator {
 
-	final static String PLUGIN_NATURE_ID = "org.eclipse.pde.PluginNature";
+	final static String PLUGIN_NATURE_ID = "org.eclipse.pde.PluginNature"; //$NON-NLS-1$
 
 	public void generate(IProject project, NewPluginProjectWizard wizard, IConstraintsManager constraintsManager);
 

@@ -33,4 +33,11 @@
       </profile>
    </extension>
 
+     <extension
+         point="org.eclipse.emf.validation.constraintParsers">
+      <constraintParser
+            class="org.eclipse.papyrus.dsml.validation.oclpivot.OCLConstraintParser"
+            lang="OCLpivot">
+      </constraintParser>
+   </extension>
 </plugin>

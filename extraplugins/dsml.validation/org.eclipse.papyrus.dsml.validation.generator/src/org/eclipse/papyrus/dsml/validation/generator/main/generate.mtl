@@ -86,50 +86,26 @@ public class [constraint.name.toUpperFirst() + 'Constraint'/] extends AbstractMo
 [template public generateValidationContext(stereotype : Stereotype)]
 [file (getPluginID(stereotype).replaceAll('\\.', '/') + '/selectors/' + stereotype.name +'ClientSelector.java', false)]
 [comment @main/]
+/**
+ * Created by the Papyrus DSML plugin generator
+ */
+
 package [getPluginID(stereotype)/].selectors;
 
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.validation.model.IClientSelector;
-import org.eclipse.uml2.uml.Class;
-import org.eclipse.uml2.uml.Element;
-import org.eclipse.uml2.uml.Stereotype;
-import org.eclipse.uml2.uml.util.UMLUtil;
+import org.eclipse.papyrus.dsml.validation.StereotypeUtil;
 
-
+/**
+ * This class filters (selects) passed stereotype applications. It returns true, if the
+ * associated stereotype (or one of its super-stereotypes) has the name '[stereotype.name/]'.
+ *
+ * @generated
+ */
 public class [stereotype.name/]ClientSelector implements IClientSelector {
 
-	public boolean selects(Object object) {
-		if(!(object instanceof EObject)) {
-			return false;
-		}
-
-		if(object instanceof Element) {
-			return false;
-		}
-
-		EObject stereotypeApplication = ((EObject)object);
-		Stereotype stereotype = UMLUtil.getStereotype(stereotypeApplication);
-		if(stereotype == null) {
-			return false;
-		}
-
-		return checkStereotype(stereotype, "[stereotype.name/]"); //$NON-NLS-1$
-	}
-
-	public boolean checkStereotype(Stereotype stereotype, String stereoName) {
-		if(stereoName.equals(stereotype.getName())) {
-			return true;
-		}
-		for (Class superStereo : stereotype.getSuperClasses()) {
-			if (superStereo instanceof Stereotype) {
-				if (checkStereotype((Stereotype) superStereo, stereoName)) {
-					return true;
-				}
-			}
-		}
-		return false;
+	public boolean selects(Object stereoApplicationObj) {
+		return StereotypeUtil.checkStereoApplication(stereoApplicationObj, "[stereotype.name/]"); //$NON-NLS-1$
 	}
 }
-
 [/file]
 [/template]
