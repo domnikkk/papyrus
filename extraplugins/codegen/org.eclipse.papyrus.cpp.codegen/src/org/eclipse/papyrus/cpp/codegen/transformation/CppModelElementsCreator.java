@@ -26,54 +26,38 @@ import org.eclipse.jface.text.IDocument;
 import org.eclipse.papyrus.C_Cpp.CppRoot;
 import org.eclipse.papyrus.C_Cpp.ExternLibrary;
 import org.eclipse.papyrus.C_Cpp.External;
-import org.eclipse.papyrus.C_Cpp.Include;
-import org.eclipse.papyrus.C_Cpp.ManualGeneration;
 import org.eclipse.papyrus.C_Cpp.NoCodeGen;
-import org.eclipse.papyrus.C_Cpp.Template;
-import org.eclipse.papyrus.acceleo.AcceleoDriver;
-import org.eclipse.papyrus.acceleo.AcceleoException;
 import org.eclipse.papyrus.acceleo.GenUtils;
 import org.eclipse.papyrus.acceleo.ModelElementsCreator;
 import org.eclipse.papyrus.cpp.codegen.Activator;
 import org.eclipse.papyrus.cpp.codegen.Messages;
 import org.eclipse.papyrus.cpp.codegen.preferences.CppCodeGenUtils;
+import org.eclipse.papyrus.cpp.codegen.xtend.CppClassifierGenerator;
+import org.eclipse.papyrus.cpp.codegen.xtend.CppPackageHeaderGenerator;
 import org.eclipse.text.edits.MalformedTreeException;
 import org.eclipse.text.edits.TextEdit;
-import org.eclipse.uml2.uml.Association;
-import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Namespace;
 import org.eclipse.uml2.uml.Package;
-import org.eclipse.uml2.uml.util.UMLUtil;
 
 
 
 /**
  * Main class of code generator
+ * 
+ * @author Önder GÜRCAN (onder.gurcan@cea.fr)
  */
 public class CppModelElementsCreator extends ModelElementsCreator {
 
-	public static final String ACCELEO_PREFIX = "org::eclipse::papyrus::cpp::codegen::acceleo::"; //$NON-NLS-1$
-
-	public static final String CppClassBody = ACCELEO_PREFIX + "CppClassBody"; //$NON-NLS-1$
-
-	public static final String CppClassHeader = ACCELEO_PREFIX + "CppClassHeader"; //$NON-NLS-1$
-
-	public static final String CppBindBody = ACCELEO_PREFIX + "CppBindBody"; //$NON-NLS-1$
-
-	public static final String CppBindHeader = ACCELEO_PREFIX + "CppBindHeader"; //$NON-NLS-1$
-
-	public static final String CppPackageHeader = ACCELEO_PREFIX + "CppPackageHeader"; //$NON-NLS-1$
-
 	public static final String DOT = "."; //$NON-NLS-1$
-
+	
 	/**
-	 *
+	 * 
 	 * Constructor.
-	 *
+	 * 
 	 * @param project
-	 *            the project in which the generated code should be placed
+	 *        the project in which the generated code should be placed
 	 */
 	public CppModelElementsCreator(IProject project) {
 		super(project, CppCodeGenUtils.getCommentHeader());
@@ -82,13 +66,13 @@ public class CppModelElementsCreator extends ModelElementsCreator {
 	}
 
 	/**
-	 *
+	 * 
 	 * Constructor.
-	 *
+	 * 
 	 * @param project
-	 *            the project in which the generated code should be placed
+	 *        the project in which the generated code should be placed
 	 * @param commentHeader
-	 *            Custom prefix for each generated file
+	 *        Custom prefix for each generated file
 	 */
 	public CppModelElementsCreator(IProject project, String commentHeader) {
 		super(project, commentHeader);
@@ -107,64 +91,13 @@ public class CppModelElementsCreator extends ModelElementsCreator {
 	 * generates 2 headers (one for the privates concrete operations and one for
 	 * the attributes, public operations and virtual / abstract operations and
 	 * one body file.
-	 *
+	 * 
 	 * @param folder
 	 * @param classifier
 	 * @throws CoreException
 	 */
-	@Override
 	protected void createClassifierFiles(IContainer container, Classifier classifier) throws CoreException {
-
-		// treat case of manual code generation
-		if (GenUtils.hasStereotype(classifier, ManualGeneration.class)) {
-			ManualGeneration mg = UMLUtil.getStereotypeApplication(classifier, ManualGeneration.class);
-			Include cppInclude = UMLUtil.getStereotypeApplication(classifier, Include.class);
-			try {
-				String fileContent = commentHeader +
-						AcceleoDriver.evaluate(cppInclude.getHeader(), classifier, null);
-				createFile(container, classifier.getName() + DOT + hppExt, fileContent, true);
-
-				// String manualURI = "TODO";
-				// fileContent = AcceleoDriver.evaluateURI(new URI(CppPackageHeader)), classifier);
-
-				fileContent = commentHeader +
-						AcceleoDriver.evaluate(cppInclude.getPreBody(), classifier, null) + GenUtils.NL +
-						AcceleoDriver.evaluate(cppInclude.getBody(), classifier, null) + GenUtils.NL;
-				String ext = GenUtils.maskNull(mg.getExtensionBody());
-				if (ext.length() == 0) {
-					ext = cppExt;
-				}
-				createFile(container, classifier.getName() + DOT + ext, fileContent, true);
-			} catch (AcceleoException e) {
-				Activator.log.error(e);
-			}
-		}
-
-		// Only generate when no CppNoCodeGen stereotype is applied to the class
-		else if ((!noCodeGen(classifier)) &&
-				(!GenUtils.hasStereotype(classifier, Template.class)) &&
-				(!(classifier instanceof Association))) {
-
-			// Template Bound Class
-			if (GenUtils.isTemplateBoundElement(classifier)) {
-				String fileContent = commentHeader + AcceleoDriver.evaluateURI(CppBindHeader, classifier);
-				createFile(container, classifier.getName() + DOT + hppExt, fileContent, true);
-
-				fileContent = commentHeader + AcceleoDriver.evaluateURI(CppBindBody, classifier);
-				createFile(container, classifier.getName() + DOT + cppExt, fileContent, true);
-			}
-			else {
-				// Header file generation
-				String fileContent = commentHeader + AcceleoDriver.evaluateURI(CppClassHeader, classifier);
-				createFile(container, classifier.getName() + DOT + hppExt, fileContent, true);
-
-				// Create class body
-				if (classifier instanceof Class) {
-					fileContent = commentHeader + AcceleoDriver.evaluateURI(CppClassBody, classifier);
-					createFile(container, classifier.getName() + DOT + cppExt, fileContent, true);
-				}
-			}
-		}
+		CppClassifierGenerator.generate(container, classifier, commentHeader);
 	}
 
 	@Override
@@ -174,15 +107,14 @@ public class CppModelElementsCreator extends ModelElementsCreator {
 	}
 
 	/**
-	 * Apply the user's currently selected formatting options to the input content. Return the
+	 * Apply the user's currently selected formatting options to the input content.  Return the
 	 * input String in case of error.
 	 */
 	private static String format(String content) {
 
 		// do nothing if the CDT plugin is not loaded
-		if (Platform.getBundle(CCorePlugin.PLUGIN_ID) == null) {
+		if (Platform.getBundle(CCorePlugin.PLUGIN_ID) == null)
 			return content;
-		}
 
 		CodeFormatter codeFormatter = ToolFactory.createCodeFormatter(null);
 		IDocument doc = new Document(content);
@@ -208,21 +140,18 @@ public class CppModelElementsCreator extends ModelElementsCreator {
 
 	@Override
 	protected void createPackageFiles(IContainer packageContainer, IProgressMonitor monitor, Package pkg) throws CoreException {
-		// Creates the header for the package.
-		String fileContent = commentHeader + AcceleoDriver.evaluateURI(CppPackageHeader, pkg);
-		createFile(packageContainer, "Pkg_" + pkg.getName() + DOT + hppExt, fileContent, true); //$NON-NLS-1$
+		CppPackageHeaderGenerator.generate(packageContainer, pkg);
 	}
 
 
-	@Override
 	protected boolean isRoot(Namespace ns) {
 		return GenUtils.hasStereotype(ns, CppRoot.class);
 	}
 
-	@Override
 	protected boolean noCodeGen(Element element) {
-		return GenUtils.hasStereotype(element, NoCodeGen.class) ||
-				GenUtils.hasStereotype(element, External.class) ||
-				GenUtils.hasStereotypeTree(element, ExternLibrary.class);
+		return
+			GenUtils.hasStereotype(element, NoCodeGen.class) ||
+			GenUtils.hasStereotype(element, External.class) ||
+			GenUtils.hasStereotypeTree(element, ExternLibrary.class);
 	}
 }

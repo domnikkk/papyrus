@@ -11,7 +11,12 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.cdt.core;resolution:=optional,
  org.eclipse.papyrus.infra.core.log;bundle-version="1.0.1",
  org.eclipse.papyrus.uml.tools.utils;bundle-version="1.0.1",
- org.eclipse.papyrus.codegen.extensionpoints;bundle-version="1.0.1"
+ org.eclipse.papyrus.codegen.extensionpoints;bundle-version="1.0.1",
+ org.eclipse.xtend.lib,
+ org.eclipse.xtend.lib.macro,
+ com.google.guava,
+ org.eclipse.xtext.xbase.lib,
+ org.eclipse.uml2.uml.profile.standard;bundle-version="1.0.0"
 Export-Package: org.eclipse.papyrus.cpp.codegen;uses:="org.eclipse.ui.plugin,org.osgi.framework,org.eclipse.uml2.uml",
  org.eclipse.papyrus.cpp.codegen.preferences;uses:="org.eclipse.jface.preference,org.eclipse.core.runtime.preferences",
  org.eclipse.papyrus.cpp.codegen.transformation;
@@ -19,7 +24,8 @@ Export-Package: org.eclipse.papyrus.cpp.codegen;uses:="org.eclipse.ui.plugin,org
    org.eclipse.papyrus.acceleo,
    org.eclipse.core.resources,
    org.eclipse.uml2.uml",
- org.eclipse.papyrus.cpp.codegen.utils;uses:="org.eclipse.emf.ecore,org.eclipse.emf.common.util,org.eclipse.uml2.uml"
+ org.eclipse.papyrus.cpp.codegen.utils;uses:="org.eclipse.emf.ecore,org.eclipse.emf.common.util,org.eclipse.uml2.uml",
+ org.eclipse.papyrus.cpp.codegen.xtend
 Bundle-Vendor: %providerName
 Eclipse-LazyStart: true
 Bundle-ActivationPolicy: lazy

@@ -1,0 +1,35 @@
+package org.eclipse.papyrus.cpp.codegen.xtend
+
+import org.eclipse.uml2.uml.Operation
+import org.eclipse.uml2.uml.Parameter
+import org.eclipse.papyrus.cpp.codegen.utils.Modifier
+import org.eclipse.papyrus.cpp.codegen.utils.CppGenUtils
+import org.eclipse.uml2.uml.ParameterDirectionKind
+import org.eclipse.uml2.uml.Behavior
+
+/**
+ * @author Önder GÜRCAN (onder.gurcan@cea.fr)
+ */
+class CppParameter {
+	
+	static def CppOperationParameters(Operation operation, boolean showDefault) '''
+		«FOR ownedParameter : operation.ownedParameters.filter[it.direction != ParameterDirectionKind.RETURN_LITERAL] SEPARATOR ', '»«CppParameter(ownedParameter, showDefault)»«ENDFOR»'''
+	
+	/**  
+	 * comment signature for a given behavior (e.g. effect within state machine)
+	 */ 
+	static def CppBehaviorParameters(Behavior behavior, boolean showDefault) '''
+		«FOR ownedParameter : behavior.ownedParameters.filter[it.direction != ParameterDirectionKind.RETURN_LITERAL] SEPARATOR ', '»«CppParameter(ownedParameter, showDefault)»«ENDFOR»
+	'''
+	
+	/**
+	 * C++ parameter. Default values are added, if parameter showDefault is true (implementation signature
+	 */ 
+	static def CppParameter(Parameter parameter, boolean showDefault) {
+		Modifier.modCVQualifier(parameter)+CppGenUtils.cppQualifiedName(parameter.type)+Modifier.modPtr(parameter)+Modifier.modRef(parameter)+" "+parameter.name + Modifier.modArray(parameter) + {if (showDefault) defaultValue(parameter) else ""}
+	}
+	
+	static def defaultValue(Parameter parameter) {
+		if (parameter.defaultValue != null)  " = " + parameter.defaultValue.stringValue() else ""
+	}
+}
