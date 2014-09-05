@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2010 CEA LIST.
+ * Copyright (c) 2010, 2014 CEA LIST and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,13 +8,15 @@
  *
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 443417
+ *  
  *****************************************************************************/
 package org.eclipse.papyrus.views.properties.widgets;
 
-import java.util.Collection;
 import java.util.Collections;
-import java.util.LinkedList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.eclipse.core.databinding.observable.IObservable;
 import org.eclipse.core.databinding.observable.list.IObservableList;
@@ -27,12 +29,17 @@ import org.eclipse.papyrus.views.properties.Activator;
 import org.eclipse.papyrus.views.properties.contexts.Context;
 import org.eclipse.papyrus.views.properties.contexts.Section;
 import org.eclipse.papyrus.views.properties.contexts.View;
+import org.eclipse.papyrus.views.properties.modelelement.DataSource;
+import org.eclipse.papyrus.views.properties.modelelement.DataSourceChangedEvent;
+import org.eclipse.papyrus.views.properties.modelelement.IDataSourceListener;
 import org.eclipse.papyrus.views.properties.runtime.ConfigurationManager;
 import org.eclipse.papyrus.views.properties.runtime.DefaultDisplayEngine;
 import org.eclipse.papyrus.views.properties.runtime.DisplayEngine;
 import org.eclipse.papyrus.views.properties.widgets.layout.PropertiesLayout;
 import org.eclipse.papyrus.views.properties.xwt.XWTSection;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.DisposeEvent;
+import org.eclipse.swt.events.DisposeListener;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 
@@ -49,7 +56,11 @@ public class ViewEditor extends AbstractPropertyEditor {
 
 	private Composite self;
 
-	private Collection<XWTSection> sections;
+	private Map<Section, XWTSection> sections = new HashMap<Section, XWTSection>();
+
+	private DisplayEngine displayEngine;
+
+	private IDataSourceListener dataSourceListener;
 
 	/**
 	 * Constructor.
@@ -65,6 +76,25 @@ public class ViewEditor extends AbstractPropertyEditor {
 		layout.horizontalSpacing = 0;
 		layout.marginWidth = 0;
 		self.setLayout(layout);
+
+		addDisposeListener(self);
+	}
+
+	private void addDisposeListener(Control control) {
+		control.addDisposeListener(new DisposeListener() {
+
+			public void widgetDisposed(DisposeEvent e) {
+				disposeDisplayEngine();
+			}
+		});
+	}
+
+	private void disposeDisplayEngine() {
+		if (displayEngine != null) {
+			displayEngine.dispose();
+			displayEngine = null;
+			sections.clear();
+		}
 	}
 
 	@Override
@@ -72,6 +102,32 @@ public class ViewEditor extends AbstractPropertyEditor {
 		if (propertyPath != null && input != null && viewPath != null) {
 			display();
 		}
+	}
+
+	@Override
+	protected void unhookDataSourceListener(DataSource oldInput) {
+		oldInput.removeDataSourceListener(getDataSourceListener());
+		super.unhookDataSourceListener(oldInput);
+	}
+
+	@Override
+	protected void hookDataSourceListener(DataSource newInput) {
+		super.hookDataSourceListener(newInput);
+		newInput.addDataSourceListener(getDataSourceListener());
+	}
+
+	private IDataSourceListener getDataSourceListener() {
+		if (dataSourceListener == null) {
+			dataSourceListener = new IDataSourceListener() {
+
+				public void dataSourceChanged(DataSourceChangedEvent event) {
+					// The data source's selection changed. Re-display our nested sections, if appropriate
+					checkInput();
+				}
+			};
+		}
+
+		return dataSourceListener;
 	}
 
 	/**
@@ -138,23 +194,23 @@ public class ViewEditor extends AbstractPropertyEditor {
 			return;
 		}
 
-		DisplayEngine display = new DefaultDisplayEngine(true);
-
-		sections = new LinkedList<XWTSection>();
+		if (displayEngine == null) {
+			displayEngine = new DefaultDisplayEngine(false);
+		}
 
 		if (observable instanceof IObservableValue) {
 			IObservableValue observableValue = (IObservableValue) observable;
 			if (observableValue instanceof MultipleObservableValue) {
 				MultipleObservableValue multipleObservable = (MultipleObservableValue) observableValue;
-				display(display, multipleObservable.getObservedValues(), view);
+				display(displayEngine, multipleObservable.getObservedValues(), view);
 			} else {
 				Object value = observableValue.getValue();
-				display(display, value, view);
+				display(displayEngine, value, view);
 			}
 		} else if (observable instanceof IObservableList) {
 			IObservableList observableList = (IObservableList) observable;
 			for (Object value : observableList) {
-				display(display, value, view);
+				display(displayEngine, value, view);
 			}
 		}
 
@@ -191,12 +247,15 @@ public class ViewEditor extends AbstractPropertyEditor {
 	 */
 	protected void display(DisplayEngine display, List<Object> selectedElements, View view) {
 		for (Section section : view.getSections()) {
-			XWTSection xwtSection = new XWTSection(section, view, display);
-			sections.add(xwtSection);
+			XWTSection xwtSection = sections.get(section);
+			if (xwtSection == null) {
+				xwtSection = new XWTSection(section, view, display);
+				sections.put(section, xwtSection);
+				xwtSection.createControls(new Composite(self, SWT.NONE), null);
+			}
 
 			ISelection selection = new StructuredSelection(selectedElements);
 
-			xwtSection.createControls(new Composite(self, SWT.NONE), null);
 			xwtSection.setInput(null, selection);
 			xwtSection.refresh();
 		}

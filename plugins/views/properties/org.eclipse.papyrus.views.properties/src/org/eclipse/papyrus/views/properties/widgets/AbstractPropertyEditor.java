@@ -10,6 +10,7 @@
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Thibault Le Ouay t.leouay@sherpa-eng.com - Add binding implementation
  *  Christian W. Damus (CEA) - bug 417409
+ *  Christian W. Damus (CEA) - bug 443417
  *
  *****************************************************************************/
 package org.eclipse.papyrus.views.properties.widgets;
@@ -309,19 +310,27 @@ public abstract class AbstractPropertyEditor implements IChangeListener, Customi
 		final DataSource oldInput = this.input;
 		if (input != oldInput) {
 			if (oldInput != null) {
-				oldInput.removeDataSourceListener(getDataSourceListener());
+				unhookDataSourceListener(oldInput);
 			}
 
 			this.input = input;
 
 			if (input != null) {
-				input.addDataSourceListener(getDataSourceListener());
+				hookDataSourceListener(input);
 			}
 
 			// Only do this after attaching our listener so that it will be ahead of
 			// any ModelElements created for properties
 			checkInput();
 		}
+	}
+
+	protected void unhookDataSourceListener(DataSource oldInput) {
+		oldInput.removeDataSourceListener(getDataSourceListener());
+	}
+
+	protected void hookDataSourceListener(DataSource newInput) {
+		newInput.addDataSourceListener(getDataSourceListener());
 	}
 
 	/**
