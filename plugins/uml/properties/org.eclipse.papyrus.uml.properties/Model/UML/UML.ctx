@@ -1418,7 +1418,7 @@
       <properties xsi:type="constraints:ValueProperty" name="umlClassName" value="Package"/>
     </constraints>
   </views>
-  <views name="SingleElement" sections="//@tabs.2/@sections.1 //@tabs.1/@sections.0 //@tabs.1/@sections.1">
+  <views name="SingleElement" sections="//@tabs.1/@sections.0 //@tabs.1/@sections.1">
     <constraints xsi:type="constraints:SimpleConstraint" name="isSingleElement" overrideable="false">
       <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.0"/>
       <properties xsi:type="constraints:ValueProperty" name="umlClassName" value="Element"/>
@@ -4221,6 +4221,11 @@
     <constraints xsi:type="constraints:SimpleConstraint" name="IsMultipleSignalEvent">
       <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.0"/>
       <properties xsi:type="constraints:ValueProperty" name="umlClassName" value="SignalEvent"/>
+    </constraints>
+  </views>
+  <views name="SingleProfiledElement" sections="//@tabs.2/@sections.1">
+    <constraints xsi:type="constraints:SimpleConstraint" name="isAttached">
+      <constraintType href="ppe:/environment/org.eclipse.papyrus.infra.constraints/Model/ConstraintEnvironment.xmi#//@constraintTypes.6"/>
     </constraints>
   </views>
   <dataContexts name="UML" label="UML">
