@@ -16,8 +16,11 @@ package org.eclipse.papyrus.uml.profile.drafter.ui.model;
 
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
+import java.util.ArrayList;
 import java.util.List;
 
+import org.eclipse.core.databinding.observable.list.IObservableList;
+import org.eclipse.core.databinding.observable.list.WritableList;
 import org.eclipse.papyrus.uml.profile.drafter.ProfileCatalog;
 import org.eclipse.papyrus.uml.profile.drafter.exceptions.NotFoundException;
 import org.eclipse.uml2.uml.Class;
@@ -43,17 +46,18 @@ public class StereoptypeModel extends StereotypeURL {
 	/**
 	 * The properties that should be attached to this stereotype.
 	 */
-	protected List<PropertyModel> properties;
+//	protected List<PropertyModel> properties = new ArrayList<PropertyModel>();
+	protected IObservableList properties = new WritableList();
 
 	/**
 	 * The extendedStereotypes that should be attached to this stereotype.
 	 */
-	protected List<ExtendedStereotypeModel> extendedStereotypes;
+	protected List<ExtendedStereotypeModel> extendedStereotypes  = new ArrayList<ExtendedStereotypeModel>();
 
 	/**
 	 * The metaclasses that should be attached to this stereotype.
 	 */
-	protected List<MetaclassesModel> metaclasses;
+	protected List<MetaclassesModel> metaclasses  = new ArrayList<MetaclassesModel>();
 	
 	/**
 	 * Catalog used to search {@link Stereotype} bu the name provided in {@link #qualifiedName}.
@@ -92,6 +96,23 @@ public class StereoptypeModel extends StereotypeURL {
 		throw new UnsupportedOperationException("Not yet implemented.");
 	}
 
+	
+	/**
+	 * @return the properties
+	 */
+	public List<PropertyModel> getProperties() {
+		return properties;
+	}
+
+
+	
+	/**
+	 * @return the metaclasses
+	 */
+	public List<MetaclassesModel> getMetaclasses() {
+		return metaclasses;
+	}
+
 	/**
 	 * Intercept {@link #qualifiedNameChanged(StereotypeURLChangeEvent)} call in order to set the {@link Stereotype} ans its
 	 * associated properties.
@@ -111,7 +132,6 @@ public class StereoptypeModel extends StereotypeURL {
 		} catch (NotFoundException e) {
 			// exit
 			stereotype = null;
-			return;
 		}
 		// Send another event for Stereotype ??
 		
@@ -221,7 +241,8 @@ public class StereoptypeModel extends StereotypeURL {
 	 * Clear all the {@link PropertyModel} that are not created by the user.
 	 */
 	protected void clearProfileProperties() {
-		for( PropertyModel model : properties) {
+		for( Object p : properties) {
+			PropertyModel model = (PropertyModel)p;
 			if(model.getModelStatus() != ModelStatusKind.created) {
 				properties.remove(model);
 			}
@@ -273,10 +294,10 @@ public class StereoptypeModel extends StereotypeURL {
 		}
 		
 		
-		PropertyModel oldValue = properties.remove(index);
+		PropertyModel oldValue = (PropertyModel)properties.remove(index);
 		PropertyModel newValue = null;
 		if(index<properties.size()) {
-			newValue = properties.get(index);
+			newValue = (PropertyModel)properties.get(index);
 		}
 		
 		fireIndexedPropertyChange(PROPERTIES, index, oldValue, newValue);
@@ -301,5 +322,6 @@ public class StereoptypeModel extends StereotypeURL {
 	protected void firePropertyChange(String propertyName, Object oldValue, Object newValue) {
 		changeSupport.firePropertyChange(propertyName, oldValue, newValue);
 	}
+
 
 }

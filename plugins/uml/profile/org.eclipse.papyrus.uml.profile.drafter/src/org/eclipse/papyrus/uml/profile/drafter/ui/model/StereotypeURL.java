@@ -31,9 +31,9 @@ import org.eclipse.uml2.uml.Stereotype;
 public class StereotypeURL {
 
 	final static String QUALIFIED_NAME = "qualifiedName";
-	final static String PROFILE_PATHS = "profileNames";
-	final static String STEREOTYPE = "stereotypeName";
-	final static String RESOURCE = "resourceName";
+	final static String PROFILE_NAME = "profileName";
+	final static String STEREOTYPEE_NAME = "stereotypeName";
+	final static String RESOURCEE_NAME = "resourceName";
 	
 	
 	protected String qualifiedName = "";
@@ -101,6 +101,7 @@ public class StereotypeURL {
 	 */
 	public void setQualifiedName(String qualifiedName) {
 		
+		System.err.println("setQualifiedName(" + qualifiedName +")");
 		if(qualifiedName == null) {
 			return;
 		}
@@ -161,6 +162,7 @@ public class StereotypeURL {
 	 */
 	public void setStereotypeName(String stereotypeName) {
 		
+		System.err.println("setStereotypeName(" + stereotypeName + ")");
 		// StereotypeName should be set.
 		if(stereotypeName == null) {
 			return;
@@ -225,6 +227,17 @@ public class StereotypeURL {
 	 */
 	protected void qualifiedNameChanged( StereotypeURLChangeEvent event) {
 		changeSupport.firePropertyChange(event);
+		
+		// Also propagate other change events.
+		if(event.isProfileNameChanged() ) {
+			firePropertyChange(PROFILE_NAME, event.getOldProfileName(), event.getProfileName());
+		}
+		if(event.isStereotypeNameChanged() ) {
+			firePropertyChange(STEREOTYPEE_NAME, event.getOldStereotypeName(), event.getStereotypeName());
+		}
+		if(event.isResourceNameChanged() ) {
+			firePropertyChange(RESOURCEE_NAME, event.getOldResourceName(), event.getResourceName());
+		}
 	}
 	
 	/**

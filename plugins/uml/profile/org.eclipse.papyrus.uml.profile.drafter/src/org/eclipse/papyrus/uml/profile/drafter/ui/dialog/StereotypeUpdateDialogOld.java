@@ -24,7 +24,6 @@ import org.eclipse.papyrus.infra.widgets.selectors.ReferenceSelector;
 import org.eclipse.papyrus.uml.profile.drafter.Activator;
 import org.eclipse.papyrus.uml.profile.drafter.ProfileCatalog;
 import org.eclipse.papyrus.uml.profile.drafter.ui.contentassist.StereotypeContentProposalProvider;
-import org.eclipse.papyrus.uml.profile.drafter.ui.model.StereoptypeModel;
 import org.eclipse.papyrus.uml.tools.providers.UMLMetaclassContentProvider;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Point;
@@ -45,7 +44,7 @@ import org.eclipse.uml2.uml.Stereotype;
  * @author cedric dumoulin
  *
  */
-public class StereotypeUpdateDialog extends Dialog {
+public class StereotypeUpdateDialogOld extends Dialog {
 	private Binding stereotypeNameBinding;
 	private Binding profileNameBinding;
 	private Binding stereotypeBinding;
@@ -57,7 +56,7 @@ public class StereotypeUpdateDialog extends Dialog {
 	private String title;
 	private StereotypeUpdateArgs value;
 	private MultipleValueSelectorWidget extendedMetaclassSelector;
-	private PropertiesEditorWidget propertiesEditorWidget;
+	private TaggedValuesEditorWidget taggedValuesEditorWidget;
 	
 	/**
 	 * An UML Element used to get the associated Resource.
@@ -65,12 +64,9 @@ public class StereotypeUpdateDialog extends Dialog {
 	private Element anyUmlElement;
 	private List<Class> selectedMetaclasses;
 	
-//	private StereotypeNameToProfileSynchronizer stereotypeNameToProfileSynchronizer;
-	private StereoptypeModel stereotypeModel;
+	private StereotypeNameToProfileSynchronizer stereotypeNameToProfileSynchronizer;
 
 	private ProfileCatalog profileCatalog;
-	private Label quickSetLabel;
-	private Label profileNameLabel;
 	
 	/**
 	 * Create the dialog.
@@ -79,7 +75,7 @@ public class StereotypeUpdateDialog extends Dialog {
 	 * @param metaclassesToSelect Metaclasses that should be selected in the dialog.
 	 * 
 	 */
-	public StereotypeUpdateDialog(Shell parentShell, String title, Element selectedElement, List<Class> metaclassesToSelect ) {
+	public StereotypeUpdateDialogOld(Shell parentShell, String title, Element selectedElement, List<Class> metaclassesToSelect ) {
 		super(parentShell);
 		// Allows dialog resize
 		setShellStyle(getShellStyle() | SWT.RESIZE);
@@ -87,8 +83,7 @@ public class StereotypeUpdateDialog extends Dialog {
 		this.anyUmlElement = selectedElement;
 		this.selectedMetaclasses = metaclassesToSelect;
 		this.profileCatalog = new ProfileCatalog(selectedElement);
-		stereotypeModel = new StereoptypeModel(profileCatalog);
-//		stereotypeNameToProfileSynchronizer = new StereotypeNameToProfileSynchronizer(profileCatalog);
+		stereotypeNameToProfileSynchronizer = new StereotypeNameToProfileSynchronizer(profileCatalog);
 		
 	}
 
@@ -98,6 +93,8 @@ public class StereotypeUpdateDialog extends Dialog {
 	 */
 	@Override
 	protected Control createDialogArea(Composite parent) {
+		Stereotype stereotype;
+		List<Stereotype> appliedStereotypes = anyUmlElement.getAppliedStereotypes();
 
 		Composite container = (Composite) super.createDialogArea(parent);
 		
@@ -105,14 +102,14 @@ public class StereotypeUpdateDialog extends Dialog {
 		namesContainer.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, false, 1, 1));
 		namesContainer.setLayout(new GridLayout(2, false));
 		
-		quickSetLabel = new Label(namesContainer, SWT.NONE);
+		Label quickSetLabel = new Label(namesContainer, SWT.NONE);
 		quickSetLabel.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false, 1, 1));
 		quickSetLabel.setText("Quick Set");
 		
 		quickSetText = new Text(namesContainer, SWT.BORDER);
 		quickSetText.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1));
 		
-		profileNameLabel = new Label(namesContainer, SWT.NONE);
+		Label profileNameLabel = new Label(namesContainer, SWT.NONE);
 		profileNameLabel.setSize(43, 20);
 		profileNameLabel.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false, 1, 1));
 		profileNameLabel.setText("Profile");
@@ -143,8 +140,9 @@ public class StereotypeUpdateDialog extends Dialog {
 		taggedValuesContainer.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1));
 
 		// Use the first applied stereotype for tests
-		propertiesEditorWidget = new PropertiesEditorWidget(taggedValuesContainer, stereotypeModel.getProperties(), (NamedElement)anyUmlElement);
-
+		if( !appliedStereotypes.isEmpty()) {
+			taggedValuesEditorWidget = new TaggedValuesEditorWidget(taggedValuesContainer, appliedStereotypes.get(0), (NamedElement)anyUmlElement);
+		}
 		return container;
 	}
 
@@ -289,17 +287,17 @@ public class StereotypeUpdateDialog extends Dialog {
 	protected DataBindingContext initDataBindings() {
 		DataBindingContext bindingContext = new DataBindingContext();
 		//
-		IObservableValue observeTextQuickSetTextObserveWidget = WidgetProperties.text(SWT.Modify).observe(quickSetText);
-		IObservableValue qualifiedNameStereotypeModelObserveValue = BeanProperties.value("qualifiedName").observe(stereotypeModel);
-		bindingContext.bindValue(observeTextQuickSetTextObserveWidget, qualifiedNameStereotypeModelObserveValue, null, null);
-		//
 		IObservableValue observeTextProfileTextObserveWidget = WidgetProperties.text(SWT.Modify).observe(profileText);
-		IObservableValue profileNameStereotypeModelObserveValue = BeanProperties.value("profileName").observe(stereotypeModel);
-		bindingContext.bindValue(observeTextProfileTextObserveWidget, profileNameStereotypeModelObserveValue, null, null);
+		IObservableValue profileNameStereotypeNameToProfileSynchronizerObserveValue = BeanProperties.value("profileName").observe(stereotypeNameToProfileSynchronizer);
+		profileNameBinding = bindingContext.bindValue(observeTextProfileTextObserveWidget, profileNameStereotypeNameToProfileSynchronizerObserveValue, null, null);
 		//
 		IObservableValue observeTextStereotypeTextObserveWidget = WidgetProperties.text(SWT.Modify).observe(stereotypeText);
-		IObservableValue stereotypeNameStereotypeModelObserveValue = BeanProperties.value("stereotypeName").observe(stereotypeModel);
-		bindingContext.bindValue(observeTextStereotypeTextObserveWidget, stereotypeNameStereotypeModelObserveValue, null, null);
+		IObservableValue stereotypeNameStereotypeNameToProfileSynchronizerObserveValue = BeanProperties.value("stereotypeName").observe(stereotypeNameToProfileSynchronizer);
+		stereotypeNameBinding = bindingContext.bindValue(observeTextStereotypeTextObserveWidget, stereotypeNameStereotypeNameToProfileSynchronizerObserveValue, null, null);
+		//
+		IObservableValue stereotypeTaggedValuesEditorWidgetObserveValue = PojoProperties.value("stereotype").observe(taggedValuesEditorWidget);
+		IObservableValue stereotypeStereotypeNameToProfileSynchronizerObserveValue = BeanProperties.value("stereotype").observe(stereotypeNameToProfileSynchronizer);
+		bindingContext.bindValue(stereotypeTaggedValuesEditorWidgetObserveValue, stereotypeStereotypeNameToProfileSynchronizerObserveValue, new UpdateValueStrategy(UpdateValueStrategy.POLICY_NEVER), null);
 		//
 		return bindingContext;
 	}

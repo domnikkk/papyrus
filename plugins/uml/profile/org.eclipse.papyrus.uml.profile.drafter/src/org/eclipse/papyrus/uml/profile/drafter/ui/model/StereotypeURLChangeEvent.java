@@ -94,4 +94,113 @@ public class StereotypeURLChangeEvent extends PropertyChangeEvent {
 		
 	}
 
+	
+	/**
+	 * @return the qualifiedName
+	 */
+	public String getQualifiedName() {
+		return qualifiedName;
+	}
+
+	
+	/**
+	 * @return the profileName
+	 */
+	public String getProfileName() {
+		return profileName;
+	}
+
+	
+	/**
+	 * @return the stereotypeName
+	 */
+	public String getStereotypeName() {
+		return stereotypeName;
+	}
+
+	
+	/**
+	 * @return the resourceName
+	 */
+	public String getResourceName() {
+		return resourceName;
+	}
+
+	
+	/**
+	 * @return the oldQualifiedName
+	 */
+	public String getOldQualifiedName() {
+		return oldQualifiedName;
+	}
+
+	
+	/**
+	 * @return the oldProfileName
+	 */
+	public String getOldProfileName() {
+		return oldProfileName;
+	}
+
+	
+	/**
+	 * @return the oldStereotypeName
+	 */
+	public String getOldStereotypeName() {
+		return oldStereotypeName;
+	}
+
+	
+	/**
+	 * @return the oldResourceName
+	 */
+	public String getOldResourceName() {
+		return oldResourceName;
+	}
+
+	/**
+	 * Return true is the specified property has changed.
+	 * @return
+	 */
+	public boolean isProfileNameChanged() {
+		return isValuesChanged(oldProfileName, profileName);
+	}
+
+	/**
+	 * Return true is the specified property has changed.
+	 * @return
+	 */
+	public boolean isQualifiedNameChanged() {
+		return isValuesChanged(oldStereotypeName, stereotypeName);
+	}
+	/**
+	 * Return true is the specified property has changed.
+	 * @return
+	 */
+	public boolean isResourceNameChanged() {
+		return isValuesChanged(oldResourceName, resourceName);
+	}
+
+	/**
+	 * Return true is the specified property has changed.
+	 * @return
+	 */
+	public boolean isStereotypeNameChanged() {
+		return isValuesChanged(oldStereotypeName, stereotypeName);
+	}
+
+
+	/**
+	 * Compare the 2 values. Return true is they are equals, false otherwise.
+	 * @param oldValue
+	 * @param newValue
+	 * @return
+	 */
+	private boolean isValuesChanged(String oldValue, String newValue) {
+		if(oldValue == null) {
+			return newValue!=null;
+		}
+		
+		return !oldValue.equals(newValue);
+	}
 }
