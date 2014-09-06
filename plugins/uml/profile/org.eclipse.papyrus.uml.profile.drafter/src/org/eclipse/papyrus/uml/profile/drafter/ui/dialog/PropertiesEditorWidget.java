@@ -20,6 +20,18 @@ import org.eclipse.swt.widgets.TableColumn;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
+import org.eclipse.core.databinding.DataBindingContext;
+import org.eclipse.jface.databinding.viewers.ObservableListContentProvider;
+import org.eclipse.core.databinding.observable.map.IObservableMap;
+import org.eclipse.core.databinding.beans.BeansObservables;
+import org.eclipse.jface.databinding.viewers.ObservableMapLabelProvider;
+import org.eclipse.core.databinding.observable.list.IObservableList;
+import org.eclipse.core.databinding.property.Properties;
+import org.eclipse.jface.viewers.CellEditor;
+import org.eclipse.jface.viewers.TextCellEditor;
+import org.eclipse.core.databinding.property.value.IValueProperty;
+import org.eclipse.core.databinding.beans.IBeanValueProperty;
+import org.eclipse.jface.databinding.viewers.ObservableValueEditingSupport;
 
 /**
  * A widget used to edit a list of {@link PropertyModel}.
@@ -27,12 +39,17 @@ import org.eclipse.uml2.uml.Stereotype;
  *
  */
 public class PropertiesEditorWidget {
+	private DataBindingContext m_bindingContext;
 
 	private Composite contentArea;
 	private List<PropertyModel> properties;
 	private NamedElement selectedElement;
 	
 	private TableViewer treeViewer;
+	private TableViewerColumn treeViewerColumn;
+	private TableViewerColumn treeViewerColumn_1;
+	private TableViewerColumn tableViewerColumn;
+	private TableViewerColumn treeViewerColumn_2;
 	
 	/**
 	 * Create the composite.
@@ -71,16 +88,16 @@ public class PropertiesEditorWidget {
 		
 		// now lets bind the values
 	    // No extra label provider / content provider / setInput required
-		WritableList input;
-		if( properties instanceof WritableList ) {
-			input = (WritableList)properties;
-		}
-		else {
-			input = new WritableList(properties, PropertyModel.class);
-		}
-	    ViewerSupport.bind(treeViewer,
-	        input,
-	        BeanProperties.values(new String[] { "proposedName", "type", "modelStatus", "value" }));
+//		WritableList input;
+//		if( properties instanceof WritableList ) {
+//			input = (WritableList)properties;
+//		}
+//		else {
+//			input = new WritableList(properties, PropertyModel.class);
+//		}
+//	    ViewerSupport.bind(treeViewer,
+//	        input,
+//	        BeanProperties.values(new String[] { "proposedName", "type", "modelStatus", "value" }));
 
 		
 //		fillContentArea();
@@ -106,31 +123,32 @@ public class PropertiesEditorWidget {
 		Table tree = treeViewer.getTable();
 		tree.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true, 1, 1));
 		
-		TableViewerColumn treeViewerColumn = new TableViewerColumn(treeViewer, SWT.NONE);
+		treeViewerColumn = new TableViewerColumn(treeViewer, SWT.NONE);
 		TableColumn trclmnName = treeViewerColumn.getColumn();
 		trclmnName.setWidth(100);
 		trclmnName.setText("name");
 //		treeViewerColumn.setLabelProvider( new TaggedValueNameColumnLabelProvider() );
 
 		
-		TableViewerColumn treeViewerColumn_1 = new TableViewerColumn(treeViewer, SWT.NONE);
+		treeViewerColumn_1 = new TableViewerColumn(treeViewer, SWT.NONE);
 		TableColumn trclmnType = treeViewerColumn_1.getColumn();
 		trclmnType.setWidth(100);
 		trclmnType.setText("type");
 		
-		TableViewerColumn tableViewerColumn = new TableViewerColumn(treeViewer, SWT.NONE);
+		tableViewerColumn = new TableViewerColumn(treeViewer, SWT.NONE);
 		TableColumn tblclmnStatus = tableViewerColumn.getColumn();
 		tblclmnStatus.setWidth(100);
 		tblclmnStatus.setText("status");
 //		treeViewerColumn_1.setLabelProvider( new TaggedValueNameColumnLabelProvider() );
 		
-		TableViewerColumn treeViewerColumn_2 = new TableViewerColumn(treeViewer, SWT.NONE);
+		treeViewerColumn_2 = new TableViewerColumn(treeViewer, SWT.NONE);
 		TableColumn trclmnValue = treeViewerColumn_2.getColumn();
 		trclmnValue.setWidth(100);
 		trclmnValue.setText("value");
 //		treeViewerColumn_2.setLabelProvider( new TaggedValueValueColumnLabelProvider() );
 
 		tree.setHeaderVisible(true);
+		m_bindingContext = initDataBindings();
 		
 		return composite;
 
@@ -255,4 +273,38 @@ public class PropertiesEditorWidget {
 		
 	}
 
+	protected DataBindingContext initDataBindings() {
+		DataBindingContext bindingContext = new DataBindingContext();
+		//
+		ObservableListContentProvider listContentProvider = new ObservableListContentProvider();
+		IObservableMap[] observeMaps = BeansObservables.observeMaps(listContentProvider.getKnownElements(), PropertyModel.class, new String[]{"proposedName", "type", "modelStatus", "value"});
+		treeViewer.setLabelProvider(new ObservableMapLabelProvider(observeMaps));
+		treeViewer.setContentProvider(listContentProvider);
+		//
+//		IObservableList selfList = Properties.selfList(PropertyModel.class).observe(properties);
+		IObservableList selfList = (WritableList)properties;
+		treeViewer.setInput(selfList);
+		//
+		CellEditor cellEditor = new TextCellEditor(treeViewer.getTable());
+		IValueProperty cellEditorProperty = BeanProperties.value("value");
+		IBeanValueProperty valueProperty = BeanProperties.value("proposedName");
+		treeViewerColumn.setEditingSupport(ObservableValueEditingSupport.create(treeViewer, bindingContext, cellEditor, cellEditorProperty, valueProperty));
+		//
+		CellEditor cellEditor_1 = new TextCellEditor(treeViewer.getTable());
+		IValueProperty cellEditorProperty_1 = BeanProperties.value("value");
+		IBeanValueProperty valueProperty_1 = BeanProperties.value("type");
+		treeViewerColumn_1.setEditingSupport(ObservableValueEditingSupport.create(treeViewer, bindingContext, cellEditor_1, cellEditorProperty_1, valueProperty_1));
+		//
+		CellEditor cellEditor_2 = new TextCellEditor(treeViewer.getTable());
+		IValueProperty cellEditorProperty_2 = BeanProperties.value("value");
+		IBeanValueProperty valueProperty_2 = BeanProperties.value("modelStatus");
+		tableViewerColumn.setEditingSupport(ObservableValueEditingSupport.create(treeViewer, bindingContext, cellEditor_2, cellEditorProperty_2, valueProperty_2));
+		//
+		CellEditor cellEditor_3 = new TextCellEditor(treeViewer.getTable());
+		IValueProperty cellEditorProperty_3 = BeanProperties.value("value");
+		IBeanValueProperty valueProperty_3 = BeanProperties.value("value");
+		treeViewerColumn_2.setEditingSupport(ObservableValueEditingSupport.create(treeViewer, bindingContext, cellEditor_3, cellEditorProperty_3, valueProperty_3));
+		//
+		return bindingContext;
+	}
 }
