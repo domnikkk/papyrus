@@ -4224,8 +4224,14 @@
     </constraints>
   </views>
   <views name="SingleProfiledElement" sections="//@tabs.2/@sections.1">
-    <constraints xsi:type="constraints:SimpleConstraint" name="isAttached">
-      <constraintType href="ppe:/environment/org.eclipse.papyrus.infra.constraints/Model/ConstraintEnvironment.xmi#//@constraintTypes.6"/>
+    <constraints xsi:type="constraints:CompositeConstraint">
+      <constraints name="isUMLElement" overrideable="false">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.0"/>
+        <properties xsi:type="constraints:ValueProperty" name="umlClassName" value="Element"/>
+      </constraints>
+      <constraints name="isAttached">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.infra.constraints/Model/ConstraintEnvironment.xmi#//@constraintTypes.6"/>
+      </constraints>
     </constraints>
   </views>
   <dataContexts name="UML" label="UML">
