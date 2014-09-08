@@ -10,6 +10,7 @@
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Thibault Le Ouay t.leouay@sherpa-eng.com - Add binding implementation
  *  Christian W. Damus (CEA) - bug 402525
+ *  Christian W. Damus (CEA) - bug 443497
  *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.widgets.editors;
@@ -276,9 +277,13 @@ public class ReferenceDialog extends AbstractValueEditor implements SelectionLis
 				@Override
 				public void run() {
 					Object newValue = valueFactory.edit(editInstanceButton, currentValue);
-					if (newValue != currentValue) {
+
+					// Per the contract of ReferenceValueFactory::edit(), a null return means the object was edited "in place."
+					// In that case, there is nothing further to do
+					if ((newValue != null) && (newValue != currentValue)) {
 						setValue(newValue);
 					}
+
 					updateLabel();
 				}
 			}, NLS.bind(Messages.ReferenceDialog_editOperation, labelText));

@@ -10,6 +10,7 @@
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 402525
  *  Christian W. Damus (CEA) - bug 430077
+ *  Christian W. Damus (CEA) - bug 443497
  *
  *****************************************************************************/
 package org.eclipse.papyrus.views.properties.creation;
@@ -244,6 +245,9 @@ public class EcorePropertyEditorFactory extends PropertyEditorFactory {
 				// Propagate to the caller if not in a nested edit dialog
 				throw e;
 			}
+
+			// Let the client think that there's nothing needing to be done, that the referenced object
+			// was edited "in place" instead of being replaced by some other object
 			result = null;
 		}
 
