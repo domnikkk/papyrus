@@ -111,27 +111,31 @@ public class CppClassifierGenerator extends CppFileGenerator {
             String _headerSuffix_1 = CppCodeGenUtils.getHeaderSuffix();
             final String bindHeaderFileName = (_plus_5 + _headerSuffix_1);
             String _generateBindHeaderCode = CppClassifierGenerator.generateBindHeaderCode(classifier);
-            CppFileGenerator.generateFile(container, bindHeaderFileName, _generateBindHeaderCode, true);
+            String _plus_6 = (commentHeader + _generateBindHeaderCode);
+            CppFileGenerator.generateFile(container, bindHeaderFileName, _plus_6, true);
             String _name_3 = classifier.getName();
-            String _plus_6 = (_name_3 + ".");
+            String _plus_7 = (_name_3 + ".");
             String _bodySuffix_1 = CppCodeGenUtils.getBodySuffix();
-            String bindBodyFileName = (_plus_6 + _bodySuffix_1);
+            String bindBodyFileName = (_plus_7 + _bodySuffix_1);
             String _generateBindBodyCode = CppClassifierGenerator.generateBindBodyCode(classifier);
-            CppFileGenerator.generateFile(container, bindBodyFileName, _generateBindBodyCode, true);
+            String _plus_8 = (commentHeader + _generateBindBodyCode);
+            CppFileGenerator.generateFile(container, bindBodyFileName, _plus_8, true);
           } else {
             String _name_4 = classifier.getName();
-            String _plus_7 = (_name_4 + ".");
+            String _plus_9 = (_name_4 + ".");
             String _headerSuffix_2 = CppCodeGenUtils.getHeaderSuffix();
-            final String classHeaderFileName = (_plus_7 + _headerSuffix_2);
+            final String classHeaderFileName = (_plus_9 + _headerSuffix_2);
             String _generateClassHeaderCode = CppClassifierGenerator.generateClassHeaderCode(classifier);
-            CppFileGenerator.generateFile(container, classHeaderFileName, _generateClassHeaderCode, true);
+            String _plus_10 = (commentHeader + _generateClassHeaderCode);
+            CppFileGenerator.generateFile(container, classHeaderFileName, _plus_10, true);
             if ((classifier instanceof org.eclipse.uml2.uml.Class)) {
               String _name_5 = ((org.eclipse.uml2.uml.Class)classifier).getName();
-              String _plus_8 = (_name_5 + ".");
+              String _plus_11 = (_name_5 + ".");
               String _bodySuffix_2 = CppCodeGenUtils.getBodySuffix();
-              String classBodyFileName = (_plus_8 + _bodySuffix_2);
+              String classBodyFileName = (_plus_11 + _bodySuffix_2);
               String _generateClassBodyCode = CppClassifierGenerator.generateClassBodyCode(classifier);
-              CppFileGenerator.generateFile(container, classBodyFileName, _generateClassBodyCode, true);
+              String _plus_12 = (commentHeader + _generateClassBodyCode);
+              CppFileGenerator.generateFile(container, classBodyFileName, _plus_12, true);
             }
           }
         }
@@ -194,11 +198,17 @@ public class CppClassifierGenerator extends CppFileGenerator {
     _builder.append("************************************************************/");
     _builder.newLine();
     _builder.newLine();
+    org.eclipse.uml2.uml.Package _package = classifier.getPackage();
+    String _cppOwnerPackageIncludePath = CppClassIncludeClassDeclaration.cppOwnerPackageIncludePath(_package);
+    String _includeDirective = CppIncludeUtil.includeDirective(_cppOwnerPackageIncludePath);
+    _builder.append(_includeDirective, "");
+    _builder.newLineIfNotEmpty();
+    _builder.newLine();
     {
       List<String> _sortedIncludePathList = CppClassifierGenerator.getSortedIncludePathList(classifier);
       for(final String path : _sortedIncludePathList) {
-        String _includeDirective = CppIncludeUtil.includeDirective(path);
-        _builder.append(_includeDirective, "");
+        String _includeDirective_1 = CppIncludeUtil.includeDirective(path);
+        _builder.append(_includeDirective_1, "");
         _builder.newLineIfNotEmpty();
       }
     }
@@ -211,8 +221,8 @@ public class CppClassifierGenerator extends CppFileGenerator {
     _builder.newLineIfNotEmpty();
     TemplateBinding templateElement = tb.get(0);
     _builder.newLineIfNotEmpty();
-    org.eclipse.uml2.uml.Package _package = classifier.getPackage();
-    String _fullPath = GenUtils.getFullPath(_package);
+    org.eclipse.uml2.uml.Package _package_1 = classifier.getPackage();
+    String _fullPath = GenUtils.getFullPath(_package_1);
     String _plus = (_fullPath + "/");
     Element _owner = templateElement.getOwner();
     String _name_1 = ((NamedElement) _owner).getName();
@@ -220,8 +230,8 @@ public class CppClassifierGenerator extends CppFileGenerator {
     String _plus_2 = (_plus_1 + ".");
     String _headerSuffix = CppCodeGenUtils.getHeaderSuffix();
     String _plus_3 = (_plus_2 + _headerSuffix);
-    String _includeDirective_1 = CppIncludeUtil.includeDirective(_plus_3);
-    _builder.append(_includeDirective_1, "");
+    String _includeDirective_2 = CppIncludeUtil.includeDirective(_plus_3);
+    _builder.append(_includeDirective_2, "");
     _builder.newLineIfNotEmpty();
     _builder.newLine();
     String _openNS = CppGenUtils.openNS(classifier);
@@ -268,13 +278,9 @@ public class CppClassifierGenerator extends CppFileGenerator {
   }
   
   public static List<String> getSortedIncludePathList(final Classifier classifier) {
-    Iterable<String> includePathList = CppClassIncludeClassDeclaration.CppClassAllIncludes(classifier);
-    org.eclipse.uml2.uml.Package _package = classifier.getPackage();
-    String includePath = CppClassIncludeClassDeclaration.cppOwnerPackageIncludePath(_package);
-    List<String> theList = IterableExtensions.<String>toList(includePathList);
-    theList.add(includePath);
-    IterableExtensions.<String>sort(theList);
-    return theList;
+    Iterable<String> _CppClassAllIncludes = CppClassIncludeClassDeclaration.CppClassAllIncludes(classifier);
+    List<String> includePathList = IterableExtensions.<String>sort(_CppClassAllIncludes);
+    return includePathList;
   }
   
   public static String generateBindBodyCode(final Classifier classifier) {
@@ -398,11 +404,17 @@ public class CppClassifierGenerator extends CppFileGenerator {
     _builder.append("************************************************************/");
     _builder.newLine();
     _builder.newLine();
+    org.eclipse.uml2.uml.Package _package = classifier.getPackage();
+    String _cppOwnerPackageIncludePath = CppClassIncludeClassDeclaration.cppOwnerPackageIncludePath(_package);
+    String _includeDirective = CppIncludeUtil.includeDirective(_cppOwnerPackageIncludePath);
+    _builder.append(_includeDirective, "");
+    _builder.newLineIfNotEmpty();
+    _builder.newLine();
     {
       List<String> _sortedIncludePathList = CppClassifierGenerator.getSortedIncludePathList(classifier);
       for(final String path : _sortedIncludePathList) {
-        String _includeDirective = CppIncludeUtil.includeDirective(path);
-        _builder.append(_includeDirective, "");
+        String _includeDirective_1 = CppIncludeUtil.includeDirective(path);
+        _builder.append(_includeDirective_1, "");
         _builder.newLineIfNotEmpty();
       }
     }
@@ -571,7 +583,8 @@ public class CppClassifierGenerator extends CppFileGenerator {
         }
       };
       Iterable<Operation> _filter = IterableExtensions.<Operation>filter(_ownedOperations, _function);
-      boolean _equals = Objects.equal(_filter, null);
+      int _size = IterableExtensions.size(_filter);
+      boolean _equals = (_size == 0);
       if (_equals) {
         EList<Property> _attributes = classifier.getAttributes();
         final Function1<Property, Boolean> _function_1 = new Function1<Property, Boolean>() {
@@ -606,7 +619,7 @@ public class CppClassifierGenerator extends CppFileGenerator {
           if (_not) {
             String _name = classifier.getName();
             _builder.append(_name, "");
-            _builder.append(" : ");
+            _builder.append("() : ");
             {
               boolean _hasElements = false;
               for(final Property a : attributeList) {

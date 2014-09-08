@@ -19,11 +19,14 @@ namespace Package1 {
 
 /**
  * 
- * @param iVal1 @param iVal2 @param cVal1 @param cVal2 @param this 
+ * @param iVal1 
+ * @param iVal2 
+ * @param cVal1 
+ * @param cVal2 
+ * @return this 
  */
 int Class8::operation1(int /*in*/iVal1, int /*in*/iVal2, char /*in*/cVal1,
 		char /*in*/cVal2) {
-
 }
 
 /**
@@ -31,7 +34,6 @@ int Class8::operation1(int /*in*/iVal1, int /*in*/iVal2, char /*in*/cVal1,
  * @param iVal1 
  */
 void Class8::operation1(int /*in*/iVal1) {
-
 }
 
 } // of namespace Package1

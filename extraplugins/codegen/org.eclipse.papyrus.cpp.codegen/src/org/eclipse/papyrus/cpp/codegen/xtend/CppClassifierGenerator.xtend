@@ -60,20 +60,21 @@ class CppClassifierGenerator extends CppFileGenerator {
 			// Template Bound Class
 			if (GenUtils.isTemplateBoundElement(classifier)) {
 				val bindHeaderFileName = classifier.getName() + "." + CppCodeGenUtils.getHeaderSuffix()
-				generateFile(container, bindHeaderFileName, classifier.generateBindHeaderCode, true);
+				generateFile(container, bindHeaderFileName, commentHeader + classifier.generateBindHeaderCode, true);
 
 				var bindBodyFileName = classifier.getName() + "." + CppCodeGenUtils.getBodySuffix()
-				generateFile(container, bindBodyFileName, classifier.generateBindBodyCode, true);
-			} else {
+				generateFile(container, bindBodyFileName, commentHeader + classifier.generateBindBodyCode, true);
+			}
+			else {
 
 				// Class Header file generation
 				val classHeaderFileName = classifier.getName() + "." + CppCodeGenUtils.getHeaderSuffix()
-				generateFile(container, classHeaderFileName, classifier.generateClassHeaderCode, true);
+				generateFile(container, classHeaderFileName, commentHeader + classifier.generateClassHeaderCode, true);
 
 				// Class Body file generation
 				if (classifier instanceof Class) {
 					var classBodyFileName = classifier.getName() + "." + CppCodeGenUtils.getBodySuffix()
-					generateFile(container, classBodyFileName, classifier.generateClassBodyCode, true);
+					generateFile(container, classBodyFileName, commentHeader + classifier.generateClassBodyCode, true);
 				}
 			}
 		}
@@ -100,6 +101,8 @@ class CppClassifierGenerator extends CppFileGenerator {
 		/************************************************************
 		              «classifier.name» template binding header
 		 ************************************************************/
+		
+		«CppIncludeUtil.includeDirective(CppClassIncludeClassDeclaration.cppOwnerPackageIncludePath(classifier.package))»
 		
 		«FOR path : getSortedIncludePathList(classifier)» 
 			«CppIncludeUtil.includeDirective(path)»
@@ -129,12 +132,8 @@ class CppClassifierGenerator extends CppFileGenerator {
 	}
 
 	static def getSortedIncludePathList(Classifier classifier) {
-		var includePathList = CppClassIncludeClassDeclaration.CppClassAllIncludes(classifier)
-		var includePath = CppClassIncludeClassDeclaration.cppOwnerPackageIncludePath(classifier.package)
-		var theList = includePathList.toList
-		theList.add(includePath)
-		theList.sort
-		return theList
+		var includePathList = CppClassIncludeClassDeclaration.CppClassAllIncludes(classifier).sort;
+		return includePathList
 	}
 
 	static def generateBindBodyCode(Classifier classifier) {
@@ -182,6 +181,8 @@ class CppClassifierGenerator extends CppFileGenerator {
 		/************************************************************
 		              «classifier.name» class header
 		 ************************************************************/
+		
+		«CppIncludeUtil.includeDirective(CppClassIncludeClassDeclaration.cppOwnerPackageIncludePath(classifier.package))»
 		
 		«FOR path : getSortedIncludePathList(classifier)» 
 			«CppIncludeUtil.includeDirective(path)»
@@ -278,11 +279,11 @@ class CppClassifierGenerator extends CppFileGenerator {
 		CppClassOperationsDeclaration.
 		*/
 		var code = '''
-		«IF CppOperations.getOwnedOperations(classifier).filter[GenUtils.hasStereotype(it, Create)] == null»
+		«IF CppOperations.getOwnedOperations(classifier).filter[GenUtils.hasStereotype(it, Create)].size() == 0»
 			«var attributeList = classifier.attributes.filter[
 			(it.isStatic == false) && (it.defaultValue != null) && (it.defaultValue.stringValue != null)]»
 			«IF !attributeList.empty»
-				«classifier.name» : «FOR a : attributeList SEPARATOR ', '»«a.name»(«a.defaultValue.stringValue»)«ENDFOR» {}
+				«classifier.name»() : «FOR a : attributeList SEPARATOR ', '»«a.name»(«a.defaultValue.stringValue»)«ENDFOR» {}
 			«ENDIF»
 		«ENDIF»'''
 		return code.trim

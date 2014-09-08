@@ -19,14 +19,11 @@ namespace Package1 {
 /**
  * 
  */
-
 class Class8 {
-
 public:
 	Class8() :
 			defaultIValue(12) {
 	}
-
 	/**
 	 * 
 	 */
@@ -34,7 +31,11 @@ public:
 
 	/**
 	 * 
-	 * @param iVal1 @param iVal2 @param cVal1 @param cVal2 @param this 
+	 * @param iVal1 
+	 * @param iVal2 
+	 * @param cVal1 
+	 * @param cVal2 
+	 * @return this 
 	 */
 	int operation1(int /*in*/iVal1, int /*in*/iVal2 = 2, char /*in*/cVal1,
 			char /*in*/cVal2);
@@ -48,7 +49,6 @@ public:
 };
 /************************************************************/
 /* External declarations (package visibility)               */
-
 /************************************************************/
 
 /* Inline functions                                         */

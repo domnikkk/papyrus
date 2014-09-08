@@ -17,9 +17,11 @@
 
 /**
  * Assignment operator
- * @param cSource @param this 
+ * @param cSource 
+ * @return this 
  */
 Class1& Class1::operator =(const Class1 /*in*/& cSource) {
+
 	if (this == &cSource)
 		return *this;
 
@@ -30,7 +32,6 @@ Class1& Class1::operator =(const Class1 /*in*/& cSource) {
 
 /**
  * Destructor
- * 
  */
 Class1::~Class1() {
 
@@ -41,6 +42,7 @@ Class1::~Class1() {
  * @param cSource 
  */
 Class1::Class1(const Class1 /*in*/& cSource) {
+
 	iVal = cSource.iVal;
 }
 

@@ -12,18 +12,14 @@
 #include "CppCodegenTest/Pkg_CppCodegenTest.h"
 
 #include "CppCodegenTest/Class3.h"
-
 #include "CppCodegenTest/Class5.h"
 
 /************************************************************/
 /**
  * Virtual class inheritance and class instantiation
  */
-
 class Class6: public Class5 {
-
 public:
-
 	/**
 	 * 
 	 */
@@ -32,7 +28,6 @@ public:
 };
 /************************************************************/
 /* External declarations (package visibility)               */
-
 /************************************************************/
 
 /* Inline functions                                         */

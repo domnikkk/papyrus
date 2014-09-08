@@ -17,11 +17,8 @@
 /**
  * C++ Virtual Interface
  */
-
 class Class5 {
-
 public:
-
 	/**
 	 * 
 	 */
@@ -29,20 +26,19 @@ public:
 
 	/**
 	 * 
-	 * @param iReturn 
+	 * @return iReturn 
 	 */
 	virtual int pureVirtualOp() = 0;
 
 	/**
 	 * 
-	 * @param iReturn 
+	 * @return iReturn 
 	 */
 	virtual int* pureVirtualConstOp() = 0;
 
 };
 /************************************************************/
 /* External declarations (package visibility)               */
-
 /************************************************************/
 
 /* Inline functions                                         */

@@ -20,12 +20,13 @@ class CppDocumentation {
 	static def CppOperationDoc(Operation operation) '''
 		/**
 		 * «GenUtils.getComments(operation).replaceAll('\n', '\n * ')»
-		 «FOR op: operation.ownedParameters.filter[it.direction != ParameterDirectionKind.RETURN_LITERAL]»«CppParamDoc(op)»«ENDFOR»
+		 «FOR op: operation.ownedParameters»«CppParamDoc(op)»«ENDFOR»
 		 */
 	'''
 	
 	static def CppParamDoc(Parameter parameter) '''
-		* @param «parameter.name» «GenUtils.getComments(parameter).replaceAll('\n', '\n *    ')»
+		* «IF (parameter.direction == ParameterDirectionKind.RETURN_LITERAL)
+		  »@return«ELSE»@param«ENDIF» «parameter.name» «GenUtils.getComments(parameter).replaceAll('\n', '\n *    ')»
 	'''
 	
 	static def CppBehaviorDoc(Behavior behavior) '''

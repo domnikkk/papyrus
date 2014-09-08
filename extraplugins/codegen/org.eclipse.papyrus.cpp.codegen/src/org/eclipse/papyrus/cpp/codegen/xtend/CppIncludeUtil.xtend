@@ -19,7 +19,8 @@ class CppIncludeUtil {
 			UMLUtil.getStereotypeApplication(ne, Include)
 			var header = UMLUtil.getStereotypeApplication(ne, Include).header
 			if ((header != null) && (header.length > 0)) {
-				var includeHeader = constIncludeHeaderStart + GenUtils.cleanCR(header) + constIncludeHeaderEnd
+				var includeHeader = constIncludeHeaderStart + GenUtils.cleanCR(header) + '\n' +
+					constIncludeHeaderEnd
 				return includeHeader
 			}
 		}
@@ -37,7 +38,8 @@ class CppIncludeUtil {
 		if (GenUtils.hasStereotype(ne, Include)) {
 			var String preBody = UMLUtil.getStereotypeApplication(ne, Include).preBody
 			if ((preBody != null) && (preBody.length > 0)) {
-				var includePreBody = constIncludePreBodyStart + GenUtils.cleanCR(preBody) + constIncludePreBodyEnd
+				var includePreBody = constIncludePreBodyStart + GenUtils.cleanCR(preBody) + '\n' +
+					constIncludePreBodyEnd
 				return includePreBody
 			}
 		}
@@ -55,7 +57,8 @@ class CppIncludeUtil {
 		if (GenUtils.hasStereotype(ne, Include)) {
 			var String body = UMLUtil.getStereotypeApplication(ne, Include).body
 			if ((body != null) && (body.length > 0)) {
-				var includeBody = constIncludeBodyStart + GenUtils.cleanCR(body) + '\n' + constIncludeBodyEnd
+				var includeBody = constIncludeBodyStart + GenUtils.cleanCR(body) + '\n' +
+					constIncludeBodyEnd
 				return includeBody
 			}
 		}

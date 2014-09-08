@@ -51,8 +51,9 @@ public class CppIncludeUtil {
         CharSequence _constIncludeHeaderStart = CppIncludeUtil.constIncludeHeaderStart();
         String _cleanCR = GenUtils.cleanCR(header);
         String _plus = (_constIncludeHeaderStart + _cleanCR);
+        String _plus_1 = (_plus + "\n");
         CharSequence _constIncludeHeaderEnd = CppIncludeUtil.constIncludeHeaderEnd();
-        String includeHeader = (_plus + _constIncludeHeaderEnd);
+        String includeHeader = (_plus_1 + _constIncludeHeaderEnd);
         return includeHeader;
       }
     }
@@ -91,8 +92,9 @@ public class CppIncludeUtil {
         CharSequence _constIncludePreBodyStart = CppIncludeUtil.constIncludePreBodyStart();
         String _cleanCR = GenUtils.cleanCR(preBody);
         String _plus = (_constIncludePreBodyStart + _cleanCR);
+        String _plus_1 = (_plus + "\n");
         CharSequence _constIncludePreBodyEnd = CppIncludeUtil.constIncludePreBodyEnd();
-        String includePreBody = (_plus + _constIncludePreBodyEnd);
+        String includePreBody = (_plus_1 + _constIncludePreBodyEnd);
         return includePreBody;
       }
     }

@@ -12,7 +12,6 @@
 #include "CppCodegenTest/Pkg_CppCodegenTest.h"
 
 #include "AnsiCLibrary/Pkg_AnsiCLibrary.h"
-
 #include "CppCodegenTest/Class1.h"
 
 // Include from Include stereotype (header)
@@ -23,11 +22,8 @@
 /**
  * 
  */
-
 class Class2 {
-
 public:
-
 	/**
 	 * boolean  value with public visibility
 	 */
@@ -35,55 +31,60 @@ public:
 
 	/**
 	 * Default constructor
-	 * 
 	 */
 	Class2();
 
 	/**
 	 * Constructor with parameters
-	 * @param newIVal1 @param newIVal2 @param newBVal 
+	 * @param newIVal1 
+	 * @param newIVal2 
+	 * @param newBVal 
 	 */
 	Class2(int /*in*/newIVal1, int /*in*/newIVal2, bool /*in*/newBVal);
 
 	/**
 	 * Virtual method
-	 * @param a @param b @param  
+	 * @param a 
+	 * @param b 
+	 * @return  
 	 */
 	virtual double virtualOp(double /*in*/a, double /*in*/b);
 
 	/**
 	 * Static method
-	 * 
 	 */
 	static void staticOp();
 
 	/**
 	 * Inline method
-	 * @param a @param b @param  
+	 * @param a 
+	 * @param b 
+	 * @return  
 	 */
 	inline int inlineOp(int /*in*/a, int /*in*/b);
 
 	/**
 	 * Friend method
-	 * 
 	 */
 	void friendOp();
 
 	/**
 	 * Non-static method
-	 * 
 	 */
 	void nonStaticOp();
 
 	/**
 	 * Method with in, out, inout, return parameters
-	 * @param in @param out @param inout @param ret 
+	 * @param in 
+	 * @param out 
+	 * @param inout 
+	 * @return ret 
 	 */
 	int paramsOp(int /*in*/in, int /*out*/* out, int /*inout*/* inout);
 
 	/**
 	 * Void Method
-	 * @param  
+	 * @return  
 	 */
 	void voidOp();
 
@@ -95,52 +96,47 @@ public:
 
 	/**
 	 * Virtual destructor
-	 * 
 	 */
 	virtual ~Class2();
 
 	/**
 	 * 
-	 * @param c1 @param  
+	 * @param c1 
+	 * @return  
 	 */
 	Class1 classesOp(Class1 /*in*/c1);
 
 	/**
 	 * Const method
-	 * 
 	 */
 	void constOp() const;
 
 protected:
-
 	/**
 	 * int value with protected visibility
 	 */
 	int protectedIVal1;
 
 private:
-
 	/**
 	 * int value with private visibility
 	 */
 	int privateIVal2;
-
 };
 /************************************************************/
 /* External declarations (package visibility)               */
-
 /**
  * int value with package visibility
  */
 int packageIVal3;
-
 /************************************************************/
 
 /* Inline functions                                         */
-
 /**
  * Inline method
- * @param a @param b @param  
+ * @param a 
+ * @param b 
+ * @return  
  */
 inline int Class2::inlineOp(int /*in*/a, int /*in*/b) {
 	return a + b;

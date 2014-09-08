@@ -9,8 +9,6 @@ import org.eclipse.uml2.uml.Operation;
 import org.eclipse.uml2.uml.Parameter;
 import org.eclipse.uml2.uml.ParameterDirectionKind;
 import org.eclipse.xtend2.lib.StringConcatenation;
-import org.eclipse.xtext.xbase.lib.Functions.Function1;
-import org.eclipse.xtext.xbase.lib.IterableExtensions;
 
 /**
  * @author Önder GÜRCAN (onder.gurcan@cea.fr)
@@ -46,14 +44,7 @@ public class CppDocumentation {
     _builder.append(" ");
     {
       EList<Parameter> _ownedParameters = operation.getOwnedParameters();
-      final Function1<Parameter, Boolean> _function = new Function1<Parameter, Boolean>() {
-        public Boolean apply(final Parameter it) {
-          ParameterDirectionKind _direction = it.getDirection();
-          return Boolean.valueOf((!Objects.equal(_direction, ParameterDirectionKind.RETURN_LITERAL)));
-        }
-      };
-      Iterable<Parameter> _filter = IterableExtensions.<Parameter>filter(_ownedParameters, _function);
-      for(final Parameter op : _filter) {
+      for(final Parameter op : _ownedParameters) {
         CharSequence _CppParamDoc = CppDocumentation.CppParamDoc(op);
         _builder.append(_CppParamDoc, " ");
       }
@@ -67,7 +58,17 @@ public class CppDocumentation {
   
   public static CharSequence CppParamDoc(final Parameter parameter) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("* @param ");
+    _builder.append("* ");
+    {
+      ParameterDirectionKind _direction = parameter.getDirection();
+      boolean _equals = Objects.equal(_direction, ParameterDirectionKind.RETURN_LITERAL);
+      if (_equals) {
+        _builder.append("@return");
+      } else {
+        _builder.append("@param");
+      }
+    }
+    _builder.append(" ");
     String _name = parameter.getName();
     _builder.append(_name, "");
     _builder.append(" ");
