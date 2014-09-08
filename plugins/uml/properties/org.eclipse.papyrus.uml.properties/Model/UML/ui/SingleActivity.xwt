@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Composite xmlns:j="clr-namespace:java.lang"
-	xmlns:ppe="clr-namespace:org.eclipse.papyrus.views.properties.widgets" xmlns="http://www.eclipse.org/xwt/presentation"
+	xmlns:ppe="clr-namespace:org.eclipse.papyrus.views.properties.widgets"
+	xmlns:x="http://www.eclipse.org/xwt"
 	xmlns:ppel="clr-namespace:org.eclipse.papyrus.views.properties.widgets.layout"
-	xmlns:x="http://www.eclipse.org/xwt">
+	xmlns="http://www.eclipse.org/xwt/presentation">
 	<Composite.layout>
 		<ppel:PropertiesLayout></ppel:PropertiesLayout>
 	</Composite.layout>
@@ -41,7 +42,8 @@
 			property="UML:Behavior:precondition"></ppe:MultiReference>
 		<ppe:MultiReference input="{Binding}"
 			property="UML:Behavior:postcondition"></ppe:MultiReference>
-		<ppe:MultiReference input="{Binding}" property="UML:Classifier:useCase"></ppe:MultiReference>
+		<ppe:MultiReference input="{Binding}"
+			property="UML:Behavior:ownedParameter"></ppe:MultiReference>
 		<ppe:MultiReference input="{Binding}" property="UML:Activity:variable"></ppe:MultiReference>
 	</Composite>
 </Composite>
