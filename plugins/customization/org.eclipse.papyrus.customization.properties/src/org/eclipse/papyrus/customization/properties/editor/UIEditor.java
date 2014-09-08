@@ -12,9 +12,13 @@
  *****************************************************************************/
 package org.eclipse.papyrus.customization.properties.editor;
 
+import java.io.IOException;
+import java.io.OutputStream;
 import java.util.EventObject;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.Map;
 import java.util.Set;
 
 import org.eclipse.core.resources.IFile;
@@ -32,6 +36,8 @@ import org.eclipse.emf.ecore.presentation.EcoreEditorPlugin;
 import org.eclipse.emf.ecore.provider.EcoreItemProviderAdapterFactory;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.URIConverter;
+import org.eclipse.emf.ecore.resource.URIHandler;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
@@ -245,7 +251,49 @@ public class UIEditor extends EcoreEditor implements ITabbedPropertySheetPageCon
 	}
 
 	@Override
+	protected void updateProblemIndication() {
+		super.updateProblemIndication();
+		// if (updateProblemIndication){
+		// for (Diagnostic diag : resourceToDiagnosticMap.values()){
+		// if (diag.getSeverity() != Diagnostic.OK)
+		// Activator.log.error(diag.getMessage(), diag.getException());
+		// }
+		// }
+	}
+
+	@Override
 	public void doSave(IProgressMonitor progressMonitor) {
+		if (editingDomain.getResourceToReadOnlyMap() == null) {
+			editingDomain.setResourceToReadOnlyMap(new HashMap<Resource, Boolean>());
+		}
+
+		Map<Resource, Boolean> readOnlyMap = editingDomain.getResourceToReadOnlyMap();
+		ResourceSet resourceSet = getEditingDomain().getResourceSet();
+
+		for (Resource resource : resourceSet.getResources()) {
+			if (readOnlyMap.containsKey(resource)) {
+				continue;
+			}
+
+			URIHandler handler = resourceSet.getURIConverter().getURIHandler(resource.getURI());
+			Map<String, Object> options = new HashMap<String, Object>();
+			options.put(URIConverter.OPTION_URI_CONVERTER, resourceSet.getURIConverter());
+			try {
+				OutputStream os = handler.createOutputStream(resource.getURI(), options);
+				readOnlyMap.put(resource, os == null);
+				if (os != null) {
+					os.close();
+				}
+			} catch (IOException ex) {
+				// Currently, createOutputStream() fails on a NPE if the resource is read-only.
+				// Only log a warning, since the editor is currently not able to properly check for
+				// read-only state without calling createOutputStream
+				// See Bug 351146 for potential options regarding a proper fix
+				Activator.log.warn("Trying to save a read-only resource: " + resource.getURI());
+				readOnlyMap.put(resource, true);
+			}
+		}
+
 		super.doSave(progressMonitor);
 		refreshContext();
 	}
