@@ -14,7 +14,7 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.papyrus.codegen.extensionpoints;bundle-version="1.0.1",
  org.eclipse.xtend.lib,
  org.eclipse.xtend.lib.macro,
- com.google.guava,
+ com.google.guava;bundle-version="11.0.0",
  org.eclipse.xtext.xbase.lib,
  org.eclipse.uml2.uml.profile.standard;bundle-version="1.0.0"
 Export-Package: org.eclipse.papyrus.cpp.codegen;uses:="org.eclipse.ui.plugin,org.osgi.framework,org.eclipse.uml2.uml",
