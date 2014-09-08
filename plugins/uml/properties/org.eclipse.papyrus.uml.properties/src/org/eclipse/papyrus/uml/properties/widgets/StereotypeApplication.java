@@ -9,12 +9,14 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 417409
+ *  Christian W. Damus (CEA) - bug 441227
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.properties.widgets;
 
 import org.eclipse.core.databinding.observable.ChangeEvent;
 import org.eclipse.core.databinding.observable.IChangeListener;
+import org.eclipse.core.databinding.observable.IObservable;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.infra.widgets.editors.AbstractEditor;
 import org.eclipse.papyrus.uml.profile.tree.objects.StereotypedElementTreeObject;
@@ -63,11 +65,17 @@ public class StereotypeApplication extends AbstractPropertyEditor {
 		if (element instanceof StereotypeApplicationModelElement) {
 			internalDoBinding();
 
-			input.getObservable(propertyPath).addChangeListener(new IChangeListener() {
+			final IObservable property = input.getObservable(propertyPath);
+			property.addChangeListener(new IChangeListener() {
 				public void handleChange(ChangeEvent event) {
-					// re-do the injection into the stereotype composite because the
-					// underlying model element selection may have been changed
-					internalDoBinding();
+					if ((self == null) || self.isDisposed()) {
+						// Desist
+						property.removeChangeListener(this);
+					} else {
+						// re-do the injection into the stereotype composite because the
+						// underlying model element selection may have been changed
+						internalDoBinding();
+					}
 				}
 			});
 		}
