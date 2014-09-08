@@ -186,7 +186,7 @@ public abstract class AbstractSynchronizedOnEStructuralFeatureAxisManager extend
 				if (getListenFeatures().contains(msg.getFeature())) {
 					featureValueHasChanged(msg);
 				}
-			};
+			}
 		};
 
 		getTableContext().eAdapters().add(this.featureListener);

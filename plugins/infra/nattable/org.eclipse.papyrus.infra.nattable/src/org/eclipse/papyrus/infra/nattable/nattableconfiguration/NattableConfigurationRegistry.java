@@ -144,12 +144,12 @@ public class NattableConfigurationRegistry {
 				if (myTester != null) {
 					return myTester.isAllowed(tableContext);
 				} else {
-					new Status(IStatus.ERROR, Activator.PLUGIN_ID, Messages.NattableConfigurationRegistry_TesterNotFound);
+					return new Status(IStatus.ERROR, Activator.PLUGIN_ID, Messages.NattableConfigurationRegistry_TesterNotFound);
 				}
 			} else if (tester == null) {
 				return new Status(IStatus.OK, Activator.PLUGIN_ID, Messages.NattableConfigurationRegistry_NoTesterForThisConfiguration);
 			} else {
-				new Status(IStatus.ERROR, Activator.PLUGIN_ID, Messages.NattableConfigurationRegistry_TesterNotManager);
+				return new Status(IStatus.ERROR, Activator.PLUGIN_ID, Messages.NattableConfigurationRegistry_TesterNotManager);
 			}
 		}
 		return new Status(IStatus.ERROR, Activator.PLUGIN_ID, Messages.NattableConfigurationRegistry_ConfigurationNotFound);
