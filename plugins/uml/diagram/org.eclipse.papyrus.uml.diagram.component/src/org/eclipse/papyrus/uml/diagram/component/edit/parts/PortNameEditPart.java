@@ -34,7 +34,6 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.ParserOptions;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.LabelEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.LabelDirectEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.figures.IBorderItemLocator;
 import org.eclipse.gmf.runtime.diagram.ui.l10n.DiagramColorRegistry;
@@ -60,6 +59,7 @@ import org.eclipse.papyrus.extensionpoints.editors.ui.ILabelEditorDialog;
 import org.eclipse.papyrus.extensionpoints.editors.ui.IPopupEditorHelper;
 import org.eclipse.papyrus.extensionpoints.editors.utils.DirectEditorsUtil;
 import org.eclipse.papyrus.extensionpoints.editors.utils.IDirectEditorsIds;
+import org.eclipse.papyrus.infra.gmfdiag.common.editpart.PapyrusLabelEditPart;
 import org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.IMaskManagedLabelEditPolicy;
 import org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.IndirectMaskLabelEditPolicy;
 import org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.LabelAlignmentEditPolicy;
@@ -85,7 +85,7 @@ import org.eclipse.uml2.uml.Feature;
 /**
  * @generated
  */
-public class PortNameEditPart extends LabelEditPart implements ITextAwareEditPart, IBorderItemEditPart, ILabelRoleProvider {
+public class PortNameEditPart extends PapyrusLabelEditPart implements ITextAwareEditPart, IBorderItemEditPart, ILabelRoleProvider {
 
 	/**
 	 * @generated

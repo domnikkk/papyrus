@@ -26,7 +26,8 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.papyrus.infra.widgets;bundle-version="1.0.1",
  org.eclipse.papyrus.infra.services.labelprovider;bundle-version="1.0.1",
  org.eclipse.papyrus.infra.tools;bundle-version="1.0.1",
- org.eclipse.papyrus.emf.facet.custom.ui;bundle-version="1.0.1"
+ org.eclipse.papyrus.emf.facet.custom.ui;bundle-version="1.0.1",
+ org.eclipse.gmf.runtime.notation.edit
 Bundle-Vendor: %providerName
 Bundle-ActivationPolicy: lazy
 Bundle-Version: 1.0.1.qualifier

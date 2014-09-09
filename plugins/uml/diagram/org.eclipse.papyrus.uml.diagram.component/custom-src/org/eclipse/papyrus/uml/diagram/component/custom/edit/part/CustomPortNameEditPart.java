@@ -1,3 +1,5 @@
+package org.eclipse.papyrus.uml.diagram.component.custom.edit.part;
+
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
  *
@@ -12,7 +14,6 @@
  *  Mickaël ADAM (ALL4TEC) mickael.adam@all4tec.net - Text alignment implementation
  *
  *****************************************************************************/
-package org.eclipse.papyrus.uml.diagram.composite.custom.edit.parts;
 
 import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.geometry.Point;
@@ -20,10 +21,19 @@ import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.infra.gmfdiag.common.locator.IPapyrusBorderItemLocator;
-import org.eclipse.papyrus.uml.diagram.composite.edit.parts.PortNameEditPart;
+import org.eclipse.papyrus.uml.diagram.component.edit.parts.PortNameEditPart;
 
+/**
+ * The Class CustomPortNameEditPart.
+ */
 public class CustomPortNameEditPart extends PortNameEditPart {
 
+	/**
+	 * Instantiates a new custom port name edit part.
+	 *
+	 * @param view
+	 *            the view
+	 */
 	public CustomPortNameEditPart(View view) {
 		super(view);
 	}
@@ -43,10 +53,10 @@ public class CustomPortNameEditPart extends PortNameEditPart {
 	 */
 	@Override
 	public void refreshBounds() {
-		int x = ((Integer) getStructuralFeatureValue(NotationPackage.eINSTANCE.getLocation_X())).intValue();
-		int y = ((Integer) getStructuralFeatureValue(NotationPackage.eINSTANCE.getLocation_Y())).intValue();
+		int dx = ((Integer) getStructuralFeatureValue(NotationPackage.eINSTANCE.getLocation_X())).intValue();
+		int dy = ((Integer) getStructuralFeatureValue(NotationPackage.eINSTANCE.getLocation_Y())).intValue();
 
-		Point offset = new Point(x, y);
+		Point offset = new Point(dx, dy);
 
 		if (externalLabelLocator == null) {
 			externalLabelLocator = (IPapyrusBorderItemLocator) getBorderItemLocator();
@@ -59,5 +69,4 @@ public class CustomPortNameEditPart extends PortNameEditPart {
 		externalLabelLocator.setPosition(getPositionOnParent());
 		getFigure().getParent().setConstraint(getFigure(), externalLabelLocator);
 	}
-
 }
