@@ -69,7 +69,7 @@ public class LifelineHeadUtil {
 
 	public static int computeLifelineVerticalPosition(final EditPart parent) {
 		if (parent instanceof GraphicalEditPart) {
-			List children = parent.getChildren();
+			List<?> children = parent.getChildren();
 			int bottom = -1;
 			for (Object object : children) {
 				if (!(object instanceof LifelineEditPart)) {
@@ -113,7 +113,7 @@ public class LifelineHeadUtil {
 		while (parent instanceof LifelineEditPart) {
 			parent = parent.getParent();
 		}
-		List childrenList = parent.getChildren();
+		List<?> childrenList = parent.getChildren();
 		for (Object object : childrenList) {
 			if (toMovedLifelines.contains(object) || !(object instanceof LifelineEditPart)) {
 				continue;
@@ -192,7 +192,7 @@ public class LifelineHeadUtil {
 						Command cmd = getVerticalMoveShapeCommand((ShapeNodeEditPart) ep, moveDelta, false);
 						commands.appendIfCanExecute(cmd);
 						movedEditParts.add(ep);
-						List children = ep.getChildren();
+						List<?> children = ep.getChildren();
 						for (Object object : children) {
 							if (movedEditParts.contains(object)) {
 								continue;
@@ -228,7 +228,7 @@ public class LifelineHeadUtil {
 		while (parent instanceof LifelineEditPart) {
 			parent = parent.getParent();
 		}
-		List childrenList = parent.getChildren();
+		List<?> childrenList = parent.getChildren();
 		for (Object object : childrenList) {
 			if (toMovedLifelines.contains(object) || !(object instanceof LifelineEditPart)) {
 				continue;
@@ -244,7 +244,7 @@ public class LifelineHeadUtil {
 	}
 
 	private static void fillMoveDownMessageEnds(CompoundCommand commands, GraphicalEditPart editPart, int moveDelta, List<EditPart> movedEditParts) {
-		List sourceConnections = editPart.getSourceConnections();
+		List<?> sourceConnections = editPart.getSourceConnections();
 		for (Object object : sourceConnections) {
 			ConnectionEditPart conn = (ConnectionEditPart) object;
 			EditPart target = conn.getTarget();
@@ -257,7 +257,7 @@ public class LifelineHeadUtil {
 				commands.appendIfCanExecute(command);
 			}
 		}
-		List targetConnections = editPart.getTargetConnections();
+		List<?> targetConnections = editPart.getTargetConnections();
 		for (Object object : targetConnections) {
 			ConnectionEditPart conn = (ConnectionEditPart) object;
 			if (conn instanceof Message7EditPart) {
@@ -311,7 +311,7 @@ public class LifelineHeadUtil {
 			return;
 		}
 		// 1. links from current lifeline
-		List sourceConnections = editPart.getSourceConnections();
+		List<?> sourceConnections = editPart.getSourceConnections();
 		for (Object object : sourceConnections) {
 			ConnectionEditPart conn = (ConnectionEditPart) object;
 			LifelineEditPart target = getLifeline(conn.getTarget());
@@ -322,7 +322,7 @@ public class LifelineHeadUtil {
 		}
 
 		// 2. links to current lifeline.
-		List targetConnections = editPart.getTargetConnections();
+		List<?> targetConnections = editPart.getTargetConnections();
 		for (Object object : targetConnections) {
 			ConnectionEditPart conn = (ConnectionEditPart) object;
 			LifelineEditPart source = getLifeline(conn.getSource());
@@ -333,7 +333,7 @@ public class LifelineHeadUtil {
 		}
 
 		if (editPart instanceof CustomLifelineEditPart && ((CustomLifelineEditPart) editPart).isInlineMode()) {
-			List children = ((CustomLifelineEditPart) editPart).getChildren();
+			List<?> children = ((CustomLifelineEditPart) editPart).getChildren();
 			for (Object object : children) {
 				if (object instanceof LifelineEditPart) {
 					collectLifelines(toMovedLifelines, (LifelineEditPart) object);

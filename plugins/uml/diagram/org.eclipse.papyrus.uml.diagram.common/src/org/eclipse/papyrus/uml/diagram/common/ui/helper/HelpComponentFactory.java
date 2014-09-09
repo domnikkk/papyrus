@@ -17,8 +17,8 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Display;
+import org.eclipse.ui.forms.events.HyperlinkAdapter;
 import org.eclipse.ui.forms.events.HyperlinkEvent;
-import org.eclipse.ui.forms.events.IHyperlinkListener;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.forms.widgets.ImageHyperlink;
 
@@ -28,15 +28,16 @@ import org.eclipse.ui.forms.widgets.ImageHyperlink;
 public class HelpComponentFactory {
 
 	/** The image. */
-	public static Image image = null;
+	public static final Image image = loadImage();
 
 	// Load only one time the help icon
-	static {
+	private static Image loadImage() {
 		try {
-			image = new Image(Display.getDefault(), Activator.getDefault().getBundle().getResource("icons/help/help_contents-1.gif").openStream());
+			return new Image(Display.getDefault(), Activator.getDefault().getBundle().getResource("icons/help/help_contents-1.gif").openStream());
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		return null;
 	}
 
 	/**
@@ -64,21 +65,13 @@ public class HelpComponentFactory {
 		helpImage.setBackground(null);
 		final String toolTip = (pToolTip == null) ? "Help" : pToolTip;
 		helpImage.setToolTipText(toolTip);
-		helpImage.addHyperlinkListener(new IHyperlinkListener() {
+		helpImage.addHyperlinkListener(new HyperlinkAdapter() {
 
 			// create the HelpDialog that displays the help description
 			@Override
 			public void linkActivated(HyperlinkEvent e) {
 				HelpDialog dialog = new HelpDialog(parent.getShell(), Display.getDefault().getCursorLocation(), toolTip, helpText, parseTags);
 				dialog.open();
-			}
-
-			@Override
-			public void linkEntered(HyperlinkEvent e) {
-			}
-
-			@Override
-			public void linkExited(HyperlinkEvent e) {
 			}
 
 		});

@@ -121,8 +121,8 @@ public abstract class AppliedStereotypeLabelDisplayEditPolicy extends AbstractAp
 	public String stereotypesAndPropertiesToDisplay(String separator, String stereotypesToDisplay, String stereotypeWithQualifiedName, String stereotypesPropertiesToDisplay) {
 		// Get the preference from PreferenceStore. there should be an assert
 		final IPreferenceStore store = Activator.getDefault().getPreferenceStore();
-		assert store != null : "The preference store was not found";
 		if (store == null) {
+			Activator.log.warn("The preference store was not found");
 			return "";
 		}
 		// retrieve if the name of the stereotype has to put to lower case or
@@ -266,8 +266,8 @@ public abstract class AppliedStereotypeLabelDisplayEditPolicy extends AbstractAp
 
 		// Get the preference from PreferenceStore. there should be an assert
 		final IPreferenceStore store = Activator.getDefault().getPreferenceStore();
-		assert store != null : "The preference store was not found";
 		if (store == null) {
+			Activator.log.warn("The preference store was not found");
 			return "";
 		}
 		String sNameAppearance = store.getString(UMLVisualInformationPapyrusConstant.P_STEREOTYPE_NAME_APPEARANCE);

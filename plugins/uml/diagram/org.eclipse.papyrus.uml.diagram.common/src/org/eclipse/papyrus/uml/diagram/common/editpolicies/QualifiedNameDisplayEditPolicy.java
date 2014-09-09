@@ -182,7 +182,7 @@ public class QualifiedNameDisplayEditPolicy extends GraphicalEditPolicy implemen
 			return;
 		}
 
-		if (UMLPackage.eINSTANCE.getNamedElement_Name().equals(notification.getFeatureID(NamedElement.class)) || notification.getNotifier() instanceof EAnnotation) {
+		if (UMLPackage.eINSTANCE.getNamedElement_Name().equals(notification.getFeature()) || notification.getNotifier() instanceof EAnnotation) {
 			refreshQualifiedNameDisplay();
 		} else if (UMLPackage.eINSTANCE.getNamedElement_Name().equals(notification.getFeature())) {
 			if (parentListeners.contains(notification.getNotifier()) || getNamedElement().equals(notification.getNotifier())) {

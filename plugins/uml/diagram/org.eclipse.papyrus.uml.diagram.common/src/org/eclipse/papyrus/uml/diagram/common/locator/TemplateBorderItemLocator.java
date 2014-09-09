@@ -39,11 +39,6 @@ import org.eclipse.draw2d.geometry.Rectangle;
  * </pre>
  */
 public class TemplateBorderItemLocator extends PortPositionLocator {
-	/**
-	 * the width of the area surrounding the parent figure where border item can
-	 * be put
-	 */
-	protected int borderItemOffset = 10;
 
 	public TemplateBorderItemLocator(IFigure parentFigure, int preferredSide) {
 		super(parentFigure, preferredSide);

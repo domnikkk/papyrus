@@ -20,9 +20,9 @@ import org.eclipse.papyrus.uml.diagram.common.figure.node.AppliedStereotypeCompa
 
 public class PropertiesCompartmentLayoutManager extends AbstractLayout {
 
-	protected static int MARGIN_X = 5;
+	protected static final int MARGIN_X = 5;
 
-	protected static int MARGIN_Y = 10;
+	protected static final int MARGIN_Y = 10;
 
 	/**
 	 *

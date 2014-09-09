@@ -33,8 +33,6 @@ import org.eclipse.emf.transaction.RollbackException;
 import org.eclipse.emf.transaction.Transaction;
 import org.eclipse.emf.transaction.TransactionalCommandStack;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
-import org.eclipse.emf.transaction.impl.InternalTransactionalEditingDomain;
-import org.eclipse.emf.transaction.impl.TransactionalCommandStackImpl;
 import org.eclipse.gef.EditDomain;
 import org.eclipse.gef.Tool;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart;
@@ -46,6 +44,8 @@ import org.eclipse.jface.window.Window;
 import org.eclipse.papyrus.infra.core.editor.CoreMultiDiagramEditor;
 import org.eclipse.papyrus.infra.core.services.ServiceException;
 import org.eclipse.papyrus.infra.emf.utils.ServiceUtilsForEObject;
+import org.eclipse.papyrus.infra.gmfdiag.common.utils.GMFUnsafe;
+import org.eclipse.papyrus.uml.diagram.common.Activator;
 import org.eclipse.papyrus.uml.diagram.common.util.MessageDirection;
 import org.eclipse.papyrus.uml.diagram.sequence.CustomMessages;
 import org.eclipse.papyrus.uml.diagram.sequence.SequencePaletteFactory.AspectUnspecifiedTypeConnectionToolEx;
@@ -510,15 +510,13 @@ public class CommandHelper {
 	 *            The command
 	 * @param flag
 	 */
-	public static void executeCommandWithoutHistory(EditingDomain editingDomain, org.eclipse.emf.common.command.Command command, boolean flag) {
-		TransactionalCommandStackImpl stack = new TransactionalCommandStackImpl();
-		stack.setEditingDomain((InternalTransactionalEditingDomain) editingDomain);
+	public static void executeCommandWithoutHistory(TransactionalEditingDomain editingDomain, org.eclipse.emf.common.command.Command command, boolean flag) {
 		try {
-			stack.execute(command, Collections.singletonMap(Transaction.OPTION_UNPROTECTED, Boolean.TRUE));
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		} catch (RollbackException e) {
-			e.printStackTrace();
+			GMFUnsafe.write(editingDomain, command);
+		} catch (RollbackException ex) {
+			Activator.log.error(ex);
+		} catch (InterruptedException ex) {
+			Activator.log.error(ex);
 		}
 	}
 

@@ -66,7 +66,6 @@ public class SemanticAdapter implements IAdaptable, IProxyEObject {
 	 * @param element
 	 *            the new element
 	 */
-	// @unused
 	public void setElement(Object element) {
 		this.element = element;
 	}

@@ -34,7 +34,7 @@ import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.osgi.util.NLS;
 import org.eclipse.papyrus.uml.diagram.common.dialogs.CreateOrShowExistingLinkDialog;
 import org.eclipse.papyrus.uml.diagram.common.messages.Messages;
-import org.eclipse.papyrus.uml.diagram.common.util.EdgeEndsMapper;
+import org.eclipse.papyrus.uml.diagram.common.util.LinkEndsMapper;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.UMLPackage;
 
@@ -105,7 +105,7 @@ public class CreateOrShowExistingElementHelper {
 		if (showDialogAccordingPreferences() && defaultCommand.canExecute()) {
 			final EObject container = req.getContainer();
 			if (container instanceof Element) {
-				final List<EdgeEndsMapper> existingElements = getExistingLinksBetweenSourceAndTarget(req, linkElementType);
+				final List<LinkEndsMapper> existingElements = getExistingLinksBetweenSourceAndTarget(req, linkElementType);
 				if (existingElements.size() > 0) {
 					final String className = getIElementTypeNameToDisplay(linkElementType);
 					final String dialogTitle = NLS.bind(Messages.CreateOrShowExistingElementHelper_CreateOrRestoreX, className);
@@ -166,8 +166,8 @@ public class CreateOrShowExistingElementHelper {
 	 * @return
 	 *         a list of {@link EdgeEndsMapper} referencing the existing links between the source and the target
 	 */
-	protected List<EdgeEndsMapper> getExistingLinksBetweenSourceAndTarget(final CreateRelationshipRequest request, final IElementType wantedElementType) {
-		final List<EdgeEndsMapper> existingElement = new ArrayList<EdgeEndsMapper>();
+	protected List<LinkEndsMapper> getExistingLinksBetweenSourceAndTarget(final CreateRelationshipRequest request, final IElementType wantedElementType) {
+		final List<LinkEndsMapper> existingElement = new ArrayList<LinkEndsMapper>();
 		for (final Element current : ((Element) request.getContainer()).getOwnedElements()) {
 			if (hasWantedType(current, wantedElementType)) {
 				final Collection<?> sources = this.linkMappingHelper.getSource(current);
@@ -175,9 +175,9 @@ public class CreateOrShowExistingElementHelper {
 				if (sources.contains(request.getSource()) && targets.contains(request.getTarget())) {
 					final EClass wantedEClass = wantedElementType.getEClass();
 					if ((wantedEClass == UMLPackage.eINSTANCE.getConnector()) || (wantedEClass == UMLPackage.eINSTANCE.getAssociation())) {
-						existingElement.add(new EdgeEndsMapper(current, sources, null, null));
+						existingElement.add(new LinkEndsMapper(current, sources, null, null));
 					} else {
-						existingElement.add(new EdgeEndsMapper(current, null, sources, targets));
+						existingElement.add(new LinkEndsMapper(current, null, sources, targets));
 					}
 				}
 			}
@@ -198,7 +198,7 @@ public class CreateOrShowExistingElementHelper {
 	 * @return
 	 *         the command to open the dialog AND do the selected action
 	 */
-	public static final ICommand getOpenLinkDialogCommand(final CreateRelationshipRequest request, final Command defaultCommand, final CreateOrShowExistingLinkDialog dialog, final List<EdgeEndsMapper> existingEObject) {
+	public static final ICommand getOpenLinkDialogCommand(final CreateRelationshipRequest request, final Command defaultCommand, final CreateOrShowExistingLinkDialog dialog, final List<LinkEndsMapper> existingEObject) {
 		final AbstractTransactionalCommand compoundCommand = new AbstractTransactionalCommand(request.getEditingDomain(), "", null) { //$NON-NLS-1$
 
 			/**

@@ -58,7 +58,7 @@ public class PropertyRepresentation {
 	 * separator used in the {@link #propID}. It's not useful, it's only to
 	 * facilitate debug!
 	 */
-	static public String separator = "|";; //$NON-NLS-1$
+	static public final String separator = "|"; //$NON-NLS-1$
 
 	/**
 	 *

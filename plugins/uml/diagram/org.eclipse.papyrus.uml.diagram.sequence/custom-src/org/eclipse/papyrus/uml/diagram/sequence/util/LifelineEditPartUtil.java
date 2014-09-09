@@ -78,7 +78,7 @@ public class LifelineEditPartUtil {
 			return null;
 		}
 		IFigure contentPane = lifelineEditPart.getContentPane();
-		NodeFigure centerFigure = null;
+
 		if (contentPane instanceof LifelineDotLineCustomFigure) {
 			return ((LifelineDotLineCustomFigure) contentPane).getDashLineRectangle();
 		}

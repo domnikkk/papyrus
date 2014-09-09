@@ -273,7 +273,7 @@ public class AspectUnspecifiedTypeCreationTool extends UnspecifiedTypeCreationTo
 		 */
 		@Override
 		protected void createRequests() {
-			for (IElementType elementType : (List<IElementType>) getElementTypes()) {
+			for (IElementType elementType : (List<IElementType>) CreateAspectUnspecifiedTypeRequest.this.getElementTypes()) {
 				Request request = null;
 				if (elementType instanceof INotationType) {
 					ViewDescriptor viewDescriptor = new ViewDescriptor(null, Node.class, ((INotationType) elementType).getSemanticHint(), getPreferencesHint());

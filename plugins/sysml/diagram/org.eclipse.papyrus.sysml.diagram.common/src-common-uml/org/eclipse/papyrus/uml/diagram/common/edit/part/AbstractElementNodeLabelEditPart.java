@@ -227,8 +227,8 @@ public abstract class AbstractElementNodeLabelEditPart extends GraphicalEditPart
 	}
 
 	@Override
-	protected List getModelChildren() {
-		return Collections.EMPTY_LIST;
+	protected List<?> getModelChildren() {
+		return Collections.emptyList();
 	}
 
 	@Override
@@ -304,7 +304,7 @@ public abstract class AbstractElementNodeLabelEditPart extends GraphicalEditPart
 					final EObject element = getParserElement();
 					final IParser parser = getParser();
 					try {
-						IParserEditStatus valid = (IParserEditStatus) getEditingDomain().runExclusive(new RunnableWithResult.Impl() {
+						IParserEditStatus valid = (IParserEditStatus) getEditingDomain().runExclusive(new RunnableWithResult.Impl<IParserEditStatus>() {
 
 							@Override
 							public void run() {

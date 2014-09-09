@@ -42,7 +42,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature.Setting;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.edit.command.SetCommand;
-import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.commands.Command;
@@ -474,8 +473,8 @@ public class SequenceUtil {
 				String oldTerminal = ((IdentityAnchor) idAnchor).getId();
 				PrecisionPoint pp = BaseSlidableAnchor.parseTerminalString(oldTerminal);
 				if (pp.preciseX() <= 1 && pp.preciseX() >= 0 && pp.preciseY() >= 0 && pp.preciseY() <= 1) {
-					int xPos = linkedPartBounds.x + delta.width + (int) Math.round(anchorOwningFigure.getBounds().width * pp.preciseX);
-					int yPos = linkedPartBounds.y + delta.height + (int) Math.round(anchorOwningFigure.getBounds().height * pp.preciseY);
+					int xPos = linkedPartBounds.x + delta.width + (int) Math.round(anchorOwningFigure.getBounds().width * pp.preciseX());
+					int yPos = linkedPartBounds.y + delta.height + (int) Math.round(anchorOwningFigure.getBounds().height * pp.preciseY());
 					return new Point(xPos, yPos);
 				}
 			}
@@ -980,7 +979,7 @@ public class SequenceUtil {
 		return elements;
 	}
 
-	public static void handleMessageSortChange(EditingDomain editingDomain, Notification notification, Message message, MessageSort expectedMessageSort) {
+	public static void handleMessageSortChange(TransactionalEditingDomain editingDomain, Notification notification, Message message, MessageSort expectedMessageSort) {
 		// This restriction isn't needed anymore, as the Property View offers a refactoring
 		// facility for the MessageSort. The refactoring is only available for AsynchCall to
 		// AsynchSignal and vice-versa.
@@ -1560,7 +1559,7 @@ public class SequenceUtil {
 	 * @return boolean
 	 */
 	public static boolean isCreateMessageEndLifeline(LifelineEditPart lifelineEP) {
-		List<Object> targetConnections = lifelineEP.getTargetConnections();
+		List<?> targetConnections = lifelineEP.getTargetConnections();
 		if (targetConnections != null && targetConnections.size() > 0) {
 			for (int i = 0; i < targetConnections.size(); i++) {
 				Object connection = targetConnections.get(i);
@@ -1624,7 +1623,7 @@ public class SequenceUtil {
 	 * @param targetClass
 	 * @return EditPart
 	 */
-	public static EditPart getEditPart(EditPart editPart, EObject targetElement, Class targetClass) {
+	public static EditPart getEditPart(EditPart editPart, EObject targetElement, Class<?> targetClass) {
 		if (editPart == null || targetElement == null || targetClass == null) {
 			return null;
 		}

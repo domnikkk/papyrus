@@ -31,7 +31,7 @@ public class HTMLCleaner {
 	/** map of special html strings and their real value */
 	protected static final Map<String, String> xmlSpecials = new HashMap<String, String>();
 
-	protected static List<String> htmlTags = new ArrayList<String>();
+	protected static final List<String> htmlTags = new ArrayList<String>();
 
 	static {
 		// initialize the special character map

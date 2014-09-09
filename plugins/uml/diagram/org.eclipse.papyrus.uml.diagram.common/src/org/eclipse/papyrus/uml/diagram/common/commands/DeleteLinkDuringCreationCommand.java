@@ -80,19 +80,19 @@ public class DeleteLinkDuringCreationCommand extends DeleteCommand {
 	protected CommandResult doExecuteWithResult(IProgressMonitor progressMonitor, IAdaptable info) throws ExecutionException {
 
 		// find editpartlistener to remove
-		Map epRegistry = viewer.getEditPartRegistry();
+		Map<?, ?> epRegistry = viewer.getEditPartRegistry();
 		// the listener to remove
 		EditPartListener listenerToRemove = null;
 		// the graphical editpart to delete
 		IGraphicalEditPart editPart = (IGraphicalEditPart) epRegistry.get(edge);
 
 		if (editPart instanceof IEditpartListenerAccess) {
-			Iterator iterlistener = ((UMLConnectionNodeEditPart) editPart).getEventListenerIterator(EditPartListener.class);
+			Iterator<?> iterlistener = ((UMLConnectionNodeEditPart) editPart).getEventListenerIterator(EditPartListener.class);
 			while (iterlistener.hasNext()) {
 				Object currentObject = iterlistener.next();
 
-				Class classobject = currentObject.getClass();
-				Class activeToolClass = AbstractConnectionCreationTool.class;
+				Class<?> classobject = currentObject.getClass();
+				Class<?> activeToolClass = AbstractConnectionCreationTool.class;
 				String activeToolClassName = activeToolClass.getName();
 
 				// compare the name of the listener.

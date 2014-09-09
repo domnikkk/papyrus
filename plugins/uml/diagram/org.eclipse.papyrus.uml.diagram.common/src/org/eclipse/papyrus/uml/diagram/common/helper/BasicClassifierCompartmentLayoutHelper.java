@@ -27,7 +27,7 @@ import org.eclipse.papyrus.uml.diagram.common.figure.layout.ManualCompartmentToo
 public class BasicClassifierCompartmentLayoutHelper extends ClassifierCompartmentLayoutHelper {
 
 	/** The e instance. */
-	protected static BasicClassifierCompartmentLayoutHelper eInstance = new BasicClassifierCompartmentLayoutHelper();
+	protected static final BasicClassifierCompartmentLayoutHelper eInstance = new BasicClassifierCompartmentLayoutHelper();
 
 	/** The manualtool box. */
 	protected ILayoutToolBox manualtoolBox;

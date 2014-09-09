@@ -20,7 +20,7 @@ import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.draw2d.geometry.PrecisionPoint;
 import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.emf.common.command.AbstractCommand;
-import org.eclipse.emf.edit.domain.EditingDomain;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gef.NodeEditPart;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
@@ -95,8 +95,8 @@ public class MessageAnchorRepairer {
 		if (oldHeight == newHeight) {
 			return;
 		}
-		EditingDomain editingDomain = ((GraphicalEditPart) editPart).getEditingDomain();
-		List sourceConnections = editPart.getSourceConnections();
+		TransactionalEditingDomain editingDomain = ((GraphicalEditPart) editPart).getEditingDomain();
+		List<?> sourceConnections = editPart.getSourceConnections();
 		for (Object object : sourceConnections) {
 			if (!(object instanceof AbstractMessageEditPart)) {
 				continue;
@@ -106,7 +106,7 @@ public class MessageAnchorRepairer {
 			final IdentityAnchor anchor = (IdentityAnchor) edge.getSourceAnchor();
 			updateAnchorTerminal(editingDomain, anchor, oldHeight, newHeight);
 		}
-		List targetConnections = editPart.getTargetConnections();
+		List<?> targetConnections = editPart.getTargetConnections();
 		for (Object object : targetConnections) {
 			if (!(object instanceof AbstractMessageEditPart)) {
 				continue;
@@ -118,7 +118,7 @@ public class MessageAnchorRepairer {
 		}
 	}
 
-	private static void updateAnchorTerminal(EditingDomain editingDomain, final IdentityAnchor anchor, int oldHeight, int newHeight) {
+	private static void updateAnchorTerminal(TransactionalEditingDomain editingDomain, final IdentityAnchor anchor, int oldHeight, int newHeight) {
 		final String oldTerminal = anchor.getId();
 		PrecisionPoint pp = BaseSlidableAnchor.parseTerminalString(oldTerminal);
 		int yPos = (int) Math.round(oldHeight * pp.preciseY());

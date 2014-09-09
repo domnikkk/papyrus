@@ -13,9 +13,9 @@
 package org.eclipse.papyrus.uml.diagram.common.commands;
 
 import java.util.Iterator;
+import java.util.List;
 
 import org.eclipse.emf.common.command.AbstractCommand;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.ConnectableElement;
@@ -36,7 +36,7 @@ public class UpdateLifelineRepresentsCommand extends AbstractCommand {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see org.eclipse.emf.common.command.AbstractCommand#canExecute()
 	 */
 	@Override
@@ -100,7 +100,7 @@ public class UpdateLifelineRepresentsCommand extends AbstractCommand {
 	 * @return the ConnectorEnd
 	 */
 	protected ConnectorEnd getConnectorEnd(Interaction interaction, ConnectableElement prop) {
-		EList connectors = interaction.getOwnedConnectors();
+		List<Connector> connectors = interaction.getOwnedConnectors();
 		Connector connector;
 		if (connectors.isEmpty()) {
 			connector = interaction.createOwnedConnector(null);
@@ -109,12 +109,12 @@ public class UpdateLifelineRepresentsCommand extends AbstractCommand {
 			return null;
 		}
 
-		Iterator itconnectors = connectors.iterator();
+		Iterator<Connector> itconnectors = connectors.iterator();
 		ConnectorEnd end = null;
 		while (end == null && itconnectors.hasNext()) {
-			Iterator itends = ((Connector) itconnectors.next()).getEnds().iterator();
+			Iterator<ConnectorEnd> itends = itconnectors.next().getEnds().iterator();
 			while (end == null && itends.hasNext()) {
-				ConnectorEnd e = (ConnectorEnd) itends.next();
+				ConnectorEnd e = itends.next();
 				if (e.getRole() == prop) {
 					end = e;
 				}

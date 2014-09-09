@@ -30,7 +30,7 @@ import org.eclipse.jface.viewers.TableViewerColumn;
 import org.eclipse.jface.viewers.ViewerColumn;
 import org.eclipse.papyrus.infra.widgets.Activator;
 import org.eclipse.papyrus.uml.diagram.common.messages.Messages;
-import org.eclipse.papyrus.uml.diagram.common.util.EdgeEndsMapper;
+import org.eclipse.papyrus.uml.diagram.common.util.LinkEndsMapper;
 import org.eclipse.papyrus.uml.tools.providers.UMLLabelProvider;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Image;
@@ -96,7 +96,7 @@ public class CreateOrShowExistingLinkDialog extends MessageDialog {
 	/**
 	 * the list of the elements to display in the Table
 	 */
-	private final List<EdgeEndsMapper> existingLinks;
+	private final List<LinkEndsMapper> existingLinks;
 
 
 	final UMLLabelProvider labelProvider = new UMLLabelProvider();
@@ -137,7 +137,7 @@ public class CreateOrShowExistingLinkDialog extends MessageDialog {
 	 * @param elements
 	 *            the list of the possible elements
 	 */
-	public CreateOrShowExistingLinkDialog(final String dialogTitle, final String dialogMessage, final List<EdgeEndsMapper> elements) {
+	public CreateOrShowExistingLinkDialog(final String dialogTitle, final String dialogMessage, final List<LinkEndsMapper> elements) {
 		super(Display.getDefault().getActiveShell(), dialogTitle, null, dialogMessage, MessageDialog.QUESTION, new String[] { CREATE_STRING, RESTORE_SELECTION, CANCEL_STRING }, RESTORE_SELECTED_LINK);
 		this.existingLinks = elements;
 	}
@@ -201,7 +201,7 @@ public class CreateOrShowExistingLinkDialog extends MessageDialog {
 				if (checkboxCellEditor.getValue() == Boolean.TRUE) {
 					selectedElementIndex = existingLinks.indexOf(element);
 				}
-				for (final EdgeEndsMapper current : existingLinks) {
+				for (final LinkEndsMapper current : existingLinks) {
 					viewer.update(current, null);
 				}
 			}
@@ -228,8 +228,8 @@ public class CreateOrShowExistingLinkDialog extends MessageDialog {
 
 			@Override
 			public String getText(Object element) {
-				if (element instanceof EdgeEndsMapper) {
-					return labelProvider.getText(((EdgeEndsMapper) element).getLink());
+				if (element instanceof LinkEndsMapper) {
+					return labelProvider.getText(((LinkEndsMapper) element).getLink());
 				}
 				// not possible
 				return NOT_AVAILABLE;
@@ -249,8 +249,8 @@ public class CreateOrShowExistingLinkDialog extends MessageDialog {
 
 			@Override
 			public String getText(Object element) {
-				if (element instanceof EdgeEndsMapper) {
-					return getLabel(((EdgeEndsMapper) element).getEnds());
+				if (element instanceof LinkEndsMapper) {
+					return getLabel(((LinkEndsMapper) element).getEnds());
 				}
 				return NOT_AVAILABLE;
 			}
@@ -263,8 +263,8 @@ public class CreateOrShowExistingLinkDialog extends MessageDialog {
 
 			@Override
 			public String getText(Object element) {
-				if (element instanceof EdgeEndsMapper) {
-					return getLabel(((EdgeEndsMapper) element).getSources());
+				if (element instanceof LinkEndsMapper) {
+					return getLabel(((LinkEndsMapper) element).getSources());
 				}
 				return NOT_AVAILABLE;
 			}
@@ -276,8 +276,8 @@ public class CreateOrShowExistingLinkDialog extends MessageDialog {
 
 			@Override
 			public String getText(Object element) {
-				if (element instanceof EdgeEndsMapper) {
-					return getLabel(((EdgeEndsMapper) element).getTargets());
+				if (element instanceof LinkEndsMapper) {
+					return getLabel(((LinkEndsMapper) element).getTargets());
 				}
 				return NOT_AVAILABLE;
 			}

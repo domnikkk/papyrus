@@ -23,9 +23,9 @@ import org.eclipse.draw2d.geometry.Transposer;
 
 public class LaneLayout extends AbstractHintLayout {
 
-	public static int HORIZONTAL = 0;
+	public static final int HORIZONTAL = 0;
 
-	public static int VERTICAL = 1;
+	public static final int VERTICAL = 1;
 
 	private static final Insets NO_INSETS = new Insets(0, 0, 0, 0);
 

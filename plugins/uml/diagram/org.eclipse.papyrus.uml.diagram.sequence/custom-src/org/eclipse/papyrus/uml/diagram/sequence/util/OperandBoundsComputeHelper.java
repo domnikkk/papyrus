@@ -113,7 +113,7 @@ public class OperandBoundsComputeHelper {
 	 */
 	public static InteractionOperandEditPart findFirstIOEP(CombinedFragmentCombinedFragmentCompartmentEditPart compartEP) {
 		InteractionOperandEditPart firstIOEP = null;
-		List children = compartEP.getChildren();
+		List<?> children = compartEP.getChildren();
 		for (int i = 0; i < children.size(); i++) {
 			if (children.get(i) instanceof InteractionOperandEditPart) {
 				firstIOEP = (InteractionOperandEditPart) children.get(i);
@@ -131,7 +131,7 @@ public class OperandBoundsComputeHelper {
 	 */
 	public static InteractionOperandEditPart findLastIOEP(CombinedFragmentCombinedFragmentCompartmentEditPart compartEP) {
 		InteractionOperandEditPart lastIOEP = null;
-		List children = compartEP.getChildren();
+		List<?> children = compartEP.getChildren();
 		for (int i = children.size() - 1; i >= 0; i--) {
 			if (children.get(i) instanceof InteractionOperandEditPart) {
 				lastIOEP = (InteractionOperandEditPart) children.get(i);
@@ -150,7 +150,7 @@ public class OperandBoundsComputeHelper {
 	 */
 	public static InteractionOperandEditPart findPreviousIOEP(CombinedFragmentCombinedFragmentCompartmentEditPart compartEP, InteractionOperandEditPart currentIOEP) {
 		InteractionOperandEditPart previousIOEP = null;
-		List children = compartEP.getChildren();
+		List<?> children = compartEP.getChildren();
 		for (int i = 0; i < children.size() - 1; i++) {
 			if (children.get(i) instanceof InteractionOperandEditPart) {
 				if (children.get(i) == currentIOEP) {
@@ -172,7 +172,7 @@ public class OperandBoundsComputeHelper {
 	 */
 	public static InteractionOperandEditPart findLatterIOEP(CombinedFragmentCombinedFragmentCompartmentEditPart compartEP, InteractionOperandEditPart currentIOEP) {
 		InteractionOperandEditPart latterIOEP = null;
-		List children = compartEP.getChildren();
+		List<?> children = compartEP.getChildren();
 		for (int i = children.size() - 1; i > 0; i--) {
 			if (children.get(i) instanceof InteractionOperandEditPart) {
 				if (children.get(i) == currentIOEP) {
@@ -792,13 +792,13 @@ public class OperandBoundsComputeHelper {
 	private static ICommand getMoveAnchorCommand(int yDelta, Rectangle figureBounds, IdentityAnchor gmfAnchor) {
 		String oldTerminal = gmfAnchor.getId();
 		PrecisionPoint pp = BaseSlidableAnchor.parseTerminalString(oldTerminal);
-		int yPos = (int) Math.round(figureBounds.height * pp.preciseY);
+		int yPos = (int) Math.round(figureBounds.height * pp.preciseY());
 		yPos += yDelta;
-		pp.preciseY = (double) yPos / figureBounds.height;
-		if (pp.preciseY > 1.0) {
-			pp.preciseY = 1.0;
-		} else if (pp.preciseY < 0.0) {
-			pp.preciseY = 0.0;
+		pp.setPreciseY((double) yPos / figureBounds.height);
+		if (pp.preciseY() > 1.0) {
+			pp.setPreciseY(1.0);
+		} else if (pp.preciseY() < 0.0) {
+			pp.setPreciseY(0.0);
 		}
 		String newTerminal = (new BaseSlidableAnchor(null, pp)).getTerminal();
 		return new SetValueCommand(new SetRequest(gmfAnchor, NotationPackage.Literals.IDENTITY_ANCHOR__ID, newTerminal));
@@ -939,7 +939,7 @@ public class OperandBoundsComputeHelper {
 	 * @param command
 	 */
 	public static void addUpdateBoundsForIOCreationCommand(CombinedFragmentCombinedFragmentCompartmentEditPart compartment, ViewDescriptor viewDescriptor, CompositeCommand command) {
-		List children = compartment.getChildren();
+		List<?> children = compartment.getChildren();
 		if (children != null && children.size() > 0) {
 			InteractionOperandEditPart lastOperandEP = OperandBoundsComputeHelper.findLastIOEP(compartment);
 			// update bounds
@@ -1551,7 +1551,7 @@ public class OperandBoundsComputeHelper {
 					SetBoundsCommand cmd = new SetBoundsCommand(getEditingDomain(), getLabel(), child, newBounds);
 					moveCommand.add(new ICommandProxy(cmd));
 					moveCommand = OccurrenceSpecificationMoveHelper.completeMoveExecutionSpecificationCommand(moveCommand, child, newBounds, new ChangeBoundsRequest());
-					List targetConnections = child.getTargetConnections();
+					List<?> targetConnections = child.getTargetConnections();
 					for (Object object : targetConnections) {
 						if (!(object instanceof AbstractMessageEditPart)) {
 							continue;
@@ -1572,7 +1572,7 @@ public class OperandBoundsComputeHelper {
 							}
 						}
 					}
-					List sourceConnections = child.getSourceConnections();
+					List<?> sourceConnections = child.getSourceConnections();
 					for (Object object : sourceConnections) {
 						if (!(object instanceof AbstractMessageEditPart)) {
 							continue;

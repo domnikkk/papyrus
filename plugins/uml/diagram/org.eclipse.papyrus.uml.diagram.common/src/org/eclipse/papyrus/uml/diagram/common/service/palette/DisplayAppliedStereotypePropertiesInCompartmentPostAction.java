@@ -64,12 +64,6 @@ public class DisplayAppliedStereotypePropertiesInCompartmentPostAction extends G
 	/** map of stereotypes / properties to display with their qualified names */
 	protected Map<String, String> stereotypePropertiesToDisplay = new HashMap<String, String>();
 
-	/** entry proxy "parent" of this action when configuring the action */
-	protected IPaletteEntryProxy entryProxy;
-
-	/** list of applied profiles */
-	protected List<Profile> appliedProfiles;
-
 	/** add icon path */
 	protected static final String ICONS_ADD = "/icons/obj16/Add_16x16.gif"; //$NON-NLS-1$
 

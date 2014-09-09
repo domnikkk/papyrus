@@ -80,8 +80,8 @@ import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.runtime.notation.datatype.GradientData;
+import org.eclipse.papyrus.commands.wrappers.GEFtoEMFCommandWrapper;
 import org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.IMaskManagedLabelEditPolicy;
-import org.eclipse.papyrus.uml.diagram.common.command.wrappers.GEFtoEMFCommandWrapper;
 import org.eclipse.papyrus.uml.diagram.common.commands.PreserveAnchorsPositionCommand;
 import org.eclipse.papyrus.uml.diagram.common.draw2d.anchors.LifelineAnchor;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.BorderItemResizableEditPolicy;
@@ -482,9 +482,9 @@ public class CustomLifelineEditPart extends LifelineEditPart {
 				// only allow Lifeline creation for PartDecomposition.
 				if (request instanceof CreateViewRequest) {
 					CreateViewRequest req = (CreateViewRequest) request;
-					Iterator iter = req.getViewDescriptors().iterator();
+					Iterator<? extends CreateViewRequest.ViewDescriptor> iter = req.getViewDescriptors().iterator();
 					while (iter.hasNext()) {
-						CreateViewRequest.ViewDescriptor viewDescriptor = (CreateViewRequest.ViewDescriptor) iter.next();
+						CreateViewRequest.ViewDescriptor viewDescriptor = iter.next();
 						String semanticHint = viewDescriptor.getSemanticHint();
 						if (!UMLVisualIDRegistry.getType(VISUAL_ID).equals(semanticHint)) {
 							return UnexecutableCommand.INSTANCE;
@@ -503,7 +503,7 @@ public class CustomLifelineEditPart extends LifelineEditPart {
 			}
 
 			private Command getMoveResizeCommand(ChangeBoundsRequest request) {
-				List changeEditParts = request.getEditParts();
+				List<?> changeEditParts = request.getEditParts();
 				if (changeEditParts != null && changeEditParts.size() > 0) {
 					TransactionalEditingDomain editingDomain = ((IGraphicalEditPart) getHost()).getEditingDomain();
 					CompositeTransactionalCommand composite = new CompositeTransactionalCommand(editingDomain, null);
@@ -979,7 +979,7 @@ public class CustomLifelineEditPart extends LifelineEditPart {
 					CommandHelper.executeCommandWithoutHistory(editingDomain, RemoveCommand.create(editingDomain, lifeline, UMLPackage.eINSTANCE.getLifeline_CoveredBy(), oldValue), true);
 				}
 			} else if (Notification.REMOVE_MANY == notification.getEventType()) {
-				List oldValue = (List) notification.getOldValue();
+				List<?> oldValue = (List<?>) notification.getOldValue();
 				for (Object object : oldValue) {
 					if (coveredBys.contains(object)) {
 						CommandHelper.executeCommandWithoutHistory(editingDomain, RemoveCommand.create(editingDomain, lifeline, UMLPackage.eINSTANCE.getLifeline_CoveredBy(), object), true);
@@ -1039,7 +1039,7 @@ public class CustomLifelineEditPart extends LifelineEditPart {
 
 	public boolean ignoreRequest(Request request) { // moving editpart causing to add child
 		if (request instanceof ChangeBoundsRequest && (request.getType().equals(org.eclipse.gef.RequestConstants.REQ_ADD) || request.getType().equals(RequestConstants.REQ_DROP))) {
-			List parts = ((ChangeBoundsRequest) request).getEditParts();
+			List<?> parts = ((ChangeBoundsRequest) request).getEditParts();
 			if (parts != null) {
 				for (Object obj : parts) {
 					if (obj instanceof CommentEditPart || obj instanceof ConstraintEditPart || obj instanceof TimeObservationEditPart || obj instanceof CombinedFragmentEditPart) {
@@ -1075,7 +1075,7 @@ public class CustomLifelineEditPart extends LifelineEditPart {
 		// return true;
 		// }
 		// }
-		List models = super.getModelChildren();
+		List<?> models = super.getModelChildren();
 		for (Object o : models) {
 			if (o instanceof View) {
 				View view = (View) o;

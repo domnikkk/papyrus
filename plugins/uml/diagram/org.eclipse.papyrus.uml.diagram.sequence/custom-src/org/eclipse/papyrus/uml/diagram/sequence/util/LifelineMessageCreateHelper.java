@@ -115,7 +115,7 @@ public class LifelineMessageCreateHelper {
 
 	// when a lifleine is deleted, move its created lifelines up
 	public static Command restoreLifelineOnDelete(Command command, LifelineEditPart part) {
-		List list = part.getSourceConnections();
+		List<?> list = part.getSourceConnections();
 		if (list != null && list.size() > 0) {
 			for (Object l : list) {
 				if (l instanceof Message4EditPart) {
@@ -136,7 +136,7 @@ public class LifelineMessageCreateHelper {
 	}
 
 	public static boolean hasMessageCreate(GraphicalEditPart sourceEditPart, EditPart targetEditPart) {
-		List list = sourceEditPart.getSourceConnections();
+		List<?> list = sourceEditPart.getSourceConnections();
 		for (Object o : list) {
 			if (o instanceof Message4EditPart && targetEditPart.equals(((Message4EditPart) o).getTarget())) {
 				return true;
@@ -149,14 +149,14 @@ public class LifelineMessageCreateHelper {
 		return getIncomingMessageCreate(target).size() > 0;
 	}
 
-	public static List getIncomingMessageCreate(EditPart target) {
-		List create = new ArrayList();
+	public static List<?> getIncomingMessageCreate(EditPart target) {
+		List<EditPart> create = new ArrayList<EditPart>();
 		if (target instanceof LifelineEditPart) {
-			List list = ((LifelineEditPart) target).getTargetConnections();
+			List<?> list = ((LifelineEditPart) target).getTargetConnections();
 			if (list != null && list.size() > 0) {
 				for (Object l : list) {
 					if (l instanceof Message4EditPart) {
-						create.add(l);
+						create.add((Message4EditPart) l);
 					}
 				}
 			}
@@ -222,7 +222,7 @@ public class LifelineMessageCreateHelper {
 
 	// move all lifelines which has incoming create link from part
 	public static Command moveCascadeLifeline(LifelineEditPart part, Command command, int dy) {
-		List list = part.getSourceConnections();
+		List<?> list = part.getSourceConnections();
 		if (list != null && list.size() > 0) {
 			for (Object l : list) {
 				if (l instanceof Message4EditPart) {
@@ -251,7 +251,7 @@ public class LifelineMessageCreateHelper {
 	public static boolean canMoveLifelineVertical(LifelineEditPart child, Rectangle newBounds) {
 		int halfHeight = child.getPrimaryShape().getFigureLifelineNameContainerFigure().getBounds().height / 2;
 		// check outgoing links
-		List list = child.getSourceConnections();
+		List<?> list = child.getSourceConnections();
 		if (list != null && list.size() > 0) {
 			for (Object l : list) {
 				if (l instanceof Message4EditPart && ((Message4EditPart) l).getTarget() instanceof LifelineEditPart) {

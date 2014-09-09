@@ -201,7 +201,7 @@ public class CornerBentFigure extends NoteFigure implements IPapyrusNodeUMLEleme
 	 */
 	@Override
 	public void setStereotypePropertiesInCompartment(String stereotypeProperties) {
-		if (stereotypeProperties == null || stereotypeProperties == "") {
+		if (stereotypeProperties == null || "".equals(stereotypeProperties)) {
 			// remove figure of stereotype properties compartment
 			if (this.stereotypePropertiesContent != null) {
 				this.remove(this.stereotypePropertiesContent);

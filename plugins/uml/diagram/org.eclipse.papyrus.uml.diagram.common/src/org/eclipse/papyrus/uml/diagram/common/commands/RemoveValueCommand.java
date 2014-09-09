@@ -69,9 +69,9 @@ public class RemoveValueCommand extends EditElementCommand {
 		EObject elementToEdit = getElementToEdit();
 		boolean many = FeatureMapUtil.isMany(elementToEdit, feature);
 		if (many) {
-			Collection collection = ((Collection) elementToEdit.eGet(feature));
-			if (value instanceof List) {
-				List values = (List) value;
+			Collection<?> collection = ((Collection<?>) elementToEdit.eGet(feature));
+			if (value instanceof List<?>) {
+				List<?> values = (List<?>) value;
 
 				for (Object o : values) {
 					if (collection.contains(o)) {
@@ -105,7 +105,7 @@ public class RemoveValueCommand extends EditElementCommand {
 		if (value == null && many) {
 			return false;
 		}
-		List allFeatures = getElementToEdit().eClass().getEAllStructuralFeatures();
+		List<?> allFeatures = getElementToEdit().eClass().getEAllStructuralFeatures();
 		if (allFeatures.contains(feature) && feature.isChangeable()) {
 			return verifyMany();
 		}
@@ -119,8 +119,8 @@ public class RemoveValueCommand extends EditElementCommand {
 	 */
 	private boolean verifyMany() {
 		if (value instanceof List) {
-			List values = (List) value;
-			for (Iterator iter = values.iterator(); iter.hasNext();) {
+			List<?> values = (List<?>) value;
+			for (Iterator<?> iter = values.iterator(); iter.hasNext();) {
 				Object element = iter.next();
 				if (!feature.getEType().isInstance(element)) {
 					return false;
