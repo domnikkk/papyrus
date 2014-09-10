@@ -9,7 +9,6 @@
 package org.eclipse.papyrus.umlrt.UMLRealTime;
 
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.uml2.uml.Property;
 
 /**
@@ -36,7 +35,7 @@ public interface CapsulePart extends EObject {
 	 * If the meaning of the '<em>Base Property</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Property</em>' reference.
 	 * @see #setBase_Property(Property)
 	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.UMLRealTimePackage#getCapsulePart_Base_Property()
@@ -49,7 +48,7 @@ public interface CapsulePart extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.umlrt.UMLRealTime.CapsulePart#getBase_Property <em>Base Property</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Property</em>' reference.
 	 * @see #getBase_Property()

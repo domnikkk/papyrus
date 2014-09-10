@@ -56,7 +56,7 @@ public class ProfileUtil {
 	 */
 	public static boolean isDirty(Package _package, Profile _profile) {
 		boolean isDirty = false;
-		if (_profile == null || _profile.eResource() == null) {
+		if (_profile == null || _profile.eResource() == null || _package.eResource() == null) {
 			return false;
 		}
 

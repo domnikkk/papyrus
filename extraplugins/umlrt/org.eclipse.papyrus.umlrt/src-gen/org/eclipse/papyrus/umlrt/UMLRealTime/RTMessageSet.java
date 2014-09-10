@@ -9,7 +9,6 @@
 package org.eclipse.papyrus.umlrt.UMLRealTime;
 
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.uml2.uml.Interface;
 
 /**
@@ -37,7 +36,7 @@ public interface RTMessageSet extends EObject {
 	 * If the meaning of the '<em>Base Interface</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Interface</em>' reference.
 	 * @see #setBase_Interface(Interface)
 	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.UMLRealTimePackage#getRTMessageSet_Base_Interface()
@@ -50,7 +49,7 @@ public interface RTMessageSet extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.umlrt.UMLRealTime.RTMessageSet#getBase_Interface <em>Base Interface</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Interface</em>' reference.
 	 * @see #getBase_Interface()
@@ -60,19 +59,19 @@ public interface RTMessageSet extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Rt Msg Kind</b></em>' attribute.
-	 * The default value is <code>"true"</code>.
+	 * The default value is <code>"in"</code>.
 	 * The literals are from the enumeration {@link org.eclipse.papyrus.umlrt.UMLRealTime.RTMessageKind}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Rt Msg Kind</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Rt Msg Kind</em>' attribute.
 	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.RTMessageKind
 	 * @see #setRtMsgKind(RTMessageKind)
 	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.UMLRealTimePackage#getRTMessageSet_RtMsgKind()
-	 * @model default="true" required="true" ordered="false"
+	 * @model default="in" required="true" ordered="false"
 	 * @generated
 	 */
 	RTMessageKind getRtMsgKind();
@@ -81,7 +80,7 @@ public interface RTMessageSet extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.umlrt.UMLRealTime.RTMessageSet#getRtMsgKind <em>Rt Msg Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Rt Msg Kind</em>' attribute.
 	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.RTMessageKind

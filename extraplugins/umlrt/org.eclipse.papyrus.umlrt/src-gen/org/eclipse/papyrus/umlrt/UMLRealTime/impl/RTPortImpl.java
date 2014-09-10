@@ -8,33 +8,14 @@
  */
 package org.eclipse.papyrus.umlrt.UMLRealTime.impl;
 
-import java.lang.reflect.InvocationTargetException;
-
-import java.util.Map;
-
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.common.util.BasicDiagnostic;
-import org.eclipse.emf.common.util.Diagnostic;
-import org.eclipse.emf.common.util.DiagnosticChain;
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import org.eclipse.emf.ecore.util.EObjectValidator;
-
 import org.eclipse.papyrus.umlrt.UMLRealTime.PortRegistrationType;
 import org.eclipse.papyrus.umlrt.UMLRealTime.RTPort;
 import org.eclipse.papyrus.umlrt.UMLRealTime.UMLRealTimePackage;
-
-import org.eclipse.papyrus.umlrt.UMLRealTime.util.UMLRealTimeValidator;
-
 import org.eclipse.uml2.uml.Port;
 
 /**
@@ -60,7 +41,7 @@ public class RTPortImpl extends MinimalEObjectImpl.Container implements RTPort {
 	 * The default value of the '{@link #isNotification() <em>Is Notification</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isNotification()
 	 * @generated
 	 * @ordered
@@ -71,7 +52,7 @@ public class RTPortImpl extends MinimalEObjectImpl.Container implements RTPort {
 	 * The cached value of the '{@link #isNotification() <em>Is Notification</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isNotification()
 	 * @generated
 	 * @ordered
@@ -82,7 +63,7 @@ public class RTPortImpl extends MinimalEObjectImpl.Container implements RTPort {
 	 * The default value of the '{@link #isPublish() <em>Is Publish</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isPublish()
 	 * @generated
 	 * @ordered
@@ -93,7 +74,7 @@ public class RTPortImpl extends MinimalEObjectImpl.Container implements RTPort {
 	 * The cached value of the '{@link #isPublish() <em>Is Publish</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isPublish()
 	 * @generated
 	 * @ordered
@@ -104,7 +85,7 @@ public class RTPortImpl extends MinimalEObjectImpl.Container implements RTPort {
 	 * The default value of the '{@link #isWired() <em>Is Wired</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isWired()
 	 * @generated
 	 * @ordered
@@ -115,7 +96,7 @@ public class RTPortImpl extends MinimalEObjectImpl.Container implements RTPort {
 	 * The cached value of the '{@link #isWired() <em>Is Wired</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isWired()
 	 * @generated
 	 * @ordered
@@ -126,7 +107,7 @@ public class RTPortImpl extends MinimalEObjectImpl.Container implements RTPort {
 	 * The default value of the '{@link #getRegistration() <em>Registration</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRegistration()
 	 * @generated
 	 * @ordered
@@ -137,7 +118,7 @@ public class RTPortImpl extends MinimalEObjectImpl.Container implements RTPort {
 	 * The cached value of the '{@link #getRegistration() <em>Registration</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRegistration()
 	 * @generated
 	 * @ordered
@@ -148,7 +129,7 @@ public class RTPortImpl extends MinimalEObjectImpl.Container implements RTPort {
 	 * The default value of the '{@link #getRegistrationOverride() <em>Registration Override</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRegistrationOverride()
 	 * @generated
 	 * @ordered
@@ -159,7 +140,7 @@ public class RTPortImpl extends MinimalEObjectImpl.Container implements RTPort {
 	 * The cached value of the '{@link #getRegistrationOverride() <em>Registration Override</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRegistrationOverride()
 	 * @generated
 	 * @ordered
@@ -170,7 +151,7 @@ public class RTPortImpl extends MinimalEObjectImpl.Container implements RTPort {
 	 * The cached value of the '{@link #getBase_Port() <em>Base Port</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Port()
 	 * @generated
 	 * @ordered
@@ -180,7 +161,7 @@ public class RTPortImpl extends MinimalEObjectImpl.Container implements RTPort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected RTPortImpl() {
@@ -190,7 +171,7 @@ public class RTPortImpl extends MinimalEObjectImpl.Container implements RTPort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -201,7 +182,7 @@ public class RTPortImpl extends MinimalEObjectImpl.Container implements RTPort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -212,7 +193,7 @@ public class RTPortImpl extends MinimalEObjectImpl.Container implements RTPort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -227,7 +208,7 @@ public class RTPortImpl extends MinimalEObjectImpl.Container implements RTPort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -238,7 +219,7 @@ public class RTPortImpl extends MinimalEObjectImpl.Container implements RTPort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -253,7 +234,7 @@ public class RTPortImpl extends MinimalEObjectImpl.Container implements RTPort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -264,7 +245,7 @@ public class RTPortImpl extends MinimalEObjectImpl.Container implements RTPort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -279,7 +260,7 @@ public class RTPortImpl extends MinimalEObjectImpl.Container implements RTPort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -290,7 +271,7 @@ public class RTPortImpl extends MinimalEObjectImpl.Container implements RTPort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -305,7 +286,7 @@ public class RTPortImpl extends MinimalEObjectImpl.Container implements RTPort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -316,7 +297,7 @@ public class RTPortImpl extends MinimalEObjectImpl.Container implements RTPort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -331,7 +312,7 @@ public class RTPortImpl extends MinimalEObjectImpl.Container implements RTPort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -351,7 +332,7 @@ public class RTPortImpl extends MinimalEObjectImpl.Container implements RTPort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Port basicGetBase_Port() {
@@ -361,7 +342,7 @@ public class RTPortImpl extends MinimalEObjectImpl.Container implements RTPort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -376,115 +357,7 @@ public class RTPortImpl extends MinimalEObjectImpl.Container implements RTPort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	@Override
-	public boolean Awiredportcannotpublishitsname(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO: implement this method
-		// -> specify the condition that violates the invariant
-		// -> verify the details of the diagnostic, including severity and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-						(new BasicDiagnostic
-						(Diagnostic.ERROR,
-								UMLRealTimeValidator.DIAGNOSTIC_SOURCE,
-								UMLRealTimeValidator.RT_PORT__AWIREDPORTCANNOTPUBLISHITSNAME,
-								EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "Awiredportcannotpublishitsname", EObjectValidator.getObjectLabel(this, context) }), //$NON-NLS-1$ //$NON-NLS-2$
-								new Object[] { this }));
-			}
-			return false;
-		}
-		return true;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	@Override
-	public boolean Apublicportmustbedefinedasaserviceport(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO: implement this method
-		// -> specify the condition that violates the invariant
-		// -> verify the details of the diagnostic, including severity and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-						(new BasicDiagnostic
-						(Diagnostic.ERROR,
-								UMLRealTimeValidator.DIAGNOSTIC_SOURCE,
-								UMLRealTimeValidator.RT_PORT__APUBLICPORTMUSTBEDEFINEDASASERVICEPORT,
-								EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "Apublicportmustbedefinedasaserviceport", EObjectValidator.getObjectLabel(this, context) }), //$NON-NLS-1$ //$NON-NLS-2$
-								new Object[] { this }));
-			}
-			return false;
-		}
-		return true;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	@Override
-	public boolean ASAPunwiredunpublishedmusthaveprotectedvisibility(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO: implement this method
-		// -> specify the condition that violates the invariant
-		// -> verify the details of the diagnostic, including severity and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-						(new BasicDiagnostic
-						(Diagnostic.ERROR,
-								UMLRealTimeValidator.DIAGNOSTIC_SOURCE,
-								UMLRealTimeValidator.RT_PORT__ASA_PUNWIREDUNPUBLISHEDMUSTHAVEPROTECTEDVISIBILITY,
-								EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "ASAPunwiredunpublishedmusthaveprotectedvisibility", EObjectValidator.getObjectLabel(this, context) }), //$NON-NLS-1$ //$NON-NLS-2$
-								new Object[] { this }));
-			}
-			return false;
-		}
-		return true;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	@Override
-	public boolean AnSPPunwiredandpublishedmusthavepublicvisibility(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO: implement this method
-		// -> specify the condition that violates the invariant
-		// -> verify the details of the diagnostic, including severity and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-						(new BasicDiagnostic
-						(Diagnostic.ERROR,
-								UMLRealTimeValidator.DIAGNOSTIC_SOURCE,
-								UMLRealTimeValidator.RT_PORT__AN_SP_PUNWIREDANDPUBLISHEDMUSTHAVEPUBLICVISIBILITY,
-								EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "AnSPPunwiredandpublishedmusthavepublicvisibility", EObjectValidator.getObjectLabel(this, context) }), //$NON-NLS-1$ //$NON-NLS-2$
-								new Object[] { this }));
-			}
-			return false;
-		}
-		return true;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -512,7 +385,7 @@ public class RTPortImpl extends MinimalEObjectImpl.Container implements RTPort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -543,7 +416,7 @@ public class RTPortImpl extends MinimalEObjectImpl.Container implements RTPort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -574,7 +447,7 @@ public class RTPortImpl extends MinimalEObjectImpl.Container implements RTPort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -599,29 +472,7 @@ public class RTPortImpl extends MinimalEObjectImpl.Container implements RTPort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	@Override
-	@SuppressWarnings("unchecked")
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-		case UMLRealTimePackage.RT_PORT___AWIREDPORTCANNOTPUBLISHITSNAME__DIAGNOSTICCHAIN_MAP:
-			return Awiredportcannotpublishitsname((DiagnosticChain) arguments.get(0), (Map<Object, Object>) arguments.get(1));
-		case UMLRealTimePackage.RT_PORT___APUBLICPORTMUSTBEDEFINEDASASERVICEPORT__DIAGNOSTICCHAIN_MAP:
-			return Apublicportmustbedefinedasaserviceport((DiagnosticChain) arguments.get(0), (Map<Object, Object>) arguments.get(1));
-		case UMLRealTimePackage.RT_PORT___ASA_PUNWIREDUNPUBLISHEDMUSTHAVEPROTECTEDVISIBILITY__DIAGNOSTICCHAIN_MAP:
-			return ASAPunwiredunpublishedmusthaveprotectedvisibility((DiagnosticChain) arguments.get(0), (Map<Object, Object>) arguments.get(1));
-		case UMLRealTimePackage.RT_PORT___AN_SP_PUNWIREDANDPUBLISHEDMUSTHAVEPUBLICVISIBILITY__DIAGNOSTICCHAIN_MAP:
-			return AnSPPunwiredandpublishedmusthavepublicvisibility((DiagnosticChain) arguments.get(0), (Map<Object, Object>) arguments.get(1));
-		}
-		return super.eInvoke(operationID, arguments);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

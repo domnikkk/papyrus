@@ -8,32 +8,13 @@
  */
 package org.eclipse.papyrus.umlrt.statemachine.UMLRealTimeStateMach.impl;
 
-import java.lang.reflect.InvocationTargetException;
-
-import java.util.Map;
-
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.common.util.BasicDiagnostic;
-import org.eclipse.emf.common.util.Diagnostic;
-import org.eclipse.emf.common.util.DiagnosticChain;
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import org.eclipse.emf.ecore.util.EObjectValidator;
-
 import org.eclipse.papyrus.umlrt.statemachine.UMLRealTimeStateMach.RTPseudostate;
 import org.eclipse.papyrus.umlrt.statemachine.UMLRealTimeStateMach.UMLRealTimeStateMachPackage;
-
-import org.eclipse.papyrus.umlrt.statemachine.UMLRealTimeStateMach.util.UMLRealTimeStateMachValidator;
-
 import org.eclipse.uml2.uml.Pseudostate;
 
 /**
@@ -54,7 +35,7 @@ public class RTPseudostateImpl extends MinimalEObjectImpl.Container implements R
 	 * The cached value of the '{@link #getBase_Pseudostate() <em>Base Pseudostate</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Pseudostate()
 	 * @generated
 	 * @ordered
@@ -64,7 +45,7 @@ public class RTPseudostateImpl extends MinimalEObjectImpl.Container implements R
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected RTPseudostateImpl() {
@@ -74,7 +55,7 @@ public class RTPseudostateImpl extends MinimalEObjectImpl.Container implements R
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -85,7 +66,7 @@ public class RTPseudostateImpl extends MinimalEObjectImpl.Container implements R
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -105,7 +86,7 @@ public class RTPseudostateImpl extends MinimalEObjectImpl.Container implements R
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Pseudostate basicGetBase_Pseudostate() {
@@ -115,7 +96,7 @@ public class RTPseudostateImpl extends MinimalEObjectImpl.Container implements R
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -130,34 +111,7 @@ public class RTPseudostateImpl extends MinimalEObjectImpl.Container implements R
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	@Override
-	public boolean RTstatemachinesdonotsupportconcurrencyorshallowhistory(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO: implement this method
-		// -> specify the condition that violates the invariant
-		// -> verify the details of the diagnostic, including severity and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-						(new BasicDiagnostic
-						(Diagnostic.ERROR,
-								UMLRealTimeStateMachValidator.DIAGNOSTIC_SOURCE,
-								UMLRealTimeStateMachValidator.RT_PSEUDOSTATE__RTSTATEMACHINESDONOTSUPPORTCONCURRENCYORSHALLOWHISTORY,
-								EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "RTstatemachinesdonotsupportconcurrencyorshallowhistory", EObjectValidator.getObjectLabel(this, context) }), //$NON-NLS-1$ //$NON-NLS-2$
-								new Object[] { this }));
-			}
-			return false;
-		}
-		return true;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -175,7 +129,7 @@ public class RTPseudostateImpl extends MinimalEObjectImpl.Container implements R
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -191,7 +145,7 @@ public class RTPseudostateImpl extends MinimalEObjectImpl.Container implements R
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -207,7 +161,7 @@ public class RTPseudostateImpl extends MinimalEObjectImpl.Container implements R
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -217,22 +171,6 @@ public class RTPseudostateImpl extends MinimalEObjectImpl.Container implements R
 			return base_Pseudostate != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	@Override
-	@SuppressWarnings("unchecked")
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-		case UMLRealTimeStateMachPackage.RT_PSEUDOSTATE___RTSTATEMACHINESDONOTSUPPORTCONCURRENCYORSHALLOWHISTORY__DIAGNOSTICCHAIN_MAP:
-			return RTstatemachinesdonotsupportconcurrencyorshallowhistory((DiagnosticChain) arguments.get(0), (Map<Object, Object>) arguments.get(1));
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 } // RTPseudostateImpl

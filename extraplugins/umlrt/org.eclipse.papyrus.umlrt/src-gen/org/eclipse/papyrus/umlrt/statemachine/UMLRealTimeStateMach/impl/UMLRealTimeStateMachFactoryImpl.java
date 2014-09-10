@@ -11,18 +11,21 @@ package org.eclipse.papyrus.umlrt.statemachine.UMLRealTimeStateMach.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import org.eclipse.papyrus.umlrt.statemachine.UMLRealTimeStateMach.*;
+import org.eclipse.papyrus.umlrt.statemachine.UMLRealTimeStateMach.RTPseudostate;
+import org.eclipse.papyrus.umlrt.statemachine.UMLRealTimeStateMach.RTRegion;
+import org.eclipse.papyrus.umlrt.statemachine.UMLRealTimeStateMach.RTState;
+import org.eclipse.papyrus.umlrt.statemachine.UMLRealTimeStateMach.RTStateMachine;
+import org.eclipse.papyrus.umlrt.statemachine.UMLRealTimeStateMach.RTTrigger;
+import org.eclipse.papyrus.umlrt.statemachine.UMLRealTimeStateMach.UMLRealTimeStateMachFactory;
+import org.eclipse.papyrus.umlrt.statemachine.UMLRealTimeStateMach.UMLRealTimeStateMachPackage;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class UMLRealTimeStateMachFactoryImpl extends EFactoryImpl implements UMLRealTimeStateMachFactory {
@@ -30,7 +33,7 @@ public class UMLRealTimeStateMachFactoryImpl extends EFactoryImpl implements UML
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static UMLRealTimeStateMachFactory init() {
@@ -49,7 +52,7 @@ public class UMLRealTimeStateMachFactoryImpl extends EFactoryImpl implements UML
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public UMLRealTimeStateMachFactoryImpl() {
@@ -59,7 +62,7 @@ public class UMLRealTimeStateMachFactoryImpl extends EFactoryImpl implements UML
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -83,7 +86,7 @@ public class UMLRealTimeStateMachFactoryImpl extends EFactoryImpl implements UML
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -95,7 +98,7 @@ public class UMLRealTimeStateMachFactoryImpl extends EFactoryImpl implements UML
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -107,7 +110,7 @@ public class UMLRealTimeStateMachFactoryImpl extends EFactoryImpl implements UML
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -119,7 +122,7 @@ public class UMLRealTimeStateMachFactoryImpl extends EFactoryImpl implements UML
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -131,7 +134,7 @@ public class UMLRealTimeStateMachFactoryImpl extends EFactoryImpl implements UML
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -143,7 +146,7 @@ public class UMLRealTimeStateMachFactoryImpl extends EFactoryImpl implements UML
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -154,7 +157,7 @@ public class UMLRealTimeStateMachFactoryImpl extends EFactoryImpl implements UML
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

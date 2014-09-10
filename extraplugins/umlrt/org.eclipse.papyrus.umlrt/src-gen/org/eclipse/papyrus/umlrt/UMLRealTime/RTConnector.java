@@ -8,18 +8,17 @@
  */
 package org.eclipse.papyrus.umlrt.UMLRealTime;
 
-import java.util.Map;
-
-import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.uml2.uml.Connector;
 
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>RT Connector</b></em>'.
  * <!-- end-user-doc -->
+ *
+ * <!-- begin-model-doc -->
+ * base_Connector.end->size() = 2
+ * <!-- end-model-doc -->
  *
  * <p>
  * The following features are supported:
@@ -40,7 +39,7 @@ public interface RTConnector extends EObject {
 	 * If the meaning of the '<em>Base Connector</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Connector</em>' reference.
 	 * @see #setBase_Connector(Connector)
 	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.UMLRealTimePackage#getRTConnector_Base_Connector()
@@ -53,28 +52,12 @@ public interface RTConnector extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.umlrt.UMLRealTime.RTConnector#getBase_Connector <em>Base Connector</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Connector</em>' reference.
 	 * @see #getBase_Connector()
 	 * @generated
 	 */
 	void setBase_Connector(Connector value);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * base_Connector.end->size() = 2
-	 * 
-	 * @param diagnostics
-	 *            The chain of diagnostics to which problems are to be appended.
-	 * @param context
-	 *            The cache of context-specific information.
-	 *            <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/2.0.0/UML originalName='Only binary connectors are allowed'"
-	 * @generated
-	 */
-	boolean Onlybinaryconnectorsareallowed(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 } // RTConnector

@@ -7,8 +7,6 @@
             class="org.eclipse.papyrus.umlrt.UMLRealTime.UMLRealTimePackage"
             genModel="umlProfile/uml-rt.genmodel"/>
    </extension>
-
-
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated UMLRealTimeSM -->
       <package
@@ -55,6 +53,5 @@
             provider="Eclipse Modeling Project">
       </profile>
    </extension>
-
 
 </plugin>
