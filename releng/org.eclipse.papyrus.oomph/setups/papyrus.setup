@@ -260,6 +260,10 @@
           name="org.eclipse.sdk.feature.group"/>
       <requirement
           name="org.eclipse.acceleo.feature.group"/>
+      <requirement
+          name="org.eclipse.uml2.sdk.feature.group"/>
+      <requirement
+          name="org.eclipse.emf.sdk.feature.group"/>
       <repositoryList
           name="Luna">
         <repository
@@ -1163,6 +1167,20 @@
               xsi:type="predicates:LocationPredicate"
               pattern="${papyrus.git.clone.location/releng(?:/.+)?}"/>
         </workingSet>
+      </setupTask>
+      <setupTask
+          xsi:type="setup.targlets:TargletTask">
+        <targlet
+            name="Papyrus Releng Dependencies"
+            activeRepositoryList="">
+          <requirement
+              name="org.eclipse.b3.aggregator.engine.feature.feature.group"/>
+          <repositoryList
+              name="Luna">
+            <repository
+                url="http://download.eclipse.org/modeling/emft/b3/updates-4.3/"/>
+          </repositoryList>
+        </targlet>
       </setupTask>
       <stream
           name="master"
