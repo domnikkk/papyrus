@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2011 - 2014 Mia-Software, CEA LIST.
+ * Copyright (c) 2011, 2014 Mia-Software, CEA LIST.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -8,6 +8,8 @@
  * Contributors:
  *     Nicolas Bros (Mia-Software) - Bug 366567 - [Releng] Tool to update rmaps
  *     Camille Letavernier (CEA LIST) - Generalize to support POMs
+ *     Christian W. Damus (CEA) - Add support for updating Oomph setup models
+ *      
  *******************************************************************************/
 package org.eclipse.papyrus.releng.tools.internal.popup.actions;
 
@@ -45,6 +47,8 @@ import org.w3c.dom.NodeList;
 
 public abstract class DependencyUpdater {
 
+	private final Pattern commentPattern = Pattern.compile("updateFrom\\s*\\(\\s*\"(.*?)\"\\s*,\\s*(\\d+)\\s*\\)"); //$NON-NLS-1$
+
 	protected final IFile fMapFile;
 
 	protected final EList<Contribution> contributions;
@@ -67,21 +71,20 @@ public abstract class DependencyUpdater {
 			Element documentElement = doc.getDocumentElement();
 
 			XPath xpath = XPathFactory.newInstance().newXPath();
-			NodeList uris = (NodeList)xpath.evaluate(getXpath(), documentElement, XPathConstants.NODESET);
+			NodeList uris = (NodeList) xpath.evaluate(getXpath(), documentElement, XPathConstants.NODESET);
 
-			for(int i = 0; i < uris.getLength(); i++) {
+			for (int i = 0; i < uris.getLength(); i++) {
 				Node uri = uris.item(i);
-				Comment precedingComment = getPrecedingComment(uri);
-				if(precedingComment != null) {
-					String comment = precedingComment.getTextContent();
-					Pattern pattern = Pattern.compile("updateFrom\\s*\\(\\s*\"(.*?)\"\\s*,\\s*(\\d+)\\s*\\)"); //$NON-NLS-1$
-					Matcher matcher = pattern.matcher(comment);
-					if(matcher.find()) {
+				Node precedingComment = getPrecedingComment(uri);
+				if (precedingComment != null) {
+					String comment = getCommentContent(precedingComment);
+					Matcher matcher = getCommentPattern().matcher(comment);
+					if (matcher.find()) {
 						String contributionName = matcher.group(1);
 						int repositoryIndex = Integer.parseInt(matcher.group(2));
 						updateWithContribution(uri, contributionName, repositoryIndex);
-					} else if(comment.contains("updateFrom")) { //$NON-NLS-1$
-						throw new Exception("Wrong syntax for 'updateFrom' : should be updateFrom(\"<contributionName>\",<index>)"); //$NON-NLS-1$
+					} else if (comment.contains("updateFrom")) { //$NON-NLS-1$
+						throw new Exception("Wrong syntax for 'updateFrom' : should be " + getCommentSyntax()); //$NON-NLS-1$
 					}
 				}
 			}
@@ -102,13 +105,13 @@ public abstract class DependencyUpdater {
 
 	protected void updateWithContribution(final Node uri, final String contributionName, final int repositoryIndex) {
 		Contribution contribution = findContribution(contributionName);
-		if(contribution == null) {
+		if (contribution == null) {
 			throw new RuntimeException("'updateFrom' failed: cannot find contribution with label \"" + contributionName + "\""); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 		EList<MappedRepository> repositories = contribution.getRepositories();
-		if(repositoryIndex >= repositories.size()) {
+		if (repositoryIndex >= repositories.size()) {
 			throw new RuntimeException("wrong index in updateFrom(\"" + contributionName + "\"" + repositoryIndex //$NON-NLS-1$ //$NON-NLS-2$
-				+ ") : there are " + repositories.size() + " contributions"); //$NON-NLS-1$ //$NON-NLS-2$
+					+ ") : there are " + repositories.size() + " contributions"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 		String location = repositories.get(repositoryIndex).getLocation();
 
@@ -119,27 +122,39 @@ public abstract class DependencyUpdater {
 
 	protected Contribution findContribution(final String contributionName) {
 		Contribution matchingContribution = null;
-		for(Contribution contribution : this.contributions) {
-			if(contributionName.equalsIgnoreCase(contribution.getLabel())) {
+		for (Contribution contribution : this.contributions) {
+			if (contributionName.equalsIgnoreCase(contribution.getLabel())) {
 				matchingContribution = contribution;
 			}
 		}
 		return matchingContribution;
 	}
 
-	protected Comment getPrecedingComment(final Node node) {
+	protected Node getPrecedingComment(final Node node) {
 		Comment comment = null;
 		Node previous = node.getPreviousSibling();
-		while(previous != null) {
-			if(previous.getNodeType() == Node.COMMENT_NODE) {
-				comment = (Comment)previous;
+		while (previous != null) {
+			if (previous.getNodeType() == Node.COMMENT_NODE) {
+				comment = (Comment) previous;
 				break;
-			} else if(previous.getNodeType() != Node.TEXT_NODE) {
+			} else if (previous.getNodeType() != Node.TEXT_NODE) {
 				break;
 			}
 			previous = previous.getPreviousSibling();
 		}
 		return comment;
+	}
+
+	protected Pattern getCommentPattern() {
+		return commentPattern;
+	}
+
+	protected String getCommentContent(Node comment) {
+		return comment.getTextContent();
+	}
+
+	protected String getCommentSyntax() {
+		return "updateFrom(\"<contributionName>\",<index>)"; //$NON-NLS-1$
 	}
 
 	protected abstract String getXpath();
