@@ -5,9 +5,7 @@ import java.util.List;
 
 import org.eclipse.core.databinding.Binding;
 import org.eclipse.core.databinding.DataBindingContext;
-import org.eclipse.core.databinding.UpdateValueStrategy;
 import org.eclipse.core.databinding.beans.BeanProperties;
-import org.eclipse.core.databinding.beans.PojoProperties;
 import org.eclipse.core.databinding.observable.value.IObservableValue;
 import org.eclipse.jface.bindings.keys.KeyStroke;
 import org.eclipse.jface.databinding.swt.WidgetProperties;
@@ -23,6 +21,7 @@ import org.eclipse.papyrus.infra.services.labelprovider.service.LabelProviderSer
 import org.eclipse.papyrus.infra.widgets.selectors.ReferenceSelector;
 import org.eclipse.papyrus.uml.profile.drafter.Activator;
 import org.eclipse.papyrus.uml.profile.drafter.ProfileCatalog;
+import org.eclipse.papyrus.uml.profile.drafter.ui.contentassist.PossibleStereotypeContentProposalProvider;
 import org.eclipse.papyrus.uml.profile.drafter.ui.contentassist.StereotypeContentProposalProvider;
 import org.eclipse.papyrus.uml.profile.drafter.ui.model.StereoptypeModel;
 import org.eclipse.papyrus.uml.tools.providers.UMLMetaclassContentProvider;
@@ -38,7 +37,6 @@ import org.eclipse.swt.widgets.Text;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.NamedElement;
-import org.eclipse.uml2.uml.Stereotype;
 
 /**
  * 
@@ -111,6 +109,7 @@ public class StereotypeUpdateDialog extends Dialog {
 		
 		quickSetText = new Text(namesContainer, SWT.BORDER);
 		quickSetText.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1));
+		installContentAssistantProvider(quickSetText, new PossibleStereotypeContentProposalProvider(anyUmlElement));
 		
 		profileNameLabel = new Label(namesContainer, SWT.NONE);
 		profileNameLabel.setSize(43, 20);

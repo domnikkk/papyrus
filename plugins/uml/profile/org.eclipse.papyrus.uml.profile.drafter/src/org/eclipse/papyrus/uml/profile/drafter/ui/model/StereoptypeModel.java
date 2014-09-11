@@ -123,6 +123,11 @@ public class StereoptypeModel extends StereotypeURL {
 	 */
 	@Override
 	protected void qualifiedNameChanged(StereotypeURLChangeEvent event) {
+		// Send events for Stereotype properties
+		super.qualifiedNameChanged(event);
+		
+		// Change other properties.
+		// TODO Events should be sent each tim a property change
 		try {
 			stereotype = profileCatalog.lookupStereotype(profileName, stereotypeName);
 			resetMetaclasses();
@@ -133,9 +138,7 @@ public class StereoptypeModel extends StereotypeURL {
 			// exit
 			stereotype = null;
 		}
-		// Send another event for Stereotype ??
 		
-		super.qualifiedNameChanged(event);
 	}
 	
 	/**
@@ -154,12 +157,16 @@ public class StereoptypeModel extends StereotypeURL {
 	protected void clearInheritedMetaclasses() {
 
 
+		List<MetaclassesModel> toRetain = new ArrayList<MetaclassesModel>();
+		
 		for( MetaclassesModel model : metaclasses) {
-			if(model.getModelStatus() != ModelStatusKind.created) {
-				metaclasses.remove(model);
+			if(model.getModelStatus() == ModelStatusKind.created) {
+				toRetain.add(model);
 			}
 		}
-		
+
+		metaclasses.clear();
+		metaclasses.addAll(toRetain);
 	}
 
 
@@ -203,11 +210,17 @@ public class StereoptypeModel extends StereotypeURL {
 	 * Remove all extened stereotypes that are not tagged 'created'.
 	 */
 	protected void clearInheritedExtendedStereotypes() {
+		
+		List<ExtendedStereotypeModel> toRetain = new ArrayList<ExtendedStereotypeModel>();
+		
 		for( ExtendedStereotypeModel model : extendedStereotypes) {
-			if(model.getModelStatus() != ModelStatusKind.created) {
-				extendedStereotypes.remove(model);
+			if(model.getModelStatus() == ModelStatusKind.created) {
+				toRetain.add(model);
 			}
 		}
+		
+		extendedStereotypes.clear();
+		extendedStereotypes.addAll(toRetain);
 		
 	}
 
@@ -241,12 +254,18 @@ public class StereoptypeModel extends StereotypeURL {
 	 * Clear all the {@link PropertyModel} that are not created by the user.
 	 */
 	protected void clearProfileProperties() {
+		
+		List<PropertyModel> toRetain = new ArrayList<PropertyModel>();
+		
 		for( Object p : properties) {
 			PropertyModel model = (PropertyModel)p;
-			if(model.getModelStatus() != ModelStatusKind.created) {
-				properties.remove(model);
+			if(model.getModelStatus() == ModelStatusKind.created) {
+				toRetain.add(model);
 			}
 		}
+		
+		properties.clear();
+		properties.addAll(toRetain);
 	}
 
 

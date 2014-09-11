@@ -50,6 +50,7 @@ public class StereotypeURL {
 	 * Event manager
 	 */
 	private PropertyChangeSupport changeSupport = new PropertyChangeSupport(this);
+	private static int count=0;
 
 	
 	/**
@@ -99,39 +100,49 @@ public class StereotypeURL {
 	/**
 	 * @param qualifiedName the qualifiedName to set
 	 */
-	public void setQualifiedName(String qualifiedName) {
+	synchronized public void setQualifiedName(String qualifiedName) {
 		
-		System.err.println("setQualifiedName(" + qualifiedName +")");
-		if(qualifiedName == null) {
-			return;
+		int num = count++;
+
+		try {
+//			qualifiedName+=count++;
+			System.err.println("setQualifiedName(" + qualifiedName +" : " + num +")");
+			if(qualifiedName == null) {
+				return;
+			}
+			
+			if(this.qualifiedName != null && this.qualifiedName.equals(qualifiedName)) {
+				// No change
+				return;
+			}
+			
+			// Remember old values
+			String oldStereotypeName = stereotypeName;
+			String oldProfileName = profileName;
+			
+			// Parse the qualifiedName and set other names accordingly.
+			int index = qualifiedName.lastIndexOf("::");
+			if(index == -1) {
+				// no profile names
+				stereotypeName = qualifiedName;
+				profileName = "";
+			}
+			else {
+				stereotypeName = qualifiedName.substring(index+2);
+				profileName = qualifiedName.substring(0, index);
+			}
+			
+			StereotypeURLChangeEvent ev = createStereotypeURLChangeEvent(this.qualifiedName, this.qualifiedName=computeQualifiedName());
+			ev.setStereotypeNameValues(oldStereotypeName, stereotypeName);
+			ev.setProfileNameValues(oldProfileName, profileName);
+			
+			qualifiedNameChanged(ev);
+		} catch (Exception e) {
+			System.err.println("Exception caught:" + e.getMessage());
+//			e.printStackTrace();
 		}
-		
-		if(this.qualifiedName != null && this.qualifiedName.equals(qualifiedName)) {
-			// No change
-			return;
-		}
-		
-		// Remember old values
-		String oldStereotypeName = stereotypeName;
-		String oldProfileName = profileName;
-		
-		// Parse the qualifiedName and set other names accordingly.
-		int index = qualifiedName.lastIndexOf("::");
-		if(index == -1) {
-			// no profile names
-			stereotypeName = qualifiedName;
-			profileName = "";
-		}
-		else {
-			stereotypeName = qualifiedName.substring(index+2);
-			profileName = qualifiedName.substring(0, index);
-		}
-		
-		StereotypeURLChangeEvent ev = createStereotypeURLChangeEvent(this.qualifiedName, this.qualifiedName=computeQualifiedName());
-		ev.setStereotypeNameValues(oldStereotypeName, stereotypeName);
-		ev.setProfileNameValues(oldProfileName, profileName);
-		
-		qualifiedNameChanged(ev);
+		System.err.println("exit setQualifiedName(" + qualifiedName +" : " + num +")");
+
 		}
 
 	
