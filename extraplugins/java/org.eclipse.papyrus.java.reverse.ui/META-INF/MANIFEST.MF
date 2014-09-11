@@ -6,7 +6,10 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.papyrus.java.reverse;bundle-version="1.0.1",
  org.eclipse.papyrus.infra.core;bundle-version="1.0.1",
  org.eclipse.papyrus.uml.tools;bundle-version="1.0.1",
- org.eclipse.gmf.runtime.diagram.core
+ org.eclipse.gmf.runtime.diagram.core,
+ org.eclipse.papyrus.infra.gmfdiag.dnd;bundle-version="1.0.1",
+ org.eclipse.papyrus.infra.emf.diagram.common;bundle-version="1.0.1",
+ org.eclipse.papyrus.uml.diagram.common;bundle-version="1.0.1"
 Bundle-Vendor: %providerName
 Bundle-ActivationPolicy: lazy
 Bundle-Version: 1.0.1.qualifier
@@ -16,8 +19,5 @@ Bundle-Activator: org.eclipse.papyrus.java.reverse.ui.Activator
 Bundle-ManifestVersion: 2
 Bundle-SymbolicName: org.eclipse.papyrus.java.reverse.ui;singleton:=tr
  ue
-Import-Package: org.eclipse.gmf.runtime.notation,
- org.eclipse.papyrus.infra.gmfdiag.dnd.strategy,
- org.eclipse.papyrus.uml.diagram.common.util
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 

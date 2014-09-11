@@ -1,4 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><feature id="org.eclipse.papyrus.java.reverse.feature" label="%featureName" provider-name="%providerName" version="1.0.1.qualifier">
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.eclipse.papyrus.java.reverse.feature"
+      label="%featureName"
+      version="1.0.1.qualifier"
+      provider-name="%providerName">
 
    <description url="">
       Experimental Java Reverse Tool for Papyrus.
@@ -23,15 +28,30 @@ Contributors:
       <import plugin="org.eclipse.ui"/>
       <import plugin="org.eclipse.core.runtime"/>
       <import plugin="org.eclipse.uml2.uml"/>
-      <import match="greaterOrEqual" plugin="org.eclipse.emf.transaction" version="1.2.0"/>
-      <import match="greaterOrEqual" plugin="org.eclipse.gef" version="3.4.0"/>
-      <import match="greaterOrEqual" plugin="org.eclipse.jdt.core" version="3.4.0"/>
-      <import plugin="org.eclipse.papyrus.infra.core"/>
-      <import plugin="org.eclipse.papyrus.uml.tools"/>
+      <import plugin="org.eclipse.emf.transaction" version="1.2.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.gef" version="3.4.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.jdt.core" version="3.4.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.java.reverse" version="1.0.1" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.infra.core" version="1.0.1" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.uml.tools" version="1.0.1" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.gmf.runtime.diagram.core"/>
+      <import plugin="org.eclipse.papyrus.infra.gmfdiag.dnd" version="1.0.1" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.infra.emf.diagram.common" version="1.0.1" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.uml.diagram.common" version="1.0.1" match="greaterOrEqual"/>
    </requires>
 
-   <plugin download-size="0" id="org.eclipse.papyrus.java.reverse" install-size="0" unpack="false" version="0.0.0"/>
+   <plugin
+         id="org.eclipse.papyrus.java.reverse"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
 
-   <plugin download-size="0" id="org.eclipse.papyrus.java.reverse.ui" install-size="0" unpack="false" version="0.0.0"/>
+   <plugin
+         id="org.eclipse.papyrus.java.reverse.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
 
 </feature>
