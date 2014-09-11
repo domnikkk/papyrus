@@ -93,7 +93,7 @@ public class [constraint.name.toUpperFirst() + 'Constraint'/] extends AbstractMo
 package [getPluginID(stereotype)/].selectors;
 
 import org.eclipse.emf.validation.model.IClientSelector;
-import org.eclipse.papyrus.dsml.validation.StereotypeUtil;
+import org.eclipse.papyrus.uml.service.validation.StereotypeUtil;
 
 /**
  * This class filters (selects) passed stereotype applications. It returns true, if the
