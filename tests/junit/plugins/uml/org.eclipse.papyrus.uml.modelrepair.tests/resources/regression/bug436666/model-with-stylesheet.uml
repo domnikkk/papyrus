@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:css="http://www.eclipse.org/papyrus/infra/gmfdiag/css" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
+  <uml:Model xmi:id="_eU4Q8Dg8EeSUs8U9fXt57A" name="model">
+    <packagedElement xmi:type="uml:Class" xmi:id="_fkKukDg8EeSUs8U9fXt57A" name="Class1"/>
+  </uml:Model>
+  <css:ModelStyleSheets xmi:id="_gHbzsDg8EeSUs8U9fXt57A">
+    <stylesheets xmi:type="css:EmbeddedStyleSheet" xmi:id="_ix7EADg8EeSUs8U9fXt57A" label="Embedded" content="* {&#xD;&#xA;&#x9;bold: true;&#xD;&#xA;}"/>
+  </css:ModelStyleSheets>
+</xmi:XMI>

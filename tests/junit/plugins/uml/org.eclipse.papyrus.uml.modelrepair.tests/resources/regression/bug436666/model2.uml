@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Profile.Package1="http:///Profile/Package1.ecore" xmlns:Profile1="http://Profile/schemas/Profile1/_wQukwDg3EeS5ZcmG-RC5ow/1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///Profile/Package1.ecore model.profile.uml#_0Chbczg3EeS5ZcmG-RC5ow http://Profile/schemas/Profile1/_wQukwDg3EeS5ZcmG-RC5ow/1 model.profile.uml#_wQvL0Dg3EeS5ZcmG-RC5ow">
+  <uml:Model xmi:id="_C0EQ0Df7EeS08JDbYjJccA" name="model">
+    <packagedElement xmi:type="uml:Class" xmi:id="_DOjNYDf7EeS08JDbYjJccA" name="Class1"/>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_E5XwcDf7EeS08JDbYjJccA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_E6HXUDf7EeS08JDbYjJccA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="model.profile.uml#_0ChbYDg3EeS5ZcmG-RC5ow"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="model.profile.uml#_h-wAoDf6EeS08JDbYjJccA"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_E6HXUTf7EeS08JDbYjJccA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_E62-MDf7EeS08JDbYjJccA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="model.profile.uml#_wQvL0Dg3EeS5ZcmG-RC5ow"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="model.profile.uml#_oQSQIDf6EeS08JDbYjJccA"/>
+    </profileApplication>
+  </uml:Model>
+  <Profile1:Stereotype1 xmi:id="_FmAM8Df7EeS08JDbYjJccA" base_Element="_DOjNYDf7EeS08JDbYjJccA" base_Class="_DOjNYDf7EeS08JDbYjJccA" tag1="value of tag1 from nested profile"/>
+  <Profile1:Stereotype2 xmi:id="_Fmvz0Df7EeS08JDbYjJccA" base_Element="_DOjNYDf7EeS08JDbYjJccA" base_Class="_DOjNYDf7EeS08JDbYjJccA"/>
+  <Profile.Package1:Stereotype1 xmi:id="_FmTu8Df7EeS08JDbYjJccA" base_Element="_DOjNYDf7EeS08JDbYjJccA" base_Class="_DOjNYDf7EeS08JDbYjJccA" tag1="value for tag1 from nested package" base_StructuredClassifier="_DOjNYDf7EeS08JDbYjJccA"/>
+  <Profile.Package1:Stereotype2 xmi:id="_FnWQwDf7EeS08JDbYjJccA" base_Element="_DOjNYDf7EeS08JDbYjJccA" base_Class="_DOjNYDf7EeS08JDbYjJccA" tag2="true"/>
+</xmi:XMI>

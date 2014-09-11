@@ -34,6 +34,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.FeatureMap;
 import org.eclipse.emf.ecore.util.FeatureMapUtil;
 import org.eclipse.papyrus.infra.services.labelprovider.service.LabelProviderService;
+import org.eclipse.papyrus.uml.modelrepair.internal.participants.StereotypesUtil;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Extension;
 import org.eclipse.uml2.uml.Package;
@@ -52,6 +53,7 @@ import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Multimap;
+import com.google.common.collect.Sets;
 
 
 /**
@@ -80,14 +82,38 @@ public class ZombieStereotypesDescriptor {
 	public ZombieStereotypesDescriptor(Resource resource, Package root, Set<EPackage> appliedProfileDefinitions, Function<? super EPackage, Profile> dynamicProfileSupplier, LabelProviderService labelProviderService) {
 		this.resource = resource;
 		this.root = root;
-		this.appliedProfileDefinitions = appliedProfileDefinitions;
+		this.appliedProfileDefinitions = includingSubpackages(appliedProfileDefinitions);
 		this.dynamicProfileSupplier = dynamicProfileSupplier;
 		this.labelProviderService = labelProviderService;
 	}
 
+	/**
+	 * Stereotypes may be defined in regular packages within a profile. To that end, collect all
+	 * nested packages of the applied profile-definition packages as being implicitly "applied".
+	 */
+	private static Set<EPackage> includingSubpackages(Collection<? extends EPackage> profileDefinitions) {
+		final Set<EPackage> result = Sets.newHashSet();
+
+		for (EPackage next : profileDefinitions) {
+			collectPackages(next, result);
+		}
+
+		return result;
+	}
+
+	private static void collectPackages(EPackage ePackage, Collection<? super EPackage> result) {
+		if (result.add(ePackage)) { // Not exactly likely to have cycles
+			if (!ePackage.getESubpackages().isEmpty()) {
+				for (EPackage next : ePackage.getESubpackages()) {
+					collectPackages(next, result);
+				}
+			}
+		}
+	}
+
 	public void analyze(EObject stereotypeApplication) {
 		EPackage schema = getEPackage(stereotypeApplication);
-		if ((schema == null) || !appliedProfileDefinitions.contains(schema)) {
+		if ((schema == null) || (!appliedProfileDefinitions.contains(schema) && couldBeProfileDefinition(schema, stereotypeApplication))) {
 			// It's a zombie. Determine the profile-application context that covers this stereotype instance
 			ProfileContext context = getProfileContext(stereotypeApplication, schema);
 
@@ -106,6 +132,18 @@ public class ZombieStereotypesDescriptor {
 				}
 			}
 		}
+	}
+
+	protected boolean couldBeProfileDefinition(EPackage schema, EObject stereotypeApplication) {
+		// an EPackage could be a profile definition if either actually is one or
+		// it is a package demand-created by EMF for unrecognized content
+		boolean result = findProfile(schema) != null;
+
+		if (!result) {
+			result = StereotypesUtil.isUnrecognizedSchema(schema, stereotypeApplication);
+		}
+
+		return result;
 	}
 
 	public boolean hasZombies() {
