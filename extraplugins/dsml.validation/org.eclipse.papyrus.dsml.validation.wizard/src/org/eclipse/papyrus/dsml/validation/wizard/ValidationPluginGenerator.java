@@ -89,7 +89,7 @@ public class ValidationPluginGenerator {
 
 	private static final String EMF_VALIDATION_PLUGIN = "org.eclipse.emf.validation"; //$NON-NLS-1$
 	
-	private static final String DSML_VALIDATION_PLUGIN = "org.eclipse.papyrus.dsml.validation"; //$NON-NLS-1$
+	private static final String UML_VALIDATION_PLUGIN = "org.eclipse.papyrus.uml.service.validation"; //$NON-NLS-1$
 
 	private static final String UML_URL = "http://www.eclipse.org/uml2/5.0.0/UML"; //$NON-NLS-1$
 
@@ -139,7 +139,7 @@ public class ValidationPluginGenerator {
 		editor.addNatures(natures);
 
 		editor.getManifestEditor().addDependency(EMF_VALIDATION_PLUGIN);
-		editor.getManifestEditor().addDependency(DSML_VALIDATION_PLUGIN);
+		editor.getManifestEditor().addDependency(UML_VALIDATION_PLUGIN);
 		editor.getManifestEditor().addDependency(UML_PLUGIN);
 
 		Element constraintProviderExtension =

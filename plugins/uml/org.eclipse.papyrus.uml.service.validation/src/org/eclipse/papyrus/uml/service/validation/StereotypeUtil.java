@@ -12,7 +12,7 @@
  *
  *****************************************************************************/
 
-package org.eclipse.papyrus.dsml.validation;
+package org.eclipse.papyrus.uml.service.validation;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.uml2.uml.Class;

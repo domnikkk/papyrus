@@ -16,7 +16,7 @@
  * $Id: OCLConstraintParser.java,v 1.5 2007/06/06 22:28:11 cdamus Exp $
  */
 
-package org.eclipse.papyrus.dsml.validation.oclpivot;
+package org.eclipse.papyrus.uml.service.validation.oclpivot;
 
 import org.eclipse.emf.validation.model.IModelConstraint;
 import org.eclipse.emf.validation.service.IConstraintDescriptor;
@@ -24,21 +24,19 @@ import org.eclipse.emf.validation.service.IParameterizedConstraintDescriptor;
 import org.eclipse.emf.validation.service.IParameterizedConstraintParser;
 
 /**
- * <p>
- * Simple constraint parser for creation of OCL-language constraints from the XML.
- * </p>
- * <p>
- * This class is not intended to be used by clients of the validation framework.
- * </p>
+ * Variant of the OCLConstraintParser, it enforces the use of pivot variant of OCL
+ *
  * 
- * @author Christian W. Damus (cdamus)
+ * @link org.eclipse.emf.validation.internal.ocl.OCLConstraintParser
+ * 
+ * @author Ansgar Radermacher
  */
-public class OCLConstraintParser implements IParameterizedConstraintParser {
+public class OCLpivotConstraintParser implements IParameterizedConstraintParser {
 
 	/**
 	 * Initializes me.
 	 */
-	public OCLConstraintParser() {
+	public OCLpivotConstraintParser() {
 		super();
 	}
 
@@ -53,7 +51,7 @@ public class OCLConstraintParser implements IParameterizedConstraintParser {
 	 *
 	 * @author Christian W. Damus (cdamus)
 	 */
-	private static class EcoreOCLConstraint extends AbstractOCLModelConstraint {
+	private static class EcoreOCLConstraint extends AbstractOCLpivotModelConstraint {
 
 		EcoreOCLConstraint(IConstraintDescriptor descriptor) {
 			super(descriptor);

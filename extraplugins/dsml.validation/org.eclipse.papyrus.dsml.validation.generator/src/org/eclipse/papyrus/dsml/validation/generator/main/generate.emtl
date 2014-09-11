@@ -409,7 +409,7 @@
             <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Stereotype"/>
           </argument>
         </body>
-        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=".selectors;&#xA;&#xA;import org.eclipse.emf.validation.model.IClientSelector;&#xA;import org.eclipse.papyrus.dsml.validation.StereotypeUtil;&#xA;&#xA;/**&#xA; * This class filters (selects) passed stereotype applications. It returns true, if the&#xA; * associated stereotype (or one of its super-stereotypes) has the name '"/>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=".selectors;&#xA;&#xA;import org.eclipse.emf.validation.model.IClientSelector;&#xA;import org.eclipse.papyrus.uml.service.validation.StereotypeUtil;&#xA;&#xA;/**&#xA; * This class filters (selects) passed stereotype applications. It returns true, if the&#xA; * associated stereotype (or one of its super-stereotypes) has the name '"/>
         <body xsi:type="ocl.ecore:PropertyCallExp">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
           <source xsi:type="ocl.ecore:VariableExp" name="stereotype" referredVariable="/0/generateValidationContext/stereotype">
@@ -417,7 +417,7 @@
           </source>
           <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement/name"/>
         </body>
-        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="'.  &#xA; * @generated&#xA; */&#xA;public class "/>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="'.&#xA; *&#xA; * @generated&#xA; */&#xA;public class "/>
         <body xsi:type="ocl.ecore:PropertyCallExp">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
           <source xsi:type="ocl.ecore:VariableExp" name="stereotype" referredVariable="/0/generateValidationContext/stereotype">
@@ -433,7 +433,7 @@
           </source>
           <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement/name"/>
         </body>
-        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;); //$NON-NLS-1$&#xA;&#x9;}&#xA;}&#xA;&#xA;"/>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;); //$NON-NLS-1$&#xA;&#x9;}&#xA;}&#xA;"/>
         <fileUrl xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/String_Class/+">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
           <source xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/String_Class/+">
@@ -1525,12 +1525,12 @@
     </eAnnotations>
     <eAnnotations source="positions.144" references="/0/generateValidationContext">
       <details key="start" value="3583"/>
-      <details key="end" value="4478"/>
+      <details key="end" value="4485"/>
       <details key="line" value="86"/>
     </eAnnotations>
     <eAnnotations source="positions.145" references="/0/generateValidationContext/%">
       <details key="start" value="3652"/>
-      <details key="end" value="4466"/>
+      <details key="end" value="4473"/>
       <details key="line" value="87"/>
     </eAnnotations>
     <eAnnotations source="positions.146" references="/0/generateValidationContext/%/%">
@@ -1550,53 +1550,53 @@
     </eAnnotations>
     <eAnnotations source="positions.149" references="/0/generateValidationContext/%/%.2">
       <details key="start" value="3880"/>
-      <details key="end" value="4175"/>
+      <details key="end" value="4182"/>
       <details key="line" value="93"/>
     </eAnnotations>
     <eAnnotations source="positions.150" references="/0/generateValidationContext/%/%.3">
-      <details key="start" value="4176"/>
-      <details key="end" value="4191"/>
+      <details key="start" value="4183"/>
+      <details key="end" value="4198"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.151" references="/0/generateValidationContext/%/%.3/stereotype">
-      <details key="start" value="4176"/>
-      <details key="end" value="4186"/>
+      <details key="start" value="4183"/>
+      <details key="end" value="4193"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.152" references="/0/generateValidationContext/%/%.4">
-      <details key="start" value="4193"/>
-      <details key="end" value="4229"/>
+      <details key="start" value="4200"/>
+      <details key="end" value="4237"/>
       <details key="line" value="100"/>
     </eAnnotations>
     <eAnnotations source="positions.153" references="/0/generateValidationContext/%/%.5">
-      <details key="start" value="4230"/>
-      <details key="end" value="4245"/>
+      <details key="start" value="4238"/>
+      <details key="end" value="4253"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.154" references="/0/generateValidationContext/%/%.5/stereotype">
-      <details key="start" value="4230"/>
-      <details key="end" value="4240"/>
+      <details key="start" value="4238"/>
+      <details key="end" value="4248"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.155" references="/0/generateValidationContext/%/%.6">
-      <details key="start" value="4247"/>
-      <details key="end" value="4417"/>
-      <details key="line" value="103"/>
+      <details key="start" value="4255"/>
+      <details key="end" value="4425"/>
+      <details key="line" value="104"/>
     </eAnnotations>
     <eAnnotations source="positions.156" references="/0/generateValidationContext/%/%.7">
-      <details key="start" value="4418"/>
-      <details key="end" value="4433"/>
+      <details key="start" value="4426"/>
+      <details key="end" value="4441"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.157" references="/0/generateValidationContext/%/%.7/stereotype">
-      <details key="start" value="4418"/>
-      <details key="end" value="4428"/>
+      <details key="start" value="4426"/>
+      <details key="end" value="4436"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.158" references="/0/generateValidationContext/%/%.8">
-      <details key="start" value="4435"/>
-      <details key="end" value="4459"/>
-      <details key="line" value="106"/>
+      <details key="start" value="4443"/>
+      <details key="end" value="4466"/>
+      <details key="line" value="107"/>
     </eAnnotations>
     <eAnnotations source="positions.159" references="/0/generateValidationContext/%/%.9">
       <details key="start" value="3659"/>

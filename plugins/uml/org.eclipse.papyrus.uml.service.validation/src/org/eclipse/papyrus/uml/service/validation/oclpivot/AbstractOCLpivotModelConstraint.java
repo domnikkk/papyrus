@@ -15,7 +15,7 @@
  * </copyright>
  */
 
-package org.eclipse.papyrus.dsml.validation.oclpivot;
+package org.eclipse.papyrus.uml.service.validation.oclpivot;
 
 import java.lang.ref.Reference;
 import java.lang.ref.WeakReference;
@@ -27,8 +27,6 @@ import org.eclipse.emf.validation.IValidationContext;
 import org.eclipse.emf.validation.model.ConstraintStatus;
 import org.eclipse.emf.validation.model.IModelConstraint;
 import org.eclipse.emf.validation.service.IConstraintDescriptor;
-import org.eclipse.ocl.EnvironmentFactory;
-import org.eclipse.ocl.Query;
 import org.eclipse.ocl.examples.pivot.ExpressionInOCL;
 import org.eclipse.ocl.examples.pivot.NamedElement;
 import org.eclipse.ocl.examples.pivot.OCL;
@@ -41,23 +39,14 @@ import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.util.UMLUtil;
 
 /**
- * <p>
- * An OCL-language implementation of the {@link org.eclipse.emf.validation.model.IModelConstraint} interface. This class considers the OCL constraint text as a context-free expression, possibly targeting multiple model types (because the validation framework
- * permits declaration of any number of targets). A separate OCL {@link Query} is created and cached for each of these target types as required.
- * </p>
- * <p>
- * Any problems in parsing or executing the OCL will result in the constraint being disabled at run-time.
- * </p>
- * <p>
- * This class is intended to be used by clients of the validation framework that need to customize the OCL parsing environment for their constraints.
- * </p>
- * <p>
- * The generic type parameters declared by this class correspond to the like-named parameters of the {@link EnvironmentFactory} interface.
- * </p>
- * 
- * @author Christian W. Damus (cdamus)
+ * This class is based on the AbstractOCLModelConstraint in org.eclipse.emf.validation.ocl. The main difference is that it enforces
+ * the validation with the pivot OCL variant, see bug 436296 - [Validation] DSML plugin generation is broken
+ *
+ * @link org.eclipse.emf.validation.ocl.AbstractOCLModelConstraint
+ *
+ * @author Ansgar Radermacher
  */
-public abstract class AbstractOCLModelConstraint implements IModelConstraint {
+public abstract class AbstractOCLpivotModelConstraint implements IModelConstraint {
 
 	private final IConstraintDescriptor descriptor;
 
@@ -80,7 +69,7 @@ public abstract class AbstractOCLModelConstraint implements IModelConstraint {
 	 *            the descriptor, which must contain an OCL expression in its
 	 *            body
 	 */
-	public AbstractOCLModelConstraint(IConstraintDescriptor descriptor) {
+	public AbstractOCLpivotModelConstraint(IConstraintDescriptor descriptor) {
 		this.descriptor = descriptor;
 	}
 

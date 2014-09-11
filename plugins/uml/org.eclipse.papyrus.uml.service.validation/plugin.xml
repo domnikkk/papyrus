@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.4"?>
 <plugin>
-
   <extension
        point="org.eclipse.ui.handlers">
 	<handler
@@ -40,5 +39,12 @@
 			</iterate>
 		</activeWhen>
 	</handler>
+  </extension>
+  <extension
+         point="org.eclipse.emf.validation.constraintParsers">
+      <constraintParser
+            class="org.eclipse.papyrus.uml.service.validation.oclpivot.OCLpivotConstraintParser"
+            lang="OCLpivot">
+      </constraintParser>
   </extension>
 </plugin>
