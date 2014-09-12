@@ -12,8 +12,6 @@
  *****************************************************************************/
 package org.eclipse.papyrus.migration.rsa.tests.qvt;
 
-import java.io.IOException;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Iterator;
 import java.util.List;
@@ -21,7 +19,6 @@ import java.util.List;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.ResourcesPlugin;
-import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.common.util.EList;
@@ -56,6 +53,7 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchPage;
+import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.UMLPackage;
@@ -75,7 +73,7 @@ public class ImportDiagramTest {
 
 
 	@AfterClass
-	public static void dispose() throws CoreException {
+	public static void dispose() throws Exception {
 
 		IWorkbench wb = PlatformUI.getWorkbench();
 		IWorkbenchPage page = wb.getActiveWorkbenchWindow().getActivePage();
@@ -85,21 +83,15 @@ public class ImportDiagramTest {
 
 
 	@BeforeClass
-	public static void init() throws CoreException {
+	public static void init() throws Exception {
 		targetProject = ProjectUtils.createProject(Activator.PLUGIN_ID + ".testProject");
-		URI rsaDiagramModelUri = URI.createPlatformPluginURI(Activator.PLUGIN_ID + "/resources/ModelTestClass.emx", false);
-		URI rsaProfileModelUri = URI.createPlatformPluginURI(Activator.PLUGIN_ID + "/resources/Profile.epx", false);
+		URI rsaDiagramModelUri = URI.createPlatformPluginURI(Activator.PLUGIN_ID + "/resources/ModelTestClass.emx", true);
+		URI rsaProfileModelUri = URI.createPlatformPluginURI(Activator.PLUGIN_ID + "/resources/Profile.epx", true);
 
-		try {
-			FilesUtils.copyFiles(targetProject, "ModelTestClass.emx", new URL(rsaDiagramModelUri.toString()));
-			FilesUtils.copyFiles(targetProject, "Profile.epx", new URL(rsaProfileModelUri.toString()));
+		FilesUtils.copyFiles(targetProject, "ModelTestClass.emx", new URL(rsaDiagramModelUri.toString()));
+		FilesUtils.copyFiles(targetProject, "Profile.epx", new URL(rsaProfileModelUri.toString()));
 
-		} catch (MalformedURLException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		fileDiagram = URI.createPlatformResourceURI(Activator.PLUGIN_ID + ".testProject" + "/ModelTestClass.emx", false);
+		fileDiagram = URI.createPlatformResourceURI(Activator.PLUGIN_ID + ".testProject" + "/ModelTestClass.emx", true);
 
 		ImportTransformation transfoDiagram = new ImportTransformation(fileDiagram) {
 
@@ -113,7 +105,7 @@ public class ImportDiagramTest {
 				this.run(new NullProgressMonitor());
 			}
 		};
-		fileProfile = URI.createPlatformResourceURI(Activator.PLUGIN_ID + ".testProject" + "/Profile.epx", false);
+		fileProfile = URI.createPlatformResourceURI(Activator.PLUGIN_ID + ".testProject" + "/Profile.epx", true);
 		ImportTransformation transfoProfile = new ImportTransformation(fileProfile) {
 
 			/**
@@ -133,7 +125,7 @@ public class ImportDiagramTest {
 
 
 
-	//Test should be more generic
+	// Test should be more generic
 
 	@Test
 	public void openModelTest() throws Exception {
@@ -150,7 +142,7 @@ public class ImportDiagramTest {
 			registry.add(ModelSet.class, Integer.MAX_VALUE, modelSet);
 			registry.startRegistry();
 		} catch (ServiceException ex) {
-			//Ignored: we don't need all services
+			// Ignored: we don't need all services
 		}
 
 
@@ -158,18 +150,18 @@ public class ImportDiagramTest {
 		TransactionalEditingDomain editingDomain = modelSet.getTransactionalEditingDomain();
 		Resource umlResource = UmlUtils.getUmlResource(modelSet);
 
-		//Profile should be applied during the transformation
+		// Profile should be applied during the transformation
 
-		if(umlResource instanceof UMLResource) {
+		if (umlResource instanceof UMLResource) {
 			EList<EObject> umlresourceContent = umlResource.getContents();
 			Iterator<EObject> umlite = umlresourceContent.iterator();
-			while(umlite.hasNext()) {
+			while (umlite.hasNext()) {
 				Object currentobject = umlite.next();
-				if(currentobject instanceof org.eclipse.uml2.uml.Package) {
+				if (currentobject instanceof org.eclipse.uml2.uml.Package) {
 					URI uri = URI.createURI(UMLResource.STANDARD_PROFILE_URI, true);
 					Resource resource = modelSet.getResource(uri, true);
-					Profile profile = (Profile)EcoreUtil.getObjectByType(resource.getContents(), UMLPackage.Literals.PROFILE);
-					Command command = new ApplyProfileCommand((org.eclipse.uml2.uml.Package)currentobject, profile, editingDomain);
+					Profile profile = (Profile) EcoreUtil.getObjectByType(resource.getContents(), UMLPackage.Literals.PROFILE);
+					Command command = new ApplyProfileCommand((org.eclipse.uml2.uml.Package) currentobject, profile, editingDomain);
 					try {
 						editingDomain.getCommandStack().execute(command);
 					} catch (Exception ex) {
@@ -184,7 +176,7 @@ public class ImportDiagramTest {
 
 			public void run() {
 				try {
-					IFile fileToOpen = (IFile)ResourcesPlugin.getWorkspace().getRoot().findMember(fileDiagram.trimFileExtension().appendFileExtension("di").toPlatformString(true));
+					IFile fileToOpen = (IFile) ResourcesPlugin.getWorkspace().getRoot().findMember(fileDiagram.trimFileExtension().appendFileExtension("di").toPlatformString(true));
 					editor = EditorUtils.openPapyrusEditor(fileToOpen);
 				} catch (Exception ex) {
 					Activator.log.error(ex);
@@ -196,20 +188,20 @@ public class ImportDiagramTest {
 
 		Resource notationResource = NotationUtils.getNotationModel(editor.getServicesRegistry().getService(ModelSet.class)).getResource();
 		List<EObject> listcontent = notationResource.getContents();
-		Assert.assertEquals(7, listcontent.size()); //Expected is 7 valid migrated diagrams
-		for(EObject cont : listcontent) {
+		Assert.assertEquals(7, listcontent.size()); // Expected is 7 valid migrated diagrams
+		for (EObject cont : listcontent) {
 			Assert.assertTrue(cont instanceof Diagram);
 
-			Diagram currentDia = (Diagram)cont;
+			Diagram currentDia = (Diagram) cont;
 			editingDomain.getCommandStack().execute(new GMFtoEMFCommandWrapper(new OpenDiagramCommand(editingDomain, currentDia)));
 			IEditorPart currentEditor = editor.getActiveEditor();
 			Assert.assertNotNull("could not open the  diagram editor", currentEditor);
 			Assert.assertTrue("The active editor should be a GMF Diagram Editor", editor.getActiveEditor() instanceof IDiagramWorkbenchPart);
 			Object temp = currentEditor.getAdapter(EditPart.class);
 			Assert.assertNotNull(temp);
-			EditPart editPart = (EditPart)temp;
+			EditPart editPart = (EditPart) temp;
 			List<IGraphicalEditPart> listEditPart = DiagramEditPartsUtil.getAllEditParts(editPart);
-			for(EditPart currentEditPart : listEditPart) {
+			for (EditPart currentEditPart : listEditPart) {
 				Assert.assertNotNull("should not be invalid view", currentEditPart);
 			}
 		}
@@ -217,7 +209,7 @@ public class ImportDiagramTest {
 		try {
 			registry.disposeRegistry();
 		} catch (ServiceException ex) {
-			//Ignore
+			// Ignore
 		}
 	}
 
@@ -236,24 +228,24 @@ public class ImportDiagramTest {
 			registry.add(ModelSet.class, Integer.MAX_VALUE, modelSet);
 			registry.startRegistry();
 		} catch (ServiceException ex) {
-			//Ignored: we don't need all services
+			// Ignored: we don't need all services
 		}
 
 		TransactionalEditingDomain editingDomain = modelSet.getTransactionalEditingDomain();
 		Resource umlResource = UmlUtils.getUmlResource(modelSet);
 
-		//Profile should be applied during the transformation
+		// Profile should be applied during the transformation
 
-		if(umlResource instanceof UMLResource) {
+		if (umlResource instanceof UMLResource) {
 			EList<EObject> umlresourceContent = umlResource.getContents();
 			Iterator<EObject> umlite = umlresourceContent.iterator();
-			while(umlite.hasNext()) {
+			while (umlite.hasNext()) {
 				Object currentobject = umlite.next();
-				if(currentobject instanceof org.eclipse.uml2.uml.Package) {
+				if (currentobject instanceof org.eclipse.uml2.uml.Package) {
 					URI uri = URI.createURI(UMLResource.STANDARD_PROFILE_URI, true);
 					Resource resource = modelSet.getResource(uri, true);
-					Profile profile = (Profile)EcoreUtil.getObjectByType(resource.getContents(), UMLPackage.Literals.PROFILE);
-					Command command = new ApplyProfileCommand((org.eclipse.uml2.uml.Package)currentobject, profile, editingDomain);
+					Profile profile = (Profile) EcoreUtil.getObjectByType(resource.getContents(), UMLPackage.Literals.PROFILE);
+					Command command = new ApplyProfileCommand((org.eclipse.uml2.uml.Package) currentobject, profile, editingDomain);
 					try {
 						editingDomain.getCommandStack().execute(command);
 					} catch (Exception ex) {
@@ -268,9 +260,9 @@ public class ImportDiagramTest {
 
 			public void run() {
 				try {
-					IFile fileToOpen = (IFile)ResourcesPlugin.getWorkspace().getRoot().findMember(fileProfile.trimFileExtension().appendFileExtension("profile.di").toPlatformString(true));
+					IFile fileToOpen = (IFile) ResourcesPlugin.getWorkspace().getRoot().findMember(fileProfile.trimFileExtension().appendFileExtension("profile.di").toPlatformString(true));
 					editor = EditorUtils.openPapyrusEditor(fileToOpen);
-				} catch (Exception ex) {
+				} catch (PartInitException ex) {
 					Activator.log.error(ex);
 					Assert.fail(ex.getMessage());
 				}
@@ -281,19 +273,19 @@ public class ImportDiagramTest {
 		Resource notationResource = NotationUtils.getNotationModel(editor.getServicesRegistry().getService(ModelSet.class)).getResource();
 		List<EObject> listcontent = notationResource.getContents();
 		Assert.assertEquals(1, listcontent.size());
-		for(EObject cont : listcontent) {
+		for (EObject cont : listcontent) {
 			Assert.assertTrue(cont instanceof Diagram);
 
-			Diagram currentDia = (Diagram)cont;
+			Diagram currentDia = (Diagram) cont;
 			editingDomain.getCommandStack().execute(new GMFtoEMFCommandWrapper(new OpenDiagramCommand(editingDomain, currentDia)));
 			IEditorPart currentEditor = editor.getActiveEditor();
 			Assert.assertNotNull("could not open the  diagram editor", currentEditor);
 			Assert.assertTrue("The active editor should be a GMF Diagram Editor", editor.getActiveEditor() instanceof IDiagramWorkbenchPart);
 			Object temp = currentEditor.getAdapter(EditPart.class);
 			Assert.assertNotNull(temp);
-			EditPart editPart = (EditPart)temp;
+			EditPart editPart = (EditPart) temp;
 			List<IGraphicalEditPart> listEditPart = DiagramEditPartsUtil.getAllEditParts(editPart);
-			for(EditPart currentEditPart : listEditPart) {
+			for (EditPart currentEditPart : listEditPart) {
 				Assert.assertNotNull("should not be invalid view", currentEditPart);
 			}
 		}
@@ -301,7 +293,7 @@ public class ImportDiagramTest {
 		try {
 			registry.disposeRegistry();
 		} catch (ServiceException ex) {
-			//Ignore
+			// Ignore
 		}
 	}
 
