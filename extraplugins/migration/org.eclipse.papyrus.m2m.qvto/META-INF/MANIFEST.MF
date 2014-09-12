@@ -1,0 +1,14 @@
+Bundle-ManifestVersion: 2
+Bundle-Name: Qvto Library
+Bundle-SymbolicName: org.eclipse.papyrus.m2m.qvto;singleton:=true
+Bundle-Version: 1.0.1.qualifier
+Bundle-Activator: org.eclipse.papyrus.m2m.qvto.Activator
+Bundle-Vendor: Eclipse Modeling Project
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.m2m.qvt.oml;bundle-version="3.4.0",
+ org.eclipse.m2m.qvt.oml.runtime,
+ org.eclipse.gmf.runtime.notation;bundle-version="1.7.0"
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: org.eclipse.papyrus.m2m.qvto

@@ -44,6 +44,9 @@ public class AllTests {
 		/* UmlRT tests */
 		suiteClasses.add(new PluginTestSuiteClass(org.eclipse.papyrus.umlrt.validation.tests.AllTests.class));
 
+		/* Migration tests */
+		suiteClasses.add(new PluginTestSuiteClass(org.eclipse.papyrus.migration.rsa.tests.AllTests.class));
+
 		/* UML Compare tests */
 		/**
 		 * UML Compare tests have been temporarily disabled. See:
@@ -51,9 +54,9 @@ public class AllTests {
 		 * 389811: [Papyrus Compare] The Papyrus Compare feature is not compatible with Kepler
 		 * https://bugs.eclipse.org/bugs/show_bug.cgi?id=389811
 		 */
-		//		suiteClasses.add(new PluginTestSuiteClass(org.eclipse.papyrus.uml.compare.tests.AllTests.class));
-		//		suiteClasses.add(new PluginTestSuiteClass(org.eclipse.papyrus.uml.compare.file.tests.AllTests.class));
-		//		suiteClasses.add(new PluginTestSuiteClass(org.eclipse.papyrus.uml.compare.diff.tests.AllTests.class));
+		// suiteClasses.add(new PluginTestSuiteClass(org.eclipse.papyrus.uml.compare.tests.AllTests.class));
+		// suiteClasses.add(new PluginTestSuiteClass(org.eclipse.papyrus.uml.compare.file.tests.AllTests.class));
+		// suiteClasses.add(new PluginTestSuiteClass(org.eclipse.papyrus.uml.compare.diff.tests.AllTests.class));
 
 		/* **************** plugins *********************** */
 	}
@@ -67,9 +70,9 @@ public class AllTests {
 		 * Constructor.
 		 *
 		 * @param clazz
-		 *        the suite class � AllTests2
+		 *            the suite class � AllTests2
 		 * @throws InitializationError
-		 *         if there's a problem
+		 *             if there's a problem
 		 * @throws org.junit.runners.model.InitializationError
 		 */
 		public AllTestsRunner(final Class<?> clazz) throws InitializationError {
@@ -85,14 +88,14 @@ public class AllTests {
 	private static Class<?>[] getSuites() {
 		// retrieve all test suites.
 		Collection<Class<?>> suites = new ArrayList<Class<?>>();
-		for(ITestSuiteClass testSuiteClass : suiteClasses) {
+		for (ITestSuiteClass testSuiteClass : suiteClasses) {
 			Class<?> class_ = testSuiteClass.getMainTestSuiteClass();
-			if(class_ != null) {
+			if (class_ != null) {
 				suites.add(class_);
 			} else {
 				System.err.println(testSuiteClass + " does not give a correct test suite class");
 			}
 		}
-		return suites.toArray(new Class<?>[]{});
+		return suites.toArray(new Class<?>[] {});
 	}
 }

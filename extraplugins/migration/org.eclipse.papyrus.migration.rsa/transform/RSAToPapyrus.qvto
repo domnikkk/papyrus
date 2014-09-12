@@ -1,0 +1,364 @@
+/*****************************************************************************
+ * Copyright (c) 2013, 2014 CEA LIST.
+ *
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
+ *****************************************************************************/
+import org.eclipse.papyrus.m2m.qvto.UI;
+import org.eclipse.papyrus.m2m.qvto.NotationTypes;
+import libraries.EclipseUI;
+
+modeltype notation "strict" uses 'http://www.eclipse.org/gmf/runtime/1.0.2/notation';
+modeltype umlNotation "strict" uses 'http://www.eclipse.org/papyrus/umlnotation';
+modeltype uml "strict" uses 'http://www.eclipse.org/uml2/5.0.0/UML';
+modeltype ecore "strict" uses 'http://www.eclipse.org/emf/2002/Ecore';
+
+/**
+*	Abstract transformation rules for importing notation diagrams into Papyrus
+*/
+transformation RSAToPapyrus(inout semantics : uml, out graphics : notation);
+
+
+main() {
+	semantics.rootObjects()[uml::Element]->map toOwnedDiagrams();
+}
+
+mapping inout Element::toOwnedDiagrams(){
+	self.ownedElement.map toOwnedDiagrams();
+	
+	self.eAnnotations->select (source = 'uml2.diagrams' or source = 'uml2.profile.diagrams').map toOwnedDiagrams();
+	//self.eAnnotations := self.eAnnotations->reject(source = 'uml2.diagrams' or source = 'uml2.profile.diagrams'); /* Delete diagrams from resulting UML Model */
+}
+
+mapping EAnnotation::toOwnedDiagrams()
+	when { self.source = 'uml2.diagrams' or self.source = 'uml2.profile.diagrams'}{
+	
+	self.contents->selectByKind(notation::Diagram).map generateDiagram();
+	
+}
+
+
+
+
+/** Abstract mappings. Never called directly, inherited only */
+
+
+abstract mapping notation::View::toPapyrusView() : notation::View {
+	result.element := self.element; /* UML Model is in-out. No mapping required. */
+	result.visible := self.visible;
+	
+	result.children := self.children.map toNode();
+	result.type := self.getType();
+}
+
+abstract mapping Edge::toPapyrusEdge() : Edge inherits View::toPapyrusView {
+	result.bendpoints := self.bendpoints.map toBendpoint(self.diagram);
+	result.sourceAnchor := self.sourceAnchor.map toAnchor();
+	result.targetAnchor := self.targetAnchor.map toAnchor();
+	
+	result.source := self.source.map toView();
+	result.target := self.target.map toView();
+}
+
+abstract mapping Connector::toPapyrusConnector() : Connector inherits Edge::toPapyrusEdge, RoutingStyle::toRoutingstyle{};
+
+abstract mapping Connector::toCommentLink() : Connector inherits Connector::toPapyrusConnector{};
+
+abstract mapping Node::toPapyrusNode() : Node inherits View::toPapyrusView{};
+
+abstract mapping inout Shape::addCommentDecoration(){};
+
+abstract mapping Node::toPapyrusConnectorLabel() : Node {
+	result.visible := self.visible;
+	result.type := self.getType();
+	
+	var initX := self.layoutConstraint.oclAsType(Location).x;
+	var initY := self.layoutConstraint.oclAsType(Location).y;
+	
+	if self.diagram.isHimetric() then {
+		initX := initX.toPixels();
+		initY := initY.toPixels();
+	} endif;
+	
+	result.layoutConstraint := object Location {
+		x := initX;
+		y := initY;
+	};
+	
+	//Do not set element
+	//Do not set children
+}
+
+abstract mapping Shape::toPapyrusShape() : Shape inherits Node::toPapyrusNode, FillStyle::toFillStyle, FontStyle::toFontStyle, LineStyle::toLineStyle{
+	result.layoutConstraint := self.layoutConstraint.map toLayout(self.diagram);
+}
+
+abstract mapping DrawerStyle::toDrawerStyle() : DrawerStyle {
+	result.collapsed := self.collapsed;
+}
+
+abstract mapping BasicSemanticCompartment::toBasicCompartment() : BasicCompartment inherits Node::toPapyrusNode, DrawerStyle::toDrawerStyle {
+	result.styles := object TitleStyle{
+		showTitle := self.styles->selectByKind(TitleStyle)->any(true).showTitle;
+	};
+}
+
+abstract mapping UMLShapeCompartment::toAbstractStructureCompartment() : DecorationNode inherits Node::toPapyrusNode {
+	result.styles := object TitleStyle{
+		showTitle := self.showTitle;
+	};
+}
+
+abstract mapping Diagram::toPapyrusDiagram() : notation::Diagram inherits notation::View::toPapyrusView {
+
+	population {
+		result.name := self.name;
+		
+		/* Papyrus uses Pixel, whereas RSA uses Himetric. Forcing the conversion to Pixel is a bad idea */
+		result.measurementUnit := MeasurementUnit::Pixel; 
+		result.styles := createDiagramStyle();
+		
+		result.element := self.findElement().oclAsType(EObject);
+		log(result.element.eClass().name);
+	//	log(result.element.toString());
+		result.edges := self.edges.map toEdge();
+	}
+	
+	end {
+		worked(1);
+	}
+}
+
+query Diagram::findElement() : Element {
+	return if self.container().container().oclIsUndefined() then semantics.rootObjects()[Element]->any(true) else self.container().container().oclAsType(Element) endif;
+}
+
+abstract mapping Element::toCompartmentEntry(node : Node) : Shape {
+	result.element := self.oclAsType(EObject);
+	//result.type := self.findType(node);
+}
+
+helper createDiagramStyle() : DiagramStyle {
+	return object DiagramStyle {
+		
+	};
+}
+
+
+/** Common mappings: Copy (Call or Inherit) */
+
+mapping FontStyle::toFontStyle() : FontStyle {
+	result.fontColor := self.fontColor;
+	result.fontName := self.fontName;
+	result.fontHeight := self.fontHeight;
+	result.bold := self.bold;
+	result.italic := self.italic;
+	result.underline := self.underline;
+	result.strikeThrough := self.strikeThrough;
+}
+
+mapping FillStyle::toFillStyle() : FillStyle {
+	result.fillColor := self.fillColor;
+	result.transparency := self.transparency;
+	
+	//TODO: Gradient
+}
+
+mapping LineStyle::toLineStyle() : LineStyle {
+	result.lineColor := self.lineColor;
+	result.lineWidth := self.lineWidth;
+}
+
+mapping RoutingStyle::toRoutingstyle() : RoutingStyle {
+	result.roundedBendpointsRadius := self.roundedBendpointsRadius;
+	result.routing := self.routing;
+	result.smoothness := self.smoothness;
+	result.avoidObstructions := self.avoidObstructions;
+	result.closestDistance := self.closestDistance;
+	result.jumpLinkStatus := self.jumpLinkStatus;
+	result.jumpLinkType := self.jumpLinkType;
+	result.jumpLinksReverse := self.jumpLinksReverse;
+}
+
+abstract mapping Bendpoints::toBendpoint(diagram: Diagram) : Bendpoints disjuncts 
+	RelativeBendpoints::toBendpoint
+;
+
+mapping RelativeBendpoints::toBendpoint(diagram: Diagram) : Bendpoints {
+	init {
+		result := object RelativeBendpoints {}
+	}
+	
+	var convertToPixels := diagram.isHimetric();
+	self.copyBendpoints(result.oclAsType(RelativeBendpoints), convertToPixels);
+}
+
+mapping LayoutConstraint::toLayout(diagram : Diagram) : LayoutConstraint disjuncts 
+	Bounds::toLayout{
+}
+
+mapping Bounds::toLayout(diagram : Diagram) : LayoutConstraint {
+	init {
+		result := object Bounds{}
+	}
+	
+	var bounds : Bounds := result.oclAsType(Bounds);
+	
+	if diagram.isHimetric() then {
+		bounds.x := self.x.toPixels();
+		bounds.y := self.y.toPixels();
+		if self.width > 0 then bounds.width := self.width.toPixels() endif;
+		if self.height > 0 then bounds.height := self.height.toPixels() endif;
+	} else{
+		bounds.x := self.x;
+		bounds.y := self.y;
+		if self.width > 0 then bounds.width := self.width endif;
+		if self.height > 0 then bounds.height := self.height endif;
+	} endif;
+}
+
+query View::isHimetric() : Boolean {
+	return self.diagram.measurementUnit = MeasurementUnit::Himetric
+}
+
+query Integer::toPixels() : Integer{
+	return self.div(25); //FIXME: Approx.
+}
+
+mapping Anchor::toAnchor() : Anchor disjuncts
+	IdentityAnchor::toAnchor{
+	
+}
+
+mapping IdentityAnchor::toAnchor() : Anchor {
+	init {
+		result := object IdentityAnchor {
+		}
+	}
+
+	var id := if self.oclAsType(EObject).isHimetric() then {
+		var id := self.id;
+		var part1 := id.substringBefore(':').asInteger();
+		var part2 := id.substringAfter(':').asInteger();
+		var newId := if part1.oclIsInvalid() or part2.oclIsInvalid() then 
+			self.id 
+		else
+			(part1.toPixels().toString())+':'+(part2.toPixels().toString())
+		endif;
+		newId;
+	} else {
+		self.id;
+	} endif;
+	
+	result.oclAsType(IdentityAnchor).id := id;
+}
+
+query EObject::isHimetric() : Boolean {
+	return if self.oclIsKindOf(Diagram) then
+		self.oclAsType(Diagram).isHimetric()
+	else
+		self.eContainer().isHimetric()
+	endif;
+}
+
+helper View::fail() : String {
+	var type := self.type;
+	var isProxy := self.element != null and self.element.oclIsUndefined();
+	var semanticEClassName := if isProxy then 'Unresolved (proxy) reference' elif self.element = null then 'No semantic element' else self.element.eClass().name endif;
+	warning('Unknown element type. Type = "'+self.type+'", element type = "'+semanticEClassName+'"');
+	return '';
+}
+
+
+/** Generic mapping logic */
+
+query View::getType(): String{
+	var element : Element := self.findElement();
+	
+	return
+	
+		if self.oclIsKindOf(Diagram) then
+			self.getDiagramType()
+		elif self.oclIsKindOf(Edge) then 
+			self.getEdgeType(element)
+		elif self.oclIsKindOf(BasicDecorationNode) then
+			self.getDecorationType(element)
+		elif self.oclIsKindOf(Node) then  
+			self.getNodeType(element)
+		else self.fail()
+	
+	endif;
+}
+
+query View::findElement() : Element {
+	return self.findAssociatedElement().oclAsType(Element);
+}
+
+query View::findAssociatedElement() : EObject {
+	return if self.element.oclIsUndefined() then
+		self.container().oclAsType(View).findAssociatedElement()
+	else
+		self.element
+	endif;
+}
+
+query Sequence(Node)::safeUnion(unionWith: Sequence(Node)) : Sequence(Node) {
+	log('C1', self);
+	log('C2', unionWith);
+	
+	
+	
+	var res := if self->oclIsUndefined() and unionWith->oclIsUndefined() then 
+		object Sequence(Object){}
+	elif self->oclIsUndefined() then
+		unionWith
+	elif unionWith->oclIsUndefined() then
+		self
+	else
+		self->union(unionWith)
+	endif;
+	
+	log('Result', res);
+	
+	return res;
+}
+
+mapping View::toView() : View disjuncts Node::toNode, Edge::toEdge;
+
+
+/** Diagram-specific transformations (Implement only) */
+
+abstract mapping Node::toNode() : Node;
+
+abstract mapping Edge::toEdge() : Edge;
+
+abstract query View::getDiagramType() : String;
+
+//Distinction between TopNode and ChildNode is not important in the Notation model.
+//Simply use the TopNode Type.
+abstract query View::getNodeType(element : Element) : String;
+
+abstract query View::getEdgeType(element : Element) : String;
+
+abstract query View::getDecorationType(element : Element) : String;
+
+/** Main diagram mapping */
+abstract mapping notation::Diagram::generateDiagram() : notation::Diagram;
+
+
+
+
+
+
+
+
+
+
+
+
+
