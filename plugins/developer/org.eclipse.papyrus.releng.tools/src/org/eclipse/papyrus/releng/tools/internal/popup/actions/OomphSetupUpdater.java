@@ -25,7 +25,9 @@ import org.w3c.dom.NodeList;
 
 public class OomphSetupUpdater extends DependencyUpdater {
 
-	private static final String ANNOTATION_SOURCE = "http://www.eclipse.org/Papyrus/2014/releng/dependencytools";//$NON-NLS-1$
+	public static final String ANNOTATION_SOURCE = "http://www.eclipse.org/Papyrus/2014/releng/dependencytools";//$NON-NLS-1$
+
+	public static final String UPDATE_KEY = "updateFrom";//$NON-NLS-1$
 
 	private final Pattern annotationPattern = Pattern.compile("updateFrom:([^:]+):(\\d+)"); //$NON-NLS-1$
 
@@ -48,7 +50,7 @@ public class OomphSetupUpdater extends DependencyUpdater {
 		NodeList details = annotation.getElementsByTagName("detail"); //$NON-NLS-1$
 		for (int i = 0; i < details.getLength(); i++) {
 			Element next = (Element) details.item(i);
-			if ("updateFrom".equals(next.getAttribute("key"))) { //$NON-NLS-1$ //$NON-NLS-2$
+			if (UPDATE_KEY.equals(next.getAttribute("key"))) { //$NON-NLS-1$ //$NON-NLS-2$
 				String repoSpec = null;
 				if (next.hasAttribute("value")) { //$NON-NLS-1$
 					repoSpec = next.getAttribute("value"); //$NON-NLS-1$

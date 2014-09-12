@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2011 Mia-Software.
+ * Copyright (c) 2011, 2014 Mia-Software, CEA, and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -7,14 +7,16 @@
  *
  * Contributors:
  *     Nicolas Bros (Mia-Software) - Bug 366567 - [Releng] Tool to update rmaps
+ *     Christian W. Damus (CEA) - Add support for updating Oomph setup models
+ *     
  *******************************************************************************/
 package org.eclipse.papyrus.releng.tools.internal;
 
-import org.eclipse.core.runtime.Plugin;
+import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
 
 /** The activator class controls the plug-in life cycle */
-public class Activator extends Plugin {
+public class Activator extends AbstractUIPlugin {
 
 	// The plug-in ID
 	public static final String PLUGIN_ID = "org.eclipse.papyrus.releng.tools"; //$NON-NLS-1$

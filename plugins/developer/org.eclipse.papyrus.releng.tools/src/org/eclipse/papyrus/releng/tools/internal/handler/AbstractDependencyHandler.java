@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2011-2014 Mia-Software, CEA LIST.
+ * Copyright (c) 2011, 2014 Mia-Software, CEA LIST and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -8,6 +8,8 @@
  * Contributors:
  *     Nicolas Bros (Mia-Software) - Bug 366567 - [Releng] Tool to update rmaps
  *     Camille Letavernier (CEA LIST) - camille.letavernier@cea.fr - Generalize to handle POMs
+ *     Christian W. Damus (CEA) - Add support for updating Oomph setup models
+ *     
  *******************************************************************************/
 package org.eclipse.papyrus.releng.tools.internal.handler;
 
@@ -62,7 +64,7 @@ public abstract class AbstractDependencyHandler extends AbstractHandler {
 		return null;
 	}
 
-	protected List<IFile> findAggregationBuildFiles() throws CoreException {
+	protected static List<IFile> findAggregationBuildFiles() throws CoreException {
 		List<IFile> aggregationBuildFiles = new ArrayList<IFile>();
 		IProject[] projects = ResourcesPlugin.getWorkspace().getRoot().getProjects();
 		for(IProject project : projects) {
@@ -79,7 +81,7 @@ public abstract class AbstractDependencyHandler extends AbstractHandler {
 		return aggregationBuildFiles;
 	}
 
-	protected IFile chooseAggregationBuildFile(final List<IFile> aggregationBuildFiles, Shell activeShell) {
+	protected static IFile chooseAggregationBuildFile(final List<IFile> aggregationBuildFiles, Shell activeShell) {
 		if(aggregationBuildFiles.size() == 0) {
 			MessageDialog.openWarning(activeShell, Messages.UpdateRMapAction_noBuildModelFound, Messages.UpdateRMapAction_noBuildModelFoundLong);
 			return null;

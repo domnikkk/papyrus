@@ -75,6 +75,18 @@
                </iterate>
             </visibleWhen>
          </command>
+         <command
+               commandId="org.eclipse.papyrus.releng.tools.addSetupRepositoryUpdateAnnotation"
+               style="push">
+            <visibleWhen
+                  checkEnabled="true">
+               <iterate
+                     operator="or">
+                  <instanceof
+                        value="org.eclipse.oomph.p2.Repository"/>
+               </iterate>
+            </visibleWhen>
+         </command>
       </menuContribution>
    </extension>
    <extension
@@ -93,6 +105,11 @@
             defaultHandler="org.eclipse.papyrus.releng.tools.internal.handler.UpdateOomphSetupHandler"
             id="org.eclipse.papyrus.releng.tools.updateOomphSetup"
             name="Update Setup from Aggregation Build Model">
+      </command>
+      <command
+            defaultHandler="org.eclipse.papyrus.releng.tools.internal.handler.AddSetupRepositoryUpdateAnnotationHandler"
+            id="org.eclipse.papyrus.releng.tools.addSetupRepositoryUpdateAnnotation"
+            name="Configure Update from Aggregation Build Model">
       </command>
    </extension>
 

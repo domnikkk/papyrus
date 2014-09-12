@@ -2097,6 +2097,16 @@
           name="Papyrus Developer Tools Dependencies">
         <requirement
             name="org.eclipse.gmf.tooling.codegen.xtend2.feature.group"/>
+        <requirement
+            name="org.eclipse.oomph.setup.targlets.feature.group"
+            optional="true"/>
+        <requirement
+            name="org.eclipse.oomph.setup.feature.group"
+            optional="true"/>
+        <repositoryList>
+          <repository
+              url="${oomph.update.url}"/>
+        </repositoryList>
       </targlet>
     </setupTask>
     <setupTask
