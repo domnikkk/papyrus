@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2013 CEA LIST.
+ * Copyright (c) 2013, 2014 CEA LIST and others.
  * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,6 +8,8 @@
  *
  * Contributors:
  *   CEA LIST - Initial API and implementation
+ *   Christian W. Damus (CEA) - bug 443828
+ *   
  *****************************************************************************/
 package org.eclipse.papyrus.cdo.core.tests;
 
@@ -26,10 +28,10 @@ import org.junit.runners.Suite.SuiteClasses;
  * This is the AllTests type. Enjoy.
  */
 @RunWith(Suite.class)
-@SuiteClasses({ AllUtilTests.class, AllExpressionsTests.class, //
-AllInternalCoreTests.class, CDOAwareModelSetTest.class, //
-AllModelImportTests.class, AllModelExportTests.class, //
-CDOControlModeTest.class })
+@SuiteClasses({ AllCoreTests.class, AllUtilTests.class, AllExpressionsTests.class, //
+		AllInternalCoreTests.class, CDOAwareModelSetTest.class, //
+		AllModelImportTests.class, AllModelExportTests.class, //
+		CDOControlModeTest.class })
 public class AllTests {
 
 	public AllTests() {

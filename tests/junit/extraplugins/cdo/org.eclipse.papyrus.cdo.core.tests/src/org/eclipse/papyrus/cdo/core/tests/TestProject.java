@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2013 CEA LIST.
+ * Copyright (c) 2013, 2014 CEA LIST.
  * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,6 +8,8 @@
  *
  * Contributors:
  *   CEA LIST - Initial API and implementation
+ *   Christian W. Damus (CEA) - bug 443828
+ *   
  *****************************************************************************/
 package org.eclipse.papyrus.cdo.core.tests;
 
@@ -47,7 +49,7 @@ public class TestProject
 		super();
 
 		this.project = ResourcesPlugin.getWorkspace().getRoot()
-			.getProject(name);
+				.getProject(name);
 	}
 
 	public IProject getProject() {
@@ -65,7 +67,7 @@ public class TestProject
 
 	public URI getResourceURI(String path) {
 		return URI.createPlatformResourceURI(getFile(path).getFullPath()
-			.toString(), true);
+				.toString(), true);
 	}
 
 	@Override
@@ -101,21 +103,26 @@ public class TestProject
 			throws Exception {
 
 		URL zipResource = Platform.getBundle(
-			"org.eclipse.papyrus.cdo.core.tests").getEntry(
-			String.format("resources/projects/%s.zip", project.getName()));
-		ZipInputStream zip = new ZipInputStream(zipResource.openStream());
+				"org.eclipse.papyrus.cdo.core.tests").getEntry(
+				String.format("resources/projects/%s.zip", project.getName()));
 
-		for (ZipEntry entry = zip.getNextEntry(); entry != null; entry = zip
-			.getNextEntry()) {
-			if (entry.isDirectory()) {
-				createDirectory(project, entry.getName());
-			} else {
-				createFile(project, entry.getName(),
-					new ZipEntryInputStreamWrapper(zip));
+		if (zipResource == null) {
+			fail("No such test project archive: " + project.getName());
+		} else {
+			ZipInputStream zip = new ZipInputStream(zipResource.openStream());
+
+			for (ZipEntry entry = zip.getNextEntry(); entry != null; entry = zip
+					.getNextEntry()) {
+				if (entry.isDirectory()) {
+					createDirectory(project, entry.getName());
+				} else {
+					createFile(project, entry.getName(),
+							new ZipEntryInputStreamWrapper(zip));
+				}
 			}
-		}
 
-		zip.close();
+			zip.close();
+		}
 	}
 
 	private void createDirectory(IProject project, String name)
