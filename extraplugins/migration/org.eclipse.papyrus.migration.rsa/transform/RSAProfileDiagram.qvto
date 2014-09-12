@@ -1,0 +1,499 @@
+/*****************************************************************************
+ * Copyright (c) 2013, 2014 CEA LIST.
+ *
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
+ *****************************************************************************/
+import RSAToPapyrus;
+
+modeltype notation "strict" uses 'http://www.eclipse.org/gmf/runtime/1.0.2/notation';
+modeltype umlNotation "strict" uses 'http://www.eclipse.org/papyrus/umlnotation';
+modeltype uml "strict" uses 'http://www.eclipse.org/uml2/5.0.0/UML';
+modeltype ecore "strict" uses 'http://www.eclipse.org/emf/2002/Ecore';
+modeltype sash "strict" uses 'http://www.eclipse.org/papyrus/0.7.0/sashdi';
+
+transformation RSAProfileDiagram(inout semantics : uml, inout graphics : notation, out di : sash);
+
+main() {
+	//RSA uses Classes, whereas Papyrus uses DataTypes. The Semantics is the same
+	//semantics.objectsOfType(Class)->map toDatatype(); //Disabled 2014/04/28. Papyrus now properly supports Classes in Profile Diagrams
+	//we generate our diagrams
+	semantics.rootObjects()[uml::Profile]->map toOwnedDiagrams();	
+}
+
+mapping notation::Diagram::generateDiagram() : notation::Diagram inherits Diagram::toPapyrusDiagram when {
+	self.findElement().oclIsTypeOf(Profile)
+}{
+	end {
+		//POST ACTION UPDATE meta class to import element
+		semantics.objectsOfType(UMLConnector)->map toContextLink();
+		graphics.objectsOfType(Shape)->select(type = '1002').map addCommentDecoration();
+		graphics.objectsOfType(Shape)->select(type = '1014').map addConstraintDecoration();
+	}
+}
+
+mapping inout Shape::addCommentDecoration() when {
+	self.type = '1002' and self.diagram.type = self.getDiagramType()
+} {
+	
+	self.children += object DecorationNode{
+		type := '3'; //Comment body
+	}	
+
+}
+
+mapping inout Shape::addConstraintDecoration() when {
+	self.type = '1014' and self.diagram.type = self.getDiagramType()
+} {
+	
+	self.children += object DecorationNode{
+		type := '5063'; //Constraint specification
+	}	
+
+}
+
+query View::getDiagramType() : String{
+	return 'PapyrusUMLProfileDiagram';
+}
+
+mapping UMLConnector::toContextLink() : notation::Connector inherits Connector::toPapyrusConnector when {
+	self.type = 'Reference' and self.source.element.oclIsKindOf(Constraint) and self.target.element.oclIsKindOf(Namespace)
+}{
+	result.type := '8500';
+	self.diagram.map generateDiagram().edges += result;
+}
+
+mapping notation::Diagram::toPapyrusProfileDiagram() : notation::Diagram inherits Diagram::toPapyrusDiagram when {
+	self.type = 'Profile'
+}{
+	
+}
+
+mapping Node::toNode() : Node disjuncts
+	UMLShape::toPapyrusShape,
+	UMLShapeCompartment::toStructureCompartment,
+	BasicSemanticCompartment::toListCompartment,
+	BasicDecorationNode::toConnectorLabel,
+	BasicDecorationNode::toLabel
+	//TODO: Disjunct nodes mapping
+;
+
+mapping Edge::toEdge() : Edge disjuncts
+	UMLConnector::toPapyrusConnector
+	//TODO: Disjunct edges mapping
+;
+
+mapping UMLShapeCompartment::toStructureCompartment() : DecorationNode inherits UMLShapeCompartment::toAbstractStructureCompartment when {
+	self.type = 'StructureCompartment' or self.type = 'PackageContents' and not self.getType().oclIsUndefined();
+}{
+	
+}
+
+
+/***** Nodes **********/
+
+mapping UMLShape::toPapyrusShape() : Shape inherits Shape::toPapyrusShape when {
+	self.type = '' and not self.getType().oclIsUndefined() and (
+		self.element.oclIsTypeOf(Dependency)or
+	self.element.oclIsTypeOf(Association)or
+	self.element.oclIsTypeOf(Stereotype)or
+	self.element.oclIsTypeOf(Class)or
+	self.element.oclIsTypeOf(Class)or
+	self.element.oclIsTypeOf(Comment)or
+	self.element.oclIsTypeOf(Constraint)or
+	self.element.oclIsTypeOf(Model)or
+	self.element.oclIsTypeOf(Profile)or
+	self.element.oclIsTypeOf(Package)or
+	self.element.oclIsTypeOf(Enumeration)or
+	self.element.oclIsTypeOf(PrimitiveType)or
+	self.element.oclIsTypeOf(DataType)or
+	self.element.oclIsTypeOf(Diagram)
+	)
+}{
+	
+}
+
+
+/****** Connector Labels ******/
+
+mapping BasicDecorationNode::toConnectorLabel() : DecorationNode inherits Node::toPapyrusConnectorLabel when {
+	not self.getType().oclIsUndefined() and (
+		self.type = 'ToMultiplicityLabel' or
+		self.type = 'ToRoleLabel' or
+		self.type = 'FromMultiplicityLabel' or
+		self.type = 'FromRoleLabel' or
+		self.type = 'NameLabel' or
+		self.type = 'KindLabel'
+	)
+};
+
+/****** Compartments *******/
+
+mapping BasicDecorationNode::toLabel() : DecorationNode inherits Node::toPapyrusNode when {
+	not self.getType().oclIsUndefined() and
+	self.element.oclIsKindOf(uml::NamedElement) and 
+	self.type = 'Name'
+};
+
+mapping BasicSemanticCompartment::toListCompartment() : BasicCompartment inherits Node::toPapyrusNode, DrawerStyle::toDrawerStyle when {
+	self.type.endsWith('Compartment') and not self.getType().oclIsUndefined()
+}{
+	result.children := self.findElement().map toContents(self);
+}
+
+mapping Element::toContents(node : BasicSemanticCompartment) : Sequence(Node) disjuncts
+	Stereotype::toContents,
+	Class::toContents,
+	Enumeration::toContents,
+	DataType::toContents
+;
+
+mapping Stereotype::toContents(node : BasicSemanticCompartment) : Sequence(Node) disjuncts
+	Stereotype::toAttributeCompartmentContents,
+	Stereotype::toOperationCompartmentContents
+;
+
+mapping Class::toContents(node : BasicSemanticCompartment) : Sequence(Node) disjuncts
+	Class::toOperationCompartmentContents,
+	Class::toAttributeCompartmentContents
+;
+
+mapping Enumeration::toContents(node : BasicSemanticCompartment) : Sequence(Node) disjuncts
+	Enumeration::toEnumerationEnumerationLiteralContents
+;
+
+mapping DataType::toContents(node : BasicSemanticCompartment) : Sequence(Node) disjuncts
+	DataType::toDataTypeAttributeCompartmentContents,
+	DataType::toDataTypeOperationCompartmentContents
+;
+
+mapping Stereotype::toAttributeCompartmentContents(node : BasicSemanticCompartment) : Sequence(Node) when {
+	node.type = 'AttributeCompartment';
+}{
+	init {
+		result := (self.map fillProperty(node))
+	}
+}
+
+mapping Stereotype::toOperationCompartmentContents(node : BasicSemanticCompartment) : Sequence(Node) when {
+	node.type = 'OperationCompartment';
+}{
+	init {
+		result := (self.map fillOperation(node))
+	}
+}
+
+mapping Class::toOperationCompartmentContents(node : BasicSemanticCompartment) : Sequence(Node) when {
+	node.type = 'OperationCompartment' 
+	and not self.isMetaclass();
+}{
+	init {
+		result := (self.map fillOperation(node))
+	}
+}
+
+mapping Class::toAttributeCompartmentContents(node : BasicSemanticCompartment) : Sequence(Node) when {
+	node.type = 'AttributeCompartment'
+	and not self.isMetaclass();
+}{
+	init {
+		result := (self.map fillProperty(node))
+	}
+}
+
+mapping Enumeration::toEnumerationEnumerationLiteralContents(node : BasicSemanticCompartment) : Sequence(Node) when {
+	node.type = 'EnumerationCompartment';
+}{
+	init {
+		result := (self.map fillEnumerationLiteral(node))
+	}
+}
+
+mapping DataType::toDataTypeAttributeCompartmentContents(node : BasicSemanticCompartment) : Sequence(Node) when {
+	node.type = 'AttributeCompartment';
+}{
+	init {
+		result := (self.map fillProperty(node))
+	}
+}
+
+mapping DataType::toDataTypeOperationCompartmentContents(node : BasicSemanticCompartment) : Sequence(Node) when {
+	node.type = 'OperationCompartment';
+}{
+	init {
+		result := (self.map fillOperation(node))
+	}
+}
+
+mapping uml::DataType::fillOperation(node : BasicSemanticCompartment) : Sequence(Node) when {
+	node.type='OperationCompartment';
+}{
+	init {
+		result := self.ownedOperation->selectByKind(Operation).map toOperationInDataType(node)->asSequence();
+	}
+}
+
+mapping uml::Enumeration::fillEnumerationLiteral(node : BasicSemanticCompartment) : Sequence(Node) when {
+	node.type='EnumerationCompartment';
+}{
+	init {
+		result := self.ownedLiteral->selectByKind(EnumerationLiteral).map toEnumerationLiteralInEnumeration(node)->asSequence();
+	}
+}
+
+mapping uml::DataType::fillProperty(node : BasicSemanticCompartment) : Sequence(Node) when {
+	node.type='AttributeCompartment';
+}{
+	init {
+		result := self.ownedAttribute->selectByKind(Property).map toPropertyInDataType(node)->asSequence();
+	}
+}
+
+mapping uml::Stereotype::fillProperty(node : BasicSemanticCompartment) : Sequence(Node) when {
+	node.type='AttributeCompartment';
+}{
+	init {
+		result := self.ownedAttribute->selectByKind(Property).map toPropertyInStereotype(node)->asSequence();
+	}
+}
+
+mapping uml::Stereotype::fillOperation(node : BasicSemanticCompartment) : Sequence(Node) when {
+	node.type='OperationCompartment';
+}{
+	init {
+		result := self.ownedOperation->selectByKind(Operation).map toOperationInStereotype(node)->asSequence();
+	}
+}
+
+mapping uml::Class::fillProperty(node : BasicSemanticCompartment) : Sequence(Node) when {
+	node.type='AttributeCompartment'
+	and not self.isMetaclass();
+}{
+	init {
+		result := self.ownedAttribute->selectByKind(Property).map toPropertyInClass(node)->asSequence();
+	}
+}
+
+mapping uml::Class::fillOperation(node : BasicSemanticCompartment) : Sequence(Node) when {
+	node.type='OperationCompartment'
+	and not self.isMetaclass();
+}{
+	init {
+		result := self.ownedOperation->selectByKind(Operation).map toOperationInClass(node)->asSequence();
+	}
+}
+
+mapping Operation::toOperationInDataType(node : Node) : Shape inherits Element::toCompartmentEntry {
+	result.type := '3019';
+}
+
+mapping EnumerationLiteral::toEnumerationLiteralInEnumeration(node : Node) : Shape inherits Element::toCompartmentEntry {
+	result.type := '1037';
+}
+
+mapping Property::toPropertyInDataType(node : Node) : Shape inherits Element::toCompartmentEntry {
+	result.type := '3018';
+}
+
+mapping Property::toPropertyInStereotype(node : Node) : Shape inherits Element::toCompartmentEntry when{
+	not self.name.startsWith('base_')
+}{
+	result.type := '3002';
+}
+
+mapping Operation::toOperationInStereotype(node : Node) : Shape inherits Element::toCompartmentEntry {
+	result.type := '3020';
+}
+
+mapping Property::toPropertyInClass(node : Node) : Shape inherits Element::toCompartmentEntry when{
+	not self.name.startsWith('base_')
+}{
+	result.type := '3002';
+}
+
+mapping Operation::toOperationInClass(node : Node) : Shape inherits Element::toCompartmentEntry {
+	result.type := '3020';
+}
+
+
+
+/******* Edges ********/
+
+
+mapping UMLConnector::toPapyrusConnector() : Connector inherits Connector::toPapyrusConnector when {
+	self.type = '' and 
+	not self.getType().oclIsUndefined() and (
+		self.element.oclIsTypeOf(Extension)or
+		self.element.oclIsTypeOf(Association)or
+		self.element.oclIsTypeOf(ProfileApplication)or
+		self.element.oclIsTypeOf(Association)or
+		self.element.oclIsTypeOf(Generalization)or
+		self.element.oclIsTypeOf(Dependency)or
+		self.element.oclIsTypeOf(Dependency)or
+		self.element.oclIsTypeOf(ElementImport)or
+		self.element.oclIsTypeOf(PackageImport)
+	)
+}{
+	result.styles := self.map toFontStyle();
+}
+
+/****** Element Type queries ******/
+
+query View::getNodeType(element : Element) : String {
+	return
+		if element.oclIsTypeOf(Dependency) then '2014' 
+		elif element.oclIsTypeOf(Association) then '2015' 
+		elif element.oclIsTypeOf(Stereotype) then '1026' 
+		elif element.oclIsTypeOf(Class) and not element.oclAsType(Class).isMetaclass() then '2008' //Class
+		elif element.oclIsTypeOf(Class) and element.oclAsType(Class).isMetaclass() then '1031' //Metaclass
+		elif element.oclIsTypeOf(Comment) then '1002' 
+		elif element.oclIsTypeOf(Constraint) then '1014' 
+		elif element.oclIsTypeOf(Model) then '2005' 
+		elif element.oclIsTypeOf(Profile) then '1030' 
+		elif element.oclIsTypeOf(Package) then '2007' 
+		elif element.oclIsTypeOf(Enumeration) then '2006' 
+		elif element.oclIsTypeOf(PrimitiveType) then '2009' 
+		elif element.oclIsTypeOf(DataType) then '2010' 
+		elif element.oclIsTypeOf(Diagram) then '2016' 
+		else self.fail()
+	endif;
+}
+
+
+query View::getDecorationType(element : Element) : String{
+	var res := self.doGetDecorationType(element);
+	
+	/*
+	log('Get papyrus ID for'+ self.element.eClass().name+', '+self.type);
+	
+	log(res);
+	
+	if self.container().oclIsKindOf(Node) then 
+		log('IsNode')
+	else 
+		log('IsEdge')
+	endif;
+	*/
+	
+	return res;
+}
+
+query View::doGetDecorationType(element : Element) : String{
+	return if self.container().oclIsKindOf(Node) then {
+		return if element.oclIsTypeOf(Stereotype) then
+			return switch {
+				case (self.type = 'Name') '1034';
+				case (self.type = 'AttributeCompartment') '1071';
+				case (self.type = 'OperationCompartment') '1019';
+			}
+			elif element.oclIsTypeOf(Class) and not element.oclAsType(Class).isMetaclass() then //Class
+				return switch {
+					case (self.type = 'Name') '5029';
+					case (self.type = 'OperationCompartment') '7018';
+					case (self.type = 'AttributeCompartment') '7017';
+				}
+			elif element.oclIsTypeOf(Class) and element.oclAsType(Class).isMetaclass() then //Metaclass
+				return switch {
+					case (self.type = 'Name') '1084';
+					
+				}
+			elif element.oclIsTypeOf(Constraint) then
+				return switch {
+					case (self.type = 'Name') '1015';
+					
+				}
+			elif element.oclIsTypeOf(Model) then
+				return switch {
+					case (self.type = 'Name') '5020';
+					case (self.type = 'StructureCompartment') '1057';
+				}
+			elif element.oclIsTypeOf(Profile) then
+				return switch {
+					
+					case (self.type = 'StructureCompartment') '1042';
+				}
+			elif element.oclIsTypeOf(Package) then
+				return switch {
+					case (self.type = 'Name') '5026';
+					case (self.type = 'PackageContents') '1005';
+				}
+			elif element.oclIsTypeOf(Enumeration) then
+				return switch {
+					case (self.type = 'Name') '5023';
+					case (self.type = 'EnumerationCompartment') '1063';
+				}
+			elif element.oclIsTypeOf(PrimitiveType) then
+				return switch {
+					case (self.type = 'Name') '5032';
+					
+				}
+			elif element.oclIsTypeOf(DataType) then
+				return switch {
+					case (self.type = 'Name') '5035';
+					case (self.type = 'AttributeCompartment') '1067';
+					case (self.type = 'OperationCompartment') '1068'; //TODO: Disable?
+				}
+			elif element.oclIsTypeOf(Diagram) then
+				return switch {
+					case (self.type = 'Name') '2';
+					
+				}
+		endif
+	} else {
+		return if element.oclIsTypeOf(Association)  then
+			return switch {
+				case (self.type='Name') '6002';		
+				case (self.type = 'KindLabel') '6001';
+				case (self.type = 'NameLabel') '6002';
+				
+				
+				case (self.type = 'FromMultiplicityLabel') '6033';
+				case (self.type = 'ToMultiplicityLabel') '6034';
+			}
+			elif element.oclIsTypeOf(Generalization)  then
+				return switch {
+							
+					case (self.type = 'KindLabel') '6007';
+				}
+			elif element.oclIsTypeOf(Dependency)  then
+				return switch {
+					case (self.type='Name') '6026';		
+					case (self.type = 'NameLabel') '6026';
+					case (self.type = 'KindLabel') '6027';
+				}
+			elif element.oclIsTypeOf(ElementImport)  then
+				return switch {
+							
+					
+					case (self.type = 'KindLabel') '6021';
+				}
+			elif element.oclIsTypeOf(PackageImport)  then
+				return switch {
+							
+					case (self.type = 'KindLabel') '6022';
+				}
+		endif
+	} endif;
+}
+
+
+query View::getEdgeType(element : Element) : String {
+	return
+		if element.oclIsTypeOf(Extension) then '1013'
+		elif element.oclIsTypeOf(Association) then '4001'
+		elif element.oclIsTypeOf(ProfileApplication) then '1045'
+		elif element.oclIsTypeOf(Association) then '4019'
+		elif element.oclIsTypeOf(Generalization) then '4002'
+		elif element.oclIsTypeOf(Dependency) then '4008'
+		elif element.oclIsTypeOf(Dependency) then '4018'
+		elif element.oclIsTypeOf(ElementImport) then '1064'
+		elif element.oclIsTypeOf(PackageImport) then '1065'
+		else self.fail()
+	endif;
+}
+

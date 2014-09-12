@@ -1,0 +1,120 @@
+/*****************************************************************************
+ * Copyright (c) 2013, 2014 CEA LIST.
+ *
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
+ *****************************************************************************/
+import org.eclipse.papyrus.m2m.qvto.UI;
+import org.eclipse.papyrus.m2m.qvto.NotationTypes;
+import libraries.EclipseUI;
+import org.eclipse.papyrus.migration.rsa.RTMappings; 
+
+modeltype notation "strict" uses 'http://www.eclipse.org/gmf/runtime/1.0.2/notation';
+modeltype umlNotation "strict" uses 'http://www.eclipse.org/papyrus/umlnotation';
+modeltype uml "strict" uses 'http://www.eclipse.org/uml2/5.0.0/UML';
+modeltype ecore "strict" uses 'http://www.eclipse.org/emf/2002/Ecore';
+modeltype sash "strict" uses 'http://www.eclipse.org/papyrus/0.7.0/sashdi';
+
+/**
+*	Transformation rules for importing an RSA Semantic model into Papyrus (SashModel + cleanup semantics)
+*/
+transformation RSAModelToPapyrus(inout semantics : uml, inout graphics : notation, out di : sash);
+
+
+main() {
+	assert fatal (not semantics.rootObjects()[uml::Element]->isEmpty()) with log('Cannot find root uml::Element');
+
+	log('Start');
+	map createSashModel();
+	
+	semantics.objectsOfType(Element).map deleteSourceDiagrams();
+	semantics.objectsOfType(OpaqueExpression).map convertToLiteralString();
+	semantics.objectsOfType(OpaqueExpression).map fixLanguage();
+	
+	log('End');
+}
+
+mapping inout Element::deleteSourceDiagrams() {
+
+	self.eAnnotations := self.eAnnotations->reject(source = 'uml2.diagrams' or source = 'uml2.profile.diagrams'); /* Delete diagrams from resulting UML Model */
+}
+
+//If the OpaqueExpression doesn't have a language, and a single body, replace it with a LiteralString
+mapping OpaqueExpression::convertToLiteralString() : LiteralString when {
+	(self.language->size() = 0 and self.body->size() <= 1) or
+	(self.language->size() = 1 and self.body->size() <= 1 and 
+		self.language->at(1).isEmpty()
+	)
+} {
+	init {
+		result := self.map toLiteralString() //Blackbox cast: Transform OpaqueExpression to LiteralString (Preserve incoming references and compatible features)
+	}
+
+	result.value := if self.body->size() = 0 then null else self.body->at(1) endif;	
+	
+	semantics.removeElement(self); //Destroy the source OpaqueExpression
+}
+
+intermediate class Opaque { 
+	language: String; 
+	body: String;
+}
+	
+mapping inout OpaqueExpression::fixLanguage() when {
+	(self.language->size() > 1 or self.body->size() > 1) and 
+	(self.language->exists(isEmpty()) or self.language.size() <> self.body.size())
+} {
+	//Replace empty languages by "Undefined" (In Papyrus, "Empty" is interpreted as "OCL", which is the default. This is not the case in RSA, where "Empty" means "Undefined")
+
+	var maxSize : Integer := self.language->size().max(self.body->size());
+
+	var newLanguages : OrderedSet(Opaque) := OrderedSet{};
+	var i : Integer = 1;
+	
+	while(i <= maxSize) {
+		var lang : String := self.language->at(i);
+		var body : String := self.body->at(i);
+		
+		var newLanguage := object Opaque{};
+		newLanguage.language := if lang.oclIsInvalid() or lang.isEmpty() then 'Undefined' else lang endif;
+		newLanguage.body := if body.oclIsInvalid() or body.isEmpty() then '' else body endif;
+		
+		newLanguages += newLanguage;
+		
+		i := i+1;
+	};
+	
+	self.language := newLanguages.language;
+	self.body := newLanguages.body;	
+}
+
+query String::isEmpty() : Boolean {
+	return self.oclIsUndefined() or self = '';
+}
+
+mapping createSashModel() : SashWindowsMngr {
+	pageList := object PageList {
+		availablePage := graphics.rootObjects()[Diagram].map toAvailablePage();
+
+			};
+	
+	var mainWindow : Window := object Window{
+		children := object TabFolder{};
+	};
+	
+	sashModel := object SashModel {
+		windows := mainWindow;
+		currentSelection := mainWindow.children->selectByKind(TabFolder)->any(true);
+	};
+}
+
+mapping Diagram::toAvailablePage() : sash::PageRef when {
+	not self.type.oclIsUndefined() and self.type <> ""
+}{
+	result.emfPageIdentifier := self.oclAsType(EObject);
+}

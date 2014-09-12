@@ -1,0 +1,816 @@
+/*****************************************************************************
+ * Copyright (c) 2013, 2014 CEA LIST.
+ *
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
+ *****************************************************************************/
+import RSAToPapyrus;
+
+modeltype notation "strict" uses 'http://www.eclipse.org/gmf/runtime/1.0.2/notation';
+modeltype umlNotation "strict" uses 'http://www.eclipse.org/papyrus/umlnotation';
+modeltype uml "strict" uses 'http://www.eclipse.org/uml2/5.0.0/UML';
+modeltype ecore "strict" uses 'http://www.eclipse.org/emf/2002/Ecore';
+modeltype sash "strict" uses 'http://www.eclipse.org/papyrus/0.7.0/sashdi';
+
+transformation RSAStructureDiagram(inout semantics : uml, inout graphics : notation, out di : sash);
+
+main() {
+	semantics.rootObjects()[uml::Element]->map toOwnedDiagrams();
+}
+
+query View::getDiagramType() : String{
+	return 'CompositeStructure';
+}
+
+mapping notation::Diagram::generateDiagram() : notation::Diagram inherits Diagram::toPapyrusDiagram when {
+	self.type = 'Structure'
+}{
+	init {
+		log('GenerateStructureDiagram');
+	}
+	end {
+		graphics.objectsOfType(Shape)->select(type = '2109').map addCommentDecoration();
+		graphics.objectsOfType(Shape)->select(type = '2114').map addConstraintDecoration();
+	}
+}
+
+
+mapping inout Shape::addCommentDecoration() when {
+	self.type = '2109' and self.diagram.type = self.getDiagramType()
+} {
+	
+	self.children += object DecorationNode{
+		type := '5192'; //Comment body
+	}	
+
+}
+
+mapping inout Shape::addConstraintDecoration() when {
+	self.type = '2114' and self.diagram.type = self.getDiagramType()
+} {
+	
+	self.children += object DecorationNode{
+		type := '6039'; //Constraint specification
+	}
+}
+
+
+mapping Node::toNode() : Node disjuncts
+	UMLShape::toPapyrusShape,
+	UMLShapeCompartment::toStructureCompartment,
+	BasicSemanticCompartment::toListCompartment,
+	BasicDecorationNode::toConnectorLabel,
+	BasicDecorationNode::toLabel
+	//TODO: Disjunct nodes mapping
+;
+
+mapping Edge::toEdge() : Edge disjuncts
+	UMLConnector::toPapyrusConnector,
+	UMLConnector::toCommentLink
+	//TODO: Disjunct edges mapping
+;
+
+mapping UMLShapeCompartment::toStructureCompartment() : DecorationNode inherits UMLShapeCompartment::toAbstractStructureCompartment when {
+	self.type = 'StructureCompartment' or self.type = 'PackageContents' and not self.getType().oclIsUndefined();
+}{
+	
+}
+
+
+/***** Nodes **********/
+
+mapping UMLShape::toPapyrusShape() : Shape inherits Shape::toPapyrusShape when {
+	not self.getType().oclIsUndefined() and (
+		self.element.oclIsTypeOf(DurationInterval)or
+	self.element.oclIsTypeOf(UseCase)or
+	self.element.oclIsTypeOf(Port)or
+	self.element.oclIsTypeOf(LiteralInteger)or
+	self.element.oclIsTypeOf(Node)or
+	self.element.oclIsTypeOf(Class)or
+	self.element.oclIsTypeOf(Expression)or
+	self.element.oclIsTypeOf(IntervalConstraint)or
+	self.element.oclIsTypeOf(InteractionConstraint)or
+	self.element.oclIsTypeOf(TimeConstraint)or
+	self.element.oclIsTypeOf(OpaqueBehavior)or
+	self.element.oclIsTypeOf(Duration)or
+	self.element.oclIsTypeOf(Actor)or
+	self.element.oclIsTypeOf(TimeEvent)or
+	self.element.oclIsTypeOf(DurationConstraint)or
+	//self.element.oclIsTypeOf(Interface)or
+	self.element.oclIsTypeOf(SignalEvent)or
+	self.element.oclIsTypeOf(TimeExpression)or
+	self.element.oclIsTypeOf(Enumeration)or
+	self.element.oclIsTypeOf(OpaqueExpression)or
+	self.element.oclIsTypeOf(LiteralBoolean)or
+	self.element.oclIsTypeOf(AnyReceiveEvent)or
+	self.element.oclIsTypeOf(FunctionBehavior)or
+	self.element.oclIsTypeOf(LiteralUnlimitedNatural)or
+	self.element.oclIsTypeOf(Activity)or
+	self.element.oclIsTypeOf(Signal)or
+	self.element.oclIsTypeOf(Parameter)or
+	self.element.oclIsTypeOf(StringExpression)or
+	self.element.oclIsTypeOf(Interval)or
+	self.element.oclIsTypeOf(PrimitiveType)or
+	self.element.oclIsTypeOf(CollaborationUse)or
+	self.element.oclIsTypeOf(TimeObservation)or
+	self.element.oclIsTypeOf(DeploymentSpecification)or
+	self.element.oclIsTypeOf(StateMachine)or
+	self.element.oclIsTypeOf(Device)or
+	self.element.oclIsTypeOf(Comment)or
+	self.element.oclIsTypeOf(InformationItem)or
+	self.element.oclIsTypeOf(Artifact)or
+	self.element.oclIsTypeOf(Collaboration)or
+	self.element.oclIsTypeOf(ProtocolStateMachine)or
+	self.element.oclIsTypeOf(TimeInterval)or
+	self.element.oclIsTypeOf(CallEvent)or
+	self.element.oclIsTypeOf(InstanceValue)or
+	self.element.oclIsTypeOf(DurationObservation)or
+	self.element.oclIsTypeOf(Property)or
+	self.element.oclIsTypeOf(Constraint)or
+	self.element.oclIsTypeOf(ExecutionEnvironment)or
+	self.element.oclIsTypeOf(LiteralString)or
+	self.element.oclIsTypeOf(DataType)or
+	self.element.oclIsTypeOf(ChangeEvent)or
+	self.element.oclIsTypeOf(Component)or
+	self.element.oclIsTypeOf(LiteralNull)or
+	self.element.oclIsTypeOf(Interaction)
+	)
+}{
+	
+}
+
+
+/****** Connector Labels ******/
+
+mapping BasicDecorationNode::toConnectorLabel() : DecorationNode inherits Node::toPapyrusConnectorLabel when {
+	not self.getType().oclIsUndefined() and (
+		self.type = 'ToMultiplicityLabel' or
+		self.type = 'ToRoleLabel' or
+		self.type = 'FromMultiplicityLabel' or
+		self.type = 'FromRoleLabel' or
+		self.type = 'NameLabel' or
+		self.type = 'KindLabel' or
+		self.type = 'PartTextCompartment' or
+		self.type = 'PartName' or
+		self.type = 'CommentBody'
+	)
+}{
+	
+}
+
+/****** Compartments *******/
+
+mapping BasicDecorationNode::toLabel() : DecorationNode inherits Node::toPapyrusNode when {
+	not self.getType().oclIsUndefined() and
+	self.element.oclIsKindOf(uml::NamedElement) and 
+	self.type = 'Name' or self.type = 'PartName'
+}{
+	
+}
+
+mapping BasicSemanticCompartment::toListCompartment() : BasicCompartment inherits Node::toPapyrusNode, DrawerStyle::toDrawerStyle when {
+	self.type.endsWith('Compartment') and not self.getType().oclIsUndefined()
+}{
+	result.children := self.findElement().map toContents(self);
+}
+
+mapping Element::toContents(node : BasicSemanticCompartment) : Sequence(Node) disjuncts
+	Enumeration::toContents,
+	DataType::toContents
+;
+
+mapping Enumeration::toContents(node : BasicSemanticCompartment) : Sequence(Node) disjuncts
+	Enumeration::toliteralsContents
+;
+
+mapping DataType::toContents(node : BasicSemanticCompartment) : Sequence(Node) disjuncts
+	DataType::topropertiesContents,
+	DataType::tooperationsContents
+;
+
+mapping Enumeration::toliteralsContents(node : BasicSemanticCompartment) : Sequence(Node) when {
+	node.type = 'EnumerationLiteralCompartment';
+}{
+	init {
+		result := (self.map fillEnumerationLiteral(node))
+	}
+}
+
+mapping DataType::topropertiesContents(node : BasicSemanticCompartment) : Sequence(Node) when {
+	node.type = 'Compartment';
+}{
+	init {
+		result := (self.map fillProperty(node))
+	}
+}
+
+mapping DataType::tooperationsContents(node : BasicSemanticCompartment) : Sequence(Node) when {
+	node.type = 'Compartment';
+}{
+	init {
+		result := (self.map fillOperation(node))
+	}
+}
+
+mapping uml::DataType::fillProperty(node : BasicSemanticCompartment) : Sequence(Node) when {
+	node.type='Compartment';
+}{
+	init {
+		result := self.ownedAttribute->selectByKind(Property).map toPropertyInDataType(node)->asSequence();
+	}
+}
+
+mapping uml::DataType::fillOperation(node : BasicSemanticCompartment) : Sequence(Node) when {
+	node.type='Compartment';
+}{
+	init {
+		result := self.ownedOperation->selectByKind(Operation).map toOperationInDataType(node)->asSequence();
+	}
+}
+
+
+
+mapping uml::Enumeration::fillEnumerationLiteral(node : BasicSemanticCompartment) : Sequence(Node) when {
+	node.type='EnumerationLiteralCompartment';
+}{
+	init {
+		result := self.ownedLiteral->selectByKind(EnumerationLiteral).map toEnumerationLiteralInEnumeration(node)->asSequence();
+	}
+}
+
+mapping UMLConnector::toCommentLink() : Connector inherits Connector::toCommentLink when{
+	self.type='Reference'
+}{	
+	result.type :='4002';
+	result.bendpoints := self.bendpoints.toBendpoint(self.diagram);
+	result.sourceAnchor := object IdentityAnchor{};		
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+mapping Property::toPropertyInDataType(node : Node) : Shape inherits Element::toCompartmentEntry {
+	result.type := '3101';
+}
+
+mapping Operation::toOperationInDataType(node : Node) : Shape inherits Element::toCompartmentEntry {
+	result.type := '3102';
+}
+
+mapping Reception::toReceptionIn(node : Node) : Shape inherits Element::toCompartmentEntry {
+	result.type := '3100';
+}
+
+mapping EnumerationLiteral::toEnumerationLiteralInEnumeration(node : Node) : Shape inherits Element::toCompartmentEntry {
+	result.type := '3066';
+}
+
+mapping Activity::toActivityIn(node : Node) : Shape inherits Element::toCompartmentEntry {
+	result.type := '3103';
+}
+
+mapping Interaction::toInteractionIn(node : Node) : Shape inherits Element::toCompartmentEntry {
+	result.type := '3104';
+}
+
+mapping ProtocolStateMachine::toProtocolStateMachineIn(node : Node) : Shape inherits Element::toCompartmentEntry {
+	result.type := '3105';
+}
+
+mapping StateMachine::toStateMachineIn(node : Node) : Shape inherits Element::toCompartmentEntry {
+	result.type := '3106';
+}
+
+mapping FunctionBehavior::toFunctionBehaviorIn(node : Node) : Shape inherits Element::toCompartmentEntry {
+	result.type := '3107';
+}
+
+mapping OpaqueBehavior::toOpaqueBehaviorIn(node : Node) : Shape inherits Element::toCompartmentEntry {
+	result.type := '3108';
+}
+
+mapping Collaboration::toCollaborationIn(node : Node) : Shape inherits Element::toCompartmentEntry {
+	result.type := '3109';
+}
+
+mapping Interface::toInterfaceIn(node : Node) : Shape inherits Element::toCompartmentEntry {
+	result.type := '3110';
+}
+
+mapping Enumeration::toEnumerationIn(node : Node) : Shape inherits Element::toCompartmentEntry {
+	result.type := '3111';
+}
+
+mapping PrimitiveType::toPrimitiveTypeIn(node : Node) : Shape inherits Element::toCompartmentEntry {
+	result.type := '3112';
+}
+
+mapping DataType::toDataTypeIn(node : Node) : Shape inherits Element::toCompartmentEntry {
+	result.type := '3113';
+}
+
+mapping Class::toClassIn(node : Node) : Shape inherits Element::toCompartmentEntry {
+	result.type := '3114';
+}
+
+
+
+/******* Edges ********/
+
+
+mapping UMLConnector::toPapyrusConnector() : notation::Connector inherits Connector::toPapyrusConnector when {
+	not self.getType().oclIsUndefined() and (
+		self.element.oclIsTypeOf(ComponentRealization)or
+		self.element.oclIsTypeOf(InterfaceRealization)or
+		self.element.oclIsTypeOf(Substitution)or
+		self.element.oclIsTypeOf(Realization)or
+		self.element.oclIsTypeOf(Manifestation)or
+		self.element.oclIsTypeOf(Abstraction)or
+		self.element.oclIsTypeOf(Usage)or
+		self.element.oclIsTypeOf(Deployment)or
+		self.element.oclIsTypeOf(Dependency)or
+		self.element.oclIsTypeOf(Dependency)or
+		self.element.oclIsTypeOf(uml::Connector)or
+		self.element.oclIsTypeOf(Generalization)or
+		self.element.oclIsTypeOf(InformationFlow)
+	)
+}{
+	result.styles := self.map toFontStyle();
+}
+
+/****** Element Type queries ******/
+
+query View::getNodeType(element : Element) : String {
+	return
+		if element.oclIsTypeOf(DurationInterval) then '2106' 
+		elif element.oclIsTypeOf(UseCase) then '2082' 
+		elif element.oclIsTypeOf(Port) then '3069' 
+		elif element.oclIsTypeOf(LiteralInteger) then '2096' 
+		elif element.oclIsTypeOf(Node) then '2072' 
+		elif element.oclIsTypeOf(Class) then '2073' 
+		elif element.oclIsTypeOf(Expression) then '2103' 
+		elif element.oclIsTypeOf(IntervalConstraint) then '2112' 
+		elif element.oclIsTypeOf(InteractionConstraint) then '2113' 
+		elif element.oclIsTypeOf(TimeConstraint) then '2111' 
+		elif element.oclIsTypeOf(OpaqueBehavior) then '2065' 
+		elif element.oclIsTypeOf(Duration) then '2104' 
+		elif element.oclIsTypeOf(Actor) then '2077' 
+		elif element.oclIsTypeOf(TimeEvent) then '2089' 
+		elif element.oclIsTypeOf(DurationConstraint) then '2110' 
+		//elif element.oclIsTypeOf(Interface) then '2076' 
+		elif element.oclIsTypeOf(SignalEvent) then '2083' 
+		elif element.oclIsTypeOf(TimeExpression) then '2102' 
+		elif element.oclIsTypeOf(Enumeration) then '2067' 
+		elif element.oclIsTypeOf(OpaqueExpression) then '2101' 
+		elif element.oclIsTypeOf(LiteralBoolean) then '2095' 
+		elif element.oclIsTypeOf(AnyReceiveEvent) then '2085' 
+		elif element.oclIsTypeOf(FunctionBehavior) then '2064' 
+		elif element.oclIsTypeOf(LiteralUnlimitedNatural) then '2099' 
+		elif element.oclIsTypeOf(Activity) then '2060' 
+		elif element.oclIsTypeOf(Signal) then '2081' 
+		elif element.oclIsTypeOf(Parameter) then '3088' 
+		elif element.oclIsTypeOf(StringExpression) then '2100' 
+		elif element.oclIsTypeOf(Interval) then '2107' 
+		elif element.oclIsTypeOf(PrimitiveType) then '2066' 
+		elif element.oclIsTypeOf(CollaborationUse) then '3071' 
+		elif element.oclIsTypeOf(TimeObservation) then '2094' 
+		elif element.oclIsTypeOf(DeploymentSpecification) then '2078' 
+		elif element.oclIsTypeOf(StateMachine) then '2063' 
+		elif element.oclIsTypeOf(Device) then '2070' 
+		elif element.oclIsTypeOf(Comment) then '2109' 
+		elif element.oclIsTypeOf(InformationItem) then '2080' 
+		elif element.oclIsTypeOf(Artifact) then '2079' 
+		elif element.oclIsTypeOf(Collaboration) then '2075' 
+		elif element.oclIsTypeOf(ProtocolStateMachine) then '2062' 
+		elif element.oclIsTypeOf(TimeInterval) then '2105' 
+		elif element.oclIsTypeOf(CallEvent) then '2084' 
+		elif element.oclIsTypeOf(InstanceValue) then '2108' 
+		elif element.oclIsTypeOf(DurationObservation) then '2093' 
+		elif element.oclIsTypeOf(Property) then '3070' 
+		elif element.oclIsTypeOf(Constraint) then '2114' 
+		elif element.oclIsTypeOf(ExecutionEnvironment) then '2071' 
+		elif element.oclIsTypeOf(LiteralString) then '2098' 
+		elif element.oclIsTypeOf(DataType) then '2068' 
+		elif element.oclIsTypeOf(ChangeEvent) then '2088' 
+		elif element.oclIsTypeOf(Component) then '2069' 
+		elif element.oclIsTypeOf(LiteralNull) then '2097' 
+		elif element.oclIsTypeOf(Interaction) then '2061' 
+		else self.fail()
+	endif;
+}
+
+
+query View::getDecorationType(element : Element) : String{
+	var res := self.doGetDecorationType(element);
+	
+	
+	/*log('Get papyrus ID for'+ self.element.eClass().name+', '+self.type);
+	
+	log(res);
+	
+	if self.container().oclIsKindOf(Node) then 
+		log('IsNode')
+	else 
+		log('IsEdge')
+	endif;*/
+	
+	
+	return res;
+}
+
+query View::doGetDecorationType(element : Element) : String{
+	return if self.container().oclIsKindOf(Node) then {
+		return if element.oclIsTypeOf(DurationInterval) then
+			return switch {
+				case (self.type = 'Name' or self.type = 'PartName') '5189';
+				
+			}
+			elif element.oclIsTypeOf(UseCase) then
+				return switch {
+					case (self.type = 'Name' or self.type = 'PartName') '5165';
+					
+				}
+			elif element.oclIsTypeOf(Port) then
+				return switch {
+					case (self.type = 'Name' or self.type = 'PartName') '5125';
+					
+				}
+			elif element.oclIsTypeOf(LiteralInteger) then
+				return switch {
+					case (self.type = 'Name' or self.type = 'PartName') '5179';
+					
+				}
+			elif element.oclIsTypeOf(Node) then
+				return switch {
+					case (self.type = 'Name' or self.type = 'PartName') '5124';
+					case (self.type = 'StructureCompartment') '7072';
+				}
+			elif element.oclIsTypeOf(Class) then
+				return switch {
+					case (self.type = 'Name' or self.type = 'PartName') '5156';
+					case (self.type = 'StructureCompartment') '7073';
+				}
+			elif element.oclIsTypeOf(Expression) then
+				return switch {
+					case (self.type = 'Name' or self.type = 'PartName') '5186';
+					
+				}
+			elif element.oclIsTypeOf(IntervalConstraint) then
+				return switch {
+					case (self.type = 'Name' or self.type = 'PartName') '5195';
+					
+				}
+			elif element.oclIsTypeOf(InteractionConstraint) then
+				return switch {
+					case (self.type = 'Name' or self.type = 'PartName') '5196';
+					
+				}
+			elif element.oclIsTypeOf(TimeConstraint) then
+				return switch {
+					case (self.type = 'Name' or self.type = 'PartName') '5194';
+					
+				}
+			elif element.oclIsTypeOf(OpaqueBehavior) then
+				return switch {
+					case (self.type = 'Name' or self.type = 'PartName') '5117';
+					case (self.type = 'StructureCompartment') '7068';
+				}
+			elif element.oclIsTypeOf(Duration) then
+				return switch {
+					case (self.type = 'Name' or self.type = 'PartName') '5187';
+					
+				}
+			elif element.oclIsTypeOf(Actor) then
+				return switch {
+					case (self.type = 'Name' or self.type = 'PartName') '5160';
+					
+				}
+			elif element.oclIsTypeOf(TimeEvent) then
+				return switch {
+					case (self.type = 'Name' or self.type = 'PartName') '5172';
+					
+				}
+			elif element.oclIsTypeOf(DurationConstraint) then
+				return switch {
+					case (self.type = 'Name' or self.type = 'PartName') '5193';
+					
+				}
+			elif element.oclIsTypeOf(Interface) then
+				return switch {
+					case (self.type = 'Name' or self.type = 'PartName') '5159';
+					
+				}
+			elif element.oclIsTypeOf(SignalEvent) then
+				return switch {
+					case (self.type = 'Name' or self.type = 'PartName') '5166';
+					
+				}
+			elif element.oclIsTypeOf(TimeExpression) then
+				return switch {
+					case (self.type = 'Name' or self.type = 'PartName') '5185';
+					
+				}
+			elif element.oclIsTypeOf(Enumeration) then
+				return switch {
+					case (self.type = 'Name' or self.type = 'PartName') '5119';
+					case (self.type = 'EnumerationLiteralCompartment') '7048';
+				}
+			elif element.oclIsTypeOf(OpaqueExpression) then
+				return switch {
+					case (self.type = 'Name' or self.type = 'PartName') '5184';
+					
+				}
+			elif element.oclIsTypeOf(LiteralBoolean) then
+				return switch {
+					case (self.type = 'Name' or self.type = 'PartName') '5178';
+					
+				}
+			elif element.oclIsTypeOf(AnyReceiveEvent) then
+				return switch {
+					case (self.type = 'Name' or self.type = 'PartName') '5168';
+					
+				}
+			elif element.oclIsTypeOf(FunctionBehavior) then
+				return switch {
+					case (self.type = 'Name' or self.type = 'PartName') '5116';
+					case (self.type = 'StructureCompartment') '7067';
+				}
+			elif element.oclIsTypeOf(LiteralUnlimitedNatural) then
+				return switch {
+					case (self.type = 'Name' or self.type = 'PartName') '5182';
+					
+				}
+			elif element.oclIsTypeOf(Activity) then
+				return switch {
+					case (self.type = 'Name' or self.type = 'PartName') '5112';
+					case (self.type = 'StructureCompartment') '7063';
+				}
+			elif element.oclIsTypeOf(Signal) then
+				return switch {
+					case (self.type = 'Name' or self.type = 'PartName') '5164';
+					
+				}
+			elif element.oclIsTypeOf(Parameter) then
+				return switch {
+					case (self.type = 'Name' or self.type = 'PartName') '6033';
+					
+				}
+			elif element.oclIsTypeOf(StringExpression) then
+				return switch {
+					case (self.type = 'Name' or self.type = 'PartName') '5183';
+					
+				}
+			elif element.oclIsTypeOf(Interval) then
+				return switch {
+					case (self.type = 'Name' or self.type = 'PartName') '5190';
+					
+				}
+			elif element.oclIsTypeOf(PrimitiveType) then
+				return switch {
+					case (self.type = 'Name' or self.type = 'PartName') '5118';
+					
+				}
+			elif element.oclIsTypeOf(CollaborationUse) then
+				return switch {
+					case (self.type = 'Name' or self.type = 'PartName') '5127';
+					
+				}
+			elif element.oclIsTypeOf(TimeObservation) then
+				return switch {
+					case (self.type = 'Name' or self.type = 'PartName') '5142';
+					
+				}
+			elif element.oclIsTypeOf(DeploymentSpecification) then
+				return switch {
+					case (self.type = 'Name' or self.type = 'PartName') '5161';
+					
+				}
+			elif element.oclIsTypeOf(StateMachine) then
+				return switch {
+					case (self.type = 'Name' or self.type = 'PartName') '5115';
+					case (self.type = 'StructureCompartment') '7066';
+				}
+			elif element.oclIsTypeOf(Device) then
+				return switch {
+					case (self.type = 'Name' or self.type = 'PartName') '5122';
+					case (self.type = 'StructureCompartment') '7070';
+				}
+			elif element.oclIsTypeOf(InformationItem) then
+				return switch {
+					case (self.type = 'Name' or self.type = 'PartName') '5163';
+					
+				}
+			elif element.oclIsTypeOf(Artifact) then
+				return switch {
+					case (self.type = 'Name' or self.type = 'PartName') '5162';
+					
+				}
+			elif element.oclIsTypeOf(Collaboration) then
+				return switch {
+					case (self.type = 'Name' or self.type = 'PartName') '5158';
+					case (self.type = 'StructureCompartment') '7075';
+				}
+			elif element.oclIsTypeOf(ProtocolStateMachine) then
+				return switch {
+					case (self.type = 'Name' or self.type = 'PartName') '5114';
+					case (self.type = 'StructureCompartment') '7065';
+				}
+			elif element.oclIsTypeOf(TimeInterval) then
+				return switch {
+					case (self.type = 'Name' or self.type = 'PartName') '5188';
+					
+				}
+			elif element.oclIsTypeOf(CallEvent) then
+				return switch {
+					case (self.type = 'Name' or self.type = 'PartName') '5167';
+					
+				}
+			elif element.oclIsTypeOf(InstanceValue) then
+				return switch {
+					case (self.type = 'Name' or self.type = 'PartName') '5191';
+					
+				}
+			elif element.oclIsTypeOf(DurationObservation) then
+				return switch {
+					case (self.type = 'Name' or self.type = 'PartName') '5151';
+					
+				}
+			elif element.oclIsTypeOf(Property) then
+				return switch {
+					case (self.type = 'PartName' or self.type='PartTextCompartment') '5126';
+					case (self.type = 'StructureCompartment') '7077';
+				}
+			elif element.oclIsTypeOf(Constraint) then
+				return switch {
+					case (self.type = 'Name' or self.type = 'PartName') '5197';
+					
+				}
+			elif element.oclIsTypeOf(ExecutionEnvironment) then
+				return switch {
+					case (self.type = 'Name' or self.type = 'PartName') '5123';
+					case (self.type = 'StructureCompartment') '7071';
+				}
+			elif element.oclIsTypeOf(LiteralString) then
+				return switch {
+					case (self.type = 'Name' or self.type = 'PartName') '5181';
+					
+				}
+			elif element.oclIsTypeOf(DataType) then
+				return switch {
+					case (self.type = 'Name' or self.type = 'PartName') '5120';
+					case (self.type = 'Compartment') '7033';
+				case (self.type = 'Compartment') '7034';
+				}
+			elif element.oclIsTypeOf(ChangeEvent) then
+				return switch {
+					case (self.type = 'Name' or self.type = 'PartName') '5171';
+					
+				}
+			elif element.oclIsTypeOf(Component) then
+				return switch {
+					case (self.type = 'Name' or self.type = 'PartName') '5121';
+					case (self.type = 'StructureCompartment') '7069';
+				}
+			elif element.oclIsTypeOf(LiteralNull) then
+				return switch {
+					case (self.type = 'Name' or self.type = 'PartName') '5180';
+					
+				}
+			elif element.oclIsTypeOf(Interaction) then
+				return switch {
+					case (self.type = 'Name' or self.type = 'PartName') '5113';
+					case (self.type = 'StructureCompartment') '7064';
+				}
+			elif element.oclIsTypeOf(Comment) then
+				return switch {
+					case (self.type = 'CommentBody') '5192';
+				}
+		endif
+	} else {
+		return if element.oclIsTypeOf(ComponentRealization)  then
+			return switch {
+				case (self.type='Name') '6001';		
+				case (self.type = 'NameLabel') '6001';
+				case (self.type = 'KindLabel') '6015';
+			}
+			elif element.oclIsTypeOf(InterfaceRealization)  then
+				return switch {
+					case (self.type='Name') '6002';		
+					case (self.type = 'NameLabel') '6002';
+					case (self.type = 'KindLabel') '6016';
+				}
+			elif element.oclIsTypeOf(Substitution)  then
+				return switch {
+					case (self.type='Name') '6003';		
+					case (self.type = 'NameLabel') '6003';
+					case (self.type = 'KindLabel') '6017';
+				}
+			elif element.oclIsTypeOf(Realization)  then
+				return switch {
+					case (self.type='Name') '6004';		
+					case (self.type = 'NameLabel') '6004';
+					case (self.type = 'KindLabel') '6018';
+				}
+			elif element.oclIsTypeOf(Manifestation)  then
+				return switch {
+					case (self.type='Name') '6005';		
+					case (self.type = 'NameLabel') '6005';
+					case (self.type = 'KindLabel') '6019';
+				}
+			elif element.oclIsTypeOf(Abstraction)  then
+				return switch {
+					case (self.type='Name') '6006';		
+					case (self.type = 'NameLabel') '6006';
+					case (self.type = 'KindLabel') '6020';
+				}
+			elif element.oclIsTypeOf(Usage)  then
+				return switch {
+					case (self.type='Name') '6007';		
+					case (self.type = 'NameLabel') '6007';
+					case (self.type = 'KindLabel') '6021';
+				}
+			elif element.oclIsTypeOf(Deployment)  then
+				return switch {
+					case (self.type='Name') '6008';		
+					case (self.type = 'NameLabel') '6008';
+					case (self.type = 'KindLabel') '6022';
+				}
+			elif element.oclIsTypeOf(Dependency)  then
+				return switch {
+					case (self.type='Name') '6027';		
+					case (self.type = 'NameLabel') '6027';
+					case (self.type = 'KindLabel') '6028';
+				}
+			elif element.oclIsTypeOf(Dependency)  then
+				return switch {
+					case (self.type='Name') '6009';		
+					case (self.type = 'NameLabel') '6009';
+					case (self.type = 'KindLabel') '6023';
+				}
+			elif element.oclIsTypeOf(uml::Connector)  then
+				return switch {
+					case (self.type='Name') '6050';		
+					case (self.type = 'KindLabel') '6025';
+					case (self.type = 'NameLabel') '6050';
+					case (self.type = 'FromMultiplicityLabel') '6051';
+					case (self.type = 'ToMultiplicityLabel') '6052';
+				}
+			elif element.oclIsTypeOf(Generalization)  then
+				return switch {
+							
+					case (self.type = 'KindLabel') '6024';
+				}
+			elif element.oclIsTypeOf(InformationFlow)  then
+				return switch {
+							
+					
+					case (self.type = 'KindLabel') '6032';
+				}
+		endif
+	} endif;
+}
+
+
+query View::getEdgeType(element : Element) : String {
+	return
+		if element.oclIsTypeOf(ComponentRealization) then '4004'
+		elif element.oclIsTypeOf(InterfaceRealization) then '4005'
+		elif element.oclIsTypeOf(Substitution) then '4011'
+		elif element.oclIsTypeOf(Realization) then '4006'
+		elif element.oclIsTypeOf(Manifestation) then '4012'
+		elif element.oclIsTypeOf(Abstraction) then '4007'
+		elif element.oclIsTypeOf(Usage) then '4008'
+		elif element.oclIsTypeOf(Deployment) then '4009'
+		elif element.oclIsTypeOf(Dependency) then '4017'
+		elif element.oclIsTypeOf(Dependency) then '4010'
+		elif element.oclIsTypeOf(uml::Connector) then '4013'
+		elif element.oclIsTypeOf(Generalization) then '4015'
+		elif element.oclIsTypeOf(InformationFlow) then '4021'
+		else self.fail()
+	endif;
+}
+

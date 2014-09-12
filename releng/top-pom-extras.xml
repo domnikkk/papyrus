@@ -29,6 +29,7 @@
 		<module>../features/papyrus-extra-features/org.eclipse.papyrus.robotml.generators.intempora.rtmaps.feature</module>
 		<module>../features/papyrus-extra-features/org.eclipse.papyrus.tablemigration.feature</module>
 		<module>../features/papyrus-extra-features/org.eclipse.papyrus.uml.export.feature</module>
+		<module>../features/papyrus-extra-features/org.eclipse.papyrus.migration.rsa.feature</module>
 		<module>../extraplugins/codegen/org.eclipse.papyrus.acceleo</module>
 		<module>../extraplugins/codegen/org.eclipse.papyrus.acceleo.debug</module>
 		<module>../extraplugins/codegen/org.eclipse.papyrus.acceleo.ui</module>
@@ -135,6 +136,8 @@
 		<module>../extraplugins/umlrt/org.eclipse.papyrus.umlrt.properties</module>
 		<module>../extraplugins/umlrt/org.eclipse.papyrus.umlrt.validation</module>
 		<module>../extraplugins/umlrt/org.eclipse.papyrus.umlrt.wizard</module>
+		<module>../extraplugins/migration/org.eclipse.papyrus.m2m.qvto</module>
+		<module>../extraplugins/migration/org.eclipse.papyrus.migration.rsa</module>
 		<module>../extraplugins/codegen/org.eclipse.papyrus.views.cpp</module>
 		<module>../extraplugins/qompass-designer/tracing/org.eclipse.papyrus.views.tracepoints</module>
 		<module>extras</module>

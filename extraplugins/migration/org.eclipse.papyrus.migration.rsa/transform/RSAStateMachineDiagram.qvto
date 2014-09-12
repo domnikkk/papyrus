@@ -1,0 +1,381 @@
+/*****************************************************************************
+ * Copyright (c) 2013, 2014 CEA LIST.
+ *
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
+ *****************************************************************************/
+import RSAToPapyrus;
+
+modeltype notation "strict" uses 'http://www.eclipse.org/gmf/runtime/1.0.2/notation';
+modeltype umlNotation "strict" uses 'http://www.eclipse.org/papyrus/umlnotation';
+modeltype uml "strict" uses 'http://www.eclipse.org/uml2/5.0.0/UML';
+modeltype ecore "strict" uses 'http://www.eclipse.org/emf/2002/Ecore';
+modeltype sash "strict" uses 'http://www.eclipse.org/papyrus/0.7.0/sashdi';
+
+transformation RSAStateMachineDiagram(inout semantics : uml, inout graphics : notation, out di : sash);
+
+main() {
+	semantics.rootObjects()[uml::Element]->map toOwnedDiagrams();
+}
+
+query View::getDiagramType() : String{
+	return 'PapyrusUMLStateMachineDiagram';
+}
+
+mapping notation::Diagram::generateDiagram() : notation::Diagram inherits Diagram::toPapyrusDiagram when {
+	self.type = 'Statechart'
+}{
+	end {
+		graphics.objectsOfType(DecorationNode)->select(type = '3002').map addInRegion();
+		graphics.objectsOfType(Shape)->select(type = '2000').map createIntermediateCompartment();
+		graphics.objectsOfType(Shape)->select(type = '6000').map createStructureCompartment();
+		graphics.objectsOfType(DecorationNode)->select(type = '2001').map addLayout();		
+		graphics.objectsOfType(DecorationNode)->select(type = '6001').map fixLayout();
+		
+		graphics.objectsOfType(Shape)->select(type='666').map addCommentDecoration();
+		graphics.objectsOfType(Shape)->select(type = '668').map addConstraintDecoration();
+	}
+}
+
+mapping inout Shape::createIntermediateCompartment() {
+	var compartment := object DecorationNode {
+		type := '2002';
+		layoutConstraint := object Bounds{}
+	};
+	
+	compartment.children := self.children->select(type = '3000');
+	
+	children := children->insertAt(2, compartment); /* Required for layout: the Structure Compartment of the Region must be in 2nd position */
+}
+
+mapping inout DecorationNode::addInRegion() {
+	var currentParent := self.oclAsType(EObject).eContainer();
+	var currentBounds := self.layoutConstraint.oclAsType(Bounds);
+
+	var region := object Shape {
+		type := '3000';
+		layoutConstraint := object Bounds{
+			x := currentBounds.x;
+			y := currentBounds.y;
+		};
+		element := self.element;
+		children := self;
+		eAnnotations := object EAnnotation {
+			source := "RegionAnnotationKey";
+			details := object EStringToStringMapEntry{
+				key := "RegionZoneKey";
+				value := 'B';
+			}
+		}
+	};
+	
+	if self.layoutConstraint.oclIsUndefined() then self.layoutConstraint := object Bounds{} endif;
+	self.styles := self.styles->reject(oclIsTypeOf(TitleStyle));
+	
+	currentParent.oclAsType(View).children += region;
+}
+
+mapping inout Shape::createStructureCompartment() when {
+	not self.children->exists(type = '6002')
+}{
+	var compartment := object DecorationNode {
+		type := '6002';
+		visible := self.children->exists(type='3000');
+		layoutConstraint := object Bounds{};
+	};
+	
+	compartment.children += children->select(type = '3000');
+	children := children->insertAt(2, compartment);
+}
+
+mapping inout DecorationNode::addLayout() {
+	if self.layoutConstraint.oclIsUndefined() then self.layoutConstraint := object Bounds{} endif;
+}
+
+mapping inout DecorationNode::fixLayout(){
+	log('FixLayout');
+	var bounds := if self.layoutConstraint.oclIsUndefined() then object Bounds{} else self.layoutConstraint.oclAsType(Bounds) endif;
+	self.layoutConstraint := bounds;
+	
+	if bounds.height < 20 then bounds.height := 20 endif;
+	
+	log('Fixed: '+bounds.height.toString())
+}
+
+mapping Node::toNode() : Node disjuncts
+	UMLShape::toPapyrusShape,
+	UMLShapeCompartment::toStructureCompartment,
+	BasicSemanticCompartment::toListCompartment,
+	BasicDecorationNode::toConnectorLabel,
+	BasicDecorationNode::toLabel
+	//TODO: Disjunct nodes mapping
+;
+
+mapping Edge::toEdge() : Edge disjuncts
+	UMLConnector::toPapyrusConnector,
+	UMLConnector::toCommentLink
+	//TODO: Disjunct edges mapping
+;
+
+mapping UMLShapeCompartment::toStructureCompartment() : DecorationNode inherits UMLShapeCompartment::toAbstractStructureCompartment when {
+	not self.getType().oclIsUndefined();
+}{
+	
+}
+
+mapping inout Shape::addCommentDecoration() when {
+	self.type = '666' and self.diagram.type = self.getDiagramType()
+} {
+	
+	self.children += object DecorationNode{
+		type := '6666';
+	}
+
+}
+
+mapping inout Shape::addConstraintDecoration() when {
+	self.type = '668' and self.diagram.type = self.getDiagramType()
+} {
+	
+	self.children += object DecorationNode{
+		type := '6669'; //Constraint specification
+	}	
+
+}
+
+/***** Nodes **********/
+
+mapping UMLShape::toPapyrusShape() : Shape inherits Shape::toPapyrusShape when {
+	not self.getType().oclIsUndefined()
+}{
+	
+}
+
+
+/****** Connector Labels ******/
+
+mapping BasicDecorationNode::toConnectorLabel() : DecorationNode inherits Node::toPapyrusConnectorLabel when {
+	not self.getType().oclIsUndefined() and (
+		self.type = 'ToMultiplicityLabel' or
+		self.type = 'ToRoleLabel' or
+		self.type = 'FromMultiplicityLabel' or
+		self.type = 'FromRoleLabel' or
+		self.type = 'NameLabel' or
+		self.type = 'KindLabel'
+	)
+}{
+	
+}
+
+/****** Compartments *******/
+
+mapping BasicDecorationNode::toLabel() : DecorationNode inherits Node::toPapyrusNode when {
+	not self.getType().oclIsUndefined() and
+	self.element.oclIsKindOf(uml::NamedElement) and 
+	self.type = 'Name'
+}{
+	
+}
+
+mapping BasicSemanticCompartment::toListCompartment() : BasicCompartment inherits Node::toPapyrusNode, DrawerStyle::toDrawerStyle when {
+	self.type.endsWith('Compartment') and not self.getType().oclIsUndefined()
+}{
+	
+}
+
+
+mapping uml::State::fillTransition(node : BasicSemanticCompartment) : Sequence(Node) when {
+	node.type='';
+}{
+	init {
+		result := self.incoming->selectByKind(Transition).map toTransitionIn(node)->asSequence();
+	}
+}
+
+mapping uml::State::fillBehavior(node : BasicSemanticCompartment) : Sequence(Node) when {
+	node.type='';
+}{
+	init {
+		result := self.entry->selectByKind(Behavior).map toBehaviorIn(node)->asSequence();
+	}
+}
+
+mapping Transition::toTransitionIn(node : Node) : Shape inherits Element::toCompartmentEntry {
+	result.type := '680';
+}
+
+mapping Behavior::toBehaviorIn(node : Node) : Shape inherits Element::toCompartmentEntry {
+	result.type := '690';
+}
+
+
+
+/******* Edges ********/
+
+
+mapping UMLConnector::toPapyrusConnector() : Connector inherits Connector::toPapyrusConnector when {
+	self.type = '' and 
+	not self.getType().oclIsUndefined() and (
+		self.element.oclIsTypeOf(Transition)or
+		self.element.oclIsTypeOf(Generalization)
+	)
+}{
+	result.styles := self.map toFontStyle();
+}
+
+
+mapping UMLConnector::toCommentLink() : Connector inherits Connector::toCommentLink when{
+	self.type='Reference'
+}{	
+	result.type :='667';
+	result.bendpoints := self.bendpoints.toBendpoint(self.diagram);
+	result.sourceAnchor := object IdentityAnchor{};		
+}
+
+/****** Element Type queries ******/
+
+query View::getNodeType(element : Element) : String {
+	return
+		if element.oclIsTypeOf(Comment) then '666' 
+		elif element.oclIsTypeOf(FinalState) then '5000' 
+		elif element.oclIsTypeOf(Pseudostate) and element.oclAsType(Pseudostate).kind = PseudostateKind::join then '9000' 
+		elif element.oclIsTypeOf(State) then '6000' 
+		elif element.oclIsTypeOf(Pseudostate) and element.oclAsType(Pseudostate).kind = PseudostateKind::shallowHistory then '13000' 
+		elif element.oclIsTypeOf(Pseudostate) and element.oclAsType(Pseudostate).kind = PseudostateKind::terminate then '15000' 
+		elif element.oclIsTypeOf(Pseudostate) and element.oclAsType(Pseudostate).kind = PseudostateKind::choice then '11000' 
+		elif element.oclIsTypeOf(Constraint) then '668' 
+		elif element.oclIsTypeOf(StateMachine) then '2000' 
+		elif element.oclIsTypeOf(Pseudostate) and element.oclAsType(Pseudostate).kind = PseudostateKind::fork then '10000' 
+		elif element.oclIsTypeOf(Region) then '3000' 
+		elif element.oclIsTypeOf(Pseudostate) and element.oclAsType(Pseudostate).kind = PseudostateKind::junction then '12000' 
+		elif element.oclIsTypeOf(Pseudostate) and element.oclAsType(Pseudostate).kind = PseudostateKind::deepHistory then '14000' 
+		elif element.oclIsTypeOf(Pseudostate) and element.oclAsType(Pseudostate).kind = PseudostateKind::initial then '8000'
+		elif element.oclIsTypeOf(Pseudostate) and element.oclAsType(Pseudostate).kind = PseudostateKind::entryPoint then '16000'
+		elif element.oclIsTypeOf(Pseudostate) and element.oclAsType(Pseudostate).kind = PseudostateKind::exitPoint then '17000'
+		elif element.oclIsTypeOf(ConnectionPointReference) then '18000'
+		else self.fail()
+	endif;
+}
+
+
+query View::getDecorationType(element : Element) : String{
+	var res := self.doGetDecorationType(element);
+	
+	
+	/*log('Get papyrus ID for'+ self.element.eClass().name+', '+self.type);
+	
+	log(res);
+	
+	if self.container().oclIsKindOf(Node) then 
+		log('IsNode')
+	else 
+		log('IsEdge')
+	endif;*/
+	
+	
+	return res;
+}
+
+query View::doGetDecorationType(element : Element) : String{
+	return if self.container().oclIsKindOf(Node) then {
+		return if element.oclIsTypeOf(Pseudostate) then
+			return switch {
+				case (self.type = 'Name') '11001';
+				
+			}
+			elif element.oclIsTypeOf(Pseudostate) then
+				return switch {
+					case (self.type = 'Name') '17001';
+					
+				}
+			elif element.oclIsTypeOf(Pseudostate) then
+				return switch {
+					case (self.type = 'Name') '13001';
+					
+				}
+			elif element.oclIsTypeOf(Pseudostate) then
+				return switch {
+					case (self.type = 'Name') '9001';
+					
+				}
+			elif element.oclIsTypeOf(Pseudostate) then
+				return switch {
+					case (self.type = 'Name') '8001';
+					
+				}
+			elif element.oclIsTypeOf(Region) then
+				return switch {
+					
+					case (self.type = 'Region' or self.type = '') '3002';
+				}
+			elif element.oclIsTypeOf(ConnectionPointReference) then
+				return switch {
+					case (self.type = 'Name') '18001';
+					
+				}
+			elif element.oclIsTypeOf(State) then
+				return switch {
+					case (self.type = 'Name') '6001';
+				}
+			elif element.oclIsTypeOf(FinalState) then
+				return switch {
+					case (self.type = 'Name') '5001';
+					
+				}
+			elif element.oclIsTypeOf(Pseudostate) then
+				return switch {
+					case (self.type = 'Name') '14001';
+					
+				}
+			elif element.oclIsTypeOf(Pseudostate) then
+				return switch {
+					case (self.type = 'Name') '15001';
+					
+				}
+			elif element.oclIsTypeOf(Pseudostate) then
+				return switch {
+					case (self.type = 'Name') '10001';
+					
+				}
+			elif element.oclIsTypeOf(Pseudostate) then
+				return switch {
+					case (self.type = 'Name') '16001';
+					
+				}
+			elif element.oclIsTypeOf(StateMachine) then
+				return switch {
+					case (self.type = 'Name') '2001';
+					case (self.type = 'StructureCompartment') '2002';
+				}
+			elif element.oclIsTypeOf(Pseudostate) then
+				return switch {
+					case (self.type = 'Name') '12001';
+					
+				}
+		endif
+	} else {
+		return if element.oclIsTypeOf(Transition)  then
+			return switch {
+				case (self.type='Name') '7001';		
+				case (self.type = 'NameLabel') '7001';
+				
+				
+			}
+		endif
+	} endif;
+}
+
+
+query View::getEdgeType(element : Element) : String {
+	return
+		if element.oclIsTypeOf(Transition) then '7000'
+		elif element.oclIsTypeOf(Generalization) then '19000'
+		else self.fail()
+	endif;
+}
+

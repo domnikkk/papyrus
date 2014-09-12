@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.m2m.qvt.oml.javaBlackboxUnits">
+      <unit
+            description="Provides an Eclipse UI/QVTo integration for transformations"
+            name="UI"
+            namespace="org.eclipse.papyrus.m2m.qvto">
+         <library
+               class="org.eclipse.papyrus.m2m.qvto.TransformationUI">
+            <metamodel
+                  nsURI="http://www.eclipse.org/emf/2002/Ecore">
+            </metamodel>
+         </library>
+      </unit>
+      <unit
+            description="Provides some EMF Resource manipulation helpers"
+            name="EMFResource"
+            namespace="org.eclipse.papyrus.m2m.qvto">
+         <library
+               class="org.eclipse.papyrus.m2m.qvto.EMFResourceUtils">
+            <metamodel
+                  nsURI="http://www.eclipse.org/emf/2002/Ecore">
+            </metamodel>
+         </library>
+      </unit>
+      <unit
+            description="Java helpers to manipulate Notation DataTypes (Gradient, Bendpoints...)"
+            name="NotationTypes"
+            namespace="org.eclipse.papyrus.m2m.qvto">
+         <library
+               class="org.eclipse.papyrus.m2m.qvto.NotationTypes">
+            <metamodel
+                  nsURI="http://www.eclipse.org/gmf/runtime/1.0.2/notation">
+            </metamodel>
+         </library>
+      </unit>
+      <unit
+            description="Provides an access to Config Properties"
+            name="Properties"
+            namespace="org.eclipse.papyrus.m2m.qvto">
+         <library
+               class="org.eclipse.papyrus.m2m.qvto.PropertiesUtil">
+            <metamodel
+                  nsURI="http://www.eclipse.org/emf/2002/Ecore">
+            </metamodel>
+         </library>
+      </unit>
+   </extension>
+   <extension
+         point="org.eclipse.m2m.qvt.oml.runtime.qvtTransformation">
+      <library
+            file="libraries/EclipseUI.qvto"
+            id="libraries.EclipseUI">
+      </library>
+   </extension>
+
+</plugin>
