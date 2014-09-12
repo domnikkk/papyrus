@@ -9,6 +9,7 @@
  * Contributors:
  *   CEA LIST - Initial API and implementation
  *   Christian W. Damus (CEA) - bug 429242
+ *   Christian W. Damus (CEA) - bug 433830
  *
  *****************************************************************************/
 package org.eclipse.papyrus.cdo.internal.ui.wizards;
@@ -305,16 +306,16 @@ public class ModelReferencesPage extends ModelImportWizardPage {
 			Object[] result = elements;
 
 			if ((inputElement != config) || (result == null)) {
-				IModelTransferConfiguration config = (IModelTransferConfiguration) inputElement;
-				List<TreeNode> nodes = Lists.newArrayListWithCapacity(config.getModelsToTransfer().size());
+				IModelTransferConfiguration inputConfig = (IModelTransferConfiguration) inputElement;
+				List<TreeNode> nodes = Lists.newArrayListWithCapacity(inputConfig.getModelsToTransfer().size());
 
-				for (IModelTransferNode next : config.getModelsToTransfer()) {
+				for (IModelTransferNode next : inputConfig.getModelsToTransfer()) {
 					nodes.add(new TreeNode(next));
 				}
 
 				result = nodes.toArray();
 
-				if (inputElement == config) {
+				if (inputConfig == config) {
 					// cache the result
 					elements = result;
 				}

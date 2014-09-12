@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2013 CEA LIST.
+ * Copyright (c) 2013, 2014 CEA LIST and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,6 +8,8 @@
  *
  * Contributors:
  *   CEA LIST - Initial API and implementation
+ *   Christian W. Damus (CEA) - bug 443830
+ *   
  *****************************************************************************/
 package org.eclipse.papyrus.cdo.internal.ui.customization.properties.storage;
 
@@ -96,7 +98,7 @@ public class CDOContextStorageProvider extends AbstractContextStorageProvider {
 	@Override
 	public boolean providesFor(Context context) {
 		URI uri = EcoreUtil.getURI(context);
-		return (uri != null) && CDOUtils.isCDOURI(uri) || CDOTextURIHandler.SCHEME.equals(uri.scheme());
+		return (uri != null) && (CDOUtils.isCDOURI(uri) || CDOTextURIHandler.SCHEME.equals(uri.scheme()));
 	}
 
 	@Override
