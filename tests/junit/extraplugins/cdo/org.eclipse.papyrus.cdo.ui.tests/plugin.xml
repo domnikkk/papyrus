@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.papyrus.cdo.ui.repositoryFilters">
+      <itemProviderFilter
+            id="org.eclipse.papyrus.cdo.ui.tests.itemProviderFilter1">
+         <predicate
+               class="org.eclipse.papyrus.cdo.internal.ui.views.tests.ItemProviderFilterRegistryTest$TestFilter"/>
+      </itemProviderFilter>
+   </extension>
+
+</plugin>

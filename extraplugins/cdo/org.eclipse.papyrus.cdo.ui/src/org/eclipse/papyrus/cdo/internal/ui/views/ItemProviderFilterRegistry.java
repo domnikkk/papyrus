@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2013 CEA LIST.
+ * Copyright (c) 2013, 2014 CEA LIST.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,6 +8,8 @@
  *
  * Contributors:
  *   CEA LIST - Initial API and implementation
+ *   Christian W. Damus (CEA) - bug 443830
+ *   
  *****************************************************************************/
 package org.eclipse.papyrus.cdo.internal.ui.views;
 
@@ -153,7 +155,7 @@ class ItemProviderFilterRegistry {
 
 		private final Supplier<? extends IElementFilter> filter;
 
-		private boolean enabled;
+		private boolean enabled = true;
 
 		ElementFilterFilter(String id, Supplier<? extends IElementFilter> filter) {
 			super(id);
@@ -177,7 +179,7 @@ class ItemProviderFilterRegistry {
 
 		private final Supplier<? extends Predicate<Object>> predicate;
 
-		private boolean enabled;
+		private boolean enabled = true;
 
 		PredicateFilter(String id, Supplier<? extends Predicate<Object>> predicate) {
 			super(id);
@@ -283,7 +285,7 @@ class ItemProviderFilterRegistry {
 				result = createLabelPatternFilter(config);
 			} else if (E_ELEMENT_FILTER.equals(name)) {
 				result = createElementFilterFilter(config);
-			} else if (E_PREDICATE.equals(config)) {
+			} else if (E_PREDICATE.equals(name)) {
 				result = createPredicateFilter(config);
 			}
 

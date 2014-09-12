@@ -22,6 +22,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.papyrus.junit.framework;bundle-version="1.0.1"
 Export-Package: org.eclipse.papyrus.cdo.internal.ui.editors.tests;x-internal:=true,
  org.eclipse.papyrus.cdo.internal.ui.markers.tests;x-internal:=true,
+ org.eclipse.papyrus.cdo.internal.ui.views.tests;x-internal:=true,
  org.eclipse.papyrus.cdo.ui.tests
 Bundle-Vendor: %providerName
 Bundle-Version: 1.0.1.qualifier
