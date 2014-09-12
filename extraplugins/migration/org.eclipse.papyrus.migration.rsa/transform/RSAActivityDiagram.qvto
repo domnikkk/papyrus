@@ -8,7 +8,6 @@
  *
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
- *****************************************************************************/ implementation
  *****************************************************************************/
 import RSAToPapyrus;
 
