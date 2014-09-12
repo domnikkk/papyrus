@@ -20,11 +20,16 @@ import org.eclipse.core.resources.IFile;
 import org.eclipse.emf.common.util.EList;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 
 
 public class OomphSetupUpdater extends DependencyUpdater {
 
+	private static final String ANNOTATION_SOURCE = "http://www.eclipse.org/Papyrus/2014/releng/dependencytools";//$NON-NLS-1$
+
 	private final Pattern annotationPattern = Pattern.compile("updateFrom:([^:]+):(\\d+)"); //$NON-NLS-1$
+
+	private final Pattern indexPattern = Pattern.compile(":\\d+$"); //$NON-NLS-1$
 
 	public OomphSetupUpdater(final IFile mapFile, final EList<Contribution> contributions) {
 		super(mapFile, contributions);
@@ -37,12 +42,39 @@ public class OomphSetupUpdater extends DependencyUpdater {
 
 	@Override
 	protected String getCommentContent(Node comment) {
-		return ((Element) comment).getAttribute("source"); //$NON-NLS-1$
+		StringBuilder result = new StringBuilder("updateFrom:"); //$NON-NLS-1$
+
+		Element annotation = (Element) comment;
+		NodeList details = annotation.getElementsByTagName("detail"); //$NON-NLS-1$
+		for (int i = 0; i < details.getLength(); i++) {
+			Element next = (Element) details.item(i);
+			if ("updateFrom".equals(next.getAttribute("key"))) { //$NON-NLS-1$ //$NON-NLS-2$
+				String repoSpec = null;
+				if (next.hasAttribute("value")) { //$NON-NLS-1$
+					repoSpec = next.getAttribute("value"); //$NON-NLS-1$
+				} else {
+					NodeList values = next.getElementsByTagName("value"); //$NON-NLS-1$
+					if (values.getLength() > 0) {
+						repoSpec = values.item(0).getTextContent().trim();
+					}
+				}
+				if (repoSpec != null) {
+					result.append(repoSpec);
+					if (!indexPattern.matcher(repoSpec).find()) {
+						// default index
+						result.append(":0"); //$NON-NLS-1$
+						break;
+					}
+				}
+			}
+		}
+
+		return result.toString();
 	}
 
 	@Override
 	protected String getCommentSyntax() {
-		return "updateFrom:<contributionName>:<index>"; //$NON-NLS-1$
+		return String.format("Annotation with source %s and detail 'updateFrom=<contributionName>[:<index>]?'", ANNOTATION_SOURCE); //$NON-NLS-1$
 	}
 
 	@Override
@@ -52,8 +84,11 @@ public class OomphSetupUpdater extends DependencyUpdater {
 		for (Node next = node.getFirstChild(); next != null; next = next.getNextSibling()) {
 			if (next.getNodeType() == Node.ELEMENT_NODE) {
 				if ("annotation".equals(next.getNodeName())) { //$NON-NLS-1$
-					result = (Element) next;
-					break;
+					Element annotation = (Element) next;
+					if (ANNOTATION_SOURCE.equals(annotation.getAttribute("source"))) { //$NON-NLS-1$
+						result = annotation;
+						break;
+					}
 				}
 			}
 		}
