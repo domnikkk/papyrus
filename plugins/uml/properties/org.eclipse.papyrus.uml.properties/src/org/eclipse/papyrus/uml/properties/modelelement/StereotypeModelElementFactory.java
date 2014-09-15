@@ -9,6 +9,7 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 417409
+ *  Christian W. Damus (CEA) - bug 444092
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.properties.modelelement;
@@ -19,6 +20,7 @@ import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 import org.eclipse.papyrus.uml.properties.Activator;
 import org.eclipse.papyrus.uml.tools.utils.UMLUtil;
 import org.eclipse.papyrus.views.properties.contexts.DataContextElement;
+import org.eclipse.papyrus.views.properties.modelelement.AbstractEMFModelElementFactory;
 import org.eclipse.papyrus.views.properties.modelelement.EMFModelElement;
 import org.eclipse.papyrus.views.properties.modelelement.EMFModelElementFactory;
 import org.eclipse.uml2.uml.Element;
@@ -50,8 +52,9 @@ public class StereotypeModelElementFactory extends EMFModelElementFactory {
 		Element umlElement = UMLUtil.resolveUMLElement(source);
 
 		if (umlElement != null) {
-			Stereotype stereotype = UMLUtil.getAppliedStereotype(umlElement, getQualifiedName(context), false);
-			EObject stereotypeApplication = umlElement.getStereotypeApplication(stereotype);
+			Stereotype stereotype = UMLUtil.getAppliedSuperstereotype(umlElement, getQualifiedName(context));
+			Stereotype actual = (stereotype == null) ? null : UMLUtil.getAppliedSubstereotype(umlElement, stereotype);
+			EObject stereotypeApplication = (actual == null) ? null : umlElement.getStereotypeApplication(actual);
 
 			if (stereotypeApplication == null) {
 				Activator.log.warn("Stereotype " + getQualifiedName(context) + " is not applied on " + umlElement); //$NON-NLS-1$ //$NON-NLS-2$
@@ -63,6 +66,30 @@ public class StereotypeModelElementFactory extends EMFModelElementFactory {
 		}
 
 		return null;
+	}
+
+
+	@Override
+	protected void updateModelElement(EMFModelElement modelElement, Object newSourceElement) {
+		if (!(modelElement instanceof StereotypeModelElement)) {
+			Activator.log.warn(String.format("Not a stereotype element: %s", modelElement)); //$NON-NLS-1$
+		} else {
+			StereotypeModelElement stereotypeElement = (StereotypeModelElement) modelElement;
+			Element umlElement = UMLUtil.resolveUMLElement(newSourceElement);
+
+			if (umlElement == null) {
+				Activator.log.warn(String.format("Missing UML element in stereotype model element: %s", modelElement)); //$NON-NLS-1$
+			} else {
+				Stereotype actual = UMLUtil.getAppliedSubstereotype(umlElement, stereotypeElement.stereotype);
+				EObject stereotypeApplication = (actual == null) ? null : umlElement.getStereotypeApplication(actual);
+
+				if (stereotypeApplication == null) {
+					Activator.log.warn(String.format("Stereotype '%s' is not applied on '%s'", stereotypeElement.stereotype.getQualifiedName(), umlElement)); //$NON-NLS-1$
+				} else {
+					AbstractEMFModelElementFactory.updateEMFModelElement(modelElement, stereotypeApplication);
+				}
+			}
+		}
 	}
 
 	/**

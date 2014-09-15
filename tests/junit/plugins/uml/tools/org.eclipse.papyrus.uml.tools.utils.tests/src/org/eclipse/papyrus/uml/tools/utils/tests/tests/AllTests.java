@@ -9,6 +9,7 @@
  * Contributors:
  *  Benoit Maggi  benoit.maggi@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 440263
+ *  Christian W. Damus (CEA) - bug 444092
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.tools.utils.tests.tests;
@@ -19,9 +20,9 @@ import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
 @RunWith(Suite.class)
-@SuiteClasses({ NameResolutionHelperTest.class, NamedElementUtilTest.class
+@SuiteClasses({ NameResolutionHelperTest.class, NamedElementUtilTest.class, UMLUtilTest.class
 
 })
 public class AllTests {
-	//Test suite
+	// Test suite
 }
