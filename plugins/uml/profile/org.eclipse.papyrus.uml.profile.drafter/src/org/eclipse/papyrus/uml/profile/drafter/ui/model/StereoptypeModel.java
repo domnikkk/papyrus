@@ -17,6 +17,7 @@ package org.eclipse.papyrus.uml.profile.drafter.ui.model;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import org.eclipse.core.databinding.observable.list.IObservableList;
@@ -100,6 +101,7 @@ public class StereoptypeModel extends StereotypeURL {
 	/**
 	 * @return the properties
 	 */
+	@SuppressWarnings("unchecked")
 	public List<PropertyModel> getProperties() {
 		return properties;
 	}
@@ -167,6 +169,14 @@ public class StereoptypeModel extends StereotypeURL {
 
 		metaclasses.clear();
 		metaclasses.addAll(toRetain);
+		
+//		Iterator<MetaclassesModel> it = metaclasses.iterator();
+//		while(it.hasNext()) {
+//			MetaclassesModel model = (MetaclassesModel)it.next();
+//			if(model.getModelStatus() != ModelStatusKind.created) {
+//				it.remove();
+//			}
+//		}
 	}
 
 
@@ -266,6 +276,17 @@ public class StereoptypeModel extends StereotypeURL {
 		
 		properties.clear();
 		properties.addAll(toRetain);
+		
+		// Next works for the model, but the ui is not updated
+//		@SuppressWarnings("unchecked")
+//		Iterator<PropertyModel> it = properties.iterator();
+//		while(it.hasNext()) {
+//			PropertyModel model = (PropertyModel)it.next();
+//			if(model.getModelStatus() != ModelStatusKind.created) {
+//				it.remove();
+//			}
+//		}
+
 	}
 
 
