@@ -9,7 +9,7 @@ Export-Package: org.eclipse.papyrus.mwe2.utils,
  org.eclipse.papyrus.mwe2.utils.messages
 Bundle-Vendor: %Bundle-Vendor
 Bundle-ActivationPolicy: lazy
-Bundle-Version: 1.0.1.qualifier
+Bundle-Version: 1.1.0.qualifier
 Bundle-Name: %Bundle-Name
 Bundle-ManifestVersion: 2
 Bundle-Activator: org.eclipse.papyrus.mwe2.utils.Activator

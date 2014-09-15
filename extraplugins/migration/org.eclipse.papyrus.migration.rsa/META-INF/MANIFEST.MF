@@ -1,8 +1,8 @@
 Manifest-Version: 1.0
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.resources;bundle-version="3.9.0",
- org.eclipse.papyrus.infra.core.log;bundle-version="1.0.1",
- org.eclipse.papyrus.infra.emf;bundle-version="1.0.1",
+ org.eclipse.papyrus.infra.core.log;bundle-version="1.1.0",
+ org.eclipse.papyrus.infra.emf;bundle-version="1.1.0",
  org.eclipse.m2m.qvt.oml;bundle-version="3.4.0",
  org.eclipse.m2m.qvt.oml.common;bundle-version="3.4.0",
  org.eclipse.m2m.qvt.oml.project;bundle-version="3.3.0",
@@ -14,14 +14,14 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.emf.ecore.xmi;bundle-version="2.10.1",
  org.eclipse.uml2.types,
  org.eclipse.uml2.uml.resources;bundle-version="5.0.0",
- org.eclipse.papyrus.m2m.qvto;bundle-version="1.0.1",
+ org.eclipse.papyrus.m2m.qvto;bundle-version="1.1.0",
  org.eclipse.gmf.runtime.notation;bundle-version="1.7.0",
- org.eclipse.papyrus.umlrt;bundle-version="1.0.1",
- org.eclipse.papyrus.uml.extensionpoints;bundle-version="1.0.1",
- org.eclipse.papyrus.dsml.validation;bundle-version="1.0.1",
- org.eclipse.papyrus.uml.documentation.profile;bundle-version="1.0.1",
+ org.eclipse.papyrus.umlrt;bundle-version="1.1.0",
+ org.eclipse.papyrus.uml.extensionpoints;bundle-version="1.1.0",
+ org.eclipse.papyrus.dsml.validation;bundle-version="1.1.0",
+ org.eclipse.papyrus.uml.documentation.profile;bundle-version="1.1.0",
  org.eclipse.team.core,
- org.eclipse.papyrus.infra.tools;bundle-version="1.0.1"
+ org.eclipse.papyrus.infra.tools;bundle-version="1.1.0"
 Export-Package: org.eclipse.papyrus.migration.rsa,
  org.eclipse.papyrus.migration.rsa.handler,
  org.eclipse.papyrus.migration.rsa.transformation,
@@ -31,7 +31,7 @@ Export-Package: org.eclipse.papyrus.migration.rsa,
 Bundle-Vendor: %providerName
 Bundle-ActivationPolicy: lazy
 Bundle-ClassPath: .
-Bundle-Version: 1.0.1.qualifier
+Bundle-Version: 1.1.0.qualifier
 Bundle-Localization: plugin
 Bundle-Name: %pluginName
 Bundle-Activator: org.eclipse.papyrus.migration.rsa.Activator

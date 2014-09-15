@@ -3,10 +3,10 @@ Export-Package: org.eclipse.papyrus.infra.discovery.ui.menu,
  org.eclipse.papyrus.infra.discovery.ui.menu.handler
 Require-Bundle: org.eclipse.ui;bundle-version="3.8.0",
  org.eclipse.core.runtime;bundle-version="3.8.0",
- org.eclipse.papyrus.infra.discovery.ui;bundle-version="1.0.1"
+ org.eclipse.papyrus.infra.discovery.ui;bundle-version="1.1.0"
 Bundle-Vendor: %providerName
 Bundle-ActivationPolicy: lazy
-Bundle-Version: 1.0.1.qualifier
+Bundle-Version: 1.1.0.qualifier
 Bundle-Localization: plugin
 Bundle-Name: %pluginName
 Bundle-Activator: org.eclipse.papyrus.infra.discovery.ui.menu.Activato

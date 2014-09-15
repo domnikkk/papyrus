@@ -5,14 +5,14 @@ Export-Package: org.eclipse.papyrus.cdo.uml.diagram.internal.ui;x-internal:=true
  org.eclipse.papyrus.cdo.uml.diagram.internal.ui.wizards;x-internal:=true
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
- org.eclipse.papyrus.infra.core.log;bundle-version="1.0.1",
- org.eclipse.papyrus.cdo.core;bundle-version="1.0.1",
- org.eclipse.papyrus.cdo.ui;bundle-version="1.0.1",
- org.eclipse.papyrus.uml.diagram.wizards;bundle-version="1.0.1",
+ org.eclipse.papyrus.infra.core.log;bundle-version="1.1.0",
+ org.eclipse.papyrus.cdo.core;bundle-version="1.1.0",
+ org.eclipse.papyrus.cdo.ui;bundle-version="1.1.0",
+ org.eclipse.papyrus.uml.diagram.wizards;bundle-version="1.1.0",
  com.google.guava;bundle-version="11.0.0"
 Bundle-Vendor: %providerName
 Bundle-ActivationPolicy: lazy
-Bundle-Version: 1.0.1.qualifier
+Bundle-Version: 1.1.0.qualifier
 Bundle-Localization: plugin
 Bundle-Name: %pluginName
 Bundle-Activator: org.eclipse.papyrus.cdo.uml.diagram.internal.ui.Acti

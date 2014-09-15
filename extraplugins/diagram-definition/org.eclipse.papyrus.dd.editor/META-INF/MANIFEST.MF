@@ -3,7 +3,7 @@ Export-Package: org.eclipse.papyrus.dd.dg.editor,
  org.eclipse.papyrus.dd.editor
 Require-Bundle: org.eclipse.core.runtime;visibility:=reexport,
  org.eclipse.core.resources;visibility:=reexport,
- org.eclipse.papyrus.dd.edit;bundle-version="1.0.1";visibility:=reexport,
+ org.eclipse.papyrus.dd.edit;bundle-version="1.1.0";visibility:=reexport,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,
  org.eclipse.emf.edit.ui;visibility:=reexport,
  org.eclipse.ui.ide;visibility:=reexport,
@@ -44,7 +44,7 @@ Bundle-ClassPath: .,
  batik-1.7/lib/xerces_2_5_0.jar,
  batik-1.7/lib/xml-apis-ext.jar,
  batik-1.7/lib/xml-apis.jar
-Bundle-Version: 1.0.1.qualifier
+Bundle-Version: 1.1.0.qualifier
 Bundle-Name: %pluginName
 Bundle-Localization: plugin
 Bundle-ManifestVersion: 2

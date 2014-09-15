@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
- org.eclipse.papyrus.dd;bundle-version="1.0.1";visibility:=reexport,
+ org.eclipse.papyrus.dd;bundle-version="1.1.0";visibility:=reexport,
  org.eclipse.uml2.common;visibility:=reexport,
  org.eclipse.ocl.ecore;visibility:=reexport
 Export-Package: org.eclipse.papyrus.dd.dc,
@@ -16,7 +16,7 @@ Export-Package: org.eclipse.papyrus.dd.dc,
 Bundle-Vendor: %providerName
 Bundle-ActivationPolicy: lazy
 Bundle-ClassPath: .
-Bundle-Version: 1.0.1.qualifier
+Bundle-Version: 1.1.0.qualifier
 Bundle-Name: %pluginName
 Bundle-Localization: plugin
 Bundle-ManifestVersion: 2

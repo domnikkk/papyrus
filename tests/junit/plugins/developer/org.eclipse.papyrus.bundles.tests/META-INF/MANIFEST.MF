@@ -7,11 +7,11 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.pde.core,
  org.eclipse.update.configurator,
  org.junit;bundle-version="4.10.0",
- org.eclipse.papyrus.junit.framework;bundle-version="1.0.1"
+ org.eclipse.papyrus.junit.framework;bundle-version="1.1.0"
 Export-Package: org.eclipse.papyrus.bundles.tests
 Bundle-Vendor: %Bundle-Vendor
 Bundle-ActivationPolicy: lazy
-Bundle-Version: 1.0.1.qualifier
+Bundle-Version: 1.1.0.qualifier
 Bundle-Name: %Bundle-Name
 Bundle-ManifestVersion: 2
 Bundle-Activator: org.eclipse.papyrus.bundles.tests.Activator

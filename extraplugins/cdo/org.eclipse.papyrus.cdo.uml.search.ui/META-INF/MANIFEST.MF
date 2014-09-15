@@ -4,22 +4,22 @@ Export-Package: org.eclipse.papyrus.cdo.uml.search.internal.ui;x-internal:=true,
  org.eclipse.papyrus.cdo.uml.search.internal.ui.query;x-friends:="org.eclipse.papyrus.cdo.uml.search.ui.tests",
  org.eclipse.papyrus.cdo.uml.search.internal.ui.scope;x-friends:="org.eclipse.papyrus.cdo.uml.search.ui.tests"
 Require-Bundle: org.eclipse.core.runtime;bundle-version="3.9.0",
- org.eclipse.papyrus.infra.core.log;bundle-version="1.0.1",
- org.eclipse.papyrus.cdo.core;bundle-version="1.0.1",
+ org.eclipse.papyrus.infra.core.log;bundle-version="1.1.0",
+ org.eclipse.papyrus.cdo.core;bundle-version="1.1.0",
  org.eclipse.emf.cdo.common;bundle-version="[4.3.0,5.0.0)",
  org.eclipse.ui;bundle-version="3.105.0",
  org.eclipse.uml2.uml;bundle-version="4.1.0",
- org.eclipse.papyrus.uml.search.ui;bundle-version="1.0.1",
- org.eclipse.papyrus.views.search;bundle-version="1.0.1",
+ org.eclipse.papyrus.uml.search.ui;bundle-version="1.1.0",
+ org.eclipse.papyrus.views.search;bundle-version="1.1.0",
  org.eclipse.search;bundle-version="3.9.0",
- org.eclipse.papyrus.infra.emf;bundle-version="1.0.1",
- org.eclipse.papyrus.infra.services.labelprovider;bundle-version="1.0.1",
- org.eclipse.papyrus.infra.services.openelement;bundle-version="1.0.1",
- org.eclipse.papyrus.cdo.ui;bundle-version="1.0.1",
+ org.eclipse.papyrus.infra.emf;bundle-version="1.1.0",
+ org.eclipse.papyrus.infra.services.labelprovider;bundle-version="1.1.0",
+ org.eclipse.papyrus.infra.services.openelement;bundle-version="1.1.0",
+ org.eclipse.papyrus.cdo.ui;bundle-version="1.1.0",
  com.google.guava;bundle-version="11.0.0"
 Bundle-Vendor: %providerName
 Bundle-ActivationPolicy: lazy
-Bundle-Version: 1.0.1.qualifier
+Bundle-Version: 1.1.0.qualifier
 Bundle-Name: %pluginName
 Bundle-Localization: plugin
 Bundle-ManifestVersion: 2

@@ -2,19 +2,19 @@ Manifest-Version: 1.0
 Export-Package: org.eclipse.papyrus.umldi.editor
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources;visibility:=reexport,
- org.eclipse.papyrus.umldi.edit;bundle-version="1.0.1";visibility:=reexport,
+ org.eclipse.papyrus.umldi.edit;bundle-version="1.1.0";visibility:=reexport,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,
  org.eclipse.emf.edit.ui;visibility:=reexport,
  org.eclipse.ui.ide;visibility:=reexport,
- org.eclipse.papyrus.dd.edit;bundle-version="1.0.1";visibility:=reexport,
+ org.eclipse.papyrus.dd.edit;bundle-version="1.1.0";visibility:=reexport,
  org.eclipse.emf.ecore.edit;visibility:=reexport,
  org.eclipse.uml2.uml.edit;visibility:=reexport,
- org.eclipse.papyrus.dd.editor;bundle-version="1.0.1",
+ org.eclipse.papyrus.dd.editor;bundle-version="1.1.0",
  org.eclipse.m2m.qvt.oml;bundle-version="3.3.0"
 Bundle-Vendor: %providerName
 Bundle-ActivationPolicy: lazy
 Bundle-ClassPath: .
-Bundle-Version: 1.0.1.qualifier
+Bundle-Version: 1.1.0.qualifier
 Bundle-Name: %pluginName
 Bundle-Localization: plugin
 Bundle-ManifestVersion: 2

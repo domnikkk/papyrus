@@ -2,14 +2,14 @@ Manifest-Version: 1.0
 Export-Package: org.eclipse.papyrus.infra.newchild.elementcreationmenu
  model.provider
 Require-Bundle: org.eclipse.core.runtime,
- org.eclipse.papyrus.infra.newchild;bundle-version="1.0.1";visibility:=reexport,
+ org.eclipse.papyrus.infra.newchild;bundle-version="1.1.0";visibility:=reexport,
  org.eclipse.emf.edit;visibility:=reexport,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.emf.ecore.edit;visibility:=reexport
 Bundle-Vendor: %providerName
 Bundle-ActivationPolicy: lazy
 Bundle-ClassPath: .
-Bundle-Version: 1.0.1.qualifier
+Bundle-Version: 1.1.0.qualifier
 Bundle-Name: %pluginName
 Bundle-Localization: plugin
 Bundle-ManifestVersion: 2

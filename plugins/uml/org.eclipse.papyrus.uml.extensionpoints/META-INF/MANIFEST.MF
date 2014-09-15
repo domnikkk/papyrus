@@ -3,7 +3,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.uml2.uml,
  org.eclipse.ui.views.properties.tabbed,
  org.eclipse.emf.mapping.ecore2xml,
- org.eclipse.papyrus.infra.emf;bundle-version="1.0.1"
+ org.eclipse.papyrus.infra.emf;bundle-version="1.1.0"
 Export-Package: org.eclipse.papyrus.uml.extensionpoints,
  org.eclipse.papyrus.uml.extensionpoints.library,
  org.eclipse.papyrus.uml.extensionpoints.metamodel,
@@ -12,7 +12,7 @@ Export-Package: org.eclipse.papyrus.uml.extensionpoints,
  org.eclipse.papyrus.uml.extensionpoints.utils
 Bundle-Vendor: %providerName
 Bundle-ActivationPolicy: lazy
-Bundle-Version: 1.0.1.qualifier
+Bundle-Version: 1.1.0.qualifier
 Bundle-Name: %pluginName
 Bundle-Localization: plugin
 Bundle-ManifestVersion: 2

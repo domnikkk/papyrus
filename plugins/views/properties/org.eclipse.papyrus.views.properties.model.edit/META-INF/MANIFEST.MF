@@ -1,17 +1,17 @@
 Manifest-Version: 1.0
 Require-Bundle: org.eclipse.core.runtime,
- org.eclipse.papyrus.views.properties.model;bundle-version="1.0.1";visibility:=reexport,
+ org.eclipse.papyrus.views.properties.model;bundle-version="1.1.0";visibility:=reexport,
  org.eclipse.emf.edit;visibility:=reexport,
  org.eclipse.emf.ecore.edit;bundle-version="2.7.0",
- org.eclipse.papyrus.infra.constraints;bundle-version="1.0.1",
- org.eclipse.papyrus.infra.constraints.edit;bundle-version="1.0.1"
+ org.eclipse.papyrus.infra.constraints;bundle-version="1.1.0",
+ org.eclipse.papyrus.infra.constraints.edit;bundle-version="1.1.0"
 Export-Package: org.eclipse.papyrus.views.properties.contexts.provider,
  org.eclipse.papyrus.views.properties.environment.provider,
  org.eclipse.papyrus.views.properties.ui.provider
 Bundle-Vendor: %providerName
 Bundle-ActivationPolicy: lazy
 Bundle-ClassPath: .
-Bundle-Version: 1.0.1.qualifier
+Bundle-Version: 1.1.0.qualifier
 Bundle-Localization: plugin
 Bundle-Name: %pluginName
 Bundle-Activator: org.eclipse.papyrus.views.properties.environment.pro

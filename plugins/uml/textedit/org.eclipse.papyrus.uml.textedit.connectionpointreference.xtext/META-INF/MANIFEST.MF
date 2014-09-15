@@ -13,7 +13,7 @@ Require-Bundle: org.eclipse.xtext,
  org.eclipse.uml2.uml;bundle-version="3.1.0",
  org.eclipse.uml2.codegen.ecore;bundle-version="1.6.0",
  org.apache.log4j;bundle-version="1.2.15",
- org.eclipse.papyrus.uml.alf.common;bundle-version="1.0.1"
+ org.eclipse.papyrus.uml.alf.common;bundle-version="1.1.0"
 Export-Package: org.eclipse.papyrus.uml.textedit.connectionpointreference.xtext,
  org.eclipse.papyrus.uml.textedit.connectionpointreference.xtext.formatting,
  org.eclipse.papyrus.uml.textedit.connectionpointreference.xtext.generator,
@@ -28,7 +28,7 @@ Export-Package: org.eclipse.papyrus.uml.textedit.connectionpointreference.xtext,
  org.eclipse.papyrus.uml.textedit.connectionpointreference.xtext.validation
 Bundle-Vendor: %providerName
 Bundle-ActivationPolicy: lazy
-Bundle-Version: 1.0.1.qualifier
+Bundle-Version: 1.1.0.qualifier
 Bundle-Localization: plugin
 Bundle-Name: %pluginName
 Bundle-ManifestVersion: 2

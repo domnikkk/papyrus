@@ -19,11 +19,11 @@ Export-Package: org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet,
  org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacetcatalog.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore,
- org.eclipse.papyrus.emf.facet.util.emf.core;bundle-version="1.0.1"
+ org.eclipse.papyrus.emf.facet.util.emf.core;bundle-version="1.1.0"
 Bundle-Vendor: %Bundle-Vendor
 Bundle-ActivationPolicy: lazy
 Bundle-ClassPath: .
-Bundle-Version: 1.0.1.qualifier
+Bundle-Version: 1.1.0.qualifier
 Bundle-Name: %Bundle-Name
 Bundle-ManifestVersion: 2
 Bundle-SymbolicName: org.eclipse.papyrus.emf.facet.efacet.metamodel;si

@@ -3,11 +3,12 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime
 Bundle-Vendor: %providerName
 Bundle-ActivationPolicy: lazy
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 1.1.0.qualifier
 Bundle-Name: %pluginName
 Bundle-Localization: plugin
 Bundle-ManifestVersion: 2
-Bundle-Activator: org.eclipse.papyrus.team.collaborative.recipetest.Activator
+Bundle-Activator: org.eclipse.papyrus.team.collaborative.recipetest.Ac
+ tivator
 Bundle-SymbolicName: org.eclipse.papyrus.team.collaborative.recipetest
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 
