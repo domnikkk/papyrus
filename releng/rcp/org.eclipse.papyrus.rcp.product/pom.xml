@@ -4,12 +4,12 @@
 	<parent>
 		<artifactId>org.eclipse.papyrus</artifactId>
 		<groupId>org.eclipse.papyrus</groupId>
-		<version>1.0.1-SNAPSHOT</version>
+		<version>1.1.0-SNAPSHOT</version>
 		<relativePath>../../top-pom-rcp.xml</relativePath>
 	</parent>
 	<groupId>org.eclipse.papyrus</groupId>
 	<artifactId>org.eclipse.papyrus.rcp.product</artifactId>
-	<version>1.0.1-SNAPSHOT</version>
+	<version>1.1.0-SNAPSHOT</version>
 	<packaging>eclipse-repository</packaging>
 	<properties>
 		<product-id>org.eclipse.papyrus.rcp.product</product-id>

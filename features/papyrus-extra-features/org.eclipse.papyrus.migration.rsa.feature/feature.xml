@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><feature id="org.eclipse.papyrus.migration.rsa.feature" label="RSA Import Feature" provider-name="Eclipse Modeling Project" version="1.0.1.qualifier">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><feature id="org.eclipse.papyrus.migration.rsa.feature" label="RSA Import Feature" provider-name="Eclipse Modeling Project" version="1.1.0.qualifier">
 
    <description>
       Prototype (Work in progress) version of a component for importing diagrams from IBM RSA.
