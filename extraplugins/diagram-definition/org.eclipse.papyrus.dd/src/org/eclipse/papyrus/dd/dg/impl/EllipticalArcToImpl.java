@@ -13,11 +13,15 @@ package org.eclipse.papyrus.dd.dg.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.eclipse.papyrus.dd.dc.Dimension;
 import org.eclipse.papyrus.dd.dc.Point;
+
 import org.eclipse.papyrus.dd.dg.DGPackage;
 import org.eclipse.papyrus.dd.dg.EllipticalArcTo;
 
@@ -155,9 +159,9 @@ public class EllipticalArcToImpl extends PathCommandImpl implements EllipticalAr
 	public NotificationChain basicSetRadii(Dimension newRadii, NotificationChain msgs) {
 		Dimension oldRadii = radii;
 		radii = newRadii;
-		if (eNotificationRequired()) {
+		if(eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DGPackage.ELLIPTICAL_ARC_TO__RADII, oldRadii, newRadii);
-			if (msgs == null) {
+			if(msgs == null) {
 				msgs = notification;
 			} else {
 				msgs.add(notification);
@@ -173,19 +177,19 @@ public class EllipticalArcToImpl extends PathCommandImpl implements EllipticalAr
 	 */
 	@Override
 	public void setRadii(Dimension newRadii) {
-		if (newRadii != radii) {
+		if(newRadii != radii) {
 			NotificationChain msgs = null;
-			if (radii != null) {
-				msgs = ((InternalEObject) radii).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DGPackage.ELLIPTICAL_ARC_TO__RADII, null, msgs);
+			if(radii != null) {
+				msgs = ((InternalEObject)radii).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DGPackage.ELLIPTICAL_ARC_TO__RADII, null, msgs);
 			}
-			if (newRadii != null) {
-				msgs = ((InternalEObject) newRadii).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DGPackage.ELLIPTICAL_ARC_TO__RADII, null, msgs);
+			if(newRadii != null) {
+				msgs = ((InternalEObject)newRadii).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DGPackage.ELLIPTICAL_ARC_TO__RADII, null, msgs);
 			}
 			msgs = basicSetRadii(newRadii, msgs);
-			if (msgs != null) {
+			if(msgs != null) {
 				msgs.dispatch();
 			}
-		} else if (eNotificationRequired()) {
+		} else if(eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.ELLIPTICAL_ARC_TO__RADII, newRadii, newRadii));
 		}
 	}
@@ -209,7 +213,7 @@ public class EllipticalArcToImpl extends PathCommandImpl implements EllipticalAr
 	public void setRotation(double newRotation) {
 		double oldRotation = rotation;
 		rotation = newRotation;
-		if (eNotificationRequired()) {
+		if(eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.ELLIPTICAL_ARC_TO__ROTATION, oldRotation, rotation));
 		}
 	}
@@ -233,7 +237,7 @@ public class EllipticalArcToImpl extends PathCommandImpl implements EllipticalAr
 	public void setIsLargeArc(boolean newIsLargeArc) {
 		boolean oldIsLargeArc = isLargeArc;
 		isLargeArc = newIsLargeArc;
-		if (eNotificationRequired()) {
+		if(eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.ELLIPTICAL_ARC_TO__IS_LARGE_ARC, oldIsLargeArc, isLargeArc));
 		}
 	}
@@ -257,7 +261,7 @@ public class EllipticalArcToImpl extends PathCommandImpl implements EllipticalAr
 	public void setIsSweep(boolean newIsSweep) {
 		boolean oldIsSweep = isSweep;
 		isSweep = newIsSweep;
-		if (eNotificationRequired()) {
+		if(eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.ELLIPTICAL_ARC_TO__IS_SWEEP, oldIsSweep, isSweep));
 		}
 	}
@@ -280,9 +284,9 @@ public class EllipticalArcToImpl extends PathCommandImpl implements EllipticalAr
 	public NotificationChain basicSetPoint(Point newPoint, NotificationChain msgs) {
 		Point oldPoint = point;
 		point = newPoint;
-		if (eNotificationRequired()) {
+		if(eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DGPackage.ELLIPTICAL_ARC_TO__POINT, oldPoint, newPoint);
-			if (msgs == null) {
+			if(msgs == null) {
 				msgs = notification;
 			} else {
 				msgs.add(notification);
@@ -298,19 +302,19 @@ public class EllipticalArcToImpl extends PathCommandImpl implements EllipticalAr
 	 */
 	@Override
 	public void setPoint(Point newPoint) {
-		if (newPoint != point) {
+		if(newPoint != point) {
 			NotificationChain msgs = null;
-			if (point != null) {
-				msgs = ((InternalEObject) point).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DGPackage.ELLIPTICAL_ARC_TO__POINT, null, msgs);
+			if(point != null) {
+				msgs = ((InternalEObject)point).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DGPackage.ELLIPTICAL_ARC_TO__POINT, null, msgs);
 			}
-			if (newPoint != null) {
-				msgs = ((InternalEObject) newPoint).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DGPackage.ELLIPTICAL_ARC_TO__POINT, null, msgs);
+			if(newPoint != null) {
+				msgs = ((InternalEObject)newPoint).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DGPackage.ELLIPTICAL_ARC_TO__POINT, null, msgs);
 			}
 			msgs = basicSetPoint(newPoint, msgs);
-			if (msgs != null) {
+			if(msgs != null) {
 				msgs.dispatch();
 			}
-		} else if (eNotificationRequired()) {
+		} else if(eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.ELLIPTICAL_ARC_TO__POINT, newPoint, newPoint));
 		}
 	}
@@ -322,7 +326,7 @@ public class EllipticalArcToImpl extends PathCommandImpl implements EllipticalAr
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
+		switch(featureID) {
 		case DGPackage.ELLIPTICAL_ARC_TO__RADII:
 			return basicSetRadii(null, msgs);
 		case DGPackage.ELLIPTICAL_ARC_TO__POINT:
@@ -338,7 +342,7 @@ public class EllipticalArcToImpl extends PathCommandImpl implements EllipticalAr
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch(featureID) {
 		case DGPackage.ELLIPTICAL_ARC_TO__RADII:
 			return getRadii();
 		case DGPackage.ELLIPTICAL_ARC_TO__ROTATION:
@@ -360,21 +364,21 @@ public class EllipticalArcToImpl extends PathCommandImpl implements EllipticalAr
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch(featureID) {
 		case DGPackage.ELLIPTICAL_ARC_TO__RADII:
-			setRadii((Dimension) newValue);
+			setRadii((Dimension)newValue);
 			return;
 		case DGPackage.ELLIPTICAL_ARC_TO__ROTATION:
-			setRotation((Double) newValue);
+			setRotation((Double)newValue);
 			return;
 		case DGPackage.ELLIPTICAL_ARC_TO__IS_LARGE_ARC:
-			setIsLargeArc((Boolean) newValue);
+			setIsLargeArc((Boolean)newValue);
 			return;
 		case DGPackage.ELLIPTICAL_ARC_TO__IS_SWEEP:
-			setIsSweep((Boolean) newValue);
+			setIsSweep((Boolean)newValue);
 			return;
 		case DGPackage.ELLIPTICAL_ARC_TO__POINT:
-			setPoint((Point) newValue);
+			setPoint((Point)newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -387,9 +391,9 @@ public class EllipticalArcToImpl extends PathCommandImpl implements EllipticalAr
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch(featureID) {
 		case DGPackage.ELLIPTICAL_ARC_TO__RADII:
-			setRadii((Dimension) null);
+			setRadii((Dimension)null);
 			return;
 		case DGPackage.ELLIPTICAL_ARC_TO__ROTATION:
 			setRotation(ROTATION_EDEFAULT);
@@ -401,7 +405,7 @@ public class EllipticalArcToImpl extends PathCommandImpl implements EllipticalAr
 			setIsSweep(IS_SWEEP_EDEFAULT);
 			return;
 		case DGPackage.ELLIPTICAL_ARC_TO__POINT:
-			setPoint((Point) null);
+			setPoint((Point)null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -414,7 +418,7 @@ public class EllipticalArcToImpl extends PathCommandImpl implements EllipticalAr
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch(featureID) {
 		case DGPackage.ELLIPTICAL_ARC_TO__RADII:
 			return radii != null;
 		case DGPackage.ELLIPTICAL_ARC_TO__ROTATION:
@@ -436,7 +440,7 @@ public class EllipticalArcToImpl extends PathCommandImpl implements EllipticalAr
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
+		if(eIsProxy()) {
 			return super.toString();
 		}
 		StringBuffer result = new StringBuffer(super.toString());

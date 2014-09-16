@@ -8,7 +8,14 @@
       <generalization xmi:type="uml:Generalization" xmi:id="UMLDiagram-_generalization.0">
         <general xmi:type="uml:Class" href="../../org.eclipse.papyrus.dd/model/DI.uml#Diagram"/>
       </generalization>
-      <generalization xmi:type="uml:Generalization" xmi:id="UMLDiagram-_generalization.2" general="UMLShape"/>
+      <generalization xmi:type="uml:Generalization" xmi:id="UMLDiagram-_generalization.2" general="UMLDiagramElement"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_zzOXMBVxEeSbve-DNFls6A" name="kind" visibility="public" type="_rZ7J8BVxEeSbve-DNFls6A">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_0SGrkBVxEeSbve-DNFls6A" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_0SHSoBVxEeSbve-DNFls6A" value="1"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_0SH5sBVxEeSbve-DNFls6A">
+          <value xsi:nil="true"/>
+        </defaultValue>
+      </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="UMLDiagramElement" name="UmlDiagramElement" isAbstract="true">
       <ownedComment xmi:type="uml:Comment" xmi:id="UMLDiagramElement-_ownedComment.0" annotatedElement="UMLDiagramElement">
@@ -151,7 +158,10 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="A_UMLDiagramElement_ownedElement_owningElement" name="A_ownedUmlDiagramElement_owningUmlDiagramElement" memberEnd="UMLDiagramElement-ownedElement UMLDiagramElement-owningElement"/>
     <packagedElement xmi:type="uml:Class" xmi:id="_bdk0MBO_EeSXerk-XJQMGw" name="UmlCompartment">
-      <generalization xmi:type="uml:Generalization" xmi:id="_zIr-oBO_EeSXerk-XJQMGw" general="UMLShape"/>
+      <generalization xmi:type="uml:Generalization" xmi:id="_zIr-oBO_EeSXerk-XJQMGw">
+        <general xmi:type="uml:Class" href="../../org.eclipse.papyrus.dd/model/DI.uml#Shape"/>
+      </generalization>
+      <generalization xmi:type="uml:Generalization" xmi:id="_Hb-78BVxEeSbve-DNFls6A" general="UMLDiagramElement"/>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_yCxC8BPAEeSXerk-XJQMGw" name="kind" visibility="public" type="_dtjdUBPAEeSXerk-XJQMGw">
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ySPpYBPAEeSXerk-XJQMGw" value="1"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ySQQcBPAEeSXerk-XJQMGw" value="1"/>
@@ -161,7 +171,10 @@
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_RqpFEBPAEeSXerk-XJQMGw" name="UmlLabel">
-      <generalization xmi:type="uml:Generalization" xmi:id="_XTSIkBPAEeSXerk-XJQMGw" general="UMLShape"/>
+      <generalization xmi:type="uml:Generalization" xmi:id="_XTSIkBPAEeSXerk-XJQMGw">
+        <general xmi:type="uml:Class" href="../../org.eclipse.papyrus.dd/model/DI.uml#Shape"/>
+      </generalization>
+      <generalization xmi:type="uml:Generalization" xmi:id="_5HKLcBVwEeSbve-DNFls6A" general="UMLDiagramElement"/>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_v1SewBPAEeSXerk-XJQMGw" name="kind" visibility="public" type="_mku5YBPAEeSXerk-XJQMGw">
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_wM2qMBPAEeSXerk-XJQMGw" value="1"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_wM3RQBPAEeSXerk-XJQMGw" value="1"/>
@@ -176,6 +189,10 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Enumeration" xmi:id="_mku5YBPAEeSXerk-XJQMGw" name="UmlLabelKind">
       <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_rrySwBPAEeSXerk-XJQMGw" name="name"/>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_jMkDoBlmEeSbeugf5fno3w" name="multiplicity"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_rZ7J8BVxEeSbve-DNFls6A" name="UmlDiagramKind">
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_utelYBVxEeSbve-DNFls6A" name="class"/>
     </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_eGYR4Po2EeOw_Nx9vOEGaA">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_eGYR4fo2EeOw_Nx9vOEGaA" source="http://www.eclipse.org/uml2/2.0.0/UML">

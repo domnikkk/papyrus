@@ -16,6 +16,7 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemColorProvider;
@@ -27,6 +28,7 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
 import org.eclipse.papyrus.dd.dg.DGPackage;
 import org.eclipse.papyrus.dd.dg.Matrix;
 
@@ -57,7 +59,7 @@ public class MatrixItemProvider extends TransformItemProvider implements IEditin
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null) {
+		if(itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 			addAPropertyDescriptor(object);
 			addBPropertyDescriptor(object);
@@ -77,8 +79,7 @@ public class MatrixItemProvider extends TransformItemProvider implements IEditin
 	 * @generated
 	 */
 	protected void addAPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Matrix_a_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_Matrix_a_feature", "_UI_Matrix_type"), DGPackage.Literals.MATRIX__A, true, false, false, ItemPropertyDescriptor.REAL_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Matrix_a_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Matrix_a_feature", "_UI_Matrix_type"), DGPackage.Literals.MATRIX__A, true, false, false, ItemPropertyDescriptor.REAL_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -89,8 +90,7 @@ public class MatrixItemProvider extends TransformItemProvider implements IEditin
 	 * @generated
 	 */
 	protected void addBPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Matrix_b_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_Matrix_b_feature", "_UI_Matrix_type"), DGPackage.Literals.MATRIX__B, true, false, false, ItemPropertyDescriptor.REAL_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Matrix_b_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Matrix_b_feature", "_UI_Matrix_type"), DGPackage.Literals.MATRIX__B, true, false, false, ItemPropertyDescriptor.REAL_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -101,8 +101,7 @@ public class MatrixItemProvider extends TransformItemProvider implements IEditin
 	 * @generated
 	 */
 	protected void addCPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Matrix_c_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_Matrix_c_feature", "_UI_Matrix_type"), DGPackage.Literals.MATRIX__C, true, false, false, ItemPropertyDescriptor.REAL_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Matrix_c_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Matrix_c_feature", "_UI_Matrix_type"), DGPackage.Literals.MATRIX__C, true, false, false, ItemPropertyDescriptor.REAL_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -113,8 +112,7 @@ public class MatrixItemProvider extends TransformItemProvider implements IEditin
 	 * @generated
 	 */
 	protected void addDPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Matrix_d_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_Matrix_d_feature", "_UI_Matrix_type"), DGPackage.Literals.MATRIX__D, true, false, false, ItemPropertyDescriptor.REAL_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Matrix_d_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Matrix_d_feature", "_UI_Matrix_type"), DGPackage.Literals.MATRIX__D, true, false, false, ItemPropertyDescriptor.REAL_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -125,8 +123,7 @@ public class MatrixItemProvider extends TransformItemProvider implements IEditin
 	 * @generated
 	 */
 	protected void addEPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Matrix_e_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_Matrix_e_feature", "_UI_Matrix_type"), DGPackage.Literals.MATRIX__E, true, false, false, ItemPropertyDescriptor.REAL_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Matrix_e_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Matrix_e_feature", "_UI_Matrix_type"), DGPackage.Literals.MATRIX__E, true, false, false, ItemPropertyDescriptor.REAL_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -137,8 +134,7 @@ public class MatrixItemProvider extends TransformItemProvider implements IEditin
 	 * @generated
 	 */
 	protected void addFPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Matrix_f_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_Matrix_f_feature", "_UI_Matrix_type"), DGPackage.Literals.MATRIX__F, true, false, false, ItemPropertyDescriptor.REAL_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Matrix_f_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Matrix_f_feature", "_UI_Matrix_type"), DGPackage.Literals.MATRIX__F, true, false, false, ItemPropertyDescriptor.REAL_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -161,7 +157,7 @@ public class MatrixItemProvider extends TransformItemProvider implements IEditin
 	 */
 	@Override
 	public String getText(Object object) {
-		Matrix matrix = (Matrix) object;
+		Matrix matrix = (Matrix)object;
 		return getString("_UI_Matrix_type") + " " + matrix.getA();
 	}
 
@@ -176,7 +172,7 @@ public class MatrixItemProvider extends TransformItemProvider implements IEditin
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-		switch (notification.getFeatureID(Matrix.class)) {
+		switch(notification.getFeatureID(Matrix.class)) {
 		case DGPackage.MATRIX__A:
 		case DGPackage.MATRIX__B:
 		case DGPackage.MATRIX__C:

@@ -55,7 +55,7 @@ public interface Matrix extends Transform {
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>A</em>' attribute.
+	 *        the new value of the '<em>A</em>' attribute.
 	 * @see #getA()
 	 * @generated
 	 */
@@ -80,7 +80,7 @@ public interface Matrix extends Transform {
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>B</em>' attribute.
+	 *        the new value of the '<em>B</em>' attribute.
 	 * @see #getB()
 	 * @generated
 	 */
@@ -105,7 +105,7 @@ public interface Matrix extends Transform {
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>C</em>' attribute.
+	 *        the new value of the '<em>C</em>' attribute.
 	 * @see #getC()
 	 * @generated
 	 */
@@ -130,7 +130,7 @@ public interface Matrix extends Transform {
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>D</em>' attribute.
+	 *        the new value of the '<em>D</em>' attribute.
 	 * @see #getD()
 	 * @generated
 	 */
@@ -155,7 +155,7 @@ public interface Matrix extends Transform {
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>E</em>' attribute.
+	 *        the new value of the '<em>E</em>' attribute.
 	 * @see #getE()
 	 * @generated
 	 */
@@ -180,7 +180,7 @@ public interface Matrix extends Transform {
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>F</em>' attribute.
+	 *        the new value of the '<em>F</em>' attribute.
 	 * @see #getF()
 	 * @generated
 	 */

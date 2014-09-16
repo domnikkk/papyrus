@@ -16,6 +16,7 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemColorProvider;
@@ -27,6 +28,7 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
 import org.eclipse.papyrus.dd.di.DIPackage;
 import org.eclipse.papyrus.dd.di.Diagram;
 
@@ -57,7 +59,7 @@ public class DiagramItemProvider extends ShapeItemProvider implements IEditingDo
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null) {
+		if(itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 			addNamePropertyDescriptor(object);
 			addDocumentationPropertyDescriptor(object);
@@ -74,8 +76,7 @@ public class DiagramItemProvider extends ShapeItemProvider implements IEditingDo
 	 * @generated
 	 */
 	protected void addNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Diagram_name_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_Diagram_name_feature", "_UI_Diagram_type"), DIPackage.Literals.DIAGRAM__NAME, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Diagram_name_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Diagram_name_feature", "_UI_Diagram_type"), DIPackage.Literals.DIAGRAM__NAME, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -85,8 +86,7 @@ public class DiagramItemProvider extends ShapeItemProvider implements IEditingDo
 	 * @generated
 	 */
 	protected void addDocumentationPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Diagram_documentation_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_Diagram_documentation_feature", "_UI_Diagram_type"), DIPackage.Literals.DIAGRAM__DOCUMENTATION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Diagram_documentation_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Diagram_documentation_feature", "_UI_Diagram_type"), DIPackage.Literals.DIAGRAM__DOCUMENTATION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -96,8 +96,7 @@ public class DiagramItemProvider extends ShapeItemProvider implements IEditingDo
 	 * @generated
 	 */
 	protected void addResolutionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Diagram_resolution_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_Diagram_resolution_feature", "_UI_Diagram_type"), DIPackage.Literals.DIAGRAM__RESOLUTION, true, false, false, ItemPropertyDescriptor.REAL_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Diagram_resolution_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Diagram_resolution_feature", "_UI_Diagram_type"), DIPackage.Literals.DIAGRAM__RESOLUTION, true, false, false, ItemPropertyDescriptor.REAL_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -109,7 +108,7 @@ public class DiagramItemProvider extends ShapeItemProvider implements IEditingDo
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Diagram) object).getName();
+		String label = ((Diagram)object).getName();
 		return label == null || label.length() == 0 ? getString("_UI_Diagram_type") : getString("_UI_Diagram_type") + " " + label;
 	}
 
@@ -124,7 +123,7 @@ public class DiagramItemProvider extends ShapeItemProvider implements IEditingDo
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-		switch (notification.getFeatureID(Diagram.class)) {
+		switch(notification.getFeatureID(Diagram.class)) {
 		case DIPackage.DIAGRAM__NAME:
 		case DIPackage.DIAGRAM__DOCUMENTATION:
 		case DIPackage.DIAGRAM__RESOLUTION:

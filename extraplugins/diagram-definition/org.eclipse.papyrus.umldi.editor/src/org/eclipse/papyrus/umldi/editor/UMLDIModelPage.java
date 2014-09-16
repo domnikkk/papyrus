@@ -66,7 +66,7 @@ public class UMLDIModelPage extends DDModelPage {
 				context.setConfigProperty("keepModeling", true);
 
 				URI transformationURI = URI
-						.createURI("platform:/plugin/org.eclipse.papyrus.umldi2dg/transforms/umldi2dg.qvto");
+						.createURI("platform:/plugin/org.eclipse.papyrus.umldi2dg/transforms/UMLDIToDG.qvto");
 				TransformationExecutor executor = new TransformationExecutor(
 						transformationURI);
 				ExecutionDiagnostic result = executor.execute(context, input,

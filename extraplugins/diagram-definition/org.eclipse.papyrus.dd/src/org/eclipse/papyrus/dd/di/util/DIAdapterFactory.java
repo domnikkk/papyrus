@@ -13,14 +13,12 @@ package org.eclipse.papyrus.dd.di.util;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
+
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
+
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.papyrus.dd.di.DIPackage;
-import org.eclipse.papyrus.dd.di.Diagram;
-import org.eclipse.papyrus.dd.di.DiagramElement;
-import org.eclipse.papyrus.dd.di.Edge;
-import org.eclipse.papyrus.dd.di.Shape;
-import org.eclipse.papyrus.dd.di.Style;
+
+import org.eclipse.papyrus.dd.di.*;
 
 /**
  * <!-- begin-user-doc --> The <b>Adapter Factory</b> for the model. It provides
@@ -48,7 +46,7 @@ public class DIAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public DIAdapterFactory() {
-		if (modelPackage == null) {
+		if(modelPackage == null) {
 			modelPackage = DIPackage.eINSTANCE;
 		}
 	}
@@ -64,11 +62,11 @@ public class DIAdapterFactory extends AdapterFactoryImpl {
 	 */
 	@Override
 	public boolean isFactoryForType(Object object) {
-		if (object == modelPackage) {
+		if(object == modelPackage) {
 			return true;
 		}
-		if (object instanceof EObject) {
-			return ((EObject) object).eClass().getEPackage() == modelPackage;
+		if(object instanceof EObject) {
+			return ((EObject)object).eClass().getEPackage() == modelPackage;
 		}
 		return false;
 	}
@@ -118,13 +116,13 @@ public class DIAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param target
-	 *            the object to adapt.
+	 *        the object to adapt.
 	 * @return the adapter for the <code>target</code>.
 	 * @generated
 	 */
 	@Override
 	public Adapter createAdapter(Notifier target) {
-		return modelSwitch.doSwitch((EObject) target);
+		return modelSwitch.doSwitch((EObject)target);
 	}
 
 	/**

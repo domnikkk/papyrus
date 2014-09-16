@@ -1047,6 +1047,19 @@ public class DGToSVGConverter extends DGSwitch<Object> implements SVGSyntax {
 			svgDocument.insertBefore(pi, svgDocument.getDocumentElement());
 		}
 
+		try {
+			URL url = DDEditorPlugin.getPlugin().getBundle()
+					.getEntry("/scripts/Layout.js");
+			url = FileLocator.toFileURL(url);
+			Element script = svgDocument.createElementNS(SVG_NAMESPACE_URI,
+					SVG_SCRIPT_TAG);
+			script.setAttributeNS(XLINK_NAMESPACE_URI, XLINK_HREF_QNAME,
+					url.toString());
+			svg.appendChild(script);
+		} catch (IOException e) {
+			DDEditorPlugin.getPlugin().log(e);
+		}
+
 		for (String s : object.getScripts()) {
 			try {
 				URL url = FileLocator.toFileURL(new URL(s));
@@ -1314,15 +1327,23 @@ public class DGToSVGConverter extends DGSwitch<Object> implements SVGSyntax {
 			text.setTextContent(object.getData());
 		}
 
-		if (object.getPosition() != null) {
-			Point position = object.getPosition();
-			if (position.eIsSet(DCPackage.Literals.POINT__X)) {
+		if (object.getBounds() != null) {
+			Bounds bounds = object.getBounds();
+			if (bounds.eIsSet(DCPackage.Literals.BOUNDS__X)) {
 				text.setAttribute(SVG_X_ATTRIBUTE,
-						convertDoubleToString(position.getX()));
+						convertDoubleToString(bounds.getX()));
 			}
-			if (position.eIsSet(DCPackage.Literals.POINT__Y)) {
+			if (bounds.eIsSet(DCPackage.Literals.BOUNDS__Y)) {
 				text.setAttribute(SVG_Y_ATTRIBUTE,
-						convertDoubleToString(position.getY()));
+						convertDoubleToString(bounds.getY()));
+			}
+			if (bounds.eIsSet(DCPackage.Literals.BOUNDS__WIDTH)) {
+				text.setAttribute(SVG_WIDTH_ATTRIBUTE,
+						convertDoubleToString(bounds.getWidth()));
+			}
+			if (bounds.eIsSet(DCPackage.Literals.BOUNDS__HEIGHT)) {
+				text.setAttribute(SVG_HEIGHT_ATTRIBUTE,
+						convertDoubleToString(bounds.getHeight()));
 			}
 		}
 

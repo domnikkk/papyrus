@@ -14,6 +14,7 @@ package org.eclipse.papyrus.dd.dc;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -59,7 +60,7 @@ public interface Bounds extends EObject {
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>X</em>' attribute.
+	 *        the new value of the '<em>X</em>' attribute.
 	 * @see #isSetX()
 	 * @see #unsetX()
 	 * @see #getX()
@@ -110,7 +111,7 @@ public interface Bounds extends EObject {
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Y</em>' attribute.
+	 *        the new value of the '<em>Y</em>' attribute.
 	 * @see #isSetY()
 	 * @see #unsetY()
 	 * @see #getY()
@@ -161,7 +162,7 @@ public interface Bounds extends EObject {
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Width</em>' attribute.
+	 *        the new value of the '<em>Width</em>' attribute.
 	 * @see #isSetWidth()
 	 * @see #unsetWidth()
 	 * @see #getWidth()
@@ -213,7 +214,7 @@ public interface Bounds extends EObject {
 	 * -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Height</em>' attribute.
+	 *        the new value of the '<em>Height</em>' attribute.
 	 * @see #getHeight()
 	 * @generated
 	 */
@@ -247,10 +248,10 @@ public interface Bounds extends EObject {
 	 * the width of bounds cannot be negative
 	 *
 	 * @param diagnostics
-	 *            The chain of diagnostics to which problems are to be appended.
+	 *        The chain of diagnostics to which problems are to be appended.
 	 * @param context
-	 *            The cache of context-specific information. <!-- end-model-doc
-	 *            -->
+	 *        The cache of context-specific information. <!-- end-model-doc
+	 *        -->
 	 * @model
 	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL body='width >= 0'"
 	 * @generated
@@ -262,10 +263,10 @@ public interface Bounds extends EObject {
 	 * the height of bounds cannot be negative
 	 *
 	 * @param diagnostics
-	 *            The chain of diagnostics to which problems are to be appended.
+	 *        The chain of diagnostics to which problems are to be appended.
 	 * @param context
-	 *            The cache of context-specific information. <!-- end-model-doc
-	 *            -->
+	 *        The cache of context-specific information. <!-- end-model-doc
+	 *        -->
 	 * @model
 	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL body='height >=0'"
 	 * @generated

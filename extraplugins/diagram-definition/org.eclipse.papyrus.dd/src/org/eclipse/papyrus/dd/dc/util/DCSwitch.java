@@ -13,11 +13,10 @@ package org.eclipse.papyrus.dd.dc.util;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
+
 import org.eclipse.emf.ecore.util.Switch;
-import org.eclipse.papyrus.dd.dc.Bounds;
-import org.eclipse.papyrus.dd.dc.DCPackage;
-import org.eclipse.papyrus.dd.dc.Dimension;
-import org.eclipse.papyrus.dd.dc.Point;
+
+import org.eclipse.papyrus.dd.dc.*;
 
 /**
  * <!-- begin-user-doc --> The <b>Switch</b> for the model's inheritance
@@ -47,7 +46,7 @@ public class DCSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public DCSwitch() {
-		if (modelPackage == null) {
+		if(modelPackage == null) {
 			modelPackage = DCPackage.eINSTANCE;
 		}
 	}
@@ -75,27 +74,30 @@ public class DCSwitch<T> extends Switch<T> {
 	 */
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
-		switch (classifierID) {
-		case DCPackage.POINT: {
-			Point point = (Point) theEObject;
+		switch(classifierID) {
+		case DCPackage.POINT:
+		{
+			Point point = (Point)theEObject;
 			T result = casePoint(point);
-			if (result == null) {
+			if(result == null) {
 				result = defaultCase(theEObject);
 			}
 			return result;
 		}
-		case DCPackage.DIMENSION: {
-			Dimension dimension = (Dimension) theEObject;
+		case DCPackage.DIMENSION:
+		{
+			Dimension dimension = (Dimension)theEObject;
 			T result = caseDimension(dimension);
-			if (result == null) {
+			if(result == null) {
 				result = defaultCase(theEObject);
 			}
 			return result;
 		}
-		case DCPackage.BOUNDS: {
-			Bounds bounds = (Bounds) theEObject;
+		case DCPackage.BOUNDS:
+		{
+			Bounds bounds = (Bounds)theEObject;
 			T result = caseBounds(bounds);
-			if (result == null) {
+			if(result == null) {
 				result = defaultCase(theEObject);
 			}
 			return result;
@@ -112,7 +114,7 @@ public class DCSwitch<T> extends Switch<T> {
 	 * end-user-doc -->
 	 *
 	 * @param object
-	 *            the target of the switch.
+	 *        the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Point</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -128,7 +130,7 @@ public class DCSwitch<T> extends Switch<T> {
 	 * end-user-doc -->
 	 *
 	 * @param object
-	 *            the target of the switch.
+	 *        the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Dimension</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -144,7 +146,7 @@ public class DCSwitch<T> extends Switch<T> {
 	 * end-user-doc -->
 	 *
 	 * @param object
-	 *            the target of the switch.
+	 *        the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Bounds</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -160,7 +162,7 @@ public class DCSwitch<T> extends Switch<T> {
 	 * the last case anyway. <!-- end-user-doc -->
 	 *
 	 * @param object
-	 *            the target of the switch.
+	 *        the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EObject</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject)
 	 * @generated

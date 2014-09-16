@@ -54,7 +54,7 @@ public interface Line extends MarkedElement {
 	 * end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Start</em>' containment reference.
+	 *        the new value of the '<em>Start</em>' containment reference.
 	 * @see #getStart()
 	 * @generated
 	 */
@@ -80,7 +80,7 @@ public interface Line extends MarkedElement {
 	 * end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>End</em>' containment reference.
+	 *        the new value of the '<em>End</em>' containment reference.
 	 * @see #getEnd()
 	 * @generated
 	 */

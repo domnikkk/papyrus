@@ -14,6 +14,7 @@ package org.eclipse.papyrus.umldi;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
+
 import org.eclipse.papyrus.dd.di.Style;
 
 /**
@@ -61,7 +62,7 @@ public interface UmlStyle extends Style {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Font Name</em>' attribute.
+	 *        the new value of the '<em>Font Name</em>' attribute.
 	 * @see #getFontName()
 	 * @generated
 	 */
@@ -89,7 +90,7 @@ public interface UmlStyle extends Style {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Font Size</em>' attribute.
+	 *        the new value of the '<em>Font Size</em>' attribute.
 	 * @see #getFontSize()
 	 * @generated
 	 */
@@ -102,10 +103,10 @@ public interface UmlStyle extends Style {
 	 * fontSize must be greater than zero.
 	 *
 	 * @param diagnostics
-	 *            The chain of diagnostics to which problems are to be appended.
+	 *        The chain of diagnostics to which problems are to be appended.
 	 * @param context
-	 *            The cache of context-specific information.
-	 *            <!-- end-model-doc -->
+	 *        The cache of context-specific information.
+	 *        <!-- end-model-doc -->
 	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL body='fontSize > 0'"
 	 * @generated
 	 */

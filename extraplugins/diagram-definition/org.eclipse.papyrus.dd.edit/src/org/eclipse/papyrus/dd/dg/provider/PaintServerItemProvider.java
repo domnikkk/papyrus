@@ -16,7 +16,9 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EStructuralFeature;
+
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemColorProvider;
 import org.eclipse.emf.edit.provider.IItemFontProvider;
@@ -26,6 +28,7 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
 import org.eclipse.papyrus.dd.dg.DGFactory;
 import org.eclipse.papyrus.dd.dg.DGPackage;
 import org.eclipse.papyrus.dd.dg.PaintServer;
@@ -57,14 +60,15 @@ public class PaintServerItemProvider extends DefinitionItemProvider implements I
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null) {
+		if(itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
@@ -72,7 +76,7 @@ public class PaintServerItemProvider extends DefinitionItemProvider implements I
 	 */
 	@Override
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null) {
+		if(childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(DGPackage.Literals.PAINT_SERVER__TRANSFORM);
 		}
@@ -100,7 +104,7 @@ public class PaintServerItemProvider extends DefinitionItemProvider implements I
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((PaintServer) object).getId();
+		String label = ((PaintServer)object).getId();
 		return label == null || label.length() == 0 ? getString("_UI_PaintServer_type") : getString("_UI_PaintServer_type") + " " + label;
 	}
 
@@ -115,7 +119,7 @@ public class PaintServerItemProvider extends DefinitionItemProvider implements I
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-		switch (notification.getFeatureID(PaintServer.class)) {
+		switch(notification.getFeatureID(PaintServer.class)) {
 		case DGPackage.PAINT_SERVER__TRANSFORM:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;

@@ -12,12 +12,15 @@
 package org.eclipse.papyrus.dd.dg.provider;
 
 import java.awt.Color;
+
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.common.util.ResourceLocator;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemColorProvider;
@@ -30,8 +33,10 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
 import org.eclipse.papyrus.dd.dg.DGPackage;
 import org.eclipse.papyrus.dd.dg.GradientStop;
+
 import org.eclipse.papyrus.dd.edit.DDEditPlugin;
 
 /**
@@ -61,7 +66,7 @@ public class GradientStopItemProvider extends ItemProviderAdapter implements IEd
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null) {
+		if(itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 			addColorPropertyDescriptor(object);
 			addOffsetPropertyDescriptor(object);
@@ -77,8 +82,7 @@ public class GradientStopItemProvider extends ItemProviderAdapter implements IEd
 	 * @generated
 	 */
 	protected void addColorPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_GradientStop_color_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_GradientStop_color_feature", "_UI_GradientStop_type"), DGPackage.Literals.GRADIENT_STOP__COLOR, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_GradientStop_color_feature"), getString("_UI_PropertyDescriptor_description", "_UI_GradientStop_color_feature", "_UI_GradientStop_type"), DGPackage.Literals.GRADIENT_STOP__COLOR, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -88,8 +92,7 @@ public class GradientStopItemProvider extends ItemProviderAdapter implements IEd
 	 * @generated
 	 */
 	protected void addOffsetPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_GradientStop_offset_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_GradientStop_offset_feature", "_UI_GradientStop_type"), DGPackage.Literals.GRADIENT_STOP__OFFSET, true, false, false, ItemPropertyDescriptor.REAL_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_GradientStop_offset_feature"), getString("_UI_PropertyDescriptor_description", "_UI_GradientStop_offset_feature", "_UI_GradientStop_type"), DGPackage.Literals.GRADIENT_STOP__OFFSET, true, false, false, ItemPropertyDescriptor.REAL_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -99,8 +102,7 @@ public class GradientStopItemProvider extends ItemProviderAdapter implements IEd
 	 * @generated
 	 */
 	protected void addOpacityPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_GradientStop_opacity_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_GradientStop_opacity_feature", "_UI_GradientStop_type"), DGPackage.Literals.GRADIENT_STOP__OPACITY, true, false, false, ItemPropertyDescriptor.REAL_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_GradientStop_opacity_feature"), getString("_UI_PropertyDescriptor_description", "_UI_GradientStop_opacity_feature", "_UI_GradientStop_type"), DGPackage.Literals.GRADIENT_STOP__OPACITY, true, false, false, ItemPropertyDescriptor.REAL_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -123,7 +125,7 @@ public class GradientStopItemProvider extends ItemProviderAdapter implements IEd
 	 */
 	@Override
 	public String getText(Object object) {
-		Color labelValue = ((GradientStop) object).getColor();
+		Color labelValue = ((GradientStop)object).getColor();
 		String label = labelValue == null ? null : labelValue.toString();
 		return label == null || label.length() == 0 ? getString("_UI_GradientStop_type") : getString("_UI_GradientStop_type") + " " + label;
 	}
@@ -139,7 +141,7 @@ public class GradientStopItemProvider extends ItemProviderAdapter implements IEd
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-		switch (notification.getFeatureID(GradientStop.class)) {
+		switch(notification.getFeatureID(GradientStop.class)) {
 		case DGPackage.GRADIENT_STOP__COLOR:
 		case DGPackage.GRADIENT_STOP__OFFSET:
 		case DGPackage.GRADIENT_STOP__OPACITY:

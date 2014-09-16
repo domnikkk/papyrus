@@ -392,7 +392,8 @@ public interface DCPackage extends EPackage {
 	EAttribute getDimension_Height();
 
 	/**
-	 * Returns the meta object for the ' {@link org.eclipse.papyrus.dd.dc.Dimension#nonNegativeWidth(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * Returns the meta object for the '
+	 * {@link org.eclipse.papyrus.dd.dc.Dimension#nonNegativeWidth(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * <em>Non Negative Width</em>}' operation.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
@@ -404,7 +405,8 @@ public interface DCPackage extends EPackage {
 	EOperation getDimension__NonNegativeWidth__DiagnosticChain_Map();
 
 	/**
-	 * Returns the meta object for the ' {@link org.eclipse.papyrus.dd.dc.Dimension#nonNegativeHeight(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * Returns the meta object for the '
+	 * {@link org.eclipse.papyrus.dd.dc.Dimension#nonNegativeHeight(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * <em>Non Negative Height</em>}' operation.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
@@ -470,7 +472,8 @@ public interface DCPackage extends EPackage {
 	EAttribute getBounds_Height();
 
 	/**
-	 * Returns the meta object for the ' {@link org.eclipse.papyrus.dd.dc.Bounds#nonNegativeWidth(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * Returns the meta object for the '
+	 * {@link org.eclipse.papyrus.dd.dc.Bounds#nonNegativeWidth(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * <em>Non Negative Width</em>}' operation.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
@@ -482,7 +485,8 @@ public interface DCPackage extends EPackage {
 	EOperation getBounds__NonNegativeWidth__DiagnosticChain_Map();
 
 	/**
-	 * Returns the meta object for the ' {@link org.eclipse.papyrus.dd.dc.Bounds#nonNegativeHeight(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * Returns the meta object for the '
+	 * {@link org.eclipse.papyrus.dd.dc.Bounds#nonNegativeHeight(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * <em>Non Negative Height</em>}' operation.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->

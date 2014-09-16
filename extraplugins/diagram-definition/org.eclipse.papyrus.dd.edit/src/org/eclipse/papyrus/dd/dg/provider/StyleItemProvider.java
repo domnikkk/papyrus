@@ -16,8 +16,11 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.common.util.ResourceLocator;
+
 import org.eclipse.emf.ecore.EStructuralFeature;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemColorProvider;
@@ -30,9 +33,11 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
 import org.eclipse.papyrus.dd.dg.DGFactory;
 import org.eclipse.papyrus.dd.dg.DGPackage;
 import org.eclipse.papyrus.dd.dg.Style;
+
 import org.eclipse.papyrus.dd.edit.DDEditPlugin;
 
 /**
@@ -62,7 +67,7 @@ public class StyleItemProvider extends ItemProviderAdapter implements IEditingDo
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null) {
+		if(itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 			addFillPropertyDescriptor(object);
 			addFillOpacityPropertyDescriptor(object);
@@ -87,8 +92,7 @@ public class StyleItemProvider extends ItemProviderAdapter implements IEditingDo
 	 * @generated
 	 */
 	protected void addFillPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Style_fill_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_Style_fill_feature", "_UI_Style_type"), DGPackage.Literals.STYLE__FILL, true, false, false, null, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Style_fill_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Style_fill_feature", "_UI_Style_type"), DGPackage.Literals.STYLE__FILL, true, false, false, null, null, null));
 	}
 
 	/**
@@ -98,8 +102,7 @@ public class StyleItemProvider extends ItemProviderAdapter implements IEditingDo
 	 * @generated
 	 */
 	protected void addFillOpacityPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Style_fillOpacity_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_Style_fillOpacity_feature", "_UI_Style_type"), DGPackage.Literals.STYLE__FILL_OPACITY, true, false, false, ItemPropertyDescriptor.REAL_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Style_fillOpacity_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Style_fillOpacity_feature", "_UI_Style_type"), DGPackage.Literals.STYLE__FILL_OPACITY, true, false, false, ItemPropertyDescriptor.REAL_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -109,8 +112,7 @@ public class StyleItemProvider extends ItemProviderAdapter implements IEditingDo
 	 * @generated
 	 */
 	protected void addStrokePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Style_stroke_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_Style_stroke_feature", "_UI_Style_type"), DGPackage.Literals.STYLE__STROKE, true, false, false, null, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Style_stroke_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Style_stroke_feature", "_UI_Style_type"), DGPackage.Literals.STYLE__STROKE, true, false, false, null, null, null));
 	}
 
 	/**
@@ -120,8 +122,7 @@ public class StyleItemProvider extends ItemProviderAdapter implements IEditingDo
 	 * @generated
 	 */
 	protected void addStrokeWidthPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Style_strokeWidth_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_Style_strokeWidth_feature", "_UI_Style_type"), DGPackage.Literals.STYLE__STROKE_WIDTH, true, false, false, ItemPropertyDescriptor.REAL_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Style_strokeWidth_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Style_strokeWidth_feature", "_UI_Style_type"), DGPackage.Literals.STYLE__STROKE_WIDTH, true, false, false, ItemPropertyDescriptor.REAL_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -131,8 +132,7 @@ public class StyleItemProvider extends ItemProviderAdapter implements IEditingDo
 	 * @generated
 	 */
 	protected void addStrokeOpacityPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Style_strokeOpacity_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_Style_strokeOpacity_feature", "_UI_Style_type"), DGPackage.Literals.STYLE__STROKE_OPACITY, true, false, false, ItemPropertyDescriptor.REAL_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Style_strokeOpacity_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Style_strokeOpacity_feature", "_UI_Style_type"), DGPackage.Literals.STYLE__STROKE_OPACITY, true, false, false, ItemPropertyDescriptor.REAL_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -142,8 +142,7 @@ public class StyleItemProvider extends ItemProviderAdapter implements IEditingDo
 	 * @generated
 	 */
 	protected void addStrokeDashLengthPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Style_strokeDashLength_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_Style_strokeDashLength_feature", "_UI_Style_type"), DGPackage.Literals.STYLE__STROKE_DASH_LENGTH, true, false, false, ItemPropertyDescriptor.REAL_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Style_strokeDashLength_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Style_strokeDashLength_feature", "_UI_Style_type"), DGPackage.Literals.STYLE__STROKE_DASH_LENGTH, true, false, false, ItemPropertyDescriptor.REAL_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -153,8 +152,7 @@ public class StyleItemProvider extends ItemProviderAdapter implements IEditingDo
 	 * @generated
 	 */
 	protected void addFontSizePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Style_fontSize_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_Style_fontSize_feature", "_UI_Style_type"), DGPackage.Literals.STYLE__FONT_SIZE, true, false, false, ItemPropertyDescriptor.REAL_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Style_fontSize_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Style_fontSize_feature", "_UI_Style_type"), DGPackage.Literals.STYLE__FONT_SIZE, true, false, false, ItemPropertyDescriptor.REAL_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -164,8 +162,7 @@ public class StyleItemProvider extends ItemProviderAdapter implements IEditingDo
 	 * @generated
 	 */
 	protected void addFontNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Style_fontName_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_Style_fontName_feature", "_UI_Style_type"), DGPackage.Literals.STYLE__FONT_NAME, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Style_fontName_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Style_fontName_feature", "_UI_Style_type"), DGPackage.Literals.STYLE__FONT_NAME, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -175,8 +172,7 @@ public class StyleItemProvider extends ItemProviderAdapter implements IEditingDo
 	 * @generated
 	 */
 	protected void addFontItalicPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Style_fontItalic_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_Style_fontItalic_feature", "_UI_Style_type"), DGPackage.Literals.STYLE__FONT_ITALIC, true, false, false, ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Style_fontItalic_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Style_fontItalic_feature", "_UI_Style_type"), DGPackage.Literals.STYLE__FONT_ITALIC, true, false, false, ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -186,8 +182,7 @@ public class StyleItemProvider extends ItemProviderAdapter implements IEditingDo
 	 * @generated
 	 */
 	protected void addFontBoldPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Style_fontBold_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_Style_fontBold_feature", "_UI_Style_type"), DGPackage.Literals.STYLE__FONT_BOLD, true, false, false, ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Style_fontBold_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Style_fontBold_feature", "_UI_Style_type"), DGPackage.Literals.STYLE__FONT_BOLD, true, false, false, ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -197,12 +192,12 @@ public class StyleItemProvider extends ItemProviderAdapter implements IEditingDo
 	 * @generated
 	 */
 	protected void addFontDecorationPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Style_fontDecoration_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_Style_fontDecoration_feature", "_UI_Style_type"), DGPackage.Literals.STYLE__FONT_DECORATION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Style_fontDecoration_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Style_fontDecoration_feature", "_UI_Style_type"), DGPackage.Literals.STYLE__FONT_DECORATION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
@@ -210,7 +205,7 @@ public class StyleItemProvider extends ItemProviderAdapter implements IEditingDo
 	 */
 	@Override
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null) {
+		if(childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(DGPackage.Literals.STYLE__FILL);
 			childrenFeatures.add(DGPackage.Literals.STYLE__STROKE);
@@ -250,7 +245,7 @@ public class StyleItemProvider extends ItemProviderAdapter implements IEditingDo
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Style) object).getFontName();
+		String label = ((Style)object).getFontName();
 		return label == null || label.length() == 0 ? getString("_UI_Style_type") : getString("_UI_Style_type") + " " + label;
 	}
 
@@ -265,7 +260,7 @@ public class StyleItemProvider extends ItemProviderAdapter implements IEditingDo
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-		switch (notification.getFeatureID(Style.class)) {
+		switch(notification.getFeatureID(Style.class)) {
 		case DGPackage.STYLE__FILL_OPACITY:
 		case DGPackage.STYLE__STROKE_WIDTH:
 		case DGPackage.STYLE__STROKE_OPACITY:
@@ -310,8 +305,8 @@ public class StyleItemProvider extends ItemProviderAdapter implements IEditingDo
 		Object childFeature = feature;
 		Object childObject = child;
 		boolean qualify = childFeature == DGPackage.Literals.STYLE__FILL || childFeature == DGPackage.Literals.STYLE__STROKE;
-		if (qualify) {
-			return getString("_UI_CreateChild_text2", new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
+		if(qualify) {
+			return getString("_UI_CreateChild_text2", new Object[]{ getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
 		}
 		return super.getCreateChildText(owner, feature, child, selection);
 	}

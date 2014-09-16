@@ -12,8 +12,8 @@
 package org.eclipse.papyrus.dd.dg;
 
 import java.awt.Color;
-import java.util.Map;
 
+import java.util.Map;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.ecore.EObject;
 
@@ -52,7 +52,7 @@ public interface Paint extends EObject {
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Color</em>' attribute.
+	 *        the new value of the '<em>Color</em>' attribute.
 	 * @see #getColor()
 	 * @generated
 	 */
@@ -77,7 +77,7 @@ public interface Paint extends EObject {
 	 * end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Paint Server</em>' reference.
+	 *        the new value of the '<em>Paint Server</em>' reference.
 	 * @see #getPaintServer()
 	 * @generated
 	 */
@@ -87,10 +87,10 @@ public interface Paint extends EObject {
 	 * <!-- begin-user-doc --> <!-- end-user-doc --> <!-- begin-model-doc -->
 	 *
 	 * @param diagnostics
-	 *            The chain of diagnostics to which problems are to be appended.
+	 *        The chain of diagnostics to which problems are to be appended.
 	 * @param context
-	 *            The cache of context-specific information. <!-- end-model-doc
-	 *            -->
+	 *        The cache of context-specific information. <!-- end-model-doc
+	 *        -->
 	 * @model annotation=
 	 *        "http://www.eclipse.org/emf/2002/Ecore/OCL body='paintServer->notEmpty() implies paintServer.id->notEmpty()'"
 	 * @generated

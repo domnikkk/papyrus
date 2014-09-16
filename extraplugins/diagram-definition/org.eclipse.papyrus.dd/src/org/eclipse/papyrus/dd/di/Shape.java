@@ -53,7 +53,7 @@ public interface Shape extends DiagramElement {
 	 * end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Bounds</em>' containment reference.
+	 *        the new value of the '<em>Bounds</em>' containment reference.
 	 * @see #getBounds()
 	 * @generated
 	 */

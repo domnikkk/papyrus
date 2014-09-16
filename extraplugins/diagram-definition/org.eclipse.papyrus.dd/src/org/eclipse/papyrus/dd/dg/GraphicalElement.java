@@ -12,7 +12,6 @@
 package org.eclipse.papyrus.dd.dg;
 
 import java.util.Map;
-
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 
@@ -61,7 +60,7 @@ public interface GraphicalElement extends Definition {
 	 * -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Clip Path</em>' reference.
+	 *        the new value of the '<em>Clip Path</em>' reference.
 	 * @see #getClipPath()
 	 * @generated
 	 */
@@ -88,7 +87,7 @@ public interface GraphicalElement extends Definition {
 	 * end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Group</em>' container reference.
+	 *        the new value of the '<em>Group</em>' container reference.
 	 * @see #getGroup()
 	 * @generated
 	 */
@@ -127,7 +126,7 @@ public interface GraphicalElement extends Definition {
 	 * end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Style</em>' containment reference.
+	 *        the new value of the '<em>Style</em>' containment reference.
 	 * @see #getStyle()
 	 * @generated
 	 */
@@ -168,7 +167,7 @@ public interface GraphicalElement extends Definition {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Layout Data</em>' attribute.
+	 *        the new value of the '<em>Layout Data</em>' attribute.
 	 * @see #getLayoutData()
 	 * @generated
 	 */
@@ -178,10 +177,10 @@ public interface GraphicalElement extends Definition {
 	 * <!-- begin-user-doc --> <!-- end-user-doc --> <!-- begin-model-doc -->
 	 *
 	 * @param diagnostics
-	 *            The chain of diagnostics to which problems are to be appended.
+	 *        The chain of diagnostics to which problems are to be appended.
 	 * @param context
-	 *            The cache of context-specific information. <!-- end-model-doc
-	 *            -->
+	 *        The cache of context-specific information. <!-- end-model-doc
+	 *        -->
 	 * @model annotation=
 	 *        "http://www.eclipse.org/emf/2002/Ecore/OCL body='clipPath->notEmpty() implies clipPath.id->notEmpty()'"
 	 * @generated

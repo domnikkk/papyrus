@@ -12,7 +12,6 @@
 package org.eclipse.papyrus.dd.dg;
 
 import java.util.Map;
-
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.papyrus.dd.dc.Bounds;
 
@@ -56,7 +55,7 @@ public interface Canvas extends Group {
 	 * end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Bounds</em>' containment reference.
+	 *        the new value of the '<em>Bounds</em>' containment reference.
 	 * @see #getBounds()
 	 * @generated
 	 */
@@ -66,10 +65,10 @@ public interface Canvas extends Group {
 	 * <!-- begin-user-doc --> <!-- end-user-doc --> <!-- begin-model-doc -->
 	 *
 	 * @param diagnostics
-	 *            The chain of diagnostics to which problems are to be appended.
+	 *        The chain of diagnostics to which problems are to be appended.
 	 * @param context
-	 *            The cache of context-specific information. <!-- end-model-doc
-	 *            -->
+	 *        The cache of context-specific information. <!-- end-model-doc
+	 *        -->
 	 * @model annotation=
 	 *        "http://www.eclipse.org/emf/2002/Ecore/OCL body='transform->isEmpty()'"
 	 * @generated

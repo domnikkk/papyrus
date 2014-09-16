@@ -404,9 +404,11 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the
-	 * package package URI value.
+	 * package
+	 * package URI value.
 	 * <p>
-	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the
+	 * package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.dd.dg.DGPackage#eNS_URI
@@ -425,11 +427,11 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	private static boolean isInited = false;
 
 	/**
-	 * Creates, registers, and initializes the <b>Package</b> for this model,
-	 * and for any others upon which it depends.
+	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
 	 *
 	 * <p>
-	 * This method is used to initialize {@link DGPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * This method is used to initialize {@link DGPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they
+	 * should simply access that field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
@@ -437,11 +439,11 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 * @generated
 	 */
 	public static DGPackage init() {
-		if (isInited) {
-			return (DGPackage) EPackage.Registry.INSTANCE.getEPackage(DGPackage.eNS_URI);
+		if(isInited) {
+			return (DGPackage)EPackage.Registry.INSTANCE.getEPackage(DGPackage.eNS_URI);
 		}
 		// Obtain or create and register package
-		DGPackageImpl theDGPackage = (DGPackageImpl) (EPackage.Registry.INSTANCE.get(eNS_URI) instanceof DGPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new DGPackageImpl());
+		DGPackageImpl theDGPackage = (DGPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof DGPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new DGPackageImpl());
 		isInited = true;
 		// Initialize simple dependencies
 		DCPackage.eINSTANCE.eClass();
@@ -481,7 +483,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EReference getCanvas_Bounds() {
-		return (EReference) canvasEClass.getEStructuralFeatures().get(0);
+		return (EReference)canvasEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -511,7 +513,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EReference getGroup_Member() {
-		return (EReference) groupEClass.getEStructuralFeatures().get(0);
+		return (EReference)groupEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -522,7 +524,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EAttribute getGroup_Layout() {
-		return (EAttribute) groupEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)groupEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -542,7 +544,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EReference getGraphicalElement_ClipPath() {
-		return (EReference) graphicalElementEClass.getEStructuralFeatures().get(0);
+		return (EReference)graphicalElementEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -552,7 +554,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EReference getGraphicalElement_Group() {
-		return (EReference) graphicalElementEClass.getEStructuralFeatures().get(1);
+		return (EReference)graphicalElementEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -562,7 +564,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EAttribute getGraphicalElement_Class() {
-		return (EAttribute) graphicalElementEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)graphicalElementEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -572,7 +574,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EReference getGraphicalElement_Style() {
-		return (EReference) graphicalElementEClass.getEStructuralFeatures().get(3);
+		return (EReference)graphicalElementEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -582,7 +584,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EReference getGraphicalElement_Transform() {
-		return (EReference) graphicalElementEClass.getEStructuralFeatures().get(4);
+		return (EReference)graphicalElementEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -593,7 +595,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EAttribute getGraphicalElement_LayoutData() {
-		return (EAttribute) graphicalElementEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)graphicalElementEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -623,7 +625,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EAttribute getDefinition_Id() {
-		return (EAttribute) definitionEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)definitionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -653,7 +655,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EReference getMoveTo_Point() {
-		return (EReference) moveToEClass.getEStructuralFeatures().get(0);
+		return (EReference)moveToEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -673,7 +675,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EAttribute getPathCommand_IsRelative() {
-		return (EAttribute) pathCommandEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)pathCommandEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -703,7 +705,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EReference getStyle_Fill() {
-		return (EReference) styleEClass.getEStructuralFeatures().get(0);
+		return (EReference)styleEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -713,7 +715,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EAttribute getStyle_FillOpacity() {
-		return (EAttribute) styleEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)styleEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -723,7 +725,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EReference getStyle_Stroke() {
-		return (EReference) styleEClass.getEStructuralFeatures().get(2);
+		return (EReference)styleEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -733,7 +735,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EAttribute getStyle_StrokeWidth() {
-		return (EAttribute) styleEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)styleEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -743,7 +745,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EAttribute getStyle_StrokeOpacity() {
-		return (EAttribute) styleEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)styleEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -753,7 +755,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EAttribute getStyle_StrokeDashLength() {
-		return (EAttribute) styleEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)styleEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -763,7 +765,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EAttribute getStyle_FontSize() {
-		return (EAttribute) styleEClass.getEStructuralFeatures().get(6);
+		return (EAttribute)styleEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -773,7 +775,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EAttribute getStyle_FontName() {
-		return (EAttribute) styleEClass.getEStructuralFeatures().get(7);
+		return (EAttribute)styleEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -783,7 +785,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EAttribute getStyle_FontItalic() {
-		return (EAttribute) styleEClass.getEStructuralFeatures().get(8);
+		return (EAttribute)styleEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -793,7 +795,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EAttribute getStyle_FontBold() {
-		return (EAttribute) styleEClass.getEStructuralFeatures().get(9);
+		return (EAttribute)styleEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -803,7 +805,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EAttribute getStyle_FontDecoration() {
-		return (EAttribute) styleEClass.getEStructuralFeatures().get(10);
+		return (EAttribute)styleEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
@@ -873,7 +875,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EAttribute getPaint_Color() {
-		return (EAttribute) paintEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)paintEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -883,7 +885,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EReference getPaint_PaintServer() {
-		return (EReference) paintEClass.getEStructuralFeatures().get(1);
+		return (EReference)paintEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -913,7 +915,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EReference getPaintServer_Transform() {
-		return (EReference) paintServerEClass.getEStructuralFeatures().get(0);
+		return (EReference)paintServerEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -943,7 +945,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EReference getCircle_Center() {
-		return (EReference) circleEClass.getEStructuralFeatures().get(0);
+		return (EReference)circleEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -953,7 +955,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EAttribute getCircle_Radius() {
-		return (EAttribute) circleEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)circleEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -993,7 +995,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EReference getCubicCurveTo_Point() {
-		return (EReference) cubicCurveToEClass.getEStructuralFeatures().get(2);
+		return (EReference)cubicCurveToEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1003,7 +1005,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EReference getCubicCurveTo_StartControl() {
-		return (EReference) cubicCurveToEClass.getEStructuralFeatures().get(0);
+		return (EReference)cubicCurveToEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1013,7 +1015,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EReference getCubicCurveTo_EndControl() {
-		return (EReference) cubicCurveToEClass.getEStructuralFeatures().get(1);
+		return (EReference)cubicCurveToEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1027,13 +1029,14 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 *
 	 * @generated
 	 */
 	@Override
-	public EReference getDefinitions_Defnition() {
-		return (EReference) definitionsEClass.getEStructuralFeatures().get(0);
+	public EReference getDefinitions_Definition() {
+		return (EReference)definitionsEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1043,7 +1046,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EReference getDefinitions_StyleSheet() {
-		return (EReference) definitionsEClass.getEStructuralFeatures().get(1);
+		return (EReference)definitionsEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1063,7 +1066,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EReference getStyleSheet_Rule() {
-		return (EReference) styleSheetEClass.getEStructuralFeatures().get(0);
+		return (EReference)styleSheetEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1083,7 +1086,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EReference getStyleRule_Selector() {
-		return (EReference) styleRuleEClass.getEStructuralFeatures().get(0);
+		return (EReference)styleRuleEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1093,7 +1096,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EReference getStyleRule_Style() {
-		return (EReference) styleRuleEClass.getEStructuralFeatures().get(1);
+		return (EReference)styleRuleEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1113,7 +1116,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EAttribute getStyleSelector_Kind() {
-		return (EAttribute) styleSelectorEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)styleSelectorEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1123,7 +1126,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EAttribute getStyleSelector_Class() {
-		return (EAttribute) styleSelectorEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)styleSelectorEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1143,7 +1146,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EReference getEllipse_Center() {
-		return (EReference) ellipseEClass.getEStructuralFeatures().get(0);
+		return (EReference)ellipseEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1153,7 +1156,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EReference getEllipse_Radii() {
-		return (EReference) ellipseEClass.getEStructuralFeatures().get(1);
+		return (EReference)ellipseEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1173,7 +1176,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EReference getEllipticalArcTo_Point() {
-		return (EReference) ellipticalArcToEClass.getEStructuralFeatures().get(4);
+		return (EReference)ellipticalArcToEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -1183,7 +1186,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EReference getEllipticalArcTo_Radii() {
-		return (EReference) ellipticalArcToEClass.getEStructuralFeatures().get(0);
+		return (EReference)ellipticalArcToEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1193,7 +1196,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EAttribute getEllipticalArcTo_Rotation() {
-		return (EAttribute) ellipticalArcToEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)ellipticalArcToEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1203,7 +1206,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EAttribute getEllipticalArcTo_IsLargeArc() {
-		return (EAttribute) ellipticalArcToEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)ellipticalArcToEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1213,7 +1216,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EAttribute getEllipticalArcTo_IsSweep() {
-		return (EAttribute) ellipticalArcToEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)ellipticalArcToEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1233,7 +1236,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EReference getQuadraticCurveTo_Point() {
-		return (EReference) quadraticCurveToEClass.getEStructuralFeatures().get(1);
+		return (EReference)quadraticCurveToEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1243,7 +1246,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EReference getQuadraticCurveTo_Control() {
-		return (EReference) quadraticCurveToEClass.getEStructuralFeatures().get(0);
+		return (EReference)quadraticCurveToEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1263,7 +1266,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EReference getGradient_Stop() {
-		return (EReference) gradientEClass.getEStructuralFeatures().get(0);
+		return (EReference)gradientEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1283,7 +1286,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EAttribute getGradientStop_Color() {
-		return (EAttribute) gradientStopEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)gradientStopEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1293,7 +1296,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EAttribute getGradientStop_Offset() {
-		return (EAttribute) gradientStopEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)gradientStopEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1303,7 +1306,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EAttribute getGradientStop_Opacity() {
-		return (EAttribute) gradientStopEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)gradientStopEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1343,7 +1346,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EAttribute getImage_Source() {
-		return (EAttribute) imageEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)imageEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1353,7 +1356,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EReference getImage_Bounds() {
-		return (EReference) imageEClass.getEStructuralFeatures().get(1);
+		return (EReference)imageEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1363,7 +1366,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EAttribute getImage_IsAspectRatioPreserved() {
-		return (EAttribute) imageEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)imageEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1393,7 +1396,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EReference getLine_Start() {
-		return (EReference) lineEClass.getEStructuralFeatures().get(0);
+		return (EReference)lineEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1403,7 +1406,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EReference getLine_End() {
-		return (EReference) lineEClass.getEStructuralFeatures().get(1);
+		return (EReference)lineEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1423,7 +1426,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EReference getMarkedElement_EndMarker() {
-		return (EReference) markedElementEClass.getEStructuralFeatures().get(0);
+		return (EReference)markedElementEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1433,7 +1436,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EReference getMarkedElement_MidMarker() {
-		return (EReference) markedElementEClass.getEStructuralFeatures().get(1);
+		return (EReference)markedElementEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1443,7 +1446,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EReference getMarkedElement_StartMarker() {
-		return (EReference) markedElementEClass.getEStructuralFeatures().get(2);
+		return (EReference)markedElementEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1493,7 +1496,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EReference getMarker_Size() {
-		return (EReference) markerEClass.getEStructuralFeatures().get(0);
+		return (EReference)markerEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1503,7 +1506,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EReference getMarker_Reference() {
-		return (EReference) markerEClass.getEStructuralFeatures().get(1);
+		return (EReference)markerEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1523,7 +1526,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EReference getLinearGradient_Start() {
-		return (EReference) linearGradientEClass.getEStructuralFeatures().get(0);
+		return (EReference)linearGradientEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1533,7 +1536,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EReference getLinearGradient_End() {
-		return (EReference) linearGradientEClass.getEStructuralFeatures().get(1);
+		return (EReference)linearGradientEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1563,7 +1566,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EReference getLineTo_Point() {
-		return (EReference) lineToEClass.getEStructuralFeatures().get(0);
+		return (EReference)lineToEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1583,7 +1586,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EAttribute getMatrix_A() {
-		return (EAttribute) matrixEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)matrixEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1593,7 +1596,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EAttribute getMatrix_B() {
-		return (EAttribute) matrixEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)matrixEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1603,7 +1606,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EAttribute getMatrix_C() {
-		return (EAttribute) matrixEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)matrixEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1613,7 +1616,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EAttribute getMatrix_D() {
-		return (EAttribute) matrixEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)matrixEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1623,7 +1626,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EAttribute getMatrix_E() {
-		return (EAttribute) matrixEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)matrixEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -1633,7 +1636,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EAttribute getMatrix_F() {
-		return (EAttribute) matrixEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)matrixEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -1653,7 +1656,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EReference getPath_Command() {
-		return (EReference) pathEClass.getEStructuralFeatures().get(0);
+		return (EReference)pathEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1683,7 +1686,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EReference getPattern_Bounds() {
-		return (EReference) patternEClass.getEStructuralFeatures().get(0);
+		return (EReference)patternEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1693,7 +1696,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EReference getPattern_Tile() {
-		return (EReference) patternEClass.getEStructuralFeatures().get(1);
+		return (EReference)patternEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1713,7 +1716,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EReference getPolygon_Point() {
-		return (EReference) polygonEClass.getEStructuralFeatures().get(0);
+		return (EReference)polygonEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1733,7 +1736,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EReference getPolyline_Point() {
-		return (EReference) polylineEClass.getEStructuralFeatures().get(0);
+		return (EReference)polylineEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1753,7 +1756,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EReference getRadialGradient_Center() {
-		return (EReference) radialGradientEClass.getEStructuralFeatures().get(0);
+		return (EReference)radialGradientEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1763,7 +1766,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EReference getRadialGradient_Focus() {
-		return (EReference) radialGradientEClass.getEStructuralFeatures().get(1);
+		return (EReference)radialGradientEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1773,7 +1776,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EAttribute getRadialGradient_Radius() {
-		return (EAttribute) radialGradientEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)radialGradientEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1823,7 +1826,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EReference getRectangle_Bounds() {
-		return (EReference) rectangleEClass.getEStructuralFeatures().get(0);
+		return (EReference)rectangleEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1833,7 +1836,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EAttribute getRectangle_CornerRadius() {
-		return (EAttribute) rectangleEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)rectangleEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1863,7 +1866,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EAttribute getRootCanvas_BackgroundColor() {
-		return (EAttribute) rootCanvasEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)rootCanvasEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1873,7 +1876,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EReference getRootCanvas_Definitions() {
-		return (EReference) rootCanvasEClass.getEStructuralFeatures().get(1);
+		return (EReference)rootCanvasEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1883,7 +1886,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EReference getRootCanvas_ExternalStyleSheet() {
-		return (EReference) rootCanvasEClass.getEStructuralFeatures().get(2);
+		return (EReference)rootCanvasEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1894,7 +1897,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EAttribute getRootCanvas_Script() {
-		return (EAttribute) rootCanvasEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)rootCanvasEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1914,7 +1917,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EAttribute getRotate_Angle() {
-		return (EAttribute) rotateEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)rotateEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1924,7 +1927,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EReference getRotate_Center() {
-		return (EReference) rotateEClass.getEStructuralFeatures().get(1);
+		return (EReference)rotateEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1944,7 +1947,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EAttribute getScale_FactorX() {
-		return (EAttribute) scaleEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)scaleEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1954,7 +1957,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EAttribute getScale_FactorY() {
-		return (EAttribute) scaleEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)scaleEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1984,7 +1987,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EAttribute getSkew_AngleX() {
-		return (EAttribute) skewEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)skewEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1994,7 +1997,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EAttribute getSkew_AngleY() {
-		return (EAttribute) skewEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)skewEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -2014,17 +2017,18 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EAttribute getText_Data() {
-		return (EAttribute) textEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)textEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 *
 	 * @generated
 	 */
 	@Override
-	public EReference getText_Position() {
-		return (EReference) textEClass.getEStructuralFeatures().get(1);
+	public EReference getText_Bounds() {
+		return (EReference)textEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -2035,7 +2039,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EAttribute getText_Anchor() {
-		return (EAttribute) textEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)textEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -2065,7 +2069,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EAttribute getTranslate_DeltaX() {
-		return (EAttribute) translateEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)translateEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -2075,7 +2079,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EAttribute getTranslate_DeltaY() {
-		return (EAttribute) translateEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)translateEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -2095,7 +2099,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EReference getUse_Bounds() {
-		return (EReference) useEClass.getEStructuralFeatures().get(0);
+		return (EReference)useEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -2105,7 +2109,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public EReference getUse_ReferencedElement() {
-		return (EReference) useEClass.getEStructuralFeatures().get(1);
+		return (EReference)useEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -2156,7 +2160,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	@Override
 	public DGFactory getDGFactory() {
-		return (DGFactory) getEFactoryInstance();
+		return (DGFactory)getEFactoryInstance();
 	}
 
 	/**
@@ -2175,7 +2179,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 * @generated
 	 */
 	public void createPackageContents() {
-		if (isCreated) {
+		if(isCreated) {
 			return;
 		}
 		isCreated = true;
@@ -2236,7 +2240,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 		createEReference(cubicCurveToEClass, CUBIC_CURVE_TO__END_CONTROL);
 		createEReference(cubicCurveToEClass, CUBIC_CURVE_TO__POINT);
 		definitionsEClass = createEClass(DEFINITIONS);
-		createEReference(definitionsEClass, DEFINITIONS__DEFNITION);
+		createEReference(definitionsEClass, DEFINITIONS__DEFINITION);
 		createEReference(definitionsEClass, DEFINITIONS__STYLE_SHEET);
 		styleSheetEClass = createEClass(STYLE_SHEET);
 		createEReference(styleSheetEClass, STYLE_SHEET__RULE);
@@ -2335,7 +2339,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 		createEAttribute(skewEClass, SKEW__ANGLE_Y);
 		textEClass = createEClass(TEXT);
 		createEAttribute(textEClass, TEXT__DATA);
-		createEReference(textEClass, TEXT__POSITION);
+		createEReference(textEClass, TEXT__BOUNDS);
 		createEAttribute(textEClass, TEXT__ANCHOR);
 		createEOperation(textEClass, TEXT___DATA_CANNOT_BE_EMPTY__DIAGNOSTICCHAIN_MAP);
 		translateEClass = createEClass(TRANSLATE);
@@ -2366,7 +2370,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 * @generated
 	 */
 	public void initializePackageContents() {
-		if (isInitialized) {
+		if(isInitialized) {
 			return;
 		}
 		isInitialized = true;
@@ -2375,7 +2379,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 		setNsPrefix(eNS_PREFIX);
 		setNsURI(eNS_URI);
 		// Obtain other dependent packages
-		DCPackage theDCPackage = (DCPackage) EPackage.Registry.INSTANCE.getEPackage(DCPackage.eNS_URI);
+		DCPackage theDCPackage = (DCPackage)EPackage.Registry.INSTANCE.getEPackage(DCPackage.eNS_URI);
 		// Create type parameters
 		// Set bounds for type parameters
 		// Add supertypes to classes
@@ -2424,17 +2428,14 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 		initEClass(groupEClass, Group.class, "Group", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getGroup_Member(), this.getGraphicalElement(), this.getGraphicalElement_Group(), "member", null, 0, -1, Group.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
+		initEReference(getGroup_Member(), this.getGraphicalElement(), this.getGraphicalElement_Group(), "member", null, 0, -1, Group.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getGroup_Layout(), theDCPackage.getString(), "layout", null, 0, 1, Group.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEClass(graphicalElementEClass, GraphicalElement.class, "GraphicalElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getGraphicalElement_ClipPath(), this.getClipPath(), null, "clipPath", null, 0, 1, GraphicalElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getGraphicalElement_Group(), this.getGroup(), this.getGroup_Member(), "group", null, 0, 1, GraphicalElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				!IS_ORDERED);
+		initEReference(getGraphicalElement_Group(), this.getGroup(), this.getGroup_Member(), "group", null, 0, 1, GraphicalElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getGraphicalElement_Class(), theDCPackage.getString(), "class", null, 0, -1, GraphicalElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getGraphicalElement_Style(), this.getStyle(), null, "style", null, 0, 1, GraphicalElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getGraphicalElement_Transform(), this.getTransform(), null, "transform", null, 0, -1, GraphicalElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
+		initEReference(getGraphicalElement_Transform(), this.getTransform(), null, "transform", null, 0, -1, GraphicalElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getGraphicalElement_LayoutData(), theDCPackage.getString(), "layoutData", null, 0, 1, GraphicalElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		op = initEOperation(getGraphicalElement__ReferencedClippathHasId__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "referencedClippathHasId", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -2538,13 +2539,11 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 		initEClass(closePathEClass, ClosePath.class, "ClosePath", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEClass(cubicCurveToEClass, CubicCurveTo.class, "CubicCurveTo", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getCubicCurveTo_StartControl(), theDCPackage.getPoint(), null, "startControl", null, 1, 1, CubicCurveTo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				!IS_ORDERED);
-		initEReference(getCubicCurveTo_EndControl(), theDCPackage.getPoint(), null, "endControl", null, 1, 1, CubicCurveTo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				!IS_ORDERED);
+		initEReference(getCubicCurveTo_StartControl(), theDCPackage.getPoint(), null, "startControl", null, 1, 1, CubicCurveTo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getCubicCurveTo_EndControl(), theDCPackage.getPoint(), null, "endControl", null, 1, 1, CubicCurveTo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getCubicCurveTo_Point(), theDCPackage.getPoint(), null, "point", null, 1, 1, CubicCurveTo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEClass(definitionsEClass, Definitions.class, "Definitions", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getDefinitions_Defnition(), this.getDefinition(), null, "defnition", null, 0, -1, Definitions.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDefinitions_Definition(), this.getDefinition(), null, "definition", null, 0, -1, Definitions.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDefinitions_StyleSheet(), this.getStyleSheet(), null, "styleSheet", null, 0, 1, Definitions.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEClass(styleSheetEClass, StyleSheet.class, "StyleSheet", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getStyleSheet_Rule(), this.getStyleRule(), null, "rule", null, 0, -1, StyleSheet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2558,15 +2557,13 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 		initEReference(getEllipse_Center(), theDCPackage.getPoint(), null, "center", null, 1, 1, Ellipse.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getEllipse_Radii(), theDCPackage.getDimension(), null, "radii", null, 1, 1, Ellipse.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEClass(ellipticalArcToEClass, EllipticalArcTo.class, "EllipticalArcTo", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getEllipticalArcTo_Radii(), theDCPackage.getDimension(), null, "radii", null, 1, 1, EllipticalArcTo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				!IS_ORDERED);
+		initEReference(getEllipticalArcTo_Radii(), theDCPackage.getDimension(), null, "radii", null, 1, 1, EllipticalArcTo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getEllipticalArcTo_Rotation(), theDCPackage.getReal(), "rotation", null, 1, 1, EllipticalArcTo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getEllipticalArcTo_IsLargeArc(), theDCPackage.getBoolean(), "isLargeArc", null, 1, 1, EllipticalArcTo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getEllipticalArcTo_IsSweep(), theDCPackage.getBoolean(), "isSweep", null, 1, 1, EllipticalArcTo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getEllipticalArcTo_Point(), theDCPackage.getPoint(), null, "point", null, 1, 1, EllipticalArcTo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEClass(quadraticCurveToEClass, QuadraticCurveTo.class, "QuadraticCurveTo", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getQuadraticCurveTo_Control(), theDCPackage.getPoint(), null, "control", null, 1, 1, QuadraticCurveTo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				!IS_ORDERED);
+		initEReference(getQuadraticCurveTo_Control(), theDCPackage.getPoint(), null, "control", null, 1, 1, QuadraticCurveTo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getQuadraticCurveTo_Point(), theDCPackage.getPoint(), null, "point", null, 1, 1, QuadraticCurveTo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEClass(gradientEClass, Gradient.class, "Gradient", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getGradient_Stop(), this.getGradientStop(), null, "stop", null, 2, -1, Gradient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2715,8 +2712,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 		initEClass(rootCanvasEClass, RootCanvas.class, "RootCanvas", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRootCanvas_BackgroundColor(), theDCPackage.getColor(), "backgroundColor", null, 0, 1, RootCanvas.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getRootCanvas_Definitions(), this.getDefinitions(), null, "definitions", null, 0, 1, RootCanvas.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRootCanvas_ExternalStyleSheet(), this.getStyleSheet(), null, "externalStyleSheet", null, 0, -1, RootCanvas.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
+		initEReference(getRootCanvas_ExternalStyleSheet(), this.getStyleSheet(), null, "externalStyleSheet", null, 0, -1, RootCanvas.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRootCanvas_Script(), theDCPackage.getString(), "script", null, 0, -1, RootCanvas.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEClass(rotateEClass, Rotate.class, "Rotate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRotate_Angle(), theDCPackage.getReal(), "angle", null, 1, 1, Rotate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -2737,7 +2733,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 		initEAttribute(getSkew_AngleY(), theDCPackage.getReal(), "angleY", null, 1, 1, Skew.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEClass(textEClass, Text.class, "Text", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getText_Data(), theDCPackage.getString(), "data", null, 1, 1, Text.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getText_Position(), theDCPackage.getPoint(), null, "position", null, 1, 1, Text.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getText_Bounds(), theDCPackage.getBounds(), null, "bounds", null, 1, 1, Text.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getText_Anchor(), this.getTextAnchor(), "anchor", null, 0, 1, Text.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		op = initEOperation(getText__DataCannotBeEmpty__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "dataCannotBeEmpty", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -2803,7 +2799,7 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	protected void createEcoreAnnotations() {
 		String source = "http://www.eclipse.org/emf/2002/Ecore";
-		addAnnotation(this, source, new String[] { "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL" });
+		addAnnotation(this, source, new String[]{ "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL" });
 	}
 
 	/**
@@ -2815,30 +2811,30 @@ public class DGPackageImpl extends EPackageImpl implements DGPackage {
 	 */
 	protected void createOCLAnnotations() {
 		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";
-		addAnnotation(getCanvas__CanvasCannotHaveTransforms__DiagnosticChain_Map(), source, new String[] { "body", "transform->isEmpty()" });
-		addAnnotation(getGraphicalElement__ReferencedClippathHasId__DiagnosticChain_Map(), source, new String[] { "body", "clipPath->notEmpty() implies clipPath.id->notEmpty()" });
-		addAnnotation(getDefinition__IdCannotBeEmpty__DiagnosticChain_Map(), source, new String[] { "body", "id->notEmpty() implies id.size() > 0" });
-		addAnnotation(getStyle__ValidFontSize__DiagnosticChain_Map(), source, new String[] { "body", "fontSize >=  0" });
-		addAnnotation(getStyle__ValidFillOpacity__DiagnosticChain_Map(), source, new String[] { "body", "fillOpacity >=  0 and fillOpacity <=1" });
-		addAnnotation(getStyle__ValidStrokeWidth__DiagnosticChain_Map(), source, new String[] { "body", "strokeWidth >=  0" });
-		addAnnotation(getStyle__ValidDashLengthSize__DiagnosticChain_Map(), source, new String[] { "body", "strokeDashLength->size().mod(2) = 0" });
-		addAnnotation(getStyle__ValidStrokeOpacity__DiagnosticChain_Map(), source, new String[] { "body", "strokeOpacity >=  0 and strokeOpacity <=1" });
-		addAnnotation(getPaint__ReferencedPaintServerHasId__DiagnosticChain_Map(), source, new String[] { "body", "paintServer->notEmpty() implies paintServer.id->notEmpty()" });
-		addAnnotation(getCircle__NonNegativeRadius__DiagnosticChain_Map(), source, new String[] { "body", "radius >= 0" });
-		addAnnotation(getGradientStop__ValidOffset__DiagnosticChain_Map(), source, new String[] { "body", "offset>=0 and offset<=1" });
-		addAnnotation(getGradientStop__ValidOpacity__DiagnosticChain_Map(), source, new String[] { "body", "opacity>=0 and opacity<=1" });
-		addAnnotation(getImage__SourceCannotBeEmpty__DiagnosticChain_Map(), source, new String[] { "body", "source->notEmpty() implies source.size() > 0" });
-		addAnnotation(getMarkedElement__ReferencedStartMarkerHasId__DiagnosticChain_Map(), source, new String[] { "body", "startMarker->notEmpty() implies startMarker.id->notEmpty()" });
-		addAnnotation(getMarkedElement__ReferencedMidMarkerHasId__DiagnosticChain_Map(), source, new String[] { "body", "midMarker->notEmpty() implies midMarker.id->notEmpty()" });
-		addAnnotation(getMarkedElement__ReferencedEndMarkerHasId__DiagnosticChain_Map(), source, new String[] { "body", "endMarker->notEmpty() implies endMarker.id->notEmpty()" });
-		addAnnotation(getLinearGradient__ValidGradientVector__DiagnosticChain_Map(), source, new String[] { "body", "start.x>=0 and start.x<=1 and end.x>=0 and end.x<=1 and start.y>=0 and start.y<=1 and end.y>=0 and end.y<=1" });
-		addAnnotation(getPath__FirstCommandMustBeMove__DiagnosticChain_Map(), source, new String[] { "body", "command->first().oclIsKindOf(MoveTo)" });
-		addAnnotation(getRadialGradient__ValidCenterPoint__DiagnosticChain_Map(), source, new String[] { "body", "centerX>=0 and centerX<=1 and centerY>=0 and centerY<=1" });
-		addAnnotation(getRadialGradient__ValidFocusPoint__DiagnosticChain_Map(), source, new String[] { "body", "focusX>=0 and focusX<=1 and focusY>=0 and focusY<=1" });
-		addAnnotation(getRadialGradient__ValidRadius__DiagnosticChain_Map(), source, new String[] { "body", "radius>=0 and radius<=1" });
-		addAnnotation(getRectangle__NonNegativeCornerRadius__DiagnosticChain_Map(), source, new String[] { "body", "cornerRadius >= 0" });
-		addAnnotation(getScale__Nonnegativescale__DiagnosticChain_Map(), source, new String[] { "body", "factorX>=0 and factorY>=0" });
-		addAnnotation(getText__DataCannotBeEmpty__DiagnosticChain_Map(), source, new String[] { "body", "data->notEmpty() implies data.size() > 0" });
-		addAnnotation(getUse__ReferencedElementHasId__DiagnosticChain_Map(), source, new String[] { "body", "referencedElement->notEmpty() implies referencedElement.id->notEmpty()" });
+		addAnnotation(getCanvas__CanvasCannotHaveTransforms__DiagnosticChain_Map(), source, new String[]{ "body", "transform->isEmpty()" });
+		addAnnotation(getGraphicalElement__ReferencedClippathHasId__DiagnosticChain_Map(), source, new String[]{ "body", "clipPath->notEmpty() implies clipPath.id->notEmpty()" });
+		addAnnotation(getDefinition__IdCannotBeEmpty__DiagnosticChain_Map(), source, new String[]{ "body", "id->notEmpty() implies id.size() > 0" });
+		addAnnotation(getStyle__ValidFontSize__DiagnosticChain_Map(), source, new String[]{ "body", "fontSize >=  0" });
+		addAnnotation(getStyle__ValidFillOpacity__DiagnosticChain_Map(), source, new String[]{ "body", "fillOpacity >=  0 and fillOpacity <=1" });
+		addAnnotation(getStyle__ValidStrokeWidth__DiagnosticChain_Map(), source, new String[]{ "body", "strokeWidth >=  0" });
+		addAnnotation(getStyle__ValidDashLengthSize__DiagnosticChain_Map(), source, new String[]{ "body", "strokeDashLength->size().mod(2) = 0" });
+		addAnnotation(getStyle__ValidStrokeOpacity__DiagnosticChain_Map(), source, new String[]{ "body", "strokeOpacity >=  0 and strokeOpacity <=1" });
+		addAnnotation(getPaint__ReferencedPaintServerHasId__DiagnosticChain_Map(), source, new String[]{ "body", "paintServer->notEmpty() implies paintServer.id->notEmpty()" });
+		addAnnotation(getCircle__NonNegativeRadius__DiagnosticChain_Map(), source, new String[]{ "body", "radius >= 0" });
+		addAnnotation(getGradientStop__ValidOffset__DiagnosticChain_Map(), source, new String[]{ "body", "offset>=0 and offset<=1" });
+		addAnnotation(getGradientStop__ValidOpacity__DiagnosticChain_Map(), source, new String[]{ "body", "opacity>=0 and opacity<=1" });
+		addAnnotation(getImage__SourceCannotBeEmpty__DiagnosticChain_Map(), source, new String[]{ "body", "source->notEmpty() implies source.size() > 0" });
+		addAnnotation(getMarkedElement__ReferencedStartMarkerHasId__DiagnosticChain_Map(), source, new String[]{ "body", "startMarker->notEmpty() implies startMarker.id->notEmpty()" });
+		addAnnotation(getMarkedElement__ReferencedMidMarkerHasId__DiagnosticChain_Map(), source, new String[]{ "body", "midMarker->notEmpty() implies midMarker.id->notEmpty()" });
+		addAnnotation(getMarkedElement__ReferencedEndMarkerHasId__DiagnosticChain_Map(), source, new String[]{ "body", "endMarker->notEmpty() implies endMarker.id->notEmpty()" });
+		addAnnotation(getLinearGradient__ValidGradientVector__DiagnosticChain_Map(), source, new String[]{ "body", "start.x>=0 and start.x<=1 and end.x>=0 and end.x<=1 and start.y>=0 and start.y<=1 and end.y>=0 and end.y<=1" });
+		addAnnotation(getPath__FirstCommandMustBeMove__DiagnosticChain_Map(), source, new String[]{ "body", "command->first().oclIsKindOf(MoveTo)" });
+		addAnnotation(getRadialGradient__ValidCenterPoint__DiagnosticChain_Map(), source, new String[]{ "body", "centerX>=0 and centerX<=1 and centerY>=0 and centerY<=1" });
+		addAnnotation(getRadialGradient__ValidFocusPoint__DiagnosticChain_Map(), source, new String[]{ "body", "focusX>=0 and focusX<=1 and focusY>=0 and focusY<=1" });
+		addAnnotation(getRadialGradient__ValidRadius__DiagnosticChain_Map(), source, new String[]{ "body", "radius>=0 and radius<=1" });
+		addAnnotation(getRectangle__NonNegativeCornerRadius__DiagnosticChain_Map(), source, new String[]{ "body", "cornerRadius >= 0" });
+		addAnnotation(getScale__Nonnegativescale__DiagnosticChain_Map(), source, new String[]{ "body", "factorX>=0 and factorY>=0" });
+		addAnnotation(getText__DataCannotBeEmpty__DiagnosticChain_Map(), source, new String[]{ "body", "data->notEmpty() implies data.size() > 0" });
+		addAnnotation(getUse__ReferencedElementHasId__DiagnosticChain_Map(), source, new String[]{ "body", "referencedElement->notEmpty() implies referencedElement.id->notEmpty()" });
 	}
 } // DGPackageImpl

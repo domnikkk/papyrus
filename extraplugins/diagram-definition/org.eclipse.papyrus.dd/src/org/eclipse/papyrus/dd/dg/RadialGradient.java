@@ -58,7 +58,7 @@ public interface RadialGradient extends Gradient {
 	 * end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Center</em>' containment reference.
+	 *        the new value of the '<em>Center</em>' containment reference.
 	 * @see #getCenter()
 	 * @generated
 	 */
@@ -83,7 +83,7 @@ public interface RadialGradient extends Gradient {
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Focus</em>' containment reference.
+	 *        the new value of the '<em>Focus</em>' containment reference.
 	 * @see #getFocus()
 	 * @generated
 	 */
@@ -111,7 +111,7 @@ public interface RadialGradient extends Gradient {
 	 * -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Radius</em>' attribute.
+	 *        the new value of the '<em>Radius</em>' attribute.
 	 * @see #getRadius()
 	 * @generated
 	 */
@@ -122,10 +122,10 @@ public interface RadialGradient extends Gradient {
 	 * the center point coordinates must be between 0 and 1
 	 *
 	 * @param diagnostics
-	 *            The chain of diagnostics to which problems are to be appended.
+	 *        The chain of diagnostics to which problems are to be appended.
 	 * @param context
-	 *            The cache of context-specific information. <!-- end-model-doc
-	 *            -->
+	 *        The cache of context-specific information. <!-- end-model-doc
+	 *        -->
 	 * @model annotation=
 	 *        "http://www.eclipse.org/emf/2002/Ecore/OCL body='centerX>=0 and centerX<=1 and centerY>=0 and centerY<=1'"
 	 * @generated
@@ -137,10 +137,10 @@ public interface RadialGradient extends Gradient {
 	 * the focus point coordinates must be between 0 and 1
 	 *
 	 * @param diagnostics
-	 *            The chain of diagnostics to which problems are to be appended.
+	 *        The chain of diagnostics to which problems are to be appended.
 	 * @param context
-	 *            The cache of context-specific information. <!-- end-model-doc
-	 *            -->
+	 *        The cache of context-specific information. <!-- end-model-doc
+	 *        -->
 	 * @model annotation=
 	 *        "http://www.eclipse.org/emf/2002/Ecore/OCL body='focusX>=0 and focusX<=1 and focusY>=0 and focusY<=1'"
 	 * @generated
@@ -152,10 +152,10 @@ public interface RadialGradient extends Gradient {
 	 * the radius must be between 0 and 1
 	 *
 	 * @param diagnostics
-	 *            The chain of diagnostics to which problems are to be appended.
+	 *        The chain of diagnostics to which problems are to be appended.
 	 * @param context
-	 *            The cache of context-specific information. <!-- end-model-doc
-	 *            -->
+	 *        The cache of context-specific information. <!-- end-model-doc
+	 *        -->
 	 * @model annotation=
 	 *        "http://www.eclipse.org/emf/2002/Ecore/OCL body='radius>=0 and radius<=1'"
 	 * @generated

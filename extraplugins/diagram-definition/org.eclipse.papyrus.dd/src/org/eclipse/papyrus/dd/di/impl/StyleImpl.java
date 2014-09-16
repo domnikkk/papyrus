@@ -12,7 +12,9 @@
 package org.eclipse.papyrus.dd.di.impl;
 
 import org.eclipse.emf.ecore.EClass;
+
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import org.eclipse.papyrus.dd.di.DIPackage;
 import org.eclipse.papyrus.dd.di.Style;
 

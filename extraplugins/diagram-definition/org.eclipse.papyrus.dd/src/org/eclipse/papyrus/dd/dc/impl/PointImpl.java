@@ -12,9 +12,12 @@
 package org.eclipse.papyrus.dd.dc.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EClass;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import org.eclipse.papyrus.dd.dc.DCPackage;
 import org.eclipse.papyrus.dd.dc.Point;
 
@@ -132,7 +135,7 @@ public class PointImpl extends MinimalEObjectImpl.Container implements Point {
 		x = newX;
 		boolean oldXESet = xESet;
 		xESet = true;
-		if (eNotificationRequired()) {
+		if(eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DCPackage.POINT__X, oldX, x, !oldXESet));
 		}
 	}
@@ -148,7 +151,7 @@ public class PointImpl extends MinimalEObjectImpl.Container implements Point {
 		boolean oldXESet = xESet;
 		x = X_EDEFAULT;
 		xESet = false;
-		if (eNotificationRequired()) {
+		if(eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.UNSET, DCPackage.POINT__X, oldX, X_EDEFAULT, oldXESet));
 		}
 	}
@@ -184,7 +187,7 @@ public class PointImpl extends MinimalEObjectImpl.Container implements Point {
 		y = newY;
 		boolean oldYESet = yESet;
 		yESet = true;
-		if (eNotificationRequired()) {
+		if(eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DCPackage.POINT__Y, oldY, y, !oldYESet));
 		}
 	}
@@ -200,7 +203,7 @@ public class PointImpl extends MinimalEObjectImpl.Container implements Point {
 		boolean oldYESet = yESet;
 		y = Y_EDEFAULT;
 		yESet = false;
-		if (eNotificationRequired()) {
+		if(eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.UNSET, DCPackage.POINT__Y, oldY, Y_EDEFAULT, oldYESet));
 		}
 	}
@@ -222,7 +225,7 @@ public class PointImpl extends MinimalEObjectImpl.Container implements Point {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch(featureID) {
 		case DCPackage.POINT__X:
 			return getX();
 		case DCPackage.POINT__Y:
@@ -238,12 +241,12 @@ public class PointImpl extends MinimalEObjectImpl.Container implements Point {
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch(featureID) {
 		case DCPackage.POINT__X:
-			setX((Double) newValue);
+			setX((Double)newValue);
 			return;
 		case DCPackage.POINT__Y:
-			setY((Double) newValue);
+			setY((Double)newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -256,7 +259,7 @@ public class PointImpl extends MinimalEObjectImpl.Container implements Point {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch(featureID) {
 		case DCPackage.POINT__X:
 			unsetX();
 			return;
@@ -274,7 +277,7 @@ public class PointImpl extends MinimalEObjectImpl.Container implements Point {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch(featureID) {
 		case DCPackage.POINT__X:
 			return isSetX();
 		case DCPackage.POINT__Y:
@@ -290,18 +293,18 @@ public class PointImpl extends MinimalEObjectImpl.Container implements Point {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
+		if(eIsProxy()) {
 			return super.toString();
 		}
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (x: ");
-		if (xESet) {
+		if(xESet) {
 			result.append(x);
 		} else {
 			result.append("<unset>");
 		}
 		result.append(", y: ");
-		if (yESet) {
+		if(yESet) {
 			result.append(y);
 		} else {
 			result.append("<unset>");

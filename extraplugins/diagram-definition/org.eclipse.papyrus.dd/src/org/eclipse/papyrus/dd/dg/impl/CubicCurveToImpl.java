@@ -13,10 +13,14 @@ package org.eclipse.papyrus.dd.dg.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.eclipse.papyrus.dd.dc.Point;
+
 import org.eclipse.papyrus.dd.dg.CubicCurveTo;
 import org.eclipse.papyrus.dd.dg.DGPackage;
 
@@ -103,9 +107,9 @@ public class CubicCurveToImpl extends PathCommandImpl implements CubicCurveTo {
 	public NotificationChain basicSetPoint(Point newPoint, NotificationChain msgs) {
 		Point oldPoint = point;
 		point = newPoint;
-		if (eNotificationRequired()) {
+		if(eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DGPackage.CUBIC_CURVE_TO__POINT, oldPoint, newPoint);
-			if (msgs == null) {
+			if(msgs == null) {
 				msgs = notification;
 			} else {
 				msgs.add(notification);
@@ -121,19 +125,19 @@ public class CubicCurveToImpl extends PathCommandImpl implements CubicCurveTo {
 	 */
 	@Override
 	public void setPoint(Point newPoint) {
-		if (newPoint != point) {
+		if(newPoint != point) {
 			NotificationChain msgs = null;
-			if (point != null) {
-				msgs = ((InternalEObject) point).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DGPackage.CUBIC_CURVE_TO__POINT, null, msgs);
+			if(point != null) {
+				msgs = ((InternalEObject)point).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DGPackage.CUBIC_CURVE_TO__POINT, null, msgs);
 			}
-			if (newPoint != null) {
-				msgs = ((InternalEObject) newPoint).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DGPackage.CUBIC_CURVE_TO__POINT, null, msgs);
+			if(newPoint != null) {
+				msgs = ((InternalEObject)newPoint).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DGPackage.CUBIC_CURVE_TO__POINT, null, msgs);
 			}
 			msgs = basicSetPoint(newPoint, msgs);
-			if (msgs != null) {
+			if(msgs != null) {
 				msgs.dispatch();
 			}
-		} else if (eNotificationRequired()) {
+		} else if(eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.CUBIC_CURVE_TO__POINT, newPoint, newPoint));
 		}
 	}
@@ -156,9 +160,9 @@ public class CubicCurveToImpl extends PathCommandImpl implements CubicCurveTo {
 	public NotificationChain basicSetStartControl(Point newStartControl, NotificationChain msgs) {
 		Point oldStartControl = startControl;
 		startControl = newStartControl;
-		if (eNotificationRequired()) {
+		if(eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DGPackage.CUBIC_CURVE_TO__START_CONTROL, oldStartControl, newStartControl);
-			if (msgs == null) {
+			if(msgs == null) {
 				msgs = notification;
 			} else {
 				msgs.add(notification);
@@ -174,19 +178,19 @@ public class CubicCurveToImpl extends PathCommandImpl implements CubicCurveTo {
 	 */
 	@Override
 	public void setStartControl(Point newStartControl) {
-		if (newStartControl != startControl) {
+		if(newStartControl != startControl) {
 			NotificationChain msgs = null;
-			if (startControl != null) {
-				msgs = ((InternalEObject) startControl).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DGPackage.CUBIC_CURVE_TO__START_CONTROL, null, msgs);
+			if(startControl != null) {
+				msgs = ((InternalEObject)startControl).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DGPackage.CUBIC_CURVE_TO__START_CONTROL, null, msgs);
 			}
-			if (newStartControl != null) {
-				msgs = ((InternalEObject) newStartControl).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DGPackage.CUBIC_CURVE_TO__START_CONTROL, null, msgs);
+			if(newStartControl != null) {
+				msgs = ((InternalEObject)newStartControl).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DGPackage.CUBIC_CURVE_TO__START_CONTROL, null, msgs);
 			}
 			msgs = basicSetStartControl(newStartControl, msgs);
-			if (msgs != null) {
+			if(msgs != null) {
 				msgs.dispatch();
 			}
-		} else if (eNotificationRequired()) {
+		} else if(eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.CUBIC_CURVE_TO__START_CONTROL, newStartControl, newStartControl));
 		}
 	}
@@ -209,9 +213,9 @@ public class CubicCurveToImpl extends PathCommandImpl implements CubicCurveTo {
 	public NotificationChain basicSetEndControl(Point newEndControl, NotificationChain msgs) {
 		Point oldEndControl = endControl;
 		endControl = newEndControl;
-		if (eNotificationRequired()) {
+		if(eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DGPackage.CUBIC_CURVE_TO__END_CONTROL, oldEndControl, newEndControl);
-			if (msgs == null) {
+			if(msgs == null) {
 				msgs = notification;
 			} else {
 				msgs.add(notification);
@@ -227,19 +231,19 @@ public class CubicCurveToImpl extends PathCommandImpl implements CubicCurveTo {
 	 */
 	@Override
 	public void setEndControl(Point newEndControl) {
-		if (newEndControl != endControl) {
+		if(newEndControl != endControl) {
 			NotificationChain msgs = null;
-			if (endControl != null) {
-				msgs = ((InternalEObject) endControl).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DGPackage.CUBIC_CURVE_TO__END_CONTROL, null, msgs);
+			if(endControl != null) {
+				msgs = ((InternalEObject)endControl).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DGPackage.CUBIC_CURVE_TO__END_CONTROL, null, msgs);
 			}
-			if (newEndControl != null) {
-				msgs = ((InternalEObject) newEndControl).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DGPackage.CUBIC_CURVE_TO__END_CONTROL, null, msgs);
+			if(newEndControl != null) {
+				msgs = ((InternalEObject)newEndControl).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DGPackage.CUBIC_CURVE_TO__END_CONTROL, null, msgs);
 			}
 			msgs = basicSetEndControl(newEndControl, msgs);
-			if (msgs != null) {
+			if(msgs != null) {
 				msgs.dispatch();
 			}
-		} else if (eNotificationRequired()) {
+		} else if(eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.CUBIC_CURVE_TO__END_CONTROL, newEndControl, newEndControl));
 		}
 	}
@@ -251,7 +255,7 @@ public class CubicCurveToImpl extends PathCommandImpl implements CubicCurveTo {
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
+		switch(featureID) {
 		case DGPackage.CUBIC_CURVE_TO__START_CONTROL:
 			return basicSetStartControl(null, msgs);
 		case DGPackage.CUBIC_CURVE_TO__END_CONTROL:
@@ -269,7 +273,7 @@ public class CubicCurveToImpl extends PathCommandImpl implements CubicCurveTo {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch(featureID) {
 		case DGPackage.CUBIC_CURVE_TO__START_CONTROL:
 			return getStartControl();
 		case DGPackage.CUBIC_CURVE_TO__END_CONTROL:
@@ -287,15 +291,15 @@ public class CubicCurveToImpl extends PathCommandImpl implements CubicCurveTo {
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch(featureID) {
 		case DGPackage.CUBIC_CURVE_TO__START_CONTROL:
-			setStartControl((Point) newValue);
+			setStartControl((Point)newValue);
 			return;
 		case DGPackage.CUBIC_CURVE_TO__END_CONTROL:
-			setEndControl((Point) newValue);
+			setEndControl((Point)newValue);
 			return;
 		case DGPackage.CUBIC_CURVE_TO__POINT:
-			setPoint((Point) newValue);
+			setPoint((Point)newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -308,15 +312,15 @@ public class CubicCurveToImpl extends PathCommandImpl implements CubicCurveTo {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch(featureID) {
 		case DGPackage.CUBIC_CURVE_TO__START_CONTROL:
-			setStartControl((Point) null);
+			setStartControl((Point)null);
 			return;
 		case DGPackage.CUBIC_CURVE_TO__END_CONTROL:
-			setEndControl((Point) null);
+			setEndControl((Point)null);
 			return;
 		case DGPackage.CUBIC_CURVE_TO__POINT:
-			setPoint((Point) null);
+			setPoint((Point)null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -329,7 +333,7 @@ public class CubicCurveToImpl extends PathCommandImpl implements CubicCurveTo {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch(featureID) {
 		case DGPackage.CUBIC_CURVE_TO__START_CONTROL:
 			return startControl != null;
 		case DGPackage.CUBIC_CURVE_TO__END_CONTROL:

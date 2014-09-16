@@ -15,8 +15,8 @@
 
 <plugin>
 	<extension point="org.eclipse.m2m.qvt.oml.javaBlackboxUnits">
-   		<unit name="UtilitiesLibrary" namespace="org.eclipse.papyrus.umldi2dg">
-    		<library name="UtilitiesLibrary" class="org.eclipse.papyrus.umldi2dg.UtilitiesLibrary">
+   		<unit name="UtilitiesLibrary" namespace="org.eclipse.papyrus.dd.qvt">
+    		<library name="UtilitiesLibrary" class="org.eclipse.papyrus.dd.qvt.UtilitiesLibrary">
     			<metamodel nsURI="http://www.omg.org/spec/DD/20110901/DC"/>
     		</library>
 		</unit>

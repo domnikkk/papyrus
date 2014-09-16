@@ -170,7 +170,7 @@
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="DG.ecore#//Definitions">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
-          createChild="true" ecoreFeature="ecore:EReference DG.ecore#//Definitions/defnition"/>
+          createChild="true" ecoreFeature="ecore:EReference DG.ecore#//Definitions/definition"/>
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference DG.ecore#//Definitions/styleSheet"/>
     </genClasses>
@@ -368,7 +368,7 @@
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="DG.ecore#//Text">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute DG.ecore#//Text/data"/>
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
-          createChild="true" ecoreFeature="ecore:EReference DG.ecore#//Text/position"/>
+          createChild="true" ecoreFeature="ecore:EReference DG.ecore#//Text/bounds"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute DG.ecore#//Text/anchor"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="DG.ecore#//Text/dataCannotBeEmpty">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="DG.ecore#//Text/dataCannotBeEmpty/diagnostics"/>

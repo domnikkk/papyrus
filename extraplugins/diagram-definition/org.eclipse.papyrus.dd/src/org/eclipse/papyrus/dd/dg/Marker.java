@@ -54,7 +54,7 @@ public interface Marker extends Group {
 	 * end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Size</em>' containment reference.
+	 *        the new value of the '<em>Size</em>' containment reference.
 	 * @see #getSize()
 	 * @generated
 	 */
@@ -79,7 +79,7 @@ public interface Marker extends Group {
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Reference</em>' containment reference.
+	 *        the new value of the '<em>Reference</em>' containment reference.
 	 * @see #getReference()
 	 * @generated
 	 */

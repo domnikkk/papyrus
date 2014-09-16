@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dg:RootCanvas xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dg="http://www.omg.org/spec/DD/20110901/DG">
+  <member xsi:type="dg:Rectangle">
+    <style strokeWidth="2.0">
+      <fill paintServer="linear1"/>
+      <stroke color="#000000"/>
+    </style>
+    <bounds x="10.0" y="10.0" width="200.0" height="100.0"/>
+  </member>
+  <member xsi:type="dg:Ellipse">
+    <style strokeWidth="2.0">
+      <fill paintServer="radial1"/>
+      <stroke color="#000000"/>
+    </style>
+    <center x="300.0" y="60.0"/>
+    <radii width="50.0" height="50.0"/>
+  </member>
+  <member xsi:type="dg:Ellipse">
+    <style strokeWidth="2.0">
+      <fill paintServer="pattern1"/>
+      <stroke color="#000000"/>
+    </style>
+    <center x="450.0" y="60.0"/>
+    <radii width="75.0" height="50.0"/>
+  </member>
+  <definitions>
+    <definition xsi:type="dg:LinearGradient" id="linear1">
+      <transform xsi:type="dg:Rotate" angle="10.0"/>
+      <stop color="#FF0000" offset="5.0"/>
+      <stop color="#00FF00" offset="95.0"/>
+      <start x="10.0" y="10.0"/>
+      <end x="90.0" y="90.0"/>
+    </definition>
+    <definition xsi:type="dg:RadialGradient" id="radial1" radius="50.0">
+      <stop color="#FF0000" offset="0.0"/>
+      <stop color="#0000FF" offset="50.0"/>
+      <stop color="#FF0000" offset="100.0"/>
+      <center x="50.0" y="50.0"/>
+      <focus x="50.0" y="50.0"/>
+    </definition>
+    <definition xsi:type="dg:Pattern" id="pattern1">
+      <transform xsi:type="dg:Rotate" angle="45.0"/>
+      <bounds x="0.0" y="0.0" width="20.0" height="20.0"/>
+      <tile xsi:type="dg:Polygon">
+        <style>
+          <fill color="#FF0000"/>
+          <stroke color="#0000FF"/>
+        </style>
+        <point/>
+        <point x="10.0"/>
+        <point x="5.0" y="10.0"/>
+      </tile>
+    </definition>
+  </definitions>
+</dg:RootCanvas>

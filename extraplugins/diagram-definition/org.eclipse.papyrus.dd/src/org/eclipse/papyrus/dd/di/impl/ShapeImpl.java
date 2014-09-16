@@ -13,10 +13,14 @@ package org.eclipse.papyrus.dd.di.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.eclipse.papyrus.dd.dc.Bounds;
+
 import org.eclipse.papyrus.dd.di.DIPackage;
 import org.eclipse.papyrus.dd.di.Shape;
 
@@ -80,9 +84,9 @@ public abstract class ShapeImpl extends DiagramElementImpl implements Shape {
 	public NotificationChain basicSetBounds(Bounds newBounds, NotificationChain msgs) {
 		Bounds oldBounds = bounds;
 		bounds = newBounds;
-		if (eNotificationRequired()) {
+		if(eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DIPackage.SHAPE__BOUNDS, oldBounds, newBounds);
-			if (msgs == null) {
+			if(msgs == null) {
 				msgs = notification;
 			} else {
 				msgs.add(notification);
@@ -98,19 +102,19 @@ public abstract class ShapeImpl extends DiagramElementImpl implements Shape {
 	 */
 	@Override
 	public void setBounds(Bounds newBounds) {
-		if (newBounds != bounds) {
+		if(newBounds != bounds) {
 			NotificationChain msgs = null;
-			if (bounds != null) {
-				msgs = ((InternalEObject) bounds).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DIPackage.SHAPE__BOUNDS, null, msgs);
+			if(bounds != null) {
+				msgs = ((InternalEObject)bounds).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DIPackage.SHAPE__BOUNDS, null, msgs);
 			}
-			if (newBounds != null) {
-				msgs = ((InternalEObject) newBounds).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DIPackage.SHAPE__BOUNDS, null, msgs);
+			if(newBounds != null) {
+				msgs = ((InternalEObject)newBounds).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DIPackage.SHAPE__BOUNDS, null, msgs);
 			}
 			msgs = basicSetBounds(newBounds, msgs);
-			if (msgs != null) {
+			if(msgs != null) {
 				msgs.dispatch();
 			}
-		} else if (eNotificationRequired()) {
+		} else if(eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DIPackage.SHAPE__BOUNDS, newBounds, newBounds));
 		}
 	}
@@ -122,7 +126,7 @@ public abstract class ShapeImpl extends DiagramElementImpl implements Shape {
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
+		switch(featureID) {
 		case DIPackage.SHAPE__BOUNDS:
 			return basicSetBounds(null, msgs);
 		}
@@ -136,7 +140,7 @@ public abstract class ShapeImpl extends DiagramElementImpl implements Shape {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch(featureID) {
 		case DIPackage.SHAPE__BOUNDS:
 			return getBounds();
 		}
@@ -150,9 +154,9 @@ public abstract class ShapeImpl extends DiagramElementImpl implements Shape {
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch(featureID) {
 		case DIPackage.SHAPE__BOUNDS:
-			setBounds((Bounds) newValue);
+			setBounds((Bounds)newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -165,9 +169,9 @@ public abstract class ShapeImpl extends DiagramElementImpl implements Shape {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch(featureID) {
 		case DIPackage.SHAPE__BOUNDS:
-			setBounds((Bounds) null);
+			setBounds((Bounds)null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -180,7 +184,7 @@ public abstract class ShapeImpl extends DiagramElementImpl implements Shape {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch(featureID) {
 		case DIPackage.SHAPE__BOUNDS:
 			return bounds != null;
 		}

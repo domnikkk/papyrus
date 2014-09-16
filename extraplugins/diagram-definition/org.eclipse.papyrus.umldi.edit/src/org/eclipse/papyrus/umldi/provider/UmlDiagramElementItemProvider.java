@@ -16,8 +16,11 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.common.util.ResourceLocator;
+
 import org.eclipse.emf.ecore.EStructuralFeature;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemColorProvider;
@@ -28,7 +31,9 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
 import org.eclipse.papyrus.dd.di.provider.DiagramElementItemProvider;
+
 import org.eclipse.papyrus.umldi.UMLDIFactory;
 import org.eclipse.papyrus.umldi.UMLDIPackage;
 import org.eclipse.papyrus.umldi.UmlDiagramElement;
@@ -62,7 +67,7 @@ public class UmlDiagramElementItemProvider extends DiagramElementItemProvider im
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null) {
+		if(itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 			addUmlModelElementPropertyDescriptor(object);
 			addSharedUmlStylePropertyDescriptor(object);
@@ -80,8 +85,7 @@ public class UmlDiagramElementItemProvider extends DiagramElementItemProvider im
 	 * @generated
 	 */
 	protected void addUmlModelElementPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_UmlDiagramElement_umlModelElement_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_UmlDiagramElement_umlModelElement_feature", "_UI_UmlDiagramElement_type"), UMLDIPackage.Literals.UML_DIAGRAM_ELEMENT__UML_MODEL_ELEMENT, true, false, true, null, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_UmlDiagramElement_umlModelElement_feature"), getString("_UI_PropertyDescriptor_description", "_UI_UmlDiagramElement_umlModelElement_feature", "_UI_UmlDiagramElement_type"), UMLDIPackage.Literals.UML_DIAGRAM_ELEMENT__UML_MODEL_ELEMENT, true, false, true, null, null, null));
 	}
 
 	/**
@@ -92,8 +96,7 @@ public class UmlDiagramElementItemProvider extends DiagramElementItemProvider im
 	 * @generated
 	 */
 	protected void addSharedUmlStylePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_UmlDiagramElement_sharedUmlStyle_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_UmlDiagramElement_sharedUmlStyle_feature", "_UI_UmlDiagramElement_type"), UMLDIPackage.Literals.UML_DIAGRAM_ELEMENT__SHARED_UML_STYLE, true, false, true, null, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_UmlDiagramElement_sharedUmlStyle_feature"), getString("_UI_PropertyDescriptor_description", "_UI_UmlDiagramElement_sharedUmlStyle_feature", "_UI_UmlDiagramElement_type"), UMLDIPackage.Literals.UML_DIAGRAM_ELEMENT__SHARED_UML_STYLE, true, false, true, null, null, null));
 	}
 
 	/**
@@ -104,8 +107,7 @@ public class UmlDiagramElementItemProvider extends DiagramElementItemProvider im
 	 * @generated
 	 */
 	protected void addTargetUmlEdgePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_UmlDiagramElement_targetUmlEdge_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_UmlDiagramElement_targetUmlEdge_feature", "_UI_UmlDiagramElement_type"), UMLDIPackage.Literals.UML_DIAGRAM_ELEMENT__TARGET_UML_EDGE, true, false, true, null, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_UmlDiagramElement_targetUmlEdge_feature"), getString("_UI_PropertyDescriptor_description", "_UI_UmlDiagramElement_targetUmlEdge_feature", "_UI_UmlDiagramElement_type"), UMLDIPackage.Literals.UML_DIAGRAM_ELEMENT__TARGET_UML_EDGE, true, false, true, null, null, null));
 	}
 
 	/**
@@ -116,12 +118,12 @@ public class UmlDiagramElementItemProvider extends DiagramElementItemProvider im
 	 * @generated
 	 */
 	protected void addSourceUmlEdgePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_UmlDiagramElement_sourceUmlEdge_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_UmlDiagramElement_sourceUmlEdge_feature", "_UI_UmlDiagramElement_type"), UMLDIPackage.Literals.UML_DIAGRAM_ELEMENT__SOURCE_UML_EDGE, true, false, true, null, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_UmlDiagramElement_sourceUmlEdge_feature"), getString("_UI_PropertyDescriptor_description", "_UI_UmlDiagramElement_sourceUmlEdge_feature", "_UI_UmlDiagramElement_type"), UMLDIPackage.Literals.UML_DIAGRAM_ELEMENT__SOURCE_UML_EDGE, true, false, true, null, null, null));
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -130,7 +132,7 @@ public class UmlDiagramElementItemProvider extends DiagramElementItemProvider im
 	 */
 	@Override
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null) {
+		if(childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(UMLDIPackage.Literals.UML_DIAGRAM_ELEMENT__LOCAL_UML_STYLE);
 			childrenFeatures.add(UMLDIPackage.Literals.UML_DIAGRAM_ELEMENT__OWNED_UML_DIAGRAM_ELEMENT);
@@ -174,7 +176,7 @@ public class UmlDiagramElementItemProvider extends DiagramElementItemProvider im
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-		switch (notification.getFeatureID(UmlDiagramElement.class)) {
+		switch(notification.getFeatureID(UmlDiagramElement.class)) {
 		case UMLDIPackage.UML_DIAGRAM_ELEMENT__LOCAL_UML_STYLE:
 		case UMLDIPackage.UML_DIAGRAM_ELEMENT__OWNED_UML_DIAGRAM_ELEMENT:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
@@ -195,9 +197,9 @@ public class UmlDiagramElementItemProvider extends DiagramElementItemProvider im
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 		newChildDescriptors.add(createChildParameter(UMLDIPackage.Literals.UML_DIAGRAM_ELEMENT__LOCAL_UML_STYLE, UMLDIFactory.eINSTANCE.createUmlStyle()));
-		newChildDescriptors.add(createChildParameter(UMLDIPackage.Literals.UML_DIAGRAM_ELEMENT__OWNED_UML_DIAGRAM_ELEMENT, UMLDIFactory.eINSTANCE.createUmlShape()));
 		newChildDescriptors.add(createChildParameter(UMLDIPackage.Literals.UML_DIAGRAM_ELEMENT__OWNED_UML_DIAGRAM_ELEMENT, UMLDIFactory.eINSTANCE.createUmlDiagram()));
 		newChildDescriptors.add(createChildParameter(UMLDIPackage.Literals.UML_DIAGRAM_ELEMENT__OWNED_UML_DIAGRAM_ELEMENT, UMLDIFactory.eINSTANCE.createUmlEdge()));
+		newChildDescriptors.add(createChildParameter(UMLDIPackage.Literals.UML_DIAGRAM_ELEMENT__OWNED_UML_DIAGRAM_ELEMENT, UMLDIFactory.eINSTANCE.createUmlShape()));
 		newChildDescriptors.add(createChildParameter(UMLDIPackage.Literals.UML_DIAGRAM_ELEMENT__OWNED_UML_DIAGRAM_ELEMENT, UMLDIFactory.eINSTANCE.createUmlCompartment()));
 		newChildDescriptors.add(createChildParameter(UMLDIPackage.Literals.UML_DIAGRAM_ELEMENT__OWNED_UML_DIAGRAM_ELEMENT, UMLDIFactory.eINSTANCE.createUmlLabel()));
 	}

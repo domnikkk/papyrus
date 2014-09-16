@@ -55,7 +55,7 @@ public interface QuadraticCurveTo extends PathCommand {
 	 * end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Point</em>' containment reference.
+	 *        the new value of the '<em>Point</em>' containment reference.
 	 * @see #getPoint()
 	 * @generated
 	 */
@@ -80,7 +80,7 @@ public interface QuadraticCurveTo extends PathCommand {
 	 * end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Control</em>' containment reference.
+	 *        the new value of the '<em>Control</em>' containment reference.
 	 * @see #getControl()
 	 * @generated
 	 */

@@ -55,7 +55,7 @@ public interface Diagram extends Shape {
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Name</em>' attribute.
+	 *        the new value of the '<em>Name</em>' attribute.
 	 * @see #getName()
 	 * @generated
 	 */
@@ -82,7 +82,7 @@ public interface Diagram extends Shape {
 	 * end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Documentation</em>' attribute.
+	 *        the new value of the '<em>Documentation</em>' attribute.
 	 * @see #getDocumentation()
 	 * @generated
 	 */
@@ -109,7 +109,7 @@ public interface Diagram extends Shape {
 	 * end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Resolution</em>' attribute.
+	 *        the new value of the '<em>Resolution</em>' attribute.
 	 * @see #getResolution()
 	 * @generated
 	 */

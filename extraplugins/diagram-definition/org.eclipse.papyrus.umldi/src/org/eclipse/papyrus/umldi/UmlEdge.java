@@ -66,7 +66,7 @@ public interface UmlEdge extends UmlDiagramElement, Edge {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Source Uml Diagram Element</em>' reference.
+	 *        the new value of the '<em>Source Uml Diagram Element</em>' reference.
 	 * @see #getSourceUmlDiagramElement()
 	 * @generated
 	 */
@@ -102,7 +102,7 @@ public interface UmlEdge extends UmlDiagramElement, Edge {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Target Uml Diagram Element</em>' reference.
+	 *        the new value of the '<em>Target Uml Diagram Element</em>' reference.
 	 * @see #getTargetUmlDiagramElement()
 	 * @generated
 	 */

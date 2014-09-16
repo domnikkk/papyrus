@@ -30,15 +30,20 @@
   <foreignModel>UMLDI.uml</foreignModel>
   <genPackages xsi:type="genmodel:GenPackage" prefix="UMLDI" basePackage="org.eclipse.papyrus"
       resource="XML" disposableProviderFactory="true" ecorePackage="UMLDI.ecore#/">
+    <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="UMLDI.ecore#//UmlDiagramKind">
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="UMLDI.ecore#//UmlDiagramKind/class"/>
+    </genEnums>
     <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="UMLDI.ecore#//UmlCompartmentKind">
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="UMLDI.ecore#//UmlCompartmentKind/attributes"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="UMLDI.ecore#//UmlCompartmentKind/operations"/>
     </genEnums>
     <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="UMLDI.ecore#//UmlLabelKind">
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="UMLDI.ecore#//UmlLabelKind/name"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="UMLDI.ecore#//UmlLabelKind/multiplicity"/>
     </genEnums>
-    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLDI.ecore#//UmlDiagram"/>
-    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLDI.ecore#//UmlShape"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLDI.ecore#//UmlDiagram">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute UMLDI.ecore#//UmlDiagram/kind"/>
+    </genClasses>
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="UMLDI.ecore#//UmlDiagramElement">
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
           propertySortChoices="true" ecoreFeature="ecore:EReference UMLDI.ecore#//UmlDiagramElement/umlModelElement"/>
@@ -69,6 +74,7 @@
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
           propertySortChoices="true" ecoreFeature="ecore:EReference UMLDI.ecore#//UmlEdge/targetUmlDiagramElement"/>
     </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLDI.ecore#//UmlShape"/>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLDI.ecore#//UmlCompartment">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute UMLDI.ecore#//UmlCompartment/kind"/>
     </genClasses>

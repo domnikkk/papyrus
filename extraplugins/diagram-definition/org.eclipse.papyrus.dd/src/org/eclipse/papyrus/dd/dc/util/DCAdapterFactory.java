@@ -13,12 +13,12 @@ package org.eclipse.papyrus.dd.dc.util;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
+
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
+
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.papyrus.dd.dc.Bounds;
-import org.eclipse.papyrus.dd.dc.DCPackage;
-import org.eclipse.papyrus.dd.dc.Dimension;
-import org.eclipse.papyrus.dd.dc.Point;
+
+import org.eclipse.papyrus.dd.dc.*;
 
 /**
  * <!-- begin-user-doc --> The <b>Adapter Factory</b> for the model. It provides
@@ -46,7 +46,7 @@ public class DCAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public DCAdapterFactory() {
-		if (modelPackage == null) {
+		if(modelPackage == null) {
 			modelPackage = DCPackage.eINSTANCE;
 		}
 	}
@@ -62,11 +62,11 @@ public class DCAdapterFactory extends AdapterFactoryImpl {
 	 */
 	@Override
 	public boolean isFactoryForType(Object object) {
-		if (object == modelPackage) {
+		if(object == modelPackage) {
 			return true;
 		}
-		if (object instanceof EObject) {
-			return ((EObject) object).eClass().getEPackage() == modelPackage;
+		if(object instanceof EObject) {
+			return ((EObject)object).eClass().getEPackage() == modelPackage;
 		}
 		return false;
 	}
@@ -106,13 +106,13 @@ public class DCAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param target
-	 *            the object to adapt.
+	 *        the object to adapt.
 	 * @return the adapter for the <code>target</code>.
 	 * @generated
 	 */
 	@Override
 	public Adapter createAdapter(Notifier target) {
-		return modelSwitch.doSwitch((EObject) target);
+		return modelSwitch.doSwitch((EObject)target);
 	}
 
 	/**

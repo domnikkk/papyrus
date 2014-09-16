@@ -12,6 +12,7 @@
 package org.eclipse.papyrus.dd.di;
 
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -59,7 +60,8 @@ public interface DiagramElement extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Owning Diagram Element</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link org.eclipse.papyrus.dd.di.DiagramElement#getOwnedDiagramElement <em>Owned Diagram Element</em>} '.
+	 * It is bidirectional and its opposite is '{@link org.eclipse.papyrus.dd.di.DiagramElement#getOwnedDiagramElement <em>Owned Diagram Element</em>}
+	 * '.
 	 * This feature is a derived union.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

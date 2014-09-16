@@ -384,7 +384,7 @@ public enum ElementKind implements Enumerator {
 	 *
 	 * @generated
 	 */
-	private static final ElementKind[] VALUES_ARRAY = new ElementKind[] { CANVAS, CIRCLE, CLIP_PATH, ELLIPSE, GROUP, IMAGE, LINE, MARKER, PATH, POLYGON, POLYLINE, RECTANGLE, TEXT, USE, };
+	private static final ElementKind[] VALUES_ARRAY = new ElementKind[]{ CANVAS, CIRCLE, CLIP_PATH, ELLIPSE, GROUP, IMAGE, LINE, MARKER, PATH, POLYGON, POLYLINE, RECTANGLE, TEXT, USE, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Element Kind</b></em>' enumerators.
@@ -401,9 +401,9 @@ public enum ElementKind implements Enumerator {
 	 * @generated
 	 */
 	public static ElementKind get(String literal) {
-		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+		for(int i = 0; i < VALUES_ARRAY.length; ++i) {
 			ElementKind result = VALUES_ARRAY[i];
-			if (result.toString().equals(literal)) {
+			if(result.toString().equals(literal)) {
 				return result;
 			}
 		}
@@ -417,9 +417,9 @@ public enum ElementKind implements Enumerator {
 	 * @generated
 	 */
 	public static ElementKind getByName(String name) {
-		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+		for(int i = 0; i < VALUES_ARRAY.length; ++i) {
 			ElementKind result = VALUES_ARRAY[i];
-			if (result.getName().equals(name)) {
+			if(result.getName().equals(name)) {
 				return result;
 			}
 		}
@@ -433,7 +433,7 @@ public enum ElementKind implements Enumerator {
 	 * @generated
 	 */
 	public static ElementKind get(int value) {
-		switch (value) {
+		switch(value) {
 		case CANVAS_VALUE:
 			return CANVAS;
 		case CIRCLE_VALUE:

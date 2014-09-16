@@ -12,7 +12,6 @@
 package org.eclipse.papyrus.dd.di.impl;
 
 import java.util.Collection;
-
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
@@ -77,7 +76,7 @@ public abstract class EdgeImpl extends DiagramElementImpl implements Edge {
 	@Override
 	public DiagramElement getSourceDiagramElement() {
 		DiagramElement sourceDiagramElement = basicGetSourceDiagramElement();
-		return sourceDiagramElement != null && sourceDiagramElement.eIsProxy() ? (DiagramElement) eResolveProxy((InternalEObject) sourceDiagramElement) : sourceDiagramElement;
+		return sourceDiagramElement != null && sourceDiagramElement.eIsProxy() ? (DiagramElement)eResolveProxy((InternalEObject)sourceDiagramElement) : sourceDiagramElement;
 	}
 
 	/**
@@ -99,7 +98,7 @@ public abstract class EdgeImpl extends DiagramElementImpl implements Edge {
 	@Override
 	public DiagramElement getTargetDiagramElement() {
 		DiagramElement targetDiagramElement = basicGetTargetDiagramElement();
-		return targetDiagramElement != null && targetDiagramElement.eIsProxy() ? (DiagramElement) eResolveProxy((InternalEObject) targetDiagramElement) : targetDiagramElement;
+		return targetDiagramElement != null && targetDiagramElement.eIsProxy() ? (DiagramElement)eResolveProxy((InternalEObject)targetDiagramElement) : targetDiagramElement;
 	}
 
 	/**
@@ -119,7 +118,7 @@ public abstract class EdgeImpl extends DiagramElementImpl implements Edge {
 	 */
 	@Override
 	public EList<Point> getWaypoint() {
-		if (waypoint == null) {
+		if(waypoint == null) {
 			waypoint = new EObjectContainmentEList<Point>(Point.class, this, DIPackage.EDGE__WAYPOINT);
 		}
 		return waypoint;
@@ -132,9 +131,9 @@ public abstract class EdgeImpl extends DiagramElementImpl implements Edge {
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
+		switch(featureID) {
 		case DIPackage.EDGE__WAYPOINT:
-			return ((InternalEList<?>) getWaypoint()).basicRemove(otherEnd, msgs);
+			return ((InternalEList<?>)getWaypoint()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -146,14 +145,14 @@ public abstract class EdgeImpl extends DiagramElementImpl implements Edge {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch(featureID) {
 		case DIPackage.EDGE__SOURCE_DIAGRAM_ELEMENT:
-			if (resolve) {
+			if(resolve) {
 				return getSourceDiagramElement();
 			}
 			return basicGetSourceDiagramElement();
 		case DIPackage.EDGE__TARGET_DIAGRAM_ELEMENT:
-			if (resolve) {
+			if(resolve) {
 				return getTargetDiagramElement();
 			}
 			return basicGetTargetDiagramElement();
@@ -171,10 +170,10 @@ public abstract class EdgeImpl extends DiagramElementImpl implements Edge {
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch(featureID) {
 		case DIPackage.EDGE__WAYPOINT:
 			getWaypoint().clear();
-			getWaypoint().addAll((Collection<? extends Point>) newValue);
+			getWaypoint().addAll((Collection<? extends Point>)newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -187,7 +186,7 @@ public abstract class EdgeImpl extends DiagramElementImpl implements Edge {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch(featureID) {
 		case DIPackage.EDGE__WAYPOINT:
 			getWaypoint().clear();
 			return;
@@ -202,7 +201,7 @@ public abstract class EdgeImpl extends DiagramElementImpl implements Edge {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch(featureID) {
 		case DIPackage.EDGE__SOURCE_DIAGRAM_ELEMENT:
 			return isSetSourceDiagramElement();
 		case DIPackage.EDGE__TARGET_DIAGRAM_ELEMENT:

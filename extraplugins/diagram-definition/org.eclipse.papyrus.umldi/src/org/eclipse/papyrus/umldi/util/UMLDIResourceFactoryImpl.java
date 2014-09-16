@@ -12,8 +12,11 @@
 package org.eclipse.papyrus.umldi.util;
 
 import org.eclipse.emf.common.util.URI;
+
 import org.eclipse.emf.ecore.resource.Resource;
+
 import org.eclipse.emf.ecore.resource.impl.ResourceFactoryImpl;
+
 import org.eclipse.emf.ecore.xmi.XMLResource;
 
 /**
@@ -55,4 +58,4 @@ public class UMLDIResourceFactoryImpl extends ResourceFactoryImpl {
 		result.getDefaultLoadOptions().put(XMLResource.OPTION_USE_LEXICAL_HANDLER, Boolean.TRUE);
 		return result;
 	}
-} // UMLDIResourceFactoryImpl
+} //UMLDIResourceFactoryImpl

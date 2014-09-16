@@ -73,11 +73,11 @@ function getPreferredSize_stackLayout(parent) {
 	return prefSize;
 }
 
-function flowLayout(parent, horizontal, insets) {
-	var x = +parent.getAttribute("x")+insets;
-	var y = +parent.getAttribute("y")+insets;
-	var width = +parent.getAttribute("width")-2*insets;
-	var height = +parent.getAttribute("height")-2*insets;
+function flowLayout(parent, horizontal) {
+	var x = +parent.getAttribute("x");
+	var y = +parent.getAttribute("y");
+	var width = +parent.getAttribute("width");
+	var height = +parent.getAttribute("height");
 
 	if (parent.tagName == "svg") {
 		x = 0;
@@ -114,116 +114,4 @@ function getPreferredSize_flowLayout(parent, horizontal) {
 		}
 	}
 	return prefSize;
-}
-
-function Rectangle(x, y, width, height) {
-	this.x = x;
-	this.y = y;
-	this.width = width;
-	this.height = height;
-}
-
-function Point(x, y) {
-	this.x = x;
-	this.y = y;
-}
-
-function Dimension(width, height) {
-	this.width = width;
-	this.height = height;
-}
-
-function getChildren(parent) {
-	var children = [];
-	var elements = parent.childNodes;
-	for (var i=0; i<elements.length; i++) {
-		var element = elements.item(i);
-		if (element.tagName != "script" && element.tagName != "defs" && element.nodeType != 3)
-			children.push(element);
-	}
-	return children;
-}
-
-function validate(parent) {
-	layout(parent);
-	var children = getChildren(parent);
-	for (var i=0; i<children.length; i++)
-		validate(children[i]);
-}
-
-function layout(parent) {
-	var lm = parent.getAttribute("layout");
-	if (lm != null && lm.length>0)
-		eval(lm);
-}
-
-function getPreferredSize(parent) {
-	var lm = parent.getAttribute("layout");
-	if (lm != null && lm.length>0) {
-		var prefSize = eval("getPreferredSize_"+lm);
-		return prefSize;
-	} 
-	var bbox = parent.getBBox();
-	return new Dimension(bbox.width, bbox.height);
-}
-
-function getBounds(element) {
-	var bbox = element.getBBox();
-	return new Rectangle(bbox.x, bbox.y, bbox.width, bbox.height);
-}
-
-function setBounds(element, x, y, width, height) {
-	
-	if (element.tagName == "rect")
-		setRectBounds(element, x, y, width, height);
-	else if (element.tagName == "svg")
-		setSvgBounds(element, x, y, width, height);
-	else if (element.tagName == "g")
-		setGBounds(element, x, y, width, height);
-	else if (element.tagName == "circle")
-		setCircleBounds(element, x, y, width, height);
-	else if (element.tagName == "text")
-		setTextBounds(element, x, y, width, height);
-}
-
-function setSvgBounds(element, x, y, width, height) {
-	element.setAttribute("x", x);
-	element.setAttribute("y", y);
-	element.setAttribute("width", width);
-	element.setAttribute("height", height);
-}
-
-function setGBounds(element, x, y, width, height) {
-	element.setAttribute("x", x);
-	element.setAttribute("y", y);
-	element.setAttribute("width", width);
-	element.setAttribute("height", height);
-}
-
-function setRectBounds(element, x, y, width, height) {
-	element.setAttribute("x", x+1);
-	element.setAttribute("y", y+1);
-	element.setAttribute("width", width-2);
-	element.setAttribute("height", height-2);
-}
-
-function setCircleBounds(element, x, y, width, height) {
-	element.setAttribute("cx", x+width/2);
-	element.setAttribute("cy", y+height/2);
-	if (width <= height)
-		element.setAttribute("r", width/2);
-	else
-		element.setAttribute("r", height/2);
-}
-
-function setTextBounds(element, x, y, width, height) {
-	var anchor = element.getAttribute("text-anchor");
-	if (anchor == "middle")
-		element.setAttribute("x", x+width/2);
-	else if (anchor == "end")
-		element.setAttribute("x", x+width);
-	else
-		element.setAttribute("x", x);
-	var bbox = element.getBBox();
-	element.setAttribute("y", y+bbox.height);
 }

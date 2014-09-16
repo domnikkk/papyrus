@@ -16,7 +16,9 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EStructuralFeature;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemColorProvider;
@@ -28,6 +30,7 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
 import org.eclipse.papyrus.dd.dg.DGFactory;
 import org.eclipse.papyrus.dd.dg.DGPackage;
 import org.eclipse.papyrus.dd.dg.RootCanvas;
@@ -59,7 +62,7 @@ public class RootCanvasItemProvider extends CanvasItemProvider implements IEditi
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null) {
+		if(itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 			addBackgroundColorPropertyDescriptor(object);
 			addExternalStyleSheetPropertyDescriptor(object);
@@ -75,8 +78,7 @@ public class RootCanvasItemProvider extends CanvasItemProvider implements IEditi
 	 * @generated
 	 */
 	protected void addBackgroundColorPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_RootCanvas_backgroundColor_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_RootCanvas_backgroundColor_feature", "_UI_RootCanvas_type"), DGPackage.Literals.ROOT_CANVAS__BACKGROUND_COLOR, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_RootCanvas_backgroundColor_feature"), getString("_UI_PropertyDescriptor_description", "_UI_RootCanvas_backgroundColor_feature", "_UI_RootCanvas_type"), DGPackage.Literals.ROOT_CANVAS__BACKGROUND_COLOR, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -86,8 +88,7 @@ public class RootCanvasItemProvider extends CanvasItemProvider implements IEditi
 	 * @generated
 	 */
 	protected void addExternalStyleSheetPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_RootCanvas_externalStyleSheet_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_RootCanvas_externalStyleSheet_feature", "_UI_RootCanvas_type"), DGPackage.Literals.ROOT_CANVAS__EXTERNAL_STYLE_SHEET, true, false, true, null, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_RootCanvas_externalStyleSheet_feature"), getString("_UI_PropertyDescriptor_description", "_UI_RootCanvas_externalStyleSheet_feature", "_UI_RootCanvas_type"), DGPackage.Literals.ROOT_CANVAS__EXTERNAL_STYLE_SHEET, true, false, true, null, null, null));
 	}
 
 	/**
@@ -98,12 +99,12 @@ public class RootCanvasItemProvider extends CanvasItemProvider implements IEditi
 	 * @generated
 	 */
 	protected void addScriptPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_RootCanvas_script_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_RootCanvas_script_feature", "_UI_RootCanvas_type"), DGPackage.Literals.ROOT_CANVAS__SCRIPT, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_RootCanvas_script_feature"), getString("_UI_PropertyDescriptor_description", "_UI_RootCanvas_script_feature", "_UI_RootCanvas_type"), DGPackage.Literals.ROOT_CANVAS__SCRIPT, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
@@ -111,7 +112,7 @@ public class RootCanvasItemProvider extends CanvasItemProvider implements IEditi
 	 */
 	@Override
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null) {
+		if(childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(DGPackage.Literals.ROOT_CANVAS__DEFINITIONS);
 		}
@@ -150,7 +151,7 @@ public class RootCanvasItemProvider extends CanvasItemProvider implements IEditi
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((RootCanvas) object).getId();
+		String label = ((RootCanvas)object).getId();
 		return label == null || label.length() == 0 ? getString("_UI_RootCanvas_type") : getString("_UI_RootCanvas_type") + " " + label;
 	}
 
@@ -165,7 +166,7 @@ public class RootCanvasItemProvider extends CanvasItemProvider implements IEditi
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-		switch (notification.getFeatureID(RootCanvas.class)) {
+		switch(notification.getFeatureID(RootCanvas.class)) {
 		case DGPackage.ROOT_CANVAS__BACKGROUND_COLOR:
 		case DGPackage.ROOT_CANVAS__SCRIPT:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));

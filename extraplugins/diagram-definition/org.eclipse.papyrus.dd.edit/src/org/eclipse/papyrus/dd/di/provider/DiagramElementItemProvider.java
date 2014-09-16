@@ -13,7 +13,6 @@ package org.eclipse.papyrus.dd.di.provider;
 
 import java.util.Collection;
 import java.util.List;
-
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
@@ -55,7 +54,7 @@ public class DiagramElementItemProvider extends ItemProviderAdapter implements I
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null) {
+		if(itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 		}
 		return itemPropertyDescriptors;

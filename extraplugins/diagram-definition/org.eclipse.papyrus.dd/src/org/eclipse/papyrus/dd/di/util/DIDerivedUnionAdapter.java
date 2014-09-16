@@ -12,10 +12,13 @@
 package org.eclipse.papyrus.dd.di.util;
 
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.common.notify.impl.AdapterImpl;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
+
 import org.eclipse.papyrus.dd.di.DIPackage;
 import org.eclipse.papyrus.dd.di.Diagram;
 import org.eclipse.papyrus.dd.di.Edge;
@@ -48,7 +51,7 @@ public class DIDerivedUnionAdapter extends AdapterImpl {
 	 * @generated
 	 */
 	public DIDerivedUnionAdapter() {
-		if (modelPackage == null) {
+		if(modelPackage == null) {
 			modelPackage = DIPackage.eINSTANCE;
 		}
 	}
@@ -59,15 +62,15 @@ public class DIDerivedUnionAdapter extends AdapterImpl {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param notification
-	 *            a description of the change.
+	 *        a description of the change.
 	 * @generated
 	 */
 	@Override
 	public void notifyChanged(Notification notification) {
 		Object notifier = notification.getNotifier();
-		if (notifier instanceof EObject) {
-			EClass eClass = ((EObject) notifier).eClass();
-			if (eClass.eContainer() == modelPackage) {
+		if(notifier instanceof EObject) {
+			EClass eClass = ((EObject)notifier).eClass();
+			if(eClass.eContainer() == modelPackage) {
 				notifyChanged(notification, eClass);
 			}
 		}
@@ -79,13 +82,13 @@ public class DIDerivedUnionAdapter extends AdapterImpl {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param notification
-	 *            a description of the change.
+	 *        a description of the change.
 	 * @param eClass
-	 *            the Ecore class of the notifier.
+	 *        the Ecore class of the notifier.
 	 * @generated
 	 */
 	protected void notifyChanged(Notification notification, EClass eClass) {
-		switch (eClass.getClassifierID()) {
+		switch(eClass.getClassifierID()) {
 		case DIPackage.EDGE:
 			notifyEdgeChanged(notification, eClass);
 			break;
@@ -104,11 +107,11 @@ public class DIDerivedUnionAdapter extends AdapterImpl {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param notification
-	 *            a description of the change.
+	 *        a description of the change.
 	 * @param eClass
-	 *            the Ecore class of the notifier.
+	 *        the Ecore class of the notifier.
 	 * @param derivedUnion
-	 *            the derived union affected by the change.
+	 *        the derived union affected by the change.
 	 * @generated
 	 */
 	public void notifyChanged(Notification notification, EClass eClass, EStructuralFeature derivedUnion) {
@@ -121,13 +124,13 @@ public class DIDerivedUnionAdapter extends AdapterImpl {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param notification
-	 *            a description of the change.
+	 *        a description of the change.
 	 * @param eClass
-	 *            the Ecore class of the notifier.
+	 *        the Ecore class of the notifier.
 	 * @generated
 	 */
 	protected void notifyEdgeChanged(Notification notification, EClass eClass) {
-		switch (notification.getFeatureID(Edge.class)) {
+		switch(notification.getFeatureID(Edge.class)) {
 		}
 	}
 
@@ -137,13 +140,13 @@ public class DIDerivedUnionAdapter extends AdapterImpl {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param notification
-	 *            a description of the change.
+	 *        a description of the change.
 	 * @param eClass
-	 *            the Ecore class of the notifier.
+	 *        the Ecore class of the notifier.
 	 * @generated
 	 */
 	protected void notifyDiagramChanged(Notification notification, EClass eClass) {
-		switch (notification.getFeatureID(Diagram.class)) {
+		switch(notification.getFeatureID(Diagram.class)) {
 		}
 	}
 
@@ -153,13 +156,13 @@ public class DIDerivedUnionAdapter extends AdapterImpl {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param notification
-	 *            a description of the change.
+	 *        a description of the change.
 	 * @param eClass
-	 *            the Ecore class of the notifier.
+	 *        the Ecore class of the notifier.
 	 * @generated
 	 */
 	protected void notifyShapeChanged(Notification notification, EClass eClass) {
-		switch (notification.getFeatureID(Shape.class)) {
+		switch(notification.getFeatureID(Shape.class)) {
 		}
 	}
-} // DIDerivedUnionAdapter
+} //DIDerivedUnionAdapter

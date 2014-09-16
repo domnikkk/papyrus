@@ -54,7 +54,7 @@ public interface Skew extends Transform {
 	 * -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Angle X</em>' attribute.
+	 *        the new value of the '<em>Angle X</em>' attribute.
 	 * @see #getAngleX()
 	 * @generated
 	 */
@@ -82,7 +82,7 @@ public interface Skew extends Transform {
 	 * -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Angle Y</em>' attribute.
+	 *        the new value of the '<em>Angle Y</em>' attribute.
 	 * @see #getAngleY()
 	 * @generated
 	 */

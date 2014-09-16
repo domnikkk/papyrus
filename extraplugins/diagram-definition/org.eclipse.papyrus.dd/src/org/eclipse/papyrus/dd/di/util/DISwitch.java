@@ -13,13 +13,10 @@ package org.eclipse.papyrus.dd.di.util;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
+
 import org.eclipse.emf.ecore.util.Switch;
-import org.eclipse.papyrus.dd.di.DIPackage;
-import org.eclipse.papyrus.dd.di.Diagram;
-import org.eclipse.papyrus.dd.di.DiagramElement;
-import org.eclipse.papyrus.dd.di.Edge;
-import org.eclipse.papyrus.dd.di.Shape;
-import org.eclipse.papyrus.dd.di.Style;
+
+import org.eclipse.papyrus.dd.di.*;
 
 /**
  * <!-- begin-user-doc --> The <b>Switch</b> for the model's inheritance
@@ -49,7 +46,7 @@ public class DISwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public DISwitch() {
-		if (modelPackage == null) {
+		if(modelPackage == null) {
 			modelPackage = DIPackage.eINSTANCE;
 		}
 	}
@@ -77,55 +74,60 @@ public class DISwitch<T> extends Switch<T> {
 	 */
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
-		switch (classifierID) {
-		case DIPackage.DIAGRAM_ELEMENT: {
-			DiagramElement diagramElement = (DiagramElement) theEObject;
+		switch(classifierID) {
+		case DIPackage.DIAGRAM_ELEMENT:
+		{
+			DiagramElement diagramElement = (DiagramElement)theEObject;
 			T result = caseDiagramElement(diagramElement);
-			if (result == null) {
+			if(result == null) {
 				result = defaultCase(theEObject);
 			}
 			return result;
 		}
-		case DIPackage.STYLE: {
-			Style style = (Style) theEObject;
+		case DIPackage.STYLE:
+		{
+			Style style = (Style)theEObject;
 			T result = caseStyle(style);
-			if (result == null) {
+			if(result == null) {
 				result = defaultCase(theEObject);
 			}
 			return result;
 		}
-		case DIPackage.EDGE: {
-			Edge edge = (Edge) theEObject;
+		case DIPackage.EDGE:
+		{
+			Edge edge = (Edge)theEObject;
 			T result = caseEdge(edge);
-			if (result == null) {
+			if(result == null) {
 				result = caseDiagramElement(edge);
 			}
-			if (result == null) {
+			if(result == null) {
 				result = defaultCase(theEObject);
 			}
 			return result;
 		}
-		case DIPackage.DIAGRAM: {
-			Diagram diagram = (Diagram) theEObject;
+		case DIPackage.DIAGRAM:
+		{
+			Diagram diagram = (Diagram)theEObject;
 			T result = caseDiagram(diagram);
-			if (result == null) {
+			if(result == null) {
 				result = caseShape(diagram);
 			}
-			if (result == null) {
+			if(result == null) {
 				result = caseDiagramElement(diagram);
 			}
-			if (result == null) {
+			if(result == null) {
 				result = defaultCase(theEObject);
 			}
 			return result;
 		}
-		case DIPackage.SHAPE: {
-			Shape shape = (Shape) theEObject;
+		case DIPackage.SHAPE:
+		{
+			Shape shape = (Shape)theEObject;
 			T result = caseShape(shape);
-			if (result == null) {
+			if(result == null) {
 				result = caseDiagramElement(shape);
 			}
-			if (result == null) {
+			if(result == null) {
 				result = defaultCase(theEObject);
 			}
 			return result;
@@ -142,7 +144,7 @@ public class DISwitch<T> extends Switch<T> {
 	 * end-user-doc -->
 	 *
 	 * @param object
-	 *            the target of the switch.
+	 *        the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Diagram Element</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -158,7 +160,7 @@ public class DISwitch<T> extends Switch<T> {
 	 * end-user-doc -->
 	 *
 	 * @param object
-	 *            the target of the switch.
+	 *        the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Style</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -173,7 +175,7 @@ public class DISwitch<T> extends Switch<T> {
 	 * -->
 	 *
 	 * @param object
-	 *            the target of the switch.
+	 *        the target of the switch.
 	 * @return the result of interpreting the object as an instance of ' <em>Edge</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -189,7 +191,7 @@ public class DISwitch<T> extends Switch<T> {
 	 * end-user-doc -->
 	 *
 	 * @param object
-	 *            the target of the switch.
+	 *        the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Diagram</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -205,7 +207,7 @@ public class DISwitch<T> extends Switch<T> {
 	 * end-user-doc -->
 	 *
 	 * @param object
-	 *            the target of the switch.
+	 *        the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Shape</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -221,7 +223,7 @@ public class DISwitch<T> extends Switch<T> {
 	 * the last case anyway. <!-- end-user-doc -->
 	 *
 	 * @param object
-	 *            the target of the switch.
+	 *        the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EObject</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject)
 	 * @generated

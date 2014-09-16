@@ -16,6 +16,7 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemColorProvider;
 import org.eclipse.emf.edit.provider.IItemFontProvider;
@@ -24,6 +25,7 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+
 import org.eclipse.papyrus.dd.dg.ClipPath;
 
 /**
@@ -53,7 +55,7 @@ public class ClipPathItemProvider extends GroupItemProvider implements IEditingD
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null) {
+		if(itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 		}
 		return itemPropertyDescriptors;
@@ -79,7 +81,7 @@ public class ClipPathItemProvider extends GroupItemProvider implements IEditingD
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ClipPath) object).getId();
+		String label = ((ClipPath)object).getId();
 		return label == null || label.length() == 0 ? getString("_UI_ClipPath_type") : getString("_UI_ClipPath_type") + " " + label;
 	}
 

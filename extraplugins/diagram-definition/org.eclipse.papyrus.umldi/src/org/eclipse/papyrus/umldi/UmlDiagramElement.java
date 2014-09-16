@@ -12,7 +12,9 @@
 package org.eclipse.papyrus.umldi;
 
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.papyrus.dd.di.DiagramElement;
+
 import org.eclipse.uml2.uml.Element;
 
 /**
@@ -93,7 +95,7 @@ public interface UmlDiagramElement extends DiagramElement {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Shared Uml Style</em>' reference.
+	 *        the new value of the '<em>Shared Uml Style</em>' reference.
 	 * @see #getSharedUmlStyle()
 	 * @generated
 	 */
@@ -127,7 +129,7 @@ public interface UmlDiagramElement extends DiagramElement {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Local Uml Style</em>' containment reference.
+	 *        the new value of the '<em>Local Uml Style</em>' containment reference.
 	 * @see #getLocalUmlStyle()
 	 * @generated
 	 */
@@ -165,7 +167,7 @@ public interface UmlDiagramElement extends DiagramElement {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Owning Uml Diagram Element</em>' container reference.
+	 *        the new value of the '<em>Owning Uml Diagram Element</em>' container reference.
 	 * @see #getOwningUmlDiagramElement()
 	 * @generated
 	 */

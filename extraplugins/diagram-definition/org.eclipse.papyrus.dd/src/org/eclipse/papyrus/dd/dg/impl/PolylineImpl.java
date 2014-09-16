@@ -14,12 +14,17 @@ package org.eclipse.papyrus.dd.dg.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+
 import org.eclipse.papyrus.dd.dc.Point;
+
 import org.eclipse.papyrus.dd.dg.DGPackage;
 import org.eclipse.papyrus.dd.dg.Polyline;
 
@@ -72,7 +77,7 @@ public class PolylineImpl extends MarkedElementImpl implements Polyline {
 	 */
 	@Override
 	public EList<Point> getPoints() {
-		if (points == null) {
+		if(points == null) {
 			points = new EObjectContainmentEList<Point>(Point.class, this, DGPackage.POLYLINE__POINT);
 		}
 		return points;
@@ -85,9 +90,9 @@ public class PolylineImpl extends MarkedElementImpl implements Polyline {
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
+		switch(featureID) {
 		case DGPackage.POLYLINE__POINT:
-			return ((InternalEList<?>) getPoints()).basicRemove(otherEnd, msgs);
+			return ((InternalEList<?>)getPoints()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -99,7 +104,7 @@ public class PolylineImpl extends MarkedElementImpl implements Polyline {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch(featureID) {
 		case DGPackage.POLYLINE__POINT:
 			return getPoints();
 		}
@@ -114,10 +119,10 @@ public class PolylineImpl extends MarkedElementImpl implements Polyline {
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch(featureID) {
 		case DGPackage.POLYLINE__POINT:
 			getPoints().clear();
-			getPoints().addAll((Collection<? extends Point>) newValue);
+			getPoints().addAll((Collection<? extends Point>)newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -130,7 +135,7 @@ public class PolylineImpl extends MarkedElementImpl implements Polyline {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch(featureID) {
 		case DGPackage.POLYLINE__POINT:
 			getPoints().clear();
 			return;
@@ -145,7 +150,7 @@ public class PolylineImpl extends MarkedElementImpl implements Polyline {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch(featureID) {
 		case DGPackage.POLYLINE__POINT:
 			return points != null && !points.isEmpty();
 		}

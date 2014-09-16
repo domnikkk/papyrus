@@ -79,7 +79,7 @@ public abstract class DiagramElementImpl extends MinimalEObjectImpl.Container im
 	@Override
 	public DiagramElement getOwningDiagramElement() {
 		DiagramElement owningDiagramElement = basicGetOwningDiagramElement();
-		return owningDiagramElement != null && owningDiagramElement.eIsProxy() ? (DiagramElement) eResolveProxy((InternalEObject) owningDiagramElement) : owningDiagramElement;
+		return owningDiagramElement != null && owningDiagramElement.eIsProxy() ? (DiagramElement)eResolveProxy((InternalEObject)owningDiagramElement) : owningDiagramElement;
 	}
 
 	/**
@@ -133,7 +133,7 @@ public abstract class DiagramElementImpl extends MinimalEObjectImpl.Container im
 	@Override
 	public Style getLocalStyle() {
 		Style localStyle = basicGetLocalStyle();
-		return localStyle != null && localStyle.eIsProxy() ? (Style) eResolveProxy((InternalEObject) localStyle) : localStyle;
+		return localStyle != null && localStyle.eIsProxy() ? (Style)eResolveProxy((InternalEObject)localStyle) : localStyle;
 	}
 
 	/**
@@ -154,7 +154,7 @@ public abstract class DiagramElementImpl extends MinimalEObjectImpl.Container im
 	@Override
 	public Style getSharedStyle() {
 		Style sharedStyle = basicGetSharedStyle();
-		return sharedStyle != null && sharedStyle.eIsProxy() ? (Style) eResolveProxy((InternalEObject) sharedStyle) : sharedStyle;
+		return sharedStyle != null && sharedStyle.eIsProxy() ? (Style)eResolveProxy((InternalEObject)sharedStyle) : sharedStyle;
 	}
 
 	/**
@@ -173,23 +173,23 @@ public abstract class DiagramElementImpl extends MinimalEObjectImpl.Container im
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch(featureID) {
 		case DIPackage.DIAGRAM_ELEMENT__MODEL_ELEMENT:
 			return getModelElement();
 		case DIPackage.DIAGRAM_ELEMENT__OWNING_DIAGRAM_ELEMENT:
-			if (resolve) {
+			if(resolve) {
 				return getOwningDiagramElement();
 			}
 			return basicGetOwningDiagramElement();
 		case DIPackage.DIAGRAM_ELEMENT__OWNED_DIAGRAM_ELEMENT:
 			return getOwnedDiagramElement();
 		case DIPackage.DIAGRAM_ELEMENT__LOCAL_STYLE:
-			if (resolve) {
+			if(resolve) {
 				return getLocalStyle();
 			}
 			return basicGetLocalStyle();
 		case DIPackage.DIAGRAM_ELEMENT__SHARED_STYLE:
-			if (resolve) {
+			if(resolve) {
 				return getSharedStyle();
 			}
 			return basicGetSharedStyle();
@@ -208,7 +208,7 @@ public abstract class DiagramElementImpl extends MinimalEObjectImpl.Container im
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch(featureID) {
 		case DIPackage.DIAGRAM_ELEMENT__MODEL_ELEMENT:
 			return isSetModelElement();
 		case DIPackage.DIAGRAM_ELEMENT__OWNING_DIAGRAM_ELEMENT:

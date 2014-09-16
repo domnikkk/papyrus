@@ -15,13 +15,18 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+
 import org.eclipse.papyrus.dd.dg.DGPackage;
 import org.eclipse.papyrus.dd.dg.Definition;
 import org.eclipse.papyrus.dd.dg.Definitions;
@@ -32,7 +37,7 @@ import org.eclipse.papyrus.dd.dg.StyleSheet;
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.eclipse.papyrus.dd.dg.impl.DefinitionsImpl#getDefnitions <em>Defnition</em>}</li>
+ * <li>{@link org.eclipse.papyrus.dd.dg.impl.DefinitionsImpl#getDefinitions <em>Definition</em>}</li>
  * <li>{@link org.eclipse.papyrus.dd.dg.impl.DefinitionsImpl#getStyleSheet <em>Style Sheet</em>}</li>
  * </ul>
  * </p>
@@ -42,14 +47,15 @@ import org.eclipse.papyrus.dd.dg.StyleSheet;
 public class DefinitionsImpl extends MinimalEObjectImpl.Container implements Definitions {
 
 	/**
-	 * The cached value of the '{@link #getDefnitions() <em>Defnition</em>}' containment reference list.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The cached value of the '{@link #getDefinitions() <em>Definition</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 *
-	 * @see #getDefnitions()
+	 * @see #getDefinitions()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Definition> defnitions;
+	protected EList<Definition> definitions;
 
 	/**
 	 * The cached value of the '{@link #getStyleSheet() <em>Style Sheet</em>}' containment reference.
@@ -81,16 +87,17 @@ public class DefinitionsImpl extends MinimalEObjectImpl.Container implements Def
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 *
 	 * @generated
 	 */
 	@Override
-	public EList<Definition> getDefnitions() {
-		if (defnitions == null) {
-			defnitions = new EObjectContainmentEList<Definition>(Definition.class, this, DGPackage.DEFINITIONS__DEFNITION);
+	public EList<Definition> getDefinitions() {
+		if(definitions == null) {
+			definitions = new EObjectContainmentEList<Definition>(Definition.class, this, DGPackage.DEFINITIONS__DEFINITION);
 		}
-		return defnitions;
+		return definitions;
 	}
 
 	/**
@@ -111,9 +118,9 @@ public class DefinitionsImpl extends MinimalEObjectImpl.Container implements Def
 	public NotificationChain basicSetStyleSheet(StyleSheet newStyleSheet, NotificationChain msgs) {
 		StyleSheet oldStyleSheet = styleSheet;
 		styleSheet = newStyleSheet;
-		if (eNotificationRequired()) {
+		if(eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DGPackage.DEFINITIONS__STYLE_SHEET, oldStyleSheet, newStyleSheet);
-			if (msgs == null) {
+			if(msgs == null) {
 				msgs = notification;
 			} else {
 				msgs.add(notification);
@@ -129,19 +136,19 @@ public class DefinitionsImpl extends MinimalEObjectImpl.Container implements Def
 	 */
 	@Override
 	public void setStyleSheet(StyleSheet newStyleSheet) {
-		if (newStyleSheet != styleSheet) {
+		if(newStyleSheet != styleSheet) {
 			NotificationChain msgs = null;
-			if (styleSheet != null) {
-				msgs = ((InternalEObject) styleSheet).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DGPackage.DEFINITIONS__STYLE_SHEET, null, msgs);
+			if(styleSheet != null) {
+				msgs = ((InternalEObject)styleSheet).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DGPackage.DEFINITIONS__STYLE_SHEET, null, msgs);
 			}
-			if (newStyleSheet != null) {
-				msgs = ((InternalEObject) newStyleSheet).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DGPackage.DEFINITIONS__STYLE_SHEET, null, msgs);
+			if(newStyleSheet != null) {
+				msgs = ((InternalEObject)newStyleSheet).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DGPackage.DEFINITIONS__STYLE_SHEET, null, msgs);
 			}
 			msgs = basicSetStyleSheet(newStyleSheet, msgs);
-			if (msgs != null) {
+			if(msgs != null) {
 				msgs.dispatch();
 			}
-		} else if (eNotificationRequired()) {
+		} else if(eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.DEFINITIONS__STYLE_SHEET, newStyleSheet, newStyleSheet));
 		}
 	}
@@ -153,9 +160,9 @@ public class DefinitionsImpl extends MinimalEObjectImpl.Container implements Def
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-		case DGPackage.DEFINITIONS__DEFNITION:
-			return ((InternalEList<?>) getDefnitions()).basicRemove(otherEnd, msgs);
+		switch(featureID) {
+		case DGPackage.DEFINITIONS__DEFINITION:
+			return ((InternalEList<?>)getDefinitions()).basicRemove(otherEnd, msgs);
 		case DGPackage.DEFINITIONS__STYLE_SHEET:
 			return basicSetStyleSheet(null, msgs);
 		}
@@ -169,9 +176,9 @@ public class DefinitionsImpl extends MinimalEObjectImpl.Container implements Def
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-		case DGPackage.DEFINITIONS__DEFNITION:
-			return getDefnitions();
+		switch(featureID) {
+		case DGPackage.DEFINITIONS__DEFINITION:
+			return getDefinitions();
 		case DGPackage.DEFINITIONS__STYLE_SHEET:
 			return getStyleSheet();
 		}
@@ -186,13 +193,13 @@ public class DefinitionsImpl extends MinimalEObjectImpl.Container implements Def
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-		case DGPackage.DEFINITIONS__DEFNITION:
-			getDefnitions().clear();
-			getDefnitions().addAll((Collection<? extends Definition>) newValue);
+		switch(featureID) {
+		case DGPackage.DEFINITIONS__DEFINITION:
+			getDefinitions().clear();
+			getDefinitions().addAll((Collection<? extends Definition>)newValue);
 			return;
 		case DGPackage.DEFINITIONS__STYLE_SHEET:
-			setStyleSheet((StyleSheet) newValue);
+			setStyleSheet((StyleSheet)newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -205,12 +212,12 @@ public class DefinitionsImpl extends MinimalEObjectImpl.Container implements Def
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
-		case DGPackage.DEFINITIONS__DEFNITION:
-			getDefnitions().clear();
+		switch(featureID) {
+		case DGPackage.DEFINITIONS__DEFINITION:
+			getDefinitions().clear();
 			return;
 		case DGPackage.DEFINITIONS__STYLE_SHEET:
-			setStyleSheet((StyleSheet) null);
+			setStyleSheet((StyleSheet)null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -223,9 +230,9 @@ public class DefinitionsImpl extends MinimalEObjectImpl.Container implements Def
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-		case DGPackage.DEFINITIONS__DEFNITION:
-			return defnitions != null && !defnitions.isEmpty();
+		switch(featureID) {
+		case DGPackage.DEFINITIONS__DEFINITION:
+			return definitions != null && !definitions.isEmpty();
 		case DGPackage.DEFINITIONS__STYLE_SHEET:
 			return styleSheet != null;
 		}

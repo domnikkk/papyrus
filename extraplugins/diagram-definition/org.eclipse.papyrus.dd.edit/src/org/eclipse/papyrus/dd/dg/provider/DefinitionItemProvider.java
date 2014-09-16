@@ -16,7 +16,9 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.common.util.ResourceLocator;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemColorProvider;
@@ -29,8 +31,10 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
 import org.eclipse.papyrus.dd.dg.DGPackage;
 import org.eclipse.papyrus.dd.dg.Definition;
+
 import org.eclipse.papyrus.dd.edit.DDEditPlugin;
 
 /**
@@ -60,7 +64,7 @@ public class DefinitionItemProvider extends ItemProviderAdapter implements IEdit
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null) {
+		if(itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 			addIdPropertyDescriptor(object);
 		}
@@ -75,8 +79,7 @@ public class DefinitionItemProvider extends ItemProviderAdapter implements IEdit
 	 * @generated
 	 */
 	protected void addIdPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Definition_id_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_Definition_id_feature", "_UI_Definition_type"), DGPackage.Literals.DEFINITION__ID, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Definition_id_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Definition_id_feature", "_UI_Definition_type"), DGPackage.Literals.DEFINITION__ID, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -88,7 +91,7 @@ public class DefinitionItemProvider extends ItemProviderAdapter implements IEdit
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Definition) object).getId();
+		String label = ((Definition)object).getId();
 		return label == null || label.length() == 0 ? getString("_UI_Definition_type") : getString("_UI_Definition_type") + " " + label;
 	}
 
@@ -103,7 +106,7 @@ public class DefinitionItemProvider extends ItemProviderAdapter implements IEdit
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-		switch (notification.getFeatureID(Definition.class)) {
+		switch(notification.getFeatureID(Definition.class)) {
 		case DGPackage.DEFINITION__ID:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;

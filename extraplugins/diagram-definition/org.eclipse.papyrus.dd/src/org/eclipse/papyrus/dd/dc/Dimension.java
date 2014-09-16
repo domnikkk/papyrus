@@ -14,6 +14,7 @@ package org.eclipse.papyrus.dd.dc;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -57,7 +58,7 @@ public interface Dimension extends EObject {
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Width</em>' attribute.
+	 *        the new value of the '<em>Width</em>' attribute.
 	 * @see #isSetWidth()
 	 * @see #unsetWidth()
 	 * @see #getWidth()
@@ -108,7 +109,7 @@ public interface Dimension extends EObject {
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Height</em>' attribute.
+	 *        the new value of the '<em>Height</em>' attribute.
 	 * @see #isSetHeight()
 	 * @see #unsetHeight()
 	 * @see #getHeight()
@@ -144,10 +145,10 @@ public interface Dimension extends EObject {
 	 * the width of a dimension cannot be negative
 	 *
 	 * @param diagnostics
-	 *            The chain of diagnostics to which problems are to be appended.
+	 *        The chain of diagnostics to which problems are to be appended.
 	 * @param context
-	 *            The cache of context-specific information. <!-- end-model-doc
-	 *            -->
+	 *        The cache of context-specific information. <!-- end-model-doc
+	 *        -->
 	 * @model
 	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL body='width >=0'"
 	 * @generated
@@ -159,10 +160,10 @@ public interface Dimension extends EObject {
 	 * the height of a dimension cannot be negative
 	 *
 	 * @param diagnostics
-	 *            The chain of diagnostics to which problems are to be appended.
+	 *        The chain of diagnostics to which problems are to be appended.
 	 * @param context
-	 *            The cache of context-specific information. <!-- end-model-doc
-	 *            -->
+	 *        The cache of context-specific information. <!-- end-model-doc
+	 *        -->
 	 * @model
 	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL body='height >=0'"
 	 * @generated

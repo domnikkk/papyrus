@@ -22,10 +22,47 @@ import org.eclipse.papyrus.dd.di.Diagram;
  * The most general class for UML diagrams.
  * <!-- end-model-doc -->
  *
+ * <p>
+ * The following features are supported:
+ * <ul>
+ * <li>{@link org.eclipse.papyrus.umldi.UmlDiagram#getKind <em>Kind</em>}</li>
+ * </ul>
+ * </p>
  *
  * @see org.eclipse.papyrus.umldi.UMLDIPackage#getUmlDiagram()
  * @model
  * @generated
  */
-public interface UmlDiagram extends UmlShape, Diagram {
+public interface UmlDiagram extends UmlDiagramElement, Diagram {
+
+	/**
+	 * Returns the value of the '<em><b>Kind</b></em>' attribute.
+	 * The literals are from the enumeration {@link org.eclipse.papyrus.umldi.UmlDiagramKind}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Kind</em>' attribute isn't clear, there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the value of the '<em>Kind</em>' attribute.
+	 * @see org.eclipse.papyrus.umldi.UmlDiagramKind
+	 * @see #setKind(UmlDiagramKind)
+	 * @see org.eclipse.papyrus.umldi.UMLDIPackage#getUmlDiagram_Kind()
+	 * @model required="true" ordered="false"
+	 * @generated
+	 */
+	UmlDiagramKind getKind();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.papyrus.umldi.UmlDiagram#getKind <em>Kind</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @param value
+	 *        the new value of the '<em>Kind</em>' attribute.
+	 * @see org.eclipse.papyrus.umldi.UmlDiagramKind
+	 * @see #getKind()
+	 * @generated
+	 */
+	void setKind(UmlDiagramKind value);
 } // UmlDiagram

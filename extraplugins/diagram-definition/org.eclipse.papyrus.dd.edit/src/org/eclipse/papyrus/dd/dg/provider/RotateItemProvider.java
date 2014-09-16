@@ -16,7 +16,9 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EStructuralFeature;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemColorProvider;
@@ -28,7 +30,9 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
 import org.eclipse.papyrus.dd.dc.DCFactory;
+
 import org.eclipse.papyrus.dd.dg.DGPackage;
 import org.eclipse.papyrus.dd.dg.Rotate;
 
@@ -59,7 +63,7 @@ public class RotateItemProvider extends TransformItemProvider implements IEditin
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null) {
+		if(itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 			addAnglePropertyDescriptor(object);
 		}
@@ -73,12 +77,12 @@ public class RotateItemProvider extends TransformItemProvider implements IEditin
 	 * @generated
 	 */
 	protected void addAnglePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Rotate_angle_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_Rotate_angle_feature", "_UI_Rotate_type"), DGPackage.Literals.ROTATE__ANGLE, true, false, false, ItemPropertyDescriptor.REAL_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Rotate_angle_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Rotate_angle_feature", "_UI_Rotate_type"), DGPackage.Literals.ROTATE__ANGLE, true, false, false, ItemPropertyDescriptor.REAL_VALUE_IMAGE, null, null));
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
@@ -86,7 +90,7 @@ public class RotateItemProvider extends TransformItemProvider implements IEditin
 	 */
 	@Override
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null) {
+		if(childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(DGPackage.Literals.ROTATE__CENTER);
 		}
@@ -125,7 +129,7 @@ public class RotateItemProvider extends TransformItemProvider implements IEditin
 	 */
 	@Override
 	public String getText(Object object) {
-		Rotate rotate = (Rotate) object;
+		Rotate rotate = (Rotate)object;
 		return getString("_UI_Rotate_type") + " " + rotate.getAngle();
 	}
 
@@ -140,7 +144,7 @@ public class RotateItemProvider extends TransformItemProvider implements IEditin
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-		switch (notification.getFeatureID(Rotate.class)) {
+		switch(notification.getFeatureID(Rotate.class)) {
 		case DGPackage.ROTATE__ANGLE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;

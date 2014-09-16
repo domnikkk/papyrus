@@ -37,7 +37,16 @@ public enum UmlLabelKind implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	NAME(0, "name", "name");
+	NAME(0, "name", "name"), /**
+	 * The '<em><b>Multiplicity</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see #MULTIPLICITY_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	MULTIPLICITY(1, "multiplicity", "multiplicity");
 
 	/**
 	 * The '<em><b>Name</b></em>' literal value.
@@ -55,13 +64,28 @@ public enum UmlLabelKind implements Enumerator {
 	public static final int NAME_VALUE = 0;
 
 	/**
+	 * The '<em><b>Multiplicity</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Multiplicity</b></em>' literal object isn't clear, there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 *
+	 * @see #MULTIPLICITY
+	 * @model name="multiplicity"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MULTIPLICITY_VALUE = 1;
+
+	/**
 	 * An array of all the '<em><b>Uml Label Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
 	 * @generated
 	 */
-	private static final UmlLabelKind[] VALUES_ARRAY = new UmlLabelKind[] { NAME, };
+	private static final UmlLabelKind[] VALUES_ARRAY = new UmlLabelKind[]{ NAME, MULTIPLICITY, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Uml Label Kind</b></em>' enumerators.
@@ -80,9 +104,9 @@ public enum UmlLabelKind implements Enumerator {
 	 * @generated
 	 */
 	public static UmlLabelKind get(String literal) {
-		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+		for(int i = 0; i < VALUES_ARRAY.length; ++i) {
 			UmlLabelKind result = VALUES_ARRAY[i];
-			if (result.toString().equals(literal)) {
+			if(result.toString().equals(literal)) {
 				return result;
 			}
 		}
@@ -97,9 +121,9 @@ public enum UmlLabelKind implements Enumerator {
 	 * @generated
 	 */
 	public static UmlLabelKind getByName(String name) {
-		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+		for(int i = 0; i < VALUES_ARRAY.length; ++i) {
 			UmlLabelKind result = VALUES_ARRAY[i];
-			if (result.getName().equals(name)) {
+			if(result.getName().equals(name)) {
 				return result;
 			}
 		}
@@ -114,9 +138,11 @@ public enum UmlLabelKind implements Enumerator {
 	 * @generated
 	 */
 	public static UmlLabelKind get(int value) {
-		switch (value) {
+		switch(value) {
 		case NAME_VALUE:
 			return NAME;
+		case MULTIPLICITY_VALUE:
+			return MULTIPLICITY;
 		}
 		return null;
 	}
@@ -202,4 +228,4 @@ public enum UmlLabelKind implements Enumerator {
 	public String toString() {
 		return literal;
 	}
-} // UmlLabelKind
+} //UmlLabelKind

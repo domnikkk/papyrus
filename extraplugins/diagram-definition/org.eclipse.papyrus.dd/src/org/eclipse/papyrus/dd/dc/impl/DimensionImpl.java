@@ -12,17 +12,23 @@
 package org.eclipse.papyrus.dd.dc.impl;
 
 import java.lang.reflect.InvocationTargetException;
+
 import java.util.Map;
 
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import org.eclipse.papyrus.dd.dc.DCPackage;
 import org.eclipse.papyrus.dd.dc.Dimension;
+
 import org.eclipse.papyrus.dd.dc.util.DCValidator;
 
 /**
@@ -139,7 +145,7 @@ public class DimensionImpl extends MinimalEObjectImpl.Container implements Dimen
 		width = newWidth;
 		boolean oldWidthESet = widthESet;
 		widthESet = true;
-		if (eNotificationRequired()) {
+		if(eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DCPackage.DIMENSION__WIDTH, oldWidth, width, !oldWidthESet));
 		}
 	}
@@ -155,7 +161,7 @@ public class DimensionImpl extends MinimalEObjectImpl.Container implements Dimen
 		boolean oldWidthESet = widthESet;
 		width = WIDTH_EDEFAULT;
 		widthESet = false;
-		if (eNotificationRequired()) {
+		if(eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.UNSET, DCPackage.DIMENSION__WIDTH, oldWidth, WIDTH_EDEFAULT, oldWidthESet));
 		}
 	}
@@ -191,7 +197,7 @@ public class DimensionImpl extends MinimalEObjectImpl.Container implements Dimen
 		height = newHeight;
 		boolean oldHeightESet = heightESet;
 		heightESet = true;
-		if (eNotificationRequired()) {
+		if(eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DCPackage.DIMENSION__HEIGHT, oldHeight, height, !oldHeightESet));
 		}
 	}
@@ -207,7 +213,7 @@ public class DimensionImpl extends MinimalEObjectImpl.Container implements Dimen
 		boolean oldHeightESet = heightESet;
 		height = HEIGHT_EDEFAULT;
 		heightESet = false;
-		if (eNotificationRequired()) {
+		if(eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.UNSET, DCPackage.DIMENSION__HEIGHT, oldHeight, HEIGHT_EDEFAULT, oldHeightESet));
 		}
 	}
@@ -241,8 +247,7 @@ public class DimensionImpl extends MinimalEObjectImpl.Container implements Dimen
 	 */
 	@Override
 	public boolean nonNegativeWidth(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return DCValidator.validate(DCPackage.Literals.DIMENSION, this, diagnostics, context, "http://www.eclipse.org/emf/2002/Ecore/OCL", DCPackage.Literals.DIMENSION___NON_NEGATIVE_WIDTH__DIAGNOSTICCHAIN_MAP,
-				NON_NEGATIVE_WIDTH_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION, Diagnostic.ERROR, DCValidator.DIAGNOSTIC_SOURCE, DCValidator.DIMENSION__NON_NEGATIVE_WIDTH);
+		return DCValidator.validate(DCPackage.Literals.DIMENSION, this, diagnostics, context, "http://www.eclipse.org/emf/2002/Ecore/OCL", DCPackage.Literals.DIMENSION___NON_NEGATIVE_WIDTH__DIAGNOSTICCHAIN_MAP, NON_NEGATIVE_WIDTH_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION, Diagnostic.ERROR, DCValidator.DIAGNOSTIC_SOURCE, DCValidator.DIMENSION__NON_NEGATIVE_WIDTH);
 	}
 
 	/**
@@ -264,8 +269,7 @@ public class DimensionImpl extends MinimalEObjectImpl.Container implements Dimen
 	 */
 	@Override
 	public boolean nonNegativeHeight(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return DCValidator.validate(DCPackage.Literals.DIMENSION, this, diagnostics, context, "http://www.eclipse.org/emf/2002/Ecore/OCL", DCPackage.Literals.DIMENSION___NON_NEGATIVE_HEIGHT__DIAGNOSTICCHAIN_MAP,
-				NON_NEGATIVE_HEIGHT_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION, Diagnostic.ERROR, DCValidator.DIAGNOSTIC_SOURCE, DCValidator.DIMENSION__NON_NEGATIVE_HEIGHT);
+		return DCValidator.validate(DCPackage.Literals.DIMENSION, this, diagnostics, context, "http://www.eclipse.org/emf/2002/Ecore/OCL", DCPackage.Literals.DIMENSION___NON_NEGATIVE_HEIGHT__DIAGNOSTICCHAIN_MAP, NON_NEGATIVE_HEIGHT_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION, Diagnostic.ERROR, DCValidator.DIAGNOSTIC_SOURCE, DCValidator.DIMENSION__NON_NEGATIVE_HEIGHT);
 	}
 
 	/**
@@ -275,7 +279,7 @@ public class DimensionImpl extends MinimalEObjectImpl.Container implements Dimen
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch(featureID) {
 		case DCPackage.DIMENSION__WIDTH:
 			return getWidth();
 		case DCPackage.DIMENSION__HEIGHT:
@@ -291,12 +295,12 @@ public class DimensionImpl extends MinimalEObjectImpl.Container implements Dimen
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch(featureID) {
 		case DCPackage.DIMENSION__WIDTH:
-			setWidth((Double) newValue);
+			setWidth((Double)newValue);
 			return;
 		case DCPackage.DIMENSION__HEIGHT:
-			setHeight((Double) newValue);
+			setHeight((Double)newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -309,7 +313,7 @@ public class DimensionImpl extends MinimalEObjectImpl.Container implements Dimen
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch(featureID) {
 		case DCPackage.DIMENSION__WIDTH:
 			unsetWidth();
 			return;
@@ -327,7 +331,7 @@ public class DimensionImpl extends MinimalEObjectImpl.Container implements Dimen
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch(featureID) {
 		case DCPackage.DIMENSION__WIDTH:
 			return isSetWidth();
 		case DCPackage.DIMENSION__HEIGHT:
@@ -344,11 +348,11 @@ public class DimensionImpl extends MinimalEObjectImpl.Container implements Dimen
 	@Override
 	@SuppressWarnings("unchecked")
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
+		switch(operationID) {
 		case DCPackage.DIMENSION___NON_NEGATIVE_WIDTH__DIAGNOSTICCHAIN_MAP:
-			return nonNegativeWidth((DiagnosticChain) arguments.get(0), (Map<Object, Object>) arguments.get(1));
+			return nonNegativeWidth((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
 		case DCPackage.DIMENSION___NON_NEGATIVE_HEIGHT__DIAGNOSTICCHAIN_MAP:
-			return nonNegativeHeight((DiagnosticChain) arguments.get(0), (Map<Object, Object>) arguments.get(1));
+			return nonNegativeHeight((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
@@ -360,18 +364,18 @@ public class DimensionImpl extends MinimalEObjectImpl.Container implements Dimen
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
+		if(eIsProxy()) {
 			return super.toString();
 		}
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (width: ");
-		if (widthESet) {
+		if(widthESet) {
 			result.append(width);
 		} else {
 			result.append("<unset>");
 		}
 		result.append(", height: ");
-		if (heightESet) {
+		if(heightESet) {
 			result.append(height);
 		} else {
 			result.append("<unset>");

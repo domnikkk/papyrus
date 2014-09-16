@@ -53,7 +53,7 @@ public interface EllipticalArcTo extends PathCommand {
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Radii</em>' containment reference.
+	 *        the new value of the '<em>Radii</em>' containment reference.
 	 * @see #getRadii()
 	 * @generated
 	 */
@@ -80,7 +80,7 @@ public interface EllipticalArcTo extends PathCommand {
 	 * -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Rotation</em>' attribute.
+	 *        the new value of the '<em>Rotation</em>' attribute.
 	 * @see #getRotation()
 	 * @generated
 	 */
@@ -107,7 +107,7 @@ public interface EllipticalArcTo extends PathCommand {
 	 * end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Is Large Arc</em>' attribute.
+	 *        the new value of the '<em>Is Large Arc</em>' attribute.
 	 * @see #isLargeArc()
 	 * @generated
 	 */
@@ -133,7 +133,7 @@ public interface EllipticalArcTo extends PathCommand {
 	 * -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Is Sweep</em>' attribute.
+	 *        the new value of the '<em>Is Sweep</em>' attribute.
 	 * @see #isSweep()
 	 * @generated
 	 */
@@ -158,7 +158,7 @@ public interface EllipticalArcTo extends PathCommand {
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Point</em>' containment reference.
+	 *        the new value of the '<em>Point</em>' containment reference.
 	 * @see #getPoint()
 	 * @generated
 	 */

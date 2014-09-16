@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+
 import org.eclipse.papyrus.dd.di.DIPackage;
 
 /**
@@ -84,7 +85,7 @@ public interface UMLDIPackage extends EPackage {
 	 * @see org.eclipse.papyrus.umldi.impl.UMLDIPackageImpl#getUmlDiagramElement()
 	 * @generated
 	 */
-	int UML_DIAGRAM_ELEMENT = 2;
+	int UML_DIAGRAM_ELEMENT = 1;
 
 	/**
 	 * The feature id for the '<em><b>Model Element</b></em>' reference list.
@@ -266,7 +267,7 @@ public interface UMLDIPackage extends EPackage {
 	 * @see org.eclipse.papyrus.umldi.impl.UMLDIPackageImpl#getUmlStyle()
 	 * @generated
 	 */
-	int UML_STYLE = 3;
+	int UML_STYLE = 2;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.umldi.impl.UmlEdgeImpl <em>Uml Edge</em>}' class.
@@ -277,7 +278,7 @@ public interface UMLDIPackage extends EPackage {
 	 * @see org.eclipse.papyrus.umldi.impl.UMLDIPackageImpl#getUmlEdge()
 	 * @generated
 	 */
-	int UML_EDGE = 4;
+	int UML_EDGE = 3;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.umldi.impl.UmlShapeImpl <em>Uml Shape</em>}' class.
@@ -288,7 +289,7 @@ public interface UMLDIPackage extends EPackage {
 	 * @see org.eclipse.papyrus.umldi.impl.UMLDIPackageImpl#getUmlShape()
 	 * @generated
 	 */
-	int UML_SHAPE = 1;
+	int UML_SHAPE = 4;
 
 	/**
 	 * The feature id for the '<em><b>Model Element</b></em>' reference list.
@@ -298,7 +299,7 @@ public interface UMLDIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UML_SHAPE__MODEL_ELEMENT = UML_DIAGRAM_ELEMENT__MODEL_ELEMENT;
+	int UML_DIAGRAM__MODEL_ELEMENT = UML_DIAGRAM_ELEMENT__MODEL_ELEMENT;
 
 	/**
 	 * The feature id for the '<em><b>Owning Diagram Element</b></em>' reference.
@@ -308,7 +309,7 @@ public interface UMLDIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UML_SHAPE__OWNING_DIAGRAM_ELEMENT = UML_DIAGRAM_ELEMENT__OWNING_DIAGRAM_ELEMENT;
+	int UML_DIAGRAM__OWNING_DIAGRAM_ELEMENT = UML_DIAGRAM_ELEMENT__OWNING_DIAGRAM_ELEMENT;
 
 	/**
 	 * The feature id for the '<em><b>Owned Diagram Element</b></em>' reference list.
@@ -318,7 +319,7 @@ public interface UMLDIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UML_SHAPE__OWNED_DIAGRAM_ELEMENT = UML_DIAGRAM_ELEMENT__OWNED_DIAGRAM_ELEMENT;
+	int UML_DIAGRAM__OWNED_DIAGRAM_ELEMENT = UML_DIAGRAM_ELEMENT__OWNED_DIAGRAM_ELEMENT;
 
 	/**
 	 * The feature id for the '<em><b>Local Style</b></em>' reference.
@@ -328,7 +329,7 @@ public interface UMLDIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UML_SHAPE__LOCAL_STYLE = UML_DIAGRAM_ELEMENT__LOCAL_STYLE;
+	int UML_DIAGRAM__LOCAL_STYLE = UML_DIAGRAM_ELEMENT__LOCAL_STYLE;
 
 	/**
 	 * The feature id for the '<em><b>Shared Style</b></em>' reference.
@@ -338,7 +339,7 @@ public interface UMLDIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UML_SHAPE__SHARED_STYLE = UML_DIAGRAM_ELEMENT__SHARED_STYLE;
+	int UML_DIAGRAM__SHARED_STYLE = UML_DIAGRAM_ELEMENT__SHARED_STYLE;
 
 	/**
 	 * The feature id for the '<em><b>Target Edge</b></em>' reference list.
@@ -348,7 +349,7 @@ public interface UMLDIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UML_SHAPE__TARGET_EDGE = UML_DIAGRAM_ELEMENT__TARGET_EDGE;
+	int UML_DIAGRAM__TARGET_EDGE = UML_DIAGRAM_ELEMENT__TARGET_EDGE;
 
 	/**
 	 * The feature id for the '<em><b>Source Edge</b></em>' reference list.
@@ -358,7 +359,7 @@ public interface UMLDIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UML_SHAPE__SOURCE_EDGE = UML_DIAGRAM_ELEMENT__SOURCE_EDGE;
+	int UML_DIAGRAM__SOURCE_EDGE = UML_DIAGRAM_ELEMENT__SOURCE_EDGE;
 
 	/**
 	 * The feature id for the '<em><b>Uml Model Element</b></em>' reference list.
@@ -368,7 +369,7 @@ public interface UMLDIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UML_SHAPE__UML_MODEL_ELEMENT = UML_DIAGRAM_ELEMENT__UML_MODEL_ELEMENT;
+	int UML_DIAGRAM__UML_MODEL_ELEMENT = UML_DIAGRAM_ELEMENT__UML_MODEL_ELEMENT;
 
 	/**
 	 * The feature id for the '<em><b>Shared Uml Style</b></em>' reference.
@@ -378,7 +379,7 @@ public interface UMLDIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UML_SHAPE__SHARED_UML_STYLE = UML_DIAGRAM_ELEMENT__SHARED_UML_STYLE;
+	int UML_DIAGRAM__SHARED_UML_STYLE = UML_DIAGRAM_ELEMENT__SHARED_UML_STYLE;
 
 	/**
 	 * The feature id for the '<em><b>Local Uml Style</b></em>' containment reference.
@@ -388,7 +389,7 @@ public interface UMLDIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UML_SHAPE__LOCAL_UML_STYLE = UML_DIAGRAM_ELEMENT__LOCAL_UML_STYLE;
+	int UML_DIAGRAM__LOCAL_UML_STYLE = UML_DIAGRAM_ELEMENT__LOCAL_UML_STYLE;
 
 	/**
 	 * The feature id for the '<em><b>Owning Uml Diagram Element</b></em>' container reference.
@@ -398,7 +399,7 @@ public interface UMLDIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UML_SHAPE__OWNING_UML_DIAGRAM_ELEMENT = UML_DIAGRAM_ELEMENT__OWNING_UML_DIAGRAM_ELEMENT;
+	int UML_DIAGRAM__OWNING_UML_DIAGRAM_ELEMENT = UML_DIAGRAM_ELEMENT__OWNING_UML_DIAGRAM_ELEMENT;
 
 	/**
 	 * The feature id for the '<em><b>Owned Uml Diagram Element</b></em>' containment reference list.
@@ -408,7 +409,7 @@ public interface UMLDIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UML_SHAPE__OWNED_UML_DIAGRAM_ELEMENT = UML_DIAGRAM_ELEMENT__OWNED_UML_DIAGRAM_ELEMENT;
+	int UML_DIAGRAM__OWNED_UML_DIAGRAM_ELEMENT = UML_DIAGRAM_ELEMENT__OWNED_UML_DIAGRAM_ELEMENT;
 
 	/**
 	 * The feature id for the '<em><b>Target Uml Edge</b></em>' reference list.
@@ -418,7 +419,7 @@ public interface UMLDIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UML_SHAPE__TARGET_UML_EDGE = UML_DIAGRAM_ELEMENT__TARGET_UML_EDGE;
+	int UML_DIAGRAM__TARGET_UML_EDGE = UML_DIAGRAM_ELEMENT__TARGET_UML_EDGE;
 
 	/**
 	 * The feature id for the '<em><b>Source Uml Edge</b></em>' reference list.
@@ -428,7 +429,7 @@ public interface UMLDIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UML_SHAPE__SOURCE_UML_EDGE = UML_DIAGRAM_ELEMENT__SOURCE_UML_EDGE;
+	int UML_DIAGRAM__SOURCE_UML_EDGE = UML_DIAGRAM_ELEMENT__SOURCE_UML_EDGE;
 
 	/**
 	 * The feature id for the '<em><b>Bounds</b></em>' containment reference.
@@ -438,177 +439,7 @@ public interface UMLDIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UML_SHAPE__BOUNDS = UML_DIAGRAM_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Uml Shape</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int UML_SHAPE_FEATURE_COUNT = UML_DIAGRAM_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Uml Shape</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int UML_SHAPE_OPERATION_COUNT = UML_DIAGRAM_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Model Element</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int UML_DIAGRAM__MODEL_ELEMENT = UML_SHAPE__MODEL_ELEMENT;
-
-	/**
-	 * The feature id for the '<em><b>Owning Diagram Element</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int UML_DIAGRAM__OWNING_DIAGRAM_ELEMENT = UML_SHAPE__OWNING_DIAGRAM_ELEMENT;
-
-	/**
-	 * The feature id for the '<em><b>Owned Diagram Element</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int UML_DIAGRAM__OWNED_DIAGRAM_ELEMENT = UML_SHAPE__OWNED_DIAGRAM_ELEMENT;
-
-	/**
-	 * The feature id for the '<em><b>Local Style</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int UML_DIAGRAM__LOCAL_STYLE = UML_SHAPE__LOCAL_STYLE;
-
-	/**
-	 * The feature id for the '<em><b>Shared Style</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int UML_DIAGRAM__SHARED_STYLE = UML_SHAPE__SHARED_STYLE;
-
-	/**
-	 * The feature id for the '<em><b>Target Edge</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int UML_DIAGRAM__TARGET_EDGE = UML_SHAPE__TARGET_EDGE;
-
-	/**
-	 * The feature id for the '<em><b>Source Edge</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int UML_DIAGRAM__SOURCE_EDGE = UML_SHAPE__SOURCE_EDGE;
-
-	/**
-	 * The feature id for the '<em><b>Uml Model Element</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int UML_DIAGRAM__UML_MODEL_ELEMENT = UML_SHAPE__UML_MODEL_ELEMENT;
-
-	/**
-	 * The feature id for the '<em><b>Shared Uml Style</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int UML_DIAGRAM__SHARED_UML_STYLE = UML_SHAPE__SHARED_UML_STYLE;
-
-	/**
-	 * The feature id for the '<em><b>Local Uml Style</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int UML_DIAGRAM__LOCAL_UML_STYLE = UML_SHAPE__LOCAL_UML_STYLE;
-
-	/**
-	 * The feature id for the '<em><b>Owning Uml Diagram Element</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int UML_DIAGRAM__OWNING_UML_DIAGRAM_ELEMENT = UML_SHAPE__OWNING_UML_DIAGRAM_ELEMENT;
-
-	/**
-	 * The feature id for the '<em><b>Owned Uml Diagram Element</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int UML_DIAGRAM__OWNED_UML_DIAGRAM_ELEMENT = UML_SHAPE__OWNED_UML_DIAGRAM_ELEMENT;
-
-	/**
-	 * The feature id for the '<em><b>Target Uml Edge</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int UML_DIAGRAM__TARGET_UML_EDGE = UML_SHAPE__TARGET_UML_EDGE;
-
-	/**
-	 * The feature id for the '<em><b>Source Uml Edge</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int UML_DIAGRAM__SOURCE_UML_EDGE = UML_SHAPE__SOURCE_UML_EDGE;
-
-	/**
-	 * The feature id for the '<em><b>Bounds</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int UML_DIAGRAM__BOUNDS = UML_SHAPE__BOUNDS;
+	int UML_DIAGRAM__BOUNDS = UML_DIAGRAM_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -618,7 +449,7 @@ public interface UMLDIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UML_DIAGRAM__NAME = UML_SHAPE_FEATURE_COUNT + 0;
+	int UML_DIAGRAM__NAME = UML_DIAGRAM_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Documentation</b></em>' attribute.
@@ -628,7 +459,7 @@ public interface UMLDIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UML_DIAGRAM__DOCUMENTATION = UML_SHAPE_FEATURE_COUNT + 1;
+	int UML_DIAGRAM__DOCUMENTATION = UML_DIAGRAM_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Resolution</b></em>' attribute.
@@ -638,7 +469,17 @@ public interface UMLDIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UML_DIAGRAM__RESOLUTION = UML_SHAPE_FEATURE_COUNT + 2;
+	int UML_DIAGRAM__RESOLUTION = UML_DIAGRAM_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Kind</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int UML_DIAGRAM__KIND = UML_DIAGRAM_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Uml Diagram</em>' class.
@@ -648,7 +489,7 @@ public interface UMLDIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UML_DIAGRAM_FEATURE_COUNT = UML_SHAPE_FEATURE_COUNT + 3;
+	int UML_DIAGRAM_FEATURE_COUNT = UML_DIAGRAM_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of operations of the '<em>Uml Diagram</em>' class.
@@ -658,7 +499,7 @@ public interface UMLDIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UML_DIAGRAM_OPERATION_COUNT = UML_SHAPE_OPERATION_COUNT + 0;
+	int UML_DIAGRAM_OPERATION_COUNT = UML_DIAGRAM_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Font Name</b></em>' attribute.
@@ -921,6 +762,176 @@ public interface UMLDIPackage extends EPackage {
 	int UML_EDGE_OPERATION_COUNT = UML_DIAGRAM_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Model Element</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int UML_SHAPE__MODEL_ELEMENT = UML_DIAGRAM_ELEMENT__MODEL_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Owning Diagram Element</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int UML_SHAPE__OWNING_DIAGRAM_ELEMENT = UML_DIAGRAM_ELEMENT__OWNING_DIAGRAM_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Owned Diagram Element</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int UML_SHAPE__OWNED_DIAGRAM_ELEMENT = UML_DIAGRAM_ELEMENT__OWNED_DIAGRAM_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Local Style</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int UML_SHAPE__LOCAL_STYLE = UML_DIAGRAM_ELEMENT__LOCAL_STYLE;
+
+	/**
+	 * The feature id for the '<em><b>Shared Style</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int UML_SHAPE__SHARED_STYLE = UML_DIAGRAM_ELEMENT__SHARED_STYLE;
+
+	/**
+	 * The feature id for the '<em><b>Target Edge</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int UML_SHAPE__TARGET_EDGE = UML_DIAGRAM_ELEMENT__TARGET_EDGE;
+
+	/**
+	 * The feature id for the '<em><b>Source Edge</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int UML_SHAPE__SOURCE_EDGE = UML_DIAGRAM_ELEMENT__SOURCE_EDGE;
+
+	/**
+	 * The feature id for the '<em><b>Uml Model Element</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int UML_SHAPE__UML_MODEL_ELEMENT = UML_DIAGRAM_ELEMENT__UML_MODEL_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Shared Uml Style</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int UML_SHAPE__SHARED_UML_STYLE = UML_DIAGRAM_ELEMENT__SHARED_UML_STYLE;
+
+	/**
+	 * The feature id for the '<em><b>Local Uml Style</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int UML_SHAPE__LOCAL_UML_STYLE = UML_DIAGRAM_ELEMENT__LOCAL_UML_STYLE;
+
+	/**
+	 * The feature id for the '<em><b>Owning Uml Diagram Element</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int UML_SHAPE__OWNING_UML_DIAGRAM_ELEMENT = UML_DIAGRAM_ELEMENT__OWNING_UML_DIAGRAM_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Owned Uml Diagram Element</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int UML_SHAPE__OWNED_UML_DIAGRAM_ELEMENT = UML_DIAGRAM_ELEMENT__OWNED_UML_DIAGRAM_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Target Uml Edge</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int UML_SHAPE__TARGET_UML_EDGE = UML_DIAGRAM_ELEMENT__TARGET_UML_EDGE;
+
+	/**
+	 * The feature id for the '<em><b>Source Uml Edge</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int UML_SHAPE__SOURCE_UML_EDGE = UML_DIAGRAM_ELEMENT__SOURCE_UML_EDGE;
+
+	/**
+	 * The feature id for the '<em><b>Bounds</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int UML_SHAPE__BOUNDS = UML_DIAGRAM_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Uml Shape</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int UML_SHAPE_FEATURE_COUNT = UML_DIAGRAM_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Uml Shape</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int UML_SHAPE_OPERATION_COUNT = UML_DIAGRAM_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.umldi.impl.UmlCompartmentImpl <em>Uml Compartment</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -939,7 +950,7 @@ public interface UMLDIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UML_COMPARTMENT__MODEL_ELEMENT = UML_SHAPE__MODEL_ELEMENT;
+	int UML_COMPARTMENT__MODEL_ELEMENT = UML_DIAGRAM_ELEMENT__MODEL_ELEMENT;
 
 	/**
 	 * The feature id for the '<em><b>Owning Diagram Element</b></em>' reference.
@@ -949,7 +960,7 @@ public interface UMLDIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UML_COMPARTMENT__OWNING_DIAGRAM_ELEMENT = UML_SHAPE__OWNING_DIAGRAM_ELEMENT;
+	int UML_COMPARTMENT__OWNING_DIAGRAM_ELEMENT = UML_DIAGRAM_ELEMENT__OWNING_DIAGRAM_ELEMENT;
 
 	/**
 	 * The feature id for the '<em><b>Owned Diagram Element</b></em>' reference list.
@@ -959,7 +970,7 @@ public interface UMLDIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UML_COMPARTMENT__OWNED_DIAGRAM_ELEMENT = UML_SHAPE__OWNED_DIAGRAM_ELEMENT;
+	int UML_COMPARTMENT__OWNED_DIAGRAM_ELEMENT = UML_DIAGRAM_ELEMENT__OWNED_DIAGRAM_ELEMENT;
 
 	/**
 	 * The feature id for the '<em><b>Local Style</b></em>' reference.
@@ -969,7 +980,7 @@ public interface UMLDIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UML_COMPARTMENT__LOCAL_STYLE = UML_SHAPE__LOCAL_STYLE;
+	int UML_COMPARTMENT__LOCAL_STYLE = UML_DIAGRAM_ELEMENT__LOCAL_STYLE;
 
 	/**
 	 * The feature id for the '<em><b>Shared Style</b></em>' reference.
@@ -979,7 +990,7 @@ public interface UMLDIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UML_COMPARTMENT__SHARED_STYLE = UML_SHAPE__SHARED_STYLE;
+	int UML_COMPARTMENT__SHARED_STYLE = UML_DIAGRAM_ELEMENT__SHARED_STYLE;
 
 	/**
 	 * The feature id for the '<em><b>Target Edge</b></em>' reference list.
@@ -989,7 +1000,7 @@ public interface UMLDIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UML_COMPARTMENT__TARGET_EDGE = UML_SHAPE__TARGET_EDGE;
+	int UML_COMPARTMENT__TARGET_EDGE = UML_DIAGRAM_ELEMENT__TARGET_EDGE;
 
 	/**
 	 * The feature id for the '<em><b>Source Edge</b></em>' reference list.
@@ -999,7 +1010,7 @@ public interface UMLDIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UML_COMPARTMENT__SOURCE_EDGE = UML_SHAPE__SOURCE_EDGE;
+	int UML_COMPARTMENT__SOURCE_EDGE = UML_DIAGRAM_ELEMENT__SOURCE_EDGE;
 
 	/**
 	 * The feature id for the '<em><b>Uml Model Element</b></em>' reference list.
@@ -1009,7 +1020,7 @@ public interface UMLDIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UML_COMPARTMENT__UML_MODEL_ELEMENT = UML_SHAPE__UML_MODEL_ELEMENT;
+	int UML_COMPARTMENT__UML_MODEL_ELEMENT = UML_DIAGRAM_ELEMENT__UML_MODEL_ELEMENT;
 
 	/**
 	 * The feature id for the '<em><b>Shared Uml Style</b></em>' reference.
@@ -1019,7 +1030,7 @@ public interface UMLDIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UML_COMPARTMENT__SHARED_UML_STYLE = UML_SHAPE__SHARED_UML_STYLE;
+	int UML_COMPARTMENT__SHARED_UML_STYLE = UML_DIAGRAM_ELEMENT__SHARED_UML_STYLE;
 
 	/**
 	 * The feature id for the '<em><b>Local Uml Style</b></em>' containment reference.
@@ -1029,7 +1040,7 @@ public interface UMLDIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UML_COMPARTMENT__LOCAL_UML_STYLE = UML_SHAPE__LOCAL_UML_STYLE;
+	int UML_COMPARTMENT__LOCAL_UML_STYLE = UML_DIAGRAM_ELEMENT__LOCAL_UML_STYLE;
 
 	/**
 	 * The feature id for the '<em><b>Owning Uml Diagram Element</b></em>' container reference.
@@ -1039,7 +1050,7 @@ public interface UMLDIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UML_COMPARTMENT__OWNING_UML_DIAGRAM_ELEMENT = UML_SHAPE__OWNING_UML_DIAGRAM_ELEMENT;
+	int UML_COMPARTMENT__OWNING_UML_DIAGRAM_ELEMENT = UML_DIAGRAM_ELEMENT__OWNING_UML_DIAGRAM_ELEMENT;
 
 	/**
 	 * The feature id for the '<em><b>Owned Uml Diagram Element</b></em>' containment reference list.
@@ -1049,7 +1060,7 @@ public interface UMLDIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UML_COMPARTMENT__OWNED_UML_DIAGRAM_ELEMENT = UML_SHAPE__OWNED_UML_DIAGRAM_ELEMENT;
+	int UML_COMPARTMENT__OWNED_UML_DIAGRAM_ELEMENT = UML_DIAGRAM_ELEMENT__OWNED_UML_DIAGRAM_ELEMENT;
 
 	/**
 	 * The feature id for the '<em><b>Target Uml Edge</b></em>' reference list.
@@ -1059,7 +1070,7 @@ public interface UMLDIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UML_COMPARTMENT__TARGET_UML_EDGE = UML_SHAPE__TARGET_UML_EDGE;
+	int UML_COMPARTMENT__TARGET_UML_EDGE = UML_DIAGRAM_ELEMENT__TARGET_UML_EDGE;
 
 	/**
 	 * The feature id for the '<em><b>Source Uml Edge</b></em>' reference list.
@@ -1069,7 +1080,7 @@ public interface UMLDIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UML_COMPARTMENT__SOURCE_UML_EDGE = UML_SHAPE__SOURCE_UML_EDGE;
+	int UML_COMPARTMENT__SOURCE_UML_EDGE = UML_DIAGRAM_ELEMENT__SOURCE_UML_EDGE;
 
 	/**
 	 * The feature id for the '<em><b>Bounds</b></em>' containment reference.
@@ -1079,7 +1090,7 @@ public interface UMLDIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UML_COMPARTMENT__BOUNDS = UML_SHAPE__BOUNDS;
+	int UML_COMPARTMENT__BOUNDS = UML_DIAGRAM_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Kind</b></em>' attribute.
@@ -1089,7 +1100,7 @@ public interface UMLDIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UML_COMPARTMENT__KIND = UML_SHAPE_FEATURE_COUNT + 0;
+	int UML_COMPARTMENT__KIND = UML_DIAGRAM_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Uml Compartment</em>' class.
@@ -1099,7 +1110,7 @@ public interface UMLDIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UML_COMPARTMENT_FEATURE_COUNT = UML_SHAPE_FEATURE_COUNT + 1;
+	int UML_COMPARTMENT_FEATURE_COUNT = UML_DIAGRAM_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Uml Compartment</em>' class.
@@ -1109,7 +1120,7 @@ public interface UMLDIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UML_COMPARTMENT_OPERATION_COUNT = UML_SHAPE_OPERATION_COUNT + 0;
+	int UML_COMPARTMENT_OPERATION_COUNT = UML_DIAGRAM_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.umldi.impl.UmlLabelImpl <em>Uml Label</em>}' class.
@@ -1130,7 +1141,7 @@ public interface UMLDIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UML_LABEL__MODEL_ELEMENT = UML_SHAPE__MODEL_ELEMENT;
+	int UML_LABEL__MODEL_ELEMENT = UML_DIAGRAM_ELEMENT__MODEL_ELEMENT;
 
 	/**
 	 * The feature id for the '<em><b>Owning Diagram Element</b></em>' reference.
@@ -1140,7 +1151,7 @@ public interface UMLDIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UML_LABEL__OWNING_DIAGRAM_ELEMENT = UML_SHAPE__OWNING_DIAGRAM_ELEMENT;
+	int UML_LABEL__OWNING_DIAGRAM_ELEMENT = UML_DIAGRAM_ELEMENT__OWNING_DIAGRAM_ELEMENT;
 
 	/**
 	 * The feature id for the '<em><b>Owned Diagram Element</b></em>' reference list.
@@ -1150,7 +1161,7 @@ public interface UMLDIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UML_LABEL__OWNED_DIAGRAM_ELEMENT = UML_SHAPE__OWNED_DIAGRAM_ELEMENT;
+	int UML_LABEL__OWNED_DIAGRAM_ELEMENT = UML_DIAGRAM_ELEMENT__OWNED_DIAGRAM_ELEMENT;
 
 	/**
 	 * The feature id for the '<em><b>Local Style</b></em>' reference.
@@ -1160,7 +1171,7 @@ public interface UMLDIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UML_LABEL__LOCAL_STYLE = UML_SHAPE__LOCAL_STYLE;
+	int UML_LABEL__LOCAL_STYLE = UML_DIAGRAM_ELEMENT__LOCAL_STYLE;
 
 	/**
 	 * The feature id for the '<em><b>Shared Style</b></em>' reference.
@@ -1170,7 +1181,7 @@ public interface UMLDIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UML_LABEL__SHARED_STYLE = UML_SHAPE__SHARED_STYLE;
+	int UML_LABEL__SHARED_STYLE = UML_DIAGRAM_ELEMENT__SHARED_STYLE;
 
 	/**
 	 * The feature id for the '<em><b>Target Edge</b></em>' reference list.
@@ -1180,7 +1191,7 @@ public interface UMLDIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UML_LABEL__TARGET_EDGE = UML_SHAPE__TARGET_EDGE;
+	int UML_LABEL__TARGET_EDGE = UML_DIAGRAM_ELEMENT__TARGET_EDGE;
 
 	/**
 	 * The feature id for the '<em><b>Source Edge</b></em>' reference list.
@@ -1190,7 +1201,7 @@ public interface UMLDIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UML_LABEL__SOURCE_EDGE = UML_SHAPE__SOURCE_EDGE;
+	int UML_LABEL__SOURCE_EDGE = UML_DIAGRAM_ELEMENT__SOURCE_EDGE;
 
 	/**
 	 * The feature id for the '<em><b>Uml Model Element</b></em>' reference list.
@@ -1200,7 +1211,7 @@ public interface UMLDIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UML_LABEL__UML_MODEL_ELEMENT = UML_SHAPE__UML_MODEL_ELEMENT;
+	int UML_LABEL__UML_MODEL_ELEMENT = UML_DIAGRAM_ELEMENT__UML_MODEL_ELEMENT;
 
 	/**
 	 * The feature id for the '<em><b>Shared Uml Style</b></em>' reference.
@@ -1210,7 +1221,7 @@ public interface UMLDIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UML_LABEL__SHARED_UML_STYLE = UML_SHAPE__SHARED_UML_STYLE;
+	int UML_LABEL__SHARED_UML_STYLE = UML_DIAGRAM_ELEMENT__SHARED_UML_STYLE;
 
 	/**
 	 * The feature id for the '<em><b>Local Uml Style</b></em>' containment reference.
@@ -1220,7 +1231,7 @@ public interface UMLDIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UML_LABEL__LOCAL_UML_STYLE = UML_SHAPE__LOCAL_UML_STYLE;
+	int UML_LABEL__LOCAL_UML_STYLE = UML_DIAGRAM_ELEMENT__LOCAL_UML_STYLE;
 
 	/**
 	 * The feature id for the '<em><b>Owning Uml Diagram Element</b></em>' container reference.
@@ -1230,7 +1241,7 @@ public interface UMLDIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UML_LABEL__OWNING_UML_DIAGRAM_ELEMENT = UML_SHAPE__OWNING_UML_DIAGRAM_ELEMENT;
+	int UML_LABEL__OWNING_UML_DIAGRAM_ELEMENT = UML_DIAGRAM_ELEMENT__OWNING_UML_DIAGRAM_ELEMENT;
 
 	/**
 	 * The feature id for the '<em><b>Owned Uml Diagram Element</b></em>' containment reference list.
@@ -1240,7 +1251,7 @@ public interface UMLDIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UML_LABEL__OWNED_UML_DIAGRAM_ELEMENT = UML_SHAPE__OWNED_UML_DIAGRAM_ELEMENT;
+	int UML_LABEL__OWNED_UML_DIAGRAM_ELEMENT = UML_DIAGRAM_ELEMENT__OWNED_UML_DIAGRAM_ELEMENT;
 
 	/**
 	 * The feature id for the '<em><b>Target Uml Edge</b></em>' reference list.
@@ -1250,7 +1261,7 @@ public interface UMLDIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UML_LABEL__TARGET_UML_EDGE = UML_SHAPE__TARGET_UML_EDGE;
+	int UML_LABEL__TARGET_UML_EDGE = UML_DIAGRAM_ELEMENT__TARGET_UML_EDGE;
 
 	/**
 	 * The feature id for the '<em><b>Source Uml Edge</b></em>' reference list.
@@ -1260,7 +1271,7 @@ public interface UMLDIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UML_LABEL__SOURCE_UML_EDGE = UML_SHAPE__SOURCE_UML_EDGE;
+	int UML_LABEL__SOURCE_UML_EDGE = UML_DIAGRAM_ELEMENT__SOURCE_UML_EDGE;
 
 	/**
 	 * The feature id for the '<em><b>Bounds</b></em>' containment reference.
@@ -1270,7 +1281,7 @@ public interface UMLDIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UML_LABEL__BOUNDS = UML_SHAPE__BOUNDS;
+	int UML_LABEL__BOUNDS = UML_DIAGRAM_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Kind</b></em>' attribute.
@@ -1280,7 +1291,7 @@ public interface UMLDIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UML_LABEL__KIND = UML_SHAPE_FEATURE_COUNT + 0;
+	int UML_LABEL__KIND = UML_DIAGRAM_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Uml Label</em>' class.
@@ -1290,7 +1301,7 @@ public interface UMLDIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UML_LABEL_FEATURE_COUNT = UML_SHAPE_FEATURE_COUNT + 1;
+	int UML_LABEL_FEATURE_COUNT = UML_DIAGRAM_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Uml Label</em>' class.
@@ -1300,7 +1311,18 @@ public interface UMLDIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UML_LABEL_OPERATION_COUNT = UML_SHAPE_OPERATION_COUNT + 0;
+	int UML_LABEL_OPERATION_COUNT = UML_DIAGRAM_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.umldi.UmlDiagramKind <em>Uml Diagram Kind</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.papyrus.umldi.UmlDiagramKind
+	 * @see org.eclipse.papyrus.umldi.impl.UMLDIPackageImpl#getUmlDiagramKind()
+	 * @generated
+	 */
+	int UML_DIAGRAM_KIND = 7;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.umldi.UmlCompartmentKind <em>Uml Compartment Kind</em>}' enum.
@@ -1311,7 +1333,7 @@ public interface UMLDIPackage extends EPackage {
 	 * @see org.eclipse.papyrus.umldi.impl.UMLDIPackageImpl#getUmlCompartmentKind()
 	 * @generated
 	 */
-	int UML_COMPARTMENT_KIND = 7;
+	int UML_COMPARTMENT_KIND = 8;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.umldi.UmlLabelKind <em>Uml Label Kind</em>}' enum.
@@ -1322,7 +1344,7 @@ public interface UMLDIPackage extends EPackage {
 	 * @see org.eclipse.papyrus.umldi.impl.UMLDIPackageImpl#getUmlLabelKind()
 	 * @generated
 	 */
-	int UML_LABEL_KIND = 8;
+	int UML_LABEL_KIND = 9;
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.umldi.UmlDiagram <em>Uml Diagram</em>}'.
@@ -1334,6 +1356,18 @@ public interface UMLDIPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getUmlDiagram();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.umldi.UmlDiagram#getKind <em>Kind</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Kind</em>'.
+	 * @see org.eclipse.papyrus.umldi.UmlDiagram#getKind()
+	 * @see #getUmlDiagram()
+	 * @generated
+	 */
+	EAttribute getUmlDiagram_Kind();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.umldi.UmlDiagramElement <em>Uml Diagram Element</em>}'.
@@ -1470,7 +1504,8 @@ public interface UMLDIPackage extends EPackage {
 	EAttribute getUmlStyle_FontSize();
 
 	/**
-	 * Returns the meta object for the ' {@link org.eclipse.papyrus.umldi.UmlStyle#fontsizePositive(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * Returns the meta object for the '
+	 * {@link org.eclipse.papyrus.umldi.UmlStyle#fontsizePositive(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * <em>Fontsize Positive</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1565,6 +1600,17 @@ public interface UMLDIPackage extends EPackage {
 	EAttribute getUmlLabel_Kind();
 
 	/**
+	 * Returns the meta object for enum '{@link org.eclipse.papyrus.umldi.UmlDiagramKind <em>Uml Diagram Kind</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for enum '<em>Uml Diagram Kind</em>'.
+	 * @see org.eclipse.papyrus.umldi.UmlDiagramKind
+	 * @generated
+	 */
+	EEnum getUmlDiagramKind();
+
+	/**
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.umldi.UmlCompartmentKind <em>Uml Compartment Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1633,6 +1679,15 @@ public interface UMLDIPackage extends EPackage {
 		 * @generated
 		 */
 		EClass UML_DIAGRAM = eINSTANCE.getUmlDiagram();
+
+		/**
+		 * The meta object literal for the '<em><b>Kind</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute UML_DIAGRAM__KIND = eINSTANCE.getUmlDiagram_Kind();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.umldi.impl.UmlDiagramElementImpl <em>Uml Diagram Element</em>}' class.
@@ -1816,6 +1871,17 @@ public interface UMLDIPackage extends EPackage {
 		EAttribute UML_LABEL__KIND = eINSTANCE.getUmlLabel_Kind();
 
 		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.umldi.UmlDiagramKind <em>Uml Diagram Kind</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.papyrus.umldi.UmlDiagramKind
+		 * @see org.eclipse.papyrus.umldi.impl.UMLDIPackageImpl#getUmlDiagramKind()
+		 * @generated
+		 */
+		EEnum UML_DIAGRAM_KIND = eINSTANCE.getUmlDiagramKind();
+
+		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.umldi.UmlCompartmentKind <em>Uml Compartment Kind</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1848,4 +1914,4 @@ public interface UMLDIPackage extends EPackage {
 		 */
 		EClass UML_SHAPE = eINSTANCE.getUmlShape();
 	}
-} // UMLDIPackage
+} //UMLDIPackage

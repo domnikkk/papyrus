@@ -52,7 +52,7 @@ public interface Translate extends Transform {
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Delta X</em>' attribute.
+	 *        the new value of the '<em>Delta X</em>' attribute.
 	 * @see #getDeltaX()
 	 * @generated
 	 */
@@ -78,7 +78,7 @@ public interface Translate extends Transform {
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Delta Y</em>' attribute.
+	 *        the new value of the '<em>Delta Y</em>' attribute.
 	 * @see #getDeltaY()
 	 * @generated
 	 */

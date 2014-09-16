@@ -17,6 +17,7 @@ import java.util.Collection;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.Notifier;
+
 import org.eclipse.emf.edit.provider.ChangeNotifier;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
@@ -30,6 +31,7 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.INotifyChangedListener;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+
 import org.eclipse.papyrus.dd.dg.util.DGAdapterFactory;
 
 /**
@@ -102,7 +104,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	 */
 	@Override
 	public Adapter createCanvasAdapter() {
-		if (canvasItemProvider == null) {
+		if(canvasItemProvider == null) {
 			canvasItemProvider = new CanvasItemProvider(this);
 		}
 		return canvasItemProvider;
@@ -125,7 +127,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	 */
 	@Override
 	public Adapter createGroupAdapter() {
-		if (groupItemProvider == null) {
+		if(groupItemProvider == null) {
 			groupItemProvider = new GroupItemProvider(this);
 		}
 		return groupItemProvider;
@@ -148,7 +150,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	 */
 	@Override
 	public Adapter createMoveToAdapter() {
-		if (moveToItemProvider == null) {
+		if(moveToItemProvider == null) {
 			moveToItemProvider = new MoveToItemProvider(this);
 		}
 		return moveToItemProvider;
@@ -171,7 +173,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	 */
 	@Override
 	public Adapter createClipPathAdapter() {
-		if (clipPathItemProvider == null) {
+		if(clipPathItemProvider == null) {
 			clipPathItemProvider = new ClipPathItemProvider(this);
 		}
 		return clipPathItemProvider;
@@ -194,7 +196,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	 */
 	@Override
 	public Adapter createStyleAdapter() {
-		if (styleItemProvider == null) {
+		if(styleItemProvider == null) {
 			styleItemProvider = new StyleItemProvider(this);
 		}
 		return styleItemProvider;
@@ -217,7 +219,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	 */
 	@Override
 	public Adapter createPaintAdapter() {
-		if (paintItemProvider == null) {
+		if(paintItemProvider == null) {
 			paintItemProvider = new PaintItemProvider(this);
 		}
 		return paintItemProvider;
@@ -240,7 +242,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	 */
 	@Override
 	public Adapter createCircleAdapter() {
-		if (circleItemProvider == null) {
+		if(circleItemProvider == null) {
 			circleItemProvider = new CircleItemProvider(this);
 		}
 		return circleItemProvider;
@@ -262,7 +264,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	 */
 	@Override
 	public Adapter createClosePathAdapter() {
-		if (closePathItemProvider == null) {
+		if(closePathItemProvider == null) {
 			closePathItemProvider = new ClosePathItemProvider(this);
 		}
 		return closePathItemProvider;
@@ -285,7 +287,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	 */
 	@Override
 	public Adapter createCubicCurveToAdapter() {
-		if (cubicCurveToItemProvider == null) {
+		if(cubicCurveToItemProvider == null) {
 			cubicCurveToItemProvider = new CubicCurveToItemProvider(this);
 		}
 		return cubicCurveToItemProvider;
@@ -308,7 +310,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	 */
 	@Override
 	public Adapter createDefinitionsAdapter() {
-		if (definitionsItemProvider == null) {
+		if(definitionsItemProvider == null) {
 			definitionsItemProvider = new DefinitionsItemProvider(this);
 		}
 		return definitionsItemProvider;
@@ -331,7 +333,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	 */
 	@Override
 	public Adapter createStyleSheetAdapter() {
-		if (styleSheetItemProvider == null) {
+		if(styleSheetItemProvider == null) {
 			styleSheetItemProvider = new StyleSheetItemProvider(this);
 		}
 		return styleSheetItemProvider;
@@ -353,7 +355,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	 */
 	@Override
 	public Adapter createStyleRuleAdapter() {
-		if (styleRuleItemProvider == null) {
+		if(styleRuleItemProvider == null) {
 			styleRuleItemProvider = new StyleRuleItemProvider(this);
 		}
 		return styleRuleItemProvider;
@@ -376,7 +378,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	 */
 	@Override
 	public Adapter createStyleSelectorAdapter() {
-		if (styleSelectorItemProvider == null) {
+		if(styleSelectorItemProvider == null) {
 			styleSelectorItemProvider = new StyleSelectorItemProvider(this);
 		}
 		return styleSelectorItemProvider;
@@ -399,7 +401,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	 */
 	@Override
 	public Adapter createEllipseAdapter() {
-		if (ellipseItemProvider == null) {
+		if(ellipseItemProvider == null) {
 			ellipseItemProvider = new EllipseItemProvider(this);
 		}
 		return ellipseItemProvider;
@@ -422,7 +424,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	 */
 	@Override
 	public Adapter createEllipticalArcToAdapter() {
-		if (ellipticalArcToItemProvider == null) {
+		if(ellipticalArcToItemProvider == null) {
 			ellipticalArcToItemProvider = new EllipticalArcToItemProvider(this);
 		}
 		return ellipticalArcToItemProvider;
@@ -445,7 +447,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	 */
 	@Override
 	public Adapter createQuadraticCurveToAdapter() {
-		if (quadraticCurveToItemProvider == null) {
+		if(quadraticCurveToItemProvider == null) {
 			quadraticCurveToItemProvider = new QuadraticCurveToItemProvider(this);
 		}
 		return quadraticCurveToItemProvider;
@@ -468,7 +470,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	 */
 	@Override
 	public Adapter createGradientStopAdapter() {
-		if (gradientStopItemProvider == null) {
+		if(gradientStopItemProvider == null) {
 			gradientStopItemProvider = new GradientStopItemProvider(this);
 		}
 		return gradientStopItemProvider;
@@ -491,7 +493,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	 */
 	@Override
 	public Adapter createImageAdapter() {
-		if (imageItemProvider == null) {
+		if(imageItemProvider == null) {
 			imageItemProvider = new ImageItemProvider(this);
 		}
 		return imageItemProvider;
@@ -514,7 +516,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	 */
 	@Override
 	public Adapter createLineAdapter() {
-		if (lineItemProvider == null) {
+		if(lineItemProvider == null) {
 			lineItemProvider = new LineItemProvider(this);
 		}
 		return lineItemProvider;
@@ -537,7 +539,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	 */
 	@Override
 	public Adapter createMarkerAdapter() {
-		if (markerItemProvider == null) {
+		if(markerItemProvider == null) {
 			markerItemProvider = new MarkerItemProvider(this);
 		}
 		return markerItemProvider;
@@ -560,7 +562,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	 */
 	@Override
 	public Adapter createLinearGradientAdapter() {
-		if (linearGradientItemProvider == null) {
+		if(linearGradientItemProvider == null) {
 			linearGradientItemProvider = new LinearGradientItemProvider(this);
 		}
 		return linearGradientItemProvider;
@@ -583,7 +585,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	 */
 	@Override
 	public Adapter createLineToAdapter() {
-		if (lineToItemProvider == null) {
+		if(lineToItemProvider == null) {
 			lineToItemProvider = new LineToItemProvider(this);
 		}
 		return lineToItemProvider;
@@ -606,7 +608,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	 */
 	@Override
 	public Adapter createMatrixAdapter() {
-		if (matrixItemProvider == null) {
+		if(matrixItemProvider == null) {
 			matrixItemProvider = new MatrixItemProvider(this);
 		}
 		return matrixItemProvider;
@@ -629,7 +631,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	 */
 	@Override
 	public Adapter createPathAdapter() {
-		if (pathItemProvider == null) {
+		if(pathItemProvider == null) {
 			pathItemProvider = new PathItemProvider(this);
 		}
 		return pathItemProvider;
@@ -652,7 +654,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	 */
 	@Override
 	public Adapter createPatternAdapter() {
-		if (patternItemProvider == null) {
+		if(patternItemProvider == null) {
 			patternItemProvider = new PatternItemProvider(this);
 		}
 		return patternItemProvider;
@@ -675,7 +677,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	 */
 	@Override
 	public Adapter createPolygonAdapter() {
-		if (polygonItemProvider == null) {
+		if(polygonItemProvider == null) {
 			polygonItemProvider = new PolygonItemProvider(this);
 		}
 		return polygonItemProvider;
@@ -698,7 +700,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	 */
 	@Override
 	public Adapter createPolylineAdapter() {
-		if (polylineItemProvider == null) {
+		if(polylineItemProvider == null) {
 			polylineItemProvider = new PolylineItemProvider(this);
 		}
 		return polylineItemProvider;
@@ -721,7 +723,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	 */
 	@Override
 	public Adapter createRadialGradientAdapter() {
-		if (radialGradientItemProvider == null) {
+		if(radialGradientItemProvider == null) {
 			radialGradientItemProvider = new RadialGradientItemProvider(this);
 		}
 		return radialGradientItemProvider;
@@ -743,7 +745,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	 */
 	@Override
 	public Adapter createRectangleAdapter() {
-		if (rectangleItemProvider == null) {
+		if(rectangleItemProvider == null) {
 			rectangleItemProvider = new RectangleItemProvider(this);
 		}
 		return rectangleItemProvider;
@@ -766,7 +768,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	 */
 	@Override
 	public Adapter createRootCanvasAdapter() {
-		if (rootCanvasItemProvider == null) {
+		if(rootCanvasItemProvider == null) {
 			rootCanvasItemProvider = new RootCanvasItemProvider(this);
 		}
 		return rootCanvasItemProvider;
@@ -789,7 +791,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	 */
 	@Override
 	public Adapter createRotateAdapter() {
-		if (rotateItemProvider == null) {
+		if(rotateItemProvider == null) {
 			rotateItemProvider = new RotateItemProvider(this);
 		}
 		return rotateItemProvider;
@@ -812,7 +814,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	 */
 	@Override
 	public Adapter createScaleAdapter() {
-		if (scaleItemProvider == null) {
+		if(scaleItemProvider == null) {
 			scaleItemProvider = new ScaleItemProvider(this);
 		}
 		return scaleItemProvider;
@@ -835,7 +837,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	 */
 	@Override
 	public Adapter createSkewAdapter() {
-		if (skewItemProvider == null) {
+		if(skewItemProvider == null) {
 			skewItemProvider = new SkewItemProvider(this);
 		}
 		return skewItemProvider;
@@ -858,7 +860,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	 */
 	@Override
 	public Adapter createTextAdapter() {
-		if (textItemProvider == null) {
+		if(textItemProvider == null) {
 			textItemProvider = new TextItemProvider(this);
 		}
 		return textItemProvider;
@@ -880,7 +882,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	 */
 	@Override
 	public Adapter createTranslateAdapter() {
-		if (translateItemProvider == null) {
+		if(translateItemProvider == null) {
 			translateItemProvider = new TranslateItemProvider(this);
 		}
 		return translateItemProvider;
@@ -903,7 +905,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	 */
 	@Override
 	public Adapter createUseAdapter() {
-		if (useItemProvider == null) {
+		if(useItemProvider == null) {
 			useItemProvider = new UseItemProvider(this);
 		}
 		return useItemProvider;
@@ -959,9 +961,9 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	 */
 	@Override
 	public Object adapt(Object object, Object type) {
-		if (isFactoryForType(type)) {
+		if(isFactoryForType(type)) {
 			Object adapter = super.adapt(object, type);
-			if (!(type instanceof Class<?>) || (((Class<?>) type).isInstance(adapter))) {
+			if(!(type instanceof Class<?>) || (((Class<?>)type).isInstance(adapter))) {
 				return adapter;
 			}
 		}
@@ -999,7 +1001,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	@Override
 	public void fireNotifyChanged(Notification notification) {
 		changeNotifier.fireNotifyChanged(notification);
-		if (parentAdapterFactory != null) {
+		if(parentAdapterFactory != null) {
 			parentAdapterFactory.fireNotifyChanged(notification);
 		}
 	}
@@ -1012,112 +1014,112 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	 */
 	@Override
 	public void dispose() {
-		if (canvasItemProvider != null) {
+		if(canvasItemProvider != null) {
 			canvasItemProvider.dispose();
 		}
-		if (groupItemProvider != null) {
+		if(groupItemProvider != null) {
 			groupItemProvider.dispose();
 		}
-		if (moveToItemProvider != null) {
+		if(moveToItemProvider != null) {
 			moveToItemProvider.dispose();
 		}
-		if (clipPathItemProvider != null) {
+		if(clipPathItemProvider != null) {
 			clipPathItemProvider.dispose();
 		}
-		if (styleItemProvider != null) {
+		if(styleItemProvider != null) {
 			styleItemProvider.dispose();
 		}
-		if (paintItemProvider != null) {
+		if(paintItemProvider != null) {
 			paintItemProvider.dispose();
 		}
-		if (circleItemProvider != null) {
+		if(circleItemProvider != null) {
 			circleItemProvider.dispose();
 		}
-		if (closePathItemProvider != null) {
+		if(closePathItemProvider != null) {
 			closePathItemProvider.dispose();
 		}
-		if (cubicCurveToItemProvider != null) {
+		if(cubicCurveToItemProvider != null) {
 			cubicCurveToItemProvider.dispose();
 		}
-		if (definitionsItemProvider != null) {
+		if(definitionsItemProvider != null) {
 			definitionsItemProvider.dispose();
 		}
-		if (styleSheetItemProvider != null) {
+		if(styleSheetItemProvider != null) {
 			styleSheetItemProvider.dispose();
 		}
-		if (styleRuleItemProvider != null) {
+		if(styleRuleItemProvider != null) {
 			styleRuleItemProvider.dispose();
 		}
-		if (styleSelectorItemProvider != null) {
+		if(styleSelectorItemProvider != null) {
 			styleSelectorItemProvider.dispose();
 		}
-		if (ellipseItemProvider != null) {
+		if(ellipseItemProvider != null) {
 			ellipseItemProvider.dispose();
 		}
-		if (ellipticalArcToItemProvider != null) {
+		if(ellipticalArcToItemProvider != null) {
 			ellipticalArcToItemProvider.dispose();
 		}
-		if (quadraticCurveToItemProvider != null) {
+		if(quadraticCurveToItemProvider != null) {
 			quadraticCurveToItemProvider.dispose();
 		}
-		if (gradientStopItemProvider != null) {
+		if(gradientStopItemProvider != null) {
 			gradientStopItemProvider.dispose();
 		}
-		if (imageItemProvider != null) {
+		if(imageItemProvider != null) {
 			imageItemProvider.dispose();
 		}
-		if (lineItemProvider != null) {
+		if(lineItemProvider != null) {
 			lineItemProvider.dispose();
 		}
-		if (markerItemProvider != null) {
+		if(markerItemProvider != null) {
 			markerItemProvider.dispose();
 		}
-		if (linearGradientItemProvider != null) {
+		if(linearGradientItemProvider != null) {
 			linearGradientItemProvider.dispose();
 		}
-		if (lineToItemProvider != null) {
+		if(lineToItemProvider != null) {
 			lineToItemProvider.dispose();
 		}
-		if (matrixItemProvider != null) {
+		if(matrixItemProvider != null) {
 			matrixItemProvider.dispose();
 		}
-		if (pathItemProvider != null) {
+		if(pathItemProvider != null) {
 			pathItemProvider.dispose();
 		}
-		if (patternItemProvider != null) {
+		if(patternItemProvider != null) {
 			patternItemProvider.dispose();
 		}
-		if (polygonItemProvider != null) {
+		if(polygonItemProvider != null) {
 			polygonItemProvider.dispose();
 		}
-		if (polylineItemProvider != null) {
+		if(polylineItemProvider != null) {
 			polylineItemProvider.dispose();
 		}
-		if (radialGradientItemProvider != null) {
+		if(radialGradientItemProvider != null) {
 			radialGradientItemProvider.dispose();
 		}
-		if (rectangleItemProvider != null) {
+		if(rectangleItemProvider != null) {
 			rectangleItemProvider.dispose();
 		}
-		if (rootCanvasItemProvider != null) {
+		if(rootCanvasItemProvider != null) {
 			rootCanvasItemProvider.dispose();
 		}
-		if (rotateItemProvider != null) {
+		if(rotateItemProvider != null) {
 			rotateItemProvider.dispose();
 		}
-		if (scaleItemProvider != null) {
+		if(scaleItemProvider != null) {
 			scaleItemProvider.dispose();
 		}
-		if (skewItemProvider != null) {
+		if(skewItemProvider != null) {
 			skewItemProvider.dispose();
 		}
-		if (textItemProvider != null) {
+		if(textItemProvider != null) {
 			textItemProvider.dispose();
 		}
-		if (translateItemProvider != null) {
+		if(translateItemProvider != null) {
 			translateItemProvider.dispose();
 		}
-		if (useItemProvider != null) {
+		if(useItemProvider != null) {
 			useItemProvider.dispose();
 		}
 	}

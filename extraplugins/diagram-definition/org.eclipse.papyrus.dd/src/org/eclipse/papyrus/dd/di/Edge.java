@@ -12,6 +12,7 @@
 package org.eclipse.papyrus.dd.di;
 
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.papyrus.dd.dc.Point;
 
 /**

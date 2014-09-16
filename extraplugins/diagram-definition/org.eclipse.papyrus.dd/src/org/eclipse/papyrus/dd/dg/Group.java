@@ -72,7 +72,7 @@ public interface Group extends GraphicalElement {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Layout</em>' attribute.
+	 *        the new value of the '<em>Layout</em>' attribute.
 	 * @see #getLayout()
 	 * @generated
 	 */

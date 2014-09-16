@@ -11,6 +11,8 @@
  */
 package org.eclipse.papyrus.umldi;
 
+import org.eclipse.papyrus.dd.di.Shape;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Uml Compartment</b></em>'.
@@ -27,7 +29,7 @@ package org.eclipse.papyrus.umldi;
  * @model
  * @generated
  */
-public interface UmlCompartment extends UmlShape {
+public interface UmlCompartment extends UmlDiagramElement, Shape {
 
 	/**
 	 * Returns the value of the '<em><b>Kind</b></em>' attribute.
@@ -53,7 +55,7 @@ public interface UmlCompartment extends UmlShape {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Kind</em>' attribute.
+	 *        the new value of the '<em>Kind</em>' attribute.
 	 * @see org.eclipse.papyrus.umldi.UmlCompartmentKind
 	 * @see #getKind()
 	 * @generated

@@ -13,21 +13,18 @@ package org.eclipse.papyrus.umldi.util;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
+
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
+
 import org.eclipse.emf.ecore.EObject;
+
 import org.eclipse.papyrus.dd.di.Diagram;
 import org.eclipse.papyrus.dd.di.DiagramElement;
 import org.eclipse.papyrus.dd.di.Edge;
 import org.eclipse.papyrus.dd.di.Shape;
 import org.eclipse.papyrus.dd.di.Style;
-import org.eclipse.papyrus.umldi.UMLDIPackage;
-import org.eclipse.papyrus.umldi.UmlCompartment;
-import org.eclipse.papyrus.umldi.UmlDiagram;
-import org.eclipse.papyrus.umldi.UmlDiagramElement;
-import org.eclipse.papyrus.umldi.UmlEdge;
-import org.eclipse.papyrus.umldi.UmlLabel;
-import org.eclipse.papyrus.umldi.UmlShape;
-import org.eclipse.papyrus.umldi.UmlStyle;
+
+import org.eclipse.papyrus.umldi.*;
 
 /**
  * <!-- begin-user-doc -->
@@ -57,7 +54,7 @@ public class UMLDIAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public UMLDIAdapterFactory() {
-		if (modelPackage == null) {
+		if(modelPackage == null) {
 			modelPackage = UMLDIPackage.eINSTANCE;
 		}
 	}
@@ -73,11 +70,11 @@ public class UMLDIAdapterFactory extends AdapterFactoryImpl {
 	 */
 	@Override
 	public boolean isFactoryForType(Object object) {
-		if (object == modelPackage) {
+		if(object == modelPackage) {
 			return true;
 		}
-		if (object instanceof EObject) {
-			return ((EObject) object).eClass().getEPackage() == modelPackage;
+		if(object instanceof EObject) {
+			return ((EObject)object).eClass().getEPackage() == modelPackage;
 		}
 		return false;
 	}
@@ -97,11 +94,6 @@ public class UMLDIAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseUmlShape(UmlShape object) {
-			return createUmlShapeAdapter();
-		}
-
-		@Override
 		public Adapter caseUmlDiagramElement(UmlDiagramElement object) {
 			return createUmlDiagramElementAdapter();
 		}
@@ -114,6 +106,11 @@ public class UMLDIAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseUmlEdge(UmlEdge object) {
 			return createUmlEdgeAdapter();
+		}
+
+		@Override
+		public Adapter caseUmlShape(UmlShape object) {
+			return createUmlShapeAdapter();
 		}
 
 		@Override
@@ -163,13 +160,13 @@ public class UMLDIAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param target
-	 *            the object to adapt.
+	 *        the object to adapt.
 	 * @return the adapter for the <code>target</code>.
 	 * @generated
 	 */
 	@Override
 	public Adapter createAdapter(Notifier target) {
-		return modelSwitch.doSwitch((EObject) target);
+		return modelSwitch.doSwitch((EObject)target);
 	}
 
 	/**
@@ -364,4 +361,4 @@ public class UMLDIAdapterFactory extends AdapterFactoryImpl {
 	public Adapter createEObjectAdapter() {
 		return null;
 	}
-} // UMLDIAdapterFactory
+} //UMLDIAdapterFactory
