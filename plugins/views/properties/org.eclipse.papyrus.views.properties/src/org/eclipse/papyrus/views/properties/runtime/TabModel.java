@@ -21,9 +21,13 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import org.eclipse.papyrus.views.properties.contexts.Section;
+
 
 /**
  * An encapsulation of the hierarchical tab structure of the property sheets managed by a {@link DisplayEngine}.
+ * It supports distinction of repeated {@code Section}s via proxies that combine section instances with
+ * arbitrary {@linkplain SectionDiscriminator discriminators}.
  */
 class TabModel<V> {
 
@@ -43,6 +47,10 @@ class TabModel<V> {
 		return Collections.unmodifiableSet(result);
 	}
 
+	public V get(Section section) {
+		return model.get(new Path(section));
+	}
+
 	public V get(String tabID, String sectionID) {
 		return model.get(new Path(tabID, sectionID));
 	}
@@ -60,8 +68,16 @@ class TabModel<V> {
 		return Collections.unmodifiableList(result);
 	}
 
+	public V put(Section section, V value) {
+		return model.put(new Path(section), value);
+	}
+
 	public V put(String tabID, String sectionID, V value) {
 		return model.put(new Path(tabID, sectionID), value);
+	}
+
+	public V remove(Section section) {
+		return model.remove(new Path(section));
 	}
 
 	public V remove(String tabID, String sectionID) {
@@ -105,12 +121,19 @@ class TabModel<V> {
 
 		final String sectionID;
 
-		Path(String tabID, String sectionID) {
+		final Object discriminator;
+
+		Path(String tabID, String sectionID, Object discriminator) {
 			checkWildcard(tabID);
 			checkWildcard(sectionID);
 
 			this.tabID = tabID;
 			this.sectionID = sectionID;
+			this.discriminator = (discriminator == null) ? WILDCARD : discriminator;
+		}
+
+		Path(String tabID, String sectionID) {
+			this(tabID, sectionID, WILDCARD);
 		}
 
 		/**
@@ -121,6 +144,14 @@ class TabModel<V> {
 
 			this.tabID = tabID;
 			this.sectionID = WILDCARD;
+			this.discriminator = WILDCARD;
+		}
+
+		/**
+		 * Create a path for a specific section.
+		 */
+		Path(Section section) {
+			this(section.getTab().getId(), section.getName(), SectionDiscriminator.getDiscriminator(section));
 		}
 
 		static void checkWildcard(String id) {
@@ -152,10 +183,10 @@ class TabModel<V> {
 			}
 
 			Path other = (Path) obj;
-			return equals(tabID, other.tabID) && equals(sectionID, other.sectionID);
+			return equals(tabID, other.tabID) && equals(sectionID, other.sectionID) && equals(discriminator, other.discriminator);
 		}
 
-		private static boolean equals(String anID, String anotherID) {
+		private static boolean equals(Object anID, Object anotherID) {
 			// Deliberately testing for identity of non-interned string
 			return (anID == WILDCARD) || (anotherID == WILDCARD) || anID.equals(anotherID);
 		}
