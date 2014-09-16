@@ -31,7 +31,18 @@ public class PropertyModel {
 	/**
 	 * The status of the model. ModelStatusKind.created mean that the model is created by the user.
 	 */
-	protected ModelStatusKind modelStatusKind = ModelStatusKind.created;
+	protected MemberKind memberKind = MemberKind.owned;
+	
+	/**
+	 * state of this model.
+	 */
+	protected StateKind stateKind = StateKind.loaded;
+	
+	/**
+	 * Life status of this model. Value is deleted if the user request deletion of this model.
+	 */
+	protected LifeStatusKind lifeStatusKind = LifeStatusKind.running;
+	
 	/**
 	 * The {@link Property} that the Stereotype extends. This is the property represented by this model.
 	 */
@@ -54,8 +65,8 @@ public class PropertyModel {
 	 *
 	 * @param modelStatusKind
 	 */
-	public PropertyModel(ModelStatusKind modelStatusKind) {
-		this.modelStatusKind = modelStatusKind;
+	public PropertyModel(MemberKind modelStatusKind) {
+		this.memberKind = modelStatusKind;
 	}
 
 
@@ -67,8 +78,9 @@ public class PropertyModel {
 	 * @param modelStatusKind
 	 * @param property
 	 */
-	public PropertyModel(ModelStatusKind modelStatusKind, Property property) {
-		this.modelStatusKind = modelStatusKind;
+	public PropertyModel(MemberKind modelStatusKind, Property property) {
+		this.memberKind = modelStatusKind;
+		this.stateKind = StateKind.loaded;
 		this.property = property;
 		if(property != null) {
 			this.proposedName = property.getName();
@@ -84,8 +96,9 @@ public class PropertyModel {
 	 * @param created
 	 * @param string
 	 */
-	public PropertyModel(ModelStatusKind modelStatusKind, String proposedName) {
-		this.modelStatusKind = modelStatusKind;
+	public PropertyModel(MemberKind modelStatusKind, String proposedName) {
+		this.memberKind = modelStatusKind;
+		this.stateKind = StateKind.created;
 		this.proposedName = proposedName;
 	}
 
@@ -96,8 +109,8 @@ public class PropertyModel {
 	 * 
 	 * @return
 	 */
-	public ModelStatusKind getModelStatus() {
-		return modelStatusKind;
+	public MemberKind getMemberKind() {
+		return memberKind;
 	}
 
 
@@ -187,5 +200,78 @@ public class PropertyModel {
 	protected void fireIndexedPropertyChange(String propertyName, int index, Object oldValue, Object newValue) {
 		changeSupport.fireIndexedPropertyChange(propertyName, index, oldValue, newValue);
 	}
+
+
+
 	
+	/**
+	 * @return the stateKind
+	 */
+	public StateKind getStateKind() {
+		return stateKind;
+	}
+
+	
+	/**
+	 * @param stateKind the stateKind to set
+	 */
+	public void setStateKind(StateKind stateKind) {
+		firePropertyChange("stateKind", this.stateKind, this.stateKind = stateKind);
+	}
+
+
+
+	
+	/**
+	 * @return the lifeStatusKind
+	 */
+	public LifeStatusKind getLifeStatusKind() {
+		return lifeStatusKind;
+	}
+
+
+
+	
+	/**
+	 * @param lifeStatusKind the lifeStatusKind to set
+	 */
+	public void setLifeStatusKind(LifeStatusKind lifeStatusKind) {
+		firePropertyChange("lifeStatusKind", this.lifeStatusKind, this.lifeStatusKind = lifeStatusKind);
+	}
+	
+	/**
+	 * Apply a model changed event on this model. This change the {@link #lifeStatusKind}.
+	 */
+	public void modelChangedEvent() {
+		
+		switch(stateKind) {
+		case loaded:
+			stateKind = StateKind.modified;
+			break;
+
+		default:
+			// No change
+			break;
+		}
+	}
+	/**
+	 * A delete is applied to the model. If the model is alive, it is marked deleted.
+	 * If it is deleted, it is marked alive.
+	 */
+	public void deleteModelEvent() {
+		
+		switch(lifeStatusKind) {
+		case running:
+			setLifeStatusKind(LifeStatusKind.deleted);
+			break;
+		case deleted:
+			setLifeStatusKind(LifeStatusKind.running);
+			break;
+
+		default:
+			// No change
+			break;
+		}
+	}
+
 }

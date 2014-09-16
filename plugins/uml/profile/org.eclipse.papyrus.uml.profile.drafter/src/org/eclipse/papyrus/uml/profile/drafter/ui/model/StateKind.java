@@ -14,21 +14,18 @@
 
 package org.eclipse.papyrus.uml.profile.drafter.ui.model;
 
-import java.lang.annotation.Inherited;
-
-import org.eclipse.uml2.uml.Stereotype;
-
 
 /**
- * States of a ui model.
- * {@link #created} : The model is created by the user
- * {@link #owned} : The model is deduced from a property directly owned by the {@link Stereotype}
- * {@link Inherited} : The model is deduced from a property inherited by the {@link Stereotype}.
- * 
+ * States of an object: created, loaded, modified
+ * <ul>
+ *   <li>created: Model is created by user.</li>
+ *   <li>loaded: model is loaded from an existing Object (Property, Value, ...). No change has happen.</li>
+ *   <li>modified: loaded model is modified.</li>
+ * </ul>
  * @author cedric dumoulin
  *
  */
-public enum ModelStatusKind {
+public enum StateKind {
 
-	created, inherited, owned;
+	created, loaded, modified;
 }

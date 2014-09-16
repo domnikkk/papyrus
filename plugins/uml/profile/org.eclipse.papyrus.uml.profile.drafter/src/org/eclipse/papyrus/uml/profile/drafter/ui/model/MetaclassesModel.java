@@ -28,7 +28,17 @@ public class MetaclassesModel {
 	/**
 	 * The status of the model. ModelStatusKind.created mean that the model is created by the user.
 	 */
-	ModelStatusKind modelStatusKind = ModelStatusKind.created;
+	protected MemberKind memberKind = MemberKind.owned;
+	
+	/**
+	 * state of this model.
+	 */
+	protected StateKind stateKind = StateKind.loaded;
+	
+	/**
+	 * Life status of this model. Value is deleted if the user request deletion of this model.
+	 */
+	protected LifeStatusKind lifeStatusKind = LifeStatusKind.running;
 	
 	/**
 	 * The Metaclass that the Stereotype extends. This is the metaclass represented by this model.
@@ -44,44 +54,41 @@ public class MetaclassesModel {
 	/**
 	 * Constructor.
 	 *
-	 * @param modelStatusKind
+	 * @param memberKind
 	 */
-	public MetaclassesModel(ModelStatusKind modelStatusKind) {
-		this.modelStatusKind = modelStatusKind;
+	public MetaclassesModel(MemberKind memberKind) {
+		this.memberKind = memberKind;
 	}
 
 
-
-
-	public MetaclassesModel(ModelStatusKind modelStatusKind, Class extendedMetaClass) {
-		this.modelStatusKind = modelStatusKind;
+	/**
+	 * 
+	 * Constructor.
+	 *
+	 * Create a {@link StateKind#loaded} model.
+	 * 
+	 * @param memberKind
+	 * @param extendedMetaClass
+	 */
+	public MetaclassesModel(MemberKind memberKind, Class extendedMetaClass) {
+		this.memberKind = memberKind;
+		this.stateKind = StateKind.loaded;
 		this.extendedMetaClass = extendedMetaClass;
 	}
 
 	/**
 	 * 
 	 * Constructor.
+	 * Create a {@link StateKind#created} model.
 	 *
-	 * @param created
-	 * @param string
+	 * @param memberKind
+	 * @param proposedName
 	 */
-	public MetaclassesModel(ModelStatusKind modelStatusKind, String proposedName) {
-		this.modelStatusKind = modelStatusKind;
+	public MetaclassesModel(MemberKind memberKind, String proposedName) {
+		this.memberKind = memberKind;
 		this.proposedName = proposedName;
+		this.stateKind = StateKind.created;
 	}
-
-
-
-
-	/**
-	 * 
-	 * @return
-	 */
-	public ModelStatusKind getModelStatus() {
-		return modelStatusKind;
-	}
-
-
 
 
 	
@@ -92,4 +99,74 @@ public class MetaclassesModel {
 		return extendedMetaClass;
 	}
 
+
+	
+	/**
+	 * @return the lifeStatusKind
+	 */
+	public LifeStatusKind getLifeStatusKind() {
+		return lifeStatusKind;
+	}
+
+
+	
+	/**
+	 * @param lifeStatusKind the lifeStatusKind to set
+	 */
+	public void setLifeStatusKind(LifeStatusKind lifeStatusKind) {
+		this.lifeStatusKind = lifeStatusKind;
+	}
+
+
+	
+	/**
+	 * @return the memberKind
+	 */
+	public MemberKind getMemberKind() {
+		return memberKind;
+	}
+
+
+	
+	/**
+	 * @return the stateKind
+	 */
+	public StateKind getStateKind() {
+		return stateKind;
+	}
+
+	/**
+	 * Apply a model changed event on this model. This change the {@link #lifeStatusKind}.
+	 */
+	public void modelChangedEvent() {
+		
+		switch(stateKind) {
+		case loaded:
+			stateKind = StateKind.modified;
+			break;
+
+		default:
+			// No change
+			break;
+		}
+	}
+	/**
+	 * A delete is applied to the model. If the model is alive, it is marked deleted.
+	 * If it is deleted, it is marked alive.
+	 */
+	public void deleteModelEvent() {
+		
+		switch(lifeStatusKind) {
+		case running:
+			lifeStatusKind = LifeStatusKind.deleted;
+			break;
+		case deleted:
+			lifeStatusKind = LifeStatusKind.running;
+			break;
+
+		default:
+			// No change
+			break;
+		}
+	}
 }

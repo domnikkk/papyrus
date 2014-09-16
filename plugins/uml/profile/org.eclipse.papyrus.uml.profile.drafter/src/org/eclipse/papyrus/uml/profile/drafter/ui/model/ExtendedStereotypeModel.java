@@ -24,10 +24,23 @@ import org.eclipse.uml2.uml.Stereotype;
  *
  */
 public class ExtendedStereotypeModel {
+
 	/**
 	 * The status of the model. ModelStatusKind.created mean that the model is created by the user.
 	 */
-	protected ModelStatusKind modelStatusKind = ModelStatusKind.created;
+	protected MemberKind memberKind = MemberKind.owned;
+	
+	/**
+	 * state of this model.
+	 */
+	protected StateKind stateKind = StateKind.loaded;
+	
+	/**
+	 * Life status of this model. Value is deleted if the user request deletion of this model.
+	 */
+	protected LifeStatusKind lifeStatusKind = LifeStatusKind.running;
+	
+
 	/**
 	 * The {@link Stereotype} that the Stereotype extends. This is the stereotype represented by this model.
 	 */
@@ -41,17 +54,18 @@ public class ExtendedStereotypeModel {
 	/**
 	 * Constructor.
 	 *
-	 * @param modelStatusKind
+	 * @param memberKind
 	 */
-	public ExtendedStereotypeModel(ModelStatusKind modelStatusKind) {
-		this.modelStatusKind = modelStatusKind;
+	public ExtendedStereotypeModel(MemberKind memberKind) {
+		this.memberKind = memberKind;
 	}
 
 
 
 
-	public ExtendedStereotypeModel(ModelStatusKind modelStatusKind, Class superClass) {
-		this.modelStatusKind = modelStatusKind;
+	public ExtendedStereotypeModel(MemberKind memberKind, Class superClass) {
+		this.memberKind = memberKind;
+		this.stateKind = StateKind.loaded;
 		this.extendedStereotype = superClass;
 	}
 
@@ -62,8 +76,9 @@ public class ExtendedStereotypeModel {
 	 * @param created
 	 * @param string
 	 */
-	public ExtendedStereotypeModel(ModelStatusKind modelStatusKind, String proposedName) {
-		this.modelStatusKind = modelStatusKind;
+	public ExtendedStereotypeModel(MemberKind memberKind, String proposedName) {
+		this.memberKind = memberKind;
+		this.stateKind = StateKind.created;
 		this.proposedName = proposedName;
 	}
 
@@ -74,9 +89,57 @@ public class ExtendedStereotypeModel {
 	 * 
 	 * @return
 	 */
-	public ModelStatusKind getModelStatus() {
-		return modelStatusKind;
+	public MemberKind getMemberKind() {
+		return memberKind;
 	}
 
+	/**
+	 * @return the stateKind
+	 */
+	public StateKind getStateKind() {
+		return stateKind;
+	}
+
+	/**
+	 * @return the lifeStatusKind
+	 */
+	public LifeStatusKind getLifeStatusKind() {
+		return lifeStatusKind;
+	}
+
+	/**
+	 * Apply a model changed event on this model. This change the {@link #lifeStatusKind}.
+	 */
+	public void modelChangedEvent() {
+		
+		switch(stateKind) {
+		case loaded:
+			stateKind = StateKind.modified;
+			break;
+
+		default:
+			// No change
+			break;
+		}
+	}
+	/**
+	 * A delete is applied to the model. If the model is alive, it is marked deleted.
+	 * If it is deleted, it is marked alive.
+	 */
+	public void deleteModelEvent() {
+		
+		switch(lifeStatusKind) {
+		case running:
+			lifeStatusKind = LifeStatusKind.deleted;
+			break;
+		case deleted:
+			lifeStatusKind = LifeStatusKind.running;
+			break;
+
+		default:
+			// No change
+			break;
+		}
+	}
 
 }

@@ -17,7 +17,6 @@ package org.eclipse.papyrus.uml.profile.drafter.ui.model;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 import org.eclipse.core.databinding.observable.list.IObservableList;
@@ -162,7 +161,7 @@ public class StereoptypeModel extends StereotypeURL {
 		List<MetaclassesModel> toRetain = new ArrayList<MetaclassesModel>();
 		
 		for( MetaclassesModel model : metaclasses) {
-			if(model.getModelStatus() == ModelStatusKind.created) {
+			if(model.getStateKind() == StateKind.created) {
 				toRetain.add(model);
 			}
 		}
@@ -192,13 +191,13 @@ public class StereoptypeModel extends StereotypeURL {
 		// Add owned metaclasses
 		List<Class> ownedExtendedMetaclasses = stereotype.getExtendedMetaclasses();
 		for( Class extendedMetaClass : ownedExtendedMetaclasses) {
-			metaclasses.add(new MetaclassesModel(ModelStatusKind.owned, extendedMetaClass));
+			metaclasses.add(new MetaclassesModel(MemberKind.owned, extendedMetaClass));
 		}
 		
 		// Add inherited (not owned) metaclasses.
 		for( Class extendedMetaClass : stereotype.getAllExtendedMetaclasses()) {
 			if( ! ownedExtendedMetaclasses.contains(extendedMetaClass)) {
-			   metaclasses.add(new MetaclassesModel(ModelStatusKind.inherited, extendedMetaClass));
+			   metaclasses.add(new MetaclassesModel(MemberKind.inherited, extendedMetaClass));
 			}
 		}
 
@@ -224,7 +223,7 @@ public class StereoptypeModel extends StereotypeURL {
 		List<ExtendedStereotypeModel> toRetain = new ArrayList<ExtendedStereotypeModel>();
 		
 		for( ExtendedStereotypeModel model : extendedStereotypes) {
-			if(model.getModelStatus() == ModelStatusKind.created) {
+			if(model.getStateKind()  == StateKind.created) {
 				toRetain.add(model);
 			}
 		}
@@ -243,7 +242,7 @@ public class StereoptypeModel extends StereotypeURL {
 		// Add owned metaclasses
 		List<Class> superclasses = stereotype.getSuperClasses();
 		for( Class superClass : superclasses) {
-			extendedStereotypes.add(new ExtendedStereotypeModel(ModelStatusKind.owned, superClass));
+			extendedStereotypes.add(new ExtendedStereotypeModel(MemberKind.owned, superClass));
 		}
 		
 
@@ -269,7 +268,7 @@ public class StereoptypeModel extends StereotypeURL {
 		
 		for( Object p : properties) {
 			PropertyModel model = (PropertyModel)p;
-			if(model.getModelStatus() == ModelStatusKind.created) {
+			if(model.getStateKind() == StateKind.created) {
 				toRetain.add(model);
 			}
 		}
@@ -301,13 +300,13 @@ public class StereoptypeModel extends StereotypeURL {
 		// Add owned metaclasses
 		List<Property> ownedProperties = stereotype.getOwnedAttributes();
 		for( Property property : ownedProperties) {
-			properties.add(new PropertyModel(ModelStatusKind.owned, property));
+			properties.add(new PropertyModel(MemberKind.owned, property));
 		}
 		
 		// Add inherited (not owned) metaclasses.
 		for( Property property : stereotype.getAllAttributes()) {
 			if( ! ownedProperties.contains(property)) {
-				properties.add(new PropertyModel(ModelStatusKind.inherited, property));
+				properties.add(new PropertyModel(MemberKind.inherited, property));
 			}
 		}
 	}
@@ -316,7 +315,7 @@ public class StereoptypeModel extends StereotypeURL {
 	 * Create a new {@link PropertyModel} and add it to the {@link StereoptypeModel#properties}
 	 */
 	public PropertyModel createNewPropertyModel() {
-		PropertyModel model = new PropertyModel(ModelStatusKind.created, "new property");
+		PropertyModel model = new PropertyModel(MemberKind.owned, "new property");
 		properties.add(model);
 		fireIndexedPropertyChange(PROPERTIES, properties.size()-1, null, model);
 		
