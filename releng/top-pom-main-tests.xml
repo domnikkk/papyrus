@@ -212,6 +212,12 @@
 			<layout>p2</layout>
 			<url>http://download.eclipse.org/technology/swtbot/snapshots</url>
 		</repository>
+		<repository>
+			<id>webtools</id>
+			<layout>p2</layout>
+			<!-- updateFrom("WebTools",0) -->
+			<url>http://download.eclipse.org/webtools/downloads/drops/R3.6.1/M-3.6.1RC3-20140908000031/repository/</url>
+		</repository>
 	</repositories>
 	<build>
 		<plugins>

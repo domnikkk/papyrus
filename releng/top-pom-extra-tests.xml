@@ -187,6 +187,12 @@
 			<!-- updateFrom("Xtext, Xtend",0) -->
 			<url>http://download.eclipse.org/modeling/tmf/xtext/updates/releases/head/R201409090713</url>
 		</repository>
+		<repository>
+			<id>webtools</id>
+			<layout>p2</layout>
+			<!-- updateFrom("WebTools",0) -->
+			<url>http://download.eclipse.org/webtools/downloads/drops/R3.6.1/M-3.6.1RC3-20140908000031/repository/</url>
+		</repository>
 	</repositories>
 	<build>
 		<plugins>
