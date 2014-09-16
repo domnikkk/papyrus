@@ -309,18 +309,6 @@
 	</properties>
 	<repositories>
 		<repository>
-			<id>birt</id>
-			<layout>p2</layout>
-			<!-- updateFrom("BIRT",0) -->
-			<url>http://download.eclipse.org/birt/update-site/luna-interim/</url>
-		</repository>
-		<repository>
-			<id>emf-compare</id>
-			<layout>p2</layout>
-			<!-- updateFrom("EMF COMPARE",0) -->
-			<url>http://download.eclipse.org/modeling/emf/compare/updates/milestones/3.0/S201408191310</url>
-		</repository>
-		<repository>
 			<id>emf-emf</id>
 			<layout>p2</layout>
 			<!-- updateFrom("EMF (Core)",0) -->
@@ -381,18 +369,6 @@
 			<url>http://download.eclipse.org/modeling/gmp/gmf-tooling/updates/milestones-3.2.RC4a</url>
 		</repository>
 		<repository>
-			<id>m2m-atl</id>
-			<layout>p2</layout>
-			<!-- updateFrom("M2M ATL",0) -->
-			<url>http://download.eclipse.org/mmt/atl/updates/milestones/3.5/</url>
-		</repository>
-		<repository>
-			<id>m2t-acceleo</id>
-			<layout>p2</layout>
-			<!-- updateFrom("M2T ACCELEO",0) -->
-			<url>http://download.eclipse.org/acceleo/updates/milestones/3.5/S201409021433</url>
-		</repository>
-		<repository>
 			<id>m2t-xpand</id>
 			<layout>p2</layout>
 			<!-- updateFrom("M2T XPAND",0) -->
@@ -417,12 +393,6 @@
 			<url>http://download.eclipse.org/mmt/qvto/updates/milestones/3.4.0/S201406101621</url>
 		</repository>
 		<repository>
-			<id>mylyn</id>
-			<layout>p2</layout>
-			<!-- updateFrom("Mylyn",0) -->
-			<url>http://download.eclipse.org/mylyn/snapshots/3.13</url>
-		</repository>
-		<repository>
 			<id>nattable</id>
 			<layout>p2</layout>
 			<url>http://download.eclipse.org/nattable/releases/1.1.0/repository/</url>
@@ -433,22 +403,10 @@
 			<url>http://download.eclipse.org/tools/orbit/downloads/drops/R20140525021250/repository</url>
 		</repository>
 		<repository>
-			<id>subversive</id>
-			<layout>p2</layout>
-			<!-- updateFrom("Subversive",0) -->
-			<url>http://download.eclipse.org/technology/subversive/2.0/luna-site/</url>
-		</repository>
-		<repository>
 			<id>tmf-xtext</id>
 			<layout>p2</layout>
 			<!-- updateFrom("Xtext, Xtend",0) -->
 			<url>http://download.eclipse.org/modeling/tmf/xtext/updates/releases/head/R201409090713</url>
-		</repository>
-		<repository>
-			<id>webtools</id>
-			<layout>p2</layout>
-			<!-- updateFrom("WebTools",0) -->
-			<url>http://download.eclipse.org/webtools/downloads/drops/R3.6.1/M-3.6.1RC3-20140908000031/repository/</url>
 		</repository>
 	</repositories>
 	<pluginRepositories>
