@@ -76,6 +76,9 @@ public class LifelineHeadUtil {
 					continue;
 				}
 				LifelineEditPart lifeline = (LifelineEditPart) object;
+				if (SequenceUtil.isCreateMessageEndLifeline(lifeline)) {
+					continue;
+				}
 				LifelineFigure primaryShape = lifeline.getPrimaryShape();
 				RectangleFigure figure = primaryShape.getFigureLifelineNameContainerFigure();
 				Rectangle r = figure.getBounds().getCopy();
@@ -113,12 +116,14 @@ public class LifelineHeadUtil {
 		while (parent instanceof LifelineEditPart) {
 			parent = parent.getParent();
 		}
-		List<?> childrenList = parent.getChildren();
-		for (Object object : childrenList) {
-			if (toMovedLifelines.contains(object) || !(object instanceof LifelineEditPart)) {
-				continue;
+		if (!SequenceUtil.isCreateMessageEndLifeline(lifeline)) {
+			List<?> childrenList = parent.getChildren();
+			for (Object object : childrenList) {
+				if (toMovedLifelines.contains(object) || !(object instanceof LifelineEditPart)) {
+					continue;
+				}
+				toMovedLifelines.add((LifelineEditPart) object);
 			}
-			toMovedLifelines.add((LifelineEditPart) object);
 		}
 		if (toMovedLifelines.isEmpty()) {
 			return;
@@ -218,6 +223,9 @@ public class LifelineHeadUtil {
 		}
 
 		// 4. move children of linked lifelines.
+		if (SequenceUtil.isCreateMessageEndLifeline(lifeline)) {
+			return;
+		}
 		List<LifelineEditPart> toMovedLifelines = new ArrayList<LifelineEditPart>();
 		collectLifelines(toMovedLifelines, lifeline);
 		List<ShapeNodeEditPart> children = LifelineEditPartUtil.getChildShapeNodeEditPart(lifeline);
