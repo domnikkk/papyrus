@@ -5,7 +5,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.gmf.runtime.common.core.command.CompositeCommand;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
-import org.eclipse.gmf.runtime.emf.type.core.commands.MoveElementsCommand;
 import org.eclipse.gmf.runtime.emf.type.core.commands.SetValueCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.MoveRequest;
@@ -45,12 +44,16 @@ public class ActivityPartitionEditHelper extends ActivityGroupHelper {
 	protected ICommand getMoveCommand(MoveRequest req) {
 		if (req != null) {
 			if (req.getTargetContainer() instanceof ActivityPartition) {
-				ActivityPartition partition = (ActivityPartition) req.getTargetContainer();
 				CompositeCommand result = new CompositeCommand("Move elements in Partition");
-				MoveElementsCommand moveCommand = new NotContainmentMoveCommand(createMoveToPartitionRequest(req));
-				result.add(moveCommand);
-				for (Object o : req.getElementsToMove().keySet()) {
-					result.add(new SetValueCommand(new SetRequest(partition, UMLPackage.eINSTANCE.getActivityPartition_Node(), o)));
+				/**
+				 * separate moving elements containment and not
+				 */
+				for (Object movedElement: req.getElementsToMove().keySet()) {
+					if (movedElement instanceof ActivityNode) {
+						result.add(createMoveActivityNodeCommand(req, (ActivityNode) movedElement));
+					} else {
+						result.add(createDefaultMoveCommand(req, (EObject) movedElement));
+					}
 				}
 				return result;
 			}
@@ -58,31 +61,43 @@ public class ActivityPartitionEditHelper extends ActivityGroupHelper {
 		return super.getMoveCommand(req);
 	}
 
+	
 	/**
-	 * @param base
-	 *            move request in which target container is ActivityPartition
-	 * @return MoveRequest in which replaced Partition container on Activity and replaced containment features for it.
+	 * 
+	 * Create for {@link ActivityNode} {@link CompositeCommand}.
+	 * Contain {@link NotContainmentMoveCommand} to {@link Activity} and 
+	 * {@link SetValueCommand} to set not containment reference for {@link ActivityPartition}
 	 */
-	private MoveRequest createMoveToPartitionRequest(MoveRequest baseReq) {
-		if (baseReq == null) {
-			return null;
-		}
-		MoveRequest result = new MoveRequest(baseReq.getEditingDomain(), findActivity(baseReq.getTargetContainer()), baseReq.getElementsToMove());
-		for (Object o : baseReq.getElementsToMove().keySet()) {
-			if (o instanceof ActivityNode) {
-				ActivityNode node = (ActivityNode) o;
-				result.setTargetFeature(node, findActivityFeature(node.eClass()));
-			}
-		}
-		return result;
+	private ICommand createMoveActivityNodeCommand(MoveRequest baseRequest, ActivityNode node) {
+		CompositeCommand cc = new CompositeCommand("Move ActivityNode command");
+		
+		ActivityPartition partition = (ActivityPartition) baseRequest.getTargetContainer();
+		EReference containmentFeature = findActivityFeature(node.eClass());
+		Activity activity = findActivity(partition);
+		
+		MoveRequest moveActivityNodesReq = new MoveRequest(baseRequest.getEditingDomain(), activity, containmentFeature, node);
+		
+		cc.add(new NotContainmentMoveCommand(moveActivityNodesReq));
+		cc.add(new SetValueCommand(new SetRequest(partition, UMLPackage.eINSTANCE.getActivityPartition_Node(), node)));
+		return cc;
 	}
-
+	
+	/**
+	 * Create new {@link MoveRequest} for @param movedElement 
+	 * and invoke super{@link #getMoveCommand(MoveRequest)} to get default move command
+	 */
+	private ICommand createDefaultMoveCommand(MoveRequest baseRequest, EObject movedElement) {
+		EReference containmentFeature = baseRequest.getTargetFeature(movedElement);
+		MoveRequest moveRequest = new MoveRequest(baseRequest.getEditingDomain(), baseRequest.getTargetContainer(), containmentFeature, movedElement);
+		return super.getMoveCommand(moveRequest);
+	}
+	
 	/**
 	 * Find parent Activity.
 	 *
 	 * @param editElement
 	 *            ActivitiyPartition element
-	 * @return null if Activity not found.
+	 * @return <code>null</code> if Activity not found.
 	 */
 	protected Activity findActivity(EObject editElement) {
 		if (editElement instanceof ActivityPartition) {
@@ -99,15 +114,15 @@ public class ActivityPartitionEditHelper extends ActivityGroupHelper {
 	/**
 	 * Find Activity feature appropriate to ActivityPartition feature.
 	 *
-	 * @return Appropriate feature. If feature not found return partitionFeature param
+	 * @return Appropriate feature or <code>null</code> if feature not found.
 	 */
 	protected EReference findActivityFeature(EClass eClass) {
-		if (UMLPackage.eINSTANCE.getActivityPartition().isSuperTypeOf(eClass)) {
-			return UMLPackage.eINSTANCE.getActivity_StructuredNode();
-		}
 		if (UMLPackage.eINSTANCE.getStructuredActivityNode().isSuperTypeOf(eClass)) {
 			return UMLPackage.eINSTANCE.getActivity_StructuredNode();
 		}
-		return UMLPackage.eINSTANCE.getActivity_OwnedNode();
+		if (UMLPackage.eINSTANCE.getActivityNode().isSuperTypeOf(eClass)) {
+			return UMLPackage.eINSTANCE.getActivity_OwnedNode();
+		}
+		return null;
 	}
 }
