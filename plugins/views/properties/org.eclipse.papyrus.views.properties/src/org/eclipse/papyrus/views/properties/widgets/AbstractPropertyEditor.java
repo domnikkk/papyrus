@@ -11,6 +11,7 @@
  *  Thibault Le Ouay t.leouay@sherpa-eng.com - Add binding implementation
  *  Christian W. Damus (CEA) - bug 417409
  *  Christian W. Damus (CEA) - bug 443417
+ *  Christian W. Damus (CEA) - bug 444227
  *
  *****************************************************************************/
 package org.eclipse.papyrus.views.properties.widgets;
@@ -235,7 +236,7 @@ public abstract class AbstractPropertyEditor implements IChangeListener, Customi
 	 */
 	protected void applyReadOnly(boolean readOnly) {
 		AbstractEditor editor = getEditor();
-		if (editor != null) {
+		if ((editor != null) && !editor.isDisposed()) {
 			editor.setReadOnly(readOnly);
 		}
 	}
