@@ -174,6 +174,14 @@ public class PropertyModel {
 	}
 
 	/**
+	 * Visitor entry to visit this Model and its nested classes.
+	 * @param visitor
+	 */
+	public void accept(IModelVisitor visitor) {
+		visitor.visit(this);
+	}
+	
+	/**
 	 * 
 	 * @param listener
 	 */

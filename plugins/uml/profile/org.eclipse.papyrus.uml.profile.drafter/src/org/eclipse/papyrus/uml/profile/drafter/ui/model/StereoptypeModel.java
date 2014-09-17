@@ -60,7 +60,7 @@ public class StereoptypeModel extends StereotypeURL {
 	protected List<MetaclassesModel> metaclasses  = new ArrayList<MetaclassesModel>();
 	
 	/**
-	 * Catalog used to search {@link Stereotype} bu the name provided in {@link #qualifiedName}.
+	 * Catalog used to search {@link Stereotype} by the name provided in {@link #qualifiedName}.
 	 */
 	protected ProfileCatalog profileCatalog;
 
@@ -69,6 +69,14 @@ public class StereoptypeModel extends StereotypeURL {
 	 */
 	private PropertyChangeSupport changeSupport = new PropertyChangeSupport(this);
 	
+	
+	/**
+	 * 
+	 * Constructor.
+	 *
+	 */
+	public StereoptypeModel() {
+	}
 	
 	/**
 	 * 
@@ -115,6 +123,13 @@ public class StereoptypeModel extends StereotypeURL {
 	}
 
 	/**
+	 * @return the extendedStereotypes
+	 */
+	public List<ExtendedStereotypeModel> getExtendedStereotypes() {
+		return extendedStereotypes;
+	}
+
+	/**
 	 * Intercept {@link #qualifiedNameChanged(StereotypeURLChangeEvent)} call in order to set the {@link Stereotype} ans its
 	 * associated properties.
 	 * 
@@ -127,8 +142,16 @@ public class StereoptypeModel extends StereotypeURL {
 		// Send events for Stereotype properties
 		super.qualifiedNameChanged(event);
 		
+		if( profileCatalog == null) {
+			stereotype = null;
+			resetMetaclasses();
+			resetExtendedStereotypes();
+			resetProperties();
+			return;
+		}
+		
 		// Change other properties.
-		// TODO Events should be sent each tim a property change
+		// TODO Events should be sent each time a property change
 		try {
 			stereotype = profileCatalog.lookupStereotype(profileName, stereotypeName);
 			resetMetaclasses();
@@ -138,6 +161,9 @@ public class StereoptypeModel extends StereotypeURL {
 		} catch (NotFoundException e) {
 			// exit
 			stereotype = null;
+			resetMetaclasses();
+			resetExtendedStereotypes();
+			resetProperties();
 		}
 		
 	}
@@ -315,11 +341,47 @@ public class StereoptypeModel extends StereotypeURL {
 	 * Create a new {@link PropertyModel} and add it to the {@link StereoptypeModel#properties}
 	 */
 	public PropertyModel createNewPropertyModel() {
-		PropertyModel model = new PropertyModel(MemberKind.owned, "new property");
+		
+		return createNewPropertyModel("newProperty");
+	}
+	
+	/**
+	 * Create a new {@link PropertyModel} and add it to the {@link StereoptypeModel#properties}
+	 */
+	public PropertyModel createNewPropertyModel(String propertyName) {
+		PropertyModel model = new PropertyModel(MemberKind.owned, propertyName);
 		properties.add(model);
-		fireIndexedPropertyChange(PROPERTIES, properties.size()-1, null, model);
+//		fireIndexedPropertyChange(PROPERTIES, properties.size()-1, null, model);
 		
 		return model;
+	}
+	
+	/**
+	 * Create a new {@link MetaclassesModel} and add it to the {@link StereoptypeModel#metaclasses}
+	 */
+	public MetaclassesModel createMetaclassModel(String propertyName) {
+		MetaclassesModel model = new MetaclassesModel(MemberKind.owned, propertyName);
+		metaclasses.add(model);
+		
+		return model;
+	}
+	
+	/**
+	 * Create a new {@link Ext} and add it to the {@link StereoptypeModel#metaclasses}
+	 */
+	public ExtendedStereotypeModel createExtendedStereotypeModel(String propertyName) {
+		ExtendedStereotypeModel model = new ExtendedStereotypeModel(MemberKind.owned, propertyName);
+		extendedStereotypes.add(model);
+		
+		return model;
+	}
+	
+	/**
+	 * Visitor entry to visit this Model and its nested classes.
+	 * @param visitor
+	 */
+	public void accept(IModelVisitor visitor) {
+		visitor.visit(this);
 	}
 	
 	/**
