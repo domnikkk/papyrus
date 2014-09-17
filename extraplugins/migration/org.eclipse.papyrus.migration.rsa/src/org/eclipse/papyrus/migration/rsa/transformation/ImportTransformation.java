@@ -742,8 +742,15 @@ public class ImportTransformation {
 	}
 
 	protected URI[] getTransformationsURIs() {
-		return new URI[] { getTransformationURI("RSAClassDiagram"), getTransformationURI("RSASequenceDiagram"), getTransformationURI("RSAStructureDiagram"), getTransformationURI("RSAActivityDiagram"), getTransformationURI("RSAStateMachineDiagram"),
-				getTransformationURI("RSAProfileDiagram"), getTransformationURI("RSAModelToPapyrus") };
+		return new URI[] {
+				getTransformationURI("RSAClassDiagram"),
+				// getTransformationURI("RSASequenceDiagram"), //Disabled since Sequence Diagrams are not properly supported
+				getTransformationURI("RSAStructureDiagram"),
+				getTransformationURI("RSAActivityDiagram"),
+				getTransformationURI("RSAStateMachineDiagram"),
+				getTransformationURI("RSAProfileDiagram"),
+				getTransformationURI("RSAModelToPapyrus")
+		};
 	}
 
 	protected URI getTransformationURI(String transformationName) {
