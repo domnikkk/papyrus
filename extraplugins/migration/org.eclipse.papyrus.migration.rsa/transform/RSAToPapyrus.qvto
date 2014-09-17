@@ -65,7 +65,7 @@ abstract mapping Edge::toPapyrusEdge() : Edge inherits View::toPapyrusView {
 	result.target := self.target.map toView();
 }
 
-abstract mapping Connector::toPapyrusConnector() : Connector inherits Edge::toPapyrusEdge, RoutingStyle::toRoutingstyle{};
+abstract mapping Connector::toPapyrusConnector() : Connector inherits Edge::toPapyrusEdge, RoutingStyle::toRoutingstyle, LineStyle::toLineStyle {};
 
 abstract mapping Connector::toCommentLink() : Connector inherits Connector::toPapyrusConnector{};
 
@@ -117,7 +117,7 @@ abstract mapping UMLShapeCompartment::toAbstractStructureCompartment() : Decorat
 abstract mapping Diagram::toPapyrusDiagram() : notation::Diagram inherits notation::View::toPapyrusView {
 
 	population {
-		result.name := self.name;
+		result.name := self.getName();
 		
 		/* Papyrus uses Pixel, whereas RSA uses Himetric. Forcing the conversion to Pixel is a bad idea */
 		result.measurementUnit := MeasurementUnit::Pixel; 
@@ -132,6 +132,27 @@ abstract mapping Diagram::toPapyrusDiagram() : notation::Diagram inherits notati
 	end {
 		worked(1);
 	}
+}
+
+query Diagram::getName() : String{
+	return if self.name.oclIsUndefined() or self.name = '' then {
+		var element := self.findElement();
+		return if element.oclIsKindOf(NamedElement) then
+			element.oclAsType(NamedElement).getDiagramName()
+		else
+			''
+		endif;
+	} else
+		self.name
+	endif;	
+}
+
+query NamedElement::getDiagramName() : String {
+	return if self.oclIsKindOf(Behavior) then
+		self.owner.oclAsType(NamedElement).getDiagramName()
+	else
+		self.name
+	endif;
 }
 
 query Diagram::findElement() : Element {
