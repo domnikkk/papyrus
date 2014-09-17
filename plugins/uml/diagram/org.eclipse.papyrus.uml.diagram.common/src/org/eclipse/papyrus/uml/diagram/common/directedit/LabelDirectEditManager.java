@@ -9,7 +9,7 @@
  *
  * Contributors:
  *  Patrick Tessier (CEA LIST) Patrick.tessier@cea.fr - Initial API and implementation
- *
+ *  Benoit Maggi    (CEA LIST) benoit.maggi@cea.fr - Bug 444063 Use static to avoid concurrency problem on restore 
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.common.directedit;
 
@@ -37,7 +37,7 @@ public class LabelDirectEditManager extends DirectEditManager {
 	/**
 	 *
 	 */
-	protected IActionBars actionBars;
+	protected static IActionBars actionBars;
 
 	/**
 	 *
@@ -47,7 +47,7 @@ public class LabelDirectEditManager extends DirectEditManager {
 	/**
 	 *
 	 */
-	protected IAction copy, cut, paste, undo, redo, find, selectAll, delete;
+	protected static IAction copy, cut, paste, undo, redo, find, selectAll, delete;
 
 	/**
 	 * The label to be edited.
@@ -141,8 +141,14 @@ public class LabelDirectEditManager extends DirectEditManager {
 		// Hook the cell editor's copy/paste actions to the actionBars so that
 		// they can
 		// be invoked via keyboard shortcuts.
-		actionBars = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getActiveEditor().getEditorSite().getActionBars();
-		saveCurrentActions(actionBars);
+		IActionBars editorActionBars = PlatformUI.getWorkbench().getActiveWorkbenchWindow()
+				.getActivePage().getActiveEditor().getEditorSite()
+				.getActionBars();
+		if (actionBars != null){
+			restoreSavedActions(editorActionBars);
+		}
+		saveCurrentActions(editorActionBars);
+		actionBars = editorActionBars;
 		actionHandler = new CellEditorActionHandler(actionBars);
 		actionHandler.addCellEditor(getCellEditor());
 		actionBars.updateActionBars();
