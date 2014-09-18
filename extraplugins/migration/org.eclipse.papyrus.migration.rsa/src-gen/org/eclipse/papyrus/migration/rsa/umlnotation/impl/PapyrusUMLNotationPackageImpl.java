@@ -102,8 +102,7 @@ public class PapyrusUMLNotationPackageImpl extends EPackageImpl implements Papyr
 	private EClass umlClassifierShapeEClass = null;
 
 	/**
-	 * Creates an instance of the model <b>Package</b>, registered with {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the
-	 * package
+	 * Creates an instance of the model <b>Package</b>, registered with {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
 	 * <p>
 	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -143,7 +142,7 @@ public class PapyrusUMLNotationPackageImpl extends EPackageImpl implements Papyr
 		}
 
 		// Obtain or create and register package
-		PapyrusUMLNotationPackageImpl thePapyrusRSANotationPackage = (PapyrusUMLNotationPackageImpl) (EPackage.Registry.INSTANCE.get(eNS_URI) instanceof PapyrusUMLNotationPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI)
+		PapyrusUMLNotationPackageImpl thePapyrusUMLNotationPackage = (PapyrusUMLNotationPackageImpl) (EPackage.Registry.INSTANCE.get(eNS_URI) instanceof PapyrusUMLNotationPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI)
 				: new PapyrusUMLNotationPackageImpl());
 
 		isInited = true;
@@ -153,20 +152,20 @@ public class PapyrusUMLNotationPackageImpl extends EPackageImpl implements Papyr
 				: NotationPackage.eINSTANCE);
 
 		// Create package meta-data objects
-		thePapyrusRSANotationPackage.createPackageContents();
+		thePapyrusUMLNotationPackage.createPackageContents();
 		theNotationPackage.createPackageContents();
 
 		// Initialize created meta-data
-		thePapyrusRSANotationPackage.initializePackageContents();
+		thePapyrusUMLNotationPackage.initializePackageContents();
 		theNotationPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
-		thePapyrusRSANotationPackage.freeze();
+		thePapyrusUMLNotationPackage.freeze();
 
 
 		// Update the registry and return the package
-		EPackage.Registry.INSTANCE.put(PapyrusUMLNotationPackage.eNS_URI, thePapyrusRSANotationPackage);
-		return thePapyrusRSANotationPackage;
+		EPackage.Registry.INSTANCE.put(PapyrusUMLNotationPackage.eNS_URI, thePapyrusUMLNotationPackage);
+		return thePapyrusUMLNotationPackage;
 	}
 
 	/**
@@ -200,6 +199,17 @@ public class PapyrusUMLNotationPackageImpl extends EPackageImpl implements Papyr
 	@Override
 	public EClass getUMLShapeCompartment() {
 		return umlShapeCompartmentEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getUMLShapeCompartment_VerticalAlignment() {
+		return (EAttribute) umlShapeCompartmentEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -286,8 +296,30 @@ public class PapyrusUMLNotationPackageImpl extends EPackageImpl implements Papyr
 	 * @generated
 	 */
 	@Override
+	public EAttribute getUMLView_ShowStereotypeAttributeCompartment() {
+		return (EAttribute) umlViewEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public EClass getUMLComponent() {
 		return umlComponentEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getUMLComponent_ShowWhitebox() {
+		return (EAttribute) umlComponentEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -319,7 +351,7 @@ public class PapyrusUMLNotationPackageImpl extends EPackageImpl implements Papyr
 	 * @generated
 	 */
 	@Override
-	public PapyrusUMLNotationFactory getPapyrusRSANotationFactory() {
+	public PapyrusUMLNotationFactory getPapyrusUMLNotationFactory() {
 		return (PapyrusUMLNotationFactory) getEFactoryInstance();
 	}
 
@@ -351,6 +383,7 @@ public class PapyrusUMLNotationPackageImpl extends EPackageImpl implements Papyr
 		umlFrameEClass = createEClass(UML_FRAME);
 
 		umlShapeCompartmentEClass = createEClass(UML_SHAPE_COMPARTMENT);
+		createEAttribute(umlShapeCompartmentEClass, UML_SHAPE_COMPARTMENT__VERTICAL_ALIGNMENT);
 
 		umlShapeEClass = createEClass(UML_SHAPE);
 
@@ -361,8 +394,10 @@ public class PapyrusUMLNotationPackageImpl extends EPackageImpl implements Papyr
 		createEAttribute(umlViewEClass, UML_VIEW__SHOW_LIST_VISIBILITY);
 		createEAttribute(umlViewEClass, UML_VIEW__SHOW_LIST_SIGNATURE);
 		createEAttribute(umlViewEClass, UML_VIEW__ALIGNMENT);
+		createEAttribute(umlViewEClass, UML_VIEW__SHOW_STEREOTYPE_ATTRIBUTE_COMPARTMENT);
 
 		umlComponentEClass = createEClass(UML_COMPONENT);
+		createEAttribute(umlComponentEClass, UML_COMPONENT__SHOW_WHITEBOX);
 
 		umlClassifierShapeEClass = createEClass(UML_CLASSIFIER_SHAPE);
 		createEAttribute(umlClassifierShapeEClass, UML_CLASSIFIER_SHAPE__USE_CLASSIFIER_SHAPE);
@@ -417,12 +452,13 @@ public class PapyrusUMLNotationPackageImpl extends EPackageImpl implements Papyr
 		umlComponentEClass.getESuperTypes().add(this.getUMLShape());
 		umlClassifierShapeEClass.getESuperTypes().add(this.getUMLShape());
 
-		// Initialize classes and features; add operations and parameters
+		// Initialize classes, features, and operations; add parameters
 		initEClass(umlDiagramEClass, UMLDiagram.class, "UMLDiagram", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(umlFrameEClass, UMLFrame.class, "UMLFrame", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(umlShapeCompartmentEClass, UMLShapeCompartment.class, "UMLShapeCompartment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getUMLShapeCompartment_VerticalAlignment(), ecorePackage.getEBoolean(), "verticalAlignment", "true", 0, 1, UMLShapeCompartment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(umlShapeEClass, UMLShape.class, "UMLShape", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -433,8 +469,11 @@ public class PapyrusUMLNotationPackageImpl extends EPackageImpl implements Papyr
 		initEAttribute(getUMLView_ShowListVisibility(), ecorePackage.getEString(), "showListVisibility", "None", 0, 1, UMLView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getUMLView_ShowListSignature(), ecorePackage.getEBoolean(), "showListSignature", "true", 0, 1, UMLView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getUMLView_Alignment(), ecorePackage.getEString(), "alignment", null, 0, 1, UMLView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getUMLView_ShowStereotypeAttributeCompartment(), ecorePackage.getEString(), "showStereotypeAttributeCompartment", null, 0, 1, UMLView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 
 		initEClass(umlComponentEClass, UMLComponent.class, "UMLComponent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getUMLComponent_ShowWhitebox(), ecorePackage.getEBoolean(), "showWhitebox", null, 0, 1, UMLComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(umlClassifierShapeEClass, UMLClassifierShape.class, "UMLClassifierShape", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getUMLClassifierShape_UseClassifierShape(), ecorePackage.getEBoolean(), "useClassifierShape", null, 0, 1, UMLClassifierShape.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
