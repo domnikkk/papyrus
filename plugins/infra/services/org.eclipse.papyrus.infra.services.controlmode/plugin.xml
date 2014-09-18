@@ -19,6 +19,27 @@
       </participant>
    </extension>
    <extension
+         point="org.eclipse.papyrus.infra.core.service">
+      <service
+            classname="org.eclipse.papyrus.infra.services.controlmode.service.ControlModeService"
+            id="org.eclipse.papyrus.infra.services.controlmode.service.ControlModeService"
+            priority="9"
+            startKind="startup">
+         <dependsOn
+               serviceKeyRef="org.eclipse.papyrus.infra.core.lifecycleevents.ILifeCycleEventsProvider">
+         </dependsOn>
+         <dependsOn
+               serviceKeyRef="org.eclipse.papyrus.infra.services.controlmode.service.IUncontrolledObjectsProvider">
+         </dependsOn>
+      </service>
+      <serviceFactory
+            classname="org.eclipse.papyrus.infra.services.controlmode.service.UncontrolledObjectsServiceFactory"
+            id="org.eclipse.papyrus.infra.services.controlmode.service.IUncontrolledObjectsProvider"
+            priority="1"
+            startKind="startup">
+      </serviceFactory>
+   </extension>
+   <extension
          point="org.eclipse.papyrus.infra.core.model">
       <modelSetSnippet
             classname="org.eclipse.papyrus.infra.services.controlmode.listener.LoadResourceSnippet"

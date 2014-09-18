@@ -10,6 +10,7 @@
  *  Arthur Daussy (Atos) arthur.daussy@atos.net - Initial API and implementation
  *  Christian W. Damus - bug 399859
  *  Gabriel Pascual (ALL4TEC) gabriel.pascual@all4tec.net - Bug 436952
+ *  Gabriel Pascual (ALL4TEC) gabriel.pascual@all4tec.net - Bug 436998
  *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.services.controlmode.commands;
@@ -18,6 +19,7 @@ import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
@@ -54,6 +56,7 @@ public class CreateControlResource extends AbstractControlResourceCommand {
 
 	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor progressMonitor, IAdaptable info) throws ExecutionException {
+
 		Resource resource = getResourceSet().getResource(getTargetUri(), false);
 		boolean resourceInSet = resource != null;
 		if (resourceInSet) {
@@ -65,14 +68,20 @@ public class CreateControlResource extends AbstractControlResourceCommand {
 				resource.getResourceSet().getResources().remove(resource);
 				resource = null;
 				resourceInSet = false;
-			} else {
-				return CommandResult.newErrorCommandResult("The resource is already in the resource set");
 			}
 		}
-		Resource newResource = getResourceSet().createResource(getTargetUri());
-		if (newResource == null) {
-			return CommandResult.newErrorCommandResult("Unable to create new resource to control");
+
+		Resource newResource = null;
+		if (resource == null) {
+			newResource = getResourceSet().createResource(getTargetUri());
+			if (newResource == null) {
+				return CommandResult.newErrorCommandResult("Unable to create new resource to control");
+			}
+		} else {
+			// Conserve existing resource to add new controlled object
+			newResource = resource;
 		}
+
 		// Set the new created target to the request if other command need it
 		getRequest().setTargetResource(newResource, getFileExtension());
 		// Force modified to true to force serialization
@@ -119,15 +128,39 @@ public class CreateControlResource extends AbstractControlResourceCommand {
 	@Override
 	protected IStatus doUndo(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		IStatus superStatus = super.doUndo(monitor, info);
-		// delete the related file
+
+		// Delete the related file
 		Resource oldResource = getRequest().getTargetResource(getFileExtension());
-		getResourceSet().getResources().remove(oldResource);
+
 		ModelSet modelSet = getRequest().getModelSet();
 		if (modelSet == null) {
 			return CommandResult.newErrorCommandResult("Unable to get model set").getStatus();
 		}
-		modelSet.getResourcesToDeleteOnSave().add(oldResource.getURI());
+
+		// Force the main resource to update during save
+		Resource resource = getTargetResrource(getRequest().getTargetObject());
+		resource.setModified(true);
+
+		// Handle old resource
+		if (!isControlledResourceLocked(getRequest().getNewURI())) {
+			getResourceSet().getResources().remove(oldResource);
+			modelSet.getResourcesToDeleteOnSave().add(oldResource.getURI());
+		}
+		oldResource.setModified(true);
+
 		return superStatus;
+	}
+
+	/**
+	 * Gets the target resrource.
+	 *
+	 * @param objectToUncontrol
+	 *            the object to uncontrol
+	 * @return the target resrource
+	 */
+	private Resource getTargetResrource(EObject objectToUncontrol) {
+		return getRequest().getModelSet().getAssociatedResource(objectToUncontrol, getFileExtension(), true);
+
 	}
 
 	@Override
@@ -135,10 +168,12 @@ public class CreateControlResource extends AbstractControlResourceCommand {
 		// Re add the resources to the resourceSet
 		Resource oldResource = getRequest().getTargetResource(getFileExtension());
 		getResourceSet().getResources().add(oldResource);
+
 		ModelSet modelSet = getRequest().getModelSet();
 		if (modelSet == null) {
 			return CommandResult.newErrorCommandResult("Unable to get model set").getStatus();
 		}
+
 		modelSet.getResourcesToDeleteOnSave().remove(oldResource.getURI());
 		oldResource.setModified(true);
 		return super.doRedo(monitor, info);

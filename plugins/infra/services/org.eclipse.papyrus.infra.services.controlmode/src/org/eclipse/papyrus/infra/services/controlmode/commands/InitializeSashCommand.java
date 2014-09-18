@@ -22,12 +22,17 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
+import org.eclipse.papyrus.infra.core.resource.sasheditor.DiModel;
 import org.eclipse.papyrus.infra.core.resource.sasheditor.SashModelUtils;
+import org.eclipse.papyrus.infra.core.sasheditor.contentprovider.IPageManager;
+import org.eclipse.papyrus.infra.core.sasheditor.di.contentprovider.DiSashModelMngr;
 import org.eclipse.papyrus.infra.core.sashwindows.di.PageRef;
 import org.eclipse.papyrus.infra.core.sashwindows.di.SashModel;
 import org.eclipse.papyrus.infra.core.sashwindows.di.SashWindowsMngr;
 import org.eclipse.papyrus.infra.core.sashwindows.di.exception.SashEditorException;
 import org.eclipse.papyrus.infra.core.sashwindows.di.util.DiUtils;
+import org.eclipse.papyrus.infra.core.services.ServiceException;
+import org.eclipse.papyrus.infra.emf.utils.ServiceUtilsForResourceSet;
 import org.eclipse.papyrus.infra.services.controlmode.ControlModeRequest;
 import org.eclipse.papyrus.infra.services.controlmode.ControlModeRequestParameters;
 
@@ -83,7 +88,7 @@ public class InitializeSashCommand extends AbstractControlCommand {
 	 * @return retrieve the di resource from the request
 	 */
 	protected Resource getDiResource() {
-		return getRequest().getTargetResource(org.eclipse.papyrus.infra.core.resource.sasheditor.SashModel.MODEL_FILE_EXTENSION);
+		return getRequest().getTargetResource(DiModel.MODEL_FILE_EXTENSION);
 	}
 
 	/**

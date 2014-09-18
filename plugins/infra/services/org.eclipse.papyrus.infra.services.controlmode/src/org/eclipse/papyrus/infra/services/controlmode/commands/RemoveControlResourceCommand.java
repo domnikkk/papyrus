@@ -9,7 +9,7 @@
  *
  * Contributors:
  *  Arthur Daussy (Atos) arthur.daussy@atos.net - Initial API and implementation
- *
+ *  Gabriel Pascual (ALL4TEC) gabriel.pascual@all4tec.net - Bug 436998
  *****************************************************************************/
 package org.eclipse.papyrus.infra.services.controlmode.commands;
 
@@ -67,17 +67,28 @@ public class RemoveControlResourceCommand extends AbstractControlResourceCommand
 		if (resource == null) {
 			return CommandResult.newErrorCommandResult("The resource is null");
 		}
-		// Delete resource backend on save
-		modelSet.getResourcesToDeleteOnSave().add(resource.getURI());
+
+		// Delete resource back-end on save
+		if (!isControlledResourceLocked(getRequest().getSourceURI())) {
+			modelSet.getResourcesToDeleteOnSave().add(resource.getURI());
+		}
+
 		// Save source and target resource
 		Resource targetResource = getTargetResource(objectToControl);
 		if (targetResource == null) {
 			return CommandResult.newErrorCommandResult("unable to retrieve the target resource for the extension " + getFileExtension());
 		}
+
+		// The target resource needs to be saved else the resolution will not operate
+		targetResource.setModified(true);
+
 		getRequest().setTargetResource(targetResource, getFileExtension());
 		getRequest().setSourceResource(resource, getFileExtension());
+
 		// remove resource set
-		modelSet.getResources().remove(resource);
+		if (!isControlledResourceLocked(getRequest().getSourceURI())) {
+			modelSet.getResources().remove(resource);
+		}
 
 		return CommandResult.newOKCommandResult();
 	}
@@ -102,9 +113,12 @@ public class RemoveControlResourceCommand extends AbstractControlResourceCommand
 		if (resource == null) {
 			return CommandResult.newErrorCommandResult("The resource is null").getStatus();
 		}
+
 		modelSet.getResources().add(resource);
-		// Notify the model set that the back ed of this resource should not be deleted on save
+
+		// Notify the model set that the back end of this resource should not be deleted on save
 		modelSet.getResourcesToDeleteOnSave().remove(resource.getURI());
+
 		return superStatus;
 	}
 
@@ -119,9 +133,12 @@ public class RemoveControlResourceCommand extends AbstractControlResourceCommand
 		if (modelSet == null) {
 			return CommandResult.newErrorCommandResult("The resource is not contained in any resource set").getStatus();
 		}
-		modelSet.getResources().remove(resource);
-		// Notify the model set that the back end of this resource should be deleted on save
-		modelSet.getResourcesToDeleteOnSave().add(resource.getURI());
+
+		if (!isControlledResourceLocked(getRequest().getSourceURI())) {
+			modelSet.getResources().remove(resource);
+			// Notify the model set that the back end of this resource should be deleted on save
+			modelSet.getResourcesToDeleteOnSave().add(resource.getURI());
+		}
 		return superStatus;
 	}
 }

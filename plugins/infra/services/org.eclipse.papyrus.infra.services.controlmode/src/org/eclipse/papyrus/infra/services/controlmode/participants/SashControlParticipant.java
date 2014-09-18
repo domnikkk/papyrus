@@ -25,7 +25,7 @@ import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.gmf.runtime.common.core.command.UnexecutableCommand;
 import org.eclipse.papyrus.infra.core.resource.ModelSet;
-import org.eclipse.papyrus.infra.core.resource.sasheditor.SashModel;
+import org.eclipse.papyrus.infra.core.resource.sasheditor.DiModel;
 import org.eclipse.papyrus.infra.services.controlmode.ControlModeRequest;
 import org.eclipse.papyrus.infra.services.controlmode.commands.AbstractControlCommand;
 import org.eclipse.papyrus.infra.services.controlmode.commands.CreateControlResource;
@@ -56,7 +56,7 @@ public class SashControlParticipant implements IControlCommandParticipant, IUnco
 	}
 
 	public ICommand getPreControlCommand(ControlModeRequest request) {
-		return new CreateControlResource(request, SashModel.MODEL_FILE_EXTENSION);
+		return new CreateControlResource(request, DiModel.MODEL_FILE_EXTENSION);
 	}
 
 	public ICommand getPostControlCommand(ControlModeRequest request) {
@@ -78,7 +78,7 @@ public class SashControlParticipant implements IControlCommandParticipant, IUnco
 
 	protected ICommand getClearDiCommand(final ControlModeRequest request) {
 		ModelSet modelSet = request.getModelSet();
-		IFile affectedFiles = WorkspaceSynchronizer.getFile(modelSet.getAssociatedResource(request.getTargetObject(), SashModel.MODEL_FILE_EXTENSION, true));
+		IFile affectedFiles = WorkspaceSynchronizer.getFile(modelSet.getAssociatedResource(request.getTargetObject(), DiModel.MODEL_FILE_EXTENSION, true));
 		return new ClearDiCommand(Collections.singletonList(affectedFiles), request);
 	}
 
@@ -94,7 +94,7 @@ public class SashControlParticipant implements IControlCommandParticipant, IUnco
 			if (modelSet == null) {
 				return CommandResult.newErrorCommandResult("Unable to retrieve resource set");
 			}
-			Resource oldDiresource = modelSet.getAssociatedResource(getRequest().getTargetObject(), SashModel.MODEL_FILE_EXTENSION, true);
+			Resource oldDiresource = modelSet.getAssociatedResource(getRequest().getTargetObject(), DiModel.MODEL_FILE_EXTENSION, true);
 			if (oldDiresource == null) {
 				return CommandResult.newErrorCommandResult("Unable to retrieve old di resource");
 			}
@@ -104,7 +104,7 @@ public class SashControlParticipant implements IControlCommandParticipant, IUnco
 	}
 
 	protected boolean setDiTargetRequest(ControlModeRequest request) {
-		URI diURI = request.getNewURI().trimFileExtension().appendFileExtension(SashModel.MODEL_FILE_EXTENSION);
+		URI diURI = request.getNewURI().trimFileExtension().appendFileExtension(DiModel.MODEL_FILE_EXTENSION);
 		ModelSet modelSet = request.getModelSet();
 		if (modelSet != null) {
 			Resource diResource = null;
@@ -116,7 +116,7 @@ public class SashControlParticipant implements IControlCommandParticipant, IUnco
 			if (diResource == null) {
 				return false;
 			}
-			request.setTargetResource(diResource, SashModel.MODEL_FILE_EXTENSION);
+			request.setTargetResource(diResource, DiModel.MODEL_FILE_EXTENSION);
 			// Nothing to do but everything is ok
 			return true;
 		}
@@ -124,6 +124,6 @@ public class SashControlParticipant implements IControlCommandParticipant, IUnco
 	}
 
 	public ICommand getPostUncontrolCommand(ControlModeRequest request) {
-		return new RemoveControlResourceCommand(request, SashModel.MODEL_FILE_EXTENSION);
+		return new RemoveControlResourceCommand(request, DiModel.MODEL_FILE_EXTENSION);
 	}
 }

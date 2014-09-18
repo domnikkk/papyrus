@@ -18,6 +18,7 @@
  *  Christian W. Damus (CEA) - bug 432813
  *  Christian W. Damus (CEA) - bug 437052
  *  Gabriel Pascual (ALL4TEC) gabriel.pascual@all4tec.net - Bug 436952
+ *  Gabriel Pascual (ALL4TEC) gabriel.pascual@all4tec.net - Bug 436998
  *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.core.resource;
@@ -748,13 +749,16 @@ public class ModelSet extends ResourceSetImpl {
 			}
 		}
 
+		// Clean Model set of deleted Resource
+		cleanModelSet();
+
 		try {
 			// Walk all registered models
 			for (IModel model : modelList) {
 				try {
 					if (!(model instanceof AdditionalResourcesModel)) {
 
-						// Bug 436952 : Clean referenced resources by models
+						// Bug 436952, 4436998 : Clean referenced resources by models
 						model.cleanModel(getResourcesToDeleteOnSave());
 
 						model.saveModel();
@@ -777,6 +781,26 @@ public class ModelSet extends ResourceSetImpl {
 			handleResourcesToDelete();
 		} finally {
 			monitor.done();
+		}
+	}
+
+
+
+	/**
+	 * Clean model set.
+	 */
+	private void cleanModelSet() {
+
+		// Get referenced resources by Model Set
+		Iterator<Resource> resourcesIterator = getResources().iterator();
+		while (resourcesIterator.hasNext()) {
+			Resource nextResource = resourcesIterator.next();
+
+			// Verify if the resource can be unreferenced
+			if (getResourcesToDeleteOnSave().contains(nextResource.getURI())) {
+				resourcesIterator.remove();
+			}
+
 		}
 	}
 
@@ -1232,4 +1256,6 @@ public class ModelSet extends ResourceSetImpl {
 		}
 		return null;
 	}
+
+
 }

@@ -18,6 +18,7 @@ import java.util.List;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.papyrus.infra.core.resource.ModelSet;
 import org.eclipse.papyrus.infra.services.controlmode.ControlModeRequest;
 
 public abstract class AbstractControlResourceCommand extends AbstractControlCommand {
@@ -86,5 +87,34 @@ public abstract class AbstractControlResourceCommand extends AbstractControlComm
 			return getRequest().getSourceURI();
 		}
 		return getRequest().getSourceURI().trimFileExtension().appendFileExtension(newFileExtension);
+	}
+
+	/**
+	 * Checks if controlled resource is locked.
+	 *
+	 * @param resourceURI
+	 *            the resource uri
+	 * @return true, if control resource is locked
+	 */
+	public boolean isControlledResourceLocked(URI resourceURI) {
+		boolean isSemanticResourceEmpty = false;
+
+		if (resourceURI != null) {
+			ModelSet modelSet = getRequest().getModelSet();
+			if (modelSet != null) {
+				Resource resource = modelSet.getResource(resourceURI, true);
+				if (resource.isModified()) {
+					isSemanticResourceEmpty = !resource.getContents().isEmpty();
+				} else {
+					resource = getRequest().getSourceResource(resourceURI.fileExtension());
+					if (resource != null) {
+						isSemanticResourceEmpty = !resource.getContents().isEmpty();
+					}
+				}
+
+			}
+		}
+
+		return isSemanticResourceEmpty;
 	}
 }
