@@ -38,22 +38,8 @@ main() {
 	semantics.objectsOfType(Region).map applyRTRegion();
 	semantics.objectsOfType(State).map applyRTState();
 	semantics.objectsOfType(Pseudostate).map applyRTPseudostate();
-
-	semantics.rootObjects()[sourcert::AbstractEvent]->select(findInterface().oclIsUndefined())->forEach (e){
-		var elementLabel : String := if e.base_CallEvent.oclIsUndefined() then
-			"<Undefined>"
-		elif e.base_CallEvent.operation.name.oclIsUndefined() then
-			'<Unnamed>'
-		else 
-			e.base_CallEvent.operation.name
-		endif;
-		
-		var stereotypeLabel := if e.oclIsKindOf(InEvent) then "<<InEvent>>" else "<<OutEvent>>" endif;
-		warning("The "+stereotypeLabel+" CallEvent "+elementLabel+" isn't associated to an operation contained in an Interface. An equivalent RTMessageSet cannot be created");
-		semantics.removeElement(e);
-	};
 	
-	semantics.rootObjects()[sourcert::AbstractEvent].map toMessageSet();
+	semantics.rootObjects()[sourcert::AbstractEvent].map delete();
 	semantics.rootObjects()[sourcert::Capsule].map toCapsule();
 	semantics.rootObjects()[sourcert::CapsulePart].map toCapsulePart();
 	semantics.rootObjects()[sourcert::Protocol].map toProtocol();
@@ -86,36 +72,60 @@ mapping inout ProfileApplication::toPapyrusRTProfile() : ProfileApplication when
 	self.applyingPackage.profileApplication += result;
 }
 
-/* TriggerEvent removed in Papyrus UMLRT V3 (Replaced with RTMessageSet) */
-mapping AbstractEvent::toMessageSet() when {
-	not self.findInterface().oclIsUndefined() 
-}{
-	var owningInterface : Interface := self.findInterface();
-	
-	//An interface can have several operations. 
-	//Inout mapping ensures that the stereotype can be created at most once for each interface
-	var direction : RTMessageKind := self.getDirection();
-	var messageSet : RTMessageSet := owningInterface.map createMessageSet(direction);
-	
-	//Ensure that the model is consistent: the resulting messageSet shall have the same direction. If not, then the source model is inconsistent
-	if messageSet.rtMsgKind <> direction then
-		warning("Inconsistent input model: interface "+owningInterface.name+" has operations with different directions")
-	endif;
-	
+mapping AbstractEvent::delete() {
 	semantics.removeElement(self);
+}
+
+/* Applies the RTMessageSet on the In and Out interfaces, and create a new InOut interface */
+mapping sourcert::ProtocolContainer::toMessageSets() : Interface{
+	var inInterface : Interface := self.findInInterface();
+	var outInterface : Interface := inInterface.findOppositeInterface();
+	
+	inInterface.map createMessageSet(RTMessageKind::_in);
+	outInterface.map createMessageSet(RTMessageKind::_out);
+	
+	result.name := inInterface.name+"Sym";
+	
+	//Order: Protocol, InInterface, OutInterface, InoutInterface
+	self.base_Package.packagedElement += result;
+	
+	result.map createMessageSet(RTMessageKind::inOut);
+	result.map createKeyword('ProtocolRole');
+}
+
+/*
+<eAnnotations xmi:id="_6bqisD5hEeSYUNuTXCumiw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+      <details xmi:id="_6brJwD5hEeSYUNuTXCumiw" key="ProtocolRole"/>
+</eAnnotations>
+*/
+mapping inout Element::createKeyword(keyword : String) : EAnnotation{
+	self.eAnnotations += result;
+	result.source := 'http://www.eclipse.org/uml2/2.0.0/UML';
+	result.details += object EStringToStringMapEntry {
+		key := 'ProtocolRole';
+	}
+}
+
+query sourcert::ProtocolContainer::findInInterface() : Interface {
+	return self.base_Package.packagedElement->selectByType(Interface)->any(e | not e.name.endsWith('~'));
 }
 
 mapping inout Interface::createMessageSet(direction : RTMessageKind) : RTMessageSet {
 	result.base_Interface := self;
-	result.rtMsgKind := direction; 
+	result.rtMsgKind := direction;
 }
 
-query AbstractEvent::findInterface() : Interface {
-	var baseEvent := self.base_CallEvent;
-	var operation := baseEvent.operation;
-	var owningInterface := operation.interface;
+query Interface::findOppositeInterface() : Interface {
+	var name : String := self.name;
 	
-	return owningInterface;
+	var oppositeName: String := if name.endsWith('~') then 
+		name.substring(1, name.length() - 1)
+	else
+		name + '~'
+	endif;
+
+	var res := self.getNearestPackage().packagedElement->selectByType(Interface)->any(i | i.name = oppositeName);
+	return res;
 }
 
 mapping sourcert::Capsule::toCapsule() : umlrt::Capsule {
@@ -138,6 +148,8 @@ mapping sourcert::Protocol::toProtocol() : umlrt::Protocol {
 
 mapping sourcert::ProtocolContainer::toProtocolPackage() : umlrt::ProtocolContainer {
 	result.base_Package := self.base_Package;
+	
+	self.map toMessageSets();
 	
 	semantics.removeElement(self);
 }
