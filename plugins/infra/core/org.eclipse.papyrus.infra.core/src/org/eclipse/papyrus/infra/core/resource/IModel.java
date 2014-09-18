@@ -10,6 +10,8 @@
  * Contributors:
  *  CEA LIST - Initial API and implementation
  *  Christian W. Damus (CEA) - manage models by URI, not IFile (CDO)
+ *  Gabriel Pascual (ALL4TEC) gabriel.pascual@all4tec.net - Bug 436952
+ *
  *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.core.resource;
@@ -194,4 +196,12 @@ public interface IModel {
 	 * @return
 	 */
 	public boolean isModelFor(Object element);
+
+	/**
+	 * Clean model of deleted or uncontrolled references.
+	 *
+	 * @param resourcesToDelete
+	 *            the to delete on save
+	 */
+	public void cleanModel(Set<URI> resourcesToDelete);
 }
