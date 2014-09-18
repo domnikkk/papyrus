@@ -1778,7 +1778,7 @@
               xsi:type="predicates:AndPredicate">
             <operand
                 xsi:type="predicates:RepositoryPredicate"
-                project="org.eclipse.papyrus.oomph"/>
+                project="releng"/>
             <operand
                 xsi:type="predicates:NamePredicate"
                 pattern=".*\.releng.*|.*\.oomph.*|releng"/>
