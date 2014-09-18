@@ -10,13 +10,17 @@
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 437052
  *  Christian W. Damus - bug 399859
+ *  Gabriel Pascual (ALL4TEC) gabriel.pascual@all4tec.net - Bug 436952
+ *
  *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.core.resource;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Set;
 
 import org.eclipse.emf.common.util.URI;
@@ -123,6 +127,43 @@ public abstract class EMFLogicalModel extends AbstractBaseModel implements IEMFM
 			return resources.contains(((EObject) element).eResource());
 		}
 		return resources.contains(element);
+	}
+
+	/**
+	 * Clean model.
+	 *
+	 * @param resourcesToDelete
+	 *            the resource to delete
+	 * @see org.eclipse.papyrus.infra.core.resource.IModel#cleanModel(java.util.Set)
+	 */
+	@Override
+	public void cleanModel(Set<URI> resourcesToDelete) {
+
+		if (!resourcesToDelete.isEmpty()) {
+
+			// Initialise exploration
+			Iterator<Resource> modelResourcesIterator = getResources().iterator();
+			List<Resource> referencedDeletedResources = new ArrayList<Resource>();
+
+			while (modelResourcesIterator.hasNext()) {
+
+				// Verify if current resource will be deleted
+				Resource currentResource = modelResourcesIterator.next();
+				if (resourcesToDelete.contains(currentResource.getURI())) {
+
+					referencedDeletedResources.add(currentResource);
+				}
+
+			}
+
+			// Remove all bad references
+			if (!referencedDeletedResources.isEmpty()) {
+				getResources().removeAll(referencedDeletedResources);
+			}
+
+
+		}
+
 	}
 
 }

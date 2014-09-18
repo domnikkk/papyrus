@@ -8,12 +8,15 @@
  *
  * Contributors:
  *  Remi Schnekenburger (CEA LIST) - Initial API and implementation
+ *  Gabriel Pascual (ALL4TEC) gabriel.pascual@all4tec.net - Bug 436952
  *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.core.resource;
 
 import java.util.List;
+import java.util.Set;
 
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 
 /**
@@ -117,5 +120,17 @@ public abstract class AbstractModel implements IModel {
 	@Override
 	public boolean isModelFor(Object element) {
 		return false;
+	}
+
+
+	/**
+	 * @see org.eclipse.papyrus.infra.core.resource.IModel#cleanModel(java.util.Set)
+	 *
+	 * @param toDeleteOnSave
+	 */
+	@Override
+	public void cleanModel(Set<URI> resourcesToDelete) {
+		// Nothing to do
+
 	}
 }
