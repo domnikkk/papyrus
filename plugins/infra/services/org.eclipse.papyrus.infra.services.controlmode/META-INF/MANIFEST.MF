@@ -1,7 +1,6 @@
 Manifest-Version: 1.0
 Export-Package: org.eclipse.papyrus.infra.services.controlmode,
  org.eclipse.papyrus.infra.services.controlmode.commands,
- org.eclipse.papyrus.infra.services.controlmode.handlers,
  org.eclipse.papyrus.infra.services.controlmode.participants,
  org.eclipse.papyrus.infra.services.controlmode.ui,
  org.eclipse.papyrus.infra.services.controlmode.util
@@ -15,7 +14,6 @@ Require-Bundle: org.eclipse.emf.edit.ui,
  org.eclipse.gmf.runtime.common.core,
  org.eclipse.gmf.runtime.emf.commands.core,
  org.eclipse.gmf.runtime.emf.type.core,
- org.eclipse.papyrus.views.modelexplorer;bundle-version="1.0.1",
  org.eclipse.papyrus.infra.gmfdiag.commands;bundle-version="1.0.1",
  org.eclipse.papyrus.infra.widgets.toolbox;bundle-version="1.0.1",
  org.eclipse.papyrus.infra.emf;bundle-version="1.0.1"

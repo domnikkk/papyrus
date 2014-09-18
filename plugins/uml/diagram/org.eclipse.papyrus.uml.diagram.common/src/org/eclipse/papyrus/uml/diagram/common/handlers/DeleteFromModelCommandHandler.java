@@ -10,6 +10,7 @@
  * Contributors:
  *  Yann Tanguy (CEA LIST) yann.tanguy@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 429826
+ *  Gabriel Pascual (ALL4TEC) gabriel.pascual@all4tec.net - Bug 436952
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.common.handlers;
@@ -25,6 +26,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.commands.UnexecutableCommand;
+import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.gmf.runtime.diagram.ui.commands.CommandProxy;
 import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart;
@@ -38,6 +40,10 @@ import org.eclipse.papyrus.infra.core.resource.ReadOnlyAxis;
 import org.eclipse.papyrus.infra.emf.readonly.ReadOnlyManager;
 import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 import org.eclipse.papyrus.infra.gmfdiag.common.helper.NotationHelper;
+import org.eclipse.papyrus.infra.services.controlmode.ControlModeManager;
+import org.eclipse.papyrus.infra.services.controlmode.ControlModeRequest;
+import org.eclipse.papyrus.infra.services.controlmode.IControlModeManager;
+import org.eclipse.papyrus.infra.services.controlmode.util.ControlHelper;
 
 import com.google.common.base.Optional;
 
@@ -54,7 +60,7 @@ public class DeleteFromModelCommandHandler extends GraphicalCommandHandler imple
 		if (editingDomain == null) {
 			return UnexecutableCommand.INSTANCE;
 		}
-
+		
 		// Retrieve currently selected IGraphicalEditPart(s)
 		List<IGraphicalEditPart> editParts = getSelectedElements();
 		if (editParts.isEmpty()) {
@@ -71,11 +77,27 @@ public class DeleteFromModelCommandHandler extends GraphicalCommandHandler imple
 			IGraphicalEditPart editPart = it.next();
 
 			if (!(editPart instanceof DiagramEditPart)) {
+				
+				// Look for uncontrol mode command
+				EObject eObjectToControl = EMFHelper.getEObject(editPart);
+				if (eObjectToControl != null && ControlHelper.isRootControlledObject(eObjectToControl)) {
+					ControlModeRequest controlRequest = ControlModeRequest.createUIUncontrolModelRequest(getEditingDomain(), eObjectToControl);
+					IControlModeManager controlMng = ControlModeManager.getInstance();
+					ICommand controlCommand = controlMng.getUncontrolCommand(controlRequest);
+					command.compose(controlCommand);
+				}
+				
 				// Look for the GMF deletion command
 				Command curCommand = editPart.getCommand(new EditCommandRequestWrapper(new DestroyElementRequest(false)));
+				
+				
 				if (curCommand != null) {
 					command.compose(new CommandProxy(curCommand));
 				}
+				
+				
+			
+		
 			}
 		}
 
@@ -83,6 +105,8 @@ public class DeleteFromModelCommandHandler extends GraphicalCommandHandler imple
 			return UnexecutableCommand.INSTANCE;
 		}
 
+		
+		
 		return new ICommandProxy(command);
 	}
 
