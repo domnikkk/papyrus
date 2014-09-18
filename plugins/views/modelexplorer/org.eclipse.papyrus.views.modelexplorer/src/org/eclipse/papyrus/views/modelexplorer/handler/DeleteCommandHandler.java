@@ -23,6 +23,7 @@ import org.eclipse.core.commands.IHandler;
 import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.common.command.UnexecutableCommand;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gmf.runtime.common.core.command.CompositeCommand;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
@@ -31,8 +32,13 @@ import org.eclipse.papyrus.infra.core.sasheditor.contentprovider.IPageManager;
 import org.eclipse.papyrus.infra.core.services.ServiceException;
 import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 import org.eclipse.papyrus.infra.emf.utils.ServiceUtilsForEObject;
+import org.eclipse.papyrus.infra.services.controlmode.ControlModeManager;
+import org.eclipse.papyrus.infra.services.controlmode.ControlModeRequest;
+import org.eclipse.papyrus.infra.services.controlmode.IControlModeManager;
+import org.eclipse.papyrus.infra.services.controlmode.util.ControlHelper;
 import org.eclipse.papyrus.infra.services.edit.service.ElementEditServiceUtils;
 import org.eclipse.papyrus.infra.services.edit.service.IElementEditService;
+import org.eclipse.papyrus.views.modelexplorer.Activator;
 
 /**
  * Default handler for Delete command used in the ModelExplorer contextual menu.
@@ -119,6 +125,21 @@ public class DeleteCommandHandler extends AbstractCommandHandler implements IHan
 			IElementEditService provider = ElementEditServiceUtils.getCommandProvider(selectedEObject);
 			if (provider == null) {
 				continue;
+			}
+			
+			// Look for uncontrol mode command
+			TransactionalEditingDomain editingDomain = null;
+			try {
+				editingDomain = ServiceUtilsForEObject.getInstance().getTransactionalEditingDomain(selectedEObject);
+			} catch (ServiceException e) {
+				Activator.log.error(e);
+			}
+			if (editingDomain !=null && ControlHelper.isRootControlledObject(selectedEObject)) {
+				ControlModeRequest controlRequest = ControlModeRequest.createUIUncontrolModelRequest(editingDomain, selectedEObject);
+				IControlModeManager controlMng = ControlModeManager.getInstance();
+				ICommand controlCommand = controlMng.getUncontrolCommand(controlRequest);
+
+				gmfCommand =  CompositeCommand.compose(gmfCommand, controlCommand);
 			}
 
 
