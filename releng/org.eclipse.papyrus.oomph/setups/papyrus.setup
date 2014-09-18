@@ -287,26 +287,6 @@
           </annotation>
         </repository>
         <repository
-            url="http://download.eclipse.org/birt/update-site/4.4/">
-          <annotation
-              source="http://www.eclipse.org/Papyrus/2014/releng/dependencytools">
-            <detail
-                key="updateFrom">
-              <value>BIRT</value>
-            </detail>
-          </annotation>
-        </repository>
-        <repository
-            url="http://download.eclipse.org/mmt/atl/updates/milestones/3.5/">
-          <annotation
-              source="http://www.eclipse.org/Papyrus/2014/releng/dependencytools">
-            <detail
-                key="updateFrom">
-              <value>M2M ATL</value>
-            </detail>
-          </annotation>
-        </repository>
-        <repository
             url="http://download.eclipse.org/modeling/emft/mwe/updates/releases/R201406110919/mwe">
           <annotation
               source="http://www.eclipse.org/Papyrus/2014/releng/dependencytools">
@@ -363,16 +343,6 @@
             <detail
                 key="updateFrom">
               <value>MDT UML2</value>
-            </detail>
-          </annotation>
-        </repository>
-        <repository
-            url="http://download.eclipse.org/mylyn/snapshots/3.13">
-          <annotation
-              source="http://www.eclipse.org/Papyrus/2014/releng/dependencytools">
-            <detail
-                key="updateFrom">
-              <value>Mylyn</value>
             </detail>
           </annotation>
         </repository>
@@ -442,10 +412,6 @@
         <repository
             url="${base.downloads.url}/modeling/gmp/gmf-tooling/updates/releases"/>
         <repository
-            url="${base.downloads.url}/birt/update-site/4.4/"/>
-        <repository
-            url="${base.downloads.url}/mmt/atl/updates/releases/3.5/"/>
-        <repository
             url="${base.downloads.url}/modeling/emft/mwe/updates/releases/R201405200714/mwe"/>
         <repository
             url="${base.downloads.url}/mmt/qvto/updates/releases/3.4.0"/>
@@ -456,8 +422,6 @@
         <repository
             url="${base.downloads.url}/modeling/mdt/uml2/updates/5.0"/>
         <repository
-            url="${base.downloads.url}/mylyn/releases/3.12"/>
-        <repository
             url="${base.downloads.url}/modeling/m2t/xpand/updates/releases/R201406030414/"/>
         <repository
             url="${base.downloads.url}/modeling/tmf/xtext/updates/releases/head/R201405210727/"/>
@@ -467,6 +431,28 @@
             url="${base.downloads.url}/webtools/downloads/drops/R3.6.0/R-3.6.0-20140602160322/repository"/>
         <repository
             url="${base.downloads.url}/nattable/releases/1.1.0/repository/"/>
+      </repositoryList>
+    </targlet>
+    <targlet
+        name="Papyrus Test Dependencies"
+        activeRepositoryList="${eclipse.target.platform}">
+      <requirement
+          name="org.eclipse.swtbot.feature.group"/>
+      <requirement
+          name="org.eclipse.swtbot.eclipse.feature.group"/>
+      <requirement
+          name="org.eclipse.swtbot.eclipse.gef.feature.group"/>
+      <requirement
+          name="org.eclipse.swtbot.forms.feature.group"/>
+      <repositoryList
+          name="Mars">
+        <repository
+            url="${base.downloads.url}/technology/swtbot/snapshots"/>
+      </repositoryList>
+      <repositoryList
+          name="Luna">
+        <repository
+            url="${base.downloads.url}/technology/swtbot/snapshots"/>
       </repositoryList>
     </targlet>
     <targlet
@@ -590,31 +576,6 @@
   </setupTask>
   <project name="main"
       label="Main">
-    <setupTask
-        xsi:type="setup.targlets:TargletTask">
-      <targlet
-          name="Papyrus Test Dependencies"
-          activeRepositoryList="${eclipse.target.platform}">
-        <requirement
-            name="org.eclipse.swtbot.feature.group"/>
-        <requirement
-            name="org.eclipse.swtbot.eclipse.feature.group"/>
-        <requirement
-            name="org.eclipse.swtbot.eclipse.gef.feature.group"/>
-        <requirement
-            name="org.eclipse.swtbot.forms.feature.group"/>
-        <repositoryList
-            name="Mars">
-          <repository
-              url="${base.downloads.url}/technology/swtbot/snapshots"/>
-        </repositoryList>
-        <repositoryList
-            name="Luna">
-          <repository
-              url="${base.downloads.url}/technology/swtbot/snapshots"/>
-        </repositoryList>
-      </targlet>
-    </setupTask>
     <project
         name="infra"
         label="Infra">
@@ -655,7 +616,20 @@
         <sourceLocator
             rootFolder="${papyrus.git.clone.location/tests/junit/plugins/infra}"/>
         <sourceLocator
-            rootFolder="${papyrus.git.clone.location/tests/junit/plugins/core}"/>
+            rootFolder="${papyrus.git.clone.location/tests/junit/plugins/core}">
+          <predicate
+              xsi:type="predicates:NotPredicate">
+            <operand
+                xsi:type="predicates:NamePredicate"
+                pattern="org\.eclipse\.papyrus\.tests"/>
+          </predicate>
+        </sourceLocator>
+        <sourceLocator
+            rootFolder="${papyrus.git.clone.location/features}">
+          <predicate
+              xsi:type="predicates:NamePredicate"
+              pattern="org\.eclipse\.papyrus\.(tests\.)?infra($|\..+)"/>
+        </sourceLocator>
       </setupTask>
       <setupTask
           xsi:type="setup.workingsets:WorkingSetTask">
@@ -665,14 +639,11 @@
           <predicate
               xsi:type="predicates:AndPredicate">
             <operand
-                xsi:type="predicates:OrPredicate">
-              <operand
-                  xsi:type="predicates:LocationPredicate"
-                  pattern="${papyrus.git.clone.location/plugins/infra/.*}"/>
-              <operand
-                  xsi:type="predicates:LocationPredicate"
-                  pattern="${papyrus.git.clone.location/plugins/editor/.*}"/>
-            </operand>
+                xsi:type="predicates:RepositoryPredicate"
+                project="org.eclipse.papyrus.infra.core"/>
+            <operand
+                xsi:type="predicates:NaturePredicate"
+                nature="org.eclipse.pde.PluginNature"/>
             <operand
                 xsi:type="predicates:OrPredicate">
               <operand
@@ -687,7 +658,7 @@
             </operand>
             <operand
                 xsi:type="workingsets:ExclusionPredicate"
-                excludedWorkingSet="//@projects[name='main']/@projects[name='infra']/@setupTasks.1/@workingSets.1 //@projects[name='main']/@projects[name='infra']/@setupTasks.1/@workingSets.2 //@projects[name='main']/@projects[name='infra']/@setupTasks.1/@workingSets.3 //@projects[name='main']/@projects[name='infra']/@setupTasks.1/@workingSets.4"/>
+                excludedWorkingSet="//@projects[name='main']/@projects[name='infra']/@setupTasks.1/@workingSets.1 //@projects[name='main']/@projects[name='infra']/@setupTasks.1/@workingSets.2 //@projects[name='main']/@projects[name='infra']/@setupTasks.1/@workingSets.3 //@projects[name='main']/@projects[name='infra']/@setupTasks.1/@workingSets.5 //@projects[name='main']/@projects[name='infra']/@setupTasks.1/@workingSets.4"/>
           </predicate>
         </workingSet>
         <workingSet
@@ -696,14 +667,17 @@
           <predicate
               xsi:type="predicates:AndPredicate">
             <operand
-                xsi:type="predicates:LocationPredicate"
-                pattern="${papyrus.git.clone.location/plugins/infra/.*}"/>
+                xsi:type="predicates:RepositoryPredicate"
+                project="org.eclipse.papyrus.infra.gmfdiag.common"/>
             <operand
-                xsi:type="predicates:OrPredicate">
-              <operand
-                  xsi:type="predicates:NamePredicate"
-                  pattern="org\.eclipse\.papyrus\.infra\.gmfdiag($|\..+)"/>
-            </operand>
+                xsi:type="predicates:NaturePredicate"
+                nature="org.eclipse.pde.PluginNature"/>
+            <operand
+                xsi:type="predicates:NamePredicate"
+                pattern="org\.eclipse\.papyrus\.infra\.gmfdiag($|\..+)"/>
+            <operand
+                xsi:type="workingsets:ExclusionPredicate"
+                excludedWorkingSet="//@projects[name='main']/@projects[name='infra']/@setupTasks.1/@workingSets.5"/>
           </predicate>
         </workingSet>
         <workingSet
@@ -712,14 +686,17 @@
           <predicate
               xsi:type="predicates:AndPredicate">
             <operand
-                xsi:type="predicates:LocationPredicate"
-                pattern="${papyrus.git.clone.location/plugins/infra/.*}"/>
+                xsi:type="predicates:RepositoryPredicate"
+                project="org.eclipse.papyrus.infra.nattable"/>
             <operand
-                xsi:type="predicates:OrPredicate">
-              <operand
-                  xsi:type="predicates:NamePredicate"
-                  pattern="org\.eclipse\.papyrus\.infra\.(?:emf\.)?nattable($|\..+)"/>
-            </operand>
+                xsi:type="predicates:NaturePredicate"
+                nature="org.eclipse.pde.PluginNature"/>
+            <operand
+                xsi:type="predicates:NamePredicate"
+                pattern="org\.eclipse\.papyrus\.infra\.(?:emf\.)?nattable($|\..+)"/>
+            <operand
+                xsi:type="workingsets:ExclusionPredicate"
+                excludedWorkingSet="//@projects[name='main']/@projects[name='infra']/@setupTasks.1/@workingSets.5"/>
           </predicate>
         </workingSet>
         <workingSet
@@ -728,14 +705,17 @@
           <predicate
               xsi:type="predicates:AndPredicate">
             <operand
-                xsi:type="predicates:LocationPredicate"
-                pattern="${papyrus.git.clone.location/plugins/infra/.*}"/>
+                xsi:type="predicates:RepositoryPredicate"
+                project="org.eclipse.papyrus.infra.services.labelprovider"/>
             <operand
-                xsi:type="predicates:OrPredicate">
-              <operand
-                  xsi:type="predicates:NamePredicate"
-                  pattern="org\.eclipse\.papyrus\.infra\.services($|\..+)"/>
-            </operand>
+                xsi:type="predicates:NaturePredicate"
+                nature="org.eclipse.pde.PluginNature"/>
+            <operand
+                xsi:type="predicates:NamePredicate"
+                pattern="org\.eclipse\.papyrus\.infra\.services($|\..+)"/>
+            <operand
+                xsi:type="workingsets:ExclusionPredicate"
+                excludedWorkingSet="//@projects[name='main']/@projects[name='infra']/@setupTasks.1/@workingSets.5"/>
           </predicate>
         </workingSet>
         <workingSet
@@ -744,27 +724,55 @@
           <predicate
               xsi:type="predicates:AndPredicate">
             <operand
-                xsi:type="predicates:LocationPredicate"
-                pattern="${papyrus.git.clone.location/plugins/infra/.*}"/>
+                xsi:type="predicates:RepositoryPredicate"
+                project="org.eclipse.papyrus.infra.viewpoints.policy"/>
             <operand
-                xsi:type="predicates:OrPredicate">
-              <operand
-                  xsi:type="predicates:NamePredicate"
-                  pattern="org\.eclipse\.papyrus\.infra\.viewpoints($|\..+)"/>
-            </operand>
+                xsi:type="predicates:NaturePredicate"
+                nature="org.eclipse.pde.PluginNature"/>
+            <operand
+                xsi:type="predicates:NamePredicate"
+                pattern="org\.eclipse\.papyrus\.infra\.viewpoints($|\..+)"/>
+            <operand
+                xsi:type="workingsets:ExclusionPredicate"
+                excludedWorkingSet="//@projects[name='main']/@projects[name='infra']/@setupTasks.1/@workingSets.5"/>
           </predicate>
         </workingSet>
         <workingSet
             name="Papyrus Infra Tests"
             id="papyrus-infra-tests">
           <predicate
-              xsi:type="predicates:OrPredicate">
+              xsi:type="predicates:AndPredicate">
             <operand
-                xsi:type="predicates:LocationPredicate"
-                pattern="${papyrus.git.clone.location/tests/junit/plugins/core/.*}"/>
+                xsi:type="predicates:RepositoryPredicate"
+                project="org.eclipse.papyrus.infra.core.tests"/>
             <operand
-                xsi:type="predicates:LocationPredicate"
-                pattern="${papyrus.git.clone.location/tests/junit/plugins/infra/.*}"/>
+                xsi:type="predicates:NaturePredicate"
+                nature="org.eclipse.pde.PluginNature"/>
+            <operand
+                xsi:type="predicates:OrPredicate">
+              <operand
+                  xsi:type="predicates:NamePredicate"
+                  pattern="org\.eclipse\.papyrus\.infra(\..+)?\.tests"/>
+              <operand
+                  xsi:type="predicates:NamePredicate"
+                  pattern="org\.eclipse\.papyrus\.editor\.integration\.tests"/>
+            </operand>
+          </predicate>
+        </workingSet>
+        <workingSet
+            name="Papyrus Infra Features"
+            id="papyrus-infra-features">
+          <predicate
+              xsi:type="predicates:AndPredicate">
+            <operand
+                xsi:type="predicates:RepositoryPredicate"
+                project="org.eclipse.papyrus.infra.core.feature"/>
+            <operand
+                xsi:type="predicates:NaturePredicate"
+                nature="org.eclipse.pde.FeatureNature"/>
+            <operand
+                xsi:type="predicates:NamePredicate"
+                pattern="org\.eclipse\.papyrus(\.tests)?\.infra($|\..+)"/>
           </predicate>
         </workingSet>
       </setupTask>
@@ -796,6 +804,12 @@
             rootFolder="${papyrus.git.clone.location/plugins/xwt}"/>
         <sourceLocator
             rootFolder="${papyrus.git.clone.location/tests/junit/plugins/views}"/>
+        <sourceLocator
+            rootFolder="${papyrus.git.clone.location/features}">
+          <predicate
+              xsi:type="predicates:NamePredicate"
+              pattern="org\.eclipse\.papyrus\.(tests\.)?(views|xwt)($|\..+)"/>
+        </sourceLocator>
       </setupTask>
       <setupTask
           xsi:type="setup.workingsets:WorkingSetTask">
@@ -803,16 +817,51 @@
             name="Papyrus Views"
             id="papyrus-views">
           <predicate
-              xsi:type="predicates:OrPredicate">
+              xsi:type="predicates:AndPredicate">
             <operand
-                xsi:type="predicates:LocationPredicate"
-                pattern="${papyrus.git.clone.location/plugins/views/.*}"/>
+                xsi:type="predicates:RepositoryPredicate"
+                project="org.eclipse.papyrus.views.properties"/>
             <operand
-                xsi:type="predicates:LocationPredicate"
-                pattern="${papyrus.git.clone.location/plugins/xwt/.*}"/>
+                xsi:type="predicates:NaturePredicate"
+                nature="org.eclipse.pde.PluginNature"/>
             <operand
-                xsi:type="predicates:LocationPredicate"
-                pattern="${papyrus.git.clone.location/tests/junit/plugins/views/.*}"/>
+                xsi:type="predicates:NamePredicate"
+                pattern="org\.eclipse\.papyrus\.(views|xwt)($|\..+)"/>
+            <operand
+                xsi:type="workingsets:ExclusionPredicate"
+                excludedWorkingSet="//@projects[name='main']/@projects[name='views']/@setupTasks.1/@workingSets.1"/>
+          </predicate>
+        </workingSet>
+        <workingSet
+            name="Papyrus Views Tests"
+            id="papyrus-views-tests">
+          <predicate
+              xsi:type="predicates:AndPredicate">
+            <operand
+                xsi:type="predicates:RepositoryPredicate"
+                project="org.eclipse.papyrus.views.modelexplorer.tests"/>
+            <operand
+                xsi:type="predicates:NaturePredicate"
+                nature="org.eclipse.pde.PluginNature"/>
+            <operand
+                xsi:type="predicates:NamePredicate"
+                pattern="org\.eclipse\.papyrus\.views(\..+)?\.tests"/>
+          </predicate>
+        </workingSet>
+        <workingSet
+            name="Papyrus Views Features"
+            id="papyrus-views-features">
+          <predicate
+              xsi:type="predicates:AndPredicate">
+            <operand
+                xsi:type="predicates:RepositoryPredicate"
+                project="org.eclipse.papyrus.views.properties.feature"/>
+            <operand
+                xsi:type="predicates:NaturePredicate"
+                nature="org.eclipse.pde.FeatureNature"/>
+            <operand
+                xsi:type="predicates:NamePredicate"
+                pattern="org\.eclipse\.papyrus\.(tests\.)?(views|xwt)($|\..+)"/>
           </predicate>
         </workingSet>
       </setupTask>
@@ -843,14 +892,8 @@
           <predicate
               xsi:type="predicates:NotPredicate">
             <operand
-                xsi:type="predicates:OrPredicate">
-              <operand
-                  xsi:type="predicates:NamePredicate"
-                  pattern="org\.eclipse\.papyrus\.uml\.alf($|\..+)"/>
-              <operand
-                  xsi:type="predicates:NamePredicate"
-                  pattern="org\.eclipse\.papyrus\.uml\.textedit($|\..+)"/>
-            </operand>
+                xsi:type="predicates:NamePredicate"
+                pattern=".*\.(alf|textedit|xtext)($|\..+)"/>
           </predicate>
         </sourceLocator>
         <sourceLocator
@@ -858,13 +901,22 @@
           <predicate
               xsi:type="predicates:NotPredicate">
             <operand
-                xsi:type="predicates:OrPredicate">
+                xsi:type="predicates:NamePredicate"
+                pattern=".*\.(alf|textedit|xtext)($|\..+)"/>
+          </predicate>
+        </sourceLocator>
+        <sourceLocator
+            rootFolder="${papyrus.git.clone.location/features}">
+          <predicate
+              xsi:type="predicates:AndPredicate">
+            <operand
+                xsi:type="predicates:NamePredicate"
+                pattern="org\.eclipse\.papyrus\.(tests\.)?uml($|\..+)"/>
+            <operand
+                xsi:type="predicates:NotPredicate">
               <operand
                   xsi:type="predicates:NamePredicate"
-                  pattern="org\.eclipse\.papyrus\.uml\.alf($|\..+)"/>
-              <operand
-                  xsi:type="predicates:NamePredicate"
-                  pattern="org\.eclipse\.papyrus\.uml\.textedit($|\..+)"/>
+                  pattern=".*\.(alf|textedit|xtext)($|\..+)"/>
             </operand>
           </predicate>
         </sourceLocator>
@@ -877,8 +929,20 @@
           <predicate
               xsi:type="predicates:AndPredicate">
             <operand
-                xsi:type="predicates:LocationPredicate"
-                pattern="${papyrus.git.clone.location/plugins/uml/.*}"/>
+                xsi:type="predicates:RepositoryPredicate"
+                project="org.eclipse.papyrus.uml.commands"/>
+            <operand
+                xsi:type="predicates:NaturePredicate"
+                nature="org.eclipse.pde.PluginNature"/>
+            <operand
+                xsi:type="predicates:NamePredicate"
+                pattern="org\.eclipse\.papyrus\.uml($|\..+)"/>
+            <operand
+                xsi:type="predicates:NotPredicate">
+              <operand
+                  xsi:type="predicates:NamePredicate"
+                  pattern=".*\.(alf|textedit|xtext)($|\..+)"/>
+            </operand>
             <operand
                 xsi:type="workingsets:ExclusionPredicate"
                 excludedWorkingSet="//@projects[name='main']/@projects[name='uml']/@setupTasks.1/@workingSets.1 //@projects[name='main']/@projects[name='uml']/@setupTasks.1/@workingSets.2 //@projects[name='main']/@projects[name='uml']/@setupTasks.1/@workingSets.3"/>
@@ -890,11 +954,23 @@
           <predicate
               xsi:type="predicates:AndPredicate">
             <operand
-                xsi:type="predicates:LocationPredicate"
-                pattern="${papyrus.git.clone.location/plugins/uml/.*}"/>
+                xsi:type="predicates:RepositoryPredicate"
+                project="org.eclipse.papyrus.uml.diagram.common"/>
+            <operand
+                xsi:type="predicates:NaturePredicate"
+                nature="org.eclipse.pde.PluginNature"/>
             <operand
                 xsi:type="predicates:NamePredicate"
                 pattern="org\.eclipse\.papyrus\.uml\.diagram.*"/>
+            <operand
+                xsi:type="predicates:NotPredicate">
+              <operand
+                  xsi:type="predicates:NamePredicate"
+                  pattern=".*\.(alf|textedit|xtext)($|\..+)"/>
+            </operand>
+            <operand
+                xsi:type="workingsets:ExclusionPredicate"
+                excludedWorkingSet="//@projects[name='main']/@projects[name='uml']/@setupTasks.1/@workingSets.3"/>
           </predicate>
         </workingSet>
         <workingSet
@@ -903,19 +979,68 @@
           <predicate
               xsi:type="predicates:AndPredicate">
             <operand
-                xsi:type="predicates:LocationPredicate"
-                pattern="${papyrus.git.clone.location/plugins/uml/.*}"/>
+                xsi:type="predicates:RepositoryPredicate"
+                project="org.eclipse.papyrus.uml.nattable"/>
+            <operand
+                xsi:type="predicates:NaturePredicate"
+                nature="org.eclipse.pde.PluginNature"/>
             <operand
                 xsi:type="predicates:NamePredicate"
                 pattern="org\.eclipse\.papyrus\.uml\.nattable.*"/>
+            <operand
+                xsi:type="predicates:NotPredicate">
+              <operand
+                  xsi:type="predicates:NamePredicate"
+                  pattern=".*\.(alf|textedit|xtext)($|\..+)"/>
+            </operand>
+            <operand
+                xsi:type="workingsets:ExclusionPredicate"
+                excludedWorkingSet="//@projects[name='main']/@projects[name='uml']/@setupTasks.1/@workingSets.3"/>
           </predicate>
         </workingSet>
         <workingSet
             name="Papyrus UML Tests"
             id="papyrus-uml-tests">
           <predicate
-              xsi:type="predicates:LocationPredicate"
-              pattern="${papyrus.git.clone.location/tests/junit/plugins/uml/.*}"/>
+              xsi:type="predicates:AndPredicate">
+            <operand
+                xsi:type="predicates:RepositoryPredicate"
+                project="org.eclipse.papyrus.uml.diagram.common.tests"/>
+            <operand
+                xsi:type="predicates:NaturePredicate"
+                nature="org.eclipse.pde.PluginNature"/>
+            <operand
+                xsi:type="predicates:NamePredicate"
+                pattern="org\.eclipse\.papyrus\.uml(\..+)?\.tests"/>
+            <operand
+                xsi:type="predicates:NotPredicate">
+              <operand
+                  xsi:type="predicates:NamePredicate"
+                  pattern=".*\.alf.*|.*\.uml\.textedit.*"/>
+            </operand>
+          </predicate>
+        </workingSet>
+        <workingSet
+            name="Papyrus UML Features"
+            id="papyrus-uml-features">
+          <predicate
+              xsi:type="predicates:AndPredicate">
+            <operand
+                xsi:type="predicates:RepositoryPredicate"
+                project="org.eclipse.papyrus.uml.feature"/>
+            <operand
+                xsi:type="predicates:NaturePredicate"
+                nature="org.eclipse.pde.FeatureNature"/>
+            <operand
+                xsi:type="predicates:NamePredicate"
+                pattern="org\.eclipse\.papyrus(\.tests)?\.uml($|\..+)"/>
+            <operand
+                xsi:type="predicates:NotPredicate">
+              <operand
+                  xsi:type="predicates:NamePredicate"
+                  pattern=".*\.(alf|textedit|xtext)($|\..+)"/>
+            </operand>
+          </predicate>
         </workingSet>
       </setupTask>
       <stream
@@ -952,6 +1077,12 @@
               xsi:type="predicates:NamePredicate"
               pattern="org\.eclipse\.papyrus\.uml\.alf($|\..+)"/>
         </sourceLocator>
+        <sourceLocator
+            rootFolder="${papyrus.git.clone.location/features}">
+          <predicate
+              xsi:type="predicates:NamePredicate"
+              pattern="org\.eclipse\.papyrus\.(tests\.)?uml\.alf($|\..+)"/>
+        </sourceLocator>
       </setupTask>
       <setupTask
           xsi:type="setup.workingsets:WorkingSetTask">
@@ -961,8 +1092,27 @@
           <predicate
               xsi:type="predicates:AndPredicate">
             <operand
-                xsi:type="predicates:LocationPredicate"
-                pattern="${papyrus.git.clone.location/plugins/uml/.*}"/>
+                xsi:type="predicates:RepositoryPredicate"
+                project="org.eclipse.papyrus.uml.alf.common"/>
+            <operand
+                xsi:type="predicates:NaturePredicate"
+                nature="org.eclipse.pde.PluginNature"/>
+            <operand
+                xsi:type="predicates:NamePredicate"
+                pattern="org\.eclipse\.papyrus\.uml\.alf($|\..+)"/>
+          </predicate>
+        </workingSet>
+        <workingSet
+            name="Papyrus UML ALF Features"
+            id="papyrus-uml-alf-features">
+          <predicate
+              xsi:type="predicates:AndPredicate">
+            <operand
+                xsi:type="predicates:RepositoryPredicate"
+                project="org.eclipse.papyrus.uml.alf.feature"/>
+            <operand
+                xsi:type="predicates:NaturePredicate"
+                nature="org.eclipse.pde.FeatureNature"/>
             <operand
                 xsi:type="predicates:NamePredicate"
                 pattern="org\.eclipse\.papyrus\.uml\.alf($|\..+)"/>
@@ -995,13 +1145,19 @@
             rootFolder="${papyrus.git.clone.location/plugins/uml}">
           <predicate
               xsi:type="predicates:NamePredicate"
-              pattern="org\.eclipse\.papyrus\.uml\.textedit($|\..+)"/>
+              pattern="org\.eclipse\.papyrus\.uml\.(textedit|xtext)($|\..+)"/>
         </sourceLocator>
         <sourceLocator
             rootFolder="${papyrus.git.clone.location/tests/junit/plugins/uml}">
           <predicate
               xsi:type="predicates:NamePredicate"
-              pattern="org\.eclipse\.papyrus\.uml\.textedit($|\..+)"/>
+              pattern="org\.eclipse\.papyrus\.uml\.(textedit|xtext)($|\..+)"/>
+        </sourceLocator>
+        <sourceLocator
+            rootFolder="${papyrus.git.clone.location/features}">
+          <predicate
+              xsi:type="predicates:NamePredicate"
+              pattern="org\.eclipse\.papyrus\.(tests\.)?uml\.(textedit|xtext)($|\..+)"/>
         </sourceLocator>
       </setupTask>
       <setupTask
@@ -1012,11 +1168,30 @@
           <predicate
               xsi:type="predicates:AndPredicate">
             <operand
-                xsi:type="predicates:LocationPredicate"
-                pattern="${papyrus.git.clone.location/plugins/uml/.*}"/>
+                xsi:type="predicates:RepositoryPredicate"
+                project="org.eclipse.papyrus.uml.textedit.common.xtext"/>
+            <operand
+                xsi:type="predicates:NaturePredicate"
+                nature="org.eclipse.pde.PluginNature"/>
             <operand
                 xsi:type="predicates:NamePredicate"
-                pattern="org\.eclipse\.papyrus\.uml\.textedit($|\..+)"/>
+                pattern="org\.eclipse\.papyrus\.uml\.(textedit|xtext)($|\..+)"/>
+          </predicate>
+        </workingSet>
+        <workingSet
+            name="Papyrus UML Text Editors Features"
+            id="papyrus-uml-text-features">
+          <predicate
+              xsi:type="predicates:AndPredicate">
+            <operand
+                xsi:type="predicates:RepositoryPredicate"
+                project="org.eclipse.papyrus.uml.textedit.feature"/>
+            <operand
+                xsi:type="predicates:NaturePredicate"
+                nature="org.eclipse.pde.FeatureNature"/>
+            <operand
+                xsi:type="predicates:NamePredicate"
+                pattern="org\.eclipse\.papyrus\.uml\.(textedit|xtext)($|\..+)"/>
           </predicate>
         </workingSet>
       </setupTask>
@@ -1046,6 +1221,15 @@
             rootFolder="${papyrus.git.clone.location/plugins/sysml}"/>
         <sourceLocator
             rootFolder="${papyrus.git.clone.location/tests/junit/plugins/sysml}"/>
+        <sourceLocator
+            rootFolder="${papyrus.git.clone.location/features}">
+          <predicate
+              xsi:type="predicates:AndPredicate">
+            <operand
+                xsi:type="predicates:NamePredicate"
+                pattern="org\.eclipse\.papyrus\.(tests\.)?sysml($|\..+)"/>
+          </predicate>
+        </sourceLocator>
       </setupTask>
       <setupTask
           xsi:type="setup.workingsets:WorkingSetTask">
@@ -1055,8 +1239,14 @@
           <predicate
               xsi:type="predicates:AndPredicate">
             <operand
-                xsi:type="predicates:LocationPredicate"
-                pattern="${papyrus.git.clone.location/plugins/sysml/.*}"/>
+                xsi:type="predicates:RepositoryPredicate"
+                project="org.eclipse.papyrus.sysml"/>
+            <operand
+                xsi:type="predicates:NaturePredicate"
+                nature="org.eclipse.pde.PluginNature"/>
+            <operand
+                xsi:type="predicates:NamePredicate"
+                pattern="org\.eclipse\.papyrus\.sysml($|\..+)"/>
             <operand
                 xsi:type="workingsets:ExclusionPredicate"
                 excludedWorkingSet="//@projects[name='main']/@projects[name='sysml']/@setupTasks.1/@workingSets.1 //@projects[name='main']/@projects[name='sysml']/@setupTasks.1/@workingSets.2 //@projects[name='main']/@projects[name='sysml']/@setupTasks.1/@workingSets.3"/>
@@ -1068,11 +1258,17 @@
           <predicate
               xsi:type="predicates:AndPredicate">
             <operand
-                xsi:type="predicates:LocationPredicate"
-                pattern="${papyrus.git.clone.location/plugins/sysml/.*}"/>
+                xsi:type="predicates:RepositoryPredicate"
+                project="org.eclipse.papyrus.sysml.diagram.common"/>
+            <operand
+                xsi:type="predicates:NaturePredicate"
+                nature="org.eclipse.pde.PluginNature"/>
             <operand
                 xsi:type="predicates:NamePredicate"
-                pattern="org\.eclipse\.papyrus\.sysml\.diagram.*"/>
+                pattern="org\.eclipse\.papyrus\.sysml\.diagram($|\..+)"/>
+            <operand
+                xsi:type="workingsets:ExclusionPredicate"
+                excludedWorkingSet="//@projects[name='main']/@projects[name='sysml']/@setupTasks.1/@workingSets.3"/>
           </predicate>
         </workingSet>
         <workingSet
@@ -1081,19 +1277,50 @@
           <predicate
               xsi:type="predicates:AndPredicate">
             <operand
-                xsi:type="predicates:LocationPredicate"
-                pattern="${papyrus.git.clone.location/plugins/sysml/.*}"/>
+                xsi:type="predicates:RepositoryPredicate"
+                project="org.eclipse.papyrus.sysml.nattable"/>
+            <operand
+                xsi:type="predicates:NaturePredicate"
+                nature="org.eclipse.pde.PluginNature"/>
             <operand
                 xsi:type="predicates:NamePredicate"
-                pattern="org\.eclipse\.papyrus\.sysml\.nattable.*"/>
+                pattern="org\.eclipse\.papyrus\.sysml\.nattable($|\..+)"/>
+            <operand
+                xsi:type="workingsets:ExclusionPredicate"
+                excludedWorkingSet="//@projects[name='main']/@projects[name='sysml']/@setupTasks.1/@workingSets.3"/>
           </predicate>
         </workingSet>
         <workingSet
             name="Papyrus SysML Tests"
             id="papyrus-sysml-tests">
           <predicate
-              xsi:type="predicates:LocationPredicate"
-              pattern="${papyrus.git.clone.location/tests/junit/plugins/sysml/.*}"/>
+              xsi:type="predicates:AndPredicate">
+            <operand
+                xsi:type="predicates:RepositoryPredicate"
+                project="org.eclipse.papyrus.sysml.tests"/>
+            <operand
+                xsi:type="predicates:NaturePredicate"
+                nature="org.eclipse.pde.PluginNature"/>
+            <operand
+                xsi:type="predicates:NamePredicate"
+                pattern="org\.eclipse\.papyrus\.sysml(\..+)?\.tests"/>
+          </predicate>
+        </workingSet>
+        <workingSet
+            name="Papyrus SysML Features"
+            id="papyrus-sysml-features">
+          <predicate
+              xsi:type="predicates:AndPredicate">
+            <operand
+                xsi:type="predicates:RepositoryPredicate"
+                project="org.eclipse.papyrus.sysml.feature"/>
+            <operand
+                xsi:type="predicates:NaturePredicate"
+                nature="org.eclipse.pde.FeatureNature"/>
+            <operand
+                xsi:type="predicates:NamePredicate"
+                pattern="org\.eclipse\.papyrus(\.tests)?\.sysml($|\..+)"/>
+          </predicate>
         </workingSet>
       </setupTask>
       <stream
@@ -1126,6 +1353,15 @@
         </sourceLocator>
         <sourceLocator
             rootFolder="${papyrus.git.clone.location/tests/junit/plugins/facet}"/>
+        <sourceLocator
+            rootFolder="${papyrus.git.clone.location/features}">
+          <predicate
+              xsi:type="predicates:AndPredicate">
+            <operand
+                xsi:type="predicates:NamePredicate"
+                pattern="org\.eclipse\.papyrus\.(tests\.)?emf\.facet($|\..+)"/>
+          </predicate>
+        </sourceLocator>
       </setupTask>
       <setupTask
           xsi:type="setup.workingsets:WorkingSetTask">
@@ -1133,13 +1369,32 @@
             name="Papyrus EMF Facet"
             id="papyrus-emffacet">
           <predicate
-              xsi:type="predicates:OrPredicate">
+              xsi:type="predicates:AndPredicate">
             <operand
-                xsi:type="predicates:LocationPredicate"
-                pattern="${papyrus.git.clone.location/plugins/facet/.*}"/>
+                xsi:type="predicates:RepositoryPredicate"
+                project="org.eclipse.papyrus.emf.facet.common.core"/>
             <operand
-                xsi:type="predicates:LocationPredicate"
-                pattern="${papyrus.git.clone.location/tests/junit/plugins/facet/.*}"/>
+                xsi:type="predicates:NaturePredicate"
+                nature="org.eclipse.pde.PluginNature"/>
+            <operand
+                xsi:type="predicates:NamePredicate"
+                pattern="org\.eclipse\.papyrus\.emf\.facet($|\..+)"/>
+          </predicate>
+        </workingSet>
+        <workingSet
+            name="Papyrus EMF Facet Features"
+            id="papyrus-emffacet-features">
+          <predicate
+              xsi:type="predicates:AndPredicate">
+            <operand
+                xsi:type="predicates:RepositoryPredicate"
+                project="org.eclipse.papyrus.emf.facet.feature"/>
+            <operand
+                xsi:type="predicates:NaturePredicate"
+                nature="org.eclipse.pde.FeatureNature"/>
+            <operand
+                xsi:type="predicates:NamePredicate"
+                pattern="org\.eclipse\.papyrus(\.tests)?\.emf\.facet($|\..+)"/>
           </predicate>
         </workingSet>
       </setupTask>
@@ -1174,6 +1429,15 @@
             rootFolder="${papyrus.git.clone.location/plugins/customization}"/>
         <sourceLocator
             rootFolder="${papyrus.git.clone.location/tests/junit/plugins/customization}"/>
+        <sourceLocator
+            rootFolder="${papyrus.git.clone.location/features}">
+          <predicate
+              xsi:type="predicates:AndPredicate">
+            <operand
+                xsi:type="predicates:NamePredicate"
+                pattern="org\.eclipse\.papyrus\.(tests\.)?customization($|\..+)"/>
+          </predicate>
+        </sourceLocator>
       </setupTask>
       <setupTask
           xsi:type="setup.workingsets:WorkingSetTask">
@@ -1181,16 +1445,38 @@
             name="Papyrus Customization"
             id="papyrus-customization">
           <predicate
-              xsi:type="predicates:OrPredicate">
+              xsi:type="predicates:AndPredicate">
             <operand
-                xsi:type="predicates:LocationPredicate"
-                pattern="${papyrus.git.clone.location/plugins/customization/.*}"/>
+                xsi:type="predicates:RepositoryPredicate"
+                project="org.eclipse.papyrus.customization"/>
             <operand
-                xsi:type="predicates:LocationPredicate"
-                pattern="${papyrus.git.clone.location/tests/junit/plugins/customization/.*}"/>
+                xsi:type="predicates:NaturePredicate"
+                nature="org.eclipse.pde.PluginNature"/>
+            <operand
+                xsi:type="predicates:OrPredicate">
+              <operand
+                  xsi:type="predicates:NamePredicate"
+                  pattern="org\.eclipse\.papyrus\.customization(?:$|\..+)"/>
+              <operand
+                  xsi:type="predicates:NamePredicate"
+                  pattern="org\.eclipse\.papyrus\.editor(?:$|\..+)"/>
+            </operand>
+          </predicate>
+        </workingSet>
+        <workingSet
+            name="Papyrus Customization Features"
+            id="papyrus-customization-features">
+          <predicate
+              xsi:type="predicates:AndPredicate">
+            <operand
+                xsi:type="predicates:RepositoryPredicate"
+                project="org.eclipse.papyrus.customization.feature"/>
+            <operand
+                xsi:type="predicates:NaturePredicate"
+                nature="org.eclipse.pde.FeatureNature"/>
             <operand
                 xsi:type="predicates:NamePredicate"
-                pattern="org\.eclipse\.papyrus\.editor(?:$|\..+)"/>
+                pattern="org\.eclipse\.papyrus\.customization(?:$|\..+)"/>
           </predicate>
         </workingSet>
       </setupTask>
@@ -1218,6 +1504,15 @@
           xsi:type="projects:ProjectsImportTask">
         <sourceLocator
             rootFolder="${papyrus.git.clone.location/plugins/doc}"/>
+        <sourceLocator
+            rootFolder="${papyrus.git.clone.location/features}">
+          <predicate
+              xsi:type="predicates:AndPredicate">
+            <operand
+                xsi:type="predicates:NamePredicate"
+                pattern="org\.eclipse\.papyrus(\..+)?\.doc($|\..+)"/>
+          </predicate>
+        </sourceLocator>
       </setupTask>
       <setupTask
           xsi:type="setup.workingsets:WorkingSetTask">
@@ -1225,43 +1520,33 @@
             name="Papyrus Documentation"
             id="papyrus-doc">
           <predicate
-              xsi:type="predicates:NamePredicate"
-              pattern="org\.eclipse\.papyrus\..+\.doc"/>
+              xsi:type="predicates:AndPredicate">
+            <operand
+                xsi:type="predicates:RepositoryPredicate"
+                project="org.eclipse.papyrus.uml.doc"/>
+            <operand
+                xsi:type="predicates:NaturePredicate"
+                nature="org.eclipse.pde.PluginNature"/>
+            <operand
+                xsi:type="predicates:NamePredicate"
+                pattern="org\.eclipse\.papyrus(\..+)?\.doc(umentation)?"/>
+          </predicate>
         </workingSet>
-      </setupTask>
-      <stream
-          name="master"
-          label="master (Mars/1.1)">
-        <setupTask
-            xsi:type="setup:VariableTask"
-            name="papyrus.bugzilla.version"
-            value="1.0.0&amp;version=1.0.1&amp;version=1.0.2&amp;version=1.1.0"/>
-      </stream>
-      <stream
-          name="streams/1.0-maintenance"
-          label="streams/1.0-maintenance (Luna/1.0.x)">
-        <setupTask
-            xsi:type="setup:VariableTask"
-            name="papyrus.bugzilla.version"
-            value="1.0.0&amp;version=1.0.1&amp;version=1.0.2"/>
-      </stream>
-    </project>
-    <project
-        name="integrationtests"
-        label="Integration Tests">
-      <setupTask
-          xsi:type="projects:ProjectsImportTask">
-        <sourceLocator
-            rootFolder="${papyrus.git.clone.location/tests/integration/plugins}"/>
-      </setupTask>
-      <setupTask
-          xsi:type="setup.workingsets:WorkingSetTask">
         <workingSet
-            name="Papyrus Integration Tests"
-            id="papyrus-integrationtests">
+            name="Papyrus Documentation Features"
+            id="papyrus-doc-features">
           <predicate
-              xsi:type="predicates:LocationPredicate"
-              pattern="${papyrus.git.clone.location/tests/integration/plugins/.*}"/>
+              xsi:type="predicates:AndPredicate">
+            <operand
+                xsi:type="predicates:RepositoryPredicate"
+                project="org.eclipse.papyrus.doc.feature"/>
+            <operand
+                xsi:type="predicates:NaturePredicate"
+                nature="org.eclipse.pde.FeatureNature"/>
+            <operand
+                xsi:type="predicates:NamePredicate"
+                pattern="org\.eclipse\.papyrus(\..+)?\.doc($|\..+)"/>
+          </predicate>
         </workingSet>
       </setupTask>
       <stream
@@ -1288,6 +1573,21 @@
           xsi:type="projects:ProjectsImportTask">
         <sourceLocator
             rootFolder="${papyrus.git.clone.location/tests/junit/plugins}"/>
+        <sourceLocator
+            rootFolder="${papyrus.git.clone.location/features}">
+          <predicate
+              xsi:type="predicates:AndPredicate">
+            <operand
+                xsi:type="predicates:NamePredicate"
+                pattern="org\.eclipse\.papyrus\.tests\..+"/>
+            <operand
+                xsi:type="predicates:NotPredicate">
+              <operand
+                  xsi:type="predicates:NamePredicate"
+                  pattern=".*\.extra\..*"/>
+            </operand>
+          </predicate>
+        </sourceLocator>
       </setupTask>
       <setupTask
           xsi:type="setup.workingsets:WorkingSetTask">
@@ -1295,8 +1595,45 @@
             name="Papyrus All Main Tests"
             id="papyrus-alltests">
           <predicate
-              xsi:type="predicates:LocationPredicate"
-              pattern="${papyrus.git.clone.location/tests/junit/plugins/.*}"/>
+              xsi:type="predicates:AndPredicate">
+            <operand
+                xsi:type="predicates:RepositoryPredicate"
+                project="org.eclipse.papyrus.tests"/>
+            <operand
+                xsi:type="predicates:NaturePredicate"
+                nature="org.eclipse.pde.PluginNature"/>
+            <operand
+                xsi:type="predicates:NamePredicate"
+                pattern="org\.eclipse\.papyrus(\..+)?\.tests"/>
+            <operand
+                xsi:type="predicates:NotPredicate">
+              <operand
+                  xsi:type="predicates:NamePredicate"
+                  pattern=".*\.extra\..*"/>
+            </operand>
+          </predicate>
+        </workingSet>
+        <workingSet
+            name="Papyrus Main Test Features"
+            id="papyrus-alltests-features">
+          <predicate
+              xsi:type="predicates:AndPredicate">
+            <operand
+                xsi:type="predicates:RepositoryPredicate"
+                project="org.eclipse.papyrus.tests.feature"/>
+            <operand
+                xsi:type="predicates:NaturePredicate"
+                nature="org.eclipse.pde.FeatureNature"/>
+            <operand
+                xsi:type="predicates:NamePredicate"
+                pattern="org\.eclipse\.papyrus\.tests($|\..+)"/>
+            <operand
+                xsi:type="predicates:NotPredicate">
+              <operand
+                  xsi:type="predicates:NamePredicate"
+                  pattern=".*\.extra\..*"/>
+            </operand>
+          </predicate>
         </workingSet>
       </setupTask>
       <stream
@@ -1323,6 +1660,15 @@
           xsi:type="projects:ProjectsImportTask">
         <sourceLocator
             rootFolder="${papyrus.git.clone.location/plugins/team}"/>
+        <sourceLocator
+            rootFolder="${papyrus.git.clone.location/features}">
+          <predicate
+              xsi:type="predicates:AndPredicate">
+            <operand
+                xsi:type="predicates:NamePredicate"
+                pattern="org\.eclipse\.papyrus\.team($|\..+)"/>
+          </predicate>
+        </sourceLocator>
       </setupTask>
       <setupTask
           xsi:type="setup.workingsets:WorkingSetTask">
@@ -1330,10 +1676,32 @@
             name="Papyrus Others"
             id="papyrus-others">
           <predicate
-              xsi:type="predicates:OrPredicate">
+              xsi:type="predicates:AndPredicate">
             <operand
-                xsi:type="predicates:LocationPredicate"
-                pattern="${papyrus.git.clone.location/plugins/team/.*}"/>
+                xsi:type="predicates:RepositoryPredicate"
+                project="org.eclipse.papyrus.team.svn"/>
+            <operand
+                xsi:type="predicates:NaturePredicate"
+                nature="org.eclipse.pde.PluginNature"/>
+            <operand
+                xsi:type="predicates:NamePredicate"
+                pattern="org\.eclipse\.papyrus\.team\.svn"/>
+          </predicate>
+        </workingSet>
+        <workingSet
+            name="Papyrus Other Features"
+            id="papyrus-others-features">
+          <predicate
+              xsi:type="predicates:AndPredicate">
+            <operand
+                xsi:type="predicates:RepositoryPredicate"
+                project="org.eclipse.papyrus.team.feature"/>
+            <operand
+                xsi:type="predicates:NaturePredicate"
+                nature="org.eclipse.pde.FeatureNature"/>
+            <operand
+                xsi:type="predicates:NamePredicate"
+                pattern="org\.eclipse\.papyrus\.team($|\..+)"/>
           </predicate>
         </workingSet>
       </setupTask>
@@ -1393,49 +1761,6 @@
       </stream>
     </project>
     <project
-        name="features"
-        label="Features">
-      <setupTask
-          xsi:type="projects:ProjectsImportTask">
-        <sourceLocator
-            rootFolder="${papyrus.git.clone.location/features/papyrus-main-features}"/>
-        <sourceLocator
-            rootFolder="${papyrus.git.clone.location/features/papyrus-tests-features}"/>
-      </setupTask>
-      <setupTask
-          xsi:type="setup.workingsets:WorkingSetTask">
-        <workingSet
-            name="Papyrus Features"
-            id="papyrus-features">
-          <predicate
-              xsi:type="predicates:OrPredicate">
-            <operand
-                xsi:type="predicates:LocationPredicate"
-                pattern="\Q${papyrus.git.clone.location/features/papyrus-main-features/}\E.*"/>
-            <operand
-                xsi:type="predicates:LocationPredicate"
-                pattern="\Q${papyrus.git.clone.location/features/papyrus-tests-features/}\E.*"/>
-          </predicate>
-        </workingSet>
-      </setupTask>
-      <stream
-          name="master"
-          label="master (Mars/1.1)">
-        <setupTask
-            xsi:type="setup:VariableTask"
-            name="papyrus.bugzilla.version"
-            value="1.0.0&amp;version=1.0.1&amp;version=1.0.2&amp;version=1.1.0"/>
-      </stream>
-      <stream
-          name="streams/1.0-maintenance"
-          label="streams/1.0-maintenance (Luna/1.0.x)">
-        <setupTask
-            xsi:type="setup:VariableTask"
-            name="papyrus.bugzilla.version"
-            value="1.0.0&amp;version=1.0.1&amp;version=1.0.2"/>
-      </stream>
-    </project>
-    <project
         name="releng"
         label="Releng">
       <setupTask
@@ -1450,8 +1775,14 @@
             name="Papyrus Releng"
             id="papyrus-releng">
           <predicate
-              xsi:type="predicates:LocationPredicate"
-              pattern="${papyrus.git.clone.location/releng(?:/.+)?}"/>
+              xsi:type="predicates:AndPredicate">
+            <operand
+                xsi:type="predicates:RepositoryPredicate"
+                project="org.eclipse.papyrus.oomph"/>
+            <operand
+                xsi:type="predicates:NamePredicate"
+                pattern=".*\.releng.*|.*\.oomph.*|releng"/>
+          </predicate>
         </workingSet>
       </setupTask>
       <setupTask
@@ -1553,19 +1884,28 @@
             xsi:type="predicates:OrPredicate">
           <operand
               xsi:type="predicates:LocationPredicate"
-              pattern="${papyrus.git.clone.location/extraplugins}/${papyrus.extraplugins.folder}"/>
+              pattern="\Q${papyrus.git.clone.location/extraplugins}\E[\\/]\Q${papyrus.extraplugins.folder}\E"/>
           <operand
               xsi:type="predicates:LocationPredicate"
-              pattern="${papyrus.git.clone.location/extraplugins}/${papyrus.extraplugins.folder}/.*"/>
+              pattern="\Q${papyrus.git.clone.location/extraplugins}\E[\\/]\Q${papyrus.extraplugins.folder}\E[\\/].*"/>
           <operand
               xsi:type="predicates:LocationPredicate"
-              pattern="${papyrus.git.clone.location/tests/junit/extraplugins}/${papyrus.extratests.folder}/.*"/>
+              pattern="\Q${papyrus.git.clone.location/tests/junit/extraplugins}\E[\\/]\Q${papyrus.extratests.folder}\E[\\/].*"/>
           <operand
-              xsi:type="predicates:NamePredicate"
-              pattern="org\.eclipse\.papyrus\.${papyrus.extrafeature}\.feature"/>
-          <operand
-              xsi:type="predicates:NamePredicate"
-              pattern="org\.eclipse\.papyrus\.${papyrus.extratestsfeature}\.feature"/>
+              xsi:type="predicates:AndPredicate">
+            <operand
+                xsi:type="predicates:NaturePredicate"
+                nature="org.eclipse.pde.FeatureNature"/>
+            <operand
+                xsi:type="predicates:OrPredicate">
+              <operand
+                  xsi:type="predicates:NamePredicate"
+                  pattern="org\.eclipse\.papyrus\.${papyrus.extrafeature}($|\..*)"/>
+              <operand
+                  xsi:type="predicates:NamePredicate"
+                  pattern="org\.eclipse\.papyrus\.${papyrus.extratestsfeature}($|\..*)"/>
+            </operand>
+          </operand>
         </predicate>
       </workingSet>
     </setupTask>
@@ -2078,16 +2418,22 @@
           name="Papyrus Developer Tools"
           id="papyrus-dev">
         <predicate
-            xsi:type="predicates:OrPredicate">
+            xsi:type="predicates:AndPredicate">
           <operand
-              xsi:type="predicates:LocationPredicate"
-              pattern="\Q${papyrus.git.clone.location/plugins/developer/}\E.+"/>
+              xsi:type="predicates:RepositoryPredicate"
+              project="org.eclipse.papyrus.codegen"/>
           <operand
-              xsi:type="predicates:LocationPredicate"
-              pattern="\Q${papyrus.git.clone.location/features/papyrus-dev-features/}\E.*"/>
-          <operand
-              xsi:type="predicates:LocationPredicate"
-              pattern="\Q${papyrus.git.clone.location/tests/junit/plugins/developer/}\E.+"/>
+              xsi:type="predicates:OrPredicate">
+            <operand
+                xsi:type="predicates:LocationPredicate"
+                pattern="\Q${papyrus.git.clone.location/plugins/developer/}\E.+"/>
+            <operand
+                xsi:type="predicates:LocationPredicate"
+                pattern="\Q${papyrus.git.clone.location/features/papyrus-dev-features/}\E.*"/>
+            <operand
+                xsi:type="predicates:LocationPredicate"
+                pattern="\Q${papyrus.git.clone.location/tests/junit/plugins/developer/}\E.+"/>
+          </operand>
         </predicate>
       </workingSet>
     </setupTask>
