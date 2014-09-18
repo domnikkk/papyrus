@@ -209,6 +209,9 @@ mapping StateMachine::applyRTStateMachine() : RTStateMachine when {
 	self.isRT()
 }{
 	result.base_StateMachine := self;
+	if self.getClassifier().classifierBehavior.oclIsUndefined() then
+		self.getClassifier().classifierBehavior := self
+	endif;
 }
 
 mapping State::applyRTState() : RTState when {
@@ -235,8 +238,11 @@ query StateMachine::isRT() : Boolean {
 
 query StateMachine::getClassifier() : BehavioredClassifier {
 	return if 
-		self.owner.oclIsKindOf(BehavioredClassifier) 
-		and self.owner.oclAsType(BehavioredClassifier).classifierBehavior = self 
+		self.owner.oclIsKindOf(BehavioredClassifier)
+		and (
+			self.owner.oclAsType(BehavioredClassifier).classifierBehavior = self or //By default in RSA, StateMachines are not the Classifier Behavior of the classifier 
+			self.owner.oclAsType(BehavioredClassifier).ownedBehavior->includes(self)
+		)
 	then 
 		self.owner.oclAsType(BehavioredClassifier) 
 	else 
