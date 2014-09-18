@@ -43,9 +43,9 @@ public class PapyrusUMLNotationFactoryImpl extends EFactoryImpl implements Papyr
 	 */
 	public static PapyrusUMLNotationFactory init() {
 		try {
-			PapyrusUMLNotationFactory thePapyrusRSANotationFactory = (PapyrusUMLNotationFactory) EPackage.Registry.INSTANCE.getEFactory(PapyrusUMLNotationPackage.eNS_URI);
-			if (thePapyrusRSANotationFactory != null) {
-				return thePapyrusRSANotationFactory;
+			PapyrusUMLNotationFactory thePapyrusUMLNotationFactory = (PapyrusUMLNotationFactory) EPackage.Registry.INSTANCE.getEFactory(PapyrusUMLNotationPackage.eNS_URI);
+			if (thePapyrusUMLNotationFactory != null) {
+				return thePapyrusUMLNotationFactory;
 			}
 		} catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
@@ -183,7 +183,7 @@ public class PapyrusUMLNotationFactoryImpl extends EFactoryImpl implements Papyr
 	 * @generated
 	 */
 	@Override
-	public PapyrusUMLNotationPackage getPapyrusRSANotationPackage() {
+	public PapyrusUMLNotationPackage getPapyrusUMLNotationPackage() {
 		return (PapyrusUMLNotationPackage) getEPackage();
 	}
 

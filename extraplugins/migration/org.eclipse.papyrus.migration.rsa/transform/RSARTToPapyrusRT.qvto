@@ -39,7 +39,7 @@ main() {
 	semantics.objectsOfType(State).map applyRTState();
 	semantics.objectsOfType(Pseudostate).map applyRTPseudostate();
 
-	semantics.objectsOfType(sourcert::AbstractEvent)->select(findInterface().oclIsUndefined())->forEach (e){
+	semantics.rootObjects()[sourcert::AbstractEvent]->select(findInterface().oclIsUndefined())->forEach (e){
 		var elementLabel : String := if e.base_CallEvent.oclIsUndefined() then
 			"<Undefined>"
 		elif e.base_CallEvent.operation.name.oclIsUndefined() then
@@ -53,17 +53,17 @@ main() {
 		semantics.removeElement(e);
 	};
 	
-	semantics.objectsOfType(sourcert::AbstractEvent).map toMessageSet();
-	semantics.objectsOfType(sourcert::Capsule).map toCapsule();
-	semantics.objectsOfType(sourcert::CapsulePart).map toCapsulePart();
-	semantics.objectsOfType(sourcert::Protocol).map toProtocol();
-	semantics.objectsOfType(sourcert::ProtocolContainer).map toProtocolPackage();
-	semantics.objectsOfType(sourcert::RTConnector).map toRTConnector();
-	semantics.objectsOfType(sourcert::RTHistorystate).map toHistorystate();
-	semantics.objectsOfType(sourcert::RTPort).map toRTPort();
-	semantics.objectsOfType(sourcert::RTRedefinableElement).map toRTRExcludedElement();
-	semantics.objectsOfType(sourcert::Trigger).map toRTTrigger();
-	semantics.objectsOfType(sourcert::Coregion).map delete();
+	semantics.rootObjects()[sourcert::AbstractEvent].map toMessageSet();
+	semantics.rootObjects()[sourcert::Capsule].map toCapsule();
+	semantics.rootObjects()[sourcert::CapsulePart].map toCapsulePart();
+	semantics.rootObjects()[sourcert::Protocol].map toProtocol();
+	semantics.rootObjects()[sourcert::ProtocolContainer].map toProtocolPackage();
+	semantics.rootObjects()[sourcert::RTConnector].map toRTConnector();
+	semantics.rootObjects()[sourcert::RTHistorystate].map toHistorystate();
+	semantics.rootObjects()[sourcert::RTPort].map toRTPort();
+	semantics.rootObjects()[sourcert::RTRedefinableElement].map toRTRExcludedElement();
+	semantics.rootObjects()[sourcert::Trigger].map toRTTrigger();
+	semantics.rootObjects()[sourcert::Coregion].map delete();
 }
 
 mapping inout ProfileApplication::toPapyrusRTProfile() : ProfileApplication when {

@@ -111,6 +111,6 @@ public interface PapyrusUMLNotationFactory extends EFactory {
 	 * @return the package supported by this factory.
 	 * @generated
 	 */
-	PapyrusUMLNotationPackage getPapyrusRSANotationPackage();
+	PapyrusUMLNotationPackage getPapyrusUMLNotationPackage();
 
 } // PapyrusUMLNotationFactory

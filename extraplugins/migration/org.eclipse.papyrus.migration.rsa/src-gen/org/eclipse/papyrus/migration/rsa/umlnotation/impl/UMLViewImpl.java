@@ -29,6 +29,7 @@ import org.eclipse.papyrus.migration.rsa.umlnotation.UMLView;
  * <li>{@link org.eclipse.papyrus.migration.rsa.umlnotation.impl.UMLViewImpl#getShowListVisibility <em>Show List Visibility</em>}</li>
  * <li>{@link org.eclipse.papyrus.migration.rsa.umlnotation.impl.UMLViewImpl#isShowListSignature <em>Show List Signature</em>}</li>
  * <li>{@link org.eclipse.papyrus.migration.rsa.umlnotation.impl.UMLViewImpl#getAlignment <em>Alignment</em>}</li>
+ * <li>{@link org.eclipse.papyrus.migration.rsa.umlnotation.impl.UMLViewImpl#getShowStereotypeAttributeCompartment <em>Show Stereotype Attribute Compartment</em>}</li>
  * </ul>
  * </p>
  *
@@ -123,6 +124,28 @@ public abstract class UMLViewImpl extends ViewImpl implements UMLView {
 	 * @ordered
 	 */
 	protected String alignment = ALIGNMENT_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getShowStereotypeAttributeCompartment() <em>Show Stereotype Attribute Compartment</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see #getShowStereotypeAttributeCompartment()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String SHOW_STEREOTYPE_ATTRIBUTE_COMPARTMENT_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getShowStereotypeAttributeCompartment() <em>Show Stereotype Attribute Compartment</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see #getShowStereotypeAttributeCompartment()
+	 * @generated
+	 * @ordered
+	 */
+	protected String showStereotypeAttributeCompartment = SHOW_STEREOTYPE_ATTRIBUTE_COMPARTMENT_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -256,6 +279,32 @@ public abstract class UMLViewImpl extends ViewImpl implements UMLView {
 	 * @generated
 	 */
 	@Override
+	public String getShowStereotypeAttributeCompartment() {
+		return showStereotypeAttributeCompartment;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public void setShowStereotypeAttributeCompartment(String newShowStereotypeAttributeCompartment) {
+		String oldShowStereotypeAttributeCompartment = showStereotypeAttributeCompartment;
+		showStereotypeAttributeCompartment = newShowStereotypeAttributeCompartment;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(this, Notification.SET, PapyrusUMLNotationPackage.UML_VIEW__SHOW_STEREOTYPE_ATTRIBUTE_COMPARTMENT, oldShowStereotypeAttributeCompartment, showStereotypeAttributeCompartment));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case PapyrusUMLNotationPackage.UML_VIEW__SHOW_STEREOTYPE:
@@ -266,6 +315,8 @@ public abstract class UMLViewImpl extends ViewImpl implements UMLView {
 			return isShowListSignature();
 		case PapyrusUMLNotationPackage.UML_VIEW__ALIGNMENT:
 			return getAlignment();
+		case PapyrusUMLNotationPackage.UML_VIEW__SHOW_STEREOTYPE_ATTRIBUTE_COMPARTMENT:
+			return getShowStereotypeAttributeCompartment();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -290,6 +341,9 @@ public abstract class UMLViewImpl extends ViewImpl implements UMLView {
 			return;
 		case PapyrusUMLNotationPackage.UML_VIEW__ALIGNMENT:
 			setAlignment((String) newValue);
+			return;
+		case PapyrusUMLNotationPackage.UML_VIEW__SHOW_STEREOTYPE_ATTRIBUTE_COMPARTMENT:
+			setShowStereotypeAttributeCompartment((String) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -316,6 +370,9 @@ public abstract class UMLViewImpl extends ViewImpl implements UMLView {
 		case PapyrusUMLNotationPackage.UML_VIEW__ALIGNMENT:
 			setAlignment(ALIGNMENT_EDEFAULT);
 			return;
+		case PapyrusUMLNotationPackage.UML_VIEW__SHOW_STEREOTYPE_ATTRIBUTE_COMPARTMENT:
+			setShowStereotypeAttributeCompartment(SHOW_STEREOTYPE_ATTRIBUTE_COMPARTMENT_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -337,6 +394,8 @@ public abstract class UMLViewImpl extends ViewImpl implements UMLView {
 			return showListSignature != SHOW_LIST_SIGNATURE_EDEFAULT;
 		case PapyrusUMLNotationPackage.UML_VIEW__ALIGNMENT:
 			return ALIGNMENT_EDEFAULT == null ? alignment != null : !ALIGNMENT_EDEFAULT.equals(alignment);
+		case PapyrusUMLNotationPackage.UML_VIEW__SHOW_STEREOTYPE_ATTRIBUTE_COMPARTMENT:
+			return SHOW_STEREOTYPE_ATTRIBUTE_COMPARTMENT_EDEFAULT == null ? showStereotypeAttributeCompartment != null : !SHOW_STEREOTYPE_ATTRIBUTE_COMPARTMENT_EDEFAULT.equals(showStereotypeAttributeCompartment);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -362,6 +421,8 @@ public abstract class UMLViewImpl extends ViewImpl implements UMLView {
 		result.append(showListSignature);
 		result.append(", alignment: ");
 		result.append(alignment);
+		result.append(", showStereotypeAttributeCompartment: ");
+		result.append(showStereotypeAttributeCompartment);
 		result.append(')');
 		return result.toString();
 	}

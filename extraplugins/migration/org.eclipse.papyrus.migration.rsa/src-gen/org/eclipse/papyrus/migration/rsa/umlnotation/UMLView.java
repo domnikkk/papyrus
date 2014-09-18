@@ -26,6 +26,7 @@ import org.eclipse.gmf.runtime.notation.View;
  * <li>{@link org.eclipse.papyrus.migration.rsa.umlnotation.UMLView#getShowListVisibility <em>Show List Visibility</em>}</li>
  * <li>{@link org.eclipse.papyrus.migration.rsa.umlnotation.UMLView#isShowListSignature <em>Show List Signature</em>}</li>
  * <li>{@link org.eclipse.papyrus.migration.rsa.umlnotation.UMLView#getAlignment <em>Alignment</em>}</li>
+ * <li>{@link org.eclipse.papyrus.migration.rsa.umlnotation.UMLView#getShowStereotypeAttributeCompartment <em>Show Stereotype Attribute Compartment</em>}</li>
  * </ul>
  * </p>
  *
@@ -147,5 +148,33 @@ public interface UMLView extends EObject, View {
 	 * @generated
 	 */
 	void setAlignment(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Show Stereotype Attribute Compartment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Show Stereotype Attribute Compartment</em>' attribute isn't clear, there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the value of the '<em>Show Stereotype Attribute Compartment</em>' attribute.
+	 * @see #setShowStereotypeAttributeCompartment(String)
+	 * @see org.eclipse.papyrus.migration.rsa.umlnotation.PapyrusUMLNotationPackage#getUMLView_ShowStereotypeAttributeCompartment()
+	 * @model
+	 * @generated
+	 */
+	String getShowStereotypeAttributeCompartment();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.papyrus.migration.rsa.umlnotation.UMLView#getShowStereotypeAttributeCompartment <em>Show Stereotype Attribute Compartment</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @param value
+	 *            the new value of the '<em>Show Stereotype Attribute Compartment</em>' attribute.
+	 * @see #getShowStereotypeAttributeCompartment()
+	 * @generated
+	 */
+	void setShowStereotypeAttributeCompartment(String value);
 
 } // UMLView

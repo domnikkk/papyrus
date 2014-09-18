@@ -30,6 +30,8 @@ import org.eclipse.papyrus.migration.rsa.umlnotation.UMLView;
  * <li>{@link org.eclipse.papyrus.migration.rsa.umlnotation.impl.UMLShapeCompartmentImpl#getShowListVisibility <em>Show List Visibility</em>}</li>
  * <li>{@link org.eclipse.papyrus.migration.rsa.umlnotation.impl.UMLShapeCompartmentImpl#isShowListSignature <em>Show List Signature</em>}</li>
  * <li>{@link org.eclipse.papyrus.migration.rsa.umlnotation.impl.UMLShapeCompartmentImpl#getAlignment <em>Alignment</em>}</li>
+ * <li>{@link org.eclipse.papyrus.migration.rsa.umlnotation.impl.UMLShapeCompartmentImpl#getShowStereotypeAttributeCompartment <em>Show Stereotype Attribute Compartment</em>}</li>
+ * <li>{@link org.eclipse.papyrus.migration.rsa.umlnotation.impl.UMLShapeCompartmentImpl#isVerticalAlignment <em>Vertical Alignment</em>}</li>
  * </ul>
  * </p>
  *
@@ -124,6 +126,50 @@ public class UMLShapeCompartmentImpl extends CompartmentImpl implements UMLShape
 	 * @ordered
 	 */
 	protected String alignment = ALIGNMENT_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getShowStereotypeAttributeCompartment() <em>Show Stereotype Attribute Compartment</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see #getShowStereotypeAttributeCompartment()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String SHOW_STEREOTYPE_ATTRIBUTE_COMPARTMENT_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getShowStereotypeAttributeCompartment() <em>Show Stereotype Attribute Compartment</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see #getShowStereotypeAttributeCompartment()
+	 * @generated
+	 * @ordered
+	 */
+	protected String showStereotypeAttributeCompartment = SHOW_STEREOTYPE_ATTRIBUTE_COMPARTMENT_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isVerticalAlignment() <em>Vertical Alignment</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see #isVerticalAlignment()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean VERTICAL_ALIGNMENT_EDEFAULT = true;
+
+	/**
+	 * The cached value of the '{@link #isVerticalAlignment() <em>Vertical Alignment</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see #isVerticalAlignment()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean verticalAlignment = VERTICAL_ALIGNMENT_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -257,6 +303,58 @@ public class UMLShapeCompartmentImpl extends CompartmentImpl implements UMLShape
 	 * @generated
 	 */
 	@Override
+	public String getShowStereotypeAttributeCompartment() {
+		return showStereotypeAttributeCompartment;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public void setShowStereotypeAttributeCompartment(String newShowStereotypeAttributeCompartment) {
+		String oldShowStereotypeAttributeCompartment = showStereotypeAttributeCompartment;
+		showStereotypeAttributeCompartment = newShowStereotypeAttributeCompartment;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(this, Notification.SET, PapyrusUMLNotationPackage.UML_SHAPE_COMPARTMENT__SHOW_STEREOTYPE_ATTRIBUTE_COMPARTMENT, oldShowStereotypeAttributeCompartment, showStereotypeAttributeCompartment));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public boolean isVerticalAlignment() {
+		return verticalAlignment;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public void setVerticalAlignment(boolean newVerticalAlignment) {
+		boolean oldVerticalAlignment = verticalAlignment;
+		verticalAlignment = newVerticalAlignment;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(this, Notification.SET, PapyrusUMLNotationPackage.UML_SHAPE_COMPARTMENT__VERTICAL_ALIGNMENT, oldVerticalAlignment, verticalAlignment));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case PapyrusUMLNotationPackage.UML_SHAPE_COMPARTMENT__SHOW_STEREOTYPE:
@@ -267,6 +365,10 @@ public class UMLShapeCompartmentImpl extends CompartmentImpl implements UMLShape
 			return isShowListSignature();
 		case PapyrusUMLNotationPackage.UML_SHAPE_COMPARTMENT__ALIGNMENT:
 			return getAlignment();
+		case PapyrusUMLNotationPackage.UML_SHAPE_COMPARTMENT__SHOW_STEREOTYPE_ATTRIBUTE_COMPARTMENT:
+			return getShowStereotypeAttributeCompartment();
+		case PapyrusUMLNotationPackage.UML_SHAPE_COMPARTMENT__VERTICAL_ALIGNMENT:
+			return isVerticalAlignment();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -291,6 +393,12 @@ public class UMLShapeCompartmentImpl extends CompartmentImpl implements UMLShape
 			return;
 		case PapyrusUMLNotationPackage.UML_SHAPE_COMPARTMENT__ALIGNMENT:
 			setAlignment((String) newValue);
+			return;
+		case PapyrusUMLNotationPackage.UML_SHAPE_COMPARTMENT__SHOW_STEREOTYPE_ATTRIBUTE_COMPARTMENT:
+			setShowStereotypeAttributeCompartment((String) newValue);
+			return;
+		case PapyrusUMLNotationPackage.UML_SHAPE_COMPARTMENT__VERTICAL_ALIGNMENT:
+			setVerticalAlignment((Boolean) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -317,6 +425,12 @@ public class UMLShapeCompartmentImpl extends CompartmentImpl implements UMLShape
 		case PapyrusUMLNotationPackage.UML_SHAPE_COMPARTMENT__ALIGNMENT:
 			setAlignment(ALIGNMENT_EDEFAULT);
 			return;
+		case PapyrusUMLNotationPackage.UML_SHAPE_COMPARTMENT__SHOW_STEREOTYPE_ATTRIBUTE_COMPARTMENT:
+			setShowStereotypeAttributeCompartment(SHOW_STEREOTYPE_ATTRIBUTE_COMPARTMENT_EDEFAULT);
+			return;
+		case PapyrusUMLNotationPackage.UML_SHAPE_COMPARTMENT__VERTICAL_ALIGNMENT:
+			setVerticalAlignment(VERTICAL_ALIGNMENT_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -338,6 +452,10 @@ public class UMLShapeCompartmentImpl extends CompartmentImpl implements UMLShape
 			return showListSignature != SHOW_LIST_SIGNATURE_EDEFAULT;
 		case PapyrusUMLNotationPackage.UML_SHAPE_COMPARTMENT__ALIGNMENT:
 			return ALIGNMENT_EDEFAULT == null ? alignment != null : !ALIGNMENT_EDEFAULT.equals(alignment);
+		case PapyrusUMLNotationPackage.UML_SHAPE_COMPARTMENT__SHOW_STEREOTYPE_ATTRIBUTE_COMPARTMENT:
+			return SHOW_STEREOTYPE_ATTRIBUTE_COMPARTMENT_EDEFAULT == null ? showStereotypeAttributeCompartment != null : !SHOW_STEREOTYPE_ATTRIBUTE_COMPARTMENT_EDEFAULT.equals(showStereotypeAttributeCompartment);
+		case PapyrusUMLNotationPackage.UML_SHAPE_COMPARTMENT__VERTICAL_ALIGNMENT:
+			return verticalAlignment != VERTICAL_ALIGNMENT_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -360,6 +478,8 @@ public class UMLShapeCompartmentImpl extends CompartmentImpl implements UMLShape
 				return PapyrusUMLNotationPackage.UML_VIEW__SHOW_LIST_SIGNATURE;
 			case PapyrusUMLNotationPackage.UML_SHAPE_COMPARTMENT__ALIGNMENT:
 				return PapyrusUMLNotationPackage.UML_VIEW__ALIGNMENT;
+			case PapyrusUMLNotationPackage.UML_SHAPE_COMPARTMENT__SHOW_STEREOTYPE_ATTRIBUTE_COMPARTMENT:
+				return PapyrusUMLNotationPackage.UML_VIEW__SHOW_STEREOTYPE_ATTRIBUTE_COMPARTMENT;
 			default:
 				return -1;
 			}
@@ -385,6 +505,8 @@ public class UMLShapeCompartmentImpl extends CompartmentImpl implements UMLShape
 				return PapyrusUMLNotationPackage.UML_SHAPE_COMPARTMENT__SHOW_LIST_SIGNATURE;
 			case PapyrusUMLNotationPackage.UML_VIEW__ALIGNMENT:
 				return PapyrusUMLNotationPackage.UML_SHAPE_COMPARTMENT__ALIGNMENT;
+			case PapyrusUMLNotationPackage.UML_VIEW__SHOW_STEREOTYPE_ATTRIBUTE_COMPARTMENT:
+				return PapyrusUMLNotationPackage.UML_SHAPE_COMPARTMENT__SHOW_STEREOTYPE_ATTRIBUTE_COMPARTMENT;
 			default:
 				return -1;
 			}
@@ -413,6 +535,10 @@ public class UMLShapeCompartmentImpl extends CompartmentImpl implements UMLShape
 		result.append(showListSignature);
 		result.append(", alignment: ");
 		result.append(alignment);
+		result.append(", showStereotypeAttributeCompartment: ");
+		result.append(showStereotypeAttributeCompartment);
+		result.append(", verticalAlignment: ");
+		result.append(verticalAlignment);
 		result.append(')');
 		return result.toString();
 	}

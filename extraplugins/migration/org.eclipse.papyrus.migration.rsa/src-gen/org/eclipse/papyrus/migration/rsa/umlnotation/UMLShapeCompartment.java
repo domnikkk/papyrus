@@ -18,10 +18,45 @@ import org.eclipse.gmf.runtime.notation.Compartment;
  * A representation of the model object '<em><b>UML Shape Compartment</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <p>
+ * The following features are supported:
+ * <ul>
+ * <li>{@link org.eclipse.papyrus.migration.rsa.umlnotation.UMLShapeCompartment#isVerticalAlignment <em>Vertical Alignment</em>}</li>
+ * </ul>
+ * </p>
  *
  * @see org.eclipse.papyrus.migration.rsa.umlnotation.PapyrusUMLNotationPackage#getUMLShapeCompartment()
  * @model
  * @generated
  */
 public interface UMLShapeCompartment extends Compartment, UMLView {
+
+	/**
+	 * Returns the value of the '<em><b>Vertical Alignment</b></em>' attribute.
+	 * The default value is <code>"true"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Vertical Alignment</em>' attribute isn't clear, there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the value of the '<em>Vertical Alignment</em>' attribute.
+	 * @see #setVerticalAlignment(boolean)
+	 * @see org.eclipse.papyrus.migration.rsa.umlnotation.PapyrusUMLNotationPackage#getUMLShapeCompartment_VerticalAlignment()
+	 * @model default="true"
+	 * @generated
+	 */
+	boolean isVerticalAlignment();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.papyrus.migration.rsa.umlnotation.UMLShapeCompartment#isVerticalAlignment <em>Vertical Alignment</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @param value
+	 *            the new value of the '<em>Vertical Alignment</em>' attribute.
+	 * @see #isVerticalAlignment()
+	 * @generated
+	 */
+	void setVerticalAlignment(boolean value);
 } // UMLShapeCompartment
