@@ -17,12 +17,10 @@ import static com.google.common.base.Strings.nullToEmpty;
 
 import java.util.Collection;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.Map;
 import java.util.Map.Entry;
-import java.util.Set;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.IPath;
@@ -35,7 +33,6 @@ import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.jface.dialogs.IDialogConstants;
@@ -46,7 +43,6 @@ import org.eclipse.jface.viewers.ColumnWeightData;
 import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
-import org.eclipse.jface.viewers.IStructuredContentProvider;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
@@ -71,7 +67,6 @@ import org.eclipse.papyrus.infra.widgets.providers.WorkspaceContentProvider;
 import org.eclipse.papyrus.uml.extensionpoints.Registry;
 import org.eclipse.papyrus.uml.extensionpoints.library.IRegisteredLibrary;
 import org.eclipse.papyrus.uml.modelrepair.Activator;
-import org.eclipse.papyrus.uml.tools.util.LibraryHelper;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.DisposeEvent;
 import org.eclipse.swt.events.DisposeListener;
@@ -89,12 +84,11 @@ import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.dialogs.SelectionDialog;
 import org.eclipse.ui.statushandlers.StatusManager;
 import org.eclipse.uml2.uml.Package;
-import org.eclipse.uml2.uml.PackageImport;
 
 /**
  * The dialog to switch from a Package importy of a library to another implementation of that library
  */
-public class SwitchPackageImportDialog extends SelectionDialog {
+public class SwitchLibraryDialog extends SelectionDialog {
 
 	private static final int APPLY_ID = IDialogConstants.CLIENT_ID + 1;
 
@@ -114,9 +108,9 @@ public class SwitchPackageImportDialog extends SelectionDialog {
 
 	protected LabelProviderService labelProviderService;
 
-	protected final Map<Resource, Resource> librariesToEdit = new HashMap<Resource, Resource>();
+	protected final Map<URI, URI> librariesToEdit = new HashMap<URI, URI>();
 
-	public SwitchPackageImportDialog(Shell shell, ModelSet modelSet, TransactionalEditingDomain domain) throws ServiceException {
+	public SwitchLibraryDialog(Shell shell, ModelSet modelSet, TransactionalEditingDomain domain) throws ServiceException {
 		super(shell);
 
 		this.modelSet = modelSet;
@@ -182,54 +176,31 @@ public class SwitchPackageImportDialog extends SelectionDialog {
 		newLocationColumn.setText("New Location");
 		layout.addColumnData(new ColumnWeightData(50, 500, true));
 
-		viewer.setContentProvider(new IStructuredContentProvider() {
-
-			public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
-				// Nothing
-			}
-
-			public void dispose() {
-				// Nothing
-			}
-
-			public Object[] getElements(Object inputElement) {
-				if (inputElement instanceof ModelSet) {
-					ModelSet modelSet = (ModelSet) inputElement;
-
-					Set<PackageImport> allImportedPackages = LibraryHelper.getAllImportedPackages(modelSet);
-
-					Set<Resource> allResources = new HashSet<Resource>();
-					for (PackageImport importedLibrary : allImportedPackages) {
-						URI libraryResourceURI = EcoreUtil.getURI(importedLibrary.getImportedPackage()).trimFragment();
-						Resource resource = modelSet.getResource(libraryResourceURI, true);
-						allResources.add(resource);
-					}
-
-					return allResources.toArray();
-				}
-				return null;
-			}
-		});
+		viewer.setContentProvider(new SwitchLibraryContentProvider());
 
 		final ILabelProvider labelProvider = new LabelProvider() {
 
 			@Override
 			public String getText(Object element) {
-				if (element instanceof Resource) {
-					Resource resource = (Resource) element;
-
-					for (EObject rootElement : resource.getContents()) {
-						if (rootElement instanceof Package) {
-							return ((Package) rootElement).getName();
+				if (element instanceof URI) {
+					URI uri = (URI) element;
+					Resource resource = modelSet.getResource(uri, false);
+					if (resource != null) {
+						for (EObject rootElement : resource.getContents()) {
+							if (rootElement instanceof Package) {
+								return ((Package) rootElement).getName();
+							}
 						}
 					}
 
-					return resource.getURI().toString();
+					return uri.toString();
 				}
+
 				return super.getText(element);
 			}
 		};
-		viewer.setLabelProvider(new PackageImportsColumnsLabelProvider(labelProvider));
+
+		viewer.setLabelProvider(new LibraryColumnsLabelProvider(labelProvider));
 		viewer.setComparator(new ViewerComparator() {
 			@Override
 			public int compare(Viewer viewer, Object e1, Object e2) {
@@ -300,9 +271,9 @@ public class SwitchPackageImportDialog extends SelectionDialog {
 					public void run(IProgressMonitor monitor) {
 						SubMonitor subMonitor = SubMonitor.convert(monitor, librariesToEdit.size());
 
-						for (Entry<Resource, Resource> replacementEntry : librariesToEdit.entrySet()) {
-							URI uriToReplace = replacementEntry.getKey().getURI();
-							URI targetURI = replacementEntry.getValue().getURI();
+						for (Entry<URI, URI> replacementEntry : librariesToEdit.entrySet()) {
+							URI uriToReplace = replacementEntry.getKey();
+							URI targetURI = replacementEntry.getValue();
 
 							if (uriToReplace.equals(targetURI)) {
 								continue;
@@ -401,28 +372,28 @@ public class SwitchPackageImportDialog extends SelectionDialog {
 		return super.close();
 	}
 
-	private class PackageImportsColumnsLabelProvider extends ColumnLabelProvider {
+	private class LibraryColumnsLabelProvider extends ColumnLabelProvider {
 
 		private ILabelProvider defaultLabelProvider;
 
-		public PackageImportsColumnsLabelProvider(ILabelProvider defaultLabelProvider) {
+		public LibraryColumnsLabelProvider(ILabelProvider defaultLabelProvider) {
 			this.defaultLabelProvider = defaultLabelProvider;
 		}
 
 		@Override
 		public void update(ViewerCell cell) {
 			Object element = cell.getElement();
-			Resource resource = (element instanceof Resource) ? (Resource) element : null;
+			URI uri = (element instanceof URI) ? (URI) element : null;
 
 			switch (cell.getColumnIndex()) {
 			case 0:
 				updateName(cell);
 				break;
 			case 1:
-				updateLocation(cell, resource);
+				updateLocation(cell, uri);
 				break;
 			case 2:
-				updateNewLocation(cell, resource);
+				updateNewLocation(cell, uri);
 				break;
 			}
 
@@ -433,27 +404,20 @@ public class SwitchPackageImportDialog extends SelectionDialog {
 			cell.setText(defaultLabelProvider.getText(cell.getElement()));
 		}
 
-		public void updateLocation(ViewerCell cell, Resource resource) {
+		public void updateLocation(ViewerCell cell, URI uri) {
 			String location = "Unknown";
-			if (resource != null) {
-				URI uri = resource.getURI();
-				if (uri != null) {
-					location = uri.toString();
-				}
+			if (uri != null) {
+				location = uri.toString();
 			}
 
 			cell.setText(location);
 		}
 
-		public void updateNewLocation(ViewerCell cell, Resource resource) {
+		public void updateNewLocation(ViewerCell cell, URI uri) {
 			String location = "";
-			resource = librariesToEdit.get(resource);
-
-			if (resource != null) {
-				URI uri = resource.getURI();
-				if (uri != null) {
-					location = uri.toString();
-				}
+			uri = librariesToEdit.get(uri);
+			if (uri != null) {
+				location = uri.toString();
 			}
 
 			cell.setText(location);
@@ -461,7 +425,7 @@ public class SwitchPackageImportDialog extends SelectionDialog {
 	}
 
 	protected void browseWorkspaceLibraries() {
-		if (getSelectedResource() == null) {
+		if (getSelectedURI() == null) {
 			return;
 		}
 
@@ -496,7 +460,7 @@ public class SwitchPackageImportDialog extends SelectionDialog {
 		}
 	}
 
-	protected Resource getSelectedResource() {
+	protected URI getSelectedURI() {
 		ISelection selection = viewer.getSelection();
 		if (selection.isEmpty()) {
 			return null;
@@ -504,8 +468,8 @@ public class SwitchPackageImportDialog extends SelectionDialog {
 
 		if (selection instanceof IStructuredSelection) {
 			Object selectedElement = ((IStructuredSelection) selection).getFirstElement();
-			if (selectedElement instanceof Resource) {
-				return (Resource) selectedElement;
+			if (selectedElement instanceof URI) {
+				return (URI) selectedElement;
 			}
 		}
 
@@ -555,10 +519,8 @@ public class SwitchPackageImportDialog extends SelectionDialog {
 	}
 
 	protected void replaceSelectionWith(URI targetURI) {
-		Resource targetResource = modelSet.getResource(targetURI, true);
-
-		if (getSelectedResource() != targetResource) {
-			librariesToEdit.put(getSelectedResource(), targetResource);
+		if (!getSelectedURI().equals(targetURI)) {
+			librariesToEdit.put(getSelectedURI(), targetURI);
 			updateControls();
 		} else {
 			MessageDialog.openWarning(getShell(), "Nothing changed", "Nothing to change");

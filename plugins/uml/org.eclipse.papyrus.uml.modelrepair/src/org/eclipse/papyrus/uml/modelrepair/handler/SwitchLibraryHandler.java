@@ -13,8 +13,6 @@
  *****************************************************************************/
 package org.eclipse.papyrus.uml.modelrepair.handler;
 
-import java.util.Set;
-
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
@@ -34,19 +32,17 @@ import org.eclipse.papyrus.infra.core.services.ServiceException;
 import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 import org.eclipse.papyrus.infra.emf.utils.ServiceUtilsForEObject;
 import org.eclipse.papyrus.uml.modelrepair.Activator;
-import org.eclipse.papyrus.uml.modelrepair.ui.SwitchPackageImportDialog;
-import org.eclipse.papyrus.uml.tools.util.LibraryHelper;
+import org.eclipse.papyrus.uml.modelrepair.ui.SwitchLibraryDialog;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.handlers.HandlerUtil;
 import org.eclipse.ui.statushandlers.StatusManager;
 import org.eclipse.uml2.uml.Package;
-import org.eclipse.uml2.uml.PackageImport;
 
 /**
- * A Handler to switch libraries in general (e.g. Local to Registered version)
+ * A Handler to switch libraries referenced by Package imports (e.g. Local to Registered version)
  *
  */
-public class SwitchResourceHandler extends AbstractHandler {
+public class SwitchLibraryHandler extends AbstractHandler {
 
 	public Object execute(final ExecutionEvent event) throws ExecutionException {
 
@@ -62,18 +58,18 @@ public class SwitchResourceHandler extends AbstractHandler {
 		final Shell activeShell = HandlerUtil.getActiveShell(event);
 
 		if (activeShell == null) {
-			return new Status(IStatus.ERROR, Activator.PLUGIN_ID, "Impossible to find the active shell to switch resources");
+			return new Status(IStatus.ERROR, Activator.PLUGIN_ID, "Impossible to find the active shell for switch package import");
 		}
 
 		if (selectedAdapter instanceof Package) {
 			final Package selectedPackage = (Package) selectedAdapter;
 
 			// Load the model in background and add a user information
-			Job openDialogJob = new Job("Switch libraries") {
+			Job openDialogJob = new Job("Switch package imports") {
 
 				protected IStatus status = Status.OK_STATUS;
 
-				protected boolean needsSave = false;
+				protected boolean needSave = false;
 
 				@Override
 				protected IStatus run(final IProgressMonitor monitor) {
@@ -85,15 +81,16 @@ public class SwitchResourceHandler extends AbstractHandler {
 						final ModelSet modelSet = ServiceUtilsForEObject.getInstance().getModelSet(selectedPackage);
 						final TransactionalEditingDomain editingDomain = modelSet.getTransactionalEditingDomain();
 
-						ISaveAndDirtyService saveAndDirtyService = ServiceUtilsForEObject.getInstance().getService(ISaveAndDirtyService.class, selectedPackage);
+						final ISaveAndDirtyService saveAndDirtyService = ServiceUtilsForEObject.getInstance().getService(ISaveAndDirtyService.class, selectedPackage);
 
 						if (saveAndDirtyService.isDirty()) {
-							needsSave = true;
+							needSave = true;
 							activeShell.getDisplay().syncExec(new Runnable() {
 
 								public void run() {
 									// pop-up a message to check if save should be performed or if action should be cancelled
-									boolean openQuestion = MessageDialog.openQuestion(activeShell, "Switch Library", "Model should be saved before switching libraries. Would you like to save it now? \nOperation will be cancelled if you press no.");
+									boolean openQuestion = MessageDialog
+											.openQuestion(activeShell, "Switch package import", "Model should be saved before switching package imports. Would you like to save it now? \nOperation will be cancelled if you press no.");
 									if (!openQuestion) {
 										status = Status.CANCEL_STATUS;
 									}
@@ -106,7 +103,7 @@ public class SwitchResourceHandler extends AbstractHandler {
 							return status;
 						}
 
-						if (needsSave) {
+						if (needSave) {
 							saveAndDirtyService.doSave(monitor);
 						}
 
@@ -131,25 +128,17 @@ public class SwitchResourceHandler extends AbstractHandler {
 	public void switchLibrariesForModelSet(final Package profiledPackage, final ModelSet modelSet, final TransactionalEditingDomain editingDomain, final Shell activeShell, final IProgressMonitor monitor) {
 		monitor.subTask("Resolve all proxies...");
 		EcoreUtil.resolveAll(modelSet);
-		monitor.subTask("Open library management dialog...");
-
-		final Set<PackageImport> allImportedPackages = LibraryHelper.getAllImportedPackages(modelSet);
-
+		monitor.subTask("Open package import management dialog...");
 
 		// Go back to the UI thread and open a dialog
 		activeShell.getDisplay().asyncExec(new Runnable() {
 
 			public void run() {
-				if (allImportedPackages.isEmpty()) {
-					MessageDialog.openInformation(activeShell, "Switch Libraries", "The selected model has no Libraries.");
-					return;
-				}
-
 				try {
-					SwitchPackageImportDialog dialog = new SwitchPackageImportDialog(activeShell, modelSet, editingDomain);
+					SwitchLibraryDialog dialog = new SwitchLibraryDialog(activeShell, modelSet, editingDomain);
 					dialog.open();
 				} catch (ServiceException e) {
-					StatusManager.getManager().handle(new Status(IStatus.ERROR, Activator.PLUGIN_ID, "Failed to open libraries switching dialog.", e), StatusManager.SHOW);
+					StatusManager.getManager().handle(new Status(IStatus.ERROR, Activator.PLUGIN_ID, "Failed to open package import switching dialog.", e), StatusManager.SHOW);
 				}
 			}
 		});
