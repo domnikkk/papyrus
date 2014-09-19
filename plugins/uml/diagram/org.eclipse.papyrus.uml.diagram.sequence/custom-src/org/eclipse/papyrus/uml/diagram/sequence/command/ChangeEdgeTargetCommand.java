@@ -14,12 +14,14 @@
 package org.eclipse.papyrus.uml.diagram.sequence.command;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.diagram.core.util.ViewUtil;
@@ -32,10 +34,13 @@ import org.eclipse.gmf.runtime.notation.NotationFactory;
 import org.eclipse.gmf.runtime.notation.RelativeBendpoints;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.runtime.notation.datatype.RelativeBendpoint;
+import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 import org.eclipse.papyrus.uml.diagram.sequence.util.OccurrenceSpecificationHelper;
 import org.eclipse.uml2.uml.ExecutionSpecification;
 import org.eclipse.uml2.uml.Message;
+import org.eclipse.uml2.uml.MessageEnd;
 import org.eclipse.uml2.uml.MessageSort;
+import org.eclipse.uml2.uml.UMLFactory;
 
 /**
  * Command used to change the target of an edge.
@@ -103,7 +108,19 @@ public class ChangeEdgeTargetCommand extends AbstractTransactionalCommand {
 			EObject edgeElement = ViewUtil.resolveSemanticElement(edge);
 			EObject targetElement = ViewUtil.resolveSemanticElement(newTarget);
 			if (edgeElement instanceof Message && MessageSort.SYNCH_CALL_LITERAL == ((Message) edgeElement).getMessageSort() && targetElement instanceof ExecutionSpecification) {
-				OccurrenceSpecificationHelper.resetExecutionStart((ExecutionSpecification) targetElement, ((Message) edgeElement).getReceiveEvent());
+				MessageEnd receiveEvent = ((Message) edgeElement).getReceiveEvent();
+
+				Collection<EStructuralFeature.Setting> collection = EMFHelper.getUsages(receiveEvent);
+				for (EStructuralFeature.Setting nonNavigableInverseReference : collection) {
+					EObject eObject = nonNavigableInverseReference.getEObject();
+					if (eObject instanceof ExecutionSpecification && eObject != targetElement) {
+						if (((ExecutionSpecification) eObject).getStart() == receiveEvent) {
+							OccurrenceSpecificationHelper.resetExecutionStart((ExecutionSpecification) eObject, UMLFactory.eINSTANCE.createExecutionOccurrenceSpecification());
+						}
+					}
+				}
+				
+				OccurrenceSpecificationHelper.resetExecutionStart((ExecutionSpecification) targetElement, receiveEvent);
 			}
 		}
 		return null;
