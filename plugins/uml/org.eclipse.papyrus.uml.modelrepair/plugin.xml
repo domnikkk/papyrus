@@ -34,29 +34,6 @@
                </visibleWhen>
             </command>
             <command
-                  commandId="org.eclipse.papyrus.uml.modelrepair.switchpackageimports"
-                  label="Switch PackageImports..."
-                  style="push">
-               <visibleWhen
-                     checkEnabled="false">
-                  <with
-                        variable="selection">
-                     <test
-                           property="org.eclipse.papyrus.views.modelexplorer.tester.eClass"
-                           value="uml::Package">
-                     </test>
-                     <iterate
-                           ifEmpty="false"
-                           operator="and">
-                        <test
-                              property="org.eclipse.papyrus.uml.tools.isRoot">
-                        </test>
-                     </iterate>
-                  </with>
-               </visibleWhen>
-            </command> 
-            <!--
-            <command
                   commandId="org.eclipse.papyrus.uml.modelrepair.switchlibraries"
                   label="Switch Libraries..."
                   style="push">
@@ -77,8 +54,7 @@
                      </iterate>
                   </with>
                </visibleWhen>
-            </command>
-            -->
+            </command> 
          </menu>
       </menuContribution>
    </extension>
@@ -95,14 +71,9 @@
             name="Switch Profiles">
       </command>
       <command
-            defaultHandler="org.eclipse.papyrus.uml.modelrepair.handler.SwitchResourceHandler"
+            defaultHandler="org.eclipse.papyrus.uml.modelrepair.handler.SwitchLibraryHandler"
             id="org.eclipse.papyrus.uml.modelrepair.switchlibraries"
             name="Switch Libraries">
-      </command>
-      <command
-            defaultHandler="org.eclipse.papyrus.uml.modelrepair.handler.SwitchPackageImportHandler"
-            id="org.eclipse.papyrus.uml.modelrepair.switchpackageimports"
-            name="Switch PackageImports">
       </command>
    </extension>
    <extension
