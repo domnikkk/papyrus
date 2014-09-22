@@ -9,6 +9,7 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *****************************************************************************/
+import org.eclipse.papyrus.m2m.qvto.UI;
 import org.eclipse.papyrus.migration.rsa.RTMappings;
 import org.eclipse.papyrus.m2m.qvto.EMFResource;
 import libraries.EclipseUI;
@@ -19,6 +20,7 @@ modeltype umlrt "strict" uses 'http://www.eclipse.org/papyrus/umlrt';
 modeltype umlrtsm "strict" uses 'http://www.eclipse.org/papyrus/umlrt/statemachine';
 modeltype sourcert "strict" uses 'http://www.eclipse.org/papyrus/profile/umlrt'; 
 modeltype ecore "strict" uses 'http://www.eclipse.org/emf/2002/Ecore';
+modeltype types "strict" uses 'http://www.eclipse.org/emf/2002/Ecore';
 
 transformation RSARTToPapyrusRT(inout semantics : uml, inout graphics : notation, in profiles : uml, in profileDefinitions : ecore);
 
@@ -30,6 +32,9 @@ property RT_PROFILE_URI_PREFIX : String = 'pathmap://RT_PROPERTIES/UMLRealTime.e
 
 property UML_DEFINITION_SOURCE : String = 'http://www.eclipse.org/uml2/2.0.0/UML';
 
+//Transforms RSA RT stereotypes to Papyrus RT
+//Stereotypes will not be deleted during this transformation for performance issues (Bug 444379)
+//Instead, they should be deleted as a post-action of the transformation
 main() {
 	semantics.objectsOfType(ProfileApplication).map toPapyrusRTProfile();
 	
@@ -39,7 +44,6 @@ main() {
 	semantics.objectsOfType(State).map applyRTState();
 	semantics.objectsOfType(Pseudostate).map applyRTPseudostate();
 	
-	semantics.rootObjects()[sourcert::AbstractEvent].map delete();
 	semantics.rootObjects()[sourcert::Capsule].map toCapsule();
 	semantics.rootObjects()[sourcert::CapsulePart].map toCapsulePart();
 	semantics.rootObjects()[sourcert::Protocol].map toProtocol();
@@ -49,7 +53,6 @@ main() {
 	semantics.rootObjects()[sourcert::RTPort].map toRTPort();
 	semantics.rootObjects()[sourcert::RTRedefinableElement].map toRTRExcludedElement();
 	semantics.rootObjects()[sourcert::Trigger].map toRTTrigger();
-	semantics.rootObjects()[sourcert::Coregion].map delete();
 }
 
 mapping inout ProfileApplication::toPapyrusRTProfile() : ProfileApplication when {
@@ -72,10 +75,6 @@ mapping inout ProfileApplication::toPapyrusRTProfile() : ProfileApplication when
 	self.applyingPackage.profileApplication += result;
 }
 
-mapping AbstractEvent::delete() {
-	semantics.removeElement(self);
-}
-
 /* Applies the RTMessageSet on the In and Out interfaces, and create a new InOut interface */
 mapping sourcert::ProtocolContainer::toMessageSets() : Interface{
 	var inInterface : Interface := self.findInInterface();
@@ -84,7 +83,7 @@ mapping sourcert::ProtocolContainer::toMessageSets() : Interface{
 	inInterface.map createMessageSet(RTMessageKind::_in);
 	outInterface.map createMessageSet(RTMessageKind::_out);
 	
-	result.name := inInterface.name+"Sym";
+	result.name := inInterface.name+"IO";
 	
 	//Order: Protocol, InInterface, OutInterface, InoutInterface
 	self.base_Package.packagedElement += result;
@@ -130,41 +129,29 @@ query Interface::findOppositeInterface() : Interface {
 
 mapping sourcert::Capsule::toCapsule() : umlrt::Capsule {
 	result.base_Class := self.base_Class;
-	
-	semantics.removeElement(self);
 }
 
 mapping sourcert::CapsulePart::toCapsulePart() : umlrt::CapsulePart {
 	result.base_Property := self.base_Property;
-	
-	semantics.removeElement(self);
 }
 
 mapping sourcert::Protocol::toProtocol() : umlrt::Protocol {
 	result.base_Collaboration := self.base_Collaboration;
-	
-	semantics.removeElement(self);
 }
 
 mapping sourcert::ProtocolContainer::toProtocolPackage() : umlrt::ProtocolContainer {
 	result.base_Package := self.base_Package;
 	
 	self.map toMessageSets();
-	
-	semantics.removeElement(self);
 }
 
 mapping sourcert::RTConnector::toRTConnector() : umlrt::RTConnector {
 	result.base_Connector := self.base_Connector;
-	
-	semantics.removeElement(self);
 }
 
 mapping sourcert::RTHistorystate::toHistorystate() {
 	if self.historyKind = HistoryKind::Deep then self.base_Pseudostate.kind := PseudostateKind::deepHistory endif;
 	if self.historyKind = HistoryKind::Shallow then self.base_Pseudostate.kind := PseudostateKind::shallowHistory endif;
-	
-	semantics.removeElement(self);
 }
 
 mapping sourcert::RTPort::toRTPort() : umlrt::RTPort {
@@ -176,24 +163,14 @@ mapping sourcert::RTPort::toRTPort() : umlrt::RTPort {
 	
 	result.base_Port := self.base_Port;
 	result.base_Port.isConjugated := self.isConjugate;
-	
-	semantics.removeElement(self);
 }
 
 mapping sourcert::RTRedefinableElement::toRTRExcludedElement() : umlrt::RTRExcludedElement {
 	result.base_RedefinableElement := self.base_RedefinableElement;
-	
-	semantics.removeElement(self);
 }
 
 mapping sourcert::Trigger::toRTTrigger() : RTTrigger {
 	result.base_Operation := self.base_Operation;
-
-	semantics.removeElement(self);
-}
-
-mapping Coregion::delete() {
-	semantics.removeElement(self);
 }
 
 query sourcert::PortRegistrationType::getPapyrusType() : umlrt::PortRegistrationType {

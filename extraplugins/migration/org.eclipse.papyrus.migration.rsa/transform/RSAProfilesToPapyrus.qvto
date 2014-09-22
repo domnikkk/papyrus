@@ -125,15 +125,12 @@ query getDocumentationProfile() : Profile {
 /** Default Profile : Link/URL -> Hyperlink **/
 
 mapping inout URL::toHyperlink() {
-	log('Create Hyperlink');
 	var comment := self.base_Comment;
 	
 	var commentDisplays := notationModel.objectsOfType(Shape)->select(element = comment.oclAsType(EObject)); //All views representing the comment 
 	
 	var label := self.displayName;
 	var url := comment.body;
-	log('Label = '+label);
-	log('URL = '+url);
 	
 	/** In RSA, the body holds the URL, and the Stereotype holds the label */
 	/** In Papyrus, the body holds the label, and the EAnnotation holds the URL */

@@ -31,7 +31,7 @@ mapping notation::Diagram::generateDiagram() : notation::Diagram inherits Diagra
 	self.type = 'Structure'
 }{
 	init {
-		log('GenerateStructureDiagram');
+		
 	}
 	end {
 		graphics.objectsOfType(Shape)->select(type = '2109').map addCommentDecoration();
