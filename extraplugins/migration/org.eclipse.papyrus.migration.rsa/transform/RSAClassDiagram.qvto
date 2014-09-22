@@ -51,7 +51,6 @@ mapping notation::Diagram::generateDiagram() : notation::Diagram inherits Diagra
 }
 
 mapping inout Diagram::toInnerClassDiagram() : PapyrusViewStyle{
-	log('ToICD');
 	result.owner := self.element;
 	result._configuration := getInnerClassDiagramView();
 	

@@ -29,14 +29,11 @@ transformation RSAModelToPapyrus(inout semantics : uml, inout graphics : notatio
 main() {
 	assert fatal (not semantics.rootObjects()[uml::Element]->isEmpty()) with log('Cannot find root uml::Element');
 
-	log('Start');
 	map createSashModel();
 	
 	semantics.objectsOfType(Element).map deleteSourceDiagrams();
 	semantics.objectsOfType(OpaqueExpression).map convertToLiteralString();
 	semantics.objectsOfType(OpaqueExpression).map fixLanguage();
-	
-	log('End');
 }
 
 mapping inout Element::deleteSourceDiagrams() {
@@ -58,6 +55,7 @@ mapping OpaqueExpression::convertToLiteralString() : LiteralString when {
 	result.value := if self.body->size() = 0 then null else self.body->at(1) endif;	
 	
 	semantics.removeElement(self); //Destroy the source OpaqueExpression
+	worked(1);
 }
 
 intermediate class Opaque { 

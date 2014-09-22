@@ -98,13 +98,10 @@ mapping inout DecorationNode::addLayout() {
 }
 
 mapping inout DecorationNode::fixLayout(){
-	log('FixLayout');
 	var bounds := if self.layoutConstraint.oclIsUndefined() then object Bounds{} else self.layoutConstraint.oclAsType(Bounds) endif;
 	self.layoutConstraint := bounds;
 	
 	if bounds.height < 20 then bounds.height := 20 endif;
-	
-	log('Fixed: '+bounds.height.toString())
 }
 
 mapping Node::toNode() : Node disjuncts

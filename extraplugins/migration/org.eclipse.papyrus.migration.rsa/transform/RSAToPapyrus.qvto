@@ -124,7 +124,7 @@ abstract mapping Diagram::toPapyrusDiagram() : notation::Diagram inherits notati
 		result.styles := createDiagramStyle();
 		
 		result.element := self.findElement().oclAsType(EObject);
-		log(result.element.eClass().name);
+	//	log(result.element.eClass().name);
 	//	log(result.element.toString());
 		result.edges := self.edges.map toEdge();
 	}
@@ -329,11 +329,6 @@ query View::findAssociatedElement() : EObject {
 }
 
 query Sequence(Node)::safeUnion(unionWith: Sequence(Node)) : Sequence(Node) {
-	log('C1', self);
-	log('C2', unionWith);
-	
-	
-	
 	var res := if self->oclIsUndefined() and unionWith->oclIsUndefined() then 
 		object Sequence(Object){}
 	elif self->oclIsUndefined() then
@@ -343,8 +338,6 @@ query Sequence(Node)::safeUnion(unionWith: Sequence(Node)) : Sequence(Node) {
 	else
 		self->union(unionWith)
 	endif;
-	
-	log('Result', res);
 	
 	return res;
 }
