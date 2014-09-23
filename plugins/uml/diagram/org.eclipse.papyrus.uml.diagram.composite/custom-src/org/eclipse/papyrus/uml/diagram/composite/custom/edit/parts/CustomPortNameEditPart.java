@@ -48,16 +48,16 @@ public class CustomPortNameEditPart extends PortNameEditPart {
 
 		Point offset = new Point(x, y);
 
-		if (externalLabelLocator == null) {
-			externalLabelLocator = (IPapyrusBorderItemLocator) getBorderItemLocator();
+		if (borderLabelLocator == null) {
+			borderLabelLocator = (IPapyrusBorderItemLocator) getBorderItemLocator();
 		}
 		if (offset != null) {
-			externalLabelLocator.setConstraint(new Rectangle(offset.x, offset.y, 0, 0));
+			borderLabelLocator.setConstraint(new Rectangle(offset.x, offset.y, 0, 0));
 		}
-		externalLabelLocator.setView((View) getModel());
-		externalLabelLocator.setTextAlignment(getTextAlignment());
-		externalLabelLocator.setPosition(getPositionOnParent());
-		getFigure().getParent().setConstraint(getFigure(), externalLabelLocator);
+		borderLabelLocator.setView((View) getModel());
+		borderLabelLocator.setTextAlignment(getTextAlignment());
+		borderLabelLocator.setEditpart(this);
+		getFigure().getParent().setConstraint(getFigure(), borderLabelLocator);
 	}
 
 }

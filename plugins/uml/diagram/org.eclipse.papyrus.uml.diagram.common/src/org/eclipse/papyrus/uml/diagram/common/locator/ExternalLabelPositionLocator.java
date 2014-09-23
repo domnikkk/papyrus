@@ -23,11 +23,14 @@ import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
+import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.diagram.core.util.ViewUtil;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.papyrus.infra.gmfdiag.common.editpart.IPapyrusEditPart;
 import org.eclipse.papyrus.infra.gmfdiag.common.locator.IPapyrusBorderItemLocator;
+import org.eclipse.papyrus.uml.diagram.common.Activator;
 
 /**
  * This class is used to constrain the position of ExternalNodeLabel. The
@@ -60,6 +63,21 @@ public class ExternalLabelPositionLocator implements IPapyrusBorderItemLocator {
 	/** The view. */
 	private View view;
 
+	/** The Edit Part. */
+	private EditPart editPart;
+
+	/**
+	 * @param editpart
+	 *            the edit part to set
+	 */
+	@Override
+	public void setEditpart(EditPart editPart) {
+		this.editPart = editPart;
+	}
+
+	/** The margin. */
+	private Point margin = new Point();
+
 	/**
 	 * Sets the view.
 	 *
@@ -89,7 +107,6 @@ public class ExternalLabelPositionLocator implements IPapyrusBorderItemLocator {
 	 */
 	@Override
 	public void setPosition(int position) {
-		// System.out.println("setposition: " + position);
 		this.position = position;
 	}
 
@@ -178,7 +195,6 @@ public class ExternalLabelPositionLocator implements IPapyrusBorderItemLocator {
 	 */
 	@Override
 	public void setConstraint(Rectangle constraint) {
-		// System.out.println("setConstraint(" + constraint + ")");
 		this.constraint = constraint;
 	}
 
@@ -202,21 +218,17 @@ public class ExternalLabelPositionLocator implements IPapyrusBorderItemLocator {
 	 */
 	@Override
 	public void relocate(IFigure target) {
-
 		Rectangle proposedBounds = constraint.getCopy();
 
 		proposedBounds.setLocation(constraint.getLocation().translate(parentFigure.getBounds().getTopLeft()));
 		proposedBounds.setSize(target.getPreferredSize());
-
-
-
 		if (constrained) {
 			Point newconstraint;
 			// Set the translation when alignment is auto
-			switch (position) {
+			switch (getPositionOnParent()) {
 			case PositionConstants.WEST:
 				// alignRight:
-				newconstraint = new Point(-proposedBounds.width + offset.width, offset.height);
+				newconstraint = new Point(-proposedBounds.width - offset.width, offset.height);
 				break;
 			case PositionConstants.EAST:
 				// alignLeft
@@ -224,7 +236,7 @@ public class ExternalLabelPositionLocator implements IPapyrusBorderItemLocator {
 				break;
 			case PositionConstants.NORTH:
 				// alignLeft center to the north
-				newconstraint = new Point(-proposedBounds.width / 2 + offset.width, -parentFigure.getBounds().height + offset.height);
+				newconstraint = new Point(-proposedBounds.width / 2 + offset.width, -parentFigure.getBounds().height - offset.height);
 				break;
 			case PositionConstants.SOUTH:
 				// alignLeft center to the south
@@ -241,7 +253,7 @@ public class ExternalLabelPositionLocator implements IPapyrusBorderItemLocator {
 		// If the label changed
 		if (cachedString != null && !cachedString.equals(((WrappingLabel) target).getText())) {
 			int x;
-			int textWidth = ((IFigure) target.getChildren().get(0)).getBounds().width;
+			int textWidth = target.getBounds().width;
 
 			// Set Location
 			switch (textAlignment) {
@@ -277,7 +289,7 @@ public class ExternalLabelPositionLocator implements IPapyrusBorderItemLocator {
 						}
 					});
 				} catch (Exception e) {
-					System.out.println(e.toString());
+					Activator.log.debug(e.toString());
 				}
 			}
 		}
@@ -287,6 +299,48 @@ public class ExternalLabelPositionLocator implements IPapyrusBorderItemLocator {
 			cachedString = ((WrappingLabel) target).getText();
 		}
 	}
+
+	/**
+	 * Gets the position on parent.
+	 *
+	 * @return the position on parent
+	 */
+	public int getPositionOnParent() {
+		Rectangle portBounds = null;
+		Rectangle parentBounds = null;
+		int position = this.position;
+
+		// Get the port figure
+		if (editPart != null) {
+			EditPart parent = editPart.getParent();
+			if (parent instanceof IPapyrusEditPart) {
+				IFigure portPrimaryShape = ((IPapyrusEditPart) parent).getPrimaryShape();
+				portBounds = portPrimaryShape.getBounds();
+
+				// Get the port's parent figure
+				// if it's a papyrus edit part and the figure is paint(width !=0)
+				if (parent.getParent() instanceof IPapyrusEditPart && portBounds.width != 0) {
+					IFigure parentPrimaryShape = ((IPapyrusEditPart) parent.getParent()).getPrimaryShape();
+					parentBounds = parentPrimaryShape.getBounds();
+
+					if (portBounds.x + portBounds.width / 2 == parentBounds.x) {
+						// West position
+						position = PositionConstants.WEST;
+					} else if (portBounds.x + portBounds.width / 2 == parentBounds.getBottomRight().x) {
+						// East Position
+						position = PositionConstants.EAST;
+					} else if (portBounds.y + portBounds.height / 2 == parentBounds.y) {
+						position = PositionConstants.NORTH;
+					} else if (portBounds.y + portBounds.height / 2 == parentBounds.getBottomRight().y) {
+						position = PositionConstants.SOUTH;
+					}
+				}
+			}
+		}
+
+		return position;
+	}
+
 
 	/**
 	 * Gets the text alignment.
@@ -317,5 +371,16 @@ public class ExternalLabelPositionLocator implements IPapyrusBorderItemLocator {
 	@Override
 	public boolean isInitialize() {
 		return view != null;
+	}
+
+	/**
+	 * Sets the margin.
+	 *
+	 * @param margin
+	 *            the margin to set
+	 */
+	@Override
+	public void setMargin(Point margin) {
+		this.margin = margin;
 	}
 }

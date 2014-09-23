@@ -14,6 +14,8 @@
 package org.eclipse.papyrus.infra.gmfdiag.common.locator;
 
 import org.eclipse.draw2d.geometry.Dimension;
+import org.eclipse.draw2d.geometry.Point;
+import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.diagram.ui.figures.IBorderItemLocator;
 import org.eclipse.gmf.runtime.notation.View;
 
@@ -91,4 +93,20 @@ public interface IPapyrusBorderItemLocator extends IBorderItemLocator {
 	 *            the new view
 	 */
 	public void setView(View model);
+
+	/**
+	 * Sets the editpart.
+	 *
+	 * @param editpart
+	 *            the new editpart
+	 */
+	public void setEditpart(EditPart editpart);
+
+	/**
+	 * Sets the margin.
+	 *
+	 * @param margin
+	 *            the new margin
+	 */
+	public void setMargin(Point margin);
 }

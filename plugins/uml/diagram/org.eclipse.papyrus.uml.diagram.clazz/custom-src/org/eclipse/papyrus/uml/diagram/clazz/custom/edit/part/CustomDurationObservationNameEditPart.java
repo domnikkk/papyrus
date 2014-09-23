@@ -1,5 +1,3 @@
-package org.eclipse.papyrus.uml.diagram.component.custom.edit.part;
-
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
  *
@@ -15,18 +13,20 @@ package org.eclipse.papyrus.uml.diagram.component.custom.edit.part;
  *
  *****************************************************************************/
 
+package org.eclipse.papyrus.uml.diagram.clazz.custom.edit.part;
+
 import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.infra.gmfdiag.common.locator.IPapyrusBorderItemLocator;
-import org.eclipse.papyrus.uml.diagram.component.edit.parts.PortNameEditPart;
+import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.DurationObservationNameEditPart;
 
 /**
  * The Class CustomPortNameEditPart.
  */
-public class CustomPortNameEditPart extends PortNameEditPart {
+public class CustomDurationObservationNameEditPart extends DurationObservationNameEditPart {
 
 	/**
 	 * Instantiates a new custom port name edit part.
@@ -34,7 +34,7 @@ public class CustomPortNameEditPart extends PortNameEditPart {
 	 * @param view
 	 *            the view
 	 */
-	public CustomPortNameEditPart(View view) {
+	public CustomDurationObservationNameEditPart(View view) {
 		super(view);
 	}
 

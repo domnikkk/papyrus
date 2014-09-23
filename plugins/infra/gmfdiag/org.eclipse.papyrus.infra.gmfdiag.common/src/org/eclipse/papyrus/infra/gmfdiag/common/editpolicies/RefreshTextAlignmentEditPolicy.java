@@ -16,12 +16,6 @@ package org.eclipse.papyrus.infra.gmfdiag.common.editpolicies;
 import org.eclipse.core.databinding.observable.ChangeEvent;
 import org.eclipse.core.databinding.observable.IChangeListener;
 import org.eclipse.core.databinding.observable.value.IObservableValue;
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.transaction.TransactionalEditingDomain;
-import org.eclipse.gmf.runtime.diagram.core.listener.DiagramEventBroker;
-import org.eclipse.gmf.runtime.diagram.core.listener.NotificationListener;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.gef.ui.internal.editpolicies.GraphicalEditPolicyEx;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
@@ -30,16 +24,18 @@ import org.eclipse.papyrus.infra.gmfdiag.common.databinding.custom.CustomStringS
 /**
  * this edit policy has in charge to refresh the edit part when text alignment change.
  */
-public class RefreshTextAlignmentEditPolicy extends GraphicalEditPolicyEx implements IChangeListener, NotificationListener {
+public class RefreshTextAlignmentEditPolicy extends GraphicalEditPolicyEx implements IChangeListener {
 
 	/** The Constant TEXT_ALIGNMENT. */
-	public static final String TEXT_ALIGNMENT = "textAlignment";
+	public static final String TEXT_ALIGNMENT = "textAlignment";//$NON-NLS-N$
 
 	/** key for this edit policy. */
-	public final static String REFRESH_TEXT_ALIGNMENT_EDITPOLICY = "REFRESH_TEXT_ALIGNMENT_EDITPOLICY";
+	public final static String REFRESH_TEXT_ALIGNMENT_EDITPOLICY = "Refresh text alignment edit policy";//$NON-NLS-N$
 
 	/** The style observable. */
 	protected IObservableValue styleObservable;
+
+	protected IObservableValue positionObservable;
 
 	/**
 	 *
@@ -52,32 +48,11 @@ public class RefreshTextAlignmentEditPolicy extends GraphicalEditPolicyEx implem
 		if (view == null) {
 			return;
 		}
-
+		// add style observable value
 		styleObservable = new CustomStringStyleObservableValue(view, EMFHelper.resolveEditingDomain(view), TEXT_ALIGNMENT);
 		styleObservable.addChangeListener(this);
 
-		// adds a listener on the view and the element controlled by the editpart
-		getDiagramEventBroker().addNotificationListener(view, this);
-		getDiagramEventBroker().addNotificationListener(view.eContainer(), this);
-
-		EObject semanticElement = EMFHelper.getEObject(getHost());
-		if (semanticElement != null) {
-			getDiagramEventBroker().addNotificationListener(semanticElement, this);
-		}
 		getHost().refresh();
-	}
-
-	/**
-	 * Gets the diagram event broker from the editing domain.
-	 *
-	 * @return the diagram event broker
-	 */
-	protected DiagramEventBroker getDiagramEventBroker() {
-		TransactionalEditingDomain theEditingDomain = ((IGraphicalEditPart) getHost()).getEditingDomain();
-		if (theEditingDomain != null) {
-			return DiagramEventBroker.getInstance(theEditingDomain);
-		}
-		return null;
 	}
 
 	/**
@@ -94,16 +69,6 @@ public class RefreshTextAlignmentEditPolicy extends GraphicalEditPolicyEx implem
 	}
 
 	/**
-	 * @see org.eclipse.gmf.runtime.diagram.core.listener.NotificationListener#notifyChanged(org.eclipse.emf.common.notify.Notification)
-	 *
-	 * @param notification
-	 */
-	@Override
-	public void notifyChanged(Notification notification) {
-		getHost().refresh();
-	}
-
-	/**
 	 * @see org.eclipse.core.databinding.observable.IChangeListener#handleChange(org.eclipse.core.databinding.observable.ChangeEvent)
 	 *
 	 * @param event
@@ -112,4 +77,5 @@ public class RefreshTextAlignmentEditPolicy extends GraphicalEditPolicyEx implem
 	public void handleChange(ChangeEvent event) {
 		getHost().refresh();
 	}
+
 }

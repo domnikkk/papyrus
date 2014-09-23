@@ -52,40 +52,40 @@ public abstract class PapyrusLabelEditPart extends LabelEditPart {
 	/**
 	 * CSS Integer property to define the horizontal Label Margin
 	 */
-	static final String TOP_MARGIN_PROPERTY = "TopMarginLabel"; //$NON-NLS$
+	public static final String TOP_MARGIN_PROPERTY = "topMarginLabel"; // $NON-NLS$
 
 	/**
 	 * CSS Integer property to define the vertical Label Margin
 	 */
-	static final String LEFT_MARGIN_PROPERTY = "LeftMarginLabel"; //$NON-NLS$
-	
+	public static final String LEFT_MARGIN_PROPERTY = "leftMarginLabel"; // $NON-NLS$
+
 	/**
 	 * CSS Integer property to define the horizontal Label Margin
 	 */
-	static final String BOTTOM_MARGIN_PROPERTY = "BottomMarginLabel"; //$NON-NLS$
+	public static final String BOTTOM_MARGIN_PROPERTY = "bottomMarginLabel"; // $NON-NLS$
 
 	/**
 	 * CSS Integer property to define the vertical Label Margin
 	 */
-	static final String RIGHT_MARGIN_PROPERTY = "RightMarginLabel"; //$NON-NLS$
+	public static final String RIGHT_MARGIN_PROPERTY = "rightMarginLabel"; // $NON-NLS$
 
 	/** The Constant TEXT_ALIGNMENT. */
-	private static final String TEXT_ALIGNMENT = "textAlignment"; //$NON-NLS$
+	public static final String TEXT_ALIGNMENT = "textAlignment"; // $NON-NLS$
 
 	/** The Constant LABEL_OFFSET_Y. */
-	private static final String LABEL_OFFSET_Y = "labelOffsetY"; //$NON-NLS$
+	public static final String LABEL_OFFSET_Y = "labelOffsetY"; // $NON-NLS$
 
 	/** The Constant LABEL_OFFSET_X. */
-	private static final String LABEL_OFFSET_X = "labelOffsetX"; //$NON-NLS$
+	public static final String LABEL_OFFSET_X = "labelOffsetX"; // $NON-NLS$
 
 	/** The Constant LABEL_CONSTRAINED. */
-	private static final String LABEL_CONSTRAINED = "labelConstrained"; //$NON-NLS$
-
-	/** The label locator. */
-	protected PapyrusLabelLocator labelLocator;
+	public static final String LABEL_CONSTRAINED = "labelConstrained"; // $NON-NLS$
 
 	/** The external label locator. */
-	protected IPapyrusBorderItemLocator externalLabelLocator;
+	protected PapyrusLabelLocator papyrusLabelLocator = null;
+
+	/** The affixed label locator. */
+	protected IPapyrusBorderItemLocator borderLabelLocator = null;
 
 
 	public PapyrusLabelEditPart(View view) {
@@ -95,7 +95,6 @@ public abstract class PapyrusLabelEditPart extends LabelEditPart {
 	@Override
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-
 		installEditPolicy(BorderDisplayEditPolicy.BORDER_DISPLAY_EDITPOLICY, new BorderDisplayEditPolicy());
 		installEditPolicy(LabelAlignmentEditPolicy.LABEL_ALIGNMENT_KEY, new LabelAlignmentEditPolicy());
 		installEditPolicy(LabelPrimarySelectionEditPolicy.LABEL_PRIMARY_SELECTION_KEY, new LabelPrimarySelectionEditPolicy());
@@ -142,18 +141,18 @@ public abstract class PapyrusLabelEditPart extends LabelEditPart {
 
 			Connection connectionFigure = ((AbstractConnectionEditPart) getParent()).getConnectionFigure();
 
-			if (labelLocator != null) {
-				labelLocator.setOffset(offset);
+			if (papyrusLabelLocator != null) {
+				papyrusLabelLocator.setOffset(offset);
 			} else {
-				labelLocator = new PapyrusLabelLocator(connectionFigure, offset, getKeyPoint());
+				papyrusLabelLocator = new PapyrusLabelLocator(connectionFigure, offset, getKeyPoint());
 			}
-			labelLocator.setTextAlignment(getTextAlignment());
-			labelLocator.setView((View) getModel());
-			parentEditPart.setLayoutConstraint(this, getFigure(), labelLocator);
+			papyrusLabelLocator.setTextAlignment(getTextAlignment());
+			papyrusLabelLocator.setView((View) getModel());
+			parentEditPart.setLayoutConstraint(this, getFigure(), papyrusLabelLocator);
 
 		} else {
 			setExternalLabelLocator(offset);
-			getFigure().getParent().setConstraint(getFigure(), externalLabelLocator);
+			getFigure().getParent().setConstraint(getFigure(), borderLabelLocator);
 		}
 	}
 
@@ -164,15 +163,16 @@ public abstract class PapyrusLabelEditPart extends LabelEditPart {
 	 *            the new external label locator
 	 */
 	private void setExternalLabelLocator(Point offset) {
-		if (externalLabelLocator == null) {
-			externalLabelLocator = (IPapyrusBorderItemLocator) getBorderItemLocator();
+		if (borderLabelLocator == null) {
+			borderLabelLocator = (IPapyrusBorderItemLocator) getBorderItemLocator();
+
 		}
 		if (offset != null) {
-			externalLabelLocator.setConstraint(new Rectangle(offset.x, offset.y, 0, 0));
+			borderLabelLocator.setConstraint(new Rectangle(offset.x, offset.y, 0, 0));
 		}
-		externalLabelLocator.setView((View) getModel());
-		externalLabelLocator.setTextAlignment(getTextAlignment());
-		externalLabelLocator.setPosition(getPositionOnParent());
+		borderLabelLocator.setView((View) getModel());
+		borderLabelLocator.setEditpart(this);
+		borderLabelLocator.setTextAlignment(getTextAlignment());
 	}
 
 	/**
@@ -197,7 +197,6 @@ public abstract class PapyrusLabelEditPart extends LabelEditPart {
 	public int getTextAlignment() {
 		// get the value of the CSS property
 		View model = (View) getModel();
-		// View eContainer = (View) model.eContainer();// Pas sur le eContainer
 		StringValueStyle labelAlignment = (StringValueStyle) model.getNamedStyle(NotationPackage.eINSTANCE.getStringValueStyle(), TEXT_ALIGNMENT);
 
 		int textAlignment = 0;
@@ -249,6 +248,21 @@ public abstract class PapyrusLabelEditPart extends LabelEditPart {
 	}
 
 	/**
+	 * @see org.eclipse.gmf.runtime.diagram.ui.editparts.LabelEditPart#refresh()
+	 *
+	 */
+	@Override
+	public void refresh() {
+		super.refresh();
+		if (getBorderItemLocator() instanceof IPapyrusBorderItemLocator) {
+			// Constrained management
+			setExternalLabelLocator(null);
+			refreshLabelConstrained();
+			refreshLabelOffset();
+		}
+	}
+
+	/**
 	 * Refresh label offset.
 	 */
 	private void refreshLabelOffset() {
@@ -274,53 +288,6 @@ public abstract class PapyrusLabelEditPart extends LabelEditPart {
 			// set the value on the locator
 			((IPapyrusBorderItemLocator) getBorderItemLocator()).setConstrained(labelConstrained);
 		}
-		// Set the position from the parent position
-		((IPapyrusBorderItemLocator) getBorderItemLocator()).setPosition(getPositionOnParent());
-	}
-
-	/**
-	 * Refresh label text alignement.
-	 */
-	private void refreshLabelTextAlignement() {
-		((IPapyrusBorderItemLocator) getBorderItemLocator()).setTextAlignment(getTextAlignment());
-	}
-
-	/**
-	 * Gets the position on parent.
-	 *
-	 * @return the position on parent
-	 */
-	public int getPositionOnParent() {
-		Rectangle portBounds = null;
-		Rectangle parentBounds = null;
-		int position = PositionConstants.EAST;
-
-		// Get the port figure
-		if (getParent() instanceof IPapyrusEditPart) {
-			IFigure portPrimaryShape = ((IPapyrusEditPart) getParent()).getPrimaryShape();
-			portBounds = portPrimaryShape.getBounds();
-
-			// Get the port's parent figure
-			// if it's a papyrus edit part and the figure is paint(width !=0)
-			if (getParent().getParent() instanceof IPapyrusEditPart && portBounds.width != 0) {
-				IFigure parentPrimaryShape = ((IPapyrusEditPart) getParent().getParent()).getPrimaryShape();
-				parentBounds = parentPrimaryShape.getBounds();
-
-				if (portBounds.x + portBounds.width / 2 == parentBounds.x) {
-					// West position
-					position = PositionConstants.WEST;
-				} else if (portBounds.x + portBounds.width / 2 == parentBounds.getBottomRight().x) {
-					// East Position
-					position = PositionConstants.EAST;
-				} else if (portBounds.y + portBounds.height / 2 == parentBounds.y) {
-					position = PositionConstants.NORTH;
-				} else if (portBounds.y + portBounds.height / 2 == parentBounds.getBottomRight().y) {
-					position = PositionConstants.SOUTH;
-				}
-			}
-		}
-
-		return position;
 	}
 
 	/**
@@ -372,8 +339,6 @@ public abstract class PapyrusLabelEditPart extends LabelEditPart {
 
 		Object model = this.getModel();
 
-
-
 		if (model instanceof View) {
 			leftMargin = NotationUtils.getIntValue((View) model, LEFT_MARGIN_PROPERTY, DEFAULT_MARGIN);
 			rightMargin = NotationUtils.getIntValue((View) model, RIGHT_MARGIN_PROPERTY, DEFAULT_MARGIN);
@@ -385,8 +350,14 @@ public abstract class PapyrusLabelEditPart extends LabelEditPart {
 
 		if (figure instanceof IPapyrusWrappingLabel) {
 			((IPapyrusWrappingLabel) figure).setMarginLabel(leftMargin, topMargin, rightMargin, bottomMargin);
+
+			// set margin of locator:
+			if (borderLabelLocator != null) {
+				borderLabelLocator.setMargin(new Point(leftMargin + rightMargin, topMargin + bottomMargin));
+			} else if (papyrusLabelLocator != null) {
+				papyrusLabelLocator.setMargin(new Point(leftMargin + rightMargin, topMargin + bottomMargin));
+			}
 		}
 
 	}
-
 }

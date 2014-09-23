@@ -45,40 +45,40 @@ public abstract class NamedElementEditPart extends UMLNodeEditPart implements IU
 	/**
 	 * CSS boolean property controlling whether stereotypes should be displayed
 	 */
-	public static final String DISPLAY_STEREOTYPES = "displayStereotypes"; //$NON-NLS$
+	public static final String DISPLAY_STEREOTYPES = "displayStereotypes"; // $NON-NLS$
 
 	/**
 	 * CSS boolean property controlling whether tags should be displayed
 	 */
-	public static final String DISPLAY_TAGS = "displayTags"; //$NON-NLS$
+	public static final String DISPLAY_TAGS = "displayTags"; // $NON-NLS$
 
 	/**
 	 * Default Margin when not present in CSS
 	 */
 	public static final int DEFAULT_MARGIN = 0;
-	
+
 	/**
 	 * CSS Integer property to define the horizontal Label Margin
 	 */
-	public static final String TOP_MARGIN_PROPERTY = "TopMarginLabel"; //$NON-NLS$
+	public static final String TOP_MARGIN_PROPERTY = "topMarginLabel"; // $NON-NLS$
 
 	/**
 	 * CSS Integer property to define the vertical Label Margin
 	 */
-	public static final String LEFT_MARGIN_PROPERTY = "LeftMarginLabel"; //$NON-NLS$
-	
+	public static final String LEFT_MARGIN_PROPERTY = "leftMarginLabel"; // $NON-NLS$
+
 	/**
 	 * CSS Integer property to define the horizontal Label Margin
 	 */
-	public static final String BOTTOM_MARGIN_PROPERTY = "BottomMarginLabel"; //$NON-NLS$
+	public static final String BOTTOM_MARGIN_PROPERTY = "bottomMarginLabel"; // $NON-NLS$
 
 	/**
 	 * CSS Integer property to define the vertical Label Margin
 	 */
-	public static final String RIGHT_MARGIN_PROPERTY = "RightMarginLabel"; //$NON-NLS$
+	public static final String RIGHT_MARGIN_PROPERTY = "rightMarginLabel"; // $NON-NLS$
 
-	
-	
+
+
 	/**
 	 * {@inheritDoc}
 	 */
@@ -110,7 +110,7 @@ public abstract class NamedElementEditPart extends UMLNodeEditPart implements IU
 		getNodeNamedElementFigure().setNameLabelIcon(AppearanceHelper.showElementIcon((View) getModel()));
 	}
 
-	
+
 	@Override
 	protected void refreshVisuals() {
 		super.refreshVisuals();
@@ -123,14 +123,14 @@ public abstract class NamedElementEditPart extends UMLNodeEditPart implements IU
 
 	}
 
-	
+
 
 	/**
 	 * Refresh margin of named element children labels
 	 * <ul>
-	 * <li> Get Css values </li>
-	 * <li> Get all the children figure </li>
-	 * <li> If the child is a label then apply the margin </li>
+	 * <li>Get Css values</li>
+	 * <li>Get all the children figure</li>
+	 * <li>If the child is a label then apply the margin</li>
 	 * </ul>
 	 */
 	private void refreshLabelMargin() {
@@ -153,12 +153,12 @@ public abstract class NamedElementEditPart extends UMLNodeEditPart implements IU
 		}
 
 		// Get all children figures of the Edit Part and set margin according to the retrieve values
-		if (this instanceof IPapyrusEditPart){
+		if (this instanceof IPapyrusEditPart) {
 			figure = ((IPapyrusEditPart) this).getPrimaryShape();
 			List<IPapyrusWrappingLabel> labelChildFigureList = FigureUtils.findChildFigureInstances(figure, IPapyrusWrappingLabel.class);
 
-			for (IPapyrusWrappingLabel label : labelChildFigureList){
-				if (label != null){
+			for (IPapyrusWrappingLabel label : labelChildFigureList) {
+				if (label != null) {
 					label.setMarginLabel(leftMargin, topMargin, rightMargin, bottomMargin);
 				}
 			}

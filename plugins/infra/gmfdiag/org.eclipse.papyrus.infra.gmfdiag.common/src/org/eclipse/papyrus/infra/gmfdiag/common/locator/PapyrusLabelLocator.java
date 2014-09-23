@@ -13,6 +13,7 @@
 
 package org.eclipse.papyrus.infra.gmfdiag.common.locator;
 
+
 import org.eclipse.draw2d.AbstractLocator;
 import org.eclipse.draw2d.Connection;
 import org.eclipse.draw2d.ConnectionLocator;
@@ -31,6 +32,7 @@ import org.eclipse.gmf.runtime.draw2d.ui.geometry.LineSeg;
 import org.eclipse.gmf.runtime.draw2d.ui.geometry.PointListUtilities;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.papyrus.infra.gmfdiag.common.Activator;
 import org.eclipse.papyrus.infra.gmfdiag.common.helper.PapyrusLabelHelper;
 
 /**
@@ -39,7 +41,6 @@ import org.eclipse.papyrus.infra.gmfdiag.common.helper.PapyrusLabelHelper;
  *
  */
 public class PapyrusLabelLocator extends AbstractLocator {
-
 
 	/** the parent figure of this locator. */
 	protected IFigure parent;
@@ -80,7 +81,7 @@ public class PapyrusLabelLocator extends AbstractLocator {
 
 	/** The cached bounds. */
 	private Rectangle cachedBounds = new Rectangle();
-	// private int dx;
+
 	/** The cached offset. */
 	private Point cachedOffset;
 
@@ -89,6 +90,9 @@ public class PapyrusLabelLocator extends AbstractLocator {
 
 	/** The cached segment. */
 	private LineSeg cachedSegment;
+
+	/** The margin. */
+	private Point margin = new Point();
 
 	/**
 	 * Constructor to create a an instance of <code>LabelLocator</code> which locates an IFigure offset relative to a calculated reference point.
@@ -155,6 +159,7 @@ public class PapyrusLabelLocator extends AbstractLocator {
 		// the size must be set first.
 		Dimension size = new Dimension();
 
+
 		if (extent != null) {
 			PapyrusLabelLocator currentConstraint = (PapyrusLabelLocator) target.getParent().getLayoutManager().getConstraint(target);
 			Dimension currentExtent = currentConstraint.getSize();
@@ -178,10 +183,7 @@ public class PapyrusLabelLocator extends AbstractLocator {
 		Point location = null;
 		// If it's a rename
 		if (cachedString != null && !cachedString.equals(((WrappingLabel) target).getText())) {
-			// System.out.println("Rename");
-			// location = PapyrusLabelHelper.relativeCoordinateFromOffset(target, getReferencePoint(), offSet, textAlignment);
 			location = cachedBounds.getLocation();
-
 			int x;
 			int textWidth = ((IFigure) target.getChildren().get(0)).getBounds().width;
 
@@ -191,10 +193,10 @@ public class PapyrusLabelLocator extends AbstractLocator {
 				x = 0;
 				break;
 			case PositionConstants.RIGHT:
-				x = textWidth - cachedBounds.width;
+				x = textWidth - cachedBounds.width + margin.x;
 				break;
 			case PositionConstants.CENTER:
-				x = (textWidth - cachedBounds.width) / 2;
+				x = (textWidth - cachedBounds.width + margin.x) / 2;
 				break;
 			default:
 				x = 0;
@@ -205,7 +207,6 @@ public class PapyrusLabelLocator extends AbstractLocator {
 			IFigure tmpTarget = target;
 			tmpTarget.translate(x, 0);
 			final Point viewLocation = PapyrusLabelHelper.offsetFromRelativeCoordinate(tmpTarget, cachedBounds, getReferencePoint());
-
 			try {
 				TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(view);
 				org.eclipse.papyrus.infra.core.sasheditor.di.contentprovider.utils.TransactionHelper.run(domain, new Runnable() {
@@ -218,14 +219,13 @@ public class PapyrusLabelLocator extends AbstractLocator {
 					}
 				});
 			} catch (Exception e) {
-				System.out.println(e.toString());
+				Activator.log.debug(e.toString());
 			}
-
 		} else
-		// At the creation or It's a d&d move or // If it a move the connnection
+		// At the creation or It's a d&d move or // If it a move the connection
 		if (cachedBounds.height == 0 || !offset.equals(cachedOffset) || !segment.equals(cachedSegment)) {
-			// System.out.println("Creation/open: " + ((WrappingLabel) target).getText() + " offSet: " + offset + " textAlign:  " + textAlignment);
 			location = PapyrusLabelHelper.relativeCoordinateFromOffset(target, getReferencePoint(), offset);
+			// cachedString = ((WrappingLabel) target).getText();
 		} else {
 			// nothing change, in refresh case
 			location = cachedBounds.getLocation();
@@ -234,6 +234,7 @@ public class PapyrusLabelLocator extends AbstractLocator {
 		// Set the location
 		target.setLocation(location);
 
+		// cache actual values
 		cachedString = ((WrappingLabel) target).getText();
 		cachedBounds = target.getBounds();
 		cachedOffset = offset;
@@ -327,6 +328,16 @@ public class PapyrusLabelLocator extends AbstractLocator {
 	 */
 	public void setView(View view) {
 		this.view = view;
+	}
+
+	/**
+	 * Sets the margin.
+	 *
+	 * @param margin
+	 *            the margin to set
+	 */
+	public void setMargin(Point margin) {
+		this.margin = margin;
 	}
 
 
