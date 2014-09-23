@@ -47,29 +47,29 @@ public abstract class PapyrusLabelEditPart extends LabelEditPart {
 	/**
 	 * Default Margin when not present in CSS
 	 */
-	static final int DEFAULT_MARGIN = 1;
+	static final int DEFAULT_MARGIN = 0;
 
 	/**
 	 * CSS Integer property to define the horizontal Label Margin
 	 */
-	static final String X_MARGIN_PROPERTY = "xMarginLabel";
+	static final String X_MARGIN_PROPERTY = "xMarginLabel"; //$NON-NLS$
 
 	/**
 	 * CSS Integer property to define the vertical Label Margin
 	 */
-	static final String Y_MARGIN_PROPERTY = "yMarginLabel";
+	static final String Y_MARGIN_PROPERTY = "yMarginLabel"; //$NON-NLS$
 
 	/** The Constant TEXT_ALIGNMENT. */
-	private static final String TEXT_ALIGNMENT = "textAlignment";
+	private static final String TEXT_ALIGNMENT = "textAlignment"; //$NON-NLS$
 
 	/** The Constant LABEL_OFFSET_Y. */
-	private static final String LABEL_OFFSET_Y = "labelOffsetY";
+	private static final String LABEL_OFFSET_Y = "labelOffsetY"; //$NON-NLS$
 
 	/** The Constant LABEL_OFFSET_X. */
-	private static final String LABEL_OFFSET_X = "labelOffsetX";
+	private static final String LABEL_OFFSET_X = "labelOffsetX"; //$NON-NLS$
 
 	/** The Constant LABEL_CONSTRAINED. */
-	private static final String LABEL_CONSTRAINED = "labelConstrained";
+	private static final String LABEL_CONSTRAINED = "labelConstrained"; //$NON-NLS$
 
 	/** The label locator. */
 	protected PapyrusLabelLocator labelLocator;
@@ -363,14 +363,14 @@ public abstract class PapyrusLabelEditPart extends LabelEditPart {
 
 
 		if (model instanceof View) {
-			horizontalMargin = NotationUtils.getIntValue((View) model, X_MARGIN_PROPERTY, DEFAULT_MARGIN);
-			verticalMargin = NotationUtils.getIntValue((View) model, Y_MARGIN_PROPERTY, DEFAULT_MARGIN);
+			horizontalMargin = NotationUtils.getIntValue((View) model, Y_MARGIN_PROPERTY, DEFAULT_MARGIN);
+			verticalMargin = NotationUtils.getIntValue((View) model, X_MARGIN_PROPERTY, DEFAULT_MARGIN);
 		}
 
 		figure = ((GraphicalEditPart) this).getFigure();
 
 		if (figure instanceof IPapyrusWrappingLabel) {
-			((IPapyrusWrappingLabel) figure).setMarginLabel(horizontalMargin, verticalMargin);
+			((IPapyrusWrappingLabel) figure).setMarginLabel(verticalMargin,horizontalMargin);
 		}
 
 	}

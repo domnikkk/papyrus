@@ -349,6 +349,7 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		} else {
 			return getGEFWrapper(new MoveElementsCommand(req));
 		}
+
 	}
 
 	/**
@@ -423,49 +424,56 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 * @generated
 		 */
 		public boolean canCreateUsage_4001(Package container, NamedElement source, NamedElement target) {
-			return canExistUsage_4001(container, null, source, target);
+			return canExistUsage_4001(
+					container, null, source, target);
 		}
 
 		/**
 		 * @generated
 		 */
 		public boolean canCreateInterfaceRealization_4006(Package container, NamedElement source, Interface target) {
-			return canExistInterfaceRealization_4006(container, null, source, target);
+			return canExistInterfaceRealization_4006(
+					container, null, source, target);
 		}
 
 		/**
 		 * @generated
 		 */
 		public boolean canCreateGeneralization_4003(Classifier container, Classifier source, Classifier target) {
-			return canExistGeneralization_4003(container, null, source, target);
+			return canExistGeneralization_4003(
+					container, null, source, target);
 		}
 
 		/**
 		 * @generated
 		 */
 		public boolean canCreateSubstitution_4012(Package container, NamedElement source, NamedElement target) {
-			return canExistSubstitution_4012(container, null, source, target);
+			return canExistSubstitution_4012(
+					container, null, source, target);
 		}
 
 		/**
 		 * @generated
 		 */
 		public boolean canCreateManifestation_4014(Package container, NamedElement source, NamedElement target) {
-			return canExistManifestation_4014(container, null, source, target);
+			return canExistManifestation_4014(
+					container, null, source, target);
 		}
 
 		/**
 		 * @generated
 		 */
 		public boolean canCreateComponentRealization_4007(Package container, NamedElement source, NamedElement target) {
-			return canExistComponentRealization_4007(container, null, source, target);
+			return canExistComponentRealization_4007(
+					container, null, source, target);
 		}
 
 		/**
 		 * @generated
 		 */
 		public boolean canCreateAbstraction_4013(Package container, NamedElement source, NamedElement target) {
-			return canExistAbstraction_4013(container, null, source, target);
+			return canExistAbstraction_4013(
+					container, null, source, target);
 		}
 
 		/**
@@ -480,11 +488,14 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 */
 		public boolean canCreateCommentAnnotatedElement_4015(Comment source, Element target) {
 			if (source != null) {
-				if (source.getAnnotatedElements().contains(target)) {
+				if (source.getAnnotatedElements()
+						.contains(target)) {
 					return false;
 				}
 			}
-			return canExistCommentAnnotatedElement_4015(source, target);
+
+			return canExistCommentAnnotatedElement_4015(
+					source, target);
 		}
 
 		/**
@@ -492,25 +503,30 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 */
 		public boolean canCreateConstraintConstrainedElement_4009(Constraint source, Element target) {
 			if (source != null) {
-				if (source.getConstrainedElements().contains(target)) {
+				if (source.getConstrainedElements()
+						.contains(target)) {
 					return false;
 				}
 			}
-			return canExistConstraintConstrainedElement_4009(source, target);
+
+			return canExistConstraintConstrainedElement_4009(
+					source, target);
 		}
 
 		/**
 		 * @generated
 		 */
 		public boolean canCreateDependency_4010(Package container, NamedElement source, NamedElement target) {
-			return canExistDependency_4010(container, null, source, target);
+			return canExistDependency_4010(
+					container, null, source, target);
 		}
 
 		/**
 		 * @generated
 		 */
 		public boolean canCreateDependency_4017(Package container, NamedElement source, NamedElement target) {
-			return canExistDependency_4017(container, null, source, target);
+			return canExistDependency_4017(
+					container, null, source, target);
 		}
 
 		/**
@@ -524,7 +540,8 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 * @generated
 		 */
 		public boolean canCreateConnector_4019(StructuredClassifier container, ConnectorEnd source, ConnectorEnd target) {
-			return canExistConnector_4019(container, null, source, target);
+			return canExistConnector_4019(
+					container, null, source, target);
 		}
 
 		/**

@@ -9,6 +9,7 @@
  *
  * Contributors:
  *  Patrick Tessier (CEA LIST) Patrick.tessier@cea.fr - Initial API and implementation
+ *  Céline Janssens (All4TEC) celine.janssens@all4tec.net - Bug 440230 : Margin Label
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.common.editparts;
@@ -39,6 +40,12 @@ import org.eclipse.uml2.uml.NamedElement;
  */
 public abstract class BorderNamedElementEditPart extends BorderUMLNodeEditPart implements IUMLNamedElementEditPart {
 
+	/**
+	 * Default Margin when not present in CSS
+	 */
+	private static final int DEFAULT_MARGIN = NamedElementEditPart.DEFAULT_MARGIN;
+	
+		
 	/**
 	 *
 	 * Constructor.
@@ -92,9 +99,7 @@ public abstract class BorderNamedElementEditPart extends BorderUMLNodeEditPart i
 		refreshBounds();
 	}
 	
-	static final int DEFAULT_MARGIN = 10;
-	static final String X_MARGIN_PROPERTY = "xMarginLabel"; 
-	static final String Y_MARGIN_PROPERTY = "yMarginLabel";
+
 
 	/**
 	 * Refresh margin of bordered named element children labels
@@ -115,8 +120,8 @@ public abstract class BorderNamedElementEditPart extends BorderUMLNodeEditPart i
 
 		// Get notation Margin values (from CSS)
 		if (model instanceof View) {
-			horizontalMargin = NotationUtils.getIntValue((View)model, X_MARGIN_PROPERTY, DEFAULT_MARGIN);
-			verticalMargin = NotationUtils.getIntValue((View)model, Y_MARGIN_PROPERTY, DEFAULT_MARGIN);
+			horizontalMargin = NotationUtils.getIntValue((View)model, NamedElementEditPart.Y_MARGIN_PROPERTY, DEFAULT_MARGIN);
+			verticalMargin = NotationUtils.getIntValue((View)model, NamedElementEditPart.X_MARGIN_PROPERTY, DEFAULT_MARGIN);
 		}
 
 		// Get all children figures of the Edit Part and set margin according to the retrieve values
@@ -126,7 +131,8 @@ public abstract class BorderNamedElementEditPart extends BorderUMLNodeEditPart i
 
 			for (IPapyrusWrappingLabel label : labelChildFigureList){
 				if (label != null){
-					label.setMarginLabel(horizontalMargin, verticalMargin);
+					label.setMarginLabel(verticalMargin, horizontalMargin);
+					
 				}
 			}
 		}

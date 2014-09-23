@@ -59,6 +59,8 @@ public class PapyrusWrappingLabel extends WrappingLabel implements IPapyrusWrapp
 
 		MarginBorder mb = new MarginBorder(xMargin, yMargin, xMargin, yMargin);
 		this.setBorder(mb);
+		repaint();
+		revalidate();
 		
 		
 		

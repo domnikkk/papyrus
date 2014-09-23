@@ -44,27 +44,27 @@ public abstract class NamedElementEditPart extends UMLNodeEditPart implements IU
 	/**
 	 * CSS boolean property controlling whether stereotypes should be displayed
 	 */
-	public static final String DISPLAY_STEREOTYPES = "displayStereotypes";
+	public static final String DISPLAY_STEREOTYPES = "displayStereotypes"; //$NON-NLS$
 
 	/**
 	 * CSS boolean property controlling whether tags should be displayed
 	 */
-	public static final String DISPLAY_TAGS = "displayTags"; 
+	public static final String DISPLAY_TAGS = "displayTags"; //$NON-NLS$
 
 	/**
 	 * Default Margin when not present in CSS
 	 */
-	static final int DEFAULT_MARGIN = 1;
+	public static final int DEFAULT_MARGIN = 0;
 	
 	/**
 	 * CSS Integer property to define the horizontal Label Margin
 	 */
-	static final String X_MARGIN_PROPERTY = "xMarginLabel"; //$NON-NLS$
+	public static final String X_MARGIN_PROPERTY = "xMarginLabel"; //$NON-NLS$
 	
 	/**
 	 * CSS Integer property to define the vertical Label Margin
 	 */
-	static final String Y_MARGIN_PROPERTY = "yMarginLabel"; //$NON-NLS$
+	public static final String Y_MARGIN_PROPERTY = "yMarginLabel"; //$NON-NLS$
 	
 	
 	/**
@@ -130,8 +130,8 @@ public abstract class NamedElementEditPart extends UMLNodeEditPart implements IU
 		Object model = this.getModel();
 
 		if (model instanceof View) {
-			horizontalMargin = NotationUtils.getIntValue((View)model, X_MARGIN_PROPERTY, DEFAULT_MARGIN);
-			verticalMargin = NotationUtils.getIntValue((View)model, Y_MARGIN_PROPERTY, DEFAULT_MARGIN);
+			horizontalMargin = NotationUtils.getIntValue((View)model, Y_MARGIN_PROPERTY, DEFAULT_MARGIN);
+			verticalMargin = NotationUtils.getIntValue((View)model, X_MARGIN_PROPERTY, DEFAULT_MARGIN);
 		}
 
 		if (this instanceof IPapyrusEditPart){
@@ -140,7 +140,7 @@ public abstract class NamedElementEditPart extends UMLNodeEditPart implements IU
 
 			for (IPapyrusWrappingLabel label : labelChildFigureList){
 				if (label != null){
-					label.setMarginLabel(horizontalMargin, verticalMargin);
+					label.setMarginLabel(verticalMargin, horizontalMargin);
 				}
 			}
 		}

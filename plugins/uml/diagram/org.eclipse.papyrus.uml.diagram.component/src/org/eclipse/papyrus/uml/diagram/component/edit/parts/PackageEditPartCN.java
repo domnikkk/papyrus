@@ -137,12 +137,15 @@ public class PackageEditPartCN extends NodeEditPart {
 			((PackageNameEditPartCN) childEditPart).setLabel(getPrimaryShape().getNameLabel());
 			return true;
 		}
+
+
 		if (childEditPart instanceof PackagePackageableElementCompartmentEditPartCN) {
 			IFigure pane = getPrimaryShape().getPackageableElementFigure();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way
 			pane.add(((PackagePackageableElementCompartmentEditPartCN) childEditPart).getFigure());
 			return true;
 		}
+
 		return false;
 	}
 
@@ -214,6 +217,7 @@ public class PackageEditPartCN extends NodeEditPart {
 	@Override
 	protected NodeFigure createNodeFigure() {
 		return new SelectableBorderedNodeFigure(createMainFigureWithSVG());
+
 	}
 
 	/**

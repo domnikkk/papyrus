@@ -283,7 +283,9 @@ public class ExternalLabelPositionLocator implements IPapyrusBorderItemLocator {
 		}
 
 		target.setBounds(proposedBounds);
-		cachedString = ((WrappingLabel) target).getText();
+		if (target instanceof WrappingLabel){
+			cachedString = ((WrappingLabel) target).getText();
+		}
 	}
 
 	/**

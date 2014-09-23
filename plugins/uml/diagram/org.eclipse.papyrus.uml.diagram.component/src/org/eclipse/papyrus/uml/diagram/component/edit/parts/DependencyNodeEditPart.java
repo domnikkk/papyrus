@@ -102,7 +102,8 @@ public class DependencyNodeEditPart extends NodeEditPart {
 							mh.setBorder(null);
 							return Collections.singletonList(mh);
 						}
-					};
+					}
+					;
 				}
 				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 				if (result == null) {
@@ -150,7 +151,8 @@ public class DependencyNodeEditPart extends NodeEditPart {
 		if (borderItemEditPart instanceof MultiDependencyLabelEditPart) {
 			IBorderItemLocator locator = new ExternalLabelPositionLocator(getMainFigure());
 			borderItemContainer.add(borderItemEditPart.getFigure(), locator);
-		} else {
+		} else
+		{
 			super.addBorderItem(borderItemContainer, borderItemEditPart);
 		}
 	}
@@ -175,6 +177,7 @@ public class DependencyNodeEditPart extends NodeEditPart {
 	@Override
 	protected NodeFigure createMainFigure() {
 		return new SelectableBorderedNodeFigure(createMainFigureWithSVG());
+
 	}
 
 	/**
