@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.eclipse.papyrus.migration.rsa.default_.AbstractConstraint;
 import org.eclipse.papyrus.migration.rsa.default_.DefaultFactory;
+import org.eclipse.papyrus.migration.rsa.default_.DefaultLanguage;
 import org.eclipse.papyrus.migration.rsa.default_.DefaultPackage;
 import org.eclipse.papyrus.migration.rsa.default_.Documentation;
 import org.eclipse.papyrus.migration.rsa.default_.Link;
@@ -93,6 +94,14 @@ public class DefaultPackageImpl extends EPackageImpl implements DefaultPackage {
 	 * @generated
 	 */
 	private EClass markingImportEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass defaultLanguageEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -377,6 +386,39 @@ public class DefaultPackageImpl extends EPackageImpl implements DefaultPackage {
 	 * @generated
 	 */
 	@Override
+	public EClass getDefaultLanguage() {
+		return defaultLanguageEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EReference getDefaultLanguage_Base_Package() {
+		return (EReference) defaultLanguageEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getDefaultLanguage_DefaultLanguage() {
+		return (EAttribute) defaultLanguageEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public EEnum getMode() {
 		return modeEEnum;
 	}
@@ -450,6 +492,10 @@ public class DefaultPackageImpl extends EPackageImpl implements DefaultPackage {
 
 		markingImportEClass = createEClass(MARKING_IMPORT);
 		createEReference(markingImportEClass, MARKING_IMPORT__BASE_ELEMENT_IMPORT);
+
+		defaultLanguageEClass = createEClass(DEFAULT_LANGUAGE);
+		createEReference(defaultLanguageEClass, DEFAULT_LANGUAGE__BASE_PACKAGE);
+		createEAttribute(defaultLanguageEClass, DEFAULT_LANGUAGE__DEFAULT_LANGUAGE);
 
 		// Create enums
 		modeEEnum = createEEnum(MODE);
@@ -525,6 +571,11 @@ public class DefaultPackageImpl extends EPackageImpl implements DefaultPackage {
 		initEClass(markingImportEClass, MarkingImport.class, "MarkingImport", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMarkingImport_Base_ElementImport(), theUMLPackage.getElementImport(), null, "base_ElementImport", null, 1, 1, MarkingImport.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(defaultLanguageEClass, DefaultLanguage.class, "DefaultLanguage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getDefaultLanguage_Base_Package(), theUMLPackage.getPackage(), null, "base_Package", null, 0, 1, DefaultLanguage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDefaultLanguage_DefaultLanguage(), theEcorePackage.getEString(), "defaultLanguage", null, 0, 1, DefaultLanguage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(modeEEnum, Mode.class, "Mode");

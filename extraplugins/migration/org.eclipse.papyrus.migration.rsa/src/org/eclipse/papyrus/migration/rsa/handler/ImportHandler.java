@@ -19,6 +19,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
@@ -40,7 +41,12 @@ import org.eclipse.papyrus.infra.core.resource.ModelSet;
 import org.eclipse.papyrus.infra.core.utils.DiResourceSet;
 import org.eclipse.papyrus.infra.emf.resource.DependencyManagementHelper;
 import org.eclipse.papyrus.migration.rsa.Activator;
+import org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.Config;
+import org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.RSAToPapyrusParametersFactory;
 import org.eclipse.papyrus.migration.rsa.transformation.ImportTransformation;
+import org.eclipse.papyrus.views.properties.creation.PropertyEditorFactory;
+import org.eclipse.swt.widgets.Control;
+import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.handlers.HandlerUtil;
 
 
@@ -77,18 +83,26 @@ public class ImportHandler extends AbstractHandler {
 			}
 		}
 
-		importFiles(filesToImport);
+		if (!filesToImport.isEmpty()) {
+			importFiles(filesToImport, event);
+		}
 
 		return null;
 	}
 
-	public void importFiles(Set<IFile> selectedFiles) {
+	public void importFiles(Set<IFile> selectedFiles, ExecutionEvent event) {
+		Config config = getTransformationParameters(event);
+
+		if (config == null) {
+			return;
+		}
+
 		List<ImportTransformation> transformations = new LinkedList<ImportTransformation>();
 
 		for (IFile selectedFile : selectedFiles) {
 			URI uri = URI.createPlatformResourceURI(selectedFile.getFullPath().toString(), true);
 
-			ImportTransformation transformation = new ImportTransformation(uri);
+			ImportTransformation transformation = new ImportTransformation(uri, config);
 			transformation.run();
 
 			transformations.add(transformation);
@@ -97,6 +111,39 @@ public class ImportHandler extends AbstractHandler {
 		if (selectedFiles.size() > 1) {
 			importModelDependencies(transformations);
 		}
+	}
+
+	public Config getTransformationParameters(ExecutionEvent event) {
+		Config config = RSAToPapyrusParametersFactory.eINSTANCE.createConfig();
+
+		Shell activeShell = HandlerUtil.getActiveShell(event);
+
+		final AtomicBoolean okPressed = new AtomicBoolean(true);
+		PropertyEditorFactory factory = new PropertyEditorFactory() {
+			@Override
+			public String getEditionDialogTitle(Object objectToEdit) {
+				return "Transformation parameters";
+			}
+
+			@Override
+			protected void handleEditCancelled(Control widget, Object source) {
+				okPressed.set(false);
+				super.handleEditCancelled(widget, source);
+			}
+		};
+
+		Object result = factory.edit(activeShell, config);
+
+		if (!okPressed.get()) {
+			return null;
+		}
+
+		// Result can be null, the source config, or a new config
+		if (result instanceof Config) {
+			config = (Config) result;
+		}
+
+		return config;
 	}
 
 	public void importModelDependencies(final List<ImportTransformation> transformations) {
@@ -134,7 +181,6 @@ public class ImportHandler extends AbstractHandler {
 							urisToReplace.put(entry.getKey(), entry.getValue());
 						}
 					}
-
 				}
 
 				for (ImportTransformation transformation : transformations) {

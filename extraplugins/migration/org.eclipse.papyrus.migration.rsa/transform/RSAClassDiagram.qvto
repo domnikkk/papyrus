@@ -19,9 +19,9 @@ modeltype ecore "strict" uses 'http://www.eclipse.org/emf/2002/Ecore';
 modeltype sash "strict" uses 'http://www.eclipse.org/papyrus/0.7.0/sashdi';
 modeltype vpconfig "strict" uses 'http://www.eclipse.org/papyrus/infra/viewpoints/configuration';
 modeltype vpstyle "strict" uses 'http://www.eclipse.org/papyrus/infra/viewpoints/policy/style';
-	
+modeltype config "strict" uses 'http:///RSAToPapyrusParameters.ecore';
 
-transformation RSAClassDiagram(inout semantics : uml, inout graphics : notation, out di : sash);
+transformation RSAClassDiagram(inout semantics : uml, inout graphics : notation, out di : sash, in param : config);
 
 main() {
 	semantics.rootObjects()[uml::Element]->map toOwnedDiagrams();

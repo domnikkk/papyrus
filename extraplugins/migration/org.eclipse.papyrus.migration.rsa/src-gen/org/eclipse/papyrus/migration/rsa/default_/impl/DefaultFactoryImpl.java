@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import org.eclipse.papyrus.migration.rsa.default_.DefaultFactory;
+import org.eclipse.papyrus.migration.rsa.default_.DefaultLanguage;
 import org.eclipse.papyrus.migration.rsa.default_.DefaultPackage;
 import org.eclipse.papyrus.migration.rsa.default_.Documentation;
 import org.eclipse.papyrus.migration.rsa.default_.Link;
@@ -87,6 +88,8 @@ public class DefaultFactoryImpl extends EFactoryImpl implements DefaultFactory {
 			return createMarkingModel();
 		case DefaultPackage.MARKING_IMPORT:
 			return createMarkingImport();
+		case DefaultPackage.DEFAULT_LANGUAGE:
+			return createDefaultLanguage();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -198,6 +201,18 @@ public class DefaultFactoryImpl extends EFactoryImpl implements DefaultFactory {
 	public MarkingImport createMarkingImport() {
 		MarkingImportImpl markingImport = new MarkingImportImpl();
 		return markingImport;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public DefaultLanguage createDefaultLanguage() {
+		DefaultLanguageImpl defaultLanguage = new DefaultLanguageImpl();
+		return defaultLanguage;
 	}
 
 	/**
