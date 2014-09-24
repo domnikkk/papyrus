@@ -67,12 +67,16 @@ public class EntryStateBehaviorCreateCommand extends EditElementCommand {
 	@Override
 	public boolean canExecute() {
 		State container = (State) getElementToEdit();
-		if (container.getEntry() != null) {
+		if (container.getEntry()
+				!= null) {
 			return false;
 		}
+
 		EObject target = getElementToEdit();
 		ModelAddData data = PolicyChecker.getCurrent().getChildAddData(diagram, target.eClass(), UMLPackage.eINSTANCE.getBehavior());
 		return data.isPermitted();
+
+
 	}
 
 	/**
@@ -80,6 +84,7 @@ public class EntryStateBehaviorCreateCommand extends EditElementCommand {
 	 */
 	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+
 		throw new UnsupportedOperationException("Unimplemented operation (abstract domain element).");
 	}
 
