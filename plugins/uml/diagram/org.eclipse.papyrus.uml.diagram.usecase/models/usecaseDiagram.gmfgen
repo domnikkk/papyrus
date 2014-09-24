@@ -991,7 +991,7 @@
               href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
           <viewmap
               xsi:type="gmfgen:FigureViewmap"
-              figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
+              figureQualifiedClassName="org.eclipse.papyrus.infra.gmfdiag.figure.node.PapyrusWrappingLabel">
             <attributes
                 xsi:type="gmfgen:LabelOffsetAttributes"
                 x="20"
@@ -2921,6 +2921,12 @@
         genView="/0/@diagram/@childNodes.4 /0/@diagram/@topLevelNodes.7"
         name="comment extended node"
         superOwnedEditPart="org.eclipse.papyrus.uml.diagram.common.editparts.AbstractCommentEditPart"/>
+    <extensionNodes
+        xsi:type="papyrusgmfgenextension:ExtendedGenView"
+        comment="Allow to extend PapyrusLabelEditPart"
+        genView="/0/@diagram/@topLevelNodes.0/@labels.0"
+        name="PapyrusLabelEditPart"
+        superOwnedEditPart="org.eclipse.papyrus.infra.gmfdiag.common.editpart.PapyrusLabelEditPart"/>
     <extensionNodes
         xsi:type="papyrusgmfgenextension:LabelVisibilityPreference"
         comment="HiddenName"
