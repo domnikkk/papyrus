@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
 import org.eclipse.papyrus.migration.rsa.default_.AbstractConstraint;
+import org.eclipse.papyrus.migration.rsa.default_.DefaultLanguage;
 import org.eclipse.papyrus.migration.rsa.default_.DefaultPackage;
 import org.eclipse.papyrus.migration.rsa.default_.Documentation;
 import org.eclipse.papyrus.migration.rsa.default_.Link;
@@ -146,6 +147,14 @@ public class DefaultSwitch<T> extends Switch<T> {
 			}
 			return result;
 		}
+		case DefaultPackage.DEFAULT_LANGUAGE: {
+			DefaultLanguage defaultLanguage = (DefaultLanguage) theEObject;
+			T result = caseDefaultLanguage(defaultLanguage);
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
 		default:
 			return defaultCase(theEObject);
 		}
@@ -267,6 +276,23 @@ public class DefaultSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseMarkingImport(MarkingImport object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Language</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Language</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDefaultLanguage(DefaultLanguage object) {
 		return null;
 	}
 

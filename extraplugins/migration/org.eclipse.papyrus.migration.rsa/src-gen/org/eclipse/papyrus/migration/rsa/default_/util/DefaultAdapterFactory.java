@@ -16,6 +16,7 @@ import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.papyrus.migration.rsa.default_.AbstractConstraint;
+import org.eclipse.papyrus.migration.rsa.default_.DefaultLanguage;
 import org.eclipse.papyrus.migration.rsa.default_.DefaultPackage;
 import org.eclipse.papyrus.migration.rsa.default_.Documentation;
 import org.eclipse.papyrus.migration.rsa.default_.Link;
@@ -118,6 +119,11 @@ public class DefaultAdapterFactory extends AdapterFactoryImpl {
 				@Override
 				public Adapter caseMarkingImport(MarkingImport object) {
 					return createMarkingImportAdapter();
+				}
+
+				@Override
+				public Adapter caseDefaultLanguage(DefaultLanguage object) {
+					return createDefaultLanguageAdapter();
 				}
 
 				@Override
@@ -244,6 +250,21 @@ public class DefaultAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createMarkingImportAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.migration.rsa.default_.DefaultLanguage <em>Language</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.migration.rsa.default_.DefaultLanguage
+	 * @generated
+	 */
+	public Adapter createDefaultLanguageAdapter() {
 		return null;
 	}
 

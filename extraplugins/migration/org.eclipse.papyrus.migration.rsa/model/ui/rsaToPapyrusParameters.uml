@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ActionLanguage="http://www.omg.org/spec/ALF/20120827/ActionLanguage-Profile" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http://www.omg.org/spec/ALF/20120827/ActionLanguage-Profile pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#_sYse0YZLEeKyw49uR6nx3g">
+  <uml:Model xmi:id="_fduSAEL1EeSSlqpbHKLCqA" name="RSAToPapyrusParameters">
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_fduSAUL1EeSSlqpbHKLCqA">
+      <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Class" xmi:id="_tKu0kEL1EeSSlqpbHKLCqA" name="Config">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_t42e0EL1EeSSlqpbHKLCqA" name="convertOpaqueExpressionToLiteralString" visibility="public" isUnique="false">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_sSSQAEL9EeSX267OQHSClQ" annotatedElement="_t42e0EL1EeSSlqpbHKLCqA">
+          <body>If true, the Opaque Expressions with a single body and no language (or a single empty language) will be converted to LiteralString</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_0H-TgEL1EeSSlqpbHKLCqA" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_0IHdcEL1EeSSlqpbHKLCqA" value="1"/>
+        <defaultValue xmi:type="uml:LiteralBoolean" xmi:id="_3f1nMEL1EeSSlqpbHKLCqA" value="true"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_65pboEL1EeSSlqpbHKLCqA" name="removeUnmappedProfilesAndStereotypes" visibility="public" isUnique="false">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_zDs5cEL9EeSX267OQHSClQ" annotatedElement="_65pboEL1EeSSlqpbHKLCqA">
+          <body>If true, the unsupported RSA profiles and stereotypes will be deleted. This includes the Deployment profile and a few stereotypes</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Gy7WwEL2EeSSlqpbHKLCqA" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Gy7WwUL2EeSSlqpbHKLCqA" value="1"/>
+        <defaultValue xmi:type="uml:LiteralBoolean" xmi:id="_H7rHgEL2EeSSlqpbHKLCqA" value="true"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_Mv8HwEL2EeSSlqpbHKLCqA" name="removeUnmappedAnnotations" visibility="public" isUnique="false">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_rogy4EMAEeSX267OQHSClQ" annotatedElement="_Mv8HwEL2EeSSlqpbHKLCqA">
+          <body>If true, the unmapped RSA EAnnotations will be deleted from the imported model</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_S39O4EL2EeSSlqpbHKLCqA" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_S39O4UL2EeSSlqpbHKLCqA" value="1"/>
+        <defaultValue xmi:type="uml:LiteralBoolean" xmi:id="_UQehAEL2EeSSlqpbHKLCqA"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_Wt4XkEL2EeSSlqpbHKLCqA" name="removeUnmappedDiagrams" visibility="public" isUnique="false">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_YchfIEMAEeSX267OQHSClQ" annotatedElement="_Wt4XkEL2EeSSlqpbHKLCqA">
+          <body>If true, the diagrams which were not migrated will be removed. Otherwise, only the successfully imported diagrams will be removed</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Yj3BwEL2EeSSlqpbHKLCqA" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Yj3BwUL2EeSSlqpbHKLCqA" value="1"/>
+        <defaultValue xmi:type="uml:LiteralBoolean" xmi:id="_Zf9doEL2EeSSlqpbHKLCqA"/>
+      </ownedAttribute>
+    </packagedElement>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_zg2CEEL1EeSSlqpbHKLCqA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_zhSuAEL1EeSSlqpbHKLCqA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#_sYse0YZLEeKyw49uR6nx3g"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#ActionLanguage"/>
+    </profileApplication>
+  </uml:Model>
+  <ActionLanguage:TextualRepresentation xmi:id="_zhuy4EL1EeSSlqpbHKLCqA" language="org.eclipse.papyrus.uml.textedit.property.xtext.UmlProperty"/>
+  <ActionLanguage:TextualRepresentation xmi:id="_8D4aIUL1EeSSlqpbHKLCqA" language="org.eclipse.papyrus.uml.textedit.property.xtext.UmlProperty"/>
+</xmi:XMI>

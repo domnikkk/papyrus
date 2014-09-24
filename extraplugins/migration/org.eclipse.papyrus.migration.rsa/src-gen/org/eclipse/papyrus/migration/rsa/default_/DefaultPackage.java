@@ -469,6 +469,57 @@ public interface DefaultPackage extends EPackage {
 	int MARKING_IMPORT_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.migration.rsa.default_.impl.DefaultLanguageImpl <em>Language</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.papyrus.migration.rsa.default_.impl.DefaultLanguageImpl
+	 * @see org.eclipse.papyrus.migration.rsa.default_.impl.DefaultPackageImpl#getDefaultLanguage()
+	 * @generated
+	 */
+	int DEFAULT_LANGUAGE = 7;
+
+	/**
+	 * The feature id for the '<em><b>Base Package</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int DEFAULT_LANGUAGE__BASE_PACKAGE = 0;
+
+	/**
+	 * The feature id for the '<em><b>Default Language</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int DEFAULT_LANGUAGE__DEFAULT_LANGUAGE = 1;
+
+	/**
+	 * The number of structural features of the '<em>Language</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int DEFAULT_LANGUAGE_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Language</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int DEFAULT_LANGUAGE_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.migration.rsa.default_.Mode <em>Mode</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -477,7 +528,7 @@ public interface DefaultPackage extends EPackage {
 	 * @see org.eclipse.papyrus.migration.rsa.default_.impl.DefaultPackageImpl#getMode()
 	 * @generated
 	 */
-	int MODE = 7;
+	int MODE = 8;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.migration.rsa.default_.Severity <em>Severity</em>}' enum.
@@ -488,7 +539,7 @@ public interface DefaultPackage extends EPackage {
 	 * @see org.eclipse.papyrus.migration.rsa.default_.impl.DefaultPackageImpl#getSeverity()
 	 * @generated
 	 */
-	int SEVERITY = 8;
+	int SEVERITY = 9;
 
 
 	/**
@@ -699,6 +750,41 @@ public interface DefaultPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getMarkingImport_Base_ElementImport();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.migration.rsa.default_.DefaultLanguage <em>Language</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>Language</em>'.
+	 * @see org.eclipse.papyrus.migration.rsa.default_.DefaultLanguage
+	 * @generated
+	 */
+	EClass getDefaultLanguage();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.migration.rsa.default_.DefaultLanguage#getBase_Package <em>Base Package</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the reference '<em>Base Package</em>'.
+	 * @see org.eclipse.papyrus.migration.rsa.default_.DefaultLanguage#getBase_Package()
+	 * @see #getDefaultLanguage()
+	 * @generated
+	 */
+	EReference getDefaultLanguage_Base_Package();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.migration.rsa.default_.DefaultLanguage#getDefaultLanguage <em>Default Language</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Default Language</em>'.
+	 * @see org.eclipse.papyrus.migration.rsa.default_.DefaultLanguage#getDefaultLanguage()
+	 * @see #getDefaultLanguage()
+	 * @generated
+	 */
+	EAttribute getDefaultLanguage_DefaultLanguage();
 
 	/**
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.migration.rsa.default_.Mode <em>Mode</em>}'.
@@ -922,6 +1008,35 @@ public interface DefaultPackage extends EPackage {
 		 * @generated
 		 */
 		EReference MARKING_IMPORT__BASE_ELEMENT_IMPORT = eINSTANCE.getMarkingImport_Base_ElementImport();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.migration.rsa.default_.impl.DefaultLanguageImpl <em>Language</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.papyrus.migration.rsa.default_.impl.DefaultLanguageImpl
+		 * @see org.eclipse.papyrus.migration.rsa.default_.impl.DefaultPackageImpl#getDefaultLanguage()
+		 * @generated
+		 */
+		EClass DEFAULT_LANGUAGE = eINSTANCE.getDefaultLanguage();
+
+		/**
+		 * The meta object literal for the '<em><b>Base Package</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EReference DEFAULT_LANGUAGE__BASE_PACKAGE = eINSTANCE.getDefaultLanguage_Base_Package();
+
+		/**
+		 * The meta object literal for the '<em><b>Default Language</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute DEFAULT_LANGUAGE__DEFAULT_LANGUAGE = eINSTANCE.getDefaultLanguage_DefaultLanguage();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.migration.rsa.default_.Mode <em>Mode</em>}' enum.

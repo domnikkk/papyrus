@@ -188,7 +188,11 @@ public class ImportDiagramTest {
 
 		Resource notationResource = NotationUtils.getNotationModel(editor.getServicesRegistry().getService(ModelSet.class)).getResource();
 		List<EObject> listcontent = notationResource.getContents();
-		Assert.assertEquals(7, listcontent.size()); // Expected is 7 valid migrated diagrams
+		
+		// Expected is 7 valid migrated diagrams.
+		// FIXME: Sequence Diagram import is currently disabled, so 6 is the new expected number
+		Assert.assertEquals(6, listcontent.size()); // Expected is 7 valid migrated diagrams
+		
 		for (EObject cont : listcontent) {
 			Assert.assertTrue(cont instanceof Diagram);
 

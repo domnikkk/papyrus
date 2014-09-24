@@ -21,8 +21,9 @@ modeltype umlrtsm "strict" uses 'http://www.eclipse.org/papyrus/umlrt/statemachi
 modeltype sourcert "strict" uses 'http://www.eclipse.org/papyrus/profile/umlrt'; 
 modeltype ecore "strict" uses 'http://www.eclipse.org/emf/2002/Ecore';
 modeltype types "strict" uses 'http://www.eclipse.org/emf/2002/Ecore';
+modeltype config "strict" uses 'http:///RSAToPapyrusParameters.ecore';
 
-transformation RSARTToPapyrusRT(inout semantics : uml, inout graphics : notation, in profiles : uml, in profileDefinitions : ecore);
+transformation RSARTToPapyrusRT(inout semantics : uml, inout graphics : notation, in profiles : uml, in profileDefinitions : ecore, in param : config);
 
 property UML_RT_URI : String = 'http://www.eclipse.org/papyrus/umlrt';
 

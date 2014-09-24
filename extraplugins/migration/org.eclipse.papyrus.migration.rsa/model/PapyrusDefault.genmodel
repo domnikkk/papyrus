@@ -43,5 +43,9 @@
     <genClasses ecoreClass="PapyrusDefault.ecore#//MarkingImport">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference PapyrusDefault.ecore#//MarkingImport/base_ElementImport"/>
     </genClasses>
+    <genClasses ecoreClass="PapyrusDefault.ecore#//DefaultLanguage">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference PapyrusDefault.ecore#//DefaultLanguage/base_Package"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PapyrusDefault.ecore#//DefaultLanguage/defaultLanguage"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

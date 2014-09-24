@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="ASCII"?>
+<contexts:Context xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:constraints="http://www.eclipse.org/papyrus/constraints/0.9" xmlns:contexts="http://www.eclipse.org/papyrus/properties/contexts/0.9" name="RSAToPapyrusParameters">
+  <tabs label="RSAToPapyrusParameters" id="rsatopapyrusparameters" priority="100">
+    <sections name="Single Config" sectionFile="ui/SingleConfig.xwt">
+      <widget href="ui/SingleConfig.xwt#/"/>
+    </sections>
+    <sections name="Multiple Config" sectionFile="ui/MultipleConfig.xwt">
+      <widget href="ui/MultipleConfig.xwt#/"/>
+    </sections>
+  </tabs>
+  <views name="Single Config" sections="//@tabs.0/@sections.0" automaticContext="true" datacontexts="//@dataContexts.0/@elements.0">
+    <constraints xsi:type="constraints:SimpleConstraint" name="isSingleConfig">
+      <constraintType href="ppe:/environment/org.eclipse.papyrus.views.properties/model/Environment.xmi#//@constraintTypes.0"/>
+      <properties xsi:type="constraints:ValueProperty" name="nsUri" value="http:///RSAToPapyrusParameters.ecore"/>
+      <properties xsi:type="constraints:ValueProperty" name="className" value="Config"/>
+    </constraints>
+  </views>
+  <views elementMultiplicity="-1" name="Multiple Config" sections="//@tabs.0/@sections.1" automaticContext="true" datacontexts="//@dataContexts.0/@elements.0">
+    <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleConfig">
+      <constraintType href="ppe:/environment/org.eclipse.papyrus.views.properties/model/Environment.xmi#//@constraintTypes.0"/>
+      <properties xsi:type="constraints:ValueProperty" name="className" value="Config"/>
+      <properties xsi:type="constraints:ValueProperty" name="nsUri" value="http:///RSAToPapyrusParameters.ecore"/>
+    </constraints>
+  </views>
+  <dataContexts name="RSAToPapyrusParameters" label="RSAToPapyrusParameters">
+    <elements name="Config">
+      <properties name="convertOpaqueExpressionToLiteralString" type="Boolean" description="If true, the Opaque Expressions with a single body and no language (or a single empty language) will be converted to LiteralString"/>
+      <properties name="removeUnmappedProfilesAndStereotypes" type="Boolean" description="If true, the unsupported RSA profiles and stereotypes will be deleted. This includes the Deployment profile and a few stereotypes"/>
+      <properties name="removeUnmappedAnnotations" type="Boolean" description="If true, the unmapped RSA EAnnotations will be deleted from the imported model"/>
+      <properties name="removeUnmappedDiagrams" label="" type="Boolean" description="If true, the diagrams which were not migrated will be removed. Otherwise, only the successfully imported diagrams will be removed"/>
+    </elements>
+    <modelElementFactory href="ppe:/environment/org.eclipse.papyrus.views.properties/model/Environment.xmi#//@modelElementFactories.0"/>
+  </dataContexts>
+</contexts:Context>
