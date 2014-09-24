@@ -26,6 +26,7 @@ import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.workspace.WorkspaceEditingDomainFactory;
 import org.eclipse.emf.workspace.util.WorkspaceSynchronizer;
+import org.eclipse.gmf.runtime.emf.core.GMFEditingDomainFactory;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.papyrus.uml.diagram.communication.edit.parts.ModelEditPart;
@@ -72,7 +73,6 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 		myEditingDomain = (AdapterFactoryEditingDomain) editingDomain;
 		@SuppressWarnings("serial")
 		Map<Resource, Boolean> map = new HashMap<Resource, Boolean>() {
-
 			@Override
 			public Boolean get(java.lang.Object key) {
 				if (!containsKey(key)) {
@@ -85,7 +85,6 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 		};
 		myEditingDomain.setResourceToReadOnlyMap(map);
 		myViewerRefreshRunnable = new Runnable() {
-
 			public void run() {
 				if (myViewer != null) {
 					myViewer.refresh();
@@ -93,7 +92,6 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 			}
 		};
 		myWorkspaceSynchronizer = new WorkspaceSynchronizer(editingDomain, new WorkspaceSynchronizer.Delegate() {
-
 			public void dispose() {
 			}
 
@@ -139,10 +137,12 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 		myWorkspaceSynchronizer.dispose();
 		myWorkspaceSynchronizer = null;
 		myViewerRefreshRunnable = null;
+
 		for (Iterator<Resource> it = myEditingDomain.getResourceSet().getResources().iterator(); it.hasNext();) {
 			Resource resource = it.next();
 			resource.unload();
 		}
+
 		((TransactionalEditingDomain) myEditingDomain).dispose();
 		myEditingDomain = null;
 	}
@@ -214,10 +214,12 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 			}
 			return result.toArray();
 		}
+
 		if (parentElement instanceof UMLNavigatorGroup) {
 			UMLNavigatorGroup group = (UMLNavigatorGroup) parentElement;
 			return group.getChildren();
 		}
+
 		if (parentElement instanceof UMLNavigatorItem) {
 			UMLNavigatorItem navigatorItem = (UMLNavigatorItem) parentElement;
 			if (navigatorItem.isLeaf() || !isOwnView(navigatorItem.getView())) {
@@ -225,6 +227,7 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 			}
 			return getViewChildren(navigatorItem.getView(), parentElement);
 		}
+
 		return EMPTY_ARRAY;
 	}
 

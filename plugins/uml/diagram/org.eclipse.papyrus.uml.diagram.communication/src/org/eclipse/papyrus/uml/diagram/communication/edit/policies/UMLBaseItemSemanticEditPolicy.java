@@ -339,6 +339,7 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		} else {
 			return getGEFWrapper(new MoveElementsCommand(req));
 		}
+
 	}
 
 	/**
@@ -413,7 +414,8 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 * @generated
 		 */
 		public boolean canCreateMessage_8009(Interaction container, Element source, Element target) {
-			return canExistMessage_8009(container, null, source, target);
+			return canExistMessage_8009(
+					container, null, source, target);
 		}
 
 		/**
@@ -421,11 +423,14 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 */
 		public boolean canCreateCommentAnnotatedElement_8010(Comment source, Element target) {
 			if (source != null) {
-				if (source.getAnnotatedElements().contains(target)) {
+				if (source.getAnnotatedElements()
+						.contains(target)) {
 					return false;
 				}
 			}
-			return canExistCommentAnnotatedElement_8010(source, target);
+
+			return canExistCommentAnnotatedElement_8010(
+					source, target);
 		}
 
 		/**
@@ -433,11 +438,14 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 */
 		public boolean canCreateConstraintConstrainedElement_8011(Constraint source, Element target) {
 			if (source != null) {
-				if (source.getConstrainedElements().contains(target)) {
+				if (source.getConstrainedElements()
+						.contains(target)) {
 					return false;
 				}
 			}
-			return canExistConstraintConstrainedElement_8011(source, target);
+
+			return canExistConstraintConstrainedElement_8011(
+					source, target);
 		}
 
 		/**
@@ -445,11 +453,17 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 */
 		public boolean canCreateDurationObservationEvent_8012(DurationObservation source, NamedElement target) {
 			if (source != null) {
-				if (source.getEvents().size() >= 2 || source.getEvents().contains(target)) {
+				if (source.getEvents()
+						.size() >= 2
+						||
+						source.getEvents()
+								.contains(target)) {
 					return false;
 				}
 			}
-			return canExistDurationObservationEvent_8012(source, target);
+
+			return canExistDurationObservationEvent_8012(
+					source, target);
 		}
 
 		/**
@@ -457,11 +471,14 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 */
 		public boolean canCreateTimeObservationEvent_8013(TimeObservation source, NamedElement target) {
 			if (source != null) {
-				if (source.getEvent() != null) {
+				if (source.getEvent()
+					!= null) {
 					return false;
 				}
 			}
-			return canExistTimeObservationEvent_8013(source, target);
+
+			return canExistTimeObservationEvent_8013(
+					source, target);
 		}
 
 		/**

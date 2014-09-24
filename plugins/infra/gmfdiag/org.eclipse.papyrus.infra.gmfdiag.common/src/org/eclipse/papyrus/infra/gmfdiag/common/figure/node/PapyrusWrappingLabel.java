@@ -19,6 +19,7 @@ import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.papyrus.infra.gmfdiag.common.figure.IPapyrusWrappingLabel;
+import org.eclipse.swt.graphics.Image;
 
 /**
  * This correct the bug where invisible label can be selected
@@ -26,6 +27,42 @@ import org.eclipse.papyrus.infra.gmfdiag.common.figure.IPapyrusWrappingLabel;
  * @author arthur daussy
  */
 public class PapyrusWrappingLabel extends WrappingLabel implements IPapyrusWrappingLabel{
+
+	/**
+	 * Constructor.
+	 *
+	 * @param image
+	 */
+	public PapyrusWrappingLabel(Image image) {
+		super(image);
+	}
+
+	/**
+	 * Constructor.
+	 *
+	 * @param text
+	 */
+	public PapyrusWrappingLabel(String text) {
+		super(text);
+	}
+
+	/**
+	 * Constructor.
+	 *
+	 */
+	public PapyrusWrappingLabel() {
+		super();
+	}
+
+	/**
+	 * Constructor.
+	 *
+	 * @param text
+	 * @param image
+	 */
+	public PapyrusWrappingLabel(String text, Image image) {
+		super(text, image);
+	}
 
 	/**
 	 * Bug 354622 - [ActivityDiagram] Object Flows selection prevent selecting other close elements.
@@ -66,6 +103,8 @@ public class PapyrusWrappingLabel extends WrappingLabel implements IPapyrusWrapp
 		
 		
 	}
+	
+	
 
 
 }
