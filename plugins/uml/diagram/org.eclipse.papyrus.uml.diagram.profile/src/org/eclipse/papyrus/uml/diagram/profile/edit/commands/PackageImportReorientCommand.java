@@ -122,7 +122,9 @@ public class PackageImportReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected CommandResult reorientSource() throws ExecutionException {
-		getLink().setImportingNamespace(getNewSource());
+		getLink().setImportingNamespace(
+				getNewSource()
+				);
 		return CommandResult.newOKCommandResult(getLink());
 	}
 
@@ -130,7 +132,9 @@ public class PackageImportReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected CommandResult reorientTarget() throws ExecutionException {
-		getLink().setImportedPackage(getNewTarget());
+		getLink().setImportedPackage(
+				getNewTarget()
+				);
 		return CommandResult.newOKCommandResult(getLink());
 	}
 

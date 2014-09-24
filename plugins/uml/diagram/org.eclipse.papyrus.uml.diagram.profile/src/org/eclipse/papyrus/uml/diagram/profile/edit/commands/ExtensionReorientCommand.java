@@ -94,10 +94,12 @@ public class ExtensionReorientCommand extends EditElementCommand {
 		if (!(oldEnd instanceof Class && newEnd instanceof Class)) {
 			return false;
 		}
-		if (getLink().getOwnedEnds().size() != 1) {
+		if (getLink().getOwnedEnds()
+				.size() != 1) {
 			return false;
 		}
-		Property source = getLink().getOwnedEnds().get(0);
+		Property source = getLink().getOwnedEnds()
+				.get(0);
 		if (!(getLink().eContainer() instanceof Package)) {
 			return false;
 		}
@@ -126,8 +128,10 @@ public class ExtensionReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected CommandResult reorientSource() throws ExecutionException {
-		getLink().getOwnedEnds().remove(getOldSource());
-		getLink().getOwnedEnds().add(getNewSource());
+		getLink().getOwnedEnds()
+				.remove(getOldSource());
+		getLink().getOwnedEnds()
+				.add(getNewSource());
 		return CommandResult.newOKCommandResult(getLink());
 	}
 

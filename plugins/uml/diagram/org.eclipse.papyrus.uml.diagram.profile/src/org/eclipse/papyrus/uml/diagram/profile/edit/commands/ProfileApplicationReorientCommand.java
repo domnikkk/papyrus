@@ -122,7 +122,9 @@ public class ProfileApplicationReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected CommandResult reorientSource() throws ExecutionException {
-		getLink().setApplyingPackage(getNewSource());
+		getLink().setApplyingPackage(
+				getNewSource()
+				);
 		return CommandResult.newOKCommandResult(getLink());
 	}
 
@@ -130,7 +132,9 @@ public class ProfileApplicationReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected CommandResult reorientTarget() throws ExecutionException {
-		getLink().setAppliedProfile(getNewTarget());
+		getLink().setAppliedProfile(
+				getNewTarget()
+				);
 		return CommandResult.newOKCommandResult(getLink());
 	}
 

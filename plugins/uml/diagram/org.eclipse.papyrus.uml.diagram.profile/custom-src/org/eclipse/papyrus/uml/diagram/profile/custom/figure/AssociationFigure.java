@@ -10,6 +10,7 @@
  * Contributors:
  *  Patrick Tessier (CEA LIST) Patrick.tessier@cea.fr - Initial API and implementation
  *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Imported code from the class diagram
+ *  Céline Janssens (ALL4TEC) celine.Janssens@all4tec.net	- Bug 440230
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.profile.custom.figure;
 
@@ -92,7 +93,7 @@ public class AssociationFigure extends UMLEdgeFigure {
 	protected void createContents() {
 		super.createContents();
 
-		fAssociationNameLabel = new WrappingLabel();
+		fAssociationNameLabel = new PapyrusWrappingLabel();
 		fAssociationNameLabel.setText(""); //$NON-NLS-1$
 
 		this.add(fAssociationNameLabel);
