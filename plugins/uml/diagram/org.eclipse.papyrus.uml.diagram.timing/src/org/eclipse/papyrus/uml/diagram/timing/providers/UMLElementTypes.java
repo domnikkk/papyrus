@@ -258,28 +258,73 @@ public class UMLElementTypes {
 		Object type = hint.getAdapter(IElementType.class);
 		if (elements == null) {
 			elements = new IdentityHashMap<IElementType, ENamedElement>();
+
 			elements.put(Package_1, UMLPackage.eINSTANCE.getPackage());
+
+
 			elements.put(Interaction_2, UMLPackage.eINSTANCE.getInteraction());
+
+
 			elements.put(Lifeline_19, UMLPackage.eINSTANCE.getLifeline());
+
+
 			elements.put(Lifeline_20, UMLPackage.eINSTANCE.getLifeline());
+
+
 			elements.put(StateInvariant_11, UMLPackage.eINSTANCE.getStateInvariant());
+
+
 			elements.put(StateInvariant_28, UMLPackage.eINSTANCE.getStateInvariant());
+
+
 			elements.put(OccurrenceSpecification_12, UMLPackage.eINSTANCE.getOccurrenceSpecification());
+
+
 			elements.put(MessageOccurrenceSpecification_13, UMLPackage.eINSTANCE.getMessageOccurrenceSpecification());
+
+
 			elements.put(TimeConstraint_15, UMLPackage.eINSTANCE.getTimeConstraint());
+
+
 			elements.put(TimeObservation_16, UMLPackage.eINSTANCE.getTimeObservation());
+
+
 			elements.put(DurationConstraint_18, UMLPackage.eINSTANCE.getDurationConstraint());
+
+
 			elements.put(DurationObservation_17, UMLPackage.eINSTANCE.getDurationObservation());
+
+
 			elements.put(GeneralOrdering_67, UMLPackage.eINSTANCE.getGeneralOrdering());
+
+
 			elements.put(DestructionOccurrenceSpecification_27, UMLPackage.eINSTANCE.getDestructionOccurrenceSpecification());
+
+
 			elements.put(Lifeline_40, UMLPackage.eINSTANCE.getLifeline());
+
+
 			elements.put(Gate_69, UMLPackage.eINSTANCE.getGate());
+
+
 			elements.put(Message_3, UMLPackage.eINSTANCE.getMessage());
+
+
 			elements.put(Message_4, UMLPackage.eINSTANCE.getMessage());
+
+
 			elements.put(Message_41, UMLPackage.eINSTANCE.getMessage());
+
+
 			elements.put(Message_44, UMLPackage.eINSTANCE.getMessage());
+
+
 			elements.put(Message_47, UMLPackage.eINSTANCE.getMessage());
+
+
 			elements.put(Message_50, UMLPackage.eINSTANCE.getMessage());
+
+
 			elements.put(Message_53, UMLPackage.eINSTANCE.getMessage());
 		}
 		return elements.get(type);
