@@ -233,55 +233,65 @@ The simplest way to discover new style properties is to use the Appearance tab o
 
 This table lists the most common properties:
 
+
 {| class="wikitable"
 |-
-! Property name !! Value type !! Initial Value !! Applies to !! Comment
+! Property&nbsp;name !! Value&nbsp;type !! Initial&nbsp;Value !! Applies&nbsp;to !! Comment
 |-
-| fillColor || ''Color'' || white || Shapes || In the default "Papyrus Theme", the fill color depends on the type of element. The used colors are #C3D1D5 (Light blue, Default), #C3D7DD (Lighter blue, Class), #FFFFCC (Yellow, Comment), #C8FFE6 (Teal, Constraints)
+| fillColor || Color || white || Shapes || In the default "Papyrus Theme", the fill color depends on the type of element. The used colors are #C3D1D5 (Light blue, Default), #C3D7DD (Lighter blue, Class), #FFFFCC (Yellow, Comment), #C8FFE6 (Teal, Constraints)
 |-
-| transparency || ''integer'' || 0 || Shapes || Value is a percentage: values in the range (0, 100) are supported. Transparency works only if the gradient is activated: [https://bugs.eclipse.org/bugs/show_bug.cgi?id=419320 Bug 419320]
+| transparency || integer || 0 || Shapes || Value is a percentage: values in the range (0, 100) are supported. Transparency works only if the gradient is activated: [https://bugs.eclipse.org/bugs/show_bug.cgi?id=419320 Bug 419320]
 |-
-| gradient || <nowiki>[</nowiki>''Color''&nbsp;''Color''&nbsp;<nowiki>[</nowiki>''horizontal&nbsp;|&nbsp;vertical''<nowiki>]</nowiki>&nbsp;| ''none''<nowiki>]</nowiki> || none || Shapes || Examples: "white blue horizontal" or "none"
+| gradient || <nowiki>[Color Color [ horizontal | vertical ] | none]</nowiki> || none || Shapes || Examples: "white blue horizontal" or "none"
 |-
-| fontColor || ''Color'' || black || Shapes,&nbsp;floating&nbsp;labels || Comments support HTML syntax. Most style-properties have no effect on comments
+| fontColor || Color || black || Shapes, floating labels || Comments support HTML syntax. Most style-properties have no effect on comments
 |-
-| fontName || ''String'' || "Segoe UI" || Shapes,&nbsp;floating&nbsp;labels || Most fonts are platform-specific. The list of available Fonts can be found in the "Appearance" tab of the properties view
+| fontName || String || "Segoe UI" || Shapes, floating labels || Most fonts are platform-specific. The list of available Fonts can be found in the "Appearance" tab of the properties view
 |-
-| fontSize || ''integer'' || 9 || Shapes,&nbsp;floating&nbsp;labels ||&nbsp;
+| fontSize || integer || 9 || Shapes, floating labels || 
 |-
-| bold || ''boolean'' || false || Shapes,&nbsp;floating&nbsp;labels ||&nbsp; 
+| bold || boolean || false || Shapes, floating labels ||  
 |-
-| italic || ''boolean'' || false || Shapes,&nbsp;floating&nbsp;labels || In UML, "italic" means "isAbstract=true". This property is disabled for all elements which can be abstract (e.g. Class)
+| italic || boolean || false || Shapes, floating labels || In UML, "italic" means "isAbstract=true". This property is disabled for all elements which can be abstract (e.g. Class)
 |-
-| underline || ''boolean'' || false || Shapes,&nbsp;floating&nbsp;labels || In UML, "underline" means "isStatic=true". This property is disabled for all elements which can be static (e.g. Property)
+| underline || boolean || false || Shapes, floating labels || In UML, "underline" means "isStatic=true". This property is disabled for all elements which can be static (e.g. Property)
 |-
-| strikeThrough || ''boolean'' || false || Shapes,&nbsp;floating&nbsp;labels ||&nbsp; 
+| strikeThrough || boolean || false || Shapes, floating labels ||  
 |-
-| visible || ''boolean'' || true || All elements || Although this property will work for any diagram elements, it is probably a bad idea to use it with anything else than a Compartment or a Label 
+| visible || boolean || true || All elements || Although this property will work for any diagram elements, it is probably a bad idea to use it with anything else than a Compartment or a Label 
 |-
-| collapsed || ''boolean'' || false || Compartments || &nbsp;
+| collapsed || boolean || false || Compartments ||  
 |-
-| showTitle || ''boolean'' || false || Compartments || &nbsp;
+| showTitle || boolean || false || Compartments ||  
 |-
-| lineColor || ''Color'' || black || Shapes, Connectors || &nbsp;
+| lineColor || Color || black || Shapes, Connectors ||  
 |-
-| lineWidth || ''integer'' || -1 || Shapes, Connectors || -1 means "default", and typically corresponds to 1px
+| lineWidth || integer || -1 || Shapes, Connectors || -1 means "default", and typically corresponds to 1px
 |-
-| routing || <nowiki>[</nowiki>''Manual&nbsp;|&nbsp;Rectilinear&nbsp;|&nbsp;Tree''<nowiki>]</nowiki> || Manual || Connectors || The value is case-sensitive: don't forget the initial Capital
+| routing || <nowiki>[Manual | Rectilinear | Tree]</nowiki> || Manual || Connectors || The value is case-sensitive: don't forget the initial Capital
 |-
-| roundedBendpointsRadius || ''integer'' || 0 || Connectors || Applies to connectors with routingStyle = Rectilinear or Tree
+| roundedBendpointsRadius || integer || 0 || Connectors || Applies to connectors with routingStyle = Rectilinear or Tree
 |-
-| smoothness || <nowiki>[</nowiki>''None&nbsp;|&nbsp;Normal&nbsp;|&nbsp;Less&nbsp;|&nbsp;More''<nowiki>]</nowiki> || None || Connectors || &nbsp; 
+| smoothness || <nowiki>[None | Normal | Less | More]</nowiki> || None || Connectors ||   
 |-
-| avoidObstructions || ''boolean'' || false || Connectors || &nbsp;
+| avoidObstructions || boolean || false || Connectors ||  
 |-
-| closestDistance || ''boolean'' || false || Connectors || &nbsp;
+| closestDistance || boolean || false || Connectors ||  
 |-
-| jumpLinkStatus || <nowiki>[</nowiki>''None&nbsp;|&nbsp;All&nbsp;|&nbsp;Below&nbsp;|&nbsp;Above''<nowiki>]</nowiki> || None || Connectors || It is not recommended to use jump links via CSS, as it gives strange results for overlapping connectors
+| jumpLinkStatus || <nowiki>[None | All | Below | Above]</nowiki> || None || Connectors || It is not recommended to use jump links via CSS, as it gives strange results for overlapping connectors
 |-
-| jumpLinkType || <nowiki>[</nowiki>''Semicircle&nbsp;|&nbsp;Square&nbsp;|&nbsp;Chamfered''<nowiki>]</nowiki> || Semicircle || Connectors || &nbsp;
+| jumpLinkType || <nowiki>[Semicircle | Square | Chamfered]</nowiki> || Semicircle || Connectors ||  
 |-
-| jumpLinkReverse || ''boolean'' || false || Connectors || &nbsp;
+| jumpLinkReverse || boolean || false || Connectors ||  
+|-
+| leftMarginLabel || integer || 0 || Labels || Define the left margin of the label in pixel. This is the space between the text box and his container
+|-
+| topMarginLabel || integer || 0 || Labels || Define the top margin of the label in pixel. This is the space between the text box and his container
+|-
+| rightMarginLabel || integer || 0 || Labels || Define the right margin of the label in pixel. This is the space between the text box and his container
+|-
+| bottomMarginLabel || integer || 0 || Labels || Define the bottom margin of the label in pixel. This is the space between the text box and his container
+|-
 |}
 
 The following properties can be used to bypass the standard UML notation. They can typically be used for pure DSML notations:
