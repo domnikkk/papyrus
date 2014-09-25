@@ -8,7 +8,7 @@
  *
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
- *  Céline Janssens (ALL4TEC) celine.janssens@all4tec.net
+ *  Céline Janssens (ALL4TEC) celine.janssens@all4tec.net - Bug 440230
  *  Gabriel Pascual (ALL4TEC) gabriel.pascual@all4tec.net - Bug 443235
  *  Mickaël ADAM (ALL4TEC) mickael.adam@all4tec.net - text alignment implementation
  *
@@ -52,12 +52,22 @@ public abstract class PapyrusLabelEditPart extends LabelEditPart {
 	/**
 	 * CSS Integer property to define the horizontal Label Margin
 	 */
-	static final String X_MARGIN_PROPERTY = "xMarginLabel"; //$NON-NLS$
+	static final String TOP_MARGIN_PROPERTY = "TopMarginLabel"; //$NON-NLS$
 
 	/**
 	 * CSS Integer property to define the vertical Label Margin
 	 */
-	static final String Y_MARGIN_PROPERTY = "yMarginLabel"; //$NON-NLS$
+	static final String LEFT_MARGIN_PROPERTY = "LeftMarginLabel"; //$NON-NLS$
+	
+	/**
+	 * CSS Integer property to define the horizontal Label Margin
+	 */
+	static final String BOTTOM_MARGIN_PROPERTY = "BottomMarginLabel"; //$NON-NLS$
+
+	/**
+	 * CSS Integer property to define the vertical Label Margin
+	 */
+	static final String RIGHT_MARGIN_PROPERTY = "RightMarginLabel"; //$NON-NLS$
 
 	/** The Constant TEXT_ALIGNMENT. */
 	private static final String TEXT_ALIGNMENT = "textAlignment"; //$NON-NLS$
@@ -355,22 +365,26 @@ public abstract class PapyrusLabelEditPart extends LabelEditPart {
 	public void refreshLabelMargin() {
 		IFigure figure = null;
 
-		int horizontalMargin = DEFAULT_MARGIN;
-		int verticalMargin = DEFAULT_MARGIN;
+		int leftMargin = DEFAULT_MARGIN;
+		int rightMargin = DEFAULT_MARGIN;
+		int topMargin = DEFAULT_MARGIN;
+		int bottomMargin = DEFAULT_MARGIN;
 
 		Object model = this.getModel();
 
 
 
 		if (model instanceof View) {
-			horizontalMargin = NotationUtils.getIntValue((View) model, Y_MARGIN_PROPERTY, DEFAULT_MARGIN);
-			verticalMargin = NotationUtils.getIntValue((View) model, X_MARGIN_PROPERTY, DEFAULT_MARGIN);
+			leftMargin = NotationUtils.getIntValue((View) model, LEFT_MARGIN_PROPERTY, DEFAULT_MARGIN);
+			rightMargin = NotationUtils.getIntValue((View) model, RIGHT_MARGIN_PROPERTY, DEFAULT_MARGIN);
+			topMargin = NotationUtils.getIntValue((View) model, TOP_MARGIN_PROPERTY, DEFAULT_MARGIN);
+			bottomMargin = NotationUtils.getIntValue((View) model, BOTTOM_MARGIN_PROPERTY, DEFAULT_MARGIN);
 		}
 
 		figure = ((GraphicalEditPart) this).getFigure();
 
 		if (figure instanceof IPapyrusWrappingLabel) {
-			((IPapyrusWrappingLabel) figure).setMarginLabel(verticalMargin,horizontalMargin);
+			((IPapyrusWrappingLabel) figure).setMarginLabel(leftMargin, topMargin, rightMargin, bottomMargin);
 		}
 
 	}

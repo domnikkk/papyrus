@@ -31,4 +31,16 @@ public interface IPapyrusWrappingLabel extends IFigure {
 	 */
 	void setMarginLabel(int xMargin , int yMargin);
 
+
+
+
+	
+	/**
+	 * Set the margin of the Label in the horizontal direction and vertical Direction
+	 * @param xMargin Horizontal Margin
+	 * @param yMargin Vertical Margin
+	 * 
+	 */
+	void setMarginLabel(int leftMargin , int topMargin, int rightMargin, int bottomMargin);
+
 }

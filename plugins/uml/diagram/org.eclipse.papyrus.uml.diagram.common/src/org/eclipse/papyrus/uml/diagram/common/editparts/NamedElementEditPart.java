@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2008 CEA LIST.
+ * Copyright (c) 2008-2014 CEA LIST.
  *
  *
  * All rights reserved. This program and the accompanying materials
@@ -9,6 +9,7 @@
  *
  * Contributors:
  *  Patrick Tessier (CEA LIST) Patrick.tessier@cea.fr - Initial API and implementation
+ *  Céline Janssens (ALL4TEC) celine.janssens@all4tec.net - Bug 440230 : Label Margin
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.common.editparts;
@@ -59,12 +60,23 @@ public abstract class NamedElementEditPart extends UMLNodeEditPart implements IU
 	/**
 	 * CSS Integer property to define the horizontal Label Margin
 	 */
-	public static final String X_MARGIN_PROPERTY = "xMarginLabel"; //$NON-NLS$
-	
+	public static final String TOP_MARGIN_PROPERTY = "TopMarginLabel"; //$NON-NLS$
+
 	/**
 	 * CSS Integer property to define the vertical Label Margin
 	 */
-	public static final String Y_MARGIN_PROPERTY = "yMarginLabel"; //$NON-NLS$
+	public static final String LEFT_MARGIN_PROPERTY = "LeftMarginLabel"; //$NON-NLS$
+	
+	/**
+	 * CSS Integer property to define the horizontal Label Margin
+	 */
+	public static final String BOTTOM_MARGIN_PROPERTY = "BottomMarginLabel"; //$NON-NLS$
+
+	/**
+	 * CSS Integer property to define the vertical Label Margin
+	 */
+	public static final String RIGHT_MARGIN_PROPERTY = "RightMarginLabel"; //$NON-NLS$
+
 	
 	
 	/**
@@ -124,23 +136,30 @@ public abstract class NamedElementEditPart extends UMLNodeEditPart implements IU
 	private void refreshLabelMargin() {
 		IFigure figure = null;
 
-		int horizontalMargin = DEFAULT_MARGIN;
-		int verticalMargin= DEFAULT_MARGIN;
+		int leftMargin = DEFAULT_MARGIN;
+		int rightMargin = DEFAULT_MARGIN;
+		int topMargin = DEFAULT_MARGIN;
+		int bottomMargin = DEFAULT_MARGIN;
 
 		Object model = this.getModel();
 
+
+
 		if (model instanceof View) {
-			horizontalMargin = NotationUtils.getIntValue((View)model, Y_MARGIN_PROPERTY, DEFAULT_MARGIN);
-			verticalMargin = NotationUtils.getIntValue((View)model, X_MARGIN_PROPERTY, DEFAULT_MARGIN);
+			leftMargin = NotationUtils.getIntValue((View) model, LEFT_MARGIN_PROPERTY, DEFAULT_MARGIN);
+			rightMargin = NotationUtils.getIntValue((View) model, RIGHT_MARGIN_PROPERTY, DEFAULT_MARGIN);
+			topMargin = NotationUtils.getIntValue((View) model, TOP_MARGIN_PROPERTY, DEFAULT_MARGIN);
+			bottomMargin = NotationUtils.getIntValue((View) model, BOTTOM_MARGIN_PROPERTY, DEFAULT_MARGIN);
 		}
 
+		// Get all children figures of the Edit Part and set margin according to the retrieve values
 		if (this instanceof IPapyrusEditPart){
 			figure = ((IPapyrusEditPart) this).getPrimaryShape();
 			List<IPapyrusWrappingLabel> labelChildFigureList = FigureUtils.findChildFigureInstances(figure, IPapyrusWrappingLabel.class);
 
 			for (IPapyrusWrappingLabel label : labelChildFigureList){
 				if (label != null){
-					label.setMarginLabel(verticalMargin, horizontalMargin);
+					label.setMarginLabel(leftMargin, topMargin, rightMargin, bottomMargin);
 				}
 			}
 		}

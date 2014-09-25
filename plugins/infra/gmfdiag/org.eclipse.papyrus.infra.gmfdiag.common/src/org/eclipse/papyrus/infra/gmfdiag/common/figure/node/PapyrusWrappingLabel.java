@@ -88,19 +88,30 @@ public class PapyrusWrappingLabel extends WrappingLabel implements IPapyrusWrapp
 	/**
 	 * @see org.eclipse.papyrus.infra.gmfdiag.common.figure.IPapyrusWrappingLabel#setMarginLabel(int, int)
 	 *
-	 * @param xMargin Horizontal margin
-	 * @param yMargin Vertical margin
+	 * @param xMargin Vertical margin
+	 * @param yMargin Horizontal margin
 	 */
 	@Override
 	public void setMarginLabel(int xMargin, int yMargin) {
 
-		MarginBorder mb = new MarginBorder(xMargin, yMargin, xMargin, yMargin);
+		this.setMarginLabel(xMargin, yMargin , xMargin, yMargin);
+		
+	}
+
+	/**
+	 * @see org.eclipse.papyrus.infra.gmfdiag.common.figure.IPapyrusWrappingLabel#setMarginLabel(int, int, int, int)
+	 *
+	 * @param leftMargin
+	 * @param topMargin
+	 * @param rightMargin
+	 * @param bottomMargin
+	 */
+	@Override
+	public void setMarginLabel(int leftMargin, int topMargin, int rightMargin, int bottomMargin) {
+		MarginBorder mb = new MarginBorder(topMargin, leftMargin, bottomMargin, rightMargin);
 		this.setBorder(mb);
 		repaint();
 		revalidate();
-		
-		
-		
 		
 	}
 	
