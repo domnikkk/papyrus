@@ -61,7 +61,7 @@ public class UMLVisualIDRegistry {
 		while (view != diagram) {
 			EAnnotation annotation = view.getEAnnotation("Shortcut"); //$NON-NLS-1$
 			if (annotation != null) {
-				return (String) annotation.getDetails().get("modelID"); //$NON-NLS-1$
+				return annotation.getDetails().get("modelID"); //$NON-NLS-1$
 			}
 			view = (View) view.eContainer();
 		}
@@ -5753,7 +5753,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isProperty_3070(View containerView, Property domainElement) {
-		// Property / CollaborationRole constraint		
+		// Property / CollaborationRole constraint
 		// Restriction for the case where domainElement owner is a Collaboration
 		// If the domainElement is not referenced as one of its owner role
 		// then it should be considered as a Property creation on Collaboration,

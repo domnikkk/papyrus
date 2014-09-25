@@ -48,7 +48,6 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.IPrimaryEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.parts.IDiagramGraphicalViewer;
 import org.eclipse.gmf.runtime.diagram.ui.parts.IDiagramWorkbenchPart;
 import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
-import org.eclipse.gmf.runtime.emf.core.GMFEditingDomainFactory;
 import org.eclipse.gmf.runtime.emf.core.util.EMFCoreUtil;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.View;
@@ -139,12 +138,13 @@ public class UMLDiagramEditorUtil {
 	 * @generated
 	 */
 	public static Resource createDiagram(URI diagramURI, URI modelURI, IProgressMonitor progressMonitor) {
-		TransactionalEditingDomain editingDomain = GMFEditingDomainFactory.INSTANCE.createEditingDomain();
+		TransactionalEditingDomain editingDomain = WorkspaceEditingDomainFactory.INSTANCE.createEditingDomain();
 		progressMonitor.beginTask(Messages.UMLDiagramEditorUtil_CreateDiagramProgressTask, 3);
 		final Resource diagramResource = editingDomain.getResourceSet().createResource(diagramURI);
 		final Resource modelResource = editingDomain.getResourceSet().createResource(modelURI);
 		final String diagramName = diagramURI.lastSegment();
 		AbstractTransactionalCommand command = new AbstractTransactionalCommand(editingDomain, Messages.UMLDiagramEditorUtil_CreateDiagramCommandLabel, Collections.EMPTY_LIST) {
+			@Override
 			protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 				Package model = createInitialModel();
 				attachModelToResource(model, modelResource);

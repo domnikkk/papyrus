@@ -48,6 +48,7 @@ public class DiagramEditorContextMenuProvider extends DiagramContextMenuProvider
 			TransactionUtil.getEditingDomain(
 					(EObject) getViewer().getContents().getModel()).runExclusive(new Runnable() {
 
+				@Override
 				public void run() {
 					ContributionItemService.getInstance().contributeToPopupMenu(
 							DiagramEditorContextMenuProvider.this, part);

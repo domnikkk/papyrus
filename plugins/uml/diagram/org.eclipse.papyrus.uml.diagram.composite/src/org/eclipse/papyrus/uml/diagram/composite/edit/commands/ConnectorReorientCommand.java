@@ -62,10 +62,10 @@ public class ConnectorReorientCommand extends EditElementCommand {
 		if (false == getElementToEdit() instanceof Connector) {
 			return false;
 		}
-		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
+		if (reorientDirection == ReorientRequest.REORIENT_SOURCE) {
 			return canReorientSource();
 		}
-		if (reorientDirection == ReorientRelationshipRequest.REORIENT_TARGET) {
+		if (reorientDirection == ReorientRequest.REORIENT_TARGET) {
 			return canReorientTarget();
 		}
 		return false;
@@ -82,7 +82,7 @@ public class ConnectorReorientCommand extends EditElementCommand {
 				.size() != 1) {
 			return false;
 		}
-		ConnectorEnd target = (ConnectorEnd) getLink().getEnds()
+		ConnectorEnd target = getLink().getEnds()
 				.get(0);
 		if (!(getLink().eContainer() instanceof StructuredClassifier)) {
 			return false;
@@ -102,7 +102,7 @@ public class ConnectorReorientCommand extends EditElementCommand {
 				.size() != 1) {
 			return false;
 		}
-		ConnectorEnd source = (ConnectorEnd) getLink().getEnds()
+		ConnectorEnd source = getLink().getEnds()
 				.get(0);
 		if (!(getLink().eContainer() instanceof StructuredClassifier)) {
 			return false;
@@ -119,10 +119,10 @@ public class ConnectorReorientCommand extends EditElementCommand {
 		if (!canExecute()) {
 			throw new ExecutionException("Invalid arguments in reorient link command"); //$NON-NLS-1$
 		}
-		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
+		if (reorientDirection == ReorientRequest.REORIENT_SOURCE) {
 			return reorientSource();
 		}
-		if (reorientDirection == ReorientRelationshipRequest.REORIENT_TARGET) {
+		if (reorientDirection == ReorientRequest.REORIENT_TARGET) {
 			return reorientTarget();
 		}
 		throw new IllegalStateException();

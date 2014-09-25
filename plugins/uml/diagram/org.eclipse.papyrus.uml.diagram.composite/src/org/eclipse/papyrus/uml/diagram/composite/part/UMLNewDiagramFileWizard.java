@@ -121,6 +121,7 @@ public class UMLNewDiagramFileWizard extends Wizard {
 				new AbstractTransactionalCommand(
 						myEditingDomain, Messages.UMLNewDiagramFileWizard_InitDiagramCommand, affectedFiles) {
 
+					@Override
 					protected CommandResult doExecuteWithResult(
 							IProgressMonitor monitor, IAdaptable info)
 							throws ExecutionException {

@@ -160,6 +160,7 @@ public class UMLTextSelectionEditPolicy extends SelectionEditPolicy implements I
 	protected IFigure createFocusFeedbackFigure() {
 		return new Figure() {
 
+			@Override
 			protected void paintFigure(Graphics graphics) {
 				graphics.drawFocus(getBounds().getResized(-1, -1));
 			}
@@ -214,6 +215,7 @@ public class UMLTextSelectionEditPolicy extends SelectionEditPolicy implements I
 	private FigureListener getHostPositionListener() {
 		if (hostPositionListener == null) {
 			hostPositionListener = new FigureListener() {
+				@Override
 				public void figureMoved(IFigure source) {
 					refreshFeedback();
 				}

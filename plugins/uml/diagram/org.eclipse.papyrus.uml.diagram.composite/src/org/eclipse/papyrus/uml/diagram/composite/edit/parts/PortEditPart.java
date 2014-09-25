@@ -107,6 +107,7 @@ public class PortEditPart extends AbstractBorderEditPart {
 	protected LayoutEditPolicy createLayoutEditPolicy() {
 		org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy lep = new org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy() {
 
+			@Override
 			protected EditPolicy createChildEditPolicy(EditPart child) {
 				View childView = (View) child.getModel();
 				switch (UMLVisualIDRegistry.getVisualID(childView)) {
@@ -114,6 +115,7 @@ public class PortEditPart extends AbstractBorderEditPart {
 				case PortAppliedStereotypeEditPart.VISUAL_ID:
 					return new BorderItemSelectionEditPolicy() {
 
+						@Override
 						protected List<?> createSelectionHandles() {
 							MoveHandle mh = new MoveHandle((GraphicalEditPart) getHost());
 							mh.setBorder(null);
@@ -129,10 +131,12 @@ public class PortEditPart extends AbstractBorderEditPart {
 				return result;
 			}
 
+			@Override
 			protected Command getMoveChildrenCommand(Request request) {
 				return null;
 			}
 
+			@Override
 			protected Command getCreateCommand(CreateRequest request) {
 				return null;
 			}

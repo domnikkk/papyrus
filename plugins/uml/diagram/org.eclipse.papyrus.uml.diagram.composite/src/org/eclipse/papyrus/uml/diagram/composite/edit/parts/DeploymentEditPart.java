@@ -19,7 +19,6 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.uml.diagram.common.editparts.UMLConnectionNodeEditPart;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeDeploymentLabelDisplayEditPolicy;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeLabelDisplayEditPolicy;
-import org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeLinkLabelDisplayEditPolicy;
 import org.eclipse.papyrus.uml.diagram.common.figure.edge.DashedEdgeFigure;
 import org.eclipse.papyrus.uml.diagram.composite.edit.policies.DeploymentItemSemanticEditPolicy;
 
@@ -47,7 +46,7 @@ public class DeploymentEditPart extends UMLConnectionNodeEditPart implements ITr
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new DeploymentItemSemanticEditPolicy());
-		installEditPolicy(AppliedStereotypeLinkLabelDisplayEditPolicy.STEREOTYPE_LABEL_POLICY, new AppliedStereotypeDeploymentLabelDisplayEditPolicy());
+		installEditPolicy(AppliedStereotypeLabelDisplayEditPolicy.STEREOTYPE_LABEL_POLICY, new AppliedStereotypeDeploymentLabelDisplayEditPolicy());
 	}
 
 	/**

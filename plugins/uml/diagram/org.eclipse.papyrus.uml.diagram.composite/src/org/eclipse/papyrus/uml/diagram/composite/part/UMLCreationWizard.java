@@ -119,6 +119,7 @@ public class UMLCreationWizard extends Wizard implements INewWizard {
 
 		domainModelFilePage = new UMLCreationWizardPage("DomainModelFile", getSelection(), "uml") { //$NON-NLS-1$ //$NON-NLS-2$
 
+			@Override
 			public void setVisible(boolean visible) {
 				if (visible) {
 					String fileName = diagramModelFilePage.getFileName();
@@ -142,6 +143,7 @@ public class UMLCreationWizard extends Wizard implements INewWizard {
 		IRunnableWithProgress op =
 				new WorkspaceModifyOperation(null) {
 
+					@Override
 					protected void execute(IProgressMonitor monitor)
 							throws CoreException, InterruptedException {
 						diagram = UMLDiagramEditorUtil.createDiagram(diagramModelFilePage.getURI(),

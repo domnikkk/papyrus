@@ -94,6 +94,7 @@ public class DataTypeEditPartCN extends NamedElementEditPart {
 	protected LayoutEditPolicy createLayoutEditPolicy() {
 		org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy lep = new org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy() {
 
+			@Override
 			protected EditPolicy createChildEditPolicy(EditPart child) {
 				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 				if (result == null) {
@@ -102,10 +103,12 @@ public class DataTypeEditPartCN extends NamedElementEditPart {
 				return result;
 			}
 
+			@Override
 			protected Command getMoveChildrenCommand(Request request) {
 				return null;
 			}
 
+			@Override
 			protected Command getCreateCommand(CreateRequest request) {
 				return null;
 			}
@@ -154,14 +157,14 @@ public class DataTypeEditPartCN extends NamedElementEditPart {
 
 		if (childEditPart instanceof DataTypeAttributeCompartmentEditPartCN) {
 			IFigure pane = getPrimaryShape().getAttributeCompartmentFigure();
-			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
+			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way
 			pane.add(((DataTypeAttributeCompartmentEditPartCN) childEditPart).getFigure());
 			return true;
 		}
 
 		if (childEditPart instanceof DataTypeOperationCompartmentEditPartCN) {
 			IFigure pane = getPrimaryShape().getOperationCompartmentFigure();
-			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
+			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way
 			pane.add(((DataTypeOperationCompartmentEditPartCN) childEditPart).getFigure());
 			return true;
 		}

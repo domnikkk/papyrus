@@ -142,7 +142,7 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 			if (view instanceof View) {
 				Integer id = new Integer(UMLVisualIDRegistry.getVisualID((View) view));
 				request.getExtendedData().put(VISUAL_ID_KEY, id);
-				request.getExtendedData().put(GRAPHICAL_RECONNECTED_EDGE, (View) view);
+				request.getExtendedData().put(GRAPHICAL_RECONNECTED_EDGE, view);
 			}
 		}
 		return super.getCommand(request);

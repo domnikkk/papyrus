@@ -248,6 +248,7 @@ public class UMLDiagramEditor extends UmlGmfDiagramEditor implements IProviderCh
 		super.configureDiagramEditDomain();
 		getDiagramEditDomain().getDiagramCommandStack().addCommandStackListener(new CommandStackListener() {
 
+			@Override
 			public void commandStackChanged(EventObject event) {
 				firePropertyChange(IEditorPart.PROP_DIRTY);
 			}
@@ -353,6 +354,7 @@ public class UMLDiagramEditor extends UmlGmfDiagramEditor implements IProviderCh
 			 * with a defaultTool that is the SelectToolEx that undestands how to handle the enter
 			 * key which will result in the creation of the shape also.
 			 */
+			@Override
 			protected void configurePaletteViewer(PaletteViewer viewer) {
 				super.configurePaletteViewer(viewer);
 
@@ -370,6 +372,7 @@ public class UMLDiagramEditor extends UmlGmfDiagramEditor implements IProviderCh
 				viewer.setCustomizer(createPaletteCustomizer());
 			}
 
+			@Override
 			public PaletteViewer createPaletteViewer(Composite parent) {
 				PaletteViewer pViewer = constructPaletteViewer();
 				pViewer.createControl(parent);
@@ -392,11 +395,12 @@ public class UMLDiagramEditor extends UmlGmfDiagramEditor implements IProviderCh
 						 * whenever a key is released, and the Tool is in the proper state. Override
 						 * to support pressing the enter key to create a shape or connection
 						 * (between two selected shapes)
-						 * 
+						 *
 						 * @param event
 						 *            the KeyEvent
 						 * @return <code>true</code> if KeyEvent was handled in some way
 						 */
+						@Override
 						public boolean keyReleased(KeyEvent event) {
 
 							if (event.keyCode == SWT.Selection) {
@@ -441,9 +445,10 @@ public class UMLDiagramEditor extends UmlGmfDiagramEditor implements IProviderCh
 						/**
 						 * Override to support double-clicking a palette tool entry to create a
 						 * shape or connection (between two selected shapes).
-						 * 
+						 *
 						 * @see MouseListener#mouseDoubleClick(MouseEvent)
 						 */
+						@Override
 						public void mouseDoubleClick(MouseEvent e) {
 							Tool tool = getPaletteViewer().getActiveTool().createTool();
 
@@ -461,10 +466,12 @@ public class UMLDiagramEditor extends UmlGmfDiagramEditor implements IProviderCh
 							}
 						}
 
+						@Override
 						public void mouseDown(MouseEvent e) {
 							// do nothing
 						}
 
+						@Override
 						public void mouseUp(MouseEvent e) {
 							// Deactivate current active tool here if a
 							// double-click was handled.

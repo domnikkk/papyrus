@@ -80,6 +80,7 @@ public class ValidateAction extends Action {
 				new WorkspaceModifyDelegatingOperation(
 						new IRunnableWithProgress() {
 
+							@Override
 							public void run(IProgressMonitor monitor)
 									throws InterruptedException, InvocationTargetException {
 								runValidation(part.getDiagramEditPart(), part.getDiagram());
@@ -136,6 +137,7 @@ public class ValidateAction extends Action {
 		TransactionalEditingDomain txDomain = TransactionUtil.getEditingDomain(view);
 		UMLValidationProvider.runWithConstraints(txDomain, new Runnable() {
 
+			@Override
 			public void run() {
 				validate(fpart, fview);
 			}
@@ -149,6 +151,7 @@ public class ValidateAction extends Action {
 		if (target.isSetElement() && target.getElement() != null) {
 			return new Diagnostician() {
 
+				@Override
 				public String getObjectLabel(EObject eObject) {
 					return EMFCoreUtil.getQualifiedName(eObject, true);
 				}
@@ -218,7 +221,7 @@ public class ValidateAction extends Action {
 						diagramEditPart.getDiagramView(),
 						collectTargetElements(rootStatus, new HashSet<EObject>(), allDiagnostics));
 		for (Iterator<Diagnostic> it = emfValidationStatus.getChildren().iterator(); it.hasNext();) {
-			Diagnostic nextDiagnostic = (Diagnostic) it.next();
+			Diagnostic nextDiagnostic = it.next();
 			List<?> data = nextDiagnostic.getData();
 			if (data != null && !data.isEmpty() && data.get(0) instanceof EObject) {
 				EObject element = (EObject) data.get(0);
@@ -290,7 +293,7 @@ public class ValidateAction extends Action {
 		}
 		if (diagnostic.getChildren() != null && !diagnostic.getChildren().isEmpty()) {
 			for (Iterator<Diagnostic> it = diagnostic.getChildren().iterator(); it.hasNext();) {
-				collectTargetElements((Diagnostic) it.next(),
+				collectTargetElements(it.next(),
 						targetElementCollector, allDiagnostics);
 			}
 		}

@@ -18,7 +18,6 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.uml.diagram.common.editparts.UMLConnectionNodeEditPart;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeLabelDisplayEditPolicy;
-import org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeLinkLabelDisplayEditPolicy;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeSubstitutionLabelDisplayEditPolicy;
 import org.eclipse.papyrus.uml.diagram.common.figure.edge.InterfaceRealizationFigure;
 import org.eclipse.papyrus.uml.diagram.composite.edit.policies.SubstitutionItemSemanticEditPolicy;
@@ -47,7 +46,7 @@ public class SubstitutionEditPart extends UMLConnectionNodeEditPart implements I
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new SubstitutionItemSemanticEditPolicy());
-		installEditPolicy(AppliedStereotypeLinkLabelDisplayEditPolicy.STEREOTYPE_LABEL_POLICY, new AppliedStereotypeSubstitutionLabelDisplayEditPolicy());
+		installEditPolicy(AppliedStereotypeLabelDisplayEditPolicy.STEREOTYPE_LABEL_POLICY, new AppliedStereotypeSubstitutionLabelDisplayEditPolicy());
 	}
 
 	/**

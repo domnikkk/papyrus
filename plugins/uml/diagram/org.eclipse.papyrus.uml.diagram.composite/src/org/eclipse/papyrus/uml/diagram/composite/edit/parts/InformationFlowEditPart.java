@@ -19,7 +19,6 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.uml.diagram.common.editparts.UMLConnectionNodeEditPart;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeInformationFlowLabelDisplayEditPolicy;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeLabelDisplayEditPolicy;
-import org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeLinkLabelDisplayEditPolicy;
 import org.eclipse.papyrus.uml.diagram.composite.custom.figures.InformationFlowFigure;
 import org.eclipse.papyrus.uml.diagram.composite.edit.policies.InformationFlowItemSemanticEditPolicy;
 
@@ -47,7 +46,7 @@ public class InformationFlowEditPart extends UMLConnectionNodeEditPart implement
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new InformationFlowItemSemanticEditPolicy());
-		installEditPolicy(AppliedStereotypeLinkLabelDisplayEditPolicy.STEREOTYPE_LABEL_POLICY, new AppliedStereotypeInformationFlowLabelDisplayEditPolicy());
+		installEditPolicy(AppliedStereotypeLabelDisplayEditPolicy.STEREOTYPE_LABEL_POLICY, new AppliedStereotypeInformationFlowLabelDisplayEditPolicy());
 	}
 
 	/**

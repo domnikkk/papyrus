@@ -2450,7 +2450,7 @@
           <viewmap
               xsi:type="gmfgen:ParentAssignedViewmap"
               getterName="getNameLabel"
-              figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+              figureQualifiedClassName="org.eclipse.papyrus.infra.gmfdiag.common.figure.node.PapyrusWrappingLabel"/>
           <modelFacet
               xsi:type="gmfgen:FeatureLabelModelFacet"
               parser="/0/@labelParsers/@implementations.0"
@@ -2533,7 +2533,7 @@
           <viewmap
               xsi:type="gmfgen:ParentAssignedViewmap"
               getterName="getNameLabel"
-              figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+              figureQualifiedClassName="org.eclipse.papyrus.infra.gmfdiag.common.figure.node.PapyrusWrappingLabel"/>
           <modelFacet
               xsi:type="gmfgen:FeatureLabelModelFacet"
               parser="/0/@labelParsers/@implementations.0"
@@ -5054,7 +5054,7 @@
               href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
           <viewmap
               xsi:type="gmfgen:FigureViewmap"
-              figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
+              figureQualifiedClassName="org.eclipse.papyrus.infra.gmfdiag.common.figure.node.PapyrusWrappingLabel">
             <attributes
                 xsi:type="gmfgen:LabelOffsetAttributes"
                 x="25"
@@ -5158,7 +5158,7 @@
               href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
           <viewmap
               xsi:type="gmfgen:FigureViewmap"
-              figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
+              figureQualifiedClassName="org.eclipse.papyrus.infra.gmfdiag.common.figure.node.PapyrusWrappingLabel">
             <attributes
                 xsi:type="gmfgen:LabelOffsetAttributes"
                 x="25"
@@ -5871,7 +5871,7 @@
           <viewmap
               xsi:type="gmfgen:ParentAssignedViewmap"
               getterName="getNameLabel"
-              figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+              figureQualifiedClassName="org.eclipse.papyrus.infra.gmfdiag.common.figure.node.PapyrusWrappingLabel"/>
           <modelFacet
               xsi:type="gmfgen:FeatureLabelModelFacet"
               parser="/0/@labelParsers/@implementations.0"
@@ -5933,7 +5933,7 @@
           <viewmap
               xsi:type="gmfgen:ParentAssignedViewmap"
               getterName="getNameLabel"
-              figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+              figureQualifiedClassName="org.eclipse.papyrus.infra.gmfdiag.common.figure.node.PapyrusWrappingLabel"/>
           <modelFacet
               xsi:type="gmfgen:FeatureLabelModelFacet"
               parser="/0/@labelParsers/@implementations.0"

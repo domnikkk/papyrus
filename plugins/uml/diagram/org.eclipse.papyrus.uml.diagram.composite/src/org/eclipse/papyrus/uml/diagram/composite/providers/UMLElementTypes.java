@@ -933,7 +933,7 @@ public class UMLElementTypes {
 
 			elements.put(InformationFlow_4021, UMLPackage.eINSTANCE.getInformationFlow());
 		}
-		return (ENamedElement) elements.get(type);
+		return elements.get(type);
 	}
 
 	/**

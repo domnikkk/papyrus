@@ -61,10 +61,10 @@ public class GeneralizationReorientCommand extends EditElementCommand {
 		if (false == getElementToEdit() instanceof Generalization) {
 			return false;
 		}
-		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
+		if (reorientDirection == ReorientRequest.REORIENT_SOURCE) {
 			return canReorientSource();
 		}
-		if (reorientDirection == ReorientRelationshipRequest.REORIENT_TARGET) {
+		if (reorientDirection == ReorientRequest.REORIENT_TARGET) {
 			return canReorientTarget();
 		}
 		return false;
@@ -108,10 +108,10 @@ public class GeneralizationReorientCommand extends EditElementCommand {
 		if (!canExecute()) {
 			throw new ExecutionException("Invalid arguments in reorient link command"); //$NON-NLS-1$
 		}
-		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
+		if (reorientDirection == ReorientRequest.REORIENT_SOURCE) {
 			return reorientSource();
 		}
-		if (reorientDirection == ReorientRelationshipRequest.REORIENT_TARGET) {
+		if (reorientDirection == ReorientRequest.REORIENT_TARGET) {
 			return reorientTarget();
 		}
 		throw new IllegalStateException();

@@ -105,6 +105,7 @@ public class ActivityCompositeEditPart extends NamedElementEditPart {
 	protected LayoutEditPolicy createLayoutEditPolicy() {
 		org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy lep = new org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy() {
 
+			@Override
 			protected EditPolicy createChildEditPolicy(EditPart child) {
 				View childView = (View) child.getModel();
 				switch (UMLVisualIDRegistry.getVisualID(childView)) {
@@ -119,10 +120,12 @@ public class ActivityCompositeEditPart extends NamedElementEditPart {
 				return result;
 			}
 
+			@Override
 			protected Command getMoveChildrenCommand(Request request) {
 				return null;
 			}
 
+			@Override
 			protected Command getCreateCommand(CreateRequest request) {
 				return null;
 			}
@@ -171,7 +174,7 @@ public class ActivityCompositeEditPart extends NamedElementEditPart {
 
 		if (childEditPart instanceof ActivityCompositeCompartmentEditPart) {
 			IFigure pane = getPrimaryShape().getCompositeCompartmentFigure();
-			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
+			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way
 			pane.add(((ActivityCompositeCompartmentEditPart) childEditPart).getFigure());
 			return true;
 		}

@@ -29,7 +29,6 @@ import org.eclipse.gef.requests.DirectEditRequest;
 import org.eclipse.gef.tools.DirectEditManager;
 import org.eclipse.gmf.runtime.common.ui.services.parser.IParser;
 import org.eclipse.gmf.runtime.common.ui.services.parser.IParserEditStatus;
-import org.eclipse.gmf.runtime.common.ui.services.parser.ParserEditStatus;
 import org.eclipse.gmf.runtime.common.ui.services.parser.ParserOptions;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart;
@@ -303,6 +302,7 @@ public class TimeConstraintSpecificationEditPartCN extends PapyrusCompartmentEdi
 	public ICellEditorValidator getEditTextValidator() {
 		return new ICellEditorValidator() {
 
+			@Override
 			public String isValid(final Object value) {
 				if (value instanceof String) {
 					final EObject element = getParserElement();
@@ -312,11 +312,12 @@ public class TimeConstraintSpecificationEditPartCN extends PapyrusCompartmentEdi
 								(IParserEditStatus) getEditingDomain().runExclusive(
 										new RunnableWithResult.Impl<java.lang.Object>() {
 
+											@Override
 											public void run() {
 												setResult(parser.isValidEditString(new EObjectAdapter(element), (String) value));
 											}
 										});
-						return valid.getCode() == ParserEditStatus.EDITABLE ? null : valid.getMessage();
+						return valid.getCode() == IParserEditStatus.EDITABLE ? null : valid.getMessage();
 					} catch (InterruptedException ie) {
 						ie.printStackTrace();
 					}
@@ -383,6 +384,7 @@ public class TimeConstraintSpecificationEditPartCN extends PapyrusCompartmentEdi
 	protected void performDirectEdit() {
 		BusyIndicator.showWhile(Display.getDefault(), new java.lang.Runnable() {
 
+			@Override
 			public void run() {
 				getManager().show();
 			}
@@ -447,8 +449,8 @@ public class TimeConstraintSpecificationEditPartCN extends PapyrusCompartmentEdi
 				else if (configuration instanceof IAdvancedEditorConfiguration) {
 					dialog = ((IAdvancedEditorConfiguration) configuration).createDialog(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), resolveSemanticElement(), configuration.getTextToEdit(resolveSemanticElement()));
 				} else if (configuration instanceof IDirectEditorConfiguration) {
-					dialog = new ExtendedDirectEditionDialog(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), resolveSemanticElement(), ((IDirectEditorConfiguration) configuration).getTextToEdit(resolveSemanticElement()),
-							(IDirectEditorConfiguration) configuration);
+					dialog = new ExtendedDirectEditionDialog(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), resolveSemanticElement(), configuration.getTextToEdit(resolveSemanticElement()),
+							configuration);
 				} else {
 					return;
 				}
@@ -483,6 +485,7 @@ public class TimeConstraintSpecificationEditPartCN extends PapyrusCompartmentEdi
 		// initialize the direct edit manager
 		try {
 			getEditingDomain().runExclusive(new Runnable() {
+				@Override
 				public void run() {
 					if (isActive() && isEditable()) {
 						if (request.getExtendedData().get(
@@ -638,6 +641,7 @@ public class TimeConstraintSpecificationEditPartCN extends PapyrusCompartmentEdi
 		if (accessibleEP == null) {
 			accessibleEP = new AccessibleGraphicalEditPart() {
 
+				@Override
 				public void getName(AccessibleEvent e) {
 					e.result = getLabelTextHelper(getFigure());
 				}
@@ -739,6 +743,7 @@ public class TimeConstraintSpecificationEditPartCN extends PapyrusCompartmentEdi
 		try {
 			getEditingDomain().runExclusive(new Runnable() {
 
+				@Override
 				public void run() {
 					if (isActive() && isEditable()) {
 						if (theRequest.getExtendedData().get(RequestConstants.REQ_DIRECTEDIT_EXTENDEDDATA_INITIAL_CHAR) instanceof Character) {
@@ -842,7 +847,7 @@ public class TimeConstraintSpecificationEditPartCN extends PapyrusCompartmentEdi
 	 * @generated
 	 */
 	protected void addOwnerElementListeners() {
-		addListenerFilter(ADD_PARENT_MODEL, this, ((View) getParent().getModel())); //$NON-NLS-1$
+		addListenerFilter(ADD_PARENT_MODEL, this, ((View) getParent().getModel())); 
 
 	}
 
