@@ -40,7 +40,7 @@
       <command
             defaultHandler="org.eclipse.papyrus.migration.rsa.handler.ImportHandler"
             id="org.eclipse.papyrus.migration.rsa.import"
-            name="Import EMX model">
+            name="Import RSA Model/Profile">
       </command>
    </extension>
 
