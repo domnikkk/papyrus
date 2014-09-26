@@ -459,9 +459,7 @@
           <viewmap
               xsi:type="gmfgen:ParentAssignedViewmap"
               getterName="getFigureLifelineLabelFigure"
-              figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-
-          </viewmap>
+              figureQualifiedClassName="org.eclipse.papyrus.infra.gmfdiag.common.figure.node.PapyrusWrappingLabel"/>
           <modelFacet
               xsi:type="gmfgen:FeatureLabelModelFacet"
               parser="/0/@labelParsers/@implementations.1"
@@ -733,7 +731,7 @@
           <viewmap
               xsi:type="gmfgen:InnerClassViewmap"
               className="MultilineLabelFigure"
-              classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class MultilineLabelFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public MultilineLabelFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;&#xA;&#xA;&#xA;&#xA;this.setTextAlignment(&#xA;PositionConstants.CENTER);&#xA;&#xA;&#xA;&#xA;&#xA;this.setAlignment(&#xA;PositionConstants.CENTER);&#xA;&#xA;&#xA;&#xA;&#xA;this.setBackgroundColor(&#xA;getBackgroundColor());&#xA;&#xA;&#xA;&#xA;&#xA;this.setTextWrap(&#xA;true);&#xA;&#xA;&#xA;&#xA;&#xA;this.setTextJustification(&#xA;PositionConstants.CENTER);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;">
+              classBody="&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;public class MultilineLabelFigure extends org.eclipse.papyrus.infra.gmfdiag.common.figure.node.PapyrusWrappingLabel {&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public MultilineLabelFigure() {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;this.setTextAlignment(&#xD;&#xA;PositionConstants.CENTER);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;this.setAlignment(&#xD;&#xA;PositionConstants.CENTER);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;this.setBackgroundColor(&#xD;&#xA;getBackgroundColor());&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;this.setTextWrap(&#xD;&#xA;true);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;this.setTextJustification(&#xD;&#xA;PositionConstants.CENTER);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;">
             <attributes
                 xsi:type="gmfgen:LabelOffsetAttributes"
                 x="22"
@@ -818,7 +816,7 @@
           <viewmap
               xsi:type="gmfgen:InnerClassViewmap"
               className="MultilineLabelFigure"
-              classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class MultilineLabelFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public MultilineLabelFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;&#xA;&#xA;&#xA;&#xA;this.setTextAlignment(&#xA;PositionConstants.CENTER);&#xA;&#xA;&#xA;&#xA;&#xA;this.setAlignment(&#xA;PositionConstants.CENTER);&#xA;&#xA;&#xA;&#xA;&#xA;this.setBackgroundColor(&#xA;getBackgroundColor());&#xA;&#xA;&#xA;&#xA;&#xA;this.setTextWrap(&#xA;true);&#xA;&#xA;&#xA;&#xA;&#xA;this.setTextJustification(&#xA;PositionConstants.CENTER);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;">
+              classBody="&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;public class MultilineLabelFigure extends org.eclipse.papyrus.infra.gmfdiag.common.figure.node.PapyrusWrappingLabel {&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public MultilineLabelFigure() {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;this.setTextAlignment(&#xD;&#xA;PositionConstants.CENTER);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;this.setAlignment(&#xD;&#xA;PositionConstants.CENTER);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;this.setBackgroundColor(&#xD;&#xA;getBackgroundColor());&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;this.setTextWrap(&#xD;&#xA;true);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;this.setTextJustification(&#xD;&#xA;PositionConstants.CENTER);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;">
             <attributes
                 xsi:type="gmfgen:LabelOffsetAttributes"
                 x="22"
@@ -923,7 +921,7 @@
           <viewmap
               xsi:type="gmfgen:InnerClassViewmap"
               className="MultilineLabelFigure"
-              classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class MultilineLabelFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public MultilineLabelFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;&#xA;&#xA;&#xA;&#xA;this.setTextAlignment(&#xA;PositionConstants.CENTER);&#xA;&#xA;&#xA;&#xA;&#xA;this.setAlignment(&#xA;PositionConstants.CENTER);&#xA;&#xA;&#xA;&#xA;&#xA;this.setBackgroundColor(&#xA;getBackgroundColor());&#xA;&#xA;&#xA;&#xA;&#xA;this.setTextWrap(&#xA;true);&#xA;&#xA;&#xA;&#xA;&#xA;this.setTextJustification(&#xA;PositionConstants.CENTER);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;">
+              classBody="&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;public class MultilineLabelFigure extends org.eclipse.papyrus.infra.gmfdiag.common.figure.node.PapyrusWrappingLabel {&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public MultilineLabelFigure() {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;this.setTextAlignment(&#xD;&#xA;PositionConstants.CENTER);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;this.setAlignment(&#xD;&#xA;PositionConstants.CENTER);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;this.setBackgroundColor(&#xD;&#xA;getBackgroundColor());&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;this.setTextWrap(&#xD;&#xA;true);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;this.setTextJustification(&#xD;&#xA;PositionConstants.CENTER);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;">
             <attributes
                 xsi:type="gmfgen:LabelOffsetAttributes"
                 x="25"
@@ -1056,9 +1054,7 @@
           <viewmap
               xsi:type="gmfgen:ParentAssignedViewmap"
               getterName="getNameLabel"
-              figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-
-          </viewmap>
+              figureQualifiedClassName="org.eclipse.papyrus.infra.gmfdiag.common.figure.node.PapyrusWrappingLabel"/>
           <modelFacet
               xsi:type="gmfgen:FeatureLabelModelFacet"
               parser="/0/@labelParsers/@implementations.0"
@@ -1134,9 +1130,7 @@
           <viewmap
               xsi:type="gmfgen:ParentAssignedViewmap"
               getterName="getCornerBentFigure"
-              figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.common.figure.node.HTMLCornerBentFigure">
-
-          </viewmap>
+              figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.common.figure.node.HTMLCornerBentFigure"/>
           <modelFacet
               xsi:type="gmfgen:FeatureLabelModelFacet"
               parser="/0/@labelParsers/@implementations.4"
@@ -1164,7 +1158,6 @@
             xsi:type="gmfgen:InnerClassViewmap"
             className="DurationObservationConstraint"
             classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class DurationObservationConstraint extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fDurationLabel; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public DurationObservationConstraint() {&#xA;&#x9;&#x9;&#x9;&#x9;&#xA;&#xA;&#xA;&#xA;this.setTextWrap(&#xA;true);&#xA;&#xA;&#xA;&#xA;&#xA;this.setTextJustification(&#xA;PositionConstants.CENTER);&#xA;&#xA;&#xA;&#x9;this.setForegroundColor(org.eclipse.draw2d.ColorConstants.black);&#xA;&#xA;this.setFont(THIS_FONT);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getDurationLabel() {&#xA;&#x9;&#x9;return fDurationLabel;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Font THIS_FONT = new org.eclipse.swt.graphics.Font(org.eclipse.swt.widgets.Display.getCurrent(), &quot;SANS&quot;, 9, org.eclipse.swt.SWT.NORMAL);&#xA;&#xA;">
-
           <attributes
               xsi:type="gmfgen:LabelOffsetAttributes"
               x="1"
@@ -1224,9 +1217,7 @@
           <viewmap
               xsi:type="gmfgen:ParentAssignedViewmap"
               getterName="getDurationLabel"
-              figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-
-          </viewmap>
+              figureQualifiedClassName="org.eclipse.papyrus.infra.gmfdiag.common.figure.node.PapyrusWrappingLabel"/>
           <behaviour
               xsi:type="gmfgen:CustomBehaviour"
               key="EditPolicy.SELECTION_FEEDBACK_ROLE"
@@ -1277,7 +1268,6 @@
             xsi:type="gmfgen:InnerClassViewmap"
             className="DurationObservationConstraint"
             classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class DurationObservationConstraint extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fDurationLabel; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public DurationObservationConstraint() {&#xA;&#x9;&#x9;&#x9;&#x9;&#xA;&#xA;&#xA;&#xA;this.setTextWrap(&#xA;true);&#xA;&#xA;&#xA;&#xA;&#xA;this.setTextJustification(&#xA;PositionConstants.CENTER);&#xA;&#xA;&#xA;&#x9;this.setForegroundColor(org.eclipse.draw2d.ColorConstants.black);&#xA;&#xA;this.setFont(THIS_FONT);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getDurationLabel() {&#xA;&#x9;&#x9;return fDurationLabel;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Font THIS_FONT = new org.eclipse.swt.graphics.Font(org.eclipse.swt.widgets.Display.getCurrent(), &quot;SANS&quot;, 9, org.eclipse.swt.SWT.NORMAL);&#xA;&#xA;">
-
           <attributes
               xsi:type="gmfgen:LabelOffsetAttributes"
               x="1"
@@ -1322,9 +1312,7 @@
           <viewmap
               xsi:type="gmfgen:ParentAssignedViewmap"
               getterName="getDurationLabel"
-              figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-
-          </viewmap>
+              figureQualifiedClassName="org.eclipse.papyrus.infra.gmfdiag.common.figure.node.PapyrusWrappingLabel"/>
           <behaviour
               xsi:type="gmfgen:CustomBehaviour"
               key="EditPolicy.SELECTION_FEEDBACK_ROLE"
@@ -1419,7 +1407,7 @@
           <viewmap
               xsi:type="gmfgen:ParentAssignedViewmap"
               getterName="getHeaderLabel"
-              figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+              figureQualifiedClassName="org.eclipse.papyrus.infra.gmfdiag.common.figure.node.PapyrusWrappingLabel"/>
           <modelFacet
               xsi:type="gmfgen:FeatureLabelModelFacet"
               parser="/0/@labelParsers/@implementations.0"
@@ -1445,9 +1433,7 @@
             editHelperClassName="MessageEditHelper"/>
         <viewmap
             xsi:type="gmfgen:FigureViewmap"
-            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.sequence.figures.MessageSync">
-
-        </viewmap>
+            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.sequence.figures.MessageSync"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
             key="EditPolicyRoles.CREATION_ROLE"
@@ -1489,7 +1475,6 @@
               xsi:type="gmfgen:ParentAssignedViewmap"
               getterName="getMessageLabelFigure"
               figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-
             <attributes
                 xsi:type="gmfgen:LabelOffsetAttributes"
                 x="1"
@@ -1516,7 +1501,6 @@
               xsi:type="gmfgen:ParentAssignedViewmap"
               getterName="getAppliedStereotypeLabel"
               figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-
             <attributes
                 xsi:type="gmfgen:LabelOffsetAttributes"
                 x="1"
@@ -1543,9 +1527,7 @@
             metamodelType="/0/@diagram/@links.0/@elementType"/>
         <viewmap
             xsi:type="gmfgen:FigureViewmap"
-            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.sequence.figures.MessageAsync">
-
-        </viewmap>
+            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.sequence.figures.MessageAsync"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
             key="EditPolicyRoles.CREATION_ROLE"
@@ -1587,7 +1569,6 @@
               xsi:type="gmfgen:ParentAssignedViewmap"
               getterName="getMessageLabelFigure"
               figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-
             <attributes
                 xsi:type="gmfgen:LabelOffsetAttributes"
                 x="1"
@@ -1613,7 +1594,6 @@
               xsi:type="gmfgen:ParentAssignedViewmap"
               getterName="getAppliedStereotypeLabel"
               figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-
             <attributes
                 xsi:type="gmfgen:LabelOffsetAttributes"
                 x="1"
@@ -1640,9 +1620,7 @@
             metamodelType="/0/@diagram/@links.0/@elementType"/>
         <viewmap
             xsi:type="gmfgen:FigureViewmap"
-            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.sequence.figures.MessageReply">
-
-        </viewmap>
+            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.sequence.figures.MessageReply"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
             key="EditPolicyRoles.CREATION_ROLE"
@@ -1684,7 +1662,6 @@
               xsi:type="gmfgen:ParentAssignedViewmap"
               getterName="getMessageLabelFigure"
               figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-
             <attributes
                 xsi:type="gmfgen:LabelOffsetAttributes"
                 x="1"
@@ -1710,7 +1687,6 @@
               xsi:type="gmfgen:ParentAssignedViewmap"
               getterName="getAppliedStereotypeLabel"
               figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-
             <attributes
                 xsi:type="gmfgen:LabelOffsetAttributes"
                 x="1"
@@ -1737,9 +1713,7 @@
             metamodelType="/0/@diagram/@links.0/@elementType"/>
         <viewmap
             xsi:type="gmfgen:FigureViewmap"
-            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.sequence.figures.MessageCreate">
-
-        </viewmap>
+            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.sequence.figures.MessageCreate"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
             key="EditPolicyRoles.CREATION_ROLE"
@@ -1781,7 +1755,6 @@
               xsi:type="gmfgen:ParentAssignedViewmap"
               getterName="getMessageLabelFigure"
               figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-
             <attributes
                 xsi:type="gmfgen:LabelOffsetAttributes"
                 x="1"
@@ -1808,7 +1781,6 @@
               xsi:type="gmfgen:ParentAssignedViewmap"
               getterName="getAppliedStereotypeLabel"
               figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-
             <attributes
                 xsi:type="gmfgen:LabelOffsetAttributes"
                 x="1"
@@ -1835,9 +1807,7 @@
             metamodelType="/0/@diagram/@links.0/@elementType"/>
         <viewmap
             xsi:type="gmfgen:FigureViewmap"
-            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.sequence.figures.MessageDelete">
-
-        </viewmap>
+            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.sequence.figures.MessageDelete"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
             key="EditPolicyRoles.CREATION_ROLE"
@@ -1879,7 +1849,6 @@
               xsi:type="gmfgen:ParentAssignedViewmap"
               getterName="getMessageLabelFigure"
               figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-
             <attributes
                 xsi:type="gmfgen:LabelOffsetAttributes"
                 x="1"
@@ -1905,7 +1874,6 @@
               xsi:type="gmfgen:ParentAssignedViewmap"
               getterName="getAppliedStereotypeLabel"
               figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-
             <attributes
                 xsi:type="gmfgen:LabelOffsetAttributes"
                 x="1"
@@ -1932,9 +1900,7 @@
             metamodelType="/0/@diagram/@links.0/@elementType"/>
         <viewmap
             xsi:type="gmfgen:FigureViewmap"
-            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.sequence.figures.MessageLost">
-
-        </viewmap>
+            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.sequence.figures.MessageLost"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
             key="EditPolicyRoles.CREATION_ROLE"
@@ -1976,7 +1942,6 @@
               xsi:type="gmfgen:ParentAssignedViewmap"
               getterName="getMessageLabelFigure"
               figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-
             <attributes
                 xsi:type="gmfgen:LabelOffsetAttributes"
                 x="1"
@@ -2029,9 +1994,7 @@
             metamodelType="/0/@diagram/@links.0/@elementType"/>
         <viewmap
             xsi:type="gmfgen:FigureViewmap"
-            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.sequence.figures.MessageFound">
-
-        </viewmap>
+            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.sequence.figures.MessageFound"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
             key="EditPolicyRoles.CREATION_ROLE"
@@ -2073,7 +2036,6 @@
               xsi:type="gmfgen:ParentAssignedViewmap"
               getterName="getMessageLabelFigure"
               figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-
             <attributes
                 xsi:type="gmfgen:LabelOffsetAttributes"
                 x="1"
@@ -2100,7 +2062,6 @@
               xsi:type="gmfgen:ParentAssignedViewmap"
               getterName="getAppliedStereotypeLabel"
               figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-
             <attributes
                 xsi:type="gmfgen:LabelOffsetAttributes"
                 x="1"
@@ -2168,9 +2129,7 @@
         <viewmap
             xsi:type="gmfgen:InnerClassViewmap"
             className="GeneralOrderingDescriptor"
-            classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class GeneralOrderingDescriptor extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fAppliedStereotypeLabel; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public GeneralOrderingDescriptor() {&#xA;&#x9;&#x9;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);&#xA;&#x9;this.setForegroundColor(org.eclipse.draw2d.ColorConstants.black);&#xA;&#xA;&#x9;&#x9;setTargetDecoration(createTargetDecoration());&#xA;&#x9;}&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RotatableDecoration createTargetDecoration() {&#xA;&#x9;&#x9;org.eclipse.draw2d.PolygonDecoration df = new org.eclipse.draw2d.PolygonDecoration();&#xA;df.setFill(true);&#xA;&#x9;df.setForegroundColor(org.eclipse.draw2d.ColorConstants.black);&#xA;&#x9;df.setBackgroundColor(org.eclipse.draw2d.ColorConstants.black);&#xA;org.eclipse.draw2d.geometry.PointList pl = new org.eclipse.draw2d.geometry.PointList();&#xA;pl.addPoint(getMapMode().DPtoLP(-2)&#xA;, getMapMode().DPtoLP(2)&#xA;);&#xA;pl.addPoint(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(0)&#xA;);&#xA;pl.addPoint(getMapMode().DPtoLP(-2)&#xA;, getMapMode().DPtoLP(-2)&#xA;);&#xA;pl.addPoint(getMapMode().DPtoLP(-2)&#xA;, getMapMode().DPtoLP(2)&#xA;);&#xA;df.setTemplate(pl);&#xA;df.setScale(getMapMode().DPtoLP(7)&#xA;, getMapMode().DPtoLP(3)&#xA;);&#xA;&#x9;&#x9;return df;&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getAppliedStereotypeLabel() {&#xA;&#x9;&#x9;return fAppliedStereotypeLabel;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;">
-
-        </viewmap>
+            classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class GeneralOrderingDescriptor extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fAppliedStereotypeLabel; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public GeneralOrderingDescriptor() {&#xA;&#x9;&#x9;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);&#xA;&#x9;this.setForegroundColor(org.eclipse.draw2d.ColorConstants.black);&#xA;&#xA;&#x9;&#x9;setTargetDecoration(createTargetDecoration());&#xA;&#x9;}&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RotatableDecoration createTargetDecoration() {&#xA;&#x9;&#x9;org.eclipse.draw2d.PolygonDecoration df = new org.eclipse.draw2d.PolygonDecoration();&#xA;df.setFill(true);&#xA;&#x9;df.setForegroundColor(org.eclipse.draw2d.ColorConstants.black);&#xA;&#x9;df.setBackgroundColor(org.eclipse.draw2d.ColorConstants.black);&#xA;org.eclipse.draw2d.geometry.PointList pl = new org.eclipse.draw2d.geometry.PointList();&#xA;pl.addPoint(getMapMode().DPtoLP(-2)&#xA;, getMapMode().DPtoLP(2)&#xA;);&#xA;pl.addPoint(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(0)&#xA;);&#xA;pl.addPoint(getMapMode().DPtoLP(-2)&#xA;, getMapMode().DPtoLP(-2)&#xA;);&#xA;pl.addPoint(getMapMode().DPtoLP(-2)&#xA;, getMapMode().DPtoLP(2)&#xA;);&#xA;df.setTemplate(pl);&#xA;df.setScale(getMapMode().DPtoLP(7)&#xA;, getMapMode().DPtoLP(3)&#xA;);&#xA;&#x9;&#x9;return df;&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getAppliedStereotypeLabel() {&#xA;&#x9;&#x9;return fAppliedStereotypeLabel;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
             key="org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeLinkLabelDisplayEditPolicy.STEREOTYPE_LABEL_POLICY"
@@ -2209,8 +2168,7 @@
           <viewmap
               xsi:type="gmfgen:ParentAssignedViewmap"
               getterName="getAppliedStereotypeLabel"
-              figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-
+              figureQualifiedClassName="org.eclipse.papyrus.infra.gmfdiag.common.figure.node.PapyrusWrappingLabel">
             <attributes
                 xsi:type="gmfgen:LabelOffsetAttributes"
                 x="1"
@@ -7501,5 +7459,11 @@
         genView="/0/@diagram/@links.9"
         name="CustomGeneralOrderingEditPart"
         superOwnedEditPart="org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionNodeEditPart"/>
+    <extensionNodes
+        xsi:type="papyrusgmfgenextension:ExtendedGenView"
+        comment="Add extension of PapyrusLabelEditPart"
+        genView="/0/@diagram/@childNodes.12/@labels.0 /0/@diagram/@childNodes.10/@labels.0 /0/@diagram/@childNodes.11/@labels.0"
+        name="PapyrusLabelEditPart"
+        superOwnedEditPart="org.eclipse.papyrus.infra.gmfdiag.common.editpart.PapyrusLabelEditPart"/>
   </papyrusgmfgenextension:PapyrusExtensionRootNode>
 </xmi:XMI>
