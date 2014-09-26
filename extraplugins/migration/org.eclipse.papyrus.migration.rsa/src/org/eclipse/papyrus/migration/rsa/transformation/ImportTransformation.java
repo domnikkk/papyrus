@@ -72,7 +72,6 @@ import org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.Config;
 import org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.RSAToPapyrusParametersFactory;
 import org.eclipse.papyrus.migration.rsa.blackbox.ProfileBaseHelper;
 import org.eclipse.papyrus.uml.documentation.Documentation.DocumentationPackage;
-import org.eclipse.papyrus.umlrt.UMLRealTime.UMLRealTimePackage;
 import org.eclipse.papyrus.umlrt.statemachine.UMLRealTimeStateMach.UMLRealTimeStateMachPackage;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.PlatformUI;
@@ -572,7 +571,12 @@ public class ImportTransformation {
 	}
 
 	protected ModelExtent getInProfileDefinitions() {
-		return new BasicModelExtent(Arrays.asList(new EPackage[] { PapyrusDSMLValidationRulePackage.eINSTANCE, DocumentationPackage.eINSTANCE, UMLRealTimePackage.eINSTANCE, UMLRealTimeStateMachPackage.eINSTANCE }));
+		return new BasicModelExtent(Arrays.asList(new EPackage[] {
+				PapyrusDSMLValidationRulePackage.eINSTANCE,
+				DocumentationPackage.eINSTANCE,
+				org.eclipse.papyrus.umlrt.UMLRealTime.UMLRealTimePackage.eINSTANCE,
+				UMLRealTimeStateMachPackage.eINSTANCE
+		}));
 	}
 
 	/**
@@ -733,7 +737,7 @@ public class ImportTransformation {
 			// Delete them as a post-action. Iterate on all controlled models and delete the RealTime stereotypes at the root of each resource
 			for (Iterator<EObject> rootsIterator = resource.getContents().iterator(); rootsIterator.hasNext();) {
 				EObject rootElement = rootsIterator.next();
-				if (rootElement.eClass().getEPackage() == UMLRealTimePackage.eINSTANCE) {
+				if (rootElement.eClass().getEPackage() == org.eclipse.papyrus.migration.rsa.umlrt.UMLRealTimePackage.eINSTANCE) {
 					rootsIterator.remove();
 				}
 			}
