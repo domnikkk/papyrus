@@ -12,6 +12,7 @@
  *    Christian W. Damus (CEA) - bug 430700
  *    Christian W. Damus (CEA) - bug 440795
  *    Christian W. Damus (CEA) - bug 441857
+ *    Sebastien Gabel (Esterel Technologies) - Bug 438931 - Non deterministic order of the facet references defined in custom file
  *
  *******************************************************************************/
 package org.eclipse.papyrus.emf.facet.custom.ui.internal;
@@ -23,7 +24,6 @@ import java.util.HashMap;
 import java.util.IdentityHashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EObject;
@@ -209,15 +209,15 @@ public class CustomizedTreeContentProvider implements ICustomizedTreeContentProv
 	}
 
 	public Object[] getChildren(final EObjectTreeElement treeElement) {
-		Set<EStructuralFeature> facetFeatures;
+		Collection<EStructuralFeature> facetFeatures;
 		try {
 			facetFeatures = FacetUtils.getETypedElements(treeElement.getEObject(), EStructuralFeature.class, customManager.getFacetManager());
 		} catch (FacetManagerException e) {
-			facetFeatures = Collections.emptySet();
+			facetFeatures = Collections.emptyList();
 			Logger.logError(e, Activator.getDefault());
 		}
 
-		final ArrayList<Object> children = new ArrayList<Object>();
+		final Collection<Object> children = new ArrayList<Object>();
 		createAttributes(treeElement, facetFeatures, children);
 		createReferences(treeElement, facetFeatures, children);
 		return children.toArray();
