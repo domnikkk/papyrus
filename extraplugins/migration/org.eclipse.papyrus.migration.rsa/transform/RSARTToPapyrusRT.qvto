@@ -48,7 +48,7 @@ main() {
 	semantics.rootObjects()[sourcert::Capsule].map toCapsule();
 	semantics.rootObjects()[sourcert::CapsulePart].map toCapsulePart();
 	semantics.rootObjects()[sourcert::Protocol].map toProtocol();
-	semantics.rootObjects()[sourcert::ProtocolContainer].map toProtocolPackage();
+	semantics.rootObjects()[sourcert::ProtocolContainer].map toProtocolContainer();
 	semantics.rootObjects()[sourcert::RTConnector].map toRTConnector();
 	semantics.rootObjects()[sourcert::RTHistorystate].map toHistorystate();
 	semantics.rootObjects()[sourcert::RTPort].map toRTPort();
@@ -79,16 +79,19 @@ mapping inout ProfileApplication::toPapyrusRTProfile() : ProfileApplication when
 /* Applies the RTMessageSet on the In and Out interfaces, and create a new InOut interface */
 mapping sourcert::ProtocolContainer::toMessageSets() : Interface{
 	var inInterface : Interface := self.findInInterface();
-	var outInterface : Interface := inInterface.findOppositeInterface();
+	var outInterface : Interface := self.findOutInterface();
+	var protocolName : String := self.base_Package.name;
 	
 	inInterface.map createMessageSet(RTMessageKind::_in);
-	outInterface.map createMessageSet(RTMessageKind::_out);
+	inInterface.name := protocolName;
 	
-	result.name := inInterface.name+"IO";
+	outInterface.map createMessageSet(RTMessageKind::_out);
+	outInterface.name := protocolName+'~';
 	
 	//Order: Protocol, InInterface, OutInterface, InoutInterface
 	self.base_Package.packagedElement += result;
 	
+	result.name := protocolName+"IO";
 	result.map createMessageSet(RTMessageKind::inOut);
 	result.map createKeyword('ProtocolRole');
 }
@@ -110,22 +113,13 @@ query sourcert::ProtocolContainer::findInInterface() : Interface {
 	return self.base_Package.packagedElement->selectByType(Interface)->any(e | not e.name.endsWith('~'));
 }
 
+query sourcert::ProtocolContainer::findOutInterface() : Interface {
+	return self.base_Package.packagedElement->selectByType(Interface)->any(e | e.name.endsWith('~'));
+}
+
 mapping inout Interface::createMessageSet(direction : RTMessageKind) : RTMessageSet {
 	result.base_Interface := self;
 	result.rtMsgKind := direction;
-}
-
-query Interface::findOppositeInterface() : Interface {
-	var name : String := self.name;
-	
-	var oppositeName: String := if name.endsWith('~') then 
-		name.substring(1, name.length() - 1)
-	else
-		name + '~'
-	endif;
-
-	var res := self.getNearestPackage().packagedElement->selectByType(Interface)->any(i | i.name = oppositeName);
-	return res;
 }
 
 mapping sourcert::Capsule::toCapsule() : umlrt::Capsule when {
@@ -142,7 +136,7 @@ mapping sourcert::Protocol::toProtocol() : umlrt::Protocol {
 	result.base_Collaboration := self.base_Collaboration;
 }
 
-mapping sourcert::ProtocolContainer::toProtocolPackage() : umlrt::ProtocolContainer {
+mapping sourcert::ProtocolContainer::toProtocolContainer() : umlrt::ProtocolContainer {
 	result.base_Package := self.base_Package;
 	
 	self.map toMessageSets();
