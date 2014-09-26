@@ -128,7 +128,9 @@ query Interface::findOppositeInterface() : Interface {
 	return res;
 }
 
-mapping sourcert::Capsule::toCapsule() : umlrt::Capsule {
+mapping sourcert::Capsule::toCapsule() : umlrt::Capsule when {
+	self.oclIsTypeOf(sourcert::Capsule) /* Workaround for Bug 445083 (QVTo Bug?) */
+}{
 	result.base_Class := self.base_Class;
 }
 
@@ -170,7 +172,9 @@ mapping sourcert::RTRedefinableElement::toRTRExcludedElement() : umlrt::RTRExclu
 	result.base_RedefinableElement := self.base_RedefinableElement;
 }
 
-mapping sourcert::Trigger::toRTTrigger() : RTTrigger {
+mapping sourcert::Trigger::toRTTrigger() : RTTrigger when {
+	self.oclIsTypeOf(sourcert::Trigger) /* Workaround for Bug 445083 (QVTo Bug?) */
+}{
 	result.base_Operation := self.base_Operation;
 }
 
