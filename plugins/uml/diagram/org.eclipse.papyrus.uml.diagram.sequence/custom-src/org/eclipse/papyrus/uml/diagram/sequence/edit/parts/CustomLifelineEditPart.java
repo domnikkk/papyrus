@@ -968,6 +968,7 @@ public class CustomLifelineEditPart extends LifelineEditPart {
 			updateLifelinePosition();
 		}
 		EObject element = resolveSemanticElement();
+		boolean coveredBysNeedsUpdate = false;
 		TransactionalEditingDomain editingDomain = getEditingDomain();
 		if (element instanceof Lifeline && !((Lifeline) element).getCoveredBys().isEmpty()) {
 			Lifeline lifeline = (Lifeline) element;
@@ -976,12 +977,14 @@ public class CustomLifelineEditPart extends LifelineEditPart {
 			if (Notification.REMOVE == notification.getEventType()) {
 				Object oldValue = notification.getOldValue();
 				if (coveredBys.contains(oldValue)) {
+					coveredBysNeedsUpdate = true;
 					CommandHelper.executeCommandWithoutHistory(editingDomain, RemoveCommand.create(editingDomain, lifeline, UMLPackage.eINSTANCE.getLifeline_CoveredBy(), oldValue), true);
 				}
 			} else if (Notification.REMOVE_MANY == notification.getEventType()) {
 				List<?> oldValue = (List<?>) notification.getOldValue();
 				for (Object object : oldValue) {
 					if (coveredBys.contains(object)) {
+						coveredBysNeedsUpdate = true;
 						CommandHelper.executeCommandWithoutHistory(editingDomain, RemoveCommand.create(editingDomain, lifeline, UMLPackage.eINSTANCE.getLifeline_CoveredBy(), object), true);
 					}
 				}
@@ -1025,7 +1028,7 @@ public class CustomLifelineEditPart extends LifelineEditPart {
 		super.handleNotificationEvent(notification);
 		// fixed bug (id=364711) when bounds changed update coveredBys with the
 		// figure's bounds.
-		if (notification.getNotifier() instanceof Bounds) {
+		if (notification.getNotifier() instanceof Bounds || coveredBysNeedsUpdate) {
 			Display.getDefault().asyncExec(new Runnable() {
 
 				@Override
