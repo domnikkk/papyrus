@@ -3,5 +3,6 @@
 	<topic label="Using Papyrus modelling tools">
     <anchor id="Tool"/>
     <link toc="resource/marqueeSelectionTool-toc.xml"/>
-    <link toc="resource/alignmentTool-toc.xml"/></topic>
+    <link toc="resource/alignmentTool-toc.xml"/>
+    <link toc="resource/textAlignment-toc.xml"/></topic>
 </toc>
