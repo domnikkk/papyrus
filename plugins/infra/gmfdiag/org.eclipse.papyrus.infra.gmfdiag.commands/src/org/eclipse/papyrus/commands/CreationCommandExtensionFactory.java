@@ -16,8 +16,6 @@ import org.eclipse.papyrus.infra.core.extension.BadNameExtensionException;
 import org.eclipse.papyrus.infra.core.extension.ExtensionException;
 import org.eclipse.papyrus.infra.core.extension.ExtensionUtils;
 import org.eclipse.papyrus.infra.core.extension.commands.ICreationCondition;
-import org.eclipse.papyrus.infra.core.utils.IDebugChannel;
-import org.eclipse.papyrus.infra.core.utils.PapyrusTrace;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 
 /**
@@ -94,8 +92,7 @@ public class CreationCommandExtensionFactory extends ExtensionUtils {
 				}
 			}
 		}
-		PapyrusTrace.trace(IDebugChannel.PAPYRUS_EXTENSIONPOINT_LOADING, this, "a creation command ready " + res);
-
+		Activator.log.info("a creation command ready " + res);
 		return res;
 	}
 
