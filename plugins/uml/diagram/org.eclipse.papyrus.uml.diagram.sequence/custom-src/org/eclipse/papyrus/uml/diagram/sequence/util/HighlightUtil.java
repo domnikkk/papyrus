@@ -74,8 +74,14 @@ public class HighlightUtil {
 			figures.add(part.getPrimaryShape().getFigureLifelineDotLineFigure());
 		} else if (host instanceof InteractionOperandEditPart) {
 			InteractionOperandEditPart op = (InteractionOperandEditPart) host;
-			CombinedFragmentEditPart cep = (CombinedFragmentEditPart) op.getParent().getParent();
-			figures.add(cep.getPrimaryShape());
+			EditPart parent = op.getParent();
+			while (parent != null) {
+				if (parent instanceof CombinedFragmentEditPart) {
+					figures.add(((CombinedFragmentEditPart) parent).getPrimaryShape());
+					break;
+				}
+				parent = parent.getParent();
+			}
 		} else if (host != null) {
 			try {
 				Method getMethod = getGetPrimaryShapeMethod(host.getClass());
