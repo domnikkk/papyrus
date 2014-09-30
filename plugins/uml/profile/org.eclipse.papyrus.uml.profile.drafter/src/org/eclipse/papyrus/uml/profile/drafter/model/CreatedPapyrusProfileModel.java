@@ -21,11 +21,20 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.URIConverter;
 import org.eclipse.papyrus.infra.core.resource.EMFLogicalModel;
+import org.eclipse.papyrus.infra.core.resource.IModel;
 import org.eclipse.papyrus.infra.core.resource.ModelSet;
 import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.UMLFactory;
 
 /**
+ * A {@link ModelSet}'s {@link IModel} dedicated to created {@link Profile}.
+ * <br>
+ * Such {@link IModel} contains the created {@link Profile}, and can be managed by Papyrus {@link ModelSet}.
+ * The model encapsulate 3 {@link Resource}s: one for uml, one for diagram, and one for di.
+ * <br>
+ * This implementation try to load the {@link Resource}s asociated to the requested URI. If existing resources are found,
+ * load them. Otherwise, create them.
+ * 
  * @author cedric dumoulin
  *
  */
