@@ -81,8 +81,8 @@ public class SequenceLinkMappingHelper implements ILinkMappingHelper {
 				} else {
 					return Collections.singletonList(object.getInteraction());
 				}
-				return Collections.EMPTY_LIST;
-			};
+				return Collections.emptyList();
+			}
 
 			@Override
 			public Collection<?> caseGeneralOrdering(GeneralOrdering object) {
@@ -90,7 +90,7 @@ public class SequenceLinkMappingHelper implements ILinkMappingHelper {
 					OccurrenceSpecification before = object.getBefore();
 					return before.getCovereds();
 				}
-				return Collections.EMPTY_LIST;
+				return Collections.emptyList();
 			}
 		});
 	}
@@ -116,8 +116,8 @@ public class SequenceLinkMappingHelper implements ILinkMappingHelper {
 				} else {
 					return Collections.singletonList(object.getInteraction());
 				}
-				return Collections.EMPTY_LIST;
-			};
+				return Collections.emptyList();
+			}
 
 			@Override
 			public Collection<?> caseGeneralOrdering(GeneralOrdering object) {
@@ -125,7 +125,7 @@ public class SequenceLinkMappingHelper implements ILinkMappingHelper {
 					OccurrenceSpecification after = object.getAfter();
 					return after.getCovereds();
 				}
-				return Collections.EMPTY_LIST;
+				return Collections.emptyList();
 			}
 		});
 	}

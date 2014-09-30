@@ -149,12 +149,12 @@ public class SynchronizableGmfDiagramEditor extends DiagramDocumentEditor implem
 
 			// We may also search for a GMF View (Instead of a semantic model Element)
 			if (!clonedList.isEmpty()) {
-				for (Object element : clonedList) {
+				for (Iterator<?> iterator = clonedList.iterator(); iterator.hasNext();) {
+					Object element = iterator.next();
 					if (graphicalViewer.getEditPartRegistry().containsKey(element) && !clonedList.isEmpty()) {
-						clonedList.remove(element);
+						iterator.remove();
 						researchedEditPart = (IGraphicalEditPart) graphicalViewer.getEditPartRegistry().get(element);
 						partSelection.add(researchedEditPart);
-
 					}
 				}
 			}

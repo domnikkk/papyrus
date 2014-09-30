@@ -12,12 +12,15 @@
 package org.eclipse.papyrus.dd.dg.provider;
 
 import java.awt.Color;
+
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.common.util.ResourceLocator;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemColorProvider;
@@ -30,8 +33,10 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
 import org.eclipse.papyrus.dd.dg.DGPackage;
 import org.eclipse.papyrus.dd.dg.Paint;
+
 import org.eclipse.papyrus.dd.edit.DDEditPlugin;
 
 /**
@@ -61,7 +66,7 @@ public class PaintItemProvider extends ItemProviderAdapter implements IEditingDo
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null) {
+		if(itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 			addColorPropertyDescriptor(object);
 			addPaintServerPropertyDescriptor(object);
@@ -76,8 +81,7 @@ public class PaintItemProvider extends ItemProviderAdapter implements IEditingDo
 	 * @generated
 	 */
 	protected void addColorPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Paint_color_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_Paint_color_feature", "_UI_Paint_type"), DGPackage.Literals.PAINT__COLOR, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Paint_color_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Paint_color_feature", "_UI_Paint_type"), DGPackage.Literals.PAINT__COLOR, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -87,8 +91,7 @@ public class PaintItemProvider extends ItemProviderAdapter implements IEditingDo
 	 * @generated
 	 */
 	protected void addPaintServerPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Paint_paintServer_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_Paint_paintServer_feature", "_UI_Paint_type"), DGPackage.Literals.PAINT__PAINT_SERVER, true, false, true, null, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Paint_paintServer_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Paint_paintServer_feature", "_UI_Paint_type"), DGPackage.Literals.PAINT__PAINT_SERVER, true, false, true, null, null, null));
 	}
 
 	/**
@@ -111,7 +114,7 @@ public class PaintItemProvider extends ItemProviderAdapter implements IEditingDo
 	 */
 	@Override
 	public String getText(Object object) {
-		Color labelValue = ((Paint) object).getColor();
+		Color labelValue = ((Paint)object).getColor();
 		String label = labelValue == null ? null : labelValue.toString();
 		return label == null || label.length() == 0 ? getString("_UI_Paint_type") : getString("_UI_Paint_type") + " " + label;
 	}
@@ -127,7 +130,7 @@ public class PaintItemProvider extends ItemProviderAdapter implements IEditingDo
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-		switch (notification.getFeatureID(Paint.class)) {
+		switch(notification.getFeatureID(Paint.class)) {
 		case DGPackage.PAINT__COLOR:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;

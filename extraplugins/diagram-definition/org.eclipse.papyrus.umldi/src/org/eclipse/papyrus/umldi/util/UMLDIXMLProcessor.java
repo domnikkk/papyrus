@@ -14,8 +14,11 @@ package org.eclipse.papyrus.umldi.util;
 import java.util.Map;
 
 import org.eclipse.emf.ecore.EPackage;
+
 import org.eclipse.emf.ecore.resource.Resource;
+
 import org.eclipse.emf.ecore.xmi.util.XMLProcessor;
+
 import org.eclipse.papyrus.umldi.UMLDIPackage;
 
 /**
@@ -48,11 +51,11 @@ public class UMLDIXMLProcessor extends XMLProcessor {
 	 */
 	@Override
 	protected Map<String, Resource.Factory> getRegistrations() {
-		if (registrations == null) {
+		if(registrations == null) {
 			super.getRegistrations();
 			registrations.put(XML_EXTENSION, new UMLDIResourceFactoryImpl());
 			registrations.put(STAR_EXTENSION, new UMLDIResourceFactoryImpl());
 		}
 		return registrations;
 	}
-} // UMLDIXMLProcessor
+} //UMLDIXMLProcessor

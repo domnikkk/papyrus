@@ -13,7 +13,6 @@ package org.eclipse.papyrus.dd.dg.impl;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.Map;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.Diagnostic;
@@ -22,7 +21,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.papyrus.dd.dc.Point;
+import org.eclipse.papyrus.dd.dc.Bounds;
 import org.eclipse.papyrus.dd.dg.DGPackage;
 import org.eclipse.papyrus.dd.dg.Text;
 import org.eclipse.papyrus.dd.dg.TextAnchor;
@@ -34,7 +33,7 @@ import org.eclipse.papyrus.dd.dg.util.DGValidator;
  * The following features are implemented:
  * <ul>
  * <li>{@link org.eclipse.papyrus.dd.dg.impl.TextImpl#getData <em>Data</em>}</li>
- * <li>{@link org.eclipse.papyrus.dd.dg.impl.TextImpl#getPosition <em>Position</em>}</li>
+ * <li>{@link org.eclipse.papyrus.dd.dg.impl.TextImpl#getBounds <em>Bounds</em>}</li>
  * <li>{@link org.eclipse.papyrus.dd.dg.impl.TextImpl#getAnchor <em>Anchor</em>}</li>
  * </ul>
  * </p>
@@ -64,14 +63,15 @@ public class TextImpl extends GraphicalElementImpl implements Text {
 	protected String data = DATA_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getPosition() <em>Position</em>}' containment reference.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The cached value of the '{@link #getBounds() <em>Bounds</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 *
-	 * @see #getPosition()
+	 * @see #getBounds()
 	 * @generated
 	 * @ordered
 	 */
-	protected Point position;
+	protected Bounds bounds;
 
 	/**
 	 * The default value of the '{@link #getAnchor() <em>Anchor</em>}' attribute.
@@ -133,32 +133,34 @@ public class TextImpl extends GraphicalElementImpl implements Text {
 	public void setData(String newData) {
 		String oldData = data;
 		data = newData;
-		if (eNotificationRequired()) {
+		if(eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.TEXT__DATA, oldData, data));
 		}
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 *
 	 * @generated
 	 */
 	@Override
-	public Point getPosition() {
-		return position;
+	public Bounds getBounds() {
+		return bounds;
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 *
 	 * @generated
 	 */
-	public NotificationChain basicSetPosition(Point newPosition, NotificationChain msgs) {
-		Point oldPosition = position;
-		position = newPosition;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DGPackage.TEXT__POSITION, oldPosition, newPosition);
-			if (msgs == null) {
+	public NotificationChain basicSetBounds(Bounds newBounds, NotificationChain msgs) {
+		Bounds oldBounds = bounds;
+		bounds = newBounds;
+		if(eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DGPackage.TEXT__BOUNDS, oldBounds, newBounds);
+			if(msgs == null) {
 				msgs = notification;
 			} else {
 				msgs.add(notification);
@@ -168,26 +170,27 @@ public class TextImpl extends GraphicalElementImpl implements Text {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 *
 	 * @generated
 	 */
 	@Override
-	public void setPosition(Point newPosition) {
-		if (newPosition != position) {
+	public void setBounds(Bounds newBounds) {
+		if(newBounds != bounds) {
 			NotificationChain msgs = null;
-			if (position != null) {
-				msgs = ((InternalEObject) position).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DGPackage.TEXT__POSITION, null, msgs);
+			if(bounds != null) {
+				msgs = ((InternalEObject)bounds).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DGPackage.TEXT__BOUNDS, null, msgs);
 			}
-			if (newPosition != null) {
-				msgs = ((InternalEObject) newPosition).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DGPackage.TEXT__POSITION, null, msgs);
+			if(newBounds != null) {
+				msgs = ((InternalEObject)newBounds).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DGPackage.TEXT__BOUNDS, null, msgs);
 			}
-			msgs = basicSetPosition(newPosition, msgs);
-			if (msgs != null) {
+			msgs = basicSetBounds(newBounds, msgs);
+			if(msgs != null) {
 				msgs.dispatch();
 			}
-		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.TEXT__POSITION, newPosition, newPosition));
+		} else if(eNotificationRequired()) {
+			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.TEXT__BOUNDS, newBounds, newBounds));
 		}
 	}
 
@@ -212,7 +215,7 @@ public class TextImpl extends GraphicalElementImpl implements Text {
 	public void setAnchor(TextAnchor newAnchor) {
 		TextAnchor oldAnchor = anchor;
 		anchor = newAnchor == null ? ANCHOR_EDEFAULT : newAnchor;
-		if (eNotificationRequired()) {
+		if(eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.TEXT__ANCHOR, oldAnchor, anchor));
 		}
 	}
@@ -236,8 +239,7 @@ public class TextImpl extends GraphicalElementImpl implements Text {
 	 */
 	@Override
 	public boolean dataCannotBeEmpty(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return DGValidator.validate(DGPackage.Literals.TEXT, this, diagnostics, context, "http://www.eclipse.org/emf/2002/Ecore/OCL", DGPackage.Literals.TEXT___DATA_CANNOT_BE_EMPTY__DIAGNOSTICCHAIN_MAP, DATA_CANNOT_BE_EMPTY_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
-				Diagnostic.ERROR, DGValidator.DIAGNOSTIC_SOURCE, DGValidator.TEXT__DATA_CANNOT_BE_EMPTY);
+		return DGValidator.validate(DGPackage.Literals.TEXT, this, diagnostics, context, "http://www.eclipse.org/emf/2002/Ecore/OCL", DGPackage.Literals.TEXT___DATA_CANNOT_BE_EMPTY__DIAGNOSTICCHAIN_MAP, DATA_CANNOT_BE_EMPTY_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION, Diagnostic.ERROR, DGValidator.DIAGNOSTIC_SOURCE, DGValidator.TEXT__DATA_CANNOT_BE_EMPTY);
 	}
 
 	/**
@@ -247,9 +249,9 @@ public class TextImpl extends GraphicalElementImpl implements Text {
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-		case DGPackage.TEXT__POSITION:
-			return basicSetPosition(null, msgs);
+		switch(featureID) {
+		case DGPackage.TEXT__BOUNDS:
+			return basicSetBounds(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -261,11 +263,11 @@ public class TextImpl extends GraphicalElementImpl implements Text {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch(featureID) {
 		case DGPackage.TEXT__DATA:
 			return getData();
-		case DGPackage.TEXT__POSITION:
-			return getPosition();
+		case DGPackage.TEXT__BOUNDS:
+			return getBounds();
 		case DGPackage.TEXT__ANCHOR:
 			return getAnchor();
 		}
@@ -279,15 +281,15 @@ public class TextImpl extends GraphicalElementImpl implements Text {
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch(featureID) {
 		case DGPackage.TEXT__DATA:
-			setData((String) newValue);
+			setData((String)newValue);
 			return;
-		case DGPackage.TEXT__POSITION:
-			setPosition((Point) newValue);
+		case DGPackage.TEXT__BOUNDS:
+			setBounds((Bounds)newValue);
 			return;
 		case DGPackage.TEXT__ANCHOR:
-			setAnchor((TextAnchor) newValue);
+			setAnchor((TextAnchor)newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -300,12 +302,12 @@ public class TextImpl extends GraphicalElementImpl implements Text {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch(featureID) {
 		case DGPackage.TEXT__DATA:
 			setData(DATA_EDEFAULT);
 			return;
-		case DGPackage.TEXT__POSITION:
-			setPosition((Point) null);
+		case DGPackage.TEXT__BOUNDS:
+			setBounds((Bounds)null);
 			return;
 		case DGPackage.TEXT__ANCHOR:
 			setAnchor(ANCHOR_EDEFAULT);
@@ -321,11 +323,11 @@ public class TextImpl extends GraphicalElementImpl implements Text {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch(featureID) {
 		case DGPackage.TEXT__DATA:
 			return DATA_EDEFAULT == null ? data != null : !DATA_EDEFAULT.equals(data);
-		case DGPackage.TEXT__POSITION:
-			return position != null;
+		case DGPackage.TEXT__BOUNDS:
+			return bounds != null;
 		case DGPackage.TEXT__ANCHOR:
 			return anchor != ANCHOR_EDEFAULT;
 		}
@@ -340,9 +342,9 @@ public class TextImpl extends GraphicalElementImpl implements Text {
 	@Override
 	@SuppressWarnings("unchecked")
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
+		switch(operationID) {
 		case DGPackage.TEXT___DATA_CANNOT_BE_EMPTY__DIAGNOSTICCHAIN_MAP:
-			return dataCannotBeEmpty((DiagnosticChain) arguments.get(0), (Map<Object, Object>) arguments.get(1));
+			return dataCannotBeEmpty((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
@@ -354,7 +356,7 @@ public class TextImpl extends GraphicalElementImpl implements Text {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
+		if(eIsProxy()) {
 			return super.toString();
 		}
 		StringBuffer result = new StringBuffer(super.toString());

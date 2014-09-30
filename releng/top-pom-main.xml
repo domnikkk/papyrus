@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.eclipse.papyrus</groupId>
 	<artifactId>org.eclipse.papyrus</artifactId>
-	<version>1.0.1-SNAPSHOT</version>
+	<version>1.1.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<modules>
 		<module>../features/papyrus-main-features/org.eclipse.papyrus.customization.feature</module>
@@ -303,23 +303,11 @@
 		<module>main</module>
 	</modules>
 	<properties>
-		<tycho-version>0.20.0</tycho-version>
-		<tychoExtrasVersion>0.20.0</tychoExtrasVersion>
+		<tycho-version>0.21.0</tycho-version>
+		<tychoExtrasVersion>0.21.0</tychoExtrasVersion>
 		<findbugs.version>2.5.3</findbugs.version>
 	</properties>
 	<repositories>
-		<repository>
-			<id>birt</id>
-			<layout>p2</layout>
-			<!-- updateFrom("BIRT",0) -->
-			<url>http://download.eclipse.org/birt/update-site/4.4/</url>
-		</repository>
-		<repository>
-			<id>emf-compare</id>
-			<layout>p2</layout>
-			<!-- updateFrom("EMF COMPARE",0) -->
-			<url>http://download.eclipse.org/modeling/emf/compare/updates/milestones/3.0/S201408191310</url>
-		</repository>
 		<repository>
 			<id>emf-emf</id>
 			<layout>p2</layout>
@@ -330,13 +318,13 @@
 			<id>emft-mwe[0]</id>
 			<layout>p2</layout>
 			<!-- updateFrom("EMFT MWE",0) -->
-			<url>http://download.eclipse.org/modeling/emft/mwe/updates/milestones/S201408190419/mwe</url>
+			<url>http://download.eclipse.org/modeling/emft/mwe/updates/releases/R201409021027/mwe</url>
 		</repository>
 		<repository>
 			<id>emft-mwe[1]</id>
 			<layout>p2</layout>
 			<!-- updateFrom("EMFT MWE",1) -->
-			<url>http://download.eclipse.org/modeling/emft/mwe/updates/milestones/S201408190839/mwe2lang</url>
+			<url>http://download.eclipse.org/modeling/emft/mwe/updates/releases/R201409021051/mwe2lang</url>
 		</repository>
 		<repository>
 			<id>emf-transaction</id>
@@ -354,7 +342,7 @@
 			<id>ep</id>
 			<layout>p2</layout>
 			<!-- updateFrom("Eclipse",0) -->
-			<url>http://download.eclipse.org/eclipse/updates/4.4milestones/M-4.4.1RC1-201408130800/</url>
+			<url>http://download.eclipse.org/eclipse/updates/4.4milestones/M-4.4.1RC3-201409031600/</url>
 		</repository>
 		<repository>
 			<id>gef</id>
@@ -381,18 +369,6 @@
 			<url>http://download.eclipse.org/modeling/gmp/gmf-tooling/updates/milestones-3.2.RC4a</url>
 		</repository>
 		<repository>
-			<id>m2m-atl</id>
-			<layout>p2</layout>
-			<!-- updateFrom("M2M ATL",0) -->
-			<url>http://download.eclipse.org/mmt/atl/updates/milestones/3.5/</url>
-		</repository>
-		<repository>
-			<id>m2t-acceleo</id>
-			<layout>p2</layout>
-			<!-- updateFrom("M2T ACCELEO",0) -->
-			<url>http://download.eclipse.org/acceleo/updates/milestones/3.5/S201406101309</url>
-		</repository>
-		<repository>
 			<id>m2t-xpand</id>
 			<layout>p2</layout>
 			<!-- updateFrom("M2T XPAND",0) -->
@@ -402,7 +378,7 @@
 			<id>mdt-ocl</id>
 			<layout>p2</layout>
 			<!-- updateFrom("MDT OCL 5.0",0) -->
-			<url>http://download.eclipse.org/modeling/mdt/ocl/updates/maintenance/5.0.2/S201408191529</url>
+			<url>http://download.eclipse.org/modeling/mdt/ocl/updates/milestones/5.0.2/S201409011459</url>
 		</repository>
 		<repository>
 			<id>mdt-uml2</id>
@@ -417,12 +393,6 @@
 			<url>http://download.eclipse.org/mmt/qvto/updates/milestones/3.4.0/S201406101621</url>
 		</repository>
 		<repository>
-			<id>mylyn</id>
-			<layout>p2</layout>
-			<!-- updateFrom("Mylyn",0) -->
-			<url>http://download.eclipse.org/mylyn/snapshots/3.13</url>
-		</repository>
-		<repository>
 			<id>nattable</id>
 			<layout>p2</layout>
 			<url>http://download.eclipse.org/nattable/releases/1.1.0/repository/</url>
@@ -433,22 +403,16 @@
 			<url>http://download.eclipse.org/tools/orbit/downloads/drops/R20140525021250/repository</url>
 		</repository>
 		<repository>
-			<id>subversive</id>
-			<layout>p2</layout>
-			<!-- updateFrom("Subversive",0) -->
-			<url>http://download.eclipse.org/technology/subversive/2.0/luna-site/</url>
-		</repository>
-		<repository>
 			<id>tmf-xtext</id>
 			<layout>p2</layout>
 			<!-- updateFrom("Xtext, Xtend",0) -->
-			<url>http://download.eclipse.org/modeling/tmf/xtext/updates/milestones/head/S201408190707</url>
+			<url>http://download.eclipse.org/modeling/tmf/xtext/updates/releases/head/R201409090713</url>
 		</repository>
 		<repository>
 			<id>webtools</id>
 			<layout>p2</layout>
 			<!-- updateFrom("WebTools",0) -->
-			<url>http://download.eclipse.org/webtools/downloads/drops/R3.6.0/R-3.6.0-20140602160322/repository/</url>
+			<url>http://download.eclipse.org/webtools/downloads/drops/R3.6.1/M-3.6.1RC3-20140908000031/repository/</url>
 		</repository>
 	</repositories>
 	<pluginRepositories>
@@ -538,100 +502,199 @@
 					</execution>
 				</executions>
 			</plugin>
-			<!-- Pack200 -->
-			<plugin>
-				<groupId>org.eclipse.tycho.extras</groupId>
-				<artifactId>tycho-pack200a-plugin</artifactId>
-				<executions>
-					<execution>
-						<id>pack200-normalize</id>
-						<goals>
-							<goal>normalize</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
-				<groupId>org.eclipse.tycho.extras</groupId>
-				<artifactId>tycho-pack200b-plugin</artifactId>
-				<version>${tychoExtrasVersion}</version>
-				<executions>
-					<execution>
-						<id>pack200-pack</id>
-						<goals>
-							<goal>pack</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
-				<groupId>org.eclipse.tycho</groupId>
-				<artifactId>tycho-p2-plugin</artifactId>
-				<version>${tycho-version}</version>
-				<executions>
-					<execution>
-						<id>attach-p2-metadata</id>
-						<phase>package</phase>
-						<goals>
-							<goal>p2-metadata</goal>
-						</goals>
-					</execution>
-				</executions>
-				<configuration>
-					<defaultP2Metadata>false</defaultP2Metadata>
-				</configuration>
-			</plugin>
 		</plugins>
 	</build>
+	
+	<!--
+		No profile: Don't produce any artifact (update site). Used by Gerrit
+		
+		findBugs: produce analysis reports. Activation: explicit ("Profiles")
+		packAndSign: produce a stable update site (Packed & signed). Used for releases (+ milestones) only. Activation: SIGN=true
+		pack: produce a simple update site (Packed). Used for nightly or feature branch builds. Activation: SIGN=false
+	 -->
 	<profiles>
-	  <profile>
-	  	<id>findBugs</id>
-	  	<build>
-	  		<plugins>
-	  			<plugin>
-					<groupId>org.codehaus.mojo</groupId>
-					<artifactId>findbugs-maven-plugin</artifactId>
-					<version>${findbugs.version}</version>
-					<configuration>
-						<findbugsXmlOutput>true</findbugsXmlOutput>
-						<failOnError>false</failOnError>
-					</configuration>
+		
+		<profile>
+			<id>defaultProfile</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.eclipse.tycho</groupId>
+						<artifactId>tycho-p2-plugin</artifactId>
+						<version>${tycho-version}</version>
+						<executions>
+							<execution>
+								<id>attach-p2-metadata</id>
+								<phase>package</phase>
+								<goals>
+									<goal>p2-metadata</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+		</profile>
+	
+		<profile>
+		  	<id>findBugs</id> <!-- Analysis profile. Takes +1h -->
+		  	<build>
+		  		<plugins>
+		  			<plugin>
+						<groupId>org.codehaus.mojo</groupId>
+						<artifactId>findbugs-maven-plugin</artifactId>
+						<version>${findbugs.version}</version>
+						<configuration>
+							<findbugsXmlOutput>true</findbugsXmlOutput>
+							<failOnError>false</failOnError>
+						</configuration>
+						<executions>
+							<execution>
+								<goals>
+									<goal>check</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<groupId>org.eclipse.tycho</groupId>
+						<artifactId>tycho-p2-plugin</artifactId>
+						<version>${tycho-version}</version>
+						<executions>
+							<execution>
+								<id>attach-p2-metadata</id>
+								<phase>package</phase>
+								<goals>
+									<goal>p2-metadata</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+		  		</plugins>
+		  	</build>
+		</profile>
+	  
+	  
+		<profile>
+	  		<id>packAndSign</id> <!-- Stable release profile. Takes +30min. Eclipse servers only -->
+		  	<!-- Pack200 -->
+		  	<build>
+			  	<plugins>
+					<plugin>
+						<groupId>org.eclipse.tycho.extras</groupId>
+						<artifactId>tycho-pack200a-plugin</artifactId>
+						<version>${tychoExtrasVersion}</version>
+						<executions>
+							<execution>
+								<id>pack200-normalize</id>
+								<goals>
+									<goal>normalize</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<groupId>org.eclipse.cbi.maven.plugins</groupId>
+						<artifactId>eclipse-jarsigner-plugin</artifactId>
+						<version>1.0.5</version>
+						<executions>
+							<execution>
+						    	<id>sign</id>
+						    	<goals>
+						    		<goal>sign</goal>
+						    	</goals>
+						  	</execution>
+						</executions>
+		            </plugin>
+					<plugin>
+						<groupId>org.eclipse.tycho.extras</groupId>
+						<artifactId>tycho-pack200b-plugin</artifactId>
+						<version>${tychoExtrasVersion}</version>
+						<executions>
+							<execution>
+								<id>pack200-pack</id>
+								<goals>
+									<goal>pack</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<groupId>org.eclipse.tycho</groupId>
+						<artifactId>tycho-p2-plugin</artifactId>
+						<version>${tycho-version}</version>
+						<executions>
+							<execution>
+								<id>attach-p2-metadata</id>
+								<phase>package</phase>
+								<goals>
+									<goal>p2-metadata</goal>
+								</goals>
+							</execution>
+						</executions>
+						<configuration>
+							<defaultP2Metadata>false</defaultP2Metadata>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+	        <activation>
+	        	<property>
+	        		<name>SIGN</name>
+	        		<value>true</value>
+	        	</property>
+	        </activation>
+		</profile>
+	  
+	  
+    	<profile>
+	        <id>pack</id> <!-- Nightly profile. Artifacts can be consumed, but are not signed -->
+	        <build>
+	          <plugins>
+	            <!-- Pack200 -->
+				<plugin>
+					<groupId>org.eclipse.tycho.extras</groupId>
+					<artifactId>tycho-pack200b-plugin</artifactId>
+					<version>${tychoExtrasVersion}</version>
 					<executions>
 						<execution>
+							<id>pack200-pack</id>
 							<goals>
-								<goal>check</goal>
+								<goal>pack</goal>
 							</goals>
 						</execution>
 					</executions>
 				</plugin>
-	  		</plugins>
-	  	</build>
-	  </profile>
-      <profile>
-        <id>sign</id>
-        <build>
-          <plugins>
-            <plugin>
-              <groupId>org.eclipse.cbi.maven.plugins</groupId>
-              <artifactId>eclipse-jarsigner-plugin</artifactId>
-              <version>1.0.5</version>
-              <executions>
-                <execution>
-                  <id>sign</id>
-                  <goals>
-                    <goal>sign</goal>
-                  </goals>
-                </execution>
-              </executions>
-            </plugin>
-          </plugins>
-        </build>
-        <activation>
-        	<property>
-        		<name>SIGN</name>
-        		<value>true</value>
-        	</property>
-        </activation>
-      </profile>
+				<plugin>
+					<groupId>org.eclipse.tycho</groupId>
+					<artifactId>tycho-p2-plugin</artifactId>
+					<version>${tycho-version}</version>
+					<executions>
+						<execution>
+							<id>attach-p2-metadata</id>
+							<phase>package</phase>
+							<goals>
+								<goal>p2-metadata</goal>
+							</goals>
+						</execution>
+					</executions>
+					<configuration>
+						<defaultP2Metadata>false</defaultP2Metadata>
+					</configuration>
+				</plugin>
+	          </plugins>
+	        </build>
+	        <activation>
+	        	<property>
+	        		<name>SIGN</name>
+	        		<value>false</value>
+	        	</property>
+	        </activation>
+    	</profile>
+      
+      
     </profiles>
 </project>

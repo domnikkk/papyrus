@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Composite xmlns:ppe="clr-namespace:org.eclipse.papyrus.views.properties.widgets"
+	xmlns:j="clr-namespace:java.lang"
+	xmlns:ppel="clr-namespace:org.eclipse.papyrus.views.properties.widgets.layout"
+	xmlns="http://www.eclipse.org/xwt/presentation" xmlns:x="http://www.eclipse.org/xwt">
+	<Composite.layout>
+		<ppel:PropertiesLayout></ppel:PropertiesLayout>
+	</Composite.layout>
+	<ppe:BooleanCheckbox input="{Binding}"
+		property="RSAToPapyrusParameters:Config:convertOpaqueExpressionToLiteralString"></ppe:BooleanCheckbox>
+	<ppe:BooleanCheckbox input="{Binding}"
+		property="RSAToPapyrusParameters:Config:removeUnmappedProfilesAndStereotypes"></ppe:BooleanCheckbox>
+</Composite>

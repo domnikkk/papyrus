@@ -1,0 +1,683 @@
+/*****************************************************************************
+ * Copyright (c) 2013, 2014 CEA LIST.
+ *
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
+ *****************************************************************************/
+import RSAToPapyrus;
+
+modeltype notation "strict" uses 'http://www.eclipse.org/gmf/runtime/1.0.2/notation';
+modeltype umlNotation "strict" uses 'http://www.eclipse.org/papyrus/umlnotation';
+modeltype uml "strict" uses 'http://www.eclipse.org/uml2/5.0.0/UML';
+modeltype ecore "strict" uses 'http://www.eclipse.org/emf/2002/Ecore';
+modeltype sash "strict" uses 'http://www.eclipse.org/papyrus/0.7.0/sashdi';
+modeltype config "strict" uses 'http:///RSAToPapyrusParameters.ecore';
+
+transformation RSAActivityDiagram(inout semantics : uml, inout graphics : notation, out di : sash, in params : config);
+
+main() {
+	semantics.rootObjects()[uml::Element]->map toOwnedDiagrams();
+}
+
+query View::getDiagramType() : String{
+	return 'PapyrusUMLActivityDiagram';
+}
+
+mapping notation::Diagram::generateDiagram() : notation::Diagram inherits Diagram::toPapyrusDiagram when {
+	self.type = 'Activity'
+}{
+	end {
+		graphics.objectsOfType(Shape)->any(type = '2001').map fixFramePosition();
+		
+		graphics.objectsOfType(Shape)->select(type='3080').map addCommentDecoration();
+		graphics.objectsOfType(Shape)->select(type = '3112').map addConstraintDecoration();
+		
+		graphics.objectsOfType(Shape)->select(type = '3067').map fixPartitionsLayout();
+		
+		graphics.objectsOfType(Shape).map fixDefaultSize();
+	}
+}
+
+/**
+*	Fix the default size for Join, Fork, Merge and Decision nodes
+*/
+mapping inout Shape::fixDefaultSize() disjuncts Shape::fixJoinForkSize, Shape::fixMergeDecisionSize {
+	//Disjuncts
+}
+
+mapping inout Shape::fixJoinForkSize() when {
+	self.type = '3041' /* JoinNode */ or self.type = '3040' /* ForkNode */
+} {
+	var layout : Bounds := self.layoutConstraint.oclAsType(Bounds);
+	
+	if layout.width = -1 then layout.width := 101 endif;
+	if layout.height = -1 then layout.height := 11 endif; 
+}
+
+mapping inout Shape::fixMergeDecisionSize() when {
+	self.type = '3039' /* MergeNode */ or self.type = '3038' /* DecisionNode */
+} {
+	var layout : Bounds := self.layoutConstraint.oclAsType(Bounds);
+	
+	if layout.width = -1 then layout.width := 50 endif;
+	if layout.height = -1 then layout.height := 50 endif;
+}
+
+property partitionX : Integer = 50;
+
+mapping inout Shape::fixPartitionsLayout() {
+	var width: Integer := 200; //Approximation. In RSA, the layout is computed automatically based on the Partition's Contents. In Papyrus, this must be specified explicitely
+	var marginHeight := 30;
+	
+	
+	
+	var bounds : Bounds := self.layoutConstraint.oclAsType(Bounds); 
+	
+	var parentCompartment : DecorationNode := self.oclAsType(EObject).eContainer().oclAsType(DecorationNode);
+	var parent : Shape := parentCompartment.oclAsType(EObject).eContainer().oclAsType(Shape);
+	var parentBounds := parent.layoutConstraint.oclAsType(Bounds);
+	var parentHeight := parentBounds.height;
+	
+	var position : Integer;
+	
+	position := parentCompartment.children->select(type = '3067')->indexOf(self) - 1; //OCL index starts at 1 
+	
+	bounds.x := partitionX + position * width;
+	bounds.width := width.max(bounds.width);
+	bounds.y := marginHeight;
+	
+	bounds.height := (parentHeight - marginHeight * 2).max(bounds.height).max(400);
+}
+
+mapping inout Shape::addCommentDecoration() when {
+	self.type = '3080' and self.diagram.type = self.getDiagramType()
+} {
+	
+	self.children += object DecorationNode{
+		type := '5138';
+	}
+
+}
+
+mapping inout Shape::addConstraintDecoration() when {
+	self.type = '3112' and self.diagram.type = self.getDiagramType()
+} {
+	
+	self.children += object DecorationNode{
+		type := '5190'; //Constraint specification
+	}	
+
+}
+
+
+/* Add a margin on the top and left */
+mapping inout Shape::fixFramePosition() {
+	var bounds := self.layoutConstraint.oclAsType(Bounds);
+	var margin := 10;
+	if bounds.x < margin then bounds.x := margin endif;
+	if bounds.y < margin then bounds.y := margin endif;
+}
+
+mapping Node::toNode() : Node disjuncts
+	UMLShape::toPapyrusShape,
+	UMLShapeCompartment::toStructureCompartment,
+	BasicSemanticCompartment::toListCompartment,
+	BasicDecorationNode::toConnectorLabel,
+	BasicDecorationNode::toLabel
+	//TODO: Disjunct nodes mapping
+;
+
+mapping Edge::toEdge() : Edge disjuncts
+	UMLConnector::toPapyrusConnector
+	//TODO: Disjunct edges mapping
+;
+
+mapping UMLShapeCompartment::toStructureCompartment() : DecorationNode inherits UMLShapeCompartment::toAbstractStructureCompartment when {
+	self.type = 'StructureCompartment' or self.type = 'PackageContents' or self.type = 'ActivityCompartment' or self.type='PartitionCompartment' or self.type='StructuredActivityNodeCompartment' 
+	and not self.getType().oclIsUndefined();
+}{
+	
+}
+
+
+/***** Nodes **********/
+
+mapping UMLShape::toPapyrusShape() : Shape inherits Shape::toPapyrusShape when {
+	self.type = 'Activity Frame' or self.type = 'Partition' or (
+		self.type = '' and not self.getType().oclIsUndefined() and (
+			self.element.oclIsTypeOf(Constraint)or
+			self.element.oclIsTypeOf(FlowFinalNode)or
+			self.element.oclIsTypeOf(ActivityPartition)or
+			self.element.oclIsTypeOf(IntervalConstraint)or
+			self.element.oclIsTypeOf(ActionInputPin)or
+			self.element.oclIsTypeOf(BroadcastSignalAction)or
+			self.element.oclIsTypeOf(ActionInputPin)or
+			self.element.oclIsTypeOf(ValuePin)or
+			self.element.oclIsTypeOf(Constraint)or
+			self.element.oclIsTypeOf(ValuePin)or
+			self.element.oclIsTypeOf(SequenceNode)or
+			self.element.oclIsTypeOf(ActionInputPin)or
+			self.element.oclIsTypeOf(InputPin)or
+			self.element.oclIsTypeOf(OutputPin)or
+			self.element.oclIsTypeOf(InputPin)or
+			self.element.oclIsTypeOf(ReadSelfAction)or
+			self.element.oclIsTypeOf(ActivityFinalNode)or
+			self.element.oclIsTypeOf(InputPin)or
+			self.element.oclIsTypeOf(SendSignalAction)or
+			self.element.oclIsTypeOf(InitialNode)or
+			self.element.oclIsTypeOf(AddStructuralFeatureValueAction)or
+			self.element.oclIsTypeOf(OutputPin)or
+			self.element.oclIsTypeOf(DurationConstraint)or
+			self.element.oclIsTypeOf(OutputPin)or
+			self.element.oclIsTypeOf(LoopNode)or
+			self.element.oclIsTypeOf(OutputPin)or
+			self.element.oclIsTypeOf(ForkNode)or
+			self.element.oclIsTypeOf(ExpansionNode)or
+			self.element.oclIsTypeOf(ActionInputPin)or
+			self.element.oclIsTypeOf(InputPin)or
+			self.element.oclIsTypeOf(OutputPin)or
+			self.element.oclIsTypeOf(OutputPin)or
+			self.element.oclIsTypeOf(CallOperationAction)or
+			self.element.oclIsTypeOf(InputPin)or
+			self.element.oclIsTypeOf(IntervalConstraint)or
+			self.element.oclIsTypeOf(InputPin)or
+			self.element.oclIsTypeOf(Constraint)or
+			self.element.oclIsTypeOf(AddVariableValueAction)or
+			self.element.oclIsTypeOf(ExpansionNode)or
+			self.element.oclIsTypeOf(ValuePin)or
+			self.element.oclIsTypeOf(Parameter)or
+			self.element.oclIsTypeOf(ReadVariableAction)or
+			self.element.oclIsTypeOf(OpaqueAction)or
+			self.element.oclIsTypeOf(OutputPin)or
+			self.element.oclIsTypeOf(ValuePin)or
+			self.element.oclIsTypeOf(InputPin)or
+			self.element.oclIsTypeOf(InputPin)or
+			self.element.oclIsTypeOf(InputPin)or
+			self.element.oclIsTypeOf(OutputPin)or
+			self.element.oclIsTypeOf(InputPin)or
+			self.element.oclIsTypeOf(InputPin)or
+			self.element.oclIsTypeOf(InputPin)or
+			self.element.oclIsTypeOf(InterruptibleActivityRegion)or
+			self.element.oclIsTypeOf(Constraint)or
+			self.element.oclIsTypeOf(OutputPin)or
+			self.element.oclIsTypeOf(JoinNode)or
+			self.element.oclIsTypeOf(StructuredActivityNode)or
+			self.element.oclIsTypeOf(ConditionalNode)or
+			self.element.oclIsTypeOf(OutputPin)or
+			self.element.oclIsTypeOf(ActionInputPin)or
+			self.element.oclIsTypeOf(Constraint)or
+			self.element.oclIsTypeOf(TimeConstraint)or
+			self.element.oclIsTypeOf(DecisionNode)or
+			self.element.oclIsTypeOf(ActivityParameterNode)or
+			self.element.oclIsTypeOf(ActionInputPin)or
+			self.element.oclIsTypeOf(ActionInputPin)or
+			self.element.oclIsTypeOf(CentralBufferNode)or
+			self.element.oclIsTypeOf(Comment)or
+			self.element.oclIsTypeOf(DestroyObjectAction)or
+			self.element.oclIsTypeOf(CreateObjectAction)or
+			self.element.oclIsTypeOf(ValuePin)or
+			self.element.oclIsTypeOf(ValuePin)or
+			self.element.oclIsTypeOf(OutputPin)or
+			self.element.oclIsTypeOf(DataStoreNode)or
+			self.element.oclIsTypeOf(InputPin)or
+			self.element.oclIsTypeOf(ActionInputPin)or
+			self.element.oclIsTypeOf(CallBehaviorAction)or
+			self.element.oclIsTypeOf(ExpansionRegion)or
+			self.element.oclIsTypeOf(SendObjectAction)or
+			self.element.oclIsTypeOf(InputPin)or
+			self.element.oclIsTypeOf(InputPin)or
+			self.element.oclIsTypeOf(OutputPin)or
+			self.element.oclIsTypeOf(TimeConstraint)or
+			self.element.oclIsTypeOf(MergeNode)or
+			self.element.oclIsTypeOf(DurationConstraint)or
+			self.element.oclIsTypeOf(ValuePin)or
+			self.element.oclIsTypeOf(ValueSpecificationAction)or
+			self.element.oclIsTypeOf(AcceptEventAction)or
+			self.element.oclIsTypeOf(Activity)or
+			self.element.oclIsTypeOf(InputPin)or
+			self.element.oclIsTypeOf(ReadStructuralFeatureAction)or
+			self.element.oclIsTypeOf(OutputPin)or
+			self.element.oclIsTypeOf(ValuePin)
+		)
+	)
+}{
+	
+}
+
+
+/****** Connector Labels ******/
+
+mapping BasicDecorationNode::toConnectorLabel() : DecorationNode inherits Node::toPapyrusConnectorLabel when {
+	not self.getType().oclIsUndefined() and (
+		self.type = 'ToMultiplicityLabel' or
+		self.type = 'ToRoleLabel' or
+		self.type = 'FromMultiplicityLabel' or
+		self.type = 'FromRoleLabel' or
+		self.type = 'NameLabel' or
+		self.type = 'KindLabel'
+	)
+}{}
+
+
+/****** Compartments *******/
+
+mapping BasicDecorationNode::toLabel() : DecorationNode inherits Node::toPapyrusNode when {
+	not self.getType().oclIsUndefined() and
+	self.element.oclIsKindOf(uml::NamedElement) and 
+	(self.type = 'Name' or self.type = 'PartitionName')
+}{}
+
+mapping BasicSemanticCompartment::toListCompartment() : BasicCompartment inherits Node::toPapyrusNode, DrawerStyle::toDrawerStyle when {
+	self.type.endsWith('Compartment') and not self.getType().oclIsUndefined()
+}{
+	result.children := self.findElement().map toContents(self);
+}
+
+mapping Element::toContents(node : BasicSemanticCompartment) : Sequence(Node) disjuncts
+	Activity::toContents
+;
+
+mapping Activity::toContents(node : BasicSemanticCompartment) : Sequence(Node) disjuncts
+	Activity::toActivityFigureParameterCompartmentContents,
+	Activity::toActivityFigurePreconditionCompartmentContents,
+	Activity::toActivityFigurePostCondtionCompartmentContents
+;
+
+mapping Activity::toActivityFigureParameterCompartmentContents(node : BasicSemanticCompartment) : Sequence(Node) when {
+	node.type = 'Compartment';
+}{
+	init {
+		result := (self.map fillParameter(node))
+	}
+}
+
+mapping Activity::toActivityFigurePreconditionCompartmentContents(node : BasicSemanticCompartment) : Sequence(Node) when {
+	node.type = 'Compartment';
+}{
+	init {
+		result := (self.map fillConstraint(node))
+	}
+}
+
+mapping Activity::toActivityFigurePostCondtionCompartmentContents(node : BasicSemanticCompartment) : Sequence(Node) when {
+	node.type = 'Compartment';
+}{
+	init {
+		result := (self.map fillConstraint(node))
+	}
+}
+
+mapping uml::Activity::fillParameter(node : BasicSemanticCompartment) : Sequence(Node) when {
+	node.type='Compartment';
+}{
+	init {
+		result := self.ownedParameter->selectByKind(Parameter).map toParameterInActivity(node)->asSequence();
+	}
+}
+
+mapping uml::Activity::fillConstraint(node : BasicSemanticCompartment) : Sequence(Node) when {
+	node.type='Compartment';
+}{
+	init {
+		result := self.precondition->selectByKind(Constraint).map toConstraintInActivity(node)->asSequence();
+	}
+}
+
+mapping Parameter::toParameterInActivity(node : Node) : Shape inherits Element::toCompartmentEntry {
+	result.type := '3001';
+}
+
+mapping Constraint::toConstraintInActivity(node : Node) : Shape inherits Element::toCompartmentEntry {
+	result.type := '3002';
+}
+
+
+
+/******* Edges ********/
+
+
+mapping UMLConnector::toPapyrusConnector() : Connector inherits Connector::toPapyrusConnector when {
+	self.type = '' and 
+	not self.getType().oclIsUndefined() and (
+		self.element.oclIsTypeOf(ObjectFlow)or
+		self.element.oclIsTypeOf(ControlFlow)or
+		self.element.oclIsTypeOf(ExceptionHandler)
+	)
+}{
+	result.styles := self.map toFontStyle();
+}
+
+/****** Element Type queries ******/
+
+query View::getNodeType(element : Element) : String {
+	return
+		if element.oclIsTypeOf(Constraint) then '3112'
+		elif element.oclIsTypeOf(Constraint) then '3002'
+		elif element.oclIsTypeOf(Constraint) then '3003'
+		elif element.oclIsTypeOf(Constraint) then '3011'
+		elif element.oclIsTypeOf(Constraint) then '3012'
+		
+		elif element.oclIsTypeOf(IntervalConstraint) then '3033'
+		elif element.oclIsTypeOf(IntervalConstraint) then '3032' 		
+		elif element.oclIsTypeOf(DurationConstraint) then '3035'
+		elif element.oclIsTypeOf(TimeConstraint) then '3036'
+		elif element.oclIsTypeOf(TimeConstraint) then '3037'
+		elif element.oclIsTypeOf(DurationConstraint) then '3034'
+		
+		elif element.oclIsTypeOf(FlowFinalNode) then '3006' 
+		elif element.oclIsTypeOf(ActivityPartition) then '3067' 
+		 
+		elif element.oclIsTypeOf(ActionInputPin) then '3053' 
+		elif element.oclIsTypeOf(BroadcastSignalAction) then '3102' 
+		elif element.oclIsTypeOf(ActionInputPin) then '3050' 
+		elif element.oclIsTypeOf(ValuePin) then '3022' 
+		 
+		elif element.oclIsTypeOf(ValuePin) then '3060' 
+		elif element.oclIsTypeOf(SequenceNode) then '3073' 
+		elif element.oclIsTypeOf(ActionInputPin) then '3021' 
+		elif element.oclIsTypeOf(InputPin) then '3092' 
+		elif element.oclIsTypeOf(OutputPin) then '3087' 
+		elif element.oclIsTypeOf(InputPin) then '3051' 
+		elif element.oclIsTypeOf(ReadSelfAction) then '3081' 
+		elif element.oclIsTypeOf(ActivityFinalNode) then '3005' 
+		elif element.oclIsTypeOf(InputPin) then '3062' 
+		elif element.oclIsTypeOf(SendSignalAction) then '3052' 
+		elif element.oclIsTypeOf(InitialNode) then '3004' 
+		elif element.oclIsTypeOf(AddStructuralFeatureValueAction) then '3091' 
+		elif element.oclIsTypeOf(OutputPin) then '3109' 
+		 
+		elif element.oclIsTypeOf(OutputPin) then '3111' 
+		elif element.oclIsTypeOf(LoopNode) then '3071' 
+		elif element.oclIsTypeOf(OutputPin) then '3014' 
+		elif element.oclIsTypeOf(ForkNode) then '3040' 
+		elif element.oclIsTypeOf(ExpansionNode) then '3074' 
+		elif element.oclIsTypeOf(ActionInputPin) then '3018' 
+		elif element.oclIsTypeOf(InputPin) then '3013' 
+		elif element.oclIsTypeOf(OutputPin) then '3090' 
+		elif element.oclIsTypeOf(OutputPin) then '3064' 
+		elif element.oclIsTypeOf(CallOperationAction) then '3010' 
+		elif element.oclIsTypeOf(InputPin) then '3027' 
+		
+		elif element.oclIsTypeOf(InputPin) then '3105' 
+		 
+		elif element.oclIsTypeOf(AddVariableValueAction) then '3099' 
+		elif element.oclIsTypeOf(ExpansionNode) then '3075' 
+		elif element.oclIsTypeOf(ValuePin) then '3017' 
+		elif element.oclIsTypeOf(Parameter) then '3001' 
+		elif element.oclIsTypeOf(ReadVariableAction) then '3097' 
+		elif element.oclIsTypeOf(OpaqueAction) then '3007' 
+		elif element.oclIsTypeOf(OutputPin) then '3077' 
+		elif element.oclIsTypeOf(ValuePin) then '3046' 
+		elif element.oclIsTypeOf(InputPin) then '3023' 
+		elif element.oclIsTypeOf(InputPin) then '3096' 
+		elif element.oclIsTypeOf(InputPin) then '3055' 
+		elif element.oclIsTypeOf(OutputPin) then '3110' 
+		elif element.oclIsTypeOf(InputPin) then '3019' 
+		elif element.oclIsTypeOf(InputPin) then '3100' 
+		elif element.oclIsTypeOf(InputPin) then '3093' 
+		elif element.oclIsTypeOf(InterruptibleActivityRegion) then '3068' 
+		 
+		elif element.oclIsTypeOf(OutputPin) then '3094' 
+		elif element.oclIsTypeOf(JoinNode) then '3041' 
+		elif element.oclIsTypeOf(StructuredActivityNode) then '3065' 
+		elif element.oclIsTypeOf(ConditionalNode) then '3069' 
+		elif element.oclIsTypeOf(OutputPin) then '3024' 
+		elif element.oclIsTypeOf(ActionInputPin) then '3047' 
+		 
+		 
+		elif element.oclIsTypeOf(DecisionNode) then '3038' 
+		elif element.oclIsTypeOf(ActivityParameterNode) then '3059' 
+		elif element.oclIsTypeOf(ActionInputPin) then '3061' 
+		elif element.oclIsTypeOf(ActionInputPin) then '3016' 
+		elif element.oclIsTypeOf(CentralBufferNode) then '3104' 
+		elif element.oclIsTypeOf(Comment) then '3080' 
+		elif element.oclIsTypeOf(DestroyObjectAction) then '3095' 
+		elif element.oclIsTypeOf(CreateObjectAction) then '3086' 
+		elif element.oclIsTypeOf(ValuePin) then '3025' 
+		elif element.oclIsTypeOf(ValuePin) then '3054' 
+		elif element.oclIsTypeOf(OutputPin) then '3098' 
+		elif element.oclIsTypeOf(DataStoreNode) then '3078' 
+		elif element.oclIsTypeOf(InputPin) then '3089' 
+		elif element.oclIsTypeOf(ActionInputPin) then '3026' 
+		elif element.oclIsTypeOf(CallBehaviorAction) then '3008' 
+		elif element.oclIsTypeOf(ExpansionRegion) then '3070' 
+		elif element.oclIsTypeOf(SendObjectAction) then '3042' 
+		elif element.oclIsTypeOf(InputPin) then '3048' 
+		elif element.oclIsTypeOf(InputPin) then '3101' 
+		elif element.oclIsTypeOf(OutputPin) then '3020' 
+		 
+		elif element.oclIsTypeOf(MergeNode) then '3039' 
+		 
+		elif element.oclIsTypeOf(ValuePin) then '3015' 
+		elif element.oclIsTypeOf(ValueSpecificationAction) then '3076' 
+		elif element.oclIsTypeOf(AcceptEventAction) then '3063' 
+		elif element.oclIsTypeOf(Activity) then '2001' 
+		elif element.oclIsTypeOf(InputPin) then '3103' 
+		elif element.oclIsTypeOf(ReadStructuralFeatureAction) then '3088' 
+		elif element.oclIsTypeOf(OutputPin) then '3084' 
+		elif element.oclIsTypeOf(ValuePin) then '3049' 
+		else self.fail()
+	endif;
+}
+
+
+query View::getDecorationType(element : Element) : String{
+	var res := self.doGetDecorationType(element);
+	
+	/*
+	log('Get papyrus ID for'+ self.element.eClass().name+', '+self.type);
+	
+	log(res);
+	
+	if self.container().oclIsKindOf(Node) then 
+		log('IsNode')
+	else 
+		log('IsEdge')
+	endif;
+	*/
+	
+	return res;
+	
+}
+
+query View::doGetDecorationType(element : Element) : String{
+	return if self.container().oclIsKindOf(Node) then {
+		return if element.oclIsTypeOf(ActivityPartition) then
+			return switch {
+				case (self.type = 'PartitionName') '5118';
+				case (self.type = 'PartitionCompartment') '7006';
+			}
+			elif element.oclIsTypeOf(Constraint) then
+				return switch {
+					case (self.type = 'Name') '5189';
+				}
+			elif element.oclIsTypeOf(IntervalConstraint) then
+				return switch {
+					case (self.type = 'Name') '5037';
+					
+				}
+			elif element.oclIsTypeOf(BroadcastSignalAction) then
+				return switch {
+					case (self.type = 'Name') '5175';
+					
+				}
+			elif element.oclIsTypeOf(SequenceNode) then
+				return switch {
+					
+					case (self.type = 'StructureCompartment') '7012';
+				}
+			elif element.oclIsTypeOf(ReadSelfAction) then
+				return switch {
+					case (self.type = 'Name') '5139';
+					
+				}
+			elif element.oclIsTypeOf(SendSignalAction) then
+				return switch {
+					case (self.type = 'Name') '5060';
+					
+				}
+			elif element.oclIsTypeOf(AddStructuralFeatureValueAction) then
+				return switch {
+					case (self.type = 'Name') '5160';
+					
+				}
+			elif element.oclIsTypeOf(DurationConstraint) then
+				return switch {
+					case (self.type = 'Name') '5039';
+					
+				}
+			elif element.oclIsTypeOf(LoopNode) then
+				return switch {
+					
+					case (self.type = 'StructureCompartment') '7010';
+				}
+			elif element.oclIsTypeOf(CallOperationAction) then
+				return switch {
+					case (self.type = 'Name') '5006';
+					
+				}
+			elif element.oclIsTypeOf(IntervalConstraint) then
+				return switch {
+					case (self.type = 'Name') '5036';
+					
+				}
+			elif element.oclIsTypeOf(Constraint) then
+				return switch {
+					case (self.type = 'Name') '5007';
+					
+				}
+			elif element.oclIsTypeOf(AddVariableValueAction) then
+				return switch {
+					case (self.type = 'Name') '5171';
+					
+				}
+			elif element.oclIsTypeOf(ReadVariableAction) then
+				return switch {
+					case (self.type = 'Name') '5166';
+					
+				}
+			elif element.oclIsTypeOf(OpaqueAction) then
+				return switch {
+					case (self.type = 'Name') '5003';
+					
+				}
+			elif element.oclIsTypeOf(InterruptibleActivityRegion) then
+				return switch {
+					
+					case (self.type = 'StructureCompartment') '7007';
+				}
+			elif element.oclIsTypeOf(Constraint) then
+				return switch {
+					case (self.type = 'Name') '5008';
+					
+				}
+			elif element.oclIsTypeOf(StructuredActivityNode) then
+				return switch {
+					case (self.type = 'Name') '5117';
+					case (self.type = 'StructuredActivityNodeCompartment') '7005';
+				}
+			elif element.oclIsTypeOf(ConditionalNode) then
+				return switch {
+					
+					case (self.type = 'StructureCompartment') '7008';
+				}
+			elif element.oclIsTypeOf(TimeConstraint) then
+				return switch {
+					case (self.type = 'Name') '5040';
+					
+				}
+			elif element.oclIsTypeOf(ActivityParameterNode) then
+				return switch {
+					case (self.type = 'Name') '5071';
+					
+				}
+			elif element.oclIsTypeOf(DestroyObjectAction) then
+				return switch {
+					case (self.type = 'Name') '5163';
+					
+				}
+			elif element.oclIsTypeOf(CreateObjectAction) then
+				return switch {
+					case (self.type = 'Name') '5148';
+					
+				}
+			elif element.oclIsTypeOf(CallBehaviorAction) then
+				return switch {
+					case (self.type = 'Name') '5004';
+					
+				}
+			elif element.oclIsTypeOf(ExpansionRegion) then
+				return switch {
+					
+					case (self.type = 'StructureCompartment') '7009';
+				}
+			elif element.oclIsTypeOf(SendObjectAction) then
+				return switch {
+					case (self.type = 'Name') '5059';
+					
+				}
+			elif element.oclIsTypeOf(TimeConstraint) then
+				return switch {
+					case (self.type = 'Name') '5041';
+					
+				}
+			elif element.oclIsTypeOf(DurationConstraint) then
+				return switch {
+					case (self.type = 'Name') '5038';
+					
+				}
+			elif element.oclIsTypeOf(ValueSpecificationAction) then
+				return switch {
+					case (self.type = 'Name') '5126';
+					
+				}
+			elif element.oclIsTypeOf(Activity) then
+				return switch {
+					case (self.type = 'Name') '5001';
+					case (self.type = 'Compartment') '7001';
+					case (self.type = 'Compartment') '7002';
+					case (self.type = 'Compartment') '7003';
+					case (self.type = 'ActivityCompartment') '7004';
+				}
+			elif element.oclIsTypeOf(ReadStructuralFeatureAction) then
+				return switch {
+					case (self.type = 'Name') '5153';
+				}
+			elif element.oclIsTypeOf(AcceptEventAction) then 
+				return switch {
+					case (self.type = 'Name') '5078';
+				}
+		endif
+	} else {
+		return if element.oclIsTypeOf(ObjectFlow)  then
+			return switch {
+				case (self.type='Name') '6001';		
+				case (self.type = 'NameLabel') '6001';
+				case (self.type = 'KindLabel') '6010';
+				
+			}
+			elif element.oclIsTypeOf(ControlFlow)  then
+				return switch {
+					case (self.type='Name') '6003';		
+					case (self.type = 'NameLabel') '6003';
+					case (self.type = 'KindLabel') '6011';
+				}
+		endif
+	} endif;
+}
+
+
+query View::getEdgeType(element : Element) : String {
+	return
+		if element.oclIsTypeOf(ObjectFlow) then '4003'
+		elif element.oclIsTypeOf(ControlFlow) then '4004'
+		elif element.oclIsTypeOf(ExceptionHandler) then '4005'
+		else self.fail()
+	endif;
+}
+

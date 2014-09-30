@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Require-Bundle: org.junit;bundle-version="4.10.0",
- org.eclipse.papyrus.junit.framework;bundle-version="1.0.1"
+ org.eclipse.papyrus.junit.framework;bundle-version="1.1.0"
 Export-Package: org.eclipse.papyrus.infra.core.sasheditor.di.contentprovider,
  org.eclipse.papyrus.infra.core.sasheditor.di.contentprovider.internal,
  org.eclipse.papyrus.infra.core.sasheditor.di.sashmodel.query,
@@ -8,7 +8,7 @@ Export-Package: org.eclipse.papyrus.infra.core.sasheditor.di.contentprovider,
 Bundle-Vendor: %Bundle-Vendor
 Fragment-Host: org.eclipse.papyrus.infra.core.sasheditor.di;bundle-ver
  sion="0.10.0"
-Bundle-Version: 1.0.1.qualifier
+Bundle-Version: 1.1.0.qualifier
 Bundle-Name: %Bundle-Name
 Bundle-ManifestVersion: 2
 Bundle-SymbolicName: org.eclipse.papyrus.infra.core.sasheditor.di.test

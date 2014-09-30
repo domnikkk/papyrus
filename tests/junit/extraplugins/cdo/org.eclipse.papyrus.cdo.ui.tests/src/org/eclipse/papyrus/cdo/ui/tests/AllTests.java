@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2013 CEA LIST.
+ * Copyright (c) 2013, 2014 CEA LIST and others.
  * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,6 +8,8 @@
  *
  * Contributors:
  *   CEA LIST - Initial API and implementation
+ *   Christian W. Damus (CEA) - bug 443830
+ *   
  *****************************************************************************/
 package org.eclipse.papyrus.cdo.ui.tests;
 
@@ -15,6 +17,7 @@ import org.eclipse.papyrus.cdo.internal.ui.editors.tests.BasicEditorTest;
 import org.eclipse.papyrus.cdo.internal.ui.editors.tests.DawnEditorAdapterTest;
 import org.eclipse.papyrus.cdo.internal.ui.markers.tests.CDOPapyrusMarkerTest;
 import org.eclipse.papyrus.cdo.internal.ui.markers.tests.ModelValidationMarkersTest;
+import org.eclipse.papyrus.cdo.internal.ui.views.tests.ItemProviderFilterRegistryTest;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
@@ -24,7 +27,8 @@ import org.junit.runners.Suite.SuiteClasses;
  */
 @RunWith(Suite.class)
 @SuiteClasses({ BasicEditorTest.class, DawnEditorAdapterTest.class, //
-ModelValidationMarkersTest.class, CDOPapyrusMarkerTest.class })
+		ModelValidationMarkersTest.class, CDOPapyrusMarkerTest.class, //
+		ItemProviderFilterRegistryTest.class })
 public class AllTests {
 
 	public AllTests() {

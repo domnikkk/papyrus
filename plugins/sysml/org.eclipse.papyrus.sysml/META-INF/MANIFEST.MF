@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
-Require-Bundle: org.eclipse.papyrus.uml.extensionpoints;bundle-version="1.0.1",
+Require-Bundle: org.eclipse.papyrus.uml.extensionpoints;bundle-version="1.1.0",
  org.eclipse.core.runtime,
  org.eclipse.emf.ecore,
  org.eclipse.emf.ecore.xmi,
@@ -42,7 +42,7 @@ Export-Package: org.eclipse.papyrus.sysml,
 Bundle-Vendor: %providerName
 Bundle-ActivationPolicy: lazy
 Bundle-ClassPath: .
-Bundle-Version: 1.0.1.qualifier
+Bundle-Version: 1.1.0.qualifier
 Bundle-Localization: plugin
 Bundle-Name: %pluginName
 Bundle-ManifestVersion: 2

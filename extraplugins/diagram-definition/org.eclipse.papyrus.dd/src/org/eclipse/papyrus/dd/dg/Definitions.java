@@ -12,6 +12,7 @@
 package org.eclipse.papyrus.dd.dg;
 
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -20,7 +21,11 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
+ * <<<<<<< HEAD
+ * <li>{@link org.eclipse.papyrus.dd.dg.Definitions#getDefinitions <em>Definition</em>}</li>
+ * =======
  * <li>{@link org.eclipse.papyrus.dd.dg.Definitions#getDefnitions <em>Defnition</em>}</li>
+ * >>>>>>> branch 'master' of ssh://melaasar6nr@git.eclipse.org:29418/papyrus/org.eclipse.papyrus
  * <li>{@link org.eclipse.papyrus.dd.dg.Definitions#getStyleSheet <em>Style Sheet</em>}</li>
  * </ul>
  * </p>
@@ -32,18 +37,28 @@ import org.eclipse.emf.ecore.EObject;
 public interface Definitions extends EObject {
 
 	/**
+	 * <<<<<<< HEAD
+	 * Returns the value of the '<em><b>Definition</b></em>' containment reference list.
+	 * The list contents are of type {@link org.eclipse.papyrus.dd.dg.Definition}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * A set of clip paths that are referenced by graphical elements in the containing canvas.
+	 * <!-- end-model-doc -->
+	 * =======
 	 * Returns the value of the '<em><b>Defnition</b></em>' containment
 	 * reference list. The list contents are of type {@link org.eclipse.papyrus.dd.dg.Definition}. <!-- begin-user-doc -->
 	 * <!-- end-user-doc --> <!-- begin-model-doc --> A set of clip paths that
 	 * are referenced by graphical elements in the containing canvas. <!--
 	 * end-model-doc -->
+	 * >>>>>>> branch 'master' of ssh://melaasar6nr@git.eclipse.org:29418/papyrus/org.eclipse.papyrus
 	 *
-	 * @return the value of the '<em>Defnition</em>' containment reference list.
-	 * @see org.eclipse.papyrus.dd.dg.DGPackage#getDefinitions_Defnition()
+	 * @return the value of the '<em>Definition</em>' containment reference list.
+	 * @see org.eclipse.papyrus.dd.dg.DGPackage#getDefinitions_Definition()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Definition> getDefnitions();
+	EList<Definition> getDefinitions();
 
 	/**
 	 * Returns the value of the '<em><b>Style Sheet</b></em>' containment
@@ -65,7 +80,7 @@ public interface Definitions extends EObject {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Style Sheet</em>' containment reference.
+	 *        the new value of the '<em>Style Sheet</em>' containment reference.
 	 * @see #getStyleSheet()
 	 * @generated
 	 */

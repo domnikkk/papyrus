@@ -204,7 +204,7 @@ public class PapyrusDuplicateWrapperCommand extends AbstractTransactionalCommand
 	 *
 	 * @return the list of external objects to duplicate or an empty list if not elements are found to add.
 	 */
-	protected ICommand getExternalObjectsDuplicateCommand(Map duplicatedElementsMap) {
+	protected ICommand getExternalObjectsDuplicateCommand(Map<?, ?> duplicatedElementsMap) {
 		CompositeCommand result = new CompositeCommand("Duplicate External Objects"); //$NON-NLS-1$
 		Set<Object> duplicatedExternalElements = new HashSet<Object>();
 

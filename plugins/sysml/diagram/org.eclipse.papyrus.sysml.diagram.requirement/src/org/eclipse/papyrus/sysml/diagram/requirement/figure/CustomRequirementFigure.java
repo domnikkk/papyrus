@@ -17,9 +17,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.papyrus.uml.diagram.common.figure.node.ClassFigure;
 import org.eclipse.papyrus.uml.diagram.common.figure.node.ClassifierFigure;
 
-public class CustomRequirementFigure extends ClassifierFigure {
+public class CustomRequirementFigure extends ClassFigure {
 
 	/** The Attribute Compartment */
 	private final static String ATTRIBUTE_COMPARTMENT = "attributeCompartment";

@@ -19,19 +19,15 @@ namespace Package1 {
 /**
  * 
  */
-
 class Class9 {
-
 public:
 	Class9() :
 			externAttribute(3) {
 	}
-
 	/**
 	 * 
 	 */
 	int volatileAttribute;
-
 	/**
 	 * Should not generate 'register' keyword as 'register' only applies to properties declared within the scope of an operation.
 	 */
@@ -39,20 +35,19 @@ public:
 
 	/**
 	 * 
-	 * @param  
+	 * @return  
 	 */
 	int volatileIntOperation();
 
 	/**
 	 * Should not generate the 'register' keyword as it cannot be used in method signatures.
-	 * @param  
+	 * @return  
 	 */
 	int registerOperation();
 
 };
 /************************************************************/
 /* External declarations (package visibility)               */
-
 /**
  * 
  */
@@ -60,10 +55,9 @@ int externAttribute;
 
 /**
  * 
- * @param  
+ * @return  
  */
 int externOperation();
-
 /************************************************************/
 
 /* Inline functions                                         */

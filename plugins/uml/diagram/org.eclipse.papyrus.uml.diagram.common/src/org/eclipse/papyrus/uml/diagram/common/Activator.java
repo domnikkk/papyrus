@@ -72,10 +72,10 @@ public class Activator extends AbstractUIPlugin {
 	protected static FontManager fontManager = /* new FontManager(); */null;
 
 	/** left Stereotype delimiters ('Guillemets francais'). */
-	public static String ST_LEFT = String.valueOf("\u00AB");
+	public static final String ST_LEFT = String.valueOf("\u00AB"); //$NON-NLS-1$
 
 	/** Right Stereotype delimiters ('Guillemets francais'). */
-	public static String ST_RIGHT = String.valueOf("\u00BB");
+	public static final String ST_RIGHT = String.valueOf("\u00BB"); //$NON-NLS-1$
 
 	/**
 	 * The constructor
@@ -557,7 +557,7 @@ public class Activator extends AbstractUIPlugin {
 	 * @return the composed adapter factory
 	 */
 	protected ComposedAdapterFactory createAdapterFactory() {
-		List factories = new ArrayList();
+		List<AdapterFactory> factories = new ArrayList<AdapterFactory>();
 		fillItemProviderFactories(factories);
 		return new ComposedAdapterFactory(factories);
 	}
@@ -571,7 +571,7 @@ public class Activator extends AbstractUIPlugin {
 	 *
 	 * @see org.eclipse.emf.edit.provider.ComposedAdapterFactory#getFactoryForTypes(java.util.Collection)
 	 */
-	protected void fillItemProviderFactories(List factories) {
+	protected void fillItemProviderFactories(List<AdapterFactory> factories) {
 		// custom icons for diagram elements
 		factories.add(new AlternativeUMLItemProviderAdapterFactory(getPreferenceStore()));
 

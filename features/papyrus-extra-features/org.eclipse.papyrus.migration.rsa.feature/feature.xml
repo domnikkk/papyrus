@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.eclipse.papyrus.migration.rsa.feature"
+      label="Papyrus RSA Import Feature"
+      version="1.1.0.qualifier"
+      provider-name="Eclipse Modeling Project">
+
+   <description>
+      This component allows importing UML models from RSA and RSA-RTE
+   </description>
+
+   <copyright>
+      Copyright (c) 2013 CEA LIST.
+     
+  All rights reserved.
+   </copyright>
+
+   <plugin
+         id="org.eclipse.papyrus.m2m.qvto"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.papyrus.migration.rsa"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>

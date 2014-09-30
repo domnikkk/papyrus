@@ -1,0 +1,380 @@
+/*****************************************************************************
+ * Copyright (c) 2013, 2014 CEA LIST.
+ *
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
+ *****************************************************************************/
+import RSAToPapyrus;
+
+modeltype notation "strict" uses 'http://www.eclipse.org/gmf/runtime/1.0.2/notation';
+modeltype umlNotation "strict" uses 'http://www.eclipse.org/papyrus/umlnotation';
+modeltype uml "strict" uses 'http://www.eclipse.org/uml2/5.0.0/UML';
+modeltype ecore "strict" uses 'http://www.eclipse.org/emf/2002/Ecore';
+modeltype sash "strict" uses 'http://www.eclipse.org/papyrus/0.7.0/sashdi';
+modeltype config "strict" uses 'http:///RSAToPapyrusParameters.ecore';
+
+transformation RSASequenceDiagram(inout semantics : uml, inout graphics : notation, out di : sash, in param : config);
+
+main() {
+	semantics.rootObjects()[uml::Element]->map toOwnedDiagrams();
+}
+
+query View::getDiagramType() : String{
+	return 'PapyrusUMLSequenceDiagram';
+}
+
+mapping notation::Diagram::generateDiagram() : notation::Diagram inherits Diagram::toPapyrusDiagram when {
+	self.type = 'Sequence'
+}{
+	end {
+		graphics.objectsOfType(Shape)->select(type = '3003').map fixExecutionSpecification();
+		graphics.objectsOfType(Shape)->select(type = '3001').map fixLifelineHeight();
+		graphics.objectsOfType(Shape)->select(type = '3017').map fixStateInvariant();
+		
+		graphics.objectsOfType(Shape)->select(type = '3009').map addCommentDecoration();
+		graphics.objectsOfType(Shape)->select(type = '3008').map addConstraintDecoration();
+	}
+}
+
+mapping inout Shape::addCommentDecoration() when {
+	self.type = '3009' and self.diagram.type = self.getDiagramType()
+} {
+	
+	self.children += object DecorationNode{
+		type := '5006'; //Comment body
+	}	
+
+}
+
+mapping inout Shape::addConstraintDecoration() when {
+	self.type = '3008' and self.diagram.type = self.getDiagramType()
+} {
+	
+	self.children += object DecorationNode{
+		type := '5012'; //Constraint specification
+	}	
+
+}
+
+mapping inout Shape::fixLifelineHeight() {
+	self.layoutConstraint.oclAsType(Location).y := 10;
+}
+
+mapping inout Shape::fixExecutionSpecification() {
+	self.children := self.children->including(object DecorationNode {
+		type := 'BehaviorExecutionSpecification_Behavior';
+		layoutConstraint := object Location {
+			x := 18;
+			y := 18;
+		}
+	});
+	
+	var lifeline := semantics.objectsOfType(Lifeline)->any(ll | ll.coveredBy->includes(self.element.oclAsType(InteractionFragment)));
+	var lifelineShape := graphics.objectsOfType(Shape)->any(element = lifeline.oclAsType(EObject));
+	lifelineShape.children := lifelineShape.children->including(self);
+	var lifelineWidth := lifelineShape.layoutConstraint.oclAsType(Bounds).width;
+	
+	var speficationBounds := self.layoutConstraint.oclAsType(Bounds);
+	speficationBounds.x := ((lifelineWidth - 15)/2).round();
+	
+	/* Cannot be selected in Papyrus when it is too small */
+	var minHeight := 50;
+	if speficationBounds.height < minHeight then
+		speficationBounds.height := minHeight
+	endif;
+}
+
+mapping inout Shape::fixStateInvariant() {
+	
+	var lifeline := semantics.objectsOfType(Lifeline)->any(ll | ll.coveredBy->includes(self.element.oclAsType(StateInvariant)));
+	var lifelineShape := graphics.objectsOfType(Shape)->any(element = lifeline.oclAsType(EObject));
+	
+	lifelineShape.children := lifelineShape.children->including(self);
+}
+
+mapping Node::toNode() : Node disjuncts
+	UMLShape::toPapyrusShape,
+	UMLShapeCompartment::toStructureCompartment,
+	BasicSemanticCompartment::toListCompartment,
+	BasicDecorationNode::toConnectorLabel,
+	BasicDecorationNode::toLabel
+	//TODO: Disjunct nodes mapping
+;
+
+mapping Edge::toEdge() : Edge disjuncts
+	UMLConnector::toPapyrusConnector
+	//TODO: Disjunct edges mapping
+;
+
+mapping UMLShapeCompartment::toStructureCompartment() : DecorationNode inherits UMLShapeCompartment::toAbstractStructureCompartment when {
+	(self.type = 'StructureCompartment' or 
+	self.type = 'PackageContents' or
+	self.type = 'interaction_compartment' or
+	self.type.oclIsUndefined() or self.type = '')
+	and not self.getType().oclIsUndefined();
+}{
+	
+}
+
+
+/***** Nodes **********/
+
+mapping UMLShape::toPapyrusShape() : Shape inherits Shape::toPapyrusShape when {
+	self.type = '' and not self.getType().oclIsUndefined() and (
+		self.element.oclIsTypeOf(ActionExecutionSpecification)or
+		self.element.oclIsTypeOf(BehaviorExecutionSpecification)or
+		self.element.oclIsTypeOf(TimeObservation)or
+		self.element.oclIsTypeOf(InteractionUse)or
+		self.element.oclIsTypeOf(CombinedFragment)or
+		self.element.oclIsTypeOf(Comment)or
+		self.element.oclIsTypeOf(Lifeline)or
+		self.element.oclIsTypeOf(InteractionOperand)or
+		self.element.oclIsTypeOf(TimeConstraint)or
+		self.element.oclIsTypeOf(StateInvariant)or
+		self.element.oclIsTypeOf(CombinedFragment)or
+		self.element.oclIsTypeOf(Continuation)or
+		self.element.oclIsTypeOf(Interaction)or
+		self.element.oclIsTypeOf(Constraint)or
+		self.element.oclIsTypeOf(DurationConstraint)or
+		self.element.oclIsTypeOf(DurationObservation)or
+		self.element.oclIsTypeOf(ConsiderIgnoreFragment)or
+		self.element.oclIsTypeOf(DurationConstraint)or
+		self.element.oclIsTypeOf(DestructionOccurrenceSpecification)
+		
+	)
+}{}
+
+
+/****** Connector Labels ******/
+
+mapping BasicDecorationNode::toConnectorLabel() : DecorationNode inherits Node::toPapyrusConnectorLabel when {
+	not self.getType().oclIsUndefined() and (
+		self.type = 'ToMultiplicityLabel' or
+		self.type = 'ToRoleLabel' or
+		self.type = 'FromMultiplicityLabel' or
+		self.type = 'FromRoleLabel' or
+		self.type = 'NameLabel' or
+		self.type = 'KindLabel'
+	)
+}{
+	
+}
+
+/****** Compartments *******/
+
+mapping BasicDecorationNode::toLabel() : DecorationNode inherits Node::toPapyrusNode when {
+	not self.getType().oclIsUndefined() and
+	self.element.oclIsKindOf(uml::NamedElement) and 
+	self.type = 'Name'
+}{
+	
+}
+
+mapping BasicSemanticCompartment::toListCompartment() : BasicCompartment inherits Node::toPapyrusNode, DrawerStyle::toDrawerStyle when {
+	self.type.endsWith('Compartment') and not self.getType().oclIsUndefined()
+}{
+	result.children := self.findElement().map toContents(self);
+}
+
+mapping Element::toContents(node : BasicSemanticCompartment) : Sequence(Node) disjuncts
+	CombinedFragment::toContents
+;
+
+mapping CombinedFragment::toContents(node : BasicSemanticCompartment) : Sequence(Node) disjuncts
+	CombinedFragment::toCombinedFragmentCompartmentContents
+;
+
+mapping CombinedFragment::toCombinedFragmentCompartmentContents(node : BasicSemanticCompartment) : Sequence(Node) when {
+	node.type = 'Compartment';
+}{
+
+}
+
+
+
+
+
+
+
+/******* Edges ********/
+
+
+mapping UMLConnector::toPapyrusConnector() : Connector inherits Connector::toPapyrusConnector when {
+	self.type = '' and 
+	not self.getType().oclIsUndefined() and (
+		self.element.oclIsTypeOf(Message)or
+		self.element.oclIsTypeOf(Message)or
+		self.element.oclIsTypeOf(Message)or
+		self.element.oclIsTypeOf(Message)or
+		self.element.oclIsTypeOf(Message)or
+		self.element.oclIsTypeOf(Message)or
+		self.element.oclIsTypeOf(Message)or
+		self.element.oclIsTypeOf(GeneralOrdering)
+	)
+}{
+	result.styles := self.map toFontStyle();
+}
+
+/****** Element Type queries ******/
+
+query View::getNodeType(element : Element) : String {
+	return
+		if element.oclIsTypeOf(TimeObservation) then '3020' 
+		elif element.oclIsTypeOf(InteractionUse) then '3002' 
+		elif element.oclIsTypeOf(CombinedFragment) then '3004' 
+		elif element.oclIsTypeOf(CombinedFragment) then '3018' 
+		elif element.oclIsTypeOf(Comment) then '3009' 
+		elif element.oclIsTypeOf(Lifeline) then '3001' 
+		elif element.oclIsTypeOf(InteractionOperand) then '3005' 
+		elif element.oclIsTypeOf(TimeConstraint) then '3019' 
+		elif element.oclIsTypeOf(StateInvariant) then '3017' 
+		elif element.oclIsTypeOf(Continuation) then '3016' 
+		elif element.oclIsTypeOf(Interaction) then '2001' 
+		elif element.oclIsTypeOf(Constraint) then '3008' 
+		elif element.oclIsTypeOf(DurationConstraint) then '3021' 
+		elif element.oclIsTypeOf(DurationObservation) then '3024' 
+		elif element.oclIsTypeOf(ConsiderIgnoreFragment) then '3007' 
+		elif element.oclIsTypeOf(ActionExecutionSpecification) then '3006' 
+		elif element.oclIsTypeOf(DurationConstraint) then '3023' 
+		elif element.oclIsTypeOf(DestructionOccurrenceSpecification) then '3022' 
+		elif element.oclIsTypeOf(BehaviorExecutionSpecification) then '3003' 
+		else self.fail()
+	endif;
+}
+
+
+query View::getDecorationType(element : Element) : String{
+	var res := self.doGetDecorationType(element);
+	
+	/*log('Get papyrus ID for'+ self.element.eClass().name+', '+self.type);
+	
+	log(res);
+	
+	if self.container().oclIsKindOf(Node) then 
+		log('IsNode')
+	else 
+		log('IsEdge')
+	endif;*/
+	
+	return res;
+	
+}
+
+query View::doGetDecorationType(element : Element) : String{
+	return if self.container().oclIsKindOf(Node) then {
+		return if element.oclIsTypeOf(InteractionUse) then
+				return switch {
+					case (self.type = 'Name') '5003';
+					
+				}
+			elif element.oclIsTypeOf(Lifeline) then
+				return switch {
+					case (self.type = 'Name') '5002';
+					
+				}
+			elif element.oclIsTypeOf(StateInvariant) then
+				return switch {
+					case (self.type = 'Name') '5008';
+					
+				}
+			elif element.oclIsTypeOf(InteractionOperand) then
+				return switch {
+					
+					case (self.type.oclIsUndefined() or self.type = '') '7004';
+				}
+			elif element.oclIsTypeOf(Continuation) then
+				return switch {
+					case (self.type = 'Name') '5007';
+					
+				}
+			elif element.oclIsTypeOf(Interaction) then
+				return switch {
+					case (self.type = 'Name') '5001';
+					case (self.type = 'interaction_compartment') '7001';
+				}
+			elif element.oclIsTypeOf(Constraint) then
+				return switch {
+					case (self.type = 'Name') '5005';
+					
+				}
+		endif
+	} else {
+		return if element.oclIsTypeOf(Message) and (element.oclIsKindOf(uml::InteractionFragment)) and (element.oclIsKindOf(uml::InteractionFragment) or element.oclIsKindOf(uml::Lifeline)) then
+			return switch {
+				case (self.type='Name') '6001';		
+				case (self.type = 'NameLabel') '6001';
+				case (self.type = 'KindLabel') '6008';
+			}
+		
+			elif element.oclIsTypeOf(Message) and ((element.oclIsKindOf(uml::Lifeline) or element.oclIsKindOf(uml::InteractionFragment) or element.oclIsKindOf(uml::Gate))) and true then
+				return switch {
+							
+					case (self.type = 'NameLabel') '6002';
+					case (self.type = 'KindLabel') '6009';
+				}
+			
+			elif element.oclIsTypeOf(Message) and (element.oclIsKindOf(uml::InteractionFragment)) and ((element.oclIsKindOf(uml::Lifeline) or element.oclIsKindOf(uml::InteractionFragment) or element.oclIsKindOf(uml::Gate))) then
+				return switch {
+							
+					case (self.type = 'NameLabel') '6003';
+					case (self.type = 'KindLabel') '6010';
+				}
+			
+			elif element.oclIsTypeOf(Message) and (element.oclIsKindOf(uml::InteractionFragment) or element.oclIsKindOf(uml::Lifeline)) and (element.oclIsKindOf(uml::Lifeline)) then
+				return switch {
+							
+					case (self.type = 'NameLabel') '6004';
+					case (self.type = 'KindLabel') '6011';
+				}
+			
+			elif element.oclIsTypeOf(Message) and (element.oclIsKindOf(uml::InteractionFragment) or element.oclIsKindOf(uml::Lifeline)) and (element.oclIsKindOf(uml::DestructionOccurrenceSpecification) or element.oclIsKindOf(uml::Lifeline)) then
+				return switch {
+							
+					case (self.type = 'NameLabel') '6005';
+					case (self.type = 'KindLabel') '6012';
+				}
+			
+			elif element.oclIsTypeOf(Message) and ((element.oclIsKindOf(uml::Lifeline) or element.oclIsKindOf(uml::InteractionFragment) or element.oclIsKindOf(uml::Gate))) and (element.oclIsKindOf(uml::Interaction)) then
+				return switch {
+							
+					case (self.type = 'NameLabel') '6006';
+					case (self.type = 'KindLabel') '6013';
+				}
+			
+			elif element.oclIsTypeOf(Message) and (element.oclIsKindOf(uml::Interaction)) and ((element.oclIsKindOf(uml::Lifeline) or element.oclIsKindOf(uml::InteractionFragment) or element.oclIsKindOf(uml::Gate))) then
+				return switch {
+							
+					case (self.type = 'NameLabel') '6007';
+					case (self.type = 'KindLabel') '6014';
+				}
+			
+			elif element.oclIsTypeOf(GeneralOrdering)  then
+				return switch {
+							
+					case (self.type = 'KindLabel') '6015';
+				}
+			
+		endif
+	} endif;
+}
+
+
+query View::getEdgeType(element : Element) : String {
+	return
+		if element.oclIsTypeOf(Message) then '4003'
+		elif element.oclIsTypeOf(Message) then '4004'
+		elif element.oclIsTypeOf(Message) then '4005'
+		elif element.oclIsTypeOf(Message) then '4006'
+		elif element.oclIsTypeOf(Message) then '4007'
+		elif element.oclIsTypeOf(Message) then '4008'
+		elif element.oclIsTypeOf(Message) then '4009'
+		elif element.oclIsTypeOf(GeneralOrdering) then '4012'
+		else self.fail()
+	endif;
+}
+

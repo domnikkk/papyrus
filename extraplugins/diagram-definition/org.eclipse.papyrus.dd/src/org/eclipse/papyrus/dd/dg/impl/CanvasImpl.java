@@ -13,16 +13,19 @@ package org.eclipse.papyrus.dd.dg.impl;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.Map;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.eclipse.papyrus.dd.dc.Bounds;
+
 import org.eclipse.papyrus.dd.dg.Canvas;
 import org.eclipse.papyrus.dd.dg.DGPackage;
 import org.eclipse.papyrus.dd.dg.util.DGValidator;
@@ -87,9 +90,9 @@ public class CanvasImpl extends GroupImpl implements Canvas {
 	public NotificationChain basicSetBounds(Bounds newBounds, NotificationChain msgs) {
 		Bounds oldBounds = bounds;
 		bounds = newBounds;
-		if (eNotificationRequired()) {
+		if(eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DGPackage.CANVAS__BOUNDS, oldBounds, newBounds);
-			if (msgs == null) {
+			if(msgs == null) {
 				msgs = notification;
 			} else {
 				msgs.add(notification);
@@ -105,19 +108,19 @@ public class CanvasImpl extends GroupImpl implements Canvas {
 	 */
 	@Override
 	public void setBounds(Bounds newBounds) {
-		if (newBounds != bounds) {
+		if(newBounds != bounds) {
 			NotificationChain msgs = null;
-			if (bounds != null) {
-				msgs = ((InternalEObject) bounds).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DGPackage.CANVAS__BOUNDS, null, msgs);
+			if(bounds != null) {
+				msgs = ((InternalEObject)bounds).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DGPackage.CANVAS__BOUNDS, null, msgs);
 			}
-			if (newBounds != null) {
-				msgs = ((InternalEObject) newBounds).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DGPackage.CANVAS__BOUNDS, null, msgs);
+			if(newBounds != null) {
+				msgs = ((InternalEObject)newBounds).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DGPackage.CANVAS__BOUNDS, null, msgs);
 			}
 			msgs = basicSetBounds(newBounds, msgs);
-			if (msgs != null) {
+			if(msgs != null) {
 				msgs.dispatch();
 			}
-		} else if (eNotificationRequired()) {
+		} else if(eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.CANVAS__BOUNDS, newBounds, newBounds));
 		}
 	}
@@ -140,8 +143,7 @@ public class CanvasImpl extends GroupImpl implements Canvas {
 	 */
 	@Override
 	public boolean canvasCannotHaveTransforms(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return DGValidator.validate(DGPackage.Literals.CANVAS, this, diagnostics, context, "http://www.eclipse.org/emf/2002/Ecore/OCL", DGPackage.Literals.CANVAS___CANVAS_CANNOT_HAVE_TRANSFORMS__DIAGNOSTICCHAIN_MAP,
-				CANVAS_CANNOT_HAVE_TRANSFORMS_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION, Diagnostic.ERROR, DGValidator.DIAGNOSTIC_SOURCE, DGValidator.CANVAS__CANVAS_CANNOT_HAVE_TRANSFORMS);
+		return DGValidator.validate(DGPackage.Literals.CANVAS, this, diagnostics, context, "http://www.eclipse.org/emf/2002/Ecore/OCL", DGPackage.Literals.CANVAS___CANVAS_CANNOT_HAVE_TRANSFORMS__DIAGNOSTICCHAIN_MAP, CANVAS_CANNOT_HAVE_TRANSFORMS_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION, Diagnostic.ERROR, DGValidator.DIAGNOSTIC_SOURCE, DGValidator.CANVAS__CANVAS_CANNOT_HAVE_TRANSFORMS);
 	}
 
 	/**
@@ -151,7 +153,7 @@ public class CanvasImpl extends GroupImpl implements Canvas {
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
+		switch(featureID) {
 		case DGPackage.CANVAS__BOUNDS:
 			return basicSetBounds(null, msgs);
 		}
@@ -165,7 +167,7 @@ public class CanvasImpl extends GroupImpl implements Canvas {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch(featureID) {
 		case DGPackage.CANVAS__BOUNDS:
 			return getBounds();
 		}
@@ -179,9 +181,9 @@ public class CanvasImpl extends GroupImpl implements Canvas {
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch(featureID) {
 		case DGPackage.CANVAS__BOUNDS:
-			setBounds((Bounds) newValue);
+			setBounds((Bounds)newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -194,9 +196,9 @@ public class CanvasImpl extends GroupImpl implements Canvas {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch(featureID) {
 		case DGPackage.CANVAS__BOUNDS:
-			setBounds((Bounds) null);
+			setBounds((Bounds)null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -209,7 +211,7 @@ public class CanvasImpl extends GroupImpl implements Canvas {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch(featureID) {
 		case DGPackage.CANVAS__BOUNDS:
 			return bounds != null;
 		}
@@ -224,9 +226,9 @@ public class CanvasImpl extends GroupImpl implements Canvas {
 	@Override
 	@SuppressWarnings("unchecked")
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
+		switch(operationID) {
 		case DGPackage.CANVAS___CANVAS_CANNOT_HAVE_TRANSFORMS__DIAGNOSTICCHAIN_MAP:
-			return canvasCannotHaveTransforms((DiagnosticChain) arguments.get(0), (Map<Object, Object>) arguments.get(1));
+			return canvasCannotHaveTransforms((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

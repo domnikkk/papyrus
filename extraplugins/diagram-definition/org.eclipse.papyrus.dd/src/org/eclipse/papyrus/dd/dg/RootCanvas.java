@@ -60,7 +60,7 @@ public interface RootCanvas extends Canvas {
 	 * end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Background Color</em>' attribute.
+	 *        the new value of the '<em>Background Color</em>' attribute.
 	 * @see #isSetBackgroundColor()
 	 * @see #unsetBackgroundColor()
 	 * @see #getBackgroundColor()
@@ -113,7 +113,7 @@ public interface RootCanvas extends Canvas {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Definitions</em>' containment reference.
+	 *        the new value of the '<em>Definitions</em>' containment reference.
 	 * @see #getDefinitions()
 	 * @generated
 	 */

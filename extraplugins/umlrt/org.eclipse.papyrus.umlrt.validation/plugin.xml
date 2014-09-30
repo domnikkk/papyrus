@@ -4,7 +4,7 @@
   <extension point="org.eclipse.emf.validation.constraintProviders">
       <category id="org.eclipse.papyrus.umlrt.validation.umlrealtimestatemach" mandatory="false" name="org.eclipse.papyrus.umlrt.validation.umlrealtimestatemach"/>
       <constraintProvider cache="false" mode="Batch">
-         <package namespaceUri="http:///schemas/UMLRealTimeStateMach/_6TmMwBMoEeSz2qq_H0HScA/14"/>
+         <package namespaceUri="http://www.eclipse.org/papyrus/umlrt/statemachine"/>
          <constraints categories="org.eclipse.papyrus.umlrt.validation.umlrealtimestatemach">
             <constraint id="hasExactlyOneRegion" isEnabledByDefault="true" lang="OCL" mode="Batch" name="An RT state machine has exactly one region" severity="ERROR" statusCode="1">
                <message>An RT state machine has exactly one region</message><![CDATA[base_StateMachine.region->size() = 1]]></constraint>
@@ -81,7 +81,7 @@ and (base_StateMachine.behavioredClassifier.oclIsKindOf(Class))]]></constraint>
 <extension point="org.eclipse.emf.validation.constraintProviders">
       <category id="org.eclipse.papyrus.umlrt.validation.umlrealtime" mandatory="false" name="org.eclipse.papyrus.umlrt.validation.umlrealtime"/>
       <constraintProvider cache="false" mode="Batch">
-         <package namespaceUri="http:///schemas/UMLRealTime/_lVqk0BMpEeSz2qq_H0HScA/27"/>
+         <package namespaceUri="http://www.eclipse.org/papyrus/umlrt"/>
          <constraints categories="org.eclipse.papyrus.umlrt.validation.umlrealtime">
             <constraint id="isActiveEntity" isEnabledByDefault="true" lang="OCL" mode="Batch" name="Capsules are always active" severity="ERROR" statusCode="1">
                <message>Capsules are always active entities</message><![CDATA[base_Class.isActive]]></constraint>

@@ -86,7 +86,7 @@ public enum UmlCompartmentKind implements Enumerator {
 	 *
 	 * @generated
 	 */
-	private static final UmlCompartmentKind[] VALUES_ARRAY = new UmlCompartmentKind[] { ATTRIBUTES, OPERATIONS, };
+	private static final UmlCompartmentKind[] VALUES_ARRAY = new UmlCompartmentKind[]{ ATTRIBUTES, OPERATIONS, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Uml Compartment Kind</b></em>' enumerators.
@@ -105,9 +105,9 @@ public enum UmlCompartmentKind implements Enumerator {
 	 * @generated
 	 */
 	public static UmlCompartmentKind get(String literal) {
-		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+		for(int i = 0; i < VALUES_ARRAY.length; ++i) {
 			UmlCompartmentKind result = VALUES_ARRAY[i];
-			if (result.toString().equals(literal)) {
+			if(result.toString().equals(literal)) {
 				return result;
 			}
 		}
@@ -122,9 +122,9 @@ public enum UmlCompartmentKind implements Enumerator {
 	 * @generated
 	 */
 	public static UmlCompartmentKind getByName(String name) {
-		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+		for(int i = 0; i < VALUES_ARRAY.length; ++i) {
 			UmlCompartmentKind result = VALUES_ARRAY[i];
-			if (result.getName().equals(name)) {
+			if(result.getName().equals(name)) {
 				return result;
 			}
 		}
@@ -139,7 +139,7 @@ public enum UmlCompartmentKind implements Enumerator {
 	 * @generated
 	 */
 	public static UmlCompartmentKind get(int value) {
-		switch (value) {
+		switch(value) {
 		case ATTRIBUTES_VALUE:
 			return ATTRIBUTES;
 		case OPERATIONS_VALUE:
@@ -229,4 +229,4 @@ public enum UmlCompartmentKind implements Enumerator {
 	public String toString() {
 		return literal;
 	}
-} // UmlCompartmentKind
+} //UmlCompartmentKind

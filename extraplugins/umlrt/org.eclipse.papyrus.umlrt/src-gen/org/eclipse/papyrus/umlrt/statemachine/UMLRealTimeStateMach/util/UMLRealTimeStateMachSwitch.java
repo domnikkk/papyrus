@@ -10,10 +10,13 @@ package org.eclipse.papyrus.umlrt.statemachine.UMLRealTimeStateMach.util;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
-
-import org.eclipse.papyrus.umlrt.statemachine.UMLRealTimeStateMach.*;
+import org.eclipse.papyrus.umlrt.statemachine.UMLRealTimeStateMach.RTPseudostate;
+import org.eclipse.papyrus.umlrt.statemachine.UMLRealTimeStateMach.RTRegion;
+import org.eclipse.papyrus.umlrt.statemachine.UMLRealTimeStateMach.RTState;
+import org.eclipse.papyrus.umlrt.statemachine.UMLRealTimeStateMach.RTStateMachine;
+import org.eclipse.papyrus.umlrt.statemachine.UMLRealTimeStateMach.RTTrigger;
+import org.eclipse.papyrus.umlrt.statemachine.UMLRealTimeStateMach.UMLRealTimeStateMachPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,7 +27,7 @@ import org.eclipse.papyrus.umlrt.statemachine.UMLRealTimeStateMach.*;
  * until a non-null result is returned,
  * which is the result of the switch.
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.umlrt.statemachine.UMLRealTimeStateMach.UMLRealTimeStateMachPackage
  * @generated
  */
@@ -33,7 +36,7 @@ public class UMLRealTimeStateMachSwitch<T> extends Switch<T> {
 	 * The cached model package
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected static UMLRealTimeStateMachPackage modelPackage;
@@ -42,7 +45,7 @@ public class UMLRealTimeStateMachSwitch<T> extends Switch<T> {
 	 * Creates an instance of the switch.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public UMLRealTimeStateMachSwitch() {
@@ -55,7 +58,7 @@ public class UMLRealTimeStateMachSwitch<T> extends Switch<T> {
 	 * Checks whether this is a switch for the given package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @parameter ePackage the package in question.
 	 * @return whether this is a switch for the given package.
 	 * @generated
@@ -69,7 +72,7 @@ public class UMLRealTimeStateMachSwitch<T> extends Switch<T> {
 	 * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the first non-null result returned by a <code>caseXXX</code> call.
 	 * @generated
 	 */
@@ -127,7 +130,7 @@ public class UMLRealTimeStateMachSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>RT State Machine</em>'.
@@ -144,7 +147,7 @@ public class UMLRealTimeStateMachSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>RT Region</em>'.
@@ -161,7 +164,7 @@ public class UMLRealTimeStateMachSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>RT State</em>'.
@@ -178,7 +181,7 @@ public class UMLRealTimeStateMachSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>RT Pseudostate</em>'.
@@ -195,7 +198,7 @@ public class UMLRealTimeStateMachSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>RT Trigger</em>'.
@@ -212,7 +215,7 @@ public class UMLRealTimeStateMachSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch, but this is the last case anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EObject</em>'.

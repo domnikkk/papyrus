@@ -262,8 +262,8 @@ public class SizeAction {
 	 * @return the int
 	 */
 	private int findIndex(double currentZoomLevel, double[] zoomLevel) {
-		for (int i = 0; i <= zoomLevel.length; i++) {
-			if (zoomLevel[i] == currentZoomLevel) {
+		for(int i = 0; i < zoomLevel.length; i++) {
+			if(zoomLevel[i] == currentZoomLevel) {
 				return i;
 			}
 		}

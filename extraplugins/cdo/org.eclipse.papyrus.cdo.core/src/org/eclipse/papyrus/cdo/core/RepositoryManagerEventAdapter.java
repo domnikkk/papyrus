@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2013 CEA LIST.
+ * Copyright (c) 2013, 2014 CEA LIST and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,6 +8,8 @@
  *
  * Contributors:
  *   CEA LIST - Initial API and implementation
+ *   Christian W. Damus (CEA) - bug 443828
+ *   
  *****************************************************************************/
 package org.eclipse.papyrus.cdo.core;
 
@@ -20,7 +22,6 @@ import org.eclipse.net4j.util.container.IContainerDelta;
 import org.eclipse.net4j.util.container.IContainerDelta.Kind;
 import org.eclipse.net4j.util.container.IContainerEvent;
 import org.eclipse.net4j.util.event.IEvent;
-import org.eclipse.net4j.util.event.IListener;
 import org.eclipse.net4j.util.lifecycle.ILifecycle;
 import org.eclipse.net4j.util.lifecycle.LifecycleEventAdapter;
 import org.eclipse.papyrus.cdo.internal.core.Activator;
@@ -53,7 +54,7 @@ public class RepositoryManagerEventAdapter {
 
 	private final RepositoryListener repositoryListener;
 
-	private final IListener viewInvalidationListener;
+	private final InvalidationListener viewInvalidationListener;
 
 	public RepositoryManagerEventAdapter() {
 		this(null);
@@ -128,11 +129,12 @@ public class RepositoryManagerEventAdapter {
 
 	void handleConnection(IInternalPapyrusRepository repository) {
 		if (viewInvalidationListener != null) {
+			final ResourceSet resourceSet = viewInvalidationListener.resourceSet;
 			repository.getCDOSession().addListener(viewInvalidationListener);
 
-			// look for existing view
+			// look for existing views
 			for (CDOView next : repository.getCDOSession().getViews()) {
-				if (next.getResourceSet() == target) {
+				if (next.getResourceSet() == resourceSet) {
 					next.addListener(viewInvalidationListener);
 				}
 			}
@@ -162,7 +164,7 @@ public class RepositoryManagerEventAdapter {
 	}
 
 	protected void onInvalidation(IPapyrusRepository repository, CDOView view, CDOViewInvalidationEvent event) {
-
+		// pass
 	}
 
 

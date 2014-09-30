@@ -13,8 +13,10 @@
 package org.eclipse.papyrus.uml.modelrepair.internal.participants;
 
 import java.util.Collection;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Queue;
 import java.util.regex.Pattern;
 
 import org.eclipse.core.runtime.IProgressMonitor;
@@ -40,7 +42,6 @@ import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.emf.ecore.util.ExtendedMetaData;
 import org.eclipse.emf.ecore.util.FeatureMap;
 import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.eclipse.emf.ecore.xml.type.AnyType;
@@ -318,7 +319,15 @@ public class StereotypeApplicationRepairParticipant extends PackageOperations im
 				// Handle case of unrecognized schema
 				if (isUnrecognizedSchema(classifier.getEPackage()) && (profile.getDefinition() != null)) {
 					// It's unrecognized content. Force look-up in the profile chosen by the user
-					EClassifier force = profile.getDefinition().getEClassifier(classifier.getName());
+					EPackage definition = profile.getDefinition();
+					EClassifier force = definition.getEClassifier(classifier.getName());
+					if (force == null) {
+						// Maybe it's in some sub-package that was generated from a nested package
+						// containing stereotypes in the profile
+						if (!definition.getESubpackages().isEmpty()) {
+							force = searchSubpackages(definition, classifier);
+						}
+					}
 					if (force != null) {
 						element = force;
 					}
@@ -340,31 +349,31 @@ public class StereotypeApplicationRepairParticipant extends PackageOperations im
 			return super.getNamedElement(element);
 		}
 
-		protected boolean isUnrecognizedSchema(EPackage ePackage) {
-			boolean result;
+		protected EClassifier searchSubpackages(EPackage ePackage, EClassifier unresolved) {
+			String nsPrefix = unresolved.getEPackage().getNsPrefix();
+			EClassifier result = null;
+			String name = unresolved.getName();
 
-			if (copying != null) {
-				result = getExtendedMetadata(copying).demandedPackages().contains(ePackage);
-			} else {
-				// Simple heuristic: unknown-schema packages don't have names, but profile-defined packages always do
-				result = (ePackage.getName() == null);
+			// Breadth-first search because we do a prefix match, to prefer matches higher
+			// in the package structure in case of multiple same-named stereotypes
+			Queue<EPackage> search = new LinkedList<EPackage>(ePackage.getESubpackages());
+
+			for (EPackage next = search.poll(); (next != null) && (result == null); next = search.poll()) {
+				// Match on the package's nsPrefix, accounting for possible _1, _2, etc. suffixes
+				// for differentiation of EPackages that specify the same prefix
+				if ((nsPrefix == null) ? (next.getNsPrefix() == null) : nsPrefix.startsWith(next.getNsPrefix())) {
+					result = next.getEClassifier(name);
+					if ((result == null) && !next.getESubpackages().isEmpty()) {
+						search.addAll(next.getESubpackages());
+					}
+				}
 			}
 
 			return result;
 		}
 
-		protected ExtendedMetaData getExtendedMetadata(EObject context) {
-			ExtendedMetaData result = ExtendedMetaData.INSTANCE;
-
-			Resource resource = context.eResource();
-			if (resource instanceof XMLResource) {
-				Object option = ((XMLResource) resource).getDefaultSaveOptions().get(XMLResource.OPTION_EXTENDED_META_DATA);
-				if (option instanceof ExtendedMetaData) {
-					result = (ExtendedMetaData) option;
-				}
-			}
-
-			return result;
+		protected boolean isUnrecognizedSchema(EPackage ePackage) {
+			return StereotypesUtil.isUnrecognizedSchema(ePackage, copying);
 		}
 
 		@Override

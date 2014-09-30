@@ -12,7 +12,6 @@
 package org.eclipse.papyrus.dd.dg.impl;
 
 import java.util.Collection;
-
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
@@ -72,7 +71,7 @@ public abstract class GradientImpl extends PaintServerImpl implements Gradient {
 	 */
 	@Override
 	public EList<GradientStop> getStops() {
-		if (stops == null) {
+		if(stops == null) {
 			stops = new EObjectContainmentEList<GradientStop>(GradientStop.class, this, DGPackage.GRADIENT__STOP);
 		}
 		return stops;
@@ -85,9 +84,9 @@ public abstract class GradientImpl extends PaintServerImpl implements Gradient {
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
+		switch(featureID) {
 		case DGPackage.GRADIENT__STOP:
-			return ((InternalEList<?>) getStops()).basicRemove(otherEnd, msgs);
+			return ((InternalEList<?>)getStops()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -99,7 +98,7 @@ public abstract class GradientImpl extends PaintServerImpl implements Gradient {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch(featureID) {
 		case DGPackage.GRADIENT__STOP:
 			return getStops();
 		}
@@ -114,10 +113,10 @@ public abstract class GradientImpl extends PaintServerImpl implements Gradient {
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch(featureID) {
 		case DGPackage.GRADIENT__STOP:
 			getStops().clear();
-			getStops().addAll((Collection<? extends GradientStop>) newValue);
+			getStops().addAll((Collection<? extends GradientStop>)newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -130,7 +129,7 @@ public abstract class GradientImpl extends PaintServerImpl implements Gradient {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch(featureID) {
 		case DGPackage.GRADIENT__STOP:
 			getStops().clear();
 			return;
@@ -145,7 +144,7 @@ public abstract class GradientImpl extends PaintServerImpl implements Gradient {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch(featureID) {
 		case DGPackage.GRADIENT__STOP:
 			return stops != null && !stops.isEmpty();
 		}

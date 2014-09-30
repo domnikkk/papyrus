@@ -83,7 +83,7 @@ public class MoveCompartmentObjectAction extends DiagramAction {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see
 	 * org.eclipse.gmf.runtime.diagram.ui.actions.DiagramAction#createTargetRequest
 	 * ()
@@ -95,7 +95,7 @@ public class MoveCompartmentObjectAction extends DiagramAction {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see
 	 * org.eclipse.gmf.runtime.diagram.ui.actions.DiagramAction#isSelectionListener
 	 * ()
@@ -146,7 +146,7 @@ public class MoveCompartmentObjectAction extends DiagramAction {
 					pos = viewParent.getPersistedChildren().size() - 1;
 					break;
 				}
-				;
+
 				MoveCommand moveCmd = new MoveCommand(eDomain, viewParent, NotationPackage.eINSTANCE.getView_PersistedChildren(), view, pos);
 				return new EMFtoGEFCommandWrapper(moveCmd);
 			}

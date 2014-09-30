@@ -53,7 +53,7 @@ public interface StyleSelector extends EObject {
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Kind</em>' attribute.
+	 *        the new value of the '<em>Kind</em>' attribute.
 	 * @see org.eclipse.papyrus.dd.dg.ElementKind
 	 * @see #isSetKind()
 	 * @see #unsetKind()

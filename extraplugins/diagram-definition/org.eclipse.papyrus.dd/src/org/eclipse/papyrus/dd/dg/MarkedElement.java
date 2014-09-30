@@ -12,7 +12,6 @@
 package org.eclipse.papyrus.dd.dg;
 
 import java.util.Map;
-
 import org.eclipse.emf.common.util.DiagnosticChain;
 
 /**
@@ -57,7 +56,7 @@ public interface MarkedElement extends GraphicalElement {
 	 * end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>End Marker</em>' reference.
+	 *        the new value of the '<em>End Marker</em>' reference.
 	 * @see #getEndMarker()
 	 * @generated
 	 */
@@ -83,7 +82,7 @@ public interface MarkedElement extends GraphicalElement {
 	 * end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Mid Marker</em>' reference.
+	 *        the new value of the '<em>Mid Marker</em>' reference.
 	 * @see #getMidMarker()
 	 * @generated
 	 */
@@ -109,7 +108,7 @@ public interface MarkedElement extends GraphicalElement {
 	 * end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Start Marker</em>' reference.
+	 *        the new value of the '<em>Start Marker</em>' reference.
 	 * @see #getStartMarker()
 	 * @generated
 	 */
@@ -119,10 +118,10 @@ public interface MarkedElement extends GraphicalElement {
 	 * <!-- begin-user-doc --> <!-- end-user-doc --> <!-- begin-model-doc -->
 	 *
 	 * @param diagnostics
-	 *            The chain of diagnostics to which problems are to be appended.
+	 *        The chain of diagnostics to which problems are to be appended.
 	 * @param context
-	 *            The cache of context-specific information. <!-- end-model-doc
-	 *            -->
+	 *        The cache of context-specific information. <!-- end-model-doc
+	 *        -->
 	 * @model annotation=
 	 *        "http://www.eclipse.org/emf/2002/Ecore/OCL body='startMarker->notEmpty() implies startMarker.id->notEmpty()'"
 	 * @generated
@@ -133,10 +132,10 @@ public interface MarkedElement extends GraphicalElement {
 	 * <!-- begin-user-doc --> <!-- end-user-doc --> <!-- begin-model-doc -->
 	 *
 	 * @param diagnostics
-	 *            The chain of diagnostics to which problems are to be appended.
+	 *        The chain of diagnostics to which problems are to be appended.
 	 * @param context
-	 *            The cache of context-specific information. <!-- end-model-doc
-	 *            -->
+	 *        The cache of context-specific information. <!-- end-model-doc
+	 *        -->
 	 * @model annotation=
 	 *        "http://www.eclipse.org/emf/2002/Ecore/OCL body='midMarker->notEmpty() implies midMarker.id->notEmpty()'"
 	 * @generated
@@ -147,10 +146,10 @@ public interface MarkedElement extends GraphicalElement {
 	 * <!-- begin-user-doc --> <!-- end-user-doc --> <!-- begin-model-doc -->
 	 *
 	 * @param diagnostics
-	 *            The chain of diagnostics to which problems are to be appended.
+	 *        The chain of diagnostics to which problems are to be appended.
 	 * @param context
-	 *            The cache of context-specific information. <!-- end-model-doc
-	 *            -->
+	 *        The cache of context-specific information. <!-- end-model-doc
+	 *        -->
 	 * @model annotation=
 	 *        "http://www.eclipse.org/emf/2002/Ecore/OCL body='endMarker->notEmpty() implies endMarker.id->notEmpty()'"
 	 * @generated

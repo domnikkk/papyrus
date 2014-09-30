@@ -17,20 +17,18 @@
 /**
  * 
  */
-
 class Class1 {
-
 public:
 
 	/**
 	 * Assignment operator
-	 * @param cSource @param this 
+	 * @param cSource 
+	 * @return this 
 	 */
 	Class1& operator =(const Class1 /*in*/& cSource);
 
 	/**
 	 * Destructor
-	 * 
 	 */
 	~Class1();
 
@@ -41,16 +39,13 @@ public:
 	Class1(const Class1 /*in*/& cSource);
 
 private:
-
 	/**
 	 * 
 	 */
 	int iVal;
-
 };
 /************************************************************/
 /* External declarations (package visibility)               */
-
 /************************************************************/
 
 /* Inline functions                                         */

@@ -3,14 +3,14 @@ Export-Package: org.eclipse.papyrus.java.generator.metamodel.jdt.gener
  atoroptionsmm.presentation
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources;visibility:=reexport,
- org.eclipse.papyrus.java.generator.metamodel.jdt.edit;bundle-version="1.0.1";visibility:=reexport,
+ org.eclipse.papyrus.java.generator.metamodel.jdt.edit;bundle-version="1.1.0";visibility:=reexport,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,
  org.eclipse.emf.edit.ui;visibility:=reexport,
  org.eclipse.ui.ide;visibility:=reexport
 Bundle-Vendor: %providerName
 Bundle-ActivationPolicy: lazy
 Bundle-ClassPath: .
-Bundle-Version: 1.0.1.qualifier
+Bundle-Version: 1.1.0.qualifier
 Bundle-Name: %pluginName
 Bundle-Localization: plugin
 Bundle-ManifestVersion: 2

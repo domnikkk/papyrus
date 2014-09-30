@@ -12,8 +12,11 @@
 package org.eclipse.papyrus.dd.dg.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EClass;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.eclipse.papyrus.dd.dg.DGPackage;
 import org.eclipse.papyrus.dd.dg.Matrix;
 
@@ -193,7 +196,7 @@ public class MatrixImpl extends TransformImpl implements Matrix {
 	public void setA(double newA) {
 		double oldA = a;
 		a = newA;
-		if (eNotificationRequired()) {
+		if(eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.MATRIX__A, oldA, a));
 		}
 	}
@@ -217,7 +220,7 @@ public class MatrixImpl extends TransformImpl implements Matrix {
 	public void setB(double newB) {
 		double oldB = b;
 		b = newB;
-		if (eNotificationRequired()) {
+		if(eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.MATRIX__B, oldB, b));
 		}
 	}
@@ -241,7 +244,7 @@ public class MatrixImpl extends TransformImpl implements Matrix {
 	public void setC(double newC) {
 		double oldC = c;
 		c = newC;
-		if (eNotificationRequired()) {
+		if(eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.MATRIX__C, oldC, c));
 		}
 	}
@@ -265,7 +268,7 @@ public class MatrixImpl extends TransformImpl implements Matrix {
 	public void setD(double newD) {
 		double oldD = d;
 		d = newD;
-		if (eNotificationRequired()) {
+		if(eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.MATRIX__D, oldD, d));
 		}
 	}
@@ -289,7 +292,7 @@ public class MatrixImpl extends TransformImpl implements Matrix {
 	public void setE(double newE) {
 		double oldE = e;
 		e = newE;
-		if (eNotificationRequired()) {
+		if(eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.MATRIX__E, oldE, e));
 		}
 	}
@@ -313,7 +316,7 @@ public class MatrixImpl extends TransformImpl implements Matrix {
 	public void setF(double newF) {
 		double oldF = f;
 		f = newF;
-		if (eNotificationRequired()) {
+		if(eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.MATRIX__F, oldF, f));
 		}
 	}
@@ -325,7 +328,7 @@ public class MatrixImpl extends TransformImpl implements Matrix {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch(featureID) {
 		case DGPackage.MATRIX__A:
 			return getA();
 		case DGPackage.MATRIX__B:
@@ -349,24 +352,24 @@ public class MatrixImpl extends TransformImpl implements Matrix {
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch(featureID) {
 		case DGPackage.MATRIX__A:
-			setA((Double) newValue);
+			setA((Double)newValue);
 			return;
 		case DGPackage.MATRIX__B:
-			setB((Double) newValue);
+			setB((Double)newValue);
 			return;
 		case DGPackage.MATRIX__C:
-			setC((Double) newValue);
+			setC((Double)newValue);
 			return;
 		case DGPackage.MATRIX__D:
-			setD((Double) newValue);
+			setD((Double)newValue);
 			return;
 		case DGPackage.MATRIX__E:
-			setE((Double) newValue);
+			setE((Double)newValue);
 			return;
 		case DGPackage.MATRIX__F:
-			setF((Double) newValue);
+			setF((Double)newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -379,7 +382,7 @@ public class MatrixImpl extends TransformImpl implements Matrix {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch(featureID) {
 		case DGPackage.MATRIX__A:
 			setA(A_EDEFAULT);
 			return;
@@ -409,7 +412,7 @@ public class MatrixImpl extends TransformImpl implements Matrix {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch(featureID) {
 		case DGPackage.MATRIX__A:
 			return a != A_EDEFAULT;
 		case DGPackage.MATRIX__B:
@@ -433,7 +436,7 @@ public class MatrixImpl extends TransformImpl implements Matrix {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
+		if(eIsProxy()) {
 			return super.toString();
 		}
 		StringBuffer result = new StringBuffer(super.toString());

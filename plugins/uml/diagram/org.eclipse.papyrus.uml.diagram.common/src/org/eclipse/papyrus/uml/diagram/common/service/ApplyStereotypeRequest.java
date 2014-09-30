@@ -26,7 +26,7 @@ import org.eclipse.uml2.uml.Element;
 public class ApplyStereotypeRequest extends CreateRequest {
 
 	/** type of the Apply stereotype request */
-	public static String APPLY_STEREOTYPE_REQUEST = "applyStereotype";
+	public static final String APPLY_STEREOTYPE_REQUEST = "applyStereotype";
 
 	/** stereotypes to apply */
 	final protected List<String> stereotypes;

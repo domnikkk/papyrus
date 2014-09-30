@@ -12,9 +12,7 @@
 package org.eclipse.papyrus.uml.diagram.common.actions;
 
 import java.util.Collection;
-import java.util.Iterator;
 
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
@@ -103,38 +101,6 @@ public class LabelHelper {
 		// cpt++;
 		// }
 		// return childEClass.getName() + cpt;
-	}
-
-	/**
-	 * Check if a name is available.
-	 *
-	 * @param parentEObject
-	 *            the parent EObject
-	 * @param childEClass
-	 *            EClass of the new EObject to add
-	 * @param currentCpt
-	 *            the current cpt
-	 *
-	 * @return true if the name is available
-	 *
-	 * @deprecated should not be used.
-	 */
-	// @unused
-	@Deprecated
-	private boolean isNameAvailable(EObject parentEObject, EClass childEClass, int currentCpt) {
-		EList<EObject> list = parentEObject.eContents();
-		for (Iterator<EObject> i = list.iterator(); i.hasNext();) {
-			EObject child = i.next();
-
-			// check if the current child is the same type of the childEObject
-			if (childEClass.getName().equals(child.eClass().getName())) {
-				String nameToMatch = child.eClass().getName() + currentCpt;
-				if (nameToMatch.equals(((NamedElement) child).getName())) {
-					return false;
-				}
-			}
-		}
-		return true;
 	}
 
 }

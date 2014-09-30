@@ -12,6 +12,7 @@
 package org.eclipse.papyrus.dd.edit;
 
 import org.eclipse.emf.common.EMFPlugin;
+
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.provider.EcoreEditPlugin;
 
@@ -46,7 +47,7 @@ public final class DDEditPlugin extends EMFPlugin {
 	 * @generated NOT
 	 */
 	public DDEditPlugin() {
-		super(new ResourceLocator[] { EcoreEditPlugin.INSTANCE, });
+		super(new ResourceLocator[]{ EcoreEditPlugin.INSTANCE, });
 	}
 
 	/**

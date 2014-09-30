@@ -12,20 +12,20 @@
 package org.eclipse.papyrus.dd.dc.util;
 
 import java.awt.Color;
+
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
+
 import org.eclipse.emf.ecore.util.EObjectValidator;
-import org.eclipse.papyrus.dd.dc.Bounds;
-import org.eclipse.papyrus.dd.dc.DCPackage;
-import org.eclipse.papyrus.dd.dc.Dimension;
-import org.eclipse.papyrus.dd.dc.KnownColor;
-import org.eclipse.papyrus.dd.dc.Point;
+
+import org.eclipse.papyrus.dd.dc.*;
 
 /**
  * <!-- begin-user-doc --> The <b>Validator</b> for the model. <!-- end-user-doc
@@ -45,7 +45,8 @@ public class DCValidator extends EObjectValidator {
 	public static final DCValidator INSTANCE = new DCValidator();
 
 	/**
-	 * A constant for the {@link org.eclipse.emf.common.util.Diagnostic#getSource() source} of diagnostic {@link org.eclipse.emf.common.util.Diagnostic#getCode() codes} from this package.
+	 * A constant for the {@link org.eclipse.emf.common.util.Diagnostic#getSource() source} of diagnostic
+	 * {@link org.eclipse.emf.common.util.Diagnostic#getCode() codes} from this package.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @see org.eclipse.emf.common.util.Diagnostic#getSource()
@@ -149,25 +150,25 @@ public class DCValidator extends EObjectValidator {
 	 */
 	@Override
 	protected boolean validate(int classifierID, Object value, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		switch (classifierID) {
+		switch(classifierID) {
 		case DCPackage.POINT:
-			return validatePoint((Point) value, diagnostics, context);
+			return validatePoint((Point)value, diagnostics, context);
 		case DCPackage.DIMENSION:
-			return validateDimension((Dimension) value, diagnostics, context);
+			return validateDimension((Dimension)value, diagnostics, context);
 		case DCPackage.BOUNDS:
-			return validateBounds((Bounds) value, diagnostics, context);
+			return validateBounds((Bounds)value, diagnostics, context);
 		case DCPackage.KNOWN_COLOR:
-			return validateKnownColor((KnownColor) value, diagnostics, context);
+			return validateKnownColor((KnownColor)value, diagnostics, context);
 		case DCPackage.BOOLEAN:
-			return validateBoolean((Boolean) value, diagnostics, context);
+			return validateBoolean((Boolean)value, diagnostics, context);
 		case DCPackage.INTEGER:
-			return validateInteger((Integer) value, diagnostics, context);
+			return validateInteger((Integer)value, diagnostics, context);
 		case DCPackage.REAL:
-			return validateReal((Double) value, diagnostics, context);
+			return validateReal((Double)value, diagnostics, context);
 		case DCPackage.STRING:
-			return validateString((String) value, diagnostics, context);
+			return validateString((String)value, diagnostics, context);
 		case DCPackage.COLOR:
-			return validateColor((Color) value, diagnostics, context);
+			return validateColor((Color)value, diagnostics, context);
 		default:
 			return true;
 		}
@@ -188,35 +189,35 @@ public class DCValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateDimension(Dimension dimension, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(dimension, diagnostics, context)) {
+		if(!validate_NoCircularContainment(dimension, diagnostics, context)) {
 			return false;
 		}
 		boolean result = validate_EveryMultiplicityConforms(dimension, diagnostics, context);
-		if (result || diagnostics != null) {
+		if(result || diagnostics != null) {
 			result &= validate_EveryDataValueConforms(dimension, diagnostics, context);
 		}
-		if (result || diagnostics != null) {
+		if(result || diagnostics != null) {
 			result &= validate_EveryReferenceIsContained(dimension, diagnostics, context);
 		}
-		if (result || diagnostics != null) {
+		if(result || diagnostics != null) {
 			result &= validate_EveryBidirectionalReferenceIsPaired(dimension, diagnostics, context);
 		}
-		if (result || diagnostics != null) {
+		if(result || diagnostics != null) {
 			result &= validate_EveryProxyResolves(dimension, diagnostics, context);
 		}
-		if (result || diagnostics != null) {
+		if(result || diagnostics != null) {
 			result &= validate_UniqueID(dimension, diagnostics, context);
 		}
-		if (result || diagnostics != null) {
+		if(result || diagnostics != null) {
 			result &= validate_EveryKeyUnique(dimension, diagnostics, context);
 		}
-		if (result || diagnostics != null) {
+		if(result || diagnostics != null) {
 			result &= validate_EveryMapEntryUnique(dimension, diagnostics, context);
 		}
-		if (result || diagnostics != null) {
+		if(result || diagnostics != null) {
 			result &= validateDimension_nonNegativeWidth(dimension, diagnostics, context);
 		}
-		if (result || diagnostics != null) {
+		if(result || diagnostics != null) {
 			result &= validateDimension_nonNegativeHeight(dimension, diagnostics, context);
 		}
 		return result;
@@ -248,35 +249,35 @@ public class DCValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateBounds(Bounds bounds, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(bounds, diagnostics, context)) {
+		if(!validate_NoCircularContainment(bounds, diagnostics, context)) {
 			return false;
 		}
 		boolean result = validate_EveryMultiplicityConforms(bounds, diagnostics, context);
-		if (result || diagnostics != null) {
+		if(result || diagnostics != null) {
 			result &= validate_EveryDataValueConforms(bounds, diagnostics, context);
 		}
-		if (result || diagnostics != null) {
+		if(result || diagnostics != null) {
 			result &= validate_EveryReferenceIsContained(bounds, diagnostics, context);
 		}
-		if (result || diagnostics != null) {
+		if(result || diagnostics != null) {
 			result &= validate_EveryBidirectionalReferenceIsPaired(bounds, diagnostics, context);
 		}
-		if (result || diagnostics != null) {
+		if(result || diagnostics != null) {
 			result &= validate_EveryProxyResolves(bounds, diagnostics, context);
 		}
-		if (result || diagnostics != null) {
+		if(result || diagnostics != null) {
 			result &= validate_UniqueID(bounds, diagnostics, context);
 		}
-		if (result || diagnostics != null) {
+		if(result || diagnostics != null) {
 			result &= validate_EveryKeyUnique(bounds, diagnostics, context);
 		}
-		if (result || diagnostics != null) {
+		if(result || diagnostics != null) {
 			result &= validate_EveryMapEntryUnique(bounds, diagnostics, context);
 		}
-		if (result || diagnostics != null) {
+		if(result || diagnostics != null) {
 			result &= validateBounds_nonNegativeWidth(bounds, diagnostics, context);
 		}
-		if (result || diagnostics != null) {
+		if(result || diagnostics != null) {
 			result &= validateBounds_nonNegativeHeight(bounds, diagnostics, context);
 		}
 		return result;

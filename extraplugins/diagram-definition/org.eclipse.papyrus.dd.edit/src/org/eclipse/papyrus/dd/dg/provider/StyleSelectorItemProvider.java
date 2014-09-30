@@ -16,7 +16,9 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.common.util.ResourceLocator;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemColorProvider;
@@ -29,9 +31,11 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
 import org.eclipse.papyrus.dd.dg.DGPackage;
 import org.eclipse.papyrus.dd.dg.ElementKind;
 import org.eclipse.papyrus.dd.dg.StyleSelector;
+
 import org.eclipse.papyrus.dd.edit.DDEditPlugin;
 
 /**
@@ -61,7 +65,7 @@ public class StyleSelectorItemProvider extends ItemProviderAdapter implements IE
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null) {
+		if(itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 			addKindPropertyDescriptor(object);
 			addClassPropertyDescriptor(object);
@@ -77,8 +81,7 @@ public class StyleSelectorItemProvider extends ItemProviderAdapter implements IE
 	 * @generated
 	 */
 	protected void addKindPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_StyleSelector_kind_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_StyleSelector_kind_feature", "_UI_StyleSelector_type"), DGPackage.Literals.STYLE_SELECTOR__KIND, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_StyleSelector_kind_feature"), getString("_UI_PropertyDescriptor_description", "_UI_StyleSelector_kind_feature", "_UI_StyleSelector_type"), DGPackage.Literals.STYLE_SELECTOR__KIND, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -88,8 +91,7 @@ public class StyleSelectorItemProvider extends ItemProviderAdapter implements IE
 	 * @generated
 	 */
 	protected void addClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_StyleSelector_class_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_StyleSelector_class_feature", "_UI_StyleSelector_type"), DGPackage.Literals.STYLE_SELECTOR__CLASS, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_StyleSelector_class_feature"), getString("_UI_PropertyDescriptor_description", "_UI_StyleSelector_class_feature", "_UI_StyleSelector_type"), DGPackage.Literals.STYLE_SELECTOR__CLASS, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -112,7 +114,7 @@ public class StyleSelectorItemProvider extends ItemProviderAdapter implements IE
 	 */
 	@Override
 	public String getText(Object object) {
-		ElementKind labelValue = ((StyleSelector) object).getKind();
+		ElementKind labelValue = ((StyleSelector)object).getKind();
 		String label = labelValue == null ? null : labelValue.toString();
 		return label == null || label.length() == 0 ? getString("_UI_StyleSelector_type") : getString("_UI_StyleSelector_type") + " " + label;
 	}
@@ -128,7 +130,7 @@ public class StyleSelectorItemProvider extends ItemProviderAdapter implements IE
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-		switch (notification.getFeatureID(StyleSelector.class)) {
+		switch(notification.getFeatureID(StyleSelector.class)) {
 		case DGPackage.STYLE_SELECTOR__KIND:
 		case DGPackage.STYLE_SELECTOR__CLASS:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));

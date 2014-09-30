@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="ASCII"?>
+<dg:RootCanvas xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dg="http://www.omg.org/spec/DD/20110901/DG">
+  <member xsi:type="dg:Canvas">
+    <member xsi:type="dg:Rectangle">
+      <bounds x="0.0" y="0.0" width="140.0" height="100.0"/>
+    </member>
+    <member xsi:type="dg:Text" data="Class1" anchor="middle">
+      <bounds x="0.0" y="0.0" width="130.0" height="20.0"/>
+    </member>
+    <member xsi:type="dg:Canvas">
+      <member xsi:type="dg:Line">
+        <start x="0.0" y="0.0"/>
+        <end x="140.0" y="0.0"/>
+      </member>
+      <member xsi:type="dg:Text" data="+ property1 : String [1..2]">
+        <bounds width="100.0" height="20.0"/>
+      </member>
+      <member xsi:type="dg:Text" data="+ property2 : Integer">
+        <bounds y="20.0" width="100.0" height="20.0"/>
+      </member>
+      <bounds x="0.0" y="20.0"/>
+    </member>
+    <member xsi:type="dg:Canvas">
+      <member xsi:type="dg:Line">
+        <start x="0.0" y="0.0"/>
+        <end x="140.0" y="0.0"/>
+      </member>
+      <member xsi:type="dg:Text" data="operation1">
+        <bounds width="100.0" height="20.0"/>
+      </member>
+      <bounds x="0.0" y="60.0"/>
+    </member>
+    <bounds x="30.0" y="20.0"/>
+  </member>
+  <member xsi:type="dg:Canvas">
+    <member xsi:type="dg:Rectangle">
+      <bounds x="0.0" y="0.0" width="100.0" height="100.0"/>
+    </member>
+    <member xsi:type="dg:Text" data="Class2" anchor="middle">
+      <bounds width="100.0" height="20.0"/>
+    </member>
+    <bounds x="20.0" y="200.0"/>
+  </member>
+  <member xsi:type="dg:Canvas">
+    <member xsi:type="dg:Rectangle">
+      <bounds x="0.0" y="0.0" width="150.0" height="100.0"/>
+    </member>
+    <member xsi:type="dg:Text" data="&#xab;Interface&#xbb;\nInterface1" anchor="middle">
+      <bounds width="150.0" height="40.0"/>
+    </member>
+    <bounds x="220.0" y="20.0"/>
+  </member>
+  <member xsi:type="dg:Canvas">
+    <member xsi:type="dg:Rectangle">
+      <bounds x="0.0" y="0.0" width="100.0" height="100.0"/>
+    </member>
+    <member xsi:type="dg:Text" data="Class3" anchor="middle">
+      <bounds width="100.0" height="20.0"/>
+    </member>
+    <bounds x="320.0" y="200.0"/>
+  </member>
+  <member xsi:type="dg:Group">
+    <member xsi:type="dg:Path" endMarker="endHollowClosedArrow">
+      <command xsi:type="dg:MoveTo">
+        <point x="70.0" y="200.0"/>
+      </command>
+      <command xsi:type="dg:LineTo">
+        <point x="70.0" y="120.0"/>
+      </command>
+    </member>
+  </member>
+  <member xsi:type="dg:Group">
+    <member xsi:type="dg:Path" endMarker="endHollowClosedArrow">
+      <class>interfaceRealization</class>
+      <command xsi:type="dg:MoveTo">
+        <point x="120.0" y="210.0"/>
+      </command>
+      <command xsi:type="dg:LineTo">
+        <point x="220.0" y="120.0"/>
+      </command>
+    </member>
+  </member>
+  <member xsi:type="dg:Group">
+    <member xsi:type="dg:Path" endMarker="endSolidCircleOpenArrow" startMarker="startSolidDiamond">
+      <command xsi:type="dg:MoveTo">
+        <point x="120.0" y="250.0"/>
+      </command>
+      <command xsi:type="dg:LineTo">
+        <point x="320.0" y="225.0"/>
+      </command>
+    </member>
+    <member xsi:type="dg:Text" data="hasOneOf" anchor="middle">
+      <bounds x="200.0" y="250.0" width="40.0" height="20.0"/>
+    </member>
+    <member xsi:type="dg:Text" data="+ class2" anchor="middle">
+      <bounds x="130.0" y="260.0" width="40.0" height="20.0"/>
+    </member>
+    <member xsi:type="dg:Text" data="+ class3" anchor="middle">
+      <bounds x="250.0" y="210.0" width="40.0" height="20.0"/>
+    </member>
+  </member>
+  <definitions>
+    <definition xsi:type="dg:Marker" id="endHollowClosedArrow">
+      <member xsi:type="dg:Polygon">
+        <style>
+          <fill color="#FFFFFF"/>
+        </style>
+        <point x="1.0" y="1.0"/>
+        <point x="12.0" y="6.0"/>
+        <point x="1.0" y="11.0"/>
+      </member>
+      <size width="12.0" height="12.0"/>
+      <reference x="12.0" y="6.0"/>
+    </definition>
+    <definition xsi:type="dg:Marker" id="endSolidClosedArrow">
+      <member xsi:type="dg:Polygon">
+        <style>
+          <fill color="#000000"/>
+        </style>
+        <point x="1.0" y="1.0"/>
+        <point x="12.0" y="6.0"/>
+        <point x="1.0" y="11.0"/>
+      </member>
+      <size width="12.0" height="12.0"/>
+      <reference x="12.0" y="6.0"/>
+    </definition>
+    <definition xsi:type="dg:Marker" id="endOpenArrow">
+      <member xsi:type="dg:Polyline">
+        <point x="1.0" y="1.0"/>
+        <point x="12.0" y="6.0"/>
+        <point x="1.0" y="11.0"/>
+      </member>
+      <size width="12.0" height="12.0"/>
+      <reference x="12.0" y="6.0"/>
+    </definition>
+    <definition xsi:type="dg:Marker" id="endSolidCircleOpenArrow">
+      <member xsi:type="dg:Circle" radius="3.0">
+        <style>
+          <fill color="#000000"/>
+        </style>
+        <center x="16.0" y="6.0"/>
+      </member>
+      <member xsi:type="dg:Polyline">
+        <point x="1.0" y="1.0"/>
+        <point x="12.0" y="6.0"/>
+        <point x="1.0" y="11.0"/>
+      </member>
+      <size width="20.0" height="12.0"/>
+      <reference x="20.0" y="6.0"/>
+    </definition>
+    <definition xsi:type="dg:Marker" id="endSolidDiamond">
+      <member xsi:type="dg:Polygon">
+        <style>
+          <fill color="#000000"/>
+        </style>
+        <point x="0.0" y="6.0"/>
+        <point x="8.0" y="1.0"/>
+        <point x="16.0" y="6.0"/>
+        <point x="8.0" y="11.0"/>
+      </member>
+      <size width="16.0" height="12.0"/>
+      <reference x="16.0" y="6.0"/>
+    </definition>
+    <definition xsi:type="dg:Marker" id="endHollowDiamond">
+      <member xsi:type="dg:Polygon">
+        <style>
+          <fill color="#FFFFFF"/>
+        </style>
+        <point x="0.0" y="6.0"/>
+        <point x="8.0" y="1.0"/>
+        <point x="16.0" y="6.0"/>
+        <point x="8.0" y="11.0"/>
+      </member>
+      <size width="16.0" height="12.0"/>
+      <reference x="16.0" y="6.0"/>
+    </definition>
+    <definition xsi:type="dg:Marker" id="endSolidDiamondOpenArrow">
+      <member xsi:type="dg:Polygon">
+        <style>
+          <fill color="#000000"/>
+        </style>
+        <point x="12.0" y="6.0"/>
+        <point x="20.0" y="1.0"/>
+        <point x="28.0" y="6.0"/>
+        <point x="20.0" y="11.0"/>
+      </member>
+      <member xsi:type="dg:Polyline">
+        <point x="1.0" y="1.0"/>
+        <point x="12.0" y="6.0"/>
+        <point x="1.0" y="11.0"/>
+      </member>
+      <size width="28.0" height="12.0"/>
+      <reference x="28.0" y="6.0"/>
+    </definition>
+    <definition xsi:type="dg:Marker" id="endHollowDiamondOpenArrow">
+      <member xsi:type="dg:Polygon">
+        <style>
+          <fill color="#FFFFFF"/>
+        </style>
+        <point x="12.0" y="6.0"/>
+        <point x="20.0" y="1.0"/>
+        <point x="28.0" y="6.0"/>
+        <point x="20.0" y="11.0"/>
+      </member>
+      <member xsi:type="dg:Polyline">
+        <point x="1.0" y="1.0"/>
+        <point x="12.0" y="6.0"/>
+        <point x="1.0" y="11.0"/>
+      </member>
+      <size width="28.0" height="12.0"/>
+      <reference x="28.0" y="6.0"/>
+    </definition>
+    <definition xsi:type="dg:Marker" id="endSolidCircleSolidDiamondOpenArrow">
+      <member xsi:type="dg:Circle" radius="3.0">
+        <style>
+          <fill color="#000000"/>
+        </style>
+        <center x="32.0" y="6.0"/>
+      </member>
+      <member xsi:type="dg:Polygon">
+        <style>
+          <fill color="#000000"/>
+        </style>
+        <point x="12.0" y="6.0"/>
+        <point x="20.0" y="1.0"/>
+        <point x="28.0" y="6.0"/>
+        <point x="20.0" y="11.0"/>
+      </member>
+      <member xsi:type="dg:Polyline">
+        <point x="1.0" y="1.0"/>
+        <point x="12.0" y="6.0"/>
+        <point x="1.0" y="11.0"/>
+      </member>
+      <size width="36.0" height="12.0"/>
+      <reference x="36.0" y="6.0"/>
+    </definition>
+    <definition xsi:type="dg:Marker" id="endSolidCircleHollowDiamondOpenArrow">
+      <member xsi:type="dg:Circle" radius="3.0">
+        <style>
+          <fill color="#000000"/>
+        </style>
+        <center x="32.0" y="6.0"/>
+      </member>
+      <member xsi:type="dg:Polygon">
+        <style>
+          <fill color="#FFFFFF"/>
+        </style>
+        <point x="12.0" y="6.0"/>
+        <point x="20.0" y="1.0"/>
+        <point x="28.0" y="6.0"/>
+        <point x="20.0" y="11.0"/>
+      </member>
+      <member xsi:type="dg:Polyline">
+        <point x="1.0" y="1.0"/>
+        <point x="12.0" y="6.0"/>
+        <point x="1.0" y="11.0"/>
+      </member>
+      <size width="36.0" height="12.0"/>
+      <reference x="36.0" y="6.0"/>
+    </definition>
+    <definition xsi:type="dg:Marker" id="startOpenArrow">
+      <member xsi:type="dg:Polyline">
+        <point x="11.0" y="1.0"/>
+        <point x="1.0" y="6.0"/>
+        <point x="11.0" y="11.0"/>
+      </member>
+      <size width="12.0" height="12.0"/>
+      <reference x="0.0" y="6.0"/>
+    </definition>
+    <definition xsi:type="dg:Marker" id="startSolidCircleOpenArrow">
+      <member xsi:type="dg:Circle" radius="3.0">
+        <style>
+          <fill color="#000000"/>
+        </style>
+        <center x="4.0" y="6.0"/>
+      </member>
+      <member xsi:type="dg:Polyline">
+        <point x="19.0" y="1.0"/>
+        <point x="8.0" y="6.0"/>
+        <point x="19.0" y="11.0"/>
+      </member>
+      <size width="20.0" height="12.0"/>
+      <reference x="0.0" y="6.0"/>
+    </definition>
+    <definition xsi:type="dg:Marker" id="startSolidDiamond">
+      <member xsi:type="dg:Polygon">
+        <style>
+          <fill color="#000000"/>
+        </style>
+        <point x="0.0" y="6.0"/>
+        <point x="8.0" y="1.0"/>
+        <point x="16.0" y="6.0"/>
+        <point x="8.0" y="11.0"/>
+      </member>
+      <size width="16.0" height="12.0"/>
+      <reference x="0.0" y="6.0"/>
+    </definition>
+    <definition xsi:type="dg:Marker" id="startHollowDiamond">
+      <member xsi:type="dg:Polygon">
+        <style>
+          <fill color="#FFFFFF"/>
+        </style>
+        <point x="0.0" y="6.0"/>
+        <point x="8.0" y="1.0"/>
+        <point x="16.0" y="6.0"/>
+        <point x="8.0" y="11.0"/>
+      </member>
+      <size width="16.0" height="12.0"/>
+      <reference x="0.0" y="6.0"/>
+    </definition>
+    <definition xsi:type="dg:Marker" id="startSolidDiamondOpenArrow">
+      <member xsi:type="dg:Polygon">
+        <style>
+          <fill color="#000000"/>
+        </style>
+        <point x="0.0" y="6.0"/>
+        <point x="8.0" y="1.0"/>
+        <point x="16.0" y="6.0"/>
+        <point x="8.0" y="11.0"/>
+      </member>
+      <member xsi:type="dg:Polyline">
+        <point x="27.0" y="1.0"/>
+        <point x="16.0" y="6.0"/>
+        <point x="27.0" y="11.0"/>
+      </member>
+      <size width="28.0" height="12.0"/>
+      <reference x="0.0" y="6.0"/>
+    </definition>
+    <definition xsi:type="dg:Marker" id="startHollowDiamondOpenArrow">
+      <member xsi:type="dg:Polygon">
+        <style>
+          <fill color="#FFFFFF"/>
+        </style>
+        <point x="0.0" y="6.0"/>
+        <point x="8.0" y="1.0"/>
+        <point x="16.0" y="6.0"/>
+        <point x="8.0" y="11.0"/>
+      </member>
+      <member xsi:type="dg:Polyline">
+        <point x="27.0" y="1.0"/>
+        <point x="16.0" y="6.0"/>
+        <point x="27.0" y="11.0"/>
+      </member>
+      <size width="28.0" height="12.0"/>
+      <reference x="0.0" y="6.0"/>
+    </definition>
+    <definition xsi:type="dg:Marker" id="startSolidCircleSolidDiamondOpenArrow">
+      <member xsi:type="dg:Circle" radius="3.0">
+        <style>
+          <fill color="#000000"/>
+        </style>
+        <center x="4.0" y="6.0"/>
+      </member>
+      <member xsi:type="dg:Polygon">
+        <style>
+          <fill color="#000000"/>
+        </style>
+        <point x="8.0" y="6.0"/>
+        <point x="16.0" y="1.0"/>
+        <point x="24.0" y="6.0"/>
+        <point x="16.0" y="11.0"/>
+      </member>
+      <member xsi:type="dg:Polyline">
+        <point x="35.0" y="1.0"/>
+        <point x="24.0" y="6.0"/>
+        <point x="35.0" y="11.0"/>
+      </member>
+      <size width="36.0" height="12.0"/>
+      <reference x="0.0" y="6.0"/>
+    </definition>
+    <definition xsi:type="dg:Marker" id="startSolidCircleHollowDiamondOpenArrow">
+      <member xsi:type="dg:Circle" radius="3.0">
+        <style>
+          <fill color="#000000"/>
+        </style>
+        <center x="4.0" y="6.0"/>
+      </member>
+      <member xsi:type="dg:Polygon">
+        <style>
+          <fill color="#FFFFFF"/>
+        </style>
+        <point x="8.0" y="6.0"/>
+        <point x="16.0" y="1.0"/>
+        <point x="24.0" y="6.0"/>
+        <point x="16.0" y="11.0"/>
+      </member>
+      <member xsi:type="dg:Polyline">
+        <point x="35.0" y="1.0"/>
+        <point x="24.0" y="6.0"/>
+        <point x="35.0" y="11.0"/>
+      </member>
+      <size width="36.0" height="12.0"/>
+      <reference x="0.0" y="6.0"/>
+    </definition>
+    <styleSheet>
+      <rule>
+        <selector kind="canvas"/>
+        <style>
+          <fill xsi:nil="true"/>
+          <stroke color="#000000"/>
+        </style>
+      </rule>
+      <rule>
+        <selector kind="text"/>
+        <style>
+          <fill color="#000000"/>
+          <stroke xsi:nil="true"/>
+        </style>
+      </rule>
+      <rule>
+        <selector>
+          <class>interfaceRealization</class>
+        </selector>
+        <style>
+          <strokeDashLength>5.0</strokeDashLength>
+          <strokeDashLength>5.0</strokeDashLength>
+        </style>
+      </rule>
+    </styleSheet>
+  </definitions>
+  <script>platform:/plugin/org.eclipse.papyrus.umldi2dg/scripts/UmlLayouts.js</script>
+</dg:RootCanvas>

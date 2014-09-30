@@ -13,52 +13,12 @@ package org.eclipse.papyrus.dd.dg.util;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
+
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
+
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.papyrus.dd.dg.Canvas;
-import org.eclipse.papyrus.dd.dg.Circle;
-import org.eclipse.papyrus.dd.dg.ClipPath;
-import org.eclipse.papyrus.dd.dg.ClosePath;
-import org.eclipse.papyrus.dd.dg.CubicCurveTo;
-import org.eclipse.papyrus.dd.dg.DGPackage;
-import org.eclipse.papyrus.dd.dg.Definition;
-import org.eclipse.papyrus.dd.dg.Definitions;
-import org.eclipse.papyrus.dd.dg.Ellipse;
-import org.eclipse.papyrus.dd.dg.EllipticalArcTo;
-import org.eclipse.papyrus.dd.dg.Gradient;
-import org.eclipse.papyrus.dd.dg.GradientStop;
-import org.eclipse.papyrus.dd.dg.GraphicalElement;
-import org.eclipse.papyrus.dd.dg.Group;
-import org.eclipse.papyrus.dd.dg.Image;
-import org.eclipse.papyrus.dd.dg.Line;
-import org.eclipse.papyrus.dd.dg.LineTo;
-import org.eclipse.papyrus.dd.dg.LinearGradient;
-import org.eclipse.papyrus.dd.dg.MarkedElement;
-import org.eclipse.papyrus.dd.dg.Marker;
-import org.eclipse.papyrus.dd.dg.Matrix;
-import org.eclipse.papyrus.dd.dg.MoveTo;
-import org.eclipse.papyrus.dd.dg.Paint;
-import org.eclipse.papyrus.dd.dg.PaintServer;
-import org.eclipse.papyrus.dd.dg.Path;
-import org.eclipse.papyrus.dd.dg.PathCommand;
-import org.eclipse.papyrus.dd.dg.Pattern;
-import org.eclipse.papyrus.dd.dg.Polygon;
-import org.eclipse.papyrus.dd.dg.Polyline;
-import org.eclipse.papyrus.dd.dg.QuadraticCurveTo;
-import org.eclipse.papyrus.dd.dg.RadialGradient;
-import org.eclipse.papyrus.dd.dg.Rectangle;
-import org.eclipse.papyrus.dd.dg.RootCanvas;
-import org.eclipse.papyrus.dd.dg.Rotate;
-import org.eclipse.papyrus.dd.dg.Scale;
-import org.eclipse.papyrus.dd.dg.Skew;
-import org.eclipse.papyrus.dd.dg.Style;
-import org.eclipse.papyrus.dd.dg.StyleRule;
-import org.eclipse.papyrus.dd.dg.StyleSelector;
-import org.eclipse.papyrus.dd.dg.StyleSheet;
-import org.eclipse.papyrus.dd.dg.Text;
-import org.eclipse.papyrus.dd.dg.Transform;
-import org.eclipse.papyrus.dd.dg.Translate;
-import org.eclipse.papyrus.dd.dg.Use;
+
+import org.eclipse.papyrus.dd.dg.*;
 
 /**
  * <!-- begin-user-doc --> The <b>Adapter Factory</b> for the model. It provides
@@ -86,7 +46,7 @@ public class DGAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public DGAdapterFactory() {
-		if (modelPackage == null) {
+		if(modelPackage == null) {
 			modelPackage = DGPackage.eINSTANCE;
 		}
 	}
@@ -102,11 +62,11 @@ public class DGAdapterFactory extends AdapterFactoryImpl {
 	 */
 	@Override
 	public boolean isFactoryForType(Object object) {
-		if (object == modelPackage) {
+		if(object == modelPackage) {
 			return true;
 		}
-		if (object instanceof EObject) {
-			return ((EObject) object).eClass().getEPackage() == modelPackage;
+		if(object instanceof EObject) {
+			return ((EObject)object).eClass().getEPackage() == modelPackage;
 		}
 		return false;
 	}
@@ -346,13 +306,13 @@ public class DGAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param target
-	 *            the object to adapt.
+	 *        the object to adapt.
 	 * @return the adapter for the <code>target</code>.
 	 * @generated
 	 */
 	@Override
 	public Adapter createAdapter(Notifier target) {
-		return modelSwitch.doSwitch((EObject) target);
+		return modelSwitch.doSwitch((EObject)target);
 	}
 
 	/**

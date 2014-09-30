@@ -102,4 +102,4 @@ public interface UMLDIFactory extends EFactory {
 	 * @generated
 	 */
 	UMLDIPackage getUMLDIPackage();
-} // UMLDIFactory
+} //UMLDIFactory

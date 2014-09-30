@@ -2,16 +2,16 @@ Manifest-Version: 1.0
 Require-Bundle: org.junit;bundle-version="4.10.0",
  org.eclipse.uml2.uml;bundle-version="5.0.0",
  com.google.guava;bundle-version="11.0.0",
- org.eclipse.papyrus.infra.services.controlmode;bundle-version="1.0.1",
+ org.eclipse.papyrus.infra.services.controlmode;bundle-version="1.1.0",
  org.eclipse.gmf.runtime.notation;bundle-version="1.7.0",
- org.eclipse.papyrus.junit.framework;bundle-version="1.0.1",
- org.eclipse.papyrus.junit.utils;bundle-version="1.0.1"
+ org.eclipse.papyrus.junit.framework;bundle-version="1.1.0",
+ org.eclipse.papyrus.junit.utils;bundle-version="1.1.0"
 Export-Package: org.eclipse.papyrus.infra.emf.readonly,
  org.eclipse.papyrus.infra.emf.readonly.tests
 Bundle-Vendor: %providerName
 Fragment-Host: org.eclipse.papyrus.infra.emf.readonly;bundle-version="
  1.0.0"
-Bundle-Version: 1.0.1.qualifier
+Bundle-Version: 1.1.0.qualifier
 Bundle-Name: %pluginName
 Bundle-Localization: fragment
 Bundle-ManifestVersion: 2

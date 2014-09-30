@@ -14,91 +14,43 @@
     <details key="UNTYPED_PROPERTIES" value="REPORT"/>
     <details key="DUPLICATE_FEATURES" value="DISCARD"/>
     <details key="SUBSETTING_PROPERTIES" value="REPORT"/>
-    <details key="VALIDATION_DELEGATES" value="PROCESS"/>
+    <details key="VALIDATION_DELEGATES" value="IGNORE"/>
     <details key="OPPOSITE_ROLE_NAMES" value="IGNORE"/>
     <details key="COMMENTS" value="PROCESS"/>
     <details key="DUPLICATE_FEATURE_INHERITANCE" value="DISCARD"/>
     <details key="DUPLICATE_OPERATIONS" value="DISCARD"/>
     <details key="PROPERTY_DEFAULT_EXPRESSIONS" value="IGNORE"/>
-    <details key="INVARIANT_CONSTRAINTS" value="PROCESS"/>
+    <details key="INVARIANT_CONSTRAINTS" value="IGNORE"/>
     <details key="REDEFINING_PROPERTIES" value="REPORT"/>
     <details key="ANNOTATION_DETAILS" value="PROCESS"/>
     <details key="NON_API_INVARIANTS" value="PROCESS"/>
     <details key="DUPLICATE_OPERATION_INHERITANCE" value="DISCARD"/>
     <details key="REDEFINING_OPERATIONS" value="REPORT"/>
-    <details key="INVOCATION_DELEGATES" value="PROCESS"/>
+    <details key="INVOCATION_DELEGATES" value="IGNORE"/>
     <details key="DERIVED_FEATURES" value="PROCESS"/>
-    <details key="OPERATION_BODIES" value="PROCESS"/>
+    <details key="OPERATION_BODIES" value="IGNORE"/>
     <details key="CAMEL_CASE_NAMES" value="IGNORE"/>
     <details key="SUPER_CLASS_ORDER" value="PROCESS"/>
   </genAnnotations>
   <foreignModel>UMLRealTimeSM-addendum.profile.uml</foreignModel>
   <genPackages xsi:type="genmodel:GenPackage" prefix="UMLRealTimeStateMach" basePackage="org.eclipse.papyrus.umlrt.statemachine"
-      resource="XML" disposableProviderFactory="true" ecorePackage="UMLRealTimeStateMach.ecore#/">
+      disposableProviderFactory="true" ecorePackage="UMLRealTimeStateMach.ecore#/">
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLRealTimeStateMach.ecore#//RTStateMachine">
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
           propertySortChoices="true" ecoreFeature="ecore:EReference UMLRealTimeStateMach.ecore#//RTStateMachine/base_StateMachine"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute UMLRealTimeStateMach.ecore#//RTStateMachine/isPassive"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="UMLRealTimeStateMach.ecore#//RTStateMachine/AnRTstatemachinehasexactlyoneregion">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="UMLRealTimeStateMach.ecore#//RTStateMachine/AnRTstatemachinehasexactlyoneregion/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="UMLRealTimeStateMach.ecore#//RTStateMachine/AnRTstatemachinehasexactlyoneregion/context"/>
-      </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="UMLRealTimeStateMach.ecore#//RTStateMachine/AnRTstatemachineisneverreentrant">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="UMLRealTimeStateMach.ecore#//RTStateMachine/AnRTstatemachineisneverreentrant/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="UMLRealTimeStateMach.ecore#//RTStateMachine/AnRTstatemachineisneverreentrant/context"/>
-      </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="UMLRealTimeStateMach.ecore#//RTStateMachine/RTstatemachinesdonothaveparametersorparametersets">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="UMLRealTimeStateMach.ecore#//RTStateMachine/RTstatemachinesdonothaveparametersorparametersets/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="UMLRealTimeStateMach.ecore#//RTStateMachine/RTstatemachinesdonothaveparametersorparametersets/context"/>
-      </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="UMLRealTimeStateMach.ecore#//RTStateMachine/RTstatemachinesmusthaveacontextanditmustbeaClass">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="UMLRealTimeStateMach.ecore#//RTStateMachine/RTstatemachinesmusthaveacontextanditmustbeaClass/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="UMLRealTimeStateMach.ecore#//RTStateMachine/RTstatemachinesmusthaveacontextanditmustbeaClass/context"/>
-      </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="UMLRealTimeStateMach.ecore#//RTStateMachine/Passivestatemachineareonlyallowedonpassivedataclasses">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="UMLRealTimeStateMach.ecore#//RTStateMachine/Passivestatemachineareonlyallowedonpassivedataclasses/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="UMLRealTimeStateMach.ecore#//RTStateMachine/Passivestatemachineareonlyallowedonpassivedataclasses/context"/>
-      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLRealTimeStateMach.ecore#//RTRegion">
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
           propertySortChoices="true" ecoreFeature="ecore:EReference UMLRealTimeStateMach.ecore#//RTRegion/base_Region"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="UMLRealTimeStateMach.ecore#//RTRegion/RegionsinRTstatemachinescannothaveafinalstate">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="UMLRealTimeStateMach.ecore#//RTRegion/RegionsinRTstatemachinescannothaveafinalstate/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="UMLRealTimeStateMach.ecore#//RTRegion/RegionsinRTstatemachinescannothaveafinalstate/context"/>
-      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLRealTimeStateMach.ecore#//RTState">
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
           propertySortChoices="true" ecoreFeature="ecore:EReference UMLRealTimeStateMach.ecore#//RTState/base_State"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="UMLRealTimeStateMach.ecore#//RTState/AcomposteRTstatehasexactlyoneregion">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="UMLRealTimeStateMach.ecore#//RTState/AcomposteRTstatehasexactlyoneregion/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="UMLRealTimeStateMach.ecore#//RTState/AcomposteRTstatehasexactlyoneregion/context"/>
-      </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="UMLRealTimeStateMach.ecore#//RTState/RTdoesnotsupportsubmachinestates">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="UMLRealTimeStateMach.ecore#//RTState/RTdoesnotsupportsubmachinestates/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="UMLRealTimeStateMach.ecore#//RTState/RTdoesnotsupportsubmachinestates/context"/>
-      </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="UMLRealTimeStateMach.ecore#//RTState/RTstatemachinesdonotsupportdoactivities">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="UMLRealTimeStateMach.ecore#//RTState/RTstatemachinesdonotsupportdoactivities/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="UMLRealTimeStateMach.ecore#//RTState/RTstatemachinesdonotsupportdoactivities/context"/>
-      </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="UMLRealTimeStateMach.ecore#//RTState/RTstatemachinescannothaveanydeferredtriggers">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="UMLRealTimeStateMach.ecore#//RTState/RTstatemachinescannothaveanydeferredtriggers/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="UMLRealTimeStateMach.ecore#//RTState/RTstatemachinescannothaveanydeferredtriggers/context"/>
-      </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="UMLRealTimeStateMach.ecore#//RTState/Constraint5">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="UMLRealTimeStateMach.ecore#//RTState/Constraint5/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="UMLRealTimeStateMach.ecore#//RTState/Constraint5/context"/>
-      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLRealTimeStateMach.ecore#//RTPseudostate">
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
           propertySortChoices="true" ecoreFeature="ecore:EReference UMLRealTimeStateMach.ecore#//RTPseudostate/base_Pseudostate"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="UMLRealTimeStateMach.ecore#//RTPseudostate/RTstatemachinesdonotsupportconcurrencyorshallowhistory">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="UMLRealTimeStateMach.ecore#//RTPseudostate/RTstatemachinesdonotsupportconcurrencyorshallowhistory/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="UMLRealTimeStateMach.ecore#//RTPseudostate/RTstatemachinesdonotsupportconcurrencyorshallowhistory/context"/>
-      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLRealTimeStateMach.ecore#//RTTrigger">
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"

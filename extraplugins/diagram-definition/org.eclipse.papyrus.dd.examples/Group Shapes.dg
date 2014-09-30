@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dg:RootCanvas xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dg="http://www.omg.org/spec/DD/20110901/DG" backgroundColor="#00FFFF">
+  <member xsi:type="dg:Group">
+    <member xsi:type="dg:Use" referencedElement="head"/>
+  </member>
+  <member xsi:type="dg:Canvas">
+    <member xsi:type="dg:Use" referencedElement="head"/>
+    <bounds x="120.0"/>
+  </member>
+  <member xsi:type="dg:Use" clipPath="clip1" referencedElement="head">
+    <bounds x="240.0" y="0.0"/>
+  </member>
+  <member xsi:type="dg:Use" referencedElement="head">
+    <style strokeWidth="3.0"/>
+    <bounds x="360.0"/>
+  </member>
+  <member xsi:type="dg:Use" referencedElement="head">
+    <transform xsi:type="dg:Translate" deltaY="100.0"/>
+    <transform xsi:type="dg:Scale" factorX="2.0" factorY="2.0"/>
+    <transform xsi:type="dg:Rotate" angle="90.0">
+      <center x="50.0" y="50.0"/>
+    </transform>
+    <transform xsi:type="dg:Skew" angleX="20.0"/>
+  </member>
+  <member xsi:type="dg:Use" referencedElement="head">
+    <transform xsi:type="dg:Matrix" a="2.0" d="2.0" e="200.0" f="100.0"/>
+  </member>
+  <definitions>
+    <definition xsi:type="dg:Group" id="head">
+      <member xsi:type="dg:Ellipse">
+        <class>ear</class>
+        <center x="92.0" y="50.0"/>
+        <radii width="5.0" height="10.0"/>
+      </member>
+      <member xsi:type="dg:Ellipse">
+        <class>ear</class>
+        <center x="8.0" y="50.0"/>
+        <radii width="5.0" height="10.0"/>
+      </member>
+      <member xsi:type="dg:Circle" radius="40.0">
+        <class>face</class>
+        <center x="50.0" y="50.0"/>
+      </member>
+      <member xsi:type="dg:Ellipse">
+        <class>eye</class>
+        <center x="30.0" y="40.0"/>
+        <radii width="10.0" height="5.0"/>
+      </member>
+      <member xsi:type="dg:Ellipse">
+        <class>eye</class>
+        <center x="70.0" y="40.0"/>
+        <radii width="10.0" height="5.0"/>
+      </member>
+      <member xsi:type="dg:Circle" radius="5.0">
+        <class>pupil</class>
+        <center x="30.0" y="40.0"/>
+      </member>
+      <member xsi:type="dg:Circle" radius="5.0">
+        <class>pupil</class>
+        <center x="70.0" y="40.0"/>
+      </member>
+      <member xsi:type="dg:Polygon">
+        <class>nose</class>
+        <point x="50.0" y="50.0"/>
+        <point x="55.0" y="60.0"/>
+        <point x="45.0" y="60.0"/>
+      </member>
+      <member xsi:type="dg:Path">
+        <class>mouth</class>
+        <command xsi:type="dg:MoveTo">
+          <point x="60.0" y="70.0"/>
+        </command>
+        <command xsi:type="dg:LineTo" isRelative="true">
+          <point x="-20.0"/>
+        </command>
+        <command xsi:type="dg:EllipticalArcTo" isRelative="true" isLargeArc="true">
+          <radii width="10.0" height="10.0"/>
+          <point x="20.0"/>
+        </command>
+      </member>
+      <member xsi:type="dg:Path">
+        <class>eyebrow</class>
+        <command xsi:type="dg:MoveTo">
+          <point x="22.0" y="28.0"/>
+        </command>
+        <command xsi:type="dg:CubicCurveTo" isRelative="true">
+          <startControl y="-10.0"/>
+          <endControl x="20.0" y="10.0"/>
+          <point x="20.0"/>
+        </command>
+      </member>
+      <member xsi:type="dg:Path">
+        <class>eyebrow</class>
+        <command xsi:type="dg:MoveTo">
+          <point x="58.0" y="28.0"/>
+        </command>
+        <command xsi:type="dg:CubicCurveTo" isRelative="true">
+          <startControl y="10.0"/>
+          <endControl x="20.0" y="-10.0"/>
+          <point x="20.0"/>
+        </command>
+      </member>
+    </definition>
+    <definition xsi:type="dg:ClipPath" id="clip1">
+      <member xsi:type="dg:Rectangle">
+        <bounds x="0.5" width="0.5" height="1.0"/>
+      </member>
+    </definition>
+    <styleSheet>
+      <rule>
+        <selector/>
+        <style>
+          <fill/>
+          <stroke color="#000000"/>
+        </style>
+      </rule>
+      <rule>
+        <selector>
+          <class>face</class>
+        </selector>
+        <style>
+          <fill color="#FFD197"/>
+        </style>
+      </rule>
+      <rule>
+        <selector>
+          <class>eye</class>
+        </selector>
+        <style>
+          <fill color="#FFFFFF"/>
+        </style>
+      </rule>
+      <rule>
+        <selector>
+          <class>pupil</class>
+        </selector>
+        <style>
+          <fill color="#0000FF"/>
+        </style>
+      </rule>
+      <rule>
+        <selector>
+          <class>nose</class>
+        </selector>
+        <selector>
+          <class>ear</class>
+        </selector>
+        <style>
+          <fill color="#FFCC00"/>
+        </style>
+      </rule>
+      <rule>
+        <selector>
+          <class>mouth</class>
+        </selector>
+        <style>
+          <fill color="#FF0000"/>
+        </style>
+      </rule>
+    </styleSheet>
+  </definitions>
+</dg:RootCanvas>

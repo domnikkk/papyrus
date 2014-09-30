@@ -1,0 +1,949 @@
+/*****************************************************************************
+ * Copyright (c) 2013, 2014 CEA LIST.
+ *
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
+ *****************************************************************************/
+package org.eclipse.papyrus.migration.rsa.transformation;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStreamWriter;
+import java.net.URL;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.Properties;
+import java.util.Set;
+
+import org.eclipse.core.runtime.Assert;
+import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.MultiStatus;
+import org.eclipse.core.runtime.NullProgressMonitor;
+import org.eclipse.core.runtime.Status;
+import org.eclipse.core.runtime.jobs.IJobChangeEvent;
+import org.eclipse.core.runtime.jobs.Job;
+import org.eclipse.core.runtime.jobs.JobChangeAdapter;
+import org.eclipse.emf.common.util.BasicDiagnostic;
+import org.eclipse.emf.common.util.Diagnostic;
+import org.eclipse.emf.common.util.DiagnosticException;
+import org.eclipse.emf.common.util.TreeIterator;
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.common.util.WrappedException;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.ecore.xmi.XMIResource;
+import org.eclipse.emf.ecore.xmi.XMLResource;
+import org.eclipse.emf.ecore.xmi.impl.XMIResourceImpl;
+import org.eclipse.gmf.runtime.emf.core.resources.GMFResource;
+import org.eclipse.gmf.runtime.notation.Diagram;
+import org.eclipse.gmf.runtime.notation.Style;
+import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.jface.dialogs.MessageDialog;
+import org.eclipse.m2m.qvt.oml.BasicModelExtent;
+import org.eclipse.m2m.qvt.oml.ExecutionContext;
+import org.eclipse.m2m.qvt.oml.ExecutionContextImpl;
+import org.eclipse.m2m.qvt.oml.ExecutionDiagnostic;
+import org.eclipse.m2m.qvt.oml.ModelExtent;
+import org.eclipse.m2m.qvt.oml.TransformationExecutor;
+import org.eclipse.m2m.qvt.oml.util.WriterLog;
+import org.eclipse.papyrus.dsml.validation.PapyrusDSMLValidationRule.PapyrusDSMLValidationRulePackage;
+import org.eclipse.papyrus.infra.tools.util.ListHelper;
+import org.eclipse.papyrus.m2m.qvto.TransformationUI;
+import org.eclipse.papyrus.migration.rsa.Activator;
+import org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.Config;
+import org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.RSAToPapyrusParametersFactory;
+import org.eclipse.papyrus.migration.rsa.blackbox.ProfileBaseHelper;
+import org.eclipse.papyrus.uml.documentation.Documentation.DocumentationPackage;
+import org.eclipse.papyrus.umlrt.statemachine.UMLRealTimeStateMach.UMLRealTimeStateMachPackage;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.ui.PlatformUI;
+import org.eclipse.ui.statushandlers.StatusManager;
+import org.eclipse.uml2.uml.OpaqueExpression;
+import org.eclipse.uml2.uml.resource.UMLResource;
+
+public class ImportTransformation {
+
+	protected final URI sourceURI;
+
+	protected ModelExtent outUML, outNotation, outSashModel, inParameters;
+
+	protected ResourceSet resourceSet;
+
+	protected boolean cacheTransformations;
+
+	protected Job job;
+
+	protected Resource umlResource;
+
+	protected Config parameters;
+
+	/** Source URI to Target URI map */
+	protected final Map<URI, URI> uriMappings = new HashMap<URI, URI>();
+
+	// The cache can be used to increase performances (For small and medium sized models, most of the execution time is spent in loading the transformation)
+	// Warning: using the cache prevents dynamic transformations (i.e. it should not be used in Debug Mode)
+	protected static final Map<URI, TransformationExecutor> sharedTransformations = new HashMap<URI, TransformationExecutor>();
+
+	// Separate local cache for preloading transformations if cacheTransformations = false (Mostly for debug purpose)
+	protected final Map<URI, TransformationExecutor> localTransformations = new HashMap<URI, TransformationExecutor>();
+
+	public ImportTransformation(URI sourceURI) {
+		this(sourceURI, RSAToPapyrusParametersFactory.eINSTANCE.createConfig());
+	}
+
+	public ImportTransformation(URI sourceURI, Config config) {
+		Assert.isNotNull(sourceURI);
+		this.sourceURI = sourceURI;
+		this.parameters = config;
+
+		this.cacheTransformations = true;
+	}
+
+	/**
+	 * Executes the transformation
+	 *
+	 * The transformation will be executed asynchronously in a Job
+	 */
+	public void run() {
+
+		job = new Job("Import " + getModelName()) {
+
+			@Override
+			protected IStatus run(IProgressMonitor monitor) {
+				return ImportTransformation.this.run(monitor);
+			}
+		};
+
+		job.setUser(true);
+
+		job.addJobChangeListener(new JobChangeAdapter() {
+
+			@Override
+			public void done(IJobChangeEvent event) {
+				if (event.getResult().getSeverity() == IStatus.OK) {
+					Display.getDefault().asyncExec(new Runnable() {
+
+						@Override
+						public void run() {
+							MessageDialog.openInformation(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), job.getName(), String.format("Model %s has been successfully imported", getModelName()));
+						}
+					});
+
+				} else if (event.getResult().getSeverity() == IStatus.CANCEL) {
+					Display.getDefault().asyncExec(new Runnable() {
+
+						@Override
+						public void run() {
+							MessageDialog.openInformation(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), job.getName(), String.format("Operation canceled", getModelName()));
+						}
+					});
+				} else {
+					StatusManager.getManager().handle(event.getResult(), StatusManager.SHOW);
+				}
+			}
+
+		});
+
+		job.schedule();
+	}
+
+	public void waitForCompletion() {
+		try {
+			job.join();
+		} catch (InterruptedException ex) {
+			Activator.log.error(ex);
+		}
+	}
+
+	public Map<URI, URI> getURIMappings() {
+		return uriMappings;
+	}
+
+	public URI getTargetURI() {
+		if (umlResource != null) {
+			return umlResource.getURI();
+		}
+		return null;
+	}
+
+	/**
+	 * Initializes the resource set, and resolve all dependencies
+	 */
+	protected void initResourceSet(IProgressMonitor monitor) {
+		resourceSet = new ResourceSetImpl();
+		resourceSet.getLoadOptions().put(XMLResource.OPTION_DEFER_ATTACHMENT, true);
+		resourceSet.getLoadOptions().put(XMLResource.OPTION_DEFER_IDREF_RESOLUTION, true);
+		resourceSet.getLoadOptions().put(XMLResource.OPTION_RECORD_UNKNOWN_FEATURE, Boolean.TRUE);
+		resourceSet.getLoadOptions().put(XMLResource.OPTION_USE_PACKAGE_NS_URI_AS_LOCATION, Boolean.FALSE);
+
+		monitor.subTask("Loading source model " + getModelName());
+
+		try {
+			resourceSet.getResource(sourceURI, true);
+		} catch (Exception ex) {
+			Activator.log.error(ex);
+		}
+
+		monitor.subTask("Resolving all dependencies...");
+
+		EcoreUtil.resolveAll(resourceSet);
+	}
+
+	/**
+	 * Returns the number of elements to be migrated (i.e. diagrams to be migrated + specific non-trivial elements)
+	 * Used to initialize the progress monitor
+	 *
+	 * @return
+	 *         The total number of elements to be migrated
+	 */
+	protected int countSupportedElements() {
+		int i = 0;
+
+		ModelExtent extent = getInOutUMLModel();
+		for (EObject eObject : extent.getContents()) {
+
+			// We already called ResolveAll, there is no need to try resolution again
+			TreeIterator<EObject> modelIterator = EcoreUtil.getAllContents(eObject, false);
+			while (modelIterator.hasNext()) {
+				EObject next = modelIterator.next();
+				if (next instanceof Diagram) {
+					Diagram diagram = (Diagram) next;
+					if (isSupported(diagram)) {
+						i++;
+					}
+					modelIterator.prune(); // Don't navigate Diagram children
+				} else if (next instanceof OpaqueExpression) {
+					if (parameters.isConvertOpaqueExpressionToLiteralString()) {
+						OpaqueExpression exp = (OpaqueExpression) next;
+						if (needsConversion(exp)) {
+							i++;
+						}
+					}
+				}
+			}
+		}
+
+		i += getAllTransformationURIs().size();
+
+		return i;
+	}
+
+	/**
+	 * Returns true if the OpaqueExpression is to be converted to a LiteralString
+	 * OpaqueExpressions are converted to LiteralString when they have a single body with no language
+	 *
+	 * @param exp
+	 * @return
+	 */
+	protected static boolean needsConversion(OpaqueExpression exp) {
+		List<String> languages = exp.getLanguages();
+		List<String> bodies = exp.getBodies();
+		if (bodies.size() > 1) {
+			return false;
+		}
+
+		if (languages.isEmpty() || (languages.size() == 1 && exp.getLanguages().get(0).isEmpty())) {
+			return true;
+		}
+
+		return false;
+	}
+
+	protected static final Set<String> supportedDiagramIds = new HashSet<String>();
+
+	protected static boolean isSupported(Diagram diagram) {
+		return supportedDiagramIds.contains(diagram.getType());
+	}
+
+	// Preloads all required transformations (Either locally or statically, depending on the cache parameter)
+	protected IStatus loadTransformations(IProgressMonitor monitor) {
+		for (URI transformationURI : getAllTransformationURIs()) {
+			try {
+				// Don't use a subprogress monitor, since it may be confusing
+				getTransformation(transformationURI, new NullProgressMonitor());
+				monitor.worked(1);
+			} catch (DiagnosticException ex) {
+				return BasicDiagnostic.toIStatus(ex.getDiagnostic());
+			}
+		}
+
+		return Status.OK_STATUS;
+	}
+
+	/**
+	 * Actually runs the transformation (in the current thread)
+	 *
+	 * @param monitor
+	 * @return The transformation IStatus
+	 */
+	protected IStatus run(final IProgressMonitor monitor) {
+
+		//
+		// INITIALIZATION / LOADING
+		//
+
+		monitor.subTask("Loading source model " + getModelName());
+
+		initResourceSet(monitor);
+
+		int numberOfElements = countSupportedElements();
+
+		monitor.beginTask("Importing " + getModelName(), numberOfElements);
+
+		monitor.subTask("Loading transformations (This may take a few seconds for the first import)...");
+		loadTransformations(monitor);
+
+
+		List<ModelExtent> extents = getModelExtents();
+
+		MultiStatus generationStatus = new MultiStatus(Activator.PLUGIN_ID, IStatus.OK, "Operation complete", null);
+
+		ExecutionContext context = createExecutionContext(monitor, generationStatus);
+
+		//
+		// TRANSFORMATIONS
+		//
+
+		IStatus result; // Result of an individual transformation (Will be aggregated to the complete GenerationStatus)
+
+		// UML RT (First operation, because it can transform Collaborations to Classes, which has some consequences on the diagram transformation)
+		// TODO: Restore the UML RT transformation (Update to UML RT v3)
+		result = importRTProfile(context, monitor);
+		generationStatus.add(result);
+
+		// Diagrams
+		Collection<URI> transformations = getDiagramTransformationURIs();
+
+		monitor.subTask("Importing diagrams...");
+		for (URI transformationURI : transformations) {
+			result = runTransformation(transformationURI, context, monitor, extents);
+			generationStatus.add(result);
+		}
+
+		// Semantic model changes (Default language for OpaqueExpressions...)
+		monitor.subTask("Importing semantic model...");
+		result = runTransformation(getSemanticTransformationURI(), context, monitor, extents);
+		generationStatus.add(result);
+
+		monitor.subTask("Handle additional profiles...");
+		// Default.epx and ProfileBase.epx
+		result = importRSAProfiles(context, monitor);
+		generationStatus.add(result);
+
+		//
+		// FRAGMENTS & SAVE
+		//
+
+		if (generationStatus.getSeverity() <= Diagnostic.WARNING) {
+
+			monitor.subTask("Saving models...");
+			URI umlModelURI = null;
+			URI notationModelURI = null;
+			URI sashModelURI = null;
+			ResourceSet resourceSet = new ResourceSetImpl();
+
+			umlModelURI = convertToPapyrus(sourceURI, UMLResource.FILE_EXTENSION);
+			notationModelURI = convertToPapyrus(sourceURI, "notation"); // TODO use constant
+			sashModelURI = convertToPapyrus(sourceURI, "di"); // TODO use constant
+
+			uriMappings.put(sourceURI, umlModelURI);
+
+			umlResource = createUMLResource(resourceSet, umlModelURI);
+			List<EObject> outUMLObjects = getInOutUMLModel().getContents();
+			umlResource.getContents().addAll(outUMLObjects);
+
+			GMFResource notationResource = new GMFResource(notationModelURI); // GMF Resource content type?
+			resourceSet.getResources().add(notationResource);
+			List<EObject> outNotationObjects = getInoutNotationModel().getContents();
+			notationResource.getContents().addAll(outNotationObjects);
+
+			// Cleanup empty diagrams (FIXME: They should not be generated)
+			Iterator<EObject> iterator = notationResource.getContents().iterator();
+			while (iterator.hasNext()) {
+				EObject next = iterator.next();
+				if (next instanceof Diagram) {
+					Diagram diagram = (Diagram) next;
+					if (diagram.getType() == null || "".equals(diagram.getType())) {
+						iterator.remove();
+					}
+				}
+			}
+
+			XMIResource sashResource = new XMIResourceImpl(sashModelURI);
+			resourceSet.getResources().add(sashResource);
+			List<EObject> sashModelObjects = getOutSashModel().getContents();
+			sashResource.getContents().addAll(sashModelObjects);
+
+			configureResource(sashResource);
+			configureResource(notationResource);
+			configureResource((XMIResource) umlResource);
+
+			// Handle orphaned elements: remove them and log a warning
+			List<EObject> notationRootElements = new LinkedList<EObject>(notationResource.getContents());
+			for (EObject rootElement : notationRootElements) {
+				if (rootElement instanceof View) {
+					View rootView = (View) rootElement;
+					if (!(rootView instanceof Diagram)) {
+						String objectType = rootView.getElement() == null ? "None" : rootView.getElement().eClass().getName();
+						String viewType = rootView.getType() == null ? "None" : rootView.getType();
+						generationStatus.add(new Status(IStatus.WARNING, Activator.PLUGIN_ID, "An orphaned view has been found after the migration. It will be removed. View Type: " + viewType + ", semantic type: " + objectType));
+
+						notationResource.getContents().remove(rootElement);
+					}
+				} else if (rootElement instanceof Style) {
+					String styleType = rootElement.eClass().getName();
+					generationStatus.add(new Status(IStatus.WARNING, Activator.PLUGIN_ID, "An orphaned style has been found after the migration. It will be removed. Style Type: " + styleType));
+
+					notationResource.getContents().remove(rootElement);
+				}
+			}
+
+			Collection<Resource> resourcesToSave = handleFragments(umlResource, notationResource, sashResource);
+
+			for (Resource resource : resourcesToSave) {
+				try {
+					resource.save(null);
+				} catch (Exception ex) {
+					Activator.log.error(ex);
+				}
+			}
+		}
+
+		monitor.done();
+		return generationStatus;
+	}
+
+	protected IStatus importRSAProfiles(ExecutionContext context, IProgressMonitor monitor) {
+		URI transformationURI = getProfilesTransformationURI();
+
+		List<ModelExtent> extents = new LinkedList<ModelExtent>();
+		extents.add(getInOutUMLModel());
+		extents.add(getInoutNotationModel());
+		Diagnostic loadedProfiles = getInPapyrusProfiles();
+		extents.add(extractPapyrusProfiles(loadedProfiles));
+		extents.add(getInProfileDefinitions());
+		extents.add(getInConfig());
+
+		TransformationExecutor executor;
+		try {
+			executor = getTransformation(transformationURI, monitor);
+		} catch (DiagnosticException ex) {
+			Diagnostic diagnostic = ex.getDiagnostic();
+
+			Activator.log.warn(String.format("Cannot load the transformation : %s. Diagnostic: %s", transformationURI, diagnostic.getMessage()));
+			return BasicDiagnostic.toIStatus(diagnostic);
+		}
+
+		ExecutionDiagnostic transformationResult;
+		synchronized (executor) {
+			transformationResult = executor.execute(context, extents.toArray(new ModelExtent[0]));
+		}
+
+		IStatus loadedProfilesStatus = BasicDiagnostic.toIStatus(loadedProfiles);
+		IStatus transformationStatus = BasicDiagnostic.toIStatus(transformationResult);
+
+		int severity = Math.max(loadedProfiles.getSeverity(), transformationResult.getSeverity());
+
+		String message;
+		if (severity > IStatus.OK) {
+			message = "The following errors occurred:";
+		} else {
+			message = "OK";
+		}
+
+		IStatus completeResult = new MultiStatus(Activator.PLUGIN_ID, severity, new IStatus[] { loadedProfilesStatus, transformationStatus }, message, null);
+
+		return completeResult;
+	}
+
+	protected TransformationExecutor getTransformation(URI transformationURI, IProgressMonitor monitor) throws DiagnosticException {
+
+		if (!cacheTransformations) {
+			if (!localTransformations.containsKey(transformationURI)) {
+				TransformationExecutor executor = loadTransformationExecutor(transformationURI, monitor);
+				localTransformations.put(transformationURI, executor);
+			}
+			return localTransformations.get(transformationURI);
+		}
+
+		synchronized (sharedTransformations) {
+			if (!sharedTransformations.containsKey(transformationURI)) {
+				TransformationExecutor executor = loadTransformationExecutor(transformationURI, monitor);
+				sharedTransformations.put(transformationURI, executor);
+			}
+			return sharedTransformations.get(transformationURI);
+		}
+	}
+
+	// Static synchronized, as it seems that QVTo can't load 2 transformations at the same time, even in separate execution contexts
+	protected static synchronized TransformationExecutor loadTransformationExecutor(URI transformationURI, IProgressMonitor monitor) throws DiagnosticException {
+		TransformationExecutor executor = new TransformationExecutor(transformationURI);
+		Diagnostic diagnostic = executor.loadTransformation(monitor);
+
+		if (diagnostic.getSeverity() != Diagnostic.OK) {
+			throw new DiagnosticException(diagnostic);
+		}
+
+		return executor;
+	}
+
+	protected Properties readProfileBaseProperties() {
+		URI propertiesURI = sourceURI.trimFileExtension().appendFileExtension("properties");
+
+		Properties properties = new Properties();
+		InputStream inputStream = null;
+
+		try {
+			URL url = new URL(propertiesURI.toString());
+			inputStream = url.openStream();
+			properties.load(inputStream);
+		} catch (FileNotFoundException ex) {
+			// Ignore: the file doesn't exist
+		} catch (IOException ex) {
+			Activator.log.error(ex);
+		} finally {
+			if (inputStream != null) {
+				try {
+					inputStream.close();
+				} catch (IOException ex) {
+					Activator.log.error(ex);
+				}
+			}
+		}
+
+		return properties;
+	}
+
+	protected IStatus importRTProfile(ExecutionContext context, IProgressMonitor monitor) {
+		monitor.subTask("Importing RT Profile... ");
+
+		URI transformationURI = getRTTransformationURI();
+
+		List<ModelExtent> extents = new LinkedList<ModelExtent>();
+		extents.add(getInOutUMLModel());
+		extents.add(getInoutNotationModel());
+		extents.add(extractPapyrusProfiles(getInPapyrusProfiles()));
+		extents.add(getInProfileDefinitions());
+		extents.add(getInConfig());
+
+		TransformationExecutor executor;
+		try {
+			executor = getTransformation(transformationURI, monitor);
+		} catch (DiagnosticException ex) {
+			Diagnostic diagnostic = ex.getDiagnostic();
+			Activator.log.warn(String.format("Cannot load the transformation : %s. Diagnostic: %s", transformationURI, diagnostic.getMessage()));
+			return BasicDiagnostic.toIStatus(diagnostic);
+		}
+
+		ExecutionDiagnostic result;
+		synchronized (executor) {
+			result = executor.execute(context, extents.toArray(new ModelExtent[0]));
+		}
+
+		return BasicDiagnostic.toIStatus(result);
+	}
+
+	protected ModelExtent extractPapyrusProfiles(Diagnostic diagnostic) {
+		for (Object extent : diagnostic.getData()) {
+			if (extent instanceof ModelExtent) {
+				return (ModelExtent) extent;
+			}
+		}
+		return null;
+	}
+
+	protected ModelExtent getInProfileDefinitions() {
+		return new BasicModelExtent(Arrays.asList(new EPackage[] {
+				PapyrusDSMLValidationRulePackage.eINSTANCE,
+				DocumentationPackage.eINSTANCE,
+				org.eclipse.papyrus.umlrt.UMLRealTime.UMLRealTimePackage.eINSTANCE,
+				UMLRealTimeStateMachPackage.eINSTANCE
+		}));
+	}
+
+	/**
+	 * Returns a Diagnostic. Diagnostic#data is the ModelExtent containing the loaded profiles
+	 *
+	 * @return
+	 * @throws WrappedException
+	 */
+	protected Diagnostic getInPapyrusProfiles() {
+		List<String> missingProfiles = new LinkedList<String>();
+
+
+		List<EObject> allContents = new LinkedList<EObject>();
+		try {
+			URI validationProfileURI = URI.createURI("pathmap://DSMLValidation_PROFILES/PapyrusValidationRuleDSML.uml");
+			Resource validationProfile = resourceSet.getResource(validationProfileURI, true);
+			checkResource(validationProfile);
+			allContents.addAll(validationProfile.getContents());
+		} catch (WrappedException ex) {
+			missingProfiles.add("Validation Rules Profile");
+		}
+
+		try {
+			URI documentationProfileURI = URI.createURI("pathmap://PAPYRUS_DOCUMENTATION/Papyrus.profile.uml");
+			Resource documentationProfile = resourceSet.getResource(documentationProfileURI, true);
+			checkResource(documentationProfile);
+			allContents.addAll(documentationProfile.getContents());
+		} catch (WrappedException ex) {
+			missingProfiles.add("Documentation Profile");
+		}
+
+		try {
+			URI umlrtProfileURI = URI.createURI("pathmap://UML_RT_PROFILE/uml-rt.profile.uml");
+			Resource umlrtProfile = resourceSet.getResource(umlrtProfileURI, true);
+			checkResource(umlrtProfile);
+			allContents.addAll(umlrtProfile.getContents());
+		} catch (WrappedException ex) {
+			missingProfiles.add("UML RT Profile");
+		}
+
+		try {
+			URI umlrtSMProfileURI = URI.createURI("pathmap://UML_RT_PROFILE/UMLRealTimeSM-addendum.profile.uml");
+			Resource umlrtSMProfile = resourceSet.getResource(umlrtSMProfileURI, true);
+			checkResource(umlrtSMProfile);
+			allContents.addAll(umlrtSMProfile.getContents());
+		} catch (WrappedException ex) {
+			missingProfiles.add("UML RT / StateMachine extension Profile");
+		}
+
+		ModelExtent result = new BasicModelExtent(allContents);
+
+		String message;
+		int code;
+		if (missingProfiles.isEmpty()) {
+			message = "OK";
+			code = Diagnostic.OK;
+		} else {
+			message = "The following Papyrus profiles cannot be found: " + ListHelper.deepToString(missingProfiles, ", ");
+			code = Diagnostic.ERROR;
+		}
+
+		Diagnostic diagnostic = new BasicDiagnostic(code, Activator.PLUGIN_ID, code, message, new ModelExtent[] { result });
+
+		return diagnostic;
+	}
+
+	protected void checkResource(Resource resource) {
+		Assert.isTrue(!resource.getContents().isEmpty(), "The resource " + resource.getURI() + " is empty");
+		for (EObject rootElement : resource.getContents()) {
+			Assert.isTrue(!rootElement.eIsProxy());
+		}
+	}
+
+	protected Resource createUMLResource(ResourceSet resourceSet, URI umlModelURI) {
+		return resourceSet.createResource(umlModelURI, UMLResource.UML_CONTENT_TYPE_IDENTIFIER);
+	}
+
+	protected ModelExtent getInConfig() {
+		if (inParameters == null) {
+			inParameters = new BasicModelExtent(Collections.singletonList(parameters));
+		}
+		return inParameters;
+	}
+
+	protected Collection<Resource> handleFragments(Resource umlResource, Resource notationResource, Resource sashResource) {
+		Collection<Resource> result = new HashSet<Resource>();
+		result.add(umlResource);
+		result.add(notationResource);
+		result.add(sashResource);
+
+		ResourceSet resourceSet = umlResource.getResourceSet();
+
+		Iterator<EObject> elementIterator = umlResource.getAllContents();
+
+		Set<Resource> fragmentResources = new HashSet<Resource>();
+
+		while (elementIterator.hasNext()) {
+			EObject element = elementIterator.next();
+			if (element.eResource() != umlResource && element.eResource().getContents().contains(element)) { // Controlled/Fragment root
+				fragmentResources.add(element.eResource());
+			}
+		}
+
+		for (Resource fragmentResource : fragmentResources) {
+			URI fragmentURI = convertToPapyrus(fragmentResource.getURI(), UMLResource.FILE_EXTENSION);
+
+			uriMappings.put(fragmentResource.getURI(), fragmentURI);
+
+			Resource newResource = resourceSet.getResource(fragmentURI, false);
+			if (newResource == null) {
+				newResource = createUMLResource(resourceSet, fragmentURI);
+
+				Resource fragmentNotationResource = new GMFResource(convertToPapyrus(fragmentURI, "notation"));
+				Resource fragmentDiResource = new XMIResourceImpl(convertToPapyrus(fragmentURI, "di"));
+
+				result.add(fragmentNotationResource);
+				result.add(fragmentDiResource);
+
+				resourceSet.getResources().add(fragmentNotationResource);
+				resourceSet.getResources().add(fragmentDiResource);
+			}
+
+			newResource.getContents().addAll(fragmentResource.getContents());
+			result.add(newResource);
+		}
+
+		deleteSourceRTStereotypes(fragmentResources);
+
+		List<EObject> importedElements = new LinkedList<EObject>(notationResource.getContents());
+		for (EObject notationElement : importedElements) {
+			if (notationElement instanceof Diagram) {
+				EObject semanticElement = ((Diagram) notationElement).getElement();
+				if (semanticElement.eResource() != umlResource && semanticElement.eResource() != null) {
+
+					URI notationFragmentURI = convertToPapyrus(semanticElement.eResource().getURI(), "notation");
+
+					Resource newNotationResource = resourceSet.getResource(notationFragmentURI, false);
+					if (newNotationResource == null) {
+						newNotationResource = new GMFResource(notationFragmentURI);
+						resourceSet.getResources().add(newNotationResource);
+					}
+					newNotationResource.getContents().add(notationElement);
+					result.add(newNotationResource);
+				}
+			}
+		}
+
+		return result;
+	}
+
+	protected void deleteSourceRTStereotypes(Collection<Resource> fragmentResources) {
+		Set<Resource> allResources = new HashSet<Resource>(fragmentResources);
+		allResources.add(umlResource);
+
+		for (Resource resource : allResources) {
+
+			// For performance reasons, RSA RT Stereotypes have not been deleted during the QVTo transformation (Bug 444379)
+			// Delete them as a post-action. Iterate on all controlled models and delete the RealTime stereotypes at the root of each resource
+			for (Iterator<EObject> rootsIterator = resource.getContents().iterator(); rootsIterator.hasNext();) {
+				EObject rootElement = rootsIterator.next();
+				if (rootElement.eClass().getEPackage() == org.eclipse.papyrus.migration.rsa.umlrt.UMLRealTimePackage.eINSTANCE) {
+					rootsIterator.remove();
+				}
+			}
+
+		}
+	}
+
+	protected URI convertToPapyrus(URI rsaURI, String extension) {
+		if ("epx".equals(rsaURI.fileExtension())) { //$NON-NLS-1$
+			// Profiles: myProfile.profile.uml, myProfile.profile.notation, ...
+			return rsaURI.trimFileExtension().appendFileExtension("profile").appendFileExtension(extension); //$NON-NLS-1$
+		} else {
+			// Models and Fragments: myModel.uml, myFragment.uml, ...
+			return rsaURI.trimFileExtension().appendFileExtension(extension);
+		}
+	}
+
+	protected IStatus runTransformation(URI transformationURI, ExecutionContext context, IProgressMonitor monitor, List<ModelExtent> extents) {
+		TransformationExecutor executor;
+		try {
+			executor = getTransformation(transformationURI, monitor);
+		} catch (DiagnosticException ex) {
+			Diagnostic diagnostic = ex.getDiagnostic();
+
+			Activator.log.warn(String.format("Cannot load the transformation : %s. Diagnostic: %s", transformationURI, diagnostic.getMessage()));
+			return BasicDiagnostic.toIStatus(diagnostic);
+		}
+
+		ExecutionDiagnostic result;
+		synchronized (executor) {
+			result = executor.execute(context, extents.toArray(new ModelExtent[0]));
+		}
+
+		return BasicDiagnostic.toIStatus(result);
+	}
+
+	protected ExecutionContext createExecutionContext(final IProgressMonitor monitor, final MultiStatus generationStatus) {
+		ExecutionContextImpl context = new ExecutionContextImpl();
+		context.setConfigProperty("keepModeling", true); //$NON-NLS-1$o
+		context.setConfigProperty(TransformationUI.MONITOR, monitor);
+
+		// context.setProgressMonitor(monitor);
+
+		context.setLog(new WriterLog(new OutputStreamWriter(System.out)) {
+
+			@Override
+			public void log(String message) {
+				super.log(message);
+			}
+
+			@Override
+			public void log(String message, Object param) {
+				super.log(message, param);
+			}
+
+			@Override
+			public void log(int level, String message) {
+				super.log(level, message);
+				if (level >= 1) {
+					generationStatus.merge(new Status(level, Activator.PLUGIN_ID, message));
+				}
+
+			}
+
+			@Override
+			public void log(int level, String message, Object param) {
+				super.log(level, message, param);
+				if (level >= 1) {
+					generationStatus.merge(new Status(level, Activator.PLUGIN_ID, message + ", data:" + param));
+				}
+			}
+		});
+
+		initTransformationProperties(context);
+
+		return context;
+	}
+
+	/**
+	 * Initializes the ExecutionContext with configuration properties required by transformations
+	 *
+	 * This is a lightweight mechanism to avoid initializing ModelExtents for a single EObject reference, or for non-EMF values
+	 *
+	 * Typically used by blackbox methods
+	 *
+	 * @param context
+	 */
+	protected void initTransformationProperties(ExecutionContextImpl context) {
+		// Load the *.properties file associated to ProfileBase
+		context.setConfigProperty(ProfileBaseHelper.PROFILE_BASE_PROPERTIES, readProfileBaseProperties());
+
+		// Load the InnerClassDiagramView (From viewpoints)
+		URI innerClassDiagramViewURI = URI.createPlatformPluginURI("org.eclipse.papyrus.infra.viewpoints.policy/builtin/default.configuration", false);
+		innerClassDiagramViewURI = innerClassDiagramViewURI.appendFragment("//@viewpoints.0/@modelKinds.0");
+
+		context.setConfigProperty("InnerClassDiagramView", resourceSet.getEObject(innerClassDiagramViewURI, true));
+	}
+
+	protected void configureResource(XMIResource resource) {
+		Map<Object, Object> saveOptions = new HashMap<Object, Object>();
+
+		// default save options.
+		saveOptions.put(XMIResource.OPTION_DECLARE_XML, Boolean.TRUE);
+		saveOptions.put(XMIResource.OPTION_PROCESS_DANGLING_HREF, XMIResource.OPTION_PROCESS_DANGLING_HREF_DISCARD);
+		saveOptions.put(XMIResource.OPTION_SCHEMA_LOCATION, Boolean.TRUE);
+		saveOptions.put(XMIResource.OPTION_USE_XMI_TYPE, Boolean.TRUE);
+		saveOptions.put(XMIResource.OPTION_SAVE_TYPE_INFORMATION, Boolean.TRUE);
+		saveOptions.put(XMIResource.OPTION_SKIP_ESCAPE_URI, Boolean.FALSE);
+		saveOptions.put(XMIResource.OPTION_ENCODING, "UTF-8");
+
+		// see bug 397987: [Core][Save] The referenced plugin models are saved using relative path
+		saveOptions.put(XMIResource.OPTION_URI_HANDLER, new org.eclipse.emf.ecore.xmi.impl.URIHandlerImpl.PlatformSchemeAware());
+
+		resource.setEncoding("UTF-8");
+		resource.getDefaultSaveOptions().putAll(saveOptions);
+	}
+
+	protected List<ModelExtent> getModelExtents() {
+		List<ModelExtent> allExtents = new LinkedList<ModelExtent>();
+		allExtents.add(getInOutUMLModel());
+		allExtents.add(getInoutNotationModel());
+		allExtents.add(getOutSashModel());
+		allExtents.add(getInConfig());
+		return allExtents;
+	}
+
+	protected ModelExtent getInOutUMLModel() {
+		if (outUML == null) {
+			try {
+				Resource resource = resourceSet.getResource(sourceURI, true);
+
+				outUML = new BasicModelExtent(resource.getContents());
+
+			} catch (Exception ex) {
+				Activator.log.error(ex);
+			}
+		}
+
+		return outUML;
+	}
+
+	/* Notation model is initially empty, but will be filled successively by each transformation */
+	protected ModelExtent getInoutNotationModel() {
+		if (outNotation == null) {
+			outNotation = new BasicModelExtent();
+		}
+
+		return outNotation;
+	}
+
+	protected ModelExtent getOutSashModel() {
+		if (outSashModel == null) {
+			outSashModel = new BasicModelExtent();
+		}
+
+		return outSashModel;
+	}
+
+	static {
+		supportedDiagramIds.addAll(Arrays.asList(new String[] {
+				"Class", // Includes Profiles
+				"Object",
+				"Activity",
+				// "Component", //Not yet
+				"Sequence", // Not yet
+				"Statechart",
+				"Structure"
+		}));
+	}
+
+	protected Collection<URI> getDiagramTransformationURIs() {
+		return ListHelper.asList(new URI[] {
+				getTransformationURI("RSAClassDiagram"),
+				// getTransformationURI("RSASequenceDiagram"), //Disabled since Sequence Diagrams are not properly supported
+				getTransformationURI("RSAStructureDiagram"),
+				getTransformationURI("RSAActivityDiagram"),
+				getTransformationURI("RSAStateMachineDiagram"),
+				getTransformationURI("RSAProfileDiagram")
+		});
+	}
+
+	protected URI getSemanticTransformationURI() {
+		return getTransformationURI("RSAModelToPapyrus");
+	}
+
+	protected URI getRTTransformationURI() {
+		return getTransformationURI("RSARTToPapyrusRT");
+	}
+
+	protected URI getProfilesTransformationURI() {
+		return getTransformationURI("RSAProfilesToPapyrus");
+	}
+
+	protected Collection<URI> getAllTransformationURIs() {
+		Collection<URI> allTransformations = getDiagramTransformationURIs();
+		allTransformations.add(getRTTransformationURI());
+		allTransformations.add(getProfilesTransformationURI());
+		allTransformations.add(getSemanticTransformationURI());
+		return allTransformations;
+	}
+
+	protected URI getTransformationURI(String transformationName) {
+		return URI.createPlatformPluginURI(String.format("%s/transform/%s.qvto", Activator.PLUGIN_ID, transformationName), true); //$NON-NLS-1$
+	}
+
+	public String getModelName() {
+		return URI.decode(sourceURI.lastSegment());
+	}
+}

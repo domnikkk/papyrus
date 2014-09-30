@@ -59,7 +59,11 @@ public class ValidationPluginGenerator {
 
 	private static final String JAVA_LANGUAGE = "Java"; //$NON-NLS-1$
 
-	private static final String OCL_LANGUAGE = "OCL"; //$NON-NLS-1$
+	/**
+	 * Do not use the standard tag OCL but OCLpivot to enforce validation with the pivot variant of OCL.
+	 * OCLpivot constraint validation is provided by the org.eclipse.papyrus.dsml.validation plugin
+	 */
+	private static final String OCL_LANGUAGE = "OCLpivot"; //$NON-NLS-1$
 
 	private static final String XML_CONSTRAINT_MODE = "mode"; //$NON-NLS-1$
 
@@ -84,6 +88,8 @@ public class ValidationPluginGenerator {
 	private static final String UML_PLUGIN = "org.eclipse.uml2.uml"; //$NON-NLS-1$
 
 	private static final String EMF_VALIDATION_PLUGIN = "org.eclipse.emf.validation"; //$NON-NLS-1$
+	
+	private static final String UML_VALIDATION_PLUGIN = "org.eclipse.papyrus.uml.service.validation"; //$NON-NLS-1$
 
 	private static final String UML_URL = "http://www.eclipse.org/uml2/5.0.0/UML"; //$NON-NLS-1$
 
@@ -119,6 +125,7 @@ public class ValidationPluginGenerator {
 
 		// prepare the plugin
 		editor = new PluginEditor(project);
+		editor.registerSourceFolder(JavaContentGenerator.srcFolder);
 		// it's possible that editor.getManifestEditor() logs an exception due to resource out of sync.
 		String pluginID = editor.getSymbolicBundleName();
 		if (editor.getBundleName() == null) {
@@ -132,6 +139,7 @@ public class ValidationPluginGenerator {
 		editor.addNatures(natures);
 
 		editor.getManifestEditor().addDependency(EMF_VALIDATION_PLUGIN);
+		editor.getManifestEditor().addDependency(UML_VALIDATION_PLUGIN);
 		editor.getManifestEditor().addDependency(UML_PLUGIN);
 
 		Element constraintProviderExtension =

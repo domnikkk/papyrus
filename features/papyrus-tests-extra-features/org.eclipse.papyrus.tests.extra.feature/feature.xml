@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><feature id="org.eclipse.papyrus.tests.extra.feature" label="Papyrus extra-plugins tests Feature" provider-name="Eclipse Modeling Project" version="1.0.1.qualifier">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><feature id="org.eclipse.papyrus.tests.extra.feature" label="Papyrus extra-plugins tests Feature" provider-name="Eclipse Modeling Project" version="1.1.0.qualifier">
 
    <copyright url="http://www.eclipse.org/legal/epl-v10.html">
       Copyright (c) 2011 CEA LIST
@@ -54,9 +54,7 @@ Java and all Java-based trademarks are trademarks of Sun Microsystems, Inc. in t
 
    <includes id="org.eclipse.papyrus.tests.extra.codegen.cpp.feature" version="0.0.0"/>
 
-   <requires>
-      <import match="compatible" plugin="com.google.guava" version="12.0.0"/>
-   </requires>
+   <includes id="org.eclipse.papyrus.tests.extra.migration.rsa.featire" version="0.0.0"/>
 
    <plugin download-size="0" id="org.eclipse.papyrus.tests.extra" install-size="0" unpack="false" version="0.0.0"/>
 

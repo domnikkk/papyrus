@@ -12,7 +12,6 @@
 package org.eclipse.papyrus.dd.dg.impl;
 
 import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
@@ -117,7 +116,7 @@ public class StyleSelectorImpl extends MinimalEObjectImpl.Container implements S
 		kind = newKind == null ? KIND_EDEFAULT : newKind;
 		boolean oldKindESet = kindESet;
 		kindESet = true;
-		if (eNotificationRequired()) {
+		if(eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.STYLE_SELECTOR__KIND, oldKind, kind, !oldKindESet));
 		}
 	}
@@ -133,7 +132,7 @@ public class StyleSelectorImpl extends MinimalEObjectImpl.Container implements S
 		boolean oldKindESet = kindESet;
 		kind = KIND_EDEFAULT;
 		kindESet = false;
-		if (eNotificationRequired()) {
+		if(eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.UNSET, DGPackage.STYLE_SELECTOR__KIND, oldKind, KIND_EDEFAULT, oldKindESet));
 		}
 	}
@@ -155,7 +154,7 @@ public class StyleSelectorImpl extends MinimalEObjectImpl.Container implements S
 	 */
 	@Override
 	public EList<String> getClasses() {
-		if (classes == null) {
+		if(classes == null) {
 			classes = new EDataTypeUniqueEList<String>(String.class, this, DGPackage.STYLE_SELECTOR__CLASS);
 		}
 		return classes;
@@ -168,7 +167,7 @@ public class StyleSelectorImpl extends MinimalEObjectImpl.Container implements S
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch(featureID) {
 		case DGPackage.STYLE_SELECTOR__KIND:
 			return getKind();
 		case DGPackage.STYLE_SELECTOR__CLASS:
@@ -185,13 +184,13 @@ public class StyleSelectorImpl extends MinimalEObjectImpl.Container implements S
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch(featureID) {
 		case DGPackage.STYLE_SELECTOR__KIND:
-			setKind((ElementKind) newValue);
+			setKind((ElementKind)newValue);
 			return;
 		case DGPackage.STYLE_SELECTOR__CLASS:
 			getClasses().clear();
-			getClasses().addAll((Collection<? extends String>) newValue);
+			getClasses().addAll((Collection<? extends String>)newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -204,7 +203,7 @@ public class StyleSelectorImpl extends MinimalEObjectImpl.Container implements S
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch(featureID) {
 		case DGPackage.STYLE_SELECTOR__KIND:
 			unsetKind();
 			return;
@@ -222,7 +221,7 @@ public class StyleSelectorImpl extends MinimalEObjectImpl.Container implements S
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch(featureID) {
 		case DGPackage.STYLE_SELECTOR__KIND:
 			return isSetKind();
 		case DGPackage.STYLE_SELECTOR__CLASS:
@@ -238,12 +237,12 @@ public class StyleSelectorImpl extends MinimalEObjectImpl.Container implements S
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
+		if(eIsProxy()) {
 			return super.toString();
 		}
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (kind: ");
-		if (kindESet) {
+		if(kindESet) {
 			result.append(kind);
 		} else {
 			result.append("<unset>");

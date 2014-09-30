@@ -9,17 +9,13 @@
 package org.eclipse.papyrus.umlrt.UMLRealTime.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.papyrus.umlrt.UMLRealTime.RTMessageKind;
 import org.eclipse.papyrus.umlrt.UMLRealTime.RTMessageSet;
 import org.eclipse.papyrus.umlrt.UMLRealTime.UMLRealTimePackage;
-
 import org.eclipse.uml2.uml.Interface;
 
 /**
@@ -41,7 +37,7 @@ public class RTMessageSetImpl extends MinimalEObjectImpl.Container implements RT
 	 * The cached value of the '{@link #getBase_Interface() <em>Base Interface</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Interface()
 	 * @generated
 	 * @ordered
@@ -52,7 +48,7 @@ public class RTMessageSetImpl extends MinimalEObjectImpl.Container implements RT
 	 * The default value of the '{@link #getRtMsgKind() <em>Rt Msg Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRtMsgKind()
 	 * @generated
 	 * @ordered
@@ -63,7 +59,7 @@ public class RTMessageSetImpl extends MinimalEObjectImpl.Container implements RT
 	 * The cached value of the '{@link #getRtMsgKind() <em>Rt Msg Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRtMsgKind()
 	 * @generated
 	 * @ordered
@@ -73,7 +69,7 @@ public class RTMessageSetImpl extends MinimalEObjectImpl.Container implements RT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected RTMessageSetImpl() {
@@ -83,7 +79,7 @@ public class RTMessageSetImpl extends MinimalEObjectImpl.Container implements RT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -94,7 +90,7 @@ public class RTMessageSetImpl extends MinimalEObjectImpl.Container implements RT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -114,7 +110,7 @@ public class RTMessageSetImpl extends MinimalEObjectImpl.Container implements RT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Interface basicGetBase_Interface() {
@@ -124,7 +120,7 @@ public class RTMessageSetImpl extends MinimalEObjectImpl.Container implements RT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -139,7 +135,7 @@ public class RTMessageSetImpl extends MinimalEObjectImpl.Container implements RT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -150,7 +146,7 @@ public class RTMessageSetImpl extends MinimalEObjectImpl.Container implements RT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -165,7 +161,7 @@ public class RTMessageSetImpl extends MinimalEObjectImpl.Container implements RT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -185,7 +181,7 @@ public class RTMessageSetImpl extends MinimalEObjectImpl.Container implements RT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -204,7 +200,7 @@ public class RTMessageSetImpl extends MinimalEObjectImpl.Container implements RT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -223,7 +219,7 @@ public class RTMessageSetImpl extends MinimalEObjectImpl.Container implements RT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -240,7 +236,7 @@ public class RTMessageSetImpl extends MinimalEObjectImpl.Container implements RT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

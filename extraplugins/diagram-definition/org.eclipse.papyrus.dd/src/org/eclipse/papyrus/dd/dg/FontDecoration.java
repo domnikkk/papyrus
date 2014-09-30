@@ -109,7 +109,7 @@ public enum FontDecoration implements Enumerator {
 	 *
 	 * @generated
 	 */
-	private static final FontDecoration[] VALUES_ARRAY = new FontDecoration[] { UNDERLINE, OVERLINE, LINE_THROUGH, };
+	private static final FontDecoration[] VALUES_ARRAY = new FontDecoration[]{ UNDERLINE, OVERLINE, LINE_THROUGH, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Font Decoration</b></em>' enumerators.
@@ -126,9 +126,9 @@ public enum FontDecoration implements Enumerator {
 	 * @generated
 	 */
 	public static FontDecoration get(String literal) {
-		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+		for(int i = 0; i < VALUES_ARRAY.length; ++i) {
 			FontDecoration result = VALUES_ARRAY[i];
-			if (result.toString().equals(literal)) {
+			if(result.toString().equals(literal)) {
 				return result;
 			}
 		}
@@ -142,9 +142,9 @@ public enum FontDecoration implements Enumerator {
 	 * @generated
 	 */
 	public static FontDecoration getByName(String name) {
-		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+		for(int i = 0; i < VALUES_ARRAY.length; ++i) {
 			FontDecoration result = VALUES_ARRAY[i];
-			if (result.getName().equals(name)) {
+			if(result.getName().equals(name)) {
 				return result;
 			}
 		}
@@ -158,7 +158,7 @@ public enum FontDecoration implements Enumerator {
 	 * @generated
 	 */
 	public static FontDecoration get(int value) {
-		switch (value) {
+		switch(value) {
 		case UNDERLINE_VALUE:
 			return UNDERLINE;
 		case OVERLINE_VALUE:

@@ -54,7 +54,7 @@ public interface Pattern extends PaintServer {
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Bounds</em>' containment reference.
+	 *        the new value of the '<em>Bounds</em>' containment reference.
 	 * @see #getBounds()
 	 * @generated
 	 */
@@ -81,7 +81,7 @@ public interface Pattern extends PaintServer {
 	 * end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Tile</em>' containment reference.
+	 *        the new value of the '<em>Tile</em>' containment reference.
 	 * @see #getTile()
 	 * @generated
 	 */

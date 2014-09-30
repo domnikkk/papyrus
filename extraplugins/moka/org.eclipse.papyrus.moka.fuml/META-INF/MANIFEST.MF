@@ -1,16 +1,16 @@
 Manifest-Version: 1.0
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
- org.eclipse.papyrus.uml.extensionpoints;bundle-version="1.0.1",
+ org.eclipse.papyrus.uml.extensionpoints;bundle-version="1.1.0",
  org.eclipse.emf;bundle-version="2.6.0",
  org.eclipse.uml2.uml;bundle-version="4.1.0",
- org.eclipse.papyrus.moka;bundle-version="1.0.1",
- org.eclipse.papyrus.infra.core.log;bundle-version="1.0.1",
+ org.eclipse.papyrus.moka;bundle-version="1.1.0",
+ org.eclipse.papyrus.infra.core.log;bundle-version="1.1.0",
  org.eclipse.debug.core;bundle-version="3.8.0",
- org.eclipse.papyrus.moka.ui;bundle-version="1.0.1",
- org.eclipse.papyrus.infra.core;bundle-version="1.0.1",
- org.eclipse.papyrus.infra.emf;bundle-version="1.0.1",
- org.eclipse.papyrus.infra.services.labelprovider;bundle-version="1.0.1",
+ org.eclipse.papyrus.moka.ui;bundle-version="1.1.0",
+ org.eclipse.papyrus.infra.core;bundle-version="1.1.0",
+ org.eclipse.papyrus.infra.emf;bundle-version="1.1.0",
+ org.eclipse.papyrus.infra.services.labelprovider;bundle-version="1.1.0",
  org.apache.commons.lang;bundle-version="2.6.0",
  org.eclipse.emf.ecore,
  org.eclipse.emf.codegen;bundle-version="2.9.0",
@@ -35,7 +35,7 @@ Export-Package: org.eclipse.papyrus.moka.fuml;uses:="org.eclipse.ui.plugin,org.o
 Bundle-Vendor: Eclipse Modeling Project
 Bundle-ActivationPolicy: lazy
 Bundle-ClassPath: .
-Bundle-Version: 1.0.1.qualifier
+Bundle-Version: 1.1.0.qualifier
 Eclipse-BuddyPolicy: registered
 Bundle-Name: Moka fUML (Incubation)
 Bundle-ManifestVersion: 2

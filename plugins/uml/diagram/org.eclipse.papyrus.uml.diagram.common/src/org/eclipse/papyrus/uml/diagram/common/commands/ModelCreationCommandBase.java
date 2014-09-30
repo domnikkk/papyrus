@@ -78,7 +78,7 @@ public abstract class ModelCreationCommandBase implements IModelCreationCommand 
 	 *            the owner
 	 */
 	protected void initializeModel(EObject owner) {
-
+		// Nothing (Subclasses may override)
 	}
 
 	/**

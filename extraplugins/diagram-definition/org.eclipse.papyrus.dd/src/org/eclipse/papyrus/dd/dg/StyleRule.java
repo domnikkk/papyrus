@@ -12,6 +12,7 @@
 package org.eclipse.papyrus.dd.dg;
 
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -63,7 +64,7 @@ public interface StyleRule extends EObject {
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Style</em>' containment reference.
+	 *        the new value of the '<em>Style</em>' containment reference.
 	 * @see #getStyle()
 	 * @generated
 	 */

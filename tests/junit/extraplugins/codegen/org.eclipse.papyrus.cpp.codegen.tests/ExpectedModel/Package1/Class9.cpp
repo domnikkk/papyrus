@@ -19,26 +19,23 @@ namespace Package1 {
 
 /**
  * 
- * @param  
+ * @return  
  */
 int Class9::volatileIntOperation() {
-
 }
 
 /**
  * Should not generate the 'register' keyword as it cannot be used in method signatures.
- * @param  
+ * @return  
  */
 int Class9::registerOperation() {
-
 }
 
 /**
  * 
- * @param  
+ * @return  
  */
 int Class9::externOperation() {
-
 }
 
 } // of namespace Package1

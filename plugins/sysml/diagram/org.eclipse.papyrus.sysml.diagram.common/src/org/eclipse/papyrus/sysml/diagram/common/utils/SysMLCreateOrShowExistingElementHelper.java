@@ -26,7 +26,7 @@ import org.eclipse.papyrus.sysml.service.types.element.SysMLElementTypes;
 import org.eclipse.papyrus.sysml.service.types.utils.ConnectorUtils;
 import org.eclipse.papyrus.uml.diagram.common.helper.CreateOrShowExistingElementHelper;
 import org.eclipse.papyrus.uml.diagram.common.helper.ILinkMappingHelper;
-import org.eclipse.papyrus.uml.diagram.common.util.EdgeEndsMapper;
+import org.eclipse.papyrus.uml.diagram.common.util.LinkEndsMapper;
 import org.eclipse.uml2.uml.AggregationKind;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Connector;
@@ -164,9 +164,9 @@ public class SysMLCreateOrShowExistingElementHelper extends CreateOrShowExisting
 	 *         a list of {@link EdgeEndsMapper} referencing the existing links between the source and the target
 	 */
 	@Override
-	protected List<EdgeEndsMapper> getExistingLinksBetweenSourceAndTarget(final CreateRelationshipRequest request, final IElementType wantedElementType) {
+	protected List<LinkEndsMapper> getExistingLinksBetweenSourceAndTarget(final CreateRelationshipRequest request, final IElementType wantedElementType) {
 		if (wantedElementType.getEClass() == UMLPackage.eINSTANCE.getConnector()) {
-			final List<EdgeEndsMapper> existingElement = new ArrayList<EdgeEndsMapper>();
+			final List<LinkEndsMapper> existingElement = new ArrayList<LinkEndsMapper>();
 			for (final Element current : ((Element) request.getContainer()).getOwnedElements()) {
 				if (hasWantedType(current, wantedElementType)) {
 					final Collection<?> sources = this.linkMappingHelper.getSource(current);
@@ -178,7 +178,7 @@ public class SysMLCreateOrShowExistingElementHelper extends CreateOrShowExisting
 						View targetView = (View) request.getParameter(RequestParameterConstants.EDGE_CREATE_REQUEST_TARGET_VIEW);
 						boolean canBeDisplayed = ConnectorUtils.canDisplayExistingConnectorBetweenViewsAccordingToNestedPaths((Connector) current, sourceView, targetView);
 						if (canBeDisplayed) {
-							existingElement.add(new EdgeEndsMapper(current, sources, null, null));
+							existingElement.add(new LinkEndsMapper(current, sources, null, null));
 						}
 					}
 				}

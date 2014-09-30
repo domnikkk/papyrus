@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><feature id="org.eclipse.papyrus.design.profile.feature" label="Profile for software architecture design" provider-name="%providerName" version="1.0.1.qualifier">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><feature id="org.eclipse.papyrus.design.profile.feature" label="Profile for software architecture design" provider-name="%providerName" version="1.1.0.qualifier">
 
    <description url="http://www.example.com/description">
       This feature provide utility to design software applications.

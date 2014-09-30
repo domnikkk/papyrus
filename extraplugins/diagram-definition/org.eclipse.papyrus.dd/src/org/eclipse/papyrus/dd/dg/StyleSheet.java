@@ -12,6 +12,7 @@
 package org.eclipse.papyrus.dd.dg;
 
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**

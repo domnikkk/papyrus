@@ -12,8 +12,11 @@
 package org.eclipse.papyrus.dd.dg.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EClass;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.eclipse.papyrus.dd.dg.DGPackage;
 import org.eclipse.papyrus.dd.dg.Translate;
 
@@ -109,7 +112,7 @@ public class TranslateImpl extends TransformImpl implements Translate {
 	public void setDeltaX(double newDeltaX) {
 		double oldDeltaX = deltaX;
 		deltaX = newDeltaX;
-		if (eNotificationRequired()) {
+		if(eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.TRANSLATE__DELTA_X, oldDeltaX, deltaX));
 		}
 	}
@@ -133,7 +136,7 @@ public class TranslateImpl extends TransformImpl implements Translate {
 	public void setDeltaY(double newDeltaY) {
 		double oldDeltaY = deltaY;
 		deltaY = newDeltaY;
-		if (eNotificationRequired()) {
+		if(eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.TRANSLATE__DELTA_Y, oldDeltaY, deltaY));
 		}
 	}
@@ -145,7 +148,7 @@ public class TranslateImpl extends TransformImpl implements Translate {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch(featureID) {
 		case DGPackage.TRANSLATE__DELTA_X:
 			return getDeltaX();
 		case DGPackage.TRANSLATE__DELTA_Y:
@@ -161,12 +164,12 @@ public class TranslateImpl extends TransformImpl implements Translate {
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch(featureID) {
 		case DGPackage.TRANSLATE__DELTA_X:
-			setDeltaX((Double) newValue);
+			setDeltaX((Double)newValue);
 			return;
 		case DGPackage.TRANSLATE__DELTA_Y:
-			setDeltaY((Double) newValue);
+			setDeltaY((Double)newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -179,7 +182,7 @@ public class TranslateImpl extends TransformImpl implements Translate {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch(featureID) {
 		case DGPackage.TRANSLATE__DELTA_X:
 			setDeltaX(DELTA_X_EDEFAULT);
 			return;
@@ -197,7 +200,7 @@ public class TranslateImpl extends TransformImpl implements Translate {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch(featureID) {
 		case DGPackage.TRANSLATE__DELTA_X:
 			return deltaX != DELTA_X_EDEFAULT;
 		case DGPackage.TRANSLATE__DELTA_Y:
@@ -213,7 +216,7 @@ public class TranslateImpl extends TransformImpl implements Translate {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
+		if(eIsProxy()) {
 			return super.toString();
 		}
 		StringBuffer result = new StringBuffer(super.toString());

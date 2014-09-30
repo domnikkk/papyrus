@@ -17,6 +17,7 @@ import java.util.Collection;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.Notifier;
+
 import org.eclipse.emf.edit.provider.ChangeNotifier;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
@@ -30,6 +31,7 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.INotifyChangedListener;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+
 import org.eclipse.papyrus.umldi.util.UMLDIAdapterFactory;
 
 /**
@@ -106,7 +108,7 @@ public class UMLDIItemProviderAdapterFactory extends UMLDIAdapterFactory impleme
 	 */
 	@Override
 	public Adapter createUmlDiagramAdapter() {
-		if (umlDiagramItemProvider == null) {
+		if(umlDiagramItemProvider == null) {
 			umlDiagramItemProvider = new UmlDiagramItemProvider(this);
 		}
 		return umlDiagramItemProvider;
@@ -130,7 +132,7 @@ public class UMLDIItemProviderAdapterFactory extends UMLDIAdapterFactory impleme
 	 */
 	@Override
 	public Adapter createUmlShapeAdapter() {
-		if (umlShapeItemProvider == null) {
+		if(umlShapeItemProvider == null) {
 			umlShapeItemProvider = new UmlShapeItemProvider(this);
 		}
 		return umlShapeItemProvider;
@@ -154,7 +156,7 @@ public class UMLDIItemProviderAdapterFactory extends UMLDIAdapterFactory impleme
 	 */
 	@Override
 	public Adapter createUmlStyleAdapter() {
-		if (umlStyleItemProvider == null) {
+		if(umlStyleItemProvider == null) {
 			umlStyleItemProvider = new UmlStyleItemProvider(this);
 		}
 		return umlStyleItemProvider;
@@ -178,7 +180,7 @@ public class UMLDIItemProviderAdapterFactory extends UMLDIAdapterFactory impleme
 	 */
 	@Override
 	public Adapter createUmlEdgeAdapter() {
-		if (umlEdgeItemProvider == null) {
+		if(umlEdgeItemProvider == null) {
 			umlEdgeItemProvider = new UmlEdgeItemProvider(this);
 		}
 		return umlEdgeItemProvider;
@@ -202,7 +204,7 @@ public class UMLDIItemProviderAdapterFactory extends UMLDIAdapterFactory impleme
 	 */
 	@Override
 	public Adapter createUmlCompartmentAdapter() {
-		if (umlCompartmentItemProvider == null) {
+		if(umlCompartmentItemProvider == null) {
 			umlCompartmentItemProvider = new UmlCompartmentItemProvider(this);
 		}
 		return umlCompartmentItemProvider;
@@ -226,7 +228,7 @@ public class UMLDIItemProviderAdapterFactory extends UMLDIAdapterFactory impleme
 	 */
 	@Override
 	public Adapter createUmlLabelAdapter() {
-		if (umlLabelItemProvider == null) {
+		if(umlLabelItemProvider == null) {
 			umlLabelItemProvider = new UmlLabelItemProvider(this);
 		}
 		return umlLabelItemProvider;
@@ -287,9 +289,9 @@ public class UMLDIItemProviderAdapterFactory extends UMLDIAdapterFactory impleme
 	 */
 	@Override
 	public Object adapt(Object object, Object type) {
-		if (isFactoryForType(type)) {
+		if(isFactoryForType(type)) {
 			Object adapter = super.adapt(object, type);
-			if (!(type instanceof Class<?>) || (((Class<?>) type).isInstance(adapter))) {
+			if(!(type instanceof Class<?>) || (((Class<?>)type).isInstance(adapter))) {
 				return adapter;
 			}
 		}
@@ -330,7 +332,7 @@ public class UMLDIItemProviderAdapterFactory extends UMLDIAdapterFactory impleme
 	@Override
 	public void fireNotifyChanged(Notification notification) {
 		changeNotifier.fireNotifyChanged(notification);
-		if (parentAdapterFactory != null) {
+		if(parentAdapterFactory != null) {
 			parentAdapterFactory.fireNotifyChanged(notification);
 		}
 	}
@@ -344,22 +346,22 @@ public class UMLDIItemProviderAdapterFactory extends UMLDIAdapterFactory impleme
 	 */
 	@Override
 	public void dispose() {
-		if (umlDiagramItemProvider != null) {
+		if(umlDiagramItemProvider != null) {
 			umlDiagramItemProvider.dispose();
 		}
-		if (umlShapeItemProvider != null) {
-			umlShapeItemProvider.dispose();
-		}
-		if (umlStyleItemProvider != null) {
+		if(umlStyleItemProvider != null) {
 			umlStyleItemProvider.dispose();
 		}
-		if (umlEdgeItemProvider != null) {
+		if(umlEdgeItemProvider != null) {
 			umlEdgeItemProvider.dispose();
 		}
-		if (umlCompartmentItemProvider != null) {
+		if(umlShapeItemProvider != null) {
+			umlShapeItemProvider.dispose();
+		}
+		if(umlCompartmentItemProvider != null) {
 			umlCompartmentItemProvider.dispose();
 		}
-		if (umlLabelItemProvider != null) {
+		if(umlLabelItemProvider != null) {
 			umlLabelItemProvider.dispose();
 		}
 	}

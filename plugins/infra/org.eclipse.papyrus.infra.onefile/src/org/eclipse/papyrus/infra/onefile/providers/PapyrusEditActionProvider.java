@@ -19,7 +19,6 @@ import java.util.List;
 
 import org.eclipse.core.resources.IResource;
 import org.eclipse.jface.action.Action;
-import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.action.IMenuManager;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.TreeSelection;
@@ -36,7 +35,6 @@ import org.eclipse.ui.actions.ActionContext;
 import org.eclipse.ui.actions.ActionFactory;
 import org.eclipse.ui.navigator.CommonActionProvider;
 import org.eclipse.ui.navigator.ICommonActionExtensionSite;
-import org.eclipse.ui.navigator.ICommonMenuConstants;
 import org.eclipse.ui.navigator.ICommonViewerWorkbenchSite;
 
 /**
@@ -55,21 +53,18 @@ public class PapyrusEditActionProvider extends CommonActionProvider {
 
 	@Override
 	public void fillActionBars(IActionBars actionBars) {
+		super.fillActionBars(actionBars);
 		if (fInViewPart) {
 			actionBars.setGlobalActionHandler(ActionFactory.PASTE.getId(), pasteAction);
 		}
-		super.fillActionBars(actionBars);
 	}
 
 	@Override
 	public void fillContextMenu(IMenuManager menu) {
 		super.fillContextMenu(menu);
-		appendToGroup(menu, pasteAction, ICommonMenuConstants.GROUP_EDIT);
-	}
-
-	private void appendToGroup(IMenuManager menu, IAction action, String id) {
-		if (action != null && action.isEnabled()) {
-			menu.appendToGroup(id, action);
+		if (pasteAction != null && pasteAction.isEnabled()) {
+			menu.insertAfter(PapyrusModelPasteAction.ID, pasteAction); // same as the internal org.eclipse.ui.internal.navigator.resources.actions.PasteAction.ID
+			menu.remove(PapyrusModelPasteAction.ID);
 		}
 	}
 

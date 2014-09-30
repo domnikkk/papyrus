@@ -13,10 +13,14 @@ package org.eclipse.papyrus.dd.dg.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.eclipse.papyrus.dd.dc.Point;
+
 import org.eclipse.papyrus.dd.dg.DGPackage;
 import org.eclipse.papyrus.dd.dg.Rotate;
 
@@ -102,7 +106,7 @@ public class RotateImpl extends TransformImpl implements Rotate {
 	public void setAngle(double newAngle) {
 		double oldAngle = angle;
 		angle = newAngle;
-		if (eNotificationRequired()) {
+		if(eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.ROTATE__ANGLE, oldAngle, angle));
 		}
 	}
@@ -125,9 +129,9 @@ public class RotateImpl extends TransformImpl implements Rotate {
 	public NotificationChain basicSetCenter(Point newCenter, NotificationChain msgs) {
 		Point oldCenter = center;
 		center = newCenter;
-		if (eNotificationRequired()) {
+		if(eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DGPackage.ROTATE__CENTER, oldCenter, newCenter);
-			if (msgs == null) {
+			if(msgs == null) {
 				msgs = notification;
 			} else {
 				msgs.add(notification);
@@ -143,19 +147,19 @@ public class RotateImpl extends TransformImpl implements Rotate {
 	 */
 	@Override
 	public void setCenter(Point newCenter) {
-		if (newCenter != center) {
+		if(newCenter != center) {
 			NotificationChain msgs = null;
-			if (center != null) {
-				msgs = ((InternalEObject) center).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DGPackage.ROTATE__CENTER, null, msgs);
+			if(center != null) {
+				msgs = ((InternalEObject)center).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DGPackage.ROTATE__CENTER, null, msgs);
 			}
-			if (newCenter != null) {
-				msgs = ((InternalEObject) newCenter).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DGPackage.ROTATE__CENTER, null, msgs);
+			if(newCenter != null) {
+				msgs = ((InternalEObject)newCenter).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DGPackage.ROTATE__CENTER, null, msgs);
 			}
 			msgs = basicSetCenter(newCenter, msgs);
-			if (msgs != null) {
+			if(msgs != null) {
 				msgs.dispatch();
 			}
-		} else if (eNotificationRequired()) {
+		} else if(eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.ROTATE__CENTER, newCenter, newCenter));
 		}
 	}
@@ -167,7 +171,7 @@ public class RotateImpl extends TransformImpl implements Rotate {
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
+		switch(featureID) {
 		case DGPackage.ROTATE__CENTER:
 			return basicSetCenter(null, msgs);
 		}
@@ -181,7 +185,7 @@ public class RotateImpl extends TransformImpl implements Rotate {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch(featureID) {
 		case DGPackage.ROTATE__ANGLE:
 			return getAngle();
 		case DGPackage.ROTATE__CENTER:
@@ -197,12 +201,12 @@ public class RotateImpl extends TransformImpl implements Rotate {
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch(featureID) {
 		case DGPackage.ROTATE__ANGLE:
-			setAngle((Double) newValue);
+			setAngle((Double)newValue);
 			return;
 		case DGPackage.ROTATE__CENTER:
-			setCenter((Point) newValue);
+			setCenter((Point)newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -215,12 +219,12 @@ public class RotateImpl extends TransformImpl implements Rotate {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch(featureID) {
 		case DGPackage.ROTATE__ANGLE:
 			setAngle(ANGLE_EDEFAULT);
 			return;
 		case DGPackage.ROTATE__CENTER:
-			setCenter((Point) null);
+			setCenter((Point)null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -233,7 +237,7 @@ public class RotateImpl extends TransformImpl implements Rotate {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch(featureID) {
 		case DGPackage.ROTATE__ANGLE:
 			return angle != ANGLE_EDEFAULT;
 		case DGPackage.ROTATE__CENTER:
@@ -249,7 +253,7 @@ public class RotateImpl extends TransformImpl implements Rotate {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
+		if(eIsProxy()) {
 			return super.toString();
 		}
 		StringBuffer result = new StringBuffer(super.toString());

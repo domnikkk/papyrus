@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2010 CEA LIST.
+ * Copyright (c) 2010, 2014 CEA LIST and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,6 +8,8 @@
  *
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 444092
+ *  
  *****************************************************************************/
 package org.eclipse.papyrus.uml.tools.utils;
 
@@ -102,9 +104,9 @@ public class UMLUtil {
 	}
 
 	/**
-	 * Search the given stereotype (By name) on the given UML Element.
+	 * Search the given stereotype (by name) on the given UML Element.
 	 * If the search is not strict, the name may be the qualified name of a
-	 * sub-stereotype of an applied stereotype
+	 * super-stereotype of some applied stereotype
 	 *
 	 * @param umlElement
 	 *            The UML Element on which the stereotype is applied
@@ -140,6 +142,108 @@ public class UMLUtil {
 		}
 
 		return null;
+	}
+
+	/**
+	 * Obtains the possibly implicitly applied (by virtue of some sub-stereotype of it being applied) stereotype
+	 * of the specified name on a UML element.
+	 *
+	 * @param umlElement
+	 *            The UML Element on which the stereotype is (possibly pseudo-) applied
+	 * @param stereotypeName
+	 *            The qualified name of the stereotype
+	 * @return
+	 *         The stereotype of the given name that either is applied or has some substereotype that is applied to the element
+	 */
+	public static Stereotype getAppliedSuperstereotype(Element umlElement, String stereotypeName) {
+		if (umlElement == null) {
+			throw new IllegalArgumentException("umlElement"); //$NON-NLS-1$
+		}
+		if (stereotypeName == null) {
+			throw new IllegalArgumentException("stereotypeName"); //$NON-NLS-1$
+		}
+
+		// Simplest case
+		Stereotype result = umlElement.getAppliedStereotype(stereotypeName);
+		if (result == null) {
+			for (Stereotype sub : findSubstereotypes(umlElement, stereotypeName)) {
+				if (umlElement.isStereotypeApplied(sub)) {
+					result = getSuperstereotype(sub, stereotypeName);
+					break;
+				}
+			}
+		}
+
+		return result;
+	}
+
+	/**
+	 * Search the given stereotype (by name) that is applicable to the given UML Element.
+	 * If the search is not strict, the name may be the qualified name of a
+	 * sub-stereotype of an applied stereotype
+	 *
+	 * @param umlElement
+	 *            The UML Element on which the stereotype could be applied. Must not be {@code null}
+	 * @param stereotypeName
+	 *            The qualified name of the stereotype. Must not be {@code null}
+	 * @param strict
+	 *            If set to true, only a stereotype matching the exact qualified name
+	 *            will be returned. Otherwise, any subtype of the given stereotype may be
+	 *            returned. Note that if more than one stereotype is a subtype of the
+	 *            given stereotype, the first matching stereotype is returned.
+	 * @return
+	 *         The first matching applicable stereotype, or null if none was found
+	 */
+	public static Stereotype getApplicableStereotype(Element umlElement, String stereotypeName, boolean strict) {
+		if (umlElement == null) {
+			throw new IllegalArgumentException("umlElement"); //$NON-NLS-1$
+		}
+		if (stereotypeName == null) {
+			throw new IllegalArgumentException("stereotypeName"); //$NON-NLS-1$
+		}
+
+		Stereotype result = umlElement.getApplicableStereotype(stereotypeName);
+		if ((result == null) && !strict) {
+			List<Stereotype> subStereotypes = findSubstereotypes(umlElement, stereotypeName);
+
+			for (Stereotype subStereotype : subStereotypes) {
+				if (umlElement.isStereotypeApplicable(subStereotype)) {
+					result = subStereotype;
+					break;
+				}
+			}
+		}
+
+		return result;
+	}
+
+	/**
+	 * Gets the first stereotype conforming to the given {@code stereotype} that is applied to the specified UML element.
+	 * 
+	 * @param umlElement
+	 *            an UML element. Must not be {@code null}
+	 * @param stereotype
+	 *            a stereotype that may or may not be applied to the element. Must not be {@code null}
+	 * 
+	 * @return the {@code stereotype} if it is applied to the element, or some subtype of it that is applied,
+	 *         if any sub-type of the {@code stereotype} is applied to the element
+	 */
+	public static Stereotype getAppliedSubstereotype(Element umlElement, Stereotype stereotype) {
+		if (umlElement == null) {
+			throw new IllegalArgumentException("umlElement"); //$NON-NLS-1$
+		}
+		if (stereotype == null) {
+			throw new IllegalArgumentException("stereotype"); //$NON-NLS-1$
+		}
+
+		Stereotype result = null;
+		if (umlElement.isStereotypeApplied(stereotype)) {
+			result = stereotype;
+		} else {
+			result = getAppliedStereotype(umlElement, stereotype.getQualifiedName(), false);
+		}
+
+		return result;
 	}
 
 	/**
@@ -208,6 +312,23 @@ public class UMLUtil {
 		}
 
 		return new LinkedList<Stereotype>(stereotypes);
+	}
+
+	private static Stereotype getSuperstereotype(Stereotype substereotype, String qualifiedName) {
+		Stereotype result = null;
+
+		if (qualifiedName.equals(substereotype.getQualifiedName())) {
+			result = substereotype;
+		} else {
+			for (Stereotype next : getAllSuperStereotypes(substereotype)) {
+				if (qualifiedName.equals(next.getQualifiedName())) {
+					result = next;
+					break;
+				}
+			}
+		}
+
+		return result;
 	}
 
 	/**

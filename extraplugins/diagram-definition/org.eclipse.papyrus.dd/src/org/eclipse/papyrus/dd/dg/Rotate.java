@@ -55,7 +55,7 @@ public interface Rotate extends Transform {
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Angle</em>' attribute.
+	 *        the new value of the '<em>Angle</em>' attribute.
 	 * @see #getAngle()
 	 * @generated
 	 */
@@ -82,7 +82,7 @@ public interface Rotate extends Transform {
 	 * end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Center</em>' containment reference.
+	 *        the new value of the '<em>Center</em>' containment reference.
 	 * @see #getCenter()
 	 * @generated
 	 */

@@ -16,7 +16,9 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.common.util.ResourceLocator;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemColorProvider;
@@ -28,7 +30,9 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
 import org.eclipse.papyrus.dd.di.provider.StyleItemProvider;
+
 import org.eclipse.papyrus.umldi.UMLDIPackage;
 import org.eclipse.papyrus.umldi.UmlStyle;
 
@@ -61,7 +65,7 @@ public class UmlStyleItemProvider extends StyleItemProvider implements IEditingD
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null) {
+		if(itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 			addFontNamePropertyDescriptor(object);
 			addFontSizePropertyDescriptor(object);
@@ -77,8 +81,7 @@ public class UmlStyleItemProvider extends StyleItemProvider implements IEditingD
 	 * @generated
 	 */
 	protected void addFontNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_UmlStyle_fontName_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_UmlStyle_fontName_feature", "_UI_UmlStyle_type"), UMLDIPackage.Literals.UML_STYLE__FONT_NAME, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_UmlStyle_fontName_feature"), getString("_UI_PropertyDescriptor_description", "_UI_UmlStyle_fontName_feature", "_UI_UmlStyle_type"), UMLDIPackage.Literals.UML_STYLE__FONT_NAME, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -89,8 +92,7 @@ public class UmlStyleItemProvider extends StyleItemProvider implements IEditingD
 	 * @generated
 	 */
 	protected void addFontSizePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_UmlStyle_fontSize_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_UmlStyle_fontSize_feature", "_UI_UmlStyle_type"), UMLDIPackage.Literals.UML_STYLE__FONT_SIZE, true, false, false, ItemPropertyDescriptor.REAL_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_UmlStyle_fontSize_feature"), getString("_UI_PropertyDescriptor_description", "_UI_UmlStyle_fontSize_feature", "_UI_UmlStyle_type"), UMLDIPackage.Literals.UML_STYLE__FONT_SIZE, true, false, false, ItemPropertyDescriptor.REAL_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -114,7 +116,7 @@ public class UmlStyleItemProvider extends StyleItemProvider implements IEditingD
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((UmlStyle) object).getFontName();
+		String label = ((UmlStyle)object).getFontName();
 		return label == null || label.length() == 0 ? getString("_UI_UmlStyle_type") : getString("_UI_UmlStyle_type") + " " + label;
 	}
 
@@ -129,7 +131,7 @@ public class UmlStyleItemProvider extends StyleItemProvider implements IEditingD
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-		switch (notification.getFeatureID(UmlStyle.class)) {
+		switch(notification.getFeatureID(UmlStyle.class)) {
 		case UMLDIPackage.UML_STYLE__FONT_NAME:
 		case UMLDIPackage.UML_STYLE__FONT_SIZE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));

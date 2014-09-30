@@ -9,16 +9,12 @@
 package org.eclipse.papyrus.umlrt.statemachine.UMLRealTimeStateMach.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.papyrus.umlrt.statemachine.UMLRealTimeStateMach.RTTrigger;
 import org.eclipse.papyrus.umlrt.statemachine.UMLRealTimeStateMach.UMLRealTimeStateMachPackage;
-
 import org.eclipse.uml2.uml.Operation;
 
 /**
@@ -39,7 +35,7 @@ public class RTTriggerImpl extends MinimalEObjectImpl.Container implements RTTri
 	 * The cached value of the '{@link #getBase_Operation() <em>Base Operation</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Operation()
 	 * @generated
 	 * @ordered
@@ -49,7 +45,7 @@ public class RTTriggerImpl extends MinimalEObjectImpl.Container implements RTTri
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected RTTriggerImpl() {
@@ -59,7 +55,7 @@ public class RTTriggerImpl extends MinimalEObjectImpl.Container implements RTTri
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -70,7 +66,7 @@ public class RTTriggerImpl extends MinimalEObjectImpl.Container implements RTTri
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -90,7 +86,7 @@ public class RTTriggerImpl extends MinimalEObjectImpl.Container implements RTTri
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Operation basicGetBase_Operation() {
@@ -100,7 +96,7 @@ public class RTTriggerImpl extends MinimalEObjectImpl.Container implements RTTri
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -115,7 +111,7 @@ public class RTTriggerImpl extends MinimalEObjectImpl.Container implements RTTri
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -133,7 +129,7 @@ public class RTTriggerImpl extends MinimalEObjectImpl.Container implements RTTri
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -149,7 +145,7 @@ public class RTTriggerImpl extends MinimalEObjectImpl.Container implements RTTri
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -165,7 +161,7 @@ public class RTTriggerImpl extends MinimalEObjectImpl.Container implements RTTri
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

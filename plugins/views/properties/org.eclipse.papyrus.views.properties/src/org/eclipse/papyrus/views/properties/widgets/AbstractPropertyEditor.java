@@ -10,6 +10,8 @@
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Thibault Le Ouay t.leouay@sherpa-eng.com - Add binding implementation
  *  Christian W. Damus (CEA) - bug 417409
+ *  Christian W. Damus (CEA) - bug 443417
+ *  Christian W. Damus (CEA) - bug 444227
  *
  *****************************************************************************/
 package org.eclipse.papyrus.views.properties.widgets;
@@ -234,7 +236,7 @@ public abstract class AbstractPropertyEditor implements IChangeListener, Customi
 	 */
 	protected void applyReadOnly(boolean readOnly) {
 		AbstractEditor editor = getEditor();
-		if (editor != null) {
+		if ((editor != null) && !editor.isDisposed()) {
 			editor.setReadOnly(readOnly);
 		}
 	}
@@ -309,19 +311,27 @@ public abstract class AbstractPropertyEditor implements IChangeListener, Customi
 		final DataSource oldInput = this.input;
 		if (input != oldInput) {
 			if (oldInput != null) {
-				oldInput.removeDataSourceListener(getDataSourceListener());
+				unhookDataSourceListener(oldInput);
 			}
 
 			this.input = input;
 
 			if (input != null) {
-				input.addDataSourceListener(getDataSourceListener());
+				hookDataSourceListener(input);
 			}
 
 			// Only do this after attaching our listener so that it will be ahead of
 			// any ModelElements created for properties
 			checkInput();
 		}
+	}
+
+	protected void unhookDataSourceListener(DataSource oldInput) {
+		oldInput.removeDataSourceListener(getDataSourceListener());
+	}
+
+	protected void hookDataSourceListener(DataSource newInput) {
+		newInput.addDataSourceListener(getDataSourceListener());
 	}
 
 	/**
@@ -593,23 +603,36 @@ public abstract class AbstractPropertyEditor implements IChangeListener, Customi
 					// The data source's selection changed. Update my validator or clear it if now there is none
 					IObservableValue observable = AbstractPropertyEditor.this.observableValue;
 
-					if ((observable != null) && (modelValidator != null) && (valueEditor != null) && !valueEditor.isDisposed()) {
-						modelValidator = null;
+					if (observable != null) {
+						if ((modelValidator != null) && (valueEditor != null) && !valueEditor.isDisposed()) {
+							modelValidator = null;
 
-						// First, clear the validator to disable validation
-						valueEditor.setStrategies();
-						valueEditor.setModelValidator(null);
+							// First, clear the validator to disable validation
+							valueEditor.setStrategies();
+							valueEditor.setModelValidator(null);
 
-						// Then re-enable to later when ready for user input
-						observable.getRealm().asyncExec(new Runnable() {
+							// Then re-enable to later when ready for user input
+							observable.getRealm().asyncExec(new Runnable() {
 
-							public void run() {
-								if ((valueEditor != null) && !valueEditor.isDisposed()) {
-									valueEditor.setStrategies();
-									valueEditor.setModelValidator(getValidator());
+								public void run() {
+									if ((valueEditor != null) && !valueEditor.isDisposed()) {
+										valueEditor.setStrategies();
+										valueEditor.setModelValidator(getValidator());
+									}
 								}
-							}
-						});
+							});
+						}
+
+						// And refresh the read-only state
+						if ((propertyPath != null) && (input != null)) {
+							observable.getRealm().asyncExec(new Runnable() {
+
+								public void run() {
+									isEditable = input.isEditable(propertyPath);
+									applyReadOnly(getReadOnly());
+								}
+							});
+						}
 					}
 				}
 			};

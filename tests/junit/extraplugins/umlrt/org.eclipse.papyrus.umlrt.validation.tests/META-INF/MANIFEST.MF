@@ -1,24 +1,24 @@
 Manifest-Version: 1.0
-Require-Bundle: org.eclipse.papyrus.junit.utils;bundle-version="1.0.1",
+Require-Bundle: org.eclipse.papyrus.junit.utils;bundle-version="1.1.0",
  org.junit,
  org.eclipse.ui.views.properties.tabbed;bundle-version="3.6.0",
- org.eclipse.papyrus.uml.tools;bundle-version="1.0.1",
- org.eclipse.papyrus.infra.services.validation;bundle-version="1.0.1",
- org.eclipse.papyrus.uml.service.validation;bundle-version="1.0.1",
+ org.eclipse.papyrus.uml.tools;bundle-version="1.1.0",
+ org.eclipse.papyrus.infra.services.validation;bundle-version="1.1.0",
+ org.eclipse.papyrus.uml.service.validation;bundle-version="1.1.0",
  org.eclipse.gmf.runtime.emf.commands.core;bundle-version="1.7.0",
- org.eclipse.papyrus.infra.gmfdiag.commands;bundle-version="1.0.1",
+ org.eclipse.papyrus.infra.gmfdiag.commands;bundle-version="1.1.0",
  org.eclipse.uml2.uml;bundle-version="5.0.0",
  org.eclipse.ui.navigator;bundle-version="3.5.400",
  org.eclipse.ui.ide;bundle-version="3.10.0",
  org.eclipse.ui,
- org.eclipse.papyrus.views.modelexplorer;bundle-version="1.0.1",
- org.eclipse.papyrus.uml.tools.utils;bundle-version="1.0.1",
- org.eclipse.papyrus.junit.framework;bundle-version="1.0.1",
- org.eclipse.papyrus.infra.widgets;bundle-version="1.0.1",
- org.eclipse.papyrus.infra.emf;bundle-version="1.0.1",
- org.eclipse.papyrus.infra.core;bundle-version="1.0.1",
- org.eclipse.papyrus.emf.facet.util.core;bundle-version="1.0.1",
- org.eclipse.papyrus.emf.facet.custom.core;bundle-version="1.0.1",
+ org.eclipse.papyrus.views.modelexplorer;bundle-version="1.1.0",
+ org.eclipse.papyrus.uml.tools.utils;bundle-version="1.1.0",
+ org.eclipse.papyrus.junit.framework;bundle-version="1.1.0",
+ org.eclipse.papyrus.infra.widgets;bundle-version="1.1.0",
+ org.eclipse.papyrus.infra.emf;bundle-version="1.1.0",
+ org.eclipse.papyrus.infra.core;bundle-version="1.1.0",
+ org.eclipse.papyrus.emf.facet.util.core;bundle-version="1.1.0",
+ org.eclipse.papyrus.emf.facet.custom.core;bundle-version="1.1.0",
  org.eclipse.emf.workspace;bundle-version="1.5.1",
  org.eclipse.emf.validation,
  org.eclipse.emf.transaction;bundle-version="1.8.0",
@@ -28,7 +28,7 @@ Require-Bundle: org.eclipse.papyrus.junit.utils;bundle-version="1.0.1",
 Export-Package: org.eclipse.papyrus.umlrt.validation.tests
 Bundle-Vendor: Eclipse Modeling Project
 Bundle-ActivationPolicy: lazy
-Bundle-Version: 1.0.1.qualifier
+Bundle-Version: 1.1.0.qualifier
 Bundle-Name: UML-RT Validation Tests
 Bundle-ManifestVersion: 2
 Bundle-Activator: org.eclipse.papyrus.umlrt.validation.tests.Activator

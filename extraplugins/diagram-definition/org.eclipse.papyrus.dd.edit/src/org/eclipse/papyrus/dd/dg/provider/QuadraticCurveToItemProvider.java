@@ -16,7 +16,9 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EStructuralFeature;
+
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemColorProvider;
 import org.eclipse.emf.edit.provider.IItemFontProvider;
@@ -26,7 +28,9 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
 import org.eclipse.papyrus.dd.dc.DCFactory;
+
 import org.eclipse.papyrus.dd.dg.DGPackage;
 import org.eclipse.papyrus.dd.dg.QuadraticCurveTo;
 
@@ -56,14 +60,15 @@ public class QuadraticCurveToItemProvider extends PathCommandItemProvider implem
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null) {
+		if(itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
@@ -71,7 +76,7 @@ public class QuadraticCurveToItemProvider extends PathCommandItemProvider implem
 	 */
 	@Override
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null) {
+		if(childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(DGPackage.Literals.QUADRATIC_CURVE_TO__CONTROL);
 			childrenFeatures.add(DGPackage.Literals.QUADRATIC_CURVE_TO__POINT);
@@ -112,7 +117,7 @@ public class QuadraticCurveToItemProvider extends PathCommandItemProvider implem
 	 */
 	@Override
 	public String getText(Object object) {
-		QuadraticCurveTo quadraticCurveTo = (QuadraticCurveTo) object;
+		QuadraticCurveTo quadraticCurveTo = (QuadraticCurveTo)object;
 		return getString("_UI_QuadraticCurveTo_type") + " " + quadraticCurveTo.isRelative();
 	}
 
@@ -127,7 +132,7 @@ public class QuadraticCurveToItemProvider extends PathCommandItemProvider implem
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-		switch (notification.getFeatureID(QuadraticCurveTo.class)) {
+		switch(notification.getFeatureID(QuadraticCurveTo.class)) {
 		case DGPackage.QUADRATIC_CURVE_TO__CONTROL:
 		case DGPackage.QUADRATIC_CURVE_TO__POINT:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
@@ -161,8 +166,8 @@ public class QuadraticCurveToItemProvider extends PathCommandItemProvider implem
 		Object childFeature = feature;
 		Object childObject = child;
 		boolean qualify = childFeature == DGPackage.Literals.QUADRATIC_CURVE_TO__CONTROL || childFeature == DGPackage.Literals.QUADRATIC_CURVE_TO__POINT;
-		if (qualify) {
-			return getString("_UI_CreateChild_text2", new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
+		if(qualify) {
+			return getString("_UI_CreateChild_text2", new Object[]{ getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
 		}
 		return super.getCreateChildText(owner, feature, child, selection);
 	}

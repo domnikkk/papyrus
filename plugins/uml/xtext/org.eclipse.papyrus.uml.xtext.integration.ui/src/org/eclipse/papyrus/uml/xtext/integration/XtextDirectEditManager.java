@@ -8,6 +8,7 @@
  * Contributors:
  *    IBM Corporation - initial API and implementation
  *    Dmitry Stadnik (Borland) - contribution for bugzilla 135694
+ *    Benoit Maggi (CEA LIST) - contribution for Bug 444063
  ****************************************************************************/
 
 package org.eclipse.papyrus.uml.xtext.integration;
@@ -51,6 +52,7 @@ import org.eclipse.jface.viewers.CellEditor;
 import org.eclipse.papyrus.infra.gmfdiag.common.editpart.IControlParserForDirectEdit;
 import org.eclipse.papyrus.uml.xtext.integration.core.ContextElementAdapter.IContextElementProvider;
 import org.eclipse.papyrus.uml.xtext.integration.core.IXtextFakeContextResourcesProvider;
+import org.eclipse.papyrus.uml.xtext.integration.ui.Activator;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.StyledText;
 import org.eclipse.swt.graphics.Color;
@@ -104,11 +106,11 @@ public class XtextDirectEditManager extends DirectEditManagerEx {
 	 */
 	private List<FontDescriptor> cachedFontDescriptors = new ArrayList<FontDescriptor>();
 
-	private IActionBars actionBars;
+	private static IActionBars actionBars;
 
 	private CellEditorActionHandler actionHandler;
 
-	private IAction copy, cut, paste, undo, redo, find, selectAll, delete;
+	private static IAction copy, cut, paste, undo, redo, find, selectAll, delete;
 
 	private Font zoomLevelFont = null;
 
@@ -383,10 +385,14 @@ public class XtextDirectEditManager extends DirectEditManagerEx {
 		// Hook the cell editor's copy/paste actions to the actionBars so that
 		// they can
 		// be invoked via keyboard shortcuts.
-		actionBars = PlatformUI.getWorkbench().getActiveWorkbenchWindow()
+		IActionBars editorActionBars = PlatformUI.getWorkbench().getActiveWorkbenchWindow()
 				.getActivePage().getActiveEditor().getEditorSite()
 				.getActionBars();
-		saveCurrentActions(actionBars);
+		if (actionBars != null){
+			restoreSavedActions(editorActionBars);
+		}
+		saveCurrentActions(editorActionBars);
+		actionBars = editorActionBars;
 		actionHandler = new CellEditorActionHandler(actionBars);
 		actionHandler.addCellEditor(getCellEditor());
 		actionBars.updateActionBars();
@@ -736,6 +742,7 @@ public class XtextDirectEditManager extends DirectEditManagerEx {
 			super.showFeedback();
 		} catch (Exception e) {
 			// TODO: handle exception
+			Activator.log.error(e);
 		}
 	}
 

@@ -21,19 +21,15 @@
 /**
  * 
  */
-
 class Class7 {
-
 public:
 	Class7() :
 			defaultProp(43) {
 	}
-
 	/**
 	 * 
 	 */
 	static int staticProp;
-
 	/**
 	 * 
 	 */
@@ -42,12 +38,10 @@ public:
 };
 /************************************************************/
 /* External declarations (package visibility)               */
-
 /**
  * 
  */
 int externProp;
-
 /************************************************************/
 
 /* Inline functions                                         */

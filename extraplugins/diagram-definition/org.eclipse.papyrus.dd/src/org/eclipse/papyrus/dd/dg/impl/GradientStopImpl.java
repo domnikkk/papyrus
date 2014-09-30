@@ -12,18 +12,25 @@
 package org.eclipse.papyrus.dd.dg.impl;
 
 import java.awt.Color;
+
 import java.lang.reflect.InvocationTargetException;
+
 import java.util.Map;
 
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import org.eclipse.papyrus.dd.dg.DGPackage;
 import org.eclipse.papyrus.dd.dg.GradientStop;
+
 import org.eclipse.papyrus.dd.dg.util.DGValidator;
 
 /**
@@ -171,7 +178,7 @@ public class GradientStopImpl extends MinimalEObjectImpl.Container implements Gr
 		color = newColor;
 		boolean oldColorESet = colorESet;
 		colorESet = true;
-		if (eNotificationRequired()) {
+		if(eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.GRADIENT_STOP__COLOR, oldColor, color, !oldColorESet));
 		}
 	}
@@ -187,7 +194,7 @@ public class GradientStopImpl extends MinimalEObjectImpl.Container implements Gr
 		boolean oldColorESet = colorESet;
 		color = COLOR_EDEFAULT;
 		colorESet = false;
-		if (eNotificationRequired()) {
+		if(eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.UNSET, DGPackage.GRADIENT_STOP__COLOR, oldColor, COLOR_EDEFAULT, oldColorESet));
 		}
 	}
@@ -223,7 +230,7 @@ public class GradientStopImpl extends MinimalEObjectImpl.Container implements Gr
 		offset = newOffset;
 		boolean oldOffsetESet = offsetESet;
 		offsetESet = true;
-		if (eNotificationRequired()) {
+		if(eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.GRADIENT_STOP__OFFSET, oldOffset, offset, !oldOffsetESet));
 		}
 	}
@@ -239,7 +246,7 @@ public class GradientStopImpl extends MinimalEObjectImpl.Container implements Gr
 		boolean oldOffsetESet = offsetESet;
 		offset = OFFSET_EDEFAULT;
 		offsetESet = false;
-		if (eNotificationRequired()) {
+		if(eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.UNSET, DGPackage.GRADIENT_STOP__OFFSET, oldOffset, OFFSET_EDEFAULT, oldOffsetESet));
 		}
 	}
@@ -275,7 +282,7 @@ public class GradientStopImpl extends MinimalEObjectImpl.Container implements Gr
 		opacity = newOpacity;
 		boolean oldOpacityESet = opacityESet;
 		opacityESet = true;
-		if (eNotificationRequired()) {
+		if(eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.GRADIENT_STOP__OPACITY, oldOpacity, opacity, !oldOpacityESet));
 		}
 	}
@@ -291,7 +298,7 @@ public class GradientStopImpl extends MinimalEObjectImpl.Container implements Gr
 		boolean oldOpacityESet = opacityESet;
 		opacity = OPACITY_EDEFAULT;
 		opacityESet = false;
-		if (eNotificationRequired()) {
+		if(eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.UNSET, DGPackage.GRADIENT_STOP__OPACITY, oldOpacity, OPACITY_EDEFAULT, oldOpacityESet));
 		}
 	}
@@ -325,8 +332,7 @@ public class GradientStopImpl extends MinimalEObjectImpl.Container implements Gr
 	 */
 	@Override
 	public boolean validOffset(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return DGValidator.validate(DGPackage.Literals.GRADIENT_STOP, this, diagnostics, context, "http://www.eclipse.org/emf/2002/Ecore/OCL", DGPackage.Literals.GRADIENT_STOP___VALID_OFFSET__DIAGNOSTICCHAIN_MAP,
-				VALID_OFFSET_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION, Diagnostic.ERROR, DGValidator.DIAGNOSTIC_SOURCE, DGValidator.GRADIENT_STOP__VALID_OFFSET);
+		return DGValidator.validate(DGPackage.Literals.GRADIENT_STOP, this, diagnostics, context, "http://www.eclipse.org/emf/2002/Ecore/OCL", DGPackage.Literals.GRADIENT_STOP___VALID_OFFSET__DIAGNOSTICCHAIN_MAP, VALID_OFFSET_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION, Diagnostic.ERROR, DGValidator.DIAGNOSTIC_SOURCE, DGValidator.GRADIENT_STOP__VALID_OFFSET);
 	}
 
 	/**
@@ -348,8 +354,7 @@ public class GradientStopImpl extends MinimalEObjectImpl.Container implements Gr
 	 */
 	@Override
 	public boolean validOpacity(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return DGValidator.validate(DGPackage.Literals.GRADIENT_STOP, this, diagnostics, context, "http://www.eclipse.org/emf/2002/Ecore/OCL", DGPackage.Literals.GRADIENT_STOP___VALID_OPACITY__DIAGNOSTICCHAIN_MAP,
-				VALID_OPACITY_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION, Diagnostic.ERROR, DGValidator.DIAGNOSTIC_SOURCE, DGValidator.GRADIENT_STOP__VALID_OPACITY);
+		return DGValidator.validate(DGPackage.Literals.GRADIENT_STOP, this, diagnostics, context, "http://www.eclipse.org/emf/2002/Ecore/OCL", DGPackage.Literals.GRADIENT_STOP___VALID_OPACITY__DIAGNOSTICCHAIN_MAP, VALID_OPACITY_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION, Diagnostic.ERROR, DGValidator.DIAGNOSTIC_SOURCE, DGValidator.GRADIENT_STOP__VALID_OPACITY);
 	}
 
 	/**
@@ -359,7 +364,7 @@ public class GradientStopImpl extends MinimalEObjectImpl.Container implements Gr
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch(featureID) {
 		case DGPackage.GRADIENT_STOP__COLOR:
 			return getColor();
 		case DGPackage.GRADIENT_STOP__OFFSET:
@@ -377,15 +382,15 @@ public class GradientStopImpl extends MinimalEObjectImpl.Container implements Gr
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch(featureID) {
 		case DGPackage.GRADIENT_STOP__COLOR:
-			setColor((Color) newValue);
+			setColor((Color)newValue);
 			return;
 		case DGPackage.GRADIENT_STOP__OFFSET:
-			setOffset((Double) newValue);
+			setOffset((Double)newValue);
 			return;
 		case DGPackage.GRADIENT_STOP__OPACITY:
-			setOpacity((Double) newValue);
+			setOpacity((Double)newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -398,7 +403,7 @@ public class GradientStopImpl extends MinimalEObjectImpl.Container implements Gr
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch(featureID) {
 		case DGPackage.GRADIENT_STOP__COLOR:
 			unsetColor();
 			return;
@@ -419,7 +424,7 @@ public class GradientStopImpl extends MinimalEObjectImpl.Container implements Gr
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch(featureID) {
 		case DGPackage.GRADIENT_STOP__COLOR:
 			return isSetColor();
 		case DGPackage.GRADIENT_STOP__OFFSET:
@@ -438,11 +443,11 @@ public class GradientStopImpl extends MinimalEObjectImpl.Container implements Gr
 	@Override
 	@SuppressWarnings("unchecked")
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
+		switch(operationID) {
 		case DGPackage.GRADIENT_STOP___VALID_OFFSET__DIAGNOSTICCHAIN_MAP:
-			return validOffset((DiagnosticChain) arguments.get(0), (Map<Object, Object>) arguments.get(1));
+			return validOffset((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
 		case DGPackage.GRADIENT_STOP___VALID_OPACITY__DIAGNOSTICCHAIN_MAP:
-			return validOpacity((DiagnosticChain) arguments.get(0), (Map<Object, Object>) arguments.get(1));
+			return validOpacity((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
@@ -454,24 +459,24 @@ public class GradientStopImpl extends MinimalEObjectImpl.Container implements Gr
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
+		if(eIsProxy()) {
 			return super.toString();
 		}
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (color: ");
-		if (colorESet) {
+		if(colorESet) {
 			result.append(color);
 		} else {
 			result.append("<unset>");
 		}
 		result.append(", offset: ");
-		if (offsetESet) {
+		if(offsetESet) {
 			result.append(offset);
 		} else {
 			result.append("<unset>");
 		}
 		result.append(", opacity: ");
-		if (opacityESet) {
+		if(opacityESet) {
 			result.append(opacity);
 		} else {
 			result.append("<unset>");

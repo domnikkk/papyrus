@@ -16,6 +16,7 @@ import org.eclipse.emf.common.util.UniqueEList;
 import org.eclipse.papyrus.acceleo.GenUtils;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
+import org.eclipse.uml2.uml.Interface;
 
 /**
  * A set of utility functions related to classes.
@@ -43,7 +44,8 @@ public class ClassUtils {
 		// realized interface dependencies
 		if (currentClass instanceof Class) {
 			Class clazz = (Class) currentClass;
-			usedClasses.addAll(clazz.getImplementedInterfaces());
+			EList<Interface> implementedInterfaces = clazz.getImplementedInterfaces();
+			usedClasses.addAll(implementedInterfaces);
 		}
 		// dependencies and associations
 		usedClasses.addAll(GenUtils.getTypesViaRelationshipsNoDeps(currentClass));

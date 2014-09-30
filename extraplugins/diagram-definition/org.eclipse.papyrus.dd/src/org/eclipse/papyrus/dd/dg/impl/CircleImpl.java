@@ -12,19 +12,26 @@
 package org.eclipse.papyrus.dd.dg.impl;
 
 import java.lang.reflect.InvocationTargetException;
+
 import java.util.Map;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.eclipse.papyrus.dd.dc.Point;
+
 import org.eclipse.papyrus.dd.dg.Circle;
 import org.eclipse.papyrus.dd.dg.DGPackage;
+
 import org.eclipse.papyrus.dd.dg.util.DGValidator;
 
 /**
@@ -108,9 +115,9 @@ public class CircleImpl extends GraphicalElementImpl implements Circle {
 	public NotificationChain basicSetCenter(Point newCenter, NotificationChain msgs) {
 		Point oldCenter = center;
 		center = newCenter;
-		if (eNotificationRequired()) {
+		if(eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DGPackage.CIRCLE__CENTER, oldCenter, newCenter);
-			if (msgs == null) {
+			if(msgs == null) {
 				msgs = notification;
 			} else {
 				msgs.add(notification);
@@ -126,19 +133,19 @@ public class CircleImpl extends GraphicalElementImpl implements Circle {
 	 */
 	@Override
 	public void setCenter(Point newCenter) {
-		if (newCenter != center) {
+		if(newCenter != center) {
 			NotificationChain msgs = null;
-			if (center != null) {
-				msgs = ((InternalEObject) center).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DGPackage.CIRCLE__CENTER, null, msgs);
+			if(center != null) {
+				msgs = ((InternalEObject)center).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DGPackage.CIRCLE__CENTER, null, msgs);
 			}
-			if (newCenter != null) {
-				msgs = ((InternalEObject) newCenter).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DGPackage.CIRCLE__CENTER, null, msgs);
+			if(newCenter != null) {
+				msgs = ((InternalEObject)newCenter).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DGPackage.CIRCLE__CENTER, null, msgs);
 			}
 			msgs = basicSetCenter(newCenter, msgs);
-			if (msgs != null) {
+			if(msgs != null) {
 				msgs.dispatch();
 			}
-		} else if (eNotificationRequired()) {
+		} else if(eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.CIRCLE__CENTER, newCenter, newCenter));
 		}
 	}
@@ -162,7 +169,7 @@ public class CircleImpl extends GraphicalElementImpl implements Circle {
 	public void setRadius(double newRadius) {
 		double oldRadius = radius;
 		radius = newRadius;
-		if (eNotificationRequired()) {
+		if(eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.CIRCLE__RADIUS, oldRadius, radius));
 		}
 	}
@@ -186,8 +193,7 @@ public class CircleImpl extends GraphicalElementImpl implements Circle {
 	 */
 	@Override
 	public boolean nonNegativeRadius(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return DGValidator.validate(DGPackage.Literals.CIRCLE, this, diagnostics, context, "http://www.eclipse.org/emf/2002/Ecore/OCL", DGPackage.Literals.CIRCLE___NON_NEGATIVE_RADIUS__DIAGNOSTICCHAIN_MAP,
-				NON_NEGATIVE_RADIUS_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION, Diagnostic.ERROR, DGValidator.DIAGNOSTIC_SOURCE, DGValidator.CIRCLE__NON_NEGATIVE_RADIUS);
+		return DGValidator.validate(DGPackage.Literals.CIRCLE, this, diagnostics, context, "http://www.eclipse.org/emf/2002/Ecore/OCL", DGPackage.Literals.CIRCLE___NON_NEGATIVE_RADIUS__DIAGNOSTICCHAIN_MAP, NON_NEGATIVE_RADIUS_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION, Diagnostic.ERROR, DGValidator.DIAGNOSTIC_SOURCE, DGValidator.CIRCLE__NON_NEGATIVE_RADIUS);
 	}
 
 	/**
@@ -197,7 +203,7 @@ public class CircleImpl extends GraphicalElementImpl implements Circle {
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
+		switch(featureID) {
 		case DGPackage.CIRCLE__CENTER:
 			return basicSetCenter(null, msgs);
 		}
@@ -211,7 +217,7 @@ public class CircleImpl extends GraphicalElementImpl implements Circle {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch(featureID) {
 		case DGPackage.CIRCLE__CENTER:
 			return getCenter();
 		case DGPackage.CIRCLE__RADIUS:
@@ -227,12 +233,12 @@ public class CircleImpl extends GraphicalElementImpl implements Circle {
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch(featureID) {
 		case DGPackage.CIRCLE__CENTER:
-			setCenter((Point) newValue);
+			setCenter((Point)newValue);
 			return;
 		case DGPackage.CIRCLE__RADIUS:
-			setRadius((Double) newValue);
+			setRadius((Double)newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -245,9 +251,9 @@ public class CircleImpl extends GraphicalElementImpl implements Circle {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch(featureID) {
 		case DGPackage.CIRCLE__CENTER:
-			setCenter((Point) null);
+			setCenter((Point)null);
 			return;
 		case DGPackage.CIRCLE__RADIUS:
 			setRadius(RADIUS_EDEFAULT);
@@ -263,7 +269,7 @@ public class CircleImpl extends GraphicalElementImpl implements Circle {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch(featureID) {
 		case DGPackage.CIRCLE__CENTER:
 			return center != null;
 		case DGPackage.CIRCLE__RADIUS:
@@ -280,9 +286,9 @@ public class CircleImpl extends GraphicalElementImpl implements Circle {
 	@Override
 	@SuppressWarnings("unchecked")
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
+		switch(operationID) {
 		case DGPackage.CIRCLE___NON_NEGATIVE_RADIUS__DIAGNOSTICCHAIN_MAP:
-			return nonNegativeRadius((DiagnosticChain) arguments.get(0), (Map<Object, Object>) arguments.get(1));
+			return nonNegativeRadius((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
@@ -294,7 +300,7 @@ public class CircleImpl extends GraphicalElementImpl implements Circle {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
+		if(eIsProxy()) {
 			return super.toString();
 		}
 		StringBuffer result = new StringBuffer(super.toString());

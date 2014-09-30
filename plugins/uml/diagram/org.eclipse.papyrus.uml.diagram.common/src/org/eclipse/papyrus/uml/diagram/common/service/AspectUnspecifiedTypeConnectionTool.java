@@ -513,7 +513,7 @@ public class AspectUnspecifiedTypeConnectionTool extends UnspecifiedTypeConnecti
 		 * type and adds it to the map of requests.
 		 */
 		protected void createRequests() {
-			for (IElementType elementType : (List<IElementType>) getElementTypes()) {
+			for (IElementType elementType : (List<IElementType>) CreateAspectUnspecifiedTypeConnectionRequest.this.getElementTypes()) {
 				CreateConnectionRequest request = PapyrusCreateViewRequestFactory.getCreateConnectionRequest(elementType, getPreferencesHint());
 				request.setType(getType());
 				requests.put(elementType, request);

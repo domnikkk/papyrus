@@ -14,11 +14,15 @@ package org.eclipse.papyrus.dd.dg.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+
 import org.eclipse.papyrus.dd.dg.DGPackage;
 import org.eclipse.papyrus.dd.dg.PaintServer;
 import org.eclipse.papyrus.dd.dg.Transform;
@@ -72,7 +76,7 @@ public abstract class PaintServerImpl extends DefinitionImpl implements PaintSer
 	 */
 	@Override
 	public EList<Transform> getTransforms() {
-		if (transforms == null) {
+		if(transforms == null) {
 			transforms = new EObjectContainmentEList<Transform>(Transform.class, this, DGPackage.PAINT_SERVER__TRANSFORM);
 		}
 		return transforms;
@@ -85,9 +89,9 @@ public abstract class PaintServerImpl extends DefinitionImpl implements PaintSer
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
+		switch(featureID) {
 		case DGPackage.PAINT_SERVER__TRANSFORM:
-			return ((InternalEList<?>) getTransforms()).basicRemove(otherEnd, msgs);
+			return ((InternalEList<?>)getTransforms()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -99,7 +103,7 @@ public abstract class PaintServerImpl extends DefinitionImpl implements PaintSer
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch(featureID) {
 		case DGPackage.PAINT_SERVER__TRANSFORM:
 			return getTransforms();
 		}
@@ -114,10 +118,10 @@ public abstract class PaintServerImpl extends DefinitionImpl implements PaintSer
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch(featureID) {
 		case DGPackage.PAINT_SERVER__TRANSFORM:
 			getTransforms().clear();
-			getTransforms().addAll((Collection<? extends Transform>) newValue);
+			getTransforms().addAll((Collection<? extends Transform>)newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -130,7 +134,7 @@ public abstract class PaintServerImpl extends DefinitionImpl implements PaintSer
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch(featureID) {
 		case DGPackage.PAINT_SERVER__TRANSFORM:
 			getTransforms().clear();
 			return;
@@ -145,7 +149,7 @@ public abstract class PaintServerImpl extends DefinitionImpl implements PaintSer
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch(featureID) {
 		case DGPackage.PAINT_SERVER__TRANSFORM:
 			return transforms != null && !transforms.isEmpty();
 		}

@@ -12,18 +12,26 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import org.eclipse.papyrus.umlrt.UMLRealTime.*;
+import org.eclipse.papyrus.umlrt.UMLRealTime.Capsule;
+import org.eclipse.papyrus.umlrt.UMLRealTime.CapsulePart;
+import org.eclipse.papyrus.umlrt.UMLRealTime.PortRegistrationType;
+import org.eclipse.papyrus.umlrt.UMLRealTime.Protocol;
+import org.eclipse.papyrus.umlrt.UMLRealTime.ProtocolContainer;
+import org.eclipse.papyrus.umlrt.UMLRealTime.RTConnector;
+import org.eclipse.papyrus.umlrt.UMLRealTime.RTMessageKind;
+import org.eclipse.papyrus.umlrt.UMLRealTime.RTMessageSet;
+import org.eclipse.papyrus.umlrt.UMLRealTime.RTPort;
+import org.eclipse.papyrus.umlrt.UMLRealTime.RTRExcludedElement;
+import org.eclipse.papyrus.umlrt.UMLRealTime.UMLRealTimeFactory;
+import org.eclipse.papyrus.umlrt.UMLRealTime.UMLRealTimePackage;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class UMLRealTimeFactoryImpl extends EFactoryImpl implements UMLRealTimeFactory {
@@ -31,7 +39,7 @@ public class UMLRealTimeFactoryImpl extends EFactoryImpl implements UMLRealTimeF
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static UMLRealTimeFactory init() {
@@ -50,7 +58,7 @@ public class UMLRealTimeFactoryImpl extends EFactoryImpl implements UMLRealTimeF
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public UMLRealTimeFactoryImpl() {
@@ -60,7 +68,7 @@ public class UMLRealTimeFactoryImpl extends EFactoryImpl implements UMLRealTimeF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -90,7 +98,7 @@ public class UMLRealTimeFactoryImpl extends EFactoryImpl implements UMLRealTimeF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -108,7 +116,7 @@ public class UMLRealTimeFactoryImpl extends EFactoryImpl implements UMLRealTimeF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -126,7 +134,7 @@ public class UMLRealTimeFactoryImpl extends EFactoryImpl implements UMLRealTimeF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -138,7 +146,7 @@ public class UMLRealTimeFactoryImpl extends EFactoryImpl implements UMLRealTimeF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -150,7 +158,7 @@ public class UMLRealTimeFactoryImpl extends EFactoryImpl implements UMLRealTimeF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -162,7 +170,7 @@ public class UMLRealTimeFactoryImpl extends EFactoryImpl implements UMLRealTimeF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -174,7 +182,7 @@ public class UMLRealTimeFactoryImpl extends EFactoryImpl implements UMLRealTimeF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -186,7 +194,7 @@ public class UMLRealTimeFactoryImpl extends EFactoryImpl implements UMLRealTimeF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -198,7 +206,7 @@ public class UMLRealTimeFactoryImpl extends EFactoryImpl implements UMLRealTimeF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -210,7 +218,7 @@ public class UMLRealTimeFactoryImpl extends EFactoryImpl implements UMLRealTimeF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -222,13 +230,13 @@ public class UMLRealTimeFactoryImpl extends EFactoryImpl implements UMLRealTimeF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public PortRegistrationType createPortRegistrationTypeFromString(EDataType eDataType, String initialValue) {
 		PortRegistrationType result = PortRegistrationType.get(initialValue);
 		if (result == null)
-		{
+		 {
 			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 		}
 		return result;
@@ -237,7 +245,7 @@ public class UMLRealTimeFactoryImpl extends EFactoryImpl implements UMLRealTimeF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertPortRegistrationTypeToString(EDataType eDataType, Object instanceValue) {
@@ -247,13 +255,13 @@ public class UMLRealTimeFactoryImpl extends EFactoryImpl implements UMLRealTimeF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public RTMessageKind createRTMessageKindFromString(EDataType eDataType, String initialValue) {
 		RTMessageKind result = RTMessageKind.get(initialValue);
 		if (result == null)
-		{
+		 {
 			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 		}
 		return result;
@@ -262,7 +270,7 @@ public class UMLRealTimeFactoryImpl extends EFactoryImpl implements UMLRealTimeF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertRTMessageKindToString(EDataType eDataType, Object instanceValue) {
@@ -272,7 +280,7 @@ public class UMLRealTimeFactoryImpl extends EFactoryImpl implements UMLRealTimeF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -283,7 +291,7 @@ public class UMLRealTimeFactoryImpl extends EFactoryImpl implements UMLRealTimeF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

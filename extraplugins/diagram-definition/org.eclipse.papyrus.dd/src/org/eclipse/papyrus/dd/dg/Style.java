@@ -15,6 +15,7 @@ import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -69,7 +70,7 @@ public interface Style extends EObject {
 	 * end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Fill</em>' containment reference.
+	 *        the new value of the '<em>Fill</em>' containment reference.
 	 * @see #isSetFill()
 	 * @see #unsetFill()
 	 * @see #getFill()
@@ -127,7 +128,7 @@ public interface Style extends EObject {
 	 * end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Fill Opacity</em>' attribute.
+	 *        the new value of the '<em>Fill Opacity</em>' attribute.
 	 * @see #isSetFillOpacity()
 	 * @see #unsetFillOpacity()
 	 * @see #getFillOpacity()
@@ -182,7 +183,7 @@ public interface Style extends EObject {
 	 * end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Stroke</em>' containment reference.
+	 *        the new value of the '<em>Stroke</em>' containment reference.
 	 * @see #isSetStroke()
 	 * @see #unsetStroke()
 	 * @see #getStroke()
@@ -239,7 +240,7 @@ public interface Style extends EObject {
 	 * end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Stroke Width</em>' attribute.
+	 *        the new value of the '<em>Stroke Width</em>' attribute.
 	 * @see #isSetStrokeWidth()
 	 * @see #unsetStrokeWidth()
 	 * @see #getStrokeWidth()
@@ -296,7 +297,7 @@ public interface Style extends EObject {
 	 * end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Stroke Opacity</em>' attribute.
+	 *        the new value of the '<em>Stroke Opacity</em>' attribute.
 	 * @see #isSetStrokeOpacity()
 	 * @see #unsetStrokeOpacity()
 	 * @see #getStrokeOpacity()
@@ -395,7 +396,7 @@ public interface Style extends EObject {
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Font Size</em>' attribute.
+	 *        the new value of the '<em>Font Size</em>' attribute.
 	 * @see #isSetFontSize()
 	 * @see #unsetFontSize()
 	 * @see #getFontSize()
@@ -448,7 +449,7 @@ public interface Style extends EObject {
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Font Name</em>' attribute.
+	 *        the new value of the '<em>Font Name</em>' attribute.
 	 * @see #isSetFontName()
 	 * @see #unsetFontName()
 	 * @see #getFontName()
@@ -501,7 +502,7 @@ public interface Style extends EObject {
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Font Italic</em>' attribute.
+	 *        the new value of the '<em>Font Italic</em>' attribute.
 	 * @see #isSetFontItalic()
 	 * @see #unsetFontItalic()
 	 * @see #isFontItalic()
@@ -555,7 +556,7 @@ public interface Style extends EObject {
 	 * -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Font Bold</em>' attribute.
+	 *        the new value of the '<em>Font Bold</em>' attribute.
 	 * @see #isSetFontBold()
 	 * @see #unsetFontBold()
 	 * @see #isFontBold()
@@ -610,7 +611,7 @@ public interface Style extends EObject {
 	 * end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Font Decoration</em>' attribute.
+	 *        the new value of the '<em>Font Decoration</em>' attribute.
 	 * @see org.eclipse.papyrus.dd.dg.FontDecoration
 	 * @see #isSetFontDecoration()
 	 * @see #unsetFontDecoration()
@@ -649,10 +650,10 @@ public interface Style extends EObject {
 	 * the font size is non-negative
 	 *
 	 * @param diagnostics
-	 *            The chain of diagnostics to which problems are to be appended.
+	 *        The chain of diagnostics to which problems are to be appended.
 	 * @param context
-	 *            The cache of context-specific information. <!-- end-model-doc
-	 *            -->
+	 *        The cache of context-specific information. <!-- end-model-doc
+	 *        -->
 	 * @model annotation=
 	 *        "http://www.eclipse.org/emf/2002/Ecore/OCL body='fontSize >=  0'"
 	 * @generated
@@ -664,10 +665,10 @@ public interface Style extends EObject {
 	 * the stroke width is non-negative
 	 *
 	 * @param diagnostics
-	 *            The chain of diagnostics to which problems are to be appended.
+	 *        The chain of diagnostics to which problems are to be appended.
 	 * @param context
-	 *            The cache of context-specific information. <!-- end-model-doc
-	 *            -->
+	 *        The cache of context-specific information. <!-- end-model-doc
+	 *        -->
 	 * @model annotation=
 	 *        "http://www.eclipse.org/emf/2002/Ecore/OCL body='fillOpacity >=  0 and fillOpacity <=1'"
 	 * @generated
@@ -679,10 +680,10 @@ public interface Style extends EObject {
 	 * the stroke width is non-negative
 	 *
 	 * @param diagnostics
-	 *            The chain of diagnostics to which problems are to be appended.
+	 *        The chain of diagnostics to which problems are to be appended.
 	 * @param context
-	 *            The cache of context-specific information. <!-- end-model-doc
-	 *            -->
+	 *        The cache of context-specific information. <!-- end-model-doc
+	 *        -->
 	 * @model annotation=
 	 *        "http://www.eclipse.org/emf/2002/Ecore/OCL body='strokeWidth >=  0'"
 	 * @generated
@@ -694,10 +695,10 @@ public interface Style extends EObject {
 	 * the size of the stroke dash length list must be even.
 	 *
 	 * @param diagnostics
-	 *            The chain of diagnostics to which problems are to be appended.
+	 *        The chain of diagnostics to which problems are to be appended.
 	 * @param context
-	 *            The cache of context-specific information. <!-- end-model-doc
-	 *            -->
+	 *        The cache of context-specific information. <!-- end-model-doc
+	 *        -->
 	 * @model annotation=
 	 *        "http://www.eclipse.org/emf/2002/Ecore/OCL body='strokeDashLength->size().mod(2) = 0'"
 	 * @generated
@@ -709,10 +710,10 @@ public interface Style extends EObject {
 	 * the opacity of the fill is non-negative
 	 *
 	 * @param diagnostics
-	 *            The chain of diagnostics to which problems are to be appended.
+	 *        The chain of diagnostics to which problems are to be appended.
 	 * @param context
-	 *            The cache of context-specific information. <!-- end-model-doc
-	 *            -->
+	 *        The cache of context-specific information. <!-- end-model-doc
+	 *        -->
 	 * @model annotation=
 	 *        "http://www.eclipse.org/emf/2002/Ecore/OCL body='strokeOpacity >=  0 and strokeOpacity <=1'"
 	 * @generated

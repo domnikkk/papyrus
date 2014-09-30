@@ -43,6 +43,7 @@ import org.junit.BeforeClass;
 import org.junit.ClassRule;
 import org.junit.Test;
 
+@SuppressWarnings("nls")
 public class CppCodegenTest {
 
 	static {

@@ -16,7 +16,9 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.common.util.ResourceLocator;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemColorProvider;
@@ -29,8 +31,10 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
 import org.eclipse.papyrus.dd.dg.DGPackage;
 import org.eclipse.papyrus.dd.dg.PathCommand;
+
 import org.eclipse.papyrus.dd.edit.DDEditPlugin;
 
 /**
@@ -60,7 +64,7 @@ public class PathCommandItemProvider extends ItemProviderAdapter implements IEdi
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null) {
+		if(itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 			addIsRelativePropertyDescriptor(object);
 		}
@@ -74,8 +78,7 @@ public class PathCommandItemProvider extends ItemProviderAdapter implements IEdi
 	 * @generated
 	 */
 	protected void addIsRelativePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_PathCommand_isRelative_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_PathCommand_isRelative_feature", "_UI_PathCommand_type"), DGPackage.Literals.PATH_COMMAND__IS_RELATIVE, true, false, false, ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_PathCommand_isRelative_feature"), getString("_UI_PropertyDescriptor_description", "_UI_PathCommand_isRelative_feature", "_UI_PathCommand_type"), DGPackage.Literals.PATH_COMMAND__IS_RELATIVE, true, false, false, ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -87,7 +90,7 @@ public class PathCommandItemProvider extends ItemProviderAdapter implements IEdi
 	 */
 	@Override
 	public String getText(Object object) {
-		PathCommand pathCommand = (PathCommand) object;
+		PathCommand pathCommand = (PathCommand)object;
 		return getString("_UI_PathCommand_type") + " " + pathCommand.isRelative();
 	}
 
@@ -102,7 +105,7 @@ public class PathCommandItemProvider extends ItemProviderAdapter implements IEdi
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-		switch (notification.getFeatureID(PathCommand.class)) {
+		switch(notification.getFeatureID(PathCommand.class)) {
 		case DGPackage.PATH_COMMAND__IS_RELATIVE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;

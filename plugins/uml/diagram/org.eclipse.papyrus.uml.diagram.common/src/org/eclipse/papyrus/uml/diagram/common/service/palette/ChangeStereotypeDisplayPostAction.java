@@ -96,12 +96,6 @@ public class ChangeStereotypeDisplayPostAction extends GraphicalPostAction {
 	/** list of available items in the stereotype place combo */
 	protected static final List<String> PLACE_LIST = Arrays.asList(COMMENT, COMPARTMENT, BRACE);
 
-	/** entry proxy "parent" of this action when configuring the action */
-	protected IPaletteEntryProxy entryProxy;
-
-	/** list of applied profiles */
-	protected List<Profile> appliedProfiles;
-
 	/**
 	 * @{inheritDoc
 	 */

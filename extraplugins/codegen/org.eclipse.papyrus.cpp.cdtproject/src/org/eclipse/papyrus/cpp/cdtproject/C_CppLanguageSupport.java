@@ -26,8 +26,8 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.UniqueEList;
 import org.eclipse.jface.wizard.WizardDialog;
 import org.eclipse.papyrus.C_Cpp.ExternLibrary;
+import org.eclipse.papyrus.acceleo.ModelElementsCreator;
 import org.eclipse.papyrus.codegen.extensionpoints.ILangSupport;
-import org.eclipse.papyrus.cpp.codegen.transformation.CppModelElementsCreator;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.PlatformUI;
@@ -260,7 +260,7 @@ public class C_CppLanguageSupport implements ILangSupport {
 
 	static EList<String> macros;
 
-	CppModelElementsCreator creator;
+	ModelElementsCreator creator;
 
 	static IProject m_project;
 }

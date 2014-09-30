@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<toc topic="resource/alignmentTool.html" label="Tool">
+	<topic href="resource/alignmentTool.html" label="Alignment Tool">
+		<topic href="resource/alignmentTool.html#Introduction" label="Introduction"></topic>
+		<topic href="resource/alignmentTool.html#General_Rules" label="General Rules"></topic>
+		<topic href="resource/alignmentTool.html#Using_of_Alignment_Tool" label="Using of Alignment Tool">
+			<topic href="resource/alignmentTool.html#General_Case" label="General Case"></topic>
+			<topic href="resource/alignmentTool.html#Hierarchy" label="Hierarchy"></topic>
+			<topic href="resource/alignmentTool.html#Labels" label="Labels"></topic>
+			<topic href="resource/alignmentTool.html#Edges" label="Edges"></topic>
+		</topic>
+		<topic href="resource/alignmentTool.html#Limitation" label="Limitation">
+			<topic href="resource/alignmentTool.html#Hierarchy_2" label="Hierarchy"></topic>
+			<topic href="resource/alignmentTool.html#Label" label="Label"></topic>
+			<topic href="resource/alignmentTool.html#Edge" label="Edge"></topic>
+		</topic>
+	</topic>
+</toc>

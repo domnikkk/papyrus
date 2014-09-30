@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2011 CEA LIST.
+ * Copyright (c) 2011, 2014 CEA LIST and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,6 +8,8 @@
  *
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 444212
+ *  
  *****************************************************************************/
 package org.eclipse.papyrus.uml.properties.widgets;
 
@@ -20,6 +22,9 @@ import org.eclipse.papyrus.infra.widgets.editors.AbstractEditor;
 import org.eclipse.papyrus.uml.profile.tree.objects.StereotypedElementTreeObject;
 import org.eclipse.papyrus.uml.properties.modelelement.UMLNotationModelElement;
 import org.eclipse.papyrus.uml.properties.profile.ui.compositeforview.AppearanceForAppliedStereotypeComposite;
+import org.eclipse.papyrus.views.properties.modelelement.DataSource;
+import org.eclipse.papyrus.views.properties.modelelement.DataSourceChangedEvent;
+import org.eclipse.papyrus.views.properties.modelelement.IDataSourceListener;
 import org.eclipse.papyrus.views.properties.modelelement.ModelElement;
 import org.eclipse.papyrus.views.properties.widgets.AbstractPropertyEditor;
 import org.eclipse.swt.widgets.Composite;
@@ -29,6 +34,8 @@ import org.eclipse.uml2.uml.Element;
 public class StereotypeDisplay extends AbstractPropertyEditor {
 
 	private AppearanceForAppliedStereotypeComposite composite;
+
+	private IDataSourceListener dataSourceListener;
 
 	public StereotypeDisplay(Composite parent, int style) {
 		composite = new AppearanceForAppliedStereotypeComposite(parent);
@@ -52,5 +59,40 @@ public class StereotypeDisplay extends AbstractPropertyEditor {
 
 			composite.refresh();
 		}
+	}
+
+	@Override
+	protected void unhookDataSourceListener(DataSource oldInput) {
+		oldInput.removeDataSourceListener(getDataSourceListener());
+		super.unhookDataSourceListener(oldInput);
+	}
+
+	@Override
+	protected void hookDataSourceListener(DataSource newInput) {
+		super.hookDataSourceListener(newInput);
+		newInput.addDataSourceListener(getDataSourceListener());
+	}
+
+	private IDataSourceListener getDataSourceListener() {
+		if (dataSourceListener == null) {
+			dataSourceListener = new IDataSourceListener() {
+
+				public void dataSourceChanged(DataSourceChangedEvent event) {
+					// The data source's selection changed. Re-display our composite
+					if ((composite != null) && !composite.isDisposed()) {
+						composite.getDisplay().asyncExec(new Runnable() {
+
+							public void run() {
+								if (!composite.isDisposed()) {
+									doBinding();
+								}
+							}
+						});
+					}
+				}
+			};
+		}
+
+		return dataSourceListener;
 	}
 }

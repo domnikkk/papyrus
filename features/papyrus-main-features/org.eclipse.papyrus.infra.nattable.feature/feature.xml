@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><feature id="org.eclipse.papyrus.infra.nattable.feature" label="Papyrus Table - New Version" provider-name="Eclipse Modeling Project" version="1.0.1.qualifier">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><feature id="org.eclipse.papyrus.infra.nattable.feature" label="Papyrus Table - New Version" provider-name="Eclipse Modeling Project" version="1.1.0.qualifier">
 
    <copyright url="epl-v10.html">
       Copyright (c) 2013 CEA LIST

@@ -2,18 +2,18 @@ Manifest-Version: 1.0
 Export-Package: org.eclipse.papyrus.paletteconfiguration.presentation
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources;visibility:=reexport,
- org.eclipse.papyrus.uml.diagram.paletteconfiguration.edit;bundle-version="1.0.0";visibility:=reexport,
+ org.eclipse.papyrus.uml.diagram.paletteconfiguration.edit;bundle-version="1.1.0";visibility:=reexport,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,
  org.eclipse.emf.edit.ui;visibility:=reexport,
  org.eclipse.ui.ide;visibility:=reexport,
- org.eclipse.papyrus.infra.queries.core.configuration.edit;bundle-version="1.0.0";visibility:=reexport,
+ org.eclipse.papyrus.infra.queries.core.configuration.edit;bundle-version="1.1.0";visibility:=reexport,
  org.eclipse.emf.ecore.edit;visibility:=reexport,
  org.eclipse.emf.facet.infra.query.edit;visibility:=reexport,
  org.eclipse.uml2.uml.edit;visibility:=reexport
 Bundle-Vendor: %providerName
 Bundle-ActivationPolicy: lazy
 Bundle-ClassPath: .
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 1.1.0.qualifier
 Bundle-Name: %pluginName
 Bundle-Localization: plugin
 Bundle-ManifestVersion: 2

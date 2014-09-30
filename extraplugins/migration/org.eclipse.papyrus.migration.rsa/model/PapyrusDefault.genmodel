@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText=" * Copyright (c) 2013, 2014 CEA LIST.&#xD;&#xA; *&#xD;&#xA; * All rights reserved. This program and the accompanying materials&#xD;&#xA; * are made available under the terms of the Eclipse Public License v1.0&#xD;&#xA; * which accompanies this distribution, and is available at&#xD;&#xA; * http://www.eclipse.org/legal/epl-v10.html&#xD;&#xA; *&#xD;&#xA; * Contributors:&#xD;&#xA; *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation"
+    modelDirectory="/org.eclipse.papyrus.migration.rsa/src-gen" editDirectory="/org.eclipse.papyrus.migration.rsa.edit/src-gen"
+    editorDirectory="/org.eclipse.papyrus.migration.rsa.editor/src-gen" modelPluginID="org.eclipse.papyrus.migration.rsa"
+    modelName="PapyrusDefault" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    testsDirectory="/org.eclipse.papyrus.migration.rsa.tests/src-gen" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="6.0" copyrightFields="false" usedGenPackages="../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../org.eclipse.uml2.types/model/Types.genmodel#//types ../../org.eclipse.uml2.uml/model/UML.genmodel#//uml"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>PapyrusDefault.ecore</foreignModel>
+  <genPackages prefix="Default" basePackage="org.eclipse.papyrus.migration.rsa" resource="XML"
+      disposableProviderFactory="true" ecorePackage="PapyrusDefault.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="PapyrusDefault.ecore#//Mode">
+      <genEnumLiterals ecoreEnumLiteral="PapyrusDefault.ecore#//Mode/batch"/>
+      <genEnumLiterals ecoreEnumLiteral="PapyrusDefault.ecore#//Mode/live"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="PapyrusDefault.ecore#//Severity">
+      <genEnumLiterals ecoreEnumLiteral="PapyrusDefault.ecore#//Severity/error"/>
+      <genEnumLiterals ecoreEnumLiteral="PapyrusDefault.ecore#//Severity/warning"/>
+      <genEnumLiterals ecoreEnumLiteral="PapyrusDefault.ecore#//Severity/info"/>
+    </genEnums>
+    <genClasses ecoreClass="PapyrusDefault.ecore#//Documentation">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference PapyrusDefault.ecore#//Documentation/base_Comment"/>
+    </genClasses>
+    <genClasses ecoreClass="PapyrusDefault.ecore#//URL">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference PapyrusDefault.ecore#//URL/base_Comment"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PapyrusDefault.ecore#//URL/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PapyrusDefault.ecore#//URL/displayName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PapyrusDefault.ecore#//URL/icon"/>
+    </genClasses>
+    <genClasses ecoreClass="PapyrusDefault.ecore#//Link"/>
+    <genClasses image="false" ecoreClass="PapyrusDefault.ecore#//AbstractConstraint">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference PapyrusDefault.ecore#//AbstractConstraint/base_Constraint"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PapyrusDefault.ecore#//AbstractConstraint/evaluationMode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PapyrusDefault.ecore#//AbstractConstraint/severity"/>
+    </genClasses>
+    <genClasses ecoreClass="PapyrusDefault.ecore#//MetaConstraint">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PapyrusDefault.ecore#//MetaConstraint/message"/>
+    </genClasses>
+    <genClasses ecoreClass="PapyrusDefault.ecore#//MarkingModel">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference PapyrusDefault.ecore#//MarkingModel/base_Package"/>
+    </genClasses>
+    <genClasses ecoreClass="PapyrusDefault.ecore#//MarkingImport">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference PapyrusDefault.ecore#//MarkingImport/base_ElementImport"/>
+    </genClasses>
+    <genClasses ecoreClass="PapyrusDefault.ecore#//DefaultLanguage">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference PapyrusDefault.ecore#//DefaultLanguage/base_Package"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PapyrusDefault.ecore#//DefaultLanguage/defaultLanguage"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

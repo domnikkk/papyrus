@@ -10,6 +10,8 @@
  *  Sebastien Poissonnet (CEA LIST) sebastien.poissonnet@cea.fr
  *  Mickaël ADAM (ALL4TEC) mickael.adam@all4tec.net - bug 435174
  *  Gabriel Pascual (ALL4TEC)  -  Bug 441511
+ *  Christian W. Damus (CEA) - Bug 441227
+ *  
  *****************************************************************************/
 package org.eclipse.papyrus.uml.properties.databinding;
 
@@ -66,7 +68,9 @@ public class AppliedCommentsObservableList extends PapyrusObservableList {
 					// not...
 					boolean isProxy = false;
 					for (Element annotatedElement : comment.getAnnotatedElements()) {
-						if (annotatedElement.eResource() == null) {
+						// Don't check the annotated element if it's the source, because it may be a new
+						// element being created in a dialog and not yet attached to the model
+						if ((annotatedElement != source) && (annotatedElement.eResource() == null)) {
 							isProxy = true;
 						}
 					}
@@ -117,7 +121,7 @@ public class AppliedCommentsObservableList extends PapyrusObservableList {
 			addAppliedCommentCommand = new CompoundCommand("Add applied comment");
 
 			// Add the comment to source#ownedComment
-			SetRequest setRequest = new SetRequest(source, feature, value);
+			SetRequest setRequest = new SetRequest((TransactionalEditingDomain) editingDomain, source, feature, value);
 			addAppliedCommentCommand.append(getCommandFromRequests(getProvider(), Collections.singletonList(setRequest)));
 
 			// Check if source was already had to comment

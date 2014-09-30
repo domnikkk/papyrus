@@ -12,6 +12,7 @@
 package org.eclipse.papyrus.umldi.util;
 
 import org.eclipse.emf.common.util.URI;
+
 import org.eclipse.emf.ecore.xmi.impl.XMLResourceImpl;
 
 /**
@@ -30,10 +31,10 @@ public class UMLDIResourceImpl extends XMLResourceImpl {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param uri
-	 *            the URI of the new resource.
+	 *        the URI of the new resource.
 	 * @generated
 	 */
 	public UMLDIResourceImpl(URI uri) {
 		super(uri);
 	}
-} // UMLDIResourceImpl
+} //UMLDIResourceImpl

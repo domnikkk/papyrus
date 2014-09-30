@@ -103,7 +103,7 @@ public class ExtendedPluginPaletteProvider extends AbstractProvider implements I
 	protected static final ImageDescriptor DEFAULT_STACK_IMAGE_DESCRIPTOR = Activator.imageDescriptorFromPlugin(Activator.PLUGIN_ID, "/icons/stack.gif");
 
 	/** default icon for drawers */
-	protected static ImageDescriptor DEFAULT_DRAWER_IMAGE_DESCRIPTOR = Activator.imageDescriptorFromPlugin(Activator.PLUGIN_ID, "/icons/drawer.gif");
+	protected static final ImageDescriptor DEFAULT_DRAWER_IMAGE_DESCRIPTOR = Activator.imageDescriptorFromPlugin(Activator.PLUGIN_ID, "/icons/drawer.gif");
 
 	/** cached list of required profiles for this palette to be shown. this will be <code>null</code> until initialized */
 	protected Collection<String> requiredProfiles = null;
@@ -176,7 +176,6 @@ public class ExtendedPluginPaletteProvider extends AbstractProvider implements I
 	 * @param predefinedEntries
 	 *            predefined existing entries
 	 */
-	@SuppressWarnings("restriction")
 	protected PaletteDrawer generateDrawer(PaletteRoot root, DrawerConfiguration drawerConfiguration, Map predefinedEntries) {
 		String id = drawerConfiguration.getId();
 		// retrieve drawer or create one if necessary
@@ -235,7 +234,7 @@ public class ExtendedPluginPaletteProvider extends AbstractProvider implements I
 				@Override
 				public ImageDescriptor caseDrawerConfiguration(DrawerConfiguration object) {
 					return ExtendedPluginPaletteProvider.DEFAULT_DRAWER_IMAGE_DESCRIPTOR;
-				};
+				}
 
 				/**
 				 * {@inheritDoc}
@@ -243,7 +242,7 @@ public class ExtendedPluginPaletteProvider extends AbstractProvider implements I
 				@Override
 				public ImageDescriptor caseToolConfiguration(ToolConfiguration object) {
 					return ExtendedPluginPaletteProvider.DEFAULT_TOOL_IMAGE_DESCRIPTOR;
-				};
+				}
 
 				/**
 				 * {@inheritDoc}
@@ -251,7 +250,7 @@ public class ExtendedPluginPaletteProvider extends AbstractProvider implements I
 				@Override
 				public ImageDescriptor caseStackConfiguration(StackConfiguration object) {
 					return ExtendedPluginPaletteProvider.DEFAULT_STACK_IMAGE_DESCRIPTOR;
-				};
+				}
 
 				/**
 				 * {@inheritDoc}
@@ -259,7 +258,7 @@ public class ExtendedPluginPaletteProvider extends AbstractProvider implements I
 				@Override
 				public ImageDescriptor defaultCase(org.eclipse.emf.ecore.EObject object) {
 					return null;
-				};
+				}
 			}.doSwitch(configuration);
 		}
 

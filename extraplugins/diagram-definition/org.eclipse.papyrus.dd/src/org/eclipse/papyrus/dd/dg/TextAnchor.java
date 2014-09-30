@@ -111,7 +111,7 @@ public enum TextAnchor implements Enumerator {
 	 *
 	 * @generated
 	 */
-	private static final TextAnchor[] VALUES_ARRAY = new TextAnchor[] { START, MIDDLE, END, };
+	private static final TextAnchor[] VALUES_ARRAY = new TextAnchor[]{ START, MIDDLE, END, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Text Anchor</b></em>' enumerators.
@@ -130,9 +130,9 @@ public enum TextAnchor implements Enumerator {
 	 * @generated
 	 */
 	public static TextAnchor get(String literal) {
-		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+		for(int i = 0; i < VALUES_ARRAY.length; ++i) {
 			TextAnchor result = VALUES_ARRAY[i];
-			if (result.toString().equals(literal)) {
+			if(result.toString().equals(literal)) {
 				return result;
 			}
 		}
@@ -147,9 +147,9 @@ public enum TextAnchor implements Enumerator {
 	 * @generated
 	 */
 	public static TextAnchor getByName(String name) {
-		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+		for(int i = 0; i < VALUES_ARRAY.length; ++i) {
 			TextAnchor result = VALUES_ARRAY[i];
-			if (result.getName().equals(name)) {
+			if(result.getName().equals(name)) {
 				return result;
 			}
 		}
@@ -164,7 +164,7 @@ public enum TextAnchor implements Enumerator {
 	 * @generated
 	 */
 	public static TextAnchor get(int value) {
-		switch (value) {
+		switch(value) {
 		case START_VALUE:
 			return START;
 		case MIDDLE_VALUE:
@@ -256,4 +256,4 @@ public enum TextAnchor implements Enumerator {
 	public String toString() {
 		return literal;
 	}
-} // TextAnchor
+} //TextAnchor

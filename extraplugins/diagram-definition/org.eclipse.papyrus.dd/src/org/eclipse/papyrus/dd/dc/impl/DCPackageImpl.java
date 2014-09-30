@@ -12,7 +12,6 @@
 package org.eclipse.papyrus.dd.dc.impl;
 
 import java.awt.Color;
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
@@ -105,7 +104,8 @@ public class DCPackageImpl extends EPackageImpl implements DCPackage {
 	 * Creates an instance of the model <b>Package</b>, registered with {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the
 	 * package package URI value.
 	 * <p>
-	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the
+	 * package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.dd.dc.DCPackage#eNS_URI
@@ -128,7 +128,8 @@ public class DCPackageImpl extends EPackageImpl implements DCPackage {
 	 * and for any others upon which it depends.
 	 *
 	 * <p>
-	 * This method is used to initialize {@link DCPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * This method is used to initialize {@link DCPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they
+	 * should simply access that field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
@@ -136,11 +137,11 @@ public class DCPackageImpl extends EPackageImpl implements DCPackage {
 	 * @generated
 	 */
 	public static DCPackage init() {
-		if (isInited) {
-			return (DCPackage) EPackage.Registry.INSTANCE.getEPackage(DCPackage.eNS_URI);
+		if(isInited) {
+			return (DCPackage)EPackage.Registry.INSTANCE.getEPackage(DCPackage.eNS_URI);
 		}
 		// Obtain or create and register package
-		DCPackageImpl theDCPackage = (DCPackageImpl) (EPackage.Registry.INSTANCE.get(eNS_URI) instanceof DCPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new DCPackageImpl());
+		DCPackageImpl theDCPackage = (DCPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof DCPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new DCPackageImpl());
 		isInited = true;
 		// Create package meta-data objects
 		theDCPackage.createPackageContents();
@@ -178,7 +179,7 @@ public class DCPackageImpl extends EPackageImpl implements DCPackage {
 	 */
 	@Override
 	public EAttribute getPoint_X() {
-		return (EAttribute) pointEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)pointEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -188,7 +189,7 @@ public class DCPackageImpl extends EPackageImpl implements DCPackage {
 	 */
 	@Override
 	public EAttribute getPoint_Y() {
-		return (EAttribute) pointEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)pointEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -208,7 +209,7 @@ public class DCPackageImpl extends EPackageImpl implements DCPackage {
 	 */
 	@Override
 	public EAttribute getDimension_Width() {
-		return (EAttribute) dimensionEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)dimensionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -218,7 +219,7 @@ public class DCPackageImpl extends EPackageImpl implements DCPackage {
 	 */
 	@Override
 	public EAttribute getDimension_Height() {
-		return (EAttribute) dimensionEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)dimensionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -258,7 +259,7 @@ public class DCPackageImpl extends EPackageImpl implements DCPackage {
 	 */
 	@Override
 	public EAttribute getBounds_X() {
-		return (EAttribute) boundsEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)boundsEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -268,7 +269,7 @@ public class DCPackageImpl extends EPackageImpl implements DCPackage {
 	 */
 	@Override
 	public EAttribute getBounds_Y() {
-		return (EAttribute) boundsEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)boundsEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -278,7 +279,7 @@ public class DCPackageImpl extends EPackageImpl implements DCPackage {
 	 */
 	@Override
 	public EAttribute getBounds_Width() {
-		return (EAttribute) boundsEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)boundsEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -288,7 +289,7 @@ public class DCPackageImpl extends EPackageImpl implements DCPackage {
 	 */
 	@Override
 	public EAttribute getBounds_Height() {
-		return (EAttribute) boundsEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)boundsEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -378,7 +379,7 @@ public class DCPackageImpl extends EPackageImpl implements DCPackage {
 	 */
 	@Override
 	public DCFactory getDCFactory() {
-		return (DCFactory) getEFactoryInstance();
+		return (DCFactory)getEFactoryInstance();
 	}
 
 	/**
@@ -397,7 +398,7 @@ public class DCPackageImpl extends EPackageImpl implements DCPackage {
 	 * @generated
 	 */
 	public void createPackageContents() {
-		if (isCreated) {
+		if(isCreated) {
 			return;
 		}
 		isCreated = true;
@@ -442,7 +443,7 @@ public class DCPackageImpl extends EPackageImpl implements DCPackage {
 	 * @generated
 	 */
 	public void initializePackageContents() {
-		if (isInitialized) {
+		if(isInitialized) {
 			return;
 		}
 		isInitialized = true;
@@ -540,7 +541,7 @@ public class DCPackageImpl extends EPackageImpl implements DCPackage {
 	 */
 	protected void createEcoreAnnotations() {
 		String source = "http://www.eclipse.org/emf/2002/Ecore";
-		addAnnotation(this, source, new String[] { "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL" });
+		addAnnotation(this, source, new String[]{ "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL" });
 	}
 
 	/**
@@ -552,9 +553,9 @@ public class DCPackageImpl extends EPackageImpl implements DCPackage {
 	 */
 	protected void createOCLAnnotations() {
 		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";
-		addAnnotation(getDimension__NonNegativeWidth__DiagnosticChain_Map(), source, new String[] { "body", "width >=0" });
-		addAnnotation(getDimension__NonNegativeHeight__DiagnosticChain_Map(), source, new String[] { "body", "height >=0" });
-		addAnnotation(getBounds__NonNegativeWidth__DiagnosticChain_Map(), source, new String[] { "body", "width >= 0" });
-		addAnnotation(getBounds__NonNegativeHeight__DiagnosticChain_Map(), source, new String[] { "body", "height >=0" });
+		addAnnotation(getDimension__NonNegativeWidth__DiagnosticChain_Map(), source, new String[]{ "body", "width >=0" });
+		addAnnotation(getDimension__NonNegativeHeight__DiagnosticChain_Map(), source, new String[]{ "body", "height >=0" });
+		addAnnotation(getBounds__NonNegativeWidth__DiagnosticChain_Map(), source, new String[]{ "body", "width >= 0" });
+		addAnnotation(getBounds__NonNegativeHeight__DiagnosticChain_Map(), source, new String[]{ "body", "height >=0" });
 	}
 } // DCPackageImpl

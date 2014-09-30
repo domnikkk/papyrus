@@ -54,7 +54,7 @@ public interface Ellipse extends GraphicalElement {
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Center</em>' containment reference.
+	 *        the new value of the '<em>Center</em>' containment reference.
 	 * @see #getCenter()
 	 * @generated
 	 */
@@ -80,7 +80,7 @@ public interface Ellipse extends GraphicalElement {
 	 * end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Radii</em>' containment reference.
+	 *        the new value of the '<em>Radii</em>' containment reference.
 	 * @see #getRadii()
 	 * @generated
 	 */

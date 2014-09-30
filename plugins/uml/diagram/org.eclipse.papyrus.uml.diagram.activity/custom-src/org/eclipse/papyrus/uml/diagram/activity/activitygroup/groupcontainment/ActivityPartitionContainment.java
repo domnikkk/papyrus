@@ -62,6 +62,7 @@ public class ActivityPartitionContainment extends AbstractContainerNodeDescripto
 		references.add(UMLPackage.eINSTANCE.getActivityPartition_Node());
 		references.add(UMLPackage.eINSTANCE.getActivityPartition_Edge());
 		references.add(UMLPackage.eINSTANCE.getActivityPartition_Subpartition());
+		references.add(UMLPackage.eINSTANCE.getElement_OwnedComment());
 		return references;
 	}
 

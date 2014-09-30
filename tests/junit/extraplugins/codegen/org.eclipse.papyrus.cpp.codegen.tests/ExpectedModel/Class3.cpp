@@ -17,7 +17,9 @@
 
 /**
  * Inherited method overriding.
- * @param a @param b @param  
+ * @param a 
+ * @param b 
+ * @return  
  */
 double Class3::virtualOp(double /*in*/a, double /*in*/b) {
 	return a + b;
@@ -25,18 +27,14 @@ double Class3::virtualOp(double /*in*/a, double /*in*/b) {
 
 /**
  * Inherited virtual destructor
- * 
  */
 Class3::~Class3() {
-
 }
 
 /**
  * Default constructor
- * 
  */
 Class3::Class3() {
-
 }
 
 /************************************************************

@@ -20,6 +20,7 @@ import org.eclipse.gef.commands.UnexecutableCommand;
 import org.eclipse.papyrus.uml.diagram.common.handlers.ParametricAndListeningHandler;
 import org.eclipse.papyrus.uml.diagram.common.layout.LayoutUtils;
 import org.eclipse.papyrus.uml.diagram.menu.actions.CustomAlignAction;
+//import org.eclipse.papyrus.uml.diagram.menu.actions.CustomAlignAction2;
 
 
 /**
@@ -54,6 +55,7 @@ public class AlignementHandler extends ParametricAndListeningHandler {
 		this.action = new CustomAlignAction(getAlignment(this.parameter), this.getSelectedElements());
 		Command cmd = action.getCommand();
 		return (cmd == null) ? UnexecutableCommand.INSTANCE : cmd;
+		
 	}
 
 	/**
@@ -88,4 +90,5 @@ public class AlignementHandler extends ParametricAndListeningHandler {
 		}
 		return PositionConstants.NONE;
 	}
+	
 }

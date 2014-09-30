@@ -1,0 +1,188 @@
+/*****************************************************************************
+ * Copyright (c) 2013, 2014 CEA LIST.
+ *
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
+ *****************************************************************************/
+import org.eclipse.papyrus.m2m.qvto.UI;
+import org.eclipse.papyrus.migration.rsa.ProfileBaseHelper;
+import org.eclipse.papyrus.m2m.qvto.EMFResource;
+import libraries.EclipseUI;
+
+modeltype uml "strict" uses 'http://www.eclipse.org/uml2/5.0.0/UML';
+modeltype notation "strict" uses 'http://www.eclipse.org/gmf/runtime/1.0.2/notation';
+modeltype defaultProfile "strict" uses 'http://www.eclipse.org/papyrus/profile/default';
+modeltype documentation "strict" uses 'http://www.eclipse.org/papyrus/documentation';
+modeltype validation "strict" uses 'http://www.eclipse.org/papyrus/dsmlvalidation';
+modeltype profileBase "strict" uses 'http://www.eclipse.org/papyrus/profile/profilebase';
+modeltype ecore "strict" uses 'http://www.eclipse.org/emf/2002/Ecore';
+modeltype config "strict" uses 'http:///RSAToPapyrusParameters.ecore';
+
+transformation RSAProfilesToPapyrus(inout semantics : uml, inout notationModel : notation, in papyrusProfiles : /* Profiles + EObjects (Stereotype applications) */ uml, in profileDefinitions : /* EPackage */ ecore, in param : config);
+
+property validationURI : String = 'http://www.eclipse.org/papyrus/dsmlvalidation';
+
+property documentationURI : String = 'http://www.eclipse.org/papyrus/documentation';
+
+property profileBaseURI : String = 'pathmap://UML2_MSL_PROFILES/ProfileBase.epx';
+
+property defaultProfileURI : String = 'pathmap://UML2_MSL_PROFILES/Default.epx';
+
+main() {
+	semantics.objectsOfType(defaultProfile::URL).map toHyperlink();
+
+	semantics.objectsOfType(ProfileApplication).map toPapyrusValidationProfile();
+	semantics.objectsOfType(profileBase::ProfileConstraint).map toValidationRule();
+	
+	semantics.objectsOfType(ProfileApplication).map toPapyrusDocumentationProfile();
+	semantics.objectsOfType(defaultProfile::Documentation).map toDocumentation();
+	
+	if param.rootObjects()[Config]->any(true).removeUnmappedProfilesAndStereotypes then {
+		
+		//unapply deployment profile
+		
+		semantics.objectsOfType(ProfileApplication).map removeDeploymentProfile();
+		
+		//remove DefaultLanguage stereotype
+		
+		semantics.rootObjects()[DefaultLanguage].map delete();
+		
+	} endif;
+}
+
+mapping ProfileApplication::removeDeploymentProfile() when {
+	self.appliedProfile.oclAsType(EObject).getURI().startsWith('pathmap://UML2_MSL_PROFILES/Deployment.epx');
+}{
+	semantics.removeElement(self);
+}
+
+mapping DefaultLanguage::delete() {
+	semantics.removeElement(self);
+}
+
+query ProfileApplication::getDefinitionAnnotation() : EAnnotation {
+	return self.getEAnnotation('http://www.eclipse.org/uml2/2.0.0/UML');
+}
+
+query ProfileApplication::getDefinition() : EPackage {
+	return self.getDefinitionAnnotation()._references->any(oclIsKindOf(EPackage)).oclAsType(EPackage);
+}
+
+/** Profile Base -> Validation **/
+
+mapping inout ProfileApplication::toPapyrusValidationProfile() when {
+	self.getDefinition().oclAsType(EObject).getURI().startsWith(profileBaseURI);
+}{
+	self.appliedProfile := getValidationProfile();
+	self.getDefinitionAnnotation()._references := profileDefinitions.rootObjects()[EPackage]->any(nsURI = validationURI).oclAsType(EObject);
+	
+	self.eAnnotations := self.getDefinitionAnnotation(); //Remove all other annotations
+}
+
+mapping ProfileConstraint::toValidationRule() : ValidationRule {
+	result.severity := self.severity.toSeverityCode();
+	result.mode := self.evaluationMode.toEvaluationMode();
+	result.isEnabledByDefault := true;
+	result.base_Constraint := self.base_Constraint;
+	result.statusCode := self.severity.toStatusCode();
+	result.message := self.getConstraintMessage();
+	//result.description := null;
+	//result.target := null;
+	//result._class := null;
+	//result.id := null;
+	
+	semantics.removeElement(self);
+}
+
+query defaultProfile::Severity::toSeverityCode() : validation::Severity{
+	return switch {
+		case (self = defaultProfile::Severity::error) validation::Severity::ERROR;
+		case (self = defaultProfile::Severity::warning) validation::Severity::WARNING;
+		case (self = defaultProfile::Severity::info) validation::Severity::INFO;
+	};
+	
+}
+
+query defaultProfile::Mode::toEvaluationMode() : validation::Mode {
+	return if self = defaultProfile::Mode::batch then validation::Mode::Batch else validation::Mode::Live endif;
+}
+
+query defaultProfile::Severity::toStatusCode() : Integer {
+	return switch {
+		case (self = defaultProfile::Severity::error) 3;
+		case (self = defaultProfile::Severity::warning) 2;
+		case (self = defaultProfile::Severity::info) 1;
+	};
+}
+
+query getValidationProfile() : Profile {
+	return papyrusProfiles.rootObjects()[Profile]->any(URI = validationURI);
+}
+
+/** Default Profile -> Documentation **/
+
+mapping inout ProfileApplication::toPapyrusDocumentationProfile() when {
+	self.getDefinition().oclAsType(EObject).getURI().startsWith(defaultProfileURI);
+}{
+	self.appliedProfile := getDocumentationProfile();
+	self.getDefinitionAnnotation()._references := profileDefinitions.rootObjects()[EPackage]->any(nsURI = documentationURI).oclAsType(EObject);
+	
+	self.eAnnotations := self.getDefinitionAnnotation(); //Remove all other annotations
+}
+
+mapping defaultProfile::Documentation::toDocumentation() : documentation::Documentation {
+	result.base_Comment := self.base_Comment;
+	
+	semantics.removeElement(self);
+}
+
+query getDocumentationProfile() : Profile {
+	return papyrusProfiles.objectsOfType(Profile)->any(URI = documentationURI); //DocumentationProfile is not a root profile
+}
+
+/** Default Profile : Link/URL -> Hyperlink **/
+
+mapping inout URL::toHyperlink() {
+	var comment := self.base_Comment;
+	
+	var commentDisplays := notationModel.objectsOfType(Shape)->select(element = comment.oclAsType(EObject)); //All views representing the comment 
+	
+	var label := self.displayName;
+	var url := comment.body;
+	
+	/** In RSA, the body holds the URL, and the Stereotype holds the label */
+	/** In Papyrus, the body holds the label, and the EAnnotation holds the URL */
+	
+	comment.body := label;
+	
+	commentDisplays.map createHyperlinkAnnotation(url);
+	
+	end {
+		semantics.removeElement(self);
+	}
+}
+
+mapping Shape::createHyperlinkAnnotation(url : String) : EAnnotation {
+	result.eModelElement := self;
+	result.source := 'PapyrusHyperLink__web';
+	
+	result.details += object EStringToStringMapEntry {
+		key := "tooltip_text";
+		value := url;
+	};
+	
+	result.details += object EStringToStringMapEntry {
+		key := "link";
+		value := url;
+	};
+	
+	result.details += object EStringToStringMapEntry {
+		key := "is_default_navigation";
+		value := "true";
+	};
+}

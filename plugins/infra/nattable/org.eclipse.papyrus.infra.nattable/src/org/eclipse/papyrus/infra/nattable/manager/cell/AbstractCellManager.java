@@ -32,20 +32,6 @@ import org.eclipse.papyrus.infra.tools.converter.ConvertedValueContainer;
  */
 public abstract class AbstractCellManager implements ICellManager {
 
-
-	/**
-	 *
-	 * @see org.eclipse.papyrus.infra.nattable.manager.cell.ICellManager#handles(java.lang.Object, java.lang.Object)
-	 *
-	 * @param columnElement
-	 * @param rowElement
-	 * @return
-	 */
-	@Override
-	public boolean handles(Object columnElement, Object rowElement) {
-		return false;
-	}
-
 	/**
 	 *
 	 * @see org.eclipse.papyrus.infra.nattable.manager.cell.ICellManager#getValue(java.lang.Object, java.lang.Object, INattableModelManager)

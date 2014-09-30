@@ -16,7 +16,9 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EStructuralFeature;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemColorProvider;
@@ -28,6 +30,7 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
 import org.eclipse.papyrus.dd.dg.DGFactory;
 import org.eclipse.papyrus.dd.dg.DGPackage;
 import org.eclipse.papyrus.dd.dg.Group;
@@ -59,7 +62,7 @@ public class GroupItemProvider extends GraphicalElementItemProvider implements I
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null) {
+		if(itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 			addLayoutPropertyDescriptor(object);
 		}
@@ -74,12 +77,12 @@ public class GroupItemProvider extends GraphicalElementItemProvider implements I
 	 * @generated
 	 */
 	protected void addLayoutPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Group_layout_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_Group_layout_feature", "_UI_Group_type"), DGPackage.Literals.GROUP__LAYOUT, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Group_layout_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Group_layout_feature", "_UI_Group_type"), DGPackage.Literals.GROUP__LAYOUT, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
@@ -87,7 +90,7 @@ public class GroupItemProvider extends GraphicalElementItemProvider implements I
 	 */
 	@Override
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null) {
+		if(childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(DGPackage.Literals.GROUP__MEMBER);
 		}
@@ -126,7 +129,7 @@ public class GroupItemProvider extends GraphicalElementItemProvider implements I
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = getLabel((Group) object);
+		String label = getLabel((Group)object);
 		return label == null || label.length() == 0 ? getString("_UI_Group_type") : getString("_UI_Group_type") + " " + label;
 	}
 
@@ -141,7 +144,7 @@ public class GroupItemProvider extends GraphicalElementItemProvider implements I
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-		switch (notification.getFeatureID(Group.class)) {
+		switch(notification.getFeatureID(Group.class)) {
 		case DGPackage.GROUP__LAYOUT:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;

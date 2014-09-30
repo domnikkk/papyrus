@@ -12,9 +12,8 @@
 package org.eclipse.papyrus.dd.dg;
 
 import java.util.Map;
-
 import org.eclipse.emf.common.util.DiagnosticChain;
-import org.eclipse.papyrus.dd.dc.Point;
+import org.eclipse.papyrus.dd.dc.Bounds;
 
 /**
  * <!-- begin-user-doc --> A representation of the model object ' <em><b>Text</b></em>'. <!-- end-user-doc -->
@@ -27,7 +26,7 @@ import org.eclipse.papyrus.dd.dc.Point;
  * The following features are supported:
  * <ul>
  * <li>{@link org.eclipse.papyrus.dd.dg.Text#getData <em>Data</em>}</li>
- * <li>{@link org.eclipse.papyrus.dd.dg.Text#getPosition <em>Position</em>}</li>
+ * <li>{@link org.eclipse.papyrus.dd.dg.Text#getBounds <em>Bounds</em>}</li>
  * <li>{@link org.eclipse.papyrus.dd.dg.Text#getAnchor <em>Anchor</em>}</li>
  * </ul>
  * </p>
@@ -57,37 +56,39 @@ public interface Text extends GraphicalElement {
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Data</em>' attribute.
+	 *        the new value of the '<em>Data</em>' attribute.
 	 * @see #getData()
 	 * @generated
 	 */
 	void setData(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Position</b></em>' containment
-	 * reference. <!-- begin-user-doc --> <!-- end-user-doc --> <!--
-	 * begin-model-doc --> the bounds inside which the text is rendered
-	 * (possibly wrapped into multiple lines) <!-- end-model-doc -->
+	 * Returns the value of the '<em><b>Bounds</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * the bounds inside which the text is rendered (possibly wrapped into multiple lines)
+	 * <!-- end-model-doc -->
 	 *
-	 * @return the value of the '<em>Position</em>' containment reference.
-	 * @see #setPosition(Point)
-	 * @see org.eclipse.papyrus.dd.dg.DGPackage#getText_Position()
+	 * @return the value of the '<em>Bounds</em>' containment reference.
+	 * @see #setBounds(Bounds)
+	 * @see org.eclipse.papyrus.dd.dg.DGPackage#getText_Bounds()
 	 * @model containment="true" required="true" ordered="false"
 	 * @generated
 	 */
-	Point getPosition();
+	Bounds getBounds();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.papyrus.dd.dg.Text#getPosition <em>Position</em>}' containment reference.
-	 * <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
+	 * Sets the value of the '{@link org.eclipse.papyrus.dd.dg.Text#getBounds <em>Bounds</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Position</em>' containment reference.
-	 * @see #getPosition()
+	 *        the new value of the '<em>Bounds</em>' containment reference.
+	 * @see #getBounds()
 	 * @generated
 	 */
-	void setPosition(Point value);
+	void setBounds(Bounds value);
 
 	/**
 	 * Returns the value of the '<em><b>Anchor</b></em>' attribute.
@@ -113,7 +114,7 @@ public interface Text extends GraphicalElement {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Anchor</em>' attribute.
+	 *        the new value of the '<em>Anchor</em>' attribute.
 	 * @see org.eclipse.papyrus.dd.dg.TextAnchor
 	 * @see #getAnchor()
 	 * @generated
@@ -124,10 +125,10 @@ public interface Text extends GraphicalElement {
 	 * <!-- begin-user-doc --> <!-- end-user-doc --> <!-- begin-model-doc -->
 	 *
 	 * @param diagnostics
-	 *            The chain of diagnostics to which problems are to be appended.
+	 *        The chain of diagnostics to which problems are to be appended.
 	 * @param context
-	 *            The cache of context-specific information. <!-- end-model-doc
-	 *            -->
+	 *        The cache of context-specific information. <!-- end-model-doc
+	 *        -->
 	 * @model annotation=
 	 *        "http://www.eclipse.org/emf/2002/Ecore/OCL body='data->notEmpty() implies data.size() > 0'"
 	 * @generated

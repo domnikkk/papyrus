@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dg:RootCanvas xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dg="http://www.omg.org/spec/DD/20110901/DG">
+  <member xsi:type="dg:Line" endMarker="white-closed-arrow">
+    <start x="0.0" y="30.0"/>
+    <end x="90.0" y="30.0"/>
+  </member>
+  <member xsi:type="dg:Polyline" endMarker="open-arrow" midMarker="white-circle">
+    <transform xsi:type="dg:Translate" deltaX="100.0"/>
+    <point x="0.0" y="30.0"/>
+    <point x="70.0" y="30.0"/>
+    <point x="90.0" y="60.0"/>
+  </member>
+  <member xsi:type="dg:Path" endMarker="black-closed-arrow" midMarker="black-circle" startMarker="black-diamond">
+    <transform xsi:type="dg:Translate" deltaX="200.0"/>
+    <command xsi:type="dg:MoveTo">
+      <point x="0.0" y="60.0"/>
+    </command>
+    <command xsi:type="dg:LineTo">
+      <point x="50.0" y="30.0"/>
+    </command>
+    <command xsi:type="dg:LineTo">
+      <point x="90.0" y="60.0"/>
+    </command>
+  </member>
+  <member xsi:type="dg:Path" endMarker="black-closed-arrow" startMarker="white-diamond">
+    <transform xsi:type="dg:Translate" deltaX="300.0"/>
+    <command xsi:type="dg:MoveTo">
+      <point x="0.0" y="60.0"/>
+    </command>
+    <command xsi:type="dg:LineTo">
+      <point x="50.0" y="30.0"/>
+    </command>
+  </member>
+  <member xsi:type="dg:Path" endMarker="black-closed-arrow" midMarker="white-circle" startMarker="black-diamond">
+    <style strokeWidth="3.0"/>
+    <transform xsi:type="dg:Translate" deltaX="10.0" deltaY="50.0"/>
+    <command xsi:type="dg:MoveTo">
+      <point x="0.0" y="60.0"/>
+    </command>
+    <command xsi:type="dg:LineTo">
+      <point x="100.0" y="30.0"/>
+    </command>
+    <command xsi:type="dg:LineTo">
+      <point x="200.0" y="60.0"/>
+    </command>
+  </member>
+  <definitions>
+    <definition xsi:type="dg:Marker" id="open-arrow">
+      <member xsi:type="dg:Polyline">
+        <point/>
+        <point x="12.0" y="5.0"/>
+        <point y="10.0"/>
+      </member>
+      <size width="12.0" height="10.0"/>
+      <reference x="12.0" y="5.0"/>
+    </definition>
+    <definition xsi:type="dg:Marker" id="white-closed-arrow">
+      <member xsi:type="dg:Polygon">
+        <style>
+          <fill color="#FFFFFF"/>
+        </style>
+        <point/>
+        <point x="12.0" y="5.0"/>
+        <point y="10.0"/>
+      </member>
+      <size width="12.0" height="10.0"/>
+      <reference x="12.0" y="5.0"/>
+    </definition>
+    <definition xsi:type="dg:Marker" id="black-closed-arrow">
+      <member xsi:type="dg:Polygon">
+        <style>
+          <fill color="#000000"/>
+        </style>
+        <point/>
+        <point x="12.0" y="5.0"/>
+        <point y="10.0"/>
+      </member>
+      <size width="12.0" height="10.0"/>
+      <reference x="12.0" y="5.0"/>
+    </definition>
+    <definition xsi:type="dg:Marker" id="white-diamond">
+      <member xsi:type="dg:Polygon">
+        <style>
+          <fill color="#FFFFFF"/>
+        </style>
+        <point y="5.0"/>
+        <point x="8.0" y="0.0"/>
+        <point x="16.0" y="5.0"/>
+        <point x="8.0" y="10.0"/>
+      </member>
+      <size width="16.0" height="10.0"/>
+      <reference x="0.0" y="5.0"/>
+    </definition>
+    <definition xsi:type="dg:Marker" id="black-diamond">
+      <member xsi:type="dg:Polygon">
+        <style>
+          <fill color="#000000"/>
+        </style>
+        <point y="5.0"/>
+        <point x="8.0" y="0.0"/>
+        <point x="16.0" y="5.0"/>
+        <point x="8.0" y="10.0"/>
+      </member>
+      <size width="16.0" height="10.0"/>
+      <reference x="0.0" y="5.0"/>
+    </definition>
+    <definition xsi:type="dg:Marker" id="white-circle">
+      <member xsi:type="dg:Circle" radius="5.0">
+        <style>
+          <fill color="#FFFFFF"/>
+        </style>
+        <center x="5.0" y="5.0"/>
+      </member>
+      <size width="10.0" height="10.0"/>
+      <reference x="5.0" y="5.0"/>
+    </definition>
+    <definition xsi:type="dg:Marker" id="black-circle">
+      <member xsi:type="dg:Circle" radius="5.0">
+        <style>
+          <fill color="#000000"/>
+        </style>
+        <center x="5.0" y="5.0"/>
+      </member>
+      <size width="10.0" height="10.0"/>
+      <reference x="5.0" y="5.0"/>
+    </definition>
+    <styleSheet>
+      <rule>
+        <selector/>
+        <style strokeWidth="1.0">
+          <fill/>
+          <stroke color="#000000"/>
+        </style>
+      </rule>
+    </styleSheet>
+  </definitions>
+</dg:RootCanvas>

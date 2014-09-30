@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText=" * Copyright (c) 2013, 2014 CEA LIST.&#xD;&#xA; *&#xD;&#xA; * All rights reserved. This program and the accompanying materials&#xD;&#xA; * are made available under the terms of the Eclipse Public License v1.0&#xD;&#xA; * which accompanies this distribution, and is available at&#xD;&#xA; * http://www.eclipse.org/legal/epl-v10.html&#xD;&#xA; *&#xD;&#xA; * Contributors:&#xD;&#xA; *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation"
+    modelDirectory="/org.eclipse.papyrus.migration.rsa/src-gen" modelPluginID="org.eclipse.papyrus.migration.rsa"
+    modelName="PapyrusUMLNotation" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false"
+    language="" operationReflection="true" importOrganizing="true">
+  <foreignModel>PapyrusUMLNotation.ecore</foreignModel>
+  <genPackages prefix="PapyrusUMLNotation" basePackage="org.eclipse.papyrus.migration.rsa"
+      disposableProviderFactory="true" fileExtensions="umlnotation" ecorePackage="PapyrusUMLNotation.ecore#/">
+    <genClasses ecoreClass="PapyrusUMLNotation.ecore#//UMLDiagram"/>
+    <genClasses ecoreClass="PapyrusUMLNotation.ecore#//UMLFrame"/>
+    <genClasses ecoreClass="PapyrusUMLNotation.ecore#//UMLShapeCompartment">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PapyrusUMLNotation.ecore#//UMLShapeCompartment/verticalAlignment"/>
+    </genClasses>
+    <genClasses ecoreClass="PapyrusUMLNotation.ecore#//UMLShape"/>
+    <genClasses ecoreClass="PapyrusUMLNotation.ecore#//UMLConnector"/>
+    <genClasses image="false" ecoreClass="PapyrusUMLNotation.ecore#//UMLView">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PapyrusUMLNotation.ecore#//UMLView/showStereotype"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PapyrusUMLNotation.ecore#//UMLView/showListVisibility"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PapyrusUMLNotation.ecore#//UMLView/showListSignature"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PapyrusUMLNotation.ecore#//UMLView/alignment"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PapyrusUMLNotation.ecore#//UMLView/showStereotypeAttributeCompartment"/>
+    </genClasses>
+    <genClasses ecoreClass="PapyrusUMLNotation.ecore#//UMLComponent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PapyrusUMLNotation.ecore#//UMLComponent/showWhitebox"/>
+    </genClasses>
+    <genClasses ecoreClass="PapyrusUMLNotation.ecore#//UMLClassifierShape">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PapyrusUMLNotation.ecore#//UMLClassifierShape/useClassifierShape"/>
+    </genClasses>
+  </genPackages>
+  <genPackages prefix="Notation" ecorePackage="http://www.eclipse.org/gmf/runtime/1.0.2/notation#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//Sorting">
+      <genEnumLiterals ecoreEnumLiteral="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//Sorting/None"/>
+      <genEnumLiterals ecoreEnumLiteral="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//Sorting/Manual"/>
+      <genEnumLiterals ecoreEnumLiteral="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//Sorting/Automatic"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//Filtering">
+      <genEnumLiterals ecoreEnumLiteral="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//Filtering/None"/>
+      <genEnumLiterals ecoreEnumLiteral="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//Filtering/Manual"/>
+      <genEnumLiterals ecoreEnumLiteral="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//Filtering/Automatic"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//Routing">
+      <genEnumLiterals ecoreEnumLiteral="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//Routing/Manual"/>
+      <genEnumLiterals ecoreEnumLiteral="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//Routing/Rectilinear"/>
+      <genEnumLiterals ecoreEnumLiteral="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//Routing/Tree"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//Smoothness">
+      <genEnumLiterals ecoreEnumLiteral="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//Smoothness/None"/>
+      <genEnumLiterals ecoreEnumLiteral="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//Smoothness/Normal"/>
+      <genEnumLiterals ecoreEnumLiteral="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//Smoothness/Less"/>
+      <genEnumLiterals ecoreEnumLiteral="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//Smoothness/More"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//JumpLinkStatus">
+      <genEnumLiterals ecoreEnumLiteral="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//JumpLinkStatus/None"/>
+      <genEnumLiterals ecoreEnumLiteral="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//JumpLinkStatus/All"/>
+      <genEnumLiterals ecoreEnumLiteral="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//JumpLinkStatus/Below"/>
+      <genEnumLiterals ecoreEnumLiteral="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//JumpLinkStatus/Above"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//JumpLinkType">
+      <genEnumLiterals ecoreEnumLiteral="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//JumpLinkType/Semicircle"/>
+      <genEnumLiterals ecoreEnumLiteral="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//JumpLinkType/Square"/>
+      <genEnumLiterals ecoreEnumLiteral="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//JumpLinkType/Chamfered"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//Alignment">
+      <genEnumLiterals ecoreEnumLiteral="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//Alignment/Left"/>
+      <genEnumLiterals ecoreEnumLiteral="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//Alignment/Right"/>
+      <genEnumLiterals ecoreEnumLiteral="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//Alignment/Center"/>
+      <genEnumLiterals ecoreEnumLiteral="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//Alignment/Top"/>
+      <genEnumLiterals ecoreEnumLiteral="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//Alignment/Bottom"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//SortingDirection">
+      <genEnumLiterals ecoreEnumLiteral="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//SortingDirection/Ascending"/>
+      <genEnumLiterals ecoreEnumLiteral="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//SortingDirection/Descending"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//MeasurementUnit">
+      <genEnumLiterals ecoreEnumLiteral="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//MeasurementUnit/Himetric"/>
+      <genEnumLiterals ecoreEnumLiteral="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//MeasurementUnit/Pixel"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//TextAlignment">
+      <genEnumLiterals ecoreEnumLiteral="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//TextAlignment/Left"/>
+      <genEnumLiterals ecoreEnumLiteral="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//TextAlignment/Right"/>
+      <genEnumLiterals ecoreEnumLiteral="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//TextAlignment/Center"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//LineType">
+      <genEnumLiterals ecoreEnumLiteral="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//LineType/Solid"/>
+      <genEnumLiterals ecoreEnumLiteral="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//LineType/Dash"/>
+      <genEnumLiterals ecoreEnumLiteral="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//LineType/Dot"/>
+      <genEnumLiterals ecoreEnumLiteral="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//LineType/DashDot"/>
+      <genEnumLiterals ecoreEnumLiteral="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//LineType/DashDotDot"/>
+      <genEnumLiterals ecoreEnumLiteral="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//LineType/Double"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//ArrowType">
+      <genEnumLiterals ecoreEnumLiteral="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//ArrowType/None"/>
+      <genEnumLiterals ecoreEnumLiteral="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//ArrowType/OpenArrow"/>
+      <genEnumLiterals ecoreEnumLiteral="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//ArrowType/SolidArrow"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//GradientStyle">
+      <genEnumLiterals ecoreEnumLiteral="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//GradientStyle/Vertical"/>
+      <genEnumLiterals ecoreEnumLiteral="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//GradientStyle/Horizontal"/>
+    </genEnums>
+    <genDataTypes ecoreDataType="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//RelativeBendpointList"/>
+    <genDataTypes ecoreDataType="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//FilterKeyList"/>
+    <genDataTypes ecoreDataType="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//SortKeyMap"/>
+    <genDataTypes ecoreDataType="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//GradientData"/>
+    <genClasses ecoreClass="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//Edge">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference http://www.eclipse.org/gmf/runtime/1.0.2/notation#//Edge/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference http://www.eclipse.org/gmf/runtime/1.0.2/notation#//Edge/target"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://www.eclipse.org/gmf/runtime/1.0.2/notation#//Edge/bendpoints"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://www.eclipse.org/gmf/runtime/1.0.2/notation#//Edge/sourceAnchor"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://www.eclipse.org/gmf/runtime/1.0.2/notation#//Edge/targetAnchor"/>
+      <genOperations ecoreOperation="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//Edge/createBendpoints">
+        <genParameters ecoreParameter="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//Edge/createBendpoints/eClass"/>
+      </genOperations>
+      <genOperations ecoreOperation="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//Edge/createSourceAnchor">
+        <genParameters ecoreParameter="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//Edge/createSourceAnchor/eClass"/>
+      </genOperations>
+      <genOperations ecoreOperation="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//Edge/createTargetAnchor">
+        <genParameters ecoreParameter="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//Edge/createTargetAnchor/eClass"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//Node">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://www.eclipse.org/gmf/runtime/1.0.2/notation#//Node/layoutConstraint"/>
+      <genOperations ecoreOperation="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//Node/createLayoutConstraint">
+        <genParameters ecoreParameter="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//Node/createLayoutConstraint/eClass"/>
+      </genOperations>
+    </genClasses>
+    <genClasses image="false" ecoreClass="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//Style"/>
+    <genClasses ecoreClass="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//FillStyle">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/gmf/runtime/1.0.2/notation#//FillStyle/fillColor"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/gmf/runtime/1.0.2/notation#//FillStyle/transparency"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/gmf/runtime/1.0.2/notation#//FillStyle/gradient"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//LineStyle">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/gmf/runtime/1.0.2/notation#//LineStyle/lineColor"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/gmf/runtime/1.0.2/notation#//LineStyle/lineWidth"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//FontStyle">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/gmf/runtime/1.0.2/notation#//FontStyle/fontColor"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/gmf/runtime/1.0.2/notation#//FontStyle/fontName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/gmf/runtime/1.0.2/notation#//FontStyle/fontHeight"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/gmf/runtime/1.0.2/notation#//FontStyle/bold"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/gmf/runtime/1.0.2/notation#//FontStyle/italic"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/gmf/runtime/1.0.2/notation#//FontStyle/underline"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/gmf/runtime/1.0.2/notation#//FontStyle/strikeThrough"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//TitleStyle">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/gmf/runtime/1.0.2/notation#//TitleStyle/showTitle"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//SortingStyle">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/gmf/runtime/1.0.2/notation#//SortingStyle/sorting"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/gmf/runtime/1.0.2/notation#//SortingStyle/sortingKeys"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference http://www.eclipse.org/gmf/runtime/1.0.2/notation#//SortingStyle/sortedObjects"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//DescriptionStyle">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/gmf/runtime/1.0.2/notation#//DescriptionStyle/description"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//LayoutConstraint"/>
+    <genClasses ecoreClass="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//Size">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/gmf/runtime/1.0.2/notation#//Size/width"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/gmf/runtime/1.0.2/notation#//Size/height"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//Location">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/gmf/runtime/1.0.2/notation#//Location/x"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/gmf/runtime/1.0.2/notation#//Location/y"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//Bounds"/>
+    <genClasses ecoreClass="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//Ratio">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/gmf/runtime/1.0.2/notation#//Ratio/value"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//Anchor"/>
+    <genClasses image="false" ecoreClass="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//Bendpoints"/>
+    <genClasses ecoreClass="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//IdentityAnchor">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/gmf/runtime/1.0.2/notation#//IdentityAnchor/id"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//RoutingStyle">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/gmf/runtime/1.0.2/notation#//RoutingStyle/routing"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/gmf/runtime/1.0.2/notation#//RoutingStyle/smoothness"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/gmf/runtime/1.0.2/notation#//RoutingStyle/avoidObstructions"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/gmf/runtime/1.0.2/notation#//RoutingStyle/closestDistance"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/gmf/runtime/1.0.2/notation#//RoutingStyle/jumpLinkStatus"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/gmf/runtime/1.0.2/notation#//RoutingStyle/jumpLinkType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/gmf/runtime/1.0.2/notation#//RoutingStyle/jumpLinksReverse"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//View">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/gmf/runtime/1.0.2/notation#//View/visible"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/gmf/runtime/1.0.2/notation#//View/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/gmf/runtime/1.0.2/notation#//View/mutable"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference http://www.eclipse.org/gmf/runtime/1.0.2/notation#//View/sourceEdges"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference http://www.eclipse.org/gmf/runtime/1.0.2/notation#//View/targetEdges"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://www.eclipse.org/gmf/runtime/1.0.2/notation#//View/children"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://www.eclipse.org/gmf/runtime/1.0.2/notation#//View/styles"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference http://www.eclipse.org/gmf/runtime/1.0.2/notation#//View/element"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference http://www.eclipse.org/gmf/runtime/1.0.2/notation#//View/diagram"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://www.eclipse.org/gmf/runtime/1.0.2/notation#//View/transientChildren"/>
+      <genOperations ecoreOperation="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//View/getStyle">
+        <genParameters ecoreParameter="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//View/getStyle/eClass"/>
+      </genOperations>
+      <genOperations ecoreOperation="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//View/createChild">
+        <genParameters ecoreParameter="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//View/createChild/eClass"/>
+      </genOperations>
+      <genOperations ecoreOperation="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//View/createStyle">
+        <genParameters ecoreParameter="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//View/createStyle/eClass"/>
+      </genOperations>
+      <genOperations ecoreOperation="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//View/getNamedStyle">
+        <genParameters ecoreParameter="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//View/getNamedStyle/eClass"/>
+        <genParameters ecoreParameter="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//View/getNamedStyle/name"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//RelativeBendpoints">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/gmf/runtime/1.0.2/notation#//RelativeBendpoints/points"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//Diagram">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/gmf/runtime/1.0.2/notation#//Diagram/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/gmf/runtime/1.0.2/notation#//Diagram/measurementUnit"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://www.eclipse.org/gmf/runtime/1.0.2/notation#//Diagram/edges"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://www.eclipse.org/gmf/runtime/1.0.2/notation#//Diagram/TransientEdges"/>
+      <genOperations ecoreOperation="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//Diagram/createEdge">
+        <genParameters ecoreParameter="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//Diagram/createEdge/eClass"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//Image">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/gmf/runtime/1.0.2/notation#//Image/data"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//CanonicalStyle">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/gmf/runtime/1.0.2/notation#//CanonicalStyle/canonical"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//ShapeStyle"/>
+    <genClasses ecoreClass="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//ConnectorStyle"/>
+    <genClasses ecoreClass="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//PageStyle">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/gmf/runtime/1.0.2/notation#//PageStyle/pageX"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/gmf/runtime/1.0.2/notation#//PageStyle/pageY"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/gmf/runtime/1.0.2/notation#//PageStyle/pageWidth"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/gmf/runtime/1.0.2/notation#//PageStyle/pageHeight"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//DrawerStyle">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/gmf/runtime/1.0.2/notation#//DrawerStyle/collapsed"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//GuideStyle">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://www.eclipse.org/gmf/runtime/1.0.2/notation#//GuideStyle/horizontalGuides"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://www.eclipse.org/gmf/runtime/1.0.2/notation#//GuideStyle/verticalGuides"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//Guide">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/gmf/runtime/1.0.2/notation#//Guide/position"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://www.eclipse.org/gmf/runtime/1.0.2/notation#//Guide/nodeMap"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//NodeEntry">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/gmf/runtime/1.0.2/notation#//NodeEntry/value"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference http://www.eclipse.org/gmf/runtime/1.0.2/notation#//NodeEntry/key"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//FilteringStyle">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/gmf/runtime/1.0.2/notation#//FilteringStyle/filtering"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/gmf/runtime/1.0.2/notation#//FilteringStyle/filteringKeys"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference http://www.eclipse.org/gmf/runtime/1.0.2/notation#//FilteringStyle/filteredObjects"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//DiagramStyle"/>
+    <genClasses ecoreClass="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//ImageStyle">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/gmf/runtime/1.0.2/notation#//ImageStyle/antiAlias"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/gmf/runtime/1.0.2/notation#//ImageStyle/maintainAspectRatio"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://www.eclipse.org/gmf/runtime/1.0.2/notation#//ImageStyle/cropBound"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//ImageBufferStyle">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://www.eclipse.org/gmf/runtime/1.0.2/notation#//ImageBufferStyle/imageBuffer"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//PropertiesSetStyle">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://www.eclipse.org/gmf/runtime/1.0.2/notation#//PropertiesSetStyle/propertiesMap"/>
+      <genOperations ecoreOperation="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//PropertiesSetStyle/getProperty">
+        <genParameters ecoreParameter="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//PropertiesSetStyle/getProperty/propertyName"/>
+      </genOperations>
+      <genOperations ecoreOperation="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//PropertiesSetStyle/setProperty">
+        <genParameters ecoreParameter="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//PropertiesSetStyle/setProperty/propertyName"/>
+        <genParameters ecoreParameter="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//PropertiesSetStyle/setProperty/newValue"/>
+      </genOperations>
+      <genOperations ecoreOperation="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//PropertiesSetStyle/createProperty">
+        <genParameters ecoreParameter="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//PropertiesSetStyle/createProperty/propertyName"/>
+        <genParameters ecoreParameter="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//PropertiesSetStyle/createProperty/instanceType"/>
+        <genParameters ecoreParameter="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//PropertiesSetStyle/createProperty/initialValue"/>
+      </genOperations>
+      <genOperations ecoreOperation="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//PropertiesSetStyle/removeProperty">
+        <genParameters ecoreParameter="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//PropertiesSetStyle/removeProperty/propertyName"/>
+      </genOperations>
+      <genOperations ecoreOperation="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//PropertiesSetStyle/hasProperty">
+        <genParameters ecoreParameter="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//PropertiesSetStyle/hasProperty/propertyName"/>
+      </genOperations>
+      <genOperations ecoreOperation="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//PropertiesSetStyle/createProperty.1">
+        <genParameters ecoreParameter="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//PropertiesSetStyle/createProperty.1/propertyName"/>
+        <genParameters ecoreParameter="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//PropertiesSetStyle/createProperty.1/initialValue"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//StringToPropertyValueMapEntry">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/gmf/runtime/1.0.2/notation#//StringToPropertyValueMapEntry/key"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://www.eclipse.org/gmf/runtime/1.0.2/notation#//StringToPropertyValueMapEntry/value"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//PropertyValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/gmf/runtime/1.0.2/notation#//PropertyValue/rawValue"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference http://www.eclipse.org/gmf/runtime/1.0.2/notation#//PropertyValue/instanceType"/>
+      <genOperations ecoreOperation="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//PropertyValue/getValue"/>
+      <genOperations ecoreOperation="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//PropertyValue/setValue">
+        <genParameters ecoreParameter="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//PropertyValue/setValue/newValue"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//SingleValueStyle">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/gmf/runtime/1.0.2/notation#//SingleValueStyle/rawValue"/>
+      <genOperations ecoreOperation="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//SingleValueStyle/getValue"/>
+      <genOperations ecoreOperation="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//SingleValueStyle/setValue">
+        <genParameters ecoreParameter="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//SingleValueStyle/setValue/newValue"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//ListValueStyle">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/gmf/runtime/1.0.2/notation#//ListValueStyle/rawValuesList"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//NamedStyle">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/gmf/runtime/1.0.2/notation#//NamedStyle/name"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//StringObjectConverter">
+      <genOperations ecoreOperation="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//StringObjectConverter/getStringFromObject">
+        <genParameters ecoreParameter="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//StringObjectConverter/getStringFromObject/objectValue"/>
+      </genOperations>
+      <genOperations ecoreOperation="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//StringObjectConverter/getObjectFromString">
+        <genParameters ecoreParameter="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//StringObjectConverter/getObjectFromString/stringValue"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//DataTypeStyle">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference http://www.eclipse.org/gmf/runtime/1.0.2/notation#//DataTypeStyle/instanceType"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//IntValueStyle">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/gmf/runtime/1.0.2/notation#//IntValueStyle/intValue"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//IntListValueStyle">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/gmf/runtime/1.0.2/notation#//IntListValueStyle/intListValue"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//BooleanValueStyle">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/gmf/runtime/1.0.2/notation#//BooleanValueStyle/booleanValue"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//DoubleValueStyle">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/gmf/runtime/1.0.2/notation#//DoubleValueStyle/doubleValue"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//DoubleListValueStyle">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/gmf/runtime/1.0.2/notation#//DoubleListValueStyle/doubleListValue"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//StringValueStyle">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/gmf/runtime/1.0.2/notation#//StringValueStyle/stringValue"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//StringListValueStyle">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/gmf/runtime/1.0.2/notation#//StringListValueStyle/stringListValue"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//EObjectValueStyle">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference http://www.eclipse.org/gmf/runtime/1.0.2/notation#//EObjectValueStyle/eObjectValue"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//EObjectListValueStyle">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference http://www.eclipse.org/gmf/runtime/1.0.2/notation#//EObjectListValueStyle/eObjectListValue"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//ByteArrayValueStyle">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/gmf/runtime/1.0.2/notation#//ByteArrayValueStyle/byteArrayValue"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//BooleanListValueStyle">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/gmf/runtime/1.0.2/notation#//BooleanListValueStyle/booleanListValue"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//HintedDiagramLinkStyle">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/gmf/runtime/1.0.2/notation#//HintedDiagramLinkStyle/hint"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//DiagramLinkStyle">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference http://www.eclipse.org/gmf/runtime/1.0.2/notation#//DiagramLinkStyle/diagramLink"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//MultiDiagramLinkStyle">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference http://www.eclipse.org/gmf/runtime/1.0.2/notation#//MultiDiagramLinkStyle/diagramLinks"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//TextStyle">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/gmf/runtime/1.0.2/notation#//TextStyle/textAlignment"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//LineTypeStyle">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/gmf/runtime/1.0.2/notation#//LineTypeStyle/lineType"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//ArrowStyle">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/gmf/runtime/1.0.2/notation#//ArrowStyle/arrowSource"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/gmf/runtime/1.0.2/notation#//ArrowStyle/arrowTarget"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//Shape"/>
+    <genClasses ecoreClass="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//Compartment"/>
+    <genClasses ecoreClass="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//ListCompartment"/>
+    <genClasses ecoreClass="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//Connector"/>
+    <genClasses ecoreClass="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//StandardDiagram"/>
+    <genClasses ecoreClass="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//DecorationNode"/>
+    <genClasses ecoreClass="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//BasicDecorationNode"/>
+    <genClasses ecoreClass="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//BasicCompartment"/>
+    <genClasses ecoreClass="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//BasicSemanticCompartment"/>
+    <genClasses ecoreClass="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//SemanticListCompartment"/>
+    <genClasses ecoreClass="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//RoundedCornersStyle">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/gmf/runtime/1.0.2/notation#//RoundedCornersStyle/roundedBendpointsRadius"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

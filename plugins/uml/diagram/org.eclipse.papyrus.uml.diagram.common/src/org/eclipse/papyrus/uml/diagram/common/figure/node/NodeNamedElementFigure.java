@@ -14,11 +14,9 @@
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.common.figure.node;
 
-import java.util.Iterator;
 import java.util.StringTokenizer;
 
 import org.eclipse.draw2d.Border;
-import org.eclipse.draw2d.FigureListener;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.LayoutManager;
@@ -429,21 +427,6 @@ public class NodeNamedElementFigure extends PapyrusNodeFigure implements IPapyru
 	 */
 	protected IFigure getDefaultLabelsContainer() {
 		return this;
-	}
-
-	/**
-	 * Copy context to.
-	 *
-	 * @param fig
-	 *            the fig
-	 */
-	// @unused
-	public void copyContextTo(IFigure fig) {
-		Iterator it = this.getListeners(FigureListener.class);
-		while (it.hasNext()) {
-			fig.addFigureListener((FigureListener) it.next());
-		}
-
 	}
 
 	/**
@@ -1031,7 +1014,7 @@ public class NodeNamedElementFigure extends PapyrusNodeFigure implements IPapyru
 	 */
 	@Override
 	public void setStereotypePropertiesInCompartment(String stereotypeProperties) {
-		if (stereotypeProperties == null || stereotypeProperties.trim() == "") {
+		if (stereotypeProperties == null || "".equals(stereotypeProperties.trim())) {
 			// remove figure of stereotype properties compartment
 			if (this.stereotypePropertiesContent != null) {
 				getStereotypePropertiesCompartmentContainer().remove(this.stereotypePropertiesContent);

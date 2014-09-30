@@ -58,7 +58,7 @@ public class GraphicalElementItemProvider extends DefinitionItemProvider impleme
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null) {
+		if(itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 			addClipPathPropertyDescriptor(object);
 			addClassPropertyDescriptor(object);
@@ -74,8 +74,7 @@ public class GraphicalElementItemProvider extends DefinitionItemProvider impleme
 	 * @generated
 	 */
 	protected void addClipPathPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_GraphicalElement_clipPath_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_GraphicalElement_clipPath_feature", "_UI_GraphicalElement_type"), DGPackage.Literals.GRAPHICAL_ELEMENT__CLIP_PATH, true, false, true, null, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_GraphicalElement_clipPath_feature"), getString("_UI_PropertyDescriptor_description", "_UI_GraphicalElement_clipPath_feature", "_UI_GraphicalElement_type"), DGPackage.Literals.GRAPHICAL_ELEMENT__CLIP_PATH, true, false, true, null, null, null));
 	}
 
 	/**
@@ -85,8 +84,7 @@ public class GraphicalElementItemProvider extends DefinitionItemProvider impleme
 	 * @generated
 	 */
 	protected void addClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_GraphicalElement_class_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_GraphicalElement_class_feature", "_UI_GraphicalElement_type"), DGPackage.Literals.GRAPHICAL_ELEMENT__CLASS, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_GraphicalElement_class_feature"), getString("_UI_PropertyDescriptor_description", "_UI_GraphicalElement_class_feature", "_UI_GraphicalElement_type"), DGPackage.Literals.GRAPHICAL_ELEMENT__CLASS, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -97,13 +95,12 @@ public class GraphicalElementItemProvider extends DefinitionItemProvider impleme
 	 * @generated
 	 */
 	protected void addLayoutDataPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_GraphicalElement_layoutData_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_GraphicalElement_layoutData_feature", "_UI_GraphicalElement_type"), DGPackage.Literals.GRAPHICAL_ELEMENT__LAYOUT_DATA, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
-				null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_GraphicalElement_layoutData_feature"), getString("_UI_PropertyDescriptor_description", "_UI_GraphicalElement_layoutData_feature", "_UI_GraphicalElement_type"), DGPackage.Literals.GRAPHICAL_ELEMENT__LAYOUT_DATA, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
@@ -111,7 +108,7 @@ public class GraphicalElementItemProvider extends DefinitionItemProvider impleme
 	 */
 	@Override
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null) {
+		if(childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(DGPackage.Literals.GRAPHICAL_ELEMENT__STYLE);
 			childrenFeatures.add(DGPackage.Literals.GRAPHICAL_ELEMENT__TRANSFORM);
@@ -140,7 +137,7 @@ public class GraphicalElementItemProvider extends DefinitionItemProvider impleme
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = getLabel((GraphicalElement) object);
+		String label = getLabel((GraphicalElement)object);
 		return label == null || label.length() == 0 ? getString("_UI_GraphicalElement_type") : getString("_UI_GraphicalElement_type") + " " + label;
 	}
 
@@ -148,16 +145,16 @@ public class GraphicalElementItemProvider extends DefinitionItemProvider impleme
 	 * Get the label of the given graphical element
 	 *
 	 * @param element
-	 *            The graphical element
+	 *        The graphical element
 	 * @return String label of the graphical element
 	 */
 	protected String getLabel(GraphicalElement element) {
 		String label = "";
-		if (element.getId() != null) {
+		if(element.getId() != null) {
 			label += "id=" + element.getId();
 		}
-		if (!element.getClasses().isEmpty()) {
-			if (label.length() > 0) {
+		if(!element.getClasses().isEmpty()) {
+			if(label.length() > 0) {
 				label += ", ";
 			}
 			label += joinString("class", element.getClasses(), ",");
@@ -167,7 +164,7 @@ public class GraphicalElementItemProvider extends DefinitionItemProvider impleme
 
 	private String joinString(String key, Collection<String> values, String sep) {
 		String s = "";
-		for (String v : values) {
+		for(String v : values) {
 			s += (s.length() > 0) ? ", " + v : v;
 		}
 		return key + "=" + s;
@@ -184,7 +181,7 @@ public class GraphicalElementItemProvider extends DefinitionItemProvider impleme
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-		switch (notification.getFeatureID(GraphicalElement.class)) {
+		switch(notification.getFeatureID(GraphicalElement.class)) {
 		case DGPackage.GRAPHICAL_ELEMENT__CLASS:
 		case DGPackage.GRAPHICAL_ELEMENT__LAYOUT_DATA:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));

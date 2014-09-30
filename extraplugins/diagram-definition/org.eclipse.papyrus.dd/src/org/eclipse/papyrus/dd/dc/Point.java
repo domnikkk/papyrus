@@ -54,7 +54,7 @@ public interface Point extends EObject {
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>X</em>' attribute.
+	 *        the new value of the '<em>X</em>' attribute.
 	 * @see #isSetX()
 	 * @see #unsetX()
 	 * @see #getX()
@@ -105,7 +105,7 @@ public interface Point extends EObject {
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Y</em>' attribute.
+	 *        the new value of the '<em>Y</em>' attribute.
 	 * @see #isSetY()
 	 * @see #unsetY()
 	 * @see #getY()

@@ -12,9 +12,13 @@
 package org.eclipse.papyrus.umldi.provider;
 
 import org.eclipse.emf.common.EMFPlugin;
+
 import org.eclipse.emf.common.util.ResourceLocator;
+
 import org.eclipse.emf.ecore.provider.EcoreEditPlugin;
+
 import org.eclipse.papyrus.dd.edit.DDEditPlugin;
+
 import org.eclipse.uml2.uml.edit.UMLEditPlugin;
 
 /**
@@ -52,7 +56,7 @@ public final class UMLDIEditPlugin extends EMFPlugin {
 	 * @generated
 	 */
 	public UMLDIEditPlugin() {
-		super(new ResourceLocator[] { DDEditPlugin.INSTANCE, EcoreEditPlugin.INSTANCE, UMLEditPlugin.INSTANCE, });
+		super(new ResourceLocator[]{ DDEditPlugin.INSTANCE, EcoreEditPlugin.INSTANCE, UMLEditPlugin.INSTANCE, });
 	}
 
 	/**

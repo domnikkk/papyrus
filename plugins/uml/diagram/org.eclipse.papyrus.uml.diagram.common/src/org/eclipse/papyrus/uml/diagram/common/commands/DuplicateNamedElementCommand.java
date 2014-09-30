@@ -49,7 +49,7 @@ public class DuplicateNamedElementCommand extends DuplicateEObjectsCommand {
 	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor progressMonitor, IAdaptable info) throws ExecutionException {
 		super.doExecuteWithResult(progressMonitor, info);
-		List objectsToBeDuplicated = getObjectsToBeDuplicated();
+		List<?> objectsToBeDuplicated = getObjectsToBeDuplicated();
 		for (Object object : objectsToBeDuplicated) {
 			if (object instanceof NamedElement) {
 				Object duplicatedObject = getAllDuplicatedObjectsMap().get(object);

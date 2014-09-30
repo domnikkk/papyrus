@@ -6,26 +6,26 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.ui.navigator,
  org.eclipse.uml2.uml;bundle-version="4.0.0",
  org.eclipse.gmf.runtime.notation,
- org.eclipse.papyrus.uml.tools.utils;bundle-version="1.0.1",
+ org.eclipse.papyrus.uml.tools.utils;bundle-version="1.1.0",
  org.eclipse.ui.views.properties.tabbed;bundle-version="3.5.200",
  org.eclipse.gmf.runtime.diagram.ui;bundle-version="1.5.0",
- org.eclipse.papyrus.infra.core;bundle-version="1.0.1",
- org.eclipse.papyrus.infra.core.sasheditor;bundle-version="1.0.1",
- org.eclipse.papyrus.views.modelexplorer;bundle-version="1.0.1",
- org.eclipse.papyrus.infra.widgets;bundle-version="1.0.1",
+ org.eclipse.papyrus.infra.core;bundle-version="1.1.0",
+ org.eclipse.papyrus.infra.core.sasheditor;bundle-version="1.1.0",
+ org.eclipse.papyrus.views.modelexplorer;bundle-version="1.1.0",
+ org.eclipse.papyrus.infra.widgets;bundle-version="1.1.0",
  org.junit;bundle-version="4.10.0",
- org.eclipse.papyrus.emf.facet.custom.metamodel;bundle-version="1.0.1",
- org.eclipse.papyrus.infra.emf;bundle-version="1.0.1",
- org.eclipse.papyrus.junit.framework;bundle-version="1.0.1",
- org.eclipse.papyrus.infra.services.labelprovider;bundle-version="1.0.1",
- org.eclipse.papyrus.emf.facet.custom.ui;bundle-version="1.0.1",
- org.eclipse.papyrus.emf.facet.util.core;bundle-version="1.0.1",
- org.eclipse.papyrus.emf.facet.custom.core;bundle-version="1.0.1",
- org.eclipse.papyrus.junit.utils;bundle-version="1.0.1"
+ org.eclipse.papyrus.emf.facet.custom.metamodel;bundle-version="1.1.0",
+ org.eclipse.papyrus.infra.emf;bundle-version="1.1.0",
+ org.eclipse.papyrus.junit.framework;bundle-version="1.1.0",
+ org.eclipse.papyrus.infra.services.labelprovider;bundle-version="1.1.0",
+ org.eclipse.papyrus.emf.facet.custom.ui;bundle-version="1.1.0",
+ org.eclipse.papyrus.emf.facet.util.core;bundle-version="1.1.0",
+ org.eclipse.papyrus.emf.facet.custom.core;bundle-version="1.1.0",
+ org.eclipse.papyrus.junit.utils;bundle-version="1.1.0"
 Export-Package: org.eclipse.papyrus.views.modelexplorer.tests
 Bundle-Vendor: %providerName
 Bundle-ActivationPolicy: lazy
-Bundle-Version: 1.0.1.qualifier
+Bundle-Version: 1.1.0.qualifier
 Bundle-Name: %pluginName
 Bundle-Localization: plugin
 Bundle-ManifestVersion: 2

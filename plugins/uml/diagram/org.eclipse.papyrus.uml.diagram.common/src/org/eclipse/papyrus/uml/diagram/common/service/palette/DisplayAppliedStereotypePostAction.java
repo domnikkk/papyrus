@@ -61,12 +61,6 @@ public class DisplayAppliedStereotypePostAction extends GraphicalPostAction {
 	/** list of stereotypes to display with their qualified names */
 	protected List<String> stereotypesQNToDisplay = new ArrayList<String>();
 
-	/** entry proxy "parent" of this action when configuring the action */
-	protected IPaletteEntryProxy entryProxy;
-
-	/** list of applied profiles */
-	protected List<Profile> appliedProfiles;
-
 	/** add icon path */
 	protected static final String ICONS_ADD = "/icons/obj16/Add_16x16.gif"; //$NON-NLS-1$
 

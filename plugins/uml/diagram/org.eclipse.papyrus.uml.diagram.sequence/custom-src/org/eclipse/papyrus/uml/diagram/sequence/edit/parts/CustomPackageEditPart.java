@@ -13,8 +13,6 @@
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.sequence.edit.parts;
 
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.commands.Command;
@@ -26,7 +24,6 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.XYLayoutEditPolicy;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.uml.diagram.common.providers.BaseViewInfo;
 import org.eclipse.papyrus.uml.diagram.common.providers.ViewInfo;
-import org.eclipse.papyrus.uml.diagram.common.util.MDTUtil;
 import org.eclipse.papyrus.uml.diagram.sequence.edit.policies.semantic.CustomPackageItemSemanticEditPolicy;
 import org.eclipse.papyrus.uml.diagram.sequence.util.SequenceUtil;
 
@@ -80,18 +77,6 @@ public class CustomPackageEditPart extends PackageEditPart {
 				return super.createAddCommand(child, constraint);
 			}
 		};
-	}
-
-	@Override
-	protected void handleNotificationEvent(Notification event) {
-		super.handleNotificationEvent(event);
-		if (event.getNotifier() instanceof EAnnotation) {
-			EAnnotation eAnnotation = (EAnnotation) event.getNotifier();
-			if (eAnnotation.getSource() != null && eAnnotation.getSource().equals(MDTUtil.FilterViewAndLabelsSource)) {
-				// modification form MOSKitt approach, canonical policies are not called
-				MDTUtil.filterDiagramViews(this.getDiagramView());
-			}
-		}
 	}
 
 	@Override

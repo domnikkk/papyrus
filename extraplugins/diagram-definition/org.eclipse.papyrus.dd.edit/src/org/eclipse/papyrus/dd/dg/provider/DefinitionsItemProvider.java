@@ -16,8 +16,11 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.common.util.ResourceLocator;
+
 import org.eclipse.emf.ecore.EStructuralFeature;
+
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemColorProvider;
 import org.eclipse.emf.edit.provider.IItemFontProvider;
@@ -28,9 +31,11 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
 import org.eclipse.papyrus.dd.dg.DGFactory;
 import org.eclipse.papyrus.dd.dg.DGPackage;
 import org.eclipse.papyrus.dd.dg.Definitions;
+
 import org.eclipse.papyrus.dd.edit.DDEditPlugin;
 
 /**
@@ -60,14 +65,15 @@ public class DefinitionsItemProvider extends ItemProviderAdapter implements IEdi
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null) {
+		if(itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
@@ -75,9 +81,9 @@ public class DefinitionsItemProvider extends ItemProviderAdapter implements IEdi
 	 */
 	@Override
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null) {
+		if(childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(DGPackage.Literals.DEFINITIONS__DEFNITION);
+			childrenFeatures.add(DGPackage.Literals.DEFINITIONS__DEFINITION);
 			childrenFeatures.add(DGPackage.Literals.DEFINITIONS__STYLE_SHEET);
 		}
 		return childrenFeatures;
@@ -129,8 +135,8 @@ public class DefinitionsItemProvider extends ItemProviderAdapter implements IEdi
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-		switch (notification.getFeatureID(Definitions.class)) {
-		case DGPackage.DEFINITIONS__DEFNITION:
+		switch(notification.getFeatureID(Definitions.class)) {
+		case DGPackage.DEFINITIONS__DEFINITION:
 		case DGPackage.DEFINITIONS__STYLE_SHEET:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
@@ -148,24 +154,24 @@ public class DefinitionsItemProvider extends ItemProviderAdapter implements IEdi
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-		newChildDescriptors.add(createChildParameter(DGPackage.Literals.DEFINITIONS__DEFNITION, DGFactory.eINSTANCE.createGroup()));
-		newChildDescriptors.add(createChildParameter(DGPackage.Literals.DEFINITIONS__DEFNITION, DGFactory.eINSTANCE.createCanvas()));
-		newChildDescriptors.add(createChildParameter(DGPackage.Literals.DEFINITIONS__DEFNITION, DGFactory.eINSTANCE.createClipPath()));
-		newChildDescriptors.add(createChildParameter(DGPackage.Literals.DEFINITIONS__DEFNITION, DGFactory.eINSTANCE.createCircle()));
-		newChildDescriptors.add(createChildParameter(DGPackage.Literals.DEFINITIONS__DEFNITION, DGFactory.eINSTANCE.createEllipse()));
-		newChildDescriptors.add(createChildParameter(DGPackage.Literals.DEFINITIONS__DEFNITION, DGFactory.eINSTANCE.createImage()));
-		newChildDescriptors.add(createChildParameter(DGPackage.Literals.DEFINITIONS__DEFNITION, DGFactory.eINSTANCE.createLine()));
-		newChildDescriptors.add(createChildParameter(DGPackage.Literals.DEFINITIONS__DEFNITION, DGFactory.eINSTANCE.createMarker()));
-		newChildDescriptors.add(createChildParameter(DGPackage.Literals.DEFINITIONS__DEFNITION, DGFactory.eINSTANCE.createLinearGradient()));
-		newChildDescriptors.add(createChildParameter(DGPackage.Literals.DEFINITIONS__DEFNITION, DGFactory.eINSTANCE.createPath()));
-		newChildDescriptors.add(createChildParameter(DGPackage.Literals.DEFINITIONS__DEFNITION, DGFactory.eINSTANCE.createPattern()));
-		newChildDescriptors.add(createChildParameter(DGPackage.Literals.DEFINITIONS__DEFNITION, DGFactory.eINSTANCE.createPolygon()));
-		newChildDescriptors.add(createChildParameter(DGPackage.Literals.DEFINITIONS__DEFNITION, DGFactory.eINSTANCE.createPolyline()));
-		newChildDescriptors.add(createChildParameter(DGPackage.Literals.DEFINITIONS__DEFNITION, DGFactory.eINSTANCE.createRadialGradient()));
-		newChildDescriptors.add(createChildParameter(DGPackage.Literals.DEFINITIONS__DEFNITION, DGFactory.eINSTANCE.createRectangle()));
-		newChildDescriptors.add(createChildParameter(DGPackage.Literals.DEFINITIONS__DEFNITION, DGFactory.eINSTANCE.createRootCanvas()));
-		newChildDescriptors.add(createChildParameter(DGPackage.Literals.DEFINITIONS__DEFNITION, DGFactory.eINSTANCE.createText()));
-		newChildDescriptors.add(createChildParameter(DGPackage.Literals.DEFINITIONS__DEFNITION, DGFactory.eINSTANCE.createUse()));
+		newChildDescriptors.add(createChildParameter(DGPackage.Literals.DEFINITIONS__DEFINITION, DGFactory.eINSTANCE.createGroup()));
+		newChildDescriptors.add(createChildParameter(DGPackage.Literals.DEFINITIONS__DEFINITION, DGFactory.eINSTANCE.createCanvas()));
+		newChildDescriptors.add(createChildParameter(DGPackage.Literals.DEFINITIONS__DEFINITION, DGFactory.eINSTANCE.createClipPath()));
+		newChildDescriptors.add(createChildParameter(DGPackage.Literals.DEFINITIONS__DEFINITION, DGFactory.eINSTANCE.createCircle()));
+		newChildDescriptors.add(createChildParameter(DGPackage.Literals.DEFINITIONS__DEFINITION, DGFactory.eINSTANCE.createEllipse()));
+		newChildDescriptors.add(createChildParameter(DGPackage.Literals.DEFINITIONS__DEFINITION, DGFactory.eINSTANCE.createImage()));
+		newChildDescriptors.add(createChildParameter(DGPackage.Literals.DEFINITIONS__DEFINITION, DGFactory.eINSTANCE.createLine()));
+		newChildDescriptors.add(createChildParameter(DGPackage.Literals.DEFINITIONS__DEFINITION, DGFactory.eINSTANCE.createMarker()));
+		newChildDescriptors.add(createChildParameter(DGPackage.Literals.DEFINITIONS__DEFINITION, DGFactory.eINSTANCE.createLinearGradient()));
+		newChildDescriptors.add(createChildParameter(DGPackage.Literals.DEFINITIONS__DEFINITION, DGFactory.eINSTANCE.createPath()));
+		newChildDescriptors.add(createChildParameter(DGPackage.Literals.DEFINITIONS__DEFINITION, DGFactory.eINSTANCE.createPattern()));
+		newChildDescriptors.add(createChildParameter(DGPackage.Literals.DEFINITIONS__DEFINITION, DGFactory.eINSTANCE.createPolygon()));
+		newChildDescriptors.add(createChildParameter(DGPackage.Literals.DEFINITIONS__DEFINITION, DGFactory.eINSTANCE.createPolyline()));
+		newChildDescriptors.add(createChildParameter(DGPackage.Literals.DEFINITIONS__DEFINITION, DGFactory.eINSTANCE.createRadialGradient()));
+		newChildDescriptors.add(createChildParameter(DGPackage.Literals.DEFINITIONS__DEFINITION, DGFactory.eINSTANCE.createRectangle()));
+		newChildDescriptors.add(createChildParameter(DGPackage.Literals.DEFINITIONS__DEFINITION, DGFactory.eINSTANCE.createRootCanvas()));
+		newChildDescriptors.add(createChildParameter(DGPackage.Literals.DEFINITIONS__DEFINITION, DGFactory.eINSTANCE.createText()));
+		newChildDescriptors.add(createChildParameter(DGPackage.Literals.DEFINITIONS__DEFINITION, DGFactory.eINSTANCE.createUse()));
 		newChildDescriptors.add(createChildParameter(DGPackage.Literals.DEFINITIONS__STYLE_SHEET, DGFactory.eINSTANCE.createStyleSheet()));
 	}
 

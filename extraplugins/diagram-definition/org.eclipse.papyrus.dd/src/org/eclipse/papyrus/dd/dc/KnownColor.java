@@ -409,7 +409,7 @@ public enum KnownColor implements Enumerator {
 	 *
 	 * @generated
 	 */
-	private static final KnownColor[] VALUES_ARRAY = new KnownColor[] { MAROON, RED, ORANGE, YELLOW, OLIVE, PURPLE, FUCHSIA, WHITE, LIME, GREEN, NAVY, BLUE, AQUA, TEAL, BLACK, SILVER, GRAY, };
+	private static final KnownColor[] VALUES_ARRAY = new KnownColor[]{ MAROON, RED, ORANGE, YELLOW, OLIVE, PURPLE, FUCHSIA, WHITE, LIME, GREEN, NAVY, BLUE, AQUA, TEAL, BLACK, SILVER, GRAY, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Known Color</b></em>' enumerators.
@@ -426,9 +426,9 @@ public enum KnownColor implements Enumerator {
 	 * @generated
 	 */
 	public static KnownColor get(String literal) {
-		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+		for(int i = 0; i < VALUES_ARRAY.length; ++i) {
 			KnownColor result = VALUES_ARRAY[i];
-			if (result.toString().equals(literal)) {
+			if(result.toString().equals(literal)) {
 				return result;
 			}
 		}
@@ -442,9 +442,9 @@ public enum KnownColor implements Enumerator {
 	 * @generated
 	 */
 	public static KnownColor getByName(String name) {
-		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+		for(int i = 0; i < VALUES_ARRAY.length; ++i) {
 			KnownColor result = VALUES_ARRAY[i];
-			if (result.getName().equals(name)) {
+			if(result.getName().equals(name)) {
 				return result;
 			}
 		}
@@ -458,7 +458,7 @@ public enum KnownColor implements Enumerator {
 	 * @generated
 	 */
 	public static KnownColor get(int value) {
-		switch (value) {
+		switch(value) {
 		case MAROON_VALUE:
 			return MAROON;
 		case RED_VALUE:

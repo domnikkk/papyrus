@@ -12,8 +12,13 @@
 package org.eclipse.papyrus.umldi.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.papyrus.dd.dc.Bounds;
+import org.eclipse.papyrus.dd.di.DIPackage;
+import org.eclipse.papyrus.dd.di.Shape;
 import org.eclipse.papyrus.umldi.UMLDIPackage;
 import org.eclipse.papyrus.umldi.UmlCompartment;
 import org.eclipse.papyrus.umldi.UmlCompartmentKind;
@@ -25,13 +30,25 @@ import org.eclipse.papyrus.umldi.UmlCompartmentKind;
  * <p>
  * The following features are implemented:
  * <ul>
+ * <li>{@link org.eclipse.papyrus.umldi.impl.UmlCompartmentImpl#getBounds <em>Bounds</em>}</li>
  * <li>{@link org.eclipse.papyrus.umldi.impl.UmlCompartmentImpl#getKind <em>Kind</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class UmlCompartmentImpl extends UmlShapeImpl implements UmlCompartment {
+public class UmlCompartmentImpl extends UmlDiagramElementImpl implements UmlCompartment {
+
+	/**
+	 * The cached value of the '{@link #getBounds() <em>Bounds</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see #getBounds()
+	 * @generated
+	 * @ordered
+	 */
+	protected Bounds bounds;
 
 	/**
 	 * The default value of the '{@link #getKind() <em>Kind</em>}' attribute.
@@ -83,6 +100,62 @@ public class UmlCompartmentImpl extends UmlShapeImpl implements UmlCompartment {
 	 * @generated
 	 */
 	@Override
+	public Bounds getBounds() {
+		return bounds;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	public NotificationChain basicSetBounds(Bounds newBounds, NotificationChain msgs) {
+		Bounds oldBounds = bounds;
+		bounds = newBounds;
+		if(eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, UMLDIPackage.UML_COMPARTMENT__BOUNDS, oldBounds, newBounds);
+			if(msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public void setBounds(Bounds newBounds) {
+		if(newBounds != bounds) {
+			NotificationChain msgs = null;
+			if(bounds != null) {
+				msgs = ((InternalEObject)bounds).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - UMLDIPackage.UML_COMPARTMENT__BOUNDS, null, msgs);
+			}
+			if(newBounds != null) {
+				msgs = ((InternalEObject)newBounds).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - UMLDIPackage.UML_COMPARTMENT__BOUNDS, null, msgs);
+			}
+			msgs = basicSetBounds(newBounds, msgs);
+			if(msgs != null) {
+				msgs.dispatch();
+			}
+		} else if(eNotificationRequired()) {
+			eNotify(new ENotificationImpl(this, Notification.SET, UMLDIPackage.UML_COMPARTMENT__BOUNDS, newBounds, newBounds));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public UmlCompartmentKind getKind() {
 		return kind;
 	}
@@ -97,7 +170,7 @@ public class UmlCompartmentImpl extends UmlShapeImpl implements UmlCompartment {
 	public void setKind(UmlCompartmentKind newKind) {
 		UmlCompartmentKind oldKind = kind;
 		kind = newKind == null ? KIND_EDEFAULT : newKind;
-		if (eNotificationRequired()) {
+		if(eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, UMLDIPackage.UML_COMPARTMENT__KIND, oldKind, kind));
 		}
 	}
@@ -109,8 +182,25 @@ public class UmlCompartmentImpl extends UmlShapeImpl implements UmlCompartment {
 	 * @generated
 	 */
 	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch(featureID) {
+		case UMLDIPackage.UML_COMPARTMENT__BOUNDS:
+			return basicSetBounds(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch(featureID) {
+		case UMLDIPackage.UML_COMPARTMENT__BOUNDS:
+			return getBounds();
 		case UMLDIPackage.UML_COMPARTMENT__KIND:
 			return getKind();
 		}
@@ -125,9 +215,12 @@ public class UmlCompartmentImpl extends UmlShapeImpl implements UmlCompartment {
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch(featureID) {
+		case UMLDIPackage.UML_COMPARTMENT__BOUNDS:
+			setBounds((Bounds)newValue);
+			return;
 		case UMLDIPackage.UML_COMPARTMENT__KIND:
-			setKind((UmlCompartmentKind) newValue);
+			setKind((UmlCompartmentKind)newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -141,7 +234,10 @@ public class UmlCompartmentImpl extends UmlShapeImpl implements UmlCompartment {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch(featureID) {
+		case UMLDIPackage.UML_COMPARTMENT__BOUNDS:
+			setBounds((Bounds)null);
+			return;
 		case UMLDIPackage.UML_COMPARTMENT__KIND:
 			setKind(KIND_EDEFAULT);
 			return;
@@ -157,7 +253,9 @@ public class UmlCompartmentImpl extends UmlShapeImpl implements UmlCompartment {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch(featureID) {
+		case UMLDIPackage.UML_COMPARTMENT__BOUNDS:
+			return bounds != null;
 		case UMLDIPackage.UML_COMPARTMENT__KIND:
 			return kind != KIND_EDEFAULT;
 		}
@@ -171,8 +269,46 @@ public class UmlCompartmentImpl extends UmlShapeImpl implements UmlCompartment {
 	 * @generated
 	 */
 	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if(baseClass == Shape.class) {
+			switch(derivedFeatureID) {
+			case UMLDIPackage.UML_COMPARTMENT__BOUNDS:
+				return DIPackage.SHAPE__BOUNDS;
+			default:
+				return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if(baseClass == Shape.class) {
+			switch(baseFeatureID) {
+			case DIPackage.SHAPE__BOUNDS:
+				return UMLDIPackage.UML_COMPARTMENT__BOUNDS;
+			default:
+				return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public String toString() {
-		if (eIsProxy()) {
+		if(eIsProxy()) {
 			return super.toString();
 		}
 		StringBuffer result = new StringBuffer(super.toString());
@@ -181,4 +317,4 @@ public class UmlCompartmentImpl extends UmlShapeImpl implements UmlCompartment {
 		result.append(')');
 		return result.toString();
 	}
-} // UmlCompartmentImpl
+} //UmlCompartmentImpl

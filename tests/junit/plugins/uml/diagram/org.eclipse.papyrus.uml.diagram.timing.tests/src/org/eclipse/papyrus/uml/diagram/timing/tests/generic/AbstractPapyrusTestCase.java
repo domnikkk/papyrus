@@ -74,6 +74,7 @@ import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.commands.ICreationCommand;
+import org.eclipse.papyrus.commands.wrappers.GEFtoEMFCommandWrapper;
 import org.eclipse.papyrus.editor.PapyrusMultiDiagramEditor;
 import org.eclipse.papyrus.infra.core.resource.ModelSet;
 import org.eclipse.papyrus.infra.core.services.ExtensionServicesRegistry;
@@ -82,7 +83,6 @@ import org.eclipse.papyrus.infra.core.services.ServicesRegistry;
 import org.eclipse.papyrus.infra.core.utils.DiResourceSet;
 import org.eclipse.papyrus.junit.framework.classification.tests.AbstractPapyrusTest;
 import org.eclipse.papyrus.junit.utils.rules.HouseKeeper;
-import org.eclipse.papyrus.uml.diagram.common.command.wrappers.GEFtoEMFCommandWrapper;
 import org.eclipse.papyrus.uml.diagram.common.commands.CreateUMLModelCommand;
 import org.eclipse.papyrus.uml.diagram.common.part.UmlGmfDiagramEditor;
 import org.eclipse.swt.SWT;
@@ -142,7 +142,7 @@ public abstract class AbstractPapyrusTestCase extends AbstractPapyrusTest {
 
 			@Override
 			public void historyNotification(final OperationHistoryEvent event) {
-				if(event.getEventType() == OperationHistoryEvent.OPERATION_NOT_OK) {
+				if (event.getEventType() == OperationHistoryEvent.OPERATION_NOT_OK) {
 					AbstractPapyrusTestCase.this.operationFailed = true;
 				}
 			}
@@ -172,9 +172,7 @@ public abstract class AbstractPapyrusTestCase extends AbstractPapyrusTest {
 	}
 
 	/**
-	 * Asserts that no Command executed on the {@link IOperationHistory} since the last call to
-	 * {@link AbstractPapyrusTestCase#resetLastOperationFailedState resetLastOperationFailedState} returned
-	 * {@link OperationHistoryEvent#OPERATION_NOT_OK}.
+	 * Asserts that no Command executed on the {@link IOperationHistory} since the last call to {@link AbstractPapyrusTestCase#resetLastOperationFailedState resetLastOperationFailedState} returned {@link OperationHistoryEvent#OPERATION_NOT_OK}.
 	 *
 	 */
 	protected void assertLastOperationSuccessful() {
@@ -186,7 +184,7 @@ public abstract class AbstractPapyrusTestCase extends AbstractPapyrusTest {
 	}
 
 	protected Element getRootSemanticModel() {
-		return (Element)getRootView().getElement();
+		return (Element) getRootView().getElement();
 	}
 
 	protected UmlGmfDiagramEditor getDiagramEditor() {
@@ -202,9 +200,9 @@ public abstract class AbstractPapyrusTestCase extends AbstractPapyrusTest {
 	}
 
 	protected DiagramEditPart getDiagramEditPart() {
-		if(this.diagramEditPart == null) {
-			this.diagramEditor = (UmlGmfDiagramEditor)this.papyrusEditor.getActiveEditor();
-			this.diagramEditPart = (DiagramEditPart)this.papyrusEditor.getAdapter(DiagramEditPart.class);
+		if (this.diagramEditPart == null) {
+			this.diagramEditor = (UmlGmfDiagramEditor) this.papyrusEditor.getActiveEditor();
+			this.diagramEditPart = (DiagramEditPart) this.papyrusEditor.getAdapter(DiagramEditPart.class);
 
 			Assert.assertNotNull("Cannot find the diagram editor", diagramEditor);
 			Assert.assertNotNull("Cannot find the Diagram edit part", diagramEditPart);
@@ -221,11 +219,11 @@ public abstract class AbstractPapyrusTestCase extends AbstractPapyrusTest {
 		this.diResourceSet = new DiResourceSet();
 
 		// at this point, no resources have been created
-		if(this.file.exists()) {
+		if (this.file.exists()) {
 			this.file.delete(true, new NullProgressMonitor());
 		}
 
-		if(!this.file.exists()) {
+		if (!this.file.exists()) {
 			// Don't create a zero-byte file. Create an empty XMI document
 			Resource diResource = diResourceSet.createResource(URI.createPlatformResourceURI(file.getFullPath().toString(), true));
 			diResource.save(null);
@@ -234,10 +232,10 @@ public abstract class AbstractPapyrusTestCase extends AbstractPapyrusTest {
 			new CreateUMLModelCommand().createModel(this.diResourceSet);
 			ServicesRegistry registry = new ExtensionServicesRegistry(org.eclipse.papyrus.infra.core.Activator.PLUGIN_ID);
 			try {
-				registry.add(ModelSet.class, Integer.MAX_VALUE, diResourceSet); //High priority to override all contributions
+				registry.add(ModelSet.class, Integer.MAX_VALUE, diResourceSet); // High priority to override all contributions
 				registry.startRegistry();
 			} catch (ServiceException ex) {
-				//Ignore exceptions
+				// Ignore exceptions
 			}
 			// diResourceSet.createsModels(file);
 			final ICreationCommand command = getDiagramCommandCreation();
@@ -247,26 +245,26 @@ public abstract class AbstractPapyrusTestCase extends AbstractPapyrusTest {
 		}
 		IEditorPart _editor = houseKeeper.openPapyrusEditor(file);
 		assertTrue("The editor must be a " + PapyrusMultiDiagramEditor.class.getSimpleName() + " (Actual type: " + _editor.getClass().getSimpleName() + ")", _editor instanceof PapyrusMultiDiagramEditor);
-		this.papyrusEditor = ((PapyrusMultiDiagramEditor)_editor);
+		this.papyrusEditor = ((PapyrusMultiDiagramEditor) _editor);
 		flushEventLoop();
 	}
 
 	protected static void maximize() {
-		//		PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell().setMaximized(true);
+		// PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell().setMaximized(true);
 	}
 
 	protected static void closeAllViewsAndEditors() {
-		//		final IWorkbench workbench = PlatformUI.getWorkbench();
-		//		for(final IWorkbenchWindow workbenchWindow : workbench.getWorkbenchWindows()) {
-		//			final IWorkbenchPage[] pages = workbenchWindow.getPages();
-		//			for(final IWorkbenchPage page : pages) {
-		//				final IViewReference[] viewReferences = page.getViewReferences();
-		//				for(final IViewReference viewReference : viewReferences) {
-		//					page.hideView(viewReference);
-		//				}
-		//				page.closeAllEditors(false);
-		//			}
-		//		}
+		// final IWorkbench workbench = PlatformUI.getWorkbench();
+		// for(final IWorkbenchWindow workbenchWindow : workbench.getWorkbenchWindows()) {
+		// final IWorkbenchPage[] pages = workbenchWindow.getPages();
+		// for(final IWorkbenchPage page : pages) {
+		// final IViewReference[] viewReferences = page.getViewReferences();
+		// for(final IViewReference viewReference : viewReferences) {
+		// page.hideView(viewReference);
+		// }
+		// page.closeAllEditors(false);
+		// }
+		// }
 	}
 
 	/**
@@ -279,9 +277,9 @@ public abstract class AbstractPapyrusTestCase extends AbstractPapyrusTest {
 	 * </ul>
 	 *
 	 * @param elementType
-	 *        the type for which to create a view (and possibly a model element)
+	 *            the type for which to create a view (and possibly a model element)
 	 * @param parentEditPart
-	 *        the edit part to which the creation request must be sent
+	 *            the edit part to which the creation request must be sent
 	 * @return the created View
 	 */
 	protected View createView(final IElementType elementType, final EditPart parentEditPart) {
@@ -298,13 +296,13 @@ public abstract class AbstractPapyrusTestCase extends AbstractPapyrusTest {
 	 * </ul>
 	 *
 	 * @param elementType
-	 *        the type for which to create a view (and possibly a model element)
+	 *            the type for which to create a view (and possibly a model element)
 	 * @param location
-	 *        the position of the new view (may be <code>null</code>)
+	 *            the position of the new view (may be <code>null</code>)
 	 * @param size
-	 *        the size of the new view (may be <code>null</code>)
+	 *            the size of the new view (may be <code>null</code>)
 	 * @param parentEditPart
-	 *        the edit part to which the creation request must be sent
+	 *            the edit part to which the creation request must be sent
 	 * @return the created View
 	 */
 	protected View createView(final IElementType elementType, final Point location, final Dimension size, final EditPart parentEditPart) {
@@ -314,10 +312,10 @@ public abstract class AbstractPapyrusTestCase extends AbstractPapyrusTest {
 			@Override
 			public void run() {
 				final CreateViewRequest createRequest = CreateViewRequestFactory.getCreateShapeRequest(elementType, getDiagramEditPart().getDiagramPreferencesHint());
-				if(size != null) {
+				if (size != null) {
 					createRequest.setSize(size);
 				}
-				if(location != null) {
+				if (location != null) {
 					createRequest.setLocation(location);
 				}
 				final Command command = parentEditPart.getCommand(createRequest);
@@ -335,10 +333,10 @@ public abstract class AbstractPapyrusTestCase extends AbstractPapyrusTest {
 		findNestedCreateCommands(command, createCommands);
 		assertEquals("There should be one CreateCommand inside the command", 1, createCommands.size());
 		final Object returnValue = createCommands.get(0).getCommandResult().getReturnValue();
-		if(returnValue instanceof IAdaptable) {
-			final IAdaptable adaptableResult = (IAdaptable)returnValue;
-			final View view = (View)adaptableResult.getAdapter(View.class);
-			if(view != null) {
+		if (returnValue instanceof IAdaptable) {
+			final IAdaptable adaptableResult = (IAdaptable) returnValue;
+			final View view = (View) adaptableResult.getAdapter(View.class);
+			if (view != null) {
 				return view;
 			}
 		}
@@ -347,37 +345,37 @@ public abstract class AbstractPapyrusTestCase extends AbstractPapyrusTest {
 	}
 
 	private static void findNestedCreateCommands(final Command gefCommand, final List<CreateCommand> createCommands) {
-		if(gefCommand instanceof CompoundCommand) {
-			final CompoundCommand compoundCommand = (CompoundCommand)gefCommand;
+		if (gefCommand instanceof CompoundCommand) {
+			final CompoundCommand compoundCommand = (CompoundCommand) gefCommand;
 			@SuppressWarnings("unchecked")
 			final List<Command> commands = compoundCommand.getCommands();
-			for(final Command childCommand : commands) {
+			for (final Command childCommand : commands) {
 				findNestedCreateCommands(childCommand, createCommands);
 			}
-		} else if(gefCommand instanceof ICommandProxy) {
-			final ICommandProxy commandProxy = (ICommandProxy)gefCommand;
+		} else if (gefCommand instanceof ICommandProxy) {
+			final ICommandProxy commandProxy = (ICommandProxy) gefCommand;
 			final ICommand iCommand = commandProxy.getICommand();
 			findNestedCreateCommands(iCommand, createCommands);
 		}
 	}
 
 	private static void findNestedCreateCommands(final ICommand gmfCommand, final List<CreateCommand> createCommands) {
-		if(gmfCommand instanceof CompositeCommand) {
-			final CompositeCommand compositeCommand = (CompositeCommand)gmfCommand;
+		if (gmfCommand instanceof CompositeCommand) {
+			final CompositeCommand compositeCommand = (CompositeCommand) gmfCommand;
 			final Iterator<?> iterator = compositeCommand.iterator();
-			while(iterator.hasNext()) {
+			while (iterator.hasNext()) {
 				final Object element = iterator.next();
-				if(element instanceof ICommand) {
-					final ICommand subCommand = (ICommand)element;
+				if (element instanceof ICommand) {
+					final ICommand subCommand = (ICommand) element;
 					findNestedCreateCommands(subCommand, createCommands);
 				} else {
 					fail("error");
 				}
 			}
-		} else if(gmfCommand instanceof CreateCommand) {
-			createCommands.add((CreateCommand)gmfCommand);
-		} else if(gmfCommand instanceof CommandProxy) {
-			final CommandProxy commandProxy = (CommandProxy)gmfCommand;
+		} else if (gmfCommand instanceof CreateCommand) {
+			createCommands.add((CreateCommand) gmfCommand);
+		} else if (gmfCommand instanceof CommandProxy) {
+			final CommandProxy commandProxy = (CommandProxy) gmfCommand;
 			findNestedCreateCommands(commandProxy.getCommand(), createCommands);
 		}
 	}
@@ -389,7 +387,7 @@ public abstract class AbstractPapyrusTestCase extends AbstractPapyrusTest {
 	protected void testHide(final GraphicalEditPart editPart) {
 		final EditPart parent = editPart.getParent();
 		final int sizeBefore = parent.getChildren().size();
-		final EObject semanticElement = ((View)editPart.getModel()).getElement();
+		final EObject semanticElement = ((View) editPart.getModel()).getElement();
 		assertTrue("The semantic element should be in a Model", isInModel(semanticElement));
 
 		executeHideCommand(editPart);
@@ -407,7 +405,7 @@ public abstract class AbstractPapyrusTestCase extends AbstractPapyrusTest {
 	 * Send the given EditPart a "delete" request (which only deletes the View), and execute the returned command.
 	 *
 	 * @param editPart
-	 *        the EditPart to hide
+	 *            the EditPart to hide
 	 */
 	protected void executeHideCommand(final GraphicalEditPart editPart) {
 		final GroupRequest deleteViewRequest = new GroupRequest(RequestConstants.REQ_DELETE);
@@ -421,7 +419,7 @@ public abstract class AbstractPapyrusTestCase extends AbstractPapyrusTest {
 	protected void testDelete(final GraphicalEditPart editPart) {
 		final EditPart parent = editPart.getParent();
 		final int sizeBefore = parent.getChildren().size();
-		final EObject semanticElement = ((View)editPart.getModel()).getElement();
+		final EObject semanticElement = ((View) editPart.getModel()).getElement();
 		assertTrue("The semantic element should be in a Model", isInModel(semanticElement));
 
 		executeDestroyCommand(editPart);
@@ -439,7 +437,7 @@ public abstract class AbstractPapyrusTestCase extends AbstractPapyrusTest {
 	 * Send the given EditPart a {@link DestroyElementRequest}, and execute the returned command.
 	 *
 	 * @param editPart
-	 *        the EditPart to destroy
+	 *            the EditPart to destroy
 	 */
 	protected void executeDestroyCommand(final GraphicalEditPart editPart) {
 		final Request destroyElementRequest = new EditCommandRequestWrapper(new DestroyElementRequest(false));
@@ -450,12 +448,12 @@ public abstract class AbstractPapyrusTestCase extends AbstractPapyrusTest {
 
 	/**
 	 * @param targetEditPart
-	 *        the EditPart on top of which the drop will happen. This will determine the coordinates of the drop.
+	 *            the EditPart on top of which the drop will happen. This will determine the coordinates of the drop.
 	 * @param parentEditPart
-	 *        the EditPart in which the element will really be added. Often the same EditPart as targetEditPart,
-	 *        unless dropping on top of the first EditPart puts the element in another edit part.
+	 *            the EditPart in which the element will really be added. Often the same EditPart as targetEditPart,
+	 *            unless dropping on top of the first EditPart puts the element in another edit part.
 	 * @param droppedElement
-	 *        the element to drop
+	 *            the element to drop
 	 */
 	public void testDrop(final GraphicalEditPart targetEditPart, final GraphicalEditPart parentEditPart, final EObject droppedElement) {
 		final int sizeBefore = parentEditPart.getChildren().size();
@@ -483,8 +481,8 @@ public abstract class AbstractPapyrusTestCase extends AbstractPapyrusTest {
 	 */
 	protected static boolean isInModel(final EObject semanticElement) {
 		EObject parent = semanticElement.eContainer();
-		while(parent != null) {
-			if(parent instanceof Model) {
+		while (parent != null) {
+			if (parent instanceof Model) {
 				return true;
 			}
 			parent = parent.eContainer();
@@ -636,9 +634,9 @@ public abstract class AbstractPapyrusTestCase extends AbstractPapyrusTest {
 	 * accept the changes.
 	 *
 	 * @param editPart
-	 *        the edit part on which to perform the DirectEditRequest.
+	 *            the edit part on which to perform the DirectEditRequest.
 	 * @param newName
-	 *        the name to set
+	 *            the name to set
 	 */
 	protected void setNameWithDirectEditRequest(final GraphicalEditPart editPart, final String newName) {
 		final IFigure nameFigure = editPart.getFigure();
@@ -686,9 +684,9 @@ public abstract class AbstractPapyrusTestCase extends AbstractPapyrusTest {
 	 * Click the palette tool with the given id on the center of the given EditPart's Figure.
 	 *
 	 * @param toolId
-	 *        the id of the tool to click
+	 *            the id of the tool to click
 	 * @param target
-	 *        what to click
+	 *            what to click
 	 */
 	protected void clickTool(final String toolId, final GraphicalEditPart target) {
 		final Point point = getCenterPoint(target);
@@ -699,9 +697,9 @@ public abstract class AbstractPapyrusTestCase extends AbstractPapyrusTest {
 	 * Click the palette tool with the given id at the given location.
 	 *
 	 * @param toolId
-	 *        the id of the tool to click
+	 *            the id of the tool to click
 	 * @param point
-	 *        where to click
+	 *            where to click
 	 */
 	protected void clickTool(final String toolId, final Point point) {
 		final Tool tool = createTool(toolId);
@@ -737,7 +735,7 @@ public abstract class AbstractPapyrusTestCase extends AbstractPapyrusTest {
 	}
 
 	private Tool createTool(final String toolId) {
-		final PaletteViewer paletteViewer = ((EditDomain)this.diagramEditor.getDiagramEditDomain()).getPaletteViewer();
+		final PaletteViewer paletteViewer = ((EditDomain) this.diagramEditor.getDiagramEditDomain()).getPaletteViewer();
 		final ToolEntry toolEntry = findToolEntry(toolId, paletteViewer.getPaletteRoot());
 		assertNotNull("The tool with id " + toolId + " was not found in the palette", toolEntry); //$NON-NLS-2$
 		final Tool tool = toolEntry.createTool();
@@ -754,30 +752,30 @@ public abstract class AbstractPapyrusTestCase extends AbstractPapyrusTest {
 
 	protected void initializeTool(final Tool tool) {
 		tool.setViewer(this.diagramEditor.getDiagramGraphicalViewer());
-		tool.setEditDomain((EditDomain)this.diagramEditor.getDiagramEditDomain());
+		tool.setEditDomain((EditDomain) this.diagramEditor.getDiagramEditDomain());
 	}
 
 	/**
 	 * Find a tool with the given id in the given palette container.
 	 *
 	 * @param toolId
-	 *        the id of the tool to return
+	 *            the id of the tool to return
 	 * @param paletteContainer
-	 *        the palette root
+	 *            the palette root
 	 * @return the tool entry, from which a new instance of the tool can be created
 	 */
 	protected ToolEntry findToolEntry(final String toolId, final PaletteContainer paletteContainer) {
 		final List<?> children = paletteContainer.getChildren();
-		for(final Object child : children) {
-			if(child instanceof PaletteContainer) {
-				final PaletteContainer childContainer = (PaletteContainer)child;
+		for (final Object child : children) {
+			if (child instanceof PaletteContainer) {
+				final PaletteContainer childContainer = (PaletteContainer) child;
 				final ToolEntry subresult = findToolEntry(toolId, childContainer);
-				if(subresult != null) {
+				if (subresult != null) {
 					return subresult;
 				}
-			} else if(child instanceof ToolEntry) {
-				final ToolEntry toolEntry = (ToolEntry)child;
-				if(toolId.equals(toolEntry.getId())) {
+			} else if (child instanceof ToolEntry) {
+				final ToolEntry toolEntry = (ToolEntry) child;
+				if (toolId.equals(toolEntry.getId())) {
 					return toolEntry;
 				}
 			}
@@ -823,7 +821,7 @@ public abstract class AbstractPapyrusTestCase extends AbstractPapyrusTest {
 
 			@Override
 			public void run() {
-				final Composite composite = (Composite)getDiagramEditor().getDiagramGraphicalViewer().getControl();
+				final Composite composite = (Composite) getDiagramEditor().getDiagramGraphicalViewer().getControl();
 				result[0] = findVisibleTextWidget(composite);
 			}
 		});
@@ -833,16 +831,16 @@ public abstract class AbstractPapyrusTestCase extends AbstractPapyrusTest {
 	/** Finds a {@link Text} widget inside the given composite, recursively. */
 	protected Text findVisibleTextWidget(final Composite composite) {
 		final Control[] children = composite.getChildren();
-		for(final Control child : children) {
-			if(child instanceof Text) {
-				final Text text = (Text)child;
-				if(text.isVisible()) {
+		for (final Control child : children) {
+			if (child instanceof Text) {
+				final Text text = (Text) child;
+				if (text.isVisible()) {
 					return text;
 				}
-			} else if(child instanceof Composite) {
-				final Composite childComposite = (Composite)child;
+			} else if (child instanceof Composite) {
+				final Composite childComposite = (Composite) child;
 				final Text subresult = findVisibleTextWidget(childComposite);
-				if(subresult != null) {
+				if (subresult != null) {
 					return subresult;
 				}
 			}
@@ -855,13 +853,13 @@ public abstract class AbstractPapyrusTestCase extends AbstractPapyrusTest {
 	 * in the viewer's visual part map.
 	 *
 	 * @param view
-	 *        the view for which to find a corresponding EditPart
+	 *            the view for which to find a corresponding EditPart
 	 * @return the EditPart corresponding to the View
 	 */
 	protected EditPart findEditPart(final View view) {
 		final Object result = this.diagramEditPart.getRoot().getViewer().getVisualPartMap().get(view);
 		assertTrue("The EditPart corresponding to the View was not found", result instanceof EditPart);
-		return (EditPart)result;
+		return (EditPart) result;
 	}
 
 	/** Processes all events waiting in the Display's event loop and then returns. */
@@ -872,11 +870,11 @@ public abstract class AbstractPapyrusTestCase extends AbstractPapyrusTest {
 			@Override
 			public void run() {
 				try {
-					while(display.readAndDispatch()) {
+					while (display.readAndDispatch()) {
 						// nothing
 					}
 				} catch (Exception ex) {
-					//Do not fail the test for invalid runnables
+					// Do not fail the test for invalid runnables
 				}
 			}
 		});
@@ -886,11 +884,11 @@ public abstract class AbstractPapyrusTestCase extends AbstractPapyrusTest {
 	 * Move the given EditPart in its parent.
 	 *
 	 * @param editPartToMove
-	 *        the EditPart to move
+	 *            the EditPart to move
 	 * @param parentEditPart
-	 *        the parent
+	 *            the parent
 	 * @param moveDelta
-	 *        the offset
+	 *            the offset
 	 */
 	protected void moveEditPart(final GraphicalEditPart editPartToMove, final GraphicalEditPart parentEditPart, final Point moveDelta) {
 		moveEditParts(Collections.singletonList(editPartToMove), parentEditPart, moveDelta);
@@ -900,13 +898,13 @@ public abstract class AbstractPapyrusTestCase extends AbstractPapyrusTest {
 	 * Resize the given EditPart in its parent.
 	 *
 	 * @param editPartToResize
-	 *        the EditPart to resize
+	 *            the EditPart to resize
 	 * @param parentEditPart
-	 *        the parent
+	 *            the parent
 	 * @param resizeDelta
-	 *        the size offset
+	 *            the size offset
 	 * @param direction
-	 *        the direction to resize (cf {@link PositionConstants})
+	 *            the direction to resize (cf {@link PositionConstants})
 	 */
 	protected void resizeEditPart(final GraphicalEditPart editPartToResize, final GraphicalEditPart parentEditPart, final Dimension resizeDelta, final int direction) {
 		resizeEditParts(Collections.singletonList(editPartToResize), parentEditPart, resizeDelta, direction);
@@ -916,14 +914,14 @@ public abstract class AbstractPapyrusTestCase extends AbstractPapyrusTest {
 	 * Move the given EditParts in their parent.
 	 *
 	 * @param editPartsToMove
-	 *        the EditParts to move
+	 *            the EditParts to move
 	 * @param parentEditPart
-	 *        the parent
+	 *            the parent
 	 * @param moveDelta
-	 *        the location offset
+	 *            the location offset
 	 */
 	protected void moveEditParts(final List<? extends GraphicalEditPart> editPartsToMove, final GraphicalEditPart parentEditPart, final Point moveDelta) {
-		if(editPartsToMove.size() < 1 || parentEditPart == null || moveDelta == null) {
+		if (editPartsToMove.size() < 1 || parentEditPart == null || moveDelta == null) {
 			throw new IllegalArgumentException();
 		}
 		final ChangeBoundsRequest changeBoundsRequest = new ChangeBoundsRequest();
@@ -942,16 +940,16 @@ public abstract class AbstractPapyrusTestCase extends AbstractPapyrusTest {
 	 * Resize the given EditParts in their parent.
 	 *
 	 * @param editPartsToMove
-	 *        the EditParts to resize
+	 *            the EditParts to resize
 	 * @param parentEditPart
-	 *        the parent
+	 *            the parent
 	 * @param resizeDelta
-	 *        the size offset
+	 *            the size offset
 	 * @param direction
-	 *        the direction to resize (cf {@link PositionConstants})
+	 *            the direction to resize (cf {@link PositionConstants})
 	 */
 	protected void resizeEditParts(final List<? extends GraphicalEditPart> editPartsToResize, final GraphicalEditPart parentEditPart, final Dimension resizeDelta, final int direction) {
-		if(editPartsToResize.size() < 1 || parentEditPart == null || resizeDelta == null) {
+		if (editPartsToResize.size() < 1 || parentEditPart == null || resizeDelta == null) {
 			throw new IllegalArgumentException();
 		}
 		final ChangeBoundsRequest changeBoundsRequest = new ChangeBoundsRequest();
@@ -972,9 +970,9 @@ public abstract class AbstractPapyrusTestCase extends AbstractPapyrusTest {
 	 * given translation vector.
 	 *
 	 * @param graphicalEditPart
-	 *        the EditPart being dragged
+	 *            the EditPart being dragged
 	 * @param moveDelta
-	 *        the offset (the translation vector)
+	 *            the offset (the translation vector)
 	 * @return the target Location
 	 */
 	private static Point computeLocationWithDelta(final GraphicalEditPart graphicalEditPart, final Point moveDelta) {
@@ -1004,9 +1002,9 @@ public abstract class AbstractPapyrusTestCase extends AbstractPapyrusTest {
 	 * moved/resized before calling this method).
 	 *
 	 * @param editPart
-	 *        an EditPart that was just moved/resized
+	 *            an EditPart that was just moved/resized
 	 * @param boundsBefore
-	 *        the bounds of this EditPart before it was moved/resized
+	 *            the bounds of this EditPart before it was moved/resized
 	 */
 	protected void testUndoRedoChangeBoundsEditPart(final GraphicalEditPart editPart, final Rectangle boundsBefore) {
 		final Rectangle boundsAfter = getBounds(editPart);
@@ -1028,19 +1026,19 @@ public abstract class AbstractPapyrusTestCase extends AbstractPapyrusTest {
 	 * Check the bounds of the given GraphicalEditPart's Figure
 	 *
 	 * @param graphicalEditPart
-	 *        The EditPart whose Figure's bounds to check
+	 *            The EditPart whose Figure's bounds to check
 	 * @param expectedPosition
-	 *        the expected position (-1 for any of the coordinates means not to check this coordinate)
+	 *            the expected position (-1 for any of the coordinates means not to check this coordinate)
 	 * @param expectedSize
-	 *        the expected size (-1 for any of the coordinates means not to check this coordinate)
+	 *            the expected size (-1 for any of the coordinates means not to check this coordinate)
 	 * @param xErrorMargin
-	 *        an error margin for the horizontal position
+	 *            an error margin for the horizontal position
 	 * @param yErrorMargin
-	 *        an error margin for the vertical position
+	 *            an error margin for the vertical position
 	 * @param widthErrorMargin
-	 *        an error margin for the width
+	 *            an error margin for the width
 	 * @param heightErrorMargin
-	 *        an error margin for the height
+	 *            an error margin for the height
 	 */
 	protected static void assertBounds(final GraphicalEditPart graphicalEditPart, final Point expectedPosition, final Dimension expectedSize, final int xErrorMargin, final int yErrorMargin, final int widthErrorMargin, final int heightErrorMargin) {
 		assertBounds(graphicalEditPart, new Rectangle(expectedPosition, expectedSize), xErrorMargin, yErrorMargin, widthErrorMargin, heightErrorMargin);
@@ -1050,32 +1048,32 @@ public abstract class AbstractPapyrusTestCase extends AbstractPapyrusTest {
 	 * Check the bounds of the given GraphicalEditPart's Figure
 	 *
 	 * @param graphicalEditPart
-	 *        The EditPart whose Figure's bounds to check
+	 *            The EditPart whose Figure's bounds to check
 	 * @param expectedBounds
-	 *        the expected bounds (-1 for any of the coordinates means not to check this coordinate)
+	 *            the expected bounds (-1 for any of the coordinates means not to check this coordinate)
 	 * @param xErrorMargin
-	 *        an error margin for the horizontal position
+	 *            an error margin for the horizontal position
 	 * @param yErrorMargin
-	 *        an error margin for the vertical position
+	 *            an error margin for the vertical position
 	 * @param widthErrorMargin
-	 *        an error margin for the width
+	 *            an error margin for the width
 	 * @param heightErrorMargin
-	 *        an error margin for the height
+	 *            an error margin for the height
 	 */
 	protected static void assertBounds(final GraphicalEditPart graphicalEditPart, final Rectangle expectedBounds, final int xErrorMargin, final int yErrorMargin, final int widthErrorMargin, final int heightErrorMargin) {
 		// let GMF do its layout so that the bounds are correct
 		flushEventLoop();
 		final Rectangle bounds = getBounds(graphicalEditPart);
-		if(expectedBounds.width != -1) {
+		if (expectedBounds.width != -1) {
 			assertTrue("The element should be about " + expectedBounds.width + " pixels wide", Math.abs(bounds.width - expectedBounds.width) <= widthErrorMargin);
 		}
-		if(expectedBounds.height != -1) {
+		if (expectedBounds.height != -1) {
 			assertTrue("The element should be about " + expectedBounds.height + " pixels high", Math.abs(bounds.height - expectedBounds.height) <= heightErrorMargin);
 		}
-		if(expectedBounds.x != -1) {
+		if (expectedBounds.x != -1) {
 			assertTrue("The element should have a horizontal position at about " + expectedBounds.x + " pixels", Math.abs(bounds.x - expectedBounds.x) <= xErrorMargin);
 		}
-		if(expectedBounds.y != -1) {
+		if (expectedBounds.y != -1) {
 			assertTrue("The element should have a vertical position at about " + expectedBounds.y + " pixels", Math.abs(bounds.y - expectedBounds.y) <= yErrorMargin);
 		}
 	}
@@ -1084,17 +1082,17 @@ public abstract class AbstractPapyrusTestCase extends AbstractPapyrusTest {
 	 * Find the EditPart corresponding to the given View in the given parent EditPart's children.
 	 *
 	 * @param parentEditPart
-	 *        the EditPart in which the EditPart we are looking for should be found
+	 *            the EditPart in which the EditPart we are looking for should be found
 	 * @param view
-	 *        the View corresponding to the searched EditPart
+	 *            the View corresponding to the searched EditPart
 	 * @return the found EditPart
 	 */
 	protected static EditPart findChildEditPartAssociatedToView(final EditPart parentEditPart, final View view) {
 		EditPart result = null;
 		@SuppressWarnings("unchecked")
 		final List<EditPart> children = parentEditPart.getChildren();
-		for(final EditPart editPart : children) {
-			if(view == editPart.getModel()) {
+		for (final EditPart editPart : children) {
+			if (view == editPart.getModel()) {
 				result = editPart;
 			}
 		}

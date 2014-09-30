@@ -20,8 +20,11 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPartViewer;
 import org.eclipse.gef.RootEditPart;
+import org.eclipse.gef.editparts.AbstractConnectionEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramRootEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.parts.DiagramGraphicalViewer;
 import org.eclipse.gmf.runtime.diagram.ui.parts.IDiagramGraphicalViewer;
@@ -224,4 +227,28 @@ public class DiagramEditPartsUtil {
 		}
 		return -1.0;
 	}
+	
+	/**
+	 * This Method return the Graphical container of an EditPart.
+	 * Depending on the type of EditPart, the container can be the Direct Parent or the grand parent.
+	 * @param currentEP
+	 * @return
+	 */
+	public static final EditPart getContainerEditPart(GraphicalEditPart currentEP) {
+	
+		EditPart container;
+		EditPart parent = currentEP.getParent();
+		if (parent instanceof AbstractConnectionEditPart){
+			container =  parent.getParent();
+		}else if (parent instanceof AbstractBorderItemEditPart){
+			container =  parent.getParent().getParent();
+		}else if (currentEP instanceof AbstractBorderItemEditPart){
+			container =  parent.getParent();
+		}else {
+			container = parent;
+		}
+
+		return container;
+	}
+
 }

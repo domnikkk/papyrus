@@ -12,17 +12,23 @@
 package org.eclipse.papyrus.dd.dc.impl;
 
 import java.lang.reflect.InvocationTargetException;
+
 import java.util.Map;
 
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import org.eclipse.papyrus.dd.dc.Bounds;
 import org.eclipse.papyrus.dd.dc.DCPackage;
+
 import org.eclipse.papyrus.dd.dc.util.DCValidator;
 
 /**
@@ -201,7 +207,7 @@ public class BoundsImpl extends MinimalEObjectImpl.Container implements Bounds {
 		x = newX;
 		boolean oldXESet = xESet;
 		xESet = true;
-		if (eNotificationRequired()) {
+		if(eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DCPackage.BOUNDS__X, oldX, x, !oldXESet));
 		}
 	}
@@ -217,7 +223,7 @@ public class BoundsImpl extends MinimalEObjectImpl.Container implements Bounds {
 		boolean oldXESet = xESet;
 		x = X_EDEFAULT;
 		xESet = false;
-		if (eNotificationRequired()) {
+		if(eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.UNSET, DCPackage.BOUNDS__X, oldX, X_EDEFAULT, oldXESet));
 		}
 	}
@@ -253,7 +259,7 @@ public class BoundsImpl extends MinimalEObjectImpl.Container implements Bounds {
 		y = newY;
 		boolean oldYESet = yESet;
 		yESet = true;
-		if (eNotificationRequired()) {
+		if(eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DCPackage.BOUNDS__Y, oldY, y, !oldYESet));
 		}
 	}
@@ -269,7 +275,7 @@ public class BoundsImpl extends MinimalEObjectImpl.Container implements Bounds {
 		boolean oldYESet = yESet;
 		y = Y_EDEFAULT;
 		yESet = false;
-		if (eNotificationRequired()) {
+		if(eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.UNSET, DCPackage.BOUNDS__Y, oldY, Y_EDEFAULT, oldYESet));
 		}
 	}
@@ -305,7 +311,7 @@ public class BoundsImpl extends MinimalEObjectImpl.Container implements Bounds {
 		width = newWidth;
 		boolean oldWidthESet = widthESet;
 		widthESet = true;
-		if (eNotificationRequired()) {
+		if(eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DCPackage.BOUNDS__WIDTH, oldWidth, width, !oldWidthESet));
 		}
 	}
@@ -321,7 +327,7 @@ public class BoundsImpl extends MinimalEObjectImpl.Container implements Bounds {
 		boolean oldWidthESet = widthESet;
 		width = WIDTH_EDEFAULT;
 		widthESet = false;
-		if (eNotificationRequired()) {
+		if(eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.UNSET, DCPackage.BOUNDS__WIDTH, oldWidth, WIDTH_EDEFAULT, oldWidthESet));
 		}
 	}
@@ -357,7 +363,7 @@ public class BoundsImpl extends MinimalEObjectImpl.Container implements Bounds {
 		height = newHeight;
 		boolean oldHeightESet = heightESet;
 		heightESet = true;
-		if (eNotificationRequired()) {
+		if(eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DCPackage.BOUNDS__HEIGHT, oldHeight, height, !oldHeightESet));
 		}
 	}
@@ -373,7 +379,7 @@ public class BoundsImpl extends MinimalEObjectImpl.Container implements Bounds {
 		boolean oldHeightESet = heightESet;
 		height = HEIGHT_EDEFAULT;
 		heightESet = false;
-		if (eNotificationRequired()) {
+		if(eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.UNSET, DCPackage.BOUNDS__HEIGHT, oldHeight, HEIGHT_EDEFAULT, oldHeightESet));
 		}
 	}
@@ -407,8 +413,7 @@ public class BoundsImpl extends MinimalEObjectImpl.Container implements Bounds {
 	 */
 	@Override
 	public boolean nonNegativeWidth(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return DCValidator.validate(DCPackage.Literals.BOUNDS, this, diagnostics, context, "http://www.eclipse.org/emf/2002/Ecore/OCL", DCPackage.Literals.BOUNDS___NON_NEGATIVE_WIDTH__DIAGNOSTICCHAIN_MAP, NON_NEGATIVE_WIDTH_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
-				Diagnostic.ERROR, DCValidator.DIAGNOSTIC_SOURCE, DCValidator.BOUNDS__NON_NEGATIVE_WIDTH);
+		return DCValidator.validate(DCPackage.Literals.BOUNDS, this, diagnostics, context, "http://www.eclipse.org/emf/2002/Ecore/OCL", DCPackage.Literals.BOUNDS___NON_NEGATIVE_WIDTH__DIAGNOSTICCHAIN_MAP, NON_NEGATIVE_WIDTH_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION, Diagnostic.ERROR, DCValidator.DIAGNOSTIC_SOURCE, DCValidator.BOUNDS__NON_NEGATIVE_WIDTH);
 	}
 
 	/**
@@ -430,8 +435,7 @@ public class BoundsImpl extends MinimalEObjectImpl.Container implements Bounds {
 	 */
 	@Override
 	public boolean nonNegativeHeight(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return DCValidator.validate(DCPackage.Literals.BOUNDS, this, diagnostics, context, "http://www.eclipse.org/emf/2002/Ecore/OCL", DCPackage.Literals.BOUNDS___NON_NEGATIVE_HEIGHT__DIAGNOSTICCHAIN_MAP,
-				NON_NEGATIVE_HEIGHT_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION, Diagnostic.ERROR, DCValidator.DIAGNOSTIC_SOURCE, DCValidator.BOUNDS__NON_NEGATIVE_HEIGHT);
+		return DCValidator.validate(DCPackage.Literals.BOUNDS, this, diagnostics, context, "http://www.eclipse.org/emf/2002/Ecore/OCL", DCPackage.Literals.BOUNDS___NON_NEGATIVE_HEIGHT__DIAGNOSTICCHAIN_MAP, NON_NEGATIVE_HEIGHT_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION, Diagnostic.ERROR, DCValidator.DIAGNOSTIC_SOURCE, DCValidator.BOUNDS__NON_NEGATIVE_HEIGHT);
 	}
 
 	/**
@@ -441,7 +445,7 @@ public class BoundsImpl extends MinimalEObjectImpl.Container implements Bounds {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch(featureID) {
 		case DCPackage.BOUNDS__X:
 			return getX();
 		case DCPackage.BOUNDS__Y:
@@ -461,18 +465,18 @@ public class BoundsImpl extends MinimalEObjectImpl.Container implements Bounds {
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch(featureID) {
 		case DCPackage.BOUNDS__X:
-			setX((Double) newValue);
+			setX((Double)newValue);
 			return;
 		case DCPackage.BOUNDS__Y:
-			setY((Double) newValue);
+			setY((Double)newValue);
 			return;
 		case DCPackage.BOUNDS__WIDTH:
-			setWidth((Double) newValue);
+			setWidth((Double)newValue);
 			return;
 		case DCPackage.BOUNDS__HEIGHT:
-			setHeight((Double) newValue);
+			setHeight((Double)newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -485,7 +489,7 @@ public class BoundsImpl extends MinimalEObjectImpl.Container implements Bounds {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch(featureID) {
 		case DCPackage.BOUNDS__X:
 			unsetX();
 			return;
@@ -509,7 +513,7 @@ public class BoundsImpl extends MinimalEObjectImpl.Container implements Bounds {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch(featureID) {
 		case DCPackage.BOUNDS__X:
 			return isSetX();
 		case DCPackage.BOUNDS__Y:
@@ -530,11 +534,11 @@ public class BoundsImpl extends MinimalEObjectImpl.Container implements Bounds {
 	@Override
 	@SuppressWarnings("unchecked")
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
+		switch(operationID) {
 		case DCPackage.BOUNDS___NON_NEGATIVE_WIDTH__DIAGNOSTICCHAIN_MAP:
-			return nonNegativeWidth((DiagnosticChain) arguments.get(0), (Map<Object, Object>) arguments.get(1));
+			return nonNegativeWidth((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
 		case DCPackage.BOUNDS___NON_NEGATIVE_HEIGHT__DIAGNOSTICCHAIN_MAP:
-			return nonNegativeHeight((DiagnosticChain) arguments.get(0), (Map<Object, Object>) arguments.get(1));
+			return nonNegativeHeight((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
@@ -546,30 +550,30 @@ public class BoundsImpl extends MinimalEObjectImpl.Container implements Bounds {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
+		if(eIsProxy()) {
 			return super.toString();
 		}
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (x: ");
-		if (xESet) {
+		if(xESet) {
 			result.append(x);
 		} else {
 			result.append("<unset>");
 		}
 		result.append(", y: ");
-		if (yESet) {
+		if(yESet) {
 			result.append(y);
 		} else {
 			result.append("<unset>");
 		}
 		result.append(", width: ");
-		if (widthESet) {
+		if(widthESet) {
 			result.append(width);
 		} else {
 			result.append("<unset>");
 		}
 		result.append(", height: ");
-		if (heightESet) {
+		if(heightESet) {
 			result.append(height);
 		} else {
 			result.append("<unset>");

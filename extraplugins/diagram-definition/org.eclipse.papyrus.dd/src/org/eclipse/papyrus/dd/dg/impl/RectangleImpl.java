@@ -13,16 +13,19 @@ package org.eclipse.papyrus.dd.dg.impl;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.Map;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.eclipse.papyrus.dd.dc.Bounds;
+
 import org.eclipse.papyrus.dd.dg.DGPackage;
 import org.eclipse.papyrus.dd.dg.Rectangle;
 import org.eclipse.papyrus.dd.dg.util.DGValidator;
@@ -119,9 +122,9 @@ public class RectangleImpl extends GraphicalElementImpl implements Rectangle {
 	public NotificationChain basicSetBounds(Bounds newBounds, NotificationChain msgs) {
 		Bounds oldBounds = bounds;
 		bounds = newBounds;
-		if (eNotificationRequired()) {
+		if(eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DGPackage.RECTANGLE__BOUNDS, oldBounds, newBounds);
-			if (msgs == null) {
+			if(msgs == null) {
 				msgs = notification;
 			} else {
 				msgs.add(notification);
@@ -137,19 +140,19 @@ public class RectangleImpl extends GraphicalElementImpl implements Rectangle {
 	 */
 	@Override
 	public void setBounds(Bounds newBounds) {
-		if (newBounds != bounds) {
+		if(newBounds != bounds) {
 			NotificationChain msgs = null;
-			if (bounds != null) {
-				msgs = ((InternalEObject) bounds).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DGPackage.RECTANGLE__BOUNDS, null, msgs);
+			if(bounds != null) {
+				msgs = ((InternalEObject)bounds).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DGPackage.RECTANGLE__BOUNDS, null, msgs);
 			}
-			if (newBounds != null) {
-				msgs = ((InternalEObject) newBounds).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DGPackage.RECTANGLE__BOUNDS, null, msgs);
+			if(newBounds != null) {
+				msgs = ((InternalEObject)newBounds).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DGPackage.RECTANGLE__BOUNDS, null, msgs);
 			}
 			msgs = basicSetBounds(newBounds, msgs);
-			if (msgs != null) {
+			if(msgs != null) {
 				msgs.dispatch();
 			}
-		} else if (eNotificationRequired()) {
+		} else if(eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.RECTANGLE__BOUNDS, newBounds, newBounds));
 		}
 	}
@@ -175,7 +178,7 @@ public class RectangleImpl extends GraphicalElementImpl implements Rectangle {
 		cornerRadius = newCornerRadius;
 		boolean oldCornerRadiusESet = cornerRadiusESet;
 		cornerRadiusESet = true;
-		if (eNotificationRequired()) {
+		if(eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.RECTANGLE__CORNER_RADIUS, oldCornerRadius, cornerRadius, !oldCornerRadiusESet));
 		}
 	}
@@ -191,7 +194,7 @@ public class RectangleImpl extends GraphicalElementImpl implements Rectangle {
 		boolean oldCornerRadiusESet = cornerRadiusESet;
 		cornerRadius = CORNER_RADIUS_EDEFAULT;
 		cornerRadiusESet = false;
-		if (eNotificationRequired()) {
+		if(eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.UNSET, DGPackage.RECTANGLE__CORNER_RADIUS, oldCornerRadius, CORNER_RADIUS_EDEFAULT, oldCornerRadiusESet));
 		}
 	}
@@ -224,8 +227,7 @@ public class RectangleImpl extends GraphicalElementImpl implements Rectangle {
 	 */
 	@Override
 	public boolean nonNegativeCornerRadius(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return DGValidator.validate(DGPackage.Literals.RECTANGLE, this, diagnostics, context, "http://www.eclipse.org/emf/2002/Ecore/OCL", DGPackage.Literals.RECTANGLE___NON_NEGATIVE_CORNER_RADIUS__DIAGNOSTICCHAIN_MAP,
-				NON_NEGATIVE_CORNER_RADIUS_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION, Diagnostic.ERROR, DGValidator.DIAGNOSTIC_SOURCE, DGValidator.RECTANGLE__NON_NEGATIVE_CORNER_RADIUS);
+		return DGValidator.validate(DGPackage.Literals.RECTANGLE, this, diagnostics, context, "http://www.eclipse.org/emf/2002/Ecore/OCL", DGPackage.Literals.RECTANGLE___NON_NEGATIVE_CORNER_RADIUS__DIAGNOSTICCHAIN_MAP, NON_NEGATIVE_CORNER_RADIUS_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION, Diagnostic.ERROR, DGValidator.DIAGNOSTIC_SOURCE, DGValidator.RECTANGLE__NON_NEGATIVE_CORNER_RADIUS);
 	}
 
 	/**
@@ -235,7 +237,7 @@ public class RectangleImpl extends GraphicalElementImpl implements Rectangle {
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
+		switch(featureID) {
 		case DGPackage.RECTANGLE__BOUNDS:
 			return basicSetBounds(null, msgs);
 		}
@@ -249,7 +251,7 @@ public class RectangleImpl extends GraphicalElementImpl implements Rectangle {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch(featureID) {
 		case DGPackage.RECTANGLE__BOUNDS:
 			return getBounds();
 		case DGPackage.RECTANGLE__CORNER_RADIUS:
@@ -265,12 +267,12 @@ public class RectangleImpl extends GraphicalElementImpl implements Rectangle {
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch(featureID) {
 		case DGPackage.RECTANGLE__BOUNDS:
-			setBounds((Bounds) newValue);
+			setBounds((Bounds)newValue);
 			return;
 		case DGPackage.RECTANGLE__CORNER_RADIUS:
-			setCornerRadius((Double) newValue);
+			setCornerRadius((Double)newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -283,9 +285,9 @@ public class RectangleImpl extends GraphicalElementImpl implements Rectangle {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch(featureID) {
 		case DGPackage.RECTANGLE__BOUNDS:
-			setBounds((Bounds) null);
+			setBounds((Bounds)null);
 			return;
 		case DGPackage.RECTANGLE__CORNER_RADIUS:
 			unsetCornerRadius();
@@ -301,7 +303,7 @@ public class RectangleImpl extends GraphicalElementImpl implements Rectangle {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch(featureID) {
 		case DGPackage.RECTANGLE__BOUNDS:
 			return bounds != null;
 		case DGPackage.RECTANGLE__CORNER_RADIUS:
@@ -318,9 +320,9 @@ public class RectangleImpl extends GraphicalElementImpl implements Rectangle {
 	@Override
 	@SuppressWarnings("unchecked")
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
+		switch(operationID) {
 		case DGPackage.RECTANGLE___NON_NEGATIVE_CORNER_RADIUS__DIAGNOSTICCHAIN_MAP:
-			return nonNegativeCornerRadius((DiagnosticChain) arguments.get(0), (Map<Object, Object>) arguments.get(1));
+			return nonNegativeCornerRadius((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
@@ -332,12 +334,12 @@ public class RectangleImpl extends GraphicalElementImpl implements Rectangle {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
+		if(eIsProxy()) {
 			return super.toString();
 		}
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (cornerRadius: ");
-		if (cornerRadiusESet) {
+		if(cornerRadiusESet) {
 			result.append(cornerRadius);
 		} else {
 			result.append("<unset>");

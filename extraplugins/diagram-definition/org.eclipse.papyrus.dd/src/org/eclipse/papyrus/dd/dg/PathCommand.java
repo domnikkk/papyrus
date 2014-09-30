@@ -56,7 +56,7 @@ public interface PathCommand extends EObject {
 	 * end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Is Relative</em>' attribute.
+	 *        the new value of the '<em>Is Relative</em>' attribute.
 	 * @see #isRelative()
 	 * @generated
 	 */

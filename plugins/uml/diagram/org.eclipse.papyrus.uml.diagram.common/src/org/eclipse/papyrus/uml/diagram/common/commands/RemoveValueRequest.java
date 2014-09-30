@@ -113,12 +113,12 @@ public class RemoveValueRequest extends AbstractEditCommandRequest {
 	 * getElementsToEdit()
 	 */
 	@Override
-	public List getElementsToEdit() {
+	public List<?> getElementsToEdit() {
 		if (elementToEdit != null) {
 			return Collections.singletonList(elementToEdit);
 		}
 
-		return Collections.EMPTY_LIST;
+		return Collections.emptyList();
 	}
 
 	/*

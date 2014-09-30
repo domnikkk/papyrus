@@ -10,6 +10,7 @@
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - Use URIs to support non-URL-compatible storage (CDO)
  *  Christian W. Damus (CEA) - bug 417409
+ *  Christian W. Damus (CEA) - bug 444227
  *
  *****************************************************************************/
 package org.eclipse.papyrus.views.properties.runtime;
@@ -193,7 +194,7 @@ public class DefaultDisplayEngine implements DisplayEngine {
 	}
 
 	protected DataSource getDataSource(Section section) {
-		return displayedSections.get(section.getTab().getId(), section.getName());
+		return displayedSections.get(section);
 	}
 
 	/**
@@ -202,21 +203,18 @@ public class DefaultDisplayEngine implements DisplayEngine {
 	 * @return the previously-recorded data source, if any, for this {@code section} which has now been displaced
 	 */
 	protected DataSource addDataSource(Section section, DataSource dataSource) {
-		return displayedSections.put(section.getTab().getId(), section.getName(), dataSource);
+		return displayedSections.put(section, dataSource);
 	}
 
-	protected void addControl(Section section, Control control) {
-		final String tabID = section.getTab().getId();
-		final String sectionID = section.getName();
-
-		controls.put(tabID, sectionID, control);
+	protected void addControl(final Section section, Control control) {
+		controls.put(section, control);
 
 		control.addDisposeListener(new DisposeListener() {
 
 			public void widgetDisposed(DisposeEvent e) {
 				// Perhaps the tabbed properties view is disposing a tab that is not shown by the new selection
-				displayedSections.remove(tabID, sectionID);
-				controls.remove(tabID, sectionID);
+				displayedSections.remove(section);
+				controls.remove(section);
 			}
 		});
 	}
@@ -306,5 +304,45 @@ public class DefaultDisplayEngine implements DisplayEngine {
 			control.dispose();
 		}
 		layout(parent);
+	}
+
+	/**
+	 * Creates a proxy for a {@code section} that makes it distinct from other occurrences of the same section, according to some
+	 * arbitrary {@code disciminator}.
+	 * 
+	 * @param section
+	 *            a section to be repeated with unique discriminators
+	 * @param discriminator
+	 *            this {@code section}'s discriminator value
+	 * 
+	 * @return the proxy instance combining the identity of the {@code section} with its unique {@code discriminator}
+	 */
+	public static Section discriminate(Section section, Object discriminator) {
+		if (section == null) {
+			throw new IllegalArgumentException("null section");
+		}
+		if (discriminator == null) {
+			throw new IllegalArgumentException("null discriminator");
+		}
+		if (SectionDiscriminator.isDiscriminated(section)) {
+			throw new IllegalArgumentException("section already has a discriminator");
+		}
+
+		return SectionDiscriminator.discriminate(section, discriminator);
+	}
+
+	/**
+	 * Obtains the discriminator for a {@code section} proxy, if it is a proxy.
+	 * 
+	 * @param section
+	 *            a section that is repeated with unique discriminators
+	 * @return this {@code section}'s discriminator value, or {@code null} if it is a singleton (non-proxy) section
+	 */
+	public static Object getDiscriminator(Section section) {
+		if (section == null) {
+			throw new IllegalArgumentException("null section");
+		}
+
+		return SectionDiscriminator.getDiscriminator(section);
 	}
 }

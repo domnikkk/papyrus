@@ -57,7 +57,7 @@ public interface Scale extends Transform {
 	 * -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Factor X</em>' attribute.
+	 *        the new value of the '<em>Factor X</em>' attribute.
 	 * @see #getFactorX()
 	 * @generated
 	 */
@@ -84,7 +84,7 @@ public interface Scale extends Transform {
 	 * -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Factor Y</em>' attribute.
+	 *        the new value of the '<em>Factor Y</em>' attribute.
 	 * @see #getFactorY()
 	 * @generated
 	 */
@@ -95,10 +95,10 @@ public interface Scale extends Transform {
 	 * scale factors cannot be negative.
 	 *
 	 * @param diagnostics
-	 *            The chain of diagnostics to which problems are to be appended.
+	 *        The chain of diagnostics to which problems are to be appended.
 	 * @param context
-	 *            The cache of context-specific information. <!-- end-model-doc
-	 *            -->
+	 *        The cache of context-specific information. <!-- end-model-doc
+	 *        -->
 	 * @model annotation=
 	 *        "http://www.eclipse.org/emf/2002/Ecore/OCL body='factorX>=0 and factorY>=0'"
 	 * @generated

@@ -11,6 +11,8 @@
  */
 package org.eclipse.papyrus.umldi;
 
+import org.eclipse.papyrus.dd.di.Shape;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Uml Label</b></em>'.
@@ -27,7 +29,7 @@ package org.eclipse.papyrus.umldi;
  * @model
  * @generated
  */
-public interface UmlLabel extends UmlShape {
+public interface UmlLabel extends UmlDiagramElement, Shape {
 
 	/**
 	 * Returns the value of the '<em><b>Kind</b></em>' attribute.
@@ -53,7 +55,7 @@ public interface UmlLabel extends UmlShape {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Kind</em>' attribute.
+	 *        the new value of the '<em>Kind</em>' attribute.
 	 * @see org.eclipse.papyrus.umldi.UmlLabelKind
 	 * @see #getKind()
 	 * @generated

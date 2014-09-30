@@ -58,7 +58,7 @@ public interface CubicCurveTo extends PathCommand {
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Point</em>' containment reference.
+	 *        the new value of the '<em>Point</em>' containment reference.
 	 * @see #getPoint()
 	 * @generated
 	 */
@@ -84,7 +84,7 @@ public interface CubicCurveTo extends PathCommand {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Start Control</em>' containment reference.
+	 *        the new value of the '<em>Start Control</em>' containment reference.
 	 * @see #getStartControl()
 	 * @generated
 	 */
@@ -110,7 +110,7 @@ public interface CubicCurveTo extends PathCommand {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>End Control</em>' containment reference.
+	 *        the new value of the '<em>End Control</em>' containment reference.
 	 * @see #getEndControl()
 	 * @generated
 	 */

@@ -12,8 +12,11 @@
 package org.eclipse.papyrus.dd.di.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EClass;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.eclipse.papyrus.dd.di.DIPackage;
 import org.eclipse.papyrus.dd.di.Diagram;
 
@@ -132,7 +135,7 @@ public abstract class DiagramImpl extends ShapeImpl implements Diagram {
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
-		if (eNotificationRequired()) {
+		if(eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DIPackage.DIAGRAM__NAME, oldName, name));
 		}
 	}
@@ -156,7 +159,7 @@ public abstract class DiagramImpl extends ShapeImpl implements Diagram {
 	public void setDocumentation(String newDocumentation) {
 		String oldDocumentation = documentation;
 		documentation = newDocumentation;
-		if (eNotificationRequired()) {
+		if(eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DIPackage.DIAGRAM__DOCUMENTATION, oldDocumentation, documentation));
 		}
 	}
@@ -180,7 +183,7 @@ public abstract class DiagramImpl extends ShapeImpl implements Diagram {
 	public void setResolution(double newResolution) {
 		double oldResolution = resolution;
 		resolution = newResolution;
-		if (eNotificationRequired()) {
+		if(eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DIPackage.DIAGRAM__RESOLUTION, oldResolution, resolution));
 		}
 	}
@@ -192,7 +195,7 @@ public abstract class DiagramImpl extends ShapeImpl implements Diagram {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch(featureID) {
 		case DIPackage.DIAGRAM__NAME:
 			return getName();
 		case DIPackage.DIAGRAM__DOCUMENTATION:
@@ -210,15 +213,15 @@ public abstract class DiagramImpl extends ShapeImpl implements Diagram {
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch(featureID) {
 		case DIPackage.DIAGRAM__NAME:
-			setName((String) newValue);
+			setName((String)newValue);
 			return;
 		case DIPackage.DIAGRAM__DOCUMENTATION:
-			setDocumentation((String) newValue);
+			setDocumentation((String)newValue);
 			return;
 		case DIPackage.DIAGRAM__RESOLUTION:
-			setResolution((Double) newValue);
+			setResolution((Double)newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -231,7 +234,7 @@ public abstract class DiagramImpl extends ShapeImpl implements Diagram {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch(featureID) {
 		case DIPackage.DIAGRAM__NAME:
 			setName(NAME_EDEFAULT);
 			return;
@@ -252,7 +255,7 @@ public abstract class DiagramImpl extends ShapeImpl implements Diagram {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch(featureID) {
 		case DIPackage.DIAGRAM__NAME:
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		case DIPackage.DIAGRAM__DOCUMENTATION:
@@ -270,7 +273,7 @@ public abstract class DiagramImpl extends ShapeImpl implements Diagram {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
+		if(eIsProxy()) {
 			return super.toString();
 		}
 		StringBuffer result = new StringBuffer(super.toString());

@@ -2,5 +2,6 @@
 <toc label="Papyrus Modelling Tools" link_to="../org.eclipse.papyrus.infra.doc/toc.xml#PapyrusDocUser">
 	<topic label="Using Papyrus modelling tools">
     <anchor id="Tool"/>
-    <link toc="resource/marqueeSelectionTool-toc.xml"/></topic>
+    <link toc="resource/marqueeSelectionTool-toc.xml"/>
+    <link toc="resource/alignmentTool-toc.xml"/></topic>
 </toc>

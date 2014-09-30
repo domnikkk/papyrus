@@ -13,16 +13,19 @@ package org.eclipse.papyrus.dd.dg.impl;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.Map;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.eclipse.papyrus.dd.dc.Bounds;
+
 import org.eclipse.papyrus.dd.dg.DGPackage;
 import org.eclipse.papyrus.dd.dg.GraphicalElement;
 import org.eclipse.papyrus.dd.dg.Use;
@@ -100,9 +103,9 @@ public class UseImpl extends GraphicalElementImpl implements Use {
 	public NotificationChain basicSetBounds(Bounds newBounds, NotificationChain msgs) {
 		Bounds oldBounds = bounds;
 		bounds = newBounds;
-		if (eNotificationRequired()) {
+		if(eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DGPackage.USE__BOUNDS, oldBounds, newBounds);
-			if (msgs == null) {
+			if(msgs == null) {
 				msgs = notification;
 			} else {
 				msgs.add(notification);
@@ -118,19 +121,19 @@ public class UseImpl extends GraphicalElementImpl implements Use {
 	 */
 	@Override
 	public void setBounds(Bounds newBounds) {
-		if (newBounds != bounds) {
+		if(newBounds != bounds) {
 			NotificationChain msgs = null;
-			if (bounds != null) {
-				msgs = ((InternalEObject) bounds).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DGPackage.USE__BOUNDS, null, msgs);
+			if(bounds != null) {
+				msgs = ((InternalEObject)bounds).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DGPackage.USE__BOUNDS, null, msgs);
 			}
-			if (newBounds != null) {
-				msgs = ((InternalEObject) newBounds).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DGPackage.USE__BOUNDS, null, msgs);
+			if(newBounds != null) {
+				msgs = ((InternalEObject)newBounds).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DGPackage.USE__BOUNDS, null, msgs);
 			}
 			msgs = basicSetBounds(newBounds, msgs);
-			if (msgs != null) {
+			if(msgs != null) {
 				msgs.dispatch();
 			}
-		} else if (eNotificationRequired()) {
+		} else if(eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.USE__BOUNDS, newBounds, newBounds));
 		}
 	}
@@ -142,11 +145,11 @@ public class UseImpl extends GraphicalElementImpl implements Use {
 	 */
 	@Override
 	public GraphicalElement getReferencedElement() {
-		if (referencedElement != null && referencedElement.eIsProxy()) {
-			InternalEObject oldReferencedElement = (InternalEObject) referencedElement;
-			referencedElement = (GraphicalElement) eResolveProxy(oldReferencedElement);
-			if (referencedElement != oldReferencedElement) {
-				if (eNotificationRequired()) {
+		if(referencedElement != null && referencedElement.eIsProxy()) {
+			InternalEObject oldReferencedElement = (InternalEObject)referencedElement;
+			referencedElement = (GraphicalElement)eResolveProxy(oldReferencedElement);
+			if(referencedElement != oldReferencedElement) {
+				if(eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DGPackage.USE__REFERENCED_ELEMENT, oldReferencedElement, referencedElement));
 				}
 			}
@@ -172,7 +175,7 @@ public class UseImpl extends GraphicalElementImpl implements Use {
 	public void setReferencedElement(GraphicalElement newReferencedElement) {
 		GraphicalElement oldReferencedElement = referencedElement;
 		referencedElement = newReferencedElement;
-		if (eNotificationRequired()) {
+		if(eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.USE__REFERENCED_ELEMENT, oldReferencedElement, referencedElement));
 		}
 	}
@@ -195,8 +198,7 @@ public class UseImpl extends GraphicalElementImpl implements Use {
 	 */
 	@Override
 	public boolean referencedElementHasId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return DGValidator.validate(DGPackage.Literals.USE, this, diagnostics, context, "http://www.eclipse.org/emf/2002/Ecore/OCL", DGPackage.Literals.USE___REFERENCED_ELEMENT_HAS_ID__DIAGNOSTICCHAIN_MAP,
-				REFERENCED_ELEMENT_HAS_ID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION, Diagnostic.ERROR, DGValidator.DIAGNOSTIC_SOURCE, DGValidator.USE__REFERENCED_ELEMENT_HAS_ID);
+		return DGValidator.validate(DGPackage.Literals.USE, this, diagnostics, context, "http://www.eclipse.org/emf/2002/Ecore/OCL", DGPackage.Literals.USE___REFERENCED_ELEMENT_HAS_ID__DIAGNOSTICCHAIN_MAP, REFERENCED_ELEMENT_HAS_ID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION, Diagnostic.ERROR, DGValidator.DIAGNOSTIC_SOURCE, DGValidator.USE__REFERENCED_ELEMENT_HAS_ID);
 	}
 
 	/**
@@ -206,7 +208,7 @@ public class UseImpl extends GraphicalElementImpl implements Use {
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
+		switch(featureID) {
 		case DGPackage.USE__BOUNDS:
 			return basicSetBounds(null, msgs);
 		}
@@ -220,11 +222,11 @@ public class UseImpl extends GraphicalElementImpl implements Use {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch(featureID) {
 		case DGPackage.USE__BOUNDS:
 			return getBounds();
 		case DGPackage.USE__REFERENCED_ELEMENT:
-			if (resolve) {
+			if(resolve) {
 				return getReferencedElement();
 			}
 			return basicGetReferencedElement();
@@ -239,12 +241,12 @@ public class UseImpl extends GraphicalElementImpl implements Use {
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch(featureID) {
 		case DGPackage.USE__BOUNDS:
-			setBounds((Bounds) newValue);
+			setBounds((Bounds)newValue);
 			return;
 		case DGPackage.USE__REFERENCED_ELEMENT:
-			setReferencedElement((GraphicalElement) newValue);
+			setReferencedElement((GraphicalElement)newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -257,12 +259,12 @@ public class UseImpl extends GraphicalElementImpl implements Use {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch(featureID) {
 		case DGPackage.USE__BOUNDS:
-			setBounds((Bounds) null);
+			setBounds((Bounds)null);
 			return;
 		case DGPackage.USE__REFERENCED_ELEMENT:
-			setReferencedElement((GraphicalElement) null);
+			setReferencedElement((GraphicalElement)null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -275,7 +277,7 @@ public class UseImpl extends GraphicalElementImpl implements Use {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch(featureID) {
 		case DGPackage.USE__BOUNDS:
 			return bounds != null;
 		case DGPackage.USE__REFERENCED_ELEMENT:
@@ -292,9 +294,9 @@ public class UseImpl extends GraphicalElementImpl implements Use {
 	@Override
 	@SuppressWarnings("unchecked")
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
+		switch(operationID) {
 		case DGPackage.USE___REFERENCED_ELEMENT_HAS_ID__DIAGNOSTICCHAIN_MAP:
-			return referencedElementHasId((DiagnosticChain) arguments.get(0), (Map<Object, Object>) arguments.get(1));
+			return referencedElementHasId((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

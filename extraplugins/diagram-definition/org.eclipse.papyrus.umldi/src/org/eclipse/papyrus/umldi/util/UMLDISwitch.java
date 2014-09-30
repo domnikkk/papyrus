@@ -13,20 +13,16 @@ package org.eclipse.papyrus.umldi.util;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
+
 import org.eclipse.emf.ecore.util.Switch;
+
 import org.eclipse.papyrus.dd.di.Diagram;
 import org.eclipse.papyrus.dd.di.DiagramElement;
 import org.eclipse.papyrus.dd.di.Edge;
 import org.eclipse.papyrus.dd.di.Shape;
 import org.eclipse.papyrus.dd.di.Style;
-import org.eclipse.papyrus.umldi.UMLDIPackage;
-import org.eclipse.papyrus.umldi.UmlCompartment;
-import org.eclipse.papyrus.umldi.UmlDiagram;
-import org.eclipse.papyrus.umldi.UmlDiagramElement;
-import org.eclipse.papyrus.umldi.UmlEdge;
-import org.eclipse.papyrus.umldi.UmlLabel;
-import org.eclipse.papyrus.umldi.UmlShape;
-import org.eclipse.papyrus.umldi.UmlStyle;
+
+import org.eclipse.papyrus.umldi.*;
 
 /**
  * <!-- begin-user-doc -->
@@ -60,7 +56,7 @@ public class UMLDISwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public UMLDISwitch() {
-		if (modelPackage == null) {
+		if(modelPackage == null) {
 			modelPackage = UMLDIPackage.eINSTANCE;
 		}
 	}
@@ -89,122 +85,120 @@ public class UMLDISwitch<T> extends Switch<T> {
 	 */
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
-		switch (classifierID) {
-		case UMLDIPackage.UML_DIAGRAM: {
-			UmlDiagram umlDiagram = (UmlDiagram) theEObject;
+		switch(classifierID) {
+		case UMLDIPackage.UML_DIAGRAM:
+		{
+			UmlDiagram umlDiagram = (UmlDiagram)theEObject;
 			T result = caseUmlDiagram(umlDiagram);
-			if (result == null) {
-				result = caseUmlShape(umlDiagram);
-			}
-			if (result == null) {
-				result = caseDiagram(umlDiagram);
-			}
-			if (result == null) {
+			if(result == null) {
 				result = caseUmlDiagramElement(umlDiagram);
 			}
-			if (result == null) {
+			if(result == null) {
+				result = caseDiagram(umlDiagram);
+			}
+			if(result == null) {
 				result = caseShape(umlDiagram);
 			}
-			if (result == null) {
+			if(result == null) {
 				result = caseDiagramElement(umlDiagram);
 			}
-			if (result == null) {
+			if(result == null) {
 				result = defaultCase(theEObject);
 			}
 			return result;
 		}
-		case UMLDIPackage.UML_SHAPE: {
-			UmlShape umlShape = (UmlShape) theEObject;
-			T result = caseUmlShape(umlShape);
-			if (result == null) {
-				result = caseUmlDiagramElement(umlShape);
-			}
-			if (result == null) {
-				result = caseShape(umlShape);
-			}
-			if (result == null) {
-				result = caseDiagramElement(umlShape);
-			}
-			if (result == null) {
-				result = defaultCase(theEObject);
-			}
-			return result;
-		}
-		case UMLDIPackage.UML_DIAGRAM_ELEMENT: {
-			UmlDiagramElement umlDiagramElement = (UmlDiagramElement) theEObject;
+		case UMLDIPackage.UML_DIAGRAM_ELEMENT:
+		{
+			UmlDiagramElement umlDiagramElement = (UmlDiagramElement)theEObject;
 			T result = caseUmlDiagramElement(umlDiagramElement);
-			if (result == null) {
+			if(result == null) {
 				result = caseDiagramElement(umlDiagramElement);
 			}
-			if (result == null) {
+			if(result == null) {
 				result = defaultCase(theEObject);
 			}
 			return result;
 		}
-		case UMLDIPackage.UML_STYLE: {
-			UmlStyle umlStyle = (UmlStyle) theEObject;
+		case UMLDIPackage.UML_STYLE:
+		{
+			UmlStyle umlStyle = (UmlStyle)theEObject;
 			T result = caseUmlStyle(umlStyle);
-			if (result == null) {
+			if(result == null) {
 				result = caseStyle(umlStyle);
 			}
-			if (result == null) {
+			if(result == null) {
 				result = defaultCase(theEObject);
 			}
 			return result;
 		}
-		case UMLDIPackage.UML_EDGE: {
-			UmlEdge umlEdge = (UmlEdge) theEObject;
+		case UMLDIPackage.UML_EDGE:
+		{
+			UmlEdge umlEdge = (UmlEdge)theEObject;
 			T result = caseUmlEdge(umlEdge);
-			if (result == null) {
+			if(result == null) {
 				result = caseUmlDiagramElement(umlEdge);
 			}
-			if (result == null) {
+			if(result == null) {
 				result = caseEdge(umlEdge);
 			}
-			if (result == null) {
+			if(result == null) {
 				result = caseDiagramElement(umlEdge);
 			}
-			if (result == null) {
+			if(result == null) {
 				result = defaultCase(theEObject);
 			}
 			return result;
 		}
-		case UMLDIPackage.UML_COMPARTMENT: {
-			UmlCompartment umlCompartment = (UmlCompartment) theEObject;
-			T result = caseUmlCompartment(umlCompartment);
-			if (result == null) {
-				result = caseUmlShape(umlCompartment);
+		case UMLDIPackage.UML_SHAPE:
+		{
+			UmlShape umlShape = (UmlShape)theEObject;
+			T result = caseUmlShape(umlShape);
+			if(result == null) {
+				result = caseUmlDiagramElement(umlShape);
 			}
-			if (result == null) {
+			if(result == null) {
+				result = caseShape(umlShape);
+			}
+			if(result == null) {
+				result = caseDiagramElement(umlShape);
+			}
+			if(result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case UMLDIPackage.UML_COMPARTMENT:
+		{
+			UmlCompartment umlCompartment = (UmlCompartment)theEObject;
+			T result = caseUmlCompartment(umlCompartment);
+			if(result == null) {
 				result = caseUmlDiagramElement(umlCompartment);
 			}
-			if (result == null) {
+			if(result == null) {
 				result = caseShape(umlCompartment);
 			}
-			if (result == null) {
+			if(result == null) {
 				result = caseDiagramElement(umlCompartment);
 			}
-			if (result == null) {
+			if(result == null) {
 				result = defaultCase(theEObject);
 			}
 			return result;
 		}
-		case UMLDIPackage.UML_LABEL: {
-			UmlLabel umlLabel = (UmlLabel) theEObject;
+		case UMLDIPackage.UML_LABEL:
+		{
+			UmlLabel umlLabel = (UmlLabel)theEObject;
 			T result = caseUmlLabel(umlLabel);
-			if (result == null) {
-				result = caseUmlShape(umlLabel);
-			}
-			if (result == null) {
+			if(result == null) {
 				result = caseUmlDiagramElement(umlLabel);
 			}
-			if (result == null) {
+			if(result == null) {
 				result = caseShape(umlLabel);
 			}
-			if (result == null) {
+			if(result == null) {
 				result = caseDiagramElement(umlLabel);
 			}
-			if (result == null) {
+			if(result == null) {
 				result = defaultCase(theEObject);
 			}
 			return result;
@@ -222,7 +216,7 @@ public class UMLDISwitch<T> extends Switch<T> {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param object
-	 *            the target of the switch.
+	 *        the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Uml Diagram</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -239,7 +233,7 @@ public class UMLDISwitch<T> extends Switch<T> {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param object
-	 *            the target of the switch.
+	 *        the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Uml Diagram Element</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -256,7 +250,7 @@ public class UMLDISwitch<T> extends Switch<T> {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param object
-	 *            the target of the switch.
+	 *        the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Uml Style</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -273,7 +267,7 @@ public class UMLDISwitch<T> extends Switch<T> {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param object
-	 *            the target of the switch.
+	 *        the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Uml Edge</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -290,7 +284,7 @@ public class UMLDISwitch<T> extends Switch<T> {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param object
-	 *            the target of the switch.
+	 *        the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Uml Compartment</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -307,7 +301,7 @@ public class UMLDISwitch<T> extends Switch<T> {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param object
-	 *            the target of the switch.
+	 *        the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Uml Label</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -324,7 +318,7 @@ public class UMLDISwitch<T> extends Switch<T> {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param object
-	 *            the target of the switch.
+	 *        the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Uml Shape</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -341,7 +335,7 @@ public class UMLDISwitch<T> extends Switch<T> {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param object
-	 *            the target of the switch.
+	 *        the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Diagram Element</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -358,7 +352,7 @@ public class UMLDISwitch<T> extends Switch<T> {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param object
-	 *            the target of the switch.
+	 *        the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Shape</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -375,7 +369,7 @@ public class UMLDISwitch<T> extends Switch<T> {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param object
-	 *            the target of the switch.
+	 *        the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Diagram</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -392,7 +386,7 @@ public class UMLDISwitch<T> extends Switch<T> {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param object
-	 *            the target of the switch.
+	 *        the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Style</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -409,7 +403,7 @@ public class UMLDISwitch<T> extends Switch<T> {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param object
-	 *            the target of the switch.
+	 *        the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Edge</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -426,7 +420,7 @@ public class UMLDISwitch<T> extends Switch<T> {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param object
-	 *            the target of the switch.
+	 *        the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EObject</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject)
 	 * @generated
@@ -435,4 +429,4 @@ public class UMLDISwitch<T> extends Switch<T> {
 	public T defaultCase(EObject object) {
 		return null;
 	}
-} // UMLDISwitch
+} //UMLDISwitch

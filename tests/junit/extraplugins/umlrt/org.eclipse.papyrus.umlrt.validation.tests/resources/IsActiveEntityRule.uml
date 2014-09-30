@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:UMLRealTime="http:///schemas/UMLRealTime/_lVqk0BMpEeSz2qq_H0HScA/27" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/UMLRealTime/_lVqk0BMpEeSz2qq_H0HScA/27 pathmap://UML_RT_PROFILE/uml-rt.profile.uml#_lVrL4BMpEeSz2qq_H0HScA">
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:UMLRealTime="http://www.eclipse.org/papyrus/umlrt" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
   <uml:Model xmi:id="_Z4oo4B5CEeSsWuEOO_jVsA" name="UML RealTime Model">
     <packagedElement xmi:type="uml:Class" xmi:id="_aP5SUB5CEeSsWuEOO_jVsA" name="Capsule1"/>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_gDJDUB5CEeSsWuEOO_jVsA">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_gD4qMB5CEeSsWuEOO_jVsA" source="http://www.eclipse.org/uml2/2.0.0/UML">
-        <references xmi:type="ecore:EPackage" href="pathmap://UML_RT_PROFILE/uml-rt.profile.uml#_lVrL4BMpEeSz2qq_H0HScA"/>
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
       </eAnnotations>
       <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_RT_PROFILE/uml-rt.profile.uml#_1h74oEeVEeO0lv5O1DTHOQ"/>
     </profileApplication>
   </uml:Model>
-  <UMLRealTime:Capsule xmi:id="_dJzTIB5MEeSTSfKeKUiyVA" base_Class="_aP5SUB5CEeSsWuEOO_jVsA"/>
+  <UMLRealTime:Capsule xmi:id="_5f4f0DmTEeS6VfUSHwiIDg" base_Class="_aP5SUB5CEeSsWuEOO_jVsA"/>
 </xmi:XMI>

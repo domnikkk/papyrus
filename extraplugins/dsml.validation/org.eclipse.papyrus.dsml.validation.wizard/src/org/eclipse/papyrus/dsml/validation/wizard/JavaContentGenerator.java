@@ -45,6 +45,13 @@ public class JavaContentGenerator {
 	private IProject project;
 
 	/**
+	 * The source folder for the generated file. Ideally, it should be changed from "src" to "src-gen", but the
+	 * PluginGenerator currently does not support setting up the class path within the generated plugin
+	 * appropriately.
+	 */
+	public static final String srcFolder = "src"; //$NON-NLS-1$
+	
+	/**
 	 *
 	 * Constructor.
 	 *
@@ -68,7 +75,7 @@ public class JavaContentGenerator {
 				URI modelURI = umlProfile.eResource().getURI();
 
 				try {
-					IContainer target = project.getFolder("src");
+					IContainer target = project.getFolder(srcFolder); 
 					Utils.setPluginID(project.getName());
 					ClassesGenerator generator = new ClassesGenerator(modelURI, target, getArguments());
 					generator.doGenerate(monitor);

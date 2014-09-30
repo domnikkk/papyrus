@@ -14,10 +14,12 @@ package org.eclipse.papyrus.dd.di.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
+
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
+
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.eclipse.papyrus.dd.di.DIFactory;
-import org.eclipse.papyrus.dd.di.DIPackage;
+
+import org.eclipse.papyrus.dd.di.*;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!--
@@ -36,8 +38,8 @@ public class DIFactoryImpl extends EFactoryImpl implements DIFactory {
 	 */
 	public static DIFactory init() {
 		try {
-			DIFactory theDIFactory = (DIFactory) EPackage.Registry.INSTANCE.getEFactory(DIPackage.eNS_URI);
-			if (theDIFactory != null) {
+			DIFactory theDIFactory = (DIFactory)EPackage.Registry.INSTANCE.getEFactory(DIPackage.eNS_URI);
+			if(theDIFactory != null) {
 				return theDIFactory;
 			}
 		} catch (Exception exception) {
@@ -64,7 +66,7 @@ public class DIFactoryImpl extends EFactoryImpl implements DIFactory {
 	 */
 	@Override
 	public EObject create(EClass eClass) {
-		switch (eClass.getClassifierID()) {
+		switch(eClass.getClassifierID()) {
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -77,7 +79,7 @@ public class DIFactoryImpl extends EFactoryImpl implements DIFactory {
 	 */
 	@Override
 	public DIPackage getDIPackage() {
-		return (DIPackage) getEPackage();
+		return (DIPackage)getEPackage();
 	}
 
 	/**

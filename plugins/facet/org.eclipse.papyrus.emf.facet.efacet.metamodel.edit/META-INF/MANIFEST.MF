@@ -8,11 +8,11 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.edit,
  org.eclipse.emf.ecore,
  org.eclipse.emf.ecore.edit,
- org.eclipse.papyrus.emf.facet.efacet.metamodel;bundle-version="1.0.1"
+ org.eclipse.papyrus.emf.facet.efacet.metamodel;bundle-version="1.1.0"
 Bundle-Vendor: %providerName
 Bundle-ActivationPolicy: lazy
 Bundle-ClassPath: .
-Bundle-Version: 1.0.1.qualifier
+Bundle-Version: 1.1.0.qualifier
 Bundle-Name: %pluginName
 Bundle-Localization: plugin
 Bundle-ManifestVersion: 2

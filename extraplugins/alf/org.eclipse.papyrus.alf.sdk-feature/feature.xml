@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><feature id="org.eclipse.papyrus.alf.sdk" label="%featureName" provider-name="%providerName" version="1.0.1.qualifier">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><feature id="org.eclipse.papyrus.alf.sdk" label="%featureName" provider-name="%providerName" version="1.1.0.qualifier">
 
    <description>
       This feature includes:

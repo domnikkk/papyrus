@@ -2,10 +2,10 @@ Manifest-Version: 1.0
 Export-Package: org.eclipse.papyrus.adl4eclipse.org
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
- org.eclipse.papyrus.osgi.profile;bundle-version="1.0.1"
+ org.eclipse.papyrus.osgi.profile;bundle-version="1.1.0"
 Bundle-Vendor: %providerName
 Bundle-ActivationPolicy: lazy
-Bundle-Version: 1.0.1.qualifier
+Bundle-Version: 1.1.0.qualifier
 Bundle-localization: plugin
 Bundle-Name: %pluginName
 Bundle-Activator: org.eclipse.papyrus.adl4eclipse.org.Activator

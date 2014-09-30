@@ -12,40 +12,36 @@
 #include "CppCodegenTest/Pkg_CppCodegenTest.h"
 
 #include "AnsiCLibrary/Pkg_AnsiCLibrary.h"
-
 #include "CppCodegenTest/Class2.h"
 
 /************************************************************/
 /**
  * 
  */
-
 class Class3: public Class2 {
-
 public:
 
 	/**
 	 * Inherited method overriding.
-	 * @param a @param b @param  
+	 * @param a 
+	 * @param b 
+	 * @return  
 	 */
 	double virtualOp(double /*in*/a, double /*in*/b);
 
 	/**
 	 * Inherited virtual destructor
-	 * 
 	 */
 	~Class3();
 
 	/**
 	 * Default constructor
-	 * 
 	 */
 	Class3();
 
 };
 /************************************************************/
 /* External declarations (package visibility)               */
-
 /************************************************************/
 
 /* Inline functions                                         */

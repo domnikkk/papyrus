@@ -306,7 +306,7 @@ public class SequenceDeleteHelper {
 		destroyMessageEvents(deleteElementsCommand, host.getTargetConnections(), transactionalEditingDomain);
 	}
 
-	static void destroyMessageEvents(CompoundCommand deleteElementsCommand, List list, TransactionalEditingDomain transactionalEditingDomain) {
+	static void destroyMessageEvents(CompoundCommand deleteElementsCommand, List<?> list, TransactionalEditingDomain transactionalEditingDomain) {
 		for (Object o : list) {
 			if (o instanceof ConnectionEditPart) {
 				EObject model = ((ConnectionEditPart) o).resolveSemanticElement();
@@ -402,7 +402,7 @@ public class SequenceDeleteHelper {
 		List<TimeObservationLabelEditPart> timeObservationEditParts = SequenceUtil.findOccurenceSpecificationRelatedTimeObservationPart(srcLifelinePart, oss);
 		for (final TimeObservationLabelEditPart timeObservationEditPart : timeObservationEditParts) {
 			View view = (View) timeObservationEditPart.getModel();
-			EList sourceEdges = view.getSourceEdges();
+			List<?> sourceEdges = view.getSourceEdges();
 			for (Object sourceEdge : sourceEdges) {
 				Command deleteTimeViewCommand = new ICommandProxy(new DeleteCommand(editingDomain, (View) sourceEdge));
 				deleteViewsCmd.add(deleteTimeViewCommand);

@@ -13,6 +13,12 @@
     <availablePage>
       <emfPageIdentifier href="UMLDI.notation#_zh2dgP8vEeObup8tdlL4zw"/>
     </availablePage>
+    <availablePage>
+      <emfPageIdentifier href="UMLDI.notation#_nLnL4BVwEeSbve-DNFls6A"/>
+    </availablePage>
+    <availablePage>
+      <emfPageIdentifier href="UMLDI.notation#_tjU74BVwEeSbve-DNFls6A"/>
+    </availablePage>
   </pageList>
   <sashModel currentSelection="//@sashModel/@windows.0/@children.0">
     <windows>
@@ -28,6 +34,12 @@
         </children>
         <children>
           <emfPageIdentifier href="UMLDI.notation#_zh2dgP8vEeObup8tdlL4zw"/>
+        </children>
+        <children>
+          <emfPageIdentifier href="UMLDI.notation#_nLnL4BVwEeSbve-DNFls6A"/>
+        </children>
+        <children>
+          <emfPageIdentifier href="UMLDI.notation#_tjU74BVwEeSbve-DNFls6A"/>
         </children>
       </children>
     </windows>

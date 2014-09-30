@@ -53,7 +53,7 @@ public interface LineTo extends PathCommand {
 	 * end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Point</em>' containment reference.
+	 *        the new value of the '<em>Point</em>' containment reference.
 	 * @see #getPoint()
 	 * @generated
 	 */

@@ -15,13 +15,12 @@
 
 // Include from Include declaration (body)
 #include <string.h>
-// End of Include stereotype (body)
+// End of Include declaration (body)
 
 // static attributes (if any)
 
 /**
  * Default constructor
- * 
  */
 Class2::Class2() {
 	iVal1 = 0;
@@ -31,7 +30,9 @@ Class2::Class2() {
 
 /**
  * Constructor with parameters
- * @param newIVal1 @param newIVal2 @param newBVal 
+ * @param newIVal1 
+ * @param newIVal2 
+ * @param newBVal 
  */
 Class2::Class2(int /*in*/newIVal1, int /*in*/newIVal2, bool /*in*/newBVal) {
 	iVal1 = newIVal1;
@@ -41,7 +42,9 @@ Class2::Class2(int /*in*/newIVal1, int /*in*/newIVal2, bool /*in*/newBVal) {
 
 /**
  * Virtual method
- * @param a @param b @param  
+ * @param a 
+ * @param b 
+ * @return  
  */
 double Class2::virtualOp(double /*in*/a, double /*in*/b) {
 	return;
@@ -49,42 +52,37 @@ double Class2::virtualOp(double /*in*/a, double /*in*/b) {
 
 /**
  * Static method
- * 
  */
 void Class2::staticOp() {
-
 }
 
 /**
  * Friend method
- * 
  */
 void Class2::friendOp() {
-
 }
 
 /**
  * Non-static method
- * 
  */
 void Class2::nonStaticOp() {
-
 }
 
 /**
  * Method with in, out, inout, return parameters
- * @param in @param out @param inout @param ret 
+ * @param in 
+ * @param out 
+ * @param inout 
+ * @return ret 
  */
 int Class2::paramsOp(int /*in*/in, int /*out*/* out, int /*inout*/* inout) {
-
 }
 
 /**
  * Void Method
- * @param  
+ * @return  
  */
 void Class2::voidOp() {
-
 }
 
 /**
@@ -92,28 +90,24 @@ void Class2::voidOp() {
  * @param newIVal1 
  */
 void Class2::defaultValueOp(int /*in*/newIVal1) {
-
 }
 
 /**
  * Virtual destructor
- * 
  */
 Class2::~Class2() {
-
 }
 
 /**
  * 
- * @param c1 @param  
+ * @param c1 
+ * @return  
  */
 Class1 Class2::classesOp(Class1 /*in*/c1) {
-
 }
 
 /**
  * Const method
- * 
  */
 void Class2::constOp() const {
 	std::cout << "I am a const method" << std::endl;

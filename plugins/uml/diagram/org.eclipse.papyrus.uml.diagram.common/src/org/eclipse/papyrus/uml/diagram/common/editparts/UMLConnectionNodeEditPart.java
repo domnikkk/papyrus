@@ -252,8 +252,8 @@ public abstract class UMLConnectionNodeEditPart extends ConnectionEditPart imple
 
 		// Get the preference from PreferenceStore. there should be an assert
 		final IPreferenceStore store = Activator.getDefault().getPreferenceStore();
-		assert store != null : "The preference store was not found";
 		if (store == null) {
+			Activator.log.warn("The preference store was not found");
 			return "";
 		}
 		String sNameAppearance = store.getString(UMLVisualInformationPapyrusConstant.P_STEREOTYPE_NAME_APPEARANCE);

@@ -97,6 +97,8 @@ import org.eclipse.uml2.uml.Lifeline;
  */
 public class InteractionCompartmentXYLayoutEditPolicy extends XYLayoutEditPolicy {
 
+	public static final String CHILDREN_MOVEDELTA = "CHILDREN_MOVEDELTA"; //$NON-NLS-1$
+
 	@Override
 	protected Command getCreateCommand(CreateRequest request) {
 		CreateViewRequest req = (CreateViewRequest) request;
@@ -366,6 +368,10 @@ public class InteractionCompartmentXYLayoutEditPolicy extends XYLayoutEditPolicy
 	@SuppressWarnings("unchecked")
 	public static Command getCombinedFragmentResizeChildrenCommand(ChangeBoundsRequest request, CombinedFragmentEditPart combinedFragmentEditPart) {
 		Point moveDelta = request.getMoveDelta();
+		if (request.getExtendedData().get(CHILDREN_MOVEDELTA) instanceof Point) {
+			moveDelta = (Point) request.getExtendedData().get(CHILDREN_MOVEDELTA);
+		}
+
 		Dimension sizeDelta = request.getSizeDelta();
 		IFigure cfFigure = combinedFragmentEditPart.getFigure();
 		Rectangle origCFBounds = cfFigure.getBounds().getCopy();
@@ -650,11 +656,17 @@ public class InteractionCompartmentXYLayoutEditPolicy extends XYLayoutEditPolicy
 	 */
 	@Override
 	public Command getAddCommand(Request request) {
-		if (request instanceof ChangeBoundsRequest) {
-			// Only allow to move-in AppliedStereotypeCommentEditPart.
-			List editParts = ((ChangeBoundsRequest) request).getEditParts();
-			if (editParts.size() == 1 && editParts.get(0) instanceof AppliedStereotypesCommentEditPart) {
-				return super.getAddCommand(request);
+		if(request instanceof ChangeBoundsRequest) {
+			List<?> editParts = ((ChangeBoundsRequest)request).getEditParts();
+			if(editParts.size() == 1) {
+				if (editParts.get(0) instanceof AppliedStereotypesCommentEditPart) {
+					// Allow to move-in AppliedStereotypeCommentEditPart			
+					return super.getAddCommand(request);
+				}
+				if(editParts.get(0) instanceof CombinedFragmentEditPart) {
+					// Prevent UnexecutableCommand.INSTANCE to be added to a valid CombinedFragmentEditPart move command chain
+					return null;
+				}			
 			}
 			return UnexecutableCommand.INSTANCE;
 		}

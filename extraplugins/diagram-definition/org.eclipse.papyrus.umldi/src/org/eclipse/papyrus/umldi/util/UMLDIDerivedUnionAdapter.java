@@ -12,11 +12,15 @@
 package org.eclipse.papyrus.umldi.util;
 
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.common.notify.impl.AdapterImpl;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
+
 import org.eclipse.papyrus.dd.di.DIPackage;
+
 import org.eclipse.papyrus.umldi.UMLDIPackage;
 import org.eclipse.papyrus.umldi.UmlCompartment;
 import org.eclipse.papyrus.umldi.UmlDiagram;
@@ -51,7 +55,7 @@ public class UMLDIDerivedUnionAdapter extends AdapterImpl {
 	 * @generated
 	 */
 	public UMLDIDerivedUnionAdapter() {
-		if (modelPackage == null) {
+		if(modelPackage == null) {
 			modelPackage = UMLDIPackage.eINSTANCE;
 		}
 	}
@@ -62,15 +66,15 @@ public class UMLDIDerivedUnionAdapter extends AdapterImpl {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param notification
-	 *            a description of the change.
+	 *        a description of the change.
 	 * @generated
 	 */
 	@Override
 	public void notifyChanged(Notification notification) {
 		Object notifier = notification.getNotifier();
-		if (notifier instanceof EObject) {
-			EClass eClass = ((EObject) notifier).eClass();
-			if (eClass.eContainer() == modelPackage) {
+		if(notifier instanceof EObject) {
+			EClass eClass = ((EObject)notifier).eClass();
+			if(eClass.eContainer() == modelPackage) {
 				notifyChanged(notification, eClass);
 			}
 		}
@@ -82,21 +86,21 @@ public class UMLDIDerivedUnionAdapter extends AdapterImpl {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param notification
-	 *            a description of the change.
+	 *        a description of the change.
 	 * @param eClass
-	 *            the Ecore class of the notifier.
+	 *        the Ecore class of the notifier.
 	 * @generated
 	 */
 	protected void notifyChanged(Notification notification, EClass eClass) {
-		switch (eClass.getClassifierID()) {
+		switch(eClass.getClassifierID()) {
 		case UMLDIPackage.UML_DIAGRAM:
 			notifyUmlDiagramChanged(notification, eClass);
 			break;
-		case UMLDIPackage.UML_SHAPE:
-			notifyUmlShapeChanged(notification, eClass);
-			break;
 		case UMLDIPackage.UML_EDGE:
 			notifyUmlEdgeChanged(notification, eClass);
+			break;
+		case UMLDIPackage.UML_SHAPE:
+			notifyUmlShapeChanged(notification, eClass);
 			break;
 		case UMLDIPackage.UML_COMPARTMENT:
 			notifyUmlCompartmentChanged(notification, eClass);
@@ -113,11 +117,11 @@ public class UMLDIDerivedUnionAdapter extends AdapterImpl {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param notification
-	 *            a description of the change.
+	 *        a description of the change.
 	 * @param eClass
-	 *            the Ecore class of the notifier.
+	 *        the Ecore class of the notifier.
 	 * @param derivedUnion
-	 *            the derived union affected by the change.
+	 *        the derived union affected by the change.
 	 * @generated
 	 */
 	public void notifyChanged(Notification notification, EClass eClass, EStructuralFeature derivedUnion) {
@@ -130,13 +134,13 @@ public class UMLDIDerivedUnionAdapter extends AdapterImpl {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param notification
-	 *            a description of the change.
+	 *        a description of the change.
 	 * @param eClass
-	 *            the Ecore class of the notifier.
+	 *        the Ecore class of the notifier.
 	 * @generated
 	 */
 	protected void notifyUmlDiagramChanged(Notification notification, EClass eClass) {
-		switch (notification.getFeatureID(UmlDiagram.class)) {
+		switch(notification.getFeatureID(UmlDiagram.class)) {
 		case UMLDIPackage.UML_DIAGRAM__UML_MODEL_ELEMENT:
 			notifyChanged(notification, eClass, DIPackage.Literals.DIAGRAM_ELEMENT__MODEL_ELEMENT);
 			break;
@@ -167,13 +171,13 @@ public class UMLDIDerivedUnionAdapter extends AdapterImpl {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param notification
-	 *            a description of the change.
+	 *        a description of the change.
 	 * @param eClass
-	 *            the Ecore class of the notifier.
+	 *        the Ecore class of the notifier.
 	 * @generated
 	 */
 	protected void notifyUmlEdgeChanged(Notification notification, EClass eClass) {
-		switch (notification.getFeatureID(UmlEdge.class)) {
+		switch(notification.getFeatureID(UmlEdge.class)) {
 		case UMLDIPackage.UML_EDGE__UML_MODEL_ELEMENT:
 			notifyChanged(notification, eClass, DIPackage.Literals.DIAGRAM_ELEMENT__MODEL_ELEMENT);
 			break;
@@ -210,13 +214,13 @@ public class UMLDIDerivedUnionAdapter extends AdapterImpl {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param notification
-	 *            a description of the change.
+	 *        a description of the change.
 	 * @param eClass
-	 *            the Ecore class of the notifier.
+	 *        the Ecore class of the notifier.
 	 * @generated
 	 */
 	protected void notifyUmlCompartmentChanged(Notification notification, EClass eClass) {
-		switch (notification.getFeatureID(UmlCompartment.class)) {
+		switch(notification.getFeatureID(UmlCompartment.class)) {
 		case UMLDIPackage.UML_COMPARTMENT__UML_MODEL_ELEMENT:
 			notifyChanged(notification, eClass, DIPackage.Literals.DIAGRAM_ELEMENT__MODEL_ELEMENT);
 			break;
@@ -247,13 +251,13 @@ public class UMLDIDerivedUnionAdapter extends AdapterImpl {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param notification
-	 *            a description of the change.
+	 *        a description of the change.
 	 * @param eClass
-	 *            the Ecore class of the notifier.
+	 *        the Ecore class of the notifier.
 	 * @generated
 	 */
 	protected void notifyUmlLabelChanged(Notification notification, EClass eClass) {
-		switch (notification.getFeatureID(UmlLabel.class)) {
+		switch(notification.getFeatureID(UmlLabel.class)) {
 		case UMLDIPackage.UML_LABEL__UML_MODEL_ELEMENT:
 			notifyChanged(notification, eClass, DIPackage.Literals.DIAGRAM_ELEMENT__MODEL_ELEMENT);
 			break;
@@ -284,13 +288,13 @@ public class UMLDIDerivedUnionAdapter extends AdapterImpl {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param notification
-	 *            a description of the change.
+	 *        a description of the change.
 	 * @param eClass
-	 *            the Ecore class of the notifier.
+	 *        the Ecore class of the notifier.
 	 * @generated
 	 */
 	protected void notifyUmlShapeChanged(Notification notification, EClass eClass) {
-		switch (notification.getFeatureID(UmlShape.class)) {
+		switch(notification.getFeatureID(UmlShape.class)) {
 		case UMLDIPackage.UML_SHAPE__UML_MODEL_ELEMENT:
 			notifyChanged(notification, eClass, DIPackage.Literals.DIAGRAM_ELEMENT__MODEL_ELEMENT);
 			break;
@@ -314,4 +318,4 @@ public class UMLDIDerivedUnionAdapter extends AdapterImpl {
 			break;
 		}
 	}
-} // UMLDIDerivedUnionAdapter
+} //UMLDIDerivedUnionAdapter

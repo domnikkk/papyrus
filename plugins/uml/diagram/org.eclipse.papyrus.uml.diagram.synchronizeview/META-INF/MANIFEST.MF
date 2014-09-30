@@ -6,15 +6,15 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.gef,
  org.eclipse.gmf.runtime.diagram.ui,
  org.eclipse.uml2.uml,
- org.eclipse.papyrus.infra.core;bundle-version="1.0.1",
- org.eclipse.papyrus.infra.gmfdiag.common;bundle-version="1.0.1",
+ org.eclipse.papyrus.infra.core;bundle-version="1.1.0",
+ org.eclipse.papyrus.infra.gmfdiag.common;bundle-version="1.1.0",
  org.eclipse.gmf.tooling.runtime,
- org.eclipse.papyrus.infra.core.log;bundle-version="1.0.1"
+ org.eclipse.papyrus.infra.core.log;bundle-version="1.1.0"
 Export-Package: org.eclipse.papyrus.uml.diagram.synchronizeview.custom
  ization
 Bundle-Vendor: %providerName
 Bundle-ActivationPolicy: lazy
-Bundle-Version: 1.0.1.qualifier
+Bundle-Version: 1.1.0.qualifier
 Bundle-Name: %pluginName
 Bundle-Localization: plugin
 Bundle-Activator: org.eclipse.papyrus.uml.diagram.synchronizeview.Acti

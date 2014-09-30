@@ -9,6 +9,7 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 417409
+ *  Christian W. Damus (CEA) - bug 444227
  *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.tools.databinding;
@@ -33,7 +34,7 @@ import org.eclipse.core.databinding.observable.value.ValueDiff;
  * All sub-elements will be edited at the same time, with the same value.
  */
 // TODO : Add listeners on sub-observables, and remove them on dispose
-public class MultipleObservableValue extends ReferenceCountedObservable.Value implements AggregatedObservable, IChangeListener {
+public class MultipleObservableValue extends ReferenceCountedObservable.Value implements IMultipleObservableValue, IChangeListener {
 
 	/**
 	 *
@@ -107,16 +108,10 @@ public class MultipleObservableValue extends ReferenceCountedObservable.Value im
 		return null;
 	}
 
-	/**
-	 * @return the list of sub-observable values
-	 */
 	public List<IObservableValue> getObservableValues() {
 		return observableValues;
 	}
 
-	/**
-	 * @return the list of observed values
-	 */
 	public List<Object> getObservedValues() {
 		List<Object> result = new LinkedList<Object>();
 		for (IObservableValue value : getObservableValues()) {
