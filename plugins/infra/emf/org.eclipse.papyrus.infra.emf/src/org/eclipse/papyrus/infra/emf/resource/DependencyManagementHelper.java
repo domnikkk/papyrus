@@ -133,11 +133,14 @@ public class DependencyManagementHelper {
 			EObject eObject = allContentsIterator.next();
 
 			for (EReference reference : eObject.eClass().getEAllReferences()) {
-				if (reference.isContainment()) {
+				if (reference.isContainer() || reference.isContainment()) {
 					continue;
 				}
 
-				if (!reference.isChangeable()) {
+				// Attempts to modify a changeable + derived feature (e.g. Class#general in UML)
+				// will rely in reverse-derivation algorithms, which may recreate some existing elements
+				// (Instead of modifying them). This can result in loss of information. Don't change derived values.
+				if (reference.isDerived() || !reference.isChangeable()) {
 					continue;
 				}
 

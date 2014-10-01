@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/papyrus/infra/viewpoints/policy/style" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_ffjeAEL1EeSSlqpbHKLCqA" type="PapyrusUMLClassDiagram" name="Config" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_tKu0kUL1EeSSlqpbHKLCqA" type="2008">
+    <children xmi:type="notation:DecorationNode" xmi:id="_tKu0k0L1EeSSlqpbHKLCqA" type="5029"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_tKu0lEL1EeSSlqpbHKLCqA" type="7017">
+      <children xmi:type="notation:Shape" xmi:id="_t5AP0EL1EeSSlqpbHKLCqA" type="3012">
+        <styles xmi:type="notation:StringListValueStyle" xmi:id="_Ko_pYEL2EeSSlqpbHKLCqA" name="maskLabel">
+          <stringListValue>visibility</stringListValue>
+          <stringListValue>name</stringListValue>
+          <stringListValue>derived</stringListValue>
+          <stringListValue>multiplicity</stringListValue>
+          <stringListValue>defaultValue</stringListValue>
+          <stringListValue>type</stringListValue>
+        </styles>
+        <element xmi:type="uml:Property" href="rsaToPapyrusParameters.uml#_t42e0EL1EeSSlqpbHKLCqA"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_t5AP0UL1EeSSlqpbHKLCqA"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_65zMoEL1EeSSlqpbHKLCqA" type="3012">
+        <styles xmi:type="notation:StringListValueStyle" xmi:id="_KNn8AEL2EeSSlqpbHKLCqA" name="maskLabel">
+          <stringListValue>visibility</stringListValue>
+          <stringListValue>name</stringListValue>
+          <stringListValue>derived</stringListValue>
+          <stringListValue>multiplicity</stringListValue>
+          <stringListValue>defaultValue</stringListValue>
+          <stringListValue>type</stringListValue>
+        </styles>
+        <element xmi:type="uml:Property" href="rsaToPapyrusParameters.uml#_65pboEL1EeSSlqpbHKLCqA"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_65zMoUL1EeSSlqpbHKLCqA"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_Mv8HwUL2EeSSlqpbHKLCqA" type="3012">
+        <styles xmi:type="notation:StringListValueStyle" xmi:id="_VFcaIEL2EeSSlqpbHKLCqA" name="maskLabel">
+          <stringListValue>visibility</stringListValue>
+          <stringListValue>name</stringListValue>
+          <stringListValue>derived</stringListValue>
+          <stringListValue>multiplicity</stringListValue>
+          <stringListValue>defaultValue</stringListValue>
+          <stringListValue>type</stringListValue>
+        </styles>
+        <element xmi:type="uml:Property" href="rsaToPapyrusParameters.uml#_Mv8HwEL2EeSSlqpbHKLCqA"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_Mv8HwkL2EeSSlqpbHKLCqA"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_WuBhgEL2EeSSlqpbHKLCqA" type="3012">
+        <styles xmi:type="notation:StringListValueStyle" xmi:id="_aEtJcEL2EeSSlqpbHKLCqA" name="maskLabel">
+          <stringListValue>visibility</stringListValue>
+          <stringListValue>name</stringListValue>
+          <stringListValue>derived</stringListValue>
+          <stringListValue>multiplicity</stringListValue>
+          <stringListValue>defaultValue</stringListValue>
+          <stringListValue>type</stringListValue>
+        </styles>
+        <element xmi:type="uml:Property" href="rsaToPapyrusParameters.uml#_Wt4XkEL2EeSSlqpbHKLCqA"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_WuBhgUL2EeSSlqpbHKLCqA"/>
+      </children>
+      <styles xmi:type="notation:TitleStyle" xmi:id="_tKu0lUL1EeSSlqpbHKLCqA"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_tKu0lkL1EeSSlqpbHKLCqA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_tKu0l0L1EeSSlqpbHKLCqA"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tKu0mEL1EeSSlqpbHKLCqA"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_tKu0mUL1EeSSlqpbHKLCqA" visible="false" type="7018">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_tKu0mkL1EeSSlqpbHKLCqA"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_tKu0m0L1EeSSlqpbHKLCqA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_tKu0nEL1EeSSlqpbHKLCqA"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tKu0nUL1EeSSlqpbHKLCqA"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_tKu0nkL1EeSSlqpbHKLCqA" visible="false" type="7019">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_tKu0n0L1EeSSlqpbHKLCqA"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_tKu0oEL1EeSSlqpbHKLCqA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_tKu0oUL1EeSSlqpbHKLCqA"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tKu0okL1EeSSlqpbHKLCqA"/>
+    </children>
+    <element xmi:type="uml:Class" href="rsaToPapyrusParameters.uml#_tKu0kEL1EeSSlqpbHKLCqA"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tKu0kkL1EeSSlqpbHKLCqA" x="502" y="294"/>
+  </children>
+  <styles xmi:type="notation:StringValueStyle" xmi:id="_ffjeAUL1EeSSlqpbHKLCqA" name="diagram_compatibility_version" stringValue="1.0.0"/>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_ffjeAkL1EeSSlqpbHKLCqA"/>
+  <styles xmi:type="style:PapyrusViewStyle" xmi:id="_ffjeA0L1EeSSlqpbHKLCqA">
+    <owner xmi:type="uml:Model" href="rsaToPapyrusParameters.uml#_fduSAEL1EeSSlqpbHKLCqA"/>
+  </styles>
+  <element xmi:type="uml:Model" href="rsaToPapyrusParameters.uml#_fduSAEL1EeSSlqpbHKLCqA"/>
+</notation:Diagram>

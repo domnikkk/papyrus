@@ -19,11 +19,12 @@ modeltype umlNotation "strict" uses 'http://www.eclipse.org/papyrus/umlnotation'
 modeltype uml "strict" uses 'http://www.eclipse.org/uml2/5.0.0/UML';
 modeltype ecore "strict" uses 'http://www.eclipse.org/emf/2002/Ecore';
 modeltype sash "strict" uses 'http://www.eclipse.org/papyrus/0.7.0/sashdi';
+modeltype config "strict" uses 'http:///RSAToPapyrusParameters.ecore';
 
 /**
 *	Transformation rules for importing an RSA Semantic model into Papyrus (SashModel + cleanup semantics)
 */
-transformation RSAModelToPapyrus(inout semantics : uml, inout graphics : notation, out di : sash);
+transformation RSAModelToPapyrus(inout semantics : uml, inout graphics : notation, out di : sash, in param : config);
 
 
 main() {
@@ -32,7 +33,11 @@ main() {
 	map createSashModel();
 	
 	semantics.objectsOfType(Element).map deleteSourceDiagrams();
-	semantics.objectsOfType(OpaqueExpression).map convertToLiteralString();
+	
+	if param.rootObjects()[Config]->any(true).convertOpaqueExpressionToLiteralString then
+		semantics.objectsOfType(OpaqueExpression).map convertToLiteralString()
+	endif;
+	
 	semantics.objectsOfType(OpaqueExpression).map fixLanguage();
 }
 

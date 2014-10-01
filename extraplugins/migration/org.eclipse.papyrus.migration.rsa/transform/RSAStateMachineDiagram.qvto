@@ -16,8 +16,9 @@ modeltype umlNotation "strict" uses 'http://www.eclipse.org/papyrus/umlnotation'
 modeltype uml "strict" uses 'http://www.eclipse.org/uml2/5.0.0/UML';
 modeltype ecore "strict" uses 'http://www.eclipse.org/emf/2002/Ecore';
 modeltype sash "strict" uses 'http://www.eclipse.org/papyrus/0.7.0/sashdi';
+modeltype config "strict" uses 'http:///RSAToPapyrusParameters.ecore';
 
-transformation RSAStateMachineDiagram(inout semantics : uml, inout graphics : notation, out di : sash);
+transformation RSAStateMachineDiagram(inout semantics : uml, inout graphics : notation, out di : sash, in param : config);
 
 main() {
 	semantics.rootObjects()[uml::Element]->map toOwnedDiagrams();

@@ -18,6 +18,7 @@ import java.io.OutputStreamWriter;
 import java.net.URL;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -67,8 +68,9 @@ import org.eclipse.papyrus.dsml.validation.PapyrusDSMLValidationRule.PapyrusDSML
 import org.eclipse.papyrus.infra.tools.util.ListHelper;
 import org.eclipse.papyrus.m2m.qvto.TransformationUI;
 import org.eclipse.papyrus.migration.rsa.Activator;
+import org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.Config;
+import org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.RSAToPapyrusParametersFactory;
 import org.eclipse.papyrus.migration.rsa.blackbox.ProfileBaseHelper;
-import org.eclipse.papyrus.migration.rsa.umlrt.UMLRealTimePackage;
 import org.eclipse.papyrus.uml.documentation.Documentation.DocumentationPackage;
 import org.eclipse.papyrus.umlrt.statemachine.UMLRealTimeStateMach.UMLRealTimeStateMachPackage;
 import org.eclipse.swt.widgets.Display;
@@ -81,7 +83,7 @@ public class ImportTransformation {
 
 	protected final URI sourceURI;
 
-	protected ModelExtent outUML, outNotation, outSashModel;
+	protected ModelExtent outUML, outNotation, outSashModel, inParameters;
 
 	protected ResourceSet resourceSet;
 
@@ -90,6 +92,8 @@ public class ImportTransformation {
 	protected Job job;
 
 	protected Resource umlResource;
+
+	protected Config parameters;
 
 	/** Source URI to Target URI map */
 	protected final Map<URI, URI> uriMappings = new HashMap<URI, URI>();
@@ -102,8 +106,13 @@ public class ImportTransformation {
 	protected final Map<URI, TransformationExecutor> localTransformations = new HashMap<URI, TransformationExecutor>();
 
 	public ImportTransformation(URI sourceURI) {
+		this(sourceURI, RSAToPapyrusParametersFactory.eINSTANCE.createConfig());
+	}
+
+	public ImportTransformation(URI sourceURI, Config config) {
 		Assert.isNotNull(sourceURI);
 		this.sourceURI = sourceURI;
+		this.parameters = config;
 
 		this.cacheTransformations = true;
 	}
@@ -222,9 +231,11 @@ public class ImportTransformation {
 					}
 					modelIterator.prune(); // Don't navigate Diagram children
 				} else if (next instanceof OpaqueExpression) {
-					OpaqueExpression exp = (OpaqueExpression) next;
-					if (needsConversion(exp)) {
-						i++;
+					if (parameters.isConvertOpaqueExpressionToLiteralString()) {
+						OpaqueExpression exp = (OpaqueExpression) next;
+						if (needsConversion(exp)) {
+							i++;
+						}
 					}
 				}
 			}
@@ -342,11 +353,6 @@ public class ImportTransformation {
 		//
 
 		if (generationStatus.getSeverity() <= Diagnostic.WARNING) {
-			// if(getUMLRTProfile() != null) {
-			// monitor.subTask("Converting profiles...");
-			//
-			// convertUMLRTProfile(monitor, generationStatus);
-			// }
 
 			monitor.subTask("Saving models...");
 			URI umlModelURI = null;
@@ -434,6 +440,7 @@ public class ImportTransformation {
 		Diagnostic loadedProfiles = getInPapyrusProfiles();
 		extents.add(extractPapyrusProfiles(loadedProfiles));
 		extents.add(getInProfileDefinitions());
+		extents.add(getInConfig());
 
 		TransformationExecutor executor;
 		try {
@@ -535,6 +542,7 @@ public class ImportTransformation {
 		extents.add(getInoutNotationModel());
 		extents.add(extractPapyrusProfiles(getInPapyrusProfiles()));
 		extents.add(getInProfileDefinitions());
+		extents.add(getInConfig());
 
 		TransformationExecutor executor;
 		try {
@@ -563,7 +571,12 @@ public class ImportTransformation {
 	}
 
 	protected ModelExtent getInProfileDefinitions() {
-		return new BasicModelExtent(Arrays.asList(new EPackage[] { PapyrusDSMLValidationRulePackage.eINSTANCE, DocumentationPackage.eINSTANCE, UMLRealTimePackage.eINSTANCE, UMLRealTimeStateMachPackage.eINSTANCE }));
+		return new BasicModelExtent(Arrays.asList(new EPackage[] {
+				PapyrusDSMLValidationRulePackage.eINSTANCE,
+				DocumentationPackage.eINSTANCE,
+				org.eclipse.papyrus.umlrt.UMLRealTime.UMLRealTimePackage.eINSTANCE,
+				UMLRealTimeStateMachPackage.eINSTANCE
+		}));
 	}
 
 	/**
@@ -639,6 +652,13 @@ public class ImportTransformation {
 
 	protected Resource createUMLResource(ResourceSet resourceSet, URI umlModelURI) {
 		return resourceSet.createResource(umlModelURI, UMLResource.UML_CONTENT_TYPE_IDENTIFIER);
+	}
+
+	protected ModelExtent getInConfig() {
+		if (inParameters == null) {
+			inParameters = new BasicModelExtent(Collections.singletonList(parameters));
+		}
+		return inParameters;
 	}
 
 	protected Collection<Resource> handleFragments(Resource umlResource, Resource notationResource, Resource sashResource) {
@@ -717,7 +737,7 @@ public class ImportTransformation {
 			// Delete them as a post-action. Iterate on all controlled models and delete the RealTime stereotypes at the root of each resource
 			for (Iterator<EObject> rootsIterator = resource.getContents().iterator(); rootsIterator.hasNext();) {
 				EObject rootElement = rootsIterator.next();
-				if (rootElement.eClass().getEPackage() == UMLRealTimePackage.eINSTANCE) {
+				if (rootElement.eClass().getEPackage() == org.eclipse.papyrus.migration.rsa.umlrt.UMLRealTimePackage.eINSTANCE) {
 					rootsIterator.remove();
 				}
 			}
@@ -840,6 +860,7 @@ public class ImportTransformation {
 		allExtents.add(getInOutUMLModel());
 		allExtents.add(getInoutNotationModel());
 		allExtents.add(getOutSashModel());
+		allExtents.add(getInConfig());
 		return allExtents;
 	}
 

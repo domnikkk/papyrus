@@ -17,11 +17,12 @@ modeltype notation "strict" uses 'http://www.eclipse.org/gmf/runtime/1.0.2/notat
 modeltype umlNotation "strict" uses 'http://www.eclipse.org/papyrus/umlnotation';
 modeltype uml "strict" uses 'http://www.eclipse.org/uml2/5.0.0/UML';
 modeltype ecore "strict" uses 'http://www.eclipse.org/emf/2002/Ecore';
+modeltype config "strict" uses 'http:///RSAToPapyrusParameters.ecore';
 
 /**
 *	Abstract transformation rules for importing notation diagrams into Papyrus
 */
-transformation RSAToPapyrus(inout semantics : uml, out graphics : notation);
+transformation RSAToPapyrus(inout semantics : uml, out graphics : notation, in param : config);
 
 
 main() {

@@ -97,9 +97,6 @@ public class PortTypeAdapter extends AdapterImpl {
 				break;
 			}
 		}
-
-
-
 	}
 
 	/**
@@ -110,9 +107,11 @@ public class PortTypeAdapter extends AdapterImpl {
 	 *
 	 */
 	private void detachAdapter(Type type) {
+		if (type == null) {
+			return;
+		}
 		EObject source = determineSource(type);
 		source.eAdapters().remove(adapter);
-
 	}
 
 	/**
@@ -122,7 +121,6 @@ public class PortTypeAdapter extends AdapterImpl {
 	 *            Type where adapter will be added
 	 */
 	private void attachAdapter(Type oldType, Type newType) {
-
 
 		EObject newSource = determineSource(newType);
 		if (newSource != null) {
@@ -135,7 +133,6 @@ public class PortTypeAdapter extends AdapterImpl {
 					oldSource.eAdapters().remove(adapter);
 				}
 			}
-
 
 			// Attach adapter for new type
 			if (adapter == null || !newSource.eAdapters().contains(adapter)) {
@@ -150,17 +147,10 @@ public class PortTypeAdapter extends AdapterImpl {
 						} else if (Notification.REMOVE == notification.getEventType()) {
 							port.eNotify(new ENotificationImpl((InternalEObject) port, notification.getEventType(), derivedFeature, notification.getOldValue(), notification.getNewValue()));
 						}
-
 					};
-
 				};
-
 			}
 		}
-
-
-
-
 	}
 
 	/**
@@ -200,7 +190,5 @@ public class PortTypeAdapter extends AdapterImpl {
 
 		// Notify observers
 		port.eNotify(new ENotificationImpl((InternalEObject) port, Notification.SET, derivedFeature, null, port.eGet(derivedFeature), true));
-
-
 	}
 }

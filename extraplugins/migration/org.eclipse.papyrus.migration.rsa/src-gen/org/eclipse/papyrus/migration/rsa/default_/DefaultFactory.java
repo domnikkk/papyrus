@@ -93,6 +93,16 @@ public interface DefaultFactory extends EFactory {
 	MarkingImport createMarkingImport();
 
 	/**
+	 * Returns a new object of class '<em>Language</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return a new object of class '<em>Language</em>'.
+	 * @generated
+	 */
+	DefaultLanguage createDefaultLanguage();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

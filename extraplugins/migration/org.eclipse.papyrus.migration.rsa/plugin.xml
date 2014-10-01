@@ -40,7 +40,7 @@
       <command
             defaultHandler="org.eclipse.papyrus.migration.rsa.handler.ImportHandler"
             id="org.eclipse.papyrus.migration.rsa.import"
-            name="Import EMX model">
+            name="Import RSA Model/Profile">
       </command>
    </extension>
 
@@ -406,6 +406,27 @@
             </parameter>
          </describer>
       </content-type>
+   </extension>
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated rsaToPapyrusParameters -->
+      <package
+            uri="http:///RSAToPapyrusParameters.ecore"
+            class="org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.RSAToPapyrusParametersPackage"
+            genModel="model/ui/rsaToPapyrusParameters.genmodel"/>
+   </extension>
+   <extension
+         point="org.eclipse.papyrus.views.properties.context">
+      <context
+            contextModel="dialog/RSAToPapyrusParameters.ctx"
+            isCustomizable="false">
+      </context>
+   </extension>
+   <extension
+         point="org.eclipse.uml2.uml.generated_package">
+      <profile
+            location="platform:/plugin/org.eclipse.papyrus.migration.rsa/model/ui/rsaToPapyrusParameters.uml"
+            uri="http:///RSAToPapyrusParameters.ecore">
+      </profile>
    </extension>
 
 </plugin>

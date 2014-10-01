@@ -216,7 +216,7 @@
 			<id>ep</id>
 			<layout>p2</layout>
 			<!-- updateFrom("Eclipse",0) -->
-			<url>http://download.eclipse.org/eclipse/updates/4.4milestones/M-4.4.1RC4-201409102310/</url>
+			<url>http://download.eclipse.org/eclipse/updates/4.4/R-4.4.1-201409250400/</url>
 		</repository>
 		<repository>
 			<id>gef</id>
@@ -240,7 +240,7 @@
 			<id>gmf-tooling</id>
 			<layout>p2</layout>
 			<!-- updateFrom("GMF Tooling",0) -->
-			<url>http://download.eclipse.org/modeling/gmp/gmf-tooling/updates/milestones-3.2.RC4a</url>
+			<url>http://download.eclipse.org/modeling/gmp/gmf-tooling/updates/milestones-3.2.1.RC4</url>
 		</repository>
 		<repository>
 			<id>m2t-acceleo</id>
@@ -264,7 +264,7 @@
 			<id>mdt-uml2</id>
 			<layout>p2</layout>
 			<!-- updateFrom("MDT UML2",0) -->
-			<url>http://download.eclipse.org/modeling/mdt/uml2/updates/5.0.x</url>
+			<url>http://download.eclipse.org/modeling/mdt/uml2/updates/5.0</url>
 		</repository>
 		<repository>
 			<id>mmt-qvto</id>
@@ -298,7 +298,7 @@
 			<id>webtools</id>
 			<layout>p2</layout>
 			<!-- updateFrom("WebTools",0) -->
-			<url>http://download.eclipse.org/webtools/downloads/drops/R3.6.1/M-3.6.1RC4-20140912000031/repository/</url>
+			<url>http://download.eclipse.org/webtools/downloads/drops/R3.6.1/R-3.6.1-20140912000031/repository/</url>
 		</repository>
 	</repositories>
 	<build>
