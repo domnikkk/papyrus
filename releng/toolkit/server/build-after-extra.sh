@@ -36,7 +36,7 @@ mv $p2UpdateSiteDir $updateSite
 
 # create the update site zip
 (cd $updateSite && zip -r $updateZipName *)
-mv $updateSite/$updateZipName "tmp/$FULL_BUILD_ID"
+mv $updateSite/$updateZipName "tmp/extra"
 
 (cd tmp && zip -r $zipName *)
 mv tmp/$zipName .
