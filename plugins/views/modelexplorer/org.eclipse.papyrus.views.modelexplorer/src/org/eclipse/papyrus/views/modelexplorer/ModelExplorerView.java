@@ -423,36 +423,26 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 		// workaround for bug 311827: the Common Viewer always uses NavigatorDecoratingLabelProvider
 		// as a wrapper for the LabelProvider provided by the application. The NavigatorDecoratingLabelProvider
 		// does not delegate tooltip related functions but defines them as empty.
-		NavigatorContentService contentService = new NavigatorContentService(getViewSite().getId());
 
-		// get label provider from content service (which in turn evaluates extension points in
-		// function of the input)
 		Object input = getInitialInput();
-		Set<Object> descriptors = contentService.findDescriptorsByTriggerPoint(input, false);
-		for (Object descriptor : descriptors) {
-			if (descriptor instanceof NavigatorContentDescriptor) {
-				ILabelProvider labelProvider = null;
+		ILabelProvider labelProvider = null;
 
-				if (input instanceof ServicesRegistry) {
-					ServicesRegistry registry = (ServicesRegistry) input;
-					try {
-						labelProvider = registry.getService(LabelProviderService.class).getLabelProvider(LABEL_PROVIDER_SERVICE_CONTEXT);
-					} catch (ServiceException ex) {
-						Activator.log.error(ex);
-					}
-
-					labelProvider = new DecoratingLabelProviderWTooltips(labelProvider, (ServicesRegistry) input);
-				}
-
-				if (labelProvider == null) {
-					labelProvider = new LabelProvider();
-				}
-
-				viewer.setLabelProvider(labelProvider); // add for decorator and tooltip support
-				break;
+		if (input instanceof ServicesRegistry) {
+			ServicesRegistry registry = (ServicesRegistry) input;
+			try {
+				labelProvider = registry.getService(LabelProviderService.class).getLabelProvider(LABEL_PROVIDER_SERVICE_CONTEXT);
+			} catch (ServiceException ex) {
+				Activator.log.error(ex);
 			}
+
+			labelProvider = new DecoratingLabelProviderWTooltips(labelProvider, (ServicesRegistry) input);
 		}
-		contentService.dispose(); // No longer need this
+
+		if (labelProvider == null) {
+			labelProvider = new LabelProvider();
+		}
+
+		viewer.setLabelProvider(labelProvider); // add for decorator and tooltip support
 	}
 
 	@Override
