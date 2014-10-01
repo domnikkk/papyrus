@@ -27,6 +27,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.LabelEditPart;
+import org.eclipse.papyrus.infra.gmfdiag.common.editpart.PapyrusDiagramEditPart;
 import org.eclipse.papyrus.infra.gmfdiag.common.utils.DiagramEditPartsUtil;
 import org.eclipse.papyrus.uml.diagram.common.layout.LayoutUtils;
 
@@ -247,14 +248,20 @@ public class AlignActionHelper {
 	 */
 	protected boolean isContained(PrecisionRectangle newPosition, EditPart currentEP) {
 
-		boolean isContained;
+		boolean isContained = true;
 
 		EditPart container = DiagramEditPartsUtil.getContainerEditPart((GraphicalEditPart) currentEP);
+		
+		//in case the container is the Diagram Editor itself, the rule is not applicable (Bug 445666)
+		if (!(container instanceof PapyrusDiagramEditPart) ){
+			
 		PrecisionRectangle containerBounds = LayoutUtils.getAbsolutePosition(container);
 		//reduce the reference of 1 pixel in order to avoid the Scrollbar apparition when trying to Align on the parent.
 		containerBounds.expand(new Insets(-1));
 		isContained = containerBounds.contains(newPosition.getBottomLeft()) && containerBounds.contains(newPosition.getTopRight())  ;
 
+		}
+		
 		return isContained;
 
 	}
