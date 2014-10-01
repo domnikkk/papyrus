@@ -32,7 +32,7 @@ public class RoundedRectangleNodePlateFigure extends DefaultSizeNodeFigure imple
 	 * Instantiates a new rounded rectangle node plate figure.
 	 *
 	 * @param defSize
-	 *        the def size
+	 *            the def size
 	 */
 	public RoundedRectangleNodePlateFigure(Dimension defSize) {
 		super(defSize);
@@ -42,9 +42,9 @@ public class RoundedRectangleNodePlateFigure extends DefaultSizeNodeFigure imple
 	 * Instantiates a new rounded rectangle node plate figure.
 	 *
 	 * @param width
-	 *        the width
+	 *            the width
 	 * @param height
-	 *        the height
+	 *            the height
 	 */
 	public RoundedRectangleNodePlateFigure(int width, int height) {
 		super(width, height);
@@ -56,11 +56,11 @@ public class RoundedRectangleNodePlateFigure extends DefaultSizeNodeFigure imple
 	 * @return the RoundedCompartment figure
 	 */
 	public IRoundedRectangleFigure getRoundedCompartmentFigure() {
-		if(getChildren().size() > 0 && getChildren().get(0) instanceof IRoundedRectangleFigure) {
-			return (IRoundedRectangleFigure)getChildren().get(0);
+		if (getChildren().size() > 0 && getChildren().get(0) instanceof IRoundedRectangleFigure) {
+			return (IRoundedRectangleFigure) getChildren().get(0);
 		}
-		if(svgNodePlateFigure != null && svgNodePlateFigure.getChildren().size() > 0 && svgNodePlateFigure.getChildren().get(0) instanceof IRoundedRectangleFigure) {
-			return (IRoundedRectangleFigure)svgNodePlateFigure.getChildren().get(0);
+		if (svgNodePlateFigure != null && svgNodePlateFigure.getChildren().size() > 0 && svgNodePlateFigure.getChildren().get(0) instanceof IRoundedRectangleFigure) {
+			return (IRoundedRectangleFigure) svgNodePlateFigure.getChildren().get(0);
 		}
 		return null;
 	}
@@ -91,7 +91,7 @@ public class RoundedRectangleNodePlateFigure extends DefaultSizeNodeFigure imple
 	 * Sets the SVG node plate container.
 	 *
 	 * @param svgNodePlateFigure
-	 *        the new SVG node plate container
+	 *            the new SVG node plate container
 	 * @see org.eclipse.papyrus.infra.gmfdiag.common.figure.node.ICustomNodePlate#setSVGNodePlateContainer(org.eclipse.papyrus.uml.diagram.common.figure.node.SVGNodePlateFigure)
 	 */
 	@Override
@@ -115,12 +115,12 @@ public class RoundedRectangleNodePlateFigure extends DefaultSizeNodeFigure imple
 	 * reference's coordinates and bounds of the figure.
 	 *
 	 * @param p
-	 *        - relative reference for the <Code>SlidableAnchor</Code>
+	 *            - relative reference for the <Code>SlidableAnchor</Code>
 	 * @return a <code>SlidableAnchor</code> for this figure with relative reference at p
 	 */
 	@Override
 	protected ConnectionAnchor createAnchor(PrecisionPoint p) {
-		if(p == null)
+		if (p == null)
 			// If the old terminal for the connection anchor cannot be resolved (by SlidableAnchor) a null
 			// PrecisionPoint will passed in - this is handled here
 			return createDefaultAnchor();
@@ -144,7 +144,7 @@ public class RoundedRectangleNodePlateFigure extends DefaultSizeNodeFigure imple
 	 * @param dimension
 	 */
 	@Override
-	//unused
+	// unused
 	public void setCornerDimensions(Dimension dimension) {
 		getRoundedCompartmentFigure().setCornerDimensions(dimension);
 	}
@@ -155,7 +155,7 @@ public class RoundedRectangleNodePlateFigure extends DefaultSizeNodeFigure imple
 	 * @param booleanValue
 	 */
 	@Override
-	//unused
+	// unused
 	public void setOval(boolean booleanValue) {
 		getRoundedCompartmentFigure().setOval(booleanValue);
 	}
@@ -166,7 +166,7 @@ public class RoundedRectangleNodePlateFigure extends DefaultSizeNodeFigure imple
 	 * @return
 	 */
 	@Override
-	//unused
+	// unused
 	public boolean isOval() {
 		return getRoundedCompartmentFigure().isOval();
 	}
@@ -177,7 +177,7 @@ public class RoundedRectangleNodePlateFigure extends DefaultSizeNodeFigure imple
 	 * @param booleanValue
 	 */
 	@Override
-	//unused
+	// unused
 	public void setFloatingNameConstrained(boolean booleanValue) {
 	}
 
@@ -187,7 +187,7 @@ public class RoundedRectangleNodePlateFigure extends DefaultSizeNodeFigure imple
 	 * @return
 	 */
 	@Override
-	//unused
+	// unused
 	public boolean isFloatingNameConstrained() {
 		return false;
 	}
@@ -198,7 +198,7 @@ public class RoundedRectangleNodePlateFigure extends DefaultSizeNodeFigure imple
 	 * @param offset
 	 */
 	@Override
-	//unused
+	// unused
 	public void setFloatingNameOffset(Dimension offset) {
 
 	}
@@ -211,5 +211,15 @@ public class RoundedRectangleNodePlateFigure extends DefaultSizeNodeFigure imple
 	@Override
 	public Dimension getFloatingNameOffset() {
 		return null;
+	}
+
+	/**
+	 * @see org.eclipse.papyrus.infra.gmfdiag.common.figure.node.IRoundedRectangleFigure#setBorderStyle(int)
+	 *
+	 * @param borderStyle
+	 */
+	@Override
+	public void setBorderStyle(int borderStyle) {
+		// unused
 	}
 }

@@ -645,6 +645,52 @@ public class UMLEditPartFactory implements EditPartFactory {
 				return new CommentLinkEditPart(view);
 			case ConstraintConstrainedElementEditPart.VISUAL_ID:
 				return new ConstraintConstrainedElementEditPart(view);
+				// not generated but changes include on gmfgen, can be override at the generation
+			case BroadcastSignalActionFloatingNameEditPart.VISUAL_ID:
+				return new BroadcastSignalActionFloatingNameEditPart(view);
+				// not generated but changes include on gmfgen, can be override at the generation
+			case AddVariableValueActionFloatingNameEditPart.VISUAL_ID:
+				return new AddVariableValueActionFloatingNameEditPart(view);
+				// not generated but changes include on gmfgen, can be override at the generation
+			case CallBehaviorActionFloatingNameEditPart.VISUAL_ID:
+				return new CallBehaviorActionFloatingNameEditPart(view);
+				// not generated but changes include on gmfgen, can be override at the generation
+			case AddStructuralFeatureValueActionFloatingNameEditPart.VISUAL_ID:
+				return new AddStructuralFeatureValueActionFloatingNameEditPart(view);
+				// not generated but changes include on gmfgen, can be override at the generation
+			case CallOperationActionFloatingNameEditPart.VISUAL_ID:
+				return new CallOperationActionFloatingNameEditPart(view);
+				// not generated but changes include on gmfgen, can be override at the generation
+			case CreateObjectActionFloatingNameEditPart.VISUAL_ID:
+				return new CreateObjectActionFloatingNameEditPart(view);
+				// not generated but changes include on gmfgen, can be override at the generation
+			case DestroyObjectActionFloatingNameEditPart.VISUAL_ID:
+				return new DestroyObjectActionFloatingNameEditPart(view);
+				// not generated but changes include on gmfgen, can be override at the generation
+			case OpaqueActionFloatingNameEditPart.VISUAL_ID:
+				return new OpaqueActionFloatingNameEditPart(view);
+				// not generated but changes include on gmfgen, can be override at the generation
+			case ReadSelfActionFloatingNameEditPart.VISUAL_ID:
+				return new ReadSelfActionFloatingNameEditPart(view);
+				// not generated but changes include on gmfgen, can be override at the generation
+			case ReadStructuralFeatureActionFloatingNameEditPart.VISUAL_ID:
+				return new ReadStructuralFeatureActionFloatingNameEditPart(view);
+				// not generated but changes include on gmfgen, can be override at the generation
+			case ReadVariableActionFloatingNameEditPart.VISUAL_ID:
+				return new ReadVariableActionFloatingNameEditPart(view);
+				// not generated but changes include on gmfgen, can be override at the generation
+			case SendObjectActionFloatingNameEditPart.VISUAL_ID:
+				return new SendObjectActionFloatingNameEditPart(view);
+				// not generated but changes include on gmfgen, can be override at the generation
+			case ValueSpecificationActionFloatingNameEditPart.VISUAL_ID:
+				return new ValueSpecificationActionFloatingNameEditPart(view);
+				// not generated but changes include on gmfgen, can be override at the generation
+			case CentralBufferNodeFloatingNameEditPart.VISUAL_ID:
+				return new CentralBufferNodeFloatingNameEditPart(view);
+				// not generated but changes include on gmfgen, can be override at the generation
+			case DataStoreNodeFloatingNameEditPart.VISUAL_ID:
+				return new DataStoreNodeFloatingNameEditPart(view);
+
 			}
 		}
 		return createUnrecognizedEditPart(context, model);

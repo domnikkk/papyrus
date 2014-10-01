@@ -27,7 +27,7 @@ import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.gmf.runtime.diagram.ui.figures.ShapeCompartmentFigure;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
-import org.eclipse.papyrus.uml.diagram.common.figure.node.PapyrusRoundedNodeFigure;
+import org.eclipse.papyrus.uml.diagram.common.figure.node.RoundedCompartmentFigure;
 
 /**
  * Activity figure for the activity diagram
@@ -35,7 +35,7 @@ import org.eclipse.papyrus.uml.diagram.common.figure.node.PapyrusRoundedNodeFigu
  * @author PT202707
  *
  */
-public class ActivityFigure extends PapyrusRoundedNodeFigure {
+public class ActivityFigure extends RoundedCompartmentFigure { // PapyrusRoundedNodeFigure RoundedCompartmentFigure
 
 	/**
 	 * gap in x to display name stereotypes and qualified name

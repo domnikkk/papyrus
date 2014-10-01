@@ -34,21 +34,21 @@ public interface IRoundedRectangleFigure extends IFigure {
 	 * Sets the rounded rectangles corner dimensions.
 	 *
 	 * @param CornerDimension
-	 *        the new corner dimensions
+	 *            the new corner dimensions
 	 */
 	void setCornerDimensions(Dimension CornerDimension);
 
-	//	/**
-	//	 * Sets the height of rounded rectangles corner dimensions.
-	//	 * 
-	//	 */
-	//	void setRadiusWidth(int width);
+	// /**
+	// * Sets the height of rounded rectangles corner dimensions.
+	// *
+	// */
+	// void setRadiusWidth(int width);
 	//
-	//	/**
-	//	 * Sets the height of rounded rectangles corner dimensions.
-	//	 * 
-	//	 */
-	//	void setRadiusHeight(int height);
+	// /**
+	// * Sets the height of rounded rectangles corner dimensions.
+	// *
+	// */
+	// void setRadiusHeight(int height);
 
 	/**
 	 * Returns the rounded rectangles bounds.
@@ -61,7 +61,7 @@ public interface IRoundedRectangleFigure extends IFigure {
 	 * Sets if the shape must be oval.
 	 *
 	 * @param isOval
-	 *        the new oval
+	 *            the new oval
 	 */
 	void setOval(boolean isOval);
 
@@ -76,7 +76,7 @@ public interface IRoundedRectangleFigure extends IFigure {
 	 * Sets true if the floating name must be constrained.
 	 *
 	 * @param isConstrained
-	 *        the new floating name constrained
+	 *            the new floating name constrained
 	 */
 	void setFloatingNameConstrained(boolean isConstrained);
 
@@ -91,7 +91,7 @@ public interface IRoundedRectangleFigure extends IFigure {
 	 * Sets the floating Name offset for not constrained case.
 	 *
 	 * @param offset
-	 *        the new floating name offset
+	 *            the new floating name offset
 	 */
 	void setFloatingNameOffset(Dimension offset);
 
@@ -102,5 +102,7 @@ public interface IRoundedRectangleFigure extends IFigure {
 	 * @return the offset
 	 */
 	Dimension getFloatingNameOffset();
+
+	public void setBorderStyle(int borderStyle);
 
 }

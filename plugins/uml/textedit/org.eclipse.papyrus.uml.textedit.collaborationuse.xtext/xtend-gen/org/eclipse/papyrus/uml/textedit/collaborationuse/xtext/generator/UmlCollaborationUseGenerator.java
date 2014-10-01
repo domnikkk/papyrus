@@ -9,7 +9,6 @@ import org.eclipse.xtext.generator.IGenerator;
 
 @SuppressWarnings("all")
 public class UmlCollaborationUseGenerator implements IGenerator {
-	@Override
-	public void doGenerate(final Resource resource, final IFileSystemAccess fsa) {
-	}
+  public void doGenerate(final Resource resource, final IFileSystemAccess fsa) {
+  }
 }

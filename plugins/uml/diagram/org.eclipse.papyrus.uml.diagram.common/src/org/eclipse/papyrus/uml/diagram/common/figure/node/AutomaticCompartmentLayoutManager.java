@@ -80,19 +80,9 @@ public class AutomaticCompartmentLayoutManager extends AbstractLayout {
 		collectInformation(container);
 		int minimumWith = 0;
 		int minimumHeight = 0;
-		//CompartementFigure shall be replace by RoundedCompartmentFigure and this condition may be remove
-		if(container instanceof CompartmentFigure) {
-			CompartmentFigure cf = (CompartmentFigure)container;
-			WrappingLabel wl = cf.getNameLabel();
-			// display name
-			if(wl != null && container.getChildren().contains(wl)) {
-				if(wl.getPreferredSize().width > minimumWith) {
-					minimumWith = wl.getPreferredSize().width;
-				}
-			}
-		}
-		if(container instanceof RoundedCompartmentFigure) {
-			RoundedCompartmentFigure cf = (RoundedCompartmentFigure)container;
+		// CompartementFigure shall be replace by RoundedCompartmentFigure and this condition may be remove
+		if (container instanceof CompartmentFigure) {
+			CompartmentFigure cf = (CompartmentFigure) container;
 			WrappingLabel wl = cf.getNameLabel();
 			// display name
 			if (wl != null && container.getChildren().contains(wl)) {
@@ -100,6 +90,17 @@ public class AutomaticCompartmentLayoutManager extends AbstractLayout {
 					minimumWith = wl.getPreferredSize().width;
 				}
 			}
+		}
+		if (container instanceof RoundedCompartmentFigure) {
+			RoundedCompartmentFigure cf = (RoundedCompartmentFigure) container;
+			WrappingLabel wl = cf.getNameLabel();
+			// display name
+			if (wl != null && container.getChildren().contains(wl)) {
+				if (wl.getPreferredSize().width > minimumWith) {
+					minimumWith = wl.getPreferredSize().width + 2;
+				}
+			}
+
 		}
 		if (!visibleCompartments.isEmpty()) {
 			for (Object o : container.getChildren()) {
@@ -191,10 +192,10 @@ public class AutomaticCompartmentLayoutManager extends AbstractLayout {
 			}
 			if (previous != null) {
 				bound.y = previous.getBounds().getBottomLeft().y + 1;
-				bound.x = container.x + 3;
+				bound.x = container.x + 1;
 				bound.width = container.width;
 			} else {
-				bound.x = container.x + 3;
+				bound.x = container.x + 1;
 				// in the case where the content is grater than the container
 				// it is forbidden to change the y coordinate
 				if (((container.height - totalHeight) / 2) > 0) {

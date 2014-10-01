@@ -37,15 +37,28 @@ public class RoundedCompartmentFigure extends NodeNamedElementFigure implements 
 	private Map<String, RectangleFigure> containerFigures;
 
 	/** The corner dimension. */
-	private Dimension cornerDimension = new Dimension();
+	protected Dimension cornerDimension = new Dimension();
 
 	/** The is oval. */
-	private boolean isOval;
+	protected boolean isOval;
 
 	/** The is label constrained. */
-	private boolean isLabelConstrained;
+	protected boolean isLabelConstrained;
 
-	private Dimension floatingNameOffset = new Dimension();
+	protected Dimension floatingNameOffset = new Dimension();
+
+	protected int borderStyle = Graphics.LINE_SOLID;
+
+	/**
+	 * @param borderStyle
+	 *            the borderStyle to set
+	 */
+	public void setBorderStyle(int borderStyle) {
+		this.borderStyle = borderStyle;
+		if (shadowborder != null) {
+			shadowborder.setStyle(borderStyle);
+		}
+	}
 
 	/**
 	 * Instantiates a new rounded compartment figure.
@@ -58,7 +71,7 @@ public class RoundedCompartmentFigure extends NodeNamedElementFigure implements 
 	 * Constructor.
 	 *
 	 * @param compartmentFigure
-	 *        the compartment figure
+	 *            the compartment figure
 	 */
 	public RoundedCompartmentFigure(List<String> compartmentFigure) {
 		this(compartmentFigure, null);
@@ -68,28 +81,29 @@ public class RoundedCompartmentFigure extends NodeNamedElementFigure implements 
 	 * Constructor with a tagged value.
 	 * 
 	 * @param compartmentFigure
-	 *        a list of id for the compartment figure
+	 *            a list of id for the compartment figure
 	 * @param taggedLabelValue
-	 *        the value to display as tagged value
+	 *            the value to display as tagged value
 	 */
 	public RoundedCompartmentFigure(List<String> compartmentFigure, String taggedLabelValue) {
 		super(taggedLabelValue);
-		setLayoutManager(new AutomaticCompartmentLayoutManager());
 		setOpaque(false);
 		shadowborder = new RoundedRectangleShadowBorder(getForegroundColor(), cornerDimension);
-		if(compartmentFigure != null)
+		setLayoutManager(new AutomaticCompartmentLayoutManager());
+		if (compartmentFigure != null) {
 			createContentPane(compartmentFigure);
+		}
 	}
 
 	/**
 	 * Creates the content pane.
 	 *
 	 * @param compartmentFigure
-	 *        the compartment figure
+	 *            the compartment figure
 	 */
 	protected void createContentPane(List<String> compartmentFigure) {
 		containerFigures = new HashMap<String, RectangleFigure>();
-		for(String id : compartmentFigure) {
+		for (String id : compartmentFigure) {
 			RectangleFigure newFigure = new RectangleFigure();
 			newFigure.setLayoutManager(new SubCompartmentLayoutManager());
 			// to debug graphically: newFigure.setFill(true);
@@ -103,10 +117,21 @@ public class RoundedCompartmentFigure extends NodeNamedElementFigure implements 
 	}
 
 	/**
+	 * @see org.eclipse.draw2d.Figure#setBounds(org.eclipse.draw2d.geometry.Rectangle)
+	 *
+	 * @param rect
+	 */
+	@Override
+	public void setBounds(Rectangle rect) {
+		// TODO Auto-generated method stub
+		super.setBounds(rect);
+	}
+
+	/**
 	 * Get the RectangleFigure containing the wanted compartment.
 	 * 
 	 * @param id
-	 *        the id to find the right compartment
+	 *            the id to find the right compartment
 	 * @return the RectangleFigure
 	 */
 	public RectangleFigure getCompartment(String id) {
@@ -141,16 +166,16 @@ public class RoundedCompartmentFigure extends NodeNamedElementFigure implements 
 		shadowborder.setColor(getForegroundColor());
 		graphics.pushState();
 		Rectangle rectangle = getBounds().getCopy();
-		//Set the corner dimension if is oval in case of resizing
-		if(isOval) {
+		// Set the corner dimension if is oval in case of resizing
+		if (isOval) {
 			cornerDimension.width = rectangle.width;
 			cornerDimension.height = rectangle.height;
 		}
-		//paintBackground:
+		// paintBackground:
 		applyTransparency(graphics);
-		if(isUsingGradient()) {
+		if (isUsingGradient()) {
 			boolean isVertical = (getGradientStyle() == GradientStyle.VERTICAL) ? true : false;
-			if(isVertical && rectangle.height > ((3 * cornerDimension.height) / 2)) {
+			if (isVertical && rectangle.height > ((3 * cornerDimension.height) / 2)) {
 				Rectangle upperBounds = getBounds().getCopy();
 				upperBounds.height = cornerDimension.height - getLineWidth() / 2;
 				upperBounds.y += getLineWidth() / 2;
@@ -180,7 +205,7 @@ public class RoundedCompartmentFigure extends NodeNamedElementFigure implements 
 				graphics.clipRect(lowerClip);
 				graphics.fillRoundRectangle(lowerBounds, cornerDimension.width, cornerDimension.height);
 				graphics.popState();
-			} else if(!isVertical && rectangle.width > ((3 * cornerDimension.width) / 2)) {
+			} else if (!isVertical && rectangle.width > ((3 * cornerDimension.width) / 2)) {
 				Rectangle leftBounds = getBounds().getCopy();
 				leftBounds.width = cornerDimension.width - getLineWidth() / 2;
 				leftBounds.x += getLineWidth() / 2;
@@ -191,7 +216,7 @@ public class RoundedCompartmentFigure extends NodeNamedElementFigure implements 
 				Rectangle rightClip = rightBounds.getCopy().shrink(new Insets(0, cornerDimension.width / 2, 0, 0));
 				Rectangle innerBounds = getBounds().getCopy();
 				innerBounds.x = leftClip.right();// - getLineWidth();
-				innerBounds.width = rightClip.x - leftClip.right() + 1;//+ 2 * getLineWidth();
+				innerBounds.width = rightClip.x - leftClip.right() + 1;// + 2 * getLineWidth();
 				// fill the left part
 				graphics.pushState();
 				graphics.setBackgroundColor(ColorRegistry.getInstance().getColor(getGradientColor2()));
@@ -225,7 +250,7 @@ public class RoundedCompartmentFigure extends NodeNamedElementFigure implements 
 			graphics.popState();
 		}
 		graphics.popState();
-		//Force to repaint the border thought setShadow()
+		// Force to repaint the border thought setShadow()
 		setShadow(isShadow());
 		repaint();
 	}
@@ -238,11 +263,12 @@ public class RoundedCompartmentFigure extends NodeNamedElementFigure implements 
 	@Override
 	public void setShadow(boolean shadow) {
 		super.setShadow(shadow);
-		if(!shadow) {
-			//If shadow is set to false on CSS file we set the border
-			if(getBorder() != null) {
+		if (!shadow) {
+			// If shadow is set to false on CSS file we set the border
+			if (getBorder() != null) {
 				RoundedRectangleBorder border = new RoundedRectangleBorder(cornerDimension.width, cornerDimension.height);
 				border.setWidth(getLineWidth());
+				border.setStyle(borderStyle);
 				this.setBorder(border);
 			}
 		}
@@ -252,27 +278,17 @@ public class RoundedCompartmentFigure extends NodeNamedElementFigure implements 
 	 * Sets the corner dimension.
 	 *
 	 * @param cornerDimension
-	 *        the new corner dimension
+	 *            the new corner dimension
 	 */
 	@Override
 	public void setCornerDimensions(Dimension cornerDimension) {
 		this.cornerDimension = cornerDimension;
 	}
 
-	//	@Override
-	//	public void setRadiusWidth(int width) {
-	//		cornerDimension.width = width;
-	//	}
-	//
-	//	@Override
-	//	public void setRadiusHeight(int height) {
-	//		cornerDimension.height = height;
-	//	}
-
 	@Override
 	public void setOval(boolean booleanValue) {
 		isOval = booleanValue;
-		if(booleanValue) {
+		if (booleanValue) {
 			Rectangle rectangle = getBounds().getCopy();
 			cornerDimension.width = rectangle.width;
 			cornerDimension.height = rectangle.height;

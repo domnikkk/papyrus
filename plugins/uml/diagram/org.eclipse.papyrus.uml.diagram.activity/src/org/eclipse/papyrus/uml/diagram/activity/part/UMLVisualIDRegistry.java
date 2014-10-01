@@ -1751,6 +1751,11 @@ public class UMLVisualIDRegistry {
 			}
 			break;
 		case OpaqueActionEditPart.VISUAL_ID:
+			// not generated but change include on gmfgen, can be override at the generation
+			if (OpaqueActionFloatingNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+
 			if (OpaqueActionNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
@@ -1821,6 +1826,10 @@ public class UMLVisualIDRegistry {
 			if (OutputPinInCallBeActEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			// not generated but change include on gmfgen, can be override at the generation
+			if (CallBehaviorActionFloatingNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			break;
 		case ValuePinInCallBeActEditPart.VISUAL_ID:
 			if (ValuePinInCBActLabelEditPart.VISUAL_ID == nodeVisualID) {
@@ -1861,6 +1870,11 @@ public class UMLVisualIDRegistry {
 			}
 			break;
 		case CallOperationActionEditPart.VISUAL_ID:
+			// not generated but change include on gmfgen, can be override at the generation
+			if (CallOperationActionFloatingNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+
 			if (CallOperationActionNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
@@ -2051,8 +2065,18 @@ public class UMLVisualIDRegistry {
 			if (DataStoreSelectionEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			// not generated but change include on gmfgen, can be override at the generation
+			if (DataStoreNodeFloatingNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+
 			break;
 		case SendObjectActionEditPart.VISUAL_ID:
+			// not generated but change include on gmfgen, can be override at the generation
+			if (SendObjectActionFloatingNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+
 			if (SendObjectActionNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
@@ -2246,6 +2270,11 @@ public class UMLVisualIDRegistry {
 			}
 			break;
 		case ValueSpecificationActionEditPart.VISUAL_ID:
+			// not generated but change include on gmfgen, can be override at the generation
+			if (ValueSpecificationActionFloatingNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+
 			if (ValueSpecificationActionNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
@@ -2358,6 +2387,15 @@ public class UMLVisualIDRegistry {
 			if (ActivityPartitionActivityPartitionContentCompartmentEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			// not generated but change include on gmfgen, can be override at the generation
+			if (BroadcastSignalActionFloatingNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			// not generated but change include on gmfgen, can be override at the generation
+			if (AddVariableValueActionFloatingNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+
 			break;
 		case InterruptibleActivityRegionEditPart.VISUAL_ID:
 			if (InterruptibleActivityRegionInterruptibleActivityRegionContentCompartmentEditPart.VISUAL_ID == nodeVisualID) {
@@ -2370,6 +2408,11 @@ public class UMLVisualIDRegistry {
 			}
 			break;
 		case ReadSelfActionEditPart.VISUAL_ID:
+			// not generated but change include on gmfgen, can be override at the generation
+			if (ReadSelfActionFloatingNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+
 			if (ReadSelfActionNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
@@ -2409,6 +2452,11 @@ public class UMLVisualIDRegistry {
 			}
 			break;
 		case CreateObjectActionEditPart.VISUAL_ID:
+			// not generated but change include on gmfgen, can be override at the generation
+			if (CreateObjectActionFloatingNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+
 			if (CreateObjectActionNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
@@ -2430,6 +2478,11 @@ public class UMLVisualIDRegistry {
 			}
 			break;
 		case ReadStructuralFeatureActionEditPart.VISUAL_ID:
+			// not generated but change include on gmfgen, can be override at the generation
+			if (ReadStructuralFeatureActionFloatingNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+
 			if (ReadStructuralFeatureActionNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
@@ -2469,6 +2522,10 @@ public class UMLVisualIDRegistry {
 			if (OutputPinInAddStructuralFeatureValueActionAsResultEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			// not generated but change include on gmfgen, can be override at the generation
+			if (AddStructuralFeatureValueActionFloatingNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			break;
 		case InputPinInAddStructuralFeatureValueActionAsObjectEditPart.VISUAL_ID:
 			if (InputPinInAddStructuralFeatureValueActionAsObjectLabelEditPart.VISUAL_ID == nodeVisualID) {
@@ -2495,6 +2552,11 @@ public class UMLVisualIDRegistry {
 			}
 			break;
 		case DestroyObjectActionEditPart.VISUAL_ID:
+			// not generated but change include on gmfgen, can be override at the generation
+			if (DestroyObjectActionFloatingNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+
 			if (DestroyObjectActionNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
@@ -2511,6 +2573,11 @@ public class UMLVisualIDRegistry {
 			}
 			break;
 		case ReadVariableActionEditPart.VISUAL_ID:
+			// not generated but change include on gmfgen, can be override at the generation
+			if (ReadVariableActionFloatingNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+
 			if (ReadVariableActionNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
@@ -2579,6 +2646,11 @@ public class UMLVisualIDRegistry {
 			if (CentralBufferNodeSelectionEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			// not generated but change include on gmfgen, can be override at the generation
+			if (CentralBufferNodeFloatingNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+
 			break;
 		case ConstraintEditPartCN.VISUAL_ID:
 			if (ConstraintNameEditPartCN.VISUAL_ID == nodeVisualID) {
