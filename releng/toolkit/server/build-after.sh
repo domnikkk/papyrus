@@ -23,9 +23,9 @@
 ##
 
 p2UpdateSiteDir=${WORKSPACE}/releng/main/target/repository
-updateSite={$WORKSPACE}/repository
+updateSite=${WORKSPACE}/repository
 
-if [ -n "$BUILD_ALIAS"]; then
+if [ -n "$BUILD_ALIAS" ]; then
   buildType=S
 else
   buildType=N

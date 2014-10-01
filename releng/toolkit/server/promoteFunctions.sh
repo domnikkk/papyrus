@@ -50,6 +50,7 @@ function getZip() {
 
 	# try with NFS access first, and if that fails, use the Hudson REST API
 	# see http://wiki.hudson-ci.org/display/HUDSON/Remote+access+API
+	# Note: for HIPP builds, NFS access isn't supported
 	cp "$_nfsBaseDir/${_zipName}" . || wget --no-check-certificate "$_hudsonBaseURL/${_zipName}"
 	if [ ! -f "$_zipName" ]; then echo "ERROR: $_zipName (from Hudson) not found"; exit -2; fi
 	echo "[$DATE] Testing zip integrity"
