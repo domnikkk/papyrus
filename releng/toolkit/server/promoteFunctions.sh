@@ -45,8 +45,6 @@ function getZip() {
 	_hudsonBaseURL=$3
 
 	[[ "$_zipName" =~ ^.*?\.zip$ ]] || { echo "incorrect parameter: zipName"; exit 1; }
-	[[ "$_nfsBaseDir" =~ ^/shared/jobs/.*$ ]] || { echo "incorrect parameter: nfsBaseDir"; exit 1; }
-	[[ "$_hudsonBaseURL" =~ ^https://hudson\.eclipse\.org/hudson/job/.*$ ]] || { echo "incorrect parameter: hudsonBaseURL"; exit 1; }
 
 	# try with NFS access first, and if that fails, use the Hudson REST API
 	# see http://wiki.hudson-ci.org/display/HUDSON/Remote+access+API
@@ -99,8 +97,6 @@ function promote() {
 	dirBefore=$(pwd)
 	
 	[[ "$_zipName" =~ ^.*?\.zip$ ]] || { echo "incorrect parameter: zipName"; exit 1; }
-	[[ "$_nfsBaseDir" =~ ^/shared/jobs/.*$ ]] || { echo "incorrect parameter: nfsBaseDir"; exit 1; }
-	[[ "$_hudsonBaseURL" =~ ^https://hudson\.eclipse\.org/hudson/job/.*$ ]] || { echo "incorrect parameter: hudsonBaseURL"; exit 1; }
 	[[ "$_version" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]] || { echo "incorrect parameter: version"; exit 1; }
 	[[ "$_dropsDir" =~ ^/home/data/httpd/download\.eclipse\.org/.*$ ]] || { echo "incorrect parameter: dropsDir"; exit 1; }
 	[[ "$_archiveDir" =~ ^/home/data/httpd/archive\.eclipse\.org/.*$ ]] || { echo "incorrect parameter: archiveDir"; exit 1; }
