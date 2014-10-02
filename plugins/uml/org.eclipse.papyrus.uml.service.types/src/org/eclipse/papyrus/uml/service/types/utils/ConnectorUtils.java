@@ -203,9 +203,9 @@ public class ConnectorUtils {
 	 * @param connectorOwner
 	 *            the owner of the connector
 	 * @return
-	 *         the list of the possible role for the connector, according to the UML Standart 2.4 :
-	 *         We can deduce the possible roles for a UML Connector, because the roles must have the same owner than the connector :
-	 *         UML Standart, p.181 : [3] The ConnectableElements attached as roles to each ConnectorEnd owned by a Connector must be roles
+	 *         the list of the possible role for the connector, according to the UML Standard 2.4:
+	 *         We can deduce the possible roles for a UML Connector, because the roles must have the same owner than the connector:
+	 *         UML Standard, p.181 : [3] The ConnectableElements attached as roles to each ConnectorEnd owned by a Connector must be roles
 	 *         of the Classifier, that owned the Connector, or they must be ports of such roles. (p.181)
 	 */
 	public static final Collection<Property> getUMLPossibleRoles(final StructuredClassifier connectorOwner) {
@@ -220,6 +220,7 @@ public class ConnectorUtils {
 				toAdd.addAll(((EncapsulatedClassifier) type).getOwnedPorts());
 			}
 		}
+		availableRole.addAll(toAdd);
 		return availableRole;
 	}
 }
