@@ -85,7 +85,7 @@
 			<id>mdt-ocl</id>
 			<layout>p2</layout>
 			<!-- updateFrom("MDT OCL 5.1",0) -->
-			<url>http://download.eclipse.org/modeling/mdt/ocl/updates/milestones/5.1.0/S201408191307</url>
+			<url>http://download.eclipse.org/modeling/mdt/ocl/updates/milestones/5.1.0/S201410011441</url>
 		</repository>
 		<repository>
 			<id>mdt-uml2</id>
