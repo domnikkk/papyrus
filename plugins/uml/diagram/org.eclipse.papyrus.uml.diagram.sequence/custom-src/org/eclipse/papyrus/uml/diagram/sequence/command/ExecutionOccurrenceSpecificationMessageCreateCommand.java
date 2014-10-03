@@ -29,8 +29,10 @@ import org.eclipse.papyrus.uml.diagram.sequence.providers.UMLElementTypes;
 import org.eclipse.papyrus.uml.diagram.sequence.util.CommandHelper;
 import org.eclipse.papyrus.uml.diagram.sequence.util.OccurrenceSpecificationHelper;
 import org.eclipse.papyrus.uml.diagram.sequence.util.SequenceRequestConstant;
+import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.ExecutionOccurrenceSpecification;
 import org.eclipse.uml2.uml.ExecutionSpecification;
+import org.eclipse.uml2.uml.Gate;
 import org.eclipse.uml2.uml.Interaction;
 import org.eclipse.uml2.uml.InteractionFragment;
 import org.eclipse.uml2.uml.Lifeline;
@@ -88,11 +90,17 @@ public class ExecutionOccurrenceSpecificationMessageCreateCommand extends EditEl
 		} else {
 			return CommandResult.newCancelledCommandResult();
 		}
-		Lifeline sourceLifeline = deduceLifeline(source);
-		Lifeline targetLifeline = deduceLifeline(target);
+		Element sourceObject = deduceLifeline(source);
+		if (null == sourceObject && source instanceof Gate) {
+			sourceObject = (Gate)source;
+		}
+		Element targetObject = deduceLifeline(target);
+		if (null == targetObject && target instanceof Gate) {
+			targetObject = (Gate)target;
+		}
 		InteractionFragment sourceContainer = (InteractionFragment) getRequest().getParameters().get(SequenceRequestConstant.SOURCE_MODEL_CONTAINER);
 		InteractionFragment targetContainer = (InteractionFragment) getRequest().getParameters().get(SequenceRequestConstant.TARGET_MODEL_CONTAINER);
-		Message message = CommandHelper.doCreateMessage(deduceContainer(source, target), messageSort, sourceLifeline, targetLifeline, sourceContainer, targetContainer);
+		Message message = CommandHelper.doCreateMessage(deduceContainer(source, target), messageSort, sourceObject, targetObject, sourceContainer, targetContainer);
 		if (message != null) {
 			// Reset the finish of target ExecutionSpecification to message end. See https://bugs.eclipse.org/bugs/show_bug.cgi?id=402975F
 			if (source instanceof ExecutionOccurrenceSpecification && ((ExecutionOccurrenceSpecification) source).getExecution() != null) {
@@ -123,8 +131,16 @@ public class ExecutionOccurrenceSpecificationMessageCreateCommand extends EditEl
 		ConfigureRequest configureRequest = new ConfigureRequest(getEditingDomain(), newElement, elementType);
 		configureRequest.setClientContext(((CreateElementRequest) getRequest()).getClientContext());
 		configureRequest.addParameters(getRequest().getParameters());
-		configureRequest.setParameter(CreateRelationshipRequest.SOURCE, deduceLifeline(source));
-		configureRequest.setParameter(CreateRelationshipRequest.TARGET, deduceLifeline(target));
+		EObject sourceObject = deduceLifeline(source);
+		if (null == sourceObject && source instanceof Gate) {
+			sourceObject = source;
+		}
+		EObject targetObject = deduceLifeline(target);
+		if (null == targetObject && target instanceof Gate) {
+			targetObject = target;
+		}
+		configureRequest.setParameter(CreateRelationshipRequest.SOURCE, sourceObject);
+		configureRequest.setParameter(CreateRelationshipRequest.TARGET, targetObject);
 		ICommand configureCommand = elementType.getEditCommand(configureRequest);
 		if (configureCommand != null && configureCommand.canExecute()) {
 			configureCommand.execute(monitor, info);
