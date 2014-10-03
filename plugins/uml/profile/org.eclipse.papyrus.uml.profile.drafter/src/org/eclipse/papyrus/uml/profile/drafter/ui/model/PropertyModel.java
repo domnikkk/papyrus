@@ -18,6 +18,7 @@ import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 
 import org.eclipse.uml2.uml.Property;
+import org.eclipse.uml2.uml.Stereotype;
 
 
 /**
@@ -280,6 +281,23 @@ public class PropertyModel {
 			// No change
 			break;
 		}
+	}
+
+
+
+	/**
+	 * Check if a property with the name of this {@link PropertyModel} exist in the specified {@link Stereotype}.
+	 * Return true if a property with the same name exist in the provided stereotype, false otherwise.
+	 * 
+	 * @param stereotype The stereotype into which we want to check if a property exists.
+	 * @return
+	 */
+	public boolean isPropertyExistIn(Stereotype stereotype) {
+		if( proposedName == null) {
+			return false;
+		}
+		
+		return stereotype.getAttribute(proposedName, null) != null;
 	}
 
 }

@@ -23,6 +23,7 @@ import org.eclipse.papyrus.uml.profile.drafter.Activator;
 import org.eclipse.papyrus.uml.profile.drafter.ProfileCatalog;
 import org.eclipse.papyrus.uml.profile.drafter.ui.contentassist.PossibleStereotypeContentProposalProvider;
 import org.eclipse.papyrus.uml.profile.drafter.ui.contentassist.StereotypeContentProposalProvider;
+import org.eclipse.papyrus.uml.profile.drafter.ui.model.MetaclassesModel;
 import org.eclipse.papyrus.uml.profile.drafter.ui.model.StereoptypeModel;
 import org.eclipse.papyrus.uml.tools.providers.UMLMetaclassContentProvider;
 import org.eclipse.swt.SWT;
@@ -265,6 +266,8 @@ public class StereotypeUpdateDialog extends Dialog {
 	 * 
 	 */
 	private void collectInput() {
+		
+		// Old fashion
 		value = new StereotypeUpdateArgs();
 		value.setProfileName(profileText.getText());
 		value.setStereotypeName(stereotypeText.getText());
@@ -276,6 +279,13 @@ public class StereotypeUpdateDialog extends Dialog {
 		}
 		value.setExtendedMetaclasses(result);
 		
+		// New fashion
+		// Stereotype and profile names are already set in model.
+		// Need to collect metaclasses
+		MetaclassesModel metaclassesModel = stereotypeModel.getMetaclassesCollection();
+		for(Object obj : extendedMetaclassSelector.getResult()) {
+			metaclassesModel.getSelectedMetaclasses().add((Class)obj);	
+		}
 	}
 
 	/**
@@ -301,5 +311,13 @@ public class StereotypeUpdateDialog extends Dialog {
 		bindingContext.bindValue(observeTextStereotypeTextObserveWidget, stereotypeNameStereotypeModelObserveValue, null, null);
 		//
 		return bindingContext;
+	}
+
+	
+	/**
+	 * @return the stereotypeModel
+	 */
+	public StereoptypeModel getStereotypeModel() {
+		return stereotypeModel;
 	}
 }

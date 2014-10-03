@@ -29,6 +29,8 @@ import org.eclipse.papyrus.uml.profile.drafter.ProfileApplicator;
 import org.eclipse.papyrus.uml.profile.drafter.exceptions.DraftProfileException;
 import org.eclipse.papyrus.uml.profile.drafter.ui.dialog.IStereotypeUpdateArgs;
 import org.eclipse.papyrus.uml.profile.drafter.ui.dialog.StereotypeUpdateDialog;
+import org.eclipse.papyrus.uml.profile.drafter.ui.model.CommandBuilderVisitor;
+import org.eclipse.papyrus.uml.profile.drafter.ui.model.StereoptypeModel;
 import org.eclipse.papyrus.uml.profile.drafter.utils.UMLMetamodelUtils;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.uml2.uml.AggregationKind;
@@ -58,6 +60,11 @@ public class UpdateProfileHandler extends AbstractProfileBaseHandler {
 	 */
 	private IStereotypeUpdateArgs updateArgs;
 
+	/**
+	 * Model used to populate the Dialog, and to retrieve values.
+	 */
+	private StereoptypeModel stereoptypeModel;
+	
 	private String taggedValeNameInput;
 	
 	/**
@@ -111,6 +118,17 @@ public class UpdateProfileHandler extends AbstractProfileBaseHandler {
 		StereotypeUpdateDialog newDialog = new StereotypeUpdateDialog(Display.getCurrent().getActiveShell(), "Update Stereotype", 
 				selected.get(0), new ArrayList<Class>(  getSelectedElementMetaclasses(context)) );
 		if(newDialog.open() == Window.OK) {
+			
+			// Lookup commands
+			stereoptypeModel = newDialog.getStereotypeModel();
+//			CommandBuilderVisitor commandBuilderVisitor = new CommandBuilderVisitor();
+//			stereoptypeModel.accept(commandBuilderVisitor);
+//			if( ! commandBuilderVisitor.isExecutionRequested() ) {
+//				return false;
+//			}
+			
+				
+			// old fashion
 			updateArgs = newDialog.getUpdateArgs();
 			if(updateArgs == null ) {
 				return false;
@@ -182,7 +200,8 @@ public class UpdateProfileHandler extends AbstractProfileBaseHandler {
 		ProfileApplicator profileApplicator = new ProfileApplicator(selected.get(0));
 		try {
 //			profileApplicator.applyStereotype2(profileNameInput, stereotypeNameInput);
-			profileApplicator.updateStereotype(updateArgs);
+//			profileApplicator.updateStereotype(updateArgs);
+			profileApplicator.updateStereotype(stereoptypeModel);
 		} catch (DraftProfileException e) {
 			e.printStackTrace();
 		}

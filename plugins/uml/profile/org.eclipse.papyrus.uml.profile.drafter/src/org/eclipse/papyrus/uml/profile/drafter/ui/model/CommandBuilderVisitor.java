@@ -48,6 +48,11 @@ public class CommandBuilderVisitor extends SimpleModelVisitor {
 	 * 
 	 */
 	protected ValueProxy<Property> curPropertyValue;
+
+	/**
+	 * Flag indicating if the commands should be executed. 
+	 */
+	private boolean isExecutionRequested = false;
 	
 	/**
 	 * Constructor.
@@ -80,12 +85,12 @@ public class CommandBuilderVisitor extends SimpleModelVisitor {
 	}
 
 	/**
-	 * @see org.eclipse.papyrus.uml.profile.drafter.ui.model.IModelVisitor#visit(org.eclipse.papyrus.uml.profile.drafter.ui.model.MetaclassesModel)
+	 * @see org.eclipse.papyrus.uml.profile.drafter.ui.model.IModelVisitor#visit(org.eclipse.papyrus.uml.profile.drafter.ui.model.MetaclassModel)
 	 *
 	 * @param model
 	 */
 	@Override
-	public void doVisit(MetaclassesModel model) {
+	public void doVisit(MetaclassModel model) {
 		// TODO Auto-generated method stub
 
 	}
@@ -99,6 +104,17 @@ public class CommandBuilderVisitor extends SimpleModelVisitor {
 	public void doVisit(ExtendedStereotypeModel model) {
 		// TODO Auto-generated method stub
 
+	}
+
+	/**
+	 * Return true if the command should be executed (ie if there is some modifications requested).
+	 * 
+	 * @return true if the command should be executed. False, if there is no modification requested.
+	 * 
+	 */
+	public boolean isExecutionRequested() {
+		// TODO Auto-generated method stub
+		return isExecutionRequested;
 	}
 
 }

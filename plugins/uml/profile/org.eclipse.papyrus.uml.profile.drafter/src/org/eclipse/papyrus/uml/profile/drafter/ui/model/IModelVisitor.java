@@ -27,7 +27,7 @@ public interface IModelVisitor {
 	
 	public void visit(PropertyModel model);
 	
-	public void visit(MetaclassesModel model);
+	public void visit(MetaclassModel model);
 	
 	public void visit(ExtendedStereotypeModel  model);
 	

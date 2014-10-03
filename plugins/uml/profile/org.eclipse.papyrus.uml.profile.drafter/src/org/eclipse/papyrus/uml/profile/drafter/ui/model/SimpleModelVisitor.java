@@ -38,7 +38,7 @@ public abstract class SimpleModelVisitor implements IModelVisitor {
 			propertyModel.accept(this);
 		}
 
-		for( MetaclassesModel m : model.getMetaclasses()) {
+		for( MetaclassModel m : model.getMetaclasses()) {
 			m.accept(this);
 		}
 
@@ -59,12 +59,12 @@ public abstract class SimpleModelVisitor implements IModelVisitor {
 	}
 
 	/**
-	 * @see org.eclipse.papyrus.uml.profile.drafter.ui.model.IModelVisitor#visit(org.eclipse.papyrus.uml.profile.drafter.ui.model.MetaclassesModel)
+	 * @see org.eclipse.papyrus.uml.profile.drafter.ui.model.IModelVisitor#visit(org.eclipse.papyrus.uml.profile.drafter.ui.model.MetaclassModel)
 	 *
 	 * @param model
 	 */
 	@Override
-	public void visit(MetaclassesModel model) {
+	public void visit(MetaclassModel model) {
 		doVisit(model);
 	}
 
@@ -102,7 +102,7 @@ public abstract class SimpleModelVisitor implements IModelVisitor {
 	 * 
 	 * @param model
 	 */
-	public void doVisit(MetaclassesModel model) {
+	public void doVisit(MetaclassModel model) {
 		
 	}
 

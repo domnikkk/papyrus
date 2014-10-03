@@ -56,8 +56,15 @@ public class StereoptypeModel extends StereotypeURL {
 
 	/**
 	 * The metaclasses that should be attached to this stereotype.
+	 * Not used for now (should replace metaclassesCollection).
 	 */
-	protected List<MetaclassesModel> metaclasses  = new ArrayList<MetaclassesModel>();
+	protected List<MetaclassModel> metaclasses  = new ArrayList<MetaclassModel>();
+	
+	/**
+	 * The collection of metaclasses in one single model. 
+	 * This is for history reasons.
+	 */
+	protected MetaclassesModel metaclassesCollection = new MetaclassesModel();
 	
 	/**
 	 * Catalog used to search {@link Stereotype} by the name provided in {@link #qualifiedName}.
@@ -118,7 +125,7 @@ public class StereoptypeModel extends StereotypeURL {
 	/**
 	 * @return the metaclasses
 	 */
-	public List<MetaclassesModel> getMetaclasses() {
+	public List<MetaclassModel> getMetaclasses() {
 		return metaclasses;
 	}
 
@@ -184,9 +191,9 @@ public class StereoptypeModel extends StereotypeURL {
 	protected void clearInheritedMetaclasses() {
 
 
-		List<MetaclassesModel> toRetain = new ArrayList<MetaclassesModel>();
+		List<MetaclassModel> toRetain = new ArrayList<MetaclassModel>();
 		
-		for( MetaclassesModel model : metaclasses) {
+		for( MetaclassModel model : metaclasses) {
 			if(model.getStateKind() == StateKind.created) {
 				toRetain.add(model);
 			}
@@ -217,13 +224,13 @@ public class StereoptypeModel extends StereotypeURL {
 		// Add owned metaclasses
 		List<Class> ownedExtendedMetaclasses = stereotype.getExtendedMetaclasses();
 		for( Class extendedMetaClass : ownedExtendedMetaclasses) {
-			metaclasses.add(new MetaclassesModel(MemberKind.owned, extendedMetaClass));
+			metaclasses.add(new MetaclassModel(MemberKind.owned, extendedMetaClass));
 		}
 		
 		// Add inherited (not owned) metaclasses.
 		for( Class extendedMetaClass : stereotype.getAllExtendedMetaclasses()) {
 			if( ! ownedExtendedMetaclasses.contains(extendedMetaClass)) {
-			   metaclasses.add(new MetaclassesModel(MemberKind.inherited, extendedMetaClass));
+			   metaclasses.add(new MetaclassModel(MemberKind.inherited, extendedMetaClass));
 			}
 		}
 
@@ -357,10 +364,10 @@ public class StereoptypeModel extends StereotypeURL {
 	}
 	
 	/**
-	 * Create a new {@link MetaclassesModel} and add it to the {@link StereoptypeModel#metaclasses}
+	 * Create a new {@link MetaclassModel} and add it to the {@link StereoptypeModel#metaclasses}
 	 */
-	public MetaclassesModel createMetaclassModel(String propertyName) {
-		MetaclassesModel model = new MetaclassesModel(MemberKind.owned, propertyName);
+	public MetaclassModel createMetaclassModel(String propertyName) {
+		MetaclassModel model = new MetaclassModel(MemberKind.owned, propertyName);
 		metaclasses.add(model);
 		
 		return model;
@@ -422,6 +429,14 @@ public class StereoptypeModel extends StereotypeURL {
 
 	protected void firePropertyChange(String propertyName, Object oldValue, Object newValue) {
 		changeSupport.firePropertyChange(propertyName, oldValue, newValue);
+	}
+
+	
+	/**
+	 * @return the metaclassesCollection
+	 */
+	public MetaclassesModel getMetaclassesCollection() {
+		return metaclassesCollection;
 	}
 
 

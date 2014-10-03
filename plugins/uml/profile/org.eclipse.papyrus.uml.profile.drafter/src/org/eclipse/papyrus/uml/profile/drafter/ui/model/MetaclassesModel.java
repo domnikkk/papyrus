@@ -14,167 +14,52 @@
 
 package org.eclipse.papyrus.uml.profile.drafter.ui.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.eclipse.uml2.uml.Class;
 
 
 /**
- * Model that represent one {@link StereoptypeModel}'s extended metaclasses.
-
+ * Model representing a Collection of Metaclasses.
+ * This model is here for Histiric reasons. It may be replaced by List<MetaclassModel>.
+ * 
  * @author cedric dumoulin
  *
  */
 public class MetaclassesModel {
 
 	/**
-	 * The status of the model. ModelStatusKind.created mean that the model is created by the user.
-	 */
-	protected MemberKind memberKind = MemberKind.owned;
-	
-	/**
-	 * state of this model.
-	 */
-	protected StateKind stateKind = StateKind.loaded;
-	
-	/**
-	 * Life status of this model. Value is deleted if the user request deletion of this model.
-	 */
-	protected LifeStatusKind lifeStatusKind = LifeStatusKind.running;
-	
-	/**
-	 * The Metaclass that the Stereotype extends. This is the metaclass represented by this model.
-	 */
-	private Class extendedMetaClass;
-	/**
-	 * The name proposed by the user for this Property.
-	 */
-	protected String proposedName;
-	
-	
-	
-	/**
 	 * Constructor.
 	 *
-	 * @param memberKind
 	 */
-	public MetaclassesModel(MemberKind memberKind) {
-		this.memberKind = memberKind;
-	}
-
-
-	/**
-	 * 
-	 * Constructor.
-	 *
-	 * Create a {@link StateKind#loaded} model.
-	 * 
-	 * @param memberKind
-	 * @param extendedMetaClass
-	 */
-	public MetaclassesModel(MemberKind memberKind, Class extendedMetaClass) {
-		this.memberKind = memberKind;
-		this.stateKind = StateKind.loaded;
-		this.extendedMetaClass = extendedMetaClass;
+	public MetaclassesModel() {
+		// TODO Auto-generated constructor stub
 	}
 
 	/**
-	 * 
-	 * Constructor.
-	 * Create a {@link StateKind#created} model.
-	 *
-	 * @param memberKind
-	 * @param proposedName
+	 * Metaclasses required by the user before modifying the Stereotype.
 	 */
-	public MetaclassesModel(MemberKind memberKind, String proposedName) {
-		this.memberKind = memberKind;
-		this.proposedName = proposedName;
-		this.stateKind = StateKind.created;
-	}
-
+	private List<Class> requiredMetaclasses = new ArrayList<Class>();
+	
+	/**
+	 * Metaclasses selected by the user.
+	 */
+	private List<Class> selectedMetaclasses = new ArrayList<Class>();
 
 	
 	/**
-	 * @return the extendedMetaClass
+	 * @return the requiredMetaclasses
 	 */
-	protected Class getExtendedMetaClass() {
-		return extendedMetaClass;
+	public List<Class> getRequiredMetaclasses() {
+		return requiredMetaclasses;
 	}
-
-	/**
-	 * Visitor entry to visit this Model and its nested classes.
-	 * @param visitor
-	 */
-	public void accept(IModelVisitor visitor) {
-		visitor.visit(this);
-	}
-	
 
 	
 	/**
-	 * @return the lifeStatusKind
+	 * @return the selectedMetaclasses
 	 */
-	public LifeStatusKind getLifeStatusKind() {
-		return lifeStatusKind;
-	}
-
-
-	
-	/**
-	 * @param lifeStatusKind the lifeStatusKind to set
-	 */
-	public void setLifeStatusKind(LifeStatusKind lifeStatusKind) {
-		this.lifeStatusKind = lifeStatusKind;
-	}
-
-
-	
-	/**
-	 * @return the memberKind
-	 */
-	public MemberKind getMemberKind() {
-		return memberKind;
-	}
-
-
-	
-	/**
-	 * @return the stateKind
-	 */
-	public StateKind getStateKind() {
-		return stateKind;
-	}
-
-	/**
-	 * Apply a model changed event on this model. This change the {@link #lifeStatusKind}.
-	 */
-	public void modelChangedEvent() {
-		
-		switch(stateKind) {
-		case loaded:
-			stateKind = StateKind.modified;
-			break;
-
-		default:
-			// No change
-			break;
-		}
-	}
-	/**
-	 * A delete is applied to the model. If the model is alive, it is marked deleted.
-	 * If it is deleted, it is marked alive.
-	 */
-	public void deleteModelEvent() {
-		
-		switch(lifeStatusKind) {
-		case running:
-			lifeStatusKind = LifeStatusKind.deleted;
-			break;
-		case deleted:
-			lifeStatusKind = LifeStatusKind.running;
-			break;
-
-		default:
-			// No change
-			break;
-		}
+	public List<Class> getSelectedMetaclasses() {
+		return selectedMetaclasses;
 	}
 }

@@ -15,10 +15,9 @@
 package org.eclipse.papyrus.uml.profile.drafter;
 
 import java.text.DateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
-import java.util.Iterator;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
@@ -42,14 +41,17 @@ import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.papyrus.infra.core.resource.ModelSet;
 import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 import org.eclipse.papyrus.uml.profile.Activator;
-import org.eclipse.papyrus.uml.tools.profile.definition.PapyrusDefinitionAnnotation;
-import org.eclipse.papyrus.uml.tools.profile.definition.ProfileRedefinition;
-import org.eclipse.papyrus.uml.tools.profile.definition.Version;
 import org.eclipse.papyrus.uml.profile.drafter.commands.CreateProfileAndProfileResourceCommand;
 import org.eclipse.papyrus.uml.profile.drafter.exceptions.DraftProfileException;
 import org.eclipse.papyrus.uml.profile.drafter.exceptions.NotFoundException;
 import org.eclipse.papyrus.uml.profile.drafter.ui.dialog.IStereotypeUpdateArgs;
+import org.eclipse.papyrus.uml.profile.drafter.ui.model.MetaclassesModel;
+import org.eclipse.papyrus.uml.profile.drafter.ui.model.PropertyModel;
+import org.eclipse.papyrus.uml.profile.drafter.ui.model.StereoptypeModel;
 import org.eclipse.papyrus.uml.profile.utils.Util;
+import org.eclipse.papyrus.uml.tools.profile.definition.PapyrusDefinitionAnnotation;
+import org.eclipse.papyrus.uml.tools.profile.definition.ProfileRedefinition;
+import org.eclipse.papyrus.uml.tools.profile.definition.Version;
 import org.eclipse.papyrus.uml.tools.utils.ElementUtil;
 import org.eclipse.uml2.uml.AggregationKind;
 import org.eclipse.uml2.uml.Class;
@@ -196,7 +198,7 @@ public class ProfileApplicator {
 		boolean updated = false;
 		for( Class metaclass : extendedMetaclasses ) {
 				// add the metaclass to stereotype
-			updated = updated || updateMetaclassToStereotype( stereotype, metaclass);
+			updated = updateMetaclassToStereotype( stereotype, metaclass) || updated;
 		}
 		return updated;
 	}
@@ -228,6 +230,7 @@ public class ProfileApplicator {
 //		Extension extension = createExtension(stereotype, (Type)target.getImportedElement());
 //		extension.setName("Ext_" + stereotype.getName() + "_" + metaclass.getName());
 		// Add the extension to the profile package owning this stereotype
+		stereotype.getNearestPackage().getPackagedElements().add(extension);
 //		stereotype.getProfile().getPackagedElements().add(extension);
 		return true;
 	}
@@ -379,14 +382,7 @@ public class ProfileApplicator {
 	 */
 	private void definesAllProfiles(Package container) {
 
-		if( container instanceof Profile) {
-			((Profile)container).define();
-		}
-
-		for( Package nestedPackage : container.getNestedPackages() ) {
-
-			definesAllProfiles(nestedPackage);
-		}
+		defineAllProfiles(container, true);
 	}
 
 	/**
@@ -815,26 +811,25 @@ public class ProfileApplicator {
 	}
 	
 	/**
-	 * Define this package if it is a profile and its sub-profiles
+	 * Define all Profiles found from the container, including the provided package (if it is a profile) 
+	 * and nested Profile.
 	 * 
-	 * @param thePackage
-	 *        the package to define (if it is a profile)
+	 * @param container
+	 *        the package from which to define {@link Profile}
 	 */
-	public List<EPackage> defineProfiles(Package thePackage, boolean saveConstraintInDef) {
+	protected List<EPackage> defineAllProfiles(Package container, boolean saveConstraintInDef) {
 
-		List<EPackage> result = new LinkedList<EPackage>();
+		List<EPackage> result = new ArrayList<EPackage>();
 
 		// we wants to define
-		if(thePackage instanceof Profile) {
+		if(container instanceof Profile) {
 			Map<String, String> options = createProfileDefinitionOptions(saveConstraintInDef);
-			EPackage profileDefinition = ((Profile)thePackage).define(options, null, null);
+			EPackage profileDefinition = ((Profile)container).define(options, null, null);
 			result.add(profileDefinition);
 		}
 
-		Iterator<Package> it = thePackage.getNestedPackages().iterator();
-		while(it.hasNext()) {
-			Package p = it.next();
-			List<EPackage> profileDefinitions = defineProfiles(p, saveConstraintInDef);
+		for( Package nestedPackage : container.getNestedPackages() ) {
+			List<EPackage> profileDefinitions = defineAllProfiles(nestedPackage, saveConstraintInDef);
 			result.addAll(profileDefinitions);
 		}
 
@@ -872,6 +867,9 @@ public class ProfileApplicator {
 
 		options.put(Profile2EPackageConverter.OPTION__COMMENTS, UMLUtil.OPTION__IGNORE);
 		options.put(Profile2EPackageConverter.OPTION__FOREIGN_DEFINITIONS, UMLUtil.OPTION__IGNORE);
+
+		options.put(Profile2EPackageConverter.OPTION__UNTYPED_PROPERTIES, UMLUtil.OPTION__PROCESS); //Closer to the UML semantics of untyped properties
+
 		return options;
 	}
 
@@ -903,6 +901,170 @@ public class ProfileApplicator {
 				return super.validate(eClass, eObject, diagnostics, context);
 			}
 		};
+	}
+
+	/**
+	 * Update or create the specified stereotype according to the provided {@link IStereotypeUpdateArgs}.
+	 * 
+	 * @param updateArgs Arguments used to update or create a Stereotype.
+	 * 
+	 * @throws DraftProfileException If an error occur during update.
+	 */
+	public void updateStereotype(StereoptypeModel stereoptypeModel) throws DraftProfileException {
+		
+		String profileName = stereoptypeModel.getProfileName(); 
+		String stereotypeName = stereoptypeModel.getStereotypeName();
+		
+		boolean isProfileModified = false;
+		// The package to which the corresponding Profile is attached
+		Package applicantPackage = null;
+		
+		PapyrusDefinitionAnnotation annotations = null;
+		Stereotype stereotype = null;
+		// lookup profile
+		Profile profile = umlElement.getNearestPackage().getAppliedProfile(profileName, true);
+		if( profile == null ) {
+			// ask creation confirmation
+			profile = createProfile(profileName);
+			// Create the stereotype
+			stereotype = createStereotype(profile, stereotypeName);
+
+//			applyProfileToUmlElement( profile);
+			// TODO change next behavior
+//			throw new DraftProfileException("Profile '" + profileName + "' not applied on nesting packages. Apply profile first.");
+
+			// We will apply profile in nearest PAckage 
+			// TODO let choose between nearest, root or choosen
+			applicantPackage = umlElement.getNearestPackage();
+			annotations = createPapyrusDefinitionAnnotation(0, 0, 1);
+			isProfileModified = true;
+		}
+		else {
+			// Profile already exist
+			// Lookup for the stereotype
+			stereotype = profile.getOwnedStereotype(stereotypeName, true);
+			applicantPackage = getApplicantPackage(profile);
+			if( stereotype == null ) {
+				// We need to create the stereotype
+				// ask creation confirmation
+				// TODO change next behavior
+				stereotype = createStereotype(profile, stereotypeName);
+				annotations = createUpdatedPapyrusDefinitionAnnotation(profile, 0, 0, 1);
+				isProfileModified = true;
+			}
+		}
+		
+		// update metaclasses by adding missing metaclasses
+		MetaclassesModel metaclassesModel = stereoptypeModel.getMetaclassesCollection();
+		if( ! metaclassesModel.getSelectedMetaclasses().isEmpty() ) {
+			isProfileModified = updateStereotypeMetaclasses( stereotype, metaclassesModel.getSelectedMetaclasses()) || isProfileModified  ;
+		}
+		
+		// Update properties
+		if( !stereoptypeModel.getProperties().isEmpty()) {
+			isProfileModified = checkProperties( stereotype, stereoptypeModel.getProperties()) || isProfileModified;
+		}
+		
+		
+		// Do we need to reapply the profile ?
+		// We do it only if the profile is modified
+		if( isProfileModified) {
+			definesAllProfiles( profile );
+			redefineAllProfiles( profile, annotations );
+			cleanAllProfiles( profile );
+//			validateAllProfiles(profile, Arrays.asList((EPackage)profile) );
+			applyProfile( applicantPackage, profile);
+		}
+		
+		// Apply stereotype to element
+		applyStereotype( stereotype );
+		
+	}
+
+	/**
+	 * Update the stereotype with the specified {@link PropertyModel}s.
+	 * @param stereotype 
+	 * 
+	 * @param properties
+	 * @return 
+	 */
+	private boolean checkProperties(Stereotype stereotype, List<PropertyModel> properties) {
+	
+		boolean isUpdated = false;
+		for( PropertyModel propertyModel : properties) {
+			isUpdated = checkProperty( stereotype, propertyModel) || isUpdated;
+		}
+		
+		return isUpdated;
+	}
+
+	/**
+	 * Update the specified {@link Property} of the {@link Stereotype}
+	 * @param stereotype The {@link Stereotype} owning the property.
+	 * @param propertyModel The {@link PropertyModel} to use to update stereotype's corresponding property.
+	 * 
+	 */
+	private boolean checkProperty(Stereotype stereotype, PropertyModel propertyModel) {
+		
+		boolean isUpdated = false;
+		boolean isPropertyExistIn = propertyModel.isPropertyExistIn(stereotype);
+
+		switch(propertyModel.getStateKind()) {
+		case modified:
+			if( isPropertyExistIn) {
+				isUpdated = updateProperty( stereotype, propertyModel);
+			}
+			break;
+
+		case created:
+			if( ! isPropertyExistIn) {
+				isUpdated = createProperty( stereotype, propertyModel);
+			}
+			
+			break;
+
+		default:
+			break;
+		}
+		
+		return isUpdated;
+	}
+
+	/**
+	 * Update the specified {@link Property} of the {@link Stereotype}.
+	 * 
+	 * @param stereotype The {@link Stereotype} owning the property.
+	 * @param propertyModel The {@link PropertyModel} to use to update stereotype's corresponding property.
+	 * 
+	 */
+	private boolean updateProperty(Stereotype stereotype, PropertyModel propertyModel) {
+	
+		boolean isUpdated = false;
+		String newName = propertyModel.getProposedName();
+		System.err.println("updateProperty(" + stereotype.getName() + "." + propertyModel.getProposedName() );
+		if( newName!=null && (! newName.equals( stereotype.getName() ) ) ) {
+			stereotype.setName(newName);
+			isUpdated = true;
+		}
+		return isUpdated;
+		
+	}
+
+	/**
+	 * Create the specified {@link Property} of the {@link Stereotype}.
+	 * 
+	 * @param stereotype The {@link Stereotype} owning the property.
+	 * @param propertyModel The {@link PropertyModel} to use to update stereotype's corresponding property.
+	 * 
+	 */
+	private boolean createProperty(Stereotype stereotype, PropertyModel propertyModel) {
+	
+		boolean isUpdated = true;
+
+		System.err.println("createProperty(" + stereotype.getName() + "." + propertyModel.getProposedName() );
+		stereotype.createOwnedAttribute(propertyModel.getProposedName(), null);
+		
+		return isUpdated;
 	}
 
 

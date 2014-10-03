@@ -48,7 +48,7 @@ public class DummySimpleModelVisitor extends SimpleModelVisitor {
 	}
 	
 	@Override
-	public void doVisit( MetaclassesModel model) {
+	public void doVisit( MetaclassModel model) {
 		super.doVisit(model);
 		traces.records("doVisit", "MetaclassesModel", model);
 	}

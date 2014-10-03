@@ -77,7 +77,7 @@ public class SimpleModelVisitorTest {
 		PropertyModel prop2 = st.createNewPropertyModel(propName2);
 		ExtendedStereotypeModel exSt1 = st.createExtendedStereotypeModel("exSt1");
 		PropertyModel prop3 = st.createNewPropertyModel(propName3);
-		MetaclassesModel mc1 = st.createMetaclassModel("mc1");
+		MetaclassModel mc1 = st.createMetaclassModel("mc1");
 		
 		// tests
 		// Check visit order.
@@ -104,7 +104,7 @@ public class SimpleModelVisitorTest {
 	}
 
 	/**
-	 * Test method for {@link org.eclipse.papyrus.uml.profile.drafter.ui.model.SimpleModelVisitor#visit(org.eclipse.papyrus.uml.profile.drafter.ui.model.MetaclassesModel)}.
+	 * Test method for {@link org.eclipse.papyrus.uml.profile.drafter.ui.model.SimpleModelVisitor#visit(org.eclipse.papyrus.uml.profile.drafter.ui.model.MetaclassModel)}.
 	 */
 	@Test
 	public void testVisitMetaclassesModel() {
@@ -128,7 +128,7 @@ public class SimpleModelVisitorTest {
 	}
 
 	/**
-	 * Test method for {@link org.eclipse.papyrus.uml.profile.drafter.ui.model.SimpleModelVisitor#doVisit(org.eclipse.papyrus.uml.profile.drafter.ui.model.MetaclassesModel)}.
+	 * Test method for {@link org.eclipse.papyrus.uml.profile.drafter.ui.model.SimpleModelVisitor#doVisit(org.eclipse.papyrus.uml.profile.drafter.ui.model.MetaclassModel)}.
 	 */
 	@Test
 	public void testDoVisitMetaclassesModel() {
