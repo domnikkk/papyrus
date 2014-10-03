@@ -13,6 +13,7 @@
  *****************************************************************************/
 package org.eclipse.papyrus.uml.services.decoration;
 
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.papyrus.infra.services.decoration.DecorationService;
 import org.eclipse.uml2.uml.NamedElement;
 
@@ -29,13 +30,16 @@ public class UMLDecorationService extends DecorationService {
 	/**
 	 * Initial message for UML elements
 	 *
-	 * @return the qualified name of the element, if it is a named element
+	 * @return the qualified name of the element, if it is a named element (and add its eClass name in parenthesis)
 	 */
 	@Override
 	public String initialMessage(Object element) {
 		if (element instanceof NamedElement) {
 			NamedElement ne = (NamedElement) element;
-			return ne.getQualifiedName();
+			return ne.getQualifiedName() + " (" + ne.eClass().getName() + ")"; //$NON-NLS-1$ //$NON-NLS-2$
+		}
+		else if (element instanceof EObject) {
+			return ((EObject) element).eClass().getName();
 		}
 		return super.initialMessage(element);
 	}

@@ -273,11 +273,11 @@ public class ConnectorUtils extends org.eclipse.papyrus.uml.service.types.utils.
 	}
 
 	/**
-	 * Checks if is crossing encapuslation.
+	 * Checks if is crossing encapsulation.
 	 *
 	 * @param nestedPath
 	 *            the nested path
-	 * @return true, if is crossing encapuslation <code>true</code> if we are breaking encapsulation (see SysML rules in SysML Standard 1.2, p.44):
+	 * @return true, if is crossing encapsulation <code>true</code> if we are breaking encapsulation (see SysML rules in SysML Standard 1.2, p.44):
 	 *         isEncapsulated: Boolean [0..1] If true, then the block is treated as a black box; a part typed by this black box can only be connected
 	 *         via its ports or directly to its outer boundary. If false, or if a value is not present, then connections can be established to
 	 *         elements of its internal structure via deep-nested connector ends.
