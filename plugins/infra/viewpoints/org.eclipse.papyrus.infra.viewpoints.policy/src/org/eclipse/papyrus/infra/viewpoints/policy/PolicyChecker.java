@@ -25,6 +25,7 @@ import org.eclipse.core.runtime.IExtension;
 import org.eclipse.core.runtime.IExtensionPoint;
 import org.eclipse.core.runtime.IExtensionRegistry;
 import org.eclipse.core.runtime.Platform;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
@@ -118,31 +119,30 @@ public class PolicyChecker {
 	 * @return The loaded configuration, or <code>null</code> if the operation failed
 	 */
 	public static PapyrusConfiguration loadConfigurationFrom(String location) {
-		try {
-			if (location == null) {
-				return null;
-			}
-			if (location.isEmpty()) {
-				return null;
-			}
-			URI uri = null;
-			if (location.startsWith("platform:/")) {
-				uri = URI.createURI(location);
-			} else {
-				uri = URI.createFileURI(location);
-			}
-			location = uri.toString();
-			PapyrusConfiguration config = CONFIGURATIONS_CACHE.get(location);
-			if (config != null) {
-				return config;
-			}
-			Resource res = CONFIGURATIONS_RESOURCE_SET.getResource(uri, true);
-			config = (PapyrusConfiguration) res.getContents().get(0);
-			CONFIGURATIONS_CACHE.put(location, config);
-			return config;
-		} catch (NullPointerException e) {
+		if (location == null) {
+			return null;
 		}
-		return null;
+		if (location.isEmpty()) {
+			return null;
+		}
+		URI uri = null;
+		if (location.startsWith("platform:/")) {
+			uri = URI.createURI(location);
+		} else {
+			uri = URI.createFileURI(location);
+		}
+		location = uri.toString();
+		PapyrusConfiguration config = CONFIGURATIONS_CACHE.get(location);
+		if (config != null) {
+			return config;
+		}
+		Resource res = CONFIGURATIONS_RESOURCE_SET.getResource(uri, true);
+		EList<EObject> contents = res.getContents();
+		if (contents.size() >0){
+			config = (PapyrusConfiguration) contents.get(0);
+			CONFIGURATIONS_CACHE.put(location, config);				
+		}
+		return config;
 	}
 
 	/**
