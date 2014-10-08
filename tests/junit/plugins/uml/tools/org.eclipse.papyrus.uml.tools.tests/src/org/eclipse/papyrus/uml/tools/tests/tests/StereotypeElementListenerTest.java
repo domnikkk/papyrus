@@ -65,9 +65,11 @@ public class StereotypeElementListenerTest extends AbstractPapyrusTest {
 	/** Profile used to provide of stereotypes. */
 	private Profile profile = null;
 
+	/** SysML profile used to provide static stereotypes. */
+	private Profile sysmlProfile = null;
+
 	/** The under test. */
 	private StereotypeElementListener underTest = null;
-
 
 	/**
 	 * Sets the up.
@@ -79,7 +81,7 @@ public class StereotypeElementListenerTest extends AbstractPapyrusTest {
 	public void setUp() throws Exception {
 		assertAppliedStereotypeNotification = new AssertNotificationAdapter(StereotypeExtensionNotification.STEREOTYPE_APPLIED_TO_ELEMENT);
 		assertUnappliedStereotypeNotification = new AssertNotificationAdapter(StereotypeExtensionNotification.STEREOTYPE_UNAPPLIED_FROM_ELEMENT);
-		underTest = new StereotypeElementListener();
+		underTest = new StereotypeElementListener(modelSetFixture.getEditingDomain());
 		modelSetFixture.getEditingDomain().addResourceSetListener(underTest);
 	}
 
@@ -93,7 +95,7 @@ public class StereotypeElementListenerTest extends AbstractPapyrusTest {
 	public void tearDown() throws Exception {
 		assertAppliedStereotypeNotification = null;
 		assertUnappliedStereotypeNotification = null;
-		underTest = null;
+		// underTest = null;
 	}
 
 	/**
@@ -381,6 +383,91 @@ public class StereotypeElementListenerTest extends AbstractPapyrusTest {
 		assertUnappliedStereotypeNotification.assertNoNotification(element);
 	}
 
+
+	/**
+	 * Test add stereotype with static profile.
+	 */
+	@Test
+	@PluginResource("/resources/stereotypeListenerTest/profileApplicationTest.di")
+	public void testAddSysMLStereotype() {
+
+		initialiseTestCase();
+
+		element.eAdapters().add(assertAppliedStereotypeNotification);
+
+		TransactionalEditingDomain editingDomain = modelSetFixture.getEditingDomain();
+		Stereotype stereotype = sysmlProfile.getOwnedStereotype("Allocated");
+		editingDomain.getCommandStack().execute(new ApplyStereotypeCommand(element, stereotype, editingDomain));
+		assertAppliedStereotypeNotification.assertNotification(element);
+		assertAppliedStereotypeNotification.assertNotification(element, stereotype);
+	}
+
+	/**
+	 * Test remove stereotype with static profile.
+	 */
+	@Test
+	@PluginResource("/resources/stereotypeListenerTest/profileApplicationTest.di")
+	public void testRemoveSysMLStereotype() {
+
+		initialiseTestCase();
+
+		element.eAdapters().add(assertUnappliedStereotypeNotification);
+
+		Stereotype stereotype = (Stereotype) sysmlProfile.getMember("Allocated");
+		TransactionalEditingDomain editingDomain = modelSetFixture.getEditingDomain();
+		editingDomain.getCommandStack().execute(new ApplyStereotypeCommand(element, stereotype, editingDomain));
+		editingDomain.getCommandStack().execute(new UnapplyStereotypeCommand(element, stereotype, editingDomain));
+		assertUnappliedStereotypeNotification.assertNotification(element);
+		assertUnappliedStereotypeNotification.assertNotification(element, stereotype);
+	}
+
+	/**
+	 * Test undo action on stereotype application with static Profile.
+	 */
+	@Test
+	@PluginResource("/resources/stereotypeListenerTest/profileApplicationTest.di")
+	public void testUndoAddSysMLStereotype() {
+
+		initialiseTestCase();
+
+		TransactionalEditingDomain editingDomain = modelSetFixture.getEditingDomain();
+		element.eAdapters().add(assertAppliedStereotypeNotification);
+		element.eAdapters().add(assertUnappliedStereotypeNotification);
+
+		Stereotype member = sysmlProfile.getOwnedStereotype("Allocated");
+		editingDomain.getCommandStack().execute(new ApplyStereotypeCommand(element, member, editingDomain));
+		assertAppliedStereotypeNotification.assertNotification(element);
+
+		editingDomain.getCommandStack().undo();
+		assertUnappliedStereotypeNotification.assertNotification(element);
+	}
+
+	/**
+	 * Test undo action on stereotype unapplication with static Profile.
+	 */
+	@Test
+	@PluginResource("/resources/stereotypeListenerTest/profileApplicationTest.di")
+	public void testUndoRemoveSysMLStereotype() {
+
+		initialiseTestCase();
+
+		TransactionalEditingDomain editingDomain = modelSetFixture.getEditingDomain();
+		element.eAdapters().add(assertAppliedStereotypeNotification);
+		element.eAdapters().add(assertUnappliedStereotypeNotification);
+
+		Stereotype member = sysmlProfile.getOwnedStereotype("Allocated");
+
+		editingDomain.getCommandStack().execute(new ApplyStereotypeCommand(element, member, editingDomain));
+		assertAppliedStereotypeNotification.assertNotification(element);
+
+		editingDomain.getCommandStack().execute(new UnapplyStereotypeCommand(element, member, editingDomain));
+		assertUnappliedStereotypeNotification.assertNotification(element);
+
+
+		editingDomain.getCommandStack().undo();
+		assertAppliedStereotypeNotification.assertNotification(2, element);
+	}
+
 	/**
 	 * Load and apply profile to model resource.
 	 */
@@ -391,8 +478,8 @@ public class StereotypeElementListenerTest extends AbstractPapyrusTest {
 
 		// Initialise data for test case
 		element = modelSetFixture.getModel().getMember("FirstUnderTest");
-		profile = modelSetFixture.getModel().getProfileApplications().get(0).getAppliedProfile();
-
+		profile = modelSetFixture.getModel().getAppliedProfile("Profile");
+		sysmlProfile = modelSetFixture.getModel().getAppliedProfile("SysML::Allocations");
 
 	}
 
