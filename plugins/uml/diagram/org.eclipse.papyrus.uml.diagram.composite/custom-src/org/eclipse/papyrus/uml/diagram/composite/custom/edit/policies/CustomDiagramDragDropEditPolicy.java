@@ -45,7 +45,7 @@ import org.eclipse.gmf.runtime.emf.type.core.IHintedType;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.papyrus.uml.diagram.common.editpolicies.OldCommonDiagramDragDropEditPolicy;
+import org.eclipse.papyrus.uml.diagram.common.editpolicies.CommonDiagramDragDropEditPolicy;
 import org.eclipse.papyrus.uml.diagram.composite.custom.edit.command.CreateViewCommand;
 import org.eclipse.papyrus.uml.diagram.composite.custom.helper.CollaborationHelper;
 import org.eclipse.papyrus.uml.diagram.composite.custom.helper.CompositeLinkMappingHelper;
@@ -147,7 +147,7 @@ import org.eclipse.uml2.uml.TypedElement;
  * This class provides an implementation for specific behavior of Drag and Drop
  * in the Composite Diagram.
  */
-public class CustomDiagramDragDropEditPolicy extends OldCommonDiagramDragDropEditPolicy {
+public class CustomDiagramDragDropEditPolicy extends CommonDiagramDragDropEditPolicy {
 
 	/**
 	 * Default constructor
@@ -380,6 +380,8 @@ public class CustomDiagramDragDropEditPolicy extends OldCommonDiagramDragDropEdi
 		return UnexecutableCommand.INSTANCE;
 	}
 
+	
+	
 	/**
 	 * Returns the command to drop the Constraint + the link to attach it to its contrainted elements
 	 *
