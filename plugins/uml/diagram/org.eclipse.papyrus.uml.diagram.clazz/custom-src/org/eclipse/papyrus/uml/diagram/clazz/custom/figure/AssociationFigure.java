@@ -19,6 +19,7 @@ import org.eclipse.draw2d.PolylineDecoration;
 import org.eclipse.draw2d.RotatableDecoration;
 import org.eclipse.draw2d.geometry.PointList;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
+import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.PapyrusWrappingLabel;
 import org.eclipse.papyrus.uml.diagram.common.figure.edge.UMLEdgeFigure;
 import org.eclipse.swt.SWT;
 
@@ -89,23 +90,23 @@ public class AssociationFigure extends UMLEdgeFigure {
 	@Override
 	protected void createContents() {
 		super.createContents();
-		fAssociationNameLabel = new WrappingLabel();
+		fAssociationNameLabel = new PapyrusWrappingLabel();
 		fAssociationNameLabel.setText("");
 		this.add(fAssociationNameLabel);
 		// fAppliedStereotypeAssociationLabel = new WrappingLabel();
 		// fAppliedStereotypeAssociationLabel.setText("");
 		//
 		// this.add(fAppliedStereotypeAssociationLabel);
-		fRoleSourceLabel = new WrappingLabel();
+		fRoleSourceLabel = new PapyrusWrappingLabel();
 		fRoleSourceLabel.setText("");
 		this.add(fRoleSourceLabel);
-		fMultiplicitySourceLabel = new WrappingLabel();
+		fMultiplicitySourceLabel = new PapyrusWrappingLabel();
 		fMultiplicitySourceLabel.setText("");
 		this.add(fMultiplicitySourceLabel);
-		fRoleTargetLabel = new WrappingLabel();
+		fRoleTargetLabel = new PapyrusWrappingLabel();
 		fRoleTargetLabel.setText("");
 		this.add(fRoleTargetLabel);
-		fMultiplicityTargetLabel = new WrappingLabel();
+		fMultiplicityTargetLabel = new PapyrusWrappingLabel();
 		fMultiplicityTargetLabel.setText("");
 		this.add(fMultiplicityTargetLabel);
 	}

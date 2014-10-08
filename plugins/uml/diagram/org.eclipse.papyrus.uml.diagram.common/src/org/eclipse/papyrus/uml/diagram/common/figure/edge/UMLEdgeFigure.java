@@ -15,6 +15,7 @@ package org.eclipse.papyrus.uml.diagram.common.figure.edge;
 
 import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
+import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.PapyrusWrappingLabel;
 import org.eclipse.papyrus.uml.diagram.common.figure.node.IPapyrusUMLElementFigure;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Image;
@@ -60,7 +61,7 @@ public class UMLEdgeFigure extends CommonEdgeFigure implements IPapyrusUMLElemen
 	 * Creates the stereotype label for this figure.
 	 */
 	protected void createStereotypeLabel() {
-		appliedStereotypeLabel = new WrappingLabel();
+		appliedStereotypeLabel = new PapyrusWrappingLabel();
 		appliedStereotypeLabel.setTextWrap(true);
 		appliedStereotypeLabel.setTextJustification(PositionConstants.CENTER);
 		appliedStereotypeLabel.setText("");

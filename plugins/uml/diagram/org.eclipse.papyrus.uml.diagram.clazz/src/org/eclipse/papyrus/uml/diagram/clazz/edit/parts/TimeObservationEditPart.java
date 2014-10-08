@@ -113,7 +113,8 @@ public class TimeObservationEditPart extends AbstractObservationEditPart {
 							mh.setBorder(null);
 							return Collections.singletonList(mh);
 						}
-					};
+					}
+					;
 				}
 				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 				if (result == null) {
@@ -156,6 +157,7 @@ public class TimeObservationEditPart extends AbstractObservationEditPart {
 			}
 		}
 		super.handleNotificationEvent(event);
+
 	}
 
 	/**
@@ -187,7 +189,8 @@ public class TimeObservationEditPart extends AbstractObservationEditPart {
 		} else if (borderItemEditPart instanceof TimeObservationStereotypeLabelEditPart) {
 			IBorderItemLocator locator = new ExternalLabelPositionLocator(getMainFigure());
 			borderItemContainer.add(borderItemEditPart.getFigure(), locator);
-		} else {
+		} else
+		{
 			super.addBorderItem(borderItemContainer, borderItemEditPart);
 		}
 	}
@@ -212,6 +215,7 @@ public class TimeObservationEditPart extends AbstractObservationEditPart {
 	@Override
 	protected NodeFigure createMainFigure() {
 		return new SelectableBorderedNodeFigure(createMainFigureWithSVG());
+
 	}
 
 	/**

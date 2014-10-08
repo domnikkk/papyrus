@@ -353,6 +353,7 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		} else {
 			return getGEFWrapper(new MoveElementsCommand(req));
 		}
+
 	}
 
 	/**
@@ -427,28 +428,32 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 * @generated
 		 */
 		public boolean canCreateInclude_4008(UseCase container, UseCase source, UseCase target) {
-			return canExistInclude_4008(container, null, source, target);
+			return canExistInclude_4008(
+					container, null, source, target);
 		}
 
 		/**
 		 * @generated
 		 */
 		public boolean canCreateExtend_4009(UseCase container, UseCase source, UseCase target) {
-			return canExistExtend_4009(container, null, source, target);
+			return canExistExtend_4009(
+					container, null, source, target);
 		}
 
 		/**
 		 * @generated
 		 */
 		public boolean canCreateGeneralization_4010(Classifier container, Classifier source, Classifier target) {
-			return canExistGeneralization_4010(container, null, source, target);
+			return canExistGeneralization_4010(
+					container, null, source, target);
 		}
 
 		/**
 		 * @generated
 		 */
 		public boolean canCreateAssociation_4011(Package container, Type source, Type target) {
-			return canExistAssociation_4011(container, null, source, target);
+			return canExistAssociation_4011(
+					container, null, source, target);
 		}
 
 		/**
@@ -456,18 +461,22 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 */
 		public boolean canCreateConstraintConstrainedElement_4012(Constraint source, Element target) {
 			if (source != null) {
-				if (source.getConstrainedElements().contains(target)) {
+				if (source.getConstrainedElements()
+						.contains(target)) {
 					return false;
 				}
 			}
-			return canExistConstraintConstrainedElement_4012(source, target);
+
+			return canExistConstraintConstrainedElement_4012(
+					source, target);
 		}
 
 		/**
 		 * @generated
 		 */
 		public boolean canCreateDependency_4013(Package container, NamedElement source, NamedElement target) {
-			return canExistDependency_4013(container, null, source, target);
+			return canExistDependency_4013(
+					container, null, source, target);
 		}
 
 		/**
@@ -475,46 +484,54 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 */
 		public boolean canCreateCommentAnnotatedElement_4014(Comment source, Element target) {
 			if (source != null) {
-				if (source.getAnnotatedElements().contains(target)) {
+				if (source.getAnnotatedElements()
+						.contains(target)) {
 					return false;
 				}
 			}
-			return canExistCommentAnnotatedElement_4014(source, target);
+
+			return canExistCommentAnnotatedElement_4014(
+					source, target);
 		}
 
 		/**
 		 * @generated
 		 */
 		public boolean canCreateAbstraction_4015(Package container, NamedElement source, NamedElement target) {
-			return canExistAbstraction_4015(container, null, source, target);
+			return canExistAbstraction_4015(
+					container, null, source, target);
 		}
 
 		/**
 		 * @generated
 		 */
 		public boolean canCreateUsage_4016(Package container, NamedElement source, NamedElement target) {
-			return canExistUsage_4016(container, null, source, target);
+			return canExistUsage_4016(
+					container, null, source, target);
 		}
 
 		/**
 		 * @generated
 		 */
 		public boolean canCreateRealization_4017(Package container, NamedElement source, NamedElement target) {
-			return canExistRealization_4017(container, null, source, target);
+			return canExistRealization_4017(
+					container, null, source, target);
 		}
 
 		/**
 		 * @generated
 		 */
 		public boolean canCreatePackageMerge_4018(Package container, Package source, Package target) {
-			return canExistPackageMerge_4018(container, null, source, target);
+			return canExistPackageMerge_4018(
+					container, null, source, target);
 		}
 
 		/**
 		 * @generated
 		 */
 		public boolean canCreatePackageImport_4019(Namespace source, Package target) {
-			return canExistPackageImport_4019(null, source, target);
+			return canExistPackageImport_4019(
+					null, source, target);
 		}
 
 		/**
@@ -570,20 +587,26 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 					if ((target instanceof Class) || (target instanceof Component) || (target instanceof Actor) || (target instanceof UseCase)) {
 						if ((source instanceof UseCase) && (target instanceof UseCase)) {
 							return (Collections.disjoint(((UseCase) source).getSubjects(), ((UseCase) target).getSubjects()));
+
 						}
 						return true;
+
 					}
-				} else {
+				}
+				else {
 					return false;
 				}
 				if ((source instanceof Class) || (source instanceof Component) || (source instanceof Actor) || (source instanceof UseCase)) {
 					if ((target instanceof Class) || (target instanceof Component) || (target instanceof Actor) || (target instanceof UseCase)) {
 						if ((source instanceof UseCase) && (target instanceof UseCase)) {
 							return (Collections.disjoint(((UseCase) source).getSubjects(), ((UseCase) target).getSubjects()));
+
 						}
 						return true;
+
 					}
-				} else {
+				}
+				else {
 					return false;
 				}
 				return true;

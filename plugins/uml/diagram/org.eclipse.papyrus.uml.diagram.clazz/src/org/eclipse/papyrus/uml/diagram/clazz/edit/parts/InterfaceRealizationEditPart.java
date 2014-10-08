@@ -59,10 +59,12 @@ public class InterfaceRealizationEditPart extends UMLConnectionNodeEditPart impl
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof AppliedStereotypeInterfaceRealizationEditPart) {
-			((AppliedStereotypeInterfaceRealizationEditPart) childEditPart).setLabel(getPrimaryShape().getAppliedStereotypeLabel());
+			((AppliedStereotypeInterfaceRealizationEditPart) childEditPart).setLabel(
+					getPrimaryShape().getAppliedStereotypeLabel());
 		}
 		if (childEditPart instanceof InterfaceRealizationNameEditPart) {
-			((InterfaceRealizationNameEditPart) childEditPart).setLabel(getPrimaryShape().getNameLabel());
+			((InterfaceRealizationNameEditPart) childEditPart).setLabel(
+					getPrimaryShape().getNameLabel());
 		}
 		return false;
 	}

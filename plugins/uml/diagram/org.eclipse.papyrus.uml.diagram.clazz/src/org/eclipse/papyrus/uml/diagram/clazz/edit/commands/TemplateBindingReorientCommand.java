@@ -121,7 +121,9 @@ public class TemplateBindingReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected CommandResult reorientSource() throws ExecutionException {
-		getLink().setBoundElement(getNewSource());
+		getLink().setBoundElement(
+				getNewSource()
+				);
 		return CommandResult.newOKCommandResult(getLink());
 	}
 
@@ -129,7 +131,9 @@ public class TemplateBindingReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected CommandResult reorientTarget() throws ExecutionException {
-		getLink().setBoundElement(getNewTarget());
+		getLink().setBoundElement(
+				getNewTarget()
+				);
 		return CommandResult.newOKCommandResult(getLink());
 	}
 

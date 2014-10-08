@@ -69,12 +69,16 @@ public class RedefinableTemplateSignatureCreateCommand extends EditElementComman
 	@Override
 	public boolean canExecute() {
 		TemplateableElement container = (TemplateableElement) getElementToEdit();
-		if (container.getOwnedTemplateSignature() != null) {
+		if (container.getOwnedTemplateSignature()
+				!= null) {
 			return false;
 		}
+
 		EObject target = getElementToEdit();
 		ModelAddData data = PolicyChecker.getCurrent().getChildAddData(diagram, target.eClass(), UMLPackage.eINSTANCE.getRedefinableTemplateSignature());
 		return data.isPermitted();
+
+
 	}
 
 	/**
@@ -82,7 +86,9 @@ public class RedefinableTemplateSignatureCreateCommand extends EditElementComman
 	 */
 	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+
 		RedefinableTemplateSignature newElement = UMLFactory.eINSTANCE.createRedefinableTemplateSignature();
+
 		EObject target = getElementToEdit();
 		ModelAddData data = PolicyChecker.getCurrent().getChildAddData(diagram, target, newElement);
 		if (data.isPermitted()) {
@@ -91,14 +97,22 @@ public class RedefinableTemplateSignatureCreateCommand extends EditElementComman
 					return CommandResult.newErrorCommandResult("Failed to follow the policy-specified for the insertion of the new element");
 				}
 			} else {
+
 				TemplateableElement qualifiedTarget = (TemplateableElement) target;
-				qualifiedTarget.setOwnedTemplateSignature(newElement);
+				qualifiedTarget.setOwnedTemplateSignature(
+						newElement
+						);
+
 			}
 		} else {
 			return CommandResult.newErrorCommandResult("The active policy restricts the addition of this element");
 		}
+
+
 		ElementInitializers.getInstance().init_RedefinableTemplateSignature_3015(newElement);
+
 		doConfigure(newElement, monitor, info);
+
 		((CreateElementRequest) getRequest()).setNewElement(newElement);
 		return CommandResult.newOKCommandResult(newElement);
 	}

@@ -14,6 +14,7 @@
 package org.eclipse.papyrus.uml.diagram.component.custom.figure.edges;
 
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
+import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.PapyrusWrappingLabel;
 import org.eclipse.papyrus.uml.diagram.common.figure.edge.UMLEdgeFigure;
 
 /**
@@ -45,17 +46,17 @@ public class ConnectorFigure extends UMLEdgeFigure {
 	protected void createContents() {
 		super.createContents();
 
-		fNameLabel = new WrappingLabel();
+		fNameLabel = new PapyrusWrappingLabel();
 		// fNameLabel.setText(""); //$NON-NLS-1$
 
 		this.add(fNameLabel);
 
-		fMultiplicitySourceLabel = new WrappingLabel();
+		fMultiplicitySourceLabel = new PapyrusWrappingLabel();
 		// fMultiplicitySourceLabel.setText(""); //$NON-NLS-1$
 
 		this.add(fMultiplicitySourceLabel);
 
-		fMultiplicityTargetLabel = new WrappingLabel();
+		fMultiplicityTargetLabel = new PapyrusWrappingLabel();
 		// fMultiplicityTargetLabel.setText(""); //$NON-NLS-1$
 
 		this.add(fMultiplicityTargetLabel);

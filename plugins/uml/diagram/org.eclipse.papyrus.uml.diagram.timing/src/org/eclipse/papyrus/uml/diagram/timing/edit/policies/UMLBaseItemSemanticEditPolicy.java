@@ -330,6 +330,7 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		} else {
 			return getGEFWrapper(new MoveElementsCommand(req));
 		}
+
 	}
 
 	/**
@@ -404,49 +405,56 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 * @generated
 		 */
 		public boolean canCreateMessage_3(Interaction container, MessageEnd source, MessageEnd target) {
-			return canExistMessage_3(container, null, source, target);
+			return canExistMessage_3(
+					container, null, source, target);
 		}
 
 		/**
 		 * @generated
 		 */
 		public boolean canCreateMessage_4(Interaction container, MessageEnd source, MessageEnd target) {
-			return canExistMessage_4(container, null, source, target);
+			return canExistMessage_4(
+					container, null, source, target);
 		}
 
 		/**
 		 * @generated
 		 */
 		public boolean canCreateMessage_41(Interaction container, MessageEnd source, MessageEnd target) {
-			return canExistMessage_41(container, null, source, target);
+			return canExistMessage_41(
+					container, null, source, target);
 		}
 
 		/**
 		 * @generated
 		 */
 		public boolean canCreateMessage_44(Interaction container, MessageEnd source, MessageEnd target) {
-			return canExistMessage_44(container, null, source, target);
+			return canExistMessage_44(
+					container, null, source, target);
 		}
 
 		/**
 		 * @generated
 		 */
 		public boolean canCreateMessage_47(Interaction container, MessageEnd source, MessageEnd target) {
-			return canExistMessage_47(container, null, source, target);
+			return canExistMessage_47(
+					container, null, source, target);
 		}
 
 		/**
 		 * @generated
 		 */
 		public boolean canCreateMessage_50(Interaction container, MessageEnd source, Element target) {
-			return canExistMessage_50(container, null, source, target);
+			return canExistMessage_50(
+					container, null, source, target);
 		}
 
 		/**
 		 * @generated
 		 */
 		public boolean canCreateMessage_53(Interaction container, Element source, MessageEnd target) {
-			return canExistMessage_53(container, null, source, target);
+			return canExistMessage_53(
+					container, null, source, target);
 		}
 
 		/**

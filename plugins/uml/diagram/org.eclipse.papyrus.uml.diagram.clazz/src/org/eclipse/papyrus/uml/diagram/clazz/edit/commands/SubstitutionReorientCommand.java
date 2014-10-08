@@ -121,7 +121,9 @@ public class SubstitutionReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected CommandResult reorientSource() throws ExecutionException {
-		getLink().setSubstitutingClassifier(getNewSource());
+		getLink().setSubstitutingClassifier(
+				getNewSource()
+				);
 		return CommandResult.newOKCommandResult(getLink());
 	}
 
@@ -129,7 +131,9 @@ public class SubstitutionReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected CommandResult reorientTarget() throws ExecutionException {
-		getLink().setContract(getNewTarget());
+		getLink().setContract(
+				getNewTarget()
+				);
 		return CommandResult.newOKCommandResult(getLink());
 	}
 

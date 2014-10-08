@@ -131,6 +131,8 @@ public class TimeExpressionEditPart extends NodeEditPart {
 			((TimeExpressionNameEditPart) childEditPart).setLabel(getPrimaryShape().getNameLabel());
 			return true;
 		}
+
+
 		return false;
 	}
 
@@ -194,6 +196,7 @@ public class TimeExpressionEditPart extends NodeEditPart {
 	@Override
 	protected NodeFigure createNodeFigure() {
 		return new SelectableBorderedNodeFigure(createMainFigureWithSVG());
+
 	}
 
 	/**

@@ -39,8 +39,12 @@ public class InterfaceAttributeCompartmentItemSemanticEditPolicy extends UMLBase
 		if (requestElementType == null) {
 			return super.getCreateCommand(req);
 		}
+
+
 		if (UMLElementTypes.Property_1 == requestElementType) {
+
 			return getGEFWrapper(new PropertyForInterfaceCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
+
 		}
 		return super.getCreateCommand(req);
 	}

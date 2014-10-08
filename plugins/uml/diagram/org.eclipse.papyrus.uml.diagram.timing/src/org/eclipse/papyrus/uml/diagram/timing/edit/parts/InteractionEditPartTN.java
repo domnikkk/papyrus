@@ -33,9 +33,9 @@ import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.papyrus.infra.gmfdiag.common.editpart.NodeEditPart;
 import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.IPapyrusNodeFigure;
 import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.SelectableBorderedNodeFigure;
+import org.eclipse.papyrus.uml.diagram.common.editparts.NamedElementEditPart;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeLabelDisplayEditPolicy;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeNodeLabelDisplayEditPolicy;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.BorderItemResizableEditPolicy;
@@ -51,7 +51,8 @@ import org.eclipse.swt.graphics.Color;
 /**
  * @generated
  */
-public class InteractionEditPartTN extends NodeEditPart {
+public class InteractionEditPartTN extends NamedElementEditPart
+{
 
 	/**
 	 * @generated
@@ -125,14 +126,15 @@ public class InteractionEditPartTN extends NodeEditPart {
 		return lep;
 	}
 
+
 	/**
-	 * Papyrus codeGen
-	 *
-	 * @generated
+	 *Papyrus codeGen
+	 *@generated
 	 **/
 	@Override
 	protected void handleNotificationEvent(Notification event) {
 		super.handleNotificationEvent(event);
+
 	}
 
 	/**
@@ -145,7 +147,6 @@ public class InteractionEditPartTN extends NodeEditPart {
 
 	/**
 	 * org.eclipse.papyrus.uml.diagram.timing.custom.figures.CustomInteractionRectangleFigure
-	 *
 	 * @generated
 	 */
 	@Override
@@ -161,18 +162,24 @@ public class InteractionEditPartTN extends NodeEditPart {
 			((InteractionNameEditPart) childEditPart).setLabel(getPrimaryShape().getHeaderLabel());
 			return true;
 		}
+
+
 		if (childEditPart instanceof InteractionCompartmentEditPartTN) {
 			IFigure pane = getPrimaryShape().getCompartmentFigure();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way
 			pane.add(((InteractionCompartmentEditPartTN) childEditPart).getFigure());
 			return true;
 		}
+
 		if (childEditPart instanceof TimeRulerCompartmentEditPartCN) {
 			IFigure pane = getPrimaryShape().getTimeRulerContainerFigure();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way
 			pane.add(((TimeRulerCompartmentEditPartCN) childEditPart).getFigure());
 			return true;
 		}
+
+
+
 		if (childEditPart instanceof GateEditPart) {
 			BorderItemLocator locator = new BorderItemLocator(getMainFigure(), PositionConstants.NONE);
 			getBorderedFigure().getBorderItemContainer().add(((GateEditPart) childEditPart).getFigure(), locator);
@@ -253,6 +260,7 @@ public class InteractionEditPartTN extends NodeEditPart {
 		return result;
 	}
 
+
 	/**
 	 * Creates figure for this edit part.
 	 *
@@ -264,14 +272,13 @@ public class InteractionEditPartTN extends NodeEditPart {
 	@Override
 	protected NodeFigure createMainFigure() {
 		return new SelectableBorderedNodeFigure(createMainFigureWithSVG());
+
 	}
 
 	/**
 	 * Default implementation treats passed figure as content pane.
 	 * Respects layout one may have set for generated figure.
-	 *
-	 * @param nodeShape
-	 *            instance of generated figure class
+	 * @param nodeShape instance of generated figure class
 	 * @generated
 	 */
 	@Override
@@ -331,6 +338,8 @@ public class InteractionEditPartTN extends NodeEditPart {
 		return getChildBySemanticHint(UMLVisualIDRegistry.getType(InteractionNameEditPart.VISUAL_ID));
 	}
 
+
+
 	/**
 	 * @generated
 	 */
@@ -354,4 +363,8 @@ public class InteractionEditPartTN extends NodeEditPart {
 		}
 		return super.getTargetEditPart(request);
 	}
+
+
+
+
 }

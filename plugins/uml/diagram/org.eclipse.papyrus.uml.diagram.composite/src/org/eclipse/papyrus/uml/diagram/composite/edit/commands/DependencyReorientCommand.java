@@ -78,10 +78,12 @@ public class DependencyReorientCommand extends EditElementCommand {
 		if (!(oldEnd instanceof NamedElement && newEnd instanceof NamedElement)) {
 			return false;
 		}
-		if (getLink().getSuppliers().size() != 1) {
+		if (getLink().getSuppliers()
+				.size() != 1) {
 			return false;
 		}
-		NamedElement target = getLink().getSuppliers().get(0);
+		NamedElement target = getLink().getSuppliers()
+				.get(0);
 		if (!(getLink().eContainer() instanceof Package)) {
 			return false;
 		}
@@ -96,10 +98,12 @@ public class DependencyReorientCommand extends EditElementCommand {
 		if (!(oldEnd instanceof NamedElement && newEnd instanceof NamedElement)) {
 			return false;
 		}
-		if (getLink().getClients().size() != 1) {
+		if (getLink().getClients()
+				.size() != 1) {
 			return false;
 		}
-		NamedElement source = getLink().getClients().get(0);
+		NamedElement source = getLink().getClients()
+				.get(0);
 		if (!(getLink().eContainer() instanceof Package)) {
 			return false;
 		}
@@ -128,8 +132,10 @@ public class DependencyReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected CommandResult reorientSource() throws ExecutionException {
-		getLink().getClients().remove(getOldSource());
-		getLink().getClients().add(getNewSource());
+		getLink().getClients()
+				.remove(getOldSource());
+		getLink().getClients()
+				.add(getNewSource());
 		return CommandResult.newOKCommandResult(getLink());
 	}
 
@@ -137,8 +143,10 @@ public class DependencyReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected CommandResult reorientTarget() throws ExecutionException {
-		getLink().getSuppliers().remove(getOldTarget());
-		getLink().getSuppliers().add(getNewTarget());
+		getLink().getSuppliers()
+				.remove(getOldTarget());
+		getLink().getSuppliers()
+				.add(getNewTarget());
 		return CommandResult.newOKCommandResult(getLink());
 	}
 

@@ -43,20 +43,32 @@ public class InteractionCompartmentItemSemanticEditPolicy extends UMLBaseItemSem
 		if (requestElementType == null) {
 			return super.getCreateCommand(req);
 		}
+
+
 		if (UMLElementTypes.Lifeline_8001 == requestElementType) {
+
 			return getGEFWrapper(new LifelineCreateCommandCN(req, DiagramUtils.getDiagramFrom(getHost())));
+
 		}
 		if (UMLElementTypes.Comment_8005 == requestElementType) {
+
 			return getGEFWrapper(new CommentCreateCommandCN(req, DiagramUtils.getDiagramFrom(getHost())));
+
 		}
 		if (UMLElementTypes.Constraint_8004 == requestElementType) {
+
 			return getGEFWrapper(new ConstraintCreateCommandCN(req, DiagramUtils.getDiagramFrom(getHost())));
+
 		}
 		if (UMLElementTypes.TimeObservation_8006 == requestElementType) {
+
 			return getGEFWrapper(new TimeObservationCreateCommandCN(req, DiagramUtils.getDiagramFrom(getHost())));
+
 		}
 		if (UMLElementTypes.DurationObservation_8007 == requestElementType) {
+
 			return getGEFWrapper(new DurationObservationCreateCommandCN(req, DiagramUtils.getDiagramFrom(getHost())));
+
 		}
 		return super.getCreateCommand(req);
 	}

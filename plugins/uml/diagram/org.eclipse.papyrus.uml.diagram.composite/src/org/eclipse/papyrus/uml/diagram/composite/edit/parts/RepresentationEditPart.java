@@ -51,7 +51,8 @@ public class RepresentationEditPart extends UMLConnectionNodeEditPart implements
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof RepresentationTagLabelEditPart) {
-			((RepresentationTagLabelEditPart) childEditPart).setLabel(getPrimaryShape().getTagLabel());
+			((RepresentationTagLabelEditPart) childEditPart).setLabel(
+					getPrimaryShape().getTagLabel());
 		}
 		return false;
 	}

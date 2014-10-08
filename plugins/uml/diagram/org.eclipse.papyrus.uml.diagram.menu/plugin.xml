@@ -294,6 +294,23 @@
          </command>
          <command
                commandId="org.eclipse.papyrus.uml.diagram.menu.toolbar.command"
+               icon="icons/textAlignLeft.png"
+               id="org.eclipse.papyrus.menu.text_alignment.toolbar.command"
+               style="pulldown"
+               tooltip="Text Alignment Actions">
+            <visibleWhen>
+               <and>
+                  <with
+                        variable="activeEditorId">
+                     <equals
+                           value="org.eclipse.papyrus.infra.core.papyrusEditor">
+                     </equals>
+                  </with>
+               </and>
+            </visibleWhen>
+         </command>
+         <command
+               commandId="org.eclipse.papyrus.uml.diagram.menu.toolbar.command"
                icon="icons/fantom.gif"
                id="org.eclipse.papyrus.menu.showhide.toolbar.command"
                style="pulldown"
@@ -545,6 +562,27 @@
             commandId="org.eclipse.papyrus.uml.diagram.menu.command.alignment.top"
             icon="icons/aligntop.gif"
             label="Align &amp;Top"
+            style="push">
+      </command>
+   </menuContribution>
+   <menuContribution
+         locationURI="menu:org.eclipse.papyrus.menu.text_alignment.toolbar.command">
+      <command
+            commandId="org.eclipse.papyrus.uml.diagram.menu.command.text_alignment.left"
+            icon="icons/textAlignLeft.png"
+            label="Text Align &amp;Left"
+            style="push">
+      </command>
+      <command
+            commandId="org.eclipse.papyrus.uml.diagram.menu.command.text_alignment.center"
+            icon="icons/textAlignCenter.png"
+            label="Text Align &amp;Center"
+            style="push">
+      </command>
+      <command
+            commandId="org.eclipse.papyrus.uml.diagram.menu.command.text_alignment.right"
+            icon="icons/textAlignRight.png"
+            label="Text Align &amp;Right"
             style="push">
       </command>
    </menuContribution>
@@ -1103,6 +1141,30 @@
                commandId="org.eclipse.papyrus.uml.diagram.menu.command.alignment.top"
                icon="icons/aligntop.gif"
                label="Align &amp;Top"
+               style="push">
+         </command>
+      </menu>
+      <menu
+            icon="icons/textAlignLeft.png"
+            id="org.eclipse.papyrus.uml.diagram.ui.menu.textAlignMenu"
+            label="Text Alignment"
+            tooltip="Text Alignement Menu">
+         <command
+               commandId="org.eclipse.papyrus.uml.diagram.menu.command.text_alignment.left"
+               icon="icons/textAlignLeft.png"
+               label="Text Align &amp;Left"
+               style="push">
+         </command>
+         <command
+               commandId="org.eclipse.papyrus.uml.diagram.menu.command.text_alignment.center"
+               icon="icons/textAlignCenter.png"
+               label="Text Align &amp;Center"
+               style="push">
+         </command>
+         <command
+               commandId="org.eclipse.papyrus.uml.diagram.menu.command.text_alignment.right"
+               icon="icons/textAlignRight.png"
+               label="Text Align &amp;Right"
                style="push">
          </command>
       </menu>
@@ -1804,6 +1866,30 @@
          </command>
       </menu>
       <menu
+            icon="icons/textAlignLeft.png"
+            id="org.eclipse.papyrus.uml.diagram.ui.menu.textAlignMenu"
+            label="Text Alignment"
+            tooltip="Text Alignement Menu">
+         <command
+               commandId="org.eclipse.papyrus.uml.diagram.menu.command.text_alignment.left"
+               icon="icons/textAlignLeft.png"
+               label="Text Align &amp;Left"
+               style="push">
+         </command>
+         <command
+               commandId="org.eclipse.papyrus.uml.diagram.menu.command.text_alignment.center"
+               icon="icons/textAlignCenter.png"
+               label="Text Align &amp;Center"
+               style="push">
+         </command>
+         <command
+               commandId="org.eclipse.papyrus.uml.diagram.menu.command.text_alignment.right"
+               icon="icons/textAlignRight.png"
+               label="Text Align &amp;Right"
+               style="push">
+         </command>
+      </menu>
+      <menu
             icon="icons/horizontal_by_left.gif"
             id="org.eclipse.papyrus.uml.diagram.ui.popupmenu.format.routingMenu"
             label="&amp;Routing"
@@ -2448,6 +2534,45 @@
          description="Reset the label to its initial location"
          id="org.eclipse.papyrus.uml.diagram.menu.commands.SnapBack"
          name="Snap Back">
+   </command>
+   <command
+         categoryId="org.eclipse.papyrus.editor.category"
+         description="Call the Text Align on Left Command"
+         id="org.eclipse.papyrus.uml.diagram.menu.command.text_alignment.left"
+         name="Text Align Left Command">
+      <defaultHandler
+            class="org.eclipse.papyrus.uml.diagram.menu.actions.handlers.TextAlignementHandler">
+         <parameter
+               name="org.eclipse.papyrus.uml.diagram.menu.commandTextAlignmentParameter"
+               value="parameter_left">
+         </parameter>
+      </defaultHandler>
+   </command>
+   <command
+         categoryId="org.eclipse.papyrus.editor.category"
+         description="Call the Text Align on Center Command"
+         id="org.eclipse.papyrus.uml.diagram.menu.command.text_alignment.center"
+         name="Text Align Center Command">
+      <defaultHandler
+            class="org.eclipse.papyrus.uml.diagram.menu.actions.handlers.TextAlignementHandler">
+         <parameter
+               name="org.eclipse.papyrus.uml.diagram.menu.commandTextAlignmentParameter"
+               value="parameter_center">
+         </parameter>
+      </defaultHandler>
+   </command>
+   <command
+         categoryId="org.eclipse.papyrus.editor.category"
+         description="Call the Text Align on Right Command"
+         id="org.eclipse.papyrus.uml.diagram.menu.command.text_alignment.right"
+         name="Text Align Right Command">
+      <defaultHandler
+            class="org.eclipse.papyrus.uml.diagram.menu.actions.handlers.TextAlignementHandler">
+         <parameter
+               name="org.eclipse.papyrus.uml.diagram.menu.commandTextAlignmentParameter"
+               value="parameter_right">
+         </parameter>
+      </defaultHandler>
    </command>
 </extension>
 <extension

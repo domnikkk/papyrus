@@ -54,7 +54,8 @@ public class IncludeEditPart extends UMLConnectionNodeEditPart implements ITreeB
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof IncludeAppliedStereotypeEditPart) {
-			((IncludeAppliedStereotypeEditPart) childEditPart).setLabel(getPrimaryShape().getAppliedStereotypeLabel());
+			((IncludeAppliedStereotypeEditPart) childEditPart).setLabel(
+					getPrimaryShape().getAppliedStereotypeLabel());
 		}
 		return false;
 	}

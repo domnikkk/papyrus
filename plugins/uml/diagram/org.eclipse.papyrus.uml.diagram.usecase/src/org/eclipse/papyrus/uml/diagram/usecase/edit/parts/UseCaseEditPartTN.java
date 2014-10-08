@@ -124,6 +124,7 @@ public class UseCaseEditPartTN extends NamedElementEditPart {
 	@Override
 	protected void handleNotificationEvent(Notification event) {
 		super.handleNotificationEvent(event);
+
 	}
 
 	/**
@@ -152,12 +153,15 @@ public class UseCaseEditPartTN extends NamedElementEditPart {
 			((UseCaseNameEditPartTN) childEditPart).setLabel(getPrimaryShape().getNameLabel());
 			return true;
 		}
+
+
 		if (childEditPart instanceof UseCasePointsEditPartTN) {
 			IFigure pane = getPrimaryShape().getExtensionPointContainerFigure();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way
 			pane.add(((UseCasePointsEditPartTN) childEditPart).getFigure());
 			return true;
 		}
+
 		return false;
 	}
 
@@ -229,6 +233,7 @@ public class UseCaseEditPartTN extends NamedElementEditPart {
 	@Override
 	protected NodeFigure createNodeFigure() {
 		return new SelectableBorderedNodeFigure(createMainFigureWithSVG());
+
 	}
 
 	/**

@@ -70,7 +70,8 @@ public class ClassAttributeCompartmentCanonicalEditPolicyCN extends CanonicalEdi
 	protected List<EObject> getSemanticChildrenList() {
 		View viewObject = (View) getHost().getModel();
 		LinkedList<EObject> result = new LinkedList<EObject>();
-		List<UMLNodeDescriptor> childDescriptors = CustomUMLDiagramUpdater.INSTANCE.getClassAttributes_7011SemanticChildren(viewObject);
+		List<UMLNodeDescriptor> childDescriptors = CustomUMLDiagramUpdater.INSTANCE
+				.getClassAttributes_7011SemanticChildren(viewObject);
 		for (UMLNodeDescriptor d : childDescriptors) {
 			result.add(d.getModelElement());
 		}
@@ -101,7 +102,9 @@ public class ClassAttributeCompartmentCanonicalEditPolicyCN extends CanonicalEdi
 			return;
 		}
 		LinkedList<IAdaptable> createdViews = new LinkedList<IAdaptable>();
-		List<UMLNodeDescriptor> childDescriptors = CustomUMLDiagramUpdater.INSTANCE.getClassAttributes_7011SemanticChildren((View) getHost().getModel());
+		List<UMLNodeDescriptor> childDescriptors =
+				CustomUMLDiagramUpdater.INSTANCE
+						.getClassAttributes_7011SemanticChildren((View) getHost().getModel());
 		LinkedList<View> orphaned = new LinkedList<View>();
 		// we care to check only views we recognize as ours
 		LinkedList<View> knownViewChildren = new LinkedList<View>();
@@ -147,6 +150,7 @@ public class ClassAttributeCompartmentCanonicalEditPolicyCN extends CanonicalEdi
 			CreateViewRequest.ViewDescriptor descriptor = new CreateViewRequest.ViewDescriptor(elementAdapter, Node.class, hint, ViewUtil.APPEND, false, host().getDiagramPreferencesHint());
 			viewDescriptors.add(descriptor);
 		}
+
 		boolean changed = deleteViews(orphaned.iterator());
 		//
 		CreateViewRequest request = getCreateViewRequest(viewDescriptors);
@@ -166,6 +170,7 @@ public class ClassAttributeCompartmentCanonicalEditPolicyCN extends CanonicalEdi
 			DeferredLayoutCommand layoutCmd = new DeferredLayoutCommand(host().getEditingDomain(), createdViews, host());
 			executeCommand(new ICommandProxy(layoutCmd));
 		}
+
 		makeViewsImmutable(createdViews);
 	}
 }

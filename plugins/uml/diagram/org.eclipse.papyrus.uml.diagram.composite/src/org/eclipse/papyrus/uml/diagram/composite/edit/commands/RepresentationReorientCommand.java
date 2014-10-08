@@ -117,8 +117,10 @@ public class RepresentationReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected CommandResult reorientSource() throws ExecutionException {
-		getOldSource().getRepresenteds().remove(getOldTarget());
-		getNewSource().getRepresenteds().add(getOldTarget());
+		getOldSource().getRepresenteds()
+				.remove(getOldTarget());
+		getNewSource().getRepresenteds()
+				.add(getOldTarget());
 		return CommandResult.newOKCommandResult(referenceOwner);
 	}
 
@@ -126,8 +128,10 @@ public class RepresentationReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected CommandResult reorientTarget() throws ExecutionException {
-		getOldSource().getRepresenteds().remove(getOldTarget());
-		getOldSource().getRepresenteds().add(getNewTarget());
+		getOldSource().getRepresenteds()
+				.remove(getOldTarget());
+		getOldSource().getRepresenteds()
+				.add(getNewTarget());
 		return CommandResult.newOKCommandResult(referenceOwner);
 	}
 

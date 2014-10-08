@@ -1361,7 +1361,7 @@
           <viewmap
               xsi:type="gmfgen:ParentAssignedViewmap"
               getterName="getNameLabel"
-              figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+              figureQualifiedClassName="org.eclipse.papyrus.infra.gmfdiag.figure.node.PapyrusWrappingLabel"/>
           <modelFacet
               xsi:type="gmfgen:FeatureLabelModelFacet"
               parser="/0/@labelParsers/@implementations.0">
@@ -1466,9 +1466,6 @@
             xsi:type="gmfgen:CustomBehaviour"
             key="org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeLabelDisplayEditPolicy.STEREOTYPE_LABEL_POLICY"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeNodeLabelDisplayEditPolicy"/>
-        <behaviour xsi:type="gmfgen:CustomBehaviour" 
-            key="org.eclipse.gef.EditPolicy.PRIMARY_DRAG_ROLE" 
-            editPolicyQualifiedClassName="org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.PapyrusReflowableShapeEditPolicy"/>
         <modelFacet>
           <metaClass
               href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Comment"/>
@@ -3687,7 +3684,7 @@
     <extensionNodes
         xsi:type="papyrusgmfgenextension:ExtendedGenView"
         comment="Elements that inherits Classifier"
-        genView="/0/@diagram/@childNodes.15 /0/@diagram/@topLevelNodes.12 /0/@diagram/@childNodes.0 /0/@diagram/@topLevelNodes.11 /0/@diagram/@topLevelNodes.10 /0/@diagram/@childNodes.14"
+        genView="/0/@diagram/@childNodes.15 /0/@diagram/@topLevelNodes.12 /0/@diagram/@childNodes.0 /0/@diagram/@topLevelNodes.11 /0/@diagram/@topLevelNodes.10 /0/@diagram/@childNodes.14 /0/@diagram/@topLevelNodes.3 /0/@diagram/@childNodes.7"
         name="Classifier inheritance"
         superOwnedEditPart="org.eclipse.papyrus.uml.diagram.common.editparts.ClassifierEditPart"/>
     <extensionNodes

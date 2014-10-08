@@ -77,6 +77,7 @@ import org.eclipse.uml2.uml.Feature;
 
 /**
  * @generated
+*  Manually changed to PapyrusLabelEditPart modification has been applied to the gmfgen file. 
  */
 public class DurationObservationLabelEditPart extends PapyrusCompartmentEditPart implements ITextAwareEditPart {
 

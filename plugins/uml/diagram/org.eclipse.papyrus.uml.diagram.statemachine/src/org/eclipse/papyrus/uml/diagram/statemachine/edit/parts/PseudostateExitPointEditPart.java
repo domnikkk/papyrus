@@ -111,7 +111,8 @@ public class PseudostateExitPointEditPart extends AbstractBorderEditPart {
 							mh.setBorder(null);
 							return Collections.singletonList(mh);
 						}
-					};
+					}
+					;
 				}
 				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 				if (result == null) {
@@ -154,6 +155,7 @@ public class PseudostateExitPointEditPart extends AbstractBorderEditPart {
 			}
 		}
 		super.handleNotificationEvent(event);
+
 	}
 
 	/**
@@ -185,7 +187,8 @@ public class PseudostateExitPointEditPart extends AbstractBorderEditPart {
 		} else if (borderItemEditPart instanceof PseudostateExitPointNameEditPart) {
 			IBorderItemLocator locator = new ExternalLabelPositionLocator(getMainFigure());
 			borderItemContainer.add(borderItemEditPart.getFigure(), locator);
-		} else {
+		} else
+		{
 			super.addBorderItem(borderItemContainer, borderItemEditPart);
 		}
 	}
@@ -214,6 +217,7 @@ public class PseudostateExitPointEditPart extends AbstractBorderEditPart {
 		figure.add(shape);
 		contentPane = setupContentPane(shape);
 		return figure;
+
 	}
 
 	/**

@@ -117,8 +117,12 @@ public class ConnectorTimeObservationReorientCommand extends EditElementCommand 
 	 * @generated
 	 */
 	protected CommandResult reorientSource() throws ExecutionException {
-		getOldSource().setEvent(null);
-		getNewSource().setEvent(getOldTarget());
+		getOldSource().setEvent(
+				null
+				);
+		getNewSource().setEvent(
+				getOldTarget()
+				);
 		return CommandResult.newOKCommandResult(referenceOwner);
 	}
 
@@ -126,7 +130,9 @@ public class ConnectorTimeObservationReorientCommand extends EditElementCommand 
 	 * @generated
 	 */
 	protected CommandResult reorientTarget() throws ExecutionException {
-		getOldSource().setEvent(getNewTarget());
+		getOldSource().setEvent(
+				getNewTarget()
+				);
 		return CommandResult.newOKCommandResult(referenceOwner);
 	}
 

@@ -117,8 +117,10 @@ public class ProfileApplicationReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected CommandResult reorientSource() throws ExecutionException {
-		getOldSource().getProfileApplications().remove(getLink());
-		getNewSource().getProfileApplications().add(getLink());
+		getOldSource().getProfileApplications()
+				.remove(getLink());
+		getNewSource().getProfileApplications()
+				.add(getLink());
 		return CommandResult.newOKCommandResult(getLink());
 	}
 
@@ -126,7 +128,9 @@ public class ProfileApplicationReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected CommandResult reorientTarget() throws ExecutionException {
-		getLink().setAppliedProfile(getNewTarget());
+		getLink().setAppliedProfile(
+				getNewTarget()
+				);
 		return CommandResult.newOKCommandResult(getLink());
 	}
 

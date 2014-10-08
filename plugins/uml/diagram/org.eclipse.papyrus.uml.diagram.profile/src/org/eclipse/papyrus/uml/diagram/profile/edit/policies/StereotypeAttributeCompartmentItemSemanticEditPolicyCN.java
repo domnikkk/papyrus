@@ -39,8 +39,12 @@ public class StereotypeAttributeCompartmentItemSemanticEditPolicyCN extends UMLB
 		if (requestElementType == null) {
 			return super.getCreateCommand(req);
 		}
+
+
 		if (UMLElementTypes.Property_3002 == requestElementType) {
+
 			return getGEFWrapper(new ClassPropertyCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
+
 		}
 		return super.getCreateCommand(req);
 	}

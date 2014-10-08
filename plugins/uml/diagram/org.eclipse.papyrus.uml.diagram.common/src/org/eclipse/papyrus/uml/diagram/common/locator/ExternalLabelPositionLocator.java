@@ -9,30 +9,151 @@
  *
  * Contributors:
  *  Yann Tanguy (CEA LIST) yann.tanguy@cea.fr - Initial API and implementation
+ *  Mickaël ADAM (ALL4TEC) mickael.adam@all4tec.net - Text alignment implementation
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.common.locator;
 
+
+
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.PositionConstants;
+import org.eclipse.draw2d.geometry.Dimension;
+import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.draw2d.geometry.Rectangle;
-import org.eclipse.gmf.runtime.diagram.ui.figures.IBorderItemLocator;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.emf.transaction.util.TransactionUtil;
+import org.eclipse.gef.EditPart;
+import org.eclipse.gmf.runtime.diagram.core.util.ViewUtil;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
+import org.eclipse.gmf.runtime.notation.NotationPackage;
+import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.papyrus.infra.gmfdiag.common.editpart.IPapyrusEditPart;
+import org.eclipse.papyrus.infra.gmfdiag.common.locator.IPapyrusBorderItemLocator;
+import org.eclipse.papyrus.uml.diagram.common.Activator;
 
 /**
  * This class is used to constrain the position of ExternalNodeLabel. The
  * locator let the external node label be freely located by used anywhere around
  * the parent figure.
  */
-public class ExternalLabelPositionLocator implements IBorderItemLocator {
+public class ExternalLabelPositionLocator implements IPapyrusBorderItemLocator {
 
-	/** the figure around which this label appears */
+	/** the figure around which this label appears. */
 	protected IFigure parentFigure = null;
 
-	/** the position constraint */
+	/** the position constraint. */
 	protected Rectangle constraint = new Rectangle(0, 0, 0, 0);
 
+	/** The position. */
+	int position = PositionConstants.EAST;
+
+	/** The offset. */
+	private Dimension offset = new Dimension();
+
+	/** The constrained. */
+	private boolean constrained = false;
+
+	/** The cached string. */
+	private String cachedString;
+
+	/** The text alignment. */
+	private int textAlignment;
+
+	/** The view. */
+	private View view;
+
+	/** The Edit Part. */
+	private EditPart editPart;
+
 	/**
-	 * get the location constraint
+	 * @param editpart
+	 *            the edit part to set
+	 */
+	@Override
+	public void setEditpart(EditPart editPart) {
+		this.editPart = editPart;
+	}
+
+	/** The margin. */
+	private Point margin = new Point();
+
+	/**
+	 * Sets the view.
+	 *
+	 * @param view
+	 *            the view to set
+	 */
+	@Override
+	public void setView(View view) {
+		this.view = view;
+	}
+
+	/**
+	 * Gets the position.
+	 *
+	 * @return the position
+	 */
+	@Override
+	public int getPosition() {
+		return position;
+	}
+
+	/**
+	 * Sets the position.
+	 *
+	 * @param position
+	 *            the position to set
+	 */
+	@Override
+	public void setPosition(int position) {
+		this.position = position;
+	}
+
+	/**
+	 * Gets the offset.
+	 *
+	 * @return the offset
+	 */
+	@Override
+	public Dimension getOffset() {
+		return offset;
+	}
+
+	/**
+	 * Sets the offset.
+	 *
+	 * @param offset
+	 *            the offset to set
+	 */
+	@Override
+	public void setOffset(Dimension offset) {
+		this.offset = offset;
+	}
+
+	/**
+	 * Checks if is constrained.
+	 *
+	 * @return the constrained
+	 */
+	@Override
+	public boolean isConstrained() {
+		return constrained;
+	}
+
+	/**
+	 * Sets the constrained.
+	 *
+	 * @param constrained
+	 *            the constrained to set
+	 */
+	@Override
+	public void setConstrained(boolean constrained) {
+		this.constrained = constrained;
+	}
+
+	/**
+	 * get the location constraint.
 	 *
 	 * @return the constraint
 	 */
@@ -40,18 +161,25 @@ public class ExternalLabelPositionLocator implements IBorderItemLocator {
 		return constraint;
 	}
 
-	/** Constructor **/
+	/**
+	 * Constructor *.
+	 *
+	 * @param parentFigure
+	 *            the parent figure
+	 */
 	public ExternalLabelPositionLocator(IFigure parentFigure) {
 		this.parentFigure = parentFigure;
 	}
 
 	/**
-	 *
-	 * @see org.eclipse.gmf.runtime.draw2d.ui.figures.IBorderItemLocator#getValidLocation(org.eclipse.draw2d.geometry.Rectangle, org.eclipse.draw2d.IFigure)
+	 * Gets the valid location.
 	 *
 	 * @param proposedLocation
+	 *            the proposed location
 	 * @param borderItem
+	 *            the border item
 	 * @return the valid location
+	 * @see org.eclipse.gmf.runtime.draw2d.ui.figures.IBorderItemLocator#getValidLocation(org.eclipse.draw2d.geometry.Rectangle, org.eclipse.draw2d.IFigure)
 	 */
 	@Override
 	public Rectangle getValidLocation(Rectangle proposedLocation, IFigure borderItem) {
@@ -59,42 +187,200 @@ public class ExternalLabelPositionLocator implements IBorderItemLocator {
 	}
 
 	/**
-	 *
-	 * @see org.eclipse.gmf.runtime.draw2d.ui.figures.IBorderItemLocator#setConstraint(org.eclipse.draw2d.geometry.Rectangle)
+	 * Sets the constraint.
 	 *
 	 * @param constraint
+	 *            the new constraint
+	 * @see org.eclipse.gmf.runtime.draw2d.ui.figures.IBorderItemLocator#setConstraint(org.eclipse.draw2d.geometry.Rectangle)
 	 */
 	@Override
 	public void setConstraint(Rectangle constraint) {
 		this.constraint = constraint;
-
 	}
 
 	/**
-	 *
-	 * @see org.eclipse.gmf.runtime.draw2d.ui.figures.IBorderItemLocator#getCurrentSideOfParent()
+	 * Gets the current side of parent.
 	 *
 	 * @return current side of parent
+	 * @see org.eclipse.gmf.runtime.draw2d.ui.figures.IBorderItemLocator#getCurrentSideOfParent()
 	 */
 	@Override
 	public int getCurrentSideOfParent() {
-		// Not used.
-		return PositionConstants.NONE;
+		return position;
 	}
 
 	/**
-	 *
-	 * @see org.eclipse.draw2d.Locator#relocate(org.eclipse.draw2d.IFigure)
+	 * Relocate.
 	 *
 	 * @param target
+	 *            the target
+	 * @see org.eclipse.draw2d.Locator#relocate(org.eclipse.draw2d.IFigure)
 	 */
 	@Override
 	public void relocate(IFigure target) {
-
 		Rectangle proposedBounds = constraint.getCopy();
+
 		proposedBounds.setLocation(constraint.getLocation().translate(parentFigure.getBounds().getTopLeft()));
 		proposedBounds.setSize(target.getPreferredSize());
+		if (constrained) {
+			Point newconstraint;
+			// Set the translation when alignment is auto
+			switch (getPositionOnParent()) {
+			case PositionConstants.WEST:
+				// alignRight:
+				newconstraint = new Point(-proposedBounds.width - offset.width, offset.height);
+				break;
+			case PositionConstants.EAST:
+				// alignLeft
+				newconstraint = new Point(parentFigure.getBounds().width + offset.width, offset.height);
+				break;
+			case PositionConstants.NORTH:
+				// alignLeft center to the north
+				newconstraint = new Point(-proposedBounds.width / 2 + offset.width, -parentFigure.getBounds().height - offset.height);
+				break;
+			case PositionConstants.SOUTH:
+				// alignLeft center to the south
+				newconstraint = new Point(-proposedBounds.width / 2 + offset.width, parentFigure.getBounds().height + offset.height);
+				break;
+			default:
+				// the default is the like the EAST
+				newconstraint = new Point(proposedBounds.width + offset.width, offset.height);
+				break;
+			}
+			proposedBounds.setLocation(newconstraint.translate(parentFigure.getBounds().getTopLeft()));
+
+		} else
+		// If the label changed
+		if (cachedString != null && !cachedString.equals(((WrappingLabel) target).getText())) {
+			int x;
+			int textWidth = target.getBounds().width;
+
+			// Set Location
+			switch (textAlignment) {
+			case PositionConstants.LEFT:
+				x = 0;
+				break;
+			case PositionConstants.RIGHT:
+				x = textWidth - proposedBounds.width;
+				break;
+			case PositionConstants.CENTER:
+				x = (textWidth - proposedBounds.width) / 2;
+				break;
+			default:
+				x = 0;
+				break;
+			}
+
+			Point offsettmp = constraint.getLocation();
+			offsettmp.translate(x, 0);
+			final Point offset = offsettmp.getCopy();
+
+			proposedBounds.translate(x, 0);
+			if (view != null) {
+				try {
+					TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(view);
+					org.eclipse.papyrus.infra.core.sasheditor.di.contentprovider.utils.TransactionHelper.run(domain, new Runnable() {
+
+						@Override
+						public void run() {
+							// Set location to the resource without command
+							ViewUtil.setStructuralFeatureValue(view, NotationPackage.eINSTANCE.getLocation_X(), Integer.valueOf(offset.x));
+							ViewUtil.setStructuralFeatureValue(view, NotationPackage.eINSTANCE.getLocation_Y(), Integer.valueOf(offset.y));
+						}
+					});
+				} catch (Exception e) {
+					Activator.log.debug(e.toString());
+				}
+			}
+		}
 
 		target.setBounds(proposedBounds);
+		if (target instanceof WrappingLabel){
+			cachedString = ((WrappingLabel) target).getText();
+		}
+	}
+
+	/**
+	 * Gets the position on parent.
+	 *
+	 * @return the position on parent
+	 */
+	public int getPositionOnParent() {
+		Rectangle portBounds = null;
+		Rectangle parentBounds = null;
+		int position = this.position;
+
+		// Get the port figure
+		if (editPart != null) {
+			EditPart parent = editPart.getParent();
+			if (parent instanceof IPapyrusEditPart) {
+				IFigure portPrimaryShape = ((IPapyrusEditPart) parent).getPrimaryShape();
+				portBounds = portPrimaryShape.getBounds();
+
+				// Get the port's parent figure
+				// if it's a papyrus edit part and the figure is paint(width !=0)
+				if (parent.getParent() instanceof IPapyrusEditPart && portBounds.width != 0) {
+					IFigure parentPrimaryShape = ((IPapyrusEditPart) parent.getParent()).getPrimaryShape();
+					parentBounds = parentPrimaryShape.getBounds();
+
+					if (portBounds.x + portBounds.width / 2 == parentBounds.x) {
+						// West position
+						position = PositionConstants.WEST;
+					} else if (portBounds.x + portBounds.width / 2 == parentBounds.getBottomRight().x) {
+						// East Position
+						position = PositionConstants.EAST;
+					} else if (portBounds.y + portBounds.height / 2 == parentBounds.y) {
+						position = PositionConstants.NORTH;
+					} else if (portBounds.y + portBounds.height / 2 == parentBounds.getBottomRight().y) {
+						position = PositionConstants.SOUTH;
+					}
+				}
+			}
+		}
+
+		return position;
+	}
+
+
+	/**
+	 * Gets the text alignment.
+	 *
+	 * @return the textAlignment
+	 */
+	public int getTextAlignment() {
+		return textAlignment;
+	}
+
+	/**
+	 * Sets the text alignment.
+	 *
+	 * @param textAlignment
+	 *            the textAlignment to set
+	 */
+	@Override
+	public void setTextAlignment(int textAlignment) {
+		this.textAlignment = textAlignment;
+	}
+
+	/**
+	 * Checks if is initialize.
+	 *
+	 * @return true, if is initialize
+	 * @see org.eclipse.papyrus.infra.gmfdiag.common.locator.IPapyrusBorderItemLocator#isInitialize()
+	 */
+	@Override
+	public boolean isInitialize() {
+		return view != null;
+	}
+
+	/**
+	 * Sets the margin.
+	 *
+	 * @param margin
+	 *            the margin to set
+	 */
+	@Override
+	public void setMargin(Point margin) {
+		this.margin = margin;
 	}
 }

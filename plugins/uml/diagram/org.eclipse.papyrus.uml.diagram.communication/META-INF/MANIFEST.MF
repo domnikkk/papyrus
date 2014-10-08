@@ -78,6 +78,4 @@ Bundle-Version: 1.1.0.qualifier
 Bundle-Activator: org.eclipse.papyrus.uml.diagram.communication.part.U
  MLDiagramEditorPlugin
 Bundle-ManifestVersion: 2
-Bundle-SymbolicName: org.eclipse.papyrus.uml.diagram.communication;sin
- gleton:=true
-
+Bundle-SymbolicName: org.eclipse.papyrus.uml.diagram.communication; singleton:=true

@@ -54,10 +54,12 @@ public class InstanceSpecificationLinkEditPart extends ConnectionEditPart implem
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof SourceISLinkLabelEditPart) {
-			((SourceISLinkLabelEditPart) childEditPart).setLabel(getPrimaryShape().getSourceLabel());
+			((SourceISLinkLabelEditPart) childEditPart).setLabel(
+					getPrimaryShape().getSourceLabel());
 		}
 		if (childEditPart instanceof TargetISLinkLabelEditPart) {
-			((TargetISLinkLabelEditPart) childEditPart).setLabel(getPrimaryShape().getTargetLabel());
+			((TargetISLinkLabelEditPart) childEditPart).setLabel(
+					getPrimaryShape().getTargetLabel());
 		}
 		return false;
 	}
