@@ -31,6 +31,7 @@ import org.eclipse.gef.EditPart;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.commands.UnexecutableCommand;
 import org.eclipse.gmf.runtime.common.core.command.CompositeCommand;
+import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.gmf.runtime.diagram.core.util.ViewUtil;
 import org.eclipse.gmf.runtime.diagram.ui.commands.CreateCommand;
 import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
@@ -50,7 +51,7 @@ import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.uml.diagram.common.commands.CommonDeferredCreateConnectionViewCommand;
 import org.eclipse.papyrus.uml.diagram.common.commands.SemanticAdapter;
-import org.eclipse.papyrus.uml.diagram.common.editpolicies.OldCommonDiagramDragDropEditPolicy;
+import org.eclipse.papyrus.uml.diagram.common.editpolicies.CommonDiagramDragDropEditPolicy;
 import org.eclipse.papyrus.uml.diagram.common.util.DiagramEditPartsUtil;
 import org.eclipse.papyrus.uml.diagram.common.util.Util;
 import org.eclipse.papyrus.uml.diagram.profile.custom.commands.SetStereotypeVisibleOnMetaclassCommand;
@@ -81,7 +82,7 @@ import org.eclipse.uml2.uml.Type;
 /**
  * The Class ClassDiagramDragDropEditPolicy.
  */
-public class ProfileDiagramDragDropEditPolicy extends OldCommonDiagramDragDropEditPolicy {
+public class ProfileDiagramDragDropEditPolicy extends CommonDiagramDragDropEditPolicy {
 	/**
 	 * Instantiates a new class diagram drag drop edit policy.
 	 */
@@ -251,7 +252,7 @@ public class ProfileDiagramDragDropEditPolicy extends OldCommonDiagramDragDropEd
 		// we test if the element to drop is a Class or a Metaclass
 		if (Util.isMetaclass((Type) semanticElement)) {
 			CompositeCommand cc = new CompositeCommand("Drop"); //$NON-NLS-1$
-			CompositeCommand dropCommand = super.getDefaultDropNodeCommand(nodeVISUALID, dropRequest.getLocation(), semanticElement);
+			ICommand dropCommand = super.getDefaultDropNodeCommand(nodeVISUALID, dropRequest.getLocation(), semanticElement);
 			cc.compose(dropCommand);
 			Object returnedValue = dropCommand.getCommandResult().getReturnValue();
 			if (returnedValue instanceof ArrayList<?>) {// we look for the view descriptor of the created metaclass

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
  *
- *
+ *    
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -43,7 +43,7 @@ import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.type.core.IHintedType;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.papyrus.uml.diagram.common.editpolicies.OldCommonDiagramDragDropEditPolicy;
+import org.eclipse.papyrus.uml.diagram.common.editpolicies.CommonDiagramDragDropEditPolicy;
 import org.eclipse.papyrus.uml.diagram.component.custom.edit.command.CreateViewCommand;
 import org.eclipse.papyrus.uml.diagram.component.custom.edit.helpers.ComponentLinkMappingHelper;
 import org.eclipse.papyrus.uml.diagram.component.custom.edit.helpers.ConnectorHelper;
@@ -91,12 +91,11 @@ import org.eclipse.uml2.uml.StructuredClassifier;
 import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.TypedElement;
 
-// TODO: Auto-generated Javadoc
 /**
  * This class provides an implementation for specific behavior of Drag and Drop
  * in the Composite Diagram.
  */
-public class CustomDiagramDragDropEditPolicy extends OldCommonDiagramDragDropEditPolicy {
+public class CustomDiagramDragDropEditPolicy extends CommonDiagramDragDropEditPolicy {
 	/**
 	 * Default constructor.
 	 */
@@ -106,7 +105,7 @@ public class CustomDiagramDragDropEditPolicy extends OldCommonDiagramDragDropEdi
 
 	/**
 	 * Gets the droppable element visual id.
-	 *
+	 * 
 	 * @return the droppable element visual id {@inheritDoc}
 	 */
 	@Override
@@ -135,7 +134,7 @@ public class CustomDiagramDragDropEditPolicy extends OldCommonDiagramDragDropEdi
 
 	/**
 	 * Gets the uML element type.
-	 *
+	 * 
 	 * @param elementID
 	 *            the element id
 	 * @return the uML element type {@inheritDoc}
@@ -147,7 +146,7 @@ public class CustomDiagramDragDropEditPolicy extends OldCommonDiagramDragDropEdi
 
 	/**
 	 * Gets the node visual id.
-	 *
+	 * 
 	 * @param containerView
 	 *            the container view
 	 * @param domainElement
@@ -161,7 +160,7 @@ public class CustomDiagramDragDropEditPolicy extends OldCommonDiagramDragDropEdi
 
 	/**
 	 * Gets the link with class visual id.
-	 *
+	 * 
 	 * @param domainElement
 	 *            the domain element
 	 * @return the link with class visual id {@inheritDoc}
@@ -173,7 +172,7 @@ public class CustomDiagramDragDropEditPolicy extends OldCommonDiagramDragDropEdi
 
 	/**
 	 * Gets the specific drop command.
-	 *
+	 * 
 	 * @param dropRequest
 	 *            the drop request
 	 * @param semanticElement
@@ -233,7 +232,7 @@ public class CustomDiagramDragDropEditPolicy extends OldCommonDiagramDragDropEdi
 
 	/**
 	 * Returns the drop command for Connector links.
-	 *
+	 * 
 	 * @param dropRequest
 	 *            the drop request
 	 * @param semanticLink
@@ -254,7 +253,7 @@ public class CustomDiagramDragDropEditPolicy extends OldCommonDiagramDragDropEdi
 
 	/**
 	 * call the mechanism to drop a binary link without specific type
-	 *
+	 * 
 	 * @param dropRequest
 	 *            the drop request
 	 * @param semanticLink
@@ -278,7 +277,7 @@ public class CustomDiagramDragDropEditPolicy extends OldCommonDiagramDragDropEdi
 
 	/**
 	 * Drop child node.
-	 *
+	 * 
 	 * @param dropRequest
 	 *            the drop request
 	 * @param semanticElement
@@ -300,7 +299,7 @@ public class CustomDiagramDragDropEditPolicy extends OldCommonDiagramDragDropEdi
 
 	/**
 	 * Drop dependency node.
-	 *
+	 * 
 	 * @param dropRequest
 	 *            the drop request
 	 * @param semanticElement
@@ -326,7 +325,7 @@ public class CustomDiagramDragDropEditPolicy extends OldCommonDiagramDragDropEdi
 
 	/**
 	 * Returns the command to drop the Comment + the link to attach it to its annotated elements.
-	 *
+	 * 
 	 * @param dropRequest
 	 *            the drop request
 	 * @param semanticLink
@@ -355,7 +354,7 @@ public class CustomDiagramDragDropEditPolicy extends OldCommonDiagramDragDropEdi
 
 	/**
 	 * Returns the command to drop the Constraint + the link to attach it to its contrainted elements.
-	 *
+	 * 
 	 * @param dropRequest
 	 *            the drop request
 	 * @param semanticLink
@@ -383,7 +382,7 @@ public class CustomDiagramDragDropEditPolicy extends OldCommonDiagramDragDropEdi
 
 	/**
 	 * Returns the drop command for Dependency links.
-	 *
+	 * 
 	 * @param dropRequest
 	 *            the drop request
 	 * @param semanticLink
@@ -408,7 +407,7 @@ public class CustomDiagramDragDropEditPolicy extends OldCommonDiagramDragDropEdi
 
 	/**
 	 * Drop abstraction.
-	 *
+	 * 
 	 * @param dropRequest
 	 *            the drop request
 	 * @param semanticLink
@@ -433,7 +432,7 @@ public class CustomDiagramDragDropEditPolicy extends OldCommonDiagramDragDropEdi
 
 	/**
 	 * Returns the drop command for RoleBinding links.
-	 *
+	 * 
 	 * @param dropRequest
 	 *            the drop request
 	 * @param semanticLink
@@ -458,7 +457,7 @@ public class CustomDiagramDragDropEditPolicy extends OldCommonDiagramDragDropEdi
 
 	/**
 	 * Returns the drop command for Property nodes.
-	 *
+	 * 
 	 * @param dropRequest
 	 *            the drop request
 	 * @param droppedElement
@@ -502,7 +501,7 @@ public class CustomDiagramDragDropEditPolicy extends OldCommonDiagramDragDropEdi
 	 * - a Class that owns or inherits the Port
 	 * - a Property which type owns or inherits the Port
 	 * </pre>
-	 *
+	 * 
 	 * @param dropRequest
 	 *            the drop request
 	 * @param droppedElement
@@ -588,11 +587,11 @@ public class CustomDiagramDragDropEditPolicy extends OldCommonDiagramDragDropEdi
 
 	/**
 	 * <pre>
-	 * This method return a drop command for TopLevelNode.
+	 * This method return a drop command for TopLevelNode. 
 	 * It returns an {@link org.eclipse.gmf.runtime.common.core.command.UnexecutableCommand} in
 	 * case the element is dropped on a canvas referencing a domain element that is not a Package.
 	 * </pre>
-	 *
+	 * 
 	 * @param dropRequest
 	 *            the drop request
 	 * @param semanticElement
@@ -614,10 +613,10 @@ public class CustomDiagramDragDropEditPolicy extends OldCommonDiagramDragDropEdi
 
 	/**
 	 * <pre>
-	 * This method returns the drop command for AffixedNode (Port, Parameter)
+	 * This method returns the drop command for AffixedNode (Port, Parameter) 
 	 * in case the node is dropped on a ShapeCompartmentEditPart.
 	 * </pre>
-	 *
+	 * 
 	 * @param nodeVISUALID
 	 *            the node visual identifier
 	 * @param location
@@ -642,7 +641,7 @@ public class CustomDiagramDragDropEditPolicy extends OldCommonDiagramDragDropEdi
 	/**
 	 * Avoid dropped element to get orphaned for DND action resulting in a
 	 * specific action (not a move).
-	 *
+	 * 
 	 * @param request
 	 *            the request
 	 * @return the drag command
@@ -668,7 +667,7 @@ public class CustomDiagramDragDropEditPolicy extends OldCommonDiagramDragDropEdi
 
 	/**
 	 * Gets the drop command.
-	 *
+	 * 
 	 * @param request
 	 *            the request
 	 * @return the drop command
@@ -695,7 +694,7 @@ public class CustomDiagramDragDropEditPolicy extends OldCommonDiagramDragDropEdi
 
 	/**
 	 * Test if a specific drop action shall is expected.
-	 *
+	 * 
 	 * @param graphicalParent
 	 *            the graphical parent
 	 * @param droppedObject
