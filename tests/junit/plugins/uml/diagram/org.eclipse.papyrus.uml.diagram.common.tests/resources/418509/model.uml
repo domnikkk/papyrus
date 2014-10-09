@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_y15mME-vEeSh_JAKhK0MSw" name="Model">
+  <packageImport xmi:type="uml:PackageImport" xmi:id="_y15mMU-vEeSh_JAKhK0MSw">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Class" xmi:id="_6xtmME-vEeSh_JAKhK0MSw" name="A"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_8kS-IE-vEeSh_JAKhK0MSw" name="B">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_Dj2xQE-wEeSh_JAKhK0MSw" name="a" type="_6xtmME-vEeSh_JAKhK0MSw" association="_Dj3_YE-wEeSh_JAKhK0MSw">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Dj2xQU-wEeSh_JAKhK0MSw" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Dj2xQk-wEeSh_JAKhK0MSw" value="1"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_--7NgE-vEeSh_JAKhK0MSw" name="C"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_BEJNkE-wEeSh_JAKhK0MSw" name="D"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_Dj3_YE-wEeSh_JAKhK0MSw" name="Association" memberEnd="_Dj3_YU-wEeSh_JAKhK0MSw _Dj2xQE-wEeSh_JAKhK0MSw">
+    <ownedEnd xmi:type="uml:Property" xmi:id="_Dj3_YU-wEeSh_JAKhK0MSw" name="b" type="_8kS-IE-vEeSh_JAKhK0MSw" association="_Dj3_YE-wEeSh_JAKhK0MSw">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Dj3_Yk-wEeSh_JAKhK0MSw" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Dj3_Y0-wEeSh_JAKhK0MSw" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+</uml:Model>
