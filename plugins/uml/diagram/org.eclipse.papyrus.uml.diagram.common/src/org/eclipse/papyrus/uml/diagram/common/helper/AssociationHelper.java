@@ -9,6 +9,7 @@
  *
  * Contributors:
  *  Patrick Tessier (CEA LIST) Patrick.tessier@cea.fr - Initial API and implementation
+ *  Gabriel Pascual (ALL4TEC) gabriel.pascual@all4tec.net - Bug 418509
  *
  *****************************************************************************/
 
@@ -27,11 +28,12 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
 import org.eclipse.uml2.uml.AggregationKind;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Property;
+import org.eclipse.uml2.uml.StructuredClassifier;
 import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
- * this class is used to help design to code the managment of Association
+ * This class is used to help design to code the managment of Association
  *
  *
  */
@@ -53,9 +55,61 @@ public class AssociationHelper {
 	 * @return the CommandResult
 	 */
 	public static CommandResult reconnect(int end, Association association, Type newType) {
-		association.getMemberEnds().get(end).setType(newType);
+
+		// Get old property
+		Property oldEndProperty = association.getMemberEnds().get(end);
+
+		// Get opposite to old property
+		Property oppositeProperty = getOppositeMemberEnd(end, association);
+
+		// Update old Property
+		String name = newType.getName();
+		if (name != null) {
+			oldEndProperty.setName(name.toLowerCase());
+		}
+		oldEndProperty.setType(newType);
+
+		handleClassifierOwnedEnd(association, oppositeProperty.getType(), oldEndProperty);
+		handleClassifierOwnedEnd(association, newType, oppositeProperty);
 
 		return CommandResult.newOKCommandResult(association);
+	}
+
+	/**
+	 * @param association
+	 * @param targetType
+	 * @param handledProperty
+	 * @param oppositeProperty
+	 */
+	private static void handleClassifierOwnedEnd(Association association, Type targetType, Property handledProperty) {
+		// Verify if old property is not an association's owned end ( sub-set of Member's ends)
+		if (!association.getOwnedEnds().contains(handledProperty)) {
+
+			if (targetType instanceof StructuredClassifier) {
+				// Move opposite member end to its target container
+				((StructuredClassifier) targetType).getOwnedAttributes().add(handledProperty);
+			}
+
+		}
+	}
+
+	/**
+	 * Gets the opposite member end.
+	 *
+	 * @param end
+	 *            the end
+	 * @param association
+	 *            the association
+	 * @return the opposite member end
+	 */
+	private static Property getOppositeMemberEnd(int end, Association association) {
+		int opposite = target;
+
+		if (end == opposite) {
+			opposite = source;
+		}
+
+		return association.getMemberEnds().get(opposite);
 	}
 
 	/**
