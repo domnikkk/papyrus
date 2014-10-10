@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<paletteDefinition>
+	<content>
+		<drawer iconpath="/icons/drawer.gif" id="ecoreUML.group.nodes" name="Nodes">
+			<aspectTool description="Create a Class" iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Class.gif" id="ecoreUML.tool.class" name="Class" refToolId="clazz.tool.class"/>
+			<aspectTool description="Create a Comment" iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Comment.gif" id="ecoreUML.tool.comment" name="Comment" refToolId="clazz.tool.comment"/>
+			<aspectTool description="Create a Constraint" iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Constraint.gif" id="ecoreUML.tool.constraint" name="Constraint" refToolId="clazz.tool.constraint"/>
+			<aspectTool description="Create a DataType" iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/DataType.gif" id="ecoreUML.tool.datatype" name="DataType" refToolId="clazz.tool.datatype"/>
+			<aspectTool description="Create an Enumeration" iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Enumeration.gif" id="ecoreUML.tool.enumeration" name="Enumeration" refToolId="clazz.tool.enumeration"/>
+			<aspectTool description="Create an Enumeration literal" iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/EnumerationLiteral.gif" id="ecoreUML.tool.enumerationliteral" name="Enumeration literal" refToolId="clazz.tool.enumerationliteral"/>
+			<aspectTool description="Create an Operation" iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Operation.gif" id="ecoreUML.tool.operation" name="Operation" refToolId="clazz.tool.operation"/>
+			<aspectTool description="Create a Package" iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Package.gif" id="ecoreUML.tool.package" name="Package" refToolId="clazz.tool.package"/>
+			<aspectTool description="Create a Primitivetype" iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/PrimitiveType.gif" id="ecoreUML.tool.primitivetype" name="PrimitiveType" refToolId="clazz.tool.primitivetype"/>
+			<aspectTool description="Create a Property" iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Property.gif" id="ecoreUML.tool.property" name="Property" refToolId="clazz.tool.property"/>
+		</drawer>
+		<drawer iconpath="/icons/drawer.gif" id="ecoreUML.group.edges" name="Edges">
+			<stack id="ecoreUML.stack.associations">
+				<aspectTool description="Create an Association" iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Association.gif" id="ecoreUML.tool.association" name="Association" refToolId="clazz.tool.association"/>
+				<aspectTool description="Create a composition Association" iconpath="platform:/plugin/org.eclipse.papyrus.uml.diagram.clazz/icons/obj16/Association_composite.gif" id="ecoreUML.tool.association" name="Composition" refToolId="clazz.tool.association">
+					<postAction id="org.eclipse.papyrus.postaction.associationendactionprovider"><associationEnd index="0" name="source"><multiplicity value="1..1"/><navigable value="No"/></associationEnd><associationEnd index="1" name="target"><aggregation value="composite"/><multiplicity value="0..1"/><navigable value="Yes"/><owner value="Class"/></associationEnd></postAction>
+				</aspectTool>
+				<aspectTool description="Create an aggregation Association" iconpath="platform:/plugin/org.eclipse.papyrus.uml.diagram.clazz/icons/obj16/Association_shared.gif" id="ecoreUML.tool.association" name="Aggregation" refToolId="clazz.tool.association">
+					<postAction id="org.eclipse.papyrus.postaction.associationendactionprovider"><associationEnd index="0" name="source"><multiplicity value="1..1"/></associationEnd><associationEnd index="1" name="target"><aggregation value="composite"/><multiplicity value="0..1"/><navigable value="Yes"/><owner value="Class"/></associationEnd></postAction>
+					</aspectTool>
+			</stack>
+			<aspectTool description="Creation of a context link for a Constraint" iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Association.gif" id="ecoreUML.tool.contextLink" name="ContextLink" refToolId="createContextLink6CreationTool"/>			
+			<aspectTool description="Create a Dependency" iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Dependency.gif" id="ecoreUML.tool.dependency" name="Dependency" refToolId="clazz.tool.dependency"/>
+			<aspectTool description="Create a Generalization" iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Generalization.gif" id="ecoreUML.tool.generalization" name="Generalization" refToolId="clazz.tool.generalization"/>
+			<aspectTool description="Creation of a link for Comment or Constraint" iconpath="platform:/plugin/org.eclipse.papyrus.uml.diagram.common/icons/obj16/Link.gif" id="ecoreUML.tool.link" name="Link" refToolId="clazz.tool.link"/>
+		</drawer>
+	</content>
+</paletteDefinition>

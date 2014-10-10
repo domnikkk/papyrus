@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration:PapyrusConfiguration xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:configuration="http://www.eclipse.org/papyrus/infra/viewpoints/configuration" xmi:id="_oa8yUBP7EeSS0oyATXohNA" defaultStakeholder="_stSKMBP7EeSS0oyATXohNA">
+  <stakeholders xmi:id="_stSKMBP7EeSS0oyATXohNA" name="MetaModeler" viewpoints="_3T-cEBP7EeSS0oyATXohNA"/>
+  <viewpoints xsi:type="configuration:PapyrusViewpoint" xmi:id="_3T-cEBP7EeSS0oyATXohNA" name="Ecore UML Viewpoint">
+    <modelKinds xsi:type="configuration:PapyrusDiagram" xmi:id="_9xMXIBP7EeSS0oyATXohNA" name="Ecore UML Class Diagram" icon="platform:/plugin/org.eclipse.papyrus.uml.diagram.clazz/icons/obj16/Diagram_Class.gif" implementationID="PapyrusUMLClassDiagram" categories="_vUL7ABP7EeSS0oyATXohNA" customPalette="platform:/plugin/org.eclipse.papyrus.uml.diagram.ecore/resources/palette/ecoreClassDiagram.palette" customStyle="platform:/plugin/org.eclipse.papyrus.uml.diagram.ecore/resources/style/ecore.css">
+      <modelRules xmi:id="_Q9t2YBP8EeSS0oyATXohNA">
+        <element href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
+      </modelRules>
+      <owningRules xmi:id="_URJ9EBP8EeSS0oyATXohNA">
+        <element href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
+      </owningRules>
+      <childRules xmi:id="_dwcpMBZFEeSzr5rzfsl7Yg"/>
+      <paletteRules xmi:id="_K89jwBY_EeSzr5rzfsl7Yg" permit="false" element="clazz.group.*"/>
+    </modelKinds>
+    <modelKinds xsi:type="configuration:PapyrusSyncTable" xmi:id="_KqtBUD5bEeSnHrSUDQ71Qg" name="View Table" icon="platform:/plugin/org.eclipse.papyrus.infra.nattable.views.config/icons/nattablepageeditor.png" implementationID="PapyrusViewsTable" categories="_vUL7ABP7EeSS0oyATXohNA">
+      <modelRules xmi:id="_PrW3wD5bEeSnHrSUDQ71Qg">
+        <element href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement"/>
+      </modelRules>
+      <owningRules xmi:id="_QGbqMD5bEeSnHrSUDQ71Qg">
+        <element href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement"/>
+      </owningRules>
+    </modelKinds>
+    <modelKinds xsi:type="configuration:PapyrusDiagram" xmi:id="_XVzPEESqEeS8O6aS0R2EUw" name="Ecore UML Package Diagram" icon="platform:/plugin/org.eclipse.papyrus.infra.viewpoints.policy/icons/Diagram_Package.gif" implementationID="PapyrusUMLClassDiagram" categories="_vUL7ABP7EeSS0oyATXohNA">
+      <modelRules xmi:id="_9LGnUESqEeS8O6aS0R2EUw">
+        <element href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
+      </modelRules>
+      <owningRules xmi:id="_8ORLoESqEeS8O6aS0R2EUw">
+        <element href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
+      </owningRules>
+      <childRules xmi:id="__4WQsESqEeS8O6aS0R2EUw"/>
+      <paletteRules xmi:id="_S0HhsESsEeSsn_oN1_b7YA" element="clazz.tool.comment"/>
+      <paletteRules xmi:id="_S0HhsUSsEeSsn_oN1_b7YA" element="clazz.tool.constraint"/>
+      <paletteRules xmi:id="_S0HhskSsEeSsn_oN1_b7YA" element="clazz.tool.model"/>
+      <paletteRules xmi:id="_S0Hhs0SsEeSsn_oN1_b7YA" element="clazz.tool.package"/>
+      <paletteRules xmi:id="_S0HhtESsEeSsn_oN1_b7YA" element="clazz.tool.abstraction"/>
+      <paletteRules xmi:id="_S0HhtUSsEeSsn_oN1_b7YA" element="clazz.tool.dependency"/>
+      <paletteRules xmi:id="_S0HhtkSsEeSsn_oN1_b7YA" element="clazz.tool.packageimport"/>
+      <paletteRules xmi:id="_S0Hht0SsEeSsn_oN1_b7YA" element="clazz.tool.link"/>
+      <paletteRules xmi:id="_S0HhuESsEeSsn_oN1_b7YA" permit="false" element="clazz.tool.*"/>
+      <paletteRules xmi:id="_S0HhuUSsEeSsn_oN1_b7YA" element=""/>
+    </modelKinds>
+  </viewpoints>
+  <metamodel href="http://www.eclipse.org/uml2/5.0.0/UML#/"/>
+  <categories xmi:id="_vUL7ABP7EeSS0oyATXohNA" name="uml"/>
+</configuration:PapyrusConfiguration>

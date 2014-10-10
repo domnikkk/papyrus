@@ -140,6 +140,9 @@
 		<module>../extraplugins/migration/org.eclipse.papyrus.migration.rsa</module>
 		<module>../extraplugins/codegen/org.eclipse.papyrus.views.cpp</module>
 		<module>../extraplugins/qompass-designer/tracing/org.eclipse.papyrus.views.tracepoints</module>
+		<!-- Papyrus Uml Diagram Ecore -->
+		<module>../extraplugins/papyrus4ecore/org.eclipse.papyrus.uml.diagram.ecore</module>
+		<module>../features/papyrus-extra-features/org.eclipse.papyrus.uml.diagram.ecore.feature</module>		
 		<module>extras</module>
 	</modules>
 	<properties>
