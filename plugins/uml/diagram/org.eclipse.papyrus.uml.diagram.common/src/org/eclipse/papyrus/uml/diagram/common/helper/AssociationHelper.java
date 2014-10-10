@@ -63,7 +63,10 @@ public class AssociationHelper {
 		Property oppositeProperty = getOppositeMemberEnd(end, association);
 
 		// Update old Property
-		oldEndProperty.setName(newType.getName().toLowerCase());
+		String name = newType.getName();
+		if (name != null) {
+			oldEndProperty.setName(name.toLowerCase());
+		}
 		oldEndProperty.setType(newType);
 
 		handleClassifierOwnedEnd(association, oppositeProperty.getType(), oldEndProperty);
