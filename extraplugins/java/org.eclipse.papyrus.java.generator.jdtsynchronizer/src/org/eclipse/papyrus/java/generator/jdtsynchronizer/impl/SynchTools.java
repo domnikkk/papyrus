@@ -130,6 +130,45 @@ public class SynchTools {
 	}
 
 	/**
+	 * Check if a name represents a pure Java primitive type.
+	 * Pure Java primitive type are Java primitive types that are keywords and not Classes (ie excluding String).
+	 * 
+	 *
+	 * @param typename
+	 * @return true if typename is a primive type
+	 */
+	public static boolean isPureJavaPrimiveType(String typename) {
+		if (typename.equals("byte")) {
+			return true;
+		}
+		if (typename.equals("char")) {
+			return true;
+		}
+		if (typename.equals("double")) {
+			return true;
+		}
+		if (typename.equals("float")) {
+			return true;
+		}
+		if (typename.equals("int")) {
+			return true;
+		}
+		if (typename.equals("long")) {
+			return true;
+		}
+		if (typename.equals("short")) {
+			return true;
+		}
+		if (typename.equals("boolean")) {
+			return true;
+		}
+		if (typename.equals("String")) {
+			return true;
+		}
+		return false;
+	}
+
+	/**
 	 * return the default return of a type (ex: 0 for a int, false for a boolean, null for a class,...)
 	 *
 	 * @param typename
@@ -227,6 +266,12 @@ public class SynchTools {
 			return;
 		}
 
+		// Check if the last segment name is not a primitive name.
+		// Stop if it is the case (otherwise createImport() throw an exception)
+		if( isPureJavaPrimiveType(importType.getElementName())) {
+			return;
+		}
+		
 		String _import = importType.getQualifiedName();
 		if (!SynchTools.isPrimiveType(_import) && _import.contains(".")) {
 			itype.getCompilationUnit().createImport(_import, null, null);

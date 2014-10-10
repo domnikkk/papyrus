@@ -121,11 +121,8 @@ public class DiagramUtils {
 		if (style != null) {
 			PapyrusViewStyle pvs = (PapyrusViewStyle) style;
 			PapyrusView config = pvs.getConfiguration();
-			if (config != null) {
-				if (PolicyChecker.getCurrent().isInViewpoint(config)) {
-					return ViewPrototype.get(config);
-				}
-				return ViewPrototype.UNAVAILABLE_DIAGRAM;
+			if (config != null && PolicyChecker.getCurrent().isInViewpoint(config)) {
+				return ViewPrototype.get(config);
 			}
 			return ViewPrototype.get(diagram.getType(), pvs.getOwner(), diagram.getElement());
 		}

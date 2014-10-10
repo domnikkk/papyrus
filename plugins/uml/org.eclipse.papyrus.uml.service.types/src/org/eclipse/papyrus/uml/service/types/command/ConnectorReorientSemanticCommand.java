@@ -155,9 +155,7 @@ public class ConnectorReorientSemanticCommand extends EditElementCommand {
 			 * }
 			 */
 
-
-
-			// UML Standart, p.181 : [3] The ConnectableElements attached as roles to each ConnectorEnd owned by a Connector must be roles
+			// UML Standard, p.181 : [3] The ConnectableElements attached as roles to each ConnectorEnd owned by a Connector must be roles
 			// of the Classifier, that owned the Connector, or they must be ports of such roles. (p.181)
 			// in SysML this rules is not applied, that's why we are testing the context of this action
 			if (ConnectorUtils.applyUMLRulesForConnector(getLink())) {

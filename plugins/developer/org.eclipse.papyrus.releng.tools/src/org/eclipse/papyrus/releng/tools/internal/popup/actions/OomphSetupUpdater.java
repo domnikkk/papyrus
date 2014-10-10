@@ -13,11 +13,20 @@
  *****************************************************************************/
 package org.eclipse.papyrus.releng.tools.internal.popup.actions;
 
+import java.io.File;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.regex.Pattern;
 
 import org.eclipse.b3.aggregator.Contribution;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.ecore.xmi.XMLResource;
+import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -108,4 +117,19 @@ public class OomphSetupUpdater extends DependencyUpdater {
 		uri.getAttributes().getNamedItem("url").setTextContent(location); //$NON-NLS-1$
 	}
 
+	@Override
+	protected void save(Document document, File destination) throws Exception {
+		// Use EMF resource serialization to format the file in the EMF style
+		ResourceSet rset = new ResourceSetImpl();
+		Resource resource = rset.createResource(URI.createFileURI(destination.getAbsolutePath()));
+		Map<Object, Object> options = new HashMap<Object, Object>();
+		options.put(XMLResource.OPTION_RECORD_UNKNOWN_FEATURE, true);
+		options.put(XMLResource.OPTION_DEFER_IDREF_RESOLUTION, true);
+		((XMLResource) resource).load(document, options);
+
+		options.clear();
+		options.put(XMLResource.OPTION_FORMATTED, true);
+		options.put(XMLResource.OPTION_PROCESS_DANGLING_HREF, XMLResource.OPTION_PROCESS_DANGLING_HREF_RECORD);
+		resource.save(options);
+	}
 }

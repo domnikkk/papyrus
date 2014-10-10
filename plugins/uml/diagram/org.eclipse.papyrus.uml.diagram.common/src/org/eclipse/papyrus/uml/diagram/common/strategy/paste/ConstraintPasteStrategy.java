@@ -115,7 +115,7 @@ public class ConstraintPasteStrategy extends AbstractPasteStrategy implements IP
 				EObject target = papyrusClipboard.getTragetCopyFromInternalClipboardCopy(object);
 				if (target != null && target instanceof Constraint) {
 					ConstraintClipboard constraintClipboard = (ConstraintClipboard) additionalDataMap.get(object);
-					Namespace context = constraintClipboard.getConstraint().getContext();
+					Namespace context = constraintClipboard.getContext();
 					if (checkContext(targetOwner, context)) {
 						RecordingCommand buildSemanticCommand = buildSemanticCommand(domain, (Constraint) target, context);
 						compoundCommand.append(buildSemanticCommand);
@@ -152,7 +152,7 @@ public class ConstraintPasteStrategy extends AbstractPasteStrategy implements IP
 				if (!alreadyprocesed.contains(targetConstraint)) {
 					Object internalFromTarget = getInternalFromTarget(papyrusClipboard, targetConstraint);
 					ConstraintClipboard constraintClipboard = (ConstraintClipboard) additionalDataMap.get(internalFromTarget);
-					Namespace context = constraintClipboard.getConstraint().getContext();
+					Namespace context = constraintClipboard.getContext();
 					if (checkContext(targetOwner, context)) {
 						RecordingCommand semanticCommand = buildSemanticCommand(domain, targetConstraint, context);
 						if (semanticCommand != null) {
@@ -244,22 +244,22 @@ public class ConstraintPasteStrategy extends AbstractPasteStrategy implements IP
 	 */
 	protected class ConstraintClipboard implements IClipboardAdditionalData {
 
-		/** The stereotype. */
-		protected Constraint constraint;
+		/** The context of the constraint. */
+		private Namespace context;
 
 		/**
 		 * @param stereotypes
 		 */
 		public ConstraintClipboard(Constraint constraint) {
-			this.constraint = constraint;
+			this.context = constraint.getContext();
 		}
 
 		/**
-		 * @return
+		 * @return the context
 		 */
-		public Constraint getConstraint() {
-			return constraint;
+		public Namespace getContext() {
+			return context;
 		}
-
+		
 	}
 }

@@ -89,18 +89,22 @@ public abstract class DependencyUpdater {
 				}
 			}
 
-			Transformer transformer = TransformerFactory.newInstance().newTransformer();
-			transformer.setOutputProperty(OutputKeys.INDENT, "yes"); //$NON-NLS-1$
-
-			StreamResult result = new StreamResult(mapFile);
-			DOMSource source = new DOMSource(doc);
-			transformer.transform(source, result);
+			save(doc, mapFile);
 
 			this.fMapFile.refreshLocal(IResource.DEPTH_ZERO, new NullProgressMonitor());
 
 		} catch (Exception e) {
 			throw new CoreException(new Status(IStatus.ERROR, Activator.PLUGIN_ID, "Error updating map: " + e.getLocalizedMessage(), e)); //$NON-NLS-1$
 		}
+	}
+
+	protected void save(Document document, File destination) throws Exception {
+		Transformer transformer = TransformerFactory.newInstance().newTransformer();
+		transformer.setOutputProperty(OutputKeys.INDENT, "yes"); //$NON-NLS-1$
+
+		StreamResult result = new StreamResult(destination);
+		DOMSource source = new DOMSource(document);
+		transformer.transform(source, result);
 	}
 
 	protected void updateWithContribution(final Node uri, final String contributionName, final int repositoryIndex) {

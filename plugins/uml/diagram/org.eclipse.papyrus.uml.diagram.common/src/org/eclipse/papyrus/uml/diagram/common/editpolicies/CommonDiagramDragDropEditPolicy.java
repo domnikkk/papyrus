@@ -16,6 +16,7 @@
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.common.editpolicies;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
@@ -37,7 +38,9 @@ import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint;
 import org.eclipse.gmf.runtime.diagram.core.util.ViewUtil;
 import org.eclipse.gmf.runtime.diagram.ui.commands.CommandProxy;
+import org.eclipse.gmf.runtime.diagram.ui.commands.CreateCommand;
 import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
+import org.eclipse.gmf.runtime.diagram.ui.commands.SetBoundsCommand;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.CompartmentEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
@@ -45,6 +48,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.DiagramDragDropEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateConnectionViewRequest;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest;
+import org.eclipse.gmf.runtime.diagram.ui.requests.CreateConnectionViewRequest.ConnectionViewDescriptor;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest.ViewDescriptor;
 import org.eclipse.gmf.runtime.diagram.ui.requests.DropObjectsRequest;
 import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
@@ -62,6 +66,8 @@ import org.eclipse.papyrus.uml.diagram.common.listeners.DropTargetListener;
 import org.eclipse.papyrus.uml.diagram.common.util.DiagramEditPartsUtil;
 import org.eclipse.papyrus.uml.diagram.common.util.ViewServiceUtil;
 import org.eclipse.swt.dnd.DND;
+import org.eclipse.uml2.uml.Comment;
+import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.Element;
 
 /**
@@ -693,4 +699,163 @@ public abstract class CommonDiagramDragDropEditPolicy extends DiagramDragDropEdi
 	protected boolean isEditPartTypeSuitableForEClass(Class<? extends GraphicalEditPart> editPartClass, EClass eClass) {
 		return true;
 	}
+
+	/**
+	 * Returns The command to drop the {@link Constraint} and the links, if the
+	 * constraints elements are on the diagram
+	 * 
+	 * @param comment
+	 *        the comment to drop
+	 * @param viewer
+	 *        the viewer
+	 * @param diagramPreferencesHint
+	 *        the diagram preference hint
+	 * @param location
+	 *        the location for the drop
+	 * @param containerView
+	 *        the container view for the drop
+	 * @param commentType
+	 *        the IHintedType for the {@link Comment}
+	 * @param linkForComment
+	 *        the IHintedType for the link which attach the {@link Comment} to the annotated Element
+	 * @return The command to drop the {@link Constraint} and the links, if the
+	 *         constraints elements are on the diagram
+	 */
+	protected Command getDropConstraintCommand(Constraint constraint, EditPartViewer viewer, PreferencesHint diagramPreferencesHint, Point location, View containerView, IHintedType commentType, IHintedType linkForComment) {
+		/* for further information, see bug 302555 */
+		CompositeCommand cc = new CompositeCommand("dropConstraint");
+		int nbAnnotated = constraint.getConstrainedElements().size();
+
+		// 0. Obtain list of the annotatedElement
+		ArrayList<Element> endToConnect = new ArrayList<Element>(constraint.getConstrainedElements());
+		GraphicalEditPart[] endEditPart = new GraphicalEditPart[nbAnnotated];
+
+		// 1. Look for if each annotated element is on the diagram
+		Iterator<Element> iteratorProp = endToConnect.iterator();
+		int index = 0;
+		while(iteratorProp.hasNext()) {
+			Element currentAnnotatedElement = iteratorProp.next();
+			endEditPart[index] = (GraphicalEditPart)lookForEditPart(currentAnnotatedElement);
+			index += 1;
+		}
+
+		// 2. creation of the node Comment
+		IAdaptable elementAdapter = new EObjectAdapter(constraint);
+		ViewDescriptor descriptor = new ViewDescriptor(elementAdapter, Node.class, commentType.getSemanticHint(), ViewUtil.APPEND, true, diagramPreferencesHint);
+		CreateCommand nodeCreationCommand = new CreateCommand(getEditingDomain(), descriptor, (containerView));
+		cc.compose(nodeCreationCommand);
+
+		SetBoundsCommand setBoundsCommand = new SetBoundsCommand(getEditingDomain(), "move", (IAdaptable)nodeCreationCommand.getCommandResult().getReturnValue(), location);
+		cc.compose(setBoundsCommand);
+
+		if(nbAnnotated != 0) {
+			IAdaptable sourceEventAdapter = null;
+			IAdaptable targetEventAdapter = null;
+
+			// obtain the node figure
+			sourceEventAdapter = (IAdaptable)nodeCreationCommand.getCommandResult().getReturnValue();
+
+			// used in the creation command of each event
+			ConnectionViewDescriptor dashedLineViewDescriptor = new ConnectionViewDescriptor(linkForComment, linkForComment.getSemanticHint(), diagramPreferencesHint);
+
+			// 3. creation of the dashed line between the Comment and the
+			// annotated element
+			for(GraphicalEditPart current : endEditPart) {
+				if(current != null) {
+					targetEventAdapter = new SemanticAdapter(null, current.getModel());
+					CommonDeferredCreateConnectionViewCommand dashedLineCmd = new CommonDeferredCreateConnectionViewCommand(getEditingDomain(), linkForComment.getSemanticHint(), (sourceEventAdapter), (targetEventAdapter), viewer, diagramPreferencesHint, dashedLineViewDescriptor, null);
+					// dashedLineCmd.setElement(constraint);
+					dashedLineCmd.setElement(null);
+					if(dashedLineCmd.canExecute()) {
+						cc.compose(dashedLineCmd);
+					}
+				}
+			}
+
+		}
+		return new ICommandProxy(cc);
+	}
+
+	/**
+	 * Returns The command to drop the {@link Comment} and the links, if the
+	 * attached elements are on the diagram
+	 * 
+	 * @param comment
+	 *        the comment to drop
+	 * @param viewer
+	 *        the viewer
+	 * @param diagramPreferencesHint
+	 *        the diagram preference hint
+	 * @param location
+	 *        the location for the drop
+	 * @param containerView
+	 *        the container view for the drop
+	 * @param commentType
+	 *        the IHintedType for the {@link Comment}
+	 * @param linkForComment
+	 *        the IHintedType for the link which attach the {@link Comment} to the annotated Element
+	 * @return The command to drop the {@link Comment} and the link, if the
+	 *         attached elements are on the diagram
+	 */
+	protected Command getDropCommentCommand(Comment comment, EditPartViewer viewer, PreferencesHint diagramPreferencesHint, Point location, View containerView, IHintedType commentType, IHintedType linkForComment) {
+		/* for further information, see bug 302555 */
+		ViewServiceUtil.forceLoad();
+		CompositeCommand cc = new CompositeCommand("dropComment");
+		int nbAnnotated = comment.getAnnotatedElements().size();
+
+		// 0. Obtain list of the annotatedElement
+		ArrayList<Element> endToConnect = new ArrayList<Element>(comment.getAnnotatedElements());
+		GraphicalEditPart[] endEditPart = new GraphicalEditPart[nbAnnotated];
+
+		// 1. Look for if each annotated element is on the diagram
+		Iterator<Element> iteratorProp = endToConnect.iterator();
+		int index = 0;
+		while(iteratorProp.hasNext()) {
+			Element currentAnnotatedElement = iteratorProp.next();
+			endEditPart[index] = (GraphicalEditPart)lookForEditPart(currentAnnotatedElement);
+			index += 1;
+		}
+
+		// 2. creation of the node Comment
+		IAdaptable elementAdapter = new EObjectAdapter(comment);
+		ViewDescriptor descriptor = new ViewDescriptor(elementAdapter, Node.class, commentType.getSemanticHint(), ViewUtil.APPEND, true, diagramPreferencesHint);
+		CreateCommand nodeCreationCommand = new CreateCommand(getEditingDomain(), descriptor, (containerView));
+		cc.compose(nodeCreationCommand);
+
+		SetBoundsCommand setBoundsCommand = new SetBoundsCommand(getEditingDomain(), "move", (IAdaptable)nodeCreationCommand.getCommandResult().getReturnValue(), location);
+		cc.compose(setBoundsCommand);
+		// obtain the node figure
+		IAdaptable sourceEventAdapter = (IAdaptable)nodeCreationCommand.getCommandResult().getReturnValue();
+		IAdaptable targetEventAdapter = null;
+		if(nbAnnotated != 0) {
+
+			// used in the creation command of each event
+			ConnectionViewDescriptor dashedLineViewDescriptor = new ConnectionViewDescriptor(linkForComment, linkForComment.getSemanticHint(), diagramPreferencesHint);
+
+			// 3. creation of the dashed line between the Constraint and the
+			// constrained element
+			for(GraphicalEditPart current : endEditPart) {
+				if(current != null) {
+					targetEventAdapter = new SemanticAdapter(null, current.getModel());
+					CommonDeferredCreateConnectionViewCommand dashedLineCmd = new CommonDeferredCreateConnectionViewCommand(getEditingDomain(), linkForComment.getSemanticHint(), (sourceEventAdapter), (targetEventAdapter), viewer, diagramPreferencesHint, dashedLineViewDescriptor, null);
+					// dashedLineCmd.setElement(comment);
+					dashedLineCmd.setElement(null);
+					if(dashedLineCmd.canExecute()) {
+						cc.compose(dashedLineCmd);
+					}
+				}
+			}
+
+		}
+		return new ICommandProxy(cc);
+	}
+	
+	protected Point getTranslatedLocation(DropObjectsRequest dropRequest) {
+		Point location = dropRequest.getLocation().getCopy();
+		((GraphicalEditPart)getHost()).getContentPane().translateToRelative(location);
+		((GraphicalEditPart)getHost()).getContentPane().translateFromParent(location);
+		location.translate(((GraphicalEditPart)getHost()).getContentPane().getClientArea().getLocation().getNegated());
+		return location;
+	}
+	
 }

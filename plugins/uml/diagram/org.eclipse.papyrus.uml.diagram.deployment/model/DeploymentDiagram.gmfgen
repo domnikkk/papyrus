@@ -1042,6 +1042,10 @@
             xsi:type="gmfgen:CustomBehaviour"
             key="org.eclipse.gef.EditPolicy.GRAPHICAL_NODE_ROLE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.deployment.custom.edit.policies.CustomGraphicalNodeEditPolicy"/>
+        <behaviour
+            xsi:type="gmfgen:CustomBehaviour"
+            key="org.eclipse.gef.EditPolicy.PRIMARY_DRAG_ROLE"
+            editPolicyQualifiedClassName="org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.PapyrusReflowableShapeEditPolicy"/>
         <modelFacet>
           <metaClass
               href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Comment"/>
@@ -1484,6 +1488,10 @@
             xsi:type="gmfgen:CustomBehaviour"
             key="org.eclipse.gef.EditPolicy.GRAPHICAL_NODE_ROLE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.deployment.custom.edit.policies.CustomGraphicalNodeEditPolicy"/>
+        <behaviour
+            xsi:type="gmfgen:CustomBehaviour"
+            key="org.eclipse.gef.EditPolicy.PRIMARY_DRAG_ROLE"
+            editPolicyQualifiedClassName="org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.PapyrusReflowableShapeEditPolicy"/>
         <modelFacet>
           <metaClass
               href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Comment"/>

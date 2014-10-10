@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2011, 2012 Mia-Software
+ * Copyright (c) 2011, 2014 Mia-Software and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,6 +29,8 @@
  *     Gregoire Dupe (Mia-Software) - Bug 377870 - [EFacet] ETypedElementDialog doesn't show all available ETypedElement (library example problem?)
  *     Grégoire Dupé (Mia-Software) - Bug 387470 - [EFacet][Custom] Editors
  *     Grégoire Dupé (Mia-Software) - Bug 391442 - Select ETypedElement Dialog doesn't used the subpackages (subEFacetSet)
+ *     Sebastien Gabel (Esterel Technologies) - Bug 438931 - Non deterministic order of the facet references defined in custom file
+ *
  *******************************************************************************/
 package org.eclipse.papyrus.emf.facet.efacet.core;
 
@@ -36,7 +38,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -326,7 +327,7 @@ public final class FacetUtils {
 	}
 
 	public static List<ETypedElement> getETypedElements(final EPackage ePackage) {
-		final List<ETypedElement> result = new LinkedList<ETypedElement>();
+		final List<ETypedElement> result = new ArrayList<ETypedElement>();
 		for (EClassifier eClassifier : ePackage.getEClassifiers()) {
 			result.addAll(getETypedElements(eClassifier));
 		}
@@ -355,7 +356,7 @@ public final class FacetUtils {
 	}
 
 	public static List<Facet> getFacets(final FacetSet facetSet) {
-		final List<Facet> result = new LinkedList<Facet>();
+		final List<Facet> result = new ArrayList<Facet>();
 		for (EClassifier eClassifier : facetSet.getEClassifiers()) {
 			if (eClassifier instanceof Facet) {
 				final Facet facet = (Facet) eClassifier;
@@ -395,10 +396,10 @@ public final class FacetUtils {
 
 	// Copied (and refactored) from
 	// org.eclipse.papyrus.emf.facet.efacet.core.internal.FacetManager
-	public static <T extends ETypedElement> Set<T> getETypedElements(
+	public static <T extends ETypedElement> List<T> getETypedElements(
 			final EObject eObject, final Class<T> classs,
 			final IFacetManager facetManager) throws FacetManagerException {
-		final Set<T> result = new HashSet<T>();
+		final List<T> result = new ArrayList<T>();
 		for (FacetSet facetSet : facetManager.getManagedFacetSets()) {
 			result.addAll(getETypedElements(eObject, facetSet, classs,
 					facetManager));
@@ -408,11 +409,11 @@ public final class FacetUtils {
 
 	// Copied (and refactored) from
 	// org.eclipse.papyrus.emf.facet.efacet.core.internal.FacetManager
-	private static <T extends ETypedElement> Set<T> getETypedElements(
+	private static <T extends ETypedElement> List<T> getETypedElements(
 			final EObject eObject, final FacetSet facetSet,
 			final Class<T> classs, final IFacetManager manager)
 			throws FacetManagerException {
-		final Set<T> result = new HashSet<T>();
+		final List<T> result = new ArrayList<T>();
 		for (EClassifier eClassifier : facetSet.getEClassifiers()) {
 			if (eClassifier instanceof Facet) {
 				final Facet facet = (Facet) eClassifier;
@@ -437,9 +438,9 @@ public final class FacetUtils {
 		return result;
 	}
 
-	private static <T> Set<T> getETypedElement(final Class<T> classs,
+	private static <T> List<T> getETypedElement(final Class<T> classs,
 			final Facet facet) {
-		final Set<T> result = new HashSet<T>();
+		final List<T> result = new ArrayList<T>();
 		for (ETypedElement eTypedElement : getAllETypedElements(facet)) {
 			if (classs.isInstance(eTypedElement)) {
 				@SuppressWarnings("unchecked")
@@ -462,7 +463,7 @@ public final class FacetUtils {
 	// org.eclipse.papyrus.emf.facet.efacet.core.internal.FacetManager
 	private static List<ETypedElement> getAllETypedElements(
 			final Facet facet) {
-		final List<ETypedElement> structFeatures = new LinkedList<ETypedElement>();
+		final List<ETypedElement> structFeatures = new ArrayList<ETypedElement>();
 		structFeatures.addAll(facet.getFacetElements());
 		structFeatures.addAll(facet.getFacetOperations());
 		for (Facet extFacet : facet.getExtendedFacets()) {
@@ -511,7 +512,7 @@ public final class FacetUtils {
 	public static EClass getExtendedMetaclass(final Facet facet) {
 		EClass result = facet.getExtendedMetaclass();
 		if (result == null) {
-			final List<EClass> eClasses = new LinkedList<EClass>();
+			final List<EClass> eClasses = new ArrayList<EClass>();
 			for (Facet extfacet : facet.getExtendedFacets()) {
 				eClasses.add(getExtendedMetaclass(extfacet));
 			}

@@ -26,3 +26,4 @@ Bundle-SymbolicName: org.eclipse.papyrus.uml.tools.tests;singleton:=tr
  ue
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 
+
