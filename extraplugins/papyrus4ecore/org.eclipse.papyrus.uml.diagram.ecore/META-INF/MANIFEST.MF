@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Ecore Configuration for Papyrus
+Bundle-SymbolicName: org.eclipse.papyrus.uml.diagram.ecore;singleton:=true
+Bundle-Version: 1.1.0.qualifier
+Bundle-Activator: org.eclipse.papyrus.uml.diagram.ecore.Activator
+Bundle-Vendor: Eclipse Modeling Project
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.papyrus.infra.viewpoints.policy,
+ org.eclipse.papyrus.infra.newchild,
+ org.eclipse.papyrus.views.properties
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy
