@@ -18,7 +18,10 @@ import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.RectangleFigure;
+import org.eclipse.draw2d.geometry.Insets;
+import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
+import org.eclipse.papyrus.uml.diagram.common.figure.node.RectangularShadowBorder;
 
 /**
  * Change super type to support displaying stereotypes, modified by [Jin Liu(jin.liu@soyatec.com)]
@@ -55,4 +58,33 @@ public class CombinedFragmentFigure extends StereotypeInteractionFigure {
 	public IFigure getHeaderContainer() {
 		return header;
 	}
+	
+	@Override
+	public void setShadow(boolean shadow) {
+		final int BORDER_WIDTH = 3;
+		
+		if (!shadow) {
+			super.setShadow(shadow);
+		} else {
+			RectangularShadowBorder b = new RectangularShadowBorder(BORDER_WIDTH, getForegroundColor()) {
+				@Override
+				public Insets getInsets(IFigure figure) {
+					return new Insets(1, 1, 1, 1);
+				}
+			};
+			setBorder(b);
+		}
+
+		Rectangle figureRect = new Rectangle(getBounds()).expand(new Insets(0, 0, BORDER_WIDTH, BORDER_WIDTH));
+		IFigure parent = getParent();
+		while (parent != null) {
+			if (parent.getBounds().contains(figureRect)) {
+				parent.revalidate();
+				parent.repaint();
+				break;
+			}
+			parent = parent.getParent();
+		}
+	}
+	
 }
