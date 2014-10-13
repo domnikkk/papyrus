@@ -123,35 +123,47 @@ mapping inout Interface::createMessageSet(direction : RTMessageKind) : RTMessage
 }
 
 mapping sourcert::Capsule::toCapsule() : umlrt::Capsule when {
-	self.oclIsTypeOf(sourcert::Capsule) /* Workaround for Bug 445083 (QVTo Bug?) */
+	self.oclIsTypeOf(sourcert::Capsule) /* Workaround for Bug 445083/445198 */
 }{
 	result.base_Class := self.base_Class;
 }
 
-mapping sourcert::CapsulePart::toCapsulePart() : umlrt::CapsulePart {
+mapping sourcert::CapsulePart::toCapsulePart() : umlrt::CapsulePart when {
+	self.oclIsTypeOf(sourcert::CapsulePart) /* Workaround for Bug 445083/445198 */
+}{
 	result.base_Property := self.base_Property;
 }
 
-mapping sourcert::Protocol::toProtocol() : umlrt::Protocol {
+mapping sourcert::Protocol::toProtocol() : umlrt::Protocol when {
+	self.oclIsTypeOf(sourcert::Protocol) /* Workaround for Bug 445083/445198 */
+}{
 	result.base_Collaboration := self.base_Collaboration;
 }
 
-mapping sourcert::ProtocolContainer::toProtocolContainer() : umlrt::ProtocolContainer {
+mapping sourcert::ProtocolContainer::toProtocolContainer() : umlrt::ProtocolContainer when {
+	self.oclIsTypeOf(sourcert::ProtocolContainer) /* Workaround for Bug 445083/445198 */
+}{
 	result.base_Package := self.base_Package;
 	
 	self.map toMessageSets();
 }
 
-mapping sourcert::RTConnector::toRTConnector() : umlrt::RTConnector {
+mapping sourcert::RTConnector::toRTConnector() : umlrt::RTConnector when {
+	self.oclIsTypeOf(sourcert::RTConnector) /* Workaround for Bug 445083/445198 */
+}{
 	result.base_Connector := self.base_Connector;
 }
 
-mapping sourcert::RTHistorystate::toHistorystate() {
+mapping sourcert::RTHistorystate::toHistorystate() when {
+	self.oclIsTypeOf(sourcert::RTHistorystate) /* Workaround for Bug 445083/445198 */
+}{
 	if self.historyKind = HistoryKind::Deep then self.base_Pseudostate.kind := PseudostateKind::deepHistory endif;
 	if self.historyKind = HistoryKind::Shallow then self.base_Pseudostate.kind := PseudostateKind::shallowHistory endif;
 }
 
-mapping sourcert::RTPort::toRTPort() : umlrt::RTPort {
+mapping sourcert::RTPort::toRTPort() : umlrt::RTPort when {
+	self.oclIsTypeOf(sourcert::RTPort) /* Workaround for Bug 445083/445198 */
+}{
 	result.isNotification := self.isNotification;
 	result.isPublish := self.isPublish;
 	result.isWired := self.isWired;
@@ -162,12 +174,14 @@ mapping sourcert::RTPort::toRTPort() : umlrt::RTPort {
 	result.base_Port.isConjugated := self.isConjugate;
 }
 
-mapping sourcert::RTRedefinableElement::toRTRExcludedElement() : umlrt::RTRExcludedElement {
+mapping sourcert::RTRedefinableElement::toRTRExcludedElement() : umlrt::RTRExcludedElement when {
+	self.oclIsTypeOf(sourcert::RTRedefinableElement) /* Workaround for Bug 445083/445198 */
+}{
 	result.base_RedefinableElement := self.base_RedefinableElement;
 }
 
 mapping sourcert::Trigger::toRTTrigger() : RTTrigger when {
-	self.oclIsTypeOf(sourcert::Trigger) /* Workaround for Bug 445083 (QVTo Bug?) */
+	self.oclIsTypeOf(sourcert::Trigger) /* Workaround for Bug 445083/445198 */
 }{
 	result.base_Operation := self.base_Operation;
 }
