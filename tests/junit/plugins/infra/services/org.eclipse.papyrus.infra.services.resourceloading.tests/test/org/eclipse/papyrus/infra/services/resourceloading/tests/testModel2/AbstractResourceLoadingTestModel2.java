@@ -1,6 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2010, 2013 Atos Origin, CEA, and others.
- *
+ * Copyright (c) 2010, 2014 Atos Origin, CEA, and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -10,6 +9,7 @@
  * Contributors:
  *  Emilien Perico (Atos Origin) emilien.perico@atosorigin.com - Initial API and implementation
  *  Christian W. Damus (CEA) - Work around regression in URI parsing in EMF 2.9
+ *  Christian W. Damus (CEA) - bug 437217 - control-mode strategy changes interfere with later tests
  *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.services.resourceloading.tests.testModel2;
@@ -36,7 +36,7 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.papyrus.infra.core.resource.ModelSet;
 import org.eclipse.papyrus.infra.services.resourceloading.OnDemandLoadingModelSetServiceFactory;
-import org.eclipse.papyrus.infra.services.resourceloading.preferences.StrategyChooser;
+import org.eclipse.papyrus.infra.services.resourceloading.tests.StrategyChooserFixture;
 import org.eclipse.papyrus.junit.framework.classification.tests.AbstractPapyrusTest;
 import org.eclipse.papyrus.junit.utils.rules.HouseKeeper;
 import org.eclipse.uml2.uml.Property;
@@ -64,9 +64,9 @@ public abstract class AbstractResourceLoadingTestModel2 extends AbstractPapyrusT
 
 	public static final String RESOURCE_URI = ITestConstants.FRAGMENT_ID + "/" + INITIAL_PATH;
 
-	private String[] resources = new String[]{ "model1", "Package0" };
+	private String[] resources = new String[] { "model1", "Package0" };
 
-	private String[] extensions = new String[]{ ".di", ".notation", ".uml" };
+	private String[] extensions = new String[] { ".di", ".notation", ".uml" };
 
 	protected ModelSet modelSet;
 
@@ -77,11 +77,12 @@ public abstract class AbstractResourceLoadingTestModel2 extends AbstractPapyrusT
 	 */
 	@Before
 	public void setUp() throws Exception {
-		StrategyChooser.setCurrentStrategy(getStrategy());
+		houseKeeper.cleanUpLater(new StrategyChooserFixture(getStrategy()));
+
 		// first we need to create the test project from the plugin to the workspace test platform
 		IProject project = copyTestModelToThePlatform();
-		modelSet = (ModelSet)new OnDemandLoadingModelSetServiceFactory().createServiceInstance();
-		if(project != null) {
+		modelSet = houseKeeper.cleanUpLater((ModelSet) new OnDemandLoadingModelSetServiceFactory().createServiceInstance());
+		if (project != null) {
 			resourceLoaded = getResourceToLoad(project);
 			modelSet.loadModels(resourceLoaded);
 		}
@@ -97,17 +98,17 @@ public abstract class AbstractResourceLoadingTestModel2 extends AbstractPapyrusT
 		IProject project = ResourcesPlugin.getWorkspace().getRoot().getProject(ITestConstants.FRAGMENT_ID);
 		IProgressMonitor monitor = new NullProgressMonitor();
 
-		if(project != null && !project.exists()) {
+		if (project != null && !project.exists()) {
 			project.create(monitor);
 		}
 
 		project.open(monitor);
 
-		for(String res : resources) {
-			for(String s : extensions) {
+		for (String res : resources) {
+			for (String s : extensions) {
 				IFile file = project.getFile(INITIAL_PATH + res + s);
 				// link all the models resources
-				if(!file.exists()) {
+				if (!file.exists()) {
 					createFolder(project, "resources/");
 					createFolder(project, INITIAL_PATH);
 
@@ -131,7 +132,7 @@ public abstract class AbstractResourceLoadingTestModel2 extends AbstractPapyrusT
 	 * Gets the resource to load, the one it is opened with the papyrus editor
 	 *
 	 * @param project
-	 *        the project in which the resources should be
+	 *            the project in which the resources should be
 	 *
 	 * @return the resource to load
 	 */
@@ -145,8 +146,8 @@ public abstract class AbstractResourceLoadingTestModel2 extends AbstractPapyrusT
 		URI uriProperty0 = URI.createPlatformResourceURI(RESOURCE_URI + "Package0.uml", false).appendFragment("_57LlkIRSEd-ZSb15jhF0Qw");
 		EObject property0 = modelSet.getEObject(uriProperty0, true);
 		Type type = null;
-		if(property0 instanceof Property) {
-			type = ((Property)property0).getType();
+		if (property0 instanceof Property) {
+			type = ((Property) property0).getType();
 			assertTestGetDanglingReferenceFromParentResource("Get type from controlled resource is resolved", type);
 		}
 
@@ -156,7 +157,7 @@ public abstract class AbstractResourceLoadingTestModel2 extends AbstractPapyrusT
 	}
 
 	private void assertTestGetDanglingReferenceFromParentResource(String message, EObject eObject) {
-		switch(getStrategy()) {
+		switch (getStrategy()) {
 		case 0:
 			// Load all the needed resources
 			assertTrue(message, !eObject.eIsProxy());
@@ -167,7 +168,7 @@ public abstract class AbstractResourceLoadingTestModel2 extends AbstractPapyrusT
 			break;
 		case 2:
 			// Load the additional resources (profile and pathmap) and the needed controlled resources
-			if(resourceLoaded != null && resourceLoaded.getName().contains("model1")) {
+			if (resourceLoaded != null && resourceLoaded.getName().contains("model1")) {
 				assertTrue(message, !eObject.eIsProxy());
 			} else {
 				// when Package0 is opened, model1 is not loaded because it is not a controlled resource
@@ -180,7 +181,7 @@ public abstract class AbstractResourceLoadingTestModel2 extends AbstractPapyrusT
 	}
 
 	private void assertTestGetReferenceInControlledRessource(String message, EObject eObject1, EObject eObject2) {
-		switch(getStrategy()) {
+		switch (getStrategy()) {
 		case 0:
 			// Load all the needed resources
 			assertSame(message, eObject1, eObject2);
@@ -191,7 +192,7 @@ public abstract class AbstractResourceLoadingTestModel2 extends AbstractPapyrusT
 			break;
 		case 2:
 			// Load the additional resources (profile and pathmap) and the needed controlled resources
-			if(resourceLoaded != null && resourceLoaded.getName().contains("model1")) {
+			if (resourceLoaded != null && resourceLoaded.getName().contains("model1")) {
 				assertSame(message, eObject1, eObject2);
 			} else {
 				// when Package0 is opened, model1 is not loaded because it is not a controlled resource
@@ -212,8 +213,8 @@ public abstract class AbstractResourceLoadingTestModel2 extends AbstractPapyrusT
 		EObject figurePackage0 = modelSet.getEObject(uriFigurePackage0, true);
 		assertTestGetFigureInControlledRessource1("Get figure in Package0 resource", figurePackage0);
 		EObject element = null;
-		if(figurePackage0 instanceof Node) {
-			Node node = (Node)figurePackage0;
+		if (figurePackage0 instanceof Node) {
+			Node node = (Node) figurePackage0;
 			element = node.getElement();
 		}
 		URI uriClass0 = URI.createPlatformResourceURI(RESOURCE_URI + "model1.uml", false).appendFragment("_1766sIRSEd-ZSb15jhF0Qw");
@@ -222,15 +223,15 @@ public abstract class AbstractResourceLoadingTestModel2 extends AbstractPapyrusT
 	}
 
 	private void assertTestGetFigureInControlledRessource1(String message, EObject eObject) {
-		switch(getStrategy()) {
+		switch (getStrategy()) {
 		case 0:
 			// Load all the needed resources
 			assertTrue(message, !eObject.eIsProxy());
 			break;
 		case 1:
 			// Load the additional resources (profile and pathmap). Controlled resources are not loaded
-			if(resourceLoaded != null && resourceLoaded.getName().contains("model1")) {
-				//assertTrue(message, eObject.eIsProxy());
+			if (resourceLoaded != null && resourceLoaded.getName().contains("model1")) {
+				// assertTrue(message, eObject.eIsProxy());
 				// eObject is null, not a proxy
 				assertNull(message, eObject);
 			} else {
@@ -248,7 +249,7 @@ public abstract class AbstractResourceLoadingTestModel2 extends AbstractPapyrusT
 	}
 
 	private void assertTestGetFigureInControlledRessource2(String message, EObject eObject1, EObject eObject2) {
-		switch(getStrategy()) {
+		switch (getStrategy()) {
 		case 0:
 			// Load all the needed resources
 			assertSame(message, eObject1, eObject2);
@@ -259,7 +260,7 @@ public abstract class AbstractResourceLoadingTestModel2 extends AbstractPapyrusT
 			break;
 		case 2:
 			// Load the additional resources (profile and pathmap) and the needed controlled resources
-			if(resourceLoaded != null && resourceLoaded.getName().contains("model1")) {
+			if (resourceLoaded != null && resourceLoaded.getName().contains("model1")) {
 				assertSame(message, eObject1, eObject2);
 			} else {
 				// when Package0 is opened, model1 is not loaded because it is not a controlled resource
@@ -278,7 +279,7 @@ public abstract class AbstractResourceLoadingTestModel2 extends AbstractPapyrusT
 	public void tearDown() throws Exception {
 		// Unload models
 		List<Resource> resources = new ArrayList<Resource>(modelSet.getResources());
-		for(Resource r : resources) {
+		for (Resource r : resources) {
 			try {
 				r.unload();
 			} catch (Exception e) {
@@ -296,7 +297,7 @@ public abstract class AbstractResourceLoadingTestModel2 extends AbstractPapyrusT
 	 */
 	private void createFolder(IProject project, String name) throws CoreException {
 		IFolder parent = project.getFolder(name);
-		if(!parent.exists()) {
+		if (!parent.exists()) {
 			parent.create(true, true, new NullProgressMonitor());
 		}
 		assert (parent.exists());
