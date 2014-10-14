@@ -16,6 +16,7 @@ package org.eclipse.papyrus.uml.diagram.component.custom.edit.policies;
 import java.util.Collections;
 import java.util.List;
 
+import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.geometry.PrecisionRectangle;
 import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.gef.GraphicalEditPart;
@@ -30,8 +31,8 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.NonResizableLabelEditPoli
 import org.eclipse.gmf.runtime.diagram.ui.l10n.DiagramUIMessages;
 import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.papyrus.infra.gmfdiag.common.editpart.PapyrusLabelEditPart;
 
-// TODO: Auto-generated Javadoc
 /**
  * This policy provides the selection handles, feedback and move command for
  * external node label.
@@ -79,6 +80,22 @@ public class ExternalLabelPrimaryDragRoleEditPolicy extends NonResizableLabelEdi
 		rect.translate(request.getMoveDelta());
 		rect.resize(request.getSizeDelta());
 		getHostFigure().translateToRelative(rect);
+
+		// translate according to the text alignments
+		if (editPart instanceof PapyrusLabelEditPart) {
+			switch (((PapyrusLabelEditPart) editPart).getTextAlignment()) {
+			case PositionConstants.LEFT:
+				break;
+			case PositionConstants.CENTER:
+				updatedRect.translate(getHostFigure().getBounds().width / 2, 0);
+				break;
+			case PositionConstants.RIGHT:
+				updatedRect.translate(getHostFigure().getBounds().width, 0);
+				break;
+			default:
+				break;
+			}
+		}
 
 		ICommand moveCommand = new SetBoundsCommand(editPart.getEditingDomain(), DiagramUIMessages.MoveLabelCommand_Label_Location, new EObjectAdapter((View) editPart.getModel()), updatedRect);
 		return new ICommandProxy(moveCommand);

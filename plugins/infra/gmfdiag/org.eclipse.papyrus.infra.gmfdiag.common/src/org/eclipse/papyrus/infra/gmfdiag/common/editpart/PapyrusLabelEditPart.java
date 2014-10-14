@@ -43,7 +43,6 @@ import org.eclipse.papyrus.infra.gmfdiag.common.model.NotationUtils;
 
 public abstract class PapyrusLabelEditPart extends LabelEditPart {
 
-
 	/**
 	 * Default Margin when not present in CSS
 	 */
@@ -154,6 +153,13 @@ public abstract class PapyrusLabelEditPart extends LabelEditPart {
 			setExternalLabelLocator(offset);
 			getFigure().getParent().setConstraint(getFigure(), borderLabelLocator);
 		}
+	}
+
+	/**
+	 * @return the papyrusLabelLocator
+	 */
+	public PapyrusLabelLocator getPapyrusLabelLocator() {
+		return papyrusLabelLocator;
 	}
 
 	/**

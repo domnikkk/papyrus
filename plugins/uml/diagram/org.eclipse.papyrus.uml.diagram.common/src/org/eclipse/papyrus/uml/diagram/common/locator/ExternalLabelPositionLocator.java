@@ -21,16 +21,15 @@ import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.draw2d.geometry.Rectangle;
-import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.gef.EditPart;
-import org.eclipse.gmf.runtime.diagram.core.util.ViewUtil;
-import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
-import org.eclipse.gmf.runtime.notation.NotationPackage;
+import org.eclipse.gef.RequestConstants;
+import org.eclipse.gef.commands.Command;
+import org.eclipse.gef.requests.ChangeBoundsRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.papyrus.commands.wrappers.GEFtoEMFCommandWrapper;
 import org.eclipse.papyrus.infra.gmfdiag.common.editpart.IPapyrusEditPart;
 import org.eclipse.papyrus.infra.gmfdiag.common.locator.IPapyrusBorderItemLocator;
-import org.eclipse.papyrus.uml.diagram.common.Activator;
 
 /**
  * This class is used to constrain the position of ExternalNodeLabel. The
@@ -52,10 +51,7 @@ public class ExternalLabelPositionLocator implements IPapyrusBorderItemLocator {
 	private Dimension offset = new Dimension();
 
 	/** The constrained. */
-	private boolean constrained = false;
-
-	/** The cached string. */
-	private String cachedString;
+	private boolean isConstrained = false;
 
 	/** The text alignment. */
 	private int textAlignment;
@@ -75,8 +71,9 @@ public class ExternalLabelPositionLocator implements IPapyrusBorderItemLocator {
 		this.editPart = editPart;
 	}
 
-	/** The margin. */
-	private Point margin = new Point();
+	private boolean cachedIsConstrained = false;
+
+	private Point margin;
 
 	/**
 	 * Sets the view.
@@ -138,7 +135,7 @@ public class ExternalLabelPositionLocator implements IPapyrusBorderItemLocator {
 	 */
 	@Override
 	public boolean isConstrained() {
-		return constrained;
+		return isConstrained;
 	}
 
 	/**
@@ -149,7 +146,7 @@ public class ExternalLabelPositionLocator implements IPapyrusBorderItemLocator {
 	 */
 	@Override
 	public void setConstrained(boolean constrained) {
-		this.constrained = constrained;
+		this.isConstrained = constrained;
 	}
 
 	/**
@@ -222,82 +219,72 @@ public class ExternalLabelPositionLocator implements IPapyrusBorderItemLocator {
 
 		proposedBounds.setLocation(constraint.getLocation().translate(parentFigure.getBounds().getTopLeft()));
 		proposedBounds.setSize(target.getPreferredSize());
-		if (constrained) {
+
+		if (isConstrained) { // TO_FIX if there is more than one label
 			Point newconstraint;
+			Point newOffset;
 			// Set the translation when alignment is auto
 			switch (getPositionOnParent()) {
 			case PositionConstants.WEST:
 				// alignRight:
 				newconstraint = new Point(-proposedBounds.width - offset.width, offset.height);
+				newOffset = new Point(newconstraint.x + proposedBounds.width, newconstraint.y);
 				break;
 			case PositionConstants.EAST:
 				// alignLeft
 				newconstraint = new Point(parentFigure.getBounds().width + offset.width, offset.height);
+				newOffset = new Point(newconstraint.x, newconstraint.y);
 				break;
 			case PositionConstants.NORTH:
 				// alignLeft center to the north
 				newconstraint = new Point(-proposedBounds.width / 2 + offset.width, -parentFigure.getBounds().height - offset.height);
+				newOffset = new Point(newconstraint.x, newconstraint.y);
 				break;
 			case PositionConstants.SOUTH:
 				// alignLeft center to the south
 				newconstraint = new Point(-proposedBounds.width / 2 + offset.width, parentFigure.getBounds().height + offset.height);
+				newOffset = new Point(newconstraint.x, newconstraint.y);
 				break;
 			default:
-				// the default is the like the EAST
+				// the default is like the EAST
 				newconstraint = new Point(proposedBounds.width + offset.width, offset.height);
+				newOffset = new Point(newconstraint.x, newconstraint.y);
 				break;
 			}
 			proposedBounds.setLocation(newconstraint.translate(parentFigure.getBounds().getTopLeft()));
 
-		} else
-		// If the label changed
-		if (cachedString != null && !cachedString.equals(((WrappingLabel) target).getText())) {
-			int x;
-			int textWidth = target.getBounds().width;
+			// Save new location only on change
+			final Point offset = newOffset;
+			ChangeBoundsRequest req = new ChangeBoundsRequest(RequestConstants.REQ_MOVE);
+			req.setEditParts(editPart);
+			req.setLocation(offset);
+			Command command = editPart.getCommand(req);
+			if (command != null && command.canExecute()) {
+				TransactionUtil.getEditingDomain(view).getCommandStack().execute(GEFtoEMFCommandWrapper.wrap(command));
+			}
 
+		} else {
+			int x;
 			// Set Location
 			switch (textAlignment) {
 			case PositionConstants.LEFT:
 				x = 0;
 				break;
 			case PositionConstants.RIGHT:
-				x = textWidth - proposedBounds.width;
+				x = -proposedBounds.width;
 				break;
 			case PositionConstants.CENTER:
-				x = (textWidth - proposedBounds.width) / 2;
+				x = -proposedBounds.width / 2;
 				break;
 			default:
 				x = 0;
 				break;
 			}
-
-			Point offsettmp = constraint.getLocation();
-			offsettmp.translate(x, 0);
-			final Point offset = offsettmp.getCopy();
-
 			proposedBounds.translate(x, 0);
-			if (view != null) {
-				try {
-					TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(view);
-					org.eclipse.papyrus.infra.core.sasheditor.di.contentprovider.utils.TransactionHelper.run(domain, new Runnable() {
-
-						@Override
-						public void run() {
-							// Set location to the resource without command
-							ViewUtil.setStructuralFeatureValue(view, NotationPackage.eINSTANCE.getLocation_X(), Integer.valueOf(offset.x));
-							ViewUtil.setStructuralFeatureValue(view, NotationPackage.eINSTANCE.getLocation_Y(), Integer.valueOf(offset.y));
-						}
-					});
-				} catch (Exception e) {
-					Activator.log.debug(e.toString());
-				}
-			}
 		}
 
 		target.setBounds(proposedBounds);
-		if (target instanceof WrappingLabel){
-			cachedString = ((WrappingLabel) target).getText();
-		}
+		cachedIsConstrained = isConstrained;
 	}
 
 	/**
