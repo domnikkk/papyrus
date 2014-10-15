@@ -355,114 +355,165 @@ mapping UMLConnector::toPapyrusConnector() : Connector inherits Connector::toPap
 /****** Element Type queries ******/
 
 query View::getNodeType(element : Element) : String {
+	
+	var type : String := null;
+	var parent := element.container();
+	
+	//Specific cases for Output pins
+	if element.oclIsTypeOf(OutputPin) then {
+		
+		type := switch {
+			case (parent.oclIsTypeOf(OpaqueAction)) '3014'; 
+			case (parent.oclIsTypeOf(CreateObjectAction)) '3087';
+			case (parent.oclIsTypeOf(ReadStructuralFeatureAction)) '3090';
+			case (parent.oclIsTypeOf(AcceptEventAction)) '3064';
+			case (parent.oclIsTypeOf(ValueSpecificationAction)) '3077';
+			case (parent.oclIsTypeOf(AddStructuralFeatureValueAction)) '3094';
+			case (parent.oclIsTypeOf(CallOperationAction)) '3024';
+			case (parent.oclIsTypeOf(CallBehaviorAction)) '3020';
+			case (parent.oclIsTypeOf(ReadVariableAction)) '3098';
+			case (parent.oclIsTypeOf(ReadSelfAction)) '3084';
+			
+			case (parent.oclIsTypeOf(LoopNode) and parent.oclAsType(LoopNode).bodyOutput->includes(element.oclAsType(OutputPin))) '3109';  
+			case (parent.oclIsTypeOf(LoopNode) and parent.oclAsType(LoopNode)._result->includes(element.oclAsType(OutputPin))) '3111';
+			case (parent.oclIsTypeOf(LoopNode) and parent.oclAsType(LoopNode).loopVariable->includes(element.oclAsType(OutputPin))) '3110';
+			
+			else self.fail(); 
+		}; 
+	} endif;
+	
+	//Specific cases for Input pins
+	if element.oclIsTypeOf(InputPin) then {
+			
+		type := switch {
+			case (parent.oclIsTypeOf(LoopNode))	'3105';
+			case (parent.oclIsTypeOf(ReadStructuralFeatureAction)) '3089';
+			case (parent.oclIsTypeOf(BroadcastSignalAction)) '3103';
+			case (parent.oclIsTypeOf(DestroyObjectAction)) '3096';
+			case (parent.oclIsTypeOf(CallBehaviorAction)) '3019';
+			case (parent.oclIsTypeOf(OpaqueAction))	'3013';
+			
+			case (parent.oclIsTypeOf(SendSignalAction) and parent.oclAsType(SendSignalAction).target->includes(element.oclAsType(InputPin))) '3062';
+			case (parent.oclIsTypeOf(SendSignalAction))	'3055';
+			
+			case (parent.oclIsTypeOf(AddStructuralFeatureValueAction) and parent.oclAsType(AddStructuralFeatureValueAction).value->includes(element.oclAsType(InputPin))) '3093'; 
+			case (parent.oclIsTypeOf(AddStructuralFeatureValueAction) and parent.oclAsType(AddStructuralFeatureValueAction)._object->includes(element.oclAsType(InputPin))) '3092';
+			
+			case (parent.oclIsTypeOf(SendObjectAction) and parent.oclAsType(SendObjectAction).target->includes(element.oclAsType(InputPin))) '3051';
+			case (parent.oclIsTypeOf(SendObjectAction) and parent.oclAsType(SendObjectAction).request->includes(element.oclAsType(InputPin))) '3048';
+			 
+			case (parent.oclIsTypeOf(CallOperationAction) and parent.oclAsType(CallOperationAction).target->includes(element.oclAsType(InputPin))) '3027';
+			case (parent.oclIsTypeOf(CallOperationAction)) '3023';
+
+			case (parent.oclIsTypeOf(AddVariableValueAction) and parent.oclAsType(AddVariableValueAction).insertAt->includes(element.oclAsType(InputPin))) '3100';
+			case (parent.oclIsTypeOf(AddVariableValueAction) and parent.oclAsType(AddVariableValueAction).value->includes(element.oclAsType(InputPin))) '3101';
+			
+			else self.fail();
+		};
+
+	} endif;
+	
+	//Specific cases for Action input pins
+	if element.oclIsTypeOf(ActionInputPin) then {
+		type := switch {
+			case (parent.oclIsTypeOf(SendSignalAction) and parent.oclAsType(SendSignalAction).target->includes(element.oclAsType(InputPin))) '3061';
+			case (parent.oclIsTypeOf(SendSignalAction)) '3053';
+			
+			case (parent.oclIsTypeOf(SendObjectAction) and parent.oclAsType(SendObjectAction).target->includes(element.oclAsType(InputPin))) '3050';
+			case (parent.oclIsTypeOf(SendObjectAction) and parent.oclAsType(SendObjectAction).request->includes(element.oclAsType(InputPin))) '3047'; 
+			
+			case (parent.oclIsTypeOf(CallOperationAction) and parent.oclAsType(CallOperationAction).target->includes(element.oclAsType(InputPin))) '3026';
+			case (parent.oclIsTypeOf(CallOperationAction)) '3021';
+			
+			case (parent.oclIsTypeOf(OpaqueAction)) '3016';
+			case (parent.oclIsTypeOf(CallBehaviorAction)) '3018';
+			
+			else self.fail();
+		};
+	
+	} endif;
+	
+	//Specific cases for Value pins
+	if element.oclIsTypeOf(ValuePin) then {
+		type := switch {		 
+			
+			case (parent.oclIsTypeOf(CallBehaviorAction)) '3017';
+			case (parent.oclIsTypeOf(OpaqueAction)) '3015';
+			
+			case (parent.oclIsTypeOf(SendSignalAction) and parent.oclAsType(SendSignalAction).target->includes(element.oclAsType(InputPin))) '3060';
+			case (parent.oclIsTypeOf(SendSignalAction)) '3054';
+			
+			case (parent.oclIsTypeOf(CallOperationAction) and parent.oclAsType(CallOperationAction).target->includes(element.oclAsType(InputPin))) '3025';
+			case (parent.oclIsTypeOf(CallOperationAction)) '3022';
+			
+			case (parent.oclIsTypeOf(SendObjectAction) and parent.oclAsType(SendObjectAction).request->includes(element.oclAsType(InputPin))) '3046';
+			case (parent.oclIsTypeOf(SendObjectAction) and parent.oclAsType(SendObjectAction).target->includes(element.oclAsType(InputPin))) '3049';
+
+			else self.fail();
+		};
+	} endif;
+
+	//TODO: specific cases for constraints (pre/post/...)
+	
+	if type <> null then 
+		return type 
+	endif;
+
+	//Generated cases
 	return
 		if element.oclIsTypeOf(Constraint) then '3112'
 		elif element.oclIsTypeOf(Constraint) then '3002'
 		elif element.oclIsTypeOf(Constraint) then '3003'
 		elif element.oclIsTypeOf(Constraint) then '3011'
 		elif element.oclIsTypeOf(Constraint) then '3012'
-		
 		elif element.oclIsTypeOf(IntervalConstraint) then '3033'
 		elif element.oclIsTypeOf(IntervalConstraint) then '3032' 		
 		elif element.oclIsTypeOf(DurationConstraint) then '3035'
 		elif element.oclIsTypeOf(TimeConstraint) then '3036'
 		elif element.oclIsTypeOf(TimeConstraint) then '3037'
 		elif element.oclIsTypeOf(DurationConstraint) then '3034'
-		
 		elif element.oclIsTypeOf(FlowFinalNode) then '3006' 
-		elif element.oclIsTypeOf(ActivityPartition) then '3067' 
-		 
-		elif element.oclIsTypeOf(ActionInputPin) then '3053' 
-		elif element.oclIsTypeOf(BroadcastSignalAction) then '3102' 
-		elif element.oclIsTypeOf(ActionInputPin) then '3050' 
-		elif element.oclIsTypeOf(ValuePin) then '3022' 
-		 
-		elif element.oclIsTypeOf(ValuePin) then '3060' 
-		elif element.oclIsTypeOf(SequenceNode) then '3073' 
-		elif element.oclIsTypeOf(ActionInputPin) then '3021' 
-		elif element.oclIsTypeOf(InputPin) then '3092' 
-		elif element.oclIsTypeOf(OutputPin) then '3087' 
-		elif element.oclIsTypeOf(InputPin) then '3051' 
+		elif element.oclIsTypeOf(ActivityPartition) then '3067'
+		elif element.oclIsTypeOf(BroadcastSignalAction) then '3102'
+		elif element.oclIsTypeOf(SequenceNode) then '3073'
 		elif element.oclIsTypeOf(ReadSelfAction) then '3081' 
-		elif element.oclIsTypeOf(ActivityFinalNode) then '3005' 
-		elif element.oclIsTypeOf(InputPin) then '3062' 
+		elif element.oclIsTypeOf(ActivityFinalNode) then '3005'
 		elif element.oclIsTypeOf(SendSignalAction) then '3052' 
 		elif element.oclIsTypeOf(InitialNode) then '3004' 
-		elif element.oclIsTypeOf(AddStructuralFeatureValueAction) then '3091' 
-		elif element.oclIsTypeOf(OutputPin) then '3109' 
-		 
-		elif element.oclIsTypeOf(OutputPin) then '3111' 
+		elif element.oclIsTypeOf(AddStructuralFeatureValueAction) then '3091'
 		elif element.oclIsTypeOf(LoopNode) then '3071' 
-		elif element.oclIsTypeOf(OutputPin) then '3014' 
 		elif element.oclIsTypeOf(ForkNode) then '3040' 
 		elif element.oclIsTypeOf(ExpansionNode) then '3074' 
-		elif element.oclIsTypeOf(ActionInputPin) then '3018' 
-		elif element.oclIsTypeOf(InputPin) then '3013' 
-		elif element.oclIsTypeOf(OutputPin) then '3090' 
-		elif element.oclIsTypeOf(OutputPin) then '3064' 
-		elif element.oclIsTypeOf(CallOperationAction) then '3010' 
-		elif element.oclIsTypeOf(InputPin) then '3027' 
-		
-		elif element.oclIsTypeOf(InputPin) then '3105' 
-		 
+		elif element.oclIsTypeOf(CallOperationAction) then '3010'
 		elif element.oclIsTypeOf(AddVariableValueAction) then '3099' 
 		elif element.oclIsTypeOf(ExpansionNode) then '3075' 
-		elif element.oclIsTypeOf(ValuePin) then '3017' 
 		elif element.oclIsTypeOf(Parameter) then '3001' 
 		elif element.oclIsTypeOf(ReadVariableAction) then '3097' 
-		elif element.oclIsTypeOf(OpaqueAction) then '3007' 
-		elif element.oclIsTypeOf(OutputPin) then '3077' 
-		elif element.oclIsTypeOf(ValuePin) then '3046' 
-		elif element.oclIsTypeOf(InputPin) then '3023' 
-		elif element.oclIsTypeOf(InputPin) then '3096' 
-		elif element.oclIsTypeOf(InputPin) then '3055' 
-		elif element.oclIsTypeOf(OutputPin) then '3110' 
-		elif element.oclIsTypeOf(InputPin) then '3019' 
-		elif element.oclIsTypeOf(InputPin) then '3100' 
-		elif element.oclIsTypeOf(InputPin) then '3093' 
-		elif element.oclIsTypeOf(InterruptibleActivityRegion) then '3068' 
-		 
-		elif element.oclIsTypeOf(OutputPin) then '3094' 
+		elif element.oclIsTypeOf(OpaqueAction) then '3007'
+		elif element.oclIsTypeOf(InterruptibleActivityRegion) then '3068'
 		elif element.oclIsTypeOf(JoinNode) then '3041' 
 		elif element.oclIsTypeOf(StructuredActivityNode) then '3065' 
-		elif element.oclIsTypeOf(ConditionalNode) then '3069' 
-		elif element.oclIsTypeOf(OutputPin) then '3024' 
-		elif element.oclIsTypeOf(ActionInputPin) then '3047' 
-		 
-		 
+		elif element.oclIsTypeOf(ConditionalNode) then '3069'
 		elif element.oclIsTypeOf(DecisionNode) then '3038' 
 		elif element.oclIsTypeOf(ActivityParameterNode) then '3059' 
-		elif element.oclIsTypeOf(ActionInputPin) then '3061' 
-		elif element.oclIsTypeOf(ActionInputPin) then '3016' 
 		elif element.oclIsTypeOf(CentralBufferNode) then '3104' 
 		elif element.oclIsTypeOf(Comment) then '3080' 
 		elif element.oclIsTypeOf(DestroyObjectAction) then '3095' 
-		elif element.oclIsTypeOf(CreateObjectAction) then '3086' 
-		elif element.oclIsTypeOf(ValuePin) then '3025' 
-		elif element.oclIsTypeOf(ValuePin) then '3054' 
-		elif element.oclIsTypeOf(OutputPin) then '3098' 
-		elif element.oclIsTypeOf(DataStoreNode) then '3078' 
-		elif element.oclIsTypeOf(InputPin) then '3089' 
-		elif element.oclIsTypeOf(ActionInputPin) then '3026' 
+		elif element.oclIsTypeOf(CreateObjectAction) then '3086'
+		elif element.oclIsTypeOf(DataStoreNode) then '3078'		 
 		elif element.oclIsTypeOf(CallBehaviorAction) then '3008' 
 		elif element.oclIsTypeOf(ExpansionRegion) then '3070' 
-		elif element.oclIsTypeOf(SendObjectAction) then '3042' 
-		elif element.oclIsTypeOf(InputPin) then '3048' 
-		elif element.oclIsTypeOf(InputPin) then '3101' 
-		elif element.oclIsTypeOf(OutputPin) then '3020' 
-		 
-		elif element.oclIsTypeOf(MergeNode) then '3039' 
-		 
-		elif element.oclIsTypeOf(ValuePin) then '3015' 
+		elif element.oclIsTypeOf(SendObjectAction) then '3042'
+		elif element.oclIsTypeOf(MergeNode) then '3039'
 		elif element.oclIsTypeOf(ValueSpecificationAction) then '3076' 
 		elif element.oclIsTypeOf(AcceptEventAction) then '3063' 
 		elif element.oclIsTypeOf(Activity) then '2001' 
-		elif element.oclIsTypeOf(InputPin) then '3103' 
-		elif element.oclIsTypeOf(ReadStructuralFeatureAction) then '3088' 
-		elif element.oclIsTypeOf(OutputPin) then '3084' 
-		elif element.oclIsTypeOf(ValuePin) then '3049' 
+		elif element.oclIsTypeOf(ReadStructuralFeatureAction) then '3088' 		 
 		else self.fail()
 	endif;
+	
+	
+	
 }
 
 
