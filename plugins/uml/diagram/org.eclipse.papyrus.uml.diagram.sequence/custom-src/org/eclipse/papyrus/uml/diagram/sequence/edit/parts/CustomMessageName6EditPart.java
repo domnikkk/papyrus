@@ -18,6 +18,7 @@ import org.eclipse.gmf.runtime.notation.FontStyle;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.IMaskManagedLabelEditPolicy;
+import org.eclipse.papyrus.uml.diagram.common.editpolicies.IDirectEdition;
 import org.eclipse.papyrus.uml.diagram.sequence.edit.policies.MessageLabelEditPolicy.ICustomMessageLabel;
 import org.eclipse.papyrus.uml.diagram.sequence.edit.policies.UMLTextSelectionEditPolicy;
 import org.eclipse.swt.SWT;
@@ -37,6 +38,11 @@ public class CustomMessageName6EditPart extends MessageName6EditPart implements 
 		super(view);
 	}
 
+	@Override
+	public int getDirectEditionType() {
+		return IDirectEdition.DEFAULT_DIRECT_EDITOR;
+	}
+	
 	@Override
 	protected void refreshLabel() {
 		EditPolicy maskLabelPolicy = getParent().getEditPolicy(IMaskManagedLabelEditPolicy.MASK_MANAGED_LABEL_EDIT_POLICY);
