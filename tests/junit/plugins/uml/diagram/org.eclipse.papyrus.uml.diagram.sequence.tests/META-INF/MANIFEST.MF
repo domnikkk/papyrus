@@ -22,15 +22,20 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.papyrus.infra.viewpoints.policy;bundle-version="1.1.0",
  org.eclipse.papyrus.junit.framework;bundle-version="1.1.0",
  org.eclipse.papyrus.junit.utils;bundle-version="1.1.0",
- org.eclipse.papyrus.views.properties;bundle-version="1.1.0"
-Export-Package: org.eclipse.papyrus.uml.diagram.sequence.tests
+ org.eclipse.papyrus.views.properties;bundle-version="1.1.0",
+ org.eclipse.gmf.tooling.runtime
+Export-Package: org.eclipse.papyrus.uml.diagram.sequence.test,
+ org.eclipse.papyrus.uml.diagram.sequence.test.appearance,
+ org.eclipse.papyrus.uml.diagram.sequence.test.createFromPalette,
+ org.eclipse.papyrus.uml.diagram.sequence.test.drop,
+ org.eclipse.papyrus.uml.diagram.sequence.tests,
+ org.eclipse.papyrus.uml.diagram.sequence.tests.canonical
 Bundle-Vendor: %Bundle-Vendor
 Bundle-ActivationPolicy: lazy
 Bundle-Version: 1.1.0.qualifier
 Bundle-Name: %Bundle-Name
 Bundle-ManifestVersion: 2
-Bundle-Activator: org.eclipse.papyrus.uml.diagram.sequence.tests.Activ
- ator
+Bundle-Activator: org.eclipse.papyrus.uml.diagram.sequence.tests.Activator
 Bundle-SymbolicName: org.eclipse.papyrus.uml.diagram.sequence.tests
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 

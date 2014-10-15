@@ -324,4 +324,13 @@ public abstract class CreateNodeFromPaletteTest extends org.eclipse.papyrus.uml.
 		}
 	}
 
+
+	/**
+	 * @return
+	 */
+	protected CreateViewRequest createViewRequestShapeContainer() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

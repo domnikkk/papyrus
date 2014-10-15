@@ -15,6 +15,7 @@ import static org.eclipse.papyrus.junit.framework.classification.TestCategory.Ex
 import static org.eclipse.papyrus.junit.framework.classification.TestCategory.FailingTest;
 import static org.eclipse.papyrus.junit.framework.classification.TestCategory.InteractiveTest;
 import static org.eclipse.papyrus.junit.framework.classification.TestCategory.InvalidTest;
+import static org.eclipse.papyrus.junit.framework.classification.TestCategory.GeneratedTest;
 import static org.eclipse.papyrus.junit.framework.classification.TestCategory.NotImplemented;
 import static org.eclipse.papyrus.junit.framework.classification.TestCategory.Standard;
 
@@ -74,6 +75,11 @@ public class ClassificationConfig {
 	 * and validation through Gerrit
 	 */
 	public static final Set<TestCategory> LIGTHWEIGHT_TESTS_CONFIG = ImmutableSet.copyOf(new TestCategory[]{ InteractiveTest, NotImplemented, FailingTest, InvalidTest, ExpensiveTest });
+
+	/**
+	 * This tests configuration runs only the tests that have been generated with Papyrus Test Generation framework.
+	 */
+	public static final Set<TestCategory> GENERATED_TESTS_CONFIG = ImmutableSet.copyOf(new TestCategory[]{ InteractiveTest, NotImplemented, FailingTest, InvalidTest, ExpensiveTest, Standard });
 
 	/**
 	 * This tests configuration is meant to execute all tests in an automated environment

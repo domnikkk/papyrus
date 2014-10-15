@@ -1,0 +1,721 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmlns:utp="http://www.omg.org/spec/UTP/20120801/utp.xmi" xsi:schemaLocation="http://www.eclipse.org/uml2/5.0.0/UML java://org.eclipse.uml2.uml.UMLPackage http://www.omg.org/spec/UTP/20120801/utp.xmi ../../org.eclipse.upr.utp/model/utp.profile.uml#_0RDYMC0WEeS-HoGdjtWQlg">
+  <uml:Model name="org.eclipse.papyrus.uml.diagram.statemachine.test">
+    <packagedElement xsi:type="uml:Package" name="org.eclipse.papyrus.uml.diagram.statemachine.test.appearance">
+      <packagedElement xsi:type="uml:Class" name="TestStateMachineDiagramAppearanceGen">
+        <elementImport alias="PseudostateDeepHistoryEditPart"/>
+        <elementImport alias="StateEditPart"/>
+        <elementImport alias="PseudostateInitialEditPart"/>
+        <elementImport alias="FinalStateEditPart"/>
+        <elementImport alias="RegionEditPart"/>
+        <elementImport alias="PseudostateChoiceEditPart"/>
+        <elementImport alias="PseudostateTerminateEditPart"/>
+        <elementImport alias="ConstraintEditPart"/>
+        <elementImport alias="PseudostateShallowHistoryEditPart"/>
+        <elementImport alias="CommentEditPart"/>
+        <elementImport alias="PseudostateJunctionEditPart"/>
+        <elementImport alias="PseudostateForkEditPart"/>
+        <elementImport alias="PseudostateJoinEditPart"/>
+        <generalization>
+          <general xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/testingFrameworkBase.uml#_MeWEoDHjEeS_IJz4WAHZuA"/>
+        </generalization>
+        <ownedAttribute name="diagram">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjwcLA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.statemachine/model/StateMachineDiagram.gmfgen.uml#//GenDiagram_PackageEditPart"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="generator">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjJYbA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.statemachine/model/StateMachineDiagram.gmfgen.uml#//GenEditorGenerator_org.eclipse.papyrus.uml.diagram.statemachine"/>
+          </defaultValue>
+        </ownedAttribute>
+      </packagedElement>
+      <profileApplication>
+        <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
+          <references href="../../org.eclipse.upr.utp/model/utp.profile.uml#_0RDYMC0WEeS-HoGdjtWQlg"/>
+        </eAnnotations>
+        <appliedProfile href="../../org.eclipse.upr.utp/model/utp.profile.uml#_iCl4wOVMEeG84fBOY39c0g"/>
+      </profileApplication>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Package" name="org.eclipse.papyrus.uml.diagram.statemachine.test.createFromPalette">
+      <packagedElement xsi:type="uml:Class" name="TestStateMachineDiagramLinkOwnedBySourceGen">
+        <elementImport alias="StateMachineEditPart"/>
+        <elementImport alias="GeneralizationEditPart"/>
+        <generalization>
+          <general xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/testingFrameworkBase.uml#_agsZgAEZEeS1CswA_Bot2A"/>
+        </generalization>
+        <ownedAttribute name="generalizationEditPart">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjxVbA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.statemachine/model/StateMachineDiagram.gmfgen.uml#//GenLink_GeneralizationEditPart"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="diagram">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjwcLA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.statemachine/model/StateMachineDiagram.gmfgen.uml#//GenDiagram_PackageEditPart"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="generator">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjJYbA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.statemachine/model/StateMachineDiagram.gmfgen.uml#//GenEditorGenerator_org.eclipse.papyrus.uml.diagram.statemachine"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="diagramUpdater">
+          <defaultValue xsi:type="uml:StringExpression" symbol="UMLDiagramUpdater"/>
+        </ownedAttribute>
+        <ownedAttribute name="containerEditPart" isDerived="true">
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.statemachine/model/StateMachineDiagram.gmfgen.uml#//GenTopLevelNode_StateMachineEditPart"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="self" type="/0/org.eclipse.papyrus.uml.diagram.statemachine.test.createFromPalette/TestStateMachineDiagramLinkOwnedBySourceGen"/>
+        <ownedBehavior xsi:type="uml:Activity" name="generalizationFromStateMachineToStateMachineTestCase" specification="/0/org.eclipse.papyrus.uml.diagram.statemachine.test.createFromPalette/TestStateMachineDiagramLinkOwnedBySourceGen/testLinkOwnedBySourceGeneralizationFromStateMachineToStateMachine">
+          <ownedNode xsi:type="uml:CallOperationAction">
+            <argument xsi:type="uml:ValuePin" name="link">
+              <value xsi:type="uml:InstanceValue" name="GenLink_GeneralizationEditPart">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.statemachine/model/StateMachineDiagram.gmfgen.uml#//GenLink_GeneralizationEditPart"/>
+              </value>
+            </argument>
+            <argument xsi:type="uml:ValuePin" name="target">
+              <value xsi:type="uml:InstanceValue" name="GenTopLevelNode_StateMachineEditPart">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.statemachine/model/StateMachineDiagram.gmfgen.uml#//GenTopLevelNode_StateMachineEditPart"/>
+              </value>
+            </argument>
+            <argument xsi:type="uml:ValuePin" name="source">
+              <value xsi:type="uml:InstanceValue" name="GenTopLevelNode_StateMachineEditPart">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.statemachine/model/StateMachineDiagram.gmfgen.uml#//GenTopLevelNode_StateMachineEditPart"/>
+              </value>
+            </argument>
+          </ownedNode>
+        </ownedBehavior>
+        <ownedOperation name="testLinkOwnedBySourceGeneralizationFromStateMachineToStateMachine" method="/0/org.eclipse.papyrus.uml.diagram.statemachine.test.createFromPalette/TestStateMachineDiagramLinkOwnedBySourceGen/generalizationFromStateMachineToStateMachineTestCase">
+          <ownedParameter>
+            <defaultValue xsi:type="uml:InstanceValue">
+              <instance href="../../org.eclipse.papyrus.uml.diagram.statemachine/model/StateMachineDiagram.gmfgen.uml#//GenLink_GeneralizationEditPart"/>
+            </defaultValue>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xsi:type="uml:Class" name="TestStateMachineDiagramLinkGen">
+        <elementImport alias="TransitionEditPart"/>
+        <elementImport alias="StateMachineEditPart"/>
+        <generalization>
+          <general xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/testingFrameworkBase.uml#_kHbiID-pEeOBJIvKdeZtpQ"/>
+        </generalization>
+        <ownedAttribute name="transitionEditPart">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjxVbA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.statemachine/model/StateMachineDiagram.gmfgen.uml#//GenLink_TransitionEditPart"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="diagram">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjwcLA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.statemachine/model/StateMachineDiagram.gmfgen.uml#//GenDiagram_PackageEditPart"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="generator">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjJYbA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.statemachine/model/StateMachineDiagram.gmfgen.uml#//GenEditorGenerator_org.eclipse.papyrus.uml.diagram.statemachine"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="diagramUpdater">
+          <defaultValue xsi:type="uml:StringExpression" symbol="UMLDiagramUpdater"/>
+        </ownedAttribute>
+        <ownedAttribute name="self" type="/0/org.eclipse.papyrus.uml.diagram.statemachine.test.createFromPalette/TestStateMachineDiagramLinkGen"/>
+        <ownedAttribute name="containerEditPart" isDerived="true">
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.statemachine/model/StateMachineDiagram.gmfgen.uml#//GenTopLevelNode_StateMachineEditPart"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedBehavior xsi:type="uml:Activity" name="transitionFromStateMachineToStateMachineTestCase" specification="/0/org.eclipse.papyrus.uml.diagram.statemachine.test.createFromPalette/TestStateMachineDiagramLinkGen/testLinkTransitionFromStateMachineToStateMachine">
+          <ownedNode xsi:type="uml:CallOperationAction">
+            <argument xsi:type="uml:ValuePin" name="link">
+              <value xsi:type="uml:InstanceValue" name="GenLink_TransitionEditPart">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.statemachine/model/StateMachineDiagram.gmfgen.uml#//GenLink_TransitionEditPart"/>
+              </value>
+            </argument>
+            <argument xsi:type="uml:ValuePin" name="source">
+              <value xsi:type="uml:InstanceValue" name="GenTopLevelNode_StateMachineEditPart">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.statemachine/model/StateMachineDiagram.gmfgen.uml#//GenTopLevelNode_StateMachineEditPart"/>
+              </value>
+            </argument>
+            <argument xsi:type="uml:ValuePin" name="target">
+              <value xsi:type="uml:InstanceValue" name="GenTopLevelNode_StateMachineEditPart">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.statemachine/model/StateMachineDiagram.gmfgen.uml#//GenTopLevelNode_StateMachineEditPart"/>
+              </value>
+            </argument>
+          </ownedNode>
+        </ownedBehavior>
+        <ownedOperation name="testLinkTransitionFromStateMachineToStateMachine" method="/0/org.eclipse.papyrus.uml.diagram.statemachine.test.createFromPalette/TestStateMachineDiagramLinkGen/transitionFromStateMachineToStateMachineTestCase">
+          <ownedParameter>
+            <defaultValue xsi:type="uml:InstanceValue">
+              <instance href="../../org.eclipse.papyrus.uml.diagram.statemachine/model/StateMachineDiagram.gmfgen.uml#//GenLink_TransitionEditPart"/>
+            </defaultValue>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xsi:type="uml:Class" name="TestStateMachineDiagramTopNodeGen">
+        <elementImport alias="StateMachineEditPart"/>
+        <generalization>
+          <general xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/testingFrameworkBase.uml#_FH-oEAHgEeSXTsFWGl8rRw"/>
+        </generalization>
+        <ownedAttribute name="diagram">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjwcLA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.statemachine/model/StateMachineDiagram.gmfgen.uml#//GenDiagram_PackageEditPart"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="generator">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjJYbA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.statemachine/model/StateMachineDiagram.gmfgen.uml#//GenEditorGenerator_org.eclipse.papyrus.uml.diagram.statemachine"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="diagramUpdater">
+          <defaultValue xsi:type="uml:StringExpression" symbol="UMLDiagramUpdater"/>
+        </ownedAttribute>
+        <ownedAttribute name="self" type="/0/org.eclipse.papyrus.uml.diagram.statemachine.test.createFromPalette/TestStateMachineDiagramTopNodeGen"/>
+        <ownedAttribute name="stateMachineEditPart">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWk_MrA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.statemachine/model/StateMachineDiagram.gmfgen.uml#//GenTopLevelNode_StateMachineEditPart"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="containerEditPart" isDerived="true">
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.statemachine/model/StateMachineDiagram.gmfgen.uml#//GenTopLevelNode_StateMachineEditPart"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedBehavior xsi:type="uml:Activity" name="stateMachineEditPartTestCase" specification="/0/org.eclipse.papyrus.uml.diagram.statemachine.test.createFromPalette/TestStateMachineDiagramTopNodeGen/testTopNodeStateMachineEditPart">
+          <ownedNode xsi:type="uml:CallOperationAction">
+            <argument xsi:type="uml:ValuePin" name="node">
+              <value xsi:type="uml:InstanceValue" name="GenTopLevelNode_StateMachineEditPart">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.statemachine/model/StateMachineDiagram.gmfgen.uml#//GenTopLevelNode_StateMachineEditPart"/>
+              </value>
+            </argument>
+          </ownedNode>
+        </ownedBehavior>
+        <ownedOperation name="testTopNodeStateMachineEditPart" method="/0/org.eclipse.papyrus.uml.diagram.statemachine.test.createFromPalette/TestStateMachineDiagramTopNodeGen/stateMachineEditPartTestCase">
+          <ownedParameter>
+            <defaultValue xsi:type="uml:InstanceValue">
+              <instance href="../../org.eclipse.papyrus.uml.diagram.statemachine/model/StateMachineDiagram.gmfgen.uml#//GenTopLevelNode_StateMachineEditPart"/>
+            </defaultValue>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xsi:type="uml:Class" name="TestStateMachineDiagramChildNodeInStateMachineEditPartGen">
+        <elementImport alias="PseudostateJunctionEditPart"/>
+        <elementImport alias="PseudostateDeepHistoryEditPart"/>
+        <elementImport alias="RegionEditPart"/>
+        <elementImport alias="FinalStateEditPart"/>
+        <elementImport alias="StateEditPart"/>
+        <elementImport alias="PseudostateForkEditPart"/>
+        <elementImport alias="StateMachineEditPart"/>
+        <elementImport alias="PseudostateChoiceEditPart"/>
+        <elementImport alias="PseudostateShallowHistoryEditPart"/>
+        <elementImport alias="ConstraintEditPart"/>
+        <elementImport alias="CommentEditPart"/>
+        <elementImport alias="PseudostateInitialEditPart"/>
+        <elementImport alias="PseudostateTerminateEditPart"/>
+        <elementImport alias="PseudostateJoinEditPart"/>
+        <generalization>
+          <general xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/testingFrameworkBase.uml#_FH-oEAHgEeSXTsFWGl8rRw"/>
+        </generalization>
+        <ownedAttribute name="generator">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjJYbA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.statemachine/model/StateMachineDiagram.gmfgen.uml#//GenEditorGenerator_org.eclipse.papyrus.uml.diagram.statemachine"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="pseudostateForkEditPart">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjxRbA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.statemachine/model/StateMachineDiagram.gmfgen.uml#//GenChildNode_PseudostateForkEditPart"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="pseudostateDeepHistoryEditPart">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjxRbA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.statemachine/model/StateMachineDiagram.gmfgen.uml#//GenChildNode_PseudostateDeepHistoryEditPart"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="pseudostateShallowHistoryEditPart">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjxRbA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.statemachine/model/StateMachineDiagram.gmfgen.uml#//GenChildNode_PseudostateShallowHistoryEditPart"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="pseudostateJoinEditPart">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjxRbA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.statemachine/model/StateMachineDiagram.gmfgen.uml#//GenChildNode_PseudostateJoinEditPart"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="pseudostateChoiceEditPart">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjxRbA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.statemachine/model/StateMachineDiagram.gmfgen.uml#//GenChildNode_PseudostateChoiceEditPart"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="commentEditPart">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjxRbA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.statemachine/model/StateMachineDiagram.gmfgen.uml#//GenChildNode_CommentEditPart"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="stateEditPart">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjxRbA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.statemachine/model/StateMachineDiagram.gmfgen.uml#//GenChildNode_StateEditPart"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="diagramUpdater">
+          <defaultValue xsi:type="uml:StringExpression" symbol="UMLDiagramUpdater"/>
+        </ownedAttribute>
+        <ownedAttribute name="pseudostateTerminateEditPart">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjxRbA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.statemachine/model/StateMachineDiagram.gmfgen.uml#//GenChildNode_PseudostateTerminateEditPart"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="pseudostateJunctionEditPart">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjxRbA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.statemachine/model/StateMachineDiagram.gmfgen.uml#//GenChildNode_PseudostateJunctionEditPart"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="pseudostateInitialEditPart">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjxRbA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.statemachine/model/StateMachineDiagram.gmfgen.uml#//GenChildNode_PseudostateInitialEditPart"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="constraintEditPart">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjxRbA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.statemachine/model/StateMachineDiagram.gmfgen.uml#//GenChildNode_ConstraintEditPart"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="regionEditPart">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjxRbA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.statemachine/model/StateMachineDiagram.gmfgen.uml#//GenChildNode_RegionEditPart"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="finalStateEditPart">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjxRbA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.statemachine/model/StateMachineDiagram.gmfgen.uml#//GenChildNode_FinalStateEditPart"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="containerEditPart" isDerived="true">
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.statemachine/model/StateMachineDiagram.gmfgen.uml#//GenTopLevelNode_StateMachineEditPart"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="diagram">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjwcLA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.statemachine/model/StateMachineDiagram.gmfgen.uml#//GenDiagram_PackageEditPart"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="self" type="/0/org.eclipse.papyrus.uml.diagram.statemachine.test.createFromPalette/TestStateMachineDiagramChildNodeInStateMachineEditPartGen"/>
+        <ownedAttribute name="diagram">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjwcLA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.statemachine/model/StateMachineDiagram.gmfgen.uml#//GenDiagram_PackageEditPart"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="generator">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjJYbA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.statemachine/model/StateMachineDiagram.gmfgen.uml#//GenEditorGenerator_org.eclipse.papyrus.uml.diagram.statemachine"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="diagramUpdater">
+          <defaultValue xsi:type="uml:StringExpression" symbol="UMLDiagramUpdater"/>
+        </ownedAttribute>
+        <ownedAttribute name="containerEditPart" isDerived="true">
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.statemachine/model/StateMachineDiagram.gmfgen.uml#//GenTopLevelNode_StateMachineEditPart"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedBehavior xsi:type="uml:Activity" name="pseudostateJunctionEditPartTestCase" specification="/0/org.eclipse.papyrus.uml.diagram.statemachine.test.createFromPalette/TestStateMachineDiagramChildNodeInStateMachineEditPartGen/testChildNodePseudostateJunctionEditPart">
+          <ownedNode xsi:type="uml:CallOperationAction">
+            <argument xsi:type="uml:ValuePin" name="node">
+              <value xsi:type="uml:InstanceValue" name="GenChildNode_PseudostateJunctionEditPart">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.statemachine/model/StateMachineDiagram.gmfgen.uml#//GenChildNode_PseudostateJunctionEditPart"/>
+              </value>
+            </argument>
+          </ownedNode>
+        </ownedBehavior>
+        <ownedBehavior xsi:type="uml:Activity" name="pseudostateInitialEditPartTestCase" specification="/0/org.eclipse.papyrus.uml.diagram.statemachine.test.createFromPalette/TestStateMachineDiagramChildNodeInStateMachineEditPartGen/testChildNodePseudostateInitialEditPart">
+          <ownedNode xsi:type="uml:CallOperationAction">
+            <argument xsi:type="uml:ValuePin" name="node">
+              <value xsi:type="uml:InstanceValue" name="GenChildNode_PseudostateInitialEditPart">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.statemachine/model/StateMachineDiagram.gmfgen.uml#//GenChildNode_PseudostateInitialEditPart"/>
+              </value>
+            </argument>
+          </ownedNode>
+        </ownedBehavior>
+        <ownedBehavior xsi:type="uml:Activity" name="constraintEditPartTestCase" specification="/0/org.eclipse.papyrus.uml.diagram.statemachine.test.createFromPalette/TestStateMachineDiagramChildNodeInStateMachineEditPartGen/testChildNodeConstraintEditPart">
+          <ownedNode xsi:type="uml:CallOperationAction">
+            <argument xsi:type="uml:ValuePin" name="node">
+              <value xsi:type="uml:InstanceValue" name="GenChildNode_ConstraintEditPart">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.statemachine/model/StateMachineDiagram.gmfgen.uml#//GenChildNode_ConstraintEditPart"/>
+              </value>
+            </argument>
+          </ownedNode>
+        </ownedBehavior>
+        <ownedBehavior xsi:type="uml:Activity" name="pseudostateShallowHistoryEditPartTestCase" specification="/0/org.eclipse.papyrus.uml.diagram.statemachine.test.createFromPalette/TestStateMachineDiagramChildNodeInStateMachineEditPartGen/testChildNodePseudostateShallowHistoryEditPart">
+          <ownedNode xsi:type="uml:CallOperationAction">
+            <argument xsi:type="uml:ValuePin" name="node">
+              <value xsi:type="uml:InstanceValue" name="GenChildNode_PseudostateShallowHistoryEditPart">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.statemachine/model/StateMachineDiagram.gmfgen.uml#//GenChildNode_PseudostateShallowHistoryEditPart"/>
+              </value>
+            </argument>
+          </ownedNode>
+        </ownedBehavior>
+        <ownedBehavior xsi:type="uml:Activity" name="commentEditPartTestCase" specification="/0/org.eclipse.papyrus.uml.diagram.statemachine.test.createFromPalette/TestStateMachineDiagramChildNodeInStateMachineEditPartGen/testChildNodeCommentEditPart">
+          <ownedNode xsi:type="uml:CallOperationAction">
+            <argument xsi:type="uml:ValuePin" name="node">
+              <value xsi:type="uml:InstanceValue" name="GenChildNode_CommentEditPart">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.statemachine/model/StateMachineDiagram.gmfgen.uml#//GenChildNode_CommentEditPart"/>
+              </value>
+            </argument>
+          </ownedNode>
+        </ownedBehavior>
+        <ownedBehavior xsi:type="uml:Activity" name="stateEditPartTestCase" specification="/0/org.eclipse.papyrus.uml.diagram.statemachine.test.createFromPalette/TestStateMachineDiagramChildNodeInStateMachineEditPartGen/testChildNodeStateEditPart">
+          <ownedNode xsi:type="uml:CallOperationAction">
+            <argument xsi:type="uml:ValuePin" name="node">
+              <value xsi:type="uml:InstanceValue" name="GenChildNode_StateEditPart">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.statemachine/model/StateMachineDiagram.gmfgen.uml#//GenChildNode_StateEditPart"/>
+              </value>
+            </argument>
+          </ownedNode>
+        </ownedBehavior>
+        <ownedBehavior xsi:type="uml:Activity" name="pseudostateForkEditPartTestCase" specification="/0/org.eclipse.papyrus.uml.diagram.statemachine.test.createFromPalette/TestStateMachineDiagramChildNodeInStateMachineEditPartGen/testChildNodePseudostateForkEditPart">
+          <ownedNode xsi:type="uml:CallOperationAction">
+            <argument xsi:type="uml:ValuePin" name="node">
+              <value xsi:type="uml:InstanceValue" name="GenChildNode_PseudostateForkEditPart">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.statemachine/model/StateMachineDiagram.gmfgen.uml#//GenChildNode_PseudostateForkEditPart"/>
+              </value>
+            </argument>
+          </ownedNode>
+        </ownedBehavior>
+        <ownedBehavior xsi:type="uml:Activity" name="pseudostateJoinEditPartTestCase" specification="/0/org.eclipse.papyrus.uml.diagram.statemachine.test.createFromPalette/TestStateMachineDiagramChildNodeInStateMachineEditPartGen/testChildNodePseudostateJoinEditPart">
+          <ownedNode xsi:type="uml:CallOperationAction">
+            <argument xsi:type="uml:ValuePin" name="node">
+              <value xsi:type="uml:InstanceValue" name="GenChildNode_PseudostateJoinEditPart">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.statemachine/model/StateMachineDiagram.gmfgen.uml#//GenChildNode_PseudostateJoinEditPart"/>
+              </value>
+            </argument>
+          </ownedNode>
+        </ownedBehavior>
+        <ownedBehavior xsi:type="uml:Activity" name="pseudostateChoiceEditPartTestCase" specification="/0/org.eclipse.papyrus.uml.diagram.statemachine.test.createFromPalette/TestStateMachineDiagramChildNodeInStateMachineEditPartGen/testChildNodePseudostateChoiceEditPart">
+          <ownedNode xsi:type="uml:CallOperationAction">
+            <argument xsi:type="uml:ValuePin" name="node">
+              <value xsi:type="uml:InstanceValue" name="GenChildNode_PseudostateChoiceEditPart">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.statemachine/model/StateMachineDiagram.gmfgen.uml#//GenChildNode_PseudostateChoiceEditPart"/>
+              </value>
+            </argument>
+          </ownedNode>
+        </ownedBehavior>
+        <ownedBehavior xsi:type="uml:Activity" name="finalStateEditPartTestCase" specification="/0/org.eclipse.papyrus.uml.diagram.statemachine.test.createFromPalette/TestStateMachineDiagramChildNodeInStateMachineEditPartGen/testChildNodeFinalStateEditPart">
+          <ownedNode xsi:type="uml:CallOperationAction">
+            <argument xsi:type="uml:ValuePin" name="node">
+              <value xsi:type="uml:InstanceValue" name="GenChildNode_FinalStateEditPart">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.statemachine/model/StateMachineDiagram.gmfgen.uml#//GenChildNode_FinalStateEditPart"/>
+              </value>
+            </argument>
+          </ownedNode>
+        </ownedBehavior>
+        <ownedBehavior xsi:type="uml:Activity" name="regionEditPartTestCase" specification="/0/org.eclipse.papyrus.uml.diagram.statemachine.test.createFromPalette/TestStateMachineDiagramChildNodeInStateMachineEditPartGen/testChildNodeRegionEditPart">
+          <ownedNode xsi:type="uml:CallOperationAction">
+            <argument xsi:type="uml:ValuePin" name="node">
+              <value xsi:type="uml:InstanceValue" name="GenChildNode_RegionEditPart">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.statemachine/model/StateMachineDiagram.gmfgen.uml#//GenChildNode_RegionEditPart"/>
+              </value>
+            </argument>
+          </ownedNode>
+        </ownedBehavior>
+        <ownedBehavior xsi:type="uml:Activity" name="pseudostateDeepHistoryEditPartTestCase" specification="/0/org.eclipse.papyrus.uml.diagram.statemachine.test.createFromPalette/TestStateMachineDiagramChildNodeInStateMachineEditPartGen/testChildNodePseudostateDeepHistoryEditPart">
+          <ownedNode xsi:type="uml:CallOperationAction">
+            <argument xsi:type="uml:ValuePin" name="node">
+              <value xsi:type="uml:InstanceValue" name="GenChildNode_PseudostateDeepHistoryEditPart">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.statemachine/model/StateMachineDiagram.gmfgen.uml#//GenChildNode_PseudostateDeepHistoryEditPart"/>
+              </value>
+            </argument>
+          </ownedNode>
+        </ownedBehavior>
+        <ownedBehavior xsi:type="uml:Activity" name="pseudostateTerminateEditPartTestCase" specification="/0/org.eclipse.papyrus.uml.diagram.statemachine.test.createFromPalette/TestStateMachineDiagramChildNodeInStateMachineEditPartGen/testChildNodePseudostateTerminateEditPart">
+          <ownedNode xsi:type="uml:CallOperationAction">
+            <argument xsi:type="uml:ValuePin" name="node">
+              <value xsi:type="uml:InstanceValue" name="GenChildNode_PseudostateTerminateEditPart">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.statemachine/model/StateMachineDiagram.gmfgen.uml#//GenChildNode_PseudostateTerminateEditPart"/>
+              </value>
+            </argument>
+          </ownedNode>
+        </ownedBehavior>
+        <ownedOperation name="testChildNodeCommentEditPart" method="/0/org.eclipse.papyrus.uml.diagram.statemachine.test.createFromPalette/TestStateMachineDiagramChildNodeInStateMachineEditPartGen/commentEditPartTestCase">
+          <ownedParameter>
+            <defaultValue xsi:type="uml:InstanceValue">
+              <instance href="../../org.eclipse.papyrus.uml.diagram.statemachine/model/StateMachineDiagram.gmfgen.uml#//GenChildNode_CommentEditPart"/>
+            </defaultValue>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation name="testChildNodePseudostateShallowHistoryEditPart" method="/0/org.eclipse.papyrus.uml.diagram.statemachine.test.createFromPalette/TestStateMachineDiagramChildNodeInStateMachineEditPartGen/pseudostateShallowHistoryEditPartTestCase">
+          <ownedParameter>
+            <defaultValue xsi:type="uml:InstanceValue">
+              <instance href="../../org.eclipse.papyrus.uml.diagram.statemachine/model/StateMachineDiagram.gmfgen.uml#//GenChildNode_PseudostateShallowHistoryEditPart"/>
+            </defaultValue>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation name="testChildNodePseudostateTerminateEditPart" method="/0/org.eclipse.papyrus.uml.diagram.statemachine.test.createFromPalette/TestStateMachineDiagramChildNodeInStateMachineEditPartGen/pseudostateTerminateEditPartTestCase">
+          <ownedParameter>
+            <defaultValue xsi:type="uml:InstanceValue">
+              <instance href="../../org.eclipse.papyrus.uml.diagram.statemachine/model/StateMachineDiagram.gmfgen.uml#//GenChildNode_PseudostateTerminateEditPart"/>
+            </defaultValue>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation name="testChildNodePseudostateJunctionEditPart" method="/0/org.eclipse.papyrus.uml.diagram.statemachine.test.createFromPalette/TestStateMachineDiagramChildNodeInStateMachineEditPartGen/pseudostateJunctionEditPartTestCase">
+          <ownedParameter>
+            <defaultValue xsi:type="uml:InstanceValue">
+              <instance href="../../org.eclipse.papyrus.uml.diagram.statemachine/model/StateMachineDiagram.gmfgen.uml#//GenChildNode_PseudostateJunctionEditPart"/>
+            </defaultValue>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation name="testChildNodePseudostateInitialEditPart" method="/0/org.eclipse.papyrus.uml.diagram.statemachine.test.createFromPalette/TestStateMachineDiagramChildNodeInStateMachineEditPartGen/pseudostateInitialEditPartTestCase">
+          <ownedParameter>
+            <defaultValue xsi:type="uml:InstanceValue">
+              <instance href="../../org.eclipse.papyrus.uml.diagram.statemachine/model/StateMachineDiagram.gmfgen.uml#//GenChildNode_PseudostateInitialEditPart"/>
+            </defaultValue>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation name="testChildNodePseudostateChoiceEditPart" method="/0/org.eclipse.papyrus.uml.diagram.statemachine.test.createFromPalette/TestStateMachineDiagramChildNodeInStateMachineEditPartGen/pseudostateChoiceEditPartTestCase">
+          <ownedParameter>
+            <defaultValue xsi:type="uml:InstanceValue">
+              <instance href="../../org.eclipse.papyrus.uml.diagram.statemachine/model/StateMachineDiagram.gmfgen.uml#//GenChildNode_PseudostateChoiceEditPart"/>
+            </defaultValue>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation name="testChildNodeStateEditPart" method="/0/org.eclipse.papyrus.uml.diagram.statemachine.test.createFromPalette/TestStateMachineDiagramChildNodeInStateMachineEditPartGen/stateEditPartTestCase">
+          <ownedParameter>
+            <defaultValue xsi:type="uml:InstanceValue">
+              <instance href="../../org.eclipse.papyrus.uml.diagram.statemachine/model/StateMachineDiagram.gmfgen.uml#//GenChildNode_StateEditPart"/>
+            </defaultValue>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation name="testChildNodeRegionEditPart" method="/0/org.eclipse.papyrus.uml.diagram.statemachine.test.createFromPalette/TestStateMachineDiagramChildNodeInStateMachineEditPartGen/regionEditPartTestCase">
+          <ownedParameter>
+            <defaultValue xsi:type="uml:InstanceValue">
+              <instance href="../../org.eclipse.papyrus.uml.diagram.statemachine/model/StateMachineDiagram.gmfgen.uml#//GenChildNode_RegionEditPart"/>
+            </defaultValue>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation name="testChildNodePseudostateDeepHistoryEditPart" method="/0/org.eclipse.papyrus.uml.diagram.statemachine.test.createFromPalette/TestStateMachineDiagramChildNodeInStateMachineEditPartGen/pseudostateDeepHistoryEditPartTestCase">
+          <ownedParameter>
+            <defaultValue xsi:type="uml:InstanceValue">
+              <instance href="../../org.eclipse.papyrus.uml.diagram.statemachine/model/StateMachineDiagram.gmfgen.uml#//GenChildNode_PseudostateDeepHistoryEditPart"/>
+            </defaultValue>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation name="testChildNodeFinalStateEditPart" method="/0/org.eclipse.papyrus.uml.diagram.statemachine.test.createFromPalette/TestStateMachineDiagramChildNodeInStateMachineEditPartGen/finalStateEditPartTestCase">
+          <ownedParameter>
+            <defaultValue xsi:type="uml:InstanceValue">
+              <instance href="../../org.eclipse.papyrus.uml.diagram.statemachine/model/StateMachineDiagram.gmfgen.uml#//GenChildNode_FinalStateEditPart"/>
+            </defaultValue>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation name="testChildNodePseudostateJoinEditPart" method="/0/org.eclipse.papyrus.uml.diagram.statemachine.test.createFromPalette/TestStateMachineDiagramChildNodeInStateMachineEditPartGen/pseudostateJoinEditPartTestCase">
+          <ownedParameter>
+            <defaultValue xsi:type="uml:InstanceValue">
+              <instance href="../../org.eclipse.papyrus.uml.diagram.statemachine/model/StateMachineDiagram.gmfgen.uml#//GenChildNode_PseudostateJoinEditPart"/>
+            </defaultValue>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation name="testChildNodePseudostateForkEditPart" method="/0/org.eclipse.papyrus.uml.diagram.statemachine.test.createFromPalette/TestStateMachineDiagramChildNodeInStateMachineEditPartGen/pseudostateForkEditPartTestCase">
+          <ownedParameter>
+            <defaultValue xsi:type="uml:InstanceValue">
+              <instance href="../../org.eclipse.papyrus.uml.diagram.statemachine/model/StateMachineDiagram.gmfgen.uml#//GenChildNode_PseudostateForkEditPart"/>
+            </defaultValue>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation name="testChildNodeConstraintEditPart" method="/0/org.eclipse.papyrus.uml.diagram.statemachine.test.createFromPalette/TestStateMachineDiagramChildNodeInStateMachineEditPartGen/constraintEditPartTestCase">
+          <ownedParameter>
+            <defaultValue xsi:type="uml:InstanceValue">
+              <instance href="../../org.eclipse.papyrus.uml.diagram.statemachine/model/StateMachineDiagram.gmfgen.uml#//GenChildNode_ConstraintEditPart"/>
+            </defaultValue>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+      <profileApplication>
+        <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
+          <references href="../../org.eclipse.upr.utp/model/utp.profile.uml#_0RDYMC0WEeS-HoGdjtWQlg"/>
+        </eAnnotations>
+        <appliedProfile href="../../org.eclipse.upr.utp/model/utp.profile.uml#_iCl4wOVMEeG84fBOY39c0g"/>
+      </profileApplication>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Package" name="org.eclipse.papyrus.uml.diagram.statemachine.test.drop">
+      <packagedElement xsi:type="uml:Class" name="TestStateMachineDiagramDropGen">
+        <elementImport alias="PseudostateForkEditPart"/>
+        <elementImport alias="PseudostateShallowHistoryEditPart"/>
+        <elementImport alias="RegionEditPart"/>
+        <elementImport alias="PseudostateJoinEditPart"/>
+        <elementImport alias="StateMachineEditPart"/>
+        <elementImport alias="StateEditPart"/>
+        <elementImport alias="PseudostateChoiceEditPart"/>
+        <elementImport alias="PseudostateJunctionEditPart"/>
+        <elementImport alias="PseudostateDeepHistoryEditPart"/>
+        <elementImport alias="FinalStateEditPart"/>
+        <elementImport alias="PseudostateInitialEditPart"/>
+        <elementImport alias="ConstraintEditPart"/>
+        <elementImport alias="PseudostateTerminateEditPart"/>
+        <elementImport alias="CommentEditPart"/>
+        <generalization>
+          <general xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/testingFrameworkBase.uml#_a-LPcEpGEeSXIouijOm2Dw"/>
+        </generalization>
+        <ownedAttribute name="generator">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjJYbA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.statemachine/model/StateMachineDiagram.gmfgen.uml#//GenEditorGenerator_org.eclipse.papyrus.uml.diagram.statemachine"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="diagram">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjwcLA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.statemachine/model/StateMachineDiagram.gmfgen.uml#//GenDiagram_PackageEditPart"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="stateMachineEditPart">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWk_MrA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.statemachine/model/StateMachineDiagram.gmfgen.uml#//GenTopLevelNode_StateMachineEditPart"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedBehavior xsi:type="uml:Activity" name="stateMachineEditPartTestCase" specification="/0/org.eclipse.papyrus.uml.diagram.statemachine.test.drop/TestStateMachineDiagramDropGen/testDropNodeStateMachineEditPart">
+          <ownedNode xsi:type="uml:CallOperationAction">
+            <argument xsi:type="uml:ValuePin" name="node">
+              <value xsi:type="uml:InstanceValue" name="GenTopLevelNode_StateMachineEditPart">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.statemachine/model/StateMachineDiagram.gmfgen.uml#//GenTopLevelNode_StateMachineEditPart"/>
+              </value>
+            </argument>
+          </ownedNode>
+        </ownedBehavior>
+        <ownedOperation name="testDropNodeStateMachineEditPart" method="/0/org.eclipse.papyrus.uml.diagram.statemachine.test.drop/TestStateMachineDiagramDropGen/stateMachineEditPartTestCase">
+          <ownedParameter>
+            <defaultValue xsi:type="uml:InstanceValue">
+              <instance href="../../org.eclipse.papyrus.uml.diagram.statemachine/model/StateMachineDiagram.gmfgen.uml#//GenTopLevelNode_StateMachineEditPart"/>
+            </defaultValue>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+      <profileApplication>
+        <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
+          <references href="../../org.eclipse.upr.utp/model/utp.profile.uml#_0RDYMC0WEeS-HoGdjtWQlg"/>
+        </eAnnotations>
+        <appliedProfile href="../../org.eclipse.upr.utp/model/utp.profile.uml#_iCl4wOVMEeG84fBOY39c0g"/>
+      </profileApplication>
+    </packagedElement>
+    <profileApplication>
+      <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references href="../../org.eclipse.upr.utp/model/utp.profile.uml#_0RDYMC0WEeS-HoGdjtWQlg"/>
+      </eAnnotations>
+      <appliedProfile href="../../org.eclipse.upr.utp/model/utp.profile.uml#_iCl4wOVMEeG84fBOY39c0g"/>
+    </profileApplication>
+  </uml:Model>
+  <utp:SUT base_Property="/0/org.eclipse.papyrus.uml.diagram.statemachine.test.createFromPalette/TestStateMachineDiagramChildNodeInStateMachineEditPartGen/constraintEditPart"/>
+  <utp:TestContext base_BehavioredClassifier="/0/org.eclipse.papyrus.uml.diagram.statemachine.test.appearance/TestStateMachineDiagramAppearanceGen" base_StructuredClassifier="/0/org.eclipse.papyrus.uml.diagram.statemachine.test.appearance/TestStateMachineDiagramAppearanceGen"/>
+  <utp:TestCase base_Operation="/0/org.eclipse.papyrus.uml.diagram.statemachine.test.createFromPalette/TestStateMachineDiagramChildNodeInStateMachineEditPartGen/testChildNodePseudostateForkEditPart"/>
+  <utp:TestContext/>
+  <utp:SUT/>
+  <utp:TestContext/>
+  <utp:SUT/>
+  <utp:SUT/>
+  <utp:SUT base_Property="/0/org.eclipse.papyrus.uml.diagram.statemachine.test.createFromPalette/TestStateMachineDiagramChildNodeInStateMachineEditPartGen/pseudostateForkEditPart"/>
+  <utp:TestCase base_Operation="/0/org.eclipse.papyrus.uml.diagram.statemachine.test.createFromPalette/TestStateMachineDiagramChildNodeInStateMachineEditPartGen/testChildNodePseudostateDeepHistoryEditPart"/>
+  <utp:SUT base_Property="/0/org.eclipse.papyrus.uml.diagram.statemachine.test.createFromPalette/TestStateMachineDiagramChildNodeInStateMachineEditPartGen/finalStateEditPart"/>
+  <utp:TestCase base_Operation="/0/org.eclipse.papyrus.uml.diagram.statemachine.test.createFromPalette/TestStateMachineDiagramChildNodeInStateMachineEditPartGen/testChildNodePseudostateShallowHistoryEditPart"/>
+  <utp:TestContext base_BehavioredClassifier="/0/org.eclipse.papyrus.uml.diagram.statemachine.test.createFromPalette/TestStateMachineDiagramChildNodeInStateMachineEditPartGen" base_StructuredClassifier="/0/org.eclipse.papyrus.uml.diagram.statemachine.test.createFromPalette/TestStateMachineDiagramChildNodeInStateMachineEditPartGen"/>
+  <utp:TestCase/>
+  <utp:SUT base_Property="/0/org.eclipse.papyrus.uml.diagram.statemachine.test.drop/TestStateMachineDiagramDropGen/generator"/>
+  <utp:SUT/>
+  <utp:TestContext base_BehavioredClassifier="/0/org.eclipse.papyrus.uml.diagram.statemachine.test.createFromPalette/TestStateMachineDiagramTopNodeGen" base_StructuredClassifier="/0/org.eclipse.papyrus.uml.diagram.statemachine.test.createFromPalette/TestStateMachineDiagramTopNodeGen"/>
+  <utp:TestCase/>
+  <utp:SUT base_Property="/0/org.eclipse.papyrus.uml.diagram.statemachine.test.appearance/TestStateMachineDiagramAppearanceGen/generator"/>
+  <utp:SUT/>
+  <utp:SUT base_Property="/0/org.eclipse.papyrus.uml.diagram.statemachine.test.appearance/TestStateMachineDiagramAppearanceGen/diagram"/>
+  <utp:TestCase base_Operation="/0/org.eclipse.papyrus.uml.diagram.statemachine.test.createFromPalette/TestStateMachineDiagramChildNodeInStateMachineEditPartGen/testChildNodeConstraintEditPart"/>
+  <utp:SUT/>
+  <utp:TestCase base_Operation="/0/org.eclipse.papyrus.uml.diagram.statemachine.test.createFromPalette/TestStateMachineDiagramChildNodeInStateMachineEditPartGen/testChildNodeFinalStateEditPart"/>
+  <utp:TestCase/>
+  <utp:TestCase base_Operation="/0/org.eclipse.papyrus.uml.diagram.statemachine.test.createFromPalette/TestStateMachineDiagramChildNodeInStateMachineEditPartGen/testChildNodePseudostateChoiceEditPart"/>
+  <utp:SUT base_Property="/0/org.eclipse.papyrus.uml.diagram.statemachine.test.createFromPalette/TestStateMachineDiagramChildNodeInStateMachineEditPartGen/commentEditPart"/>
+  <utp:SUT base_Property="/0/org.eclipse.papyrus.uml.diagram.statemachine.test.createFromPalette/TestStateMachineDiagramChildNodeInStateMachineEditPartGen/pseudostateInitialEditPart"/>
+  <utp:TestCase base_Operation="/0/org.eclipse.papyrus.uml.diagram.statemachine.test.createFromPalette/TestStateMachineDiagramLinkGen/testLinkTransitionFromStateMachineToStateMachine"/>
+  <utp:TestCase/>
+  <utp:SUT base_Property="/0/org.eclipse.papyrus.uml.diagram.statemachine.test.createFromPalette/TestStateMachineDiagramChildNodeInStateMachineEditPartGen/pseudostateChoiceEditPart"/>
+  <utp:SUT base_Property="/0/org.eclipse.papyrus.uml.diagram.statemachine.test.createFromPalette/TestStateMachineDiagramChildNodeInStateMachineEditPartGen/pseudostateTerminateEditPart"/>
+  <utp:SUT base_Property="/0/org.eclipse.papyrus.uml.diagram.statemachine.test.createFromPalette/TestStateMachineDiagramLinkOwnedBySourceGen/generalizationEditPart"/>
+  <utp:TestCase base_Operation="/0/org.eclipse.papyrus.uml.diagram.statemachine.test.createFromPalette/TestStateMachineDiagramChildNodeInStateMachineEditPartGen/testChildNodePseudostateTerminateEditPart"/>
+  <utp:TestContext/>
+  <utp:SUT/>
+  <utp:TestCase base_Operation="/0/org.eclipse.papyrus.uml.diagram.statemachine.test.createFromPalette/TestStateMachineDiagramTopNodeGen/testTopNodeStateMachineEditPart"/>
+  <utp:TestCase/>
+  <utp:SUT/>
+  <utp:SUT base_Property="/0/org.eclipse.papyrus.uml.diagram.statemachine.test.createFromPalette/TestStateMachineDiagramChildNodeInStateMachineEditPartGen/regionEditPart"/>
+  <utp:TestContext base_BehavioredClassifier="/0/org.eclipse.papyrus.uml.diagram.statemachine.test.createFromPalette/TestStateMachineDiagramLinkGen" base_StructuredClassifier="/0/org.eclipse.papyrus.uml.diagram.statemachine.test.createFromPalette/TestStateMachineDiagramLinkGen"/>
+  <utp:SUT base_Property="/0/org.eclipse.papyrus.uml.diagram.statemachine.test.createFromPalette/TestStateMachineDiagramChildNodeInStateMachineEditPartGen/stateEditPart"/>
+  <utp:SUT/>
+  <utp:TestCase base_Operation="/0/org.eclipse.papyrus.uml.diagram.statemachine.test.createFromPalette/TestStateMachineDiagramChildNodeInStateMachineEditPartGen/testChildNodePseudostateJunctionEditPart"/>
+  <utp:TestCase/>
+  <utp:SUT/>
+  <utp:TestCase/>
+  <utp:SUT base_Property="/0/org.eclipse.papyrus.uml.diagram.statemachine.test.drop/TestStateMachineDiagramDropGen/diagram"/>
+  <utp:SUT base_Property="/0/org.eclipse.papyrus.uml.diagram.statemachine.test.createFromPalette/TestStateMachineDiagramChildNodeInStateMachineEditPartGen/pseudostateDeepHistoryEditPart"/>
+  <utp:SUT/>
+  <utp:TestCase base_Operation="/0/org.eclipse.papyrus.uml.diagram.statemachine.test.createFromPalette/TestStateMachineDiagramChildNodeInStateMachineEditPartGen/testChildNodePseudostateInitialEditPart"/>
+  <utp:TestCase/>
+  <utp:TestCase/>
+  <utp:TestContext base_BehavioredClassifier="/0/org.eclipse.papyrus.uml.diagram.statemachine.test.createFromPalette/TestStateMachineDiagramLinkOwnedBySourceGen" base_StructuredClassifier="/0/org.eclipse.papyrus.uml.diagram.statemachine.test.createFromPalette/TestStateMachineDiagramLinkOwnedBySourceGen"/>
+  <utp:TestContext/>
+  <utp:TestCase base_Operation="/0/org.eclipse.papyrus.uml.diagram.statemachine.test.drop/TestStateMachineDiagramDropGen/testDropNodeStateMachineEditPart"/>
+  <utp:SUT/>
+  <utp:SUT/>
+  <utp:TestCase base_Operation="/0/org.eclipse.papyrus.uml.diagram.statemachine.test.createFromPalette/TestStateMachineDiagramChildNodeInStateMachineEditPartGen/testChildNodeCommentEditPart"/>
+  <utp:SUT/>
+  <utp:TestContext base_BehavioredClassifier="/0/org.eclipse.papyrus.uml.diagram.statemachine.test.drop/TestStateMachineDiagramDropGen" base_StructuredClassifier="/0/org.eclipse.papyrus.uml.diagram.statemachine.test.drop/TestStateMachineDiagramDropGen"/>
+  <utp:TestCase/>
+  <utp:SUT base_Property="/0/org.eclipse.papyrus.uml.diagram.statemachine.test.createFromPalette/TestStateMachineDiagramChildNodeInStateMachineEditPartGen/pseudostateJunctionEditPart"/>
+  <utp:TestCase/>
+  <utp:SUT base_Property="/0/org.eclipse.papyrus.uml.diagram.statemachine.test.createFromPalette/TestStateMachineDiagramChildNodeInStateMachineEditPartGen/pseudostateJoinEditPart"/>
+  <utp:SUT/>
+  <utp:SUT/>
+  <utp:TestCase base_Operation="/0/org.eclipse.papyrus.uml.diagram.statemachine.test.createFromPalette/TestStateMachineDiagramChildNodeInStateMachineEditPartGen/testChildNodeRegionEditPart"/>
+  <utp:TestContext/>
+  <utp:TestCase base_Operation="/0/org.eclipse.papyrus.uml.diagram.statemachine.test.createFromPalette/TestStateMachineDiagramChildNodeInStateMachineEditPartGen/testChildNodeStateEditPart"/>
+  <utp:TestContext/>
+  <utp:TestCase/>
+  <utp:SUT/>
+  <utp:SUT/>
+  <utp:TestCase/>
+  <utp:SUT base_Property="/0/org.eclipse.papyrus.uml.diagram.statemachine.test.drop/TestStateMachineDiagramDropGen/stateMachineEditPart"/>
+  <utp:TestCase/>
+  <utp:SUT/>
+  <utp:TestCase/>
+  <utp:TestCase base_Operation="/0/org.eclipse.papyrus.uml.diagram.statemachine.test.createFromPalette/TestStateMachineDiagramLinkOwnedBySourceGen/testLinkOwnedBySourceGeneralizationFromStateMachineToStateMachine"/>
+  <utp:SUT base_Property="/0/org.eclipse.papyrus.uml.diagram.statemachine.test.createFromPalette/TestStateMachineDiagramLinkGen/transitionEditPart"/>
+  <utp:TestCase base_Operation="/0/org.eclipse.papyrus.uml.diagram.statemachine.test.createFromPalette/TestStateMachineDiagramChildNodeInStateMachineEditPartGen/testChildNodePseudostateJoinEditPart"/>
+  <utp:TestCase/>
+  <utp:SUT/>
+  <utp:SUT base_Property="/0/org.eclipse.papyrus.uml.diagram.statemachine.test.createFromPalette/TestStateMachineDiagramTopNodeGen/stateMachineEditPart"/>
+  <utp:SUT/>
+  <utp:SUT base_Property="/0/org.eclipse.papyrus.uml.diagram.statemachine.test.createFromPalette/TestStateMachineDiagramChildNodeInStateMachineEditPartGen/pseudostateShallowHistoryEditPart"/>
+  <utp:TestCase/>
+</xmi:XMI>

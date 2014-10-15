@@ -18,7 +18,8 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.papyrus.uml.service.types;bundle-version="1.1.0",
  org.eclipse.uml2.uml.editor,
  org.eclipse.papyrus.junit.utils;bundle-version="1.1.0"
-Export-Package: org.eclipse.papyrus.uml.diagram.activity.tests
+Export-Package: org.eclipse.papyrus.uml.diagram.activity.test,
+ org.eclipse.papyrus.uml.diagram.activity.tests
 Bundle-Vendor: %providerName
 Bundle-ActivationPolicy: lazy
 Bundle-Version: 1.1.0.qualifier

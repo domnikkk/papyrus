@@ -1,0 +1,922 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmlns:utp="http://www.omg.org/spec/UTP/20120801/utp.xmi" xsi:schemaLocation="http://www.eclipse.org/uml2/5.0.0/UML java://org.eclipse.uml2.uml.UMLPackage http://www.omg.org/spec/UTP/20120801/utp.xmi ../../org.eclipse.upr.utp/model/utp.profile.uml#_0RDYMC0WEeS-HoGdjtWQlg">
+  <uml:Model name="org.eclipse.papyrus.uml.diagram.timing.test">
+    <packagedElement xsi:type="uml:Package" name="org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette">
+      <packagedElement xsi:type="uml:Class" name="TestTimingDiagramLinkOwnedBySourceGen">
+        <elementImport alias="InteractionEditPartTN"/>
+        <elementImport alias="GeneralizationEditPart"/>
+        <generalization>
+          <general xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/testingFrameworkBase.uml#_agsZgAEZEeS1CswA_Bot2A"/>
+        </generalization>
+        <ownedAttribute name="diagram">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjwcLA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenDiagram_TimingDiagramEditPart"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="generator">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjJYbA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenEditorGenerator_org.eclipse.papyrus.uml.diagram.timing"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="diagramUpdater">
+          <defaultValue xsi:type="uml:StringExpression" symbol="UMLDiagramUpdater"/>
+        </ownedAttribute>
+        <ownedAttribute name="containerEditPart" isDerived="true">
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenTopLevelNode_InteractionEditPartTN"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="self" type="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramLinkOwnedBySourceGen"/>
+      </packagedElement>
+      <packagedElement xsi:type="uml:Class" name="TestTimingDiagramTopNodeGen">
+        <elementImport alias="InteractionEditPartTN"/>
+        <generalization>
+          <general xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/testingFrameworkBase.uml#_FH-oEAHgEeSXTsFWGl8rRw"/>
+        </generalization>
+        <ownedAttribute name="containerEditPart" isDerived="true">
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenTopLevelNode_InteractionEditPartTN"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="generator">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjJYbA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenEditorGenerator_org.eclipse.papyrus.uml.diagram.timing"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="diagram">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjwcLA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenDiagram_TimingDiagramEditPart"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="self" type="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramTopNodeGen"/>
+        <ownedAttribute name="diagramUpdater">
+          <defaultValue xsi:type="uml:StringExpression" symbol="UMLDiagramUpdater"/>
+        </ownedAttribute>
+        <ownedAttribute name="interactionEditPartTN">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWk_MrA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenTopLevelNode_InteractionEditPartTN"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedBehavior xsi:type="uml:Activity" name="interactionEditPartTNTestCase" specification="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramTopNodeGen/testTopNodeInteractionEditPartTN">
+          <ownedNode xsi:type="uml:CallOperationAction">
+            <argument xsi:type="uml:ValuePin" name="node">
+              <value xsi:type="uml:InstanceValue" name="GenTopLevelNode_InteractionEditPartTN">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenTopLevelNode_InteractionEditPartTN"/>
+              </value>
+            </argument>
+          </ownedNode>
+        </ownedBehavior>
+        <ownedOperation name="testTopNodeInteractionEditPartTN" method="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramTopNodeGen/interactionEditPartTNTestCase">
+          <ownedParameter>
+            <defaultValue xsi:type="uml:InstanceValue">
+              <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenTopLevelNode_InteractionEditPartTN"/>
+            </defaultValue>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xsi:type="uml:Class" name="TestTimingDiagramLinkGen">
+        <elementImport alias="InteractionEditPartTN"/>
+        <elementImport alias="MessageReplyEditPart"/>
+        <elementImport alias="MessageAsyncEditPart"/>
+        <elementImport alias="MessageFoundEditPart"/>
+        <elementImport alias="MessageCreateEditPart"/>
+        <elementImport alias="MessageDeleteEditPart"/>
+        <elementImport alias="MessageLostEditPart"/>
+        <elementImport alias="MessageSyncEditPart"/>
+        <generalization>
+          <general xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/testingFrameworkBase.uml#_kHbiID-pEeOBJIvKdeZtpQ"/>
+        </generalization>
+        <ownedAttribute name="messageReplyEditPart">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjxVbA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenLink_MessageReplyEditPart"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="messageDeleteEditPart">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjxVbA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenLink_MessageDeleteEditPart"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="messageAsyncEditPart">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjxVbA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenLink_MessageAsyncEditPart"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="messageLostEditPart">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjxVbA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenLink_MessageLostEditPart"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="messageSyncEditPart">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjxVbA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenLink_MessageSyncEditPart"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="messageFoundEditPart">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjxVbA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenLink_MessageFoundEditPart"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="messageCreateEditPart">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjxVbA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenLink_MessageCreateEditPart"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="diagram">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjwcLA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenDiagram_TimingDiagramEditPart"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="generator">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjJYbA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenEditorGenerator_org.eclipse.papyrus.uml.diagram.timing"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="diagramUpdater">
+          <defaultValue xsi:type="uml:StringExpression" symbol="UMLDiagramUpdater"/>
+        </ownedAttribute>
+        <ownedAttribute name="self" type="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramLinkGen"/>
+        <ownedAttribute name="containerEditPart" isDerived="true">
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenTopLevelNode_InteractionEditPartTN"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedBehavior xsi:type="uml:Activity" name="messageCreateFromInteractionTNToInteractionTNTestCase" specification="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramLinkGen/testLinkMessageCreateFromInteractionTNToInteractionTN">
+          <ownedNode xsi:type="uml:CallOperationAction">
+            <argument xsi:type="uml:ValuePin" name="target">
+              <value xsi:type="uml:InstanceValue" name="GenTopLevelNode_InteractionEditPartTN">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenTopLevelNode_InteractionEditPartTN"/>
+              </value>
+            </argument>
+            <argument xsi:type="uml:ValuePin" name="source">
+              <value xsi:type="uml:InstanceValue" name="GenTopLevelNode_InteractionEditPartTN">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenTopLevelNode_InteractionEditPartTN"/>
+              </value>
+            </argument>
+            <argument xsi:type="uml:ValuePin" name="link">
+              <value xsi:type="uml:InstanceValue" name="GenLink_MessageCreateEditPart">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenLink_MessageCreateEditPart"/>
+              </value>
+            </argument>
+          </ownedNode>
+        </ownedBehavior>
+        <ownedBehavior xsi:type="uml:Activity" name="messageFoundFromInteractionTNToInteractionTNTestCase" specification="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramLinkGen/testLinkMessageFoundFromInteractionTNToInteractionTN">
+          <ownedNode xsi:type="uml:CallOperationAction">
+            <argument xsi:type="uml:ValuePin" name="target">
+              <value xsi:type="uml:InstanceValue" name="GenTopLevelNode_InteractionEditPartTN">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenTopLevelNode_InteractionEditPartTN"/>
+              </value>
+            </argument>
+            <argument xsi:type="uml:ValuePin" name="source">
+              <value xsi:type="uml:InstanceValue" name="GenTopLevelNode_InteractionEditPartTN">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenTopLevelNode_InteractionEditPartTN"/>
+              </value>
+            </argument>
+            <argument xsi:type="uml:ValuePin" name="link">
+              <value xsi:type="uml:InstanceValue" name="GenLink_MessageFoundEditPart">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenLink_MessageFoundEditPart"/>
+              </value>
+            </argument>
+          </ownedNode>
+        </ownedBehavior>
+        <ownedBehavior xsi:type="uml:Activity" name="messageAsyncFromInteractionTNToInteractionTNTestCase" specification="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramLinkGen/testLinkMessageAsyncFromInteractionTNToInteractionTN">
+          <ownedNode xsi:type="uml:CallOperationAction">
+            <argument xsi:type="uml:ValuePin" name="target">
+              <value xsi:type="uml:InstanceValue" name="GenTopLevelNode_InteractionEditPartTN">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenTopLevelNode_InteractionEditPartTN"/>
+              </value>
+            </argument>
+            <argument xsi:type="uml:ValuePin" name="source">
+              <value xsi:type="uml:InstanceValue" name="GenTopLevelNode_InteractionEditPartTN">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenTopLevelNode_InteractionEditPartTN"/>
+              </value>
+            </argument>
+            <argument xsi:type="uml:ValuePin" name="link">
+              <value xsi:type="uml:InstanceValue" name="GenLink_MessageAsyncEditPart">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenLink_MessageAsyncEditPart"/>
+              </value>
+            </argument>
+          </ownedNode>
+        </ownedBehavior>
+        <ownedBehavior xsi:type="uml:Activity" name="messageDeleteFromInteractionTNToInteractionTNTestCase" specification="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramLinkGen/testLinkMessageDeleteFromInteractionTNToInteractionTN">
+          <ownedNode xsi:type="uml:CallOperationAction">
+            <argument xsi:type="uml:ValuePin" name="link">
+              <value xsi:type="uml:InstanceValue" name="GenLink_MessageDeleteEditPart">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenLink_MessageDeleteEditPart"/>
+              </value>
+            </argument>
+            <argument xsi:type="uml:ValuePin" name="source">
+              <value xsi:type="uml:InstanceValue" name="GenTopLevelNode_InteractionEditPartTN">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenTopLevelNode_InteractionEditPartTN"/>
+              </value>
+            </argument>
+            <argument xsi:type="uml:ValuePin" name="target">
+              <value xsi:type="uml:InstanceValue" name="GenTopLevelNode_InteractionEditPartTN">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenTopLevelNode_InteractionEditPartTN"/>
+              </value>
+            </argument>
+          </ownedNode>
+        </ownedBehavior>
+        <ownedBehavior xsi:type="uml:Activity" name="messageReplyFromInteractionTNToInteractionTNTestCase" specification="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramLinkGen/testLinkMessageReplyFromInteractionTNToInteractionTN">
+          <ownedNode xsi:type="uml:CallOperationAction">
+            <argument xsi:type="uml:ValuePin" name="link">
+              <value xsi:type="uml:InstanceValue" name="GenLink_MessageReplyEditPart">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenLink_MessageReplyEditPart"/>
+              </value>
+            </argument>
+            <argument xsi:type="uml:ValuePin" name="target">
+              <value xsi:type="uml:InstanceValue" name="GenTopLevelNode_InteractionEditPartTN">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenTopLevelNode_InteractionEditPartTN"/>
+              </value>
+            </argument>
+            <argument xsi:type="uml:ValuePin" name="source">
+              <value xsi:type="uml:InstanceValue" name="GenTopLevelNode_InteractionEditPartTN">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenTopLevelNode_InteractionEditPartTN"/>
+              </value>
+            </argument>
+          </ownedNode>
+        </ownedBehavior>
+        <ownedBehavior xsi:type="uml:Activity" name="messageSyncFromInteractionTNToInteractionTNTestCase" specification="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramLinkGen/testLinkMessageSyncFromInteractionTNToInteractionTN">
+          <ownedNode xsi:type="uml:CallOperationAction">
+            <argument xsi:type="uml:ValuePin" name="target">
+              <value xsi:type="uml:InstanceValue" name="GenTopLevelNode_InteractionEditPartTN">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenTopLevelNode_InteractionEditPartTN"/>
+              </value>
+            </argument>
+            <argument xsi:type="uml:ValuePin" name="source">
+              <value xsi:type="uml:InstanceValue" name="GenTopLevelNode_InteractionEditPartTN">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenTopLevelNode_InteractionEditPartTN"/>
+              </value>
+            </argument>
+            <argument xsi:type="uml:ValuePin" name="link">
+              <value xsi:type="uml:InstanceValue" name="GenLink_MessageSyncEditPart">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenLink_MessageSyncEditPart"/>
+              </value>
+            </argument>
+          </ownedNode>
+        </ownedBehavior>
+        <ownedBehavior xsi:type="uml:Activity" name="messageLostFromInteractionTNToInteractionTNTestCase" specification="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramLinkGen/testLinkMessageLostFromInteractionTNToInteractionTN">
+          <ownedNode xsi:type="uml:CallOperationAction">
+            <argument xsi:type="uml:ValuePin" name="source">
+              <value xsi:type="uml:InstanceValue" name="GenTopLevelNode_InteractionEditPartTN">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenTopLevelNode_InteractionEditPartTN"/>
+              </value>
+            </argument>
+            <argument xsi:type="uml:ValuePin" name="link">
+              <value xsi:type="uml:InstanceValue" name="GenLink_MessageLostEditPart">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenLink_MessageLostEditPart"/>
+              </value>
+            </argument>
+            <argument xsi:type="uml:ValuePin" name="target">
+              <value xsi:type="uml:InstanceValue" name="GenTopLevelNode_InteractionEditPartTN">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenTopLevelNode_InteractionEditPartTN"/>
+              </value>
+            </argument>
+          </ownedNode>
+        </ownedBehavior>
+        <ownedOperation name="testLinkMessageCreateFromInteractionTNToInteractionTN" method="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramLinkGen/messageCreateFromInteractionTNToInteractionTNTestCase">
+          <ownedParameter>
+            <defaultValue xsi:type="uml:InstanceValue">
+              <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenLink_MessageCreateEditPart"/>
+            </defaultValue>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation name="testLinkMessageFoundFromInteractionTNToInteractionTN" method="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramLinkGen/messageFoundFromInteractionTNToInteractionTNTestCase">
+          <ownedParameter>
+            <defaultValue xsi:type="uml:InstanceValue">
+              <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenLink_MessageFoundEditPart"/>
+            </defaultValue>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation name="testLinkMessageAsyncFromInteractionTNToInteractionTN" method="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramLinkGen/messageAsyncFromInteractionTNToInteractionTNTestCase">
+          <ownedParameter>
+            <defaultValue xsi:type="uml:InstanceValue">
+              <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenLink_MessageAsyncEditPart"/>
+            </defaultValue>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation name="testLinkMessageDeleteFromInteractionTNToInteractionTN" method="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramLinkGen/messageDeleteFromInteractionTNToInteractionTNTestCase">
+          <ownedParameter>
+            <defaultValue xsi:type="uml:InstanceValue">
+              <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenLink_MessageDeleteEditPart"/>
+            </defaultValue>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation name="testLinkMessageReplyFromInteractionTNToInteractionTN" method="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramLinkGen/messageReplyFromInteractionTNToInteractionTNTestCase">
+          <ownedParameter>
+            <defaultValue xsi:type="uml:InstanceValue">
+              <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenLink_MessageReplyEditPart"/>
+            </defaultValue>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation name="testLinkMessageSyncFromInteractionTNToInteractionTN" method="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramLinkGen/messageSyncFromInteractionTNToInteractionTNTestCase">
+          <ownedParameter>
+            <defaultValue xsi:type="uml:InstanceValue">
+              <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenLink_MessageSyncEditPart"/>
+            </defaultValue>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation name="testLinkMessageLostFromInteractionTNToInteractionTN" method="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramLinkGen/messageLostFromInteractionTNToInteractionTNTestCase">
+          <ownedParameter>
+            <defaultValue xsi:type="uml:InstanceValue">
+              <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenLink_MessageLostEditPart"/>
+            </defaultValue>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xsi:type="uml:Class" name="TestTimingDiagramChildNodeInInteractionEditPartTNGen">
+        <elementImport alias="LifelineEditPart"/>
+        <elementImport alias="FullStateInvariantEditPartCN"/>
+        <elementImport alias="TimeObservationEditPart"/>
+        <elementImport alias="FullLifelineEditPartCN"/>
+        <elementImport alias="CompactStateInvariantEditPartCN"/>
+        <elementImport alias="DestructionOccurrenceSpecificationEditPartCN"/>
+        <elementImport alias="DurationConstraintEditPartCN"/>
+        <elementImport alias="MessageOccurrenceSpecificationEditPartCN"/>
+        <elementImport alias="InteractionEditPartTN"/>
+        <elementImport alias="OccurrenceSpecificationEditPartCN"/>
+        <elementImport alias="CompactLifelineEditPartCN"/>
+        <elementImport alias="DurationObservationEditPartCN"/>
+        <elementImport alias="GeneralOrderingEditPart"/>
+        <elementImport alias="TimeConstraintEditPart"/>
+        <generalization>
+          <general xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/testingFrameworkBase.uml#_FH-oEAHgEeSXTsFWGl8rRw"/>
+        </generalization>
+        <ownedAttribute name="generalOrderingEditPart">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjxRbA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenChildNode_GeneralOrderingEditPart"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="durationObservationEditPartCN">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjxRbA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenChildNode_DurationObservationEditPartCN"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="lifelineEditPart">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjxRbA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenChildNode_LifelineEditPart"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="timeObservationEditPart">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjxRbA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenChildNode_TimeObservationEditPart"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="messageOccurrenceSpecificationEditPartCN">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjxRbA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenChildNode_MessageOccurrenceSpecificationEditPartCN"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="generator">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjJYbA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenEditorGenerator_org.eclipse.papyrus.uml.diagram.timing"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="occurrenceSpecificationEditPartCN">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjxRbA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenChildNode_OccurrenceSpecificationEditPartCN"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="timeConstraintEditPart">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjxRbA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenChildNode_TimeConstraintEditPart"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="compactStateInvariantEditPartCN">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjxRbA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenChildNode_CompactStateInvariantEditPartCN"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="containerEditPart" isDerived="true">
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenTopLevelNode_InteractionEditPartTN"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="destructionOccurrenceSpecificationEditPartCN">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjxRbA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenChildNode_DestructionOccurrenceSpecificationEditPartCN"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="compactLifelineEditPartCN">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjxRbA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenChildNode_CompactLifelineEditPartCN"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="fullStateInvariantEditPartCN">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjxRbA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenChildNode_FullStateInvariantEditPartCN"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="durationConstraintEditPartCN">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjxRbA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenChildNode_DurationConstraintEditPartCN"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="fullLifelineEditPartCN">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjxRbA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenChildNode_FullLifelineEditPartCN"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="diagramUpdater">
+          <defaultValue xsi:type="uml:StringExpression" symbol="UMLDiagramUpdater"/>
+        </ownedAttribute>
+        <ownedAttribute name="diagram">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjwcLA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenDiagram_TimingDiagramEditPart"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="self" type="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramChildNodeInInteractionEditPartTNGen"/>
+        <ownedAttribute name="diagram">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjwcLA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenDiagram_TimingDiagramEditPart"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="generator">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjJYbA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenEditorGenerator_org.eclipse.papyrus.uml.diagram.timing"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="diagramUpdater">
+          <defaultValue xsi:type="uml:StringExpression" symbol="UMLDiagramUpdater"/>
+        </ownedAttribute>
+        <ownedAttribute name="containerEditPart" isDerived="true">
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenTopLevelNode_InteractionEditPartTN"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedBehavior xsi:type="uml:Activity" name="messageOccurrenceSpecificationEditPartCNTestCase" specification="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramChildNodeInInteractionEditPartTNGen/testChildNodeMessageOccurrenceSpecificationEditPartCN">
+          <ownedNode xsi:type="uml:CallOperationAction">
+            <argument xsi:type="uml:ValuePin" name="node">
+              <value xsi:type="uml:InstanceValue" name="GenChildNode_MessageOccurrenceSpecificationEditPartCN">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenChildNode_MessageOccurrenceSpecificationEditPartCN"/>
+              </value>
+            </argument>
+          </ownedNode>
+        </ownedBehavior>
+        <ownedBehavior xsi:type="uml:Activity" name="generalOrderingEditPartTestCase" specification="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramChildNodeInInteractionEditPartTNGen/testChildNodeGeneralOrderingEditPart">
+          <ownedNode xsi:type="uml:CallOperationAction">
+            <argument xsi:type="uml:ValuePin" name="node">
+              <value xsi:type="uml:InstanceValue" name="GenChildNode_GeneralOrderingEditPart">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenChildNode_GeneralOrderingEditPart"/>
+              </value>
+            </argument>
+          </ownedNode>
+        </ownedBehavior>
+        <ownedBehavior xsi:type="uml:Activity" name="fullStateInvariantEditPartCNTestCase" specification="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramChildNodeInInteractionEditPartTNGen/testChildNodeFullStateInvariantEditPartCN">
+          <ownedNode xsi:type="uml:CallOperationAction">
+            <argument xsi:type="uml:ValuePin" name="node">
+              <value xsi:type="uml:InstanceValue" name="GenChildNode_FullStateInvariantEditPartCN">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenChildNode_FullStateInvariantEditPartCN"/>
+              </value>
+            </argument>
+          </ownedNode>
+        </ownedBehavior>
+        <ownedBehavior xsi:type="uml:Activity" name="durationObservationEditPartCNTestCase" specification="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramChildNodeInInteractionEditPartTNGen/testChildNodeDurationObservationEditPartCN">
+          <ownedNode xsi:type="uml:CallOperationAction">
+            <argument xsi:type="uml:ValuePin" name="node">
+              <value xsi:type="uml:InstanceValue" name="GenChildNode_DurationObservationEditPartCN">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenChildNode_DurationObservationEditPartCN"/>
+              </value>
+            </argument>
+          </ownedNode>
+        </ownedBehavior>
+        <ownedBehavior xsi:type="uml:Activity" name="timeObservationEditPartTestCase" specification="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramChildNodeInInteractionEditPartTNGen/testChildNodeTimeObservationEditPart">
+          <ownedNode xsi:type="uml:CallOperationAction">
+            <argument xsi:type="uml:ValuePin" name="node">
+              <value xsi:type="uml:InstanceValue" name="GenChildNode_TimeObservationEditPart">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenChildNode_TimeObservationEditPart"/>
+              </value>
+            </argument>
+          </ownedNode>
+        </ownedBehavior>
+        <ownedBehavior xsi:type="uml:Activity" name="occurrenceSpecificationEditPartCNTestCase" specification="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramChildNodeInInteractionEditPartTNGen/testChildNodeOccurrenceSpecificationEditPartCN">
+          <ownedNode xsi:type="uml:CallOperationAction">
+            <argument xsi:type="uml:ValuePin" name="node">
+              <value xsi:type="uml:InstanceValue" name="GenChildNode_OccurrenceSpecificationEditPartCN">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenChildNode_OccurrenceSpecificationEditPartCN"/>
+              </value>
+            </argument>
+          </ownedNode>
+        </ownedBehavior>
+        <ownedBehavior xsi:type="uml:Activity" name="compactStateInvariantEditPartCNTestCase" specification="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramChildNodeInInteractionEditPartTNGen/testChildNodeCompactStateInvariantEditPartCN">
+          <ownedNode xsi:type="uml:CallOperationAction">
+            <argument xsi:type="uml:ValuePin" name="node">
+              <value xsi:type="uml:InstanceValue" name="GenChildNode_CompactStateInvariantEditPartCN">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenChildNode_CompactStateInvariantEditPartCN"/>
+              </value>
+            </argument>
+          </ownedNode>
+        </ownedBehavior>
+        <ownedBehavior xsi:type="uml:Activity" name="fullLifelineEditPartCNTestCase" specification="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramChildNodeInInteractionEditPartTNGen/testChildNodeFullLifelineEditPartCN">
+          <ownedNode xsi:type="uml:CallOperationAction">
+            <argument xsi:type="uml:ValuePin" name="node">
+              <value xsi:type="uml:InstanceValue" name="GenChildNode_FullLifelineEditPartCN">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenChildNode_FullLifelineEditPartCN"/>
+              </value>
+            </argument>
+          </ownedNode>
+        </ownedBehavior>
+        <ownedBehavior xsi:type="uml:Activity" name="lifelineEditPartTestCase" specification="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramChildNodeInInteractionEditPartTNGen/testChildNodeLifelineEditPart">
+          <ownedNode xsi:type="uml:CallOperationAction">
+            <argument xsi:type="uml:ValuePin" name="node">
+              <value xsi:type="uml:InstanceValue" name="GenChildNode_LifelineEditPart">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenChildNode_LifelineEditPart"/>
+              </value>
+            </argument>
+          </ownedNode>
+        </ownedBehavior>
+        <ownedBehavior xsi:type="uml:Activity" name="timeConstraintEditPartTestCase" specification="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramChildNodeInInteractionEditPartTNGen/testChildNodeTimeConstraintEditPart">
+          <ownedNode xsi:type="uml:CallOperationAction">
+            <argument xsi:type="uml:ValuePin" name="node">
+              <value xsi:type="uml:InstanceValue" name="GenChildNode_TimeConstraintEditPart">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenChildNode_TimeConstraintEditPart"/>
+              </value>
+            </argument>
+          </ownedNode>
+        </ownedBehavior>
+        <ownedBehavior xsi:type="uml:Activity" name="compactLifelineEditPartCNTestCase" specification="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramChildNodeInInteractionEditPartTNGen/testChildNodeCompactLifelineEditPartCN">
+          <ownedNode xsi:type="uml:CallOperationAction">
+            <argument xsi:type="uml:ValuePin" name="node">
+              <value xsi:type="uml:InstanceValue" name="GenChildNode_CompactLifelineEditPartCN">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenChildNode_CompactLifelineEditPartCN"/>
+              </value>
+            </argument>
+          </ownedNode>
+        </ownedBehavior>
+        <ownedBehavior xsi:type="uml:Activity" name="destructionOccurrenceSpecificationEditPartCNTestCase" specification="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramChildNodeInInteractionEditPartTNGen/testChildNodeDestructionOccurrenceSpecificationEditPartCN">
+          <ownedNode xsi:type="uml:CallOperationAction">
+            <argument xsi:type="uml:ValuePin" name="node">
+              <value xsi:type="uml:InstanceValue" name="GenChildNode_DestructionOccurrenceSpecificationEditPartCN">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenChildNode_DestructionOccurrenceSpecificationEditPartCN"/>
+              </value>
+            </argument>
+          </ownedNode>
+        </ownedBehavior>
+        <ownedBehavior xsi:type="uml:Activity" name="durationConstraintEditPartCNTestCase" specification="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramChildNodeInInteractionEditPartTNGen/testChildNodeDurationConstraintEditPartCN">
+          <ownedNode xsi:type="uml:CallOperationAction">
+            <argument xsi:type="uml:ValuePin" name="node">
+              <value xsi:type="uml:InstanceValue" name="GenChildNode_DurationConstraintEditPartCN">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenChildNode_DurationConstraintEditPartCN"/>
+              </value>
+            </argument>
+          </ownedNode>
+        </ownedBehavior>
+        <ownedOperation name="testChildNodeTimeObservationEditPart" method="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramChildNodeInInteractionEditPartTNGen/timeObservationEditPartTestCase">
+          <ownedParameter>
+            <defaultValue xsi:type="uml:InstanceValue">
+              <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenChildNode_TimeObservationEditPart"/>
+            </defaultValue>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation name="testChildNodeDurationConstraintEditPartCN" method="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramChildNodeInInteractionEditPartTNGen/durationConstraintEditPartCNTestCase">
+          <ownedParameter>
+            <defaultValue xsi:type="uml:InstanceValue">
+              <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenChildNode_DurationConstraintEditPartCN"/>
+            </defaultValue>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation name="testChildNodeMessageOccurrenceSpecificationEditPartCN" method="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramChildNodeInInteractionEditPartTNGen/messageOccurrenceSpecificationEditPartCNTestCase">
+          <ownedParameter>
+            <defaultValue xsi:type="uml:InstanceValue">
+              <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenChildNode_MessageOccurrenceSpecificationEditPartCN"/>
+            </defaultValue>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation name="testChildNodeDestructionOccurrenceSpecificationEditPartCN" method="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramChildNodeInInteractionEditPartTNGen/destructionOccurrenceSpecificationEditPartCNTestCase">
+          <ownedParameter>
+            <defaultValue xsi:type="uml:InstanceValue">
+              <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenChildNode_DestructionOccurrenceSpecificationEditPartCN"/>
+            </defaultValue>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation name="testChildNodeCompactStateInvariantEditPartCN" method="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramChildNodeInInteractionEditPartTNGen/compactStateInvariantEditPartCNTestCase">
+          <ownedParameter>
+            <defaultValue xsi:type="uml:InstanceValue">
+              <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenChildNode_CompactStateInvariantEditPartCN"/>
+            </defaultValue>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation name="testChildNodeGeneralOrderingEditPart" method="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramChildNodeInInteractionEditPartTNGen/generalOrderingEditPartTestCase">
+          <ownedParameter>
+            <defaultValue xsi:type="uml:InstanceValue">
+              <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenChildNode_GeneralOrderingEditPart"/>
+            </defaultValue>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation name="testChildNodeDurationObservationEditPartCN" method="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramChildNodeInInteractionEditPartTNGen/durationObservationEditPartCNTestCase">
+          <ownedParameter>
+            <defaultValue xsi:type="uml:InstanceValue">
+              <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenChildNode_DurationObservationEditPartCN"/>
+            </defaultValue>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation name="testChildNodeOccurrenceSpecificationEditPartCN" method="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramChildNodeInInteractionEditPartTNGen/occurrenceSpecificationEditPartCNTestCase">
+          <ownedParameter>
+            <defaultValue xsi:type="uml:InstanceValue">
+              <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenChildNode_OccurrenceSpecificationEditPartCN"/>
+            </defaultValue>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation name="testChildNodeTimeConstraintEditPart" method="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramChildNodeInInteractionEditPartTNGen/timeConstraintEditPartTestCase">
+          <ownedParameter>
+            <defaultValue xsi:type="uml:InstanceValue">
+              <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenChildNode_TimeConstraintEditPart"/>
+            </defaultValue>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation name="testChildNodeLifelineEditPart" method="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramChildNodeInInteractionEditPartTNGen/lifelineEditPartTestCase">
+          <ownedParameter>
+            <defaultValue xsi:type="uml:InstanceValue">
+              <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenChildNode_LifelineEditPart"/>
+            </defaultValue>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation name="testChildNodeFullLifelineEditPartCN" method="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramChildNodeInInteractionEditPartTNGen/fullLifelineEditPartCNTestCase">
+          <ownedParameter>
+            <defaultValue xsi:type="uml:InstanceValue">
+              <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenChildNode_FullLifelineEditPartCN"/>
+            </defaultValue>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation name="testChildNodeFullStateInvariantEditPartCN" method="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramChildNodeInInteractionEditPartTNGen/fullStateInvariantEditPartCNTestCase">
+          <ownedParameter>
+            <defaultValue xsi:type="uml:InstanceValue">
+              <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenChildNode_FullStateInvariantEditPartCN"/>
+            </defaultValue>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation name="testChildNodeCompactLifelineEditPartCN" method="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramChildNodeInInteractionEditPartTNGen/compactLifelineEditPartCNTestCase">
+          <ownedParameter>
+            <defaultValue xsi:type="uml:InstanceValue">
+              <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenChildNode_CompactLifelineEditPartCN"/>
+            </defaultValue>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+      <profileApplication>
+        <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
+          <references href="../../org.eclipse.upr.utp/model/utp.profile.uml#_0RDYMC0WEeS-HoGdjtWQlg"/>
+        </eAnnotations>
+        <appliedProfile href="../../org.eclipse.upr.utp/model/utp.profile.uml#_iCl4wOVMEeG84fBOY39c0g"/>
+      </profileApplication>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Package" name="org.eclipse.papyrus.uml.diagram.timing.test.drop">
+      <packagedElement xsi:type="uml:Class" name="TestTimingDiagramDropGen">
+        <elementImport alias="OccurrenceSpecificationEditPartCN"/>
+        <elementImport alias="GeneralOrderingEditPart"/>
+        <elementImport alias="DurationObservationEditPartCN"/>
+        <elementImport alias="CompactStateInvariantEditPartCN"/>
+        <elementImport alias="FullStateInvariantEditPartCN"/>
+        <elementImport alias="FullLifelineEditPartCN"/>
+        <elementImport alias="MessageOccurrenceSpecificationEditPartCN"/>
+        <elementImport alias="TimeObservationEditPart"/>
+        <elementImport alias="InteractionEditPartTN"/>
+        <elementImport alias="CompactLifelineEditPartCN"/>
+        <elementImport alias="DestructionOccurrenceSpecificationEditPartCN"/>
+        <elementImport alias="TimeConstraintEditPart"/>
+        <elementImport alias="LifelineEditPart"/>
+        <elementImport alias="DurationConstraintEditPartCN"/>
+        <generalization>
+          <general xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/testingFrameworkBase.uml#_a-LPcEpGEeSXIouijOm2Dw"/>
+        </generalization>
+        <ownedAttribute name="diagram">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjwcLA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenDiagram_TimingDiagramEditPart"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="interactionEditPartTN">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWk_MrA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenTopLevelNode_InteractionEditPartTN"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="generator">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjJYbA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenEditorGenerator_org.eclipse.papyrus.uml.diagram.timing"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedBehavior xsi:type="uml:Activity" name="interactionEditPartTNTestCase" specification="/0/org.eclipse.papyrus.uml.diagram.timing.test.drop/TestTimingDiagramDropGen/testDropNodeInteractionEditPartTN">
+          <ownedNode xsi:type="uml:CallOperationAction">
+            <argument xsi:type="uml:ValuePin" name="node">
+              <value xsi:type="uml:InstanceValue" name="GenTopLevelNode_InteractionEditPartTN">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenTopLevelNode_InteractionEditPartTN"/>
+              </value>
+            </argument>
+          </ownedNode>
+        </ownedBehavior>
+        <ownedOperation name="testDropNodeInteractionEditPartTN" method="/0/org.eclipse.papyrus.uml.diagram.timing.test.drop/TestTimingDiagramDropGen/interactionEditPartTNTestCase">
+          <ownedParameter>
+            <defaultValue xsi:type="uml:InstanceValue">
+              <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenTopLevelNode_InteractionEditPartTN"/>
+            </defaultValue>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+      <profileApplication>
+        <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
+          <references href="../../org.eclipse.upr.utp/model/utp.profile.uml#_0RDYMC0WEeS-HoGdjtWQlg"/>
+        </eAnnotations>
+        <appliedProfile href="../../org.eclipse.upr.utp/model/utp.profile.uml#_iCl4wOVMEeG84fBOY39c0g"/>
+      </profileApplication>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Package" name="org.eclipse.papyrus.uml.diagram.timing.test.appearance">
+      <packagedElement xsi:type="uml:Class" name="TestTimingDiagramAppearanceGen">
+        <elementImport alias="InteractionEditPartTN"/>
+        <generalization>
+          <general xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/testingFrameworkBase.uml#_MeWEoDHjEeS_IJz4WAHZuA"/>
+        </generalization>
+        <ownedAttribute name="diagram">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjwcLA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenDiagram_TimingDiagramEditPart"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="generator">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjJYbA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenEditorGenerator_org.eclipse.papyrus.uml.diagram.timing"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="interactionEditPartTN">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWk_MrA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenTopLevelNode_InteractionEditPartTN"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedBehavior xsi:type="uml:Activity" name="interactionEditPartTNTestCase" specification="/0/org.eclipse.papyrus.uml.diagram.timing.test.appearance/TestTimingDiagramAppearanceGen/testAppearanceNodeInteractionEditPartTN">
+          <ownedNode xsi:type="uml:CallOperationAction">
+            <argument xsi:type="uml:ValuePin" name="node">
+              <value xsi:type="uml:InstanceValue" name="GenTopLevelNode_InteractionEditPartTN">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenTopLevelNode_InteractionEditPartTN"/>
+              </value>
+            </argument>
+            <operation href="../../org.eclipse.papyrus.tests.framework/model/testingFrameworkBase.uml#_7QFpYDf3EeShgKK1P_proQ"/>
+          </ownedNode>
+        </ownedBehavior>
+        <ownedOperation name="testAppearanceNodeInteractionEditPartTN" method="/0/org.eclipse.papyrus.uml.diagram.timing.test.appearance/TestTimingDiagramAppearanceGen/interactionEditPartTNTestCase">
+          <ownedParameter>
+            <defaultValue xsi:type="uml:InstanceValue">
+              <instance href="../../org.eclipse.papyrus.uml.diagram.timing/model/TimingDiagram.gmfgen.uml#//GenTopLevelNode_InteractionEditPartTN"/>
+            </defaultValue>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+      <profileApplication>
+        <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
+          <references href="../../org.eclipse.upr.utp/model/utp.profile.uml#_0RDYMC0WEeS-HoGdjtWQlg"/>
+        </eAnnotations>
+        <appliedProfile href="../../org.eclipse.upr.utp/model/utp.profile.uml#_iCl4wOVMEeG84fBOY39c0g"/>
+      </profileApplication>
+    </packagedElement>
+    <profileApplication>
+      <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references href="../../org.eclipse.upr.utp/model/utp.profile.uml#_0RDYMC0WEeS-HoGdjtWQlg"/>
+      </eAnnotations>
+      <appliedProfile href="../../org.eclipse.upr.utp/model/utp.profile.uml#_iCl4wOVMEeG84fBOY39c0g"/>
+    </profileApplication>
+  </uml:Model>
+  <utp:SUT base_Property="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramTopNodeGen/interactionEditPartTN"/>
+  <utp:SUT/>
+  <utp:TestCase/>
+  <utp:TestCase base_Operation="/0/org.eclipse.papyrus.uml.diagram.timing.test.appearance/TestTimingDiagramAppearanceGen/testAppearanceNodeInteractionEditPartTN"/>
+  <utp:TestContext/>
+  <utp:TestCase base_Operation="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramLinkGen/testLinkMessageReplyFromInteractionTNToInteractionTN"/>
+  <utp:SUT base_Property="/0/org.eclipse.papyrus.uml.diagram.timing.test.appearance/TestTimingDiagramAppearanceGen/generator"/>
+  <utp:SUT base_Property="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramChildNodeInInteractionEditPartTNGen/timeConstraintEditPart"/>
+  <utp:TestCase/>
+  <utp:TestCase base_Operation="/0/org.eclipse.papyrus.uml.diagram.timing.test.drop/TestTimingDiagramDropGen/testDropNodeInteractionEditPartTN"/>
+  <utp:TestCase base_Operation="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramChildNodeInInteractionEditPartTNGen/testChildNodeGeneralOrderingEditPart"/>
+  <utp:TestCase/>
+  <utp:TestCase/>
+  <utp:SUT/>
+  <utp:TestCase/>
+  <utp:TestCase/>
+  <utp:TestCase base_Operation="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramLinkGen/testLinkMessageFoundFromInteractionTNToInteractionTN"/>
+  <utp:TestCase/>
+  <utp:SUT/>
+  <utp:SUT base_Property="/0/org.eclipse.papyrus.uml.diagram.timing.test.drop/TestTimingDiagramDropGen/generator"/>
+  <utp:TestCase base_Operation="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramChildNodeInInteractionEditPartTNGen/testChildNodeFullStateInvariantEditPartCN"/>
+  <utp:SUT/>
+  <utp:SUT base_Property="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramChildNodeInInteractionEditPartTNGen/generalOrderingEditPart"/>
+  <utp:SUT base_Property="/0/org.eclipse.papyrus.uml.diagram.timing.test.appearance/TestTimingDiagramAppearanceGen/diagram"/>
+  <utp:SUT/>
+  <utp:TestCase base_Operation="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramChildNodeInInteractionEditPartTNGen/testChildNodeMessageOccurrenceSpecificationEditPartCN"/>
+  <utp:TestContext/>
+  <utp:TestCase base_Operation="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramChildNodeInInteractionEditPartTNGen/testChildNodeOccurrenceSpecificationEditPartCN"/>
+  <utp:SUT base_Property="/0/org.eclipse.papyrus.uml.diagram.timing.test.drop/TestTimingDiagramDropGen/interactionEditPartTN"/>
+  <utp:SUT base_Property="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramChildNodeInInteractionEditPartTNGen/occurrenceSpecificationEditPartCN"/>
+  <utp:SUT base_Property="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramLinkGen/messageLostEditPart"/>
+  <utp:TestCase/>
+  <utp:SUT/>
+  <utp:TestCase base_Operation="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramChildNodeInInteractionEditPartTNGen/testChildNodeLifelineEditPart"/>
+  <utp:TestCase/>
+  <utp:TestCase/>
+  <utp:SUT/>
+  <utp:TestCase base_Operation="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramLinkGen/testLinkMessageLostFromInteractionTNToInteractionTN"/>
+  <utp:TestCase base_Operation="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramLinkGen/testLinkMessageAsyncFromInteractionTNToInteractionTN"/>
+  <utp:TestCase base_Operation="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramChildNodeInInteractionEditPartTNGen/testChildNodeDurationConstraintEditPartCN"/>
+  <utp:SUT/>
+  <utp:SUT base_Property="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramChildNodeInInteractionEditPartTNGen/messageOccurrenceSpecificationEditPartCN"/>
+  <utp:TestCase base_Operation="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramChildNodeInInteractionEditPartTNGen/testChildNodeFullLifelineEditPartCN"/>
+  <utp:SUT base_Property="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramChildNodeInInteractionEditPartTNGen/durationObservationEditPartCN"/>
+  <utp:SUT/>
+  <utp:SUT base_Property="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramChildNodeInInteractionEditPartTNGen/timeObservationEditPart"/>
+  <utp:TestCase/>
+  <utp:SUT base_Property="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramLinkGen/messageAsyncEditPart"/>
+  <utp:SUT base_Property="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramChildNodeInInteractionEditPartTNGen/destructionOccurrenceSpecificationEditPartCN"/>
+  <utp:TestCase/>
+  <utp:TestCase base_Operation="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramChildNodeInInteractionEditPartTNGen/testChildNodeTimeObservationEditPart"/>
+  <utp:SUT base_Property="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramLinkGen/messageSyncEditPart"/>
+  <utp:SUT base_Property="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramLinkGen/messageFoundEditPart"/>
+  <utp:SUT base_Property="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramLinkGen/messageDeleteEditPart"/>
+  <utp:TestContext/>
+  <utp:SUT base_Property="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramChildNodeInInteractionEditPartTNGen/lifelineEditPart"/>
+  <utp:TestContext base_BehavioredClassifier="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramTopNodeGen" base_StructuredClassifier="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramTopNodeGen"/>
+  <utp:SUT/>
+  <utp:TestContext base_BehavioredClassifier="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramLinkOwnedBySourceGen" base_StructuredClassifier="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramLinkOwnedBySourceGen"/>
+  <utp:TestCase base_Operation="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramChildNodeInInteractionEditPartTNGen/testChildNodeDestructionOccurrenceSpecificationEditPartCN"/>
+  <utp:SUT/>
+  <utp:TestCase/>
+  <utp:TestCase base_Operation="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramChildNodeInInteractionEditPartTNGen/testChildNodeTimeConstraintEditPart"/>
+  <utp:SUT/>
+  <utp:SUT/>
+  <utp:TestContext base_BehavioredClassifier="/0/org.eclipse.papyrus.uml.diagram.timing.test.appearance/TestTimingDiagramAppearanceGen" base_StructuredClassifier="/0/org.eclipse.papyrus.uml.diagram.timing.test.appearance/TestTimingDiagramAppearanceGen"/>
+  <utp:SUT base_Property="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramChildNodeInInteractionEditPartTNGen/fullStateInvariantEditPartCN"/>
+  <utp:SUT/>
+  <utp:TestCase base_Operation="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramLinkGen/testLinkMessageCreateFromInteractionTNToInteractionTN"/>
+  <utp:SUT base_Property="/0/org.eclipse.papyrus.uml.diagram.timing.test.appearance/TestTimingDiagramAppearanceGen/interactionEditPartTN"/>
+  <utp:TestCase/>
+  <utp:TestContext/>
+  <utp:SUT base_Property="/0/org.eclipse.papyrus.uml.diagram.timing.test.drop/TestTimingDiagramDropGen/diagram"/>
+  <utp:TestCase/>
+  <utp:SUT base_Property="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramChildNodeInInteractionEditPartTNGen/compactStateInvariantEditPartCN"/>
+  <utp:SUT/>
+  <utp:SUT/>
+  <utp:TestCase/>
+  <utp:SUT/>
+  <utp:SUT base_Property="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramChildNodeInInteractionEditPartTNGen/durationConstraintEditPartCN"/>
+  <utp:TestContext/>
+  <utp:TestCase base_Operation="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramChildNodeInInteractionEditPartTNGen/testChildNodeCompactStateInvariantEditPartCN"/>
+  <utp:SUT base_Property="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramChildNodeInInteractionEditPartTNGen/fullLifelineEditPartCN"/>
+  <utp:SUT/>
+  <utp:SUT/>
+  <utp:TestContext base_BehavioredClassifier="/0/org.eclipse.papyrus.uml.diagram.timing.test.drop/TestTimingDiagramDropGen" base_StructuredClassifier="/0/org.eclipse.papyrus.uml.diagram.timing.test.drop/TestTimingDiagramDropGen"/>
+  <utp:SUT/>
+  <utp:SUT/>
+  <utp:TestCase/>
+  <utp:TestCase/>
+  <utp:SUT/>
+  <utp:SUT base_Property="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramLinkGen/messageReplyEditPart"/>
+  <utp:TestCase base_Operation="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramLinkGen/testLinkMessageDeleteFromInteractionTNToInteractionTN"/>
+  <utp:TestCase/>
+  <utp:TestCase/>
+  <utp:TestCase base_Operation="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramLinkGen/testLinkMessageSyncFromInteractionTNToInteractionTN"/>
+  <utp:SUT/>
+  <utp:TestContext base_BehavioredClassifier="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramLinkGen" base_StructuredClassifier="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramLinkGen"/>
+  <utp:SUT/>
+  <utp:SUT/>
+  <utp:SUT base_Property="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramChildNodeInInteractionEditPartTNGen/compactLifelineEditPartCN"/>
+  <utp:TestContext base_BehavioredClassifier="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramChildNodeInInteractionEditPartTNGen" base_StructuredClassifier="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramChildNodeInInteractionEditPartTNGen"/>
+  <utp:SUT base_Property="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramLinkGen/messageCreateEditPart"/>
+  <utp:SUT/>
+  <utp:TestCase/>
+  <utp:TestCase base_Operation="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramChildNodeInInteractionEditPartTNGen/testChildNodeCompactLifelineEditPartCN"/>
+  <utp:SUT/>
+  <utp:TestCase/>
+  <utp:TestCase/>
+  <utp:TestContext/>
+  <utp:TestCase base_Operation="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramTopNodeGen/testTopNodeInteractionEditPartTN"/>
+  <utp:TestCase base_Operation="/0/org.eclipse.papyrus.uml.diagram.timing.test.createFromPalette/TestTimingDiagramChildNodeInInteractionEditPartTNGen/testChildNodeDurationObservationEditPartCN"/>
+</xmi:XMI>

@@ -26,6 +26,7 @@ Require-Bundle: org.eclipse.ui,
 Export-Package: org.eclipse.papyrus.uml.diagram.tests.appearance,
  org.eclipse.papyrus.uml.diagram.tests.canonical,
  org.eclipse.papyrus.uml.diagram.tests.createFromPalette,
+ org.eclipse.papyrus.uml.diagram.tests.drop,
  org.eclipse.papyrus.uml.diagram.tests.edition
 Bundle-Vendor: %providerName
 Bundle-ActivationPolicy: lazy

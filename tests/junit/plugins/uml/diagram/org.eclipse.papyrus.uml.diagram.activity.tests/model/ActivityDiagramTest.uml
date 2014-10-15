@@ -1,0 +1,1156 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmlns:utp="http://www.omg.org/spec/UTP/20120801/utp.xmi" xsi:schemaLocation="http://www.eclipse.org/uml2/5.0.0/UML java://org.eclipse.uml2.uml.UMLPackage http://www.omg.org/spec/UTP/20120801/utp.xmi ../../org.eclipse.upr.utp/model/utp.profile.uml#_0RDYMC0WEeS-HoGdjtWQlg">
+  <uml:Model name="org.eclipse.papyrus.uml.diagram.activity.test">
+    <packagedElement xsi:type="uml:Package" name="org.eclipse.papyrus.uml.diagram.activity.test.appearance">
+      <packagedElement xsi:type="uml:Class" name="TestActivityDiagramAppearanceGen">
+        <elementImport alias="ActivityEditPart"/>
+        <generalization>
+          <general xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/testingFrameworkBase.uml#_MeWEoDHjEeS_IJz4WAHZuA"/>
+        </generalization>
+        <ownedAttribute name="generator">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjJYbA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenEditorGenerator_org.eclipse.papyrus.uml.diagram.activity"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="diagram">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjwcLA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenDiagram_ActivityDiagramEditPart"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="activityEditPart">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWk_MrA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenTopLevelNode_ActivityEditPart"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedBehavior xsi:type="uml:Activity" name="activityEditPartTestCase" specification="/0/org.eclipse.papyrus.uml.diagram.activity.test.appearance/TestActivityDiagramAppearanceGen/testAppearanceNodeActivityEditPart">
+          <ownedNode xsi:type="uml:CallOperationAction">
+            <argument xsi:type="uml:ValuePin" name="node">
+              <value xsi:type="uml:InstanceValue" name="GenTopLevelNode_ActivityEditPart">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenTopLevelNode_ActivityEditPart"/>
+              </value>
+            </argument>
+            <operation href="../../org.eclipse.papyrus.tests.framework/model/testingFrameworkBase.uml#_7QFpYDf3EeShgKK1P_proQ"/>
+          </ownedNode>
+        </ownedBehavior>
+        <ownedOperation name="testAppearanceNodeActivityEditPart" method="/0/org.eclipse.papyrus.uml.diagram.activity.test.appearance/TestActivityDiagramAppearanceGen/activityEditPartTestCase">
+          <ownedParameter>
+            <defaultValue xsi:type="uml:InstanceValue">
+              <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenTopLevelNode_ActivityEditPart"/>
+            </defaultValue>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+      <profileApplication>
+        <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
+          <references href="../../org.eclipse.upr.utp/model/utp.profile.uml#_0RDYMC0WEeS-HoGdjtWQlg"/>
+        </eAnnotations>
+        <appliedProfile href="../../org.eclipse.upr.utp/model/utp.profile.uml#_iCl4wOVMEeG84fBOY39c0g"/>
+      </profileApplication>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Package" name="org.eclipse.papyrus.uml.diagram.activity.test.drop">
+      <packagedElement xsi:type="uml:Class" name="TestActivityDiagramDropGen">
+        <elementImport alias="OpaqueActionEditPart"/>
+        <elementImport alias="CentralBufferNodeEditPart"/>
+        <elementImport alias="ActivityFinalNodeEditPart"/>
+        <elementImport alias="SendObjectActionEditPart"/>
+        <elementImport alias="ExpansionRegionEditPart"/>
+        <elementImport alias="LoopNodeEditPart"/>
+        <elementImport alias="InitialNodeEditPart"/>
+        <elementImport alias="FlowFinalNodeEditPart"/>
+        <elementImport alias="CreateObjectActionEditPart"/>
+        <elementImport alias="ActivityEditPart"/>
+        <elementImport alias="ValueSpecificationActionEditPart"/>
+        <elementImport alias="ReadStructuralFeatureActionEditPart"/>
+        <elementImport alias="ActivityPartitionEditPart"/>
+        <elementImport alias="ConditionalNodeEditPart"/>
+        <elementImport alias="DestroyObjectActionEditPart"/>
+        <elementImport alias="AcceptEventActionEditPart"/>
+        <elementImport alias="DataStoreNodeEditPart"/>
+        <elementImport alias="SequenceNodeEditPart"/>
+        <elementImport alias="StructuredActivityNodeEditPart"/>
+        <elementImport alias="MergeNodeEditPart"/>
+        <elementImport alias="InterruptibleActivityRegionEditPart"/>
+        <elementImport alias="JoinNodeEditPart"/>
+        <elementImport alias="ActivityEditPartCN"/>
+        <elementImport alias="BroadcastSignalActionEditPart"/>
+        <elementImport alias="ReadSelfActionEditPart"/>
+        <elementImport alias="ForkNodeEditPart"/>
+        <elementImport alias="DecisionNodeEditPart"/>
+        <elementImport alias="ReadVariableActionEditPart"/>
+        <elementImport alias="AddVariableValueActionEditPart"/>
+        <generalization>
+          <general xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/testingFrameworkBase.uml#_a-LPcEpGEeSXIouijOm2Dw"/>
+        </generalization>
+        <ownedAttribute name="activityEditPart">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWk_MrA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenTopLevelNode_ActivityEditPart"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="generator">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjJYbA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenEditorGenerator_org.eclipse.papyrus.uml.diagram.activity"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="diagram">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjwcLA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenDiagram_ActivityDiagramEditPart"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedBehavior xsi:type="uml:Activity" name="activityEditPartTestCase" specification="/0/org.eclipse.papyrus.uml.diagram.activity.test.drop/TestActivityDiagramDropGen/testDropNodeActivityEditPart">
+          <ownedNode xsi:type="uml:CallOperationAction">
+            <argument xsi:type="uml:ValuePin" name="node">
+              <value xsi:type="uml:InstanceValue" name="GenTopLevelNode_ActivityEditPart">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenTopLevelNode_ActivityEditPart"/>
+              </value>
+            </argument>
+          </ownedNode>
+        </ownedBehavior>
+        <ownedOperation name="testDropNodeActivityEditPart" method="/0/org.eclipse.papyrus.uml.diagram.activity.test.drop/TestActivityDiagramDropGen/activityEditPartTestCase">
+          <ownedParameter>
+            <defaultValue xsi:type="uml:InstanceValue">
+              <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenTopLevelNode_ActivityEditPart"/>
+            </defaultValue>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+      <profileApplication>
+        <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
+          <references href="../../org.eclipse.upr.utp/model/utp.profile.uml#_0RDYMC0WEeS-HoGdjtWQlg"/>
+        </eAnnotations>
+        <appliedProfile href="../../org.eclipse.upr.utp/model/utp.profile.uml#_iCl4wOVMEeG84fBOY39c0g"/>
+      </profileApplication>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Package" name="org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette">
+      <packagedElement xsi:type="uml:Class" name="TestActivityDiagramLinkOwnedBySourceGen">
+        <elementImport alias="ActivityEditPart"/>
+        <generalization>
+          <general xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/testingFrameworkBase.uml#_agsZgAEZEeS1CswA_Bot2A"/>
+        </generalization>
+        <ownedAttribute name="diagram">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjwcLA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenDiagram_ActivityDiagramEditPart"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="generator">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjJYbA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenEditorGenerator_org.eclipse.papyrus.uml.diagram.activity"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="diagramUpdater">
+          <defaultValue xsi:type="uml:StringExpression" symbol="UMLDiagramUpdater"/>
+        </ownedAttribute>
+        <ownedAttribute name="containerEditPart" isDerived="true">
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenTopLevelNode_ActivityEditPart"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="self" type="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramLinkOwnedBySourceGen"/>
+      </packagedElement>
+      <packagedElement xsi:type="uml:Class" name="TestActivityDiagramChildNodeInActivityEditPartGen">
+        <elementImport alias="ForkNodeEditPart"/>
+        <elementImport alias="DecisionNodeEditPart"/>
+        <elementImport alias="FlowFinalNodeEditPart"/>
+        <elementImport alias="MergeNodeEditPart"/>
+        <elementImport alias="ReadVariableActionEditPart"/>
+        <elementImport alias="DataStoreNodeEditPart"/>
+        <elementImport alias="ConditionalNodeEditPart"/>
+        <elementImport alias="ValueSpecificationActionEditPart"/>
+        <elementImport alias="CreateObjectActionEditPart"/>
+        <elementImport alias="JoinNodeEditPart"/>
+        <elementImport alias="ActivityEditPartCN"/>
+        <elementImport alias="CentralBufferNodeEditPart"/>
+        <elementImport alias="InitialNodeEditPart"/>
+        <elementImport alias="ActivityEditPart"/>
+        <elementImport alias="StructuredActivityNodeEditPart"/>
+        <elementImport alias="SendObjectActionEditPart"/>
+        <elementImport alias="ReadSelfActionEditPart"/>
+        <elementImport alias="InterruptibleActivityRegionEditPart"/>
+        <elementImport alias="AcceptEventActionEditPart"/>
+        <elementImport alias="AddVariableValueActionEditPart"/>
+        <elementImport alias="ExpansionRegionEditPart"/>
+        <elementImport alias="ReadStructuralFeatureActionEditPart"/>
+        <elementImport alias="ActivityPartitionEditPart"/>
+        <elementImport alias="SequenceNodeEditPart"/>
+        <elementImport alias="LoopNodeEditPart"/>
+        <elementImport alias="DestroyObjectActionEditPart"/>
+        <elementImport alias="ActivityFinalNodeEditPart"/>
+        <elementImport alias="OpaqueActionEditPart"/>
+        <elementImport alias="BroadcastSignalActionEditPart"/>
+        <generalization>
+          <general xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/testingFrameworkBase.uml#_FH-oEAHgEeSXTsFWGl8rRw"/>
+        </generalization>
+        <ownedAttribute name="interruptibleActivityRegionEditPart">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjxRbA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenChildNode_InterruptibleActivityRegionEditPart"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="loopNodeEditPart">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjxRbA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenChildNode_LoopNodeEditPart"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="readStructuralFeatureActionEditPart">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjxRbA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenChildNode_ReadStructuralFeatureActionEditPart"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="sendObjectActionEditPart">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjxRbA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenChildNode_SendObjectActionEditPart"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="flowFinalNodeEditPart">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjxRbA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenChildNode_FlowFinalNodeEditPart"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="diagramUpdater">
+          <defaultValue xsi:type="uml:StringExpression" symbol="UMLDiagramUpdater"/>
+        </ownedAttribute>
+        <ownedAttribute name="sequenceNodeEditPart">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjxRbA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenChildNode_SequenceNodeEditPart"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="containerEditPart" isDerived="true">
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenTopLevelNode_ActivityEditPart"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="centralBufferNodeEditPart">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjxRbA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenChildNode_CentralBufferNodeEditPart"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="broadcastSignalActionEditPart">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjxRbA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenChildNode_BroadcastSignalActionEditPart"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="initialNodeEditPart">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjxRbA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenChildNode_InitialNodeEditPart"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="activityEditPartCN">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjxRbA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenChildNode_ActivityEditPartCN"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="activityPartitionEditPart">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjxRbA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenChildNode_ActivityPartitionEditPart"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="generator">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjJYbA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenEditorGenerator_org.eclipse.papyrus.uml.diagram.activity"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="destroyObjectActionEditPart">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjxRbA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenChildNode_DestroyObjectActionEditPart"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="diagram">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjwcLA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenDiagram_ActivityDiagramEditPart"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="createObjectActionEditPart">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjxRbA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenChildNode_CreateObjectActionEditPart"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="expansionRegionEditPart">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjxRbA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenChildNode_ExpansionRegionEditPart"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="structuredActivityNodeEditPart">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjxRbA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenChildNode_StructuredActivityNodeEditPart"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="readSelfActionEditPart">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjxRbA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenChildNode_ReadSelfActionEditPart"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="activityFinalNodeEditPart">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjxRbA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenChildNode_ActivityFinalNodeEditPart"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="forkNodeEditPart">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjxRbA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenChildNode_ForkNodeEditPart"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="conditionalNodeEditPart">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjxRbA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenChildNode_ConditionalNodeEditPart"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="acceptEventActionEditPart">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjxRbA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenChildNode_AcceptEventActionEditPart"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="addVariableValueActionEditPart">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjxRbA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenChildNode_AddVariableValueActionEditPart"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="joinNodeEditPart">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjxRbA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenChildNode_JoinNodeEditPart"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="opaqueActionEditPart">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjxRbA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenChildNode_OpaqueActionEditPart"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="readVariableActionEditPart">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjxRbA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenChildNode_ReadVariableActionEditPart"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="dataStoreNodeEditPart">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjxRbA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenChildNode_DataStoreNodeEditPart"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="decisionNodeEditPart">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjxRbA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenChildNode_DecisionNodeEditPart"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="valueSpecificationActionEditPart">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjxRbA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenChildNode_ValueSpecificationActionEditPart"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="mergeNodeEditPart">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjxRbA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenChildNode_MergeNodeEditPart"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="self" type="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen"/>
+        <ownedAttribute name="diagram">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjwcLA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenDiagram_ActivityDiagramEditPart"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="generator">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjJYbA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenEditorGenerator_org.eclipse.papyrus.uml.diagram.activity"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="diagramUpdater">
+          <defaultValue xsi:type="uml:StringExpression" symbol="UMLDiagramUpdater"/>
+        </ownedAttribute>
+        <ownedAttribute name="containerEditPart" isDerived="true">
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenTopLevelNode_ActivityEditPart"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedBehavior xsi:type="uml:Activity" name="centralBufferNodeEditPartTestCase" specification="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/testChildNodeCentralBufferNodeEditPart">
+          <ownedNode xsi:type="uml:CallOperationAction">
+            <argument xsi:type="uml:ValuePin" name="node">
+              <value xsi:type="uml:InstanceValue" name="GenChildNode_CentralBufferNodeEditPart">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenChildNode_CentralBufferNodeEditPart"/>
+              </value>
+            </argument>
+          </ownedNode>
+        </ownedBehavior>
+        <ownedBehavior xsi:type="uml:Activity" name="readSelfActionEditPartTestCase" specification="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/testChildNodeReadSelfActionEditPart">
+          <ownedNode xsi:type="uml:CallOperationAction">
+            <argument xsi:type="uml:ValuePin" name="node">
+              <value xsi:type="uml:InstanceValue" name="GenChildNode_ReadSelfActionEditPart">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenChildNode_ReadSelfActionEditPart"/>
+              </value>
+            </argument>
+          </ownedNode>
+        </ownedBehavior>
+        <ownedBehavior xsi:type="uml:Activity" name="forkNodeEditPartTestCase" specification="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/testChildNodeForkNodeEditPart">
+          <ownedNode xsi:type="uml:CallOperationAction">
+            <argument xsi:type="uml:ValuePin" name="node">
+              <value xsi:type="uml:InstanceValue" name="GenChildNode_ForkNodeEditPart">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenChildNode_ForkNodeEditPart"/>
+              </value>
+            </argument>
+          </ownedNode>
+        </ownedBehavior>
+        <ownedBehavior xsi:type="uml:Activity" name="loopNodeEditPartTestCase" specification="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/testChildNodeLoopNodeEditPart">
+          <ownedNode xsi:type="uml:CallOperationAction">
+            <argument xsi:type="uml:ValuePin" name="node">
+              <value xsi:type="uml:InstanceValue" name="GenChildNode_LoopNodeEditPart">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenChildNode_LoopNodeEditPart"/>
+              </value>
+            </argument>
+          </ownedNode>
+        </ownedBehavior>
+        <ownedBehavior xsi:type="uml:Activity" name="expansionRegionEditPartTestCase" specification="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/testChildNodeExpansionRegionEditPart">
+          <ownedNode xsi:type="uml:CallOperationAction">
+            <argument xsi:type="uml:ValuePin" name="node">
+              <value xsi:type="uml:InstanceValue" name="GenChildNode_ExpansionRegionEditPart">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenChildNode_ExpansionRegionEditPart"/>
+              </value>
+            </argument>
+          </ownedNode>
+        </ownedBehavior>
+        <ownedBehavior xsi:type="uml:Activity" name="readVariableActionEditPartTestCase" specification="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/testChildNodeReadVariableActionEditPart">
+          <ownedNode xsi:type="uml:CallOperationAction">
+            <argument xsi:type="uml:ValuePin" name="node">
+              <value xsi:type="uml:InstanceValue" name="GenChildNode_ReadVariableActionEditPart">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenChildNode_ReadVariableActionEditPart"/>
+              </value>
+            </argument>
+          </ownedNode>
+        </ownedBehavior>
+        <ownedBehavior xsi:type="uml:Activity" name="sendObjectActionEditPartTestCase" specification="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/testChildNodeSendObjectActionEditPart">
+          <ownedNode xsi:type="uml:CallOperationAction">
+            <argument xsi:type="uml:ValuePin" name="node">
+              <value xsi:type="uml:InstanceValue" name="GenChildNode_SendObjectActionEditPart">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenChildNode_SendObjectActionEditPart"/>
+              </value>
+            </argument>
+          </ownedNode>
+        </ownedBehavior>
+        <ownedBehavior xsi:type="uml:Activity" name="initialNodeEditPartTestCase" specification="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/testChildNodeInitialNodeEditPart">
+          <ownedNode xsi:type="uml:CallOperationAction">
+            <argument xsi:type="uml:ValuePin" name="node">
+              <value xsi:type="uml:InstanceValue" name="GenChildNode_InitialNodeEditPart">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenChildNode_InitialNodeEditPart"/>
+              </value>
+            </argument>
+          </ownedNode>
+        </ownedBehavior>
+        <ownedBehavior xsi:type="uml:Activity" name="conditionalNodeEditPartTestCase" specification="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/testChildNodeConditionalNodeEditPart">
+          <ownedNode xsi:type="uml:CallOperationAction">
+            <argument xsi:type="uml:ValuePin" name="node">
+              <value xsi:type="uml:InstanceValue" name="GenChildNode_ConditionalNodeEditPart">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenChildNode_ConditionalNodeEditPart"/>
+              </value>
+            </argument>
+          </ownedNode>
+        </ownedBehavior>
+        <ownedBehavior xsi:type="uml:Activity" name="activityEditPartCNTestCase" specification="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/testChildNodeActivityEditPartCN">
+          <ownedNode xsi:type="uml:CallOperationAction">
+            <argument xsi:type="uml:ValuePin" name="node">
+              <value xsi:type="uml:InstanceValue" name="GenChildNode_ActivityEditPartCN">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenChildNode_ActivityEditPartCN"/>
+              </value>
+            </argument>
+          </ownedNode>
+        </ownedBehavior>
+        <ownedBehavior xsi:type="uml:Activity" name="joinNodeEditPartTestCase" specification="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/testChildNodeJoinNodeEditPart">
+          <ownedNode xsi:type="uml:CallOperationAction">
+            <argument xsi:type="uml:ValuePin" name="node">
+              <value xsi:type="uml:InstanceValue" name="GenChildNode_JoinNodeEditPart">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenChildNode_JoinNodeEditPart"/>
+              </value>
+            </argument>
+          </ownedNode>
+        </ownedBehavior>
+        <ownedBehavior xsi:type="uml:Activity" name="opaqueActionEditPartTestCase" specification="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/testChildNodeOpaqueActionEditPart">
+          <ownedNode xsi:type="uml:CallOperationAction">
+            <argument xsi:type="uml:ValuePin" name="node">
+              <value xsi:type="uml:InstanceValue" name="GenChildNode_OpaqueActionEditPart">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenChildNode_OpaqueActionEditPart"/>
+              </value>
+            </argument>
+          </ownedNode>
+        </ownedBehavior>
+        <ownedBehavior xsi:type="uml:Activity" name="activityPartitionEditPartTestCase" specification="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/testChildNodeActivityPartitionEditPart">
+          <ownedNode xsi:type="uml:CallOperationAction">
+            <argument xsi:type="uml:ValuePin" name="node">
+              <value xsi:type="uml:InstanceValue" name="GenChildNode_ActivityPartitionEditPart">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenChildNode_ActivityPartitionEditPart"/>
+              </value>
+            </argument>
+          </ownedNode>
+        </ownedBehavior>
+        <ownedBehavior xsi:type="uml:Activity" name="addVariableValueActionEditPartTestCase" specification="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/testChildNodeAddVariableValueActionEditPart">
+          <ownedNode xsi:type="uml:CallOperationAction">
+            <argument xsi:type="uml:ValuePin" name="node">
+              <value xsi:type="uml:InstanceValue" name="GenChildNode_AddVariableValueActionEditPart">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenChildNode_AddVariableValueActionEditPart"/>
+              </value>
+            </argument>
+          </ownedNode>
+        </ownedBehavior>
+        <ownedBehavior xsi:type="uml:Activity" name="activityFinalNodeEditPartTestCase" specification="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/testChildNodeActivityFinalNodeEditPart">
+          <ownedNode xsi:type="uml:CallOperationAction">
+            <argument xsi:type="uml:ValuePin" name="node">
+              <value xsi:type="uml:InstanceValue" name="GenChildNode_ActivityFinalNodeEditPart">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenChildNode_ActivityFinalNodeEditPart"/>
+              </value>
+            </argument>
+          </ownedNode>
+        </ownedBehavior>
+        <ownedBehavior xsi:type="uml:Activity" name="interruptibleActivityRegionEditPartTestCase" specification="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/testChildNodeInterruptibleActivityRegionEditPart">
+          <ownedNode xsi:type="uml:CallOperationAction">
+            <argument xsi:type="uml:ValuePin" name="node">
+              <value xsi:type="uml:InstanceValue" name="GenChildNode_InterruptibleActivityRegionEditPart">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenChildNode_InterruptibleActivityRegionEditPart"/>
+              </value>
+            </argument>
+          </ownedNode>
+        </ownedBehavior>
+        <ownedBehavior xsi:type="uml:Activity" name="dataStoreNodeEditPartTestCase" specification="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/testChildNodeDataStoreNodeEditPart">
+          <ownedNode xsi:type="uml:CallOperationAction">
+            <argument xsi:type="uml:ValuePin" name="node">
+              <value xsi:type="uml:InstanceValue" name="GenChildNode_DataStoreNodeEditPart">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenChildNode_DataStoreNodeEditPart"/>
+              </value>
+            </argument>
+          </ownedNode>
+        </ownedBehavior>
+        <ownedBehavior xsi:type="uml:Activity" name="flowFinalNodeEditPartTestCase" specification="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/testChildNodeFlowFinalNodeEditPart">
+          <ownedNode xsi:type="uml:CallOperationAction">
+            <argument xsi:type="uml:ValuePin" name="node">
+              <value xsi:type="uml:InstanceValue" name="GenChildNode_FlowFinalNodeEditPart">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenChildNode_FlowFinalNodeEditPart"/>
+              </value>
+            </argument>
+          </ownedNode>
+        </ownedBehavior>
+        <ownedBehavior xsi:type="uml:Activity" name="broadcastSignalActionEditPartTestCase" specification="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/testChildNodeBroadcastSignalActionEditPart">
+          <ownedNode xsi:type="uml:CallOperationAction">
+            <argument xsi:type="uml:ValuePin" name="node">
+              <value xsi:type="uml:InstanceValue" name="GenChildNode_BroadcastSignalActionEditPart">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenChildNode_BroadcastSignalActionEditPart"/>
+              </value>
+            </argument>
+          </ownedNode>
+        </ownedBehavior>
+        <ownedBehavior xsi:type="uml:Activity" name="createObjectActionEditPartTestCase" specification="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/testChildNodeCreateObjectActionEditPart">
+          <ownedNode xsi:type="uml:CallOperationAction">
+            <argument xsi:type="uml:ValuePin" name="node">
+              <value xsi:type="uml:InstanceValue" name="GenChildNode_CreateObjectActionEditPart">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenChildNode_CreateObjectActionEditPart"/>
+              </value>
+            </argument>
+          </ownedNode>
+        </ownedBehavior>
+        <ownedBehavior xsi:type="uml:Activity" name="destroyObjectActionEditPartTestCase" specification="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/testChildNodeDestroyObjectActionEditPart">
+          <ownedNode xsi:type="uml:CallOperationAction">
+            <argument xsi:type="uml:ValuePin" name="node">
+              <value xsi:type="uml:InstanceValue" name="GenChildNode_DestroyObjectActionEditPart">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenChildNode_DestroyObjectActionEditPart"/>
+              </value>
+            </argument>
+          </ownedNode>
+        </ownedBehavior>
+        <ownedBehavior xsi:type="uml:Activity" name="valueSpecificationActionEditPartTestCase" specification="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/testChildNodeValueSpecificationActionEditPart">
+          <ownedNode xsi:type="uml:CallOperationAction">
+            <argument xsi:type="uml:ValuePin" name="node">
+              <value xsi:type="uml:InstanceValue" name="GenChildNode_ValueSpecificationActionEditPart">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenChildNode_ValueSpecificationActionEditPart"/>
+              </value>
+            </argument>
+          </ownedNode>
+        </ownedBehavior>
+        <ownedBehavior xsi:type="uml:Activity" name="decisionNodeEditPartTestCase" specification="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/testChildNodeDecisionNodeEditPart">
+          <ownedNode xsi:type="uml:CallOperationAction">
+            <argument xsi:type="uml:ValuePin" name="node">
+              <value xsi:type="uml:InstanceValue" name="GenChildNode_DecisionNodeEditPart">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenChildNode_DecisionNodeEditPart"/>
+              </value>
+            </argument>
+          </ownedNode>
+        </ownedBehavior>
+        <ownedBehavior xsi:type="uml:Activity" name="sequenceNodeEditPartTestCase" specification="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/testChildNodeSequenceNodeEditPart">
+          <ownedNode xsi:type="uml:CallOperationAction">
+            <argument xsi:type="uml:ValuePin" name="node">
+              <value xsi:type="uml:InstanceValue" name="GenChildNode_SequenceNodeEditPart">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenChildNode_SequenceNodeEditPart"/>
+              </value>
+            </argument>
+          </ownedNode>
+        </ownedBehavior>
+        <ownedBehavior xsi:type="uml:Activity" name="mergeNodeEditPartTestCase" specification="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/testChildNodeMergeNodeEditPart">
+          <ownedNode xsi:type="uml:CallOperationAction">
+            <argument xsi:type="uml:ValuePin" name="node">
+              <value xsi:type="uml:InstanceValue" name="GenChildNode_MergeNodeEditPart">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenChildNode_MergeNodeEditPart"/>
+              </value>
+            </argument>
+          </ownedNode>
+        </ownedBehavior>
+        <ownedBehavior xsi:type="uml:Activity" name="acceptEventActionEditPartTestCase" specification="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/testChildNodeAcceptEventActionEditPart">
+          <ownedNode xsi:type="uml:CallOperationAction">
+            <argument xsi:type="uml:ValuePin" name="node">
+              <value xsi:type="uml:InstanceValue" name="GenChildNode_AcceptEventActionEditPart">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenChildNode_AcceptEventActionEditPart"/>
+              </value>
+            </argument>
+          </ownedNode>
+        </ownedBehavior>
+        <ownedBehavior xsi:type="uml:Activity" name="structuredActivityNodeEditPartTestCase" specification="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/testChildNodeStructuredActivityNodeEditPart">
+          <ownedNode xsi:type="uml:CallOperationAction">
+            <argument xsi:type="uml:ValuePin" name="node">
+              <value xsi:type="uml:InstanceValue" name="GenChildNode_StructuredActivityNodeEditPart">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenChildNode_StructuredActivityNodeEditPart"/>
+              </value>
+            </argument>
+          </ownedNode>
+        </ownedBehavior>
+        <ownedBehavior xsi:type="uml:Activity" name="readStructuralFeatureActionEditPartTestCase" specification="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/testChildNodeReadStructuralFeatureActionEditPart">
+          <ownedNode xsi:type="uml:CallOperationAction">
+            <argument xsi:type="uml:ValuePin" name="node">
+              <value xsi:type="uml:InstanceValue" name="GenChildNode_ReadStructuralFeatureActionEditPart">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenChildNode_ReadStructuralFeatureActionEditPart"/>
+              </value>
+            </argument>
+          </ownedNode>
+        </ownedBehavior>
+        <ownedOperation name="testChildNodeBroadcastSignalActionEditPart" method="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/broadcastSignalActionEditPartTestCase">
+          <ownedParameter>
+            <defaultValue xsi:type="uml:InstanceValue">
+              <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenChildNode_BroadcastSignalActionEditPart"/>
+            </defaultValue>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation name="testChildNodeDestroyObjectActionEditPart" method="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/destroyObjectActionEditPartTestCase">
+          <ownedParameter>
+            <defaultValue xsi:type="uml:InstanceValue">
+              <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenChildNode_DestroyObjectActionEditPart"/>
+            </defaultValue>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation name="testChildNodeDataStoreNodeEditPart" method="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/dataStoreNodeEditPartTestCase">
+          <ownedParameter>
+            <defaultValue xsi:type="uml:InstanceValue">
+              <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenChildNode_DataStoreNodeEditPart"/>
+            </defaultValue>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation name="testChildNodeConditionalNodeEditPart" method="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/conditionalNodeEditPartTestCase">
+          <ownedParameter>
+            <defaultValue xsi:type="uml:InstanceValue">
+              <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenChildNode_ConditionalNodeEditPart"/>
+            </defaultValue>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation name="testChildNodeDecisionNodeEditPart" method="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/decisionNodeEditPartTestCase">
+          <ownedParameter>
+            <defaultValue xsi:type="uml:InstanceValue">
+              <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenChildNode_DecisionNodeEditPart"/>
+            </defaultValue>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation name="testChildNodeInitialNodeEditPart" method="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/initialNodeEditPartTestCase">
+          <ownedParameter>
+            <defaultValue xsi:type="uml:InstanceValue">
+              <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenChildNode_InitialNodeEditPart"/>
+            </defaultValue>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation name="testChildNodeSequenceNodeEditPart" method="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/sequenceNodeEditPartTestCase">
+          <ownedParameter>
+            <defaultValue xsi:type="uml:InstanceValue">
+              <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenChildNode_SequenceNodeEditPart"/>
+            </defaultValue>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation name="testChildNodeCentralBufferNodeEditPart" method="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/centralBufferNodeEditPartTestCase">
+          <ownedParameter>
+            <defaultValue xsi:type="uml:InstanceValue">
+              <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenChildNode_CentralBufferNodeEditPart"/>
+            </defaultValue>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation name="testChildNodeSendObjectActionEditPart" method="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/sendObjectActionEditPartTestCase">
+          <ownedParameter>
+            <defaultValue xsi:type="uml:InstanceValue">
+              <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenChildNode_SendObjectActionEditPart"/>
+            </defaultValue>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation name="testChildNodeExpansionRegionEditPart" method="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/expansionRegionEditPartTestCase">
+          <ownedParameter>
+            <defaultValue xsi:type="uml:InstanceValue">
+              <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenChildNode_ExpansionRegionEditPart"/>
+            </defaultValue>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation name="testChildNodeForkNodeEditPart" method="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/forkNodeEditPartTestCase">
+          <ownedParameter>
+            <defaultValue xsi:type="uml:InstanceValue">
+              <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenChildNode_ForkNodeEditPart"/>
+            </defaultValue>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation name="testChildNodeReadStructuralFeatureActionEditPart" method="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/readStructuralFeatureActionEditPartTestCase">
+          <ownedParameter>
+            <defaultValue xsi:type="uml:InstanceValue">
+              <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenChildNode_ReadStructuralFeatureActionEditPart"/>
+            </defaultValue>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation name="testChildNodeMergeNodeEditPart" method="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/mergeNodeEditPartTestCase">
+          <ownedParameter>
+            <defaultValue xsi:type="uml:InstanceValue">
+              <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenChildNode_MergeNodeEditPart"/>
+            </defaultValue>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation name="testChildNodeReadSelfActionEditPart" method="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/readSelfActionEditPartTestCase">
+          <ownedParameter>
+            <defaultValue xsi:type="uml:InstanceValue">
+              <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenChildNode_ReadSelfActionEditPart"/>
+            </defaultValue>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation name="testChildNodeActivityPartitionEditPart" method="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/activityPartitionEditPartTestCase">
+          <ownedParameter>
+            <defaultValue xsi:type="uml:InstanceValue">
+              <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenChildNode_ActivityPartitionEditPart"/>
+            </defaultValue>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation name="testChildNodeReadVariableActionEditPart" method="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/readVariableActionEditPartTestCase">
+          <ownedParameter>
+            <defaultValue xsi:type="uml:InstanceValue">
+              <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenChildNode_ReadVariableActionEditPart"/>
+            </defaultValue>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation name="testChildNodeCreateObjectActionEditPart" method="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/createObjectActionEditPartTestCase">
+          <ownedParameter>
+            <defaultValue xsi:type="uml:InstanceValue">
+              <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenChildNode_CreateObjectActionEditPart"/>
+            </defaultValue>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation name="testChildNodeActivityFinalNodeEditPart" method="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/activityFinalNodeEditPartTestCase">
+          <ownedParameter>
+            <defaultValue xsi:type="uml:InstanceValue">
+              <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenChildNode_ActivityFinalNodeEditPart"/>
+            </defaultValue>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation name="testChildNodeJoinNodeEditPart" method="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/joinNodeEditPartTestCase">
+          <ownedParameter>
+            <defaultValue xsi:type="uml:InstanceValue">
+              <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenChildNode_JoinNodeEditPart"/>
+            </defaultValue>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation name="testChildNodeValueSpecificationActionEditPart" method="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/valueSpecificationActionEditPartTestCase">
+          <ownedParameter>
+            <defaultValue xsi:type="uml:InstanceValue">
+              <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenChildNode_ValueSpecificationActionEditPart"/>
+            </defaultValue>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation name="testChildNodeActivityEditPartCN" method="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/activityEditPartCNTestCase">
+          <ownedParameter>
+            <defaultValue xsi:type="uml:InstanceValue">
+              <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenChildNode_ActivityEditPartCN"/>
+            </defaultValue>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation name="testChildNodeInterruptibleActivityRegionEditPart" method="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/interruptibleActivityRegionEditPartTestCase">
+          <ownedParameter>
+            <defaultValue xsi:type="uml:InstanceValue">
+              <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenChildNode_InterruptibleActivityRegionEditPart"/>
+            </defaultValue>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation name="testChildNodeStructuredActivityNodeEditPart" method="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/structuredActivityNodeEditPartTestCase">
+          <ownedParameter>
+            <defaultValue xsi:type="uml:InstanceValue">
+              <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenChildNode_StructuredActivityNodeEditPart"/>
+            </defaultValue>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation name="testChildNodeAcceptEventActionEditPart" method="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/acceptEventActionEditPartTestCase">
+          <ownedParameter>
+            <defaultValue xsi:type="uml:InstanceValue">
+              <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenChildNode_AcceptEventActionEditPart"/>
+            </defaultValue>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation name="testChildNodeOpaqueActionEditPart" method="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/opaqueActionEditPartTestCase">
+          <ownedParameter>
+            <defaultValue xsi:type="uml:InstanceValue">
+              <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenChildNode_OpaqueActionEditPart"/>
+            </defaultValue>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation name="testChildNodeFlowFinalNodeEditPart" method="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/flowFinalNodeEditPartTestCase">
+          <ownedParameter>
+            <defaultValue xsi:type="uml:InstanceValue">
+              <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenChildNode_FlowFinalNodeEditPart"/>
+            </defaultValue>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation name="testChildNodeAddVariableValueActionEditPart" method="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/addVariableValueActionEditPartTestCase">
+          <ownedParameter>
+            <defaultValue xsi:type="uml:InstanceValue">
+              <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenChildNode_AddVariableValueActionEditPart"/>
+            </defaultValue>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation name="testChildNodeLoopNodeEditPart" method="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/loopNodeEditPartTestCase">
+          <ownedParameter>
+            <defaultValue xsi:type="uml:InstanceValue">
+              <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenChildNode_LoopNodeEditPart"/>
+            </defaultValue>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xsi:type="uml:Class" name="TestActivityDiagramLinkGen">
+        <elementImport alias="ObjectFlowEditPart"/>
+        <elementImport alias="ControlFlowEditPart"/>
+        <elementImport alias="ActivityEditPart"/>
+        <generalization>
+          <general xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/testingFrameworkBase.uml#_kHbiID-pEeOBJIvKdeZtpQ"/>
+        </generalization>
+        <ownedAttribute name="objectFlowEditPart">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjxVbA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenLink_ObjectFlowEditPart"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="controlFlowEditPart">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjxVbA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenLink_ControlFlowEditPart"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="diagram">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjwcLA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenDiagram_ActivityDiagramEditPart"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="generator">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjJYbA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenEditorGenerator_org.eclipse.papyrus.uml.diagram.activity"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="diagramUpdater">
+          <defaultValue xsi:type="uml:StringExpression" symbol="UMLDiagramUpdater"/>
+        </ownedAttribute>
+        <ownedAttribute name="self" type="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramLinkGen"/>
+        <ownedAttribute name="containerEditPart" isDerived="true">
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenTopLevelNode_ActivityEditPart"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedBehavior xsi:type="uml:Activity" name="objectFlowFromActivityToActivityTestCase" specification="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramLinkGen/testLinkObjectFlowFromActivityToActivity">
+          <ownedNode xsi:type="uml:CallOperationAction">
+            <argument xsi:type="uml:ValuePin" name="target">
+              <value xsi:type="uml:InstanceValue" name="GenTopLevelNode_ActivityEditPart">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenTopLevelNode_ActivityEditPart"/>
+              </value>
+            </argument>
+            <argument xsi:type="uml:ValuePin" name="source">
+              <value xsi:type="uml:InstanceValue" name="GenTopLevelNode_ActivityEditPart">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenTopLevelNode_ActivityEditPart"/>
+              </value>
+            </argument>
+            <argument xsi:type="uml:ValuePin" name="link">
+              <value xsi:type="uml:InstanceValue" name="GenLink_ObjectFlowEditPart">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenLink_ObjectFlowEditPart"/>
+              </value>
+            </argument>
+          </ownedNode>
+        </ownedBehavior>
+        <ownedBehavior xsi:type="uml:Activity" name="controlFlowFromActivityToActivityTestCase" specification="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramLinkGen/testLinkControlFlowFromActivityToActivity">
+          <ownedNode xsi:type="uml:CallOperationAction">
+            <argument xsi:type="uml:ValuePin" name="link">
+              <value xsi:type="uml:InstanceValue" name="GenLink_ControlFlowEditPart">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenLink_ControlFlowEditPart"/>
+              </value>
+            </argument>
+            <argument xsi:type="uml:ValuePin" name="source">
+              <value xsi:type="uml:InstanceValue" name="GenTopLevelNode_ActivityEditPart">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenTopLevelNode_ActivityEditPart"/>
+              </value>
+            </argument>
+            <argument xsi:type="uml:ValuePin" name="target">
+              <value xsi:type="uml:InstanceValue" name="GenTopLevelNode_ActivityEditPart">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenTopLevelNode_ActivityEditPart"/>
+              </value>
+            </argument>
+          </ownedNode>
+        </ownedBehavior>
+        <ownedOperation name="testLinkObjectFlowFromActivityToActivity" method="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramLinkGen/objectFlowFromActivityToActivityTestCase">
+          <ownedParameter>
+            <defaultValue xsi:type="uml:InstanceValue">
+              <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenLink_ObjectFlowEditPart"/>
+            </defaultValue>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation name="testLinkControlFlowFromActivityToActivity" method="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramLinkGen/controlFlowFromActivityToActivityTestCase">
+          <ownedParameter>
+            <defaultValue xsi:type="uml:InstanceValue">
+              <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenLink_ControlFlowEditPart"/>
+            </defaultValue>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xsi:type="uml:Class" name="TestActivityDiagramTopNodeGen">
+        <elementImport alias="ActivityEditPart"/>
+        <generalization>
+          <general xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/testingFrameworkBase.uml#_FH-oEAHgEeSXTsFWGl8rRw"/>
+        </generalization>
+        <ownedAttribute name="generator">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjJYbA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenEditorGenerator_org.eclipse.papyrus.uml.diagram.activity"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="diagram">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWjwcLA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenDiagram_ActivityDiagramEditPart"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="self" type="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramTopNodeGen"/>
+        <ownedAttribute name="containerEditPart" isDerived="true">
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenTopLevelNode_ActivityEditPart"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="activityEditPart">
+          <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_WWk_MrA9EeO4_99b0CahZA"/>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenTopLevelNode_ActivityEditPart"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute name="diagramUpdater">
+          <defaultValue xsi:type="uml:StringExpression" symbol="UMLDiagramUpdater"/>
+        </ownedAttribute>
+        <ownedBehavior xsi:type="uml:Activity" name="activityEditPartTestCase" specification="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramTopNodeGen/testTopNodeActivityEditPart">
+          <ownedNode xsi:type="uml:CallOperationAction">
+            <argument xsi:type="uml:ValuePin" name="node">
+              <value xsi:type="uml:InstanceValue" name="GenTopLevelNode_ActivityEditPart">
+                <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenTopLevelNode_ActivityEditPart"/>
+              </value>
+            </argument>
+          </ownedNode>
+        </ownedBehavior>
+        <ownedOperation name="testTopNodeActivityEditPart" method="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramTopNodeGen/activityEditPartTestCase">
+          <ownedParameter>
+            <defaultValue xsi:type="uml:InstanceValue">
+              <instance href="../../org.eclipse.papyrus.uml.diagram.activity/model/activityDiagram.gmfgen.uml#//GenTopLevelNode_ActivityEditPart"/>
+            </defaultValue>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+      <profileApplication>
+        <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
+          <references href="../../org.eclipse.upr.utp/model/utp.profile.uml#_0RDYMC0WEeS-HoGdjtWQlg"/>
+        </eAnnotations>
+        <appliedProfile href="../../org.eclipse.upr.utp/model/utp.profile.uml#_iCl4wOVMEeG84fBOY39c0g"/>
+      </profileApplication>
+    </packagedElement>
+    <profileApplication>
+      <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references href="../../org.eclipse.upr.utp/model/utp.profile.uml#_0RDYMC0WEeS-HoGdjtWQlg"/>
+      </eAnnotations>
+      <appliedProfile href="../../org.eclipse.upr.utp/model/utp.profile.uml#_iCl4wOVMEeG84fBOY39c0g"/>
+    </profileApplication>
+  </uml:Model>
+  <utp:TestContext base_BehavioredClassifier="/0/org.eclipse.papyrus.uml.diagram.activity.test.drop/TestActivityDiagramDropGen" base_StructuredClassifier="/0/org.eclipse.papyrus.uml.diagram.activity.test.drop/TestActivityDiagramDropGen"/>
+  <utp:TestCase/>
+  <utp:SUT/>
+  <utp:SUT base_Property="/0/org.eclipse.papyrus.uml.diagram.activity.test.appearance/TestActivityDiagramAppearanceGen/generator"/>
+  <utp:SUT base_Property="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/loopNodeEditPart"/>
+  <utp:TestCase base_Operation="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/testChildNodeFlowFinalNodeEditPart"/>
+  <utp:SUT base_Property="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/acceptEventActionEditPart"/>
+  <utp:TestContext/>
+  <utp:SUT base_Property="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/forkNodeEditPart"/>
+  <utp:TestCase/>
+  <utp:TestCase base_Operation="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/testChildNodeAcceptEventActionEditPart"/>
+  <utp:TestCase base_Operation="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/testChildNodeReadStructuralFeatureActionEditPart"/>
+  <utp:TestCase/>
+  <utp:SUT base_Property="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/createObjectActionEditPart"/>
+  <utp:SUT base_Property="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/mergeNodeEditPart"/>
+  <utp:SUT/>
+  <utp:TestCase/>
+  <utp:SUT base_Property="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/joinNodeEditPart"/>
+  <utp:TestCase base_Operation="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/testChildNodeLoopNodeEditPart"/>
+  <utp:TestCase base_Operation="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/testChildNodeBroadcastSignalActionEditPart"/>
+  <utp:SUT base_Property="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/centralBufferNodeEditPart"/>
+  <utp:SUT base_Property="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramLinkGen/controlFlowEditPart"/>
+  <utp:SUT/>
+  <utp:TestCase/>
+  <utp:SUT/>
+  <utp:TestCase base_Operation="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/testChildNodeInitialNodeEditPart"/>
+  <utp:SUT base_Property="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/opaqueActionEditPart"/>
+  <utp:TestCase base_Operation="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/testChildNodeActivityFinalNodeEditPart"/>
+  <utp:TestCase/>
+  <utp:SUT base_Property="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/readSelfActionEditPart"/>
+  <utp:TestCase/>
+  <utp:SUT/>
+  <utp:SUT base_Property="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/activityEditPartCN"/>
+  <utp:TestCase/>
+  <utp:SUT/>
+  <utp:TestCase base_Operation="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/testChildNodeMergeNodeEditPart"/>
+  <utp:SUT base_Property="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/flowFinalNodeEditPart"/>
+  <utp:TestContext base_BehavioredClassifier="/0/org.eclipse.papyrus.uml.diagram.activity.test.appearance/TestActivityDiagramAppearanceGen" base_StructuredClassifier="/0/org.eclipse.papyrus.uml.diagram.activity.test.appearance/TestActivityDiagramAppearanceGen"/>
+  <utp:SUT/>
+  <utp:TestCase/>
+  <utp:TestCase base_Operation="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/testChildNodeInterruptibleActivityRegionEditPart"/>
+  <utp:SUT/>
+  <utp:TestCase base_Operation="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/testChildNodeActivityPartitionEditPart"/>
+  <utp:SUT/>
+  <utp:SUT/>
+  <utp:TestCase/>
+  <utp:TestCase/>
+  <utp:TestCase/>
+  <utp:TestCase/>
+  <utp:TestContext/>
+  <utp:TestCase/>
+  <utp:TestContext/>
+  <utp:TestCase/>
+  <utp:SUT/>
+  <utp:SUT base_Property="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/conditionalNodeEditPart"/>
+  <utp:TestContext base_BehavioredClassifier="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramLinkGen" base_StructuredClassifier="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramLinkGen"/>
+  <utp:SUT/>
+  <utp:SUT/>
+  <utp:SUT base_Property="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/structuredActivityNodeEditPart"/>
+  <utp:TestCase/>
+  <utp:TestCase/>
+  <utp:SUT/>
+  <utp:SUT/>
+  <utp:SUT/>
+  <utp:TestCase/>
+  <utp:SUT base_Property="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/decisionNodeEditPart"/>
+  <utp:SUT/>
+  <utp:SUT base_Property="/0/org.eclipse.papyrus.uml.diagram.activity.test.drop/TestActivityDiagramDropGen/activityEditPart"/>
+  <utp:SUT/>
+  <utp:TestContext base_BehavioredClassifier="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramTopNodeGen" base_StructuredClassifier="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramTopNodeGen"/>
+  <utp:SUT base_Property="/0/org.eclipse.papyrus.uml.diagram.activity.test.appearance/TestActivityDiagramAppearanceGen/activityEditPart"/>
+  <utp:TestCase/>
+  <utp:TestCase/>
+  <utp:TestContext/>
+  <utp:TestCase base_Operation="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/testChildNodeValueSpecificationActionEditPart"/>
+  <utp:SUT base_Property="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/activityFinalNodeEditPart"/>
+  <utp:SUT/>
+  <utp:SUT base_Property="/0/org.eclipse.papyrus.uml.diagram.activity.test.appearance/TestActivityDiagramAppearanceGen/diagram"/>
+  <utp:SUT base_Property="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/broadcastSignalActionEditPart"/>
+  <utp:TestCase base_Operation="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/testChildNodeStructuredActivityNodeEditPart"/>
+  <utp:TestCase base_Operation="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/testChildNodeDecisionNodeEditPart"/>
+  <utp:TestCase base_Operation="/0/org.eclipse.papyrus.uml.diagram.activity.test.appearance/TestActivityDiagramAppearanceGen/testAppearanceNodeActivityEditPart"/>
+  <utp:SUT base_Property="/0/org.eclipse.papyrus.uml.diagram.activity.test.drop/TestActivityDiagramDropGen/generator"/>
+  <utp:SUT/>
+  <utp:SUT base_Property="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/sequenceNodeEditPart"/>
+  <utp:SUT base_Property="/0/org.eclipse.papyrus.uml.diagram.activity.test.drop/TestActivityDiagramDropGen/diagram"/>
+  <utp:TestCase/>
+  <utp:SUT/>
+  <utp:SUT/>
+  <utp:TestCase base_Operation="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/testChildNodeForkNodeEditPart"/>
+  <utp:TestCase/>
+  <utp:TestCase base_Operation="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/testChildNodeSendObjectActionEditPart"/>
+  <utp:SUT base_Property="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/initialNodeEditPart"/>
+  <utp:SUT base_Property="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/sendObjectActionEditPart"/>
+  <utp:SUT base_Property="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramLinkGen/objectFlowEditPart"/>
+  <utp:TestCase base_Operation="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramLinkGen/testLinkControlFlowFromActivityToActivity"/>
+  <utp:SUT/>
+  <utp:TestCase base_Operation="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/testChildNodeDestroyObjectActionEditPart"/>
+  <utp:SUT/>
+  <utp:TestCase base_Operation="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramLinkGen/testLinkObjectFlowFromActivityToActivity"/>
+  <utp:TestCase base_Operation="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramTopNodeGen/testTopNodeActivityEditPart"/>
+  <utp:SUT/>
+  <utp:SUT base_Property="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/readStructuralFeatureActionEditPart"/>
+  <utp:SUT base_Property="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/readVariableActionEditPart"/>
+  <utp:TestCase/>
+  <utp:TestCase base_Operation="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/testChildNodeConditionalNodeEditPart"/>
+  <utp:SUT/>
+  <utp:SUT base_Property="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/addVariableValueActionEditPart"/>
+  <utp:SUT/>
+  <utp:TestCase base_Operation="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/testChildNodeDataStoreNodeEditPart"/>
+  <utp:TestCase/>
+  <utp:SUT/>
+  <utp:TestContext/>
+  <utp:TestCase/>
+  <utp:TestCase base_Operation="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/testChildNodeJoinNodeEditPart"/>
+  <utp:TestCase base_Operation="/0/org.eclipse.papyrus.uml.diagram.activity.test.drop/TestActivityDiagramDropGen/testDropNodeActivityEditPart"/>
+  <utp:TestCase/>
+  <utp:TestCase/>
+  <utp:SUT base_Property="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/destroyObjectActionEditPart"/>
+  <utp:TestContext/>
+  <utp:SUT/>
+  <utp:TestCase base_Operation="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/testChildNodeAddVariableValueActionEditPart"/>
+  <utp:SUT base_Property="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/expansionRegionEditPart"/>
+  <utp:SUT/>
+  <utp:SUT/>
+  <utp:TestCase base_Operation="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/testChildNodeCentralBufferNodeEditPart"/>
+  <utp:SUT/>
+  <utp:TestCase base_Operation="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/testChildNodeReadSelfActionEditPart"/>
+  <utp:TestCase/>
+  <utp:SUT/>
+  <utp:SUT/>
+  <utp:TestCase base_Operation="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/testChildNodeExpansionRegionEditPart"/>
+  <utp:TestCase/>
+  <utp:SUT base_Property="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/interruptibleActivityRegionEditPart"/>
+  <utp:SUT/>
+  <utp:TestCase/>
+  <utp:TestCase/>
+  <utp:SUT base_Property="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/valueSpecificationActionEditPart"/>
+  <utp:TestCase/>
+  <utp:TestCase base_Operation="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/testChildNodeActivityEditPartCN"/>
+  <utp:TestContext base_BehavioredClassifier="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen" base_StructuredClassifier="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen"/>
+  <utp:TestCase base_Operation="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/testChildNodeOpaqueActionEditPart"/>
+  <utp:TestContext base_BehavioredClassifier="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramLinkOwnedBySourceGen" base_StructuredClassifier="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramLinkOwnedBySourceGen"/>
+  <utp:SUT/>
+  <utp:SUT/>
+  <utp:SUT base_Property="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/dataStoreNodeEditPart"/>
+  <utp:TestCase/>
+  <utp:TestCase base_Operation="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/testChildNodeCreateObjectActionEditPart"/>
+  <utp:TestCase base_Operation="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/testChildNodeSequenceNodeEditPart"/>
+  <utp:SUT base_Property="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramTopNodeGen/activityEditPart"/>
+  <utp:SUT base_Property="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/activityPartitionEditPart"/>
+  <utp:TestCase base_Operation="/0/org.eclipse.papyrus.uml.diagram.activity.test.createFromPalette/TestActivityDiagramChildNodeInActivityEditPartGen/testChildNodeReadVariableActionEditPart"/>
+</xmi:XMI>

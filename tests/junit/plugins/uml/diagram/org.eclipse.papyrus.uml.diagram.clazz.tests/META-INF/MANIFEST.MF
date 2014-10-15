@@ -19,8 +19,7 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.emf.common.ui;bundle-version="2.9.0",
  org.eclipse.papyrus.infra.widgets;bundle-version="1.1.0",
  org.eclipse.papyrus.junit.utils;bundle-version="1.1.0"
-Export-Package: org.eclipse.papyrus.diagram.clazz.test.createFromPalette,
- org.eclipse.papyrus.uml.diagram.clazz.test,
+Export-Package: org.eclipse.papyrus.uml.diagram.clazz.test,
  org.eclipse.papyrus.uml.diagram.clazz.test.canonical,
  org.eclipse.papyrus.uml.diagram.clazz.test.load
 Bundle-Vendor: %providerName

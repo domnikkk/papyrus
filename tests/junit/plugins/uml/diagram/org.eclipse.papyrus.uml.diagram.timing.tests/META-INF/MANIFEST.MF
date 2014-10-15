@@ -15,8 +15,11 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.uml2.uml;bundle-version="4.1.0",
  org.junit;bundle-version="4.10.0",
  org.eclipse.papyrus.junit.framework;bundle-version="1.1.0",
- org.eclipse.papyrus.junit.utils;bundle-version="1.1.0"
-Export-Package: org.eclipse.papyrus.uml.diagram.timing.tests
+ org.eclipse.papyrus.junit.utils;bundle-version="1.1.0",
+ org.eclipse.papyrus.uml.diagram.tests,
+ org.eclipse.gmf.tooling.runtime
+Export-Package: org.eclipse.papyrus.uml.diagram.timing.test,
+ org.eclipse.papyrus.uml.diagram.timing.tests
 Bundle-Vendor: Eclipse Modeling Project
 Bundle-ActivationPolicy: lazy
 Bundle-Version: 1.1.0.qualifier
