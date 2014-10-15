@@ -269,7 +269,7 @@ mapping BasicDecorationNode::toConnectorLabel() : DecorationNode inherits Node::
 mapping BasicDecorationNode::toLabel() : DecorationNode inherits Node::toPapyrusNode when {
 	not self.getType().oclIsUndefined() and
 	self.element.oclIsKindOf(uml::NamedElement) and 
-	(self.type = 'Name' or self.type = 'PartitionName')
+	(self.type = 'Name' or self.type = 'PartitionName' or self.type = 'ObjectNodeNameLabel')
 }{}
 
 mapping BasicSemanticCompartment::toListCompartment() : BasicCompartment inherits Node::toPapyrusNode, DrawerStyle::toDrawerStyle when {
@@ -593,7 +593,7 @@ query View::doGetDecorationType(element : Element) : String{
 				}
 			elif element.oclIsTypeOf(ActivityParameterNode) then
 				return switch {
-					case (self.type = 'Name') '5071';
+					case (self.type = 'ObjectNodeNameLabel') '5071';
 					
 				}
 			elif element.oclIsTypeOf(DestroyObjectAction) then
