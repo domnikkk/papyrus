@@ -3542,7 +3542,8 @@
     <plugin
         iD="org.eclipse.papyrus.uml.diagram.profile"
         name="PapyrusUMLProfileDiagram"
-        provider="CEA LIST">
+        provider="CEA LIST"
+        version="1.0.1.qualifier">
       <requiredPlugins>org.eclipse.draw2d</requiredPlugins>
       <requiredPlugins>org.eclipse.gmf.runtime.draw2d.ui</requiredPlugins>
     </plugin>

@@ -2868,7 +2868,8 @@
     <plugin
         iD="org.eclipse.papyrus.uml.diagram.deployment"
         name="Papyrus Deployment Diagram "
-        provider="Eclipse Modeling Project">
+        provider="Eclipse Modeling Project"
+        version="1.0.1.qualifier">
       <requiredPlugins>org.eclipse.draw2d</requiredPlugins>
       <requiredPlugins>org.eclipse.gmf.runtime.draw2d.ui</requiredPlugins>
     </plugin>

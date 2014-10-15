@@ -421,12 +421,14 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 */
 		public boolean canCreateCommentAnnotatedElement_4008(Comment source, Element target) {
 			if (source != null) {
-				if (source.getAnnotatedElements().contains(target)) {
+				if (source.getAnnotatedElements()
+						.contains(target)) {
 					return false;
 				}
 			}
 
-			return canExistCommentAnnotatedElement_4008(source, target);
+			return canExistCommentAnnotatedElement_4008(
+					source, target);
 		}
 
 		/**
@@ -434,47 +436,54 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 */
 		public boolean canCreateConstraintConstrainedElement_4009(Constraint source, Element target) {
 			if (source != null) {
-				if (source.getConstrainedElements().contains(target)) {
+				if (source.getConstrainedElements()
+						.contains(target)) {
 					return false;
 				}
 			}
 
-			return canExistConstraintConstrainedElement_4009(source, target);
+			return canExistConstraintConstrainedElement_4009(
+					source, target);
 		}
 
 		/**
 		 * @generated
 		 */
 		public boolean canCreateDeployment_4001(DeploymentTarget container, NamedElement source, NamedElement target) {
-			return canExistDeployment_4001(container, null, source, target);
+			return canExistDeployment_4001(
+					container, null, source, target);
 		}
 
 		/**
 		 * @generated
 		 */
 		public boolean canCreateManifestation_4002(Artifact container, NamedElement source, NamedElement target) {
-			return canExistManifestation_4002(container, null, source, target);
+			return canExistManifestation_4002(
+					container, null, source, target);
 		}
 
 		/**
 		 * @generated
 		 */
 		public boolean canCreateGeneralization_4003(Classifier container, Classifier source, Classifier target) {
-			return canExistGeneralization_4003(container, null, source, target);
+			return canExistGeneralization_4003(
+					container, null, source, target);
 		}
 
 		/**
 		 * @generated
 		 */
 		public boolean canCreateDependency_4004(Package container, NamedElement source, NamedElement target) {
-			return canExistDependency_4004(container, null, source, target);
+			return canExistDependency_4004(
+					container, null, source, target);
 		}
 
 		/**
 		 * @generated
 		 */
 		public boolean canCreateDependency_4010(Package container, NamedElement source, NamedElement target) {
-			return canExistDependency_4010(container, null, source, target);
+			return canExistDependency_4010(
+					container, null, source, target);
 		}
 
 		/**

@@ -910,7 +910,8 @@
     </diagram>
     <plugin
         iD="org.eclipse.papyrus.uml.diagram.communication"
-        name="org.eclipse.papyrus.uml.diagram.communication">
+        name="org.eclipse.papyrus.uml.diagram.communication"
+        version="1.0.1.qualifier">
       <requiredPlugins>org.eclipse.draw2d</requiredPlugins>
       <requiredPlugins>org.eclipse.papyrus.uml.diagram.common</requiredPlugins>
       <requiredPlugins>org.eclipse.gmf.runtime.draw2d.ui</requiredPlugins>
