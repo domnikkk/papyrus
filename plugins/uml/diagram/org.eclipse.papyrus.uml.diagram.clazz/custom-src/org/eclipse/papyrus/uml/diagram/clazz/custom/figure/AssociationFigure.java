@@ -249,20 +249,7 @@ public class AssociationFigure extends UMLEdgeFigure {
 	 * @return the navigable aggregation decoration
 	 */
 	protected RotatableDecoration getNavigableAggregationDecoration() {
-		PolygonDecoration decoration = new PolygonDecoration();
-		PointList decorationPointList = new PointList();
-		decorationPointList.addPoint(0, 0);
-		decorationPointList.addPoint(-3, 2);
-		decorationPointList.addPoint(-6, 0);
-		decorationPointList.addPoint(-12, 2);
-		decorationPointList.addPoint(-6, 0);
-		decorationPointList.addPoint(-12, -2);
-		decorationPointList.addPoint(-6, 0);
-		decorationPointList.addPoint(-3, -2);
-		decoration.setTemplate(decorationPointList);
-		decoration.setBackgroundColor(org.eclipse.draw2d.ColorConstants.white);
-		decoration.setScale(1, 1);
-		return decoration;
+		return getDiamondNavigableAggregationDecoration();
 	}
 
 	/**
@@ -271,18 +258,92 @@ public class AssociationFigure extends UMLEdgeFigure {
 	 * @return the navigable composition decoration
 	 */
 	protected RotatableDecoration getNavigableCompositionDecoration() {
+		return getDiamondNavigableCompositionDecoration();
+	}
+
+	/**
+	 * Gets the diamond navigable composition decoration.
+	 *
+	 * @return the diamond navigable composition decoration
+	 */
+	private RotatableDecoration getDiamondNavigableCompositionDecoration() {
 		PolygonDecoration decoration = new PolygonDecoration();
 		PointList decorationPointList = new PointList();
-		decorationPointList.addPoint(0, 0);
-		decorationPointList.addPoint(-3, 2);
+		decorationPointList.addPoint(0, 1);
+		decorationPointList.addPoint(-2, 3);
+		decorationPointList.addPoint(-4, 3);
+		decorationPointList.addPoint(-6, 1);
 		decorationPointList.addPoint(-6, 0);
-		decorationPointList.addPoint(-12, 2);
+		decorationPointList.addPoint(-15, 6);
+		decorationPointList.addPoint(-24, 0);
+		decorationPointList.addPoint(-40, 8);
+		decorationPointList.addPoint(-24, 0);
+		decorationPointList.addPoint(-40, -8);
+		decorationPointList.addPoint(-24, 0);
+		decorationPointList.addPoint(-15, -6);
 		decorationPointList.addPoint(-6, 0);
-		decorationPointList.addPoint(-12, -2);
-		decorationPointList.addPoint(-6, 0);
-		decorationPointList.addPoint(-3, -2);
+		decorationPointList.addPoint(-6, -1);
+		decorationPointList.addPoint(-4, -3);
+		decorationPointList.addPoint(-2, -3);
+		decorationPointList.addPoint(0, -1); // color Point
+		// decorationPointList.addPoint(-1, -1);
+		// decorationPointList.addPoint(-1, 1);
+		// decorationPointList.addPoint(-2, 3);
+		// decorationPointList.addPoint(-2, -3);
+		// decorationPointList.addPoint(-3, -3);
+		// decorationPointList.addPoint(-3, 3);
+		// decorationPointList.addPoint(-4, 3);
+		// decorationPointList.addPoint(-4, -3);
+		// decorationPointList.addPoint(-5, -2);
+		// decorationPointList.addPoint(-5, 2);
+		// decorationPointList.addPoint(-6, 1);
+		// decorationPointList.addPoint(-6, -1);
+		decoration.setScale(1, 0.75);
 		decoration.setTemplate(decorationPointList);
-		decoration.setScale(1, 1);
+		return decoration;
+	}
+
+	/**
+	 * Gets the diamond navigable aggregation decoration.
+	 *
+	 * @return the diamond navigable aggregation decoration
+	 */
+	private RotatableDecoration getDiamondNavigableAggregationDecoration() {
+		PolygonDecoration decoration = new PolygonDecoration();
+		PointList decorationPointList = new PointList();
+		decorationPointList.addPoint(0, 1);
+		decorationPointList.addPoint(-2, 3);
+		decorationPointList.addPoint(-4, 3);
+		decorationPointList.addPoint(-6, 1);
+		decorationPointList.addPoint(-6, 0);
+		decorationPointList.addPoint(-15, 5);
+		decorationPointList.addPoint(-24, 0);
+		decorationPointList.addPoint(-40, 5);
+		decorationPointList.addPoint(-24, 0);
+		decorationPointList.addPoint(-40, -5);
+		decorationPointList.addPoint(-24, 0);
+		decorationPointList.addPoint(-15, -5);
+		decorationPointList.addPoint(-6, 0);
+		decorationPointList.addPoint(-6, -1);
+		decorationPointList.addPoint(-4, -3);
+		decorationPointList.addPoint(-2, -3);
+		decorationPointList.addPoint(0, -1); // color Point
+		decorationPointList.addPoint(-1, -1);
+		decorationPointList.addPoint(-1, -1);
+		decorationPointList.addPoint(-1, 1);
+		decorationPointList.addPoint(-2, 3);
+		decorationPointList.addPoint(-2, -3);
+		decorationPointList.addPoint(-3, -3);
+		decorationPointList.addPoint(-3, 3);
+		decorationPointList.addPoint(-4, 3);
+		decorationPointList.addPoint(-4, -3);
+		decorationPointList.addPoint(-5, -2);
+		decorationPointList.addPoint(-5, 2);
+		decorationPointList.addPoint(-6, 1);
+		decorationPointList.addPoint(-6, -1);
+		decoration.setScale(1, 0.75);
+		decoration.setTemplate(decorationPointList);
+		decoration.setBackgroundColor(org.eclipse.draw2d.ColorConstants.white);
 		return decoration;
 	}
 
@@ -402,42 +463,7 @@ public class AssociationFigure extends UMLEdgeFigure {
 	 * @return the owned navigable aggregation decoration
 	 */
 	protected RotatableDecoration getOwnedNavigableAggregationDecoration() {
-		PolygonDecoration decoration = new PolygonDecoration();
-		PointList decorationPointList = new PointList();
-		decorationPointList.addPoint(0, 1);
-		decorationPointList.addPoint(-2, 3);
-		decorationPointList.addPoint(-4, 3);
-		decorationPointList.addPoint(-6, 1);
-		decorationPointList.addPoint(-6, 0);
-		decorationPointList.addPoint(-15, 5);
-		decorationPointList.addPoint(-24, 0);
-		decorationPointList.addPoint(-40, 5);
-		decorationPointList.addPoint(-24, 0);
-		decorationPointList.addPoint(-40, -5);
-		decorationPointList.addPoint(-24, 0);
-		decorationPointList.addPoint(-15, -5);
-		decorationPointList.addPoint(-6, 0);
-		decorationPointList.addPoint(-6, -1);
-		decorationPointList.addPoint(-4, -3);
-		decorationPointList.addPoint(-2, -3);
-		decorationPointList.addPoint(0, -1); // color Point
-		decorationPointList.addPoint(-1, -1);
-		decorationPointList.addPoint(-1, -1);
-		decorationPointList.addPoint(-1, 1);
-		decorationPointList.addPoint(-2, 3);
-		decorationPointList.addPoint(-2, -3);
-		decorationPointList.addPoint(-3, -3);
-		decorationPointList.addPoint(-3, 3);
-		decorationPointList.addPoint(-4, 3);
-		decorationPointList.addPoint(-4, -3);
-		decorationPointList.addPoint(-5, -2);
-		decorationPointList.addPoint(-5, 2);
-		decorationPointList.addPoint(-6, 1);
-		decorationPointList.addPoint(-6, -1);
-		decoration.setScale(1, 0.75);
-		decoration.setTemplate(decorationPointList);
-		decoration.setBackgroundColor(org.eclipse.draw2d.ColorConstants.white);
-		return decoration;
+		return getDiamondNavigableAggregationDecoration();
 	}
 
 	/**
@@ -446,40 +472,7 @@ public class AssociationFigure extends UMLEdgeFigure {
 	 * @return the owned navigable composition decoration
 	 */
 	protected RotatableDecoration getOwnedNavigableCompositionDecoration() {
-		PolygonDecoration decoration = new PolygonDecoration();
-		PointList decorationPointList = new PointList();
-		decorationPointList.addPoint(0, 1);
-		decorationPointList.addPoint(-2, 3);
-		decorationPointList.addPoint(-4, 3);
-		decorationPointList.addPoint(-6, 1);
-		decorationPointList.addPoint(-6, 0);
-		decorationPointList.addPoint(-15, 6);
-		decorationPointList.addPoint(-24, 0);
-		decorationPointList.addPoint(-40, 8);
-		decorationPointList.addPoint(-24, 0);
-		decorationPointList.addPoint(-40, -8);
-		decorationPointList.addPoint(-24, 0);
-		decorationPointList.addPoint(-15, -6);
-		decorationPointList.addPoint(-6, 0);
-		decorationPointList.addPoint(-6, -1);
-		decorationPointList.addPoint(-4, -3);
-		decorationPointList.addPoint(-2, -3);
-		decorationPointList.addPoint(0, -1); // color Point
-		// decorationPointList.addPoint(-1, -1);
-		// decorationPointList.addPoint(-1, 1);
-		// decorationPointList.addPoint(-2, 3);
-		// decorationPointList.addPoint(-2, -3);
-		// decorationPointList.addPoint(-3, -3);
-		// decorationPointList.addPoint(-3, 3);
-		// decorationPointList.addPoint(-4, 3);
-		// decorationPointList.addPoint(-4, -3);
-		// decorationPointList.addPoint(-5, -2);
-		// decorationPointList.addPoint(-5, 2);
-		// decorationPointList.addPoint(-6, 1);
-		// decorationPointList.addPoint(-6, -1);
-		decoration.setScale(1, 0.75);
-		decoration.setTemplate(decorationPointList);
-		return decoration;
+		return getDiamondNavigableCompositionDecoration();
 	}
 
 	/**
