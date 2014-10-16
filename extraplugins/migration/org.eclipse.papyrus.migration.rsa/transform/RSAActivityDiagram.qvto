@@ -33,6 +33,7 @@ mapping notation::Diagram::generateDiagram() : notation::Diagram inherits Diagra
 }{
 	end {
 		graphics.objectsOfType(Shape)->any(type = '2001').map fixFramePosition();
+		graphics.objectsOfType(Shape)->any(type = '2001').map createHeaders();
 		
 		graphics.objectsOfType(Shape)->select(type='3080').map addCommentDecoration();
 		graphics.objectsOfType(Shape)->select(type = '3112').map addConstraintDecoration();
@@ -124,6 +125,16 @@ mapping inout Shape::fixFramePosition() {
 	var margin := 10;
 	if bounds.x < margin then bounds.x := margin endif;
 	if bounds.y < margin then bounds.y := margin endif;
+}
+
+mapping inout Shape::createHeaders() : param: DecorationNode, pre: DecorationNode, post: DecorationNode {
+	self.children += param;
+	self.children += pre;
+	self.children += post;
+	
+	param.type := '7001';
+	pre.type := '7002';
+	post.type := '7003';
 }
 
 mapping Node::toNode() : Node disjuncts
@@ -694,9 +705,6 @@ query View::doGetDecorationType(element : Element) : String{
 			elif element.oclIsTypeOf(Activity) then
 				return switch {
 					case (self.type = 'Name') '5001';
-					case (self.type = 'Compartment') '7001';
-					case (self.type = 'Compartment') '7002';
-					case (self.type = 'Compartment') '7003';
 					case (self.type = 'ActivityCompartment') '7004';
 				}
 			elif element.oclIsTypeOf(ReadStructuralFeatureAction) then
