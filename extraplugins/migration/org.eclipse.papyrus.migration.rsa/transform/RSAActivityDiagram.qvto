@@ -70,11 +70,9 @@ mapping inout Shape::fixMergeDecisionSize() when {
 
 property partitionX : Integer = 50;
 
-mapping inout Shape::fixPartitionsLayout() {
-	var width: Integer := 200; //Approximation. In RSA, the layout is computed automatically based on the Partition's Contents. In Papyrus, this must be specified explicitely
+mapping inout Node::fixPartitionsLayout() {
+	var width: Integer := 200; //Approximation. In RSA, the layout can be computed automatically based on the Partition's Contents. In Papyrus, this must be specified explicitely
 	var marginHeight := 30;
-	
-	
 	
 	var bounds : Bounds := self.layoutConstraint.oclAsType(Bounds); 
 	
@@ -83,14 +81,19 @@ mapping inout Shape::fixPartitionsLayout() {
 	var parentBounds := parent.layoutConstraint.oclAsType(Bounds);
 	var parentHeight := parentBounds.height;
 	
-	var position : Integer;
+	var previousPosition : Integer := parentCompartment.children->select(type = '3067')->indexOf(self) - 1; 
+	var previousPartition : Node := parentCompartment.children->select(type = '3067')->at(previousPosition);
 	
-	position := parentCompartment.children->select(type = '3067')->indexOf(self) - 1; //OCL index starts at 1 
+	if previousPartition.oclIsUndefined() then { /* First partition */
+		bounds.x := partitionX;
+	} else {
+		previousPartition.map fixPartitionsLayout(); /* Ensure that partition n-1 is already fixed */
+		var previousBounds := previousPartition.layoutConstraint.oclAsType(Bounds);
+		bounds.x := previousBounds.x + previousBounds.width;
+	} endif;
 	
-	bounds.x := partitionX + position * width;
 	bounds.width := width.max(bounds.width);
 	bounds.y := marginHeight;
-	
 	bounds.height := (parentHeight - marginHeight * 2).max(bounds.height).max(400);
 }
 
