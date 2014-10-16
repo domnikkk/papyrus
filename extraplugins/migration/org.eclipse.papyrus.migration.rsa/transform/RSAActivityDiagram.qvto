@@ -259,7 +259,8 @@ mapping BasicDecorationNode::toConnectorLabel() : DecorationNode inherits Node::
 		self.type = 'FromMultiplicityLabel' or
 		self.type = 'FromRoleLabel' or
 		self.type = 'NameLabel' or
-		self.type = 'KindLabel'
+		self.type = 'KindLabel' or
+		self.type = 'ObjectNodeNameLabel'
 	)
 }{}
 
@@ -703,6 +704,14 @@ query View::doGetDecorationType(element : Element) : String{
 				return switch {
 					case (self.type = 'Name') '5078';
 				}
+			elif element.oclIsTypeOf(InputPin) then
+				'5009'
+			elif element.oclIsTypeOf(ValuePin) then
+				'5024'
+			elif element.oclIsTypeOf(OutputPin) then
+				'5010'
+			elif element.oclIsTypeOf(ActionInputPin) then
+				'5012'
 		endif
 	} else {
 		return if element.oclIsTypeOf(ObjectFlow)  then
