@@ -15,6 +15,7 @@ import org.eclipse.uml2.uml.ConnectableElement;
 import org.eclipse.uml2.uml.Lifeline;
 import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.UMLPackage;
+import org.eclipse.uml2.uml.ValueSpecification;
 
 public class LifelineLabelEditPolicy extends AbstractMaskManagedEditPolicy {
 
@@ -36,6 +37,10 @@ public class LifelineLabelEditPolicy extends AbstractMaskManagedEditPolicy {
 				getDiagramEventBroker().addNotificationListener(ce.getType(), this);
 			}
 		}
+		ValueSpecification selector = lifeline.getSelector();
+		if(selector != null) {
+			getDiagramEventBroker().addNotificationListener(selector, this);
+		}
 	}
 
 	@Override
@@ -53,6 +58,10 @@ public class LifelineLabelEditPolicy extends AbstractMaskManagedEditPolicy {
 			if (ce.getType() != null) {
 				getDiagramEventBroker().removeNotificationListener(ce.getType(), this);
 			}
+		}
+		ValueSpecification selector = lifeline.getSelector();
+		if(selector != null) {
+			getDiagramEventBroker().removeNotificationListener(selector, this);
 		}
 	}
 
@@ -91,6 +100,16 @@ public class LifelineLabelEditPolicy extends AbstractMaskManagedEditPolicy {
 			}
 			if (notification.getOldValue() instanceof Type && notification.getOldValue() instanceof EObject) {
 				getDiagramEventBroker().removeNotificationListener((EObject) notification.getOldValue(), this);
+			}
+			refreshDisplay();
+		} else if(object.equals(getUMLElement().getSelector())
+				|| notification.getFeature().equals(UMLPackage.Literals.LIFELINE__SELECTOR)) {
+			// change selector
+			if(notification.getNewValue() instanceof ValueSpecification) {
+				getDiagramEventBroker().addNotificationListener((ValueSpecification)notification.getNewValue(), this);
+			}
+			if(notification.getOldValue() instanceof ValueSpecification) {
+				getDiagramEventBroker().removeNotificationListener((ValueSpecification)notification.getOldValue(), this);
 			}
 			refreshDisplay();
 		}
