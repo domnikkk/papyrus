@@ -53,6 +53,9 @@ public class InteractionOperandLayoutEditPolicy extends XYLayoutEditPolicy {
 	@Override
 	public Command getCommand(Request request) {
 		EditPart combinedFragmentCompartment = getHost().getParent();
+		if (combinedFragmentCompartment == null) {
+			return null;
+		}
 		EditPart combinedFragment = combinedFragmentCompartment.getParent();
 		EditPart interactionCompartment = combinedFragment.getParent();
 		if (REQ_CREATE.equals(request.getType()) && request instanceof CreateUnspecifiedTypeRequest) {
