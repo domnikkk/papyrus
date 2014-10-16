@@ -16,7 +16,6 @@ package org.eclipse.papyrus.uml.diagram.usecase.edit.policies;
 import org.eclipse.gef.GraphicalEditPart;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeLinkLabelDisplayEditPolicy;
 import org.eclipse.papyrus.uml.diagram.usecase.helper.ExtensionPointLabelHelper;
-import org.eclipse.uml2.uml.ExtensionPoint;
 
 /**
  * Specific edit policy for label displaying stereotypes and their properties for edges representing
@@ -25,14 +24,6 @@ import org.eclipse.uml2.uml.ExtensionPoint;
  * @author eperico
  */
 public class AppliedStereotypeExtensionPointLabelDisplayEditPolicy extends AppliedStereotypeLinkLabelDisplayEditPolicy {
-
-	/**
-	 * {@inheritDoc}
-	 */
-	@Override
-	protected ExtensionPoint getUMLElement() {
-		return (ExtensionPoint) super.getUMLElement();
-	}
 
 	/**
 	 * {@inheritDoc}
