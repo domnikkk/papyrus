@@ -21,6 +21,7 @@ import org.eclipse.osgi.util.NLS;
  */
 public class Messages extends NLS {
 	private static final String BUNDLE_NAME = "org.eclipse.papyrus.dsml.validation.generation.ui.messages"; //$NON-NLS-1$
+	public static String CreateJavaValidationPluginHandler_CheckErrorLog;
 	public static String CreateJavaValidationPluginHandler_ChoosePluginGeneration;
 	public static String CreateJavaValidationPluginHandler_CreateNewPlugin;
 	public static String CreateJavaValidationPluginHandler_ExceptionDuringPluginGeneration;

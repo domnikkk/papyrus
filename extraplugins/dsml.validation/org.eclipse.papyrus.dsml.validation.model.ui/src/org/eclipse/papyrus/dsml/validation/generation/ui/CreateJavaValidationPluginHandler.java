@@ -176,7 +176,8 @@ public class CreateJavaValidationPluginHandler extends AbstractHandler {
 					try {
 						ValidationPluginGenerator.instance.generate(existingProject, constraintsManager, definition);
 					} catch (Exception e) {
-						MessageDialog.openInformation(shell, Messages.CreateJavaValidationPluginHandler_ExceptionDuringPluginGeneration, e.getMessage());
+						Activator.log.error(e);
+						MessageDialog.openInformation(shell, Messages.CreateJavaValidationPluginHandler_ExceptionDuringPluginGeneration, Messages.CreateJavaValidationPluginHandler_CheckErrorLog);
 					}
 				}
 			}
