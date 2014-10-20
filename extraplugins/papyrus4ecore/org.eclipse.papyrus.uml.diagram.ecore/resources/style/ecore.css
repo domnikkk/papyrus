@@ -53,21 +53,21 @@ Property {
 Operation {
 	maskLabel: name returnType parametersName parametersType;
 }
-	
+
 Association > Label:sourceMultiplicity {
-	visible:false;
+	maskLabel: multiplicity ;
 }
 
 Association > Label:targetMultiplicity {
-	visible:false;
+	maskLabel: multiplicity ;
 }
-
+ 
 Association > Label:sourceRole {
-	maskLabel: name multiplicity;
+	maskLabel: name ;
 }
 
 Association > Label:targetRole {
-	maskLabel: name multiplicity;
+	maskLabel: name ;
 }
 
 Association > Label:name {
