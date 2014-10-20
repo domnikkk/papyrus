@@ -230,10 +230,13 @@ public class Utils {
 		Utils.constraintToItsPackage = constraintToItsPackage;
 	}
 
-	public static String getPluginID() {
-		return pluginID;
+	/**
+	 * @return the top level package. It corresponds to the pluginID in lower case. Used by Acceleo template that generates the contents of selectors
+	 */
+	public static String getTopPkg() {
+		return pluginID.toLowerCase();
 	}
-
+	
 	public static void setPluginID(String ID) {
 		pluginID = ID;
 	}
