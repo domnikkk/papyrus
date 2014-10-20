@@ -279,6 +279,8 @@ public abstract class AbstractBaseModel extends AbstractModel implements IVersio
 		saveOptions.put(XMLResource.OPTION_SAVE_TYPE_INFORMATION, Boolean.TRUE);
 		saveOptions.put(XMLResource.OPTION_SKIP_ESCAPE_URI, Boolean.FALSE);
 		saveOptions.put(XMLResource.OPTION_ENCODING, "UTF-8");
+		saveOptions.put(XMLResource.OPTION_USE_FILE_BUFFER, true);
+		saveOptions.put(XMLResource.OPTION_FLUSH_THRESHOLD, 4 * 1024 * 1024); // 4 MB Buffer
 
 		// see bug 397987: [Core][Save] The referenced plugin models are saved using relative path
 		saveOptions.put(XMLResource.OPTION_URI_HANDLER, new org.eclipse.emf.ecore.xmi.impl.URIHandlerImpl.PlatformSchemeAware());
