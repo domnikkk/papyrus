@@ -90,7 +90,7 @@ public class EMFGraphicalContentProvider extends EncapsulatedContentProvider imp
 
 	protected ResourceSet resourceSet;
 
-	private static final int HISTORY_MAX_SIZE = 5;
+	private static final int HISTORY_MAX_SIZE = 15;
 
 	private String currentFilterPattern;
 

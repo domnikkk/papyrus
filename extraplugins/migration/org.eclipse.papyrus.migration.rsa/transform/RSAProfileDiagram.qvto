@@ -24,7 +24,9 @@ main() {
 	//RSA uses Classes, whereas Papyrus uses DataTypes. The Semantics is the same
 	//semantics.objectsOfType(Class)->map toDatatype(); //Disabled 2014/04/28. Papyrus now properly supports Classes in Profile Diagrams
 	//we generate our diagrams
-	semantics.rootObjects()[uml::Profile]->map toOwnedDiagrams();	
+	semantics.rootObjects()[uml::Profile]
+		->selectByType(uml::Profile) /* Workaround for Bug 445083/445198 */ 
+		->map toOwnedDiagrams();	
 }
 
 mapping notation::Diagram::generateDiagram() : notation::Diagram inherits Diagram::toPapyrusDiagram when {

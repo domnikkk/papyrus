@@ -22,7 +22,7 @@ import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
 @RunWith(Suite.class)
-@SuiteClasses({ CommonBendpointsTest.class ,HTMLCleanerTestCase.class, HTMLCornerBentFigureTestCase.class, Bug431694_UndoDeleteTest.class})
+@SuiteClasses({ CommonBendpointsTest.class, HTMLCleanerTestCase.class, HTMLCornerBentFigureTestCase.class, Bug431694_UndoDeleteTest.class, Bug418509_ReorientationAssociation.class })
 public class AllTests {
 	// JUnit 4 test suite
 }
