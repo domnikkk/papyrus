@@ -169,6 +169,7 @@ public class StyledTextXtextAdapter {
 
 		// Register focus tracker for evaluating the active focus control in
 		// core expression
+		IFocusService service = (IFocusService) PlatformUI.getWorkbench().getService(IFocusService.class);
 		IFocusService service = PlatformUI.getWorkbench().getService(IFocusService.class);
 		service.addFocusTracker(styledText, StyledText.class.getCanonicalName());
 
