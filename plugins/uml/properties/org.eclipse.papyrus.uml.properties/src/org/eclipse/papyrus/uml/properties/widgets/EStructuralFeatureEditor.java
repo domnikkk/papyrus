@@ -9,6 +9,7 @@
  * Contributors:
  *  Mathieu Velten (Atos) mathieu.velten@atos.net - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 323802
+ *  Christian W. Damus (CEA) - bug 448139
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.properties.widgets;
@@ -99,6 +100,7 @@ public class EStructuralFeatureEditor implements IValueChangeListener, IListChan
 	public void setFeatureToEdit(EStructuralFeature feature, EObject element) {
 		if (currentPage != null) {
 			currentPage.dispose();
+			currentPage = null;
 		}
 
 		if (feature instanceof EReference) {

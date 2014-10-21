@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2008 CEA LIST.
+ * Copyright (c) 2008, 2014 CEA LIST and others.
  *
  *
  * All rights reserved. This program and the accompanying materials
@@ -10,6 +10,7 @@
  * Contributors:
  *  Chokri Mraidha (CEA LIST) Chokri.Mraidha@cea.fr - Initial API and implementation
  *  Patrick Tessier (CEA LIST) Patrick.Tessier@cea.fr - modification
+ *  Christian W. Damus (CEA) - bug 448139
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.properties.profile.ui.compositeforview;
@@ -83,16 +84,6 @@ public class AppliedStereotypeCompositeWithView extends org.eclipse.papyrus.uml.
 	}
 
 	/**
-	 * Sets the selection.
-	 *
-	 * @param selection
-	 *            the selection
-	 */
-	public void setSelection(ISelection selection) {
-		this.selection = selection;
-	}
-
-	/**
 	 * Sets the diagram element.
 	 *
 	 * @param diagramElement
@@ -133,15 +124,6 @@ public class AppliedStereotypeCompositeWithView extends org.eclipse.papyrus.uml.
 		super.addButtonPressed();
 	}
 
-
-
-
-
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see com.cea.papyrus.profile.ui.composites.StereotypeComposite#removeButtonPressed()
-	 */
 	@Override
 	public void removeButtonPressed() {
 		superRemoveButton();
@@ -162,6 +144,7 @@ public class AppliedStereotypeCompositeWithView extends org.eclipse.papyrus.uml.
 	 */
 	@Override
 	public void selectionChanged(SelectionChangedEvent event) {
+		super.selectionChanged(event);
 		propertySelectionChangeListener.selectionChanged(event);
 	}
 
