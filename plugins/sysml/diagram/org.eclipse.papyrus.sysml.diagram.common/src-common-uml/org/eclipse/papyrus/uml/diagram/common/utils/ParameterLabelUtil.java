@@ -19,7 +19,6 @@ import org.eclipse.papyrus.gmf.diagram.common.parser.IMaskManagedSemanticParser;
 import org.eclipse.papyrus.sysml.diagram.common.preferences.ILabelPreferenceConstants;
 import org.eclipse.papyrus.uml.tools.utils.ICustomAppearance;
 import org.eclipse.papyrus.uml.tools.utils.ValueSpecificationUtil;
-import org.eclipse.uml2.uml.InstanceValue;
 import org.eclipse.uml2.uml.Parameter;
 import org.eclipse.uml2.uml.ParameterDirectionKind;
 import org.eclipse.uml2.uml.ValueSpecification;
@@ -106,9 +105,7 @@ public class ParameterLabelUtil {
 			// manage default value
 			if ((displayValue.contains(ICustomAppearance.DISP_PARAMETER_DEFAULT) || displayValue.contains(ICustomAppearance.DISP_DEFAULT_VALUE)) && ((parameter.getDefaultValue() != null))) {
 				ValueSpecification valueSpecification = parameter.getDefaultValue();
-				if ((valueSpecification instanceof InstanceValue && parameter.getType().equals(valueSpecification.getType())) || !(valueSpecification instanceof InstanceValue)) {
-					result = String.format(DEFAULT_VALUE_FORMAT, result, ValueSpecificationUtil.getSpecificationValue(valueSpecification));
-				}
+				result = String.format(DEFAULT_VALUE_FORMAT, result, ValueSpecificationUtil.getSpecificationValue(valueSpecification));
 			}
 
 			// manage modifier
