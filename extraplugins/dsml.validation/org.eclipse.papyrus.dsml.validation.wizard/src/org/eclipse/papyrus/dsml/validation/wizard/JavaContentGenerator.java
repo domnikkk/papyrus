@@ -86,7 +86,8 @@ public class JavaContentGenerator {
 			}
 		};
 		try {
-			PlatformUI.getWorkbench().getProgressService().run(true, true, operation);
+			// don't fork (avoid dirty state of MANIFEST which is automatically openend by NewWizard)
+			PlatformUI.getWorkbench().getProgressService().run(false, true, operation);
 		} catch (InvocationTargetException e) {
 			IStatus status = new Status(IStatus.ERROR, Activator.PLUGIN_ID, e.getMessage(), e);
 			Activator.getDefault().getLog().log(status);
