@@ -28,6 +28,14 @@
       <!--We add a drag assistant in order support drag and drop between Model Explorer and Table Editor or other View/editors -->
       <dragAssistant class="org.eclipse.papyrus.views.modelexplorer.dnd.EObjectDragAdapterAssistant" viewerId="org.eclipse.papyrus.views.modelexplorer.modelexplorer">
       </dragAssistant>
+      <viewerActionBinding
+            viewerId="org.eclipse.papyrus.views.modelexplorer.modelexplorer">
+         <includes>
+            <actionExtension
+                  pattern="org.eclipse.papyrus.views.modelexplorer.actionprovider.*">
+            </actionExtension>
+         </includes>
+      </viewerActionBinding>
    </extension>
    <extension point="org.eclipse.ui.navigator.navigatorContent">
       <navigatorContent activeByDefault="false" contentProvider="org.eclipse.papyrus.infra.emf.providers.MoDiscoContentProvider" id="org.eclipse.papyrus.views.modelexplorer.navigatorContent" labelProvider="org.eclipse.jface.viewers.LabelProvider" name="Model Contents" priority="lowest">
@@ -43,7 +51,7 @@
          </triggerPoints>
          <possibleChildren>
             <or>
-               <instanceof value="org.eclipse.gmf.runtime.notation.impl.DiagramImpl">
+               <instanceof value="org.eclipse.gmf.runtime.notation.Diagram">
                </instanceof>
                <adapt type="org.eclipse.emf.ecore.EObject"/>
             </or>
@@ -86,6 +94,20 @@
          </dropAssistant>
     
       </navigatorContent>
+      <actionProvider
+            class="org.eclipse.papyrus.views.modelexplorer.actionprovider.UndoRedoActionProvider"
+            id="org.eclipse.papyrus.views.modelexplorer.actionprovider.UndoRedoActionProvider">
+         <enablement>
+            <or>
+               <adapt
+                     type="org.eclipse.emf.ecore.EObject">
+               </adapt>
+               <instanceof
+                     value="org.eclipse.emf.ecore.EObject">
+               </instanceof>
+            </or>
+         </enablement>
+      </actionProvider>
    </extension>
     <!--  
     <extension
