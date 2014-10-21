@@ -33,7 +33,10 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.ui.ide,
  org.eclipse.rmf.reqif10.xhtml;bundle-version="0.10.0",
  org.eclipse.rmf.reqif10.pror;bundle-version="0.10.0",
- org.eclipse.rmf.reqif10.pror.edit;bundle-version="0.10.0"
+ org.eclipse.rmf.reqif10.pror.edit;bundle-version="0.10.0",
+ org.eclipse.papyrus.emf.facet.efacet.core,
+ org.eclipse.papyrus.emf.facet.efacet.metamodel,
+ org.eclipse.papyrus.emf.facet.query.java.core
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
 Export-Package: org.eclipse.papyrus.req.reqif.assistant

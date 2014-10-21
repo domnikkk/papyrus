@@ -29,5 +29,10 @@
          id="com.cea.darwin.reqif.exportWizard"
          name="Export ReqIF">
    </wizard>
+
+   
+</extension>
+   <extension point="org.eclipse.papyrus.emf.facet.util.emf.core.modeldeclaration">
+  <modeldeclaration file="resource/ReqDisplay.custom"/>
 </extension>
 </plugin>

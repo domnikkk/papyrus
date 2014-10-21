@@ -29,11 +29,14 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.eclipse.emf.ecore.xmi.impl.XMLResourceImpl;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.papyrus.req.reqif.I_SysMLStereotype;
 import org.eclipse.papyrus.req.reqif.assistant.CreateOrSelectProfilDialog;
+import org.eclipse.papyrus.req.reqif.integration.assistant.ChooseAttributeEnumerationDialog;
+import org.eclipse.papyrus.req.reqif.integration.assistant.ChooseReqIFTypeDialog;
 import org.eclipse.papyrus.uml.extensionpoints.utils.Util;
 import org.eclipse.rmf.reqif10.AttributeDefinition;
 import org.eclipse.rmf.reqif10.AttributeDefinitionBoolean;
@@ -53,6 +56,7 @@ import org.eclipse.rmf.reqif10.DatatypeDefinitionEnumeration;
 import org.eclipse.rmf.reqif10.EnumValue;
 import org.eclipse.rmf.reqif10.Identifiable;
 import org.eclipse.rmf.reqif10.ReqIF;
+import org.eclipse.rmf.reqif10.ReqIF10Factory;
 import org.eclipse.rmf.reqif10.SpecElementWithAttributes;
 import org.eclipse.rmf.reqif10.SpecHierarchy;
 import org.eclipse.rmf.reqif10.SpecObject;
@@ -63,6 +67,7 @@ import org.eclipse.rmf.reqif10.SpecType;
 import org.eclipse.rmf.reqif10.Specification;
 import org.eclipse.rmf.reqif10.SpecificationType;
 import org.eclipse.rmf.reqif10.XhtmlContent;
+import org.eclipse.rmf.reqif10.common.util.ReqIF10Util;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Comment;
@@ -113,7 +118,19 @@ public abstract class ReqIFImporter extends ReqIFBaseTransformation {
 	 * @param reqIFModel
 	 */
 	public void preProcess( ReqIF reqIFModel){
-		//first make sure that all reqIFelement have a name
+		//1. first make sure that all reqIFelement have a name
+		setANameForTypes(reqIFModel);
+
+
+		//2. patterns, if 1 type, maybe there is an enumeration?
+		transformPatternEnumeration(reqIFModel,null);
+
+	}
+	/**
+	 * set a name of all type of the ReqIF model if there is no name
+	 * @param reqIFModel
+	 */
+	protected void setANameForTypes(ReqIF reqIFModel) {
 		Iterator<EObject> reqIFElementIterator= reqIFModel.eAllContents();
 		int index =0;
 		while(reqIFElementIterator.hasNext()) {
@@ -125,10 +142,82 @@ public abstract class ReqIFImporter extends ReqIFBaseTransformation {
 					index++;
 				}
 			}
+		}
+	}
+	/**
+	 * this method transform type with enumeration to set of types
+	 * @param reqIFModel
+	 * @param attributeEnumeration the name of attribute definition if the type in order to transform. (in this case no UI)
+	 */
+	protected void transformPatternEnumeration(ReqIF reqIFModel, String attributeEnumeration) {
+		ArrayList<SpecObjectType> specObjectTypes= new ArrayList<SpecObjectType>();
+
+		if(reqIFModel.getCoreContent().getSpecTypes()!=null&&reqIFModel.getCoreContent().getSpecTypes().size()>0){
+			for(SpecType reqIFType : reqIFModel.getCoreContent().getSpecTypes()) {
+				if(reqIFType instanceof SpecObjectType){
+					specObjectTypes.add( (SpecObjectType) reqIFType);
+				}
+			}
+		}
+
+		//maybe the topology of element is coded by an enumeration
+		if( specObjectTypes.size()==1){
+			SpecObjectType theType=specObjectTypes.get(0);
+			//find enumeration
+			ArrayList<AttributeDefinitionEnumeration> attEnumeration= new ArrayList<AttributeDefinitionEnumeration>();
+			AttributeDefinitionEnumeration patternEnumerationAtt= null;
+			for (AttributeDefinition attDefinition : theType.getSpecAttributes()) {
+				if( attDefinition instanceof AttributeDefinitionEnumeration){
+					attEnumeration.add((AttributeDefinitionEnumeration)attDefinition);
+					if(attributeEnumeration!=null&&attDefinition.getLongName().equals(attributeEnumeration)){
+						patternEnumerationAtt=(AttributeDefinitionEnumeration)attDefinition;
+					}
+				}
+			}
+
+			if(patternEnumerationAtt==null){
+				if(attEnumeration.size()>1){
+					ChooseAttributeEnumerationDialog assistedDialog= new ChooseAttributeEnumerationDialog(new Shell(), attEnumeration);
+					assistedDialog.open();
+					ArrayList<Object> result=assistedDialog.getSelectedElements();
+					patternEnumerationAtt=(AttributeDefinitionEnumeration) result.get(0);
+				}
+				else{
+					patternEnumerationAtt=attEnumeration.get(0);
+				}
+			}
+			//transform pseudo type from enumeration
+			DatatypeDefinitionEnumeration enumeration= patternEnumerationAtt.getType();
+			HashMap<String, SpecObjectType> newTypes= new HashMap<String, SpecObjectType> ();
+			for (EnumValue enumValue : enumeration.getSpecifiedValues()) {
+				SpecObjectType specObjectType=EcoreUtil.copy(theType);
+				specObjectType.setLongName(enumValue.getLongName());
+				specObjectType.setLastChange((GregorianCalendar)GregorianCalendar.getInstance());
+				reqIFModel.getCoreContent().getSpecTypes().add(specObjectType);
+				newTypes.put(enumValue.getLongName(), specObjectType);
+			}
+			for(SpecObject specObject : reqIFModel.getCoreContent().getSpecObjects()) {
+				//get Attribute Value
+				AttributeValueEnumeration attValue =(AttributeValueEnumeration)getAttributeValue(specObject, patternEnumerationAtt);
+				if(attValue!=null){
+					if( attValue.getValues().size()>0){
+						specObject.setType(newTypes.get(attValue.getValues().get(0).getLongName()));
+						System.err.println(specObject);
+					}
+				}
+			}
 
 		}
 	}
-
+	public static AttributeValue getAttributeValue(SpecElementWithAttributes specElement, AttributeDefinition attributeDefinition) {
+		for (AttributeValue value : specElement.getValues()) {
+			AttributeDefinition definition = ReqIF10Util.getAttributeDefinition(value);
+			if (attributeDefinition.getLongName().equals(definition.getLongName())) {
+				return value;
+			}
+		}
+		return null;
+	}
 
 	/**
 	 * import selected SpecObjectType and their instances into UML Model
@@ -246,7 +335,7 @@ public abstract class ReqIFImporter extends ReqIFBaseTransformation {
 	public void postProcess(Package UMLModel){
 
 	}
-	
+
 	/**
 	 * this agoal of this method is do add action before serialize, define and apply profile. 
 	 * Pay attention: Make sure that the profile could be define at the end of this action
@@ -612,6 +701,9 @@ public abstract class ReqIFImporter extends ReqIFBaseTransformation {
 	 */
 	protected Element importReqIFSpecObjects(SpecObject reqIFObject, org.eclipse.uml2.uml.Element owner, HashMap<String, Stereotype> reqStereotypes) {
 		//test of the the specObject could be imported
+		if(reqIFObject==null){
+			return null;
+		}
 		if(reqStereotypes.get(reqIFObject.getType().getLongName())!=null){
 			Class reqClass=null;
 			reqClass = createRequirementClass(owner);
