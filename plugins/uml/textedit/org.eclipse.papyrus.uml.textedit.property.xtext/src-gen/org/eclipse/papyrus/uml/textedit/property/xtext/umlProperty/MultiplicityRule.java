@@ -3,6 +3,7 @@
 package org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty;
 
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -31,7 +32,7 @@ public interface MultiplicityRule extends EObject
 	 * If the meaning of the '<em>Bounds</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @return the value of the '<em>Bounds</em>' containment reference list.
 	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.UmlPropertyPackage#getMultiplicityRule_Bounds()
 	 * @model containment="true"

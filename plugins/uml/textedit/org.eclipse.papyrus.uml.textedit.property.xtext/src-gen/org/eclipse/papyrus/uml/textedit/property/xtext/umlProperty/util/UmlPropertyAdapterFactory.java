@@ -4,26 +4,19 @@ package org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.util;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
+
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
+
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.BoundSpecification;
-import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.DefaultValueRule;
-import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.ModifierSpecification;
-import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.ModifiersRule;
-import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.MultiplicityRule;
-import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.PropertyRule;
-import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.QualifiedName;
-import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.RedefinesRule;
-import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.SubsetsRule;
-import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.TypeRule;
-import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.UmlPropertyPackage;
+
+import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.*;
 
 /**
  * <!-- begin-user-doc -->
  * The <b>Adapter Factory</b> for the model.
  * It provides an adapter <code>createXXX</code> method for each class of the model.
  * <!-- end-user-doc -->
- *
+ * 
  * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.UmlPropertyPackage
  * @generated
  */
@@ -33,7 +26,7 @@ public class UmlPropertyAdapterFactory extends AdapterFactoryImpl
 	 * The cached model package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected static UmlPropertyPackage modelPackage;
@@ -42,7 +35,7 @@ public class UmlPropertyAdapterFactory extends AdapterFactoryImpl
 	 * Creates an instance of the adapter factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public UmlPropertyAdapterFactory()
@@ -58,7 +51,7 @@ public class UmlPropertyAdapterFactory extends AdapterFactoryImpl
 	 * <!-- begin-user-doc -->
 	 * This implementation returns <code>true</code> if the object is either the model's package or is an instance object of the model.
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @return whether this factory is applicable for the type of the object.
 	 * @generated
 	 */
@@ -80,7 +73,7 @@ public class UmlPropertyAdapterFactory extends AdapterFactoryImpl
 	 * The switch that delegates to the <code>createXXX</code> methods.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected UmlPropertySwitch<Adapter> modelSwitch =
@@ -157,7 +150,7 @@ public class UmlPropertyAdapterFactory extends AdapterFactoryImpl
 	 * Creates an adapter for the <code>target</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @param target
 	 *            the object to adapt.
 	 * @return the adapter for the <code>target</code>.
@@ -176,7 +169,7 @@ public class UmlPropertyAdapterFactory extends AdapterFactoryImpl
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.PropertyRule
 	 * @generated
@@ -192,7 +185,7 @@ public class UmlPropertyAdapterFactory extends AdapterFactoryImpl
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.TypeRule
 	 * @generated
@@ -208,7 +201,7 @@ public class UmlPropertyAdapterFactory extends AdapterFactoryImpl
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.QualifiedName
 	 * @generated
@@ -224,7 +217,7 @@ public class UmlPropertyAdapterFactory extends AdapterFactoryImpl
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.MultiplicityRule
 	 * @generated
@@ -240,7 +233,7 @@ public class UmlPropertyAdapterFactory extends AdapterFactoryImpl
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.BoundSpecification
 	 * @generated
@@ -256,7 +249,7 @@ public class UmlPropertyAdapterFactory extends AdapterFactoryImpl
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.ModifiersRule
 	 * @generated
@@ -272,7 +265,7 @@ public class UmlPropertyAdapterFactory extends AdapterFactoryImpl
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.ModifierSpecification
 	 * @generated
@@ -288,7 +281,7 @@ public class UmlPropertyAdapterFactory extends AdapterFactoryImpl
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.RedefinesRule
 	 * @generated
@@ -304,7 +297,7 @@ public class UmlPropertyAdapterFactory extends AdapterFactoryImpl
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.SubsetsRule
 	 * @generated
@@ -320,7 +313,7 @@ public class UmlPropertyAdapterFactory extends AdapterFactoryImpl
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.DefaultValueRule
 	 * @generated
@@ -335,7 +328,7 @@ public class UmlPropertyAdapterFactory extends AdapterFactoryImpl
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null.
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @return the new adapter.
 	 * @generated
 	 */

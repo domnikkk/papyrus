@@ -29,7 +29,7 @@ public interface DefaultValueRule extends EObject
 	 * If the meaning of the '<em>Default</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @return the value of the '<em>Default</em>' attribute.
 	 * @see #setDefault(String)
 	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.UmlPropertyPackage#getDefaultValueRule_Default()
@@ -42,7 +42,7 @@ public interface DefaultValueRule extends EObject
 	 * Sets the value of the '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.DefaultValueRule#getDefault <em>Default</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @param value
 	 *            the new value of the '<em>Default</em>' attribute.
 	 * @see #getDefault()

@@ -8,7 +8,9 @@ import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EcorePackage;
+
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+
 import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.BoundSpecification;
 import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.DefaultValueRule;
 import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.ModifierKind;
@@ -23,13 +25,14 @@ import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.TypeRule;
 import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.UmlPropertyFactory;
 import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.UmlPropertyPackage;
 import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.VisibilityKind;
+
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
- *
+ * 
  * @generated
  */
 public class UmlPropertyPackageImpl extends EPackageImpl implements UmlPropertyPackage
@@ -37,7 +40,7 @@ public class UmlPropertyPackageImpl extends EPackageImpl implements UmlPropertyP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private EClass propertyRuleEClass = null;
@@ -45,7 +48,7 @@ public class UmlPropertyPackageImpl extends EPackageImpl implements UmlPropertyP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private EClass typeRuleEClass = null;
@@ -53,7 +56,7 @@ public class UmlPropertyPackageImpl extends EPackageImpl implements UmlPropertyP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private EClass qualifiedNameEClass = null;
@@ -61,7 +64,7 @@ public class UmlPropertyPackageImpl extends EPackageImpl implements UmlPropertyP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private EClass multiplicityRuleEClass = null;
@@ -69,7 +72,7 @@ public class UmlPropertyPackageImpl extends EPackageImpl implements UmlPropertyP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private EClass boundSpecificationEClass = null;
@@ -77,7 +80,7 @@ public class UmlPropertyPackageImpl extends EPackageImpl implements UmlPropertyP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private EClass modifiersRuleEClass = null;
@@ -85,7 +88,7 @@ public class UmlPropertyPackageImpl extends EPackageImpl implements UmlPropertyP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private EClass modifierSpecificationEClass = null;
@@ -93,7 +96,7 @@ public class UmlPropertyPackageImpl extends EPackageImpl implements UmlPropertyP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private EClass redefinesRuleEClass = null;
@@ -101,7 +104,7 @@ public class UmlPropertyPackageImpl extends EPackageImpl implements UmlPropertyP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private EClass subsetsRuleEClass = null;
@@ -109,7 +112,7 @@ public class UmlPropertyPackageImpl extends EPackageImpl implements UmlPropertyP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private EClass defaultValueRuleEClass = null;
@@ -117,7 +120,7 @@ public class UmlPropertyPackageImpl extends EPackageImpl implements UmlPropertyP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private EEnum visibilityKindEEnum = null;
@@ -125,7 +128,7 @@ public class UmlPropertyPackageImpl extends EPackageImpl implements UmlPropertyP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private EEnum modifierKindEEnum = null;
@@ -135,7 +138,7 @@ public class UmlPropertyPackageImpl extends EPackageImpl implements UmlPropertyP
 	 * package URI value.
 	 * <p>
 	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.UmlPropertyPackage#eNS_URI
 	 * @see #init()
@@ -149,7 +152,7 @@ public class UmlPropertyPackageImpl extends EPackageImpl implements UmlPropertyP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private static boolean isInited = false;
@@ -159,7 +162,7 @@ public class UmlPropertyPackageImpl extends EPackageImpl implements UmlPropertyP
 	 *
 	 * <p>
 	 * This method is used to initialize {@link UmlPropertyPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
@@ -197,7 +200,7 @@ public class UmlPropertyPackageImpl extends EPackageImpl implements UmlPropertyP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -209,7 +212,7 @@ public class UmlPropertyPackageImpl extends EPackageImpl implements UmlPropertyP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -221,7 +224,7 @@ public class UmlPropertyPackageImpl extends EPackageImpl implements UmlPropertyP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -233,7 +236,7 @@ public class UmlPropertyPackageImpl extends EPackageImpl implements UmlPropertyP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -245,7 +248,7 @@ public class UmlPropertyPackageImpl extends EPackageImpl implements UmlPropertyP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -257,7 +260,7 @@ public class UmlPropertyPackageImpl extends EPackageImpl implements UmlPropertyP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -269,7 +272,7 @@ public class UmlPropertyPackageImpl extends EPackageImpl implements UmlPropertyP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -281,7 +284,7 @@ public class UmlPropertyPackageImpl extends EPackageImpl implements UmlPropertyP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -293,7 +296,7 @@ public class UmlPropertyPackageImpl extends EPackageImpl implements UmlPropertyP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -305,7 +308,7 @@ public class UmlPropertyPackageImpl extends EPackageImpl implements UmlPropertyP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -317,7 +320,7 @@ public class UmlPropertyPackageImpl extends EPackageImpl implements UmlPropertyP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -329,7 +332,7 @@ public class UmlPropertyPackageImpl extends EPackageImpl implements UmlPropertyP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -341,7 +344,7 @@ public class UmlPropertyPackageImpl extends EPackageImpl implements UmlPropertyP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -353,7 +356,7 @@ public class UmlPropertyPackageImpl extends EPackageImpl implements UmlPropertyP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -365,7 +368,7 @@ public class UmlPropertyPackageImpl extends EPackageImpl implements UmlPropertyP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -377,7 +380,7 @@ public class UmlPropertyPackageImpl extends EPackageImpl implements UmlPropertyP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -389,7 +392,7 @@ public class UmlPropertyPackageImpl extends EPackageImpl implements UmlPropertyP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -401,7 +404,7 @@ public class UmlPropertyPackageImpl extends EPackageImpl implements UmlPropertyP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -413,7 +416,7 @@ public class UmlPropertyPackageImpl extends EPackageImpl implements UmlPropertyP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -425,7 +428,7 @@ public class UmlPropertyPackageImpl extends EPackageImpl implements UmlPropertyP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -437,7 +440,7 @@ public class UmlPropertyPackageImpl extends EPackageImpl implements UmlPropertyP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -449,7 +452,7 @@ public class UmlPropertyPackageImpl extends EPackageImpl implements UmlPropertyP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -461,7 +464,7 @@ public class UmlPropertyPackageImpl extends EPackageImpl implements UmlPropertyP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -473,7 +476,7 @@ public class UmlPropertyPackageImpl extends EPackageImpl implements UmlPropertyP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -485,7 +488,7 @@ public class UmlPropertyPackageImpl extends EPackageImpl implements UmlPropertyP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -497,7 +500,7 @@ public class UmlPropertyPackageImpl extends EPackageImpl implements UmlPropertyP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -509,7 +512,7 @@ public class UmlPropertyPackageImpl extends EPackageImpl implements UmlPropertyP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -521,7 +524,7 @@ public class UmlPropertyPackageImpl extends EPackageImpl implements UmlPropertyP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -533,7 +536,7 @@ public class UmlPropertyPackageImpl extends EPackageImpl implements UmlPropertyP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -545,7 +548,7 @@ public class UmlPropertyPackageImpl extends EPackageImpl implements UmlPropertyP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -557,7 +560,7 @@ public class UmlPropertyPackageImpl extends EPackageImpl implements UmlPropertyP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -569,7 +572,7 @@ public class UmlPropertyPackageImpl extends EPackageImpl implements UmlPropertyP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -581,7 +584,7 @@ public class UmlPropertyPackageImpl extends EPackageImpl implements UmlPropertyP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -593,7 +596,7 @@ public class UmlPropertyPackageImpl extends EPackageImpl implements UmlPropertyP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private boolean isCreated = false;
@@ -603,7 +606,7 @@ public class UmlPropertyPackageImpl extends EPackageImpl implements UmlPropertyP
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public void createPackageContents()
@@ -662,7 +665,7 @@ public class UmlPropertyPackageImpl extends EPackageImpl implements UmlPropertyP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private boolean isInitialized = false;
@@ -672,7 +675,7 @@ public class UmlPropertyPackageImpl extends EPackageImpl implements UmlPropertyP
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public void initializePackageContents()

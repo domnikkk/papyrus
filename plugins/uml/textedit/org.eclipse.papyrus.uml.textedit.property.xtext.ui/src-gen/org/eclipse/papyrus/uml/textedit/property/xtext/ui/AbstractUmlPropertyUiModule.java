@@ -3,8 +3,8 @@
  */
 package org.eclipse.papyrus.uml.textedit.property.xtext.ui;
 
-import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.eclipse.xtext.ui.DefaultUiModule;
+import org.eclipse.ui.plugin.AbstractUIPlugin;
 
 /**
  * Manual modifications go to {org.eclipse.papyrus.uml.textedit.property.xtext.ui.UmlPropertyUiModule}
@@ -61,7 +61,7 @@ public abstract class AbstractUmlPropertyUiModule extends DefaultUiModule {
 
 	// contributed by org.eclipse.xtext.generator.builder.BuilderIntegrationFragment
 	public void configureIResourceDescriptionsPersisted(com.google.inject.Binder binder) {
-		binder.bind(org.eclipse.xtext.resource.IResourceDescriptions.class).annotatedWith(com.google.inject.name.Names.named(org.eclipse.xtext.builder.impl.PersistentDataAwareDirtyResource.PERSISTED_DESCRIPTIONS))
+		binder.bind(org.eclipse.xtext.resource.IResourceDescriptions.class).annotatedWith(com.google.inject.name.Names.named(org.eclipse.xtext.resource.impl.ResourceDescriptionsProvider.PERSISTED_DESCRIPTIONS))
 				.to(org.eclipse.xtext.builder.builderState.IBuilderState.class);
 	}
 
