@@ -21,14 +21,22 @@
       <genEnumLiterals ecoreEnumLiteral="UmlProperty.ecore#//ModifierKind/ordered"/>
       <genEnumLiterals ecoreEnumLiteral="UmlProperty.ecore#//ModifierKind/unique"/>
     </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="UmlProperty.ecore#//BooleanLiterals">
+      <genEnumLiterals ecoreEnumLiteral="UmlProperty.ecore#//BooleanLiterals/true"/>
+      <genEnumLiterals ecoreEnumLiteral="UmlProperty.ecore#//BooleanLiterals/false"/>
+    </genEnums>
     <genClasses ecoreClass="UmlProperty.ecore#//PropertyRule">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute UmlProperty.ecore#//PropertyRule/visibility"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute UmlProperty.ecore#//PropertyRule/isDerived"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference UmlProperty.ecore#//PropertyRule/visibility"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute UmlProperty.ecore#//PropertyRule/derived"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute UmlProperty.ecore#//PropertyRule/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference UmlProperty.ecore#//PropertyRule/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute UmlProperty.ecore#//PropertyRule/typeUndefined"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference UmlProperty.ecore#//PropertyRule/multiplicity"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference UmlProperty.ecore#//PropertyRule/modifiers"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference UmlProperty.ecore#//PropertyRule/default"/>
+    </genClasses>
+    <genClasses ecoreClass="UmlProperty.ecore#//VisibilityRule">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute UmlProperty.ecore#//VisibilityRule/visibility"/>
     </genClasses>
     <genClasses ecoreClass="UmlProperty.ecore#//TypeRule">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference UmlProperty.ecore#//TypeRule/path"/>
@@ -59,7 +67,23 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference UmlProperty.ecore#//SubsetsRule/property"/>
     </genClasses>
     <genClasses ecoreClass="UmlProperty.ecore#//DefaultValueRule">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute UmlProperty.ecore#//DefaultValueRule/default"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference UmlProperty.ecore#//DefaultValueRule/default"/>
     </genClasses>
+    <genClasses ecoreClass="UmlProperty.ecore#//Value"/>
+    <genClasses ecoreClass="UmlProperty.ecore#//IntValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute UmlProperty.ecore#//IntValue/literalInteger"/>
+    </genClasses>
+    <genClasses ecoreClass="UmlProperty.ecore#//StringValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute UmlProperty.ecore#//StringValue/literalString"/>
+    </genClasses>
+    <genClasses ecoreClass="UmlProperty.ecore#//BooleanValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute UmlProperty.ecore#//BooleanValue/literalBoolean"/>
+    </genClasses>
+    <genClasses ecoreClass="UmlProperty.ecore#//RealValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute UmlProperty.ecore#//RealValue/integer"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute UmlProperty.ecore#//RealValue/fraction"/>
+    </genClasses>
+    <genClasses ecoreClass="UmlProperty.ecore#//NullValue"/>
+    <genClasses ecoreClass="UmlProperty.ecore#//NoValue"/>
   </genPackages>
 </genmodel:GenModel>

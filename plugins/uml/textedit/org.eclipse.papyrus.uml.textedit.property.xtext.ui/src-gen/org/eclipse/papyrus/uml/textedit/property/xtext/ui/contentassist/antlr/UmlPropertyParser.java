@@ -4,18 +4,17 @@
 package org.eclipse.papyrus.uml.textedit.property.xtext.ui.contentassist.antlr;
 
 import java.util.Collection;
-import java.util.Map;
 import java.util.HashMap;
+import java.util.Map;
 
 import org.antlr.runtime.RecognitionException;
+import org.eclipse.papyrus.uml.textedit.property.xtext.services.UmlPropertyGrammarAccess;
 import org.eclipse.xtext.AbstractElement;
 import org.eclipse.xtext.ui.editor.contentassist.antlr.AbstractContentAssistParser;
 import org.eclipse.xtext.ui.editor.contentassist.antlr.FollowElement;
 import org.eclipse.xtext.ui.editor.contentassist.antlr.internal.AbstractInternalContentAssistParser;
 
 import com.google.inject.Inject;
-
-import org.eclipse.papyrus.uml.textedit.property.xtext.services.UmlPropertyGrammarAccess;
 
 public class UmlPropertyParser extends AbstractContentAssistParser {
 
@@ -37,12 +36,16 @@ public class UmlPropertyParser extends AbstractContentAssistParser {
 			nameMappings = new HashMap<AbstractElement, String>() {
 				private static final long serialVersionUID = 1L;
 				{
-					put(grammarAccess.getPropertyRuleAccess().getAlternatives_4(), "rule__PropertyRule__Alternatives_4");
+					put(grammarAccess.getPropertyRuleAccess().getAlternatives_3_1(), "rule__PropertyRule__Alternatives_3_1");
 					put(grammarAccess.getUnlimitedLiteralAccess().getAlternatives(), "rule__UnlimitedLiteral__Alternatives");
 					put(grammarAccess.getModifierSpecificationAccess().getAlternatives(), "rule__ModifierSpecification__Alternatives");
+					put(grammarAccess.getValueAccess().getAlternatives(), "rule__Value__Alternatives");
+					put(grammarAccess.getRealValueAccess().getAlternatives(), "rule__RealValue__Alternatives");
 					put(grammarAccess.getVisibilityKindAccess().getAlternatives(), "rule__VisibilityKind__Alternatives");
 					put(grammarAccess.getModifierKindAccess().getAlternatives(), "rule__ModifierKind__Alternatives");
+					put(grammarAccess.getBooleanLiteralsAccess().getAlternatives(), "rule__BooleanLiterals__Alternatives");
 					put(grammarAccess.getPropertyRuleAccess().getGroup(), "rule__PropertyRule__Group__0");
+					put(grammarAccess.getPropertyRuleAccess().getGroup_3(), "rule__PropertyRule__Group_3__0");
 					put(grammarAccess.getTypeRuleAccess().getGroup(), "rule__TypeRule__Group__0");
 					put(grammarAccess.getQualifiedNameAccess().getGroup(), "rule__QualifiedName__Group__0");
 					put(grammarAccess.getMultiplicityRuleAccess().getGroup(), "rule__MultiplicityRule__Group__0");
@@ -52,13 +55,20 @@ public class UmlPropertyParser extends AbstractContentAssistParser {
 					put(grammarAccess.getRedefinesRuleAccess().getGroup(), "rule__RedefinesRule__Group__0");
 					put(grammarAccess.getSubsetsRuleAccess().getGroup(), "rule__SubsetsRule__Group__0");
 					put(grammarAccess.getDefaultValueRuleAccess().getGroup(), "rule__DefaultValueRule__Group__0");
+					put(grammarAccess.getRealValueAccess().getGroup_0(), "rule__RealValue__Group_0__0");
+					put(grammarAccess.getRealValueAccess().getGroup_1(), "rule__RealValue__Group_1__0");
+					put(grammarAccess.getRealValueAccess().getGroup_2(), "rule__RealValue__Group_2__0");
+					put(grammarAccess.getNullValueAccess().getGroup(), "rule__NullValue__Group__0");
+					put(grammarAccess.getNoValueAccess().getGroup(), "rule__NoValue__Group__0");
 					put(grammarAccess.getPropertyRuleAccess().getVisibilityAssignment_0(), "rule__PropertyRule__VisibilityAssignment_0");
-					put(grammarAccess.getPropertyRuleAccess().getIsDerivedAssignment_1(), "rule__PropertyRule__IsDerivedAssignment_1");
+					put(grammarAccess.getPropertyRuleAccess().getDerivedAssignment_1(), "rule__PropertyRule__DerivedAssignment_1");
 					put(grammarAccess.getPropertyRuleAccess().getNameAssignment_2(), "rule__PropertyRule__NameAssignment_2");
-					put(grammarAccess.getPropertyRuleAccess().getTypeAssignment_4_0(), "rule__PropertyRule__TypeAssignment_4_0");
-					put(grammarAccess.getPropertyRuleAccess().getMultiplicityAssignment_5(), "rule__PropertyRule__MultiplicityAssignment_5");
-					put(grammarAccess.getPropertyRuleAccess().getModifiersAssignment_6(), "rule__PropertyRule__ModifiersAssignment_6");
-					put(grammarAccess.getPropertyRuleAccess().getDefaultAssignment_7(), "rule__PropertyRule__DefaultAssignment_7");
+					put(grammarAccess.getPropertyRuleAccess().getTypeAssignment_3_1_0(), "rule__PropertyRule__TypeAssignment_3_1_0");
+					put(grammarAccess.getPropertyRuleAccess().getTypeUndefinedAssignment_3_1_1(), "rule__PropertyRule__TypeUndefinedAssignment_3_1_1");
+					put(grammarAccess.getPropertyRuleAccess().getMultiplicityAssignment_4(), "rule__PropertyRule__MultiplicityAssignment_4");
+					put(grammarAccess.getPropertyRuleAccess().getModifiersAssignment_5(), "rule__PropertyRule__ModifiersAssignment_5");
+					put(grammarAccess.getPropertyRuleAccess().getDefaultAssignment_6(), "rule__PropertyRule__DefaultAssignment_6");
+					put(grammarAccess.getVisibilityRuleAccess().getVisibilityAssignment(), "rule__VisibilityRule__VisibilityAssignment");
 					put(grammarAccess.getTypeRuleAccess().getPathAssignment_0(), "rule__TypeRule__PathAssignment_0");
 					put(grammarAccess.getTypeRuleAccess().getTypeAssignment_1(), "rule__TypeRule__TypeAssignment_1");
 					put(grammarAccess.getQualifiedNameAccess().getPathAssignment_0(), "rule__QualifiedName__PathAssignment_0");
@@ -74,6 +84,13 @@ public class UmlPropertyParser extends AbstractContentAssistParser {
 					put(grammarAccess.getRedefinesRuleAccess().getPropertyAssignment_1(), "rule__RedefinesRule__PropertyAssignment_1");
 					put(grammarAccess.getSubsetsRuleAccess().getPropertyAssignment_1(), "rule__SubsetsRule__PropertyAssignment_1");
 					put(grammarAccess.getDefaultValueRuleAccess().getDefaultAssignment_1(), "rule__DefaultValueRule__DefaultAssignment_1");
+					put(grammarAccess.getIntValueAccess().getLiteralIntegerAssignment(), "rule__IntValue__LiteralIntegerAssignment");
+					put(grammarAccess.getStringValueAccess().getLiteralStringAssignment(), "rule__StringValue__LiteralStringAssignment");
+					put(grammarAccess.getBooleanValueAccess().getLiteralBooleanAssignment(), "rule__BooleanValue__LiteralBooleanAssignment");
+					put(grammarAccess.getRealValueAccess().getIntegerAssignment_0_0(), "rule__RealValue__IntegerAssignment_0_0");
+					put(grammarAccess.getRealValueAccess().getFractionAssignment_1_1(), "rule__RealValue__FractionAssignment_1_1");
+					put(grammarAccess.getRealValueAccess().getIntegerAssignment_2_0(), "rule__RealValue__IntegerAssignment_2_0");
+					put(grammarAccess.getRealValueAccess().getFractionAssignment_2_2(), "rule__RealValue__FractionAssignment_2_2");
 				}
 			};
 		}

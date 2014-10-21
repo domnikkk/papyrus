@@ -4,20 +4,17 @@ package org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.DefaultValueRule;
 import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.ModifiersRule;
 import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.MultiplicityRule;
 import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.PropertyRule;
 import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.TypeRule;
 import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.UmlPropertyPackage;
-import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.VisibilityKind;
+import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.VisibilityRule;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,9 +24,10 @@ import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.VisibilityKin
  * The following features are implemented:
  * <ul>
  * <li>{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.PropertyRuleImpl#getVisibility <em>Visibility</em>}</li>
- * <li>{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.PropertyRuleImpl#getIsDerived <em>Is Derived</em>}</li>
+ * <li>{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.PropertyRuleImpl#isDerived <em>Derived</em>}</li>
  * <li>{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.PropertyRuleImpl#getName <em>Name</em>}</li>
  * <li>{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.PropertyRuleImpl#getType <em>Type</em>}</li>
+ * <li>{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.PropertyRuleImpl#isTypeUndefined <em>Type Undefined</em>}</li>
  * <li>{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.PropertyRuleImpl#getMultiplicity <em>Multiplicity</em>}</li>
  * <li>{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.PropertyRuleImpl#getModifiers <em>Modifiers</em>}</li>
  * <li>{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.PropertyRuleImpl#getDefault <em>Default</em>}</li>
@@ -41,54 +39,43 @@ import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.VisibilityKin
 public class PropertyRuleImpl extends MinimalEObjectImpl.Container implements PropertyRule
 {
 	/**
-	 * The default value of the '{@link #getVisibility() <em>Visibility</em>}' attribute.
+	 * The cached value of the '{@link #getVisibility() <em>Visibility</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getVisibility()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final VisibilityKind VISIBILITY_EDEFAULT = VisibilityKind.PUBLIC;
+	protected VisibilityRule visibility;
 
 	/**
-	 * The cached value of the '{@link #getVisibility() <em>Visibility</em>}' attribute.
+	 * The default value of the '{@link #isDerived() <em>Derived</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @see #getVisibility()
+	 *
+	 * @see #isDerived()
 	 * @generated
 	 * @ordered
 	 */
-	protected VisibilityKind visibility = VISIBILITY_EDEFAULT;
+	protected static final boolean DERIVED_EDEFAULT = false;
 
 	/**
-	 * The default value of the '{@link #getIsDerived() <em>Is Derived</em>}' attribute.
+	 * The cached value of the '{@link #isDerived() <em>Derived</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @see #getIsDerived()
+	 *
+	 * @see #isDerived()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String IS_DERIVED_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getIsDerived() <em>Is Derived</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @see #getIsDerived()
-	 * @generated
-	 * @ordered
-	 */
-	protected String isDerived = IS_DERIVED_EDEFAULT;
+	protected boolean derived = DERIVED_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -99,7 +86,7 @@ public class PropertyRuleImpl extends MinimalEObjectImpl.Container implements Pr
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -110,7 +97,7 @@ public class PropertyRuleImpl extends MinimalEObjectImpl.Container implements Pr
 	 * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getType()
 	 * @generated
 	 * @ordered
@@ -118,10 +105,32 @@ public class PropertyRuleImpl extends MinimalEObjectImpl.Container implements Pr
 	protected TypeRule type;
 
 	/**
+	 * The default value of the '{@link #isTypeUndefined() <em>Type Undefined</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see #isTypeUndefined()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean TYPE_UNDEFINED_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isTypeUndefined() <em>Type Undefined</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see #isTypeUndefined()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean typeUndefined = TYPE_UNDEFINED_EDEFAULT;
+
+	/**
 	 * The cached value of the '{@link #getMultiplicity() <em>Multiplicity</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMultiplicity()
 	 * @generated
 	 * @ordered
@@ -132,7 +141,7 @@ public class PropertyRuleImpl extends MinimalEObjectImpl.Container implements Pr
 	 * The cached value of the '{@link #getModifiers() <em>Modifiers</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getModifiers()
 	 * @generated
 	 * @ordered
@@ -143,7 +152,7 @@ public class PropertyRuleImpl extends MinimalEObjectImpl.Container implements Pr
 	 * The cached value of the '{@link #getDefault() <em>Default</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDefault()
 	 * @generated
 	 * @ordered
@@ -153,7 +162,7 @@ public class PropertyRuleImpl extends MinimalEObjectImpl.Container implements Pr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected PropertyRuleImpl()
@@ -164,7 +173,7 @@ public class PropertyRuleImpl extends MinimalEObjectImpl.Container implements Pr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -176,11 +185,10 @@ public class PropertyRuleImpl extends MinimalEObjectImpl.Container implements Pr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	@Override
-	public VisibilityKind getVisibility()
+	public VisibilityRule getVisibility()
 	{
 		return visibility;
 	}
@@ -188,54 +196,84 @@ public class PropertyRuleImpl extends MinimalEObjectImpl.Container implements Pr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	@Override
-	public void setVisibility(VisibilityKind newVisibility)
+	public NotificationChain basicSetVisibility(VisibilityRule newVisibility, NotificationChain msgs)
 	{
-		VisibilityKind oldVisibility = visibility;
-		visibility = newVisibility == null ? VISIBILITY_EDEFAULT : newVisibility;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, UmlPropertyPackage.PROPERTY_RULE__VISIBILITY, oldVisibility, visibility));
+		VisibilityRule oldVisibility = visibility;
+		visibility = newVisibility;
+		if (eNotificationRequired())
+		{
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, UmlPropertyPackage.PROPERTY_RULE__VISIBILITY, oldVisibility, newVisibility);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	public void setVisibility(VisibilityRule newVisibility)
+	{
+		if (newVisibility != visibility)
+		{
+			NotificationChain msgs = null;
+			if (visibility != null) {
+				msgs = ((InternalEObject) visibility).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - UmlPropertyPackage.PROPERTY_RULE__VISIBILITY, null, msgs);
+			}
+			if (newVisibility != null) {
+				msgs = ((InternalEObject) newVisibility).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - UmlPropertyPackage.PROPERTY_RULE__VISIBILITY, null, msgs);
+			}
+			msgs = basicSetVisibility(newVisibility, msgs);
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		}
+		else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(this, Notification.SET, UmlPropertyPackage.PROPERTY_RULE__VISIBILITY, newVisibility, newVisibility));
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	@Override
-	public String getIsDerived()
+	public boolean isDerived()
 	{
-		return isDerived;
+		return derived;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	@Override
-	public void setIsDerived(String newIsDerived)
+	public void setDerived(boolean newDerived)
 	{
-		String oldIsDerived = isDerived;
-		isDerived = newIsDerived;
+		boolean oldDerived = derived;
+		derived = newDerived;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, UmlPropertyPackage.PROPERTY_RULE__IS_DERIVED, oldIsDerived, isDerived));
+			eNotify(new ENotificationImpl(this, Notification.SET, UmlPropertyPackage.PROPERTY_RULE__DERIVED, oldDerived, derived));
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	@Override
 	public String getName()
 	{
 		return name;
@@ -244,10 +282,9 @@ public class PropertyRuleImpl extends MinimalEObjectImpl.Container implements Pr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	@Override
 	public void setName(String newName)
 	{
 		String oldName = name;
@@ -260,10 +297,9 @@ public class PropertyRuleImpl extends MinimalEObjectImpl.Container implements Pr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	@Override
 	public TypeRule getType()
 	{
 		return type;
@@ -272,7 +308,7 @@ public class PropertyRuleImpl extends MinimalEObjectImpl.Container implements Pr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetType(TypeRule newType, NotificationChain msgs)
@@ -294,10 +330,9 @@ public class PropertyRuleImpl extends MinimalEObjectImpl.Container implements Pr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	@Override
 	public void setType(TypeRule newType)
 	{
 		if (newType != type)
@@ -322,10 +357,35 @@ public class PropertyRuleImpl extends MinimalEObjectImpl.Container implements Pr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	@Override
+	public boolean isTypeUndefined()
+	{
+		return typeUndefined;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	public void setTypeUndefined(boolean newTypeUndefined)
+	{
+		boolean oldTypeUndefined = typeUndefined;
+		typeUndefined = newTypeUndefined;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(this, Notification.SET, UmlPropertyPackage.PROPERTY_RULE__TYPE_UNDEFINED, oldTypeUndefined, typeUndefined));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
 	public MultiplicityRule getMultiplicity()
 	{
 		return multiplicity;
@@ -334,7 +394,7 @@ public class PropertyRuleImpl extends MinimalEObjectImpl.Container implements Pr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetMultiplicity(MultiplicityRule newMultiplicity, NotificationChain msgs)
@@ -356,10 +416,9 @@ public class PropertyRuleImpl extends MinimalEObjectImpl.Container implements Pr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	@Override
 	public void setMultiplicity(MultiplicityRule newMultiplicity)
 	{
 		if (newMultiplicity != multiplicity)
@@ -384,10 +443,9 @@ public class PropertyRuleImpl extends MinimalEObjectImpl.Container implements Pr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	@Override
 	public ModifiersRule getModifiers()
 	{
 		return modifiers;
@@ -396,7 +454,7 @@ public class PropertyRuleImpl extends MinimalEObjectImpl.Container implements Pr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetModifiers(ModifiersRule newModifiers, NotificationChain msgs)
@@ -418,10 +476,9 @@ public class PropertyRuleImpl extends MinimalEObjectImpl.Container implements Pr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	@Override
 	public void setModifiers(ModifiersRule newModifiers)
 	{
 		if (newModifiers != modifiers)
@@ -446,10 +503,9 @@ public class PropertyRuleImpl extends MinimalEObjectImpl.Container implements Pr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	@Override
 	public DefaultValueRule getDefault()
 	{
 		return default_;
@@ -458,7 +514,7 @@ public class PropertyRuleImpl extends MinimalEObjectImpl.Container implements Pr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetDefault(DefaultValueRule newDefault, NotificationChain msgs)
@@ -480,10 +536,9 @@ public class PropertyRuleImpl extends MinimalEObjectImpl.Container implements Pr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	@Override
 	public void setDefault(DefaultValueRule newDefault)
 	{
 		if (newDefault != default_)
@@ -508,7 +563,7 @@ public class PropertyRuleImpl extends MinimalEObjectImpl.Container implements Pr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -516,6 +571,8 @@ public class PropertyRuleImpl extends MinimalEObjectImpl.Container implements Pr
 	{
 		switch (featureID)
 		{
+		case UmlPropertyPackage.PROPERTY_RULE__VISIBILITY:
+			return basicSetVisibility(null, msgs);
 		case UmlPropertyPackage.PROPERTY_RULE__TYPE:
 			return basicSetType(null, msgs);
 		case UmlPropertyPackage.PROPERTY_RULE__MULTIPLICITY:
@@ -531,7 +588,7 @@ public class PropertyRuleImpl extends MinimalEObjectImpl.Container implements Pr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -541,12 +598,14 @@ public class PropertyRuleImpl extends MinimalEObjectImpl.Container implements Pr
 		{
 		case UmlPropertyPackage.PROPERTY_RULE__VISIBILITY:
 			return getVisibility();
-		case UmlPropertyPackage.PROPERTY_RULE__IS_DERIVED:
-			return getIsDerived();
+		case UmlPropertyPackage.PROPERTY_RULE__DERIVED:
+			return isDerived();
 		case UmlPropertyPackage.PROPERTY_RULE__NAME:
 			return getName();
 		case UmlPropertyPackage.PROPERTY_RULE__TYPE:
 			return getType();
+		case UmlPropertyPackage.PROPERTY_RULE__TYPE_UNDEFINED:
+			return isTypeUndefined();
 		case UmlPropertyPackage.PROPERTY_RULE__MULTIPLICITY:
 			return getMultiplicity();
 		case UmlPropertyPackage.PROPERTY_RULE__MODIFIERS:
@@ -560,7 +619,7 @@ public class PropertyRuleImpl extends MinimalEObjectImpl.Container implements Pr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -569,16 +628,19 @@ public class PropertyRuleImpl extends MinimalEObjectImpl.Container implements Pr
 		switch (featureID)
 		{
 		case UmlPropertyPackage.PROPERTY_RULE__VISIBILITY:
-			setVisibility((VisibilityKind) newValue);
+			setVisibility((VisibilityRule) newValue);
 			return;
-		case UmlPropertyPackage.PROPERTY_RULE__IS_DERIVED:
-			setIsDerived((String) newValue);
+		case UmlPropertyPackage.PROPERTY_RULE__DERIVED:
+			setDerived((Boolean) newValue);
 			return;
 		case UmlPropertyPackage.PROPERTY_RULE__NAME:
 			setName((String) newValue);
 			return;
 		case UmlPropertyPackage.PROPERTY_RULE__TYPE:
 			setType((TypeRule) newValue);
+			return;
+		case UmlPropertyPackage.PROPERTY_RULE__TYPE_UNDEFINED:
+			setTypeUndefined((Boolean) newValue);
 			return;
 		case UmlPropertyPackage.PROPERTY_RULE__MULTIPLICITY:
 			setMultiplicity((MultiplicityRule) newValue);
@@ -596,7 +658,7 @@ public class PropertyRuleImpl extends MinimalEObjectImpl.Container implements Pr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -605,16 +667,19 @@ public class PropertyRuleImpl extends MinimalEObjectImpl.Container implements Pr
 		switch (featureID)
 		{
 		case UmlPropertyPackage.PROPERTY_RULE__VISIBILITY:
-			setVisibility(VISIBILITY_EDEFAULT);
+			setVisibility((VisibilityRule) null);
 			return;
-		case UmlPropertyPackage.PROPERTY_RULE__IS_DERIVED:
-			setIsDerived(IS_DERIVED_EDEFAULT);
+		case UmlPropertyPackage.PROPERTY_RULE__DERIVED:
+			setDerived(DERIVED_EDEFAULT);
 			return;
 		case UmlPropertyPackage.PROPERTY_RULE__NAME:
 			setName(NAME_EDEFAULT);
 			return;
 		case UmlPropertyPackage.PROPERTY_RULE__TYPE:
 			setType((TypeRule) null);
+			return;
+		case UmlPropertyPackage.PROPERTY_RULE__TYPE_UNDEFINED:
+			setTypeUndefined(TYPE_UNDEFINED_EDEFAULT);
 			return;
 		case UmlPropertyPackage.PROPERTY_RULE__MULTIPLICITY:
 			setMultiplicity((MultiplicityRule) null);
@@ -632,7 +697,7 @@ public class PropertyRuleImpl extends MinimalEObjectImpl.Container implements Pr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -641,13 +706,15 @@ public class PropertyRuleImpl extends MinimalEObjectImpl.Container implements Pr
 		switch (featureID)
 		{
 		case UmlPropertyPackage.PROPERTY_RULE__VISIBILITY:
-			return visibility != VISIBILITY_EDEFAULT;
-		case UmlPropertyPackage.PROPERTY_RULE__IS_DERIVED:
-			return IS_DERIVED_EDEFAULT == null ? isDerived != null : !IS_DERIVED_EDEFAULT.equals(isDerived);
+			return visibility != null;
+		case UmlPropertyPackage.PROPERTY_RULE__DERIVED:
+			return derived != DERIVED_EDEFAULT;
 		case UmlPropertyPackage.PROPERTY_RULE__NAME:
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		case UmlPropertyPackage.PROPERTY_RULE__TYPE:
 			return type != null;
+		case UmlPropertyPackage.PROPERTY_RULE__TYPE_UNDEFINED:
+			return typeUndefined != TYPE_UNDEFINED_EDEFAULT;
 		case UmlPropertyPackage.PROPERTY_RULE__MULTIPLICITY:
 			return multiplicity != null;
 		case UmlPropertyPackage.PROPERTY_RULE__MODIFIERS:
@@ -661,7 +728,7 @@ public class PropertyRuleImpl extends MinimalEObjectImpl.Container implements Pr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -672,12 +739,12 @@ public class PropertyRuleImpl extends MinimalEObjectImpl.Container implements Pr
 		}
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (visibility: ");
-		result.append(visibility);
-		result.append(", isDerived: ");
-		result.append(isDerived);
+		result.append(" (derived: ");
+		result.append(derived);
 		result.append(", name: ");
 		result.append(name);
+		result.append(", typeUndefined: ");
+		result.append(typeUndefined);
 		result.append(')');
 		return result.toString();
 	}

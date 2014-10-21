@@ -20,6 +20,7 @@ import org.eclipse.papyrus.uml.tools.utils.PropertyUtil;
 import org.eclipse.papyrus.uml.tools.utils.TypeUtil;
 import org.eclipse.papyrus.uml.xtext.integration.CompletionProposalUtils;
 import org.eclipse.uml2.uml.Property;
+import org.eclipse.uml2.uml.util.UMLSwitch;
 
 public class UMLPropertyEditorPropertyUtil extends PropertyUtil {
 
@@ -59,7 +60,40 @@ public class UMLPropertyEditorPropertyUtil extends PropertyUtil {
 		// default value
 		if (property.getDefault() != null) {
 			buffer.append(" = ");
-			buffer.append("\"" + property.getDefault() + "\"");
+			String defaultValue = new UMLSwitch<String>() {
+				@Override
+				public String caseLiteralBoolean(org.eclipse.uml2.uml.LiteralBoolean object) {
+					return Boolean.toString(object.booleanValue());
+				}
+
+				@Override
+				public String caseLiteralInteger(org.eclipse.uml2.uml.LiteralInteger object) {
+					return Integer.toString(object.integerValue());
+				}
+
+				@Override
+				public String caseLiteralNull(org.eclipse.uml2.uml.LiteralNull object) {
+					return "null"; //$NON-NLS-1$
+				}
+
+				@Override
+				public String caseLiteralString(org.eclipse.uml2.uml.LiteralString object) {
+					return "\"" + object.stringValue() + "\"";
+				}
+
+				@Override
+				public String caseLiteralReal(org.eclipse.uml2.uml.LiteralReal object) {
+					return Double.toString(object.getValue());
+				}
+
+				@Override
+				public String caseLiteralUnlimitedNatural(org.eclipse.uml2.uml.LiteralUnlimitedNatural object) {
+					return object.getValue() < 0 ? "*" : Integer.toString(object.getValue());
+				}
+
+			}.doSwitch(property.getDefaultValue());
+
+			buffer.append(defaultValue);
 		}
 
 		return buffer.toString();

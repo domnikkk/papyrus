@@ -4,13 +4,10 @@ package org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.ModifierKind;
 import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.ModifierSpecification;
 import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.RedefinesRule;
@@ -38,7 +35,7 @@ public class ModifierSpecificationImpl extends MinimalEObjectImpl.Container impl
 	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getValue()
 	 * @generated
 	 * @ordered
@@ -49,7 +46,7 @@ public class ModifierSpecificationImpl extends MinimalEObjectImpl.Container impl
 	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getValue()
 	 * @generated
 	 * @ordered
@@ -60,7 +57,7 @@ public class ModifierSpecificationImpl extends MinimalEObjectImpl.Container impl
 	 * The cached value of the '{@link #getRedefines() <em>Redefines</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRedefines()
 	 * @generated
 	 * @ordered
@@ -71,7 +68,7 @@ public class ModifierSpecificationImpl extends MinimalEObjectImpl.Container impl
 	 * The cached value of the '{@link #getSubsets() <em>Subsets</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSubsets()
 	 * @generated
 	 * @ordered
@@ -81,7 +78,7 @@ public class ModifierSpecificationImpl extends MinimalEObjectImpl.Container impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ModifierSpecificationImpl()
@@ -92,7 +89,7 @@ public class ModifierSpecificationImpl extends MinimalEObjectImpl.Container impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -104,10 +101,9 @@ public class ModifierSpecificationImpl extends MinimalEObjectImpl.Container impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	@Override
 	public ModifierKind getValue()
 	{
 		return value;
@@ -116,10 +112,9 @@ public class ModifierSpecificationImpl extends MinimalEObjectImpl.Container impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	@Override
 	public void setValue(ModifierKind newValue)
 	{
 		ModifierKind oldValue = value;
@@ -132,10 +127,9 @@ public class ModifierSpecificationImpl extends MinimalEObjectImpl.Container impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	@Override
 	public RedefinesRule getRedefines()
 	{
 		return redefines;
@@ -144,7 +138,7 @@ public class ModifierSpecificationImpl extends MinimalEObjectImpl.Container impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetRedefines(RedefinesRule newRedefines, NotificationChain msgs)
@@ -166,10 +160,9 @@ public class ModifierSpecificationImpl extends MinimalEObjectImpl.Container impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	@Override
 	public void setRedefines(RedefinesRule newRedefines)
 	{
 		if (newRedefines != redefines)
@@ -194,10 +187,9 @@ public class ModifierSpecificationImpl extends MinimalEObjectImpl.Container impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	@Override
 	public SubsetsRule getSubsets()
 	{
 		return subsets;
@@ -206,7 +198,7 @@ public class ModifierSpecificationImpl extends MinimalEObjectImpl.Container impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetSubsets(SubsetsRule newSubsets, NotificationChain msgs)
@@ -228,10 +220,9 @@ public class ModifierSpecificationImpl extends MinimalEObjectImpl.Container impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	@Override
 	public void setSubsets(SubsetsRule newSubsets)
 	{
 		if (newSubsets != subsets)
@@ -256,7 +247,7 @@ public class ModifierSpecificationImpl extends MinimalEObjectImpl.Container impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -275,7 +266,7 @@ public class ModifierSpecificationImpl extends MinimalEObjectImpl.Container impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -296,7 +287,7 @@ public class ModifierSpecificationImpl extends MinimalEObjectImpl.Container impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -320,7 +311,7 @@ public class ModifierSpecificationImpl extends MinimalEObjectImpl.Container impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -344,7 +335,7 @@ public class ModifierSpecificationImpl extends MinimalEObjectImpl.Container impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -365,7 +356,7 @@ public class ModifierSpecificationImpl extends MinimalEObjectImpl.Container impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
