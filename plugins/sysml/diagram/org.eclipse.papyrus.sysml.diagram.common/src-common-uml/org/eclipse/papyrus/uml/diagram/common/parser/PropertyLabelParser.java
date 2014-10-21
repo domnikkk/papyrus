@@ -29,7 +29,6 @@ import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 import org.eclipse.papyrus.sysml.diagram.common.preferences.ILabelPreferenceConstants;
 import org.eclipse.papyrus.uml.tools.utils.ICustomAppearance;
 import org.eclipse.papyrus.uml.tools.utils.ValueSpecificationUtil;
-import org.eclipse.uml2.uml.InstanceValue;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.ValueSpecification;
@@ -150,9 +149,7 @@ public class PropertyLabelParser extends NamedElementLabelParser {
 			// manage default value
 			if (maskValues.contains(ICustomAppearance.DISP_DEFAULT_VALUE) && property.getDefaultValue() != null) {
 				ValueSpecification valueSpecification = property.getDefaultValue();
-				if ((valueSpecification instanceof InstanceValue && property.getType().equals(valueSpecification.getType())) || !(valueSpecification instanceof InstanceValue)) {
-					result = String.format(DEFAULT_VALUE_FORMAT, result, ValueSpecificationUtil.getSpecificationValue(valueSpecification));
-				}
+				result = String.format(DEFAULT_VALUE_FORMAT, result, ValueSpecificationUtil.getSpecificationValue(valueSpecification));
 			}
 
 			// manage modifier

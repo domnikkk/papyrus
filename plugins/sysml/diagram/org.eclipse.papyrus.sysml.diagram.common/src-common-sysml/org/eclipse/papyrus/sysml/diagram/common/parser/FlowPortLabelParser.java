@@ -169,7 +169,7 @@ public class FlowPortLabelParser extends PropertyLabelParser {
 			// manage default value
 			if ((maskValues.contains(ICustomAppearance.DISP_DEFAULT_VALUE)) && ((property.getDefaultValue() != null))) {
 				ValueSpecification valueSpecification = property.getDefaultValue();
-				if (valueSpecification instanceof InstanceValue && property.getType().equals(valueSpecification.getType())) {
+				if (valueSpecification instanceof InstanceValue) {
 					result = String.format(DEFAULT_VALUE_FORMAT, result, ValueSpecificationUtil.getSpecificationValue(valueSpecification));
 				}
 			}
