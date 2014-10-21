@@ -55,9 +55,9 @@ import org.eclipse.papyrus.uml.diagram.activity.edit.policies.OpenDiagramEditPol
 import org.eclipse.papyrus.uml.diagram.activity.part.UMLDiagramEditorPlugin;
 import org.eclipse.papyrus.uml.diagram.activity.part.UMLVisualIDRegistry;
 import org.eclipse.papyrus.uml.diagram.activity.providers.UMLElementTypes;
-import org.eclipse.papyrus.uml.diagram.common.editparts.UMLNodeEditPart;
+import org.eclipse.papyrus.uml.diagram.common.editparts.RoundedCompartmentEditPart;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.ChangeStereotypedShapeEditPolicy;
-import org.eclipse.papyrus.uml.diagram.common.figure.node.ForkNode;
+import org.eclipse.papyrus.uml.diagram.common.figure.node.RoundedCompartmentFigure;
 import org.eclipse.papyrus.uml.diagram.common.helper.PreferenceInitializerForElementHelper;
 import org.eclipse.papyrus.uml.diagram.common.locator.ExternalLabelPositionLocator;
 import org.eclipse.swt.graphics.Color;
@@ -65,7 +65,7 @@ import org.eclipse.swt.graphics.Color;
 /**
  * @generated
  */
-public class JoinNodeEditPart extends UMLNodeEditPart {
+public class JoinNodeEditPart extends RoundedCompartmentEditPart {
 
 	/**
 	 * @generated
@@ -185,15 +185,15 @@ public class JoinNodeEditPart extends UMLNodeEditPart {
 	 */
 	@Override
 	protected IFigure createNodeShape() {
-		return primaryShape = new ForkNode();
+		return primaryShape = new RoundedCompartmentFigure();
 	}
 
 	/**
 	 * @generated
 	 */
 	@Override
-	public ForkNode getPrimaryShape() {
-		return (ForkNode) primaryShape;
+	public RoundedCompartmentFigure getPrimaryShape() {
+		return (RoundedCompartmentFigure) primaryShape;
 	}
 
 	/**

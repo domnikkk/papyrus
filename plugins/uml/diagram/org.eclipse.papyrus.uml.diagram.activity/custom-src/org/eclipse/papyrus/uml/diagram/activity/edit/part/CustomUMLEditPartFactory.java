@@ -31,6 +31,7 @@ import org.eclipse.papyrus.uml.diagram.activity.edit.parts.AcceptTimeEventAction
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.ActivityActivityContentCompartmentEditPart;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.ActivityEditPart;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.ActivityEditPartCN;
+import org.eclipse.papyrus.uml.diagram.activity.edit.parts.ActivityFinalNodeEditPart;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.ActivityParameterNodeEditPart;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.ActivityPartitionActivityPartitionContentCompartmentEditPart;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.ActivityPartitionEditPart;
@@ -46,14 +47,20 @@ import org.eclipse.papyrus.uml.diagram.activity.edit.parts.ControlFlowEditPart;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.ControlFlowInterruptibleIconEditPart;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.CreateObjectActionEditPart;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.DataStoreNodeEditPart;
+import org.eclipse.papyrus.uml.diagram.activity.edit.parts.DecisionNodeEditPart;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.DestroyObjectActionEditPart;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.ExceptionHandlerIconEditPart;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.ExpansionRegionEditPart;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.ExpansionRegionStructuredActivityNodeContentCompartmentEditPart;
+import org.eclipse.papyrus.uml.diagram.activity.edit.parts.FlowFinalNodeEditPart;
+import org.eclipse.papyrus.uml.diagram.activity.edit.parts.ForkNodeEditPart;
+import org.eclipse.papyrus.uml.diagram.activity.edit.parts.InitialNodeEditPart;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.InterruptibleActivityRegionEditPart;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.InterruptibleActivityRegionInterruptibleActivityRegionContentCompartmentEditPart;
+import org.eclipse.papyrus.uml.diagram.activity.edit.parts.JoinNodeEditPart;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.LoopNodeEditPart;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.LoopNodeStructuredActivityNodeContentCompartmentEditPart;
+import org.eclipse.papyrus.uml.diagram.activity.edit.parts.MergeNodeEditPart;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.ObjectFlowEditPart;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.ObjectFlowInterruptibleIconEditPart;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.ObjectFlowSelectionEditPart;
@@ -63,6 +70,7 @@ import org.eclipse.papyrus.uml.diagram.activity.edit.parts.ReadSelfActionEditPar
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.ReadStructuralFeatureActionEditPart;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.ReadVariableActionEditPart;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.SendObjectActionEditPart;
+import org.eclipse.papyrus.uml.diagram.activity.edit.parts.SendSignalActionEditPart;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.SequenceNodeEditPart;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.SequenceNodeStructuredActivityNodeContentCompartmentEditPart;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.StructuredActivityNodeEditPart;
@@ -215,7 +223,22 @@ public class CustomUMLEditPartFactory extends UMLEditPartFactory {
 				return new CustomActivityEditPart(view);
 			case ActivityEditPartCN.VISUAL_ID:
 				return new CustomActivityEditPartCN(view);
-
+			case SendSignalActionEditPart.VISUAL_ID:
+				return new CustomSendSignalActionEditPart(view);
+			case ActivityFinalNodeEditPart.VISUAL_ID:
+				return new CustomActivityFinalNodeEditPart(view);
+			case DecisionNodeEditPart.VISUAL_ID:
+				return new CustomDecisionNodeEditPart(view);
+			case InitialNodeEditPart.VISUAL_ID:
+				return new CustomInitialNodeEditPart(view);
+			case FlowFinalNodeEditPart.VISUAL_ID:
+				return new CustomFlowFinalNodeEditPart(view);
+			case MergeNodeEditPart.VISUAL_ID:
+				return new CustomMergeNodeEditPart(view);
+			case ForkNodeEditPart.VISUAL_ID:
+				return new CustomForkNodeEditPart(view);
+			case JoinNodeEditPart.VISUAL_ID:
+				return new CustomJoinNodeEditPart(view);
 			}
 		}
 		return super.createEditPart(context, model);

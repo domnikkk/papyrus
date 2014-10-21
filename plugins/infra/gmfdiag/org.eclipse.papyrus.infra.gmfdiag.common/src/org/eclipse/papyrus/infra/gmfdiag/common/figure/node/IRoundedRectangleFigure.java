@@ -38,18 +38,6 @@ public interface IRoundedRectangleFigure extends IFigure {
 	 */
 	void setCornerDimensions(Dimension CornerDimension);
 
-	// /**
-	// * Sets the height of rounded rectangles corner dimensions.
-	// *
-	// */
-	// void setRadiusWidth(int width);
-	//
-	// /**
-	// * Sets the height of rounded rectangles corner dimensions.
-	// *
-	// */
-	// void setRadiusHeight(int height);
-
 	/**
 	 * Returns the rounded rectangles bounds.
 	 * 
@@ -103,6 +91,12 @@ public interface IRoundedRectangleFigure extends IFigure {
 	 */
 	Dimension getFloatingNameOffset();
 
+	/**
+	 * Sets the border style.
+	 *
+	 * @param borderStyle
+	 *            the new border style
+	 */
 	public void setBorderStyle(int borderStyle);
 
 }

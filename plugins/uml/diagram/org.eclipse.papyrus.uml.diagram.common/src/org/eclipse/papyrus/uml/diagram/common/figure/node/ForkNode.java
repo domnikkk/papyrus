@@ -13,29 +13,24 @@
  */
 package org.eclipse.papyrus.uml.diagram.common.figure.node;
 
-import org.eclipse.draw2d.Border;
-import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.geometry.Dimension;
-import org.eclipse.draw2d.geometry.Insets;
-import org.eclipse.draw2d.geometry.Rectangle;
-import org.eclipse.gmf.runtime.draw2d.ui.graphics.ColorRegistry;
-import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Image;
 
 /**
  * this figure is small rectangle
  *
  */
-public class ForkNode extends PapyrusNodeFigure implements IPapyrusNodeUMLElementFigure {
+// Unused: to delete
+public class ForkNode extends RoundedCompartmentFigure implements IPapyrusNodeUMLElementFigure {
 
-	/**
-	 * {@inheritDoc}
-	 */
-	@Override
-	protected Border getDefaultBorder(Color borderColor) {
-		return null;
-	}
+	// /**
+	// * {@inheritDoc}
+	// */
+	// @Override
+	// protected Border getDefaultBorder(Color borderColor) {
+	// return null;
+	// }
 
 	/**
 	 * {@inheritDoc}
@@ -45,23 +40,23 @@ public class ForkNode extends PapyrusNodeFigure implements IPapyrusNodeUMLElemen
 		return new Dimension(10, 10);
 	}
 
-	/**
-	 * {@inheritDoc}
-	 */
-	@Override
-	public void paintFigure(Graphics graphics) {
-		Rectangle r = getBounds().getCopy().crop(new Insets(0, 0, 1, 1));
-		if (isUsingGradient()) {
-			graphics.setBackgroundColor(ColorRegistry.getInstance().getColor(getGradientColor2()));
-			// graphics.setForegroundColor(ColorRegistry.getInstance().getColor(getGradientColor2()));
-		} else {
-			graphics.setBackgroundColor(getBackgroundColor());
-			// graphics.setForegroundColor(getForegroundColor());
-		}
-		graphics.fillRectangle(r);
-		graphics.setLineWidth(1);
-		graphics.drawRectangle(r);
-	}
+	// /**
+	// * {@inheritDoc}
+	// */
+	// @Override
+	// public void paintFigure(Graphics graphics) {
+	// Rectangle r = getBounds().getCopy().crop(new Insets(0, 0, 1, 1));
+	// if (isUsingGradient()) {
+	// graphics.setBackgroundColor(ColorRegistry.getInstance().getColor(getGradientColor2()));
+	// // graphics.setForegroundColor(ColorRegistry.getInstance().getColor(getGradientColor2()));
+	// } else {
+	// graphics.setBackgroundColor(getBackgroundColor());
+	// // graphics.setForegroundColor(getForegroundColor());
+	// }
+	// graphics.fillRectangle(r);
+	// graphics.setLineWidth(1);
+	// graphics.drawRectangle(r);
+	// }
 
 	/**
 	 * {@inheritDoc}

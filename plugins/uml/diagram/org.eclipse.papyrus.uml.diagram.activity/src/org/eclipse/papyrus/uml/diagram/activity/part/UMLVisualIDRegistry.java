@@ -1739,9 +1739,18 @@ public class UMLVisualIDRegistry {
 			if (InitialNodeAppliedStereotypeEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			// not generated but change include on gmfgen, can be override at the generation
+			if (InitialNodeFloatingNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+
 			break;
 		case ActivityFinalNodeEditPart.VISUAL_ID:
 			if (ActivityFinalNodeAppliedStereotypeEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			// not generated but change include on gmfgen, can be override at the generation
+			if (ActivityFinalNodeFloatingNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -1749,6 +1758,11 @@ public class UMLVisualIDRegistry {
 			if (FlowFinalNodeAppliedStereotypeEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			// not generated but change include on gmfgen, can be override at the generation
+			if (FlowFinalNodeFloatingNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+
 			break;
 		case OpaqueActionEditPart.VISUAL_ID:
 			// not generated but change include on gmfgen, can be override at the generation
@@ -2039,16 +2053,31 @@ public class UMLVisualIDRegistry {
 			if (DecisionNodeAppliedStereotypeEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			// not generated but change include on gmfgen, can be override at the generation
+			if (DecisionNodeFloatingNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+
 			break;
 		case MergeNodeEditPart.VISUAL_ID:
 			if (MergeNodeAppliedStereotypeEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			// not generated but changes include on gmfgen, can be override at the generation
+			if (MergeNodeFloatingNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+
 			break;
 		case ForkNodeEditPart.VISUAL_ID:
 			if (ForkNodeAppliedStereotypeEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			// not generated but changes include on gmfgen, can be override at the generation
+			if (ForkNodeFloatingNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+
 			break;
 		case JoinNodeEditPart.VISUAL_ID:
 			if (JoinSpecEditPart.VISUAL_ID == nodeVisualID) {
@@ -2057,6 +2086,11 @@ public class UMLVisualIDRegistry {
 			if (JoinNodeAppliedStereotypeEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			// not generated but changes include on gmfgen, can be override at the generation
+			if (JoinNodeFloatingNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+
 			break;
 		case DataStoreNodeEditPart.VISUAL_ID:
 			if (DataStoreNodeLabelEditPart.VISUAL_ID == nodeVisualID) {
@@ -2160,6 +2194,10 @@ public class UMLVisualIDRegistry {
 			}
 			break;
 		case SendSignalActionEditPart.VISUAL_ID:
+			// not generated but change include on gmfgen, can be override at the generation
+			if (SendSignalActionFloatingNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			if (SendSignalActionNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}

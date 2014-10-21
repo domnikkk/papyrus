@@ -690,6 +690,30 @@ public class UMLEditPartFactory implements EditPartFactory {
 				// not generated but changes include on gmfgen, can be override at the generation
 			case DataStoreNodeFloatingNameEditPart.VISUAL_ID:
 				return new DataStoreNodeFloatingNameEditPart(view);
+				// not generated but changes include on gmfgen, can be override at the generation
+			case SendSignalActionFloatingNameEditPart.VISUAL_ID:
+				return new SendSignalActionFloatingNameEditPart(view);
+				// not generated but changes include on gmfgen, can be override at the generation
+			case ActivityFinalNodeFloatingNameEditPart.VISUAL_ID:
+				return new ActivityFinalNodeFloatingNameEditPart(view);
+				// not generated but changes include on gmfgen, can be override at the generation
+			case InitialNodeFloatingNameEditPart.VISUAL_ID:
+				return new InitialNodeFloatingNameEditPart(view);
+				// not generated but changes include on gmfgen, can be override at the generation
+			case FlowFinalNodeFloatingNameEditPart.VISUAL_ID:
+				return new FlowFinalNodeFloatingNameEditPart(view);
+				// not generated but changes include on gmfgen, can be override at the generation
+			case DecisionNodeFloatingNameEditPart.VISUAL_ID:
+				return new DecisionNodeFloatingNameEditPart(view);
+				// not generated but changes include on gmfgen, can be override at the generation
+			case MergeNodeFloatingNameEditPart.VISUAL_ID:
+				return new MergeNodeFloatingNameEditPart(view);
+				// not generated but changes include on gmfgen, can be override at the generation
+			case ForkNodeFloatingNameEditPart.VISUAL_ID:
+				return new ForkNodeFloatingNameEditPart(view);
+				// not generated but changes include on gmfgen, can be override at the generation
+			case JoinNodeFloatingNameEditPart.VISUAL_ID:
+				return new JoinNodeFloatingNameEditPart(view);
 
 			}
 		}

@@ -209,6 +209,7 @@ public class RoundedRectangleNodePlateFigure extends DefaultSizeNodeFigure imple
 	 * @return
 	 */
 	@Override
+	// unused
 	public Dimension getFloatingNameOffset() {
 		return null;
 	}
@@ -219,7 +220,8 @@ public class RoundedRectangleNodePlateFigure extends DefaultSizeNodeFigure imple
 	 * @param borderStyle
 	 */
 	@Override
+	// unused
 	public void setBorderStyle(int borderStyle) {
-		// unused
 	}
+
 }

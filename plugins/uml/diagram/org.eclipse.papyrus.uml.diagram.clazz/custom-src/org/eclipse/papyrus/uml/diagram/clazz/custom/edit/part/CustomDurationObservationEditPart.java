@@ -13,8 +13,6 @@
 package org.eclipse.papyrus.uml.diagram.clazz.custom.edit.part;
 
 
-import java.util.List;
-
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.geometry.Dimension;
@@ -22,15 +20,12 @@ import org.eclipse.gef.EditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
-import org.eclipse.gmf.runtime.notation.BasicCompartment;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.papyrus.infra.core.utils.TransactionHelper;
 import org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.GetChildLayoutEditPolicy;
 import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.RoundedRectangleNodePlateFigure;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.DurationObservationEditPart;
 import org.eclipse.papyrus.uml.diagram.common.editparts.FloatingLabelEditPart;
 import org.eclipse.papyrus.uml.diagram.common.locator.RoundedRectangleLabelPositionLocator;
-import org.eclipse.papyrus.uml.diagram.common.util.CompartmentUtils;
 
 /**
  * The Class CustomDurationObservationEditPart.
@@ -42,8 +37,6 @@ public class CustomDurationObservationEditPart extends DurationObservationEditPa
 
 	/** The Constant FLOATING_NAME_OFFSET_HEIGHT. */
 	private static final int FLOATING_NAME_OFFSET_HEIGHT = 3;
-
-	private boolean isSymbolCompartmentShowed = false;
 
 	/**
 	 * Instantiates a new edit part.
@@ -98,62 +91,22 @@ public class CustomDurationObservationEditPart extends DurationObservationEditPa
 	}
 
 	/**
-	 * @see org.eclipse.papyrus.uml.diagram.common.editparts.NamedElementEditPart#activate()
-	 *
-	 */
-	@Override
-	public void refresh() {
-		super.refresh();
-		showSymbolCompartment();
-	}
-
-	/**
-	 * Set the visibility of symbol compartment
-	 */
-	private void showSymbolCompartment() {
-		// Get all compartments
-		List<View> compartments = CompartmentUtils.getAllCompartments(this, false);
-		for (final View compartment : compartments) {
-			// for the symbol compartment
-			if (compartment instanceof BasicCompartment && "compartment_shape_display".equals(compartment.getType())) {
-				// Show the compartment only one time.
-				if (!isSymbolCompartmentShowed) {
-					try {
-						org.eclipse.papyrus.infra.core.sasheditor.di.contentprovider.utils.TransactionHelper.run(getEditingDomain(), new Runnable() {
-
-							@Override
-							public void run() {
-								compartment.setVisible(true);
-							}
-						});
-					} catch (Exception e) {
-						System.out.println(e.toString());
-					}
-					if (compartment.isVisible()) {
-						isSymbolCompartmentShowed = true;
-					}
-				}
-			}
-		}
-	}
-
-	/**
-	 * @see org.eclipse.papyrus.uml.diagram.common.editparts.RoundedCompartmentEditPart#getDefaultFloatingNameOffsetHeight()
+	 * @see org.eclipse.papyrus.uml.diagram.common.editparts.RoundedCompartmentEditPart#getDefaultFloatingLabelOffsetHeight()
 	 *
 	 * @return
 	 */
 	@Override
-	protected int getDefaultFloatingNameOffsetHeight() {
+	protected int getDefaultFloatingLabelOffsetHeight() {
 		return FLOATING_NAME_OFFSET_HEIGHT;
 	}
 
 	/**
-	 * @see org.eclipse.papyrus.uml.diagram.common.editparts.RoundedCompartmentEditPart#getDefaultFloatingNameOffsetWidth()
+	 * @see org.eclipse.papyrus.uml.diagram.common.editparts.RoundedCompartmentEditPart#getDefaultFloatingLabelOffsetWidth()
 	 *
 	 * @return
 	 */
 	@Override
-	protected int getDefaultFloatingNameOffsetWidth() {
+	protected int getDefaultFloatingLabelOffsetWidth() {
 		return FLOATING_NAME_OFFSET_WIDTH;
 	}
 }

@@ -124,7 +124,7 @@ public class AutomaticCompartmentLayoutManager extends AbstractLayout {
 	 */
 	@Override
 	public Dimension getMinimumSize(IFigure container, int wHint, int hHint) {
-		return new Dimension(20, 20);
+		return new Dimension(10, 10);
 	}
 
 	/**

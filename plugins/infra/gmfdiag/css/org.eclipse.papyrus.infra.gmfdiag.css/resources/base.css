@@ -50,3 +50,47 @@ UseCaseDiagram Actor {
 TimingDiagram * {
 	gradient:none;
 }
+
+/*Default value implementation TODO: Hardcode when possible */
+
+ActivityDiagram > MergeNode, 
+ActivityDiagram > InitialNode, ActivityFinalNode, 
+ActivityDiagram > FlowFinalNode, DecisionNode, 
+ActivityDiagram > MergeNode, 
+ActivityDiagram > SendSignalAction,
+ActivityDiagram > AcceptEventAction
+{
+	displayBorder:false;
+	displayName:false;
+	diplayIcon:false;
+	displayTag:false;
+	followSVGSymbol:true;
+	maintainSymbolRatio:true;
+	transparency:100;
+	displayFloatingLabel:true;
+	maxNumberOfSymbol:1;
+	gradient:none;
+	fillColor:white;
+}
+
+ActivityDiagram > MergeNode > Compartment[kind="symbol"], 
+ActivityDiagram > InitialNode > Compartment[kind="symbol"], 
+ActivityDiagram > ActivityFinalNode > Compartment[kind="symbol"], 
+ActivityDiagram > FlowFinalNode > Compartment[kind="symbol"], 
+ActivityDiagram > MergeNode > Compartment[kind="symbol"], 
+ActivityDiagram > SendSignalAction > Compartment[kind="symbol"],
+ActivityDiagram > DecisionNode > Compartment[kind="symbol"],
+ActivityDiagram > AcceptEventAction > Compartment[kind="symbol"],
+ClassDiagram > DurationObservation > Compartment[kind="symbol"],
+ClassDiagram > TimeObservation > Compartment[kind="symbol"]
+{
+    visible:true;
+}
+
+ActivityDiagram > SendSignalAction,
+ActivityDiagram > AcceptEventAction
+{
+	maintainSymbolRatio:false;
+}
+
+

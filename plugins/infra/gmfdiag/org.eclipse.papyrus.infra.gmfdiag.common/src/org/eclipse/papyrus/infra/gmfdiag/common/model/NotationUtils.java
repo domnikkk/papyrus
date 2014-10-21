@@ -16,12 +16,19 @@ package org.eclipse.papyrus.infra.gmfdiag.common.model;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.gmf.runtime.notation.BooleanValueStyle;
 import org.eclipse.gmf.runtime.notation.Diagram;
+import org.eclipse.gmf.runtime.notation.IntValueStyle;
+import org.eclipse.gmf.runtime.notation.NamedStyle;
+import org.eclipse.gmf.runtime.notation.NotationPackage;
+import org.eclipse.gmf.runtime.notation.StringValueStyle;
+import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.infra.core.resource.IModel;
 import org.eclipse.papyrus.infra.core.resource.ModelSet;
 import org.eclipse.papyrus.infra.core.services.ServiceException;
@@ -246,6 +253,78 @@ public class NotationUtils {
 		} else {
 			throw new RuntimeException("Resource Set is not a ModelSet or is null"); //$NON-NLS-1$
 		}
+	}
+
+	/**
+	 * @param view
+	 * @param property
+	 * @param defaultValue
+	 * @return Integer corresponding to the property
+	 */
+	public static int getIntValue(View view, String property, int defaultInt) {
+		int value = defaultInt;
+		EClass intValueStyle = NotationPackage.eINSTANCE.getIntValueStyle();
+		NamedStyle style;
+
+		if (intValueStyle != null) {
+
+			style = view.getNamedStyle(intValueStyle, property);
+
+			if (style instanceof IntValueStyle) {
+				value = ((IntValueStyle) style).getIntValue();
+			}
+		}
+
+		return value;
+	}
+
+
+
+	/**
+	 * @param view
+	 * @param property
+	 * @param defaultValue
+	 * @return Boolean corresponding to the property
+	 */
+	public static boolean getBooleanValue(View view, String property, boolean defaultValue) {
+		boolean value = defaultValue;
+		EClass booleanValueStyle = NotationPackage.eINSTANCE.getBooleanValueStyle();
+		NamedStyle style;
+
+		if (booleanValueStyle != null) {
+
+			style = view.getNamedStyle(booleanValueStyle, property);
+
+			if (style instanceof BooleanValueStyle) {
+				value = ((BooleanValueStyle) style).isBooleanValue();
+			}
+		}
+
+		return value;
+	}
+
+
+	/**
+	 * @param view
+	 * @param property
+	 * @param defaultValue
+	 * @return String corresponding to the property
+	 */
+	public static String getStringValue(View view, String property, String defaultValue) {
+		String value = defaultValue;
+		EClass stringValueStyle = NotationPackage.eINSTANCE.getStringValueStyle();
+		NamedStyle style;
+
+		if (stringValueStyle != null) {
+
+			style = view.getNamedStyle(stringValueStyle, property);
+
+			if (style instanceof StringValueStyle) {
+				value = ((StringValueStyle) style).getStringValue();
+			}
+		}
+
+		return value;
 	}
 
 }

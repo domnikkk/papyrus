@@ -32,6 +32,7 @@ import org.eclipse.gmf.runtime.notation.IntValueStyle;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.infra.gmfdiag.common.Activator;
+import org.eclipse.papyrus.infra.gmfdiag.common.model.NotationUtils;
 import org.w3c.dom.svg.SVGDocument;
 
 /**
@@ -74,27 +75,18 @@ public class ShapeService extends org.eclipse.gmf.runtime.common.core.service.Se
 	 */
 	public List<RenderedImage> getShapesToDisplay(EObject view) {
 		@SuppressWarnings("unchecked")
-		List<List<RenderedImage>> listOfListOfImages = execute(ExecutionStrategy.REVERSE, new GetShapesForViewOperation(view));
+		List<List<RenderedImage>> listOfListOfImages = execute(ExecutionStrategy.FORWARD, new GetShapesForViewOperation(view));
 		List<RenderedImage> images = new ArrayList<RenderedImage>();
 		for (List<RenderedImage> listOfImages : listOfListOfImages) {
 			if (listOfImages != null && !listOfImages.isEmpty()) {
 				images.addAll(listOfImages);
 			}
 		}
-		//
-		int nbImagesToDisplay = getMaxNumberOfSymbolToDisplay(view);
-		//the list of image to display
-		List<RenderedImage> imagesToDisplay = new ArrayList<RenderedImage>();
-		//get the nbImagesToDisplay highest images from the list
-		for(int i = 0; i < nbImagesToDisplay; i++) {
-			if(images.size() - nbImagesToDisplay + i >= 0) {
-				//get the last images of the list
-				imagesToDisplay.add(images.get(images.size() - nbImagesToDisplay + i));
-			}
-		}
-		return imagesToDisplay;
-	}
+		// Get the number of images to display
+		int nbImagesToDisplay = NotationUtils.getIntValue((View) view, MAX_NUMBER_OF_SYMBOL, getDefaultMaxNumberOfSymbol());
 
+		return images.subList(0, Math.min(nbImagesToDisplay, images.size()));
+	}
 
 	/**
 	 * Returns the shape to be displayed
@@ -105,27 +97,18 @@ public class ShapeService extends org.eclipse.gmf.runtime.common.core.service.Se
 	 */
 	public List<SVGDocument> getSVGDocumentToDisplay(EObject view) {
 		@SuppressWarnings("unchecked")
-		List<List<SVGDocument>> listOfListOfImages = execute(ExecutionStrategy.REVERSE, new GetSVGDocumentForViewOperation(view));
-		//lists of images are sort by priority from the lowest to the highest
+		List<List<SVGDocument>> listOfListOfImages = execute(ExecutionStrategy.FORWARD, new GetSVGDocumentForViewOperation(view));
+		// lists of images are sort by priority from the highest to the lowest
 		List<SVGDocument> images = new ArrayList<SVGDocument>();
 		for (List<SVGDocument> listOfImages : listOfListOfImages) {
 			if (listOfImages != null && !listOfImages.isEmpty()) {
 				images.addAll(listOfImages);
 			}
 		}
+		// Get the number of images to display
+		int nbImagesToDisplay = NotationUtils.getIntValue((View) view, MAX_NUMBER_OF_SYMBOL, getDefaultMaxNumberOfSymbol());
 
-		int nbImagesToDisplay = getMaxNumberOfSymbolToDisplay(view);
-
-		//the list of image to display
-		List<SVGDocument> imagesToDisplay = new ArrayList<SVGDocument>();
-		//For nbImagesToDisplay
-		for(int i = 0; i < nbImagesToDisplay; i++) {
-			if(images.size() - nbImagesToDisplay + i >= 0) {
-				//get the last images of the list
-				imagesToDisplay.add(images.get(images.size() - nbImagesToDisplay + i));
-			}
-		}
-		return imagesToDisplay;
+		return images.subList(0, Math.min(nbImagesToDisplay, images.size()));
 	}
 
 	/**
@@ -135,8 +118,8 @@ public class ShapeService extends org.eclipse.gmf.runtime.common.core.service.Se
 	 * @return
 	 */
 	private int getMaxNumberOfSymbolToDisplay(EObject view) {
-		//get the nbImagesToDisplay highest images from the list
-		IntValueStyle maxNbImages = (IntValueStyle)((View)view).getNamedStyle(NotationPackage.eINSTANCE.getIntValueStyle(), MAX_NUMBER_OF_SYMBOL);
+		// get the nbImagesToDisplay highest images from the list
+		IntValueStyle maxNbImages = (IntValueStyle) ((View) view).getNamedStyle(NotationPackage.eINSTANCE.getIntValueStyle(), MAX_NUMBER_OF_SYMBOL);
 		int nbImagesToDisplay = maxNbImages != null ? maxNbImages.getIntValue() : getDefaultMaxNumberOfSymbol();
 		return nbImagesToDisplay;
 	}

@@ -238,11 +238,11 @@ public class SVGNodePlateFigure extends DefaultSizeNodeFigure {
 					currentY = currentY + y;
 					pointList.add(new PrecisionPoint(currentX, currentY));
 				}
-			} else if(seg instanceof SVGPathSeg) {
-				//Take into account the z letter
+			} else if (seg instanceof SVGPathSeg) {
+				// Take into account the z letter
 				String letter = seg.getPathSegTypeAsLetter();
-				if(letter.equals("z")) {
-					if(firstPointAbsolue) {
+				if (letter.equals("z")) {
+					if (firstPointAbsolue) {
 						pointList.add(firstPoint);
 					} else {
 						currentX = currentX + firstPoint.preciseX();
@@ -317,29 +317,41 @@ public class SVGNodePlateFigure extends DefaultSizeNodeFigure {
 	private SvgToDraw2DTransform getTransform(double innerWidth, double innerHeight, Rectangle anchor) {
 		PrecisionDimension maxDim = new PrecisionDimension(Math.max(svgDimension.preciseWidth(), innerWidth), Math.max(svgDimension.preciseHeight(), innerHeight));
 
-		//Look for the ScalableImage to know if the ration is maintain
+		// Look for the ScalableImage to know if the ration is maintain
 		boolean isRatioMaintained = false;
 		ScalableImageFigure scalableImage = FigureUtils.findChildFigureInstance(getParent(), ScalableImageFigure.class);
-		if(scalableImage != null) {
+		if (scalableImage != null) {
 			isRatioMaintained = scalableImage.isMaintainAspectRatio();
 		}
-		if(isRatioMaintained) {
-			//Calculate Transform if we want to keep the ratio of the Figure.
+		if (isRatioMaintained) {
+			// Calculate Transform if we want to keep the ratio of the Figure.
 			double ratio = svgDimension.preciseWidth() / svgDimension.preciseHeight();
-			//			double ratio = scalableImage.getBounds().preciseWidth() / scalableImage.getBounds().preciseHeight();
+			// double ratio = scalableImage.getBounds().preciseWidth() / scalableImage.getBounds().preciseHeight();
 			double scaleX = 0;
 			double scaleY = 0;
 			double tranlationX = anchor.x;
 			double tranlationY = anchor.y;
 
-			if(anchor.height < anchor.width) {
-				scaleX = (anchor.height / maxDim.preciseHeight()) / ratio;
-				scaleY = (anchor.height / maxDim.preciseHeight());
-				tranlationX = anchor.x + (anchor.preciseWidth() / 2 - (anchor.preciseHeight() / ratio) / 2);
+			if (anchor.height < anchor.width) {
+				if (anchor.height * ratio < anchor.width) {
+					scaleX = (anchor.height / maxDim.preciseHeight());
+					scaleY = (anchor.height / maxDim.preciseHeight());
+					tranlationX = anchor.x + (anchor.preciseWidth() / 2 - (anchor.preciseHeight() * ratio) / 2);
+				} else {
+					scaleX = (anchor.width / maxDim.preciseWidth());
+					scaleY = (anchor.width / maxDim.preciseWidth());
+					tranlationY = anchor.y + (anchor.preciseHeight() / 2 - (anchor.preciseWidth() / ratio) / 2);
+				}
 			} else {
-				scaleX = (anchor.width / maxDim.preciseWidth());
-				scaleY = (anchor.width / maxDim.preciseWidth()) / ratio;
-				tranlationY = anchor.y + (anchor.preciseHeight() / 2 - (anchor.preciseWidth() / ratio) / 2);
+				if (anchor.height > anchor.width / ratio) {
+					scaleX = (anchor.width / maxDim.preciseWidth());
+					scaleY = (anchor.width / maxDim.preciseWidth());
+					tranlationY = anchor.y + (anchor.preciseHeight() / 2 - (anchor.preciseWidth() / ratio) / 2);
+				} else {
+					scaleX = (anchor.height / maxDim.preciseHeight());
+					scaleY = (anchor.height / maxDim.preciseHeight());
+					tranlationX = anchor.x + (anchor.preciseWidth() / 2 - (anchor.preciseHeight() * ratio) / 2);
+				}
 			}
 
 			return new SvgToDraw2DTransform(scaleX, scaleY, tranlationX, tranlationY);
@@ -381,9 +393,9 @@ public class SVGNodePlateFigure extends DefaultSizeNodeFigure {
 					return new SlidableEllipseAnchor(this, p);
 				}
 			}
-			if(defaultNodePlate instanceof IRoundedRectangleFigure) {
+			if (defaultNodePlate instanceof IRoundedRectangleFigure) {
 				defaultNodePlate.setBounds(this.getBounds());
-				if(p != null) {
+				if (p != null) {
 					// If the old terminal for the connection anchor cannot be resolved (by SlidableAnchor) a null
 					// PrecisionPoint will passed in - this is handled here
 					return new SlidableRoundedRectangleAnchor(this, p);
@@ -397,7 +409,7 @@ public class SVGNodePlateFigure extends DefaultSizeNodeFigure {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure#createDefaultAnchor()
 	 */
 	@Override
@@ -407,7 +419,7 @@ public class SVGNodePlateFigure extends DefaultSizeNodeFigure {
 				defaultNodePlate.setBounds(this.getBounds());
 				return new SlidableEllipseAnchor(this);
 			}
-			if(defaultNodePlate instanceof IRoundedRectangleFigure) {
+			if (defaultNodePlate instanceof IRoundedRectangleFigure) {
 				defaultNodePlate.setBounds(this.getBounds());
 				return new SlidableRoundedRectangleAnchor(this);
 			}

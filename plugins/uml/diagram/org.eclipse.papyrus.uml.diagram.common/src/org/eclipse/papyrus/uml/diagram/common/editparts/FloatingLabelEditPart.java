@@ -13,10 +13,9 @@
 package org.eclipse.papyrus.uml.diagram.common.editparts;
 
 import org.eclipse.gmf.runtime.diagram.ui.editparts.LabelEditPart;
-import org.eclipse.gmf.runtime.notation.BooleanValueStyle;
-import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.IndirectMaskLabelEditPolicy;
+import org.eclipse.papyrus.infra.gmfdiag.common.model.NotationUtils;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.FloatingLabelEditPolicy;
 
 /**
@@ -25,7 +24,9 @@ import org.eclipse.papyrus.uml.diagram.common.editpolicies.FloatingLabelEditPoli
 public class FloatingLabelEditPart extends LabelEditPart {
 
 	/** The Constant DISPLAY_FLOATING_NAME. */
-	private static final String DISPLAY_FLOATING_LABEL = "displayFloatingLabel";
+	private static final String DISPLAY_FLOATING_LABEL = "visible";
+
+	// private static final String DISPLAY_FLOATING_LABEL = "displayFloatingLabel";
 
 
 	/** The Constant DEFAULT_LABEL_DISPLAYED. */
@@ -60,15 +61,9 @@ public class FloatingLabelEditPart extends LabelEditPart {
 	protected void refreshVisibility() {
 		super.refreshVisibility();
 		// get the value of the CSS property
-		BooleanValueStyle isLabelDisplayedValue = (BooleanValueStyle) ((View) ((View) getModel()).eContainer()).getNamedStyle(NotationPackage.eINSTANCE.getBooleanValueStyle(), getDisplayFloatingLabel());
+		boolean isLabelDisplayed = NotationUtils.getBooleanValue((View) getModel(), getDisplayFloatingLabel(), getDefaultLabelDisplayedValue());
 
-		// if the property exist set the visibility of the floating label
-		boolean isLabelDisplayed;
-		if (isLabelDisplayedValue == null) {
-			isLabelDisplayed = getDefaultLabelDisplayedValue();
-		} else {
-			isLabelDisplayed = isLabelDisplayedValue.isBooleanValue();
-		}
+		// Set the visibility of the label
 		getFigure().setVisible(isLabelDisplayed);
 	}
 

@@ -45,8 +45,10 @@ public class RoundedCompartmentFigure extends NodeNamedElementFigure implements 
 	/** The is label constrained. */
 	protected boolean isLabelConstrained;
 
+	/** The floating name offset. */
 	protected Dimension floatingNameOffset = new Dimension();
 
+	/** The border style. */
 	protected int borderStyle = Graphics.LINE_SOLID;
 
 	/**
@@ -114,17 +116,6 @@ public class RoundedCompartmentFigure extends NodeNamedElementFigure implements 
 			this.add(newFigure);
 			containerFigures.put(id, newFigure);
 		}
-	}
-
-	/**
-	 * @see org.eclipse.draw2d.Figure#setBounds(org.eclipse.draw2d.geometry.Rectangle)
-	 *
-	 * @param rect
-	 */
-	@Override
-	public void setBounds(Rectangle rect) {
-		// TODO Auto-generated method stub
-		super.setBounds(rect);
 	}
 
 	/**
@@ -320,4 +311,5 @@ public class RoundedCompartmentFigure extends NodeNamedElementFigure implements 
 	public Dimension getFloatingNameOffset() {
 		return floatingNameOffset;
 	}
+
 }

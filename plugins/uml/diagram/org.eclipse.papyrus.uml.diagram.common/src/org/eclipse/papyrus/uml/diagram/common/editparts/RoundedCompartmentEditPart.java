@@ -14,18 +14,23 @@ package org.eclipse.papyrus.uml.diagram.common.editparts;
 
 import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.geometry.Dimension;
-import org.eclipse.gmf.runtime.notation.BooleanValueStyle;
-import org.eclipse.gmf.runtime.notation.IntValueStyle;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.gmf.runtime.notation.NamedStyle;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.StringValueStyle;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.papyrus.infra.gmfdiag.common.editpart.ShapeDisplayCompartmentEditPart;
 import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.IRoundedRectangleFigure;
+import org.eclipse.papyrus.infra.gmfdiag.common.model.NotationUtils;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.ShowHideCompartmentEditPolicy;
 
 /**
  * The Class RoundedCompartmentEditPart.
  */
 public abstract class RoundedCompartmentEditPart extends NamedElementEditPart {
+
+	/** The Constant USE_ORIGINAL_COLORS. */
+	private static final String USE_ORIGINAL_COLORS = "useOriginalColors";
 
 	/** The Constant BORDER_STYLE. */
 	protected static final String BORDER_STYLE = "borderStyle"; //$NON-NLS-N$
@@ -69,6 +74,9 @@ public abstract class RoundedCompartmentEditPart extends NamedElementEditPart {
 	/** CSS boolean property controlling whether. */
 	public static final String RADIUS_WIDTH = "radiusWidth";//$NON-NLS-N$
 
+	/** The Constant DEFAULT_USE_ORIGINAL_COLORS. */
+	private static final boolean DEFAULT_USE_ORIGINAL_COLORS = true;
+
 	/**
 	 * Instantiates a new rounded compartment edit part.
 	 *
@@ -80,8 +88,9 @@ public abstract class RoundedCompartmentEditPart extends NamedElementEditPart {
 	}
 
 	/**
-	 * @see org.eclipse.papyrus.uml.diagram.common.editparts.NamedElementEditPart#createDefaultEditPolicies()
+	 * Creates the default edit policies.
 	 *
+	 * @see org.eclipse.papyrus.uml.diagram.common.editparts.NamedElementEditPart#createDefaultEditPolicies()
 	 */
 	@Override
 	protected void createDefaultEditPolicies() {
@@ -122,7 +131,7 @@ public abstract class RoundedCompartmentEditPart extends NamedElementEditPart {
 	 *
 	 * @return the default floating name offset height
 	 */
-	protected int getDefaultFloatingNameOffsetHeight() {
+	protected int getDefaultFloatingLabelOffsetHeight() {
 		return DEFAULT_FLOATING_LABEL_OFFSET_HEIGHT;
 	}
 
@@ -131,7 +140,7 @@ public abstract class RoundedCompartmentEditPart extends NamedElementEditPart {
 	 *
 	 * @return the default floating name offset width
 	 */
-	protected int getDefaultFloatingNameOffsetWidth() {
+	protected int getDefaultFloatingLabelOffsetWidth() {
 		return DEFAULT_FLOATING_LABEL_OFFSET_WIDTH;
 	}
 
@@ -161,33 +170,39 @@ public abstract class RoundedCompartmentEditPart extends NamedElementEditPart {
 		if (getPrimaryShape() instanceof IRoundedRectangleFigure) {
 			IRoundedRectangleFigure roundedRectangleFigure = (IRoundedRectangleFigure) getPrimaryShape();
 
-			// get CSS the value of radius Width
-			StringValueStyle borderValueStyle = (StringValueStyle) ((View) getModel()).getNamedStyle(NotationPackage.eINSTANCE.getStringValueStyle(), BORDER_STYLE);
-
-			// change style to int from string
+			EClass stringValueStyle = NotationPackage.eINSTANCE.getStringValueStyle();
 			int borderStyle = getDefaultBorderStyle();
-			;
-			if (borderValueStyle != null) {
-				if ("dash".equals(borderValueStyle.getStringValue())) {
-					borderStyle = Graphics.LINE_DASH;
-				}
-				if ("dashDot".equals(borderValueStyle.getStringValue())) {
-					borderStyle = Graphics.LINE_DASHDOT;
-				}
-				if ("dashDotDot".equals(borderValueStyle.getStringValue())) {
-					borderStyle = Graphics.LINE_DASHDOTDOT;
-				}
-				if ("dot".equals(borderValueStyle.getStringValue())) {
-					borderStyle = Graphics.LINE_DOT;
-				}
-				if ("solid".equals(borderValueStyle.getStringValue())) {
-					borderStyle = Graphics.LINE_SOLID;
+
+			if (stringValueStyle != null) {
+
+				if (getModel() instanceof View) {
+					NamedStyle borderValueStyle = ((View) getModel()).getNamedStyle(stringValueStyle, BORDER_STYLE);
+
+					if (borderValueStyle instanceof StringValueStyle) {
+						String value = ((StringValueStyle) borderValueStyle).getStringValue();
+
+						if ("dash".equals(value)) {
+							borderStyle = Graphics.LINE_DASH;
+						}
+						if ("dashDot".equals(value)) {
+							borderStyle = Graphics.LINE_DASHDOT;
+						}
+						if ("dashDotDot".equals(value)) {
+							borderStyle = Graphics.LINE_DASHDOTDOT;
+						}
+						if ("dot".equals(value)) {
+							borderStyle = Graphics.LINE_DOT;
+						}
+						if ("solid".equals(value)) {
+							borderStyle = Graphics.LINE_SOLID;
+						}
+					}
 				}
 			}
+
 			// set the border style of the figure
 			roundedRectangleFigure.setBorderStyle(borderStyle);
 		}
-
 	}
 
 	/**
@@ -198,32 +213,21 @@ public abstract class RoundedCompartmentEditPart extends NamedElementEditPart {
 			// The figure
 			IRoundedRectangleFigure roundedRectangleFigure = (IRoundedRectangleFigure) getPrimaryShape();
 
-			// Get CSS value for the name attached properties
-			BooleanValueStyle isNameConstrainedValue = (BooleanValueStyle) ((View) getModel()).getNamedStyle(NotationPackage.eINSTANCE.getBooleanValueStyle(), FLOATING_LABEL_CONSTRAINED);
-			boolean isNameConstrained;
-			// if no css property set to default value
-			if (isNameConstrainedValue == null) {
-				isNameConstrained = getDefaultIsFloatingNameConstrained();
-			} else {
-				isNameConstrained = isNameConstrainedValue.isBooleanValue();
+			if (getModel() instanceof View) {
+				// Get CSS value for the name attached properties
+				boolean isNameConstrained = NotationUtils.getBooleanValue((View) getModel(), FLOATING_LABEL_CONSTRAINED, getDefaultIsFloatingNameConstrained());
+
+				// get CSS the value of offset width and height
+				int width = NotationUtils.getIntValue((View) getModel(), FLOATING_LABEL_OFFSET_WIDTH, getDefaultFloatingLabelOffsetWidth());
+				int height = NotationUtils.getIntValue((View) getModel(), FLOATING_LABEL_OFFSET_HEIGHT, getDefaultFloatingLabelOffsetHeight());
+
+				// Set the name attached properties in figure
+				roundedRectangleFigure.setFloatingNameConstrained(isNameConstrained);
+
+				// Set the floating name offset
+				roundedRectangleFigure.setFloatingNameOffset(new Dimension(width, height));
 			}
-			// Set the name attached properties in figure
-			roundedRectangleFigure.setFloatingNameConstrained(isNameConstrained);
-
-			// get Offset
-			// get CSS the value of offset Width
-			IntValueStyle offsetWidth = (IntValueStyle) ((View) getModel()).getNamedStyle(NotationPackage.eINSTANCE.getIntValueStyle(), FLOATING_LABEL_OFFSET_WIDTH);
-			int width = offsetWidth != null ? offsetWidth.getIntValue() : getDefaultFloatingNameOffsetWidth();
-
-			// get CSS the value of offset Height
-			IntValueStyle offsetHeight = (IntValueStyle) ((View) getModel()).getNamedStyle(NotationPackage.eINSTANCE.getIntValueStyle(), FLOATING_LABEL_OFFSET_HEIGHT);
-			int height = offsetHeight != null ? offsetHeight.getIntValue() : getDefaultFloatingNameOffsetHeight();
-
-			// Set the floating name offset
-			roundedRectangleFigure.setFloatingNameOffset(new Dimension(width, height));
-
 		}
-
 	}
 
 	/**
@@ -231,18 +235,16 @@ public abstract class RoundedCompartmentEditPart extends NamedElementEditPart {
 	 */
 	protected void refreshOval() {
 		if (getPrimaryShape() instanceof IRoundedRectangleFigure) {
-			// The figure
-			IRoundedRectangleFigure roundedRectangleFigure = (IRoundedRectangleFigure) getPrimaryShape();
-			// get the CSS value of isOval
-			BooleanValueStyle isOvalValue = (BooleanValueStyle) ((View) getModel()).getNamedStyle(NotationPackage.eINSTANCE.getBooleanValueStyle(), IS_OVAL);
-			boolean isOval;
-			if (isOvalValue == null) {
-				isOval = getDefaultIsOvalValue();
-			} else {
-				isOval = isOvalValue.isBooleanValue();
+			if (getModel() instanceof View) {
+				// The figure
+				IRoundedRectangleFigure roundedRectangleFigure = (IRoundedRectangleFigure) getPrimaryShape();
+
+				// get the CSS value of isOval
+				boolean isOval = NotationUtils.getBooleanValue((View) getModel(), IS_OVAL, getDefaultIsOvalValue());
+
+				// Set isOval
+				roundedRectangleFigure.setOval(isOval);
 			}
-			// Set isOval
-			roundedRectangleFigure.setOval(isOval);
 		}
 	}
 
@@ -254,18 +256,16 @@ public abstract class RoundedCompartmentEditPart extends NamedElementEditPart {
 			// The figure
 			IRoundedRectangleFigure roundedRectangleFigure = (IRoundedRectangleFigure) getPrimaryShape();
 
-			Dimension radiusDimension = new Dimension();
+			if (getModel() instanceof View) {
+				// get CSS the value of radius Width
+				int width = NotationUtils.getIntValue((View) getModel(), RADIUS_WIDTH, getDefaultCornerWidth());
 
-			// get CSS the value of radius Width
-			IntValueStyle radiusWidth = (IntValueStyle) ((View) getModel()).getNamedStyle(NotationPackage.eINSTANCE.getIntValueStyle(), RADIUS_WIDTH);
-			radiusDimension.width = radiusWidth != null ? radiusWidth.getIntValue() : getDefaultCornerWidth();
+				// get CSS the value of radius Height
+				int height = NotationUtils.getIntValue((View) getModel(), RADIUS_HEIGHT, getDefaultCornerHeight());
 
-			// get CSS the value of radius Height
-			IntValueStyle radiusHeight = (IntValueStyle) ((View) getModel()).getNamedStyle(NotationPackage.eINSTANCE.getIntValueStyle(), RADIUS_HEIGHT);
-			radiusDimension.height = radiusHeight != null ? radiusHeight.getIntValue() : getDefaultCornerHeight();
-
-			// Set the corner dimension
-			roundedRectangleFigure.setCornerDimensions(radiusDimension);
+				// Set the corner dimension
+				roundedRectangleFigure.setCornerDimensions(new Dimension(width, height));
+			}
 		}
 	}
 
@@ -281,5 +281,41 @@ public abstract class RoundedCompartmentEditPart extends NamedElementEditPart {
 		refreshOval();
 		refreshFloatingName();
 		refreshBorderStyle();
+		refreshSVGOriginalColors();
 	}
+
+
+	/**
+	 * Refresh svg original colors.
+	 */
+	private void refreshSVGOriginalColors() {
+		if (getPrimaryShape() instanceof IRoundedRectangleFigure) {
+			if (getModel() instanceof View) {
+
+				// get the CSS value if SVG use original colors
+				boolean useOriginalColors = NotationUtils.getBooleanValue((View) getModel(), USE_ORIGINAL_COLORS, getDefaultUseOriginalColors());
+
+				if (children != null) {
+					for (Object object : children) {
+						if (object instanceof ShapeDisplayCompartmentEditPart) {
+							ShapeDisplayCompartmentEditPart shapeCompartment = (ShapeDisplayCompartmentEditPart) object;
+							// Set useOriginalColors to the figure
+							shapeCompartment.setUseOriginalColors(useOriginalColors);
+						}
+					}
+				}
+			}
+		}
+
+	}
+
+	/**
+	 * Gets the default setting of use original colors.
+	 *
+	 * @return the default use original colors
+	 */
+	protected boolean getDefaultUseOriginalColors() {
+		return DEFAULT_USE_ORIGINAL_COLORS;
+	}
+
 }

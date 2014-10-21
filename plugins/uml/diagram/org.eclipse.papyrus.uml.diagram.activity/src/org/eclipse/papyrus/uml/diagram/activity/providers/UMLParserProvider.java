@@ -59,6 +59,157 @@ import org.eclipse.uml2.uml.UMLPackage;
  * @generated
  */
 public class UMLParserProvider extends AbstractProvider implements IParserProvider {
+	/**
+	 * @generated
+	 *            not generated but changes include on gmfgen, can be override at the generation
+	 */
+	private IParser activityFinalNodeFloatingName_6033Parser;
+
+	/**
+	 * @generated
+	 *            not generated but changes include on gmfgen, can be override at the generation
+	 */
+	private IParser getActivityFinalNodeFloatingName_6033Parser() {
+		if (activityFinalNodeFloatingName_6033Parser == null) {
+			EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
+			MessageFormatParser parser = new MessageFormatParser(features);
+			activityFinalNodeFloatingName_6033Parser = parser;
+		}
+		return activityFinalNodeFloatingName_6033Parser;
+	}
+
+	/**
+	 * @generated
+	 *            not generated but changes include on gmfgen, can be override at the generation
+	 */
+	private IParser initialNodeFloatingName_6034Parser;
+
+	/**
+	 * @generated
+	 *            not generated but changes include on gmfgen, can be override at the generation
+	 */
+	private IParser getInitialNodeFloatingName_6034Parser() {
+		if (initialNodeFloatingName_6034Parser == null) {
+			EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
+			MessageFormatParser parser = new MessageFormatParser(features);
+			initialNodeFloatingName_6034Parser = parser;
+		}
+		return initialNodeFloatingName_6034Parser;
+	}
+
+	/**
+	 * @generated
+	 *            not generated but changes include on gmfgen, can be override at the generation
+	 */
+	private IParser flowFinalNodeFloatingName_6035Parser;
+
+	/**
+	 * @generated
+	 *            not generated but changes include on gmfgen, can be override at the generation
+	 */
+	private IParser getFlowFinalNodeFloatingName_6034Parser() {
+		if (flowFinalNodeFloatingName_6035Parser == null) {
+			EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
+			MessageFormatParser parser = new MessageFormatParser(features);
+			flowFinalNodeFloatingName_6035Parser = parser;
+		}
+		return flowFinalNodeFloatingName_6035Parser;
+	}
+
+	/**
+	 * @generated
+	 *            not generated but changes include on gmfgen, can be override at the generation
+	 */
+	private IParser decisionNodeFloatingName_6036Parser;
+
+	/**
+	 * @generated
+	 *            not generated but changes include on gmfgen, can be override at the generation
+	 */
+	private IParser getDecisionNodeFloatingName_6036Parser() {
+		if (decisionNodeFloatingName_6036Parser == null) {
+			EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
+			MessageFormatParser parser = new MessageFormatParser(features);
+			decisionNodeFloatingName_6036Parser = parser;
+		}
+		return decisionNodeFloatingName_6036Parser;
+	}
+
+	/**
+	 * @generated
+	 *            not generated but changes include on gmfgen, can be override at the generation
+	 */
+	private IParser mergeNodeFloatingName_6037Parser;
+
+	/**
+	 * @generated
+	 *            not generated but changes include on gmfgen, can be override at the generation
+	 */
+	private IParser getMergeNodeFloatingName_6037Parser() {
+		if (mergeNodeFloatingName_6037Parser == null) {
+			EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
+			MessageFormatParser parser = new MessageFormatParser(features);
+			mergeNodeFloatingName_6037Parser = parser;
+		}
+		return mergeNodeFloatingName_6037Parser;
+	}
+
+	/**
+	 * @generated
+	 *            not generated but changes include on gmfgen, can be override at the generation
+	 */
+	private IParser forkNodeFloatingName_6038Parser;
+
+	/**
+	 * @generated
+	 *            not generated but changes include on gmfgen, can be override at the generation
+	 */
+	private IParser getForkNodeFloatingName_6038Parser() {
+		if (forkNodeFloatingName_6038Parser == null) {
+			EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
+			MessageFormatParser parser = new MessageFormatParser(features);
+			forkNodeFloatingName_6038Parser = parser;
+		}
+		return forkNodeFloatingName_6038Parser;
+	}
+
+	/**
+	 * @generated
+	 *            not generated but changes include on gmfgen, can be override at the generation
+	 */
+	private IParser joinNodeFloatingName_6039Parser;
+
+	/**
+	 * @generated
+	 *            not generated but changes include on gmfgen, can be override at the generation
+	 */
+	private IParser geJoinNodeFloatingName_6039Parser() {
+		if (joinNodeFloatingName_6039Parser == null) {
+			EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
+			MessageFormatParser parser = new MessageFormatParser(features);
+			joinNodeFloatingName_6039Parser = parser;
+		}
+		return joinNodeFloatingName_6039Parser;
+	}
+
+	/**
+	 * @generated
+	 *            not generated but changes include on gmfgen, can be override at the generation
+	 */
+	private IParser sendSignalActionFloatingName_6032Parser;
+
+	/**
+	 * @generated
+	 *            not generated but changes include on gmfgen, can be override at the generation
+	 */
+	private IParser getSendSignalActionFloatingName_6032Parser() {
+		if (sendSignalActionFloatingName_6032Parser == null) {
+			EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
+			MessageFormatParser parser = new MessageFormatParser(features);
+			sendSignalActionFloatingName_6032Parser = parser;
+		}
+		return sendSignalActionFloatingName_6032Parser;
+	}
 
 	/**
 	 * @generated
@@ -3194,8 +3345,35 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 		case SendObjectActionFloatingNameEditPart.VISUAL_ID:
 			return getSendObjectActionFloatingName_6027Parser();
 			// not generated but change include on gmfgen, can be override at the generation
+		case SendSignalActionFloatingNameEditPart.VISUAL_ID:
+			return getSendSignalActionFloatingName_6032Parser();
+			// not generated but change include on gmfgen, can be override at the generation
 		case ValueSpecificationActionFloatingNameEditPart.VISUAL_ID:
 			return getValueSpecificationActionFloatingName_6026Parser();
+
+			// //
+
+			// not generated but change include on gmfgen, can be override at the generation
+		case ActivityFinalNodeFloatingNameEditPart.VISUAL_ID:
+			return getActivityFinalNodeFloatingName_6033Parser();
+			// not generated but change include on gmfgen, can be override at the generation
+		case InitialNodeFloatingNameEditPart.VISUAL_ID:
+			return getInitialNodeFloatingName_6034Parser();
+			// not generated but change include on gmfgen, can be override at the generation
+		case FlowFinalNodeFloatingNameEditPart.VISUAL_ID:
+			return getFlowFinalNodeFloatingName_6034Parser();
+			// not generated but change include on gmfgen, can be override at the generation
+		case DecisionNodeFloatingNameEditPart.VISUAL_ID:
+			return getDecisionNodeFloatingName_6036Parser();
+			// not generated but change include on gmfgen, can be override at the generation
+		case MergeNodeFloatingNameEditPart.VISUAL_ID:
+			return getMergeNodeFloatingName_6037Parser();
+			// not generated but change include on gmfgen, can be override at the generation
+		case ForkNodeFloatingNameEditPart.VISUAL_ID:
+			return getForkNodeFloatingName_6038Parser();
+			// not generated but change include on gmfgen, can be override at the generation
+		case JoinNodeFloatingNameEditPart.VISUAL_ID:
+			return geJoinNodeFloatingName_6039Parser();
 		case ActivityIsSingleExecutionEditPart.VISUAL_ID:
 			return getActivityIsSingleExecution_5002Parser();
 		case ParameterEditPart.VISUAL_ID:
