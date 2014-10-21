@@ -26,7 +26,8 @@ Require-Bundle: org.eclipse.xtext,
  org.antlr.runtime,
  org.apache.log4j;bundle-version="1.2.15",
  org.eclipse.papyrus.uml.alf.common;bundle-version="1.1.0",
- org.eclipse.papyrus.uml.xtext.integration.core;bundle-version="1.1.0"
+ org.eclipse.papyrus.uml.xtext.integration.core;bundle-version="1.1.0",
+ org.eclipse.xtext.xbase.lib
 Bundle-Vendor: %providerName
 Bundle-ActivationPolicy: lazy
 Bundle-Version: 1.1.0.qualifier
@@ -35,7 +36,5 @@ Bundle-Name: %pluginName
 Bundle-ManifestVersion: 2
 Import-Package: org.apache.log4j,
  org.eclipse.xtext.xbase.lib
-Bundle-SymbolicName: org.eclipse.papyrus.uml.textedit.port.xtext;singl
- eton:=true
+Bundle-SymbolicName: org.eclipse.papyrus.uml.textedit.port.xtext;singleton:=true
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
-

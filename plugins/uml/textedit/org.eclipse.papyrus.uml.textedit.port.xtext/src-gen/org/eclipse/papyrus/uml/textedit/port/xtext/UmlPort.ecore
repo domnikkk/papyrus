@@ -4,9 +4,9 @@
     nsPrefix="umlPort">
   <eClassifiers xsi:type="ecore:EClass" name="PortRule">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="visibility" eType="#//VisibilityKind"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isDerived" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isConjugated" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isDerived" eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isConjugated" eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//TypeRule"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="multiplicity" eType="#//MultiplicityRule"
@@ -25,10 +25,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="TypeRule">
     <eStructuralFeatures xsi:type="ecore:EReference" name="path" eType="#//QualifiedName"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="ecore:EClass ../../../../../../../../../org.eclipse.uml2.uml/model/UML.ecore#//Classifier"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="ecore:EClass platform:/resource/org.eclipse.uml2.uml/model/UML.ecore#//Classifier"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="QualifiedName">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="path" eType="ecore:EClass ../../../../../../../../../org.eclipse.uml2.uml/model/UML.ecore#//Namespace"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="path" eType="ecore:EClass platform:/resource/org.eclipse.uml2.uml/model/UML.ecore#//Namespace"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="remaining" eType="#//QualifiedName"
         containment="true"/>
   </eClassifiers>
@@ -37,7 +37,7 @@
         eType="#//BoundSpecification" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BoundSpecification">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ModifiersRule">
     <eStructuralFeatures xsi:type="ecore:EReference" name="values" upperBound="-1"
@@ -57,12 +57,12 @@
     <eLiterals name="unique" value="3" literal="unique"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RedefinesRule">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="port" eType="ecore:EClass ../../../../../../../../../org.eclipse.uml2.uml/model/UML.ecore#//Port"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="port" eType="ecore:EClass platform:/resource/org.eclipse.uml2.uml/model/UML.ecore#//Port"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SubsetsRule">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="port" eType="ecore:EClass ../../../../../../../../../org.eclipse.uml2.uml/model/UML.ecore#//Port"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="port" eType="ecore:EClass platform:/resource/org.eclipse.uml2.uml/model/UML.ecore#//Port"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DefaultValueRule">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="default" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="default" eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>

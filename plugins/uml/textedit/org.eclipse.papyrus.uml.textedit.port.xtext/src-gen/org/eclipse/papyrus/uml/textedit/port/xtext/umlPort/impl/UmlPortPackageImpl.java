@@ -8,7 +8,9 @@ import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EcorePackage;
+
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+
 import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.BoundSpecification;
 import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.DefaultValueRule;
 import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.ModifierKind;
@@ -23,6 +25,7 @@ import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.TypeRule;
 import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.UmlPortFactory;
 import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.UmlPortPackage;
 import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.VisibilityKind;
+
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**

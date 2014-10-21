@@ -1,21 +1,17 @@
 package org.eclipse.papyrus.uml.textedit.port.xtext.parser.antlr.internal;
 
-import org.antlr.runtime.BitSet;
-import org.antlr.runtime.NoViableAltException;
-import org.antlr.runtime.RecognitionException;
-import org.antlr.runtime.RecognizerSharedState;
-import org.antlr.runtime.Token;
-import org.antlr.runtime.TokenStream;
-import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.papyrus.uml.textedit.port.xtext.services.UmlPortGrammarAccess;
+import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.xtext.parser.antlr.AbstractInternalAntlrParser;
 import org.eclipse.xtext.parser.antlr.AntlrDatatypeRuleToken;
+import org.eclipse.papyrus.uml.textedit.port.xtext.services.UmlPortGrammarAccess;
+
+import org.antlr.runtime.*;
 
 @SuppressWarnings("all")
 public class InternalUmlPortParser extends AbstractInternalAntlrParser {
 	public static final String[] tokenNames = new String[] {
-			"<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_INTEGER_VALUE", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'/'", "':'", "'~'", "'<Undefined>'", "'::'", "'['", "'..'", "']'", "'*'",
+			"<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_INTEGER_VALUE", "RULE_WS", "RULE_ANY_OTHER", "'/'", "':'", "'~'", "'<Undefined>'", "'::'", "'['", "'..'", "']'", "'*'",
 			"'{'", "','", "'}'", "'redefines'", "'subsets'", "'='", "'+'", "'-'", "'#'", "'readOnly'", "'union'", "'ordered'", "'unique'"
 	};
 	public static final int RULE_ID = 4;
@@ -30,10 +26,10 @@ public class InternalUmlPortParser extends AbstractInternalAntlrParser {
 	public static final int RULE_ANY_OTHER = 11;
 	public static final int T__21 = 21;
 	public static final int T__20 = 20;
-	public static final int RULE_INTEGER_VALUE = 7;
-	public static final int RULE_SL_COMMENT = 9;
+	public static final int RULE_INTEGER_VALUE = 9;
+	public static final int RULE_SL_COMMENT = 8;
 	public static final int EOF = -1;
-	public static final int RULE_ML_COMMENT = 8;
+	public static final int RULE_ML_COMMENT = 7;
 	public static final int T__30 = 30;
 	public static final int T__19 = 19;
 	public static final int T__31 = 31;

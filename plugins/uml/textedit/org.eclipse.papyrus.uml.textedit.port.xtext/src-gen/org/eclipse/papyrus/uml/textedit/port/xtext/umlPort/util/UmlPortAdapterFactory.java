@@ -4,19 +4,12 @@ package org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.util;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
+
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
+
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.BoundSpecification;
-import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.DefaultValueRule;
-import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.ModifierSpecification;
-import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.ModifiersRule;
-import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.MultiplicityRule;
-import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.PortRule;
-import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.QualifiedName;
-import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.RedefinesRule;
-import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.SubsetsRule;
-import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.TypeRule;
-import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.UmlPortPackage;
+
+import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.*;
 
 /**
  * <!-- begin-user-doc -->
