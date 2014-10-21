@@ -3,14 +3,17 @@
 package org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.DefaultValueRule;
 import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.UmlPortPackage;
+import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.Value;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,7 +31,7 @@ import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.UmlPortPackage;
 public class DefaultValueRuleImpl extends MinimalEObjectImpl.Container implements DefaultValueRule
 {
 	/**
-	 * The default value of the '{@link #getDefault() <em>Default</em>}' attribute.
+	 * The cached value of the '{@link #getDefault() <em>Default</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -36,18 +39,7 @@ public class DefaultValueRuleImpl extends MinimalEObjectImpl.Container implement
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String DEFAULT_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDefault() <em>Default</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @see #getDefault()
-	 * @generated
-	 * @ordered
-	 */
-	protected String default_ = DEFAULT_EDEFAULT;
+	protected Value default_;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -79,7 +71,7 @@ public class DefaultValueRuleImpl extends MinimalEObjectImpl.Container implement
 	 * @generated
 	 */
 	@Override
-	public String getDefault()
+	public Value getDefault()
 	{
 		return default_;
 	}
@@ -90,14 +82,65 @@ public class DefaultValueRuleImpl extends MinimalEObjectImpl.Container implement
 	 *
 	 * @generated
 	 */
-	@Override
-	public void setDefault(String newDefault)
+	public NotificationChain basicSetDefault(Value newDefault, NotificationChain msgs)
 	{
-		String oldDefault = default_;
+		Value oldDefault = default_;
 		default_ = newDefault;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, UmlPortPackage.DEFAULT_VALUE_RULE__DEFAULT, oldDefault, default_));
+		if (eNotificationRequired())
+		{
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, UmlPortPackage.DEFAULT_VALUE_RULE__DEFAULT, oldDefault, newDefault);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public void setDefault(Value newDefault)
+	{
+		if (newDefault != default_)
+		{
+			NotificationChain msgs = null;
+			if (default_ != null) {
+				msgs = ((InternalEObject) default_).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - UmlPortPackage.DEFAULT_VALUE_RULE__DEFAULT, null, msgs);
+			}
+			if (newDefault != null) {
+				msgs = ((InternalEObject) newDefault).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - UmlPortPackage.DEFAULT_VALUE_RULE__DEFAULT, null, msgs);
+			}
+			msgs = basicSetDefault(newDefault, msgs);
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		}
+		else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(this, Notification.SET, UmlPortPackage.DEFAULT_VALUE_RULE__DEFAULT, newDefault, newDefault));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+	{
+		switch (featureID)
+		{
+		case UmlPortPackage.DEFAULT_VALUE_RULE__DEFAULT:
+			return basicSetDefault(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -129,7 +172,7 @@ public class DefaultValueRuleImpl extends MinimalEObjectImpl.Container implement
 		switch (featureID)
 		{
 		case UmlPortPackage.DEFAULT_VALUE_RULE__DEFAULT:
-			setDefault((String) newValue);
+			setDefault((Value) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -147,7 +190,7 @@ public class DefaultValueRuleImpl extends MinimalEObjectImpl.Container implement
 		switch (featureID)
 		{
 		case UmlPortPackage.DEFAULT_VALUE_RULE__DEFAULT:
-			setDefault(DEFAULT_EDEFAULT);
+			setDefault((Value) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -165,29 +208,9 @@ public class DefaultValueRuleImpl extends MinimalEObjectImpl.Container implement
 		switch (featureID)
 		{
 		case UmlPortPackage.DEFAULT_VALUE_RULE__DEFAULT:
-			return DEFAULT_EDEFAULT == null ? default_ != null : !DEFAULT_EDEFAULT.equals(default_);
+			return default_ != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public String toString()
-	{
-		if (eIsProxy()) {
-			return super.toString();
-		}
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (default: ");
-		result.append(default_);
-		result.append(')');
-		return result.toString();
 	}
 
 } // DefaultValueRuleImpl

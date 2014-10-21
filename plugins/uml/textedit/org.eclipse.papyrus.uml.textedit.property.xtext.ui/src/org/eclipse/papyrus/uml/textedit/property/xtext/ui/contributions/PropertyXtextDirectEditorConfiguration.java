@@ -333,8 +333,6 @@ public class PropertyXtextDirectEditorConfiguration extends DefaultXtextDirectEd
 	public String getTextToEdit(Object editedObject) {
 		if (editedObject instanceof Property) {
 			return UMLPropertyEditorPropertyUtil.getLabel((Property) editedObject).trim();
-			// TODO: default values not supported by the grammar
-			// TODO: either complete the grammar, or use another label provider
 		}
 		return "not a Property";
 	}

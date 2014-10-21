@@ -11,20 +11,29 @@ import org.eclipse.emf.ecore.EcorePackage;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.BooleanLiterals;
+import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.BooleanValue;
 import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.BoundSpecification;
 import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.DefaultValueRule;
+import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.IntValue;
 import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.ModifierKind;
 import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.ModifierSpecification;
 import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.ModifiersRule;
 import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.MultiplicityRule;
+import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.NoValue;
+import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.NullValue;
 import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.PortRule;
 import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.QualifiedName;
+import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.RealValue;
 import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.RedefinesRule;
+import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.StringValue;
 import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.SubsetsRule;
 import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.TypeRule;
 import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.UmlPortFactory;
 import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.UmlPortPackage;
+import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.Value;
 import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.VisibilityKind;
+import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.VisibilityRule;
 
 import org.eclipse.uml2.uml.UMLPackage;
 
@@ -44,6 +53,14 @@ public class UmlPortPackageImpl extends EPackageImpl implements UmlPortPackage
 	 * @generated
 	 */
 	private EClass portRuleEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass visibilityRuleEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -123,6 +140,62 @@ public class UmlPortPackageImpl extends EPackageImpl implements UmlPortPackage
 	 *
 	 * @generated
 	 */
+	private EClass valueEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass intValueEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass stringValueEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass booleanValueEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass realValueEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass nullValueEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass noValueEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
 	private EEnum visibilityKindEEnum = null;
 
 	/**
@@ -132,6 +205,14 @@ public class UmlPortPackageImpl extends EPackageImpl implements UmlPortPackage
 	 * @generated
 	 */
 	private EEnum modifierKindEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EEnum booleanLiteralsEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
@@ -216,9 +297,9 @@ public class UmlPortPackageImpl extends EPackageImpl implements UmlPortPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getPortRule_Visibility()
+	public EReference getPortRule_Visibility()
 	{
-		return (EAttribute) portRuleEClass.getEStructuralFeatures().get(0);
+		return (EReference) portRuleEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -228,7 +309,7 @@ public class UmlPortPackageImpl extends EPackageImpl implements UmlPortPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getPortRule_IsDerived()
+	public EAttribute getPortRule_Derived()
 	{
 		return (EAttribute) portRuleEClass.getEStructuralFeatures().get(1);
 	}
@@ -252,7 +333,7 @@ public class UmlPortPackageImpl extends EPackageImpl implements UmlPortPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getPortRule_IsConjugated()
+	public EAttribute getPortRule_Conjugated()
 	{
 		return (EAttribute) portRuleEClass.getEStructuralFeatures().get(3);
 	}
@@ -276,9 +357,9 @@ public class UmlPortPackageImpl extends EPackageImpl implements UmlPortPackage
 	 * @generated
 	 */
 	@Override
-	public EReference getPortRule_Multiplicity()
+	public EAttribute getPortRule_TypeUndefined()
 	{
-		return (EReference) portRuleEClass.getEStructuralFeatures().get(5);
+		return (EAttribute) portRuleEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -288,7 +369,7 @@ public class UmlPortPackageImpl extends EPackageImpl implements UmlPortPackage
 	 * @generated
 	 */
 	@Override
-	public EReference getPortRule_Modifiers()
+	public EReference getPortRule_Multiplicity()
 	{
 		return (EReference) portRuleEClass.getEStructuralFeatures().get(6);
 	}
@@ -300,9 +381,45 @@ public class UmlPortPackageImpl extends EPackageImpl implements UmlPortPackage
 	 * @generated
 	 */
 	@Override
-	public EReference getPortRule_Default()
+	public EReference getPortRule_Modifiers()
 	{
 		return (EReference) portRuleEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EReference getPortRule_Default()
+	{
+		return (EReference) portRuleEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EClass getVisibilityRule()
+	{
+		return visibilityRuleEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getVisibilityRule_Visibility()
+	{
+		return (EAttribute) visibilityRuleEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -564,9 +681,153 @@ public class UmlPortPackageImpl extends EPackageImpl implements UmlPortPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getDefaultValueRule_Default()
+	public EReference getDefaultValueRule_Default()
 	{
-		return (EAttribute) defaultValueRuleEClass.getEStructuralFeatures().get(0);
+		return (EReference) defaultValueRuleEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EClass getValue()
+	{
+		return valueEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EClass getIntValue()
+	{
+		return intValueEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getIntValue_LiteralInteger()
+	{
+		return (EAttribute) intValueEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EClass getStringValue()
+	{
+		return stringValueEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getStringValue_LiteralString()
+	{
+		return (EAttribute) stringValueEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EClass getBooleanValue()
+	{
+		return booleanValueEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getBooleanValue_LiteralBoolean()
+	{
+		return (EAttribute) booleanValueEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EClass getRealValue()
+	{
+		return realValueEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getRealValue_Integer()
+	{
+		return (EAttribute) realValueEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getRealValue_Fraction()
+	{
+		return (EAttribute) realValueEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EClass getNullValue()
+	{
+		return nullValueEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EClass getNoValue()
+	{
+		return noValueEClass;
 	}
 
 	/**
@@ -591,6 +852,18 @@ public class UmlPortPackageImpl extends EPackageImpl implements UmlPortPackage
 	public EEnum getModifierKind()
 	{
 		return modifierKindEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EEnum getBooleanLiterals()
+	{
+		return booleanLiteralsEEnum;
 	}
 
 	/**
@@ -630,14 +903,18 @@ public class UmlPortPackageImpl extends EPackageImpl implements UmlPortPackage
 
 		// Create classes and their features
 		portRuleEClass = createEClass(PORT_RULE);
-		createEAttribute(portRuleEClass, PORT_RULE__VISIBILITY);
-		createEAttribute(portRuleEClass, PORT_RULE__IS_DERIVED);
+		createEReference(portRuleEClass, PORT_RULE__VISIBILITY);
+		createEAttribute(portRuleEClass, PORT_RULE__DERIVED);
 		createEAttribute(portRuleEClass, PORT_RULE__NAME);
-		createEAttribute(portRuleEClass, PORT_RULE__IS_CONJUGATED);
+		createEAttribute(portRuleEClass, PORT_RULE__CONJUGATED);
 		createEReference(portRuleEClass, PORT_RULE__TYPE);
+		createEAttribute(portRuleEClass, PORT_RULE__TYPE_UNDEFINED);
 		createEReference(portRuleEClass, PORT_RULE__MULTIPLICITY);
 		createEReference(portRuleEClass, PORT_RULE__MODIFIERS);
 		createEReference(portRuleEClass, PORT_RULE__DEFAULT);
+
+		visibilityRuleEClass = createEClass(VISIBILITY_RULE);
+		createEAttribute(visibilityRuleEClass, VISIBILITY_RULE__VISIBILITY);
 
 		typeRuleEClass = createEClass(TYPE_RULE);
 		createEReference(typeRuleEClass, TYPE_RULE__PATH);
@@ -668,11 +945,31 @@ public class UmlPortPackageImpl extends EPackageImpl implements UmlPortPackage
 		createEReference(subsetsRuleEClass, SUBSETS_RULE__PORT);
 
 		defaultValueRuleEClass = createEClass(DEFAULT_VALUE_RULE);
-		createEAttribute(defaultValueRuleEClass, DEFAULT_VALUE_RULE__DEFAULT);
+		createEReference(defaultValueRuleEClass, DEFAULT_VALUE_RULE__DEFAULT);
+
+		valueEClass = createEClass(VALUE);
+
+		intValueEClass = createEClass(INT_VALUE);
+		createEAttribute(intValueEClass, INT_VALUE__LITERAL_INTEGER);
+
+		stringValueEClass = createEClass(STRING_VALUE);
+		createEAttribute(stringValueEClass, STRING_VALUE__LITERAL_STRING);
+
+		booleanValueEClass = createEClass(BOOLEAN_VALUE);
+		createEAttribute(booleanValueEClass, BOOLEAN_VALUE__LITERAL_BOOLEAN);
+
+		realValueEClass = createEClass(REAL_VALUE);
+		createEAttribute(realValueEClass, REAL_VALUE__INTEGER);
+		createEAttribute(realValueEClass, REAL_VALUE__FRACTION);
+
+		nullValueEClass = createEClass(NULL_VALUE);
+
+		noValueEClass = createEClass(NO_VALUE);
 
 		// Create enums
 		visibilityKindEEnum = createEEnum(VISIBILITY_KIND);
 		modifierKindEEnum = createEEnum(MODIFIER_KIND);
+		booleanLiteralsEEnum = createEEnum(BOOLEAN_LITERALS);
 	}
 
 	/**
@@ -712,17 +1009,27 @@ public class UmlPortPackageImpl extends EPackageImpl implements UmlPortPackage
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		intValueEClass.getESuperTypes().add(this.getValue());
+		stringValueEClass.getESuperTypes().add(this.getValue());
+		booleanValueEClass.getESuperTypes().add(this.getValue());
+		realValueEClass.getESuperTypes().add(this.getValue());
+		nullValueEClass.getESuperTypes().add(this.getValue());
+		noValueEClass.getESuperTypes().add(this.getValue());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(portRuleEClass, PortRule.class, "PortRule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getPortRule_Visibility(), this.getVisibilityKind(), "visibility", null, 0, 1, PortRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPortRule_IsDerived(), theEcorePackage.getEString(), "isDerived", null, 0, 1, PortRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPortRule_Visibility(), this.getVisibilityRule(), null, "visibility", null, 0, 1, PortRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPortRule_Derived(), theEcorePackage.getEBoolean(), "derived", null, 0, 1, PortRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPortRule_Name(), theEcorePackage.getEString(), "name", null, 0, 1, PortRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPortRule_IsConjugated(), theEcorePackage.getEString(), "isConjugated", null, 0, 1, PortRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPortRule_Conjugated(), theEcorePackage.getEBoolean(), "conjugated", null, 0, 1, PortRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPortRule_Type(), this.getTypeRule(), null, "type", null, 0, 1, PortRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPortRule_TypeUndefined(), theEcorePackage.getEBoolean(), "typeUndefined", null, 0, 1, PortRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPortRule_Multiplicity(), this.getMultiplicityRule(), null, "multiplicity", null, 0, 1, PortRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPortRule_Modifiers(), this.getModifiersRule(), null, "modifiers", null, 0, 1, PortRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPortRule_Default(), this.getDefaultValueRule(), null, "default", null, 0, 1, PortRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(visibilityRuleEClass, VisibilityRule.class, "VisibilityRule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getVisibilityRule_Visibility(), this.getVisibilityKind(), "visibility", null, 0, 1, VisibilityRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(typeRuleEClass, TypeRule.class, "TypeRule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTypeRule_Path(), this.getQualifiedName(), null, "path", null, 0, 1, TypeRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -757,7 +1064,26 @@ public class UmlPortPackageImpl extends EPackageImpl implements UmlPortPackage
 		initEReference(getSubsetsRule_Port(), theUMLPackage.getPort(), null, "port", null, 0, 1, SubsetsRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(defaultValueRuleEClass, DefaultValueRule.class, "DefaultValueRule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getDefaultValueRule_Default(), theEcorePackage.getEString(), "default", null, 0, 1, DefaultValueRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDefaultValueRule_Default(), this.getValue(), null, "default", null, 0, 1, DefaultValueRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(valueEClass, Value.class, "Value", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(intValueEClass, IntValue.class, "IntValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getIntValue_LiteralInteger(), theEcorePackage.getEInt(), "literalInteger", null, 0, 1, IntValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(stringValueEClass, StringValue.class, "StringValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getStringValue_LiteralString(), theEcorePackage.getEString(), "literalString", null, 0, 1, StringValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(booleanValueEClass, BooleanValue.class, "BooleanValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getBooleanValue_LiteralBoolean(), this.getBooleanLiterals(), "literalBoolean", null, 0, 1, BooleanValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(realValueEClass, RealValue.class, "RealValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getRealValue_Integer(), theEcorePackage.getEInt(), "integer", null, 0, 1, RealValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRealValue_Fraction(), theEcorePackage.getEInt(), "fraction", null, 0, 1, RealValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(nullValueEClass, NullValue.class, "NullValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(noValueEClass, NoValue.class, "NoValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Initialize enums and add enum literals
 		initEEnum(visibilityKindEEnum, VisibilityKind.class, "VisibilityKind");
@@ -771,6 +1097,10 @@ public class UmlPortPackageImpl extends EPackageImpl implements UmlPortPackage
 		addEEnumLiteral(modifierKindEEnum, ModifierKind.UNION);
 		addEEnumLiteral(modifierKindEEnum, ModifierKind.ORDERED);
 		addEEnumLiteral(modifierKindEEnum, ModifierKind.UNIQUE);
+
+		initEEnum(booleanLiteralsEEnum, BooleanLiterals.class, "BooleanLiterals");
+		addEEnumLiteral(booleanLiteralsEEnum, BooleanLiterals.TRUE);
+		addEEnumLiteral(booleanLiteralsEEnum, BooleanLiterals.FALSE);
 
 		// Create resource
 		createResource(eNS_URI);

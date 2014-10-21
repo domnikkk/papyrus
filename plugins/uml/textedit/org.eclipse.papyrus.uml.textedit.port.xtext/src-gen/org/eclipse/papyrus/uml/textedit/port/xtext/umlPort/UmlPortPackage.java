@@ -74,7 +74,7 @@ public interface UmlPortPackage extends EPackage
 	int PORT_RULE = 0;
 
 	/**
-	 * The feature id for the '<em><b>Visibility</b></em>' attribute.
+	 * The feature id for the '<em><b>Visibility</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -84,14 +84,14 @@ public interface UmlPortPackage extends EPackage
 	int PORT_RULE__VISIBILITY = 0;
 
 	/**
-	 * The feature id for the '<em><b>Is Derived</b></em>' attribute.
+	 * The feature id for the '<em><b>Derived</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_RULE__IS_DERIVED = 1;
+	int PORT_RULE__DERIVED = 1;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -104,14 +104,14 @@ public interface UmlPortPackage extends EPackage
 	int PORT_RULE__NAME = 2;
 
 	/**
-	 * The feature id for the '<em><b>Is Conjugated</b></em>' attribute.
+	 * The feature id for the '<em><b>Conjugated</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_RULE__IS_CONJUGATED = 3;
+	int PORT_RULE__CONJUGATED = 3;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -124,6 +124,16 @@ public interface UmlPortPackage extends EPackage
 	int PORT_RULE__TYPE = 4;
 
 	/**
+	 * The feature id for the '<em><b>Type Undefined</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_RULE__TYPE_UNDEFINED = 5;
+
+	/**
 	 * The feature id for the '<em><b>Multiplicity</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -131,7 +141,7 @@ public interface UmlPortPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_RULE__MULTIPLICITY = 5;
+	int PORT_RULE__MULTIPLICITY = 6;
 
 	/**
 	 * The feature id for the '<em><b>Modifiers</b></em>' containment reference.
@@ -141,7 +151,7 @@ public interface UmlPortPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_RULE__MODIFIERS = 6;
+	int PORT_RULE__MODIFIERS = 7;
 
 	/**
 	 * The feature id for the '<em><b>Default</b></em>' containment reference.
@@ -151,7 +161,7 @@ public interface UmlPortPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_RULE__DEFAULT = 7;
+	int PORT_RULE__DEFAULT = 8;
 
 	/**
 	 * The number of structural features of the '<em>Port Rule</em>' class.
@@ -161,7 +171,38 @@ public interface UmlPortPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_RULE_FEATURE_COUNT = 8;
+	int PORT_RULE_FEATURE_COUNT = 9;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.VisibilityRuleImpl <em>Visibility Rule</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.VisibilityRuleImpl
+	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.UmlPortPackageImpl#getVisibilityRule()
+	 * @generated
+	 */
+	int VISIBILITY_RULE = 1;
+
+	/**
+	 * The feature id for the '<em><b>Visibility</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int VISIBILITY_RULE__VISIBILITY = 0;
+
+	/**
+	 * The number of structural features of the '<em>Visibility Rule</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int VISIBILITY_RULE_FEATURE_COUNT = 1;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.TypeRuleImpl <em>Type Rule</em>}' class.
@@ -172,7 +213,7 @@ public interface UmlPortPackage extends EPackage
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.UmlPortPackageImpl#getTypeRule()
 	 * @generated
 	 */
-	int TYPE_RULE = 1;
+	int TYPE_RULE = 2;
 
 	/**
 	 * The feature id for the '<em><b>Path</b></em>' containment reference.
@@ -213,7 +254,7 @@ public interface UmlPortPackage extends EPackage
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.UmlPortPackageImpl#getQualifiedName()
 	 * @generated
 	 */
-	int QUALIFIED_NAME = 2;
+	int QUALIFIED_NAME = 3;
 
 	/**
 	 * The feature id for the '<em><b>Path</b></em>' reference.
@@ -254,7 +295,7 @@ public interface UmlPortPackage extends EPackage
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.UmlPortPackageImpl#getMultiplicityRule()
 	 * @generated
 	 */
-	int MULTIPLICITY_RULE = 3;
+	int MULTIPLICITY_RULE = 4;
 
 	/**
 	 * The feature id for the '<em><b>Bounds</b></em>' containment reference list.
@@ -285,7 +326,7 @@ public interface UmlPortPackage extends EPackage
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.UmlPortPackageImpl#getBoundSpecification()
 	 * @generated
 	 */
-	int BOUND_SPECIFICATION = 4;
+	int BOUND_SPECIFICATION = 5;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -316,7 +357,7 @@ public interface UmlPortPackage extends EPackage
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.UmlPortPackageImpl#getModifiersRule()
 	 * @generated
 	 */
-	int MODIFIERS_RULE = 5;
+	int MODIFIERS_RULE = 6;
 
 	/**
 	 * The feature id for the '<em><b>Values</b></em>' containment reference list.
@@ -347,7 +388,7 @@ public interface UmlPortPackage extends EPackage
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.UmlPortPackageImpl#getModifierSpecification()
 	 * @generated
 	 */
-	int MODIFIER_SPECIFICATION = 6;
+	int MODIFIER_SPECIFICATION = 7;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -398,7 +439,7 @@ public interface UmlPortPackage extends EPackage
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.UmlPortPackageImpl#getRedefinesRule()
 	 * @generated
 	 */
-	int REDEFINES_RULE = 7;
+	int REDEFINES_RULE = 8;
 
 	/**
 	 * The feature id for the '<em><b>Port</b></em>' reference.
@@ -429,7 +470,7 @@ public interface UmlPortPackage extends EPackage
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.UmlPortPackageImpl#getSubsetsRule()
 	 * @generated
 	 */
-	int SUBSETS_RULE = 8;
+	int SUBSETS_RULE = 9;
 
 	/**
 	 * The feature id for the '<em><b>Port</b></em>' reference.
@@ -460,10 +501,10 @@ public interface UmlPortPackage extends EPackage
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.UmlPortPackageImpl#getDefaultValueRule()
 	 * @generated
 	 */
-	int DEFAULT_VALUE_RULE = 9;
+	int DEFAULT_VALUE_RULE = 10;
 
 	/**
-	 * The feature id for the '<em><b>Default</b></em>' attribute.
+	 * The feature id for the '<em><b>Default</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -483,6 +524,203 @@ public interface UmlPortPackage extends EPackage
 	int DEFAULT_VALUE_RULE_FEATURE_COUNT = 1;
 
 	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.ValueImpl <em>Value</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.ValueImpl
+	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.UmlPortPackageImpl#getValue()
+	 * @generated
+	 */
+	int VALUE = 11;
+
+	/**
+	 * The number of structural features of the '<em>Value</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int VALUE_FEATURE_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.IntValueImpl <em>Int Value</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.IntValueImpl
+	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.UmlPortPackageImpl#getIntValue()
+	 * @generated
+	 */
+	int INT_VALUE = 12;
+
+	/**
+	 * The feature id for the '<em><b>Literal Integer</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int INT_VALUE__LITERAL_INTEGER = VALUE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Int Value</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int INT_VALUE_FEATURE_COUNT = VALUE_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.StringValueImpl <em>String Value</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.StringValueImpl
+	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.UmlPortPackageImpl#getStringValue()
+	 * @generated
+	 */
+	int STRING_VALUE = 13;
+
+	/**
+	 * The feature id for the '<em><b>Literal String</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_VALUE__LITERAL_STRING = VALUE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>String Value</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_VALUE_FEATURE_COUNT = VALUE_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.BooleanValueImpl <em>Boolean Value</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.BooleanValueImpl
+	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.UmlPortPackageImpl#getBooleanValue()
+	 * @generated
+	 */
+	int BOOLEAN_VALUE = 14;
+
+	/**
+	 * The feature id for the '<em><b>Literal Boolean</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int BOOLEAN_VALUE__LITERAL_BOOLEAN = VALUE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Boolean Value</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int BOOLEAN_VALUE_FEATURE_COUNT = VALUE_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.RealValueImpl <em>Real Value</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.RealValueImpl
+	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.UmlPortPackageImpl#getRealValue()
+	 * @generated
+	 */
+	int REAL_VALUE = 15;
+
+	/**
+	 * The feature id for the '<em><b>Integer</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int REAL_VALUE__INTEGER = VALUE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Fraction</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int REAL_VALUE__FRACTION = VALUE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Real Value</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int REAL_VALUE_FEATURE_COUNT = VALUE_FEATURE_COUNT + 2;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.NullValueImpl <em>Null Value</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.NullValueImpl
+	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.UmlPortPackageImpl#getNullValue()
+	 * @generated
+	 */
+	int NULL_VALUE = 16;
+
+	/**
+	 * The number of structural features of the '<em>Null Value</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int NULL_VALUE_FEATURE_COUNT = VALUE_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.NoValueImpl <em>No Value</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.NoValueImpl
+	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.UmlPortPackageImpl#getNoValue()
+	 * @generated
+	 */
+	int NO_VALUE = 17;
+
+	/**
+	 * The number of structural features of the '<em>No Value</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int NO_VALUE_FEATURE_COUNT = VALUE_FEATURE_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.VisibilityKind <em>Visibility Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -491,7 +729,7 @@ public interface UmlPortPackage extends EPackage
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.UmlPortPackageImpl#getVisibilityKind()
 	 * @generated
 	 */
-	int VISIBILITY_KIND = 10;
+	int VISIBILITY_KIND = 18;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.ModifierKind <em>Modifier Kind</em>}' enum.
@@ -502,7 +740,18 @@ public interface UmlPortPackage extends EPackage
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.UmlPortPackageImpl#getModifierKind()
 	 * @generated
 	 */
-	int MODIFIER_KIND = 11;
+	int MODIFIER_KIND = 19;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.BooleanLiterals <em>Boolean Literals</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.BooleanLiterals
+	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.UmlPortPackageImpl#getBooleanLiterals()
+	 * @generated
+	 */
+	int BOOLEAN_LITERALS = 20;
 
 
 	/**
@@ -517,28 +766,28 @@ public interface UmlPortPackage extends EPackage
 	EClass getPortRule();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.PortRule#getVisibility <em>Visibility</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.PortRule#getVisibility <em>Visibility</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
-	 * @return the meta object for the attribute '<em>Visibility</em>'.
+	 * @return the meta object for the containment reference '<em>Visibility</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.PortRule#getVisibility()
 	 * @see #getPortRule()
 	 * @generated
 	 */
-	EAttribute getPortRule_Visibility();
+	EReference getPortRule_Visibility();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.PortRule#getIsDerived <em>Is Derived</em>}'.
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.PortRule#isDerived <em>Derived</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
-	 * @return the meta object for the attribute '<em>Is Derived</em>'.
-	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.PortRule#getIsDerived()
+	 * @return the meta object for the attribute '<em>Derived</em>'.
+	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.PortRule#isDerived()
 	 * @see #getPortRule()
 	 * @generated
 	 */
-	EAttribute getPortRule_IsDerived();
+	EAttribute getPortRule_Derived();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.PortRule#getName <em>Name</em>}'.
@@ -553,16 +802,16 @@ public interface UmlPortPackage extends EPackage
 	EAttribute getPortRule_Name();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.PortRule#getIsConjugated <em>Is Conjugated</em>}'.
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.PortRule#isConjugated <em>Conjugated</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
-	 * @return the meta object for the attribute '<em>Is Conjugated</em>'.
-	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.PortRule#getIsConjugated()
+	 * @return the meta object for the attribute '<em>Conjugated</em>'.
+	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.PortRule#isConjugated()
 	 * @see #getPortRule()
 	 * @generated
 	 */
-	EAttribute getPortRule_IsConjugated();
+	EAttribute getPortRule_Conjugated();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.PortRule#getType <em>Type</em>}'.
@@ -575,6 +824,18 @@ public interface UmlPortPackage extends EPackage
 	 * @generated
 	 */
 	EReference getPortRule_Type();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.PortRule#isTypeUndefined <em>Type Undefined</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Type Undefined</em>'.
+	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.PortRule#isTypeUndefined()
+	 * @see #getPortRule()
+	 * @generated
+	 */
+	EAttribute getPortRule_TypeUndefined();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.PortRule#getMultiplicity <em>Multiplicity</em>}'.
@@ -611,6 +872,29 @@ public interface UmlPortPackage extends EPackage
 	 * @generated
 	 */
 	EReference getPortRule_Default();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.VisibilityRule <em>Visibility Rule</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>Visibility Rule</em>'.
+	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.VisibilityRule
+	 * @generated
+	 */
+	EClass getVisibilityRule();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.VisibilityRule#getVisibility <em>Visibility</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Visibility</em>'.
+	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.VisibilityRule#getVisibility()
+	 * @see #getVisibilityRule()
+	 * @generated
+	 */
+	EAttribute getVisibilityRule_Visibility();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.TypeRule <em>Type Rule</em>}'.
@@ -856,16 +1140,153 @@ public interface UmlPortPackage extends EPackage
 	EClass getDefaultValueRule();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.DefaultValueRule#getDefault <em>Default</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.DefaultValueRule#getDefault <em>Default</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
-	 * @return the meta object for the attribute '<em>Default</em>'.
+	 * @return the meta object for the containment reference '<em>Default</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.DefaultValueRule#getDefault()
 	 * @see #getDefaultValueRule()
 	 * @generated
 	 */
-	EAttribute getDefaultValueRule_Default();
+	EReference getDefaultValueRule_Default();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.Value <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>Value</em>'.
+	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.Value
+	 * @generated
+	 */
+	EClass getValue();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.IntValue <em>Int Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>Int Value</em>'.
+	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.IntValue
+	 * @generated
+	 */
+	EClass getIntValue();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.IntValue#getLiteralInteger <em>Literal Integer</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Literal Integer</em>'.
+	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.IntValue#getLiteralInteger()
+	 * @see #getIntValue()
+	 * @generated
+	 */
+	EAttribute getIntValue_LiteralInteger();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.StringValue <em>String Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>String Value</em>'.
+	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.StringValue
+	 * @generated
+	 */
+	EClass getStringValue();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.StringValue#getLiteralString <em>Literal String</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Literal String</em>'.
+	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.StringValue#getLiteralString()
+	 * @see #getStringValue()
+	 * @generated
+	 */
+	EAttribute getStringValue_LiteralString();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.BooleanValue <em>Boolean Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>Boolean Value</em>'.
+	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.BooleanValue
+	 * @generated
+	 */
+	EClass getBooleanValue();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.BooleanValue#getLiteralBoolean <em>Literal Boolean</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Literal Boolean</em>'.
+	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.BooleanValue#getLiteralBoolean()
+	 * @see #getBooleanValue()
+	 * @generated
+	 */
+	EAttribute getBooleanValue_LiteralBoolean();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.RealValue <em>Real Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>Real Value</em>'.
+	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.RealValue
+	 * @generated
+	 */
+	EClass getRealValue();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.RealValue#getInteger <em>Integer</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Integer</em>'.
+	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.RealValue#getInteger()
+	 * @see #getRealValue()
+	 * @generated
+	 */
+	EAttribute getRealValue_Integer();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.RealValue#getFraction <em>Fraction</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Fraction</em>'.
+	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.RealValue#getFraction()
+	 * @see #getRealValue()
+	 * @generated
+	 */
+	EAttribute getRealValue_Fraction();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.NullValue <em>Null Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>Null Value</em>'.
+	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.NullValue
+	 * @generated
+	 */
+	EClass getNullValue();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.NoValue <em>No Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>No Value</em>'.
+	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.NoValue
+	 * @generated
+	 */
+	EClass getNoValue();
 
 	/**
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.VisibilityKind <em>Visibility Kind</em>}'.
@@ -888,6 +1309,17 @@ public interface UmlPortPackage extends EPackage
 	 * @generated
 	 */
 	EEnum getModifierKind();
+
+	/**
+	 * Returns the meta object for enum '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.BooleanLiterals <em>Boolean Literals</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for enum '<em>Boolean Literals</em>'.
+	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.BooleanLiterals
+	 * @generated
+	 */
+	EEnum getBooleanLiterals();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -926,22 +1358,22 @@ public interface UmlPortPackage extends EPackage
 		EClass PORT_RULE = eINSTANCE.getPortRule();
 
 		/**
-		 * The meta object literal for the '<em><b>Visibility</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Visibility</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 *
 		 * @generated
 		 */
-		EAttribute PORT_RULE__VISIBILITY = eINSTANCE.getPortRule_Visibility();
+		EReference PORT_RULE__VISIBILITY = eINSTANCE.getPortRule_Visibility();
 
 		/**
-		 * The meta object literal for the '<em><b>Is Derived</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Derived</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 *
 		 * @generated
 		 */
-		EAttribute PORT_RULE__IS_DERIVED = eINSTANCE.getPortRule_IsDerived();
+		EAttribute PORT_RULE__DERIVED = eINSTANCE.getPortRule_Derived();
 
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -953,13 +1385,13 @@ public interface UmlPortPackage extends EPackage
 		EAttribute PORT_RULE__NAME = eINSTANCE.getPortRule_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Is Conjugated</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Conjugated</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 *
 		 * @generated
 		 */
-		EAttribute PORT_RULE__IS_CONJUGATED = eINSTANCE.getPortRule_IsConjugated();
+		EAttribute PORT_RULE__CONJUGATED = eINSTANCE.getPortRule_Conjugated();
 
 		/**
 		 * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
@@ -969,6 +1401,15 @@ public interface UmlPortPackage extends EPackage
 		 * @generated
 		 */
 		EReference PORT_RULE__TYPE = eINSTANCE.getPortRule_Type();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Undefined</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute PORT_RULE__TYPE_UNDEFINED = eINSTANCE.getPortRule_TypeUndefined();
 
 		/**
 		 * The meta object literal for the '<em><b>Multiplicity</b></em>' containment reference feature.
@@ -996,6 +1437,26 @@ public interface UmlPortPackage extends EPackage
 		 * @generated
 		 */
 		EReference PORT_RULE__DEFAULT = eINSTANCE.getPortRule_Default();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.VisibilityRuleImpl <em>Visibility Rule</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.VisibilityRuleImpl
+		 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.UmlPortPackageImpl#getVisibilityRule()
+		 * @generated
+		 */
+		EClass VISIBILITY_RULE = eINSTANCE.getVisibilityRule();
+
+		/**
+		 * The meta object literal for the '<em><b>Visibility</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute VISIBILITY_RULE__VISIBILITY = eINSTANCE.getVisibilityRule_Visibility();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.TypeRuleImpl <em>Type Rule</em>}' class.
@@ -1205,13 +1666,135 @@ public interface UmlPortPackage extends EPackage
 		EClass DEFAULT_VALUE_RULE = eINSTANCE.getDefaultValueRule();
 
 		/**
-		 * The meta object literal for the '<em><b>Default</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Default</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 *
 		 * @generated
 		 */
-		EAttribute DEFAULT_VALUE_RULE__DEFAULT = eINSTANCE.getDefaultValueRule_Default();
+		EReference DEFAULT_VALUE_RULE__DEFAULT = eINSTANCE.getDefaultValueRule_Default();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.ValueImpl <em>Value</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.ValueImpl
+		 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.UmlPortPackageImpl#getValue()
+		 * @generated
+		 */
+		EClass VALUE = eINSTANCE.getValue();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.IntValueImpl <em>Int Value</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.IntValueImpl
+		 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.UmlPortPackageImpl#getIntValue()
+		 * @generated
+		 */
+		EClass INT_VALUE = eINSTANCE.getIntValue();
+
+		/**
+		 * The meta object literal for the '<em><b>Literal Integer</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute INT_VALUE__LITERAL_INTEGER = eINSTANCE.getIntValue_LiteralInteger();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.StringValueImpl <em>String Value</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.StringValueImpl
+		 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.UmlPortPackageImpl#getStringValue()
+		 * @generated
+		 */
+		EClass STRING_VALUE = eINSTANCE.getStringValue();
+
+		/**
+		 * The meta object literal for the '<em><b>Literal String</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute STRING_VALUE__LITERAL_STRING = eINSTANCE.getStringValue_LiteralString();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.BooleanValueImpl <em>Boolean Value</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.BooleanValueImpl
+		 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.UmlPortPackageImpl#getBooleanValue()
+		 * @generated
+		 */
+		EClass BOOLEAN_VALUE = eINSTANCE.getBooleanValue();
+
+		/**
+		 * The meta object literal for the '<em><b>Literal Boolean</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute BOOLEAN_VALUE__LITERAL_BOOLEAN = eINSTANCE.getBooleanValue_LiteralBoolean();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.RealValueImpl <em>Real Value</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.RealValueImpl
+		 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.UmlPortPackageImpl#getRealValue()
+		 * @generated
+		 */
+		EClass REAL_VALUE = eINSTANCE.getRealValue();
+
+		/**
+		 * The meta object literal for the '<em><b>Integer</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute REAL_VALUE__INTEGER = eINSTANCE.getRealValue_Integer();
+
+		/**
+		 * The meta object literal for the '<em><b>Fraction</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute REAL_VALUE__FRACTION = eINSTANCE.getRealValue_Fraction();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.NullValueImpl <em>Null Value</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.NullValueImpl
+		 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.UmlPortPackageImpl#getNullValue()
+		 * @generated
+		 */
+		EClass NULL_VALUE = eINSTANCE.getNullValue();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.NoValueImpl <em>No Value</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.NoValueImpl
+		 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.UmlPortPackageImpl#getNoValue()
+		 * @generated
+		 */
+		EClass NO_VALUE = eINSTANCE.getNoValue();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.VisibilityKind <em>Visibility Kind</em>}' enum.
@@ -1234,6 +1817,17 @@ public interface UmlPortPackage extends EPackage
 		 * @generated
 		 */
 		EEnum MODIFIER_KIND = eINSTANCE.getModifierKind();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.BooleanLiterals <em>Boolean Literals</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.BooleanLiterals
+		 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.UmlPortPackageImpl#getBooleanLiterals()
+		 * @generated
+		 */
+		EEnum BOOLEAN_LITERALS = eINSTANCE.getBooleanLiterals();
 
 	}
 

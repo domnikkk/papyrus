@@ -86,6 +86,12 @@ public class UmlPortAdapterFactory extends AdapterFactoryImpl
 				}
 
 				@Override
+				public Adapter caseVisibilityRule(VisibilityRule object)
+				{
+					return createVisibilityRuleAdapter();
+				}
+
+				@Override
 				public Adapter caseTypeRule(TypeRule object)
 				{
 					return createTypeRuleAdapter();
@@ -140,6 +146,48 @@ public class UmlPortAdapterFactory extends AdapterFactoryImpl
 				}
 
 				@Override
+				public Adapter caseValue(Value object)
+				{
+					return createValueAdapter();
+				}
+
+				@Override
+				public Adapter caseIntValue(IntValue object)
+				{
+					return createIntValueAdapter();
+				}
+
+				@Override
+				public Adapter caseStringValue(StringValue object)
+				{
+					return createStringValueAdapter();
+				}
+
+				@Override
+				public Adapter caseBooleanValue(BooleanValue object)
+				{
+					return createBooleanValueAdapter();
+				}
+
+				@Override
+				public Adapter caseRealValue(RealValue object)
+				{
+					return createRealValueAdapter();
+				}
+
+				@Override
+				public Adapter caseNullValue(NullValue object)
+				{
+					return createNullValueAdapter();
+				}
+
+				@Override
+				public Adapter caseNoValue(NoValue object)
+				{
+					return createNoValueAdapter();
+				}
+
+				@Override
 				public Adapter defaultCase(EObject object)
 				{
 					return createEObjectAdapter();
@@ -175,6 +223,22 @@ public class UmlPortAdapterFactory extends AdapterFactoryImpl
 	 * @generated
 	 */
 	public Adapter createPortRuleAdapter()
+	{
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.VisibilityRule <em>Visibility Rule</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.VisibilityRule
+	 * @generated
+	 */
+	public Adapter createVisibilityRuleAdapter()
 	{
 		return null;
 	}
@@ -319,6 +383,118 @@ public class UmlPortAdapterFactory extends AdapterFactoryImpl
 	 * @generated
 	 */
 	public Adapter createDefaultValueRuleAdapter()
+	{
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.Value <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.Value
+	 * @generated
+	 */
+	public Adapter createValueAdapter()
+	{
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.IntValue <em>Int Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.IntValue
+	 * @generated
+	 */
+	public Adapter createIntValueAdapter()
+	{
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.StringValue <em>String Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.StringValue
+	 * @generated
+	 */
+	public Adapter createStringValueAdapter()
+	{
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.BooleanValue <em>Boolean Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.BooleanValue
+	 * @generated
+	 */
+	public Adapter createBooleanValueAdapter()
+	{
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.RealValue <em>Real Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.RealValue
+	 * @generated
+	 */
+	public Adapter createRealValueAdapter()
+	{
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.NullValue <em>Null Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.NullValue
+	 * @generated
+	 */
+	public Adapter createNullValueAdapter()
+	{
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.NoValue <em>No Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.NoValue
+	 * @generated
+	 */
+	public Adapter createNoValueAdapter()
 	{
 		return null;
 	}

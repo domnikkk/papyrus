@@ -20,13 +20,13 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.jface.text.contentassist.ICompletionProposal;
 import org.eclipse.papyrus.uml.textedit.port.xtext.scoping.UmlPortScopeProvider;
-import org.eclipse.papyrus.uml.textedit.port.xtext.ui.contribution.UMLPortEditorPropertyUtil;
 import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.ModifierSpecification;
 import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.ModifiersRule;
 import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.MultiplicityRule;
 import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.PortRule;
 import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.QualifiedName;
 import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.TypeRule;
+import org.eclipse.papyrus.uml.tools.utils.PropertyUtil;
 import org.eclipse.papyrus.uml.xtext.integration.CompletionProposalUtils;
 import org.eclipse.papyrus.uml.xtext.integration.CustomCompletionProposal;
 import org.eclipse.papyrus.uml.xtext.integration.core.ContextElementUtil;
@@ -186,7 +186,7 @@ public class UmlPortProposalProvider extends org.eclipse.papyrus.uml.textedit.po
 		for (Property inherited : UmlPortScopeProvider.retrieveInheritedProperties(model)) {
 			if (inherited.getName().toLowerCase().contains(context.getPrefix().toLowerCase())) {
 				String completionString = inherited.getName();
-				String displayString = UMLPortEditorPropertyUtil.getLabel(inherited);
+				String displayString = PropertyUtil.getLabel(inherited);
 				CustomCompletionProposal completionProposal = CompletionProposalUtils.createCompletionProposalWithReplacementOfPrefix(inherited, completionString, displayString, context);
 				acceptor.accept(completionProposal);
 			}
@@ -198,7 +198,7 @@ public class UmlPortProposalProvider extends org.eclipse.papyrus.uml.textedit.po
 		for (Property inherited : UmlPortScopeProvider.retrieveInheritedProperties(model)) {
 			if (inherited.getName().toLowerCase().contains(context.getPrefix().toLowerCase())) {
 				String completionString = inherited.getName();
-				String displayString = UMLPortEditorPropertyUtil.getLabel(inherited);
+				String displayString = PropertyUtil.getLabel(inherited);
 				CustomCompletionProposal completionProposal = CompletionProposalUtils.createCompletionProposalWithReplacementOfPrefix(inherited, completionString, displayString, context);
 				acceptor.accept(completionProposal);
 			}

@@ -13,10 +13,11 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  * <li>{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.PortRule#getVisibility <em>Visibility</em>}</li>
- * <li>{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.PortRule#getIsDerived <em>Is Derived</em>}</li>
+ * <li>{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.PortRule#isDerived <em>Derived</em>}</li>
  * <li>{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.PortRule#getName <em>Name</em>}</li>
- * <li>{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.PortRule#getIsConjugated <em>Is Conjugated</em>}</li>
+ * <li>{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.PortRule#isConjugated <em>Conjugated</em>}</li>
  * <li>{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.PortRule#getType <em>Type</em>}</li>
+ * <li>{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.PortRule#isTypeUndefined <em>Type Undefined</em>}</li>
  * <li>{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.PortRule#getMultiplicity <em>Multiplicity</em>}</li>
  * <li>{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.PortRule#getModifiers <em>Modifiers</em>}</li>
  * <li>{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.PortRule#getDefault <em>Default</em>}</li>
@@ -30,63 +31,60 @@ import org.eclipse.emf.ecore.EObject;
 public interface PortRule extends EObject
 {
 	/**
-	 * Returns the value of the '<em><b>Visibility</b></em>' attribute.
-	 * The literals are from the enumeration {@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.VisibilityKind}.
+	 * Returns the value of the '<em><b>Visibility</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Visibility</em>' attribute isn't clear, there really should be more of a description here...
+	 * If the meaning of the '<em>Visibility</em>' containment reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
 	 *
-	 * @return the value of the '<em>Visibility</em>' attribute.
-	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.VisibilityKind
-	 * @see #setVisibility(VisibilityKind)
+	 * @return the value of the '<em>Visibility</em>' containment reference.
+	 * @see #setVisibility(VisibilityRule)
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.UmlPortPackage#getPortRule_Visibility()
-	 * @model
+	 * @model containment="true"
 	 * @generated
 	 */
-	VisibilityKind getVisibility();
+	VisibilityRule getVisibility();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.PortRule#getVisibility <em>Visibility</em>}' attribute.
+	 * Sets the value of the '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.PortRule#getVisibility <em>Visibility</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Visibility</em>' attribute.
-	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.VisibilityKind
+	 *            the new value of the '<em>Visibility</em>' containment reference.
 	 * @see #getVisibility()
 	 * @generated
 	 */
-	void setVisibility(VisibilityKind value);
+	void setVisibility(VisibilityRule value);
 
 	/**
-	 * Returns the value of the '<em><b>Is Derived</b></em>' attribute.
+	 * Returns the value of the '<em><b>Derived</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Is Derived</em>' attribute isn't clear, there really should be more of a description here...
+	 * If the meaning of the '<em>Derived</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
 	 *
-	 * @return the value of the '<em>Is Derived</em>' attribute.
-	 * @see #setIsDerived(String)
-	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.UmlPortPackage#getPortRule_IsDerived()
+	 * @return the value of the '<em>Derived</em>' attribute.
+	 * @see #setDerived(boolean)
+	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.UmlPortPackage#getPortRule_Derived()
 	 * @model
 	 * @generated
 	 */
-	String getIsDerived();
+	boolean isDerived();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.PortRule#getIsDerived <em>Is Derived</em>}' attribute.
+	 * Sets the value of the '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.PortRule#isDerived <em>Derived</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Is Derived</em>' attribute.
-	 * @see #getIsDerived()
+	 *            the new value of the '<em>Derived</em>' attribute.
+	 * @see #isDerived()
 	 * @generated
 	 */
-	void setIsDerived(String value);
+	void setDerived(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
@@ -117,32 +115,32 @@ public interface PortRule extends EObject
 	void setName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Is Conjugated</b></em>' attribute.
+	 * Returns the value of the '<em><b>Conjugated</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Is Conjugated</em>' attribute isn't clear, there really should be more of a description here...
+	 * If the meaning of the '<em>Conjugated</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
 	 *
-	 * @return the value of the '<em>Is Conjugated</em>' attribute.
-	 * @see #setIsConjugated(String)
-	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.UmlPortPackage#getPortRule_IsConjugated()
+	 * @return the value of the '<em>Conjugated</em>' attribute.
+	 * @see #setConjugated(boolean)
+	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.UmlPortPackage#getPortRule_Conjugated()
 	 * @model
 	 * @generated
 	 */
-	String getIsConjugated();
+	boolean isConjugated();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.PortRule#getIsConjugated <em>Is Conjugated</em>}' attribute.
+	 * Sets the value of the '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.PortRule#isConjugated <em>Conjugated</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Is Conjugated</em>' attribute.
-	 * @see #getIsConjugated()
+	 *            the new value of the '<em>Conjugated</em>' attribute.
+	 * @see #isConjugated()
 	 * @generated
 	 */
-	void setIsConjugated(String value);
+	void setConjugated(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Type</b></em>' containment reference.
@@ -171,6 +169,34 @@ public interface PortRule extends EObject
 	 * @generated
 	 */
 	void setType(TypeRule value);
+
+	/**
+	 * Returns the value of the '<em><b>Type Undefined</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Type Undefined</em>' attribute isn't clear, there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the value of the '<em>Type Undefined</em>' attribute.
+	 * @see #setTypeUndefined(boolean)
+	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.UmlPortPackage#getPortRule_TypeUndefined()
+	 * @model
+	 * @generated
+	 */
+	boolean isTypeUndefined();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.PortRule#isTypeUndefined <em>Type Undefined</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @param value
+	 *            the new value of the '<em>Type Undefined</em>' attribute.
+	 * @see #isTypeUndefined()
+	 * @generated
+	 */
+	void setTypeUndefined(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Multiplicity</b></em>' containment reference.

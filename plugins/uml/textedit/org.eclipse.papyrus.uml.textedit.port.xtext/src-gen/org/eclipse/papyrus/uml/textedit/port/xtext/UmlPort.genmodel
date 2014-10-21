@@ -21,15 +21,23 @@
       <genEnumLiterals ecoreEnumLiteral="UmlPort.ecore#//ModifierKind/ordered"/>
       <genEnumLiterals ecoreEnumLiteral="UmlPort.ecore#//ModifierKind/unique"/>
     </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="UmlPort.ecore#//BooleanLiterals">
+      <genEnumLiterals ecoreEnumLiteral="UmlPort.ecore#//BooleanLiterals/true"/>
+      <genEnumLiterals ecoreEnumLiteral="UmlPort.ecore#//BooleanLiterals/false"/>
+    </genEnums>
     <genClasses ecoreClass="UmlPort.ecore#//PortRule">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute UmlPort.ecore#//PortRule/visibility"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute UmlPort.ecore#//PortRule/isDerived"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference UmlPort.ecore#//PortRule/visibility"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute UmlPort.ecore#//PortRule/derived"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute UmlPort.ecore#//PortRule/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute UmlPort.ecore#//PortRule/isConjugated"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute UmlPort.ecore#//PortRule/conjugated"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference UmlPort.ecore#//PortRule/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute UmlPort.ecore#//PortRule/typeUndefined"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference UmlPort.ecore#//PortRule/multiplicity"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference UmlPort.ecore#//PortRule/modifiers"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference UmlPort.ecore#//PortRule/default"/>
+    </genClasses>
+    <genClasses ecoreClass="UmlPort.ecore#//VisibilityRule">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute UmlPort.ecore#//VisibilityRule/visibility"/>
     </genClasses>
     <genClasses ecoreClass="UmlPort.ecore#//TypeRule">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference UmlPort.ecore#//TypeRule/path"/>
@@ -60,7 +68,23 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference UmlPort.ecore#//SubsetsRule/port"/>
     </genClasses>
     <genClasses ecoreClass="UmlPort.ecore#//DefaultValueRule">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute UmlPort.ecore#//DefaultValueRule/default"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference UmlPort.ecore#//DefaultValueRule/default"/>
     </genClasses>
+    <genClasses ecoreClass="UmlPort.ecore#//Value"/>
+    <genClasses ecoreClass="UmlPort.ecore#//IntValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute UmlPort.ecore#//IntValue/literalInteger"/>
+    </genClasses>
+    <genClasses ecoreClass="UmlPort.ecore#//StringValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute UmlPort.ecore#//StringValue/literalString"/>
+    </genClasses>
+    <genClasses ecoreClass="UmlPort.ecore#//BooleanValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute UmlPort.ecore#//BooleanValue/literalBoolean"/>
+    </genClasses>
+    <genClasses ecoreClass="UmlPort.ecore#//RealValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute UmlPort.ecore#//RealValue/integer"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute UmlPort.ecore#//RealValue/fraction"/>
+    </genClasses>
+    <genClasses ecoreClass="UmlPort.ecore#//NullValue"/>
+    <genClasses ecoreClass="UmlPort.ecore#//NoValue"/>
   </genPackages>
 </genmodel:GenModel>

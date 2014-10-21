@@ -70,6 +70,8 @@ public class UmlPortFactoryImpl extends EFactoryImpl implements UmlPortFactory
 		{
 		case UmlPortPackage.PORT_RULE:
 			return createPortRule();
+		case UmlPortPackage.VISIBILITY_RULE:
+			return createVisibilityRule();
 		case UmlPortPackage.TYPE_RULE:
 			return createTypeRule();
 		case UmlPortPackage.QUALIFIED_NAME:
@@ -88,6 +90,20 @@ public class UmlPortFactoryImpl extends EFactoryImpl implements UmlPortFactory
 			return createSubsetsRule();
 		case UmlPortPackage.DEFAULT_VALUE_RULE:
 			return createDefaultValueRule();
+		case UmlPortPackage.VALUE:
+			return createValue();
+		case UmlPortPackage.INT_VALUE:
+			return createIntValue();
+		case UmlPortPackage.STRING_VALUE:
+			return createStringValue();
+		case UmlPortPackage.BOOLEAN_VALUE:
+			return createBooleanValue();
+		case UmlPortPackage.REAL_VALUE:
+			return createRealValue();
+		case UmlPortPackage.NULL_VALUE:
+			return createNullValue();
+		case UmlPortPackage.NO_VALUE:
+			return createNoValue();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -108,6 +124,8 @@ public class UmlPortFactoryImpl extends EFactoryImpl implements UmlPortFactory
 			return createVisibilityKindFromString(eDataType, initialValue);
 		case UmlPortPackage.MODIFIER_KIND:
 			return createModifierKindFromString(eDataType, initialValue);
+		case UmlPortPackage.BOOLEAN_LITERALS:
+			return createBooleanLiteralsFromString(eDataType, initialValue);
 		default:
 			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -128,6 +146,8 @@ public class UmlPortFactoryImpl extends EFactoryImpl implements UmlPortFactory
 			return convertVisibilityKindToString(eDataType, instanceValue);
 		case UmlPortPackage.MODIFIER_KIND:
 			return convertModifierKindToString(eDataType, instanceValue);
+		case UmlPortPackage.BOOLEAN_LITERALS:
+			return convertBooleanLiteralsToString(eDataType, instanceValue);
 		default:
 			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -144,6 +164,19 @@ public class UmlPortFactoryImpl extends EFactoryImpl implements UmlPortFactory
 	{
 		PortRuleImpl portRule = new PortRuleImpl();
 		return portRule;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public VisibilityRule createVisibilityRule()
+	{
+		VisibilityRuleImpl visibilityRule = new VisibilityRuleImpl();
+		return visibilityRule;
 	}
 
 	/**
@@ -269,6 +302,97 @@ public class UmlPortFactoryImpl extends EFactoryImpl implements UmlPortFactory
 	 *
 	 * @generated
 	 */
+	@Override
+	public Value createValue()
+	{
+		ValueImpl value = new ValueImpl();
+		return value;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public IntValue createIntValue()
+	{
+		IntValueImpl intValue = new IntValueImpl();
+		return intValue;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public StringValue createStringValue()
+	{
+		StringValueImpl stringValue = new StringValueImpl();
+		return stringValue;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public BooleanValue createBooleanValue()
+	{
+		BooleanValueImpl booleanValue = new BooleanValueImpl();
+		return booleanValue;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public RealValue createRealValue()
+	{
+		RealValueImpl realValue = new RealValueImpl();
+		return realValue;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public NullValue createNullValue()
+	{
+		NullValueImpl nullValue = new NullValueImpl();
+		return nullValue;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public NoValue createNoValue()
+	{
+		NoValueImpl noValue = new NoValueImpl();
+		return noValue;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
 	public VisibilityKind createVisibilityKindFromString(EDataType eDataType, String initialValue)
 	{
 		VisibilityKind result = VisibilityKind.get(initialValue);
@@ -311,6 +435,32 @@ public class UmlPortFactoryImpl extends EFactoryImpl implements UmlPortFactory
 	 * @generated
 	 */
 	public String convertModifierKindToString(EDataType eDataType, Object instanceValue)
+	{
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	public BooleanLiterals createBooleanLiteralsFromString(EDataType eDataType, String initialValue)
+	{
+		BooleanLiterals result = BooleanLiterals.get(initialValue);
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		}
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	public String convertBooleanLiteralsToString(EDataType eDataType, Object instanceValue)
 	{
 		return instanceValue == null ? null : instanceValue.toString();
 	}

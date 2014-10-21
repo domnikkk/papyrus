@@ -37,12 +37,16 @@ public class UmlPortParser extends AbstractContentAssistParser {
 			nameMappings = new HashMap<AbstractElement, String>() {
 				private static final long serialVersionUID = 1L;
 				{
-					put(grammarAccess.getPortRuleAccess().getAlternatives_5(), "rule__PortRule__Alternatives_5");
+					put(grammarAccess.getPortRuleAccess().getAlternatives_3_2(), "rule__PortRule__Alternatives_3_2");
 					put(grammarAccess.getUnlimitedLiteralAccess().getAlternatives(), "rule__UnlimitedLiteral__Alternatives");
 					put(grammarAccess.getModifierSpecificationAccess().getAlternatives(), "rule__ModifierSpecification__Alternatives");
+					put(grammarAccess.getValueAccess().getAlternatives(), "rule__Value__Alternatives");
+					put(grammarAccess.getRealValueAccess().getAlternatives(), "rule__RealValue__Alternatives");
 					put(grammarAccess.getVisibilityKindAccess().getAlternatives(), "rule__VisibilityKind__Alternatives");
 					put(grammarAccess.getModifierKindAccess().getAlternatives(), "rule__ModifierKind__Alternatives");
+					put(grammarAccess.getBooleanLiteralsAccess().getAlternatives(), "rule__BooleanLiterals__Alternatives");
 					put(grammarAccess.getPortRuleAccess().getGroup(), "rule__PortRule__Group__0");
+					put(grammarAccess.getPortRuleAccess().getGroup_3(), "rule__PortRule__Group_3__0");
 					put(grammarAccess.getTypeRuleAccess().getGroup(), "rule__TypeRule__Group__0");
 					put(grammarAccess.getQualifiedNameAccess().getGroup(), "rule__QualifiedName__Group__0");
 					put(grammarAccess.getMultiplicityRuleAccess().getGroup(), "rule__MultiplicityRule__Group__0");
@@ -52,14 +56,21 @@ public class UmlPortParser extends AbstractContentAssistParser {
 					put(grammarAccess.getRedefinesRuleAccess().getGroup(), "rule__RedefinesRule__Group__0");
 					put(grammarAccess.getSubsetsRuleAccess().getGroup(), "rule__SubsetsRule__Group__0");
 					put(grammarAccess.getDefaultValueRuleAccess().getGroup(), "rule__DefaultValueRule__Group__0");
+					put(grammarAccess.getRealValueAccess().getGroup_0(), "rule__RealValue__Group_0__0");
+					put(grammarAccess.getRealValueAccess().getGroup_1(), "rule__RealValue__Group_1__0");
+					put(grammarAccess.getRealValueAccess().getGroup_2(), "rule__RealValue__Group_2__0");
+					put(grammarAccess.getNullValueAccess().getGroup(), "rule__NullValue__Group__0");
+					put(grammarAccess.getNoValueAccess().getGroup(), "rule__NoValue__Group__0");
 					put(grammarAccess.getPortRuleAccess().getVisibilityAssignment_0(), "rule__PortRule__VisibilityAssignment_0");
-					put(grammarAccess.getPortRuleAccess().getIsDerivedAssignment_1(), "rule__PortRule__IsDerivedAssignment_1");
+					put(grammarAccess.getPortRuleAccess().getDerivedAssignment_1(), "rule__PortRule__DerivedAssignment_1");
 					put(grammarAccess.getPortRuleAccess().getNameAssignment_2(), "rule__PortRule__NameAssignment_2");
-					put(grammarAccess.getPortRuleAccess().getIsConjugatedAssignment_4(), "rule__PortRule__IsConjugatedAssignment_4");
-					put(grammarAccess.getPortRuleAccess().getTypeAssignment_5_0(), "rule__PortRule__TypeAssignment_5_0");
-					put(grammarAccess.getPortRuleAccess().getMultiplicityAssignment_6(), "rule__PortRule__MultiplicityAssignment_6");
-					put(grammarAccess.getPortRuleAccess().getModifiersAssignment_7(), "rule__PortRule__ModifiersAssignment_7");
-					put(grammarAccess.getPortRuleAccess().getDefaultAssignment_8(), "rule__PortRule__DefaultAssignment_8");
+					put(grammarAccess.getPortRuleAccess().getConjugatedAssignment_3_1(), "rule__PortRule__ConjugatedAssignment_3_1");
+					put(grammarAccess.getPortRuleAccess().getTypeAssignment_3_2_0(), "rule__PortRule__TypeAssignment_3_2_0");
+					put(grammarAccess.getPortRuleAccess().getTypeUndefinedAssignment_3_2_1(), "rule__PortRule__TypeUndefinedAssignment_3_2_1");
+					put(grammarAccess.getPortRuleAccess().getMultiplicityAssignment_4(), "rule__PortRule__MultiplicityAssignment_4");
+					put(grammarAccess.getPortRuleAccess().getModifiersAssignment_5(), "rule__PortRule__ModifiersAssignment_5");
+					put(grammarAccess.getPortRuleAccess().getDefaultAssignment_6(), "rule__PortRule__DefaultAssignment_6");
+					put(grammarAccess.getVisibilityRuleAccess().getVisibilityAssignment(), "rule__VisibilityRule__VisibilityAssignment");
 					put(grammarAccess.getTypeRuleAccess().getPathAssignment_0(), "rule__TypeRule__PathAssignment_0");
 					put(grammarAccess.getTypeRuleAccess().getTypeAssignment_1(), "rule__TypeRule__TypeAssignment_1");
 					put(grammarAccess.getQualifiedNameAccess().getPathAssignment_0(), "rule__QualifiedName__PathAssignment_0");
@@ -75,6 +86,13 @@ public class UmlPortParser extends AbstractContentAssistParser {
 					put(grammarAccess.getRedefinesRuleAccess().getPortAssignment_1(), "rule__RedefinesRule__PortAssignment_1");
 					put(grammarAccess.getSubsetsRuleAccess().getPortAssignment_1(), "rule__SubsetsRule__PortAssignment_1");
 					put(grammarAccess.getDefaultValueRuleAccess().getDefaultAssignment_1(), "rule__DefaultValueRule__DefaultAssignment_1");
+					put(grammarAccess.getIntValueAccess().getLiteralIntegerAssignment(), "rule__IntValue__LiteralIntegerAssignment");
+					put(grammarAccess.getStringValueAccess().getLiteralStringAssignment(), "rule__StringValue__LiteralStringAssignment");
+					put(grammarAccess.getBooleanValueAccess().getLiteralBooleanAssignment(), "rule__BooleanValue__LiteralBooleanAssignment");
+					put(grammarAccess.getRealValueAccess().getIntegerAssignment_0_0(), "rule__RealValue__IntegerAssignment_0_0");
+					put(grammarAccess.getRealValueAccess().getFractionAssignment_1_1(), "rule__RealValue__FractionAssignment_1_1");
+					put(grammarAccess.getRealValueAccess().getIntegerAssignment_2_0(), "rule__RealValue__IntegerAssignment_2_0");
+					put(grammarAccess.getRealValueAccess().getFractionAssignment_2_2(), "rule__RealValue__FractionAssignment_2_2");
 				}
 			};
 		}
