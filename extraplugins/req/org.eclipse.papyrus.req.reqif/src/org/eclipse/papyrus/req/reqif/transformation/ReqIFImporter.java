@@ -437,7 +437,22 @@ public abstract class ReqIFImporter extends ReqIFBaseTransformation {
 		}
 	}
 
+	/**
+	 * get the property from a stereotype
+	 * @param stereotype
+	 * @param propertyName
+	 * @return the property from a stereotype maybe null
+	 */
+	public Property getProperty(Stereotype stereotype, String propertyName){
+		Property property=null;
+		for (Property attribute : stereotype.getAllAttributes()) {
+			if( attribute.getName().equals(propertyName)){
+				return property;
+			}
 
+		}
+		return property;
+	}
 	/**
 	 * fill properties of stereotypes form the SpecElementWithAttributes and the map of stereotypes
 	 * @param reqStereotypesMap map of stereotypes (specificationType, SpecObjectTypes)
@@ -452,67 +467,97 @@ public abstract class ReqIFImporter extends ReqIFBaseTransformation {
 			if(att instanceof AttributeValueString){
 				String attributeName=((AttributeValueString)att).getDefinition().getLongName().trim();
 				attributeName = getNormalName(attributeName);
-				umlElement.setValue(
-						reqStereotypesMap.get(specType.getLongName()),
-						attributeName,
-						((AttributeValueString)att).getTheValue());
-				if( attributeName.equals("ID")){
-					if(umlElement instanceof NamedElement){
-						((NamedElement)umlElement).setName(((AttributeValueString)att).getTheValue());
+				Stereotype stereotype=reqStereotypesMap.get(specType.getLongName());
+				if( stereotype!=null){
+					Property aProperty=getProperty(stereotype, attributeName);
+					if(aProperty!=null){
+						umlElement.setValue(
+								reqStereotypesMap.get(specType.getLongName()),
+								attributeName,
+								((AttributeValueString)att).getTheValue());
+						if( attributeName.equals("ID")){
+							if(umlElement instanceof NamedElement){
+								((NamedElement)umlElement).setName(((AttributeValueString)att).getTheValue());
+							}
+						}
 					}
 				}
 			}
 			if(att instanceof AttributeValueBoolean){
 				String attributeName=((AttributeValueBoolean)att).getDefinition().getLongName().trim();
 				attributeName = getNormalName(attributeName);
-				umlElement.setValue(
-						reqStereotypesMap.get(specType.getLongName()),
-						attributeName,
-						((AttributeValueBoolean)att).isTheValue());
+				Stereotype stereotype=reqStereotypesMap.get(specType.getLongName());
+				if( stereotype!=null){
+					Property aProperty=getProperty(stereotype, attributeName);
+					if(aProperty!=null){
+						umlElement.setValue(
+								reqStereotypesMap.get(specType.getLongName()),
+								attributeName,
+								((AttributeValueBoolean)att).isTheValue());
+					}
+				}
 			}
 			if(att instanceof AttributeValueInteger){
 				String attributeName=((AttributeValueInteger)att).getDefinition().getLongName().trim();
 				attributeName = getNormalName(attributeName);
-				umlElement.setValue(
-						reqStereotypesMap.get(specType.getLongName()),
-						attributeName,
-						((AttributeValueInteger)att).getTheValue().doubleValue());
+				Stereotype stereotype=reqStereotypesMap.get(specType.getLongName());
+				if( stereotype!=null){
+					Property aProperty=getProperty(stereotype, attributeName);
+					if(aProperty!=null){
+						umlElement.setValue(
+								reqStereotypesMap.get(specType.getLongName()),
+								attributeName,
+								((AttributeValueInteger)att).getTheValue().doubleValue());
+					}
+				}
 			}
 			if(att instanceof AttributeValueReal){
 				String attributeName=((AttributeValueReal)att).getDefinition().getLongName().trim();
 				attributeName = getNormalName(attributeName);
-				umlElement.setValue(
-						reqStereotypesMap.get(specType.getLongName()),
-						attributeName,
-						((AttributeValueReal)att).getTheValue());
+				Stereotype stereotype=reqStereotypesMap.get(specType.getLongName());
+				if( stereotype!=null){
+					Property aProperty=getProperty(stereotype, attributeName);
+					if(aProperty!=null){
+						umlElement.setValue(
+								reqStereotypesMap.get(specType.getLongName()),
+								attributeName,
+								((AttributeValueReal)att).getTheValue());
+					}
+				}
 			}
 			if(att instanceof AttributeValueEnumeration){
 				String attributeName=((AttributeValueEnumeration)att).getDefinition().getLongName().trim();
 				attributeName = getNormalName(attributeName);
-				if(((AttributeValueEnumeration)att).getValues().size()>0){
-					String EnumerationValue=getNormalName(((AttributeValueEnumeration)att).getValues().get(0).getLongName());
-					//look for Enumeration literal
-					Enumeration aEnumeration= null;
-					//look for attribute
-					Stereotype referedStereotype= reqStereotypesMap.get(specType.getLongName());
-					Property referedAttribute=null;
-					for(Property property:referedStereotype.getAllAttributes()){
-						if(property.getName().equals(attributeName)){
-							referedAttribute=property;
+				Stereotype stereotype=reqStereotypesMap.get(specType.getLongName());
+				if( stereotype!=null){
+					Property aProperty=getProperty(stereotype, attributeName);
+					if(aProperty!=null){
+						if(((AttributeValueEnumeration)att).getValues().size()>0){
+							String EnumerationValue=getNormalName(((AttributeValueEnumeration)att).getValues().get(0).getLongName());
+							//look for Enumeration literal
+							Enumeration aEnumeration= null;
+							//look for attribute
+							Stereotype referedStereotype= reqStereotypesMap.get(specType.getLongName());
+							Property referedAttribute=null;
+							for(Property property:referedStereotype.getAllAttributes()){
+								if(property.getName().equals(attributeName)){
+									referedAttribute=property;
+								}
+							}
+							aEnumeration= (Enumeration)referedAttribute.getType();
+							EnumerationLiteral aEnumerationLiteral=null;
+							for(EnumerationLiteral aLiteral:aEnumeration.getOwnedLiterals()){
+								if(EnumerationValue.equals(aLiteral.getName())){
+									aEnumerationLiteral=aLiteral;
+								}
+							}
+							if( aEnumerationLiteral!=null){
+								umlElement.setValue(
+										reqStereotypesMap.get(specType.getLongName()),
+										attributeName,
+										aEnumerationLiteral);
+							}
 						}
-					}
-					aEnumeration= (Enumeration)referedAttribute.getType();
-					EnumerationLiteral aEnumerationLiteral=null;
-					for(EnumerationLiteral aLiteral:aEnumeration.getOwnedLiterals()){
-						if(EnumerationValue.equals(aLiteral.getName())){
-							aEnumerationLiteral=aLiteral;
-						}
-					}
-					if( aEnumerationLiteral!=null){
-						umlElement.setValue(
-								reqStereotypesMap.get(specType.getLongName()),
-								attributeName,
-								aEnumerationLiteral);
 					}
 				}
 			}
@@ -520,22 +565,28 @@ public abstract class ReqIFImporter extends ReqIFBaseTransformation {
 			if(att instanceof AttributeValueXHTML){
 				String attributeName=((AttributeValueXHTML)att).getDefinition().getLongName().trim();
 				attributeName = getNormalName(attributeName);
-				if((((AttributeValueXHTML)att).getTheValue())!=null){
-					if((((AttributeValueXHTML)att).getTheValue().getXhtmlSource())!=null){
-						umlElement.setValue(
-								reqStereotypesMap.get(specType.getLongName()),
-								attributeName,
-								((AttributeValueXHTML)att).getTheValue().getXhtmlSource());
-					}
-					else{
-						try {
-							umlElement.setValue(
-									reqStereotypesMap.get(specType.getLongName()),
-									attributeName,
-									//ProrXhtmlSimplifiedHelper.generateXMLString((((AttributeValueXHTML)att).getTheValue())));
-									getXmlOnlyString(((AttributeValueXHTML)att).getTheValue()));
-						} catch (IOException e) {
-							e.printStackTrace();
+				Stereotype stereotype=reqStereotypesMap.get(specType.getLongName());
+				if( stereotype!=null){
+					Property aProperty=getProperty(stereotype, attributeName);
+					if(aProperty!=null){
+						if((((AttributeValueXHTML)att).getTheValue())!=null){
+							if((((AttributeValueXHTML)att).getTheValue().getXhtmlSource())!=null){
+								umlElement.setValue(
+										reqStereotypesMap.get(specType.getLongName()),
+										attributeName,
+										((AttributeValueXHTML)att).getTheValue().getXhtmlSource());
+							}
+							else{
+								try {
+									umlElement.setValue(
+											reqStereotypesMap.get(specType.getLongName()),
+											attributeName,
+											//ProrXhtmlSimplifiedHelper.generateXMLString((((AttributeValueXHTML)att).getTheValue())));
+											getXmlOnlyString(((AttributeValueXHTML)att).getTheValue()));
+								} catch (IOException e) {
+									e.printStackTrace();
+								}
+							}
 						}
 					}
 				}

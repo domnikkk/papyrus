@@ -144,7 +144,7 @@ public abstract class ReqIFBaseTransformation {
 			}
 			for(Stereotype stereotype : currentProfile.getOwnedStereotypes()) {
 				if( isRequirementStereotype(stereotype)){
-					if(!stereotype.getName().equals("Requirement")){
+					if(!stereotype.getQualifiedName().equals("SysML::Requirements::Requirement")){
 						requirementStereotypes.put(stereotype.getName(),stereotype);
 					}
 				}

@@ -39,4 +39,10 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.papyrus.emf.facet.query.java.core
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
-Export-Package: org.eclipse.papyrus.req.reqif.assistant
+Export-Package: org.eclipse.papyrus.req.reqif,
+ org.eclipse.papyrus.req.reqif.assistant,
+ org.eclipse.papyrus.req.reqif.integration.assistant,
+ org.eclipse.papyrus.req.reqif.integration.command,
+ org.eclipse.papyrus.req.reqif.integration.transformation,
+ org.eclipse.papyrus.req.reqif.queries,
+ org.eclipse.papyrus.req.reqif.transformation
