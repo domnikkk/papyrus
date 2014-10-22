@@ -243,7 +243,15 @@ public class XtextLanguageEditor implements BodyEditor, IContextElementProvider 
 	}
 
 	public void dispose() {
-		// TODO?
+		// dispose resources to avoid memory leaks
+		if (textControl != null) {
+			textControl.dispose();
+		}
+		if (xtextAdapter != null) {
+			xtextAdapter.getFakeResourceContext().getFakeResource().eAdapters().remove(contextElementAdapter);
+			xtextAdapter.dispose();
+			xtextAdapter = null;
+		}
 	}
 
 	public void addChangeListener(Listener listener) {
