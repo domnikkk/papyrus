@@ -64,11 +64,11 @@ public class SignalUtil {
 			}
 		} else if (displayValue.contains(ICustomAppearance.DISP_PARAMETER_DEFAULT)) {
 			// default value
-			if (property.getDefault() != null) {
+			if (property.getDefaultValue() != null) {
 				if (showEqualMark) {
 					buffer.append(" = ");
 				}
-				buffer.append(property.getDefault());
+				buffer.append(ValueSpecificationUtil.getSpecificationValue(property.getDefaultValue()));
 			}
 		}
 		if (displayValue.contains(ICustomAppearance.DISP_MODIFIERS)) {

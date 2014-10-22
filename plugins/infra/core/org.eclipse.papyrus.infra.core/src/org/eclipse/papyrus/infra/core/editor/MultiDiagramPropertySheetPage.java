@@ -13,13 +13,20 @@
 
 package org.eclipse.papyrus.infra.core.editor;
 
+import org.eclipse.core.commands.operations.IUndoContext;
 import org.eclipse.jface.viewers.ISelectionProvider;
 import org.eclipse.papyrus.infra.core.editor.reload.EditorReloadEvent;
 import org.eclipse.papyrus.infra.core.editor.reload.IEditorReloadListener;
+import org.eclipse.papyrus.infra.core.operation.DelegatingUndoContext;
+import org.eclipse.papyrus.infra.core.utils.AdapterUtils;
+import org.eclipse.ui.IActionBars;
 import org.eclipse.ui.IPartListener;
 import org.eclipse.ui.ISelectionListener;
 import org.eclipse.ui.IViewPart;
 import org.eclipse.ui.IWorkbenchPart;
+import org.eclipse.ui.actions.ActionFactory;
+import org.eclipse.ui.operations.RedoActionHandler;
+import org.eclipse.ui.operations.UndoActionHandler;
 import org.eclipse.ui.part.IShowInSource;
 import org.eclipse.ui.part.ShowInContext;
 import org.eclipse.ui.views.properties.PropertyShowInContext;
@@ -34,6 +41,10 @@ class MultiDiagramPropertySheetPage extends TabbedPropertySheetPage implements I
 
 	private final CoreMultiDiagramEditor multiDiagramEditor;
 
+	private UndoActionHandler undo;
+	private RedoActionHandler redo;
+	private DelegatingUndoContext undoContext;
+
 	public MultiDiagramPropertySheetPage(CoreMultiDiagramEditor editor) {
 		super(editor);
 
@@ -45,6 +56,13 @@ class MultiDiagramPropertySheetPage extends TabbedPropertySheetPage implements I
 	public void dispose() {
 		IReloadableEditor.Adapter.getAdapter(multiDiagramEditor).removeEditorReloadListener(this);
 
+		if (undo != null) {
+			undo.dispose();
+		}
+		if (redo != null) {
+			redo.dispose();
+		}
+
 		super.dispose();
 	}
 
@@ -53,7 +71,7 @@ class MultiDiagramPropertySheetPage extends TabbedPropertySheetPage implements I
 		Object propertySheet = getSite().getService(IViewPart.class);
 		if (propertySheet instanceof IShowInSource) {
 			ShowInContext context = ((IShowInSource) propertySheet).getShowInContext();
-			;
+
 			if (context instanceof PropertyShowInContext) {
 				IWorkbenchPart inputPart = ((PropertyShowInContext) context).getPart();
 				if (inputPart != null) {
@@ -85,5 +103,26 @@ class MultiDiagramPropertySheetPage extends TabbedPropertySheetPage implements I
 				});
 			}
 		}
+
+		// The editor will have a new undo context (because it will have a new editing domain)
+		if (undoContext != null) {
+			undoContext.setDelegate(AdapterUtils.adapt(multiDiagramEditor, IUndoContext.class, null));
+		}
 	}
+
+	@Override
+	public void setActionBars(IActionBars actionBars) {
+		super.setActionBars(actionBars);
+
+		undoContext = new DelegatingUndoContext();
+		undoContext.setDelegate(AdapterUtils.adapt(multiDiagramEditor, IUndoContext.class, null));
+
+		undo = new UndoActionHandler(multiDiagramEditor.getSite(), undoContext);
+		redo = new RedoActionHandler(multiDiagramEditor.getSite(), undoContext);
+
+		actionBars.setGlobalActionHandler(ActionFactory.UNDO.getId(), undo);
+		actionBars.setGlobalActionHandler(ActionFactory.REDO.getId(), redo);
+	}
+
+
 }

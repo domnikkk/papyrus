@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2012 Atos.
+ * Copyright (c) 2012, 2014 Atos, CEA, and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,6 +8,8 @@
  *
  * Contributors:
  *  Mathieu Velten (Atos) mathieu.velten@atos.net - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 448139
+ *  
  *****************************************************************************/
 package org.eclipse.papyrus.uml.properties.widgets;
 
@@ -79,6 +81,8 @@ public class StereotypePropertyEditor implements ISelectionChangedListener, ICha
 				}
 
 				eStructuralFeatureEditor.setFeatureToEdit(feature, stereotypeApplication);
+			} else {
+				eStructuralFeatureEditor.setFeatureToEdit(null, null);
 			}
 		}
 	}

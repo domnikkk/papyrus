@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2008 CEA LIST.
+ * Copyright (c) 2008, 2014 CEA LIST and others.
  *
  *
  * All rights reserved. This program and the accompanying materials
@@ -10,6 +10,7 @@
  * Contributors:
  *  Chokri Mraidha (CEA LIST) Chokri.Mraidha@cea.fr - Initial API and implementation
  *  Patrick Tessier (CEA LIST) Patrick.Tessier@cea.fr - modification
+ *  Christian W. Damus (CEA) - bug 448139
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.profile.tree.objects;
@@ -270,5 +271,29 @@ public class AppliedStereotypePropertyTreeObject extends ParentTreeObject {
 		};
 		domain.getCommandStack().execute(command);
 	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((property == null) ? 0 : property.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (obj == null) {
+			return false;
+		}
+		if (!(obj instanceof AppliedStereotypePropertyTreeObject)) {
+			return false;
+		}
+		AppliedStereotypePropertyTreeObject other = (AppliedStereotypePropertyTreeObject) obj;
+		return property == other.property;
+	}
+
 
 }
