@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_7DausFnKEeSPTqnSxdYcgw" name="model">
+  <packagedElement xmi:type="uml:DataType" xmi:id="_7wM8MFnKEeSPTqnSxdYcgw" name="type1"/>
+  <packagedElement xmi:type="uml:Package" xmi:id="_PSM8MFnLEeSPTqnSxdYcgw" name="Package1">
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_PtkpkFnLEeSPTqnSxdYcgw" name="type2"/>
+  </packagedElement>
+</uml:Model>

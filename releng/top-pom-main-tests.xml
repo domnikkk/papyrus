@@ -77,6 +77,9 @@
 		<module>../tests/junit/plugins/uml/tools/org.eclipse.papyrus.uml.tools.tests</module>
 		<module>../tests/junit/plugins/uml/tools/org.eclipse.papyrus.uml.tools.utils.tests</module>
 		<module>../tests/junit/plugins/views/modelexplorer/org.eclipse.papyrus.views.modelexplorer.tests</module>
+		<module>../tests/junit/plugins/uml/textedit/org.eclipse.papyrus.uml.textedit.port.tests</module>
+		<module>../tests/junit/plugins/uml/textedit/org.eclipse.papyrus.uml.textedit.property.tests</module>
+		<module>../tests/junit/plugins/uml/textedit/org.eclipse.papyrus.uml.textedit.tests</module>
 	</modules>
 	<properties>
 		<tycho-version>0.20.0</tycho-version>
