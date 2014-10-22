@@ -8,8 +8,11 @@ import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EcorePackage;
+
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+
 import org.eclipse.papyrus.uml.textedit.common.xtext.umlCommon.UmlCommonPackage;
+
 import org.eclipse.papyrus.uml.textedit.parameter.xtext.umlParameter.EffectKind;
 import org.eclipse.papyrus.uml.textedit.parameter.xtext.umlParameter.EffectRule;
 import org.eclipse.papyrus.uml.textedit.parameter.xtext.umlParameter.ModifierKind;
