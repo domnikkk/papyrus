@@ -22,7 +22,7 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
- * <li>{@link org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.ComposedRuleConfiguration#getComposedRules <em>Composed Rules</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.ComposedRuleConfiguration#getComposedRules <em>Composed Rules</em>}</li>
  * </ul>
  * </p>
  *
@@ -32,17 +32,16 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface ComposedRuleConfiguration extends InvariantRuleConfiguration {
 	/**
-	 * Returns the value of the '<em><b>Composed Rules</b></em>' reference list.
+	 * Returns the value of the '<em><b>Composed Rules</b></em>' containment reference list.
 	 * The list contents are of type {@link org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.InvariantRuleConfiguration}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Composed Rules</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
-	 * @return the value of the '<em>Composed Rules</em>' reference list.
+	 * @return the value of the '<em>Composed Rules</em>' containment reference list.
 	 * @see org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.InvariantSemanticTypeConfigurationPackage#getComposedRuleConfiguration_ComposedRules()
-	 * @model lower="2"
+	 * @model containment="true" lower="2"
 	 * @generated
 	 */
 	EList<InvariantRuleConfiguration> getComposedRules();

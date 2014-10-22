@@ -12,6 +12,7 @@
  *****************************************************************************/
 package org.eclipse.papyrus.infra.extendedtypes.handler;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 
 import org.eclipse.core.commands.AbstractHandler;
@@ -125,7 +126,7 @@ public class DeployExtendedTypeSetConfigurationHandler extends AbstractHandler i
 				ExtendedTypesPreferences.registerWorkspaceDefinition(fileName, selectedFile.getFullPath().toString());
 
 				monitor.subTask("Reset Element Types Registry");
-				ExtendedElementTypeSetRegistry.getInstance().loadExtendedElementTypeSet(fileName);
+				ExtendedElementTypeSetRegistry.getInstance().loadExtendedElementTypeSetWithDelay(fileName, new ArrayList<String>());
 				monitor.worked(1);
 
 				result.add(new Status(IStatus.OK, Activator.PLUGIN_ID, "The extended types configuration has been successfully deployed and activated"));

@@ -118,16 +118,17 @@ public class ExtendedElementTypeSetRegistry {
 
 	/**
 	 * Loads a given extended type set from a given identifier
+	 * @param loadedElements TODO
 	 */
-	public void loadExtendedElementTypeSet(String identifier) {
+	public Map<String, List<String>> loadExtendedElementTypeSetWithDelay(String identifier, List<String> loadedElementTypes) {
 		if (getExtendedTypeSets() == null) {
-			return;
+			return Collections.emptyMap();
 		}
 
 		// retrieve the path from the identifier
 		String path = ExtendedTypesPreferences.getLocalExtendedTypesDefinitions().get(identifier);
 		if (path == null) {
-			return;
+			return Collections.emptyMap();
 		}
 
 		URI localURI = URI.createPlatformResourceURI(path, true);
@@ -137,29 +138,49 @@ public class ExtendedElementTypeSetRegistry {
 			EObject content = resource.getContents().get(0);
 			if (content instanceof ExtendedElementTypeSet) {
 				getExtendedTypeSets().put(identifier, (ExtendedElementTypeSet) content);
-				loadExtendedElementTypeSet((ExtendedElementTypeSet) content);
+				return loadExtendedElementTypeSetWithDelay((ExtendedElementTypeSet) content, null, loadedElementTypes);
 			}
 		} catch (IOException e) {
 			Activator.log.error(e);
 		}
+		return Collections.emptyMap();
 	}
 
+	
 	/**
 	 * Loads the specified extended element type set.
 	 * This does not take care to unload a similar set (a set with the same id) before loading. This should be handled before calling this method.
-	 *
+	 * This returns a list of element types that could not be loaded because they were dependent of an unknown element type
 	 * @param extendedElementTypeSet
 	 *            {@link ExtendedElementTypeSet} to load.
+	 * @param missingTypesBySets list of types that could not be loaded, indexed by the extended types set where they are defined
+	 * @param loadedElementTypes the list of element types loaded in the registry by this method
+	 * @return the map of element types that could not be resolved, with the list of dependencies 
 	 */
-	public void loadExtendedElementTypeSet(ExtendedElementTypeSet extendedElementTypeSet) {
+	public Map<String, List<String>> loadExtendedElementTypeSetWithDelay(ExtendedElementTypeSet extendedElementTypeSet, Map<ExtendedElementTypeSet, List<String>> missingTypesBySets, List<String> loadedElementTypes) {
 		IClientContext context;
+		Map<String, List<String>> unresolvedElementTypes = null;
 		try {
 			context = TypeContext.getContext();
 		} catch (ServiceException e1) {
 			Activator.log.error(e1);
-			return;
+			return Collections.emptyMap();
 		}
-		List<ElementTypeConfiguration> elementTypeConfigurations = extendedElementTypeSet.getElementType();
+		List<ElementTypeConfiguration> elementTypeConfigurations = new ArrayList<ElementTypeConfiguration>(extendedElementTypeSet.getElementType());
+		
+		// filter all element types that are already known as not been loaded. Only them should be tried to be loaded here
+		if(missingTypesBySets!=null && missingTypesBySets.containsKey(extendedElementTypeSet)) {
+			List<String> notLoadedTypes = missingTypesBySets.get(extendedElementTypeSet);
+			// this list should not be null, as this set is known as having not all its types loaded
+			// remove from all the element types configuration  those who do not belong to the list of non loaded elements (they have already been loaded)
+			for(ElementTypeConfiguration configuration : extendedElementTypeSet.getElementType()) {
+				if(!notLoadedTypes.contains(configuration.getIdentifier())) {
+					elementTypeConfigurations.remove(configuration);
+				}
+			}
+		}
+
+		// try to load missing element types
 		for (ElementTypeConfiguration configuration : elementTypeConfigurations) {
 			// load class associated to the configuration model => read extension point that defines this kind of configuration.
 			String configurationType = configuration.eClass().getInstanceTypeName();
@@ -186,12 +207,22 @@ public class ExtendedElementTypeSetRegistry {
 				}
 			}
 			if (factory != null) {
-				IExtendedHintedElementType type = factory.createElementType(configuration);
-				// register element Type
-				ElementTypeRegistry.getInstance().register(type);
-				context.bindId(type.getId());
+				try {
+					IExtendedHintedElementType type = factory.createElementType(configuration);
+					// register element Type
+					ElementTypeRegistry.getInstance().register(type);
+					context.bindId(type.getId());
+					loadedElementTypes.add(type.getId());
+				} catch (UnknowElementTypesException e) {
+					// register the element type in a collection, so it can be reloaded later
+					if(unresolvedElementTypes==null) {
+						unresolvedElementTypes=new HashMap<String, List<String>>();
+					}
+					unresolvedElementTypes.put(configuration.getIdentifier(), configuration.getSpecializedTypesID());
+				}
 			}
 		}
+		return unresolvedElementTypes;
 	}
 
 	/**
@@ -350,10 +381,35 @@ public class ExtendedElementTypeSetRegistry {
 		if (registeredSets != null && !registeredSets.isEmpty()) {
 			extendedElementTypeSets.putAll(registeredSets);
 		}
-		// load each extended element type set
-		for (Entry<String, ExtendedElementTypeSet> entry : extendedElementTypeSets.entrySet()) {
-			loadExtendedElementTypeSet(entry.getValue());
+		
+		List<ExtendedElementTypeSet> setsToLoad = new ArrayList<ExtendedElementTypeSet>(extendedElementTypeSets.values());
+		Map<ExtendedElementTypeSet, List<String>> missingTypesBySets = new HashMap<ExtendedElementTypeSet, List<String>>();
+		List<String> loadedElements = null;
+		
+		
+		// load each extended element type set. This will try to load the extended type set as long as all its extended types are not all loaded or no more element types can be loaded
+		while(loadedElements==null || !loadedElements.isEmpty()) {
+			loadedElements = new ArrayList<String>();
+			for (ExtendedElementTypeSet set : new ArrayList<ExtendedElementTypeSet>(setsToLoad)) {
+				Map<String, List<String>> notLoadedTypes = loadExtendedElementTypeSetWithDelay(set, missingTypesBySets, loadedElements);
+				if(notLoadedTypes==null || notLoadedTypes.isEmpty()) {
+					// everything went fine, this set can be assumed to be fully loaded and is removed from the partially loaded sets
+					setsToLoad.remove(set);
+					missingTypesBySets.remove(set);
+				} else {
+					// something went wrong. stores information about missing types
+					missingTypesBySets.put(set, new ArrayList<String>(notLoadedTypes.keySet()));
+				}
+			}	
 		}
+		
+		if(missingTypesBySets.entrySet()!=null && missingTypesBySets.entrySet().size() >0) {
+			// some types could not be loaded => there some error handling can be performed
+			if(Platform.inDebugMode()) {
+				System.err.println(missingTypesBySets);
+			}
+		}
+		
 		return extendedElementTypeSets;
 	}
 

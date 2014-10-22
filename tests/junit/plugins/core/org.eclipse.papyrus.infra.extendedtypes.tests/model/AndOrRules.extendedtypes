@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extendedtypes:ExtendedElementTypeSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:applystereotypeactionconfiguration="http://www.eclipse.org/papyrus/infra/extendedtypes/uml/applystereotypeaction/1.0" xmlns:extendedtypes="http://www.eclipse.org/papyrus/infra/extendedtypes/1.0" xmlns:invariantcontainerconfiguration="http://www.eclipse.org/papyrus/infra/extendedtypes/semantictype/invariant/container/1.0" xmlns:invariantsemantictypeconfiguration="http://www.eclipse.org/papyrus/infra/extendedtypes/semantictype/invariant/1.0" xmlns:invariantstereotypeconfiguration="http://www.eclipse.org/papyrus/infra/extendedtypes/semantictype/invariant/stereotype/1.0" name="Tests Extended Types for And/Or Invariant Rules" identifier="org.eclipse.papyrus.infra.extendedtypes.tests.AndOrRulesExtendedTypes">
+  <elementType xsi:type="extendedtypes:AspectSemanticTypeConfiguration" name="ClassA creation Type" identifier="org.eclipse.papyrus.intra.extendedtypes.tests.aspect.ClassA">
+    <specializedTypesID>org.eclipse.papyrus.intra.extendedtypes.tests.invariant.ClassA</specializedTypesID>
+    <actionConfiguration xsi:type="applystereotypeactionconfiguration:ApplyStereotypeActionConfiguration" identifier="1">
+      <stereotypesToApply stereotypeQualifiedName="Profile::ClassA" updateName="true">
+        <requiredProfiles>Profile</requiredProfiles>
+      </stereotypesToApply>
+    </actionConfiguration>
+  </elementType>
+  <elementType xsi:type="extendedtypes:AspectSemanticTypeConfiguration" name="ClassB creation Type" identifier="org.eclipse.papyrus.intra.extendedtypes.tests.aspect.ClassB">
+    <specializedTypesID>org.eclipse.papyrus.intra.extendedtypes.tests.invariant.ClassB</specializedTypesID>
+    <actionConfiguration xsi:type="applystereotypeactionconfiguration:ApplyStereotypeActionConfiguration" description="" identifier="2">
+      <stereotypesToApply stereotypeQualifiedName="Profile::ClassB" updateName="true">
+        <requiredProfiles>Profile</requiredProfiles>
+      </stereotypesToApply>
+    </actionConfiguration>
+  </elementType>
+  <elementType xsi:type="invariantsemantictypeconfiguration:InvariantSemanticTypeConfiguration" name="ClassA Test Type" identifier="org.eclipse.papyrus.intra.extendedtypes.tests.invariant.ClassA">
+    <specializedTypesID>org.eclipse.papyrus.uml.Class</specializedTypesID>
+    <invariantRuleConfiguration xsi:type="invariantsemantictypeconfiguration:AndRule">
+      <composedRules xsi:type="invariantstereotypeconfiguration:InvariantStereotypeConfiguration" stereotypeQualifiedName="Profile::ClassA" requiredProfile="Profile"/>
+      <composedRules xsi:type="invariantcontainerconfiguration:InvariantContainerConfiguration">
+        <permissions childType="org.eclipse.papyrus.uml.Package"/>
+        <permissions childType="org.eclipse.papyrus.uml.Model" isPermitted="true" isStrict="true"/>
+      </composedRules>
+    </invariantRuleConfiguration>
+  </elementType>
+  <elementType xsi:type="invariantsemantictypeconfiguration:InvariantSemanticTypeConfiguration" name="ClassB Test Type" identifier="org.eclipse.papyrus.intra.extendedtypes.tests.invariant.ClassB">
+    <specializedTypesID>org.eclipse.papyrus.uml.Class</specializedTypesID>
+    <invariantRuleConfiguration xsi:type="invariantsemantictypeconfiguration:AndRule">
+      <composedRules xsi:type="invariantstereotypeconfiguration:InvariantStereotypeConfiguration" stereotypeQualifiedName="Profile::ClassB" requiredProfile="Profile"/>
+      <composedRules xsi:type="invariantsemantictypeconfiguration:OrRule">
+        <composedRules xsi:type="invariantcontainerconfiguration:InvariantContainerConfiguration">
+          <permissions childType="org.eclipse.papyrus.uml.Element"/>
+          <permissions childType="org.eclipse.papyrus.intra.extendedtypes.tests.invariant.ClassA" isPermitted="true" isStrict="true"/>
+        </composedRules>
+        <composedRules xsi:type="invariantcontainerconfiguration:InvariantContainerConfiguration">
+          <permissions childType="org.eclipse.papyrus.uml.Element"/>
+          <permissions childType="org.eclipse.papyrus.intra.extendedtypes.tests.invariant.ClassB" isPermitted="true" isStrict="true"/>
+        </composedRules>
+      </composedRules>
+    </invariantRuleConfiguration>
+  </elementType>
+</extendedtypes:ExtendedElementTypeSet>

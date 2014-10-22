@@ -30,7 +30,6 @@ public abstract class InvariantRuleConfigurationImpl extends MinimalEObjectImpl.
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected InvariantRuleConfigurationImpl() {
@@ -40,7 +39,6 @@ public abstract class InvariantRuleConfigurationImpl extends MinimalEObjectImpl.
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override

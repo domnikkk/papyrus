@@ -17,7 +17,7 @@
     </genClasses>
     <genClasses image="false" ecoreClass="InvariantSemanticTypeConfiguration.ecore#//InvariantRuleConfiguration"/>
     <genClasses image="false" ecoreClass="InvariantSemanticTypeConfiguration.ecore#//ComposedRuleConfiguration">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference InvariantSemanticTypeConfiguration.ecore#//ComposedRuleConfiguration/composedRules"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference InvariantSemanticTypeConfiguration.ecore#//ComposedRuleConfiguration/composedRules"/>
     </genClasses>
     <genClasses ecoreClass="InvariantSemanticTypeConfiguration.ecore#//AndRule"/>
     <genClasses ecoreClass="InvariantSemanticTypeConfiguration.ecore#//OrRule"/>

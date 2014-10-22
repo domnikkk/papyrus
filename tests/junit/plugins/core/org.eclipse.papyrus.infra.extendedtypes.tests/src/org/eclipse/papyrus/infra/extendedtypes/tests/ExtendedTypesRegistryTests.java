@@ -14,6 +14,10 @@
  *****************************************************************************/
 package org.eclipse.papyrus.infra.extendedtypes.tests;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
 import org.eclipse.gmf.runtime.emf.type.core.ElementTypeRegistry;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.papyrus.infra.extendedtypes.ExtendedElementTypeSetRegistry;
@@ -68,8 +72,9 @@ public class ExtendedTypesRegistryTests extends AbstractElementTypeTests impleme
 
 		// register
 		ExtendedTypesPreferences.registerWorkspaceDefinition(WORKSPACE_ELEMENT_TYPE_ID, workspaceTestFile.getFullPath().toString());
-		ExtendedElementTypeSetRegistry.getInstance().loadExtendedElementTypeSet(WORKSPACE_ELEMENT_TYPE_ID);
-
+		Map<String, List<String>> unresolvedTypes = ExtendedElementTypeSetRegistry.getInstance().loadExtendedElementTypeSetWithDelay(WORKSPACE_ELEMENT_TYPE_ID, new ArrayList<String>());
+		Assert.assertNull("There should not be unloaded elements", unresolvedTypes);
+		
 		workspaceType = ElementTypeRegistry.getInstance().getType(WORKSPACE_ELEMENT_TYPE_TOOL);
 		Assert.assertNotNull("Element type should be registered", workspaceType);
 		checkPluginTypes();
