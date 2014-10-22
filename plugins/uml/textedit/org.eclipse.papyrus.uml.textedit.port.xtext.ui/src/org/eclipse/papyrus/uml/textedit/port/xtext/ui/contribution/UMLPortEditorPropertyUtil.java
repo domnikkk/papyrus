@@ -28,21 +28,20 @@ public class UMLPortEditorPropertyUtil extends PortUtil {
 	public static String getLabel(Port port) {
 		StringBuffer buffer = new StringBuffer();
 		// visibility
-		buffer.append(" ");
 		buffer.append(NamedElementUtil.getVisibilityAsSign(port));
+		buffer.append(" ");
 
 		// derived property
 		buffer.append(getDerived(port));
 
 		// name
-		buffer.append(" ");
 		buffer.append(ALFIDConverter.nameToID(getName(port)));
 
 		// is conjugated
 		if (port.isConjugated()) {
-			buffer.append(": ~");
+			buffer.append(" : ~");
 		} else {
-			buffer.append(": ");
+			buffer.append(" : ");
 		}
 		// type
 		if (port.getType() != null) {

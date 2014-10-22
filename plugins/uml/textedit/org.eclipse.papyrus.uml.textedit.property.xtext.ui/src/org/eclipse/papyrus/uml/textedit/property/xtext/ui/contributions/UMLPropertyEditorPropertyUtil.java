@@ -28,14 +28,13 @@ public class UMLPropertyEditorPropertyUtil extends PropertyUtil {
 	public static String getLabel(Property property) {
 		StringBuffer buffer = new StringBuffer();
 		// visibility
-		buffer.append(" ");
 		buffer.append(NamedElementUtil.getVisibilityAsSign(property));
+		buffer.append(" ");
 
 		// derived property
 		buffer.append(getDerived(property));
 
 		// name
-		buffer.append(" ");
 		buffer.append(ALFIDConverter.nameToID(getName(property)));
 
 		// type
