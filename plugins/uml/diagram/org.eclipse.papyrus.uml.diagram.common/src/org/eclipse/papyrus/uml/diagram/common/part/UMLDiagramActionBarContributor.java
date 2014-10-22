@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2009 CEA LIST.
+ * Copyright (c) 2009, 2014 CEA LIST and others.
  *
  *
  * All rights reserved. This program and the accompanying materials
@@ -9,41 +9,29 @@
  *
  * Contributors:
  *  Patrick Tessier (CEA LIST) Patrick.tessier@cea.fr - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 448305
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.common.part;
 
 import org.eclipse.gmf.runtime.diagram.ui.parts.DiagramActionBarContributor;
-import org.eclipse.gmf.runtime.diagram.ui.resources.editor.parts.DiagramDocumentEditor;
 import org.eclipse.jface.action.IContributionItem;
 import org.eclipse.jface.action.IMenuManager;
 import org.eclipse.ui.IActionBars;
 import org.eclipse.ui.IWorkbenchPage;
 
-/**
- * @generated
- */
 public class UMLDiagramActionBarContributor extends DiagramActionBarContributor {
 
-	/**
-	 * @generated
-	 */
 	@Override
 	protected Class getEditorClass() {
-		return DiagramDocumentEditor.class;
+		return UmlGmfDiagramEditor.class;
 	}
 
-	/**
-	 * @generated
-	 */
 	@Override
 	protected String getEditorId() {
 		return "org.eclipse.papyrus.UMLDiagramEditorID";
 	}
 
-	/**
-	 * @generated
-	 */
 	@Override
 	public void init(IActionBars bars, IWorkbenchPage page) {
 		super.init(bars, page);
