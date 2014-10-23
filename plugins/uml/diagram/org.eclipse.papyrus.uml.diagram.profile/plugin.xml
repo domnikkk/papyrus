@@ -939,24 +939,7 @@
          <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
       </binding>
    </extension>
-   <extension point="org.eclipse.ui.commands" id="update-cmd">
-      <?gmfgen generated="true"?>
-      <command
-         categoryId="org.eclipse.ui.category.edit"
-         defaultHandler="org.eclipse.papyrus.uml.diagram.profile.part.UMLDiagramUpdateCommand"
-         description="%update.diagram.description"
-         id="org.eclipse.papyrus.uml.diagram.profile.updateDiagram"
-         name="%update.diagram.name"/>
-   </extension>
    
-   <extension point="org.eclipse.ui.bindings" id="update-cmd-binding">
-      <?gmfgen generated="true"?>
-      <key 
-         commandId="org.eclipse.papyrus.uml.diagram.profile.updateDiagram"
-         contextId="org.eclipse.papyrus.uml.diagram.profile.ui.diagramContext"
-         schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
-         sequence="F5"/>
-   </extension>
 
 
    <extension point="org.eclipse.ui.menus" id="context-menus">

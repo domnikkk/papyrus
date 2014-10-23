@@ -618,24 +618,7 @@
          </selectionEnablement>
       </linkHelper>
    </extension>
-   <extension point="org.eclipse.ui.commands" id="update-cmd">
-      <?gmfgen generated="true"?>
-      <command
-         categoryId="org.eclipse.ui.category.edit"
-         defaultHandler="org.eclipse.papyrus.uml.diagram.timing.part.UMLDiagramUpdateCommand"
-         description="%update.diagram.description"
-         id="org.eclipse.papyrus.uml.diagram.timing.updateDiagram"
-         name="%update.diagram.name"/>
-   </extension>
    
-   <extension point="org.eclipse.ui.bindings" id="update-cmd-binding">
-      <?gmfgen generated="true"?>
-      <key 
-         commandId="org.eclipse.papyrus.uml.diagram.timing.updateDiagram"
-         contextId="org.eclipse.papyrus.uml.diagram.timing.ui.diagramContext"
-         schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
-         sequence="F5"/>
-   </extension>
 
 
 
