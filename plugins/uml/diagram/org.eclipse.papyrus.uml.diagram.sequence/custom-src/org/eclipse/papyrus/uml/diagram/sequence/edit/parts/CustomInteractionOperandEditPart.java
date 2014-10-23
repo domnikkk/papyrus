@@ -232,8 +232,13 @@ public class CustomInteractionOperandEditPart extends InteractionOperandEditPart
 	}
 
 	static String getGuardLabelText(InteractionOperand interactionOperand, boolean edit) {
-		CombinedFragment enclosingCF = (CombinedFragment) interactionOperand.getOwner();
-		InteractionOperatorKind cfOperator = enclosingCF.getInteractionOperator();
+		Element operationOwner = interactionOperand.getOwner();
+		while (operationOwner != null && false == operationOwner instanceof CombinedFragment) {
+			operationOwner = operationOwner.getOwner();
+		}
+		
+		CombinedFragment enclosingCF = (CombinedFragment) operationOwner;
+		InteractionOperatorKind cfOperator = enclosingCF != null ? enclosingCF.getInteractionOperator() : InteractionOperatorKind.SEQ_LITERAL;
 		InteractionConstraint guard = interactionOperand.getGuard();
 		String specValue = null;
 		if (guard != null) {
@@ -252,7 +257,7 @@ public class CustomInteractionOperandEditPart extends InteractionOperandEditPart
 				sb.append(condition);
 			}
 		}
-		if (specValue == null) {
+		if (specValue == null && enclosingCF != null) {
 			EList<InteractionOperand> operands = enclosingCF.getOperands();
 			if (InteractionOperatorKind.ALT_LITERAL.equals(cfOperator) && interactionOperand.equals(operands.get(operands.size() - 1))) {
 				specValue = "else";
