@@ -57,10 +57,14 @@ public class UMLPortEditorPropertyUtil extends PortUtil {
 		if (!multiplicity.trim().equals("[1]")) {
 			buffer.append(multiplicity);
 		}
+		buffer.append(" ");
 
 		// property modifiers
-		buffer.append(" ");
-		buffer.append(PropertyUtil.getModifiersAsString(port, false));
+		String modifiers = PropertyUtil.getModifiersAsString(port, false);
+		if (!"".equals(modifiers)) {
+			buffer.append(modifiers);
+			buffer.append(" ");
+		}
 
 		// default value
 		if (port.getDefaultValue() != null) {
@@ -98,7 +102,7 @@ public class UMLPortEditorPropertyUtil extends PortUtil {
 			}.doSwitch(port.getDefaultValue());
 
 			if (defaultValue != null) {
-				buffer.append(" = ");
+				buffer.append("= ");
 				buffer.append(defaultValue);
 			}
 		}

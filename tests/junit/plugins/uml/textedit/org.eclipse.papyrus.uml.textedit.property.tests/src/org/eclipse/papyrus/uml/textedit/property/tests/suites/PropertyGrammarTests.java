@@ -17,9 +17,11 @@ import org.eclipse.papyrus.uml.textedit.tests.AbstractGrammarTest;
 import org.eclipse.papyrus.uml.xtext.integration.DefaultXtextDirectEditorConfiguration;
 import org.eclipse.uml2.uml.Component;
 import org.eclipse.uml2.uml.DataType;
+import org.eclipse.uml2.uml.LiteralReal;
 import org.eclipse.uml2.uml.Model;
 import org.eclipse.uml2.uml.PrimitiveType;
 import org.eclipse.uml2.uml.Property;
+import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.VisibilityKind;
 import org.junit.Assert;
@@ -70,6 +72,20 @@ public class PropertyGrammarTests extends AbstractGrammarTest<Property> {
 		testedProperty.setVisibility(VisibilityKind.PROTECTED_LITERAL);
 		testedProperty.setType(type1);
 		Assert.assertEquals("# /p1 : model::type1", tester.getInitialText(testedProperty));
+	}
+
+	@Test
+	public void testDefaultValues() throws Exception {
+		testedProperty.setIsUnique(false);
+
+		LiteralReal defaultRealValue = UMLFactory.eINSTANCE.createLiteralReal();
+		defaultRealValue.setValue(123.54);
+		testedProperty.setDefaultValue(defaultRealValue);
+
+		Assert.assertEquals("+ p1 : <Undefined> = 123.54", tester.getInitialText(testedProperty));
+		tester.parseText(testedProperty, "p1 = .2");
+		Assert.assertEquals("The instance of ValueSpecification should not change when compatible types are used", defaultRealValue, testedProperty.getDefaultValue());
+		Assert.assertEquals(.2, defaultRealValue.getValue(), 0.001);
 	}
 
 	@Override

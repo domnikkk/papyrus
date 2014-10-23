@@ -18,9 +18,11 @@ import org.eclipse.papyrus.uml.textedit.tests.AbstractGrammarTest;
 import org.eclipse.papyrus.uml.xtext.integration.DefaultXtextDirectEditorConfiguration;
 import org.eclipse.uml2.uml.Component;
 import org.eclipse.uml2.uml.DataType;
+import org.eclipse.uml2.uml.LiteralReal;
 import org.eclipse.uml2.uml.Model;
 import org.eclipse.uml2.uml.Port;
 import org.eclipse.uml2.uml.PrimitiveType;
+import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.VisibilityKind;
 import org.junit.Assert;
@@ -77,6 +79,20 @@ public class PortGrammarTests extends AbstractGrammarTest<Port> {
 
 		testedPort.setIsConjugated(true);
 		Assert.assertEquals("# /p1 : ~model::type1", tester.getInitialText(testedPort));
+	}
+
+	@Test
+	public void testDefaultValues() throws Exception {
+		testedPort.setIsUnique(false);
+
+		LiteralReal defaultRealValue = UMLFactory.eINSTANCE.createLiteralReal();
+		defaultRealValue.setValue(123.54);
+		testedPort.setDefaultValue(defaultRealValue);
+
+		Assert.assertEquals("+ p1 : <Undefined> = 123.54", tester.getInitialText(testedPort));
+		tester.parseText(testedPort, "p1 = .2");
+		Assert.assertEquals("The instance of ValueSpecification should not change when compatible types are used", defaultRealValue, testedPort.getDefaultValue());
+		Assert.assertEquals(.2, defaultRealValue.getValue(), 0.001);
 	}
 
 	@Override

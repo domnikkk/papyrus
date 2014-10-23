@@ -51,14 +51,18 @@ public class UMLPropertyEditorPropertyUtil extends PropertyUtil {
 		if (!multiplicity.trim().equals("[1]")) {
 			buffer.append(multiplicity);
 		}
+		buffer.append(" ");
 
 		// property modifiers
-		buffer.append(" ");
-		buffer.append(PropertyUtil.getModifiersAsString(property, false));
+		String modifiers = PropertyUtil.getModifiersAsString(property, false);
+		if (!"".equals(modifiers)) {
+			buffer.append(modifiers);
+			buffer.append(" ");
+		}
 
 		// default value
 		if (property.getDefault() != null) {
-			buffer.append(" = ");
+			buffer.append("= ");
 			String defaultValue = new UMLSwitch<String>() {
 				@Override
 				public String caseLiteralBoolean(org.eclipse.uml2.uml.LiteralBoolean object) {
