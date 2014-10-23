@@ -8,7 +8,9 @@ import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EcorePackage;
+
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+
 import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.BooleanLiterals;
 import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.BooleanValue;
 import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.BoundSpecification;
@@ -32,6 +34,7 @@ import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.UmlPropertyPa
 import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.Value;
 import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.VisibilityKind;
 import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.VisibilityRule;
+
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**

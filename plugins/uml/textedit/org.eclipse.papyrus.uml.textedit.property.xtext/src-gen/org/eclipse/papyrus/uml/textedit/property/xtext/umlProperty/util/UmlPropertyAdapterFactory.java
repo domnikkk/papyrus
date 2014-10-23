@@ -4,27 +4,12 @@ package org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.util;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
+
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
+
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.BooleanValue;
-import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.BoundSpecification;
-import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.DefaultValueRule;
-import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.IntValue;
-import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.ModifierSpecification;
-import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.ModifiersRule;
-import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.MultiplicityRule;
-import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.NoValue;
-import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.NullValue;
-import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.PropertyRule;
-import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.QualifiedName;
-import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.RealValue;
-import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.RedefinesRule;
-import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.StringValue;
-import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.SubsetsRule;
-import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.TypeRule;
-import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.UmlPropertyPackage;
-import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.Value;
-import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.VisibilityRule;
+
+import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.*;
 
 /**
  * <!-- begin-user-doc -->

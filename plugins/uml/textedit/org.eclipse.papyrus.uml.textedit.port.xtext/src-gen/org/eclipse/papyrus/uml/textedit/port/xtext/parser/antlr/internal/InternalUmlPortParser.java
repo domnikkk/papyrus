@@ -1372,128 +1372,158 @@ public class InternalUmlPortParser extends AbstractInternalAntlrParser {
 
 
 	// $ANTLR start "ruleModifiersRule"
-	// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:546:1: ruleModifiersRule returns [EObject current=null] : (otherlv_0= '{' ( (lv_values_1_0=
-	// ruleModifierSpecification ) ) (otherlv_2= ',' ( (lv_values_3_0= ruleModifierSpecification ) ) )* otherlv_4= '}' ) ;
+	// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:546:1: ruleModifiersRule returns [EObject current=null] : ( () otherlv_1= '{' ( ( (lv_values_2_0=
+	// ruleModifierSpecification ) ) (otherlv_3= ',' ( (lv_values_4_0= ruleModifierSpecification ) ) )* )? otherlv_5= '}' ) ;
 	public final EObject ruleModifiersRule() throws RecognitionException {
 		EObject current = null;
 
-		Token otherlv_0 = null;
-		Token otherlv_2 = null;
-		Token otherlv_4 = null;
-		EObject lv_values_1_0 = null;
+		Token otherlv_1 = null;
+		Token otherlv_3 = null;
+		Token otherlv_5 = null;
+		EObject lv_values_2_0 = null;
 
-		EObject lv_values_3_0 = null;
+		EObject lv_values_4_0 = null;
 
 
 		enterRule();
 
 		try {
-			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:549:28: ( (otherlv_0= '{' ( (lv_values_1_0= ruleModifierSpecification ) ) (otherlv_2= ',' (
-			// (lv_values_3_0= ruleModifierSpecification ) ) )* otherlv_4= '}' ) )
-			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:550:1: (otherlv_0= '{' ( (lv_values_1_0= ruleModifierSpecification ) ) (otherlv_2= ',' ( (lv_values_3_0=
-			// ruleModifierSpecification ) ) )* otherlv_4= '}' )
+			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:549:28: ( ( () otherlv_1= '{' ( ( (lv_values_2_0= ruleModifierSpecification ) ) (otherlv_3= ',' (
+			// (lv_values_4_0= ruleModifierSpecification ) ) )* )? otherlv_5= '}' ) )
+			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:550:1: ( () otherlv_1= '{' ( ( (lv_values_2_0= ruleModifierSpecification ) ) (otherlv_3= ',' (
+			// (lv_values_4_0= ruleModifierSpecification ) ) )* )? otherlv_5= '}' )
 			{
-				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:550:1: (otherlv_0= '{' ( (lv_values_1_0= ruleModifierSpecification ) ) (otherlv_2= ',' (
-				// (lv_values_3_0= ruleModifierSpecification ) ) )* otherlv_4= '}' )
-				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:550:3: otherlv_0= '{' ( (lv_values_1_0= ruleModifierSpecification ) ) (otherlv_2= ',' (
-				// (lv_values_3_0= ruleModifierSpecification ) ) )* otherlv_4= '}'
+				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:550:1: ( () otherlv_1= '{' ( ( (lv_values_2_0= ruleModifierSpecification ) ) (otherlv_3= ',' (
+				// (lv_values_4_0= ruleModifierSpecification ) ) )* )? otherlv_5= '}' )
+				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:550:2: () otherlv_1= '{' ( ( (lv_values_2_0= ruleModifierSpecification ) ) (otherlv_3= ',' (
+				// (lv_values_4_0= ruleModifierSpecification ) ) )* )? otherlv_5= '}'
 				{
-					otherlv_0 = (Token) match(input, 21, FOLLOW_21_in_ruleModifiersRule1128);
-
-					newLeafNode(otherlv_0, grammarAccess.getModifiersRuleAccess().getLeftCurlyBracketKeyword_0());
-
-					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:554:1: ( (lv_values_1_0= ruleModifierSpecification ) )
-					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:555:1: (lv_values_1_0= ruleModifierSpecification )
+					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:550:2: ()
+					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:551:5:
 					{
-						// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:555:1: (lv_values_1_0= ruleModifierSpecification )
-						// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:556:3: lv_values_1_0= ruleModifierSpecification
-						{
 
-							newCompositeNode(grammarAccess.getModifiersRuleAccess().getValuesModifierSpecificationParserRuleCall_1_0());
-
-							pushFollow(FOLLOW_ruleModifierSpecification_in_ruleModifiersRule1149);
-							lv_values_1_0 = ruleModifierSpecification();
-
-							state._fsp--;
-
-
-							if (current == null) {
-								current = createModelElementForParent(grammarAccess.getModifiersRuleRule());
-							}
-							add(
-									current,
-									"values",
-									lv_values_1_0,
-									"ModifierSpecification");
-							afterParserOrEnumRuleCall();
-
-
-						}
+						current = forceCreateModelElement(
+								grammarAccess.getModifiersRuleAccess().getModifiersRuleAction_0(),
+								current);
 
 
 					}
 
-					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:572:2: (otherlv_2= ',' ( (lv_values_3_0= ruleModifierSpecification ) ) )*
-					loop13: do {
-						int alt13 = 2;
-						int LA13_0 = input.LA(1);
+					otherlv_1 = (Token) match(input, 21, FOLLOW_21_in_ruleModifiersRule1137);
 
-						if ((LA13_0 == 22)) {
-							alt13 = 1;
+					newLeafNode(otherlv_1, grammarAccess.getModifiersRuleAccess().getLeftCurlyBracketKeyword_1());
+
+					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:560:1: ( ( (lv_values_2_0= ruleModifierSpecification ) ) (otherlv_3= ',' ( (lv_values_4_0=
+					// ruleModifierSpecification ) ) )* )?
+					int alt14 = 2;
+					int LA14_0 = input.LA(1);
+
+					if (((LA14_0 >= 24 && LA14_0 <= 25) || (LA14_0 >= 33 && LA14_0 <= 36))) {
+						alt14 = 1;
+					}
+					switch (alt14) {
+					case 1:
+					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:560:2: ( (lv_values_2_0= ruleModifierSpecification ) ) (otherlv_3= ',' ( (lv_values_4_0=
+					// ruleModifierSpecification ) ) )*
+					{
+						// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:560:2: ( (lv_values_2_0= ruleModifierSpecification ) )
+						// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:561:1: (lv_values_2_0= ruleModifierSpecification )
+						{
+							// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:561:1: (lv_values_2_0= ruleModifierSpecification )
+							// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:562:3: lv_values_2_0= ruleModifierSpecification
+							{
+
+								newCompositeNode(grammarAccess.getModifiersRuleAccess().getValuesModifierSpecificationParserRuleCall_2_0_0());
+
+								pushFollow(FOLLOW_ruleModifierSpecification_in_ruleModifiersRule1159);
+								lv_values_2_0 = ruleModifierSpecification();
+
+								state._fsp--;
+
+
+								if (current == null) {
+									current = createModelElementForParent(grammarAccess.getModifiersRuleRule());
+								}
+								add(
+										current,
+										"values",
+										lv_values_2_0,
+										"ModifierSpecification");
+								afterParserOrEnumRuleCall();
+
+
+							}
+
+
 						}
 
+						// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:578:2: (otherlv_3= ',' ( (lv_values_4_0= ruleModifierSpecification ) ) )*
+						loop13: do {
+							int alt13 = 2;
+							int LA13_0 = input.LA(1);
 
-						switch (alt13) {
-						case 1:
-						// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:572:4: otherlv_2= ',' ( (lv_values_3_0= ruleModifierSpecification ) )
-						{
-							otherlv_2 = (Token) match(input, 22, FOLLOW_22_in_ruleModifiersRule1162);
+							if ((LA13_0 == 22)) {
+								alt13 = 1;
+							}
 
-							newLeafNode(otherlv_2, grammarAccess.getModifiersRuleAccess().getCommaKeyword_2_0());
 
-							// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:576:1: ( (lv_values_3_0= ruleModifierSpecification ) )
-							// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:577:1: (lv_values_3_0= ruleModifierSpecification )
+							switch (alt13) {
+							case 1:
+							// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:578:4: otherlv_3= ',' ( (lv_values_4_0= ruleModifierSpecification ) )
 							{
-								// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:577:1: (lv_values_3_0= ruleModifierSpecification )
-								// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:578:3: lv_values_3_0= ruleModifierSpecification
+								otherlv_3 = (Token) match(input, 22, FOLLOW_22_in_ruleModifiersRule1172);
+
+								newLeafNode(otherlv_3, grammarAccess.getModifiersRuleAccess().getCommaKeyword_2_1_0());
+
+								// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:582:1: ( (lv_values_4_0= ruleModifierSpecification ) )
+								// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:583:1: (lv_values_4_0= ruleModifierSpecification )
 								{
+									// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:583:1: (lv_values_4_0= ruleModifierSpecification )
+									// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:584:3: lv_values_4_0= ruleModifierSpecification
+									{
 
-									newCompositeNode(grammarAccess.getModifiersRuleAccess().getValuesModifierSpecificationParserRuleCall_2_1_0());
+										newCompositeNode(grammarAccess.getModifiersRuleAccess().getValuesModifierSpecificationParserRuleCall_2_1_1_0());
 
-									pushFollow(FOLLOW_ruleModifierSpecification_in_ruleModifiersRule1183);
-									lv_values_3_0 = ruleModifierSpecification();
+										pushFollow(FOLLOW_ruleModifierSpecification_in_ruleModifiersRule1193);
+										lv_values_4_0 = ruleModifierSpecification();
 
-									state._fsp--;
+										state._fsp--;
 
 
-									if (current == null) {
-										current = createModelElementForParent(grammarAccess.getModifiersRuleRule());
+										if (current == null) {
+											current = createModelElementForParent(grammarAccess.getModifiersRuleRule());
+										}
+										add(
+												current,
+												"values",
+												lv_values_4_0,
+												"ModifierSpecification");
+										afterParserOrEnumRuleCall();
+
+
 									}
-									add(
-											current,
-											"values",
-											lv_values_3_0,
-											"ModifierSpecification");
-									afterParserOrEnumRuleCall();
 
 
 								}
 
 
 							}
+								break;
+
+							default:
+								break loop13;
+							}
+						} while (true);
 
 
-						}
-							break;
+					}
+						break;
 
-						default:
-							break loop13;
-						}
-					} while (true);
+					}
 
-					otherlv_4 = (Token) match(input, 23, FOLLOW_23_in_ruleModifiersRule1197);
+					otherlv_5 = (Token) match(input, 23, FOLLOW_23_in_ruleModifiersRule1209);
 
-					newLeafNode(otherlv_4, grammarAccess.getModifiersRuleAccess().getRightCurlyBracketKeyword_3());
+					newLeafNode(otherlv_5, grammarAccess.getModifiersRuleAccess().getRightCurlyBracketKeyword_3());
 
 
 				}
@@ -1516,7 +1546,7 @@ public class InternalUmlPortParser extends AbstractInternalAntlrParser {
 
 
 	// $ANTLR start "entryRuleModifierSpecification"
-	// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:606:1: entryRuleModifierSpecification returns [EObject current=null] : iv_ruleModifierSpecification=
+	// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:612:1: entryRuleModifierSpecification returns [EObject current=null] : iv_ruleModifierSpecification=
 	// ruleModifierSpecification EOF ;
 	public final EObject entryRuleModifierSpecification() throws RecognitionException {
 		EObject current = null;
@@ -1525,17 +1555,17 @@ public class InternalUmlPortParser extends AbstractInternalAntlrParser {
 
 
 		try {
-			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:607:2: (iv_ruleModifierSpecification= ruleModifierSpecification EOF )
-			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:608:2: iv_ruleModifierSpecification= ruleModifierSpecification EOF
+			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:613:2: (iv_ruleModifierSpecification= ruleModifierSpecification EOF )
+			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:614:2: iv_ruleModifierSpecification= ruleModifierSpecification EOF
 			{
 				newCompositeNode(grammarAccess.getModifierSpecificationRule());
-				pushFollow(FOLLOW_ruleModifierSpecification_in_entryRuleModifierSpecification1233);
+				pushFollow(FOLLOW_ruleModifierSpecification_in_entryRuleModifierSpecification1245);
 				iv_ruleModifierSpecification = ruleModifierSpecification();
 
 				state._fsp--;
 
 				current = iv_ruleModifierSpecification;
-				match(input, EOF, FOLLOW_EOF_in_entryRuleModifierSpecification1243);
+				match(input, EOF, FOLLOW_EOF_in_entryRuleModifierSpecification1255);
 
 			}
 
@@ -1553,7 +1583,7 @@ public class InternalUmlPortParser extends AbstractInternalAntlrParser {
 
 
 	// $ANTLR start "ruleModifierSpecification"
-	// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:615:1: ruleModifierSpecification returns [EObject current=null] : ( ( (lv_value_0_0= ruleModifierKind ) ) | (
+	// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:621:1: ruleModifierSpecification returns [EObject current=null] : ( ( (lv_value_0_0= ruleModifierKind ) ) | (
 	// (lv_redefines_1_0= ruleRedefinesRule ) ) | ( (lv_subsets_2_0= ruleSubsetsRule ) ) ) ;
 	public final EObject ruleModifierSpecification() throws RecognitionException {
 		EObject current = null;
@@ -1568,51 +1598,51 @@ public class InternalUmlPortParser extends AbstractInternalAntlrParser {
 		enterRule();
 
 		try {
-			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:618:28: ( ( ( (lv_value_0_0= ruleModifierKind ) ) | ( (lv_redefines_1_0= ruleRedefinesRule ) ) | (
+			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:624:28: ( ( ( (lv_value_0_0= ruleModifierKind ) ) | ( (lv_redefines_1_0= ruleRedefinesRule ) ) | (
 			// (lv_subsets_2_0= ruleSubsetsRule ) ) ) )
-			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:619:1: ( ( (lv_value_0_0= ruleModifierKind ) ) | ( (lv_redefines_1_0= ruleRedefinesRule ) ) | (
+			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:625:1: ( ( (lv_value_0_0= ruleModifierKind ) ) | ( (lv_redefines_1_0= ruleRedefinesRule ) ) | (
 			// (lv_subsets_2_0= ruleSubsetsRule ) ) )
 			{
-				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:619:1: ( ( (lv_value_0_0= ruleModifierKind ) ) | ( (lv_redefines_1_0= ruleRedefinesRule ) ) | (
+				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:625:1: ( ( (lv_value_0_0= ruleModifierKind ) ) | ( (lv_redefines_1_0= ruleRedefinesRule ) ) | (
 				// (lv_subsets_2_0= ruleSubsetsRule ) ) )
-				int alt14 = 3;
+				int alt15 = 3;
 				switch (input.LA(1)) {
 				case 33:
 				case 34:
 				case 35:
 				case 36: {
-					alt14 = 1;
+					alt15 = 1;
 				}
 					break;
 				case 24: {
-					alt14 = 2;
+					alt15 = 2;
 				}
 					break;
 				case 25: {
-					alt14 = 3;
+					alt15 = 3;
 				}
 					break;
 				default:
 					NoViableAltException nvae =
-							new NoViableAltException("", 14, 0, input);
+							new NoViableAltException("", 15, 0, input);
 
 					throw nvae;
 				}
 
-				switch (alt14) {
+				switch (alt15) {
 				case 1:
-				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:619:2: ( (lv_value_0_0= ruleModifierKind ) )
+				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:625:2: ( (lv_value_0_0= ruleModifierKind ) )
 				{
-					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:619:2: ( (lv_value_0_0= ruleModifierKind ) )
-					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:620:1: (lv_value_0_0= ruleModifierKind )
+					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:625:2: ( (lv_value_0_0= ruleModifierKind ) )
+					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:626:1: (lv_value_0_0= ruleModifierKind )
 					{
-						// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:620:1: (lv_value_0_0= ruleModifierKind )
-						// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:621:3: lv_value_0_0= ruleModifierKind
+						// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:626:1: (lv_value_0_0= ruleModifierKind )
+						// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:627:3: lv_value_0_0= ruleModifierKind
 						{
 
 							newCompositeNode(grammarAccess.getModifierSpecificationAccess().getValueModifierKindEnumRuleCall_0_0());
 
-							pushFollow(FOLLOW_ruleModifierKind_in_ruleModifierSpecification1289);
+							pushFollow(FOLLOW_ruleModifierKind_in_ruleModifierSpecification1301);
 							lv_value_0_0 = ruleModifierKind();
 
 							state._fsp--;
@@ -1638,18 +1668,18 @@ public class InternalUmlPortParser extends AbstractInternalAntlrParser {
 				}
 					break;
 				case 2:
-				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:638:6: ( (lv_redefines_1_0= ruleRedefinesRule ) )
+				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:644:6: ( (lv_redefines_1_0= ruleRedefinesRule ) )
 				{
-					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:638:6: ( (lv_redefines_1_0= ruleRedefinesRule ) )
-					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:639:1: (lv_redefines_1_0= ruleRedefinesRule )
+					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:644:6: ( (lv_redefines_1_0= ruleRedefinesRule ) )
+					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:645:1: (lv_redefines_1_0= ruleRedefinesRule )
 					{
-						// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:639:1: (lv_redefines_1_0= ruleRedefinesRule )
-						// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:640:3: lv_redefines_1_0= ruleRedefinesRule
+						// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:645:1: (lv_redefines_1_0= ruleRedefinesRule )
+						// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:646:3: lv_redefines_1_0= ruleRedefinesRule
 						{
 
 							newCompositeNode(grammarAccess.getModifierSpecificationAccess().getRedefinesRedefinesRuleParserRuleCall_1_0());
 
-							pushFollow(FOLLOW_ruleRedefinesRule_in_ruleModifierSpecification1316);
+							pushFollow(FOLLOW_ruleRedefinesRule_in_ruleModifierSpecification1328);
 							lv_redefines_1_0 = ruleRedefinesRule();
 
 							state._fsp--;
@@ -1675,18 +1705,18 @@ public class InternalUmlPortParser extends AbstractInternalAntlrParser {
 				}
 					break;
 				case 3:
-				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:657:6: ( (lv_subsets_2_0= ruleSubsetsRule ) )
+				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:663:6: ( (lv_subsets_2_0= ruleSubsetsRule ) )
 				{
-					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:657:6: ( (lv_subsets_2_0= ruleSubsetsRule ) )
-					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:658:1: (lv_subsets_2_0= ruleSubsetsRule )
+					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:663:6: ( (lv_subsets_2_0= ruleSubsetsRule ) )
+					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:664:1: (lv_subsets_2_0= ruleSubsetsRule )
 					{
-						// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:658:1: (lv_subsets_2_0= ruleSubsetsRule )
-						// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:659:3: lv_subsets_2_0= ruleSubsetsRule
+						// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:664:1: (lv_subsets_2_0= ruleSubsetsRule )
+						// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:665:3: lv_subsets_2_0= ruleSubsetsRule
 						{
 
 							newCompositeNode(grammarAccess.getModifierSpecificationAccess().getSubsetsSubsetsRuleParserRuleCall_2_0());
 
-							pushFollow(FOLLOW_ruleSubsetsRule_in_ruleModifierSpecification1343);
+							pushFollow(FOLLOW_ruleSubsetsRule_in_ruleModifierSpecification1355);
 							lv_subsets_2_0 = ruleSubsetsRule();
 
 							state._fsp--;
@@ -1732,7 +1762,7 @@ public class InternalUmlPortParser extends AbstractInternalAntlrParser {
 
 
 	// $ANTLR start "entryRuleRedefinesRule"
-	// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:683:1: entryRuleRedefinesRule returns [EObject current=null] : iv_ruleRedefinesRule= ruleRedefinesRule EOF ;
+	// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:689:1: entryRuleRedefinesRule returns [EObject current=null] : iv_ruleRedefinesRule= ruleRedefinesRule EOF ;
 	public final EObject entryRuleRedefinesRule() throws RecognitionException {
 		EObject current = null;
 
@@ -1740,17 +1770,17 @@ public class InternalUmlPortParser extends AbstractInternalAntlrParser {
 
 
 		try {
-			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:684:2: (iv_ruleRedefinesRule= ruleRedefinesRule EOF )
-			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:685:2: iv_ruleRedefinesRule= ruleRedefinesRule EOF
+			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:690:2: (iv_ruleRedefinesRule= ruleRedefinesRule EOF )
+			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:691:2: iv_ruleRedefinesRule= ruleRedefinesRule EOF
 			{
 				newCompositeNode(grammarAccess.getRedefinesRuleRule());
-				pushFollow(FOLLOW_ruleRedefinesRule_in_entryRuleRedefinesRule1379);
+				pushFollow(FOLLOW_ruleRedefinesRule_in_entryRuleRedefinesRule1391);
 				iv_ruleRedefinesRule = ruleRedefinesRule();
 
 				state._fsp--;
 
 				current = iv_ruleRedefinesRule;
-				match(input, EOF, FOLLOW_EOF_in_entryRuleRedefinesRule1389);
+				match(input, EOF, FOLLOW_EOF_in_entryRuleRedefinesRule1401);
 
 			}
 
@@ -1768,7 +1798,7 @@ public class InternalUmlPortParser extends AbstractInternalAntlrParser {
 
 
 	// $ANTLR start "ruleRedefinesRule"
-	// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:692:1: ruleRedefinesRule returns [EObject current=null] : (otherlv_0= 'redefines' ( (otherlv_1= RULE_ID ) ) ) ;
+	// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:698:1: ruleRedefinesRule returns [EObject current=null] : (otherlv_0= 'redefines' ( (otherlv_1= RULE_ID ) ) ) ;
 	public final EObject ruleRedefinesRule() throws RecognitionException {
 		EObject current = null;
 
@@ -1778,28 +1808,28 @@ public class InternalUmlPortParser extends AbstractInternalAntlrParser {
 		enterRule();
 
 		try {
-			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:695:28: ( (otherlv_0= 'redefines' ( (otherlv_1= RULE_ID ) ) ) )
-			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:696:1: (otherlv_0= 'redefines' ( (otherlv_1= RULE_ID ) ) )
+			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:701:28: ( (otherlv_0= 'redefines' ( (otherlv_1= RULE_ID ) ) ) )
+			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:702:1: (otherlv_0= 'redefines' ( (otherlv_1= RULE_ID ) ) )
 			{
-				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:696:1: (otherlv_0= 'redefines' ( (otherlv_1= RULE_ID ) ) )
-				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:696:3: otherlv_0= 'redefines' ( (otherlv_1= RULE_ID ) )
+				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:702:1: (otherlv_0= 'redefines' ( (otherlv_1= RULE_ID ) ) )
+				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:702:3: otherlv_0= 'redefines' ( (otherlv_1= RULE_ID ) )
 				{
-					otherlv_0 = (Token) match(input, 24, FOLLOW_24_in_ruleRedefinesRule1426);
+					otherlv_0 = (Token) match(input, 24, FOLLOW_24_in_ruleRedefinesRule1438);
 
 					newLeafNode(otherlv_0, grammarAccess.getRedefinesRuleAccess().getRedefinesKeyword_0());
 
-					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:700:1: ( (otherlv_1= RULE_ID ) )
-					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:701:1: (otherlv_1= RULE_ID )
+					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:706:1: ( (otherlv_1= RULE_ID ) )
+					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:707:1: (otherlv_1= RULE_ID )
 					{
-						// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:701:1: (otherlv_1= RULE_ID )
-						// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:702:3: otherlv_1= RULE_ID
+						// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:707:1: (otherlv_1= RULE_ID )
+						// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:708:3: otherlv_1= RULE_ID
 						{
 
 							if (current == null) {
 								current = createModelElement(grammarAccess.getRedefinesRuleRule());
 							}
 
-							otherlv_1 = (Token) match(input, RULE_ID, FOLLOW_RULE_ID_in_ruleRedefinesRule1446);
+							otherlv_1 = (Token) match(input, RULE_ID, FOLLOW_RULE_ID_in_ruleRedefinesRule1458);
 
 							newLeafNode(otherlv_1, grammarAccess.getRedefinesRuleAccess().getPortPortCrossReference_1_0());
 
@@ -1830,7 +1860,7 @@ public class InternalUmlPortParser extends AbstractInternalAntlrParser {
 
 
 	// $ANTLR start "entryRuleSubsetsRule"
-	// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:721:1: entryRuleSubsetsRule returns [EObject current=null] : iv_ruleSubsetsRule= ruleSubsetsRule EOF ;
+	// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:727:1: entryRuleSubsetsRule returns [EObject current=null] : iv_ruleSubsetsRule= ruleSubsetsRule EOF ;
 	public final EObject entryRuleSubsetsRule() throws RecognitionException {
 		EObject current = null;
 
@@ -1838,17 +1868,17 @@ public class InternalUmlPortParser extends AbstractInternalAntlrParser {
 
 
 		try {
-			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:722:2: (iv_ruleSubsetsRule= ruleSubsetsRule EOF )
-			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:723:2: iv_ruleSubsetsRule= ruleSubsetsRule EOF
+			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:728:2: (iv_ruleSubsetsRule= ruleSubsetsRule EOF )
+			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:729:2: iv_ruleSubsetsRule= ruleSubsetsRule EOF
 			{
 				newCompositeNode(grammarAccess.getSubsetsRuleRule());
-				pushFollow(FOLLOW_ruleSubsetsRule_in_entryRuleSubsetsRule1482);
+				pushFollow(FOLLOW_ruleSubsetsRule_in_entryRuleSubsetsRule1494);
 				iv_ruleSubsetsRule = ruleSubsetsRule();
 
 				state._fsp--;
 
 				current = iv_ruleSubsetsRule;
-				match(input, EOF, FOLLOW_EOF_in_entryRuleSubsetsRule1492);
+				match(input, EOF, FOLLOW_EOF_in_entryRuleSubsetsRule1504);
 
 			}
 
@@ -1866,7 +1896,7 @@ public class InternalUmlPortParser extends AbstractInternalAntlrParser {
 
 
 	// $ANTLR start "ruleSubsetsRule"
-	// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:730:1: ruleSubsetsRule returns [EObject current=null] : (otherlv_0= 'subsets' ( (otherlv_1= RULE_ID ) ) ) ;
+	// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:736:1: ruleSubsetsRule returns [EObject current=null] : (otherlv_0= 'subsets' ( (otherlv_1= RULE_ID ) ) ) ;
 	public final EObject ruleSubsetsRule() throws RecognitionException {
 		EObject current = null;
 
@@ -1876,28 +1906,28 @@ public class InternalUmlPortParser extends AbstractInternalAntlrParser {
 		enterRule();
 
 		try {
-			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:733:28: ( (otherlv_0= 'subsets' ( (otherlv_1= RULE_ID ) ) ) )
-			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:734:1: (otherlv_0= 'subsets' ( (otherlv_1= RULE_ID ) ) )
+			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:739:28: ( (otherlv_0= 'subsets' ( (otherlv_1= RULE_ID ) ) ) )
+			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:740:1: (otherlv_0= 'subsets' ( (otherlv_1= RULE_ID ) ) )
 			{
-				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:734:1: (otherlv_0= 'subsets' ( (otherlv_1= RULE_ID ) ) )
-				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:734:3: otherlv_0= 'subsets' ( (otherlv_1= RULE_ID ) )
+				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:740:1: (otherlv_0= 'subsets' ( (otherlv_1= RULE_ID ) ) )
+				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:740:3: otherlv_0= 'subsets' ( (otherlv_1= RULE_ID ) )
 				{
-					otherlv_0 = (Token) match(input, 25, FOLLOW_25_in_ruleSubsetsRule1529);
+					otherlv_0 = (Token) match(input, 25, FOLLOW_25_in_ruleSubsetsRule1541);
 
 					newLeafNode(otherlv_0, grammarAccess.getSubsetsRuleAccess().getSubsetsKeyword_0());
 
-					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:738:1: ( (otherlv_1= RULE_ID ) )
-					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:739:1: (otherlv_1= RULE_ID )
+					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:744:1: ( (otherlv_1= RULE_ID ) )
+					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:745:1: (otherlv_1= RULE_ID )
 					{
-						// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:739:1: (otherlv_1= RULE_ID )
-						// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:740:3: otherlv_1= RULE_ID
+						// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:745:1: (otherlv_1= RULE_ID )
+						// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:746:3: otherlv_1= RULE_ID
 						{
 
 							if (current == null) {
 								current = createModelElement(grammarAccess.getSubsetsRuleRule());
 							}
 
-							otherlv_1 = (Token) match(input, RULE_ID, FOLLOW_RULE_ID_in_ruleSubsetsRule1549);
+							otherlv_1 = (Token) match(input, RULE_ID, FOLLOW_RULE_ID_in_ruleSubsetsRule1561);
 
 							newLeafNode(otherlv_1, grammarAccess.getSubsetsRuleAccess().getPortPortCrossReference_1_0());
 
@@ -1928,7 +1958,7 @@ public class InternalUmlPortParser extends AbstractInternalAntlrParser {
 
 
 	// $ANTLR start "entryRuleDefaultValueRule"
-	// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:759:1: entryRuleDefaultValueRule returns [EObject current=null] : iv_ruleDefaultValueRule= ruleDefaultValueRule
+	// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:765:1: entryRuleDefaultValueRule returns [EObject current=null] : iv_ruleDefaultValueRule= ruleDefaultValueRule
 	// EOF ;
 	public final EObject entryRuleDefaultValueRule() throws RecognitionException {
 		EObject current = null;
@@ -1937,17 +1967,17 @@ public class InternalUmlPortParser extends AbstractInternalAntlrParser {
 
 
 		try {
-			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:760:2: (iv_ruleDefaultValueRule= ruleDefaultValueRule EOF )
-			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:761:2: iv_ruleDefaultValueRule= ruleDefaultValueRule EOF
+			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:766:2: (iv_ruleDefaultValueRule= ruleDefaultValueRule EOF )
+			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:767:2: iv_ruleDefaultValueRule= ruleDefaultValueRule EOF
 			{
 				newCompositeNode(grammarAccess.getDefaultValueRuleRule());
-				pushFollow(FOLLOW_ruleDefaultValueRule_in_entryRuleDefaultValueRule1585);
+				pushFollow(FOLLOW_ruleDefaultValueRule_in_entryRuleDefaultValueRule1597);
 				iv_ruleDefaultValueRule = ruleDefaultValueRule();
 
 				state._fsp--;
 
 				current = iv_ruleDefaultValueRule;
-				match(input, EOF, FOLLOW_EOF_in_entryRuleDefaultValueRule1595);
+				match(input, EOF, FOLLOW_EOF_in_entryRuleDefaultValueRule1607);
 
 			}
 
@@ -1965,7 +1995,7 @@ public class InternalUmlPortParser extends AbstractInternalAntlrParser {
 
 
 	// $ANTLR start "ruleDefaultValueRule"
-	// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:768:1: ruleDefaultValueRule returns [EObject current=null] : (otherlv_0= '=' ( (lv_default_1_0= ruleValue ) ) ) ;
+	// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:774:1: ruleDefaultValueRule returns [EObject current=null] : (otherlv_0= '=' ( (lv_default_1_0= ruleValue ) ) ) ;
 	public final EObject ruleDefaultValueRule() throws RecognitionException {
 		EObject current = null;
 
@@ -1976,26 +2006,26 @@ public class InternalUmlPortParser extends AbstractInternalAntlrParser {
 		enterRule();
 
 		try {
-			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:771:28: ( (otherlv_0= '=' ( (lv_default_1_0= ruleValue ) ) ) )
-			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:772:1: (otherlv_0= '=' ( (lv_default_1_0= ruleValue ) ) )
+			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:777:28: ( (otherlv_0= '=' ( (lv_default_1_0= ruleValue ) ) ) )
+			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:778:1: (otherlv_0= '=' ( (lv_default_1_0= ruleValue ) ) )
 			{
-				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:772:1: (otherlv_0= '=' ( (lv_default_1_0= ruleValue ) ) )
-				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:772:3: otherlv_0= '=' ( (lv_default_1_0= ruleValue ) )
+				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:778:1: (otherlv_0= '=' ( (lv_default_1_0= ruleValue ) ) )
+				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:778:3: otherlv_0= '=' ( (lv_default_1_0= ruleValue ) )
 				{
-					otherlv_0 = (Token) match(input, 26, FOLLOW_26_in_ruleDefaultValueRule1632);
+					otherlv_0 = (Token) match(input, 26, FOLLOW_26_in_ruleDefaultValueRule1644);
 
 					newLeafNode(otherlv_0, grammarAccess.getDefaultValueRuleAccess().getEqualsSignKeyword_0());
 
-					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:776:1: ( (lv_default_1_0= ruleValue ) )
-					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:777:1: (lv_default_1_0= ruleValue )
+					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:782:1: ( (lv_default_1_0= ruleValue ) )
+					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:783:1: (lv_default_1_0= ruleValue )
 					{
-						// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:777:1: (lv_default_1_0= ruleValue )
-						// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:778:3: lv_default_1_0= ruleValue
+						// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:783:1: (lv_default_1_0= ruleValue )
+						// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:784:3: lv_default_1_0= ruleValue
 						{
 
 							newCompositeNode(grammarAccess.getDefaultValueRuleAccess().getDefaultValueParserRuleCall_1_0());
 
-							pushFollow(FOLLOW_ruleValue_in_ruleDefaultValueRule1653);
+							pushFollow(FOLLOW_ruleValue_in_ruleDefaultValueRule1665);
 							lv_default_1_0 = ruleValue();
 
 							state._fsp--;
@@ -2038,7 +2068,7 @@ public class InternalUmlPortParser extends AbstractInternalAntlrParser {
 
 
 	// $ANTLR start "entryRuleValue"
-	// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:802:1: entryRuleValue returns [EObject current=null] : iv_ruleValue= ruleValue EOF ;
+	// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:808:1: entryRuleValue returns [EObject current=null] : iv_ruleValue= ruleValue EOF ;
 	public final EObject entryRuleValue() throws RecognitionException {
 		EObject current = null;
 
@@ -2046,17 +2076,17 @@ public class InternalUmlPortParser extends AbstractInternalAntlrParser {
 
 
 		try {
-			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:803:2: (iv_ruleValue= ruleValue EOF )
-			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:804:2: iv_ruleValue= ruleValue EOF
+			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:809:2: (iv_ruleValue= ruleValue EOF )
+			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:810:2: iv_ruleValue= ruleValue EOF
 			{
 				newCompositeNode(grammarAccess.getValueRule());
-				pushFollow(FOLLOW_ruleValue_in_entryRuleValue1689);
+				pushFollow(FOLLOW_ruleValue_in_entryRuleValue1701);
 				iv_ruleValue = ruleValue();
 
 				state._fsp--;
 
 				current = iv_ruleValue;
-				match(input, EOF, FOLLOW_EOF_in_entryRuleValue1699);
+				match(input, EOF, FOLLOW_EOF_in_entryRuleValue1711);
 
 			}
 
@@ -2074,7 +2104,7 @@ public class InternalUmlPortParser extends AbstractInternalAntlrParser {
 
 
 	// $ANTLR start "ruleValue"
-	// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:811:1: ruleValue returns [EObject current=null] : (this_IntValue_0= ruleIntValue | this_StringValue_1=
+	// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:817:1: ruleValue returns [EObject current=null] : (this_IntValue_0= ruleIntValue | this_StringValue_1=
 	// ruleStringValue | this_BooleanValue_2= ruleBooleanValue | this_RealValue_3= ruleRealValue | this_NullValue_4= ruleNullValue | this_NoValue_5= ruleNoValue ) ;
 	public final EObject ruleValue() throws RecognitionException {
 		EObject current = null;
@@ -2095,68 +2125,68 @@ public class InternalUmlPortParser extends AbstractInternalAntlrParser {
 		enterRule();
 
 		try {
-			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:814:28: ( (this_IntValue_0= ruleIntValue | this_StringValue_1= ruleStringValue | this_BooleanValue_2=
+			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:820:28: ( (this_IntValue_0= ruleIntValue | this_StringValue_1= ruleStringValue | this_BooleanValue_2=
 			// ruleBooleanValue | this_RealValue_3= ruleRealValue | this_NullValue_4= ruleNullValue | this_NoValue_5= ruleNoValue ) )
-			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:815:1: (this_IntValue_0= ruleIntValue | this_StringValue_1= ruleStringValue | this_BooleanValue_2=
+			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:821:1: (this_IntValue_0= ruleIntValue | this_StringValue_1= ruleStringValue | this_BooleanValue_2=
 			// ruleBooleanValue | this_RealValue_3= ruleRealValue | this_NullValue_4= ruleNullValue | this_NoValue_5= ruleNoValue )
 			{
-				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:815:1: (this_IntValue_0= ruleIntValue | this_StringValue_1= ruleStringValue | this_BooleanValue_2=
+				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:821:1: (this_IntValue_0= ruleIntValue | this_StringValue_1= ruleStringValue | this_BooleanValue_2=
 				// ruleBooleanValue | this_RealValue_3= ruleRealValue | this_NullValue_4= ruleNullValue | this_NoValue_5= ruleNoValue )
-				int alt15 = 6;
+				int alt16 = 6;
 				switch (input.LA(1)) {
 				case RULE_INT: {
-					int LA15_1 = input.LA(2);
+					int LA16_1 = input.LA(2);
 
-					if ((LA15_1 == 27)) {
-						alt15 = 4;
+					if ((LA16_1 == 27)) {
+						alt16 = 4;
 					}
-					else if ((LA15_1 == EOF)) {
-						alt15 = 1;
+					else if ((LA16_1 == EOF)) {
+						alt16 = 1;
 					}
 					else {
 						NoViableAltException nvae =
-								new NoViableAltException("", 15, 1, input);
+								new NoViableAltException("", 16, 1, input);
 
 						throw nvae;
 					}
 				}
 					break;
 				case RULE_STRING: {
-					alt15 = 2;
+					alt16 = 2;
 				}
 					break;
 				case 37:
 				case 38: {
-					alt15 = 3;
+					alt16 = 3;
 				}
 					break;
 				case 27: {
-					alt15 = 4;
+					alt16 = 4;
 				}
 					break;
 				case 28: {
-					alt15 = 5;
+					alt16 = 5;
 				}
 					break;
 				case 29: {
-					alt15 = 6;
+					alt16 = 6;
 				}
 					break;
 				default:
 					NoViableAltException nvae =
-							new NoViableAltException("", 15, 0, input);
+							new NoViableAltException("", 16, 0, input);
 
 					throw nvae;
 				}
 
-				switch (alt15) {
+				switch (alt16) {
 				case 1:
-				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:816:5: this_IntValue_0= ruleIntValue
+				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:822:5: this_IntValue_0= ruleIntValue
 				{
 
 					newCompositeNode(grammarAccess.getValueAccess().getIntValueParserRuleCall_0());
 
-					pushFollow(FOLLOW_ruleIntValue_in_ruleValue1746);
+					pushFollow(FOLLOW_ruleIntValue_in_ruleValue1758);
 					this_IntValue_0 = ruleIntValue();
 
 					state._fsp--;
@@ -2169,12 +2199,12 @@ public class InternalUmlPortParser extends AbstractInternalAntlrParser {
 				}
 					break;
 				case 2:
-				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:826:5: this_StringValue_1= ruleStringValue
+				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:832:5: this_StringValue_1= ruleStringValue
 				{
 
 					newCompositeNode(grammarAccess.getValueAccess().getStringValueParserRuleCall_1());
 
-					pushFollow(FOLLOW_ruleStringValue_in_ruleValue1773);
+					pushFollow(FOLLOW_ruleStringValue_in_ruleValue1785);
 					this_StringValue_1 = ruleStringValue();
 
 					state._fsp--;
@@ -2187,12 +2217,12 @@ public class InternalUmlPortParser extends AbstractInternalAntlrParser {
 				}
 					break;
 				case 3:
-				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:836:5: this_BooleanValue_2= ruleBooleanValue
+				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:842:5: this_BooleanValue_2= ruleBooleanValue
 				{
 
 					newCompositeNode(grammarAccess.getValueAccess().getBooleanValueParserRuleCall_2());
 
-					pushFollow(FOLLOW_ruleBooleanValue_in_ruleValue1800);
+					pushFollow(FOLLOW_ruleBooleanValue_in_ruleValue1812);
 					this_BooleanValue_2 = ruleBooleanValue();
 
 					state._fsp--;
@@ -2205,12 +2235,12 @@ public class InternalUmlPortParser extends AbstractInternalAntlrParser {
 				}
 					break;
 				case 4:
-				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:846:5: this_RealValue_3= ruleRealValue
+				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:852:5: this_RealValue_3= ruleRealValue
 				{
 
 					newCompositeNode(grammarAccess.getValueAccess().getRealValueParserRuleCall_3());
 
-					pushFollow(FOLLOW_ruleRealValue_in_ruleValue1827);
+					pushFollow(FOLLOW_ruleRealValue_in_ruleValue1839);
 					this_RealValue_3 = ruleRealValue();
 
 					state._fsp--;
@@ -2223,12 +2253,12 @@ public class InternalUmlPortParser extends AbstractInternalAntlrParser {
 				}
 					break;
 				case 5:
-				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:856:5: this_NullValue_4= ruleNullValue
+				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:862:5: this_NullValue_4= ruleNullValue
 				{
 
 					newCompositeNode(grammarAccess.getValueAccess().getNullValueParserRuleCall_4());
 
-					pushFollow(FOLLOW_ruleNullValue_in_ruleValue1854);
+					pushFollow(FOLLOW_ruleNullValue_in_ruleValue1866);
 					this_NullValue_4 = ruleNullValue();
 
 					state._fsp--;
@@ -2241,12 +2271,12 @@ public class InternalUmlPortParser extends AbstractInternalAntlrParser {
 				}
 					break;
 				case 6:
-				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:866:5: this_NoValue_5= ruleNoValue
+				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:872:5: this_NoValue_5= ruleNoValue
 				{
 
 					newCompositeNode(grammarAccess.getValueAccess().getNoValueParserRuleCall_5());
 
-					pushFollow(FOLLOW_ruleNoValue_in_ruleValue1881);
+					pushFollow(FOLLOW_ruleNoValue_in_ruleValue1893);
 					this_NoValue_5 = ruleNoValue();
 
 					state._fsp--;
@@ -2279,7 +2309,7 @@ public class InternalUmlPortParser extends AbstractInternalAntlrParser {
 
 
 	// $ANTLR start "entryRuleIntValue"
-	// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:882:1: entryRuleIntValue returns [EObject current=null] : iv_ruleIntValue= ruleIntValue EOF ;
+	// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:888:1: entryRuleIntValue returns [EObject current=null] : iv_ruleIntValue= ruleIntValue EOF ;
 	public final EObject entryRuleIntValue() throws RecognitionException {
 		EObject current = null;
 
@@ -2287,17 +2317,17 @@ public class InternalUmlPortParser extends AbstractInternalAntlrParser {
 
 
 		try {
-			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:883:2: (iv_ruleIntValue= ruleIntValue EOF )
-			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:884:2: iv_ruleIntValue= ruleIntValue EOF
+			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:889:2: (iv_ruleIntValue= ruleIntValue EOF )
+			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:890:2: iv_ruleIntValue= ruleIntValue EOF
 			{
 				newCompositeNode(grammarAccess.getIntValueRule());
-				pushFollow(FOLLOW_ruleIntValue_in_entryRuleIntValue1916);
+				pushFollow(FOLLOW_ruleIntValue_in_entryRuleIntValue1928);
 				iv_ruleIntValue = ruleIntValue();
 
 				state._fsp--;
 
 				current = iv_ruleIntValue;
-				match(input, EOF, FOLLOW_EOF_in_entryRuleIntValue1926);
+				match(input, EOF, FOLLOW_EOF_in_entryRuleIntValue1938);
 
 			}
 
@@ -2315,7 +2345,7 @@ public class InternalUmlPortParser extends AbstractInternalAntlrParser {
 
 
 	// $ANTLR start "ruleIntValue"
-	// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:891:1: ruleIntValue returns [EObject current=null] : ( (lv_literalInteger_0_0= RULE_INT ) ) ;
+	// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:897:1: ruleIntValue returns [EObject current=null] : ( (lv_literalInteger_0_0= RULE_INT ) ) ;
 	public final EObject ruleIntValue() throws RecognitionException {
 		EObject current = null;
 
@@ -2324,16 +2354,16 @@ public class InternalUmlPortParser extends AbstractInternalAntlrParser {
 		enterRule();
 
 		try {
-			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:894:28: ( ( (lv_literalInteger_0_0= RULE_INT ) ) )
-			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:895:1: ( (lv_literalInteger_0_0= RULE_INT ) )
+			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:900:28: ( ( (lv_literalInteger_0_0= RULE_INT ) ) )
+			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:901:1: ( (lv_literalInteger_0_0= RULE_INT ) )
 			{
-				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:895:1: ( (lv_literalInteger_0_0= RULE_INT ) )
-				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:896:1: (lv_literalInteger_0_0= RULE_INT )
+				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:901:1: ( (lv_literalInteger_0_0= RULE_INT ) )
+				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:902:1: (lv_literalInteger_0_0= RULE_INT )
 				{
-					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:896:1: (lv_literalInteger_0_0= RULE_INT )
-					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:897:3: lv_literalInteger_0_0= RULE_INT
+					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:902:1: (lv_literalInteger_0_0= RULE_INT )
+					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:903:3: lv_literalInteger_0_0= RULE_INT
 					{
-						lv_literalInteger_0_0 = (Token) match(input, RULE_INT, FOLLOW_RULE_INT_in_ruleIntValue1967);
+						lv_literalInteger_0_0 = (Token) match(input, RULE_INT, FOLLOW_RULE_INT_in_ruleIntValue1979);
 
 						newLeafNode(lv_literalInteger_0_0, grammarAccess.getIntValueAccess().getLiteralIntegerINTTerminalRuleCall_0());
 
@@ -2371,7 +2401,7 @@ public class InternalUmlPortParser extends AbstractInternalAntlrParser {
 
 
 	// $ANTLR start "entryRuleStringValue"
-	// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:921:1: entryRuleStringValue returns [EObject current=null] : iv_ruleStringValue= ruleStringValue EOF ;
+	// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:927:1: entryRuleStringValue returns [EObject current=null] : iv_ruleStringValue= ruleStringValue EOF ;
 	public final EObject entryRuleStringValue() throws RecognitionException {
 		EObject current = null;
 
@@ -2379,17 +2409,17 @@ public class InternalUmlPortParser extends AbstractInternalAntlrParser {
 
 
 		try {
-			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:922:2: (iv_ruleStringValue= ruleStringValue EOF )
-			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:923:2: iv_ruleStringValue= ruleStringValue EOF
+			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:928:2: (iv_ruleStringValue= ruleStringValue EOF )
+			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:929:2: iv_ruleStringValue= ruleStringValue EOF
 			{
 				newCompositeNode(grammarAccess.getStringValueRule());
-				pushFollow(FOLLOW_ruleStringValue_in_entryRuleStringValue2007);
+				pushFollow(FOLLOW_ruleStringValue_in_entryRuleStringValue2019);
 				iv_ruleStringValue = ruleStringValue();
 
 				state._fsp--;
 
 				current = iv_ruleStringValue;
-				match(input, EOF, FOLLOW_EOF_in_entryRuleStringValue2017);
+				match(input, EOF, FOLLOW_EOF_in_entryRuleStringValue2029);
 
 			}
 
@@ -2407,7 +2437,7 @@ public class InternalUmlPortParser extends AbstractInternalAntlrParser {
 
 
 	// $ANTLR start "ruleStringValue"
-	// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:930:1: ruleStringValue returns [EObject current=null] : ( (lv_literalString_0_0= RULE_STRING ) ) ;
+	// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:936:1: ruleStringValue returns [EObject current=null] : ( (lv_literalString_0_0= RULE_STRING ) ) ;
 	public final EObject ruleStringValue() throws RecognitionException {
 		EObject current = null;
 
@@ -2416,16 +2446,16 @@ public class InternalUmlPortParser extends AbstractInternalAntlrParser {
 		enterRule();
 
 		try {
-			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:933:28: ( ( (lv_literalString_0_0= RULE_STRING ) ) )
-			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:934:1: ( (lv_literalString_0_0= RULE_STRING ) )
+			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:939:28: ( ( (lv_literalString_0_0= RULE_STRING ) ) )
+			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:940:1: ( (lv_literalString_0_0= RULE_STRING ) )
 			{
-				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:934:1: ( (lv_literalString_0_0= RULE_STRING ) )
-				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:935:1: (lv_literalString_0_0= RULE_STRING )
+				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:940:1: ( (lv_literalString_0_0= RULE_STRING ) )
+				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:941:1: (lv_literalString_0_0= RULE_STRING )
 				{
-					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:935:1: (lv_literalString_0_0= RULE_STRING )
-					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:936:3: lv_literalString_0_0= RULE_STRING
+					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:941:1: (lv_literalString_0_0= RULE_STRING )
+					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:942:3: lv_literalString_0_0= RULE_STRING
 					{
-						lv_literalString_0_0 = (Token) match(input, RULE_STRING, FOLLOW_RULE_STRING_in_ruleStringValue2058);
+						lv_literalString_0_0 = (Token) match(input, RULE_STRING, FOLLOW_RULE_STRING_in_ruleStringValue2070);
 
 						newLeafNode(lv_literalString_0_0, grammarAccess.getStringValueAccess().getLiteralStringSTRINGTerminalRuleCall_0());
 
@@ -2463,7 +2493,7 @@ public class InternalUmlPortParser extends AbstractInternalAntlrParser {
 
 
 	// $ANTLR start "entryRuleBooleanValue"
-	// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:960:1: entryRuleBooleanValue returns [EObject current=null] : iv_ruleBooleanValue= ruleBooleanValue EOF ;
+	// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:966:1: entryRuleBooleanValue returns [EObject current=null] : iv_ruleBooleanValue= ruleBooleanValue EOF ;
 	public final EObject entryRuleBooleanValue() throws RecognitionException {
 		EObject current = null;
 
@@ -2471,17 +2501,17 @@ public class InternalUmlPortParser extends AbstractInternalAntlrParser {
 
 
 		try {
-			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:961:2: (iv_ruleBooleanValue= ruleBooleanValue EOF )
-			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:962:2: iv_ruleBooleanValue= ruleBooleanValue EOF
+			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:967:2: (iv_ruleBooleanValue= ruleBooleanValue EOF )
+			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:968:2: iv_ruleBooleanValue= ruleBooleanValue EOF
 			{
 				newCompositeNode(grammarAccess.getBooleanValueRule());
-				pushFollow(FOLLOW_ruleBooleanValue_in_entryRuleBooleanValue2098);
+				pushFollow(FOLLOW_ruleBooleanValue_in_entryRuleBooleanValue2110);
 				iv_ruleBooleanValue = ruleBooleanValue();
 
 				state._fsp--;
 
 				current = iv_ruleBooleanValue;
-				match(input, EOF, FOLLOW_EOF_in_entryRuleBooleanValue2108);
+				match(input, EOF, FOLLOW_EOF_in_entryRuleBooleanValue2120);
 
 			}
 
@@ -2499,7 +2529,7 @@ public class InternalUmlPortParser extends AbstractInternalAntlrParser {
 
 
 	// $ANTLR start "ruleBooleanValue"
-	// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:969:1: ruleBooleanValue returns [EObject current=null] : ( (lv_literalBoolean_0_0= ruleBooleanLiterals ) ) ;
+	// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:975:1: ruleBooleanValue returns [EObject current=null] : ( (lv_literalBoolean_0_0= ruleBooleanLiterals ) ) ;
 	public final EObject ruleBooleanValue() throws RecognitionException {
 		EObject current = null;
 
@@ -2509,19 +2539,19 @@ public class InternalUmlPortParser extends AbstractInternalAntlrParser {
 		enterRule();
 
 		try {
-			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:972:28: ( ( (lv_literalBoolean_0_0= ruleBooleanLiterals ) ) )
-			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:973:1: ( (lv_literalBoolean_0_0= ruleBooleanLiterals ) )
+			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:978:28: ( ( (lv_literalBoolean_0_0= ruleBooleanLiterals ) ) )
+			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:979:1: ( (lv_literalBoolean_0_0= ruleBooleanLiterals ) )
 			{
-				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:973:1: ( (lv_literalBoolean_0_0= ruleBooleanLiterals ) )
-				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:974:1: (lv_literalBoolean_0_0= ruleBooleanLiterals )
+				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:979:1: ( (lv_literalBoolean_0_0= ruleBooleanLiterals ) )
+				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:980:1: (lv_literalBoolean_0_0= ruleBooleanLiterals )
 				{
-					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:974:1: (lv_literalBoolean_0_0= ruleBooleanLiterals )
-					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:975:3: lv_literalBoolean_0_0= ruleBooleanLiterals
+					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:980:1: (lv_literalBoolean_0_0= ruleBooleanLiterals )
+					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:981:3: lv_literalBoolean_0_0= ruleBooleanLiterals
 					{
 
 						newCompositeNode(grammarAccess.getBooleanValueAccess().getLiteralBooleanBooleanLiteralsEnumRuleCall_0());
 
-						pushFollow(FOLLOW_ruleBooleanLiterals_in_ruleBooleanValue2153);
+						pushFollow(FOLLOW_ruleBooleanLiterals_in_ruleBooleanValue2165);
 						lv_literalBoolean_0_0 = ruleBooleanLiterals();
 
 						state._fsp--;
@@ -2561,7 +2591,7 @@ public class InternalUmlPortParser extends AbstractInternalAntlrParser {
 
 
 	// $ANTLR start "entryRuleRealValue"
-	// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:999:1: entryRuleRealValue returns [EObject current=null] : iv_ruleRealValue= ruleRealValue EOF ;
+	// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1005:1: entryRuleRealValue returns [EObject current=null] : iv_ruleRealValue= ruleRealValue EOF ;
 	public final EObject entryRuleRealValue() throws RecognitionException {
 		EObject current = null;
 
@@ -2569,17 +2599,17 @@ public class InternalUmlPortParser extends AbstractInternalAntlrParser {
 
 
 		try {
-			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1000:2: (iv_ruleRealValue= ruleRealValue EOF )
-			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1001:2: iv_ruleRealValue= ruleRealValue EOF
+			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1006:2: (iv_ruleRealValue= ruleRealValue EOF )
+			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1007:2: iv_ruleRealValue= ruleRealValue EOF
 			{
 				newCompositeNode(grammarAccess.getRealValueRule());
-				pushFollow(FOLLOW_ruleRealValue_in_entryRuleRealValue2188);
+				pushFollow(FOLLOW_ruleRealValue_in_entryRuleRealValue2200);
 				iv_ruleRealValue = ruleRealValue();
 
 				state._fsp--;
 
 				current = iv_ruleRealValue;
-				match(input, EOF, FOLLOW_EOF_in_entryRuleRealValue2198);
+				match(input, EOF, FOLLOW_EOF_in_entryRuleRealValue2210);
 
 			}
 
@@ -2597,7 +2627,7 @@ public class InternalUmlPortParser extends AbstractInternalAntlrParser {
 
 
 	// $ANTLR start "ruleRealValue"
-	// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1008:1: ruleRealValue returns [EObject current=null] : ( ( ( (lv_integer_0_0= RULE_INT ) ) otherlv_1= '.' ) |
+	// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1014:1: ruleRealValue returns [EObject current=null] : ( ( ( (lv_integer_0_0= RULE_INT ) ) otherlv_1= '.' ) |
 	// (otherlv_2= '.' ( (lv_fraction_3_0= RULE_INT ) ) ) | ( ( (lv_integer_4_0= RULE_INT ) ) otherlv_5= '.' ( (lv_fraction_6_0= RULE_INT ) ) ) ) ;
 	public final EObject ruleRealValue() throws RecognitionException {
 		EObject current = null;
@@ -2613,65 +2643,65 @@ public class InternalUmlPortParser extends AbstractInternalAntlrParser {
 		enterRule();
 
 		try {
-			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1011:28: ( ( ( ( (lv_integer_0_0= RULE_INT ) ) otherlv_1= '.' ) | (otherlv_2= '.' ( (lv_fraction_3_0=
+			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1017:28: ( ( ( ( (lv_integer_0_0= RULE_INT ) ) otherlv_1= '.' ) | (otherlv_2= '.' ( (lv_fraction_3_0=
 			// RULE_INT ) ) ) | ( ( (lv_integer_4_0= RULE_INT ) ) otherlv_5= '.' ( (lv_fraction_6_0= RULE_INT ) ) ) ) )
-			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1012:1: ( ( ( (lv_integer_0_0= RULE_INT ) ) otherlv_1= '.' ) | (otherlv_2= '.' ( (lv_fraction_3_0=
+			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1018:1: ( ( ( (lv_integer_0_0= RULE_INT ) ) otherlv_1= '.' ) | (otherlv_2= '.' ( (lv_fraction_3_0=
 			// RULE_INT ) ) ) | ( ( (lv_integer_4_0= RULE_INT ) ) otherlv_5= '.' ( (lv_fraction_6_0= RULE_INT ) ) ) )
 			{
-				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1012:1: ( ( ( (lv_integer_0_0= RULE_INT ) ) otherlv_1= '.' ) | (otherlv_2= '.' ( (lv_fraction_3_0=
+				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1018:1: ( ( ( (lv_integer_0_0= RULE_INT ) ) otherlv_1= '.' ) | (otherlv_2= '.' ( (lv_fraction_3_0=
 				// RULE_INT ) ) ) | ( ( (lv_integer_4_0= RULE_INT ) ) otherlv_5= '.' ( (lv_fraction_6_0= RULE_INT ) ) ) )
-				int alt16 = 3;
-				int LA16_0 = input.LA(1);
+				int alt17 = 3;
+				int LA17_0 = input.LA(1);
 
-				if ((LA16_0 == RULE_INT)) {
-					int LA16_1 = input.LA(2);
+				if ((LA17_0 == RULE_INT)) {
+					int LA17_1 = input.LA(2);
 
-					if ((LA16_1 == 27)) {
-						int LA16_3 = input.LA(3);
+					if ((LA17_1 == 27)) {
+						int LA17_3 = input.LA(3);
 
-						if ((LA16_3 == EOF)) {
-							alt16 = 1;
+						if ((LA17_3 == EOF)) {
+							alt17 = 1;
 						}
-						else if ((LA16_3 == RULE_INT)) {
-							alt16 = 3;
+						else if ((LA17_3 == RULE_INT)) {
+							alt17 = 3;
 						}
 						else {
 							NoViableAltException nvae =
-									new NoViableAltException("", 16, 3, input);
+									new NoViableAltException("", 17, 3, input);
 
 							throw nvae;
 						}
 					}
 					else {
 						NoViableAltException nvae =
-								new NoViableAltException("", 16, 1, input);
+								new NoViableAltException("", 17, 1, input);
 
 						throw nvae;
 					}
 				}
-				else if ((LA16_0 == 27)) {
-					alt16 = 2;
+				else if ((LA17_0 == 27)) {
+					alt17 = 2;
 				}
 				else {
 					NoViableAltException nvae =
-							new NoViableAltException("", 16, 0, input);
+							new NoViableAltException("", 17, 0, input);
 
 					throw nvae;
 				}
-				switch (alt16) {
+				switch (alt17) {
 				case 1:
-				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1012:2: ( ( (lv_integer_0_0= RULE_INT ) ) otherlv_1= '.' )
+				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1018:2: ( ( (lv_integer_0_0= RULE_INT ) ) otherlv_1= '.' )
 				{
-					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1012:2: ( ( (lv_integer_0_0= RULE_INT ) ) otherlv_1= '.' )
-					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1012:3: ( (lv_integer_0_0= RULE_INT ) ) otherlv_1= '.'
+					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1018:2: ( ( (lv_integer_0_0= RULE_INT ) ) otherlv_1= '.' )
+					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1018:3: ( (lv_integer_0_0= RULE_INT ) ) otherlv_1= '.'
 					{
-						// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1012:3: ( (lv_integer_0_0= RULE_INT ) )
-						// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1013:1: (lv_integer_0_0= RULE_INT )
+						// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1018:3: ( (lv_integer_0_0= RULE_INT ) )
+						// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1019:1: (lv_integer_0_0= RULE_INT )
 						{
-							// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1013:1: (lv_integer_0_0= RULE_INT )
-							// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1014:3: lv_integer_0_0= RULE_INT
+							// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1019:1: (lv_integer_0_0= RULE_INT )
+							// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1020:3: lv_integer_0_0= RULE_INT
 							{
-								lv_integer_0_0 = (Token) match(input, RULE_INT, FOLLOW_RULE_INT_in_ruleRealValue2241);
+								lv_integer_0_0 = (Token) match(input, RULE_INT, FOLLOW_RULE_INT_in_ruleRealValue2253);
 
 								newLeafNode(lv_integer_0_0, grammarAccess.getRealValueAccess().getIntegerINTTerminalRuleCall_0_0_0());
 
@@ -2691,7 +2721,7 @@ public class InternalUmlPortParser extends AbstractInternalAntlrParser {
 
 						}
 
-						otherlv_1 = (Token) match(input, 27, FOLLOW_27_in_ruleRealValue2258);
+						otherlv_1 = (Token) match(input, 27, FOLLOW_27_in_ruleRealValue2270);
 
 						newLeafNode(otherlv_1, grammarAccess.getRealValueAccess().getFullStopKeyword_0_1());
 
@@ -2702,22 +2732,22 @@ public class InternalUmlPortParser extends AbstractInternalAntlrParser {
 				}
 					break;
 				case 2:
-				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1035:6: (otherlv_2= '.' ( (lv_fraction_3_0= RULE_INT ) ) )
+				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1041:6: (otherlv_2= '.' ( (lv_fraction_3_0= RULE_INT ) ) )
 				{
-					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1035:6: (otherlv_2= '.' ( (lv_fraction_3_0= RULE_INT ) ) )
-					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1035:8: otherlv_2= '.' ( (lv_fraction_3_0= RULE_INT ) )
+					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1041:6: (otherlv_2= '.' ( (lv_fraction_3_0= RULE_INT ) ) )
+					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1041:8: otherlv_2= '.' ( (lv_fraction_3_0= RULE_INT ) )
 					{
-						otherlv_2 = (Token) match(input, 27, FOLLOW_27_in_ruleRealValue2278);
+						otherlv_2 = (Token) match(input, 27, FOLLOW_27_in_ruleRealValue2290);
 
 						newLeafNode(otherlv_2, grammarAccess.getRealValueAccess().getFullStopKeyword_1_0());
 
-						// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1039:1: ( (lv_fraction_3_0= RULE_INT ) )
-						// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1040:1: (lv_fraction_3_0= RULE_INT )
+						// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1045:1: ( (lv_fraction_3_0= RULE_INT ) )
+						// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1046:1: (lv_fraction_3_0= RULE_INT )
 						{
-							// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1040:1: (lv_fraction_3_0= RULE_INT )
-							// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1041:3: lv_fraction_3_0= RULE_INT
+							// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1046:1: (lv_fraction_3_0= RULE_INT )
+							// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1047:3: lv_fraction_3_0= RULE_INT
 							{
-								lv_fraction_3_0 = (Token) match(input, RULE_INT, FOLLOW_RULE_INT_in_ruleRealValue2295);
+								lv_fraction_3_0 = (Token) match(input, RULE_INT, FOLLOW_RULE_INT_in_ruleRealValue2307);
 
 								newLeafNode(lv_fraction_3_0, grammarAccess.getRealValueAccess().getFractionINTTerminalRuleCall_1_1_0());
 
@@ -2744,18 +2774,18 @@ public class InternalUmlPortParser extends AbstractInternalAntlrParser {
 				}
 					break;
 				case 3:
-				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1058:6: ( ( (lv_integer_4_0= RULE_INT ) ) otherlv_5= '.' ( (lv_fraction_6_0= RULE_INT ) ) )
+				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1064:6: ( ( (lv_integer_4_0= RULE_INT ) ) otherlv_5= '.' ( (lv_fraction_6_0= RULE_INT ) ) )
 				{
-					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1058:6: ( ( (lv_integer_4_0= RULE_INT ) ) otherlv_5= '.' ( (lv_fraction_6_0= RULE_INT ) ) )
-					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1058:7: ( (lv_integer_4_0= RULE_INT ) ) otherlv_5= '.' ( (lv_fraction_6_0= RULE_INT ) )
+					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1064:6: ( ( (lv_integer_4_0= RULE_INT ) ) otherlv_5= '.' ( (lv_fraction_6_0= RULE_INT ) ) )
+					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1064:7: ( (lv_integer_4_0= RULE_INT ) ) otherlv_5= '.' ( (lv_fraction_6_0= RULE_INT ) )
 					{
-						// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1058:7: ( (lv_integer_4_0= RULE_INT ) )
-						// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1059:1: (lv_integer_4_0= RULE_INT )
+						// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1064:7: ( (lv_integer_4_0= RULE_INT ) )
+						// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1065:1: (lv_integer_4_0= RULE_INT )
 						{
-							// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1059:1: (lv_integer_4_0= RULE_INT )
-							// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1060:3: lv_integer_4_0= RULE_INT
+							// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1065:1: (lv_integer_4_0= RULE_INT )
+							// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1066:3: lv_integer_4_0= RULE_INT
 							{
-								lv_integer_4_0 = (Token) match(input, RULE_INT, FOLLOW_RULE_INT_in_ruleRealValue2325);
+								lv_integer_4_0 = (Token) match(input, RULE_INT, FOLLOW_RULE_INT_in_ruleRealValue2337);
 
 								newLeafNode(lv_integer_4_0, grammarAccess.getRealValueAccess().getIntegerINTTerminalRuleCall_2_0_0());
 
@@ -2775,17 +2805,17 @@ public class InternalUmlPortParser extends AbstractInternalAntlrParser {
 
 						}
 
-						otherlv_5 = (Token) match(input, 27, FOLLOW_27_in_ruleRealValue2342);
+						otherlv_5 = (Token) match(input, 27, FOLLOW_27_in_ruleRealValue2354);
 
 						newLeafNode(otherlv_5, grammarAccess.getRealValueAccess().getFullStopKeyword_2_1());
 
-						// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1080:1: ( (lv_fraction_6_0= RULE_INT ) )
-						// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1081:1: (lv_fraction_6_0= RULE_INT )
+						// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1086:1: ( (lv_fraction_6_0= RULE_INT ) )
+						// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1087:1: (lv_fraction_6_0= RULE_INT )
 						{
-							// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1081:1: (lv_fraction_6_0= RULE_INT )
-							// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1082:3: lv_fraction_6_0= RULE_INT
+							// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1087:1: (lv_fraction_6_0= RULE_INT )
+							// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1088:3: lv_fraction_6_0= RULE_INT
 							{
-								lv_fraction_6_0 = (Token) match(input, RULE_INT, FOLLOW_RULE_INT_in_ruleRealValue2359);
+								lv_fraction_6_0 = (Token) match(input, RULE_INT, FOLLOW_RULE_INT_in_ruleRealValue2371);
 
 								newLeafNode(lv_fraction_6_0, grammarAccess.getRealValueAccess().getFractionINTTerminalRuleCall_2_2_0());
 
@@ -2832,7 +2862,7 @@ public class InternalUmlPortParser extends AbstractInternalAntlrParser {
 
 
 	// $ANTLR start "entryRuleNullValue"
-	// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1106:1: entryRuleNullValue returns [EObject current=null] : iv_ruleNullValue= ruleNullValue EOF ;
+	// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1112:1: entryRuleNullValue returns [EObject current=null] : iv_ruleNullValue= ruleNullValue EOF ;
 	public final EObject entryRuleNullValue() throws RecognitionException {
 		EObject current = null;
 
@@ -2840,17 +2870,17 @@ public class InternalUmlPortParser extends AbstractInternalAntlrParser {
 
 
 		try {
-			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1107:2: (iv_ruleNullValue= ruleNullValue EOF )
-			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1108:2: iv_ruleNullValue= ruleNullValue EOF
+			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1113:2: (iv_ruleNullValue= ruleNullValue EOF )
+			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1114:2: iv_ruleNullValue= ruleNullValue EOF
 			{
 				newCompositeNode(grammarAccess.getNullValueRule());
-				pushFollow(FOLLOW_ruleNullValue_in_entryRuleNullValue2401);
+				pushFollow(FOLLOW_ruleNullValue_in_entryRuleNullValue2413);
 				iv_ruleNullValue = ruleNullValue();
 
 				state._fsp--;
 
 				current = iv_ruleNullValue;
-				match(input, EOF, FOLLOW_EOF_in_entryRuleNullValue2411);
+				match(input, EOF, FOLLOW_EOF_in_entryRuleNullValue2423);
 
 			}
 
@@ -2868,7 +2898,7 @@ public class InternalUmlPortParser extends AbstractInternalAntlrParser {
 
 
 	// $ANTLR start "ruleNullValue"
-	// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1115:1: ruleNullValue returns [EObject current=null] : ( () otherlv_1= 'null' ) ;
+	// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1121:1: ruleNullValue returns [EObject current=null] : ( () otherlv_1= 'null' ) ;
 	public final EObject ruleNullValue() throws RecognitionException {
 		EObject current = null;
 
@@ -2877,14 +2907,14 @@ public class InternalUmlPortParser extends AbstractInternalAntlrParser {
 		enterRule();
 
 		try {
-			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1118:28: ( ( () otherlv_1= 'null' ) )
-			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1119:1: ( () otherlv_1= 'null' )
+			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1124:28: ( ( () otherlv_1= 'null' ) )
+			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1125:1: ( () otherlv_1= 'null' )
 			{
-				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1119:1: ( () otherlv_1= 'null' )
-				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1119:2: () otherlv_1= 'null'
+				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1125:1: ( () otherlv_1= 'null' )
+				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1125:2: () otherlv_1= 'null'
 				{
-					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1119:2: ()
-					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1120:5:
+					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1125:2: ()
+					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1126:5:
 					{
 
 						current = forceCreateModelElement(
@@ -2894,7 +2924,7 @@ public class InternalUmlPortParser extends AbstractInternalAntlrParser {
 
 					}
 
-					otherlv_1 = (Token) match(input, 28, FOLLOW_28_in_ruleNullValue2457);
+					otherlv_1 = (Token) match(input, 28, FOLLOW_28_in_ruleNullValue2469);
 
 					newLeafNode(otherlv_1, grammarAccess.getNullValueAccess().getNullKeyword_1());
 
@@ -2919,7 +2949,7 @@ public class InternalUmlPortParser extends AbstractInternalAntlrParser {
 
 
 	// $ANTLR start "entryRuleNoValue"
-	// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1137:1: entryRuleNoValue returns [EObject current=null] : iv_ruleNoValue= ruleNoValue EOF ;
+	// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1143:1: entryRuleNoValue returns [EObject current=null] : iv_ruleNoValue= ruleNoValue EOF ;
 	public final EObject entryRuleNoValue() throws RecognitionException {
 		EObject current = null;
 
@@ -2927,17 +2957,17 @@ public class InternalUmlPortParser extends AbstractInternalAntlrParser {
 
 
 		try {
-			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1138:2: (iv_ruleNoValue= ruleNoValue EOF )
-			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1139:2: iv_ruleNoValue= ruleNoValue EOF
+			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1144:2: (iv_ruleNoValue= ruleNoValue EOF )
+			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1145:2: iv_ruleNoValue= ruleNoValue EOF
 			{
 				newCompositeNode(grammarAccess.getNoValueRule());
-				pushFollow(FOLLOW_ruleNoValue_in_entryRuleNoValue2493);
+				pushFollow(FOLLOW_ruleNoValue_in_entryRuleNoValue2505);
 				iv_ruleNoValue = ruleNoValue();
 
 				state._fsp--;
 
 				current = iv_ruleNoValue;
-				match(input, EOF, FOLLOW_EOF_in_entryRuleNoValue2503);
+				match(input, EOF, FOLLOW_EOF_in_entryRuleNoValue2515);
 
 			}
 
@@ -2955,7 +2985,7 @@ public class InternalUmlPortParser extends AbstractInternalAntlrParser {
 
 
 	// $ANTLR start "ruleNoValue"
-	// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1146:1: ruleNoValue returns [EObject current=null] : ( () otherlv_1= 'none' ) ;
+	// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1152:1: ruleNoValue returns [EObject current=null] : ( () otherlv_1= 'none' ) ;
 	public final EObject ruleNoValue() throws RecognitionException {
 		EObject current = null;
 
@@ -2964,14 +2994,14 @@ public class InternalUmlPortParser extends AbstractInternalAntlrParser {
 		enterRule();
 
 		try {
-			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1149:28: ( ( () otherlv_1= 'none' ) )
-			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1150:1: ( () otherlv_1= 'none' )
+			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1155:28: ( ( () otherlv_1= 'none' ) )
+			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1156:1: ( () otherlv_1= 'none' )
 			{
-				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1150:1: ( () otherlv_1= 'none' )
-				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1150:2: () otherlv_1= 'none'
+				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1156:1: ( () otherlv_1= 'none' )
+				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1156:2: () otherlv_1= 'none'
 				{
-					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1150:2: ()
-					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1151:5:
+					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1156:2: ()
+					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1157:5:
 					{
 
 						current = forceCreateModelElement(
@@ -2981,7 +3011,7 @@ public class InternalUmlPortParser extends AbstractInternalAntlrParser {
 
 					}
 
-					otherlv_1 = (Token) match(input, 29, FOLLOW_29_in_ruleNoValue2549);
+					otherlv_1 = (Token) match(input, 29, FOLLOW_29_in_ruleNoValue2561);
 
 					newLeafNode(otherlv_1, grammarAccess.getNoValueAccess().getNoneKeyword_1());
 
@@ -3006,7 +3036,7 @@ public class InternalUmlPortParser extends AbstractInternalAntlrParser {
 
 
 	// $ANTLR start "ruleVisibilityKind"
-	// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1168:1: ruleVisibilityKind returns [Enumerator current=null] : ( (enumLiteral_0= '+' ) | (enumLiteral_1= '-' ) |
+	// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1174:1: ruleVisibilityKind returns [Enumerator current=null] : ( (enumLiteral_0= '+' ) | (enumLiteral_1= '-' ) |
 	// (enumLiteral_2= '#' ) | (enumLiteral_3= '~' ) ) ;
 	public final Enumerator ruleVisibilityKind() throws RecognitionException {
 		Enumerator current = null;
@@ -3018,45 +3048,45 @@ public class InternalUmlPortParser extends AbstractInternalAntlrParser {
 
 		enterRule();
 		try {
-			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1170:28: ( ( (enumLiteral_0= '+' ) | (enumLiteral_1= '-' ) | (enumLiteral_2= '#' ) | (enumLiteral_3= '~' )
+			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1176:28: ( ( (enumLiteral_0= '+' ) | (enumLiteral_1= '-' ) | (enumLiteral_2= '#' ) | (enumLiteral_3= '~' )
 			// ) )
-			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1171:1: ( (enumLiteral_0= '+' ) | (enumLiteral_1= '-' ) | (enumLiteral_2= '#' ) | (enumLiteral_3= '~' ) )
+			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1177:1: ( (enumLiteral_0= '+' ) | (enumLiteral_1= '-' ) | (enumLiteral_2= '#' ) | (enumLiteral_3= '~' ) )
 			{
-				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1171:1: ( (enumLiteral_0= '+' ) | (enumLiteral_1= '-' ) | (enumLiteral_2= '#' ) | (enumLiteral_3= '~'
+				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1177:1: ( (enumLiteral_0= '+' ) | (enumLiteral_1= '-' ) | (enumLiteral_2= '#' ) | (enumLiteral_3= '~'
 				// ) )
-				int alt17 = 4;
+				int alt18 = 4;
 				switch (input.LA(1)) {
 				case 30: {
-					alt17 = 1;
+					alt18 = 1;
 				}
 					break;
 				case 31: {
-					alt17 = 2;
+					alt18 = 2;
 				}
 					break;
 				case 32: {
-					alt17 = 3;
+					alt18 = 3;
 				}
 					break;
 				case 14: {
-					alt17 = 4;
+					alt18 = 4;
 				}
 					break;
 				default:
 					NoViableAltException nvae =
-							new NoViableAltException("", 17, 0, input);
+							new NoViableAltException("", 18, 0, input);
 
 					throw nvae;
 				}
 
-				switch (alt17) {
+				switch (alt18) {
 				case 1:
-				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1171:2: (enumLiteral_0= '+' )
+				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1177:2: (enumLiteral_0= '+' )
 				{
-					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1171:2: (enumLiteral_0= '+' )
-					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1171:4: enumLiteral_0= '+'
+					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1177:2: (enumLiteral_0= '+' )
+					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1177:4: enumLiteral_0= '+'
 					{
-						enumLiteral_0 = (Token) match(input, 30, FOLLOW_30_in_ruleVisibilityKind2599);
+						enumLiteral_0 = (Token) match(input, 30, FOLLOW_30_in_ruleVisibilityKind2611);
 
 						current = grammarAccess.getVisibilityKindAccess().getPublicEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
 						newLeafNode(enumLiteral_0, grammarAccess.getVisibilityKindAccess().getPublicEnumLiteralDeclaration_0());
@@ -3068,12 +3098,12 @@ public class InternalUmlPortParser extends AbstractInternalAntlrParser {
 				}
 					break;
 				case 2:
-				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1177:6: (enumLiteral_1= '-' )
+				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1183:6: (enumLiteral_1= '-' )
 				{
-					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1177:6: (enumLiteral_1= '-' )
-					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1177:8: enumLiteral_1= '-'
+					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1183:6: (enumLiteral_1= '-' )
+					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1183:8: enumLiteral_1= '-'
 					{
-						enumLiteral_1 = (Token) match(input, 31, FOLLOW_31_in_ruleVisibilityKind2616);
+						enumLiteral_1 = (Token) match(input, 31, FOLLOW_31_in_ruleVisibilityKind2628);
 
 						current = grammarAccess.getVisibilityKindAccess().getPrivateEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
 						newLeafNode(enumLiteral_1, grammarAccess.getVisibilityKindAccess().getPrivateEnumLiteralDeclaration_1());
@@ -3085,12 +3115,12 @@ public class InternalUmlPortParser extends AbstractInternalAntlrParser {
 				}
 					break;
 				case 3:
-				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1183:6: (enumLiteral_2= '#' )
+				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1189:6: (enumLiteral_2= '#' )
 				{
-					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1183:6: (enumLiteral_2= '#' )
-					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1183:8: enumLiteral_2= '#'
+					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1189:6: (enumLiteral_2= '#' )
+					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1189:8: enumLiteral_2= '#'
 					{
-						enumLiteral_2 = (Token) match(input, 32, FOLLOW_32_in_ruleVisibilityKind2633);
+						enumLiteral_2 = (Token) match(input, 32, FOLLOW_32_in_ruleVisibilityKind2645);
 
 						current = grammarAccess.getVisibilityKindAccess().getProtectedEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
 						newLeafNode(enumLiteral_2, grammarAccess.getVisibilityKindAccess().getProtectedEnumLiteralDeclaration_2());
@@ -3102,12 +3132,12 @@ public class InternalUmlPortParser extends AbstractInternalAntlrParser {
 				}
 					break;
 				case 4:
-				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1189:6: (enumLiteral_3= '~' )
+				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1195:6: (enumLiteral_3= '~' )
 				{
-					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1189:6: (enumLiteral_3= '~' )
-					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1189:8: enumLiteral_3= '~'
+					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1195:6: (enumLiteral_3= '~' )
+					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1195:8: enumLiteral_3= '~'
 					{
-						enumLiteral_3 = (Token) match(input, 14, FOLLOW_14_in_ruleVisibilityKind2650);
+						enumLiteral_3 = (Token) match(input, 14, FOLLOW_14_in_ruleVisibilityKind2662);
 
 						current = grammarAccess.getVisibilityKindAccess().getPackageEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
 						newLeafNode(enumLiteral_3, grammarAccess.getVisibilityKindAccess().getPackageEnumLiteralDeclaration_3());
@@ -3139,7 +3169,7 @@ public class InternalUmlPortParser extends AbstractInternalAntlrParser {
 
 
 	// $ANTLR start "ruleModifierKind"
-	// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1199:1: ruleModifierKind returns [Enumerator current=null] : ( (enumLiteral_0= 'readOnly' ) | (enumLiteral_1=
+	// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1205:1: ruleModifierKind returns [Enumerator current=null] : ( (enumLiteral_0= 'readOnly' ) | (enumLiteral_1=
 	// 'union' ) | (enumLiteral_2= 'ordered' ) | (enumLiteral_3= 'unique' ) ) ;
 	public final Enumerator ruleModifierKind() throws RecognitionException {
 		Enumerator current = null;
@@ -3151,46 +3181,46 @@ public class InternalUmlPortParser extends AbstractInternalAntlrParser {
 
 		enterRule();
 		try {
-			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1201:28: ( ( (enumLiteral_0= 'readOnly' ) | (enumLiteral_1= 'union' ) | (enumLiteral_2= 'ordered' ) |
+			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1207:28: ( ( (enumLiteral_0= 'readOnly' ) | (enumLiteral_1= 'union' ) | (enumLiteral_2= 'ordered' ) |
 			// (enumLiteral_3= 'unique' ) ) )
-			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1202:1: ( (enumLiteral_0= 'readOnly' ) | (enumLiteral_1= 'union' ) | (enumLiteral_2= 'ordered' ) |
+			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1208:1: ( (enumLiteral_0= 'readOnly' ) | (enumLiteral_1= 'union' ) | (enumLiteral_2= 'ordered' ) |
 			// (enumLiteral_3= 'unique' ) )
 			{
-				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1202:1: ( (enumLiteral_0= 'readOnly' ) | (enumLiteral_1= 'union' ) | (enumLiteral_2= 'ordered' ) |
+				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1208:1: ( (enumLiteral_0= 'readOnly' ) | (enumLiteral_1= 'union' ) | (enumLiteral_2= 'ordered' ) |
 				// (enumLiteral_3= 'unique' ) )
-				int alt18 = 4;
+				int alt19 = 4;
 				switch (input.LA(1)) {
 				case 33: {
-					alt18 = 1;
+					alt19 = 1;
 				}
 					break;
 				case 34: {
-					alt18 = 2;
+					alt19 = 2;
 				}
 					break;
 				case 35: {
-					alt18 = 3;
+					alt19 = 3;
 				}
 					break;
 				case 36: {
-					alt18 = 4;
+					alt19 = 4;
 				}
 					break;
 				default:
 					NoViableAltException nvae =
-							new NoViableAltException("", 18, 0, input);
+							new NoViableAltException("", 19, 0, input);
 
 					throw nvae;
 				}
 
-				switch (alt18) {
+				switch (alt19) {
 				case 1:
-				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1202:2: (enumLiteral_0= 'readOnly' )
+				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1208:2: (enumLiteral_0= 'readOnly' )
 				{
-					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1202:2: (enumLiteral_0= 'readOnly' )
-					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1202:4: enumLiteral_0= 'readOnly'
+					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1208:2: (enumLiteral_0= 'readOnly' )
+					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1208:4: enumLiteral_0= 'readOnly'
 					{
-						enumLiteral_0 = (Token) match(input, 33, FOLLOW_33_in_ruleModifierKind2695);
+						enumLiteral_0 = (Token) match(input, 33, FOLLOW_33_in_ruleModifierKind2707);
 
 						current = grammarAccess.getModifierKindAccess().getReadOnlyEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
 						newLeafNode(enumLiteral_0, grammarAccess.getModifierKindAccess().getReadOnlyEnumLiteralDeclaration_0());
@@ -3202,12 +3232,12 @@ public class InternalUmlPortParser extends AbstractInternalAntlrParser {
 				}
 					break;
 				case 2:
-				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1208:6: (enumLiteral_1= 'union' )
+				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1214:6: (enumLiteral_1= 'union' )
 				{
-					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1208:6: (enumLiteral_1= 'union' )
-					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1208:8: enumLiteral_1= 'union'
+					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1214:6: (enumLiteral_1= 'union' )
+					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1214:8: enumLiteral_1= 'union'
 					{
-						enumLiteral_1 = (Token) match(input, 34, FOLLOW_34_in_ruleModifierKind2712);
+						enumLiteral_1 = (Token) match(input, 34, FOLLOW_34_in_ruleModifierKind2724);
 
 						current = grammarAccess.getModifierKindAccess().getUnionEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
 						newLeafNode(enumLiteral_1, grammarAccess.getModifierKindAccess().getUnionEnumLiteralDeclaration_1());
@@ -3219,12 +3249,12 @@ public class InternalUmlPortParser extends AbstractInternalAntlrParser {
 				}
 					break;
 				case 3:
-				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1214:6: (enumLiteral_2= 'ordered' )
+				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1220:6: (enumLiteral_2= 'ordered' )
 				{
-					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1214:6: (enumLiteral_2= 'ordered' )
-					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1214:8: enumLiteral_2= 'ordered'
+					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1220:6: (enumLiteral_2= 'ordered' )
+					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1220:8: enumLiteral_2= 'ordered'
 					{
-						enumLiteral_2 = (Token) match(input, 35, FOLLOW_35_in_ruleModifierKind2729);
+						enumLiteral_2 = (Token) match(input, 35, FOLLOW_35_in_ruleModifierKind2741);
 
 						current = grammarAccess.getModifierKindAccess().getOrderedEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
 						newLeafNode(enumLiteral_2, grammarAccess.getModifierKindAccess().getOrderedEnumLiteralDeclaration_2());
@@ -3236,12 +3266,12 @@ public class InternalUmlPortParser extends AbstractInternalAntlrParser {
 				}
 					break;
 				case 4:
-				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1220:6: (enumLiteral_3= 'unique' )
+				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1226:6: (enumLiteral_3= 'unique' )
 				{
-					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1220:6: (enumLiteral_3= 'unique' )
-					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1220:8: enumLiteral_3= 'unique'
+					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1226:6: (enumLiteral_3= 'unique' )
+					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1226:8: enumLiteral_3= 'unique'
 					{
-						enumLiteral_3 = (Token) match(input, 36, FOLLOW_36_in_ruleModifierKind2746);
+						enumLiteral_3 = (Token) match(input, 36, FOLLOW_36_in_ruleModifierKind2758);
 
 						current = grammarAccess.getModifierKindAccess().getUniqueEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
 						newLeafNode(enumLiteral_3, grammarAccess.getModifierKindAccess().getUniqueEnumLiteralDeclaration_3());
@@ -3273,7 +3303,7 @@ public class InternalUmlPortParser extends AbstractInternalAntlrParser {
 
 
 	// $ANTLR start "ruleBooleanLiterals"
-	// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1230:1: ruleBooleanLiterals returns [Enumerator current=null] : ( (enumLiteral_0= 'true' ) | (enumLiteral_1=
+	// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1236:1: ruleBooleanLiterals returns [Enumerator current=null] : ( (enumLiteral_0= 'true' ) | (enumLiteral_1=
 	// 'false' ) ) ;
 	public final Enumerator ruleBooleanLiterals() throws RecognitionException {
 		Enumerator current = null;
@@ -3283,33 +3313,33 @@ public class InternalUmlPortParser extends AbstractInternalAntlrParser {
 
 		enterRule();
 		try {
-			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1232:28: ( ( (enumLiteral_0= 'true' ) | (enumLiteral_1= 'false' ) ) )
-			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1233:1: ( (enumLiteral_0= 'true' ) | (enumLiteral_1= 'false' ) )
+			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1238:28: ( ( (enumLiteral_0= 'true' ) | (enumLiteral_1= 'false' ) ) )
+			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1239:1: ( (enumLiteral_0= 'true' ) | (enumLiteral_1= 'false' ) )
 			{
-				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1233:1: ( (enumLiteral_0= 'true' ) | (enumLiteral_1= 'false' ) )
-				int alt19 = 2;
-				int LA19_0 = input.LA(1);
+				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1239:1: ( (enumLiteral_0= 'true' ) | (enumLiteral_1= 'false' ) )
+				int alt20 = 2;
+				int LA20_0 = input.LA(1);
 
-				if ((LA19_0 == 37)) {
-					alt19 = 1;
+				if ((LA20_0 == 37)) {
+					alt20 = 1;
 				}
-				else if ((LA19_0 == 38)) {
-					alt19 = 2;
+				else if ((LA20_0 == 38)) {
+					alt20 = 2;
 				}
 				else {
 					NoViableAltException nvae =
-							new NoViableAltException("", 19, 0, input);
+							new NoViableAltException("", 20, 0, input);
 
 					throw nvae;
 				}
-				switch (alt19) {
+				switch (alt20) {
 				case 1:
-				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1233:2: (enumLiteral_0= 'true' )
+				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1239:2: (enumLiteral_0= 'true' )
 				{
-					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1233:2: (enumLiteral_0= 'true' )
-					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1233:4: enumLiteral_0= 'true'
+					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1239:2: (enumLiteral_0= 'true' )
+					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1239:4: enumLiteral_0= 'true'
 					{
-						enumLiteral_0 = (Token) match(input, 37, FOLLOW_37_in_ruleBooleanLiterals2791);
+						enumLiteral_0 = (Token) match(input, 37, FOLLOW_37_in_ruleBooleanLiterals2803);
 
 						current = grammarAccess.getBooleanLiteralsAccess().getTrueEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
 						newLeafNode(enumLiteral_0, grammarAccess.getBooleanLiteralsAccess().getTrueEnumLiteralDeclaration_0());
@@ -3321,12 +3351,12 @@ public class InternalUmlPortParser extends AbstractInternalAntlrParser {
 				}
 					break;
 				case 2:
-				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1239:6: (enumLiteral_1= 'false' )
+				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1245:6: (enumLiteral_1= 'false' )
 				{
-					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1239:6: (enumLiteral_1= 'false' )
-					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1239:8: enumLiteral_1= 'false'
+					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1245:6: (enumLiteral_1= 'false' )
+					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1245:8: enumLiteral_1= 'false'
 					{
-						enumLiteral_1 = (Token) match(input, 38, FOLLOW_38_in_ruleBooleanLiterals2808);
+						enumLiteral_1 = (Token) match(input, 38, FOLLOW_38_in_ruleBooleanLiterals2820);
 
 						current = grammarAccess.getBooleanLiteralsAccess().getFalseEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
 						newLeafNode(enumLiteral_1, grammarAccess.getBooleanLiteralsAccess().getFalseEnumLiteralDeclaration_1());
@@ -3401,69 +3431,69 @@ public class InternalUmlPortParser extends AbstractInternalAntlrParser {
 	public static final BitSet FOLLOW_20_in_ruleUnlimitedLiteral1041 = new BitSet(new long[] { 0x0000000000000002L });
 	public static final BitSet FOLLOW_ruleModifiersRule_in_entryRuleModifiersRule1081 = new BitSet(new long[] { 0x0000000000000000L });
 	public static final BitSet FOLLOW_EOF_in_entryRuleModifiersRule1091 = new BitSet(new long[] { 0x0000000000000002L });
-	public static final BitSet FOLLOW_21_in_ruleModifiersRule1128 = new BitSet(new long[] { 0x0000001E03000000L });
-	public static final BitSet FOLLOW_ruleModifierSpecification_in_ruleModifiersRule1149 = new BitSet(new long[] { 0x0000000000C00000L });
-	public static final BitSet FOLLOW_22_in_ruleModifiersRule1162 = new BitSet(new long[] { 0x0000001E03000000L });
-	public static final BitSet FOLLOW_ruleModifierSpecification_in_ruleModifiersRule1183 = new BitSet(new long[] { 0x0000000000C00000L });
-	public static final BitSet FOLLOW_23_in_ruleModifiersRule1197 = new BitSet(new long[] { 0x0000000000000002L });
-	public static final BitSet FOLLOW_ruleModifierSpecification_in_entryRuleModifierSpecification1233 = new BitSet(new long[] { 0x0000000000000000L });
-	public static final BitSet FOLLOW_EOF_in_entryRuleModifierSpecification1243 = new BitSet(new long[] { 0x0000000000000002L });
-	public static final BitSet FOLLOW_ruleModifierKind_in_ruleModifierSpecification1289 = new BitSet(new long[] { 0x0000000000000002L });
-	public static final BitSet FOLLOW_ruleRedefinesRule_in_ruleModifierSpecification1316 = new BitSet(new long[] { 0x0000000000000002L });
-	public static final BitSet FOLLOW_ruleSubsetsRule_in_ruleModifierSpecification1343 = new BitSet(new long[] { 0x0000000000000002L });
-	public static final BitSet FOLLOW_ruleRedefinesRule_in_entryRuleRedefinesRule1379 = new BitSet(new long[] { 0x0000000000000000L });
-	public static final BitSet FOLLOW_EOF_in_entryRuleRedefinesRule1389 = new BitSet(new long[] { 0x0000000000000002L });
-	public static final BitSet FOLLOW_24_in_ruleRedefinesRule1426 = new BitSet(new long[] { 0x0000000000000010L });
-	public static final BitSet FOLLOW_RULE_ID_in_ruleRedefinesRule1446 = new BitSet(new long[] { 0x0000000000000002L });
-	public static final BitSet FOLLOW_ruleSubsetsRule_in_entryRuleSubsetsRule1482 = new BitSet(new long[] { 0x0000000000000000L });
-	public static final BitSet FOLLOW_EOF_in_entryRuleSubsetsRule1492 = new BitSet(new long[] { 0x0000000000000002L });
-	public static final BitSet FOLLOW_25_in_ruleSubsetsRule1529 = new BitSet(new long[] { 0x0000000000000010L });
-	public static final BitSet FOLLOW_RULE_ID_in_ruleSubsetsRule1549 = new BitSet(new long[] { 0x0000000000000002L });
-	public static final BitSet FOLLOW_ruleDefaultValueRule_in_entryRuleDefaultValueRule1585 = new BitSet(new long[] { 0x0000000000000000L });
-	public static final BitSet FOLLOW_EOF_in_entryRuleDefaultValueRule1595 = new BitSet(new long[] { 0x0000000000000002L });
-	public static final BitSet FOLLOW_26_in_ruleDefaultValueRule1632 = new BitSet(new long[] { 0x0000006038000060L });
-	public static final BitSet FOLLOW_ruleValue_in_ruleDefaultValueRule1653 = new BitSet(new long[] { 0x0000000000000002L });
-	public static final BitSet FOLLOW_ruleValue_in_entryRuleValue1689 = new BitSet(new long[] { 0x0000000000000000L });
-	public static final BitSet FOLLOW_EOF_in_entryRuleValue1699 = new BitSet(new long[] { 0x0000000000000002L });
-	public static final BitSet FOLLOW_ruleIntValue_in_ruleValue1746 = new BitSet(new long[] { 0x0000000000000002L });
-	public static final BitSet FOLLOW_ruleStringValue_in_ruleValue1773 = new BitSet(new long[] { 0x0000000000000002L });
-	public static final BitSet FOLLOW_ruleBooleanValue_in_ruleValue1800 = new BitSet(new long[] { 0x0000000000000002L });
-	public static final BitSet FOLLOW_ruleRealValue_in_ruleValue1827 = new BitSet(new long[] { 0x0000000000000002L });
-	public static final BitSet FOLLOW_ruleNullValue_in_ruleValue1854 = new BitSet(new long[] { 0x0000000000000002L });
-	public static final BitSet FOLLOW_ruleNoValue_in_ruleValue1881 = new BitSet(new long[] { 0x0000000000000002L });
-	public static final BitSet FOLLOW_ruleIntValue_in_entryRuleIntValue1916 = new BitSet(new long[] { 0x0000000000000000L });
-	public static final BitSet FOLLOW_EOF_in_entryRuleIntValue1926 = new BitSet(new long[] { 0x0000000000000002L });
-	public static final BitSet FOLLOW_RULE_INT_in_ruleIntValue1967 = new BitSet(new long[] { 0x0000000000000002L });
-	public static final BitSet FOLLOW_ruleStringValue_in_entryRuleStringValue2007 = new BitSet(new long[] { 0x0000000000000000L });
-	public static final BitSet FOLLOW_EOF_in_entryRuleStringValue2017 = new BitSet(new long[] { 0x0000000000000002L });
-	public static final BitSet FOLLOW_RULE_STRING_in_ruleStringValue2058 = new BitSet(new long[] { 0x0000000000000002L });
-	public static final BitSet FOLLOW_ruleBooleanValue_in_entryRuleBooleanValue2098 = new BitSet(new long[] { 0x0000000000000000L });
-	public static final BitSet FOLLOW_EOF_in_entryRuleBooleanValue2108 = new BitSet(new long[] { 0x0000000000000002L });
-	public static final BitSet FOLLOW_ruleBooleanLiterals_in_ruleBooleanValue2153 = new BitSet(new long[] { 0x0000000000000002L });
-	public static final BitSet FOLLOW_ruleRealValue_in_entryRuleRealValue2188 = new BitSet(new long[] { 0x0000000000000000L });
-	public static final BitSet FOLLOW_EOF_in_entryRuleRealValue2198 = new BitSet(new long[] { 0x0000000000000002L });
-	public static final BitSet FOLLOW_RULE_INT_in_ruleRealValue2241 = new BitSet(new long[] { 0x0000000008000000L });
-	public static final BitSet FOLLOW_27_in_ruleRealValue2258 = new BitSet(new long[] { 0x0000000000000002L });
-	public static final BitSet FOLLOW_27_in_ruleRealValue2278 = new BitSet(new long[] { 0x0000000000000020L });
-	public static final BitSet FOLLOW_RULE_INT_in_ruleRealValue2295 = new BitSet(new long[] { 0x0000000000000002L });
-	public static final BitSet FOLLOW_RULE_INT_in_ruleRealValue2325 = new BitSet(new long[] { 0x0000000008000000L });
-	public static final BitSet FOLLOW_27_in_ruleRealValue2342 = new BitSet(new long[] { 0x0000000000000020L });
-	public static final BitSet FOLLOW_RULE_INT_in_ruleRealValue2359 = new BitSet(new long[] { 0x0000000000000002L });
-	public static final BitSet FOLLOW_ruleNullValue_in_entryRuleNullValue2401 = new BitSet(new long[] { 0x0000000000000000L });
-	public static final BitSet FOLLOW_EOF_in_entryRuleNullValue2411 = new BitSet(new long[] { 0x0000000000000002L });
-	public static final BitSet FOLLOW_28_in_ruleNullValue2457 = new BitSet(new long[] { 0x0000000000000002L });
-	public static final BitSet FOLLOW_ruleNoValue_in_entryRuleNoValue2493 = new BitSet(new long[] { 0x0000000000000000L });
-	public static final BitSet FOLLOW_EOF_in_entryRuleNoValue2503 = new BitSet(new long[] { 0x0000000000000002L });
-	public static final BitSet FOLLOW_29_in_ruleNoValue2549 = new BitSet(new long[] { 0x0000000000000002L });
-	public static final BitSet FOLLOW_30_in_ruleVisibilityKind2599 = new BitSet(new long[] { 0x0000000000000002L });
-	public static final BitSet FOLLOW_31_in_ruleVisibilityKind2616 = new BitSet(new long[] { 0x0000000000000002L });
-	public static final BitSet FOLLOW_32_in_ruleVisibilityKind2633 = new BitSet(new long[] { 0x0000000000000002L });
-	public static final BitSet FOLLOW_14_in_ruleVisibilityKind2650 = new BitSet(new long[] { 0x0000000000000002L });
-	public static final BitSet FOLLOW_33_in_ruleModifierKind2695 = new BitSet(new long[] { 0x0000000000000002L });
-	public static final BitSet FOLLOW_34_in_ruleModifierKind2712 = new BitSet(new long[] { 0x0000000000000002L });
-	public static final BitSet FOLLOW_35_in_ruleModifierKind2729 = new BitSet(new long[] { 0x0000000000000002L });
-	public static final BitSet FOLLOW_36_in_ruleModifierKind2746 = new BitSet(new long[] { 0x0000000000000002L });
-	public static final BitSet FOLLOW_37_in_ruleBooleanLiterals2791 = new BitSet(new long[] { 0x0000000000000002L });
-	public static final BitSet FOLLOW_38_in_ruleBooleanLiterals2808 = new BitSet(new long[] { 0x0000000000000002L });
+	public static final BitSet FOLLOW_21_in_ruleModifiersRule1137 = new BitSet(new long[] { 0x0000001E03800000L });
+	public static final BitSet FOLLOW_ruleModifierSpecification_in_ruleModifiersRule1159 = new BitSet(new long[] { 0x0000000000C00000L });
+	public static final BitSet FOLLOW_22_in_ruleModifiersRule1172 = new BitSet(new long[] { 0x0000001E03000000L });
+	public static final BitSet FOLLOW_ruleModifierSpecification_in_ruleModifiersRule1193 = new BitSet(new long[] { 0x0000000000C00000L });
+	public static final BitSet FOLLOW_23_in_ruleModifiersRule1209 = new BitSet(new long[] { 0x0000000000000002L });
+	public static final BitSet FOLLOW_ruleModifierSpecification_in_entryRuleModifierSpecification1245 = new BitSet(new long[] { 0x0000000000000000L });
+	public static final BitSet FOLLOW_EOF_in_entryRuleModifierSpecification1255 = new BitSet(new long[] { 0x0000000000000002L });
+	public static final BitSet FOLLOW_ruleModifierKind_in_ruleModifierSpecification1301 = new BitSet(new long[] { 0x0000000000000002L });
+	public static final BitSet FOLLOW_ruleRedefinesRule_in_ruleModifierSpecification1328 = new BitSet(new long[] { 0x0000000000000002L });
+	public static final BitSet FOLLOW_ruleSubsetsRule_in_ruleModifierSpecification1355 = new BitSet(new long[] { 0x0000000000000002L });
+	public static final BitSet FOLLOW_ruleRedefinesRule_in_entryRuleRedefinesRule1391 = new BitSet(new long[] { 0x0000000000000000L });
+	public static final BitSet FOLLOW_EOF_in_entryRuleRedefinesRule1401 = new BitSet(new long[] { 0x0000000000000002L });
+	public static final BitSet FOLLOW_24_in_ruleRedefinesRule1438 = new BitSet(new long[] { 0x0000000000000010L });
+	public static final BitSet FOLLOW_RULE_ID_in_ruleRedefinesRule1458 = new BitSet(new long[] { 0x0000000000000002L });
+	public static final BitSet FOLLOW_ruleSubsetsRule_in_entryRuleSubsetsRule1494 = new BitSet(new long[] { 0x0000000000000000L });
+	public static final BitSet FOLLOW_EOF_in_entryRuleSubsetsRule1504 = new BitSet(new long[] { 0x0000000000000002L });
+	public static final BitSet FOLLOW_25_in_ruleSubsetsRule1541 = new BitSet(new long[] { 0x0000000000000010L });
+	public static final BitSet FOLLOW_RULE_ID_in_ruleSubsetsRule1561 = new BitSet(new long[] { 0x0000000000000002L });
+	public static final BitSet FOLLOW_ruleDefaultValueRule_in_entryRuleDefaultValueRule1597 = new BitSet(new long[] { 0x0000000000000000L });
+	public static final BitSet FOLLOW_EOF_in_entryRuleDefaultValueRule1607 = new BitSet(new long[] { 0x0000000000000002L });
+	public static final BitSet FOLLOW_26_in_ruleDefaultValueRule1644 = new BitSet(new long[] { 0x0000006038000060L });
+	public static final BitSet FOLLOW_ruleValue_in_ruleDefaultValueRule1665 = new BitSet(new long[] { 0x0000000000000002L });
+	public static final BitSet FOLLOW_ruleValue_in_entryRuleValue1701 = new BitSet(new long[] { 0x0000000000000000L });
+	public static final BitSet FOLLOW_EOF_in_entryRuleValue1711 = new BitSet(new long[] { 0x0000000000000002L });
+	public static final BitSet FOLLOW_ruleIntValue_in_ruleValue1758 = new BitSet(new long[] { 0x0000000000000002L });
+	public static final BitSet FOLLOW_ruleStringValue_in_ruleValue1785 = new BitSet(new long[] { 0x0000000000000002L });
+	public static final BitSet FOLLOW_ruleBooleanValue_in_ruleValue1812 = new BitSet(new long[] { 0x0000000000000002L });
+	public static final BitSet FOLLOW_ruleRealValue_in_ruleValue1839 = new BitSet(new long[] { 0x0000000000000002L });
+	public static final BitSet FOLLOW_ruleNullValue_in_ruleValue1866 = new BitSet(new long[] { 0x0000000000000002L });
+	public static final BitSet FOLLOW_ruleNoValue_in_ruleValue1893 = new BitSet(new long[] { 0x0000000000000002L });
+	public static final BitSet FOLLOW_ruleIntValue_in_entryRuleIntValue1928 = new BitSet(new long[] { 0x0000000000000000L });
+	public static final BitSet FOLLOW_EOF_in_entryRuleIntValue1938 = new BitSet(new long[] { 0x0000000000000002L });
+	public static final BitSet FOLLOW_RULE_INT_in_ruleIntValue1979 = new BitSet(new long[] { 0x0000000000000002L });
+	public static final BitSet FOLLOW_ruleStringValue_in_entryRuleStringValue2019 = new BitSet(new long[] { 0x0000000000000000L });
+	public static final BitSet FOLLOW_EOF_in_entryRuleStringValue2029 = new BitSet(new long[] { 0x0000000000000002L });
+	public static final BitSet FOLLOW_RULE_STRING_in_ruleStringValue2070 = new BitSet(new long[] { 0x0000000000000002L });
+	public static final BitSet FOLLOW_ruleBooleanValue_in_entryRuleBooleanValue2110 = new BitSet(new long[] { 0x0000000000000000L });
+	public static final BitSet FOLLOW_EOF_in_entryRuleBooleanValue2120 = new BitSet(new long[] { 0x0000000000000002L });
+	public static final BitSet FOLLOW_ruleBooleanLiterals_in_ruleBooleanValue2165 = new BitSet(new long[] { 0x0000000000000002L });
+	public static final BitSet FOLLOW_ruleRealValue_in_entryRuleRealValue2200 = new BitSet(new long[] { 0x0000000000000000L });
+	public static final BitSet FOLLOW_EOF_in_entryRuleRealValue2210 = new BitSet(new long[] { 0x0000000000000002L });
+	public static final BitSet FOLLOW_RULE_INT_in_ruleRealValue2253 = new BitSet(new long[] { 0x0000000008000000L });
+	public static final BitSet FOLLOW_27_in_ruleRealValue2270 = new BitSet(new long[] { 0x0000000000000002L });
+	public static final BitSet FOLLOW_27_in_ruleRealValue2290 = new BitSet(new long[] { 0x0000000000000020L });
+	public static final BitSet FOLLOW_RULE_INT_in_ruleRealValue2307 = new BitSet(new long[] { 0x0000000000000002L });
+	public static final BitSet FOLLOW_RULE_INT_in_ruleRealValue2337 = new BitSet(new long[] { 0x0000000008000000L });
+	public static final BitSet FOLLOW_27_in_ruleRealValue2354 = new BitSet(new long[] { 0x0000000000000020L });
+	public static final BitSet FOLLOW_RULE_INT_in_ruleRealValue2371 = new BitSet(new long[] { 0x0000000000000002L });
+	public static final BitSet FOLLOW_ruleNullValue_in_entryRuleNullValue2413 = new BitSet(new long[] { 0x0000000000000000L });
+	public static final BitSet FOLLOW_EOF_in_entryRuleNullValue2423 = new BitSet(new long[] { 0x0000000000000002L });
+	public static final BitSet FOLLOW_28_in_ruleNullValue2469 = new BitSet(new long[] { 0x0000000000000002L });
+	public static final BitSet FOLLOW_ruleNoValue_in_entryRuleNoValue2505 = new BitSet(new long[] { 0x0000000000000000L });
+	public static final BitSet FOLLOW_EOF_in_entryRuleNoValue2515 = new BitSet(new long[] { 0x0000000000000002L });
+	public static final BitSet FOLLOW_29_in_ruleNoValue2561 = new BitSet(new long[] { 0x0000000000000002L });
+	public static final BitSet FOLLOW_30_in_ruleVisibilityKind2611 = new BitSet(new long[] { 0x0000000000000002L });
+	public static final BitSet FOLLOW_31_in_ruleVisibilityKind2628 = new BitSet(new long[] { 0x0000000000000002L });
+	public static final BitSet FOLLOW_32_in_ruleVisibilityKind2645 = new BitSet(new long[] { 0x0000000000000002L });
+	public static final BitSet FOLLOW_14_in_ruleVisibilityKind2662 = new BitSet(new long[] { 0x0000000000000002L });
+	public static final BitSet FOLLOW_33_in_ruleModifierKind2707 = new BitSet(new long[] { 0x0000000000000002L });
+	public static final BitSet FOLLOW_34_in_ruleModifierKind2724 = new BitSet(new long[] { 0x0000000000000002L });
+	public static final BitSet FOLLOW_35_in_ruleModifierKind2741 = new BitSet(new long[] { 0x0000000000000002L });
+	public static final BitSet FOLLOW_36_in_ruleModifierKind2758 = new BitSet(new long[] { 0x0000000000000002L });
+	public static final BitSet FOLLOW_37_in_ruleBooleanLiterals2803 = new BitSet(new long[] { 0x0000000000000002L });
+	public static final BitSet FOLLOW_38_in_ruleBooleanLiterals2820 = new BitSet(new long[] { 0x0000000000000002L });
 
 }

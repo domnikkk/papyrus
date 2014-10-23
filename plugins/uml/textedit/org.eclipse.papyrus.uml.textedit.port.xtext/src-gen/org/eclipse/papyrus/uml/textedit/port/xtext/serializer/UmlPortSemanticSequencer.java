@@ -247,7 +247,7 @@ public class UmlPortSemanticSequencer extends AbstractDelegatingSemanticSequence
 
 	/**
 	 * Constraint:
-	 * (values+=ModifierSpecification values+=ModifierSpecification*)
+	 * ((values+=ModifierSpecification values+=ModifierSpecification*)?)
 	 */
 	protected void sequence_ModifiersRule(EObject context, ModifiersRule semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

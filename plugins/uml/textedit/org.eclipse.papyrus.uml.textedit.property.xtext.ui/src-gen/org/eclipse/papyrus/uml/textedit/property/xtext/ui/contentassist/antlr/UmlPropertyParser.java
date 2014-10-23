@@ -4,17 +4,18 @@
 package org.eclipse.papyrus.uml.textedit.property.xtext.ui.contentassist.antlr;
 
 import java.util.Collection;
-import java.util.HashMap;
 import java.util.Map;
+import java.util.HashMap;
 
 import org.antlr.runtime.RecognitionException;
-import org.eclipse.papyrus.uml.textedit.property.xtext.services.UmlPropertyGrammarAccess;
 import org.eclipse.xtext.AbstractElement;
 import org.eclipse.xtext.ui.editor.contentassist.antlr.AbstractContentAssistParser;
 import org.eclipse.xtext.ui.editor.contentassist.antlr.FollowElement;
 import org.eclipse.xtext.ui.editor.contentassist.antlr.internal.AbstractInternalContentAssistParser;
 
 import com.google.inject.Inject;
+
+import org.eclipse.papyrus.uml.textedit.property.xtext.services.UmlPropertyGrammarAccess;
 
 public class UmlPropertyParser extends AbstractContentAssistParser {
 
@@ -52,6 +53,7 @@ public class UmlPropertyParser extends AbstractContentAssistParser {
 					put(grammarAccess.getMultiplicityRuleAccess().getGroup_2(), "rule__MultiplicityRule__Group_2__0");
 					put(grammarAccess.getModifiersRuleAccess().getGroup(), "rule__ModifiersRule__Group__0");
 					put(grammarAccess.getModifiersRuleAccess().getGroup_2(), "rule__ModifiersRule__Group_2__0");
+					put(grammarAccess.getModifiersRuleAccess().getGroup_2_1(), "rule__ModifiersRule__Group_2_1__0");
 					put(grammarAccess.getRedefinesRuleAccess().getGroup(), "rule__RedefinesRule__Group__0");
 					put(grammarAccess.getSubsetsRuleAccess().getGroup(), "rule__SubsetsRule__Group__0");
 					put(grammarAccess.getDefaultValueRuleAccess().getGroup(), "rule__DefaultValueRule__Group__0");
@@ -76,8 +78,8 @@ public class UmlPropertyParser extends AbstractContentAssistParser {
 					put(grammarAccess.getMultiplicityRuleAccess().getBoundsAssignment_1(), "rule__MultiplicityRule__BoundsAssignment_1");
 					put(grammarAccess.getMultiplicityRuleAccess().getBoundsAssignment_2_1(), "rule__MultiplicityRule__BoundsAssignment_2_1");
 					put(grammarAccess.getBoundSpecificationAccess().getValueAssignment(), "rule__BoundSpecification__ValueAssignment");
-					put(grammarAccess.getModifiersRuleAccess().getValuesAssignment_1(), "rule__ModifiersRule__ValuesAssignment_1");
-					put(grammarAccess.getModifiersRuleAccess().getValuesAssignment_2_1(), "rule__ModifiersRule__ValuesAssignment_2_1");
+					put(grammarAccess.getModifiersRuleAccess().getValuesAssignment_2_0(), "rule__ModifiersRule__ValuesAssignment_2_0");
+					put(grammarAccess.getModifiersRuleAccess().getValuesAssignment_2_1_1(), "rule__ModifiersRule__ValuesAssignment_2_1_1");
 					put(grammarAccess.getModifierSpecificationAccess().getValueAssignment_0(), "rule__ModifierSpecification__ValueAssignment_0");
 					put(grammarAccess.getModifierSpecificationAccess().getRedefinesAssignment_1(), "rule__ModifierSpecification__RedefinesAssignment_1");
 					put(grammarAccess.getModifierSpecificationAccess().getSubsetsAssignment_2(), "rule__ModifierSpecification__SubsetsAssignment_2");

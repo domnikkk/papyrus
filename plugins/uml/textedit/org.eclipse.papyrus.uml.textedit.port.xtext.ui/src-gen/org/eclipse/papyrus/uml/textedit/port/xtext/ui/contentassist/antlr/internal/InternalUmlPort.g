@@ -1569,11 +1569,11 @@ rule__ModifiersRule__Group__0__Impl
     }
 :
 (
-{ before(grammarAccess.getModifiersRuleAccess().getLeftCurlyBracketKeyword_0()); }
+{ before(grammarAccess.getModifiersRuleAccess().getModifiersRuleAction_0()); }
+(
 
-	'{' 
-
-{ after(grammarAccess.getModifiersRuleAccess().getLeftCurlyBracketKeyword_0()); }
+)
+{ after(grammarAccess.getModifiersRuleAccess().getModifiersRuleAction_0()); }
 )
 
 ;
@@ -1600,9 +1600,11 @@ rule__ModifiersRule__Group__1__Impl
     }
 :
 (
-{ before(grammarAccess.getModifiersRuleAccess().getValuesAssignment_1()); }
-(rule__ModifiersRule__ValuesAssignment_1)
-{ after(grammarAccess.getModifiersRuleAccess().getValuesAssignment_1()); }
+{ before(grammarAccess.getModifiersRuleAccess().getLeftCurlyBracketKeyword_1()); }
+
+	'{' 
+
+{ after(grammarAccess.getModifiersRuleAccess().getLeftCurlyBracketKeyword_1()); }
 )
 
 ;
@@ -1630,7 +1632,7 @@ rule__ModifiersRule__Group__2__Impl
 :
 (
 { before(grammarAccess.getModifiersRuleAccess().getGroup_2()); }
-(rule__ModifiersRule__Group_2__0)*
+(rule__ModifiersRule__Group_2__0)?
 { after(grammarAccess.getModifiersRuleAccess().getGroup_2()); }
 )
 
@@ -1696,11 +1698,9 @@ rule__ModifiersRule__Group_2__0__Impl
     }
 :
 (
-{ before(grammarAccess.getModifiersRuleAccess().getCommaKeyword_2_0()); }
-
-	',' 
-
-{ after(grammarAccess.getModifiersRuleAccess().getCommaKeyword_2_0()); }
+{ before(grammarAccess.getModifiersRuleAccess().getValuesAssignment_2_0()); }
+(rule__ModifiersRule__ValuesAssignment_2_0)
+{ after(grammarAccess.getModifiersRuleAccess().getValuesAssignment_2_0()); }
 )
 
 ;
@@ -1726,9 +1726,72 @@ rule__ModifiersRule__Group_2__1__Impl
     }
 :
 (
-{ before(grammarAccess.getModifiersRuleAccess().getValuesAssignment_2_1()); }
-(rule__ModifiersRule__ValuesAssignment_2_1)
-{ after(grammarAccess.getModifiersRuleAccess().getValuesAssignment_2_1()); }
+{ before(grammarAccess.getModifiersRuleAccess().getGroup_2_1()); }
+(rule__ModifiersRule__Group_2_1__0)*
+{ after(grammarAccess.getModifiersRuleAccess().getGroup_2_1()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+
+
+
+
+rule__ModifiersRule__Group_2_1__0
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__ModifiersRule__Group_2_1__0__Impl
+	rule__ModifiersRule__Group_2_1__1
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__ModifiersRule__Group_2_1__0__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getModifiersRuleAccess().getCommaKeyword_2_1_0()); }
+
+	',' 
+
+{ after(grammarAccess.getModifiersRuleAccess().getCommaKeyword_2_1_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__ModifiersRule__Group_2_1__1
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__ModifiersRule__Group_2_1__1__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__ModifiersRule__Group_2_1__1__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getModifiersRuleAccess().getValuesAssignment_2_1_1()); }
+(rule__ModifiersRule__ValuesAssignment_2_1_1)
+{ after(grammarAccess.getModifiersRuleAccess().getValuesAssignment_2_1_1()); }
 )
 
 ;
@@ -2568,14 +2631,14 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__ModifiersRule__ValuesAssignment_1
+rule__ModifiersRule__ValuesAssignment_2_0
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getModifiersRuleAccess().getValuesModifierSpecificationParserRuleCall_1_0()); }
-	ruleModifierSpecification{ after(grammarAccess.getModifiersRuleAccess().getValuesModifierSpecificationParserRuleCall_1_0()); }
+{ before(grammarAccess.getModifiersRuleAccess().getValuesModifierSpecificationParserRuleCall_2_0_0()); }
+	ruleModifierSpecification{ after(grammarAccess.getModifiersRuleAccess().getValuesModifierSpecificationParserRuleCall_2_0_0()); }
 )
 
 ;
@@ -2583,14 +2646,14 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__ModifiersRule__ValuesAssignment_2_1
+rule__ModifiersRule__ValuesAssignment_2_1_1
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getModifiersRuleAccess().getValuesModifierSpecificationParserRuleCall_2_1_0()); }
-	ruleModifierSpecification{ after(grammarAccess.getModifiersRuleAccess().getValuesModifierSpecificationParserRuleCall_2_1_0()); }
+{ before(grammarAccess.getModifiersRuleAccess().getValuesModifierSpecificationParserRuleCall_2_1_1_0()); }
+	ruleModifierSpecification{ after(grammarAccess.getModifiersRuleAccess().getValuesModifierSpecificationParserRuleCall_2_1_1_0()); }
 )
 
 ;

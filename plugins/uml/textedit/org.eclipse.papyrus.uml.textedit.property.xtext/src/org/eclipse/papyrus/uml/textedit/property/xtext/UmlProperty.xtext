@@ -56,7 +56,7 @@ UnlimitedLiteral : INT |'*';
 
 
 ModifiersRule:
-	'{' values += ModifierSpecification (',' values += ModifierSpecification)* '}';
+	{ModifiersRule}'{' (values += ModifierSpecification (',' values += ModifierSpecification)*)? '}';
 
 ModifierSpecification:
 	value = ModifierKind 

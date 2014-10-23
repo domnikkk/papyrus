@@ -624,12 +624,12 @@ public class InternalUmlPortLexer extends Lexer {
 		try {
 			int _type = RULE_ID;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1248:9: ( ( ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* | '\\'' (
+			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1254:9: ( ( ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* | '\\'' (
 			// options {greedy=false; } : . )* '\\'' ) )
-			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1248:11: ( ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* | '\\'' (
+			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1254:11: ( ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* | '\\'' (
 			// options {greedy=false; } : . )* '\\'' )
 			{
-				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1248:11: ( ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* | '\\'' (
+				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1254:11: ( ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* | '\\'' (
 				// options {greedy=false; } : . )* '\\'' )
 				int alt3 = 2;
 				int LA3_0 = input.LA(1);
@@ -648,7 +648,7 @@ public class InternalUmlPortLexer extends Lexer {
 				}
 				switch (alt3) {
 				case 1:
-				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1248:12: ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1254:12: ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
 				{
 					if ((input.LA(1) >= 'A' && input.LA(1) <= 'Z') || input.LA(1) == '_' || (input.LA(1) >= 'a' && input.LA(1) <= 'z')) {
 						input.consume();
@@ -660,7 +660,7 @@ public class InternalUmlPortLexer extends Lexer {
 						throw mse;
 					}
 
-					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1248:36: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1254:36: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
 					loop1: do {
 						int alt1 = 2;
 						int LA1_0 = input.LA(1);
@@ -697,10 +697,10 @@ public class InternalUmlPortLexer extends Lexer {
 				}
 					break;
 				case 2:
-				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1248:70: '\\'' ( options {greedy=false; } : . )* '\\''
+				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1254:70: '\\'' ( options {greedy=false; } : . )* '\\''
 				{
 					match('\'');
-					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1248:75: ( options {greedy=false; } : . )*
+					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1254:75: ( options {greedy=false; } : . )*
 					loop2: do {
 						int alt2 = 2;
 						int LA2_0 = input.LA(1);
@@ -715,7 +715,7 @@ public class InternalUmlPortLexer extends Lexer {
 
 						switch (alt2) {
 						case 1:
-						// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1248:103: .
+						// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1254:103: .
 						{
 							matchAny();
 
@@ -750,13 +750,13 @@ public class InternalUmlPortLexer extends Lexer {
 		try {
 			int _type = RULE_STRING;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1250:13: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) )
+			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1256:13: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) )
 			// )* '\"' )
-			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1250:15: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) )
+			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1256:15: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) )
 			// )* '\"'
 			{
 				match('\"');
-				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1250:19: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1256:19: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
 				loop4: do {
 					int alt4 = 3;
 					int LA4_0 = input.LA(1);
@@ -771,7 +771,7 @@ public class InternalUmlPortLexer extends Lexer {
 
 					switch (alt4) {
 					case 1:
-					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1250:20: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' )
+					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1256:20: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' )
 					{
 						match('\\');
 						if (input.LA(1) == '\"' || input.LA(1) == '\'' || input.LA(1) == '\\' || input.LA(1) == 'b' || input.LA(1) == 'f' || input.LA(1) == 'n' || input.LA(1) == 'r' || input.LA(1) == 't') {
@@ -788,7 +788,7 @@ public class InternalUmlPortLexer extends Lexer {
 					}
 						break;
 					case 2:
-					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1250:61: ~ ( ( '\\\\' | '\"' ) )
+					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1256:61: ~ ( ( '\\\\' | '\"' ) )
 					{
 						if ((input.LA(1) >= '\u0000' && input.LA(1) <= '!') || (input.LA(1) >= '#' && input.LA(1) <= '[') || (input.LA(1) >= ']' && input.LA(1) <= '\uFFFF')) {
 							input.consume();
@@ -826,8 +826,8 @@ public class InternalUmlPortLexer extends Lexer {
 		try {
 			int _type = RULE_ML_COMMENT;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1252:17: ( '/*' ~ ( '@' ) ( options {greedy=false; } : . )* '*/' )
-			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1252:19: '/*' ~ ( '@' ) ( options {greedy=false; } : . )* '*/'
+			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1258:17: ( '/*' ~ ( '@' ) ( options {greedy=false; } : . )* '*/' )
+			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1258:19: '/*' ~ ( '@' ) ( options {greedy=false; } : . )* '*/'
 			{
 				match("/*");
 
@@ -841,7 +841,7 @@ public class InternalUmlPortLexer extends Lexer {
 					throw mse;
 				}
 
-				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1252:31: ( options {greedy=false; } : . )*
+				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1258:31: ( options {greedy=false; } : . )*
 				loop5: do {
 					int alt5 = 2;
 					int LA5_0 = input.LA(1);
@@ -865,7 +865,7 @@ public class InternalUmlPortLexer extends Lexer {
 
 					switch (alt5) {
 					case 1:
-					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1252:59: .
+					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1258:59: .
 					{
 						matchAny();
 
@@ -895,12 +895,12 @@ public class InternalUmlPortLexer extends Lexer {
 		try {
 			int _type = RULE_SL_COMMENT;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1254:17: ( '//' (~ ( ( '\\n' | '\\r' | '@' ) ) )* ( ( '\\r' )? '\\n' )? )
-			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1254:19: '//' (~ ( ( '\\n' | '\\r' | '@' ) ) )* ( ( '\\r' )? '\\n' )?
+			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1260:17: ( '//' (~ ( ( '\\n' | '\\r' | '@' ) ) )* ( ( '\\r' )? '\\n' )? )
+			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1260:19: '//' (~ ( ( '\\n' | '\\r' | '@' ) ) )* ( ( '\\r' )? '\\n' )?
 			{
 				match("//");
 
-				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1254:24: (~ ( ( '\\n' | '\\r' | '@' ) ) )*
+				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1260:24: (~ ( ( '\\n' | '\\r' | '@' ) ) )*
 				loop6: do {
 					int alt6 = 2;
 					int LA6_0 = input.LA(1);
@@ -912,7 +912,7 @@ public class InternalUmlPortLexer extends Lexer {
 
 					switch (alt6) {
 					case 1:
-					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1254:24: ~ ( ( '\\n' | '\\r' | '@' ) )
+					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1260:24: ~ ( ( '\\n' | '\\r' | '@' ) )
 					{
 						if ((input.LA(1) >= '\u0000' && input.LA(1) <= '\t') || (input.LA(1) >= '\u000B' && input.LA(1) <= '\f') || (input.LA(1) >= '\u000E' && input.LA(1) <= '?') || (input.LA(1) >= 'A' && input.LA(1) <= '\uFFFF')) {
 							input.consume();
@@ -933,7 +933,7 @@ public class InternalUmlPortLexer extends Lexer {
 					}
 				} while (true);
 
-				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1254:44: ( ( '\\r' )? '\\n' )?
+				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1260:44: ( ( '\\r' )? '\\n' )?
 				int alt8 = 2;
 				int LA8_0 = input.LA(1);
 
@@ -942,9 +942,9 @@ public class InternalUmlPortLexer extends Lexer {
 				}
 				switch (alt8) {
 				case 1:
-				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1254:45: ( '\\r' )? '\\n'
+				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1260:45: ( '\\r' )? '\\n'
 				{
-					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1254:45: ( '\\r' )?
+					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1260:45: ( '\\r' )?
 					int alt7 = 2;
 					int LA7_0 = input.LA(1);
 
@@ -953,7 +953,7 @@ public class InternalUmlPortLexer extends Lexer {
 					}
 					switch (alt7) {
 					case 1:
-					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1254:45: '\\r'
+					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1260:45: '\\r'
 					{
 						match('\r');
 
@@ -985,10 +985,10 @@ public class InternalUmlPortLexer extends Lexer {
 		try {
 			int _type = RULE_INT;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1256:10: ( ( '0' .. '9' )+ )
-			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1256:12: ( '0' .. '9' )+
+			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1262:10: ( ( '0' .. '9' )+ )
+			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1262:12: ( '0' .. '9' )+
 			{
-				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1256:12: ( '0' .. '9' )+
+				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1262:12: ( '0' .. '9' )+
 				int cnt9 = 0;
 				loop9: do {
 					int alt9 = 2;
@@ -1001,7 +1001,7 @@ public class InternalUmlPortLexer extends Lexer {
 
 					switch (alt9) {
 					case 1:
-					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1256:13: '0' .. '9'
+					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1262:13: '0' .. '9'
 					{
 						matchRange('0', '9');
 
@@ -1035,12 +1035,12 @@ public class InternalUmlPortLexer extends Lexer {
 		try {
 			int _type = RULE_INTEGER_VALUE;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1258:20: ( ( ( '0' | '1' .. '9' ( ( '_' )? '0' .. '9' )* ) | ( '0b' | '0B' ) '0' .. '1' ( ( '_' )? '0' ..
+			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1264:20: ( ( ( '0' | '1' .. '9' ( ( '_' )? '0' .. '9' )* ) | ( '0b' | '0B' ) '0' .. '1' ( ( '_' )? '0' ..
 			// '1' )* | ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( ( '_' )? ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) )* | '0' ( '_' )? '0' .. '7' ( ( '_' )? '0' .. '7' )* ) )
-			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1258:22: ( ( '0' | '1' .. '9' ( ( '_' )? '0' .. '9' )* ) | ( '0b' | '0B' ) '0' .. '1' ( ( '_' )? '0' ..
+			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1264:22: ( ( '0' | '1' .. '9' ( ( '_' )? '0' .. '9' )* ) | ( '0b' | '0B' ) '0' .. '1' ( ( '_' )? '0' ..
 			// '1' )* | ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( ( '_' )? ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) )* | '0' ( '_' )? '0' .. '7' ( ( '_' )? '0' .. '7' )* )
 			{
-				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1258:22: ( ( '0' | '1' .. '9' ( ( '_' )? '0' .. '9' )* ) | ( '0b' | '0B' ) '0' .. '1' ( ( '_' )? '0'
+				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1264:22: ( ( '0' | '1' .. '9' ( ( '_' )? '0' .. '9' )* ) | ( '0b' | '0B' ) '0' .. '1' ( ( '_' )? '0'
 				// .. '1' )* | ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( ( '_' )? ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) )* | '0' ( '_' )? '0' .. '7' ( ( '_' )? '0' .. '7' )* )
 				int alt22 = 4;
 				int LA22_0 = input.LA(1);
@@ -1085,9 +1085,9 @@ public class InternalUmlPortLexer extends Lexer {
 				}
 				switch (alt22) {
 				case 1:
-				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1258:23: ( '0' | '1' .. '9' ( ( '_' )? '0' .. '9' )* )
+				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1264:23: ( '0' | '1' .. '9' ( ( '_' )? '0' .. '9' )* )
 				{
-					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1258:23: ( '0' | '1' .. '9' ( ( '_' )? '0' .. '9' )* )
+					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1264:23: ( '0' | '1' .. '9' ( ( '_' )? '0' .. '9' )* )
 					int alt12 = 2;
 					int LA12_0 = input.LA(1);
 
@@ -1105,17 +1105,17 @@ public class InternalUmlPortLexer extends Lexer {
 					}
 					switch (alt12) {
 					case 1:
-					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1258:24: '0'
+					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1264:24: '0'
 					{
 						match('0');
 
 					}
 						break;
 					case 2:
-					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1258:28: '1' .. '9' ( ( '_' )? '0' .. '9' )*
+					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1264:28: '1' .. '9' ( ( '_' )? '0' .. '9' )*
 					{
 						matchRange('1', '9');
-						// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1258:37: ( ( '_' )? '0' .. '9' )*
+						// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1264:37: ( ( '_' )? '0' .. '9' )*
 						loop11: do {
 							int alt11 = 2;
 							int LA11_0 = input.LA(1);
@@ -1127,9 +1127,9 @@ public class InternalUmlPortLexer extends Lexer {
 
 							switch (alt11) {
 							case 1:
-							// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1258:38: ( '_' )? '0' .. '9'
+							// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1264:38: ( '_' )? '0' .. '9'
 							{
-								// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1258:38: ( '_' )?
+								// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1264:38: ( '_' )?
 								int alt10 = 2;
 								int LA10_0 = input.LA(1);
 
@@ -1138,7 +1138,7 @@ public class InternalUmlPortLexer extends Lexer {
 								}
 								switch (alt10) {
 								case 1:
-								// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1258:38: '_'
+								// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1264:38: '_'
 								{
 									match('_');
 
@@ -1167,9 +1167,9 @@ public class InternalUmlPortLexer extends Lexer {
 				}
 					break;
 				case 2:
-				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1258:55: ( '0b' | '0B' ) '0' .. '1' ( ( '_' )? '0' .. '1' )*
+				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1264:55: ( '0b' | '0B' ) '0' .. '1' ( ( '_' )? '0' .. '1' )*
 				{
-					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1258:55: ( '0b' | '0B' )
+					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1264:55: ( '0b' | '0B' )
 					int alt13 = 2;
 					int LA13_0 = input.LA(1);
 
@@ -1197,7 +1197,7 @@ public class InternalUmlPortLexer extends Lexer {
 					}
 					switch (alt13) {
 					case 1:
-					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1258:56: '0b'
+					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1264:56: '0b'
 					{
 						match("0b");
 
@@ -1205,7 +1205,7 @@ public class InternalUmlPortLexer extends Lexer {
 					}
 						break;
 					case 2:
-					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1258:61: '0B'
+					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1264:61: '0B'
 					{
 						match("0B");
 
@@ -1216,7 +1216,7 @@ public class InternalUmlPortLexer extends Lexer {
 					}
 
 					matchRange('0', '1');
-					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1258:76: ( ( '_' )? '0' .. '1' )*
+					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1264:76: ( ( '_' )? '0' .. '1' )*
 					loop15: do {
 						int alt15 = 2;
 						int LA15_0 = input.LA(1);
@@ -1228,9 +1228,9 @@ public class InternalUmlPortLexer extends Lexer {
 
 						switch (alt15) {
 						case 1:
-						// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1258:77: ( '_' )? '0' .. '1'
+						// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1264:77: ( '_' )? '0' .. '1'
 						{
-							// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1258:77: ( '_' )?
+							// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1264:77: ( '_' )?
 							int alt14 = 2;
 							int LA14_0 = input.LA(1);
 
@@ -1239,7 +1239,7 @@ public class InternalUmlPortLexer extends Lexer {
 							}
 							switch (alt14) {
 							case 1:
-							// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1258:77: '_'
+							// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1264:77: '_'
 							{
 								match('_');
 
@@ -1262,10 +1262,10 @@ public class InternalUmlPortLexer extends Lexer {
 				}
 					break;
 				case 3:
-				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1258:93: ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( ( '_' )? ( '0' .. '9' | 'a' .. 'f'
+				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1264:93: ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( ( '_' )? ( '0' .. '9' | 'a' .. 'f'
 				// | 'A' .. 'F' ) )*
 				{
-					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1258:93: ( '0x' | '0X' )
+					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1264:93: ( '0x' | '0X' )
 					int alt16 = 2;
 					int LA16_0 = input.LA(1);
 
@@ -1293,7 +1293,7 @@ public class InternalUmlPortLexer extends Lexer {
 					}
 					switch (alt16) {
 					case 1:
-					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1258:94: '0x'
+					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1264:94: '0x'
 					{
 						match("0x");
 
@@ -1301,7 +1301,7 @@ public class InternalUmlPortLexer extends Lexer {
 					}
 						break;
 					case 2:
-					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1258:99: '0X'
+					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1264:99: '0X'
 					{
 						match("0X");
 
@@ -1321,7 +1321,7 @@ public class InternalUmlPortLexer extends Lexer {
 						throw mse;
 					}
 
-					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1258:134: ( ( '_' )? ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) )*
+					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1264:134: ( ( '_' )? ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) )*
 					loop18: do {
 						int alt18 = 2;
 						int LA18_0 = input.LA(1);
@@ -1333,9 +1333,9 @@ public class InternalUmlPortLexer extends Lexer {
 
 						switch (alt18) {
 						case 1:
-						// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1258:135: ( '_' )? ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )
+						// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1264:135: ( '_' )? ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )
 						{
-							// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1258:135: ( '_' )?
+							// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1264:135: ( '_' )?
 							int alt17 = 2;
 							int LA17_0 = input.LA(1);
 
@@ -1344,7 +1344,7 @@ public class InternalUmlPortLexer extends Lexer {
 							}
 							switch (alt17) {
 							case 1:
-							// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1258:135: '_'
+							// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1264:135: '_'
 							{
 								match('_');
 
@@ -1376,10 +1376,10 @@ public class InternalUmlPortLexer extends Lexer {
 				}
 					break;
 				case 4:
-				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1258:171: '0' ( '_' )? '0' .. '7' ( ( '_' )? '0' .. '7' )*
+				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1264:171: '0' ( '_' )? '0' .. '7' ( ( '_' )? '0' .. '7' )*
 				{
 					match('0');
-					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1258:175: ( '_' )?
+					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1264:175: ( '_' )?
 					int alt19 = 2;
 					int LA19_0 = input.LA(1);
 
@@ -1388,7 +1388,7 @@ public class InternalUmlPortLexer extends Lexer {
 					}
 					switch (alt19) {
 					case 1:
-					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1258:175: '_'
+					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1264:175: '_'
 					{
 						match('_');
 
@@ -1398,7 +1398,7 @@ public class InternalUmlPortLexer extends Lexer {
 					}
 
 					matchRange('0', '7');
-					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1258:189: ( ( '_' )? '0' .. '7' )*
+					// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1264:189: ( ( '_' )? '0' .. '7' )*
 					loop21: do {
 						int alt21 = 2;
 						int LA21_0 = input.LA(1);
@@ -1410,9 +1410,9 @@ public class InternalUmlPortLexer extends Lexer {
 
 						switch (alt21) {
 						case 1:
-						// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1258:190: ( '_' )? '0' .. '7'
+						// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1264:190: ( '_' )? '0' .. '7'
 						{
-							// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1258:190: ( '_' )?
+							// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1264:190: ( '_' )?
 							int alt20 = 2;
 							int LA20_0 = input.LA(1);
 
@@ -1421,7 +1421,7 @@ public class InternalUmlPortLexer extends Lexer {
 							}
 							switch (alt20) {
 							case 1:
-							// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1258:190: '_'
+							// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1264:190: '_'
 							{
 								match('_');
 
@@ -1462,10 +1462,10 @@ public class InternalUmlPortLexer extends Lexer {
 		try {
 			int _type = RULE_WS;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1260:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1260:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1266:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1266:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
 			{
-				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1260:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+				// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1266:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
 				int cnt23 = 0;
 				loop23: do {
 					int alt23 = 2;
@@ -1521,8 +1521,8 @@ public class InternalUmlPortLexer extends Lexer {
 		try {
 			int _type = RULE_ANY_OTHER;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1262:16: ( . )
-			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1262:18: .
+			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1268:16: ( . )
+			// ../org.eclipse.papyrus.uml.textedit.port.xtext/src-gen/org/eclipse/papyrus/uml/textedit/port/xtext/parser/antlr/internal/InternalUmlPort.g:1268:18: .
 			{
 				matchAny();
 

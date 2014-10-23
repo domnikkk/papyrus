@@ -3,27 +3,16 @@
  */
 package org.eclipse.papyrus.uml.textedit.property.xtext.services;
 
+import com.google.inject.Singleton;
+import com.google.inject.Inject;
+
 import java.util.List;
 
-import org.eclipse.papyrus.uml.alf.services.CommonGrammarAccess;
-import org.eclipse.xtext.Action;
-import org.eclipse.xtext.Alternatives;
-import org.eclipse.xtext.Assignment;
-import org.eclipse.xtext.CrossReference;
-import org.eclipse.xtext.EnumLiteralDeclaration;
-import org.eclipse.xtext.EnumRule;
-import org.eclipse.xtext.Grammar;
-import org.eclipse.xtext.GrammarUtil;
-import org.eclipse.xtext.Group;
-import org.eclipse.xtext.Keyword;
-import org.eclipse.xtext.ParserRule;
-import org.eclipse.xtext.RuleCall;
-import org.eclipse.xtext.TerminalRule;
-import org.eclipse.xtext.service.AbstractElementFinder.AbstractGrammarElementFinder;
+import org.eclipse.xtext.*;
 import org.eclipse.xtext.service.GrammarProvider;
+import org.eclipse.xtext.service.AbstractElementFinder.*;
 
-import com.google.inject.Inject;
-import com.google.inject.Singleton;
+import org.eclipse.papyrus.uml.alf.services.CommonGrammarAccess;
 
 @Singleton
 public class UmlPropertyGrammarAccess extends AbstractGrammarElementFinder {
@@ -398,59 +387,71 @@ public class UmlPropertyGrammarAccess extends AbstractGrammarElementFinder {
 	public class ModifiersRuleElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ModifiersRule");
 		private final Group cGroup = (Group) rule.eContents().get(1);
-		private final Keyword cLeftCurlyBracketKeyword_0 = (Keyword) cGroup.eContents().get(0);
-		private final Assignment cValuesAssignment_1 = (Assignment) cGroup.eContents().get(1);
-		private final RuleCall cValuesModifierSpecificationParserRuleCall_1_0 = (RuleCall) cValuesAssignment_1.eContents().get(0);
+		private final Action cModifiersRuleAction_0 = (Action) cGroup.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword) cGroup.eContents().get(1);
 		private final Group cGroup_2 = (Group) cGroup.eContents().get(2);
-		private final Keyword cCommaKeyword_2_0 = (Keyword) cGroup_2.eContents().get(0);
-		private final Assignment cValuesAssignment_2_1 = (Assignment) cGroup_2.eContents().get(1);
-		private final RuleCall cValuesModifierSpecificationParserRuleCall_2_1_0 = (RuleCall) cValuesAssignment_2_1.eContents().get(0);
+		private final Assignment cValuesAssignment_2_0 = (Assignment) cGroup_2.eContents().get(0);
+		private final RuleCall cValuesModifierSpecificationParserRuleCall_2_0_0 = (RuleCall) cValuesAssignment_2_0.eContents().get(0);
+		private final Group cGroup_2_1 = (Group) cGroup_2.eContents().get(1);
+		private final Keyword cCommaKeyword_2_1_0 = (Keyword) cGroup_2_1.eContents().get(0);
+		private final Assignment cValuesAssignment_2_1_1 = (Assignment) cGroup_2_1.eContents().get(1);
+		private final RuleCall cValuesModifierSpecificationParserRuleCall_2_1_1_0 = (RuleCall) cValuesAssignment_2_1_1.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword) cGroup.eContents().get(3);
 
 		// ModifiersRule:
-		// "{" values+=ModifierSpecification ("," values+=ModifierSpecification)* "}";
+		// {ModifiersRule} "{" (values+=ModifierSpecification ("," values+=ModifierSpecification)*)? "}";
 		public ParserRule getRule() {
 			return rule;
 		}
 
-		// "{" values+=ModifierSpecification ("," values+=ModifierSpecification)* "}"
+		// {ModifiersRule} "{" (values+=ModifierSpecification ("," values+=ModifierSpecification)*)? "}"
 		public Group getGroup() {
 			return cGroup;
 		}
 
+		// {ModifiersRule}
+		public Action getModifiersRuleAction_0() {
+			return cModifiersRuleAction_0;
+		}
+
 		// "{"
-		public Keyword getLeftCurlyBracketKeyword_0() {
-			return cLeftCurlyBracketKeyword_0;
+		public Keyword getLeftCurlyBracketKeyword_1() {
+			return cLeftCurlyBracketKeyword_1;
 		}
 
-		// values+=ModifierSpecification
-		public Assignment getValuesAssignment_1() {
-			return cValuesAssignment_1;
-		}
-
-		// ModifierSpecification
-		public RuleCall getValuesModifierSpecificationParserRuleCall_1_0() {
-			return cValuesModifierSpecificationParserRuleCall_1_0;
-		}
-
-		// ("," values+=ModifierSpecification)*
+		// (values+=ModifierSpecification ("," values+=ModifierSpecification)*)?
 		public Group getGroup_2() {
 			return cGroup_2;
 		}
 
-		// ","
-		public Keyword getCommaKeyword_2_0() {
-			return cCommaKeyword_2_0;
-		}
-
 		// values+=ModifierSpecification
-		public Assignment getValuesAssignment_2_1() {
-			return cValuesAssignment_2_1;
+		public Assignment getValuesAssignment_2_0() {
+			return cValuesAssignment_2_0;
 		}
 
 		// ModifierSpecification
-		public RuleCall getValuesModifierSpecificationParserRuleCall_2_1_0() {
-			return cValuesModifierSpecificationParserRuleCall_2_1_0;
+		public RuleCall getValuesModifierSpecificationParserRuleCall_2_0_0() {
+			return cValuesModifierSpecificationParserRuleCall_2_0_0;
+		}
+
+		// ("," values+=ModifierSpecification)*
+		public Group getGroup_2_1() {
+			return cGroup_2_1;
+		}
+
+		// ","
+		public Keyword getCommaKeyword_2_1_0() {
+			return cCommaKeyword_2_1_0;
+		}
+
+		// values+=ModifierSpecification
+		public Assignment getValuesAssignment_2_1_1() {
+			return cValuesAssignment_2_1_1;
+		}
+
+		// ModifierSpecification
+		public RuleCall getValuesModifierSpecificationParserRuleCall_2_1_1_0() {
+			return cValuesModifierSpecificationParserRuleCall_2_1_1_0;
 		}
 
 		// "}"
@@ -1234,7 +1235,7 @@ public class UmlPropertyGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	// ModifiersRule:
-	// "{" values+=ModifierSpecification ("," values+=ModifierSpecification)* "}";
+	// {ModifiersRule} "{" (values+=ModifierSpecification ("," values+=ModifierSpecification)*)? "}";
 	public ModifiersRuleElements getModifiersRuleAccess() {
 		return pModifiersRule;
 	}

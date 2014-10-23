@@ -547,53 +547,59 @@ ruleModifiersRule returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-(	otherlv_0='{' 
+((
     {
-    	newLeafNode(otherlv_0, grammarAccess.getModifiersRuleAccess().getLeftCurlyBracketKeyword_0());
+        $current = forceCreateModelElement(
+            grammarAccess.getModifiersRuleAccess().getModifiersRuleAction_0(),
+            $current);
     }
-(
+)	otherlv_1='{' 
+    {
+    	newLeafNode(otherlv_1, grammarAccess.getModifiersRuleAccess().getLeftCurlyBracketKeyword_1());
+    }
+((
 (
 		{ 
-	        newCompositeNode(grammarAccess.getModifiersRuleAccess().getValuesModifierSpecificationParserRuleCall_1_0()); 
+	        newCompositeNode(grammarAccess.getModifiersRuleAccess().getValuesModifierSpecificationParserRuleCall_2_0_0()); 
 	    }
-		lv_values_1_0=ruleModifierSpecification		{
+		lv_values_2_0=ruleModifierSpecification		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getModifiersRuleRule());
 	        }
        		add(
        			$current, 
        			"values",
-        		lv_values_1_0, 
+        		lv_values_2_0, 
         		"ModifierSpecification");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)(	otherlv_2=',' 
+)(	otherlv_3=',' 
     {
-    	newLeafNode(otherlv_2, grammarAccess.getModifiersRuleAccess().getCommaKeyword_2_0());
+    	newLeafNode(otherlv_3, grammarAccess.getModifiersRuleAccess().getCommaKeyword_2_1_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getModifiersRuleAccess().getValuesModifierSpecificationParserRuleCall_2_1_0()); 
+	        newCompositeNode(grammarAccess.getModifiersRuleAccess().getValuesModifierSpecificationParserRuleCall_2_1_1_0()); 
 	    }
-		lv_values_3_0=ruleModifierSpecification		{
+		lv_values_4_0=ruleModifierSpecification		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getModifiersRuleRule());
 	        }
        		add(
        			$current, 
        			"values",
-        		lv_values_3_0, 
+        		lv_values_4_0, 
         		"ModifierSpecification");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-))*	otherlv_4='}' 
+))*)?	otherlv_5='}' 
     {
-    	newLeafNode(otherlv_4, grammarAccess.getModifiersRuleAccess().getRightCurlyBracketKeyword_3());
+    	newLeafNode(otherlv_5, grammarAccess.getModifiersRuleAccess().getRightCurlyBracketKeyword_3());
     }
 )
 ;

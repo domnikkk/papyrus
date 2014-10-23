@@ -272,13 +272,9 @@ public class PropertyXtextDirectEditorConfiguration extends DefaultXtextDirectEd
 		if (propertyRuleObject.isTypeUndefined()) {
 			setType = true;
 		} else if (typeRule != null) {
-			setType = true;
 			newType = typeRule.getType();
+			setType = newType != property.getType();
 		} // Else: no change
-
-		if (newType == property.getType()) {
-			setType = false;
-		}
 
 		if (setType) {
 			SetRequest setTypeRequest = new SetRequest(property, UMLPackage.eINSTANCE.getTypedElement_Type(), newType);

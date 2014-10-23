@@ -3,9 +3,12 @@
 package org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EClass;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.UmlPropertyPackage;
 import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.VisibilityKind;
 import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.VisibilityRule;

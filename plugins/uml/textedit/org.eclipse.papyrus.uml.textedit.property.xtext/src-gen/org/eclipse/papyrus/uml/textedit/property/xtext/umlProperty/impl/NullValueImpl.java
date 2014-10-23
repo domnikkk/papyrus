@@ -3,6 +3,7 @@
 package org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl;
 
 import org.eclipse.emf.ecore.EClass;
+
 import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.NullValue;
 import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.UmlPropertyPackage;
 

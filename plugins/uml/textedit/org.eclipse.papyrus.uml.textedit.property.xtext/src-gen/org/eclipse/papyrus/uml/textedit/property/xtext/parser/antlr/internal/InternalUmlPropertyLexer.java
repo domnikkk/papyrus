@@ -2,16 +2,9 @@ package org.eclipse.papyrus.uml.textedit.property.xtext.parser.antlr.internal;
 
 // Hack: Use our own Lexer superclass by means of import.
 // Currently there is no other way to specify the superclass for the lexer.
-import org.antlr.runtime.BaseRecognizer;
-import org.antlr.runtime.CharStream;
-import org.antlr.runtime.DFA;
-import org.antlr.runtime.EarlyExitException;
-import org.antlr.runtime.IntStream;
-import org.antlr.runtime.MismatchedSetException;
-import org.antlr.runtime.NoViableAltException;
-import org.antlr.runtime.RecognitionException;
-import org.antlr.runtime.RecognizerSharedState;
 import org.eclipse.xtext.parser.antlr.Lexer;
+
+import org.antlr.runtime.*;
 
 @SuppressWarnings("all")
 public class InternalUmlPropertyLexer extends Lexer {
@@ -631,12 +624,12 @@ public class InternalUmlPropertyLexer extends Lexer {
 		try {
 			int _type = RULE_ID;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1233:9: ( ( ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+			// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1239:9: ( ( ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
 			// | '\\'' ( options {greedy=false; } : . )* '\\'' ) )
-			// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1233:11: ( ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* |
+			// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1239:11: ( ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* |
 			// '\\'' ( options {greedy=false; } : . )* '\\'' )
 			{
-				// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1233:11: ( ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9'
+				// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1239:11: ( ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9'
 				// )* | '\\'' ( options {greedy=false; } : . )* '\\'' )
 				int alt3 = 2;
 				int LA3_0 = input.LA(1);
@@ -655,7 +648,7 @@ public class InternalUmlPropertyLexer extends Lexer {
 				}
 				switch (alt3) {
 				case 1:
-				// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1233:12: ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+				// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1239:12: ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
 				{
 					if ((input.LA(1) >= 'A' && input.LA(1) <= 'Z') || input.LA(1) == '_' || (input.LA(1) >= 'a' && input.LA(1) <= 'z')) {
 						input.consume();
@@ -667,7 +660,7 @@ public class InternalUmlPropertyLexer extends Lexer {
 						throw mse;
 					}
 
-					// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1233:36: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+					// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1239:36: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
 					loop1: do {
 						int alt1 = 2;
 						int LA1_0 = input.LA(1);
@@ -704,10 +697,10 @@ public class InternalUmlPropertyLexer extends Lexer {
 				}
 					break;
 				case 2:
-				// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1233:70: '\\'' ( options {greedy=false; } : . )* '\\''
+				// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1239:70: '\\'' ( options {greedy=false; } : . )* '\\''
 				{
 					match('\'');
-					// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1233:75: ( options {greedy=false; } : . )*
+					// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1239:75: ( options {greedy=false; } : . )*
 					loop2: do {
 						int alt2 = 2;
 						int LA2_0 = input.LA(1);
@@ -722,7 +715,7 @@ public class InternalUmlPropertyLexer extends Lexer {
 
 						switch (alt2) {
 						case 1:
-						// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1233:103: .
+						// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1239:103: .
 						{
 							matchAny();
 
@@ -757,13 +750,13 @@ public class InternalUmlPropertyLexer extends Lexer {
 		try {
 			int _type = RULE_STRING;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1235:13: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( (
+			// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1241:13: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( (
 			// '\\\\' | '\"' ) ) )* '\"' )
-			// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1235:15: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\'
+			// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1241:15: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\'
 			// | '\"' ) ) )* '\"'
 			{
 				match('\"');
-				// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1235:19: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' |
+				// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1241:19: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' |
 				// '\"' ) ) )*
 				loop4: do {
 					int alt4 = 3;
@@ -779,7 +772,7 @@ public class InternalUmlPropertyLexer extends Lexer {
 
 					switch (alt4) {
 					case 1:
-					// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1235:20: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' )
+					// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1241:20: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' )
 					{
 						match('\\');
 						if (input.LA(1) == '\"' || input.LA(1) == '\'' || input.LA(1) == '\\' || input.LA(1) == 'b' || input.LA(1) == 'f' || input.LA(1) == 'n' || input.LA(1) == 'r' || input.LA(1) == 't') {
@@ -796,7 +789,7 @@ public class InternalUmlPropertyLexer extends Lexer {
 					}
 						break;
 					case 2:
-					// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1235:61: ~ ( ( '\\\\' | '\"' ) )
+					// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1241:61: ~ ( ( '\\\\' | '\"' ) )
 					{
 						if ((input.LA(1) >= '\u0000' && input.LA(1) <= '!') || (input.LA(1) >= '#' && input.LA(1) <= '[') || (input.LA(1) >= ']' && input.LA(1) <= '\uFFFF')) {
 							input.consume();
@@ -834,8 +827,8 @@ public class InternalUmlPropertyLexer extends Lexer {
 		try {
 			int _type = RULE_ML_COMMENT;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1237:17: ( '/*' ~ ( '@' ) ( options {greedy=false; } : . )* '*/' )
-			// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1237:19: '/*' ~ ( '@' ) ( options {greedy=false; } : . )* '*/'
+			// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1243:17: ( '/*' ~ ( '@' ) ( options {greedy=false; } : . )* '*/' )
+			// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1243:19: '/*' ~ ( '@' ) ( options {greedy=false; } : . )* '*/'
 			{
 				match("/*");
 
@@ -849,7 +842,7 @@ public class InternalUmlPropertyLexer extends Lexer {
 					throw mse;
 				}
 
-				// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1237:31: ( options {greedy=false; } : . )*
+				// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1243:31: ( options {greedy=false; } : . )*
 				loop5: do {
 					int alt5 = 2;
 					int LA5_0 = input.LA(1);
@@ -873,7 +866,7 @@ public class InternalUmlPropertyLexer extends Lexer {
 
 					switch (alt5) {
 					case 1:
-					// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1237:59: .
+					// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1243:59: .
 					{
 						matchAny();
 
@@ -903,12 +896,12 @@ public class InternalUmlPropertyLexer extends Lexer {
 		try {
 			int _type = RULE_SL_COMMENT;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1239:17: ( '//' (~ ( ( '\\n' | '\\r' | '@' ) ) )* ( ( '\\r' )? '\\n' )? )
-			// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1239:19: '//' (~ ( ( '\\n' | '\\r' | '@' ) ) )* ( ( '\\r' )? '\\n' )?
+			// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1245:17: ( '//' (~ ( ( '\\n' | '\\r' | '@' ) ) )* ( ( '\\r' )? '\\n' )? )
+			// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1245:19: '//' (~ ( ( '\\n' | '\\r' | '@' ) ) )* ( ( '\\r' )? '\\n' )?
 			{
 				match("//");
 
-				// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1239:24: (~ ( ( '\\n' | '\\r' | '@' ) ) )*
+				// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1245:24: (~ ( ( '\\n' | '\\r' | '@' ) ) )*
 				loop6: do {
 					int alt6 = 2;
 					int LA6_0 = input.LA(1);
@@ -920,7 +913,7 @@ public class InternalUmlPropertyLexer extends Lexer {
 
 					switch (alt6) {
 					case 1:
-					// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1239:24: ~ ( ( '\\n' | '\\r' | '@' ) )
+					// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1245:24: ~ ( ( '\\n' | '\\r' | '@' ) )
 					{
 						if ((input.LA(1) >= '\u0000' && input.LA(1) <= '\t') || (input.LA(1) >= '\u000B' && input.LA(1) <= '\f') || (input.LA(1) >= '\u000E' && input.LA(1) <= '?') || (input.LA(1) >= 'A' && input.LA(1) <= '\uFFFF')) {
 							input.consume();
@@ -941,7 +934,7 @@ public class InternalUmlPropertyLexer extends Lexer {
 					}
 				} while (true);
 
-				// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1239:44: ( ( '\\r' )? '\\n' )?
+				// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1245:44: ( ( '\\r' )? '\\n' )?
 				int alt8 = 2;
 				int LA8_0 = input.LA(1);
 
@@ -950,9 +943,9 @@ public class InternalUmlPropertyLexer extends Lexer {
 				}
 				switch (alt8) {
 				case 1:
-				// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1239:45: ( '\\r' )? '\\n'
+				// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1245:45: ( '\\r' )? '\\n'
 				{
-					// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1239:45: ( '\\r' )?
+					// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1245:45: ( '\\r' )?
 					int alt7 = 2;
 					int LA7_0 = input.LA(1);
 
@@ -961,7 +954,7 @@ public class InternalUmlPropertyLexer extends Lexer {
 					}
 					switch (alt7) {
 					case 1:
-					// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1239:45: '\\r'
+					// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1245:45: '\\r'
 					{
 						match('\r');
 
@@ -993,10 +986,10 @@ public class InternalUmlPropertyLexer extends Lexer {
 		try {
 			int _type = RULE_INT;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1241:10: ( ( '0' .. '9' )+ )
-			// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1241:12: ( '0' .. '9' )+
+			// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1247:10: ( ( '0' .. '9' )+ )
+			// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1247:12: ( '0' .. '9' )+
 			{
-				// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1241:12: ( '0' .. '9' )+
+				// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1247:12: ( '0' .. '9' )+
 				int cnt9 = 0;
 				loop9: do {
 					int alt9 = 2;
@@ -1009,7 +1002,7 @@ public class InternalUmlPropertyLexer extends Lexer {
 
 					switch (alt9) {
 					case 1:
-					// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1241:13: '0' .. '9'
+					// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1247:13: '0' .. '9'
 					{
 						matchRange('0', '9');
 
@@ -1043,12 +1036,12 @@ public class InternalUmlPropertyLexer extends Lexer {
 		try {
 			int _type = RULE_INTEGER_VALUE;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1243:20: ( ( ( '0' | '1' .. '9' ( ( '_' )? '0' .. '9' )* ) | ( '0b' | '0B' ) '0' .. '1' ( (
+			// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1249:20: ( ( ( '0' | '1' .. '9' ( ( '_' )? '0' .. '9' )* ) | ( '0b' | '0B' ) '0' .. '1' ( (
 			// '_' )? '0' .. '1' )* | ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( ( '_' )? ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) )* | '0' ( '_' )? '0' .. '7' ( ( '_' )? '0' .. '7' )* ) )
-			// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1243:22: ( ( '0' | '1' .. '9' ( ( '_' )? '0' .. '9' )* ) | ( '0b' | '0B' ) '0' .. '1' ( ( '_'
+			// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1249:22: ( ( '0' | '1' .. '9' ( ( '_' )? '0' .. '9' )* ) | ( '0b' | '0B' ) '0' .. '1' ( ( '_'
 			// )? '0' .. '1' )* | ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( ( '_' )? ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) )* | '0' ( '_' )? '0' .. '7' ( ( '_' )? '0' .. '7' )* )
 			{
-				// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1243:22: ( ( '0' | '1' .. '9' ( ( '_' )? '0' .. '9' )* ) | ( '0b' | '0B' ) '0' .. '1' ( (
+				// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1249:22: ( ( '0' | '1' .. '9' ( ( '_' )? '0' .. '9' )* ) | ( '0b' | '0B' ) '0' .. '1' ( (
 				// '_' )? '0' .. '1' )* | ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( ( '_' )? ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) )* | '0' ( '_' )? '0' .. '7' ( ( '_' )? '0' .. '7' )* )
 				int alt22 = 4;
 				int LA22_0 = input.LA(1);
@@ -1093,9 +1086,9 @@ public class InternalUmlPropertyLexer extends Lexer {
 				}
 				switch (alt22) {
 				case 1:
-				// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1243:23: ( '0' | '1' .. '9' ( ( '_' )? '0' .. '9' )* )
+				// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1249:23: ( '0' | '1' .. '9' ( ( '_' )? '0' .. '9' )* )
 				{
-					// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1243:23: ( '0' | '1' .. '9' ( ( '_' )? '0' .. '9' )* )
+					// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1249:23: ( '0' | '1' .. '9' ( ( '_' )? '0' .. '9' )* )
 					int alt12 = 2;
 					int LA12_0 = input.LA(1);
 
@@ -1113,17 +1106,17 @@ public class InternalUmlPropertyLexer extends Lexer {
 					}
 					switch (alt12) {
 					case 1:
-					// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1243:24: '0'
+					// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1249:24: '0'
 					{
 						match('0');
 
 					}
 						break;
 					case 2:
-					// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1243:28: '1' .. '9' ( ( '_' )? '0' .. '9' )*
+					// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1249:28: '1' .. '9' ( ( '_' )? '0' .. '9' )*
 					{
 						matchRange('1', '9');
-						// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1243:37: ( ( '_' )? '0' .. '9' )*
+						// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1249:37: ( ( '_' )? '0' .. '9' )*
 						loop11: do {
 							int alt11 = 2;
 							int LA11_0 = input.LA(1);
@@ -1135,9 +1128,9 @@ public class InternalUmlPropertyLexer extends Lexer {
 
 							switch (alt11) {
 							case 1:
-							// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1243:38: ( '_' )? '0' .. '9'
+							// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1249:38: ( '_' )? '0' .. '9'
 							{
-								// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1243:38: ( '_' )?
+								// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1249:38: ( '_' )?
 								int alt10 = 2;
 								int LA10_0 = input.LA(1);
 
@@ -1146,7 +1139,7 @@ public class InternalUmlPropertyLexer extends Lexer {
 								}
 								switch (alt10) {
 								case 1:
-								// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1243:38: '_'
+								// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1249:38: '_'
 								{
 									match('_');
 
@@ -1175,9 +1168,9 @@ public class InternalUmlPropertyLexer extends Lexer {
 				}
 					break;
 				case 2:
-				// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1243:55: ( '0b' | '0B' ) '0' .. '1' ( ( '_' )? '0' .. '1' )*
+				// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1249:55: ( '0b' | '0B' ) '0' .. '1' ( ( '_' )? '0' .. '1' )*
 				{
-					// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1243:55: ( '0b' | '0B' )
+					// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1249:55: ( '0b' | '0B' )
 					int alt13 = 2;
 					int LA13_0 = input.LA(1);
 
@@ -1205,7 +1198,7 @@ public class InternalUmlPropertyLexer extends Lexer {
 					}
 					switch (alt13) {
 					case 1:
-					// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1243:56: '0b'
+					// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1249:56: '0b'
 					{
 						match("0b");
 
@@ -1213,7 +1206,7 @@ public class InternalUmlPropertyLexer extends Lexer {
 					}
 						break;
 					case 2:
-					// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1243:61: '0B'
+					// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1249:61: '0B'
 					{
 						match("0B");
 
@@ -1224,7 +1217,7 @@ public class InternalUmlPropertyLexer extends Lexer {
 					}
 
 					matchRange('0', '1');
-					// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1243:76: ( ( '_' )? '0' .. '1' )*
+					// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1249:76: ( ( '_' )? '0' .. '1' )*
 					loop15: do {
 						int alt15 = 2;
 						int LA15_0 = input.LA(1);
@@ -1236,9 +1229,9 @@ public class InternalUmlPropertyLexer extends Lexer {
 
 						switch (alt15) {
 						case 1:
-						// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1243:77: ( '_' )? '0' .. '1'
+						// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1249:77: ( '_' )? '0' .. '1'
 						{
-							// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1243:77: ( '_' )?
+							// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1249:77: ( '_' )?
 							int alt14 = 2;
 							int LA14_0 = input.LA(1);
 
@@ -1247,7 +1240,7 @@ public class InternalUmlPropertyLexer extends Lexer {
 							}
 							switch (alt14) {
 							case 1:
-							// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1243:77: '_'
+							// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1249:77: '_'
 							{
 								match('_');
 
@@ -1270,10 +1263,10 @@ public class InternalUmlPropertyLexer extends Lexer {
 				}
 					break;
 				case 3:
-				// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1243:93: ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( ( '_' )? ( '0' .. '9'
+				// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1249:93: ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( ( '_' )? ( '0' .. '9'
 				// | 'a' .. 'f' | 'A' .. 'F' ) )*
 				{
-					// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1243:93: ( '0x' | '0X' )
+					// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1249:93: ( '0x' | '0X' )
 					int alt16 = 2;
 					int LA16_0 = input.LA(1);
 
@@ -1301,7 +1294,7 @@ public class InternalUmlPropertyLexer extends Lexer {
 					}
 					switch (alt16) {
 					case 1:
-					// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1243:94: '0x'
+					// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1249:94: '0x'
 					{
 						match("0x");
 
@@ -1309,7 +1302,7 @@ public class InternalUmlPropertyLexer extends Lexer {
 					}
 						break;
 					case 2:
-					// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1243:99: '0X'
+					// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1249:99: '0X'
 					{
 						match("0X");
 
@@ -1329,7 +1322,7 @@ public class InternalUmlPropertyLexer extends Lexer {
 						throw mse;
 					}
 
-					// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1243:134: ( ( '_' )? ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) )*
+					// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1249:134: ( ( '_' )? ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) )*
 					loop18: do {
 						int alt18 = 2;
 						int LA18_0 = input.LA(1);
@@ -1341,9 +1334,9 @@ public class InternalUmlPropertyLexer extends Lexer {
 
 						switch (alt18) {
 						case 1:
-						// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1243:135: ( '_' )? ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )
+						// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1249:135: ( '_' )? ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )
 						{
-							// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1243:135: ( '_' )?
+							// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1249:135: ( '_' )?
 							int alt17 = 2;
 							int LA17_0 = input.LA(1);
 
@@ -1352,7 +1345,7 @@ public class InternalUmlPropertyLexer extends Lexer {
 							}
 							switch (alt17) {
 							case 1:
-							// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1243:135: '_'
+							// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1249:135: '_'
 							{
 								match('_');
 
@@ -1384,10 +1377,10 @@ public class InternalUmlPropertyLexer extends Lexer {
 				}
 					break;
 				case 4:
-				// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1243:171: '0' ( '_' )? '0' .. '7' ( ( '_' )? '0' .. '7' )*
+				// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1249:171: '0' ( '_' )? '0' .. '7' ( ( '_' )? '0' .. '7' )*
 				{
 					match('0');
-					// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1243:175: ( '_' )?
+					// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1249:175: ( '_' )?
 					int alt19 = 2;
 					int LA19_0 = input.LA(1);
 
@@ -1396,7 +1389,7 @@ public class InternalUmlPropertyLexer extends Lexer {
 					}
 					switch (alt19) {
 					case 1:
-					// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1243:175: '_'
+					// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1249:175: '_'
 					{
 						match('_');
 
@@ -1406,7 +1399,7 @@ public class InternalUmlPropertyLexer extends Lexer {
 					}
 
 					matchRange('0', '7');
-					// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1243:189: ( ( '_' )? '0' .. '7' )*
+					// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1249:189: ( ( '_' )? '0' .. '7' )*
 					loop21: do {
 						int alt21 = 2;
 						int LA21_0 = input.LA(1);
@@ -1418,9 +1411,9 @@ public class InternalUmlPropertyLexer extends Lexer {
 
 						switch (alt21) {
 						case 1:
-						// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1243:190: ( '_' )? '0' .. '7'
+						// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1249:190: ( '_' )? '0' .. '7'
 						{
-							// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1243:190: ( '_' )?
+							// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1249:190: ( '_' )?
 							int alt20 = 2;
 							int LA20_0 = input.LA(1);
 
@@ -1429,7 +1422,7 @@ public class InternalUmlPropertyLexer extends Lexer {
 							}
 							switch (alt20) {
 							case 1:
-							// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1243:190: '_'
+							// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1249:190: '_'
 							{
 								match('_');
 
@@ -1470,10 +1463,10 @@ public class InternalUmlPropertyLexer extends Lexer {
 		try {
 			int _type = RULE_WS;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1245:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-			// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1245:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+			// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1251:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+			// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1251:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
 			{
-				// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1245:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+				// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1251:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
 				int cnt23 = 0;
 				loop23: do {
 					int alt23 = 2;
@@ -1529,8 +1522,8 @@ public class InternalUmlPropertyLexer extends Lexer {
 		try {
 			int _type = RULE_ANY_OTHER;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1247:16: ( . )
-			// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1247:18: .
+			// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1253:16: ( . )
+			// ../org.eclipse.papyrus.uml.textedit.property.xtext/src-gen/org/eclipse/papyrus/uml/textedit/property/xtext/parser/antlr/internal/InternalUmlProperty.g:1253:18: .
 			{
 				matchAny();
 
