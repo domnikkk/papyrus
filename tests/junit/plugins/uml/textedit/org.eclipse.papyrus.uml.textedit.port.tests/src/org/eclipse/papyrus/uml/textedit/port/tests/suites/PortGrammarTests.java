@@ -21,7 +21,6 @@ import org.eclipse.uml2.uml.DataType;
 import org.eclipse.uml2.uml.Model;
 import org.eclipse.uml2.uml.Port;
 import org.eclipse.uml2.uml.PrimitiveType;
-import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.VisibilityKind;
 import org.junit.Assert;
@@ -29,7 +28,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 @PluginResource("/model/xtextPortModel.uml")
-public class PortGrammarTests extends AbstractGrammarTest<Property> {
+public class PortGrammarTests extends AbstractGrammarTest<Port> {
 
 	protected PrimitiveType type2; /* QName = model::Package1::type2 */
 

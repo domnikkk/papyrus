@@ -20,5 +20,5 @@ import org.junit.runners.Suite.SuiteClasses;
 		ParameterGrammarTests.class
 })
 public class AllTests {
-
+	// JUnit 4 Test Suite
 }
