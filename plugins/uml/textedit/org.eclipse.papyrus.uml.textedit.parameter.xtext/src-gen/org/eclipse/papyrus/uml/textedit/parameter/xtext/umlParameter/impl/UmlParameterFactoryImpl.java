@@ -17,237 +17,355 @@ import org.eclipse.papyrus.uml.textedit.parameter.xtext.umlParameter.*;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- *
  * @generated
  */
 public class UmlParameterFactoryImpl extends EFactoryImpl implements UmlParameterFactory
 {
-	/**
-	 * Creates the default factory implementation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	public static UmlParameterFactory init()
-	{
-		try
-		{
-			UmlParameterFactory theUmlParameterFactory = (UmlParameterFactory) EPackage.Registry.INSTANCE.getEFactory(UmlParameterPackage.eNS_URI);
-			if (theUmlParameterFactory != null)
-			{
-				return theUmlParameterFactory;
-			}
-		} catch (Exception exception)
-		{
-			EcorePlugin.INSTANCE.log(exception);
-		}
-		return new UmlParameterFactoryImpl();
-	}
+  /**
+   * Creates the default factory implementation.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public static UmlParameterFactory init()
+  {
+    try
+    {
+      UmlParameterFactory theUmlParameterFactory = (UmlParameterFactory)EPackage.Registry.INSTANCE.getEFactory(UmlParameterPackage.eNS_URI);
+      if (theUmlParameterFactory != null)
+      {
+        return theUmlParameterFactory;
+      }
+    }
+    catch (Exception exception)
+    {
+      EcorePlugin.INSTANCE.log(exception);
+    }
+    return new UmlParameterFactoryImpl();
+  }
 
-	/**
-	 * Creates an instance of the factory.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	public UmlParameterFactoryImpl()
-	{
-		super();
-	}
+  /**
+   * Creates an instance of the factory.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public UmlParameterFactoryImpl()
+  {
+    super();
+  }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public EObject create(EClass eClass)
-	{
-		switch (eClass.getClassifierID())
-		{
-		case UmlParameterPackage.PARAMETER_RULE:
-			return createParameterRule();
-		case UmlParameterPackage.MODIFIERS_RULE:
-			return createModifiersRule();
-		case UmlParameterPackage.MODIFIER_SPECIFICATION:
-			return createModifierSpecification();
-		case UmlParameterPackage.EFFECT_RULE:
-			return createEffectRule();
-		default:
-			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
-		}
-	}
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EObject create(EClass eClass)
+  {
+    switch (eClass.getClassifierID())
+    {
+      case UmlParameterPackage.PARAMETER_RULE: return createParameterRule();
+      case UmlParameterPackage.MODIFIERS_RULE: return createModifiersRule();
+      case UmlParameterPackage.MODIFIER_SPECIFICATION: return createModifierSpecification();
+      case UmlParameterPackage.VISIBILITY_RULE: return createVisibilityRule();
+      case UmlParameterPackage.DIRECTION_RULE: return createDirectionRule();
+      case UmlParameterPackage.EFFECT_RULE: return createEffectRule();
+      case UmlParameterPackage.DEFAULT_VALUE_RULE: return createDefaultValueRule();
+      case UmlParameterPackage.VALUE: return createValue();
+      case UmlParameterPackage.INT_VALUE: return createIntValue();
+      case UmlParameterPackage.STRING_VALUE: return createStringValue();
+      case UmlParameterPackage.BOOLEAN_VALUE: return createBooleanValue();
+      case UmlParameterPackage.REAL_VALUE: return createRealValue();
+      case UmlParameterPackage.NULL_VALUE: return createNullValue();
+      case UmlParameterPackage.NO_VALUE: return createNoValue();
+      default:
+        throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+    }
+  }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public Object createFromString(EDataType eDataType, String initialValue)
-	{
-		switch (eDataType.getClassifierID())
-		{
-		case UmlParameterPackage.MODIFIER_KIND:
-			return createModifierKindFromString(eDataType, initialValue);
-		case UmlParameterPackage.EFFECT_KIND:
-			return createEffectKindFromString(eDataType, initialValue);
-		default:
-			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
-		}
-	}
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Object createFromString(EDataType eDataType, String initialValue)
+  {
+    switch (eDataType.getClassifierID())
+    {
+      case UmlParameterPackage.MODIFIER_KIND:
+        return createModifierKindFromString(eDataType, initialValue);
+      case UmlParameterPackage.EFFECT_KIND:
+        return createEffectKindFromString(eDataType, initialValue);
+      case UmlParameterPackage.BOOLEAN_LITERALS:
+        return createBooleanLiteralsFromString(eDataType, initialValue);
+      default:
+        throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+    }
+  }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public String convertToString(EDataType eDataType, Object instanceValue)
-	{
-		switch (eDataType.getClassifierID())
-		{
-		case UmlParameterPackage.MODIFIER_KIND:
-			return convertModifierKindToString(eDataType, instanceValue);
-		case UmlParameterPackage.EFFECT_KIND:
-			return convertEffectKindToString(eDataType, instanceValue);
-		default:
-			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
-		}
-	}
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String convertToString(EDataType eDataType, Object instanceValue)
+  {
+    switch (eDataType.getClassifierID())
+    {
+      case UmlParameterPackage.MODIFIER_KIND:
+        return convertModifierKindToString(eDataType, instanceValue);
+      case UmlParameterPackage.EFFECT_KIND:
+        return convertEffectKindToString(eDataType, instanceValue);
+      case UmlParameterPackage.BOOLEAN_LITERALS:
+        return convertBooleanLiteralsToString(eDataType, instanceValue);
+      default:
+        throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+    }
+  }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public ParameterRule createParameterRule()
-	{
-		ParameterRuleImpl parameterRule = new ParameterRuleImpl();
-		return parameterRule;
-	}
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ParameterRule createParameterRule()
+  {
+    ParameterRuleImpl parameterRule = new ParameterRuleImpl();
+    return parameterRule;
+  }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public ModifiersRule createModifiersRule()
-	{
-		ModifiersRuleImpl modifiersRule = new ModifiersRuleImpl();
-		return modifiersRule;
-	}
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ModifiersRule createModifiersRule()
+  {
+    ModifiersRuleImpl modifiersRule = new ModifiersRuleImpl();
+    return modifiersRule;
+  }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public ModifierSpecification createModifierSpecification()
-	{
-		ModifierSpecificationImpl modifierSpecification = new ModifierSpecificationImpl();
-		return modifierSpecification;
-	}
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ModifierSpecification createModifierSpecification()
+  {
+    ModifierSpecificationImpl modifierSpecification = new ModifierSpecificationImpl();
+    return modifierSpecification;
+  }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public EffectRule createEffectRule()
-	{
-		EffectRuleImpl effectRule = new EffectRuleImpl();
-		return effectRule;
-	}
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public VisibilityRule createVisibilityRule()
+  {
+    VisibilityRuleImpl visibilityRule = new VisibilityRuleImpl();
+    return visibilityRule;
+  }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	public ModifierKind createModifierKindFromString(EDataType eDataType, String initialValue)
-	{
-		ModifierKind result = ModifierKind.get(initialValue);
-		if (result == null) {
-			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		}
-		return result;
-	}
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public DirectionRule createDirectionRule()
+  {
+    DirectionRuleImpl directionRule = new DirectionRuleImpl();
+    return directionRule;
+  }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	public String convertModifierKindToString(EDataType eDataType, Object instanceValue)
-	{
-		return instanceValue == null ? null : instanceValue.toString();
-	}
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EffectRule createEffectRule()
+  {
+    EffectRuleImpl effectRule = new EffectRuleImpl();
+    return effectRule;
+  }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	public EffectKind createEffectKindFromString(EDataType eDataType, String initialValue)
-	{
-		EffectKind result = EffectKind.get(initialValue);
-		if (result == null) {
-			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		}
-		return result;
-	}
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public DefaultValueRule createDefaultValueRule()
+  {
+    DefaultValueRuleImpl defaultValueRule = new DefaultValueRuleImpl();
+    return defaultValueRule;
+  }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	public String convertEffectKindToString(EDataType eDataType, Object instanceValue)
-	{
-		return instanceValue == null ? null : instanceValue.toString();
-	}
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Value createValue()
+  {
+    ValueImpl value = new ValueImpl();
+    return value;
+  }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public UmlParameterPackage getUmlParameterPackage()
-	{
-		return (UmlParameterPackage) getEPackage();
-	}
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public IntValue createIntValue()
+  {
+    IntValueImpl intValue = new IntValueImpl();
+    return intValue;
+  }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @deprecated
-	 * @generated
-	 */
-	@Deprecated
-	public static UmlParameterPackage getPackage()
-	{
-		return UmlParameterPackage.eINSTANCE;
-	}
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public StringValue createStringValue()
+  {
+    StringValueImpl stringValue = new StringValueImpl();
+    return stringValue;
+  }
 
-} // UmlParameterFactoryImpl
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public BooleanValue createBooleanValue()
+  {
+    BooleanValueImpl booleanValue = new BooleanValueImpl();
+    return booleanValue;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public RealValue createRealValue()
+  {
+    RealValueImpl realValue = new RealValueImpl();
+    return realValue;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NullValue createNullValue()
+  {
+    NullValueImpl nullValue = new NullValueImpl();
+    return nullValue;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NoValue createNoValue()
+  {
+    NoValueImpl noValue = new NoValueImpl();
+    return noValue;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ModifierKind createModifierKindFromString(EDataType eDataType, String initialValue)
+  {
+    ModifierKind result = ModifierKind.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertModifierKindToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EffectKind createEffectKindFromString(EDataType eDataType, String initialValue)
+  {
+    EffectKind result = EffectKind.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertEffectKindToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public BooleanLiterals createBooleanLiteralsFromString(EDataType eDataType, String initialValue)
+  {
+    BooleanLiterals result = BooleanLiterals.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertBooleanLiteralsToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public UmlParameterPackage getUmlParameterPackage()
+  {
+    return (UmlParameterPackage)getEPackage();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @deprecated
+   * @generated
+   */
+  @Deprecated
+  public static UmlParameterPackage getPackage()
+  {
+    return UmlParameterPackage.eINSTANCE;
+  }
+
+} //UmlParameterFactoryImpl

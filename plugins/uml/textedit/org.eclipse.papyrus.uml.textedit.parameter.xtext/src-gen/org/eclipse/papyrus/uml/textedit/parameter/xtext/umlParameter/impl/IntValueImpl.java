@@ -7,53 +7,51 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.papyrus.uml.textedit.parameter.xtext.umlParameter.ModifierKind;
-import org.eclipse.papyrus.uml.textedit.parameter.xtext.umlParameter.ModifierSpecification;
+import org.eclipse.papyrus.uml.textedit.parameter.xtext.umlParameter.IntValue;
 import org.eclipse.papyrus.uml.textedit.parameter.xtext.umlParameter.UmlParameterPackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Modifier Specification</b></em>'.
+ * An implementation of the model object '<em><b>Int Value</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.uml.textedit.parameter.xtext.umlParameter.impl.ModifierSpecificationImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.uml.textedit.parameter.xtext.umlParameter.impl.IntValueImpl#getLiteralInteger <em>Literal Integer</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ModifierSpecificationImpl extends MinimalEObjectImpl.Container implements ModifierSpecification
+public class IntValueImpl extends ValueImpl implements IntValue
 {
   /**
-   * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
+   * The default value of the '{@link #getLiteralInteger() <em>Literal Integer</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getValue()
+   * @see #getLiteralInteger()
    * @generated
    * @ordered
    */
-  protected static final ModifierKind VALUE_EDEFAULT = ModifierKind.EXCEPTION;
+  protected static final int LITERAL_INTEGER_EDEFAULT = 0;
 
   /**
-   * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
+   * The cached value of the '{@link #getLiteralInteger() <em>Literal Integer</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getValue()
+   * @see #getLiteralInteger()
    * @generated
    * @ordered
    */
-  protected ModifierKind value = VALUE_EDEFAULT;
+  protected int literalInteger = LITERAL_INTEGER_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ModifierSpecificationImpl()
+  protected IntValueImpl()
   {
     super();
   }
@@ -66,7 +64,7 @@ public class ModifierSpecificationImpl extends MinimalEObjectImpl.Container impl
   @Override
   protected EClass eStaticClass()
   {
-    return UmlParameterPackage.Literals.MODIFIER_SPECIFICATION;
+    return UmlParameterPackage.Literals.INT_VALUE;
   }
 
   /**
@@ -74,9 +72,9 @@ public class ModifierSpecificationImpl extends MinimalEObjectImpl.Container impl
    * <!-- end-user-doc -->
    * @generated
    */
-  public ModifierKind getValue()
+  public int getLiteralInteger()
   {
-    return value;
+    return literalInteger;
   }
 
   /**
@@ -84,12 +82,12 @@ public class ModifierSpecificationImpl extends MinimalEObjectImpl.Container impl
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setValue(ModifierKind newValue)
+  public void setLiteralInteger(int newLiteralInteger)
   {
-    ModifierKind oldValue = value;
-    value = newValue == null ? VALUE_EDEFAULT : newValue;
+    int oldLiteralInteger = literalInteger;
+    literalInteger = newLiteralInteger;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, UmlParameterPackage.MODIFIER_SPECIFICATION__VALUE, oldValue, value));
+      eNotify(new ENotificationImpl(this, Notification.SET, UmlParameterPackage.INT_VALUE__LITERAL_INTEGER, oldLiteralInteger, literalInteger));
   }
 
   /**
@@ -102,8 +100,8 @@ public class ModifierSpecificationImpl extends MinimalEObjectImpl.Container impl
   {
     switch (featureID)
     {
-      case UmlParameterPackage.MODIFIER_SPECIFICATION__VALUE:
-        return getValue();
+      case UmlParameterPackage.INT_VALUE__LITERAL_INTEGER:
+        return getLiteralInteger();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -118,8 +116,8 @@ public class ModifierSpecificationImpl extends MinimalEObjectImpl.Container impl
   {
     switch (featureID)
     {
-      case UmlParameterPackage.MODIFIER_SPECIFICATION__VALUE:
-        setValue((ModifierKind)newValue);
+      case UmlParameterPackage.INT_VALUE__LITERAL_INTEGER:
+        setLiteralInteger((Integer)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -135,8 +133,8 @@ public class ModifierSpecificationImpl extends MinimalEObjectImpl.Container impl
   {
     switch (featureID)
     {
-      case UmlParameterPackage.MODIFIER_SPECIFICATION__VALUE:
-        setValue(VALUE_EDEFAULT);
+      case UmlParameterPackage.INT_VALUE__LITERAL_INTEGER:
+        setLiteralInteger(LITERAL_INTEGER_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -152,8 +150,8 @@ public class ModifierSpecificationImpl extends MinimalEObjectImpl.Container impl
   {
     switch (featureID)
     {
-      case UmlParameterPackage.MODIFIER_SPECIFICATION__VALUE:
-        return value != VALUE_EDEFAULT;
+      case UmlParameterPackage.INT_VALUE__LITERAL_INTEGER:
+        return literalInteger != LITERAL_INTEGER_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }
@@ -169,10 +167,10 @@ public class ModifierSpecificationImpl extends MinimalEObjectImpl.Container impl
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (value: ");
-    result.append(value);
+    result.append(" (literalInteger: ");
+    result.append(literalInteger);
     result.append(')');
     return result.toString();
   }
 
-} //ModifierSpecificationImpl
+} //IntValueImpl

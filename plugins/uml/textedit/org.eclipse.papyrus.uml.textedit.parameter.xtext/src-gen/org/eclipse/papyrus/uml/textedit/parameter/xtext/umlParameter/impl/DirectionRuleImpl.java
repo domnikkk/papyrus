@@ -9,51 +9,52 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.papyrus.uml.textedit.parameter.xtext.umlParameter.ModifierKind;
-import org.eclipse.papyrus.uml.textedit.parameter.xtext.umlParameter.ModifierSpecification;
+import org.eclipse.papyrus.uml.textedit.common.xtext.umlCommon.Direction;
+
+import org.eclipse.papyrus.uml.textedit.parameter.xtext.umlParameter.DirectionRule;
 import org.eclipse.papyrus.uml.textedit.parameter.xtext.umlParameter.UmlParameterPackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Modifier Specification</b></em>'.
+ * An implementation of the model object '<em><b>Direction Rule</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.uml.textedit.parameter.xtext.umlParameter.impl.ModifierSpecificationImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.uml.textedit.parameter.xtext.umlParameter.impl.DirectionRuleImpl#getDirection <em>Direction</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ModifierSpecificationImpl extends MinimalEObjectImpl.Container implements ModifierSpecification
+public class DirectionRuleImpl extends MinimalEObjectImpl.Container implements DirectionRule
 {
   /**
-   * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
+   * The default value of the '{@link #getDirection() <em>Direction</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getValue()
+   * @see #getDirection()
    * @generated
    * @ordered
    */
-  protected static final ModifierKind VALUE_EDEFAULT = ModifierKind.EXCEPTION;
+  protected static final Direction DIRECTION_EDEFAULT = Direction.IN;
 
   /**
-   * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
+   * The cached value of the '{@link #getDirection() <em>Direction</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getValue()
+   * @see #getDirection()
    * @generated
    * @ordered
    */
-  protected ModifierKind value = VALUE_EDEFAULT;
+  protected Direction direction = DIRECTION_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ModifierSpecificationImpl()
+  protected DirectionRuleImpl()
   {
     super();
   }
@@ -66,7 +67,7 @@ public class ModifierSpecificationImpl extends MinimalEObjectImpl.Container impl
   @Override
   protected EClass eStaticClass()
   {
-    return UmlParameterPackage.Literals.MODIFIER_SPECIFICATION;
+    return UmlParameterPackage.Literals.DIRECTION_RULE;
   }
 
   /**
@@ -74,9 +75,9 @@ public class ModifierSpecificationImpl extends MinimalEObjectImpl.Container impl
    * <!-- end-user-doc -->
    * @generated
    */
-  public ModifierKind getValue()
+  public Direction getDirection()
   {
-    return value;
+    return direction;
   }
 
   /**
@@ -84,12 +85,12 @@ public class ModifierSpecificationImpl extends MinimalEObjectImpl.Container impl
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setValue(ModifierKind newValue)
+  public void setDirection(Direction newDirection)
   {
-    ModifierKind oldValue = value;
-    value = newValue == null ? VALUE_EDEFAULT : newValue;
+    Direction oldDirection = direction;
+    direction = newDirection == null ? DIRECTION_EDEFAULT : newDirection;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, UmlParameterPackage.MODIFIER_SPECIFICATION__VALUE, oldValue, value));
+      eNotify(new ENotificationImpl(this, Notification.SET, UmlParameterPackage.DIRECTION_RULE__DIRECTION, oldDirection, direction));
   }
 
   /**
@@ -102,8 +103,8 @@ public class ModifierSpecificationImpl extends MinimalEObjectImpl.Container impl
   {
     switch (featureID)
     {
-      case UmlParameterPackage.MODIFIER_SPECIFICATION__VALUE:
-        return getValue();
+      case UmlParameterPackage.DIRECTION_RULE__DIRECTION:
+        return getDirection();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -118,8 +119,8 @@ public class ModifierSpecificationImpl extends MinimalEObjectImpl.Container impl
   {
     switch (featureID)
     {
-      case UmlParameterPackage.MODIFIER_SPECIFICATION__VALUE:
-        setValue((ModifierKind)newValue);
+      case UmlParameterPackage.DIRECTION_RULE__DIRECTION:
+        setDirection((Direction)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -135,8 +136,8 @@ public class ModifierSpecificationImpl extends MinimalEObjectImpl.Container impl
   {
     switch (featureID)
     {
-      case UmlParameterPackage.MODIFIER_SPECIFICATION__VALUE:
-        setValue(VALUE_EDEFAULT);
+      case UmlParameterPackage.DIRECTION_RULE__DIRECTION:
+        setDirection(DIRECTION_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -152,8 +153,8 @@ public class ModifierSpecificationImpl extends MinimalEObjectImpl.Container impl
   {
     switch (featureID)
     {
-      case UmlParameterPackage.MODIFIER_SPECIFICATION__VALUE:
-        return value != VALUE_EDEFAULT;
+      case UmlParameterPackage.DIRECTION_RULE__DIRECTION:
+        return direction != DIRECTION_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }
@@ -169,10 +170,10 @@ public class ModifierSpecificationImpl extends MinimalEObjectImpl.Container impl
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (value: ");
-    result.append(value);
+    result.append(" (direction: ");
+    result.append(direction);
     result.append(')');
     return result.toString();
   }
 
-} //ModifierSpecificationImpl
+} //DirectionRuleImpl

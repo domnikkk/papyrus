@@ -7,53 +7,52 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.papyrus.uml.textedit.parameter.xtext.umlParameter.ModifierKind;
-import org.eclipse.papyrus.uml.textedit.parameter.xtext.umlParameter.ModifierSpecification;
+import org.eclipse.papyrus.uml.textedit.parameter.xtext.umlParameter.BooleanLiterals;
+import org.eclipse.papyrus.uml.textedit.parameter.xtext.umlParameter.BooleanValue;
 import org.eclipse.papyrus.uml.textedit.parameter.xtext.umlParameter.UmlParameterPackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Modifier Specification</b></em>'.
+ * An implementation of the model object '<em><b>Boolean Value</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.uml.textedit.parameter.xtext.umlParameter.impl.ModifierSpecificationImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.uml.textedit.parameter.xtext.umlParameter.impl.BooleanValueImpl#getLiteralBoolean <em>Literal Boolean</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ModifierSpecificationImpl extends MinimalEObjectImpl.Container implements ModifierSpecification
+public class BooleanValueImpl extends ValueImpl implements BooleanValue
 {
   /**
-   * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
+   * The default value of the '{@link #getLiteralBoolean() <em>Literal Boolean</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getValue()
+   * @see #getLiteralBoolean()
    * @generated
    * @ordered
    */
-  protected static final ModifierKind VALUE_EDEFAULT = ModifierKind.EXCEPTION;
+  protected static final BooleanLiterals LITERAL_BOOLEAN_EDEFAULT = BooleanLiterals.TRUE;
 
   /**
-   * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
+   * The cached value of the '{@link #getLiteralBoolean() <em>Literal Boolean</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getValue()
+   * @see #getLiteralBoolean()
    * @generated
    * @ordered
    */
-  protected ModifierKind value = VALUE_EDEFAULT;
+  protected BooleanLiterals literalBoolean = LITERAL_BOOLEAN_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ModifierSpecificationImpl()
+  protected BooleanValueImpl()
   {
     super();
   }
@@ -66,7 +65,7 @@ public class ModifierSpecificationImpl extends MinimalEObjectImpl.Container impl
   @Override
   protected EClass eStaticClass()
   {
-    return UmlParameterPackage.Literals.MODIFIER_SPECIFICATION;
+    return UmlParameterPackage.Literals.BOOLEAN_VALUE;
   }
 
   /**
@@ -74,9 +73,9 @@ public class ModifierSpecificationImpl extends MinimalEObjectImpl.Container impl
    * <!-- end-user-doc -->
    * @generated
    */
-  public ModifierKind getValue()
+  public BooleanLiterals getLiteralBoolean()
   {
-    return value;
+    return literalBoolean;
   }
 
   /**
@@ -84,12 +83,12 @@ public class ModifierSpecificationImpl extends MinimalEObjectImpl.Container impl
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setValue(ModifierKind newValue)
+  public void setLiteralBoolean(BooleanLiterals newLiteralBoolean)
   {
-    ModifierKind oldValue = value;
-    value = newValue == null ? VALUE_EDEFAULT : newValue;
+    BooleanLiterals oldLiteralBoolean = literalBoolean;
+    literalBoolean = newLiteralBoolean == null ? LITERAL_BOOLEAN_EDEFAULT : newLiteralBoolean;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, UmlParameterPackage.MODIFIER_SPECIFICATION__VALUE, oldValue, value));
+      eNotify(new ENotificationImpl(this, Notification.SET, UmlParameterPackage.BOOLEAN_VALUE__LITERAL_BOOLEAN, oldLiteralBoolean, literalBoolean));
   }
 
   /**
@@ -102,8 +101,8 @@ public class ModifierSpecificationImpl extends MinimalEObjectImpl.Container impl
   {
     switch (featureID)
     {
-      case UmlParameterPackage.MODIFIER_SPECIFICATION__VALUE:
-        return getValue();
+      case UmlParameterPackage.BOOLEAN_VALUE__LITERAL_BOOLEAN:
+        return getLiteralBoolean();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -118,8 +117,8 @@ public class ModifierSpecificationImpl extends MinimalEObjectImpl.Container impl
   {
     switch (featureID)
     {
-      case UmlParameterPackage.MODIFIER_SPECIFICATION__VALUE:
-        setValue((ModifierKind)newValue);
+      case UmlParameterPackage.BOOLEAN_VALUE__LITERAL_BOOLEAN:
+        setLiteralBoolean((BooleanLiterals)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -135,8 +134,8 @@ public class ModifierSpecificationImpl extends MinimalEObjectImpl.Container impl
   {
     switch (featureID)
     {
-      case UmlParameterPackage.MODIFIER_SPECIFICATION__VALUE:
-        setValue(VALUE_EDEFAULT);
+      case UmlParameterPackage.BOOLEAN_VALUE__LITERAL_BOOLEAN:
+        setLiteralBoolean(LITERAL_BOOLEAN_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -152,8 +151,8 @@ public class ModifierSpecificationImpl extends MinimalEObjectImpl.Container impl
   {
     switch (featureID)
     {
-      case UmlParameterPackage.MODIFIER_SPECIFICATION__VALUE:
-        return value != VALUE_EDEFAULT;
+      case UmlParameterPackage.BOOLEAN_VALUE__LITERAL_BOOLEAN:
+        return literalBoolean != LITERAL_BOOLEAN_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }
@@ -169,10 +168,10 @@ public class ModifierSpecificationImpl extends MinimalEObjectImpl.Container impl
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (value: ");
-    result.append(value);
+    result.append(" (literalBoolean: ");
+    result.append(literalBoolean);
     result.append(')');
     return result.toString();
   }
 
-} //ModifierSpecificationImpl
+} //BooleanValueImpl

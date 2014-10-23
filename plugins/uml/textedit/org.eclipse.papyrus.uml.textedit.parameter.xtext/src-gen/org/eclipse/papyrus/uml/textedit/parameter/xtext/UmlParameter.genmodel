@@ -21,14 +21,20 @@
       <genEnumLiterals ecoreEnumLiteral="UmlParameter.ecore#//EffectKind/UPDATE"/>
       <genEnumLiterals ecoreEnumLiteral="UmlParameter.ecore#//EffectKind/DELETE"/>
     </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="UmlParameter.ecore#//BooleanLiterals">
+      <genEnumLiterals ecoreEnumLiteral="UmlParameter.ecore#//BooleanLiterals/true"/>
+      <genEnumLiterals ecoreEnumLiteral="UmlParameter.ecore#//BooleanLiterals/false"/>
+    </genEnums>
     <genClasses ecoreClass="UmlParameter.ecore#//ParameterRule">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute UmlParameter.ecore#//ParameterRule/visibility"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute UmlParameter.ecore#//ParameterRule/direction"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference UmlParameter.ecore#//ParameterRule/visibility"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference UmlParameter.ecore#//ParameterRule/direction"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute UmlParameter.ecore#//ParameterRule/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference UmlParameter.ecore#//ParameterRule/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute UmlParameter.ecore#//ParameterRule/typeUndefined"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference UmlParameter.ecore#//ParameterRule/multiplicity"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference UmlParameter.ecore#//ParameterRule/modifiers"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference UmlParameter.ecore#//ParameterRule/effect"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference UmlParameter.ecore#//ParameterRule/defaultValue"/>
     </genClasses>
     <genClasses ecoreClass="UmlParameter.ecore#//ModifiersRule">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference UmlParameter.ecore#//ModifiersRule/values"/>
@@ -36,8 +42,33 @@
     <genClasses ecoreClass="UmlParameter.ecore#//ModifierSpecification">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute UmlParameter.ecore#//ModifierSpecification/value"/>
     </genClasses>
+    <genClasses ecoreClass="UmlParameter.ecore#//VisibilityRule">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute UmlParameter.ecore#//VisibilityRule/visibility"/>
+    </genClasses>
+    <genClasses ecoreClass="UmlParameter.ecore#//DirectionRule">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute UmlParameter.ecore#//DirectionRule/direction"/>
+    </genClasses>
     <genClasses ecoreClass="UmlParameter.ecore#//EffectRule">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute UmlParameter.ecore#//EffectRule/effectKind"/>
     </genClasses>
+    <genClasses ecoreClass="UmlParameter.ecore#//DefaultValueRule">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference UmlParameter.ecore#//DefaultValueRule/default"/>
+    </genClasses>
+    <genClasses ecoreClass="UmlParameter.ecore#//Value"/>
+    <genClasses ecoreClass="UmlParameter.ecore#//IntValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute UmlParameter.ecore#//IntValue/literalInteger"/>
+    </genClasses>
+    <genClasses ecoreClass="UmlParameter.ecore#//StringValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute UmlParameter.ecore#//StringValue/literalString"/>
+    </genClasses>
+    <genClasses ecoreClass="UmlParameter.ecore#//BooleanValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute UmlParameter.ecore#//BooleanValue/literalBoolean"/>
+    </genClasses>
+    <genClasses ecoreClass="UmlParameter.ecore#//RealValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute UmlParameter.ecore#//RealValue/integer"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute UmlParameter.ecore#//RealValue/fraction"/>
+    </genClasses>
+    <genClasses ecoreClass="UmlParameter.ecore#//NullValue"/>
+    <genClasses ecoreClass="UmlParameter.ecore#//NoValue"/>
   </genPackages>
 </genmodel:GenModel>

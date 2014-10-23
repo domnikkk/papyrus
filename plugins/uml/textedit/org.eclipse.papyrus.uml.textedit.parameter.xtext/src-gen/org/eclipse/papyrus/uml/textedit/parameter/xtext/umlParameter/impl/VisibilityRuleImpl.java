@@ -9,51 +9,52 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.papyrus.uml.textedit.parameter.xtext.umlParameter.ModifierKind;
-import org.eclipse.papyrus.uml.textedit.parameter.xtext.umlParameter.ModifierSpecification;
+import org.eclipse.papyrus.uml.textedit.common.xtext.umlCommon.VisibilityKind;
+
 import org.eclipse.papyrus.uml.textedit.parameter.xtext.umlParameter.UmlParameterPackage;
+import org.eclipse.papyrus.uml.textedit.parameter.xtext.umlParameter.VisibilityRule;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Modifier Specification</b></em>'.
+ * An implementation of the model object '<em><b>Visibility Rule</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.uml.textedit.parameter.xtext.umlParameter.impl.ModifierSpecificationImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.uml.textedit.parameter.xtext.umlParameter.impl.VisibilityRuleImpl#getVisibility <em>Visibility</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ModifierSpecificationImpl extends MinimalEObjectImpl.Container implements ModifierSpecification
+public class VisibilityRuleImpl extends MinimalEObjectImpl.Container implements VisibilityRule
 {
   /**
-   * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
+   * The default value of the '{@link #getVisibility() <em>Visibility</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getValue()
+   * @see #getVisibility()
    * @generated
    * @ordered
    */
-  protected static final ModifierKind VALUE_EDEFAULT = ModifierKind.EXCEPTION;
+  protected static final VisibilityKind VISIBILITY_EDEFAULT = VisibilityKind.PUBLIC;
 
   /**
-   * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
+   * The cached value of the '{@link #getVisibility() <em>Visibility</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getValue()
+   * @see #getVisibility()
    * @generated
    * @ordered
    */
-  protected ModifierKind value = VALUE_EDEFAULT;
+  protected VisibilityKind visibility = VISIBILITY_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ModifierSpecificationImpl()
+  protected VisibilityRuleImpl()
   {
     super();
   }
@@ -66,7 +67,7 @@ public class ModifierSpecificationImpl extends MinimalEObjectImpl.Container impl
   @Override
   protected EClass eStaticClass()
   {
-    return UmlParameterPackage.Literals.MODIFIER_SPECIFICATION;
+    return UmlParameterPackage.Literals.VISIBILITY_RULE;
   }
 
   /**
@@ -74,9 +75,9 @@ public class ModifierSpecificationImpl extends MinimalEObjectImpl.Container impl
    * <!-- end-user-doc -->
    * @generated
    */
-  public ModifierKind getValue()
+  public VisibilityKind getVisibility()
   {
-    return value;
+    return visibility;
   }
 
   /**
@@ -84,12 +85,12 @@ public class ModifierSpecificationImpl extends MinimalEObjectImpl.Container impl
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setValue(ModifierKind newValue)
+  public void setVisibility(VisibilityKind newVisibility)
   {
-    ModifierKind oldValue = value;
-    value = newValue == null ? VALUE_EDEFAULT : newValue;
+    VisibilityKind oldVisibility = visibility;
+    visibility = newVisibility == null ? VISIBILITY_EDEFAULT : newVisibility;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, UmlParameterPackage.MODIFIER_SPECIFICATION__VALUE, oldValue, value));
+      eNotify(new ENotificationImpl(this, Notification.SET, UmlParameterPackage.VISIBILITY_RULE__VISIBILITY, oldVisibility, visibility));
   }
 
   /**
@@ -102,8 +103,8 @@ public class ModifierSpecificationImpl extends MinimalEObjectImpl.Container impl
   {
     switch (featureID)
     {
-      case UmlParameterPackage.MODIFIER_SPECIFICATION__VALUE:
-        return getValue();
+      case UmlParameterPackage.VISIBILITY_RULE__VISIBILITY:
+        return getVisibility();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -118,8 +119,8 @@ public class ModifierSpecificationImpl extends MinimalEObjectImpl.Container impl
   {
     switch (featureID)
     {
-      case UmlParameterPackage.MODIFIER_SPECIFICATION__VALUE:
-        setValue((ModifierKind)newValue);
+      case UmlParameterPackage.VISIBILITY_RULE__VISIBILITY:
+        setVisibility((VisibilityKind)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -135,8 +136,8 @@ public class ModifierSpecificationImpl extends MinimalEObjectImpl.Container impl
   {
     switch (featureID)
     {
-      case UmlParameterPackage.MODIFIER_SPECIFICATION__VALUE:
-        setValue(VALUE_EDEFAULT);
+      case UmlParameterPackage.VISIBILITY_RULE__VISIBILITY:
+        setVisibility(VISIBILITY_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -152,8 +153,8 @@ public class ModifierSpecificationImpl extends MinimalEObjectImpl.Container impl
   {
     switch (featureID)
     {
-      case UmlParameterPackage.MODIFIER_SPECIFICATION__VALUE:
-        return value != VALUE_EDEFAULT;
+      case UmlParameterPackage.VISIBILITY_RULE__VISIBILITY:
+        return visibility != VISIBILITY_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }
@@ -169,10 +170,10 @@ public class ModifierSpecificationImpl extends MinimalEObjectImpl.Container impl
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (value: ");
-    result.append(value);
+    result.append(" (visibility: ");
+    result.append(visibility);
     result.append(')');
     return result.toString();
   }
 
-} //ModifierSpecificationImpl
+} //VisibilityRuleImpl

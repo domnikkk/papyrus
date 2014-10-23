@@ -6,18 +6,32 @@ import java.util.List;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.common.core.command.CompositeCommand;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
+import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
+import org.eclipse.gmf.runtime.emf.type.core.requests.IEditCommandRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
 import org.eclipse.papyrus.infra.services.edit.service.ElementEditServiceUtils;
 import org.eclipse.papyrus.infra.services.edit.service.IElementEditService;
 import org.eclipse.papyrus.uml.textedit.common.xtext.umlCommon.TypeRule;
 import org.eclipse.papyrus.uml.textedit.parameter.xtext.ui.internal.UmlParameterActivator;
+import org.eclipse.papyrus.uml.textedit.parameter.xtext.umlParameter.BooleanLiterals;
+import org.eclipse.papyrus.uml.textedit.parameter.xtext.umlParameter.DirectionRule;
 import org.eclipse.papyrus.uml.textedit.parameter.xtext.umlParameter.ParameterRule;
+import org.eclipse.papyrus.uml.textedit.parameter.xtext.umlParameter.Value;
+import org.eclipse.papyrus.uml.textedit.parameter.xtext.umlParameter.VisibilityRule;
+import org.eclipse.papyrus.uml.textedit.parameter.xtext.umlParameter.util.UmlParameterSwitch;
 import org.eclipse.papyrus.uml.xtext.integration.DefaultXtextDirectEditorConfiguration;
+import org.eclipse.uml2.uml.LiteralBoolean;
+import org.eclipse.uml2.uml.LiteralInteger;
+import org.eclipse.uml2.uml.LiteralNull;
+import org.eclipse.uml2.uml.LiteralReal;
+import org.eclipse.uml2.uml.LiteralString;
 import org.eclipse.uml2.uml.Parameter;
 import org.eclipse.uml2.uml.ParameterDirectionKind;
 import org.eclipse.uml2.uml.ParameterEffectKind;
 import org.eclipse.uml2.uml.Type;
+import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.UMLPackage;
+import org.eclipse.uml2.uml.ValueSpecification;
 
 import com.google.inject.Injector;
 
@@ -36,7 +50,7 @@ public class ParameterXtextDirectEditorConfiguration extends DefaultXtextDirectE
 		if (provider != null) {
 
 			ICommand editCommand = null;
-			for (SetRequest current : getRequests(umlObject, xtextObject)) {
+			for (IEditCommandRequest current : getRequests(umlObject, xtextObject)) {
 				editCommand = provider.getEditCommand(current);
 
 				if (editCommand != null && editCommand.canExecute()) {
@@ -53,8 +67,8 @@ public class ParameterXtextDirectEditorConfiguration extends DefaultXtextDirectE
 	 * @return
 	 *         the list of requests to update the {@link #parameter}
 	 */
-	protected List<SetRequest> getRequests(EObject modelObject, EObject xtextObject) {
-		List<SetRequest> requests = new ArrayList<SetRequest>();
+	protected List<IEditCommandRequest> getRequests(EObject modelObject, EObject xtextObject) {
+		List<IEditCommandRequest> requests = new ArrayList<IEditCommandRequest>();
 
 
 		// first: retrieves / determines if the xtextObject is a CollaborationUseRule object
@@ -68,43 +82,25 @@ public class ParameterXtextDirectEditorConfiguration extends DefaultXtextDirectE
 		if (modifiedObject == null) {
 			return requests;
 		}
-		ParameterRule parameterRuleObject = (ParameterRule) xtextObject;
 
-		/** the new name for the {@link Parameter} */
-		String newName;
+		final ParameterRule parameterRuleObject = (ParameterRule) xtextObject;
 
-		/** the new type for the {@link Parameter} */
-		Type newType;
-
-		/** the new visibility for the {@link Parameter} */
-		org.eclipse.uml2.uml.VisibilityKind newVisibility;
-
-		/** the new value for isException */
-		boolean newIsException = false;
-
-		/** the new value for isStream */
-		boolean newIsStream = false;
-
-		/** the new value for isOrdered */
-		boolean newIsOrdered = false;
-
-		/** the new value for isUnique */
-		boolean newIsUnique = false;
-
-		/** the new lowerBound */
-		int newLowerBound = 1;
-
-		/** the new upperBound */
-		int newUpperBound = 1;
-
-		/** the new effect for the parameter */
-		ParameterEffectKind newEffect = ParameterEffectKind.CREATE_LITERAL;
-
-		/** the new direction of the parameter */
-		ParameterDirectionKind newDirection = ParameterDirectionKind.IN_LITERAL;
+		final Parameter parameter = (Parameter) modelObject;
 
 		// Retrieves the information to be populated in modelObject
 		if (parameterRuleObject.getModifiers() != null) {
+			/** the new value for isException */
+			boolean newIsException = false;
+
+			/** the new value for isStream */
+			boolean newIsStream = false;
+
+			/** the new value for isOrdered */
+			boolean newIsOrdered = false;
+
+			/** the new value for isUnique */
+			boolean newIsUnique = false;
+
 			for (org.eclipse.papyrus.uml.textedit.parameter.xtext.umlParameter.ModifierSpecification modifier : parameterRuleObject.getModifiers().getValues()) {
 				switch (modifier.getValue()) {
 				case ORDERED:
@@ -123,9 +119,20 @@ public class ParameterXtextDirectEditorConfiguration extends DefaultXtextDirectE
 					break;
 				}
 			}
+
+			requests.add(new SetRequest(parameter, UMLPackage.eINSTANCE.getParameter_IsException(), newIsException));
+			requests.add(new SetRequest(parameter, UMLPackage.eINSTANCE.getParameter_IsStream(), newIsStream));
+			requests.add(new SetRequest(parameter, UMLPackage.eINSTANCE.getMultiplicityElement_IsOrdered(), newIsOrdered));
+			requests.add(new SetRequest(parameter, UMLPackage.eINSTANCE.getMultiplicityElement_IsUnique(), newIsUnique));
 		}
 
 		if (parameterRuleObject.getMultiplicity() != null) {
+			/** the new lowerBound */
+			int newLowerBound = 1;
+
+			/** the new upperBound */
+			int newUpperBound = 1;
+
 			if (parameterRuleObject.getMultiplicity().getBounds().size() == 1) {
 				String tempBound = parameterRuleObject.getMultiplicity().getBounds().get(0).getValue();
 				if (tempBound.equals("*")) { //$NON-NLS-1$
@@ -145,82 +152,195 @@ public class ParameterXtextDirectEditorConfiguration extends DefaultXtextDirectE
 					newUpperBound = new Integer(tempBound).intValue();
 				}
 			}
-		} else {// reset to the default value :
-			newLowerBound = 1;
-			newUpperBound = 1;
+
+			requests.add(new SetRequest(parameter, UMLPackage.eINSTANCE.getMultiplicityElement_Lower(), newLowerBound));
+			requests.add(new SetRequest(parameter, UMLPackage.eINSTANCE.getMultiplicityElement_Upper(), newUpperBound));
 		}
 
-		newName = "" + parameterRuleObject.getName(); //$NON-NLS-1$
-
+		boolean setType = false;
 		TypeRule typeRule = parameterRuleObject.getType();
-		if (typeRule == null) {
-			newType = null;
-		} else {
+		Type newType = null;
+		if (parameterRuleObject.isTypeUndefined()) {
+			setType = true;
+		} else if (typeRule != null) {
 			newType = typeRule.getType();
+			setType = newType != parameter.getType();
+		} // Else: no change
+
+		if (setType) {
+			requests.add(new SetRequest(parameter, UMLPackage.eINSTANCE.getTypedElement_Type(), newType));
 		}
 
-		newVisibility = org.eclipse.uml2.uml.VisibilityKind.PUBLIC_LITERAL;
+		if (parameterRuleObject.getVisibility() != null) {
+			org.eclipse.uml2.uml.VisibilityKind newVisibility;
 
-		switch (parameterRuleObject.getVisibility()) {
-		case PUBLIC:
+			VisibilityRule visibility = parameterRuleObject.getVisibility();
+
 			newVisibility = org.eclipse.uml2.uml.VisibilityKind.PUBLIC_LITERAL;
-			break;
-		case PACKAGE:
-			newVisibility = org.eclipse.uml2.uml.VisibilityKind.PACKAGE_LITERAL;
-			break;
-		case PRIVATE:
-			newVisibility = org.eclipse.uml2.uml.VisibilityKind.PRIVATE_LITERAL;
-			break;
-		case PROTECTED:
-			newVisibility = org.eclipse.uml2.uml.VisibilityKind.PROTECTED_LITERAL;
-			break;
-		default:
-			break;
+
+			switch (visibility.getVisibility()) {
+			case PUBLIC:
+				newVisibility = org.eclipse.uml2.uml.VisibilityKind.PUBLIC_LITERAL;
+				break;
+			case PACKAGE:
+				newVisibility = org.eclipse.uml2.uml.VisibilityKind.PACKAGE_LITERAL;
+				break;
+			case PRIVATE:
+				newVisibility = org.eclipse.uml2.uml.VisibilityKind.PRIVATE_LITERAL;
+				break;
+			case PROTECTED:
+				newVisibility = org.eclipse.uml2.uml.VisibilityKind.PROTECTED_LITERAL;
+				break;
+			default:
+				break;
+			}
+
+			requests.add(new SetRequest(parameter, UMLPackage.eINSTANCE.getNamedElement_Visibility(), newVisibility));
 		}
 
-		switch (parameterRuleObject.getDirection()) {
-		case IN:
-			newDirection = ParameterDirectionKind.IN_LITERAL;
-			break;
-		case OUT:
-			newDirection = ParameterDirectionKind.OUT_LITERAL;
-			break;
-		case INOUT:
-			newDirection = ParameterDirectionKind.INOUT_LITERAL;
-			break;
-		case RETURN:
-			newDirection = ParameterDirectionKind.RETURN_LITERAL;
-			break;
+		if (parameterRuleObject.getDirection() != null) {
+			DirectionRule direction = parameterRuleObject.getDirection();
+
+			ParameterDirectionKind newDirection = ParameterDirectionKind.IN_LITERAL;
+
+			switch (direction.getDirection()) {
+			case IN:
+				newDirection = ParameterDirectionKind.IN_LITERAL;
+				break;
+			case OUT:
+				newDirection = ParameterDirectionKind.OUT_LITERAL;
+				break;
+			case INOUT:
+				newDirection = ParameterDirectionKind.INOUT_LITERAL;
+				break;
+			case RETURN:
+				newDirection = ParameterDirectionKind.RETURN_LITERAL;
+				break;
+			}
+
+			requests.add(new SetRequest(parameter, UMLPackage.eINSTANCE.getParameter_Direction(), newDirection));
 		}
 
-		switch (parameterRuleObject.getEffect().getEffectKind()) {
-		case CREATE:
-			newEffect = ParameterEffectKind.CREATE_LITERAL;
-			break;
-		case DELETE:
-			newEffect = ParameterEffectKind.DELETE_LITERAL;
-			break;
-		case READ:
-			newEffect = ParameterEffectKind.READ_LITERAL;
-			break;
-		case UPDATE:
-			newEffect = ParameterEffectKind.UPDATE_LITERAL;
-			break;
+		if (parameterRuleObject.getEffect() != null) {
+			/** the new effect for the parameter */
+			ParameterEffectKind newEffect = ParameterEffectKind.CREATE_LITERAL;
+
+			switch (parameterRuleObject.getEffect().getEffectKind()) {
+			case CREATE:
+				newEffect = ParameterEffectKind.CREATE_LITERAL;
+				break;
+			case DELETE:
+				newEffect = ParameterEffectKind.DELETE_LITERAL;
+				break;
+			case READ:
+				newEffect = ParameterEffectKind.READ_LITERAL;
+				break;
+			case UPDATE:
+				newEffect = ParameterEffectKind.UPDATE_LITERAL;
+				break;
+			}
+
+			requests.add(new SetRequest(parameter, UMLPackage.eINSTANCE.getParameter_Effect(), newEffect));
 		}
 
-		Parameter parameter = (Parameter) modelObject;
+		if (parameterRuleObject.getDefaultValue() != null) {
+			final ValueSpecification currentDefault = parameter.getDefaultValue();
+			Value newDefault = parameterRuleObject.getDefaultValue().getDefault();
+			IEditCommandRequest request = new UmlParameterSwitch<IEditCommandRequest>() {
+				@Override
+				public SetRequest caseBooleanValue(org.eclipse.papyrus.uml.textedit.parameter.xtext.umlParameter.BooleanValue object) {
+					boolean booleanValue = object.getLiteralBoolean() == BooleanLiterals.TRUE;
+					if (currentDefault instanceof LiteralBoolean) {
+						return new SetRequest(currentDefault, UMLPackage.eINSTANCE.getLiteralBoolean_Value(), booleanValue);
+					} else {
+						// TODO: Destroy previous defaultValue if not null?
+						LiteralBoolean literalBoolean = UMLFactory.eINSTANCE.createLiteralBoolean();
+						literalBoolean.setValue(booleanValue);
+						return new SetRequest(parameter, UMLPackage.eINSTANCE.getParameter_DefaultValue(), literalBoolean);
+					}
+				}
 
+				@Override
+				public SetRequest caseStringValue(org.eclipse.papyrus.uml.textedit.parameter.xtext.umlParameter.StringValue object) {
+					String stringValue = object.getLiteralString();
+					if (currentDefault instanceof LiteralString) {
+						return new SetRequest(currentDefault, UMLPackage.eINSTANCE.getLiteralString_Value(), stringValue);
+					} else {
+						// TODO: Destroy previous defaultValue if not null?
+						LiteralString literalString = UMLFactory.eINSTANCE.createLiteralString();
+						literalString.setValue(stringValue);
+						return new SetRequest(parameter, UMLPackage.eINSTANCE.getParameter_DefaultValue(), literalString);
+					}
+				}
+
+				@Override
+				public SetRequest caseIntValue(org.eclipse.papyrus.uml.textedit.parameter.xtext.umlParameter.IntValue object) {
+					Integer integerValue;
+					try {
+						integerValue = object.getLiteralInteger();
+					} catch (NumberFormatException ex) {
+						integerValue = 0;
+					}
+
+					if (currentDefault instanceof LiteralInteger) {
+						return new SetRequest(currentDefault, UMLPackage.eINSTANCE.getLiteralInteger_Value(), integerValue);
+					} else {
+						// TODO: Destroy previous defaultValue if not null?
+						LiteralInteger literalInteger = UMLFactory.eINSTANCE.createLiteralInteger();
+						literalInteger.setValue(integerValue);
+						return new SetRequest(parameter, UMLPackage.eINSTANCE.getParameter_DefaultValue(), literalInteger);
+					}
+				}
+
+				@Override
+				public SetRequest caseRealValue(org.eclipse.papyrus.uml.textedit.parameter.xtext.umlParameter.RealValue object) {
+					Double realValue;
+					String literalDouble = "" + object.getInteger() + '.' + object.getFraction();
+					try {
+						realValue = Double.parseDouble(literalDouble);
+					} catch (NumberFormatException ex) {
+						realValue = 0.;
+					}
+
+					if (currentDefault instanceof LiteralReal) {
+						return new SetRequest(currentDefault, UMLPackage.eINSTANCE.getLiteralReal_Value(), realValue);
+					} else {
+						// TODO: Destroy previous defaultValue if not null?
+						LiteralReal literalReal = UMLFactory.eINSTANCE.createLiteralReal();
+						literalReal.setValue(realValue);
+						return new SetRequest(parameter, UMLPackage.eINSTANCE.getParameter_DefaultValue(), literalReal);
+					}
+				}
+
+				@Override
+				public SetRequest caseNullValue(org.eclipse.papyrus.uml.textedit.parameter.xtext.umlParameter.NullValue object) {
+					if (parameter.getDefaultValue() instanceof LiteralNull) {
+						return null;
+					}
+
+					LiteralNull literalNull = UMLFactory.eINSTANCE.createLiteralNull();
+					return new SetRequest(parameter, UMLPackage.eINSTANCE.getParameter_DefaultValue(), literalNull);
+				}
+
+				@Override
+				public IEditCommandRequest caseNoValue(org.eclipse.papyrus.uml.textedit.parameter.xtext.umlParameter.NoValue object) {
+					if (parameter.getDefaultValue() == null) {
+						return null;
+					}
+
+					return new DestroyElementRequest(parameter.getDefaultValue(), false);
+				}
+			}.doSwitch(newDefault);
+
+
+			if (request != null) {
+				requests.add(request);
+			}
+		}
+
+		String newName = parameterRuleObject.getName();
 		requests.add(new SetRequest(parameter, UMLPackage.eINSTANCE.getNamedElement_Name(), newName));
-		requests.add(new SetRequest(parameter, UMLPackage.eINSTANCE.getNamedElement_Visibility(), newVisibility));
-		requests.add(new SetRequest(parameter, UMLPackage.eINSTANCE.getTypedElement_Type(), newType));
-		requests.add(new SetRequest(parameter, UMLPackage.eINSTANCE.getParameter_IsException(), newIsException));
-		requests.add(new SetRequest(parameter, UMLPackage.eINSTANCE.getParameter_IsStream(), newIsStream));
-		requests.add(new SetRequest(parameter, UMLPackage.eINSTANCE.getMultiplicityElement_IsOrdered(), newIsOrdered));
-		requests.add(new SetRequest(parameter, UMLPackage.eINSTANCE.getMultiplicityElement_IsUnique(), newIsUnique));
-		requests.add(new SetRequest(parameter, UMLPackage.eINSTANCE.getParameter_Direction(), newDirection));
-		requests.add(new SetRequest(parameter, UMLPackage.eINSTANCE.getMultiplicityElement_Lower(), newLowerBound));
-		requests.add(new SetRequest(parameter, UMLPackage.eINSTANCE.getMultiplicityElement_Upper(), newUpperBound));
-		requests.add(new SetRequest(parameter, UMLPackage.eINSTANCE.getParameter_Effect(), newEffect));
+
 		return requests;
 	}
 
