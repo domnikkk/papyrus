@@ -23,20 +23,23 @@ import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.edit.command.AddCommand;
 import org.eclipse.emf.edit.command.RemoveCommand;
 import org.eclipse.emf.edit.command.SetCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gef.EditPart;
+import org.eclipse.gmf.runtime.diagram.core.util.ViewUtil;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 import org.eclipse.gmf.runtime.notation.Bounds;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.Shape;
+import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.commands.wrappers.GMFtoEMFCommandWrapper;
 import org.eclipse.papyrus.uml.diagram.common.commands.PreserveAnchorsPositionCommand;
 import org.eclipse.papyrus.uml.diagram.sequence.edit.parts.CustomLifelineEditPart.PreserveAnchorsPositionCommandEx;
-import org.eclipse.papyrus.uml.diagram.sequence.edit.parts.InteractionFragmentEditPart;
 import org.eclipse.papyrus.uml.diagram.sequence.edit.parts.LifelineEditPart;
+import org.eclipse.uml2.uml.Interaction;
 import org.eclipse.uml2.uml.InteractionFragment;
 import org.eclipse.uml2.uml.Lifeline;
 import org.eclipse.uml2.uml.UMLPackage;
@@ -54,7 +57,7 @@ public class LifelineCoveredByUpdater {
 
 	protected Map<LifelineEditPart, Rectangle> lifelines = new HashMap<LifelineEditPart, Rectangle>();
 
-	protected HashMap<InteractionFragmentEditPart, Rectangle> interactionFragments = new HashMap<InteractionFragmentEditPart, Rectangle>();
+	protected HashMap<GraphicalEditPart, Rectangle> interactionFragments = new HashMap<GraphicalEditPart, Rectangle>();
 
 	protected List<InteractionFragment> coveredByLifelinesToAdd = new ArrayList<InteractionFragment>();
 
@@ -87,11 +90,15 @@ public class LifelineCoveredByUpdater {
 			Rectangle centralLineBounds = new Rectangle(childBounds.x() + childBounds.width() / 2, childBounds.y(), 1, childBounds.height());
 			lifelines.put((LifelineEditPart) editPart, centralLineBounds);
 		}
-		if (editPart instanceof InteractionFragmentEditPart) {
-			IFigure figure = editPart.getFigure();
-			Rectangle childBounds = figure.getBounds().getCopy();
-			figure.translateToAbsolute(childBounds);
-			interactionFragments.put((InteractionFragmentEditPart) editPart, childBounds);
+		if (editPart instanceof GraphicalEditPart) {
+			EObject modelObject = ViewUtil.resolveSemanticElement((View) editPart.getModel());
+			if (modelObject instanceof InteractionFragment 
+					&& false == modelObject instanceof Interaction) {
+				IFigure figure = editPart.getFigure();
+				Rectangle childBounds = figure.getBounds().getCopy();
+				figure.translateToAbsolute(childBounds);
+				interactionFragments.put((GraphicalEditPart) editPart, childBounds);
+			}
 		}
 		for (Object child : editPart.getChildren()) {
 			if (child instanceof GraphicalEditPart) {
@@ -120,8 +127,8 @@ public class LifelineCoveredByUpdater {
 		coveredByLifelinesToRemove.clear();
 		// Update height of Lifeline when coveredBy some InteractionFragments.
 		int bottom = 0;
-		for (Map.Entry<InteractionFragmentEditPart, Rectangle> entry : interactionFragments.entrySet()) {
-			InteractionFragmentEditPart editPart = entry.getKey();
+		for (Map.Entry<GraphicalEditPart, Rectangle> entry : interactionFragments.entrySet()) {
+			GraphicalEditPart editPart = entry.getKey();
 			Rectangle childBounds = entry.getValue();
 			InteractionFragment interactionFragment = (InteractionFragment) editPart.resolveSemanticElement();
 			if (rect.intersects(childBounds)) {
