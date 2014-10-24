@@ -215,12 +215,17 @@ public class CustomDiagramDragDropEditPolicy extends CommonDiagramDragDropEditPo
 		}
 
 		boolean someCombinedFragment = false;
-        boolean someNonCombinedFragment = false;
-		for (Object part : ((ChangeBoundsRequest)request).getEditParts()) {
-			someCombinedFragment    |=  (part instanceof CustomCombinedFragmentEditPart);
-			someNonCombinedFragment |= !(part instanceof CustomCombinedFragmentEditPart);
+		boolean someNonCombinedFragment = false;
+
+		List<?> editParts = ((ChangeBoundsRequest) request).getEditParts();
+
+		if (editParts != null) {
+			for (Object part : editParts) {
+				someCombinedFragment |= (part instanceof CustomCombinedFragmentEditPart);
+				someNonCombinedFragment |= !(part instanceof CustomCombinedFragmentEditPart);
+			}
 		}
-		
+
 		if (someCombinedFragment && someNonCombinedFragment) {
 			// Can't Drop CombinedFragment and other nodes at the same time
 			return UnexecutableCommand.INSTANCE;
@@ -229,49 +234,52 @@ public class CustomDiagramDragDropEditPolicy extends CommonDiagramDragDropEditPo
 			return command;
 		}
 		else {
-			return getMoveCombinedFragmentCommand((ChangeBoundsRequest)request);
+			return getMoveCombinedFragmentCommand((ChangeBoundsRequest) request);
 		}
 	}
 
 	/*
 	 * "In-place" drag-and-drop command for Combined Fragment
-	 *
 	 */
 	protected Command getMoveCombinedFragmentCommand(ChangeBoundsRequest request) {
-        CompoundCommand cc = new CompoundCommand("move CombinedFragments to new parent"); //$NON-NLS-1$
-		
+		CompoundCommand cc = new CompoundCommand("move CombinedFragments to new parent"); //$NON-NLS-1$
+
 		Rectangle rectangleDroppedCombined = CombinedFragmentMoveHelper.calcCombinedRect(request);
 		GraphicalEditPart newParentEP = CombinedFragmentMoveHelper.findNewParentEP(request, getHost());
-		
-		// Move the request's CFs models and views
-        for (Object part : ((ChangeBoundsRequest)request).getEditParts()) {
-			CustomCombinedFragmentEditPart combinedFragmentEP = (CustomCombinedFragmentEditPart)part;
-			CombinedFragment combinedFragment = (CombinedFragment)ViewUtil.
-					resolveSemanticElement((View)((IGraphicalEditPart)combinedFragmentEP).getModel());
-		
-			if (combinedFragmentEP.getParent() == newParentEP) {
-				continue; // no change of the parent 
-			}
-			
-			View containerNewParent = (View)newParentEP.getModel();
-			EObject contextNewParent = ViewUtil.resolveSemanticElement(containerNewParent);
-	        TransactionalEditingDomain editingDomain = ((IGraphicalEditPart)getHost()).getEditingDomain();
-	        
-			// Move semantic
-			Command moveSemanticCmd = getHost().getCommand(new EditCommandRequestWrapper(
-					new MoveRequest(editingDomain, contextNewParent, combinedFragment)));
-			if (moveSemanticCmd == null) {
-				return UnexecutableCommand.INSTANCE;
-			}
-			cc.add(moveSemanticCmd);
 
-			// Move view
-			View container = (View)newParentEP.getModel();
-			View view = (View)combinedFragmentEP.getModel();
-			cc.add(new ICommandProxy(new AddCommand(combinedFragmentEP.getEditingDomain(), new EObjectAdapter(container),
-								  new EObjectAdapter(view))));
-        }			
-			
+		List<?> editParts = request.getEditParts();
+
+		// Move the request's CFs models and views
+		if (editParts != null) {
+			for (Object part : editParts) {
+				CustomCombinedFragmentEditPart combinedFragmentEP = (CustomCombinedFragmentEditPart) part;
+				CombinedFragment combinedFragment = (CombinedFragment) ViewUtil.
+						resolveSemanticElement((View) ((IGraphicalEditPart) combinedFragmentEP).getModel());
+
+				if (combinedFragmentEP.getParent() == newParentEP) {
+					continue; // no change of the parent
+				}
+
+				View containerNewParent = (View) newParentEP.getModel();
+				EObject contextNewParent = ViewUtil.resolveSemanticElement(containerNewParent);
+				TransactionalEditingDomain editingDomain = ((IGraphicalEditPart) getHost()).getEditingDomain();
+
+				// Move semantic
+				Command moveSemanticCmd = getHost().getCommand(new EditCommandRequestWrapper(
+						new MoveRequest(editingDomain, contextNewParent, combinedFragment)));
+				if (moveSemanticCmd == null) {
+					return UnexecutableCommand.INSTANCE;
+				}
+				cc.add(moveSemanticCmd);
+
+				// Move view
+				View container = (View) newParentEP.getModel();
+				View view = (View) combinedFragmentEP.getModel();
+				cc.add(new ICommandProxy(new AddCommand(combinedFragmentEP.getEditingDomain(), new EObjectAdapter(container),
+						new EObjectAdapter(view))));
+			}
+		}
+
 		// Calc new parent rect
 		Rectangle newParentOldRect = newParentEP.getFigure().getBounds().getCopy();
 		newParentEP.getFigure().translateToAbsolute(newParentOldRect);
@@ -279,9 +287,9 @@ public class CustomDiagramDragDropEditPolicy extends CommonDiagramDragDropEditPo
 
 		if (getHost().getParent() instanceof CustomCombinedFragmentEditPart) {
 			CombinedFragmentMoveHelper.adjustNewParentOperands(cc, newParentNewRect, newParentOldRect, getHost());
-		}			
+		}
 		// TODO: resize parent's parent (and so on)
-		
+
 		// Move & resize parent CF
 		Point newParentOffsetSW = new Point(newParentNewRect.x - newParentOldRect.x, newParentNewRect.y - newParentOldRect.y);
 		if (newParentEP.getParent().getParent() != null) {
@@ -294,15 +302,17 @@ public class CustomDiagramDragDropEditPolicy extends CommonDiagramDragDropEditPo
 			moveParentRequest.setResizeDirection(PositionConstants.SOUTH_WEST);
 			cc.add(newParentEP.getParent().getParent().getCommand(moveParentRequest));
 		}
-		
-        for (Object part : ((ChangeBoundsRequest)request).getEditParts()) {
-			CustomCombinedFragmentEditPart combinedFragmentEP = (CustomCombinedFragmentEditPart)part;
-			CombinedFragmentMoveHelper.moveCombinedFragmentEP(cc, request, combinedFragmentEP, newParentEP, newParentOffsetSW);
-        }
+
+		if (editParts != null) {
+			for (Object part : request.getEditParts()) {
+				CustomCombinedFragmentEditPart combinedFragmentEP = (CustomCombinedFragmentEditPart) part;
+				CombinedFragmentMoveHelper.moveCombinedFragmentEP(cc, request, combinedFragmentEP, newParentEP, newParentOffsetSW);
+			}
+		}
 
 		return cc;
 	}
-	
+
 	@Override
 	protected IUndoableOperation getDropObjectCommand(DropObjectsRequest dropRequest, final EObject droppedObject) {
 		IUndoableOperation dropObjectCommand = super.getDropObjectCommand(dropRequest, droppedObject);
@@ -500,18 +510,18 @@ public class CustomDiagramDragDropEditPolicy extends CommonDiagramDragDropEditPo
 
 	/*
 	 * To extend the method in superclass with an option Dimension size,
-	 *
-	 *
+	 * 
+	 * 
 	 * @param hostEP
-	 *
+	 * 
 	 * @param nodeVISUALID
-	 *
+	 * 
 	 * @param absoluteLocation
-	 *
+	 * 
 	 * @param size
-	 *
+	 * 
 	 * @param droppedObject
-	 *
+	 * 
 	 * @return
 	 */
 	protected ICommand dropCombinedFragment(EditPart hostEP, int nodeVISUALID, Point absoluteLocation, Dimension size, EObject droppedObject) {
