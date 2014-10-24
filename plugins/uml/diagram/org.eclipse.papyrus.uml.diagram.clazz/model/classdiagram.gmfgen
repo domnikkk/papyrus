@@ -6223,7 +6223,7 @@
               key="org.eclipse.papyrus.uml.diagram.clazz.custom.policies.InstanceSpecificationRoleDisplayEditPolicy.INSTANCE_SPECIFICATION_ROLE_DISPLAY"
               editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.clazz.custom.policies.ISRoleTargetDisplayEditPolicy"/>
           <modelFacet
-              parser="/0/@labelParsers/@implementations.11"/>
+              parser="/0/@labelParsers/@implementations.12"/>
         </labels>
       </links>
       <links
