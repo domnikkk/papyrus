@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.papyrus.infra.viewpoints.policy.custom">
+      <configuration
+            file="resources/configuration/EcoreUML.configuration"
+            priority="30">
+      </configuration>
+   </extension>
+   <extension
+         point="org.eclipse.papyrus.infra.newchild">
+      <menuCreationModel
+            model="resources/newchild/ecoreUML.creationmenumodel">
+      </menuCreationModel>
+   </extension>
+   <extension
+         point="org.eclipse.papyrus.views.properties.context">
+      <context
+            contextModel="resources/property/ecoreUML.ctx"
+            isCustomizable="true">
+      </context>
+   </extension>
+</plugin>

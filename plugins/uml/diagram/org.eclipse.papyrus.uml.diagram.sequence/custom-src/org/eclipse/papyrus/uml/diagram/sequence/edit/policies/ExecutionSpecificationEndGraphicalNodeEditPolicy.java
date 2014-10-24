@@ -21,6 +21,8 @@ import org.eclipse.draw2d.Connection;
 import org.eclipse.draw2d.ConnectionAnchor;
 import org.eclipse.draw2d.ConnectionRouter;
 import org.eclipse.draw2d.PositionConstants;
+import org.eclipse.draw2d.geometry.Dimension;
+import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.draw2d.geometry.PointList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
@@ -28,6 +30,7 @@ import org.eclipse.gef.EditPart;
 import org.eclipse.gef.Request;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.commands.UnexecutableCommand;
+import org.eclipse.gef.requests.ChangeBoundsRequest;
 import org.eclipse.gef.requests.CreateConnectionRequest;
 import org.eclipse.gef.requests.ReconnectRequest;
 import org.eclipse.gmf.runtime.common.core.command.CompositeCommand;
@@ -42,6 +45,7 @@ import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
 import org.eclipse.gmf.runtime.diagram.ui.commands.SemanticCreateCommand;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.INodeEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.GraphicalNodeEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.internal.commands.SetConnectionBendpointsCommand;
 import org.eclipse.gmf.runtime.diagram.ui.l10n.DiagramUIMessages;
@@ -56,13 +60,21 @@ import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.Routing;
 import org.eclipse.gmf.runtime.notation.RoutingStyle;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.papyrus.uml.diagram.sequence.command.ChangeEdgeTargetCommand;
+import org.eclipse.papyrus.uml.diagram.sequence.command.CreateElementAndNodeCommand;
 import org.eclipse.papyrus.uml.diagram.sequence.edit.parts.AbstractExecutionSpecificationEditPart;
 import org.eclipse.papyrus.uml.diagram.sequence.edit.parts.ExecutionSpecificationEndEditPart;
+import org.eclipse.papyrus.uml.diagram.sequence.edit.parts.GateEditPart;
+import org.eclipse.papyrus.uml.diagram.sequence.edit.parts.LifelineEditPart;
 import org.eclipse.papyrus.uml.diagram.sequence.providers.UMLElementTypes;
 import org.eclipse.papyrus.uml.diagram.sequence.util.FragmentsOrdererHelper;
 import org.eclipse.papyrus.uml.diagram.sequence.util.SequenceRequestConstant;
 import org.eclipse.papyrus.uml.diagram.sequence.util.SequenceUtil;
+import org.eclipse.uml2.uml.ActionExecutionSpecification;
+import org.eclipse.uml2.uml.BehaviorExecutionSpecification;
 import org.eclipse.uml2.uml.ExecutionSpecification;
+import org.eclipse.uml2.uml.InteractionFragment;
+import org.eclipse.uml2.uml.MessageOccurrenceSpecification;
 import org.eclipse.uml2.uml.OccurrenceSpecification;
 
 /**
@@ -205,6 +217,93 @@ public class ExecutionSpecificationEndGraphicalNodeEditPolicy extends GraphicalN
 		return (INodeEditPart) sourceEditPart;
 	}
 
+	private Command getCreateAdditionalESCommand(CreateConnectionRequest request) {
+		INodeEditPart sourceEP = getSourceEditPart(request.getSourceEditPart());
+		INodeEditPart targetEP = getConnectionCompleteEditPart(request);
+		View targetView = (View) targetEP.getModel();
+		EObject target = ViewUtil.resolveSemanticElement(targetView);
+		if (target == null) {
+			target = targetView;
+		}
+		if (targetEP == sourceEP) {
+			return null;
+		}
+		if (!(targetEP instanceof AbstractExecutionSpecificationEditPart
+				&& getHost() instanceof ExecutionSpecificationEndEditPart)) {
+			return null;
+		}
+		IHintedType elementType = null;
+		if(target instanceof ActionExecutionSpecification) {
+			elementType = (IHintedType)UMLElementTypes.ActionExecutionSpecification_3006;
+		} else if(target instanceof BehaviorExecutionSpecification) {
+			elementType = (IHintedType)UMLElementTypes.BehaviorExecutionSpecification_3003;
+		}
+		if (elementType == null) {
+			return null;
+		}
+		if (false == request instanceof CreateConnectionViewRequest) {
+			return null;
+		}
+		CreateConnectionViewRequest viewRequest = (CreateConnectionViewRequest) request;
+		if (false == ((IHintedType) UMLElementTypes.Message_4003).getSemanticHint().equals(((CreateConnectionViewRequest) request).getConnectionViewDescriptor().getSemanticHint())) {
+			return null;
+		}
+		InteractionFragment ift = SequenceUtil.findInteractionFragmentContainerAt(request.getLocation(), getHost());
+		EObject parentElement = ((AbstractExecutionSpecificationEditPart) targetEP).resolveSemanticElement();
+		EObject element = ((ExecutionSpecificationEndEditPart) getHost()).resolveSemanticElement();
+		boolean executionLinkedAlready = parentElement instanceof ExecutionSpecification && element instanceof MessageOccurrenceSpecification;
+		// Check if we go uphill
+		ConnectionAnchor sourceAnchor = getActualSourceConnectionAnchor(request);
+		ConnectionAnchor targetAnchor = getSourceConnectionAnchor(targetEP, request);
+		Point sourceLocation = sourceAnchor.getLocation(targetAnchor.getReferencePoint()).getCopy();
+		if (sourceEP instanceof GateEditPart) {
+			// Changing target for Gates changes anchor location - we're taking care of it
+			org.eclipse.draw2d.geometry.Rectangle gateBounds = sourceEP.getFigure().getBounds().getCopy();
+			sourceEP.getFigure().translateToAbsolute(gateBounds);
+			sourceLocation.y = gateBounds.y + gateBounds.height/2;			
+		}
+		Point targetLocation = targetEP.getFigure().getBounds().getTopLeft().getCopy();
+		targetEP.getFigure().translateToAbsolute(targetLocation);
+		boolean messageGoUphill = targetLocation.y < sourceLocation.y;
+		if (!executionLinkedAlready && !messageGoUphill) {
+			return null;
+		}
+		CompositeCommand compound = new CompositeCommand(SequenceRequestConstant.INTERACTIONFRAGMENT_CONTAINER);
+		Point newExecutionLocation = targetLocation.getCopy();
+		INodeEditPart targetLifelineEP = (INodeEditPart)targetEP.getParent();
+		if (messageGoUphill) {
+			newExecutionLocation.y = sourceLocation.y;
+			// Calc resize amount
+			org.eclipse.draw2d.geometry.Rectangle targetBounds = targetEP.getFigure().getBounds().getCopy();
+			targetEP.getFigure().translateToAbsolute(targetBounds);
+			int resizeAmount = newExecutionLocation.y 
+					+ LifelineXYLayoutEditPolicy.EXECUTION_INIT_HEIGHT + LifelineXYLayoutEditPolicy.SPACING_HEIGHT 
+					- targetBounds.bottom();
+			if (resizeAmount > 0) {
+				// Resize parent ES
+				ChangeBoundsRequest esRequest = new ChangeBoundsRequest(org.eclipse.gef.RequestConstants.REQ_MOVE);
+				esRequest.setEditParts(targetEP);
+				esRequest.setResizeDirection(PositionConstants.SOUTH);
+				esRequest.setSizeDelta(new Dimension(0, resizeAmount));
+				Command moveESCommand = LifelineXYLayoutEditPolicy.getResizeOrMoveChildrenCommand((LifelineEditPart) targetLifelineEP, esRequest, false, false, true);
+				if (moveESCommand != null && !moveESCommand.canExecute()) {
+					// forbid creation of the message if the es can't be moved correctly
+					return UnexecutableCommand.INSTANCE;
+				} else if (moveESCommand != null) {
+					compound.compose(new CommandProxy(moveESCommand));
+				}
+			}
+		}
+		EObject targetLifeline = ViewUtil.resolveSemanticElement((View) targetEP.getParent().getModel());
+		CreateElementAndNodeCommand createExecutionSpecificationCommand = new CreateElementAndNodeCommand(getEditingDomain(), (ShapeNodeEditPart)targetLifelineEP, targetLifeline, elementType, newExecutionLocation);
+		createExecutionSpecificationCommand.putCreateElementRequestParameter(SequenceRequestConstant.INTERACTIONFRAGMENT_CONTAINER, ift);
+		compound.compose(createExecutionSpecificationCommand);
+		// put the anchor at the top of the figure
+		ChangeEdgeTargetCommand changeTargetCommand = new ChangeEdgeTargetCommand(getEditingDomain(), createExecutionSpecificationCommand, viewRequest.getConnectionViewDescriptor(), "(0.5, 0.0)");
+		compound.compose(changeTargetCommand);
+		return new ICommandProxy(compound);
+	}
+	
 	@Override
 	@SuppressWarnings("unchecked")
 	protected Command getConnectionAndRelationshipCompleteCommand(CreateConnectionViewAndElementRequest request) {
@@ -244,10 +343,14 @@ public class ExecutionSpecificationEndGraphicalNodeEditPolicy extends GraphicalN
 		if (null == viewCommand) {
 			return null;
 		}
+		Command addESCommand = getCreateAdditionalESCommand(request);
 		// form the compound command and return
 		CompositeCommand cc = new CompositeCommand(semanticCommand.getLabel());
 		cc.compose(semanticCommand);
 		cc.compose(new CommandProxy(viewCommand));
+		if (null != addESCommand) {
+			cc.compose(new CommandProxy(addESCommand));
+		}
 		ICommandProxy result = new ICommandProxy(cc);
 		if (result.canExecute()) {
 			Command orderFragments = FragmentsOrdererHelper.createOrderingFragmentsCommand(getHost().getParent(), request);
@@ -326,9 +429,25 @@ public class ExecutionSpecificationEndGraphicalNodeEditPolicy extends GraphicalN
 		return conn;
 	}
 
-	// protected ConnectionAnchor getSourceConnectionAnchor(CreateConnectionRequest request) {
-	// return getSourceConnectionAnchor(request.getSourceEditPart(), request);
-	// }
+	/**
+	 * Gets the actual connection anchor used in the request (i.e. with an actual getReferencePoint() value) 
+	 */
+	@SuppressWarnings("rawtypes")
+	private ConnectionAnchor getActualSourceConnectionAnchor(CreateConnectionRequest request) {
+		ICommandProxy proxy = (ICommandProxy) request.getStartCommand();
+		if (proxy == null) {
+			return null;
+		}
+		INodeEditPart sourceEditPart = getSourceEditPart(request.getSourceEditPart());
+		CompositeCommand cc = (CompositeCommand) proxy.getICommand();
+		Iterator commandItr = cc.iterator();
+		commandItr.next(); // 0
+		commandItr.next(); // 1
+		SetConnectionAnchorsCommand scaCommand = (SetConnectionAnchorsCommand) commandItr.next(); // 2
+		ConnectionAnchor sourceAnchor = sourceEditPart.mapTerminalToConnectionAnchor(scaCommand.getNewSourceTerminal());
+		return sourceAnchor;
+	}
+	
 	@SuppressWarnings("unchecked")
 	private ConnectionAnchor getSourceConnectionAnchor(EditPart sourceEditPart, Request request) {
 		if (sourceEditPart instanceof ExecutionSpecificationEndEditPart) {

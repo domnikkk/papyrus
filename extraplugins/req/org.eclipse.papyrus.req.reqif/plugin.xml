@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+<extension
+      point="org.eclipse.ui.importWizards">
+   <category
+         id="org.eclipse.papyrus.editor.category"
+         name="Papyrus">
+   </category>
+   <wizard
+         category="org.eclipse.papyrus.editor.category"
+         class="org.eclipse.papyrus.req.reqif.integration.assistant.ReqIFImportWizard"
+         icon="img/Darwin_logo_16x16.bmp"
+         id="com.cea.darwin.reqif.importWizard"
+         name="Import ReqIF">
+   </wizard>
+</extension>
+<extension
+      point="org.eclipse.ui.exportWizards">
+   <category
+         id="org.eclipse.papyrus.editor.category"
+         name="Papyrus">
+   </category>
+   <wizard
+         category="org.eclipse.papyrus.editor.category"
+         class="org.eclipse.papyrus.req.reqif.integration.assistant.ReqIFExportWizard"
+         icon="img/Darwin_logo_16x16.bmp"
+         id="com.cea.darwin.reqif.exportWizard"
+         name="Export ReqIF">
+   </wizard>
+
+   
+</extension>
+   <extension point="org.eclipse.papyrus.emf.facet.util.emf.core.modeldeclaration">
+  <modeldeclaration file="resource/ReqDisplay.custom"/>
+</extension>
+</plugin>

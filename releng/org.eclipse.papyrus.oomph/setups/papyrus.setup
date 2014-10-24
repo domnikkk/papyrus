@@ -457,7 +457,7 @@
       <repositoryList
           name="Mars">
         <repository
-            url="https://hudson.eclipse.org/papyrus/job/Papyrus-Master/lastSuccessfulBuild/artifact/repository/"/>
+            url="${base.downloads.url}/modeling/mdt/papyrus/updates/nightly/mars/main"/>
       </repositoryList>
       <repositoryList
           name="Luna">
@@ -1840,7 +1840,7 @@
         <repositoryList
             name="Mars">
           <repository
-              url="https://hudson.eclipse.org/papyrus/job/Papyrus-Master-Extra/lastSuccessfulBuild/artifact/repository/"/>
+              url="${base.downloads.url}/modeling/mdt/papyrus/updates/nightly/mars/extra"/>
         </repositoryList>
         <repositoryList
             name="Luna">
@@ -2129,7 +2129,7 @@
           <repositoryList
               name="Mars">
             <repository
-                url="https://hudson.eclipse.org/papyrus/job/Papyrus-Master/lastSuccessfulBuild/artifact/repository/"/>
+                url="${base.downloads.url}/modeling/mdt/papyrus/updates/nightly/mars/extra"/>
           </repositoryList>
           <repositoryList
               name="Luna">

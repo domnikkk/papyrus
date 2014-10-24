@@ -4,17 +4,20 @@ package org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.DefaultValueRule;
 import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.ModifiersRule;
 import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.MultiplicityRule;
 import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.PortRule;
 import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.TypeRule;
 import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.UmlPortPackage;
-import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.VisibilityKind;
+import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.VisibilityRule;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,10 +27,11 @@ import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.VisibilityKind;
  * The following features are implemented:
  * <ul>
  * <li>{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.PortRuleImpl#getVisibility <em>Visibility</em>}</li>
- * <li>{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.PortRuleImpl#getIsDerived <em>Is Derived</em>}</li>
+ * <li>{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.PortRuleImpl#isDerived <em>Derived</em>}</li>
  * <li>{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.PortRuleImpl#getName <em>Name</em>}</li>
- * <li>{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.PortRuleImpl#getIsConjugated <em>Is Conjugated</em>}</li>
+ * <li>{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.PortRuleImpl#isConjugated <em>Conjugated</em>}</li>
  * <li>{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.PortRuleImpl#getType <em>Type</em>}</li>
+ * <li>{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.PortRuleImpl#isTypeUndefined <em>Type Undefined</em>}</li>
  * <li>{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.PortRuleImpl#getMultiplicity <em>Multiplicity</em>}</li>
  * <li>{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.PortRuleImpl#getModifiers <em>Modifiers</em>}</li>
  * <li>{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.PortRuleImpl#getDefault <em>Default</em>}</li>
@@ -39,7 +43,7 @@ import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.VisibilityKind;
 public class PortRuleImpl extends MinimalEObjectImpl.Container implements PortRule
 {
 	/**
-	 * The default value of the '{@link #getVisibility() <em>Visibility</em>}' attribute.
+	 * The cached value of the '{@link #getVisibility() <em>Visibility</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -47,40 +51,29 @@ public class PortRuleImpl extends MinimalEObjectImpl.Container implements PortRu
 	 * @generated
 	 * @ordered
 	 */
-	protected static final VisibilityKind VISIBILITY_EDEFAULT = VisibilityKind.PUBLIC;
+	protected VisibilityRule visibility;
 
 	/**
-	 * The cached value of the '{@link #getVisibility() <em>Visibility</em>}' attribute.
+	 * The default value of the '{@link #isDerived() <em>Derived</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
-	 * @see #getVisibility()
+	 * @see #isDerived()
 	 * @generated
 	 * @ordered
 	 */
-	protected VisibilityKind visibility = VISIBILITY_EDEFAULT;
+	protected static final boolean DERIVED_EDEFAULT = false;
 
 	/**
-	 * The default value of the '{@link #getIsDerived() <em>Is Derived</em>}' attribute.
+	 * The cached value of the '{@link #isDerived() <em>Derived</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
-	 * @see #getIsDerived()
+	 * @see #isDerived()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String IS_DERIVED_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getIsDerived() <em>Is Derived</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @see #getIsDerived()
-	 * @generated
-	 * @ordered
-	 */
-	protected String isDerived = IS_DERIVED_EDEFAULT;
+	protected boolean derived = DERIVED_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -105,26 +98,26 @@ public class PortRuleImpl extends MinimalEObjectImpl.Container implements PortRu
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getIsConjugated() <em>Is Conjugated</em>}' attribute.
+	 * The default value of the '{@link #isConjugated() <em>Conjugated</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
-	 * @see #getIsConjugated()
+	 * @see #isConjugated()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String IS_CONJUGATED_EDEFAULT = null;
+	protected static final boolean CONJUGATED_EDEFAULT = false;
 
 	/**
-	 * The cached value of the '{@link #getIsConjugated() <em>Is Conjugated</em>}' attribute.
+	 * The cached value of the '{@link #isConjugated() <em>Conjugated</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
-	 * @see #getIsConjugated()
+	 * @see #isConjugated()
 	 * @generated
 	 * @ordered
 	 */
-	protected String isConjugated = IS_CONJUGATED_EDEFAULT;
+	protected boolean conjugated = CONJUGATED_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
@@ -136,6 +129,28 @@ public class PortRuleImpl extends MinimalEObjectImpl.Container implements PortRu
 	 * @ordered
 	 */
 	protected TypeRule type;
+
+	/**
+	 * The default value of the '{@link #isTypeUndefined() <em>Type Undefined</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see #isTypeUndefined()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean TYPE_UNDEFINED_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isTypeUndefined() <em>Type Undefined</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see #isTypeUndefined()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean typeUndefined = TYPE_UNDEFINED_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getMultiplicity() <em>Multiplicity</em>}' containment reference.
@@ -200,7 +215,7 @@ public class PortRuleImpl extends MinimalEObjectImpl.Container implements PortRu
 	 * @generated
 	 */
 	@Override
-	public VisibilityKind getVisibility()
+	public VisibilityRule getVisibility()
 	{
 		return visibility;
 	}
@@ -211,13 +226,47 @@ public class PortRuleImpl extends MinimalEObjectImpl.Container implements PortRu
 	 *
 	 * @generated
 	 */
-	@Override
-	public void setVisibility(VisibilityKind newVisibility)
+	public NotificationChain basicSetVisibility(VisibilityRule newVisibility, NotificationChain msgs)
 	{
-		VisibilityKind oldVisibility = visibility;
-		visibility = newVisibility == null ? VISIBILITY_EDEFAULT : newVisibility;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, UmlPortPackage.PORT_RULE__VISIBILITY, oldVisibility, visibility));
+		VisibilityRule oldVisibility = visibility;
+		visibility = newVisibility;
+		if (eNotificationRequired())
+		{
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, UmlPortPackage.PORT_RULE__VISIBILITY, oldVisibility, newVisibility);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public void setVisibility(VisibilityRule newVisibility)
+	{
+		if (newVisibility != visibility)
+		{
+			NotificationChain msgs = null;
+			if (visibility != null) {
+				msgs = ((InternalEObject) visibility).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - UmlPortPackage.PORT_RULE__VISIBILITY, null, msgs);
+			}
+			if (newVisibility != null) {
+				msgs = ((InternalEObject) newVisibility).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - UmlPortPackage.PORT_RULE__VISIBILITY, null, msgs);
+			}
+			msgs = basicSetVisibility(newVisibility, msgs);
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		}
+		else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(this, Notification.SET, UmlPortPackage.PORT_RULE__VISIBILITY, newVisibility, newVisibility));
 		}
 	}
 
@@ -228,9 +277,9 @@ public class PortRuleImpl extends MinimalEObjectImpl.Container implements PortRu
 	 * @generated
 	 */
 	@Override
-	public String getIsDerived()
+	public boolean isDerived()
 	{
-		return isDerived;
+		return derived;
 	}
 
 	/**
@@ -240,12 +289,12 @@ public class PortRuleImpl extends MinimalEObjectImpl.Container implements PortRu
 	 * @generated
 	 */
 	@Override
-	public void setIsDerived(String newIsDerived)
+	public void setDerived(boolean newDerived)
 	{
-		String oldIsDerived = isDerived;
-		isDerived = newIsDerived;
+		boolean oldDerived = derived;
+		derived = newDerived;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, UmlPortPackage.PORT_RULE__IS_DERIVED, oldIsDerived, isDerived));
+			eNotify(new ENotificationImpl(this, Notification.SET, UmlPortPackage.PORT_RULE__DERIVED, oldDerived, derived));
 		}
 	}
 
@@ -284,9 +333,9 @@ public class PortRuleImpl extends MinimalEObjectImpl.Container implements PortRu
 	 * @generated
 	 */
 	@Override
-	public String getIsConjugated()
+	public boolean isConjugated()
 	{
-		return isConjugated;
+		return conjugated;
 	}
 
 	/**
@@ -296,12 +345,12 @@ public class PortRuleImpl extends MinimalEObjectImpl.Container implements PortRu
 	 * @generated
 	 */
 	@Override
-	public void setIsConjugated(String newIsConjugated)
+	public void setConjugated(boolean newConjugated)
 	{
-		String oldIsConjugated = isConjugated;
-		isConjugated = newIsConjugated;
+		boolean oldConjugated = conjugated;
+		conjugated = newConjugated;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, UmlPortPackage.PORT_RULE__IS_CONJUGATED, oldIsConjugated, isConjugated));
+			eNotify(new ENotificationImpl(this, Notification.SET, UmlPortPackage.PORT_RULE__CONJUGATED, oldConjugated, conjugated));
 		}
 	}
 
@@ -364,6 +413,34 @@ public class PortRuleImpl extends MinimalEObjectImpl.Container implements PortRu
 		}
 		else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, UmlPortPackage.PORT_RULE__TYPE, newType, newType));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public boolean isTypeUndefined()
+	{
+		return typeUndefined;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public void setTypeUndefined(boolean newTypeUndefined)
+	{
+		boolean oldTypeUndefined = typeUndefined;
+		typeUndefined = newTypeUndefined;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(this, Notification.SET, UmlPortPackage.PORT_RULE__TYPE_UNDEFINED, oldTypeUndefined, typeUndefined));
 		}
 	}
 
@@ -564,6 +641,8 @@ public class PortRuleImpl extends MinimalEObjectImpl.Container implements PortRu
 	{
 		switch (featureID)
 		{
+		case UmlPortPackage.PORT_RULE__VISIBILITY:
+			return basicSetVisibility(null, msgs);
 		case UmlPortPackage.PORT_RULE__TYPE:
 			return basicSetType(null, msgs);
 		case UmlPortPackage.PORT_RULE__MULTIPLICITY:
@@ -589,14 +668,16 @@ public class PortRuleImpl extends MinimalEObjectImpl.Container implements PortRu
 		{
 		case UmlPortPackage.PORT_RULE__VISIBILITY:
 			return getVisibility();
-		case UmlPortPackage.PORT_RULE__IS_DERIVED:
-			return getIsDerived();
+		case UmlPortPackage.PORT_RULE__DERIVED:
+			return isDerived();
 		case UmlPortPackage.PORT_RULE__NAME:
 			return getName();
-		case UmlPortPackage.PORT_RULE__IS_CONJUGATED:
-			return getIsConjugated();
+		case UmlPortPackage.PORT_RULE__CONJUGATED:
+			return isConjugated();
 		case UmlPortPackage.PORT_RULE__TYPE:
 			return getType();
+		case UmlPortPackage.PORT_RULE__TYPE_UNDEFINED:
+			return isTypeUndefined();
 		case UmlPortPackage.PORT_RULE__MULTIPLICITY:
 			return getMultiplicity();
 		case UmlPortPackage.PORT_RULE__MODIFIERS:
@@ -619,19 +700,22 @@ public class PortRuleImpl extends MinimalEObjectImpl.Container implements PortRu
 		switch (featureID)
 		{
 		case UmlPortPackage.PORT_RULE__VISIBILITY:
-			setVisibility((VisibilityKind) newValue);
+			setVisibility((VisibilityRule) newValue);
 			return;
-		case UmlPortPackage.PORT_RULE__IS_DERIVED:
-			setIsDerived((String) newValue);
+		case UmlPortPackage.PORT_RULE__DERIVED:
+			setDerived((Boolean) newValue);
 			return;
 		case UmlPortPackage.PORT_RULE__NAME:
 			setName((String) newValue);
 			return;
-		case UmlPortPackage.PORT_RULE__IS_CONJUGATED:
-			setIsConjugated((String) newValue);
+		case UmlPortPackage.PORT_RULE__CONJUGATED:
+			setConjugated((Boolean) newValue);
 			return;
 		case UmlPortPackage.PORT_RULE__TYPE:
 			setType((TypeRule) newValue);
+			return;
+		case UmlPortPackage.PORT_RULE__TYPE_UNDEFINED:
+			setTypeUndefined((Boolean) newValue);
 			return;
 		case UmlPortPackage.PORT_RULE__MULTIPLICITY:
 			setMultiplicity((MultiplicityRule) newValue);
@@ -658,19 +742,22 @@ public class PortRuleImpl extends MinimalEObjectImpl.Container implements PortRu
 		switch (featureID)
 		{
 		case UmlPortPackage.PORT_RULE__VISIBILITY:
-			setVisibility(VISIBILITY_EDEFAULT);
+			setVisibility((VisibilityRule) null);
 			return;
-		case UmlPortPackage.PORT_RULE__IS_DERIVED:
-			setIsDerived(IS_DERIVED_EDEFAULT);
+		case UmlPortPackage.PORT_RULE__DERIVED:
+			setDerived(DERIVED_EDEFAULT);
 			return;
 		case UmlPortPackage.PORT_RULE__NAME:
 			setName(NAME_EDEFAULT);
 			return;
-		case UmlPortPackage.PORT_RULE__IS_CONJUGATED:
-			setIsConjugated(IS_CONJUGATED_EDEFAULT);
+		case UmlPortPackage.PORT_RULE__CONJUGATED:
+			setConjugated(CONJUGATED_EDEFAULT);
 			return;
 		case UmlPortPackage.PORT_RULE__TYPE:
 			setType((TypeRule) null);
+			return;
+		case UmlPortPackage.PORT_RULE__TYPE_UNDEFINED:
+			setTypeUndefined(TYPE_UNDEFINED_EDEFAULT);
 			return;
 		case UmlPortPackage.PORT_RULE__MULTIPLICITY:
 			setMultiplicity((MultiplicityRule) null);
@@ -697,15 +784,17 @@ public class PortRuleImpl extends MinimalEObjectImpl.Container implements PortRu
 		switch (featureID)
 		{
 		case UmlPortPackage.PORT_RULE__VISIBILITY:
-			return visibility != VISIBILITY_EDEFAULT;
-		case UmlPortPackage.PORT_RULE__IS_DERIVED:
-			return IS_DERIVED_EDEFAULT == null ? isDerived != null : !IS_DERIVED_EDEFAULT.equals(isDerived);
+			return visibility != null;
+		case UmlPortPackage.PORT_RULE__DERIVED:
+			return derived != DERIVED_EDEFAULT;
 		case UmlPortPackage.PORT_RULE__NAME:
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-		case UmlPortPackage.PORT_RULE__IS_CONJUGATED:
-			return IS_CONJUGATED_EDEFAULT == null ? isConjugated != null : !IS_CONJUGATED_EDEFAULT.equals(isConjugated);
+		case UmlPortPackage.PORT_RULE__CONJUGATED:
+			return conjugated != CONJUGATED_EDEFAULT;
 		case UmlPortPackage.PORT_RULE__TYPE:
 			return type != null;
+		case UmlPortPackage.PORT_RULE__TYPE_UNDEFINED:
+			return typeUndefined != TYPE_UNDEFINED_EDEFAULT;
 		case UmlPortPackage.PORT_RULE__MULTIPLICITY:
 			return multiplicity != null;
 		case UmlPortPackage.PORT_RULE__MODIFIERS:
@@ -730,14 +819,14 @@ public class PortRuleImpl extends MinimalEObjectImpl.Container implements PortRu
 		}
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (visibility: ");
-		result.append(visibility);
-		result.append(", isDerived: ");
-		result.append(isDerived);
+		result.append(" (derived: ");
+		result.append(derived);
 		result.append(", name: ");
 		result.append(name);
-		result.append(", isConjugated: ");
-		result.append(isConjugated);
+		result.append(", conjugated: ");
+		result.append(conjugated);
+		result.append(", typeUndefined: ");
+		result.append(typeUndefined);
 		result.append(')');
 		return result.toString();
 	}

@@ -17,6 +17,8 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Set;
 
 import org.eclipse.emf.ecore.EObject;
@@ -46,7 +48,7 @@ public class BlockEditHelperAdvice extends AbstractEditHelperAdvice {
 	/**
 	 * <pre>
 	 * {@inheritDoc}
-	 *
+	 * 
 	 * Returns the command to destroy any {@link Connector} breaking encapsulation rules.
 	 * </pre>
 	 *
@@ -101,12 +103,18 @@ public class BlockEditHelperAdvice extends AbstractEditHelperAdvice {
 	 *            the block.
 	 * @return a collection of {@link Property}
 	 */
-	@SuppressWarnings("unchecked")
 	private Collection<Property> getPropertyTypedByBlock(Block block) {
 		EReference[] eRefs = new EReference[] { UMLPackage.eINSTANCE.getTypedElement_Type() };
 
-		Collection<Property> references = EMFCoreUtil.getReferencers(block.getBase_Class(), eRefs);
-		return (references != null) ? references : Collections.unmodifiableList(new ArrayList<Property>());
+		Collection<?> references = EMFCoreUtil.getReferencers(block.getBase_Class(), eRefs);
+		List<Property> propertyReferences = new LinkedList<Property>();
+		for (Object reference : references) {
+			if (reference instanceof Property) {
+				propertyReferences.add((Property) reference);
+			}
+		}
+
+		return propertyReferences;
 	}
 
 	/**

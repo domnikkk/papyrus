@@ -3,10 +3,10 @@
  */
 package org.eclipse.papyrus.uml.textedit.port.xtext.parser.antlr;
 
-import org.eclipse.papyrus.uml.textedit.port.xtext.services.UmlPortGrammarAccess;
-import org.eclipse.xtext.parser.antlr.XtextTokenStream;
-
 import com.google.inject.Inject;
+
+import org.eclipse.xtext.parser.antlr.XtextTokenStream;
+import org.eclipse.papyrus.uml.textedit.port.xtext.services.UmlPortGrammarAccess;
 
 public class UmlPortParser extends org.eclipse.xtext.parser.antlr.AbstractAntlrParser {
 

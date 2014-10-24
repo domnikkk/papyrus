@@ -10,13 +10,21 @@ import org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.IMaskManagedLabelEd
 import org.eclipse.papyrus.uml.diagram.common.helper.StereotypedElementLabelHelper;
 import org.eclipse.papyrus.uml.diagram.sequence.edit.parts.LifelineNameEditPart;
 import org.eclipse.papyrus.uml.tools.utils.UMLUtil;
+import org.eclipse.papyrus.uml.tools.utils.ValueSpecificationUtil;
 import org.eclipse.uml2.uml.ConnectableElement;
+import org.eclipse.uml2.uml.Expression;
 import org.eclipse.uml2.uml.Lifeline;
+import org.eclipse.uml2.uml.LiteralSpecification;
+import org.eclipse.uml2.uml.OpaqueExpression;
+import org.eclipse.uml2.uml.TimeExpression;
 import org.eclipse.uml2.uml.Type;
+import org.eclipse.uml2.uml.ValueSpecification;
 
 public class LifelineLabelHelper extends StereotypedElementLabelHelper {
 
 	public static final String SHOW_REPRESENT_NAME = "representsName";
+	
+	public static final String SHOW_REPRESENT_SELECTOR = "representsSelector";
 
 	public static final String SHOW_REPRESENT_TYPE = "representsType";
 
@@ -24,7 +32,7 @@ public class LifelineLabelHelper extends StereotypedElementLabelHelper {
 
 	public static final String SHOW_LIFELINE_NAME = "lifelineName";
 
-	public static final Collection<String> DEFAULT_LABEL_DISPLAY = Arrays.asList(SHOW_REPRESENT_NAME, SHOW_REPRESENT_TYPE);
+	public static final Collection<String> DEFAULT_LABEL_DISPLAY = Arrays.asList(SHOW_REPRESENT_NAME, SHOW_REPRESENT_SELECTOR, SHOW_REPRESENT_TYPE);
 
 	/**
 	 * singelton instance
@@ -52,6 +60,7 @@ public class LifelineLabelHelper extends StereotypedElementLabelHelper {
 	protected LifelineLabelHelper() {
 		// initialize the map
 		masks.put(SHOW_REPRESENT_NAME, "Show represent name");
+		masks.put(SHOW_REPRESENT_SELECTOR, "Show represent selector");
 		masks.put(SHOW_REPRESENT_TYPE, "Show represent type");
 		masks.put(SHOW_UNDEFINED_TYPE, "Always show undefined type");
 		masks.put(SHOW_LIFELINE_NAME, "Always show lifeline name");
@@ -116,6 +125,24 @@ public class LifelineLabelHelper extends StereotypedElementLabelHelper {
 			// represents is not null
 			if (displayValue.contains(SHOW_REPRESENT_NAME)) {
 				appendString(sb, element.getName(), UNAMED);
+				boolean displaySelector = displayValue.contains(SHOW_REPRESENT_SELECTOR);
+				if (lifeline.getRepresents() == null || displayValue.contains(LifelineLabelHelper.SHOW_LIFELINE_NAME)) {
+					displaySelector = false;
+				}
+				if (displaySelector) {
+					ValueSpecification selector = lifeline.getSelector();
+					// Add the selector if it is a LiteralSpecification
+					if(selector instanceof LiteralSpecification) {
+						sb.append("[").append(ValueSpecificationUtil.getSpecificationValue(selector)).append("]");
+					}
+					// Add the selector if it is an Expression
+					if(selector instanceof Expression || selector instanceof OpaqueExpression || selector instanceof TimeExpression) {
+						String specificationValue = ValueSpecificationUtil.getSpecificationValue(selector);
+						if(specificationValue != null && specificationValue.length() > 0) {
+							sb.append("[").append(specificationValue).append("]");
+						}
+					}
+				}
 			}
 			// if neither <1> or <2> are checked, show lifeline name (or <unnamed> when the lifeline has no name)
 			else if (!displayValue.contains(SHOW_REPRESENT_TYPE)) {

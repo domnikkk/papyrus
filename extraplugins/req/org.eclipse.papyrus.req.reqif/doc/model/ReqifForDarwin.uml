@@ -1,0 +1,928 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Document="http:///schemas/Document/_qR4REMn0EeO9CYUoXDRplw/0" xmlns:Requirements="http://www.eclipse.org/papyrus/0.7.0/SysML/Requirements" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:structure="http://DeveloperProcess/schemas/structure/_VA9p4McPEeO9CYUoXDRplw/1" xmlns:trace="http://DeveloperProcess/schemas/trace/_VBAtMMcPEeO9CYUoXDRplw/1" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/Document/_qR4REMn0EeO9CYUoXDRplw/0 pathmap://DEVELOPER_PROFILES/Document.profile.uml#_qR44IMn0EeO9CYUoXDRplw http://www.eclipse.org/papyrus/0.7.0/SysML/Requirements http://www.eclipse.org/papyrus/0.7.0/SysML#//requirements http://DeveloperProcess/schemas/structure/_VA9p4McPEeO9CYUoXDRplw/1 pathmap://DEVELOPER_PROFILES/developerprocess.profile.uml#_VA-4AMcPEeO9CYUoXDRplw http://DeveloperProcess/schemas/trace/_VBAtMMcPEeO9CYUoXDRplw/1 pathmap://DEVELOPER_PROFILES/developerprocess.profile.uml#_VBAtMccPEeO9CYUoXDRplw">
+  <uml:Model xmi:id="_M7ibgA2HEeSkbsvlP0s7pA" name="ReqIFModule">
+    <ownedComment xmi:type="uml:Comment" xmi:id="_nfyuMC0AEeS1XdXKGPJRfg" annotatedElement="_M7ibgA2HEeSkbsvlP0s7pA">
+      <body>This model explains the functionality in Papyrus Req in order to import or export ReqIF files into Papyrus (OMG Document Number: formal/2013-10-01 Standard document URL: http://www.omg.org/spec/ReqIF/1.1)&#xD;
+</body>
+    </ownedComment>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_M7ibgQ2HEeSkbsvlP0s7pA">
+      <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Model" xmi:id="_M7ibgg2HEeSkbsvlP0s7pA" name="Requirements">
+      <packagedElement xmi:type="uml:Class" xmi:id="_Q00aMA2HEeSkbsvlP0s7pA" name="ReqIfImport"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_bslN8A2HEeSkbsvlP0s7pA" name="ReqIFExport"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_mlYjgA2HEeSkbsvlP0s7pA" name="ControlMode"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_Jf-egBx4EeSlI-4RKfFQuw" name="WihtoutUI"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_g-4QsC6GEeSaMrdXMag_Yg" name="Re-Export"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_zBL_kC6GEeSaMrdXMag_Yg" name="Re-Import"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Model" xmi:id="_M7ibgw2HEeSkbsvlP0s7pA" name="UseCases">
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_M7ibhA2HEeSkbsvlP0s7pA" name="useCasesAbstraction" client="_M7ibgw2HEeSkbsvlP0s7pA" supplier="_M7ibgg2HEeSkbsvlP0s7pA"/>
+      <packagedElement xmi:type="uml:Component" xmi:id="_M7ibhQ2HEeSkbsvlP0s7pA" name="ReqIfModule" useCase="_RrUH4A2IEeSkbsvlP0s7pA _UBKk8A2IEeSkbsvlP0s7pA _6UJ0QCeeEeSjdJiE6np9EA _APZDoCefEeSjdJiE6np9EA _J-LD0CekEeSjdJiE6np9EA _OQz9sCekEeSjdJiE6np9EA _H53pUC0AEeS1XdXKGPJRfg _KAbGIC0AEeS1XdXKGPJRfg _7DBvEC6GEeSaMrdXMag_Yg _Dxy2AC6HEeSaMrdXMag_Yg">
+        <ownedUseCase xmi:type="uml:UseCase" xmi:id="_RrUH4A2IEeSkbsvlP0s7pA" name="Import ReqIF file" subject="_M7ibhQ2HEeSkbsvlP0s7pA">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_o9NR8C0BEeS1XdXKGPJRfg" annotatedElement="_RrUH4A2IEeSkbsvlP0s7pA">
+            <body>In order to import ReqFile into UMLModel, first analysis will be done:&#xD;
+- All existing SpecObjectTypes will be listed. From the list, the user chooses interesting Types. (In fact types may be purely information as title, chapter...)&#xD;
+- All stereotypes from applied profiles will be also listed.&#xD;
+Because each SpecType becomes a stereotype based on Requirement, if the two lists are equals no stereotypes will be created. </body>
+          </ownedComment>
+          <ownedComment xmi:type="uml:Comment" xmi:id="_HAk2kC0QEeS1XdXKGPJRfg" annotatedElement="_RrUH4A2IEeSkbsvlP0s7pA">
+            <body>If stereotypes need to be created, a dialog is opened  in order to ask to the user if a profile must be created.&#xD;
+After importing types, elements of ReqIF file are imported  &#xD;
+</body>
+          </ownedComment>
+          <ownedComment xmi:type="uml:Comment" xmi:id="_bMSusC0gEeS1XdXKGPJRfg" annotatedElement="_RrUH4A2IEeSkbsvlP0s7pA">
+            <body>First the User must have a SysML model. Select the package where ReqIF elements will be imported.&#xD;
+</body>
+          </ownedComment>
+          <ownedComment xmi:type="uml:Comment" xmi:id="_EU4VQC0kEeS1XdXKGPJRfg" annotatedElement="_RrUH4A2IEeSkbsvlP0s7pA">
+            <body>Select the menu Import  of Eclipse.</body>
+          </ownedComment>
+          <ownedComment xmi:type="uml:Comment" xmi:id="_dW9SoC0kEeS1XdXKGPJRfg" annotatedElement="_RrUH4A2IEeSkbsvlP0s7pA">
+            <body>Select the menu Import ReqIF from Papyrus Categories</body>
+          </ownedComment>
+          <ownedComment xmi:type="uml:Comment" xmi:id="_f2FngC0kEeS1XdXKGPJRfg" annotatedElement="_RrUH4A2IEeSkbsvlP0s7pA">
+            <body>Select the ReqIF file to import</body>
+          </ownedComment>
+          <ownedComment xmi:type="uml:Comment" xmi:id="_f-fVkC0kEeS1XdXKGPJRfg" annotatedElement="_RrUH4A2IEeSkbsvlP0s7pA">
+            <body>Select Types of ReqIFElement that you want to import</body>
+          </ownedComment>
+          <ownedComment xmi:type="uml:Comment" xmi:id="_gFMagC0kEeS1XdXKGPJRfg" annotatedElement="_RrUH4A2IEeSkbsvlP0s7pA">
+            <body>Types in ReqIF become stereotypes in profile, select or create the profile that will contain imported types</body>
+          </ownedComment>
+          <ownedComment xmi:type="uml:Comment" xmi:id="_gK1vgC0kEeS1XdXKGPJRfg" annotatedElement="_RrUH4A2IEeSkbsvlP0s7pA">
+            <body>The model has now imported requirements with relations. Note that a comment explains the origin of the import.</body>
+          </ownedComment>
+          <ownedUseCase xmi:type="uml:UseCase" xmi:id="_6UJ0QCeeEeSjdJiE6np9EA" name="Import DataType Enumeration" subject="_M7ibhQ2HEeSkbsvlP0s7pA">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_lMie4C0QEeS1XdXKGPJRfg" annotatedElement="_6UJ0QCeeEeSjdJiE6np9EA">
+              <body>Each Datatype Definition  Enumeration in a ReqFIle is transformed to UML Eneumeration in a profile.&#xD;
+</body>
+            </ownedComment>
+          </ownedUseCase>
+          <ownedUseCase xmi:type="uml:UseCase" xmi:id="_H53pUC0AEeS1XdXKGPJRfg" name="Import SpecTypes" subject="_M7ibhQ2HEeSkbsvlP0s7pA">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_z6_QUC0QEeS1XdXKGPJRfg" annotatedElement="_H53pUC0AEeS1XdXKGPJRfg">
+              <body>Each SpecObjectType choosen in the ReqIFile is transformed to stereotype that inherits of SysML Requirement in a profile.&#xD;
+Each SpecRelationType of the ReqIF file is transformed in to Stereotype based on dependency Metaclass.&#xD;
+Each attribute  is transformed to equivalent attribute in Stereotype. Only XTML attributes are transformed into String typed attributes in profile.&#xD;
+</body>
+            </ownedComment>
+          </ownedUseCase>
+          <ownedUseCase xmi:type="uml:UseCase" xmi:id="_KAbGIC0AEeS1XdXKGPJRfg" name="Import SpecObjects" subject="_M7ibhQ2HEeSkbsvlP0s7pA">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_UZQ5gC0REeS1XdXKGPJRfg" annotatedElement="_KAbGIC0AEeS1XdXKGPJRfg">
+              <body>Each SpecObjectNode is transformed to class with a corresponded applied stereotype. During the creation, SpecHierarchy ared used in order to structure the SysML files.&#xD;
+Each Specification becomes a package.&#xD;
+Each SpecRelation becomes a stereotyped dependency. if the souce or target of this object are not created, the spec relation will be not imported.&#xD;
+</body>
+            </ownedComment>
+          </ownedUseCase>
+          <ownedBehavior xmi:type="uml:Activity" xmi:id="_CouOMBM1EeSkbsvlP0s7pA" name="ImportActivity" node="_Ewo88BM1EeSkbsvlP0s7pA _FwfQYBM1EeSkbsvlP0s7pA _QThKQBM1EeSkbsvlP0s7pA _fOIvcBM1EeSkbsvlP0s7pA _ocIJABM1EeSkbsvlP0s7pA _CedpgBM2EeSkbsvlP0s7pA _HJUPEBM2EeSkbsvlP0s7pA _MJYPoBM2EeSkbsvlP0s7pA _e4vSkBfoEeSufZ1epFirrQ _9fcWIBfoEeSufZ1epFirrQ _KKeeUBfpEeSufZ1epFirrQ _dzy1ABfuEeSufZ1epFirrQ">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_gh0k4BM1EeSkbsvlP0s7pA" annotatedElement="_fOIvcBM1EeSkbsvlP0s7pA">
+              <body>Test if stereotype must be created to map with specObjectType</body>
+            </ownedComment>
+            <ownedComment xmi:type="uml:Comment" xmi:id="_fkflUBfoEeSufZ1epFirrQ" annotatedElement="_e4vSkBfoEeSufZ1epFirrQ">
+              <body>Create or update profile</body>
+            </ownedComment>
+            <edge xmi:type="uml:ControlFlow" xmi:id="_Ni4OoBM1EeSkbsvlP0s7pA" name="ControlFlow" target="_FwfQYBM1EeSkbsvlP0s7pA" source="_QThKQBM1EeSkbsvlP0s7pA"/>
+            <edge xmi:type="uml:ControlFlow" xmi:id="_XeSu4BM1EeSkbsvlP0s7pA" name="ControlFlow1" target="_QThKQBM1EeSkbsvlP0s7pA" source="_Ewo88BM1EeSkbsvlP0s7pA"/>
+            <edge xmi:type="uml:ControlFlow" xmi:id="_nMz2MBM1EeSkbsvlP0s7pA" name="ControlFlow2" target="_fOIvcBM1EeSkbsvlP0s7pA" source="_FwfQYBM1EeSkbsvlP0s7pA"/>
+            <edge xmi:type="uml:ControlFlow" xmi:id="_t5AocBM1EeSkbsvlP0s7pA" name="ControlFlow3" target="_dzy1ABfuEeSufZ1epFirrQ" source="_fOIvcBM1EeSkbsvlP0s7pA">
+              <guard xmi:type="uml:LiteralString" xmi:id="_4xfN4BM1EeSkbsvlP0s7pA" name="true" value="stereotype must be created"/>
+            </edge>
+            <edge xmi:type="uml:ControlFlow" xmi:id="_Dl_5UBM2EeSkbsvlP0s7pA" name="ControlFlow4" target="_CedpgBM2EeSkbsvlP0s7pA" source="_ocIJABM1EeSkbsvlP0s7pA"/>
+            <edge xmi:type="uml:ControlFlow" xmi:id="_E0BysBM2EeSkbsvlP0s7pA" name="ControlFlow5" target="_CedpgBM2EeSkbsvlP0s7pA" source="_fOIvcBM1EeSkbsvlP0s7pA">
+              <guard xmi:type="uml:LiteralString" xmi:id="_267DwBfpEeSufZ1epFirrQ" value="no Stereotype to create"/>
+            </edge>
+            <edge xmi:type="uml:ControlFlow" xmi:id="_LIuD4BM2EeSkbsvlP0s7pA" name="ControlFlow6" target="_HJUPEBM2EeSkbsvlP0s7pA" source="_CedpgBM2EeSkbsvlP0s7pA"/>
+            <edge xmi:type="uml:ControlFlow" xmi:id="_NJMt4BM2EeSkbsvlP0s7pA" name="ControlFlow7" target="_MJYPoBM2EeSkbsvlP0s7pA" source="_HJUPEBM2EeSkbsvlP0s7pA"/>
+            <edge xmi:type="uml:ControlFlow" xmi:id="_uw76UBfoEeSufZ1epFirrQ" name="ControlFlow8" target="_9fcWIBfoEeSufZ1epFirrQ" source="_e4vSkBfoEeSufZ1epFirrQ">
+              <guard xmi:type="uml:LiteralString" xmi:id="_B_rxsBfqEeSufZ1epFirrQ" name="" value="a local profile must be updated"/>
+            </edge>
+            <edge xmi:type="uml:ControlFlow" xmi:id="_FiRkIBfpEeSufZ1epFirrQ" name="ControlFlow9" target="_ocIJABM1EeSkbsvlP0s7pA" source="_e4vSkBfoEeSufZ1epFirrQ">
+              <guard xmi:type="uml:LiteralString" xmi:id="_-2ZskBfpEeSufZ1epFirrQ" value="a profile must be created"/>
+            </edge>
+            <edge xmi:type="uml:ControlFlow" xmi:id="_NJi3gBfpEeSufZ1epFirrQ" name="ControlFlow10" target="_KKeeUBfpEeSufZ1epFirrQ" source="_9fcWIBfoEeSufZ1epFirrQ"/>
+            <edge xmi:type="uml:ControlFlow" xmi:id="_NqQX4BfpEeSufZ1epFirrQ" name="ControlFlow11" target="_CedpgBM2EeSkbsvlP0s7pA" source="_KKeeUBfpEeSufZ1epFirrQ"/>
+            <edge xmi:type="uml:ControlFlow" xmi:id="_wgpVsBfuEeSufZ1epFirrQ" name="ControlFlow12" target="_e4vSkBfoEeSufZ1epFirrQ" source="_dzy1ABfuEeSufZ1epFirrQ"/>
+            <node xmi:type="uml:InitialNode" xmi:id="_Ewo88BM1EeSkbsvlP0s7pA" name="InitialNode" outgoing="_XeSu4BM1EeSkbsvlP0s7pA"/>
+            <node xmi:type="uml:OpaqueAction" xmi:id="_FwfQYBM1EeSkbsvlP0s7pA" name="Get All stereotypes that represents Requirements from UML File " incoming="_Ni4OoBM1EeSkbsvlP0s7pA" outgoing="_nMz2MBM1EeSkbsvlP0s7pA"/>
+            <node xmi:type="uml:OpaqueAction" xmi:id="_QThKQBM1EeSkbsvlP0s7pA" name="Select SpecObjectTypes contained in ReqIF file" incoming="_XeSu4BM1EeSkbsvlP0s7pA" outgoing="_Ni4OoBM1EeSkbsvlP0s7pA"/>
+            <node xmi:type="uml:DecisionNode" xmi:id="_fOIvcBM1EeSkbsvlP0s7pA" name="DecisionNode" incoming="_nMz2MBM1EeSkbsvlP0s7pA" outgoing="_t5AocBM1EeSkbsvlP0s7pA _E0BysBM2EeSkbsvlP0s7pA"/>
+            <node xmi:type="uml:OpaqueAction" xmi:id="_ocIJABM1EeSkbsvlP0s7pA" name="CreateProfile with new Stereotypes" incoming="_FiRkIBfpEeSufZ1epFirrQ" outgoing="_Dl_5UBM2EeSkbsvlP0s7pA"/>
+            <node xmi:type="uml:MergeNode" xmi:id="_CedpgBM2EeSkbsvlP0s7pA" name="MergeNode" incoming="_Dl_5UBM2EeSkbsvlP0s7pA _E0BysBM2EeSkbsvlP0s7pA _NqQX4BfpEeSufZ1epFirrQ" outgoing="_LIuD4BM2EeSkbsvlP0s7pA"/>
+            <node xmi:type="uml:OpaqueAction" xmi:id="_HJUPEBM2EeSkbsvlP0s7pA" name="Create stereotyped Class by set the same id in ecore object" incoming="_LIuD4BM2EeSkbsvlP0s7pA" outgoing="_NJMt4BM2EeSkbsvlP0s7pA"/>
+            <node xmi:type="uml:ActivityFinalNode" xmi:id="_MJYPoBM2EeSkbsvlP0s7pA" name="ActivityFinalNode" incoming="_NJMt4BM2EeSkbsvlP0s7pA"/>
+            <node xmi:type="uml:DecisionNode" xmi:id="_e4vSkBfoEeSufZ1epFirrQ" name="DecisionNode1" incoming="_wgpVsBfuEeSufZ1epFirrQ" outgoing="_uw76UBfoEeSufZ1epFirrQ _FiRkIBfpEeSufZ1epFirrQ"/>
+            <node xmi:type="uml:OpaqueAction" xmi:id="_9fcWIBfoEeSufZ1epFirrQ" name="Updateprofile with new stereotypes" incoming="_uw76UBfoEeSufZ1epFirrQ" outgoing="_NJi3gBfpEeSufZ1epFirrQ"/>
+            <node xmi:type="uml:OpaqueAction" xmi:id="_KKeeUBfpEeSufZ1epFirrQ" name="Update stereotyped class" incoming="_NJi3gBfpEeSufZ1epFirrQ" outgoing="_NqQX4BfpEeSufZ1epFirrQ"/>
+            <node xmi:type="uml:OpaqueAction" xmi:id="_dzy1ABfuEeSufZ1epFirrQ" name="Ask if a local profile must be updated or create a new profile" incoming="_t5AocBM1EeSkbsvlP0s7pA" outgoing="_wgpVsBfuEeSufZ1epFirrQ"/>
+          </ownedBehavior>
+          <extend xmi:type="uml:Extend" xmi:id="_-13ukC6GEeSaMrdXMag_Yg" extendedCase="_7DBvEC6GEeSaMrdXMag_Yg" extensionLocation="_-4HxUC6GEeSaMrdXMag_Yg"/>
+          <include xmi:type="uml:Include" xmi:id="__UdFYCeeEeSjdJiE6np9EA" addition="_6UJ0QCeeEeSjdJiE6np9EA"/>
+          <include xmi:type="uml:Include" xmi:id="_NshkcC0AEeS1XdXKGPJRfg" addition="_H53pUC0AEeS1XdXKGPJRfg"/>
+          <include xmi:type="uml:Include" xmi:id="_OMW7EC0AEeS1XdXKGPJRfg" name="" addition="_KAbGIC0AEeS1XdXKGPJRfg"/>
+        </ownedUseCase>
+        <ownedUseCase xmi:type="uml:UseCase" xmi:id="_UBKk8A2IEeSkbsvlP0s7pA" name="Export UML Model to ReqIF File" subject="_M7ibhQ2HEeSkbsvlP0s7pA">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_Y4R2EA5SEeSkbsvlP0s7pA" annotatedElement="_UBKk8A2IEeSkbsvlP0s7pA">
+            <body>The goal is to export all requirements and links into ReqIF.&#xD;
+To do that, the tool lists all applied stereotypes that inherits of SysML::Requirement and that inherits of dependencies.&#xD;
+From this list, the tool constructs, in ReqIF File, correponding specObjects Tyoes and SpecRelationsTypes&#xD;
+Then from all stereotyped elements, it constructs the corresponding hierarchy. &#xD;
+&#xD;
+</body>
+          </ownedComment>
+          <ownedComment xmi:type="uml:Comment" xmi:id="_CZkNMC0mEeS1XdXKGPJRfg" annotatedElement="_UBKk8A2IEeSkbsvlP0s7pA">
+            <body>Select the SysML that you want to export&#xD;
+</body>
+          </ownedComment>
+          <ownedComment xmi:type="uml:Comment" xmi:id="_LQdVYC0mEeS1XdXKGPJRfg" annotatedElement="_UBKk8A2IEeSkbsvlP0s7pA">
+            <body>Select the export Menu from Eclipse menu.</body>
+          </ownedComment>
+          <ownedComment xmi:type="uml:Comment" xmi:id="_LZ7acC0mEeS1XdXKGPJRfg" annotatedElement="_UBKk8A2IEeSkbsvlP0s7pA">
+            <body>Select the menu export ReqIF form the papyrus Category</body>
+          </ownedComment>
+          <ownedComment xmi:type="uml:Comment" xmi:id="_g8fHgC0nEeS1XdXKGPJRfg">
+            <body>Choose the name of the reqif file.</body>
+          </ownedComment>
+          <ownedComment xmi:type="uml:Comment" xmi:id="_Lh4ckC0mEeS1XdXKGPJRfg" annotatedElement="_UBKk8A2IEeSkbsvlP0s7pA">
+            <body>At the end, a reqFile is generated. The header has an information that explain that the result comes from UML file.&#xD;
+</body>
+          </ownedComment>
+          <ownedUseCase xmi:type="uml:UseCase" xmi:id="_APZDoCefEeSjdJiE6np9EA" name="export DataType" subject="_M7ibhQ2HEeSkbsvlP0s7pA">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_uWEVkC0YEeS1XdXKGPJRfg" annotatedElement="_APZDoCefEeSjdJiE6np9EA">
+              <body>In a reqFile, all basic types must be created; that is why data type definition string, integer, Real, boolean and XHTML are created.&#xD;
+Moreover, all Enumerations in applied profiles become DataTypeDefinitionEnumerations in the ReqIF file.&#xD;
+</body>
+            </ownedComment>
+          </ownedUseCase>
+          <ownedUseCase xmi:type="uml:UseCase" xmi:id="_J-LD0CekEeSjdJiE6np9EA" name="Export Stereotypes" subject="_M7ibhQ2HEeSkbsvlP0s7pA">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_JdWr8C0ZEeS1XdXKGPJRfg" annotatedElement="_J-LD0CekEeSjdJiE6np9EA">
+              <body>From all stereotypes, all SpecObject Types and all SpecRelationTypes will be created. If an attribute of a stereotype is typed by a primitiveType named XHTML, the attribute of the SpecObjecType will be XHTML. </body>
+            </ownedComment>
+          </ownedUseCase>
+          <ownedUseCase xmi:type="uml:UseCase" xmi:id="_OQz9sCekEeSjdJiE6np9EA" name="Export Stereotyped Elements" subject="_M7ibhQ2HEeSkbsvlP0s7pA">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_gU0L4C0ZEeS1XdXKGPJRfg" annotatedElement="_OQz9sCekEeSjdJiE6np9EA">
+              <body>From all packages that contains Requirements, a specification will be created. Then a hierarchy will be created by taking in account the structure of requirements. Finally SpecObject and SpecRelation are created.&#xD;
+</body>
+            </ownedComment>
+          </ownedUseCase>
+          <ownedBehavior xmi:type="uml:Activity" xmi:id="_oeyA0C0SEeS1XdXKGPJRfg" name="ExportActivity" node="_oeyA5C0SEeS1XdXKGPJRfg _oeyA5S0SEeS1XdXKGPJRfg _oeyA5i0SEeS1XdXKGPJRfg _oeyA6C0SEeS1XdXKGPJRfg _oeyA6y0SEeS1XdXKGPJRfg _oeyA7S0SEeS1XdXKGPJRfg _oeyA7i0SEeS1XdXKGPJRfg _oeyA7y0SEeS1XdXKGPJRfg">
+            <edge xmi:type="uml:ControlFlow" xmi:id="_oeyA0y0SEeS1XdXKGPJRfg" name="ControlFlow" target="_oeyA6C0SEeS1XdXKGPJRfg" source="_oeyA5i0SEeS1XdXKGPJRfg"/>
+            <edge xmi:type="uml:ControlFlow" xmi:id="_oeyA1C0SEeS1XdXKGPJRfg" name="ControlFlow1" target="_oeyA5i0SEeS1XdXKGPJRfg" source="_oeyA5C0SEeS1XdXKGPJRfg"/>
+            <edge xmi:type="uml:ControlFlow" xmi:id="_oeyA1S0SEeS1XdXKGPJRfg" name="ControlFlow2" target="_oeyA7y0SEeS1XdXKGPJRfg" source="_oeyA5S0SEeS1XdXKGPJRfg"/>
+            <edge xmi:type="uml:ControlFlow" xmi:id="_oeyA1i0SEeS1XdXKGPJRfg" name="ControlFlow3" target="_oeyA6y0SEeS1XdXKGPJRfg" source="_oeyA7i0SEeS1XdXKGPJRfg"/>
+            <edge xmi:type="uml:ControlFlow" xmi:id="_oeyA2C0SEeS1XdXKGPJRfg" name="ControlFlow4" target="_oeyA5S0SEeS1XdXKGPJRfg" source="_oeyA6C0SEeS1XdXKGPJRfg"/>
+            <edge xmi:type="uml:ControlFlow" xmi:id="_oeyA2S0SEeS1XdXKGPJRfg" name="ControlFlow5">
+              <guard xmi:type="uml:LiteralString" xmi:id="_oeyA2i0SEeS1XdXKGPJRfg" value="no Stereotype to create"/>
+            </edge>
+            <edge xmi:type="uml:ControlFlow" xmi:id="_oeyA2y0SEeS1XdXKGPJRfg" name="ControlFlow6"/>
+            <edge xmi:type="uml:ControlFlow" xmi:id="_oeyA3C0SEeS1XdXKGPJRfg" name="ControlFlow7" target="_oeyA6y0SEeS1XdXKGPJRfg"/>
+            <edge xmi:type="uml:ControlFlow" xmi:id="_oeyA3S0SEeS1XdXKGPJRfg" name="ControlFlow8" target="_oeyA7S0SEeS1XdXKGPJRfg">
+              <guard xmi:type="uml:LiteralString" xmi:id="_oeyA3i0SEeS1XdXKGPJRfg" name="" value="a local profile must be updated"/>
+            </edge>
+            <edge xmi:type="uml:ControlFlow" xmi:id="_oeyA3y0SEeS1XdXKGPJRfg" name="ControlFlow9" target="_oeyA6C0SEeS1XdXKGPJRfg">
+              <guard xmi:type="uml:LiteralString" xmi:id="_oeyA4C0SEeS1XdXKGPJRfg" value="a profile must be created"/>
+            </edge>
+            <edge xmi:type="uml:ControlFlow" xmi:id="_oeyA4S0SEeS1XdXKGPJRfg" name="ControlFlow10" target="_oeyA7i0SEeS1XdXKGPJRfg" source="_oeyA7S0SEeS1XdXKGPJRfg"/>
+            <edge xmi:type="uml:ControlFlow" xmi:id="_oeyA4i0SEeS1XdXKGPJRfg" name="ControlFlow11" source="_oeyA7i0SEeS1XdXKGPJRfg"/>
+            <edge xmi:type="uml:ControlFlow" xmi:id="_oeyA4y0SEeS1XdXKGPJRfg" name="ControlFlow12" target="_oeyA7S0SEeS1XdXKGPJRfg" source="_oeyA7y0SEeS1XdXKGPJRfg"/>
+            <node xmi:type="uml:InitialNode" xmi:id="_oeyA5C0SEeS1XdXKGPJRfg" name="InitialNode" outgoing="_oeyA1C0SEeS1XdXKGPJRfg"/>
+            <node xmi:type="uml:OpaqueAction" xmi:id="_oeyA5S0SEeS1XdXKGPJRfg" name="Get All stereotypes that represent Requirements from UML File " incoming="_oeyA2C0SEeS1XdXKGPJRfg" outgoing="_oeyA1S0SEeS1XdXKGPJRfg"/>
+            <node xmi:type="uml:OpaqueAction" xmi:id="_oeyA5i0SEeS1XdXKGPJRfg" name="Create in theReqIF file DataTypes Definition" incoming="_oeyA1C0SEeS1XdXKGPJRfg" outgoing="_oeyA0y0SEeS1XdXKGPJRfg"/>
+            <node xmi:type="uml:OpaqueAction" xmi:id="_oeyA6C0SEeS1XdXKGPJRfg" name="Get all stereotypes that extend dependency" incoming="_oeyA3y0SEeS1XdXKGPJRfg _oeyA0y0SEeS1XdXKGPJRfg" outgoing="_oeyA2C0SEeS1XdXKGPJRfg"/>
+            <node xmi:type="uml:ActivityFinalNode" xmi:id="_oeyA6y0SEeS1XdXKGPJRfg" name="ActivityFinalNode" incoming="_oeyA3C0SEeS1XdXKGPJRfg _oeyA1i0SEeS1XdXKGPJRfg"/>
+            <node xmi:type="uml:OpaqueAction" xmi:id="_oeyA7S0SEeS1XdXKGPJRfg" name="Create all SpecRelationTypes" incoming="_oeyA3S0SEeS1XdXKGPJRfg _oeyA4y0SEeS1XdXKGPJRfg" outgoing="_oeyA4S0SEeS1XdXKGPJRfg"/>
+            <node xmi:type="uml:OpaqueAction" xmi:id="_oeyA7i0SEeS1XdXKGPJRfg" name="Create all Spec Object and Spec Relations" incoming="_oeyA4S0SEeS1XdXKGPJRfg" outgoing="_oeyA4i0SEeS1XdXKGPJRfg _oeyA1i0SEeS1XdXKGPJRfg"/>
+            <node xmi:type="uml:OpaqueAction" xmi:id="_oeyA7y0SEeS1XdXKGPJRfg" name="Create all SpecObjectType from stereotypes" incoming="_oeyA1S0SEeS1XdXKGPJRfg" outgoing="_oeyA4y0SEeS1XdXKGPJRfg"/>
+          </ownedBehavior>
+          <extend xmi:type="uml:Extend" xmi:id="_FAePoC6HEeSaMrdXMag_Yg" extendedCase="_Dxy2AC6HEeSaMrdXMag_Yg" extensionLocation="_FAqc4C6HEeSaMrdXMag_Yg"/>
+          <include xmi:type="uml:Include" xmi:id="_DFqtMCefEeSjdJiE6np9EA" addition="_APZDoCefEeSjdJiE6np9EA"/>
+          <include xmi:type="uml:Include" xmi:id="_Mph20CekEeSjdJiE6np9EA" addition="_J-LD0CekEeSjdJiE6np9EA"/>
+          <include xmi:type="uml:Include" xmi:id="_Rk6LsCekEeSjdJiE6np9EA" addition="_OQz9sCekEeSjdJiE6np9EA"/>
+        </ownedUseCase>
+        <ownedUseCase xmi:type="uml:UseCase" xmi:id="_7DBvEC6GEeSaMrdXMag_Yg" name="Re-Import" subject="_M7ibhQ2HEeSkbsvlP0s7pA">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_XLVBEC6IEeSaMrdXMag_Yg" annotatedElement="_7DBvEC6GEeSaMrdXMag_Yg">
+            <body>When a ReqIfile has been already imported, Papyrus shall update contents during Re-import&#xD;
+</body>
+          </ownedComment>
+          <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_-4HxUC6GEeSaMrdXMag_Yg" name="ExtensionPoint1"/>
+        </ownedUseCase>
+        <ownedUseCase xmi:type="uml:UseCase" xmi:id="_Dxy2AC6HEeSaMrdXMag_Yg" name="Re-Export" subject="_M7ibhQ2HEeSkbsvlP0s7pA">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_pJJ4kC6IEeSaMrdXMag_Yg" annotatedElement="_Dxy2AC6HEeSaMrdXMag_Yg">
+            <body>When a UML model has been already exported, PapyrusReq must only update the content of the file.&#xD;
+</body>
+          </ownedComment>
+          <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_FAqc4C6HEeSaMrdXMag_Yg" name="ExtensionPoint1"/>
+        </ownedUseCase>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Actor" xmi:id="_Vfnf8A2IEeSkbsvlP0s7pA" name="User"/>
+      <packagedElement xmi:type="uml:Association" xmi:id="_WwkKcA2IEeSkbsvlP0s7pA" name="A_importreqif file_user" memberEnd="_WwkKcQ2IEeSkbsvlP0s7pA _WwkKdA2IEeSkbsvlP0s7pA">
+        <ownedEnd xmi:type="uml:Property" xmi:id="_WwkKcQ2IEeSkbsvlP0s7pA" name="importreqif file" type="_RrUH4A2IEeSkbsvlP0s7pA" association="_WwkKcA2IEeSkbsvlP0s7pA">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_WwkKcg2IEeSkbsvlP0s7pA" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_WwkKcw2IEeSkbsvlP0s7pA" value="1"/>
+        </ownedEnd>
+        <ownedEnd xmi:type="uml:Property" xmi:id="_WwkKdA2IEeSkbsvlP0s7pA" name="user" type="_Vfnf8A2IEeSkbsvlP0s7pA" association="_WwkKcA2IEeSkbsvlP0s7pA">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_WwkKdQ2IEeSkbsvlP0s7pA" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_WwkKdg2IEeSkbsvlP0s7pA" value="1"/>
+        </ownedEnd>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_XVutAA2IEeSkbsvlP0s7pA" name="A_user_exportreqiffile" memberEnd="_XVutAQ2IEeSkbsvlP0s7pA _XVvUEg2IEeSkbsvlP0s7pA">
+        <ownedEnd xmi:type="uml:Property" xmi:id="_XVutAQ2IEeSkbsvlP0s7pA" name="user" type="_Vfnf8A2IEeSkbsvlP0s7pA" association="_XVutAA2IEeSkbsvlP0s7pA">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_XVvUEA2IEeSkbsvlP0s7pA" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_XVvUEQ2IEeSkbsvlP0s7pA" value="1"/>
+        </ownedEnd>
+        <ownedEnd xmi:type="uml:Property" xmi:id="_XVvUEg2IEeSkbsvlP0s7pA" name="exportreqiffile" type="_UBKk8A2IEeSkbsvlP0s7pA" association="_XVutAA2IEeSkbsvlP0s7pA">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_XVvUEw2IEeSkbsvlP0s7pA" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_XVvUFA2IEeSkbsvlP0s7pA" value="1"/>
+        </ownedEnd>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_KJS4sC6JEeSaMrdXMag_Yg" name="SatisfactionOf_ReqIFExport" client="_APZDoCefEeSjdJiE6np9EA" supplier="_bslN8A2HEeSkbsvlP0s7pA"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_NWLEYC6JEeSaMrdXMag_Yg" name="SatisfactionOf_ReqIFExport" client="_UBKk8A2IEeSkbsvlP0s7pA" supplier="_bslN8A2HEeSkbsvlP0s7pA"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_RbG5cC6JEeSaMrdXMag_Yg" name="SatisfactionOf_ReqIFExport" client="_J-LD0CekEeSjdJiE6np9EA" supplier="_bslN8A2HEeSkbsvlP0s7pA"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_bM48kC6JEeSaMrdXMag_Yg" name="SatisfactionOf_ReqIfImport" client="_RrUH4A2IEeSkbsvlP0s7pA" supplier="_Q00aMA2HEeSkbsvlP0s7pA"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_hP62AC6JEeSaMrdXMag_Yg" name="SatisfactionOf_Re-Import" client="_7DBvEC6GEeSaMrdXMag_Yg" supplier="_zBL_kC6GEeSaMrdXMag_Yg"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_mrKWsC6JEeSaMrdXMag_Yg" name="SatisfactionOf_ReqIfImport" client="_6UJ0QCeeEeSjdJiE6np9EA" supplier="_Q00aMA2HEeSkbsvlP0s7pA"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_oT85cC6JEeSaMrdXMag_Yg" name="SatisfactionOf_ReqIfImport" client="_KAbGIC0AEeS1XdXKGPJRfg" supplier="_Q00aMA2HEeSkbsvlP0s7pA"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_8KEIQC6JEeSaMrdXMag_Yg" name="SatisfactionOf_ReqIfImport" client="_H53pUC0AEeS1XdXKGPJRfg" supplier="_Q00aMA2HEeSkbsvlP0s7pA"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_-VihUC6JEeSaMrdXMag_Yg" name="SatisfactionOf_Re-Export" client="_Dxy2AC6HEeSaMrdXMag_Yg" supplier="_g-4QsC6GEeSaMrdXMag_Yg"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_CV3jMC6KEeSaMrdXMag_Yg" name="SatisfactionOf_ReqIFExport" client="_OQz9sCekEeSjdJiE6np9EA" supplier="_bslN8A2HEeSkbsvlP0s7pA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Model" xmi:id="_M7ibhg2HEeSkbsvlP0s7pA" name="Design">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_Sil8sC0aEeS1XdXKGPJRfg" annotatedElement="_M7ibhg2HEeSkbsvlP0s7pA">
+        <body>The architecture is quite simple. There are wizard for import and export,  two classes to realize the job and differents assistants or dialogs.&#xD;
+Nevertheless, two layers can be distinguished in the code:&#xD;
+	- one layer independent of the papyrus&#xD;
+	- one layer called integration dependent of papyrus.&#xD;
+Efforts have been made to be more independant of papyurs in order to facilitate the maintenance of the algorithm for import export.&#xD;
+The layer integration contains specializations to create elements by using service edit or use some facilities as advanced dialog.&#xD;
+&#xD;
+</body>
+      </ownedComment>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_M7ibhw2HEeSkbsvlP0s7pA" name="DesignAbstraction" client="_M7ibhg2HEeSkbsvlP0s7pA" supplier="_M7ibgw2HEeSkbsvlP0s7pA"/>
+      <packagedElement xmi:type="uml:Package" xmi:id="_lTqHwCazEeSjdJiE6np9EA" name="com.cea.darwin.reqif">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_cWRW8CxOEeSjdJiE6np9EA" annotatedElement="_6GCKQCw0EeSjdJiE6np9EA _ID2I8Cw1EeSjdJiE6np9EA">
+          <body>independant of Papyrus</body>
+        </ownedComment>
+        <packagedElement xmi:type="uml:Package" xmi:id="_6GCKQCw0EeSjdJiE6np9EA" name="assistant">
+          <packagedElement xmi:type="uml:Class" xmi:id="_De0CECw2EeSjdJiE6np9EA" name="ReqIFNewFilePage"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_LYTG0Cw2EeSjdJiE6np9EA" name="ReqIFSelectionPage"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_iP7l4Cw2EeSjdJiE6np9EA" name="CreateOrSelectProfileDialog"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_72Z7sCw0EeSjdJiE6np9EA" name="integration">
+          <packagedElement xmi:type="uml:Package" xmi:id="_X5UK0CxLEeSjdJiE6np9EA" name="assistant">
+            <packagedElement xmi:type="uml:Class" xmi:id="_YWHdkCw1EeSjdJiE6np9EA" name="AbstractWizardForPapyrus"/>
+            <packagedElement xmi:type="uml:Class" xmi:id="_YGnMgCw2EeSjdJiE6np9EA" name="ChooseReqIFTypeDialog"/>
+            <packagedElement xmi:type="uml:Class" xmi:id="_2Cow0Cw1EeSjdJiE6np9EA" name="ReqIFImportWizard">
+              <generalization xmi:type="uml:Generalization" xmi:id="__dzDsCw1EeSjdJiE6np9EA" general="_YWHdkCw1EeSjdJiE6np9EA"/>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="_q1TVsCw1EeSjdJiE6np9EA" name="ReqIFExportWizard">
+              <generalization xmi:type="uml:Generalization" xmi:id="_wjMFkCw1EeSjdJiE6np9EA" general="_YWHdkCw1EeSjdJiE6np9EA"/>
+            </packagedElement>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Package" xmi:id="_4JxFUCxJEeSjdJiE6np9EA" name="transformation">
+            <packagedElement xmi:type="uml:Class" xmi:id="_iiaCsCxGEeSjdJiE6np9EA" name="ReqIFImporterServiceEdit">
+              <generalization xmi:type="uml:Generalization" xmi:id="_n2Fi0CxGEeSjdJiE6np9EA" general="_o1kIQCazEeSjdJiE6np9EA"/>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_7SZ0wCxKEeSjdJiE6np9EA" name="createDependency"/>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="__YybUCxKEeSjdJiE6np9EA" name="createRequirementClass"/>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_CTkKYCxLEeSjdJiE6np9EA" name="selectReqIFType"/>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_Pyr6kCxOEeSjdJiE6np9EA" name="defineProfile"/>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Usage" xmi:id="_GwGnICxLEeSjdJiE6np9EA" client="_iiaCsCxGEeSjdJiE6np9EA" supplier="_YGnMgCw2EeSjdJiE6np9EA"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Package" xmi:id="_k2eS4CxNEeSjdJiE6np9EA" name="command">
+            <packagedElement xmi:type="uml:Class" xmi:id="_nBoi4CxNEeSjdJiE6np9EA" name="DefineProfileCommand"/>
+          </packagedElement>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_ID2I8Cw1EeSjdJiE6np9EA" name="transformation">
+          <packagedElement xmi:type="uml:Class" xmi:id="_o1kIQCazEeSjdJiE6np9EA" name="ReqIFImporter">
+            <generalization xmi:type="uml:Generalization" xmi:id="_toxt0CeeEeSjdJiE6np9EA" general="_n9SxsCeeEeSjdJiE6np9EA"/>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_sFUBwCazEeSjdJiE6np9EA" name="importReqIFModel"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Class" xmi:id="_n9SxsCeeEeSjdJiE6np9EA" name="ReqIFBaseTransformation"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_ZIxNcCeeEeSjdJiE6np9EA" name="ReqIFExporter">
+            <generalization xmi:type="uml:Generalization" xmi:id="_s3NG8CeeEeSjdJiE6np9EA" general="_n9SxsCeeEeSjdJiE6np9EA"/>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_d-6dACeeEeSjdJiE6np9EA" name="exportReqIFModel"/>
+          </packagedElement>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Model" xmi:id="_M7ibiA2HEeSkbsvlP0s7pA" name="Test">
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_M7ibiQ2HEeSkbsvlP0s7pA" name="Dependency1" client="_M7ibiA2HEeSkbsvlP0s7pA" supplier="_M7ibgw2HEeSkbsvlP0s7pA"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_M7ibig2HEeSkbsvlP0s7pA" name="Dependency2" client="_M7ibiA2HEeSkbsvlP0s7pA" supplier="_M7ibhg2HEeSkbsvlP0s7pA"/>
+      <packagedElement xmi:type="uml:UseCase" xmi:id="_2fkgkA2NEeSkbsvlP0s7pA" name="TestImport">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_UiIgoC0cEeS1XdXKGPJRfg" annotatedElement="_2fkgkA2NEeSkbsvlP0s7pA">
+          <body>The goal is to test the import of a reIF file&#xD;
+</body>
+        </ownedComment>
+        <ownedUseCase xmi:type="uml:UseCase" xmi:id="_fvp-cC0bEeS1XdXKGPJRfg" name="ImportEnumeration">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_AZpS8C0dEeS1XdXKGPJRfg" annotatedElement="_fvp-cC0bEeS1XdXKGPJRfg">
+            <body>All dataType Definition Enumeration must become UML Enumeration into a profile&#xD;
+</body>
+          </ownedComment>
+        </ownedUseCase>
+        <ownedUseCase xmi:type="uml:UseCase" xmi:id="_j-U-UC0bEeS1XdXKGPJRfg" name="ImportSpecObjectTypes">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_SL_6QC0dEeS1XdXKGPJRfg" annotatedElement="_j-U-UC0bEeS1XdXKGPJRfg">
+            <body>All SelectedSpecObjects types must be stereotypes that specialize Requirement of SysML.&#xD;
+All attributes must also generated.&#xD;
+</body>
+          </ownedComment>
+        </ownedUseCase>
+        <ownedUseCase xmi:type="uml:UseCase" xmi:id="_pw72IC0bEeS1XdXKGPJRfg" name="ImportSpecRelationTypes">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_fk7DMC0dEeS1XdXKGPJRfg" annotatedElement="_zNvu0C0bEeS1XdXKGPJRfg">
+            <body>All SpecRelationTypes must be imported as Stereotypes that extends dependency.&#xD;
+</body>
+          </ownedComment>
+        </ownedUseCase>
+        <ownedUseCase xmi:type="uml:UseCase" xmi:id="_ugtX8C0bEeS1XdXKGPJRfg" name="ImportSpecObject">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_q7lZcC0dEeS1XdXKGPJRfg" annotatedElement="_ugtX8C0bEeS1XdXKGPJRfg">
+            <body>All SpecObject with the selected SpecObjectTypes must be imported as class with corresponded applied stereotype.&#xD;
+</body>
+          </ownedComment>
+        </ownedUseCase>
+        <ownedUseCase xmi:type="uml:UseCase" xmi:id="_zNvu0C0bEeS1XdXKGPJRfg" name="ImportSpecRelation">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_o3I1cC0dEeS1XdXKGPJRfg" annotatedElement="_zNvu0C0bEeS1XdXKGPJRfg">
+            <body>All specRelation must be imported as stereotyped dependency.&#xD;
+</body>
+          </ownedComment>
+        </ownedUseCase>
+        <ownedUseCase xmi:type="uml:UseCase" xmi:id="_wdNg4C0bEeS1XdXKGPJRfg" name="ImportSpecObject_XHTML">
+          <ownedComment xmi:type="uml:Comment" xmi:id="__Fp0IC0fEeS1XdXKGPJRfg">
+            <body>if an attribute of a specObjectType is XHTML, the attribute in UML is typed by String</body>
+          </ownedComment>
+        </ownedUseCase>
+        <ownedUseCase xmi:type="uml:UseCase" xmi:id="_5fToIA2NEeSkbsvlP0s7pA" name="BadBuildReqIFFile">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_ViXEAC0bEeS1XdXKGPJRfg" annotatedElement="_5fToIA2NEeSkbsvlP0s7pA">
+            <body>Not Tested, to implement&#xD;
+</body>
+          </ownedComment>
+        </ownedUseCase>
+        <ownedUseCase xmi:type="uml:UseCase" xmi:id="_AZi2YA2OEeSkbsvlP0s7pA" name="EmptyFile">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_Y1KRgC0bEeS1XdXKGPJRfg" annotatedElement="_5fToIA2NEeSkbsvlP0s7pA">
+            <body>Not Tested, to implement&#xD;
+</body>
+          </ownedComment>
+        </ownedUseCase>
+      </packagedElement>
+      <packagedElement xmi:type="uml:UseCase" xmi:id="_EcyCUA2OEeSkbsvlP0s7pA" name="TestExport">
+        <ownedUseCase xmi:type="uml:UseCase" xmi:id="_7w734C0bEeS1XdXKGPJRfg" name="ExportEnumeration">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_G7DxgC0dEeS1XdXKGPJRfg" annotatedElement="_7w734C0bEeS1XdXKGPJRfg">
+            <body>All Enumeration from appliedProfile must become a datatypeDefinitionEnumeration In ReqIF File&#xD;
+</body>
+          </ownedComment>
+        </ownedUseCase>
+        <ownedUseCase xmi:type="uml:UseCase" xmi:id="_7w8e8C0bEeS1XdXKGPJRfg" name="ExportSpecObjectTypes">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_IfVyQC0eEeS1XdXKGPJRfg" annotatedElement="_7w8e8C0bEeS1XdXKGPJRfg">
+            <body>All stereotypes that inherits of SysML Requirement must become a SpecObjectType.&#xD;
+</body>
+          </ownedComment>
+        </ownedUseCase>
+        <ownedUseCase xmi:type="uml:UseCase" xmi:id="_7w9GAC0bEeS1XdXKGPJRfg" name="ExportSpecRelationTypes">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_X3_-UC0eEeS1XdXKGPJRfg" annotatedElement="_7w9GAC0bEeS1XdXKGPJRfg">
+            <body>All stereotypes that inherits of dependency become SpecRelationType</body>
+          </ownedComment>
+        </ownedUseCase>
+        <ownedUseCase xmi:type="uml:UseCase" xmi:id="_7w9GAS0bEeS1XdXKGPJRfg" name="ExportSpecObject">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_3ik5sC0eEeS1XdXKGPJRfg" annotatedElement="_7w9GAS0bEeS1XdXKGPJRfg">
+            <body>All object stereotyped by a stereotype that has an equivalent in the list of SpecObjectType become a SpecObject  in the ReqIfFile.&#xD;
+</body>
+          </ownedComment>
+        </ownedUseCase>
+        <ownedUseCase xmi:type="uml:UseCase" xmi:id="_7w8e8S0bEeS1XdXKGPJRfg" name="ExportSpecRelation">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_PWO8IC0fEeS1XdXKGPJRfg" annotatedElement="_7w8e8S0bEeS1XdXKGPJRfg">
+            <body>All dependencies that are stereotyped by a stereotype that has an equivalence in the list of SpecRelation is imported as SpecObjectRelation.</body>
+          </ownedComment>
+        </ownedUseCase>
+        <ownedUseCase xmi:type="uml:UseCase" xmi:id="_7w9tEC0bEeS1XdXKGPJRfg" name="ExportSpecObject_XHTML">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_k_Q6EC0fEeS1XdXKGPJRfg" annotatedElement="_7w9tEC0bEeS1XdXKGPJRfg">
+            <body>If an attribute of a stereotype is typed by a primitive type XHTML, a datatype definition XHTML is created?&#xD;
+</body>
+          </ownedComment>
+        </ownedUseCase>
+        <ownedUseCase xmi:type="uml:UseCase" xmi:id="_JXnkoA2OEeSkbsvlP0s7pA" name="EmptyUMLFile">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_ZWHpgC0bEeS1XdXKGPJRfg" annotatedElement="_5fToIA2NEeSkbsvlP0s7pA">
+            <body>Not Tested, to implement&#xD;
+</body>
+          </ownedComment>
+        </ownedUseCase>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Model" xmi:id="_gQrKEC6KEeSaMrdXMag_Yg" name="Import Export of ReqIF elements into Papyrus">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_gQu0cC6KEeSaMrdXMag_Yg">
+        <body>This model explains the functionality in Papyrus Req in order to import or export ReqIF files into Papyrus (OMG Document Number: formal/2013-10-01 Standard document URL: http://www.omg.org/spec/ReqIF/1.1)&#xD;
+</body>
+      </ownedComment>
+      <packagedElement xmi:type="uml:Package" xmi:id="_gQxQsC6KEeSaMrdXMag_Yg" name="Requirements">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_gQ1iIC6KEeSaMrdXMag_Yg">
+          <body>- ReqIfImport (id=Req_001): 
+ Darwin shall allow importation of Reqif elements to SysML Model</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_gQ5MgC6KEeSaMrdXMag_Yg">
+          <body>- ReqIFExport (id=Req_002): 
+ Darwin shall enable export of SysML requirement to ReqIF Model</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_gQ824C6KEeSaMrdXMag_Yg">
+          <body>- ControlMode (id=Req_003): 
+ The managment with ReqIf must support Control Mode</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_gRBIUC6KEeSaMrdXMag_Yg">
+          <body>- WihtoutUI (id=Req_004): 
+ The export can be done programmatically, without GUI, in order to test it, or to be enable to pilot it programmatically</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_gRFZwC6KEeSaMrdXMag_Yg">
+          <body>- Re-Export (id=Req_005): 
+ Papyrus shall re-export requirements in existing reqIF file</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_gRJEIC6KEeSaMrdXMag_Yg">
+          <body>- Re-Import (id=Req_006): 
+ Papyrus shall re-Import requirement from a ReqIF file</body>
+        </ownedComment>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_gRLgYC6KEeSaMrdXMag_Yg" name="Use Cases">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_ggEQ8C6KEeSaMrdXMag_Yg">
+          <body>UseCases Diagram</body>
+        </ownedComment>
+        <packagedElement xmi:type="uml:Package" xmi:id="_ggHUQC6KEeSaMrdXMag_Yg" name="Import ReqIF file">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_ggJwgC6KEeSaMrdXMag_Yg">
+            <body>In order to import ReqFile into UMLModel, first analysis will be done:&#xD;
+- All existing SpecObjectTypes will be listed. From the list, the user chooses interesting Types. (In fact types may be purely information as title, chapter...)&#xD;
+- All stereotypes from applied profiles will be also listed.&#xD;
+Because each SpecType becomes a stereotype based on Requirement, if the two lists are equals no stereotypes will be created. </body>
+          </ownedComment>
+          <ownedComment xmi:type="uml:Comment" xmi:id="_gxRVsC6KEeSaMrdXMag_Yg">
+            <body>Import Activity</body>
+          </ownedComment>
+          <ownedComment xmi:type="uml:Comment" xmi:id="_gxUZAC6KEeSaMrdXMag_Yg">
+            <body>If stereotypes need to be created, a dialog is opened  in order to ask to the user if a profile must be created.&#xD;
+After importing types, elements of ReqIF file are imported  &#xD;
+</body>
+          </ownedComment>
+          <packagedElement xmi:type="uml:Package" xmi:id="_gxWOMC6KEeSaMrdXMag_Yg" name="How to">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_gxYqcC6KEeSaMrdXMag_Yg">
+              <body>First the User must have a SysML model. Select the package where ReqIF elements will be imported.&#xD;
+</body>
+            </ownedComment>
+            <ownedComment xmi:type="uml:Comment" xmi:id="_gxbGsC6KEeSaMrdXMag_Yg">
+              <body>Import SysMLModel</body>
+            </ownedComment>
+            <ownedComment xmi:type="uml:Comment" xmi:id="_gxdi8C6KEeSaMrdXMag_Yg">
+              <body>Select the menu Import  of Eclipse.</body>
+            </ownedComment>
+            <ownedComment xmi:type="uml:Comment" xmi:id="_gxf_MC6KEeSaMrdXMag_Yg">
+              <body>Select import Menu of Eclipse</body>
+            </ownedComment>
+            <ownedComment xmi:type="uml:Comment" xmi:id="_gxibcC6KEeSaMrdXMag_Yg">
+              <body>Select the menu Import ReqIF from Papyrus Categories</body>
+            </ownedComment>
+            <ownedComment xmi:type="uml:Comment" xmi:id="_gxk3sC6KEeSaMrdXMag_Yg">
+              <body>Import ReqIF</body>
+            </ownedComment>
+            <ownedComment xmi:type="uml:Comment" xmi:id="_gxms4C6KEeSaMrdXMag_Yg">
+              <body>Select the ReqIF file to import</body>
+            </ownedComment>
+            <ownedComment xmi:type="uml:Comment" xmi:id="_gxpJIC6KEeSaMrdXMag_Yg">
+              <body>ReqIF file Selection</body>
+            </ownedComment>
+            <ownedComment xmi:type="uml:Comment" xmi:id="_gxrlYC6KEeSaMrdXMag_Yg">
+              <body>Select Types of ReqIFElement that you want to import</body>
+            </ownedComment>
+            <ownedComment xmi:type="uml:Comment" xmi:id="_gxuBoC6KEeSaMrdXMag_Yg">
+              <body>SpecObject Type selection</body>
+            </ownedComment>
+            <ownedComment xmi:type="uml:Comment" xmi:id="_gxy6IC6KEeSaMrdXMag_Yg">
+              <body>Types in ReqIF become stereotypes in profile, select or create the profile that will contain imported types</body>
+            </ownedComment>
+            <ownedComment xmi:type="uml:Comment" xmi:id="_gx0vUC6KEeSaMrdXMag_Yg">
+              <body>Create or select Profile</body>
+            </ownedComment>
+            <ownedComment xmi:type="uml:Comment" xmi:id="_gx3LkS6KEeSaMrdXMag_Yg">
+              <body>The model has now imported requirements with relations. Note that a comment explains the origin of the import.</body>
+            </ownedComment>
+            <ownedComment xmi:type="uml:Comment" xmi:id="_gx5n0C6KEeSaMrdXMag_Yg">
+              <body>C:\git\darwin\com.cea.darwin.reqif\doc\imgDOC\import7.png</body>
+            </ownedComment>
+          </packagedElement>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_gx8EEC6KEeSaMrdXMag_Yg" name="Import DataType Enumeration">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_gx-gUC6KEeSaMrdXMag_Yg">
+            <body>Each Datatype Definition  Enumeration in a ReqFIle is transformed to UML Eneumeration in a profile.&#xD;
+</body>
+          </ownedComment>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_gyAVgC6KEeSaMrdXMag_Yg" name="Import SpecTypes">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_gyCxwC6KEeSaMrdXMag_Yg">
+            <body>Each SpecObjectType choosen in the ReqIFile is transformed to stereotype that inherits of SysML Requirement in a profile.&#xD;
+Each SpecRelationType of the ReqIF file is transformed in to Stereotype based on dependency Metaclass.&#xD;
+Each attribute  is transformed to equivalent attribute in Stereotype. Only XTML attributes are transformed into String typed attributes in profile.&#xD;
+</body>
+          </ownedComment>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_gyEm8S6KEeSaMrdXMag_Yg" name="Import SpecObjects">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_gyHDMC6KEeSaMrdXMag_Yg">
+            <body>Each SpecObjectNode is transformed to class with a corresponded applied stereotype. During the creation, SpecHierarchy ared used in order to structure the SysML files.&#xD;
+Each Specification becomes a package.&#xD;
+Each SpecRelation becomes a stereotyped dependency. if the souce or target of this object are not created, the spec relation will be not imported.&#xD;
+</body>
+          </ownedComment>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_gyI4YS6KEeSaMrdXMag_Yg" name="Export UML Model to ReqIF File">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_gyLUoS6KEeSaMrdXMag_Yg">
+            <body>The goal is to export all requirements and links into ReqIF.&#xD;
+To do that, the tool lists all applied stereotypes that inherits of SysML::Requirement and that inherits of dependencies.&#xD;
+From this list, the tool constructs, in ReqIF File, correponding specObjects Tyoes and SpecRelationsTypes&#xD;
+Then from all stereotyped elements, it constructs the corresponding hierarchy. &#xD;
+&#xD;
+</body>
+          </ownedComment>
+          <ownedComment xmi:type="uml:Comment" xmi:id="_gzkbwC6KEeSaMrdXMag_Yg">
+            <body>Export Activity</body>
+          </ownedComment>
+          <packagedElement xmi:type="uml:Package" xmi:id="_gzm4AC6KEeSaMrdXMag_Yg" name="How to">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_gzpUQC6KEeSaMrdXMag_Yg">
+              <body>Select the SysML that you want to export&#xD;
+</body>
+            </ownedComment>
+            <ownedComment xmi:type="uml:Comment" xmi:id="_gzrJcC6KEeSaMrdXMag_Yg">
+              <body>SysML Model</body>
+            </ownedComment>
+            <ownedComment xmi:type="uml:Comment" xmi:id="_gztlsC6KEeSaMrdXMag_Yg">
+              <body>Select the export Menu from Eclipse menu.</body>
+            </ownedComment>
+            <ownedComment xmi:type="uml:Comment" xmi:id="_gzwB8C6KEeSaMrdXMag_Yg">
+              <body>Export Menu</body>
+            </ownedComment>
+            <ownedComment xmi:type="uml:Comment" xmi:id="_gzx3IC6KEeSaMrdXMag_Yg">
+              <body>Select the menu export ReqIF form the papyrus Category</body>
+            </ownedComment>
+            <ownedComment xmi:type="uml:Comment" xmi:id="_gzzsUS6KEeSaMrdXMag_Yg">
+              <body>Import ReqIF file</body>
+            </ownedComment>
+            <ownedComment xmi:type="uml:Comment" xmi:id="_gz2IkC6KEeSaMrdXMag_Yg">
+              <body>Choose the name of the reqif file.</body>
+            </ownedComment>
+            <ownedComment xmi:type="uml:Comment" xmi:id="_gz39wC6KEeSaMrdXMag_Yg">
+              <body>Choose ReqIF File name</body>
+            </ownedComment>
+            <ownedComment xmi:type="uml:Comment" xmi:id="_gz6aAC6KEeSaMrdXMag_Yg">
+              <body>At the end, a reqFile is generated. The header has an information that explain that the result comes from UML file.&#xD;
+</body>
+            </ownedComment>
+            <ownedComment xmi:type="uml:Comment" xmi:id="_gz8PMC6KEeSaMrdXMag_Yg">
+              <body>Result in the ReqIf file</body>
+            </ownedComment>
+          </packagedElement>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_gz-rcC6KEeSaMrdXMag_Yg" name="export DataType">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_g0AgoS6KEeSaMrdXMag_Yg">
+            <body>In a reqFile, all basic types must be created; that is why data type definition string, integer, Real, boolean and XHTML are created.&#xD;
+Moreover, all Enumerations in applied profiles become DataTypeDefinitionEnumerations in the ReqIF file.&#xD;
+</body>
+          </ownedComment>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_g0C84C6KEeSaMrdXMag_Yg" name="Export Stereotypes">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_g0EyEC6KEeSaMrdXMag_Yg">
+            <body>From all stereotypes, all SpecObject Types and all SpecRelationTypes will be created. If an attribute of a stereotype is typed by a primitiveType named XHTML, the attribute of the SpecObjecType will be XHTML. </body>
+          </ownedComment>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_g0HOUC6KEeSaMrdXMag_Yg" name="Export Stereotyped Elements">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_g0JDgC6KEeSaMrdXMag_Yg">
+            <body>From all packages that contains Requirements, a specification will be created. Then a hierarchy will be created by taking in account the structure of requirements. Finally SpecObject and SpecRelation are created.&#xD;
+</body>
+          </ownedComment>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_g0K4sS6KEeSaMrdXMag_Yg" name="Re-Import">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_g0NU8C6KEeSaMrdXMag_Yg">
+            <body>When a ReqIfile has been already imported, Papyrus shall update contents during Re-import&#xD;
+</body>
+          </ownedComment>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_g0PKIC6KEeSaMrdXMag_Yg" name="Re-Export">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_g0RmYC6KEeSaMrdXMag_Yg">
+            <body>When a UML model has been already exported, PapyrusReq must only update the content of the file.&#xD;
+</body>
+          </ownedComment>
+        </packagedElement>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_g0TbkS6KEeSaMrdXMag_Yg" name="Design">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_hXNUUC6KEeSaMrdXMag_Yg">
+          <body>Architecture of ReqIF Import-Export</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_hXQXoC6KEeSaMrdXMag_Yg">
+          <body>The architecture is quite simple. There are wizard for import and export,  two classes to realize the job and differents assistants or dialogs.&#xD;
+Nevertheless, two layers can be distinguished in the code:&#xD;
+	- one layer independent of the papyrus&#xD;
+	- one layer called integration dependent of papyrus.&#xD;
+Efforts have been made to be more independant of papyurs in order to facilitate the maintenance of the algorithm for import export.&#xD;
+The layer integration contains specializations to create elements by using service edit or use some facilities as advanced dialog.&#xD;
+&#xD;
+</body>
+        </ownedComment>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_hXSM0C6KEeSaMrdXMag_Yg" name="Tests">
+        <packagedElement xmi:type="uml:Package" xmi:id="_hXUpEC6KEeSaMrdXMag_Yg" name="TestImport">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_hXWeQC6KEeSaMrdXMag_Yg">
+            <body>The goal is to test the import of a reIF file&#xD;
+</body>
+          </ownedComment>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_hXY6gC6KEeSaMrdXMag_Yg" name="ImportEnumeration">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_hXavsC6KEeSaMrdXMag_Yg">
+            <body>All dataType Definition Enumeration must become UML Enumeration into a profile&#xD;
+</body>
+          </ownedComment>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_hXck4C6KEeSaMrdXMag_Yg" name="ImportSpecObjectTypes">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_hXeaES6KEeSaMrdXMag_Yg">
+            <body>All SelectedSpecObjects types must be stereotypes that specialize Requirement of SysML.&#xD;
+All attributes must also generated.&#xD;
+</body>
+          </ownedComment>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_hXg2UC6KEeSaMrdXMag_Yg" name="ImportSpecRelationTypes">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_hXirgC6KEeSaMrdXMag_Yg">
+            <body>All SpecRelationTypes must be imported as Stereotypes that extends dependency.&#xD;
+</body>
+          </ownedComment>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_hXlHwC6KEeSaMrdXMag_Yg" name="ImportSpecObject">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_hXm88C6KEeSaMrdXMag_Yg">
+            <body>All SpecObject with the selected SpecObjectTypes must be imported as class with corresponded applied stereotype.&#xD;
+</body>
+          </ownedComment>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_hXoyIC6KEeSaMrdXMag_Yg" name="ImportSpecRelation">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_hXrOYC6KEeSaMrdXMag_Yg">
+            <body>All specRelation must be imported as stereotyped dependency.&#xD;
+</body>
+          </ownedComment>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_hXtqoC6KEeSaMrdXMag_Yg" name="ImportSpecObject_XHTML">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_hXvf0C6KEeSaMrdXMag_Yg">
+            <body>if an attribute of a specObjectType is XHTML, the attribute in UML is typed by String</body>
+          </ownedComment>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_hXxVAC6KEeSaMrdXMag_Yg" name="BadBuildReqIFFile">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_hXzKMS6KEeSaMrdXMag_Yg">
+            <body>Not Tested, to implement&#xD;
+</body>
+          </ownedComment>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_hX1mcC6KEeSaMrdXMag_Yg" name="EmptyFile">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_hX3boS6KEeSaMrdXMag_Yg">
+            <body>Not Tested, to implement&#xD;
+</body>
+          </ownedComment>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_hX534C6KEeSaMrdXMag_Yg" name="TestExport"/>
+        <packagedElement xmi:type="uml:Package" xmi:id="_hX7tEC6KEeSaMrdXMag_Yg" name="ExportEnumeration">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_hX9iQS6KEeSaMrdXMag_Yg">
+            <body>All Enumeration from appliedProfile must become a datatypeDefinitionEnumeration In ReqIF File&#xD;
+</body>
+          </ownedComment>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_hX_-gC6KEeSaMrdXMag_Yg" name="ExportSpecObjectTypes">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_hYBzsS6KEeSaMrdXMag_Yg">
+            <body>All stereotypes that inherits of SysML Requirement must become a SpecObjectType.&#xD;
+</body>
+          </ownedComment>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_hYEP8C6KEeSaMrdXMag_Yg" name="ExportSpecRelationTypes">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_hYGsMC6KEeSaMrdXMag_Yg">
+            <body>All stereotypes that inherits of dependency become SpecRelationType</body>
+          </ownedComment>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_hYJIcC6KEeSaMrdXMag_Yg" name="ExportSpecObject">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_hYK9oC6KEeSaMrdXMag_Yg">
+            <body>All object stereotyped by a stereotype that has an equivalent in the list of SpecObjectType become a SpecObject  in the ReqIfFile.&#xD;
+</body>
+          </ownedComment>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_hYMy0C6KEeSaMrdXMag_Yg" name="ExportSpecRelation">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_hYOA8S6KEeSaMrdXMag_Yg">
+            <body>All dependencies that are stereotyped by a stereotype that has an equivalence in the list of SpecRelation is imported as SpecObjectRelation.</body>
+          </ownedComment>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_hYQdMC6KEeSaMrdXMag_Yg" name="ExportSpecObject_XHTML">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_hYRrUS6KEeSaMrdXMag_Yg">
+            <body>If an attribute of a stereotype is typed by a primitive type XHTML, a datatype definition XHTML is created?&#xD;
+</body>
+          </ownedComment>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_hYUHkC6KEeSaMrdXMag_Yg" name="EmptyUMLFile">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_hYVVsS6KEeSaMrdXMag_Yg">
+            <body>Not Tested, to implement&#xD;
+</body>
+          </ownedComment>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_M7ibiw2HEeSkbsvlP0s7pA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_P_WcUCz4EeS1XdXKGPJRfg" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_P_WcUSz4EeS1XdXKGPJRfg" key="Version" value="0.0.2"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_P_WcUiz4EeS1XdXKGPJRfg" key="Comment" value="add title property"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_P_WcUyz4EeS1XdXKGPJRfg" key="Copyright" value="CEA LIST"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_P_WcVCz4EeS1XdXKGPJRfg" key="Date" value="2014-04-18"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_P_WcVSz4EeS1XdXKGPJRfg" key="Author" value="P. Tessier"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_M7ibjA2HEeSkbsvlP0s7pA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://DEVELOPER_PROFILES/developerprocess.profile.uml#_VA6mkMcPEeO9CYUoXDRplw"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://DEVELOPER_PROFILES/developerprocess.profile.uml#_kWqjAMbXEeO09JBvNFZRNw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_M7ibjQ2HEeSkbsvlP0s7pA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_QARCUCz4EeS1XdXKGPJRfg" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_QARCUSz4EeS1XdXKGPJRfg" key="Version" value="0.0.2"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_QARCUiz4EeS1XdXKGPJRfg" key="Comment" value="add title property"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_QARCUyz4EeS1XdXKGPJRfg" key="Copyright" value="CEA LIST"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_QARCVCz4EeS1XdXKGPJRfg" key="Date" value="2014-04-18"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_QARCVSz4EeS1XdXKGPJRfg" key="Author" value="P. Tessier"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_M7ibjg2HEeSkbsvlP0s7pA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://DEVELOPER_PROFILES/developerprocess.profile.uml#_VA-4AMcPEeO9CYUoXDRplw"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://DEVELOPER_PROFILES/developerprocess.profile.uml#_qCT3MMbXEeO09JBvNFZRNw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_M7ibjw2HEeSkbsvlP0s7pA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_QAV60Cz4EeS1XdXKGPJRfg" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_QAV60Sz4EeS1XdXKGPJRfg" key="Version" value="0.0.2"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_QAV60iz4EeS1XdXKGPJRfg" key="Comment" value="add title property"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_QAV60yz4EeS1XdXKGPJRfg" key="Copyright" value="CEA LIST"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_QAV61Cz4EeS1XdXKGPJRfg" key="Date" value="2014-04-18"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_QAV61Sz4EeS1XdXKGPJRfg" key="Author" value="P. Tessier"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_M7ibkA2HEeSkbsvlP0s7pA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://DEVELOPER_PROFILES/developerprocess.profile.uml#_VBAtMccPEeO9CYUoXDRplw"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://DEVELOPER_PROFILES/developerprocess.profile.uml#_2LNtQMbYEeO09JBvNFZRNw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_M7ibkQ2HEeSkbsvlP0s7pA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_M7ibkg2HEeSkbsvlP0s7pA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/0.7.0/SysML#//requirements"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML_PROFILES/SysML.profile.uml#_OOJC4LX8EduFmqQsrNB9lw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_M7ibkw2HEeSkbsvlP0s7pA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_M7iblA2HEeSkbsvlP0s7pA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://DEVELOPER_PROFILES/Document.profile.uml#_qR44IMn0EeO9CYUoXDRplw"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://DEVELOPER_PROFILES/Document.profile.uml#_D0JcUMnzEeO9CYUoXDRplw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_71n-wC6IEeSaMrdXMag_Yg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_727mUC6IEeSaMrdXMag_Yg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/0.7.0/SysML#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML_PROFILES/SysML.profile.uml#_TZ_nULU5EduiKqCzJMWbGw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_72_3wC6IEeSaMrdXMag_Yg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_74MKkC6IEeSaMrdXMag_Yg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/uml2/5.0.0/UML/Profile/Standard#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_PROFILES/Standard.profile.uml#_0"/>
+    </profileApplication>
+  </uml:Model>
+  <structure:Project xmi:id="_M7iblQ2HEeSkbsvlP0s7pA" author="P. Tessier" version="1.0.0" base_Model="_M7ibgA2HEeSkbsvlP0s7pA" title="Import Export of ReqIF elements into Papyrus"/>
+  <structure:Requirements xmi:id="_M7iblg2HEeSkbsvlP0s7pA" base_Model="_M7ibgg2HEeSkbsvlP0s7pA"/>
+  <structure:UseCases xmi:id="_M7iblw2HEeSkbsvlP0s7pA" base_Model="_M7ibgw2HEeSkbsvlP0s7pA"/>
+  <structure:Design xmi:id="_M7ibmA2HEeSkbsvlP0s7pA" base_Model="_M7ibhg2HEeSkbsvlP0s7pA"/>
+  <structure:Tests xmi:id="_M7ibmQ2HEeSkbsvlP0s7pA" base_Model="_M7ibiA2HEeSkbsvlP0s7pA"/>
+  <Requirements:Requirement xmi:id="_Q4muAA2HEeSkbsvlP0s7pA" text="Darwin shall allow importation of Reqif elements to SysML Model" id="Req_001" base_Class="_Q00aMA2HEeSkbsvlP0s7pA"/>
+  <Requirements:Requirement xmi:id="_bsoRQA2HEeSkbsvlP0s7pA" text="Darwin shall enable export of SysML requirement to ReqIF Model" id="Req_002" base_Class="_bslN8A2HEeSkbsvlP0s7pA"/>
+  <Requirements:Requirement xmi:id="_mlaYsA2HEeSkbsvlP0s7pA" text="The managment with ReqIf must support Control Mode" id="Req_003" base_Class="_mlYjgA2HEeSkbsvlP0s7pA"/>
+  <Requirements:Requirement xmi:id="_Jmf9QBx4EeSlI-4RKfFQuw" text="The export can be done programmatically, without GUI, in order to test it, or to be enable to pilot it programmatically" id="Req_004" base_Class="_Jf-egBx4EeSlI-4RKfFQuw"/>
+  <trace:UseCaseTest xmi:id="_RSGvwC0bEeS1XdXKGPJRfg" base_UseCase="_2fkgkA2NEeSkbsvlP0s7pA"/>
+  <trace:UseCaseTest xmi:id="_S3sNgC0bEeS1XdXKGPJRfg" base_UseCase="_EcyCUA2OEeSkbsvlP0s7pA"/>
+  <trace:UseCaseTest xmi:id="_jXExEC0bEeS1XdXKGPJRfg" base_UseCase="_fvp-cC0bEeS1XdXKGPJRfg"/>
+  <trace:UseCaseTest xmi:id="_E33nMC0cEeS1XdXKGPJRfg" base_UseCase="_j-U-UC0bEeS1XdXKGPJRfg"/>
+  <trace:UseCaseTest xmi:id="_Fl-qYC0cEeS1XdXKGPJRfg" base_UseCase="_zNvu0C0bEeS1XdXKGPJRfg"/>
+  <trace:UseCaseTest xmi:id="_GMkwUC0cEeS1XdXKGPJRfg" base_UseCase="_pw72IC0bEeS1XdXKGPJRfg"/>
+  <trace:UseCaseTest xmi:id="_G_cXsC0cEeS1XdXKGPJRfg" base_UseCase="_ugtX8C0bEeS1XdXKGPJRfg"/>
+  <trace:UseCaseTest xmi:id="_HvWKoC0cEeS1XdXKGPJRfg" base_UseCase="_wdNg4C0bEeS1XdXKGPJRfg"/>
+  <trace:UseCaseTest xmi:id="_IjmSEC0cEeS1XdXKGPJRfg" base_UseCase="_5fToIA2NEeSkbsvlP0s7pA"/>
+  <trace:UseCaseTest xmi:id="_JNY18C0cEeS1XdXKGPJRfg" base_UseCase="_AZi2YA2OEeSkbsvlP0s7pA"/>
+  <trace:UseCaseTest xmi:id="_J5cDoC0cEeS1XdXKGPJRfg" base_UseCase="_7w734C0bEeS1XdXKGPJRfg"/>
+  <trace:UseCaseTest xmi:id="_KksAEC0cEeS1XdXKGPJRfg" base_UseCase="_7w8e8C0bEeS1XdXKGPJRfg"/>
+  <trace:UseCaseTest xmi:id="_LJ0tcC0cEeS1XdXKGPJRfg" base_UseCase="_7w8e8S0bEeS1XdXKGPJRfg"/>
+  <trace:UseCaseTest xmi:id="_L1F4AC0cEeS1XdXKGPJRfg" base_UseCase="_7w9GAC0bEeS1XdXKGPJRfg"/>
+  <trace:UseCaseTest xmi:id="_Ml6Q8C0cEeS1XdXKGPJRfg" base_UseCase="_7w9GAS0bEeS1XdXKGPJRfg"/>
+  <trace:UseCaseTest xmi:id="_NXHEYC0cEeS1XdXKGPJRfg" base_UseCase="_7w9tEC0bEeS1XdXKGPJRfg"/>
+  <trace:UseCaseTest xmi:id="_ODKSEC0cEeS1XdXKGPJRfg" base_UseCase="_JXnkoA2OEeSkbsvlP0s7pA"/>
+  <structure:UserDoc xmi:id="_i4J8QC0iEeS1XdXKGPJRfg" base_Comment="_bMSusC0gEeS1XdXKGPJRfg"/>
+  <structure:UserDoc xmi:id="_dY7MEC0lEeS1XdXKGPJRfg" base_Comment="_EU4VQC0kEeS1XdXKGPJRfg"/>
+  <structure:UserDoc xmi:id="_kFrX8C0lEeS1XdXKGPJRfg" base_Comment="_dW9SoC0kEeS1XdXKGPJRfg"/>
+  <structure:UserDoc xmi:id="_k8S24C0lEeS1XdXKGPJRfg" base_Comment="_f2FngC0kEeS1XdXKGPJRfg"/>
+  <structure:UserDoc xmi:id="_lt2PoC0lEeS1XdXKGPJRfg" base_Comment="_f-fVkC0kEeS1XdXKGPJRfg"/>
+  <structure:UserDoc xmi:id="_mXoMcC0lEeS1XdXKGPJRfg" base_Comment="_gFMagC0kEeS1XdXKGPJRfg"/>
+  <structure:UserDoc xmi:id="_nBBuwC0lEeS1XdXKGPJRfg" base_Comment="_gK1vgC0kEeS1XdXKGPJRfg"/>
+  <structure:UserDoc xmi:id="_Ob3E8C0nEeS1XdXKGPJRfg" base_Comment="_CZkNMC0mEeS1XdXKGPJRfg"/>
+  <structure:UserDoc xmi:id="_PK9moC0nEeS1XdXKGPJRfg" base_Comment="_LQdVYC0mEeS1XdXKGPJRfg"/>
+  <structure:UserDoc xmi:id="_PxPjgC0nEeS1XdXKGPJRfg" base_Comment="_LZ7acC0mEeS1XdXKGPJRfg"/>
+  <structure:UserDoc xmi:id="_QWC5sC0nEeS1XdXKGPJRfg" base_Comment="_Lh4ckC0mEeS1XdXKGPJRfg"/>
+  <structure:UserDoc xmi:id="_110G0C0nEeS1XdXKGPJRfg" base_Comment="_g8fHgC0nEeS1XdXKGPJRfg"/>
+  <Requirements:Requirement xmi:id="_g-_lcC6GEeSaMrdXMag_Yg" text="Papyrus shall re-export requirements in existing reqIF file" id="Req_005" base_Class="_g-4QsC6GEeSaMrdXMag_Yg"/>
+  <Requirements:Requirement xmi:id="_zBOb0C6GEeSaMrdXMag_Yg" text="Papyrus shall re-Import requirement from a ReqIF file" id="Req_006" base_Class="_zBL_kC6GEeSaMrdXMag_Yg"/>
+  <Requirements:Satisfy xmi:id="_KJY_UC6JEeSaMrdXMag_Yg" base_Abstraction="_KJS4sC6JEeSaMrdXMag_Yg"/>
+  <Requirements:Satisfy xmi:id="_NWOuwC6JEeSaMrdXMag_Yg" base_Abstraction="_NWLEYC6JEeSaMrdXMag_Yg"/>
+  <Requirements:Satisfy xmi:id="_RbJ8wC6JEeSaMrdXMag_Yg" base_Abstraction="_RbG5cC6JEeSaMrdXMag_Yg"/>
+  <Requirements:Satisfy xmi:id="_bM7_4C6JEeSaMrdXMag_Yg" base_Abstraction="_bM48kC6JEeSaMrdXMag_Yg"/>
+  <Requirements:Satisfy xmi:id="_hP-gYC6JEeSaMrdXMag_Yg" base_Abstraction="_hP62AC6JEeSaMrdXMag_Yg"/>
+  <Requirements:Satisfy xmi:id="_mrMy8C6JEeSaMrdXMag_Yg" base_Abstraction="_mrKWsC6JEeSaMrdXMag_Yg"/>
+  <Requirements:Satisfy xmi:id="_oT_8wC6JEeSaMrdXMag_Yg" base_Abstraction="_oT85cC6JEeSaMrdXMag_Yg"/>
+  <Requirements:Satisfy xmi:id="_8KGkgC6JEeSaMrdXMag_Yg" base_Abstraction="_8KEIQC6JEeSaMrdXMag_Yg"/>
+  <Requirements:Satisfy xmi:id="_-Vk9kC6JEeSaMrdXMag_Yg" base_Abstraction="_-VihUC6JEeSaMrdXMag_Yg"/>
+  <Requirements:Satisfy xmi:id="_CV5_cC6KEeSaMrdXMag_Yg" base_Abstraction="_CV3jMC6KEeSaMrdXMag_Yg"/>
+  <Document:Document xmi:id="_gQtmUC6KEeSaMrdXMag_Yg" base_Model="_gQrKEC6KEeSaMrdXMag_Yg" author="P. Tessier" version="1.0.0"/>
+  <Document:Content xmi:id="_gQwpoC6KEeSaMrdXMag_Yg" base_Comment="_gQu0cC6KEeSaMrdXMag_Yg"/>
+  <Document:Section xmi:id="_gQzF4C6KEeSaMrdXMag_Yg" base_Package="_gQxQsC6KEeSaMrdXMag_Yg"/>
+  <Document:Content xmi:id="_gQ3XUC6KEeSaMrdXMag_Yg" base_Comment="_gQ1iIC6KEeSaMrdXMag_Yg"/>
+  <Document:Content xmi:id="_gQ7BsC6KEeSaMrdXMag_Yg" base_Comment="_gQ5MgC6KEeSaMrdXMag_Yg"/>
+  <Document:Content xmi:id="_gQ-sEC6KEeSaMrdXMag_Yg" base_Comment="_gQ824C6KEeSaMrdXMag_Yg"/>
+  <Document:Content xmi:id="_gRC9gC6KEeSaMrdXMag_Yg" base_Comment="_gRBIUC6KEeSaMrdXMag_Yg"/>
+  <Document:Content xmi:id="_gRHO8C6KEeSaMrdXMag_Yg" base_Comment="_gRFZwC6KEeSaMrdXMag_Yg"/>
+  <Document:Content xmi:id="_gRK5UC6KEeSaMrdXMag_Yg" base_Comment="_gRJEIC6KEeSaMrdXMag_Yg"/>
+  <Document:Section xmi:id="_gRNVkC6KEeSaMrdXMag_Yg" base_Package="_gRLgYC6KEeSaMrdXMag_Yg"/>
+  <Document:ImageRef xmi:id="_ggGtMC6KEeSaMrdXMag_Yg" base_Comment="_ggEQ8C6KEeSaMrdXMag_Yg" ref="C:/git/darwin/com.cea.darwin.reqif/doc/imgDOC/UseCases_Diagram.png"/>
+  <Document:Section xmi:id="_ggJJcC6KEeSaMrdXMag_Yg" base_Package="_ggHUQC6KEeSaMrdXMag_Yg"/>
+  <Document:Content xmi:id="_ggMMwC6KEeSaMrdXMag_Yg" base_Comment="_ggJwgC6KEeSaMrdXMag_Yg"/>
+  <Document:ImageRef xmi:id="_gxTK4C6KEeSaMrdXMag_Yg" base_Comment="_gxRVsC6KEeSaMrdXMag_Yg" ref="C:/git/darwin/com.cea.darwin.reqif/doc/imgDOC/Import_Activity.png"/>
+  <Document:Content xmi:id="_gxVnIC6KEeSaMrdXMag_Yg" base_Comment="_gxUZAC6KEeSaMrdXMag_Yg"/>
+  <Document:Section xmi:id="_gxYDYC6KEeSaMrdXMag_Yg" base_Package="_gxWOMC6KEeSaMrdXMag_Yg"/>
+  <Document:Content xmi:id="_gxafoC6KEeSaMrdXMag_Yg" base_Comment="_gxYqcC6KEeSaMrdXMag_Yg"/>
+  <Document:ImageRef xmi:id="_gxc74C6KEeSaMrdXMag_Yg" base_Comment="_gxbGsC6KEeSaMrdXMag_Yg" ref="C:\git\darwin\com.cea.darwin.reqif\doc\imgDOC\import_1.png"/>
+  <Document:Content xmi:id="_gxfYIC6KEeSaMrdXMag_Yg" base_Comment="_gxdi8C6KEeSaMrdXMag_Yg"/>
+  <Document:ImageRef xmi:id="_gxh0YC6KEeSaMrdXMag_Yg" base_Comment="_gxf_MC6KEeSaMrdXMag_Yg" ref="C:\git\darwin\com.cea.darwin.reqif\doc\imgDOC\import_2.png"/>
+  <Document:Content xmi:id="_gxkQoC6KEeSaMrdXMag_Yg" base_Comment="_gxibcC6KEeSaMrdXMag_Yg"/>
+  <Document:ImageRef xmi:id="_gxmF0C6KEeSaMrdXMag_Yg" base_Comment="_gxk3sC6KEeSaMrdXMag_Yg" ref="C:\git\darwin\com.cea.darwin.reqif\doc\imgDOC\import_3.png"/>
+  <Document:Content xmi:id="_gxoiEC6KEeSaMrdXMag_Yg" base_Comment="_gxms4C6KEeSaMrdXMag_Yg"/>
+  <Document:ImageRef xmi:id="_gxq-UC6KEeSaMrdXMag_Yg" base_Comment="_gxpJIC6KEeSaMrdXMag_Yg" ref="C:\git\darwin\com.cea.darwin.reqif\doc\imgDOC\import_4.png"/>
+  <Document:Content xmi:id="_gxtakC6KEeSaMrdXMag_Yg" base_Comment="_gxrlYC6KEeSaMrdXMag_Yg"/>
+  <Document:ImageRef xmi:id="_gxwd4C6KEeSaMrdXMag_Yg" base_Comment="_gxuBoC6KEeSaMrdXMag_Yg" ref="C:\git\darwin\com.cea.darwin.reqif\doc\imgDOC\import_5.png"/>
+  <Document:Content xmi:id="_gx0IQC6KEeSaMrdXMag_Yg" base_Comment="_gxy6IC6KEeSaMrdXMag_Yg"/>
+  <Document:ImageRef xmi:id="_gx3LkC6KEeSaMrdXMag_Yg" base_Comment="_gx0vUC6KEeSaMrdXMag_Yg" ref="C:\git\darwin\com.cea.darwin.reqif\doc\imgDOC\import_6.png"/>
+  <Document:Content xmi:id="_gx5AwC6KEeSaMrdXMag_Yg" base_Comment="_gx3LkS6KEeSaMrdXMag_Yg"/>
+  <Document:ImageRef xmi:id="_gx7dAC6KEeSaMrdXMag_Yg" base_Comment="_gx5n0C6KEeSaMrdXMag_Yg" ref="C:\git\darwin\com.cea.darwin.reqif\doc\imgDOC\import7.png"/>
+  <Document:Section xmi:id="_gx95QC6KEeSaMrdXMag_Yg" base_Package="_gx8EEC6KEeSaMrdXMag_Yg"/>
+  <Document:Content xmi:id="_gx_ucC6KEeSaMrdXMag_Yg" base_Comment="_gx-gUC6KEeSaMrdXMag_Yg"/>
+  <Document:Section xmi:id="_gyCKsC6KEeSaMrdXMag_Yg" base_Package="_gyAVgC6KEeSaMrdXMag_Yg"/>
+  <Document:Content xmi:id="_gyEm8C6KEeSaMrdXMag_Yg" base_Comment="_gyCxwC6KEeSaMrdXMag_Yg"/>
+  <Document:Section xmi:id="_gyGcIC6KEeSaMrdXMag_Yg" base_Package="_gyEm8S6KEeSaMrdXMag_Yg"/>
+  <Document:Content xmi:id="_gyI4YC6KEeSaMrdXMag_Yg" base_Comment="_gyHDMC6KEeSaMrdXMag_Yg"/>
+  <Document:Section xmi:id="_gyLUoC6KEeSaMrdXMag_Yg" base_Package="_gyI4YS6KEeSaMrdXMag_Yg"/>
+  <Document:Content xmi:id="_gyNJ0C6KEeSaMrdXMag_Yg" base_Comment="_gyLUoS6KEeSaMrdXMag_Yg"/>
+  <Document:ImageRef xmi:id="_gzmQ8C6KEeSaMrdXMag_Yg" base_Comment="_gzkbwC6KEeSaMrdXMag_Yg" ref="C:/git/darwin/com.cea.darwin.reqif/doc/imgDOC/Export_Activity.png"/>
+  <Document:Section xmi:id="_gzotMC6KEeSaMrdXMag_Yg" base_Package="_gzm4AC6KEeSaMrdXMag_Yg"/>
+  <Document:Content xmi:id="_gzqiYC6KEeSaMrdXMag_Yg" base_Comment="_gzpUQC6KEeSaMrdXMag_Yg"/>
+  <Document:ImageRef xmi:id="_gzs-oC6KEeSaMrdXMag_Yg" base_Comment="_gzrJcC6KEeSaMrdXMag_Yg" ref="C:\git\darwin\com.cea.darwin.reqif\doc\imgDOC\export1.png"/>
+  <Document:Content xmi:id="_gzva4C6KEeSaMrdXMag_Yg" base_Comment="_gztlsC6KEeSaMrdXMag_Yg"/>
+  <Document:ImageRef xmi:id="_gzxQEC6KEeSaMrdXMag_Yg" base_Comment="_gzwB8C6KEeSaMrdXMag_Yg" ref="C:\git\darwin\com.cea.darwin.reqif\doc\imgDOC\import_2.png"/>
+  <Document:Content xmi:id="_gzzsUC6KEeSaMrdXMag_Yg" base_Comment="_gzx3IC6KEeSaMrdXMag_Yg"/>
+  <Document:ImageRef xmi:id="_gz1hgC6KEeSaMrdXMag_Yg" base_Comment="_gzzsUS6KEeSaMrdXMag_Yg" ref="C:\git\darwin\com.cea.darwin.reqif\doc\imgDOC\import_3.png"/>
+  <Document:Content xmi:id="_gz3WsC6KEeSaMrdXMag_Yg" base_Comment="_gz2IkC6KEeSaMrdXMag_Yg"/>
+  <Document:ImageRef xmi:id="_gz5y8C6KEeSaMrdXMag_Yg" base_Comment="_gz39wC6KEeSaMrdXMag_Yg" ref="C:\git\darwin\com.cea.darwin.reqif\doc\imgDOC\export5.png"/>
+  <Document:Content xmi:id="_gz7oIC6KEeSaMrdXMag_Yg" base_Comment="_gz6aAC6KEeSaMrdXMag_Yg"/>
+  <Document:ImageRef xmi:id="_gz-EYC6KEeSaMrdXMag_Yg" base_Comment="_gz8PMC6KEeSaMrdXMag_Yg" ref="C:\git\darwin\com.cea.darwin.reqif\doc\imgDOC\Export4.png"/>
+  <Document:Section xmi:id="_g0AgoC6KEeSaMrdXMag_Yg" base_Package="_gz-rcC6KEeSaMrdXMag_Yg"/>
+  <Document:Content xmi:id="_g0CV0C6KEeSaMrdXMag_Yg" base_Comment="_g0AgoS6KEeSaMrdXMag_Yg"/>
+  <Document:Section xmi:id="_g0ELAC6KEeSaMrdXMag_Yg" base_Package="_g0C84C6KEeSaMrdXMag_Yg"/>
+  <Document:Content xmi:id="_g0GnQC6KEeSaMrdXMag_Yg" base_Comment="_g0EyEC6KEeSaMrdXMag_Yg"/>
+  <Document:Section xmi:id="_g0IccC6KEeSaMrdXMag_Yg" base_Package="_g0HOUC6KEeSaMrdXMag_Yg"/>
+  <Document:Content xmi:id="_g0K4sC6KEeSaMrdXMag_Yg" base_Comment="_g0JDgC6KEeSaMrdXMag_Yg"/>
+  <Document:Section xmi:id="_g0Mt4C6KEeSaMrdXMag_Yg" base_Package="_g0K4sS6KEeSaMrdXMag_Yg"/>
+  <Document:Content xmi:id="_g0OjEC6KEeSaMrdXMag_Yg" base_Comment="_g0NU8C6KEeSaMrdXMag_Yg"/>
+  <Document:Section xmi:id="_g0Q_UC6KEeSaMrdXMag_Yg" base_Package="_g0PKIC6KEeSaMrdXMag_Yg"/>
+  <Document:Content xmi:id="_g0TbkC6KEeSaMrdXMag_Yg" base_Comment="_g0RmYC6KEeSaMrdXMag_Yg"/>
+  <Document:Section xmi:id="_g0VQwC6KEeSaMrdXMag_Yg" base_Package="_g0TbkS6KEeSaMrdXMag_Yg"/>
+  <Document:ImageRef xmi:id="_hXPwkC6KEeSaMrdXMag_Yg" base_Comment="_hXNUUC6KEeSaMrdXMag_Yg" ref="C:/git/darwin/com.cea.darwin.reqif/doc/imgDOC/Architecture_of_ReqIF_Import-Export.png"/>
+  <Document:Content xmi:id="_hXRlwC6KEeSaMrdXMag_Yg" base_Comment="_hXQXoC6KEeSaMrdXMag_Yg"/>
+  <Document:Section xmi:id="_hXUCAC6KEeSaMrdXMag_Yg" base_Package="_hXSM0C6KEeSaMrdXMag_Yg"/>
+  <Document:Section xmi:id="_hXV3MC6KEeSaMrdXMag_Yg" base_Package="_hXUpEC6KEeSaMrdXMag_Yg"/>
+  <Document:Content xmi:id="_hXYTcC6KEeSaMrdXMag_Yg" base_Comment="_hXWeQC6KEeSaMrdXMag_Yg"/>
+  <Document:Section xmi:id="_hXaIoC6KEeSaMrdXMag_Yg" base_Package="_hXY6gC6KEeSaMrdXMag_Yg"/>
+  <Document:Content xmi:id="_hXb90C6KEeSaMrdXMag_Yg" base_Comment="_hXavsC6KEeSaMrdXMag_Yg"/>
+  <Document:Section xmi:id="_hXeaEC6KEeSaMrdXMag_Yg" base_Package="_hXck4C6KEeSaMrdXMag_Yg"/>
+  <Document:Content xmi:id="_hXgPQC6KEeSaMrdXMag_Yg" base_Comment="_hXeaES6KEeSaMrdXMag_Yg"/>
+  <Document:Section xmi:id="_hXiEcC6KEeSaMrdXMag_Yg" base_Package="_hXg2UC6KEeSaMrdXMag_Yg"/>
+  <Document:Content xmi:id="_hXkgsC6KEeSaMrdXMag_Yg" base_Comment="_hXirgC6KEeSaMrdXMag_Yg"/>
+  <Document:Section xmi:id="_hXmV4C6KEeSaMrdXMag_Yg" base_Package="_hXlHwC6KEeSaMrdXMag_Yg"/>
+  <Document:Content xmi:id="_hXoLEC6KEeSaMrdXMag_Yg" base_Comment="_hXm88C6KEeSaMrdXMag_Yg"/>
+  <Document:Section xmi:id="_hXqnUC6KEeSaMrdXMag_Yg" base_Package="_hXoyIC6KEeSaMrdXMag_Yg"/>
+  <Document:Content xmi:id="_hXscgC6KEeSaMrdXMag_Yg" base_Comment="_hXrOYC6KEeSaMrdXMag_Yg"/>
+  <Document:Section xmi:id="_hXu4wC6KEeSaMrdXMag_Yg" base_Package="_hXtqoC6KEeSaMrdXMag_Yg"/>
+  <Document:Content xmi:id="_hXwt8C6KEeSaMrdXMag_Yg" base_Comment="_hXvf0C6KEeSaMrdXMag_Yg"/>
+  <Document:Section xmi:id="_hXzKMC6KEeSaMrdXMag_Yg" base_Package="_hXxVAC6KEeSaMrdXMag_Yg"/>
+  <Document:Content xmi:id="_hX0_YC6KEeSaMrdXMag_Yg" base_Comment="_hXzKMS6KEeSaMrdXMag_Yg"/>
+  <Document:Section xmi:id="_hX3boC6KEeSaMrdXMag_Yg" base_Package="_hX1mcC6KEeSaMrdXMag_Yg"/>
+  <Document:Content xmi:id="_hX5Q0C6KEeSaMrdXMag_Yg" base_Comment="_hX3boS6KEeSaMrdXMag_Yg"/>
+  <Document:Section xmi:id="_hX7GAC6KEeSaMrdXMag_Yg" base_Package="_hX534C6KEeSaMrdXMag_Yg"/>
+  <Document:Section xmi:id="_hX9iQC6KEeSaMrdXMag_Yg" base_Package="_hX7tEC6KEeSaMrdXMag_Yg"/>
+  <Document:Content xmi:id="_hX_XcC6KEeSaMrdXMag_Yg" base_Comment="_hX9iQS6KEeSaMrdXMag_Yg"/>
+  <Document:Section xmi:id="_hYBzsC6KEeSaMrdXMag_Yg" base_Package="_hX_-gC6KEeSaMrdXMag_Yg"/>
+  <Document:Content xmi:id="_hYDo4C6KEeSaMrdXMag_Yg" base_Comment="_hYBzsS6KEeSaMrdXMag_Yg"/>
+  <Document:Section xmi:id="_hYGFIC6KEeSaMrdXMag_Yg" base_Package="_hYEP8C6KEeSaMrdXMag_Yg"/>
+  <Document:Content xmi:id="_hYH6UC6KEeSaMrdXMag_Yg" base_Comment="_hYGsMC6KEeSaMrdXMag_Yg"/>
+  <Document:Section xmi:id="_hYKWkC6KEeSaMrdXMag_Yg" base_Package="_hYJIcC6KEeSaMrdXMag_Yg"/>
+  <Document:Content xmi:id="_hYMLwC6KEeSaMrdXMag_Yg" base_Comment="_hYK9oC6KEeSaMrdXMag_Yg"/>
+  <Document:Section xmi:id="_hYOA8C6KEeSaMrdXMag_Yg" base_Package="_hYMy0C6KEeSaMrdXMag_Yg"/>
+  <Document:Content xmi:id="_hYP2IC6KEeSaMrdXMag_Yg" base_Comment="_hYOA8S6KEeSaMrdXMag_Yg"/>
+  <Document:Section xmi:id="_hYRrUC6KEeSaMrdXMag_Yg" base_Package="_hYQdMC6KEeSaMrdXMag_Yg"/>
+  <Document:Content xmi:id="_hYTggC6KEeSaMrdXMag_Yg" base_Comment="_hYRrUS6KEeSaMrdXMag_Yg"/>
+  <Document:Section xmi:id="_hYVVsC6KEeSaMrdXMag_Yg" base_Package="_hYUHkC6KEeSaMrdXMag_Yg"/>
+  <Document:Content xmi:id="_hYXK4C6KEeSaMrdXMag_Yg" base_Comment="_hYVVsS6KEeSaMrdXMag_Yg"/>
+</xmi:XMI>

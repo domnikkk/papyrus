@@ -13,9 +13,10 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  * <li>{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.PropertyRule#getVisibility <em>Visibility</em>}</li>
- * <li>{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.PropertyRule#getIsDerived <em>Is Derived</em>}</li>
+ * <li>{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.PropertyRule#isDerived <em>Derived</em>}</li>
  * <li>{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.PropertyRule#getName <em>Name</em>}</li>
  * <li>{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.PropertyRule#getType <em>Type</em>}</li>
+ * <li>{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.PropertyRule#isTypeUndefined <em>Type Undefined</em>}</li>
  * <li>{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.PropertyRule#getMultiplicity <em>Multiplicity</em>}</li>
  * <li>{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.PropertyRule#getModifiers <em>Modifiers</em>}</li>
  * <li>{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.PropertyRule#getDefault <em>Default</em>}</li>
@@ -29,63 +30,60 @@ import org.eclipse.emf.ecore.EObject;
 public interface PropertyRule extends EObject
 {
 	/**
-	 * Returns the value of the '<em><b>Visibility</b></em>' attribute.
-	 * The literals are from the enumeration {@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.VisibilityKind}.
+	 * Returns the value of the '<em><b>Visibility</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Visibility</em>' attribute isn't clear, there really should be more of a description here...
+	 * If the meaning of the '<em>Visibility</em>' containment reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
 	 *
-	 * @return the value of the '<em>Visibility</em>' attribute.
-	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.VisibilityKind
-	 * @see #setVisibility(VisibilityKind)
+	 * @return the value of the '<em>Visibility</em>' containment reference.
+	 * @see #setVisibility(VisibilityRule)
 	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.UmlPropertyPackage#getPropertyRule_Visibility()
-	 * @model
+	 * @model containment="true"
 	 * @generated
 	 */
-	VisibilityKind getVisibility();
+	VisibilityRule getVisibility();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.PropertyRule#getVisibility <em>Visibility</em>}' attribute.
+	 * Sets the value of the '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.PropertyRule#getVisibility <em>Visibility</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Visibility</em>' attribute.
-	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.VisibilityKind
+	 *            the new value of the '<em>Visibility</em>' containment reference.
 	 * @see #getVisibility()
 	 * @generated
 	 */
-	void setVisibility(VisibilityKind value);
+	void setVisibility(VisibilityRule value);
 
 	/**
-	 * Returns the value of the '<em><b>Is Derived</b></em>' attribute.
+	 * Returns the value of the '<em><b>Derived</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Is Derived</em>' attribute isn't clear, there really should be more of a description here...
+	 * If the meaning of the '<em>Derived</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
 	 *
-	 * @return the value of the '<em>Is Derived</em>' attribute.
-	 * @see #setIsDerived(String)
-	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.UmlPropertyPackage#getPropertyRule_IsDerived()
+	 * @return the value of the '<em>Derived</em>' attribute.
+	 * @see #setDerived(boolean)
+	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.UmlPropertyPackage#getPropertyRule_Derived()
 	 * @model
 	 * @generated
 	 */
-	String getIsDerived();
+	boolean isDerived();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.PropertyRule#getIsDerived <em>Is Derived</em>}' attribute.
+	 * Sets the value of the '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.PropertyRule#isDerived <em>Derived</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Is Derived</em>' attribute.
-	 * @see #getIsDerived()
+	 *            the new value of the '<em>Derived</em>' attribute.
+	 * @see #isDerived()
 	 * @generated
 	 */
-	void setIsDerived(String value);
+	void setDerived(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
@@ -142,6 +140,34 @@ public interface PropertyRule extends EObject
 	 * @generated
 	 */
 	void setType(TypeRule value);
+
+	/**
+	 * Returns the value of the '<em><b>Type Undefined</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Type Undefined</em>' attribute isn't clear, there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the value of the '<em>Type Undefined</em>' attribute.
+	 * @see #setTypeUndefined(boolean)
+	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.UmlPropertyPackage#getPropertyRule_TypeUndefined()
+	 * @model
+	 * @generated
+	 */
+	boolean isTypeUndefined();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.PropertyRule#isTypeUndefined <em>Type Undefined</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @param value
+	 *            the new value of the '<em>Type Undefined</em>' attribute.
+	 * @see #isTypeUndefined()
+	 * @generated
+	 */
+	void setTypeUndefined(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Multiplicity</b></em>' containment reference.

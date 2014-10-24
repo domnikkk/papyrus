@@ -6,16 +6,16 @@
 [query public hasSpecificationForJava(constraint : Constraint) : Boolean   = invoke('org.eclipse.papyrus.dsml.validation.model.profilenames.Utils', 'hasSpecificationForJava(org.eclipse.uml2.uml.Constraint)', Sequence{constraint}) /]
 [query public isConstraintForStereotype(constraint : Constraint) : Boolean = invoke('org.eclipse.papyrus.dsml.validation.model.profilenames.Utils', 'isConstraintForStereotype(org.eclipse.uml2.uml.Constraint)',  Sequence{constraint}) /]
 [query public getConstraintForStereotype(constraint : Constraint) : String = invoke('org.eclipse.papyrus.dsml.validation.model.profilenames.Utils', 'getConstraintForStereotype(org.eclipse.uml2.uml.Constraint)', Sequence{constraint}) /]
-[query public getPluginID(dummy : Element) : String = invoke('org.eclipse.papyrus.dsml.validation.model.profilenames.Utils', 'getPluginID()', Sequence{}) /]
+[query public getTopPkg(dummy : Element) : String = invoke('org.eclipse.papyrus.dsml.validation.model.profilenames.Utils', 'getTopPkg()', Sequence{}) /]
 
 
 [template public generateConstraint(constraint : Constraint)]
 [comment @main/]
 
 [if (hasSpecificationForJava(constraint) and getPackageForConstraint(constraint) <> null)]
-[file(getPluginID(constraint).replaceAll('\\.', '/') + '/' + getPackageForConstraint(constraint).replaceAll('\\.','/') + '/' + constraint.name + 'Constraint.java', false)]
+[file(getTopPkg(constraint).replaceAll('\\.', '/') + '/' + getPackageForConstraint(constraint).replaceAll('\\.','/') + '/' + constraint.name + 'Constraint.java', false)]
 	
-package [getPluginID(constraint)/].[getPackageForConstraint(constraint)/];
+package [getTopPkg(constraint)/].[getPackageForConstraint(constraint)/];
 
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.emf.validation.AbstractModelConstraint;
@@ -84,13 +84,13 @@ public class [constraint.name.toUpperFirst() + 'Constraint'/] extends AbstractMo
 [/template]
 
 [template public generateValidationContext(stereotype : Stereotype)]
-[file (getPluginID(stereotype).replaceAll('\\.', '/') + '/selectors/' + stereotype.name +'ClientSelector.java', false)]
+[file (getTopPkg(stereotype).replaceAll('\\.', '/') + '/selectors/' + stereotype.name +'ClientSelector.java', false)]
 [comment @main/]
 /**
  * Created by the Papyrus DSML plugin generator
  */
 
-package [getPluginID(stereotype)/].selectors;
+package [getTopPkg(stereotype)/].selectors;
 
 import org.eclipse.emf.validation.model.IClientSelector;
 import org.eclipse.papyrus.uml.service.validation.StereotypeUtil;

@@ -35,7 +35,6 @@ public class UmlPropertyActivator extends AbstractUIPlugin {
 	public void start(BundleContext context) throws Exception {
 		super.start(context);
 		INSTANCE = this;
-
 	}
 
 	@Override

@@ -86,8 +86,7 @@ public class UmlPropertyJavaValidator extends AbstractUmlPropertyJavaValidator {
 
 			PropertyRule propertyRule = (PropertyRule) container;
 			Classifier typeOfRedefiningProperty = propertyRule.getType().getType();
-			boolean isRedefiningPropertyDerived = propertyRule.getIsDerived() != null
-					&& propertyRule.getIsDerived().equals("/");
+			boolean isRedefiningPropertyDerived = propertyRule.isDerived();
 
 			boolean valid_RedefinesRule = typeOfRedefiningProperty.conformsTo(redefinedProperty.getType());
 			if (!valid_RedefinesRule) {

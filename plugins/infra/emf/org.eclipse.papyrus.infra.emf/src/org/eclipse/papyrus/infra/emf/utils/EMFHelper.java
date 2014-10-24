@@ -737,8 +737,13 @@ public class EMFHelper {
 	 *         true if the feature is required, false otherwise
 	 */
 	public static boolean isRequired(final EStructuralFeature feature) {
+		EClassifier eType = feature.getEType();
+		if (eType == null) {
+			return false;
+		}
+
 		// EEnums are always required, as an EEnum always has a default value
-		if (feature.getEType() instanceof EEnum) {
+		if (eType instanceof EEnum) {
 			return true;
 		}
 
@@ -749,7 +754,7 @@ public class EMFHelper {
 
 		// Java primitive types cannot have a null value
 		// if the feature is not specifically marked as unsettable, then it is required
-		if (feature.getEType().getInstanceClass().isPrimitive() && !feature.isUnsettable()) {
+		if (eType.getInstanceClass() != null && eType.getInstanceClass().isPrimitive() && !feature.isUnsettable()) {
 			return true;
 		}
 

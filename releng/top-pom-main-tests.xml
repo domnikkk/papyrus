@@ -20,6 +20,7 @@
 	    <module>../features/papyrus-tests-features/org.eclipse.papyrus.tests.uml.nattable.feature</module>
 	    <module>../features/papyrus-tests-features/org.eclipse.papyrus.tests.uml.tools.feature</module>
 	    <module>../features/papyrus-tests-features/org.eclipse.papyrus.tests.views.feature</module>
+	    <module>../features/papyrus-tests-features/org.eclipse.papyrus.uml.textedit.tests.feature</module>
 		<module>../tests/junit/plugins/core/org.eclipse.papyrus.editor.integration.tests</module>
 		<module>../tests/junit/plugins/core/org.eclipse.papyrus.infra.core.sasheditor.di.tests</module>
 		<module>../tests/junit/plugins/core/org.eclipse.papyrus.infra.core.sasheditor.tests</module>
@@ -77,6 +78,10 @@
 		<module>../tests/junit/plugins/uml/tools/org.eclipse.papyrus.uml.tools.tests</module>
 		<module>../tests/junit/plugins/uml/tools/org.eclipse.papyrus.uml.tools.utils.tests</module>
 		<module>../tests/junit/plugins/views/modelexplorer/org.eclipse.papyrus.views.modelexplorer.tests</module>
+		<module>../tests/junit/plugins/uml/textedit/org.eclipse.papyrus.uml.textedit.tests</module>
+		<module>../tests/junit/plugins/uml/textedit/org.eclipse.papyrus.uml.textedit.port.tests</module>
+		<module>../tests/junit/plugins/uml/textedit/org.eclipse.papyrus.uml.textedit.property.tests</module>
+		<module>../tests/junit/plugins/uml/textedit/org.eclipse.papyrus.uml.textedit.parameter.tests</module>
 	</modules>
 	<properties>
 		<tycho-version>0.20.0</tycho-version>

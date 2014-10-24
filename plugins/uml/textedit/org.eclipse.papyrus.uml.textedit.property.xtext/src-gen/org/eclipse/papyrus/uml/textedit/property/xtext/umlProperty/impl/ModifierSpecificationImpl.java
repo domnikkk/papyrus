@@ -4,10 +4,13 @@ package org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.ModifierKind;
 import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.ModifierSpecification;
 import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.RedefinesRule;
@@ -104,7 +107,6 @@ public class ModifierSpecificationImpl extends MinimalEObjectImpl.Container impl
 	 *
 	 * @generated
 	 */
-	@Override
 	public ModifierKind getValue()
 	{
 		return value;
@@ -116,7 +118,6 @@ public class ModifierSpecificationImpl extends MinimalEObjectImpl.Container impl
 	 *
 	 * @generated
 	 */
-	@Override
 	public void setValue(ModifierKind newValue)
 	{
 		ModifierKind oldValue = value;
@@ -132,7 +133,6 @@ public class ModifierSpecificationImpl extends MinimalEObjectImpl.Container impl
 	 *
 	 * @generated
 	 */
-	@Override
 	public RedefinesRule getRedefines()
 	{
 		return redefines;
@@ -166,7 +166,6 @@ public class ModifierSpecificationImpl extends MinimalEObjectImpl.Container impl
 	 *
 	 * @generated
 	 */
-	@Override
 	public void setRedefines(RedefinesRule newRedefines)
 	{
 		if (newRedefines != redefines)
@@ -194,7 +193,6 @@ public class ModifierSpecificationImpl extends MinimalEObjectImpl.Container impl
 	 *
 	 * @generated
 	 */
-	@Override
 	public SubsetsRule getSubsets()
 	{
 		return subsets;
@@ -228,7 +226,6 @@ public class ModifierSpecificationImpl extends MinimalEObjectImpl.Container impl
 	 *
 	 * @generated
 	 */
-	@Override
 	public void setSubsets(SubsetsRule newSubsets)
 	{
 		if (newSubsets != subsets)

@@ -14,13 +14,18 @@ package org.eclipse.papyrus.uml.tools.listeners;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.ENamedElement;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.transaction.NotificationFilter;
 import org.eclipse.emf.transaction.ResourceSetChangeEvent;
 import org.eclipse.emf.transaction.ResourceSetListenerImpl;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Extension;
 import org.eclipse.uml2.uml.NamedElement;
@@ -38,13 +43,30 @@ import org.eclipse.uml2.uml.util.UMLUtil;
 public class StereotypeElementListener extends ResourceSetListenerImpl {
 
 	/** The stereotype filter notification. */
-	private StereotypeNotificationFilter stereotypeFilter = StereotypeNotificationFilter.create();
+	private StereotypeNotificationFilter stereotypeFilter = new StereotypeNotificationFilter();
+
+	private final StereotypeExtensionFinder finder;
 
 	/**
-	 * Instantiates a new stereotype element listener.
+	 * Instantiates a new stereotype element listener on an editing domain.
+	 * 
+	 * @param editingDomain
+	 *            the editing-domain context in which the listener responds to events
 	 */
-	public StereotypeElementListener() {
+	public StereotypeElementListener(TransactionalEditingDomain editingDomain) {
+		this(editingDomain.getResourceSet());
+	}
+
+	/**
+	 * Instantiates a new stereotype element listener on a resource set.
+	 * 
+	 * @param resourceSet
+	 *            the resource-set context in which the listener responds to events
+	 */
+	public StereotypeElementListener(ResourceSet resourceSet) {
 		super();
+
+		this.finder = new StereotypeExtensionFinder(resourceSet);
 	}
 
 	/**
@@ -82,8 +104,10 @@ public class StereotypeElementListener extends ResourceSetListenerImpl {
 
 		// Use UML tools to get Stereotype and Based Element
 		if (notifier instanceof EObject) {
-			stereotype = UMLUtil.getStereotype((EObject) notifier);
-			baseElement = UMLUtil.getBaseElement((EObject) notifier);
+			stereotype = finder.getDefiningStereotype((EObject) notifier);
+			if (stereotype != null) {
+				baseElement = finder.getExtendedElement((EObject) notifier);
+			}
 		}
 
 
@@ -130,18 +154,70 @@ public class StereotypeElementListener extends ResourceSetListenerImpl {
 	/**
 	 * The Class StereotypeExtensionFinder.
 	 */
-	static class StereotypeExtensionFinder extends UMLUtil {
+	class StereotypeExtensionFinder extends UMLUtil {
+		private final ResourceSet resourceSet;
 
-		static Property getExtensionEnd(EObject stereotypeApplication, EStructuralFeature ecoreDefinition) {
+		StereotypeExtensionFinder(ResourceSet resourceSet) {
+			this.resourceSet = resourceSet;
+		}
+
+		Stereotype getDefiningStereotype(EObject stereotypeApplication) {
+			Stereotype result = null;
+
+			NamedElement umlDefinition = getUMLDefinition(stereotypeApplication.eClass(), stereotypeApplication);
+			if (umlDefinition instanceof Stereotype) {
+				result = (Stereotype) umlDefinition;
+			}
+
+			return result;
+		}
+
+		Property getExtensionEnd(EObject stereotypeApplication, EStructuralFeature ecoreDefinition) {
 			Property result = null;
 
-			NamedElement umlDefinition = getNamedElement(ecoreDefinition, stereotypeApplication);
+			NamedElement umlDefinition = getUMLDefinition(ecoreDefinition, stereotypeApplication);
 			if (umlDefinition instanceof Property) {
 				Property property = (Property) umlDefinition;
 
 				// Is the property a member end of a metaclass extension?
 				if (property.getAssociation() instanceof Extension) {
 					result = property;
+				}
+			}
+
+			return result;
+		}
+
+		NamedElement getUMLDefinition(ENamedElement ecoreElement, EObject context) {
+			NamedElement result = getNamedElement(ecoreElement, context);
+
+			if ((result == null) && (resourceSet != null)) {
+				// Try again in the resource set context, with some loaded object for context
+				EObject anyLoadedObject = getAnyEObject(resourceSet);
+				if (anyLoadedObject != null) {
+					// If there is no loaded object, then there's no point in any of this because
+					// obviously there can't be a profile definition without any profiles loaded
+					result = getNamedElement(ecoreElement, anyLoadedObject);
+				}
+			}
+
+			return result;
+		}
+
+		/**
+		 * @precondition the {@code stereotypeApplication} is known to be an instance of a {@link Stereotype} according to {@link #getDefiningStereotype(EObject)}
+		 */
+		Element getExtendedElement(EObject stereotypeApplication) {
+			EClass eClass = stereotypeApplication.eClass();
+			return getBaseElement(eClass, stereotypeApplication);
+		}
+
+		private EObject getAnyEObject(ResourceSet resourceSet) {
+			EObject result = null;
+
+			for (Resource next : resourceSet.getResources()) {
+				if (next.isLoaded() && !next.getContents().isEmpty()) {
+					result = next.getContents().get(0);
 				}
 			}
 
@@ -156,12 +232,12 @@ public class StereotypeElementListener extends ResourceSetListenerImpl {
 	 * <li>Unset a {@link Stereotype} on {@link Element}</li>
 	 * </ul>
 	 */
-	public static class StereotypeNotificationFilter extends NotificationFilter.Custom {
+	class StereotypeNotificationFilter extends NotificationFilter.Custom {
 
 		/**
 		 * Instantiates a new stereotype notification filter.
 		 */
-		protected StereotypeNotificationFilter() {
+		StereotypeNotificationFilter() {
 			super();
 		}
 
@@ -193,24 +269,14 @@ public class StereotypeElementListener extends ResourceSetListenerImpl {
 
 			// Use UML tools to get extension property
 			if (notifier instanceof EObject) {
-				Stereotype stereotype = UMLUtil.getStereotype((EObject) notifier);
+				Stereotype stereotype = finder.getDefiningStereotype((EObject) notifier);
 				if (stereotype != null) {
-					extensionProperty = StereotypeExtensionFinder.getExtensionEnd((EObject) notifier, (EStructuralFeature) feature);
-
+					extensionProperty = finder.getExtensionEnd((EObject) notifier, (EStructuralFeature) feature);
 				}
 
 			}
 
 			return extensionProperty != null && isBaseFeature;
-		}
-
-		/**
-		 * Creates notification filter for Stereotype.
-		 *
-		 * @return the stereotype notification filter
-		 */
-		public static StereotypeNotificationFilter create() {
-			return new StereotypeNotificationFilter();
 		}
 	}
 

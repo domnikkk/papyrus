@@ -168,8 +168,10 @@ public class CustomLifelineNameEditPart extends LifelineNameEditPart {
 			Lifeline lifeline = (Lifeline) this.resolveSemanticElement();
 			// handle possible change in the name container size
 			// In AutoSize mode, the width should be resized if the content of the text gets changed. see https://bugs.eclipse.org/bugs/show_bug.cgi?id=383723
-			if (notifier.equals(lifeline.getRepresents()) || UMLPackage.Literals.NAMED_ELEMENT__NAME.equals(feature) || UMLPackage.Literals.LIFELINE__REPRESENTS.equals(feature) || UMLPackage.Literals.LIFELINE__DECOMPOSED_AS.equals(feature)
-					|| UMLPackage.Literals.LIFELINE__SELECTOR.equals(feature) || event.getNotifier() instanceof Bounds) {
+			if(notifier.equals(lifeline.getRepresents()) || notifier.equals(lifeline.getSelector()) 
+					|| UMLPackage.Literals.NAMED_ELEMENT__NAME.equals(feature) || UMLPackage.Literals.LIFELINE__REPRESENTS.equals(feature) 
+					|| UMLPackage.Literals.LIFELINE__DECOMPOSED_AS.equals(feature) || UMLPackage.Literals.LIFELINE__SELECTOR.equals(feature) 
+					|| event.getNotifier() instanceof Bounds) {
 				((CustomLifelineEditPart) getParent()).updateLifelinePosition();
 			}
 			if (notifier instanceof EAnnotation && ((EAnnotation) notifier).getSource().equals(VisualInformationPapyrusConstants.CUSTOM_APPEARENCE_ANNOTATION)) {

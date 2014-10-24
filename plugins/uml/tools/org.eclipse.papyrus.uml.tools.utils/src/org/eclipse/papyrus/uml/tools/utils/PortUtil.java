@@ -76,9 +76,9 @@ public class PortUtil extends PropertyUtil {
 
 		if (maskValues.contains(ICustomAppearance.DISP_DEFAULT_VALUE)) {
 			// default value
-			if (property.getDefault() != null) {
+			if (property.getDefaultValue() != null) {
 				buffer.append(" = ");
-				buffer.append(property.getDefault());
+				buffer.append(ValueSpecificationUtil.getSpecificationValue(property.getDefaultValue()));
 			}
 		}
 

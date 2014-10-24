@@ -19,14 +19,12 @@ import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.domain.EditingDomain;
-import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.papyrus.infra.widgets.providers.IStaticContentProvider;
 import org.eclipse.papyrus.uml.properties.datatype.DataTypeProvider;
 import org.eclipse.papyrus.uml.properties.datatype.StructuredDataTypeObservableValue;
 import org.eclipse.papyrus.uml.tools.databinding.PapyrusObservableList;
 import org.eclipse.papyrus.uml.tools.databinding.PapyrusObservableValue;
 import org.eclipse.papyrus.uml.tools.providers.UMLContentProvider;
-import org.eclipse.papyrus.uml.tools.providers.UMLFilteredLabelProvider;
 import org.eclipse.papyrus.views.properties.modelelement.EMFModelElement;
 import org.eclipse.uml2.uml.Stereotype;
 
@@ -84,21 +82,6 @@ public class StereotypeModelElement extends EMFModelElement {
 		}
 
 		return new PapyrusObservableValue(getSource(featurePath), feature, domain);
-	}
-
-	/**
-	 * {@inheritDoc}
-	 */
-	@Override
-	public ILabelProvider getLabelProvider(String propertyPath) {
-		EStructuralFeature feature = getFeature(propertyPath);
-		if (feature == null) {
-			return super.getLabelProvider(propertyPath);
-		}
-		if (feature.getEType() instanceof EEnum) {
-			return super.getLabelProvider(propertyPath);
-		}
-		return new UMLFilteredLabelProvider();
 	}
 
 	/**

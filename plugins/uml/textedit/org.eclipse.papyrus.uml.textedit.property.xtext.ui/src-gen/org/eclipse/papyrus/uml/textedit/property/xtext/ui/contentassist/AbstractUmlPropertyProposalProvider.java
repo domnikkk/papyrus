@@ -4,11 +4,9 @@
 package org.eclipse.papyrus.uml.textedit.property.xtext.ui.contentassist;
 
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.xtext.Assignment;
-import org.eclipse.xtext.CrossReference;
-import org.eclipse.xtext.RuleCall;
-import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext;
+import org.eclipse.xtext.*;
 import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor;
+import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext;
 
 /**
  * Represents a generated, default implementation of superclass {@link org.eclipse.papyrus.uml.alf.ui.contentassist.CommonProposalProvider}.
@@ -22,7 +20,7 @@ public class AbstractUmlPropertyProposalProvider extends org.eclipse.papyrus.uml
 		completeRuleCall(((RuleCall) assignment.getTerminal()), context, acceptor);
 	}
 
-	public void completePropertyRule_IsDerived(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+	public void completePropertyRule_Derived(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
 		// subclasses may override
 	}
 
@@ -34,6 +32,10 @@ public class AbstractUmlPropertyProposalProvider extends org.eclipse.papyrus.uml
 		completeRuleCall(((RuleCall) assignment.getTerminal()), context, acceptor);
 	}
 
+	public void completePropertyRule_TypeUndefined(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		// subclasses may override
+	}
+
 	public void completePropertyRule_Multiplicity(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
 		completeRuleCall(((RuleCall) assignment.getTerminal()), context, acceptor);
 	}
@@ -43,6 +45,10 @@ public class AbstractUmlPropertyProposalProvider extends org.eclipse.papyrus.uml
 	}
 
 	public void completePropertyRule_Default(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		completeRuleCall(((RuleCall) assignment.getTerminal()), context, acceptor);
+	}
+
+	public void completeVisibilityRule_Visibility(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
 		completeRuleCall(((RuleCall) assignment.getTerminal()), context, acceptor);
 	}
 
@@ -98,11 +104,35 @@ public class AbstractUmlPropertyProposalProvider extends org.eclipse.papyrus.uml
 		completeRuleCall(((RuleCall) assignment.getTerminal()), context, acceptor);
 	}
 
+	public void completeIntValue_LiteralInteger(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		completeRuleCall(((RuleCall) assignment.getTerminal()), context, acceptor);
+	}
+
+	public void completeStringValue_LiteralString(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		completeRuleCall(((RuleCall) assignment.getTerminal()), context, acceptor);
+	}
+
+	public void completeBooleanValue_LiteralBoolean(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		completeRuleCall(((RuleCall) assignment.getTerminal()), context, acceptor);
+	}
+
+	public void completeRealValue_Integer(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		completeRuleCall(((RuleCall) assignment.getTerminal()), context, acceptor);
+	}
+
+	public void completeRealValue_Fraction(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		completeRuleCall(((RuleCall) assignment.getTerminal()), context, acceptor);
+	}
+
 	public void complete_PropertyRule(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
 		// subclasses may override
 	}
 
 	public void complete_VisibilityKind(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		// subclasses may override
+	}
+
+	public void complete_VisibilityRule(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
 		// subclasses may override
 	}
 
@@ -147,6 +177,38 @@ public class AbstractUmlPropertyProposalProvider extends org.eclipse.papyrus.uml
 	}
 
 	public void complete_DefaultValueRule(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		// subclasses may override
+	}
+
+	public void complete_Value(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		// subclasses may override
+	}
+
+	public void complete_IntValue(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		// subclasses may override
+	}
+
+	public void complete_StringValue(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		// subclasses may override
+	}
+
+	public void complete_BooleanLiterals(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		// subclasses may override
+	}
+
+	public void complete_BooleanValue(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		// subclasses may override
+	}
+
+	public void complete_RealValue(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		// subclasses may override
+	}
+
+	public void complete_NullValue(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		// subclasses may override
+	}
+
+	public void complete_NoValue(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
 		// subclasses may override
 	}
 }
