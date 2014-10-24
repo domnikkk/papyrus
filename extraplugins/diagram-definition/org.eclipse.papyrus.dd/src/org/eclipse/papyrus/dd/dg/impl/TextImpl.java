@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- *
+ *  
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *
+ *  
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -37,7 +37,7 @@ import org.eclipse.papyrus.dd.dg.util.DGValidator;
  * <li>{@link org.eclipse.papyrus.dd.dg.impl.TextImpl#getAnchor <em>Anchor</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
 public class TextImpl extends GraphicalElementImpl implements Text {
@@ -45,7 +45,7 @@ public class TextImpl extends GraphicalElementImpl implements Text {
 	/**
 	 * The default value of the '{@link #getData() <em>Data</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getData()
 	 * @generated
 	 * @ordered
@@ -55,7 +55,7 @@ public class TextImpl extends GraphicalElementImpl implements Text {
 	/**
 	 * The cached value of the '{@link #getData() <em>Data</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getData()
 	 * @generated
 	 * @ordered
@@ -66,7 +66,7 @@ public class TextImpl extends GraphicalElementImpl implements Text {
 	 * The cached value of the '{@link #getBounds() <em>Bounds</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getBounds()
 	 * @generated
 	 * @ordered
@@ -77,7 +77,7 @@ public class TextImpl extends GraphicalElementImpl implements Text {
 	 * The default value of the '{@link #getAnchor() <em>Anchor</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getAnchor()
 	 * @generated
 	 * @ordered
@@ -88,7 +88,7 @@ public class TextImpl extends GraphicalElementImpl implements Text {
 	 * The cached value of the '{@link #getAnchor() <em>Anchor</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getAnchor()
 	 * @generated
 	 * @ordered
@@ -97,7 +97,7 @@ public class TextImpl extends GraphicalElementImpl implements Text {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected TextImpl() {
@@ -106,7 +106,7 @@ public class TextImpl extends GraphicalElementImpl implements Text {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -116,35 +116,31 @@ public class TextImpl extends GraphicalElementImpl implements Text {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public String getData() {
 		return data;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public void setData(String newData) {
 		String oldData = data;
 		data = newData;
-		if(eNotificationRequired()) {
+		if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.TEXT__DATA, oldData, data));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public Bounds getBounds() {
 		return bounds;
 	}
@@ -152,7 +148,7 @@ public class TextImpl extends GraphicalElementImpl implements Text {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetBounds(Bounds newBounds, NotificationChain msgs) {
@@ -160,11 +156,10 @@ public class TextImpl extends GraphicalElementImpl implements Text {
 		bounds = newBounds;
 		if(eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DGPackage.TEXT__BOUNDS, oldBounds, newBounds);
-			if(msgs == null) {
+			if(msgs == null)
 				msgs = notification;
-			} else {
+			else
 				msgs.add(notification);
-			}
 		}
 		return msgs;
 	}
@@ -172,35 +167,29 @@ public class TextImpl extends GraphicalElementImpl implements Text {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public void setBounds(Bounds newBounds) {
 		if(newBounds != bounds) {
 			NotificationChain msgs = null;
-			if(bounds != null) {
+			if(bounds != null)
 				msgs = ((InternalEObject)bounds).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DGPackage.TEXT__BOUNDS, null, msgs);
-			}
-			if(newBounds != null) {
+			if(newBounds != null)
 				msgs = ((InternalEObject)newBounds).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DGPackage.TEXT__BOUNDS, null, msgs);
-			}
 			msgs = basicSetBounds(newBounds, msgs);
-			if(msgs != null) {
+			if(msgs != null)
 				msgs.dispatch();
-			}
-		} else if(eNotificationRequired()) {
+		} else if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.TEXT__BOUNDS, newBounds, newBounds));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public TextAnchor getAnchor() {
 		return anchor;
 	}
@@ -208,16 +197,14 @@ public class TextImpl extends GraphicalElementImpl implements Text {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public void setAnchor(TextAnchor newAnchor) {
 		TextAnchor oldAnchor = anchor;
 		anchor = newAnchor == null ? ANCHOR_EDEFAULT : newAnchor;
-		if(eNotificationRequired()) {
+		if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.TEXT__ANCHOR, oldAnchor, anchor));
-		}
 	}
 
 	/**
@@ -225,7 +212,7 @@ public class TextImpl extends GraphicalElementImpl implements Text {
 	 * <em>Data Cannot Be Empty</em>}' invariant operation.
 	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #dataCannotBeEmpty(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
@@ -234,17 +221,16 @@ public class TextImpl extends GraphicalElementImpl implements Text {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public boolean dataCannotBeEmpty(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return DGValidator.validate(DGPackage.Literals.TEXT, this, diagnostics, context, "http://www.eclipse.org/emf/2002/Ecore/OCL", DGPackage.Literals.TEXT___DATA_CANNOT_BE_EMPTY__DIAGNOSTICCHAIN_MAP, DATA_CANNOT_BE_EMPTY_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION, Diagnostic.ERROR, DGValidator.DIAGNOSTIC_SOURCE, DGValidator.TEXT__DATA_CANNOT_BE_EMPTY);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -258,7 +244,7 @@ public class TextImpl extends GraphicalElementImpl implements Text {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -276,7 +262,7 @@ public class TextImpl extends GraphicalElementImpl implements Text {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -297,7 +283,7 @@ public class TextImpl extends GraphicalElementImpl implements Text {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -318,7 +304,7 @@ public class TextImpl extends GraphicalElementImpl implements Text {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -336,7 +322,7 @@ public class TextImpl extends GraphicalElementImpl implements Text {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -351,14 +337,13 @@ public class TextImpl extends GraphicalElementImpl implements Text {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if(eIsProxy()) {
+		if(eIsProxy())
 			return super.toString();
-		}
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (data: ");
 		result.append(data);

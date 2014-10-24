@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- *
+ *  
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *
+ *  
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -34,7 +34,7 @@ import org.eclipse.papyrus.dd.dg.Ellipse;
  * <li>{@link org.eclipse.papyrus.dd.dg.impl.EllipseImpl#getRadii <em>Radii</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
 public class EllipseImpl extends GraphicalElementImpl implements Ellipse {
@@ -42,7 +42,7 @@ public class EllipseImpl extends GraphicalElementImpl implements Ellipse {
 	/**
 	 * The cached value of the '{@link #getCenter() <em>Center</em>}' containment reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getCenter()
 	 * @generated
 	 * @ordered
@@ -52,7 +52,7 @@ public class EllipseImpl extends GraphicalElementImpl implements Ellipse {
 	/**
 	 * The cached value of the '{@link #getRadii() <em>Radii</em>}' containment reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getRadii()
 	 * @generated
 	 * @ordered
@@ -61,7 +61,7 @@ public class EllipseImpl extends GraphicalElementImpl implements Ellipse {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EllipseImpl() {
@@ -70,7 +70,7 @@ public class EllipseImpl extends GraphicalElementImpl implements Ellipse {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -80,17 +80,16 @@ public class EllipseImpl extends GraphicalElementImpl implements Ellipse {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public Point getCenter() {
 		return center;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetCenter(Point newCenter, NotificationChain msgs) {
@@ -98,52 +97,45 @@ public class EllipseImpl extends GraphicalElementImpl implements Ellipse {
 		center = newCenter;
 		if(eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DGPackage.ELLIPSE__CENTER, oldCenter, newCenter);
-			if(msgs == null) {
+			if(msgs == null)
 				msgs = notification;
-			} else {
+			else
 				msgs.add(notification);
-			}
 		}
 		return msgs;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public void setCenter(Point newCenter) {
 		if(newCenter != center) {
 			NotificationChain msgs = null;
-			if(center != null) {
+			if(center != null)
 				msgs = ((InternalEObject)center).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DGPackage.ELLIPSE__CENTER, null, msgs);
-			}
-			if(newCenter != null) {
+			if(newCenter != null)
 				msgs = ((InternalEObject)newCenter).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DGPackage.ELLIPSE__CENTER, null, msgs);
-			}
 			msgs = basicSetCenter(newCenter, msgs);
-			if(msgs != null) {
+			if(msgs != null)
 				msgs.dispatch();
-			}
-		} else if(eNotificationRequired()) {
+		} else if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.ELLIPSE__CENTER, newCenter, newCenter));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public Dimension getRadii() {
 		return radii;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetRadii(Dimension newRadii, NotificationChain msgs) {
@@ -151,42 +143,36 @@ public class EllipseImpl extends GraphicalElementImpl implements Ellipse {
 		radii = newRadii;
 		if(eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DGPackage.ELLIPSE__RADII, oldRadii, newRadii);
-			if(msgs == null) {
+			if(msgs == null)
 				msgs = notification;
-			} else {
+			else
 				msgs.add(notification);
-			}
 		}
 		return msgs;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public void setRadii(Dimension newRadii) {
 		if(newRadii != radii) {
 			NotificationChain msgs = null;
-			if(radii != null) {
+			if(radii != null)
 				msgs = ((InternalEObject)radii).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DGPackage.ELLIPSE__RADII, null, msgs);
-			}
-			if(newRadii != null) {
+			if(newRadii != null)
 				msgs = ((InternalEObject)newRadii).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DGPackage.ELLIPSE__RADII, null, msgs);
-			}
 			msgs = basicSetRadii(newRadii, msgs);
-			if(msgs != null) {
+			if(msgs != null)
 				msgs.dispatch();
-			}
-		} else if(eNotificationRequired()) {
+		} else if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.ELLIPSE__RADII, newRadii, newRadii));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -202,7 +188,7 @@ public class EllipseImpl extends GraphicalElementImpl implements Ellipse {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -218,7 +204,7 @@ public class EllipseImpl extends GraphicalElementImpl implements Ellipse {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -236,7 +222,7 @@ public class EllipseImpl extends GraphicalElementImpl implements Ellipse {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -254,7 +240,7 @@ public class EllipseImpl extends GraphicalElementImpl implements Ellipse {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override

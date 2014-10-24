@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- *
+ *  
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *
+ *  
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -44,7 +44,7 @@ import org.eclipse.papyrus.dd.edit.DDEditPlugin;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.dd.dg.Style} object.
  * <!-- begin-user-doc --> <!--
  * end-user-doc -->
- *
+ * 
  * @generated
  */
 public class StyleItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, IItemColorProvider, IItemFontProvider {
@@ -52,7 +52,7 @@ public class StyleItemProvider extends ItemProviderAdapter implements IEditingDo
 	/**
 	 * This constructs an instance from a factory and a notifier. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public StyleItemProvider(AdapterFactory adapterFactory) {
@@ -62,7 +62,7 @@ public class StyleItemProvider extends ItemProviderAdapter implements IEditingDo
 	/**
 	 * This returns the property descriptors for the adapted class. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -88,7 +88,7 @@ public class StyleItemProvider extends ItemProviderAdapter implements IEditingDo
 	 * This adds a property descriptor for the Fill feature.
 	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected void addFillPropertyDescriptor(Object object) {
@@ -98,7 +98,7 @@ public class StyleItemProvider extends ItemProviderAdapter implements IEditingDo
 	/**
 	 * This adds a property descriptor for the Fill Opacity feature. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected void addFillOpacityPropertyDescriptor(Object object) {
@@ -108,7 +108,7 @@ public class StyleItemProvider extends ItemProviderAdapter implements IEditingDo
 	/**
 	 * This adds a property descriptor for the Stroke feature. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected void addStrokePropertyDescriptor(Object object) {
@@ -118,7 +118,7 @@ public class StyleItemProvider extends ItemProviderAdapter implements IEditingDo
 	/**
 	 * This adds a property descriptor for the Stroke Width feature. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected void addStrokeWidthPropertyDescriptor(Object object) {
@@ -128,7 +128,7 @@ public class StyleItemProvider extends ItemProviderAdapter implements IEditingDo
 	/**
 	 * This adds a property descriptor for the Stroke Opacity feature. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected void addStrokeOpacityPropertyDescriptor(Object object) {
@@ -138,7 +138,7 @@ public class StyleItemProvider extends ItemProviderAdapter implements IEditingDo
 	/**
 	 * This adds a property descriptor for the Stroke Dash Length feature. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected void addStrokeDashLengthPropertyDescriptor(Object object) {
@@ -148,7 +148,7 @@ public class StyleItemProvider extends ItemProviderAdapter implements IEditingDo
 	/**
 	 * This adds a property descriptor for the Font Size feature. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected void addFontSizePropertyDescriptor(Object object) {
@@ -158,7 +158,7 @@ public class StyleItemProvider extends ItemProviderAdapter implements IEditingDo
 	/**
 	 * This adds a property descriptor for the Font Name feature. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected void addFontNamePropertyDescriptor(Object object) {
@@ -168,7 +168,7 @@ public class StyleItemProvider extends ItemProviderAdapter implements IEditingDo
 	/**
 	 * This adds a property descriptor for the Font Italic feature. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected void addFontItalicPropertyDescriptor(Object object) {
@@ -178,7 +178,7 @@ public class StyleItemProvider extends ItemProviderAdapter implements IEditingDo
 	/**
 	 * This adds a property descriptor for the Font Bold feature. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected void addFontBoldPropertyDescriptor(Object object) {
@@ -188,7 +188,7 @@ public class StyleItemProvider extends ItemProviderAdapter implements IEditingDo
 	/**
 	 * This adds a property descriptor for the Font Decoration feature. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected void addFontDecorationPropertyDescriptor(Object object) {
@@ -200,7 +200,7 @@ public class StyleItemProvider extends ItemProviderAdapter implements IEditingDo
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -215,7 +215,7 @@ public class StyleItemProvider extends ItemProviderAdapter implements IEditingDo
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -228,7 +228,7 @@ public class StyleItemProvider extends ItemProviderAdapter implements IEditingDo
 	/**
 	 * This returns Style.gif.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -240,7 +240,7 @@ public class StyleItemProvider extends ItemProviderAdapter implements IEditingDo
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -254,7 +254,7 @@ public class StyleItemProvider extends ItemProviderAdapter implements IEditingDo
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -284,7 +284,7 @@ public class StyleItemProvider extends ItemProviderAdapter implements IEditingDo
 	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s
 	 * describing the children that can be created under this object. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -297,7 +297,7 @@ public class StyleItemProvider extends ItemProviderAdapter implements IEditingDo
 	/**
 	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -314,7 +314,7 @@ public class StyleItemProvider extends ItemProviderAdapter implements IEditingDo
 	/**
 	 * Return the resource locator for this item provider's resources. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override

@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- *
+ *  
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *
+ *  
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -38,7 +38,7 @@ import org.eclipse.papyrus.dd.dg.Group;
  * <li>{@link org.eclipse.papyrus.dd.dg.impl.GroupImpl#getLayout <em>Layout</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
 public class GroupImpl extends GraphicalElementImpl implements Group {
@@ -46,7 +46,7 @@ public class GroupImpl extends GraphicalElementImpl implements Group {
 	/**
 	 * The cached value of the '{@link #getMembers() <em>Member</em>}' containment reference list.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getMembers()
 	 * @generated
 	 * @ordered
@@ -57,7 +57,7 @@ public class GroupImpl extends GraphicalElementImpl implements Group {
 	 * The default value of the '{@link #getLayout() <em>Layout</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getLayout()
 	 * @generated
 	 * @ordered
@@ -68,7 +68,7 @@ public class GroupImpl extends GraphicalElementImpl implements Group {
 	 * The cached value of the '{@link #getLayout() <em>Layout</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getLayout()
 	 * @generated
 	 * @ordered
@@ -77,7 +77,7 @@ public class GroupImpl extends GraphicalElementImpl implements Group {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected GroupImpl() {
@@ -86,7 +86,7 @@ public class GroupImpl extends GraphicalElementImpl implements Group {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -96,10 +96,9 @@ public class GroupImpl extends GraphicalElementImpl implements Group {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public EList<GraphicalElement> getMembers() {
 		if(members == null) {
 			members = new EObjectContainmentWithInverseEList<GraphicalElement>(GraphicalElement.class, this, DGPackage.GROUP__MEMBER, DGPackage.GRAPHICAL_ELEMENT__GROUP);
@@ -110,10 +109,9 @@ public class GroupImpl extends GraphicalElementImpl implements Group {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public String getLayout() {
 		return layout;
 	}
@@ -121,21 +119,19 @@ public class GroupImpl extends GraphicalElementImpl implements Group {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public void setLayout(String newLayout) {
 		String oldLayout = layout;
 		layout = newLayout;
-		if(eNotificationRequired()) {
+		if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.GROUP__LAYOUT, oldLayout, layout));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -150,7 +146,7 @@ public class GroupImpl extends GraphicalElementImpl implements Group {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -164,7 +160,7 @@ public class GroupImpl extends GraphicalElementImpl implements Group {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -180,7 +176,7 @@ public class GroupImpl extends GraphicalElementImpl implements Group {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -200,7 +196,7 @@ public class GroupImpl extends GraphicalElementImpl implements Group {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -218,7 +214,7 @@ public class GroupImpl extends GraphicalElementImpl implements Group {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -235,14 +231,13 @@ public class GroupImpl extends GraphicalElementImpl implements Group {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if(eIsProxy()) {
+		if(eIsProxy())
 			return super.toString();
-		}
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (layout: ");
 		result.append(layout);

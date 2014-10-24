@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- *
+ *  
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *
+ *  
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -42,7 +42,7 @@ import org.eclipse.papyrus.umldi.UmlDiagramElement;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.umldi.UmlDiagramElement} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- *
+ * 
  * @generated
  */
 public class UmlDiagramElementItemProvider extends DiagramElementItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, IItemColorProvider, IItemFontProvider {
@@ -51,7 +51,7 @@ public class UmlDiagramElementItemProvider extends DiagramElementItemProvider im
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public UmlDiagramElementItemProvider(AdapterFactory adapterFactory) {
@@ -62,7 +62,7 @@ public class UmlDiagramElementItemProvider extends DiagramElementItemProvider im
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -81,7 +81,7 @@ public class UmlDiagramElementItemProvider extends DiagramElementItemProvider im
 	 * This adds a property descriptor for the Uml Model Element feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected void addUmlModelElementPropertyDescriptor(Object object) {
@@ -92,7 +92,7 @@ public class UmlDiagramElementItemProvider extends DiagramElementItemProvider im
 	 * This adds a property descriptor for the Shared Uml Style feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected void addSharedUmlStylePropertyDescriptor(Object object) {
@@ -103,7 +103,7 @@ public class UmlDiagramElementItemProvider extends DiagramElementItemProvider im
 	 * This adds a property descriptor for the Target Uml Edge feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected void addTargetUmlEdgePropertyDescriptor(Object object) {
@@ -114,7 +114,7 @@ public class UmlDiagramElementItemProvider extends DiagramElementItemProvider im
 	 * This adds a property descriptor for the Source Uml Edge feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected void addSourceUmlEdgePropertyDescriptor(Object object) {
@@ -127,7 +127,7 @@ public class UmlDiagramElementItemProvider extends DiagramElementItemProvider im
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -135,7 +135,6 @@ public class UmlDiagramElementItemProvider extends DiagramElementItemProvider im
 		if(childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(UMLDIPackage.Literals.UML_DIAGRAM_ELEMENT__LOCAL_UML_STYLE);
-			childrenFeatures.add(UMLDIPackage.Literals.UML_DIAGRAM_ELEMENT__OWNED_UML_DIAGRAM_ELEMENT);
 		}
 		return childrenFeatures;
 	}
@@ -143,7 +142,7 @@ public class UmlDiagramElementItemProvider extends DiagramElementItemProvider im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -157,7 +156,7 @@ public class UmlDiagramElementItemProvider extends DiagramElementItemProvider im
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -170,7 +169,7 @@ public class UmlDiagramElementItemProvider extends DiagramElementItemProvider im
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -178,7 +177,6 @@ public class UmlDiagramElementItemProvider extends DiagramElementItemProvider im
 		updateChildren(notification);
 		switch(notification.getFeatureID(UmlDiagramElement.class)) {
 		case UMLDIPackage.UML_DIAGRAM_ELEMENT__LOCAL_UML_STYLE:
-		case UMLDIPackage.UML_DIAGRAM_ELEMENT__OWNED_UML_DIAGRAM_ELEMENT:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -190,25 +188,20 @@ public class UmlDiagramElementItemProvider extends DiagramElementItemProvider im
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 		newChildDescriptors.add(createChildParameter(UMLDIPackage.Literals.UML_DIAGRAM_ELEMENT__LOCAL_UML_STYLE, UMLDIFactory.eINSTANCE.createUmlStyle()));
-		newChildDescriptors.add(createChildParameter(UMLDIPackage.Literals.UML_DIAGRAM_ELEMENT__OWNED_UML_DIAGRAM_ELEMENT, UMLDIFactory.eINSTANCE.createUmlDiagram()));
-		newChildDescriptors.add(createChildParameter(UMLDIPackage.Literals.UML_DIAGRAM_ELEMENT__OWNED_UML_DIAGRAM_ELEMENT, UMLDIFactory.eINSTANCE.createUmlEdge()));
-		newChildDescriptors.add(createChildParameter(UMLDIPackage.Literals.UML_DIAGRAM_ELEMENT__OWNED_UML_DIAGRAM_ELEMENT, UMLDIFactory.eINSTANCE.createUmlShape()));
-		newChildDescriptors.add(createChildParameter(UMLDIPackage.Literals.UML_DIAGRAM_ELEMENT__OWNED_UML_DIAGRAM_ELEMENT, UMLDIFactory.eINSTANCE.createUmlCompartment()));
-		newChildDescriptors.add(createChildParameter(UMLDIPackage.Literals.UML_DIAGRAM_ELEMENT__OWNED_UML_DIAGRAM_ELEMENT, UMLDIFactory.eINSTANCE.createUmlLabel()));
 	}
 
 	/**
 	 * Return the resource locator for this item provider's resources.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override

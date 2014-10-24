@@ -30,7 +30,7 @@
   </genAnnotations>
   <foreignModel>DG.uml</foreignModel>
   <genPackages xsi:type="genmodel:GenPackage" prefix="DG" basePackage="org.eclipse.papyrus.dd"
-      disposableProviderFactory="true" ecorePackage="DG.ecore#/">
+      resource="XMI" disposableProviderFactory="true" ecorePackage="DG.ecore#/">
     <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="DG.ecore#//FontDecoration">
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="DG.ecore#//FontDecoration/underline"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="DG.ecore#//FontDecoration/overline"/>

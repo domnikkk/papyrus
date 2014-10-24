@@ -1,28 +1,34 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- *
+ *  
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *
+ *  
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
 package org.eclipse.papyrus.umldi.impl;
 
+import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 import org.eclipse.papyrus.dd.dc.Bounds;
 import org.eclipse.papyrus.dd.di.DIPackage;
 import org.eclipse.papyrus.dd.di.Diagram;
 import org.eclipse.papyrus.dd.di.Shape;
+import org.eclipse.papyrus.umldi.TopUmlDiagramElement;
 import org.eclipse.papyrus.umldi.UMLDIPackage;
 import org.eclipse.papyrus.umldi.UmlDiagram;
-import org.eclipse.papyrus.umldi.UmlDiagramKind;
+import org.eclipse.papyrus.umldi.UmlDiagramElement;
+import org.eclipse.uml2.common.util.DerivedUnionEObjectEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -35,19 +41,20 @@ import org.eclipse.papyrus.umldi.UmlDiagramKind;
  * <li>{@link org.eclipse.papyrus.umldi.impl.UmlDiagramImpl#getName <em>Name</em>}</li>
  * <li>{@link org.eclipse.papyrus.umldi.impl.UmlDiagramImpl#getDocumentation <em>Documentation</em>}</li>
  * <li>{@link org.eclipse.papyrus.umldi.impl.UmlDiagramImpl#getResolution <em>Resolution</em>}</li>
- * <li>{@link org.eclipse.papyrus.umldi.impl.UmlDiagramImpl#getKind <em>Kind</em>}</li>
+ * <li>{@link org.eclipse.papyrus.umldi.impl.UmlDiagramImpl#getOwnedUmlDiagramElement <em>Owned Uml Diagram Element</em>}</li>
+ * <li>{@link org.eclipse.papyrus.umldi.impl.UmlDiagramImpl#getTopUmlDiagramElement <em>Top Uml Diagram Element</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
-public class UmlDiagramImpl extends UmlDiagramElementImpl implements UmlDiagram {
+public abstract class UmlDiagramImpl extends UmlDiagramElementImpl implements UmlDiagram {
 
 	/**
 	 * The cached value of the '{@link #getBounds() <em>Bounds</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getBounds()
 	 * @generated
 	 * @ordered
@@ -58,7 +65,7 @@ public class UmlDiagramImpl extends UmlDiagramElementImpl implements UmlDiagram 
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -69,7 +76,7 @@ public class UmlDiagramImpl extends UmlDiagramElementImpl implements UmlDiagram 
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -80,7 +87,7 @@ public class UmlDiagramImpl extends UmlDiagramElementImpl implements UmlDiagram 
 	 * The default value of the '{@link #getDocumentation() <em>Documentation</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getDocumentation()
 	 * @generated
 	 * @ordered
@@ -91,7 +98,7 @@ public class UmlDiagramImpl extends UmlDiagramElementImpl implements UmlDiagram 
 	 * The cached value of the '{@link #getDocumentation() <em>Documentation</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getDocumentation()
 	 * @generated
 	 * @ordered
@@ -102,7 +109,7 @@ public class UmlDiagramImpl extends UmlDiagramElementImpl implements UmlDiagram 
 	 * The default value of the '{@link #getResolution() <em>Resolution</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getResolution()
 	 * @generated
 	 * @ordered
@@ -113,7 +120,7 @@ public class UmlDiagramImpl extends UmlDiagramElementImpl implements UmlDiagram 
 	 * The cached value of the '{@link #getResolution() <em>Resolution</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getResolution()
 	 * @generated
 	 * @ordered
@@ -121,31 +128,20 @@ public class UmlDiagramImpl extends UmlDiagramElementImpl implements UmlDiagram 
 	protected double resolution = RESOLUTION_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getKind() <em>Kind</em>}' attribute.
+	 * The cached value of the '{@link #getTopUmlDiagramElement() <em>Top Uml Diagram Element</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @see #getKind()
+	 * 
+	 * @see #getTopUmlDiagramElement()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final UmlDiagramKind KIND_EDEFAULT = UmlDiagramKind.CLASS;
-
-	/**
-	 * The cached value of the '{@link #getKind() <em>Kind</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @see #getKind()
-	 * @generated
-	 * @ordered
-	 */
-	protected UmlDiagramKind kind = KIND_EDEFAULT;
+	protected EList<TopUmlDiagramElement> topUmlDiagramElement;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected UmlDiagramImpl() {
@@ -155,7 +151,7 @@ public class UmlDiagramImpl extends UmlDiagramElementImpl implements UmlDiagram 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -166,10 +162,9 @@ public class UmlDiagramImpl extends UmlDiagramElementImpl implements UmlDiagram 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public Bounds getBounds() {
 		return bounds;
 	}
@@ -177,7 +172,7 @@ public class UmlDiagramImpl extends UmlDiagramElementImpl implements UmlDiagram 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetBounds(Bounds newBounds, NotificationChain msgs) {
@@ -185,11 +180,10 @@ public class UmlDiagramImpl extends UmlDiagramElementImpl implements UmlDiagram 
 		bounds = newBounds;
 		if(eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, UMLDIPackage.UML_DIAGRAM__BOUNDS, oldBounds, newBounds);
-			if(msgs == null) {
+			if(msgs == null)
 				msgs = notification;
-			} else {
+			else
 				msgs.add(notification);
-			}
 		}
 		return msgs;
 	}
@@ -197,35 +191,29 @@ public class UmlDiagramImpl extends UmlDiagramElementImpl implements UmlDiagram 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public void setBounds(Bounds newBounds) {
 		if(newBounds != bounds) {
 			NotificationChain msgs = null;
-			if(bounds != null) {
+			if(bounds != null)
 				msgs = ((InternalEObject)bounds).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - UMLDIPackage.UML_DIAGRAM__BOUNDS, null, msgs);
-			}
-			if(newBounds != null) {
+			if(newBounds != null)
 				msgs = ((InternalEObject)newBounds).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - UMLDIPackage.UML_DIAGRAM__BOUNDS, null, msgs);
-			}
 			msgs = basicSetBounds(newBounds, msgs);
-			if(msgs != null) {
+			if(msgs != null)
 				msgs.dispatch();
-			}
-		} else if(eNotificationRequired()) {
+		} else if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, UMLDIPackage.UML_DIAGRAM__BOUNDS, newBounds, newBounds));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public String getName() {
 		return name;
 	}
@@ -233,25 +221,22 @@ public class UmlDiagramImpl extends UmlDiagramElementImpl implements UmlDiagram 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
-		if(eNotificationRequired()) {
+		if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, UMLDIPackage.UML_DIAGRAM__NAME, oldName, name));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public String getDocumentation() {
 		return documentation;
 	}
@@ -259,25 +244,22 @@ public class UmlDiagramImpl extends UmlDiagramElementImpl implements UmlDiagram 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public void setDocumentation(String newDocumentation) {
 		String oldDocumentation = documentation;
 		documentation = newDocumentation;
-		if(eNotificationRequired()) {
+		if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, UMLDIPackage.UML_DIAGRAM__DOCUMENTATION, oldDocumentation, documentation));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public double getResolution() {
 		return resolution;
 	}
@@ -285,48 +267,71 @@ public class UmlDiagramImpl extends UmlDiagramElementImpl implements UmlDiagram 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public void setResolution(double newResolution) {
 		double oldResolution = resolution;
 		resolution = newResolution;
-		if(eNotificationRequired()) {
+		if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, UMLDIPackage.UML_DIAGRAM__RESOLUTION, oldResolution, resolution));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
-	public UmlDiagramKind getKind() {
-		return kind;
+	public EList<UmlDiagramElement> getOwnedUmlDiagramElement() {
+		return new DerivedUnionEObjectEList<UmlDiagramElement>(UmlDiagramElement.class, this, UMLDIPackage.UML_DIAGRAM__OWNED_UML_DIAGRAM_ELEMENT, OWNED_UML_DIAGRAM_ELEMENT_ESUBSETS);
 	}
+
+	/**
+	 * The array of subset feature identifiers for the '{@link #getOwnedUmlDiagramElement() <em>Owned Uml Diagram Element</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @see #getOwnedUmlDiagramElement()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int[] OWNED_UML_DIAGRAM_ELEMENT_ESUBSETS = new int[]{ UMLDIPackage.UML_DIAGRAM__TOP_UML_DIAGRAM_ELEMENT };
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
-	public void setKind(UmlDiagramKind newKind) {
-		UmlDiagramKind oldKind = kind;
-		kind = newKind == null ? KIND_EDEFAULT : newKind;
-		if(eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, UMLDIPackage.UML_DIAGRAM__KIND, oldKind, kind));
+	public EList<TopUmlDiagramElement> getTopUmlDiagramElement() {
+		if(topUmlDiagramElement == null) {
+			topUmlDiagramElement = new EObjectContainmentWithInverseEList<TopUmlDiagramElement>(TopUmlDiagramElement.class, this, UMLDIPackage.UML_DIAGRAM__TOP_UML_DIAGRAM_ELEMENT, UMLDIPackage.TOP_UML_DIAGRAM_ELEMENT__UML_DIAGRAM);
 		}
+		return topUmlDiagramElement;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch(featureID) {
+		case UMLDIPackage.UML_DIAGRAM__TOP_UML_DIAGRAM_ELEMENT:
+			return ((InternalEList<InternalEObject>)(InternalEList<?>)getTopUmlDiagramElement()).basicAdd(otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -334,6 +339,8 @@ public class UmlDiagramImpl extends UmlDiagramElementImpl implements UmlDiagram 
 		switch(featureID) {
 		case UMLDIPackage.UML_DIAGRAM__BOUNDS:
 			return basicSetBounds(null, msgs);
+		case UMLDIPackage.UML_DIAGRAM__TOP_UML_DIAGRAM_ELEMENT:
+			return ((InternalEList<?>)getTopUmlDiagramElement()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -341,7 +348,7 @@ public class UmlDiagramImpl extends UmlDiagramElementImpl implements UmlDiagram 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -355,8 +362,8 @@ public class UmlDiagramImpl extends UmlDiagramElementImpl implements UmlDiagram 
 			return getDocumentation();
 		case UMLDIPackage.UML_DIAGRAM__RESOLUTION:
 			return getResolution();
-		case UMLDIPackage.UML_DIAGRAM__KIND:
-			return getKind();
+		case UMLDIPackage.UML_DIAGRAM__TOP_UML_DIAGRAM_ELEMENT:
+			return getTopUmlDiagramElement();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -364,9 +371,10 @@ public class UmlDiagramImpl extends UmlDiagramElementImpl implements UmlDiagram 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch(featureID) {
@@ -382,8 +390,9 @@ public class UmlDiagramImpl extends UmlDiagramElementImpl implements UmlDiagram 
 		case UMLDIPackage.UML_DIAGRAM__RESOLUTION:
 			setResolution((Double)newValue);
 			return;
-		case UMLDIPackage.UML_DIAGRAM__KIND:
-			setKind((UmlDiagramKind)newValue);
+		case UMLDIPackage.UML_DIAGRAM__TOP_UML_DIAGRAM_ELEMENT:
+			getTopUmlDiagramElement().clear();
+			getTopUmlDiagramElement().addAll((Collection<? extends TopUmlDiagramElement>)newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -392,7 +401,7 @@ public class UmlDiagramImpl extends UmlDiagramElementImpl implements UmlDiagram 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -410,8 +419,8 @@ public class UmlDiagramImpl extends UmlDiagramElementImpl implements UmlDiagram 
 		case UMLDIPackage.UML_DIAGRAM__RESOLUTION:
 			setResolution(RESOLUTION_EDEFAULT);
 			return;
-		case UMLDIPackage.UML_DIAGRAM__KIND:
-			setKind(KIND_EDEFAULT);
+		case UMLDIPackage.UML_DIAGRAM__TOP_UML_DIAGRAM_ELEMENT:
+			getTopUmlDiagramElement().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -420,7 +429,7 @@ public class UmlDiagramImpl extends UmlDiagramElementImpl implements UmlDiagram 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -434,8 +443,10 @@ public class UmlDiagramImpl extends UmlDiagramElementImpl implements UmlDiagram 
 			return DOCUMENTATION_EDEFAULT == null ? documentation != null : !DOCUMENTATION_EDEFAULT.equals(documentation);
 		case UMLDIPackage.UML_DIAGRAM__RESOLUTION:
 			return resolution != RESOLUTION_EDEFAULT;
-		case UMLDIPackage.UML_DIAGRAM__KIND:
-			return kind != KIND_EDEFAULT;
+		case UMLDIPackage.UML_DIAGRAM__OWNED_UML_DIAGRAM_ELEMENT:
+			return isSetOwnedUmlDiagramElement();
+		case UMLDIPackage.UML_DIAGRAM__TOP_UML_DIAGRAM_ELEMENT:
+			return topUmlDiagramElement != null && !topUmlDiagramElement.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -443,7 +454,7 @@ public class UmlDiagramImpl extends UmlDiagramElementImpl implements UmlDiagram 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -474,7 +485,7 @@ public class UmlDiagramImpl extends UmlDiagramElementImpl implements UmlDiagram 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -505,14 +516,13 @@ public class UmlDiagramImpl extends UmlDiagramElementImpl implements UmlDiagram 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if(eIsProxy()) {
+		if(eIsProxy())
 			return super.toString();
-		}
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
 		result.append(name);
@@ -520,9 +530,18 @@ public class UmlDiagramImpl extends UmlDiagramElementImpl implements UmlDiagram 
 		result.append(documentation);
 		result.append(", resolution: ");
 		result.append(resolution);
-		result.append(", kind: ");
-		result.append(kind);
 		result.append(')');
 		return result.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public boolean isSetOwnedUmlDiagramElement() {
+		return super.isSetOwnedUmlDiagramElement() || eIsSet(UMLDIPackage.UML_DIAGRAM__TOP_UML_DIAGRAM_ELEMENT);
 	}
 } //UmlDiagramImpl

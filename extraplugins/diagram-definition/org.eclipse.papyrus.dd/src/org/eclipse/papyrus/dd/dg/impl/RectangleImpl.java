@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- *
+ *  
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *
+ *  
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -39,7 +39,7 @@ import org.eclipse.papyrus.dd.dg.util.DGValidator;
  * <li>{@link org.eclipse.papyrus.dd.dg.impl.RectangleImpl#getCornerRadius <em>Corner Radius</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
 public class RectangleImpl extends GraphicalElementImpl implements Rectangle {
@@ -47,7 +47,7 @@ public class RectangleImpl extends GraphicalElementImpl implements Rectangle {
 	/**
 	 * The cached value of the '{@link #getBounds() <em>Bounds</em>}' containment reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getBounds()
 	 * @generated
 	 * @ordered
@@ -58,7 +58,7 @@ public class RectangleImpl extends GraphicalElementImpl implements Rectangle {
 	 * The default value of the '{@link #getCornerRadius() <em>Corner Radius</em>}' attribute.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @see #getCornerRadius()
 	 * @generated
 	 * @ordered
@@ -69,7 +69,7 @@ public class RectangleImpl extends GraphicalElementImpl implements Rectangle {
 	 * The cached value of the '{@link #getCornerRadius() <em>Corner Radius</em>}' attribute.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @see #getCornerRadius()
 	 * @generated
 	 * @ordered
@@ -79,7 +79,7 @@ public class RectangleImpl extends GraphicalElementImpl implements Rectangle {
 	/**
 	 * This is true if the Corner Radius attribute has been set. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -87,7 +87,7 @@ public class RectangleImpl extends GraphicalElementImpl implements Rectangle {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected RectangleImpl() {
@@ -96,7 +96,7 @@ public class RectangleImpl extends GraphicalElementImpl implements Rectangle {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -106,17 +106,16 @@ public class RectangleImpl extends GraphicalElementImpl implements Rectangle {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public Bounds getBounds() {
 		return bounds;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetBounds(Bounds newBounds, NotificationChain msgs) {
@@ -124,87 +123,75 @@ public class RectangleImpl extends GraphicalElementImpl implements Rectangle {
 		bounds = newBounds;
 		if(eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DGPackage.RECTANGLE__BOUNDS, oldBounds, newBounds);
-			if(msgs == null) {
+			if(msgs == null)
 				msgs = notification;
-			} else {
+			else
 				msgs.add(notification);
-			}
 		}
 		return msgs;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public void setBounds(Bounds newBounds) {
 		if(newBounds != bounds) {
 			NotificationChain msgs = null;
-			if(bounds != null) {
+			if(bounds != null)
 				msgs = ((InternalEObject)bounds).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DGPackage.RECTANGLE__BOUNDS, null, msgs);
-			}
-			if(newBounds != null) {
+			if(newBounds != null)
 				msgs = ((InternalEObject)newBounds).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DGPackage.RECTANGLE__BOUNDS, null, msgs);
-			}
 			msgs = basicSetBounds(newBounds, msgs);
-			if(msgs != null) {
+			if(msgs != null)
 				msgs.dispatch();
-			}
-		} else if(eNotificationRequired()) {
+		} else if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.RECTANGLE__BOUNDS, newBounds, newBounds));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public double getCornerRadius() {
 		return cornerRadius;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public void setCornerRadius(double newCornerRadius) {
 		double oldCornerRadius = cornerRadius;
 		cornerRadius = newCornerRadius;
 		boolean oldCornerRadiusESet = cornerRadiusESet;
 		cornerRadiusESet = true;
-		if(eNotificationRequired()) {
+		if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.RECTANGLE__CORNER_RADIUS, oldCornerRadius, cornerRadius, !oldCornerRadiusESet));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public void unsetCornerRadius() {
 		double oldCornerRadius = cornerRadius;
 		boolean oldCornerRadiusESet = cornerRadiusESet;
 		cornerRadius = CORNER_RADIUS_EDEFAULT;
 		cornerRadiusESet = false;
-		if(eNotificationRequired()) {
+		if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.UNSET, DGPackage.RECTANGLE__CORNER_RADIUS, oldCornerRadius, CORNER_RADIUS_EDEFAULT, oldCornerRadiusESet));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public boolean isSetCornerRadius() {
 		return cornerRadiusESet;
 	}
@@ -213,7 +200,7 @@ public class RectangleImpl extends GraphicalElementImpl implements Rectangle {
 	 * The cached validation expression for the ' {@link #nonNegativeCornerRadius(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * <em>Non Negative Corner Radius</em>}' invariant operation. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #nonNegativeCornerRadius(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
@@ -222,17 +209,16 @@ public class RectangleImpl extends GraphicalElementImpl implements Rectangle {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public boolean nonNegativeCornerRadius(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return DGValidator.validate(DGPackage.Literals.RECTANGLE, this, diagnostics, context, "http://www.eclipse.org/emf/2002/Ecore/OCL", DGPackage.Literals.RECTANGLE___NON_NEGATIVE_CORNER_RADIUS__DIAGNOSTICCHAIN_MAP, NON_NEGATIVE_CORNER_RADIUS_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION, Diagnostic.ERROR, DGValidator.DIAGNOSTIC_SOURCE, DGValidator.RECTANGLE__NON_NEGATIVE_CORNER_RADIUS);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -246,7 +232,7 @@ public class RectangleImpl extends GraphicalElementImpl implements Rectangle {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -262,7 +248,7 @@ public class RectangleImpl extends GraphicalElementImpl implements Rectangle {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -280,7 +266,7 @@ public class RectangleImpl extends GraphicalElementImpl implements Rectangle {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -298,7 +284,7 @@ public class RectangleImpl extends GraphicalElementImpl implements Rectangle {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -314,7 +300,7 @@ public class RectangleImpl extends GraphicalElementImpl implements Rectangle {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -329,21 +315,19 @@ public class RectangleImpl extends GraphicalElementImpl implements Rectangle {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if(eIsProxy()) {
+		if(eIsProxy())
 			return super.toString();
-		}
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (cornerRadius: ");
-		if(cornerRadiusESet) {
+		if(cornerRadiusESet)
 			result.append(cornerRadius);
-		} else {
+		else
 			result.append("<unset>");
-		}
 		result.append(')');
 		return result.toString();
 	}

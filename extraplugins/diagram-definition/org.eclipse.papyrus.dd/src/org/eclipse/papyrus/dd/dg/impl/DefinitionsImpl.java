@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- *
+ *  
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *
+ *  
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -41,7 +41,7 @@ import org.eclipse.papyrus.dd.dg.StyleSheet;
  * <li>{@link org.eclipse.papyrus.dd.dg.impl.DefinitionsImpl#getStyleSheet <em>Style Sheet</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
 public class DefinitionsImpl extends MinimalEObjectImpl.Container implements Definitions {
@@ -50,7 +50,7 @@ public class DefinitionsImpl extends MinimalEObjectImpl.Container implements Def
 	 * The cached value of the '{@link #getDefinitions() <em>Definition</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getDefinitions()
 	 * @generated
 	 * @ordered
@@ -60,7 +60,7 @@ public class DefinitionsImpl extends MinimalEObjectImpl.Container implements Def
 	/**
 	 * The cached value of the '{@link #getStyleSheet() <em>Style Sheet</em>}' containment reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getStyleSheet()
 	 * @generated
 	 * @ordered
@@ -69,7 +69,7 @@ public class DefinitionsImpl extends MinimalEObjectImpl.Container implements Def
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected DefinitionsImpl() {
@@ -78,7 +78,7 @@ public class DefinitionsImpl extends MinimalEObjectImpl.Container implements Def
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -89,10 +89,9 @@ public class DefinitionsImpl extends MinimalEObjectImpl.Container implements Def
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public EList<Definition> getDefinitions() {
 		if(definitions == null) {
 			definitions = new EObjectContainmentEList<Definition>(Definition.class, this, DGPackage.DEFINITIONS__DEFINITION);
@@ -102,17 +101,16 @@ public class DefinitionsImpl extends MinimalEObjectImpl.Container implements Def
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public StyleSheet getStyleSheet() {
 		return styleSheet;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetStyleSheet(StyleSheet newStyleSheet, NotificationChain msgs) {
@@ -120,42 +118,36 @@ public class DefinitionsImpl extends MinimalEObjectImpl.Container implements Def
 		styleSheet = newStyleSheet;
 		if(eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DGPackage.DEFINITIONS__STYLE_SHEET, oldStyleSheet, newStyleSheet);
-			if(msgs == null) {
+			if(msgs == null)
 				msgs = notification;
-			} else {
+			else
 				msgs.add(notification);
-			}
 		}
 		return msgs;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public void setStyleSheet(StyleSheet newStyleSheet) {
 		if(newStyleSheet != styleSheet) {
 			NotificationChain msgs = null;
-			if(styleSheet != null) {
+			if(styleSheet != null)
 				msgs = ((InternalEObject)styleSheet).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DGPackage.DEFINITIONS__STYLE_SHEET, null, msgs);
-			}
-			if(newStyleSheet != null) {
+			if(newStyleSheet != null)
 				msgs = ((InternalEObject)newStyleSheet).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DGPackage.DEFINITIONS__STYLE_SHEET, null, msgs);
-			}
 			msgs = basicSetStyleSheet(newStyleSheet, msgs);
-			if(msgs != null) {
+			if(msgs != null)
 				msgs.dispatch();
-			}
-		} else if(eNotificationRequired()) {
+		} else if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.DEFINITIONS__STYLE_SHEET, newStyleSheet, newStyleSheet));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -171,7 +163,7 @@ public class DefinitionsImpl extends MinimalEObjectImpl.Container implements Def
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -187,7 +179,7 @@ public class DefinitionsImpl extends MinimalEObjectImpl.Container implements Def
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -207,7 +199,7 @@ public class DefinitionsImpl extends MinimalEObjectImpl.Container implements Def
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -225,7 +217,7 @@ public class DefinitionsImpl extends MinimalEObjectImpl.Container implements Def
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override

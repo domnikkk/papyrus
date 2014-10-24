@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- *
+ *  
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *
+ *  
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -21,7 +21,6 @@ import org.eclipse.papyrus.dd.di.DIPackage;
 import org.eclipse.papyrus.dd.di.Shape;
 import org.eclipse.papyrus.umldi.UMLDIPackage;
 import org.eclipse.papyrus.umldi.UmlCompartment;
-import org.eclipse.papyrus.umldi.UmlCompartmentKind;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,19 +30,18 @@ import org.eclipse.papyrus.umldi.UmlCompartmentKind;
  * The following features are implemented:
  * <ul>
  * <li>{@link org.eclipse.papyrus.umldi.impl.UmlCompartmentImpl#getBounds <em>Bounds</em>}</li>
- * <li>{@link org.eclipse.papyrus.umldi.impl.UmlCompartmentImpl#getKind <em>Kind</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
-public class UmlCompartmentImpl extends UmlDiagramElementImpl implements UmlCompartment {
+public abstract class UmlCompartmentImpl extends UmlDiagramElementImpl implements UmlCompartment {
 
 	/**
 	 * The cached value of the '{@link #getBounds() <em>Bounds</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getBounds()
 	 * @generated
 	 * @ordered
@@ -51,31 +49,9 @@ public class UmlCompartmentImpl extends UmlDiagramElementImpl implements UmlComp
 	protected Bounds bounds;
 
 	/**
-	 * The default value of the '{@link #getKind() <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @see #getKind()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final UmlCompartmentKind KIND_EDEFAULT = UmlCompartmentKind.ATTRIBUTES;
-
-	/**
-	 * The cached value of the '{@link #getKind() <em>Kind</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @see #getKind()
-	 * @generated
-	 * @ordered
-	 */
-	protected UmlCompartmentKind kind = KIND_EDEFAULT;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected UmlCompartmentImpl() {
@@ -85,7 +61,7 @@ public class UmlCompartmentImpl extends UmlDiagramElementImpl implements UmlComp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -96,10 +72,9 @@ public class UmlCompartmentImpl extends UmlDiagramElementImpl implements UmlComp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public Bounds getBounds() {
 		return bounds;
 	}
@@ -107,7 +82,7 @@ public class UmlCompartmentImpl extends UmlDiagramElementImpl implements UmlComp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetBounds(Bounds newBounds, NotificationChain msgs) {
@@ -115,11 +90,10 @@ public class UmlCompartmentImpl extends UmlDiagramElementImpl implements UmlComp
 		bounds = newBounds;
 		if(eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, UMLDIPackage.UML_COMPARTMENT__BOUNDS, oldBounds, newBounds);
-			if(msgs == null) {
+			if(msgs == null)
 				msgs = notification;
-			} else {
+			else
 				msgs.add(notification);
-			}
 		}
 		return msgs;
 	}
@@ -127,58 +101,27 @@ public class UmlCompartmentImpl extends UmlDiagramElementImpl implements UmlComp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public void setBounds(Bounds newBounds) {
 		if(newBounds != bounds) {
 			NotificationChain msgs = null;
-			if(bounds != null) {
+			if(bounds != null)
 				msgs = ((InternalEObject)bounds).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - UMLDIPackage.UML_COMPARTMENT__BOUNDS, null, msgs);
-			}
-			if(newBounds != null) {
+			if(newBounds != null)
 				msgs = ((InternalEObject)newBounds).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - UMLDIPackage.UML_COMPARTMENT__BOUNDS, null, msgs);
-			}
 			msgs = basicSetBounds(newBounds, msgs);
-			if(msgs != null) {
+			if(msgs != null)
 				msgs.dispatch();
-			}
-		} else if(eNotificationRequired()) {
+		} else if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, UMLDIPackage.UML_COMPARTMENT__BOUNDS, newBounds, newBounds));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public UmlCompartmentKind getKind() {
-		return kind;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public void setKind(UmlCompartmentKind newKind) {
-		UmlCompartmentKind oldKind = kind;
-		kind = newKind == null ? KIND_EDEFAULT : newKind;
-		if(eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, UMLDIPackage.UML_COMPARTMENT__KIND, oldKind, kind));
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -193,7 +136,7 @@ public class UmlCompartmentImpl extends UmlDiagramElementImpl implements UmlComp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -201,8 +144,6 @@ public class UmlCompartmentImpl extends UmlDiagramElementImpl implements UmlComp
 		switch(featureID) {
 		case UMLDIPackage.UML_COMPARTMENT__BOUNDS:
 			return getBounds();
-		case UMLDIPackage.UML_COMPARTMENT__KIND:
-			return getKind();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -210,7 +151,7 @@ public class UmlCompartmentImpl extends UmlDiagramElementImpl implements UmlComp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -219,9 +160,6 @@ public class UmlCompartmentImpl extends UmlDiagramElementImpl implements UmlComp
 		case UMLDIPackage.UML_COMPARTMENT__BOUNDS:
 			setBounds((Bounds)newValue);
 			return;
-		case UMLDIPackage.UML_COMPARTMENT__KIND:
-			setKind((UmlCompartmentKind)newValue);
-			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -229,7 +167,7 @@ public class UmlCompartmentImpl extends UmlDiagramElementImpl implements UmlComp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -238,9 +176,6 @@ public class UmlCompartmentImpl extends UmlDiagramElementImpl implements UmlComp
 		case UMLDIPackage.UML_COMPARTMENT__BOUNDS:
 			setBounds((Bounds)null);
 			return;
-		case UMLDIPackage.UML_COMPARTMENT__KIND:
-			setKind(KIND_EDEFAULT);
-			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -248,7 +183,7 @@ public class UmlCompartmentImpl extends UmlDiagramElementImpl implements UmlComp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -256,8 +191,6 @@ public class UmlCompartmentImpl extends UmlDiagramElementImpl implements UmlComp
 		switch(featureID) {
 		case UMLDIPackage.UML_COMPARTMENT__BOUNDS:
 			return bounds != null;
-		case UMLDIPackage.UML_COMPARTMENT__KIND:
-			return kind != KIND_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -265,7 +198,7 @@ public class UmlCompartmentImpl extends UmlDiagramElementImpl implements UmlComp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -284,7 +217,7 @@ public class UmlCompartmentImpl extends UmlDiagramElementImpl implements UmlComp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -298,23 +231,5 @@ public class UmlCompartmentImpl extends UmlDiagramElementImpl implements UmlComp
 			}
 		}
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if(eIsProxy()) {
-			return super.toString();
-		}
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (kind: ");
-		result.append(kind);
-		result.append(')');
-		return result.toString();
 	}
 } //UmlCompartmentImpl

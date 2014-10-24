@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- *
+ *  
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *
+ *  
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -31,7 +31,7 @@ import org.eclipse.papyrus.dd.dg.StyleSelector;
  * <li>{@link org.eclipse.papyrus.dd.dg.impl.StyleSelectorImpl#getClasses <em>Class</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
 public class StyleSelectorImpl extends MinimalEObjectImpl.Container implements StyleSelector {
@@ -39,7 +39,7 @@ public class StyleSelectorImpl extends MinimalEObjectImpl.Container implements S
 	/**
 	 * The default value of the '{@link #getKind() <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getKind()
 	 * @generated
 	 * @ordered
@@ -49,7 +49,7 @@ public class StyleSelectorImpl extends MinimalEObjectImpl.Container implements S
 	/**
 	 * The cached value of the '{@link #getKind() <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getKind()
 	 * @generated
 	 * @ordered
@@ -60,7 +60,7 @@ public class StyleSelectorImpl extends MinimalEObjectImpl.Container implements S
 	 * This is true if the Kind attribute has been set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -69,7 +69,7 @@ public class StyleSelectorImpl extends MinimalEObjectImpl.Container implements S
 	/**
 	 * The cached value of the '{@link #getClasses() <em>Class</em>}' attribute list.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getClasses()
 	 * @generated
 	 * @ordered
@@ -78,7 +78,7 @@ public class StyleSelectorImpl extends MinimalEObjectImpl.Container implements S
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected StyleSelectorImpl() {
@@ -87,7 +87,7 @@ public class StyleSelectorImpl extends MinimalEObjectImpl.Container implements S
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -97,62 +97,55 @@ public class StyleSelectorImpl extends MinimalEObjectImpl.Container implements S
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public ElementKind getKind() {
 		return kind;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public void setKind(ElementKind newKind) {
 		ElementKind oldKind = kind;
 		kind = newKind == null ? KIND_EDEFAULT : newKind;
 		boolean oldKindESet = kindESet;
 		kindESet = true;
-		if(eNotificationRequired()) {
+		if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.STYLE_SELECTOR__KIND, oldKind, kind, !oldKindESet));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public void unsetKind() {
 		ElementKind oldKind = kind;
 		boolean oldKindESet = kindESet;
 		kind = KIND_EDEFAULT;
 		kindESet = false;
-		if(eNotificationRequired()) {
+		if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.UNSET, DGPackage.STYLE_SELECTOR__KIND, oldKind, KIND_EDEFAULT, oldKindESet));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public boolean isSetKind() {
 		return kindESet;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public EList<String> getClasses() {
 		if(classes == null) {
 			classes = new EDataTypeUniqueEList<String>(String.class, this, DGPackage.STYLE_SELECTOR__CLASS);
@@ -162,7 +155,7 @@ public class StyleSelectorImpl extends MinimalEObjectImpl.Container implements S
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -178,7 +171,7 @@ public class StyleSelectorImpl extends MinimalEObjectImpl.Container implements S
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -198,7 +191,7 @@ public class StyleSelectorImpl extends MinimalEObjectImpl.Container implements S
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -216,7 +209,7 @@ public class StyleSelectorImpl extends MinimalEObjectImpl.Container implements S
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -232,21 +225,19 @@ public class StyleSelectorImpl extends MinimalEObjectImpl.Container implements S
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if(eIsProxy()) {
+		if(eIsProxy())
 			return super.toString();
-		}
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (kind: ");
-		if(kindESet) {
+		if(kindESet)
 			result.append(kind);
-		} else {
+		else
 			result.append("<unset>");
-		}
 		result.append(", class: ");
 		result.append(classes);
 		result.append(')');

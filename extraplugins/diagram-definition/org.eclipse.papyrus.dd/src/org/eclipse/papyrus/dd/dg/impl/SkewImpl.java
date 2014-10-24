@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- *
+ *  
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *
+ *  
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -29,7 +29,7 @@ import org.eclipse.papyrus.dd.dg.Skew;
  * <li>{@link org.eclipse.papyrus.dd.dg.impl.SkewImpl#getAngleY <em>Angle Y</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
 public class SkewImpl extends TransformImpl implements Skew {
@@ -37,7 +37,7 @@ public class SkewImpl extends TransformImpl implements Skew {
 	/**
 	 * The default value of the '{@link #getAngleX() <em>Angle X</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getAngleX()
 	 * @generated
 	 * @ordered
@@ -47,7 +47,7 @@ public class SkewImpl extends TransformImpl implements Skew {
 	/**
 	 * The cached value of the '{@link #getAngleX() <em>Angle X</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getAngleX()
 	 * @generated
 	 * @ordered
@@ -57,7 +57,7 @@ public class SkewImpl extends TransformImpl implements Skew {
 	/**
 	 * The default value of the '{@link #getAngleY() <em>Angle Y</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getAngleY()
 	 * @generated
 	 * @ordered
@@ -67,7 +67,7 @@ public class SkewImpl extends TransformImpl implements Skew {
 	/**
 	 * The cached value of the '{@link #getAngleY() <em>Angle Y</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getAngleY()
 	 * @generated
 	 * @ordered
@@ -76,7 +76,7 @@ public class SkewImpl extends TransformImpl implements Skew {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected SkewImpl() {
@@ -85,7 +85,7 @@ public class SkewImpl extends TransformImpl implements Skew {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -95,55 +95,49 @@ public class SkewImpl extends TransformImpl implements Skew {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public double getAngleX() {
 		return angleX;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public void setAngleX(double newAngleX) {
 		double oldAngleX = angleX;
 		angleX = newAngleX;
-		if(eNotificationRequired()) {
+		if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.SKEW__ANGLE_X, oldAngleX, angleX));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public double getAngleY() {
 		return angleY;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public void setAngleY(double newAngleY) {
 		double oldAngleY = angleY;
 		angleY = newAngleY;
-		if(eNotificationRequired()) {
+		if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.SKEW__ANGLE_Y, oldAngleY, angleY));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -159,7 +153,7 @@ public class SkewImpl extends TransformImpl implements Skew {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -177,7 +171,7 @@ public class SkewImpl extends TransformImpl implements Skew {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -195,7 +189,7 @@ public class SkewImpl extends TransformImpl implements Skew {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -211,14 +205,13 @@ public class SkewImpl extends TransformImpl implements Skew {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if(eIsProxy()) {
+		if(eIsProxy())
 			return super.toString();
-		}
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (angleX: ");
 		result.append(angleX);

@@ -31,6 +31,13 @@
             genModel="model/DG.genmodel"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated DG -->
+      <parser
+            type="dg"
+            class="org.eclipse.papyrus.dd.dg.util.DGResourceFactoryImpl"/>
+   </extension>
+
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated DI -->
       <package

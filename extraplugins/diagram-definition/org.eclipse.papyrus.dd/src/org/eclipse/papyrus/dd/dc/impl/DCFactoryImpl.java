@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- *
+ *  
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *
+ *  
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -27,7 +27,7 @@ import org.eclipse.papyrus.dd.dc.*;
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!--
  * end-user-doc -->
- *
+ * 
  * @generated
  */
 public class DCFactoryImpl extends EFactoryImpl implements DCFactory {
@@ -36,7 +36,7 @@ public class DCFactoryImpl extends EFactoryImpl implements DCFactory {
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public static DCFactory init() {
@@ -55,7 +55,7 @@ public class DCFactoryImpl extends EFactoryImpl implements DCFactory {
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public DCFactoryImpl() {
@@ -64,7 +64,7 @@ public class DCFactoryImpl extends EFactoryImpl implements DCFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -83,7 +83,7 @@ public class DCFactoryImpl extends EFactoryImpl implements DCFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -108,7 +108,7 @@ public class DCFactoryImpl extends EFactoryImpl implements DCFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -133,10 +133,9 @@ public class DCFactoryImpl extends EFactoryImpl implements DCFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public Point createPoint() {
 		PointImpl point = new PointImpl();
 		return point;
@@ -144,10 +143,9 @@ public class DCFactoryImpl extends EFactoryImpl implements DCFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public Dimension createDimension() {
 		DimensionImpl dimension = new DimensionImpl();
 		return dimension;
@@ -155,10 +153,9 @@ public class DCFactoryImpl extends EFactoryImpl implements DCFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public Bounds createBounds() {
 		BoundsImpl bounds = new BoundsImpl();
 		return bounds;
@@ -166,20 +163,19 @@ public class DCFactoryImpl extends EFactoryImpl implements DCFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public KnownColor createKnownColorFromString(EDataType eDataType, String initialValue) {
 		KnownColor result = KnownColor.get(initialValue);
-		if(result == null) {
+		if(result == null)
 			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		}
 		return result;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public String convertKnownColorToString(EDataType eDataType, Object instanceValue) {
@@ -188,7 +184,7 @@ public class DCFactoryImpl extends EFactoryImpl implements DCFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public Boolean createBooleanFromString(EDataType eDataType, String initialValue) {
@@ -197,7 +193,7 @@ public class DCFactoryImpl extends EFactoryImpl implements DCFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public String convertBooleanToString(EDataType eDataType, Object instanceValue) {
@@ -206,7 +202,7 @@ public class DCFactoryImpl extends EFactoryImpl implements DCFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public Integer createIntegerFromString(EDataType eDataType, String initialValue) {
@@ -215,7 +211,7 @@ public class DCFactoryImpl extends EFactoryImpl implements DCFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public String convertIntegerToString(EDataType eDataType, Object instanceValue) {
@@ -224,7 +220,7 @@ public class DCFactoryImpl extends EFactoryImpl implements DCFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public Double createRealFromString(EDataType eDataType, String initialValue) {
@@ -233,7 +229,7 @@ public class DCFactoryImpl extends EFactoryImpl implements DCFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public String convertRealToString(EDataType eDataType, Object instanceValue) {
@@ -242,7 +238,7 @@ public class DCFactoryImpl extends EFactoryImpl implements DCFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public String createStringFromString(EDataType eDataType, String initialValue) {
@@ -251,7 +247,7 @@ public class DCFactoryImpl extends EFactoryImpl implements DCFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public String convertStringToString(EDataType eDataType, Object instanceValue) {
@@ -260,42 +256,39 @@ public class DCFactoryImpl extends EFactoryImpl implements DCFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated NOT
 	 */
 	public Color createColorFromString(EDataType eDataType, String initialValue) {
-		if(initialValue == null || initialValue.isEmpty()) {
+		if(initialValue == null || initialValue.isEmpty())
 			return null;
-		}
 		return Color.decode(initialValue);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated NOT
 	 */
 	public String convertColorToString(EDataType eDataType, Object instanceValue) {
-		if(instanceValue == null) {
+		if(instanceValue == null)
 			return null;
-		}
 		Color c = (Color)instanceValue;
 		return String.format("#%02X%02X%02X", c.getRed(), c.getGreen(), c.getBlue());
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public DCPackage getDCPackage() {
 		return (DCPackage)getEPackage();
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @deprecated
 	 * @generated
 	 */

@@ -1,0 +1,37 @@
+/**
+ * Copyright (c) 2014 CEA LIST.
+ *  
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *  
+ * Contributors:
+ *  CEA LIST - Initial API and implementation
+ */
+import UmlUtilities;
+
+modeltype DC uses "http://www.omg.org/spec/DD/20110901/DC";
+modeltype DG uses "http://www.omg.org/spec/DD/20110901/DG";
+modeltype DI uses "http://www.omg.org/spec/DD/20110901/DI";
+modeltype UMLDI uses "http://www.omg.org/spec/UML/20131001/UMLDI";
+modeltype UML uses "http://www.eclipse.org/uml2/4.0.0/UML";
+
+library UmlCompartments;
+
+mapping UML::Element::compartmentToGraphicalElement(compartment : UMLDI::UmlCompartment) : DG::GraphicalElement { 
+	init {
+		result := object DG::Line {
+			start := object DC::Point { 
+				x := compartment.bounds.x; 
+				y := compartment.bounds.y; 
+			};
+			_end := object DC::Point { 
+				x := compartment.bounds.x + compartment.bounds.width; 
+				y := compartment.bounds.y; 
+			};
+		}
+	}
+}
+
+

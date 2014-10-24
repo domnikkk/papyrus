@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- *
+ *  
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *
+ *  
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -36,7 +36,7 @@ import org.eclipse.papyrus.dd.dg.Matrix;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.dd.dg.Matrix} object.
  * <!-- begin-user-doc --> <!--
  * end-user-doc -->
- *
+ * 
  * @generated
  */
 public class MatrixItemProvider extends TransformItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, IItemColorProvider, IItemFontProvider {
@@ -44,7 +44,7 @@ public class MatrixItemProvider extends TransformItemProvider implements IEditin
 	/**
 	 * This constructs an instance from a factory and a notifier. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public MatrixItemProvider(AdapterFactory adapterFactory) {
@@ -54,7 +54,7 @@ public class MatrixItemProvider extends TransformItemProvider implements IEditin
 	/**
 	 * This returns the property descriptors for the adapted class. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -75,7 +75,7 @@ public class MatrixItemProvider extends TransformItemProvider implements IEditin
 	 * This adds a property descriptor for the A feature.
 	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected void addAPropertyDescriptor(Object object) {
@@ -86,7 +86,7 @@ public class MatrixItemProvider extends TransformItemProvider implements IEditin
 	 * This adds a property descriptor for the B feature.
 	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected void addBPropertyDescriptor(Object object) {
@@ -97,7 +97,7 @@ public class MatrixItemProvider extends TransformItemProvider implements IEditin
 	 * This adds a property descriptor for the C feature.
 	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected void addCPropertyDescriptor(Object object) {
@@ -108,7 +108,7 @@ public class MatrixItemProvider extends TransformItemProvider implements IEditin
 	 * This adds a property descriptor for the D feature.
 	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected void addDPropertyDescriptor(Object object) {
@@ -119,7 +119,7 @@ public class MatrixItemProvider extends TransformItemProvider implements IEditin
 	 * This adds a property descriptor for the E feature.
 	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected void addEPropertyDescriptor(Object object) {
@@ -130,7 +130,7 @@ public class MatrixItemProvider extends TransformItemProvider implements IEditin
 	 * This adds a property descriptor for the F feature.
 	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected void addFPropertyDescriptor(Object object) {
@@ -140,7 +140,7 @@ public class MatrixItemProvider extends TransformItemProvider implements IEditin
 	/**
 	 * This returns Matrix.gif.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -152,7 +152,7 @@ public class MatrixItemProvider extends TransformItemProvider implements IEditin
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -166,7 +166,7 @@ public class MatrixItemProvider extends TransformItemProvider implements IEditin
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -189,7 +189,7 @@ public class MatrixItemProvider extends TransformItemProvider implements IEditin
 	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s
 	 * describing the children that can be created under this object. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override

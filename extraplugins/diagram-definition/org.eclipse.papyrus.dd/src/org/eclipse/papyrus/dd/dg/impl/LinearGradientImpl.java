@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- *
+ *  
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *
+ *  
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -42,7 +42,7 @@ import org.eclipse.papyrus.dd.dg.util.DGValidator;
  * <li>{@link org.eclipse.papyrus.dd.dg.impl.LinearGradientImpl#getEnd <em>End</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
 public class LinearGradientImpl extends GradientImpl implements LinearGradient {
@@ -50,7 +50,7 @@ public class LinearGradientImpl extends GradientImpl implements LinearGradient {
 	/**
 	 * The cached value of the '{@link #getStart() <em>Start</em>}' containment reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getStart()
 	 * @generated
 	 * @ordered
@@ -60,7 +60,7 @@ public class LinearGradientImpl extends GradientImpl implements LinearGradient {
 	/**
 	 * The cached value of the '{@link #getEnd() <em>End</em>}' containment reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getEnd()
 	 * @generated
 	 * @ordered
@@ -69,7 +69,7 @@ public class LinearGradientImpl extends GradientImpl implements LinearGradient {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected LinearGradientImpl() {
@@ -78,7 +78,7 @@ public class LinearGradientImpl extends GradientImpl implements LinearGradient {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -88,17 +88,16 @@ public class LinearGradientImpl extends GradientImpl implements LinearGradient {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public Point getStart() {
 		return start;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetStart(Point newStart, NotificationChain msgs) {
@@ -106,52 +105,45 @@ public class LinearGradientImpl extends GradientImpl implements LinearGradient {
 		start = newStart;
 		if(eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DGPackage.LINEAR_GRADIENT__START, oldStart, newStart);
-			if(msgs == null) {
+			if(msgs == null)
 				msgs = notification;
-			} else {
+			else
 				msgs.add(notification);
-			}
 		}
 		return msgs;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public void setStart(Point newStart) {
 		if(newStart != start) {
 			NotificationChain msgs = null;
-			if(start != null) {
+			if(start != null)
 				msgs = ((InternalEObject)start).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DGPackage.LINEAR_GRADIENT__START, null, msgs);
-			}
-			if(newStart != null) {
+			if(newStart != null)
 				msgs = ((InternalEObject)newStart).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DGPackage.LINEAR_GRADIENT__START, null, msgs);
-			}
 			msgs = basicSetStart(newStart, msgs);
-			if(msgs != null) {
+			if(msgs != null)
 				msgs.dispatch();
-			}
-		} else if(eNotificationRequired()) {
+		} else if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.LINEAR_GRADIENT__START, newStart, newStart));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public Point getEnd() {
 		return end;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetEnd(Point newEnd, NotificationChain msgs) {
@@ -159,37 +151,31 @@ public class LinearGradientImpl extends GradientImpl implements LinearGradient {
 		end = newEnd;
 		if(eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DGPackage.LINEAR_GRADIENT__END, oldEnd, newEnd);
-			if(msgs == null) {
+			if(msgs == null)
 				msgs = notification;
-			} else {
+			else
 				msgs.add(notification);
-			}
 		}
 		return msgs;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public void setEnd(Point newEnd) {
 		if(newEnd != end) {
 			NotificationChain msgs = null;
-			if(end != null) {
+			if(end != null)
 				msgs = ((InternalEObject)end).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DGPackage.LINEAR_GRADIENT__END, null, msgs);
-			}
-			if(newEnd != null) {
+			if(newEnd != null)
 				msgs = ((InternalEObject)newEnd).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DGPackage.LINEAR_GRADIENT__END, null, msgs);
-			}
 			msgs = basicSetEnd(newEnd, msgs);
-			if(msgs != null) {
+			if(msgs != null)
 				msgs.dispatch();
-			}
-		} else if(eNotificationRequired()) {
+		} else if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.LINEAR_GRADIENT__END, newEnd, newEnd));
-		}
 	}
 
 	/**
@@ -197,7 +183,7 @@ public class LinearGradientImpl extends GradientImpl implements LinearGradient {
 	 * <em>Valid Gradient Vector</em>}' invariant operation.
 	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #validGradientVector(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
@@ -206,17 +192,16 @@ public class LinearGradientImpl extends GradientImpl implements LinearGradient {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public boolean validGradientVector(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return DGValidator.validate(DGPackage.Literals.LINEAR_GRADIENT, this, diagnostics, context, "http://www.eclipse.org/emf/2002/Ecore/OCL", DGPackage.Literals.LINEAR_GRADIENT___VALID_GRADIENT_VECTOR__DIAGNOSTICCHAIN_MAP, VALID_GRADIENT_VECTOR_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION, Diagnostic.ERROR, DGValidator.DIAGNOSTIC_SOURCE, DGValidator.LINEAR_GRADIENT__VALID_GRADIENT_VECTOR);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -232,7 +217,7 @@ public class LinearGradientImpl extends GradientImpl implements LinearGradient {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -248,7 +233,7 @@ public class LinearGradientImpl extends GradientImpl implements LinearGradient {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -266,7 +251,7 @@ public class LinearGradientImpl extends GradientImpl implements LinearGradient {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -284,7 +269,7 @@ public class LinearGradientImpl extends GradientImpl implements LinearGradient {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -300,7 +285,7 @@ public class LinearGradientImpl extends GradientImpl implements LinearGradient {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override

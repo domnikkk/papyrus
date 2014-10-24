@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- *
+ *  
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *
+ *  
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -40,7 +40,7 @@ import org.eclipse.papyrus.dd.dg.util.DGValidator;
  * <li>{@link org.eclipse.papyrus.dd.dg.impl.UseImpl#getReferencedElement <em>Referenced Element</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
 public class UseImpl extends GraphicalElementImpl implements Use {
@@ -48,7 +48,7 @@ public class UseImpl extends GraphicalElementImpl implements Use {
 	/**
 	 * The cached value of the '{@link #getBounds() <em>Bounds</em>}' containment reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getBounds()
 	 * @generated
 	 * @ordered
@@ -59,7 +59,7 @@ public class UseImpl extends GraphicalElementImpl implements Use {
 	 * The cached value of the '{@link #getReferencedElement() <em>Referenced Element</em>}' reference.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @see #getReferencedElement()
 	 * @generated
 	 * @ordered
@@ -68,7 +68,7 @@ public class UseImpl extends GraphicalElementImpl implements Use {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected UseImpl() {
@@ -77,7 +77,7 @@ public class UseImpl extends GraphicalElementImpl implements Use {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -87,17 +87,16 @@ public class UseImpl extends GraphicalElementImpl implements Use {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public Bounds getBounds() {
 		return bounds;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetBounds(Bounds newBounds, NotificationChain msgs) {
@@ -105,53 +104,45 @@ public class UseImpl extends GraphicalElementImpl implements Use {
 		bounds = newBounds;
 		if(eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DGPackage.USE__BOUNDS, oldBounds, newBounds);
-			if(msgs == null) {
+			if(msgs == null)
 				msgs = notification;
-			} else {
+			else
 				msgs.add(notification);
-			}
 		}
 		return msgs;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public void setBounds(Bounds newBounds) {
 		if(newBounds != bounds) {
 			NotificationChain msgs = null;
-			if(bounds != null) {
+			if(bounds != null)
 				msgs = ((InternalEObject)bounds).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DGPackage.USE__BOUNDS, null, msgs);
-			}
-			if(newBounds != null) {
+			if(newBounds != null)
 				msgs = ((InternalEObject)newBounds).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DGPackage.USE__BOUNDS, null, msgs);
-			}
 			msgs = basicSetBounds(newBounds, msgs);
-			if(msgs != null) {
+			if(msgs != null)
 				msgs.dispatch();
-			}
-		} else if(eNotificationRequired()) {
+		} else if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.USE__BOUNDS, newBounds, newBounds));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public GraphicalElement getReferencedElement() {
 		if(referencedElement != null && referencedElement.eIsProxy()) {
 			InternalEObject oldReferencedElement = (InternalEObject)referencedElement;
 			referencedElement = (GraphicalElement)eResolveProxy(oldReferencedElement);
 			if(referencedElement != oldReferencedElement) {
-				if(eNotificationRequired()) {
+				if(eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DGPackage.USE__REFERENCED_ELEMENT, oldReferencedElement, referencedElement));
-				}
 			}
 		}
 		return referencedElement;
@@ -159,7 +150,7 @@ public class UseImpl extends GraphicalElementImpl implements Use {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public GraphicalElement basicGetReferencedElement() {
@@ -168,23 +159,21 @@ public class UseImpl extends GraphicalElementImpl implements Use {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public void setReferencedElement(GraphicalElement newReferencedElement) {
 		GraphicalElement oldReferencedElement = referencedElement;
 		referencedElement = newReferencedElement;
-		if(eNotificationRequired()) {
+		if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.USE__REFERENCED_ELEMENT, oldReferencedElement, referencedElement));
-		}
 	}
 
 	/**
 	 * The cached validation expression for the ' {@link #referencedElementHasId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * <em>Referenced Element Has Id</em>}' invariant operation. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #referencedElementHasId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
@@ -193,17 +182,16 @@ public class UseImpl extends GraphicalElementImpl implements Use {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public boolean referencedElementHasId(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return DGValidator.validate(DGPackage.Literals.USE, this, diagnostics, context, "http://www.eclipse.org/emf/2002/Ecore/OCL", DGPackage.Literals.USE___REFERENCED_ELEMENT_HAS_ID__DIAGNOSTICCHAIN_MAP, REFERENCED_ELEMENT_HAS_ID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION, Diagnostic.ERROR, DGValidator.DIAGNOSTIC_SOURCE, DGValidator.USE__REFERENCED_ELEMENT_HAS_ID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -217,7 +205,7 @@ public class UseImpl extends GraphicalElementImpl implements Use {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -226,9 +214,8 @@ public class UseImpl extends GraphicalElementImpl implements Use {
 		case DGPackage.USE__BOUNDS:
 			return getBounds();
 		case DGPackage.USE__REFERENCED_ELEMENT:
-			if(resolve) {
+			if(resolve)
 				return getReferencedElement();
-			}
 			return basicGetReferencedElement();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -236,7 +223,7 @@ public class UseImpl extends GraphicalElementImpl implements Use {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -254,7 +241,7 @@ public class UseImpl extends GraphicalElementImpl implements Use {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -272,7 +259,7 @@ public class UseImpl extends GraphicalElementImpl implements Use {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -288,7 +275,7 @@ public class UseImpl extends GraphicalElementImpl implements Use {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override

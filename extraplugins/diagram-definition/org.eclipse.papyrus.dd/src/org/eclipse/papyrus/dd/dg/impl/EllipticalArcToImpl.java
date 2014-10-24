@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- *
+ *  
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *
+ *  
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -37,7 +37,7 @@ import org.eclipse.papyrus.dd.dg.EllipticalArcTo;
  * <li>{@link org.eclipse.papyrus.dd.dg.impl.EllipticalArcToImpl#getPoint <em>Point</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
 public class EllipticalArcToImpl extends PathCommandImpl implements EllipticalArcTo {
@@ -45,7 +45,7 @@ public class EllipticalArcToImpl extends PathCommandImpl implements EllipticalAr
 	/**
 	 * The cached value of the '{@link #getRadii() <em>Radii</em>}' containment reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getRadii()
 	 * @generated
 	 * @ordered
@@ -55,7 +55,7 @@ public class EllipticalArcToImpl extends PathCommandImpl implements EllipticalAr
 	/**
 	 * The default value of the '{@link #getRotation() <em>Rotation</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getRotation()
 	 * @generated
 	 * @ordered
@@ -65,7 +65,7 @@ public class EllipticalArcToImpl extends PathCommandImpl implements EllipticalAr
 	/**
 	 * The cached value of the '{@link #getRotation() <em>Rotation</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getRotation()
 	 * @generated
 	 * @ordered
@@ -75,7 +75,7 @@ public class EllipticalArcToImpl extends PathCommandImpl implements EllipticalAr
 	/**
 	 * The default value of the '{@link #isLargeArc() <em>Is Large Arc</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #isLargeArc()
 	 * @generated
 	 * @ordered
@@ -85,7 +85,7 @@ public class EllipticalArcToImpl extends PathCommandImpl implements EllipticalAr
 	/**
 	 * The cached value of the '{@link #isLargeArc() <em>Is Large Arc</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #isLargeArc()
 	 * @generated
 	 * @ordered
@@ -95,7 +95,7 @@ public class EllipticalArcToImpl extends PathCommandImpl implements EllipticalAr
 	/**
 	 * The default value of the '{@link #isSweep() <em>Is Sweep</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #isSweep()
 	 * @generated
 	 * @ordered
@@ -105,7 +105,7 @@ public class EllipticalArcToImpl extends PathCommandImpl implements EllipticalAr
 	/**
 	 * The cached value of the '{@link #isSweep() <em>Is Sweep</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #isSweep()
 	 * @generated
 	 * @ordered
@@ -115,7 +115,7 @@ public class EllipticalArcToImpl extends PathCommandImpl implements EllipticalAr
 	/**
 	 * The cached value of the '{@link #getPoint() <em>Point</em>}' containment reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getPoint()
 	 * @generated
 	 * @ordered
@@ -124,7 +124,7 @@ public class EllipticalArcToImpl extends PathCommandImpl implements EllipticalAr
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EllipticalArcToImpl() {
@@ -133,7 +133,7 @@ public class EllipticalArcToImpl extends PathCommandImpl implements EllipticalAr
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -143,17 +143,16 @@ public class EllipticalArcToImpl extends PathCommandImpl implements EllipticalAr
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public Dimension getRadii() {
 		return radii;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetRadii(Dimension newRadii, NotificationChain msgs) {
@@ -161,124 +160,108 @@ public class EllipticalArcToImpl extends PathCommandImpl implements EllipticalAr
 		radii = newRadii;
 		if(eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DGPackage.ELLIPTICAL_ARC_TO__RADII, oldRadii, newRadii);
-			if(msgs == null) {
+			if(msgs == null)
 				msgs = notification;
-			} else {
+			else
 				msgs.add(notification);
-			}
 		}
 		return msgs;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public void setRadii(Dimension newRadii) {
 		if(newRadii != radii) {
 			NotificationChain msgs = null;
-			if(radii != null) {
+			if(radii != null)
 				msgs = ((InternalEObject)radii).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DGPackage.ELLIPTICAL_ARC_TO__RADII, null, msgs);
-			}
-			if(newRadii != null) {
+			if(newRadii != null)
 				msgs = ((InternalEObject)newRadii).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DGPackage.ELLIPTICAL_ARC_TO__RADII, null, msgs);
-			}
 			msgs = basicSetRadii(newRadii, msgs);
-			if(msgs != null) {
+			if(msgs != null)
 				msgs.dispatch();
-			}
-		} else if(eNotificationRequired()) {
+		} else if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.ELLIPTICAL_ARC_TO__RADII, newRadii, newRadii));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public double getRotation() {
 		return rotation;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public void setRotation(double newRotation) {
 		double oldRotation = rotation;
 		rotation = newRotation;
-		if(eNotificationRequired()) {
+		if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.ELLIPTICAL_ARC_TO__ROTATION, oldRotation, rotation));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public boolean isLargeArc() {
 		return isLargeArc;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public void setIsLargeArc(boolean newIsLargeArc) {
 		boolean oldIsLargeArc = isLargeArc;
 		isLargeArc = newIsLargeArc;
-		if(eNotificationRequired()) {
+		if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.ELLIPTICAL_ARC_TO__IS_LARGE_ARC, oldIsLargeArc, isLargeArc));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public boolean isSweep() {
 		return isSweep;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public void setIsSweep(boolean newIsSweep) {
 		boolean oldIsSweep = isSweep;
 		isSweep = newIsSweep;
-		if(eNotificationRequired()) {
+		if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.ELLIPTICAL_ARC_TO__IS_SWEEP, oldIsSweep, isSweep));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public Point getPoint() {
 		return point;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetPoint(Point newPoint, NotificationChain msgs) {
@@ -286,42 +269,36 @@ public class EllipticalArcToImpl extends PathCommandImpl implements EllipticalAr
 		point = newPoint;
 		if(eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DGPackage.ELLIPTICAL_ARC_TO__POINT, oldPoint, newPoint);
-			if(msgs == null) {
+			if(msgs == null)
 				msgs = notification;
-			} else {
+			else
 				msgs.add(notification);
-			}
 		}
 		return msgs;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public void setPoint(Point newPoint) {
 		if(newPoint != point) {
 			NotificationChain msgs = null;
-			if(point != null) {
+			if(point != null)
 				msgs = ((InternalEObject)point).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DGPackage.ELLIPTICAL_ARC_TO__POINT, null, msgs);
-			}
-			if(newPoint != null) {
+			if(newPoint != null)
 				msgs = ((InternalEObject)newPoint).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DGPackage.ELLIPTICAL_ARC_TO__POINT, null, msgs);
-			}
 			msgs = basicSetPoint(newPoint, msgs);
-			if(msgs != null) {
+			if(msgs != null)
 				msgs.dispatch();
-			}
-		} else if(eNotificationRequired()) {
+		} else if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.ELLIPTICAL_ARC_TO__POINT, newPoint, newPoint));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -337,7 +314,7 @@ public class EllipticalArcToImpl extends PathCommandImpl implements EllipticalAr
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -359,7 +336,7 @@ public class EllipticalArcToImpl extends PathCommandImpl implements EllipticalAr
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -386,7 +363,7 @@ public class EllipticalArcToImpl extends PathCommandImpl implements EllipticalAr
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -413,7 +390,7 @@ public class EllipticalArcToImpl extends PathCommandImpl implements EllipticalAr
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -435,14 +412,13 @@ public class EllipticalArcToImpl extends PathCommandImpl implements EllipticalAr
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if(eIsProxy()) {
+		if(eIsProxy())
 			return super.toString();
-		}
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (rotation: ");
 		result.append(rotation);

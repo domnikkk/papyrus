@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- *
+ *  
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *
+ *  
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -31,7 +31,7 @@ import org.eclipse.emf.ecore.EPackage;
  * <!-- end-user-doc --> <!-- begin-model-doc --> The Diagram Common (DC)
  * package contains abstractions shared by the Diagram Interchange and the
  * Diagram Graphics packages. <!-- end-model-doc -->
- *
+ * 
  * @see org.eclipse.papyrus.dd.dc.DCFactory
  * @model kind="package" annotation=
  *        "http://www.eclipse.org/emf/2002/Ecore validationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL'"
@@ -42,7 +42,7 @@ public interface DCPackage extends EPackage {
 	/**
 	 * The package name.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	String eNAME = "dc";
@@ -50,7 +50,7 @@ public interface DCPackage extends EPackage {
 	/**
 	 * The package namespace URI.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	String eNS_URI = "http://www.omg.org/spec/DD/20110901/DC";
@@ -58,7 +58,7 @@ public interface DCPackage extends EPackage {
 	/**
 	 * The package namespace name.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	String eNS_PREFIX = "dc";
@@ -67,7 +67,7 @@ public interface DCPackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	DCPackage eINSTANCE = org.eclipse.papyrus.dd.dc.impl.DCPackageImpl.init();
@@ -75,7 +75,7 @@ public interface DCPackage extends EPackage {
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.dd.dc.impl.PointImpl <em>Point</em>}' class.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see org.eclipse.papyrus.dd.dc.impl.PointImpl
 	 * @see org.eclipse.papyrus.dd.dc.impl.DCPackageImpl#getPoint()
 	 * @generated
@@ -86,7 +86,7 @@ public interface DCPackage extends EPackage {
 	 * The feature id for the '<em><b>X</b></em>' attribute.
 	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -96,7 +96,7 @@ public interface DCPackage extends EPackage {
 	 * The feature id for the '<em><b>Y</b></em>' attribute.
 	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -105,7 +105,7 @@ public interface DCPackage extends EPackage {
 	/**
 	 * The number of structural features of the '<em>Point</em>' class. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -114,7 +114,7 @@ public interface DCPackage extends EPackage {
 	/**
 	 * The number of operations of the '<em>Point</em>' class. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -123,7 +123,7 @@ public interface DCPackage extends EPackage {
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.dd.dc.impl.DimensionImpl <em>Dimension</em>}' class.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see org.eclipse.papyrus.dd.dc.impl.DimensionImpl
 	 * @see org.eclipse.papyrus.dd.dc.impl.DCPackageImpl#getDimension()
 	 * @generated
@@ -133,7 +133,7 @@ public interface DCPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Width</b></em>' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -142,7 +142,7 @@ public interface DCPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Height</b></em>' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -151,7 +151,7 @@ public interface DCPackage extends EPackage {
 	/**
 	 * The number of structural features of the '<em>Dimension</em>' class. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -160,7 +160,7 @@ public interface DCPackage extends EPackage {
 	/**
 	 * The operation id for the '<em>Non Negative Width</em>' operation. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -169,7 +169,7 @@ public interface DCPackage extends EPackage {
 	/**
 	 * The operation id for the '<em>Non Negative Height</em>' operation. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -178,7 +178,7 @@ public interface DCPackage extends EPackage {
 	/**
 	 * The number of operations of the '<em>Dimension</em>' class. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -187,7 +187,7 @@ public interface DCPackage extends EPackage {
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.dd.dc.impl.BoundsImpl <em>Bounds</em>}' class.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see org.eclipse.papyrus.dd.dc.impl.BoundsImpl
 	 * @see org.eclipse.papyrus.dd.dc.impl.DCPackageImpl#getBounds()
 	 * @generated
@@ -198,7 +198,7 @@ public interface DCPackage extends EPackage {
 	 * The feature id for the '<em><b>X</b></em>' attribute.
 	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -208,7 +208,7 @@ public interface DCPackage extends EPackage {
 	 * The feature id for the '<em><b>Y</b></em>' attribute.
 	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -217,7 +217,7 @@ public interface DCPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Width</b></em>' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -226,7 +226,7 @@ public interface DCPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Height</b></em>' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -235,7 +235,7 @@ public interface DCPackage extends EPackage {
 	/**
 	 * The number of structural features of the '<em>Bounds</em>' class. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -244,7 +244,7 @@ public interface DCPackage extends EPackage {
 	/**
 	 * The operation id for the '<em>Non Negative Width</em>' operation. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -253,7 +253,7 @@ public interface DCPackage extends EPackage {
 	/**
 	 * The operation id for the '<em>Non Negative Height</em>' operation. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -262,7 +262,7 @@ public interface DCPackage extends EPackage {
 	/**
 	 * The number of operations of the '<em>Bounds</em>' class. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -272,7 +272,7 @@ public interface DCPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.dd.dc.KnownColor
 	 * <em>Known Color</em>}' enum. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 *
+	 * 
 	 * @see org.eclipse.papyrus.dd.dc.KnownColor
 	 * @see org.eclipse.papyrus.dd.dc.impl.DCPackageImpl#getKnownColor()
 	 * @generated
@@ -282,7 +282,7 @@ public interface DCPackage extends EPackage {
 	/**
 	 * The meta object id for the '<em>Boolean</em>' data type. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see org.eclipse.papyrus.dd.dc.impl.DCPackageImpl#getBoolean()
 	 * @generated
 	 */
@@ -291,7 +291,7 @@ public interface DCPackage extends EPackage {
 	/**
 	 * The meta object id for the '<em>Integer</em>' data type. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see org.eclipse.papyrus.dd.dc.impl.DCPackageImpl#getInteger()
 	 * @generated
 	 */
@@ -301,7 +301,7 @@ public interface DCPackage extends EPackage {
 	 * The meta object id for the '<em>Real</em>' data type.
 	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see org.eclipse.papyrus.dd.dc.impl.DCPackageImpl#getReal()
 	 * @generated
 	 */
@@ -310,7 +310,7 @@ public interface DCPackage extends EPackage {
 	/**
 	 * The meta object id for the '<em>String</em>' data type. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see java.lang.String
 	 * @see org.eclipse.papyrus.dd.dc.impl.DCPackageImpl#getString()
 	 * @generated
@@ -320,7 +320,7 @@ public interface DCPackage extends EPackage {
 	/**
 	 * The meta object id for the '<em>Color</em>' data type. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see java.awt.Color
 	 * @see org.eclipse.papyrus.dd.dc.impl.DCPackageImpl#getColor()
 	 * @generated
@@ -330,7 +330,7 @@ public interface DCPackage extends EPackage {
 	/**
 	 * Returns the meta object for class ' {@link org.eclipse.papyrus.dd.dc.Point <em>Point</em>}'. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @return the meta object for class '<em>Point</em>'.
 	 * @see org.eclipse.papyrus.dd.dc.Point
 	 * @generated
@@ -340,7 +340,7 @@ public interface DCPackage extends EPackage {
 	/**
 	 * Returns the meta object for the attribute ' {@link org.eclipse.papyrus.dd.dc.Point#getX <em>X</em>}'. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @return the meta object for the attribute '<em>X</em>'.
 	 * @see org.eclipse.papyrus.dd.dc.Point#getX()
 	 * @see #getPoint()
@@ -351,7 +351,7 @@ public interface DCPackage extends EPackage {
 	/**
 	 * Returns the meta object for the attribute ' {@link org.eclipse.papyrus.dd.dc.Point#getY <em>Y</em>}'. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @return the meta object for the attribute '<em>Y</em>'.
 	 * @see org.eclipse.papyrus.dd.dc.Point#getY()
 	 * @see #getPoint()
@@ -362,7 +362,7 @@ public interface DCPackage extends EPackage {
 	/**
 	 * Returns the meta object for class ' {@link org.eclipse.papyrus.dd.dc.Dimension <em>Dimension</em>}'. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @return the meta object for class '<em>Dimension</em>'.
 	 * @see org.eclipse.papyrus.dd.dc.Dimension
 	 * @generated
@@ -372,7 +372,7 @@ public interface DCPackage extends EPackage {
 	/**
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.dd.dc.Dimension#getWidth <em>Width</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @return the meta object for the attribute '<em>Width</em>'.
 	 * @see org.eclipse.papyrus.dd.dc.Dimension#getWidth()
 	 * @see #getDimension()
@@ -383,7 +383,7 @@ public interface DCPackage extends EPackage {
 	/**
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.dd.dc.Dimension#getHeight <em>Height</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @return the meta object for the attribute '<em>Height</em>'.
 	 * @see org.eclipse.papyrus.dd.dc.Dimension#getHeight()
 	 * @see #getDimension()
@@ -397,7 +397,7 @@ public interface DCPackage extends EPackage {
 	 * <em>Non Negative Width</em>}' operation.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @return the meta object for the '<em>Non Negative Width</em>' operation.
 	 * @see org.eclipse.papyrus.dd.dc.Dimension#nonNegativeWidth(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
@@ -410,7 +410,7 @@ public interface DCPackage extends EPackage {
 	 * <em>Non Negative Height</em>}' operation.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @return the meta object for the '<em>Non Negative Height</em>' operation.
 	 * @see org.eclipse.papyrus.dd.dc.Dimension#nonNegativeHeight(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
@@ -420,7 +420,7 @@ public interface DCPackage extends EPackage {
 	/**
 	 * Returns the meta object for class ' {@link org.eclipse.papyrus.dd.dc.Bounds <em>Bounds</em>}'. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @return the meta object for class '<em>Bounds</em>'.
 	 * @see org.eclipse.papyrus.dd.dc.Bounds
 	 * @generated
@@ -430,7 +430,7 @@ public interface DCPackage extends EPackage {
 	/**
 	 * Returns the meta object for the attribute ' {@link org.eclipse.papyrus.dd.dc.Bounds#getX <em>X</em>}'. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @return the meta object for the attribute '<em>X</em>'.
 	 * @see org.eclipse.papyrus.dd.dc.Bounds#getX()
 	 * @see #getBounds()
@@ -441,7 +441,7 @@ public interface DCPackage extends EPackage {
 	/**
 	 * Returns the meta object for the attribute ' {@link org.eclipse.papyrus.dd.dc.Bounds#getY <em>Y</em>}'. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @return the meta object for the attribute '<em>Y</em>'.
 	 * @see org.eclipse.papyrus.dd.dc.Bounds#getY()
 	 * @see #getBounds()
@@ -452,7 +452,7 @@ public interface DCPackage extends EPackage {
 	/**
 	 * Returns the meta object for the attribute ' {@link org.eclipse.papyrus.dd.dc.Bounds#getWidth <em>Width</em>}'. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @return the meta object for the attribute '<em>Width</em>'.
 	 * @see org.eclipse.papyrus.dd.dc.Bounds#getWidth()
 	 * @see #getBounds()
@@ -463,7 +463,7 @@ public interface DCPackage extends EPackage {
 	/**
 	 * Returns the meta object for the attribute ' {@link org.eclipse.papyrus.dd.dc.Bounds#getHeight <em>Height</em>}'. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @return the meta object for the attribute '<em>Height</em>'.
 	 * @see org.eclipse.papyrus.dd.dc.Bounds#getHeight()
 	 * @see #getBounds()
@@ -477,7 +477,7 @@ public interface DCPackage extends EPackage {
 	 * <em>Non Negative Width</em>}' operation.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @return the meta object for the '<em>Non Negative Width</em>' operation.
 	 * @see org.eclipse.papyrus.dd.dc.Bounds#nonNegativeWidth(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
@@ -490,7 +490,7 @@ public interface DCPackage extends EPackage {
 	 * <em>Non Negative Height</em>}' operation.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @return the meta object for the '<em>Non Negative Height</em>' operation.
 	 * @see org.eclipse.papyrus.dd.dc.Bounds#nonNegativeHeight(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
@@ -500,7 +500,7 @@ public interface DCPackage extends EPackage {
 	/**
 	 * Returns the meta object for enum ' {@link org.eclipse.papyrus.dd.dc.KnownColor <em>Known Color</em>}'. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @return the meta object for enum '<em>Known Color</em>'.
 	 * @see org.eclipse.papyrus.dd.dc.KnownColor
 	 * @generated
@@ -510,7 +510,7 @@ public interface DCPackage extends EPackage {
 	/**
 	 * Returns the meta object for data type '<em>Boolean</em>'. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @return the meta object for data type '<em>Boolean</em>'.
 	 * @model instanceClass="boolean"
 	 * @generated
@@ -520,7 +520,7 @@ public interface DCPackage extends EPackage {
 	/**
 	 * Returns the meta object for data type '<em>Integer</em>'. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @return the meta object for data type '<em>Integer</em>'.
 	 * @model instanceClass="int"
 	 * @generated
@@ -530,7 +530,7 @@ public interface DCPackage extends EPackage {
 	/**
 	 * Returns the meta object for data type '<em>Real</em>'. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @return the meta object for data type '<em>Real</em>'.
 	 * @model instanceClass="double"
 	 * @generated
@@ -540,7 +540,7 @@ public interface DCPackage extends EPackage {
 	/**
 	 * Returns the meta object for data type '{@link java.lang.String <em>String</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @return the meta object for data type '<em>String</em>'.
 	 * @see java.lang.String
 	 * @model instanceClass="java.lang.String"
@@ -551,7 +551,7 @@ public interface DCPackage extends EPackage {
 	/**
 	 * Returns the meta object for data type '{@link java.awt.Color <em>Color</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @return the meta object for data type '<em>Color</em>'.
 	 * @see java.awt.Color
 	 * @model instanceClass="java.awt.Color"
@@ -562,7 +562,7 @@ public interface DCPackage extends EPackage {
 	/**
 	 * Returns the factory that creates the instances of the model. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -579,7 +579,7 @@ public interface DCPackage extends EPackage {
 	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	interface Literals {
@@ -587,7 +587,7 @@ public interface DCPackage extends EPackage {
 		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.dd.dc.impl.PointImpl <em>Point</em>}' class.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 *
+		 * 
 		 * @see org.eclipse.papyrus.dd.dc.impl.PointImpl
 		 * @see org.eclipse.papyrus.dd.dc.impl.DCPackageImpl#getPoint()
 		 * @generated
@@ -597,7 +597,7 @@ public interface DCPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>X</b></em>' attribute feature.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 *
+		 * 
 		 * @generated
 		 */
 		EAttribute POINT__X = eINSTANCE.getPoint_X();
@@ -605,7 +605,7 @@ public interface DCPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Y</b></em>' attribute feature.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 *
+		 * 
 		 * @generated
 		 */
 		EAttribute POINT__Y = eINSTANCE.getPoint_Y();
@@ -614,7 +614,7 @@ public interface DCPackage extends EPackage {
 		 * The meta object literal for the ' {@link org.eclipse.papyrus.dd.dc.impl.DimensionImpl
 		 * <em>Dimension</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc
 		 * -->
-		 *
+		 * 
 		 * @see org.eclipse.papyrus.dd.dc.impl.DimensionImpl
 		 * @see org.eclipse.papyrus.dd.dc.impl.DCPackageImpl#getDimension()
 		 * @generated
@@ -624,7 +624,7 @@ public interface DCPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Width</b></em>' attribute feature.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 *
+		 * 
 		 * @generated
 		 */
 		EAttribute DIMENSION__WIDTH = eINSTANCE.getDimension_Width();
@@ -632,7 +632,7 @@ public interface DCPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Height</b></em>' attribute feature.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 *
+		 * 
 		 * @generated
 		 */
 		EAttribute DIMENSION__HEIGHT = eINSTANCE.getDimension_Height();
@@ -640,7 +640,7 @@ public interface DCPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Non Negative Width</b></em>' operation.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 *
+		 * 
 		 * @generated
 		 */
 		EOperation DIMENSION___NON_NEGATIVE_WIDTH__DIAGNOSTICCHAIN_MAP = eINSTANCE.getDimension__NonNegativeWidth__DiagnosticChain_Map();
@@ -648,7 +648,7 @@ public interface DCPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Non Negative Height</b></em>' operation.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 *
+		 * 
 		 * @generated
 		 */
 		EOperation DIMENSION___NON_NEGATIVE_HEIGHT__DIAGNOSTICCHAIN_MAP = eINSTANCE.getDimension__NonNegativeHeight__DiagnosticChain_Map();
@@ -656,7 +656,7 @@ public interface DCPackage extends EPackage {
 		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.dd.dc.impl.BoundsImpl <em>Bounds</em>}' class.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 *
+		 * 
 		 * @see org.eclipse.papyrus.dd.dc.impl.BoundsImpl
 		 * @see org.eclipse.papyrus.dd.dc.impl.DCPackageImpl#getBounds()
 		 * @generated
@@ -666,7 +666,7 @@ public interface DCPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>X</b></em>' attribute feature.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 *
+		 * 
 		 * @generated
 		 */
 		EAttribute BOUNDS__X = eINSTANCE.getBounds_X();
@@ -674,7 +674,7 @@ public interface DCPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Y</b></em>' attribute feature.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 *
+		 * 
 		 * @generated
 		 */
 		EAttribute BOUNDS__Y = eINSTANCE.getBounds_Y();
@@ -682,7 +682,7 @@ public interface DCPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Width</b></em>' attribute feature.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 *
+		 * 
 		 * @generated
 		 */
 		EAttribute BOUNDS__WIDTH = eINSTANCE.getBounds_Width();
@@ -690,7 +690,7 @@ public interface DCPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Height</b></em>' attribute feature.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 *
+		 * 
 		 * @generated
 		 */
 		EAttribute BOUNDS__HEIGHT = eINSTANCE.getBounds_Height();
@@ -698,7 +698,7 @@ public interface DCPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Non Negative Width</b></em>' operation.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 *
+		 * 
 		 * @generated
 		 */
 		EOperation BOUNDS___NON_NEGATIVE_WIDTH__DIAGNOSTICCHAIN_MAP = eINSTANCE.getBounds__NonNegativeWidth__DiagnosticChain_Map();
@@ -706,7 +706,7 @@ public interface DCPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Non Negative Height</b></em>' operation.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 *
+		 * 
 		 * @generated
 		 */
 		EOperation BOUNDS___NON_NEGATIVE_HEIGHT__DIAGNOSTICCHAIN_MAP = eINSTANCE.getBounds__NonNegativeHeight__DiagnosticChain_Map();
@@ -714,7 +714,7 @@ public interface DCPackage extends EPackage {
 		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.dd.dc.KnownColor <em>Known Color</em>}' enum.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 *
+		 * 
 		 * @see org.eclipse.papyrus.dd.dc.KnownColor
 		 * @see org.eclipse.papyrus.dd.dc.impl.DCPackageImpl#getKnownColor()
 		 * @generated
@@ -724,7 +724,7 @@ public interface DCPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em>Boolean</em>' data type. <!--
 		 * begin-user-doc --> <!-- end-user-doc -->
-		 *
+		 * 
 		 * @see org.eclipse.papyrus.dd.dc.impl.DCPackageImpl#getBoolean()
 		 * @generated
 		 */
@@ -733,7 +733,7 @@ public interface DCPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em>Integer</em>' data type. <!--
 		 * begin-user-doc --> <!-- end-user-doc -->
-		 *
+		 * 
 		 * @see org.eclipse.papyrus.dd.dc.impl.DCPackageImpl#getInteger()
 		 * @generated
 		 */
@@ -742,7 +742,7 @@ public interface DCPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em>Real</em>' data type. <!--
 		 * begin-user-doc --> <!-- end-user-doc -->
-		 *
+		 * 
 		 * @see org.eclipse.papyrus.dd.dc.impl.DCPackageImpl#getReal()
 		 * @generated
 		 */
@@ -751,7 +751,7 @@ public interface DCPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em>String</em>' data type. <!--
 		 * begin-user-doc --> <!-- end-user-doc -->
-		 *
+		 * 
 		 * @see java.lang.String
 		 * @see org.eclipse.papyrus.dd.dc.impl.DCPackageImpl#getString()
 		 * @generated
@@ -761,7 +761,7 @@ public interface DCPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em>Color</em>' data type. <!--
 		 * begin-user-doc --> <!-- end-user-doc -->
-		 *
+		 * 
 		 * @see java.awt.Color
 		 * @see org.eclipse.papyrus.dd.dc.impl.DCPackageImpl#getColor()
 		 * @generated

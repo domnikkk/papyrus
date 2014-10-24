@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- *
+ *  
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *
+ *  
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -25,7 +25,7 @@ import org.eclipse.papyrus.dd.dg.*;
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!--
  * end-user-doc -->
- *
+ * 
  * @generated
  */
 public class DGFactoryImpl extends EFactoryImpl implements DGFactory {
@@ -34,7 +34,7 @@ public class DGFactoryImpl extends EFactoryImpl implements DGFactory {
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public static DGFactory init() {
@@ -53,7 +53,7 @@ public class DGFactoryImpl extends EFactoryImpl implements DGFactory {
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public DGFactoryImpl() {
@@ -62,7 +62,7 @@ public class DGFactoryImpl extends EFactoryImpl implements DGFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -147,7 +147,7 @@ public class DGFactoryImpl extends EFactoryImpl implements DGFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -166,7 +166,7 @@ public class DGFactoryImpl extends EFactoryImpl implements DGFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -185,10 +185,9 @@ public class DGFactoryImpl extends EFactoryImpl implements DGFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public Canvas createCanvas() {
 		CanvasImpl canvas = new CanvasImpl();
 		return canvas;
@@ -196,10 +195,9 @@ public class DGFactoryImpl extends EFactoryImpl implements DGFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public Group createGroup() {
 		GroupImpl group = new GroupImpl();
 		return group;
@@ -207,10 +205,9 @@ public class DGFactoryImpl extends EFactoryImpl implements DGFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public MoveTo createMoveTo() {
 		MoveToImpl moveTo = new MoveToImpl();
 		return moveTo;
@@ -218,10 +215,9 @@ public class DGFactoryImpl extends EFactoryImpl implements DGFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public ClipPath createClipPath() {
 		ClipPathImpl clipPath = new ClipPathImpl();
 		return clipPath;
@@ -229,10 +225,9 @@ public class DGFactoryImpl extends EFactoryImpl implements DGFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public Style createStyle() {
 		StyleImpl style = new StyleImpl();
 		return style;
@@ -240,10 +235,9 @@ public class DGFactoryImpl extends EFactoryImpl implements DGFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public Paint createPaint() {
 		PaintImpl paint = new PaintImpl();
 		return paint;
@@ -251,10 +245,9 @@ public class DGFactoryImpl extends EFactoryImpl implements DGFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public Circle createCircle() {
 		CircleImpl circle = new CircleImpl();
 		return circle;
@@ -262,10 +255,9 @@ public class DGFactoryImpl extends EFactoryImpl implements DGFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public ClosePath createClosePath() {
 		ClosePathImpl closePath = new ClosePathImpl();
 		return closePath;
@@ -273,10 +265,9 @@ public class DGFactoryImpl extends EFactoryImpl implements DGFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public CubicCurveTo createCubicCurveTo() {
 		CubicCurveToImpl cubicCurveTo = new CubicCurveToImpl();
 		return cubicCurveTo;
@@ -284,10 +275,9 @@ public class DGFactoryImpl extends EFactoryImpl implements DGFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public Definitions createDefinitions() {
 		DefinitionsImpl definitions = new DefinitionsImpl();
 		return definitions;
@@ -295,10 +285,9 @@ public class DGFactoryImpl extends EFactoryImpl implements DGFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public StyleSheet createStyleSheet() {
 		StyleSheetImpl styleSheet = new StyleSheetImpl();
 		return styleSheet;
@@ -306,10 +295,9 @@ public class DGFactoryImpl extends EFactoryImpl implements DGFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public StyleRule createStyleRule() {
 		StyleRuleImpl styleRule = new StyleRuleImpl();
 		return styleRule;
@@ -317,10 +305,9 @@ public class DGFactoryImpl extends EFactoryImpl implements DGFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public StyleSelector createStyleSelector() {
 		StyleSelectorImpl styleSelector = new StyleSelectorImpl();
 		return styleSelector;
@@ -328,10 +315,9 @@ public class DGFactoryImpl extends EFactoryImpl implements DGFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public Ellipse createEllipse() {
 		EllipseImpl ellipse = new EllipseImpl();
 		return ellipse;
@@ -339,10 +325,9 @@ public class DGFactoryImpl extends EFactoryImpl implements DGFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public EllipticalArcTo createEllipticalArcTo() {
 		EllipticalArcToImpl ellipticalArcTo = new EllipticalArcToImpl();
 		return ellipticalArcTo;
@@ -350,10 +335,9 @@ public class DGFactoryImpl extends EFactoryImpl implements DGFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public QuadraticCurveTo createQuadraticCurveTo() {
 		QuadraticCurveToImpl quadraticCurveTo = new QuadraticCurveToImpl();
 		return quadraticCurveTo;
@@ -361,10 +345,9 @@ public class DGFactoryImpl extends EFactoryImpl implements DGFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public GradientStop createGradientStop() {
 		GradientStopImpl gradientStop = new GradientStopImpl();
 		return gradientStop;
@@ -372,10 +355,9 @@ public class DGFactoryImpl extends EFactoryImpl implements DGFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public Image createImage() {
 		ImageImpl image = new ImageImpl();
 		return image;
@@ -383,10 +365,9 @@ public class DGFactoryImpl extends EFactoryImpl implements DGFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public Line createLine() {
 		LineImpl line = new LineImpl();
 		return line;
@@ -394,10 +375,9 @@ public class DGFactoryImpl extends EFactoryImpl implements DGFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public Marker createMarker() {
 		MarkerImpl marker = new MarkerImpl();
 		return marker;
@@ -405,10 +385,9 @@ public class DGFactoryImpl extends EFactoryImpl implements DGFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public LinearGradient createLinearGradient() {
 		LinearGradientImpl linearGradient = new LinearGradientImpl();
 		return linearGradient;
@@ -416,10 +395,9 @@ public class DGFactoryImpl extends EFactoryImpl implements DGFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public LineTo createLineTo() {
 		LineToImpl lineTo = new LineToImpl();
 		return lineTo;
@@ -427,10 +405,9 @@ public class DGFactoryImpl extends EFactoryImpl implements DGFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public Matrix createMatrix() {
 		MatrixImpl matrix = new MatrixImpl();
 		return matrix;
@@ -438,10 +415,9 @@ public class DGFactoryImpl extends EFactoryImpl implements DGFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public Path createPath() {
 		PathImpl path = new PathImpl();
 		return path;
@@ -449,10 +425,9 @@ public class DGFactoryImpl extends EFactoryImpl implements DGFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public Pattern createPattern() {
 		PatternImpl pattern = new PatternImpl();
 		return pattern;
@@ -460,10 +435,9 @@ public class DGFactoryImpl extends EFactoryImpl implements DGFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public Polygon createPolygon() {
 		PolygonImpl polygon = new PolygonImpl();
 		return polygon;
@@ -471,10 +445,9 @@ public class DGFactoryImpl extends EFactoryImpl implements DGFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public Polyline createPolyline() {
 		PolylineImpl polyline = new PolylineImpl();
 		return polyline;
@@ -482,10 +455,9 @@ public class DGFactoryImpl extends EFactoryImpl implements DGFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public RadialGradient createRadialGradient() {
 		RadialGradientImpl radialGradient = new RadialGradientImpl();
 		return radialGradient;
@@ -493,10 +465,9 @@ public class DGFactoryImpl extends EFactoryImpl implements DGFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public Rectangle createRectangle() {
 		RectangleImpl rectangle = new RectangleImpl();
 		return rectangle;
@@ -504,10 +475,9 @@ public class DGFactoryImpl extends EFactoryImpl implements DGFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public RootCanvas createRootCanvas() {
 		RootCanvasImpl rootCanvas = new RootCanvasImpl();
 		return rootCanvas;
@@ -515,10 +485,9 @@ public class DGFactoryImpl extends EFactoryImpl implements DGFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public Rotate createRotate() {
 		RotateImpl rotate = new RotateImpl();
 		return rotate;
@@ -526,10 +495,9 @@ public class DGFactoryImpl extends EFactoryImpl implements DGFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public Scale createScale() {
 		ScaleImpl scale = new ScaleImpl();
 		return scale;
@@ -537,10 +505,9 @@ public class DGFactoryImpl extends EFactoryImpl implements DGFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public Skew createSkew() {
 		SkewImpl skew = new SkewImpl();
 		return skew;
@@ -548,10 +515,9 @@ public class DGFactoryImpl extends EFactoryImpl implements DGFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public Text createText() {
 		TextImpl text = new TextImpl();
 		return text;
@@ -559,10 +525,9 @@ public class DGFactoryImpl extends EFactoryImpl implements DGFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public Translate createTranslate() {
 		TranslateImpl translate = new TranslateImpl();
 		return translate;
@@ -570,10 +535,9 @@ public class DGFactoryImpl extends EFactoryImpl implements DGFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public Use createUse() {
 		UseImpl use = new UseImpl();
 		return use;
@@ -581,20 +545,19 @@ public class DGFactoryImpl extends EFactoryImpl implements DGFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public FontDecoration createFontDecorationFromString(EDataType eDataType, String initialValue) {
 		FontDecoration result = FontDecoration.get(initialValue);
-		if(result == null) {
+		if(result == null)
 			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		}
 		return result;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public String convertFontDecorationToString(EDataType eDataType, Object instanceValue) {
@@ -603,20 +566,19 @@ public class DGFactoryImpl extends EFactoryImpl implements DGFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public ElementKind createElementKindFromString(EDataType eDataType, String initialValue) {
 		ElementKind result = ElementKind.get(initialValue);
-		if(result == null) {
+		if(result == null)
 			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		}
 		return result;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public String convertElementKindToString(EDataType eDataType, Object instanceValue) {
@@ -626,21 +588,20 @@ public class DGFactoryImpl extends EFactoryImpl implements DGFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public TextAnchor createTextAnchorFromString(EDataType eDataType, String initialValue) {
 		TextAnchor result = TextAnchor.get(initialValue);
-		if(result == null) {
+		if(result == null)
 			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		}
 		return result;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public String convertTextAnchorToString(EDataType eDataType, Object instanceValue) {
@@ -649,17 +610,16 @@ public class DGFactoryImpl extends EFactoryImpl implements DGFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public DGPackage getDGPackage() {
 		return (DGPackage)getEPackage();
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @deprecated
 	 * @generated
 	 */

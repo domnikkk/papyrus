@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- *
+ *  
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *
+ *  
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -30,7 +30,7 @@ import org.eclipse.papyrus.dd.dc.Point;
  * <li>{@link org.eclipse.papyrus.dd.dc.impl.PointImpl#getY <em>Y</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
 public class PointImpl extends MinimalEObjectImpl.Container implements Point {
@@ -38,7 +38,7 @@ public class PointImpl extends MinimalEObjectImpl.Container implements Point {
 	/**
 	 * The default value of the '{@link #getX() <em>X</em>}' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getX()
 	 * @generated
 	 * @ordered
@@ -48,7 +48,7 @@ public class PointImpl extends MinimalEObjectImpl.Container implements Point {
 	/**
 	 * The cached value of the '{@link #getX() <em>X</em>}' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getX()
 	 * @generated
 	 * @ordered
@@ -59,7 +59,7 @@ public class PointImpl extends MinimalEObjectImpl.Container implements Point {
 	 * This is true if the X attribute has been set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -68,7 +68,7 @@ public class PointImpl extends MinimalEObjectImpl.Container implements Point {
 	/**
 	 * The default value of the '{@link #getY() <em>Y</em>}' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getY()
 	 * @generated
 	 * @ordered
@@ -78,7 +78,7 @@ public class PointImpl extends MinimalEObjectImpl.Container implements Point {
 	/**
 	 * The cached value of the '{@link #getY() <em>Y</em>}' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getY()
 	 * @generated
 	 * @ordered
@@ -89,7 +89,7 @@ public class PointImpl extends MinimalEObjectImpl.Container implements Point {
 	 * This is true if the Y attribute has been set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -97,7 +97,7 @@ public class PointImpl extends MinimalEObjectImpl.Container implements Point {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected PointImpl() {
@@ -106,7 +106,7 @@ public class PointImpl extends MinimalEObjectImpl.Container implements Point {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -116,111 +116,99 @@ public class PointImpl extends MinimalEObjectImpl.Container implements Point {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public double getX() {
 		return x;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public void setX(double newX) {
 		double oldX = x;
 		x = newX;
 		boolean oldXESet = xESet;
 		xESet = true;
-		if(eNotificationRequired()) {
+		if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DCPackage.POINT__X, oldX, x, !oldXESet));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public void unsetX() {
 		double oldX = x;
 		boolean oldXESet = xESet;
 		x = X_EDEFAULT;
 		xESet = false;
-		if(eNotificationRequired()) {
+		if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.UNSET, DCPackage.POINT__X, oldX, X_EDEFAULT, oldXESet));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public boolean isSetX() {
 		return xESet;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public double getY() {
 		return y;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public void setY(double newY) {
 		double oldY = y;
 		y = newY;
 		boolean oldYESet = yESet;
 		yESet = true;
-		if(eNotificationRequired()) {
+		if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DCPackage.POINT__Y, oldY, y, !oldYESet));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public void unsetY() {
 		double oldY = y;
 		boolean oldYESet = yESet;
 		y = Y_EDEFAULT;
 		yESet = false;
-		if(eNotificationRequired()) {
+		if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.UNSET, DCPackage.POINT__Y, oldY, Y_EDEFAULT, oldYESet));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public boolean isSetY() {
 		return yESet;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -236,7 +224,7 @@ public class PointImpl extends MinimalEObjectImpl.Container implements Point {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -254,7 +242,7 @@ public class PointImpl extends MinimalEObjectImpl.Container implements Point {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -272,7 +260,7 @@ public class PointImpl extends MinimalEObjectImpl.Container implements Point {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -288,27 +276,24 @@ public class PointImpl extends MinimalEObjectImpl.Container implements Point {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if(eIsProxy()) {
+		if(eIsProxy())
 			return super.toString();
-		}
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (x: ");
-		if(xESet) {
+		if(xESet)
 			result.append(x);
-		} else {
+		else
 			result.append("<unset>");
-		}
 		result.append(", y: ");
-		if(yESet) {
+		if(yESet)
 			result.append(y);
-		} else {
+		else
 			result.append("<unset>");
-		}
 		result.append(')');
 		return result.toString();
 	}

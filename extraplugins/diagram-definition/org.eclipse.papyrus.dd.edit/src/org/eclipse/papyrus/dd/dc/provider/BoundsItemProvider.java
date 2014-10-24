@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- *
+ *  
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *
+ *  
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -39,7 +39,7 @@ import org.eclipse.papyrus.dd.edit.DDEditPlugin;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.dd.dc.Bounds} object.
  * <!-- begin-user-doc --> <!--
  * end-user-doc -->
- *
+ * 
  * @generated
  */
 public class BoundsItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
@@ -47,7 +47,7 @@ public class BoundsItemProvider extends ItemProviderAdapter implements IEditingD
 	/**
 	 * This constructs an instance from a factory and a notifier. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public BoundsItemProvider(AdapterFactory adapterFactory) {
@@ -57,7 +57,7 @@ public class BoundsItemProvider extends ItemProviderAdapter implements IEditingD
 	/**
 	 * This returns the property descriptors for the adapted class. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -76,7 +76,7 @@ public class BoundsItemProvider extends ItemProviderAdapter implements IEditingD
 	 * This adds a property descriptor for the X feature.
 	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected void addXPropertyDescriptor(Object object) {
@@ -87,7 +87,7 @@ public class BoundsItemProvider extends ItemProviderAdapter implements IEditingD
 	 * This adds a property descriptor for the Y feature.
 	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected void addYPropertyDescriptor(Object object) {
@@ -97,7 +97,7 @@ public class BoundsItemProvider extends ItemProviderAdapter implements IEditingD
 	/**
 	 * This adds a property descriptor for the Width feature. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected void addWidthPropertyDescriptor(Object object) {
@@ -107,7 +107,7 @@ public class BoundsItemProvider extends ItemProviderAdapter implements IEditingD
 	/**
 	 * This adds a property descriptor for the Height feature. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected void addHeightPropertyDescriptor(Object object) {
@@ -117,7 +117,7 @@ public class BoundsItemProvider extends ItemProviderAdapter implements IEditingD
 	/**
 	 * This returns Bounds.gif.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -128,7 +128,7 @@ public class BoundsItemProvider extends ItemProviderAdapter implements IEditingD
 	/**
 	 * This returns the label text for the adapted class. <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated NOT
 	 */
 	@Override
@@ -142,7 +142,7 @@ public class BoundsItemProvider extends ItemProviderAdapter implements IEditingD
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -163,7 +163,7 @@ public class BoundsItemProvider extends ItemProviderAdapter implements IEditingD
 	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s
 	 * describing the children that can be created under this object. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -174,7 +174,7 @@ public class BoundsItemProvider extends ItemProviderAdapter implements IEditingD
 	/**
 	 * Return the resource locator for this item provider's resources. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override

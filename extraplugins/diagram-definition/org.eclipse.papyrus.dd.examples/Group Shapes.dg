@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dg:RootCanvas xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dg="http://www.omg.org/spec/DD/20110901/DG" backgroundColor="#00FFFF">
   <member xsi:type="dg:Group">
-    <member xsi:type="dg:Use" referencedElement="head"/>
+    <member xsi:type="dg:Use" referencedElement="//@definitions/@definition.0"/>
   </member>
   <member xsi:type="dg:Canvas">
-    <member xsi:type="dg:Use" referencedElement="head"/>
+    <member xsi:type="dg:Use" referencedElement="//@definitions/@definition.0"/>
     <bounds x="120.0"/>
   </member>
-  <member xsi:type="dg:Use" clipPath="clip1" referencedElement="head">
+  <member xsi:type="dg:Use" clipPath="//@definitions/@definition.1" referencedElement="//@definitions/@definition.0">
     <bounds x="240.0" y="0.0"/>
   </member>
-  <member xsi:type="dg:Use" referencedElement="head">
+  <member xsi:type="dg:Use" referencedElement="//@definitions/@definition.0">
     <style strokeWidth="3.0"/>
     <bounds x="360.0"/>
   </member>
-  <member xsi:type="dg:Use" referencedElement="head">
+  <member xsi:type="dg:Use" referencedElement="//@definitions/@definition.0">
     <transform xsi:type="dg:Translate" deltaY="100.0"/>
     <transform xsi:type="dg:Scale" factorX="2.0" factorY="2.0"/>
     <transform xsi:type="dg:Rotate" angle="90.0">
@@ -22,7 +22,7 @@
     </transform>
     <transform xsi:type="dg:Skew" angleX="20.0"/>
   </member>
-  <member xsi:type="dg:Use" referencedElement="head">
+  <member xsi:type="dg:Use" referencedElement="//@definitions/@definition.0">
     <transform xsi:type="dg:Matrix" a="2.0" d="2.0" e="200.0" f="100.0"/>
   </member>
   <definitions>

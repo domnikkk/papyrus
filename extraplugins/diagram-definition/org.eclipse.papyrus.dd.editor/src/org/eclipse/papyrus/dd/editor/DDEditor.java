@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- *
+ * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *
+ * 
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -278,7 +278,6 @@ public abstract class DDEditor extends FormEditor implements
 						getSite().getShell().getDisplay()
 								.asyncExec(new Runnable() {
 
-									@Override
 									public void run() {
 										updateProblemIndication();
 									}
@@ -304,7 +303,6 @@ public abstract class DDEditor extends FormEditor implements
 			if (updateProblemIndication) {
 				getSite().getShell().getDisplay().asyncExec(new Runnable() {
 
-					@Override
 					public void run() {
 						updateProblemIndication();
 					}
@@ -404,7 +402,7 @@ public abstract class DDEditor extends FormEditor implements
 
 	/**
 	 * Gets the currently active editor page
-	 *
+	 * 
 	 * @return DDEditorPage
 	 */
 	protected DDEditorPage getActiveDDFormPage() {
@@ -474,6 +472,9 @@ public abstract class DDEditor extends FormEditor implements
 
 			updateProblemIndication = true;
 			updateProblemIndication();
+
+			if (getPageCount() > 0)
+				setActivePage(0);
 		}
 	}
 
@@ -881,7 +882,7 @@ public abstract class DDEditor extends FormEditor implements
 		super.pageChange(pageIndex);
 
 		if (contentOutlinePage != null) {
-			handleContentOutlineSelection(contentOutlinePage.getSelection());
+			// handleContentOutlineSelection(contentOutlinePage.getSelection());
 		}
 	}
 
@@ -1006,9 +1007,8 @@ public abstract class DDEditor extends FormEditor implements
 	 */
 	public void handleContentOutlineSelection(ISelection selection) {
 		if (getActiveDDFormPage() != null && !selection.isEmpty()
-				&& selection instanceof IStructuredSelection) {
+				&& selection instanceof IStructuredSelection)
 			getActiveDDFormPage().selectReveal(selection);
-		}
 	}
 
 	/**
@@ -1138,7 +1138,6 @@ public abstract class DDEditor extends FormEditor implements
 		doSave(progressMonitor);
 	}
 
-	@Override
 	public void gotoMarker(IMarker marker) {
 		List<?> targetObjects = markerHelper.getTargetObjects(editingDomain,
 				marker);
@@ -1161,7 +1160,6 @@ public abstract class DDEditor extends FormEditor implements
 	/**
 	 * This implements {@link org.eclipse.jface.viewers.ISelectionProvider}.
 	 */
-	@Override
 	public void addSelectionChangedListener(ISelectionChangedListener listener) {
 		selectionChangedListeners.add(listener);
 	}
@@ -1169,7 +1167,6 @@ public abstract class DDEditor extends FormEditor implements
 	/**
 	 * This implements {@link org.eclipse.jface.viewers.ISelectionProvider}.
 	 */
-	@Override
 	public void removeSelectionChangedListener(
 			ISelectionChangedListener listener) {
 		selectionChangedListeners.remove(listener);
@@ -1179,7 +1176,6 @@ public abstract class DDEditor extends FormEditor implements
 	 * This implements {@link org.eclipse.jface.viewers.ISelectionProvider} to
 	 * return this editor's overall selection.
 	 */
-	@Override
 	public ISelection getSelection() {
 		return editorSelection;
 	}
@@ -1189,7 +1185,6 @@ public abstract class DDEditor extends FormEditor implements
 	 * set this editor's overall selection. Calling this result will notify the
 	 * listeners.
 	 */
-	@Override
 	public void setSelection(ISelection selection) {
 		editorSelection = selection;
 
@@ -1253,7 +1248,6 @@ public abstract class DDEditor extends FormEditor implements
 	 * This implements {@link org.eclipse.jface.action.IMenuListener} to help
 	 * fill the context menus with contributions from the Edit menu.
 	 */
-	@Override
 	public void menuAboutToShow(IMenuManager menuManager) {
 		((IMenuListener) getEditorSite().getActionBarContributor())
 				.menuAboutToShow(menuManager);

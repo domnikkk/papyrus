@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- *
+ *  
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *
+ *  
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -41,7 +41,7 @@ import org.eclipse.papyrus.dd.dg.StyleSelector;
  * <li>{@link org.eclipse.papyrus.dd.dg.impl.StyleRuleImpl#getStyle <em>Style</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
 public class StyleRuleImpl extends MinimalEObjectImpl.Container implements StyleRule {
@@ -49,7 +49,7 @@ public class StyleRuleImpl extends MinimalEObjectImpl.Container implements Style
 	/**
 	 * The cached value of the '{@link #getSelectors() <em>Selector</em>}' containment reference list.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getSelectors()
 	 * @generated
 	 * @ordered
@@ -59,7 +59,7 @@ public class StyleRuleImpl extends MinimalEObjectImpl.Container implements Style
 	/**
 	 * The cached value of the '{@link #getStyle() <em>Style</em>}' containment reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getStyle()
 	 * @generated
 	 * @ordered
@@ -68,7 +68,7 @@ public class StyleRuleImpl extends MinimalEObjectImpl.Container implements Style
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected StyleRuleImpl() {
@@ -77,7 +77,7 @@ public class StyleRuleImpl extends MinimalEObjectImpl.Container implements Style
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -87,10 +87,9 @@ public class StyleRuleImpl extends MinimalEObjectImpl.Container implements Style
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public EList<StyleSelector> getSelectors() {
 		if(selectors == null) {
 			selectors = new EObjectContainmentEList<StyleSelector>(StyleSelector.class, this, DGPackage.STYLE_RULE__SELECTOR);
@@ -100,17 +99,16 @@ public class StyleRuleImpl extends MinimalEObjectImpl.Container implements Style
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public Style getStyle() {
 		return style;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetStyle(Style newStyle, NotificationChain msgs) {
@@ -118,42 +116,36 @@ public class StyleRuleImpl extends MinimalEObjectImpl.Container implements Style
 		style = newStyle;
 		if(eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DGPackage.STYLE_RULE__STYLE, oldStyle, newStyle);
-			if(msgs == null) {
+			if(msgs == null)
 				msgs = notification;
-			} else {
+			else
 				msgs.add(notification);
-			}
 		}
 		return msgs;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public void setStyle(Style newStyle) {
 		if(newStyle != style) {
 			NotificationChain msgs = null;
-			if(style != null) {
+			if(style != null)
 				msgs = ((InternalEObject)style).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DGPackage.STYLE_RULE__STYLE, null, msgs);
-			}
-			if(newStyle != null) {
+			if(newStyle != null)
 				msgs = ((InternalEObject)newStyle).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DGPackage.STYLE_RULE__STYLE, null, msgs);
-			}
 			msgs = basicSetStyle(newStyle, msgs);
-			if(msgs != null) {
+			if(msgs != null)
 				msgs.dispatch();
-			}
-		} else if(eNotificationRequired()) {
+		} else if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.STYLE_RULE__STYLE, newStyle, newStyle));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -169,7 +161,7 @@ public class StyleRuleImpl extends MinimalEObjectImpl.Container implements Style
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -185,7 +177,7 @@ public class StyleRuleImpl extends MinimalEObjectImpl.Container implements Style
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -205,7 +197,7 @@ public class StyleRuleImpl extends MinimalEObjectImpl.Container implements Style
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -223,7 +215,7 @@ public class StyleRuleImpl extends MinimalEObjectImpl.Container implements Style
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override

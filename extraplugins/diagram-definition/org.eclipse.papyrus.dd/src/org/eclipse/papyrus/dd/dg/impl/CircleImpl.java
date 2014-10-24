@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- *
+ *  
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *
+ *  
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -43,7 +43,7 @@ import org.eclipse.papyrus.dd.dg.util.DGValidator;
  * <li>{@link org.eclipse.papyrus.dd.dg.impl.CircleImpl#getRadius <em>Radius</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
 public class CircleImpl extends GraphicalElementImpl implements Circle {
@@ -51,7 +51,7 @@ public class CircleImpl extends GraphicalElementImpl implements Circle {
 	/**
 	 * The cached value of the '{@link #getCenter() <em>Center</em>}' containment reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getCenter()
 	 * @generated
 	 * @ordered
@@ -61,7 +61,7 @@ public class CircleImpl extends GraphicalElementImpl implements Circle {
 	/**
 	 * The default value of the '{@link #getRadius() <em>Radius</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getRadius()
 	 * @generated
 	 * @ordered
@@ -71,7 +71,7 @@ public class CircleImpl extends GraphicalElementImpl implements Circle {
 	/**
 	 * The cached value of the '{@link #getRadius() <em>Radius</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getRadius()
 	 * @generated
 	 * @ordered
@@ -80,7 +80,7 @@ public class CircleImpl extends GraphicalElementImpl implements Circle {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected CircleImpl() {
@@ -89,7 +89,7 @@ public class CircleImpl extends GraphicalElementImpl implements Circle {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -99,17 +99,16 @@ public class CircleImpl extends GraphicalElementImpl implements Circle {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public Point getCenter() {
 		return center;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetCenter(Point newCenter, NotificationChain msgs) {
@@ -117,61 +116,52 @@ public class CircleImpl extends GraphicalElementImpl implements Circle {
 		center = newCenter;
 		if(eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DGPackage.CIRCLE__CENTER, oldCenter, newCenter);
-			if(msgs == null) {
+			if(msgs == null)
 				msgs = notification;
-			} else {
+			else
 				msgs.add(notification);
-			}
 		}
 		return msgs;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public void setCenter(Point newCenter) {
 		if(newCenter != center) {
 			NotificationChain msgs = null;
-			if(center != null) {
+			if(center != null)
 				msgs = ((InternalEObject)center).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DGPackage.CIRCLE__CENTER, null, msgs);
-			}
-			if(newCenter != null) {
+			if(newCenter != null)
 				msgs = ((InternalEObject)newCenter).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DGPackage.CIRCLE__CENTER, null, msgs);
-			}
 			msgs = basicSetCenter(newCenter, msgs);
-			if(msgs != null) {
+			if(msgs != null)
 				msgs.dispatch();
-			}
-		} else if(eNotificationRequired()) {
+		} else if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.CIRCLE__CENTER, newCenter, newCenter));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public double getRadius() {
 		return radius;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public void setRadius(double newRadius) {
 		double oldRadius = radius;
 		radius = newRadius;
-		if(eNotificationRequired()) {
+		if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.CIRCLE__RADIUS, oldRadius, radius));
-		}
 	}
 
 	/**
@@ -179,7 +169,7 @@ public class CircleImpl extends GraphicalElementImpl implements Circle {
 	 * <em>Non Negative Radius</em>}' invariant operation.
 	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #nonNegativeRadius(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
@@ -188,17 +178,16 @@ public class CircleImpl extends GraphicalElementImpl implements Circle {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public boolean nonNegativeRadius(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return DGValidator.validate(DGPackage.Literals.CIRCLE, this, diagnostics, context, "http://www.eclipse.org/emf/2002/Ecore/OCL", DGPackage.Literals.CIRCLE___NON_NEGATIVE_RADIUS__DIAGNOSTICCHAIN_MAP, NON_NEGATIVE_RADIUS_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION, Diagnostic.ERROR, DGValidator.DIAGNOSTIC_SOURCE, DGValidator.CIRCLE__NON_NEGATIVE_RADIUS);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -212,7 +201,7 @@ public class CircleImpl extends GraphicalElementImpl implements Circle {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -228,7 +217,7 @@ public class CircleImpl extends GraphicalElementImpl implements Circle {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -246,7 +235,7 @@ public class CircleImpl extends GraphicalElementImpl implements Circle {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -264,7 +253,7 @@ public class CircleImpl extends GraphicalElementImpl implements Circle {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -280,7 +269,7 @@ public class CircleImpl extends GraphicalElementImpl implements Circle {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -295,14 +284,13 @@ public class CircleImpl extends GraphicalElementImpl implements Circle {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if(eIsProxy()) {
+		if(eIsProxy())
 			return super.toString();
-		}
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (radius: ");
 		result.append(radius);
