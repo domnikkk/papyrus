@@ -45,6 +45,8 @@ import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewAndElementRequest;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest.ViewDescriptor;
 import org.eclipse.gmf.runtime.emf.type.core.IHintedType;
+import org.eclipse.gmf.runtime.notation.Bounds;
+import org.eclipse.gmf.runtime.notation.Shape;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.uml.diagram.common.commands.PreserveAnchorsPositionCommand;
 import org.eclipse.papyrus.uml.diagram.common.draw2d.LifelineDotLineFigure;
@@ -78,13 +80,13 @@ public class LifelineXYLayoutEditPolicy extends XYLayoutEditPolicy {
 	public final static int COREGION_INIT_WIDTH = 30;
 
 	/** Initialization height of Execution Specification. */
-	private final static int EXECUTION_INIT_HEIGHT = 50;
+	public final static int EXECUTION_INIT_HEIGHT = 50;
 
 	/** Initialization height of a time bar figure. */
 	private static final int TIME_BAR_HEIGHT = 1;
 
 	/** The default spacing used between Execution Specification */
-	private final static int SPACING_HEIGHT = 5;
+	public final static int SPACING_HEIGHT = 5;
 
 	// private final static int MAX_CHILD_EXECUTION_DEPTH = 4;
 	// force location of time/duration elements and ES
@@ -343,6 +345,12 @@ public class LifelineXYLayoutEditPolicy extends XYLayoutEditPolicy {
 		for (ShapeNodeEditPart externalExecutionSpecificationEP : executionSpecificationList) {
 			IFigure figure = externalExecutionSpecificationEP.getFigure();
 			Rectangle bounds = figure.getBounds().getCopy();
+			View view = externalExecutionSpecificationEP.getNotationView();
+			// Handle the case of ExecutionSpecification being resized in the same compound command  
+			if (view instanceof Shape && ((Shape) view).getLayoutConstraint() instanceof Bounds) {
+				Bounds newBounds = (Bounds) ((Shape) view).getLayoutConstraint();
+				bounds.height = newBounds.getHeight(); 
+			}
 			if (!bounds.contains(newLocation) || bounds.x > newLocation.x) {
 				continue;
 			}
