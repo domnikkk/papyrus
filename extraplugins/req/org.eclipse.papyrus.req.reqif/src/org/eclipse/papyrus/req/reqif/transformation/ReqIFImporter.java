@@ -265,6 +265,7 @@ public abstract class ReqIFImporter extends ReqIFBaseTransformation {
 		reqifDatatTypeEnumeration= new HashMap<String, DatatypeDefinitionEnumeration>();
 		getAllDataTypeDefinitionEnumeration();
 
+		reqiFTypeMap= filterReqifAvailableType(reqiFTypeMap);
 		//ask to the User all specObjectTypes to import
 		if(interactive){
 			reqiFTypeMap=selectReqIFType(reqiFTypeMap.values());
@@ -328,6 +329,15 @@ public abstract class ReqIFImporter extends ReqIFBaseTransformation {
 		return true;
 	}
 
+	/**
+	 * this method is used to reduce the set of all ReqIF types that you want to import bt UI or not 
+	 * @param reqiFTypeMap the given list of  of REQIF type availbale
+	 * @return the new hashmap of reqif available. <string, specObjectype> the string is th elong name of the SpecObjectType
+	 */
+	public HashMap<String, SpecType> filterReqifAvailableType(
+			HashMap<String, SpecType> reqiFTypeMap) {
+		return reqiFTypeMap;
+	}
 	/**
 	 * this action is used to add last action or transformation on the UML model after importing all things.
 	 * @param UMLModel the obtained UML model after importing reqIF Model
@@ -447,7 +457,7 @@ public abstract class ReqIFImporter extends ReqIFBaseTransformation {
 		Property property=null;
 		for (Property attribute : stereotype.getAllAttributes()) {
 			if( attribute.getName().equals(propertyName)){
-				return property;
+				return attribute;
 			}
 
 		}
@@ -507,7 +517,7 @@ public abstract class ReqIFImporter extends ReqIFBaseTransformation {
 						umlElement.setValue(
 								reqStereotypesMap.get(specType.getLongName()),
 								attributeName,
-								((AttributeValueInteger)att).getTheValue().doubleValue());
+								((AttributeValueInteger)att).getTheValue().intValue());
 					}
 				}
 			}
@@ -703,7 +713,7 @@ public abstract class ReqIFImporter extends ReqIFBaseTransformation {
 				}
 			}
 			if( attributeDef instanceof AttributeDefinitionInteger){
-				attribute= stereotype.createOwnedAttribute(attributeName, umlPrimitiveTypes.getOwnedType("Real"));
+				attribute= stereotype.createOwnedAttribute(attributeName, umlPrimitiveTypes.getOwnedType("Integer"));
 			}
 			if( attributeDef instanceof AttributeDefinitionBoolean){
 				attribute= stereotype.createOwnedAttribute(attributeName, umlPrimitiveTypes.getOwnedType("Boolean"));
