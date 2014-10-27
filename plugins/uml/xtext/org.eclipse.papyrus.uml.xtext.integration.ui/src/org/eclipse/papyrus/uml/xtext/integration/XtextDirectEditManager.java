@@ -50,6 +50,7 @@ import org.eclipse.jface.resource.JFaceResources;
 import org.eclipse.jface.resource.ResourceManager;
 import org.eclipse.jface.viewers.CellEditor;
 import org.eclipse.papyrus.infra.gmfdiag.common.editpart.IControlParserForDirectEdit;
+import org.eclipse.papyrus.infra.gmfdiag.common.editpart.PapyrusLabelEditPart;
 import org.eclipse.papyrus.uml.xtext.integration.core.ContextElementAdapter.IContextElementProvider;
 import org.eclipse.papyrus.uml.xtext.integration.core.IXtextFakeContextResourcesProvider;
 import org.eclipse.papyrus.uml.xtext.integration.ui.Activator;
@@ -136,7 +137,7 @@ public class XtextDirectEditManager extends DirectEditManagerEx {
 
 	private IXtextFakeContextResourcesProvider fakeProvider;
 
-	private static final int LABEL_MIN_WIDTH = 75;
+	private static final int LABEL_MIN_WIDTH = 50;
 
 	private IContextElementProvider contextProvider;
 
@@ -203,7 +204,6 @@ public class XtextDirectEditManager extends DirectEditManagerEx {
 
 				public void relocate(CellEditor celleditor) {
 					StyledText text = (StyledText) celleditor.getControl();
-
 					Rectangle rect = label.getTextBounds().getCopy();
 					if (label.getText().length() <= 0) {
 						// if there is no text, let's assume a default size
@@ -287,7 +287,39 @@ public class XtextDirectEditManager extends DirectEditManagerEx {
 				}
 				source.getFigure().translateToAbsolute(rect);
 				if (!rect.equals(new Rectangle(text.getBounds()))) {
-					text.setBounds(rect.x, rect.y, rect.width, rect.height);
+					// If it's a papyrus Label, needs to manage text alignment
+					if (source instanceof PapyrusLabelEditPart) {
+						PapyrusLabelEditPart label = (PapyrusLabelEditPart) source;
+						int alignment = label.getTextAlignment();
+						switch (alignment) {
+						case PositionConstants.LEFT:
+							text.setAlignment(SWT.LEFT);
+							text.setBounds(rect.x, rect.y, rect.width, rect.height);
+							break;
+						case PositionConstants.RIGHT:
+							text.setAlignment(SWT.RIGHT);
+							if (rect.width <= LABEL_MIN_WIDTH) {
+								text.setBounds(source.getFigure().getBounds().getTopRight().x - LABEL_MIN_WIDTH, rect.y, rect.width, rect.height);
+							} else {
+								text.setBounds(rect.x, rect.y, rect.width, rect.height);
+							}
+							break;
+						case PositionConstants.CENTER:
+							text.setAlignment(SWT.CENTER);
+							if (rect.width <= LABEL_MIN_WIDTH) {
+								text.setBounds(source.getFigure().getBounds().x + source.getFigure().getBounds().width / 2 - LABEL_MIN_WIDTH / 2, rect.y, rect.width, rect.height);
+							} else {
+								text.setBounds(rect.x, rect.y, rect.width, rect.height);
+							}
+							break;
+
+						default:
+							text.setBounds(rect.x, rect.y, rect.width, rect.height);
+							break;
+						}
+					} else {
+						text.setBounds(rect.x, rect.y, rect.width, rect.height);
+					}
 				}
 			}
 		};
@@ -388,7 +420,7 @@ public class XtextDirectEditManager extends DirectEditManagerEx {
 		IActionBars editorActionBars = PlatformUI.getWorkbench().getActiveWorkbenchWindow()
 				.getActivePage().getActiveEditor().getEditorSite()
 				.getActionBars();
-		if (actionBars != null){
+		if (actionBars != null) {
 			restoreSavedActions(editorActionBars);
 		}
 		saveCurrentActions(editorActionBars);
