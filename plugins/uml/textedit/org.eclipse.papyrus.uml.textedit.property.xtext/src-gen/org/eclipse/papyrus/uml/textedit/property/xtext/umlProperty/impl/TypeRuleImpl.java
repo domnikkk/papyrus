@@ -4,13 +4,17 @@ package org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.QualifiedName;
 import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.TypeRule;
 import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.UmlPropertyPackage;
+
 import org.eclipse.uml2.uml.Classifier;
 
 /**
@@ -80,7 +84,6 @@ public class TypeRuleImpl extends MinimalEObjectImpl.Container implements TypeRu
 	 *
 	 * @generated
 	 */
-	@Override
 	public QualifiedName getPath()
 	{
 		return path;
@@ -114,7 +117,6 @@ public class TypeRuleImpl extends MinimalEObjectImpl.Container implements TypeRu
 	 *
 	 * @generated
 	 */
-	@Override
 	public void setPath(QualifiedName newPath)
 	{
 		if (newPath != path)
@@ -142,7 +144,6 @@ public class TypeRuleImpl extends MinimalEObjectImpl.Container implements TypeRu
 	 *
 	 * @generated
 	 */
-	@Override
 	public Classifier getType()
 	{
 		if (type != null && type.eIsProxy())
@@ -176,7 +177,6 @@ public class TypeRuleImpl extends MinimalEObjectImpl.Container implements TypeRu
 	 *
 	 * @generated
 	 */
-	@Override
 	public void setType(Classifier newType)
 	{
 		Classifier oldType = type;

@@ -4,12 +4,16 @@ package org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.QualifiedName;
 import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.UmlPropertyPackage;
+
 import org.eclipse.uml2.uml.Namespace;
 
 /**
@@ -79,7 +83,6 @@ public class QualifiedNameImpl extends MinimalEObjectImpl.Container implements Q
 	 *
 	 * @generated
 	 */
-	@Override
 	public Namespace getPath()
 	{
 		if (path != null && path.eIsProxy())
@@ -113,7 +116,6 @@ public class QualifiedNameImpl extends MinimalEObjectImpl.Container implements Q
 	 *
 	 * @generated
 	 */
-	@Override
 	public void setPath(Namespace newPath)
 	{
 		Namespace oldPath = path;
@@ -129,7 +131,6 @@ public class QualifiedNameImpl extends MinimalEObjectImpl.Container implements Q
 	 *
 	 * @generated
 	 */
-	@Override
 	public QualifiedName getRemaining()
 	{
 		return remaining;
@@ -163,7 +164,6 @@ public class QualifiedNameImpl extends MinimalEObjectImpl.Container implements Q
 	 *
 	 * @generated
 	 */
-	@Override
 	public void setRemaining(QualifiedName newRemaining)
 	{
 		if (newRemaining != remaining)

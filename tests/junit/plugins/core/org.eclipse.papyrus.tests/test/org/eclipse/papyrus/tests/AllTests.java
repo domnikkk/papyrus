@@ -67,7 +67,7 @@ public class AllTests {
 		suiteClasses.add(new PluginTestSuiteClass(org.eclipse.papyrus.infra.services.labelprovider.tests.AllTests.class));
 		suiteClasses.add(new FragmentTestSuiteClass(org.eclipse.papyrus.infra.emf.Activator.PLUGIN_ID, "org.eclipse.papyrus.infra.emf.tests.AllTests"));
 		suiteClasses.add(new PluginTestSuiteClass(org.eclipse.papyrus.infra.extendedtypes.tests.AllTests.class));
-		//		suiteClasses.add(new PluginTestSuiteClass(org.eclipse.papyrus.infra.services.openelement.tests.AllTests.class));
+		// suiteClasses.add(new PluginTestSuiteClass(org.eclipse.papyrus.infra.services.openelement.tests.AllTests.class));
 		suiteClasses.add(new FragmentTestSuiteClass(org.eclipse.papyrus.commands.Activator.PLUGIN_ID, "org.eclipse.papyrus.infra.gmfdiag.commands.tests.AllTests"));
 		suiteClasses.add(new FragmentTestSuiteClass(org.eclipse.papyrus.infra.gmfdiag.common.Activator.ID, "org.eclipse.papyrus.infra.gmfdiag.common.tests.AllTests"));
 		suiteClasses.add(new FragmentTestSuiteClass(org.eclipse.papyrus.infra.emf.readonly.Activator.PLUGIN_ID, "org.eclipse.papyrus.infra.emf.readonly.tests.AllTests"));
@@ -79,7 +79,7 @@ public class AllTests {
 		/* integration */
 		suiteClasses.add(new PluginTestSuiteClass(org.eclipse.papyrus.editor.integration.tests.AllTests.class));
 
-		//FIXME: Workaround for Bug 441246: Move the ResourceLoading tests after EditorReloadTest, since they are currently conflicting
+		// FIXME: Workaround for Bug 441246: Move the ResourceLoading tests after EditorReloadTest, since they are currently conflicting
 		suiteClasses.add(new FragmentTestSuiteClass(org.eclipse.papyrus.infra.services.resourceloading.Activator.PLUGIN_ID, "org.eclipse.papyrus.infra.services.resourceloading.tests.AllTests"));
 
 		/* search */
@@ -91,7 +91,7 @@ public class AllTests {
 		/* control mode */
 		suiteClasses.add(new PluginTestSuiteClass(org.eclipse.papyrus.infra.services.controlmode.tests.AllTests.class));
 
-		if(System.getProperty("no.SysML.tests") == null) {
+		if (System.getProperty("no.SysML.tests") == null) {
 			// SysML tests
 			suiteClasses.addAll(AllSysMLTests.suiteClasses);
 		}
@@ -123,15 +123,19 @@ public class AllTests {
 		suiteClasses.add(new PluginTestSuiteClass(org.eclipse.papyrus.uml.diagram.common.tests.tests.AllTests.class));
 		//
 
-		//nattable tests
+		// nattable tests
 		suiteClasses.add(new PluginTestSuiteClass(org.eclipse.papyrus.uml.nattable.tests.tests.AllTests.class));
 		suiteClasses.add(new PluginTestSuiteClass(org.eclipse.papyrus.uml.nattable.generic.tests.tests.AllTests.class));
 		suiteClasses.add(new PluginTestSuiteClass(org.eclipse.papyrus.infra.nattable.views.tests.tests.AllTests.class));
 		suiteClasses.add(new PluginTestSuiteClass(org.eclipse.papyrus.infra.nattable.model.editor.tests.tests.AllTests.class));
 		suiteClasses.add(new PluginTestSuiteClass(org.eclipse.papyrus.infra.nattable.tests.tests.AllTests.class));
 
+		// uml textedit tests
+		suiteClasses.add(new PluginTestSuiteClass(org.eclipse.papyrus.uml.textedit.port.tests.suites.AllTests.class));
+		suiteClasses.add(new PluginTestSuiteClass(org.eclipse.papyrus.uml.textedit.property.tests.suites.AllTests.class));
+		suiteClasses.add(new PluginTestSuiteClass(org.eclipse.papyrus.uml.textedit.parameter.tests.suites.AllTests.class));
 
-		//end
+		// end
 	}
 
 	/**
@@ -143,19 +147,19 @@ public class AllTests {
 		 * Constructor.
 		 *
 		 * @param clazz
-		 *        the suite class � AllTests2
+		 *            the suite class � AllTests2
 		 * @throws InitializationError
-		 *         if there's a problem
+		 *             if there's a problem
 		 * @throws org.junit.runners.model.InitializationError
 		 */
 		public AllTestsRunner(final Class<?> clazz) throws InitializationError {
 			super(clazz, getSuites());
 
-			for(String arg : Platform.getApplicationArgs()) {
-				if(arg.contains("-testConfig=")) {
+			for (String arg : Platform.getApplicationArgs()) {
+				if (arg.contains("-testConfig=")) {
 					String configName = arg.substring("-testConfig=".length());
 					Set<TestCategory> testsConfig = availableConfigs.get(configName);
-					if(testsConfig != null) {
+					if (testsConfig != null) {
 						ClassificationConfig.setTestsConfiguration(testsConfig);
 					}
 					break;
@@ -172,15 +176,15 @@ public class AllTests {
 	private static Class<?>[] getSuites() {
 		// retrieve all test suites.
 		final Collection<Class<?>> suites = new ArrayList<Class<?>>();
-		for(final ITestSuiteClass testSuiteClass : suiteClasses) {
+		for (final ITestSuiteClass testSuiteClass : suiteClasses) {
 			final Class<?> class_ = testSuiteClass.getMainTestSuiteClass();
-			if(class_ != null) {
+			if (class_ != null) {
 				suites.add(class_);
 			} else {
 				System.err.println(testSuiteClass + " does not give a correct test suite class");
 			}
 		}
-		return suites.toArray(new Class<?>[]{});
+		return suites.toArray(new Class<?>[] {});
 	}
 
 }

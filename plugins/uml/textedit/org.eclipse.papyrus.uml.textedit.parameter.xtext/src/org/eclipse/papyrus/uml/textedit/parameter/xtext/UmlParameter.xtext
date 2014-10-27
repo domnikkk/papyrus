@@ -7,18 +7,29 @@ import "http://www.eclipse.org/papyrus/uml/textedit/common/xtext/UmlCommon" as c
 generate umlParameter "http://www.eclipse.org/papyrus/uml/textedit/parameter/xtext/UmlParameter"
 
 ParameterRule:
-	visibility = VisibilityKind
-	direction = Direction
-	name=ID ':' ((type=TypeRule) | "<Undefined>")
+	(visibility = VisibilityRule)?
+	(direction = DirectionRule)?
+	name=ID (':' (type=TypeRule | typeUndefined?="<Undefined>"))?
 	(multiplicity = MultiplicityRule) ? 
 	(modifiers = ModifiersRule) ?
-	effect = EffectRule;
+	(effect = EffectRule)?
+	(defaultValue = DefaultValueRule)?
+;
 	
 ModifiersRule:
-	'{' values += ModifierSpecification (',' values += ModifierSpecification)* '}';
-	
+	{ModifiersRule}'{' (values += ModifierSpecification (',' values += ModifierSpecification)*)? '}'
+;
+
 ModifierSpecification:
 	value = ModifierKind ;
+
+VisibilityRule:
+	visibility = VisibilityKind
+;
+
+DirectionRule:
+	direction = Direction
+;
 
 enum ModifierKind:
 	EXCEPTION = "exception" 
@@ -34,4 +45,27 @@ enum EffectKind:
 	| DELETE="delete";
 	
 EffectRule:
-	'{' "effect: " effectKind = EffectKind '}';
+	'{' "effect:" effectKind = EffectKind '}';
+	
+DefaultValueRule :
+	'=' default = Value ;
+	
+Value : IntValue | StringValue | BooleanValue | RealValue | NullValue | NoValue;
+
+IntValue : literalInteger = INT;
+
+StringValue : literalString = STRING;
+
+enum BooleanLiterals:
+	true = "true" |
+	false = "false"
+;
+
+BooleanValue : literalBoolean = BooleanLiterals;
+
+//TODO: Support all Java-compliant doubles
+RealValue : integer = INT '.' | '.' fraction = INT | integer = INT "." fraction = INT;
+
+NullValue : {NullValue}'null';
+
+NoValue : {NoValue}'none';

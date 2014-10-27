@@ -1,6 +1,7 @@
 Manifest-Version: 1.0
 Export-Package: org.eclipse.papyrus.uml.textedit.parameter.xtext.ui.contentassist,
  org.eclipse.papyrus.uml.textedit.parameter.xtext.ui.contentassist.antlr,
+ org.eclipse.papyrus.uml.textedit.parameter.xtext.ui.contributions,
  org.eclipse.papyrus.uml.textedit.parameter.xtext.ui.quickfix
 Bundle-ActivationPolicy: lazy
 Bundle-Name: %pluginName

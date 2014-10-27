@@ -74,7 +74,7 @@ public interface UmlPropertyPackage extends EPackage
 	int PROPERTY_RULE = 0;
 
 	/**
-	 * The feature id for the '<em><b>Visibility</b></em>' attribute.
+	 * The feature id for the '<em><b>Visibility</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -84,14 +84,14 @@ public interface UmlPropertyPackage extends EPackage
 	int PROPERTY_RULE__VISIBILITY = 0;
 
 	/**
-	 * The feature id for the '<em><b>Is Derived</b></em>' attribute.
+	 * The feature id for the '<em><b>Derived</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY_RULE__IS_DERIVED = 1;
+	int PROPERTY_RULE__DERIVED = 1;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -114,6 +114,16 @@ public interface UmlPropertyPackage extends EPackage
 	int PROPERTY_RULE__TYPE = 3;
 
 	/**
+	 * The feature id for the '<em><b>Type Undefined</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int PROPERTY_RULE__TYPE_UNDEFINED = 4;
+
+	/**
 	 * The feature id for the '<em><b>Multiplicity</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -121,7 +131,7 @@ public interface UmlPropertyPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY_RULE__MULTIPLICITY = 4;
+	int PROPERTY_RULE__MULTIPLICITY = 5;
 
 	/**
 	 * The feature id for the '<em><b>Modifiers</b></em>' containment reference.
@@ -131,7 +141,7 @@ public interface UmlPropertyPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY_RULE__MODIFIERS = 5;
+	int PROPERTY_RULE__MODIFIERS = 6;
 
 	/**
 	 * The feature id for the '<em><b>Default</b></em>' containment reference.
@@ -141,7 +151,7 @@ public interface UmlPropertyPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY_RULE__DEFAULT = 6;
+	int PROPERTY_RULE__DEFAULT = 7;
 
 	/**
 	 * The number of structural features of the '<em>Property Rule</em>' class.
@@ -151,7 +161,38 @@ public interface UmlPropertyPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY_RULE_FEATURE_COUNT = 7;
+	int PROPERTY_RULE_FEATURE_COUNT = 8;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.VisibilityRuleImpl <em>Visibility Rule</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.VisibilityRuleImpl
+	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.UmlPropertyPackageImpl#getVisibilityRule()
+	 * @generated
+	 */
+	int VISIBILITY_RULE = 1;
+
+	/**
+	 * The feature id for the '<em><b>Visibility</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int VISIBILITY_RULE__VISIBILITY = 0;
+
+	/**
+	 * The number of structural features of the '<em>Visibility Rule</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int VISIBILITY_RULE_FEATURE_COUNT = 1;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.TypeRuleImpl <em>Type Rule</em>}' class.
@@ -162,7 +203,7 @@ public interface UmlPropertyPackage extends EPackage
 	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.UmlPropertyPackageImpl#getTypeRule()
 	 * @generated
 	 */
-	int TYPE_RULE = 1;
+	int TYPE_RULE = 2;
 
 	/**
 	 * The feature id for the '<em><b>Path</b></em>' containment reference.
@@ -203,7 +244,7 @@ public interface UmlPropertyPackage extends EPackage
 	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.UmlPropertyPackageImpl#getQualifiedName()
 	 * @generated
 	 */
-	int QUALIFIED_NAME = 2;
+	int QUALIFIED_NAME = 3;
 
 	/**
 	 * The feature id for the '<em><b>Path</b></em>' reference.
@@ -244,7 +285,7 @@ public interface UmlPropertyPackage extends EPackage
 	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.UmlPropertyPackageImpl#getMultiplicityRule()
 	 * @generated
 	 */
-	int MULTIPLICITY_RULE = 3;
+	int MULTIPLICITY_RULE = 4;
 
 	/**
 	 * The feature id for the '<em><b>Bounds</b></em>' containment reference list.
@@ -275,7 +316,7 @@ public interface UmlPropertyPackage extends EPackage
 	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.UmlPropertyPackageImpl#getBoundSpecification()
 	 * @generated
 	 */
-	int BOUND_SPECIFICATION = 4;
+	int BOUND_SPECIFICATION = 5;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -306,7 +347,7 @@ public interface UmlPropertyPackage extends EPackage
 	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.UmlPropertyPackageImpl#getModifiersRule()
 	 * @generated
 	 */
-	int MODIFIERS_RULE = 5;
+	int MODIFIERS_RULE = 6;
 
 	/**
 	 * The feature id for the '<em><b>Values</b></em>' containment reference list.
@@ -337,7 +378,7 @@ public interface UmlPropertyPackage extends EPackage
 	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.UmlPropertyPackageImpl#getModifierSpecification()
 	 * @generated
 	 */
-	int MODIFIER_SPECIFICATION = 6;
+	int MODIFIER_SPECIFICATION = 7;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -388,7 +429,7 @@ public interface UmlPropertyPackage extends EPackage
 	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.UmlPropertyPackageImpl#getRedefinesRule()
 	 * @generated
 	 */
-	int REDEFINES_RULE = 7;
+	int REDEFINES_RULE = 8;
 
 	/**
 	 * The feature id for the '<em><b>Property</b></em>' reference.
@@ -419,7 +460,7 @@ public interface UmlPropertyPackage extends EPackage
 	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.UmlPropertyPackageImpl#getSubsetsRule()
 	 * @generated
 	 */
-	int SUBSETS_RULE = 8;
+	int SUBSETS_RULE = 9;
 
 	/**
 	 * The feature id for the '<em><b>Property</b></em>' reference.
@@ -450,10 +491,10 @@ public interface UmlPropertyPackage extends EPackage
 	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.UmlPropertyPackageImpl#getDefaultValueRule()
 	 * @generated
 	 */
-	int DEFAULT_VALUE_RULE = 9;
+	int DEFAULT_VALUE_RULE = 10;
 
 	/**
-	 * The feature id for the '<em><b>Default</b></em>' attribute.
+	 * The feature id for the '<em><b>Default</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -473,6 +514,203 @@ public interface UmlPropertyPackage extends EPackage
 	int DEFAULT_VALUE_RULE_FEATURE_COUNT = 1;
 
 	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.ValueImpl <em>Value</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.ValueImpl
+	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.UmlPropertyPackageImpl#getValue()
+	 * @generated
+	 */
+	int VALUE = 11;
+
+	/**
+	 * The number of structural features of the '<em>Value</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int VALUE_FEATURE_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.IntValueImpl <em>Int Value</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.IntValueImpl
+	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.UmlPropertyPackageImpl#getIntValue()
+	 * @generated
+	 */
+	int INT_VALUE = 12;
+
+	/**
+	 * The feature id for the '<em><b>Literal Integer</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int INT_VALUE__LITERAL_INTEGER = VALUE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Int Value</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int INT_VALUE_FEATURE_COUNT = VALUE_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.StringValueImpl <em>String Value</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.StringValueImpl
+	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.UmlPropertyPackageImpl#getStringValue()
+	 * @generated
+	 */
+	int STRING_VALUE = 13;
+
+	/**
+	 * The feature id for the '<em><b>Literal String</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_VALUE__LITERAL_STRING = VALUE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>String Value</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_VALUE_FEATURE_COUNT = VALUE_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.BooleanValueImpl <em>Boolean Value</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.BooleanValueImpl
+	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.UmlPropertyPackageImpl#getBooleanValue()
+	 * @generated
+	 */
+	int BOOLEAN_VALUE = 14;
+
+	/**
+	 * The feature id for the '<em><b>Literal Boolean</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int BOOLEAN_VALUE__LITERAL_BOOLEAN = VALUE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Boolean Value</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int BOOLEAN_VALUE_FEATURE_COUNT = VALUE_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.RealValueImpl <em>Real Value</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.RealValueImpl
+	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.UmlPropertyPackageImpl#getRealValue()
+	 * @generated
+	 */
+	int REAL_VALUE = 15;
+
+	/**
+	 * The feature id for the '<em><b>Integer</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int REAL_VALUE__INTEGER = VALUE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Fraction</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int REAL_VALUE__FRACTION = VALUE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Real Value</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int REAL_VALUE_FEATURE_COUNT = VALUE_FEATURE_COUNT + 2;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.NullValueImpl <em>Null Value</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.NullValueImpl
+	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.UmlPropertyPackageImpl#getNullValue()
+	 * @generated
+	 */
+	int NULL_VALUE = 16;
+
+	/**
+	 * The number of structural features of the '<em>Null Value</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int NULL_VALUE_FEATURE_COUNT = VALUE_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.NoValueImpl <em>No Value</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.NoValueImpl
+	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.UmlPropertyPackageImpl#getNoValue()
+	 * @generated
+	 */
+	int NO_VALUE = 17;
+
+	/**
+	 * The number of structural features of the '<em>No Value</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int NO_VALUE_FEATURE_COUNT = VALUE_FEATURE_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.VisibilityKind <em>Visibility Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -481,7 +719,7 @@ public interface UmlPropertyPackage extends EPackage
 	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.UmlPropertyPackageImpl#getVisibilityKind()
 	 * @generated
 	 */
-	int VISIBILITY_KIND = 10;
+	int VISIBILITY_KIND = 18;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.ModifierKind <em>Modifier Kind</em>}' enum.
@@ -492,7 +730,18 @@ public interface UmlPropertyPackage extends EPackage
 	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.UmlPropertyPackageImpl#getModifierKind()
 	 * @generated
 	 */
-	int MODIFIER_KIND = 11;
+	int MODIFIER_KIND = 19;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.BooleanLiterals <em>Boolean Literals</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.BooleanLiterals
+	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.UmlPropertyPackageImpl#getBooleanLiterals()
+	 * @generated
+	 */
+	int BOOLEAN_LITERALS = 20;
 
 
 	/**
@@ -507,28 +756,28 @@ public interface UmlPropertyPackage extends EPackage
 	EClass getPropertyRule();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.PropertyRule#getVisibility <em>Visibility</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.PropertyRule#getVisibility <em>Visibility</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
-	 * @return the meta object for the attribute '<em>Visibility</em>'.
+	 * @return the meta object for the containment reference '<em>Visibility</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.PropertyRule#getVisibility()
 	 * @see #getPropertyRule()
 	 * @generated
 	 */
-	EAttribute getPropertyRule_Visibility();
+	EReference getPropertyRule_Visibility();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.PropertyRule#getIsDerived <em>Is Derived</em>}'.
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.PropertyRule#isDerived <em>Derived</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
-	 * @return the meta object for the attribute '<em>Is Derived</em>'.
-	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.PropertyRule#getIsDerived()
+	 * @return the meta object for the attribute '<em>Derived</em>'.
+	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.PropertyRule#isDerived()
 	 * @see #getPropertyRule()
 	 * @generated
 	 */
-	EAttribute getPropertyRule_IsDerived();
+	EAttribute getPropertyRule_Derived();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.PropertyRule#getName <em>Name</em>}'.
@@ -553,6 +802,18 @@ public interface UmlPropertyPackage extends EPackage
 	 * @generated
 	 */
 	EReference getPropertyRule_Type();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.PropertyRule#isTypeUndefined <em>Type Undefined</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Type Undefined</em>'.
+	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.PropertyRule#isTypeUndefined()
+	 * @see #getPropertyRule()
+	 * @generated
+	 */
+	EAttribute getPropertyRule_TypeUndefined();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.PropertyRule#getMultiplicity <em>Multiplicity</em>}'.
@@ -589,6 +850,29 @@ public interface UmlPropertyPackage extends EPackage
 	 * @generated
 	 */
 	EReference getPropertyRule_Default();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.VisibilityRule <em>Visibility Rule</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>Visibility Rule</em>'.
+	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.VisibilityRule
+	 * @generated
+	 */
+	EClass getVisibilityRule();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.VisibilityRule#getVisibility <em>Visibility</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Visibility</em>'.
+	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.VisibilityRule#getVisibility()
+	 * @see #getVisibilityRule()
+	 * @generated
+	 */
+	EAttribute getVisibilityRule_Visibility();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.TypeRule <em>Type Rule</em>}'.
@@ -834,16 +1118,153 @@ public interface UmlPropertyPackage extends EPackage
 	EClass getDefaultValueRule();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.DefaultValueRule#getDefault <em>Default</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.DefaultValueRule#getDefault <em>Default</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
-	 * @return the meta object for the attribute '<em>Default</em>'.
+	 * @return the meta object for the containment reference '<em>Default</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.DefaultValueRule#getDefault()
 	 * @see #getDefaultValueRule()
 	 * @generated
 	 */
-	EAttribute getDefaultValueRule_Default();
+	EReference getDefaultValueRule_Default();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.Value <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>Value</em>'.
+	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.Value
+	 * @generated
+	 */
+	EClass getValue();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.IntValue <em>Int Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>Int Value</em>'.
+	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.IntValue
+	 * @generated
+	 */
+	EClass getIntValue();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.IntValue#getLiteralInteger <em>Literal Integer</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Literal Integer</em>'.
+	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.IntValue#getLiteralInteger()
+	 * @see #getIntValue()
+	 * @generated
+	 */
+	EAttribute getIntValue_LiteralInteger();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.StringValue <em>String Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>String Value</em>'.
+	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.StringValue
+	 * @generated
+	 */
+	EClass getStringValue();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.StringValue#getLiteralString <em>Literal String</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Literal String</em>'.
+	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.StringValue#getLiteralString()
+	 * @see #getStringValue()
+	 * @generated
+	 */
+	EAttribute getStringValue_LiteralString();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.BooleanValue <em>Boolean Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>Boolean Value</em>'.
+	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.BooleanValue
+	 * @generated
+	 */
+	EClass getBooleanValue();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.BooleanValue#getLiteralBoolean <em>Literal Boolean</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Literal Boolean</em>'.
+	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.BooleanValue#getLiteralBoolean()
+	 * @see #getBooleanValue()
+	 * @generated
+	 */
+	EAttribute getBooleanValue_LiteralBoolean();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.RealValue <em>Real Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>Real Value</em>'.
+	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.RealValue
+	 * @generated
+	 */
+	EClass getRealValue();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.RealValue#getInteger <em>Integer</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Integer</em>'.
+	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.RealValue#getInteger()
+	 * @see #getRealValue()
+	 * @generated
+	 */
+	EAttribute getRealValue_Integer();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.RealValue#getFraction <em>Fraction</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Fraction</em>'.
+	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.RealValue#getFraction()
+	 * @see #getRealValue()
+	 * @generated
+	 */
+	EAttribute getRealValue_Fraction();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.NullValue <em>Null Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>Null Value</em>'.
+	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.NullValue
+	 * @generated
+	 */
+	EClass getNullValue();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.NoValue <em>No Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>No Value</em>'.
+	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.NoValue
+	 * @generated
+	 */
+	EClass getNoValue();
 
 	/**
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.VisibilityKind <em>Visibility Kind</em>}'.
@@ -866,6 +1287,17 @@ public interface UmlPropertyPackage extends EPackage
 	 * @generated
 	 */
 	EEnum getModifierKind();
+
+	/**
+	 * Returns the meta object for enum '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.BooleanLiterals <em>Boolean Literals</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for enum '<em>Boolean Literals</em>'.
+	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.BooleanLiterals
+	 * @generated
+	 */
+	EEnum getBooleanLiterals();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -904,22 +1336,22 @@ public interface UmlPropertyPackage extends EPackage
 		EClass PROPERTY_RULE = eINSTANCE.getPropertyRule();
 
 		/**
-		 * The meta object literal for the '<em><b>Visibility</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Visibility</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 *
 		 * @generated
 		 */
-		EAttribute PROPERTY_RULE__VISIBILITY = eINSTANCE.getPropertyRule_Visibility();
+		EReference PROPERTY_RULE__VISIBILITY = eINSTANCE.getPropertyRule_Visibility();
 
 		/**
-		 * The meta object literal for the '<em><b>Is Derived</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Derived</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 *
 		 * @generated
 		 */
-		EAttribute PROPERTY_RULE__IS_DERIVED = eINSTANCE.getPropertyRule_IsDerived();
+		EAttribute PROPERTY_RULE__DERIVED = eINSTANCE.getPropertyRule_Derived();
 
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -938,6 +1370,15 @@ public interface UmlPropertyPackage extends EPackage
 		 * @generated
 		 */
 		EReference PROPERTY_RULE__TYPE = eINSTANCE.getPropertyRule_Type();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Undefined</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute PROPERTY_RULE__TYPE_UNDEFINED = eINSTANCE.getPropertyRule_TypeUndefined();
 
 		/**
 		 * The meta object literal for the '<em><b>Multiplicity</b></em>' containment reference feature.
@@ -965,6 +1406,26 @@ public interface UmlPropertyPackage extends EPackage
 		 * @generated
 		 */
 		EReference PROPERTY_RULE__DEFAULT = eINSTANCE.getPropertyRule_Default();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.VisibilityRuleImpl <em>Visibility Rule</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.VisibilityRuleImpl
+		 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.UmlPropertyPackageImpl#getVisibilityRule()
+		 * @generated
+		 */
+		EClass VISIBILITY_RULE = eINSTANCE.getVisibilityRule();
+
+		/**
+		 * The meta object literal for the '<em><b>Visibility</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute VISIBILITY_RULE__VISIBILITY = eINSTANCE.getVisibilityRule_Visibility();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.TypeRuleImpl <em>Type Rule</em>}' class.
@@ -1174,13 +1635,135 @@ public interface UmlPropertyPackage extends EPackage
 		EClass DEFAULT_VALUE_RULE = eINSTANCE.getDefaultValueRule();
 
 		/**
-		 * The meta object literal for the '<em><b>Default</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Default</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 *
 		 * @generated
 		 */
-		EAttribute DEFAULT_VALUE_RULE__DEFAULT = eINSTANCE.getDefaultValueRule_Default();
+		EReference DEFAULT_VALUE_RULE__DEFAULT = eINSTANCE.getDefaultValueRule_Default();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.ValueImpl <em>Value</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.ValueImpl
+		 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.UmlPropertyPackageImpl#getValue()
+		 * @generated
+		 */
+		EClass VALUE = eINSTANCE.getValue();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.IntValueImpl <em>Int Value</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.IntValueImpl
+		 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.UmlPropertyPackageImpl#getIntValue()
+		 * @generated
+		 */
+		EClass INT_VALUE = eINSTANCE.getIntValue();
+
+		/**
+		 * The meta object literal for the '<em><b>Literal Integer</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute INT_VALUE__LITERAL_INTEGER = eINSTANCE.getIntValue_LiteralInteger();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.StringValueImpl <em>String Value</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.StringValueImpl
+		 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.UmlPropertyPackageImpl#getStringValue()
+		 * @generated
+		 */
+		EClass STRING_VALUE = eINSTANCE.getStringValue();
+
+		/**
+		 * The meta object literal for the '<em><b>Literal String</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute STRING_VALUE__LITERAL_STRING = eINSTANCE.getStringValue_LiteralString();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.BooleanValueImpl <em>Boolean Value</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.BooleanValueImpl
+		 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.UmlPropertyPackageImpl#getBooleanValue()
+		 * @generated
+		 */
+		EClass BOOLEAN_VALUE = eINSTANCE.getBooleanValue();
+
+		/**
+		 * The meta object literal for the '<em><b>Literal Boolean</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute BOOLEAN_VALUE__LITERAL_BOOLEAN = eINSTANCE.getBooleanValue_LiteralBoolean();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.RealValueImpl <em>Real Value</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.RealValueImpl
+		 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.UmlPropertyPackageImpl#getRealValue()
+		 * @generated
+		 */
+		EClass REAL_VALUE = eINSTANCE.getRealValue();
+
+		/**
+		 * The meta object literal for the '<em><b>Integer</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute REAL_VALUE__INTEGER = eINSTANCE.getRealValue_Integer();
+
+		/**
+		 * The meta object literal for the '<em><b>Fraction</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute REAL_VALUE__FRACTION = eINSTANCE.getRealValue_Fraction();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.NullValueImpl <em>Null Value</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.NullValueImpl
+		 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.UmlPropertyPackageImpl#getNullValue()
+		 * @generated
+		 */
+		EClass NULL_VALUE = eINSTANCE.getNullValue();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.NoValueImpl <em>No Value</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.NoValueImpl
+		 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.UmlPropertyPackageImpl#getNoValue()
+		 * @generated
+		 */
+		EClass NO_VALUE = eINSTANCE.getNoValue();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.VisibilityKind <em>Visibility Kind</em>}' enum.
@@ -1203,6 +1786,17 @@ public interface UmlPropertyPackage extends EPackage
 		 * @generated
 		 */
 		EEnum MODIFIER_KIND = eINSTANCE.getModifierKind();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.BooleanLiterals <em>Boolean Literals</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.BooleanLiterals
+		 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.UmlPropertyPackageImpl#getBooleanLiterals()
+		 * @generated
+		 */
+		EEnum BOOLEAN_LITERALS = eINSTANCE.getBooleanLiterals();
 
 	}
 

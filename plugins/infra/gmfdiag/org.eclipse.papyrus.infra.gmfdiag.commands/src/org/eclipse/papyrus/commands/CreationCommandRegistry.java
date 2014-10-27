@@ -18,11 +18,9 @@ import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.Status;
-import org.eclipse.papyrus.infra.core.Activator;
+import org.eclipse.papyrus.commands.Activator;
 import org.eclipse.papyrus.infra.core.extension.ExtensionException;
 import org.eclipse.papyrus.infra.core.extension.NotFoundException;
-import org.eclipse.papyrus.infra.core.utils.IDebugChannel;
-import org.eclipse.papyrus.infra.core.utils.PapyrusTrace;
 
 /**
  * {@inheritDoc}
@@ -132,11 +130,10 @@ public class CreationCommandRegistry implements ICreationCommandRegistry {
 				}
 			} catch (ExtensionException e) {
 				Activator.getDefault().getLog().log(new Status(IStatus.WARNING, Activator.PLUGIN_ID, e.getMessage(), e));
-				PapyrusTrace.error(IDebugChannel.PAPYRUS_EXTENSIONPOINT_LOADING, this, "Initialization creation command problem " + e);
+				Activator.log.error( "Initialization creation command problem ", e);
 			}
 		}
-		PapyrusTrace.trace(IDebugChannel.PAPYRUS_EXTENSIONPOINT_LOADING, this, "" + creationCommandDescriptors.size() + " creationCommands loaded");
-
+		Activator.log.info("" + creationCommandDescriptors.size() + " creationCommands loaded");
 	}
 
 }

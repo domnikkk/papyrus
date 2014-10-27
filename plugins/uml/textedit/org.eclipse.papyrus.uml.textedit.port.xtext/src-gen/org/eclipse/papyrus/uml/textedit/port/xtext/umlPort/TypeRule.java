@@ -3,6 +3,7 @@
 package org.eclipse.papyrus.uml.textedit.port.xtext.umlPort;
 
 import org.eclipse.emf.ecore.EObject;
+
 import org.eclipse.uml2.uml.Classifier;
 
 /**

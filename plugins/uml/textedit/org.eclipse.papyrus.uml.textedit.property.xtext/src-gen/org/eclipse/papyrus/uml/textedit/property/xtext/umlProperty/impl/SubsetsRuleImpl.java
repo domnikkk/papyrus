@@ -3,12 +3,16 @@
 package org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.SubsetsRule;
 import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.UmlPropertyPackage;
+
 import org.eclipse.uml2.uml.Property;
 
 /**
@@ -66,7 +70,6 @@ public class SubsetsRuleImpl extends MinimalEObjectImpl.Container implements Sub
 	 *
 	 * @generated
 	 */
-	@Override
 	public Property getProperty()
 	{
 		if (property != null && property.eIsProxy())
@@ -100,7 +103,6 @@ public class SubsetsRuleImpl extends MinimalEObjectImpl.Container implements Sub
 	 *
 	 * @generated
 	 */
-	@Override
 	public void setProperty(Property newProperty)
 	{
 		Property oldProperty = property;

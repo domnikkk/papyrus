@@ -6,22 +6,12 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
+
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
+
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.BoundSpecification;
-import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.DefaultValueRule;
-import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.ModifierKind;
-import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.ModifierSpecification;
-import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.ModifiersRule;
-import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.MultiplicityRule;
-import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.PropertyRule;
-import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.QualifiedName;
-import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.RedefinesRule;
-import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.SubsetsRule;
-import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.TypeRule;
-import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.UmlPropertyFactory;
-import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.UmlPropertyPackage;
-import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.VisibilityKind;
+
+import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.*;
 
 /**
  * <!-- begin-user-doc -->
@@ -80,6 +70,8 @@ public class UmlPropertyFactoryImpl extends EFactoryImpl implements UmlPropertyF
 		{
 		case UmlPropertyPackage.PROPERTY_RULE:
 			return createPropertyRule();
+		case UmlPropertyPackage.VISIBILITY_RULE:
+			return createVisibilityRule();
 		case UmlPropertyPackage.TYPE_RULE:
 			return createTypeRule();
 		case UmlPropertyPackage.QUALIFIED_NAME:
@@ -98,6 +90,20 @@ public class UmlPropertyFactoryImpl extends EFactoryImpl implements UmlPropertyF
 			return createSubsetsRule();
 		case UmlPropertyPackage.DEFAULT_VALUE_RULE:
 			return createDefaultValueRule();
+		case UmlPropertyPackage.VALUE:
+			return createValue();
+		case UmlPropertyPackage.INT_VALUE:
+			return createIntValue();
+		case UmlPropertyPackage.STRING_VALUE:
+			return createStringValue();
+		case UmlPropertyPackage.BOOLEAN_VALUE:
+			return createBooleanValue();
+		case UmlPropertyPackage.REAL_VALUE:
+			return createRealValue();
+		case UmlPropertyPackage.NULL_VALUE:
+			return createNullValue();
+		case UmlPropertyPackage.NO_VALUE:
+			return createNoValue();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -118,6 +124,8 @@ public class UmlPropertyFactoryImpl extends EFactoryImpl implements UmlPropertyF
 			return createVisibilityKindFromString(eDataType, initialValue);
 		case UmlPropertyPackage.MODIFIER_KIND:
 			return createModifierKindFromString(eDataType, initialValue);
+		case UmlPropertyPackage.BOOLEAN_LITERALS:
+			return createBooleanLiteralsFromString(eDataType, initialValue);
 		default:
 			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -138,6 +146,8 @@ public class UmlPropertyFactoryImpl extends EFactoryImpl implements UmlPropertyF
 			return convertVisibilityKindToString(eDataType, instanceValue);
 		case UmlPropertyPackage.MODIFIER_KIND:
 			return convertModifierKindToString(eDataType, instanceValue);
+		case UmlPropertyPackage.BOOLEAN_LITERALS:
+			return convertBooleanLiteralsToString(eDataType, instanceValue);
 		default:
 			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -149,7 +159,6 @@ public class UmlPropertyFactoryImpl extends EFactoryImpl implements UmlPropertyF
 	 *
 	 * @generated
 	 */
-	@Override
 	public PropertyRule createPropertyRule()
 	{
 		PropertyRuleImpl propertyRule = new PropertyRuleImpl();
@@ -162,7 +171,18 @@ public class UmlPropertyFactoryImpl extends EFactoryImpl implements UmlPropertyF
 	 *
 	 * @generated
 	 */
-	@Override
+	public VisibilityRule createVisibilityRule()
+	{
+		VisibilityRuleImpl visibilityRule = new VisibilityRuleImpl();
+		return visibilityRule;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
 	public TypeRule createTypeRule()
 	{
 		TypeRuleImpl typeRule = new TypeRuleImpl();
@@ -175,7 +195,6 @@ public class UmlPropertyFactoryImpl extends EFactoryImpl implements UmlPropertyF
 	 *
 	 * @generated
 	 */
-	@Override
 	public QualifiedName createQualifiedName()
 	{
 		QualifiedNameImpl qualifiedName = new QualifiedNameImpl();
@@ -188,7 +207,6 @@ public class UmlPropertyFactoryImpl extends EFactoryImpl implements UmlPropertyF
 	 *
 	 * @generated
 	 */
-	@Override
 	public MultiplicityRule createMultiplicityRule()
 	{
 		MultiplicityRuleImpl multiplicityRule = new MultiplicityRuleImpl();
@@ -201,7 +219,6 @@ public class UmlPropertyFactoryImpl extends EFactoryImpl implements UmlPropertyF
 	 *
 	 * @generated
 	 */
-	@Override
 	public BoundSpecification createBoundSpecification()
 	{
 		BoundSpecificationImpl boundSpecification = new BoundSpecificationImpl();
@@ -214,7 +231,6 @@ public class UmlPropertyFactoryImpl extends EFactoryImpl implements UmlPropertyF
 	 *
 	 * @generated
 	 */
-	@Override
 	public ModifiersRule createModifiersRule()
 	{
 		ModifiersRuleImpl modifiersRule = new ModifiersRuleImpl();
@@ -227,7 +243,6 @@ public class UmlPropertyFactoryImpl extends EFactoryImpl implements UmlPropertyF
 	 *
 	 * @generated
 	 */
-	@Override
 	public ModifierSpecification createModifierSpecification()
 	{
 		ModifierSpecificationImpl modifierSpecification = new ModifierSpecificationImpl();
@@ -240,7 +255,6 @@ public class UmlPropertyFactoryImpl extends EFactoryImpl implements UmlPropertyF
 	 *
 	 * @generated
 	 */
-	@Override
 	public RedefinesRule createRedefinesRule()
 	{
 		RedefinesRuleImpl redefinesRule = new RedefinesRuleImpl();
@@ -253,7 +267,6 @@ public class UmlPropertyFactoryImpl extends EFactoryImpl implements UmlPropertyF
 	 *
 	 * @generated
 	 */
-	@Override
 	public SubsetsRule createSubsetsRule()
 	{
 		SubsetsRuleImpl subsetsRule = new SubsetsRuleImpl();
@@ -266,11 +279,94 @@ public class UmlPropertyFactoryImpl extends EFactoryImpl implements UmlPropertyF
 	 *
 	 * @generated
 	 */
-	@Override
 	public DefaultValueRule createDefaultValueRule()
 	{
 		DefaultValueRuleImpl defaultValueRule = new DefaultValueRuleImpl();
 		return defaultValueRule;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	public Value createValue()
+	{
+		ValueImpl value = new ValueImpl();
+		return value;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	public IntValue createIntValue()
+	{
+		IntValueImpl intValue = new IntValueImpl();
+		return intValue;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	public StringValue createStringValue()
+	{
+		StringValueImpl stringValue = new StringValueImpl();
+		return stringValue;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	public BooleanValue createBooleanValue()
+	{
+		BooleanValueImpl booleanValue = new BooleanValueImpl();
+		return booleanValue;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	public RealValue createRealValue()
+	{
+		RealValueImpl realValue = new RealValueImpl();
+		return realValue;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	public NullValue createNullValue()
+	{
+		NullValueImpl nullValue = new NullValueImpl();
+		return nullValue;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	public NoValue createNoValue()
+	{
+		NoValueImpl noValue = new NoValueImpl();
+		return noValue;
 	}
 
 	/**
@@ -331,7 +427,32 @@ public class UmlPropertyFactoryImpl extends EFactoryImpl implements UmlPropertyF
 	 *
 	 * @generated
 	 */
-	@Override
+	public BooleanLiterals createBooleanLiteralsFromString(EDataType eDataType, String initialValue)
+	{
+		BooleanLiterals result = BooleanLiterals.get(initialValue);
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		}
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	public String convertBooleanLiteralsToString(EDataType eDataType, Object instanceValue)
+	{
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
 	public UmlPropertyPackage getUmlPropertyPackage()
 	{
 		return (UmlPropertyPackage) getEPackage();

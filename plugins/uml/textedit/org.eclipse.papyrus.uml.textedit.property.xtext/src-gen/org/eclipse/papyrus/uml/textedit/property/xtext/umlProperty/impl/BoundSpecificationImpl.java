@@ -3,9 +3,12 @@
 package org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EClass;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.BoundSpecification;
 import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.UmlPropertyPackage;
 
@@ -75,7 +78,6 @@ public class BoundSpecificationImpl extends MinimalEObjectImpl.Container impleme
 	 *
 	 * @generated
 	 */
-	@Override
 	public String getValue()
 	{
 		return value;
@@ -87,7 +89,6 @@ public class BoundSpecificationImpl extends MinimalEObjectImpl.Container impleme
 	 *
 	 * @generated
 	 */
-	@Override
 	public void setValue(String newValue)
 	{
 		String oldValue = value;

@@ -4,18 +4,10 @@ package org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.util;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
+
 import org.eclipse.emf.ecore.util.Switch;
-import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.BoundSpecification;
-import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.DefaultValueRule;
-import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.ModifierSpecification;
-import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.ModifiersRule;
-import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.MultiplicityRule;
-import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.PropertyRule;
-import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.QualifiedName;
-import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.RedefinesRule;
-import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.SubsetsRule;
-import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.TypeRule;
-import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.UmlPropertyPackage;
+
+import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.*;
 
 /**
  * <!-- begin-user-doc -->
@@ -87,6 +79,14 @@ public class UmlPropertySwitch<T> extends Switch<T>
 		case UmlPropertyPackage.PROPERTY_RULE: {
 			PropertyRule propertyRule = (PropertyRule) theEObject;
 			T result = casePropertyRule(propertyRule);
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case UmlPropertyPackage.VISIBILITY_RULE: {
+			VisibilityRule visibilityRule = (VisibilityRule) theEObject;
+			T result = caseVisibilityRule(visibilityRule);
 			if (result == null) {
 				result = defaultCase(theEObject);
 			}
@@ -164,6 +164,80 @@ public class UmlPropertySwitch<T> extends Switch<T>
 			}
 			return result;
 		}
+		case UmlPropertyPackage.VALUE: {
+			Value value = (Value) theEObject;
+			T result = caseValue(value);
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case UmlPropertyPackage.INT_VALUE: {
+			IntValue intValue = (IntValue) theEObject;
+			T result = caseIntValue(intValue);
+			if (result == null) {
+				result = caseValue(intValue);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case UmlPropertyPackage.STRING_VALUE: {
+			StringValue stringValue = (StringValue) theEObject;
+			T result = caseStringValue(stringValue);
+			if (result == null) {
+				result = caseValue(stringValue);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case UmlPropertyPackage.BOOLEAN_VALUE: {
+			BooleanValue booleanValue = (BooleanValue) theEObject;
+			T result = caseBooleanValue(booleanValue);
+			if (result == null) {
+				result = caseValue(booleanValue);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case UmlPropertyPackage.REAL_VALUE: {
+			RealValue realValue = (RealValue) theEObject;
+			T result = caseRealValue(realValue);
+			if (result == null) {
+				result = caseValue(realValue);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case UmlPropertyPackage.NULL_VALUE: {
+			NullValue nullValue = (NullValue) theEObject;
+			T result = caseNullValue(nullValue);
+			if (result == null) {
+				result = caseValue(nullValue);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case UmlPropertyPackage.NO_VALUE: {
+			NoValue noValue = (NoValue) theEObject;
+			T result = caseNoValue(noValue);
+			if (result == null) {
+				result = caseValue(noValue);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
 		default:
 			return defaultCase(theEObject);
 		}
@@ -183,6 +257,24 @@ public class UmlPropertySwitch<T> extends Switch<T>
 	 * @generated
 	 */
 	public T casePropertyRule(PropertyRule object)
+	{
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Visibility Rule</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Visibility Rule</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseVisibilityRule(VisibilityRule object)
 	{
 		return null;
 	}
@@ -345,6 +437,132 @@ public class UmlPropertySwitch<T> extends Switch<T>
 	 * @generated
 	 */
 	public T caseDefaultValueRule(DefaultValueRule object)
+	{
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Value</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Value</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseValue(Value object)
+	{
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Int Value</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Int Value</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseIntValue(IntValue object)
+	{
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>String Value</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>String Value</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseStringValue(StringValue object)
+	{
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Boolean Value</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Boolean Value</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBooleanValue(BooleanValue object)
+	{
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Real Value</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Real Value</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRealValue(RealValue object)
+	{
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Null Value</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Null Value</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseNullValue(NullValue object)
+	{
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>No Value</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>No Value</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseNoValue(NoValue object)
 	{
 		return null;
 	}

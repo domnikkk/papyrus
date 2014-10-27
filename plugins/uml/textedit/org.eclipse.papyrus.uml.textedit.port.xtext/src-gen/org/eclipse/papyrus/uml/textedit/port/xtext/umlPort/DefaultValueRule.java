@@ -23,31 +23,31 @@ import org.eclipse.emf.ecore.EObject;
 public interface DefaultValueRule extends EObject
 {
 	/**
-	 * Returns the value of the '<em><b>Default</b></em>' attribute.
+	 * Returns the value of the '<em><b>Default</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Default</em>' attribute isn't clear, there really should be more of a description here...
+	 * If the meaning of the '<em>Default</em>' containment reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
 	 *
-	 * @return the value of the '<em>Default</em>' attribute.
-	 * @see #setDefault(String)
+	 * @return the value of the '<em>Default</em>' containment reference.
+	 * @see #setDefault(Value)
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.UmlPortPackage#getDefaultValueRule_Default()
-	 * @model
+	 * @model containment="true"
 	 * @generated
 	 */
-	String getDefault();
+	Value getDefault();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.DefaultValueRule#getDefault <em>Default</em>}' attribute.
+	 * Sets the value of the '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.DefaultValueRule#getDefault <em>Default</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Default</em>' attribute.
+	 *            the new value of the '<em>Default</em>' containment reference.
 	 * @see #getDefault()
 	 * @generated
 	 */
-	void setDefault(String value);
+	void setDefault(Value value);
 
 } // DefaultValueRule
