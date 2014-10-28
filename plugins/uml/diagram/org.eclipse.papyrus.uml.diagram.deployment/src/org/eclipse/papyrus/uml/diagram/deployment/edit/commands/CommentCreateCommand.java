@@ -94,7 +94,8 @@ public class CommentCreateCommand extends EditElementCommand {
 			} else {
 
 				Element qualifiedTarget = (Element) target;
-				qualifiedTarget.getOwnedComments().add(newElement);
+				qualifiedTarget.getOwnedComments()
+						.add(newElement);
 
 			}
 		} else {

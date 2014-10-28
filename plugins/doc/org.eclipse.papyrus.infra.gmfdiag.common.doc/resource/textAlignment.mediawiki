@@ -34,3 +34,6 @@ Example for Label of Port aligned to the right:
 <source lang="css">Port > Label {
    textAlignment:"right";
    }</source>
+   
+   
+Note: Text alignment of port's label is forced according to the position of its parent when it is constrained.

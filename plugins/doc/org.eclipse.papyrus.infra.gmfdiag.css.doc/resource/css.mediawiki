@@ -336,7 +336,7 @@ The following properties can be used to bypass the standard UML notation. They c
 |-
 | textAlignment || string || left/center || Floating labels || Set the text alignment of the label. (left, center, right)
 |-
-| labelConstrained|| boolean || false || Labels of Port || Constraint the label, it will be automatic positioned at the proper position according to the position of the Port on its parents. The label can't be moved.
+| labelConstrained|| boolean || false || Labels of Port || Constraint the label, it will be automatic positioned at the proper position according to the position of the Port on its parents. Text alignment will be forced according to the position of its parent.The label can't be moved.
 |-
 | labelOffsetX|| integer || 0 || Labels of Port || Set the offset on X when label is constrained
 |-

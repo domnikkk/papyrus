@@ -94,7 +94,8 @@ public class NestedExecutionEnvironmentCreateCommandCN extends EditElementComman
 			} else {
 
 				Package qualifiedTarget = (Package) target;
-				qualifiedTarget.getPackagedElements().add(newElement);
+				qualifiedTarget.getPackagedElements()
+						.add(newElement);
 
 			}
 		} else {

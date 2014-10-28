@@ -157,6 +157,13 @@ public abstract class PapyrusLabelEditPart extends LabelEditPart {
 	}
 
 	/**
+	 * @return the papyrusLabelLocator
+	 */
+	public PapyrusLabelLocator getPapyrusLabelLocator() {
+		return papyrusLabelLocator;
+	}
+
+	/**
 	 * Sets the external label locator.
 	 *
 	 * @param offset
@@ -284,10 +291,19 @@ public abstract class PapyrusLabelEditPart extends LabelEditPart {
 		// get the value of the CSS property
 		Object model = getModel();
 		if (model instanceof View) {
-			boolean labelConstrained = NotationUtils.getBooleanValue((View) getModel(), LABEL_CONSTRAINED, getDefaultLabelConstrained());
 			// set the value on the locator
-			((IPapyrusBorderItemLocator) getBorderItemLocator()).setConstrained(labelConstrained);
+			((IPapyrusBorderItemLocator) getBorderItemLocator()).setConstrained(isLabelConstrained());
 		}
+	}
+
+	/**
+	 * Checks if is label constrained.
+	 *
+	 * @return true, if the label is constrained
+	 */
+	public boolean isLabelConstrained() {
+		boolean labelConstrained = NotationUtils.getBooleanValue((View) getModel(), LABEL_CONSTRAINED, getDefaultLabelConstrained());
+		return labelConstrained;
 	}
 
 	/**

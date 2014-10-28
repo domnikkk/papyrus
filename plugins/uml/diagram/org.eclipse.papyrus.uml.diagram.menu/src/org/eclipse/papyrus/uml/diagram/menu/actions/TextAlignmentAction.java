@@ -58,7 +58,7 @@ public class TextAlignmentAction {
 	public Command getCommand() {
 		CompoundCommand cc = new CompoundCommand("Change value for text alignment"); //$NON-NLS-1$
 		for (IGraphicalEditPart editPart : selectedElements) {
-			if (editPart instanceof PapyrusLabelEditPart && editPart.getModel() != null) {
+			if (editPart instanceof PapyrusLabelEditPart && editPart.getModel() != null && !((PapyrusLabelEditPart) editPart).isLabelConstrained()) {
 				// get the view
 				final View view = (View) editPart.getModel();
 				// set the edit command
