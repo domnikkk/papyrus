@@ -8,7 +8,8 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *  Yann Tanguy (CEA LIST) yann.tanguy@cea.fr - Initial API and implementation
+ *   Yann Tanguy (CEA LIST) yann.tanguy@cea.fr - Initial API and implementation
+ *   Gabriel Pascual (ALL4TEC) gabriel.pascual@all4tec.net - Bug 411570
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.common.handlers;
@@ -33,11 +34,12 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
+import org.eclipse.papyrus.infra.gmfdiag.menu.handlers.AbstractGraphicalCommandHandler;
 
 /**
  * Command handler for delete from diagram
  */
-public class DeleteFromDiagramCommandHandler extends GraphicalCommandHandler implements IHandler {
+public class DeleteFromDiagramCommandHandler extends AbstractGraphicalCommandHandler implements IHandler {
 
 	/**
 	 *
