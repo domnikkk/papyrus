@@ -62,7 +62,7 @@ public class ExternalLabelPrimaryDragRoleEditPolicy extends NonResizableLabelEdi
 			updatedRect = initialRect.getTranslated(getHostFigure().getParent().getBounds().getLocation().getNegated());
 		}
 		updatedRect = updatedRect.getTranslated(request.getMoveDelta());
-	
+
 
 		// translate the feedback figure
 		PrecisionRectangle rect = new PrecisionRectangle(getInitialFeedbackBounds().getCopy());
@@ -72,11 +72,11 @@ public class ExternalLabelPrimaryDragRoleEditPolicy extends NonResizableLabelEdi
 		getHostFigure().translateToRelative(rect);
 
 		ICommand moveCommand = new SetBoundsCommand(editPart.getEditingDomain(), DiagramUIMessages.MoveLabelCommand_Label_Location, new EObjectAdapter((View) editPart.getModel()), updatedRect);
-			
+
 		return new ICommandProxy(moveCommand);
-		
+
 	}
 
 
-	
+
 }

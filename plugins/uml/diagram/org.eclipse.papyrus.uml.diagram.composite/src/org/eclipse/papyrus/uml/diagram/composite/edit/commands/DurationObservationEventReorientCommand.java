@@ -117,8 +117,10 @@ public class DurationObservationEventReorientCommand extends EditElementCommand 
 	 * @generated
 	 */
 	protected CommandResult reorientSource() throws ExecutionException {
-		getOldSource().getEvents().remove(getOldTarget());
-		getNewSource().getEvents().add(getOldTarget());
+		getOldSource().getEvents()
+				.remove(getOldTarget());
+		getNewSource().getEvents()
+				.add(getOldTarget());
 		return CommandResult.newOKCommandResult(referenceOwner);
 	}
 
@@ -126,8 +128,10 @@ public class DurationObservationEventReorientCommand extends EditElementCommand 
 	 * @generated
 	 */
 	protected CommandResult reorientTarget() throws ExecutionException {
-		getOldSource().getEvents().remove(getOldTarget());
-		getOldSource().getEvents().add(getNewTarget());
+		getOldSource().getEvents()
+				.remove(getOldTarget());
+		getOldSource().getEvents()
+				.add(getNewTarget());
 		return CommandResult.newOKCommandResult(referenceOwner);
 	}
 

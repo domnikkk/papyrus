@@ -31,10 +31,10 @@ import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCo
 import org.eclipse.gmf.runtime.notation.Location;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.NotationFactory;
+import org.eclipse.papyrus.infra.gmfdiag.common.utils.FigureUtils;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.PapyrusCreationEditPolicy;
 import org.eclipse.papyrus.uml.diagram.timing.custom.Messages;
 import org.eclipse.papyrus.uml.diagram.timing.custom.edit.commands.RefreshCommandForDo;
-import org.eclipse.papyrus.uml.diagram.timing.custom.utils.FigureUtils;
 import org.eclipse.papyrus.uml.diagram.timing.custom.utils.ViewUtils;
 import org.eclipse.papyrus.uml.diagram.timing.edit.parts.GateEditPart;
 import org.eclipse.papyrus.uml.diagram.timing.edit.parts.InteractionEditPartTN;

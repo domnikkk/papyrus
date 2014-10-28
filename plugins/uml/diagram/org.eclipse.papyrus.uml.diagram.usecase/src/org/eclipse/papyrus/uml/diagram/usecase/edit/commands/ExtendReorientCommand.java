@@ -121,7 +121,9 @@ public class ExtendReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected CommandResult reorientSource() throws ExecutionException {
-		getLink().setExtension(getNewSource());
+		getLink().setExtension(
+				getNewSource()
+				);
 		return CommandResult.newOKCommandResult(getLink());
 	}
 
@@ -129,7 +131,9 @@ public class ExtendReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected CommandResult reorientTarget() throws ExecutionException {
-		getLink().setExtendedCase(getNewTarget());
+		getLink().setExtendedCase(
+				getNewTarget()
+				);
 		return CommandResult.newOKCommandResult(getLink());
 	}
 

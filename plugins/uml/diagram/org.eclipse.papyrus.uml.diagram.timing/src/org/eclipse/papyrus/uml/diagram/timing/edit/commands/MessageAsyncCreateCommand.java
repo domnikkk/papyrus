@@ -90,13 +90,20 @@ public class MessageAsyncCreateCommand extends EditElementCommand {
 		if (!canExecute()) {
 			throw new ExecutionException("Invalid arguments in create link command"); //$NON-NLS-1$
 		}
+
 		Message newElement = UMLFactory.eINSTANCE.createMessage();
-		getContainer().getMessages().add(newElement);
-		newElement.setReceiveEvent(getSource());
-		newElement.setSendEvent(getTarget());
+		getContainer().getMessages()
+				.add(newElement);
+		newElement.setReceiveEvent(
+				getSource()
+				);
+		newElement.setSendEvent(
+				getTarget()
+				);
 		doConfigure(newElement, monitor, info);
 		((CreateElementRequest) getRequest()).setNewElement(newElement);
 		return CommandResult.newOKCommandResult(newElement);
+
 	}
 
 	/**

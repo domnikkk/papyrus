@@ -43,8 +43,12 @@ public class TimingDiagramEditPartFactoryItemSemanticEditPolicy extends UMLBaseI
 		if (requestElementType == null) {
 			return super.getCreateCommand(req);
 		}
+
+
 		if (UMLElementTypes.Interaction_2 == requestElementType) {
+
 			return getGEFWrapper(new InteractionCreateCommandTN(req, DiagramUtils.getDiagramFrom(getHost())));
+
 		}
 		return super.getCreateCommand(req);
 	}

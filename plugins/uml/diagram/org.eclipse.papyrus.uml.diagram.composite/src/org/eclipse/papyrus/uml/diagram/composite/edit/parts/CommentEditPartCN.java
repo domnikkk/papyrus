@@ -114,6 +114,7 @@ public class CommentEditPartCN extends AbstractCommentEditPart {
 	@Override
 	protected void handleNotificationEvent(Notification event) {
 		super.handleNotificationEvent(event);
+
 	}
 
 	/**
@@ -142,6 +143,8 @@ public class CommentEditPartCN extends AbstractCommentEditPart {
 			((CommentBodyEditPartCN) childEditPart).setLabel(getPrimaryShape().getCornerBentFigure());
 			return true;
 		}
+
+
 		return false;
 	}
 
@@ -205,6 +208,7 @@ public class CommentEditPartCN extends AbstractCommentEditPart {
 	@Override
 	protected NodeFigure createNodeFigure() {
 		return new SelectableBorderedNodeFigure(createMainFigureWithSVG());
+
 	}
 
 	/**

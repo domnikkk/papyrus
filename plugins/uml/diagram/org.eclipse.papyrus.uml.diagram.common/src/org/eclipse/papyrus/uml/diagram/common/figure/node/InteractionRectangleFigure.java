@@ -19,6 +19,7 @@ import org.eclipse.draw2d.OrderedLayout;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.ToolbarLayout;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
+import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.PapyrusWrappingLabel;
 import org.eclipse.papyrus.uml.diagram.common.draw2d.InteractionFigure;
 import org.eclipse.papyrus.uml.diagram.common.draw2d.LeftToolbarLayout;
 
@@ -28,7 +29,7 @@ public class InteractionRectangleFigure extends NodeNamedElementFigure {
 
 	protected RectangleFigure interactionContentPane;
 
-	protected WrappingLabel interactionLabel;
+	protected PapyrusWrappingLabel interactionLabel;
 
 	private boolean myUseLocalCoordinates = false;
 
@@ -61,7 +62,7 @@ public class InteractionRectangleFigure extends NodeNamedElementFigure {
 	}
 
 	protected RectangleFigure createHeader() {
-		interactionLabel = new WrappingLabel();
+		interactionLabel = new PapyrusWrappingLabel();
 
 		interactionLabelContainer = new InteractionFigure();
 		interactionLabelContainer.setBorder(new MarginBorder(3, 3, 3, 3));

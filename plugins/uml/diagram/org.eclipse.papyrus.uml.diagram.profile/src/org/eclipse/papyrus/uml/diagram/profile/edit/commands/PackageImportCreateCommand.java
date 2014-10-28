@@ -90,13 +90,20 @@ public class PackageImportCreateCommand extends EditElementCommand {
 		if (!canExecute()) {
 			throw new ExecutionException("Invalid arguments in create link command"); //$NON-NLS-1$
 		}
+
 		PackageImport newElement = UMLFactory.eINSTANCE.createPackageImport();
-		getContainer().getPackageImports().add(newElement);
-		newElement.setImportingNamespace(getSource());
-		newElement.setImportedPackage(getTarget());
+		getContainer().getPackageImports()
+				.add(newElement);
+		newElement.setImportingNamespace(
+				getSource()
+				);
+		newElement.setImportedPackage(
+				getTarget()
+				);
 		doConfigure(newElement, monitor, info);
 		((CreateElementRequest) getRequest()).setNewElement(newElement);
 		return CommandResult.newOKCommandResult(newElement);
+
 	}
 
 	/**

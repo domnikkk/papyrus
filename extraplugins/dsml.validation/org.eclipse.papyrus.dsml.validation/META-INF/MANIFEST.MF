@@ -18,7 +18,6 @@ Bundle-Localization: plugin
 Bundle-Name: %pluginName
 Bundle-Activator: org.eclipse.papyrus.dsml.validation.Activator
 Bundle-ManifestVersion: 2
-Bundle-SymbolicName: org.eclipse.papyrus.dsml.validation;singleton:=tr
- ue
+Bundle-SymbolicName: org.eclipse.papyrus.dsml.validation;singleton:=true
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 

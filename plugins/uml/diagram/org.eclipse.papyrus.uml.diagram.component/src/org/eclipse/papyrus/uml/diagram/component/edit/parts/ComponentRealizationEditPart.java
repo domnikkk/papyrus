@@ -59,10 +59,12 @@ public class ComponentRealizationEditPart extends UMLConnectionNodeEditPart impl
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof ComponentRealizationNameEditPart) {
-			((ComponentRealizationNameEditPart) childEditPart).setLabel(getPrimaryShape().getNameLabel());
+			((ComponentRealizationNameEditPart) childEditPart).setLabel(
+					getPrimaryShape().getNameLabel());
 		}
 		if (childEditPart instanceof ComponentRealizationAppliedStereotypeEditPart) {
-			((ComponentRealizationAppliedStereotypeEditPart) childEditPart).setLabel(getPrimaryShape().getAppliedStereotypeLabel());
+			((ComponentRealizationAppliedStereotypeEditPart) childEditPart).setLabel(
+					getPrimaryShape().getAppliedStereotypeLabel());
 		}
 		return false;
 	}

@@ -8,7 +8,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  *****************************************************************************/
-package org.eclipse.papyrus.uml.diagram.timing.custom.utils;
+package org.eclipse.papyrus.infra.gmfdiag.common.utils;
 
 import java.util.ArrayList;
 import java.util.List;

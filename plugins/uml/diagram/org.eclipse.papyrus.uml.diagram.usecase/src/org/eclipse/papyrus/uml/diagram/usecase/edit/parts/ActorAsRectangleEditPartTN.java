@@ -75,6 +75,7 @@ public class ActorAsRectangleEditPartTN extends NodeEditPart {
 	 * @generated
 	 */
 	protected LayoutEditPolicy createLayoutEditPolicy() {
+
 		ConstrainedToolbarLayoutEditPolicy lep = new ConstrainedToolbarLayoutEditPolicy() {
 
 			@Override
@@ -116,6 +117,8 @@ public class ActorAsRectangleEditPartTN extends NodeEditPart {
 			((ActorAsRectangleNameEditPartTN) childEditPart).setLabel(getPrimaryShape().getActorAsRectangleFigure_name());
 			return true;
 		}
+
+
 		return false;
 	}
 
@@ -179,6 +182,7 @@ public class ActorAsRectangleEditPartTN extends NodeEditPart {
 	@Override
 	protected NodeFigure createNodeFigure() {
 		return new SelectableBorderedNodeFigure(createMainFigureWithSVG());
+
 	}
 
 	/**

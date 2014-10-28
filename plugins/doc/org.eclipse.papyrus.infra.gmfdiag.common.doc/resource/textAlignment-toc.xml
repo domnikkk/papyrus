@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<toc label="textAlignment" link_to="Tool" topic="resource/textAlignment.html">
+	<topic href="resource/textAlignment.html" label="Text Alignment">
+		<topic href="resource/textAlignment.html#Introduction" label="Introduction"></topic>
+		<topic href="resource/textAlignment.html#Apply_text_alignment_with_button" label="Apply text alignment with button"></topic>
+		<topic href="resource/textAlignment.html#Apply_text_alignment_with_CSS" label="Apply text alignment with CSS"></topic>
+	</topic>
+</toc>

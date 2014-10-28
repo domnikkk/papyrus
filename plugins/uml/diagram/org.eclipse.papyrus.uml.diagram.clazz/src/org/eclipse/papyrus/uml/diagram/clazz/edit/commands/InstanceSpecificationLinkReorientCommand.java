@@ -78,10 +78,12 @@ public class InstanceSpecificationLinkReorientCommand extends EditElementCommand
 		if (!(oldEnd instanceof Slot && newEnd instanceof Slot)) {
 			return false;
 		}
-		if (getLink().getSlots().size() != 1) {
+		if (getLink().getSlots()
+				.size() != 1) {
 			return false;
 		}
-		Slot target = getLink().getSlots().get(0);
+		Slot target = getLink().getSlots()
+				.get(0);
 		if (!(getLink().eContainer() instanceof Package)) {
 			return false;
 		}
@@ -96,10 +98,12 @@ public class InstanceSpecificationLinkReorientCommand extends EditElementCommand
 		if (!(oldEnd instanceof Slot && newEnd instanceof Slot)) {
 			return false;
 		}
-		if (getLink().getSlots().size() != 1) {
+		if (getLink().getSlots()
+				.size() != 1) {
 			return false;
 		}
-		Slot source = getLink().getSlots().get(0);
+		Slot source = getLink().getSlots()
+				.get(0);
 		if (!(getLink().eContainer() instanceof Package)) {
 			return false;
 		}
@@ -128,8 +132,10 @@ public class InstanceSpecificationLinkReorientCommand extends EditElementCommand
 	 * @generated
 	 */
 	protected CommandResult reorientSource() throws ExecutionException {
-		getLink().getSlots().remove(getOldSource());
-		getLink().getSlots().add(getNewSource());
+		getLink().getSlots()
+				.remove(getOldSource());
+		getLink().getSlots()
+				.add(getNewSource());
 		return CommandResult.newOKCommandResult(getLink());
 	}
 
@@ -137,8 +143,10 @@ public class InstanceSpecificationLinkReorientCommand extends EditElementCommand
 	 * @generated
 	 */
 	protected CommandResult reorientTarget() throws ExecutionException {
-		getLink().getSlots().remove(getOldTarget());
-		getLink().getSlots().add(getNewTarget());
+		getLink().getSlots()
+				.remove(getOldTarget());
+		getLink().getSlots()
+				.add(getNewTarget());
 		return CommandResult.newOKCommandResult(getLink());
 	}
 

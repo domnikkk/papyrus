@@ -16,6 +16,7 @@ package org.eclipse.papyrus.uml.diagram.common.figure.edge;
 import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.PolylineDecoration;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
+import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.PapyrusWrappingLabel;
 
 /**
  * This is a custom figure to represents a default edge. This code was used in
@@ -80,7 +81,7 @@ public class DashedEdgeFigure extends UMLEdgeFigure {
 	@Override
 	protected void createContents() {
 		super.createContents();
-		nameLabel = new WrappingLabel();
+		nameLabel = new PapyrusWrappingLabel();
 		nameLabel.setText("");
 
 		this.add(nameLabel);

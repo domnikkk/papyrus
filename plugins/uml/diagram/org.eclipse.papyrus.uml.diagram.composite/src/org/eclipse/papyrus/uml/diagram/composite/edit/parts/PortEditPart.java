@@ -121,7 +121,8 @@ public class PortEditPart extends AbstractBorderEditPart {
 							mh.setBorder(null);
 							return Collections.singletonList(mh);
 						}
-					};
+					}
+					;
 				}
 				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 				if (result == null) {
@@ -164,6 +165,7 @@ public class PortEditPart extends AbstractBorderEditPart {
 			}
 		}
 		super.handleNotificationEvent(event);
+
 	}
 
 	/**
@@ -194,7 +196,8 @@ public class PortEditPart extends AbstractBorderEditPart {
 		} else if (borderItemEditPart instanceof PortAppliedStereotypeEditPart) {
 			IBorderItemLocator locator = new ExternalLabelPositionLocator(getMainFigure());
 			borderItemContainer.add(borderItemEditPart.getFigure(), locator);
-		} else {
+		} else
+		{
 			super.addBorderItem(borderItemContainer, borderItemEditPart);
 		}
 	}
@@ -223,6 +226,7 @@ public class PortEditPart extends AbstractBorderEditPart {
 		figure.add(shape);
 		contentPane = setupContentPane(shape);
 		return figure;
+
 	}
 
 	/**

@@ -40,11 +40,17 @@ public class InteractionCompartmentItemSemanticEditPolicyTN extends UMLBaseItemS
 		if (requestElementType == null) {
 			return super.getCreateCommand(req);
 		}
+
+
 		if (UMLElementTypes.Lifeline_19 == requestElementType) {
+
 			return getGEFWrapper(new FullLifelineCreateCommandCN(req, DiagramUtils.getDiagramFrom(getHost())));
+
 		}
 		if (UMLElementTypes.Lifeline_20 == requestElementType) {
+
 			return getGEFWrapper(new CompactLifelineCreateCommandCN(req, DiagramUtils.getDiagramFrom(getHost())));
+
 		}
 		return super.getCreateCommand(req);
 	}
