@@ -37,6 +37,7 @@ import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.IPapyrusNodeFigure;
 import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.SelectableBorderedNodeFigure;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeIconlDisplayEditPolicy;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeLabelDisplayEditPolicy;
@@ -111,7 +112,8 @@ public class DurationObservationEditPartCN extends AbstractObservationEditPart {
 							mh.setBorder(null);
 							return Collections.singletonList(mh);
 						}
-					};
+					}
+					;
 				}
 				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 				if (result == null) {
@@ -154,6 +156,7 @@ public class DurationObservationEditPartCN extends AbstractObservationEditPart {
 			}
 		}
 		super.handleNotificationEvent(event);
+
 	}
 
 	/**
@@ -186,7 +189,8 @@ public class DurationObservationEditPartCN extends AbstractObservationEditPart {
 		} else if (borderItemEditPart instanceof DurationObservationStereotypeLabelEditPartCN) {
 			IBorderItemLocator locator = new ExternalLabelPositionLocator(getMainFigure());
 			borderItemContainer.add(borderItemEditPart.getFigure(), locator);
-		} else {
+		} else
+		{
 			super.addBorderItem(borderItemContainer, borderItemEditPart);
 		}
 	}
@@ -211,6 +215,7 @@ public class DurationObservationEditPartCN extends AbstractObservationEditPart {
 	@Override
 	protected NodeFigure createMainFigure() {
 		return new SelectableBorderedNodeFigure(createMainFigureWithSVG());
+
 	}
 
 	/**
@@ -260,8 +265,8 @@ public class DurationObservationEditPartCN extends AbstractObservationEditPart {
 	 */
 	@Override
 	protected void setLineType(int style) {
-		if (primaryShape instanceof NodeFigure) {
-			((NodeFigure) primaryShape).setLineStyle(style);
+		if (primaryShape instanceof IPapyrusNodeFigure) {
+			((IPapyrusNodeFigure) primaryShape).setLineStyle(style);
 		}
 	}
 

@@ -54,10 +54,12 @@ public class MessageSyncEditPart extends ConnectionEditPart implements ITreeBran
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof MessageSyncNameLabelEditPart) {
-			((MessageSyncNameLabelEditPart) childEditPart).setLabel(getPrimaryShape().getMessageLabel());
+			((MessageSyncNameLabelEditPart) childEditPart).setLabel(
+					getPrimaryShape().getMessageLabel());
 		}
 		if (childEditPart instanceof MessageSyncAppliedStereotypeEditPart) {
-			((MessageSyncAppliedStereotypeEditPart) childEditPart).setLabel(getPrimaryShape().getAppliedStereotypeLabel());
+			((MessageSyncAppliedStereotypeEditPart) childEditPart).setLabel(
+					getPrimaryShape().getAppliedStereotypeLabel());
 		}
 		return false;
 	}

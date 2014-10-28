@@ -78,10 +78,12 @@ public class MessageReorientCommand extends EditElementCommand {
 		if (!(oldEnd instanceof Element && newEnd instanceof Element)) {
 			return false;
 		}
-		if (getLink().getOwnedElements().size() != 1) {
+		if (getLink().getOwnedElements()
+				.size() != 1) {
 			return false;
 		}
-		Element target = getLink().getOwnedElements().get(0);
+		Element target = getLink().getOwnedElements()
+				.get(0);
 		if (!(getLink().eContainer() instanceof Interaction)) {
 			return false;
 		}

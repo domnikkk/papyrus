@@ -94,7 +94,8 @@ public class DeviceCreateCommandCN extends EditElementCommand {
 			} else {
 
 				Node qualifiedTarget = (Node) target;
-				qualifiedTarget.getNestedNodes().add(newElement);
+				qualifiedTarget.getNestedNodes()
+						.add(newElement);
 
 			}
 		} else {

@@ -43,152 +43,232 @@ public class UMLEditPartFactory implements EditPartFactory {
 		if (model instanceof View) {
 			View view = (View) model;
 			switch (UMLVisualIDRegistry.getVisualID(view)) {
+
 			case TimingDiagramEditPart.VISUAL_ID:
 				return new TimingDiagramEditPart(view);
+
 			case InteractionEditPartTN.VISUAL_ID:
 				return new InteractionEditPartTN(view);
+
 			case InteractionNameEditPart.VISUAL_ID:
 				return new InteractionNameEditPart(view);
+
 			case FullLifelineEditPartCN.VISUAL_ID:
 				return new FullLifelineEditPartCN(view);
+
 			case FullLifelineNameEditPart.VISUAL_ID:
 				return new FullLifelineNameEditPart(view);
+
 			case CompactLifelineEditPartCN.VISUAL_ID:
 				return new CompactLifelineEditPartCN(view);
+
 			case CompactLifelineNameEditPart.VISUAL_ID:
 				return new CompactLifelineNameEditPart(view);
+
 			case FullStateInvariantEditPartCN.VISUAL_ID:
 				return new FullStateInvariantEditPartCN(view);
+
 			case FullStateInvariantAppliedStereotypeEditPart.VISUAL_ID:
 				return new FullStateInvariantAppliedStereotypeEditPart(view);
+
 			case CompactStateInvariantEditPartCN.VISUAL_ID:
 				return new CompactStateInvariantEditPartCN(view);
+
 			case CompactStateInvariantNameEditPart.VISUAL_ID:
 				return new CompactStateInvariantNameEditPart(view);
+
 			case StateInvariantAppliedStereotypeEditPart.VISUAL_ID:
 				return new StateInvariantAppliedStereotypeEditPart(view);
+
 			case OccurrenceSpecificationEditPartCN.VISUAL_ID:
 				return new OccurrenceSpecificationEditPartCN(view);
+
 			case OccurrenceSpecificationLabelEditPart.VISUAL_ID:
 				return new OccurrenceSpecificationLabelEditPart(view);
+
 			case OccurrenceSpecificationAppliedStereotypeEditPart.VISUAL_ID:
 				return new OccurrenceSpecificationAppliedStereotypeEditPart(view);
+
 			case MessageOccurrenceSpecificationEditPartCN.VISUAL_ID:
 				return new MessageOccurrenceSpecificationEditPartCN(view);
+
 			case MessageOccurrenceSpecificationLabelEditPart.VISUAL_ID:
 				return new MessageOccurrenceSpecificationLabelEditPart(view);
+
 			case MessageOccurrenceSpecificationAppliedStereotypeEditPart.VISUAL_ID:
 				return new MessageOccurrenceSpecificationAppliedStereotypeEditPart(view);
+
 			case StateDefinitionEditPart.VISUAL_ID:
 				return new StateDefinitionEditPart(view);
+
 			case StateDefinitionLabelEditPart.VISUAL_ID:
 				return new StateDefinitionLabelEditPart(view);
+
 			case FullStateInvariantVerticalLineEditPart.VISUAL_ID:
 				return new FullStateInvariantVerticalLineEditPart(view);
+
 			case TimeConstraintEditPart.VISUAL_ID:
 				return new TimeConstraintEditPart(view);
+
 			case TimeConstraintSpecificationEditPart.VISUAL_ID:
 				return new TimeConstraintSpecificationEditPart(view);
+
 			case TimeConstraintAppliedStereotypeEditPart.VISUAL_ID:
 				return new TimeConstraintAppliedStereotypeEditPart(view);
+
 			case TimeObservationEditPart.VISUAL_ID:
 				return new TimeObservationEditPart(view);
+
 			case TimeObservationNameEditPart.VISUAL_ID:
 				return new TimeObservationNameEditPart(view);
+
 			case TimeObservationAppliedStereotypeEditPart.VISUAL_ID:
 				return new TimeObservationAppliedStereotypeEditPart(view);
+
 			case DurationConstraintEditPartCN.VISUAL_ID:
 				return new DurationConstraintEditPartCN(view);
+
 			case DurationConstraintSpecificationEditPart.VISUAL_ID:
 				return new DurationConstraintSpecificationEditPart(view);
+
 			case DurationObservationEditPartCN.VISUAL_ID:
 				return new DurationObservationEditPartCN(view);
+
 			case DurationObservationNameEditPart.VISUAL_ID:
 				return new DurationObservationNameEditPart(view);
+
 			case GeneralOrderingEditPart.VISUAL_ID:
 				return new GeneralOrderingEditPart(view);
+
 			case GeneralOrderingNameEditPart.VISUAL_ID:
 				return new GeneralOrderingNameEditPart(view);
+
 			case FreeTimingRulerEditPartCN.VISUAL_ID:
 				return new FreeTimingRulerEditPartCN(view);
+
 			case LinearTimingRulerEditPartCN.VISUAL_ID:
 				return new LinearTimingRulerEditPartCN(view);
+
 			case TickEditPart.VISUAL_ID:
 				return new TickEditPart(view);
+
 			case TickNameEditPart.VISUAL_ID:
 				return new TickNameEditPart(view);
+
 			case DestructionOccurrenceSpecificationEditPartCN.VISUAL_ID:
 				return new DestructionOccurrenceSpecificationEditPartCN(view);
+
 			case DestructionOccurrenceSpecificationLabelEditPart.VISUAL_ID:
 				return new DestructionOccurrenceSpecificationLabelEditPart(view);
+
 			case DestructionOccurrenceSpecificationAppliedStereotypeEditPart.VISUAL_ID:
 				return new DestructionOccurrenceSpecificationAppliedStereotypeEditPart(view);
+
 			case LifelineEditPart.VISUAL_ID:
 				return new LifelineEditPart(view);
+
 			case GateEditPart.VISUAL_ID:
 				return new GateEditPart(view);
+
 			case GateLabelEditPart.VISUAL_ID:
 				return new GateLabelEditPart(view);
+
 			case InteractionCompartmentEditPartTN.VISUAL_ID:
 				return new InteractionCompartmentEditPartTN(view);
+
 			case FullLifelineStateDefinitionCompartmentEditPartCN.VISUAL_ID:
 				return new FullLifelineStateDefinitionCompartmentEditPartCN(view);
+
 			case FullLifelineTimelineCompartmentEditPartCN.VISUAL_ID:
 				return new FullLifelineTimelineCompartmentEditPartCN(view);
+
 			case CompactLifelineCompartmentEditPartCN.VISUAL_ID:
 				return new CompactLifelineCompartmentEditPartCN(view);
+
 			case TimeRulerCompartmentEditPartCN.VISUAL_ID:
 				return new TimeRulerCompartmentEditPartCN(view);
+
 			case FullLifelineTimeRulerCompartmentEditPartCN.VISUAL_ID:
 				return new FullLifelineTimeRulerCompartmentEditPartCN(view);
+
 			case CompactLifelineTimeRulerCompartmentEditPartCN.VISUAL_ID:
 				return new CompactLifelineTimeRulerCompartmentEditPartCN(view);
+
 			case FreeTimeRulerCompartmentEditPart.VISUAL_ID:
 				return new FreeTimeRulerCompartmentEditPart(view);
+
 			case LinearTimeRulerCompartmentEditPart.VISUAL_ID:
 				return new LinearTimeRulerCompartmentEditPart(view);
+
 			case MessageSyncEditPart.VISUAL_ID:
 				return new MessageSyncEditPart(view);
+
 			case MessageSyncNameLabelEditPart.VISUAL_ID:
 				return new MessageSyncNameLabelEditPart(view);
+
 			case MessageSyncAppliedStereotypeEditPart.VISUAL_ID:
 				return new MessageSyncAppliedStereotypeEditPart(view);
+
+
 			case MessageAsyncEditPart.VISUAL_ID:
 				return new MessageAsyncEditPart(view);
+
 			case MessageAsyncNameLabelEditPart.VISUAL_ID:
 				return new MessageAsyncNameLabelEditPart(view);
+
 			case MessageAsyncAppliedStereotypeEditPart.VISUAL_ID:
 				return new MessageAsyncAppliedStereotypeEditPart(view);
+
+
 			case MessageReplyEditPart.VISUAL_ID:
 				return new MessageReplyEditPart(view);
+
 			case MessageReplyNameLabelEditPart.VISUAL_ID:
 				return new MessageReplyNameLabelEditPart(view);
+
 			case MessageReplyAppliedStereotypeEditPart.VISUAL_ID:
 				return new MessageReplyAppliedStereotypeEditPart(view);
+
+
 			case MessageCreateEditPart.VISUAL_ID:
 				return new MessageCreateEditPart(view);
+
 			case MessageCreateNameLabelEditPart.VISUAL_ID:
 				return new MessageCreateNameLabelEditPart(view);
+
 			case MessageCreateAppliedStereotypeEditPart.VISUAL_ID:
 				return new MessageCreateAppliedStereotypeEditPart(view);
+
+
 			case MessageDeleteEditPart.VISUAL_ID:
 				return new MessageDeleteEditPart(view);
+
 			case MessageDeleteNameLabelEditPart.VISUAL_ID:
 				return new MessageDeleteNameLabelEditPart(view);
+
 			case MessageDeleteAppliedStereotypeEditPart.VISUAL_ID:
 				return new MessageDeleteAppliedStereotypeEditPart(view);
+
+
 			case MessageLostEditPart.VISUAL_ID:
 				return new MessageLostEditPart(view);
+
 			case MessageLostNameLabelEditPart.VISUAL_ID:
 				return new MessageLostNameLabelEditPart(view);
+
 			case MessageLostAppliedStereotypeEditPart.VISUAL_ID:
 				return new MessageLostAppliedStereotypeEditPart(view);
+
+
 			case MessageFoundEditPart.VISUAL_ID:
 				return new MessageFoundEditPart(view);
+
 			case MessageFoundNameLabelEditPart.VISUAL_ID:
 				return new MessageFoundNameLabelEditPart(view);
+
 			case MessageFoundAppliedStereotypeEditPart.VISUAL_ID:
 				return new MessageFoundAppliedStereotypeEditPart(view);
+
 			}
 		}
 		return createUnrecognizedEditPart(context, model);
@@ -252,7 +332,8 @@ public class UMLEditPartFactory implements EditPartFactory {
 			rect.y = getMultilineEditableFigure().getEditionLocation().y;
 			getMultilineEditableFigure().translateToAbsolute(rect);
 			if (getMultilineEditableFigure().getText().length() > 0) {
-				rect.setSize(new Dimension(text.computeSize(rect.width, SWT.DEFAULT)));
+				rect.setSize(new Dimension(text.computeSize(rect.width,
+						SWT.DEFAULT)));
 			}
 			if (!rect.equals(new Rectangle(text.getBounds()))) {
 				text.setBounds(rect.x, rect.y, rect.width, rect.height);

@@ -99,7 +99,8 @@ public class PackagePackageableElementCompartmentCanonicalEditPolicy extends Can
 	protected List<EObject> getSemanticChildrenList() {
 		View viewObject = (View) getHost().getModel();
 		LinkedList<EObject> result = new LinkedList<EObject>();
-		List<UMLNodeDescriptor> childDescriptors = UMLDiagramUpdater.INSTANCE.getPackagePackagedelements_7002SemanticChildren(viewObject);
+		List<UMLNodeDescriptor> childDescriptors = UMLDiagramUpdater.INSTANCE
+				.getPackagePackagedelements_7002SemanticChildren(viewObject);
 		for (UMLNodeDescriptor d : childDescriptors) {
 			result.add(d.getModelElement());
 		}
@@ -141,7 +142,9 @@ public class PackagePackageableElementCompartmentCanonicalEditPolicy extends Can
 			return;
 		}
 		LinkedList<IAdaptable> createdViews = new LinkedList<IAdaptable>();
-		List<UMLNodeDescriptor> childDescriptors = UMLDiagramUpdater.INSTANCE.getPackagePackagedelements_7002SemanticChildren((View) getHost().getModel());
+		List<UMLNodeDescriptor> childDescriptors =
+				UMLDiagramUpdater.INSTANCE
+						.getPackagePackagedelements_7002SemanticChildren((View) getHost().getModel());
 		LinkedList<View> orphaned = new LinkedList<View>();
 		// we care to check only views we recognize as ours
 		LinkedList<View> knownViewChildren = new LinkedList<View>();
@@ -216,6 +219,7 @@ public class PackagePackageableElementCompartmentCanonicalEditPolicy extends Can
 				}
 			}
 		}
+
 		boolean changed = deleteViews(orphaned.iterator());
 		//
 		CreateViewRequest request = getCreateViewRequest(viewDescriptors);
@@ -238,6 +242,7 @@ public class PackagePackageableElementCompartmentCanonicalEditPolicy extends Can
 			DeferredLayoutCommand layoutCmd = new DeferredLayoutCommand(host().getEditingDomain(), createdViews, host());
 			executeCommand(new ICommandProxy(layoutCmd));
 		}
+
 		makeViewsImmutable(createdViews);
 	}
 }

@@ -116,8 +116,10 @@ public class GeneralizationReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected CommandResult reorientSource() throws ExecutionException {
-		getOldSource().getGeneralizations().remove(getLink());
-		getNewSource().getGeneralizations().add(getLink());
+		getOldSource().getGeneralizations()
+				.remove(getLink());
+		getNewSource().getGeneralizations()
+				.add(getLink());
 		return CommandResult.newOKCommandResult(getLink());
 	}
 
@@ -125,7 +127,9 @@ public class GeneralizationReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected CommandResult reorientTarget() throws ExecutionException {
-		getLink().setGeneral(getNewTarget());
+		getLink().setGeneral(
+				getNewTarget()
+				);
 		return CommandResult.newOKCommandResult(getLink());
 	}
 

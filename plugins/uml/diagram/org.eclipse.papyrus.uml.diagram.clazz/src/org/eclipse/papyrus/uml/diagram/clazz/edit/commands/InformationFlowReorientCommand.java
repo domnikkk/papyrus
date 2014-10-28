@@ -78,10 +78,12 @@ public class InformationFlowReorientCommand extends EditElementCommand {
 		if (!(oldEnd instanceof NamedElement && newEnd instanceof NamedElement)) {
 			return false;
 		}
-		if (getLink().getInformationTargets().size() != 1) {
+		if (getLink().getInformationTargets()
+				.size() != 1) {
 			return false;
 		}
-		NamedElement target = getLink().getInformationTargets().get(0);
+		NamedElement target = getLink().getInformationTargets()
+				.get(0);
 		if (!(getLink().eContainer() instanceof Package)) {
 			return false;
 		}
@@ -96,10 +98,12 @@ public class InformationFlowReorientCommand extends EditElementCommand {
 		if (!(oldEnd instanceof NamedElement && newEnd instanceof NamedElement)) {
 			return false;
 		}
-		if (getLink().getInformationSources().size() != 1) {
+		if (getLink().getInformationSources()
+				.size() != 1) {
 			return false;
 		}
-		NamedElement source = getLink().getInformationSources().get(0);
+		NamedElement source = getLink().getInformationSources()
+				.get(0);
 		if (!(getLink().eContainer() instanceof Package)) {
 			return false;
 		}
@@ -128,8 +132,10 @@ public class InformationFlowReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected CommandResult reorientSource() throws ExecutionException {
-		getLink().getInformationSources().remove(getOldSource());
-		getLink().getInformationSources().add(getNewSource());
+		getLink().getInformationSources()
+				.remove(getOldSource());
+		getLink().getInformationSources()
+				.add(getNewSource());
 		return CommandResult.newOKCommandResult(getLink());
 	}
 
@@ -137,8 +143,10 @@ public class InformationFlowReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected CommandResult reorientTarget() throws ExecutionException {
-		getLink().getInformationTargets().remove(getOldTarget());
-		getLink().getInformationTargets().add(getNewTarget());
+		getLink().getInformationTargets()
+				.remove(getOldTarget());
+		getLink().getInformationTargets()
+				.add(getNewTarget());
 		return CommandResult.newOKCommandResult(getLink());
 	}
 

@@ -94,7 +94,8 @@ public class ModelCreateCommand extends EditElementCommand {
 			} else {
 
 				Package qualifiedTarget = (Package) target;
-				qualifiedTarget.getPackagedElements().add(newElement);
+				qualifiedTarget.getPackagedElements()
+						.add(newElement);
 
 			}
 		} else {

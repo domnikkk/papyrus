@@ -117,8 +117,10 @@ public class InterfaceRealizationReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected CommandResult reorientSource() throws ExecutionException {
-		getOldSource().getInterfaceRealizations().remove(getLink());
-		getNewSource().getInterfaceRealizations().add(getLink());
+		getOldSource().getInterfaceRealizations()
+				.remove(getLink());
+		getNewSource().getInterfaceRealizations()
+				.add(getLink());
 		return CommandResult.newOKCommandResult(getLink());
 	}
 
@@ -126,7 +128,9 @@ public class InterfaceRealizationReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected CommandResult reorientTarget() throws ExecutionException {
-		getLink().setContract(getNewTarget());
+		getLink().setContract(
+				getNewTarget()
+				);
 		return CommandResult.newOKCommandResult(getLink());
 	}
 

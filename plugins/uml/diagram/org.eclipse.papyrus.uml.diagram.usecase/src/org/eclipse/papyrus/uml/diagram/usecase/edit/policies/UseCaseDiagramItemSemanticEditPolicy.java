@@ -52,35 +52,57 @@ public class UseCaseDiagramItemSemanticEditPolicy extends UMLBaseItemSemanticEdi
 		if (requestElementType == null) {
 			return super.getCreateCommand(req);
 		}
+
+
 		if (UMLElementTypes.Actor_2011 == requestElementType) {
+
 			return getGEFWrapper(new ActorCreateCommandTN(req, DiagramUtils.getDiagramFrom(getHost())));
+
 		}
 		if (UMLElementTypes.Actor_2012 == requestElementType) {
+
 			return getGEFWrapper(new ActorAsRectangleCreateCommandTN(req, DiagramUtils.getDiagramFrom(getHost())));
+
 		}
 		if (UMLElementTypes.UseCase_2013 == requestElementType) {
+
 			return getGEFWrapper(new UseCaseCreateCommandTN(req, DiagramUtils.getDiagramFrom(getHost())));
+
 		}
 		if (UMLElementTypes.UseCase_2014 == requestElementType) {
+
 			return getGEFWrapper(new UseCaseAsRectangleCreateCommandTN(req, DiagramUtils.getDiagramFrom(getHost())));
+
 		}
 		if (UMLElementTypes.Classifier_2015 == requestElementType) {
+
 			return getGEFWrapper(new SubjectClassifierCreateCommandTN(req, DiagramUtils.getDiagramFrom(getHost())));
+
 		}
 		if (UMLElementTypes.Package_2016 == requestElementType) {
+
 			return getGEFWrapper(new PackageCreateCommandTN(req, DiagramUtils.getDiagramFrom(getHost())));
+
 		}
 		if (UMLElementTypes.Constraint_2017 == requestElementType) {
+
 			return getGEFWrapper(new ConstraintCreateCommandTN(req, DiagramUtils.getDiagramFrom(getHost())));
+
 		}
 		if (UMLElementTypes.Comment_2018 == requestElementType) {
+
 			return getGEFWrapper(new CommentCreateCommandTN(req, DiagramUtils.getDiagramFrom(getHost())));
+
 		}
 		if (UMLElementTypes.NamedElement_2022 == requestElementType) {
+
 			return getGEFWrapper(new DefaultNamedElementCreateCommandTN(req, DiagramUtils.getDiagramFrom(getHost())));
+
 		}
 		if (UMLElementTypes.Diagram_2019 == requestElementType) {
+
 			return getGEFWrapper(new ShortCutDiagramCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
+
 		}
 		return super.getCreateCommand(req);
 	}

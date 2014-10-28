@@ -37,6 +37,8 @@ public class TimeRulerCompartmentItemSemanticEditPolicyCN extends UMLBaseItemSem
 		if (requestElementType == null) {
 			return super.getCreateCommand(req);
 		}
+
+
 		return super.getCreateCommand(req);
 	}
 }

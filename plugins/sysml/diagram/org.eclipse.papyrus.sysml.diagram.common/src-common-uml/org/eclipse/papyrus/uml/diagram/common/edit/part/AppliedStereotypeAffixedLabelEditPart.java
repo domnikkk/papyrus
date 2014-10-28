@@ -14,11 +14,9 @@
 package org.eclipse.papyrus.uml.diagram.common.edit.part;
 
 import org.eclipse.draw2d.IFigure;
-import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.gmf.runtime.common.ui.services.parser.ParserOptions;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.figures.IBorderItemLocator;
-import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.infra.gmfdiag.common.editpart.IPapyrusEditPart;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeExternalNodeEditPolicy;
@@ -54,21 +52,6 @@ public class AppliedStereotypeAffixedLabelEditPart extends AbstractElementLabelE
 			return (IBorderItemLocator) constraint;
 		}
 		return null;
-	}
-
-	@Override
-	public void refreshBounds() {
-		int x = ((Integer) getStructuralFeatureValue(NotationPackage.eINSTANCE.getLocation_X())).intValue();
-		int y = ((Integer) getStructuralFeatureValue(NotationPackage.eINSTANCE.getLocation_Y())).intValue();
-		int width = ((Integer) getStructuralFeatureValue(NotationPackage.eINSTANCE.getSize_Width())).intValue();
-		int height = ((Integer) getStructuralFeatureValue(NotationPackage.eINSTANCE.getSize_Height())).intValue();
-
-		// Update locator constraint
-		IBorderItemLocator locator = getBorderItemLocator();
-		locator.setConstraint(new Rectangle(x, y, width, height));
-
-		// Set new constraint on parent figure
-		getFigure().getParent().setConstraint(getFigure(), locator);
 	}
 
 	/**

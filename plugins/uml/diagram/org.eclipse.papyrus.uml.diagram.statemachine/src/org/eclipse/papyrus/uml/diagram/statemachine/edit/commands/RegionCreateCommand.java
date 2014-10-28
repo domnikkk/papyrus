@@ -68,9 +68,12 @@ public class RegionCreateCommand extends EditElementCommand {
 	 */
 	@Override
 	public boolean canExecute() {
+
 		EObject target = getElementToEdit();
 		ModelAddData data = PolicyChecker.getCurrent().getChildAddData(diagram, target.eClass(), UMLPackage.eINSTANCE.getRegion());
 		return data.isPermitted();
+
+
 	}
 
 	/**
@@ -78,7 +81,9 @@ public class RegionCreateCommand extends EditElementCommand {
 	 */
 	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+
 		Region newElement = UMLFactory.eINSTANCE.createRegion();
+
 		EObject target = getElementToEdit();
 		ModelAddData data = PolicyChecker.getCurrent().getChildAddData(diagram, target, newElement);
 		if (data.isPermitted()) {
@@ -87,14 +92,21 @@ public class RegionCreateCommand extends EditElementCommand {
 					return CommandResult.newErrorCommandResult("Failed to follow the policy-specified for the insertion of the new element");
 				}
 			} else {
+
 				StateMachine qualifiedTarget = (StateMachine) target;
-				qualifiedTarget.getRegions().add(newElement);
+				qualifiedTarget.getRegions()
+						.add(newElement);
+
 			}
 		} else {
 			return CommandResult.newErrorCommandResult("The active policy restricts the addition of this element");
 		}
+
+
 		ElementInitializers.getInstance().init_Region_3000(newElement);
+
 		doConfigure(newElement, monitor, info);
+
 		((CreateElementRequest) getRequest()).setNewElement(newElement);
 		return CommandResult.newOKCommandResult(newElement);
 	}

@@ -68,9 +68,12 @@ public class DurationObservationCreateCommandCN extends EditElementCommand {
 	 */
 	@Override
 	public boolean canExecute() {
+
 		EObject target = getElementToEdit();
 		ModelAddData data = PolicyChecker.getCurrent().getChildAddData(diagram, target.eClass(), UMLPackage.eINSTANCE.getDurationObservation());
 		return data.isPermitted();
+
+
 	}
 
 	/**
@@ -78,7 +81,9 @@ public class DurationObservationCreateCommandCN extends EditElementCommand {
 	 */
 	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+
 		DurationObservation newElement = UMLFactory.eINSTANCE.createDurationObservation();
+
 		EObject target = getElementToEdit();
 		ModelAddData data = PolicyChecker.getCurrent().getChildAddData(diagram, target, newElement);
 		if (data.isPermitted()) {
@@ -87,14 +92,21 @@ public class DurationObservationCreateCommandCN extends EditElementCommand {
 					return CommandResult.newErrorCommandResult("Failed to follow the policy-specified for the insertion of the new element");
 				}
 			} else {
+
 				Package qualifiedTarget = (Package) target;
-				qualifiedTarget.getPackagedElements().add(newElement);
+				qualifiedTarget.getPackagedElements()
+						.add(newElement);
+
 			}
 		} else {
 			return CommandResult.newErrorCommandResult("The active policy restricts the addition of this element");
 		}
+
+
 		ElementInitializers.getInstance().init_DurationObservation_8007(newElement);
+
 		doConfigure(newElement, monitor, info);
+
 		((CreateElementRequest) getRequest()).setNewElement(newElement);
 		return CommandResult.newOKCommandResult(newElement);
 	}

@@ -14,6 +14,7 @@ import org.eclipse.draw2d.Shape;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.draw2d.ui.mapmode.IMapMode;
 import org.eclipse.gmf.runtime.draw2d.ui.mapmode.MapModeTypes;
+import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.PapyrusWrappingLabel;
 import org.eclipse.papyrus.uml.diagram.common.figure.edge.UMLEdgeFigure;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
@@ -54,7 +55,7 @@ public abstract class AbstractMessageFigure extends UMLEdgeFigure {
 	@Override
 	protected void createContents() {
 		super.createContents();
-		this.messageLabel = new WrappingLabel();
+		this.messageLabel = new PapyrusWrappingLabel();
 		this.messageLabel.setText(""); //$NON-NLS-1$
 		this.messageLabel.setFont(LABEL_FONT);
 		add(this.messageLabel);

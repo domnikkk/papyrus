@@ -64,13 +64,13 @@ public class ContextLinkReorientCommand extends EditElementCommand {
 	 */
 	@Override
 	public boolean canExecute() {
-		if(false == referenceOwner instanceof Constraint) {
+		if (false == referenceOwner instanceof Constraint) {
 			return false;
 		}
-		if(reorientDirection == ReorientRequest.REORIENT_SOURCE) {
+		if (reorientDirection == ReorientRequest.REORIENT_SOURCE) {
 			return canReorientSource();
 		}
-		if(reorientDirection == ReorientRequest.REORIENT_TARGET) {
+		if (reorientDirection == ReorientRequest.REORIENT_TARGET) {
 			return canReorientTarget();
 		}
 		return false;
@@ -80,7 +80,7 @@ public class ContextLinkReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected boolean canReorientSource() {
-		if(!(oldEnd instanceof Namespace && newEnd instanceof Constraint)) {
+		if (!(oldEnd instanceof Namespace && newEnd instanceof Constraint)) {
 			return false;
 		}
 		return UMLBaseItemSemanticEditPolicy.getLinkConstraints().canExistConstraintContext_8500(getNewSource(), getOldTarget());
@@ -90,7 +90,7 @@ public class ContextLinkReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected boolean canReorientTarget() {
-		if(!(oldEnd instanceof Namespace && newEnd instanceof Namespace)) {
+		if (!(oldEnd instanceof Namespace && newEnd instanceof Namespace)) {
 			return false;
 		}
 		return UMLBaseItemSemanticEditPolicy.getLinkConstraints().canExistConstraintContext_8500(getOldSource(), getNewTarget());
@@ -101,13 +101,13 @@ public class ContextLinkReorientCommand extends EditElementCommand {
 	 */
 	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		if(!canExecute()) {
+		if (!canExecute()) {
 			throw new ExecutionException("Invalid arguments in reorient link command"); //$NON-NLS-1$
 		}
-		if(reorientDirection == ReorientRequest.REORIENT_SOURCE) {
+		if (reorientDirection == ReorientRequest.REORIENT_SOURCE) {
 			return reorientSource();
 		}
-		if(reorientDirection == ReorientRequest.REORIENT_TARGET) {
+		if (reorientDirection == ReorientRequest.REORIENT_TARGET) {
 			return reorientTarget();
 		}
 		throw new IllegalStateException();
@@ -117,8 +117,12 @@ public class ContextLinkReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected CommandResult reorientSource() throws ExecutionException {
-		getOldSource().setContext(null);
-		getNewSource().setContext(getOldTarget());
+		getOldSource().setContext(
+				null
+				);
+		getNewSource().setContext(
+				getOldTarget()
+				);
 		return CommandResult.newOKCommandResult(referenceOwner);
 	}
 
@@ -126,7 +130,9 @@ public class ContextLinkReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected CommandResult reorientTarget() throws ExecutionException {
-		getOldSource().setContext(getNewTarget());
+		getOldSource().setContext(
+				getNewTarget()
+				);
 		return CommandResult.newOKCommandResult(referenceOwner);
 	}
 
@@ -134,27 +140,27 @@ public class ContextLinkReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected Constraint getOldSource() {
-		return (Constraint)referenceOwner;
+		return (Constraint) referenceOwner;
 	}
 
 	/**
 	 * @generated
 	 */
 	protected Constraint getNewSource() {
-		return (Constraint)newEnd;
+		return (Constraint) newEnd;
 	}
 
 	/**
 	 * @generated
 	 */
 	protected Namespace getOldTarget() {
-		return (Namespace)oldEnd;
+		return (Namespace) oldEnd;
 	}
 
 	/**
 	 * @generated
 	 */
 	protected Namespace getNewTarget() {
-		return (Namespace)newEnd;
+		return (Namespace) newEnd;
 	}
 }

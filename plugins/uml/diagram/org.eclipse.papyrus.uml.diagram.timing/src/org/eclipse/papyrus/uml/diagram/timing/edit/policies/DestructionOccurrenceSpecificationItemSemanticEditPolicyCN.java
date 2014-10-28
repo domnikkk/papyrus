@@ -69,6 +69,7 @@ public class DestructionOccurrenceSpecificationItemSemanticEditPolicyCN extends 
 		if (provider != null) {
 			// Retrieve delete command from the Element Edit service
 			ICommand deleteCommand = provider.getEditCommand(req);
+
 			if (deleteCommand != null) {
 				return new ICommandProxy(deleteCommand);
 			}
@@ -81,7 +82,8 @@ public class DestructionOccurrenceSpecificationItemSemanticEditPolicyCN extends 
 	 */
 	@Override
 	protected Command getCreateRelationshipCommand(CreateRelationshipRequest req) {
-		Command command = req.getTarget() == null ? getStartCreateRelationshipCommand(req) : getCompleteCreateRelationshipCommand(req);
+		Command command = req.getTarget() == null ?
+				getStartCreateRelationshipCommand(req) : getCompleteCreateRelationshipCommand(req);
 		return command != null ? command : super.getCreateRelationshipCommand(req);
 	}
 
@@ -109,43 +111,50 @@ public class DestructionOccurrenceSpecificationItemSemanticEditPolicyCN extends 
 			if (isExtendedType) {
 				return getExtendedStartCreateRelationshipCommand(req, (IExtendedHintedElementType) requestElementType);
 			}
-			return getGEFWrapper(new MessageSyncCreateCommand(req, req.getSource(), req.getTarget()));
+			return getGEFWrapper(new MessageSyncCreateCommand(req,
+					req.getSource(), req.getTarget()));
 		}
 		if (UMLElementTypes.Message_4 == baseElementType) {
 			if (isExtendedType) {
 				return getExtendedStartCreateRelationshipCommand(req, (IExtendedHintedElementType) requestElementType);
 			}
-			return getGEFWrapper(new MessageAsyncCreateCommand(req, req.getSource(), req.getTarget()));
+			return getGEFWrapper(new MessageAsyncCreateCommand(req,
+					req.getSource(), req.getTarget()));
 		}
 		if (UMLElementTypes.Message_41 == baseElementType) {
 			if (isExtendedType) {
 				return getExtendedStartCreateRelationshipCommand(req, (IExtendedHintedElementType) requestElementType);
 			}
-			return getGEFWrapper(new MessageReplyCreateCommand(req, req.getSource(), req.getTarget()));
+			return getGEFWrapper(new MessageReplyCreateCommand(req,
+					req.getSource(), req.getTarget()));
 		}
 		if (UMLElementTypes.Message_44 == baseElementType) {
 			if (isExtendedType) {
 				return getExtendedStartCreateRelationshipCommand(req, (IExtendedHintedElementType) requestElementType);
 			}
-			return getGEFWrapper(new MessageCreateCreateCommand(req, req.getSource(), req.getTarget()));
+			return getGEFWrapper(new MessageCreateCreateCommand(req,
+					req.getSource(), req.getTarget()));
 		}
 		if (UMLElementTypes.Message_47 == baseElementType) {
 			if (isExtendedType) {
 				return getExtendedStartCreateRelationshipCommand(req, (IExtendedHintedElementType) requestElementType);
 			}
-			return getGEFWrapper(new MessageDeleteCreateCommand(req, req.getSource(), req.getTarget()));
+			return getGEFWrapper(new MessageDeleteCreateCommand(req,
+					req.getSource(), req.getTarget()));
 		}
 		if (UMLElementTypes.Message_50 == baseElementType) {
 			if (isExtendedType) {
 				return getExtendedStartCreateRelationshipCommand(req, (IExtendedHintedElementType) requestElementType);
 			}
-			return getGEFWrapper(new MessageLostCreateCommand(req, req.getSource(), req.getTarget()));
+			return getGEFWrapper(new MessageLostCreateCommand(req,
+					req.getSource(), req.getTarget()));
 		}
 		if (UMLElementTypes.Message_53 == baseElementType) {
 			if (isExtendedType) {
 				return getExtendedStartCreateRelationshipCommand(req, (IExtendedHintedElementType) requestElementType);
 			}
-			return getGEFWrapper(new MessageFoundCreateCommand(req, req.getSource(), req.getTarget()));
+			return getGEFWrapper(new MessageFoundCreateCommand(req,
+					req.getSource(), req.getTarget()));
 		}
 		return null;
 	}
@@ -174,43 +183,50 @@ public class DestructionOccurrenceSpecificationItemSemanticEditPolicyCN extends 
 			if (isExtendedType) {
 				return getExtendedCompleteCreateRelationshipCommand(req, (IExtendedHintedElementType) requestElementType);
 			}
-			return getGEFWrapper(new MessageSyncCreateCommand(req, req.getSource(), req.getTarget()));
+			return getGEFWrapper(new MessageSyncCreateCommand(req,
+					req.getSource(), req.getTarget()));
 		}
 		if (UMLElementTypes.Message_4 == baseElementType) {
 			if (isExtendedType) {
 				return getExtendedCompleteCreateRelationshipCommand(req, (IExtendedHintedElementType) requestElementType);
 			}
-			return getGEFWrapper(new MessageAsyncCreateCommand(req, req.getSource(), req.getTarget()));
+			return getGEFWrapper(new MessageAsyncCreateCommand(req,
+					req.getSource(), req.getTarget()));
 		}
 		if (UMLElementTypes.Message_41 == baseElementType) {
 			if (isExtendedType) {
 				return getExtendedCompleteCreateRelationshipCommand(req, (IExtendedHintedElementType) requestElementType);
 			}
-			return getGEFWrapper(new MessageReplyCreateCommand(req, req.getSource(), req.getTarget()));
+			return getGEFWrapper(new MessageReplyCreateCommand(req,
+					req.getSource(), req.getTarget()));
 		}
 		if (UMLElementTypes.Message_44 == baseElementType) {
 			if (isExtendedType) {
 				return getExtendedCompleteCreateRelationshipCommand(req, (IExtendedHintedElementType) requestElementType);
 			}
-			return getGEFWrapper(new MessageCreateCreateCommand(req, req.getSource(), req.getTarget()));
+			return getGEFWrapper(new MessageCreateCreateCommand(req,
+					req.getSource(), req.getTarget()));
 		}
 		if (UMLElementTypes.Message_47 == baseElementType) {
 			if (isExtendedType) {
 				return getExtendedCompleteCreateRelationshipCommand(req, (IExtendedHintedElementType) requestElementType);
 			}
-			return getGEFWrapper(new MessageDeleteCreateCommand(req, req.getSource(), req.getTarget()));
+			return getGEFWrapper(new MessageDeleteCreateCommand(req,
+					req.getSource(), req.getTarget()));
 		}
 		if (UMLElementTypes.Message_50 == baseElementType) {
 			if (isExtendedType) {
 				return getExtendedCompleteCreateRelationshipCommand(req, (IExtendedHintedElementType) requestElementType);
 			}
-			return getGEFWrapper(new MessageLostCreateCommand(req, req.getSource(), req.getTarget()));
+			return getGEFWrapper(new MessageLostCreateCommand(req,
+					req.getSource(), req.getTarget()));
 		}
 		if (UMLElementTypes.Message_53 == baseElementType) {
 			if (isExtendedType) {
 				return getExtendedCompleteCreateRelationshipCommand(req, (IExtendedHintedElementType) requestElementType);
 			}
-			return getGEFWrapper(new MessageFoundCreateCommand(req, req.getSource(), req.getTarget()));
+			return getGEFWrapper(new MessageFoundCreateCommand(req,
+					req.getSource(), req.getTarget()));
 		}
 		return null;
 	}

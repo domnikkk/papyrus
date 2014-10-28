@@ -117,8 +117,10 @@ public class CommentAnnotatedElementReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected CommandResult reorientSource() throws ExecutionException {
-		getOldSource().getAnnotatedElements().remove(getOldTarget());
-		getNewSource().getAnnotatedElements().add(getOldTarget());
+		getOldSource().getAnnotatedElements()
+				.remove(getOldTarget());
+		getNewSource().getAnnotatedElements()
+				.add(getOldTarget());
 		return CommandResult.newOKCommandResult(referenceOwner);
 	}
 
@@ -126,8 +128,10 @@ public class CommentAnnotatedElementReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected CommandResult reorientTarget() throws ExecutionException {
-		getOldSource().getAnnotatedElements().remove(getOldTarget());
-		getOldSource().getAnnotatedElements().add(getNewTarget());
+		getOldSource().getAnnotatedElements()
+				.remove(getOldTarget());
+		getOldSource().getAnnotatedElements()
+				.add(getNewTarget());
 		return CommandResult.newOKCommandResult(referenceOwner);
 	}
 

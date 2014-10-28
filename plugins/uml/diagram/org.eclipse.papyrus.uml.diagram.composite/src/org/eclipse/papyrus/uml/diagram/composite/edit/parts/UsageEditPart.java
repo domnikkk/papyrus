@@ -54,10 +54,12 @@ public class UsageEditPart extends UMLConnectionNodeEditPart implements ITreeBra
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof UsageNameEditPart) {
-			((UsageNameEditPart) childEditPart).setLabel(getPrimaryShape().getNameLabel());
+			((UsageNameEditPart) childEditPart).setLabel(
+					getPrimaryShape().getNameLabel());
 		}
 		if (childEditPart instanceof UsageAppliedStereotypeEditPart) {
-			((UsageAppliedStereotypeEditPart) childEditPart).setLabel(getPrimaryShape().getAppliedStereotypeLabel());
+			((UsageAppliedStereotypeEditPart) childEditPart).setLabel(
+					getPrimaryShape().getAppliedStereotypeLabel());
 		}
 		return false;
 	}

@@ -108,6 +108,7 @@ public class ContainmentCircleEditPart extends AbstractBorderItemEditPart {
 	@Override
 	protected void handleNotificationEvent(Notification event) {
 		super.handleNotificationEvent(event);
+
 	}
 
 	/**
@@ -150,6 +151,7 @@ public class ContainmentCircleEditPart extends AbstractBorderItemEditPart {
 		figure.add(shape);
 		contentPane = setupContentPane(shape);
 		return figure;
+
 	}
 
 	/**

@@ -65,9 +65,12 @@ public class DefaultNamedElementCreateCommand extends EditElementCommand {
 	 */
 	@Override
 	public boolean canExecute() {
+
 		EObject target = getElementToEdit();
 		ModelAddData data = PolicyChecker.getCurrent().getChildAddData(diagram, target.eClass(), UMLPackage.eINSTANCE.getNamedElement());
 		return data.isPermitted();
+
+
 	}
 
 	/**
@@ -75,6 +78,7 @@ public class DefaultNamedElementCreateCommand extends EditElementCommand {
 	 */
 	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+
 		throw new UnsupportedOperationException("Unimplemented operation (abstract domain element).");
 	}
 

@@ -15,6 +15,7 @@ package org.eclipse.papyrus.uml.diagram.common.figure.node;
 
 import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
+import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.PapyrusWrappingLabel;
 
 /**
  * This class is a {@link WrappingLabel}, which default behavior is set
@@ -22,7 +23,7 @@ import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
  *
  * The text is centered and automatically wraps on several lines.
  */
-public class CenteredWrappedLabel extends WrappingLabel {
+public class CenteredWrappedLabel extends PapyrusWrappingLabel {
 
 	/**
 	 * Construct an empty wrapping label with customized alignment.

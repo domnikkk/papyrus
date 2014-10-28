@@ -54,10 +54,12 @@ public class AssociationEditPart extends UMLConnectionNodeEditPart implements IT
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof AssociationNameEditPart) {
-			((AssociationNameEditPart) childEditPart).setLabel(getPrimaryShape().getAssociationNameLabel());
+			((AssociationNameEditPart) childEditPart).setLabel(
+					getPrimaryShape().getAssociationNameLabel());
 		}
 		if (childEditPart instanceof AssociationAppliedStereotypeEditPart) {
-			((AssociationAppliedStereotypeEditPart) childEditPart).setLabel(getPrimaryShape().getAppliedStereotypeLabel());
+			((AssociationAppliedStereotypeEditPart) childEditPart).setLabel(
+					getPrimaryShape().getAppliedStereotypeLabel());
 		}
 		return false;
 	}

@@ -67,12 +67,16 @@ public class DoActivityStateBehaviorStateCreateCommand extends EditElementComman
 	@Override
 	public boolean canExecute() {
 		State container = (State) getElementToEdit();
-		if (container.getDoActivity() != null) {
+		if (container.getDoActivity()
+				!= null) {
 			return false;
 		}
+
 		EObject target = getElementToEdit();
 		ModelAddData data = PolicyChecker.getCurrent().getChildAddData(diagram, target.eClass(), UMLPackage.eINSTANCE.getBehavior());
 		return data.isPermitted();
+
+
 	}
 
 	/**
@@ -80,6 +84,7 @@ public class DoActivityStateBehaviorStateCreateCommand extends EditElementComman
 	 */
 	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+
 		throw new UnsupportedOperationException("Unimplemented operation (abstract domain element).");
 	}
 

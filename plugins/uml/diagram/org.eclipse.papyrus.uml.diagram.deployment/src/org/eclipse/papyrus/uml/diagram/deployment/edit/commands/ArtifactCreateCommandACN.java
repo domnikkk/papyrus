@@ -93,7 +93,8 @@ public class ArtifactCreateCommandACN extends EditElementCommand {
 			} else {
 
 				Artifact qualifiedTarget = (Artifact) target;
-				qualifiedTarget.getNestedArtifacts().add(newElement);
+				qualifiedTarget.getNestedArtifacts()
+						.add(newElement);
 
 			}
 		} else {

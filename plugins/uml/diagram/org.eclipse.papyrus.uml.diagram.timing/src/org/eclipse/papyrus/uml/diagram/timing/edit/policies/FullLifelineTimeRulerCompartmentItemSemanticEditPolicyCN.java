@@ -37,6 +37,8 @@ public class FullLifelineTimeRulerCompartmentItemSemanticEditPolicyCN extends UM
 		if (requestElementType == null) {
 			return super.getCreateCommand(req);
 		}
+
+
 		return super.getCreateCommand(req);
 	}
 }

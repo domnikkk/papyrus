@@ -78,10 +78,12 @@ public class AssociationBranchReorientCommand extends EditElementCommand {
 		if (!(oldEnd instanceof Type && newEnd instanceof Type)) {
 			return false;
 		}
-		if (getLink().getEndTypes().size() != 1) {
+		if (getLink().getEndTypes()
+				.size() != 1) {
 			return false;
 		}
-		Type target = getLink().getEndTypes().get(0);
+		Type target = getLink().getEndTypes()
+				.get(0);
 		if (!(getLink().eContainer() instanceof Package)) {
 			return false;
 		}
@@ -96,10 +98,12 @@ public class AssociationBranchReorientCommand extends EditElementCommand {
 		if (!(oldEnd instanceof Type && newEnd instanceof Type)) {
 			return false;
 		}
-		if (getLink().getEndTypes().size() != 1) {
+		if (getLink().getEndTypes()
+				.size() != 1) {
 			return false;
 		}
-		Type source = getLink().getEndTypes().get(0);
+		Type source = getLink().getEndTypes()
+				.get(0);
 		if (!(getLink().eContainer() instanceof Package)) {
 			return false;
 		}

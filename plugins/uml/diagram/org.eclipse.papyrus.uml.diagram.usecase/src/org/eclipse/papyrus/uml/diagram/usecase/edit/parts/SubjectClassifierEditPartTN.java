@@ -114,6 +114,7 @@ public class SubjectClassifierEditPartTN extends NamedElementEditPart {
 	@Override
 	protected void handleNotificationEvent(Notification event) {
 		super.handleNotificationEvent(event);
+
 	}
 
 	/**
@@ -142,12 +143,15 @@ public class SubjectClassifierEditPartTN extends NamedElementEditPart {
 			((SubjectClassifierNameEditPartTN) childEditPart).setLabel(getPrimaryShape().getNameLabel());
 			return true;
 		}
+
+
 		if (childEditPart instanceof SubjectComponentUsecasesEditPart) {
 			IFigure pane = getPrimaryShape().getUseCasesContainerFigure();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way
 			pane.add(((SubjectComponentUsecasesEditPart) childEditPart).getFigure());
 			return true;
 		}
+
 		return false;
 	}
 
@@ -219,6 +223,7 @@ public class SubjectClassifierEditPartTN extends NamedElementEditPart {
 	@Override
 	protected NodeFigure createNodeFigure() {
 		return new SelectableBorderedNodeFigure(createMainFigureWithSVG());
+
 	}
 
 	/**

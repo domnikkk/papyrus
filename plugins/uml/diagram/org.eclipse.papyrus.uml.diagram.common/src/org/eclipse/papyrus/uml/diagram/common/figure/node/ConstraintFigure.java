@@ -9,6 +9,7 @@
  *
  * Contributors:
  *  Patrick Tessier (CEA LIST) Patrick.tessier@cea.fr - Initial API and implementation
+ *  Céline Janssens (ALL4TEC) celine.janssens@all4tec.net - Bug 440230 : Label Margin
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.common.figure.node;
@@ -20,6 +21,7 @@ import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.draw2d.text.FlowPage;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.draw2d.ui.text.TextFlowEx;
+import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.PapyrusWrappingLabel;
 import org.eclipse.swt.graphics.Image;
 
 /**
@@ -136,7 +138,7 @@ public class ConstraintFigure extends CornerBentFigure implements IPapyrusNodeNa
 	public ConstraintFigure(String tagLabel) {
 		super();
 
-		nameLabel = new WrappingLabel();
+		nameLabel = new PapyrusWrappingLabel();
 
 		nameLabel.setOpaque(false);
 		nameLabel.setAlignment(PositionConstants.MIDDLE);

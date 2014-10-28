@@ -1,0 +1,39 @@
+=Text Alignment=
+==Introduction==
+Papyrus allows text alignment on external label, that means that when you're editing text, it will be moved on the selected side. You can align text to the left,  to the center or to the right. 
+
+Example of text alignment to the right:
+
+*Before a rename of the label
+[[File:images/textAlignment/TextAlignmentBefore.png]]  
+
+*After a rename of the label
+[[File:images/textAlignment/TextAlignmentAfter.png]]
+
+There is two ways to align text: with the existing button or thanks CSS:
+
+==Apply text alignment with button==
+To apply text alignment you can use button. There are available in tree places:
+
+*In the papyrus menu
+[[File:images/textAlignment/TextAlignmentButton01.png]]
+
+
+*In the toolbar
+[[File:images/textAlignment/TextAlignmentButton02.png]]
+
+
+*In the contextual menu
+[[File:images/textAlignment/TextAlignmentButton03.png]]
+
+==Apply text alignment with CSS==
+Text alignment can be defined through the CSS attributes "textAlignment" :
+
+Example for Label of Port aligned to the right:
+
+<source lang="css">Port > Label {
+   textAlignment:"right";
+   }</source>
+   
+   
+Note: Text alignment of port's label is forced according to the position of its parent when it is constrained.
