@@ -39,7 +39,6 @@ import org.eclipse.papyrus.infra.viewpoints.configuration.PathElement;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.infra.viewpoints.configuration.PathElement} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- *
  * @generated
  */
 public class PathElementItemProvider
@@ -54,7 +53,6 @@ public class PathElementItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public PathElementItemProvider(AdapterFactory adapterFactory) {
@@ -65,7 +63,6 @@ public class PathElementItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -128,23 +125,22 @@ public class PathElementItemProvider
 	 * This adds a property descriptor for the Target feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected void addTargetPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-				(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(),
-						getString("_UI_PathElement_target_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_PathElement_target_feature", "_UI_PathElement_type"),
-						ConfigurationPackage.Literals.PATH_ELEMENT__TARGET,
-						false,
-						false,
-						false,
-						null,
-						null,
-						null));
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_PathElement_target_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_PathElement_target_feature", "_UI_PathElement_type"),
+				 ConfigurationPackage.Literals.PATH_ELEMENT__TARGET,
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
@@ -184,7 +180,6 @@ public class PathElementItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -198,7 +193,6 @@ public class PathElementItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -210,12 +204,11 @@ public class PathElementItemProvider
 	 * Return the resource locator for this item provider's resources.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return ((IChildCreationExtender) adapterFactory).getResourceLocator();
+		return ((IChildCreationExtender)adapterFactory).getResourceLocator();
 	}
 
 }

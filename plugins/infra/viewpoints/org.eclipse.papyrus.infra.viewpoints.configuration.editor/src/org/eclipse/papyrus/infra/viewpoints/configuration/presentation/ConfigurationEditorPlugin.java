@@ -16,14 +16,13 @@ package org.eclipse.papyrus.infra.viewpoints.configuration.presentation;
 import org.eclipse.emf.common.EMFPlugin;
 import org.eclipse.emf.common.ui.EclipseUIPlugin;
 import org.eclipse.emf.common.util.ResourceLocator;
-import org.eclipse.emf.ecore.provider.EcoreEditPlugin;
+import org.eclipse.papyrus.infra.constraints.provider.ConstraintsEditPlugin;
 import org.eclipse.papyrus.infra.viewpoints.iso42010.provider.Iso42010EditPlugin;
 
 /**
  * This is the central singleton for the Configuration editor plugin.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- *
  * @generated
  */
 public final class ConfigurationEditorPlugin extends EMFPlugin {
@@ -31,7 +30,6 @@ public final class ConfigurationEditorPlugin extends EMFPlugin {
 	 * Keep track of the singleton.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public static final ConfigurationEditorPlugin INSTANCE = new ConfigurationEditorPlugin();
@@ -40,7 +38,6 @@ public final class ConfigurationEditorPlugin extends EMFPlugin {
 	 * Keep track of the singleton.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private static Implementation plugin;
@@ -49,21 +46,20 @@ public final class ConfigurationEditorPlugin extends EMFPlugin {
 	 * Create the instance.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public ConfigurationEditorPlugin() {
-		super(new ResourceLocator[] {
-				EcoreEditPlugin.INSTANCE,
+		super
+			(new ResourceLocator [] {
+				ConstraintsEditPlugin.INSTANCE,
 				Iso42010EditPlugin.INSTANCE,
-		});
+			});
 	}
 
 	/**
 	 * Returns the singleton instance of the Eclipse plugin.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the singleton instance.
 	 * @generated
 	 */
@@ -76,7 +72,6 @@ public final class ConfigurationEditorPlugin extends EMFPlugin {
 	 * Returns the singleton instance of the Eclipse plugin.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the singleton instance.
 	 * @generated
 	 */
@@ -88,7 +83,6 @@ public final class ConfigurationEditorPlugin extends EMFPlugin {
 	 * The actual implementation of the Eclipse <b>Plugin</b>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public static class Implementation extends EclipseUIPlugin {
@@ -96,12 +90,11 @@ public final class ConfigurationEditorPlugin extends EMFPlugin {
 		 * Creates an instance.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @generated
 		 */
 		public Implementation() {
 			super();
-
+	
 			// Remember the static instance.
 			//
 			plugin = this;

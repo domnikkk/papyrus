@@ -6,6 +6,12 @@
       <modelRules xmi:id="_Q9t2YBP8EeSS0oyATXohNA">
         <element href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
       </modelRules>
+      <owningRules xmi:id="_MxjyIl6yEeS6cqrRNqDmLA">
+        <element href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+        <selectDiagramRoot xmi:id="_lSTOsF9PEeSbqL0QobSE0Q">
+          <feature href="http://www.eclipse.org/uml2/5.0.0/UML#//Element/owner"/>
+        </selectDiagramRoot>
+      </owningRules>
       <owningRules xmi:id="_URJ9EBP8EeSS0oyATXohNA">
         <element href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
       </owningRules>

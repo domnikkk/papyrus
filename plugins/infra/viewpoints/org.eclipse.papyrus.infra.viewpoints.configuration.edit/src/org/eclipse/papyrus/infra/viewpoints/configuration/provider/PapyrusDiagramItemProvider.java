@@ -32,7 +32,6 @@ import org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusDiagram;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusDiagram} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- *
  * @generated
  */
 public class PapyrusDiagramItemProvider
@@ -41,7 +40,6 @@ public class PapyrusDiagramItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public PapyrusDiagramItemProvider(AdapterFactory adapterFactory) {
@@ -52,7 +50,6 @@ public class PapyrusDiagramItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -70,54 +67,52 @@ public class PapyrusDiagramItemProvider
 	 * This adds a property descriptor for the Custom Palette feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected void addCustomPalettePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-				(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(),
-						getString("_UI_PapyrusDiagram_customPalette_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_PapyrusDiagram_customPalette_feature", "_UI_PapyrusDiagram_type"),
-						ConfigurationPackage.Literals.PAPYRUS_DIAGRAM__CUSTOM_PALETTE,
-						true,
-						false,
-						false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-						null,
-						null));
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_PapyrusDiagram_customPalette_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_PapyrusDiagram_customPalette_feature", "_UI_PapyrusDiagram_type"),
+				 ConfigurationPackage.Literals.PAPYRUS_DIAGRAM__CUSTOM_PALETTE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Custom Style feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected void addCustomStylePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-				(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(),
-						getString("_UI_PapyrusDiagram_customStyle_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_PapyrusDiagram_customStyle_feature", "_UI_PapyrusDiagram_type"),
-						ConfigurationPackage.Literals.PAPYRUS_DIAGRAM__CUSTOM_STYLE,
-						true,
-						false,
-						false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-						null,
-						null));
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_PapyrusDiagram_customStyle_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_PapyrusDiagram_customStyle_feature", "_UI_PapyrusDiagram_type"),
+				 ConfigurationPackage.Literals.PAPYRUS_DIAGRAM__CUSTOM_STYLE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -133,7 +128,6 @@ public class PapyrusDiagramItemProvider
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -171,7 +165,6 @@ public class PapyrusDiagramItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -179,14 +172,14 @@ public class PapyrusDiagramItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(PapyrusDiagram.class)) {
-		case ConfigurationPackage.PAPYRUS_DIAGRAM__CUSTOM_PALETTE:
-		case ConfigurationPackage.PAPYRUS_DIAGRAM__CUSTOM_STYLE:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-			return;
-		case ConfigurationPackage.PAPYRUS_DIAGRAM__CHILD_RULES:
-		case ConfigurationPackage.PAPYRUS_DIAGRAM__PALETTE_RULES:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-			return;
+			case ConfigurationPackage.PAPYRUS_DIAGRAM__CUSTOM_PALETTE:
+			case ConfigurationPackage.PAPYRUS_DIAGRAM__CUSTOM_STYLE:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+			case ConfigurationPackage.PAPYRUS_DIAGRAM__CHILD_RULES:
+			case ConfigurationPackage.PAPYRUS_DIAGRAM__PALETTE_RULES:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+				return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -196,7 +189,6 @@ public class PapyrusDiagramItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -204,14 +196,14 @@ public class PapyrusDiagramItemProvider
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
 		newChildDescriptors.add
-				(createChildParameter
+			(createChildParameter
 				(ConfigurationPackage.Literals.PAPYRUS_DIAGRAM__CHILD_RULES,
-						ConfigurationFactory.eINSTANCE.createChildRule()));
+				 ConfigurationFactory.eINSTANCE.createChildRule()));
 
 		newChildDescriptors.add
-				(createChildParameter
+			(createChildParameter
 				(ConfigurationPackage.Literals.PAPYRUS_DIAGRAM__PALETTE_RULES,
-						ConfigurationFactory.eINSTANCE.createPaletteRule()));
+				 ConfigurationFactory.eINSTANCE.createPaletteRule()));
 	}
 
 }

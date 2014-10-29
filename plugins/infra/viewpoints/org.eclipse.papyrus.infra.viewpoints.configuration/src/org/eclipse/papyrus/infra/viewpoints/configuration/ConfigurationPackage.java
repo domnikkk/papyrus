@@ -31,7 +31,6 @@ import org.eclipse.papyrus.infra.viewpoints.iso42010.Iso42010Package;
  * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- *
  * @see org.eclipse.papyrus.infra.viewpoints.configuration.ConfigurationFactory
  * @model kind="package"
  * @generated
@@ -41,7 +40,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	String eNAME = "configuration";
@@ -50,7 +48,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	String eNS_URI = "http://www.eclipse.org/papyrus/infra/viewpoints/configuration";
@@ -59,7 +56,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	String eNS_PREFIX = "configuration";
@@ -68,7 +64,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	ConfigurationPackage eINSTANCE = org.eclipse.papyrus.infra.viewpoints.configuration.impl.ConfigurationPackageImpl.init();
@@ -77,7 +72,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.viewpoints.configuration.impl.PapyrusConfigurationImpl <em>Papyrus Configuration</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.impl.PapyrusConfigurationImpl
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.impl.ConfigurationPackageImpl#getPapyrusConfiguration()
 	 * @generated
@@ -88,7 +82,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Stakeholders</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -98,7 +91,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Viewpoints</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -108,7 +100,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Rules</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -118,7 +109,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Concerns</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -128,7 +118,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Default Stakeholder</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -138,7 +127,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Metamodel</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -148,7 +136,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Categories</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -158,7 +145,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The number of structural features of the '<em>Papyrus Configuration</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -168,7 +154,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The number of operations of the '<em>Papyrus Configuration</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -178,7 +163,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.viewpoints.configuration.impl.PapyrusViewpointImpl <em>Papyrus Viewpoint</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.impl.PapyrusViewpointImpl
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.impl.ConfigurationPackageImpl#getPapyrusViewpoint()
 	 * @generated
@@ -189,7 +173,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -199,7 +182,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Affected By</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -209,7 +191,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Model Kinds</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -219,7 +200,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Governs</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -229,7 +209,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Frames</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -239,7 +218,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Parent</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -249,7 +227,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The number of structural features of the '<em>Papyrus Viewpoint</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -259,7 +236,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The number of operations of the '<em>Papyrus Viewpoint</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -269,7 +245,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.viewpoints.configuration.impl.PapyrusViewImpl <em>Papyrus View</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.impl.PapyrusViewImpl
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.impl.ConfigurationPackageImpl#getPapyrusView()
 	 * @generated
@@ -280,7 +255,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -290,7 +264,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Affected By</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -300,7 +273,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Governs</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -310,7 +282,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Viewpoint</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -320,7 +291,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Icon</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -330,7 +300,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Parent</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -340,7 +309,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Profiles</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -350,7 +318,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Model Rules</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -360,7 +327,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Owning Rules</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -370,7 +336,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Implementation ID</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -380,7 +345,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Categories</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -390,7 +354,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The number of structural features of the '<em>Papyrus View</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -400,7 +363,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The number of operations of the '<em>Papyrus View</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -410,7 +372,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.viewpoints.configuration.impl.PapyrusDiagramImpl <em>Papyrus Diagram</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.impl.PapyrusDiagramImpl
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.impl.ConfigurationPackageImpl#getPapyrusDiagram()
 	 * @generated
@@ -421,7 +382,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -431,7 +391,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Affected By</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -441,7 +400,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Governs</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -451,7 +409,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Viewpoint</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -461,7 +418,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Icon</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -471,7 +427,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Parent</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -481,7 +436,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Profiles</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -491,7 +445,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Model Rules</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -501,7 +454,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Owning Rules</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -511,7 +463,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Implementation ID</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -521,7 +472,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Categories</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -531,7 +481,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Custom Palette</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -541,7 +490,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Custom Style</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -551,7 +499,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Child Rules</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -561,7 +508,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Palette Rules</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -571,7 +517,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The number of structural features of the '<em>Papyrus Diagram</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -581,7 +526,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The number of operations of the '<em>Papyrus Diagram</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -591,7 +535,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.viewpoints.configuration.impl.PapyrusSyncTableImpl <em>Papyrus Sync Table</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.impl.PapyrusSyncTableImpl
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.impl.ConfigurationPackageImpl#getPapyrusSyncTable()
 	 * @generated
@@ -602,7 +545,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -612,7 +554,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Affected By</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -622,7 +563,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Governs</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -632,7 +572,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Viewpoint</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -642,7 +581,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Icon</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -652,7 +590,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Parent</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -662,7 +599,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Profiles</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -672,7 +608,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Model Rules</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -682,7 +617,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Owning Rules</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -692,7 +626,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Implementation ID</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -702,7 +635,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Categories</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -712,7 +644,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The number of structural features of the '<em>Papyrus Sync Table</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -722,7 +653,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The number of operations of the '<em>Papyrus Sync Table</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -732,7 +662,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.viewpoints.configuration.impl.PapyrusTableImpl <em>Papyrus Table</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.impl.PapyrusTableImpl
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.impl.ConfigurationPackageImpl#getPapyrusTable()
 	 * @generated
@@ -743,7 +672,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -753,7 +681,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Affected By</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -763,7 +690,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Governs</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -773,7 +699,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Viewpoint</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -783,7 +708,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Icon</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -793,7 +717,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Parent</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -803,7 +726,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Profiles</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -813,7 +735,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Model Rules</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -823,7 +744,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Owning Rules</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -833,7 +753,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Implementation ID</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -843,7 +762,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Categories</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -853,7 +771,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Configuration</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -863,7 +780,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The number of structural features of the '<em>Papyrus Table</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -873,7 +789,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The number of operations of the '<em>Papyrus Table</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -883,7 +798,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.viewpoints.configuration.impl.RuleImpl <em>Rule</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.impl.RuleImpl
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.impl.ConfigurationPackageImpl#getRule()
 	 * @generated
@@ -894,7 +808,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Permit</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -904,7 +817,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The number of structural features of the '<em>Rule</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -914,7 +826,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The number of operations of the '<em>Rule</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -924,7 +835,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.viewpoints.configuration.impl.ModelRuleImpl <em>Model Rule</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.impl.ModelRuleImpl
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.impl.ConfigurationPackageImpl#getModelRule()
 	 * @generated
@@ -935,7 +845,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Permit</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -945,7 +854,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Constraints</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -955,7 +863,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Element Multiplicity</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -965,7 +872,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -975,7 +881,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Stereotypes</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -985,7 +890,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Multiplicity</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -995,7 +899,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The number of structural features of the '<em>Model Rule</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1005,7 +908,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The number of operations of the '<em>Model Rule</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1015,7 +917,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.viewpoints.configuration.impl.OwningRuleImpl <em>Owning Rule</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.impl.OwningRuleImpl
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.impl.ConfigurationPackageImpl#getOwningRule()
 	 * @generated
@@ -1026,7 +927,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Permit</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1036,7 +936,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1046,7 +945,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Stereotypes</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1056,7 +954,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Multiplicity</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1066,27 +963,33 @@ public interface ConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>New Model Path</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
 	int OWNING_RULE__NEW_MODEL_PATH = RULE_FEATURE_COUNT + 3;
 
 	/**
-	 * The number of structural features of the '<em>Owning Rule</em>' class.
+	 * The feature id for the '<em><b>Select Diagram Root</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
-	int OWNING_RULE_FEATURE_COUNT = RULE_FEATURE_COUNT + 4;
+	int OWNING_RULE__SELECT_DIAGRAM_ROOT = RULE_FEATURE_COUNT + 4;
+
+	/**
+	 * The number of structural features of the '<em>Owning Rule</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OWNING_RULE_FEATURE_COUNT = RULE_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of operations of the '<em>Owning Rule</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1096,7 +999,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.viewpoints.configuration.impl.ChildRuleImpl <em>Child Rule</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.impl.ChildRuleImpl
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.impl.ConfigurationPackageImpl#getChildRule()
 	 * @generated
@@ -1107,7 +1009,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Permit</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1117,7 +1018,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1127,7 +1027,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Stereotypes</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1137,7 +1036,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Origin</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1147,7 +1045,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Insertion Path</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1157,7 +1054,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The number of structural features of the '<em>Child Rule</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1167,7 +1063,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The number of operations of the '<em>Child Rule</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1177,7 +1072,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.viewpoints.configuration.impl.PaletteRuleImpl <em>Palette Rule</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.impl.PaletteRuleImpl
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.impl.ConfigurationPackageImpl#getPaletteRule()
 	 * @generated
@@ -1188,7 +1082,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Permit</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1198,7 +1091,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Element</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1208,7 +1100,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The number of structural features of the '<em>Palette Rule</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1218,7 +1109,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The number of operations of the '<em>Palette Rule</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1228,7 +1118,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.viewpoints.configuration.impl.PathElementImpl <em>Path Element</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.impl.PathElementImpl
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.impl.ConfigurationPackageImpl#getPathElement()
 	 * @generated
@@ -1239,7 +1128,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Feature</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1249,7 +1137,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Origin</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1259,7 +1146,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Target</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1269,7 +1155,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The number of structural features of the '<em>Path Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1279,7 +1164,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The number of operations of the '<em>Path Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1290,7 +1174,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.viewpoints.configuration.impl.CategoryImpl <em>Category</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.impl.CategoryImpl
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.impl.ConfigurationPackageImpl#getCategory()
 	 * @generated
@@ -1301,7 +1184,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1311,7 +1193,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The number of structural features of the '<em>Category</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1321,7 +1202,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The number of operations of the '<em>Category</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1332,7 +1212,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.viewpoints.configuration.impl.ModelAutoCreateImpl <em>Model Auto Create</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.impl.ModelAutoCreateImpl
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.impl.ConfigurationPackageImpl#getModelAutoCreate()
 	 * @generated
@@ -1343,7 +1222,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Feature</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1353,7 +1231,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Origin</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1363,7 +1240,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Creation Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1373,7 +1249,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * The number of structural features of the '<em>Model Auto Create</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1383,17 +1258,52 @@ public interface ConfigurationPackage extends EPackage {
 	 * The number of operations of the '<em>Model Auto Create</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
 	int MODEL_AUTO_CREATE_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.infra.viewpoints.configuration.impl.RootAutoSelectImpl <em>Root Auto Select</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.impl.RootAutoSelectImpl
+	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.impl.ConfigurationPackageImpl#getRootAutoSelect()
+	 * @generated
+	 */
+	int ROOT_AUTO_SELECT = 14;
+
+	/**
+	 * The feature id for the '<em><b>Feature</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOT_AUTO_SELECT__FEATURE = 0;
+
+	/**
+	 * The number of structural features of the '<em>Root Auto Select</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOT_AUTO_SELECT_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Root Auto Select</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOT_AUTO_SELECT_OPERATION_COUNT = 0;
+
+	/**
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusConfiguration <em>Papyrus Configuration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for class '<em>Papyrus Configuration</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusConfiguration
 	 * @generated
@@ -1404,7 +1314,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusConfiguration#getDefaultStakeholder <em>Default Stakeholder</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for the reference '<em>Default Stakeholder</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusConfiguration#getDefaultStakeholder()
 	 * @see #getPapyrusConfiguration()
@@ -1416,7 +1325,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusConfiguration#getMetamodel <em>Metamodel</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for the reference '<em>Metamodel</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusConfiguration#getMetamodel()
 	 * @see #getPapyrusConfiguration()
@@ -1428,7 +1336,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusConfiguration#getCategories <em>Categories</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for the containment reference list '<em>Categories</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusConfiguration#getCategories()
 	 * @see #getPapyrusConfiguration()
@@ -1440,7 +1347,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusViewpoint <em>Papyrus Viewpoint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for class '<em>Papyrus Viewpoint</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusViewpoint
 	 * @generated
@@ -1451,7 +1357,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusViewpoint#getParent <em>Parent</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for the reference '<em>Parent</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusViewpoint#getParent()
 	 * @see #getPapyrusViewpoint()
@@ -1463,7 +1368,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusView <em>Papyrus View</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for class '<em>Papyrus View</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusView
 	 * @generated
@@ -1474,7 +1378,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusView#getIcon <em>Icon</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for the attribute '<em>Icon</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusView#getIcon()
 	 * @see #getPapyrusView()
@@ -1486,7 +1389,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusView#getParent <em>Parent</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for the reference '<em>Parent</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusView#getParent()
 	 * @see #getPapyrusView()
@@ -1498,7 +1400,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusView#getProfiles <em>Profiles</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for the reference list '<em>Profiles</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusView#getProfiles()
 	 * @see #getPapyrusView()
@@ -1510,7 +1411,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusView#getModelRules <em>Model Rules</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for the containment reference list '<em>Model Rules</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusView#getModelRules()
 	 * @see #getPapyrusView()
@@ -1522,7 +1422,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusView#getOwningRules <em>Owning Rules</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for the containment reference list '<em>Owning Rules</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusView#getOwningRules()
 	 * @see #getPapyrusView()
@@ -1534,7 +1433,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusView#getImplementationID <em>Implementation ID</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for the attribute '<em>Implementation ID</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusView#getImplementationID()
 	 * @see #getPapyrusView()
@@ -1546,7 +1444,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusView#getCategories <em>Categories</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for the reference list '<em>Categories</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusView#getCategories()
 	 * @see #getPapyrusView()
@@ -1558,7 +1455,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusDiagram <em>Papyrus Diagram</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for class '<em>Papyrus Diagram</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusDiagram
 	 * @generated
@@ -1569,7 +1465,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusDiagram#getCustomPalette <em>Custom Palette</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for the attribute '<em>Custom Palette</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusDiagram#getCustomPalette()
 	 * @see #getPapyrusDiagram()
@@ -1581,7 +1476,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusDiagram#getCustomStyle <em>Custom Style</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for the attribute '<em>Custom Style</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusDiagram#getCustomStyle()
 	 * @see #getPapyrusDiagram()
@@ -1593,7 +1487,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusDiagram#getChildRules <em>Child Rules</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for the containment reference list '<em>Child Rules</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusDiagram#getChildRules()
 	 * @see #getPapyrusDiagram()
@@ -1605,7 +1498,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusDiagram#getPaletteRules <em>Palette Rules</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for the containment reference list '<em>Palette Rules</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusDiagram#getPaletteRules()
 	 * @see #getPapyrusDiagram()
@@ -1617,7 +1509,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusSyncTable <em>Papyrus Sync Table</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for class '<em>Papyrus Sync Table</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusSyncTable
 	 * @generated
@@ -1628,7 +1519,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusTable <em>Papyrus Table</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for class '<em>Papyrus Table</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusTable
 	 * @generated
@@ -1639,7 +1529,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusTable#getConfiguration <em>Configuration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for the attribute '<em>Configuration</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusTable#getConfiguration()
 	 * @see #getPapyrusTable()
@@ -1651,7 +1540,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.viewpoints.configuration.ModelRule <em>Model Rule</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for class '<em>Model Rule</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.ModelRule
 	 * @generated
@@ -1662,7 +1550,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.infra.viewpoints.configuration.ModelRule#getElement <em>Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for the reference '<em>Element</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.ModelRule#getElement()
 	 * @see #getModelRule()
@@ -1674,7 +1561,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.infra.viewpoints.configuration.ModelRule#getStereotypes <em>Stereotypes</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for the reference list '<em>Stereotypes</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.ModelRule#getStereotypes()
 	 * @see #getModelRule()
@@ -1686,7 +1572,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.viewpoints.configuration.ModelRule#getMultiplicity <em>Multiplicity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for the attribute '<em>Multiplicity</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.ModelRule#getMultiplicity()
 	 * @see #getModelRule()
@@ -1698,7 +1583,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.viewpoints.configuration.OwningRule <em>Owning Rule</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for class '<em>Owning Rule</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.OwningRule
 	 * @generated
@@ -1709,7 +1593,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.infra.viewpoints.configuration.OwningRule#getElement <em>Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for the reference '<em>Element</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.OwningRule#getElement()
 	 * @see #getOwningRule()
@@ -1721,7 +1604,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.infra.viewpoints.configuration.OwningRule#getStereotypes <em>Stereotypes</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for the reference list '<em>Stereotypes</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.OwningRule#getStereotypes()
 	 * @see #getOwningRule()
@@ -1733,7 +1615,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.viewpoints.configuration.OwningRule#getMultiplicity <em>Multiplicity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for the attribute '<em>Multiplicity</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.OwningRule#getMultiplicity()
 	 * @see #getOwningRule()
@@ -1745,7 +1626,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.infra.viewpoints.configuration.OwningRule#getNewModelPath <em>New Model Path</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for the containment reference list '<em>New Model Path</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.OwningRule#getNewModelPath()
 	 * @see #getOwningRule()
@@ -1754,10 +1634,20 @@ public interface ConfigurationPackage extends EPackage {
 	EReference getOwningRule_NewModelPath();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.infra.viewpoints.configuration.OwningRule#getSelectDiagramRoot <em>Select Diagram Root</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Select Diagram Root</em>'.
+	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.OwningRule#getSelectDiagramRoot()
+	 * @see #getOwningRule()
+	 * @generated
+	 */
+	EReference getOwningRule_SelectDiagramRoot();
+
+	/**
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.viewpoints.configuration.ChildRule <em>Child Rule</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for class '<em>Child Rule</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.ChildRule
 	 * @generated
@@ -1768,7 +1658,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.infra.viewpoints.configuration.ChildRule#getElement <em>Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for the reference '<em>Element</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.ChildRule#getElement()
 	 * @see #getChildRule()
@@ -1780,7 +1669,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.infra.viewpoints.configuration.ChildRule#getStereotypes <em>Stereotypes</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for the reference list '<em>Stereotypes</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.ChildRule#getStereotypes()
 	 * @see #getChildRule()
@@ -1792,7 +1680,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.infra.viewpoints.configuration.ChildRule#getOrigin <em>Origin</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for the reference '<em>Origin</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.ChildRule#getOrigin()
 	 * @see #getChildRule()
@@ -1804,7 +1691,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.infra.viewpoints.configuration.ChildRule#getInsertionPath <em>Insertion Path</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for the containment reference list '<em>Insertion Path</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.ChildRule#getInsertionPath()
 	 * @see #getChildRule()
@@ -1816,7 +1702,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.viewpoints.configuration.PaletteRule <em>Palette Rule</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for class '<em>Palette Rule</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.PaletteRule
 	 * @generated
@@ -1827,7 +1712,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.viewpoints.configuration.PaletteRule#getElement <em>Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for the attribute '<em>Element</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.PaletteRule#getElement()
 	 * @see #getPaletteRule()
@@ -1839,7 +1723,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.viewpoints.configuration.Rule <em>Rule</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for class '<em>Rule</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.Rule
 	 * @generated
@@ -1850,7 +1733,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.viewpoints.configuration.Rule#isPermit <em>Permit</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for the attribute '<em>Permit</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.Rule#isPermit()
 	 * @see #getRule()
@@ -1862,7 +1744,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.viewpoints.configuration.PathElement <em>Path Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for class '<em>Path Element</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.PathElement
 	 * @generated
@@ -1873,7 +1754,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.infra.viewpoints.configuration.PathElement#getFeature <em>Feature</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for the reference '<em>Feature</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.PathElement#getFeature()
 	 * @see #getPathElement()
@@ -1885,7 +1765,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.infra.viewpoints.configuration.PathElement#getOrigin <em>Origin</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for the reference '<em>Origin</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.PathElement#getOrigin()
 	 * @see #getPathElement()
@@ -1897,7 +1776,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.infra.viewpoints.configuration.PathElement#getTarget <em>Target</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for the reference '<em>Target</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.PathElement#getTarget()
 	 * @see #getPathElement()
@@ -1909,7 +1787,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.viewpoints.configuration.Category <em>Category</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for class '<em>Category</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.Category
 	 * @generated
@@ -1920,7 +1797,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.viewpoints.configuration.Category#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for the attribute '<em>Name</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.Category#getName()
 	 * @see #getCategory()
@@ -1932,7 +1808,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.viewpoints.configuration.ModelAutoCreate <em>Model Auto Create</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for class '<em>Model Auto Create</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.ModelAutoCreate
 	 * @generated
@@ -1943,7 +1818,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.infra.viewpoints.configuration.ModelAutoCreate#getFeature <em>Feature</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for the reference '<em>Feature</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.ModelAutoCreate#getFeature()
 	 * @see #getModelAutoCreate()
@@ -1955,7 +1829,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.infra.viewpoints.configuration.ModelAutoCreate#getOrigin <em>Origin</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for the reference '<em>Origin</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.ModelAutoCreate#getOrigin()
 	 * @see #getModelAutoCreate()
@@ -1967,7 +1840,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.viewpoints.configuration.ModelAutoCreate#getCreationType <em>Creation Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for the attribute '<em>Creation Type</em>'.
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.ModelAutoCreate#getCreationType()
 	 * @see #getModelAutoCreate()
@@ -1976,10 +1848,30 @@ public interface ConfigurationPackage extends EPackage {
 	EAttribute getModelAutoCreate_CreationType();
 
 	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.viewpoints.configuration.RootAutoSelect <em>Root Auto Select</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Root Auto Select</em>'.
+	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.RootAutoSelect
+	 * @generated
+	 */
+	EClass getRootAutoSelect();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.infra.viewpoints.configuration.RootAutoSelect#getFeature <em>Feature</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Feature</em>'.
+	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.RootAutoSelect#getFeature()
+	 * @see #getRootAutoSelect()
+	 * @generated
+	 */
+	EReference getRootAutoSelect_Feature();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -1996,7 +1888,6 @@ public interface ConfigurationPackage extends EPackage {
 	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	interface Literals {
@@ -2004,7 +1895,6 @@ public interface ConfigurationPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.viewpoints.configuration.impl.PapyrusConfigurationImpl <em>Papyrus Configuration</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @see org.eclipse.papyrus.infra.viewpoints.configuration.impl.PapyrusConfigurationImpl
 		 * @see org.eclipse.papyrus.infra.viewpoints.configuration.impl.ConfigurationPackageImpl#getPapyrusConfiguration()
 		 * @generated
@@ -2015,7 +1905,6 @@ public interface ConfigurationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Default Stakeholder</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @generated
 		 */
 		EReference PAPYRUS_CONFIGURATION__DEFAULT_STAKEHOLDER = eINSTANCE.getPapyrusConfiguration_DefaultStakeholder();
@@ -2024,7 +1913,6 @@ public interface ConfigurationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Metamodel</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @generated
 		 */
 		EReference PAPYRUS_CONFIGURATION__METAMODEL = eINSTANCE.getPapyrusConfiguration_Metamodel();
@@ -2033,7 +1921,6 @@ public interface ConfigurationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Categories</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @generated
 		 */
 		EReference PAPYRUS_CONFIGURATION__CATEGORIES = eINSTANCE.getPapyrusConfiguration_Categories();
@@ -2042,7 +1929,6 @@ public interface ConfigurationPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.viewpoints.configuration.impl.PapyrusViewpointImpl <em>Papyrus Viewpoint</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @see org.eclipse.papyrus.infra.viewpoints.configuration.impl.PapyrusViewpointImpl
 		 * @see org.eclipse.papyrus.infra.viewpoints.configuration.impl.ConfigurationPackageImpl#getPapyrusViewpoint()
 		 * @generated
@@ -2053,7 +1939,6 @@ public interface ConfigurationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Parent</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @generated
 		 */
 		EReference PAPYRUS_VIEWPOINT__PARENT = eINSTANCE.getPapyrusViewpoint_Parent();
@@ -2062,7 +1947,6 @@ public interface ConfigurationPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.viewpoints.configuration.impl.PapyrusViewImpl <em>Papyrus View</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @see org.eclipse.papyrus.infra.viewpoints.configuration.impl.PapyrusViewImpl
 		 * @see org.eclipse.papyrus.infra.viewpoints.configuration.impl.ConfigurationPackageImpl#getPapyrusView()
 		 * @generated
@@ -2073,7 +1957,6 @@ public interface ConfigurationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Icon</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @generated
 		 */
 		EAttribute PAPYRUS_VIEW__ICON = eINSTANCE.getPapyrusView_Icon();
@@ -2082,7 +1965,6 @@ public interface ConfigurationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Parent</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @generated
 		 */
 		EReference PAPYRUS_VIEW__PARENT = eINSTANCE.getPapyrusView_Parent();
@@ -2091,7 +1973,6 @@ public interface ConfigurationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Profiles</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @generated
 		 */
 		EReference PAPYRUS_VIEW__PROFILES = eINSTANCE.getPapyrusView_Profiles();
@@ -2100,7 +1981,6 @@ public interface ConfigurationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Model Rules</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @generated
 		 */
 		EReference PAPYRUS_VIEW__MODEL_RULES = eINSTANCE.getPapyrusView_ModelRules();
@@ -2109,7 +1989,6 @@ public interface ConfigurationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Owning Rules</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @generated
 		 */
 		EReference PAPYRUS_VIEW__OWNING_RULES = eINSTANCE.getPapyrusView_OwningRules();
@@ -2118,7 +1997,6 @@ public interface ConfigurationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Implementation ID</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @generated
 		 */
 		EAttribute PAPYRUS_VIEW__IMPLEMENTATION_ID = eINSTANCE.getPapyrusView_ImplementationID();
@@ -2127,7 +2005,6 @@ public interface ConfigurationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Categories</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @generated
 		 */
 		EReference PAPYRUS_VIEW__CATEGORIES = eINSTANCE.getPapyrusView_Categories();
@@ -2136,7 +2013,6 @@ public interface ConfigurationPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.viewpoints.configuration.impl.PapyrusDiagramImpl <em>Papyrus Diagram</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @see org.eclipse.papyrus.infra.viewpoints.configuration.impl.PapyrusDiagramImpl
 		 * @see org.eclipse.papyrus.infra.viewpoints.configuration.impl.ConfigurationPackageImpl#getPapyrusDiagram()
 		 * @generated
@@ -2147,7 +2023,6 @@ public interface ConfigurationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Custom Palette</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @generated
 		 */
 		EAttribute PAPYRUS_DIAGRAM__CUSTOM_PALETTE = eINSTANCE.getPapyrusDiagram_CustomPalette();
@@ -2156,7 +2031,6 @@ public interface ConfigurationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Custom Style</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @generated
 		 */
 		EAttribute PAPYRUS_DIAGRAM__CUSTOM_STYLE = eINSTANCE.getPapyrusDiagram_CustomStyle();
@@ -2165,7 +2039,6 @@ public interface ConfigurationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Child Rules</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @generated
 		 */
 		EReference PAPYRUS_DIAGRAM__CHILD_RULES = eINSTANCE.getPapyrusDiagram_ChildRules();
@@ -2174,7 +2047,6 @@ public interface ConfigurationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Palette Rules</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @generated
 		 */
 		EReference PAPYRUS_DIAGRAM__PALETTE_RULES = eINSTANCE.getPapyrusDiagram_PaletteRules();
@@ -2183,7 +2055,6 @@ public interface ConfigurationPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.viewpoints.configuration.impl.PapyrusSyncTableImpl <em>Papyrus Sync Table</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @see org.eclipse.papyrus.infra.viewpoints.configuration.impl.PapyrusSyncTableImpl
 		 * @see org.eclipse.papyrus.infra.viewpoints.configuration.impl.ConfigurationPackageImpl#getPapyrusSyncTable()
 		 * @generated
@@ -2194,7 +2065,6 @@ public interface ConfigurationPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.viewpoints.configuration.impl.PapyrusTableImpl <em>Papyrus Table</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @see org.eclipse.papyrus.infra.viewpoints.configuration.impl.PapyrusTableImpl
 		 * @see org.eclipse.papyrus.infra.viewpoints.configuration.impl.ConfigurationPackageImpl#getPapyrusTable()
 		 * @generated
@@ -2205,7 +2075,6 @@ public interface ConfigurationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Configuration</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @generated
 		 */
 		EAttribute PAPYRUS_TABLE__CONFIGURATION = eINSTANCE.getPapyrusTable_Configuration();
@@ -2214,7 +2083,6 @@ public interface ConfigurationPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.viewpoints.configuration.impl.ModelRuleImpl <em>Model Rule</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @see org.eclipse.papyrus.infra.viewpoints.configuration.impl.ModelRuleImpl
 		 * @see org.eclipse.papyrus.infra.viewpoints.configuration.impl.ConfigurationPackageImpl#getModelRule()
 		 * @generated
@@ -2225,7 +2093,6 @@ public interface ConfigurationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Element</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @generated
 		 */
 		EReference MODEL_RULE__ELEMENT = eINSTANCE.getModelRule_Element();
@@ -2234,7 +2101,6 @@ public interface ConfigurationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Stereotypes</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @generated
 		 */
 		EReference MODEL_RULE__STEREOTYPES = eINSTANCE.getModelRule_Stereotypes();
@@ -2243,7 +2109,6 @@ public interface ConfigurationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Multiplicity</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @generated
 		 */
 		EAttribute MODEL_RULE__MULTIPLICITY = eINSTANCE.getModelRule_Multiplicity();
@@ -2252,7 +2117,6 @@ public interface ConfigurationPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.viewpoints.configuration.impl.OwningRuleImpl <em>Owning Rule</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @see org.eclipse.papyrus.infra.viewpoints.configuration.impl.OwningRuleImpl
 		 * @see org.eclipse.papyrus.infra.viewpoints.configuration.impl.ConfigurationPackageImpl#getOwningRule()
 		 * @generated
@@ -2263,7 +2127,6 @@ public interface ConfigurationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Element</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @generated
 		 */
 		EReference OWNING_RULE__ELEMENT = eINSTANCE.getOwningRule_Element();
@@ -2272,7 +2135,6 @@ public interface ConfigurationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Stereotypes</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @generated
 		 */
 		EReference OWNING_RULE__STEREOTYPES = eINSTANCE.getOwningRule_Stereotypes();
@@ -2281,7 +2143,6 @@ public interface ConfigurationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Multiplicity</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @generated
 		 */
 		EAttribute OWNING_RULE__MULTIPLICITY = eINSTANCE.getOwningRule_Multiplicity();
@@ -2290,16 +2151,22 @@ public interface ConfigurationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>New Model Path</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @generated
 		 */
 		EReference OWNING_RULE__NEW_MODEL_PATH = eINSTANCE.getOwningRule_NewModelPath();
 
 		/**
+		 * The meta object literal for the '<em><b>Select Diagram Root</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OWNING_RULE__SELECT_DIAGRAM_ROOT = eINSTANCE.getOwningRule_SelectDiagramRoot();
+
+		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.viewpoints.configuration.impl.ChildRuleImpl <em>Child Rule</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @see org.eclipse.papyrus.infra.viewpoints.configuration.impl.ChildRuleImpl
 		 * @see org.eclipse.papyrus.infra.viewpoints.configuration.impl.ConfigurationPackageImpl#getChildRule()
 		 * @generated
@@ -2310,7 +2177,6 @@ public interface ConfigurationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Element</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @generated
 		 */
 		EReference CHILD_RULE__ELEMENT = eINSTANCE.getChildRule_Element();
@@ -2319,7 +2185,6 @@ public interface ConfigurationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Stereotypes</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @generated
 		 */
 		EReference CHILD_RULE__STEREOTYPES = eINSTANCE.getChildRule_Stereotypes();
@@ -2328,7 +2193,6 @@ public interface ConfigurationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Origin</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @generated
 		 */
 		EReference CHILD_RULE__ORIGIN = eINSTANCE.getChildRule_Origin();
@@ -2337,7 +2201,6 @@ public interface ConfigurationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Insertion Path</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @generated
 		 */
 		EReference CHILD_RULE__INSERTION_PATH = eINSTANCE.getChildRule_InsertionPath();
@@ -2346,7 +2209,6 @@ public interface ConfigurationPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.viewpoints.configuration.impl.PaletteRuleImpl <em>Palette Rule</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @see org.eclipse.papyrus.infra.viewpoints.configuration.impl.PaletteRuleImpl
 		 * @see org.eclipse.papyrus.infra.viewpoints.configuration.impl.ConfigurationPackageImpl#getPaletteRule()
 		 * @generated
@@ -2357,7 +2219,6 @@ public interface ConfigurationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Element</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @generated
 		 */
 		EAttribute PALETTE_RULE__ELEMENT = eINSTANCE.getPaletteRule_Element();
@@ -2366,7 +2227,6 @@ public interface ConfigurationPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.viewpoints.configuration.impl.RuleImpl <em>Rule</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @see org.eclipse.papyrus.infra.viewpoints.configuration.impl.RuleImpl
 		 * @see org.eclipse.papyrus.infra.viewpoints.configuration.impl.ConfigurationPackageImpl#getRule()
 		 * @generated
@@ -2377,7 +2237,6 @@ public interface ConfigurationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Permit</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @generated
 		 */
 		EAttribute RULE__PERMIT = eINSTANCE.getRule_Permit();
@@ -2386,7 +2245,6 @@ public interface ConfigurationPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.viewpoints.configuration.impl.PathElementImpl <em>Path Element</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @see org.eclipse.papyrus.infra.viewpoints.configuration.impl.PathElementImpl
 		 * @see org.eclipse.papyrus.infra.viewpoints.configuration.impl.ConfigurationPackageImpl#getPathElement()
 		 * @generated
@@ -2397,7 +2255,6 @@ public interface ConfigurationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Feature</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @generated
 		 */
 		EReference PATH_ELEMENT__FEATURE = eINSTANCE.getPathElement_Feature();
@@ -2406,7 +2263,6 @@ public interface ConfigurationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Origin</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @generated
 		 */
 		EReference PATH_ELEMENT__ORIGIN = eINSTANCE.getPathElement_Origin();
@@ -2415,7 +2271,6 @@ public interface ConfigurationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @generated
 		 */
 		EReference PATH_ELEMENT__TARGET = eINSTANCE.getPathElement_Target();
@@ -2424,7 +2279,6 @@ public interface ConfigurationPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.viewpoints.configuration.impl.CategoryImpl <em>Category</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @see org.eclipse.papyrus.infra.viewpoints.configuration.impl.CategoryImpl
 		 * @see org.eclipse.papyrus.infra.viewpoints.configuration.impl.ConfigurationPackageImpl#getCategory()
 		 * @generated
@@ -2435,7 +2289,6 @@ public interface ConfigurationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @generated
 		 */
 		EAttribute CATEGORY__NAME = eINSTANCE.getCategory_Name();
@@ -2444,7 +2297,6 @@ public interface ConfigurationPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.viewpoints.configuration.impl.ModelAutoCreateImpl <em>Model Auto Create</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @see org.eclipse.papyrus.infra.viewpoints.configuration.impl.ModelAutoCreateImpl
 		 * @see org.eclipse.papyrus.infra.viewpoints.configuration.impl.ConfigurationPackageImpl#getModelAutoCreate()
 		 * @generated
@@ -2455,7 +2307,6 @@ public interface ConfigurationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Feature</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @generated
 		 */
 		EReference MODEL_AUTO_CREATE__FEATURE = eINSTANCE.getModelAutoCreate_Feature();
@@ -2464,7 +2315,6 @@ public interface ConfigurationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Origin</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @generated
 		 */
 		EReference MODEL_AUTO_CREATE__ORIGIN = eINSTANCE.getModelAutoCreate_Origin();
@@ -2473,10 +2323,27 @@ public interface ConfigurationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Creation Type</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @generated
 		 */
 		EAttribute MODEL_AUTO_CREATE__CREATION_TYPE = eINSTANCE.getModelAutoCreate_CreationType();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.viewpoints.configuration.impl.RootAutoSelectImpl <em>Root Auto Select</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.papyrus.infra.viewpoints.configuration.impl.RootAutoSelectImpl
+		 * @see org.eclipse.papyrus.infra.viewpoints.configuration.impl.ConfigurationPackageImpl#getRootAutoSelect()
+		 * @generated
+		 */
+		EClass ROOT_AUTO_SELECT = eINSTANCE.getRootAutoSelect();
+
+		/**
+		 * The meta object literal for the '<em><b>Feature</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROOT_AUTO_SELECT__FEATURE = eINSTANCE.getRootAutoSelect_Feature();
 
 	}
 
