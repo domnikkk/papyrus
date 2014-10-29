@@ -10,6 +10,7 @@
  * Contributors:
  *  Patrick Tessier (CEA LIST) Patrick.tessier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 323802
+ *  Gabriel Pascual (ALL4TEC) gabriel.pascual@all4tec.fr - Bug 393532
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.stereotype.edition.editpolicies;
@@ -37,7 +38,7 @@ import org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeNode
 import org.eclipse.papyrus.uml.diagram.common.figure.node.IPapyrusNodeUMLElementFigure;
 import org.eclipse.papyrus.uml.diagram.stereotype.edition.command.CreateAppliedStereotypeViewCommand;
 import org.eclipse.papyrus.uml.diagram.stereotype.edition.editpart.AppliedStereotypeCompartmentEditPart;
-import org.eclipse.papyrus.uml.tools.listeners.PapyrusStereotypeListener;
+import org.eclipse.papyrus.uml.tools.listeners.StereotypeElementListener.StereotypeExtensionNotification;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Stereotype;
@@ -168,12 +169,12 @@ public class AppliedStereotypeCompartmentEditPolicy extends AppliedStereotypeNod
 		// changes
 		// - the stereotype application list has changed
 		final int eventType = notification.getEventType();
-		if (eventType == PapyrusStereotypeListener.APPLIED_STEREOTYPE) {
+		if (eventType == StereotypeExtensionNotification.STEREOTYPE_APPLIED_TO_ELEMENT) {
 			// a stereotype was applied to the notifier
 			// then a new listener should be added to the stereotype application
 			getDiagramEventBroker().addNotificationListener((EObject) notification.getNewValue(), this);
 			createAppliedStereotypeCompartment((EObject) notification.getNewValue());
-		} else if (eventType == PapyrusStereotypeListener.UNAPPLIED_STEREOTYPE) {
+		} else if (eventType == StereotypeExtensionNotification.STEREOTYPE_UNAPPLIED_FROM_ELEMENT) {
 			getDiagramEventBroker().removeNotificationListener((EObject) notification.getOldValue(), this);
 			cleanStereotypeDisplayInEAnnotation();
 			removeAppliedStereotypeCompartment((EObject) notification.getNewValue());

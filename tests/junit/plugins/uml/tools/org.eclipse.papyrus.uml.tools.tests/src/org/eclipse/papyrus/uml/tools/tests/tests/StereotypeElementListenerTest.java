@@ -13,25 +13,35 @@ package org.eclipse.papyrus.uml.tools.tests.tests;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.impl.AdapterImpl;
+import org.eclipse.emf.edit.command.SetCommand;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.papyrus.infra.core.services.IService;
+import org.eclipse.papyrus.infra.core.services.ServiceDescriptor;
+import org.eclipse.papyrus.infra.core.services.ServiceStartKind;
+import org.eclipse.papyrus.infra.core.services.ServicesRegistry;
+import org.eclipse.papyrus.infra.emf.utils.ServiceUtilsForResourceSet;
 import org.eclipse.papyrus.junit.framework.classification.tests.AbstractPapyrusTest;
 import org.eclipse.papyrus.junit.utils.rules.ModelSetFixture;
 import org.eclipse.papyrus.junit.utils.rules.PluginResource;
+import org.eclipse.papyrus.sysml.blocks.Block;
+import org.eclipse.papyrus.sysml.blocks.BlocksPackage;
 import org.eclipse.papyrus.uml.tools.commands.ApplyStereotypeCommand;
 import org.eclipse.papyrus.uml.tools.commands.UnapplyProfileCommand;
 import org.eclipse.papyrus.uml.tools.commands.UnapplyStereotypeCommand;
-import org.eclipse.papyrus.uml.tools.listeners.StereotypeElementListener;
 import org.eclipse.papyrus.uml.tools.listeners.StereotypeElementListener.StereotypeExtensionNotification;
+import org.eclipse.papyrus.uml.tools.service.StereotypeElementService;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.Stereotype;
+import org.eclipse.uml2.uml.util.UMLUtil;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -59,6 +69,9 @@ public class StereotypeElementListenerTest extends AbstractPapyrusTest {
 	/** Assert for stereotype unapplication notification. */
 	private AssertNotificationAdapter assertUnappliedStereotypeNotification = null;
 
+	/** Assert for stereotype unapplication notification. */
+	private AssertNotificationAdapter assertModifiedStereotypeNotification = null;
+
 	/** UML element listen by class under test. */
 	private Element element = null;
 
@@ -67,9 +80,6 @@ public class StereotypeElementListenerTest extends AbstractPapyrusTest {
 
 	/** SysML profile used to provide static stereotypes. */
 	private Profile sysmlProfile = null;
-
-	/** The under test. */
-	private StereotypeElementListener underTest = null;
 
 	/**
 	 * Sets the up.
@@ -81,8 +91,15 @@ public class StereotypeElementListenerTest extends AbstractPapyrusTest {
 	public void setUp() throws Exception {
 		assertAppliedStereotypeNotification = new AssertNotificationAdapter(StereotypeExtensionNotification.STEREOTYPE_APPLIED_TO_ELEMENT);
 		assertUnappliedStereotypeNotification = new AssertNotificationAdapter(StereotypeExtensionNotification.STEREOTYPE_UNAPPLIED_FROM_ELEMENT);
-		underTest = new StereotypeElementListener(modelSetFixture.getEditingDomain());
-		modelSetFixture.getEditingDomain().addResourceSetListener(underTest);
+		assertModifiedStereotypeNotification = new AssertNotificationAdapter(StereotypeExtensionNotification.MODIFIED_STEREOTYPE_OF_ELEMENT);
+		ServicesRegistry serviceRegistry = ServiceUtilsForResourceSet.getInstance().getServiceRegistry(modelSetFixture.getResourceSet());
+
+		// Start service for
+		ServiceDescriptor desc = new ServiceDescriptor(IService.class, StereotypeElementService.class.getName(), ServiceStartKind.STARTUP, 10, Collections.singletonList(TransactionalEditingDomain.class.getName()));
+		desc.setClassBundleID(org.eclipse.papyrus.uml.tools.Activator.PLUGIN_ID);
+		serviceRegistry.add(desc);
+		serviceRegistry.startRegistry();
+
 	}
 
 	/**
@@ -108,12 +125,15 @@ public class StereotypeElementListenerTest extends AbstractPapyrusTest {
 		initialiseTestCase();
 
 		element.eAdapters().add(assertAppliedStereotypeNotification);
+		element.eAdapters().add(assertModifiedStereotypeNotification);
 
 		TransactionalEditingDomain editingDomain = modelSetFixture.getEditingDomain();
 		Stereotype stereotype = profile.getOwnedStereotype("First");
 		editingDomain.getCommandStack().execute(new ApplyStereotypeCommand(element, stereotype, editingDomain));
 		assertAppliedStereotypeNotification.assertNotification(element);
 		assertAppliedStereotypeNotification.assertNotification(element, stereotype);
+		assertModifiedStereotypeNotification.assertNoNotification(element);
+
 	}
 
 	/**
@@ -126,6 +146,7 @@ public class StereotypeElementListenerTest extends AbstractPapyrusTest {
 		initialiseTestCase();
 
 		element.eAdapters().add(assertUnappliedStereotypeNotification);
+		element.eAdapters().add(assertModifiedStereotypeNotification);
 
 		Stereotype member = (Stereotype) profile.getMember("First");
 		TransactionalEditingDomain editingDomain = modelSetFixture.getEditingDomain();
@@ -133,6 +154,75 @@ public class StereotypeElementListenerTest extends AbstractPapyrusTest {
 		editingDomain.getCommandStack().execute(new UnapplyStereotypeCommand(element, member, editingDomain));
 		assertUnappliedStereotypeNotification.assertNotification(element);
 		assertUnappliedStereotypeNotification.assertNotification(element, member);
+		assertModifiedStereotypeNotification.assertNoNotification(element);
+	}
+
+
+	/**
+	 * Test stereotype modification.
+	 */
+	@Test
+	@PluginResource("/resources/stereotypeListenerTest/profileApplicationTest.di")
+	public void testModifiedStereotype() {
+
+		initialiseTestCase();
+
+		element.eAdapters().add(assertAppliedStereotypeNotification);
+		element.eAdapters().add(assertModifiedStereotypeNotification);
+
+		TransactionalEditingDomain editingDomain = modelSetFixture.getEditingDomain();
+		final Stereotype stereotype = profile.getOwnedStereotype("First");
+		editingDomain.getCommandStack().execute(new ApplyStereotypeCommand(element, stereotype, editingDomain));
+		assertAppliedStereotypeNotification.assertNotification(element);
+		assertAppliedStereotypeNotification.assertNotification(element, stereotype);
+
+		RecordingCommand setValue = new RecordingCommand(editingDomain) {
+
+			@Override
+			protected void doExecute() {
+				element.setValue(stereotype, "isModified", true);
+
+			}
+		};
+
+		editingDomain.getCommandStack().execute(setValue);
+
+		assertModifiedStereotypeNotification.assertNotification(element);
+
+	}
+
+	/**
+	 * Test undo action on stereotype modification.
+	 */
+	@Test
+	@PluginResource("/resources/stereotypeListenerTest/profileApplicationTest.di")
+	public void testUndoModifiedStereotype() {
+
+		initialiseTestCase();
+
+		element.eAdapters().add(assertAppliedStereotypeNotification);
+		element.eAdapters().add(assertModifiedStereotypeNotification);
+
+		TransactionalEditingDomain editingDomain = modelSetFixture.getEditingDomain();
+		final Stereotype stereotype = profile.getOwnedStereotype("First");
+		editingDomain.getCommandStack().execute(new ApplyStereotypeCommand(element, stereotype, editingDomain));
+		assertAppliedStereotypeNotification.assertNotification(element);
+		assertAppliedStereotypeNotification.assertNotification(element, stereotype);
+
+		RecordingCommand setValue = new RecordingCommand(editingDomain) {
+
+			@Override
+			protected void doExecute() {
+				element.setValue(stereotype, "isModified", true);
+
+			}
+		};
+
+		editingDomain.getCommandStack().execute(setValue);
+		editingDomain.getCommandStack().undo();
+
+		assertModifiedStereotypeNotification.assertNotification(2, element);
+
 	}
 
 	/**
@@ -147,6 +237,7 @@ public class StereotypeElementListenerTest extends AbstractPapyrusTest {
 		TransactionalEditingDomain editingDomain = modelSetFixture.getEditingDomain();
 		element.eAdapters().add(assertAppliedStereotypeNotification);
 		element.eAdapters().add(assertUnappliedStereotypeNotification);
+		element.eAdapters().add(assertModifiedStereotypeNotification);
 
 		Stereotype member = profile.getOwnedStereotype("First");
 		editingDomain.getCommandStack().execute(new ApplyStereotypeCommand(element, member, editingDomain));
@@ -154,6 +245,8 @@ public class StereotypeElementListenerTest extends AbstractPapyrusTest {
 
 		editingDomain.getCommandStack().undo();
 		assertUnappliedStereotypeNotification.assertNotification(element);
+
+		assertModifiedStereotypeNotification.assertNoNotification(element);
 	}
 
 	/**
@@ -168,6 +261,7 @@ public class StereotypeElementListenerTest extends AbstractPapyrusTest {
 		TransactionalEditingDomain editingDomain = modelSetFixture.getEditingDomain();
 		element.eAdapters().add(assertAppliedStereotypeNotification);
 		element.eAdapters().add(assertUnappliedStereotypeNotification);
+		element.eAdapters().add(assertModifiedStereotypeNotification);
 
 		Stereotype member = profile.getOwnedStereotype("First");
 
@@ -180,6 +274,8 @@ public class StereotypeElementListenerTest extends AbstractPapyrusTest {
 
 		editingDomain.getCommandStack().undo();
 		assertAppliedStereotypeNotification.assertNotification(2, element);
+
+		assertModifiedStereotypeNotification.assertNoNotification(element);
 	}
 
 	/**
@@ -195,6 +291,7 @@ public class StereotypeElementListenerTest extends AbstractPapyrusTest {
 		TransactionalEditingDomain editingDomain = modelSetFixture.getEditingDomain();
 		element.eAdapters().add(assertUnappliedStereotypeNotification);
 		element.eAdapters().add(assertAppliedStereotypeNotification);
+		element.eAdapters().add(assertModifiedStereotypeNotification);
 
 		Stereotype member = profile.getOwnedStereotype("First");
 
@@ -205,6 +302,8 @@ public class StereotypeElementListenerTest extends AbstractPapyrusTest {
 		editingDomain.getCommandStack().execute(new UnapplyProfileCommand(modelSetFixture.getModel(), profile, editingDomain));
 		assertUnappliedStereotypeNotification.assertNotification(element);
 		assertUnappliedStereotypeNotification.assertNotification(element, member);
+
+		assertModifiedStereotypeNotification.assertNoNotification(element);
 
 
 	}
@@ -221,6 +320,7 @@ public class StereotypeElementListenerTest extends AbstractPapyrusTest {
 		TransactionalEditingDomain editingDomain = modelSetFixture.getEditingDomain();
 		element.eAdapters().add(assertUnappliedStereotypeNotification);
 		element.eAdapters().add(assertAppliedStereotypeNotification);
+		element.eAdapters().add(assertModifiedStereotypeNotification);
 
 		Stereotype member = profile.getOwnedStereotype("First");
 
@@ -233,6 +333,8 @@ public class StereotypeElementListenerTest extends AbstractPapyrusTest {
 		editingDomain.getCommandStack().undo();
 		assertAppliedStereotypeNotification.assertNotification(2, element);
 
+
+		assertModifiedStereotypeNotification.assertNoNotification(element);
 
 	}
 
@@ -248,7 +350,9 @@ public class StereotypeElementListenerTest extends AbstractPapyrusTest {
 		final Element secondElement = modelSetFixture.getModel().getMember("SecondUnderTest");
 		final Stereotype stereotype = (Stereotype) profile.getMember("First");
 		element.eAdapters().add(assertAppliedStereotypeNotification);
+		element.eAdapters().add(assertModifiedStereotypeNotification);
 		secondElement.eAdapters().add(assertAppliedStereotypeNotification);
+		secondElement.eAdapters().add(assertModifiedStereotypeNotification);
 
 		TransactionalEditingDomain editingDomain = modelSetFixture.getEditingDomain();
 
@@ -268,6 +372,9 @@ public class StereotypeElementListenerTest extends AbstractPapyrusTest {
 		assertAppliedStereotypeNotification.assertNotification(element);
 		assertAppliedStereotypeNotification.assertNotification(secondElement);
 
+		assertModifiedStereotypeNotification.assertNoNotification(element);
+		assertModifiedStereotypeNotification.assertNoNotification(secondElement);
+
 	}
 
 
@@ -283,8 +390,10 @@ public class StereotypeElementListenerTest extends AbstractPapyrusTest {
 		final Stereotype stereotype = (Stereotype) profile.getMember("First");
 		element.eAdapters().add(assertAppliedStereotypeNotification);
 		element.eAdapters().add(assertUnappliedStereotypeNotification);
+		element.eAdapters().add(assertModifiedStereotypeNotification);
 		secondElement.eAdapters().add(assertAppliedStereotypeNotification);
 		secondElement.eAdapters().add(assertUnappliedStereotypeNotification);
+		secondElement.eAdapters().add(assertModifiedStereotypeNotification);
 
 		TransactionalEditingDomain editingDomain = modelSetFixture.getEditingDomain();
 
@@ -308,6 +417,10 @@ public class StereotypeElementListenerTest extends AbstractPapyrusTest {
 		assertUnappliedStereotypeNotification.assertNotification(element);
 		assertUnappliedStereotypeNotification.assertNotification(secondElement);
 
+		assertModifiedStereotypeNotification.assertNoNotification(element);
+		assertModifiedStereotypeNotification.assertNoNotification(secondElement);
+
+
 	}
 
 	/**
@@ -319,6 +432,7 @@ public class StereotypeElementListenerTest extends AbstractPapyrusTest {
 		initialiseTestCase();
 
 		element.eAdapters().add(assertAppliedStereotypeNotification);
+		element.eAdapters().add(assertModifiedStereotypeNotification);
 
 		TransactionalEditingDomain editingDomain = modelSetFixture.getEditingDomain();
 		Stereotype first = profile.getOwnedStereotype("First");
@@ -327,6 +441,8 @@ public class StereotypeElementListenerTest extends AbstractPapyrusTest {
 
 		assertAppliedStereotypeNotification.assertNotification(2, element);
 		assertAppliedStereotypeNotification.assertNotification(element, first, second);
+
+		assertModifiedStereotypeNotification.assertNoNotification(element);
 
 	}
 
@@ -341,6 +457,7 @@ public class StereotypeElementListenerTest extends AbstractPapyrusTest {
 
 		element.eAdapters().add(assertAppliedStereotypeNotification);
 		element.eAdapters().add(assertUnappliedStereotypeNotification);
+		element.eAdapters().add(assertModifiedStereotypeNotification);
 
 		TransactionalEditingDomain editingDomain = modelSetFixture.getEditingDomain();
 		editingDomain.getCommandStack().execute(new ApplyStereotypeCommand(element, Arrays.asList((Stereotype) profile.getMember("First"), (Stereotype) profile.getMember("Second")), editingDomain));
@@ -349,6 +466,9 @@ public class StereotypeElementListenerTest extends AbstractPapyrusTest {
 
 		editingDomain.getCommandStack().undo();
 		assertUnappliedStereotypeNotification.assertNotification(2, element);
+
+
+		assertModifiedStereotypeNotification.assertNoNotification(element);
 
 
 	}
@@ -369,6 +489,7 @@ public class StereotypeElementListenerTest extends AbstractPapyrusTest {
 
 		element.eAdapters().add(assertAppliedStereotypeNotification);
 		element.eAdapters().add(assertUnappliedStereotypeNotification);
+		element.eAdapters().add(assertModifiedStereotypeNotification);
 
 		// Change a property whose name starts with 'base_' that isn't a metaclass extension
 		editingDomain.getCommandStack().execute(new RecordingCommand(editingDomain) {
@@ -381,6 +502,8 @@ public class StereotypeElementListenerTest extends AbstractPapyrusTest {
 
 		assertAppliedStereotypeNotification.assertNoNotification(element);
 		assertUnappliedStereotypeNotification.assertNoNotification(element);
+
+		assertModifiedStereotypeNotification.assertNoNotification(element);
 	}
 
 
@@ -394,12 +517,16 @@ public class StereotypeElementListenerTest extends AbstractPapyrusTest {
 		initialiseTestCase();
 
 		element.eAdapters().add(assertAppliedStereotypeNotification);
+		element.eAdapters().add(assertModifiedStereotypeNotification);
 
 		TransactionalEditingDomain editingDomain = modelSetFixture.getEditingDomain();
-		Stereotype stereotype = sysmlProfile.getOwnedStereotype("Allocated");
+		Stereotype stereotype = sysmlProfile.getOwnedStereotype("Block");
 		editingDomain.getCommandStack().execute(new ApplyStereotypeCommand(element, stereotype, editingDomain));
+
 		assertAppliedStereotypeNotification.assertNotification(element);
 		assertAppliedStereotypeNotification.assertNotification(element, stereotype);
+
+		assertModifiedStereotypeNotification.assertNoNotification(element);
 	}
 
 	/**
@@ -412,13 +539,17 @@ public class StereotypeElementListenerTest extends AbstractPapyrusTest {
 		initialiseTestCase();
 
 		element.eAdapters().add(assertUnappliedStereotypeNotification);
+		element.eAdapters().add(assertModifiedStereotypeNotification);
 
-		Stereotype stereotype = (Stereotype) sysmlProfile.getMember("Allocated");
+		Stereotype stereotype = (Stereotype) sysmlProfile.getMember("Block");
 		TransactionalEditingDomain editingDomain = modelSetFixture.getEditingDomain();
 		editingDomain.getCommandStack().execute(new ApplyStereotypeCommand(element, stereotype, editingDomain));
 		editingDomain.getCommandStack().execute(new UnapplyStereotypeCommand(element, stereotype, editingDomain));
+
 		assertUnappliedStereotypeNotification.assertNotification(element);
 		assertUnappliedStereotypeNotification.assertNotification(element, stereotype);
+
+		assertModifiedStereotypeNotification.assertNoNotification(element);
 	}
 
 	/**
@@ -433,13 +564,16 @@ public class StereotypeElementListenerTest extends AbstractPapyrusTest {
 		TransactionalEditingDomain editingDomain = modelSetFixture.getEditingDomain();
 		element.eAdapters().add(assertAppliedStereotypeNotification);
 		element.eAdapters().add(assertUnappliedStereotypeNotification);
+		element.eAdapters().add(assertModifiedStereotypeNotification);
 
-		Stereotype member = sysmlProfile.getOwnedStereotype("Allocated");
+		Stereotype member = sysmlProfile.getOwnedStereotype("Block");
 		editingDomain.getCommandStack().execute(new ApplyStereotypeCommand(element, member, editingDomain));
 		assertAppliedStereotypeNotification.assertNotification(element);
 
 		editingDomain.getCommandStack().undo();
 		assertUnappliedStereotypeNotification.assertNotification(element);
+
+		assertModifiedStereotypeNotification.assertNoNotification(element);
 	}
 
 	/**
@@ -454,8 +588,9 @@ public class StereotypeElementListenerTest extends AbstractPapyrusTest {
 		TransactionalEditingDomain editingDomain = modelSetFixture.getEditingDomain();
 		element.eAdapters().add(assertAppliedStereotypeNotification);
 		element.eAdapters().add(assertUnappliedStereotypeNotification);
+		element.eAdapters().add(assertModifiedStereotypeNotification);
 
-		Stereotype member = sysmlProfile.getOwnedStereotype("Allocated");
+		Stereotype member = sysmlProfile.getOwnedStereotype("Block");
 
 		editingDomain.getCommandStack().execute(new ApplyStereotypeCommand(element, member, editingDomain));
 		assertAppliedStereotypeNotification.assertNotification(element);
@@ -466,6 +601,65 @@ public class StereotypeElementListenerTest extends AbstractPapyrusTest {
 
 		editingDomain.getCommandStack().undo();
 		assertAppliedStereotypeNotification.assertNotification(2, element);
+
+		assertModifiedStereotypeNotification.assertNoNotification(element);
+	}
+
+
+	/**
+	 * Test modification of applied stereotype with static Profile.
+	 */
+	@Test
+	@PluginResource("/resources/stereotypeListenerTest/profileApplicationTest.di")
+	public void testModifiedSysMLStereotype() {
+
+		initialiseTestCase();
+
+		TransactionalEditingDomain editingDomain = modelSetFixture.getEditingDomain();
+		element.eAdapters().add(assertAppliedStereotypeNotification);
+		element.eAdapters().add(assertUnappliedStereotypeNotification);
+		element.eAdapters().add(assertModifiedStereotypeNotification);
+
+		Stereotype member = sysmlProfile.getOwnedStereotype("Block");
+		editingDomain.getCommandStack().execute(new ApplyStereotypeCommand(element, member, editingDomain));
+		assertAppliedStereotypeNotification.assertNotification(element);
+
+		Block blockApplication = UMLUtil.getStereotypeApplication(element, Block.class);
+		SetCommand setCommand = new SetCommand(editingDomain, blockApplication, BlocksPackage.eINSTANCE.getBlock_IsEncapsulated(), true);
+		editingDomain.getCommandStack().execute(setCommand);
+
+		assertModifiedStereotypeNotification.assertNotification(element);
+		assertUnappliedStereotypeNotification.assertNoNotification(element);
+
+	}
+
+
+	/**
+	 * Test undo action on stereotype modification with static Profile.
+	 */
+	@Test
+	@PluginResource("/resources/stereotypeListenerTest/profileApplicationTest.di")
+	public void testUndoModifiedSysMLStereotype() {
+
+		initialiseTestCase();
+
+		TransactionalEditingDomain editingDomain = modelSetFixture.getEditingDomain();
+		element.eAdapters().add(assertAppliedStereotypeNotification);
+		element.eAdapters().add(assertUnappliedStereotypeNotification);
+		element.eAdapters().add(assertModifiedStereotypeNotification);
+
+		Stereotype member = sysmlProfile.getOwnedStereotype("Block");
+		editingDomain.getCommandStack().execute(new ApplyStereotypeCommand(element, member, editingDomain));
+		assertAppliedStereotypeNotification.assertNotification(element);
+
+		Block blockApplication = UMLUtil.getStereotypeApplication(element, Block.class);
+		SetCommand setCommand = new SetCommand(editingDomain, blockApplication, BlocksPackage.eINSTANCE.getBlock_IsEncapsulated(), true);
+		editingDomain.getCommandStack().execute(setCommand);
+		editingDomain.getCommandStack().undo();
+
+		assertModifiedStereotypeNotification.assertNotification(2, element);
+		assertUnappliedStereotypeNotification.assertNoNotification(element);
+
 	}
 
 	/**
@@ -479,7 +673,7 @@ public class StereotypeElementListenerTest extends AbstractPapyrusTest {
 		// Initialise data for test case
 		element = modelSetFixture.getModel().getMember("FirstUnderTest");
 		profile = modelSetFixture.getModel().getAppliedProfile("Profile");
-		sysmlProfile = modelSetFixture.getModel().getAppliedProfile("SysML::Allocations");
+		sysmlProfile = modelSetFixture.getModel().getAppliedProfile("SysML::Blocks");
 
 	}
 
@@ -577,7 +771,31 @@ public class StereotypeElementListenerTest extends AbstractPapyrusTest {
 		 */
 		public void assertNoNotification(Object notifier) {
 			Map<Integer, Integer> eventTypeTimesNumberMap = notifiedEventList.get(notifier);
-			Assert.assertNull(eventTypeTimesNumberMap);
+			Assert.assertNull("Expected no notification of " + convertEvent2String() + " stereotype", eventTypeTimesNumberMap);
+		}
+
+		/**
+		 * To string event.
+		 *
+		 * @return the string
+		 */
+		private String convertEvent2String() {
+			String event = "";
+			switch (eventType) {
+			case StereotypeExtensionNotification.STEREOTYPE_APPLIED_TO_ELEMENT:
+				event = "applied";
+				break;
+			case StereotypeExtensionNotification.STEREOTYPE_UNAPPLIED_FROM_ELEMENT:
+				event = "unapplied";
+				break;
+			case StereotypeExtensionNotification.MODIFIED_STEREOTYPE_OF_ELEMENT:
+				event = "modified";
+				break;
+			default:
+				// Nothing to do
+
+			}
+			return event;
 		}
 
 		/**
@@ -627,7 +845,7 @@ public class StereotypeElementListenerTest extends AbstractPapyrusTest {
 			List<Stereotype> stereotypes = stereotypeMap.get(eventType);
 			Assert.assertNotNull(stereotypes);
 			Assert.assertFalse(stereotypes.isEmpty());
-			Assert.assertTrue(String.format("Stereotype was not %sapplied", (eventType == StereotypeExtensionNotification.STEREOTYPE_UNAPPLIED_FROM_ELEMENT) ? "un" : ""), stereotypes.contains(stereotype));
+			Assert.assertTrue("Stereotype was not " + convertEvent2String(), stereotypes.contains(stereotype));
 
 		}
 
@@ -657,7 +875,7 @@ public class StereotypeElementListenerTest extends AbstractPapyrusTest {
 			expected.add(first);
 			expected.add(second);
 			expected.addAll(Arrays.asList(rest));
-			Assert.assertEquals(String.format("Stereotypes were not %sapplied", (eventType == StereotypeExtensionNotification.STEREOTYPE_UNAPPLIED_FROM_ELEMENT) ? "un" : ""), expected, stereotypes);
+			Assert.assertEquals("Stereotypes were not" + convertEvent2String(), expected, stereotypes);
 
 		}
 	}

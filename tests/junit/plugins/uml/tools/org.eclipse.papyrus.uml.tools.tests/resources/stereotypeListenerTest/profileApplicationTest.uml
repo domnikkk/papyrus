@@ -6,6 +6,13 @@
   <packagedElement xmi:type="uml:Class" xmi:id="_XwBAQPI0EeOTVMj9kvFRzQ" name="FirstUnderTest"/>
   <packagedElement xmi:type="uml:Class" xmi:id="_3fUNkD_mEeSqR6IYgWtHjw" name="SecondUnderTest"/>
   <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_CoV40D_ZEeSWPrPpDaUTSA">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_zxrIsF9XEeSfdIAduA4EWQ" source="PapyrusVersion">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_zxrIsV9XEeSfdIAduA4EWQ" key="Version" value="0.0.3"/>
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_zxrIsl9XEeSfdIAduA4EWQ" key="Comment" value=""/>
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_zxrIs19XEeSfdIAduA4EWQ" key="Copyright" value=""/>
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_zxrItF9XEeSfdIAduA4EWQ" key="Date" value="2014-10-29"/>
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_zxrItV9XEeSfdIAduA4EWQ" key="Author" value=""/>
+    </eAnnotations>
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_orIOEEI3EeSVo_dkJ5hyhA" source="PapyrusVersion">
       <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_orIOEUI3EeSVo_dkJ5hyhA" key="Version" value="0.0.2"/>
       <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_orIOEkI3EeSVo_dkJ5hyhA" key="Comment" value=""/>
@@ -21,7 +28,7 @@
       <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_CpBORT_ZEeSWPrPpDaUTSA" key="Author" value=""/>
     </eAnnotations>
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Co-K8D_ZEeSWPrPpDaUTSA" source="http://www.eclipse.org/uml2/2.0.0/UML">
-      <references xmi:type="ecore:EPackage" href="profileTest.profile.uml#_mtrp8EI3EeSVo_dkJ5hyhA"/>
+      <references xmi:type="ecore:EPackage" href="profileTest.profile.uml#_jI-REF9XEeSfdIAduA4EWQ"/>
     </eAnnotations>
     <appliedProfile xmi:type="uml:Profile" href="profileTest.profile.uml#_V9cr4PIzEeOTVMj9kvFRzQ"/>
   </profileApplication>
