@@ -69,7 +69,7 @@ public class CreateCompositeDiagramElementsCommand extends AbstractEMFOperation 
 							}
 						}
 					}
-					CollaborationUse cu = ((Class)m_context).createCollaborationUse("TestCollaboration"); //$NON-NLS-1$
+					CollaborationUse cu = ((Class)m_context).createCollaborationUse("testCollaboration"); //$NON-NLS-1$
 					addCuToCompositeDiagram((Class) m_context, (Class) m_context, cu, view, diagram);
 				}
 			}
