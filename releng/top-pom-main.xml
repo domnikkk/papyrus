@@ -107,7 +107,7 @@
 		<module>../plugins/infra/emf/org.eclipse.papyrus.infra.emf.diagram.common</module>
 		<module>../plugins/infra/nattable/org.eclipse.papyrus.infra.emf.nattable</module>
 		<module>../plugins/infra/emf/org.eclipse.papyrus.infra.emf.readonly</module>
-		<module>../plugins/infra/org.eclipse.papyrus.infra.export</module>
+		<module>../plugins/infra/gmfdiag/org.eclipse.papyrus.infra.gmfdiag.export</module>
 		<module>../plugins/infra/org.eclipse.papyrus.infra.extendedtypes</module>
 		<module>../plugins/infra/org.eclipse.papyrus.infra.extendedtypes.edit</module>
 		<module>../plugins/infra/org.eclipse.papyrus.infra.extendedtypes.emf</module>
