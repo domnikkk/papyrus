@@ -18,6 +18,7 @@ import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.workspace.AbstractEMFOperation;
+import org.eclipse.gmf.runtime.diagram.core.services.ViewService;
 import org.eclipse.gmf.runtime.notation.Bounds;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.Edge;
@@ -25,16 +26,17 @@ import org.eclipse.gmf.runtime.notation.IdentityAnchor;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.NotationFactory;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
+import org.eclipse.gmf.runtime.notation.Shape;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.infra.core.sasheditor.editor.ISashWindowsContainer;
 import org.eclipse.papyrus.infra.core.sashwindows.di.PageRef;
 import org.eclipse.papyrus.infra.core.services.ServiceException;
 import org.eclipse.papyrus.infra.emf.utils.ServiceUtilsForHandlers;
 import org.eclipse.papyrus.uml.diagram.sequence.part.UMLDiagramEditorPlugin;
+import org.eclipse.papyrus.uml.diagram.sequence.part.UMLVisualIDRegistry;
 import org.eclipse.papyrus.uml.diagram.sequence.providers.UMLViewProvider;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.DurationConstraint;
-import org.eclipse.uml2.uml.DurationInterval;
 import org.eclipse.uml2.uml.Interaction;
 import org.eclipse.uml2.uml.Lifeline;
 import org.eclipse.uml2.uml.Message;
@@ -76,9 +78,7 @@ public class CreateSequenceDiagramElementsCommand extends AbstractEMFOperation {
 							}
 						}
 					}
-					// create a new interaction
-					sequenceDiagViewProvider.createInteraction_2001(m_context, diagram, -1, true, UMLDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
-							
+		
 					// create UML elements first
 					Interaction interaction = (Interaction) m_context;
 					Lifeline lifeline1 = interaction.createLifeline("TestLifeline1"); //$NON-NLS-1$
@@ -99,8 +99,8 @@ public class CreateSequenceDiagramElementsCommand extends AbstractEMFOperation {
 	
 					DurationConstraint durationConstraint = (DurationConstraint)
 							interaction.createOwnedRule("constraint", UMLPackage.eINSTANCE.getDurationConstraint()); //$NON-NLS-1$
-					DurationInterval di = (DurationInterval)
-							durationConstraint.createSpecification("", null, UMLPackage.eINSTANCE.getDurationInterval()); //$NON-NLS-1$
+					// DurationInterval di = (DurationInterval)
+							// durationConstraint.createSpecification("", null, UMLPackage.eINSTANCE.getDurationInterval()); //$NON-NLS-1$
 					
 					// now add graphical elements
 					View lifelineV1 = addLifeline(lifeline1, interactionView, 40, 40);
@@ -128,13 +128,20 @@ public class CreateSequenceDiagramElementsCommand extends AbstractEMFOperation {
 	{
 		// get first compartment of view
 		Object compartment = interactionView.getChildren().get(1);
-		Node lifelineView = sequenceDiagViewProvider.createLifeline_3001(lifeline, (View) compartment, -1, true,
-			UMLDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
+		// use the view service to create the types. This is a bit cleaner than using the sequence-diagram view provider directly
+		final String nodeType = UMLVisualIDRegistry.getType( org.eclipse.papyrus.uml.diagram.sequence.edit.parts.LifelineEditPart.VISUAL_ID);
+		Node lifelineView = ViewService.createNode((View) compartment, lifeline, nodeType, UMLDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
 		Bounds location = NotationFactory.eINSTANCE.createBounds();
 		location.setX(x);
 		location.setY(y);
 		if(lifelineView instanceof Node) {
 			((Node)lifelineView).setLayoutConstraint(location);
+			//((Node)lifelineView).setLayoutConstraint(value);(location);
+		}
+		if(lifelineView instanceof Shape) {
+			Shape lifelineShape = (Shape) lifelineView;
+			lifelineShape.setLineWidth(2);
+			lifelineShape.setLineColor(11579568);
 		}
 		return lifelineView;
 	}
