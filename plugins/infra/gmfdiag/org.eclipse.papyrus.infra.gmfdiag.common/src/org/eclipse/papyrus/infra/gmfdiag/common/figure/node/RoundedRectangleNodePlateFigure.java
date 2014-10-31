@@ -224,4 +224,15 @@ public class RoundedRectangleNodePlateFigure extends DefaultSizeNodeFigure imple
 	public void setBorderStyle(int borderStyle) {
 	}
 
+	/**
+	 * @see org.eclipse.papyrus.infra.gmfdiag.common.figure.node.IRoundedRectangleFigure#setCustomDash(int[])
+	 *
+	 * @param dash
+	 */
+	@Override
+	// unused
+	public void setCustomDash(int[] dash) {
+
+	}
+
 }

@@ -13,9 +13,11 @@
  *****************************************************************************/
 package org.eclipse.papyrus.infra.gmfdiag.common.model;
 
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -27,6 +29,7 @@ import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.IntValueStyle;
 import org.eclipse.gmf.runtime.notation.NamedStyle;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
+import org.eclipse.gmf.runtime.notation.StringListValueStyle;
 import org.eclipse.gmf.runtime.notation.StringValueStyle;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.infra.core.resource.IModel;
@@ -327,4 +330,37 @@ public class NotationUtils {
 		return value;
 	}
 
+	/**
+	 * Get the list as a String list and convert it to Int list
+	 * 
+	 * @param model
+	 * @param floatingLabelOffsetWidth
+	 * @param defaultCustomStyle
+	 * @return
+	 * 
+	 */
+	public static int[] getIntListValue(View view, String property, int[] defaultIntList) {
+		int[] value = defaultIntList;
+		EClass intValueStyle = NotationPackage.eINSTANCE.getStringListValueStyle();
+		NamedStyle style;
+
+		if (intValueStyle != null) {
+
+			style = view.getNamedStyle(intValueStyle, property);
+
+			if (style instanceof StringListValueStyle) {
+				// Get the string list
+				EList<String> valueList = ((StringListValueStyle) style).getStringListValue();
+				int i = 0;
+				value = new int[valueList.size()];
+				// Convert list in int array
+				for (Iterator iterator = valueList.iterator(); iterator.hasNext();) {
+					String string = (String) iterator.next();
+					value[i++] = Integer.parseInt(string);
+				}
+			}
+		}
+
+		return value;
+	}
 }

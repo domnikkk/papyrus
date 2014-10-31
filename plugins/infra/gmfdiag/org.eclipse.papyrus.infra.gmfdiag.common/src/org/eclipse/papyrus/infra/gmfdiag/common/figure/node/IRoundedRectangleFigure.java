@@ -99,4 +99,6 @@ public interface IRoundedRectangleFigure extends IFigure {
 	 */
 	public void setBorderStyle(int borderStyle);
 
+	/** Set custom dash values */
+	public void setCustomDash(int[] dash);
 }

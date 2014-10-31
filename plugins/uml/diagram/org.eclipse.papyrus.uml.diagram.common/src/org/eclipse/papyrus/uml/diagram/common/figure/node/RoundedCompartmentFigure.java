@@ -241,9 +241,6 @@ public class RoundedCompartmentFigure extends NodeNamedElementFigure implements 
 			graphics.popState();
 		}
 		graphics.popState();
-		// Force to repaint the border thought setShadow()
-		setShadow(isShadow());
-		repaint();
 	}
 
 	/**
@@ -255,7 +252,7 @@ public class RoundedCompartmentFigure extends NodeNamedElementFigure implements 
 	public void setShadow(boolean shadow) {
 		super.setShadow(shadow);
 		if (!shadow) {
-			// If shadow is set to false on CSS file we set the border
+			// If shadow is set to false we set the border
 			if (getBorder() != null) {
 				RoundedRectangleBorder border = new RoundedRectangleBorder(cornerDimension.width, cornerDimension.height);
 				border.setWidth(getLineWidth());
@@ -263,6 +260,7 @@ public class RoundedCompartmentFigure extends NodeNamedElementFigure implements 
 				this.setBorder(border);
 			}
 		}
+		setLineStyle(borderStyle);
 	}
 
 	/**

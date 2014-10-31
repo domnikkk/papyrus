@@ -91,109 +91,19 @@
 <extension
       point="org.eclipse.papyrus.infra.gmfdiag.common.shapeProvider">
    <shapeProvider
-         class="org.eclipse.papyrus.uml.diagram.symbols.provider.TimeObservationShapeProvider"
-         description="Provides the shapes for UML::TimeObservation or elements typed by a TimeObservation"
-         id="org.eclipse.papyrus.uml.diagram.symbols.timeobservationshapeprovider"
-         name="TimeObservation Shape Provider">
+         class="org.eclipse.papyrus.uml.diagram.symbols.provider.UMLElementShapeProvider"
+         description="Provides the shapes for UMLElement  or elements typed by"
+         id="org.eclipse.papyrus.uml.diagram.symbols.umlshapeprovider"
+         name="UML Element Shape Provider">
       <Priority
             name="Lowest">
       </Priority>
    </shapeProvider>
 </extension>
 <extension
-      point="org.eclipse.papyrus.infra.gmfdiag.common.shapeProvider">
-   <shapeProvider
-         class="org.eclipse.papyrus.uml.diagram.symbols.provider.DurationObservationShapeProvider"
-         description="Provides the shapes for UML::DurationObservation or elements typed by a DurationObservation"
-         id="org.eclipse.papyrus.uml.diagram.symbols.durationobservationshapeprovider"
-         name="DurationObservation Shape Provider">
-      <Priority
-            name="Lowest">
-      </Priority>
-   </shapeProvider>
-</extension>
-<extension
-      point="org.eclipse.papyrus.infra.gmfdiag.common.shapeProvider">
-   <shapeProvider
-         class="org.eclipse.papyrus.uml.diagram.symbols.provider.SendSignalActionShapeProvider"
-         description="Provides the shapes for UML::SendSignalAction or elements typed by a SendSignalAction"
-         id="org.eclipse.papyrus.uml.diagram.symbols.sendsignalshapeprovider"
-         name="SendSignalAction Shape Provider">
-      <Priority
-            name="Lowest">
-      </Priority>
-   </shapeProvider>
-</extension>
-<extension
-      point="org.eclipse.papyrus.infra.gmfdiag.common.shapeProvider">
-   <shapeProvider
-         class="org.eclipse.papyrus.uml.diagram.symbols.provider.ActivityFinalNodeShapeProvider"
-         description="Provides the shapes for UML::ActivityFinalNode  or elements typed by a ActivityFinalNode "
-         id="org.eclipse.papyrus.uml.diagram.symbols.activityfinalnodeshapeprovider"
-         name="ActivityFinalNode Shape Provider">
-      <Priority
-            name="Lowest">
-      </Priority>
-   </shapeProvider>
-</extension>
-<extension
-      point="org.eclipse.papyrus.infra.gmfdiag.common.shapeProvider">
-   <shapeProvider
-         class="org.eclipse.papyrus.uml.diagram.symbols.provider.InitialNodeShapeProvider"
-         description="Provides the shapes for UML::InitialNode  or elements typed by a InitialNode"
-         id="org.eclipse.papyrus.uml.diagram.symbols.initialnodeshapeprovider"
-         name="InitialNode Shape Provider">
-      <Priority
-            name="Lowest">
-      </Priority>
-   </shapeProvider>
-</extension>
-<extension
-      point="org.eclipse.papyrus.infra.gmfdiag.common.shapeProvider">
-   <shapeProvider
-         class="org.eclipse.papyrus.uml.diagram.symbols.provider.FlowFinalNodeShapeProvider"
-         description="Provides the shapes for UML::FlowFinalNode  or elements typed by a FlowFinalNode"
-         id="org.eclipse.papyrus.uml.diagram.symbols.flowfinalshapeprovider"
-         name="FlowFinalNode Shape Provider">
-      <Priority
-            name="Lowest">
-      </Priority>
-   </shapeProvider>
-</extension>
-<extension
-      point="org.eclipse.papyrus.infra.gmfdiag.common.shapeProvider">
-   <shapeProvider
-         class="org.eclipse.papyrus.uml.diagram.symbols.provider.DecisionNodeShapeProvider"
-         description="Provides the shapes for UML::DecisionNode or elements typed by a DecisionNode"
-         id="org.eclipse.papyrus.uml.diagram.symbols.decisionnodeshapeprovider"
-         name="DecisionNode Shape Provider">
-      <Priority
-            name="Lowest">
-      </Priority>
-   </shapeProvider>
-</extension>
-<extension
-      point="org.eclipse.papyrus.infra.gmfdiag.common.shapeProvider">
-   <shapeProvider
-         class="org.eclipse.papyrus.uml.diagram.symbols.provider.AcceptEventActionShapeProvider"
-         description="Provides the shapes for UML::AcceptEventAction or elements typed by a AcceptEventAction"
-         id="org.eclipse.papyrus.uml.diagram.symbols.accepteventactionshapeprovider"
-         name="AcceptEventAction Shape Provider">
-      <Priority
-            name="Lowest">
-      </Priority>
-   </shapeProvider>
-</extension>
-<extension
-      point="org.eclipse.papyrus.infra.gmfdiag.common.shapeProvider">
-   <shapeProvider
-         class="org.eclipse.papyrus.uml.diagram.symbols.provider.MergeNodeShapeProvider"
-         description="Provides the shapes for UML::MergeNode  or elements typed by a MergeNode"
-         id="org.eclipse.papyrus.uml.diagram.symbols.mergenodeshapeprovider"
-         name="MergeNode Shape Provider">
-      <Priority
-            name="Lowest">
-      </Priority>
-   </shapeProvider>
+      point="org.eclipse.papyrus.infra.gmfdiag.common.svgPostProcessors">
+   <postProcessor
+         implementation="org.eclipse.papyrus.uml.diagram.symbols.NamedSvgPostProcessor">
+   </postProcessor>
 </extension>
 </plugin>
