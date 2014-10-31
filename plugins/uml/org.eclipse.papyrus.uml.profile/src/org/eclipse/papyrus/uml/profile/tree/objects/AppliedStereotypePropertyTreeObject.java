@@ -88,8 +88,14 @@ public class AppliedStereotypePropertyTreeObject extends ParentTreeObject {
 	@Override
 	protected void createChildren() {
 		// Retrieve value which is normally either a list of objects or a single object
-		Object value = getValue();
-		if (value == null) {
+		Object value;
+		try {
+			value = getValue();
+			if (value == null) {
+				return;
+			}
+		} catch (Exception ex) {
+			Activator.log.error(ex);
 			return;
 		}
 
@@ -119,7 +125,13 @@ public class AppliedStereotypePropertyTreeObject extends ParentTreeObject {
 
 		Stereotype st = sTO.getStereotype();
 		Element elt = rTO.getElement();
-		return elt.getValue(st, property.getName());
+		try {
+			return elt.getValue(st, property.getName());
+		} catch (Exception ex) {
+			// Probably a mismatch between applied profile and profile definition (Versionin?)
+			Activator.log.error(ex);
+			return null;
+		}
 	}
 
 	public Element getElement() {
