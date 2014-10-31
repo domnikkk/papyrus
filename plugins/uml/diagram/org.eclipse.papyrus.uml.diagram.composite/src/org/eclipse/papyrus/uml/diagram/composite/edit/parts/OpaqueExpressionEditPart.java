@@ -131,6 +131,8 @@ public class OpaqueExpressionEditPart extends NodeEditPart {
 			((OpaqueExpressionNameEditPart) childEditPart).setLabel(getPrimaryShape().getNameLabel());
 			return true;
 		}
+
+
 		return false;
 	}
 
@@ -194,6 +196,7 @@ public class OpaqueExpressionEditPart extends NodeEditPart {
 	@Override
 	protected NodeFigure createNodeFigure() {
 		return new SelectableBorderedNodeFigure(createMainFigureWithSVG());
+
 	}
 
 	/**

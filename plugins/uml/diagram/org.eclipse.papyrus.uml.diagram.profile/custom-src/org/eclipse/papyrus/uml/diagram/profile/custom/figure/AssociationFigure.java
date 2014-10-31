@@ -10,6 +10,7 @@
  * Contributors:
  *  Patrick Tessier (CEA LIST) Patrick.tessier@cea.fr - Initial API and implementation
  *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Imported code from the class diagram
+ *  Céline Janssens (ALL4TEC) celine.Janssens@all4tec.net	- Bug 440230
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.profile.custom.figure;
 
@@ -19,6 +20,7 @@ import org.eclipse.draw2d.PolylineDecoration;
 import org.eclipse.draw2d.RotatableDecoration;
 import org.eclipse.draw2d.geometry.PointList;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
+import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.PapyrusWrappingLabel;
 import org.eclipse.papyrus.uml.diagram.common.figure.edge.UMLEdgeFigure;
 import org.eclipse.swt.SWT;
 
@@ -91,7 +93,7 @@ public class AssociationFigure extends UMLEdgeFigure {
 	protected void createContents() {
 		super.createContents();
 
-		fAssociationNameLabel = new WrappingLabel();
+		fAssociationNameLabel = new PapyrusWrappingLabel();
 		fAssociationNameLabel.setText(""); //$NON-NLS-1$
 
 		this.add(fAssociationNameLabel);
@@ -101,22 +103,22 @@ public class AssociationFigure extends UMLEdgeFigure {
 		//
 		// this.add(fAppliedStereotypeAssociationLabel);
 
-		fRoleSourceLabel = new WrappingLabel();
+		fRoleSourceLabel = new PapyrusWrappingLabel();
 		fRoleSourceLabel.setText(""); //$NON-NLS-1$
 
 		this.add(fRoleSourceLabel);
 
-		fMultiplicitySourceLabel = new WrappingLabel();
+		fMultiplicitySourceLabel = new PapyrusWrappingLabel();
 		fMultiplicitySourceLabel.setText(""); //$NON-NLS-1$
 
 		this.add(fMultiplicitySourceLabel);
 
-		fRoleTargetLabel = new WrappingLabel();
+		fRoleTargetLabel = new PapyrusWrappingLabel();
 		fRoleTargetLabel.setText(""); //$NON-NLS-1$
 
 		this.add(fRoleTargetLabel);
 
-		fMultiplicityTargetLabel = new WrappingLabel();
+		fMultiplicityTargetLabel = new PapyrusWrappingLabel();
 		fMultiplicityTargetLabel.setText(""); //$NON-NLS-1$
 
 		this.add(fMultiplicityTargetLabel);

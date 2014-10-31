@@ -50,6 +50,9 @@ import org.eclipse.gmf.runtime.notation.NotationFactory;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.infra.gmfdiag.common.editpart.IPapyrusEditPart;
+import org.eclipse.papyrus.infra.gmfdiag.common.figure.IPapyrusWrappingLabel;
+import org.eclipse.papyrus.infra.gmfdiag.common.model.NotationUtils;
+import org.eclipse.papyrus.infra.gmfdiag.common.utils.FigureUtils;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeLabelDisplayEditPolicy;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeNodeLabelDisplayEditPolicy;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.BorderItemResizableEditPolicy;
@@ -76,6 +79,31 @@ import org.eclipse.uml2.uml.UMLPackage;
  */
 public class CustomStateInvariantEditPart extends StateInvariantEditPart implements IPapyrusEditPart {
 
+	/**
+	 * Default Margin when not present in CSS
+	 */
+	public static final int DEFAULT_MARGIN = 0;
+	
+	/**
+	 * CSS Integer property to define the horizontal Label Margin
+	 */
+	public static final String TOP_MARGIN_PROPERTY = "TopMarginLabel"; //$NON-NLS$
+
+	/**
+	 * CSS Integer property to define the vertical Label Margin
+	 */
+	public static final String LEFT_MARGIN_PROPERTY = "LeftMarginLabel"; //$NON-NLS$
+	
+	/**
+	 * CSS Integer property to define the horizontal Label Margin
+	 */
+	public static final String BOTTOM_MARGIN_PROPERTY = "BottomMarginLabel"; //$NON-NLS$
+
+	/**
+	 * CSS Integer property to define the vertical Label Margin
+	 */
+	public static final String RIGHT_MARGIN_PROPERTY = "RightMarginLabel"; //$NON-NLS$
+	
 	/**
 	 * Notfier for listen and unlistend model element.
 	 */
@@ -195,6 +223,49 @@ public class CustomStateInvariantEditPart extends StateInvariantEditPart impleme
 		refreshLineWidth();
 		refreshTransparency();
 		refreshLabels();
+		refreshLabelMargin();
+	}
+	
+	/**
+	 * Refresh margin of named element children labels
+	 * <ul>
+	 * <li> Get Css values </li>
+	 * <li> Get all the children figure </li>
+	 * <li> If the child is a label then apply the margin </li>
+	 * </ul>
+	 */
+	private void refreshLabelMargin() {
+		IFigure figure = null;
+
+		int leftMargin = DEFAULT_MARGIN;
+		int rightMargin = DEFAULT_MARGIN;
+		int topMargin = DEFAULT_MARGIN;
+		int bottomMargin = DEFAULT_MARGIN;
+
+		Object model = this.getModel();
+
+
+
+		if (model instanceof View) {
+			leftMargin = NotationUtils.getIntValue((View) model, LEFT_MARGIN_PROPERTY, DEFAULT_MARGIN);
+			rightMargin = NotationUtils.getIntValue((View) model, RIGHT_MARGIN_PROPERTY, DEFAULT_MARGIN);
+			topMargin = NotationUtils.getIntValue((View) model, TOP_MARGIN_PROPERTY, DEFAULT_MARGIN);
+			bottomMargin = NotationUtils.getIntValue((View) model, BOTTOM_MARGIN_PROPERTY, DEFAULT_MARGIN);
+		}
+
+		// Get all children figures of the Edit Part and set margin according to the retrieve values
+		if (this instanceof IPapyrusEditPart){
+			figure = ((IPapyrusEditPart) this).getPrimaryShape();
+			List<IPapyrusWrappingLabel> labelChildFigureList = FigureUtils.findChildFigureInstances(figure, IPapyrusWrappingLabel.class);
+
+			for (IPapyrusWrappingLabel label : labelChildFigureList){
+				if (label != null){
+					label.setMarginLabel(leftMargin, topMargin, rightMargin, bottomMargin);
+				}
+			}
+		}
+
+
 	}
 
 	/**

@@ -39,8 +39,12 @@ public class DataTypeOperationCompartmentItemSemanticEditPolicy extends UMLBaseI
 		if (requestElementType == null) {
 			return super.getCreateCommand(req);
 		}
+
+
 		if (UMLElementTypes.Operation_3102 == requestElementType) {
+
 			return getGEFWrapper(new OperationCreateCommandCLN(req, DiagramUtils.getDiagramFrom(getHost())));
+
 		}
 		return super.getCreateCommand(req);
 	}

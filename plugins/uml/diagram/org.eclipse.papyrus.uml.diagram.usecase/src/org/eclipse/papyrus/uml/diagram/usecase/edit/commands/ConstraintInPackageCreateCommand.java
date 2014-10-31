@@ -69,9 +69,12 @@ public class ConstraintInPackageCreateCommand extends EditElementCommand {
 	 */
 	@Override
 	public boolean canExecute() {
+
 		EObject target = getElementToEdit();
 		ModelAddData data = PolicyChecker.getCurrent().getChildAddData(diagram, target.eClass(), UMLPackage.eINSTANCE.getConstraint());
 		return data.isPermitted();
+
+
 	}
 
 	/**
@@ -79,7 +82,9 @@ public class ConstraintInPackageCreateCommand extends EditElementCommand {
 	 */
 	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+
 		Constraint newElement = UMLFactory.eINSTANCE.createConstraint();
+
 		EObject target = getElementToEdit();
 		ModelAddData data = PolicyChecker.getCurrent().getChildAddData(diagram, target, newElement);
 		if (data.isPermitted()) {
@@ -88,16 +93,24 @@ public class ConstraintInPackageCreateCommand extends EditElementCommand {
 					return CommandResult.newErrorCommandResult("Failed to follow the policy-specified for the insertion of the new element");
 				}
 			} else {
+
 				Package qualifiedTarget = (Package) target;
-				qualifiedTarget.getPackagedElements().add(newElement);
+				qualifiedTarget.getPackagedElements()
+						.add(newElement);
+
 			}
 		} else {
 			return CommandResult.newErrorCommandResult("The active policy restricts the addition of this element");
 		}
+
 		Namespace childHolder = (Namespace) getElementToEdit();
-		childHolder.getOwnedRules().add(newElement);
+		childHolder.getOwnedRules()
+				.add(newElement);
+
 		ElementInitializers.getInstance().init_Constraint_3010(newElement);
+
 		doConfigure(newElement, monitor, info);
+
 		((CreateElementRequest) getRequest()).setNewElement(newElement);
 		return CommandResult.newOKCommandResult(newElement);
 	}

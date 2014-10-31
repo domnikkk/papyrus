@@ -67,9 +67,12 @@ public class TemplateParameterCreateCommand extends EditElementCommand {
 	 */
 	@Override
 	public boolean canExecute() {
+
 		EObject target = getElementToEdit();
 		ModelAddData data = PolicyChecker.getCurrent().getChildAddData(diagram, target.eClass(), UMLPackage.eINSTANCE.getTemplateParameter());
 		return data.isPermitted();
+
+
 	}
 
 	/**
@@ -77,7 +80,9 @@ public class TemplateParameterCreateCommand extends EditElementCommand {
 	 */
 	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+
 		TemplateParameter newElement = UMLFactory.eINSTANCE.createTemplateParameter();
+
 		EObject target = getElementToEdit();
 		ModelAddData data = PolicyChecker.getCurrent().getChildAddData(diagram, target, newElement);
 		if (data.isPermitted()) {
@@ -86,15 +91,23 @@ public class TemplateParameterCreateCommand extends EditElementCommand {
 					return CommandResult.newErrorCommandResult("Failed to follow the policy-specified for the insertion of the new element");
 				}
 			} else {
+
 				TemplateSignature qualifiedTarget = (TemplateSignature) target;
-				qualifiedTarget.getOwnedParameters().add(newElement);
+				qualifiedTarget.getOwnedParameters()
+						.add(newElement);
+
 			}
 		} else {
 			return CommandResult.newErrorCommandResult("The active policy restricts the addition of this element");
 		}
+
 		TemplateSignature childHolder = (TemplateSignature) getElementToEdit();
-		childHolder.getParameters().add(newElement);
+		childHolder.getParameters()
+				.add(newElement);
+
+
 		doConfigure(newElement, monitor, info);
+
 		((CreateElementRequest) getRequest()).setNewElement(newElement);
 		return CommandResult.newOKCommandResult(newElement);
 	}

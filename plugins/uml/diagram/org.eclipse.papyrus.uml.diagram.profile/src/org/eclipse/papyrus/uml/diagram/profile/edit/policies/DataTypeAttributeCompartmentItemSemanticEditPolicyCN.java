@@ -39,8 +39,12 @@ public class DataTypeAttributeCompartmentItemSemanticEditPolicyCN extends UMLBas
 		if (requestElementType == null) {
 			return super.getCreateCommand(req);
 		}
+
+
 		if (UMLElementTypes.Property_3018 == requestElementType) {
+
 			return getGEFWrapper(new DataTypePropertyCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
+
 		}
 		return super.getCreateCommand(req);
 	}

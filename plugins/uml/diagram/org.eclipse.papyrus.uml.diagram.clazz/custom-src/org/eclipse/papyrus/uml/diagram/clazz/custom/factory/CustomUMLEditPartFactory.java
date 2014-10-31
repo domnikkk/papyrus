@@ -29,6 +29,8 @@ import org.eclipse.papyrus.uml.diagram.clazz.custom.edit.part.CPackageEditPart;
 import org.eclipse.papyrus.uml.diagram.clazz.custom.edit.part.CPackageEditPartCN;
 import org.eclipse.papyrus.uml.diagram.clazz.custom.edit.part.CustomConstraintEditPart;
 import org.eclipse.papyrus.uml.diagram.clazz.custom.edit.part.CustomConstraintEditPartCN;
+import org.eclipse.papyrus.uml.diagram.clazz.custom.edit.part.CustomDurationObservationNameEditPart;
+import org.eclipse.papyrus.uml.diagram.clazz.custom.edit.part.CustomTimeObservationNameEditPart;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.AssociationClassRoleSourceEditPart;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.AssociationClassRoleTargetEditPart;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.AssociationNodeEditPart;
@@ -39,10 +41,12 @@ import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.ConstraintEditPartCN;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.ContainmentCircleEditPart;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.DependencyBranchEditPart;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.DependencyNodeEditPart;
+import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.DurationObservationNameEditPart;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.ModelEditPartCN;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.ModelEditPartTN;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.PackageEditPart;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.PackageEditPartCN;
+import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.TimeObservationNameEditPart;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.UMLEditPartFactory;
 import org.eclipse.papyrus.uml.diagram.clazz.part.UMLVisualIDRegistry;
 
@@ -85,6 +89,10 @@ public class CustomUMLEditPartFactory extends UMLEditPartFactory {
 				return new CustomConstraintEditPart(view);
 			case ConstraintEditPartCN.VISUAL_ID:
 				return new CustomConstraintEditPartCN(view);
+			case DurationObservationNameEditPart.VISUAL_ID:
+				return new CustomDurationObservationNameEditPart(view);
+			case TimeObservationNameEditPart.VISUAL_ID:
+				return new CustomTimeObservationNameEditPart(view);
 			}
 		}
 		return super.createEditPart(context, model);

@@ -59,10 +59,12 @@ public class AbstractionEditPart extends UMLConnectionNodeEditPart implements IT
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof AbstractionNameEditPart) {
-			((AbstractionNameEditPart) childEditPart).setLabel(getPrimaryShape().getNameLabel());
+			((AbstractionNameEditPart) childEditPart).setLabel(
+					getPrimaryShape().getNameLabel());
 		}
 		if (childEditPart instanceof AbstractionAppliedStereotypeEditPart) {
-			((AbstractionAppliedStereotypeEditPart) childEditPart).setLabel(getPrimaryShape().getAppliedStereotypeLabel());
+			((AbstractionAppliedStereotypeEditPart) childEditPart).setLabel(
+					getPrimaryShape().getAppliedStereotypeLabel());
 		}
 		return false;
 	}

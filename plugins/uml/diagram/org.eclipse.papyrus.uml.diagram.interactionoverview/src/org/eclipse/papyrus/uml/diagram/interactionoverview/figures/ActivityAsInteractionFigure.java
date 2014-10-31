@@ -6,6 +6,8 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Céline Janssens (ALL4TEC) celine.janssens@all4tec.net - Bug 440230 : Label Margin
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.interactionoverview.figures;
@@ -22,13 +24,14 @@ import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.gmf.runtime.diagram.ui.figures.ShapeCompartmentFigure;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
+import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.PapyrusWrappingLabel;
 import org.eclipse.papyrus.uml.diagram.activity.figures.ActivityFigure;
 import org.eclipse.papyrus.uml.diagram.common.draw2d.InteractionFigure;
 import org.eclipse.papyrus.uml.diagram.common.draw2d.LeftToolbarLayout;
 
 public class ActivityAsInteractionFigure extends ActivityFigure {
 
-	private WrappingLabel interactionHeader;
+	private PapyrusWrappingLabel interactionHeader;
 
 	private RectangleFigure interactionLabelContainer;
 
@@ -56,9 +59,8 @@ public class ActivityAsInteractionFigure extends ActivityFigure {
 	}
 
 	protected RectangleFigure createInteractionFigureHeader() {
-		this.interactionHeader = new WrappingLabel() {
+		this.interactionHeader = new PapyrusWrappingLabel() {
 
-			@Override
 			public Dimension getPreferredSize(final int wHint, final int hHint) {
 				final Dimension preferredSize = super.getPreferredSize(wHint, hHint);
 				if (preferredSize.width == 0) {

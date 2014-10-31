@@ -8,7 +8,7 @@
  *
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
- *  Mickaël Adam (ALL4TEC) mickael.adam@all4tec.net - bug 429642
+ *  Mickaï¿½l Adam (ALL4TEC) mickael.adam@all4tec.net - bug 429642
  *****************************************************************************/
 package org.eclipse.papyrus.infra.gmfdiag.css.properties.modelelement;
 
@@ -70,7 +70,9 @@ public class CSSModelElement extends CustomStyleModelElement {
 	@Override
 	public IObservable doGetObservable(String propertyPath) {
 		if (CSSStyles.CSS_DIAGRAM_STYLESHEETS_KEY.equals(propertyPath)) {
-			return new DiagramStyleSheetObservableList((View) source, domain, propertyPath);
+			if (source instanceof View){
+				return new DiagramStyleSheetObservableList((View) source, domain, propertyPath);
+			}
 		}
 		if (CSSStyles.CSS_MODEL_STYLESHEETS_KEY.equals(propertyPath)) {
 			// Get the resource
@@ -96,9 +98,12 @@ public class CSSModelElement extends CustomStyleModelElement {
 					Activator.log.error(e);
 				}
 				// Initialize the adapter of the engine to listen model styleSheet
-				ExtendedCSSEngine engine = ((CSSNotationResource) notationResource).getModelEngine();
-				if (engine instanceof ModelCSSEngine) {
-					((ModelCSSEngine) engine).initAdapter();
+				if (notationResource instanceof CSSNotationResource ){
+					ExtendedCSSEngine engine = ((CSSNotationResource) notationResource).getModelEngine();
+
+					if (engine instanceof ModelCSSEngine) {
+						((ModelCSSEngine) engine).initAdapter();
+					}
 				}
 			}
 			return new ModelStyleSheetObservableList(notationResource, modelStyleSheetsSource.getStylesheets(), domain, modelStyleSheetsSource, StylesheetsPackage.Literals.MODEL_STYLE_SHEETS__STYLESHEETS);

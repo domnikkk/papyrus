@@ -54,16 +54,20 @@ public class ConnectorEditPart extends UMLConnectionNodeEditPart implements ITre
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof ConnectorAppliedStereotypeEditPart) {
-			((ConnectorAppliedStereotypeEditPart) childEditPart).setLabel(getPrimaryShape().getAppliedStereotypeLabel());
+			((ConnectorAppliedStereotypeEditPart) childEditPart).setLabel(
+					getPrimaryShape().getAppliedStereotypeLabel());
 		}
 		if (childEditPart instanceof ConnectorNameEditPart) {
-			((ConnectorNameEditPart) childEditPart).setLabel(getPrimaryShape().getNameLabel());
+			((ConnectorNameEditPart) childEditPart).setLabel(
+					getPrimaryShape().getNameLabel());
 		}
 		if (childEditPart instanceof ConnectorMultiplicitySourceEditPart) {
-			((ConnectorMultiplicitySourceEditPart) childEditPart).setLabel(getPrimaryShape().getMultiplicitySourceLabel());
+			((ConnectorMultiplicitySourceEditPart) childEditPart).setLabel(
+					getPrimaryShape().getMultiplicitySourceLabel());
 		}
 		if (childEditPart instanceof ConnectorMultiplicityTargetEditPart) {
-			((ConnectorMultiplicityTargetEditPart) childEditPart).setLabel(getPrimaryShape().getMultiplicityTargetLabel());
+			((ConnectorMultiplicityTargetEditPart) childEditPart).setLabel(
+					getPrimaryShape().getMultiplicityTargetLabel());
 		}
 		return false;
 	}

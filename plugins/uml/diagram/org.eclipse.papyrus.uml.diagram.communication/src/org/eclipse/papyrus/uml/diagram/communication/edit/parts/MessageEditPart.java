@@ -56,10 +56,12 @@ public class MessageEditPart extends ConnectionEditPart implements ITreeBranchEd
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof MessageNameEditPart) {
-			((MessageNameEditPart) childEditPart).setLabel(getPrimaryShape().getFigureMessageCreateLabelFigure());
+			((MessageNameEditPart) childEditPart).setLabel(
+					getPrimaryShape().getFigureMessageCreateLabelFigure());
 		}
 		if (childEditPart instanceof AppliedStereotypeMessageEditPart) {
-			((AppliedStereotypeMessageEditPart) childEditPart).setLabel(getPrimaryShape().getAppliedStereotypeLabel());
+			((AppliedStereotypeMessageEditPart) childEditPart).setLabel(
+					getPrimaryShape().getAppliedStereotypeLabel());
 		}
 		return false;
 	}

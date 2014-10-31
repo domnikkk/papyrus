@@ -57,10 +57,12 @@ public class TemplateBindingEditPart extends UMLConnectionNodeEditPart implement
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof BindingSubstitutionEditPart) {
-			((BindingSubstitutionEditPart) childEditPart).setLabel(getPrimaryShape().getBindingSubstitutionFigure());
+			((BindingSubstitutionEditPart) childEditPart).setLabel(
+					getPrimaryShape().getBindingSubstitutionFigure());
 		}
 		if (childEditPart instanceof AppliedStereotypeTemplateBindingEditPart) {
-			((AppliedStereotypeTemplateBindingEditPart) childEditPart).setLabel(getPrimaryShape().getAppliedStereotypeLabel());
+			((AppliedStereotypeTemplateBindingEditPart) childEditPart).setLabel(
+					getPrimaryShape().getAppliedStereotypeLabel());
 		}
 		return false;
 	}

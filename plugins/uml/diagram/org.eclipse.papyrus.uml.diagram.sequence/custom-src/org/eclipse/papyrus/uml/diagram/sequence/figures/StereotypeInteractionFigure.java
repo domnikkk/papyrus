@@ -26,6 +26,7 @@ import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.draw2d.geometry.PointList;
 import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
+import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.PapyrusWrappingLabel;
 import org.eclipse.papyrus.uml.diagram.common.draw2d.InteractionFigure;
 import org.eclipse.papyrus.uml.diagram.common.draw2d.LeftToolbarLayout;
 import org.eclipse.papyrus.uml.diagram.common.figure.node.InteractionRectangleFigure;
@@ -53,9 +54,8 @@ public class StereotypeInteractionFigure extends InteractionRectangleFigure {
 	 */
 	@Override
 	protected RectangleFigure createHeader() {
-		interactionLabel = new WrappingLabel() {
+		interactionLabel = new PapyrusWrappingLabel() {
 
-			@Override
 			public void setFont(Font f) {
 				super.setFont(f);
 				if (stereotypesLabel != null) {

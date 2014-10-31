@@ -95,7 +95,8 @@ public class ConstraintCreateCommand extends EditElementCommand {
 			} else {
 
 				Package qualifiedTarget = (Package) target;
-				qualifiedTarget.getPackagedElements().add(newElement);
+				qualifiedTarget.getPackagedElements()
+						.add(newElement);
 
 			}
 		} else {
@@ -103,7 +104,8 @@ public class ConstraintCreateCommand extends EditElementCommand {
 		}
 
 		Namespace childHolder = (Namespace) getElementToEdit();
-		childHolder.getOwnedRules().add(newElement);
+		childHolder.getOwnedRules()
+				.add(newElement);
 
 		ElementInitializers.getInstance().init_Constraint_2005(newElement);
 

@@ -335,6 +335,7 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		} else {
 			return getGEFWrapper(new MoveElementsCommand(req));
 		}
+
 	}
 
 	/**
@@ -409,14 +410,16 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 * @generated
 		 */
 		public boolean canCreateTransition_7000(Region container, Vertex source, Vertex target) {
-			return canExistTransition_7000(container, null, source, target);
+			return canExistTransition_7000(
+					container, null, source, target);
 		}
 
 		/**
 		 * @generated
 		 */
 		public boolean canCreateGeneralization_19000(Classifier source, Classifier target) {
-			return canExistGeneralization_19000(null, source, target);
+			return canExistGeneralization_19000(
+					null, source, target);
 		}
 
 		/**
@@ -424,11 +427,14 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 */
 		public boolean canCreateCommentAnnotatedElement_667(Comment source, Element target) {
 			if (source != null) {
-				if (source.getAnnotatedElements().contains(target)) {
+				if (source.getAnnotatedElements()
+						.contains(target)) {
 					return false;
 				}
 			}
-			return canExistCommentAnnotatedElement_667(source, target);
+
+			return canExistCommentAnnotatedElement_667(
+					source, target);
 		}
 
 		/**
@@ -436,26 +442,34 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 */
 		public boolean canCreateConstraintConstrainedElement_670(Constraint source, Element target) {
 			if (source != null) {
-				if (source.getConstrainedElements().contains(target)) {
+				if (source.getConstrainedElements()
+						.contains(target)) {
 					return false;
 				}
 			}
-			return canExistConstraintConstrainedElement_670(source, target);
+
+			return canExistConstraintConstrainedElement_670(
+					source, target);
 		}
 
 		/**
 		 * @generated
 		 */
 		public boolean canCreateConstraintContext_8500(Constraint source, Namespace target) {
-			if(source != null) {
-				if(source.getContext() != null) {
+			if (source != null) {
+				if (source.getContext()
+					!= null) {
 					return false;
 				}
 			}
-			if(target != null && (target.getOwnedRules().contains(target))) {
+			if (target != null && (target.getOwnedRules()
+					.contains(target)
+					)) {
 				return false;
 			}
-			return canExistConstraintContext_8500(source, target);
+
+			return canExistConstraintContext_8500(
+					source, target);
 		}
 
 		/**

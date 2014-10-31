@@ -53,7 +53,7 @@ public class CustomStyleValueCommand extends AbstractCommand {
 		}
 
 		valueStyle.eSet(styleFeature, value);
-		if (createStyle) {
+		if (createStyle || valueStyle.eContainer() == null) {// valueStyle.eContainer() == null if CSS valueStyle is set but no Style on notation
 			view.getStyles().add(valueStyle);
 		}
 	}

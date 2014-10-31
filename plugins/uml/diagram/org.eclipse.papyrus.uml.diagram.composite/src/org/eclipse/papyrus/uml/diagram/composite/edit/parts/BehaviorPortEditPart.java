@@ -109,6 +109,7 @@ public class BehaviorPortEditPart extends AbstractBehaviorPortEditPart {
 	@Override
 	protected void handleNotificationEvent(Notification event) {
 		super.handleNotificationEvent(event);
+
 	}
 
 	/**
@@ -149,6 +150,7 @@ public class BehaviorPortEditPart extends AbstractBehaviorPortEditPart {
 	@Override
 	protected NodeFigure createNodeFigure() {
 		return new SelectableBorderedNodeFigure(createMainFigureWithSVG());
+
 	}
 
 	/**

@@ -9,6 +9,7 @@
  *
  * Contributors:
  *   Atos Origin - Initial API and implementation
+ *   Céline Janssens (ALL4TEC) celine.janssens@all4tec.net - Bug 440230 : Label Margin
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.sequence.figures;
@@ -19,6 +20,7 @@ import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
+import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.PapyrusWrappingLabel;
 
 /**
  * Change super type to support displaying stereotypes, modified by [Jin Liu(jin.liu@soyatec.com)]
@@ -40,7 +42,7 @@ public class CombinedFragmentFigure extends StereotypeInteractionFigure {
 	@Override
 	protected RectangleFigure createHeader() {
 		header = super.createHeader();
-		titleLabel = new WrappingLabel();
+		titleLabel = new PapyrusWrappingLabel();
 		titleLabel.setAlignment(PositionConstants.RIGHT);
 		titleLabel.setBorder(new MarginBorder(3, 0, 0, 3));
 		titleLabel.setTextWrap(false);

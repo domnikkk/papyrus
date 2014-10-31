@@ -1358,7 +1358,7 @@
           <viewmap
               xsi:type="gmfgen:ParentAssignedViewmap"
               getterName="getNameLabel"
-              figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+              figureQualifiedClassName="org.eclipse.papyrus.infra.gmfdiag.figure.node.PapyrusWrappingLabel"/>
           <modelFacet
               xsi:type="gmfgen:FeatureLabelModelFacet"
               parser="/0/@labelParsers/@implementations.0">
@@ -3542,7 +3542,8 @@
     <plugin
         iD="org.eclipse.papyrus.uml.diagram.profile"
         name="PapyrusUMLProfileDiagram"
-        provider="CEA LIST">
+        provider="CEA LIST"
+        version="1.0.1.qualifier">
       <requiredPlugins>org.eclipse.draw2d</requiredPlugins>
       <requiredPlugins>org.eclipse.gmf.runtime.draw2d.ui</requiredPlugins>
     </plugin>
@@ -3681,7 +3682,7 @@
     <extensionNodes
         xsi:type="papyrusgmfgenextension:ExtendedGenView"
         comment="Elements that inherits Classifier"
-        genView="/0/@diagram/@childNodes.15 /0/@diagram/@topLevelNodes.12 /0/@diagram/@childNodes.0 /0/@diagram/@topLevelNodes.11 /0/@diagram/@topLevelNodes.10 /0/@diagram/@childNodes.14"
+        genView="/0/@diagram/@childNodes.15 /0/@diagram/@topLevelNodes.12 /0/@diagram/@childNodes.0 /0/@diagram/@topLevelNodes.11 /0/@diagram/@topLevelNodes.10 /0/@diagram/@childNodes.14 /0/@diagram/@topLevelNodes.3 /0/@diagram/@childNodes.7"
         name="Classifier inheritance"
         superOwnedEditPart="org.eclipse.papyrus.uml.diagram.common.editparts.ClassifierEditPart"/>
     <extensionNodes

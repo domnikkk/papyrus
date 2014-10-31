@@ -9,6 +9,7 @@
  *
  * Contributors:
  *  Patrick Tessier (CEA LIST) Patrick.tessier@cea.fr - Initial API and implementation
+ *  Céline Janssens (All4TEC) celine.janssens@all4tec.net - Bug 440230 : Margin Label
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.common.editparts;
@@ -32,6 +33,7 @@ import org.eclipse.uml2.uml.NamedElement;
  */
 public abstract class BorderNamedElementEditPart extends BorderUMLNodeEditPart implements IUMLNamedElementEditPart {
 
+	
 	/**
 	 *
 	 * Constructor.
@@ -83,6 +85,8 @@ public abstract class BorderNamedElementEditPart extends BorderUMLNodeEditPart i
 		}
 		refreshBounds();
 	}
+	
+
 
 	/**
 	 * A method to specify the labels to be update when the font is refreshed.
