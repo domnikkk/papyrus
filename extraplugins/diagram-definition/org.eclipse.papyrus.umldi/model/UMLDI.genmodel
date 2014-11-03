@@ -2,10 +2,12 @@
 <genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/uml2/2.2.0/GenModel"
     copyrightText="Copyright (c) 2014 CEA LIST.&#xA; &#xD;&#xA;All rights reserved. This program and the accompanying materials&#xD;&#xA;are made available under the terms of the Eclipse Public License v1.0&#xD;&#xA;which accompanies this distribution, and is available at&#xD;&#xA;http://www.eclipse.org/legal/epl-v10.html&#xA; &#xD;&#xA;Contributors:&#xD;&#xA; CEA LIST - Initial API and implementation"
-    modelDirectory="/org.eclipse.papyrus.umldi/src" creationSubmenus="true" modelPluginID="org.eclipse.papyrus.umldi"
+    modelDirectory="/org.eclipse.papyrus.umldi/src-gen" creationSubmenus="true" editDirectory="/org.eclipse.papyrus.umldi.edit/src-gen"
+    editorDirectory="/org.eclipse.papyrus.umldi.editor/src-gen" modelPluginID="org.eclipse.papyrus.umldi"
     modelName="UMLDI" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
-    importerID="org.eclipse.uml2.uml.ecore.importer" complianceLevel="7.0" copyrightFields="false"
-    colorProviders="true" fontProviders="true" usedGenPackages="../../org.eclipse.papyrus.dd/model/DC.genmodel#//dc ../../org.eclipse.papyrus.dd/model/DI.genmodel#//di ../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../org.eclipse.uml2.types/model/Types.genmodel#//types ../../org.eclipse.uml2.uml/model/UML.genmodel#//uml"
+    testsDirectory="/org.eclipse.papyrus.umldi.tests/src-gen" importerID="org.eclipse.uml2.uml.ecore.importer"
+    complianceLevel="6.0" copyrightFields="false" colorProviders="true" fontProviders="true"
+    usedGenPackages="../../org.eclipse.papyrus.dd/model/DC.genmodel#//dc ../../org.eclipse.papyrus.dd/model/DI.genmodel#//di ../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../org.eclipse.uml2.types/model/Types.genmodel#//types ../../org.eclipse.uml2.uml/model/UML.genmodel#//uml"
     operationReflection="true" importOrganizing="true">
   <genAnnotations source="http://www.eclipse.org/emf/2002/GenModel/importer/org.eclipse.uml2.uml.ecore.importer">
     <details key="ECORE_TAGGED_VALUES" value="PROCESS"/>
