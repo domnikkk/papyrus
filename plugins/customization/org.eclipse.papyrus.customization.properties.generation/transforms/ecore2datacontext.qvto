@@ -144,7 +144,13 @@ query EDataType::toType() : Type {
 	switch {
 		case (self.instanceClassName = "java.lang.String") type := Type::String; 
 		case (self.instanceClassName = "int") type := Type::Integer;
+		case (self.instanceClassName = "long") type := Type::Integer; /* FIXME: Integer is not a perfect match */
 		case (self.instanceClassName = "boolean") type := Type::Boolean;
+		case (self.instanceClassName = "float") type := Type::Double; /* FIXME: Double is not a perfect match */
+		case (self.instanceClassName = "double") type := Type::Double;
+		case (self.instanceClassName = "char") type := Type::Integer; /* FIXME: Integer is not a perfect match */
+		case (self.instanceClassName = "byte") type := Type::Integer; /* FIXME: Integer is not a perfect match */
+		/* FIXME: Add all Ecore/Java types? */
 	};
 	if type.oclIsUndefined() then {
 		log("Type : "+self.name);
@@ -153,3 +159,4 @@ query EDataType::toType() : Type {
 	}endif;
 	return type;
 }
+
