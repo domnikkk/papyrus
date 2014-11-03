@@ -1240,7 +1240,7 @@
             figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.SimpleLabel"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="RequestConstants.REQ_DELETE"
+            key="org.eclipse.gef.RequestConstants.REQ_DELETE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.NoDeleteFromDiagramEditPolicy"/>
         <modelFacet>
           <metaClass
@@ -1284,7 +1284,7 @@
             figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.SimpleLabel"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="RequestConstants.REQ_DELETE"
+            key="org.eclipse.gef.RequestConstants.REQ_DELETE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.NoDeleteFromDiagramEditPolicy"/>
         <modelFacet>
           <metaClass
@@ -1335,7 +1335,7 @@
             figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.SimpleLabel"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="RequestConstants.REQ_DELETE"
+            key="org.eclipse.gef.RequestConstants.REQ_DELETE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.NoDeleteFromDiagramEditPolicy"/>
         <modelFacet>
           <metaClass
@@ -1595,15 +1595,15 @@
             xsi:type="gmfgen:OpenDiagramBehaviour"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="RequestConstants.REQ_CREATE"
+            key="org.eclipse.gef.RequestConstants.REQ_CREATE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.CreateActionLocalConditionEditPolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="EditPolicy.GRAPHICAL_NODE_ROLE"
+            key="org.eclipse.gef.EditPolicy.GRAPHICAL_NODE_ROLE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.OpaqueActionObjectFlowWithPinsCreationEditPolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="RequestConstants.REQ_DELETE"
+            key="org.eclipse.gef.RequestConstants.REQ_DELETE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.DeleteActionViewEditPolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
@@ -1615,7 +1615,7 @@
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.ActivityDiagramChangeStereotypedShapeEditpolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="EditPolicyRoles.DRAG_DROP_ROLE"
+            key="org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.DRAG_DROP_ROLE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.CustomDiagramDragDropEditPolicy"/>
         <modelFacet>
           <metaClass
@@ -2031,15 +2031,15 @@
             xsi:type="gmfgen:OpenDiagramBehaviour"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="RequestConstants.REQ_CREATE"
+            key="org.eclipse.gef.RequestConstants.REQ_CREATE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.CreateActionLocalConditionEditPolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="RequestConstants.REQ_DELETE"
+            key="org.eclipse.gef.RequestConstants.REQ_DELETE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.DeleteActionViewEditPolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="EditPolicyRoles.CANONICAL_ROLE"
+            key="org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CANONICAL_ROLE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.CallBehaviorActionCanonicalEditPolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
@@ -2051,7 +2051,7 @@
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.ActivityDiagramChangeStereotypedShapeEditpolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="EditPolicyRoles.DRAG_DROP_ROLE"
+            key="org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.DRAG_DROP_ROLE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.CustomDiagramDragDropEditPolicy"/>
         <modelFacet>
           <metaClass
@@ -2112,7 +2112,7 @@
             xsi:type="gmfgen:OpenDiagramBehaviour"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="RequestConstants.REQ_DELETE"
+            key="org.eclipse.gef.RequestConstants.REQ_DELETE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.NoDeleteFromDiagramEditPolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
@@ -2211,7 +2211,7 @@
             xsi:type="gmfgen:OpenDiagramBehaviour"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="RequestConstants.REQ_DELETE"
+            key="org.eclipse.gef.RequestConstants.REQ_DELETE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.NoDeleteFromDiagramEditPolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
@@ -2310,7 +2310,7 @@
             xsi:type="gmfgen:OpenDiagramBehaviour"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="RequestConstants.REQ_DELETE"
+            key="org.eclipse.gef.RequestConstants.REQ_DELETE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.NoDeleteFromDiagramEditPolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
@@ -2395,7 +2395,7 @@
             xsi:type="gmfgen:OpenDiagramBehaviour"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="RequestConstants.REQ_DELETE"
+            key="org.eclipse.gef.RequestConstants.REQ_DELETE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.NoDeleteFromDiagramEditPolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
@@ -2479,15 +2479,15 @@
             xsi:type="gmfgen:OpenDiagramBehaviour"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="RequestConstants.REQ_CREATE"
+            key="org.eclipse.gef.RequestConstants.REQ_CREATE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.CreateActionLocalConditionEditPolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="RequestConstants.REQ_DELETE"
+            key="org.eclipse.gef.RequestConstants.REQ_DELETE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.DeleteActionViewEditPolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="EditPolicyRoles.CANONICAL_ROLE"
+            key="org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CANONICAL_ROLE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.CallOperationActionCanonicalEditPolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
@@ -2499,7 +2499,7 @@
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.ActivityDiagramChangeStereotypedShapeEditpolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="EditPolicyRoles.DRAG_DROP_ROLE"
+            key="org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.DRAG_DROP_ROLE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.CustomDiagramDragDropEditPolicy"/>
         <modelFacet>
           <metaClass
@@ -2560,7 +2560,7 @@
             xsi:type="gmfgen:OpenDiagramBehaviour"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="RequestConstants.REQ_DELETE"
+            key="org.eclipse.gef.RequestConstants.REQ_DELETE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.NoDeleteFromDiagramEditPolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
@@ -2660,7 +2660,7 @@
             xsi:type="gmfgen:OpenDiagramBehaviour"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="RequestConstants.REQ_DELETE"
+            key="org.eclipse.gef.RequestConstants.REQ_DELETE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.NoDeleteFromDiagramEditPolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
@@ -2760,7 +2760,7 @@
             xsi:type="gmfgen:OpenDiagramBehaviour"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="RequestConstants.REQ_DELETE"
+            key="org.eclipse.gef.RequestConstants.REQ_DELETE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.NoDeleteFromDiagramEditPolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
@@ -2846,7 +2846,7 @@
             xsi:type="gmfgen:OpenDiagramBehaviour"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="RequestConstants.REQ_DELETE"
+            key="org.eclipse.gef.RequestConstants.REQ_DELETE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.NoDeleteFromDiagramEditPolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
@@ -2931,7 +2931,7 @@
             xsi:type="gmfgen:OpenDiagramBehaviour"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="RequestConstants.REQ_DELETE"
+            key="org.eclipse.gef.RequestConstants.REQ_DELETE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.NoDeleteFromDiagramEditPolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
@@ -3031,7 +3031,7 @@
             xsi:type="gmfgen:OpenDiagramBehaviour"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="RequestConstants.REQ_DELETE"
+            key="org.eclipse.gef.RequestConstants.REQ_DELETE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.NoDeleteFromDiagramEditPolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
@@ -3131,7 +3131,7 @@
             xsi:type="gmfgen:OpenDiagramBehaviour"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="RequestConstants.REQ_DELETE"
+            key="org.eclipse.gef.RequestConstants.REQ_DELETE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.NoDeleteFromDiagramEditPolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
@@ -4044,7 +4044,7 @@
               classBody="&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;public class LinkAndCornerBentWithTextFigure extends org.eclipse.papyrus.uml.diagram.common.figure.node.CornerBentFigure {&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.papyrus.uml.diagram.activity.figures.WrappedLabel fCornerBentContent; &#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.PolylineShape fLinkToBehaviorProperty; &#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public LinkAndCornerBentWithTextFigure() {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#xD;&#xA;&#xD;&#xA;&#x9;this.setBackgroundColor(THIS_BACK&#xD;&#xA;);&#xD;&#xA;&#x9;&#x9;createContents();&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private void createContents(){&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fCornerBentContent = new org.eclipse.papyrus.uml.diagram.activity.figures.WrappedLabel();&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;this.add(fCornerBentContent);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fLinkToBehaviorProperty = new org.eclipse.draw2d.PolylineShape();&#xD;&#xA;fLinkToBehaviorProperty.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);&#xD;&#xA;&#xD;&#xA;this.add(fLinkToBehaviorProperty);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.papyrus.uml.diagram.activity.figures.WrappedLabel getCornerBentContent() {&#xD;&#xA;&#x9;&#x9;return fCornerBentContent;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.PolylineShape getLinkToBehaviorProperty() {&#xD;&#xA;&#x9;&#x9;return fLinkToBehaviorProperty;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;static final org.eclipse.swt.graphics.Color THIS_BACK = new org.eclipse.swt.graphics.Color(null, 248, 249, 214);&#xD;&#xA;&#xD;&#xA;"/>
           <behaviour
               xsi:type="gmfgen:CustomBehaviour"
-              key="EditPolicy.PRIMARY_DRAG_ROLE"
+              key="org.eclipse.gef.EditPolicy.PRIMARY_DRAG_ROLE"
               editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.BehaviorPropertyNodeEditPolicy"/>
           <modelFacet
               parser="/0/@labelParsers/@implementations.10"/>
@@ -4362,7 +4362,7 @@
               classBody="&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;public class LinkAndCornerBentWithTextFigure extends org.eclipse.papyrus.uml.diagram.common.figure.node.CornerBentFigure {&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.papyrus.uml.diagram.activity.figures.WrappedLabel fCornerBentContent; &#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.PolylineShape fLinkToBehaviorProperty; &#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public LinkAndCornerBentWithTextFigure() {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#xD;&#xA;&#xD;&#xA;&#x9;this.setBackgroundColor(THIS_BACK&#xD;&#xA;);&#xD;&#xA;&#x9;&#x9;createContents();&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private void createContents(){&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fCornerBentContent = new org.eclipse.papyrus.uml.diagram.activity.figures.WrappedLabel();&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;this.add(fCornerBentContent);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fLinkToBehaviorProperty = new org.eclipse.draw2d.PolylineShape();&#xD;&#xA;fLinkToBehaviorProperty.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);&#xD;&#xA;&#xD;&#xA;this.add(fLinkToBehaviorProperty);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.papyrus.uml.diagram.activity.figures.WrappedLabel getCornerBentContent() {&#xD;&#xA;&#x9;&#x9;return fCornerBentContent;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.PolylineShape getLinkToBehaviorProperty() {&#xD;&#xA;&#x9;&#x9;return fLinkToBehaviorProperty;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;static final org.eclipse.swt.graphics.Color THIS_BACK = new org.eclipse.swt.graphics.Color(null, 248, 249, 214);&#xD;&#xA;&#xD;&#xA;"/>
           <behaviour
               xsi:type="gmfgen:CustomBehaviour"
-              key="EditPolicy.PRIMARY_DRAG_ROLE"
+              key="org.eclipse.gef.EditPolicy.PRIMARY_DRAG_ROLE"
               editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.BehaviorPropertyNodeEditPolicy"/>
           <modelFacet
               parser="/0/@labelParsers/@implementations.21"/>
@@ -4394,19 +4394,19 @@
             xsi:type="gmfgen:OpenDiagramBehaviour"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="RequestConstants.REQ_CREATE"
+            key="org.eclipse.gef.RequestConstants.REQ_CREATE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.CreateActionLocalConditionEditPolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="EditPolicy.GRAPHICAL_NODE_ROLE"
+            key="org.eclipse.gef.EditPolicy.GRAPHICAL_NODE_ROLE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.ObjectFlowWithPinsCreationEditPolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="RequestConstants.REQ_DELETE"
+            key="org.eclipse.gef.RequestConstants.REQ_DELETE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.DeleteActionViewEditPolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="EditPolicyRoles.CANONICAL_ROLE"
+            key="org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CANONICAL_ROLE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.SendObjectActionCanonicalEditPolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
@@ -4418,7 +4418,7 @@
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.ActivityDiagramChangeStereotypedShapeEditpolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="EditPolicyRoles.DRAG_DROP_ROLE"
+            key="org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.DRAG_DROP_ROLE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.CustomDiagramDragDropEditPolicy"/>
         <modelFacet>
           <metaClass
@@ -5030,19 +5030,19 @@
             xsi:type="gmfgen:OpenDiagramBehaviour"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="RequestConstants.REQ_CREATE"
+            key="org.eclipse.gef.RequestConstants.REQ_CREATE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.CreateActionLocalConditionEditPolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="EditPolicy.GRAPHICAL_NODE_ROLE"
+            key="org.eclipse.gef.EditPolicy.GRAPHICAL_NODE_ROLE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.ObjectFlowWithPinsCreationEditPolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="RequestConstants.REQ_DELETE"
+            key="org.eclipse.gef.RequestConstants.REQ_DELETE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.DeleteActionViewEditPolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="EditPolicyRoles.CANONICAL_ROLE"
+            key="org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CANONICAL_ROLE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.SendSignalActionCanonicalEditPolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
@@ -5050,7 +5050,7 @@
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeNodeLabelDisplayEditPolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="EditPolicyRoles.DRAG_DROP_ROLE"
+            key="org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.DRAG_DROP_ROLE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.CustomDiagramDragDropEditPolicy"/>
         <modelFacet>
           <metaClass
@@ -5733,19 +5733,19 @@
             xsi:type="gmfgen:OpenDiagramBehaviour"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="RequestConstants.REQ_CREATE"
+            key="org.eclipse.gef.RequestConstants.REQ_CREATE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.CreateActionLocalConditionEditPolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="EditPolicy.GRAPHICAL_NODE_ROLE"
+            key="org.eclipse.gef.EditPolicy.GRAPHICAL_NODE_ROLE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.ObjectFlowWithPinsCreationEditPolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="RequestConstants.REQ_DELETE"
+            key="org.eclipse.gef.RequestConstants.REQ_DELETE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.DeleteActionViewEditPolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="EditPolicyRoles.CANONICAL_ROLE"
+            key="org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CANONICAL_ROLE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.AcceptEventActionCanonicalEditPolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
@@ -5753,7 +5753,7 @@
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeNodeLabelDisplayEditPolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="EditPolicyRoles.DRAG_DROP_ROLE"
+            key="org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.DRAG_DROP_ROLE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.CustomDiagramDragDropEditPolicy"/>
         <modelFacet>
           <metaClass
@@ -5936,23 +5936,23 @@
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.ActivityDiagramChangeStereotypedShapeEditpolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="RequestConstants.REQ_CREATE"
+            key="org.eclipse.gef.RequestConstants.REQ_CREATE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.CreateActionLocalConditionEditPolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="EditPolicy.GRAPHICAL_NODE_ROLE"
+            key="org.eclipse.gef.EditPolicy.GRAPHICAL_NODE_ROLE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.ObjectFlowWithPinsCreationEditPolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="RequestConstants.REQ_DELETE"
+            key="org.eclipse.gef.RequestConstants.REQ_DELETE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.DeleteActionViewEditPolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="EditPolicyRoles.CANONICAL_ROLE"
+            key="org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CANONICAL_ROLE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.ValueSpecificationActionCanonicalEditPolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="EditPolicyRoles.DRAG_DROP_ROLE"
+            key="org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.DRAG_DROP_ROLE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.CustomDiagramDragDropEditPolicy"/>
         <modelFacet>
           <metaClass
@@ -7026,7 +7026,7 @@
             xsi:type="gmfgen:OpenDiagramBehaviour"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="RequestConstants.REQ_DELETE"
+            key="org.eclipse.gef.RequestConstants.REQ_DELETE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.DeleteActionViewEditPolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
@@ -7034,15 +7034,15 @@
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.ActivityDiagramChangeStereotypedShapeEditpolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="RequestConstants.REQ_CREATE"
+            key="org.eclipse.gef.RequestConstants.REQ_CREATE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.CreateActionLocalConditionEditPolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="EditPolicy.GRAPHICAL_NODE_ROLE"
+            key="org.eclipse.gef.EditPolicy.GRAPHICAL_NODE_ROLE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.ObjectFlowWithPinsCreationEditPolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="EditPolicyRoles.CANONICAL_ROLE"
+            key="org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CANONICAL_ROLE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.ReadSelfActionCanonicalEditPolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
@@ -7050,7 +7050,7 @@
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeNodeLabelDisplayEditPolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="EditPolicyRoles.DRAG_DROP_ROLE"
+            key="org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.DRAG_DROP_ROLE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.CustomDiagramDragDropEditPolicy"/>
         <modelFacet>
           <metaClass
@@ -7199,7 +7199,7 @@
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.ActivityDiagramChangeStereotypedShapeEditpolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="RequestConstants.REQ_DELETE"
+            key="org.eclipse.gef.RequestConstants.REQ_DELETE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.DeleteActionViewEditPolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
@@ -7215,7 +7215,7 @@
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.common.editpolicies.ShowHideCompartmentEditPolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="EditPolicyRoles.CANONICAL_ROLE"
+            key="org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CANONICAL_ROLE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.ActivityCanonicalEditPolicy"/>
         <modelFacet>
           <metaClass
@@ -7301,19 +7301,19 @@
             xsi:type="gmfgen:OpenDiagramBehaviour"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="RequestConstants.REQ_CREATE"
+            key="org.eclipse.gef.RequestConstants.REQ_CREATE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.CreateActionLocalConditionEditPolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="EditPolicy.GRAPHICAL_NODE_ROLE"
+            key="org.eclipse.gef.EditPolicy.GRAPHICAL_NODE_ROLE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.ObjectFlowWithPinsCreationEditPolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="RequestConstants.REQ_DELETE"
+            key="org.eclipse.gef.RequestConstants.REQ_DELETE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.DeleteActionViewEditPolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="EditPolicyRoles.CANONICAL_ROLE"
+            key="org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CANONICAL_ROLE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.CreateObjectActionCanonicalEditPolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
@@ -7325,7 +7325,7 @@
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.ActivityDiagramChangeStereotypedShapeEditpolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="EditPolicyRoles.DRAG_DROP_ROLE"
+            key="org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.DRAG_DROP_ROLE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.CustomDiagramDragDropEditPolicy"/>
         <modelFacet>
           <metaClass
@@ -7523,19 +7523,19 @@
             xsi:type="gmfgen:OpenDiagramBehaviour"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="RequestConstants.REQ_CREATE"
+            key="org.eclipse.gef.RequestConstants.REQ_CREATE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.CreateActionLocalConditionEditPolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="EditPolicy.GRAPHICAL_NODE_ROLE"
+            key="org.eclipse.gef.EditPolicy.GRAPHICAL_NODE_ROLE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.ObjectFlowWithPinsCreationEditPolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="RequestConstants.REQ_DELETE"
+            key="org.eclipse.gef.RequestConstants.REQ_DELETE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.DeleteActionViewEditPolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="EditPolicyRoles.CANONICAL_ROLE"
+            key="org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CANONICAL_ROLE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.ReadStructuralFeatureActionCanonicalEditPolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
@@ -7547,7 +7547,7 @@
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.ActivityDiagramChangeStereotypedShapeEditpolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="EditPolicyRoles.DRAG_DROP_ROLE"
+            key="org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.DRAG_DROP_ROLE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.CustomDiagramDragDropEditPolicy"/>
         <modelFacet>
           <metaClass
@@ -7765,19 +7765,19 @@
             xsi:type="gmfgen:OpenDiagramBehaviour"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="RequestConstants.REQ_CREATE"
+            key="org.eclipse.gef.RequestConstants.REQ_CREATE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.CreateActionLocalConditionEditPolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="EditPolicy.GRAPHICAL_NODE_ROLE"
+            key="org.eclipse.gef.EditPolicy.GRAPHICAL_NODE_ROLE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.ObjectFlowWithPinsCreationEditPolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="RequestConstants.REQ_DELETE"
+            key="org.eclipse.gef.RequestConstants.REQ_DELETE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.DeleteActionViewEditPolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="EditPolicyRoles.CANONICAL_ROLE"
+            key="org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CANONICAL_ROLE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.AddStructuralFeatureValueActionCanonicalEditPolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
@@ -7789,7 +7789,7 @@
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.ActivityDiagramChangeStereotypedShapeEditpolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="EditPolicyRoles.DRAG_DROP_ROLE"
+            key="org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.DRAG_DROP_ROLE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.CustomDiagramDragDropEditPolicy"/>
         <modelFacet>
           <metaClass
@@ -8086,19 +8086,19 @@
             xsi:type="gmfgen:OpenDiagramBehaviour"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="RequestConstants.REQ_CREATE"
+            key="org.eclipse.gef.RequestConstants.REQ_CREATE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.CreateActionLocalConditionEditPolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="EditPolicy.GRAPHICAL_NODE_ROLE"
+            key="org.eclipse.gef.EditPolicy.GRAPHICAL_NODE_ROLE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.ObjectFlowWithPinsCreationEditPolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="RequestConstants.REQ_DELETE"
+            key="org.eclipse.gef.RequestConstants.REQ_DELETE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.DeleteActionViewEditPolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="EditPolicyRoles.CANONICAL_ROLE"
+            key="org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CANONICAL_ROLE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.DestroyObjectActionCanonicalEditPolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
@@ -8110,7 +8110,7 @@
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.ActivityDiagramChangeStereotypedShapeEditpolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="EditPolicyRoles.DRAG_DROP_ROLE"
+            key="org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.DRAG_DROP_ROLE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.CustomDiagramDragDropEditPolicy"/>
         <modelFacet>
           <metaClass
@@ -8250,19 +8250,19 @@
             xsi:type="gmfgen:OpenDiagramBehaviour"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="RequestConstants.REQ_CREATE"
+            key="org.eclipse.gef.RequestConstants.REQ_CREATE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.CreateActionLocalConditionEditPolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="EditPolicy.GRAPHICAL_NODE_ROLE"
+            key="org.eclipse.gef.EditPolicy.GRAPHICAL_NODE_ROLE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.ObjectFlowWithPinsCreationEditPolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="RequestConstants.REQ_DELETE"
+            key="org.eclipse.gef.RequestConstants.REQ_DELETE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.DeleteActionViewEditPolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="EditPolicyRoles.CANONICAL_ROLE"
+            key="org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CANONICAL_ROLE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.ReadVariableActionCanonicalEditPolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
@@ -8274,7 +8274,7 @@
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.ActivityDiagramChangeStereotypedShapeEditpolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="EditPolicyRoles.DRAG_DROP_ROLE"
+            key="org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.DRAG_DROP_ROLE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.CustomDiagramDragDropEditPolicy"/>
         <modelFacet>
           <metaClass
@@ -8415,19 +8415,19 @@
             xsi:type="gmfgen:OpenDiagramBehaviour"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="RequestConstants.REQ_CREATE"
+            key="org.eclipse.gef.RequestConstants.REQ_CREATE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.CreateActionLocalConditionEditPolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="EditPolicy.GRAPHICAL_NODE_ROLE"
+            key="org.eclipse.gef.EditPolicy.GRAPHICAL_NODE_ROLE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.ObjectFlowWithPinsCreationEditPolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="RequestConstants.REQ_DELETE"
+            key="org.eclipse.gef.RequestConstants.REQ_DELETE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.DeleteActionViewEditPolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="EditPolicyRoles.CANONICAL_ROLE"
+            key="org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CANONICAL_ROLE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.AddVariableValueActionCanonicalEditPolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
@@ -8439,7 +8439,7 @@
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.ActivityDiagramChangeStereotypedShapeEditpolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="EditPolicyRoles.DRAG_DROP_ROLE"
+            key="org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.DRAG_DROP_ROLE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.CustomDiagramDragDropEditPolicy"/>
         <modelFacet>
           <metaClass
@@ -8659,19 +8659,19 @@
             xsi:type="gmfgen:OpenDiagramBehaviour"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="RequestConstants.REQ_CREATE"
+            key="org.eclipse.gef.RequestConstants.REQ_CREATE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.CreateActionLocalConditionEditPolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="EditPolicy.GRAPHICAL_NODE_ROLE"
+            key="org.eclipse.gef.EditPolicy.GRAPHICAL_NODE_ROLE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.ObjectFlowWithPinsCreationEditPolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="RequestConstants.REQ_DELETE"
+            key="org.eclipse.gef.RequestConstants.REQ_DELETE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.DeleteActionViewEditPolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="EditPolicyRoles.CANONICAL_ROLE"
+            key="org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CANONICAL_ROLE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.BroadcastSignalActionCanonicalEditPolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
@@ -8683,7 +8683,7 @@
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.ActivityDiagramChangeStereotypedShapeEditpolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="EditPolicyRoles.DRAG_DROP_ROLE"
+            key="org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.DRAG_DROP_ROLE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.CustomDiagramDragDropEditPolicy"/>
         <modelFacet>
           <metaClass
@@ -9004,7 +9004,7 @@
         </viewmap>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="EditPolicy.COMPONENT_ROLE"
+            key="org.eclipse.gef.EditPolicy.COMPONENT_ROLE"
             editPolicyQualifiedClassName="org.eclipse.gef.editpolicies.RootComponentEditPolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
@@ -9012,7 +9012,7 @@
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.RemoveOrphanViewPolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="EditPolicyRoles.CANONICAL_ROLE"
+            key="org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CANONICAL_ROLE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.ActivityCanonicalEditPolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
@@ -9020,7 +9020,7 @@
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.common.editpolicies.ShowHideCompartmentEditPolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="EditPolicy.PRIMARY_DRAG_ROLE"
+            key="org.eclipse.gef.EditPolicy.PRIMARY_DRAG_ROLE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.ResizeActivityEditPolicy"/>
         <modelFacet>
           <metaClass
@@ -9228,7 +9228,7 @@
           </viewmap>
           <behaviour
               xsi:type="gmfgen:CustomBehaviour"
-              key="EditPolicy.PRIMARY_DRAG_ROLE"
+              key="org.eclipse.gef.EditPolicy.PRIMARY_DRAG_ROLE"
               editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.BehaviorPropertyNodeEditPolicy"/>
           <modelFacet
               parser="/0/@labelParsers/@implementations.12"/>
@@ -9251,7 +9251,7 @@
           </viewmap>
           <behaviour
               xsi:type="gmfgen:CustomBehaviour"
-              key="EditPolicy.PRIMARY_DRAG_ROLE"
+              key="org.eclipse.gef.EditPolicy.PRIMARY_DRAG_ROLE"
               editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.BehaviorPropertyNodeEditPolicy"/>
           <modelFacet
               parser="/0/@labelParsers/@implementations.11"/>
@@ -9324,7 +9324,7 @@
               figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.InterruptibleEdgeExternalIconFigure"/>
           <behaviour
               xsi:type="gmfgen:CustomBehaviour"
-              key="RequestConstants.REQ_DELETE"
+              key="org.eclipse.gef.RequestConstants.REQ_DELETE"
               editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.NoDeleteFromDiagramEditPolicy"/>
         </labels>
         <creationConstraints
@@ -9469,7 +9469,7 @@
               figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.InterruptibleEdgeExternalIconFigure"/>
           <behaviour
               xsi:type="gmfgen:CustomBehaviour"
-              key="RequestConstants.REQ_DELETE"
+              key="org.eclipse.gef.RequestConstants.REQ_DELETE"
               editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.NoDeleteFromDiagramEditPolicy"/>
         </labels>
         <creationConstraints
@@ -9538,7 +9538,7 @@
               figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.InterruptibleEdgeExternalIconFigure"/>
           <behaviour
               xsi:type="gmfgen:CustomBehaviour"
-              key="RequestConstants.REQ_DELETE"
+              key="org.eclipse.gef.RequestConstants.REQ_DELETE"
               editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.NoDeleteFromDiagramEditPolicy"/>
         </labels>
       </links>
@@ -9599,7 +9599,7 @@
             figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="EditPolicyRoles.CANONICAL_ROLE"
+            key="org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CANONICAL_ROLE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.ActivityActivityParametersCompartmentCanonicalEditPolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
@@ -9625,7 +9625,7 @@
             figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="EditPolicyRoles.CANONICAL_ROLE"
+            key="org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CANONICAL_ROLE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.ActivityActivityPreConditionsCompartmentCanonicalEditPolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
@@ -9655,7 +9655,7 @@
             figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="EditPolicyRoles.CANONICAL_ROLE"
+            key="org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CANONICAL_ROLE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.ActivityActivityPostConditionsCompartmentCanonicalEditPolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
@@ -9682,7 +9682,7 @@
             figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="EditPolicyRoles.DRAG_DROP_ROLE"
+            key="org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.DRAG_DROP_ROLE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.CustomDiagramDragDropEditPolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
@@ -9721,7 +9721,7 @@
             figureQualifiedClassName="org.eclipse.draw2d.RoundedRectangle"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="EditPolicyRoles.DRAG_DROP_ROLE"
+            key="org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.DRAG_DROP_ROLE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.ActivityGroupCustomDragAndDropEditPolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
@@ -9756,7 +9756,7 @@
             figureQualifiedClassName="org.eclipse.draw2d.RoundedRectangle"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="EditPolicyRoles.DRAG_DROP_ROLE"
+            key="org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.DRAG_DROP_ROLE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.activitygroup.editpolicy.ExpansionRegionCompartmentDnDEditPolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
@@ -9791,7 +9791,7 @@
             figureQualifiedClassName="org.eclipse.draw2d.RoundedRectangle"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="EditPolicyRoles.DRAG_DROP_ROLE"
+            key="org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.DRAG_DROP_ROLE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.ActivityGroupCustomDragAndDropEditPolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
@@ -9826,7 +9826,7 @@
             figureQualifiedClassName="org.eclipse.draw2d.RoundedRectangle"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="EditPolicyRoles.DRAG_DROP_ROLE"
+            key="org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.DRAG_DROP_ROLE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.ActivityGroupCustomDragAndDropEditPolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
@@ -9861,7 +9861,7 @@
             figureQualifiedClassName="org.eclipse.draw2d.RoundedRectangle"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="EditPolicyRoles.DRAG_DROP_ROLE"
+            key="org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.DRAG_DROP_ROLE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.ActivityGroupCustomDragAndDropEditPolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
@@ -9896,7 +9896,7 @@
             figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="EditPolicyRoles.DRAG_DROP_ROLE"
+            key="org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.DRAG_DROP_ROLE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.ActivityGroupCustomDragAndDropEditPolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
@@ -9930,7 +9930,7 @@
             figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.figures.InterruptibleActivityRegionFigure"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="EditPolicyRoles.DRAG_DROP_ROLE"
+            key="org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.DRAG_DROP_ROLE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.ActivityGroupCustomDragAndDropEditPolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
@@ -9968,7 +9968,7 @@
             figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="EditPolicyRoles.CANONICAL_ROLE"
+            key="org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CANONICAL_ROLE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.ActivityActivityParametersCompartmentCanonicalEditPolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
@@ -9994,7 +9994,7 @@
             figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="EditPolicyRoles.CANONICAL_ROLE"
+            key="org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CANONICAL_ROLE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.ActivityActivityPreConditionsCompartmentCanonicalEditPolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
@@ -10024,7 +10024,7 @@
             figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="EditPolicyRoles.CANONICAL_ROLE"
+            key="org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CANONICAL_ROLE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.ActivityActivityPostConditionsCompartmentCanonicalEditPolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
@@ -10051,7 +10051,7 @@
             figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="EditPolicyRoles.DRAG_DROP_ROLE"
+            key="org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.DRAG_DROP_ROLE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.activity.edit.policies.CustomDiagramDragDropEditPolicy"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
