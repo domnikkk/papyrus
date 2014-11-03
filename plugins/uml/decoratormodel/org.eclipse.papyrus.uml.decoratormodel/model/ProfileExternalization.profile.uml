@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Ecore="http://www.eclipse.org/uml2/schemas/Ecore/5" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http://www.eclipse.org/uml2/schemas/Ecore/5 pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA">
+  <uml:Profile xmi:id="_Mzzc0EWjEeSNXJj2G3jVCw" name="ProfileExternalization" URI="http://www.eclipse.org/Papyrus/2014/profile/profileExternalization" metaclassReference="_c8xEcEWjEeSNXJj2G3jVCw">
+    <elementImport xmi:type="uml:ElementImport" xmi:id="_c8xEcEWjEeSNXJj2G3jVCw" alias="Dependency">
+      <importedElement xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Dependency"/>
+    </elementImport>
+    <packagedElement xmi:type="uml:Stereotype" xmi:id="_ON8fkEWjEeSNXJj2G3jVCw" name="ApplyProfiles">
+      <ownedRule xmi:type="uml:Constraint" xmi:id="_hbLwgEWjEeSNXJj2G3jVCw" name="suppliers_are_packages">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_47v30EWjEeSNXJj2G3jVCw">
+          <language>OCL</language>
+          <body>base_Dependency.supplier->forAll(oclIsKindOf(uml::Package))</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:type="uml:Constraint" xmi:id="_7MDGgEWjEeSNXJj2G3jVCw" name="clients_are_packages">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_CGxc8EWkEeSNXJj2G3jVCw">
+          <language>OCL</language>
+          <body>base_Dependency.client->forAll(oclIsKindOf(uml::Package))</body>
+        </specification>
+      </ownedRule>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_eLaB0EWjEeSNXJj2G3jVCw" name="base_Dependency" association="_eLao4EWjEeSNXJj2G3jVCw">
+        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Dependency"/>
+      </ownedAttribute>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_baC4AEWkEeSNXJj2G3jVCw" name="getAppliedProfiles">
+        <ownedRule xmi:type="uml:Constraint" xmi:id="_-EjIMEWkEeSNXJj2G3jVCw" name="">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="_-EjIMUWkEeSNXJj2G3jVCw">
+            <language>OCL</language>
+            <body>base_Dependency.supplier->selectByKind(uml::Package).appliedProfile</body>
+          </specification>
+        </ownedRule>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_n4wbcEWkEeSNXJj2G3jVCw" direction="return" effect="read">
+          <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Profile"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_pjhUIEWkEeSNXJj2G3jVCw"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_pjh7MEWkEeSNXJj2G3jVCw" value="*"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_hab64EWpEeSNXJj2G3jVCw" name="getExternalizedAppliedProfilePackages">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_pHz2QEWpEeSNXJj2G3jVCw" direction="return" effect="read">
+          <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Package"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qF6dQEWpEeSNXJj2G3jVCw"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qF7EUEWpEeSNXJj2G3jVCw" value="*"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Extension" xmi:id="_eLao4EWjEeSNXJj2G3jVCw" name="E_ApplyProfiles_Dependency1" memberEnd="_eLao4UWjEeSNXJj2G3jVCw _eLaB0EWjEeSNXJj2G3jVCw">
+      <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_eLao4UWjEeSNXJj2G3jVCw" name="extension_ApplyProfiles" type="_ON8fkEWjEeSNXJj2G3jVCw" aggregation="composite" association="_eLao4EWjEeSNXJj2G3jVCw"/>
+    </packagedElement>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_bkeWoEW1EeSNXJj2G3jVCw">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_bkxRkEW1EeSNXJj2G3jVCw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_PROFILES/Ecore.profile.uml#_0"/>
+    </profileApplication>
+  </uml:Profile>
+  <Ecore:EPackage xmi:id="_hcTFoEW1EeSNXJj2G3jVCw" base_Package="_Mzzc0EWjEeSNXJj2G3jVCw" packageName="profileExternalization" nsPrefix="profileext" basePackage="org.eclipse.papyrus.uml.decoratormodel"/>
+</xmi:XMI>

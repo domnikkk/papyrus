@@ -1,6 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2011 Atos Origin.
- *
+ * Copyright (c) 2011, 2014 Atos Origin, Christian W. Damus, and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -9,6 +8,7 @@
  *
  * Contributors:
  *   Atos Origin - Initial API and implementation
+ *   Christian W. Damus - bug 399859
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.controlmode.profile.helpers;
@@ -36,7 +36,8 @@ public class ProfileApplicationHelper {
 	public static final String DUPLICATED_PROFILE = "duplicatedProfile";
 
 	/**
-	 * Duplicate a profile application on a child package.
+	 * Duplicate a profile application on a child package if that profile application is
+	 * intrinsic to the model (not owned by a different model).
 	 *
 	 * @param _package
 	 *            package to duplicate profile application on
@@ -45,7 +46,9 @@ public class ProfileApplicationHelper {
 	 */
 	public static void duplicateProfileApplication(Package _package, Profile profile) {
 		if (profile != null && profile.getDefinition() != null) {
-			if (!isSameProfileApplied(_package, profile)) {
+			ProfileApplication toCopy = _package.getProfileApplication(profile, true);
+			// Is it inherited from a parent package and intrinsic to the model?
+			if (_package.allOwningPackages().contains(toCopy.getApplyingPackage())) {
 				_package.applyProfile(profile);
 				ProfileApplication profileAppl = _package.getProfileApplication(profile);
 				if (profileAppl != null) {
@@ -107,34 +110,45 @@ public class ProfileApplicationHelper {
 	}
 
 	/**
-	 * Relocate stereotype applications for the nested elements of the selection in the controlled resource
+	 * Relocate stereotype applications for the nested elements of the selection in the controlled resource.
+	 * Stereotype applications are moved to the {@code target} resource only if they are currently in the {@code source} resource, to account for possibly externalized profile applications.
 	 *
 	 * @param pack
 	 *            the package for which stereotype application must be relocated
+	 * @param source
+	 *            the source resource
 	 * @param target
 	 *            the target controlled resource
 	 */
-	public static void nestedRelocateStereotypeApplications(Package pack, Resource target) {
-		relocateStereotypeApplications(pack, target);
+	public static void nestedRelocateStereotypeApplications(Package pack, Resource source, Resource target) {
+		relocateStereotypeApplications(pack, source, target);
 		for (Iterator<EObject> i = EcoreUtil.getAllProperContents(pack, true); i.hasNext();) {
 			EObject current = i.next();
 			if (current instanceof Element) {
-				relocateStereotypeApplications((Element) current, target);
+				relocateStereotypeApplications((Element) current, source, target);
 			}
 		}
 	}
 
 	/**
-	 * Relocate stereotype applications for the an element in the controlled resource
+	 * Relocate stereotype applications for the an element in the controlled resource.
+	 * Stereotype applications are moved to the {@code target} resource only if they are currently in the {@code source} resource, to account for possibly externalized profile applications.
 	 *
 	 * @param element
 	 *            the element for which stereotype application must be relocated
+	 * @param source
+	 *            the source resource
 	 * @param target
 	 *            the target controlled resource
 	 */
-	public static void relocateStereotypeApplications(Element element, Resource targetResource) {
+	public static void relocateStereotypeApplications(Element element, Resource source, Resource target) {
 		EList<EObject> stereotypeApplications = element.getStereotypeApplications();
-		targetResource.getContents().addAll(stereotypeApplications);
+		EList<EObject> targetList = target.getContents();
+		for (EObject next : stereotypeApplications) {
+			if (next.eResource() == source) {
+				targetList.add(next);
+			}
+		}
 	}
 
 	/**

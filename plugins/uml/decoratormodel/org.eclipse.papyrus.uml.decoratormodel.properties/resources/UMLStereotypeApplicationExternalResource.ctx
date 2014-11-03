@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<contexts:Context xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:constraints="http://www.eclipse.org/papyrus/constraints/0.9" xmlns:contexts="http://www.eclipse.org/papyrus/properties/contexts/0.9" name="UMLStereotypeApplicationExternalResource">
+  <dependencies href="ppe:/context/org.eclipse.papyrus.uml.properties/Model/UML/UML.ctx#/"/>
+  <tabs label="Profile" id="profile" category="org.eclipse.papyrus" priority="50">
+    <sections name="SinglePackageProfile" sectionFile="ui/SinglePackageProfile.xwt">
+      <widget href="ui/SinglePackageProfile.xwt#/"/>
+    </sections>
+  </tabs>
+  <tabs label="Applications" id="applications" category="org.eclipse.papyrus" priority="50">
+    <afterTab href="ppe:/context/org.eclipse.papyrus.uml.properties/Model/UML/UML.ctx#//@tabs.1"/>
+    <sections name="SinglePackageDecoratorModels" sectionFile="ui/SinglePackageDecoratorModels.xwt">
+      <widget href="ui/SinglePackageDecoratorModels.xwt#/"/>
+    </sections>
+  </tabs>
+  <views name="SinglePackageProfile" sections="//@tabs.0/@sections.0" automaticContext="true">
+    <constraints xsi:type="constraints:SimpleConstraint" name="isSinglePackage" overrideable="false">
+      <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.0"/>
+      <properties xsi:type="constraints:ValueProperty" name="umlClassName" value="Package"/>
+    </constraints>
+  </views>
+  <views name="SinglePackageDecoratorModels" sections="//@tabs.1/@sections.0">
+    <constraints xsi:type="constraints:SimpleConstraint" name="hasExternalizedProfileApplications">
+      <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.decoratormodel.properties/resources/UMLStereotypeApplicationExternalResourceEnvironment.xmi#//@constraintTypes.0"/>
+    </constraints>
+  </views>
+  <dataContexts name="PackageAdditions" label="Package Additions">
+    <elements name="Package">
+      <properties name="profileApplication" label="Profile Applications" type="Reference" description="References the ProfileApplications that indicate which profiles have been applied to the Package."/>
+      <properties name="externalProfileApplication" label="External Profile Applications" type="Reference" description="The models in the workspace that apply profiles to the package, loaded and unloaded."/>
+    </elements>
+    <modelElementFactory href="UMLStereotypeApplicationExternalResourceEnvironment.xmi#//@modelElementFactories.0"/>
+  </dataContexts>
+</contexts:Context>

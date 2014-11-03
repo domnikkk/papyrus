@@ -1,5 +1,6 @@
 /*******************************************************************************
- * Copyright (c) 2013 Atos.
+ * Copyright (c) 2013, 2014 Atos, Christian W. Damus, and others.
+ * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -7,6 +8,8 @@
  *
  * Contributors:
  *     Arthur Daussy <a href="mailto:arthur.daussy@atos.net"> - initial API and implementation
+ *     Christian W. Damus - bug 399859
+ *  
  ******************************************************************************/
 package org.eclipse.papyrus.infra.services.controlmode.participants;
 
@@ -35,7 +38,8 @@ public interface IControlCommandParticipant extends IControlModeParticipant {
 
 	/**
 	 * Ask the participant for command that will be executed before the control command
-	 * The returned command should not be null (use {@link UnexecutableCommand}
+	 * The returned command should be {@code null} if no pre-control command is
+	 * required (an {@link UnexecutableCommand} blocks all pre-control execution).
 	 *
 	 * @param request
 	 * @return
@@ -44,7 +48,9 @@ public interface IControlCommandParticipant extends IControlModeParticipant {
 
 	/**
 	 * Ask the participant for command that will be executed after the control command
-	 *
+	 * The returned command should be {@code null} if no post-control command is
+	 * required (an {@link UnexecutableCommand} blocks all post-control execution).
+	 * 
 	 * @param request
 	 * @return
 	 */

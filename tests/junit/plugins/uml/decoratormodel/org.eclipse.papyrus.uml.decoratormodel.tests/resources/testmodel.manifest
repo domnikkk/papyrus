@@ -1,0 +1,6 @@
+testmodel.di
+testmodel.notation
+testmodel.uml
+package2.decorator.di=false
+package2.decorator.notation=false
+package2.decorator.uml=false

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Ecore="http://www.eclipse.org/uml2/schemas/Ecore/5" xmlns:css="http://www.eclipse.org/papyrus/infra/gmfdiag/css" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:profile1="http:///schemas/profile1/_2R_cgGEcEeSRDpkdeXfJuw/2" xmlns:profile1.relationships="http:///profile1/relationships.ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http://www.eclipse.org/uml2/schemas/Ecore/5 pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA http:///schemas/profile1/_2R_cgGEcEeSRDpkdeXfJuw/2 profile/profile1.profile.uml#_2SDt8GEcEeSRDpkdeXfJuw http:///profile1/relationships.ecore profile/profile1.profile.uml#_2SDuBWEcEeSRDpkdeXfJuw">
+  <uml:Model xmi:id="_Jqf8kEijEeSKm9FE-lgkJg" name="testmodel">
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_Jqf8kUijEeSKm9FE-lgkJg">
+      <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Package" xmi:id="_MLPToEimEeSYXMOYgqfvhA" name="package1">
+      <packagedElement xmi:type="uml:Class" xmi:id="_aipeEEimEeSYXMOYgqfvhA" name="Entity1">
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_d-B_0EimEeSYXMOYgqfvhA" name="find">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_jv5QwEimEeSYXMOYgqfvhA" name="id">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_npgmoEimEeSYXMOYgqfvhA" name="BusinessRules"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_qnlhUEimEeSYXMOYgqfvhA" client="_aipeEEimEeSYXMOYgqfvhA" supplier="_npgmoEimEeSYXMOYgqfvhA"/>
+      <packagedElement xmi:type="uml:Package" xmi:id="_j6w70FnwEeSuUcVwVEa2BQ" name="Package1_1">
+        <packagedElement xmi:type="uml:Class" xmi:id="_sl9KUFnwEeSuUcVwVEa2BQ" name="Bean1_1"/>
+      </packagedElement>
+      <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_xZP-UFg8EeSTy5tPYyanVg">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_xaiXwFg8EeSTy5tPYyanVg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+          <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA"/>
+        </eAnnotations>
+        <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_PROFILES/Ecore.profile.uml#_0"/>
+      </profileApplication>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_Nb6RUEimEeSYXMOYgqfvhA" name="package2">
+      <packagedElement xmi:type="uml:Class" xmi:id="_8I2YoEimEeSYXMOYgqfvhA" name="Bean2">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_L7JU8GT8EeSGc9cekwP_1g" name="ref1" type="_18WnEFnyEeSuUcVwVEa2BQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_-9S2MEimEeSYXMOYgqfvhA" name="MessageProcessor"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_ANhH8EinEeSYXMOYgqfvhA" client="_8I2YoEimEeSYXMOYgqfvhA" supplier="_-9S2MEimEeSYXMOYgqfvhA"/>
+      <packagedElement xmi:type="uml:Package" xmi:id="_vvBiIFnyEeSuUcVwVEa2BQ" name="Package2_1">
+        <packagedElement xmi:type="uml:Class" xmi:id="_18WnEFnyEeSuUcVwVEa2BQ" name="Bean2_1"/>
+      </packagedElement>
+      <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_UOhNkEimEeSYXMOYgqfvhA">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_xlFqoGRgEeSELtX3oECTeQ" source="PapyrusVersion">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_xlFqoWRgEeSELtX3oECTeQ" key="Version" value="0.0.3"/>
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_xlFqomRgEeSELtX3oECTeQ" key="Comment" value=""/>
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_xlGRsGRgEeSELtX3oECTeQ" key="Copyright" value="Copyright © 2014 Christian W. Damus.  All rights reserved."/>
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_xlGRsWRgEeSELtX3oECTeQ" key="Date" value="2014-10-31"/>
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_xlGRsmRgEeSELtX3oECTeQ" key="Author" value="Christian W. Damus"/>
+        </eAnnotations>
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_UO2kwEimEeSYXMOYgqfvhA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+          <references xmi:type="ecore:EPackage" href="profile/profile1.profile.uml#_2SDt8GEcEeSRDpkdeXfJuw"/>
+        </eAnnotations>
+        <appliedProfile xmi:type="uml:Profile" href="profile/profile1.profile.uml#_raLqoEigEeSRp-p9nf2EsA"/>
+      </profileApplication>
+    </packagedElement>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_4CRaQEilEeSYXMOYgqfvhA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_4CutQEilEeSYXMOYgqfvhA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/uml2/5.0.0/UML/Profile/Standard#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_PROFILES/Standard.profile.uml#_0"/>
+    </profileApplication>
+  </uml:Model>
+  <profile1.relationships:Import xmi:id="_BYpeUEinEeSYXMOYgqfvhA" base_Dependency="_ANhH8EinEeSYXMOYgqfvhA"/>
+  <profile1:Bean xmi:id="_D7ufEEinEeSYXMOYgqfvhA" base_Class="_8I2YoEimEeSYXMOYgqfvhA" kind="messagedriven"/>
+  <profile1:Bean xmi:id="_FOiKwEinEeSYXMOYgqfvhA" base_Class="_-9S2MEimEeSYXMOYgqfvhA" kind="session"/>
+  <css:ModelStyleSheets xmi:id="_dqMxwEr_EeSCH8H2QypBWw"/>
+  <Ecore:EClass xmi:id="_yiIR8Fg8EeSTy5tPYyanVg" base_Class="_aipeEEimEeSYXMOYgqfvhA"/>
+  <Ecore:EOperation xmi:id="_zlsAsFg8EeSTy5tPYyanVg" base_Operation="_d-B_0EimEeSYXMOYgqfvhA"/>
+</xmi:XMI>

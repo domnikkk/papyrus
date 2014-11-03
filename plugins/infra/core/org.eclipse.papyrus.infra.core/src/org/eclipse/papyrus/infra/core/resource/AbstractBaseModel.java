@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2010, 2014 CEA LIST and others.
+ * Copyright (c) 2010, 2014 CEA LIST, Christian W. Damus, and others.
  *
  *
  * All rights reserved. This program and the accompanying materials
@@ -11,6 +11,7 @@
  *  CEA LIST - Initial API and implementation
  *  Christian W. Damus (CEA) - manage models by URI, not IFile (CDO)
  *  Christian W. Damus (CEA) - bug 437052
+ *  Christian W. Damus - bug 399859
  *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.core.resource;
@@ -269,6 +270,10 @@ public abstract class AbstractBaseModel extends AbstractModel implements IVersio
 
 
 	protected Map<Object, Object> getSaveOptions() {
+		return getDefaultSaveOptions();
+	}
+
+	public static Map<Object, Object> getDefaultSaveOptions() {
 		Map<Object, Object> saveOptions = new HashMap<Object, Object>();
 
 		// default save options.
@@ -287,7 +292,6 @@ public abstract class AbstractBaseModel extends AbstractModel implements IVersio
 
 		return saveOptions;
 	}
-
 
 	@Override
 	public void saveCopy(IPath targetPathWithoutExtension, Map<Object, Object> targetMap) {

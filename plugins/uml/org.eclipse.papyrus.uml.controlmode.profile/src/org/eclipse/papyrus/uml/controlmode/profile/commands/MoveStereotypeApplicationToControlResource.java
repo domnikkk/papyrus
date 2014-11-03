@@ -1,6 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2013 Atos.
- *
+ * Copyright (c) 2013, 2014 Atos, Christian W. Damus, and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -9,6 +8,7 @@
  *
  * Contributors:
  *  Arthur Daussy (Atos) arthur.daussy@atos.net - Initial API and implementation
+ *  Christian W. Damus - bug 399859
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.controlmode.profile.commands;
@@ -19,7 +19,6 @@ import java.util.Set;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -27,6 +26,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.papyrus.infra.services.controlmode.ControlModeRequest;
 import org.eclipse.papyrus.infra.services.controlmode.commands.AbstractControlCommand;
+import org.eclipse.papyrus.uml.controlmode.profile.helpers.ProfileApplicationHelper;
 import org.eclipse.papyrus.uml.tools.model.UmlModel;
 import org.eclipse.uml2.uml.Element;
 
@@ -58,13 +58,13 @@ public final class MoveStereotypeApplicationToControlResource extends AbstractCo
 			}
 		}
 
+		Resource sourceResource = elem.eContainer().eResource();
 		Resource targetResource = getRequest().getTargetResource(UmlModel.UML_FILE_EXTENSION);
 		if (targetResource == null) {
 			return createNewControlCommandError("No uml resource created");//
 		}
 		for (Element e : elements) {
-			EList<EObject> stereotypeApplications = e.getStereotypeApplications();
-			targetResource.getContents().addAll(stereotypeApplications);
+			ProfileApplicationHelper.relocateStereotypeApplications(e, sourceResource, targetResource);
 		}
 		return CommandResult.newOKCommandResult();
 

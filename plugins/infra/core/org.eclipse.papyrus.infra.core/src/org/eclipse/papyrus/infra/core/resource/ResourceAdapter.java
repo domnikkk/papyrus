@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014 CEA and others.
+ * Copyright (c) 2014 CEA, Christian W. Damus, and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,10 +8,12 @@
  *
  * Contributors:
  *   Christian W. Damus (CEA) - Initial API and implementation
+ *   Christian W. Damus - bug 399859
  *
  */
 package org.eclipse.papyrus.infra.core.resource;
 
+import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.Notifier;
@@ -21,6 +23,13 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.transaction.NotificationFilter;
+import org.eclipse.emf.transaction.ResourceSetChangeEvent;
+import org.eclipse.emf.transaction.ResourceSetListener;
+import org.eclipse.emf.transaction.RollbackException;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
+
+import com.google.common.collect.ImmutableList;
 
 
 /**
@@ -38,6 +47,15 @@ public abstract class ResourceAdapter extends AdapterImpl {
 		// Don't need to track resources as targets (there are multiple)
 		if (newTarget instanceof ResourceSet) {
 			super.setTarget(newTarget);
+
+			// Discover existing resources. Iterate the current set; any new additions
+			// will be discovered automatically
+			for (Resource next : ImmutableList.copyOf(((ResourceSet) newTarget).getResources())) {
+				handleResourceAdded(next);
+				if (next.isLoaded()) {
+					handleResourceLoaded(next);
+				}
+			}
 		}
 	}
 
@@ -202,5 +220,103 @@ public abstract class ResourceAdapter extends AdapterImpl {
 
 	protected void handleRootRemoved(Resource resource, EObject root) {
 		// Pass
+	}
+
+	//
+	// Nested types
+	//
+
+	/**
+	 * A variant of the {@link ResourceAdapter} that is attached to a {@link TransactionalEditingDomain} to process batched notifications.
+	 */
+	public static class Transactional extends ResourceAdapter implements ResourceSetListener {
+		private final boolean isPrecommit;
+
+		private final NotificationFilter filter = NotificationFilter.NOT_TOUCH.and(createFilter());
+
+		/**
+		 * Initializes me as a post-commit resource notification handler.
+		 */
+		public Transactional() {
+			this(false);
+		}
+
+		/**
+		 * Initializes me as a pre- or post-commit resource notification handler.
+		 * 
+		 * @param isPrecommit
+		 *            {@code true} to react to pre-commit notifications; {@code false} to react to post-commit notifications
+		 */
+		public Transactional(boolean isPrecommit) {
+			this.isPrecommit = isPrecommit;
+		}
+
+		@Override
+		public boolean isAggregatePrecommitListener() {
+			return false;
+		}
+
+		@Override
+		public boolean isPrecommitOnly() {
+			return isPrecommit;
+		}
+
+		@Override
+		public boolean isPostcommitOnly() {
+			return !isPrecommit;
+		}
+
+		/**
+		 * Subclasses may override/extend this method to create custom filters, perhaps based on the default filter create by the superclass.
+		 * <b>Note</b> that this method is invoked by the superclass constructor, so subclasses must not attempt to access their own state.
+		 * 
+		 * @return my notification filter
+		 */
+		protected NotificationFilter createFilter() {
+			return NotificationFilter.createNotifierTypeFilter(ResourceSet.class).or(
+					NotificationFilter.createNotifierTypeFilter(Resource.class));
+		}
+
+		@Override
+		public NotificationFilter getFilter() {
+			return filter;
+		}
+
+		@Override
+		public void resourceSetChanged(ResourceSetChangeEvent event) {
+			handleResourceSetChangeEvent(event);
+		}
+
+		@Override
+		public Command transactionAboutToCommit(ResourceSetChangeEvent event) throws RollbackException {
+			handleResourceSetChangeEvent(event);
+			return null;
+		}
+
+		protected void handleResourceSetChangeEvent(ResourceSetChangeEvent event) {
+			for (Notification next : event.getNotifications()) {
+				notifyChanged(next);
+			}
+		}
+
+		@Override
+		public final void setTarget(Notifier newTarget) {
+			// Don't attach me to anything. I am fed directly by the editing domain
+		}
+
+		@Override
+		public final void unsetTarget(Notifier oldTarget) {
+			// Pass
+		}
+
+		@Override
+		protected final void addAdapter(Notifier notifier) {
+			// Don't attach me to anything. I am fed directly by the editing domain
+		}
+
+		@Override
+		protected final void removeAdapter(Notifier notifier) {
+			// Pass
+		}
 	}
 }

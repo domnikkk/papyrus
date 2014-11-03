@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014 CEA and others.
+ * Copyright (c) 2014 CEA, Christian W. Damus, and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,6 +8,7 @@
  *
  * Contributors:
  *   Christian W. Damus (CEA) - Initial API and implementation
+ *   Christian W. Damus - bug 399859
  *
  */
 package org.eclipse.papyrus.uml.modelrepair.internal.participants;
@@ -39,8 +40,10 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EStructuralFeature.Setting;
 import org.eclipse.emf.ecore.EcorePackage;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.util.ECrossReferenceAdapter;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.FeatureMap;
 import org.eclipse.emf.ecore.xmi.XMLResource;
@@ -50,7 +53,6 @@ import org.eclipse.papyrus.infra.emf.resource.IDependencyReplacementParticipant;
 import org.eclipse.papyrus.infra.emf.resource.Replacement;
 import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 import org.eclipse.papyrus.uml.modelrepair.Activator;
-import org.eclipse.uml2.common.util.UML2Util;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Namespace;
@@ -218,6 +220,18 @@ public class StereotypeApplicationRepairParticipant extends PackageOperations im
 		public void migrate(Collection<? extends EObject> stereotypeApplications, IProgressMonitor monitor) {
 			SubMonitor sub = SubMonitor.convert(monitor, (2 * stereotypeApplications.size()) + 2);
 
+			// Capture object IDs for later transfer to new stereotype applications
+			final Map<EObject, String> objectIDs = Maps.newHashMap();
+			for (EObject next : stereotypeApplications) {
+				Resource res = next.eResource();
+				if (res instanceof XMLResource) {
+					String id = ((XMLResource) res).getID(next);
+					if (id != null) {
+						objectIDs.put(next, id);
+					}
+				}
+			}
+
 			for (EObject next : stereotypeApplications) {
 				EObject newInstance = copier.copy(next);
 				if ((newInstance != null) && (newInstance != next)) {
@@ -244,26 +258,28 @@ public class StereotypeApplicationRepairParticipant extends PackageOperations im
 
 				if (copy != null) {
 					// Update the ID, if the old ID is known
-					Resource res = original.eResource();
-					if (res instanceof XMLResource) {
-						XMLResource xml = (XMLResource) res;
-						String id = xml.getID(original);
-						if (id != null) {
-							xml.setID(copy, id);
+					String id = objectIDs.get(original);
+					if (id != null) {
+						Resource res = copy.eResource();
+						if (res instanceof XMLResource) {
+							((XMLResource) res).setID(copy, id);
 						}
 					}
 
 					// Replace incoming references to the old stereotypes with references to the new stereotypes
 					for (Setting setting : ImmutableList.copyOf(getNonNavigableInverseReferences(original))) {
-						EStructuralFeature ref = setting.getEStructuralFeature();
+						// Don't update cross-references between the old stereotype applications!
+						if (!copier.containsKey(setting.getEObject())) {
+							EStructuralFeature ref = setting.getEStructuralFeature();
 
-						if ((ref != null) && ref.isChangeable()) {
-							if (ref.isMany()) {
-								@SuppressWarnings("unchecked")
-								EList<EObject> list = ((EList<EObject>) setting.getEObject().eGet(ref));
-								list.set(list.indexOf(original), copy);
-							} else {
-								setting.set(copy);
+							if ((ref != null) && ref.isChangeable()) {
+								if (ref.isMany()) {
+									@SuppressWarnings("unchecked")
+									EList<EObject> list = ((EList<EObject>) setting.getEObject().eGet(ref));
+									list.set(list.indexOf(original), copy);
+								} else {
+									setting.set(copy);
+								}
 							}
 						}
 					}
@@ -273,10 +289,43 @@ public class StereotypeApplicationRepairParticipant extends PackageOperations im
 			}
 			sub2.done();
 
-			UML2Util.destroyAll(stereotypeApplications);
+			// Delete all trace of the old stereotype applications
+			for (EObject root : stereotypeApplications) {
+				removeCrossReferences(root);
+
+				for (TreeIterator<EObject> iter = root.eAllContents(); iter.hasNext();) {
+					EObject next = iter.next();
+
+					// The 'mixed' feature-map of an AnyType typically includes EReferences that think they are containments but aren't,
+					// where there are cross-document references (which are represented in the XMI as nested elements)
+					if (next.eIsProxy() || !EcoreUtil.isAncestor(root, next)) {
+						// Don't mess with objects contained elsewhere; they are referenced, not actually contained
+						iter.prune();
+					} else {
+						removeCrossReferences(next);
+					}
+				}
+
+				// And detach it from wherever it may be (if anywhere)
+				EcoreUtil.remove(root);
+			}
+
 			sub.worked(1);
 
 			copier.clear();
+		}
+
+		private void removeCrossReferences(EObject object) {
+			ECrossReferenceAdapter xrefAdapter = ECrossReferenceAdapter.getCrossReferenceAdapter(object);
+			if (xrefAdapter != null) { // It should not be null because we have the UML CacheAdapter!
+				for (EStructuralFeature.Setting next : ImmutableList.copyOf(xrefAdapter.getInverseReferences(object))) {
+					EReference reference = (EReference) next.getEStructuralFeature();
+
+					if (reference.isChangeable() && !reference.isContainment() && !reference.isContainer() && !reference.isDerived()) {
+						EcoreUtil.remove(next, object);
+					}
+				}
+			}
 		}
 	}
 
@@ -409,11 +458,25 @@ public class StereotypeApplicationRepairParticipant extends PackageOperations im
 						if (referenced == null) {
 							String propertyName = getQualifiedName(UMLUtil.getNamedElement(copyFeature, eObject));
 							handleException(new IllegalStateException(String.format("Unresolved reference in stereotype property %s: %s", propertyName, ref))); //$NON-NLS-1$
-						} else if (!copyFeature.getEType().isInstance(referenced)) {
-							String propertyName = getQualifiedName(UMLUtil.getNamedElement(copyFeature, eObject));
-							handleException(new IllegalStateException(String.format("Attempt to reference object of type %s in stereotype property %s", UML2EcoreConverter.getOriginalName(referenced.eClass()), propertyName))); //$NON-NLS-1$
 						} else {
-							eAdd(copyEObject, copyFeature, referenced);
+							// Is it an AnyType? If so, perhaps we have already converted it
+							if (referenced instanceof AnyType) {
+								// Look for copy
+								EObject referencedCopy = get(referenced);
+								if (referencedCopy != null) {
+									referenced = referencedCopy;
+								} else {
+									// Create a new proxy for it
+									referenced = createProxy((EReference) copyFeature, (AnyType) referenced);
+								}
+							}
+
+							if (!copyFeature.getEType().isInstance(referenced)) {
+								String propertyName = getQualifiedName(UMLUtil.getNamedElement(copyFeature, eObject));
+								handleException(new IllegalStateException(String.format("Attempt to reference object of type %s in stereotype property %s", UML2EcoreConverter.getOriginalName(referenced.eClass()), propertyName))); //$NON-NLS-1$
+							} else {
+								eAdd(copyEObject, copyFeature, referenced);
+							}
 						}
 					}
 				} else if (copyFeature instanceof EAttribute) {
@@ -462,6 +525,24 @@ public class StereotypeApplicationRepairParticipant extends PackageOperations im
 			return baseResource.getResourceSet().getEObject(uri, true);
 		}
 
+		protected EObject createProxy(EReference reference, AnyType original) {
+			EObject result = original; // As a fall-back, we would just return the original and report a problem
+
+			EClass type = reference.getEReferenceType();
+			if (type.isAbstract()) {
+				// The original should have had type information, then, in the reference
+				type = getTarget(original);
+			}
+
+			if ((type != null) && !type.isAbstract()) {
+				result = EcoreUtil.create(type);
+				Resource resource = original.eResource();
+				((InternalEObject) result).eSetProxyURI(resource.getURI().appendFragment(resource.getURIFragment(original)));
+			}
+
+			return result;
+		}
+
 		protected void copyUnrecognizedContentMixed(EAttribute mixed, EObject eObject, EObject copyEObject) {
 			FeatureMap featureMap = (FeatureMap) eObject.eGet(mixed);
 			for (FeatureMap.Entry next : featureMap) {
@@ -488,19 +569,29 @@ public class StereotypeApplicationRepairParticipant extends PackageOperations im
 						} else if (copyFeature instanceof EReference) {
 							EReference reference = (EReference) copyFeature;
 							if (!reference.isContainment()) {
-								// Get the HREF/IDREF from the element, resolve the referenced object, and set it into the reference
-								String refs = getTextContent(anyType);
-								if (refs != null) {
-									for (String ref : whitespace.split(refs)) {
-										EObject referenced = resolveRef(eObject, ref);
-										if (referenced == null) {
-											String propertyName = getQualifiedName(UMLUtil.getNamedElement(copyFeature, eObject));
-											handleException(new IllegalStateException(String.format("Unresolved reference in stereotype property %s: %s", propertyName, ref))); //$NON-NLS-1$
-										} else if (!copyFeature.getEType().isInstance(referenced)) {
-											String propertyName = getQualifiedName(UMLUtil.getNamedElement(copyFeature, eObject));
-											handleException(new IllegalStateException(String.format("Attempt to reference object of type %s in stereotype property %s", UML2EcoreConverter.getOriginalName(referenced.eClass()), propertyName))); //$NON-NLS-1$
-										} else {
-											eAdd(copyEObject, reference, referenced);
+								if (anyType.eClass() != XMLTypePackage.Literals.ANY_TYPE) {
+									// We got a real proxy, somehow. Just use it
+									if (!copyFeature.getEType().isInstance(anyType)) {
+										String propertyName = getQualifiedName(UMLUtil.getNamedElement(copyFeature, eObject));
+										handleException(new IllegalStateException(String.format("Attempt to reference object of type %s in stereotype property %s", UML2EcoreConverter.getOriginalName(anyType.eClass()), propertyName))); //$NON-NLS-1$
+									} else {
+										eAdd(copyEObject, reference, anyType);
+									}
+								} else {
+									// Get the HREF/IDREF from the element, resolve the referenced object, and set it into the reference
+									String refs = getTextContent(anyType);
+									if (refs != null) {
+										for (String ref : whitespace.split(refs)) {
+											EObject referenced = resolveRef(eObject, ref);
+											if (referenced == null) {
+												String propertyName = getQualifiedName(UMLUtil.getNamedElement(copyFeature, eObject));
+												handleException(new IllegalStateException(String.format("Unresolved reference in stereotype property %s: %s", propertyName, ref))); //$NON-NLS-1$
+											} else if (!copyFeature.getEType().isInstance(referenced)) {
+												String propertyName = getQualifiedName(UMLUtil.getNamedElement(copyFeature, eObject));
+												handleException(new IllegalStateException(String.format("Attempt to reference object of type %s in stereotype property %s", UML2EcoreConverter.getOriginalName(referenced.eClass()), propertyName))); //$NON-NLS-1$
+											} else {
+												eAdd(copyEObject, reference, referenced);
+											}
 										}
 									}
 								}
@@ -653,7 +744,8 @@ public class StereotypeApplicationRepairParticipant extends PackageOperations im
 			// The base_Xyz extension end is always at most one, so it should be serialized as an IDREF
 			for (FeatureMap.Entry next : (FeatureMap) anyType.eGet(XMLTypePackage.Literals.ANY_TYPE__ANY_ATTRIBUTE)) {
 				if (next.getEStructuralFeature().getName().startsWith("base_")) {
-					EObject referenced = resolveRef(anyType, String.valueOf(next.getValue()));
+					Object value = next.getValue();
+					EObject referenced = (value instanceof EObject) ? (EObject) value : resolveRef(anyType, String.valueOf(next.getValue()));
 					if (referenced instanceof Element) {
 						result = (Element) referenced;
 						break;
@@ -665,7 +757,8 @@ public class StereotypeApplicationRepairParticipant extends PackageOperations im
 			if (result == null) {
 				for (FeatureMap.Entry next : (FeatureMap) anyType.eGet(XMLTypePackage.Literals.ANY_TYPE__MIXED)) {
 					if ((next.getEStructuralFeature() instanceof EReference) && next.getEStructuralFeature().getName().startsWith("base_")) {
-						EObject referenced = resolveRef(anyType, getTextContent((EObject) next.getValue()));
+						EObject value = (EObject) next.getValue();
+						EObject referenced = (value.eClass() != XMLTypePackage.Literals.ANY_TYPE) ? (EObject) value : resolveRef(anyType, getTextContent(value));
 						if (referenced instanceof Element) {
 							result = (Element) referenced;
 							break;

@@ -27,6 +27,7 @@
 		<module>../features/papyrus-main-features/org.eclipse.papyrus.sysml.nattable.feature</module>
 		<module>../features/papyrus-main-features/org.eclipse.papyrus.sysml.properties.feature</module>
 		<module>../features/papyrus-main-features/org.eclipse.papyrus.uml.alf.feature</module>
+        <module>../features/papyrus-main-features/org.eclipse.papyrus.uml.decoratormodel.feature</module>
 		<module>../features/papyrus-main-features/org.eclipse.papyrus.uml.diagram.css.feature</module>
 		<module>../features/papyrus-main-features/org.eclipse.papyrus.uml.diagram.feature</module>
 		<module>../features/papyrus-main-features/org.eclipse.papyrus.uml.feature</module>
@@ -204,6 +205,10 @@
 		<module>../plugins/uml/org.eclipse.papyrus.uml.appearance</module>
 		<module>../plugins/uml/org.eclipse.papyrus.uml.commands</module>
 		<module>../plugins/uml/org.eclipse.papyrus.uml.controlmode.profile</module>
+        <module>../plugins/uml/decoratormodel/org.eclipse.papyrus.uml.decoratormodel</module>
+        <module>../plugins/uml/decoratormodel/org.eclipse.papyrus.uml.decoratormodel.controlmode</module>
+        <module>../plugins/uml/decoratormodel/org.eclipse.papyrus.uml.decoratormodel.properties</module>
+        <module>../plugins/uml/decoratormodel/org.eclipse.papyrus.uml.decoratormodel.ui</module>
 		<module>../plugins/uml/diagram/org.eclipse.papyrus.uml.diagram.activity</module>
 		<module>../plugins/uml/diagram/org.eclipse.papyrus.uml.diagram.clazz</module>
 		<module>../plugins/uml/diagram/org.eclipse.papyrus.uml.diagram.common</module>
@@ -384,7 +389,7 @@
 			<id>mdt-uml2</id>
 			<layout>p2</layout>
 			<!-- updateFrom("MDT UML2",0) -->
-			<url>http://download.eclipse.org/modeling/mdt/uml2/updates/5.0</url>
+			<url>http://download.eclipse.org/modeling/mdt/uml2/updates/5.1-I-builds</url>
 		</repository>
 		<repository>
 			<id>mmt-qvto</id>

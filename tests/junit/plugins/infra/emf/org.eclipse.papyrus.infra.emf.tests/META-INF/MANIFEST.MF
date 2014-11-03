@@ -1,5 +1,6 @@
 Manifest-Version: 1.0
 Export-Package: org.eclipse.papyrus.infra.emf.advice,
+ org.eclipse.papyrus.infra.emf.resource.index,
  org.eclipse.papyrus.infra.emf.tests,
  org.eclipse.papyrus.infra.emf.utils
 Require-Bundle: org.eclipse.emf.ecore.xmi;bundle-version="2.8.0",
@@ -14,5 +15,5 @@ Bundle-Name: %pluginName
 Bundle-Localization: plugin
 Bundle-ManifestVersion: 2
 Bundle-SymbolicName: org.eclipse.papyrus.infra.emf.tests
-Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 

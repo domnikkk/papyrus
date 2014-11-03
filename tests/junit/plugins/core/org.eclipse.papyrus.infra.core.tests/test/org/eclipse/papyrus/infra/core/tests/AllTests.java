@@ -11,6 +11,8 @@
  *  Christian W. Damus (CEA LIST) - add test for AdapterUtils
  *  Christian W. Damus (CEA) - bug 402525
  *  Christian W. Damus (CEA) - bug 422257
+ *  Christian W. Damus (CEA) - bug 399859
+ *  
  *****************************************************************************/
 package org.eclipse.papyrus.infra.core.tests;
 
@@ -23,6 +25,7 @@ import org.eclipse.papyrus.infra.core.resource.ResourceAdapterTest;
 import org.eclipse.papyrus.infra.core.services.ComposedServiceTest;
 import org.eclipse.papyrus.infra.core.services.ServicesRegistryTest;
 import org.eclipse.papyrus.infra.core.utils.AdapterUtilsTest;
+import org.eclipse.papyrus.infra.core.utils.JobBasedFutureTest;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
@@ -31,19 +34,19 @@ import org.junit.runners.Suite.SuiteClasses;
 
 @RunWith(Suite.class)
 @SuiteClasses({
-// {oep.resource}
-ModelSetTest.class, AbstractModelWithSharedResourceTest.class, NestingTransactionalCommandStackTest.class, ResourceAdapterTest.class,
-// {oep}.core.services
-ComposedServiceTest.class, ServicesRegistryTest.class,
-// {oep}.core.lifecycleevents
-/* SaveAndDirtyServiceTest.class, */LifeCycleEventsProviderTest.class, 
-NestedEditorDelegatedOutlinePageTest.class,
-//{oep}.core.utils
-AdapterUtilsTest.class
+		// {oep.resource}
+		ModelSetTest.class, AbstractModelWithSharedResourceTest.class, NestingTransactionalCommandStackTest.class, ResourceAdapterTest.class,
+		// {oep}.core.services
+		ComposedServiceTest.class, ServicesRegistryTest.class,
+		// {oep}.core.lifecycleevents
+		/* SaveAndDirtyServiceTest.class, */LifeCycleEventsProviderTest.class,
+		NestedEditorDelegatedOutlinePageTest.class,
+		// {oep}.core.utils
+		AdapterUtilsTest.class, JobBasedFutureTest.class
 })
 /**
  * Suite Class for all tests in the plugin
  */
 public class AllTests {
-	//Junit 4 Test suite
+	// Junit 4 Test suite
 }

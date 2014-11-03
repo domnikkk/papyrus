@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2013, 2014 CEA LIST and others.
+ * Copyright (c) 2013, 2014 CEA LIST, Christian W. Damus, and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -10,6 +10,8 @@
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 434302
  *  Gabriel Pascual (ALL4TEC) gabriel.pascual@all4tec.net - Bug 435995
+ *  Christian W. Damus - bug 399859
+ *  
  *****************************************************************************/
 package org.eclipse.papyrus.uml.profile.service;
 
@@ -19,8 +21,8 @@ import java.util.Map;
 
 import org.eclipse.emf.common.command.CompoundCommand;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.papyrus.infra.core.editor.IMultiDiagramEditor;
 import org.eclipse.papyrus.infra.core.resource.ModelSet;
 import org.eclipse.papyrus.infra.core.resource.NotFoundException;
@@ -29,17 +31,19 @@ import org.eclipse.papyrus.infra.core.services.EditorLifecycleManager;
 import org.eclipse.papyrus.infra.core.services.IService;
 import org.eclipse.papyrus.infra.core.services.ServiceException;
 import org.eclipse.papyrus.infra.core.services.ServicesRegistry;
-import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 import org.eclipse.papyrus.uml.modelrepair.service.IStereotypeRepairService;
 import org.eclipse.papyrus.uml.profile.Activator;
 import org.eclipse.papyrus.uml.profile.service.ui.RefreshProfileDialog;
 import org.eclipse.papyrus.uml.profile.validation.ProfileValidationHelper;
 import org.eclipse.papyrus.uml.tools.commands.ApplyProfileCommand;
+import org.eclipse.papyrus.uml.tools.helper.IProfileApplicationDelegate;
+import org.eclipse.papyrus.uml.tools.helper.ProfileApplicationDelegateRegistry;
 import org.eclipse.papyrus.uml.tools.model.UmlModel;
 import org.eclipse.papyrus.uml.tools.utils.ProfileUtil;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Profile;
+import org.eclipse.uml2.uml.ProfileApplication;
 
 /**
  * If a local profile is applied on this model, and this profile has been
@@ -57,6 +61,8 @@ public class ReapplyProfilesService implements IService, EditorLifecycleEventLis
 	private org.eclipse.uml2.uml.Package rootPackage;
 
 	private IStereotypeRepairService stereotypeRepairService;
+
+	private IMultiDiagramEditor editor;
 
 	/**
 	 * {@inheritDoc}
@@ -80,6 +86,27 @@ public class ReapplyProfilesService implements IService, EditorLifecycleEventLis
 			stereotypeRepairService = servicesRegistry.getService(IStereotypeRepairService.class);
 		} catch (ServiceException ex) {
 			// If there's no stereotype repair service, then we don't have to worry about waiting for it
+		}
+	}
+
+	public void checkProfiles() {
+		if (editor != null) {
+			checkProfilesAfterRepair(editor);
+		}
+	}
+
+	private void checkProfilesAfterRepair(final IMultiDiagramEditor editor) {
+		if (stereotypeRepairService == null) {
+			// Just check profiles, now
+			checkProfiles(editor);
+		} else {
+			// Ensure that we only kick in the profile migration after any pending repair has completed
+			stereotypeRepairService.getPostRepairExecutor().execute(new Runnable() {
+
+				public void run() {
+					checkProfiles(editor);
+				}
+			});
 		}
 	}
 
@@ -124,8 +151,9 @@ public class ReapplyProfilesService implements IService, EditorLifecycleEventLis
 			return false;
 		}
 
-		for (Profile profile : currentPackage.getAppliedProfiles()) {
-			if (ProfileUtil.isDirty(currentPackage, profile)) {
+		IProfileApplicationDelegate delegate = ProfileApplicationDelegateRegistry.INSTANCE.getDelegate(currentPackage);
+		for (ProfileApplication profileApplication : delegate.getProfileApplications(currentPackage)) {
+			if (ProfileUtil.isDirty(currentPackage, delegate.getAppliedProfile(profileApplication))) {
 				RefreshProfileDialog dialog = new RefreshProfileDialog(editor.getSite().getShell(), this.rootPackage);
 				dialog.setCallback(getCallback(dialog));
 				dialog.open();
@@ -147,9 +175,9 @@ public class ReapplyProfilesService implements IService, EditorLifecycleEventLis
 
 			public void run() {
 				Map<Package, Collection<Profile>> profilesToReapply = dialog.getProfilesToReapply();
-				EditingDomain domain = EMFHelper.resolveEditingDomain(rootPackage);
+				TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(rootPackage);
 
-				if (domain instanceof TransactionalEditingDomain) {
+				if (domain != null) {
 
 					// Create a flat list of profiles, for validation
 					Collection<Profile> allProfiles = new LinkedList<Profile>();
@@ -161,7 +189,7 @@ public class ReapplyProfilesService implements IService, EditorLifecycleEventLis
 					if (ProfileValidationHelper.checkApplicableProfiles(Display.getCurrent().getActiveShell(), allProfiles)) {
 						CompoundCommand command = new CompoundCommand();
 						for (Map.Entry<Package, Collection<Profile>> profiles : profilesToReapply.entrySet()) {
-							command.append(new ApplyProfileCommand(profiles.getKey(), profiles.getValue(), (TransactionalEditingDomain) domain));
+							command.append(new ApplyProfileCommand(profiles.getKey(), profiles.getValue(), domain));
 						}
 
 						domain.getCommandStack().execute(command);
@@ -176,36 +204,27 @@ public class ReapplyProfilesService implements IService, EditorLifecycleEventLis
 		};
 	}
 
-	/**
-	 * {@inheritDoc}
-	 */
 	public void disposeService() throws ServiceException {
 		this.rootPackage = null;
 		this.stereotypeRepairService = null;
 		this.servicesRegistry = null;
+		this.editor = null;
 	}
 
 	public void postInit(IMultiDiagramEditor editor) {
-		// Nothing
-	}
-
-	public void postDisplay(final IMultiDiagramEditor editor) {
-		if (stereotypeRepairService == null) {
-			// Just check profiles, now
-			checkProfiles(editor);
-		} else {
-			// Ensure that we only kick in the profile migration after any pending repair has completed
-			stereotypeRepairService.getPostRepairExecutor().execute(new Runnable() {
-
-				public void run() {
-					checkProfiles(editor);
-				}
-			});
+		if (this.editor == null) {
+			this.editor = editor;
 		}
 	}
 
+	public void postDisplay(IMultiDiagramEditor editor) {
+		checkProfilesAfterRepair(editor);
+	}
+
 	public void beforeClose(IMultiDiagramEditor editor) {
-		// Nothing
+		if (editor == this.editor) {
+			this.editor = null;
+		}
 	}
 
 }

@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2011 CEA LIST.
+ * Copyright (c) 2011, 2014 CEA LIST, Christian W. Damus, and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,6 +8,8 @@
  *
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
+ *  Christian W. Damus - bug 399859
+ *  
  *****************************************************************************/
 package org.eclipse.papyrus.uml.properties.widgets;
 
@@ -37,8 +39,12 @@ public class ProfileApplicationPropertyEditor extends AbstractPropertyEditor {
 	 * @param style
 	 */
 	public ProfileApplicationPropertyEditor(Composite parent, int style) {
-		editor = new ProfileApplicationEditor(parent, style);
+		editor = createProfileApplicationEditor(parent, style);
 		super.setEditor(editor);
+	}
+
+	protected ProfileApplicationEditor createProfileApplicationEditor(Composite parent, int style) {
+		return new ProfileApplicationEditor(parent, style);
 	}
 
 	@Override

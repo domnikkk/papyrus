@@ -1,6 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2013 Atos.
- *
+ * Copyright (c) 2013, 2014 Atos, Christian W. Damus, and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -9,6 +8,7 @@
  *
  * Contributors:
  *  Arthur Daussy (Atos) arthur.daussy@atos.net - Initial API and implementation
+ *  Christian W. Damus - bug 399859
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.controlmode.profile.commands;
@@ -44,11 +44,12 @@ public class MoveProfileApplicationCommand extends AbstractControlCommand {
 	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		Package packageUncontroled = (Package) getRequest().getTargetObject();
+		Resource sourceResource = packageUncontroled.eContainer().eResource();
 		Resource targetResource = getRequest().getTargetResource(getRequest().getNewURI().fileExtension());
 		if (targetResource == null) {
 			return CommandResult.newErrorCommandResult("Unable to retreive target resource");
 		}
-		ProfileApplicationHelper.nestedRelocateStereotypeApplications(packageUncontroled, targetResource);
+		ProfileApplicationHelper.nestedRelocateStereotypeApplications(packageUncontroled, sourceResource, targetResource);
 		return CommandResult.newOKCommandResult();
 	}
 }

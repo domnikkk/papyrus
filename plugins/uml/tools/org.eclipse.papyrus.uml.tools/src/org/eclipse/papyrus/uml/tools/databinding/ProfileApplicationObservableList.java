@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2011, 2014 CEA LIST and others.
+ * Copyright (c) 2011, 2014 CEA LIST, Christian W. Damus, and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -9,10 +9,12 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - 402525
+ *  Christian W. Damus - bug 399859
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.tools.databinding;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
@@ -31,8 +33,10 @@ import org.eclipse.papyrus.infra.widgets.editors.AbstractEditor;
 import org.eclipse.papyrus.infra.widgets.editors.ICommitListener;
 import org.eclipse.papyrus.uml.tools.commands.ApplyProfileCommand;
 import org.eclipse.papyrus.uml.tools.commands.UnapplyProfileCommand;
+import org.eclipse.papyrus.uml.tools.helper.ProfileApplicationDelegateRegistry;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Profile;
+import org.eclipse.uml2.uml.ProfileApplication;
 
 /**
  *
@@ -52,8 +56,7 @@ public class ProfileApplicationObservableList extends WritableList implements IC
 	private AbstractStereotypeListener listener;
 
 	/**
-	 *
-	 * Constructor.
+	 * Initializes me with the default applied profiles provider.
 	 *
 	 * @param umlSource
 	 *            The Package on which the profiles are applied or unapplied
@@ -61,9 +64,11 @@ public class ProfileApplicationObservableList extends WritableList implements IC
 	 *            The editing domain on which the commands are executed
 	 */
 	public ProfileApplicationObservableList(Package umlSource, EditingDomain domain) {
-		super(new LinkedList<Object>(umlSource.getAppliedProfiles()), Profile.class);
+		super(getAppliedProfiles(umlSource), Profile.class);
+
 		this.umlSource = umlSource;
 		this.domain = domain;
+
 		commands = new LinkedList<Command>();
 
 		listener = new AbstractStereotypeListener(umlSource) {
@@ -194,10 +199,24 @@ public class ProfileApplicationObservableList extends WritableList implements IC
 		commands.clear();
 	}
 
-	private void refreshCacheList() {
+	protected final void refreshCacheList() {
 		wrappedList.clear();
-		wrappedList.addAll(umlSource.getAppliedProfiles());
+		wrappedList.addAll(getAppliedProfiles(umlSource));
 		fireListChange(null);
+	}
+
+	static Collection<Profile> getAppliedProfiles(Package package_) {
+		final ProfileApplicationDelegateRegistry reg = ProfileApplicationDelegateRegistry.INSTANCE;
+
+		List<Profile> result = new ArrayList<Profile>();
+		for (ProfileApplication next : reg.getDelegate(package_).getProfileApplications(package_)) {
+			Profile profile = reg.getDelegate(next).getAppliedProfile(next);
+			if (profile != null) {
+				result.add(profile);
+			}
+		}
+
+		return result;
 	}
 
 	/**

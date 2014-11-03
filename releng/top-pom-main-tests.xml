@@ -15,6 +15,7 @@
 	    <module>../features/papyrus-tests-features/org.eclipse.papyrus.tests.sysml.diagram.feature</module>
 	    <module>../features/papyrus-tests-features/org.eclipse.papyrus.tests.sysml.feature</module>
 	    <module>../features/papyrus-tests-features/org.eclipse.papyrus.tests.sysml.nattable.feature</module>
+        <module>../features/papyrus-tests-features/org.eclipse.papyrus.tests.uml.decoratormodel.feature</module>
 	    <module>../features/papyrus-tests-features/org.eclipse.papyrus.tests.uml.diagram.feature</module>
 	    <module>../features/papyrus-tests-features/org.eclipse.papyrus.tests.uml.feature</module>
 	    <module>../features/papyrus-tests-features/org.eclipse.papyrus.tests.uml.nattable.feature</module>
@@ -51,6 +52,8 @@
 		<module>../tests/junit/plugins/sysml/org.eclipse.papyrus.sysml.modelexplorer.tests</module>
 		<module>../tests/junit/plugins/sysml/org.eclipse.papyrus.sysml.service.types.tests</module>
 		<module>../tests/junit/plugins/sysml/org.eclipse.papyrus.sysml.tests</module>
+        <module>../tests/junit/plugins/uml/decoratormodel/org.eclipse.papyrus.uml.decoratormodel.tests</module>
+        <module>../tests/junit/plugins/uml/decoratormodel/org.eclipse.papyrus.uml.decoratormodel.controlmode.tests</module>
 		<module>../tests/junit/plugins/uml/diagram/org.eclipse.papyrus.uml.diagram.activity.tests</module>
 		<module>../tests/junit/plugins/uml/diagram/org.eclipse.papyrus.uml.diagram.clazz.tests</module>
 		<module>../tests/junit/plugins/uml/diagram/org.eclipse.papyrus.uml.diagram.statemachine.tests</module>
@@ -182,7 +185,7 @@
 			<id>mdt-uml2</id>
 			<layout>p2</layout>
 			<!-- updateFrom("MDT UML2",0) -->
-			<url>http://download.eclipse.org/modeling/mdt/uml2/updates/5.0</url>
+			<url>http://download.eclipse.org/modeling/mdt/uml2/updates/5.1-I-builds</url>
 		</repository>
 		<repository>
 			<id>mmt-qvto</id>

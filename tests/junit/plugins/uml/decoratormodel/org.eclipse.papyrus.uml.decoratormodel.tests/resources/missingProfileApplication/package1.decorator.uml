@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:profile1="http:///schemas/profile1/_2R_cgGEcEeSRDpkdeXfJuw/2" xmlns:profileext="http://www.eclipse.org/Papyrus/2014/profile/profileExternalization" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/profile1/_2R_cgGEcEeSRDpkdeXfJuw/2 profile/profile1.profile.uml#_2SDt8GEcEeSRDpkdeXfJuw">
+  <uml:Package xmi:id="_WG_4oFg9EeSTy5tPYyanVg" name="bean variant 1">
+    <packagedElement xmi:type="uml:Package" xmi:id="_WIr6sFg9EeSTy5tPYyanVg" name="testmodelpackage1">
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_WIshwFg9EeSTy5tPYyanVg" supplier="_WIr6sFg9EeSTy5tPYyanVg">
+        <client xmi:type="uml:Package" href="testmodel.uml#_MLPToEimEeSYXMOYgqfvhA"/>
+      </packagedElement>
+    </packagedElement>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_WHSzkFg9EeSTy5tPYyanVg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_WIrToFg9EeSTy5tPYyanVg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/Papyrus/2014/profile/profileExternalization#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://PAPYRUS_PROFILEEXT/ProfileExternalization.profile.uml#_Mzzc0EWjEeSNXJj2G3jVCw"/>
+    </profileApplication>
+  </uml:Package>
+  <profileext:ApplyProfiles xmi:id="_WItv4Fg9EeSTy5tPYyanVg" base_Dependency="_WIshwFg9EeSTy5tPYyanVg"/>
+  <profile1:Bean xmi:id="_kVTm4Fg8EeSTy5tPYyanVg" finder="_l4jiUFg8EeSTy5tPYyanVg">
+    <base_Class xmi:type="uml:Class" href="testmodel.uml#_aipeEEimEeSYXMOYgqfvhA"/>
+  </profile1:Bean>
+  <profile1:Finder xmi:id="_l4jiUFg8EeSTy5tPYyanVg">
+    <base_Operation xmi:type="uml:Operation" href="testmodel.uml#_d-B_0EimEeSYXMOYgqfvhA"/>
+  </profile1:Finder>
+  <profile1:Bean xmi:id="_o52wIFg8EeSTy5tPYyanVg" kind="session">
+    <base_Class xmi:type="uml:Class" href="testmodel.uml#_npgmoEimEeSYXMOYgqfvhA"/>
+  </profile1:Bean>
+  <profile1:Bean xmi:id="_p-z3AFnyEeSuUcVwVEa2BQ">
+    <base_Class xmi:type="uml:Class" href="testmodel.uml#_sl9KUFnwEeSuUcVwVEa2BQ"/>
+  </profile1:Bean>
+</xmi:XMI>

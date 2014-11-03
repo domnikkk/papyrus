@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2011 CEA LIST.
+ * Copyright (c) 2011, 2014 CEA LIST, Christian W. Damus, and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -9,6 +9,8 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Gabriel Pascual	(ALL4TEC) gabriel.pascual@all4tec.net - Initial API and implementation
+ *  Christian W. Damus - bug 399859
+ *  
  *****************************************************************************/
 package org.eclipse.papyrus.uml.tools.commands;
 
@@ -19,7 +21,10 @@ import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.papyrus.uml.tools.helper.IProfileApplicationDelegate;
+import org.eclipse.papyrus.uml.tools.helper.ProfileApplicationDelegateRegistry;
 import org.eclipse.papyrus.uml.tools.profile.definition.IPapyrusVersionConstants;
+import org.eclipse.papyrus.uml.tools.utils.CustomUMLUtil;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.ProfileApplication;
@@ -108,27 +113,56 @@ public class ApplyProfileCommand extends RecordingCommand {
 		this(umlPackage, Collections.singletonList(profile), editingDomain, saveProfileApplicationVersion);
 	}
 
-	/**
-	 * @see org.eclipse.emf.transaction.RecordingCommand#doExecute()
-	 *
-	 */
+	protected final Package getPackage() {
+		return umlPackage;
+	}
+
+	protected final Collection<Profile> getProfiles() {
+		return profiles;
+	}
+
 	@Override
 	protected void doExecute() {
-		for (Profile profile : profiles) {
-			// Apply profile
-			umlPackage.applyProfile(profile);
+		Package umlPackage = getPackage();
+		for (Profile profile : getProfiles()) {
+			ProfileApplication profileApplication = applyProfile(umlPackage, profile);
 
 			// Save version of applied profile if necessary
 			if (saveProfileApplicationVersion) {
-				ProfileApplication profileApplication = umlPackage.getProfileApplication(profile);
-
 				// Get version annotation in case it is a Papyrus profile
 				EAnnotation versionAnnotation = profile.getDefinition().getEAnnotation(IPapyrusVersionConstants.PAPYRUS_EANNOTATION_SOURCE);
 				if (versionAnnotation != null) {
-					profileApplication.getEAnnotations().add(0, EcoreUtil.copy(versionAnnotation));
+					EAnnotation existing = profileApplication.getEAnnotation(IPapyrusVersionConstants.PAPYRUS_EANNOTATION_SOURCE);
+					int index = 0;
+
+					if (existing != null) {
+						// Replace this; don't just add to the existing ones
+						index = profileApplication.getEAnnotations().indexOf(existing);
+						CustomUMLUtil.destroy(existing);
+					}
+
+					profileApplication.getEAnnotations().add(index, EcoreUtil.copy(versionAnnotation));
 				}
 			}
 		}
 	}
 
+	protected ProfileApplication applyProfile(Package package_, Profile profile) {
+		ProfileApplication result;
+
+		IProfileApplicationDelegate delegate = ProfileApplicationDelegateRegistry.INSTANCE.getDelegate(package_);
+
+		// Is this a re-application?
+		ProfileApplication existing = delegate.getProfileApplication(package_, profile);
+		if (existing != null) {
+			delegate = ProfileApplicationDelegateRegistry.INSTANCE.getDelegate(existing);
+			delegate.reapplyProfile(package_, profile);
+			result = existing;
+		} else {
+			package_.applyProfile(profile);
+			result = delegate.getProfileApplication(package_, profile);
+		}
+
+		return result;
+	}
 }

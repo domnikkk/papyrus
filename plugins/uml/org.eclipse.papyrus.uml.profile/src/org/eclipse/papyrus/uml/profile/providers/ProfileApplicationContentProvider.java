@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2012 CEA LIST.
+ * Copyright (c) 2012, 2014 CEA LIST, Christian W. Damus, and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -9,6 +9,8 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Gabriel Pascual	(ALL4TEC) gabriel.pascual@all4tec.net	- Initial API and implementation
+ *  Christian W. Damus - bug 399859
+ *  
  *****************************************************************************/
 package org.eclipse.papyrus.uml.profile.providers;
 
@@ -17,9 +19,10 @@ import java.util.List;
 
 import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.papyrus.infra.widgets.providers.AbstractStaticContentProvider;
+import org.eclipse.papyrus.uml.tools.helper.IProfileApplicationDelegate;
+import org.eclipse.papyrus.uml.tools.helper.ProfileApplicationDelegateRegistry;
 import org.eclipse.papyrus.uml.tools.utils.ProfileUtil;
 import org.eclipse.uml2.uml.Package;
-import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.ProfileApplication;
 
 
@@ -41,6 +44,8 @@ public class ProfileApplicationContentProvider extends AbstractStaticContentProv
 	 *            the root package
 	 */
 	public ProfileApplicationContentProvider(Package rootPackage) {
+		super();
+
 		this.rootPackage = rootPackage;
 	}
 
@@ -73,10 +78,9 @@ public class ProfileApplicationContentProvider extends AbstractStaticContentProv
 
 
 			// Parse applied profiles of parent to find dirty ones and get profile application
-			List<Profile> appliedProfiles = new LinkedList<Profile>(parentPackage.getAppliedProfiles());
-			for (Profile profile : appliedProfiles) {
-				if (ProfileUtil.isDirty(parentPackage, profile)) {
-					childrenList.add(parentPackage.getProfileApplication(profile));
+			for (ProfileApplication profileApplication : getDelegate(parentPackage).getProfileApplications(parentPackage)) {
+				if ((profileApplication != null) && ProfileUtil.isDirty(parentPackage, profileApplication.getAppliedProfile())) {
+					childrenList.add(profileApplication);
 				}
 			}
 
@@ -89,8 +93,11 @@ public class ProfileApplicationContentProvider extends AbstractStaticContentProv
 			children = new Object[0];
 		}
 
-
 		return children;
+	}
+
+	protected IProfileApplicationDelegate getDelegate(Package package_) {
+		return ProfileApplicationDelegateRegistry.INSTANCE.getDelegate(package_);
 	}
 
 	/**
@@ -120,6 +127,5 @@ public class ProfileApplicationContentProvider extends AbstractStaticContentProv
 	public boolean hasChildren(Object element) {
 		return getChildren(element).length > 0;
 	}
-
 
 }

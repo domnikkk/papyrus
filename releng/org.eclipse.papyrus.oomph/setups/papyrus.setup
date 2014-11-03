@@ -331,7 +331,7 @@
           </annotation>
         </repository>
         <repository
-            url="http://download.eclipse.org/modeling/mdt/uml2/updates/5.0">
+            url="http://download.eclipse.org/modeling/mdt/uml2/updates/5.1-I-builds">
           <annotation
               source="http://www.eclipse.org/Papyrus/2014/releng/dependencytools">
             <detail

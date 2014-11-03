@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2011, 2014 Atos Origin, CEA, and others.
+ * Copyright (c) 2011, 2014 Atos Origin, CEA, Christian W. Damus, and others.
  *
  *
  * All rights reserved. This program and the accompanying materials
@@ -14,6 +14,7 @@
  *  Christian W. Damus (CEA) - bug 429826
  *  Christian W. Damus (CEA) - bug 422257
  *  Christian W. Damus (CEA) - bug 415639
+ *  Christian W. Damus - bug 399859
  *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.emf.readonly;
@@ -109,7 +110,9 @@ public class PapyrusROTransactionalEditingDomain extends TransactionalEditingDom
 	}
 
 	protected void handleCrossResourceContainmentProxy(Notification notification) {
-		if (notification.getEventType() == Notification.RESOLVE) {
+		// If it's not an EReference, then it's a feature-map EAttribute from an unknown-schema AnyType
+		// and it won't contain cross-resource containment references (at least, not that we could tell)
+		if ((notification.getEventType() == Notification.RESOLVE) && (notification.getFeature() instanceof EReference)) {
 			EReference reference = (EReference) notification.getFeature();
 			if (reference.isContainment()) {
 				InternalEObject newValue = (InternalEObject) notification.getNewValue();

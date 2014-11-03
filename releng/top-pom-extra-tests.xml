@@ -157,7 +157,7 @@
 			<id>mdt-uml2</id>
 			<layout>p2</layout>
 			<!-- updateFrom("MDT UML2",0) -->
-			<url>http://download.eclipse.org/modeling/mdt/uml2/updates/5.0</url>
+			<url>http://download.eclipse.org/modeling/mdt/uml2/updates/5.1-I-builds</url>
 		</repository>
 		<repository>
 			<id>mmt-qvto</id>

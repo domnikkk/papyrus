@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014 CEA and others.
+ * Copyright (c) 2014 CEA, Christian W. Damus, and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,6 +8,7 @@
  *
  * Contributors:
  *   Christian W. Damus (CEA) - Initial API and implementation
+ *   Christian W. Damus - bug 399859
  *
  */
 package org.eclipse.papyrus.uml.modelrepair.internal.stereotypes;
@@ -24,8 +25,11 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.osgi.util.NLS;
 import org.eclipse.papyrus.infra.services.labelprovider.service.LabelProviderService;
 import org.eclipse.papyrus.uml.modelrepair.internal.participants.StereotypeApplicationRepairParticipant;
+import org.eclipse.papyrus.uml.tools.helper.IProfileApplicationDelegate;
+import org.eclipse.papyrus.uml.tools.helper.ProfileApplicationDelegateRegistry;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Profile;
+import org.eclipse.uml2.uml.ProfileApplication;
 
 import com.google.common.base.Supplier;
 import com.google.common.base.Suppliers;
@@ -84,12 +88,31 @@ public class ApplyProfileAction extends AbstractRepairAction {
 			// Apply the profile
 			StereotypeApplicationRepairParticipant.createStereotypeApplicationMigrator(profile, diagnostics).migrate(stereotypeApplications, sub.newChild(stereotypeApplications.size()));
 			for (Package next : packages) {
-				next.applyProfile(profile);
+				applyProfile(next, profile);
 			}
 
 			result = true;
 
 			sub.done();
+		}
+
+		return result;
+	}
+
+	protected ProfileApplication applyProfile(Package package_, Profile profile) {
+		ProfileApplication result;
+
+		IProfileApplicationDelegate delegate = ProfileApplicationDelegateRegistry.INSTANCE.getDelegate(package_);
+
+		// Is this a re-application?
+		ProfileApplication existing = delegate.getProfileApplication(package_, profile);
+		if (existing != null) {
+			delegate = ProfileApplicationDelegateRegistry.INSTANCE.getDelegate(existing);
+			delegate.reapplyProfile(package_, profile);
+			result = existing;
+		} else {
+			package_.applyProfile(profile);
+			result = delegate.getProfileApplication(package_, profile);
 		}
 
 		return result;

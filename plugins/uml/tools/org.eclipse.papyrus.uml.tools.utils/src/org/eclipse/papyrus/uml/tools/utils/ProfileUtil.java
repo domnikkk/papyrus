@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2012, 2013 CEA LIST.
+ * Copyright (c) 2012, 2014 CEA LIST, Christian W. Damus, and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -9,6 +9,7 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - Handle dynamic profile applications in CDO
+ *  Christian W. Damus - bug 399859
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.tools.utils;
@@ -30,8 +31,11 @@ import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 import org.eclipse.uml2.common.util.UML2Util;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Class;
+import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Profile;
+import org.eclipse.uml2.uml.ProfileApplication;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.UMLPackage;
@@ -42,7 +46,7 @@ import org.eclipse.uml2.uml.UMLPackage;
  * @author Camille Letavernier
  *
  */
-public class ProfileUtil {
+public class ProfileUtil extends org.eclipse.uml2.uml.util.UMLUtil {
 
 
 	/**
@@ -73,9 +77,9 @@ public class ProfileUtil {
 
 				// ckeck applied profile application definition vs profile definition referenced in file
 				Profile profileInFile = (Profile) (modelResource.getContents().get(0));
-
-				if (_package.getProfileApplication(_profile) != null) {
-					EPackage appliedProfileDefinition = _package.getProfileApplication(_profile).getAppliedDefinition();
+				ProfileApplication profileApplication = _package.getProfileApplication(_profile, true);
+				if (profileApplication != null) {
+					EPackage appliedProfileDefinition = profileApplication.getAppliedDefinition();
 					EPackage fileProfileDefinition = null;
 
 					// Check profiles qualified names to ensure the correct profiles are compared
@@ -230,5 +234,54 @@ public class ProfileUtil {
 		}
 
 		return null;
+	}
+
+	/**
+	 * Finds the profile application, if any, in the context of an {@code element} that supplies the given
+	 * stereotype Ecore definition.
+	 * 
+	 * @param element
+	 *            a model element
+	 * @param stereotypeDefinition
+	 *            the Ecore definition of a stereotype
+	 * 
+	 * @return the providing profile application, or {@code null} if none can be determined
+	 */
+	public static ProfileApplication getProfileApplication(Element element, EClass stereotypeDefinition) {
+		ProfileApplication result = null;
+
+		NamedElement umlDefinition = getNamedElement(stereotypeDefinition, element);
+		if (umlDefinition != null) {
+			Profile profile = getContainingProfile(umlDefinition);
+			if (profile != null) {
+				result = getApplicationOf(profile, element);
+			}
+		}
+
+		return result;
+	}
+
+	static Profile getContainingProfile(NamedElement umlDefinition) {
+		Profile result = null;
+
+		for (Package package_ = umlDefinition.getNearestPackage(); package_ != null; package_ = package_.getNestingPackage()) {
+			if (package_ instanceof Profile) {
+				result = (Profile) package_;
+				break;
+			}
+		}
+
+		return result;
+	}
+
+	static ProfileApplication getApplicationOf(Profile profile, Element context) {
+		ProfileApplication result = null;
+
+		Package package_ = context.getNearestPackage();
+		if (package_ != null) {
+			result = package_.getProfileApplication(profile, true);
+		}
+
+		return result;
 	}
 }

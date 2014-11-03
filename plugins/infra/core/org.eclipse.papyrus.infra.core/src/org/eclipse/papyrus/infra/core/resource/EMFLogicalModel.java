@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2013, 2014 CEA LIST and others.
+ * Copyright (c) 2013, 2014 CEA LIST, Christian W. Damus, and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -9,17 +9,20 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 437052
+ *  Christian W. Damus - bug 399859
  *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.core.resource;
 
 import java.io.IOException;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Set;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.papyrus.infra.core.Activator;
 
 /**
@@ -33,7 +36,18 @@ public abstract class EMFLogicalModel extends AbstractBaseModel implements IEMFM
 	protected final Set<Resource> resources = new HashSet<Resource>();
 
 	public Set<Resource> getResources() {
+		pruneDeletedResources();
 		return resources;
+	}
+
+	protected void pruneDeletedResources() {
+		ResourceSet rset = getModelManager();
+		for (Iterator<Resource> iter = resources.iterator(); iter.hasNext();) {
+			if (iter.next().getResourceSet() != rset) {
+				// This resource was deleted
+				iter.remove();
+			}
+		}
 	}
 
 	@Override

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ASCII"?>
+<environment:Environment
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:environment="http://www.eclipse.org/papyrus/properties/environment/0.9">
+  <constraintTypes
+      label="Has Externalized Profile Applications"
+      constraintClass="org.eclipse.papyrus.uml.decoratormodel.internal.properties.constraints.HasExternalizedProfileApplicationsConstraint"/>
+  <modelElementFactories
+      name="Package Factory"
+      factoryClass="org.eclipse.papyrus.uml.decoratormodel.properties.elements.PackageModelElementFactory"/>
+  <propertyEditorTypes
+      label="External Resource Profile Application Editor"
+      widgetClass="ProfileApplicationPropertyEditor"
+      namespace="//@namespaces.0"
+      type="Reference"
+      multiplicity="-1"/>
+  <propertyEditorTypes
+      label="Decorator Model Editor"
+      widgetClass="DecoratorModelPropertyEditor"
+      namespace="//@namespaces.0"
+      type="Reference"
+      multiplicity="-1"/>
+  <namespaces
+      name="umlprofileexternalresource"
+      value="org.eclipse.papyrus.uml.decoratormodel.properties.widgets"/>
+</environment:Environment>

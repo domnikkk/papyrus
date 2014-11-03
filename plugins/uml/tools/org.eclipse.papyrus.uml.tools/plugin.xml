@@ -2,6 +2,7 @@
 <?eclipse version="3.4"?>
 <plugin>
    <extension-point id="importSources" name="Package Import Sources" schema="/schema/importSources.exsd"/>
+   <extension-point id="profileApplicationDelegates" name="Profile Application Delegates" schema="schema/profileApplicationDelegates.exsd"/>
    
 <!-- Register the UML delegating constraint provider -->
 <extension

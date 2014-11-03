@@ -9,6 +9,7 @@ Export-Package: org.eclipse.papyrus.infra.emf,
  org.eclipse.papyrus.infra.emf.providers.strategy,
  org.eclipse.papyrus.infra.emf.requests,
  org.eclipse.papyrus.infra.emf.resource,
+ org.eclipse.papyrus.infra.emf.resource.index,
  org.eclipse.papyrus.infra.emf.utils
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
@@ -41,5 +42,5 @@ Bundle-Name: EMF Tools
 Bundle-Activator: org.eclipse.papyrus.infra.emf.Activator
 Bundle-ManifestVersion: 2
 Bundle-SymbolicName: org.eclipse.papyrus.infra.emf;singleton:=true
-Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 

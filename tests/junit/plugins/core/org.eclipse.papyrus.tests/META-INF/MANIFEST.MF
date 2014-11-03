@@ -62,7 +62,9 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.papyrus.sysml.nattable.requirement.tests;bundle-version="1.1.0",
  org.eclipse.papyrus.uml.textedit.port.tests;bundle-version="1.1.0",
  org.eclipse.papyrus.uml.textedit.property.tests;bundle-version="1.1.0",
- org.eclipse.papyrus.uml.textedit.parameter.tests;bundle-version="1.1.0"
+ org.eclipse.papyrus.uml.textedit.parameter.tests;bundle-version="1.1.0",
+ org.eclipse.papyrus.uml.decoratormodel.tests;bundle-version="1.1.0",
+ org.eclipse.papyrus.uml.decoratormodel.controlmode.tests;bundle-version="1.1.0"
 Bundle-Vendor: %providerName
 Bundle-ActivationPolicy: lazy
 Bundle-Version: 1.1.0.qualifier

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014 CEA and others.
+ * Copyright (c) 2014 CEA, Christian W. Damus, and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,6 +8,7 @@
  *
  * Contributors:
  *   Christian W. Damus (CEA) - Initial API and implementation
+ *   Christian W. Damus - bug 399859
  *
  */
 package org.eclipse.papyrus.uml.modelrepair.internal.stereotypes;
@@ -22,6 +23,7 @@ import java.util.regex.Pattern;
 
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
@@ -35,6 +37,8 @@ import org.eclipse.emf.ecore.util.FeatureMap;
 import org.eclipse.emf.ecore.util.FeatureMapUtil;
 import org.eclipse.papyrus.infra.services.labelprovider.service.LabelProviderService;
 import org.eclipse.papyrus.uml.modelrepair.internal.participants.StereotypesUtil;
+import org.eclipse.papyrus.uml.tools.helper.IProfileApplicationDelegate;
+import org.eclipse.papyrus.uml.tools.helper.ProfileApplicationDelegateRegistry;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Extension;
 import org.eclipse.uml2.uml.Package;
@@ -286,11 +290,12 @@ public class ZombieStereotypesDescriptor {
 			} else {
 				// Find the profile application
 				result = null;
-				for (Package pkg = base.getNearestPackage(); pkg != null; pkg = (pkg.getOwner() == null) ? null : pkg.getOwner().getNearestPackage()) {
-					for (ProfileApplication next : pkg.getProfileApplications()) {
+				out: for (Package pkg = base.getNearestPackage(); pkg != null; pkg = (pkg.getOwner() == null) ? null : pkg.getOwner().getNearestPackage()) {
+					IProfileApplicationDelegate delegate = ProfileApplicationDelegateRegistry.INSTANCE.getDelegate(pkg);
+					for (ProfileApplication next : delegate.getProfileApplications(pkg)) {
 						if (equal(next.getAppliedDefinition(), schema, root)) {
 							result = new ProfileContext(schema, next);
-							break;
+							break out;
 						}
 					}
 				}
@@ -318,9 +323,23 @@ public class ZombieStereotypesDescriptor {
 				}
 			} else if (FeatureMapUtil.isFeatureMap(next)) {
 				// Handle unknown schema
-				for (FeatureMap.Entry entry : (FeatureMap) stereotypeApplication.eGet(next)) {
-					if (entry.getEStructuralFeature().getName().startsWith(Extension.METACLASS_ROLE_PREFIX)) {
-						Object value = entry.getValue();
+				FeatureMap.Internal fmap = (FeatureMap.Internal) stereotypeApplication.eGet(next);
+				int entryIndex = -1;
+				for (FeatureMap.Entry entry : fmap) {
+					entryIndex++;
+					EStructuralFeature feature = entry.getEStructuralFeature();
+					if (feature.getName().startsWith(Extension.METACLASS_ROLE_PREFIX)) {
+						// In case it's a reference, ensure that we try to resolve it
+						Object value = fmap.get(feature, true);
+						if (value instanceof EList<?>) {
+							// As a member of the 'mixed' feature-map, it is assumed to have multiplicity
+							value = ((EList<?>) value).get(0);
+
+							// The feature-map list doesn't resolve proxies despite that we asked for resolving
+							if (feature instanceof EReference) {
+								value = fmap.resolveProxy(feature, entryIndex, 0, value);
+							}
+						}
 
 						if (value instanceof String) {
 							// Try it as an IDREF
@@ -358,11 +377,26 @@ public class ZombieStereotypesDescriptor {
 		result = schema1 == schema2;
 		if (!result && (schema1 != null)) { // Implies that schema2 != null, also
 			result = Objects.equal(schema1.getNsURI(), schema2.getNsURI());
+
 			if (!result) {
 				// Maybe one is a proxy whose URI is the schema-location of the other (being a demand-created package)
 				URI uri1 = guessURI(schema1);
 				URI uri2 = guessURI(schema2);
 				result = Objects.equal(uri1, uri2);
+
+				if (!result) {
+					// One more try: If both URIs match the auto-generated dynamic Ecore definition pattern, then we
+					// can try to normalize and compare them
+					Matcher m = AUTO_NSURI_PATTERN.matcher(uri1.toString());
+					if (m.matches()) {
+						String normalized1 = uri1.toString().substring(0, m.start(1));
+						m.reset(uri2.toString());
+						if (m.matches()) {
+							String normalized2 = uri2.toString().substring(0, m.start(1));
+							result = normalized1.equals(normalized2);
+						}
+					}
+				}
 			}
 		}
 
@@ -412,9 +446,7 @@ public class ZombieStereotypesDescriptor {
 		}
 
 		ProfileContext(EPackage schema, ProfileApplication profileApplication) {
-			this.applyingPackage = profileApplication.getApplyingPackage();
-			this.schema = schema;
-			init();
+			this(profileApplication.getApplyingPackage(), schema);
 		}
 
 		private void init() {

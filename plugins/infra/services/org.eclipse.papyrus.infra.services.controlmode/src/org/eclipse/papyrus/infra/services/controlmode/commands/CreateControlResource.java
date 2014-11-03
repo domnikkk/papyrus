@@ -1,6 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2013 Atos.
- *
+ * Copyright (c) 2013, 2014 Atos, Christian W. Damus, and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -9,6 +8,7 @@
  *
  * Contributors:
  *  Arthur Daussy (Atos) arthur.daussy@atos.net - Initial API and implementation
+ *  Christian W. Damus - bug 399859
  *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.services.controlmode.commands;
@@ -55,7 +55,15 @@ public class CreateControlResource extends AbstractControlResourceCommand {
 		Resource resource = getResourceSet().getResource(getTargetUri(), false);
 		boolean resourceInSet = resource != null;
 		if (resourceInSet) {
-			return CommandResult.newErrorCommandResult("The resource is already in the resource set");
+			if (failedToLoadBecauseNonexistent(resource)) {
+				// It doesn't exist, so by re-creating it we may actually help to fix unresolved proxies
+				// (such as from an out-of-date sash model)
+				resource.getResourceSet().getResources().remove(resource);
+				resource = null;
+				resourceInSet = false;
+			} else {
+				return CommandResult.newErrorCommandResult("The resource is already in the resource set");
+			}
 		}
 		Resource newResource = getResourceSet().createResource(getTargetUri());
 		if (newResource == null) {
@@ -68,6 +76,17 @@ public class CreateControlResource extends AbstractControlResourceCommand {
 		// In case the resource has been uncontrolled before the it's still the resource to delete on save of the model set. So it has to be removed
 		getRequest().getModelSet().getResourcesToDeleteOnSave().remove(newResource.getURI());
 		return CommandResult.newOKCommandResult(newResource);
+	}
+
+	boolean failedToLoadBecauseNonexistent(Resource resource) {
+		boolean result = false;
+
+		if (resource.getContents().isEmpty() && !resource.getErrors().isEmpty()) {
+			// Does it exist to load it?
+			result = !resource.getResourceSet().getURIConverter().exists(resource.getURI(), null);
+		}
+
+		return result;
 	}
 
 	@Override

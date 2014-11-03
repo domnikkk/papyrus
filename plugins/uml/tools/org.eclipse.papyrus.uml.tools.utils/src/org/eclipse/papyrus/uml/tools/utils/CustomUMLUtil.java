@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2013 CEA LIST.
+ * Copyright (c) 2013, 2014 CEA LIST, Christian W. Damus, and others.
  *
  *
  * All rights reserved. This program and the accompanying materials
@@ -9,9 +9,12 @@
  *
  * Contributors:
  *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
+ *  Christian W. Damus - bug 399859
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.tools.utils;
+
+import java.util.Collection;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
@@ -23,6 +26,8 @@ import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Extension;
 import org.eclipse.uml2.uml.util.UMLUtil;
 
+import com.google.common.collect.ImmutableList;
+
 /**
  * Provides methods for stereotypes application outside of a resource
  *
@@ -30,6 +35,15 @@ import org.eclipse.uml2.uml.util.UMLUtil;
  *
  */
 public class CustomUMLUtil extends UMLUtil {
+
+	public static void destroy(EObject eObject) {
+		UML2Util.destroy(eObject);
+	}
+
+	public static void destroyAll(Collection<? extends EObject> eObjects) {
+		// Iterate a copy of the list to avoid concurrent modification
+		UML2Util.destroyAll(ImmutableList.copyOf(eObjects));
+	}
 
 	/**
 	 * The StereotypeApplicationHelper can be overridden to change the default

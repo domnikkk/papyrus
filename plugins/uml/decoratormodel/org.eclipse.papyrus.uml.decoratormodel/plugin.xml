@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.core.expressions.propertyTesters">
+      <propertyTester
+            class="org.eclipse.papyrus.uml.decoratormodel.internal.expressions.FilePropertyTester"
+            id="org.eclipse.papyrus.uml.decoratormodel.file"
+            namespace="org.eclipse.papyrus.uml.decoratormodel"
+            properties="isDecoratorModel"
+            type="org.eclipse.core.resources.IFile">
+      </propertyTester>
+   </extension>
+   <extension
+         point="org.eclipse.papyrus.infra.core.model">
+      <model
+            classname="org.eclipse.papyrus.uml.decoratormodel.model.DecoratorModel">
+         <dependency>
+            <loadAfter
+                  identifier="org.eclipse.papyrus.infra.core.resource.uml.UmlModel">
+            </loadAfter>
+         </dependency>
+         <modelSnippet
+               classname="org.eclipse.papyrus.uml.decoratormodel.model.UMLSnippet"
+               description="UML model listener support for loaded decorator models.">
+         </modelSnippet>
+      </model>
+   </extension>
+   <extension
+         point="org.eclipse.emf.ecore.uri_mapping">
+      <mapping
+            source="pathmap://PAPYRUS_PROFILEEXT/"
+            target="platform:/plugin/org.eclipse.papyrus.uml.decoratormodel/model/">
+      </mapping>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated ProfileExternalization.profile -->
+      <package
+            uri="http://www.eclipse.org/Papyrus/2014/profile/profileExternalization"
+            class="org.eclipse.papyrus.uml.decoratormodel.profileExternalization.ProfileExternalizationPackage"
+            genModel="model/ProfileExternalization.profile.genmodel"/>
+   </extension>
+   <extension
+         point="org.eclipse.uml2.uml.generated_package">
+      <profile
+            location="pathmap://PAPYRUS_PROFILEEXT/ProfileExternalization.profile.uml#_Mzzc0EWjEeSNXJj2G3jVCw"
+            uri="http://www.eclipse.org/Papyrus/2014/profile/profileExternalization">
+      </profile>
+   </extension>
+   <extension
+         point="org.eclipse.core.contenttype.contentTypes">
+      <content-type
+            base-type="org.eclipse.uml2.uml"
+            id="org.eclipse.papyrus.uml.decoratormodel.decorator_model"
+            name="%content-type.name"
+            priority="normal">
+        <describer
+              class="org.eclipse.papyrus.infra.emf.resource.AnyRootNamespaceContentHandler$Describer">
+           <parameter
+                 name="namespacePattern"
+                 value="http://www\.eclipse\.org/Papyrus/2014/profile/profileExternalization" />
+        </describer>
+      </content-type>
+   </extension>
+   <extension
+         point="org.eclipse.papyrus.infra.emf.readonly.readOnlyHandler">
+      <readOnlyHandler
+            id="org.eclipse.papyrus.uml.decoratormodel.DecoratorModel"
+            class="org.eclipse.papyrus.uml.decoratormodel.internal.resource.DecoratorModelReadOnlyHandler"
+            priority="50">
+         <affinity
+               axis="discretion">
+         </affinity>
+      </readOnlyHandler>
+   </extension>
+   <extension
+         point="org.eclipse.papyrus.uml.tools.profileApplicationDelegates">
+      <delegate
+            class="org.eclipse.papyrus.uml.decoratormodel.internal.providers.ExternalizedProfileApplicationDelegate">
+      </delegate>
+   </extension>
+</plugin>

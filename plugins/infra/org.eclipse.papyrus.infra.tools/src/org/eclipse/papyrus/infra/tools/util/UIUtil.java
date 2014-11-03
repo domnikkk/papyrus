@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014 CEA and others.
+ * Copyright (c) 2014 CEA, Christian W. Damus, and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,10 +8,12 @@
  *
  * Contributors:
  *   Christian W. Damus (CEA) - Initial API and implementation
+ *   Christian W. Damus - bug 399859
  *
  */
 package org.eclipse.papyrus.infra.tools.util;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.LinkedList;
@@ -19,15 +21,21 @@ import java.util.List;
 import java.util.Queue;
 import java.util.concurrent.AbstractExecutorService;
 import java.util.concurrent.Callable;
+import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Future;
 import java.util.concurrent.FutureTask;
 import java.util.concurrent.RejectedExecutionException;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
+import org.eclipse.core.databinding.observable.Realm;
+import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.jface.operation.IRunnableContext;
+import org.eclipse.jface.operation.IRunnableWithProgress;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.IMemento;
 
@@ -53,7 +61,19 @@ public class UIUtil {
 	 * @return the executor
 	 */
 	public static ExecutorService createUIExecutor(Display display) {
-		return new UIExecutorService(display);
+		return new DisplayExecutorService(display);
+	}
+
+	/**
+	 * Create an executor that runs tasks asynchronously on an observable {@link Realm}. If you need synchronous execution, schedule {@link Future}s and {@linkplain Future#get() wait} for them.
+	 *
+	 * @param realm
+	 *            the observable realm on which thread to execute tasks
+	 *
+	 * @return the executor
+	 */
+	public static ExecutorService createObservableExecutor(Realm realm) {
+		return new RealmExecutorService(realm);
 	}
 
 	/**
@@ -132,11 +152,97 @@ public class UIUtil {
 		return asyncCall(Display.getDefault(), callable);
 	}
 
+	/**
+	 * Calls a {@code callable} in the given {@code context}.
+	 *
+	 * @param fork
+	 *            {@code true} if the runnable should be run in a separate thread,
+	 *            and {@code false} to run in the same thread
+	 * @param cancelable
+	 *            {@code true} to enable the cancellation, and {@code false} to make the operation uncancellable
+	 * @param runnable
+	 *            the runnable to run
+	 *
+	 * @exception InvocationTargetException
+	 *                wraps any exception or error which occurs
+	 *                while running the runnable
+	 * @exception InterruptedException
+	 *                propagated by the context if the runnable
+	 *                acknowledges cancellation by throwing this exception. This should not be thrown
+	 *                if {@code cancelable} is {@code false}.
+	 */
+	public static <V> V call(IRunnableContext context, boolean fork, boolean cancelable, ICallableWithProgress<V> callable) throws InvocationTargetException, InterruptedException {
+		class RunnableWrapper implements IRunnableWithProgress {
+			final ICallableWithProgress<V> delegate;
+
+			V result;
+
+			RunnableWrapper(ICallableWithProgress<V> delegate) {
+				this.delegate = delegate;
+			}
+
+			public void run(IProgressMonitor monitor) throws InvocationTargetException, InterruptedException {
+				result = delegate.call(monitor);
+			}
+		}
+
+		RunnableWrapper wrapper = new RunnableWrapper(callable);
+		context.run(fork, cancelable, wrapper);
+		return wrapper.result;
+	}
+
+	/**
+	 * Obtains a simple executor that asynchronously executes at most one task on the default
+	 * display thread. While any task is still pending execution on this executor,
+	 * all others are silently discarded. This is useful for cases where, for example, UI
+	 * refreshes are posted repeatedly from independent events that aren't aware of each other
+	 * but where each refresh task would repeat the same work.
+	 * 
+	 * @param display
+	 *            a display on which thread to execute tasks
+	 * 
+	 * @return the executor
+	 * 
+	 * @see #createAsyncOnceExecutor(Display)
+	 */
+	public static Executor createAsyncOnceExecutor() {
+		return createAsyncOnceExecutor(Display.getDefault());
+	}
+
+	/**
+	 * Obtains a simple executor that asynchronously executes at most one task on the given {@code display}'s thread. While any task is still pending execution on this executor,
+	 * all others are silently discarded. This is useful for cases where, for example, UI
+	 * refreshes are posted repeatedly from independent events that aren't aware of each other
+	 * but where each refresh task would repeat the same work.
+	 * 
+	 * @param display
+	 *            a display on which thread to execute tasks
+	 * 
+	 * @return the executor
+	 */
+	public static Executor createAsyncOnceExecutor(final Display display) {
+		return new Executor() {
+			private final AtomicBoolean pending = new AtomicBoolean();
+
+			public void execute(final Runnable task) {
+				if (pending.compareAndSet(false, true)) {
+					display.asyncExec(new Runnable() {
+
+						public void run() {
+							pending.set(false);
+							task.run();
+						}
+					});
+				}
+			}
+		};
+	}
+
 	//
 	// Nested types
 	//
 
-	private static class UIExecutorService extends AbstractExecutorService {
+	private static abstract class UIExecutorService extends AbstractExecutorService {
 
 		private final Lock lock = new ReentrantLock();
 
@@ -144,12 +250,10 @@ public class UIUtil {
 
 		private final Queue<RunnableWrapper> pending = new LinkedList<RunnableWrapper>();
 
-		private final Display display;
-
 		private volatile boolean shutdown;
 
-		UIExecutorService(Display display) {
-			this.display = display;
+		UIExecutorService() {
+			super();
 		}
 
 		public void execute(Runnable command) {
@@ -157,8 +261,10 @@ public class UIUtil {
 				throw new RejectedExecutionException("Executor service is shut down"); //$NON-NLS-1$
 			}
 
-			display.asyncExec(enqueue(command));
+			asyncExec(enqueue(command));
 		}
+
+		abstract void asyncExec(Runnable runnable);
 
 		public List<Runnable> shutdownNow() {
 			List<Runnable> result = new ArrayList<Runnable>();
@@ -286,4 +392,34 @@ public class UIUtil {
 			}
 		}
 	};
+
+	private static class DisplayExecutorService extends UIExecutorService {
+		private final Display display;
+
+		DisplayExecutorService(Display display) {
+			super();
+
+			this.display = display;
+		}
+
+		@Override
+		void asyncExec(Runnable runnable) {
+			display.asyncExec(runnable);
+		}
+	}
+
+	private static class RealmExecutorService extends UIExecutorService {
+		private final Realm realm;
+
+		RealmExecutorService(Realm realm) {
+			super();
+
+			this.realm = realm;
+		}
+
+		@Override
+		void asyncExec(Runnable runnable) {
+			realm.asyncExec(runnable);
+		}
+	}
 }

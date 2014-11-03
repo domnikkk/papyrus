@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2011, 2013 CEA LIST.
+ * Copyright (c) 2011, 2014 CEA LIST, Christian W. Damus, and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -9,6 +9,7 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - Refactoring package/profile import/apply UI for CDO
+ *  Christian W. Damus - bug 399859
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.properties.widgets;
@@ -24,13 +25,16 @@ import java.util.Map;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.jface.viewers.ColumnLabelProvider;
 import org.eclipse.jface.viewers.ColumnWeightData;
+import org.eclipse.jface.viewers.DelegatingStyledCellLabelProvider.IStyledLabelProvider;
+import org.eclipse.jface.viewers.IBaseLabelProvider;
 import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
+import org.eclipse.jface.viewers.StyledCellLabelProvider;
+import org.eclipse.jface.viewers.StyledString;
 import org.eclipse.jface.viewers.TableLayout;
 import org.eclipse.jface.viewers.ViewerCell;
 import org.eclipse.jface.window.Window;
@@ -49,6 +53,7 @@ import org.eclipse.papyrus.uml.tools.profile.definition.Version;
 import org.eclipse.papyrus.uml.tools.utils.ProfileUtil;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
@@ -117,16 +122,26 @@ public class ProfileApplicationEditor extends MultipleReferenceEditor {
 	}
 
 	@Override
-	public void setLabelProvider(ILabelProvider labelProvider) {
-		super.setLabelProvider(new ProfileColumnsLabelProvider(labelProvider));
+	public void setLabelProvider(IBaseLabelProvider labelProvider) {
+		super.setLabelProvider(createProfileColumnsLabelProvider(labelProvider));
 	}
 
-	protected class ProfileColumnsLabelProvider extends ColumnLabelProvider {
+	protected ProfileColumnsLabelProvider createProfileColumnsLabelProvider(IBaseLabelProvider labelProvider) {
+		return new ProfileColumnsLabelProvider(labelProvider);
+	}
+
+	protected class ProfileColumnsLabelProvider extends StyledCellLabelProvider {
 
 		private ILabelProvider defaultLabelProvider;
+		private IStyledLabelProvider styledLabelProvider;
 
-		public ProfileColumnsLabelProvider(ILabelProvider defaultLabelProvider) {
-			this.defaultLabelProvider = defaultLabelProvider;
+		public ProfileColumnsLabelProvider(IBaseLabelProvider defaultLabelProvider) {
+			if (defaultLabelProvider instanceof ILabelProvider) {
+				this.defaultLabelProvider = (ILabelProvider) defaultLabelProvider;
+			}
+			if (defaultLabelProvider instanceof IStyledLabelProvider) {
+				this.styledLabelProvider = (IStyledLabelProvider) defaultLabelProvider;
+			}
 		}
 
 		@Override
@@ -158,8 +173,11 @@ public class ProfileApplicationEditor extends MultipleReferenceEditor {
 		}
 
 		public void updateName(ViewerCell cell) {
-			cell.setImage(defaultLabelProvider.getImage(cell.getElement()));
-			cell.setText(defaultLabelProvider.getText(cell.getElement()));
+			cell.setImage(getImage(cell.getElement()));
+
+			StyledString styledText = getStyledText(cell.getElement());
+			cell.setText(styledText.getString());
+			cell.setStyleRanges(styledText.getStyleRanges());
 		}
 
 		public void updateLocation(ViewerCell cell, Profile profile) {
@@ -185,15 +203,28 @@ public class ProfileApplicationEditor extends MultipleReferenceEditor {
 
 			cell.setText(versionText);
 		}
+
+		public Image getImage(Object element) {
+			return (defaultLabelProvider != null) ? defaultLabelProvider.getImage(element) : null;
+		}
+
+		public StyledString getStyledText(Object element) {
+			return (styledLabelProvider != null) ? styledLabelProvider.getStyledText(element) : new StyledString((defaultLabelProvider != null) ? defaultLabelProvider.getText(element) : ""); //$NON-NLS-1$
+		}
 	}
 
 	@Override
 	protected void createListControls() {
 		super.createListControls();
+
 		up.dispose();
+		up = null;
+
 		down.dispose();
+		down = null;
+
 		edit.dispose();
-		up = down = edit = null;
+		edit = null;
 
 		add.setToolTipText(Messages.ProfileApplicationEditor_ApplyProfile);
 		addRegisteredProfile = createButton(Activator.getDefault().getImage("/icons/AddReg.gif"), Messages.ProfileApplicationEditor_ApplyRegisteredProfile); //$NON-NLS-1$

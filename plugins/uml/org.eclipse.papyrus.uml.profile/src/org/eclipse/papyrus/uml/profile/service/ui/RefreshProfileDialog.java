@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2012 CEA LIST.
+ * Copyright (c) 2012, 2014 CEA LIST, Christian W. Damus, and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -9,6 +9,8 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Gabriel Pascual (ALL4TEC) gabriel.pascual@all4tec.net - Initial API and implementation
+ *  Christian W. Damus - bug 399859
+ *  
  *****************************************************************************/
 package org.eclipse.papyrus.uml.profile.service.ui;
 
@@ -22,6 +24,8 @@ import org.eclipse.jface.viewers.TableLayout;
 import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.papyrus.uml.profile.providers.ProfileApplicationContentProvider;
 import org.eclipse.papyrus.uml.profile.providers.ProfileApplicationLabelProvider;
+import org.eclipse.papyrus.uml.tools.helper.IProfileApplicationDelegate;
+import org.eclipse.papyrus.uml.tools.helper.ProfileApplicationDelegateRegistry;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.TreeEditor;
 import org.eclipse.swt.events.SelectionEvent;
@@ -119,7 +123,7 @@ public class RefreshProfileDialog extends SelectionDialog {
 		Object currentDataItem = treeItem.getData();
 		if (currentDataItem instanceof ProfileApplication) {
 
-			final ProfileApplication profileApplication = (ProfileApplication) currentDataItem;
+			ProfileApplication profileApplication = (ProfileApplication) currentDataItem;
 
 			Tree tree = treeItem.getParent();
 
@@ -127,15 +131,18 @@ public class RefreshProfileDialog extends SelectionDialog {
 
 			checkbox.setSelection(true);
 
-			getProfilesToReapply((Package) profileApplication.getOwner()).add(profileApplication.getAppliedProfile());
+			IProfileApplicationDelegate delegate = getDelegate(profileApplication);
+			final Package applyingPackage = delegate.getApplyingPackage(profileApplication);
+			final Profile appliedProfile = delegate.getAppliedProfile(profileApplication);
+			getProfilesToReapply(applyingPackage).add(appliedProfile);
 
 			checkbox.addSelectionListener(new SelectionListener() {
 
 				public void widgetSelected(SelectionEvent e) {
 					if (checkbox.getSelection()) {
-						getProfilesToReapply((Package) profileApplication.getOwner()).add(profileApplication.getAppliedProfile());
+						getProfilesToReapply(applyingPackage).add(appliedProfile);
 					} else {
-						getProfilesToReapply((Package) profileApplication.getOwner()).remove(profileApplication.getAppliedProfile());
+						getProfilesToReapply(applyingPackage).remove(appliedProfile);
 					}
 				}
 
@@ -156,6 +163,10 @@ public class RefreshProfileDialog extends SelectionDialog {
 		for (TreeItem subitem : treeItem.getItems()) {
 			installEditors(subitem, currentDataItem);
 		}
+	}
+
+	protected IProfileApplicationDelegate getDelegate(ProfileApplication profileApplication) {
+		return ProfileApplicationDelegateRegistry.INSTANCE.getDelegate(profileApplication);
 	}
 
 	@Override
@@ -183,5 +194,4 @@ public class RefreshProfileDialog extends SelectionDialog {
 	public Map<Package, Collection<Profile>> getProfilesToReapply() {
 		return profilesToReapply;
 	}
-
 }
