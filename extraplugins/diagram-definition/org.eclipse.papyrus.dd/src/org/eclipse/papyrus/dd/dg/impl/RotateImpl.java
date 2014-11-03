@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- *
+ *  
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *
+ *  
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -33,7 +33,7 @@ import org.eclipse.papyrus.dd.dg.Rotate;
  * <li>{@link org.eclipse.papyrus.dd.dg.impl.RotateImpl#getCenter <em>Center</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
 public class RotateImpl extends TransformImpl implements Rotate {
@@ -41,7 +41,7 @@ public class RotateImpl extends TransformImpl implements Rotate {
 	/**
 	 * The default value of the '{@link #getAngle() <em>Angle</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getAngle()
 	 * @generated
 	 * @ordered
@@ -51,7 +51,7 @@ public class RotateImpl extends TransformImpl implements Rotate {
 	/**
 	 * The cached value of the '{@link #getAngle() <em>Angle</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getAngle()
 	 * @generated
 	 * @ordered
@@ -61,7 +61,7 @@ public class RotateImpl extends TransformImpl implements Rotate {
 	/**
 	 * The cached value of the '{@link #getCenter() <em>Center</em>}' containment reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getCenter()
 	 * @generated
 	 * @ordered
@@ -70,7 +70,7 @@ public class RotateImpl extends TransformImpl implements Rotate {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected RotateImpl() {
@@ -79,7 +79,7 @@ public class RotateImpl extends TransformImpl implements Rotate {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -89,41 +89,37 @@ public class RotateImpl extends TransformImpl implements Rotate {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public double getAngle() {
 		return angle;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public void setAngle(double newAngle) {
 		double oldAngle = angle;
 		angle = newAngle;
-		if(eNotificationRequired()) {
+		if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.ROTATE__ANGLE, oldAngle, angle));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public Point getCenter() {
 		return center;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetCenter(Point newCenter, NotificationChain msgs) {
@@ -131,42 +127,36 @@ public class RotateImpl extends TransformImpl implements Rotate {
 		center = newCenter;
 		if(eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DGPackage.ROTATE__CENTER, oldCenter, newCenter);
-			if(msgs == null) {
+			if(msgs == null)
 				msgs = notification;
-			} else {
+			else
 				msgs.add(notification);
-			}
 		}
 		return msgs;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public void setCenter(Point newCenter) {
 		if(newCenter != center) {
 			NotificationChain msgs = null;
-			if(center != null) {
+			if(center != null)
 				msgs = ((InternalEObject)center).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DGPackage.ROTATE__CENTER, null, msgs);
-			}
-			if(newCenter != null) {
+			if(newCenter != null)
 				msgs = ((InternalEObject)newCenter).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DGPackage.ROTATE__CENTER, null, msgs);
-			}
 			msgs = basicSetCenter(newCenter, msgs);
-			if(msgs != null) {
+			if(msgs != null)
 				msgs.dispatch();
-			}
-		} else if(eNotificationRequired()) {
+		} else if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.ROTATE__CENTER, newCenter, newCenter));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -180,7 +170,7 @@ public class RotateImpl extends TransformImpl implements Rotate {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -196,7 +186,7 @@ public class RotateImpl extends TransformImpl implements Rotate {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -214,7 +204,7 @@ public class RotateImpl extends TransformImpl implements Rotate {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -232,7 +222,7 @@ public class RotateImpl extends TransformImpl implements Rotate {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -248,14 +238,13 @@ public class RotateImpl extends TransformImpl implements Rotate {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if(eIsProxy()) {
+		if(eIsProxy())
 			return super.toString();
-		}
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (angle: ");
 		result.append(angle);

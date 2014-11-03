@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- *
+ *  
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *
+ *  
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -17,11 +17,11 @@ import org.eclipse.emf.common.util.DiagnosticChain;
 
 /**
  * <!-- begin-user-doc --> A representation of the model object ' <em><b>Scale</b></em>'. <!-- end-user-doc -->
- *
+ * 
  * <!-- begin-model-doc -->
  * Scale is a kind of transform that scales (resizes) a graphical element by a given factor in the x-y coordinate system.
  * <!-- end-model-doc -->
- *
+ * 
  * <p>
  * The following features are supported:
  * <ul>
@@ -29,7 +29,7 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  * <li>{@link org.eclipse.papyrus.dd.dg.Scale#getFactorY <em>Factor Y</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @see org.eclipse.papyrus.dd.dg.DGPackage#getScale()
  * @model
  * @generated
@@ -41,7 +41,7 @@ public interface Scale extends Transform {
 	 * begin-user-doc --> <!-- end-user-doc --> <!-- begin-model-doc --> a real
 	 * number (>=0) representing a scale factor along the x-axis. <!--
 	 * end-model-doc -->
-	 *
+	 * 
 	 * @return the value of the '<em>Factor X</em>' attribute.
 	 * @see #setFactorX(double)
 	 * @see org.eclipse.papyrus.dd.dg.DGPackage#getScale_FactorX()
@@ -55,7 +55,7 @@ public interface Scale extends Transform {
 	 * Sets the value of the '{@link org.eclipse.papyrus.dd.dg.Scale#getFactorX
 	 * <em>Factor X</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 *
+	 * 
 	 * @param value
 	 *        the new value of the '<em>Factor X</em>' attribute.
 	 * @see #getFactorX()
@@ -68,7 +68,7 @@ public interface Scale extends Transform {
 	 * begin-user-doc --> <!-- end-user-doc --> <!-- begin-model-doc --> a real
 	 * number(>=0) representing a scale factor along the y-axis. <!--
 	 * end-model-doc -->
-	 *
+	 * 
 	 * @return the value of the '<em>Factor Y</em>' attribute.
 	 * @see #setFactorY(double)
 	 * @see org.eclipse.papyrus.dd.dg.DGPackage#getScale_FactorY()
@@ -82,7 +82,7 @@ public interface Scale extends Transform {
 	 * Sets the value of the '{@link org.eclipse.papyrus.dd.dg.Scale#getFactorY
 	 * <em>Factor Y</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 *
+	 * 
 	 * @param value
 	 *        the new value of the '<em>Factor Y</em>' attribute.
 	 * @see #getFactorY()
@@ -93,7 +93,7 @@ public interface Scale extends Transform {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc --> <!-- begin-model-doc -->
 	 * scale factors cannot be negative.
-	 *
+	 * 
 	 * @param diagnostics
 	 *        The chain of diagnostics to which problems are to be appended.
 	 * @param context

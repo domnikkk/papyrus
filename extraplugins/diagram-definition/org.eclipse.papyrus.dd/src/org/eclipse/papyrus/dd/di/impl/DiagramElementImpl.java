@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- *
+ *  
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *
+ *  
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -36,14 +36,14 @@ import org.eclipse.uml2.common.util.DerivedUnionEObjectEList;
  * <li>{@link org.eclipse.papyrus.dd.di.impl.DiagramElementImpl#getSourceEdge <em>Source Edge</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
 public abstract class DiagramElementImpl extends MinimalEObjectImpl.Container implements DiagramElement {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected DiagramElementImpl() {
@@ -52,7 +52,7 @@ public abstract class DiagramElementImpl extends MinimalEObjectImpl.Container im
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -62,10 +62,9 @@ public abstract class DiagramElementImpl extends MinimalEObjectImpl.Container im
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public EList<EObject> getModelElement() {
 		return new DerivedUnionEObjectEList<EObject>(EObject.class, this, DIPackage.DIAGRAM_ELEMENT__MODEL_ELEMENT, null);
 	}
@@ -73,10 +72,9 @@ public abstract class DiagramElementImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public DiagramElement getOwningDiagramElement() {
 		DiagramElement owningDiagramElement = basicGetOwningDiagramElement();
 		return owningDiagramElement != null && owningDiagramElement.eIsProxy() ? (DiagramElement)eResolveProxy((InternalEObject)owningDiagramElement) : owningDiagramElement;
@@ -85,7 +83,7 @@ public abstract class DiagramElementImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public DiagramElement basicGetOwningDiagramElement() {
@@ -95,10 +93,9 @@ public abstract class DiagramElementImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public EList<DiagramElement> getOwnedDiagramElement() {
 		return new DerivedUnionEObjectEList<DiagramElement>(DiagramElement.class, this, DIPackage.DIAGRAM_ELEMENT__OWNED_DIAGRAM_ELEMENT, null);
 	}
@@ -106,10 +103,9 @@ public abstract class DiagramElementImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public EList<Edge> getTargetEdge() {
 		return new DerivedUnionEObjectEList<Edge>(Edge.class, this, DIPackage.DIAGRAM_ELEMENT__TARGET_EDGE, null);
 	}
@@ -117,20 +113,18 @@ public abstract class DiagramElementImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public EList<Edge> getSourceEdge() {
 		return new DerivedUnionEObjectEList<Edge>(Edge.class, this, DIPackage.DIAGRAM_ELEMENT__SOURCE_EDGE, null);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public Style getLocalStyle() {
 		Style localStyle = basicGetLocalStyle();
 		return localStyle != null && localStyle.eIsProxy() ? (Style)eResolveProxy((InternalEObject)localStyle) : localStyle;
@@ -139,7 +133,7 @@ public abstract class DiagramElementImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public Style basicGetLocalStyle() {
@@ -148,10 +142,9 @@ public abstract class DiagramElementImpl extends MinimalEObjectImpl.Container im
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public Style getSharedStyle() {
 		Style sharedStyle = basicGetSharedStyle();
 		return sharedStyle != null && sharedStyle.eIsProxy() ? (Style)eResolveProxy((InternalEObject)sharedStyle) : sharedStyle;
@@ -159,7 +152,7 @@ public abstract class DiagramElementImpl extends MinimalEObjectImpl.Container im
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public Style basicGetSharedStyle() {
@@ -168,7 +161,7 @@ public abstract class DiagramElementImpl extends MinimalEObjectImpl.Container im
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -177,21 +170,18 @@ public abstract class DiagramElementImpl extends MinimalEObjectImpl.Container im
 		case DIPackage.DIAGRAM_ELEMENT__MODEL_ELEMENT:
 			return getModelElement();
 		case DIPackage.DIAGRAM_ELEMENT__OWNING_DIAGRAM_ELEMENT:
-			if(resolve) {
+			if(resolve)
 				return getOwningDiagramElement();
-			}
 			return basicGetOwningDiagramElement();
 		case DIPackage.DIAGRAM_ELEMENT__OWNED_DIAGRAM_ELEMENT:
 			return getOwnedDiagramElement();
 		case DIPackage.DIAGRAM_ELEMENT__LOCAL_STYLE:
-			if(resolve) {
+			if(resolve)
 				return getLocalStyle();
-			}
 			return basicGetLocalStyle();
 		case DIPackage.DIAGRAM_ELEMENT__SHARED_STYLE:
-			if(resolve) {
+			if(resolve)
 				return getSharedStyle();
-			}
 			return basicGetSharedStyle();
 		case DIPackage.DIAGRAM_ELEMENT__TARGET_EDGE:
 			return getTargetEdge();
@@ -203,7 +193,7 @@ public abstract class DiagramElementImpl extends MinimalEObjectImpl.Container im
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -230,7 +220,7 @@ public abstract class DiagramElementImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public boolean isSetModelElement() {
@@ -240,7 +230,7 @@ public abstract class DiagramElementImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public boolean isSetOwningDiagramElement() {
@@ -250,7 +240,7 @@ public abstract class DiagramElementImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public boolean isSetOwnedDiagramElement() {
@@ -260,7 +250,7 @@ public abstract class DiagramElementImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public boolean isSetLocalStyle() {
@@ -270,7 +260,7 @@ public abstract class DiagramElementImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public boolean isSetSharedStyle() {
@@ -280,7 +270,7 @@ public abstract class DiagramElementImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public boolean isSetTargetEdge() {
@@ -290,7 +280,7 @@ public abstract class DiagramElementImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public boolean isSetSourceEdge() {

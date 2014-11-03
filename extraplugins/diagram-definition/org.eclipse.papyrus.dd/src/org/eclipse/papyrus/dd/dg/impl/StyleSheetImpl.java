@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- *
+ *  
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *
+ *  
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -37,7 +37,7 @@ import org.eclipse.papyrus.dd.dg.StyleSheet;
  * <li>{@link org.eclipse.papyrus.dd.dg.impl.StyleSheetImpl#getRules <em>Rule</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
 public class StyleSheetImpl extends MinimalEObjectImpl.Container implements StyleSheet {
@@ -45,7 +45,7 @@ public class StyleSheetImpl extends MinimalEObjectImpl.Container implements Styl
 	/**
 	 * The cached value of the '{@link #getRules() <em>Rule</em>}' containment reference list.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getRules()
 	 * @generated
 	 * @ordered
@@ -54,7 +54,7 @@ public class StyleSheetImpl extends MinimalEObjectImpl.Container implements Styl
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected StyleSheetImpl() {
@@ -63,7 +63,7 @@ public class StyleSheetImpl extends MinimalEObjectImpl.Container implements Styl
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -73,10 +73,9 @@ public class StyleSheetImpl extends MinimalEObjectImpl.Container implements Styl
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public EList<StyleRule> getRules() {
 		if(rules == null) {
 			rules = new EObjectContainmentEList<StyleRule>(StyleRule.class, this, DGPackage.STYLE_SHEET__RULE);
@@ -86,7 +85,7 @@ public class StyleSheetImpl extends MinimalEObjectImpl.Container implements Styl
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -100,7 +99,7 @@ public class StyleSheetImpl extends MinimalEObjectImpl.Container implements Styl
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -114,7 +113,7 @@ public class StyleSheetImpl extends MinimalEObjectImpl.Container implements Styl
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -131,7 +130,7 @@ public class StyleSheetImpl extends MinimalEObjectImpl.Container implements Styl
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -146,7 +145,7 @@ public class StyleSheetImpl extends MinimalEObjectImpl.Container implements Styl
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override

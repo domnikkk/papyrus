@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- *
+ *  
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *
+ *  
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -38,7 +38,7 @@ import org.eclipse.papyrus.dd.dg.Line;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.dd.dg.Line} object.
  * <!-- begin-user-doc --> <!--
  * end-user-doc -->
- *
+ * 
  * @generated
  */
 public class LineItemProvider extends MarkedElementItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, IItemColorProvider, IItemFontProvider {
@@ -46,7 +46,7 @@ public class LineItemProvider extends MarkedElementItemProvider implements IEdit
 	/**
 	 * This constructs an instance from a factory and a notifier. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public LineItemProvider(AdapterFactory adapterFactory) {
@@ -56,7 +56,7 @@ public class LineItemProvider extends MarkedElementItemProvider implements IEdit
 	/**
 	 * This returns the property descriptors for the adapted class. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -72,7 +72,7 @@ public class LineItemProvider extends MarkedElementItemProvider implements IEdit
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -87,7 +87,7 @@ public class LineItemProvider extends MarkedElementItemProvider implements IEdit
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -100,7 +100,7 @@ public class LineItemProvider extends MarkedElementItemProvider implements IEdit
 	/**
 	 * This returns Line.gif.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -112,7 +112,7 @@ public class LineItemProvider extends MarkedElementItemProvider implements IEdit
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -126,7 +126,7 @@ public class LineItemProvider extends MarkedElementItemProvider implements IEdit
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -145,7 +145,7 @@ public class LineItemProvider extends MarkedElementItemProvider implements IEdit
 	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s
 	 * describing the children that can be created under this object. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -158,7 +158,7 @@ public class LineItemProvider extends MarkedElementItemProvider implements IEdit
 	/**
 	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override

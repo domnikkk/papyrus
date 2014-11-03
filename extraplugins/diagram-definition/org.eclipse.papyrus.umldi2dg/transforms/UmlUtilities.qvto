@@ -1,0 +1,65 @@
+/**
+ * Copyright (c) 2014 CEA LIST.
+ *  
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *  
+ * Contributors:
+ *  CEA LIST - Initial API and implementation
+ */
+import org.eclipse.papyrus.dd.qvt.DDUtilities;
+
+modeltype DC uses "http://www.omg.org/spec/DD/20110901/DC";
+modeltype DG uses "http://www.omg.org/spec/DD/20110901/DG";
+modeltype DI uses "http://www.omg.org/spec/DD/20110901/DI";
+modeltype UMLDI uses "http://www.omg.org/spec/UML/20131001/UMLDI";
+modeltype UML uses "http://www.eclipse.org/uml2/4.0.0/UML";
+
+library UmlUtilities;
+
+property black = createColor('#000000');
+ 
+property white = createColor('#FFFFFF');
+
+query Collection(String)::separate(separator : String) : String {
+	var str := self->iterate(s; acc : String = '' | acc.concat(s.concat(separator)));
+	return if str = '' then '' else str.substring(1,str.size()-separator.size()) endif;
+}
+
+query Collection(String)::separate() : String {
+	return self->separate(', ');
+}
+
+query min(n1 : Real, n2 : Real) : Real {
+	return if (n1 > n2) then n2 else n1 endif;
+}
+
+query max(n1 : Real, n2 : Real) : Real {
+	return if (n1 > n2) then n1 else n2 endif;
+}
+
+query replace(o : String, n : String, p : String) : String {
+	return if n <> '' then p.replaceAll('<o>', o).replaceAll('<n>', n) else o endif;
+}
+
+query UMLDI::UmlDiagramElement::rootDiagram() : UMLDI::UmlDiagram {
+	return if (self.owningUmlDiagramElement->isEmpty()) then
+		self.oclAsType(UMLDI::UmlDiagram)
+	else
+		self.owningUmlDiagramElement.rootDiagram()
+	endif;
+}
+
+query UMLDI::UmlDiagramElement::resolveDefinitions() : DG::Definitions {
+	return self.rootDiagram().resolveone(DG::Definitions);
+}
+
+query DG::Definitions::getDefinition(s : String) : DG::Definition {
+	return self.definition->selectOne(id = s);
+}
+
+query DG::Definitions::getMarker(s : String) : DG::Marker {
+	return self.getDefinition(s).oclAsType(DG::Marker);
+}

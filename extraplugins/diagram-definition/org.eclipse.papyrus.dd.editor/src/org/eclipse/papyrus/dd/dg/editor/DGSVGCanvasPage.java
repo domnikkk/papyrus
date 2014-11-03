@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- *
+ *  
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *
+ *  
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -16,12 +16,15 @@ import java.awt.EventQueue;
 import java.awt.Frame;
 
 import org.apache.batik.swing.JSVGCanvas;
-import org.apache.batik.swing.svg.AbstractJSVGComponent;
+import org.apache.batik.swing.JSVGScrollPane;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.StructuredSelection;
+import org.eclipse.jface.viewers.TreeSelection;
 import org.eclipse.jface.viewers.Viewer;
+import org.eclipse.papyrus.dd.dg.RootCanvas;
 import org.eclipse.papyrus.dd.editor.DDEditorPage;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.awt.SWT_AWT;
@@ -47,7 +50,7 @@ public class DGSVGCanvasPage extends DDEditorPage {
 
 	/**
 	 * Constructs a new SVG canvas page for a given DG editor
-	 *
+	 * 
 	 * @param editor
 	 *            The DG editor
 	 */
@@ -63,12 +66,24 @@ public class DGSVGCanvasPage extends DDEditorPage {
 
 	@Override
 	public void refresh() {
-		EditingDomain editingDomain = getDDEditor().getEditingDomain();
-		Resource resource = editingDomain.getResourceSet().getResources()
-				.get(0);
+		RootCanvas canvas = null;
+		TreeSelection selection = (TreeSelection) ((DGEditor) getDDEditor()).getModelPage().getViewer().getSelection();
+		if (selection.isEmpty()) {
+			EditingDomain editingDomain = getDDEditor().getEditingDomain();
+			Resource resource = editingDomain.getResourceSet().getResources().get(0);
+			canvas = (RootCanvas) resource.getContents().get(0);
+		} else if (selection.getFirstElement() instanceof Resource) {
+			Resource resource = (Resource) selection.getFirstElement();
+			canvas = (RootCanvas) resource.getContents().get(0);
+		} else {
+			EObject obj = (EObject) selection.getFirstElement();
+			while (!(obj instanceof RootCanvas))
+				obj = obj.eContainer();
+			canvas = (RootCanvas) obj;
+		}
 
 		// (re)generate the SVG document
-		Document svgDocument = getConverter().convert(resource);
+		Document svgDocument = getConverter().convert(canvas);
 
 		// update the input of the viewer
 		viewer.setInput(svgDocument);
@@ -76,7 +91,7 @@ public class DGSVGCanvasPage extends DDEditorPage {
 
 	/**
 	 * Gets an instance of <code>DGToSVGConverter</code>
-	 *
+	 * 
 	 * @return DGToSVGConverter
 	 */
 	protected DGToSVGConverter getConverter() {
@@ -100,7 +115,7 @@ public class DGSVGCanvasPage extends DDEditorPage {
 
 		/**
 		 * Constructs a new Canvas viewer
-		 *
+		 * 
 		 * @param parent
 		 *            the SWT composite parent control
 		 */
@@ -111,8 +126,11 @@ public class DGSVGCanvasPage extends DDEditorPage {
 			frame.setVisible(true);
 
 			svgCanvas = new JSVGCanvas();
-			svgCanvas.setDocumentState(AbstractJSVGComponent.ALWAYS_DYNAMIC);
-			frame.add(svgCanvas);
+			svgCanvas.setDocumentState(JSVGCanvas.ALWAYS_DYNAMIC);
+
+			JSVGScrollPane pane = new JSVGScrollPane(svgCanvas);
+
+			frame.add(pane);
 		}
 
 		@Override
@@ -141,11 +159,10 @@ public class DGSVGCanvasPage extends DDEditorPage {
 					String value = svg
 							.getAttribute(DGToSVGConverter.SVG_BACKGROUND_COLOR_ATTRIBUTE);
 
-					if (value != null && value.length() > 0) {
+					if (value != null && value.length() > 0)
 						svgCanvas.setBackground(Color.decode(value));
-					} else {
+					else
 						svgCanvas.setBackground(Color.white);
-					}
 				}
 			});
 		}

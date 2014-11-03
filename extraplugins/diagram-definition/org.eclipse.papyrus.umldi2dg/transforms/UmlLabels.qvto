@@ -1,0 +1,387 @@
+/**
+ * Copyright (c) 2014 CEA LIST.
+ *  
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *  
+ * Contributors:
+ *  CEA LIST - Initial API and implementation
+ */
+import UmlUtilities;
+
+modeltype DC uses "http://www.omg.org/spec/DD/20110901/DC";
+modeltype DG uses "http://www.omg.org/spec/DD/20110901/DG";
+modeltype DI uses "http://www.omg.org/spec/DD/20110901/DI";
+modeltype UMLDI uses "http://www.omg.org/spec/UML/20131001/UMLDI";
+modeltype UML uses "http://www.eclipse.org/uml2/4.0.0/UML";
+
+library UmlLabels;
+
+query UML::Abstraction::keyword(label : UMLDI::UmlLabel) : String {
+	return 'abstraction';
+}
+
+query UML::BehavioralFeature::multiplicity(label : UMLDI::UmlLabel) : String {
+	var p = self.ownedParameter->any(direction = UML::ParameterDirectionKind::_return);
+	return if p.oclIsUndefined() then '' else p.multiplicity(label) endif;
+}
+
+query UML::BehavioralFeature::nameLabelToString(label : UMLDI::NameLabel) : String {
+	var s := self.name(label);
+	s := replace(s, self.stereotype(label), '<n> <o>');
+	s := replace(s, self.visibility(label), '<n> <o>');
+	s := replace(s, self.parameters(label), '<o> <n>');
+	s := replace(s, self.type(label), '<o> : <n>');
+	return replace(s, self.multiplicity(label), '<o> <n>');
+}
+
+query UML::BehavioralFeature::parameters(label : UMLDI::UmlLabel) : String {
+	var p = self.ownedParameter->reject(direction = UML::ParameterDirectionKind::_return);
+	return ' (' + p.signature(label)->separate() + ')';
+}
+
+query UML::BehavioralFeature::type(label : UMLDI::UmlLabel) : String {
+	var p = self.ownedParameter->any(direction = UML::ParameterDirectionKind::_return);
+	return if p.oclIsUndefined() then '' else p.type(label) endif;
+}
+
+query UML::Comment::bodyLabelToString(label : UMLDI::BodyLabel) : String {
+	return self.body(label);
+}
+
+query UML::Comment::body(label : UMLDI::UmlLabel) : String {
+	return if self.body.oclIsUndefined() then '' else self.body endif;
+}
+
+mapping UML::Comment::labelToText(label : UMLDI::UmlLabel) : DG::Text 
+	inherits UML::Element::labelToText
+{
+	anchor := DG::TextAnchor::start
+}
+
+query UML::Component::keyword(label : UMLDI::UmlLabel) : String {
+	return 'component';
+}
+
+query UML::Constraint::bodyLabelToString(label : UMLDI::BodyLabel) : String {
+	return self.body(label);
+}
+
+query UML::Constraint::body(label : UMLDI::UmlLabel) : String {
+	return if self.specification.oclIsUndefined() then '' else '{'+self.specification.name(label)+'}' endif;
+}
+
+mapping UML::Constraint::labelToText(label : UMLDI::UmlLabel) : DG::Text 
+	inherits UML::Element::labelToText
+{
+	if (label.oclIsKindOf(UMLDI::BodyLabel)) then
+		anchor := DG::TextAnchor::start
+	endif;
+}
+
+query UML::DataType::keyword(label : UMLDI::UmlLabel) : String {
+	return 'datatype';
+}
+
+query UML::Element::bodyLabelToString(label : UMLDI::BodyLabel) : String {
+	return '<BODY>';
+}
+
+query UML::Element::keyword(label : UMLDI::UmlLabel) : String {
+	return '';
+}
+
+query UML::Element::labelToString(label : UMLDI::UmlLabel) : String {
+	return switch {
+		case (label.oclIsKindOf(UMLDI::NameLabel)) 
+			self.nameLabelToString(label.oclAsType(UMLDI::NameLabel));
+		case (label.oclIsKindOf(UMLDI::BodyLabel)) 
+			self.bodyLabelToString(label.oclAsType(UMLDI::BodyLabel));
+		case (label.oclIsKindOf(UMLDI::MultiplicityLabel)) 
+			self.multiplicityLabelToString(label.oclAsType(UMLDI::MultiplicityLabel));
+		case (label.oclIsKindOf(UMLDI::ModifierLabel)) 
+			self.modifierLabelToString(label.oclAsType(UMLDI::ModifierLabel));
+		case (label.oclIsKindOf(UMLDI::PowerLabel)) 
+			self.powerLabelToString(label.oclAsType(UMLDI::PowerLabel));
+		case (label.oclIsKindOf(UMLDI::ItemLabel)) 
+			self.itemLabelToString(label.oclAsType(UMLDI::ItemLabel));
+		else
+			'<LABEL>';
+	};
+}
+
+mapping UML::Element::labelToText(label : UMLDI::UmlLabel) : DG::Text {
+	data := self.labelToString(label);
+	if (label.owningUmlDiagramElement.oclIsKindOf(UMLDI::UmlCompartment)) then
+		anchor := DG::TextAnchor::start
+	else
+		anchor := DG::TextAnchor::middle
+	endif;
+}
+
+query UML::Element::itemLabelToString(label : UMLDI::ItemLabel) : String {
+	return '<ITEM>';
+}
+
+query UML::Element::modifierLabelToString(label : UMLDI::ModifierLabel) : String {
+	return '<MODIFIER>';
+}
+
+query UML::Element::multiplicityLabelToString(label : UMLDI::MultiplicityLabel) : String {
+	return '<MULTIPLICITY>';
+}
+
+query UML::Element::nameLabelToString(label : UMLDI::NameLabel) : String {
+	return self.stereotype(label);
+}
+
+query UML::Element::powerLabelToString(label : UMLDI::PowerLabel) : String {
+	return '<POWER>';
+}
+
+query UML::Element::stereotype(label : UMLDI::UmlLabel) : String {
+	return replace('', self.keyword(label), '«<n>»');
+}
+
+query UML::ElementImport::alias(label : UMLDI::NameLabel) : String {
+	return if self.alias.oclIsUndefined() then '' else self.alias endif;
+}
+
+query UML::ElementImport::keyword(label : UMLDI::UmlLabel) : String {
+	var e = if self.importedElement.oclIsKindOf(UML::Package) then 'element ' else '' endif;
+	var k = if self.visibility = UML::VisibilityKind::public then 'import' else 'access' endif;
+	return e + k;
+}
+
+query UML::ElementImport::nameLabelToString(label : UMLDI::NameLabel) : String {
+	return replace(self.alias(label), self.stereotype(label), '<n>\\n<o>');
+}
+
+query UML::Enumeration::keyword(label : UMLDI::UmlLabel) : String {
+	return 'enumeration';
+}
+
+query UML::EnumerationLiteral::nameLabelToString(label : UMLDI::NameLabel) : String {
+	return self.name(label);
+}
+
+query UML::GeneralizationSet::covering(label : UMLDI::UmlLabel) : String {
+	return if self.isCovering then 'complete' else 'incomplete' endif;
+}
+
+query UML::GeneralizationSet::disjoint(label : UMLDI::UmlLabel) : String {
+	return if self.isDisjoint then 'disjoint' else 'overlapping' endif;
+}
+
+query UML::GeneralizationSet::modifierLabelToString(label : UMLDI::ModifierLabel) : String {
+	return '{'+self.covering(label)+', '+self.disjoint(label)+'}';
+}
+
+query UML::GeneralizationSet::powerLabelToString(label : UMLDI::PowerLabel) : String {
+	return if self.powertype.oclIsUndefined() then '' else ' : '+self.powertype.name(label) endif;
+}
+
+query UML::InformationFlow::itemLabelToString(label : UMLDI::ItemLabel) : String {
+	return self.conveyed->asOrderedSet().name(label)->separate();
+}
+
+query UML::InformationFlow::keyword(label : UMLDI::UmlLabel) : String {
+	return 'flow';
+}
+
+query UML::InformationItem::keyword(label : UMLDI::UmlLabel) : String {
+	return 'information';
+}
+
+mapping UML::InstanceSpecification::labelToText(label : UMLDI::UmlLabel) : DG::Text 
+	inherits UML::Element::labelToText
+{
+	_class := 'underlined';
+}
+
+query UML::InstanceSpecification::nameLabelToString(label : UMLDI::NameLabel) : String {
+	return replace(self.name(label), self.type(label), '<o> : <n>');
+}
+
+query UML::InstanceSpecification::type(label : UMLDI::UmlLabel) : String {
+	return if (self.classifier->notEmpty()) then self.classifier->asOrderedSet().name(label)->separate() else '' endif;
+}
+
+query UML::Interface::keyword(label : UMLDI::UmlLabel) : String {
+	return 'interface';
+}
+
+query UML::LiteralString::value(label : UMLDI::UmlLabel) : String {
+	return if self.value.oclIsUndefined() then '' else '"'+self.value+'"' endif;
+}
+
+query UML::MultiplicityElement::lower(label : UMLDI::UmlLabel) : String {
+	return if self.lowerValue.oclIsUndefined() then '' else self.lowerValue.name(label) endif;
+}
+
+query UML::MultiplicityElement::multiplicity(label : UMLDI::UmlLabel) : String {
+	var lower = self.lower(label);
+	var upper = self.upper(label);
+	return switch {
+		case (lower = '' and upper = '') '';
+		case (lower = '1' and upper = '1') '[1]';
+		case (lower = '0' and upper = '*') '[*]';
+		else '['+lower+'..'+upper+']';
+	};
+}
+
+query UML::MultiplicityElement::upper(label : UMLDI::UmlLabel) : String {
+	return if self.upperValue.oclIsUndefined() then '' else self.upperValue.name(label) endif;
+}
+
+query UML::NamedElement::name(label : UMLDI::UmlLabel) : String {
+	return if self.name.oclIsUndefined() then '' else self.name endif;
+}
+
+query UML::NamedElement::nameLabelToString(label : UMLDI::NameLabel) : String {
+	return replace(self.name(label), self.stereotype(label), '<n>\\n<o>');
+}
+
+query UML::NamedElement::visibility(label : UMLDI::UmlLabel) : String {
+	return switch {
+		case (self.visibility = UML::VisibilityKind::package) '~';
+		case (self.visibility = UML::VisibilityKind::protected) '#';
+		case (self.visibility = UML::VisibilityKind::private) '-';
+		else '+';
+	};
+}
+
+query UML::OperationTemplateParameter::name(label : UMLDI::UmlLabel) : String {
+	var e = self.parameteredElement.oclAsType(UML::Operation);
+	return if e.oclIsUndefined() then '' else replace(e.name(label), e.parameters(label), '<o> <n>') endif;
+}
+
+query UML::PackageImport::keyword(label : UMLDI::UmlLabel) : String {
+	return 'import';
+}
+
+query UML::PackageMerge::keyword(label : UMLDI::UmlLabel) : String {
+	return 'merge';
+}
+
+query UML::Parameter::direction(label : UMLDI::UmlLabel) : String {
+	return switch {
+		case (self.direction = UML::ParameterDirectionKind::_in) 'in';
+		case (self.direction = UML::ParameterDirectionKind::_inout) 'inout';
+		case (self.direction = UML::ParameterDirectionKind::_out) 'out';
+		else 'return';
+	};
+}
+
+query UML::Parameter::signature(label : UMLDI::UmlLabel) : String {
+	var s := self.name(label);
+	s := replace(s, self.stereotype(label), '<n> <o>');
+	s := replace(s, self.direction(label), '<n> <o>');
+	s := replace(s, self.type(label), '<o> : <n>');
+	s := replace(s, self.multiplicity(label), '<o> <n>');
+	return replace(s, self.defaultValue(label), '<o> = <n>');
+}
+
+query UML::Parameter::defaultValue(label : UMLDI::UmlLabel) : String {
+	return if self.defaultValue.oclIsUndefined() then '' else self.defaultValue.name(label) endif;
+}
+
+query UML::PrimitiveType::keyword(label : UMLDI::UmlLabel) : String {
+	return 'primitive';
+}
+
+query UML::Property::defaultValue(label : UMLDI::UmlLabel) : String {
+	return if self.defaultValue.oclIsUndefined() then '' else self.defaultValue.name(label) endif;
+}
+
+query UML::Property::derivation(label : UMLDI::UmlLabel) : String {
+	return if self.isDerived then '/' else '' endif;
+}
+
+query UML::Property::multiplicityLabelToString(label : UMLDI::MultiplicityLabel) : String {
+	return self.multiplicity(label);
+}
+
+query UML::Property::nameLabelToString(label : UMLDI::NameLabel) : String {
+	var s := if label.owningUmlDiagramElement.oclIsKindOf(UMLDI::UmlEdge) then 
+		self.name(label)
+	else 
+		self.signature(label)
+	endif;
+	s := replace(s, self.derivation(label), '<n><o>');
+	return replace(s, self.visibility(label), '<n> <o>');
+}
+
+query UML::Property::signature(label : UMLDI::UmlLabel) : String {
+	var s := self.name(label);
+	s := replace(s, self.stereotype(label), '<n> <o>');
+	s := replace(s, self.type(label), '<o> : <n>');
+	s := replace(s, self.multiplicity(label), '<o> <n>');
+	return replace(s, self.defaultValue(label), '<o> = <n>');
+}
+
+query UML::Realization::keyword(label : UMLDI::UmlLabel) : String {
+	return '';
+}
+
+query UML::Reception::keyword(label : UMLDI::UmlLabel) : String {
+	return 'signal';
+}
+
+query UML::Signal::keyword(label : UMLDI::UmlLabel) : String {
+	return 'signal';
+}
+
+query UML::Slot::defaultValue(label : UMLDI::UmlLabel) : String {
+	return if self.value->isEmpty() then '' else self.value.name(label)->separate() endif;
+}
+
+query UML::Slot::name(label : UMLDI::UmlLabel) : String {
+	return if self.definingFeature.oclIsUndefined() then '' else self.definingFeature.name(label) endif;
+}
+
+query UML::Slot::nameLabelToString(label : UMLDI::NameLabel) : String {
+	var s := replace(self.name(label), self.type(label), '<o> : <n>');
+	return replace(s, self.defaultValue(label), '<o> = <n>');
+}
+
+query UML::Slot::type(label : UMLDI::UmlLabel) : String {
+	return if self.definingFeature.oclIsUndefined() then '' else self.definingFeature.type(label) endif;
+}
+
+query UML::Substitution::keyword(label : UMLDI::UmlLabel) : String {
+	return 'substitute';
+}
+
+query UML::TemplateParameter::name(label : UMLDI::UmlLabel) : String {
+	var e = self.parameteredElement.oclAsType(UML::NamedElement);
+	return if e.oclIsUndefined() then '' else e.name(label) endif;
+}
+
+query UML::TemplateParameter::nameLabelToString(label : UMLDI::NameLabel) : String {
+	return replace(self.name(label), self.type(label), '<o> : <n>');
+}
+
+query UML::TemplateParameter::type(label : UMLDI::UmlLabel) : String {
+	return if self.parameteredElement.oclIsUndefined() then '' else self.parameteredElement.metaClassName() endif;
+}
+
+query UML::TypedElement::type(label : UMLDI::UmlLabel) : String {
+	return if (self.type.oclIsUndefined()) then '' else self.type.name(label) endif;
+}
+
+query UML::Usage::keyword(label : UMLDI::UmlLabel) : String {
+	return 'use';
+}
+
+query UML::ValueSpecification::name(label : UMLDI::UmlLabel) : String {
+	return if (self.name.oclIsUndefined()) then self.value(label) else self.name endif;
+}
+
+query UML::ValueSpecification::value(label : UMLDI::UmlLabel) : String {
+	var v = self.stringValue();
+	return if v.oclIsUndefined() then '' else v endif;
+}
+

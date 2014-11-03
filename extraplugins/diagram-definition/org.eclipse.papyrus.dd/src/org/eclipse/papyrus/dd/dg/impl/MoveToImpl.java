@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- *
+ *  
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *
+ *  
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -32,7 +32,7 @@ import org.eclipse.papyrus.dd.dg.MoveTo;
  * <li>{@link org.eclipse.papyrus.dd.dg.impl.MoveToImpl#getPoint <em>Point</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
 public class MoveToImpl extends PathCommandImpl implements MoveTo {
@@ -40,7 +40,7 @@ public class MoveToImpl extends PathCommandImpl implements MoveTo {
 	/**
 	 * The cached value of the '{@link #getPoint() <em>Point</em>}' containment reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getPoint()
 	 * @generated
 	 * @ordered
@@ -49,7 +49,7 @@ public class MoveToImpl extends PathCommandImpl implements MoveTo {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected MoveToImpl() {
@@ -58,7 +58,7 @@ public class MoveToImpl extends PathCommandImpl implements MoveTo {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -68,17 +68,16 @@ public class MoveToImpl extends PathCommandImpl implements MoveTo {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public Point getPoint() {
 		return point;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetPoint(Point newPoint, NotificationChain msgs) {
@@ -86,42 +85,36 @@ public class MoveToImpl extends PathCommandImpl implements MoveTo {
 		point = newPoint;
 		if(eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DGPackage.MOVE_TO__POINT, oldPoint, newPoint);
-			if(msgs == null) {
+			if(msgs == null)
 				msgs = notification;
-			} else {
+			else
 				msgs.add(notification);
-			}
 		}
 		return msgs;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public void setPoint(Point newPoint) {
 		if(newPoint != point) {
 			NotificationChain msgs = null;
-			if(point != null) {
+			if(point != null)
 				msgs = ((InternalEObject)point).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DGPackage.MOVE_TO__POINT, null, msgs);
-			}
-			if(newPoint != null) {
+			if(newPoint != null)
 				msgs = ((InternalEObject)newPoint).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DGPackage.MOVE_TO__POINT, null, msgs);
-			}
 			msgs = basicSetPoint(newPoint, msgs);
-			if(msgs != null) {
+			if(msgs != null)
 				msgs.dispatch();
-			}
-		} else if(eNotificationRequired()) {
+		} else if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.MOVE_TO__POINT, newPoint, newPoint));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -135,7 +128,7 @@ public class MoveToImpl extends PathCommandImpl implements MoveTo {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -149,7 +142,7 @@ public class MoveToImpl extends PathCommandImpl implements MoveTo {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -164,7 +157,7 @@ public class MoveToImpl extends PathCommandImpl implements MoveTo {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -179,7 +172,7 @@ public class MoveToImpl extends PathCommandImpl implements MoveTo {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override

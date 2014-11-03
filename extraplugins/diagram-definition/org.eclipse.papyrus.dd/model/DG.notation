@@ -690,7 +690,7 @@
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QZ6UUvpWEeO_u4Z14juDDg"/>
       </children>
       <element xmi:type="uml:Class" href="DG.uml#Rectangle"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QZy_kfpWEeO_u4Z14juDDg" y="180" height="61"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QZy_kfpWEeO_u4Z14juDDg" x="3" y="180" height="61"/>
     </children>
     <children xmi:type="notation:Shape" xmi:id="_TqvL4PpWEeO_u4Z14juDDg" type="2008" fontName="Lucida Grande" fontHeight="11" lineColor="0">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Tqvy8PpWEeO_u4Z14juDDg" source="ShadowFigure">
@@ -966,7 +966,7 @@
       </children>
       <styles xmi:type="notation:FontStyle" xmi:id="_QZ9-sfpWEeO_u4Z14juDDg" fontName="Lucida Grande" fontHeight="11"/>
       <element xmi:type="uml:Generalization" href="DG.uml#_2PiDMfo2EeOw_Nx9vOEGaA"/>
-      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_QZ9-svpWEeO_u4Z14juDDg" points="[59, -61, -244, 160]$[59, -161, -244, 60]$[322, -161, 19, 60]$[322, -181, 19, 40]"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_QZ9-svpWEeO_u4Z14juDDg" points="[62, -61, -258, 160]$[62, -161, -258, 60]$[340, -161, 20, 60]$[340, -181, 20, 40]"/>
       <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_aYoAMfpWEeO_u4Z14juDDg" id="(0.5,1.0)"/>
       <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_aYoAMvpWEeO_u4Z14juDDg" id="(0.5535714285714286,0.0)"/>
     </edges>

@@ -100,7 +100,7 @@
           <body>id->notEmpty() implies id.size() > 0</body>
         </specification>
       </ownedRule>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_3JUlwM6jEeOqlr8E3pzO9g" name="id" visibility="public" isID="true">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_3JUlwM6jEeOqlr8E3pzO9g" name="id" visibility="public" isUnique="false">
         <ownedComment xmi:type="uml:Comment" xmi:id="_3JUlwc6jEeOqlr8E3pzO9g" annotatedElement="_3JUlwM6jEeOqlr8E3pzO9g">
           <body>a point to move to in the coordinate system</body>
         </ownedComment>

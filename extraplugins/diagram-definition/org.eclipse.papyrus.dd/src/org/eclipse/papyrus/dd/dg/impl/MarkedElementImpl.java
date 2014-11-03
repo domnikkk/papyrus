@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- *
+ *  
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *
+ *  
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -38,7 +38,7 @@ import org.eclipse.papyrus.dd.dg.util.DGValidator;
  * <li>{@link org.eclipse.papyrus.dd.dg.impl.MarkedElementImpl#getStartMarker <em>Start Marker</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
 public abstract class MarkedElementImpl extends GraphicalElementImpl implements MarkedElement {
@@ -46,7 +46,7 @@ public abstract class MarkedElementImpl extends GraphicalElementImpl implements 
 	/**
 	 * The cached value of the '{@link #getEndMarker() <em>End Marker</em>}' reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getEndMarker()
 	 * @generated
 	 * @ordered
@@ -56,7 +56,7 @@ public abstract class MarkedElementImpl extends GraphicalElementImpl implements 
 	/**
 	 * The cached value of the '{@link #getMidMarker() <em>Mid Marker</em>}' reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getMidMarker()
 	 * @generated
 	 * @ordered
@@ -66,7 +66,7 @@ public abstract class MarkedElementImpl extends GraphicalElementImpl implements 
 	/**
 	 * The cached value of the '{@link #getStartMarker() <em>Start Marker</em>}' reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getStartMarker()
 	 * @generated
 	 * @ordered
@@ -75,7 +75,7 @@ public abstract class MarkedElementImpl extends GraphicalElementImpl implements 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected MarkedElementImpl() {
@@ -84,7 +84,7 @@ public abstract class MarkedElementImpl extends GraphicalElementImpl implements 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -94,18 +94,16 @@ public abstract class MarkedElementImpl extends GraphicalElementImpl implements 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public Marker getEndMarker() {
 		if(endMarker != null && endMarker.eIsProxy()) {
 			InternalEObject oldEndMarker = (InternalEObject)endMarker;
 			endMarker = (Marker)eResolveProxy(oldEndMarker);
 			if(endMarker != oldEndMarker) {
-				if(eNotificationRequired()) {
+				if(eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DGPackage.MARKED_ELEMENT__END_MARKER, oldEndMarker, endMarker));
-				}
 			}
 		}
 		return endMarker;
@@ -113,7 +111,7 @@ public abstract class MarkedElementImpl extends GraphicalElementImpl implements 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public Marker basicGetEndMarker() {
@@ -122,32 +120,28 @@ public abstract class MarkedElementImpl extends GraphicalElementImpl implements 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public void setEndMarker(Marker newEndMarker) {
 		Marker oldEndMarker = endMarker;
 		endMarker = newEndMarker;
-		if(eNotificationRequired()) {
+		if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.MARKED_ELEMENT__END_MARKER, oldEndMarker, endMarker));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public Marker getMidMarker() {
 		if(midMarker != null && midMarker.eIsProxy()) {
 			InternalEObject oldMidMarker = (InternalEObject)midMarker;
 			midMarker = (Marker)eResolveProxy(oldMidMarker);
 			if(midMarker != oldMidMarker) {
-				if(eNotificationRequired()) {
+				if(eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DGPackage.MARKED_ELEMENT__MID_MARKER, oldMidMarker, midMarker));
-				}
 			}
 		}
 		return midMarker;
@@ -155,7 +149,7 @@ public abstract class MarkedElementImpl extends GraphicalElementImpl implements 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public Marker basicGetMidMarker() {
@@ -164,32 +158,28 @@ public abstract class MarkedElementImpl extends GraphicalElementImpl implements 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public void setMidMarker(Marker newMidMarker) {
 		Marker oldMidMarker = midMarker;
 		midMarker = newMidMarker;
-		if(eNotificationRequired()) {
+		if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.MARKED_ELEMENT__MID_MARKER, oldMidMarker, midMarker));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public Marker getStartMarker() {
 		if(startMarker != null && startMarker.eIsProxy()) {
 			InternalEObject oldStartMarker = (InternalEObject)startMarker;
 			startMarker = (Marker)eResolveProxy(oldStartMarker);
 			if(startMarker != oldStartMarker) {
-				if(eNotificationRequired()) {
+				if(eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DGPackage.MARKED_ELEMENT__START_MARKER, oldStartMarker, startMarker));
-				}
 			}
 		}
 		return startMarker;
@@ -197,7 +187,7 @@ public abstract class MarkedElementImpl extends GraphicalElementImpl implements 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public Marker basicGetStartMarker() {
@@ -206,23 +196,21 @@ public abstract class MarkedElementImpl extends GraphicalElementImpl implements 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public void setStartMarker(Marker newStartMarker) {
 		Marker oldStartMarker = startMarker;
 		startMarker = newStartMarker;
-		if(eNotificationRequired()) {
+		if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.MARKED_ELEMENT__START_MARKER, oldStartMarker, startMarker));
-		}
 	}
 
 	/**
 	 * The cached validation expression for the ' {@link #referencedStartMarkerHasId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * <em>Referenced Start Marker Has Id</em>}' invariant operation. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #referencedStartMarkerHasId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
@@ -231,10 +219,9 @@ public abstract class MarkedElementImpl extends GraphicalElementImpl implements 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public boolean referencedStartMarkerHasId(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return DGValidator.validate(DGPackage.Literals.MARKED_ELEMENT, this, diagnostics, context, "http://www.eclipse.org/emf/2002/Ecore/OCL", DGPackage.Literals.MARKED_ELEMENT___REFERENCED_START_MARKER_HAS_ID__DIAGNOSTICCHAIN_MAP, REFERENCED_START_MARKER_HAS_ID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION, Diagnostic.ERROR, DGValidator.DIAGNOSTIC_SOURCE, DGValidator.MARKED_ELEMENT__REFERENCED_START_MARKER_HAS_ID);
 	}
@@ -243,7 +230,7 @@ public abstract class MarkedElementImpl extends GraphicalElementImpl implements 
 	 * The cached validation expression for the ' {@link #referencedMidMarkerHasId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * <em>Referenced Mid Marker Has Id</em>}' invariant operation. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #referencedMidMarkerHasId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
@@ -252,10 +239,9 @@ public abstract class MarkedElementImpl extends GraphicalElementImpl implements 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public boolean referencedMidMarkerHasId(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return DGValidator.validate(DGPackage.Literals.MARKED_ELEMENT, this, diagnostics, context, "http://www.eclipse.org/emf/2002/Ecore/OCL", DGPackage.Literals.MARKED_ELEMENT___REFERENCED_MID_MARKER_HAS_ID__DIAGNOSTICCHAIN_MAP, REFERENCED_MID_MARKER_HAS_ID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION, Diagnostic.ERROR, DGValidator.DIAGNOSTIC_SOURCE, DGValidator.MARKED_ELEMENT__REFERENCED_MID_MARKER_HAS_ID);
 	}
@@ -264,7 +250,7 @@ public abstract class MarkedElementImpl extends GraphicalElementImpl implements 
 	 * The cached validation expression for the ' {@link #referencedEndMarkerHasId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * <em>Referenced End Marker Has Id</em>}' invariant operation. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #referencedEndMarkerHasId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
@@ -273,36 +259,32 @@ public abstract class MarkedElementImpl extends GraphicalElementImpl implements 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public boolean referencedEndMarkerHasId(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return DGValidator.validate(DGPackage.Literals.MARKED_ELEMENT, this, diagnostics, context, "http://www.eclipse.org/emf/2002/Ecore/OCL", DGPackage.Literals.MARKED_ELEMENT___REFERENCED_END_MARKER_HAS_ID__DIAGNOSTICCHAIN_MAP, REFERENCED_END_MARKER_HAS_ID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION, Diagnostic.ERROR, DGValidator.DIAGNOSTIC_SOURCE, DGValidator.MARKED_ELEMENT__REFERENCED_END_MARKER_HAS_ID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch(featureID) {
 		case DGPackage.MARKED_ELEMENT__END_MARKER:
-			if(resolve) {
+			if(resolve)
 				return getEndMarker();
-			}
 			return basicGetEndMarker();
 		case DGPackage.MARKED_ELEMENT__MID_MARKER:
-			if(resolve) {
+			if(resolve)
 				return getMidMarker();
-			}
 			return basicGetMidMarker();
 		case DGPackage.MARKED_ELEMENT__START_MARKER:
-			if(resolve) {
+			if(resolve)
 				return getStartMarker();
-			}
 			return basicGetStartMarker();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -310,7 +292,7 @@ public abstract class MarkedElementImpl extends GraphicalElementImpl implements 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -331,7 +313,7 @@ public abstract class MarkedElementImpl extends GraphicalElementImpl implements 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -352,7 +334,7 @@ public abstract class MarkedElementImpl extends GraphicalElementImpl implements 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -370,7 +352,7 @@ public abstract class MarkedElementImpl extends GraphicalElementImpl implements 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override

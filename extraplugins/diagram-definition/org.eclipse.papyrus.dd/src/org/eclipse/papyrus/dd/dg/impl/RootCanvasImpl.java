@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- *
+ *  
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *
+ *  
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -44,7 +44,7 @@ import org.eclipse.papyrus.dd.dg.StyleSheet;
  * <li>{@link org.eclipse.papyrus.dd.dg.impl.RootCanvasImpl#getScripts <em>Script</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
 public class RootCanvasImpl extends CanvasImpl implements RootCanvas {
@@ -53,7 +53,7 @@ public class RootCanvasImpl extends CanvasImpl implements RootCanvas {
 	 * The default value of the '{@link #getBackgroundColor() <em>Background Color</em>}' attribute.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @see #getBackgroundColor()
 	 * @generated
 	 * @ordered
@@ -64,7 +64,7 @@ public class RootCanvasImpl extends CanvasImpl implements RootCanvas {
 	 * The cached value of the '{@link #getBackgroundColor() <em>Background Color</em>}' attribute.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @see #getBackgroundColor()
 	 * @generated
 	 * @ordered
@@ -74,7 +74,7 @@ public class RootCanvasImpl extends CanvasImpl implements RootCanvas {
 	/**
 	 * This is true if the Background Color attribute has been set. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -83,7 +83,7 @@ public class RootCanvasImpl extends CanvasImpl implements RootCanvas {
 	/**
 	 * The cached value of the '{@link #getDefinitions() <em>Definitions</em>}' containment reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getDefinitions()
 	 * @generated
 	 * @ordered
@@ -94,7 +94,7 @@ public class RootCanvasImpl extends CanvasImpl implements RootCanvas {
 	 * The cached value of the '{@link #getExternalStyleSheets() <em>External Style Sheet</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getExternalStyleSheets()
 	 * @generated
 	 * @ordered
@@ -105,7 +105,7 @@ public class RootCanvasImpl extends CanvasImpl implements RootCanvas {
 	 * The cached value of the '{@link #getScripts() <em>Script</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getScripts()
 	 * @generated
 	 * @ordered
@@ -114,7 +114,7 @@ public class RootCanvasImpl extends CanvasImpl implements RootCanvas {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected RootCanvasImpl() {
@@ -123,7 +123,7 @@ public class RootCanvasImpl extends CanvasImpl implements RootCanvas {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -133,69 +133,62 @@ public class RootCanvasImpl extends CanvasImpl implements RootCanvas {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public Color getBackgroundColor() {
 		return backgroundColor;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public void setBackgroundColor(Color newBackgroundColor) {
 		Color oldBackgroundColor = backgroundColor;
 		backgroundColor = newBackgroundColor;
 		boolean oldBackgroundColorESet = backgroundColorESet;
 		backgroundColorESet = true;
-		if(eNotificationRequired()) {
+		if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.ROOT_CANVAS__BACKGROUND_COLOR, oldBackgroundColor, backgroundColor, !oldBackgroundColorESet));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public void unsetBackgroundColor() {
 		Color oldBackgroundColor = backgroundColor;
 		boolean oldBackgroundColorESet = backgroundColorESet;
 		backgroundColor = BACKGROUND_COLOR_EDEFAULT;
 		backgroundColorESet = false;
-		if(eNotificationRequired()) {
+		if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.UNSET, DGPackage.ROOT_CANVAS__BACKGROUND_COLOR, oldBackgroundColor, BACKGROUND_COLOR_EDEFAULT, oldBackgroundColorESet));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public boolean isSetBackgroundColor() {
 		return backgroundColorESet;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public Definitions getDefinitions() {
 		return definitions;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetDefinitions(Definitions newDefinitions, NotificationChain msgs) {
@@ -203,45 +196,38 @@ public class RootCanvasImpl extends CanvasImpl implements RootCanvas {
 		definitions = newDefinitions;
 		if(eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DGPackage.ROOT_CANVAS__DEFINITIONS, oldDefinitions, newDefinitions);
-			if(msgs == null) {
+			if(msgs == null)
 				msgs = notification;
-			} else {
+			else
 				msgs.add(notification);
-			}
 		}
 		return msgs;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public void setDefinitions(Definitions newDefinitions) {
 		if(newDefinitions != definitions) {
 			NotificationChain msgs = null;
-			if(definitions != null) {
+			if(definitions != null)
 				msgs = ((InternalEObject)definitions).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DGPackage.ROOT_CANVAS__DEFINITIONS, null, msgs);
-			}
-			if(newDefinitions != null) {
+			if(newDefinitions != null)
 				msgs = ((InternalEObject)newDefinitions).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DGPackage.ROOT_CANVAS__DEFINITIONS, null, msgs);
-			}
 			msgs = basicSetDefinitions(newDefinitions, msgs);
-			if(msgs != null) {
+			if(msgs != null)
 				msgs.dispatch();
-			}
-		} else if(eNotificationRequired()) {
+		} else if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.ROOT_CANVAS__DEFINITIONS, newDefinitions, newDefinitions));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public EList<StyleSheet> getExternalStyleSheets() {
 		if(externalStyleSheets == null) {
 			externalStyleSheets = new EObjectResolvingEList<StyleSheet>(StyleSheet.class, this, DGPackage.ROOT_CANVAS__EXTERNAL_STYLE_SHEET);
@@ -252,10 +238,9 @@ public class RootCanvasImpl extends CanvasImpl implements RootCanvas {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public EList<String> getScripts() {
 		if(scripts == null) {
 			scripts = new EDataTypeUniqueEList<String>(String.class, this, DGPackage.ROOT_CANVAS__SCRIPT);
@@ -265,7 +250,7 @@ public class RootCanvasImpl extends CanvasImpl implements RootCanvas {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -279,7 +264,7 @@ public class RootCanvasImpl extends CanvasImpl implements RootCanvas {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -299,7 +284,7 @@ public class RootCanvasImpl extends CanvasImpl implements RootCanvas {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -326,7 +311,7 @@ public class RootCanvasImpl extends CanvasImpl implements RootCanvas {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -350,7 +335,7 @@ public class RootCanvasImpl extends CanvasImpl implements RootCanvas {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -370,21 +355,19 @@ public class RootCanvasImpl extends CanvasImpl implements RootCanvas {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if(eIsProxy()) {
+		if(eIsProxy())
 			return super.toString();
-		}
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (backgroundColor: ");
-		if(backgroundColorESet) {
+		if(backgroundColorESet)
 			result.append(backgroundColor);
-		} else {
+		else
 			result.append("<unset>");
-		}
 		result.append(", script: ");
 		result.append(scripts);
 		result.append(')');

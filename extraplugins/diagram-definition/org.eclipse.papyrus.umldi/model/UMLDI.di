@@ -19,6 +19,15 @@
     <availablePage>
       <emfPageIdentifier href="UMLDI.notation#_tjU74BVwEeSbve-DNFls6A"/>
     </availablePage>
+    <availablePage>
+      <emfPageIdentifier href="UMLDI.notation#_NeHcMD3vEeSUGqXJKSi6vg"/>
+    </availablePage>
+    <availablePage>
+      <emfPageIdentifier href="UMLDI.notation#_HCVAUD32EeSUGqXJKSi6vg"/>
+    </availablePage>
+    <availablePage>
+      <emfPageIdentifier href="UMLDI.notation#_9itVAERoEeSIxdUuItNc-A"/>
+    </availablePage>
   </pageList>
   <sashModel currentSelection="//@sashModel/@windows.0/@children.0">
     <windows>
@@ -33,13 +42,22 @@
           <emfPageIdentifier href="UMLDI.notation#_yGSecP8vEeObup8tdlL4zw"/>
         </children>
         <children>
+          <emfPageIdentifier href="UMLDI.notation#_NeHcMD3vEeSUGqXJKSi6vg"/>
+        </children>
+        <children>
           <emfPageIdentifier href="UMLDI.notation#_zh2dgP8vEeObup8tdlL4zw"/>
         </children>
         <children>
-          <emfPageIdentifier href="UMLDI.notation#_nLnL4BVwEeSbve-DNFls6A"/>
+          <emfPageIdentifier href="UMLDI.notation#_HCVAUD32EeSUGqXJKSi6vg"/>
         </children>
         <children>
           <emfPageIdentifier href="UMLDI.notation#_tjU74BVwEeSbve-DNFls6A"/>
+        </children>
+        <children>
+          <emfPageIdentifier href="UMLDI.notation#_9itVAERoEeSIxdUuItNc-A"/>
+        </children>
+        <children>
+          <emfPageIdentifier href="UMLDI.notation#_nLnL4BVwEeSbve-DNFls6A"/>
         </children>
       </children>
     </windows>

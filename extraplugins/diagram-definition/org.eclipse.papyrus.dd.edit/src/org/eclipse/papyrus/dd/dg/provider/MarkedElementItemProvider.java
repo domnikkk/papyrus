@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- *
+ *  
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *
+ *  
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -34,7 +34,7 @@ import org.eclipse.papyrus.dd.dg.MarkedElement;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.dd.dg.MarkedElement} object.
  * <!-- begin-user-doc
  * --> <!-- end-user-doc -->
- *
+ * 
  * @generated
  */
 public class MarkedElementItemProvider extends GraphicalElementItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, IItemColorProvider, IItemFontProvider {
@@ -42,7 +42,7 @@ public class MarkedElementItemProvider extends GraphicalElementItemProvider impl
 	/**
 	 * This constructs an instance from a factory and a notifier. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public MarkedElementItemProvider(AdapterFactory adapterFactory) {
@@ -52,7 +52,7 @@ public class MarkedElementItemProvider extends GraphicalElementItemProvider impl
 	/**
 	 * This returns the property descriptors for the adapted class. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -69,7 +69,7 @@ public class MarkedElementItemProvider extends GraphicalElementItemProvider impl
 	/**
 	 * This adds a property descriptor for the End Marker feature. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected void addEndMarkerPropertyDescriptor(Object object) {
@@ -79,7 +79,7 @@ public class MarkedElementItemProvider extends GraphicalElementItemProvider impl
 	/**
 	 * This adds a property descriptor for the Mid Marker feature. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected void addMidMarkerPropertyDescriptor(Object object) {
@@ -89,7 +89,7 @@ public class MarkedElementItemProvider extends GraphicalElementItemProvider impl
 	/**
 	 * This adds a property descriptor for the Start Marker feature. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected void addStartMarkerPropertyDescriptor(Object object) {
@@ -100,7 +100,7 @@ public class MarkedElementItemProvider extends GraphicalElementItemProvider impl
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -114,7 +114,7 @@ public class MarkedElementItemProvider extends GraphicalElementItemProvider impl
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -127,7 +127,7 @@ public class MarkedElementItemProvider extends GraphicalElementItemProvider impl
 	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s
 	 * describing the children that can be created under this object. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override

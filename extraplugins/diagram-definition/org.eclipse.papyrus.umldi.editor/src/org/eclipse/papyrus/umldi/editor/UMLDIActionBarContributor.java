@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- *
+ *  
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *
+ *  
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -55,7 +55,7 @@ import org.eclipse.ui.PartInitException;
 /**
  * This is the action bar contributor for the UMLDI model editor. <!--
  * begin-user-doc --> <!-- end-user-doc -->
- *
+ * 
  * @generated
  */
 public class UMLDIActionBarContributor extends
@@ -63,7 +63,7 @@ public class UMLDIActionBarContributor extends
 	/**
 	 * This keeps track of the active editor. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected IEditorPart activeEditorPart;
@@ -71,7 +71,7 @@ public class UMLDIActionBarContributor extends
 	/**
 	 * This keeps track of the current selection provider. <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected ISelectionProvider selectionProvider;
@@ -79,7 +79,7 @@ public class UMLDIActionBarContributor extends
 	/**
 	 * This action opens the Properties view. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected IAction showPropertiesViewAction = new Action(
@@ -99,7 +99,7 @@ public class UMLDIActionBarContributor extends
 	 * This action refreshes the viewer of the current editor if the editor
 	 * implements {@link org.eclipse.emf.common.ui.viewer.IViewerProvider}. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected IAction refreshViewerAction = new Action(
@@ -125,7 +125,7 @@ public class UMLDIActionBarContributor extends
 	 * This will contain one {@link org.eclipse.emf.edit.ui.action.CreateChildAction} corresponding to
 	 * each descriptor generated for the current selection by the item provider.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected Collection<IAction> createChildActions;
@@ -133,7 +133,7 @@ public class UMLDIActionBarContributor extends
 	/**
 	 * This will contain a map of {@link org.eclipse.emf.edit.ui.action.CreateChildAction}s, keyed by
 	 * sub-menu text. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected Map<String, Collection<IAction>> createChildSubmenuActions;
@@ -142,7 +142,7 @@ public class UMLDIActionBarContributor extends
 	 * This is the menu manager into which menu contribution items should be
 	 * added for CreateChild actions. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected IMenuManager createChildMenuManager;
@@ -151,7 +151,7 @@ public class UMLDIActionBarContributor extends
 	 * This will contain one {@link org.eclipse.emf.edit.ui.action.CreateSiblingAction} corresponding
 	 * to each descriptor generated for the current selection by the item
 	 * provider. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected Collection<IAction> createSiblingActions;
@@ -159,7 +159,7 @@ public class UMLDIActionBarContributor extends
 	/**
 	 * This will contain a map of {@link org.eclipse.emf.edit.ui.action.CreateSiblingAction}s, keyed by
 	 * submenu text. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected Map<String, Collection<IAction>> createSiblingSubmenuActions;
@@ -168,7 +168,7 @@ public class UMLDIActionBarContributor extends
 	 * This is the menu manager into which menu contribution items should be
 	 * added for CreateSibling actions. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected IMenuManager createSiblingMenuManager;
@@ -176,7 +176,7 @@ public class UMLDIActionBarContributor extends
 	/**
 	 * This creates an instance of the contributor. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public UMLDIActionBarContributor() {
@@ -189,7 +189,7 @@ public class UMLDIActionBarContributor extends
 	/**
 	 * This adds Separators for editor additions to the tool bar. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -202,7 +202,7 @@ public class UMLDIActionBarContributor extends
 	 * This adds to the menu bar a menu and some separators for editor
 	 * additions, as well as the sub-menus for object creation items. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -235,7 +235,6 @@ public class UMLDIActionBarContributor extends
 		// Force an update because Eclipse hides empty menus now.
 		//
 		submenuManager.addMenuListener(new IMenuListener() {
-			@Override
 			public void menuAboutToShow(IMenuManager menuManager) {
 				menuManager.updateAll(true);
 			}
@@ -248,7 +247,7 @@ public class UMLDIActionBarContributor extends
 	 * When the active editor changes, this remembers the change and registers
 	 * with it as a selection provider. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -281,10 +280,9 @@ public class UMLDIActionBarContributor extends
 	 * the children and siblings that can be added to the selected object and
 	 * updating the menus accordingly. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public void selectionChanged(SelectionChangedEvent event) {
 		// Remove any menu items for old selection.
 		//
@@ -343,7 +341,7 @@ public class UMLDIActionBarContributor extends
 	/**
 	 * This generates a {@link org.eclipse.emf.edit.ui.action.CreateChildAction} for each object in <code>descriptors</code>, and returns the collection
 	 * of these actions. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected Collection<IAction> generateCreateChildActions(
@@ -362,7 +360,7 @@ public class UMLDIActionBarContributor extends
 	 * This generates a {@link org.eclipse.emf.edit.ui.action.CreateSiblingAction} for each
 	 * object in <code>descriptors</code>, and returns the collection of these
 	 * actions. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected Collection<IAction> generateCreateSiblingActions(
@@ -382,7 +380,7 @@ public class UMLDIActionBarContributor extends
 	 * specified
 	 * contribution item <code>contributionID</code>. If <code>contributionID</code> is <code>null</code>, they are simply added.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected void populateManager(IContributionManager manager,
@@ -401,7 +399,7 @@ public class UMLDIActionBarContributor extends
 	/**
 	 * This removes from the specified <code>manager</code> all {@link org.eclipse.jface.action.ActionContributionItem}s based on the {@link org.eclipse.jface.action.IAction}s contained in the <code>actions</code> collection. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected void depopulateManager(IContributionManager manager,
@@ -434,7 +432,7 @@ public class UMLDIActionBarContributor extends
 	 * This extracts those actions in the <code>submenuActions</code> collection
 	 * whose text is qualified and returns a map of these actions, keyed by
 	 * submenu text. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected Map<String, Collection<IAction>> extractSubmenuActions(
@@ -467,7 +465,7 @@ public class UMLDIActionBarContributor extends
 	 * <code>submenuActions</code> collection, by inserting them before the
 	 * specified contribution item <code>contributionID</code>. If <code>contributionID</code> is <code>null</code>, they are simply added.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected void populateManager(IContributionManager manager,
@@ -491,7 +489,7 @@ public class UMLDIActionBarContributor extends
 	 * This removes from the specified <code>manager</code> all {@link org.eclipse.jface.action.MenuManager}s and their {@link org.eclipse.jface.action.ActionContributionItem}s based on the {@link org.eclipse.jface.action.IAction}s contained in the
 	 * <code>submenuActions</code> map. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected void depopulateManager(IContributionManager manager,
@@ -516,7 +514,7 @@ public class UMLDIActionBarContributor extends
 	/**
 	 * This populates the pop-up menu before it appears. <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -542,7 +540,7 @@ public class UMLDIActionBarContributor extends
 	/**
 	 * This inserts global actions before the "additions-end" separator. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -559,7 +557,7 @@ public class UMLDIActionBarContributor extends
 	/**
 	 * This ensures that a delete action will clean up all references to deleted
 	 * objects. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override

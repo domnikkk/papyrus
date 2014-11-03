@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- *
+ *  
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *
+ *  
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -32,16 +32,16 @@ import org.eclipse.papyrus.umldi.UmlShape;
  * <li>{@link org.eclipse.papyrus.umldi.impl.UmlShapeImpl#getBounds <em>Bounds</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
-public class UmlShapeImpl extends UmlDiagramElementImpl implements UmlShape {
+public abstract class UmlShapeImpl extends TopUmlDiagramElementImpl implements UmlShape {
 
 	/**
 	 * The cached value of the '{@link #getBounds() <em>Bounds</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getBounds()
 	 * @generated
 	 * @ordered
@@ -51,7 +51,7 @@ public class UmlShapeImpl extends UmlDiagramElementImpl implements UmlShape {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected UmlShapeImpl() {
@@ -61,7 +61,7 @@ public class UmlShapeImpl extends UmlDiagramElementImpl implements UmlShape {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -72,10 +72,9 @@ public class UmlShapeImpl extends UmlDiagramElementImpl implements UmlShape {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public Bounds getBounds() {
 		return bounds;
 	}
@@ -83,7 +82,7 @@ public class UmlShapeImpl extends UmlDiagramElementImpl implements UmlShape {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetBounds(Bounds newBounds, NotificationChain msgs) {
@@ -91,11 +90,10 @@ public class UmlShapeImpl extends UmlDiagramElementImpl implements UmlShape {
 		bounds = newBounds;
 		if(eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, UMLDIPackage.UML_SHAPE__BOUNDS, oldBounds, newBounds);
-			if(msgs == null) {
+			if(msgs == null)
 				msgs = notification;
-			} else {
+			else
 				msgs.add(notification);
-			}
 		}
 		return msgs;
 	}
@@ -103,32 +101,27 @@ public class UmlShapeImpl extends UmlDiagramElementImpl implements UmlShape {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public void setBounds(Bounds newBounds) {
 		if(newBounds != bounds) {
 			NotificationChain msgs = null;
-			if(bounds != null) {
+			if(bounds != null)
 				msgs = ((InternalEObject)bounds).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - UMLDIPackage.UML_SHAPE__BOUNDS, null, msgs);
-			}
-			if(newBounds != null) {
+			if(newBounds != null)
 				msgs = ((InternalEObject)newBounds).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - UMLDIPackage.UML_SHAPE__BOUNDS, null, msgs);
-			}
 			msgs = basicSetBounds(newBounds, msgs);
-			if(msgs != null) {
+			if(msgs != null)
 				msgs.dispatch();
-			}
-		} else if(eNotificationRequired()) {
+		} else if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, UMLDIPackage.UML_SHAPE__BOUNDS, newBounds, newBounds));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -143,7 +136,7 @@ public class UmlShapeImpl extends UmlDiagramElementImpl implements UmlShape {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -158,7 +151,7 @@ public class UmlShapeImpl extends UmlDiagramElementImpl implements UmlShape {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -174,7 +167,7 @@ public class UmlShapeImpl extends UmlDiagramElementImpl implements UmlShape {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -190,7 +183,7 @@ public class UmlShapeImpl extends UmlDiagramElementImpl implements UmlShape {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -205,7 +198,7 @@ public class UmlShapeImpl extends UmlDiagramElementImpl implements UmlShape {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -224,7 +217,7 @@ public class UmlShapeImpl extends UmlDiagramElementImpl implements UmlShape {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override

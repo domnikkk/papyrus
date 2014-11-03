@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- *
+ *  
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *
+ *  
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -40,7 +40,7 @@ import org.eclipse.papyrus.dd.dc.util.DCValidator;
  * <li>{@link org.eclipse.papyrus.dd.dc.impl.DimensionImpl#getHeight <em>Height</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
 public class DimensionImpl extends MinimalEObjectImpl.Container implements Dimension {
@@ -48,7 +48,7 @@ public class DimensionImpl extends MinimalEObjectImpl.Container implements Dimen
 	/**
 	 * The default value of the '{@link #getWidth() <em>Width</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getWidth()
 	 * @generated
 	 * @ordered
@@ -58,7 +58,7 @@ public class DimensionImpl extends MinimalEObjectImpl.Container implements Dimen
 	/**
 	 * The cached value of the '{@link #getWidth() <em>Width</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getWidth()
 	 * @generated
 	 * @ordered
@@ -69,7 +69,7 @@ public class DimensionImpl extends MinimalEObjectImpl.Container implements Dimen
 	 * This is true if the Width attribute has been set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -78,7 +78,7 @@ public class DimensionImpl extends MinimalEObjectImpl.Container implements Dimen
 	/**
 	 * The default value of the '{@link #getHeight() <em>Height</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getHeight()
 	 * @generated
 	 * @ordered
@@ -88,7 +88,7 @@ public class DimensionImpl extends MinimalEObjectImpl.Container implements Dimen
 	/**
 	 * The cached value of the '{@link #getHeight() <em>Height</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getHeight()
 	 * @generated
 	 * @ordered
@@ -99,7 +99,7 @@ public class DimensionImpl extends MinimalEObjectImpl.Container implements Dimen
 	 * This is true if the Height attribute has been set.
 	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -107,7 +107,7 @@ public class DimensionImpl extends MinimalEObjectImpl.Container implements Dimen
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected DimensionImpl() {
@@ -116,7 +116,7 @@ public class DimensionImpl extends MinimalEObjectImpl.Container implements Dimen
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -126,104 +126,92 @@ public class DimensionImpl extends MinimalEObjectImpl.Container implements Dimen
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public double getWidth() {
 		return width;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public void setWidth(double newWidth) {
 		double oldWidth = width;
 		width = newWidth;
 		boolean oldWidthESet = widthESet;
 		widthESet = true;
-		if(eNotificationRequired()) {
+		if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DCPackage.DIMENSION__WIDTH, oldWidth, width, !oldWidthESet));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public void unsetWidth() {
 		double oldWidth = width;
 		boolean oldWidthESet = widthESet;
 		width = WIDTH_EDEFAULT;
 		widthESet = false;
-		if(eNotificationRequired()) {
+		if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.UNSET, DCPackage.DIMENSION__WIDTH, oldWidth, WIDTH_EDEFAULT, oldWidthESet));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public boolean isSetWidth() {
 		return widthESet;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public double getHeight() {
 		return height;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public void setHeight(double newHeight) {
 		double oldHeight = height;
 		height = newHeight;
 		boolean oldHeightESet = heightESet;
 		heightESet = true;
-		if(eNotificationRequired()) {
+		if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DCPackage.DIMENSION__HEIGHT, oldHeight, height, !oldHeightESet));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public void unsetHeight() {
 		double oldHeight = height;
 		boolean oldHeightESet = heightESet;
 		height = HEIGHT_EDEFAULT;
 		heightESet = false;
-		if(eNotificationRequired()) {
+		if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.UNSET, DCPackage.DIMENSION__HEIGHT, oldHeight, HEIGHT_EDEFAULT, oldHeightESet));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public boolean isSetHeight() {
 		return heightESet;
 	}
@@ -233,7 +221,7 @@ public class DimensionImpl extends MinimalEObjectImpl.Container implements Dimen
 	 * <em>Non Negative Width</em>}' invariant operation.
 	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #nonNegativeWidth(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
@@ -242,10 +230,9 @@ public class DimensionImpl extends MinimalEObjectImpl.Container implements Dimen
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public boolean nonNegativeWidth(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return DCValidator.validate(DCPackage.Literals.DIMENSION, this, diagnostics, context, "http://www.eclipse.org/emf/2002/Ecore/OCL", DCPackage.Literals.DIMENSION___NON_NEGATIVE_WIDTH__DIAGNOSTICCHAIN_MAP, NON_NEGATIVE_WIDTH_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION, Diagnostic.ERROR, DCValidator.DIAGNOSTIC_SOURCE, DCValidator.DIMENSION__NON_NEGATIVE_WIDTH);
 	}
@@ -255,7 +242,7 @@ public class DimensionImpl extends MinimalEObjectImpl.Container implements Dimen
 	 * <em>Non Negative Height</em>}' invariant operation.
 	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #nonNegativeHeight(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
@@ -264,17 +251,16 @@ public class DimensionImpl extends MinimalEObjectImpl.Container implements Dimen
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public boolean nonNegativeHeight(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return DCValidator.validate(DCPackage.Literals.DIMENSION, this, diagnostics, context, "http://www.eclipse.org/emf/2002/Ecore/OCL", DCPackage.Literals.DIMENSION___NON_NEGATIVE_HEIGHT__DIAGNOSTICCHAIN_MAP, NON_NEGATIVE_HEIGHT_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION, Diagnostic.ERROR, DCValidator.DIAGNOSTIC_SOURCE, DCValidator.DIMENSION__NON_NEGATIVE_HEIGHT);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -290,7 +276,7 @@ public class DimensionImpl extends MinimalEObjectImpl.Container implements Dimen
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -308,7 +294,7 @@ public class DimensionImpl extends MinimalEObjectImpl.Container implements Dimen
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -326,7 +312,7 @@ public class DimensionImpl extends MinimalEObjectImpl.Container implements Dimen
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -342,7 +328,7 @@ public class DimensionImpl extends MinimalEObjectImpl.Container implements Dimen
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -359,27 +345,24 @@ public class DimensionImpl extends MinimalEObjectImpl.Container implements Dimen
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if(eIsProxy()) {
+		if(eIsProxy())
 			return super.toString();
-		}
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (width: ");
-		if(widthESet) {
+		if(widthESet)
 			result.append(width);
-		} else {
+		else
 			result.append("<unset>");
-		}
 		result.append(", height: ");
-		if(heightESet) {
+		if(heightESet)
 			result.append(height);
-		} else {
+		else
 			result.append("<unset>");
-		}
 		result.append(')');
 		return result.toString();
 	}

@@ -1,0 +1,532 @@
+/**
+ * Copyright (c) 2014 CEA LIST.
+ *  
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *  
+ * Contributors:
+ *  CEA LIST - Initial API and implementation
+ */
+import org.eclipse.papyrus.notation.qvt.NotationUtilities;
+import NotationIds;
+ 
+modeltype DC uses "http://www.omg.org/spec/DD/20110901/DC";
+modeltype DI uses "http://www.omg.org/spec/DD/20110901/DI";
+modeltype UMLDI uses "http://www.omg.org/spec/UML/20131001/UMLDI";
+modeltype Notation uses "http://www.eclipse.org/gmf/runtime/1.0.2/notation";
+modeltype UML uses "http://www.eclipse.org/uml2/4.0.0/UML";
+	
+transformation NotationToUmlDi(in notation : Notation, out UMLDI);
+
+main() {
+	notation.rootObjects()[Notation::Diagram]->sortedBy(name)->forEach(diagram) {
+		renderDiagram(diagram);
+		diagram.map toUmlDiagram();
+		disposeDiagram(diagram);
+	}
+}
+
+mapping Notation::Diagram::toUmlDiagram() : UMLDI::UmlDiagram
+	disjuncts Notation::Diagram::diagramToClassDiagram;
+
+abstract mapping Notation::View::viewToUmlDiagramElement() : UMLDI::UmlDiagramElement 
+{
+	umlModelElement := self.element.oclAsType(UML::Element);
+}
+
+abstract mapping Notation::Diagram::diagramToUmlDiagram() : UMLDI::UmlDiagram 
+	inherits Notation::View::viewToUmlDiagramElement
+{
+	name := self.name;
+	topUmlDiagramElement += self.visibleChildren()->map toTopUmlDiagramElement();	
+	topUmlDiagramElement += self.visibleEdges()->map toTopUmlDiagramElement();	
+}
+
+mapping Notation::Diagram::diagramToClassDiagram() : UMLDI::ClassDiagram 
+	inherits Notation::Diagram::diagramToUmlDiagram
+	when { self.type = classDiagramType };
+
+//-------------------------------------------------------------------------------------
+
+mapping Notation::View::toTopUmlDiagramElement() : UMLDI::TopUmlDiagramElement
+	disjuncts Notation::Shape::shapeToAssociationClassShape,
+			  Notation::Shape::shapeToAssociationShape,
+			  Notation::Shape::shapeToDependencyShape,
+			  Notation::Shape::shapeToComponentShape,
+			  Notation::Shape::shapeToClassShape,
+			  Notation::Shape::shapeToInterfaceShape,
+			  Notation::Shape::shapeToPrimitiveTypeShape,
+			  Notation::Shape::shapeToEnumerationShape,
+			  Notation::Shape::shapeToDataTypeShape,
+			  Notation::Shape::shapeToSignalShape,
+			  Notation::Shape::shapeToModelShape,
+			  Notation::Shape::shapeToPackageShape,
+			  Notation::Shape::shapeToConstraintShape,
+			  Notation::Shape::shapeToCommentShape,
+			  Notation::Shape::shapeToInformationItemShape,
+			  Notation::Shape::shapeToInstanceSpecificationShape,
+			  Notation::Shape::shapeToTimeObservationShape,
+			  Notation::Shape::shapeToDurationObservationShape,
+			  Notation::Edge::edgeToContainmentEdge,
+			  Notation::Edge::edgeToAttachmentEdge,
+			  Notation::Edge::edgeToGeneralizationEdge,
+			  Notation::Edge::edgeToInterfaceRealizationEdge,
+			  Notation::Edge::edgeToSubstitutionEdge,
+			  Notation::Edge::edgeToRealizationEdge,
+			  Notation::Edge::edgeToAbstractionEdge,
+			  Notation::Edge::edgeToUsageEdge,
+			  Notation::Edge::edgeToDependencyEdge,
+			  Notation::Edge::edgeToElementImportEdge,
+			  Notation::Edge::edgeToPackageImportEdge,
+			  Notation::Edge::edgeToPackageMergeEdge,
+			  Notation::Edge::edgeToInformationFlowEdge,
+			  Notation::Edge::edgeToGeneralizationSetEdge,
+			  Notation::Edge::edgeToPropertyEdge,
+			  Notation::Edge::edgeToAssociationClassEdge,
+			  Notation::Edge::edgeToAssociationEdge,
+			  Notation::Edge::edgeToInstanceSpecificationEdge;
+
+//-------------------------------------------------------------------------------------
+
+abstract mapping Notation::Shape::shapeToUmlShape() : UMLDI::UmlShape
+	inherits Notation::View::viewToUmlDiagramElement
+{
+	bounds := self.bounds();
+	localUmlStyle := object UMLDI::UmlStyle {
+		fontName := self.fontName;
+		fontSize := self.fontHeight;
+	}
+}
+
+abstract mapping Notation::Shape::shapeToNamedShape() : UMLDI::NamedShape
+	inherits Notation::Shape::shapeToUmlShape
+{
+	var label = self.visibleChildren()->selectOne(nameLabelType->includes(type));
+	nameLabel := label.oclAsType(Notation::DecorationNode).map nodeToNameLabel();
+}
+
+abstract mapping Notation::Shape::shapeToBodyShape() : UMLDI::BodyShape
+	inherits Notation::Shape::shapeToUmlShape
+{
+	var label = self.visibleChildren()->selectOne(bodyLabelType->includes(type));
+	bodyLabel := label.oclAsType(Notation::DecorationNode).map nodeToBodyLabel();
+}
+
+abstract mapping Notation::Shape::shapeToTemplatableElementShape() : UMLDI::TemplateableElementShape
+	inherits Notation::Shape::shapeToNamedShape
+{
+	var compartment = self.visibleChildren()->selectOne(templateParameterCompartmentType->includes(type));
+	templateParameterCompartment := compartment.map nodeToTemplateParameterCompartment();
+}
+
+abstract mapping Notation::Shape::shapeToClassifierShape() : UMLDI::ClassifierShape
+	inherits Notation::Shape::shapeToTemplatableElementShape
+{
+	isIcon := false;
+}
+
+abstract mapping Notation::Shape::shapeToClassifierWithAttributesShape() : UMLDI::ClassifierWithAttributesShape
+	inherits Notation::Shape::shapeToClassifierShape
+{
+	var compartment = self.visibleChildren()->selectOne(attributeCompartmentType->includes(type));
+	attributeCompartment := compartment.map nodeToAttributeCompartment();
+}
+
+abstract mapping Notation::Shape::shapeToClassifierWithOperationsShape() : UMLDI::ClassifierWithOperationsShape
+	inherits Notation::Shape::shapeToClassifierWithAttributesShape
+{
+	var compartment = self.visibleChildren()->selectOne(operationCompartmentType->includes(type));
+	if (compartment.visibleChildren()->isEmpty() or compartment.visibleChildren()->forAll(element.oclIsKindOf(UML::Operation))) then
+		operationCompartment := compartment.map nodeToOperationCompartment()
+	endif;
+}
+
+abstract mapping Notation::Shape::shapeToClassifierWithReceptionsShape() : UMLDI::ClassifierWithReceptionsShape 
+	inherits  Notation::Shape::shapeToClassifierWithOperationsShape
+{
+	var compartment : Notation::Node = self.visibleChildren()->selectOne(operationCompartmentType->includes(type));
+	if (compartment.visibleChildren()->notEmpty() and compartment.visibleChildren()->forAll(element.oclIsKindOf(UML::Reception))) then
+		receptionCompartment := compartment.map nodeToReceptionCompartment()
+	endif;
+}
+
+mapping Notation::Shape::shapeToClassShape() : UMLDI::ClassShape
+	inherits Notation::Shape::shapeToClassifierWithReceptionsShape
+	when { self.element.oclIsKindOf(UML::Class) };
+
+mapping Notation::Shape::shapeToComponentShape() : UMLDI::ComponentShape
+	inherits Notation::Shape::shapeToClassShape
+	when { self.element.oclIsKindOf(UML::Component) };
+
+mapping Notation::Shape::shapeToAssociationClassShape() : UMLDI::AssociationClassShape
+	inherits Notation::Shape::shapeToClassShape
+	when { self.element.oclIsKindOf(UML::AssociationClass) };
+
+mapping Notation::Shape::shapeToInformationItemShape() : UMLDI::InformationItemShape
+	inherits Notation::Shape::shapeToClassifierShape
+	when { self.element.oclIsKindOf(UML::InformationItem) };
+
+mapping Notation::Shape::shapeToInterfaceShape() : UMLDI::InterfaceShape
+	inherits Notation::Shape::shapeToClassifierWithReceptionsShape
+	when { self.element.oclIsKindOf(UML::Interface) };
+	
+mapping Notation::Shape::shapeToDataTypeShape() : UMLDI::DataTypeShape
+	inherits Notation::Shape::shapeToClassifierWithOperationsShape
+	when { self.element.oclIsKindOf(UML::DataType) };
+
+mapping Notation::Shape::shapeToTimeObservationShape() : UMLDI::TimeObservationShape
+	inherits Notation::Shape::shapeToNamedShape
+	when { self.element.oclIsKindOf(UML::TimeObservation) };
+
+mapping Notation::Shape::shapeToDurationObservationShape() : UMLDI::DurationObservationShape
+	inherits Notation::Shape::shapeToNamedShape
+	when { self.element.oclIsKindOf(UML::DurationObservation) };
+
+mapping Notation::Shape::shapeToPrimitiveTypeShape() : UMLDI::PrimitiveTypeShape
+	inherits Notation::Shape::shapeToDataTypeShape
+	when { self.element.oclIsKindOf(UML::PrimitiveType) };
+
+mapping Notation::Shape::shapeToSignalShape() : UMLDI::SignalShape
+	inherits Notation::Shape::shapeToClassifierWithAttributesShape
+	when { self.element.oclIsKindOf(UML::Signal) };
+
+mapping Notation::Shape::shapeToEnumerationShape() : UMLDI::EnumerationShape
+	inherits Notation::Shape::shapeToClassifierShape
+	when { self.element.oclIsKindOf(UML::Enumeration) }
+{
+	var compartment = self.visibleChildren()->selectOne(literalCompartmentType = type);
+	literalCompartment := compartment.map nodeToLiteralCompartment();
+}
+
+mapping Notation::Shape::shapeToPackageShape() : UMLDI::PackageShape
+	inherits Notation::Shape::shapeToTemplatableElementShape
+	when { self.element.oclIsKindOf(UML::Package) }
+{
+	var compartment = self.visibleChildren()->selectOne(packagedElementCompartmentType->includes(type));
+	packagedElementCompartment := compartment.map nodeToPackagedElementCompartment();
+}
+
+mapping Notation::Shape::shapeToModelShape() : UMLDI::ModelShape
+	inherits Notation::Shape::shapeToPackageShape
+	when { self.element.oclIsKindOf(UML::Model) };
+
+mapping Notation::Shape::shapeToConstraintShape() : UMLDI::ConstraintShape
+	inherits Notation::Shape::shapeToNamedShape, Notation::Shape::shapeToBodyShape
+	when { self.element.oclIsKindOf(UML::Constraint) };
+
+mapping Notation::Shape::shapeToCommentShape() : UMLDI::CommentShape
+	inherits Notation::Shape::shapeToBodyShape
+	when { self.element.oclIsKindOf(UML::Comment) };
+
+mapping Notation::Shape::shapeToInstanceSpecificationShape() : UMLDI::InstanceSpecificationShape
+	inherits Notation::Shape::shapeToNamedShape
+	when { self.element.oclIsKindOf(UML::InstanceSpecification) }
+{
+	var compartment = self.visibleChildren()->selectOne(type = slotCompartmentType);
+	slotCompartment := compartment.map nodeToSlotCompartment();
+}
+
+mapping Notation::Shape::shapeToAssociationShape() : UMLDI::AssociationShape
+	inherits Notation::Shape::shapeToNamedShape
+	when { self.element.oclIsKindOf(UML::Association) }
+{
+	isIcon := true;
+}
+
+mapping Notation::Shape::shapeToDependencyShape() : UMLDI::DependencyShape
+	inherits Notation::Shape::shapeToNamedShape
+	when { self.element.oclIsKindOf(UML::Dependency) }
+{
+	bounds.width := 4;		
+	bounds.height := 4;		
+}
+
+//-------------------------------------------------------------------------------------
+
+abstract mapping Notation::Edge::edgeToUmlEdge() : UMLDI::UmlEdge
+	inherits Notation::View::viewToUmlDiagramElement
+{
+	getPoints(self)->forEach(p) {
+		waypoint += object DC::Point { x := p.x; y := p.y; };
+	};
+	var fontStyle := self.styles[Notation::FontStyle]->at(1);
+	localUmlStyle := object UMLDI::UmlStyle {
+		fontName := fontStyle.fontName;
+		fontSize := fontStyle.fontHeight;
+	};
+	sourceUmlDiagramElement := self.source.late resolveone(UMLDI::UmlDiagramElement);
+	targetUmlDiagramElement := self.target.late resolveone(UMLDI::UmlDiagramElement);
+}
+
+abstract mapping Notation::Edge::edgeToNamedEdge() : UMLDI::NamedEdge
+	inherits Notation::Edge::edgeToUmlEdge
+{
+	var label = self.visibleChildren()->selectOne(nameLabelType->includes(type));
+	nameLabel := label.oclAsType(Notation::DecorationNode).map nodeToNameLabel();
+}
+
+mapping Notation::Edge::edgeToContainmentEdge() : UMLDI::ContainmentEdge
+	inherits Notation::Edge::edgeToUmlEdge
+	when { self.type = containmentEdgeType }
+{
+	sourceUmlDiagramElement := self.source.container().late resolveone(UMLDI::UmlDiagramElement);
+}
+
+mapping Notation::Edge::edgeToAttachmentEdge() : UMLDI::AttachmentEdge
+	inherits Notation::Edge::edgeToUmlEdge
+	when { attachmentEdgeType->includes(self.type) };
+
+mapping Notation::Edge::edgeToGeneralizationEdge() : UMLDI::GeneralizationEdge
+	inherits Notation::Edge::edgeToUmlEdge
+	when { self.element.oclIsKindOf(UML::Generalization) };
+	
+mapping Notation::Edge::edgeToElementImportEdge() : UMLDI::ElementImportEdge
+	inherits Notation::Edge::edgeToNamedEdge
+	when { self.element.oclIsKindOf(UML::ElementImport) };
+
+mapping Notation::Edge::edgeToPackageImportEdge() : UMLDI::PackageImportEdge
+	inherits Notation::Edge::edgeToNamedEdge
+	when { self.element.oclIsKindOf(UML::PackageImport) };
+
+mapping Notation::Edge::edgeToPackageMergeEdge() : UMLDI::PackageMergeEdge
+	inherits Notation::Edge::edgeToNamedEdge
+	when { self.element.oclIsKindOf(UML::PackageMerge) };
+
+mapping Notation::Edge::edgeToGeneralizationSetEdge() : UMLDI::GeneralizationSetEdge
+	inherits Notation::Edge::edgeToNamedEdge
+	when { self.element.oclIsKindOf(UML::GeneralizationSet) }
+{
+	var label := self.visibleChildren()->selectOne(modifierLabelType->includes(type));
+	modifierLabel := label.oclAsType(Notation::DecorationNode).map nodeToModifierLabel();
+}
+
+mapping Notation::Edge::edgeToInformationFlowEdge() : UMLDI::InformationFlowEdge
+	inherits Notation::Edge::edgeToNamedEdge
+	when { self.element.oclIsKindOf(UML::InformationFlow) }
+{
+	var label := self.visibleChildren()->selectOne(itemLabelType->includes(type));
+	itemLabel := label.oclAsType(Notation::DecorationNode).map nodeToItemLabel();
+}
+
+mapping Notation::Edge::edgeToDependencyEdge() : UMLDI::DependencyEdge
+	inherits Notation::Edge::edgeToNamedEdge
+	when { self.element.oclIsKindOf(UML::Dependency) };
+
+mapping Notation::Edge::edgeToAbstractionEdge() : UMLDI::AbstractionEdge
+	inherits Notation::Edge::edgeToDependencyEdge
+	when { self.element.oclIsKindOf(UML::Abstraction) };
+
+mapping Notation::Edge::edgeToUsageEdge() : UMLDI::UsageEdge
+	inherits Notation::Edge::edgeToDependencyEdge
+	when { self.element.oclIsKindOf(UML::Usage) };
+
+mapping Notation::Edge::edgeToRealizationEdge() : UMLDI::RealizationEdge
+	inherits Notation::Edge::edgeToAbstractionEdge
+	when { self.element.oclIsKindOf(UML::Realization) };
+
+mapping Notation::Edge::edgeToInterfaceRealizationEdge() : UMLDI::InterfaceRealizationEdge
+	inherits Notation::Edge::edgeToRealizationEdge
+	when { self.element.oclIsKindOf(UML::InterfaceRealization) };
+
+mapping Notation::Edge::edgeToSubstitutionEdge() : UMLDI::SubstitutionEdge
+	inherits Notation::Edge::edgeToRealizationEdge
+	when { self.element.oclIsKindOf(UML::Substitution) };
+
+mapping Notation::Edge::edgeToPropertyEdge() : UMLDI::PropertyEdge
+	inherits Notation::Edge::edgeToNamedEdge
+	when { self.element.oclIsKindOf(UML::Association) and self.styles[Notation::EObjectValueStyle]->notEmpty() }
+{
+	umlModelElement := self.styles![Notation::EObjectValueStyle].eObjectValue.oclAsType(UML::Property);
+
+	var label := self.visibleChildren()->selectOne(end2MultiplicityLabelType->includes(type));
+	multiplicityLabel := label.oclAsType(Notation::DecorationNode).map nodeToMultiplicityLabel();
+}
+
+mapping Notation::Edge::edgeToAssociationEdge() : UMLDI::AssociationEdge
+	inherits Notation::Edge::edgeToNamedEdge
+	when { self.element.oclIsKindOf(UML::Association) and self.styles[Notation::EObjectValueStyle]->isEmpty() }
+{
+	var label := self.visibleChildren()->selectOne(end1RoleLabelType->includes(type));
+	endRoleLabel += label.oclAsType(Notation::DecorationNode).map nodeToRoleLabel();
+	label := self.visibleChildren()->selectOne(end2RoleLabelType->includes(type));
+	endRoleLabel += label.oclAsType(Notation::DecorationNode).map nodeToRoleLabel();
+	
+	label := self.visibleChildren()->selectOne(end1MultiplicityLabelType->includes(type));
+	endMultiplicityLabel += label.oclAsType(Notation::DecorationNode).map nodeToMultiplicityLabel();
+	label := self.visibleChildren()->selectOne(end2MultiplicityLabelType->includes(type));
+	endMultiplicityLabel += label.oclAsType(Notation::DecorationNode).map nodeToMultiplicityLabel();
+}
+
+mapping Notation::Edge::edgeToAssociationClassEdge() : UMLDI::AssociationClassEdge
+	inherits Notation::Edge::edgeToAssociationEdge
+	when { self.element.oclIsKindOf(UML::AssociationClass) };
+
+mapping Notation::Edge::edgeToInstanceSpecificationEdge() : UMLDI::InstanceSpecificationEdge
+	inherits Notation::Edge::edgeToNamedEdge
+	when { self.element.oclIsKindOf(UML::InstanceSpecification) }
+{
+	var label := self.visibleChildren()->selectOne(end1RoleLabelType->includes(type));
+	endRoleLabel += label.oclAsType(Notation::DecorationNode).map nodeToRoleLabel();
+	label := self.visibleChildren()->selectOne(end2RoleLabelType->includes(type));
+	endRoleLabel += label.oclAsType(Notation::DecorationNode).map nodeToRoleLabel();
+}
+
+//-------------------------------------------------------------------------------------
+
+abstract mapping Notation::Shape::shapeToUmlLabel() : UMLDI::UmlLabel
+	inherits Notation::View::viewToUmlDiagramElement
+{
+	bounds := self.bounds();
+	localUmlStyle := object UMLDI::UmlStyle {
+		fontName := self.fontName;
+		fontSize := self.fontHeight;
+	}
+}
+
+mapping Notation::Shape::shapeToPropertyLabel() : UMLDI::PropertyLabel
+	inherits Notation::Shape::shapeToUmlLabel;
+
+mapping Notation::Shape::shapeToOperationLabel() : UMLDI::OperationLabel
+	inherits Notation::Shape::shapeToUmlLabel;
+
+mapping Notation::Shape::shapeToReceptionLabel() : UMLDI::ReceptionLabel
+	inherits Notation::Shape::shapeToUmlLabel;
+
+mapping Notation::Shape::shapeToLiteralLabel() : UMLDI::LiteralLabel
+	inherits Notation::Shape::shapeToUmlLabel;
+
+mapping Notation::Shape::shapeToSlotLabel() : UMLDI::SlotLabel
+	inherits Notation::Shape::shapeToUmlLabel;
+
+mapping Notation::Shape::shapeToTemplateParameterLabel() : UMLDI::TemplateParameterLabel
+	inherits Notation::Shape::shapeToUmlLabel;
+
+abstract mapping Notation::DecorationNode::nodeToUmlLabel() : UMLDI::UmlLabel
+	inherits Notation::View::viewToUmlDiagramElement
+{
+	bounds := self.bounds();
+}
+
+mapping Notation::DecorationNode::nodeToNameLabel() : UMLDI::NameLabel
+	inherits Notation::DecorationNode::nodeToUmlLabel
+{
+	var style = self.container().oclAsType(Notation::Edge).styles![Notation::EObjectValueStyle];
+
+	if (style->notEmpty())  then
+		umlModelElement := style.oclAsType(Notation::EObjectValueStyle).eObjectValue.oclAsType(UML::Property)
+	endif;
+}
+
+mapping Notation::DecorationNode::nodeToRoleLabel() : UMLDI::RoleLabel
+	inherits Notation::DecorationNode::nodeToUmlLabel
+{
+	var association = if (self.element.oclIsKindOf(UML::InstanceSpecification)) then
+		self.element.oclAsType(UML::InstanceSpecification).classifier![UML::Association]
+	else
+		self.element.oclAsType(UML::Association)
+	endif;
+	
+	var style = self.container().oclAsType(Notation::Edge).styles![Notation::EObjectValueStyle];
+	
+	umlModelElement := if (style->notEmpty())  then
+		style.oclAsType(Notation::EObjectValueStyle).eObjectValue.oclAsType(UML::Property)
+	else if (end1RoleLabelType->includes(self.type)) then
+		association.memberEnd->at(1)
+	else if (end2RoleLabelType->includes(self.type)) then
+		association.memberEnd->at(2)
+	endif endif endif;
+}
+
+mapping Notation::DecorationNode::nodeToMultiplicityLabel() : UMLDI::MultiplicityLabel
+	inherits Notation::DecorationNode::nodeToUmlLabel
+{
+	var style = self.container().oclAsType(Notation::Edge).styles![Notation::EObjectValueStyle];
+
+	umlModelElement := if (style->notEmpty())  then
+		style.oclAsType(Notation::EObjectValueStyle).eObjectValue.oclAsType(UML::Property)
+	else if (end1MultiplicityLabelType->includes(self.type)) then
+		self.element.oclAsType(UML::Association).memberEnd->at(1)
+	else if (end2MultiplicityLabelType->includes(self.type)) then
+		self.element.oclAsType(UML::Association).memberEnd->at(2)
+	endif endif endif;
+}
+
+mapping Notation::DecorationNode::nodeToModifierLabel() : UMLDI::ModifierLabel
+	inherits Notation::DecorationNode::nodeToUmlLabel;
+
+mapping Notation::DecorationNode::nodeToItemLabel() : UMLDI::ItemLabel
+	inherits Notation::DecorationNode::nodeToUmlLabel;
+
+mapping Notation::DecorationNode::nodeToBodyLabel() : UMLDI::BodyLabel
+	inherits Notation::DecorationNode::nodeToUmlLabel;
+
+//-------------------------------------------------------------------------------------
+
+abstract mapping Notation::Node::nodeToUmlCompartment() : UMLDI::UmlCompartment
+	inherits Notation::View::viewToUmlDiagramElement
+{
+	bounds := self.bounds();
+}
+
+mapping Notation::Node::nodeToAttributeCompartment() : UMLDI::AttributeCompartment
+	inherits Notation::Node::nodeToUmlCompartment
+{
+	attributeLabel += self.visibleChildren().oclAsType(Notation::Shape)->map shapeToPropertyLabel();	
+}
+
+mapping Notation::Node::nodeToOperationCompartment() : UMLDI::OperationCompartment
+	inherits Notation::Node::nodeToUmlCompartment
+{
+	operationLabel += self.visibleChildren().oclAsType(Notation::Shape)->map shapeToOperationLabel();	
+}
+
+mapping Notation::Node::nodeToReceptionCompartment() : UMLDI::ReceptionCompartment
+	inherits Notation::Node::nodeToUmlCompartment
+{
+	receptionLabel += self.visibleChildren().oclAsType(Notation::Shape)->map shapeToReceptionLabel();	
+}
+
+mapping Notation::Node::nodeToLiteralCompartment() : UMLDI::LiteralCompartment
+	inherits Notation::Node::nodeToUmlCompartment
+{
+	literalLabel += self.visibleChildren().oclAsType(Notation::Shape)->map shapeToLiteralLabel();	
+}
+
+mapping Notation::Node::nodeToSlotCompartment() : UMLDI::SlotCompartment
+	inherits Notation::Node::nodeToUmlCompartment
+{
+	slotLabel += self.visibleChildren().oclAsType(Notation::Shape)->map shapeToSlotLabel();	
+}
+
+mapping Notation::Node::nodeToPackagedElementCompartment() : UMLDI::PackagedElementCompartment
+	inherits Notation::Node::nodeToUmlCompartment
+{
+	topUmlDiagramElement += self.visibleChildren()->map toTopUmlDiagramElement();	
+}
+
+mapping Notation::Node::nodeToTemplateParameterCompartment() : UMLDI::TemplateParameterCompartment
+	inherits Notation::Node::nodeToUmlCompartment
+{
+	var c = self.visibleChildren()->first();
+	templateParameterLabel += c.visibleChildren().oclAsType(Notation::Shape)->map shapeToTemplateParameterLabel();
+	umlModelElement := self.element.oclAsType(UML::TemplateSignature).template;	
+}
+
+//-------------------------------------------------------------------------------------
+
+query Notation::View::visibleChildren() : OrderedSet(Notation::Node) {
+	return self.children->select(visible);
+}
+
+query Notation::Diagram::visibleEdges() : OrderedSet(Notation::Edge) {
+	return self.edges->select(visible);
+}
+
+query Notation::Node::bounds() : DC::Bounds {
+	var b := getBounds(self);
+	return object DC::Bounds {
+		x := b.x; y := b.y; width := b.width; height := b.height;
+	}
+}

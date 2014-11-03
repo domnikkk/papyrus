@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- *
+ *  
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *
+ *  
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -32,53 +32,54 @@ import org.eclipse.papyrus.dd.di.Style;
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Package</b>. <!--
  * end-user-doc -->
- *
+ * 
  * @generated
  */
 public class DIPackageImpl extends EPackageImpl implements DIPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private EClass diagramElementEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private EClass styleEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private EClass edgeEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private EClass diagramEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private EClass shapeEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the
-	 * package package URI value.
+	 * package
+	 * package URI value.
 	 * <p>
 	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the
 	 * package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.dd.di.DIPackage#eNS_URI
 	 * @see #init()
@@ -90,28 +91,26 @@ public class DIPackageImpl extends EPackageImpl implements DIPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private static boolean isInited = false;
 
 	/**
-	 * Creates, registers, and initializes the <b>Package</b> for this model,
-	 * and for any others upon which it depends.
-	 *
+	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
+	 * 
 	 * <p>
 	 * This method is used to initialize {@link DIPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they
 	 * should simply access that field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
 	 * @generated
 	 */
 	public static DIPackage init() {
-		if(isInited) {
+		if(isInited)
 			return (DIPackage)EPackage.Registry.INSTANCE.getEPackage(DIPackage.eNS_URI);
-		}
 		// Obtain or create and register package
 		DIPackageImpl theDIPackage = (DIPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof DIPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new DIPackageImpl());
 		isInited = true;
@@ -131,20 +130,18 @@ public class DIPackageImpl extends EPackageImpl implements DIPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public EClass getDiagramElement() {
 		return diagramElementEClass;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public EReference getDiagramElement_ModelElement() {
 		return (EReference)diagramElementEClass.getEStructuralFeatures().get(0);
 	}
@@ -152,10 +149,9 @@ public class DIPackageImpl extends EPackageImpl implements DIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public EReference getDiagramElement_OwningDiagramElement() {
 		return (EReference)diagramElementEClass.getEStructuralFeatures().get(1);
 	}
@@ -163,30 +159,27 @@ public class DIPackageImpl extends EPackageImpl implements DIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public EReference getDiagramElement_OwnedDiagramElement() {
 		return (EReference)diagramElementEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public EReference getDiagramElement_LocalStyle() {
 		return (EReference)diagramElementEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public EReference getDiagramElement_SharedStyle() {
 		return (EReference)diagramElementEClass.getEStructuralFeatures().get(4);
 	}
@@ -194,10 +187,9 @@ public class DIPackageImpl extends EPackageImpl implements DIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public EReference getDiagramElement_TargetEdge() {
 		return (EReference)diagramElementEClass.getEStructuralFeatures().get(5);
 	}
@@ -205,30 +197,27 @@ public class DIPackageImpl extends EPackageImpl implements DIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public EReference getDiagramElement_SourceEdge() {
 		return (EReference)diagramElementEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public EClass getStyle() {
 		return styleEClass;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public EClass getEdge() {
 		return edgeEClass;
 	}
@@ -236,20 +225,18 @@ public class DIPackageImpl extends EPackageImpl implements DIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public EReference getEdge_SourceDiagramElement() {
 		return (EReference)edgeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public EReference getEdge_Waypoint() {
 		return (EReference)edgeEClass.getEStructuralFeatures().get(1);
 	}
@@ -257,87 +244,79 @@ public class DIPackageImpl extends EPackageImpl implements DIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public EReference getEdge_TargetDiagramElement() {
 		return (EReference)edgeEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public EClass getDiagram() {
 		return diagramEClass;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public EAttribute getDiagram_Name() {
 		return (EAttribute)diagramEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public EAttribute getDiagram_Documentation() {
 		return (EAttribute)diagramEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public EAttribute getDiagram_Resolution() {
 		return (EAttribute)diagramEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public EClass getShape() {
 		return shapeEClass;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public EReference getShape_Bounds() {
 		return (EReference)shapeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public DIFactory getDIFactory() {
 		return (DIFactory)getEFactoryInstance();
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private boolean isCreated = false;
@@ -347,13 +326,12 @@ public class DIPackageImpl extends EPackageImpl implements DIPackage {
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public void createPackageContents() {
-		if(isCreated) {
+		if(isCreated)
 			return;
-		}
 		isCreated = true;
 		// Create classes and their features
 		diagramElementEClass = createEClass(DIAGRAM_ELEMENT);
@@ -379,7 +357,7 @@ public class DIPackageImpl extends EPackageImpl implements DIPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private boolean isInitialized = false;
@@ -388,13 +366,12 @@ public class DIPackageImpl extends EPackageImpl implements DIPackage {
 	 * Complete the initialization of the package and its meta-model. This
 	 * method is guarded to have no affect on any invocation but its first. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public void initializePackageContents() {
-		if(isInitialized) {
+		if(isInitialized)
 			return;
-		}
 		isInitialized = true;
 		// Initialize package
 		setName(eNAME);
@@ -440,7 +417,7 @@ public class DIPackageImpl extends EPackageImpl implements DIPackage {
 	 * Initializes the annotations for <b>union</b>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected void createUnionAnnotations() {

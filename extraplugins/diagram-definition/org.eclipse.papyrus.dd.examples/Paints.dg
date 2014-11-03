@@ -2,14 +2,14 @@
 <dg:RootCanvas xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dg="http://www.omg.org/spec/DD/20110901/DG">
   <member xsi:type="dg:Rectangle">
     <style strokeWidth="2.0">
-      <fill paintServer="linear1"/>
+      <fill paintServer="//@definitions/@definition.0"/>
       <stroke color="#000000"/>
     </style>
     <bounds x="10.0" y="10.0" width="200.0" height="100.0"/>
   </member>
   <member xsi:type="dg:Ellipse">
     <style strokeWidth="2.0">
-      <fill paintServer="radial1"/>
+      <fill paintServer="//@definitions/@definition.1"/>
       <stroke color="#000000"/>
     </style>
     <center x="300.0" y="60.0"/>
@@ -17,7 +17,7 @@
   </member>
   <member xsi:type="dg:Ellipse">
     <style strokeWidth="2.0">
-      <fill paintServer="pattern1"/>
+      <fill paintServer="//@definitions/@definition.2"/>
       <stroke color="#000000"/>
     </style>
     <center x="450.0" y="60.0"/>

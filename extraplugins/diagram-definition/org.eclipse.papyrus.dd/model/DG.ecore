@@ -126,8 +126,8 @@
         </eGenericType>
       </eParameters>
     </eOperations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" ordered="false" eType="ecore:EDataType DC.ecore#//String"
-        iD="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" ordered="false" unique="false"
+        eType="ecore:EDataType DC.ecore#//String">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="a point to move to in the coordinate system"/>
       </eAnnotations>
@@ -441,24 +441,24 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CubicCurveTo" eSuperTypes="#//PathCommand">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="CubicCurveTo is a kind of path command that draws a cubic bézier curve from the current point to a new point using a start and an end control points.&#xA;Definitions nests definitions that are commonly referenced in the containing canvas. It can also nest an embedded stylesheet.&#xA;EllipticalArcTo is a kind of path command that draws an elliptical arc from the current point to a new point in the coordinate system.&#xA;QuadraticCurveTo is a kind of path command that draws a quadratic bézier curve from the current point to a new point using a single control point."/>
+      <details key="documentation" value="CubicCurveTo is a kind of path command that draws a cubic b��zier curve from the current point to a new point using a start and an end control points.&#xA;Definitions nests definitions that are commonly referenced in the containing canvas. It can also nest an embedded stylesheet.&#xA;EllipticalArcTo is a kind of path command that draws an elliptical arc from the current point to a new point in the coordinate system.&#xA;QuadraticCurveTo is a kind of path command that draws a quadratic b��zier curve from the current point to a new point using a single control point."/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="startControl" ordered="false"
         lowerBound="1" eType="ecore:EClass DC.ecore#//Point" containment="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="the start control point of the cubic bézier curve."/>
+        <details key="documentation" value="the start control point of the cubic b��zier curve."/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="endControl" ordered="false"
         lowerBound="1" eType="ecore:EClass DC.ecore#//Point" containment="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="the end control point of the cubic bézier curve."/>
+        <details key="documentation" value="the end control point of the cubic b��zier curve."/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="point" ordered="false"
         lowerBound="1" eType="ecore:EClass DC.ecore#//Point" containment="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="a point to draw a cubic bézier curve to from the current point in the coordinate system."/>
+        <details key="documentation" value="a point to draw a cubic b��zier curve to from the current point in the coordinate system."/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
@@ -579,18 +579,18 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="QuadraticCurveTo" eSuperTypes="#//PathCommand">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="QuadraticCurveTo is a kind of path command that draws a quadratic bézier curve from the current point to a new point using a single control point.&#xA;EllipticalArcTo is a kind of path command that draws an elliptical arc from the current point to a new point in the coordinate system."/>
+      <details key="documentation" value="QuadraticCurveTo is a kind of path command that draws a quadratic b��zier curve from the current point to a new point using a single control point.&#xA;EllipticalArcTo is a kind of path command that draws an elliptical arc from the current point to a new point in the coordinate system."/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="control" ordered="false"
         lowerBound="1" eType="ecore:EClass DC.ecore#//Point" containment="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="the control point of the quadratic bézier curve."/>
+        <details key="documentation" value="the control point of the quadratic b��zier curve."/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="point" ordered="false"
         lowerBound="1" eType="ecore:EClass DC.ecore#//Point" containment="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="a point to draw a quadratic bézier curve to from the current point in the coordinate system."/>
+        <details key="documentation" value="a point to draw a quadratic b��zier curve to from the current point in the coordinate system."/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>

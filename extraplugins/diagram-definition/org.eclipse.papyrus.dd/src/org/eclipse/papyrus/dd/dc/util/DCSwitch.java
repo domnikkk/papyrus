@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- *
+ *  
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *
+ *  
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -24,7 +24,7 @@ import org.eclipse.papyrus.dd.dc.*;
  * starting with the actual class of the object and proceeding up the
  * inheritance hierarchy until a non-null result is returned, which is the
  * result of the switch. <!-- end-user-doc -->
- *
+ * 
  * @see org.eclipse.papyrus.dd.dc.DCPackage
  * @generated
  */
@@ -33,7 +33,7 @@ public class DCSwitch<T> extends Switch<T> {
 	/**
 	 * The cached model package
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected static DCPackage modelPackage;
@@ -42,7 +42,7 @@ public class DCSwitch<T> extends Switch<T> {
 	 * Creates an instance of the switch.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public DCSwitch() {
@@ -54,7 +54,7 @@ public class DCSwitch<T> extends Switch<T> {
 	/**
 	 * Checks whether this is a switch for the given package. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @parameter ePackage the package in question.
 	 * @return whether this is a switch for the given package.
 	 * @generated
@@ -68,7 +68,7 @@ public class DCSwitch<T> extends Switch<T> {
 	 * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @return the first non-null result returned by a <code>caseXXX</code> call.
 	 * @generated
 	 */
@@ -79,27 +79,24 @@ public class DCSwitch<T> extends Switch<T> {
 		{
 			Point point = (Point)theEObject;
 			T result = casePoint(point);
-			if(result == null) {
+			if(result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case DCPackage.DIMENSION:
 		{
 			Dimension dimension = (Dimension)theEObject;
 			T result = caseDimension(dimension);
-			if(result == null) {
+			if(result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case DCPackage.BOUNDS:
 		{
 			Bounds bounds = (Bounds)theEObject;
 			T result = caseBounds(bounds);
-			if(result == null) {
+			if(result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		default:
@@ -112,7 +109,7 @@ public class DCSwitch<T> extends Switch<T> {
 	 * <!-- begin-user-doc --> This implementation returns
 	 * null; returning a non-null result will terminate the switch. <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @param object
 	 *        the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Point</em>'.
@@ -128,7 +125,7 @@ public class DCSwitch<T> extends Switch<T> {
 	 * <!-- begin-user-doc --> This implementation returns
 	 * null; returning a non-null result will terminate the switch. <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @param object
 	 *        the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Dimension</em>'.
@@ -144,7 +141,7 @@ public class DCSwitch<T> extends Switch<T> {
 	 * <!-- begin-user-doc --> This implementation returns
 	 * null; returning a non-null result will terminate the switch. <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @param object
 	 *        the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Bounds</em>'.
@@ -160,7 +157,7 @@ public class DCSwitch<T> extends Switch<T> {
 	 * <!-- begin-user-doc --> This implementation returns
 	 * null; returning a non-null result will terminate the switch, but this is
 	 * the last case anyway. <!-- end-user-doc -->
-	 *
+	 * 
 	 * @param object
 	 *        the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EObject</em>'.

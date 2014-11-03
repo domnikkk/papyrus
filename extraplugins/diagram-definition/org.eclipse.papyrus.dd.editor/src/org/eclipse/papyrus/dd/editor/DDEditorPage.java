@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- *
+ * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *
+ * 
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -14,7 +14,6 @@ package org.eclipse.papyrus.dd.editor;
 import org.eclipse.jface.action.Action;
 import org.eclipse.jface.action.IToolBarManager;
 import org.eclipse.jface.action.Separator;
-import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.swt.layout.FillLayout;
 import org.eclipse.swt.widgets.Composite;
@@ -36,7 +35,7 @@ public abstract class DDEditorPage extends FormPage {
 
 	/**
 	 * Constructs a new DD editor page
-	 *
+	 * 
 	 * @param editor
 	 *            The DD editor
 	 * @param id
@@ -50,7 +49,7 @@ public abstract class DDEditorPage extends FormPage {
 
 	/**
 	 * Returns the DD editor owning with the page
-	 *
+	 * 
 	 * @return DDEditor
 	 */
 	public DDEditor getDDEditor() {
@@ -59,7 +58,7 @@ public abstract class DDEditorPage extends FormPage {
 
 	/**
 	 * Gets a translatable string from the resource bundle
-	 *
+	 * 
 	 * @param key
 	 *            The translatable string
 	 * @return The translated string
@@ -84,7 +83,7 @@ public abstract class DDEditorPage extends FormPage {
 	/**
 	 * Creates the page's viewer in the given parent control Subclasses should
 	 * override and return a newly created viewer instance
-	 *
+	 * 
 	 * @param parent
 	 *            The parent control
 	 * @return a newly created viewer
@@ -93,17 +92,11 @@ public abstract class DDEditorPage extends FormPage {
 
 	/**
 	 * Gets the viewer associated with this page
-	 *
+	 * 
 	 * @return Viewer
 	 */
 	public Viewer getViewer() {
 		return viewer;
-	}
-
-	@Override
-	public boolean selectReveal(Object object) {
-		viewer.setSelection(new StructuredSelection(object), true);
-		return true;
 	}
 
 	@Override
@@ -127,7 +120,7 @@ public abstract class DDEditorPage extends FormPage {
 
 	/**
 	 * Adds actions to the page's toolbar
-	 *
+	 * 
 	 * @param manager
 	 *            The page's toolbar manager
 	 */
@@ -138,7 +131,6 @@ public abstract class DDEditorPage extends FormPage {
 		Action action;
 
 		action = new Action("Help") {
-			@Override
 			public void run() {
 				PlatformUI.getWorkbench().getHelpSystem()
 						.displayHelp(getPageHelpId());
@@ -152,7 +144,7 @@ public abstract class DDEditorPage extends FormPage {
 
 	/**
 	 * Get the help id associated with this page
-	 *
+	 * 
 	 * @return String the id of the help page
 	 */
 	protected String getPageHelpId() {

@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- *
+ *  
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *
+ *  
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -52,7 +52,6 @@ public class UMLDIModelPage extends DDModelPage {
 		Action action;
 
 		action = new Action("Transform to DG") {
-			@Override
 			public void run() {
 				EditingDomain editingDomain = getDDEditor().getEditingDomain();
 				Resource inResource = editingDomain.getResourceSet()
@@ -66,7 +65,7 @@ public class UMLDIModelPage extends DDModelPage {
 				context.setConfigProperty("keepModeling", true);
 
 				URI transformationURI = URI
-						.createURI("platform:/plugin/org.eclipse.papyrus.umldi2dg/transforms/UMLDIToDG.qvto");
+						.createURI("platform:/plugin/org.eclipse.papyrus.umldi2dg/transforms/UmlDiToDg.qvto");
 				TransformationExecutor executor = new TransformationExecutor(
 						transformationURI);
 				ExecutionDiagnostic result = executor.execute(context, input,

@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- *
+ *  
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *
+ *  
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -41,7 +41,7 @@ import org.eclipse.papyrus.dd.dg.util.DGAdapterFactory;
  * Note that most of the adapters are shared among multiple instances.
  * <!-- begin-user-doc --> <!--
  * end-user-doc -->
- *
+ * 
  * @generated
  */
 public class DGItemProviderAdapterFactory extends DGAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
@@ -49,7 +49,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	/**
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected ComposedAdapterFactory parentAdapterFactory;
@@ -57,7 +57,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	/**
 	 * This is used to implement {@link org.eclipse.emf.edit.provider.IChangeNotifier}. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected IChangeNotifier changeNotifier = new ChangeNotifier();
@@ -66,7 +66,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	 * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected Collection<Object> supportedTypes = new ArrayList<Object>();
@@ -74,7 +74,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	/**
 	 * This constructs an instance. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public DGItemProviderAdapterFactory() {
@@ -91,7 +91,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.dd.dg.Canvas} instances.
 	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected CanvasItemProvider canvasItemProvider;
@@ -99,7 +99,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	/**
 	 * This creates an adapter for a {@link org.eclipse.papyrus.dd.dg.Canvas}.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -114,7 +114,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.dd.dg.Group} instances.
 	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected GroupItemProvider groupItemProvider;
@@ -122,7 +122,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	/**
 	 * This creates an adapter for a {@link org.eclipse.papyrus.dd.dg.Group}.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -137,7 +137,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.dd.dg.MoveTo} instances.
 	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected MoveToItemProvider moveToItemProvider;
@@ -145,7 +145,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	/**
 	 * This creates an adapter for a {@link org.eclipse.papyrus.dd.dg.MoveTo}.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -160,7 +160,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.dd.dg.ClipPath} instances.
 	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected ClipPathItemProvider clipPathItemProvider;
@@ -168,7 +168,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	/**
 	 * This creates an adapter for a {@link org.eclipse.papyrus.dd.dg.ClipPath}.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -183,7 +183,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.dd.dg.Style} instances.
 	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected StyleItemProvider styleItemProvider;
@@ -191,7 +191,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	/**
 	 * This creates an adapter for a {@link org.eclipse.papyrus.dd.dg.Style}.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -206,7 +206,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.dd.dg.Paint} instances.
 	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected PaintItemProvider paintItemProvider;
@@ -214,7 +214,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	/**
 	 * This creates an adapter for a {@link org.eclipse.papyrus.dd.dg.Paint}.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -229,7 +229,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.dd.dg.Circle} instances.
 	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected CircleItemProvider circleItemProvider;
@@ -237,7 +237,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	/**
 	 * This creates an adapter for a {@link org.eclipse.papyrus.dd.dg.Circle}.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -251,7 +251,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.dd.dg.ClosePath} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected ClosePathItemProvider closePathItemProvider;
@@ -259,7 +259,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	/**
 	 * This creates an adapter for a {@link org.eclipse.papyrus.dd.dg.ClosePath}.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -273,7 +273,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.dd.dg.CubicCurveTo} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected CubicCurveToItemProvider cubicCurveToItemProvider;
@@ -282,7 +282,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	 * This creates an adapter for a {@link org.eclipse.papyrus.dd.dg.CubicCurveTo}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -296,7 +296,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.dd.dg.Definitions} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected DefinitionsItemProvider definitionsItemProvider;
@@ -305,7 +305,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	 * This creates an adapter for a {@link org.eclipse.papyrus.dd.dg.Definitions}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -319,7 +319,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.dd.dg.StyleSheet} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected StyleSheetItemProvider styleSheetItemProvider;
@@ -328,7 +328,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	 * This creates an adapter for a {@link org.eclipse.papyrus.dd.dg.StyleSheet}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -342,7 +342,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.dd.dg.StyleRule} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected StyleRuleItemProvider styleRuleItemProvider;
@@ -350,7 +350,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	/**
 	 * This creates an adapter for a {@link org.eclipse.papyrus.dd.dg.StyleRule}.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -364,7 +364,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.dd.dg.StyleSelector} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected StyleSelectorItemProvider styleSelectorItemProvider;
@@ -373,7 +373,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	 * This creates an adapter for a {@link org.eclipse.papyrus.dd.dg.StyleSelector}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -388,7 +388,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.dd.dg.Ellipse} instances.
 	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EllipseItemProvider ellipseItemProvider;
@@ -396,7 +396,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	/**
 	 * This creates an adapter for a {@link org.eclipse.papyrus.dd.dg.Ellipse}.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -410,7 +410,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.dd.dg.EllipticalArcTo} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EllipticalArcToItemProvider ellipticalArcToItemProvider;
@@ -419,7 +419,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	 * This creates an adapter for a {@link org.eclipse.papyrus.dd.dg.EllipticalArcTo}.
 	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -433,7 +433,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.dd.dg.QuadraticCurveTo} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected QuadraticCurveToItemProvider quadraticCurveToItemProvider;
@@ -442,7 +442,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	 * This creates an adapter for a {@link org.eclipse.papyrus.dd.dg.QuadraticCurveTo}.
 	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -456,7 +456,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.dd.dg.GradientStop} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected GradientStopItemProvider gradientStopItemProvider;
@@ -465,7 +465,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	 * This creates an adapter for a {@link org.eclipse.papyrus.dd.dg.GradientStop}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -480,7 +480,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.dd.dg.Image} instances.
 	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected ImageItemProvider imageItemProvider;
@@ -488,7 +488,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	/**
 	 * This creates an adapter for a {@link org.eclipse.papyrus.dd.dg.Image}.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -503,7 +503,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.dd.dg.Line} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected LineItemProvider lineItemProvider;
@@ -511,7 +511,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	/**
 	 * This creates an adapter for a {@link org.eclipse.papyrus.dd.dg.Line}.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -526,7 +526,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.dd.dg.Marker} instances.
 	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected MarkerItemProvider markerItemProvider;
@@ -534,7 +534,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	/**
 	 * This creates an adapter for a {@link org.eclipse.papyrus.dd.dg.Marker}.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -548,7 +548,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.dd.dg.LinearGradient} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected LinearGradientItemProvider linearGradientItemProvider;
@@ -557,7 +557,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	 * This creates an adapter for a {@link org.eclipse.papyrus.dd.dg.LinearGradient}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -572,7 +572,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.dd.dg.LineTo} instances.
 	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected LineToItemProvider lineToItemProvider;
@@ -580,7 +580,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	/**
 	 * This creates an adapter for a {@link org.eclipse.papyrus.dd.dg.LineTo}.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -595,7 +595,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.dd.dg.Matrix} instances.
 	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected MatrixItemProvider matrixItemProvider;
@@ -603,7 +603,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	/**
 	 * This creates an adapter for a {@link org.eclipse.papyrus.dd.dg.Matrix}.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -618,7 +618,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.dd.dg.Path} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected PathItemProvider pathItemProvider;
@@ -626,7 +626,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	/**
 	 * This creates an adapter for a {@link org.eclipse.papyrus.dd.dg.Path}.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -641,7 +641,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.dd.dg.Pattern} instances.
 	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected PatternItemProvider patternItemProvider;
@@ -649,7 +649,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	/**
 	 * This creates an adapter for a {@link org.eclipse.papyrus.dd.dg.Pattern}.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -664,7 +664,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.dd.dg.Polygon} instances.
 	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected PolygonItemProvider polygonItemProvider;
@@ -672,7 +672,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	/**
 	 * This creates an adapter for a {@link org.eclipse.papyrus.dd.dg.Polygon}.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -687,7 +687,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.dd.dg.Polyline} instances.
 	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected PolylineItemProvider polylineItemProvider;
@@ -695,7 +695,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	/**
 	 * This creates an adapter for a {@link org.eclipse.papyrus.dd.dg.Polyline}.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -709,7 +709,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.dd.dg.RadialGradient} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected RadialGradientItemProvider radialGradientItemProvider;
@@ -718,7 +718,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	 * This creates an adapter for a {@link org.eclipse.papyrus.dd.dg.RadialGradient}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -732,7 +732,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.dd.dg.Rectangle} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected RectangleItemProvider rectangleItemProvider;
@@ -740,7 +740,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	/**
 	 * This creates an adapter for a {@link org.eclipse.papyrus.dd.dg.Rectangle}.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -754,7 +754,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.dd.dg.RootCanvas} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected RootCanvasItemProvider rootCanvasItemProvider;
@@ -763,7 +763,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	 * This creates an adapter for a {@link org.eclipse.papyrus.dd.dg.RootCanvas}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -778,7 +778,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.dd.dg.Rotate} instances.
 	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected RotateItemProvider rotateItemProvider;
@@ -786,7 +786,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	/**
 	 * This creates an adapter for a {@link org.eclipse.papyrus.dd.dg.Rotate}.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -801,7 +801,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.dd.dg.Scale} instances.
 	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected ScaleItemProvider scaleItemProvider;
@@ -809,7 +809,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	/**
 	 * This creates an adapter for a {@link org.eclipse.papyrus.dd.dg.Scale}.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -824,7 +824,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.dd.dg.Skew} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected SkewItemProvider skewItemProvider;
@@ -832,7 +832,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	/**
 	 * This creates an adapter for a {@link org.eclipse.papyrus.dd.dg.Skew}.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -847,7 +847,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.dd.dg.Text} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected TextItemProvider textItemProvider;
@@ -855,7 +855,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	/**
 	 * This creates an adapter for a {@link org.eclipse.papyrus.dd.dg.Text}.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -869,7 +869,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.dd.dg.Translate} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected TranslateItemProvider translateItemProvider;
@@ -877,7 +877,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	/**
 	 * This creates an adapter for a {@link org.eclipse.papyrus.dd.dg.Translate}.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -892,7 +892,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.dd.dg.Use} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected UseItemProvider useItemProvider;
@@ -900,7 +900,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	/**
 	 * This creates an adapter for a {@link org.eclipse.papyrus.dd.dg.Use}. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -914,10 +914,9 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	/**
 	 * This returns the root adapter factory that contains this factory. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public ComposeableAdapterFactory getRootAdapterFactory() {
 		return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
 	}
@@ -925,17 +924,16 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	/**
 	 * This sets the composed adapter factory that contains this factory. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory) {
 		this.parentAdapterFactory = parentAdapterFactory;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -946,7 +944,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	/**
 	 * This implementation substitutes the factory itself as the key for the adapter.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -956,7 +954,7 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -973,10 +971,9 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	/**
 	 * This adds a listener.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public void addListener(INotifyChangedListener notifyChangedListener) {
 		changeNotifier.addListener(notifyChangedListener);
 	}
@@ -984,10 +981,9 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	/**
 	 * This removes a listener.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public void removeListener(INotifyChangedListener notifyChangedListener) {
 		changeNotifier.removeListener(notifyChangedListener);
 	}
@@ -995,10 +991,9 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	/**
 	 * This delegates to {@link #changeNotifier} and to {@link #parentAdapterFactory}. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public void fireNotifyChanged(Notification notification) {
 		changeNotifier.fireNotifyChanged(notification);
 		if(parentAdapterFactory != null) {
@@ -1009,118 +1004,81 @@ public class DGItemProviderAdapterFactory extends DGAdapterFactory implements Co
 	/**
 	 * This disposes all of the item providers created by this factory. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public void dispose() {
-		if(canvasItemProvider != null) {
+		if(canvasItemProvider != null)
 			canvasItemProvider.dispose();
-		}
-		if(groupItemProvider != null) {
+		if(groupItemProvider != null)
 			groupItemProvider.dispose();
-		}
-		if(moveToItemProvider != null) {
+		if(moveToItemProvider != null)
 			moveToItemProvider.dispose();
-		}
-		if(clipPathItemProvider != null) {
+		if(clipPathItemProvider != null)
 			clipPathItemProvider.dispose();
-		}
-		if(styleItemProvider != null) {
+		if(styleItemProvider != null)
 			styleItemProvider.dispose();
-		}
-		if(paintItemProvider != null) {
+		if(paintItemProvider != null)
 			paintItemProvider.dispose();
-		}
-		if(circleItemProvider != null) {
+		if(circleItemProvider != null)
 			circleItemProvider.dispose();
-		}
-		if(closePathItemProvider != null) {
+		if(closePathItemProvider != null)
 			closePathItemProvider.dispose();
-		}
-		if(cubicCurveToItemProvider != null) {
+		if(cubicCurveToItemProvider != null)
 			cubicCurveToItemProvider.dispose();
-		}
-		if(definitionsItemProvider != null) {
+		if(definitionsItemProvider != null)
 			definitionsItemProvider.dispose();
-		}
-		if(styleSheetItemProvider != null) {
+		if(styleSheetItemProvider != null)
 			styleSheetItemProvider.dispose();
-		}
-		if(styleRuleItemProvider != null) {
+		if(styleRuleItemProvider != null)
 			styleRuleItemProvider.dispose();
-		}
-		if(styleSelectorItemProvider != null) {
+		if(styleSelectorItemProvider != null)
 			styleSelectorItemProvider.dispose();
-		}
-		if(ellipseItemProvider != null) {
+		if(ellipseItemProvider != null)
 			ellipseItemProvider.dispose();
-		}
-		if(ellipticalArcToItemProvider != null) {
+		if(ellipticalArcToItemProvider != null)
 			ellipticalArcToItemProvider.dispose();
-		}
-		if(quadraticCurveToItemProvider != null) {
+		if(quadraticCurveToItemProvider != null)
 			quadraticCurveToItemProvider.dispose();
-		}
-		if(gradientStopItemProvider != null) {
+		if(gradientStopItemProvider != null)
 			gradientStopItemProvider.dispose();
-		}
-		if(imageItemProvider != null) {
+		if(imageItemProvider != null)
 			imageItemProvider.dispose();
-		}
-		if(lineItemProvider != null) {
+		if(lineItemProvider != null)
 			lineItemProvider.dispose();
-		}
-		if(markerItemProvider != null) {
+		if(markerItemProvider != null)
 			markerItemProvider.dispose();
-		}
-		if(linearGradientItemProvider != null) {
+		if(linearGradientItemProvider != null)
 			linearGradientItemProvider.dispose();
-		}
-		if(lineToItemProvider != null) {
+		if(lineToItemProvider != null)
 			lineToItemProvider.dispose();
-		}
-		if(matrixItemProvider != null) {
+		if(matrixItemProvider != null)
 			matrixItemProvider.dispose();
-		}
-		if(pathItemProvider != null) {
+		if(pathItemProvider != null)
 			pathItemProvider.dispose();
-		}
-		if(patternItemProvider != null) {
+		if(patternItemProvider != null)
 			patternItemProvider.dispose();
-		}
-		if(polygonItemProvider != null) {
+		if(polygonItemProvider != null)
 			polygonItemProvider.dispose();
-		}
-		if(polylineItemProvider != null) {
+		if(polylineItemProvider != null)
 			polylineItemProvider.dispose();
-		}
-		if(radialGradientItemProvider != null) {
+		if(radialGradientItemProvider != null)
 			radialGradientItemProvider.dispose();
-		}
-		if(rectangleItemProvider != null) {
+		if(rectangleItemProvider != null)
 			rectangleItemProvider.dispose();
-		}
-		if(rootCanvasItemProvider != null) {
+		if(rootCanvasItemProvider != null)
 			rootCanvasItemProvider.dispose();
-		}
-		if(rotateItemProvider != null) {
+		if(rotateItemProvider != null)
 			rotateItemProvider.dispose();
-		}
-		if(scaleItemProvider != null) {
+		if(scaleItemProvider != null)
 			scaleItemProvider.dispose();
-		}
-		if(skewItemProvider != null) {
+		if(skewItemProvider != null)
 			skewItemProvider.dispose();
-		}
-		if(textItemProvider != null) {
+		if(textItemProvider != null)
 			textItemProvider.dispose();
-		}
-		if(translateItemProvider != null) {
+		if(translateItemProvider != null)
 			translateItemProvider.dispose();
-		}
-		if(useItemProvider != null) {
+		if(useItemProvider != null)
 			useItemProvider.dispose();
-		}
 	}
 }

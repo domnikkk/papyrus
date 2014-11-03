@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- *
+ *  
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *
+ *  
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -94,14 +94,14 @@ import org.eclipse.ui.PartInitException;
 /**
  * This is a simple wizard for creating a new model file. <!-- begin-user-doc
  * --> <!-- end-user-doc -->
- *
+ * 
  * @generated
  */
 public class UMLDIModelWizard extends Wizard implements INewWizard {
 	/**
 	 * The supported extensions for created files. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public static final List<String> FILE_EXTENSIONS = Collections
@@ -112,7 +112,7 @@ public class UMLDIModelWizard extends Wizard implements INewWizard {
 	/**
 	 * A formatted list of supported file extensions, suitable for display. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public static final String FORMATTED_FILE_EXTENSIONS = UMLDIEditorPlugin.INSTANCE
@@ -122,7 +122,7 @@ public class UMLDIModelWizard extends Wizard implements INewWizard {
 	/**
 	 * This caches an instance of the model package. <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected UMLDIPackage umldiPackage = UMLDIPackage.eINSTANCE;
@@ -130,7 +130,7 @@ public class UMLDIModelWizard extends Wizard implements INewWizard {
 	/**
 	 * This caches an instance of the model factory. <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected UMLDIFactory umldiFactory = umldiPackage.getUMLDIFactory();
@@ -138,7 +138,7 @@ public class UMLDIModelWizard extends Wizard implements INewWizard {
 	/**
 	 * This is the file creation page. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected UMLDIModelWizardNewFileCreationPage newFileCreationPage;
@@ -146,7 +146,7 @@ public class UMLDIModelWizard extends Wizard implements INewWizard {
 	/**
 	 * This is the initial object creation page. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected UMLDIModelWizardInitialObjectCreationPage initialObjectCreationPage;
@@ -154,7 +154,7 @@ public class UMLDIModelWizard extends Wizard implements INewWizard {
 	/**
 	 * Remember the selection during initialization for populating the default
 	 * container. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected IStructuredSelection selection;
@@ -162,7 +162,7 @@ public class UMLDIModelWizard extends Wizard implements INewWizard {
 	/**
 	 * Remember the workbench during initialization. <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected IWorkbench workbench;
@@ -170,7 +170,7 @@ public class UMLDIModelWizard extends Wizard implements INewWizard {
 	/**
 	 * Caches the names of the types that can be created as the root object.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected List<String> initialObjectNames;
@@ -178,10 +178,9 @@ public class UMLDIModelWizard extends Wizard implements INewWizard {
 	/**
 	 * This just records the information. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public void init(IWorkbench workbench, IStructuredSelection selection) {
 		this.workbench = workbench;
 		this.selection = selection;
@@ -194,7 +193,7 @@ public class UMLDIModelWizard extends Wizard implements INewWizard {
 	/**
 	 * Returns the names of the types that can be created as the root object.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected Collection<String> getInitialObjectNames() {
@@ -216,7 +215,7 @@ public class UMLDIModelWizard extends Wizard implements INewWizard {
 
 	/**
 	 * Create a new model. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EObject createInitialModel() {
@@ -230,7 +229,7 @@ public class UMLDIModelWizard extends Wizard implements INewWizard {
 	/**
 	 * Do the work after everything is specified. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -292,7 +291,6 @@ public class UMLDIModelWizard extends Wizard implements INewWizard {
 				final ISelection targetSelection = new StructuredSelection(
 						modelFile);
 				getShell().getDisplay().asyncExec(new Runnable() {
-					@Override
 					public void run() {
 						((ISetSelectionTarget) activePart)
 								.selectReveal(targetSelection);
@@ -328,14 +326,14 @@ public class UMLDIModelWizard extends Wizard implements INewWizard {
 	/**
 	 * This is the one page of the wizard. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public class UMLDIModelWizardNewFileCreationPage extends
 			WizardNewFileCreationPage {
 		/**
 		 * Pass in the selection. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 *
+		 * 
 		 * @generated
 		 */
 		public UMLDIModelWizardNewFileCreationPage(String pageId,
@@ -346,7 +344,7 @@ public class UMLDIModelWizard extends Wizard implements INewWizard {
 		/**
 		 * The framework calls this to see if the file is correct. <!--
 		 * begin-user-doc --> <!-- end-user-doc -->
-		 *
+		 * 
 		 * @generated
 		 */
 		@Override
@@ -367,7 +365,7 @@ public class UMLDIModelWizard extends Wizard implements INewWizard {
 
 		/**
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 *
+		 * 
 		 * @generated
 		 */
 		public IFile getModelFile() {
@@ -379,13 +377,13 @@ public class UMLDIModelWizard extends Wizard implements INewWizard {
 	/**
 	 * This is the page where the type of object to create is selected. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public class UMLDIModelWizardInitialObjectCreationPage extends WizardPage {
 		/**
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 *
+		 * 
 		 * @generated
 		 */
 		protected Combo initialObjectField;
@@ -397,14 +395,14 @@ public class UMLDIModelWizard extends Wizard implements INewWizard {
 
 		/**
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 *
+		 * 
 		 * @generated
 		 */
 		protected Combo encodingField;
 
 		/**
 		 * Pass in the selection. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 *
+		 * 
 		 * @generated
 		 */
 		public UMLDIModelWizardInitialObjectCreationPage(String pageId) {
@@ -413,10 +411,9 @@ public class UMLDIModelWizard extends Wizard implements INewWizard {
 
 		/**
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 *
+		 * 
 		 * @generated
 		 */
-		@Override
 		public void createControl(Composite parent) {
 			Composite composite = new Composite(parent, SWT.NONE);
 			{
@@ -489,11 +486,10 @@ public class UMLDIModelWizard extends Wizard implements INewWizard {
 
 		/**
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 *
+		 * 
 		 * @generated
 		 */
 		protected ModifyListener validator = new ModifyListener() {
-			@Override
 			public void modifyText(ModifyEvent e) {
 				setPageComplete(validatePage());
 			}
@@ -501,7 +497,7 @@ public class UMLDIModelWizard extends Wizard implements INewWizard {
 
 		/**
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 *
+		 * 
 		 * @generated
 		 */
 		protected boolean validatePage() {
@@ -511,7 +507,7 @@ public class UMLDIModelWizard extends Wizard implements INewWizard {
 
 		/**
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 *
+		 * 
 		 * @generated
 		 */
 		@Override
@@ -530,7 +526,7 @@ public class UMLDIModelWizard extends Wizard implements INewWizard {
 
 		/**
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 *
+		 * 
 		 * @generated
 		 */
 		public String getInitialObjectName() {
@@ -546,7 +542,7 @@ public class UMLDIModelWizard extends Wizard implements INewWizard {
 
 		/**
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 *
+		 * 
 		 * @generated
 		 */
 		public String getEncoding() {
@@ -556,7 +552,7 @@ public class UMLDIModelWizard extends Wizard implements INewWizard {
 		/**
 		 * Returns the label for the specified type name. <!-- begin-user-doc
 		 * --> <!-- end-user-doc -->
-		 *
+		 * 
 		 * @generated
 		 */
 		protected String getLabel(String typeName) {
@@ -571,7 +567,7 @@ public class UMLDIModelWizard extends Wizard implements INewWizard {
 
 		/**
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 *
+		 * 
 		 * @generated
 		 */
 		protected Collection<String> getEncodings() {
@@ -591,7 +587,7 @@ public class UMLDIModelWizard extends Wizard implements INewWizard {
 	/**
 	 * The framework calls this to create the contents of the wizard. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -662,7 +658,7 @@ public class UMLDIModelWizard extends Wizard implements INewWizard {
 
 	/**
 	 * Get the file from the page. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public IFile getModelFile() {

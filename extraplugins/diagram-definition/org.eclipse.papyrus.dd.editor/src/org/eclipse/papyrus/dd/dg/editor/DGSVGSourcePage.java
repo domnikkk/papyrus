@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- *
+ *  
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *
+ *  
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -17,12 +17,15 @@ import java.io.StringWriter;
 import org.apache.batik.dom.GenericDOMImplementation;
 import org.apache.batik.dom.util.DOMUtilities;
 import org.apache.batik.transcoder.svg2svg.PrettyPrinter;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.jface.text.Document;
 import org.eclipse.jface.text.IDocument;
 import org.eclipse.jface.text.source.SourceViewer;
+import org.eclipse.jface.viewers.TreeSelection;
 import org.eclipse.jface.viewers.Viewer;
+import org.eclipse.papyrus.dd.dg.RootCanvas;
 import org.eclipse.papyrus.dd.editor.DDEditorPage;
 import org.eclipse.papyrus.dd.editor.DDEditorPlugin;
 import org.eclipse.swt.SWT;
@@ -46,7 +49,7 @@ public class DGSVGSourcePage extends DDEditorPage {
 
 	/**
 	 * Constructs a new SVG source page for a given DG editor
-	 *
+	 * 
 	 * @param editor
 	 *            The DG editor
 	 */
@@ -64,12 +67,24 @@ public class DGSVGSourcePage extends DDEditorPage {
 
 	@Override
 	public void refresh() {
-		EditingDomain editingDomain = getDDEditor().getEditingDomain();
-		Resource resource = editingDomain.getResourceSet().getResources()
-				.get(0);
+		RootCanvas canvas = null;
+		TreeSelection selection = (TreeSelection) ((DGEditor) getDDEditor()).getModelPage().getViewer().getSelection();
+		if (selection.isEmpty()) {
+			EditingDomain editingDomain = getDDEditor().getEditingDomain();
+			Resource resource = editingDomain.getResourceSet().getResources().get(0);
+			canvas = (RootCanvas) resource.getContents().get(0);
+		} else if (selection.getFirstElement() instanceof Resource) {
+			Resource resource = (Resource) selection.getFirstElement();
+			canvas = (RootCanvas) resource.getContents().get(0);
+		} else {
+			EObject obj = (EObject) selection.getFirstElement();
+			while (!(obj instanceof RootCanvas))
+				obj = obj.eContainer();
+			canvas = (RootCanvas) obj;
+		}
 
 		// (re)generate the SVG document
-		org.w3c.dom.Document svgDocument = getConverter().convert(resource);
+		org.w3c.dom.Document svgDocument = getConverter().convert(canvas);
 
 		String contents;
 		try {
@@ -97,7 +112,7 @@ public class DGSVGSourcePage extends DDEditorPage {
 
 	/**
 	 * Gets an instance of <code>DGToSVGConverter</code>
-	 *
+	 * 
 	 * @return DGToSVGConverter
 	 */
 	protected DGToSVGConverter getConverter() {
