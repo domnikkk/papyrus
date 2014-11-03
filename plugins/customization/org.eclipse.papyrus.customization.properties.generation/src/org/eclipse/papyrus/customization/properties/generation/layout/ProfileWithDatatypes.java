@@ -37,7 +37,14 @@ import org.eclipse.papyrus.views.properties.util.PropertiesUtil;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.UMLPackage;
 
-
+/**
+ *
+ * @author Camille Letavernier
+ *
+ * @deprecated Papyrus doesn't use custom Datatype definition anymore. Use the StandardLayoutGenerator instead
+ *
+ */
+@Deprecated
 public class ProfileWithDatatypes extends StandardLayoutGenerator {
 
 	protected IGenerator generator;
@@ -267,6 +274,6 @@ public class ProfileWithDatatypes extends StandardLayoutGenerator {
 
 	@Override
 	public String getName() {
-		return "UML Profile with DataTypes";
+		return "UML Profile with DataTypes (Deprecated, use Standard)";
 	}
 }
