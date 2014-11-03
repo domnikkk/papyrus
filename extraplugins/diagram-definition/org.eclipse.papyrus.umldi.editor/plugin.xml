@@ -21,9 +21,9 @@
             id="org.eclipse.emf.ecore.Wizard.category.ID"
             name="%_UI_Wizard_category"/>
       <wizard
-            id="org.eclipse.papyrus.umldi.editor.UMLDIModelWizard"
+            id="org.eclipse.papyrus.umldi.presentation.UMLDIModelWizardID"
             name="%_UI_UMLDIModelWizard_label"
-            class="org.eclipse.papyrus.umldi.editor.UMLDIModelWizard"
+            class="org.eclipse.papyrus.umldi.presentation.UMLDIModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
             icon="icons/full/obj16/UMLDIModelFile.gif">
          <description>%_UI_UMLDIModelWizard_description</description>
@@ -34,12 +34,12 @@
    <extension point="org.eclipse.ui.editors">
       <!-- @generated UMLDI -->
       <editor
-            id="org.eclipse.papyrus.umldi.editor.UMLDIEditor"
+            id="org.eclipse.papyrus.umldi.presentation.UMLDIEditorID"
             name="%_UI_UMLDIEditor_label"
             icon="icons/full/obj16/UMLDIModelFile.gif"
             extensions="umldi"
-            class="org.eclipse.papyrus.umldi.editor.UMLDIEditor"
-            contributorClass="org.eclipse.papyrus.umldi.editor.UMLDIActionBarContributor">
+            class="org.eclipse.papyrus.umldi.presentation.UMLDIEditor"
+            contributorClass="org.eclipse.papyrus.umldi.presentation.UMLDIActionBarContributor">
       </editor>
    </extension>
 
