@@ -1,0 +1,522 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Document="http:///schemas/Document/_qR4REMn0EeO9CYUoXDRplw/0" xmlns:Requirements="http://www.eclipse.org/papyrus/0.7.0/SysML/Requirements" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:structure="http://DeveloperProcess/schemas/structure/_VA9p4McPEeO9CYUoXDRplw/1" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/Document/_qR4REMn0EeO9CYUoXDRplw/0 pathmap://DEVELOPER_PROFILES/Document.profile.uml#_qR44IMn0EeO9CYUoXDRplw http://www.eclipse.org/papyrus/0.7.0/SysML/Requirements http://www.eclipse.org/papyrus/0.7.0/SysML#//requirements http://DeveloperProcess/schemas/structure/_VA9p4McPEeO9CYUoXDRplw/1 pathmap://DEVELOPER_PROFILES/developerprocess.profile.uml#_VA-4AMcPEeO9CYUoXDRplw">
+  <uml:Model xmi:id="_BaNQYHoyEeSIvbC5EJMc1g" name="Papyrus Test Generation Framework">
+    <ownedComment xmi:type="uml:Comment" xmi:id="_zHZ5wH6-EeS3hoTUHAmk0Q">
+      <body>==Framework Goals==&#xD;
+* Automate the  development of test cases for Papyrus&#xD;
+* Set the bases for a model-based testing approach&#xD;
+* Ease the transition towards test-driven development</body>
+    </ownedComment>
+    <ownedComment xmi:type="uml:Comment" xmi:id="_ClqsoH7BEeS3hoTUHAmk0Q">
+      <body>Currently, the framework supports the generation of unit tests for a diagram editor, taking as input an input .gmfgen. See below the generation workflow to understand how it works.</body>
+    </ownedComment>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_BaNQYXoyEeSIvbC5EJMc1g">
+      <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+    </packageImport>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_TnbC4HufEeS3hoTUHAmk0Q">
+      <importedPackage xmi:type="uml:Profile" href="pathmap://DEVELOPER_PROFILES/developerprocess.profile.uml#_kWqjAMbXEeO09JBvNFZRNw"/>
+    </packageImport>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_TnbC4XufEeS3hoTUHAmk0Q">
+      <importedPackage xmi:type="uml:Profile" href="pathmap://DEVELOPER_PROFILES/developerprocess.profile.uml#_qCT3MMbXEeO09JBvNFZRNw"/>
+    </packageImport>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_TnbC4nufEeS3hoTUHAmk0Q">
+      <importedPackage xmi:type="uml:Profile" href="pathmap://DEVELOPER_PROFILES/developerprocess.profile.uml#_2LNtQMbYEeO09JBvNFZRNw"/>
+    </packageImport>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_VuW6MHufEeS3hoTUHAmk0Q">
+      <importedPackage xmi:type="uml:Profile" href="pathmap://DEVELOPER_PROFILES/Document.profile.uml#_D0JcUMnzEeO9CYUoXDRplw"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Model" xmi:id="_BaNQYnoyEeSIvbC5EJMc1g" name="Requirements">
+      <packagedElement xmi:type="uml:Class" xmi:id="_8rcSwHsDEeS3hoTUHAmk0Q" name="JUnit Generation"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_ZmlMYHsEEeS3hoTUHAmk0Q" name="Functional test cases"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_aSGOkHsEEeS3hoTUHAmk0Q" name="Extensibility"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_fRgSYHsFEeS3hoTUHAmk0Q" name="Functional Coverage"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_2AiPEHsFEeS3hoTUHAmk0Q" name="Code Coverage"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Model" xmi:id="_BaNQY3oyEeSIvbC5EJMc1g" name="UseCases">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_0f_4AH74EeS3hoTUHAmk0Q">
+        <body>As a pre-requirement, the tests plug-in must have already been created.&#xD;
+Create tests plug-in, if it doesn't exist already. As a requirement, following the Papyrus development guidelines an Eclipse plug-in project must be created to contain the tests. Example: org.eclipse.papyrus.uml.diagram.component.tests.&#xD;
+Add the dependency in the plug-in manifest towards the testing framework: org.eclipse.papyrus.tests.framework.</body>
+      </ownedComment>
+      <ownedComment xmi:type="uml:Comment" xmi:id="_wHPnsH77EeS3hoTUHAmk0Q">
+        <body>Example: Generation for the UML Component diagram&#xD;
+Here is an example (componentdiagramtest.qvto):&#xD;
+&#xD;
+import canonicalTests;&#xD;
+&#xD;
+modeltype UML uses uml('http://www.eclipse.org/uml2/5.0.0/UML');&#xD;
+&#xD;
+transformation componentdiagramtest(in gmfgenUml : UML, in gmfgenMm : UML, in frameworkBase : UML, in utp : UML, out testModel : UML) extends canonicalTests(in gmfgenUml : UML, in gmfgenMm : UML, in frameworkBase : UML, in utp : UML, out testModel : UML);&#xD;
+&#xD;
+main() {&#xD;
+	topContainerEditPart := &quot;PackageEditPart&quot;;&#xD;
+	topNodesToTest := Set{&#xD;
+		&quot;PackageEditPart&quot;, &#xD;
+		&quot;ModelEditPart&quot;, &#xD;
+		&quot;ComponentEditPart&quot;, &#xD;
+		&quot;InterfaceEditPart&quot;, &#xD;
+		&quot;CommentEditPart&quot;, &#xD;
+		&quot;ConstraintEditPart&quot;&#xD;
+	} ;&#xD;
+	childNodesToTest := Set{&#xD;
+		&quot;ModelEditPartCN&quot;, &#xD;
+		&quot;PackageEditPartCN&quot;,&#xD;
+		&quot;RectangleInterfaceEditPartCN&quot; &#xD;
+		&quot;ComponentEditPartCN&quot;, &#xD;
+		&quot;ComponentEditPartPCN&quot;, &#xD;
+		&quot;CommentEditPartPCN&quot;, &#xD;
+		&quot;ConstraintEditPartPCN&quot;,&#xD;
+		&quot;InterfaceEditPartPCN&quot;&#xD;
+	};&#xD;
+	linksToTest := Set{&#xD;
+		&quot;UsageEditPart&quot;,&#xD;
+		&quot;InterfaceRealizationEditPart&quot;,&#xD;
+		&quot;ManifestationEditPart&quot;,&#xD;
+		&quot;ComponentRealizationEditPart&quot;,&#xD;
+		&quot;AbstractionEditPart&quot;,&#xD;
+		&quot;DependencyEditPart&quot;&#xD;
+	};&#xD;
+	linksOwnedBySourceToTest := Set{&#xD;
+		&quot;GeneralizationEditPart&quot;&#xD;
+	};&#xD;
+	gmfgenUml.rootObjects()[UML::Model]->map gmfgen2papyrusTest(&quot;org.eclipse.papyrus.uml.diagram.component.test&quot;);&#xD;
+}&#xD;
+&#xD;
+&#xD;
+Here is an example for the workflow launcher:&#xD;
+&#xD;
+package org.eclipse.papyrus.uml.diagram.component.test.generation&#xD;
+&#xD;
+import org.eclipse.emf.mwe2.runtime.workflow.WorkflowContextImpl&#xD;
+import org.eclipse.papyrus.tests.framework.mwe.GenerateTestsWorkflow&#xD;
+&#xD;
+class ComponentDiagramGenerateTestsWorkflow {&#xD;
+&#xD;
+	def static void main(String[] args) {&#xD;
+		val workflow = new GenerateTestsWorkflow()&#xD;
+		workflow.uriPrefix = &quot;platform:/resource&quot;&#xD;
+		runWorkflow(workflow);&#xD;
+	}&#xD;
+&#xD;
+	def static void runWorkflow(GenerateTestsWorkflow workflow) {&#xD;
+		workflow.gmfgenUri = workflow.uriPrefix + '/org.eclipse.papyrus.uml.diagram.component/model/ComponentDiagram.gmfgen'&#xD;
+		workflow.testSrcGenLocation = 'test-gen-15072014'&#xD;
+		workflow.qvtoScriptUri = workflow.uriPrefix + '/org.eclipse.papyrus.uml.diagram.component.tests/qvto/componentdiagramtest.qvto'&#xD;
+		workflow.testModelUri = workflow.uriPrefix + '/org.eclipse.papyrus.uml.diagram.component.tests/model/ComponentDiagramTest.uml'&#xD;
+		workflow.run(new WorkflowContextImpl());&#xD;
+	}&#xD;
+&#xD;
+}&#xD;
+&#xD;
+</body>
+      </ownedComment>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_BaNQZHoyEeSIvbC5EJMc1g" name="useCasesAbstraction" client="_BaNQY3oyEeSIvbC5EJMc1g" supplier="_BaNQYnoyEeSIvbC5EJMc1g"/>
+      <packagedElement xmi:type="uml:Component" xmi:id="_BaNQZXoyEeSIvbC5EJMc1g" name="Papyrus Test Generation Framework" useCase="_MrfP8Hr5EeS3hoTUHAmk0Q _O7kcMHr5EeS3hoTUHAmk0Q _nVl24HsAEeS3hoTUHAmk0Q">
+        <ownedUseCase xmi:type="uml:UseCase" xmi:id="_MrfP8Hr5EeS3hoTUHAmk0Q" name="Define list of element edit parts under test" subject="_BaNQZXoyEeSIvbC5EJMc1g">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_eN_cQH79EeS3hoTUHAmk0Q">
+            <body>Create the QVTO script for your diagram editor, detailing the name of the generated package of tests and the desired edit parts to test, as they are described in the gmfgen (See example below). </body>
+          </ownedComment>
+        </ownedUseCase>
+        <ownedUseCase xmi:type="uml:UseCase" xmi:id="_O7kcMHr5EeS3hoTUHAmk0Q" name="Generate test model" subject="_BaNQZXoyEeSIvbC5EJMc1g">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_i0Rq4H79EeS3hoTUHAmk0Q">
+            <body>Create the generation launcher (either Xtend-based or Java-based) in an appropiate package, for instance org.eclipse.papyrus.uml.diagram.component.test.generation, in a file such as ComponentDiagramGenerateTestsWorkflow.xtend. Copy the example launcher below and replace with the values for the generation parameters for your own diagram editor. The parameters are:&#xD;
+gmfgenUri: URI for the input GMFGen file&#xD;
+testSrcGenLocation: Folder in the project where the launcher is located where the test code will be generated, for instance test-gen.&#xD;
+qvtoScriptUri: URI for the QVTO script&#xD;
+testModelUri: URI where the UML-UTP intermediate model will be generated. After launching the generation, this model provides an overview of all the generated test artifacts.&#xD;
+Launch the main method as a normal Java class.&#xD;
+The intermediate model and the JUnit code are generated.</body>
+          </ownedComment>
+        </ownedUseCase>
+        <ownedUseCase xmi:type="uml:UseCase" xmi:id="_nVl24HsAEeS3hoTUHAmk0Q" name="Generate JUnit test code" subject="_BaNQZXoyEeSIvbC5EJMc1g">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_tbo1gH7ZEeS3hoTUHAmk0Q" annotatedElement="_nVl24HsAEeS3hoTUHAmk0Q">
+            <body>The generated JUnit tests extend the abstract test cases defined in the Papyrus test framework base</body>
+          </ownedComment>
+        </ownedUseCase>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Actor" xmi:id="_op7MkHsAEeS3hoTUHAmk0Q" name="Papyrus Developer"/>
+      <packagedElement xmi:type="uml:Association" xmi:id="_vjwyMHsAEeS3hoTUHAmk0Q" memberEnd="_vjwyMXsAEeS3hoTUHAmk0Q _vjwyNHsAEeS3hoTUHAmk0Q">
+        <ownedEnd xmi:type="uml:Property" xmi:id="_vjwyMXsAEeS3hoTUHAmk0Q" name="papyrus developer" type="_op7MkHsAEeS3hoTUHAmk0Q" association="_vjwyMHsAEeS3hoTUHAmk0Q">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_vjwyMnsAEeS3hoTUHAmk0Q" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_vjwyM3sAEeS3hoTUHAmk0Q" value="1"/>
+        </ownedEnd>
+        <ownedEnd xmi:type="uml:Property" xmi:id="_vjwyNHsAEeS3hoTUHAmk0Q" name="define list of element edit parts under test" type="_MrfP8Hr5EeS3hoTUHAmk0Q" association="_vjwyMHsAEeS3hoTUHAmk0Q">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_vjwyNXsAEeS3hoTUHAmk0Q" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_vjwyNnsAEeS3hoTUHAmk0Q" value="1"/>
+        </ownedEnd>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_0aScQHsAEeS3hoTUHAmk0Q" name="" memberEnd="_0aScQXsAEeS3hoTUHAmk0Q _0aScRHsAEeS3hoTUHAmk0Q">
+        <ownedEnd xmi:type="uml:Property" xmi:id="_0aScQXsAEeS3hoTUHAmk0Q" name="papyrus developer" type="_op7MkHsAEeS3hoTUHAmk0Q" association="_0aScQHsAEeS3hoTUHAmk0Q">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_0aScQnsAEeS3hoTUHAmk0Q" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_0aScQ3sAEeS3hoTUHAmk0Q" value="1"/>
+        </ownedEnd>
+        <ownedEnd xmi:type="uml:Property" xmi:id="_0aScRHsAEeS3hoTUHAmk0Q" name="generate test model" type="_O7kcMHr5EeS3hoTUHAmk0Q" association="_0aScQHsAEeS3hoTUHAmk0Q">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_0aScRXsAEeS3hoTUHAmk0Q" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_0aScRnsAEeS3hoTUHAmk0Q" value="1"/>
+        </ownedEnd>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_1QgSkHsAEeS3hoTUHAmk0Q" name="" memberEnd="_1QgSkXsAEeS3hoTUHAmk0Q _1QgSlHsAEeS3hoTUHAmk0Q">
+        <ownedEnd xmi:type="uml:Property" xmi:id="_1QgSkXsAEeS3hoTUHAmk0Q" name="papyrus developer" type="_op7MkHsAEeS3hoTUHAmk0Q" association="_1QgSkHsAEeS3hoTUHAmk0Q">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_1QgSknsAEeS3hoTUHAmk0Q" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_1QgSk3sAEeS3hoTUHAmk0Q" value="1"/>
+        </ownedEnd>
+        <ownedEnd xmi:type="uml:Property" xmi:id="_1QgSlHsAEeS3hoTUHAmk0Q" name="generate junit test code" type="_nVl24HsAEeS3hoTUHAmk0Q" association="_1QgSkHsAEeS3hoTUHAmk0Q">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_1QgSlXsAEeS3hoTUHAmk0Q" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_1QgSlnsAEeS3hoTUHAmk0Q" value="1"/>
+        </ownedEnd>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Model" xmi:id="_5RzLMH7ZEeS3hoTUHAmk0Q" name="TestFrameworkBase">
+        <packagedElement xmi:type="uml:Class" xmi:id="_5RzLMX7ZEeS3hoTUHAmk0Q" name="AbstractCreateElementFromPaletteTest" isAbstract="true">
+          <generalization xmi:type="uml:Generalization" xmi:id="_5RzLMn7ZEeS3hoTUHAmk0Q" general="_5RzLNn7ZEeS3hoTUHAmk0Q"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_5RzLM37ZEeS3hoTUHAmk0Q" name="AbstractCreateLinkFromPaletteTest" isAbstract="true">
+          <generalization xmi:type="uml:Generalization" xmi:id="_5RzLNH7ZEeS3hoTUHAmk0Q" general="_5RzLMX7ZEeS3hoTUHAmk0Q"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_5RzLNX7ZEeS3hoTUHAmk0Q" name="testCreateLinkFromPalette"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_5RzLNn7ZEeS3hoTUHAmk0Q" name="AbstractPapyrusTestCase" isAbstract="true"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_5RzLN37ZEeS3hoTUHAmk0Q" name="UMLElementTypes"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_5RzLOH7ZEeS3hoTUHAmk0Q" name="UMLPackage"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_5RzLOX7ZEeS3hoTUHAmk0Q" name="AbstractCreateLinkOwnedBySourceFromPaletteTest" isAbstract="true">
+          <generalization xmi:type="uml:Generalization" xmi:id="_5RzLOn7ZEeS3hoTUHAmk0Q" general="_5RzLM37ZEeS3hoTUHAmk0Q"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_5RzLO37ZEeS3hoTUHAmk0Q" name="AbstractCreateNodeFromPaletteTest" isAbstract="true">
+          <generalization xmi:type="uml:Generalization" xmi:id="_5RzLPH7ZEeS3hoTUHAmk0Q" general="_5RzLMX7ZEeS3hoTUHAmk0Q"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_5RzLPX7ZEeS3hoTUHAmk0Q" name="testCreateNodeFromPalette"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_5RzLPn7ZEeS3hoTUHAmk0Q" name="AbstractAppearanceNodeTest" isAbstract="true">
+          <generalization xmi:type="uml:Generalization" xmi:id="_5RzLP37ZEeS3hoTUHAmk0Q" general="_5RzLNn7ZEeS3hoTUHAmk0Q"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_5RzLQH7ZEeS3hoTUHAmk0Q" name="testAppearance"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_5RzLQX7ZEeS3hoTUHAmk0Q" name="AbstractDropNodeTest" isAbstract="true">
+          <generalization xmi:type="uml:Generalization" xmi:id="_5RzLQn7ZEeS3hoTUHAmk0Q" general="_5RzLNn7ZEeS3hoTUHAmk0Q"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_5RzLQ37ZEeS3hoTUHAmk0Q" name="testToDropNode"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_5RzLRH7ZEeS3hoTUHAmk0Q" name="AbstractDeleteNodeTest" isAbstract="true">
+          <generalization xmi:type="uml:Generalization" xmi:id="_5RzLRX7ZEeS3hoTUHAmk0Q" general="_5RzLNn7ZEeS3hoTUHAmk0Q"/>
+          <generalization xmi:type="uml:Generalization" xmi:id="_5RzLRn7ZEeS3hoTUHAmk0Q" general="_5RzLNn7ZEeS3hoTUHAmk0Q"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_5RzLR37ZEeS3hoTUHAmk0Q" name="testDestroy"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_5RzLSH7ZEeS3hoTUHAmk0Q" name="AbstractEditableNodeTest" isAbstract="true">
+          <generalization xmi:type="uml:Generalization" xmi:id="_5RzLSX7ZEeS3hoTUHAmk0Q" general="_5RzLNn7ZEeS3hoTUHAmk0Q"/>
+          <generalization xmi:type="uml:Generalization" xmi:id="_5RzLSn7ZEeS3hoTUHAmk0Q" general="_5RzLNn7ZEeS3hoTUHAmk0Q"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_5RzLS37ZEeS3hoTUHAmk0Q" name="testEdition"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_5RzLTH7ZEeS3hoTUHAmk0Q" name="AbstractCreateChildLabelNodeFromPaletteTest" isAbstract="true">
+          <generalization xmi:type="uml:Generalization" xmi:id="_5RzLTX7ZEeS3hoTUHAmk0Q" general="_5RzLMX7ZEeS3hoTUHAmk0Q"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_5RzLTn7ZEeS3hoTUHAmk0Q" name="testCreateChildLabelNodeFromPaletteTest"/>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Model" xmi:id="_BaNQZnoyEeSIvbC5EJMc1g" name="Design">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_iH6T8HxnEeS3hoTUHAmk0Q" annotatedElement="_rNn0IHvLEeS3hoTUHAmk0Q">
+        <body>This is the sequence of actions performed in the workflow to generate the tests. The input and output pins represent the inputs and outputs of every action.&#xD;
+</body>
+      </ownedComment>
+      <ownedComment xmi:type="uml:Comment" xmi:id="_2FrE4H7CEeS3hoTUHAmk0Q" annotatedElement="_kuoXcHvLEeS3hoTUHAmk0Q">
+        <body>This is the structure of launchers for the generation workflow according to each type of diagram.</body>
+      </ownedComment>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_BaNQZ3oyEeSIvbC5EJMc1g" name="DesignAbstraction" client="_BaNQZnoyEeSIvbC5EJMc1g" supplier="_BaNQY3oyEeSIvbC5EJMc1g"/>
+      <packagedElement xmi:type="uml:Package" xmi:id="_kuoXcHvLEeS3hoTUHAmk0Q" name="Structure">
+        <packagedElement xmi:type="uml:Class" xmi:id="_3C8cUHvLEeS3hoTUHAmk0Q" name="GenerateTestsWorkflow" isAbstract="true"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_3C9DYHvLEeS3hoTUHAmk0Q" name="StateMachineDiagramGenerateTestsWorkflow">
+          <generalization xmi:type="uml:Generalization" xmi:id="_3C9DYXvLEeS3hoTUHAmk0Q" general="_3C8cUHvLEeS3hoTUHAmk0Q"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_3C9DYnvLEeS3hoTUHAmk0Q" name="ClassDiagramGenerateTestsWorkflow">
+          <generalization xmi:type="uml:Generalization" xmi:id="_3C9DY3vLEeS3hoTUHAmk0Q" general="_3C8cUHvLEeS3hoTUHAmk0Q"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_3C9DZHvLEeS3hoTUHAmk0Q" name="CommunicationDiagramGenerateTestsWorkflow">
+          <generalization xmi:type="uml:Generalization" xmi:id="_3C9DZXvLEeS3hoTUHAmk0Q" general="_3C8cUHvLEeS3hoTUHAmk0Q"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_3C9qcHvLEeS3hoTUHAmk0Q" name="UseCaseDiagramGenerateTestsWorkflow">
+          <generalization xmi:type="uml:Generalization" xmi:id="_3C9qcXvLEeS3hoTUHAmk0Q" general="_3C8cUHvLEeS3hoTUHAmk0Q"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_3C9qcnvLEeS3hoTUHAmk0Q" name="ActivityDiagramGenerateTestsWorkflow">
+          <generalization xmi:type="uml:Generalization" xmi:id="_3C9qc3vLEeS3hoTUHAmk0Q" general="_3C8cUHvLEeS3hoTUHAmk0Q"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_3C9qdHvLEeS3hoTUHAmk0Q" name="SequenceDiagramGenerateTestsWorkflow">
+          <generalization xmi:type="uml:Generalization" xmi:id="_3C9qdXvLEeS3hoTUHAmk0Q" general="_3C8cUHvLEeS3hoTUHAmk0Q"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_3C9qdnvLEeS3hoTUHAmk0Q" name="DeploymentDiagramGenerateTestsWorkflow">
+          <generalization xmi:type="uml:Generalization" xmi:id="_3C9qd3vLEeS3hoTUHAmk0Q" general="_3C8cUHvLEeS3hoTUHAmk0Q"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_3C-RgHvLEeS3hoTUHAmk0Q" name="CompositeStructureDiagramGenerateTestsWorkflow">
+          <generalization xmi:type="uml:Generalization" xmi:id="_3C-RgXvLEeS3hoTUHAmk0Q" general="_3C8cUHvLEeS3hoTUHAmk0Q"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_3C-RgnvLEeS3hoTUHAmk0Q" name="ComponentDiagramGenerateTestsWorkflow">
+          <generalization xmi:type="uml:Generalization" xmi:id="_3C-Rg3vLEeS3hoTUHAmk0Q" general="_3C8cUHvLEeS3hoTUHAmk0Q"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_3C-RhHvLEeS3hoTUHAmk0Q" name="TimingDiagramGenerateTestsWorkflow">
+          <generalization xmi:type="uml:Generalization" xmi:id="_3C-RhXvLEeS3hoTUHAmk0Q" general="_3C8cUHvLEeS3hoTUHAmk0Q"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_3C-4kHvLEeS3hoTUHAmk0Q" name="ProfileDiagramGenerateTestsWorkflow">
+          <generalization xmi:type="uml:Generalization" xmi:id="_3C-4kXvLEeS3hoTUHAmk0Q" general="_3C8cUHvLEeS3hoTUHAmk0Q"/>
+        </packagedElement>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_rNn0IHvLEeS3hoTUHAmk0Q" name="Behavior">
+        <packagedElement xmi:type="uml:Activity" xmi:id="_p9X3wHvMEeS3hoTUHAmk0Q" name="Papyrus Test Generation Workflow" node="_p9X3xXvMEeS3hoTUHAmk0Q _p9X3xnvMEeS3hoTUHAmk0Q _p9X3x3vMEeS3hoTUHAmk0Q _p9X3zHvMEeS3hoTUHAmk0Q _p9X313vMEeS3hoTUHAmk0Q">
+          <edge xmi:type="uml:ControlFlow" xmi:id="_p9X3wXvMEeS3hoTUHAmk0Q" target="_p9X3x3vMEeS3hoTUHAmk0Q" source="_p9X3xXvMEeS3hoTUHAmk0Q"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="_p9X3wnvMEeS3hoTUHAmk0Q" target="_p9X3zHvMEeS3hoTUHAmk0Q" source="_p9X3x3vMEeS3hoTUHAmk0Q"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="_p9X3w3vMEeS3hoTUHAmk0Q" target="_p9X313vMEeS3hoTUHAmk0Q" source="_p9X3zHvMEeS3hoTUHAmk0Q"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="_p9X3xHvMEeS3hoTUHAmk0Q" target="_p9X3xnvMEeS3hoTUHAmk0Q" source="_p9X313vMEeS3hoTUHAmk0Q"/>
+          <node xmi:type="uml:InitialNode" xmi:id="_p9X3xXvMEeS3hoTUHAmk0Q" name="InitialNode" outgoing="_p9X3wXvMEeS3hoTUHAmk0Q"/>
+          <node xmi:type="uml:FlowFinalNode" xmi:id="_p9X3xnvMEeS3hoTUHAmk0Q" name="FlowFinalNode" incoming="_p9X3xHvMEeS3hoTUHAmk0Q"/>
+          <node xmi:type="uml:OpaqueAction" xmi:id="_p9X3x3vMEeS3hoTUHAmk0Q" name="Transform GMFGen model to UML" incoming="_p9X3wXvMEeS3hoTUHAmk0Q" outgoing="_p9X3wnvMEeS3hoTUHAmk0Q">
+            <inputValue xmi:type="uml:InputPin" xmi:id="_p9X3yHvMEeS3hoTUHAmk0Q" name="[DiagramType].gmfgen">
+              <upperBound xmi:type="uml:LiteralInteger" xmi:id="_p9X3yXvMEeS3hoTUHAmk0Q" value="1"/>
+            </inputValue>
+            <outputValue xmi:type="uml:OutputPin" xmi:id="_p9X3ynvMEeS3hoTUHAmk0Q" name="[DiagramType].gmfgen.uml">
+              <upperBound xmi:type="uml:LiteralInteger" xmi:id="_p9X3y3vMEeS3hoTUHAmk0Q" value="1"/>
+            </outputValue>
+          </node>
+          <node xmi:type="uml:OpaqueAction" xmi:id="_p9X3zHvMEeS3hoTUHAmk0Q" name="Generate UML-UTP Test Model" incoming="_p9X3wnvMEeS3hoTUHAmk0Q" outgoing="_p9X3w3vMEeS3hoTUHAmk0Q">
+            <inputValue xmi:type="uml:InputPin" xmi:id="_p9X3zXvMEeS3hoTUHAmk0Q" name="[DiagramType].gmfgen.uml">
+              <upperBound xmi:type="uml:LiteralInteger" xmi:id="_p9X3znvMEeS3hoTUHAmk0Q" value="1"/>
+            </inputValue>
+            <inputValue xmi:type="uml:InputPin" xmi:id="_p9X3z3vMEeS3hoTUHAmk0Q" name="testFrameworkBase.uml">
+              <upperBound xmi:type="uml:LiteralInteger" xmi:id="_p9X30HvMEeS3hoTUHAmk0Q" value="1"/>
+            </inputValue>
+            <inputValue xmi:type="uml:InputPin" xmi:id="_p9X30XvMEeS3hoTUHAmk0Q" name="utp.profile.uml">
+              <upperBound xmi:type="uml:LiteralInteger" xmi:id="_p9X30nvMEeS3hoTUHAmk0Q" value="1"/>
+            </inputValue>
+            <inputValue xmi:type="uml:InputPin" xmi:id="_p9X303vMEeS3hoTUHAmk0Q" name="testModelScript.qvto">
+              <upperBound xmi:type="uml:LiteralInteger" xmi:id="_p9X31HvMEeS3hoTUHAmk0Q" value="1"/>
+            </inputValue>
+            <outputValue xmi:type="uml:OutputPin" xmi:id="_p9X31XvMEeS3hoTUHAmk0Q" name="[DiagramType]TestModel.uml">
+              <upperBound xmi:type="uml:LiteralInteger" xmi:id="_p9X31nvMEeS3hoTUHAmk0Q" value="1"/>
+            </outputValue>
+          </node>
+          <node xmi:type="uml:OpaqueAction" xmi:id="_p9X313vMEeS3hoTUHAmk0Q" name="Generate JUnit tests" incoming="_p9X3w3vMEeS3hoTUHAmk0Q" outgoing="_p9X3xHvMEeS3hoTUHAmk0Q">
+            <inputValue xmi:type="uml:InputPin" xmi:id="_p9X32HvMEeS3hoTUHAmk0Q" name="[DiagramType]TestModel.uml">
+              <upperBound xmi:type="uml:LiteralInteger" xmi:id="_p9X32XvMEeS3hoTUHAmk0Q" value="1"/>
+            </inputValue>
+            <outputValue xmi:type="uml:OutputPin" xmi:id="_p9X32nvMEeS3hoTUHAmk0Q" name="Test[DiagramType][UseCase].java">
+              <upperBound xmi:type="uml:LiteralInteger" xmi:id="_p9X323vMEeS3hoTUHAmk0Q" value="1"/>
+            </outputValue>
+          </node>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Model" xmi:id="_zrgRQH7-EeS3hoTUHAmk0Q" name="Papyrus Test Generation Framework">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_zrpbMH7-EeS3hoTUHAmk0Q">
+        <body>==Framework Goals==&#xD;
+* Automate the  development of test cases for Papyrus&#xD;
+* Set the bases for a model-based testing approach&#xD;
+* Ease the transition towards test-driven development</body>
+      </ownedComment>
+      <ownedComment xmi:type="uml:Comment" xmi:id="_zrpbMn7-EeS3hoTUHAmk0Q">
+        <body>Currently, the framework supports the generation of unit tests for a diagram editor, taking as input an input .gmfgen. See below the generation workflow to understand how it works.</body>
+      </ownedComment>
+      <packagedElement xmi:type="uml:Package" xmi:id="_zrpbNH7-EeS3hoTUHAmk0Q" name="Requirements">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_zrpbNn7-EeS3hoTUHAmk0Q">
+          <body>- JUnit Generation (id=req01): 
+ The framework shall allow to generate JUnit tests for UML diagram editors, its nodes and links</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_zrzMMX7-EeS3hoTUHAmk0Q">
+          <body>- Functional test cases (id=req02): 
+ The framework shall test functional test cases: creation of elements, hide, delete, edition, drop from model explorer</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_zrzMM37-EeS3hoTUHAmk0Q">
+          <body>- Extensibility (id=req03): 
+ The framework shall be extensible with new diagram editors based on GMF</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_zrzMNX7-EeS3hoTUHAmk0Q">
+          <body>- Functional Coverage (id=req04): 
+ The framework shall attain complete functional coverage for a diagram editor.</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_zrzMN37-EeS3hoTUHAmk0Q">
+          <body>- Code Coverage (id=req05): 
+ The framework shall cover all the possible code coverable by generated tests (expected to be around 80%)</body>
+        </ownedComment>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_zrzMOX7-EeS3hoTUHAmk0Q" name="Use Cases">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_ztSZ8H7-EeS3hoTUHAmk0Q">
+          <body>UseCasesDiagram</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_ztSZ8n7-EeS3hoTUHAmk0Q">
+          <body>As a pre-requirement, the tests plug-in must have already been created.&#xD;
+Create tests plug-in, if it doesn't exist already. As a requirement, following the Papyrus development guidelines an Eclipse plug-in project must be created to contain the tests. Example: org.eclipse.papyrus.uml.diagram.component.tests.&#xD;
+Add the dependency in the plug-in manifest towards the testing framework: org.eclipse.papyrus.tests.framework.</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_ztSZ9H7-EeS3hoTUHAmk0Q">
+          <body>Example: Generation for the UML Component diagram&#xD;
+Here is an example (componentdiagramtest.qvto):&#xD;
+&#xD;
+import canonicalTests;&#xD;
+&#xD;
+modeltype UML uses uml('http://www.eclipse.org/uml2/5.0.0/UML');&#xD;
+&#xD;
+transformation componentdiagramtest(in gmfgenUml : UML, in gmfgenMm : UML, in frameworkBase : UML, in utp : UML, out testModel : UML) extends canonicalTests(in gmfgenUml : UML, in gmfgenMm : UML, in frameworkBase : UML, in utp : UML, out testModel : UML);&#xD;
+&#xD;
+main() {&#xD;
+	topContainerEditPart := &quot;PackageEditPart&quot;;&#xD;
+	topNodesToTest := Set{&#xD;
+		&quot;PackageEditPart&quot;, &#xD;
+		&quot;ModelEditPart&quot;, &#xD;
+		&quot;ComponentEditPart&quot;, &#xD;
+		&quot;InterfaceEditPart&quot;, &#xD;
+		&quot;CommentEditPart&quot;, &#xD;
+		&quot;ConstraintEditPart&quot;&#xD;
+	} ;&#xD;
+	childNodesToTest := Set{&#xD;
+		&quot;ModelEditPartCN&quot;, &#xD;
+		&quot;PackageEditPartCN&quot;,&#xD;
+		&quot;RectangleInterfaceEditPartCN&quot; &#xD;
+		&quot;ComponentEditPartCN&quot;, &#xD;
+		&quot;ComponentEditPartPCN&quot;, &#xD;
+		&quot;CommentEditPartPCN&quot;, &#xD;
+		&quot;ConstraintEditPartPCN&quot;,&#xD;
+		&quot;InterfaceEditPartPCN&quot;&#xD;
+	};&#xD;
+	linksToTest := Set{&#xD;
+		&quot;UsageEditPart&quot;,&#xD;
+		&quot;InterfaceRealizationEditPart&quot;,&#xD;
+		&quot;ManifestationEditPart&quot;,&#xD;
+		&quot;ComponentRealizationEditPart&quot;,&#xD;
+		&quot;AbstractionEditPart&quot;,&#xD;
+		&quot;DependencyEditPart&quot;&#xD;
+	};&#xD;
+	linksOwnedBySourceToTest := Set{&#xD;
+		&quot;GeneralizationEditPart&quot;&#xD;
+	};&#xD;
+	gmfgenUml.rootObjects()[UML::Model]->map gmfgen2papyrusTest(&quot;org.eclipse.papyrus.uml.diagram.component.test&quot;);&#xD;
+}&#xD;
+&#xD;
+&#xD;
+Here is an example for the workflow launcher:&#xD;
+&#xD;
+package org.eclipse.papyrus.uml.diagram.component.test.generation&#xD;
+&#xD;
+import org.eclipse.emf.mwe2.runtime.workflow.WorkflowContextImpl&#xD;
+import org.eclipse.papyrus.tests.framework.mwe.GenerateTestsWorkflow&#xD;
+&#xD;
+class ComponentDiagramGenerateTestsWorkflow {&#xD;
+&#xD;
+	def static void main(String[] args) {&#xD;
+		val workflow = new GenerateTestsWorkflow()&#xD;
+		workflow.uriPrefix = &quot;platform:/resource&quot;&#xD;
+		runWorkflow(workflow);&#xD;
+	}&#xD;
+&#xD;
+	def static void runWorkflow(GenerateTestsWorkflow workflow) {&#xD;
+		workflow.gmfgenUri = workflow.uriPrefix + '/org.eclipse.papyrus.uml.diagram.component/model/ComponentDiagram.gmfgen'&#xD;
+		workflow.testSrcGenLocation = 'test-gen-15072014'&#xD;
+		workflow.qvtoScriptUri = workflow.uriPrefix + '/org.eclipse.papyrus.uml.diagram.component.tests/qvto/componentdiagramtest.qvto'&#xD;
+		workflow.testModelUri = workflow.uriPrefix + '/org.eclipse.papyrus.uml.diagram.component.tests/model/ComponentDiagramTest.uml'&#xD;
+		workflow.run(new WorkflowContextImpl());&#xD;
+	}&#xD;
+&#xD;
+}&#xD;
+&#xD;
+</body>
+        </ownedComment>
+        <packagedElement xmi:type="uml:Package" xmi:id="_ztcK8X7-EeS3hoTUHAmk0Q" name="Define list of element edit parts under test">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_ztcK837-EeS3hoTUHAmk0Q">
+            <body>Create the QVTO script for your diagram editor, detailing the name of the generated package of tests and the desired edit parts to test, as they are described in the gmfgen (See example below). </body>
+          </ownedComment>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_ztcK9X7-EeS3hoTUHAmk0Q" name="Generate test model">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_ztcK937-EeS3hoTUHAmk0Q">
+            <body>Create the generation launcher (either Xtend-based or Java-based) in an appropiate package, for instance org.eclipse.papyrus.uml.diagram.component.test.generation, in a file such as ComponentDiagramGenerateTestsWorkflow.xtend. Copy the example launcher below and replace with the values for the generation parameters for your own diagram editor. The parameters are:&#xD;
+gmfgenUri: URI for the input GMFGen file&#xD;
+testSrcGenLocation: Folder in the project where the launcher is located where the test code will be generated, for instance test-gen.&#xD;
+qvtoScriptUri: URI for the QVTO script&#xD;
+testModelUri: URI where the UML-UTP intermediate model will be generated. After launching the generation, this model provides an overview of all the generated test artifacts.&#xD;
+Launch the main method as a normal Java class.&#xD;
+The intermediate model and the JUnit code are generated.</body>
+          </ownedComment>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_ztcK-X7-EeS3hoTUHAmk0Q" name="Generate JUnit test code">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_ztcK-37-EeS3hoTUHAmk0Q">
+            <body>The generated JUnit tests extend the abstract test cases defined in the Papyrus test framework base</body>
+          </ownedComment>
+          <ownedComment xmi:type="uml:Comment" xmi:id="_zvEioH7-EeS3hoTUHAmk0Q">
+            <body>AbstractTestClassesDiagram</body>
+          </ownedComment>
+        </packagedElement>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_zvEion7-EeS3hoTUHAmk0Q" name="Design">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_zvhOkH7-EeS3hoTUHAmk0Q">
+          <body>DesignOverview</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_zwamcH7-EeS3hoTUHAmk0Q">
+          <body>GenerationWorkflow</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_zwamcn7-EeS3hoTUHAmk0Q">
+          <body>This is the sequence of actions performed in the workflow to generate the tests. The input and output pins represent the inputs and outputs of every action.&#xD;
+</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_zxwDMH7-EeS3hoTUHAmk0Q">
+          <body>ClassDiagram</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_zxwDMn7-EeS3hoTUHAmk0Q">
+          <body>This is the structure of launchers for the generation workflow according to each type of diagram.</body>
+        </ownedComment>
+      </packagedElement>
+    </packagedElement>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_BaNQa3oyEeSIvbC5EJMc1g">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_BaNQbHoyEeSIvbC5EJMc1g" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://DEVELOPER_PROFILES/developerprocess.profile.uml#_VA6mkMcPEeO9CYUoXDRplw"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://DEVELOPER_PROFILES/developerprocess.profile.uml#_kWqjAMbXEeO09JBvNFZRNw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_BaNQbXoyEeSIvbC5EJMc1g">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_BaNQbnoyEeSIvbC5EJMc1g" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://DEVELOPER_PROFILES/developerprocess.profile.uml#_VA-4AMcPEeO9CYUoXDRplw"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://DEVELOPER_PROFILES/developerprocess.profile.uml#_qCT3MMbXEeO09JBvNFZRNw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_BaNQb3oyEeSIvbC5EJMc1g">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_BaNQcHoyEeSIvbC5EJMc1g" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://DEVELOPER_PROFILES/developerprocess.profile.uml#_VBAtMccPEeO9CYUoXDRplw"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://DEVELOPER_PROFILES/developerprocess.profile.uml#_2LNtQMbYEeO09JBvNFZRNw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_BaNQcXoyEeSIvbC5EJMc1g">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_BaNQcnoyEeSIvbC5EJMc1g" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/0.7.0/SysML#//requirements"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML_PROFILES/SysML.profile.uml#_OOJC4LX8EduFmqQsrNB9lw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_BaNQc3oyEeSIvbC5EJMc1g">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_BaNQdHoyEeSIvbC5EJMc1g" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://DEVELOPER_PROFILES/Document.profile.uml#_qR44IMn0EeO9CYUoXDRplw"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://DEVELOPER_PROFILES/Document.profile.uml#_D0JcUMnzEeO9CYUoXDRplw"/>
+    </profileApplication>
+  </uml:Model>
+  <structure:Project xmi:id="_BaNQdXoyEeSIvbC5EJMc1g" author="Juan Cadavid&#xD;&#xA;[juan.cadavid@cea.fr]" version="1.0" base_Model="_BaNQYHoyEeSIvbC5EJMc1g" title="Papyrus Test Generation Framework"/>
+  <structure:Requirements xmi:id="_BaNQdnoyEeSIvbC5EJMc1g" base_Model="_BaNQYnoyEeSIvbC5EJMc1g"/>
+  <structure:UseCases xmi:id="_BaNQd3oyEeSIvbC5EJMc1g" base_Model="_BaNQY3oyEeSIvbC5EJMc1g"/>
+  <structure:Design xmi:id="_BaNQeHoyEeSIvbC5EJMc1g" base_Model="_BaNQZnoyEeSIvbC5EJMc1g"/>
+  <Requirements:Requirement xmi:id="_8rgkMHsDEeS3hoTUHAmk0Q" text="The framework shall allow to generate JUnit tests for UML diagram editors, its nodes and links" id="req01" base_Class="_8rcSwHsDEeS3hoTUHAmk0Q"/>
+  <Requirements:Requirement xmi:id="_ZmnooHsEEeS3hoTUHAmk0Q" text="The framework shall test functional test cases: creation of elements, hide, delete, edition, drop from model explorer" id="req02" base_Class="_ZmlMYHsEEeS3hoTUHAmk0Q"/>
+  <Requirements:Requirement xmi:id="_aSIDwHsEEeS3hoTUHAmk0Q" text="The framework shall be extensible with new diagram editors based on GMF" id="req03" base_Class="_aSGOkHsEEeS3hoTUHAmk0Q"/>
+  <Requirements:Requirement xmi:id="_fRhggHsFEeS3hoTUHAmk0Q" text="The framework shall attain complete functional coverage for a diagram editor." id="req04" base_Class="_fRgSYHsFEeS3hoTUHAmk0Q"/>
+  <Requirements:Requirement xmi:id="_2AkEQHsFEeS3hoTUHAmk0Q" text="The framework shall cover all the possible code coverable by generated tests (expected to be around 80%)" id="req05" base_Class="_2AiPEHsFEeS3hoTUHAmk0Q"/>
+  <Document:Document xmi:id="_zrgRQX7-EeS3hoTUHAmk0Q" base_Model="_zrgRQH7-EeS3hoTUHAmk0Q" author="Juan Cadavid&#xD;&#xA;[juan.cadavid@cea.fr]" version="1.0"/>
+  <Document:Content xmi:id="_zrpbMX7-EeS3hoTUHAmk0Q" base_Comment="_zrpbMH7-EeS3hoTUHAmk0Q"/>
+  <Document:Content xmi:id="_zrpbM37-EeS3hoTUHAmk0Q" base_Comment="_zrpbMn7-EeS3hoTUHAmk0Q"/>
+  <Document:Section xmi:id="_zrpbNX7-EeS3hoTUHAmk0Q" base_Package="_zrpbNH7-EeS3hoTUHAmk0Q"/>
+  <Document:Content xmi:id="_zrzMMH7-EeS3hoTUHAmk0Q" base_Comment="_zrpbNn7-EeS3hoTUHAmk0Q"/>
+  <Document:Content xmi:id="_zrzMMn7-EeS3hoTUHAmk0Q" base_Comment="_zrzMMX7-EeS3hoTUHAmk0Q"/>
+  <Document:Content xmi:id="_zrzMNH7-EeS3hoTUHAmk0Q" base_Comment="_zrzMM37-EeS3hoTUHAmk0Q"/>
+  <Document:Content xmi:id="_zrzMNn7-EeS3hoTUHAmk0Q" base_Comment="_zrzMNX7-EeS3hoTUHAmk0Q"/>
+  <Document:Content xmi:id="_zrzMOH7-EeS3hoTUHAmk0Q" base_Comment="_zrzMN37-EeS3hoTUHAmk0Q"/>
+  <Document:Section xmi:id="_zrzMOn7-EeS3hoTUHAmk0Q" base_Package="_zrzMOX7-EeS3hoTUHAmk0Q"/>
+  <Document:ImageRef xmi:id="_ztSZ8X7-EeS3hoTUHAmk0Q" base_Comment="_ztSZ8H7-EeS3hoTUHAmk0Q" ref="C:/Users/jc236769/OomphRoot/git/org.eclipse.papyrus/tests/framework/org.eclipse.papyrus.tests.framework/doc/imgDOC/UseCasesDiagram.png"/>
+  <Document:Content xmi:id="_ztSZ837-EeS3hoTUHAmk0Q" base_Comment="_ztSZ8n7-EeS3hoTUHAmk0Q"/>
+  <Document:Content xmi:id="_ztcK8H7-EeS3hoTUHAmk0Q" base_Comment="_ztSZ9H7-EeS3hoTUHAmk0Q"/>
+  <Document:Section xmi:id="_ztcK8n7-EeS3hoTUHAmk0Q" base_Package="_ztcK8X7-EeS3hoTUHAmk0Q"/>
+  <Document:Content xmi:id="_ztcK9H7-EeS3hoTUHAmk0Q" base_Comment="_ztcK837-EeS3hoTUHAmk0Q"/>
+  <Document:Section xmi:id="_ztcK9n7-EeS3hoTUHAmk0Q" base_Package="_ztcK9X7-EeS3hoTUHAmk0Q"/>
+  <Document:Content xmi:id="_ztcK-H7-EeS3hoTUHAmk0Q" base_Comment="_ztcK937-EeS3hoTUHAmk0Q"/>
+  <Document:Section xmi:id="_ztcK-n7-EeS3hoTUHAmk0Q" base_Package="_ztcK-X7-EeS3hoTUHAmk0Q"/>
+  <Document:Content xmi:id="_ztcK_H7-EeS3hoTUHAmk0Q" base_Comment="_ztcK-37-EeS3hoTUHAmk0Q"/>
+  <Document:ImageRef xmi:id="_zvEioX7-EeS3hoTUHAmk0Q" base_Comment="_zvEioH7-EeS3hoTUHAmk0Q" ref="C:/Users/jc236769/OomphRoot/git/org.eclipse.papyrus/tests/framework/org.eclipse.papyrus.tests.framework/doc/imgDOC/AbstractTestClassesDiagram.png"/>
+  <Document:Section xmi:id="_zvEio37-EeS3hoTUHAmk0Q" base_Package="_zvEion7-EeS3hoTUHAmk0Q"/>
+  <Document:ImageRef xmi:id="_zvq_kH7-EeS3hoTUHAmk0Q" base_Comment="_zvhOkH7-EeS3hoTUHAmk0Q" ref="C:/Users/jc236769/OomphRoot/git/org.eclipse.papyrus/tests/framework/org.eclipse.papyrus.tests.framework/doc/imgDOC/DesignOverview.png"/>
+  <Document:ImageRef xmi:id="_zwamcX7-EeS3hoTUHAmk0Q" base_Comment="_zwamcH7-EeS3hoTUHAmk0Q" ref="C:/Users/jc236769/OomphRoot/git/org.eclipse.papyrus/tests/framework/org.eclipse.papyrus.tests.framework/doc/imgDOC/GenerationWorkflow.png"/>
+  <Document:Content xmi:id="_zwamc37-EeS3hoTUHAmk0Q" base_Comment="_zwamcn7-EeS3hoTUHAmk0Q"/>
+  <Document:ImageRef xmi:id="_zxwDMX7-EeS3hoTUHAmk0Q" base_Comment="_zxwDMH7-EeS3hoTUHAmk0Q" ref="C:/Users/jc236769/OomphRoot/git/org.eclipse.papyrus/tests/framework/org.eclipse.papyrus.tests.framework/doc/imgDOC/ClassDiagram.png"/>
+  <Document:Content xmi:id="_zxwDM37-EeS3hoTUHAmk0Q" base_Comment="_zxwDMn7-EeS3hoTUHAmk0Q"/>
+</xmi:XMI>

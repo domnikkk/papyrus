@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_3xixwD-oEeOBJIvKdeZtpQ" name="org.eclipse.papyrus.uml.diagram.tests">
+  <packagedElement xmi:type="uml:Class" xmi:id="_OlpbsD-pEeOBJIvKdeZtpQ" name="AbstractCreateElementFromPaletteTest" isAbstract="true">
+    <generalization xmi:id="_1sUbUF31EeSH9PN5AZl3pQ" general="_FAMH4D-qEeOBJIvKdeZtpQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_kHbiID-pEeOBJIvKdeZtpQ" name="AbstractCreateLinkFromPaletteTest" isAbstract="true">
+    <generalization xmi:id="_vwyx8D-pEeOBJIvKdeZtpQ" general="_OlpbsD-pEeOBJIvKdeZtpQ"/>
+    <ownedOperation xmi:id="_NnRIkAHgEeSXTsFWGl8rRw" name="testCreateLinkFromPalette"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_FAMH4D-qEeOBJIvKdeZtpQ" name="AbstractPapyrusTestCase" isAbstract="true"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_8DwYEEhfEeOZGbAGN97tSQ" name="UMLElementTypes"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_9YLNUEhfEeOZGbAGN97tSQ" name="UMLPackage"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_agsZgAEZEeS1CswA_Bot2A" name="AbstractCreateLinkOwnedBySourceFromPaletteTest" isAbstract="true">
+    <generalization xmi:id="_i6t_gAEZEeS1CswA_Bot2A" general="_kHbiID-pEeOBJIvKdeZtpQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_FH-oEAHgEeSXTsFWGl8rRw" name="AbstractCreateNodeFromPaletteTest" isAbstract="true">
+    <generalization xmi:id="_JBdbEAHgEeSXTsFWGl8rRw" general="_OlpbsD-pEeOBJIvKdeZtpQ"/>
+    <ownedOperation xmi:id="_zFEUMD-rEeOBJIvKdeZtpQ" name="testCreateNodeFromPalette"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_MeWEoDHjEeS_IJz4WAHZuA" name="AbstractAppearanceNodeTest" isAbstract="true">
+    <generalization xmi:id="_1QbJgF31EeSH9PN5AZl3pQ" general="_FAMH4D-qEeOBJIvKdeZtpQ"/>
+    <ownedOperation xmi:id="_7QFpYDf3EeShgKK1P_proQ" name="testAppearance"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_a-LPcEpGEeSXIouijOm2Dw" name="AbstractDropNodeTest" isAbstract="true">
+    <generalization xmi:id="__TJZMEpNEeSXIouijOm2Dw" general="_FAMH4D-qEeOBJIvKdeZtpQ"/>
+    <ownedOperation xmi:id="_AH0XYEpOEeSXIouijOm2Dw" name="testToDropNode"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_uV5GcGhgEeSbVu_LWD82Ug" name="AbstractDeleteNodeTest" isAbstract="true">
+    <generalization xmi:id="_x31GsGhhEeSbVu_LWD82Ug" general="_FAMH4D-qEeOBJIvKdeZtpQ"/>
+    <generalization xmi:id="_Yh1Y4HTEEeSva4y8D0d1Hw" general="_FAMH4D-qEeOBJIvKdeZtpQ"/>
+    <ownedOperation xmi:id="_2hPXQGhgEeSbVu_LWD82Ug" name="testDestroy"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_VCOloGhnEeSbVu_LWD82Ug" name="AbstractEditableNodeTest" isAbstract="true">
+    <generalization xmi:id="_gG0UcGhnEeSbVu_LWD82Ug" general="_FAMH4D-qEeOBJIvKdeZtpQ"/>
+    <generalization xmi:id="_gcQ40HTEEeSva4y8D0d1Hw" general="_FAMH4D-qEeOBJIvKdeZtpQ"/>
+    <ownedOperation xmi:id="_a4UPQGhnEeSbVu_LWD82Ug" name="testEdition"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_JfdmsHcFEeSIvbC5EJMc1g" name="AbstractCreateChildLabelNodeFromPaletteTest" isAbstract="true">
+    <generalization xmi:id="_TrjAMHcFEeSIvbC5EJMc1g" general="_OlpbsD-pEeOBJIvKdeZtpQ"/>
+    <ownedOperation xmi:id="_d2ccAHcHEeSIvbC5EJMc1g" name="testCreateChildLabelNodeFromPaletteTest"/>
+  </packagedElement>
+</uml:Model>

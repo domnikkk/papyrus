@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+
+   <extension
+         point="org.eclipse.m2m.qvt.oml.runtime.qvtTransformation">
+      <transformation
+            file="qvto/CanonicalTests.qvto"
+            id="qvto.canonicalTests">
+      </transformation>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <category
+            id="org.eclipse.papyrus.tests.framework.papyrusTestingFramework"
+            name="Papyrus Testing Framework">
+      </category>
+      <command
+            categoryId="org.eclipse.papyrus.tests.framework.papyrusTestingFramework"
+            defaultHandler="org.eclipse.papyrus.tests.framework.handlers.GenerateCanonicalTestsHandler"
+            id="org.eclipse.papyrus.tests.framework.generateCanonicalTests"
+            name="Generate canonical tests for edit parts">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:org.eclipse.jdt.ui.PackageExplorer">
+         <menu
+               commandId="org.eclipse.papyrus.tests.framework.generateCanonicalTests"
+               label="Papyrus Testing Framework">
+            <command
+                  commandId="org.eclipse.papyrus.tests.framework.generateCanonicalTests"
+                  style="push">
+               <visibleWhen
+                     checkEnabled="false">
+               </visibleWhen>
+            </command>
+            <visibleWhen
+                  checkEnabled="false">
+                 
+            </visibleWhen>
+            
+         </menu>
+      </menuContribution>
+   </extension>
+
+
+</plugin>

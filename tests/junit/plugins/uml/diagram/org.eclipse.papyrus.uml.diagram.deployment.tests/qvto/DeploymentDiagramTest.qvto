@@ -1,0 +1,71 @@
+import CanonicalTests;
+
+modeltype UML uses uml('http://www.eclipse.org/uml2/5.0.0/UML');
+
+transformation DeploymentDiagramTest(in gmfgenUml : UML, in gmfgenMm : UML, in frameworkBase : UML, in utp : UML, out testModel : UML) extends CanonicalTests(in gmfgenUml : UML, in gmfgenMm : UML, in frameworkBase : UML, in utp : UML, out testModel : UML);
+
+main() {
+	topContainerEditPart := "PackageEditPart";
+	topNodesToTest := Set{
+		"DependencyNodeEditPart",
+		"PackageEditPart",
+		"ModelEditPart",
+		"ConstraintEditPart",
+		"CommentEditPart",
+		"ExecutionEnvironmentEditPart",
+		"DeviceEditPart",
+		"ArtifactEditPart",
+		"NodeEditPart",
+		"DefaultNamedElementEditPart"
+	} ;
+	childNodesToTest := Set{
+		"ModelEditPartCN",
+		"PackageEditPartCN",
+		"DeviceEditPartCN",
+		"NestedDeviceEditPartCN",
+		"ExecutionEnvironmentEditPartCN",
+		"NestedExecutionEnvironmentEditPartCN",
+		"NodeEditPartCN",
+		"NestedNodeEditPartCN",
+		"ArtifactEditPartCN",
+		"ArtifactEditPartACN",
+		"NestedArtifactNodeEditPartCN",
+		"CommentEditPartCN",
+		"ConstraintEditPartCN"
+	};
+	linksToTest := Set{
+		"DeploymentEditPart",
+		"ManifestationEditPart",
+		"DependencyEditPart",
+		"DependencyBranchEditPart"
+	};
+	linksOwnedBySourceToTest := Set{
+		"GeneralizationEditPart"
+	};
+	elementTypesAppearanceTest := Set{
+		"DependencyNodeEditPart",
+		"PackageEditPart",
+		"ModelEditPart",
+		"ConstraintEditPart",
+		"CommentEditPart",
+		"ExecutionEnvironmentEditPart",
+		"DeviceEditPart",
+		"ArtifactEditPart",
+		"NodeEditPart",
+		"DefaultNamedElementEditPart"
+	};
+	elementTypesDropTests := Set{
+		"DependencyNodeEditPart",
+		"PackageEditPart",
+		"ModelEditPart",
+		"ConstraintEditPart",
+		"CommentEditPart",
+		"ExecutionEnvironmentEditPart",
+		"DeviceEditPart",
+		"ArtifactEditPart",
+		"NodeEditPart",
+		"DefaultNamedElementEditPart"
+	};
+	gmfgenUml.rootObjects()[UML::Model]->collectOne(canonicalTests("org.eclipse.papyrus.uml.diagram.deployment.test"));
+}
+

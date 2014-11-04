@@ -46,6 +46,8 @@ public class AllTests {
 		availableConfigs.put("FULL_CI_TESTS_CONFIG", ClassificationConfig.FULL_CI_TESTS_CONFIG);
 		availableConfigs.put("FULL_TESTS_CONFIG", ClassificationConfig.FULL_TESTS_CONFIG);
 		availableConfigs.put("LIGTHWEIGHT_TESTS_CONFIG", ClassificationConfig.LIGTHWEIGHT_TESTS_CONFIG);
+		availableConfigs.put("GENERATED_TESTS_CONFIG", ClassificationConfig.GENERATED_TESTS_CONFIG);
+		
 	}
 
 	public static final List<ITestSuiteClass> suiteClasses;

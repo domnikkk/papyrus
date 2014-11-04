@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_5KIBkHrWEeSHY5FbTIEHfw" name="model">
+  <packagedElement xmi:type="uml:Interaction" xmi:id="_7OFdYHrWEeSHY5FbTIEHfw" name="Interaction1">
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_8It5oHrWEeSHY5FbTIEHfw" name="Lifeline" decomposedAs="_VSEjsHrXEeSHY5FbTIEHfw" represents="_fRNtYHrXEeSHY5FbTIEHfw"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_DeuBYHrYEeSHY5FbTIEHfw" name="Lifeline0" represents="_35d1gHrXEeSHY5FbTIEHfw"/>
+    <fragment xmi:type="uml:PartDecomposition" xmi:id="_VSEjsHrXEeSHY5FbTIEHfw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_8-kjkHrWEeSHY5FbTIEHfw" name="Interface1">
+    <nestedClassifier xmi:type="uml:Class" xmi:id="_D8nTwHrXEeSHY5FbTIEHfw" name="Class1"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_EXFpQHrXEeSHY5FbTIEHfw" name="Class1">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_fRNtYHrXEeSHY5FbTIEHfw" name="fadwa" type="_8-kjkHrWEeSHY5FbTIEHfw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_3C_ggHrXEeSHY5FbTIEHfw" name="Class2">
+    <ownedAttribute xmi:type="uml:Port" xmi:id="_35d1gHrXEeSHY5FbTIEHfw" name="Port1" type="_8-kjkHrWEeSHY5FbTIEHfw" aggregation="composite"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:InstanceValue" xmi:id="_LBrcgHrYEeSHY5FbTIEHfw" name="InstanceValue1" instance="_QghDwHrYEeSHY5FbTIEHfw"/>
+  <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_QghDwHrYEeSHY5FbTIEHfw" name="toto" classifier="_8-kjkHrWEeSHY5FbTIEHfw"/>
+</uml:Model>

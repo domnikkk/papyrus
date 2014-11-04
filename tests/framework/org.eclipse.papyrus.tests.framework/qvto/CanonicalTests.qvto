@@ -1,0 +1,31 @@
+import AppearanceTests;
+import CreateFromPaletteTests;
+import DropTests;
+import DeleteTests;
+import EditionTests;
+import TestModelCreationUtilities;
+
+modeltype UML uses uml('http://www.eclipse.org/uml2/5.0.0/UML');
+modeltype Ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+
+transformation CanonicalTests(in gmfgenUml : UML, in gmfgenMm : UML, in frameworkBase : UML, in utp : UML, out testModel : UML);
+
+//Properties to be overriden by the .qvto for each diagram type
+
+helper Model::canonicalTests(diagramTestPackageName : String) : Model{
+	self.setMetamodels(gmfgenMm.objectsOfType(Model)->any(true), frameworkBase.objectsOfType(Model)->any(true), utp.objectsOfType(Profile)->any(true));
+	var testModel := object Model{
+		name := diagramTestPackageName;
+		packagedElement := Set{
+			self.appearanceTest(diagramTestPackageName), 
+			self.createFromPaletteTest(diagramTestPackageName),
+			self.dropTest(diagramTestPackageName),
+			self.deleteTest(diagramTestPackageName),
+			self.editionTest(diagramTestPackageName)
+			
+		};
+	};
+	testModel.applyProfile(utp.objectsOfType(Profile)->any(true));
+	return testModel;
+}
+

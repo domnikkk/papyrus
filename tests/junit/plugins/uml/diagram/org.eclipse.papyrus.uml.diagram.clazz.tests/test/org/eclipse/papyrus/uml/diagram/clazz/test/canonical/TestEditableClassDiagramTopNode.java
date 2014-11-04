@@ -18,13 +18,13 @@ import org.eclipse.papyrus.commands.ICreationCommand;
 import org.eclipse.papyrus.uml.diagram.clazz.CreateClassDiagramCommand;
 import org.eclipse.papyrus.uml.diagram.clazz.providers.UMLElementTypes;
 import org.eclipse.papyrus.uml.diagram.clazz.test.IClassDiagramTestsConstants;
-import org.eclipse.papyrus.uml.diagram.tests.edition.EditableNodeTest;
+import org.eclipse.papyrus.uml.diagram.tests.edition.AbstractEditableNodeTest;
 import org.junit.Test;
 
 /**
  * The Class TestClassDiagramTopNode.
  */
-public class TestEditableClassDiagramTopNode extends EditableNodeTest {
+public class TestEditableClassDiagramTopNode extends AbstractEditableNodeTest {
 
 	@Override
 	public GraphicalEditPart getContainerEditPart() {

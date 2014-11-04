@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_ojFWAGUNEeS3aquWmuuvcQ" name="model">
+  <packagedElement xmi:type="uml:Class" xmi:id="_tdB8QG_pEeSeypZAIz-wHg" name="Class1">
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_1_rSwG_pEeSeypZAIz-wHg" name="Operation1"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_vJLVAG_pEeSeypZAIz-wHg" name="InstanceSpecification1"/>
+  <packagedElement xmi:type="uml:Package" xmi:id="_yl3eUG_pEeSeypZAIz-wHg" name="Package1"/>
+  <packagedElement xmi:type="uml:Model" xmi:id="_dRWjQHFnEeSxxMu7eIKKUw" name="Model1">
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_fefwQHFnEeSxxMu7eIKKUw" client="_dRWjQHFnEeSxxMu7eIKKUw" supplier="_d2AvgHFnEeSxxMu7eIKKUw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Model" xmi:id="_d2AvgHFnEeSxxMu7eIKKUw" name="Model2"/>
+</uml:Model>

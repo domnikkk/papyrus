@@ -1,0 +1,22 @@
+
+__TOC__
+= Papyrus Test Generation Framework =
+==Requirements==
+- JUnit Generation (id=req01): 
+ The framework shall allow to generate JUnit tests for UML diagram editors, its nodes and links
+- Functional test cases (id=req02): 
+ The framework shall test functional test cases: creation of elements, hide, delete, edition, drop from model explorer
+- Extensibility (id=req03): 
+ The framework shall be extensible with new diagram editors based on GMF
+- Functional Coverage (id=req04): 
+ The framework shall attain complete functional coverage for a diagram editor.
+- Code Coverage (id=req05): 
+ The framework shall cover all the possible code coverable by generated tests (expected to be around 80%)
+==Use Cases==
+[[Image:C:/Users/jc236769/OomphRoot/git/org.eclipse.papyrus/tests/framework/org.eclipse.papyrus.tests.framework/doc/imgDOC/UseCasesDiagram.png|UseCasesDiagram]]<br>
+===Define list of element edit parts under test===
+===Generate test model===
+===Generate JUnit test code===
+==Design==
+[[Image:C:/Users/jc236769/OomphRoot/git/org.eclipse.papyrus/tests/framework/org.eclipse.papyrus.tests.framework/doc/imgDOC/ClassDiagram.png|ClassDiagram]]<br>
+==Tests==
