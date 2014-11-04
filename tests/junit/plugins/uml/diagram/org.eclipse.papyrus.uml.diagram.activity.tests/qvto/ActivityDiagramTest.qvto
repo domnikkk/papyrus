@@ -1,0 +1,83 @@
+import CanonicalTests;
+
+modeltype UML uses uml('http://www.eclipse.org/uml2/5.0.0/UML');
+
+transformation ActivityDiagramTest(in gmfgenUml : UML, in gmfgenMm : UML, in frameworkBase : UML, in utp : UML, out testModel : UML) extends CanonicalTests(in gmfgenUml : UML, in gmfgenMm : UML, in frameworkBase : UML, in utp : UML, out testModel : UML);
+
+main() {
+	topContainerEditPart := "ActivityEditPart";
+	topNodesToTest := Set{
+		"ActivityEditPart"
+	} ;
+	childNodesToTest := Set{
+		"CentralBufferNodeEditPart",
+		"OpaqueActionEditPart",
+		"InitialNodeEditPart",
+		"ActivityFinalNodeEditPart",
+		"FlowFinalNodeEditPart",
+		"DecisionNodeEditPart",
+		"MergeNodeEditPart",
+		"JoinNodeEditPart",
+		"ForkNodeEditPart",
+		"DataStoreNodeEditPart",
+		"SendObjectActionEditPart",
+		"AcceptEventActionEditPart",
+		"ValueSpecificationActionEditPart",
+		"ActivityPartitionEditPart",
+		"InterruptibleActivityRegionEditPart",
+		"StructuredActivityNodeEditPart",
+		"ReadSelfActionEditPart",
+		"ConditionalNodeEditPart",
+		"ExpansionRegionEditPart",
+		"LoopNodeEditPart",
+		"SequenceNodeEditPart",
+		"ActivityEditPartCN",
+		"ReadStructuralFeatureActionEditPart",
+		"DestroyObjectActionEditPart",
+		"ReadVariableActionEditPart",
+		"BroadcastSignalActionEditPart",
+		"CreateObjectActionEditPart",
+		"AddVariableValueActionEditPart"
+	};
+	linksToTest := Set{
+		"ObjectFlowEditPart",
+		"ControlFlowEditPart"
+	};
+	elementTypesAppearanceTest := Set{
+		"ActivityEditPart"
+	};
+	elementTypesDropTests := Set{
+		"ActivityEditPart",
+		"CentralBufferNodeEditPart",
+		"OpaqueActionEditPart",
+		"InitialNodeEditPart",
+		"ActivityFinalNodeEditPart",
+		"FlowFinalNodeEditPart",
+		"DecisionNodeEditPart",
+		"MergeNodeEditPart",
+		"JoinNodeEditPart",
+		"ForkNodeEditPart",
+		"DataStoreNodeEditPart",
+		"SendObjectActionEditPart",
+		"AcceptEventActionEditPart",
+		"ValueSpecificationActionEditPart",
+		"ActivityPartitionEditPart",
+		"InterruptibleActivityRegionEditPart",
+		"StructuredActivityNodeEditPart",
+		"ReadSelfActionEditPart",
+		"ConditionalNodeEditPart",
+		"ExpansionRegionEditPart",
+		"LoopNodeEditPart",
+		"SequenceNodeEditPart",
+		"ActivityEditPartCN",
+		"ReadStructuralFeatureActionEditPart",
+		"DestroyObjectActionEditPart",
+		"ReadVariableActionEditPart",
+		"BroadcastSignalActionEditPart",
+		"CreateObjectActionEditPart",
+		"AddVariableValueActionEditPart"
+	};
+	gmfgenUml.rootObjects()[UML::Model]->collectOne(canonicalTests("org.eclipse.papyrus.uml.diagram.activity.test"));
+}
+
+

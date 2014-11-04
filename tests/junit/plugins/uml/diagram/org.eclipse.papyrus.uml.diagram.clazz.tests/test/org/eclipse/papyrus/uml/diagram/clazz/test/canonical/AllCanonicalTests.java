@@ -42,6 +42,7 @@ TestStaticFeatureRepresentation.class,
 TestClassDiagramNestedClassifier.class,
 //test list-compartment child duplicates
 TestListCompartmentNodesChildDuplicates.class,
+TestEditableClassDiagramTopNode.class,
 })
 public class AllCanonicalTests {
 }

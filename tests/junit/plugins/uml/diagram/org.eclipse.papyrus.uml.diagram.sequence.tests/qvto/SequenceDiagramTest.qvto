@@ -1,0 +1,64 @@
+import CanonicalTests;
+
+modeltype UML uses uml('http://www.eclipse.org/uml2/5.0.0/UML');
+
+transformation SequenceDiagramTest(in gmfgenUml : UML, in gmfgenMm : UML, in frameworkBase : UML, in utp : UML, out testModel : UML) extends CanonicalTests(in gmfgenUml : UML, in gmfgenMm : UML, in frameworkBase : UML, in utp : UML, out testModel : UML);
+
+main() {
+	topContainerEditPart := "InteractionEditPart";
+	topNodesToTest := Set{
+		"InteractionEditPart"
+	} ;
+	childNodesToTest := Set{
+		"ConsiderIgnoreFragmentEditPart",
+		"CombinedFragmentEditPart",
+		"InteractionOperandEditPart",
+		"InteractionUseEditPart",
+		"LifelineEditPart",
+		"ActionExecutionSpecificationEditPart",
+		"BehaviorExecutionSpecificationEditPart",
+		"CombinedFragment2EditPart",
+		"ConstraintEditPart",
+		"CommentEditPart",
+		"DurationConstraintInMessageEditPart",
+		"DurationObservationEditPart"
+	};
+	linksToTest := Set{
+		"GeneralOrderingEditPart"
+	};
+	linksOwnedBySourceToTest := Set{
+		
+	};
+	elementTypesAppearanceTest := Set{
+		"InteractionEditPart"
+		"ConsiderIgnoreFragmentEditPart",
+		"CombinedFragmentEditPart",
+		"InteractionOperandEditPart",
+		"InteractionUseEditPart",
+		"LifelineEditPart",
+		"ActionExecutionSpecificationEditPart",
+		"BehaviorExecutionSpecificationEditPart",
+		"CombinedFragment2EditPart",
+		"ConstraintEditPart",
+		"CommentEditPart",
+		"DurationConstraintInMessageEditPart",
+		"DurationObservationEditPart"
+	};
+	elementTypesDropTests := Set{
+		"InteractionEditPart",
+		"ConsiderIgnoreFragmentEditPart",
+		"CombinedFragmentEditPart",
+		"InteractionOperandEditPart",
+		"InteractionUseEditPart",
+		"LifelineEditPart",
+		"ActionExecutionSpecificationEditPart",
+		"BehaviorExecutionSpecificationEditPart",
+		"CombinedFragment2EditPart",
+		"ConstraintEditPart",
+		"CommentEditPart",
+		"DurationConstraintInMessageEditPart",
+		"DurationObservationEditPart"
+	};
+	gmfgenUml.rootObjects()[UML::Model]->collectOne(canonicalTests("org.eclipse.papyrus.uml.diagram.sequence.test"));
+}
+
