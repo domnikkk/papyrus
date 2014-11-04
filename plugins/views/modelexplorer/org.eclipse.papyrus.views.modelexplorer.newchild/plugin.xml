@@ -6,7 +6,7 @@
                allPopups="false"
                locationURI="popup:org.eclipse.papyrus.views.modelexplorer.modelexplorer.popup?before=org.eclipse.papyrus.views.modelexplorer.popupmenu.creatediagram">
                      <dynamic
-                           class="org.eclipse.papyrus.views.modelexplorer.newchild.DynamicNewChild"
+                           class="org.eclipse.papyrus.infra.newchild.ui.DynamicNewChild"
                            id="org.eclipse.papyrus.views.modelexplorer.newchild.dynamic">
                      </dynamic>
          </menuContribution>

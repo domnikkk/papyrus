@@ -12,7 +12,7 @@
  *      Christian W. Damus (CEA) - bug 413703
  *
  *****************************************************************************/
-package org.eclipse.papyrus.views.modelexplorer.newchild;
+package org.eclipse.papyrus.infra.newchild.ui;
 
 
 import java.util.ArrayList;
@@ -21,6 +21,7 @@ import java.util.Iterator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.jface.action.ContributionItem;
 import org.eclipse.jface.action.IContributionItem;
 import org.eclipse.jface.viewers.ISelection;
@@ -80,7 +81,7 @@ public class DynamicNewChild extends ContributionItem {
 	@Override
 	public void fill(Menu menu, int index) {
 		EObject eObject = getSelection();
-		if (eObject != null) {
+		if (eObject != null && editingDomain != null) {
 			CreationMenuFactory creationMenuFactory = new CreationMenuFactory(editingDomain);
 			ArrayList<Folder> folders = creationMenuRegistry.getRootFolder();
 			Iterator<Folder> iterFolder = folders.iterator();
@@ -125,7 +126,8 @@ public class DynamicNewChild extends ContributionItem {
 			try {
 				editingDomain = ServiceUtilsForEObject.getInstance().getService(org.eclipse.emf.transaction.TransactionalEditingDomain.class, editingDomainCitizen);
 			} catch (Exception ex) {
-				// Nothing to do. We can't handle this case
+				// If the service/service registry is not available, try to retrieve directly from the EObject
+				editingDomain = TransactionUtil.getEditingDomain(editingDomainCitizen);
 			}
 			return selectedEObject;
 		}

@@ -136,15 +136,16 @@ public class UMLContentProvider extends EncapsulatedContentProvider {
 		if (root == null && eObject.eResource() != null) {
 			try {
 				// try to retrieve the root from the object to edit
-				root = ServiceUtilsForResource.getInstance().getModelSet(eObject.eResource());
+				root = ServiceUtilsForResource.getInstance().getService(ResourceSet.class, eObject.eResource());
 			} catch (ServiceException e) {
+				root = eObject.eResource().getResourceSet();
 				// Nothing
 			}
 		}
 		if (root == null) {
 			// try to retrieve the root from the current editor
 			try {
-				root = ServiceUtilsForActionHandlers.getInstance().getModelSet();
+				root = ServiceUtilsForActionHandlers.getInstance().getServiceRegistry().getService(ResourceSet.class);
 			} catch (ServiceException e) {
 				// Nothing
 			}

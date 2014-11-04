@@ -209,7 +209,7 @@ public class EMFModelElement extends AbstractModelElement {
 					: ServiceUtilsForResourceSet.getInstance().getService(LabelProviderService.class, NestedEditingDialogContext.getInstance().getResourceSet());
 			return lpSvc.getLabelProvider();
 		} catch (ServiceException ex) {
-			Activator.log.error(ex);
+			// The service registry isn't always present in the properties view. Don't log an error and use a standard label provider
 			return new EMFLabelProvider();
 		}
 	}

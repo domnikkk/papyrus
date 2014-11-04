@@ -26,5 +26,5 @@ Bundle-Description: The purpose of this plugin  is to do the connectio
  he docs directory of the plugin org.eclipse.papyrus.infra.newchild
 Bundle-SymbolicName: org.eclipse.papyrus.views.modelexplorer.newchild;
  singleton:=true
-Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 
