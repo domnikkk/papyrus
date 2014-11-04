@@ -1,0 +1,238 @@
+import TestModelCreationUtilities;
+
+library CreateFromPaletteTest;
+
+modeltype UML uses uml('http://www.eclipse.org/uml2/5.0.0/UML');
+modeltype Ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+
+helper Model::createFromPaletteTest(modelName : String) : Package {
+	var toReturn := object Package{
+		name := modelName + ".createFromPalette";
+	};
+	if (diagramUpdater = null or diagramUpdater = ""){
+		diagramUpdater := "UMLDiagramUpdater";
+	};
+	var topNodeTestDiagramClass : Class := self.createTopNodeTestClass();
+	var childNodeTestDiagramClasses : Set(Class) := self.createChildNodeTestClass();
+	var linkTestDiagramClass : Class := self.createLinkTestClass();
+	var linksOwnedBySourceTestDiagramClass : Class := self.createLinksOwnedBySourceTestDiagramClass();
+	var testClasses : Set(Class) := Set{topNodeTestDiagramClass, 
+		linkTestDiagramClass, linksOwnedBySourceTestDiagramClass};
+	testClasses := testClasses->union(childNodeTestDiagramClasses);
+	toReturn.packagedElement := testClasses;
+
+	var applicationResult : Set(EObject) := toReturn.applyProfile(utp);
+	var testContextStereotype := testClasses->collectOne(getApplicableStereotype("utp::TestContext"));
+	testClasses.applyStereotype(testContextStereotype);
+	testClasses.ownedAttribute.applySutStereotype();
+	var testCaseStereotype := testClasses.ownedOperation->collectOne(getApplicableStereotype("utp::TestCase"));
+	testClasses.ownedOperation.applyStereotype(testCaseStereotype);
+	//testClasses.ownedBehavior.applyStereotype(testCaseStereotype);
+	return toReturn;
+}
+
+helper Model::createTopNodeTestClass() : Class {
+	var topNodeEditPartIs := self.packagedElement[InstanceSpecification]
+				->select(is | is.classifier->collectOne(name = "GenTopLevelNode") and topNodesToTest->exists(s | s = is.getSlotStringValue("editPartClassName")));
+	var testClass := object Class{
+		name := "Test" + self.getDiagramName() + "TopNodeGen";
+		generalization := object Generalization{ general := frameworkBase.getUmlClassifier("CreateNodeFromPaletteTest") };
+		elementImport := self.computeImports(topNodesToTest->including(topContainerEditPart));
+	};
+	var testBehaviors : Set(Activity) := topNodeEditPartIs.createCallTestNodeOperationActivity("TestTopNode")->asSet();
+	testClass.ownedBehavior := testBehaviors;
+	testClass.ownedOperation := topNodeEditPartIs->collect(is | is.createEditPartNodesIs2NodeTestCaseOperation("testTopNode", testBehaviors->selectOne(name = is.getSlotStringValue("editPartClassName").toFirstLowerCase() + 'TestCase')));
+	testClass.ownedAttribute := testClass.createSelfProperty();
+	testClass.ownedAttribute := testClass.ownedAttribute->including(self.getInstanceSpecification("GenDiagram").diagramIs2Property());
+	testClass.ownedAttribute := testClass.ownedAttribute->including(self.getInstanceSpecification("GenEditorGenerator").editorGeneratorIs2Property());
+	testClass.ownedAttribute := testClass.ownedAttribute->including(self.createDiagramUpdaterProperty());
+	testClass.ownedAttribute := testClass.ownedAttribute->including(self.packagedElement[InstanceSpecification]->any(name = "GenTopLevelNode_" + topContainerEditPart).containerDerivedProperty());
+	testClass.ownedAttribute := testClass.ownedAttribute->union(topNodeEditPartIs->createEditPartNodesIs2Property("GenTopLevelNode"));
+	
+	return testClass;
+}
+
+helper Model::createDiagramUpdaterProperty() : Property{
+	return object Property{
+		name := "diagramUpdater";
+		defaultValue := object StringExpression{
+			symbol := diagramUpdater
+		}
+	}
+}
+
+helper Model::createChildNodeTestClass() : Set(Class) {
+
+	var childNodeTestClasses : Set(Class) := topNodesToTest->union(childNodesToTest)->collect(containerToTest : String | 
+		
+		self.childNodeTestForContainer(containerToTest)
+	)->asSet();
+	return childNodeTestClasses;
+}
+
+helper Model::childNodeTestForContainer(containerToTest : String) : Class{
+	var childNodeEditPartIs := self.packagedElement[InstanceSpecification]
+				->select(is | is.classifier->collectOne(name = "GenChildNode") and topNodesToTest->union(childNodesToTest)->exists(s | s = is.getSlotStringValue("editPartClassName")));
+	var testClass := object Class{
+		name := "Test" + self.getDiagramName() + "ChildNodeIn"+ containerToTest + "Gen";
+		ownedAttribute := childNodeEditPartIs->createEditPartNodesIs2Property("GenChildNode")
+			->including(self.getInstanceSpecification("GenDiagram").diagramIs2Property())
+			->including(self.getInstanceSpecification("GenEditorGenerator").editorGeneratorIs2Property())
+			->including(self.packagedElement[InstanceSpecification]->any(name = "GenTopLevelNode_" + containerToTest).containerDerivedProperty())
+			->including(self.createDiagramUpdaterProperty())
+			;
+		generalization := object Generalization{ general := frameworkBase.getUmlClassifier("CreateNodeFromPaletteTest") };
+		elementImport := self.computeImports(childNodesToTest->including(containerToTest));
+	};
+	testClass.ownedAttribute := testClass.ownedAttribute->including(testClass.createSelfProperty());
+	testClass.ownedAttribute := testClass.ownedAttribute->including(self.getInstanceSpecification("GenDiagram").diagramIs2Property());
+	testClass.ownedAttribute := testClass.ownedAttribute->including(self.getInstanceSpecification("GenEditorGenerator").editorGeneratorIs2Property());
+	testClass.ownedAttribute := testClass.ownedAttribute->including(self.createDiagramUpdaterProperty());
+	testClass.ownedAttribute := testClass.ownedAttribute->including(self.packagedElement[InstanceSpecification]->any(name = "GenTopLevelNode_" + containerToTest).containerDerivedProperty());
+	var testBehaviors : Set(Activity) := childNodeEditPartIs.createCallTestNodeOperationActivity("TestChildNode")->asSet();
+	testClass.ownedBehavior := testBehaviors;
+	testClass.ownedOperation := childNodeEditPartIs->collect(is | is.createEditPartNodesIs2NodeTestCaseOperation("testChildNode", testBehaviors->selectOne(name = is.getSlotStringValue("editPartClassName").toFirstLowerCase() + 'TestCase')));
+	return testClass;
+}
+
+helper Model::createLinkTestClass() : Class{
+	var linkEditPartIs := self.packagedElement[InstanceSpecification]
+				->select(is | is.classifier->collectOne(name = "GenLink") and linksToTest->exists(s | s = is.getSlotStringValue("editPartClassName")));
+	var testClass := object Class{
+		name := "Test" + self.getDiagramName() + "LinkGen";
+		ownedOperation := self.packagedElement[InstanceSpecification]->map editPartNodesIs2LinkTestCaseOperation()->flatten()->asOrderedSet();
+		ownedAttribute := linkEditPartIs->createEditPartNodesIs2Property("GenLink");
+		generalization := object Generalization{ general := frameworkBase.getUmlClassifier("CreateLinkFromPaletteTest") };
+		elementImport := self.computeImports(linksToTest->union(topNodesToTest)->union(childNodesToTest)->including(topContainerEditPart));
+	};
+	testClass.ownedAttribute := testClass.ownedAttribute->including(self.getInstanceSpecification("GenDiagram").diagramIs2Property());
+	testClass.ownedAttribute := testClass.ownedAttribute->including(self.getInstanceSpecification("GenEditorGenerator").editorGeneratorIs2Property());
+	testClass.ownedAttribute := testClass.ownedAttribute->including(self.createDiagramUpdaterProperty());
+	testClass.ownedAttribute := testClass.ownedAttribute->including(testClass.createSelfProperty());
+	testClass.ownedAttribute := testClass.ownedAttribute->including(self.packagedElement[InstanceSpecification]->any(name = "GenTopLevelNode_" + topContainerEditPart).containerDerivedProperty());
+	testClass.ownedBehavior := testClass.ownedOperation.method;
+	return testClass;
+}
+
+helper Model::createLinksOwnedBySourceTestDiagramClass() : Class{
+	var linkOwnedBySourceEditPartIs := self.packagedElement[InstanceSpecification]
+				->select(is | is.classifier->collectOne(name = "GenLink") and linksOwnedBySourceToTest->exists(s | s = is.getSlotStringValue("editPartClassName")));
+	var testClass := object Class{
+		name := "Test" + self.getDiagramName() + "LinkOwnedBySourceGen";
+		ownedOperation := linkOwnedBySourceEditPartIs->map editPartNodesIs2LinkOwnedBySourceTestCaseOperation()->flatten()->asOrderedSet();
+		ownedAttribute := linkOwnedBySourceEditPartIs->createEditPartNodesIs2Property("GenLinkOwnedBySource");
+		generalization := object Generalization{ general := frameworkBase.getUmlClassifier("CreateLinkOwnedBySourceFromPaletteTest") };
+		elementImport := self.computeImports(linksOwnedBySourceToTest->union(topNodesToTest)->union(childNodesToTest)->including(topContainerEditPart));
+	};
+	testClass.ownedAttribute := testClass.ownedAttribute->including(self.getInstanceSpecification("GenDiagram").diagramIs2Property());
+	testClass.ownedAttribute := testClass.ownedAttribute->including(self.getInstanceSpecification("GenEditorGenerator").editorGeneratorIs2Property());
+	testClass.ownedAttribute := testClass.ownedAttribute->including(self.createDiagramUpdaterProperty());
+	testClass.ownedAttribute := testClass.ownedAttribute->including(self.packagedElement[InstanceSpecification]->any(name = "GenTopLevelNode_" + topContainerEditPart).containerDerivedProperty());
+	testClass.ownedAttribute := testClass.ownedAttribute->including(testClass.createSelfProperty());
+	testClass.ownedBehavior := testClass.ownedOperation.method;
+	return testClass;
+}
+
+mapping InstanceSpecification::editPartNodesIs2LinkTestCaseOperation() : Set(Operation)
+	when{
+		linksToTest->exists(s : String | self.getSlotStringValue("editPartClassName") = s)
+	}
+{
+	init{
+		result := topNodesToTest->union(childNodesToTest)->collect(source | 
+			topNodesToTest->union(childNodesToTest)->collect(target | 
+				object Operation{
+					var propertyName : String := self.name.substringAfter('_');
+					name :=  "testLink" + propertyName.replace("EditPart", "") + "From" + source.replace("EditPart", "") + "To" + target.replace("EditPart", ""); 
+					method := self.map callTestLinkOperationActivity(source, target);
+					ownedParameter := object Parameter{defaultValue := object InstanceValue{instance := self}};
+				}
+		))->flatten()->asSet();
+	}
+}
+
+mapping InstanceSpecification::editPartNodesIs2LinkOwnedBySourceTestCaseOperation() : Set(Operation)
+	when{
+		linksOwnedBySourceToTest->exists(s : String | self.getSlotStringValue("editPartClassName") = s)
+	}
+{
+	init{
+		result := topNodesToTest->union(childNodesToTest)->collect(source | 
+			topNodesToTest->union(childNodesToTest)->collect(target | 
+				object Operation{
+					var propertyName : String := self.name.substringAfter('_');
+					name :=  "testLinkOwnedBySource" + propertyName.replace("EditPart", "") + "From" + source.replace("EditPart", "") + "To" + target.replace("EditPart", ""); 
+					method := self.map callTestLinkOperationActivity(source, target);
+					ownedParameter := object Parameter{defaultValue := object InstanceValue{instance := self}};
+				}
+		))->flatten()->asSet();
+	}
+}
+
+
+
+
+mapping InstanceSpecification::callTestLinkOperationActivity(source : String, target : String) : Activity
+	when{
+		linksToTest->union(linksOwnedBySourceToTest)->exists(s : String | self.getSlotStringValue("editPartClassName") = s)
+	}
+{
+	name :=  self.getSlotStringValue("editPartClassName").replace("EditPart", "").toFirstLowerCase() + "From" + source.replace("EditPart", "") + "To" + target.replace("EditPart", "") + 'TestCase'; 
+	ownedNode := object CallOperationAction{
+		operation := frameworkBase.getUmlClassifier('AbstractCreateLinkFromPaletteTest')[Class]->collectOne(getAllOperations()->any(true)); 
+		argument := Set{
+			object ValuePin{
+				value := object InstanceValue{
+					instance := self;
+					name := self.name;
+				};
+				name := "link"
+			},
+			object ValuePin{
+				value := object InstanceValue{
+					var sourceInstance := self.container().oclAsType(Model).getInstanceSpecificationByName("GenTopLevelNode_" + source);
+					if (sourceInstance = null) {
+						sourceInstance := self.container().oclAsType(Model).getInstanceSpecificationByName("GenChildNode_" + source);
+					};
+					instance := sourceInstance;
+					name := sourceInstance.name;
+				};
+				name := "source"
+			},
+			object ValuePin{
+				value := object InstanceValue{
+					var targetInstance := self.container().oclAsType(Model).getInstanceSpecificationByName("GenTopLevelNode_" + target);
+					if (targetInstance = null) {
+						targetInstance := self.container().oclAsType(Model).getInstanceSpecificationByName("GenChildNode_" + target);
+					};
+					instance := targetInstance;
+					name := targetInstance.name;
+				};
+				name := "target"
+			}
+		}
+	}
+}
+
+helper InstanceSpecification::containerDerivedProperty() : Property
+{
+	//var derivedFrom : Property := self.resolveIn(InstanceSpecification::editPartNodesIs2Property, Property)
+//		if self.name.startsWith("GenTopLevelNode") then
+//			self.resolveIn(InstanceSpecification::editPartNodesIs2Property, Property)
+//		else if self.name.startsWith("GenChildNode") then
+//			self.resolveIn(InstanceSpecification::editPartNodesIs2Property, Property)
+//		else if self.name.startsWith("GenLink") then
+//			self.resolveIn(InstanceSpecification::editPartNodesIs2Property, Property)
+//		else null endif endif endif
+		//->any(true);
+	return object Property{
+		name := "containerEditPart";
+		isDerived := true;
+		//redefinedProperty := derivedFrom;
+		type := redefinedProperty->collectOne(type);
+		defaultValue := object InstanceValue {instance := self };
+	}
+}
+
+
+

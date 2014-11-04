@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *
+ * 
  * Contributors:
  *     Juan Cadavid <juan.cadavid@cea.fr> implementation
  ******************************************************************************/
@@ -26,17 +26,17 @@ import org.eclipse.uml2.uml.Profile;
  * An example of its usage is:
  * <blockquote>
  * component = org.eclipse.papyrus.mwe.utils.components.RegisterUmlProfile {
- * profileSlot = 'ecoreprofile'
- * }
- * </blockquote>
+		profileSlot = 'ecoreprofile'
+	} 
+	</blockquote>
  * where profileSlot is a slot that contains the uml Profile object to register.
  */
-public class RegisterUmlProfileComponent extends AbstractWorkflowComponent {
+public class RegisterUmlProfile extends AbstractWorkflowComponent {
 	private org.apache.commons.logging.Log log = LogFactory.getLog(getClass());
 
 
 	private String profileSlot;
-
+	
 	public String getProfileSlot() {
 		return profileSlot;
 	}
@@ -45,9 +45,8 @@ public class RegisterUmlProfileComponent extends AbstractWorkflowComponent {
 		this.profileSlot = profileSlot;
 	}
 
-	@Override
 	public void checkConfiguration(Issues issues) {
-		if (profileSlot == null || profileSlot.equals("")) { //$NON-NLS-1$
+		if(profileSlot == null || profileSlot.equals("")){ //$NON-NLS-1$
 			issues.addError(Messages.RegisterUmlProfile_1);
 		}
 	}
@@ -56,13 +55,13 @@ public class RegisterUmlProfileComponent extends AbstractWorkflowComponent {
 	protected void invokeInternal(WorkflowContext ctx, ProgressMonitor monitor,
 			Issues issues) {
 		EObject eObject = (EObject) ctx.get(profileSlot);
-		if (!(eObject instanceof Profile)) {
+		if(!(eObject instanceof Profile)){
 			log.error(Messages.RegisterUmlProfile_2);
 			return;
 		}
 		Profile profile = (Profile) eObject;
 		EPackage definition = profile.getDefinition();
-		if (definition == null) {
+		if(definition == null){
 			log.error(Messages.RegisterUmlProfile_3);
 			return;
 		}

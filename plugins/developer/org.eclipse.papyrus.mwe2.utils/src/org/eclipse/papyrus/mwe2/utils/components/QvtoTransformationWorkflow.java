@@ -47,12 +47,14 @@ import org.eclipse.papyrus.mwe2.utils.messages.Messages;
  * the list of resulting eObjects of the transformation will be placed.
  *
  */
-public class QvtoTransformationWorkflowComponent extends
-		AbstractWorkflowComponent {
+public class QvtoTransformationWorkflow extends AbstractWorkflowComponent {
 
 	private String transformationURI;
+
 	private String outputSlot;
+
 	private ArrayList<String> inputSlots = new ArrayList<String>();
+
 	private Log log = LogFactory.getLog(getClass());
 
 	public String getTransformationURI() {
@@ -75,21 +77,19 @@ public class QvtoTransformationWorkflowComponent extends
 		return inputSlots.add(c);
 	}
 
-	public ExecutionDiagnostic generate(List<? extends EObject> inObjects,
-			URI transformationURI, WorkflowContext ctx, Issues issues)
-			throws IOException {
+	public ExecutionDiagnostic generate(List<? extends EObject> inObjects, URI transformationURI, WorkflowContext ctx, Issues issues) throws IOException {
 		// resolveProxies(inObjects);
-		TransformationExecutor executor = new TransformationExecutor(
-				transformationURI);
+		log.info("Executing QVTO transformation " + getTransformationURI());
+
+		TransformationExecutor executor = new TransformationExecutor(transformationURI);
 		Diagnostic loadTransformationDiagnostic = executor.loadTransformation();
-		if (!loadTransformationDiagnostic.getMessage().equals("OK")) { //$NON-NLS-1$
-			log.error(Messages.QvtoTransformationWorkflowComponent_1
-					+ loadTransformationDiagnostic);
+		if(!loadTransformationDiagnostic.getMessage().equals("OK")) { //$NON-NLS-1$
+			log.error(Messages.QvtoTransformationWorkflowComponent_1 + loadTransformationDiagnostic);
 			return null;
 		}
 		ExecutionContextImpl context = new ExecutionContextImpl();
 		ArrayList<ModelExtent> input = new ArrayList<ModelExtent>();
-		for (EObject eObject : inObjects) {
+		for(EObject eObject : inObjects) {
 			BasicModelExtent basicModelExtent = new BasicModelExtent();
 			basicModelExtent.add(eObject);
 			input.add(basicModelExtent);
@@ -97,11 +97,11 @@ public class QvtoTransformationWorkflowComponent extends
 		issues.addInfo(new File("..").getAbsolutePath()); //$NON-NLS-1$
 		ModelExtent output = new BasicModelExtent();
 		input.add(output);
-		ModelExtent[] modelParameters = input.toArray(new ModelExtent[] {});
+		ModelExtent[] modelParameters = input.toArray(new ModelExtent[]{});
 		context = new ExecutionContextImpl();
 		context.setConfigProperty("keepModeling", true); //$NON-NLS-1$
 		ExecutionDiagnostic result = executor.execute(context, modelParameters);
-		if (result.getSeverity() == Diagnostic.OK) {
+		if(result.getSeverity() == Diagnostic.OK) {
 			List<EObject> outObjects = output.getContents();
 			ctx.set(getOutputSlot(), outObjects);
 			log.info(Messages.QvtoTransformationWorkflowComponent_4 + getTransformationURI());
@@ -112,22 +112,20 @@ public class QvtoTransformationWorkflowComponent extends
 	}
 
 	@Override
-	protected void invokeInternal(WorkflowContext ctx, ProgressMonitor monitor,
-			Issues issues) {
+	protected void invokeInternal(WorkflowContext ctx, ProgressMonitor monitor, Issues issues) {
 		List<EObject> inObjects = new ArrayList<EObject>();
-		for (String inputSlot : inputSlots) {
+		for(String inputSlot : inputSlots) {
 
 			Object inputObject = ctx.get(inputSlot);
-			if (inputObject instanceof EObject) {
-				inObjects.add((EObject) inputObject);
-			} else if (inputObject instanceof List<?>) {
-				List<EObject> list = (List<EObject>) inputObject;
+			if(inputObject instanceof EObject) {
+				inObjects.add((EObject)inputObject);
+			} else if(inputObject instanceof List<?>) {
+				List<EObject> list = (List<EObject>)inputObject;
 				inObjects.add(list.get(0));
 			}
 		}
 		try {
-			generate(inObjects, URI.createURI(transformationURI),
-					ctx, issues);
+			generate(inObjects, URI.createURI(transformationURI), ctx, issues);
 		} catch (IOException e) {
 			log.error(e.getLocalizedMessage());
 		}
@@ -136,7 +134,7 @@ public class QvtoTransformationWorkflowComponent extends
 
 	@Override
 	public void checkConfiguration(Issues issues) {
-		if (inputSlots.isEmpty()) {
+		if(inputSlots.isEmpty()) {
 			issues.addError(Messages.QvtoTransformationWorkflowComponent_5);
 		}
 	}

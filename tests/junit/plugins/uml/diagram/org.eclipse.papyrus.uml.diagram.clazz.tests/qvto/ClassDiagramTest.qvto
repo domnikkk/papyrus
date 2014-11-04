@@ -1,0 +1,106 @@
+import CanonicalTests;
+
+modeltype UML uses uml('http://www.eclipse.org/uml2/5.0.0/UML');
+
+transformation ClassDiagramTest(in gmfgenUml : UML, in gmfgenMm : UML, in frameworkBase : UML, in utp : UML, out testModel : UML) extends CanonicalTests(in gmfgenUml : UML, in gmfgenMm : UML, in frameworkBase : UML, in utp : UML, out testModel : UML);
+
+main() {
+	diagramUpdater := "CustomUMLDiagramUpdater";
+	topContainerEditPart := "PackageEditPart";
+	topNodesToTest := Set{
+		"DependencyNodeEditPart",
+		"AssociationClassEditPart",
+		"AssociationNodeEditPart",
+		"InstanceSpecificationEditPart",
+		"ComponentEditPart",
+		"SignalEditPart",
+		"InterfaceEditPart",
+		"ModelEditPartTN",
+		"EnumerationEditPart",
+		"PackageEditPart",
+		"InformationItemEditPart"
+		"ClassEditPart",
+		"PrimitiveTypeEditPart",
+		"DataTypeEditPart",
+		"ConstraintEditPart",
+		"CommentEditPart",
+		"ShortCutDiagramEditPart",
+		"DurationObservationEditPart",
+		"TimeObservationEditPart",
+		"DefaultNamedElementEditPart"
+	} ;
+	childNodesToTest := Set{
+		"ComponentEditPartCN",
+		"InstanceSpecificationEditPartCN",
+		"SignalEditPartCN",
+		"ModelEditPartCN",
+		"EnumerationEditPartCN",
+		"PackageEditPartCN",
+		"ClassEditPartCN",
+		"InformationItemEditPartCN",
+		"PrimitiveTypeEditPartCN",
+		"DataTypeEditPartCN",
+		"ConstraintEditPartCN",
+		"CommentEditPartCN"
+	};
+	linksToTest := Set{
+		"AssociationClassLinkEditPart",
+		"AssociationEditPart",
+		"AssociationBranchEditPart",
+		"DependencyEditPart",
+		"DependencyBranchEditPart",
+		"AssociationEditPart",
+		"RealizationEditPart",
+		"AbstractionEditPart",
+		"UsageEditPart",
+		"ProfileApplicationEditPart",
+		"TemplateBindingEditPart",
+		"InstanceSpecificationLinkEditPart",
+		"InformationFlowEditPart"
+	};
+	linksOwnedBySourceToTest := Set{
+		"GeneralizationEditPart",
+		"InterfaceRealizationEditPart",
+		"SubstitutionEditPart",
+		"ElementImportEditPart",
+		"PackageImportEditPart",
+		"PackageMergeEditPart",
+		"GeneralizationSetEditPart"
+		
+	};
+	
+	elementTypesAppearanceTest := Set{
+		"ComponentEditPart",
+		"InstanceSpecificationEditPart",
+		"SignalEditPart",
+		"ModelEditPartTN",
+		"EnumerationEditPart",
+		"PackageEditPart",
+		"ClassEditPart",
+		"PrimitiveTypeEditPart",
+		"DataTypeEditPart",
+		"ConstraintEditPart",
+		"CommentEditPart",
+		"InformationItemEditPart",
+		"InterfaceEditPart",
+		"TimeObservationEditPart",
+		"DurationObservationEditPart"
+	};
+	
+	elementTypesDropTests := Set{
+		"ComponentEditPart",
+		"InstanceSpecificationEditPart",
+		"SignalEditPart",
+		"ModelEditPartTN",
+		"EnumerationEditPart",
+		"PackageEditPart",
+		"ClassEditPart",
+		"PrimitiveTypeEditPart",
+		"DataTypeEditPart",
+		"ConstraintEditPart",
+		"CommentEditPart",
+		"InformationItemEditPart"
+	};
+	gmfgenUml.rootObjects()[UML::Model]->collectOne(canonicalTests("org.eclipse.papyrus.uml.diagram.clazz.test"));
+}
+
