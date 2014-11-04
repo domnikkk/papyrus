@@ -11,7 +11,7 @@
       diagramFileExtension="PapyrusUMLActivity_diagram"
       domainFileExtension="PapyrusUMLActivity"
       dynamicTemplates="true"
-      templateDirectory="/org.eclipse.papyrus.def/dynamic-templates3.5/codegen">
+      templateDirectory="/org.eclipse.papyrus.def/xtend/">
     <audits>
       <categories
           id="org.eclipse.uml2.uml.util.UMLValidator.validate"
@@ -10617,7 +10617,8 @@
     <plugin
         iD="org.eclipse.papyrus.uml.diagram.activity"
         name="Papyrus activity editor Plugin"
-        provider="Papyrus">
+        provider="Papyrus"
+        version="1.1.0.qualifier">
       <requiredPlugins>org.eclipse.draw2d</requiredPlugins>
       <requiredPlugins>org.eclipse.papyrus.uml.diagram.common</requiredPlugins>
       <requiredPlugins>org.eclipse.gmf.runtime.draw2d.ui</requiredPlugins>
