@@ -10069,92 +10069,454 @@
       <palette
           packageName="org.eclipse.papyrus.uml.diagram.activity.part">
         <groups
-            title="ActivityGroup"
-            description="ActivityGroup"
-            largeIconPath="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
-            smallIconPath="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
-            createMethodName="createActivityGroupGroup"
-            stack="true"
-            collapse="true">
-          <entries
-              xsi:type="gmfgen:ToolEntry"
-              title="Activity Partition"
-              description="Create an Activity Partition"
-              largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ActivityPartition.gif"
-              smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ActivityPartition.gif"
-              genNodes="/0/@diagram/@childNodes.67"/>
-          <entries
-              xsi:type="gmfgen:ToolEntry"
-              title="Interruptible Activity Region"
-              description="Create an Interruptible Activity Region"
-              largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/InterruptibleActivityRegion.gif"
-              smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/InterruptibleActivityRegion.gif"
-              genNodes="/0/@diagram/@childNodes.68"/>
-        </groups>
-        <groups
-            title="ControlNodes"
-            description="ControlNodes"
-            largeIconPath="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
-            smallIconPath="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
-            createMethodName="createControlNodesGroup"
-            stack="true"
-            collapse="true">
-          <entries
-              xsi:type="gmfgen:ToolEntry"
-              title="Initial node"
-              description="Create an Initial node"
-              largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/InitialNode.gif"
-              smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/InitialNode.gif"
-              genNodes="/0/@diagram/@childNodes.3"/>
-          <entries
-              xsi:type="gmfgen:ToolEntry"
-              title="Activity final"
-              description="Create an Activity final node"
-              largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ActivityFinalNode.gif"
-              smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ActivityFinalNode.gif"
-              genNodes="/0/@diagram/@childNodes.4"/>
-          <entries
-              xsi:type="gmfgen:ToolEntry"
-              title="Flow final"
-              description="Create a Flow final node"
-              largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/FlowFinalNode.gif"
-              smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/FlowFinalNode.gif"
-              genNodes="/0/@diagram/@childNodes.5"/>
-          <entries
-              xsi:type="gmfgen:ToolEntry"
-              title="Decision node"
-              description="Create a Decision node"
-              largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/DecisionNode.gif"
-              smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/DecisionNode.gif"
-              genNodes="/0/@diagram/@childNodes.32"/>
-          <entries
-              xsi:type="gmfgen:ToolEntry"
-              title="Merge node"
-              description="Create a Merge node"
-              largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/MergeNode.gif"
-              smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/MergeNode.gif"
-              genNodes="/0/@diagram/@childNodes.33"/>
-          <entries
-              xsi:type="gmfgen:ToolEntry"
-              title="Join node"
-              description="Create a Merge node"
-              largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/JoinNode.gif"
-              smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/JoinNode.gif"
-              genNodes="/0/@diagram/@childNodes.35"/>
-          <entries
-              xsi:type="gmfgen:ToolEntry"
-              title="Fork node"
-              description="Create a Fork node"
-              largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ForkNode.gif"
-              smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ForkNode.gif"
-              genNodes="/0/@diagram/@childNodes.34"/>
-        </groups>
-        <groups
             title="Nodes"
             largeIconPath="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
             smallIconPath="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
-            stack="true"
             collapse="true">
+          <entries
+              xsi:type="gmfgen:ToolGroup"
+              title="ActivityGroup"
+              description="ActivityGroup"
+              largeIconPath="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
+              smallIconPath="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
+              createMethodName="createActivityGroupGroup"
+              stack="true"
+              collapse="true">
+            <entries
+                xsi:type="gmfgen:ToolEntry"
+                title="Activity Partition"
+                description="Create an Activity Partition"
+                largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ActivityPartition.gif"
+                smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ActivityPartition.gif"
+                genNodes="/0/@diagram/@childNodes.67"/>
+            <entries
+                xsi:type="gmfgen:ToolEntry"
+                title="Interruptible Activity Region"
+                description="Create an Interruptible Activity Region"
+                largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/InterruptibleActivityRegion.gif"
+                smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/InterruptibleActivityRegion.gif"
+                genNodes="/0/@diagram/@childNodes.68"/>
+          </entries>
+          <entries
+              xsi:type="gmfgen:ToolGroup"
+              title="ControlNodes"
+              description="ControlNodes"
+              largeIconPath="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
+              smallIconPath="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
+              createMethodName="createControlNodesGroup"
+              stack="true"
+              collapse="true">
+            <entries
+                xsi:type="gmfgen:ToolEntry"
+                title="Initial node"
+                description="Create an Initial node"
+                largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/InitialNode.gif"
+                smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/InitialNode.gif"
+                genNodes="/0/@diagram/@childNodes.3"/>
+            <entries
+                xsi:type="gmfgen:ToolEntry"
+                title="Activity final"
+                description="Create an Activity final node"
+                largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ActivityFinalNode.gif"
+                smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ActivityFinalNode.gif"
+                genNodes="/0/@diagram/@childNodes.4"/>
+            <entries
+                xsi:type="gmfgen:ToolEntry"
+                title="Flow final"
+                description="Create a Flow final node"
+                largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/FlowFinalNode.gif"
+                smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/FlowFinalNode.gif"
+                genNodes="/0/@diagram/@childNodes.5"/>
+            <entries
+                xsi:type="gmfgen:ToolEntry"
+                title="Decision node"
+                description="Create a Decision node"
+                largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/DecisionNode.gif"
+                smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/DecisionNode.gif"
+                genNodes="/0/@diagram/@childNodes.32"/>
+            <entries
+                xsi:type="gmfgen:ToolEntry"
+                title="Merge node"
+                description="Create a Merge node"
+                largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/MergeNode.gif"
+                smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/MergeNode.gif"
+                genNodes="/0/@diagram/@childNodes.33"/>
+            <entries
+                xsi:type="gmfgen:ToolEntry"
+                title="Join node"
+                description="Create a Merge node"
+                largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/JoinNode.gif"
+                smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/JoinNode.gif"
+                genNodes="/0/@diagram/@childNodes.35"/>
+            <entries
+                xsi:type="gmfgen:ToolEntry"
+                title="Fork node"
+                description="Create a Fork node"
+                largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ForkNode.gif"
+                smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ForkNode.gif"
+                genNodes="/0/@diagram/@childNodes.34"/>
+          </entries>
+          <entries
+              xsi:type="gmfgen:ToolGroup"
+              title="Constraints"
+              description="Constraints"
+              largeIconPath="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
+              smallIconPath="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
+              createMethodName="createConstraintsGroup"
+              stack="true"
+              collapse="true">
+            <entries
+                xsi:type="gmfgen:ToolEntry"
+                title="Local Precondition Constraint"
+                description="Create a Constraint as Local Precondition for an Action"
+                largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Constraint.gif"
+                smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Constraint.gif"
+                genNodes="/0/@diagram/@childNodes.30"/>
+            <entries
+                xsi:type="gmfgen:ToolEntry"
+                title="Local Precondition Interaction Constraint"
+                description="Create an Interaction Constraint as Local Precondition for an Action"
+                largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/InteractionConstraint.gif"
+                smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/InteractionConstraint.gif"/>
+            <entries
+                xsi:type="gmfgen:ToolEntry"
+                title="Local Precondition Interval Constraint"
+                description="Create an Interval Constraint as Local Precondition for an Action"
+                largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/IntervalConstraint.gif"
+                smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/IntervalConstraint.gif"
+                genNodes="/0/@diagram/@childNodes.28"/>
+            <entries
+                xsi:type="gmfgen:ToolEntry"
+                title="Local Precondition Duration Constraint"
+                description="Create a Duration Constraint as Local Precondition for an Action"
+                largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/DurationConstraint.gif"
+                smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/DurationConstraint.gif"
+                genNodes="/0/@diagram/@childNodes.24"/>
+            <entries
+                xsi:type="gmfgen:ToolEntry"
+                title="Local Precondition Time Constraint"
+                description="Create a Time Constraint as Local Precondition for an Action"
+                largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/TimeConstraint.gif"
+                smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/TimeConstraint.gif"
+                genNodes="/0/@diagram/@childNodes.26"/>
+            <entries
+                xsi:type="gmfgen:ToolEntry"
+                title="Local Postcondition Constraint"
+                description="Create a Constraint as Local Postcondition for an Action"
+                largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Constraint.gif"
+                smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Constraint.gif"
+                genNodes="/0/@diagram/@childNodes.31"/>
+            <entries
+                xsi:type="gmfgen:ToolEntry"
+                title="Local Postcondition Interaction Constraint"
+                description="Create an Interaction Constraint as Local Postcondition for an Action"
+                largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/InteractionConstraint.gif"
+                smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/InteractionConstraint.gif"/>
+            <entries
+                xsi:type="gmfgen:ToolEntry"
+                title="Local Postcondition Interval Constraint"
+                description="Create an Interval Constraint as Local Postcondition for an Action"
+                largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/IntervalConstraint.gif"
+                smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/IntervalConstraint.gif"
+                genNodes="/0/@diagram/@childNodes.29"/>
+            <entries
+                xsi:type="gmfgen:ToolEntry"
+                title="Local Postcondition Duration Constraint"
+                description="Create a Duration Constraint as Local Postcondition for an Action"
+                largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/DurationConstraint.gif"
+                smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/DurationConstraint.gif"
+                genNodes="/0/@diagram/@childNodes.25"/>
+            <entries
+                xsi:type="gmfgen:ToolEntry"
+                title="Local Postcondition Time Constraint"
+                description="Create a Time Constraint as Local Postcondition for an Action"
+                largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/TimeConstraint.gif"
+                smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/TimeConstraint.gif"
+                genNodes="/0/@diagram/@childNodes.27"/>
+          </entries>
+          <entries
+              xsi:type="gmfgen:ToolGroup"
+              title="Pins"
+              description="Pins"
+              largeIconPath="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
+              smallIconPath="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
+              createMethodName="createPinsGroup"
+              stack="true"
+              collapse="true">
+            <entries
+                xsi:type="gmfgen:ToolEntry"
+                title="Output Pin"
+                description="Create an Output Pin"
+                largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/OutputPin.gif"
+                smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/OutputPin.gif"
+                genNodes="/0/@diagram/@childNodes.10 /0/@diagram/@childNodes.15 /0/@diagram/@childNodes.20 /0/@diagram/@childNodes.53 /0/@diagram/@childNodes.55 /0/@diagram/@childNodes.71 /0/@diagram/@childNodes.61 /0/@diagram/@childNodes.62 /0/@diagram/@childNodes.63"/>
+            <entries
+                xsi:type="gmfgen:ToolEntry"
+                title="Input Pin"
+                description="Create an Input Pin"
+                largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/InputPin.gif"
+                smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/InputPin.gif"
+                genNodes="/0/@diagram/@childNodes.9 /0/@diagram/@childNodes.14 /0/@diagram/@childNodes.19 /0/@diagram/@childNodes.47 /0/@diagram/@childNodes.66"/>
+            <entries
+                xsi:type="gmfgen:ToolEntry"
+                title="Action Input Pin"
+                description="Create an Action Input Pin"
+                largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ActionInputPin.gif"
+                smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ActionInputPin.gif"
+                genNodes="/0/@diagram/@childNodes.8 /0/@diagram/@childNodes.13 /0/@diagram/@childNodes.17 /0/@diagram/@childNodes.45"/>
+            <entries
+                xsi:type="gmfgen:ToolEntry"
+                title="Value Pin"
+                description="Create a Value Pin"
+                largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ValuePin.gif"
+                smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ValuePin.gif"
+                genNodes="/0/@diagram/@childNodes.7 /0/@diagram/@childNodes.12 /0/@diagram/@childNodes.18 /0/@diagram/@childNodes.46"/>
+          </entries>
+          <entries
+              xsi:type="gmfgen:ToolGroup"
+              title="ExpansionRegions"
+              description="ExpansionRegions"
+              largeIconPath="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
+              smallIconPath="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
+              createMethodName="createExpansionRegionsGroup"
+              stack="true"
+              collapse="true">
+            <entries
+                xsi:type="gmfgen:ToolEntry"
+                title="Expansion Region"
+                description="Create an Expansion Region"
+                largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ExpansionRegion.gif"
+                smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ExpansionRegion.gif"
+                genNodes="/0/@diagram/@childNodes.57"/>
+            <entries
+                xsi:type="gmfgen:ToolEntry"
+                title="Input Expansion Node"
+                description="Create an Expansion Node as Input of an Expansion Region"
+                largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ExpansionNode.gif"
+                smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ExpansionNode.gif"
+                genNodes="/0/@diagram/@childNodes.58"/>
+            <entries
+                xsi:type="gmfgen:ToolEntry"
+                title="Output Expansion Node"
+                description="Create an Expansion Node as Output of an Expansion Region"
+                largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ExpansionNode.gif"
+                smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ExpansionNode.gif"
+                genNodes="/0/@diagram/@childNodes.59"/>
+          </entries>
+          <entries
+              xsi:type="gmfgen:ToolGroup"
+              title="InvocationActions"
+              description="InvocationActions"
+              largeIconPath="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
+              smallIconPath="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
+              createMethodName="InvocationActionsGroup"
+              stack="true"
+              collapse="true">
+            <entries
+                xsi:type="gmfgen:ToolEntry"
+                title="Broadcast Signal Action"
+                description="Create a Broadcast Signal Action"
+                largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/BroadcastSignalAction.gif"
+                smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/BroadcastSignalAction.gif"
+                genNodes="/0/@diagram/@childNodes.90"/>
+            <entries
+                xsi:type="gmfgen:ToolEntry"
+                title="Call Behavior Action"
+                description="Create an Call Behavior Action node"
+                largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/CallBehaviorAction.gif"
+                smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/CallBehaviorAction.gif"
+                genNodes="/0/@diagram/@childNodes.11"/>
+            <entries
+                xsi:type="gmfgen:ToolEntry"
+                title="Call Operation Action"
+                description="Create a Call Operation Action node"
+                largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/CallOperationAction.gif"
+                smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/CallOperationAction.gif"
+                genNodes="/0/@diagram/@childNodes.16"/>
+            <entries
+                xsi:type="gmfgen:ToolEntry"
+                title="Send Object Action"
+                description="Create a Send Object Action node"
+                largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/SendObjectAction.gif"
+                smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/SendObjectAction.gif"
+                genNodes="/0/@diagram/@childNodes.37"/>
+            <entries
+                xsi:type="gmfgen:ToolEntry"
+                title="Send Signal Action"
+                description="Create a Send Signal Action node"
+                largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/SendSignalAction.gif"
+                smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/SendSignalAction.gif"
+                genNodes="/0/@diagram/@childNodes.44"/>
+          </entries>
+          <entries
+              xsi:type="gmfgen:ToolGroup"
+              title="ObjectActions"
+              description="ObjectActions"
+              largeIconPath="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
+              smallIconPath="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
+              createMethodName="createObjectActionsGroup"
+              stack="true"
+              collapse="true">
+            <entries
+                xsi:type="gmfgen:ToolEntry"
+                title="Create Object Action"
+                description="Create a Create Object Action"
+                largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/CreateObjectAction.gif"
+                smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/CreateObjectAction.gif"
+                genNodes="/0/@diagram/@childNodes.73"/>
+            <entries
+                xsi:type="gmfgen:ToolEntry"
+                title="Destroy Object Action"
+                description="Create a Destroy Object Action"
+                largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/DestroyObjectAction.gif"
+                smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/DestroyObjectAction.gif"
+                genNodes="/0/@diagram/@childNodes.83"/>
+            <entries
+                xsi:type="gmfgen:ToolEntry"
+                title="ReadSelfAction"
+                description="Create a ReadSelfAction"
+                largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ReadSelfAction.gif"
+                smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ReadSelfAction.gif"
+                genNodes="/0/@diagram/@childNodes.70"/>
+          </entries>
+          <entries
+              xsi:type="gmfgen:ToolGroup"
+              title="StructuredActions"
+              description="StructuredActions"
+              largeIconPath="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
+              smallIconPath="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
+              createMethodName="createStructuredActionsGroup"
+              stack="true"
+              collapse="true">
+            <entries
+                xsi:type="gmfgen:ToolEntry"
+                title="Structured Activity Node"
+                description="Create a Structured Activity Node"
+                largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/StructuredActivityNode.gif"
+                smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/StructuredActivityNode.gif"
+                genNodes="/0/@diagram/@childNodes.65"/>
+            <entries
+                xsi:type="gmfgen:ToolEntry"
+                title="Loop Node"
+                description="Create a Loop Node"
+                largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/LoopNode.gif"
+                smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/LoopNode.gif"
+                genNodes="/0/@diagram/@childNodes.60"/>
+            <entries
+                xsi:type="gmfgen:ToolEntry"
+                title="Sequence Node"
+                description="Create a Sequence Node"
+                largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/SequenceNode.gif"
+                smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/SequenceNode.gif"
+                genNodes="/0/@diagram/@childNodes.64"/>
+            <entries
+                xsi:type="gmfgen:ToolEntry"
+                title="Conditional Node"
+                description="Create a Conditional Node"
+                largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ConditionalNode.gif"
+                smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ConditionalNode.gif"
+                genNodes="/0/@diagram/@childNodes.56"/>
+          </entries>
+          <entries
+              xsi:type="gmfgen:ToolGroup"
+              title="StructuralFeatureActions"
+              description="StructuralFeatureActions"
+              largeIconPath="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
+              smallIconPath="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
+              createMethodName="createStructuralFeatureActionsGroup"
+              stack="true"
+              collapse="true">
+            <entries
+                xsi:type="gmfgen:ToolEntry"
+                title="Read Structural Feature Action"
+                description="Create Read Structural Feature Action"
+                largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ReadStructuralFeatureAction.gif"
+                smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ReadStructuralFeatureAction.gif"
+                genNodes="/0/@diagram/@childNodes.76"/>
+            <entries
+                xsi:type="gmfgen:ToolEntry"
+                title="Add Structural Feature Value Action"
+                description="Create Add Structural Feature Value Action"
+                largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/AddStructuralFeatureValueAction.gif"
+                smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/AddStructuralFeatureValueAction.gif"
+                genNodes="/0/@diagram/@childNodes.79"/>
+            <entries
+                xsi:type="gmfgen:ToolEntry"
+                title="Add Structural Feature Value Action"
+                description="Create Add Structural Feature Value Action"
+                largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/AddStructuralFeatureValueAction.gif"
+                smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/AddStructuralFeatureValueAction.gif"
+                genNodes="/0/@diagram/@childNodes.79"/>
+            <entries
+                xsi:type="gmfgen:ToolEntry"
+                title="Read Structural Feature Action"
+                description="Create Read Structural Feature Action"
+                largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ReadStructuralFeatureAction.gif"
+                smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ReadStructuralFeatureAction.gif"
+                genNodes="/0/@diagram/@childNodes.76"/>
+          </entries>
+          <entries
+              xsi:type="gmfgen:ToolGroup"
+              title="VariableActions"
+              description="VariableActions"
+              largeIconPath="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
+              smallIconPath="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
+              createMethodName="createVariableActionsGroup"
+              stack="true"
+              collapse="true">
+            <entries
+                xsi:type="gmfgen:ToolEntry"
+                title="Add Variable Value Action"
+                description="Create Add Variable Value Action"
+                largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/AddVariableValueAction.gif"
+                smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/AddVariableValueAction.gif"
+                genNodes="/0/@diagram/@childNodes.87"/>
+            <entries
+                xsi:type="gmfgen:ToolEntry"
+                title="Read Variable Action"
+                description="Create a Read Variable Action"
+                largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ReadVariableAction.gif"
+                smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ReadVariableAction.gif"
+                genNodes="/0/@diagram/@childNodes.85"/>
+          </entries>
+          <entries
+              xsi:type="gmfgen:ToolGroup"
+              title="MiscellaneousActions"
+              description="MiscellaneousActions"
+              largeIconPath="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
+              smallIconPath="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
+              createMethodName="createOtherActionsGroup"
+              stack="true"
+              collapse="true">
+            <entries
+                xsi:type="gmfgen:ToolEntry"
+                title="Opaque Action"
+                description="Create an Opaque Action node"
+                largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/OpaqueAction.gif"
+                smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/OpaqueAction.gif"
+                genNodes="/0/@diagram/@childNodes.6"/>
+            <entries
+                xsi:type="gmfgen:ToolEntry"
+                title="Value Specification Action"
+                description="Create a Value Specification Action node"
+                largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ValueSpecificationAction.gif"
+                smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ValueSpecificationAction.gif"
+                genNodes="/0/@diagram/@childNodes.54"/>
+          </entries>
+          <entries
+              xsi:type="gmfgen:ToolGroup"
+              title="AcceptEventActions"
+              description="AcceptEventActions"
+              largeIconPath="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
+              smallIconPath="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
+              stack="true"/>
+          <entries
+              xsi:type="gmfgen:ToolEntry"
+              title="Accept Event Action"
+              description="Create an Accept Event Action node"
+              largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/AcceptEventAction.gif"
+              smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/AcceptEventAction.gif"
+              genNodes="/0/@diagram/@childNodes.52"/>
           <entries
               xsi:type="gmfgen:ToolEntry"
               title="Activity"
@@ -10190,19 +10552,11 @@
               largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Comment.gif"
               smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Comment.gif"
               genNodes="/0/@diagram/@childNodes.69"/>
-          <entries
-              xsi:type="gmfgen:ToolEntry"
-              title="Constraint"
-              description="Create a Cosntraint"
-              largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Constraint.gif"
-              smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Constraint.gif"
-              genNodes="/0/@diagram/@childNodes.93"/>
         </groups>
         <groups
             title="Edges"
             largeIconPath="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
             smallIconPath="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
-            stack="true"
             collapse="true">
           <entries
               xsi:type="gmfgen:ToolEntry"
@@ -10232,357 +10586,6 @@
               largeIconPath="icons/obj16/Link.gif"
               smallIconPath="icons/obj16/Link.gif"
               genLinks="/0/@diagram/@links.5 /0/@diagram/@links.6"/>
-        </groups>
-        <groups
-            title="Constraints"
-            description="Constraints"
-            largeIconPath="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
-            smallIconPath="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
-            createMethodName="createConstraintsGroup"
-            stack="true"
-            collapse="true">
-          <entries
-              xsi:type="gmfgen:ToolEntry"
-              title="Local Precondition Constraint"
-              description="Create a Constraint as Local Precondition for an Action"
-              largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Constraint.gif"
-              smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Constraint.gif"
-              genNodes="/0/@diagram/@childNodes.30"/>
-          <entries
-              xsi:type="gmfgen:ToolEntry"
-              title="Local Precondition Interaction Constraint"
-              description="Create an Interaction Constraint as Local Precondition for an Action"
-              largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/InteractionConstraint.gif"
-              smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/InteractionConstraint.gif"/>
-          <entries
-              xsi:type="gmfgen:ToolEntry"
-              title="Local Precondition Interval Constraint"
-              description="Create an Interval Constraint as Local Precondition for an Action"
-              largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/IntervalConstraint.gif"
-              smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/IntervalConstraint.gif"
-              genNodes="/0/@diagram/@childNodes.28"/>
-          <entries
-              xsi:type="gmfgen:ToolEntry"
-              title="Local Precondition Duration Constraint"
-              description="Create a Duration Constraint as Local Precondition for an Action"
-              largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/DurationConstraint.gif"
-              smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/DurationConstraint.gif"
-              genNodes="/0/@diagram/@childNodes.24"/>
-          <entries
-              xsi:type="gmfgen:ToolEntry"
-              title="Local Precondition Time Constraint"
-              description="Create a Time Constraint as Local Precondition for an Action"
-              largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/TimeConstraint.gif"
-              smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/TimeConstraint.gif"
-              genNodes="/0/@diagram/@childNodes.26"/>
-          <entries
-              xsi:type="gmfgen:ToolEntry"
-              title="Local Postcondition Constraint"
-              description="Create a Constraint as Local Postcondition for an Action"
-              largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Constraint.gif"
-              smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Constraint.gif"
-              genNodes="/0/@diagram/@childNodes.31"/>
-          <entries
-              xsi:type="gmfgen:ToolEntry"
-              title="Local Postcondition Interaction Constraint"
-              description="Create an Interaction Constraint as Local Postcondition for an Action"
-              largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/InteractionConstraint.gif"
-              smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/InteractionConstraint.gif"/>
-          <entries
-              xsi:type="gmfgen:ToolEntry"
-              title="Local Postcondition Interval Constraint"
-              description="Create an Interval Constraint as Local Postcondition for an Action"
-              largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/IntervalConstraint.gif"
-              smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/IntervalConstraint.gif"
-              genNodes="/0/@diagram/@childNodes.29"/>
-          <entries
-              xsi:type="gmfgen:ToolEntry"
-              title="Local Postcondition Duration Constraint"
-              description="Create a Duration Constraint as Local Postcondition for an Action"
-              largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/DurationConstraint.gif"
-              smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/DurationConstraint.gif"
-              genNodes="/0/@diagram/@childNodes.25"/>
-          <entries
-              xsi:type="gmfgen:ToolEntry"
-              title="Local Postcondition Time Constraint"
-              description="Create a Time Constraint as Local Postcondition for an Action"
-              largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/TimeConstraint.gif"
-              smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/TimeConstraint.gif"
-              genNodes="/0/@diagram/@childNodes.27"/>
-        </groups>
-        <groups
-            title="Pins"
-            description="Pins"
-            largeIconPath="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
-            smallIconPath="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
-            createMethodName="createPinsGroup"
-            stack="true"
-            collapse="true">
-          <entries
-              xsi:type="gmfgen:ToolEntry"
-              title="Output Pin"
-              description="Create an Output Pin"
-              largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/OutputPin.gif"
-              smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/OutputPin.gif"
-              genNodes="/0/@diagram/@childNodes.10 /0/@diagram/@childNodes.15 /0/@diagram/@childNodes.20 /0/@diagram/@childNodes.53 /0/@diagram/@childNodes.55 /0/@diagram/@childNodes.71 /0/@diagram/@childNodes.61 /0/@diagram/@childNodes.62 /0/@diagram/@childNodes.63"/>
-          <entries
-              xsi:type="gmfgen:ToolEntry"
-              title="Input Pin"
-              description="Create an Input Pin"
-              largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/InputPin.gif"
-              smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/InputPin.gif"
-              genNodes="/0/@diagram/@childNodes.9 /0/@diagram/@childNodes.14 /0/@diagram/@childNodes.19 /0/@diagram/@childNodes.47 /0/@diagram/@childNodes.66"/>
-          <entries
-              xsi:type="gmfgen:ToolEntry"
-              title="Action Input Pin"
-              description="Create an Action Input Pin"
-              largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ActionInputPin.gif"
-              smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ActionInputPin.gif"
-              genNodes="/0/@diagram/@childNodes.8 /0/@diagram/@childNodes.13 /0/@diagram/@childNodes.17 /0/@diagram/@childNodes.45"/>
-          <entries
-              xsi:type="gmfgen:ToolEntry"
-              title="Value Pin"
-              description="Create a Value Pin"
-              largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ValuePin.gif"
-              smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ValuePin.gif"
-              genNodes="/0/@diagram/@childNodes.7 /0/@diagram/@childNodes.12 /0/@diagram/@childNodes.18 /0/@diagram/@childNodes.46"/>
-        </groups>
-        <groups
-            title="ExpansionRegions"
-            description="ExpansionRegions"
-            largeIconPath="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
-            smallIconPath="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
-            createMethodName="createExpansionRegionsGroup"
-            stack="true"
-            collapse="true">
-          <entries
-              xsi:type="gmfgen:ToolEntry"
-              title="Expansion Region"
-              description="Create an Expansion Region"
-              largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ExpansionRegion.gif"
-              smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ExpansionRegion.gif"
-              genNodes="/0/@diagram/@childNodes.57"/>
-          <entries
-              xsi:type="gmfgen:ToolEntry"
-              title="Input Expansion Node"
-              description="Create an Expansion Node as Input of an Expansion Region"
-              largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ExpansionNode.gif"
-              smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ExpansionNode.gif"
-              genNodes="/0/@diagram/@childNodes.58"/>
-          <entries
-              xsi:type="gmfgen:ToolEntry"
-              title="Output Expansion Node"
-              description="Create an Expansion Node as Output of an Expansion Region"
-              largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ExpansionNode.gif"
-              smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ExpansionNode.gif"
-              genNodes="/0/@diagram/@childNodes.59"/>
-        </groups>
-        <groups
-            title="InvocationActions"
-            description="InvocationActions"
-            largeIconPath="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
-            smallIconPath="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
-            createMethodName="InvocationActionsGroup"
-            stack="true"
-            collapse="true">
-          <entries
-              xsi:type="gmfgen:ToolEntry"
-              title="Broadcast Signal Action"
-              description="Create a Broadcast Signal Action"
-              largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/BroadcastSignalAction.gif"
-              smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/BroadcastSignalAction.gif"
-              genNodes="/0/@diagram/@childNodes.90"/>
-          <entries
-              xsi:type="gmfgen:ToolEntry"
-              title="Call Behavior Action"
-              description="Create an Call Behavior Action node"
-              largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/CallBehaviorAction.gif"
-              smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/CallBehaviorAction.gif"
-              genNodes="/0/@diagram/@childNodes.11"/>
-          <entries
-              xsi:type="gmfgen:ToolEntry"
-              title="Call Operation Action"
-              description="Create a Call Operation Action node"
-              largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/CallOperationAction.gif"
-              smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/CallOperationAction.gif"
-              genNodes="/0/@diagram/@childNodes.16"/>
-          <entries
-              xsi:type="gmfgen:ToolEntry"
-              title="Send Object Action"
-              description="Create a Send Object Action node"
-              largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/SendObjectAction.gif"
-              smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/SendObjectAction.gif"
-              genNodes="/0/@diagram/@childNodes.37"/>
-          <entries
-              xsi:type="gmfgen:ToolEntry"
-              title="Send Signal Action"
-              description="Create a Send Signal Action node"
-              largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/SendSignalAction.gif"
-              smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/SendSignalAction.gif"
-              genNodes="/0/@diagram/@childNodes.44"/>
-        </groups>
-        <groups
-            title="ObjectActions"
-            description="ObjectActions"
-            largeIconPath="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
-            smallIconPath="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
-            createMethodName="createObjectActionsGroup"
-            stack="true"
-            collapse="true">
-          <entries
-              xsi:type="gmfgen:ToolEntry"
-              title="Create Object Action"
-              description="Create a Create Object Action"
-              largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/CreateObjectAction.gif"
-              smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/CreateObjectAction.gif"
-              genNodes="/0/@diagram/@childNodes.73"/>
-          <entries
-              xsi:type="gmfgen:ToolEntry"
-              title="Destroy Object Action"
-              description="Create a Destroy Object Action"
-              largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/DestroyObjectAction.gif"
-              smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/DestroyObjectAction.gif"
-              genNodes="/0/@diagram/@childNodes.83"/>
-          <entries
-              xsi:type="gmfgen:ToolEntry"
-              title="ReadSelfAction"
-              description="Create a ReadSelfAction"
-              largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ReadSelfAction.gif"
-              smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ReadSelfAction.gif"
-              genNodes="/0/@diagram/@childNodes.70"/>
-        </groups>
-        <groups
-            title="StructuredActions"
-            description="StructuredActions"
-            largeIconPath="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
-            smallIconPath="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
-            createMethodName="createStructuredActionsGroup"
-            stack="true"
-            collapse="true">
-          <entries
-              xsi:type="gmfgen:ToolEntry"
-              title="Structured Activity Node"
-              description="Create a Structured Activity Node"
-              largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/StructuredActivityNode.gif"
-              smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/StructuredActivityNode.gif"
-              genNodes="/0/@diagram/@childNodes.65"/>
-          <entries
-              xsi:type="gmfgen:ToolEntry"
-              title="Loop Node"
-              description="Create a Loop Node"
-              largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/LoopNode.gif"
-              smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/LoopNode.gif"
-              genNodes="/0/@diagram/@childNodes.60"/>
-          <entries
-              xsi:type="gmfgen:ToolEntry"
-              title="Sequence Node"
-              description="Create a Sequence Node"
-              largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/SequenceNode.gif"
-              smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/SequenceNode.gif"
-              genNodes="/0/@diagram/@childNodes.64"/>
-          <entries
-              xsi:type="gmfgen:ToolEntry"
-              title="Conditional Node"
-              description="Create a Conditional Node"
-              largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ConditionalNode.gif"
-              smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ConditionalNode.gif"
-              genNodes="/0/@diagram/@childNodes.56"/>
-        </groups>
-        <groups
-            title="StructuralFeatureActions"
-            description="StructuralFeatureActions"
-            largeIconPath="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
-            smallIconPath="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
-            createMethodName="createStructuralFeatureActionsGroup"
-            stack="true"
-            collapse="true">
-          <entries
-              xsi:type="gmfgen:ToolEntry"
-              title="Read Structural Feature Action"
-              description="Create Read Structural Feature Action"
-              largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ReadStructuralFeatureAction.gif"
-              smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ReadStructuralFeatureAction.gif"
-              genNodes="/0/@diagram/@childNodes.76"/>
-          <entries
-              xsi:type="gmfgen:ToolEntry"
-              title="Add Structural Feature Value Action"
-              description="Create Add Structural Feature Value Action"
-              largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/AddStructuralFeatureValueAction.gif"
-              smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/AddStructuralFeatureValueAction.gif"
-              genNodes="/0/@diagram/@childNodes.79"/>
-          <entries
-              xsi:type="gmfgen:ToolEntry"
-              title="Add Structural Feature Value Action"
-              description="Create Add Structural Feature Value Action"
-              largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/AddStructuralFeatureValueAction.gif"
-              smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/AddStructuralFeatureValueAction.gif"
-              genNodes="/0/@diagram/@childNodes.79"/>
-          <entries
-              xsi:type="gmfgen:ToolEntry"
-              title="Read Structural Feature Action"
-              description="Create Read Structural Feature Action"
-              largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ReadStructuralFeatureAction.gif"
-              smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ReadStructuralFeatureAction.gif"
-              genNodes="/0/@diagram/@childNodes.76"/>
-        </groups>
-        <groups
-            title="VariableActions"
-            description="VariableActions"
-            largeIconPath="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
-            smallIconPath="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
-            createMethodName="createVariableActionsGroup"
-            stack="true"
-            collapse="true">
-          <entries
-              xsi:type="gmfgen:ToolEntry"
-              title="Add Variable Value Action"
-              description="Create Add Variable Value Action"
-              largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/AddVariableValueAction.gif"
-              smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/AddVariableValueAction.gif"
-              genNodes="/0/@diagram/@childNodes.87"/>
-          <entries
-              xsi:type="gmfgen:ToolEntry"
-              title="Read Variable Action"
-              description="Create a Read Variable Action"
-              largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ReadVariableAction.gif"
-              smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ReadVariableAction.gif"
-              genNodes="/0/@diagram/@childNodes.85"/>
-        </groups>
-        <groups
-            title="MiscellaneousActions"
-            description="MiscellaneousActions"
-            largeIconPath="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
-            smallIconPath="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
-            createMethodName="createOtherActionsGroup"
-            stack="true"
-            collapse="true">
-          <entries
-              xsi:type="gmfgen:ToolEntry"
-              title="Opaque Action"
-              description="Create an Opaque Action node"
-              largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/OpaqueAction.gif"
-              smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/OpaqueAction.gif"
-              genNodes="/0/@diagram/@childNodes.6"/>
-          <entries
-              xsi:type="gmfgen:ToolEntry"
-              title="Value Specification Action"
-              description="Create a Value Specification Action node"
-              largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ValueSpecificationAction.gif"
-              smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ValueSpecificationAction.gif"
-              genNodes="/0/@diagram/@childNodes.54"/>
-        </groups>
-        <groups
-            title="AcceptEventActions"
-            description="AcceptEventActions"
-            largeIconPath="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
-            smallIconPath="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif">
-          <entries
-              xsi:type="gmfgen:ToolEntry"
-              title="Accept Event Action"
-              description="Create an Accept Event Action node"
-              largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/AcceptEventAction.gif"
-              smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/AcceptEventAction.gif"
-              genNodes="/0/@diagram/@childNodes.52"/>
         </groups>
       </palette>
       <preferencePages
