@@ -15,6 +15,8 @@ package org.eclipse.papyrus.adl4eclipse.org;
 
 /** set of constant to manipulate stereotype **/
 public interface IADL4ECLIPSE_Stereotype {
+	/** Name of the profile */
+	public static final String ADL4ECLIPSE = "ADL4Eclipse";
 	/** Qualified name of the stereotype Plugin */
 	public static final String PLUGIN_STEREOTYPE = "ADL4Eclipse::Plugin";
 	/** name of property isIncubation of the stereoype Plugin */
