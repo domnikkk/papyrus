@@ -10,6 +10,7 @@
  *
  *		CEA LIST - Initial API and implementation
  *      Christian W. Damus (CEA) - bug 413703
+ *      Gabriel Pascual (ALL4TEC) gabriel.pascual@all4tec.fr - Bug 436954
  *
  *****************************************************************************/
 package org.eclipse.papyrus.views.modelexplorer.newchild;
@@ -81,7 +82,7 @@ public class DynamicNewChild extends ContributionItem {
 	public void fill(Menu menu, int index) {
 		EObject eObject = getSelection();
 		if (eObject != null) {
-			CreationMenuFactory creationMenuFactory = new CreationMenuFactory(editingDomain);
+			CreationMenuFactory creationMenuFactory = new ModelExplorerMenuFactory(editingDomain);
 			ArrayList<Folder> folders = creationMenuRegistry.getRootFolder();
 			Iterator<Folder> iterFolder = folders.iterator();
 			while (iterFolder.hasNext()) {
