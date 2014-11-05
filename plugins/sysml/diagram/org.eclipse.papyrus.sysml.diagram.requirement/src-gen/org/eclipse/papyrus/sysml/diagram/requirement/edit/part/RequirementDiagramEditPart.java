@@ -14,15 +14,18 @@
  ****************************************************************************/
 package org.eclipse.papyrus.sysml.diagram.requirement.edit.part;
 
-import org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.papyrus.infra.gmfdiag.common.editpart.PapyrusDiagramEditPart;
 import org.eclipse.papyrus.sysml.diagram.requirement.edit.policy.CustomDragDropEditPolicy;
 import org.eclipse.papyrus.uml.diagram.clazz.custom.policies.RemoveOrphanViewPolicy;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.policies.ModelItemSemanticEditPolicy;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.DuplicatePasteEditPolicy;
-
-public class RequirementDiagramEditPart extends DiagramEditPart {
+/**
+ * 
+ * @Generated NOT //change the super class
+ */
+public class RequirementDiagramEditPart extends PapyrusDiagramEditPart {
 
 	public RequirementDiagramEditPart(View view) {
 		super(view);
