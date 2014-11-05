@@ -22,6 +22,7 @@ import java.util.List;
 import java.util.Set;
 
 import org.eclipse.core.databinding.observable.value.IObservableValue;
+import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EClass;
@@ -32,6 +33,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.m2m.qvt.oml.BasicModelExtent;
 import org.eclipse.m2m.qvt.oml.ModelExtent;
 import org.eclipse.papyrus.customization.properties.generation.Activator;
@@ -279,6 +281,7 @@ public class EcoreGenerator extends AbstractQVTGenerator {
 	}
 
 	public List<Object> getExternalReference() {
+
 		URI packageURI = URI.createPlatformResourceURI(sourceFileChooser.getFilePath(), true);
 
 		try {
@@ -286,16 +289,24 @@ public class EcoreGenerator extends AbstractQVTGenerator {
 		} catch (IOException e) {
 			// nothing
 		}
-		new ArrayList<Object>();
+
+		EcoreUtil.resolveAll(ecorePackage);
+
 		List<Object> listePackage = new ArrayList<Object>();
 		if (!listePackage.contains(ecorePackage)) {
 			listePackage.add(ecorePackage);
 		}
-		TreeIterator<EObject> tree = ecorePackage.eAllContents();
+
+		TreeIterator<Notifier> tree = ecorePackage.eResource().getResourceSet().getAllContents();
 		while (tree.hasNext()) {
-			EObject obj = tree.next();
-			if (obj instanceof EStructuralFeature) {
-				EStructuralFeature feature = (EStructuralFeature) obj;
+			Notifier next = tree.next();
+			if (!(next instanceof EObject)) {
+				continue;
+			}
+
+			EObject object = (EObject) next;
+			if (object instanceof EStructuralFeature) {
+				EStructuralFeature feature = (EStructuralFeature) object;
 				EClass eClass = feature.getEContainingClass();
 				if (eClass != null) {
 					EClassifier classifier = feature.getEType();
@@ -313,9 +324,9 @@ public class EcoreGenerator extends AbstractQVTGenerator {
 					}
 				}
 			}
-			if (obj instanceof EClass) {
+			if (object instanceof EClass) {
 
-				EClass eclass = (EClass) obj;
+				EClass eclass = (EClass) object;
 				List<EClass> liste = eclass.getESuperTypes();
 				for (EClass item : liste) {
 					if (!listePackage.contains(item.getEPackage())) {

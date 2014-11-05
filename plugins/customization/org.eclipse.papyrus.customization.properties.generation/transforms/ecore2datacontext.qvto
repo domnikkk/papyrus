@@ -12,9 +12,8 @@ main() {
 
 mapping EPackage::toContext() : c: Context, root:DataContextRoot when {
 	//self.isMainPackage() //Only transform source EPackages ; not their dependencies
-self.isSelected() 
+	self.isSelected() 
 }{
-	log("Package " + self.name);
 	c.name := self.name;
 	c.dataContexts := root;
 	c.views := self.eClassifiers->select(e | e.oclIsKindOf(EClass))->map toDataContextElement().viewSingle
