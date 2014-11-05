@@ -10,6 +10,7 @@
  * Contributors:
  *  Remi Schnekenburger (CEA LIST) - Initial API and implementation
  *  Christian W. Damus (CEA) - filter out EObjects that are Resources (CDO)
+ *  Gabriel Pascual (ALL4TEC) gabriel.pascual@all4tec.fr - Bug 393532
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.tools.listeners;
@@ -17,19 +18,22 @@ package org.eclipse.papyrus.uml.tools.listeners;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.papyrus.infra.core.listenerservice.IPapyrusListener;
 import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
+import org.eclipse.papyrus.uml.tools.service.StereotypeElementService;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Extension;
-import org.eclipse.uml2.uml.internal.impl.ElementImpl;
 import org.eclipse.uml2.uml.util.UMLUtil;
 
 /**
- * Listener for stereotypes application/deapplication
+ * Listener for stereotypes application/deapplication.
  *
+ * @deprecated Please use {@link StereotypeElementListener} and the service {@link StereotypeElementService}.
  * @author remi.schnekenburger@cea.fr
  */
+@Deprecated
 public class PapyrusStereotypeListener implements IPapyrusListener {
 
 	/**
@@ -85,7 +89,7 @@ public class PapyrusStereotypeListener implements IPapyrusListener {
 				EObject baseElement = UMLUtil.getBaseElement(notifier);
 				if (baseElement instanceof Element) {
 					// notifier listeners for the base element
-					StereotypeCustomNotification newNotification = new StereotypeCustomNotification((ElementImpl) baseElement, MODIFIED_STEREOTYPE, feature.getFeatureID(), null, notification.getNotifier());
+					StereotypeCustomNotification newNotification = new StereotypeCustomNotification((InternalEObject) baseElement, MODIFIED_STEREOTYPE, feature.getFeatureID(), null, notification.getNotifier());
 					baseElement.eNotify(newNotification);
 				}
 			}
@@ -132,7 +136,7 @@ public class PapyrusStereotypeListener implements IPapyrusListener {
 		}
 
 		// emit notification, so its edit parts can react
-		StereotypeCustomNotification newNotification = new StereotypeCustomNotification((ElementImpl) value, notificationValue, feature.getFeatureID(), null, notification.getNotifier());
+		StereotypeCustomNotification newNotification = new StereotypeCustomNotification((InternalEObject) value, notificationValue, feature.getFeatureID(), null, notification.getNotifier());
 		((Element) value).eNotify(newNotification);
 	}
 
@@ -171,7 +175,7 @@ public class PapyrusStereotypeListener implements IPapyrusListener {
 		 * @param newValue
 		 *            the new value of the modified feature
 		 */
-		public StereotypeCustomNotification(ElementImpl notifier, int eventType, int featureID, Object oldValue, Object newValue) {
+		public StereotypeCustomNotification(InternalEObject notifier, int eventType, int featureID, Object oldValue, Object newValue) {
 			super(notifier, eventType, featureID, oldValue, newValue);
 		}
 

@@ -4,6 +4,10 @@
     <children xmi:type="notation:Shape" xmi:id="_4aJwoPIzEeOTVMj9kvFRzQ" type="1026">
       <children xmi:type="notation:DecorationNode" xmi:id="_4aKXsPIzEeOTVMj9kvFRzQ" type="1034"/>
       <children xmi:type="notation:BasicCompartment" xmi:id="_4aK-wPIzEeOTVMj9kvFRzQ" type="1071">
+        <children xmi:type="notation:Shape" xmi:id="_bdsAYF9XEeSfdIAduA4EWQ" type="3002">
+          <element xmi:type="uml:Property" href="profileTest.profile.uml#_bb6ewF9XEeSfdIAduA4EWQ"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_bdsAYV9XEeSfdIAduA4EWQ"/>
+        </children>
         <styles xmi:type="notation:TitleStyle" xmi:id="_4aK-wfIzEeOTVMj9kvFRzQ"/>
         <styles xmi:type="notation:SortingStyle" xmi:id="_4aK-wvIzEeOTVMj9kvFRzQ"/>
         <styles xmi:type="notation:FilteringStyle" xmi:id="_4aK-w_IzEeOTVMj9kvFRzQ"/>

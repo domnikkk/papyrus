@@ -9,6 +9,7 @@
  *
  * Contributors:
  *   Soyatec - Initial API and implementation
+ *   Gabriel Pascual (ALL4TEC) gabriel.pascual@all4tec.fr - Bug 393532
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.sequence.edit.policies;
@@ -34,8 +35,7 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.infra.core.listenerservice.IPapyrusListener;
 import org.eclipse.papyrus.infra.gmfdiag.common.editpart.IPapyrusEditPart;
 import org.eclipse.papyrus.uml.appearance.helper.UMLVisualInformationPapyrusConstant;
-import org.eclipse.papyrus.uml.tools.listeners.PapyrusStereotypeListener;
-import org.eclipse.papyrus.uml.tools.listeners.PapyrusStereotypeListener.StereotypeCustomNotification;
+import org.eclipse.papyrus.uml.tools.listeners.StereotypeElementListener.StereotypeExtensionNotification;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.uml2.uml.Element;
 
@@ -167,9 +167,9 @@ public abstract class AbstractHeadImpactLayoutEditPolicy extends GraphicalEditPo
 			headChanged = true;
 		} else if ((notification.getNotifier() instanceof DynamicEObjectImpl) && (hostSemanticElement != null) && (hostSemanticElement.getStereotypeApplications().contains(notification.getNotifier()))) {
 			headChanged = true;
-		} else if (PapyrusStereotypeListener.MODIFIED_STEREOTYPE == notification.getEventType()) {
+		} else if (StereotypeExtensionNotification.MODIFIED_STEREOTYPE_OF_ELEMENT == notification.getEventType()) {
 			headChanged = true;
-		} else if (notification instanceof StereotypeCustomNotification) {
+		} else if (notification instanceof StereotypeExtensionNotification) {
 			headChanged = true;
 		}
 		if (headChanged) {

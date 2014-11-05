@@ -93,4 +93,18 @@
             type="org.eclipse.core.runtime.IAdaptable">
       </propertyTester>
    </extension>
+   <extension
+         point="org.eclipse.papyrus.infra.core.service">
+      <service
+            classname="org.eclipse.papyrus.uml.tools.service.StereotypeElementService"
+            description="Service to register Stereotype listener on Editing domain"
+            id="org.eclipse.papyrus.uml.service.StereotypeElementService"
+            priority="1"
+            startKind="startup">
+         <dependsOn
+               description="Editing domain which will receive the stereotype listener"
+               serviceKeyRef="org.eclipse.emf.transaction.TransactionalEditingDomain">
+         </dependsOn>
+      </service>
+   </extension>
 </plugin>
