@@ -9,6 +9,7 @@
  * Contributors:
  *
  *		CEA LIST - Initial API and implementation
+ *	Gabriel Pascual (ALL4TEC) gabriel.pascual@all4tec.net - Bug 446668
  *
  *****************************************************************************/
 package org.eclipse.papyrus.sysml.diagram.blockdefinition.edit.policy;
@@ -19,6 +20,7 @@ import org.eclipse.gef.commands.UnexecutableCommand;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelationshipRequest;
+import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.gmf.diagram.common.provider.IGraphicalTypeRegistry;
 import org.eclipse.papyrus.sysml.diagram.blockdefinition.provider.CustomGraphicalTypeRegistry;
@@ -26,6 +28,7 @@ import org.eclipse.papyrus.sysml.diagram.blockdefinition.provider.ElementTypes;
 import org.eclipse.papyrus.sysml.diagram.blockdefinition.provider.GraphicalTypeRegistry;
 import org.eclipse.papyrus.sysml.diagram.common.edit.policy.BlockCompositeSemanticEditPolicy;
 import org.eclipse.papyrus.sysml.diagram.common.utils.SysMLCreateOrShowExistingElementHelper;
+import org.eclipse.papyrus.uml.diagram.clazz.custom.command.CAssociationReorientCommand;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.commands.CommentAnnotatedElementCreateCommand;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.commands.CommentAnnotatedElementReorientCommand;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.commands.ConstraintConstrainedElementCreateCommand;
@@ -109,5 +112,18 @@ public class CustomBlockCompositeSemanticEditPolicy extends BlockCompositeSemant
 
 		return super.getReorientReferenceRelationshipCommand(req);
 	}
+
+	/**
+	 * @see org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.DefaultSemanticEditPolicy#getReorientRelationshipCommand(org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest)
+	 *
+	 * @param req
+	 * @return
+	 */
+	@Override
+	protected Command getReorientRelationshipCommand(ReorientRelationshipRequest req) {
+		return getGEFWrapper(new CAssociationReorientCommand(req));
+	}
+
+
 
 }
