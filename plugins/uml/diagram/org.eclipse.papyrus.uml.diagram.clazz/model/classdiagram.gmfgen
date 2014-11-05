@@ -7762,6 +7762,7 @@
               description="Creation of a context link for a Constraint"
               largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Association.gif"
               smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Association.gif"
+              id="&quot;clazz.tool.contextlink&quot;"
               genLinks="/0/@diagram/@links.26"/>
           <entries
               xsi:type="gmfgen:ToolEntry"
