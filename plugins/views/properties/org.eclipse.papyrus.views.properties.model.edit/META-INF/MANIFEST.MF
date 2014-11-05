@@ -2,9 +2,10 @@ Manifest-Version: 1.0
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.papyrus.views.properties.model;bundle-version="1.1.0";visibility:=reexport,
  org.eclipse.emf.edit;visibility:=reexport,
- org.eclipse.emf.ecore.edit;bundle-version="2.7.0",
- org.eclipse.papyrus.infra.constraints;bundle-version="1.1.0",
- org.eclipse.papyrus.infra.constraints.edit;bundle-version="1.1.0"
+ org.eclipse.emf.ecore.edit;bundle-version="2.7.0";visibility:=reexport,
+ org.eclipse.papyrus.infra.constraints;bundle-version="1.1.0";visibility:=reexport,
+ org.eclipse.papyrus.infra.constraints.edit;bundle-version="1.1.0";visibility:=reexport,
+ org.eclipse.emf.ecore;visibility:=reexport
 Export-Package: org.eclipse.papyrus.views.properties.contexts.provider,
  org.eclipse.papyrus.views.properties.environment.provider,
  org.eclipse.papyrus.views.properties.ui.provider
@@ -14,10 +15,8 @@ Bundle-ClassPath: .
 Bundle-Version: 1.1.0.qualifier
 Bundle-Localization: plugin
 Bundle-Name: %pluginName
-Bundle-Activator: org.eclipse.papyrus.views.properties.environment.pro
- vider.PropertiesEditPlugin$Implementation
+Bundle-Activator: org.eclipse.papyrus.views.properties.environment.provider.PropertiesEditPlugin$Implementation
 Bundle-ManifestVersion: 2
-Bundle-SymbolicName: org.eclipse.papyrus.views.properties.model.edit;s
- ingleton:=true
+Bundle-SymbolicName: org.eclipse.papyrus.views.properties.model.edit;singleton:=true
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 

@@ -16,12 +16,7 @@ import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.provider.EModelElementItemProvider;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.eclipse.papyrus.views.properties.contexts.Context;
@@ -37,13 +32,7 @@ import org.eclipse.papyrus.views.properties.environment.provider.PropertiesEditP
  * @generated
  */
 public class ContextItemProvider
-		extends EModelElementItemProvider
-		implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+		extends EModelElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -69,6 +58,7 @@ public class ContextItemProvider
 
 			addNamePropertyDescriptor(object);
 			addDependenciesPropertyDescriptor(object);
+			addPrototypePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -111,6 +101,29 @@ public class ContextItemProvider
 						getString("_UI_Context_dependencies_feature"),
 						getString("_UI_PropertyDescriptor_description", "_UI_Context_dependencies_feature", "_UI_Context_type"),
 						ContextsPackage.Literals.CONTEXT__DEPENDENCIES,
+						true,
+						false,
+						true,
+						null,
+						null,
+						null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Prototype feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	protected void addPrototypePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_Context_prototype_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Context_prototype_feature", "_UI_Context_type"),
+						ContextsPackage.Literals.CONTEXT__PROTOTYPE,
 						true,
 						false,
 						true,
