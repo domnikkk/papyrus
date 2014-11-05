@@ -9,11 +9,13 @@
  * Contributors:
  * 	Cedric Dumoulin (LIFL) cedric.dumoulin@lifl.fr - Initial API
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr
+ *  Gabriel Pascual (ALL4TEC) gabriel.pascual@all4tec.net - Bug 440754
  *****************************************************************************/
 package org.eclipse.papyrus.infra.core.sasheditor.contentprovider;
 
 import java.util.List;
 
+import org.eclipse.papyrus.infra.core.sasheditor.contentprovider.service.ILocalPageService;
 import org.eclipse.papyrus.infra.core.sasheditor.internal.SashWindowsContainer;
 
 
@@ -84,6 +86,17 @@ public interface IPageManager extends IPageMngr {
 	 */
 	@Override
 	public List<Object> allPages();
+
+	/**
+	 * Gets the local pages of a main model.
+	 *
+	 * @param mainModel
+	 *            the main model
+	 * @param service
+	 *            the service to determine what is a local page
+	 * @return the local pages
+	 */
+	public List<Object> allLocalPages(ILocalPageService service);
 
 	/**
 	 * Return true if a page is open for the specified pageIdentifier.

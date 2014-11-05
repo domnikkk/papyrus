@@ -159,7 +159,7 @@
 			<id>cdt</id>
 			<layout>p2</layout>
 			<!-- updateFrom("CDT",0) -->
-			<url>http://download.eclipse.org/tools/cdt/builds/luna/milestones</url>
+			<url>http://download.eclipse.org/tools/cdt/builds/mars/milestones</url>
 		</repository>
 		<repository>
 			<id>emft-emffacet</id>
@@ -219,7 +219,7 @@
 			<id>ep</id>
 			<layout>p2</layout>
 			<!-- updateFrom("Eclipse",0) -->
-			<url>http://download.eclipse.org/eclipse/updates/4.5milestones/S-4.5M2-201409180330/</url>
+			<url>http://download.eclipse.org/eclipse/updates/4.5milestones/S-4.5M3-201410292000/</url>
 		</repository>
 		<repository>
 			<id>gef</id>
@@ -261,7 +261,7 @@
 			<id>mdt-ocl</id>
 			<layout>p2</layout>
 			<!-- updateFrom("MDT OCL 5.1",0) -->
-			<url>http://download.eclipse.org/modeling/mdt/ocl/updates/milestones/5.1.0/S201410011441</url>
+			<url>http://download.eclipse.org/modeling/mdt/ocl/updates/interim/5.1.0</url>
 		</repository>
 		<repository>
 			<id>mdt-uml2</id>
@@ -387,6 +387,27 @@
 						<goals>
 							<goal>source-feature</goal>
 						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<version>2.9</version>
+				<executions>
+					<execution>
+						<id>purge-local-dependencies</id>
+						<phase>process-sources</phase>
+						<goals>
+							<goal>purge-local-repository</goal>
+						</goals>
+						<configuration>
+							<includes>
+								<include>org.eclipse.papyrus</include>
+							</includes>
+							<verbose>true</verbose>
+							<resolutionFuzziness>groupId</resolutionFuzziness>
+						</configuration>
 					</execution>
 				</executions>
 			</plugin>

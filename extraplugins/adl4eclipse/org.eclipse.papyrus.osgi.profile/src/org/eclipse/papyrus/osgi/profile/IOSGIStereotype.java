@@ -18,6 +18,10 @@ package org.eclipse.papyrus.osgi.profile;
  *
  */
 public interface IOSGIStereotype {
+	/** OSGI profile name */
+	public static final String OSGI = "OSGI";
+	/** OSGI Module layer profile name */
+	public static final String OSGI_MODULE_LAYER = "OSGI::ModuleLayer";
 	/** Qualified name of the Bundle */
 	public static final String BUNDLE_ = "OSGI::ModuleLayer::Bundle";
 	/** name of property hasLazyActivationPolicy of the stereotype Bundle */

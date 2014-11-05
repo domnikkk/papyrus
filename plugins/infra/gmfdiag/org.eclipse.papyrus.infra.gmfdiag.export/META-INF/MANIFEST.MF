@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Export-Package: org.eclipse.papyrus.infra.gmfdiag.export
+Require-Bundle: org.eclipse.ui.ide;bundle-version="3.7.0",
+ org.eclipse.gmf.runtime.diagram.ui.render;bundle-version="1.4.1",
+ org.eclipse.gmf.runtime.diagram.ui;bundle-version="1.5.0",
+ org.eclipse.core.expressions;bundle-version="3.4.300",
+ org.eclipse.emf.common.ui;bundle-version="2.7.0",
+ org.eclipse.papyrus.infra.core;bundle-version="1.1.0",
+ org.eclipse.papyrus.infra.core.log;bundle-version="1.1.0",
+ org.eclipse.papyrus.infra.emf;bundle-version="1.1.0",
+ org.eclipse.papyrus.infra.gmfdiag.css;bundle-version="1.1.0",
+ org.eclipse.papyrus.infra.services.markerlistener;bundle-version="1.1.0",
+ org.eclipse.papyrus.infra.services.decoration;bundle-version="1.1.0",
+ org.eclipse.papyrus.views.validation;bundle-version="1.1.0",
+ org.eclipse.papyrus.infra.gmfdiag.common;bundle-version="1.1.0",
+ org.eclipse.papyrus.uml.tools;bundle-version="1.1.0"
+Bundle-Vendor: %providerName
+Bundle-ActivationPolicy: lazy
+Bundle-Version: 1.1.0.qualifier
+Bundle-Localization: plugin
+Bundle-Name: %pluginName
+Bundle-Activator: org.eclipse.papyrus.infra.gmfdiag.export.Activator
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: org.eclipse.papyrus.infra.gmfdiag.export;singleton:=true
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+
