@@ -17,8 +17,10 @@
 package org.eclipse.papyrus.uml.diagram.common.editpolicies;
 
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import org.eclipse.core.commands.operations.IUndoableOperation;
@@ -70,6 +72,8 @@ import org.eclipse.uml2.uml.Element;
  */
 public abstract class CommonDiagramDragDropEditPolicy extends DiagramDragDropEditPolicy {
 
+	private CompositeCommandRegistryHelper myCompositeCommandRegistryHelper;
+
 	/** The specific drop. */
 	private Set<Integer> specificDrop = null;
 
@@ -116,6 +120,16 @@ public abstract class CommonDiagramDragDropEditPolicy extends DiagramDragDropEdi
 	protected abstract Set<Integer> getDroppableElementVisualId();
 
 	/**
+	 * Gets composite command adapters
+	 */
+	protected CompositeCommandRegistryHelper getCompositeCommandRegistry() {
+		if (myCompositeCommandRegistryHelper == null) {
+			myCompositeCommandRegistryHelper = new CompositeCommandRegistryHelper();
+		}
+		return myCompositeCommandRegistryHelper;
+	}
+
+	/**
 	 * {@inheritedDoc}
 	 */
 	@Override
@@ -148,39 +162,17 @@ public abstract class CommonDiagramDragDropEditPolicy extends DiagramDragDropEdi
 	 * @return the composite command
 	 */
 	public CompositeCommand dropBinaryLink(CompositeCommand cc, Element source, Element target, int linkVISUALID, Point absoluteLocation, Element semanticLink) {
-		// look for editpart
-		GraphicalEditPart sourceEditPart = (GraphicalEditPart) lookForEditPart(source);
-		GraphicalEditPart targetEditPart = (GraphicalEditPart) lookForEditPart(target);
+		IAdaptable sourceAdapter = findAdapter(cc, source, getLinkSourceDropLocation(absoluteLocation, source, target));
+		IAdaptable targetAdapter = findAdapter(cc, target, getLinkTargetDropLocation(absoluteLocation, source, target));
 
 		// descriptor of the link
 		CreateConnectionViewRequest.ConnectionViewDescriptor linkdescriptor = new CreateConnectionViewRequest.ConnectionViewDescriptor(getUMLElementType(linkVISUALID), ((IHintedType) getUMLElementType(linkVISUALID)).getSemanticHint(),
 				getDiagramPreferencesHint());
-
-		IAdaptable sourceAdapter = null;
-		IAdaptable targetAdapter = null;
-		if (sourceEditPart == null) {
-			ICommand createCommand = getDefaultDropNodeCommand(getLinkSourceDropLocation(absoluteLocation, source, target), source);
-			cc.add(createCommand);
-
-			sourceAdapter = (IAdaptable) createCommand.getCommandResult().getReturnValue();
-		} else {
-			sourceAdapter = new SemanticAdapter(null, sourceEditPart.getModel());
-		}
-		if (targetEditPart == null) {
-			ICommand createCommand = getDefaultDropNodeCommand(getLinkTargetDropLocation(absoluteLocation, source, target), target);
-			cc.add(createCommand);
-
-			targetAdapter = (IAdaptable) createCommand.getCommandResult().getReturnValue();
-		} else {
-			targetAdapter = new SemanticAdapter(null, targetEditPart.getModel());
-		}
-
 		CommonDeferredCreateConnectionViewCommand aLinkCommand = new CommonDeferredCreateConnectionViewCommand(getEditingDomain(), ((IHintedType) getUMLElementType(linkVISUALID)).getSemanticHint(), sourceAdapter, targetAdapter, getViewer(),
 				getDiagramPreferencesHint(), linkdescriptor, null);
 		aLinkCommand.setElement(semanticLink);
 		cc.compose(aLinkCommand);
 		return cc;
-
 	}
 
 	/**
@@ -237,17 +229,17 @@ public abstract class CommonDiagramDragDropEditPolicy extends DiagramDragDropEdi
 		/*
 		 * when it's the first action after the opening of Papyrus, the
 		 * viewService is not loaded! see bug 302555
-		 *
+		 * 
 		 * Duration test for 100000 creations of DropCommand : Here 2 solutions
 		 * : - call ViewServiceUtil.forceLoad(); for each drop -> ~2500ms
-		 *
+		 * 
 		 * - test if the command cc can be executed at the end of the method,
 		 * and if not : - call ViewServiceUtil.forceLoad(); - and return
 		 * getDropObjectsCommand(getDropObjectsCommand) -> ~4700ms
-		 *
+		 * 
 		 * - for information : without call ViewServiceUtil.forceLoad(); ->
 		 * ~1600ms
-		 *
+		 * 
 		 * It's better don't test if the command is executable!
 		 */
 		ViewServiceUtil.forceLoad();
@@ -265,7 +257,7 @@ public abstract class CommonDiagramDragDropEditPolicy extends DiagramDragDropEdi
 			EObject droppedObject = (EObject) iter.next();
 			cc.add(getDropObjectCommand(dropRequest, droppedObject));
 		}
-
+		getCompositeCommandRegistry().clear();
 		return new ICommandProxy(cc);
 	}
 
@@ -692,5 +684,79 @@ public abstract class CommonDiagramDragDropEditPolicy extends DiagramDragDropEdi
 	 */
 	protected boolean isEditPartTypeSuitableForEClass(Class<? extends GraphicalEditPart> editPartClass, EClass eClass) {
 		return true;
+	}
+
+	/**
+	 * the method provides command to create the binary link into the diagram.
+	 * Find source/target adapter
+	 * If the source and the target views do not exist, these views will be
+	 * created.
+	 * 
+	 * @see dropBinaryLink(CompositeCommand cc, Element source, Element target, int linkVISUALID
+	 *      , Point absoluteLocation, Element semanticLink)
+	 *
+	 * @param cc
+	 *            the composite command that will contain the set of command to
+	 *            create the binary link
+	 * @param source
+	 *            source/target link node
+	 * @param point
+	 *            source/target node location
+	 */
+	private IAdaptable findAdapter(CompositeCommand cc, Element source, Point dropLocation) {
+		IAdaptable result = getCompositeCommandRegistry().findAdapter(source);
+		if (result != null) {
+			return result;
+		}
+		GraphicalEditPart editPart = (GraphicalEditPart) lookForEditPart(source);
+		if (editPart == null) {
+			ICommand createCommand = getDefaultDropNodeCommand(dropLocation, source);
+			cc.add(createCommand);
+			result = (IAdaptable) createCommand.getCommandResult().getReturnValue();
+			getCompositeCommandRegistry().registerAdapter(source, result);
+			return result;
+		} else {
+			return new SemanticAdapter(null, editPart.getModel());
+		}
+	}
+
+	/**
+	 * Composite command items registry before adding to the diagram view
+	 * 
+	 * @see CommonDiagramDragDropEditPolicy.findAdapter(CompositeCommand cc, Element source, Point dropLocation)
+	 * @see MultiDependencyHelper.findOrCreateEndAdapter(CompositeCommand cc, Element source, Point dropLocation)
+	 * @author
+	 */
+	public static class CompositeCommandRegistryHelper {
+
+		private final Map<Element, IAdaptable> myElement2Adapter;
+
+		/**
+		 * public constructor
+		 */
+		public CompositeCommandRegistryHelper() {
+			myElement2Adapter = new HashMap<Element, IAdaptable>();
+		}
+
+		/**
+		 * {@inheritDoc}
+		 */
+		public void clear() {
+			myElement2Adapter.clear();
+		}
+
+		/**
+		 * {@inheritDoc}
+		 */
+		public IAdaptable findAdapter(Element element) {
+			return myElement2Adapter.get(element);
+		}
+
+		/**
+		 * {@inheritDoc}
+		 */
+		public void registerAdapter(Element element, IAdaptable adapter) {
+			myElement2Adapter.put(element, adapter);
+		}
 	}
 }
