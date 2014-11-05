@@ -261,6 +261,16 @@ public class UIEditor extends EcoreEditor implements ITabbedPropertySheetPageCon
 		// }
 	}
 
+	private boolean isSaving = false;
+
+	protected synchronized boolean isSaving() {
+		return isSaving;
+	}
+
+	protected synchronized void setSaving(boolean saving) {
+		this.isSaving = saving;
+	}
+
 	@Override
 	public void doSave(IProgressMonitor progressMonitor) {
 		if (editingDomain.getResourceToReadOnlyMap() == null) {
@@ -294,8 +304,24 @@ public class UIEditor extends EcoreEditor implements ITabbedPropertySheetPageCon
 			}
 		}
 
-		super.doSave(progressMonitor);
+		setSaving(true);
+		try {
+			super.doSave(progressMonitor);
+		} finally {
+			setSaving(false);
+		}
 		refreshContext();
+	}
+
+	/**
+	 * @see org.eclipse.emf.ecore.presentation.EcoreEditor#handleChangedResources()
+	 *
+	 */
+	@Override
+	protected void handleChangedResources() {
+		if (!isSaving()) {
+			super.handleChangedResources();
+		}
 	}
 
 	@Override
