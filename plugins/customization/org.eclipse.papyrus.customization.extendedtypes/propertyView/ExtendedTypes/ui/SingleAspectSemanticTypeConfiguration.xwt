@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Composite xmlns:ppe="clr-namespace:org.eclipse.papyrus.views.properties.widgets"
+	xmlns:x="http://www.eclipse.org/xwt"
+	xmlns:ppel="clr-namespace:org.eclipse.papyrus.views.properties.widgets.layout"
+	xmlns="http://www.eclipse.org/xwt/presentation" xmlns:j="clr-namespace:java.lang">
+	<Composite.layout>
+		<ppel:PropertiesLayout></ppel:PropertiesLayout>
+	</Composite.layout>
+	<Composite>
+		<Composite.layout>
+			<ppel:PropertiesLayout numColumns="1"></ppel:PropertiesLayout>
+		</Composite.layout>
+		<ppe:StringEditor input="{Binding}"
+			property="extendedtypes:ElementTypeConfiguration:hint"></ppe:StringEditor>
+		<ppe:StringEditor input="{Binding}"
+			property="extendedtypes:ElementTypeConfiguration:kindName"></ppe:StringEditor>
+		<ppe:StringEditor input="{Binding}"
+			property="extendedtypes:ConfigurationElement:name"></ppe:StringEditor>
+		<ppe:StringEditor input="{Binding}"
+			property="extendedtypes:ConfigurationElement:description"></ppe:StringEditor>
+		<ppe:StringEditor input="{Binding}"
+			property="extendedtypes:ConfigurationElement:identifier"></ppe:StringEditor>
+	</Composite>
+	<Composite>
+		<Composite.layout>
+			<ppel:PropertiesLayout numColumns="1"></ppel:PropertiesLayout>
+		</Composite.layout>
+		<ppe:ReferenceDialog input="{Binding}"
+			property="extendedtypes:ElementTypeConfiguration:matcherConfiguration"></ppe:ReferenceDialog>
+		<ppe:ReferenceDialog input="{Binding}"
+			property="extendedtypes:ConfigurationElement:iconEntry"></ppe:ReferenceDialog>
+	</Composite>
+	<Composite>
+		<Composite.layout>
+			<ppel:PropertiesLayout numColumns="1"></ppel:PropertiesLayout>
+		</Composite.layout>
+		<ppe:MultiString input="{Binding}"
+			property="extendedtypes:ElementTypeConfiguration:specializedTypesID"></ppe:MultiString>
+	</Composite>
+	<Composite>
+		<Composite.layout>
+			<ppel:PropertiesLayout numColumns="1"></ppel:PropertiesLayout>
+		</Composite.layout>
+		<ppe:MultiReference input="{Binding}"
+			property="extendedtypes:AspectSemanticTypeConfiguration:actionConfiguration"></ppe:MultiReference>
+	</Composite>
+</Composite>
