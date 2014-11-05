@@ -13,19 +13,26 @@
  *****************************************************************************/
 package org.eclipse.papyrus.sysml.diagram.parametric.edit.part;
 
+
+
 import org.eclipse.gef.EditPolicy;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.gmf.diagram.common.edit.policy.DefaultContainerNodeEditPolicy;
 import org.eclipse.papyrus.gmf.diagram.common.edit.policy.DefaultCreationEditPolicy;
 import org.eclipse.papyrus.gmf.diagram.common.edit.policy.DefaultXYLayoutEditPolicy;
+import org.eclipse.papyrus.infra.gmfdiag.common.editpart.PapyrusDiagramEditPart;
 import org.eclipse.papyrus.sysml.diagram.internalblock.edit.policy.CustomDragDropEditPolicy;
 import org.eclipse.papyrus.sysml.diagram.parametric.edit.policy.DiagramSemanticEditPolicy;
 import org.eclipse.papyrus.sysml.diagram.parametric.policies.CustomParametricSemanticPolicy;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.DuplicatePasteEditPolicy;
 
-public class ParametricDiagramEditPart extends DiagramEditPart {
+
+/**
+ *
+ * @Generated NOT //change the super class
+ */
+public class ParametricDiagramEditPart extends PapyrusDiagramEditPart {
 
 	public ParametricDiagramEditPart(View view) {
 		super(view);

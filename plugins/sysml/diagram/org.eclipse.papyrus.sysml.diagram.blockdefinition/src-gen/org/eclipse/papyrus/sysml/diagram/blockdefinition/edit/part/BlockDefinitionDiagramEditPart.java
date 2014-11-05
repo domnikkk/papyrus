@@ -14,19 +14,22 @@
 package org.eclipse.papyrus.sysml.diagram.blockdefinition.edit.part;
 
 import org.eclipse.gef.EditPolicy;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.gmf.diagram.common.edit.policy.DefaultContainerNodeEditPolicy;
 import org.eclipse.papyrus.gmf.diagram.common.edit.policy.DefaultXYLayoutEditPolicy;
+import org.eclipse.papyrus.infra.gmfdiag.common.editpart.PapyrusDiagramEditPart;
 import org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.AbstractShowHideRelatedLinkEditPolicy;
 import org.eclipse.papyrus.sysml.diagram.blockdefinition.edit.policy.CustomDiagramDragDropEditPolicy;
 import org.eclipse.papyrus.sysml.diagram.blockdefinition.edit.policy.DiagramSemanticEditPolicy;
 import org.eclipse.papyrus.sysml.diagram.blockdefinition.edit.policy.PackageCreationEditPolicy;
 import org.eclipse.papyrus.sysml.diagram.blockdefinition.edit.policy.ShowHideRelatedLinkEditPolicy;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.DuplicatePasteEditPolicy;
-
-public class BlockDefinitionDiagramEditPart extends DiagramEditPart {
+/**
+ *
+ * @Generated NOT //change the super class
+ */
+public class BlockDefinitionDiagramEditPart extends PapyrusDiagramEditPart {
 
 	public BlockDefinitionDiagramEditPart(View view) {
 		super(view);
