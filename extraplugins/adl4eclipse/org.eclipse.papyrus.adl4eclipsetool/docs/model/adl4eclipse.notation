@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:nattable="http://www.eclipse.org/papyrus/nattable/model" xmlns:nattableaxis="http://www.eclipse.org/papyrus/nattable/model/table/nattableaxis" xmlns:nattableaxisconfiguration="http://www.eclipse.org/papyrus/nattable/model/table/nattableaxisconfiguration" xmlns:nattableaxisprovider="http://www.eclipse.org/papyrus/nattable/model/table/nattableaxisprovider" xmlns:nattableconfiguration="http://www.eclipse.org/papyrus/nattable/model/nattableconfiguration" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xsi:schemaLocation="http://www.eclipse.org/papyrus/nattable/model/table/nattableaxis http://www.eclipse.org/papyrus/nattable/model#//nattableaxis http://www.eclipse.org/papyrus/nattable/model/table/nattableaxisconfiguration http://www.eclipse.org/papyrus/nattable/model#//nattableaxisconfiguration http://www.eclipse.org/papyrus/nattable/model/table/nattableaxisprovider http://www.eclipse.org/papyrus/nattable/model#//nattableaxisprovider http://www.eclipse.org/papyrus/nattable/model/nattableconfiguration http://www.eclipse.org/papyrus/nattable/model#//nattableconfiguration">
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:nattable="http://www.eclipse.org/papyrus/nattable/model" xmlns:nattableaxis="http://www.eclipse.org/papyrus/nattable/model/table/nattableaxis" xmlns:nattableaxisconfiguration="http://www.eclipse.org/papyrus/nattable/model/table/nattableaxisconfiguration" xmlns:nattableaxisprovider="http://www.eclipse.org/papyrus/nattable/model/table/nattableaxisprovider" xmlns:nattableconfiguration="http://www.eclipse.org/papyrus/nattable/model/nattableconfiguration" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http://www.eclipse.org/papyrus/nattable/model/table/nattableaxis http://www.eclipse.org/papyrus/nattable/model#//nattableaxis http://www.eclipse.org/papyrus/nattable/model/table/nattableaxisconfiguration http://www.eclipse.org/papyrus/nattable/model#//nattableaxisconfiguration http://www.eclipse.org/papyrus/nattable/model/table/nattableaxisprovider http://www.eclipse.org/papyrus/nattable/model#//nattableaxisprovider http://www.eclipse.org/papyrus/nattable/model/nattableconfiguration http://www.eclipse.org/papyrus/nattable/model#//nattableconfiguration">
   <nattable:Table xmi:id="_5TyIIA72EeORvsuYlq1ltw" name="RequirementTable" currentRowAxisProvider="_5TyIJQ72EeORvsuYlq1ltw" currentColumnAxisProvider="_5TyIIQ72EeORvsuYlq1ltw">
     <context xmi:type="uml:Package" href="adl4eclipse.uml#_recI8A72EeORvsuYlq1ltw"/>
     <tableConfiguration xmi:type="nattableconfiguration:TableConfiguration" href="platform:/plugin/org.eclipse.papyrus.sysml.nattable.requirement.config/configs/requirement.nattableconfiguration#/"/>
@@ -9,7 +9,7 @@
       </axis>
       <axis xmi:type="nattableaxis:EStructuralFeatureAxis" xmi:id="_5TyIIw72EeORvsuYlq1ltw">
         <manager xmi:type="nattableaxisconfiguration:AxisManagerRepresentation" href="platform:/plugin/org.eclipse.papyrus.sysml.nattable.requirement.config/configs/requirement.nattableconfiguration#//@columnHeaderAxisConfiguration/@axisManagers.0"/>
-        <element xmi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/4.0.0/UML#//NamedElement/name"/>
+        <element xmi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement/name"/>
       </axis>
       <axis xmi:type="nattableaxis:FeatureIdAxis" xmi:id="_5TyIJA72EeORvsuYlq1ltw" element="property_of_stereotype:/SysML::Requirements::Requirement::text">
         <manager xmi:type="nattableaxisconfiguration:AxisManagerRepresentation" href="platform:/plugin/org.eclipse.papyrus.sysml.nattable.requirement.config/configs/requirement.nattableconfiguration#//@columnHeaderAxisConfiguration/@axisManagers.1"/>
@@ -211,31 +211,31 @@
     <columnAxisProvidersHistory xmi:type="nattableaxisprovider:SlaveObjectAxisProvider" xmi:id="_0ozU0Q74EeORvsuYlq1ltw" description="This axis provider provides available columns according to the rows of the table (features of the object displayed on the other axis)" name="UML Feature axis provider">
       <axis xmi:type="nattableaxis:EStructuralFeatureAxis" xmi:id="_3B4sEQ74EeORvsuYlq1ltw">
         <manager xmi:type="nattableaxisconfiguration:AxisManagerRepresentation" href="platform:/plugin/org.eclipse.papyrus.uml.nattable.generic.config/configs/generic.nattableconfiguration#//@columnHeaderAxisConfiguration/@axisManagers.0"/>
-        <element xmi:type="ecore:EReference" href="http://www.eclipse.org/uml2/4.0.0/UML#//Comment/annotatedElement"/>
+        <element xmi:type="ecore:EReference" href="http://www.eclipse.org/uml2/5.0.0/UML#//Comment/annotatedElement"/>
       </axis>
       <axis xmi:type="nattableaxis:EStructuralFeatureAxis" xmi:id="_3B4sFQ74EeORvsuYlq1ltw">
         <manager xmi:type="nattableaxisconfiguration:AxisManagerRepresentation" href="platform:/plugin/org.eclipse.papyrus.uml.nattable.generic.config/configs/generic.nattableconfiguration#//@columnHeaderAxisConfiguration/@axisManagers.0"/>
-        <element xmi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/4.0.0/UML#//Comment/body"/>
+        <element xmi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/5.0.0/UML#//Comment/body"/>
       </axis>
       <axis xmi:type="nattableaxis:EStructuralFeatureAxis" xmi:id="_Pt22kQ75EeORvsuYlq1ltw">
         <manager xmi:type="nattableaxisconfiguration:AxisManagerRepresentation" href="platform:/plugin/org.eclipse.papyrus.uml.nattable.generic.config/configs/generic.nattableconfiguration#//@columnHeaderAxisConfiguration/@axisManagers.0"/>
-        <element xmi:type="ecore:EReference" href="http://www.eclipse.org/uml2/4.0.0/UML#//Comment/annotatedElement"/>
+        <element xmi:type="ecore:EReference" href="http://www.eclipse.org/uml2/5.0.0/UML#//Comment/annotatedElement"/>
       </axis>
       <axis xmi:type="nattableaxis:EStructuralFeatureAxis" xmi:id="_Pt22kg75EeORvsuYlq1ltw">
         <manager xmi:type="nattableaxisconfiguration:AxisManagerRepresentation" href="platform:/plugin/org.eclipse.papyrus.uml.nattable.generic.config/configs/generic.nattableconfiguration#//@columnHeaderAxisConfiguration/@axisManagers.0"/>
-        <element xmi:type="ecore:EReference" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element/owner"/>
+        <element xmi:type="ecore:EReference" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element/owner"/>
       </axis>
       <axis xmi:type="nattableaxis:EStructuralFeatureAxis" xmi:id="_Pt22kw75EeORvsuYlq1ltw">
         <manager xmi:type="nattableaxisconfiguration:AxisManagerRepresentation" href="platform:/plugin/org.eclipse.papyrus.uml.nattable.generic.config/configs/generic.nattableconfiguration#//@columnHeaderAxisConfiguration/@axisManagers.0"/>
-        <element xmi:type="ecore:EReference" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element/ownedElement"/>
+        <element xmi:type="ecore:EReference" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element/ownedElement"/>
       </axis>
       <axis xmi:type="nattableaxis:EStructuralFeatureAxis" xmi:id="_Pt22lA75EeORvsuYlq1ltw">
         <manager xmi:type="nattableaxisconfiguration:AxisManagerRepresentation" href="platform:/plugin/org.eclipse.papyrus.uml.nattable.generic.config/configs/generic.nattableconfiguration#//@columnHeaderAxisConfiguration/@axisManagers.0"/>
-        <element xmi:type="ecore:EReference" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element/ownedComment"/>
+        <element xmi:type="ecore:EReference" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element/ownedComment"/>
       </axis>
       <axis xmi:type="nattableaxis:EStructuralFeatureAxis" xmi:id="_Pt22lQ75EeORvsuYlq1ltw">
         <manager xmi:type="nattableaxisconfiguration:AxisManagerRepresentation" href="platform:/plugin/org.eclipse.papyrus.uml.nattable.generic.config/configs/generic.nattableconfiguration#//@columnHeaderAxisConfiguration/@axisManagers.0"/>
-        <element xmi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/4.0.0/UML#//Comment/body"/>
+        <element xmi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/5.0.0/UML#//Comment/body"/>
       </axis>
     </columnAxisProvidersHistory>
     <rowAxisProvidersHistory xmi:type="nattableaxisprovider:MasterObjectAxisProvider" xmi:id="_0ozU0g74EeORvsuYlq1ltw" description="This axis provider contains the object dropped by the user into the table" name="DroppedElementAxisProvider">
@@ -285,7 +285,7 @@
       <styles xmi:type="notation:DescriptionStyle" xmi:id="_uA6VsVAxEeOrhtyYG59vlg"/>
       <styles xmi:type="notation:FontStyle" xmi:id="_uA6VslAxEeOrhtyYG59vlg"/>
       <element xmi:type="uml:Component" href="adl4eclipse.uml#_rUZhkVAwEeORna_egAxs3w"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uA6Vs1AxEeOrhtyYG59vlg" x="520" y="170" width="230"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uA6Vs1AxEeOrhtyYG59vlg" x="590" y="170" width="230"/>
     </children>
     <children xmi:type="notation:Shape" xmi:id="_yJk0MFAxEeOrhtyYG59vlg" type="2002" fontName="Segoe UI" gradient="8905185, 16777215, 0">
       <children xmi:type="notation:DecorationNode" xmi:id="_yJk0NFAxEeOrhtyYG59vlg" type="5004"/>
@@ -437,13 +437,13 @@
           <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Z4eV4lAzEeOrhtyYG59vlg" source="CustomAppearance_Annotation">
             <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Z4eV41AzEeOrhtyYG59vlg" key="CustomAppearance_MaskValue" value="0"/>
           </eAnnotations>
-          <layoutConstraint xmi:type="notation:Location" xmi:id="_MO4TsFAzEeOrhtyYG59vlg" x="12" y="50"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_MO4TsFAzEeOrhtyYG59vlg" x="-133" y="18"/>
         </children>
         <children xmi:type="notation:DecorationNode" xmi:id="_MO4TsVAzEeOrhtyYG59vlg" type="5007">
           <layoutConstraint xmi:type="notation:Location" xmi:id="_MO4TslAzEeOrhtyYG59vlg" x="25" y="-10"/>
         </children>
         <element xmi:type="uml:Port" href="adl4eclipse.uml#_r02jR1AwEeORna_egAxs3w"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_MOuisVAzEeOrhtyYG59vlg" x="203" y="100"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_MOuisVAzEeOrhtyYG59vlg" x="228" y="134"/>
       </children>
       <styles xmi:type="notation:DescriptionStyle" xmi:id="_LlqXkVAzEeOrhtyYG59vlg"/>
       <styles xmi:type="notation:FontStyle" xmi:id="_LlqXklAzEeOrhtyYG59vlg"/>
@@ -461,8 +461,9 @@
       </children>
       <styles xmi:type="notation:FontStyle" xmi:id="_4-FN4VAxEeOrhtyYG59vlg" fontName="Segoe UI"/>
       <element xmi:type="uml:Dependency" href="adl4eclipse.uml#_r2fiCVAwEeORna_egAxs3w"/>
-      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_4-FN4lAxEeOrhtyYG59vlg" points="[-92, 6, 239, -19]$[-230, 17, 101, -8]"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_4-FN4lAxEeOrhtyYG59vlg" points="[54, 0, 0, 90]$[54, -90, 0, 0]"/>
       <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_jGdk4FAyEeOrhtyYG59vlg" id="(0.19056261343012704,0.0)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_r2JsYF6CEeSZw9ShIUmIsQ" id="(0.40869565217391307,1.0)"/>
     </edges>
     <edges xmi:type="notation:Connector" xmi:id="_5Q1KwFAxEeOrhtyYG59vlg" type="4010" source="_1tpX4FAxEeOrhtyYG59vlg" target="_yJk0MFAxEeOrhtyYG59vlg" routing="Rectilinear" lineColor="0">
       <children xmi:type="notation:DecorationNode" xmi:id="_5Q1Kw1AxEeOrhtyYG59vlg" visible="false" type="6009">
@@ -508,6 +509,8 @@
       <styles xmi:type="notation:FontStyle" xmi:id="_HETFMVAzEeOrhtyYG59vlg" fontName="Segoe UI"/>
       <element xmi:type="uml:Dependency" href="adl4eclipse.uml#_rzqQc1AwEeORna_egAxs3w"/>
       <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_HETFMlAzEeOrhtyYG59vlg" points="[0, -35, -163, 110]$[0, -110, -163, 35]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_r2JsYV6CEeSZw9ShIUmIsQ" id="(0.34782608695652173,0.0)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_r2JsYl6CEeSZw9ShIUmIsQ" id="(0.26119402985074625,1.0)"/>
     </edges>
     <edges xmi:type="notation:Connector" xmi:id="_TI4RYFAzEeOrhtyYG59vlg" type="4010" source="_AR4WMFAzEeOrhtyYG59vlg" target="_MOuisFAzEeOrhtyYG59vlg" routing="Rectilinear" lineColor="0">
       <children xmi:type="notation:DecorationNode" xmi:id="_TI4RY1AzEeOrhtyYG59vlg" type="6009">
@@ -518,7 +521,7 @@
       </children>
       <styles xmi:type="notation:FontStyle" xmi:id="_TI4RYVAzEeOrhtyYG59vlg" fontName="Segoe UI"/>
       <element xmi:type="uml:Dependency" href="adl4eclipse.uml#_TIvHcFAzEeOrhtyYG59vlg"/>
-      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_TI4RYlAzEeOrhtyYG59vlg" points="[-10, 0, 269, -67]$[-140, 0, 139, -67]$[-140, 70, 139, 3]$[-262, 70, 17, 3]"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_TI4RYlAzEeOrhtyYG59vlg" points="[-10, 0, 269, -101]$[-121, 0, 158, -101]$[-121, 102, 158, 1]$[-262, 102, 17, 1]"/>
       <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_TJCCYFAzEeOrhtyYG59vlg" id="(0.15,0.35)"/>
     </edges>
     <edges xmi:type="notation:Connector" xmi:id="_cB8j0FAzEeOrhtyYG59vlg" type="4010" source="_pVer4FAyEeOrhtyYG59vlg" target="_MOuisFAzEeOrhtyYG59vlg" routing="Rectilinear" lineColor="0">
@@ -530,7 +533,7 @@
       </children>
       <styles xmi:type="notation:FontStyle" xmi:id="_cB8j0VAzEeOrhtyYG59vlg" fontName="Segoe UI"/>
       <element xmi:type="uml:Dependency" href="adl4eclipse.uml#_r02jSFAwEeORna_egAxs3w"/>
-      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_cB8j0lAzEeOrhtyYG59vlg" points="[-10, -4, 252, 93]$[-130, -4, 132, 93]$[-130, -97, 132, 0]$[-252, -97, 10, 0]"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_cB8j0lAzEeOrhtyYG59vlg" points="[-10, -4, 322, 93]$[-180, -4, 152, 93]$[-180, -97, 152, 0]$[-322, -97, 10, 0]"/>
     </edges>
   </notation:Diagram>
 </xmi:XMI>
