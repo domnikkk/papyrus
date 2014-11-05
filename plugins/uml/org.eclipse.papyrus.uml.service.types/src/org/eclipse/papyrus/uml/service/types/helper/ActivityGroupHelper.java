@@ -43,7 +43,7 @@ public class ActivityGroupHelper extends ElementEditHelper {
 	}
 
 	protected boolean isActivityNode(IElementType type) {
-		return UMLPackage.eINSTANCE.getActivityNode().isSuperTypeOf(type.getEClass());
+		return type.getEClass() != null && UMLPackage.eINSTANCE.getActivityNode().isSuperTypeOf(type.getEClass());
 	}
 	
 	/**
