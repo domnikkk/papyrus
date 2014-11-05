@@ -35,8 +35,6 @@ import org.eclipse.emf.edit.provider.resource.ResourceItemProviderAdapterFactory
 import org.eclipse.emf.edit.ui.celleditor.AdapterFactoryTreeEditor;
 import org.eclipse.emf.edit.ui.dnd.LocalTransfer;
 import org.eclipse.emf.edit.ui.dnd.ViewerDragAdapter;
-import org.eclipse.emf.facet.infra.browser.uicore.CustomizableModelLabelProvider;
-import org.eclipse.emf.facet.infra.browser.uicore.CustomizationManager;
 import org.eclipse.jface.action.IMenuListener;
 import org.eclipse.jface.action.IMenuManager;
 import org.eclipse.jface.action.MenuManager;
@@ -47,10 +45,14 @@ import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.viewers.StructuredViewer;
 import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.jface.viewers.ViewerFilter;
+import org.eclipse.papyrus.emf.facet.custom.core.ICustomizationManager;
+import org.eclipse.papyrus.emf.facet.custom.ui.ICustomizedContentProviderFactory;
+import org.eclipse.papyrus.infra.core.services.ServiceException;
 import org.eclipse.papyrus.infra.emf.embeddededitor.Activator;
-import org.eclipse.papyrus.infra.emf.embeddededitor.providers.CustomizableContentProvider;
 import org.eclipse.papyrus.infra.emf.embeddededitor.providers.EditingDomainProviderAdapter;
 import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
+import org.eclipse.papyrus.infra.services.labelprovider.service.LabelProviderService;
+import org.eclipse.papyrus.infra.services.labelprovider.service.impl.LabelProviderServiceImpl;
 import org.eclipse.papyrus.infra.widgets.editors.AbstractEditor;
 import org.eclipse.papyrus.infra.widgets.editors.ICommitListener;
 import org.eclipse.papyrus.infra.widgets.editors.StringEditor;
@@ -68,7 +70,6 @@ import org.eclipse.swt.widgets.Tree;
 /**
  * @author Camille Letavernier
  */
-@SuppressWarnings("restriction")
 public class EmbeddedEditor implements CommandStackListener, IMenuListener {
 
 	protected TreeViewer treeViewer;
@@ -77,7 +78,7 @@ public class EmbeddedEditor implements CommandStackListener, IMenuListener {
 
 	protected IStructuredContentProvider contentProvider;
 
-	protected CustomizationManager customizationManager;
+	protected ICustomizationManager customizationManager;
 
 	protected Composite container;
 
@@ -158,7 +159,6 @@ public class EmbeddedEditor implements CommandStackListener, IMenuListener {
 			treeViewer = new TreeViewer(tree);
 			treeViewer.setFilters(new ViewerFilter[] { filter });
 			IStructuredContentProvider contentProvider = getContentProvider();
-			getCustomizationManager().installCustomPainter(tree);
 
 			ILabelProvider labelProvider = getLabelProvider();
 
@@ -196,19 +196,18 @@ public class EmbeddedEditor implements CommandStackListener, IMenuListener {
 	}
 
 	protected IStructuredContentProvider createContentProvider() {
-		// return new AdapterFactoryContentProvider(adapterFactory);
-		return new CustomizableContentProvider(getCustomizationManager());
+		return ICustomizedContentProviderFactory.DEFAULT.createCustomizedTreeContentProvider(getCustomizationManager());
 	}
 
-	public CustomizationManager getCustomizationManager() {
+	public ICustomizationManager getCustomizationManager() {
 		if (customizationManager == null) {
 			customizationManager = createCustomizationManager();
 		}
 		return customizationManager;
 	}
 
-	protected CustomizationManager createCustomizationManager() {
-		return Activator.getDefault().getCustomizationManager();
+	protected ICustomizationManager createCustomizationManager() {
+		return org.eclipse.papyrus.infra.emf.Activator.getDefault().getCustomizationManager();
 	}
 
 	public ILabelProvider getLabelProvider() {
@@ -219,8 +218,13 @@ public class EmbeddedEditor implements CommandStackListener, IMenuListener {
 	}
 
 	protected ILabelProvider createLabelProvider() {
-		// return new AdapterFactoryLabelProvider(adapterFactory);
-		return new CustomizableModelLabelProvider(getCustomizationManager());
+		LabelProviderService labelService = new LabelProviderServiceImpl();
+		try {
+			labelService.startService();
+		} catch (ServiceException ex) {
+			Activator.log.error(ex);
+		}
+		return labelService.getLabelProvider();
 	}
 
 	protected void createContextMenuFor(StructuredViewer viewer) {

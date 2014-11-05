@@ -32,7 +32,7 @@ import org.eclipse.papyrus.infra.emf.embeddededitor.editor.actions.MoDiscoCutAct
 import org.eclipse.papyrus.infra.emf.embeddededitor.editor.actions.MoDiscoDeleteAction;
 import org.eclipse.papyrus.infra.emf.embeddededitor.editor.actions.MoDiscoPasteAction;
 import org.eclipse.papyrus.infra.emf.embeddededitor.editor.actions.ValidationAction;
-import org.eclipse.papyrus.infra.emf.newchild.runtime.NewchildManager;
+import org.eclipse.papyrus.infra.newchild.ui.DynamicNewChild;
 import org.eclipse.ui.ISharedImages;
 import org.eclipse.ui.PlatformUI;
 
@@ -50,6 +50,8 @@ public class ActionBarContributor extends EcoreActionBarContributor {
 	protected IStructuredSelection lastSelection;
 
 	protected EditingDomain domain;
+
+	DynamicNewChild contribution = new DynamicNewChild();
 
 	public void init(EditingDomain domain, final TreeViewer viewer) {
 		ISharedImages sharedImages = PlatformUI.getWorkbench().getSharedImages();
@@ -100,8 +102,10 @@ public class ActionBarContributor extends EcoreActionBarContributor {
 	public void menuAboutToShow(IMenuManager menuManager) {
 		update();
 		super.menuAboutToShow(menuManager);
-		menuManager.insertBefore("edit", new Separator(NewchildManager.TOP)); //$NON-NLS-1$
-		NewchildManager.instance.fillMenu(menuManager, lastSelection);
+
+		//menuManager.insertBefore("edit", new Separator(NewchildManager.TOP)); //$NON-NLS-1$
+		menuManager.insertBefore("edit", contribution);
+		// NewchildManager.instance.fillMenu(menuManager, lastSelection);
 	}
 
 	@Override
