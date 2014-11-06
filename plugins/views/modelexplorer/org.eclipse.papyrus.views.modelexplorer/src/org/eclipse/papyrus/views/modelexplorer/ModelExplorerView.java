@@ -1,6 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2010, 2014 CEA LIST and others.
- *
+ * Copyright (c) 2010, 2014 CEA LIST, Christian W. Damus, and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -14,6 +13,7 @@
  *  Christian W. Damus (CEA) - bug 434635
  *  Christian W. Damus (CEA) - bug 437217
  *  Christian W. Damus (CEA) - bug 441857
+ *  Christian W. Damus - bug 450235
  *
  *****************************************************************************/
 package org.eclipse.papyrus.views.modelexplorer;
@@ -123,6 +123,7 @@ import org.eclipse.ui.views.properties.IPropertySheetPage;
 import org.eclipse.ui.views.properties.tabbed.ITabbedPropertySheetPageContributor;
 import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
 
+import com.google.common.base.Supplier;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 
@@ -451,7 +452,11 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 
 		getCommonViewer().setSorter(null);
 		((CustomCommonViewer) getCommonViewer()).getDropAdapter().setFeedbackEnabled(true);
-		getCommonViewer().addDoubleClickListener(new DoubleClickListener(serviceRegistry));
+		getCommonViewer().addDoubleClickListener(new DoubleClickListener(new Supplier<ServicesRegistry>() {
+			public ServicesRegistry get() {
+				return serviceRegistry;
+			}
+		}));
 
 		Tree tree = getCommonViewer().getTree();
 
