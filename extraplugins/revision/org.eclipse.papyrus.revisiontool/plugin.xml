@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            allowMultiple="false"
+            category="org.eclipse.papyrus.views.category"
+            class="org.eclipse.papyrus.revision.tool.ui.ReviewsEditor"
+            icon="img/CommentIcon.png"
+            id="org.eclipse.papyrus.revisiontool.commentview"
+            name="Reviews View"
+            restorable="true">
+      </view>
+   </extension>
+   
+
+     <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            category="org.eclipse.papyrus.infra.core.sasheditor.preferences.generalcategory"
+            class="org.eclipse.papyrus.revision.tool.preference.RevisionPreferencePage"
+            id="org.eclipse.papyrus.revision"
+            name="Revision">
+      </page>
+   </extension>
+   <extension
+         point="org.eclipse.core.runtime.preferences">
+      <initializer
+            class="org.eclipse.papyrus.revision.tool.preference.PreferenceInitializer">
+      </initializer>
+   </extension>
+   <extension
+         point="org.eclipse.emf.ecore.uri_mapping">
+      <mapping
+            source="pathmap://Review_PROFILES/"
+            target="platform:/plugin/org.eclipse.papyrus.revisiontool/resource/">
+      </mapping>
+   </extension>
+   <extension
+         point="org.eclipse.papyrus.uml.extensionpoints.UMLProfile">
+      <profile
+            description="Profile used for model review"
+            name="ReviewProfile"
+            path="pathmap://Review_PROFILES/Review.profile.uml"
+            provider="CEA LIST">
+      </profile>
+      <profile
+            description="Profile used for model versionning"
+            name="VersioningProfile"
+            path="pathmap://Review_PROFILES/Versioning.profile.uml"
+            provider="CEA LIST">
+      </profile>
+   </extension>
+
+</plugin>

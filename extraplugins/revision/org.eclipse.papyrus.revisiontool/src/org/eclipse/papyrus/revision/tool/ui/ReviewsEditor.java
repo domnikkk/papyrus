@@ -1,0 +1,219 @@
+/*****************************************************************************
+ * Copyright (c) 2014 CEA LIST.
+ *
+ *
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Patrick Tessier (CEA LIST) patrick.tessier@cea.fr - Initial API and implementation
+ *
+ *****************************************************************************/
+package org.eclipse.papyrus.revision.tool.ui;
+
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.ecore.util.EContentAdapter;
+import org.eclipse.jface.action.Action;
+import org.eclipse.jface.action.IToolBarManager;
+import org.eclipse.jface.resource.ImageDescriptor;
+import org.eclipse.jface.viewers.TreeViewer;
+import org.eclipse.papyrus.infra.core.editor.IMultiDiagramEditor;
+import org.eclipse.papyrus.infra.core.services.ServiceException;
+import org.eclipse.papyrus.infra.core.utils.ServiceUtils;
+import org.eclipse.papyrus.revision.tool.Activator;
+import org.eclipse.papyrus.revision.tool.core.ReviewResourceManager;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.graphics.Font;
+import org.eclipse.swt.graphics.FontData;
+import org.eclipse.swt.graphics.Point;
+import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Event;
+import org.eclipse.swt.widgets.Listener;
+import org.eclipse.swt.widgets.TreeItem;
+import org.eclipse.ui.part.ViewPart;
+import org.eclipse.ui.views.properties.IPropertySheetPage;
+import org.eclipse.ui.views.properties.PropertySheetPage;
+import org.eclipse.ui.views.properties.tabbed.ITabbedPropertySheetPageContributor;
+import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
+import org.eclipse.uml2.uml.Model;
+import org.eclipse.uml2.uml.Package;
+
+/**
+ * the review editor that display reviews or comments 
+ *
+ */
+public class ReviewsEditor extends ViewPart implements ITabbedPropertySheetPageContributor{
+
+	protected ReviewResourceManager reviewResourceManager= new ReviewResourceManager();
+	private TreeViewer viewer;
+	protected List<IPropertySheetPage> propertySheetPages = new ArrayList<IPropertySheetPage>();
+
+	private static FontData[] getModifiedFontData(FontData[] originalData, int additionalStyle) {
+		FontData[] styleData = new FontData[originalData.length];
+		for (int i = 0; i < styleData.length; i++) {
+			FontData base = originalData[i];
+			styleData[i] = new FontData(base.getName(), base.getHeight(), base.getStyle() | additionalStyle);
+		}
+		return styleData;
+	}
+
+	
+	/**
+	 * 
+	 * @return listener to refresh the editor
+	 */
+	protected EContentAdapter getresourceListener(){
+		return new EContentAdapter(){
+			@Override
+			public void notifyChanged(Notification notification) {
+				viewer.setInput(reviewResourceManager.getCurrentReviewModel());
+			}
+		};
+	}
+	public void createActions() {
+		Action	loadReview = new Action("Load a review model") {
+			@Override
+			public void run() {
+				Model reviewModel=reviewResourceManager.loadReviewModel();
+				viewer.setInput(reviewModel);
+				reviewModel.eResource().eAdapters().add(getresourceListener());
+			}
+			@Override
+			public String getDescription() {
+				return "Load a review Model";
+			}
+		};
+
+		Action	addReview = new Action("Add a review") {
+			@Override
+			public void run() {
+				reviewResourceManager.addAReview();
+				viewer.setInput(reviewResourceManager.getCurrentReviewModel());
+				Model reviewModel=reviewResourceManager.getCurrentReviewModel();
+				reviewModel.eResource().eAdapters().add(getresourceListener());
+			}
+			@Override
+			public String getDescription() {
+				return "Add a review";
+			}
+		};
+
+		try {
+			loadReview.setImageDescriptor( ImageDescriptor.createFromURL(new URL("platform:/plugin/org.eclipse.papyrus.revisiontool/img/load.png")));
+			addReview.setImageDescriptor( ImageDescriptor.createFromURL(new URL("platform:/plugin/org.eclipse.papyrus.revisiontool/img/Add.png")));
+			
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		IToolBarManager mgr = getViewSite().getActionBars().getToolBarManager();
+		mgr.add(loadReview);
+		mgr.add(addReview);
+	}
+
+
+	@Override
+	public void createPartControl(Composite parent) {
+		viewer = new TreeViewer(parent,  SWT.MULTI | SWT.FULL_SELECTION);
+		viewer.setContentProvider(new CommentTreeContentProvider());
+		FontData[] boldFontData= getModifiedFontData(viewer.getTree().getFont().getFontData(), SWT.BOLD);
+		FontData[] italicFontData= getModifiedFontData(viewer.getTree().getFont().getFontData(), SWT.ITALIC);
+		Font boldFont = new Font(Display.getCurrent(), boldFontData);
+		Font italicFont = new Font(Display.getCurrent(), italicFontData);
+		viewer.setLabelProvider(new CommentsTreeLabelProvider(boldFont,  italicFont));
+		createActions();
+
+
+		// this code comes from eclipse  in oder to display multi line in a tree
+		Listener paintListener = new Listener() {
+			public void handleEvent(Event event) {
+				switch(event.type) {       
+				case SWT.MeasureItem: {
+					TreeItem item = (TreeItem)event.item;
+					String text = item.getText();
+					Point size = event.gc.textExtent(text);
+					event.width = size.x+20;
+					event.height = Math.max(event.height, size.y);
+					break;
+				}
+				case SWT.PaintItem: {
+					TreeItem item = (TreeItem)event.item;
+					String text = item.getText();
+					Point size = event.gc.textExtent(text);                
+					int offset2 = event.index == 0 ? Math.max(0, (event.height - size.y) / 2) : 0;
+					event.gc.drawText(text, event.x, event.y + offset2, true);
+					break;
+				}
+				case SWT.EraseItem: {  
+					event.detail &= ~SWT.FOREGROUND;
+					break;
+				}
+				}
+			}
+		};
+		viewer.getTree().addListener(SWT.MeasureItem, paintListener);
+		viewer.getTree().addListener(SWT.EraseItem, paintListener);
+		getSite().setSelectionProvider(viewer);
+
+
+
+	}
+	/**
+	 * Retrieves the {@link IPropertySheetPage} that his Model Explorer uses.
+	 *
+	 * @return
+	 */
+	private IPropertySheetPage getPropertySheetPage() {
+		try {
+			final IMultiDiagramEditor multiDiagramEditor = ServiceUtils.getInstance().getService(IMultiDiagramEditor.class,reviewResourceManager.getServiceRegistry());
+
+			if (multiDiagramEditor != null) {
+				if (multiDiagramEditor instanceof ITabbedPropertySheetPageContributor) {
+					ITabbedPropertySheetPageContributor contributor = (ITabbedPropertySheetPageContributor) multiDiagramEditor;
+					IPropertySheetPage propertySheetPage = new TabbedPropertySheetPage(contributor);
+					this.propertySheetPages.add(propertySheetPage);
+					return propertySheetPage;
+				}
+			}
+		} catch (ServiceException ex) {
+			System.err.println(ex);
+		}
+		return null;
+	}
+	
+	public Object getAdapter(Class adapter) {
+		 if ((IPropertySheetPage.class.equals(adapter))) {
+			return getPropertySheetPage();
+		}
+		
+		else {
+			return super.getAdapter(adapter);
+		}
+	}
+	public Package createInput(){
+
+		Model reviewModel=null;//reviewResourceManager.createReviewModel();
+		return reviewModel;
+
+	}
+	@Override
+	public void setFocus() {
+	
+
+	}
+
+	@Override
+	public String getContributorId() {
+		return "TreeOutlinePage";
+	}
+
+}

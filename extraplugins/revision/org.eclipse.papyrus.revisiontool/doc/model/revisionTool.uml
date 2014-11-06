@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Document="http:///schemas/Document/_qR4REMn0EeO9CYUoXDRplw/0" xmlns:Requirements="http://www.eclipse.org/papyrus/0.7.0/SysML/Requirements" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:structure="http://DeveloperProcess/schemas/structure/_VA9p4McPEeO9CYUoXDRplw/1" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/Document/_qR4REMn0EeO9CYUoXDRplw/0 pathmap://DEVELOPER_PROFILES/Document.profile.uml#_qR44IMn0EeO9CYUoXDRplw http://www.eclipse.org/papyrus/0.7.0/SysML/Requirements http://www.eclipse.org/papyrus/0.7.0/SysML#//requirements http://DeveloperProcess/schemas/structure/_VA9p4McPEeO9CYUoXDRplw/1 pathmap://DEVELOPER_PROFILES/developerprocess.profile.uml#_VA-4AMcPEeO9CYUoXDRplw">
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Document="http:///schemas/Document/_qR4REMn0EeO9CYUoXDRplw/0" xmlns:Requirements="http://www.eclipse.org/papyrus/0.7.0/SysML/Requirements" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:structure="http://DeveloperProcess/schemas/structure/_VA9p4McPEeO9CYUoXDRplw/1" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/Document/_qR4REMn0EeO9CYUoXDRplw/0 pathmap://DEVELOPER_PROFILES/Document.profile.uml http://www.eclipse.org/papyrus/0.7.0/SysML/Requirements http://www.eclipse.org/papyrus/0.7.0/SysML#//requirements http://DeveloperProcess/schemas/structure/_VA9p4McPEeO9CYUoXDRplw/1 pathmap://DEVELOPER_PROFILES/developerprocess.profile.uml">
   <uml:Model xmi:id="_PURk0E6_EeSsPatWHMT5jQ" name="RevisionTool">
     <packageImport xmi:type="uml:PackageImport" xmi:id="_PUSL4E6_EeSsPatWHMT5jQ">
       <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+    </packageImport>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_kbBUYGDvEeSg3YNat5xZcA">
+      <importedPackage xmi:type="uml:Model" href="CommentModel.uml#_n74o4FnlEeSgadB-4Q9IHg"/>
+    </packageImport>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_nb_yEGDvEeSg3YNat5xZcA">
+      <importedPackage xmi:type="uml:Profile" href="../../resource/Review.profile.uml#_Tr7GcGAWEeS-2dbNdHDnFw"/>
+    </packageImport>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_EuoRcGTcEeSaUoUpxav4Ag">
+      <importedPackage xmi:type="uml:Profile" href="../../resource/Versioning.profile.uml#_oQIXkM7dEeOUWOjBbvvZ9Q"/>
     </packageImport>
     <packagedElement xmi:type="uml:Model" xmi:id="_PUSL4U6_EeSsPatWHMT5jQ" name="Requirements">
       <packagedElement xmi:type="uml:Class" xmi:id="_2LldkE7IEeSjDupdFZ5PpA" name="Versioning"/>
@@ -10,16 +19,17 @@
       <packagedElement xmi:type="uml:Class" xmi:id="_CHiSME7JEeSjDupdFZ5PpA" name="ReviewSystem"/>
       <packagedElement xmi:type="uml:Class" xmi:id="_lf9YUE7JEeSjDupdFZ5PpA" name="RevisionMode"/>
       <packagedElement xmi:type="uml:Abstraction" xmi:id="_Um-GQE-rEeSWG8b7b00v3Q" name="DeriveFrom_Versioning" client="_Um500E-rEeSWG8b7b00v3Q" supplier="_2LldkE7IEeSjDupdFZ5PpA"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_ydw5cGAKEeSu6d79yLoqDA" name="IdenpendantComments"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Model" xmi:id="_PUSL4k6_EeSsPatWHMT5jQ" name="UseCases">
       <ownedComment xmi:type="uml:Comment" xmi:id="_mxVHYFB7EeSCAb2Ctmcyhw" annotatedElement="_PUSL4k6_EeSsPatWHMT5jQ">
         <body>The functionality revision can be divided into two parts:&#xD;
-- management of review comment&#xD;
+- Management of review&#xD;
 &#xD;
 </body>
       </ownedComment>
       <ownedComment xmi:type="uml:Comment" xmi:id="_rbwKwFLOEeSVep_Dkfv5hQ">
-        <body>- management of revision</body>
+        <body>- Management of revisions</body>
       </ownedComment>
       <packagedElement xmi:type="uml:Abstraction" xmi:id="_PUSL406_EeSsPatWHMT5jQ" name="useCasesAbstraction" client="_PUSL4k6_EeSsPatWHMT5jQ" supplier="_PUSL4U6_EeSsPatWHMT5jQ"/>
       <packagedElement xmi:type="uml:Actor" xmi:id="_E5WOcE-5EeSWG8b7b00v3Q" name="User"/>
@@ -63,30 +73,83 @@
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OSgWNk-5EeSWG8b7b00v3Q" value="1"/>
         </ownedEnd>
       </packagedElement>
-      <packagedElement xmi:type="uml:Component" xmi:id="_mBiIkE-_EeSWG8b7b00v3Q" name="ReviewTool">
+      <packagedElement xmi:type="uml:Component" xmi:id="_mBiIkE-_EeSWG8b7b00v3Q" name="ReviewTool" useCase="_L3uyYGALEeSu6d79yLoqDA">
         <ownedUseCase xmi:type="uml:UseCase" xmi:id="_EADO8E-5EeSWG8b7b00v3Q" name="Add or change information about him for the versionning" subject="_PUSL5E6_EeSsPatWHMT5jQ">
           <ownedComment xmi:type="uml:Comment" xmi:id="_f77D8E-5EeSWG8b7b00v3Q" annotatedElement="_1ygkUE7KEeSjDupdFZ5PpA">
-            <body>When the user wants to have for the first time a comment in the context of a review, the review system mus ask the identity and the language of the user in order to add it in the associated comment.&#xD;
-This information could be changed in the preference of papyrus</body>
+            <body>When the user wants to add for the first time a review, the review system must ask the identity, the language and the wanted color of the user in order to add it in the associated review.&#xD;
+This information could be changed at any time in the preference of papyrus&#xD;
+</body>
           </ownedComment>
         </ownedUseCase>
-        <ownedUseCase xmi:type="uml:UseCase" xmi:id="__i7VgE7KEeSjDupdFZ5PpA" name="Respond to a comment" subject="_PUSL5E6_EeSsPatWHMT5jQ">
+        <ownedUseCase xmi:type="uml:UseCase" xmi:id="__i7VgE7KEeSjDupdFZ5PpA" name="Respond to a review" subject="_PUSL5E6_EeSsPatWHMT5jQ">
           <ownedComment xmi:type="uml:Comment" xmi:id="_VpTAwE-9EeSWG8b7b00v3Q" annotatedElement="__i7VgE7KEeSjDupdFZ5PpA">
-            <body>A user could have the possibility to respond to a existing comment. Thanks to this, it is possible to see the discussion flow about a subject </body>
+            <body>A user could have the possibility to respond to an existing review. Thanks to this, it is possible to see the discussion flow about a subject. </body>
           </ownedComment>
         </ownedUseCase>
-        <ownedUseCase xmi:type="uml:UseCase" xmi:id="_7eGOIE7KEeSjDupdFZ5PpA" name="Add a comment  about modification on the current model" subject="_PUSL5E6_EeSsPatWHMT5jQ">
+        <ownedUseCase xmi:type="uml:UseCase" xmi:id="_7eGOIE7KEeSjDupdFZ5PpA" name="Add a review about modification on the current model" subject="_PUSL5E6_EeSsPatWHMT5jQ">
           <ownedComment xmi:type="uml:Comment" xmi:id="_ILKdIE-8EeSWG8b7b00v3Q" annotatedElement="_7eGOIE7KEeSjDupdFZ5PpA">
             <body>When the revision mode is activated, the user can add review comment on modification done in the model.&#xD;
 For example comment a deletion...&#xD;
 </body>
           </ownedComment>
         </ownedUseCase>
-        <ownedUseCase xmi:type="uml:UseCase" xmi:id="_1ygkUE7KEeSjDupdFZ5PpA" name="Add a review comment elements on the current model" subject="_PUSL5E6_EeSsPatWHMT5jQ">
+        <ownedUseCase xmi:type="uml:UseCase" xmi:id="_1ygkUE7KEeSjDupdFZ5PpA" name="Add a review on the current model" subject="_PUSL5E6_EeSsPatWHMT5jQ">
           <ownedComment xmi:type="uml:Comment" xmi:id="_09zs4E-6EeSWG8b7b00v3Q" annotatedElement="_1ygkUE7KEeSjDupdFZ5PpA">
-            <body>The user adds a review comment on an element of the model. This comment will be store not directly in the model but into a new model that will contain all review comments.&#xD;
-This comment contains all information see in the version information.&#xD;
-This comment could be displayed on diagrams. A dedicated view must  be displayed dedicated to review comment. (it can be sorted by date author, subject..)</body>
+            <body>The user adds a review on an element of the model. This review will be not directly store in the model but into a new model that will contain all review comments.&#xD;
+In order to create a review, the review tool can create a review model if needed. &#xD;
+The review tool creates also a &quot;user author&quot;. From all preferences, the system creates an author that will associated to a review.&#xD;
+Finally this created review contains all informations see in the version information.&#xD;
+&#xD;
+This review could be displayed on diagrams. A dedicated view must be displayed dedicated to review comment. (it can be sorted by date author, subject..)&#xD;
+</body>
+          </ownedComment>
+          <ownedBehavior xmi:type="uml:Interaction" xmi:id="_hRgmwGDkEeSg3YNat5xZcA" name="Add aReview">
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_ozMPgGDkEeSg3YNat5xZcA" name="" type="_E5WOcE-5EeSWG8b7b00v3Q"/>
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_rEcgcGDkEeSg3YNat5xZcA" name="" type="_mBiIkE-_EeSWG8b7b00v3Q"/>
+            <lifeline xmi:type="uml:Lifeline" xmi:id="_ozLBYGDkEeSg3YNat5xZcA" name="" represents="_ozMPgGDkEeSg3YNat5xZcA" coveredBy="_vvALEGDkEeSg3YNat5xZcA"/>
+            <lifeline xmi:type="uml:Lifeline" xmi:id="_rEbSUGDkEeSg3YNat5xZcA" name="" represents="_rEcgcGDkEeSg3YNat5xZcA" coveredBy="_vvBZMGDkEeSg3YNat5xZcA __Smb0GDkEeSg3YNat5xZcA __SqtQGDkEeSg3YNat5xZcA _V1hK8GDsEeSg3YNat5xZcA _V1iZEGDsEeSg3YNat5xZcA _V1hyAGDsEeSg3YNat5xZcA _Tf1F8GDsEeSg3YNat5xZcA _Tf2UEGDsEeSg3YNat5xZcA _51XdcGDsEeSg3YNat5xZcA _51YEgGDsEeSg3YNat5xZcA"/>
+            <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_vvALEGDkEeSg3YNat5xZcA" name="MessageSend" covered="_ozLBYGDkEeSg3YNat5xZcA" message="_vuoXoGDkEeSg3YNat5xZcA"/>
+            <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_vvBZMGDkEeSg3YNat5xZcA" name="MessageRecv" covered="_rEbSUGDkEeSg3YNat5xZcA" message="_vuoXoGDkEeSg3YNat5xZcA"/>
+            <fragment xmi:type="uml:CombinedFragment" xmi:id="__Smb0GDkEeSg3YNat5xZcA" name="CombinedFragment" covered="_rEbSUGDkEeSg3YNat5xZcA" interactionOperator="opt">
+              <operand xmi:type="uml:InteractionOperand" xmi:id="__SqtQGDkEeSg3YNat5xZcA" name="InteractionOperand" covered="_rEbSUGDkEeSg3YNat5xZcA">
+                <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_V1hyAGDsEeSg3YNat5xZcA" name="BehaviorExecSpec" covered="_rEbSUGDkEeSg3YNat5xZcA" finish="_V1iZEGDsEeSg3YNat5xZcA" start="_V1hK8GDsEeSg3YNat5xZcA"/>
+                <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_V1hK8GDsEeSg3YNat5xZcA" name="BehaviorExecSpecStart" covered="_rEbSUGDkEeSg3YNat5xZcA" execution="_V1hyAGDsEeSg3YNat5xZcA"/>
+                <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_8xOEMGDkEeSg3YNat5xZcA" name="MessageRecv0" message="_8xLn8GDkEeSg3YNat5xZcA"/>
+                <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_V1iZEGDsEeSg3YNat5xZcA" name="BehaviorExecSpecFinish" covered="_rEbSUGDkEeSg3YNat5xZcA" execution="_V1hyAGDsEeSg3YNat5xZcA"/>
+                <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_8xNdIGDkEeSg3YNat5xZcA" name="MessageSend0" message="_8xLn8GDkEeSg3YNat5xZcA"/>
+                <guard xmi:type="uml:InteractionConstraint" xmi:id="__SuXoGDkEeSg3YNat5xZcA" name="if review do not exist">
+                  <specification xmi:type="uml:LiteralString" xmi:id="__Su-sGDkEeSg3YNat5xZcA" value="if review model do not exist"/>
+                  <maxint xmi:type="uml:LiteralInteger" xmi:id="__Su-smDkEeSg3YNat5xZcA" value="1"/>
+                  <minint xmi:type="uml:LiteralInteger" xmi:id="__Su-sWDkEeSg3YNat5xZcA"/>
+                </guard>
+              </operand>
+            </fragment>
+            <fragment xmi:type="uml:CombinedFragment" xmi:id="_Tf1F8GDsEeSg3YNat5xZcA" name="CombinedFragment0" covered="_rEbSUGDkEeSg3YNat5xZcA" interactionOperator="opt">
+              <operand xmi:type="uml:InteractionOperand" xmi:id="_Tf2UEGDsEeSg3YNat5xZcA" name="InteractionOperand" covered="_rEbSUGDkEeSg3YNat5xZcA">
+                <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_bQ844GDsEeSg3YNat5xZcA" name="MessageRecv0" message="_bQ6coGDsEeSg3YNat5xZcA"/>
+                <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_bQ8R0GDsEeSg3YNat5xZcA" name="MessageSend0" message="_bQ6coGDsEeSg3YNat5xZcA"/>
+                <guard xmi:type="uml:InteractionConstraint" xmi:id="_Tf27IGDsEeSg3YNat5xZcA">
+                  <specification xmi:type="uml:LiteralString" xmi:id="_Tf27IWDsEeSg3YNat5xZcA" value="if user author do not exist"/>
+                  <maxint xmi:type="uml:LiteralInteger" xmi:id="_Tf3iMGDsEeSg3YNat5xZcA" value="1"/>
+                  <minint xmi:type="uml:LiteralInteger" xmi:id="_Tf27ImDsEeSg3YNat5xZcA"/>
+                </guard>
+              </operand>
+            </fragment>
+            <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_51XdcGDsEeSg3YNat5xZcA" name="MessageSend0" covered="_rEbSUGDkEeSg3YNat5xZcA" message="_51WPUGDsEeSg3YNat5xZcA"/>
+            <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_51YEgGDsEeSg3YNat5xZcA" name="MessageRecv0" covered="_rEbSUGDkEeSg3YNat5xZcA" message="_51WPUGDsEeSg3YNat5xZcA"/>
+            <message xmi:type="uml:Message" xmi:id="_vuoXoGDkEeSg3YNat5xZcA" name="create a review" messageSort="asynchCall" receiveEvent="_vvBZMGDkEeSg3YNat5xZcA" sendEvent="_vvALEGDkEeSg3YNat5xZcA"/>
+            <message xmi:type="uml:Message" xmi:id="_8xLn8GDkEeSg3YNat5xZcA" name="create a review model" messageSort="asynchCall" receiveEvent="_8xOEMGDkEeSg3YNat5xZcA" sendEvent="_8xNdIGDkEeSg3YNat5xZcA"/>
+            <message xmi:type="uml:Message" xmi:id="_bQ6coGDsEeSg3YNat5xZcA" name="create user author" messageSort="asynchCall" receiveEvent="_bQ844GDsEeSg3YNat5xZcA" sendEvent="_bQ8R0GDsEeSg3YNat5xZcA"/>
+            <message xmi:type="uml:Message" xmi:id="_51WPUGDsEeSg3YNat5xZcA" name="create a review with user author" messageSort="asynchCall" receiveEvent="_51YEgGDsEeSg3YNat5xZcA" sendEvent="_51XdcGDsEeSg3YNat5xZcA"/>
+          </ownedBehavior>
+        </ownedUseCase>
+        <ownedUseCase xmi:type="uml:UseCase" xmi:id="_L3uyYGALEeSu6d79yLoqDA" name="Create, load or save a review model " subject="_mBiIkE-_EeSWG8b7b00v3Q">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_fxIwUGAMEeSu6d79yLoqDA" annotatedElement="_L3uyYGALEeSu6d79yLoqDA">
+            <body>When a model is opened in papyrus. The user can :&#xD;
+- create a new revision model&#xD;
+- load a new revision model&#xD;
+- save a revision model.&#xD;
+The revision model cannot be opened without the associated &quot;working model&quot;.</body>
           </ownedComment>
         </ownedUseCase>
       </packagedElement>
@@ -126,242 +189,150 @@ If the modification is not accepted, the adding or deletion or the set is not ap
           </ownedComment>
         </ownedUseCase>
       </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_R-Hh0GALEeSu6d79yLoqDA" name="A_user_create a model or save a review model " memberEnd="_R-Hh0WALEeSu6d79yLoqDA _R-Hh1GALEeSu6d79yLoqDA">
+        <ownedEnd xmi:type="uml:Property" xmi:id="_R-Hh0WALEeSu6d79yLoqDA" name="user" type="_E5WOcE-5EeSWG8b7b00v3Q" association="_R-Hh0GALEeSu6d79yLoqDA">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_R-Hh0mALEeSu6d79yLoqDA" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_R-Hh02ALEeSu6d79yLoqDA" value="1"/>
+        </ownedEnd>
+        <ownedEnd xmi:type="uml:Property" xmi:id="_R-Hh1GALEeSu6d79yLoqDA" name="create a model or save a review model " type="_L3uyYGALEeSu6d79yLoqDA" association="_R-Hh0GALEeSu6d79yLoqDA">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_R-Hh1WALEeSu6d79yLoqDA" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_R-Hh1mALEeSu6d79yLoqDA" value="1"/>
+        </ownedEnd>
+      </packagedElement>
     </packagedElement>
     <packagedElement xmi:type="uml:Model" xmi:id="_PUSL5U6_EeSsPatWHMT5jQ" name="Design">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_dhb5MGTbEeSaUoUpxav4Ag">
+        <body>Versioning profile</body>
+      </ownedComment>
+      <ownedComment xmi:type="uml:Comment" xmi:id="_HGd1MGDvEeSg3YNat5xZcA">
+        <body>Review Profile</body>
+      </ownedComment>
       <packagedElement xmi:type="uml:Abstraction" xmi:id="_PUSL5k6_EeSsPatWHMT5jQ" name="DesignAbstraction" client="_PUSL5U6_EeSsPatWHMT5jQ" supplier="_PUSL4k6_EeSsPatWHMT5jQ"/>
+      <packagedElement xmi:type="uml:Package" xmi:id="_Z-FQ4GDuEeSg3YNat5xZcA" name="tmpDesign">
+        <packagedElement xmi:type="uml:Class" xmi:id="_gqL8gGDuEeSg3YNat5xZcA" name="ReviewResourceManager">
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_o9daQGDuEeSg3YNat5xZcA" name="createAReviewModel"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_r0MW0GDuEeSg3YNat5xZcA" name="getCurrentReviewModel"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_tvjQQGDuEeSg3YNat5xZcA" name="loadReviewModel"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_CEM1MGDvEeSg3YNat5xZcA" name="addAReview"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_zIPzQGDuEeSg3YNat5xZcA" name="ui">
+          <packagedElement xmi:type="uml:Class" xmi:id="_2WkwcGDuEeSg3YNat5xZcA" name="ReviewsView">
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_8IKUkGDuEeSg3YNat5xZcA" name="reviewResourceManager" type="_gqL8gGDuEeSg3YNat5xZcA" association="_8ILisGDuEeSg3YNat5xZcA">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_8IKUkWDuEeSg3YNat5xZcA" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_8IKUkmDuEeSg3YNat5xZcA" value="1"/>
+            </ownedAttribute>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Association" xmi:id="_8ILisGDuEeSg3YNat5xZcA" memberEnd="_8ILisWDuEeSg3YNat5xZcA _8IKUkGDuEeSg3YNat5xZcA">
+            <name xsi:nil="true"/>
+            <ownedEnd xmi:type="uml:Property" xmi:id="_8ILisWDuEeSg3YNat5xZcA" name="reviewsView" type="_2WkwcGDuEeSg3YNat5xZcA" association="_8ILisGDuEeSg3YNat5xZcA">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_8ILismDuEeSg3YNat5xZcA" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_8ILis2DuEeSg3YNat5xZcA" value="1"/>
+            </ownedEnd>
+          </packagedElement>
+        </packagedElement>
+      </packagedElement>
     </packagedElement>
     <packagedElement xmi:type="uml:Model" xmi:id="_PUSL506_EeSsPatWHMT5jQ" name="Test">
       <packagedElement xmi:type="uml:Dependency" xmi:id="_PUSL6E6_EeSsPatWHMT5jQ" name="Dependency1" client="_PUSL506_EeSsPatWHMT5jQ" supplier="_PUSL4k6_EeSsPatWHMT5jQ"/>
       <packagedElement xmi:type="uml:Dependency" xmi:id="_PUSy8E6_EeSsPatWHMT5jQ" name="Dependency2" client="_PUSL506_EeSsPatWHMT5jQ" supplier="_PUSL5U6_EeSsPatWHMT5jQ"/>
     </packagedElement>
-    <packagedElement xmi:type="uml:Model" xmi:id="_ac0I4FOIEeS-IbAKKrOd9A" name="Revision model for Papyrus">
-      <packagedElement xmi:type="uml:Package" xmi:id="_ac5ocFOIEeS-IbAKKrOd9A" name="Requirements">
-        <ownedComment xmi:type="uml:Comment" xmi:id="_ac8rwFOIEeS-IbAKKrOd9A">
+    <packagedElement xmi:type="uml:Model" xmi:id="_8LtOIGTbEeSaUoUpxav4Ag" name="Revision model for Papyrus">
+      <packagedElement xmi:type="uml:Package" xmi:id="_8LvqYGTbEeSaUoUpxav4Ag" name="Requirements">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_8LxfkGTbEeSaUoUpxav4Ag">
           <body>- Versioning (id=Req_010): 
- Papyrus must integrate versionning in order to display in comment author and date.</body>
+ Papyrus must integrate versioning in order to display in comment author and date.</body>
         </ownedComment>
-        <ownedComment xmi:type="uml:Comment" xmi:id="_ac_IAFOIEeS-IbAKKrOd9A">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_8LytsGTbEeSaUoUpxav4Ag">
           <body>- VersionInfoReq (id=Req_011): 
  &#xD;
 Papyrus must integrate versionning. This information comes from O&quot;4.3.2 Pre-Defined Metadata Elements&quot; of the OASIS standard, &quot;Open Document Format for Office Applications (OpenDocument) Version 1.2&#xD;
 - Part 1: OpenDocument Schema&quot;. </body>
         </ownedComment>
-        <ownedComment xmi:type="uml:Comment" xmi:id="_adCLUFOIEeS-IbAKKrOd9A">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_8L0i4GTbEeSaUoUpxav4Ag">
           <body>- ReviewSystem (id=Req_020): 
- Papyrus must integrate a review system to add comments  with possibility to respond to this comment. Each comment must have information about the user the date.</body>
+ Papyrus must integrate a review system to add comments with the possibility to respond to this comment. Each comment must have information about the user the date.</body>
         </ownedComment>
-        <ownedComment xmi:type="uml:Comment" xmi:id="_adFOoFOIEeS-IbAKKrOd9A">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_8L2YEGTbEeSaUoUpxav4Ag">
           <body>- RevisionMode (id=Req_030): 
- Papyrus must integrate a means to make revision mecanism to register, accept or refuse modification done by an user</body>
+ Papyrus must integrate a means to make revision mechanism to register, accept or refuse modification done by an user</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_8L4NQGTbEeSaUoUpxav4Ag">
+          <body>- IdenpendantComments (id=Req_021): 
+  It can exits several review models for one design “working model”. The working model is the current model edited by papyrus.</body>
         </ownedComment>
       </packagedElement>
-      <packagedElement xmi:type="uml:Package" xmi:id="_adHq4FOIEeS-IbAKKrOd9A" name="Use Cases">
-        <ownedComment xmi:type="uml:Comment" xmi:id="_adKHIFOIEeS-IbAKKrOd9A">
+      <packagedElement xmi:type="uml:Package" xmi:id="_8L5bYGTbEeSaUoUpxav4Ag" name="Use Cases">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_8L6pgGTbEeSaUoUpxav4Ag">
           <body>The functionality revision can be divided into two parts:&#xD;
-- management of review comment&#xD;
-- management of modification&#xD;
-</body>
-        </ownedComment>
-        <ownedComment xmi:type="uml:Comment" xmi:id="_adNxgFOIEeS-IbAKKrOd9A">
-          <body>The revision tool is described</body>
-        </ownedComment>
-        <ownedComment xmi:type="uml:Comment" xmi:id="_ajupMFOIEeS-IbAKKrOd9A">
-          <body>Revision mode Use Case</body>
-        </ownedComment>
-        <packagedElement xmi:type="uml:Package" xmi:id="_aj0IwFOIEeS-IbAKKrOd9A" name="Add or change information about him for the versionning">
-          <ownedComment xmi:type="uml:Comment" xmi:id="_aj198FOIEeS-IbAKKrOd9A">
-            <body>When the user want o have for the first time a comment in the context of a review. The review system mus ask the identity and the language of the user in order to add it in the associated comment.&#xD;
-This information could be changed in the preference of papyrus</body>
-          </ownedComment>
-          <ownedComment xmi:type="uml:Comment" xmi:id="_aj3MEFOIEeS-IbAKKrOd9A">
-            <body>User Identity</body>
-          </ownedComment>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Package" xmi:id="_aj4aMFOIEeS-IbAKKrOd9A" name="Respond to a comment">
-          <ownedComment xmi:type="uml:Comment" xmi:id="_aj5oUVOIEeS-IbAKKrOd9A">
-            <body>A user could have the posssibility to respond to a existing comment. Thanks to this, it is possible to see the discussion flow about a subject </body>
-          </ownedComment>
-          <ownedComment xmi:type="uml:Comment" xmi:id="_aj62cVOIEeS-IbAKKrOd9A">
-            <body>Respond Comment</body>
-          </ownedComment>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Package" xmi:id="_aj8roFOIEeS-IbAKKrOd9A" name="Add a comment  about modification on the current model">
-          <ownedComment xmi:type="uml:Comment" xmi:id="_aj9SsVOIEeS-IbAKKrOd9A">
-            <body>When the revison mode is activated, the user can add review comment on modification done in the model.&#xD;
-For example comment a deletion...&#xD;
-</body>
-          </ownedComment>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Package" xmi:id="_aj-g0VOIEeS-IbAKKrOd9A" name="Add a review comment elements on the current model">
-          <ownedComment xmi:type="uml:Comment" xmi:id="_aj_u8FOIEeS-IbAKKrOd9A">
-            <body>The user add a review comment on a element of the model. this comment will be store not directly in the model but  into a new model that will contain all review comments.&#xD;
-This comment contains all information see in the version information.&#xD;
-This commet could be display on diagrams. A speciciy view must  be displayed dedicated to review comment. ( that can be sort by date author, subject..)</body>
-          </ownedComment>
-          <ownedComment xmi:type="uml:Comment" xmi:id="_akA9EFOIEeS-IbAKKrOd9A">
-            <body>Add Comment</body>
-          </ownedComment>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Package" xmi:id="_akCLMFOIEeS-IbAKKrOd9A" name="Launch Revision mode"/>
-        <packagedElement xmi:type="uml:Package" xmi:id="_akEAYFOIEeS-IbAKKrOd9A" name="Register all modifications with Versioning information"/>
-        <packagedElement xmi:type="uml:Package" xmi:id="_akF1kFOIEeS-IbAKKrOd9A" name="Stop RevisionMode"/>
-        <packagedElement xmi:type="uml:Package" xmi:id="_akHDsVOIEeS-IbAKKrOd9A" name="Accept or refuse modifications"/>
-      </packagedElement>
-      <packagedElement xmi:type="uml:Package" xmi:id="_akIR0FOIEeS-IbAKKrOd9A" name="Design"/>
-      <packagedElement xmi:type="uml:Package" xmi:id="_akKHAFOIEeS-IbAKKrOd9A" name="Tests"/>
-    </packagedElement>
-    <packagedElement xmi:type="uml:Model" xmi:id="__GrowFOIEeS-IbAKKrOd9A" name="Revision model for Papyrus">
-      <packagedElement xmi:type="uml:Package" xmi:id="__GusEFOIEeS-IbAKKrOd9A" name="Requirements">
-        <ownedComment xmi:type="uml:Comment" xmi:id="__GxIUFOIEeS-IbAKKrOd9A">
-          <body>- Versioning (id=Req_010): 
- Papyrus must integrate versionning in order to display in comment author and date.</body>
-        </ownedComment>
-        <ownedComment xmi:type="uml:Comment" xmi:id="__GzkkFOIEeS-IbAKKrOd9A">
-          <body>- VersionInfoReq (id=Req_011): 
- &#xD;
-Papyrus must integrate versionning. This information comes from O&quot;4.3.2 Pre-Defined Metadata Elements&quot; of the OASIS standard, &quot;Open Document Format for Office Applications (OpenDocument) Version 1.2&#xD;
-- Part 1: OpenDocument Schema&quot;. </body>
-        </ownedComment>
-        <ownedComment xmi:type="uml:Comment" xmi:id="__G2A0FOIEeS-IbAKKrOd9A">
-          <body>- ReviewSystem (id=Req_020): 
- Papyrus must integrate a review system to add comments  with possibility to respond to this comment. Each comment must have information about the user the date.</body>
-        </ownedComment>
-        <ownedComment xmi:type="uml:Comment" xmi:id="__G32AFOIEeS-IbAKKrOd9A">
-          <body>- RevisionMode (id=Req_030): 
- Papyrus must integrate a means to make revision mecanism to register, accept or refuse modification done by an user</body>
-        </ownedComment>
-      </packagedElement>
-      <packagedElement xmi:type="uml:Package" xmi:id="__G6SQFOIEeS-IbAKKrOd9A" name="Use Cases">
-        <ownedComment xmi:type="uml:Comment" xmi:id="__G65UVOIEeS-IbAKKrOd9A">
-          <body>The functionality revision can be divided into two parts:&#xD;
-- management of review comment&#xD;
+- Management of review&#xD;
 &#xD;
 </body>
         </ownedComment>
-        <ownedComment xmi:type="uml:Comment" xmi:id="__I2L8FOIEeS-IbAKKrOd9A">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_8Oh4oGTbEeSaUoUpxav4Ag">
           <body>ReviewSystem UseCases</body>
         </ownedComment>
-        <ownedComment xmi:type="uml:Comment" xmi:id="__I4BIFOIEeS-IbAKKrOd9A">
-          <body>- management of revision</body>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_8Ojt0GTbEeSaUoUpxav4Ag">
+          <body>- Management of revisions</body>
         </ownedComment>
-        <ownedComment xmi:type="uml:Comment" xmi:id="__KDF0FOIEeS-IbAKKrOd9A">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_8QRlEGTbEeSaUoUpxav4Ag">
           <body>Revision mode Use Case</body>
         </ownedComment>
-        <packagedElement xmi:type="uml:Package" xmi:id="__KE7AFOIEeS-IbAKKrOd9A" name="Add or change information about him for the versionning">
-          <ownedComment xmi:type="uml:Comment" xmi:id="__KGJIFOIEeS-IbAKKrOd9A">
-            <body>When the user want o have for the first time a comment in the context of a review. The review system mus ask the identity and the language of the user in order to add it in the associated comment.&#xD;
-This information could be changed in the preference of papyrus</body>
+        <packagedElement xmi:type="uml:Package" xmi:id="_8QTaQGTbEeSaUoUpxav4Ag" name="Add or change information about him for the versionning">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_8QUBUWTbEeSaUoUpxav4Ag">
+            <body>When the user wants to add for the first time a review, the review system must ask the identity, the language and the wanted color of the user in order to add it in the associated review.&#xD;
+This information could be changed at any time in the preference of papyrus&#xD;
+</body>
           </ownedComment>
-          <ownedComment xmi:type="uml:Comment" xmi:id="__KHXQFOIEeS-IbAKKrOd9A">
-            <body>User Identity</body>
-          </ownedComment>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Package" xmi:id="__KIlYFOIEeS-IbAKKrOd9A" name="Respond to a comment">
-          <ownedComment xmi:type="uml:Comment" xmi:id="__KJzgFOIEeS-IbAKKrOd9A">
-            <body>A user could have the posssibility to respond to a existing comment. Thanks to this, it is possible to see the discussion flow about a subject </body>
-          </ownedComment>
-          <ownedComment xmi:type="uml:Comment" xmi:id="__KLBoFOIEeS-IbAKKrOd9A">
-            <body>Respond Comment</body>
+          <ownedComment xmi:type="uml:Comment" xmi:id="_8QVPcWTbEeSaUoUpxav4Ag">
+            <body>UserIdentity</body>
           </ownedComment>
         </packagedElement>
-        <packagedElement xmi:type="uml:Package" xmi:id="__KMPwFOIEeS-IbAKKrOd9A" name="Add a comment  about modification on the current model">
-          <ownedComment xmi:type="uml:Comment" xmi:id="__KNd4FOIEeS-IbAKKrOd9A">
-            <body>When the revison mode is activated, the user can add review comment on modification done in the model.&#xD;
+        <packagedElement xmi:type="uml:Package" xmi:id="_8QXEoGTbEeSaUoUpxav4Ag" name="Respond to a review">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_8QXrsWTbEeSaUoUpxav4Ag">
+            <body>A user could have the possibility to respond to an existing review. Thanks to this, it is possible to see the discussion flow about a subject. </body>
+          </ownedComment>
+          <ownedComment xmi:type="uml:Comment" xmi:id="_8QY50GTbEeSaUoUpxav4Ag">
+            <body>RespondComment</body>
+          </ownedComment>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_8QaH8GTbEeSaUoUpxav4Ag" name="Add a review about modification on the current model">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_8QbWEGTbEeSaUoUpxav4Ag">
+            <body>When the revision mode is activated, the user can add review comment on modification done in the model.&#xD;
 For example comment a deletion...&#xD;
 </body>
           </ownedComment>
         </packagedElement>
-        <packagedElement xmi:type="uml:Package" xmi:id="__KOsAFOIEeS-IbAKKrOd9A" name="Add a review comment elements on the current model">
-          <ownedComment xmi:type="uml:Comment" xmi:id="__KP6IFOIEeS-IbAKKrOd9A">
-            <body>The user add a review comment on a element of the model. this comment will be store not directly in the model but  into a new model that will contain all review comments.&#xD;
-This comment contains all information see in the version information.&#xD;
-This commet could be display on diagrams. A speciciy view must  be displayed dedicated to review comment. ( that can be sort by date author, subject..)</body>
-          </ownedComment>
-          <ownedComment xmi:type="uml:Comment" xmi:id="__KRIQFOIEeS-IbAKKrOd9A">
-            <body>Add Comment</body>
-          </ownedComment>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Package" xmi:id="__KSWYFOIEeS-IbAKKrOd9A" name="Launch Revision mode"/>
-        <packagedElement xmi:type="uml:Package" xmi:id="__KTkgFOIEeS-IbAKKrOd9A" name="Register all modifications with Versioning information"/>
-        <packagedElement xmi:type="uml:Package" xmi:id="__KUyoFOIEeS-IbAKKrOd9A" name="Stop RevisionMode"/>
-        <packagedElement xmi:type="uml:Package" xmi:id="__KWAwFOIEeS-IbAKKrOd9A" name="Accept or refuse modifications"/>
-      </packagedElement>
-      <packagedElement xmi:type="uml:Package" xmi:id="__KXO4FOIEeS-IbAKKrOd9A" name="Design"/>
-      <packagedElement xmi:type="uml:Package" xmi:id="__KYdAFOIEeS-IbAKKrOd9A" name="Tests"/>
-    </packagedElement>
-    <packagedElement xmi:type="uml:Model" xmi:id="_s8L8UFOKEeS-IbAKKrOd9A" name="Revision model for Papyrus">
-      <packagedElement xmi:type="uml:Package" xmi:id="_s8O_oFOKEeS-IbAKKrOd9A" name="Requirements">
-        <ownedComment xmi:type="uml:Comment" xmi:id="_s8Rb4FOKEeS-IbAKKrOd9A">
-          <body>- Versioning (id=Req_010): 
- Papyrus must integrate versionning in order to display in comment author and date.</body>
-        </ownedComment>
-        <ownedComment xmi:type="uml:Comment" xmi:id="_s8TREFOKEeS-IbAKKrOd9A">
-          <body>- VersionInfoReq (id=Req_011): 
- &#xD;
-Papyrus must integrate versionning. This information comes from O&quot;4.3.2 Pre-Defined Metadata Elements&quot; of the OASIS standard, &quot;Open Document Format for Office Applications (OpenDocument) Version 1.2&#xD;
-- Part 1: OpenDocument Schema&quot;. </body>
-        </ownedComment>
-        <ownedComment xmi:type="uml:Comment" xmi:id="_s8VtUFOKEeS-IbAKKrOd9A">
-          <body>- ReviewSystem (id=Req_020): 
- Papyrus must integrate a review system to add comments  with possibility to respond to this comment. Each comment must have information about the user the date.</body>
-        </ownedComment>
-        <ownedComment xmi:type="uml:Comment" xmi:id="_s8XigFOKEeS-IbAKKrOd9A">
-          <body>- RevisionMode (id=Req_030): 
- Papyrus must integrate a means to make revision mecanism to register, accept or refuse modification done by an user</body>
-        </ownedComment>
-      </packagedElement>
-      <packagedElement xmi:type="uml:Package" xmi:id="_s8ZXsFOKEeS-IbAKKrOd9A" name="Use Cases">
-        <ownedComment xmi:type="uml:Comment" xmi:id="_s8bM4FOKEeS-IbAKKrOd9A">
-          <body>The functionality revision can be divided into two parts:&#xD;
-- management of review comment&#xD;
+        <packagedElement xmi:type="uml:Package" xmi:id="_8QckMGTbEeSaUoUpxav4Ag" name="Add a review on the current model">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_8QdLQWTbEeSaUoUpxav4Ag">
+            <body>The user adds a review on an element of the model. This review will be not directly store in the model but into a new model that will contain all review comments.&#xD;
+In order to create a review, the review tool can create a review model if needed. &#xD;
+The review tool creates also a &quot;user author&quot;. From all preferences, the system creates an author that will associated to a review.&#xD;
+Finally this created review contains all informations see in the version information.&#xD;
 &#xD;
-</body>
-        </ownedComment>
-        <ownedComment xmi:type="uml:Comment" xmi:id="_s-FZwFOKEeS-IbAKKrOd9A">
-          <body>ReviewSystem UseCases</body>
-        </ownedComment>
-        <ownedComment xmi:type="uml:Comment" xmi:id="_s-Gn4FOKEeS-IbAKKrOd9A">
-          <body>- management of revision</body>
-        </ownedComment>
-        <ownedComment xmi:type="uml:Comment" xmi:id="_s_RskFOKEeS-IbAKKrOd9A">
-          <body>Revision mode Use Case</body>
-        </ownedComment>
-        <packagedElement xmi:type="uml:Package" xmi:id="_s_S6sFOKEeS-IbAKKrOd9A" name="Add or change information about him for the versionning">
-          <ownedComment xmi:type="uml:Comment" xmi:id="_s_UI0FOKEeS-IbAKKrOd9A">
-            <body>When the user want o have for the first time a comment in the context of a review. The review system mus ask the identity and the language of the user in order to add it in the associated comment.&#xD;
-This information could be changed in the preference of papyrus</body>
-          </ownedComment>
-          <ownedComment xmi:type="uml:Comment" xmi:id="_s_VW8FOKEeS-IbAKKrOd9A">
-            <body>User Identity</body>
-          </ownedComment>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Package" xmi:id="_s_WlEFOKEeS-IbAKKrOd9A" name="Respond to a comment">
-          <ownedComment xmi:type="uml:Comment" xmi:id="_s_XzMFOKEeS-IbAKKrOd9A">
-            <body>A user could have the posssibility to respond to a existing comment. Thanks to this, it is possible to see the discussion flow about a subject </body>
-          </ownedComment>
-          <ownedComment xmi:type="uml:Comment" xmi:id="_s_YaQVOKEeS-IbAKKrOd9A">
-            <body>Respond Comment</body>
-          </ownedComment>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Package" xmi:id="_s_ZoYFOKEeS-IbAKKrOd9A" name="Add a comment  about modification on the current model">
-          <ownedComment xmi:type="uml:Comment" xmi:id="_s_a2gFOKEeS-IbAKKrOd9A">
-            <body>When the revison mode is activated, the user can add review comment on modification done in the model.&#xD;
-For example comment a deletion...&#xD;
+This review could be displayed on diagrams. A dedicated view must be displayed dedicated to review comment. (it can be sorted by date author, subject..)&#xD;
 </body>
           </ownedComment>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Package" xmi:id="_s_cEoFOKEeS-IbAKKrOd9A" name="Add a review comment elements on the current model">
-          <ownedComment xmi:type="uml:Comment" xmi:id="_s_crsVOKEeS-IbAKKrOd9A">
-            <body>The user add a review comment on a element of the model. this comment will be store not directly in the model but  into a new model that will contain all review comments.&#xD;
-This comment contains all information see in the version information.&#xD;
-This commet could be display on diagrams. A speciciy view must  be displayed dedicated to review comment. ( that can be sort by date author, subject..)</body>
+          <ownedComment xmi:type="uml:Comment" xmi:id="_8TYjcGTbEeSaUoUpxav4Ag">
+            <body>Add A review diagram</body>
           </ownedComment>
-          <ownedComment xmi:type="uml:Comment" xmi:id="_s_d50FOKEeS-IbAKKrOd9A">
-            <body>Add Comment</body>
+          <ownedComment xmi:type="uml:Comment" xmi:id="_8TaYoGTbEeSaUoUpxav4Ag">
+            <body>Add a Comment</body>
           </ownedComment>
         </packagedElement>
-        <packagedElement xmi:type="uml:Package" xmi:id="_s_fH8FOKEeS-IbAKKrOd9A" name="Launch Revision mode">
-          <ownedComment xmi:type="uml:Comment" xmi:id="_s_gWEFOKEeS-IbAKKrOd9A">
+        <packagedElement xmi:type="uml:Package" xmi:id="_8TbmwGTbEeSaUoUpxav4Ag" name="Create, load or save a review model ">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_8Tc04GTbEeSaUoUpxav4Ag">
+            <body>When a model is opened in papyrus. The user can :&#xD;
+- create a new revision model&#xD;
+- load a new revision model&#xD;
+- save a revision model.&#xD;
+The revision model cannot be opened without the associated &quot;working model&quot;.</body>
+          </ownedComment>
+          <ownedComment xmi:type="uml:Comment" xmi:id="_8TeDAGTbEeSaUoUpxav4Ag">
+            <body>Open save a review</body>
+          </ownedComment>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_8TfRIGTbEeSaUoUpxav4Ag" name="Launch Revision mode">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_8TgfQGTbEeSaUoUpxav4Ag">
             <body>The user can launch revision mode. &#xD;
 From this time all modifications will be register and associated to the user. &#xD;
 A modification could be:&#xD;
@@ -372,30 +343,194 @@ A modification could be:&#xD;
 </body>
           </ownedComment>
         </packagedElement>
-        <packagedElement xmi:type="uml:Package" xmi:id="_s_hkMFOKEeS-IbAKKrOd9A" name="Register all modifications with Versioning information">
-          <ownedComment xmi:type="uml:Comment" xmi:id="_s_iLQVOKEeS-IbAKKrOd9A">
-            <body>All modification are store and associated to the current user.&#xD;
-a modification must have a timestamp, an author.&#xD;
+        <packagedElement xmi:type="uml:Package" xmi:id="_8ThGUWTbEeSaUoUpxav4Ag" name="Register all modifications with Versioning information">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_8TiUcGTbEeSaUoUpxav4Ag">
+            <body>All modifications are store and associated to the current user.&#xD;
+A modification must have a timestamp, an author.&#xD;
 </body>
           </ownedComment>
         </packagedElement>
-        <packagedElement xmi:type="uml:Package" xmi:id="_s_jZYFOKEeS-IbAKKrOd9A" name="Stop RevisionMode">
-          <ownedComment xmi:type="uml:Comment" xmi:id="_s_kngFOKEeS-IbAKKrOd9A">
-            <body>when the user stop the revision mode, mdification are not registered and done directly on the model.&#xD;
+        <packagedElement xmi:type="uml:Package" xmi:id="_8TjikGTbEeSaUoUpxav4Ag" name="Stop RevisionMode">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_8TkwsGTbEeSaUoUpxav4Ag">
+            <body>When the user stop the revision mode, modifications are not registered and done directly on the model.&#xD;
 </body>
           </ownedComment>
         </packagedElement>
-        <packagedElement xmi:type="uml:Package" xmi:id="_s_l1oFOKEeS-IbAKKrOd9A" name="Accept or refuse modifications">
-          <ownedComment xmi:type="uml:Comment" xmi:id="_s_nDwFOKEeS-IbAKKrOd9A">
+        <packagedElement xmi:type="uml:Package" xmi:id="_8TlXwWTbEeSaUoUpxav4Ag" name="Accept or refuse modifications">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_8Tml4GTbEeSaUoUpxav4Ag">
             <body>Thanks to registered modification the user can accept or refuse the modification.&#xD;
-If the modification is accepted , the adding or the deletion or the set is really done on the model, and the modification is removed from the stack.&#xD;
-if the modification is not accepted, the adding or deletion or the set is not applied, and the modification is removed from the stack.&#xD;
+If the modification is accepted, the adding or the deletion or the set is really done on the model, and the modification is removed from the stack.&#xD;
+If the modification is not accepted, the adding or deletion or the set is not applied, and the modification is removed from the stack.&#xD;
 </body>
           </ownedComment>
         </packagedElement>
       </packagedElement>
-      <packagedElement xmi:type="uml:Package" xmi:id="_s_oR4FOKEeS-IbAKKrOd9A" name="Design"/>
-      <packagedElement xmi:type="uml:Package" xmi:id="_s_o48VOKEeS-IbAKKrOd9A" name="Tests"/>
+      <packagedElement xmi:type="uml:Package" xmi:id="_8Tn0AGTbEeSaUoUpxav4Ag" name="Design">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_8VVEMGTbEeSaUoUpxav4Ag">
+          <body>ClassDiagram</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_8czlMGTbEeSaUoUpxav4Ag">
+          <body>Papyrus Model Versionning profile description.</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_8c1aYGTbEeSaUoUpxav4Ag">
+          <body>Versioning profile</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_8izfgGTbEeSaUoUpxav4Ag">
+          <body>Review profile</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_8i17wGTbEeSaUoUpxav4Ag">
+          <body>Review Profile</body>
+        </ownedComment>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_8i2i0WTbEeSaUoUpxav4Ag" name="Tests"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Model" xmi:id="_I5mdEGTcEeSaUoUpxav4Ag" name="Revision model for Papyrus">
+      <packagedElement xmi:type="uml:Package" xmi:id="_I5oSQGTcEeSaUoUpxav4Ag" name="Requirements">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_I5qugGTcEeSaUoUpxav4Ag">
+          <body>- Versioning (id=Req_010): 
+ Papyrus must integrate versioning in order to display in comment author and date.</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_I5sjsGTcEeSaUoUpxav4Ag">
+          <body>- VersionInfoReq (id=Req_011): 
+ &#xD;
+Papyrus must integrate versionning. This information comes from O&quot;4.3.2 Pre-Defined Metadata Elements&quot; of the OASIS standard, &quot;Open Document Format for Office Applications (OpenDocument) Version 1.2&#xD;
+- Part 1: OpenDocument Schema&quot;. </body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_I5u_8GTcEeSaUoUpxav4Ag">
+          <body>- ReviewSystem (id=Req_020): 
+ Papyrus must integrate a review system to add comments with the possibility to respond to this comment. Each comment must have information about the user the date.</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_I5w1IGTcEeSaUoUpxav4Ag">
+          <body>- RevisionMode (id=Req_030): 
+ Papyrus must integrate a means to make revision mechanism to register, accept or refuse modification done by an user</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_I5yqUGTcEeSaUoUpxav4Ag">
+          <body>- IdenpendantComments (id=Req_021): 
+  It can exits several review models for one design “working model”. The working model is the current model edited by papyrus.</body>
+        </ownedComment>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_I5z4cGTcEeSaUoUpxav4Ag" name="Use Cases">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_I50fgWTcEeSaUoUpxav4Ag">
+          <body>The functionality revision can be divided into two parts:&#xD;
+- Management of review&#xD;
+&#xD;
+</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_I8YrUGTcEeSaUoUpxav4Ag">
+          <body>ReviewSystem UseCases</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_I8bHkGTcEeSaUoUpxav4Ag">
+          <body>- Management of revisions</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_I-LbEGTcEeSaUoUpxav4Ag">
+          <body>Revision mode Use Case</body>
+        </ownedComment>
+        <packagedElement xmi:type="uml:Package" xmi:id="_I-NQQGTcEeSaUoUpxav4Ag" name="Add or change information about him for the versionning">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_I-N3UWTcEeSaUoUpxav4Ag">
+            <body>When the user wants to add for the first time a review, the review system must ask the identity, the language and the wanted color of the user in order to add it in the associated review.&#xD;
+This information could be changed at any time in the preference of papyrus&#xD;
+</body>
+          </ownedComment>
+          <ownedComment xmi:type="uml:Comment" xmi:id="_I-PFcGTcEeSaUoUpxav4Ag">
+            <body>UserIdentity</body>
+          </ownedComment>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_I-QTkGTcEeSaUoUpxav4Ag" name="Respond to a review">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_I-RhsGTcEeSaUoUpxav4Ag">
+            <body>A user could have the possibility to respond to an existing review. Thanks to this, it is possible to see the discussion flow about a subject. </body>
+          </ownedComment>
+          <ownedComment xmi:type="uml:Comment" xmi:id="_I-SIwWTcEeSaUoUpxav4Ag">
+            <body>RespondComment</body>
+          </ownedComment>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_I-TW4GTcEeSaUoUpxav4Ag" name="Add a review about modification on the current model">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_I-UlAGTcEeSaUoUpxav4Ag">
+            <body>When the revision mode is activated, the user can add review comment on modification done in the model.&#xD;
+For example comment a deletion...&#xD;
+</body>
+          </ownedComment>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_I-VMEWTcEeSaUoUpxav4Ag" name="Add a review on the current model">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_I-XBQGTcEeSaUoUpxav4Ag">
+            <body>The user adds a review on an element of the model. This review will be not directly store in the model but into a new model that will contain all review comments.&#xD;
+In order to create a review, the review tool can create a review model if needed. &#xD;
+The review tool creates also a &quot;user author&quot;. From all preferences, the system creates an author that will associated to a review.&#xD;
+Finally this created review contains all informations see in the version information.&#xD;
+&#xD;
+This review could be displayed on diagrams. A dedicated view must be displayed dedicated to review comment. (it can be sorted by date author, subject..)&#xD;
+</body>
+          </ownedComment>
+          <ownedComment xmi:type="uml:Comment" xmi:id="_JBLEsGTcEeSaUoUpxav4Ag">
+            <body>Add A review diagram</body>
+          </ownedComment>
+          <ownedComment xmi:type="uml:Comment" xmi:id="_JBMS0GTcEeSaUoUpxav4Ag">
+            <body>Add a Comment</body>
+          </ownedComment>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_JBNg8GTcEeSaUoUpxav4Ag" name="Create, load or save a review model ">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_JBOvEGTcEeSaUoUpxav4Ag">
+            <body>When a model is opened in papyrus. The user can :&#xD;
+- create a new revision model&#xD;
+- load a new revision model&#xD;
+- save a revision model.&#xD;
+The revision model cannot be opened without the associated &quot;working model&quot;.</body>
+          </ownedComment>
+          <ownedComment xmi:type="uml:Comment" xmi:id="_JBPWIWTcEeSaUoUpxav4Ag">
+            <body>Open save a review</body>
+          </ownedComment>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_JBRLUGTcEeSaUoUpxav4Ag" name="Launch Revision mode">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_JBRyYGTcEeSaUoUpxav4Ag">
+            <body>The user can launch revision mode. &#xD;
+From this time all modifications will be register and associated to the user. &#xD;
+A modification could be:&#xD;
+	- a deletion&#xD;
+	- an adding&#xD;
+	- a set of a property of the graphical model or the semantic model&#xD;
+&#xD;
+</body>
+          </ownedComment>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_JBTAgGTcEeSaUoUpxav4Ag" name="Register all modifications with Versioning information">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_JBTnkWTcEeSaUoUpxav4Ag">
+            <body>All modifications are store and associated to the current user.&#xD;
+A modification must have a timestamp, an author.&#xD;
+</body>
+          </ownedComment>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_JBU1sGTcEeSaUoUpxav4Ag" name="Stop RevisionMode">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_JBVcwWTcEeSaUoUpxav4Ag">
+            <body>When the user stop the revision mode, modifications are not registered and done directly on the model.&#xD;
+</body>
+          </ownedComment>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_JBWq4GTcEeSaUoUpxav4Ag" name="Accept or refuse modifications">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_JBX5AGTcEeSaUoUpxav4Ag">
+            <body>Thanks to registered modification the user can accept or refuse the modification.&#xD;
+If the modification is accepted, the adding or the deletion or the set is really done on the model, and the modification is removed from the stack.&#xD;
+If the modification is not accepted, the adding or deletion or the set is not applied, and the modification is removed from the stack.&#xD;
+</body>
+          </ownedComment>
+        </packagedElement>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_JBYgEWTcEeSaUoUpxav4Ag" name="Design">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_JC_CkGTcEeSaUoUpxav4Ag">
+          <body>ClassDiagram</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_JNN8oGTcEeSaUoUpxav4Ag">
+          <body>ProfileDiagram</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_JNPKwGTcEeSaUoUpxav4Ag">
+          <body>Versioning profile</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_JR9SsGTcEeSaUoUpxav4Ag">
+          <body>Review profile</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_JR-g0GTcEeSaUoUpxav4Ag">
+          <body>Review Profile</body>
+        </ownedComment>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_JR_u8GTcEeSaUoUpxav4Ag" name="Tests"/>
     </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_PUSy8U6_EeSsPatWHMT5jQ">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_PUSy8k6_EeSsPatWHMT5jQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
@@ -438,91 +573,89 @@ if the modification is not accepted, the adding or deletion or the set is not ap
   <Requirements:Requirement xmi:id="_lf_0kE7JEeSjDupdFZ5PpA" text="Papyrus must integrate a means to make revision mechanism to register, accept or refuse modification done by an user" id="Req_030" base_Class="_lf9YUE7JEeSjDupdFZ5PpA"/>
   <Requirements:Requirement xmi:id="_Um7qAE-rEeSWG8b7b00v3Q" text="&#xD;&#xA;Papyrus must integrate versionning. This information comes from O&quot;4.3.2 Pre-Defined Metadata Elements&quot; of the OASIS standard, &quot;Open Document Format for Office Applications (OpenDocument) Version 1.2&#xD;&#xA;- Part 1: OpenDocument Schema&quot;. " id="Req_011" base_Class="_Um500E-rEeSWG8b7b00v3Q"/>
   <Requirements:DeriveReqt xmi:id="_Um_UYE-rEeSWG8b7b00v3Q" base_Abstraction="_Um-GQE-rEeSWG8b7b00v3Q"/>
-  <Document:Document xmi:id="_ac3zQFOIEeS-IbAKKrOd9A" base_Model="_ac0I4FOIEeS-IbAKKrOd9A" author="P. Tessier" version="1.0"/>
-  <Document:Section xmi:id="_ac62kFOIEeS-IbAKKrOd9A" base_Package="_ac5ocFOIEeS-IbAKKrOd9A"/>
-  <Document:Content xmi:id="_ac954FOIEeS-IbAKKrOd9A" base_Comment="_ac8rwFOIEeS-IbAKKrOd9A"/>
-  <Document:Content xmi:id="_adAWIFOIEeS-IbAKKrOd9A" base_Comment="_ac_IAFOIEeS-IbAKKrOd9A"/>
-  <Document:Content xmi:id="_adDZcFOIEeS-IbAKKrOd9A" base_Comment="_adCLUFOIEeS-IbAKKrOd9A"/>
-  <Document:Content xmi:id="_adF1sFOIEeS-IbAKKrOd9A" base_Comment="_adFOoFOIEeS-IbAKKrOd9A"/>
-  <Document:Section xmi:id="_adJgEFOIEeS-IbAKKrOd9A" base_Package="_adHq4FOIEeS-IbAKKrOd9A"/>
-  <Document:Content xmi:id="_adL8UFOIEeS-IbAKKrOd9A" base_Comment="_adKHIFOIEeS-IbAKKrOd9A"/>
-  <Document:Content xmi:id="_adO_oFOIEeS-IbAKKrOd9A" base_Comment="_adNxgFOIEeS-IbAKKrOd9A"/>
-  <Document:ImageRef xmi:id="_ajv3UFOIEeS-IbAKKrOd9A" base_Comment="_ajupMFOIEeS-IbAKKrOd9A" ref="C:/Workspaces/newhead/org.eclipse.papyrus.revisiontool/doc/imgDOC/Revision_mode_Use_Case.png"/>
-  <Document:Section xmi:id="_aj1W4FOIEeS-IbAKKrOd9A" base_Package="_aj0IwFOIEeS-IbAKKrOd9A"/>
-  <Document:Content xmi:id="_aj2lAFOIEeS-IbAKKrOd9A" base_Comment="_aj198FOIEeS-IbAKKrOd9A"/>
-  <Document:ImageRef xmi:id="_aj3zIFOIEeS-IbAKKrOd9A" base_Comment="_aj3MEFOIEeS-IbAKKrOd9A" ref="C:\Workspaces\newhead\org.eclipse.papyrus.revisiontool\doc\imgDOC\UserIdentity.png"/>
-  <Document:Section xmi:id="_aj5oUFOIEeS-IbAKKrOd9A" base_Package="_aj4aMFOIEeS-IbAKKrOd9A"/>
-  <Document:Content xmi:id="_aj62cFOIEeS-IbAKKrOd9A" base_Comment="_aj5oUVOIEeS-IbAKKrOd9A"/>
-  <Document:ImageRef xmi:id="_aj8EkFOIEeS-IbAKKrOd9A" base_Comment="_aj62cVOIEeS-IbAKKrOd9A" ref="C:\Workspaces\newhead\org.eclipse.papyrus.revisiontool\doc\imgDOC\RespondComment.png"/>
-  <Document:Section xmi:id="_aj9SsFOIEeS-IbAKKrOd9A" base_Package="_aj8roFOIEeS-IbAKKrOd9A"/>
-  <Document:Content xmi:id="_aj-g0FOIEeS-IbAKKrOd9A" base_Comment="_aj9SsVOIEeS-IbAKKrOd9A"/>
-  <Document:Section xmi:id="_aj_H4FOIEeS-IbAKKrOd9A" base_Package="_aj-g0VOIEeS-IbAKKrOd9A"/>
-  <Document:Content xmi:id="_akAWAFOIEeS-IbAKKrOd9A" base_Comment="_aj_u8FOIEeS-IbAKKrOd9A"/>
-  <Document:ImageRef xmi:id="_akBkIFOIEeS-IbAKKrOd9A" base_Comment="_akA9EFOIEeS-IbAKKrOd9A" ref="C:\Workspaces\newhead\org.eclipse.papyrus.revisiontool\doc\imgDOC\addComment.png"/>
-  <Document:Section xmi:id="_akDZUFOIEeS-IbAKKrOd9A" base_Package="_akCLMFOIEeS-IbAKKrOd9A"/>
-  <Document:Section xmi:id="_akFOgFOIEeS-IbAKKrOd9A" base_Package="_akEAYFOIEeS-IbAKKrOd9A"/>
-  <Document:Section xmi:id="_akHDsFOIEeS-IbAKKrOd9A" base_Package="_akF1kFOIEeS-IbAKKrOd9A"/>
-  <Document:Section xmi:id="_akHqwFOIEeS-IbAKKrOd9A" base_Package="_akHDsVOIEeS-IbAKKrOd9A"/>
-  <Document:Section xmi:id="_akI44FOIEeS-IbAKKrOd9A" base_Package="_akIR0FOIEeS-IbAKKrOd9A"/>
-  <Document:Section xmi:id="_akKuEFOIEeS-IbAKKrOd9A" base_Package="_akKHAFOIEeS-IbAKKrOd9A"/>
-  <Document:Document xmi:id="__Gtd8FOIEeS-IbAKKrOd9A" base_Model="__GrowFOIEeS-IbAKKrOd9A" author="P. Tessier" version="1.0"/>
-  <Document:Section xmi:id="__Gv6MFOIEeS-IbAKKrOd9A" base_Package="__GusEFOIEeS-IbAKKrOd9A"/>
-  <Document:Content xmi:id="__GxvYFOIEeS-IbAKKrOd9A" base_Comment="__GxIUFOIEeS-IbAKKrOd9A"/>
-  <Document:Content xmi:id="__G0LoFOIEeS-IbAKKrOd9A" base_Comment="__GzkkFOIEeS-IbAKKrOd9A"/>
-  <Document:Content xmi:id="__G2n4FOIEeS-IbAKKrOd9A" base_Comment="__G2A0FOIEeS-IbAKKrOd9A"/>
-  <Document:Content xmi:id="__G5EIFOIEeS-IbAKKrOd9A" base_Comment="__G32AFOIEeS-IbAKKrOd9A"/>
-  <Document:Section xmi:id="__G65UFOIEeS-IbAKKrOd9A" base_Package="__G6SQFOIEeS-IbAKKrOd9A"/>
-  <Document:Content xmi:id="__G8HcFOIEeS-IbAKKrOd9A" base_Comment="__G65UVOIEeS-IbAKKrOd9A"/>
-  <Document:ImageRef xmi:id="__I3aEFOIEeS-IbAKKrOd9A" base_Comment="__I2L8FOIEeS-IbAKKrOd9A" ref="C:/Workspaces/newhead/org.eclipse.papyrus.revisiontool/doc/imgDOC/ReviewSystem_UseCases.png"/>
-  <Document:Content xmi:id="__I4oMFOIEeS-IbAKKrOd9A" base_Comment="__I4BIFOIEeS-IbAKKrOd9A"/>
-  <Document:ImageRef xmi:id="__KDs4FOIEeS-IbAKKrOd9A" base_Comment="__KDF0FOIEeS-IbAKKrOd9A" ref="C:/Workspaces/newhead/org.eclipse.papyrus.revisiontool/doc/imgDOC/Revision_mode_Use_Case.png"/>
-  <Document:Section xmi:id="__KFiEFOIEeS-IbAKKrOd9A" base_Package="__KE7AFOIEeS-IbAKKrOd9A"/>
-  <Document:Content xmi:id="__KGwMFOIEeS-IbAKKrOd9A" base_Comment="__KGJIFOIEeS-IbAKKrOd9A"/>
-  <Document:ImageRef xmi:id="__KH-UFOIEeS-IbAKKrOd9A" base_Comment="__KHXQFOIEeS-IbAKKrOd9A" ref="C:\Workspaces\newhead\org.eclipse.papyrus.revisiontool\doc\imgDOC\UserIdentity.png"/>
-  <Document:Section xmi:id="__KJMcFOIEeS-IbAKKrOd9A" base_Package="__KIlYFOIEeS-IbAKKrOd9A"/>
-  <Document:Content xmi:id="__KKakFOIEeS-IbAKKrOd9A" base_Comment="__KJzgFOIEeS-IbAKKrOd9A"/>
-  <Document:ImageRef xmi:id="__KLosFOIEeS-IbAKKrOd9A" base_Comment="__KLBoFOIEeS-IbAKKrOd9A" ref="C:\Workspaces\newhead\org.eclipse.papyrus.revisiontool\doc\imgDOC\RespondComment.png"/>
-  <Document:Section xmi:id="__KM20FOIEeS-IbAKKrOd9A" base_Package="__KMPwFOIEeS-IbAKKrOd9A"/>
-  <Document:Content xmi:id="__KOE8FOIEeS-IbAKKrOd9A" base_Comment="__KNd4FOIEeS-IbAKKrOd9A"/>
-  <Document:Section xmi:id="__KPTEFOIEeS-IbAKKrOd9A" base_Package="__KOsAFOIEeS-IbAKKrOd9A"/>
-  <Document:Content xmi:id="__KQhMFOIEeS-IbAKKrOd9A" base_Comment="__KP6IFOIEeS-IbAKKrOd9A"/>
-  <Document:ImageRef xmi:id="__KRvUFOIEeS-IbAKKrOd9A" base_Comment="__KRIQFOIEeS-IbAKKrOd9A" ref="C:\Workspaces\newhead\org.eclipse.papyrus.revisiontool\doc\imgDOC\addComment.png"/>
-  <Document:Section xmi:id="__KS9cFOIEeS-IbAKKrOd9A" base_Package="__KSWYFOIEeS-IbAKKrOd9A"/>
-  <Document:Section xmi:id="__KULkFOIEeS-IbAKKrOd9A" base_Package="__KTkgFOIEeS-IbAKKrOd9A"/>
-  <Document:Section xmi:id="__KVZsFOIEeS-IbAKKrOd9A" base_Package="__KUyoFOIEeS-IbAKKrOd9A"/>
-  <Document:Section xmi:id="__KWn0FOIEeS-IbAKKrOd9A" base_Package="__KWAwFOIEeS-IbAKKrOd9A"/>
-  <Document:Section xmi:id="__KX18FOIEeS-IbAKKrOd9A" base_Package="__KXO4FOIEeS-IbAKKrOd9A"/>
-  <Document:Section xmi:id="__KZEEFOIEeS-IbAKKrOd9A" base_Package="__KYdAFOIEeS-IbAKKrOd9A"/>
-  <Document:Document xmi:id="_s8NKcFOKEeS-IbAKKrOd9A" base_Model="_s8L8UFOKEeS-IbAKKrOd9A" author="P. Tessier" version="1.0"/>
-  <Document:Section xmi:id="_s8PmsFOKEeS-IbAKKrOd9A" base_Package="_s8O_oFOKEeS-IbAKKrOd9A"/>
-  <Document:Content xmi:id="_s8SC8FOKEeS-IbAKKrOd9A" base_Comment="_s8Rb4FOKEeS-IbAKKrOd9A"/>
-  <Document:Content xmi:id="_s8T4IFOKEeS-IbAKKrOd9A" base_Comment="_s8TREFOKEeS-IbAKKrOd9A"/>
-  <Document:Content xmi:id="_s8WUYFOKEeS-IbAKKrOd9A" base_Comment="_s8VtUFOKEeS-IbAKKrOd9A"/>
-  <Document:Content xmi:id="_s8YJkFOKEeS-IbAKKrOd9A" base_Comment="_s8XigFOKEeS-IbAKKrOd9A"/>
-  <Document:Section xmi:id="_s8al0FOKEeS-IbAKKrOd9A" base_Package="_s8ZXsFOKEeS-IbAKKrOd9A"/>
-  <Document:Content xmi:id="_s8bz8FOKEeS-IbAKKrOd9A" base_Comment="_s8bM4FOKEeS-IbAKKrOd9A"/>
-  <Document:ImageRef xmi:id="_s-GA0FOKEeS-IbAKKrOd9A" base_Comment="_s-FZwFOKEeS-IbAKKrOd9A" ref="C:/Workspaces/newhead/org.eclipse.papyrus.revisiontool/doc/imgDOC/ReviewSystem_UseCases.png"/>
-  <Document:Content xmi:id="_s-HO8FOKEeS-IbAKKrOd9A" base_Comment="_s-Gn4FOKEeS-IbAKKrOd9A"/>
-  <Document:ImageRef xmi:id="_s_SToFOKEeS-IbAKKrOd9A" base_Comment="_s_RskFOKEeS-IbAKKrOd9A" ref="C:/Workspaces/newhead/org.eclipse.papyrus.revisiontool/doc/imgDOC/Revision_mode_Use_Case.png"/>
-  <Document:Section xmi:id="_s_ThwFOKEeS-IbAKKrOd9A" base_Package="_s_S6sFOKEeS-IbAKKrOd9A"/>
-  <Document:Content xmi:id="_s_Uv4FOKEeS-IbAKKrOd9A" base_Comment="_s_UI0FOKEeS-IbAKKrOd9A"/>
-  <Document:ImageRef xmi:id="_s_V-AFOKEeS-IbAKKrOd9A" base_Comment="_s_VW8FOKEeS-IbAKKrOd9A" ref="C:\Workspaces\newhead\org.eclipse.papyrus.revisiontool\doc\imgDOC\UserIdentity.png"/>
-  <Document:Section xmi:id="_s_XMIFOKEeS-IbAKKrOd9A" base_Package="_s_WlEFOKEeS-IbAKKrOd9A"/>
-  <Document:Content xmi:id="_s_YaQFOKEeS-IbAKKrOd9A" base_Comment="_s_XzMFOKEeS-IbAKKrOd9A"/>
-  <Document:ImageRef xmi:id="_s_ZBUFOKEeS-IbAKKrOd9A" base_Comment="_s_YaQVOKEeS-IbAKKrOd9A" ref="C:\Workspaces\newhead\org.eclipse.papyrus.revisiontool\doc\imgDOC\RespondComment.png"/>
-  <Document:Section xmi:id="_s_aPcFOKEeS-IbAKKrOd9A" base_Package="_s_ZoYFOKEeS-IbAKKrOd9A"/>
-  <Document:Content xmi:id="_s_bdkFOKEeS-IbAKKrOd9A" base_Comment="_s_a2gFOKEeS-IbAKKrOd9A"/>
-  <Document:Section xmi:id="_s_crsFOKEeS-IbAKKrOd9A" base_Package="_s_cEoFOKEeS-IbAKKrOd9A"/>
-  <Document:Content xmi:id="_s_dSwFOKEeS-IbAKKrOd9A" base_Comment="_s_crsVOKEeS-IbAKKrOd9A"/>
-  <Document:ImageRef xmi:id="_s_eg4FOKEeS-IbAKKrOd9A" base_Comment="_s_d50FOKEeS-IbAKKrOd9A" ref="C:\Workspaces\newhead\org.eclipse.papyrus.revisiontool\doc\imgDOC\addComment.png"/>
-  <Document:Section xmi:id="_s_fvAFOKEeS-IbAKKrOd9A" base_Package="_s_fH8FOKEeS-IbAKKrOd9A"/>
-  <Document:Content xmi:id="_s_g9IFOKEeS-IbAKKrOd9A" base_Comment="_s_gWEFOKEeS-IbAKKrOd9A"/>
-  <Document:Section xmi:id="_s_iLQFOKEeS-IbAKKrOd9A" base_Package="_s_hkMFOKEeS-IbAKKrOd9A"/>
-  <Document:Content xmi:id="_s_iyUFOKEeS-IbAKKrOd9A" base_Comment="_s_iLQVOKEeS-IbAKKrOd9A"/>
-  <Document:Section xmi:id="_s_kAcFOKEeS-IbAKKrOd9A" base_Package="_s_jZYFOKEeS-IbAKKrOd9A"/>
-  <Document:Content xmi:id="_s_lOkFOKEeS-IbAKKrOd9A" base_Comment="_s_kngFOKEeS-IbAKKrOd9A"/>
-  <Document:Section xmi:id="_s_mcsFOKEeS-IbAKKrOd9A" base_Package="_s_l1oFOKEeS-IbAKKrOd9A"/>
-  <Document:Content xmi:id="_s_nq0FOKEeS-IbAKKrOd9A" base_Comment="_s_nDwFOKEeS-IbAKKrOd9A"/>
-  <Document:Section xmi:id="_s_o48FOKEeS-IbAKKrOd9A" base_Package="_s_oR4FOKEeS-IbAKKrOd9A"/>
-  <Document:Section xmi:id="_s_qHEFOKEeS-IbAKKrOd9A" base_Package="_s_o48VOKEeS-IbAKKrOd9A"/>
+  <Requirements:Requirement xmi:id="_yd6qcGAKEeSu6d79yLoqDA" text=" It can exits several review models for one design “working model”. The working model is the current model edited by papyrus." id="Req_021" base_Class="_ydw5cGAKEeSu6d79yLoqDA"/>
+  <Document:Document xmi:id="_8LucQGTbEeSaUoUpxav4Ag" base_Model="_8LtOIGTbEeSaUoUpxav4Ag" author="P. Tessier" version="1.0"/>
+  <Document:Section xmi:id="_8LwRcGTbEeSaUoUpxav4Ag" base_Package="_8LvqYGTbEeSaUoUpxav4Ag"/>
+  <Document:Content xmi:id="_8LyGoGTbEeSaUoUpxav4Ag" base_Comment="_8LxfkGTbEeSaUoUpxav4Ag"/>
+  <Document:Content xmi:id="_8LzUwGTbEeSaUoUpxav4Ag" base_Comment="_8LytsGTbEeSaUoUpxav4Ag"/>
+  <Document:Content xmi:id="_8L1J8GTbEeSaUoUpxav4Ag" base_Comment="_8L0i4GTbEeSaUoUpxav4Ag"/>
+  <Document:Content xmi:id="_8L2_IGTbEeSaUoUpxav4Ag" base_Comment="_8L2YEGTbEeSaUoUpxav4Ag"/>
+  <Document:Content xmi:id="_8L40UGTbEeSaUoUpxav4Ag" base_Comment="_8L4NQGTbEeSaUoUpxav4Ag"/>
+  <Document:Section xmi:id="_8L6CcGTbEeSaUoUpxav4Ag" base_Package="_8L5bYGTbEeSaUoUpxav4Ag"/>
+  <Document:Content xmi:id="_8L7QkGTbEeSaUoUpxav4Ag" base_Comment="_8L6pgGTbEeSaUoUpxav4Ag"/>
+  <Document:ImageRef xmi:id="_8OjGwGTbEeSaUoUpxav4Ag" base_Comment="_8Oh4oGTbEeSaUoUpxav4Ag" ref="C:/git/org.eclipse.papyrus/extraplugins/revision/org.eclipse.papyrus.revisiontool/doc/imgDOC/ReviewSystem_UseCases.png"/>
+  <Document:Content xmi:id="_8OkU4GTbEeSaUoUpxav4Ag" base_Comment="_8Ojt0GTbEeSaUoUpxav4Ag"/>
+  <Document:ImageRef xmi:id="_8QSMIGTbEeSaUoUpxav4Ag" base_Comment="_8QRlEGTbEeSaUoUpxav4Ag" ref="C:/git/org.eclipse.papyrus/extraplugins/revision/org.eclipse.papyrus.revisiontool/doc/imgDOC/Revision_mode_Use_Case.png"/>
+  <Document:Section xmi:id="_8QUBUGTbEeSaUoUpxav4Ag" base_Package="_8QTaQGTbEeSaUoUpxav4Ag"/>
+  <Document:Content xmi:id="_8QVPcGTbEeSaUoUpxav4Ag" base_Comment="_8QUBUWTbEeSaUoUpxav4Ag"/>
+  <Document:ImageRef xmi:id="_8QWdkGTbEeSaUoUpxav4Ag" base_Comment="_8QVPcWTbEeSaUoUpxav4Ag" ref="C:\git\org.eclipse.papyrus\extraplugins\revision\org.eclipse.papyrus.revisiontool\doc\imgDOC\UserIdentity.png"/>
+  <Document:Section xmi:id="_8QXrsGTbEeSaUoUpxav4Ag" base_Package="_8QXEoGTbEeSaUoUpxav4Ag"/>
+  <Document:Content xmi:id="_8QYSwGTbEeSaUoUpxav4Ag" base_Comment="_8QXrsWTbEeSaUoUpxav4Ag"/>
+  <Document:ImageRef xmi:id="_8QZg4GTbEeSaUoUpxav4Ag" base_Comment="_8QY50GTbEeSaUoUpxav4Ag" ref="C:\git\org.eclipse.papyrus\extraplugins\revision\org.eclipse.papyrus.revisiontool\doc\imgDOC\RespondComment.png"/>
+  <Document:Section xmi:id="_8QavAGTbEeSaUoUpxav4Ag" base_Package="_8QaH8GTbEeSaUoUpxav4Ag"/>
+  <Document:Content xmi:id="_8Qb9IGTbEeSaUoUpxav4Ag" base_Comment="_8QbWEGTbEeSaUoUpxav4Ag"/>
+  <Document:Section xmi:id="_8QdLQGTbEeSaUoUpxav4Ag" base_Package="_8QckMGTbEeSaUoUpxav4Ag"/>
+  <Document:Content xmi:id="_8QeZYGTbEeSaUoUpxav4Ag" base_Comment="_8QdLQWTbEeSaUoUpxav4Ag"/>
+  <Document:ImageRef xmi:id="_8TZxkGTbEeSaUoUpxav4Ag" base_Comment="_8TYjcGTbEeSaUoUpxav4Ag" ref="C:/git/org.eclipse.papyrus/extraplugins/revision/org.eclipse.papyrus.revisiontool/doc/imgDOC/Add_A_review_diagram.png"/>
+  <Document:ImageRef xmi:id="_8Ta_sGTbEeSaUoUpxav4Ag" base_Comment="_8TaYoGTbEeSaUoUpxav4Ag" ref="C:\git\org.eclipse.papyrus\extraplugins\revision\org.eclipse.papyrus.revisiontool\doc\imgDOC\addComment.png"/>
+  <Document:Section xmi:id="_8TcN0GTbEeSaUoUpxav4Ag" base_Package="_8TbmwGTbEeSaUoUpxav4Ag"/>
+  <Document:Content xmi:id="_8Tdb8GTbEeSaUoUpxav4Ag" base_Comment="_8Tc04GTbEeSaUoUpxav4Ag"/>
+  <Document:ImageRef xmi:id="_8TeqEGTbEeSaUoUpxav4Ag" base_Comment="_8TeDAGTbEeSaUoUpxav4Ag" ref="C:\git\org.eclipse.papyrus\extraplugins\revision\org.eclipse.papyrus.revisiontool\doc\imgDOC\OpenSaveReview.png"/>
+  <Document:Section xmi:id="_8Tf4MGTbEeSaUoUpxav4Ag" base_Package="_8TfRIGTbEeSaUoUpxav4Ag"/>
+  <Document:Content xmi:id="_8ThGUGTbEeSaUoUpxav4Ag" base_Comment="_8TgfQGTbEeSaUoUpxav4Ag"/>
+  <Document:Section xmi:id="_8ThtYGTbEeSaUoUpxav4Ag" base_Package="_8ThGUWTbEeSaUoUpxav4Ag"/>
+  <Document:Content xmi:id="_8Ti7gGTbEeSaUoUpxav4Ag" base_Comment="_8TiUcGTbEeSaUoUpxav4Ag"/>
+  <Document:Section xmi:id="_8TkJoGTbEeSaUoUpxav4Ag" base_Package="_8TjikGTbEeSaUoUpxav4Ag"/>
+  <Document:Content xmi:id="_8TlXwGTbEeSaUoUpxav4Ag" base_Comment="_8TkwsGTbEeSaUoUpxav4Ag"/>
+  <Document:Section xmi:id="_8Tl-0GTbEeSaUoUpxav4Ag" base_Package="_8TlXwWTbEeSaUoUpxav4Ag"/>
+  <Document:Content xmi:id="_8TnM8GTbEeSaUoUpxav4Ag" base_Comment="_8Tml4GTbEeSaUoUpxav4Ag"/>
+  <Document:Section xmi:id="_8TobEGTbEeSaUoUpxav4Ag" base_Package="_8Tn0AGTbEeSaUoUpxav4Ag"/>
+  <Document:ImageRef xmi:id="_8VWSUGTbEeSaUoUpxav4Ag" base_Comment="_8VVEMGTbEeSaUoUpxav4Ag" ref="C:/git/org.eclipse.papyrus/extraplugins/revision/org.eclipse.papyrus.revisiontool/doc/imgDOC/ClassDiagram.png"/>
+  <Document:ImageRef xmi:id="_8c0zUGTbEeSaUoUpxav4Ag" base_Comment="_8czlMGTbEeSaUoUpxav4Ag" ref="C:/git/org.eclipse.papyrus/extraplugins/revision/org.eclipse.papyrus.revisiontool/doc/imgDOC/Papyrus_Model_Versionning_profile_description..png"/>
+  <Document:Content xmi:id="_8c2BcGTbEeSaUoUpxav4Ag" base_Comment="_8c1aYGTbEeSaUoUpxav4Ag"/>
+  <Document:ImageRef xmi:id="_8i1UsGTbEeSaUoUpxav4Ag" base_Comment="_8izfgGTbEeSaUoUpxav4Ag" ref="C:/git/org.eclipse.papyrus/extraplugins/revision/org.eclipse.papyrus.revisiontool/doc/imgDOC/Review_profile.png"/>
+  <Document:Content xmi:id="_8i2i0GTbEeSaUoUpxav4Ag" base_Comment="_8i17wGTbEeSaUoUpxav4Ag"/>
+  <Document:Section xmi:id="_8i3w8GTbEeSaUoUpxav4Ag" base_Package="_8i2i0WTbEeSaUoUpxav4Ag"/>
+  <Document:Document xmi:id="_I5nEIGTcEeSaUoUpxav4Ag" base_Model="_I5mdEGTcEeSaUoUpxav4Ag" author="P. Tessier" version="1.0"/>
+  <Document:Section xmi:id="_I5pgYGTcEeSaUoUpxav4Ag" base_Package="_I5oSQGTcEeSaUoUpxav4Ag"/>
+  <Document:Content xmi:id="_I5rVkGTcEeSaUoUpxav4Ag" base_Comment="_I5qugGTcEeSaUoUpxav4Ag"/>
+  <Document:Content xmi:id="_I5tx0GTcEeSaUoUpxav4Ag" base_Comment="_I5sjsGTcEeSaUoUpxav4Ag"/>
+  <Document:Content xmi:id="_I5vnAGTcEeSaUoUpxav4Ag" base_Comment="_I5u_8GTcEeSaUoUpxav4Ag"/>
+  <Document:Content xmi:id="_I5xcMGTcEeSaUoUpxav4Ag" base_Comment="_I5w1IGTcEeSaUoUpxav4Ag"/>
+  <Document:Content xmi:id="_I5zRYGTcEeSaUoUpxav4Ag" base_Comment="_I5yqUGTcEeSaUoUpxav4Ag"/>
+  <Document:Section xmi:id="_I50fgGTcEeSaUoUpxav4Ag" base_Package="_I5z4cGTcEeSaUoUpxav4Ag"/>
+  <Document:Content xmi:id="_I51toGTcEeSaUoUpxav4Ag" base_Comment="_I50fgWTcEeSaUoUpxav4Ag"/>
+  <Document:ImageRef xmi:id="_I8aggGTcEeSaUoUpxav4Ag" base_Comment="_I8YrUGTcEeSaUoUpxav4Ag" ref="C:/git/org.eclipse.papyrus/extraplugins/revision/org.eclipse.papyrus.revisiontool/doc/imgDOC/ReviewSystem_UseCases.png"/>
+  <Document:Content xmi:id="_I8buoGTcEeSaUoUpxav4Ag" base_Comment="_I8bHkGTcEeSaUoUpxav4Ag"/>
+  <Document:ImageRef xmi:id="_I-MCIGTcEeSaUoUpxav4Ag" base_Comment="_I-LbEGTcEeSaUoUpxav4Ag" ref="C:/git/org.eclipse.papyrus/extraplugins/revision/org.eclipse.papyrus.revisiontool/doc/imgDOC/Revision_mode_Use_Case.png"/>
+  <Document:Section xmi:id="_I-N3UGTcEeSaUoUpxav4Ag" base_Package="_I-NQQGTcEeSaUoUpxav4Ag"/>
+  <Document:Content xmi:id="_I-OeYGTcEeSaUoUpxav4Ag" base_Comment="_I-N3UWTcEeSaUoUpxav4Ag"/>
+  <Document:ImageRef xmi:id="_I-PsgGTcEeSaUoUpxav4Ag" base_Comment="_I-PFcGTcEeSaUoUpxav4Ag" ref="C:\git\org.eclipse.papyrus\extraplugins\revision\org.eclipse.papyrus.revisiontool\doc\imgDOC\UserIdentity.png"/>
+  <Document:Section xmi:id="_I-Q6oGTcEeSaUoUpxav4Ag" base_Package="_I-QTkGTcEeSaUoUpxav4Ag"/>
+  <Document:Content xmi:id="_I-SIwGTcEeSaUoUpxav4Ag" base_Comment="_I-RhsGTcEeSaUoUpxav4Ag"/>
+  <Document:ImageRef xmi:id="_I-Sv0GTcEeSaUoUpxav4Ag" base_Comment="_I-SIwWTcEeSaUoUpxav4Ag" ref="C:\git\org.eclipse.papyrus\extraplugins\revision\org.eclipse.papyrus.revisiontool\doc\imgDOC\RespondComment.png"/>
+  <Document:Section xmi:id="_I-T98GTcEeSaUoUpxav4Ag" base_Package="_I-TW4GTcEeSaUoUpxav4Ag"/>
+  <Document:Content xmi:id="_I-VMEGTcEeSaUoUpxav4Ag" base_Comment="_I-UlAGTcEeSaUoUpxav4Ag"/>
+  <Document:Section xmi:id="_I-WaMGTcEeSaUoUpxav4Ag" base_Package="_I-VMEWTcEeSaUoUpxav4Ag"/>
+  <Document:Content xmi:id="_I-XoUGTcEeSaUoUpxav4Ag" base_Comment="_I-XBQGTcEeSaUoUpxav4Ag"/>
+  <Document:ImageRef xmi:id="_JBLrwGTcEeSaUoUpxav4Ag" base_Comment="_JBLEsGTcEeSaUoUpxav4Ag" ref="C:/git/org.eclipse.papyrus/extraplugins/revision/org.eclipse.papyrus.revisiontool/doc/imgDOC/Add_A_review_diagram.png"/>
+  <Document:ImageRef xmi:id="_JBM54GTcEeSaUoUpxav4Ag" base_Comment="_JBMS0GTcEeSaUoUpxav4Ag" ref="C:\git\org.eclipse.papyrus\extraplugins\revision\org.eclipse.papyrus.revisiontool\doc\imgDOC\addComment.png"/>
+  <Document:Section xmi:id="_JBOIAGTcEeSaUoUpxav4Ag" base_Package="_JBNg8GTcEeSaUoUpxav4Ag"/>
+  <Document:Content xmi:id="_JBPWIGTcEeSaUoUpxav4Ag" base_Comment="_JBOvEGTcEeSaUoUpxav4Ag"/>
+  <Document:ImageRef xmi:id="_JBQkQGTcEeSaUoUpxav4Ag" base_Comment="_JBPWIWTcEeSaUoUpxav4Ag" ref="C:\git\org.eclipse.papyrus\extraplugins\revision\org.eclipse.papyrus.revisiontool\doc\imgDOC\OpenSaveReview.png"/>
+  <Document:Section xmi:id="_JBRLUWTcEeSaUoUpxav4Ag" base_Package="_JBRLUGTcEeSaUoUpxav4Ag"/>
+  <Document:Content xmi:id="_JBSZcGTcEeSaUoUpxav4Ag" base_Comment="_JBRyYGTcEeSaUoUpxav4Ag"/>
+  <Document:Section xmi:id="_JBTnkGTcEeSaUoUpxav4Ag" base_Package="_JBTAgGTcEeSaUoUpxav4Ag"/>
+  <Document:Content xmi:id="_JBUOoGTcEeSaUoUpxav4Ag" base_Comment="_JBTnkWTcEeSaUoUpxav4Ag"/>
+  <Document:Section xmi:id="_JBVcwGTcEeSaUoUpxav4Ag" base_Package="_JBU1sGTcEeSaUoUpxav4Ag"/>
+  <Document:Content xmi:id="_JBWD0GTcEeSaUoUpxav4Ag" base_Comment="_JBVcwWTcEeSaUoUpxav4Ag"/>
+  <Document:Section xmi:id="_JBXR8GTcEeSaUoUpxav4Ag" base_Package="_JBWq4GTcEeSaUoUpxav4Ag"/>
+  <Document:Content xmi:id="_JBYgEGTcEeSaUoUpxav4Ag" base_Comment="_JBX5AGTcEeSaUoUpxav4Ag"/>
+  <Document:Section xmi:id="_JBZHIGTcEeSaUoUpxav4Ag" base_Package="_JBYgEWTcEeSaUoUpxav4Ag"/>
+  <Document:ImageRef xmi:id="_JC_poGTcEeSaUoUpxav4Ag" base_Comment="_JC_CkGTcEeSaUoUpxav4Ag" ref="C:/git/org.eclipse.papyrus/extraplugins/revision/org.eclipse.papyrus.revisiontool/doc/imgDOC/ClassDiagram.png"/>
+  <Document:ImageRef xmi:id="_JNOjsGTcEeSaUoUpxav4Ag" base_Comment="_JNN8oGTcEeSaUoUpxav4Ag" ref="C:/git/org.eclipse.papyrus/extraplugins/revision/org.eclipse.papyrus.revisiontool/doc/imgDOC/ProfileDiagram.png"/>
+  <Document:Content xmi:id="_JNPx0GTcEeSaUoUpxav4Ag" base_Comment="_JNPKwGTcEeSaUoUpxav4Ag"/>
+  <Document:ImageRef xmi:id="_JR95wGTcEeSaUoUpxav4Ag" base_Comment="_JR9SsGTcEeSaUoUpxav4Ag" ref="C:/git/org.eclipse.papyrus/extraplugins/revision/org.eclipse.papyrus.revisiontool/doc/imgDOC/Review_profile.png"/>
+  <Document:Content xmi:id="_JR_H4GTcEeSaUoUpxav4Ag" base_Comment="_JR-g0GTcEeSaUoUpxav4Ag"/>
+  <Document:Section xmi:id="_JSAWAGTcEeSaUoUpxav4Ag" base_Package="_JR_u8GTcEeSaUoUpxav4Ag"/>
 </xmi:XMI>
