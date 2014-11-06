@@ -26,8 +26,8 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.infra.viewpoints.policy.ModelAddData;
 import org.eclipse.papyrus.infra.viewpoints.policy.PolicyChecker;
 import org.eclipse.papyrus.uml.diagram.clazz.providers.ElementInitializers;
+import org.eclipse.uml2.uml.AttributeOwner;
 import org.eclipse.uml2.uml.Property;
-import org.eclipse.uml2.uml.StructuredClassifier;
 import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.UMLPackage;
 
@@ -77,7 +77,7 @@ public class PropertyForComponentCreateCommand extends EditElementCommand {
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
@@ -93,7 +93,7 @@ public class PropertyForComponentCreateCommand extends EditElementCommand {
 				}
 			} else {
 
-				StructuredClassifier qualifiedTarget = (StructuredClassifier) target;
+				AttributeOwner qualifiedTarget = (AttributeOwner) target;
 				qualifiedTarget.getOwnedAttributes()
 						.add(newElement);
 
