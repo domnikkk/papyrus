@@ -138,6 +138,8 @@ public class DefaultNamedElementEditPart extends NodeEditPart {
 			((DefaultNamedElementNameEditPart) childEditPart).setLabel(getPrimaryShape().getNameLabel());
 			return true;
 		}
+
+
 		return false;
 	}
 
@@ -201,6 +203,7 @@ public class DefaultNamedElementEditPart extends NodeEditPart {
 	@Override
 	protected NodeFigure createNodeFigure() {
 		return new SelectableBorderedNodeFigure(createMainFigureWithSVG());
+
 	}
 
 	/**

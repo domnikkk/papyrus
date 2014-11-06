@@ -107,7 +107,7 @@
 		<module>../plugins/infra/emf/org.eclipse.papyrus.infra.emf.diagram.common</module>
 		<module>../plugins/infra/nattable/org.eclipse.papyrus.infra.emf.nattable</module>
 		<module>../plugins/infra/emf/org.eclipse.papyrus.infra.emf.readonly</module>
-		<module>../plugins/infra/org.eclipse.papyrus.infra.export</module>
+		<module>../plugins/infra/gmfdiag/org.eclipse.papyrus.infra.gmfdiag.export</module>
 		<module>../plugins/infra/org.eclipse.papyrus.infra.extendedtypes</module>
 		<module>../plugins/infra/org.eclipse.papyrus.infra.extendedtypes.edit</module>
 		<module>../plugins/infra/org.eclipse.papyrus.infra.extendedtypes.emf</module>
@@ -342,7 +342,7 @@
 			<id>ep</id>
 			<layout>p2</layout>
 			<!-- updateFrom("Eclipse",0) -->
-			<url>http://download.eclipse.org/eclipse/updates/4.5milestones/S-4.5M2-201409180330/</url>
+			<url>http://download.eclipse.org/eclipse/updates/4.5milestones/S-4.5M3-201410292000/</url>
 		</repository>
 		<repository>
 			<id>gef</id>
@@ -378,7 +378,7 @@
 			<id>mdt-ocl</id>
 			<layout>p2</layout>
 			<!-- updateFrom("MDT OCL 5.1",0) -->
-			<url>http://download.eclipse.org/modeling/mdt/ocl/updates/milestones/5.1.0/S201410011441</url>
+			<url>http://download.eclipse.org/modeling/mdt/ocl/updates/interim/5.1.0</url>
 		</repository>
 		<repository>
 			<id>mdt-uml2</id>

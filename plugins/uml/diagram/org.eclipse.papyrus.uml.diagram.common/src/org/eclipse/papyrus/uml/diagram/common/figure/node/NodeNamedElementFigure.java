@@ -27,6 +27,7 @@ import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.draw2d.geometry.PrecisionRectangle;
 import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
+import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.PapyrusWrappingLabel;
 import org.eclipse.papyrus.uml.appearance.helper.UMLVisualInformationPapyrusConstant;
 import org.eclipse.papyrus.uml.diagram.common.figure.layout.PropertiesCompartmentLayoutManager;
 import org.eclipse.swt.graphics.Color;
@@ -160,7 +161,8 @@ public class NodeNamedElementFigure extends PapyrusNodeFigure implements IPapyru
 	 * Create a label that contains the name of the element.
 	 */
 	protected void createNameLabel() {
-		nameLabel = new WrappingLabel();
+		
+		nameLabel = new PapyrusWrappingLabel();
 
 		nameLabel.setOpaque(false);
 		nameLabel.setAlignment(PositionConstants.MIDDLE);

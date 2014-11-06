@@ -6,15 +6,15 @@ Bundle-Version: 0.1.0.qualifier
 Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.eclipse.papyrus.umldi,
  org.eclipse.papyrus.umldi.impl,
  org.eclipse.papyrus.umldi.util
-Require-Bundle: org.eclipse.core.runtime,
- org.eclipse.emf.ecore,
- org.eclipse.emf.ecore.xmi;visibility:=reexport,
- org.eclipse.papyrus.dd;visibility:=reexport,
- org.eclipse.uml2.types;visibility:=reexport,
- org.eclipse.uml2.uml;visibility:=reexport,
- org.eclipse.uml2.common;visibility:=reexport
+Require-Bundle: org.eclipse.core.runtime;bundle-version="3.9.100",
+ org.eclipse.emf.ecore;bundle-version="2.9.2",
+ org.eclipse.emf.ecore.xmi;bundle-version="2.9.1";visibility:=reexport,
+ org.eclipse.papyrus.dd;bundle-version="1.0.0";visibility:=reexport,
+ org.eclipse.uml2.types;bundle-version="1.1.0";visibility:=reexport,
+ org.eclipse.uml2.uml;bundle-version="4.1.2";visibility:=reexport,
+ org.eclipse.uml2.common;bundle-version="1.8.2";visibility:=reexport
 Bundle-ActivationPolicy: lazy

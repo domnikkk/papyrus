@@ -94,7 +94,8 @@ public class ArtifactCreateCommandCN extends EditElementCommand {
 			} else {
 
 				Class qualifiedTarget = (Class) target;
-				qualifiedTarget.getNestedClassifiers().add(newElement);
+				qualifiedTarget.getNestedClassifiers()
+						.add(newElement);
 
 			}
 		} else {

@@ -90,13 +90,18 @@ public class GeneralizationSetCreateCommand extends EditElementCommand {
 		if (!canExecute()) {
 			throw new ExecutionException("Invalid arguments in create link command"); //$NON-NLS-1$
 		}
+
 		GeneralizationSet newElement = UMLFactory.eINSTANCE.createGeneralizationSet();
-		getContainer().getPackagedElements().add(newElement);
-		newElement.getGeneralizations().add(getSource());
-		newElement.getGeneralizations().add(getTarget());
+		getContainer().getPackagedElements()
+				.add(newElement);
+		newElement.getGeneralizations()
+				.add(getSource());
+		newElement.getGeneralizations()
+				.add(getTarget());
 		doConfigure(newElement, monitor, info);
 		((CreateElementRequest) getRequest()).setNewElement(newElement);
 		return CommandResult.newOKCommandResult(newElement);
+
 	}
 
 	/**

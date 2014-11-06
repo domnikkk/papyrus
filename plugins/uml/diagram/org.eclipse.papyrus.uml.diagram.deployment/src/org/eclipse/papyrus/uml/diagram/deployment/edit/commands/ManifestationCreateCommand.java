@@ -93,9 +93,12 @@ public class ManifestationCreateCommand extends EditElementCommand {
 		}
 
 		Manifestation newElement = UMLFactory.eINSTANCE.createManifestation();
-		getContainer().getManifestations().add(newElement);
-		newElement.getClients().add(getSource());
-		newElement.getSuppliers().add(getTarget());
+		getContainer().getManifestations()
+				.add(newElement);
+		newElement.getClients()
+				.add(getSource());
+		newElement.getSuppliers()
+				.add(getTarget());
 		ElementInitializers.getInstance().init_Manifestation_4002(newElement);
 		doConfigure(newElement, monitor, info);
 		((CreateElementRequest) getRequest()).setNewElement(newElement);

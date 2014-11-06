@@ -118,6 +118,7 @@ public class PrimitiveTypeEditPart extends NamedElementEditPart {
 	@Override
 	protected void handleNotificationEvent(Notification event) {
 		super.handleNotificationEvent(event);
+
 	}
 
 	/**
@@ -146,6 +147,8 @@ public class PrimitiveTypeEditPart extends NamedElementEditPart {
 			((PrimitiveTypeNameEditPart) childEditPart).setLabel(getPrimaryShape().getNameLabel());
 			return true;
 		}
+
+
 		return false;
 	}
 
@@ -209,6 +212,7 @@ public class PrimitiveTypeEditPart extends NamedElementEditPart {
 	@Override
 	protected NodeFigure createNodeFigure() {
 		return new SelectableBorderedNodeFigure(createMainFigureWithSVG());
+
 	}
 
 	/**

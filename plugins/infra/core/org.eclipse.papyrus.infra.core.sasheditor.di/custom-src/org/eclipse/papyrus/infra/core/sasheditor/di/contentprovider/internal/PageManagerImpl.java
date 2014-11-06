@@ -10,7 +10,7 @@
  * Contributors:
  *  Cedric Dumoulin  Cedric.dumoulin@lifl.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 433371
- *
+ *  Gabriel Pascual (ALL4TEC) gabriel.pascual@all4tec.net - Bug 440754
  *****************************************************************************/
 
 package org.eclipse.papyrus.infra.core.sasheditor.di.contentprovider.internal;
@@ -21,7 +21,9 @@ import java.util.List;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.papyrus.infra.core.sasheditor.contentprovider.IPageManager;
+import org.eclipse.papyrus.infra.core.sasheditor.contentprovider.service.ILocalPageService;
 import org.eclipse.papyrus.infra.core.sasheditor.di.contentprovider.Activator;
 import org.eclipse.papyrus.infra.core.sasheditor.di.contentprovider.IOpenable;
 import org.eclipse.papyrus.infra.core.sashwindows.di.SashWindowsMngr;
@@ -60,13 +62,21 @@ public class PageManagerImpl extends PageMngrImpl implements IPageManager {
 	 * Constructor.
 	 *
 	 * @param diSashModel
+	 *            the di sash model
 	 * @param contentChangedEventProvider
+	 *            the content changed event provider
 	 * @param folderAndPageMngr
+	 *            the folder and page mngr
 	 */
 	protected PageManagerImpl(SashWindowsMngr diSashModel, ContentChangedEventProvider contentChangedEventProvider, ICurrentFolderAndPageMngr folderAndPageMngr) {
 		super(diSashModel, contentChangedEventProvider, folderAndPageMngr);
 	}
 
+	/**
+	 * @see org.eclipse.papyrus.infra.core.sasheditor.contentprovider.IPageManager#closeAllOpenedPages(java.lang.Object)
+	 *
+	 * @param pageIdentifier
+	 */
 	@Override
 	public void closeAllOpenedPages(Object pageIdentifier) {
 		while (isOpen(pageIdentifier)) {
@@ -74,34 +84,124 @@ public class PageManagerImpl extends PageMngrImpl implements IPageManager {
 		}
 	}
 
+	/**
+	 * @see org.eclipse.papyrus.infra.core.sasheditor.di.contentprovider.internal.PageMngrImpl#addPage(java.lang.Object)
+	 *
+	 * @param pageIdentifier
+	 */
 	@Override
 	public void addPage(Object pageIdentifier) {
 		// Nothing
 	}
 
+	/**
+	 * @see org.eclipse.papyrus.infra.core.sasheditor.di.contentprovider.internal.PageMngrImpl#allPages()
+	 *
+	 * @return
+	 */
 	@Override
 	public List<Object> allPages() {
 		// FIXME: Temporary, naive code. Need to implement a mechanism to contribute page providers
 		List<Object> result = new LinkedList<Object>();
-		for (Resource resource : diSashModel.eResource().getResourceSet().getResources()) {
-			if (resource != null && resource.isLoaded()) {
-				if ("notation".equals(resource.getURI().fileExtension())) {
-					for (EObject content : resource.getContents()) {
-						if (Platform.getAdapterManager().getAdapter(content, IOpenable.class) != null) {
-							result.add(content);
-						}
-					}
+		List<Resource> notationResources = getResources("notation");
+		for (Resource notationResource : notationResources) {
+			for (EObject content : notationResource.getContents()) {
+				if (isPage(content)) {
+					result.add(content);
 				}
 			}
 		}
+
+
 		return result;
 	}
 
+	/**
+	 * Gets the local pages.
+	 *
+	 * @param model
+	 *            the model
+	 * @return the local pages
+	 * @see org.eclipse.papyrus.infra.core.sasheditor.contentprovider.IPageManager#allLocalPages()
+	 */
+	@Override
+	public List<Object> allLocalPages(ILocalPageService service) {
+		List<Object> result = new LinkedList<Object>();
+
+		List<Resource> notationResources = getResources("notation");
+		for (Resource notationResource : notationResources) {
+			for (EObject content : notationResource.getContents()) {
+				if (isPage(content)) {
+
+					if (service.isLocalPage(content)) {
+						result.add(content);
+					}
+
+
+
+				}
+			}
+		}
+
+
+		return result;
+	}
+
+
+	/**
+	 * Gets the resources.
+	 *
+	 * @param fileExtension
+	 *            the file extension
+	 * @return the resources
+	 */
+	private List<Resource> getResources(String fileExtension) {
+		List<Resource> resourcesList = new LinkedList<Resource>();
+
+		// Get resource set from Di Sash model
+		ResourceSet resourceSet = diSashModel.eResource().getResourceSet();
+
+		for (Resource resource : resourceSet.getResources()) {
+
+			// Verify if the resource exist and is loaded
+			if (resource != null && resource.isLoaded()) {
+				// Verify if its extension corresppnd
+				if (fileExtension.equals(resource.getURI().fileExtension())) {
+					resourcesList.add(resource);
+				}
+
+			}
+		}
+
+		return resourcesList;
+	}
+
+	/**
+	 * Checks if is page.
+	 *
+	 * @param content
+	 *            the content
+	 * @return true, if is page
+	 */
+	private boolean isPage(EObject content) {
+		return Platform.getAdapterManager().getAdapter(content, IOpenable.class) != null;
+	}
+
+	/**
+	 * @see org.eclipse.papyrus.infra.core.sasheditor.di.contentprovider.internal.PageMngrImpl#openPage(java.lang.Object)
+	 *
+	 * @param pageIdentifier
+	 */
 	@Override
 	public void openPage(Object pageIdentifier) {
 		diSashModel.getSashModel().addPage(getCurrentFolder(), pageIdentifier);
 	}
 
+	/**
+	 * @see org.eclipse.papyrus.infra.core.sasheditor.contentprovider.IPageManager#selectPage(java.lang.Object)
+	 *
+	 * @param pageIdentifier
+	 */
 	@Override
 	public void selectPage(final Object pageIdentifier) {
 		Display.getDefault().syncExec(new Runnable() {
@@ -113,11 +213,22 @@ public class PageManagerImpl extends PageMngrImpl implements IPageManager {
 		});
 	}
 
+	/**
+	 * @see org.eclipse.papyrus.infra.core.sasheditor.di.contentprovider.internal.PageMngrImpl#removePage(java.lang.Object)
+	 *
+	 * @param pageIdentifier
+	 */
 	@Override
 	public void removePage(Object pageIdentifier) {
 		closeAllOpenedPages(pageIdentifier);
 	}
 
+	/**
+	 * Sets the current folder and page mngr.
+	 *
+	 * @param currentFolderAndPageMngr
+	 *            the new current folder and page mngr
+	 */
 	public void setCurrentFolderAndPageMngr(ICurrentFolderAndPageMngr currentFolderAndPageMngr) {
 		this.folderAndPageMngr = currentFolderAndPageMngr;
 
@@ -126,10 +237,11 @@ public class PageManagerImpl extends PageMngrImpl implements IPageManager {
 	/**
 	 * Executes an operation on my internal sash model.
 	 *
+	 * @param <T>
+	 *            the generic type
 	 * @param sashModelOperation
 	 *            the operation to execute
 	 * @return the operation's result
-	 *
 	 * @throws IllegalAccessException
 	 *             on attempt to execute an operation defined by a client bundle
 	 */
@@ -159,9 +271,19 @@ public class PageManagerImpl extends PageMngrImpl implements IPageManager {
 
 	/**
 	 * An operation on the internal sash model of a page manager.
+	 *
+	 * @param <T>
+	 *            the generic type
 	 */
 	public static interface SashModelOperation<T> {
 
+		/**
+		 * Execute.
+		 *
+		 * @param sashWindowsManager
+		 *            the sash windows manager
+		 * @return the t
+		 */
 		T execute(SashWindowsMngr sashWindowsManager);
 	}
 }

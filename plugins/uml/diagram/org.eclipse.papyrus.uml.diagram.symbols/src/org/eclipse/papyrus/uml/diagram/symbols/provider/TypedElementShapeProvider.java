@@ -9,6 +9,7 @@
  * Contributors:
  *
  *		CEA LIST - Initial API and implementation
+ * Gabriel Pascual (ALL4TEC) gabriel.pascual@all4tec.fr - Bug 393532
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.symbols.provider;
@@ -35,7 +36,7 @@ import org.eclipse.papyrus.infra.gmfdiag.common.service.shape.ProviderNotificati
 import org.eclipse.papyrus.infra.gmfdiag.common.service.shape.ShapeService;
 import org.eclipse.papyrus.uml.diagram.symbols.Activator;
 import org.eclipse.papyrus.uml.diagram.symbols.IPapyrusInternalProfileConstants;
-import org.eclipse.papyrus.uml.tools.listeners.PapyrusStereotypeListener.StereotypeCustomNotification;
+import org.eclipse.papyrus.uml.tools.listeners.StereotypeElementListener.StereotypeExtensionNotification;
 import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.TypedElement;
@@ -290,7 +291,7 @@ public class TypedElementShapeProvider extends AbstractShapeProvider {
 					// a type was added => adds the listener from this new type
 					diagramEventBroker.removeNotificationListener((Type) newValue, this);
 				}
-			} else if (notification instanceof StereotypeCustomNotification) {
+			} else if (notification instanceof StereotypeExtensionNotification) {
 				// call refresh for all stereotype notifications. could target
 				// specific modification on the stereotype Symbol definition
 				listener.notifyChanged(notification);

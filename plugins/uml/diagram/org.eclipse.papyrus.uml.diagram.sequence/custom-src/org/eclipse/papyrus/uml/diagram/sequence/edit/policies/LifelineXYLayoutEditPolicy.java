@@ -392,7 +392,9 @@ public class LifelineXYLayoutEditPolicy extends XYLayoutEditPolicy {
 		Command p = new ICommandProxy(new SetBoundsCommand(editPart.getEditingDomain(), "Creation of an ExecutionSpecification", viewDescriptor, newBounds));
 		// resize parent bar
 		if (parent != null) {
-			p = p.chain(resizeParentExecutionSpecification((LifelineEditPart) getHost(), parent, newBounds.getCopy(), executionSpecificationList));
+			Rectangle newAdjustedBounds = newBounds.getCopy();
+			newAdjustedBounds.height += LifelineXYLayoutEditPolicy.SPACING_HEIGHT;
+			p = p.chain(resizeParentExecutionSpecification((LifelineEditPart) getHost(), parent, newAdjustedBounds, executionSpecificationList));
 		}
 		return p;
 	}
@@ -402,20 +404,26 @@ public class LifelineXYLayoutEditPolicy extends XYLayoutEditPolicy {
 		childBounds.x = bounds.x;
 		childBounds.width = bounds.width;
 		Rectangle rect = bounds.getCopy();
-		if (childBounds.y > rect.y) {
+		int spacingY = LifelineXYLayoutEditPolicy.SPACING_HEIGHT;
+		if (childBounds.y - spacingY < rect.y) {
+			rect.height += rect.y - childBounds.y + spacingY;
+			rect.y = childBounds.y - spacingY;
+		} else if (childBounds.bottom() + spacingY> rect.bottom()) {
+			rect.height = childBounds.bottom() - rect.y + spacingY;
+		} else {
 			return null;
 		}
-		rect.height += rect.y - childBounds.y;
-		rect.y = childBounds.y;
 		Rectangle newBounds = rect.getCopy();
 		CompoundCommand command = new CompoundCommand();
 		Command c = new ICommandProxy(new SetBoundsCommand(part.getEditingDomain(), "Resize of Parent Bar", part, newBounds.getCopy()));
 		command.add(c);
 		Point moveDelta = new Point(newBounds.x - bounds.x, newBounds.y - bounds.y);
-		if (moveDelta.y != 0) {
+		Dimension sizeDelta = new Dimension(newBounds.width() - bounds.width(), newBounds.height() - bounds.height());
+		if (moveDelta.y != 0 || sizeDelta.height() != 0) {
 			ChangeBoundsRequest request = new ChangeBoundsRequest();
 			request.setEditParts(part);
 			request.setMoveDelta(moveDelta);
+			request.setSizeDelta(sizeDelta);
 			command = OccurrenceSpecificationMoveHelper.completeMoveExecutionSpecificationCommand(command, part, newBounds.getCopy(), request);
 		}
 		list.remove(part);

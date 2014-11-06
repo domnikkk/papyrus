@@ -114,6 +114,7 @@ public class SignalEditPartCN extends NamedElementEditPart {
 	@Override
 	protected void handleNotificationEvent(Notification event) {
 		super.handleNotificationEvent(event);
+
 	}
 
 	/**
@@ -142,6 +143,8 @@ public class SignalEditPartCN extends NamedElementEditPart {
 			((SignalNameEditPartCN) childEditPart).setLabel(getPrimaryShape().getNameLabel());
 			return true;
 		}
+
+
 		return false;
 	}
 
@@ -205,6 +208,7 @@ public class SignalEditPartCN extends NamedElementEditPart {
 	@Override
 	protected NodeFigure createNodeFigure() {
 		return new SelectableBorderedNodeFigure(createMainFigureWithSVG());
+
 	}
 
 	/**

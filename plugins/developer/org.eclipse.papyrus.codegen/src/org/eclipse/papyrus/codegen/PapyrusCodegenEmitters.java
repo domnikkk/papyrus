@@ -29,6 +29,11 @@ public class PapyrusCodegenEmitters extends CodegenEmittersWithXtend2 {
 	}
 
 	@Override
+	public JavaClassEmitter getUpdateCommandEmitter() {
+		return null;
+	}
+
+	@Override
 	public JavaClassEmitter getNodeEditPartModelingAssistantProviderEmitter() {
 		return null;
 	}

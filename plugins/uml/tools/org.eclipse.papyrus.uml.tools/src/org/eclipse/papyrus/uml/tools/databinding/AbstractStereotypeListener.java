@@ -8,6 +8,7 @@
  *
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
+ *  Gabriel Pascual (ALL4TEC) gabriel.pascual@all4tec.net - Bug 393532
  *****************************************************************************/
 package org.eclipse.papyrus.uml.tools.databinding;
 
@@ -15,7 +16,7 @@ import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.papyrus.uml.tools.listeners.PapyrusStereotypeListener;
+import org.eclipse.papyrus.uml.tools.listeners.StereotypeElementListener.StereotypeExtensionNotification;
 import org.eclipse.uml2.uml.Element;
 
 /**
@@ -42,22 +43,18 @@ public abstract class AbstractStereotypeListener implements Adapter {
 	public AbstractStereotypeListener(Element umlElement) {
 		this.umlElement = umlElement;
 		umlElement.eAdapters().add(this);
-		for (EObject eObject : umlElement.getStereotypeApplications()) {
-			eObject.eAdapters().add(this);
-		}
+
 	}
 
 	public void notifyChanged(Notification notification) {
 		final int eventType = notification.getEventType();
 
-		if (eventType == PapyrusStereotypeListener.APPLIED_STEREOTYPE) {
-			// a stereotype was applied to the notifier
-			// then a new listener should be added to the stereotype application
-			((EObject) notification.getNewValue()).eAdapters().add(this);
+		if (eventType == StereotypeExtensionNotification.STEREOTYPE_APPLIED_TO_ELEMENT) {
+
 			handleAppliedStereotype((EObject) notification.getNewValue());
-		} else if (eventType == PapyrusStereotypeListener.UNAPPLIED_STEREOTYPE) {
-			((EObject) notification.getNewValue()).eAdapters().remove(this);
-			handleUnappliedStereotype((EObject) notification.getNewValue());
+		} else if (eventType == StereotypeExtensionNotification.STEREOTYPE_UNAPPLIED_FROM_ELEMENT) {
+
+			handleUnappliedStereotype((EObject) notification.getOldValue());
 		}
 	}
 
@@ -96,8 +93,6 @@ public abstract class AbstractStereotypeListener implements Adapter {
 	 */
 	public void dispose() {
 		umlElement.eAdapters().remove(this);
-		for (EObject eObject : umlElement.getStereotypeApplications()) {
-			eObject.eAdapters().remove(this);
-		}
+
 	}
 }

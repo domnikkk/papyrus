@@ -1,0 +1,148 @@
+/**
+ * Copyright (c) 2014 CEA LIST.
+ *  
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *  
+ * Contributors:
+ *  CEA LIST - Initial API and implementation
+ */
+import UmlUtilities;
+
+modeltype DC uses "http://www.omg.org/spec/DD/20110901/DC";
+modeltype DG uses "http://www.omg.org/spec/DD/20110901/DG";
+modeltype DI uses "http://www.omg.org/spec/DD/20110901/DI";
+modeltype UMLDI uses "http://www.omg.org/spec/UML/20131001/UMLDI";
+modeltype UML uses "http://www.eclipse.org/uml2/4.0.0/UML";
+
+library UmlShapes;
+
+mapping UML::Association::shapeToGraphicalElement(shape : UMLDI::UmlShape) : DG::GraphicalElement {
+	init {
+		var b = shape.bounds;
+		result := object DG::Polygon {
+			point += object DC::Point { x:= b.x; y := b.y + b.height/2; };
+			point += object DC::Point { x:= b.x + b.width/2; y := b.y; };
+			point += object DC::Point { x:= b.x + b.width; y := b.y + b.height/2; };
+			point += object DC::Point { x:= b.x + b.width/2; y := b.y + b.height; };
+		}
+	}
+}
+
+mapping UML::Classifier::shapeToGraphicalElement(shape : UMLDI::UmlShape) : DG::GraphicalElement {
+	init {
+		if (shape.oclAsType(UMLDI::ClassifierShape).isIcon) then
+			result := self.map shapeToIcon(shape)
+		else
+			result := object DG::Rectangle {
+				bounds := shape.bounds.clone().oclAsType(DC::Bounds);
+			}
+		endif;
+	}
+}
+
+mapping UML::Classifier::shapeToIcon(shape : UMLDI::UmlShape) : DG::GraphicalElement {
+	init {
+		result := object DG::Group {}
+	}
+}
+
+mapping UML::Comment::shapeToGraphicalElement(shape : UMLDI::UmlShape) : DG::GraphicalElement {
+	init {
+		result := self.createNoteShape(shape.bounds);
+	}
+}
+
+mapping UML::Constraint::shapeToGraphicalElement(shape : UMLDI::UmlShape) : DG::GraphicalElement {
+	init {
+		result := self.createNoteShape(shape.bounds);
+	}
+}
+
+query UML::Element::createNoteShape(b : DC::Bounds) : DG::Path {
+	return object DG::Path {
+		command += object DG::MoveTo { point := object DC::Point { x := b.x; y := b.y; } };
+		command += object DG::LineTo { point := object DC::Point { x := b.x+b.width-10; y := b.y; } };
+		command += object DG::LineTo { point := object DC::Point { x := b.x+b.width; y := b.y+10; } };
+		command += object DG::LineTo { point := object DC::Point { x := b.x+b.width; y := b.y+b.height; } };
+		command += object DG::LineTo { point := object DC::Point { x := b.x; y := b.y+b.height; } };
+		command += object DG::LineTo { point := object DC::Point { x := b.x; y := b.y; } };
+		command += object DG::MoveTo { point := object DC::Point { x := b.x+b.width-10; y := b.y; } };
+		command += object DG::LineTo { point := object DC::Point { x := b.x+b.width-10; y := b.y+10; } };
+		command += object DG::LineTo { point := object DC::Point { x := b.x+b.width; y := b.y+10; } };
+	}
+}
+
+mapping UML::Element::shapeToGraphicalElement(shape : UMLDI::UmlShape) : DG::GraphicalElement {
+	init {
+		result := object DG::Rectangle {
+			bounds := shape.bounds.clone().oclAsType(DC::Bounds);
+		}
+	}
+}
+
+mapping UML::Dependency::shapeToGraphicalElement(shape : UMLDI::UmlShape) : DG::GraphicalElement {
+	init {
+		var b = shape.bounds;
+		result := object DG::Circle {
+			center := object DC::Point { x:= b.x + b.width/2; y := b.y + b.height/2; };
+			radius := min(b.width, b.height);
+			_class := 'filled';
+		}
+	}
+}
+
+mapping UML::Interface::shapeToIcon(shape : UMLDI::UmlShape) : DG::GraphicalElement
+{
+	init {
+		result := object DG::Circle {
+			center := object DC::Point { 
+				x := shape.bounds.x + shape.bounds.width/2; 
+				y := shape.bounds.y + shape.bounds.height/2;
+			};
+			radius := min(shape.bounds.width, shape.bounds.height)/2;
+		};
+	}
+}
+
+mapping UML::Model::shapeToGraphicalElement(shape : UMLDI::UmlShape) : DG::GraphicalElement {
+	init {
+		var b := shape.bounds; 
+		var nb := shape.oclAsType(UMLDI::NamedShape).nameLabel.bounds;
+		var dx := nb.x-b.x;
+		var dy := nb.y-b.y;
+		result := object DG::Group {
+			member += object DG::Rectangle { 
+				bounds := object DC::Bounds { x:=b.x; y:=b.y; width:=nb.width+2*dx+15; height:=nb.height+dy+1 };
+			};
+			member += object DG::Rectangle { 
+				bounds := object DC::Bounds { x:=b.x; y:=b.y+nb.height+dy+1; width:=b.width; height:=b.height-nb.height-dy };
+			};
+			member += object DG::Path {
+				command += object DG::MoveTo { point := object DC::Point { x := nb.x+nb.width+dx+5; y := b.y+5; } };
+				command += object DG::LineTo { point := object DC::Point { x := nb.x+nb.width+dx+0; y := b.y+13; } };
+				command += object DG::LineTo { point := object DC::Point { x := nb.x+nb.width+dx+10; y := b.y+13; } };
+				command += object DG::LineTo { point := object DC::Point { x := nb.x+nb.width+dx+5; y := b.y+5; } };
+			};
+		};
+	}
+}
+
+mapping UML::Package::shapeToGraphicalElement(shape : UMLDI::UmlShape) : DG::GraphicalElement {
+	init {
+		var b := shape.bounds; 
+		var nb := shape.oclAsType(UMLDI::NamedShape).nameLabel.bounds;
+		var dx := nb.x-b.x;
+		var dy := nb.y-b.y;
+		result := object DG::Group {
+			member += object DG::Rectangle { 
+				bounds := object DC::Bounds { x:=b.x; y:=b.y; width:=nb.width+2*dx; height:=nb.height+dy+1 };
+			};
+			member += object DG::Rectangle { 
+				bounds := object DC::Bounds { x:=b.x; y:=b.y+nb.height+dy+1; width:=b.width; height:=b.height-nb.height-dy };
+			};
+		};
+	}
+}

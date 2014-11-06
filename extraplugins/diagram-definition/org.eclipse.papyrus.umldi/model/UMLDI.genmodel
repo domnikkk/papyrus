@@ -2,10 +2,12 @@
 <genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/uml2/2.2.0/GenModel"
     copyrightText="Copyright (c) 2014 CEA LIST.&#xA; &#xD;&#xA;All rights reserved. This program and the accompanying materials&#xD;&#xA;are made available under the terms of the Eclipse Public License v1.0&#xD;&#xA;which accompanies this distribution, and is available at&#xD;&#xA;http://www.eclipse.org/legal/epl-v10.html&#xA; &#xD;&#xA;Contributors:&#xD;&#xA; CEA LIST - Initial API and implementation"
-    modelDirectory="/org.eclipse.papyrus.umldi/src" creationSubmenus="true" modelPluginID="org.eclipse.papyrus.umldi"
+    modelDirectory="/org.eclipse.papyrus.umldi/src-gen" creationSubmenus="true" editDirectory="/org.eclipse.papyrus.umldi.edit/src-gen"
+    editorDirectory="/org.eclipse.papyrus.umldi.editor/src-gen" modelPluginID="org.eclipse.papyrus.umldi"
     modelName="UMLDI" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
-    importerID="org.eclipse.uml2.uml.ecore.importer" complianceLevel="7.0" copyrightFields="false"
-    colorProviders="true" fontProviders="true" usedGenPackages="../../org.eclipse.papyrus.dd/model/DC.genmodel#//dc ../../org.eclipse.papyrus.dd/model/DI.genmodel#//di ../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../org.eclipse.uml2.types/model/Types.genmodel#//types ../../org.eclipse.uml2.uml/model/UML.genmodel#//uml"
+    testsDirectory="/org.eclipse.papyrus.umldi.tests/src-gen" importerID="org.eclipse.uml2.uml.ecore.importer"
+    complianceLevel="6.0" copyrightFields="false" colorProviders="true" fontProviders="true"
+    usedGenPackages="../../org.eclipse.papyrus.dd/model/DC.genmodel#//dc ../../org.eclipse.papyrus.dd/model/DI.genmodel#//di ../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../org.eclipse.uml2.types/model/Types.genmodel#//types ../../org.eclipse.uml2.uml/model/UML.genmodel#//uml"
     operationReflection="true" importOrganizing="true">
   <genAnnotations source="http://www.eclipse.org/emf/2002/GenModel/importer/org.eclipse.uml2.uml.ecore.importer">
     <details key="ECORE_TAGGED_VALUES" value="PROCESS"/>
@@ -29,20 +31,10 @@
   </genAnnotations>
   <foreignModel>UMLDI.uml</foreignModel>
   <genPackages xsi:type="genmodel:GenPackage" prefix="UMLDI" basePackage="org.eclipse.papyrus"
-      resource="XML" disposableProviderFactory="true" ecorePackage="UMLDI.ecore#/">
-    <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="UMLDI.ecore#//UmlDiagramKind">
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="UMLDI.ecore#//UmlDiagramKind/class"/>
-    </genEnums>
-    <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="UMLDI.ecore#//UmlCompartmentKind">
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="UMLDI.ecore#//UmlCompartmentKind/attributes"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="UMLDI.ecore#//UmlCompartmentKind/operations"/>
-    </genEnums>
-    <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="UMLDI.ecore#//UmlLabelKind">
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="UMLDI.ecore#//UmlLabelKind/name"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="UMLDI.ecore#//UmlLabelKind/multiplicity"/>
-    </genEnums>
-    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLDI.ecore#//UmlDiagram">
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute UMLDI.ecore#//UmlDiagram/kind"/>
+      resource="XMI" disposableProviderFactory="true" ecorePackage="UMLDI.ecore#/">
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="UMLDI.ecore#//UmlDiagram">
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference UMLDI.ecore#//UmlDiagram/topUmlDiagramElement"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="UMLDI.ecore#//UmlDiagramElement">
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
@@ -52,9 +44,9 @@
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference UMLDI.ecore#//UmlDiagramElement/localUmlStyle"/>
       <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EReference UMLDI.ecore#//UmlDiagramElement/ownedUmlDiagramElement"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
           ecoreFeature="ecore:EReference UMLDI.ecore#//UmlDiagramElement/owningUmlDiagramElement"/>
-      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
-          createChild="true" ecoreFeature="ecore:EReference UMLDI.ecore#//UmlDiagramElement/ownedUmlDiagramElement"/>
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
           propertySortChoices="true" ecoreFeature="ecore:EReference UMLDI.ecore#//UmlDiagramElement/targetUmlEdge"/>
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
@@ -68,18 +60,226 @@
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="UMLDI.ecore#//UmlStyle/fontsizePositive/context"/>
       </genOperations>
     </genClasses>
-    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLDI.ecore#//UmlEdge">
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="UMLDI.ecore#//UmlEdge">
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
           propertySortChoices="true" ecoreFeature="ecore:EReference UMLDI.ecore#//UmlEdge/sourceUmlDiagramElement"/>
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
           propertySortChoices="true" ecoreFeature="ecore:EReference UMLDI.ecore#//UmlEdge/targetUmlDiagramElement"/>
     </genClasses>
-    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLDI.ecore#//UmlShape"/>
-    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLDI.ecore#//UmlCompartment">
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute UMLDI.ecore#//UmlCompartment/kind"/>
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="UMLDI.ecore#//TopUmlDiagramElement">
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EReference UMLDI.ecore#//TopUmlDiagramElement/packageCompartment"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EReference UMLDI.ecore#//TopUmlDiagramElement/umlDiagram"/>
     </genClasses>
-    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLDI.ecore#//UmlLabel">
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute UMLDI.ecore#//UmlLabel/kind"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLDI.ecore#//PackagedElementCompartment">
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EReference UMLDI.ecore#//PackagedElementCompartment/packageShape"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference UMLDI.ecore#//PackagedElementCompartment/topUmlDiagramElement"/>
     </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="UMLDI.ecore#//UmlCompartment"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLDI.ecore#//PackageShape">
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference UMLDI.ecore#//PackageShape/packagedElementCompartment"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="UMLDI.ecore#//TemplateableElementShape">
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference UMLDI.ecore#//TemplateableElementShape/templateParameterCompartment"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="UMLDI.ecore#//NamedShape">
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference UMLDI.ecore#//NamedShape/nameLabel"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="UMLDI.ecore#//UmlShape"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLDI.ecore#//NameLabel">
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EReference UMLDI.ecore#//NameLabel/namedElementEdge"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EReference UMLDI.ecore#//NameLabel/namedElementShape"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="UMLDI.ecore#//UmlLabel"/>
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="UMLDI.ecore#//NamedEdge">
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference UMLDI.ecore#//NamedEdge/nameLabel"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLDI.ecore#//TemplateParameterCompartment">
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference UMLDI.ecore#//TemplateParameterCompartment/templateParameterLabel"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EReference UMLDI.ecore#//TemplateParameterCompartment/templateableElementShape"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLDI.ecore#//TemplateParameterLabel">
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EReference UMLDI.ecore#//TemplateParameterLabel/templateParameterCompartment"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLDI.ecore#//ClassDiagram"/>
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="UMLDI.ecore#//StructureDiagram"/>
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="UMLDI.ecore#//ClassifierShape">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute UMLDI.ecore#//ClassifierShape/isIcon"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLDI.ecore#//ConstraintShape"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLDI.ecore#//BodyShape">
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference UMLDI.ecore#//BodyShape/bodyLabel"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLDI.ecore#//BodyLabel">
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EReference UMLDI.ecore#//BodyLabel/constraintShape"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLDI.ecore#//AttributeCompartment">
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EReference UMLDI.ecore#//AttributeCompartment/classifierWithAttributesShape"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference UMLDI.ecore#//AttributeCompartment/attributeLabel"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="UMLDI.ecore#//ClassifierWithAttributesShape">
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference UMLDI.ecore#//ClassifierWithAttributesShape/attributeCompartment"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLDI.ecore#//PropertyLabel">
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EReference UMLDI.ecore#//PropertyLabel/attributeCompartment"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLDI.ecore#//OperationCompartment">
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EReference UMLDI.ecore#//OperationCompartment/classifierWithOperationsShape"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference UMLDI.ecore#//OperationCompartment/operationLabel"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="UMLDI.ecore#//ClassifierWithOperationsShape">
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference UMLDI.ecore#//ClassifierWithOperationsShape/operationCompartment"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLDI.ecore#//OperationLabel">
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EReference UMLDI.ecore#//OperationLabel/operationCompartment"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLDI.ecore#//ReceptionCompartment">
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EReference UMLDI.ecore#//ReceptionCompartment/signalShape"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference UMLDI.ecore#//ReceptionCompartment/receptionLabel"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="UMLDI.ecore#//ClassifierWithReceptionsShape">
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference UMLDI.ecore#//ClassifierWithReceptionsShape/receptionCompartment"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLDI.ecore#//ReceptionLabel">
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EReference UMLDI.ecore#//ReceptionLabel/receptionCompartment"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLDI.ecore#//LiteralCompartment">
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EReference UMLDI.ecore#//LiteralCompartment/enumerationShape"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference UMLDI.ecore#//LiteralCompartment/literalLabel"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLDI.ecore#//EnumerationShape">
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference UMLDI.ecore#//EnumerationShape/literalCompartment"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLDI.ecore#//LiteralLabel">
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EReference UMLDI.ecore#//LiteralLabel/literalCompartment"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLDI.ecore#//RoleLabel">
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EReference UMLDI.ecore#//RoleLabel/associationEdge"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EReference UMLDI.ecore#//RoleLabel/instanceSpecificationEdge"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLDI.ecore#//AssociationEdge">
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference UMLDI.ecore#//AssociationEdge/endMultiplicityLabel"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference UMLDI.ecore#//AssociationEdge/endModifierLabel"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference UMLDI.ecore#//AssociationEdge/endRoleLabel"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLDI.ecore#//MultiplicityLabel">
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EReference UMLDI.ecore#//MultiplicityLabel/propertyEdge"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EReference UMLDI.ecore#//MultiplicityLabel/associationEdge"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLDI.ecore#//PropertyEdge">
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference UMLDI.ecore#//PropertyEdge/modifierLabel"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference UMLDI.ecore#//PropertyEdge/multiplicityLabel"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLDI.ecore#//ModifierLabel">
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EReference UMLDI.ecore#//ModifierLabel/associationEdge"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EReference UMLDI.ecore#//ModifierLabel/generalizationSetEdge"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EReference UMLDI.ecore#//ModifierLabel/propertyEdge"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLDI.ecore#//GeneralizationSetEdge">
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference UMLDI.ecore#//GeneralizationSetEdge/powerLabel"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference UMLDI.ecore#//GeneralizationSetEdge/modifierLabel"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLDI.ecore#//PowerLabel">
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EReference UMLDI.ecore#//PowerLabel/generalizationSetEdge"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLDI.ecore#//InstanceSpecificationEdge">
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference UMLDI.ecore#//InstanceSpecificationEdge/endRoleLabel"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLDI.ecore#//InstanceSpecificationShape">
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference UMLDI.ecore#//InstanceSpecificationShape/slotCompartment"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLDI.ecore#//SlotCompartment">
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference UMLDI.ecore#//SlotCompartment/slotLabel"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EReference UMLDI.ecore#//SlotCompartment/instanceSpecificationShape"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLDI.ecore#//SlotLabel">
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EReference UMLDI.ecore#//SlotLabel/slotCompartment"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLDI.ecore#//ClassShape"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLDI.ecore#//InterfaceShape"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLDI.ecore#//DataTypeShape"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLDI.ecore#//PrimitiveTypeShape"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLDI.ecore#//SignalShape"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLDI.ecore#//ModelShape"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLDI.ecore#//ContainmentEdge"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLDI.ecore#//GeneralizationEdge"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLDI.ecore#//RealizationEdge"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLDI.ecore#//AbstractionEdge"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLDI.ecore#//DependencyEdge"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLDI.ecore#//InterfaceRealizationEdge"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLDI.ecore#//UsageEdge"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLDI.ecore#//ElementImportEdge"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLDI.ecore#//PackageImportEdge"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLDI.ecore#//PackageMergeEdge"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLDI.ecore#//SubstitutionEdge"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLDI.ecore#//InformationFlowEdge">
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference UMLDI.ecore#//InformationFlowEdge/itemLabel"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLDI.ecore#//ItemLabel">
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EReference UMLDI.ecore#//ItemLabel/informationFlowEdge"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLDI.ecore#//AssociationClassEdge"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLDI.ecore#//CommentShape"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLDI.ecore#//AttachmentEdge"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLDI.ecore#//AssociationClassShape"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLDI.ecore#//ComponentShape"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLDI.ecore#//InformationItemShape"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLDI.ecore#//RepresentationEdge"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLDI.ecore#//AssociationShape"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLDI.ecore#//DependencyShape"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLDI.ecore#//TimeObservationShape"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLDI.ecore#//DurationObservationShape"/>
   </genPackages>
 </genmodel:GenModel>

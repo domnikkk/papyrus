@@ -92,7 +92,7 @@ public class CreationCommandExtensionFactory extends ExtensionUtils {
 				}
 			}
 		}
-		Activator.log.info("a creation command ready " + res);
+		Activator.log.debug("a creation command ready " + res);
 		return res;
 	}
 

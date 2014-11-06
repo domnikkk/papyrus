@@ -76,7 +76,6 @@ public class UMLDomainNavigatorContentProvider implements ICommonContentProvider
 		myEditingDomain = (AdapterFactoryEditingDomain) editingDomain;
 		@SuppressWarnings("serial")
 		Map<Resource, Boolean> map = new HashMap<Resource, Boolean>() {
-
 			@Override
 			public Boolean get(java.lang.Object key) {
 				if (!containsKey(key)) {
@@ -89,7 +88,6 @@ public class UMLDomainNavigatorContentProvider implements ICommonContentProvider
 		};
 		myEditingDomain.setResourceToReadOnlyMap(map);
 		myViewerRefreshRunnable = new Runnable() {
-
 			@Override
 			public void run() {
 				if (myViewer != null) {
@@ -98,7 +96,6 @@ public class UMLDomainNavigatorContentProvider implements ICommonContentProvider
 			}
 		};
 		myWorkspaceSynchronizer = new WorkspaceSynchronizer(editingDomain, new WorkspaceSynchronizer.Delegate() {
-
 			@Override
 			public void dispose() {
 			}
@@ -149,10 +146,12 @@ public class UMLDomainNavigatorContentProvider implements ICommonContentProvider
 		myWorkspaceSynchronizer.dispose();
 		myWorkspaceSynchronizer = null;
 		myViewerRefreshRunnable = null;
+
 		for (Iterator<Resource> it = myEditingDomain.getResourceSet().getResources().iterator(); it.hasNext();) {
 			Resource resource = it.next();
 			resource.unload();
 		}
+
 		((TransactionalEditingDomain) myEditingDomain).dispose();
 		myEditingDomain = null;
 	}
@@ -223,6 +222,7 @@ public class UMLDomainNavigatorContentProvider implements ICommonContentProvider
 			Resource resource = myEditingDomain.getResourceSet().getResource(fileURI, true);
 			return wrapEObjects(myAdapterFctoryContentProvier.getChildren(resource), parentElement);
 		}
+
 		if (parentElement instanceof UMLDomainNavigatorItem) {
 			return wrapEObjects(myAdapterFctoryContentProvier.getChildren(((UMLDomainNavigatorItem) parentElement).getEObject()), parentElement);
 		}

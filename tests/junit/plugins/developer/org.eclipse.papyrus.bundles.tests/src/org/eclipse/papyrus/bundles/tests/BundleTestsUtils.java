@@ -38,7 +38,9 @@ public class BundleTestsUtils {
 
 	public static final String JAVA_VERSION_6 = "JavaSE-1.6"; //$NON-NLS-1$
 
-	public static final String JAVA_VERSION_REGEX = JAVA_VERSION_5 + "|" + JAVA_VERSION_6;
+	public static final String JAVA_VERSION_7 = "JavaSE-1.7"; //$NON-NLS-1$
+
+	public static final String JAVA_VERSION_REGEX = JAVA_VERSION_5 + "|" + JAVA_VERSION_6 + "|" + JAVA_VERSION_7;
 
 	public static final String REQUIRE_BUNDLE = "Require-Bundle"; //$NON-NLS-1$
 
@@ -54,9 +56,9 @@ public class BundleTestsUtils {
 		final List<Bundle> papyrusBundle = new ArrayList<Bundle>();
 		BundleContext context = InternalPlatform.getDefault().getBundleContext();
 		org.osgi.framework.Bundle[] bundles = context.getBundles();
-		for(int i = 0; i < bundles.length; i++) {
+		for (int i = 0; i < bundles.length; i++) {
 			String currentName = bundles[i].getSymbolicName();
-			if(currentName.startsWith(PAPYRUS_PREFIX)) {
+			if (currentName.startsWith(PAPYRUS_PREFIX)) {
 				papyrusBundle.add(bundles[i]);
 			}
 		}
@@ -67,12 +69,12 @@ public class BundleTestsUtils {
 	/**
 	 *
 	 * @param bundle
-	 *        a bundle
+	 *            a bundle
 	 * @return
 	 *         <code>true</code> if the bundle represents a Java Project
 	 */
 	public static boolean isJavaProject(final Bundle bundle) {
-		//we are looking for folders "org/eclipse/papyrus" that contains classes. If not, it is not a Java project
+		// we are looking for folders "org/eclipse/papyrus" that contains classes. If not, it is not a Java project
 		URL res = bundle.getResource("org/eclipse/papyrus"); //$NON-NLS-1$
 		return res != null;
 	}
@@ -86,11 +88,11 @@ public class BundleTestsUtils {
 		final List<Feature> features = new ArrayList<Feature>();
 		org.eclipse.pde.internal.core.FeatureModelManager manager = PDECore.getDefault().getFeatureModelManager();
 		IFeatureModel[] models2 = manager.getModels();
-		for(IFeatureModel iFeatureModel : models2) {
+		for (IFeatureModel iFeatureModel : models2) {
 			final IFeature feature = iFeatureModel.getFeature();
 			final String id = feature.getId();
-			if(id.startsWith(PAPYRUS_PREFIX)) {
-				features.add((Feature)feature);
+			if (id.startsWith(PAPYRUS_PREFIX)) {
+				features.add((Feature) feature);
 			}
 		}
 		return features;

@@ -116,6 +116,7 @@ public class DefaultNamedElementEditPartTN extends NamedElementEditPart {
 	@Override
 	protected void handleNotificationEvent(Notification event) {
 		super.handleNotificationEvent(event);
+
 	}
 
 	/**
@@ -144,6 +145,8 @@ public class DefaultNamedElementEditPartTN extends NamedElementEditPart {
 			((DefaultNamedElementNameEditPart) childEditPart).setLabel(getPrimaryShape().getNameLabel());
 			return true;
 		}
+
+
 		return false;
 	}
 
@@ -207,6 +210,7 @@ public class DefaultNamedElementEditPartTN extends NamedElementEditPart {
 	@Override
 	protected NodeFigure createNodeFigure() {
 		return new SelectableBorderedNodeFigure(createMainFigureWithSVG());
+
 	}
 
 	/**

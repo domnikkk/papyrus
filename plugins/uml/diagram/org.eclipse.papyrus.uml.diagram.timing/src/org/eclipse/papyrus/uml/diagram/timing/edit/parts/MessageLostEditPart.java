@@ -54,10 +54,12 @@ public class MessageLostEditPart extends ConnectionEditPart implements ITreeBran
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof MessageLostNameLabelEditPart) {
-			((MessageLostNameLabelEditPart) childEditPart).setLabel(getPrimaryShape().getMessageLabel());
+			((MessageLostNameLabelEditPart) childEditPart).setLabel(
+					getPrimaryShape().getMessageLabel());
 		}
 		if (childEditPart instanceof MessageLostAppliedStereotypeEditPart) {
-			((MessageLostAppliedStereotypeEditPart) childEditPart).setLabel(getPrimaryShape().getAppliedStereotypeLabel());
+			((MessageLostAppliedStereotypeEditPart) childEditPart).setLabel(
+					getPrimaryShape().getAppliedStereotypeLabel());
 		}
 		return false;
 	}

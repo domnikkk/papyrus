@@ -28,7 +28,6 @@ public abstract class UMLAbstractNavigatorItem extends PlatformObject {
 		@SuppressWarnings("rawtypes")
 		final Class[] supportedTypes = new Class[] { ITabbedPropertySheetPageContributor.class };
 		final ITabbedPropertySheetPageContributor propertySheetPageContributor = new ITabbedPropertySheetPageContributor() {
-
 			@Override
 			public String getContributorId() {
 				return "org.eclipse.papyrus.uml.diagram.timing"; //$NON-NLS-1$

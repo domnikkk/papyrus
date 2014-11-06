@@ -75,7 +75,8 @@ public class ClassNestedClassifierCompartmentCanonicalEditPolicyCN extends Canon
 	protected List<EObject> getSemanticChildrenList() {
 		View viewObject = (View) getHost().getModel();
 		LinkedList<EObject> result = new LinkedList<EObject>();
-		List<UMLNodeDescriptor> childDescriptors = CustomUMLDiagramUpdater.INSTANCE.getClassNestedclassifiers_7013SemanticChildren(viewObject);
+		List<UMLNodeDescriptor> childDescriptors = CustomUMLDiagramUpdater.INSTANCE
+				.getClassNestedclassifiers_7013SemanticChildren(viewObject);
 		for (UMLNodeDescriptor d : childDescriptors) {
 			result.add(d.getModelElement());
 		}
@@ -116,7 +117,9 @@ public class ClassNestedClassifierCompartmentCanonicalEditPolicyCN extends Canon
 			return;
 		}
 		LinkedList<IAdaptable> createdViews = new LinkedList<IAdaptable>();
-		List<UMLNodeDescriptor> childDescriptors = CustomUMLDiagramUpdater.INSTANCE.getClassNestedclassifiers_7013SemanticChildren((View) getHost().getModel());
+		List<UMLNodeDescriptor> childDescriptors =
+				CustomUMLDiagramUpdater.INSTANCE
+						.getClassNestedclassifiers_7013SemanticChildren((View) getHost().getModel());
 		LinkedList<View> orphaned = new LinkedList<View>();
 		// we care to check only views we recognize as ours
 		LinkedList<View> knownViewChildren = new LinkedList<View>();
@@ -162,6 +165,7 @@ public class ClassNestedClassifierCompartmentCanonicalEditPolicyCN extends Canon
 			CreateViewRequest.ViewDescriptor descriptor = new CreateViewRequest.ViewDescriptor(elementAdapter, Node.class, hint, ViewUtil.APPEND, false, host().getDiagramPreferencesHint());
 			viewDescriptors.add(descriptor);
 		}
+
 		boolean changed = deleteViews(orphaned.iterator());
 		//
 		CreateViewRequest request = getCreateViewRequest(viewDescriptors);
@@ -181,6 +185,7 @@ public class ClassNestedClassifierCompartmentCanonicalEditPolicyCN extends Canon
 			DeferredLayoutCommand layoutCmd = new DeferredLayoutCommand(host().getEditingDomain(), createdViews, host());
 			executeCommand(new ICommandProxy(layoutCmd));
 		}
+
 		makeViewsImmutable(createdViews);
 	}
 }

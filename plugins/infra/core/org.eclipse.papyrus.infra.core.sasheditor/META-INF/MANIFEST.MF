@@ -1,6 +1,7 @@
 Manifest-Version: 1.0
 Export-Package: org.eclipse.papyrus.infra.core.sasheditor,
  org.eclipse.papyrus.infra.core.sasheditor.contentprovider,
+ org.eclipse.papyrus.infra.core.sasheditor.contentprovider.service,
  org.eclipse.papyrus.infra.core.sasheditor.contentprovider.simple,
  org.eclipse.papyrus.infra.core.sasheditor.editor,
  org.eclipse.papyrus.infra.core.sasheditor.editor.actionbarcontributor,

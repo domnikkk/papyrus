@@ -75,11 +75,13 @@ public class UMLSheetLabelProvider extends BaseLabelProvider implements ILabelPr
 		// For intermediate views climb up the containment hierarchy to find the one associated with an element type.
 		while (view != null) {
 			int vid = UMLVisualIDRegistry.getVisualID(view);
-			IElementType etype = UMLElementTypes.getElementType(vid);
+			IElementType etype =
+					UMLElementTypes.getElementType(vid);
 			if (etype != null) {
 				return etype;
 			}
-			view = view.eContainer() instanceof View ? (View) view.eContainer() : null;
+			view = view.eContainer() instanceof View ?
+					(View) view.eContainer() : null;
 		}
 		return null;
 	}

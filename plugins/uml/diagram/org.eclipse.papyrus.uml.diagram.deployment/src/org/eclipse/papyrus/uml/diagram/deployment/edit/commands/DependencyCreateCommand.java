@@ -93,9 +93,12 @@ public class DependencyCreateCommand extends EditElementCommand {
 		}
 
 		Dependency newElement = UMLFactory.eINSTANCE.createDependency();
-		getContainer().getPackagedElements().add(newElement);
-		newElement.getClients().add(getSource());
-		newElement.getSuppliers().add(getTarget());
+		getContainer().getPackagedElements()
+				.add(newElement);
+		newElement.getClients()
+				.add(getSource());
+		newElement.getSuppliers()
+				.add(getTarget());
 		ElementInitializers.getInstance().init_Dependency_4004(newElement);
 		doConfigure(newElement, monitor, info);
 		((CreateElementRequest) getRequest()).setNewElement(newElement);

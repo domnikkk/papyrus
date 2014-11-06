@@ -44,11 +44,17 @@ public class PackageItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy
 		if (requestElementType == null) {
 			return super.getCreateCommand(req);
 		}
+
+
 		if (UMLElementTypes.Interaction_8002 == requestElementType) {
+
 			return getGEFWrapper(new InteractionCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
+
 		}
 		if (UMLElementTypes.Diagram_8016 == requestElementType) {
+
 			return getGEFWrapper(new ShortCutDiagramCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
+
 		}
 		return super.getCreateCommand(req);
 	}

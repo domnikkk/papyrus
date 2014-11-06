@@ -1,0 +1,82 @@
+/**
+ * Copyright (c) 2014 CEA LIST.
+ *  
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *  
+ * Contributors:
+ *  CEA LIST - Initial API and implementation
+ */
+import org.eclipse.papyrus.notation.qvt.NotationUtilities; 
+ 
+library NotationIds;
+
+property classDiagramType = 'PapyrusUMLClassDiagram';
+
+property containmentEdgeType = '4022';
+property containmentShapeType = '3032';
+property literalCompartmentType = '7015';
+property slotCompartmentType = '7001';
+
+property modifierLabelType = Set {
+'5067'
+};
+
+property itemLabelType = Set {
+'6040'
+};
+
+property end1RoleLabelType = Set {
+'6003', '6032', '6038'
+};
+
+property end2RoleLabelType = Set {
+'6005', '6031', '6039'
+};
+
+property end1MultiplicityLabelType = Set {
+'6033'
+};
+
+property end2MultiplicityLabelType = Set {
+'6034', '6035'
+};
+
+property attachmentEdgeType = Set {
+'4016', '4014', '4013', '8500', '4024', '4025'
+};
+
+property bodyLabelType = Set {
+'5159', '5038', '5160'
+};
+
+property nameLabelType = Set {
+'5029', '5011', '5032', '5035', '5023', '5008', '5026', 
+'5020', '5002', '6009', '6002', '6017', '6015', '6026',
+'6021', '6041', '6022', '6030', '6013', '6011', '5066',
+'5005', '5037', '5014', '5064', '5061', '5043', '5046',
+'5017', '5052', '5058', '5040', '5049', '5055',
+'5161', '5153', '5155', '1',    '6024'
+};
+
+property attributeCompartmentType = Set {
+'7027','7023','1069','7041','7017','7011','7002','7033',
+'1067','7020','7032','7006','7039','1052','7034','7036',
+'7005','7026','1071','7017','7011'
+};
+
+property operationCompartmentType = Set {
+'7036','7007','7040','1019','1053','7003','7021','1068',
+'7033','7028','7042','7018','7012','7024','1070','7037',
+'7034','7012','7018'
+};
+
+property packagedElementCompartmentType = Set {
+'7016','7009'
+}; 
+
+property templateParameterCompartmentType = Set {
+'3015', '3033'
+}; 

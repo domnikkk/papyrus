@@ -54,7 +54,8 @@ public class PackageImportEditPart extends UMLConnectionNodeEditPart implements 
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof PackageImportAppliedStereotypeEditPart) {
-			((PackageImportAppliedStereotypeEditPart) childEditPart).setLabel(getPrimaryShape().getAppliedStereotypeLabel());
+			((PackageImportAppliedStereotypeEditPart) childEditPart).setLabel(
+					getPrimaryShape().getAppliedStereotypeLabel());
 		}
 		return false;
 	}

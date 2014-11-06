@@ -11,10 +11,14 @@
  *  Cedric Dumoulin (LIFL) cedric.dumoulin@lifl.fr - Initial API and implementation
  *  Ansgar Radermacher (CEA) ansgar.radermacher@cea.fr - Added support for IGotoMarker
  *  Christian W. Damus (CEA) - bug 434635
+ *  Gabriel Pascual (ALL4TEC) gabriel.pascual@all4tec.net - Bug 431117
  *
  *****************************************************************************/
 
 package org.eclipse.papyrus.views.modelexplorer;
+
+import java.util.LinkedList;
+import java.util.List;
 
 import org.eclipse.core.resources.IMarker;
 import org.eclipse.emf.common.util.URI;
@@ -33,7 +37,6 @@ import org.eclipse.ui.ide.IGotoMarker;
 import org.eclipse.ui.navigator.CommonViewer;
 import org.eclipse.ui.views.properties.IPropertySheetPage;
 import org.eclipse.ui.views.properties.tabbed.ITabbedPropertySheetPageContributor;
-import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
 
 import com.google.common.collect.Lists;
 
@@ -50,6 +53,9 @@ public class ModelExplorerPageBookView extends MultiViewPageBookView implements 
 	public static final String VIEW_ID = "org.eclipse.papyrus.views.modelexplorer.modelexplorer"; //$NON-NLS-1$
 
 	private final SharedModelExplorerState state = new SharedModelExplorerState();
+
+	/** The property sheet pages. */
+	private List<IPropertySheetPage> propertiesSheetPages = new LinkedList<IPropertySheetPage>();
 
 	@Override
 	public void init(IViewSite site, IMemento memento) throws PartInitException {
@@ -77,6 +83,16 @@ public class ModelExplorerPageBookView extends MultiViewPageBookView implements 
 		return new PageRec(part, page);
 	}
 
+	/**
+	 * Retrieves the {@link IPropertySheetPage} that his Model Explorer uses.
+	 *
+	 * @return
+	 */
+	private IPropertySheetPage getPropertySheetPage() {
+		IPropertySheetPage propertySheetPage = new ModelExplorerPropertySheetPage(this);
+		propertiesSheetPages.add(propertySheetPage);
+		return propertySheetPage;
+	}
 
 	/**
 	 * {@inheritDoc}
@@ -87,7 +103,7 @@ public class ModelExplorerPageBookView extends MultiViewPageBookView implements 
 		if (IPropertySheetPage.class == adapter) {
 			// Do not test if tabbedPropertySheetPage is null before calling new
 			// this is managed by Eclipse which only call current method when necessary
-			return new TabbedPropertySheetPage(this);
+			return getPropertySheetPage();
 		}
 
 		if (adapter == ITreeViewerSorting.class) {
@@ -146,5 +162,18 @@ public class ModelExplorerPageBookView extends MultiViewPageBookView implements 
 		state.save(memento);
 
 		super.saveState(memento);
+	}
+
+	/**
+	 * @see org.eclipse.ui.part.PageBookView#dispose()
+	 *
+	 */
+	@Override
+	public void dispose() {
+		for (IPropertySheetPage page : propertiesSheetPages) {
+			page.dispose();
+		}
+		propertiesSheetPages.clear();
+		super.dispose();
 	}
 }

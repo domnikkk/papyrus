@@ -91,14 +91,19 @@ public class ConnectorCreateCommand extends EditElementCommand {
 		if (!canExecute()) {
 			throw new ExecutionException("Invalid arguments in create link command"); //$NON-NLS-1$
 		}
+
 		Connector newElement = UMLFactory.eINSTANCE.createConnector();
-		getContainer().getOwnedConnectors().add(newElement);
-		newElement.getEnds().add(getSource());
-		newElement.getEnds().add(getTarget());
+		getContainer().getOwnedConnectors()
+				.add(newElement);
+		newElement.getEnds()
+				.add(getSource());
+		newElement.getEnds()
+				.add(getTarget());
 		ElementInitializers.getInstance().init_Connector_4019(newElement);
 		doConfigure(newElement, monitor, info);
 		((CreateElementRequest) getRequest()).setNewElement(newElement);
 		return CommandResult.newOKCommandResult(newElement);
+
 	}
 
 	/**

@@ -6,13 +6,14 @@ Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Require-Bundle: org.eclipse.core.runtime,
- org.eclipse.emf.ecore;visibility:=reexport,
- org.eclipse.papyrus.dd;visibility:=reexport,
- org.eclipse.uml2.common;visibility:=reexport,
- org.eclipse.ocl.ecore;visibility:=reexport
+Require-Bundle: org.eclipse.core.runtime;bundle-version="3.9.100",
+ org.eclipse.emf.ecore;bundle-version="2.9.2";visibility:=reexport,
+ org.eclipse.emf.ecore.xmi;bundle-version="2.9.1";visibility:=reexport,
+ org.eclipse.papyrus.dd;bundle-version="1.0.0";visibility:=reexport,
+ org.eclipse.uml2.common;bundle-version="1.8.2";visibility:=reexport,
+ org.eclipse.ocl.ecore;bundle-version="3.3.0";visibility:=reexport
 Bundle-ActivationPolicy: lazy
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.eclipse.papyrus.dd.dc,
  org.eclipse.papyrus.dd.dc.impl,
  org.eclipse.papyrus.dd.dc.util,

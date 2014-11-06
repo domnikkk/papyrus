@@ -4,7 +4,6 @@ import java.util.Collections;
 import java.util.List;
 
 import org.eclipse.core.runtime.IAdaptable;
-import org.eclipse.draw2d.Figure;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.MarginBorder;
@@ -26,6 +25,7 @@ import org.eclipse.gmf.runtime.emf.ui.services.parser.ISemanticParser;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.infra.gmfdiag.common.editpart.IPapyrusEditPart;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeLabelDisplayEditPolicy;
+import org.eclipse.papyrus.uml.diagram.common.editpolicies.IDirectEdition;
 import org.eclipse.papyrus.uml.diagram.common.figure.node.ILabelFigure;
 import org.eclipse.papyrus.uml.diagram.common.figure.node.IPapyrusNodeUMLElementFigure;
 import org.eclipse.papyrus.uml.diagram.common.util.MessageDirection;
@@ -65,6 +65,11 @@ public class GateNameEditPart extends BorderItemLabelEditPart implements IPapyru
 	 */
 	public GateNameEditPart(View view) {
 		super(view);
+	}
+	
+	@Override
+	public int getDirectEditionType() {
+		return IDirectEdition.DEFAULT_DIRECT_EDITOR;
 	}
 
 	@Override
@@ -289,13 +294,11 @@ public class GateNameEditPart extends BorderItemLabelEditPart implements IPapyru
 		}
 	}
 
-	public class GateNameFigure extends Figure implements ILabelFigure, IPapyrusNodeUMLElementFigure {
+	public class GateNameFigure extends WrappingLabel implements ILabelFigure, IPapyrusNodeUMLElementFigure {
 
 		protected static final String LEFT_BRACE = "{";
 
 		protected static final String RIGHT_BRACE = "}";
-
-		private WrappingLabel namedLabel;
 
 		private Label stereotypesLabel;
 
@@ -314,10 +317,8 @@ public class GateNameEditPart extends BorderItemLabelEditPart implements IPapyru
 		}
 
 		protected void createContents() {
-			namedLabel = new WrappingLabel();
-			namedLabel.setTextWrap(true);
-			namedLabel.setAlignment(PositionConstants.CENTER);
-			add(namedLabel);
+			setTextWrap(true);
+			setAlignment(PositionConstants.CENTER);
 		}
 
 		@Override
@@ -367,30 +368,5 @@ public class GateNameEditPart extends BorderItemLabelEditPart implements IPapyru
 		public Label getStereotypesLabel() {
 			return stereotypesLabel;
 		}
-
-
-		@Override
-		public void setText(String text) {
-			namedLabel.setText(text);
-		}
-
-
-		@Override
-		public String getText() {
-			return namedLabel.getText();
-		}
-
-
-		@Override
-		public void setIcon(Image icon) {
-			namedLabel.setIcon(icon);
-		}
-
-
-		@Override
-		public Image getIcon() {
-			return namedLabel.getIcon();
-		}
-
 	}
 }

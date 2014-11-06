@@ -1,0 +1,5065 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dg="http://www.omg.org/spec/DD/20110901/DG">
+  <dg:RootCanvas id="Associations">
+    <member xsi:type="dg:Group"/>
+    <member xsi:type="dg:Group">
+      <style fontSize="11.0" fontName="Lucida Grande"/>
+      <member xsi:type="dg:Rectangle">
+        <bounds x="92.0" y="76.0" width="100.0" height="41.0"/>
+      </member>
+      <member xsi:type="dg:Text" data="Class1" anchor="middle">
+        <bounds x="95.0" y="90.0" width="100.0" height="13.0"/>
+      </member>
+    </member>
+    <member xsi:type="dg:Group">
+      <style fontSize="11.0" fontName="Lucida Grande"/>
+      <member xsi:type="dg:Rectangle">
+        <bounds x="536.0" y="72.0" width="100.0" height="41.0"/>
+      </member>
+      <member xsi:type="dg:Text" data="Class2" anchor="middle">
+        <bounds x="539.0" y="86.0" width="100.0" height="13.0"/>
+      </member>
+    </member>
+    <member xsi:type="dg:Group">
+      <style fontSize="11.0" fontName="Lucida Grande"/>
+      <member xsi:type="dg:Rectangle">
+        <bounds x="175.0" y="262.0" width="122.0" height="100.0"/>
+      </member>
+      <member xsi:type="dg:Group">
+        <member xsi:type="dg:Line">
+          <start x="175.0" y="279.0"/>
+          <end x="297.0" y="279.0"/>
+        </member>
+      </member>
+      <member xsi:type="dg:Text" data="AssociationClass1" anchor="middle">
+        <bounds x="178.0" y="265.0" width="122.0" height="13.0"/>
+      </member>
+      <member xsi:type="dg:Group">
+        <member xsi:type="dg:Line">
+          <start x="175.0" y="279.0"/>
+          <end x="297.0" y="279.0"/>
+        </member>
+      </member>
+    </member>
+    <member xsi:type="dg:Group">
+      <style fontSize="11.0" fontName="Lucida Grande"/>
+      <member xsi:type="dg:Rectangle">
+        <bounds x="348.0" y="374.0" width="100.0" height="42.0"/>
+      </member>
+      <member xsi:type="dg:Text" data="Class4" anchor="middle">
+        <bounds x="351.0" y="388.0" width="100.0" height="13.0"/>
+      </member>
+    </member>
+    <member xsi:type="dg:Group">
+      <style fontSize="11.0" fontName="Lucida Grande"/>
+      <member xsi:type="dg:Rectangle">
+        <bounds x="402.0" y="228.0" width="100.0" height="43.0"/>
+      </member>
+      <member xsi:type="dg:Text" data="Class3" anchor="middle">
+        <bounds x="405.0" y="243.0" width="100.0" height="13.0"/>
+      </member>
+    </member>
+    <member xsi:type="dg:Group">
+      <style fontSize="11.0" fontName="Lucida Grande"/>
+      <member xsi:type="dg:Rectangle">
+        <bounds x="647.0" y="308.0" width="100.0" height="41.0"/>
+      </member>
+      <member xsi:type="dg:Text" data="Class5" anchor="middle">
+        <bounds x="650.0" y="322.0" width="100.0" height="13.0"/>
+      </member>
+    </member>
+    <member xsi:type="dg:Group">
+      <style fontSize="11.0" fontName="Lucida Grande"/>
+      <member xsi:type="dg:Polygon">
+        <point x="450.0" y="330.0"/>
+        <point x="460.0" y="320.0"/>
+        <point x="470.0" y="330.0"/>
+        <point x="460.0" y="340.0"/>
+      </member>
+    </member>
+    <member xsi:type="dg:Group">
+      <style fontSize="11.0" fontName="Lucida Grande"/>
+      <member xsi:type="dg:Path" endMarker="/0/@definitions/@definition.3" startMarker="/0/@definitions/@definition.13">
+        <command xsi:type="dg:MoveTo">
+          <point x="192.0" y="91.0"/>
+        </command>
+        <command xsi:type="dg:LineTo">
+          <point x="536.0" y="91.0"/>
+        </command>
+      </member>
+      <member xsi:type="dg:Text" data="class1_class2_1" anchor="middle">
+        <bounds x="324.0" y="65.0" width="85.0" height="13.0"/>
+      </member>
+      <member xsi:type="dg:Text" data="[1]" anchor="middle">
+        <bounds x="233.0" y="105.0" width="22.0" height="13.0"/>
+      </member>
+      <member xsi:type="dg:Text" data="[*]" anchor="middle">
+        <bounds x="474.0" y="65.0" width="20.0" height="13.0"/>
+      </member>
+      <member xsi:type="dg:Text" data="+ class1" anchor="middle">
+        <bounds x="220.0" y="65.0" width="49.0" height="13.0"/>
+      </member>
+      <member xsi:type="dg:Text" data="+ class2" anchor="middle">
+        <bounds x="460.0" y="105.0" width="49.0" height="13.0"/>
+      </member>
+    </member>
+    <member xsi:type="dg:Group">
+      <style fontSize="11.0" fontName="Lucida Grande"/>
+      <member xsi:type="dg:Path" endMarker="/0/@definitions/@definition.2">
+        <command xsi:type="dg:MoveTo">
+          <point x="140.0" y="117.0"/>
+        </command>
+        <command xsi:type="dg:LineTo">
+          <point x="140.0" y="161.0"/>
+        </command>
+        <command xsi:type="dg:LineTo">
+          <point x="589.0" y="161.0"/>
+        </command>
+        <command xsi:type="dg:LineTo">
+          <point x="589.0" y="113.0"/>
+        </command>
+      </member>
+      <member xsi:type="dg:Text" data="class1_class2_2" anchor="middle">
+        <bounds x="325.0" y="175.0" width="85.0" height="13.0"/>
+      </member>
+      <member xsi:type="dg:Text" data="[1..*]" anchor="middle">
+        <bounds x="95.0" y="130.0" width="34.0" height="13.0"/>
+      </member>
+      <member xsi:type="dg:Text" data="[0..1]" anchor="middle">
+        <bounds x="597.0" y="129.0" width="35.0" height="13.0"/>
+      </member>
+      <member xsi:type="dg:Text" data="+ class1" anchor="middle">
+        <bounds x="149.0" y="129.0" width="49.0" height="13.0"/>
+      </member>
+      <member xsi:type="dg:Text" data="+ class2" anchor="middle">
+        <bounds x="527.0" y="128.0" width="49.0" height="13.0"/>
+      </member>
+    </member>
+    <member xsi:type="dg:Group">
+      <style fontSize="11.0" fontName="Lucida Grande"/>
+      <member xsi:type="dg:Path" endMarker="/0/@definitions/@definition.0">
+        <command xsi:type="dg:MoveTo">
+          <point x="354.0" y="161.0"/>
+        </command>
+        <command xsi:type="dg:LineTo">
+          <point x="354.0" y="91.0"/>
+        </command>
+      </member>
+    </member>
+    <member xsi:type="dg:Group">
+      <style fontSize="11.0" fontName="Lucida Grande"/>
+      <member xsi:type="dg:Path" endMarker="/0/@definitions/@definition.3" startMarker="/0/@definitions/@definition.14">
+        <command xsi:type="dg:MoveTo">
+          <point x="142.0" y="76.0"/>
+        </command>
+        <command xsi:type="dg:LineTo">
+          <point x="142.0" y="26.0"/>
+        </command>
+        <command xsi:type="dg:LineTo">
+          <point x="586.0" y="26.0"/>
+        </command>
+        <command xsi:type="dg:LineTo">
+          <point x="586.0" y="72.0"/>
+        </command>
+      </member>
+      <member xsi:type="dg:Text" data="[1]" anchor="middle">
+        <bounds x="105.0" y="35.0" width="22.0" height="13.0"/>
+      </member>
+      <member xsi:type="dg:Text" data="[1]" anchor="middle">
+        <bounds x="557.0" y="37.0" width="22.0" height="13.0"/>
+      </member>
+      <member xsi:type="dg:Text" data="+ class1" anchor="middle">
+        <bounds x="148.0" y="38.0" width="49.0" height="13.0"/>
+      </member>
+      <member xsi:type="dg:Text" data="+ class2" anchor="middle">
+        <bounds x="600.0" y="38.0" width="49.0" height="13.0"/>
+      </member>
+    </member>
+    <member xsi:type="dg:Group">
+      <style fontSize="11.0" fontName="Lucida Grande"/>
+      <member xsi:type="dg:Path" endMarker="/0/@definitions/@definition.3">
+        <command xsi:type="dg:MoveTo">
+          <point x="92.0" y="96.0"/>
+        </command>
+        <command xsi:type="dg:LineTo">
+          <point x="72.0" y="96.0"/>
+        </command>
+        <command xsi:type="dg:LineTo">
+          <point x="72.0" y="208.0"/>
+        </command>
+        <command xsi:type="dg:LineTo">
+          <point x="666.0" y="208.0"/>
+        </command>
+        <command xsi:type="dg:LineTo">
+          <point x="666.0" y="92.0"/>
+        </command>
+        <command xsi:type="dg:LineTo">
+          <point x="636.0" y="92.0"/>
+        </command>
+      </member>
+      <member xsi:type="dg:Text" data="+ class1" anchor="middle">
+        <bounds x="17.0" y="95.0" width="49.0" height="13.0"/>
+      </member>
+      <member xsi:type="dg:Text" data="+ /class2" anchor="middle">
+        <bounds x="670.0" y="93.0" width="55.0" height="13.0"/>
+      </member>
+    </member>
+    <member xsi:type="dg:Group">
+      <style fontSize="11.0" fontName="Lucida Grande"/>
+      <member xsi:type="dg:Path">
+        <class>dotted</class>
+        <command xsi:type="dg:MoveTo">
+          <point x="320.0" y="208.0"/>
+        </command>
+        <command xsi:type="dg:LineTo">
+          <point x="276.0" y="262.0"/>
+        </command>
+      </member>
+    </member>
+    <member xsi:type="dg:Group">
+      <style fontSize="11.0" fontName="Lucida Grande"/>
+      <member xsi:type="dg:Path" endMarker="/0/@definitions/@definition.2">
+        <command xsi:type="dg:MoveTo">
+          <point x="460.0" y="320.0"/>
+        </command>
+        <command xsi:type="dg:LineTo">
+          <point x="460.0" y="271.0"/>
+        </command>
+      </member>
+      <member xsi:type="dg:Text" data="+ class3" anchor="middle">
+        <bounds x="394.0" y="276.0" width="49.0" height="13.0"/>
+      </member>
+      <member xsi:type="dg:Text" data="[*]" anchor="middle">
+        <bounds x="470.0" y="272.0" width="20.0" height="13.0"/>
+      </member>
+    </member>
+    <member xsi:type="dg:Group">
+      <style fontSize="11.0" fontName="Lucida Grande"/>
+      <member xsi:type="dg:Path">
+        <command xsi:type="dg:MoveTo">
+          <point x="455.0" y="335.0"/>
+        </command>
+        <command xsi:type="dg:LineTo">
+          <point x="418.0" y="374.0"/>
+        </command>
+      </member>
+      <member xsi:type="dg:Text" data="+ class4" anchor="middle">
+        <bounds x="455.0" y="369.0" width="49.0" height="13.0"/>
+      </member>
+      <member xsi:type="dg:Text" data="[1..*]" anchor="middle">
+        <bounds x="379.0" y="349.0" width="34.0" height="13.0"/>
+      </member>
+    </member>
+    <member xsi:type="dg:Group">
+      <style fontSize="11.0" fontName="Lucida Grande"/>
+      <member xsi:type="dg:Path" endMarker="/0/@definitions/@definition.2" startMarker="/0/@definitions/@definition.13">
+        <command xsi:type="dg:MoveTo">
+          <point x="468.0" y="328.0"/>
+        </command>
+        <command xsi:type="dg:LineTo">
+          <point x="647.0" y="328.0"/>
+        </command>
+      </member>
+      <member xsi:type="dg:Text" data="+ class5" anchor="middle">
+        <bounds x="585.0" y="300.0" width="49.0" height="13.0"/>
+      </member>
+      <member xsi:type="dg:Text" data="[0..1]" anchor="middle">
+        <bounds x="592.0" y="341.0" width="35.0" height="13.0"/>
+      </member>
+    </member>
+    <member xsi:type="dg:Group">
+      <style fontSize="11.0" fontName="Lucida Grande"/>
+      <member xsi:type="dg:Path" endMarker="/0/@definitions/@definition.3">
+        <command xsi:type="dg:MoveTo">
+          <point x="747.0" y="338.0"/>
+        </command>
+        <command xsi:type="dg:LineTo">
+          <point x="809.0" y="338.0"/>
+        </command>
+        <command xsi:type="dg:LineTo">
+          <point x="809.0" y="411.0"/>
+        </command>
+        <command xsi:type="dg:LineTo">
+          <point x="722.0" y="411.0"/>
+        </command>
+        <command xsi:type="dg:LineTo">
+          <point x="703.0" y="349.0"/>
+        </command>
+      </member>
+      <member xsi:type="dg:Text" data="[1]" anchor="middle">
+        <bounds x="755.0" y="345.0" width="22.0" height="13.0"/>
+      </member>
+      <member xsi:type="dg:Text" data="[1]" anchor="middle">
+        <bounds x="678.0" y="376.0" width="22.0" height="13.0"/>
+      </member>
+      <member xsi:type="dg:Text" data="+ class51" anchor="middle">
+        <bounds x="752.0" y="316.0" width="56.0" height="13.0"/>
+      </member>
+      <member xsi:type="dg:Text" data="+ class52" anchor="middle">
+        <bounds x="719.0" y="369.0" width="56.0" height="13.0"/>
+      </member>
+    </member>
+    <definitions>
+      <definition xsi:type="dg:Marker" id="endHollowClosedArrow">
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#FFFFFF"/>
+          </style>
+          <point x="1.0" y="1.0"/>
+          <point x="12.0" y="6.0"/>
+          <point x="1.0" y="11.0"/>
+        </member>
+        <size width="12.0" height="12.0"/>
+        <reference x="12.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="endSolidClosedArrow">
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <point x="1.0" y="1.0"/>
+          <point x="12.0" y="6.0"/>
+          <point x="1.0" y="11.0"/>
+        </member>
+        <size width="12.0" height="12.0"/>
+        <reference x="12.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="endOpenArrow">
+        <member xsi:type="dg:Polyline">
+          <point x="1.0" y="1.0"/>
+          <point x="12.0" y="6.0"/>
+          <point x="1.0" y="11.0"/>
+        </member>
+        <size width="12.0" height="12.0"/>
+        <reference x="12.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="endSolidCircleOpenArrow">
+        <member xsi:type="dg:Circle" radius="3.0">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <center x="16.0" y="6.0"/>
+        </member>
+        <member xsi:type="dg:Polyline">
+          <point x="1.0" y="1.0"/>
+          <point x="12.0" y="6.0"/>
+          <point x="1.0" y="11.0"/>
+        </member>
+        <size width="20.0" height="12.0"/>
+        <reference x="20.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="endSolidDiamond">
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <point x="0.0" y="6.0"/>
+          <point x="8.0" y="1.0"/>
+          <point x="16.0" y="6.0"/>
+          <point x="8.0" y="11.0"/>
+        </member>
+        <size width="16.0" height="12.0"/>
+        <reference x="16.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="endHollowDiamond">
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#FFFFFF"/>
+          </style>
+          <point x="0.0" y="6.0"/>
+          <point x="8.0" y="1.0"/>
+          <point x="16.0" y="6.0"/>
+          <point x="8.0" y="11.0"/>
+        </member>
+        <size width="16.0" height="12.0"/>
+        <reference x="16.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="endSolidDiamondOpenArrow">
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <point x="12.0" y="6.0"/>
+          <point x="20.0" y="1.0"/>
+          <point x="28.0" y="6.0"/>
+          <point x="20.0" y="11.0"/>
+        </member>
+        <member xsi:type="dg:Polyline">
+          <point x="1.0" y="1.0"/>
+          <point x="12.0" y="6.0"/>
+          <point x="1.0" y="11.0"/>
+        </member>
+        <size width="28.0" height="12.0"/>
+        <reference x="28.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="endHollowDiamondOpenArrow">
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#FFFFFF"/>
+          </style>
+          <point x="12.0" y="6.0"/>
+          <point x="20.0" y="1.0"/>
+          <point x="28.0" y="6.0"/>
+          <point x="20.0" y="11.0"/>
+        </member>
+        <member xsi:type="dg:Polyline">
+          <point x="1.0" y="1.0"/>
+          <point x="12.0" y="6.0"/>
+          <point x="1.0" y="11.0"/>
+        </member>
+        <size width="28.0" height="12.0"/>
+        <reference x="28.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="endSolidCircleSolidDiamondOpenArrow">
+        <member xsi:type="dg:Circle" radius="3.0">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <center x="32.0" y="6.0"/>
+        </member>
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <point x="12.0" y="6.0"/>
+          <point x="20.0" y="1.0"/>
+          <point x="28.0" y="6.0"/>
+          <point x="20.0" y="11.0"/>
+        </member>
+        <member xsi:type="dg:Polyline">
+          <point x="1.0" y="1.0"/>
+          <point x="12.0" y="6.0"/>
+          <point x="1.0" y="11.0"/>
+        </member>
+        <size width="36.0" height="12.0"/>
+        <reference x="36.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="endSolidCircleHollowDiamondOpenArrow">
+        <member xsi:type="dg:Circle" radius="3.0">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <center x="32.0" y="6.0"/>
+        </member>
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#FFFFFF"/>
+          </style>
+          <point x="12.0" y="6.0"/>
+          <point x="20.0" y="1.0"/>
+          <point x="28.0" y="6.0"/>
+          <point x="20.0" y="11.0"/>
+        </member>
+        <member xsi:type="dg:Polyline">
+          <point x="1.0" y="1.0"/>
+          <point x="12.0" y="6.0"/>
+          <point x="1.0" y="11.0"/>
+        </member>
+        <size width="36.0" height="12.0"/>
+        <reference x="36.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="startPlusCircle">
+        <member xsi:type="dg:Circle" radius="8.0">
+          <style>
+            <fill color="#FFFFFF"/>
+          </style>
+          <center x="9.0" y="9.0"/>
+        </member>
+        <member xsi:type="dg:Path">
+          <command xsi:type="dg:MoveTo">
+            <point x="0.0" y="9.0"/>
+          </command>
+          <command xsi:type="dg:LineTo">
+            <point x="17.0" y="9.0"/>
+          </command>
+          <command xsi:type="dg:MoveTo">
+            <point x="9.0" y="0.0"/>
+          </command>
+          <command xsi:type="dg:LineTo">
+            <point x="9.0" y="17.0"/>
+          </command>
+        </member>
+        <size width="18.0" height="18.0"/>
+        <reference x="0.0" y="9.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="startOpenArrow">
+        <member xsi:type="dg:Polyline">
+          <point x="11.0" y="1.0"/>
+          <point x="1.0" y="6.0"/>
+          <point x="11.0" y="11.0"/>
+        </member>
+        <size width="12.0" height="12.0"/>
+        <reference x="0.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="startSolidCircleOpenArrow">
+        <member xsi:type="dg:Circle" radius="3.0">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <center x="4.0" y="6.0"/>
+        </member>
+        <member xsi:type="dg:Polyline">
+          <point x="19.0" y="1.0"/>
+          <point x="8.0" y="6.0"/>
+          <point x="19.0" y="11.0"/>
+        </member>
+        <size width="20.0" height="12.0"/>
+        <reference x="0.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="startSolidDiamond">
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <point x="0.0" y="6.0"/>
+          <point x="8.0" y="1.0"/>
+          <point x="16.0" y="6.0"/>
+          <point x="8.0" y="11.0"/>
+        </member>
+        <size width="16.0" height="12.0"/>
+        <reference x="0.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="startHollowDiamond">
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#FFFFFF"/>
+          </style>
+          <point x="0.0" y="6.0"/>
+          <point x="8.0" y="1.0"/>
+          <point x="16.0" y="6.0"/>
+          <point x="8.0" y="11.0"/>
+        </member>
+        <size width="16.0" height="12.0"/>
+        <reference x="0.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="startSolidDiamondOpenArrow">
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <point x="0.0" y="6.0"/>
+          <point x="8.0" y="1.0"/>
+          <point x="16.0" y="6.0"/>
+          <point x="8.0" y="11.0"/>
+        </member>
+        <member xsi:type="dg:Polyline">
+          <point x="27.0" y="1.0"/>
+          <point x="16.0" y="6.0"/>
+          <point x="27.0" y="11.0"/>
+        </member>
+        <size width="28.0" height="12.0"/>
+        <reference x="0.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="startHollowDiamondOpenArrow">
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#FFFFFF"/>
+          </style>
+          <point x="0.0" y="6.0"/>
+          <point x="8.0" y="1.0"/>
+          <point x="16.0" y="6.0"/>
+          <point x="8.0" y="11.0"/>
+        </member>
+        <member xsi:type="dg:Polyline">
+          <point x="27.0" y="1.0"/>
+          <point x="16.0" y="6.0"/>
+          <point x="27.0" y="11.0"/>
+        </member>
+        <size width="28.0" height="12.0"/>
+        <reference x="0.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="startSolidCircleSolidDiamondOpenArrow">
+        <member xsi:type="dg:Circle" radius="3.0">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <center x="4.0" y="6.0"/>
+        </member>
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <point x="8.0" y="6.0"/>
+          <point x="16.0" y="1.0"/>
+          <point x="24.0" y="6.0"/>
+          <point x="16.0" y="11.0"/>
+        </member>
+        <member xsi:type="dg:Polyline">
+          <point x="35.0" y="1.0"/>
+          <point x="24.0" y="6.0"/>
+          <point x="35.0" y="11.0"/>
+        </member>
+        <size width="36.0" height="12.0"/>
+        <reference x="0.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="startSolidCircleHollowDiamondOpenArrow">
+        <member xsi:type="dg:Circle" radius="3.0">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <center x="4.0" y="6.0"/>
+        </member>
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#FFFFFF"/>
+          </style>
+          <point x="8.0" y="6.0"/>
+          <point x="16.0" y="1.0"/>
+          <point x="24.0" y="6.0"/>
+          <point x="16.0" y="11.0"/>
+        </member>
+        <member xsi:type="dg:Polyline">
+          <point x="35.0" y="1.0"/>
+          <point x="24.0" y="6.0"/>
+          <point x="35.0" y="11.0"/>
+        </member>
+        <size width="36.0" height="12.0"/>
+        <reference x="0.0" y="6.0"/>
+      </definition>
+      <styleSheet>
+        <rule>
+          <selector kind="canvas"/>
+          <style>
+            <fill color="#FFFFFF"/>
+            <stroke color="#000000"/>
+          </style>
+        </rule>
+        <rule>
+          <selector kind="path"/>
+          <selector kind="polyline"/>
+          <style>
+            <fill xsi:nil="true"/>
+          </style>
+        </rule>
+        <rule>
+          <selector kind="text"/>
+          <style>
+            <fill color="#000000"/>
+            <stroke xsi:nil="true"/>
+          </style>
+        </rule>
+        <rule>
+          <selector>
+            <class>underlined</class>
+          </selector>
+          <style fontDecoration="underline"/>
+        </rule>
+        <rule>
+          <selector>
+            <class>dashed</class>
+          </selector>
+          <style>
+            <strokeDashLength>5.0</strokeDashLength>
+            <strokeDashLength>5.0</strokeDashLength>
+          </style>
+        </rule>
+        <rule>
+          <selector>
+            <class>dotted</class>
+          </selector>
+          <style>
+            <strokeDashLength>3.0</strokeDashLength>
+            <strokeDashLength>2.0</strokeDashLength>
+          </style>
+        </rule>
+        <rule>
+          <selector>
+            <class>filled</class>
+          </selector>
+          <style>
+            <fill color="#000000"/>
+          </style>
+        </rule>
+      </styleSheet>
+    </definitions>
+    <script>platform:/plugin/org.eclipse.papyrus.umldi2dg/scripts/UmlLayouts.js</script>
+  </dg:RootCanvas>
+  <dg:RootCanvas id="Classifiers">
+    <member xsi:type="dg:Group"/>
+    <member xsi:type="dg:Group">
+      <style fontSize="11.0" fontName="Lucida Grande"/>
+      <member xsi:type="dg:Rectangle">
+        <bounds x="20.0" y="20.0" width="181.0" height="100.0"/>
+      </member>
+      <member xsi:type="dg:Group">
+        <member xsi:type="dg:Line">
+          <start x="20.0" y="72.0"/>
+          <end x="201.0" y="72.0"/>
+        </member>
+        <member xsi:type="dg:Text" data="+ Operation1  ()">
+          <style fontSize="11.0" fontName="Lucida Grande"/>
+          <bounds x="25.0" y="74.0" width="171.0" height="13.0"/>
+        </member>
+        <member xsi:type="dg:Text" data="+ Operation2  () : String [0..1]">
+          <style fontSize="11.0" fontName="Lucida Grande"/>
+          <bounds x="25.0" y="87.0" width="171.0" height="13.0"/>
+        </member>
+      </member>
+      <member xsi:type="dg:Group">
+        <member xsi:type="dg:Line">
+          <start x="20.0" y="37.0"/>
+          <end x="201.0" y="37.0"/>
+        </member>
+        <member xsi:type="dg:Text" data="+ Attribute1 : Integer [1]">
+          <style fontSize="11.0" fontName="Lucida Grande"/>
+          <bounds x="25.0" y="39.0" width="171.0" height="13.0"/>
+        </member>
+      </member>
+      <member xsi:type="dg:Text" data="Class1" anchor="middle">
+        <bounds x="23.0" y="23.0" width="181.0" height="13.0"/>
+      </member>
+    </member>
+    <member xsi:type="dg:Group">
+      <style fontSize="11.0" fontName="Lucida Grande"/>
+      <member xsi:type="dg:Rectangle">
+        <bounds x="463.0" y="20.0" width="178.0" height="107.0"/>
+      </member>
+      <member xsi:type="dg:Group">
+        <member xsi:type="dg:Line">
+          <start x="463.0" y="80.0"/>
+          <end x="641.0" y="80.0"/>
+        </member>
+        <member xsi:type="dg:Text" data="# Operation4  (in p : String)">
+          <style fontSize="11.0" fontName="Lucida Grande"/>
+          <bounds x="468.0" y="82.0" width="168.0" height="13.0"/>
+        </member>
+      </member>
+      <member xsi:type="dg:Group">
+        <member xsi:type="dg:Line">
+          <start x="463.0" y="51.0"/>
+          <end x="641.0" y="51.0"/>
+        </member>
+        <member xsi:type="dg:Text" data="+ /Attribute3 : String [0..1]">
+          <style fontSize="11.0" fontName="Lucida Grande"/>
+          <bounds x="468.0" y="53.0" width="168.0" height="13.0"/>
+        </member>
+      </member>
+      <member xsi:type="dg:Text" data="&#xab;component&#xbb;\nComponent1" anchor="middle">
+        <bounds x="466.0" y="23.0" width="178.0" height="27.0"/>
+      </member>
+    </member>
+    <member xsi:type="dg:Group">
+      <style fontSize="11.0" fontName="Lucida Grande"/>
+      <member xsi:type="dg:Rectangle">
+        <bounds x="220.0" y="20.0" width="221.0" height="100.0"/>
+      </member>
+      <member xsi:type="dg:Group">
+        <member xsi:type="dg:Line">
+          <start x="220.0" y="51.0"/>
+          <end x="441.0" y="51.0"/>
+        </member>
+        <member xsi:type="dg:Text" data="~ Attribute4 : Real [1..*]">
+          <style fontSize="11.0" fontName="Lucida Grande"/>
+          <bounds x="225.0" y="53.0" width="211.0" height="13.0"/>
+        </member>
+      </member>
+      <member xsi:type="dg:Group">
+        <member xsi:type="dg:Line">
+          <start x="220.0" y="89.0"/>
+          <end x="441.0" y="89.0"/>
+        </member>
+        <member xsi:type="dg:Text" data="+ Operation5  (out p : Real [0..1])">
+          <style fontSize="11.0" fontName="Lucida Grande"/>
+          <bounds x="225.0" y="91.0" width="211.0" height="13.0"/>
+        </member>
+      </member>
+      <member xsi:type="dg:Text" data="&#xab;datatype&#xbb;\nDataType1" anchor="middle">
+        <bounds x="223.0" y="23.0" width="221.0" height="27.0"/>
+      </member>
+    </member>
+    <member xsi:type="dg:Group">
+      <style fontSize="11.0" fontName="Lucida Grande"/>
+      <member xsi:type="dg:Rectangle">
+        <bounds x="180.0" y="260.0" width="118.0" height="100.0"/>
+      </member>
+      <member xsi:type="dg:Group">
+        <member xsi:type="dg:Line">
+          <start x="180.0" y="291.0"/>
+          <end x="298.0" y="291.0"/>
+        </member>
+        <member xsi:type="dg:Text" data="EnumerationLiteral1">
+          <class>underlined</class>
+          <style fontSize="11.0" fontName="Lucida Grande"/>
+          <bounds x="185.0" y="293.0" width="108.0" height="13.0"/>
+        </member>
+        <member xsi:type="dg:Text" data="EnumerationLiteral2">
+          <class>underlined</class>
+          <style fontSize="11.0" fontName="Lucida Grande"/>
+          <bounds x="185.0" y="306.0" width="108.0" height="13.0"/>
+        </member>
+      </member>
+      <member xsi:type="dg:Text" data="&#xab;enumeration&#xbb;\nEnumeration1" anchor="middle">
+        <bounds x="183.0" y="263.0" width="118.0" height="27.0"/>
+      </member>
+    </member>
+    <member xsi:type="dg:Group">
+      <style fontSize="11.0" fontName="Lucida Grande"/>
+      <member xsi:type="dg:Rectangle">
+        <bounds x="20.0" y="140.0" width="281.0" height="100.0"/>
+      </member>
+      <member xsi:type="dg:Text" data="&#xab;interface&#xbb;\nInterface1" anchor="middle">
+        <bounds x="23.0" y="143.0" width="281.0" height="27.0"/>
+      </member>
+      <member xsi:type="dg:Group">
+        <member xsi:type="dg:Line">
+          <start x="20.0" y="209.0"/>
+          <end x="301.0" y="209.0"/>
+        </member>
+        <member xsi:type="dg:Text" data="+ &#xab;signal&#xbb; Signal1  (in Attribute7 : Real [3..4])">
+          <style fontSize="11.0" fontName="Lucida Grande"/>
+          <bounds x="25.0" y="211.0" width="271.0" height="13.0"/>
+        </member>
+      </member>
+      <member xsi:type="dg:Group">
+        <member xsi:type="dg:Line">
+          <start x="20.0" y="171.0"/>
+          <end x="301.0" y="171.0"/>
+        </member>
+        <member xsi:type="dg:Text" data="- Attribute2 : Boolean [*]">
+          <style fontSize="11.0" fontName="Lucida Grande"/>
+          <bounds x="25.0" y="173.0" width="271.0" height="13.0"/>
+        </member>
+      </member>
+    </member>
+    <member xsi:type="dg:Group">
+      <style fontSize="11.0" fontName="Lucida Grande"/>
+      <member xsi:type="dg:Rectangle">
+        <bounds x="320.0" y="142.0" width="241.0" height="119.0"/>
+      </member>
+      <member xsi:type="dg:Text" data="&#xab;primitive&#xbb;\nPrimitiveType1" anchor="middle">
+        <bounds x="323.0" y="145.0" width="241.0" height="27.0"/>
+      </member>
+      <member xsi:type="dg:Group">
+        <member xsi:type="dg:Line">
+          <start x="320.0" y="173.0"/>
+          <end x="561.0" y="173.0"/>
+        </member>
+        <member xsi:type="dg:Text" data="+ Attribute5 [2..2]">
+          <style fontSize="11.0" fontName="Lucida Grande"/>
+          <bounds x="325.0" y="175.0" width="231.0" height="13.0"/>
+        </member>
+        <member xsi:type="dg:Text" data="+ Attribute6 : Integer [1] = 5">
+          <style fontSize="11.0" fontName="Lucida Grande"/>
+          <bounds x="325.0" y="188.0" width="231.0" height="13.0"/>
+        </member>
+        <member xsi:type="dg:Text" data="+ Attribute7 : String [1]">
+          <style fontSize="11.0" fontName="Lucida Grande"/>
+          <bounds x="325.0" y="201.0" width="231.0" height="13.0"/>
+        </member>
+      </member>
+      <member xsi:type="dg:Group">
+        <member xsi:type="dg:Line">
+          <start x="320.0" y="236.0"/>
+          <end x="561.0" y="236.0"/>
+        </member>
+        <member xsi:type="dg:Text" data="+ Operation6  (inout p : String) : Real">
+          <style fontSize="11.0" fontName="Lucida Grande"/>
+          <bounds x="325.0" y="238.0" width="231.0" height="13.0"/>
+        </member>
+      </member>
+    </member>
+    <member xsi:type="dg:Group">
+      <style fontSize="11.0" fontName="Lucida Grande"/>
+      <member xsi:type="dg:Rectangle">
+        <bounds x="20.0" y="260.0" width="141.0" height="100.0"/>
+      </member>
+      <member xsi:type="dg:Group">
+        <member xsi:type="dg:Line">
+          <start x="20.0" y="291.0"/>
+          <end x="161.0" y="291.0"/>
+        </member>
+        <member xsi:type="dg:Text" data="+ Attribute7 : Real [3..4]">
+          <style fontSize="11.0" fontName="Lucida Grande"/>
+          <bounds x="25.0" y="293.0" width="131.0" height="13.0"/>
+        </member>
+      </member>
+      <member xsi:type="dg:Text" data="&#xab;signal&#xbb;\nSignal1" anchor="middle">
+        <bounds x="23.0" y="263.0" width="141.0" height="27.0"/>
+      </member>
+    </member>
+    <definitions>
+      <definition xsi:type="dg:Marker" id="endHollowClosedArrow">
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#FFFFFF"/>
+          </style>
+          <point x="1.0" y="1.0"/>
+          <point x="12.0" y="6.0"/>
+          <point x="1.0" y="11.0"/>
+        </member>
+        <size width="12.0" height="12.0"/>
+        <reference x="12.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="endSolidClosedArrow">
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <point x="1.0" y="1.0"/>
+          <point x="12.0" y="6.0"/>
+          <point x="1.0" y="11.0"/>
+        </member>
+        <size width="12.0" height="12.0"/>
+        <reference x="12.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="endOpenArrow">
+        <member xsi:type="dg:Polyline">
+          <point x="1.0" y="1.0"/>
+          <point x="12.0" y="6.0"/>
+          <point x="1.0" y="11.0"/>
+        </member>
+        <size width="12.0" height="12.0"/>
+        <reference x="12.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="endSolidCircleOpenArrow">
+        <member xsi:type="dg:Circle" radius="3.0">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <center x="16.0" y="6.0"/>
+        </member>
+        <member xsi:type="dg:Polyline">
+          <point x="1.0" y="1.0"/>
+          <point x="12.0" y="6.0"/>
+          <point x="1.0" y="11.0"/>
+        </member>
+        <size width="20.0" height="12.0"/>
+        <reference x="20.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="endSolidDiamond">
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <point x="0.0" y="6.0"/>
+          <point x="8.0" y="1.0"/>
+          <point x="16.0" y="6.0"/>
+          <point x="8.0" y="11.0"/>
+        </member>
+        <size width="16.0" height="12.0"/>
+        <reference x="16.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="endHollowDiamond">
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#FFFFFF"/>
+          </style>
+          <point x="0.0" y="6.0"/>
+          <point x="8.0" y="1.0"/>
+          <point x="16.0" y="6.0"/>
+          <point x="8.0" y="11.0"/>
+        </member>
+        <size width="16.0" height="12.0"/>
+        <reference x="16.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="endSolidDiamondOpenArrow">
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <point x="12.0" y="6.0"/>
+          <point x="20.0" y="1.0"/>
+          <point x="28.0" y="6.0"/>
+          <point x="20.0" y="11.0"/>
+        </member>
+        <member xsi:type="dg:Polyline">
+          <point x="1.0" y="1.0"/>
+          <point x="12.0" y="6.0"/>
+          <point x="1.0" y="11.0"/>
+        </member>
+        <size width="28.0" height="12.0"/>
+        <reference x="28.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="endHollowDiamondOpenArrow">
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#FFFFFF"/>
+          </style>
+          <point x="12.0" y="6.0"/>
+          <point x="20.0" y="1.0"/>
+          <point x="28.0" y="6.0"/>
+          <point x="20.0" y="11.0"/>
+        </member>
+        <member xsi:type="dg:Polyline">
+          <point x="1.0" y="1.0"/>
+          <point x="12.0" y="6.0"/>
+          <point x="1.0" y="11.0"/>
+        </member>
+        <size width="28.0" height="12.0"/>
+        <reference x="28.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="endSolidCircleSolidDiamondOpenArrow">
+        <member xsi:type="dg:Circle" radius="3.0">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <center x="32.0" y="6.0"/>
+        </member>
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <point x="12.0" y="6.0"/>
+          <point x="20.0" y="1.0"/>
+          <point x="28.0" y="6.0"/>
+          <point x="20.0" y="11.0"/>
+        </member>
+        <member xsi:type="dg:Polyline">
+          <point x="1.0" y="1.0"/>
+          <point x="12.0" y="6.0"/>
+          <point x="1.0" y="11.0"/>
+        </member>
+        <size width="36.0" height="12.0"/>
+        <reference x="36.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="endSolidCircleHollowDiamondOpenArrow">
+        <member xsi:type="dg:Circle" radius="3.0">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <center x="32.0" y="6.0"/>
+        </member>
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#FFFFFF"/>
+          </style>
+          <point x="12.0" y="6.0"/>
+          <point x="20.0" y="1.0"/>
+          <point x="28.0" y="6.0"/>
+          <point x="20.0" y="11.0"/>
+        </member>
+        <member xsi:type="dg:Polyline">
+          <point x="1.0" y="1.0"/>
+          <point x="12.0" y="6.0"/>
+          <point x="1.0" y="11.0"/>
+        </member>
+        <size width="36.0" height="12.0"/>
+        <reference x="36.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="startPlusCircle">
+        <member xsi:type="dg:Circle" radius="8.0">
+          <style>
+            <fill color="#FFFFFF"/>
+          </style>
+          <center x="9.0" y="9.0"/>
+        </member>
+        <member xsi:type="dg:Path">
+          <command xsi:type="dg:MoveTo">
+            <point x="0.0" y="9.0"/>
+          </command>
+          <command xsi:type="dg:LineTo">
+            <point x="17.0" y="9.0"/>
+          </command>
+          <command xsi:type="dg:MoveTo">
+            <point x="9.0" y="0.0"/>
+          </command>
+          <command xsi:type="dg:LineTo">
+            <point x="9.0" y="17.0"/>
+          </command>
+        </member>
+        <size width="18.0" height="18.0"/>
+        <reference x="0.0" y="9.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="startOpenArrow">
+        <member xsi:type="dg:Polyline">
+          <point x="11.0" y="1.0"/>
+          <point x="1.0" y="6.0"/>
+          <point x="11.0" y="11.0"/>
+        </member>
+        <size width="12.0" height="12.0"/>
+        <reference x="0.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="startSolidCircleOpenArrow">
+        <member xsi:type="dg:Circle" radius="3.0">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <center x="4.0" y="6.0"/>
+        </member>
+        <member xsi:type="dg:Polyline">
+          <point x="19.0" y="1.0"/>
+          <point x="8.0" y="6.0"/>
+          <point x="19.0" y="11.0"/>
+        </member>
+        <size width="20.0" height="12.0"/>
+        <reference x="0.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="startSolidDiamond">
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <point x="0.0" y="6.0"/>
+          <point x="8.0" y="1.0"/>
+          <point x="16.0" y="6.0"/>
+          <point x="8.0" y="11.0"/>
+        </member>
+        <size width="16.0" height="12.0"/>
+        <reference x="0.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="startHollowDiamond">
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#FFFFFF"/>
+          </style>
+          <point x="0.0" y="6.0"/>
+          <point x="8.0" y="1.0"/>
+          <point x="16.0" y="6.0"/>
+          <point x="8.0" y="11.0"/>
+        </member>
+        <size width="16.0" height="12.0"/>
+        <reference x="0.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="startSolidDiamondOpenArrow">
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <point x="0.0" y="6.0"/>
+          <point x="8.0" y="1.0"/>
+          <point x="16.0" y="6.0"/>
+          <point x="8.0" y="11.0"/>
+        </member>
+        <member xsi:type="dg:Polyline">
+          <point x="27.0" y="1.0"/>
+          <point x="16.0" y="6.0"/>
+          <point x="27.0" y="11.0"/>
+        </member>
+        <size width="28.0" height="12.0"/>
+        <reference x="0.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="startHollowDiamondOpenArrow">
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#FFFFFF"/>
+          </style>
+          <point x="0.0" y="6.0"/>
+          <point x="8.0" y="1.0"/>
+          <point x="16.0" y="6.0"/>
+          <point x="8.0" y="11.0"/>
+        </member>
+        <member xsi:type="dg:Polyline">
+          <point x="27.0" y="1.0"/>
+          <point x="16.0" y="6.0"/>
+          <point x="27.0" y="11.0"/>
+        </member>
+        <size width="28.0" height="12.0"/>
+        <reference x="0.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="startSolidCircleSolidDiamondOpenArrow">
+        <member xsi:type="dg:Circle" radius="3.0">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <center x="4.0" y="6.0"/>
+        </member>
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <point x="8.0" y="6.0"/>
+          <point x="16.0" y="1.0"/>
+          <point x="24.0" y="6.0"/>
+          <point x="16.0" y="11.0"/>
+        </member>
+        <member xsi:type="dg:Polyline">
+          <point x="35.0" y="1.0"/>
+          <point x="24.0" y="6.0"/>
+          <point x="35.0" y="11.0"/>
+        </member>
+        <size width="36.0" height="12.0"/>
+        <reference x="0.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="startSolidCircleHollowDiamondOpenArrow">
+        <member xsi:type="dg:Circle" radius="3.0">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <center x="4.0" y="6.0"/>
+        </member>
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#FFFFFF"/>
+          </style>
+          <point x="8.0" y="6.0"/>
+          <point x="16.0" y="1.0"/>
+          <point x="24.0" y="6.0"/>
+          <point x="16.0" y="11.0"/>
+        </member>
+        <member xsi:type="dg:Polyline">
+          <point x="35.0" y="1.0"/>
+          <point x="24.0" y="6.0"/>
+          <point x="35.0" y="11.0"/>
+        </member>
+        <size width="36.0" height="12.0"/>
+        <reference x="0.0" y="6.0"/>
+      </definition>
+      <styleSheet>
+        <rule>
+          <selector kind="canvas"/>
+          <style>
+            <fill color="#FFFFFF"/>
+            <stroke color="#000000"/>
+          </style>
+        </rule>
+        <rule>
+          <selector kind="path"/>
+          <selector kind="polyline"/>
+          <style>
+            <fill xsi:nil="true"/>
+          </style>
+        </rule>
+        <rule>
+          <selector kind="text"/>
+          <style>
+            <fill color="#000000"/>
+            <stroke xsi:nil="true"/>
+          </style>
+        </rule>
+        <rule>
+          <selector>
+            <class>underlined</class>
+          </selector>
+          <style fontDecoration="underline"/>
+        </rule>
+        <rule>
+          <selector>
+            <class>dashed</class>
+          </selector>
+          <style>
+            <strokeDashLength>5.0</strokeDashLength>
+            <strokeDashLength>5.0</strokeDashLength>
+          </style>
+        </rule>
+        <rule>
+          <selector>
+            <class>dotted</class>
+          </selector>
+          <style>
+            <strokeDashLength>3.0</strokeDashLength>
+            <strokeDashLength>2.0</strokeDashLength>
+          </style>
+        </rule>
+        <rule>
+          <selector>
+            <class>filled</class>
+          </selector>
+          <style>
+            <fill color="#000000"/>
+          </style>
+        </rule>
+      </styleSheet>
+    </definitions>
+    <script>platform:/plugin/org.eclipse.papyrus.umldi2dg/scripts/UmlLayouts.js</script>
+  </dg:RootCanvas>
+  <dg:RootCanvas id="Constraints">
+    <member xsi:type="dg:Group"/>
+    <member xsi:type="dg:Group">
+      <style fontSize="11.0" fontName="Lucida Grande"/>
+      <member xsi:type="dg:Rectangle">
+        <bounds x="74.0" y="62.0" width="100.0" height="40.0"/>
+      </member>
+      <member xsi:type="dg:Text" data="Class2" anchor="middle">
+        <bounds x="77.0" y="75.0" width="100.0" height="13.0"/>
+      </member>
+    </member>
+    <member xsi:type="dg:Group">
+      <style fontSize="11.0" fontName="Lucida Grande"/>
+      <member xsi:type="dg:Path">
+        <command xsi:type="dg:MoveTo">
+          <point x="373.0" y="50.0"/>
+        </command>
+        <command xsi:type="dg:LineTo">
+          <point x="492.0" y="50.0"/>
+        </command>
+        <command xsi:type="dg:LineTo">
+          <point x="502.0" y="60.0"/>
+        </command>
+        <command xsi:type="dg:LineTo">
+          <point x="502.0" y="110.0"/>
+        </command>
+        <command xsi:type="dg:LineTo">
+          <point x="373.0" y="110.0"/>
+        </command>
+        <command xsi:type="dg:LineTo">
+          <point x="373.0" y="50.0"/>
+        </command>
+        <command xsi:type="dg:MoveTo">
+          <point x="492.0" y="50.0"/>
+        </command>
+        <command xsi:type="dg:LineTo">
+          <point x="492.0" y="60.0"/>
+        </command>
+        <command xsi:type="dg:LineTo">
+          <point x="502.0" y="60.0"/>
+        </command>
+      </member>
+      <member xsi:type="dg:Text" data="This is a comment">
+        <bounds x="373.0" y="50.0" width="129.0" height="60.0"/>
+      </member>
+    </member>
+    <member xsi:type="dg:Group">
+      <style fontSize="11.0" fontName="Lucida Grande"/>
+      <member xsi:type="dg:Path">
+        <command xsi:type="dg:MoveTo">
+          <point x="75.0" y="244.0"/>
+        </command>
+        <command xsi:type="dg:LineTo">
+          <point x="165.0" y="244.0"/>
+        </command>
+        <command xsi:type="dg:LineTo">
+          <point x="175.0" y="254.0"/>
+        </command>
+        <command xsi:type="dg:LineTo">
+          <point x="175.0" y="304.0"/>
+        </command>
+        <command xsi:type="dg:LineTo">
+          <point x="75.0" y="304.0"/>
+        </command>
+        <command xsi:type="dg:LineTo">
+          <point x="75.0" y="244.0"/>
+        </command>
+        <command xsi:type="dg:MoveTo">
+          <point x="165.0" y="244.0"/>
+        </command>
+        <command xsi:type="dg:LineTo">
+          <point x="165.0" y="254.0"/>
+        </command>
+        <command xsi:type="dg:LineTo">
+          <point x="175.0" y="254.0"/>
+        </command>
+      </member>
+      <member xsi:type="dg:Text" data="{}">
+        <bounds x="81.0" y="263.0" width="79.0" height="13.0"/>
+      </member>
+      <member xsi:type="dg:Text" data="Constraint1" anchor="middle">
+        <bounds x="81.0" y="250.0" width="79.0" height="13.0"/>
+      </member>
+    </member>
+    <member xsi:type="dg:Group">
+      <style fontSize="11.0" fontName="Lucida Grande"/>
+      <member xsi:type="dg:Path">
+        <command xsi:type="dg:MoveTo">
+          <point x="251.0" y="167.0"/>
+        </command>
+        <command xsi:type="dg:LineTo">
+          <point x="447.0" y="167.0"/>
+        </command>
+        <command xsi:type="dg:LineTo">
+          <point x="457.0" y="177.0"/>
+        </command>
+        <command xsi:type="dg:LineTo">
+          <point x="457.0" y="227.0"/>
+        </command>
+        <command xsi:type="dg:LineTo">
+          <point x="251.0" y="227.0"/>
+        </command>
+        <command xsi:type="dg:LineTo">
+          <point x="251.0" y="167.0"/>
+        </command>
+        <command xsi:type="dg:MoveTo">
+          <point x="447.0" y="167.0"/>
+        </command>
+        <command xsi:type="dg:LineTo">
+          <point x="447.0" y="177.0"/>
+        </command>
+        <command xsi:type="dg:LineTo">
+          <point x="457.0" y="177.0"/>
+        </command>
+      </member>
+      <member xsi:type="dg:Text" data="{self.attribute1.operation2()}">
+        <bounds x="257.0" y="186.0" width="185.0" height="13.0"/>
+      </member>
+      <member xsi:type="dg:Text" data="Constraint2" anchor="middle">
+        <bounds x="257.0" y="173.0" width="185.0" height="13.0"/>
+      </member>
+    </member>
+    <member xsi:type="dg:Group">
+      <style fontSize="11.0" fontName="Lucida Grande"/>
+      <member xsi:type="dg:Path">
+        <class>dotted</class>
+        <command xsi:type="dg:MoveTo">
+          <point x="373.0" y="82.0"/>
+        </command>
+        <command xsi:type="dg:LineTo">
+          <point x="174.0" y="82.0"/>
+        </command>
+      </member>
+    </member>
+    <member xsi:type="dg:Group">
+      <style fontSize="11.0" fontName="Lucida Grande"/>
+      <member xsi:type="dg:Path">
+        <class>dotted</class>
+        <command xsi:type="dg:MoveTo">
+          <point x="124.0" y="244.0"/>
+        </command>
+        <command xsi:type="dg:LineTo">
+          <point x="124.0" y="102.0"/>
+        </command>
+      </member>
+    </member>
+    <member xsi:type="dg:Group">
+      <style fontSize="11.0" fontName="Lucida Grande"/>
+      <member xsi:type="dg:Path">
+        <class>dotted</class>
+        <command xsi:type="dg:MoveTo">
+          <point x="294.0" y="167.0"/>
+        </command>
+        <command xsi:type="dg:LineTo">
+          <point x="164.0" y="102.0"/>
+        </command>
+      </member>
+    </member>
+    <definitions>
+      <definition xsi:type="dg:Marker" id="endHollowClosedArrow">
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#FFFFFF"/>
+          </style>
+          <point x="1.0" y="1.0"/>
+          <point x="12.0" y="6.0"/>
+          <point x="1.0" y="11.0"/>
+        </member>
+        <size width="12.0" height="12.0"/>
+        <reference x="12.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="endSolidClosedArrow">
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <point x="1.0" y="1.0"/>
+          <point x="12.0" y="6.0"/>
+          <point x="1.0" y="11.0"/>
+        </member>
+        <size width="12.0" height="12.0"/>
+        <reference x="12.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="endOpenArrow">
+        <member xsi:type="dg:Polyline">
+          <point x="1.0" y="1.0"/>
+          <point x="12.0" y="6.0"/>
+          <point x="1.0" y="11.0"/>
+        </member>
+        <size width="12.0" height="12.0"/>
+        <reference x="12.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="endSolidCircleOpenArrow">
+        <member xsi:type="dg:Circle" radius="3.0">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <center x="16.0" y="6.0"/>
+        </member>
+        <member xsi:type="dg:Polyline">
+          <point x="1.0" y="1.0"/>
+          <point x="12.0" y="6.0"/>
+          <point x="1.0" y="11.0"/>
+        </member>
+        <size width="20.0" height="12.0"/>
+        <reference x="20.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="endSolidDiamond">
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <point x="0.0" y="6.0"/>
+          <point x="8.0" y="1.0"/>
+          <point x="16.0" y="6.0"/>
+          <point x="8.0" y="11.0"/>
+        </member>
+        <size width="16.0" height="12.0"/>
+        <reference x="16.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="endHollowDiamond">
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#FFFFFF"/>
+          </style>
+          <point x="0.0" y="6.0"/>
+          <point x="8.0" y="1.0"/>
+          <point x="16.0" y="6.0"/>
+          <point x="8.0" y="11.0"/>
+        </member>
+        <size width="16.0" height="12.0"/>
+        <reference x="16.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="endSolidDiamondOpenArrow">
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <point x="12.0" y="6.0"/>
+          <point x="20.0" y="1.0"/>
+          <point x="28.0" y="6.0"/>
+          <point x="20.0" y="11.0"/>
+        </member>
+        <member xsi:type="dg:Polyline">
+          <point x="1.0" y="1.0"/>
+          <point x="12.0" y="6.0"/>
+          <point x="1.0" y="11.0"/>
+        </member>
+        <size width="28.0" height="12.0"/>
+        <reference x="28.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="endHollowDiamondOpenArrow">
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#FFFFFF"/>
+          </style>
+          <point x="12.0" y="6.0"/>
+          <point x="20.0" y="1.0"/>
+          <point x="28.0" y="6.0"/>
+          <point x="20.0" y="11.0"/>
+        </member>
+        <member xsi:type="dg:Polyline">
+          <point x="1.0" y="1.0"/>
+          <point x="12.0" y="6.0"/>
+          <point x="1.0" y="11.0"/>
+        </member>
+        <size width="28.0" height="12.0"/>
+        <reference x="28.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="endSolidCircleSolidDiamondOpenArrow">
+        <member xsi:type="dg:Circle" radius="3.0">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <center x="32.0" y="6.0"/>
+        </member>
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <point x="12.0" y="6.0"/>
+          <point x="20.0" y="1.0"/>
+          <point x="28.0" y="6.0"/>
+          <point x="20.0" y="11.0"/>
+        </member>
+        <member xsi:type="dg:Polyline">
+          <point x="1.0" y="1.0"/>
+          <point x="12.0" y="6.0"/>
+          <point x="1.0" y="11.0"/>
+        </member>
+        <size width="36.0" height="12.0"/>
+        <reference x="36.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="endSolidCircleHollowDiamondOpenArrow">
+        <member xsi:type="dg:Circle" radius="3.0">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <center x="32.0" y="6.0"/>
+        </member>
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#FFFFFF"/>
+          </style>
+          <point x="12.0" y="6.0"/>
+          <point x="20.0" y="1.0"/>
+          <point x="28.0" y="6.0"/>
+          <point x="20.0" y="11.0"/>
+        </member>
+        <member xsi:type="dg:Polyline">
+          <point x="1.0" y="1.0"/>
+          <point x="12.0" y="6.0"/>
+          <point x="1.0" y="11.0"/>
+        </member>
+        <size width="36.0" height="12.0"/>
+        <reference x="36.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="startPlusCircle">
+        <member xsi:type="dg:Circle" radius="8.0">
+          <style>
+            <fill color="#FFFFFF"/>
+          </style>
+          <center x="9.0" y="9.0"/>
+        </member>
+        <member xsi:type="dg:Path">
+          <command xsi:type="dg:MoveTo">
+            <point x="0.0" y="9.0"/>
+          </command>
+          <command xsi:type="dg:LineTo">
+            <point x="17.0" y="9.0"/>
+          </command>
+          <command xsi:type="dg:MoveTo">
+            <point x="9.0" y="0.0"/>
+          </command>
+          <command xsi:type="dg:LineTo">
+            <point x="9.0" y="17.0"/>
+          </command>
+        </member>
+        <size width="18.0" height="18.0"/>
+        <reference x="0.0" y="9.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="startOpenArrow">
+        <member xsi:type="dg:Polyline">
+          <point x="11.0" y="1.0"/>
+          <point x="1.0" y="6.0"/>
+          <point x="11.0" y="11.0"/>
+        </member>
+        <size width="12.0" height="12.0"/>
+        <reference x="0.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="startSolidCircleOpenArrow">
+        <member xsi:type="dg:Circle" radius="3.0">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <center x="4.0" y="6.0"/>
+        </member>
+        <member xsi:type="dg:Polyline">
+          <point x="19.0" y="1.0"/>
+          <point x="8.0" y="6.0"/>
+          <point x="19.0" y="11.0"/>
+        </member>
+        <size width="20.0" height="12.0"/>
+        <reference x="0.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="startSolidDiamond">
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <point x="0.0" y="6.0"/>
+          <point x="8.0" y="1.0"/>
+          <point x="16.0" y="6.0"/>
+          <point x="8.0" y="11.0"/>
+        </member>
+        <size width="16.0" height="12.0"/>
+        <reference x="0.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="startHollowDiamond">
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#FFFFFF"/>
+          </style>
+          <point x="0.0" y="6.0"/>
+          <point x="8.0" y="1.0"/>
+          <point x="16.0" y="6.0"/>
+          <point x="8.0" y="11.0"/>
+        </member>
+        <size width="16.0" height="12.0"/>
+        <reference x="0.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="startSolidDiamondOpenArrow">
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <point x="0.0" y="6.0"/>
+          <point x="8.0" y="1.0"/>
+          <point x="16.0" y="6.0"/>
+          <point x="8.0" y="11.0"/>
+        </member>
+        <member xsi:type="dg:Polyline">
+          <point x="27.0" y="1.0"/>
+          <point x="16.0" y="6.0"/>
+          <point x="27.0" y="11.0"/>
+        </member>
+        <size width="28.0" height="12.0"/>
+        <reference x="0.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="startHollowDiamondOpenArrow">
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#FFFFFF"/>
+          </style>
+          <point x="0.0" y="6.0"/>
+          <point x="8.0" y="1.0"/>
+          <point x="16.0" y="6.0"/>
+          <point x="8.0" y="11.0"/>
+        </member>
+        <member xsi:type="dg:Polyline">
+          <point x="27.0" y="1.0"/>
+          <point x="16.0" y="6.0"/>
+          <point x="27.0" y="11.0"/>
+        </member>
+        <size width="28.0" height="12.0"/>
+        <reference x="0.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="startSolidCircleSolidDiamondOpenArrow">
+        <member xsi:type="dg:Circle" radius="3.0">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <center x="4.0" y="6.0"/>
+        </member>
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <point x="8.0" y="6.0"/>
+          <point x="16.0" y="1.0"/>
+          <point x="24.0" y="6.0"/>
+          <point x="16.0" y="11.0"/>
+        </member>
+        <member xsi:type="dg:Polyline">
+          <point x="35.0" y="1.0"/>
+          <point x="24.0" y="6.0"/>
+          <point x="35.0" y="11.0"/>
+        </member>
+        <size width="36.0" height="12.0"/>
+        <reference x="0.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="startSolidCircleHollowDiamondOpenArrow">
+        <member xsi:type="dg:Circle" radius="3.0">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <center x="4.0" y="6.0"/>
+        </member>
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#FFFFFF"/>
+          </style>
+          <point x="8.0" y="6.0"/>
+          <point x="16.0" y="1.0"/>
+          <point x="24.0" y="6.0"/>
+          <point x="16.0" y="11.0"/>
+        </member>
+        <member xsi:type="dg:Polyline">
+          <point x="35.0" y="1.0"/>
+          <point x="24.0" y="6.0"/>
+          <point x="35.0" y="11.0"/>
+        </member>
+        <size width="36.0" height="12.0"/>
+        <reference x="0.0" y="6.0"/>
+      </definition>
+      <styleSheet>
+        <rule>
+          <selector kind="canvas"/>
+          <style>
+            <fill color="#FFFFFF"/>
+            <stroke color="#000000"/>
+          </style>
+        </rule>
+        <rule>
+          <selector kind="path"/>
+          <selector kind="polyline"/>
+          <style>
+            <fill xsi:nil="true"/>
+          </style>
+        </rule>
+        <rule>
+          <selector kind="text"/>
+          <style>
+            <fill color="#000000"/>
+            <stroke xsi:nil="true"/>
+          </style>
+        </rule>
+        <rule>
+          <selector>
+            <class>underlined</class>
+          </selector>
+          <style fontDecoration="underline"/>
+        </rule>
+        <rule>
+          <selector>
+            <class>dashed</class>
+          </selector>
+          <style>
+            <strokeDashLength>5.0</strokeDashLength>
+            <strokeDashLength>5.0</strokeDashLength>
+          </style>
+        </rule>
+        <rule>
+          <selector>
+            <class>dotted</class>
+          </selector>
+          <style>
+            <strokeDashLength>3.0</strokeDashLength>
+            <strokeDashLength>2.0</strokeDashLength>
+          </style>
+        </rule>
+        <rule>
+          <selector>
+            <class>filled</class>
+          </selector>
+          <style>
+            <fill color="#000000"/>
+          </style>
+        </rule>
+      </styleSheet>
+    </definitions>
+    <script>platform:/plugin/org.eclipse.papyrus.umldi2dg/scripts/UmlLayouts.js</script>
+  </dg:RootCanvas>
+  <dg:RootCanvas id="Dependencies">
+    <member xsi:type="dg:Group"/>
+    <member xsi:type="dg:Group">
+      <style fontSize="11.0" fontName="Lucida Grande"/>
+      <member xsi:type="dg:Rectangle">
+        <bounds x="20.0" y="80.0" width="100.0" height="43.0"/>
+      </member>
+      <member xsi:type="dg:Text" data="Class2" anchor="middle">
+        <bounds x="23.0" y="95.0" width="100.0" height="13.0"/>
+      </member>
+    </member>
+    <member xsi:type="dg:Group">
+      <style fontSize="11.0" fontName="Lucida Grande"/>
+      <member xsi:type="dg:Rectangle">
+        <bounds x="512.0" y="78.0" width="100.0" height="42.0"/>
+      </member>
+      <member xsi:type="dg:Text" data="Class4" anchor="middle">
+        <bounds x="515.0" y="92.0" width="100.0" height="13.0"/>
+      </member>
+    </member>
+    <member xsi:type="dg:Group">
+      <style fontSize="11.0" fontName="Lucida Grande"/>
+      <member xsi:type="dg:Rectangle">
+        <bounds x="260.0" y="80.0" width="100.0" height="43.0"/>
+      </member>
+      <member xsi:type="dg:Text" data="Class3" anchor="middle">
+        <bounds x="263.0" y="95.0" width="100.0" height="13.0"/>
+      </member>
+    </member>
+    <member xsi:type="dg:Group">
+      <style fontSize="11.0" fontName="Lucida Grande"/>
+      <member xsi:type="dg:Rectangle">
+        <bounds x="506.0" y="214.0" width="100.0" height="48.0"/>
+      </member>
+      <member xsi:type="dg:Text" data="&#xab;interface&#xbb;\nInterface1" anchor="middle">
+        <bounds x="509.0" y="225.0" width="100.0" height="27.0"/>
+      </member>
+    </member>
+    <member xsi:type="dg:Group">
+      <style fontSize="11.0" fontName="Lucida Grande"/>
+      <member xsi:type="dg:Rectangle">
+        <bounds x="252.0" y="217.0" width="100.0" height="43.0"/>
+      </member>
+      <member xsi:type="dg:Text" data="Class1" anchor="middle">
+        <bounds x="255.0" y="232.0" width="100.0" height="13.0"/>
+      </member>
+    </member>
+    <member xsi:type="dg:Group">
+      <style fontSize="11.0" fontName="Lucida Grande"/>
+      <member xsi:type="dg:Rectangle">
+        <bounds x="20.0" y="219.0" width="100.0" height="41.0"/>
+      </member>
+      <member xsi:type="dg:Text" data="Class5" anchor="middle">
+        <bounds x="23.0" y="233.0" width="100.0" height="13.0"/>
+      </member>
+    </member>
+    <member xsi:type="dg:Group">
+      <style fontSize="11.0" fontName="Lucida Grande"/>
+      <member xsi:type="dg:Circle" radius="4.0">
+        <class>filled</class>
+        <center x="191.0" y="102.0"/>
+      </member>
+      <member xsi:type="dg:Text" data="Dependency1" anchor="middle">
+        <bounds x="169.0" y="67.0" width="73.0" height="13.0"/>
+      </member>
+    </member>
+    <member xsi:type="dg:Group">
+      <style fontSize="11.0" fontName="Lucida Grande"/>
+      <member xsi:type="dg:Path" endMarker="/3/@definitions/@definition.2">
+        <class>dashed</class>
+        <command xsi:type="dg:MoveTo">
+          <point x="360.0" y="99.0"/>
+        </command>
+        <command xsi:type="dg:LineTo">
+          <point x="512.0" y="99.0"/>
+        </command>
+      </member>
+      <member xsi:type="dg:Text" data="&#xab;use&#xbb;\nUsage1" anchor="middle">
+        <bounds x="413.0" y="58.0" width="31.0" height="13.0"/>
+      </member>
+    </member>
+    <member xsi:type="dg:Group">
+      <style fontSize="11.0" fontName="Lucida Grande"/>
+      <member xsi:type="dg:Path" endMarker="/3/@definitions/@definition.2">
+        <class>dashed</class>
+        <command xsi:type="dg:MoveTo">
+          <point x="556.0" y="120.0"/>
+        </command>
+        <command xsi:type="dg:LineTo">
+          <point x="556.0" y="214.0"/>
+        </command>
+      </member>
+      <member xsi:type="dg:Text" data="&#xab;abstraction&#xbb;\nAbstraction1" anchor="middle">
+        <bounds x="573.0" y="147.0" width="72.0" height="13.0"/>
+      </member>
+    </member>
+    <member xsi:type="dg:Group">
+      <style fontSize="11.0" fontName="Lucida Grande"/>
+      <member xsi:type="dg:Path" endMarker="/3/@definitions/@definition.0">
+        <class>dashed</class>
+        <command xsi:type="dg:MoveTo">
+          <point x="310.0" y="217.0"/>
+        </command>
+        <command xsi:type="dg:LineTo">
+          <point x="310.0" y="123.0"/>
+        </command>
+      </member>
+      <member xsi:type="dg:Text" data="Realization1" anchor="middle">
+        <bounds x="328.0" y="168.0" width="66.0" height="13.0"/>
+      </member>
+    </member>
+    <member xsi:type="dg:Group">
+      <style fontSize="11.0" fontName="Lucida Grande"/>
+      <member xsi:type="dg:Path" endMarker="/3/@definitions/@definition.0">
+        <class>dashed</class>
+        <command xsi:type="dg:MoveTo">
+          <point x="352.0" y="238.0"/>
+        </command>
+        <command xsi:type="dg:LineTo">
+          <point x="506.0" y="238.0"/>
+        </command>
+      </member>
+      <member xsi:type="dg:Text" data="InterfaceRealization1" anchor="middle">
+        <bounds x="373.0" y="249.0" width="113.0" height="13.0"/>
+      </member>
+    </member>
+    <member xsi:type="dg:Group">
+      <style fontSize="11.0" fontName="Lucida Grande"/>
+      <member xsi:type="dg:Path" endMarker="/3/@definitions/@definition.2">
+        <class>dashed</class>
+        <command xsi:type="dg:MoveTo">
+          <point x="512.0" y="119.0"/>
+        </command>
+        <command xsi:type="dg:LineTo">
+          <point x="352.0" y="224.0"/>
+        </command>
+      </member>
+      <member xsi:type="dg:Text" data="&#xab;substitute&#xbb;\nSubstitution1" anchor="middle">
+        <bounds x="440.0" y="170.0" width="72.0" height="13.0"/>
+      </member>
+    </member>
+    <member xsi:type="dg:Group">
+      <style fontSize="11.0" fontName="Lucida Grande"/>
+      <member xsi:type="dg:Path">
+        <class>dashed</class>
+        <command xsi:type="dg:MoveTo">
+          <point x="120.0" y="100.0"/>
+        </command>
+        <command xsi:type="dg:LineTo">
+          <point x="194.0" y="100.0"/>
+        </command>
+      </member>
+    </member>
+    <member xsi:type="dg:Group">
+      <style fontSize="11.0" fontName="Lucida Grande"/>
+      <member xsi:type="dg:Path" endMarker="/3/@definitions/@definition.2">
+        <class>dashed</class>
+        <command xsi:type="dg:MoveTo">
+          <point x="194.0" y="100.0"/>
+        </command>
+        <command xsi:type="dg:LineTo">
+          <point x="260.0" y="100.0"/>
+        </command>
+      </member>
+    </member>
+    <member xsi:type="dg:Group">
+      <style fontSize="11.0" fontName="Lucida Grande"/>
+      <member xsi:type="dg:Path" endMarker="/3/@definitions/@definition.2">
+        <class>dashed</class>
+        <command xsi:type="dg:MoveTo">
+          <point x="192.0" y="108.0"/>
+        </command>
+        <command xsi:type="dg:LineTo">
+          <point x="192.0" y="161.0"/>
+        </command>
+        <command xsi:type="dg:LineTo">
+          <point x="84.0" y="161.0"/>
+        </command>
+        <command xsi:type="dg:LineTo">
+          <point x="84.0" y="219.0"/>
+        </command>
+      </member>
+    </member>
+    <member xsi:type="dg:Group">
+      <style fontSize="11.0" fontName="Lucida Grande"/>
+      <member xsi:type="dg:Path" endMarker="/3/@definitions/@definition.2">
+        <class>dashed</class>
+        <command xsi:type="dg:MoveTo">
+          <point x="120.0" y="238.0"/>
+        </command>
+        <command xsi:type="dg:LineTo">
+          <point x="252.0" y="238.0"/>
+        </command>
+      </member>
+      <member xsi:type="dg:Text" data="Dependency2" anchor="middle">
+        <bounds x="140.0" y="260.0" width="73.0" height="13.0"/>
+      </member>
+    </member>
+    <definitions>
+      <definition xsi:type="dg:Marker" id="endHollowClosedArrow">
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#FFFFFF"/>
+          </style>
+          <point x="1.0" y="1.0"/>
+          <point x="12.0" y="6.0"/>
+          <point x="1.0" y="11.0"/>
+        </member>
+        <size width="12.0" height="12.0"/>
+        <reference x="12.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="endSolidClosedArrow">
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <point x="1.0" y="1.0"/>
+          <point x="12.0" y="6.0"/>
+          <point x="1.0" y="11.0"/>
+        </member>
+        <size width="12.0" height="12.0"/>
+        <reference x="12.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="endOpenArrow">
+        <member xsi:type="dg:Polyline">
+          <point x="1.0" y="1.0"/>
+          <point x="12.0" y="6.0"/>
+          <point x="1.0" y="11.0"/>
+        </member>
+        <size width="12.0" height="12.0"/>
+        <reference x="12.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="endSolidCircleOpenArrow">
+        <member xsi:type="dg:Circle" radius="3.0">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <center x="16.0" y="6.0"/>
+        </member>
+        <member xsi:type="dg:Polyline">
+          <point x="1.0" y="1.0"/>
+          <point x="12.0" y="6.0"/>
+          <point x="1.0" y="11.0"/>
+        </member>
+        <size width="20.0" height="12.0"/>
+        <reference x="20.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="endSolidDiamond">
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <point x="0.0" y="6.0"/>
+          <point x="8.0" y="1.0"/>
+          <point x="16.0" y="6.0"/>
+          <point x="8.0" y="11.0"/>
+        </member>
+        <size width="16.0" height="12.0"/>
+        <reference x="16.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="endHollowDiamond">
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#FFFFFF"/>
+          </style>
+          <point x="0.0" y="6.0"/>
+          <point x="8.0" y="1.0"/>
+          <point x="16.0" y="6.0"/>
+          <point x="8.0" y="11.0"/>
+        </member>
+        <size width="16.0" height="12.0"/>
+        <reference x="16.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="endSolidDiamondOpenArrow">
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <point x="12.0" y="6.0"/>
+          <point x="20.0" y="1.0"/>
+          <point x="28.0" y="6.0"/>
+          <point x="20.0" y="11.0"/>
+        </member>
+        <member xsi:type="dg:Polyline">
+          <point x="1.0" y="1.0"/>
+          <point x="12.0" y="6.0"/>
+          <point x="1.0" y="11.0"/>
+        </member>
+        <size width="28.0" height="12.0"/>
+        <reference x="28.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="endHollowDiamondOpenArrow">
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#FFFFFF"/>
+          </style>
+          <point x="12.0" y="6.0"/>
+          <point x="20.0" y="1.0"/>
+          <point x="28.0" y="6.0"/>
+          <point x="20.0" y="11.0"/>
+        </member>
+        <member xsi:type="dg:Polyline">
+          <point x="1.0" y="1.0"/>
+          <point x="12.0" y="6.0"/>
+          <point x="1.0" y="11.0"/>
+        </member>
+        <size width="28.0" height="12.0"/>
+        <reference x="28.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="endSolidCircleSolidDiamondOpenArrow">
+        <member xsi:type="dg:Circle" radius="3.0">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <center x="32.0" y="6.0"/>
+        </member>
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <point x="12.0" y="6.0"/>
+          <point x="20.0" y="1.0"/>
+          <point x="28.0" y="6.0"/>
+          <point x="20.0" y="11.0"/>
+        </member>
+        <member xsi:type="dg:Polyline">
+          <point x="1.0" y="1.0"/>
+          <point x="12.0" y="6.0"/>
+          <point x="1.0" y="11.0"/>
+        </member>
+        <size width="36.0" height="12.0"/>
+        <reference x="36.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="endSolidCircleHollowDiamondOpenArrow">
+        <member xsi:type="dg:Circle" radius="3.0">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <center x="32.0" y="6.0"/>
+        </member>
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#FFFFFF"/>
+          </style>
+          <point x="12.0" y="6.0"/>
+          <point x="20.0" y="1.0"/>
+          <point x="28.0" y="6.0"/>
+          <point x="20.0" y="11.0"/>
+        </member>
+        <member xsi:type="dg:Polyline">
+          <point x="1.0" y="1.0"/>
+          <point x="12.0" y="6.0"/>
+          <point x="1.0" y="11.0"/>
+        </member>
+        <size width="36.0" height="12.0"/>
+        <reference x="36.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="startPlusCircle">
+        <member xsi:type="dg:Circle" radius="8.0">
+          <style>
+            <fill color="#FFFFFF"/>
+          </style>
+          <center x="9.0" y="9.0"/>
+        </member>
+        <member xsi:type="dg:Path">
+          <command xsi:type="dg:MoveTo">
+            <point x="0.0" y="9.0"/>
+          </command>
+          <command xsi:type="dg:LineTo">
+            <point x="17.0" y="9.0"/>
+          </command>
+          <command xsi:type="dg:MoveTo">
+            <point x="9.0" y="0.0"/>
+          </command>
+          <command xsi:type="dg:LineTo">
+            <point x="9.0" y="17.0"/>
+          </command>
+        </member>
+        <size width="18.0" height="18.0"/>
+        <reference x="0.0" y="9.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="startOpenArrow">
+        <member xsi:type="dg:Polyline">
+          <point x="11.0" y="1.0"/>
+          <point x="1.0" y="6.0"/>
+          <point x="11.0" y="11.0"/>
+        </member>
+        <size width="12.0" height="12.0"/>
+        <reference x="0.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="startSolidCircleOpenArrow">
+        <member xsi:type="dg:Circle" radius="3.0">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <center x="4.0" y="6.0"/>
+        </member>
+        <member xsi:type="dg:Polyline">
+          <point x="19.0" y="1.0"/>
+          <point x="8.0" y="6.0"/>
+          <point x="19.0" y="11.0"/>
+        </member>
+        <size width="20.0" height="12.0"/>
+        <reference x="0.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="startSolidDiamond">
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <point x="0.0" y="6.0"/>
+          <point x="8.0" y="1.0"/>
+          <point x="16.0" y="6.0"/>
+          <point x="8.0" y="11.0"/>
+        </member>
+        <size width="16.0" height="12.0"/>
+        <reference x="0.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="startHollowDiamond">
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#FFFFFF"/>
+          </style>
+          <point x="0.0" y="6.0"/>
+          <point x="8.0" y="1.0"/>
+          <point x="16.0" y="6.0"/>
+          <point x="8.0" y="11.0"/>
+        </member>
+        <size width="16.0" height="12.0"/>
+        <reference x="0.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="startSolidDiamondOpenArrow">
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <point x="0.0" y="6.0"/>
+          <point x="8.0" y="1.0"/>
+          <point x="16.0" y="6.0"/>
+          <point x="8.0" y="11.0"/>
+        </member>
+        <member xsi:type="dg:Polyline">
+          <point x="27.0" y="1.0"/>
+          <point x="16.0" y="6.0"/>
+          <point x="27.0" y="11.0"/>
+        </member>
+        <size width="28.0" height="12.0"/>
+        <reference x="0.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="startHollowDiamondOpenArrow">
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#FFFFFF"/>
+          </style>
+          <point x="0.0" y="6.0"/>
+          <point x="8.0" y="1.0"/>
+          <point x="16.0" y="6.0"/>
+          <point x="8.0" y="11.0"/>
+        </member>
+        <member xsi:type="dg:Polyline">
+          <point x="27.0" y="1.0"/>
+          <point x="16.0" y="6.0"/>
+          <point x="27.0" y="11.0"/>
+        </member>
+        <size width="28.0" height="12.0"/>
+        <reference x="0.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="startSolidCircleSolidDiamondOpenArrow">
+        <member xsi:type="dg:Circle" radius="3.0">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <center x="4.0" y="6.0"/>
+        </member>
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <point x="8.0" y="6.0"/>
+          <point x="16.0" y="1.0"/>
+          <point x="24.0" y="6.0"/>
+          <point x="16.0" y="11.0"/>
+        </member>
+        <member xsi:type="dg:Polyline">
+          <point x="35.0" y="1.0"/>
+          <point x="24.0" y="6.0"/>
+          <point x="35.0" y="11.0"/>
+        </member>
+        <size width="36.0" height="12.0"/>
+        <reference x="0.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="startSolidCircleHollowDiamondOpenArrow">
+        <member xsi:type="dg:Circle" radius="3.0">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <center x="4.0" y="6.0"/>
+        </member>
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#FFFFFF"/>
+          </style>
+          <point x="8.0" y="6.0"/>
+          <point x="16.0" y="1.0"/>
+          <point x="24.0" y="6.0"/>
+          <point x="16.0" y="11.0"/>
+        </member>
+        <member xsi:type="dg:Polyline">
+          <point x="35.0" y="1.0"/>
+          <point x="24.0" y="6.0"/>
+          <point x="35.0" y="11.0"/>
+        </member>
+        <size width="36.0" height="12.0"/>
+        <reference x="0.0" y="6.0"/>
+      </definition>
+      <styleSheet>
+        <rule>
+          <selector kind="canvas"/>
+          <style>
+            <fill color="#FFFFFF"/>
+            <stroke color="#000000"/>
+          </style>
+        </rule>
+        <rule>
+          <selector kind="path"/>
+          <selector kind="polyline"/>
+          <style>
+            <fill xsi:nil="true"/>
+          </style>
+        </rule>
+        <rule>
+          <selector kind="text"/>
+          <style>
+            <fill color="#000000"/>
+            <stroke xsi:nil="true"/>
+          </style>
+        </rule>
+        <rule>
+          <selector>
+            <class>underlined</class>
+          </selector>
+          <style fontDecoration="underline"/>
+        </rule>
+        <rule>
+          <selector>
+            <class>dashed</class>
+          </selector>
+          <style>
+            <strokeDashLength>5.0</strokeDashLength>
+            <strokeDashLength>5.0</strokeDashLength>
+          </style>
+        </rule>
+        <rule>
+          <selector>
+            <class>dotted</class>
+          </selector>
+          <style>
+            <strokeDashLength>3.0</strokeDashLength>
+            <strokeDashLength>2.0</strokeDashLength>
+          </style>
+        </rule>
+        <rule>
+          <selector>
+            <class>filled</class>
+          </selector>
+          <style>
+            <fill color="#000000"/>
+          </style>
+        </rule>
+      </styleSheet>
+    </definitions>
+    <script>platform:/plugin/org.eclipse.papyrus.umldi2dg/scripts/UmlLayouts.js</script>
+  </dg:RootCanvas>
+  <dg:RootCanvas id="Generalizations">
+    <member xsi:type="dg:Group"/>
+    <member xsi:type="dg:Group">
+      <style fontSize="11.0" fontName="Lucida Grande"/>
+      <member xsi:type="dg:Rectangle">
+        <bounds x="200.0" y="41.0" width="100.0" height="43.0"/>
+      </member>
+      <member xsi:type="dg:Text" data="Class1" anchor="middle">
+        <bounds x="203.0" y="56.0" width="100.0" height="13.0"/>
+      </member>
+    </member>
+    <member xsi:type="dg:Group">
+      <style fontSize="11.0" fontName="Lucida Grande"/>
+      <member xsi:type="dg:Rectangle">
+        <bounds x="28.0" y="193.0" width="100.0" height="43.0"/>
+      </member>
+      <member xsi:type="dg:Text" data="Class2" anchor="middle">
+        <bounds x="31.0" y="208.0" width="100.0" height="13.0"/>
+      </member>
+    </member>
+    <member xsi:type="dg:Group">
+      <style fontSize="11.0" fontName="Lucida Grande"/>
+      <member xsi:type="dg:Rectangle">
+        <bounds x="208.0" y="192.0" width="100.0" height="43.0"/>
+      </member>
+      <member xsi:type="dg:Text" data="Class3" anchor="middle">
+        <bounds x="211.0" y="207.0" width="100.0" height="13.0"/>
+      </member>
+    </member>
+    <member xsi:type="dg:Group">
+      <style fontSize="11.0" fontName="Lucida Grande"/>
+      <member xsi:type="dg:Rectangle">
+        <bounds x="380.0" y="192.0" width="100.0" height="42.0"/>
+      </member>
+      <member xsi:type="dg:Text" data="Class4" anchor="middle">
+        <bounds x="383.0" y="206.0" width="100.0" height="13.0"/>
+      </member>
+    </member>
+    <member xsi:type="dg:Group">
+      <style fontSize="11.0" fontName="Lucida Grande"/>
+      <member xsi:type="dg:Path" endMarker="/4/@definitions/@definition.0">
+        <command xsi:type="dg:MoveTo">
+          <point x="102.0" y="193.0"/>
+        </command>
+        <command xsi:type="dg:LineTo">
+          <point x="225.0" y="84.0"/>
+        </command>
+      </member>
+    </member>
+    <member xsi:type="dg:Group">
+      <style fontSize="11.0" fontName="Lucida Grande"/>
+      <member xsi:type="dg:Path" endMarker="/4/@definitions/@definition.0">
+        <command xsi:type="dg:MoveTo">
+          <point x="250.0" y="192.0"/>
+        </command>
+        <command xsi:type="dg:LineTo">
+          <point x="250.0" y="84.0"/>
+        </command>
+      </member>
+    </member>
+    <member xsi:type="dg:Group">
+      <style fontSize="11.0" fontName="Lucida Grande"/>
+      <member xsi:type="dg:Path" endMarker="/4/@definitions/@definition.0">
+        <command xsi:type="dg:MoveTo">
+          <point x="416.0" y="192.0"/>
+        </command>
+        <command xsi:type="dg:LineTo">
+          <point x="300.0" y="84.0"/>
+        </command>
+      </member>
+    </member>
+    <member xsi:type="dg:Group">
+      <style fontSize="11.0" fontName="Lucida Grande"/>
+      <member xsi:type="dg:Path">
+        <class>dashed</class>
+        <command xsi:type="dg:MoveTo">
+          <point x="154.0" y="146.0"/>
+        </command>
+        <command xsi:type="dg:LineTo">
+          <point x="366.0" y="146.0"/>
+        </command>
+      </member>
+      <member xsi:type="dg:Text" data="{incomplete, overlapping}" anchor="middle">
+        <bounds x="180.0" y="163.0" width="137.0" height="13.0"/>
+      </member>
+    </member>
+    <definitions>
+      <definition xsi:type="dg:Marker" id="endHollowClosedArrow">
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#FFFFFF"/>
+          </style>
+          <point x="1.0" y="1.0"/>
+          <point x="12.0" y="6.0"/>
+          <point x="1.0" y="11.0"/>
+        </member>
+        <size width="12.0" height="12.0"/>
+        <reference x="12.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="endSolidClosedArrow">
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <point x="1.0" y="1.0"/>
+          <point x="12.0" y="6.0"/>
+          <point x="1.0" y="11.0"/>
+        </member>
+        <size width="12.0" height="12.0"/>
+        <reference x="12.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="endOpenArrow">
+        <member xsi:type="dg:Polyline">
+          <point x="1.0" y="1.0"/>
+          <point x="12.0" y="6.0"/>
+          <point x="1.0" y="11.0"/>
+        </member>
+        <size width="12.0" height="12.0"/>
+        <reference x="12.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="endSolidCircleOpenArrow">
+        <member xsi:type="dg:Circle" radius="3.0">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <center x="16.0" y="6.0"/>
+        </member>
+        <member xsi:type="dg:Polyline">
+          <point x="1.0" y="1.0"/>
+          <point x="12.0" y="6.0"/>
+          <point x="1.0" y="11.0"/>
+        </member>
+        <size width="20.0" height="12.0"/>
+        <reference x="20.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="endSolidDiamond">
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <point x="0.0" y="6.0"/>
+          <point x="8.0" y="1.0"/>
+          <point x="16.0" y="6.0"/>
+          <point x="8.0" y="11.0"/>
+        </member>
+        <size width="16.0" height="12.0"/>
+        <reference x="16.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="endHollowDiamond">
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#FFFFFF"/>
+          </style>
+          <point x="0.0" y="6.0"/>
+          <point x="8.0" y="1.0"/>
+          <point x="16.0" y="6.0"/>
+          <point x="8.0" y="11.0"/>
+        </member>
+        <size width="16.0" height="12.0"/>
+        <reference x="16.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="endSolidDiamondOpenArrow">
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <point x="12.0" y="6.0"/>
+          <point x="20.0" y="1.0"/>
+          <point x="28.0" y="6.0"/>
+          <point x="20.0" y="11.0"/>
+        </member>
+        <member xsi:type="dg:Polyline">
+          <point x="1.0" y="1.0"/>
+          <point x="12.0" y="6.0"/>
+          <point x="1.0" y="11.0"/>
+        </member>
+        <size width="28.0" height="12.0"/>
+        <reference x="28.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="endHollowDiamondOpenArrow">
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#FFFFFF"/>
+          </style>
+          <point x="12.0" y="6.0"/>
+          <point x="20.0" y="1.0"/>
+          <point x="28.0" y="6.0"/>
+          <point x="20.0" y="11.0"/>
+        </member>
+        <member xsi:type="dg:Polyline">
+          <point x="1.0" y="1.0"/>
+          <point x="12.0" y="6.0"/>
+          <point x="1.0" y="11.0"/>
+        </member>
+        <size width="28.0" height="12.0"/>
+        <reference x="28.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="endSolidCircleSolidDiamondOpenArrow">
+        <member xsi:type="dg:Circle" radius="3.0">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <center x="32.0" y="6.0"/>
+        </member>
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <point x="12.0" y="6.0"/>
+          <point x="20.0" y="1.0"/>
+          <point x="28.0" y="6.0"/>
+          <point x="20.0" y="11.0"/>
+        </member>
+        <member xsi:type="dg:Polyline">
+          <point x="1.0" y="1.0"/>
+          <point x="12.0" y="6.0"/>
+          <point x="1.0" y="11.0"/>
+        </member>
+        <size width="36.0" height="12.0"/>
+        <reference x="36.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="endSolidCircleHollowDiamondOpenArrow">
+        <member xsi:type="dg:Circle" radius="3.0">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <center x="32.0" y="6.0"/>
+        </member>
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#FFFFFF"/>
+          </style>
+          <point x="12.0" y="6.0"/>
+          <point x="20.0" y="1.0"/>
+          <point x="28.0" y="6.0"/>
+          <point x="20.0" y="11.0"/>
+        </member>
+        <member xsi:type="dg:Polyline">
+          <point x="1.0" y="1.0"/>
+          <point x="12.0" y="6.0"/>
+          <point x="1.0" y="11.0"/>
+        </member>
+        <size width="36.0" height="12.0"/>
+        <reference x="36.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="startPlusCircle">
+        <member xsi:type="dg:Circle" radius="8.0">
+          <style>
+            <fill color="#FFFFFF"/>
+          </style>
+          <center x="9.0" y="9.0"/>
+        </member>
+        <member xsi:type="dg:Path">
+          <command xsi:type="dg:MoveTo">
+            <point x="0.0" y="9.0"/>
+          </command>
+          <command xsi:type="dg:LineTo">
+            <point x="17.0" y="9.0"/>
+          </command>
+          <command xsi:type="dg:MoveTo">
+            <point x="9.0" y="0.0"/>
+          </command>
+          <command xsi:type="dg:LineTo">
+            <point x="9.0" y="17.0"/>
+          </command>
+        </member>
+        <size width="18.0" height="18.0"/>
+        <reference x="0.0" y="9.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="startOpenArrow">
+        <member xsi:type="dg:Polyline">
+          <point x="11.0" y="1.0"/>
+          <point x="1.0" y="6.0"/>
+          <point x="11.0" y="11.0"/>
+        </member>
+        <size width="12.0" height="12.0"/>
+        <reference x="0.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="startSolidCircleOpenArrow">
+        <member xsi:type="dg:Circle" radius="3.0">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <center x="4.0" y="6.0"/>
+        </member>
+        <member xsi:type="dg:Polyline">
+          <point x="19.0" y="1.0"/>
+          <point x="8.0" y="6.0"/>
+          <point x="19.0" y="11.0"/>
+        </member>
+        <size width="20.0" height="12.0"/>
+        <reference x="0.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="startSolidDiamond">
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <point x="0.0" y="6.0"/>
+          <point x="8.0" y="1.0"/>
+          <point x="16.0" y="6.0"/>
+          <point x="8.0" y="11.0"/>
+        </member>
+        <size width="16.0" height="12.0"/>
+        <reference x="0.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="startHollowDiamond">
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#FFFFFF"/>
+          </style>
+          <point x="0.0" y="6.0"/>
+          <point x="8.0" y="1.0"/>
+          <point x="16.0" y="6.0"/>
+          <point x="8.0" y="11.0"/>
+        </member>
+        <size width="16.0" height="12.0"/>
+        <reference x="0.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="startSolidDiamondOpenArrow">
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <point x="0.0" y="6.0"/>
+          <point x="8.0" y="1.0"/>
+          <point x="16.0" y="6.0"/>
+          <point x="8.0" y="11.0"/>
+        </member>
+        <member xsi:type="dg:Polyline">
+          <point x="27.0" y="1.0"/>
+          <point x="16.0" y="6.0"/>
+          <point x="27.0" y="11.0"/>
+        </member>
+        <size width="28.0" height="12.0"/>
+        <reference x="0.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="startHollowDiamondOpenArrow">
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#FFFFFF"/>
+          </style>
+          <point x="0.0" y="6.0"/>
+          <point x="8.0" y="1.0"/>
+          <point x="16.0" y="6.0"/>
+          <point x="8.0" y="11.0"/>
+        </member>
+        <member xsi:type="dg:Polyline">
+          <point x="27.0" y="1.0"/>
+          <point x="16.0" y="6.0"/>
+          <point x="27.0" y="11.0"/>
+        </member>
+        <size width="28.0" height="12.0"/>
+        <reference x="0.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="startSolidCircleSolidDiamondOpenArrow">
+        <member xsi:type="dg:Circle" radius="3.0">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <center x="4.0" y="6.0"/>
+        </member>
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <point x="8.0" y="6.0"/>
+          <point x="16.0" y="1.0"/>
+          <point x="24.0" y="6.0"/>
+          <point x="16.0" y="11.0"/>
+        </member>
+        <member xsi:type="dg:Polyline">
+          <point x="35.0" y="1.0"/>
+          <point x="24.0" y="6.0"/>
+          <point x="35.0" y="11.0"/>
+        </member>
+        <size width="36.0" height="12.0"/>
+        <reference x="0.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="startSolidCircleHollowDiamondOpenArrow">
+        <member xsi:type="dg:Circle" radius="3.0">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <center x="4.0" y="6.0"/>
+        </member>
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#FFFFFF"/>
+          </style>
+          <point x="8.0" y="6.0"/>
+          <point x="16.0" y="1.0"/>
+          <point x="24.0" y="6.0"/>
+          <point x="16.0" y="11.0"/>
+        </member>
+        <member xsi:type="dg:Polyline">
+          <point x="35.0" y="1.0"/>
+          <point x="24.0" y="6.0"/>
+          <point x="35.0" y="11.0"/>
+        </member>
+        <size width="36.0" height="12.0"/>
+        <reference x="0.0" y="6.0"/>
+      </definition>
+      <styleSheet>
+        <rule>
+          <selector kind="canvas"/>
+          <style>
+            <fill color="#FFFFFF"/>
+            <stroke color="#000000"/>
+          </style>
+        </rule>
+        <rule>
+          <selector kind="path"/>
+          <selector kind="polyline"/>
+          <style>
+            <fill xsi:nil="true"/>
+          </style>
+        </rule>
+        <rule>
+          <selector kind="text"/>
+          <style>
+            <fill color="#000000"/>
+            <stroke xsi:nil="true"/>
+          </style>
+        </rule>
+        <rule>
+          <selector>
+            <class>underlined</class>
+          </selector>
+          <style fontDecoration="underline"/>
+        </rule>
+        <rule>
+          <selector>
+            <class>dashed</class>
+          </selector>
+          <style>
+            <strokeDashLength>5.0</strokeDashLength>
+            <strokeDashLength>5.0</strokeDashLength>
+          </style>
+        </rule>
+        <rule>
+          <selector>
+            <class>dotted</class>
+          </selector>
+          <style>
+            <strokeDashLength>3.0</strokeDashLength>
+            <strokeDashLength>2.0</strokeDashLength>
+          </style>
+        </rule>
+        <rule>
+          <selector>
+            <class>filled</class>
+          </selector>
+          <style>
+            <fill color="#000000"/>
+          </style>
+        </rule>
+      </styleSheet>
+    </definitions>
+    <script>platform:/plugin/org.eclipse.papyrus.umldi2dg/scripts/UmlLayouts.js</script>
+  </dg:RootCanvas>
+  <dg:RootCanvas id="InformationFlows">
+    <member xsi:type="dg:Group"/>
+    <member xsi:type="dg:Group">
+      <style fontSize="11.0" fontName="Lucida Grande"/>
+      <member xsi:type="dg:Rectangle">
+        <bounds x="265.0" y="211.0" width="100.0" height="42.0"/>
+      </member>
+      <member xsi:type="dg:Text" data="Class4" anchor="middle">
+        <bounds x="268.0" y="225.0" width="100.0" height="13.0"/>
+      </member>
+    </member>
+    <member xsi:type="dg:Group">
+      <style fontSize="11.0" fontName="Lucida Grande"/>
+      <member xsi:type="dg:Rectangle">
+        <bounds x="267.0" y="70.0" width="100.0" height="43.0"/>
+      </member>
+      <member xsi:type="dg:Text" data="Class3" anchor="middle">
+        <bounds x="270.0" y="85.0" width="100.0" height="13.0"/>
+      </member>
+    </member>
+    <member xsi:type="dg:Group">
+      <style fontSize="11.0" fontName="Lucida Grande"/>
+      <member xsi:type="dg:Rectangle">
+        <bounds x="41.0" y="66.0" width="100.0" height="43.0"/>
+      </member>
+      <member xsi:type="dg:Text" data="Class2" anchor="middle">
+        <bounds x="44.0" y="81.0" width="100.0" height="13.0"/>
+      </member>
+    </member>
+    <member xsi:type="dg:Group">
+      <style fontSize="11.0" fontName="Lucida Grande"/>
+      <member xsi:type="dg:Rectangle">
+        <bounds x="35.0" y="154.0" width="117.0" height="40.0"/>
+      </member>
+      <member xsi:type="dg:Text" data="&#xab;information&#xbb;\nInformationItem1" anchor="middle">
+        <bounds x="38.0" y="161.0" width="117.0" height="27.0"/>
+      </member>
+    </member>
+    <member xsi:type="dg:Group">
+      <style fontSize="11.0" fontName="Lucida Grande"/>
+      <member xsi:type="dg:Rectangle">
+        <bounds x="35.0" y="254.0" width="114.0" height="40.0"/>
+      </member>
+      <member xsi:type="dg:Text" data="&#xab;information&#xbb;\nInformationItem2" anchor="middle">
+        <bounds x="38.0" y="261.0" width="114.0" height="27.0"/>
+      </member>
+    </member>
+    <member xsi:type="dg:Group">
+      <style fontSize="11.0" fontName="Lucida Grande"/>
+      <member xsi:type="dg:Rectangle">
+        <bounds x="494.0" y="227.0" width="21.0" height="20.0"/>
+      </member>
+      <member xsi:type="dg:Text" data="DurationObservation1" anchor="middle">
+        <bounds x="449.0" y="252.0" width="118.0" height="13.0"/>
+      </member>
+    </member>
+    <member xsi:type="dg:Group">
+      <style fontSize="11.0" fontName="Lucida Grande"/>
+      <member xsi:type="dg:Rectangle">
+        <bounds x="434.0" y="82.0" width="21.0" height="20.0"/>
+      </member>
+      <member xsi:type="dg:Text" data="TimeObservation1" anchor="middle">
+        <bounds x="459.0" y="85.0" width="98.0" height="13.0"/>
+      </member>
+    </member>
+    <member xsi:type="dg:Group">
+      <style fontSize="11.0" fontName="Lucida Grande"/>
+      <member xsi:type="dg:Path" endMarker="/5/@definitions/@definition.2">
+        <class>dashed</class>
+        <command xsi:type="dg:MoveTo">
+          <point x="141.0" y="91.0"/>
+        </command>
+        <command xsi:type="dg:LineTo">
+          <point x="267.0" y="91.0"/>
+        </command>
+      </member>
+      <member xsi:type="dg:Text" data="&#xab;flow&#xbb;\nInformationFlow1" anchor="middle">
+        <bounds x="185.0" y="65.0" width="34.0" height="13.0"/>
+      </member>
+      <member xsi:type="dg:Text" data="DataType1" anchor="middle">
+        <bounds x="170.0" y="102.0" width="58.0" height="13.0"/>
+      </member>
+    </member>
+    <member xsi:type="dg:Group">
+      <style fontSize="11.0" fontName="Lucida Grande"/>
+      <member xsi:type="dg:Path" endMarker="/5/@definitions/@definition.2">
+        <class>dashed</class>
+        <command xsi:type="dg:MoveTo">
+          <point x="315.0" y="113.0"/>
+        </command>
+        <command xsi:type="dg:LineTo">
+          <point x="315.0" y="211.0"/>
+        </command>
+      </member>
+      <member xsi:type="dg:Text" data="&#xab;flow&#xbb;\nInformationFlow1" anchor="middle">
+        <bounds x="240.0" y="162.0" width="34.0" height="13.0"/>
+      </member>
+      <member xsi:type="dg:Text" data="InformationItem1, DataType1" anchor="middle">
+        <bounds x="321.0" y="163.0" width="158.0" height="13.0"/>
+      </member>
+    </member>
+    <member xsi:type="dg:Group">
+      <style fontSize="11.0" fontName="Lucida Grande"/>
+      <member xsi:type="dg:Path">
+        <class>dotted</class>
+        <command xsi:type="dg:MoveTo">
+          <point x="434.0" y="94.0"/>
+        </command>
+        <command xsi:type="dg:LineTo">
+          <point x="367.0" y="94.0"/>
+        </command>
+      </member>
+    </member>
+    <member xsi:type="dg:Group">
+      <style fontSize="11.0" fontName="Lucida Grande"/>
+      <member xsi:type="dg:Path">
+        <class>dotted</class>
+        <command xsi:type="dg:MoveTo">
+          <point x="494.0" y="232.0"/>
+        </command>
+        <command xsi:type="dg:LineTo">
+          <point x="365.0" y="232.0"/>
+        </command>
+      </member>
+    </member>
+    <definitions>
+      <definition xsi:type="dg:Marker" id="endHollowClosedArrow">
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#FFFFFF"/>
+          </style>
+          <point x="1.0" y="1.0"/>
+          <point x="12.0" y="6.0"/>
+          <point x="1.0" y="11.0"/>
+        </member>
+        <size width="12.0" height="12.0"/>
+        <reference x="12.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="endSolidClosedArrow">
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <point x="1.0" y="1.0"/>
+          <point x="12.0" y="6.0"/>
+          <point x="1.0" y="11.0"/>
+        </member>
+        <size width="12.0" height="12.0"/>
+        <reference x="12.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="endOpenArrow">
+        <member xsi:type="dg:Polyline">
+          <point x="1.0" y="1.0"/>
+          <point x="12.0" y="6.0"/>
+          <point x="1.0" y="11.0"/>
+        </member>
+        <size width="12.0" height="12.0"/>
+        <reference x="12.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="endSolidCircleOpenArrow">
+        <member xsi:type="dg:Circle" radius="3.0">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <center x="16.0" y="6.0"/>
+        </member>
+        <member xsi:type="dg:Polyline">
+          <point x="1.0" y="1.0"/>
+          <point x="12.0" y="6.0"/>
+          <point x="1.0" y="11.0"/>
+        </member>
+        <size width="20.0" height="12.0"/>
+        <reference x="20.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="endSolidDiamond">
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <point x="0.0" y="6.0"/>
+          <point x="8.0" y="1.0"/>
+          <point x="16.0" y="6.0"/>
+          <point x="8.0" y="11.0"/>
+        </member>
+        <size width="16.0" height="12.0"/>
+        <reference x="16.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="endHollowDiamond">
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#FFFFFF"/>
+          </style>
+          <point x="0.0" y="6.0"/>
+          <point x="8.0" y="1.0"/>
+          <point x="16.0" y="6.0"/>
+          <point x="8.0" y="11.0"/>
+        </member>
+        <size width="16.0" height="12.0"/>
+        <reference x="16.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="endSolidDiamondOpenArrow">
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <point x="12.0" y="6.0"/>
+          <point x="20.0" y="1.0"/>
+          <point x="28.0" y="6.0"/>
+          <point x="20.0" y="11.0"/>
+        </member>
+        <member xsi:type="dg:Polyline">
+          <point x="1.0" y="1.0"/>
+          <point x="12.0" y="6.0"/>
+          <point x="1.0" y="11.0"/>
+        </member>
+        <size width="28.0" height="12.0"/>
+        <reference x="28.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="endHollowDiamondOpenArrow">
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#FFFFFF"/>
+          </style>
+          <point x="12.0" y="6.0"/>
+          <point x="20.0" y="1.0"/>
+          <point x="28.0" y="6.0"/>
+          <point x="20.0" y="11.0"/>
+        </member>
+        <member xsi:type="dg:Polyline">
+          <point x="1.0" y="1.0"/>
+          <point x="12.0" y="6.0"/>
+          <point x="1.0" y="11.0"/>
+        </member>
+        <size width="28.0" height="12.0"/>
+        <reference x="28.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="endSolidCircleSolidDiamondOpenArrow">
+        <member xsi:type="dg:Circle" radius="3.0">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <center x="32.0" y="6.0"/>
+        </member>
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <point x="12.0" y="6.0"/>
+          <point x="20.0" y="1.0"/>
+          <point x="28.0" y="6.0"/>
+          <point x="20.0" y="11.0"/>
+        </member>
+        <member xsi:type="dg:Polyline">
+          <point x="1.0" y="1.0"/>
+          <point x="12.0" y="6.0"/>
+          <point x="1.0" y="11.0"/>
+        </member>
+        <size width="36.0" height="12.0"/>
+        <reference x="36.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="endSolidCircleHollowDiamondOpenArrow">
+        <member xsi:type="dg:Circle" radius="3.0">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <center x="32.0" y="6.0"/>
+        </member>
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#FFFFFF"/>
+          </style>
+          <point x="12.0" y="6.0"/>
+          <point x="20.0" y="1.0"/>
+          <point x="28.0" y="6.0"/>
+          <point x="20.0" y="11.0"/>
+        </member>
+        <member xsi:type="dg:Polyline">
+          <point x="1.0" y="1.0"/>
+          <point x="12.0" y="6.0"/>
+          <point x="1.0" y="11.0"/>
+        </member>
+        <size width="36.0" height="12.0"/>
+        <reference x="36.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="startPlusCircle">
+        <member xsi:type="dg:Circle" radius="8.0">
+          <style>
+            <fill color="#FFFFFF"/>
+          </style>
+          <center x="9.0" y="9.0"/>
+        </member>
+        <member xsi:type="dg:Path">
+          <command xsi:type="dg:MoveTo">
+            <point x="0.0" y="9.0"/>
+          </command>
+          <command xsi:type="dg:LineTo">
+            <point x="17.0" y="9.0"/>
+          </command>
+          <command xsi:type="dg:MoveTo">
+            <point x="9.0" y="0.0"/>
+          </command>
+          <command xsi:type="dg:LineTo">
+            <point x="9.0" y="17.0"/>
+          </command>
+        </member>
+        <size width="18.0" height="18.0"/>
+        <reference x="0.0" y="9.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="startOpenArrow">
+        <member xsi:type="dg:Polyline">
+          <point x="11.0" y="1.0"/>
+          <point x="1.0" y="6.0"/>
+          <point x="11.0" y="11.0"/>
+        </member>
+        <size width="12.0" height="12.0"/>
+        <reference x="0.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="startSolidCircleOpenArrow">
+        <member xsi:type="dg:Circle" radius="3.0">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <center x="4.0" y="6.0"/>
+        </member>
+        <member xsi:type="dg:Polyline">
+          <point x="19.0" y="1.0"/>
+          <point x="8.0" y="6.0"/>
+          <point x="19.0" y="11.0"/>
+        </member>
+        <size width="20.0" height="12.0"/>
+        <reference x="0.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="startSolidDiamond">
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <point x="0.0" y="6.0"/>
+          <point x="8.0" y="1.0"/>
+          <point x="16.0" y="6.0"/>
+          <point x="8.0" y="11.0"/>
+        </member>
+        <size width="16.0" height="12.0"/>
+        <reference x="0.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="startHollowDiamond">
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#FFFFFF"/>
+          </style>
+          <point x="0.0" y="6.0"/>
+          <point x="8.0" y="1.0"/>
+          <point x="16.0" y="6.0"/>
+          <point x="8.0" y="11.0"/>
+        </member>
+        <size width="16.0" height="12.0"/>
+        <reference x="0.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="startSolidDiamondOpenArrow">
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <point x="0.0" y="6.0"/>
+          <point x="8.0" y="1.0"/>
+          <point x="16.0" y="6.0"/>
+          <point x="8.0" y="11.0"/>
+        </member>
+        <member xsi:type="dg:Polyline">
+          <point x="27.0" y="1.0"/>
+          <point x="16.0" y="6.0"/>
+          <point x="27.0" y="11.0"/>
+        </member>
+        <size width="28.0" height="12.0"/>
+        <reference x="0.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="startHollowDiamondOpenArrow">
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#FFFFFF"/>
+          </style>
+          <point x="0.0" y="6.0"/>
+          <point x="8.0" y="1.0"/>
+          <point x="16.0" y="6.0"/>
+          <point x="8.0" y="11.0"/>
+        </member>
+        <member xsi:type="dg:Polyline">
+          <point x="27.0" y="1.0"/>
+          <point x="16.0" y="6.0"/>
+          <point x="27.0" y="11.0"/>
+        </member>
+        <size width="28.0" height="12.0"/>
+        <reference x="0.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="startSolidCircleSolidDiamondOpenArrow">
+        <member xsi:type="dg:Circle" radius="3.0">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <center x="4.0" y="6.0"/>
+        </member>
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <point x="8.0" y="6.0"/>
+          <point x="16.0" y="1.0"/>
+          <point x="24.0" y="6.0"/>
+          <point x="16.0" y="11.0"/>
+        </member>
+        <member xsi:type="dg:Polyline">
+          <point x="35.0" y="1.0"/>
+          <point x="24.0" y="6.0"/>
+          <point x="35.0" y="11.0"/>
+        </member>
+        <size width="36.0" height="12.0"/>
+        <reference x="0.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="startSolidCircleHollowDiamondOpenArrow">
+        <member xsi:type="dg:Circle" radius="3.0">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <center x="4.0" y="6.0"/>
+        </member>
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#FFFFFF"/>
+          </style>
+          <point x="8.0" y="6.0"/>
+          <point x="16.0" y="1.0"/>
+          <point x="24.0" y="6.0"/>
+          <point x="16.0" y="11.0"/>
+        </member>
+        <member xsi:type="dg:Polyline">
+          <point x="35.0" y="1.0"/>
+          <point x="24.0" y="6.0"/>
+          <point x="35.0" y="11.0"/>
+        </member>
+        <size width="36.0" height="12.0"/>
+        <reference x="0.0" y="6.0"/>
+      </definition>
+      <styleSheet>
+        <rule>
+          <selector kind="canvas"/>
+          <style>
+            <fill color="#FFFFFF"/>
+            <stroke color="#000000"/>
+          </style>
+        </rule>
+        <rule>
+          <selector kind="path"/>
+          <selector kind="polyline"/>
+          <style>
+            <fill xsi:nil="true"/>
+          </style>
+        </rule>
+        <rule>
+          <selector kind="text"/>
+          <style>
+            <fill color="#000000"/>
+            <stroke xsi:nil="true"/>
+          </style>
+        </rule>
+        <rule>
+          <selector>
+            <class>underlined</class>
+          </selector>
+          <style fontDecoration="underline"/>
+        </rule>
+        <rule>
+          <selector>
+            <class>dashed</class>
+          </selector>
+          <style>
+            <strokeDashLength>5.0</strokeDashLength>
+            <strokeDashLength>5.0</strokeDashLength>
+          </style>
+        </rule>
+        <rule>
+          <selector>
+            <class>dotted</class>
+          </selector>
+          <style>
+            <strokeDashLength>3.0</strokeDashLength>
+            <strokeDashLength>2.0</strokeDashLength>
+          </style>
+        </rule>
+        <rule>
+          <selector>
+            <class>filled</class>
+          </selector>
+          <style>
+            <fill color="#000000"/>
+          </style>
+        </rule>
+      </styleSheet>
+    </definitions>
+    <script>platform:/plugin/org.eclipse.papyrus.umldi2dg/scripts/UmlLayouts.js</script>
+  </dg:RootCanvas>
+  <dg:RootCanvas id="InstanceSpecifications">
+    <member xsi:type="dg:Group"/>
+    <member xsi:type="dg:Group">
+      <style fontSize="11.0" fontName="Lucida Grande"/>
+      <member xsi:type="dg:Rectangle">
+        <bounds x="376.0" y="27.0" width="193.0" height="100.0"/>
+      </member>
+      <member xsi:type="dg:Text" data="InstanceSpecification2 : Class2" anchor="middle">
+        <class>underlined</class>
+        <bounds x="379.0" y="30.0" width="193.0" height="13.0"/>
+      </member>
+      <member xsi:type="dg:Group">
+        <member xsi:type="dg:Line">
+          <start x="376.0" y="44.0"/>
+          <end x="569.0" y="44.0"/>
+        </member>
+        <member xsi:type="dg:Text" data="Attribute2 : String = &quot;hello&quot;">
+          <style fontSize="11.0" fontName="Lucida Grande"/>
+          <bounds x="381.0" y="46.0" width="183.0" height="13.0"/>
+        </member>
+      </member>
+    </member>
+    <member xsi:type="dg:Group">
+      <style fontSize="11.0" fontName="Lucida Grande"/>
+      <member xsi:type="dg:Rectangle">
+        <bounds x="24.0" y="28.0" width="189.0" height="100.0"/>
+      </member>
+      <member xsi:type="dg:Text" data="InstanceSpecification1 : Class1" anchor="middle">
+        <class>underlined</class>
+        <bounds x="27.0" y="31.0" width="189.0" height="13.0"/>
+      </member>
+      <member xsi:type="dg:Group">
+        <member xsi:type="dg:Line">
+          <start x="24.0" y="45.0"/>
+          <end x="213.0" y="45.0"/>
+        </member>
+        <member xsi:type="dg:Text" data="Attribute1 : Integer = 7">
+          <style fontSize="11.0" fontName="Lucida Grande"/>
+          <bounds x="29.0" y="47.0" width="179.0" height="13.0"/>
+        </member>
+      </member>
+    </member>
+    <member xsi:type="dg:Group">
+      <style fontSize="11.0" fontName="Lucida Grande"/>
+      <member xsi:type="dg:Rectangle">
+        <bounds x="153.0" y="196.0" width="136.0" height="100.0"/>
+      </member>
+      <member xsi:type="dg:Text" data="InstanceSpecification3" anchor="middle">
+        <class>underlined</class>
+        <bounds x="156.0" y="199.0" width="136.0" height="13.0"/>
+      </member>
+      <member xsi:type="dg:Group">
+        <member xsi:type="dg:Line">
+          <start x="153.0" y="213.0"/>
+          <end x="289.0" y="213.0"/>
+        </member>
+      </member>
+    </member>
+    <member xsi:type="dg:Group">
+      <style fontSize="11.0" fontName="Lucida Grande"/>
+      <member xsi:type="dg:Rectangle">
+        <bounds x="401.0" y="219.0" width="239.0" height="100.0"/>
+      </member>
+      <member xsi:type="dg:Text" data="InstanceSpecification4 : Interface1, Class1" anchor="middle">
+        <class>underlined</class>
+        <bounds x="404.0" y="222.0" width="239.0" height="13.0"/>
+      </member>
+      <member xsi:type="dg:Group">
+        <member xsi:type="dg:Line">
+          <start x="401.0" y="236.0"/>
+          <end x="640.0" y="236.0"/>
+        </member>
+      </member>
+    </member>
+    <member xsi:type="dg:Group">
+      <style fontSize="11.0" fontName="Lucida Grande"/>
+      <member xsi:type="dg:Path">
+        <command xsi:type="dg:MoveTo">
+          <point x="118.0" y="128.0"/>
+        </command>
+        <command xsi:type="dg:LineTo">
+          <point x="118.0" y="146.0"/>
+        </command>
+        <command xsi:type="dg:LineTo">
+          <point x="472.0" y="146.0"/>
+        </command>
+        <command xsi:type="dg:LineTo">
+          <point x="472.0" y="127.0"/>
+        </command>
+      </member>
+      <member xsi:type="dg:Text" data="+ class1" anchor="middle">
+        <bounds x="142.0" y="160.0" width="34.0" height="13.0"/>
+      </member>
+      <member xsi:type="dg:Text" data="+ class2" anchor="middle">
+        <bounds x="415.0" y="160.0" width="34.0" height="13.0"/>
+      </member>
+    </member>
+    <definitions>
+      <definition xsi:type="dg:Marker" id="endHollowClosedArrow">
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#FFFFFF"/>
+          </style>
+          <point x="1.0" y="1.0"/>
+          <point x="12.0" y="6.0"/>
+          <point x="1.0" y="11.0"/>
+        </member>
+        <size width="12.0" height="12.0"/>
+        <reference x="12.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="endSolidClosedArrow">
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <point x="1.0" y="1.0"/>
+          <point x="12.0" y="6.0"/>
+          <point x="1.0" y="11.0"/>
+        </member>
+        <size width="12.0" height="12.0"/>
+        <reference x="12.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="endOpenArrow">
+        <member xsi:type="dg:Polyline">
+          <point x="1.0" y="1.0"/>
+          <point x="12.0" y="6.0"/>
+          <point x="1.0" y="11.0"/>
+        </member>
+        <size width="12.0" height="12.0"/>
+        <reference x="12.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="endSolidCircleOpenArrow">
+        <member xsi:type="dg:Circle" radius="3.0">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <center x="16.0" y="6.0"/>
+        </member>
+        <member xsi:type="dg:Polyline">
+          <point x="1.0" y="1.0"/>
+          <point x="12.0" y="6.0"/>
+          <point x="1.0" y="11.0"/>
+        </member>
+        <size width="20.0" height="12.0"/>
+        <reference x="20.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="endSolidDiamond">
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <point x="0.0" y="6.0"/>
+          <point x="8.0" y="1.0"/>
+          <point x="16.0" y="6.0"/>
+          <point x="8.0" y="11.0"/>
+        </member>
+        <size width="16.0" height="12.0"/>
+        <reference x="16.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="endHollowDiamond">
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#FFFFFF"/>
+          </style>
+          <point x="0.0" y="6.0"/>
+          <point x="8.0" y="1.0"/>
+          <point x="16.0" y="6.0"/>
+          <point x="8.0" y="11.0"/>
+        </member>
+        <size width="16.0" height="12.0"/>
+        <reference x="16.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="endSolidDiamondOpenArrow">
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <point x="12.0" y="6.0"/>
+          <point x="20.0" y="1.0"/>
+          <point x="28.0" y="6.0"/>
+          <point x="20.0" y="11.0"/>
+        </member>
+        <member xsi:type="dg:Polyline">
+          <point x="1.0" y="1.0"/>
+          <point x="12.0" y="6.0"/>
+          <point x="1.0" y="11.0"/>
+        </member>
+        <size width="28.0" height="12.0"/>
+        <reference x="28.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="endHollowDiamondOpenArrow">
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#FFFFFF"/>
+          </style>
+          <point x="12.0" y="6.0"/>
+          <point x="20.0" y="1.0"/>
+          <point x="28.0" y="6.0"/>
+          <point x="20.0" y="11.0"/>
+        </member>
+        <member xsi:type="dg:Polyline">
+          <point x="1.0" y="1.0"/>
+          <point x="12.0" y="6.0"/>
+          <point x="1.0" y="11.0"/>
+        </member>
+        <size width="28.0" height="12.0"/>
+        <reference x="28.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="endSolidCircleSolidDiamondOpenArrow">
+        <member xsi:type="dg:Circle" radius="3.0">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <center x="32.0" y="6.0"/>
+        </member>
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <point x="12.0" y="6.0"/>
+          <point x="20.0" y="1.0"/>
+          <point x="28.0" y="6.0"/>
+          <point x="20.0" y="11.0"/>
+        </member>
+        <member xsi:type="dg:Polyline">
+          <point x="1.0" y="1.0"/>
+          <point x="12.0" y="6.0"/>
+          <point x="1.0" y="11.0"/>
+        </member>
+        <size width="36.0" height="12.0"/>
+        <reference x="36.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="endSolidCircleHollowDiamondOpenArrow">
+        <member xsi:type="dg:Circle" radius="3.0">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <center x="32.0" y="6.0"/>
+        </member>
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#FFFFFF"/>
+          </style>
+          <point x="12.0" y="6.0"/>
+          <point x="20.0" y="1.0"/>
+          <point x="28.0" y="6.0"/>
+          <point x="20.0" y="11.0"/>
+        </member>
+        <member xsi:type="dg:Polyline">
+          <point x="1.0" y="1.0"/>
+          <point x="12.0" y="6.0"/>
+          <point x="1.0" y="11.0"/>
+        </member>
+        <size width="36.0" height="12.0"/>
+        <reference x="36.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="startPlusCircle">
+        <member xsi:type="dg:Circle" radius="8.0">
+          <style>
+            <fill color="#FFFFFF"/>
+          </style>
+          <center x="9.0" y="9.0"/>
+        </member>
+        <member xsi:type="dg:Path">
+          <command xsi:type="dg:MoveTo">
+            <point x="0.0" y="9.0"/>
+          </command>
+          <command xsi:type="dg:LineTo">
+            <point x="17.0" y="9.0"/>
+          </command>
+          <command xsi:type="dg:MoveTo">
+            <point x="9.0" y="0.0"/>
+          </command>
+          <command xsi:type="dg:LineTo">
+            <point x="9.0" y="17.0"/>
+          </command>
+        </member>
+        <size width="18.0" height="18.0"/>
+        <reference x="0.0" y="9.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="startOpenArrow">
+        <member xsi:type="dg:Polyline">
+          <point x="11.0" y="1.0"/>
+          <point x="1.0" y="6.0"/>
+          <point x="11.0" y="11.0"/>
+        </member>
+        <size width="12.0" height="12.0"/>
+        <reference x="0.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="startSolidCircleOpenArrow">
+        <member xsi:type="dg:Circle" radius="3.0">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <center x="4.0" y="6.0"/>
+        </member>
+        <member xsi:type="dg:Polyline">
+          <point x="19.0" y="1.0"/>
+          <point x="8.0" y="6.0"/>
+          <point x="19.0" y="11.0"/>
+        </member>
+        <size width="20.0" height="12.0"/>
+        <reference x="0.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="startSolidDiamond">
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <point x="0.0" y="6.0"/>
+          <point x="8.0" y="1.0"/>
+          <point x="16.0" y="6.0"/>
+          <point x="8.0" y="11.0"/>
+        </member>
+        <size width="16.0" height="12.0"/>
+        <reference x="0.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="startHollowDiamond">
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#FFFFFF"/>
+          </style>
+          <point x="0.0" y="6.0"/>
+          <point x="8.0" y="1.0"/>
+          <point x="16.0" y="6.0"/>
+          <point x="8.0" y="11.0"/>
+        </member>
+        <size width="16.0" height="12.0"/>
+        <reference x="0.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="startSolidDiamondOpenArrow">
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <point x="0.0" y="6.0"/>
+          <point x="8.0" y="1.0"/>
+          <point x="16.0" y="6.0"/>
+          <point x="8.0" y="11.0"/>
+        </member>
+        <member xsi:type="dg:Polyline">
+          <point x="27.0" y="1.0"/>
+          <point x="16.0" y="6.0"/>
+          <point x="27.0" y="11.0"/>
+        </member>
+        <size width="28.0" height="12.0"/>
+        <reference x="0.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="startHollowDiamondOpenArrow">
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#FFFFFF"/>
+          </style>
+          <point x="0.0" y="6.0"/>
+          <point x="8.0" y="1.0"/>
+          <point x="16.0" y="6.0"/>
+          <point x="8.0" y="11.0"/>
+        </member>
+        <member xsi:type="dg:Polyline">
+          <point x="27.0" y="1.0"/>
+          <point x="16.0" y="6.0"/>
+          <point x="27.0" y="11.0"/>
+        </member>
+        <size width="28.0" height="12.0"/>
+        <reference x="0.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="startSolidCircleSolidDiamondOpenArrow">
+        <member xsi:type="dg:Circle" radius="3.0">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <center x="4.0" y="6.0"/>
+        </member>
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <point x="8.0" y="6.0"/>
+          <point x="16.0" y="1.0"/>
+          <point x="24.0" y="6.0"/>
+          <point x="16.0" y="11.0"/>
+        </member>
+        <member xsi:type="dg:Polyline">
+          <point x="35.0" y="1.0"/>
+          <point x="24.0" y="6.0"/>
+          <point x="35.0" y="11.0"/>
+        </member>
+        <size width="36.0" height="12.0"/>
+        <reference x="0.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="startSolidCircleHollowDiamondOpenArrow">
+        <member xsi:type="dg:Circle" radius="3.0">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <center x="4.0" y="6.0"/>
+        </member>
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#FFFFFF"/>
+          </style>
+          <point x="8.0" y="6.0"/>
+          <point x="16.0" y="1.0"/>
+          <point x="24.0" y="6.0"/>
+          <point x="16.0" y="11.0"/>
+        </member>
+        <member xsi:type="dg:Polyline">
+          <point x="35.0" y="1.0"/>
+          <point x="24.0" y="6.0"/>
+          <point x="35.0" y="11.0"/>
+        </member>
+        <size width="36.0" height="12.0"/>
+        <reference x="0.0" y="6.0"/>
+      </definition>
+      <styleSheet>
+        <rule>
+          <selector kind="canvas"/>
+          <style>
+            <fill color="#FFFFFF"/>
+            <stroke color="#000000"/>
+          </style>
+        </rule>
+        <rule>
+          <selector kind="path"/>
+          <selector kind="polyline"/>
+          <style>
+            <fill xsi:nil="true"/>
+          </style>
+        </rule>
+        <rule>
+          <selector kind="text"/>
+          <style>
+            <fill color="#000000"/>
+            <stroke xsi:nil="true"/>
+          </style>
+        </rule>
+        <rule>
+          <selector>
+            <class>underlined</class>
+          </selector>
+          <style fontDecoration="underline"/>
+        </rule>
+        <rule>
+          <selector>
+            <class>dashed</class>
+          </selector>
+          <style>
+            <strokeDashLength>5.0</strokeDashLength>
+            <strokeDashLength>5.0</strokeDashLength>
+          </style>
+        </rule>
+        <rule>
+          <selector>
+            <class>dotted</class>
+          </selector>
+          <style>
+            <strokeDashLength>3.0</strokeDashLength>
+            <strokeDashLength>2.0</strokeDashLength>
+          </style>
+        </rule>
+        <rule>
+          <selector>
+            <class>filled</class>
+          </selector>
+          <style>
+            <fill color="#000000"/>
+          </style>
+        </rule>
+      </styleSheet>
+    </definitions>
+    <script>platform:/plugin/org.eclipse.papyrus.umldi2dg/scripts/UmlLayouts.js</script>
+  </dg:RootCanvas>
+  <dg:RootCanvas id="Packages">
+    <member xsi:type="dg:Group"/>
+    <member xsi:type="dg:Group">
+      <style fontSize="11.0" fontName="Lucida Grande"/>
+      <member xsi:type="dg:Group">
+        <member xsi:type="dg:Rectangle">
+          <bounds x="23.0" y="14.0" width="71.0" height="19.0"/>
+        </member>
+        <member xsi:type="dg:Rectangle">
+          <bounds x="23.0" y="33.0" width="783.0" height="235.0"/>
+        </member>
+      </member>
+      <member xsi:type="dg:Group">
+        <member xsi:type="dg:Line">
+          <start x="23.0" y="33.0"/>
+          <end x="806.0" y="33.0"/>
+        </member>
+        <member xsi:type="dg:Group">
+          <style fontSize="11.0" fontName="Lucida Grande"/>
+          <member xsi:type="dg:Rectangle">
+            <bounds x="50.0" y="52.0" width="100.0" height="100.0"/>
+          </member>
+          <member xsi:type="dg:Group">
+            <member xsi:type="dg:Line">
+              <start x="50.0" y="69.0"/>
+              <end x="150.0" y="69.0"/>
+            </member>
+          </member>
+          <member xsi:type="dg:Text" data="Class1" anchor="middle">
+            <bounds x="53.0" y="55.0" width="100.0" height="13.0"/>
+          </member>
+          <member xsi:type="dg:Group">
+            <member xsi:type="dg:Line">
+              <start x="50.0" y="113.0"/>
+              <end x="150.0" y="113.0"/>
+            </member>
+          </member>
+        </member>
+        <member xsi:type="dg:Group">
+          <style fontSize="11.0" fontName="Lucida Grande"/>
+          <member xsi:type="dg:Rectangle">
+            <bounds x="162.0" y="50.0" width="100.0" height="100.0"/>
+          </member>
+          <member xsi:type="dg:Group">
+            <member xsi:type="dg:Line">
+              <start x="162.0" y="119.0"/>
+              <end x="262.0" y="119.0"/>
+            </member>
+          </member>
+          <member xsi:type="dg:Text" data="&#xab;component&#xbb;\nComponent1" anchor="middle">
+            <bounds x="165.0" y="53.0" width="100.0" height="27.0"/>
+          </member>
+          <member xsi:type="dg:Group">
+            <member xsi:type="dg:Line">
+              <start x="162.0" y="81.0"/>
+              <end x="262.0" y="81.0"/>
+            </member>
+          </member>
+        </member>
+        <member xsi:type="dg:Group">
+          <style fontSize="11.0" fontName="Lucida Grande"/>
+          <member xsi:type="dg:Rectangle">
+            <bounds x="279.0" y="50.0" width="100.0" height="100.0"/>
+          </member>
+          <member xsi:type="dg:Group">
+            <member xsi:type="dg:Line">
+              <start x="279.0" y="81.0"/>
+              <end x="379.0" y="81.0"/>
+            </member>
+          </member>
+          <member xsi:type="dg:Text" data="&#xab;datatype&#xbb;\nDataType1" anchor="middle">
+            <bounds x="282.0" y="53.0" width="100.0" height="27.0"/>
+          </member>
+          <member xsi:type="dg:Group">
+            <member xsi:type="dg:Line">
+              <start x="279.0" y="119.0"/>
+              <end x="379.0" y="119.0"/>
+            </member>
+          </member>
+        </member>
+        <member xsi:type="dg:Group">
+          <style fontSize="11.0" fontName="Lucida Grande"/>
+          <member xsi:type="dg:Rectangle">
+            <bounds x="395.0" y="51.0" width="100.0" height="100.0"/>
+          </member>
+          <member xsi:type="dg:Text" data="&#xab;enumeration&#xbb;\nEnumeration1" anchor="middle">
+            <bounds x="398.0" y="54.0" width="100.0" height="27.0"/>
+          </member>
+        </member>
+        <member xsi:type="dg:Group">
+          <style fontSize="11.0" fontName="Lucida Grande"/>
+          <member xsi:type="dg:Rectangle">
+            <bounds x="517.0" y="57.0" width="100.0" height="100.0"/>
+          </member>
+          <member xsi:type="dg:Group">
+            <member xsi:type="dg:Line">
+              <start x="517.0" y="88.0"/>
+              <end x="617.0" y="88.0"/>
+            </member>
+          </member>
+          <member xsi:type="dg:Text" data="&#xab;interface&#xbb;\nInterface1" anchor="middle">
+            <bounds x="520.0" y="60.0" width="100.0" height="27.0"/>
+          </member>
+          <member xsi:type="dg:Group">
+            <member xsi:type="dg:Line">
+              <start x="517.0" y="126.0"/>
+              <end x="617.0" y="126.0"/>
+            </member>
+          </member>
+        </member>
+        <member xsi:type="dg:Group">
+          <style fontSize="11.0" fontName="Lucida Grande"/>
+          <member xsi:type="dg:Rectangle">
+            <bounds x="640.0" y="56.0" width="134.0" height="100.0"/>
+          </member>
+          <member xsi:type="dg:Text" data="InstanceSpecification1" anchor="middle">
+            <class>underlined</class>
+            <bounds x="643.0" y="59.0" width="134.0" height="13.0"/>
+          </member>
+        </member>
+        <member xsi:type="dg:Group">
+          <style fontSize="11.0" fontName="Lucida Grande"/>
+          <member xsi:type="dg:Rectangle">
+            <bounds x="221.0" y="164.0" width="100.0" height="77.0"/>
+          </member>
+          <member xsi:type="dg:Text" data="&#xab;primitive&#xbb;\nPrimitiveType1" anchor="middle">
+            <bounds x="224.0" y="167.0" width="100.0" height="27.0"/>
+          </member>
+          <member xsi:type="dg:Group">
+            <member xsi:type="dg:Line">
+              <start x="221.0" y="195.0"/>
+              <end x="321.0" y="195.0"/>
+            </member>
+          </member>
+          <member xsi:type="dg:Group">
+            <member xsi:type="dg:Line">
+              <start x="221.0" y="221.0"/>
+              <end x="321.0" y="221.0"/>
+            </member>
+          </member>
+        </member>
+        <member xsi:type="dg:Group">
+          <style fontSize="11.0" fontName="Lucida Grande"/>
+          <member xsi:type="dg:Group">
+            <member xsi:type="dg:Rectangle">
+              <bounds x="37.0" y="187.0" width="75.0" height="19.0"/>
+            </member>
+            <member xsi:type="dg:Rectangle">
+              <bounds x="37.0" y="206.0" width="149.0" height="47.0"/>
+            </member>
+            <member xsi:type="dg:Path">
+              <command xsi:type="dg:MoveTo">
+                <point x="102.0" y="192.0"/>
+              </command>
+              <command xsi:type="dg:LineTo">
+                <point x="97.0" y="200.0"/>
+              </command>
+              <command xsi:type="dg:LineTo">
+                <point x="107.0" y="200.0"/>
+              </command>
+              <command xsi:type="dg:LineTo">
+                <point x="102.0" y="192.0"/>
+              </command>
+            </member>
+          </member>
+          <member xsi:type="dg:Text" data="Model1" anchor="middle">
+            <bounds x="47.0" y="192.0" width="40.0" height="13.0"/>
+          </member>
+        </member>
+        <member xsi:type="dg:Group">
+          <style fontSize="11.0" fontName="Lucida Grande"/>
+          <member xsi:type="dg:Group">
+            <member xsi:type="dg:Rectangle">
+              <bounds x="358.0" y="189.0" width="71.0" height="19.0"/>
+            </member>
+            <member xsi:type="dg:Rectangle">
+              <bounds x="358.0" y="208.0" width="181.0" height="44.0"/>
+            </member>
+          </member>
+          <member xsi:type="dg:Text" data="Package1" anchor="middle">
+            <bounds x="368.0" y="194.0" width="51.0" height="13.0"/>
+          </member>
+        </member>
+        <member xsi:type="dg:Group">
+          <style fontSize="11.0" fontName="Lucida Grande"/>
+          <member xsi:type="dg:Rectangle">
+            <bounds x="666.0" y="179.0" width="112.0" height="69.0"/>
+          </member>
+          <member xsi:type="dg:Text" data="&#xab;signal&#xbb;\nSignal1" anchor="middle">
+            <bounds x="669.0" y="182.0" width="112.0" height="27.0"/>
+          </member>
+          <member xsi:type="dg:Group">
+            <member xsi:type="dg:Line">
+              <start x="666.0" y="210.0"/>
+              <end x="778.0" y="210.0"/>
+            </member>
+          </member>
+        </member>
+      </member>
+      <member xsi:type="dg:Text" data="Package1" anchor="middle">
+        <bounds x="33.0" y="19.0" width="51.0" height="13.0"/>
+      </member>
+    </member>
+    <member xsi:type="dg:Group">
+      <style fontSize="11.0" fontName="Lucida Grande"/>
+      <member xsi:type="dg:Group">
+        <member xsi:type="dg:Rectangle">
+          <bounds x="24.0" y="337.0" width="75.0" height="19.0"/>
+        </member>
+        <member xsi:type="dg:Rectangle">
+          <bounds x="24.0" y="356.0" width="256.0" height="65.0"/>
+        </member>
+        <member xsi:type="dg:Path">
+          <command xsi:type="dg:MoveTo">
+            <point x="89.0" y="342.0"/>
+          </command>
+          <command xsi:type="dg:LineTo">
+            <point x="84.0" y="350.0"/>
+          </command>
+          <command xsi:type="dg:LineTo">
+            <point x="94.0" y="350.0"/>
+          </command>
+          <command xsi:type="dg:LineTo">
+            <point x="89.0" y="342.0"/>
+          </command>
+        </member>
+      </member>
+      <member xsi:type="dg:Group">
+        <member xsi:type="dg:Line">
+          <start x="24.0" y="356.0"/>
+          <end x="280.0" y="356.0"/>
+        </member>
+      </member>
+      <member xsi:type="dg:Text" data="Model1" anchor="middle">
+        <bounds x="34.0" y="342.0" width="40.0" height="13.0"/>
+      </member>
+    </member>
+    <member xsi:type="dg:Group">
+      <style fontSize="11.0" fontName="Lucida Grande"/>
+      <member xsi:type="dg:Rectangle">
+        <bounds x="433.0" y="339.0" width="100.0" height="50.0"/>
+      </member>
+      <member xsi:type="dg:Text" data="Class3" anchor="middle">
+        <bounds x="436.0" y="357.0" width="100.0" height="13.0"/>
+      </member>
+    </member>
+    <member xsi:type="dg:Group">
+      <style fontSize="11.0" fontName="Lucida Grande"/>
+      <member xsi:type="dg:Rectangle">
+        <bounds x="435.0" y="400.0" width="100.0" height="50.0"/>
+      </member>
+      <member xsi:type="dg:Text" data="Class4" anchor="middle">
+        <bounds x="438.0" y="418.0" width="100.0" height="13.0"/>
+      </member>
+    </member>
+    <member xsi:type="dg:Group">
+      <style fontSize="11.0" fontName="Lucida Grande"/>
+      <member xsi:type="dg:Path" startMarker="/7/@definitions/@definition.10">
+        <command xsi:type="dg:MoveTo">
+          <point x="280.0" y="366.0"/>
+        </command>
+        <command xsi:type="dg:LineTo">
+          <point x="299.0" y="366.0"/>
+        </command>
+        <command xsi:type="dg:LineTo">
+          <point x="433.0" y="366.0"/>
+        </command>
+      </member>
+    </member>
+    <member xsi:type="dg:Group">
+      <style fontSize="11.0" fontName="Lucida Grande"/>
+      <member xsi:type="dg:Path" endMarker="/7/@definitions/@definition.2">
+        <class>dashed</class>
+        <command xsi:type="dg:MoveTo">
+          <point x="461.0" y="267.0"/>
+        </command>
+        <command xsi:type="dg:LineTo">
+          <point x="477.0" y="339.0"/>
+        </command>
+      </member>
+      <member xsi:type="dg:Text" data="&#xab;import&#xbb;\nClass33" anchor="middle">
+        <bounds x="481.0" y="294.0" width="48.0" height="13.0"/>
+      </member>
+    </member>
+    <member xsi:type="dg:Group">
+      <style fontSize="11.0" fontName="Lucida Grande"/>
+      <member xsi:type="dg:Path" endMarker="/7/@definitions/@definition.2">
+        <class>dashed</class>
+        <command xsi:type="dg:MoveTo">
+          <point x="59.0" y="267.0"/>
+        </command>
+        <command xsi:type="dg:LineTo">
+          <point x="84.0" y="337.0"/>
+        </command>
+      </member>
+      <member xsi:type="dg:Text" data="&#xab;import&#xbb;" anchor="middle">
+        <bounds x="18.0" y="303.0" width="48.0" height="13.0"/>
+      </member>
+    </member>
+    <member xsi:type="dg:Group">
+      <style fontSize="11.0" fontName="Lucida Grande"/>
+      <member xsi:type="dg:Path" endMarker="/7/@definitions/@definition.2">
+        <class>dashed</class>
+        <command xsi:type="dg:MoveTo">
+          <point x="234.0" y="267.0"/>
+        </command>
+        <command xsi:type="dg:LineTo">
+          <point x="234.0" y="356.0"/>
+        </command>
+      </member>
+      <member xsi:type="dg:Text" data="&#xab;merge&#xbb;" anchor="middle">
+        <bounds x="243.0" y="297.0" width="46.0" height="13.0"/>
+      </member>
+    </member>
+    <member xsi:type="dg:Group">
+      <style fontSize="11.0" fontName="Lucida Grande"/>
+      <member xsi:type="dg:Path" startMarker="/7/@definitions/@definition.10">
+        <command xsi:type="dg:MoveTo">
+          <point x="280.0" y="399.0"/>
+        </command>
+        <command xsi:type="dg:LineTo">
+          <point x="299.0" y="402.0"/>
+        </command>
+        <command xsi:type="dg:LineTo">
+          <point x="435.0" y="418.0"/>
+        </command>
+      </member>
+    </member>
+    <member xsi:type="dg:Group">
+      <style fontSize="11.0" fontName="Lucida Grande"/>
+      <member xsi:type="dg:Path" endMarker="/7/@definitions/@definition.2">
+        <class>dashed</class>
+        <command xsi:type="dg:MoveTo">
+          <point x="692.0" y="267.0"/>
+        </command>
+        <command xsi:type="dg:LineTo">
+          <point x="692.0" y="424.0"/>
+        </command>
+        <command xsi:type="dg:LineTo">
+          <point x="535.0" y="424.0"/>
+        </command>
+      </member>
+      <member xsi:type="dg:Text" data="&#xab;access&#xbb;\nClass44" anchor="middle">
+        <bounds x="614.0" y="380.0" width="48.0" height="13.0"/>
+      </member>
+    </member>
+    <member xsi:type="dg:Group">
+      <style fontSize="11.0" fontName="Lucida Grande"/>
+      <member xsi:type="dg:Path" endMarker="/7/@definitions/@definition.2">
+        <class>dashed</class>
+        <command xsi:type="dg:MoveTo">
+          <point x="152.0" y="267.0"/>
+        </command>
+        <command xsi:type="dg:LineTo">
+          <point x="152.0" y="356.0"/>
+        </command>
+      </member>
+      <member xsi:type="dg:Text" data="&#xab;element import&#xbb;\nModel1" anchor="middle">
+        <bounds x="162.0" y="295.0" width="48.0" height="13.0"/>
+      </member>
+    </member>
+    <member xsi:type="dg:Group">
+      <style fontSize="11.0" fontName="Lucida Grande"/>
+      <member xsi:type="dg:Path" endMarker="/7/@definitions/@definition.2">
+        <class>dashed</class>
+        <command xsi:type="dg:MoveTo">
+          <point x="666.0" y="218.0"/>
+        </command>
+        <command xsi:type="dg:LineTo">
+          <point x="567.0" y="218.0"/>
+        </command>
+        <command xsi:type="dg:LineTo">
+          <point x="567.0" y="157.0"/>
+        </command>
+      </member>
+      <member xsi:type="dg:Text" data="Dependency1" anchor="middle">
+        <bounds x="572.0" y="178.0" width="73.0" height="13.0"/>
+      </member>
+    </member>
+    <member xsi:type="dg:Group">
+      <style fontSize="11.0" fontName="Lucida Grande"/>
+      <member xsi:type="dg:Path" endMarker="/7/@definitions/@definition.2">
+        <class>dashed</class>
+        <command xsi:type="dg:MoveTo">
+          <point x="442.0" y="339.0"/>
+        </command>
+        <command xsi:type="dg:LineTo">
+          <point x="285.0" y="241.0"/>
+        </command>
+      </member>
+      <member xsi:type="dg:Text" data="&#xab;abstraction&#xbb;\nAbstraction2" anchor="middle">
+        <bounds x="305.0" y="295.0" width="72.0" height="13.0"/>
+      </member>
+    </member>
+    <member xsi:type="dg:Group">
+      <style fontSize="11.0" fontName="Lucida Grande"/>
+      <member xsi:type="dg:Path" endMarker="/7/@definitions/@definition.0">
+        <class>dashed</class>
+        <command xsi:type="dg:MoveTo">
+          <point x="690.0" y="248.0"/>
+        </command>
+        <command xsi:type="dg:LineTo">
+          <point x="533.0" y="353.0"/>
+        </command>
+      </member>
+      <member xsi:type="dg:Text" data="Realization1" anchor="middle">
+        <bounds x="538.0" y="289.0" width="66.0" height="13.0"/>
+      </member>
+    </member>
+    <definitions>
+      <definition xsi:type="dg:Marker" id="endHollowClosedArrow">
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#FFFFFF"/>
+          </style>
+          <point x="1.0" y="1.0"/>
+          <point x="12.0" y="6.0"/>
+          <point x="1.0" y="11.0"/>
+        </member>
+        <size width="12.0" height="12.0"/>
+        <reference x="12.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="endSolidClosedArrow">
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <point x="1.0" y="1.0"/>
+          <point x="12.0" y="6.0"/>
+          <point x="1.0" y="11.0"/>
+        </member>
+        <size width="12.0" height="12.0"/>
+        <reference x="12.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="endOpenArrow">
+        <member xsi:type="dg:Polyline">
+          <point x="1.0" y="1.0"/>
+          <point x="12.0" y="6.0"/>
+          <point x="1.0" y="11.0"/>
+        </member>
+        <size width="12.0" height="12.0"/>
+        <reference x="12.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="endSolidCircleOpenArrow">
+        <member xsi:type="dg:Circle" radius="3.0">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <center x="16.0" y="6.0"/>
+        </member>
+        <member xsi:type="dg:Polyline">
+          <point x="1.0" y="1.0"/>
+          <point x="12.0" y="6.0"/>
+          <point x="1.0" y="11.0"/>
+        </member>
+        <size width="20.0" height="12.0"/>
+        <reference x="20.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="endSolidDiamond">
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <point x="0.0" y="6.0"/>
+          <point x="8.0" y="1.0"/>
+          <point x="16.0" y="6.0"/>
+          <point x="8.0" y="11.0"/>
+        </member>
+        <size width="16.0" height="12.0"/>
+        <reference x="16.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="endHollowDiamond">
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#FFFFFF"/>
+          </style>
+          <point x="0.0" y="6.0"/>
+          <point x="8.0" y="1.0"/>
+          <point x="16.0" y="6.0"/>
+          <point x="8.0" y="11.0"/>
+        </member>
+        <size width="16.0" height="12.0"/>
+        <reference x="16.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="endSolidDiamondOpenArrow">
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <point x="12.0" y="6.0"/>
+          <point x="20.0" y="1.0"/>
+          <point x="28.0" y="6.0"/>
+          <point x="20.0" y="11.0"/>
+        </member>
+        <member xsi:type="dg:Polyline">
+          <point x="1.0" y="1.0"/>
+          <point x="12.0" y="6.0"/>
+          <point x="1.0" y="11.0"/>
+        </member>
+        <size width="28.0" height="12.0"/>
+        <reference x="28.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="endHollowDiamondOpenArrow">
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#FFFFFF"/>
+          </style>
+          <point x="12.0" y="6.0"/>
+          <point x="20.0" y="1.0"/>
+          <point x="28.0" y="6.0"/>
+          <point x="20.0" y="11.0"/>
+        </member>
+        <member xsi:type="dg:Polyline">
+          <point x="1.0" y="1.0"/>
+          <point x="12.0" y="6.0"/>
+          <point x="1.0" y="11.0"/>
+        </member>
+        <size width="28.0" height="12.0"/>
+        <reference x="28.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="endSolidCircleSolidDiamondOpenArrow">
+        <member xsi:type="dg:Circle" radius="3.0">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <center x="32.0" y="6.0"/>
+        </member>
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <point x="12.0" y="6.0"/>
+          <point x="20.0" y="1.0"/>
+          <point x="28.0" y="6.0"/>
+          <point x="20.0" y="11.0"/>
+        </member>
+        <member xsi:type="dg:Polyline">
+          <point x="1.0" y="1.0"/>
+          <point x="12.0" y="6.0"/>
+          <point x="1.0" y="11.0"/>
+        </member>
+        <size width="36.0" height="12.0"/>
+        <reference x="36.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="endSolidCircleHollowDiamondOpenArrow">
+        <member xsi:type="dg:Circle" radius="3.0">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <center x="32.0" y="6.0"/>
+        </member>
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#FFFFFF"/>
+          </style>
+          <point x="12.0" y="6.0"/>
+          <point x="20.0" y="1.0"/>
+          <point x="28.0" y="6.0"/>
+          <point x="20.0" y="11.0"/>
+        </member>
+        <member xsi:type="dg:Polyline">
+          <point x="1.0" y="1.0"/>
+          <point x="12.0" y="6.0"/>
+          <point x="1.0" y="11.0"/>
+        </member>
+        <size width="36.0" height="12.0"/>
+        <reference x="36.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="startPlusCircle">
+        <member xsi:type="dg:Circle" radius="8.0">
+          <style>
+            <fill color="#FFFFFF"/>
+          </style>
+          <center x="9.0" y="9.0"/>
+        </member>
+        <member xsi:type="dg:Path">
+          <command xsi:type="dg:MoveTo">
+            <point x="0.0" y="9.0"/>
+          </command>
+          <command xsi:type="dg:LineTo">
+            <point x="17.0" y="9.0"/>
+          </command>
+          <command xsi:type="dg:MoveTo">
+            <point x="9.0" y="0.0"/>
+          </command>
+          <command xsi:type="dg:LineTo">
+            <point x="9.0" y="17.0"/>
+          </command>
+        </member>
+        <size width="18.0" height="18.0"/>
+        <reference x="0.0" y="9.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="startOpenArrow">
+        <member xsi:type="dg:Polyline">
+          <point x="11.0" y="1.0"/>
+          <point x="1.0" y="6.0"/>
+          <point x="11.0" y="11.0"/>
+        </member>
+        <size width="12.0" height="12.0"/>
+        <reference x="0.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="startSolidCircleOpenArrow">
+        <member xsi:type="dg:Circle" radius="3.0">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <center x="4.0" y="6.0"/>
+        </member>
+        <member xsi:type="dg:Polyline">
+          <point x="19.0" y="1.0"/>
+          <point x="8.0" y="6.0"/>
+          <point x="19.0" y="11.0"/>
+        </member>
+        <size width="20.0" height="12.0"/>
+        <reference x="0.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="startSolidDiamond">
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <point x="0.0" y="6.0"/>
+          <point x="8.0" y="1.0"/>
+          <point x="16.0" y="6.0"/>
+          <point x="8.0" y="11.0"/>
+        </member>
+        <size width="16.0" height="12.0"/>
+        <reference x="0.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="startHollowDiamond">
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#FFFFFF"/>
+          </style>
+          <point x="0.0" y="6.0"/>
+          <point x="8.0" y="1.0"/>
+          <point x="16.0" y="6.0"/>
+          <point x="8.0" y="11.0"/>
+        </member>
+        <size width="16.0" height="12.0"/>
+        <reference x="0.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="startSolidDiamondOpenArrow">
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <point x="0.0" y="6.0"/>
+          <point x="8.0" y="1.0"/>
+          <point x="16.0" y="6.0"/>
+          <point x="8.0" y="11.0"/>
+        </member>
+        <member xsi:type="dg:Polyline">
+          <point x="27.0" y="1.0"/>
+          <point x="16.0" y="6.0"/>
+          <point x="27.0" y="11.0"/>
+        </member>
+        <size width="28.0" height="12.0"/>
+        <reference x="0.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="startHollowDiamondOpenArrow">
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#FFFFFF"/>
+          </style>
+          <point x="0.0" y="6.0"/>
+          <point x="8.0" y="1.0"/>
+          <point x="16.0" y="6.0"/>
+          <point x="8.0" y="11.0"/>
+        </member>
+        <member xsi:type="dg:Polyline">
+          <point x="27.0" y="1.0"/>
+          <point x="16.0" y="6.0"/>
+          <point x="27.0" y="11.0"/>
+        </member>
+        <size width="28.0" height="12.0"/>
+        <reference x="0.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="startSolidCircleSolidDiamondOpenArrow">
+        <member xsi:type="dg:Circle" radius="3.0">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <center x="4.0" y="6.0"/>
+        </member>
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <point x="8.0" y="6.0"/>
+          <point x="16.0" y="1.0"/>
+          <point x="24.0" y="6.0"/>
+          <point x="16.0" y="11.0"/>
+        </member>
+        <member xsi:type="dg:Polyline">
+          <point x="35.0" y="1.0"/>
+          <point x="24.0" y="6.0"/>
+          <point x="35.0" y="11.0"/>
+        </member>
+        <size width="36.0" height="12.0"/>
+        <reference x="0.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="startSolidCircleHollowDiamondOpenArrow">
+        <member xsi:type="dg:Circle" radius="3.0">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <center x="4.0" y="6.0"/>
+        </member>
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#FFFFFF"/>
+          </style>
+          <point x="8.0" y="6.0"/>
+          <point x="16.0" y="1.0"/>
+          <point x="24.0" y="6.0"/>
+          <point x="16.0" y="11.0"/>
+        </member>
+        <member xsi:type="dg:Polyline">
+          <point x="35.0" y="1.0"/>
+          <point x="24.0" y="6.0"/>
+          <point x="35.0" y="11.0"/>
+        </member>
+        <size width="36.0" height="12.0"/>
+        <reference x="0.0" y="6.0"/>
+      </definition>
+      <styleSheet>
+        <rule>
+          <selector kind="canvas"/>
+          <style>
+            <fill color="#FFFFFF"/>
+            <stroke color="#000000"/>
+          </style>
+        </rule>
+        <rule>
+          <selector kind="path"/>
+          <selector kind="polyline"/>
+          <style>
+            <fill xsi:nil="true"/>
+          </style>
+        </rule>
+        <rule>
+          <selector kind="text"/>
+          <style>
+            <fill color="#000000"/>
+            <stroke xsi:nil="true"/>
+          </style>
+        </rule>
+        <rule>
+          <selector>
+            <class>underlined</class>
+          </selector>
+          <style fontDecoration="underline"/>
+        </rule>
+        <rule>
+          <selector>
+            <class>dashed</class>
+          </selector>
+          <style>
+            <strokeDashLength>5.0</strokeDashLength>
+            <strokeDashLength>5.0</strokeDashLength>
+          </style>
+        </rule>
+        <rule>
+          <selector>
+            <class>dotted</class>
+          </selector>
+          <style>
+            <strokeDashLength>3.0</strokeDashLength>
+            <strokeDashLength>2.0</strokeDashLength>
+          </style>
+        </rule>
+        <rule>
+          <selector>
+            <class>filled</class>
+          </selector>
+          <style>
+            <fill color="#000000"/>
+          </style>
+        </rule>
+      </styleSheet>
+    </definitions>
+    <script>platform:/plugin/org.eclipse.papyrus.umldi2dg/scripts/UmlLayouts.js</script>
+  </dg:RootCanvas>
+  <dg:RootCanvas id="Templates">
+    <member xsi:type="dg:Group"/>
+    <member xsi:type="dg:Group">
+      <style fontSize="11.0" fontName="Lucida Grande"/>
+      <member xsi:type="dg:Rectangle">
+        <bounds x="42.0" y="58.0" width="183.0" height="100.0"/>
+      </member>
+      <member xsi:type="dg:Text" data="Class6" anchor="middle">
+        <bounds x="45.0" y="61.0" width="183.0" height="13.0"/>
+      </member>
+      <member xsi:type="dg:Group">
+        <member xsi:type="dg:Line">
+          <start x="42.0" y="110.0"/>
+          <end x="225.0" y="110.0"/>
+        </member>
+        <member xsi:type="dg:Text" data="+ Operation1  ()">
+          <style fontSize="11.0" fontName="Lucida Grande"/>
+          <bounds x="47.0" y="112.0" width="173.0" height="13.0"/>
+        </member>
+        <member xsi:type="dg:Text" data="~ Operation2  () : Real">
+          <style fontSize="11.0" fontName="Lucida Grande"/>
+          <bounds x="47.0" y="125.0" width="173.0" height="13.0"/>
+        </member>
+      </member>
+      <member xsi:type="dg:Group">
+        <member xsi:type="dg:Line">
+          <start x="42.0" y="75.0"/>
+          <end x="225.0" y="75.0"/>
+        </member>
+        <member xsi:type="dg:Text" data="+ Attribute1 : Integer [1] = p">
+          <style fontSize="11.0" fontName="Lucida Grande"/>
+          <bounds x="47.0" y="77.0" width="173.0" height="13.0"/>
+        </member>
+      </member>
+      <member xsi:type="dg:Group">
+        <member xsi:type="dg:Rectangle">
+          <class>dashed</class>
+          <bounds x="211.0" y="48.0" width="127.0" height="52.0"/>
+        </member>
+        <member xsi:type="dg:Text" data="p : LiteralInteger">
+          <style fontSize="11.0" fontName="Lucida Grande"/>
+          <bounds x="216.0" y="50.0" width="113.0" height="13.0"/>
+        </member>
+        <member xsi:type="dg:Text" data="Operation1  () : Operation">
+          <style fontSize="11.0" fontName="Lucida Grande"/>
+          <bounds x="216.0" y="63.0" width="113.0" height="13.0"/>
+        </member>
+        <member xsi:type="dg:Text" data="Attribute1 : Property">
+          <style fontSize="11.0" fontName="Lucida Grande"/>
+          <bounds x="216.0" y="76.0" width="113.0" height="13.0"/>
+        </member>
+      </member>
+    </member>
+    <member xsi:type="dg:Group">
+      <style fontSize="11.0" fontName="Lucida Grande"/>
+      <member xsi:type="dg:Group">
+        <member xsi:type="dg:Rectangle">
+          <bounds x="46.0" y="205.0" width="71.0" height="19.0"/>
+        </member>
+        <member xsi:type="dg:Rectangle">
+          <bounds x="46.0" y="224.0" width="200.0" height="82.0"/>
+        </member>
+      </member>
+      <member xsi:type="dg:Text" data="Package1" anchor="middle">
+        <bounds x="56.0" y="210.0" width="51.0" height="13.0"/>
+      </member>
+      <member xsi:type="dg:Group">
+        <member xsi:type="dg:Line">
+          <start x="46.0" y="224.0"/>
+          <end x="246.0" y="224.0"/>
+        </member>
+      </member>
+      <member xsi:type="dg:Group">
+        <member xsi:type="dg:Rectangle">
+          <class>dashed</class>
+          <bounds x="236.0" y="205.0" width="128.0" height="40.0"/>
+        </member>
+        <member xsi:type="dg:Text" data="Interface1 : Interface">
+          <style fontSize="11.0" fontName="Lucida Grande"/>
+          <bounds x="241.0" y="207.0" width="114.0" height="13.0"/>
+        </member>
+      </member>
+    </member>
+    <member xsi:type="dg:Group">
+      <style fontSize="11.0" fontName="Lucida Grande"/>
+      <member xsi:type="dg:Rectangle">
+        <bounds x="385.0" y="75.0" width="187.0" height="100.0"/>
+      </member>
+      <member xsi:type="dg:Group">
+        <member xsi:type="dg:Line">
+          <start x="385.0" y="106.0"/>
+          <end x="572.0" y="106.0"/>
+        </member>
+        <member xsi:type="dg:Text" data="+ Attribute1 : Integer [0..max]">
+          <style fontSize="11.0" fontName="Lucida Grande"/>
+          <bounds x="390.0" y="108.0" width="177.0" height="13.0"/>
+        </member>
+      </member>
+      <member xsi:type="dg:Text" data="&#xab;component&#xbb;\nComponent2" anchor="middle">
+        <bounds x="388.0" y="78.0" width="187.0" height="27.0"/>
+      </member>
+      <member xsi:type="dg:Group">
+        <member xsi:type="dg:Rectangle">
+          <class>dashed</class>
+          <bounds x="562.0" y="72.0" width="174.0" height="40.0"/>
+        </member>
+        <member xsi:type="dg:Text" data="max : LiteralUnlimitedNatural">
+          <style fontSize="11.0" fontName="Lucida Grande"/>
+          <bounds x="567.0" y="74.0" width="160.0" height="13.0"/>
+        </member>
+      </member>
+    </member>
+    <definitions>
+      <definition xsi:type="dg:Marker" id="endHollowClosedArrow">
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#FFFFFF"/>
+          </style>
+          <point x="1.0" y="1.0"/>
+          <point x="12.0" y="6.0"/>
+          <point x="1.0" y="11.0"/>
+        </member>
+        <size width="12.0" height="12.0"/>
+        <reference x="12.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="endSolidClosedArrow">
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <point x="1.0" y="1.0"/>
+          <point x="12.0" y="6.0"/>
+          <point x="1.0" y="11.0"/>
+        </member>
+        <size width="12.0" height="12.0"/>
+        <reference x="12.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="endOpenArrow">
+        <member xsi:type="dg:Polyline">
+          <point x="1.0" y="1.0"/>
+          <point x="12.0" y="6.0"/>
+          <point x="1.0" y="11.0"/>
+        </member>
+        <size width="12.0" height="12.0"/>
+        <reference x="12.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="endSolidCircleOpenArrow">
+        <member xsi:type="dg:Circle" radius="3.0">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <center x="16.0" y="6.0"/>
+        </member>
+        <member xsi:type="dg:Polyline">
+          <point x="1.0" y="1.0"/>
+          <point x="12.0" y="6.0"/>
+          <point x="1.0" y="11.0"/>
+        </member>
+        <size width="20.0" height="12.0"/>
+        <reference x="20.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="endSolidDiamond">
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <point x="0.0" y="6.0"/>
+          <point x="8.0" y="1.0"/>
+          <point x="16.0" y="6.0"/>
+          <point x="8.0" y="11.0"/>
+        </member>
+        <size width="16.0" height="12.0"/>
+        <reference x="16.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="endHollowDiamond">
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#FFFFFF"/>
+          </style>
+          <point x="0.0" y="6.0"/>
+          <point x="8.0" y="1.0"/>
+          <point x="16.0" y="6.0"/>
+          <point x="8.0" y="11.0"/>
+        </member>
+        <size width="16.0" height="12.0"/>
+        <reference x="16.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="endSolidDiamondOpenArrow">
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <point x="12.0" y="6.0"/>
+          <point x="20.0" y="1.0"/>
+          <point x="28.0" y="6.0"/>
+          <point x="20.0" y="11.0"/>
+        </member>
+        <member xsi:type="dg:Polyline">
+          <point x="1.0" y="1.0"/>
+          <point x="12.0" y="6.0"/>
+          <point x="1.0" y="11.0"/>
+        </member>
+        <size width="28.0" height="12.0"/>
+        <reference x="28.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="endHollowDiamondOpenArrow">
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#FFFFFF"/>
+          </style>
+          <point x="12.0" y="6.0"/>
+          <point x="20.0" y="1.0"/>
+          <point x="28.0" y="6.0"/>
+          <point x="20.0" y="11.0"/>
+        </member>
+        <member xsi:type="dg:Polyline">
+          <point x="1.0" y="1.0"/>
+          <point x="12.0" y="6.0"/>
+          <point x="1.0" y="11.0"/>
+        </member>
+        <size width="28.0" height="12.0"/>
+        <reference x="28.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="endSolidCircleSolidDiamondOpenArrow">
+        <member xsi:type="dg:Circle" radius="3.0">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <center x="32.0" y="6.0"/>
+        </member>
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <point x="12.0" y="6.0"/>
+          <point x="20.0" y="1.0"/>
+          <point x="28.0" y="6.0"/>
+          <point x="20.0" y="11.0"/>
+        </member>
+        <member xsi:type="dg:Polyline">
+          <point x="1.0" y="1.0"/>
+          <point x="12.0" y="6.0"/>
+          <point x="1.0" y="11.0"/>
+        </member>
+        <size width="36.0" height="12.0"/>
+        <reference x="36.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="endSolidCircleHollowDiamondOpenArrow">
+        <member xsi:type="dg:Circle" radius="3.0">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <center x="32.0" y="6.0"/>
+        </member>
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#FFFFFF"/>
+          </style>
+          <point x="12.0" y="6.0"/>
+          <point x="20.0" y="1.0"/>
+          <point x="28.0" y="6.0"/>
+          <point x="20.0" y="11.0"/>
+        </member>
+        <member xsi:type="dg:Polyline">
+          <point x="1.0" y="1.0"/>
+          <point x="12.0" y="6.0"/>
+          <point x="1.0" y="11.0"/>
+        </member>
+        <size width="36.0" height="12.0"/>
+        <reference x="36.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="startPlusCircle">
+        <member xsi:type="dg:Circle" radius="8.0">
+          <style>
+            <fill color="#FFFFFF"/>
+          </style>
+          <center x="9.0" y="9.0"/>
+        </member>
+        <member xsi:type="dg:Path">
+          <command xsi:type="dg:MoveTo">
+            <point x="0.0" y="9.0"/>
+          </command>
+          <command xsi:type="dg:LineTo">
+            <point x="17.0" y="9.0"/>
+          </command>
+          <command xsi:type="dg:MoveTo">
+            <point x="9.0" y="0.0"/>
+          </command>
+          <command xsi:type="dg:LineTo">
+            <point x="9.0" y="17.0"/>
+          </command>
+        </member>
+        <size width="18.0" height="18.0"/>
+        <reference x="0.0" y="9.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="startOpenArrow">
+        <member xsi:type="dg:Polyline">
+          <point x="11.0" y="1.0"/>
+          <point x="1.0" y="6.0"/>
+          <point x="11.0" y="11.0"/>
+        </member>
+        <size width="12.0" height="12.0"/>
+        <reference x="0.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="startSolidCircleOpenArrow">
+        <member xsi:type="dg:Circle" radius="3.0">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <center x="4.0" y="6.0"/>
+        </member>
+        <member xsi:type="dg:Polyline">
+          <point x="19.0" y="1.0"/>
+          <point x="8.0" y="6.0"/>
+          <point x="19.0" y="11.0"/>
+        </member>
+        <size width="20.0" height="12.0"/>
+        <reference x="0.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="startSolidDiamond">
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <point x="0.0" y="6.0"/>
+          <point x="8.0" y="1.0"/>
+          <point x="16.0" y="6.0"/>
+          <point x="8.0" y="11.0"/>
+        </member>
+        <size width="16.0" height="12.0"/>
+        <reference x="0.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="startHollowDiamond">
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#FFFFFF"/>
+          </style>
+          <point x="0.0" y="6.0"/>
+          <point x="8.0" y="1.0"/>
+          <point x="16.0" y="6.0"/>
+          <point x="8.0" y="11.0"/>
+        </member>
+        <size width="16.0" height="12.0"/>
+        <reference x="0.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="startSolidDiamondOpenArrow">
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <point x="0.0" y="6.0"/>
+          <point x="8.0" y="1.0"/>
+          <point x="16.0" y="6.0"/>
+          <point x="8.0" y="11.0"/>
+        </member>
+        <member xsi:type="dg:Polyline">
+          <point x="27.0" y="1.0"/>
+          <point x="16.0" y="6.0"/>
+          <point x="27.0" y="11.0"/>
+        </member>
+        <size width="28.0" height="12.0"/>
+        <reference x="0.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="startHollowDiamondOpenArrow">
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#FFFFFF"/>
+          </style>
+          <point x="0.0" y="6.0"/>
+          <point x="8.0" y="1.0"/>
+          <point x="16.0" y="6.0"/>
+          <point x="8.0" y="11.0"/>
+        </member>
+        <member xsi:type="dg:Polyline">
+          <point x="27.0" y="1.0"/>
+          <point x="16.0" y="6.0"/>
+          <point x="27.0" y="11.0"/>
+        </member>
+        <size width="28.0" height="12.0"/>
+        <reference x="0.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="startSolidCircleSolidDiamondOpenArrow">
+        <member xsi:type="dg:Circle" radius="3.0">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <center x="4.0" y="6.0"/>
+        </member>
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <point x="8.0" y="6.0"/>
+          <point x="16.0" y="1.0"/>
+          <point x="24.0" y="6.0"/>
+          <point x="16.0" y="11.0"/>
+        </member>
+        <member xsi:type="dg:Polyline">
+          <point x="35.0" y="1.0"/>
+          <point x="24.0" y="6.0"/>
+          <point x="35.0" y="11.0"/>
+        </member>
+        <size width="36.0" height="12.0"/>
+        <reference x="0.0" y="6.0"/>
+      </definition>
+      <definition xsi:type="dg:Marker" id="startSolidCircleHollowDiamondOpenArrow">
+        <member xsi:type="dg:Circle" radius="3.0">
+          <style>
+            <fill color="#000000"/>
+          </style>
+          <center x="4.0" y="6.0"/>
+        </member>
+        <member xsi:type="dg:Polygon">
+          <style>
+            <fill color="#FFFFFF"/>
+          </style>
+          <point x="8.0" y="6.0"/>
+          <point x="16.0" y="1.0"/>
+          <point x="24.0" y="6.0"/>
+          <point x="16.0" y="11.0"/>
+        </member>
+        <member xsi:type="dg:Polyline">
+          <point x="35.0" y="1.0"/>
+          <point x="24.0" y="6.0"/>
+          <point x="35.0" y="11.0"/>
+        </member>
+        <size width="36.0" height="12.0"/>
+        <reference x="0.0" y="6.0"/>
+      </definition>
+      <styleSheet>
+        <rule>
+          <selector kind="canvas"/>
+          <style>
+            <fill color="#FFFFFF"/>
+            <stroke color="#000000"/>
+          </style>
+        </rule>
+        <rule>
+          <selector kind="path"/>
+          <selector kind="polyline"/>
+          <style>
+            <fill xsi:nil="true"/>
+          </style>
+        </rule>
+        <rule>
+          <selector kind="text"/>
+          <style>
+            <fill color="#000000"/>
+            <stroke xsi:nil="true"/>
+          </style>
+        </rule>
+        <rule>
+          <selector>
+            <class>underlined</class>
+          </selector>
+          <style fontDecoration="underline"/>
+        </rule>
+        <rule>
+          <selector>
+            <class>dashed</class>
+          </selector>
+          <style>
+            <strokeDashLength>5.0</strokeDashLength>
+            <strokeDashLength>5.0</strokeDashLength>
+          </style>
+        </rule>
+        <rule>
+          <selector>
+            <class>dotted</class>
+          </selector>
+          <style>
+            <strokeDashLength>3.0</strokeDashLength>
+            <strokeDashLength>2.0</strokeDashLength>
+          </style>
+        </rule>
+        <rule>
+          <selector>
+            <class>filled</class>
+          </selector>
+          <style>
+            <fill color="#000000"/>
+          </style>
+        </rule>
+      </styleSheet>
+    </definitions>
+    <script>platform:/plugin/org.eclipse.papyrus.umldi2dg/scripts/UmlLayouts.js</script>
+  </dg:RootCanvas>
+</xmi:XMI>

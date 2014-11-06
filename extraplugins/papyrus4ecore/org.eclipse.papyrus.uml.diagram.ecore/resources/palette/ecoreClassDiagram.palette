@@ -23,7 +23,7 @@
 					<postAction id="org.eclipse.papyrus.postaction.associationendactionprovider"><associationEnd index="0" name="source"><multiplicity value="1..1"/></associationEnd><associationEnd index="1" name="target"><aggregation value="composite"/><multiplicity value="0..1"/><navigable value="Yes"/><owner value="Class"/></associationEnd></postAction>
 					</aspectTool>
 			</stack>
-			<aspectTool description="Creation of a context link for a Constraint" iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Association.gif" id="ecoreUML.tool.contextLink" name="ContextLink" refToolId="createContextLink6CreationTool"/>			
+			<aspectTool description="Creation of a context link for a Constraint" iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Association.gif" id="ecoreUML.tool.contextLink" name="ContextLink" refToolId="clazz.tool.contextlink"/>			
 			<aspectTool description="Create a Dependency" iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Dependency.gif" id="ecoreUML.tool.dependency" name="Dependency" refToolId="clazz.tool.dependency"/>
 			<aspectTool description="Create a Generalization" iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Generalization.gif" id="ecoreUML.tool.generalization" name="Generalization" refToolId="clazz.tool.generalization"/>
 			<aspectTool description="Creation of a link for Comment or Constraint" iconpath="platform:/plugin/org.eclipse.papyrus.uml.diagram.common/icons/obj16/Link.gif" id="ecoreUML.tool.link" name="Link" refToolId="clazz.tool.link"/>

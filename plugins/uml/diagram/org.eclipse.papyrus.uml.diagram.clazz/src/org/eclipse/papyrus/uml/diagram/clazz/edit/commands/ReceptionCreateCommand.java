@@ -68,9 +68,12 @@ public class ReceptionCreateCommand extends EditElementCommand {
 	 */
 	@Override
 	public boolean canExecute() {
+
 		EObject target = getElementToEdit();
 		ModelAddData data = PolicyChecker.getCurrent().getChildAddData(diagram, target.eClass(), UMLPackage.eINSTANCE.getReception());
 		return data.isPermitted();
+
+
 	}
 
 	/**
@@ -78,7 +81,9 @@ public class ReceptionCreateCommand extends EditElementCommand {
 	 */
 	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+
 		Reception newElement = UMLFactory.eINSTANCE.createReception();
+
 		EObject target = getElementToEdit();
 		ModelAddData data = PolicyChecker.getCurrent().getChildAddData(diagram, target, newElement);
 		if (data.isPermitted()) {
@@ -87,14 +92,21 @@ public class ReceptionCreateCommand extends EditElementCommand {
 					return CommandResult.newErrorCommandResult("Failed to follow the policy-specified for the insertion of the new element");
 				}
 			} else {
+
 				Class qualifiedTarget = (Class) target;
-				qualifiedTarget.getOwnedReceptions().add(newElement);
+				qualifiedTarget.getOwnedReceptions()
+						.add(newElement);
+
 			}
 		} else {
 			return CommandResult.newErrorCommandResult("The active policy restricts the addition of this element");
 		}
+
+
 		ElementInitializers.getInstance().init_Reception_3011(newElement);
+
 		doConfigure(newElement, monitor, info);
+
 		((CreateElementRequest) getRequest()).setNewElement(newElement);
 		return CommandResult.newOKCommandResult(newElement);
 	}

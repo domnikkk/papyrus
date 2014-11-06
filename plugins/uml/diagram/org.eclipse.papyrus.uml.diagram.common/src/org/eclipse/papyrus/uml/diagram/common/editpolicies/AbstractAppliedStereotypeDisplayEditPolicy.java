@@ -11,6 +11,7 @@
  *  Remi Schnekenburger (CEA LIST) remi.schnekenburger@cea.fr - Initial API and implementation
  *  Nizar GUEDIDI (CEA LIST) - update getUMLElement()
  *  Christian W. Damus (CEA) - bug 440197
+ *  Gabriel Pascual (ALL4TEC) gabriel.pascual@all4tec.fr - Bug 393532
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.common.editpolicies;
@@ -43,7 +44,7 @@ import org.eclipse.papyrus.uml.appearance.helper.AppliedStereotypeHelper;
 import org.eclipse.papyrus.uml.appearance.helper.UMLVisualInformationPapyrusConstant;
 import org.eclipse.papyrus.uml.diagram.common.Activator;
 import org.eclipse.papyrus.uml.modelrepair.service.IStereotypeRepairService;
-import org.eclipse.papyrus.uml.tools.listeners.PapyrusStereotypeListener;
+import org.eclipse.papyrus.uml.tools.listeners.StereotypeElementListener.StereotypeExtensionNotification;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.uml2.uml.Element;
@@ -278,11 +279,11 @@ public abstract class AbstractAppliedStereotypeDisplayEditPolicy extends Graphic
 		// changes
 		// - the stereotype application list has changed
 		final int eventType = notification.getEventType();
-		if (eventType == PapyrusStereotypeListener.APPLIED_STEREOTYPE) {
+		if (eventType == StereotypeExtensionNotification.STEREOTYPE_APPLIED_TO_ELEMENT) {
 			// a stereotype was applied to the notifier
 			// then a new listener should be added to the stereotype application
 			getDiagramEventBroker().addNotificationListener((EObject) notification.getNewValue(), this);
-		} else if (eventType == PapyrusStereotypeListener.UNAPPLIED_STEREOTYPE) {
+		} else if (eventType == StereotypeExtensionNotification.STEREOTYPE_UNAPPLIED_FROM_ELEMENT) {
 			getDiagramEventBroker().removeNotificationListener((EObject) notification.getOldValue(), this);
 			cleanStereotypeDisplayInEAnnotation();
 		}
@@ -294,7 +295,7 @@ public abstract class AbstractAppliedStereotypeDisplayEditPolicy extends Graphic
 			}
 		}
 		// if element that has changed is a stereotype => refresh the label.
-		if ((eventType == PapyrusStereotypeListener.MODIFIED_STEREOTYPE)) {
+		if ((eventType == StereotypeExtensionNotification.MODIFIED_STEREOTYPE_OF_ELEMENT)) {
 			// stereotype annotation has changed => refresh label display
 			refreshDisplay();
 		}

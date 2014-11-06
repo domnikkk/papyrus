@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nattableconfiguration:TableConfiguration xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:nattableaxis="http://www.eclipse.org/papyrus/nattable/model/table/nattableaxis" xmlns:nattableaxisconfiguration="http://www.eclipse.org/papyrus/nattable/model/table/nattableaxisconfiguration" xmlns:nattableaxisprovider="http://www.eclipse.org/papyrus/nattable/model/table/nattableaxisprovider" xmlns:nattableconfiguration="http://www.eclipse.org/papyrus/nattable/model/nattableconfiguration" xmlns:nattablelabelprovider="http://www.eclipse.org/papyrus/nattable/model/table/nattablecontentprovider" xmlns:nattabletester="http://www.eclipse.org/papyrus/nattable/model/table/nattabletester" description="This table is used to display Plugins and Features described as classes" name="ArchitectureTable" type="PapyrusArchitectureTable" iconPath="platform:/plugin/org.eclipse.papyrus.adl4eclipsetool.table/icons/table_Architecture.png" defaultRowAxisProvider="//@rowAxisProviders.0" defaultColumnAxisProvider="//@columnAxisProviders.0">
+  <creationTester xsi:type="nattabletester:JavaTableTester" tester="org.eclipse.papyrus.adl4eclipsetool.table.tester.TableArchitectureCreationTester"/>
+  <rowHeaderAxisConfiguration xsi:type="nattableaxisconfiguration:TableHeaderAxisConfiguration" indexStyle="NUMERIC" displayLabel="false">
+    <ownedLabelConfigurations xsi:type="nattablelabelprovider:ObjectLabelProviderConfiguration"/>
+    <ownedAxisConfigurations xsi:type="nattableaxisconfiguration:EStructuralFeatureValueFillingConfiguration">
+      <listenFeature xsi:type="ecore:EReference" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package/packagedElement"/>
+    </ownedAxisConfigurations>
+    <axisManagers xsi:type="nattableaxisconfiguration:AxisManagerRepresentation" axisManagerId="org.eclipse.papyrus.adl4eclipsetool.table.manager.PluginAxisManager" labelProviderContext="org.eclipse.papyrus.infra.nattable.header.labelprovider" headerLabelConfiguration="//@rowHeaderAxisConfiguration/@ownedLabelConfigurations.0" specificAxisConfigurations="//@rowHeaderAxisConfiguration/@ownedAxisConfigurations.0"/>
+  </rowHeaderAxisConfiguration>
+  <columnHeaderAxisConfiguration xsi:type="nattableaxisconfiguration:TableHeaderAxisConfiguration" displayIndex="false">
+    <ownedLabelConfigurations xsi:type="nattablelabelprovider:FeatureLabelProviderConfiguration" displayIcon="false" displayIsDerived="false" displayType="false" displayMultiplicity="false"/>
+    <axisManagers xsi:type="nattableaxisconfiguration:AxisManagerRepresentation" axisManagerId="org.eclipse.papyrus.uml.nattable.feature.axis.manager" labelProviderContext="org.eclipse.papyrus.infra.nattable.header.feature.labelprovider" headerLabelConfiguration="//@columnHeaderAxisConfiguration/@ownedLabelConfigurations.0"/>
+    <axisManagers xsi:type="nattableaxisconfiguration:AxisManagerRepresentation" axisManagerId="org.eclipse.papyrus.uml.nattable.stereotype.property.axis.manager" labelProviderContext="org.eclipse.papyrus.infra.nattable.header.feature.labelprovider" headerLabelConfiguration="//@columnHeaderAxisConfiguration/@ownedLabelConfigurations.0"/>
+  </columnHeaderAxisConfiguration>
+  <columnAxisProviders xsi:type="nattableaxisprovider:SlaveObjectAxisProvider" description="This provider provides the default columns for the Architecture Table" name="ArchitectureFeatureProvider">
+    <axis xsi:type="nattableaxis:FeatureIdAxis" xmi:id="_aAC-zF6IEeShzc-cy4seTg" element="property_of_stereotype:/OSGI::ModuleLayer::Bundle::symbolicName">
+      <manager xsi:type="nattableaxisconfiguration:AxisManagerRepresentation" href="../../../plugin/org.eclipse.papyrus.uml.nattable.generic.config/configs/generic.nattableconfiguration#//@columnHeaderAxisConfiguration/@axisManagers.1"/>
+    </axis>
+    <axis xsi:type="nattableaxis:FeatureIdAxis" xmi:id="_aAC-xV6IEeShzc-cy4seTg" element="property_of_stereotype:/OSGI::ModuleLayer::Bundle::name">
+      <manager xsi:type="nattableaxisconfiguration:AxisManagerRepresentation" href="../../../plugin/org.eclipse.papyrus.uml.nattable.generic.config/configs/generic.nattableconfiguration#//@columnHeaderAxisConfiguration/@axisManagers.1"/>
+    </axis>
+    <axis xsi:type="nattableaxis:FeatureIdAxis" xmi:id="_aAC-016IEeShzc-cy4seTg" element="property_of_stereotype:/OSGI::ModuleLayer::Bundle::activator">
+      <manager xsi:type="nattableaxisconfiguration:AxisManagerRepresentation" href="../../../plugin/org.eclipse.papyrus.uml.nattable.generic.config/configs/generic.nattableconfiguration#//@columnHeaderAxisConfiguration/@axisManagers.1"/>
+    </axis>
+    <axis xsi:type="nattableaxis:FeatureIdAxis" xmi:id="_aAC-116IEeShzc-cy4seTg" element="property_of_stereotype:/OSGI::ModuleLayer::Bundle::isSingleton">
+      <manager xsi:type="nattableaxisconfiguration:AxisManagerRepresentation" href="../../../plugin/org.eclipse.papyrus.uml.nattable.generic.config/configs/generic.nattableconfiguration#//@columnHeaderAxisConfiguration/@axisManagers.1"/>
+    </axis>
+    <axis xsi:type="nattableaxis:FeatureIdAxis" xmi:id="_aAC-1F6IEeShzc-cy4seTg" element="property_of_stereotype:/ADL4Eclipse::Plugin::isIncubation">
+      <manager xsi:type="nattableaxisconfiguration:AxisManagerRepresentation" href="../../../plugin/org.eclipse.papyrus.uml.nattable.generic.config/configs/generic.nattableconfiguration#//@columnHeaderAxisConfiguration/@axisManagers.1"/>
+    </axis>
+    <axis xsi:type="nattableaxis:FeatureIdAxis" xmi:id="_aAC-wl6IEeShzc-cy4seTg" element="property_of_stereotype:/OSGI::ModuleLayer::Bundle::description">
+      <manager xsi:type="nattableaxisconfiguration:AxisManagerRepresentation" href="../../../plugin/org.eclipse.papyrus.uml.nattable.generic.config/configs/generic.nattableconfiguration#//@columnHeaderAxisConfiguration/@axisManagers.1"/>
+    </axis>
+  </columnAxisProviders>
+  <rowAxisProviders xsi:type="nattableaxisprovider:MasterObjectAxisProvider" description="This row providers allows to display all plugins in a Table" name="ArchitectureProvider" disconnectSlave="true"/>
+</nattableconfiguration:TableConfiguration>

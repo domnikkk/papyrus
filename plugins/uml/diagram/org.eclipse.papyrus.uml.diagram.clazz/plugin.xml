@@ -1309,24 +1309,6 @@
          </selectionEnablement>
       </linkHelper>
    </extension>
-<extension point="org.eclipse.ui.commands" id="update-cmd">
-      <?gmfgen generated="true"?>
-      <command
-         categoryId="org.eclipse.ui.category.edit"
-         defaultHandler="org.eclipse.papyrus.uml.diagram.clazz.part.UMLDiagramUpdateCommand"
-         description="%update.diagram.description"
-         id="org.eclipse.papyrus.uml.diagram.clazz.updateDiagram"
-         name="%update.diagram.name"/>
-   </extension>
-<extension point="org.eclipse.ui.bindings" id="update-cmd-binding">
-      <?gmfgen generated="true"?>
-      <key 
-         commandId="org.eclipse.papyrus.uml.diagram.clazz.updateDiagram"
-         contextId="org.eclipse.papyrus.uml.diagram.clazz.ui.diagramContext"
-         schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
-         sequence="F5"/>
-   </extension>
-=======
 <extension point="org.eclipse.ui.commands" id="menu-commands">
       <?gmfgen generated="true"?>
       <category id="org.eclipse.papyrus.uml.diagram.clazz.part.UMLDiagramEditorID" name="%cmdcategory.name" description="%cmdcategory.desc"/>
@@ -1335,8 +1317,6 @@
          categoryId="org.eclipse.papyrus.uml.diagram.clazz.part.UMLDiagramEditorID"
          defaultHandler="org.eclipse.papyrus.uml.diagram.clazz.part.LoadResourceAction"/>
    </extension>
->>>>>>> refs/heads/master
-    
 <extension point="org.eclipse.ui.commands">
 	<command
             categoryId="org.eclipse.papyrus.editor.category"
@@ -1570,9 +1550,6 @@
    </extension>
 
 
-<extension point="org.eclipse.ui.handlers" id="menu-handlers">
-      <?gmfgen generated="true"?>
-   </extension>
 <extension point="org.eclipse.gmf.runtime.common.ui.services.markerNavigationProviders" id="markers-navigation">
 				      <?gmfgen generated="true"?>
 				      <MarkerNavigationProvider class="org.eclipse.papyrus.uml.diagram.clazz.providers.UMLMarkerNavigationProvider">
@@ -1922,7 +1899,7 @@
 				<entry
 				      defineOnly="true"
 				      description="Creation of a context link for a Constraint"
-				      id="createContextLink6CreationTool"
+				      id="clazz.tool.contextlink"
 				      kind="tool"
 				      label="ContextLink"
 				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Association.gif"
@@ -2258,7 +2235,7 @@
 		        path="/clazz.group.relationships">
 		  </predefinedEntry>
 		<predefinedEntry
-		        id="createContextLink6CreationTool"
+		        id="clazz.tool.contextlink"
 		        path="/clazz.group.relationships">
 		  </predefinedEntry>
 		<predefinedEntry
@@ -2915,5 +2892,14 @@
 
 		</diagramMappings>
 	</extension>
+<extension point="org.eclipse.ui.handlers" id="menu-handlers">
+      <?gmfgen generated="true"?>
+   </extension>
+
+
+
+
+
+
 
 </plugin>

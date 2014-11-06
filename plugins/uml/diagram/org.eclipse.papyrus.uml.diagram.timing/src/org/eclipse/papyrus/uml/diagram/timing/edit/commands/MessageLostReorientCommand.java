@@ -123,7 +123,9 @@ public class MessageLostReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected CommandResult reorientSource() throws ExecutionException {
-		getLink().setReceiveEvent(getNewSource());
+		getLink().setReceiveEvent(
+				getNewSource()
+				);
 		return CommandResult.newOKCommandResult(getLink());
 	}
 

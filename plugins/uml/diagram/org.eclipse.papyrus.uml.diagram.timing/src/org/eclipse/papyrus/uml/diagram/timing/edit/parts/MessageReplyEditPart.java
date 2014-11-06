@@ -54,10 +54,12 @@ public class MessageReplyEditPart extends ConnectionEditPart implements ITreeBra
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof MessageReplyNameLabelEditPart) {
-			((MessageReplyNameLabelEditPart) childEditPart).setLabel(getPrimaryShape().getMessageLabel());
+			((MessageReplyNameLabelEditPart) childEditPart).setLabel(
+					getPrimaryShape().getMessageLabel());
 		}
 		if (childEditPart instanceof MessageReplyAppliedStereotypeEditPart) {
-			((MessageReplyAppliedStereotypeEditPart) childEditPart).setLabel(getPrimaryShape().getAppliedStereotypeLabel());
+			((MessageReplyAppliedStereotypeEditPart) childEditPart).setLabel(
+					getPrimaryShape().getAppliedStereotypeLabel());
 		}
 		return false;
 	}

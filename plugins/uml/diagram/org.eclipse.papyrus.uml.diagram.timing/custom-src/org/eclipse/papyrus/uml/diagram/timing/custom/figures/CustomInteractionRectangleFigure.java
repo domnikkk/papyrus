@@ -13,7 +13,7 @@ import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.ToolbarLayout;
 import org.eclipse.draw2d.geometry.Dimension;
-import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
+import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.PapyrusWrappingLabel;
 import org.eclipse.papyrus.uml.diagram.common.draw2d.InteractionFigure;
 import org.eclipse.papyrus.uml.diagram.common.draw2d.LeftToolbarLayout;
 import org.eclipse.papyrus.uml.diagram.common.figure.node.InteractionRectangleFigure;
@@ -40,7 +40,7 @@ public class CustomInteractionRectangleFigure extends InteractionRectangleFigure
 	}
 
 	protected InteractionFigure createInteractionFigureHeader() {
-		this.interactionLabel = new WrappingLabel() {
+		this.interactionLabel =  new PapyrusWrappingLabel() {
 
 			@Override
 			public Dimension getPreferredSize(final int wHint, final int hHint) {

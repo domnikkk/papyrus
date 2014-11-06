@@ -16,5 +16,5 @@ Bundle-Name: %Bundle-Name
 Bundle-ManifestVersion: 2
 Bundle-Activator: org.eclipse.papyrus.bundles.tests.Activator
 Bundle-SymbolicName: org.eclipse.papyrus.bundles.tests
-Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 

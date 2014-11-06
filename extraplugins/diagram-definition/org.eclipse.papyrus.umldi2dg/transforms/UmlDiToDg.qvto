@@ -1,0 +1,537 @@
+/**
+ * Copyright (c) 2014 CEA LIST.
+ *  
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *  
+ * Contributors:
+ *  CEA LIST - Initial API and implementation
+ */
+import UmlDiagrams;
+import UmlShapes;
+import UmlEdges;
+import UmlCompartments;
+import UmlLabels;
+
+modeltype DC uses "http://www.omg.org/spec/DD/20110901/DC";
+modeltype DG uses "http://www.omg.org/spec/DD/20110901/DG";
+modeltype DI uses "http://www.omg.org/spec/DD/20110901/DI";
+modeltype UMLDI uses "http://www.omg.org/spec/UML/20131001/UMLDI";
+modeltype UML uses "http://www.eclipse.org/uml2/4.0.0/UML";
+	
+transformation UmlDiToDg(in umldi : UMLDI, out DG);
+
+main() {
+	umldi.rootObjects()[UMLDI::UmlDiagram]->sortedBy(name)->map diagramToRootCanvas();
+}
+
+mapping UMLDI::UmlCompartment::compartmentToGraphicalElement() : DG::GraphicalElement { 
+	init {
+		if (self.umlModelElement->size() = 1) then {
+			result := self.umlModelElement.oclAsType(UML::Element).map compartmentToGraphicalElement(self);
+		} endif;
+	}
+}
+
+mapping UMLDI::TemplateParameterCompartment::compartmentToGraphicalElement() : DG::GraphicalElement { 
+	init {
+		result := object DG::Rectangle {
+			bounds := self.bounds.clone().oclAsType(DC::Bounds);
+			_class := "dashed";
+		}
+	}
+}
+
+mapping UMLDI::UmlCompartment::compartmentToGroup() : DG::Group 
+	inherits UMLDI::UmlDiagramElement::diagramElementToGraphicalElement
+{
+	member += self.map compartmentToGraphicalElement();
+	member += self.mapOwnedElementToGraphicalElement();
+}
+
+mapping UMLDI::UmlDiagram::diagramToGraphicalElement() : DG::GraphicalElement 
+{ 
+	init {
+		if (self.umlModelElement->size() = 1) then {
+			result := self.umlModelElement.oclAsType(UML::Element).map diagramToGraphicalElement(self);
+		} endif;
+	}
+}
+
+mapping UMLDI::UmlDiagram::diagramToRootCanvas() : DG::RootCanvas 
+	inherits UMLDI::UmlDiagramElement::diagramElementToGraphicalElement
+{
+	id := self.name;
+	script += "platform:/plugin/org.eclipse.papyrus.umldi2dg/scripts/UmlLayouts.js";
+	definitions := self.map diagramToDefinitions();
+	member += self.map diagramToGraphicalElement();
+	member += self.mapOwnedElementToGraphicalElement();
+}
+
+abstract mapping UMLDI::UmlDiagramElement::diagramElementToGraphicalElement() : DG::GraphicalElement {
+	style := self.localUmlStyle.map styleToStyle()
+}
+
+mapping UMLDI::UmlDiagramElement::ownedElementToGraphicalElement() : DG::GraphicalElement 
+	disjuncts UMLDI::UmlLabel::labelToText,
+			  UMLDI::UmlCompartment::compartmentToGroup,
+			  UMLDI::UmlShape::shapeToGroup,
+			  UMLDI::UmlEdge::edgeToGroup; 
+
+helper UMLDI::UmlDiagramElement::mapOwnedElementToGraphicalElement() : Collection(DG::GraphicalElement) {
+	return self.ownedUmlDiagramElement->map ownedElementToGraphicalElement();
+}
+
+mapping UMLDI::UmlEdge::edgeToGroup() : DG::Group  
+	inherits UMLDI::UmlDiagramElement::diagramElementToGraphicalElement
+{
+	member += self.map edgeToPath();
+	member += self.mapOwnedElementToGraphicalElement();
+}
+
+mapping UMLDI::UmlEdge::edgeToPath() : DG::Path {  
+	init {
+		if (self.umlModelElement->size() = 1) then {
+			result := self.umlModelElement.oclAsType(UML::Element).map edgeToPath(self);
+		} endif;
+	}
+	command += object DG::MoveTo { point := self.waypoint->first().clone().oclAsType(DC::Point) };
+	self.waypoint->excluding(self.waypoint->first())->forEach(p) {
+		command +=  object DG::LineTo { point := p.clone().oclAsType(DC::Point) };
+	};
+}
+
+mapping UMLDI::ContainmentEdge::edgeToPath() : DG::Path 
+	inherits UMLDI::UmlEdge::edgeToPath
+{  
+	startMarker := self.resolveDefinitions().getMarker("startPlusCircle");
+}
+
+mapping UMLDI::AttachmentEdge::edgeToPath() : DG::Path 
+	inherits UMLDI::UmlEdge::edgeToPath
+{  
+	_class := "dotted";
+}
+
+mapping UMLDI::UmlLabel::labelToText() : DG::Text 
+	inherits UMLDI::UmlDiagramElement::diagramElementToGraphicalElement
+{
+	init {
+		if (self.umlModelElement->size() = 1) then {
+			result := self.umlModelElement.oclAsType(UML::Element).map labelToText(self);
+		} endif;
+	}
+	bounds := self.bounds.clone().oclAsType(DC::Bounds);
+}
+
+mapping UMLDI::UmlShape::shapeToGraphicalElement() : DG::GraphicalElement { 
+	init {
+		if (self.umlModelElement->size() = 1) then {
+			result := self.umlModelElement.oclAsType(UML::Element).map shapeToGraphicalElement(self);
+		} endif;
+	}
+}
+
+mapping UMLDI::UmlShape::shapeToGroup() : DG::Group 
+	inherits UMLDI::UmlDiagramElement::diagramElementToGraphicalElement
+{
+	member += self.map shapeToGraphicalElement();
+	member += self.mapOwnedElementToGraphicalElement();
+}
+
+mapping UMLDI::UmlStyle::styleToStyle() : DG::Style {
+	fontName := self.fontName;
+	fontSize := self.fontSize;
+}
+
+helper UMLDI::TemplateableElementShape::mapOwnedElementToGraphicalElement() : Collection(DG::GraphicalElement) {
+	var c = self.ownedUmlDiagramElement->any(oclIsKindOf(UMLDI::TemplateParameterCompartment));
+	var r = self.ownedUmlDiagramElement->excluding(c)->map ownedElementToGraphicalElement()->asOrderedSet();
+	r += c->map ownedElementToGraphicalElement(); 
+	return r;
+}
+
+mapping UMLDI::UmlDiagram::diagramToDefinitions() : DG::Definitions {
+	styleSheet := object DG::StyleSheet {
+		rule += object DG::StyleRule {
+			selector += object DG::StyleSelector {
+				kind := DG::ElementKind::canvas;
+			};
+			style := object DG::Style {
+				fill := object DG::Paint {
+					color := white;
+				};
+				stroke := object DG::Paint {
+					color := black;
+				};
+			};
+		};
+		rule += object DG::StyleRule {
+			selector += object DG::StyleSelector {
+				kind := DG::ElementKind::path;
+			};
+			selector += object DG::StyleSelector {
+				kind := DG::ElementKind::polyline;
+			};
+			style := object DG::Style {
+				fill := null;
+			};
+		};
+		rule += object DG::StyleRule {
+			selector += object DG::StyleSelector {
+				kind := DG::ElementKind::text;
+			};
+			style := object DG::Style {
+				stroke := null;
+				fill := object DG::Paint {
+					color := black;
+				};
+			};
+		};
+		rule += object DG::StyleRule {
+			selector += object DG::StyleSelector {
+				_class := "underlined";
+			};
+			style := object DG::Style {
+				fontDecoration := DG::FontDecoration::underline;
+			};
+		};
+		rule += object DG::StyleRule {
+			selector += object DG::StyleSelector {
+				_class := "dashed";
+			};
+			style := object DG::Style {
+				strokeDashLength := Sequence{5, 5};
+			};
+		};
+		rule += object DG::StyleRule {
+			selector += object DG::StyleSelector {
+				_class := "dotted";
+			};
+			style := object DG::Style {
+				strokeDashLength := Sequence{3, 2};
+			};
+		};
+		rule += object DG::StyleRule {
+			selector += object DG::StyleSelector {
+				_class := "filled";
+			};
+			style := object DG::Style {
+				fill := object DG::Paint { color := black };
+			};
+		};
+	};	
+
+	definition += object DG::Marker {
+		id := "endHollowClosedArrow";
+		size := object DC::Dimension { width := 12; height := 12; };
+		reference := object DC::Point { x := 12; y := 6; };
+		member += object DG::Polygon {
+			point += object DC::Point { x := 1; y := 1; };
+			point += object DC::Point { x := 12; y := 6; };
+			point += object DC::Point { x := 1; y := 11; };
+			style := object DG::Style { fill := object DG::Paint { color := white } };
+		};
+	};
+
+	definition += object DG::Marker {
+		id := "endSolidClosedArrow";
+		size := object DC::Dimension { width := 12; height := 12; };
+		reference := object DC::Point { x := 12; y := 6; };
+		member += object DG::Polygon {
+			point += object DC::Point { x := 1; y := 1; };
+			point += object DC::Point { x := 12; y := 6; };
+			point += object DC::Point { x := 1; y := 11; };
+			style := object DG::Style { fill := object DG::Paint { color := black } };
+		}
+	};	
+	
+	definition += object DG::Marker {
+		id := "endOpenArrow";
+		size := object DC::Dimension { width := 12; height := 12; };
+		reference := object DC::Point { x := 12; y := 6; };
+		member += object DG::Polyline {
+			point += object DC::Point { x := 1; y := 1; };
+			point += object DC::Point { x := 12; y := 6; };
+			point += object DC::Point { x := 1; y := 11; };
+		}
+	};	
+	
+	definition += object DG::Marker {
+		id := "endSolidCircleOpenArrow";
+		size := object DC::Dimension { width := 20; height := 12; };
+		reference := object DC::Point { x := 20; y := 6; };
+		member += object DG::Circle {
+			center := object DC::Point { x := 16; y := 6; };
+			radius := 3;
+			style := object DG::Style { fill := object DG::Paint { color := black } };
+		};
+		member += object DG::Polyline {
+			point += object DC::Point { x := 1; y := 1; };
+			point += object DC::Point { x := 12; y := 6; };
+			point += object DC::Point { x := 1; y := 11; };
+		};
+	};	
+	
+	definition += object DG::Marker {
+		id := "endSolidDiamond";
+		size := object DC::Dimension { width := 16; height := 12; };
+		reference := object DC::Point { x := 16; y := 6; };
+		member += object DG::Polygon {
+			point += object DC::Point { x := 0; y := 6; };
+			point += object DC::Point { x := 8; y := 1; };
+			point += object DC::Point { x := 16; y := 6; };
+			point += object DC::Point { x := 8; y := 11; };
+			style := object DG::Style { fill := object DG::Paint { color := black } };
+		};
+	};	
+	
+	definition += object DG::Marker {
+		id := "endHollowDiamond";
+		size := object DC::Dimension { width := 16; height := 12; };
+		reference := object DC::Point { x := 16; y := 6; };
+		member += object DG::Polygon {
+			point += object DC::Point { x := 0; y := 6; };
+			point += object DC::Point { x := 8; y := 1; };
+			point += object DC::Point { x := 16; y := 6; };
+			point += object DC::Point { x := 8; y := 11; };
+			style := object DG::Style { fill := object DG::Paint { color := white } };
+		};
+	};	
+	
+	definition += object DG::Marker {
+		id := "endSolidDiamondOpenArrow";
+		size := object DC::Dimension { width := 28; height := 12; };
+		reference := object DC::Point { x := 28; y := 6; };
+		member += object DG::Polygon {
+			point += object DC::Point { x := 12; y := 6; };
+			point += object DC::Point { x := 20; y := 1; };
+			point += object DC::Point { x := 28; y := 6; };
+			point += object DC::Point { x := 20; y := 11; };
+			style := object DG::Style { fill := object DG::Paint { color := black } };
+		};
+		member += object DG::Polyline {
+			point += object DC::Point { x := 1; y := 1; };
+			point += object DC::Point { x := 12; y := 6; };
+			point += object DC::Point { x := 1; y := 11; };
+		};
+	};	
+	
+	definition += object DG::Marker {
+		id := "endHollowDiamondOpenArrow";
+		size := object DC::Dimension { width := 28; height := 12; };
+		reference := object DC::Point { x := 28; y := 6; };
+		member += object DG::Polygon {
+			point += object DC::Point { x := 12; y := 6; };
+			point += object DC::Point { x := 20; y := 1; };
+			point += object DC::Point { x := 28; y := 6; };
+			point += object DC::Point { x := 20; y := 11; };
+			style := object DG::Style { fill := object DG::Paint { color := white } };
+		};
+		member += object DG::Polyline {
+			point += object DC::Point { x := 1; y := 1; };
+			point += object DC::Point { x := 12; y := 6; };
+			point += object DC::Point { x := 1; y := 11; };
+		};
+	};	
+	
+	definition += object DG::Marker {
+		id := "endSolidCircleSolidDiamondOpenArrow";
+		size := object DC::Dimension { width := 36; height := 12; };
+		reference := object DC::Point { x := 36; y := 6; };
+		member += object DG::Circle {
+			center := object DC::Point { x := 32; y := 6; };
+			radius := 3;
+			style := object DG::Style { fill := object DG::Paint { color := black } };
+		};
+		member += object DG::Polygon {
+			point += object DC::Point { x := 12; y := 6; };
+			point += object DC::Point { x := 20; y := 1; };
+			point += object DC::Point { x := 28; y := 6; };
+			point += object DC::Point { x := 20; y := 11; };
+			style := object DG::Style { fill := object DG::Paint { color := black } };
+		};
+		member += object DG::Polyline {
+			point += object DC::Point { x := 1; y := 1; };
+			point += object DC::Point { x := 12; y := 6; };
+			point += object DC::Point { x := 1; y := 11; };
+		};
+	};	
+	
+	definition += object DG::Marker {
+		id := "endSolidCircleHollowDiamondOpenArrow";
+		size := object DC::Dimension { width := 36; height := 12; };
+		reference := object DC::Point { x := 36; y := 6; };
+		member += object DG::Circle {
+			center := object DC::Point { x := 32; y := 6; };
+			radius := 3;
+			style := object DG::Style { fill := object DG::Paint { color := black } };
+		};
+		member += object DG::Polygon {
+			point += object DC::Point { x := 12; y := 6; };
+			point += object DC::Point { x := 20; y := 1; };
+			point += object DC::Point { x := 28; y := 6; };
+			point += object DC::Point { x := 20; y := 11; };
+			style := object DG::Style { fill := object DG::Paint { color := white } };
+		};
+		member += object DG::Polyline {
+			point += object DC::Point { x := 1; y := 1; };
+			point += object DC::Point { x := 12; y := 6; };
+			point += object DC::Point { x := 1; y := 11; };
+		};
+	};	
+	
+	definition += object DG::Marker {
+		id := "startPlusCircle";
+		size := object DC::Dimension { width := 18; height := 18; };
+		reference := object DC::Point { x := 0; y := 9; };
+		member += object DG::Circle {
+			center := object DC::Point { x := 9; y := 9; };
+			radius := 8;
+			style := object DG::Style { fill := object DG::Paint { color := white } };
+		};
+		member += object DG::Path {
+			command += object DG::MoveTo { point := object DC::Point { x := 0; y := 9; } };
+			command += object DG::LineTo { point := object DC::Point { x := 17; y := 9; } };
+			command += object DG::MoveTo { point := object DC::Point { x := 9; y := 0; } };
+			command += object DG::LineTo { point := object DC::Point { x := 9; y := 17; } };
+		};
+	};	
+	
+	definition += object DG::Marker {
+		id := "startOpenArrow";
+		size := object DC::Dimension { width := 12; height := 12; };
+		reference := object DC::Point { x := 0; y := 6; };
+		member += object DG::Polyline {
+			point += object DC::Point { x := 11; y := 1; };
+			point += object DC::Point { x := 1; y := 6; };
+			point += object DC::Point { x := 11; y := 11; };
+		};
+	};	
+	
+	definition += object DG::Marker {
+		id := "startSolidCircleOpenArrow";
+		size := object DC::Dimension { width := 20; height := 12; };
+		reference := object DC::Point { x := 0; y := 6; };
+		member += object DG::Circle {
+			center := object DC::Point { x := 4; y := 6; };
+			radius := 3;
+			style := object DG::Style { fill := object DG::Paint { color := black } };
+		};
+		member += object DG::Polyline {
+			point += object DC::Point { x := 19; y := 1; };
+			point += object DC::Point { x := 8; y := 6; };
+			point += object DC::Point { x := 19; y := 11; };
+		};
+	};	
+	
+	definition += object DG::Marker {
+		id := "startSolidDiamond";
+		size := object DC::Dimension { width := 16; height := 12; };
+		reference := object DC::Point { x := 0; y := 6; };
+		member += object DG::Polygon {
+			point += object DC::Point { x := 0; y := 6; };
+			point += object DC::Point { x := 8; y := 1; };
+			point += object DC::Point { x := 16; y := 6; };
+			point += object DC::Point { x := 8; y := 11; };
+			style := object DG::Style { fill := object DG::Paint { color := black } };
+		};
+	};	
+	
+	definition += object DG::Marker {
+		id := "startHollowDiamond";
+		size := object DC::Dimension { width := 16; height := 12; };
+		reference := object DC::Point { x := 0; y := 6; };
+		member += object DG::Polygon {
+			point += object DC::Point { x := 0; y := 6; };
+			point += object DC::Point { x := 8; y := 1; };
+			point += object DC::Point { x := 16; y := 6; };
+			point += object DC::Point { x := 8; y := 11; };
+			style := object DG::Style { fill := object DG::Paint { color := white } };
+		};
+	};	
+	
+	definition += object DG::Marker {
+		id := "startSolidDiamondOpenArrow";
+		size := object DC::Dimension { width := 28; height := 12; };
+		reference := object DC::Point { x := 0; y := 6; };
+		member += object DG::Polygon {
+			point += object DC::Point { x := 0; y := 6; };
+			point += object DC::Point { x := 8; y := 1; };
+			point += object DC::Point { x := 16; y := 6; };
+			point += object DC::Point { x := 8; y := 11; };
+			style := object DG::Style { fill := object DG::Paint { color := black } };
+		};
+		member += object DG::Polyline {
+			point += object DC::Point { x := 27; y := 1; };
+			point += object DC::Point { x := 16; y := 6; };
+			point += object DC::Point { x := 27; y := 11; };
+		};
+	};	
+	
+	definition += object DG::Marker {
+		id := "startHollowDiamondOpenArrow";
+		size := object DC::Dimension { width := 28; height := 12; };
+		reference := object DC::Point { x := 0; y := 6; };
+		member += object DG::Polygon {
+			point += object DC::Point { x := 0; y := 6; };
+			point += object DC::Point { x := 8; y := 1; };
+			point += object DC::Point { x := 16; y := 6; };
+			point += object DC::Point { x := 8; y := 11; };
+			style := object DG::Style { fill := object DG::Paint { color := white } };
+		};
+		member += object DG::Polyline {
+			point += object DC::Point { x := 27; y := 1; };
+			point += object DC::Point { x := 16; y := 6; };
+			point += object DC::Point { x := 27; y := 11; };
+		};
+	};	
+	
+	definition += object DG::Marker {
+		id := "startSolidCircleSolidDiamondOpenArrow";
+		size := object DC::Dimension { width := 36; height := 12; };
+		reference := object DC::Point { x := 0; y := 6; };
+		member += object DG::Circle {
+			center := object DC::Point { x := 4; y := 6; };
+			radius := 3;
+			style := object DG::Style { fill := object DG::Paint { color := black } };
+		};
+		member += object DG::Polygon {
+			point += object DC::Point { x := 8; y := 6; };
+			point += object DC::Point { x := 16; y := 1; };
+			point += object DC::Point { x := 24; y := 6; };
+			point += object DC::Point { x := 16; y := 11; };
+			style := object DG::Style { fill := object DG::Paint { color := black } };
+		};
+		member += object DG::Polyline {
+			point += object DC::Point { x := 35; y := 1; };
+			point += object DC::Point { x := 24; y := 6; };
+			point += object DC::Point { x := 35; y := 11; };
+		};
+	};	
+	
+	definition += object DG::Marker {
+		id := "startSolidCircleHollowDiamondOpenArrow";
+		size := object DC::Dimension { width := 36; height := 12; };
+		reference := object DC::Point { x := 0; y := 6; };
+		member += object DG::Circle {
+			center := object DC::Point { x := 4; y := 6; };
+			radius := 3;
+			style := object DG::Style { fill := object DG::Paint { color := black } };
+		};
+		member += object DG::Polygon {
+			point += object DC::Point { x := 8; y := 6; };
+			point += object DC::Point { x := 16; y := 1; };
+			point += object DC::Point { x := 24; y := 6; };
+			point += object DC::Point { x := 16; y := 11; };
+			style := object DG::Style { fill := object DG::Paint { color := white } };
+		};
+		member += object DG::Polyline {
+			point += object DC::Point { x := 35; y := 1; };
+			point += object DC::Point { x := 24; y := 6; };
+			point += object DC::Point { x := 35; y := 11; };
+		};
+	};	
+}

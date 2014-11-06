@@ -8,6 +8,7 @@
  *
  * Contributors:
  *	Gabriel Pascual (ALL4TEC) gabriel.pascual@all4tec.net - Initial API and implementation
+ *  Gabriel Pascual (ALL4TEC) gabriel.pascual@all4tec.fr - Bug 393532
  *****************************************************************************/
 package org.eclipse.papyrus.uml.tools.listeners;
 
@@ -99,43 +100,62 @@ public class StereotypeElementListener extends ResourceSetListenerImpl {
 	private void handleFilteredNotification(Notification notification) {
 
 		Object notifier = notification.getNotifier();
-		Element baseElement = null;
-		Stereotype stereotype = null;
 
-		// Use UML tools to get Stereotype and Based Element
+		Element extendedElement = null;
+		Stereotype stereotype = null;
+		boolean isBaseFeature = true;
+
+		// Use UML tools to get Stereotype and base Element
 		if (notifier instanceof EObject) {
 			stereotype = finder.getDefiningStereotype((EObject) notifier);
 			if (stereotype != null) {
-				baseElement = finder.getExtendedElement((EObject) notifier);
+				extendedElement = finder.getExtendedElement((EObject) notifier);
+				isBaseFeature = ((EStructuralFeature) notification.getFeature()).getName().startsWith(Extension.METACLASS_ROLE_PREFIX);
 			}
+
+
+
 		}
 
 
 		int eventType = 0;
 		// Check if notifier is an stereotype
 		if (stereotype != null) {
-
-			// Check state of base Element on stereotype application
-			if (baseElement == null) {
-				baseElement = (Element) notification.getOldValue();
+			if (!isBaseFeature) {
+				eventType = StereotypeExtensionNotification.MODIFIED_STEREOTYPE_OF_ELEMENT;
+			} else if (extendedElement == null) {
+				// Check state of base Element on stereotype application
+				extendedElement = (Element) notification.getOldValue();
 				eventType = StereotypeExtensionNotification.STEREOTYPE_UNAPPLIED_FROM_ELEMENT;
 			} else {
-				baseElement = (Element) notification.getNewValue();
+				extendedElement = (Element) notification.getNewValue();
 				eventType = StereotypeExtensionNotification.STEREOTYPE_APPLIED_TO_ELEMENT;
 			}
 		}
 
-		if (baseElement != null) {
-			Stereotype oldValue = null;
-			Stereotype newValue = null;
-			if (eventType == StereotypeExtensionNotification.STEREOTYPE_UNAPPLIED_FROM_ELEMENT) {
+
+		if (stereotype != null) {
+			EObject oldValue = null;
+			Object newValue = null;
+			Element element = extendedElement;
+			switch (eventType) {
+			case StereotypeExtensionNotification.STEREOTYPE_UNAPPLIED_FROM_ELEMENT:
 				oldValue = stereotype;
-			} else {
+				break;
+			case StereotypeExtensionNotification.STEREOTYPE_APPLIED_TO_ELEMENT:
 				newValue = stereotype;
+				break;
+			case StereotypeExtensionNotification.MODIFIED_STEREOTYPE_OF_ELEMENT:
+				// New value is the modified element
+				newValue = notification.getNewValue();
+				break;
+			default:
+				// Nothing to do
+
 			}
 
-			baseElement.eNotify(
-					new StereotypeExtensionNotification(baseElement, eventType, oldValue, newValue));
+			element.eNotify(
+					new StereotypeExtensionNotification(element, eventType, oldValue, newValue));
 		}
 
 	}
@@ -255,7 +275,7 @@ public class StereotypeElementListener extends ResourceSetListenerImpl {
 			// Get notification field to filter
 			Object notifier = notification.getNotifier();
 			Object feature = notification.getFeature();
-
+			Object baseElement = null;
 			boolean isBaseFeature = false;
 
 			// Check if feature is a based feature of a stereotype extension
@@ -272,11 +292,15 @@ public class StereotypeElementListener extends ResourceSetListenerImpl {
 				Stereotype stereotype = finder.getDefiningStereotype((EObject) notifier);
 				if (stereotype != null) {
 					extensionProperty = finder.getExtensionEnd((EObject) notifier, (EStructuralFeature) feature);
+					if (extensionProperty == null) {
+						baseElement = StereotypeExtensionFinder.getBaseElement((EObject) notifier);
+					}
 				}
+
 
 			}
 
-			return extensionProperty != null && isBaseFeature;
+			return (extensionProperty != null && isBaseFeature) || (!isBaseFeature && baseElement instanceof Element);
 		}
 	}
 
@@ -288,11 +312,16 @@ public class StereotypeElementListener extends ResourceSetListenerImpl {
 	 */
 	public class StereotypeExtensionNotification extends ENotificationImpl {
 
+
+
 		/** Event type notification for stereotype application action. */
 		public static final int STEREOTYPE_APPLIED_TO_ELEMENT = Notification.EVENT_TYPE_COUNT + 21;
 
 		/** Event type notification for stereotype unapplication action. */
 		public static final int STEREOTYPE_UNAPPLIED_FROM_ELEMENT = Notification.EVENT_TYPE_COUNT + 22;
+
+		/** The Constant MODIFIED_STEREOTYPE_OF_ELEMENT. */
+		public static final int MODIFIED_STEREOTYPE_OF_ELEMENT = Notification.EVENT_TYPE_COUNT + 23;
 
 		/**
 		 * Creates a new StereotypeExtensionNotification.

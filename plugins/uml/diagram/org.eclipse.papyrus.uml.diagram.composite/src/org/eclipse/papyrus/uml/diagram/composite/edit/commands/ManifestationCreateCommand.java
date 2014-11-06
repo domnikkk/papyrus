@@ -91,14 +91,19 @@ public class ManifestationCreateCommand extends EditElementCommand {
 		if (!canExecute()) {
 			throw new ExecutionException("Invalid arguments in create link command"); //$NON-NLS-1$
 		}
+
 		Manifestation newElement = UMLFactory.eINSTANCE.createManifestation();
-		getContainer().getPackagedElements().add(newElement);
-		newElement.getClients().add(getSource());
-		newElement.getSuppliers().add(getTarget());
+		getContainer().getPackagedElements()
+				.add(newElement);
+		newElement.getClients()
+				.add(getSource());
+		newElement.getSuppliers()
+				.add(getTarget());
 		ElementInitializers.getInstance().init_Manifestation_4012(newElement);
 		doConfigure(newElement, monitor, info);
 		((CreateElementRequest) getRequest()).setNewElement(newElement);
 		return CommandResult.newOKCommandResult(newElement);
+
 	}
 
 	/**

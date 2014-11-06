@@ -124,6 +124,7 @@ public class CompactLifelineEditPartCN extends LifelineEditPart {
 	@Override
 	protected void handleNotificationEvent(Notification event) {
 		super.handleNotificationEvent(event);
+
 	}
 
 	/**
@@ -152,18 +153,22 @@ public class CompactLifelineEditPartCN extends LifelineEditPart {
 			((CompactLifelineNameEditPart) childEditPart).setLabel(getPrimaryShape().getLifelineLabelFigure());
 			return true;
 		}
+
+
 		if (childEditPart instanceof CompactLifelineCompartmentEditPartCN) {
 			IFigure pane = getPrimaryShape().getTimelineContainerFigure();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way
 			pane.add(((CompactLifelineCompartmentEditPartCN) childEditPart).getFigure());
 			return true;
 		}
+
 		if (childEditPart instanceof CompactLifelineTimeRulerCompartmentEditPartCN) {
 			IFigure pane = getPrimaryShape().getTimeRulerContainerFigure();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way
 			pane.add(((CompactLifelineTimeRulerCompartmentEditPartCN) childEditPart).getFigure());
 			return true;
 		}
+
 		return false;
 	}
 
@@ -243,6 +248,7 @@ public class CompactLifelineEditPartCN extends LifelineEditPart {
 	@Override
 	protected NodeFigure createNodeFigure() {
 		return new SelectableBorderedNodeFigure(createMainFigureWithSVG());
+
 	}
 
 	/**

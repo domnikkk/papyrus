@@ -54,10 +54,12 @@ public class DeploymentEditPart extends UMLConnectionNodeEditPart implements ITr
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof DeploymentNameEditPart) {
-			((DeploymentNameEditPart) childEditPart).setLabel(getPrimaryShape().getNameLabel());
+			((DeploymentNameEditPart) childEditPart).setLabel(
+					getPrimaryShape().getNameLabel());
 		}
 		if (childEditPart instanceof DeploymentAppliedStereotypeEditPart) {
-			((DeploymentAppliedStereotypeEditPart) childEditPart).setLabel(getPrimaryShape().getAppliedStereotypeLabel());
+			((DeploymentAppliedStereotypeEditPart) childEditPart).setLabel(
+					getPrimaryShape().getAppliedStereotypeLabel());
 		}
 		return false;
 	}

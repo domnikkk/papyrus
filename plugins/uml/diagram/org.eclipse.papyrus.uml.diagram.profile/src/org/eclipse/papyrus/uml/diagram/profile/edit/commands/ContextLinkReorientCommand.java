@@ -117,8 +117,12 @@ public class ContextLinkReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected CommandResult reorientSource() throws ExecutionException {
-		getOldSource().setContext(null);
-		getNewSource().setContext(getOldTarget());
+		getOldSource().setContext(
+				null
+				);
+		getNewSource().setContext(
+				getOldTarget()
+				);
 		return CommandResult.newOKCommandResult(referenceOwner);
 	}
 
@@ -126,7 +130,9 @@ public class ContextLinkReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected CommandResult reorientTarget() throws ExecutionException {
-		getOldSource().setContext(getNewTarget());
+		getOldSource().setContext(
+				getNewTarget()
+				);
 		return CommandResult.newOKCommandResult(referenceOwner);
 	}
 

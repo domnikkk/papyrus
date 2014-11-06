@@ -91,14 +91,19 @@ public class InformationFlowCreateCommand extends EditElementCommand {
 		if (!canExecute()) {
 			throw new ExecutionException("Invalid arguments in create link command"); //$NON-NLS-1$
 		}
+
 		InformationFlow newElement = UMLFactory.eINSTANCE.createInformationFlow();
-		getContainer().getPackagedElements().add(newElement);
-		newElement.getInformationSources().add(getSource());
-		newElement.getInformationTargets().add(getTarget());
+		getContainer().getPackagedElements()
+				.add(newElement);
+		newElement.getInformationSources()
+				.add(getSource());
+		newElement.getInformationTargets()
+				.add(getTarget());
 		ElementInitializers.getInstance().init_InformationFlow_4021(newElement);
 		doConfigure(newElement, monitor, info);
 		((CreateElementRequest) getRequest()).setNewElement(newElement);
 		return CommandResult.newOKCommandResult(newElement);
+
 	}
 
 	/**

@@ -187,7 +187,7 @@ public class UMLPaletteFactory extends PaletteFactory.Adapter {
 	/**
 	 * @generated
 	 */
-	private final static String CREATECONTEXTLINK6CREATIONTOOL = "createContextLink6CreationTool";//$NON-NLS-1$
+	private final static String CLAZZ_TOOL_CONTEXTLINK = "clazz.tool.contextlink";//$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -273,6 +273,7 @@ public class UMLPaletteFactory extends PaletteFactory.Adapter {
 	 * @generated
 	 */
 	public UMLPaletteFactory() {
+
 	}
 
 	/**
@@ -373,7 +374,7 @@ public class UMLPaletteFactory extends PaletteFactory.Adapter {
 		if (toolId.equals(CLAZZ_TOOL_CONTAINMENTLINK)) {
 			return createContainmentLink5CreationTool();
 		}
-		if (toolId.equals(CREATECONTEXTLINK6CREATIONTOOL)) {
+		if (toolId.equals(CLAZZ_TOOL_CONTEXTLINK)) {
 			return createContextLink6CreationTool();
 		}
 		if (toolId.equals(CLAZZ_TOOL_DEPENDENCY)) {
@@ -433,6 +434,7 @@ public class UMLPaletteFactory extends PaletteFactory.Adapter {
 	 */
 	@Override
 	public Object getTemplate(String templateId) {
+
 		// default return: null
 		return null;
 	}

@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.eclipse.papyrus.notation2umldi
+Bundle-Version: 1.0.0
+Bundle-Vendor: 
+ %providerName
+Require-Bundle: org.eclipse.papyrus.umldi;bundle-version="0.1.0"

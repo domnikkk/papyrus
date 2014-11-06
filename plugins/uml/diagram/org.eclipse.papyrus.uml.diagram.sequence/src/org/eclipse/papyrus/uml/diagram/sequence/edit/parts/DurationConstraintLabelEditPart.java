@@ -37,7 +37,6 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.ParserOptions;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.LabelEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.LabelDirectEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.figures.IBorderItemLocator;
 import org.eclipse.gmf.runtime.diagram.ui.l10n.DiagramColorRegistry;
@@ -62,7 +61,9 @@ import org.eclipse.papyrus.extensionpoints.editors.ui.ILabelEditorDialog;
 import org.eclipse.papyrus.extensionpoints.editors.ui.IPopupEditorHelper;
 import org.eclipse.papyrus.extensionpoints.editors.utils.DirectEditorsUtil;
 import org.eclipse.papyrus.extensionpoints.editors.utils.IDirectEditorsIds;
+import org.eclipse.papyrus.infra.gmfdiag.common.editpart.PapyrusLabelEditPart;
 import org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.IMaskManagedLabelEditPolicy;
+import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.PapyrusWrappingLabel;
 import org.eclipse.papyrus.uml.diagram.common.directedit.MultilineLabelDirectEditManager;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.IDirectEdition;
 import org.eclipse.papyrus.uml.diagram.common.figure.node.ILabelFigure;
@@ -80,8 +81,9 @@ import org.eclipse.uml2.uml.Feature;
 
 /**
  * @generated
+ * Manually extends to PapyrusLabelEditPart, modification has been applied to the gmfgen file.
  */
-public class DurationConstraintLabelEditPart extends LabelEditPart implements ITextAwareEditPart, IBorderItemEditPart {
+public class DurationConstraintLabelEditPart extends PapyrusLabelEditPart implements ITextAwareEditPart, IBorderItemEditPart {
 
 	/**
 	 * @generated
@@ -780,8 +782,9 @@ public class DurationConstraintLabelEditPart extends LabelEditPart implements IT
 
 	/**
 	 * @generated
+	 * Manually changed to PapyrusWrappingLabel modification has been applied to the gmfgen file. 
 	 */
-	public class MultilineLabelFigure extends WrappingLabel {
+	public class MultilineLabelFigure extends PapyrusWrappingLabel {
 
 		/**
 		 * @generated

@@ -112,6 +112,7 @@ public class InteractionConstraintEditPartCN extends AbstractConstraintEditPart 
 	@Override
 	protected void handleNotificationEvent(Notification event) {
 		super.handleNotificationEvent(event);
+
 	}
 
 	/**
@@ -144,6 +145,8 @@ public class InteractionConstraintEditPartCN extends AbstractConstraintEditPart 
 			((InteractionConstraintSpecificationEditPartCN) childEditPart).setLabel(getPrimaryShape().getConstraintFigure());
 			return true;
 		}
+
+
 		return false;
 	}
 
@@ -210,6 +213,7 @@ public class InteractionConstraintEditPartCN extends AbstractConstraintEditPart 
 	@Override
 	protected NodeFigure createNodeFigure() {
 		return new SelectableBorderedNodeFigure(createMainFigureWithSVG());
+
 	}
 
 	/**

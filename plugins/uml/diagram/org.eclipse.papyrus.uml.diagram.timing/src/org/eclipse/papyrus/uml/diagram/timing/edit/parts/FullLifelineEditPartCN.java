@@ -124,6 +124,7 @@ public class FullLifelineEditPartCN extends LifelineEditPart {
 	@Override
 	protected void handleNotificationEvent(Notification event) {
 		super.handleNotificationEvent(event);
+
 	}
 
 	/**
@@ -152,24 +153,29 @@ public class FullLifelineEditPartCN extends LifelineEditPart {
 			((FullLifelineNameEditPart) childEditPart).setLabel(getPrimaryShape().getLifelineLabelFigure());
 			return true;
 		}
+
+
 		if (childEditPart instanceof FullLifelineStateDefinitionCompartmentEditPartCN) {
 			IFigure pane = getPrimaryShape().getStateDefinitionContainerFigure();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way
 			pane.add(((FullLifelineStateDefinitionCompartmentEditPartCN) childEditPart).getFigure());
 			return true;
 		}
+
 		if (childEditPart instanceof FullLifelineTimelineCompartmentEditPartCN) {
 			IFigure pane = getPrimaryShape().getTimelineContainerFigure();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way
 			pane.add(((FullLifelineTimelineCompartmentEditPartCN) childEditPart).getFigure());
 			return true;
 		}
+
 		if (childEditPart instanceof FullLifelineTimeRulerCompartmentEditPartCN) {
 			IFigure pane = getPrimaryShape().getTimeRulerContainerFigure();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way
 			pane.add(((FullLifelineTimeRulerCompartmentEditPartCN) childEditPart).getFigure());
 			return true;
 		}
+
 		return false;
 	}
 
@@ -257,6 +263,7 @@ public class FullLifelineEditPartCN extends LifelineEditPart {
 	@Override
 	protected NodeFigure createNodeFigure() {
 		return new SelectableBorderedNodeFigure(createMainFigureWithSVG());
+
 	}
 
 	/**

@@ -45,7 +45,8 @@ public class UMLMarkerNavigationProvider extends AbstractModelMarkerNavigationPr
 		if (elementId == null || !(getEditor() instanceof DiagramEditor)) {
 			return;
 		}
-		DiagramEditor editor = (DiagramEditor) getEditor();
+		DiagramEditor editor =
+				(DiagramEditor) getEditor();
 		Map<?, ?> editPartRegistry = editor.getDiagramGraphicalViewer().getEditPartRegistry();
 		EObject targetView = editor.getDiagram().eResource().getEObject(elementId);
 		if (targetView == null) {
@@ -53,7 +54,8 @@ public class UMLMarkerNavigationProvider extends AbstractModelMarkerNavigationPr
 		}
 		EditPart targetEditPart = (EditPart) editPartRegistry.get(targetView);
 		if (targetEditPart != null) {
-			UMLDiagramEditorUtil.selectElementsInDiagram(editor, Arrays.asList(new EditPart[] { targetEditPart }));
+			UMLDiagramEditorUtil.selectElementsInDiagram(
+					editor, Arrays.asList(new EditPart[] { targetEditPart }));
 		}
 	}
 
@@ -81,7 +83,8 @@ public class UMLMarkerNavigationProvider extends AbstractModelMarkerNavigationPr
 			int markerSeverity = IMarker.SEVERITY_INFO;
 			if (statusSeverity == IStatus.WARNING) {
 				markerSeverity = IMarker.SEVERITY_WARNING;
-			} else if (statusSeverity == IStatus.ERROR || statusSeverity == IStatus.CANCEL) {
+			} else if (statusSeverity == IStatus.ERROR ||
+					statusSeverity == IStatus.CANCEL) {
 				markerSeverity = IMarker.SEVERITY_ERROR;
 			}
 			marker.setAttribute(IMarker.SEVERITY, markerSeverity);

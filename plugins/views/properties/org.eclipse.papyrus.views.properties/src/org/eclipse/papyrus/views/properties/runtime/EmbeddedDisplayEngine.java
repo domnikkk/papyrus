@@ -67,7 +67,7 @@ public class EmbeddedDisplayEngine extends DefaultDisplayEngine implements Selec
 	 * @param style
 	 *            SWT.BOTTOM or SWT.TOP (Tabs' position)
 	 */
-	public void display(Set<View> views, Composite parent, ISelection selection, int style) {
+	public void display(Set<? extends View> views, Composite parent, ISelection selection, int style) {
 		disposeControls();
 
 		self = new Composite(parent, SWT.NONE);

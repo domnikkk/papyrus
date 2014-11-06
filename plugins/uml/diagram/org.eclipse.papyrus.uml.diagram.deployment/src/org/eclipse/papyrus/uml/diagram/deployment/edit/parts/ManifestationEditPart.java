@@ -56,10 +56,12 @@ public class ManifestationEditPart extends UMLConnectionNodeEditPart implements 
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof ManifestationNameEditPart) {
-			((ManifestationNameEditPart) childEditPart).setLabel(getPrimaryShape().getNameLabel());
+			((ManifestationNameEditPart) childEditPart).setLabel(
+					getPrimaryShape().getNameLabel());
 		}
 		if (childEditPart instanceof ManifestationAppliedStereotypeEditPart) {
-			((ManifestationAppliedStereotypeEditPart) childEditPart).setLabel(getPrimaryShape().getAppliedStereotypeLabel());
+			((ManifestationAppliedStereotypeEditPart) childEditPart).setLabel(
+					getPrimaryShape().getAppliedStereotypeLabel());
 		}
 		return false;
 	}

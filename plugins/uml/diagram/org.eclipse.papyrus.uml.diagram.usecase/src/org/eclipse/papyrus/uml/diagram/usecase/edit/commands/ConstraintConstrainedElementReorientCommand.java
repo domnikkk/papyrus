@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelationshipRequest;
+import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRequest;
 import org.eclipse.papyrus.uml.diagram.usecase.edit.policies.UMLBaseItemSemanticEditPolicy;
 import org.eclipse.uml2.uml.Constraint;
@@ -117,8 +118,10 @@ public class ConstraintConstrainedElementReorientCommand extends EditElementComm
 	 * @generated
 	 */
 	protected CommandResult reorientSource() throws ExecutionException {
-		getOldSource().getConstrainedElements().remove(getOldTarget());
-		getNewSource().getConstrainedElements().add(getOldTarget());
+		getOldSource().getConstrainedElements()
+				.remove(getOldTarget());
+		getNewSource().getConstrainedElements()
+				.add(getOldTarget());
 		return CommandResult.newOKCommandResult(referenceOwner);
 	}
 
@@ -126,8 +129,10 @@ public class ConstraintConstrainedElementReorientCommand extends EditElementComm
 	 * @generated
 	 */
 	protected CommandResult reorientTarget() throws ExecutionException {
-		getOldSource().getConstrainedElements().remove(getOldTarget());
-		getOldSource().getConstrainedElements().add(getNewTarget());
+		getOldSource().getConstrainedElements()
+				.remove(getOldTarget());
+		getOldSource().getConstrainedElements()
+				.add(getNewTarget());
 		return CommandResult.newOKCommandResult(referenceOwner);
 	}
 

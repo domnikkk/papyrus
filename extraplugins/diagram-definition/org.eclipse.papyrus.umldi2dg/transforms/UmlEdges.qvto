@@ -1,0 +1,140 @@
+/**
+ * Copyright (c) 2014 CEA LIST.
+ *  
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *  
+ * Contributors:
+ *  CEA LIST - Initial API and implementation
+ */
+import UmlUtilities;
+
+modeltype DC uses "http://www.omg.org/spec/DD/20110901/DC";
+modeltype DG uses "http://www.omg.org/spec/DD/20110901/DG";
+modeltype DI uses "http://www.omg.org/spec/DD/20110901/DI";
+modeltype UMLDI uses "http://www.omg.org/spec/UML/20131001/UMLDI";
+modeltype UML uses "http://www.eclipse.org/uml2/4.0.0/UML";
+
+library UmlEdges;
+
+mapping UML::Association::edgeToPath(edge : UMLDI::UmlEdge) : DG::Path {
+	var end1 := self.memberEnd->at(1);
+	var end2 := self.memberEnd->at(2);
+	
+	if (end1.owner != self) then {
+		if (end2.aggregation = UML::AggregationKind::composite) then {
+			startMarker := edge.resolveDefinitions().getMarker("startSolidCircleSolidDiamondOpenArrow");
+		} else if (end2.aggregation = UML::AggregationKind::shared) then {
+			startMarker := edge.resolveDefinitions().getMarker("startSolidCircleHollowDiamondOpenArrow");
+		} else {
+			startMarker := edge.resolveDefinitions().getMarker("startSolidCircleOpenArrow");
+		} endif endif;
+	} else if (end1.isNavigable()) then {
+		if (end2.aggregation = UML::AggregationKind::composite) then {
+			startMarker := edge.resolveDefinitions().getMarker("startSolidDiamondOpenArrow");
+		} else if (end2.aggregation = UML::AggregationKind::shared) then {
+			startMarker := edge.resolveDefinitions().getMarker("startHollowDiamondOpenArrow");
+		} else {
+			startMarker := edge.resolveDefinitions().getMarker("startOpenArrow");
+		} endif endif;
+	} else {
+		if (end2.aggregation = UML::AggregationKind::composite) then {
+			startMarker := edge.resolveDefinitions().getMarker("startSolidDiamond");
+		} else if (end2.aggregation = UML::AggregationKind::shared) then {
+			startMarker := edge.resolveDefinitions().getMarker("startHollowDiamond");
+		} endif endif;
+	} endif endif;
+	
+	if (end2.owner != self) then {
+		if (end1.aggregation = UML::AggregationKind::composite) then {
+			endMarker := edge.resolveDefinitions().getMarker("endSolidCircleSolidDiamondOpenArrow");
+		} else if (end1.aggregation = UML::AggregationKind::shared) then {
+			endMarker := edge.resolveDefinitions().getMarker("endSolidCircleHollowDiamondOpenArrow");
+		} else {
+			endMarker := edge.resolveDefinitions().getMarker("endSolidCircleOpenArrow");
+		} endif endif;
+	} else if (end2.isNavigable()) then {
+		if (end1.aggregation = UML::AggregationKind::composite) then {
+			endMarker := edge.resolveDefinitions().getMarker("endSolidDiamondOpenArrow");
+		} else if (end1.aggregation = UML::AggregationKind::shared) then {
+			endMarker := edge.resolveDefinitions().getMarker("endHollowDiamondOpenArrow");
+		} else {
+			endMarker := edge.resolveDefinitions().getMarker("endOpenArrow");
+		} endif endif;
+	} else {
+		if (end1.aggregation = UML::AggregationKind::composite) then {
+			endMarker := edge.resolveDefinitions().getMarker("endSolidDiamond");
+		} else if (end1.aggregation = UML::AggregationKind::shared) then {
+			endMarker := edge.resolveDefinitions().getMarker("endHollowDiamond");
+		} endif endif;
+	} endif endif;
+}
+
+mapping UML::AssociationClass::edgeToPath(edge : UMLDI::UmlEdge) : DG::Path
+	inherits UML::Association::edgeToPath;
+
+mapping UML::Dependency::edgeToPath(edge : UMLDI::UmlEdge) : DG::Path {
+	_class := "dashed";
+	if not edge.targetDiagramElement.oclIsKindOf(UMLDI::DependencyShape) then
+		endMarker := edge.resolveDefinitions().getMarker("endOpenArrow")
+	endif;
+}
+
+mapping UML::Generalization::edgeToPath(edge : UMLDI::UmlEdge) : DG::Path {
+	endMarker := edge.resolveDefinitions().getMarker("endHollowClosedArrow");		
+}
+
+mapping UML::GeneralizationSet::edgeToPath(edge : UMLDI::UmlEdge) : DG::Path {
+	_class := "dashed";
+}
+
+mapping UML::Element::edgeToPath(edge : UMLDI::UmlEdge) : DG::Path {
+}
+
+mapping UML::ElementImport::edgeToPath(edge : UMLDI::UmlEdge) : DG::Path {
+	_class := "dashed";
+	endMarker := edge.resolveDefinitions().getMarker("endOpenArrow");		
+}
+
+mapping UML::InformationFlow::edgeToPath(edge : UMLDI::UmlEdge) : DG::Path {
+	_class := "dashed";
+	endMarker := edge.resolveDefinitions().getMarker("endOpenArrow");		
+}
+
+mapping UML::PackageImport::edgeToPath(edge : UMLDI::UmlEdge) : DG::Path {
+	_class := "dashed";
+	endMarker := edge.resolveDefinitions().getMarker("endOpenArrow");		
+}
+
+mapping UML::PackageMerge::edgeToPath(edge : UMLDI::UmlEdge) : DG::Path {
+	_class := "dashed";
+	endMarker := edge.resolveDefinitions().getMarker("endOpenArrow");		
+}
+
+mapping UML::Property::edgeToPath(edge : UMLDI::UmlEdge) : DG::Path {
+	var association := self.association;
+	
+	if (self.aggregation = UML::AggregationKind::composite) then {
+		startMarker := edge.resolveDefinitions().getMarker("startSolidDiamond");
+	} else if (self.aggregation = UML::AggregationKind::shared) then {
+		startMarker := edge.resolveDefinitions().getMarker("startHollowDiamond");
+	} endif endif;
+
+	if (self.owner != association) then {
+		endMarker := edge.resolveDefinitions().getMarker("endSolidCircleOpenArrow");
+	} else if (self.isNavigable()) then {
+		endMarker := edge.resolveDefinitions().getMarker("endOpenArrow");
+	} endif endif;
+}
+
+mapping UML::Realization::edgeToPath(edge : UMLDI::UmlEdge) : DG::Path {
+	_class := "dashed";
+	endMarker := edge.resolveDefinitions().getMarker("endHollowClosedArrow");		
+}
+
+mapping UML::Substitution::edgeToPath(edge : UMLDI::UmlEdge) : DG::Path {
+	_class := "dashed";
+	endMarker := edge.resolveDefinitions().getMarker("endOpenArrow");		
+}

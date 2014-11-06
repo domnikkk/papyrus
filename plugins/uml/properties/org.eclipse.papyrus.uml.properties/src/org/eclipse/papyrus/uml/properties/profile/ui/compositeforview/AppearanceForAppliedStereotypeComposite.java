@@ -11,6 +11,7 @@
  *  Chokri Mraidha (CEA LIST) Chokri.Mraidha@cea.fr - Initial API and implementation
  *  Patrick Tessier (CEA LIST) Patrick.Tessier@cea.fr - modification
  *  Christian W. Damus (CEA) - bug 323802
+ *  Gabriel Pascual (ALL4TEC) gabriel.pascual@all4tec.fr - Bug 393532
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.properties.profile.ui.compositeforview;
@@ -36,8 +37,7 @@ import org.eclipse.papyrus.uml.profile.tree.objects.AppliedStereotypePropertyTre
 import org.eclipse.papyrus.uml.profile.tree.objects.AppliedStereotypeTreeObject;
 import org.eclipse.papyrus.uml.profile.tree.objects.StereotypedElementTreeObject;
 import org.eclipse.papyrus.uml.properties.profile.ui.compositesformodel.DecoratedTreeComposite;
-import org.eclipse.papyrus.uml.tools.listeners.PapyrusStereotypeListener;
-import org.eclipse.papyrus.uml.tools.listeners.PapyrusStereotypeListener.StereotypeCustomNotification;
+import org.eclipse.papyrus.uml.tools.listeners.StereotypeElementListener.StereotypeExtensionNotification;
 import org.eclipse.papyrus.uml.tools.utils.UMLUtil;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.MouseEvent;
@@ -481,7 +481,7 @@ public class AppearanceForAppliedStereotypeComposite extends org.eclipse.papyrus
 	 */
 	protected void handleNotifyChanged(Notification msg) {
 		final int eventType = msg.getEventType();
-		if (msg instanceof StereotypeCustomNotification && (eventType == PapyrusStereotypeListener.APPLIED_STEREOTYPE || eventType == PapyrusStereotypeListener.UNAPPLIED_STEREOTYPE)) {
+		if (msg instanceof StereotypeExtensionNotification && (eventType == StereotypeExtensionNotification.STEREOTYPE_APPLIED_TO_ELEMENT || eventType == StereotypeExtensionNotification.STEREOTYPE_UNAPPLIED_FROM_ELEMENT)) {
 			Display.getCurrent().asyncExec(new Runnable() {
 
 				public void run() {

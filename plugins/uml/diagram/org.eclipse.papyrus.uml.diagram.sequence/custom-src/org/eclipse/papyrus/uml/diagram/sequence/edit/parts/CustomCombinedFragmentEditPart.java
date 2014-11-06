@@ -9,6 +9,7 @@
  *
  * Contributors:
  *   Soyatec - Initial API and implementation
+ *   Céline Janssens (ALL4TEC) celine.janssens@all4tec.net - Bug 440230 : Label Margin
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.sequence.edit.parts;
@@ -54,6 +55,7 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.ParserEditStatus;
 import org.eclipse.gmf.runtime.common.ui.services.parser.ParserOptions;
 import org.eclipse.gmf.runtime.diagram.core.util.ViewUtil;
 import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart;
@@ -85,8 +87,11 @@ import org.eclipse.papyrus.infra.emf.appearance.helper.AppearanceHelper;
 import org.eclipse.papyrus.infra.emf.appearance.helper.ShadowFigureHelper;
 import org.eclipse.papyrus.infra.emf.appearance.helper.VisualInformationPapyrusConstants;
 import org.eclipse.papyrus.infra.gmfdiag.common.editpart.IPapyrusEditPart;
+import org.eclipse.papyrus.infra.gmfdiag.common.figure.IPapyrusWrappingLabel;
 import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.IPapyrusNodeFigure;
+import org.eclipse.papyrus.infra.gmfdiag.common.model.NotationUtils;
 import org.eclipse.papyrus.infra.gmfdiag.common.preferences.PreferencesConstantsHelper;
+import org.eclipse.papyrus.infra.gmfdiag.common.utils.FigureUtils;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeLabelDisplayEditPolicy;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeNodeLabelDisplayEditPolicy;
 import org.eclipse.papyrus.uml.diagram.common.figure.node.PapyrusNodeFigure;
@@ -126,6 +131,31 @@ import org.eclipse.uml2.uml.UMLPackage;
  */
 public class CustomCombinedFragmentEditPart extends CombinedFragmentEditPart implements ITextAwareEditPart, IPapyrusEditPart {
 
+
+	/**
+	 * Default Margin when not present in CSS
+	 */
+	public static final int DEFAULT_MARGIN = 0;
+
+	/**
+	 * CSS Integer property to define the horizontal Label Margin
+	 */
+	public static final String TOP_MARGIN_PROPERTY = "TopMarginLabel"; //$NON-NLS$
+
+	/**
+	 * CSS Integer property to define the vertical Label Margin
+	 */
+	public static final String LEFT_MARGIN_PROPERTY = "LeftMarginLabel"; //$NON-NLS$
+
+	/**
+	 * CSS Integer property to define the horizontal Label Margin
+	 */
+	public static final String BOTTOM_MARGIN_PROPERTY = "BottomMarginLabel"; //$NON-NLS$
+
+	/**
+	 * CSS Integer property to define the vertical Label Margin
+	 */
+	public static final String RIGHT_MARGIN_PROPERTY = "RightMarginLabel"; //$NON-NLS$
 	/**
 	 * Title for dialog of bloc operator modification error
 	 */
@@ -503,8 +533,52 @@ public class CustomCombinedFragmentEditPart extends CombinedFragmentEditPart imp
 	protected void refreshVisuals() {
 		super.refreshVisuals();
 		refreshLabel();
+		refreshLabelMargin();
 		refreshLabelIcon();
 	}
+
+	/**
+	 * Refresh margin of named element children labels
+	 * <ul>
+	 * <li> Get Css values </li>
+	 * <li> Get all the children figure </li>
+	 * <li> If the child is a label then apply the margin </li>
+	 * </ul>
+	 */
+	public void refreshLabelMargin() {
+		IFigure figure = null;
+
+		int leftMargin = DEFAULT_MARGIN;
+		int rightMargin = DEFAULT_MARGIN;
+		int topMargin = DEFAULT_MARGIN;
+		int bottomMargin = DEFAULT_MARGIN;
+
+		Object model = this.getModel();
+
+
+
+		if (model instanceof View) {
+			leftMargin = NotationUtils.getIntValue((View) model, LEFT_MARGIN_PROPERTY, DEFAULT_MARGIN);
+			rightMargin = NotationUtils.getIntValue((View) model, RIGHT_MARGIN_PROPERTY, DEFAULT_MARGIN);
+			topMargin = NotationUtils.getIntValue((View) model, TOP_MARGIN_PROPERTY, DEFAULT_MARGIN);
+			bottomMargin = NotationUtils.getIntValue((View) model, BOTTOM_MARGIN_PROPERTY, DEFAULT_MARGIN);
+		}
+
+
+		// Get all children figures of the Edit Part and set margin according to the retrieve values
+		if (this instanceof IPapyrusEditPart){
+			figure = ((IPapyrusEditPart) this).getPrimaryShape();
+			List<IPapyrusWrappingLabel> labelChildFigureList = FigureUtils.findChildFigureInstances(figure, IPapyrusWrappingLabel.class);
+
+			for (IPapyrusWrappingLabel label : labelChildFigureList){
+				if (label != null){
+					label.setMarginLabel(leftMargin, topMargin, rightMargin, bottomMargin);
+				}
+			}
+		}
+
+	}
+
 
 	protected void refreshLabelIcon() {
 		Image image = ElementIconUtil.getLabelIcon(this);

@@ -178,15 +178,15 @@ public class UMLContentProvider extends EncapsulatedContentProvider {
 	 * @return
 	 */
 	protected IStructuredContentProvider getSemanticProvider(final EObject source, final EStructuralFeature feature, final Stereotype stereotype) {
+		if (feature == null) {
+			return EmptyContentProvider.instance;
+		}
+
 		if (UMLUtil.getBaseElement(source) != null) {
 			Property umlReference = ProfileUtil.findStereotypedProperty(stereotype, feature.getName());
 			if (umlReference != null) {
 				return getStereotypedReferenceContentProvider(source, feature, (Stereotype) umlReference.getType());
 			}
-		}
-
-		if (feature == null) {
-			return EmptyContentProvider.instance;
 		}
 
 		// Bug 383401: [Sequence Diagram] Interaction operator

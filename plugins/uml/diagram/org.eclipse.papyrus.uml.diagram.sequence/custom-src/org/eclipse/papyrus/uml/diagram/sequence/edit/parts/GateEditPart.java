@@ -397,6 +397,18 @@ public class GateEditPart extends AbstractBorderEditPart implements IBorderItemE
 			labelEditPart.refreshBounds();
 		}
 	}
+	
+    /**
+     * this method will return the primary child EditPart inside this edit part
+     * 
+     * @return the primary child view inside this edit part
+     */
+    public EditPart getPrimaryChildEditPart() {
+        if (getChildren().size() > 0) {
+            return (EditPart) getChildren().get(0);
+        }
+        return super.getPrimaryChildEditPart();
+    }
 
 	public GateNameEditPart getLabelEditPart() {
 		IGraphicalEditPart labelEditPart = getChildBySemanticHint(GateNameEditPart.GATE_NAME_TYPE);

@@ -82,13 +82,18 @@ public class InterfaceRealizationCreateCommand extends EditElementCommand {
 		if (!canExecute()) {
 			throw new ExecutionException("Invalid arguments in create link command"); //$NON-NLS-1$
 		}
+
 		InterfaceRealization newElement = UMLFactory.eINSTANCE.createInterfaceRealization();
-		getSource().getInterfaceRealizations().add(newElement);
-		newElement.setContract(getTarget());
+		getSource().getInterfaceRealizations()
+				.add(newElement);
+		newElement.setContract(
+				getTarget()
+				);
 		ElementInitializers.getInstance().init_InterfaceRealization_4003(newElement);
 		doConfigure(newElement, monitor, info);
 		((CreateElementRequest) getRequest()).setNewElement(newElement);
 		return CommandResult.newOKCommandResult(newElement);
+
 	}
 
 	/**

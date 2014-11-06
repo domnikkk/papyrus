@@ -121,7 +121,9 @@ public class PackageMergeReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected CommandResult reorientSource() throws ExecutionException {
-		getLink().setReceivingPackage(getNewSource());
+		getLink().setReceivingPackage(
+				getNewSource()
+				);
 		return CommandResult.newOKCommandResult(getLink());
 	}
 
@@ -129,7 +131,9 @@ public class PackageMergeReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected CommandResult reorientTarget() throws ExecutionException {
-		getLink().setMergedPackage(getNewTarget());
+		getLink().setMergedPackage(
+				getNewTarget()
+				);
 		return CommandResult.newOKCommandResult(getLink());
 	}
 

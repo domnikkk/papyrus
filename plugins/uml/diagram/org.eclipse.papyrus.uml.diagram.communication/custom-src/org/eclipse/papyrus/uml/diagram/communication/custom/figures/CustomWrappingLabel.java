@@ -16,7 +16,7 @@ package org.eclipse.papyrus.uml.diagram.communication.custom.figures;
 import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.draw2d.geometry.Rectangle;
-import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
+import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.PapyrusWrappingLabel;
 import org.eclipse.papyrus.uml.diagram.communication.custom.helper.RotationHelper;
 import org.eclipse.papyrus.uml.diagram.communication.part.UMLDiagramEditorPlugin;
 import org.eclipse.swt.graphics.Image;
@@ -28,7 +28,7 @@ import org.eclipse.swt.graphics.Image;
  *
  *
  */
-public class CustomWrappingLabel extends WrappingLabel
+public class CustomWrappingLabel extends PapyrusWrappingLabel
 
 {
 

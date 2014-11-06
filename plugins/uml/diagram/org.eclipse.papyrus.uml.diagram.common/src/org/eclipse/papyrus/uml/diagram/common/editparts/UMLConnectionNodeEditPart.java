@@ -9,6 +9,7 @@
  *
  * Contributors:
  *  Remi Schnekenburger (CEA LIST) remi.schnekenburger@cea.fr - Initial API and implementation
+ *  Gabriel Pascual (ALL4TEC) gabriel.pascual@all4tec.fr - Bug 393532
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.common.editparts;
@@ -30,7 +31,7 @@ import org.eclipse.papyrus.uml.diagram.common.editpolicies.ApplyStereotypeEditPo
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.ShowHideLabelEditPolicy;
 import org.eclipse.papyrus.uml.diagram.common.figure.edge.UMLEdgeFigure;
 import org.eclipse.papyrus.uml.diagram.common.service.ApplyStereotypeRequest;
-import org.eclipse.papyrus.uml.tools.listeners.PapyrusStereotypeListener;
+import org.eclipse.papyrus.uml.tools.listeners.StereotypeElementListener.StereotypeExtensionNotification;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Stereotype;
@@ -92,7 +93,7 @@ public abstract class UMLConnectionNodeEditPart extends ConnectionEditPart imple
 		// check if this concerns a stereotype application or unapplication
 		final int eventType = event.getEventType();
 
-		if (eventType == PapyrusStereotypeListener.APPLIED_STEREOTYPE) {
+		if (eventType == StereotypeExtensionNotification.STEREOTYPE_APPLIED_TO_ELEMENT) {
 			// a stereotype was applied to the notifier
 			// then a new listener should be added to the stereotype application
 			addListenerFilter(STEREOTYPED_ELEMENT, this, (EObject) event.getNewValue());

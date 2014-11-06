@@ -78,10 +78,12 @@ public class GeneralizationSetReorientCommand extends EditElementCommand {
 		if (!(oldEnd instanceof Generalization && newEnd instanceof Generalization)) {
 			return false;
 		}
-		if (getLink().getGeneralizations().size() != 1) {
+		if (getLink().getGeneralizations()
+				.size() != 1) {
 			return false;
 		}
-		Generalization target = getLink().getGeneralizations().get(0);
+		Generalization target = getLink().getGeneralizations()
+				.get(0);
 		if (!(getLink().eContainer() instanceof Package)) {
 			return false;
 		}
@@ -96,10 +98,12 @@ public class GeneralizationSetReorientCommand extends EditElementCommand {
 		if (!(oldEnd instanceof Generalization && newEnd instanceof Generalization)) {
 			return false;
 		}
-		if (getLink().getGeneralizations().size() != 1) {
+		if (getLink().getGeneralizations()
+				.size() != 1) {
 			return false;
 		}
-		Generalization source = getLink().getGeneralizations().get(0);
+		Generalization source = getLink().getGeneralizations()
+				.get(0);
 		if (!(getLink().eContainer() instanceof Package)) {
 			return false;
 		}
@@ -128,8 +132,10 @@ public class GeneralizationSetReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected CommandResult reorientSource() throws ExecutionException {
-		getLink().getGeneralizations().remove(getOldSource());
-		getLink().getGeneralizations().add(getNewSource());
+		getLink().getGeneralizations()
+				.remove(getOldSource());
+		getLink().getGeneralizations()
+				.add(getNewSource());
 		return CommandResult.newOKCommandResult(getLink());
 	}
 
@@ -137,8 +143,10 @@ public class GeneralizationSetReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected CommandResult reorientTarget() throws ExecutionException {
-		getLink().getGeneralizations().remove(getOldTarget());
-		getLink().getGeneralizations().add(getNewTarget());
+		getLink().getGeneralizations()
+				.remove(getOldTarget());
+		getLink().getGeneralizations()
+				.add(getNewTarget());
 		return CommandResult.newOKCommandResult(getLink());
 	}
 

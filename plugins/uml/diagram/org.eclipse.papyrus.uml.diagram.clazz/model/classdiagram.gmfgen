@@ -4380,7 +4380,7 @@
               href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
           <viewmap
               xsi:type="gmfgen:FigureViewmap"
-              figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
+              figureQualifiedClassName="org.eclipse.papyrus.infra.gmfdiag.common.figure.node.PapyrusWrappingLabel">
             <attributes
                 xsi:type="gmfgen:LabelOffsetAttributes"
                 x="25"
@@ -4484,7 +4484,7 @@
               href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
           <viewmap
               xsi:type="gmfgen:FigureViewmap"
-              figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
+              figureQualifiedClassName="org.eclipse.papyrus.infra.gmfdiag.common.figure.node.PapyrusWrappingLabel">
             <attributes
                 xsi:type="gmfgen:LabelOffsetAttributes"
                 x="25"
@@ -6231,7 +6231,7 @@
               key="org.eclipse.papyrus.uml.diagram.clazz.custom.policies.InstanceSpecificationRoleDisplayEditPolicy.INSTANCE_SPECIFICATION_ROLE_DISPLAY"
               editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.clazz.custom.policies.ISRoleTargetDisplayEditPolicy"/>
           <modelFacet
-              parser="/0/@labelParsers/@implementations.11"/>
+              parser="/0/@labelParsers/@implementations.12"/>
         </labels>
       </links>
       <links
@@ -7762,6 +7762,7 @@
               description="Creation of a context link for a Constraint"
               largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Association.gif"
               smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Association.gif"
+              id="&quot;clazz.tool.contextlink&quot;"
               genLinks="/0/@diagram/@links.26"/>
           <entries
               xsi:type="gmfgen:ToolEntry"
@@ -7928,7 +7929,8 @@
     </diagram>
     <plugin
         iD="org.eclipse.papyrus.uml.diagram.clazz"
-        name="PapyrusUMLClassDiagram"/>
+        name="PapyrusUMLClassDiagram"
+        version="1.0.1.qualifier"/>
     <editor/>
     <navigator/>
     <diagramUpdater/>
@@ -8035,8 +8037,12 @@
           qualifiedName="org.eclipse.papyrus.uml.diagram.clazz.custom.parsers.TemplateBindingParser"/>
       <implementations
           xsi:type="gmfgen:CustomParser"
-          uses="/0/@diagram/@links.20/@labels.0/@modelFacet /0/@diagram/@links.20/@labels.1/@modelFacet"
-          qualifiedName="org.eclipse.papyrus.uml.diagram.clazz.custom.parsers.RoleInstanceSpecificationLinkParser"/>
+          uses="/0/@diagram/@links.20/@labels.0/@modelFacet"
+          qualifiedName="org.eclipse.papyrus.uml.diagram.clazz.custom.parsers.RoleInstanceSpecificationSourceLinkParser"/>
+      <implementations
+          xsi:type="gmfgen:CustomParser"
+          uses="/0/@diagram/@links.20/@labels.1/@modelFacet"
+          qualifiedName="org.eclipse.papyrus.uml.diagram.clazz.custom.parsers.RoleInstanceSpecificationTargetLinkParser"/>
     </labelParsers>
     <contextMenus
         context="/0/@diagram">
