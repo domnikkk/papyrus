@@ -427,7 +427,7 @@ public class LazyCopier extends Copier {
 	@Override
 	public EObject copy(EObject sourceEObj) {
 		if (sourceEObj == null) {
-			// this case may happen, if elements were systematically copied without checking for
+			// this case may happen, if elements are systematically copied without checking for
 			// null references in the application code (e.g. if we copy a part-with-port which might
 			// be null in case of delegation or connectors without ports
 			return null;
@@ -773,7 +773,9 @@ public class LazyCopier extends Copier {
 				} else {
 					EReference eReference = (EReference) eStructuralFeature;
 					// create a shallow copy of the containment: update only references already in the copy map
-					shallowCopyContainment(eReference, sourceEObj, targetEObj);
+					if (sourceEObj != targetEObj) {
+						shallowCopyContainment(eReference, sourceEObj, targetEObj);
+					}
 				}
 			}
 		}

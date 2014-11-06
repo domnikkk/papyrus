@@ -41,27 +41,14 @@ import org.eclipse.uml2.uml.UMLPackage;
 public class ModelManagement {
 
 	/**
-	 * Create a resource for the model passed as parameter
-	 *
-	 * @param newModel
+	 * Create a new model and associate it with a temporary
+	 * resource
 	 */
 	public ModelManagement() {
 		getResourceSet();
 		model = UMLFactory.eINSTANCE.createModel();
 		resource = resourceSet.createResource(URI.createURI("temp.uml")); //$NON-NLS-1$
 		resource.getContents().add(model);
-	}
-
-	/**
-	 * Save a model within the given project
-	 *
-	 * @param model
-	 *            a model that should be saved
-	 * @param project
-	 *            an existing project
-	 */
-	public void saveModel(IProject project) {
-		saveModel(getPath(project, null, null));
 	}
 
 	public void dispose() {
@@ -72,19 +59,41 @@ public class ModelManagement {
 		resourceSet.getResources().remove(resource);
 	}
 
+	/**
+	 * provide access to the model
+	 * @return the model amanaged by this instance of model manager
+	 */
 	public Model getModel() {
 		return model;
 	}
 
+	/**
+	 * Save a model within the given project at a default location.
+	 * This location is [model.name/].uml within the project root.
+	 * @link ModelManagement.getPath
+	 *  
+	 * @param project
+	 *            an existing project
+	 */
+	public void saveModel(IProject project) {
+		saveModel(getPath(project, null, null));
+	}
+
+	/**
+	 * Save the model within a given project, folder and postfix
+	 * @param project
+	 * @param modelFolder
+	 * @param modelPostfix
+	 */
 	public void saveModel(IProject project, String modelFolder, String modelPostfix) {
 		String path = this.getPath(project, modelFolder, this.getModel().getName() + modelPostfix);
 		this.saveModel(path);
 	}
 
 	/**
-	 * Save a model within a passed project and a specified folder
-	 * (TODO: use path instead a single folder?)
+	 * Save a model using the passed path
 	 *
+	 * @param path A string representation of the path. It will be converted into a URI
 	 */
 	public void saveModel(String path) {
 
@@ -94,11 +103,6 @@ public class ModelManagement {
 			ResourceSetImpl resourceSet = new ResourceSetImpl();
 			resourceSet.getPackageRegistry().put(UMLPackage.eNS_URI, UMLPackage.eINSTANCE);
 
-			/*
-			 * Resource resource = resourceSet.createResource(uri);
-			 * EList<EObject> contents = resource.getContents();
-			 * contents.add(model);
-			 */
 			resource.setURI(uri);
 			EList<EObject> contents = resource.getContents();
 
@@ -110,16 +114,20 @@ public class ModelManagement {
 				}
 			}
 			resource.save(null);
-		} catch (IOException e) {
-			e.printStackTrace();
+		}
+		catch (IOException e) {
+			Activator.log.error(e);
 		}
 	}
 
 	/**
+	 * Return a path based on project, folder and file name
+	 *
 	 * @param project
 	 *            an existing project
 	 * @param subFolder
 	 *            a subfolder within the project (will be created, if it does not exist)
+	 *            if null, the project will be saved in the root of the project
 	 * @param filename
 	 *            the name of the file or null (in his case, the name of the
 	 *            model with the postfix .uml is used)

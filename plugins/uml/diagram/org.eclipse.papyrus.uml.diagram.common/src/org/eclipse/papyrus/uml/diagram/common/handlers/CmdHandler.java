@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2010 CEA LIST.
+ * Copyright (c) 2014 CEA LIST.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -10,7 +10,7 @@
  *  Ansgar Radermacher (CEA LIST) ansgar.radermacher@cea.fr - Initial API and implementation
  *****************************************************************************/
 
-package org.eclipse.papyrus.acceleo.ui.handlers;
+package org.eclipse.papyrus.uml.diagram.common.handlers;
 
 
 import org.eclipse.core.commands.AbstractHandler;
@@ -21,7 +21,8 @@ import org.eclipse.ui.PlatformUI;
 
 
 /**
- * Superclass for handlers. It converts a selection into an EObject
+ * Simple superclass for handlers. It converts a selection into an EObject.
+ * Used by C++ code generator and Qompass designer
  */
 public abstract class CmdHandler extends AbstractHandler {
 
