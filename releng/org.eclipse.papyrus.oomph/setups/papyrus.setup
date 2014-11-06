@@ -113,10 +113,6 @@
       targetURL="${workspace.location|uri}/.metadata/.plugins/org.eclipse.jdt.ui/dialog_settings.xml"
       encoding="UTF-8"/>
   <setupTask
-      xsi:type="jdt:JRETask"
-      version="JavaSE-1.6"
-      location="${jre.location-1.6}"/>
-  <setupTask
       xsi:type="setup:CompoundTask"
       name="Compiler Preferences">
     <setupTask
@@ -2489,6 +2485,28 @@
     </stream>
     <description>Sources and tools required for working on the Papyrus developer tools (not part of the product).</description>
   </project>
+  <stream name="master"
+      label="master (Mars/1.1)">
+    <setupTask
+        xsi:type="setup:VariableTask"
+        name="papyrus.bugzilla.version"
+        value="1.0.0&amp;version=1.0.1&amp;version=1.0.2&amp;version=1.1.0"/>
+    <setupTask
+        xsi:type="jdt:JRETask"
+        version="JavaSE-1.7"
+        location="${jre.location-1.7}"/>
+  </stream>
+  <stream name="streams/1.0-maintenance"
+      label="streams/1.0-maintenance (Luna/1.0.x)">
+    <setupTask
+        xsi:type="setup:VariableTask"
+        name="papyrus.bugzilla.version"
+        value="1.0.0&amp;version=1.0.1&amp;version=1.0.2"/>
+    <setupTask
+        xsi:type="jdt:JRETask"
+        version="JavaSE-1.6"
+        location="${jre.location-1.6}"/>
+  </stream>
   <logicalProjectContainer
       xsi:type="setup:ProjectCatalog"
       href="index:/org.eclipse.setup#//@projectCatalogs[name='org.eclipse']"/>
