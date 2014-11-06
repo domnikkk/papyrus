@@ -52,5 +52,7 @@
             provider="CEA LIST">
       </profile>
    </extension>
-
+<extension point="org.eclipse.papyrus.views.properties.context">
+<context contextModel="properties/Review.ctx"/>
+</extension>
 </plugin>

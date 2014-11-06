@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="ASCII"?>
+<contexts:Context xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:constraints="http://www.eclipse.org/papyrus/constraints/0.9" xmlns:contexts="http://www.eclipse.org/papyrus/properties/contexts/0.9" name="ReviewProfile">
+  <dependencies href="ppe:/context/org.eclipse.papyrus.uml.properties/Model/UML/UML.ctx#/"/>
+  <tabs label="Review" id="reviewprofile" priority="100">
+    <sections name="Single ReviewRepository" sectionFile="ui/SingleReviewRepository.xwt">
+      <widget href="ui/SingleReviewRepository.xwt#/"/>
+    </sections>
+    <sections name="Multiple ReviewRepository" sectionFile="ui/MultipleReviewRepository.xwt">
+      <widget href="ui/MultipleReviewRepository.xwt#/"/>
+    </sections>
+    <sections name="Single Comment" sectionFile="ui/SingleComment.xwt">
+      <widget href="ui/SingleComment.xwt#/"/>
+    </sections>
+    <sections name="Multiple Comment" sectionFile="ui/MultipleComment.xwt">
+      <widget href="ui/MultipleComment.xwt#/"/>
+    </sections>
+    <sections name="Single Review" sectionFile="ui/SingleReview.xwt">
+      <widget href="ui/SingleReview.xwt#/"/>
+    </sections>
+    <sections name="Multiple Review" sectionFile="ui/MultipleReview.xwt">
+      <widget href="ui/MultipleReview.xwt#/"/>
+    </sections>
+    <sections name="Single Answer" sectionFile="ui/SingleAnswer.xwt">
+      <widget href="ui/SingleAnswer.xwt#/"/>
+    </sections>
+    <sections name="Multiple Answer" sectionFile="ui/MultipleAnswer.xwt">
+      <widget href="ui/MultipleAnswer.xwt#/"/>
+    </sections>
+    <sections name="Single Question" sectionFile="ui/SingleQuestion.xwt">
+      <widget href="ui/SingleQuestion.xwt#/"/>
+    </sections>
+    <sections name="Multiple Question" sectionFile="ui/MultipleQuestion.xwt">
+      <widget href="ui/MultipleQuestion.xwt#/"/>
+    </sections>
+    <sections name="Single Todo" sectionFile="ui/SingleTodo.xwt">
+      <widget href="ui/SingleTodo.xwt#/"/>
+    </sections>
+    <sections name="Multiple Todo" sectionFile="ui/MultipleTodo.xwt">
+      <widget href="ui/MultipleTodo.xwt#/"/>
+    </sections>
+  </tabs>
+  <views name="Single ReviewRepository" sections="//@tabs.0/@sections.0" automaticContext="true" datacontexts="//@dataContexts.0/@elements.2">
+    <constraints xsi:type="constraints:SimpleConstraint" name="isSingleReviewRepository">
+      <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+      <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ReviewProfile::ReviewRepository"/>
+    </constraints>
+  </views>
+  <views elementMultiplicity="-1" name="Multiple ReviewRepository" sections="//@tabs.0/@sections.1" automaticContext="true" datacontexts="//@dataContexts.0/@elements.2">
+    <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleReviewRepository">
+      <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+      <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ReviewProfile::ReviewRepository"/>
+    </constraints>
+  </views>
+  <views name="Single Comment" sections="//@tabs.0/@sections.2" automaticContext="true" datacontexts="//@dataContexts.0/@elements.0">
+    <constraints xsi:type="constraints:SimpleConstraint" name="isSingleComment">
+      <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+      <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ReviewProfile::Comment"/>
+    </constraints>
+  </views>
+  <views elementMultiplicity="-1" name="Multiple Comment" sections="//@tabs.0/@sections.3" automaticContext="true" datacontexts="//@dataContexts.0/@elements.0">
+    <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleComment">
+      <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+      <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ReviewProfile::Comment"/>
+    </constraints>
+  </views>
+  <views name="Single Review" sections="//@tabs.0/@sections.4" automaticContext="true" datacontexts="//@dataContexts.0/@elements.3">
+    <constraints xsi:type="constraints:SimpleConstraint" name="isSingleReview">
+      <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+      <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ReviewProfile::Review"/>
+    </constraints>
+  </views>
+  <views elementMultiplicity="-1" name="Multiple Review" sections="//@tabs.0/@sections.5" automaticContext="true" datacontexts="//@dataContexts.0/@elements.3">
+    <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleReview">
+      <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+      <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ReviewProfile::Review"/>
+    </constraints>
+  </views>
+  <views name="Single Answer" sections="//@tabs.0/@sections.6" automaticContext="true" datacontexts="//@dataContexts.0/@elements.4">
+    <constraints xsi:type="constraints:SimpleConstraint" name="isSingleAnswer">
+      <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+      <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ReviewProfile::Answer"/>
+    </constraints>
+  </views>
+  <views elementMultiplicity="-1" name="Multiple Answer" sections="//@tabs.0/@sections.7" automaticContext="true" datacontexts="//@dataContexts.0/@elements.4">
+    <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleAnswer">
+      <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+      <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ReviewProfile::Answer"/>
+    </constraints>
+  </views>
+  <views name="Single Question" sections="//@tabs.0/@sections.8" automaticContext="true" datacontexts="//@dataContexts.0/@elements.1">
+    <constraints xsi:type="constraints:SimpleConstraint" name="isSingleQuestion">
+      <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+      <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ReviewProfile::Question"/>
+    </constraints>
+  </views>
+  <views elementMultiplicity="-1" name="Multiple Question" sections="//@tabs.0/@sections.9" automaticContext="true" datacontexts="//@dataContexts.0/@elements.1">
+    <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleQuestion">
+      <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+      <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ReviewProfile::Question"/>
+    </constraints>
+  </views>
+  <views name="Single Todo" sections="//@tabs.0/@sections.10" automaticContext="true" datacontexts="//@dataContexts.0/@elements.5">
+    <constraints xsi:type="constraints:SimpleConstraint" name="isSingleTodo">
+      <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+      <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ReviewProfile::Todo"/>
+    </constraints>
+  </views>
+  <views elementMultiplicity="-1" name="Multiple Todo" sections="//@tabs.0/@sections.11" automaticContext="true" datacontexts="//@dataContexts.0/@elements.5">
+    <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleTodo">
+      <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+      <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ReviewProfile::Todo"/>
+    </constraints>
+  </views>
+  <dataContexts name="ReviewProfile">
+    <elements name="Comment">
+      <properties name="status" type="Enumeration"/>
+      <properties name="diffRef"/>
+      <properties name="subject"/>
+    </elements>
+    <elements name="Question" supertypes="//@dataContexts.0/@elements.0"/>
+    <elements name="ReviewRepository">
+      <supertypes href="ppe:/context/org.eclipse.papyrus.uml.properties/Model/UML/UML.ctx#//@dataContexts.0/@elements.71"/>
+    </elements>
+    <elements name="Review" supertypes="//@dataContexts.0/@elements.0"/>
+    <elements name="Answer" supertypes="//@dataContexts.0/@elements.0"/>
+    <elements name="Todo" supertypes="//@dataContexts.0/@elements.0"/>
+    <modelElementFactory href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@modelElementFactories.2"/>
+  </dataContexts>
+</contexts:Context>
