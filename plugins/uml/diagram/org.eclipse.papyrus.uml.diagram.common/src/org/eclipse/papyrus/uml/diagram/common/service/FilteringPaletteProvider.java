@@ -79,8 +79,19 @@ public class FilteringPaletteProvider implements IPaletteProvider {
 	 * Retrieve all elements of a palette contribution
 	 *
 	 */
-	private static class WalkerPaletteContribution implements IPapyrusPaletteConstant {
+	private class WalkerPaletteContributionHelper implements IPapyrusPaletteConstant {
 
+		protected String field;
+		
+		/**
+		 * Init the Helper with the field you want to extract the values.
+		 *
+		 */
+		public WalkerPaletteContributionHelper(String field) {
+			this.field = field;
+		}
+		
+		
 		/**
 		 * Retrieve all elements ID of the palette contributions
 		 *
@@ -88,7 +99,7 @@ public class FilteringPaletteProvider implements IPaletteProvider {
 		 *            the palette contributions
 		 * @return the list of palette nodes ID
 		 */
-		public static List<String> getAllPaletteNodesID(NodeList contributions) {
+		public List<String> getAllPaletteNodesID(NodeList contributions) {
 			List<String> paletteNodesID = new ArrayList<String>();
 			for (int i = 0; i < contributions.getLength(); i++) {
 				Node node = contributions.item(i);
@@ -106,7 +117,7 @@ public class FilteringPaletteProvider implements IPaletteProvider {
 		 *            the node to parse
 		 * @return the list of palette nodes ID
 		 */
-		private static List<String> walkDefinition(Node paletteDefinitionNode) {
+		private List<String> walkDefinition(Node paletteDefinitionNode) {
 			List<String> paletteNodesID = new ArrayList<String>();
 			NodeList nodes = paletteDefinitionNode.getChildNodes();
 			for (int i = 0; i < nodes.getLength(); i++) {
@@ -125,40 +136,17 @@ public class FilteringPaletteProvider implements IPaletteProvider {
 		 *            the node to parse
 		 * @return the list of palette nodes ID
 		 */
-		private static List<String> walkContentNode(Node paletteContentNode) {
+		private List<String> walkContentNode(Node paletteContentNode) {
 			List<String> paletteNodesID = new ArrayList<String>();
 			NodeList nodes = paletteContentNode.getChildNodes();
 			for (int i = 0; i < nodes.getLength(); i++) {
 				Node node = nodes.item(i);
 				String name = node.getNodeName();
-				String nodeID = null;
-				if (DRAWER.equals(name)) {
-					nodeID = node.getAttributes().getNamedItem(ID).getNodeValue();
-					paletteNodesID.add(nodeID);
-					if (node.getChildNodes().getLength() > 0) {
-						paletteNodesID.addAll(walkContentNode(node));
+				if (DRAWER.equals(name)|| STACK.equals(name) || SEPARATOR.equals(name) || TOOL.equals(name) || ASPECT_TOOL.equals(name)) {
+					Node namedItem = node.getAttributes().getNamedItem(field);
+					if (namedItem!= null){
+						paletteNodesID.add(namedItem.getNodeValue());
 					}
-				} else if (STACK.equals(name)) {
-					nodeID = node.getAttributes().getNamedItem(ID).getNodeValue();
-					paletteNodesID.add(nodeID);
-					if (node.getChildNodes().getLength() > 0) {
-						paletteNodesID.addAll(walkContentNode(node));
-					}
-				} else if (SEPARATOR.equals(name)) {
-					nodeID = node.getAttributes().getNamedItem(ID).getNodeValue();
-					paletteNodesID.add(nodeID);
-					if (node.getChildNodes().getLength() > 0) {
-						paletteNodesID.addAll(walkContentNode(node));
-					}
-				} else if (TOOL.equals(name)) {
-					nodeID = node.getAttributes().getNamedItem(ID).getNodeValue();
-					paletteNodesID.add(nodeID);
-					if (node.getChildNodes().getLength() > 0) {
-						paletteNodesID.addAll(walkContentNode(node));
-					}
-				} else if (ASPECT_TOOL.equals(name)) {
-					nodeID = node.getAttributes().getNamedItem(ID).getNodeValue();
-					paletteNodesID.add(nodeID);
 					if (node.getChildNodes().getLength() > 0) {
 						paletteNodesID.addAll(walkContentNode(node));
 					}
@@ -267,11 +255,14 @@ public class FilteringPaletteProvider implements IPaletteProvider {
 			CustomPaletteProvider provider = new CustomPaletteProvider();
 			provider.setContributions(paletteURI);
 			contributions = provider.getContributions();
-			List<String> nodesID = WalkerPaletteContribution.getAllPaletteNodesID(contributions);
-
+			List<String> nodesID = (new WalkerPaletteContributionHelper(IPapyrusPaletteConstant.ID)).getAllPaletteNodesID(contributions);
 			// verify if the elements (nodes) from the custom palette already contributed
 			if (!isCustomPaletteContributed(predefinedEntries, nodesID)) {
-				provider.contributeToPalette(editor, content, root, predefinedEntries);
+				// verify if the extended elements (refids) from the custom palette are already contributed
+				List<String> refToolsID = (new WalkerPaletteContributionHelper(IPapyrusPaletteConstant.REF_TOOL_ID)).getAllPaletteNodesID(contributions);
+				if (isCustomPaletteContributed(predefinedEntries, refToolsID)){
+					provider.contributeToPalette(editor, content, root, predefinedEntries);
+				}	
 			}
 		}
 	}
