@@ -1,6 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2010 CEA LIST.
- *
+ * Copyright (c) 2010, 2014 CEA LIST, Christian W. Damus, and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -9,6 +8,7 @@
  *
  * Contributors:
  *  Patrick Tessier (CEA LIST) Patrick.tessier@cea.fr - Initial API and implementation
+ *  Christian W. Damus - bug 450235
  *
  *****************************************************************************/
 package org.eclipse.papyrus.views.modelexplorer.listener;
@@ -31,16 +31,36 @@ import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 import org.eclipse.papyrus.views.modelexplorer.Activator;
 import org.eclipse.papyrus.views.modelexplorer.Messages;
 
+import com.google.common.base.Supplier;
+import com.google.common.base.Suppliers;
+
 /**
  * this class is a listener in charge to manage double on element of the model explorer
  *
  */
 public class DoubleClickListener implements IDoubleClickListener {
 
-	private final ServicesRegistry servicesRegistry;
+	private final Supplier<ServicesRegistry> servicesRegistry;
 
+	/**
+	 * Initializes me with a fixed service registry.
+	 *
+	 * @param servicesRegistry a service registry
+	 * 
+	 * @deprecated The editor that the Model Explorer views can change dynamically, replacing its service registry. Use the {@link #DoubleClickListener(Supplier)} constructor instead to account for the variability of the registry.
+	 */
+	@Deprecated
 	public DoubleClickListener(ServicesRegistry servicesRegistry) {
-		this.servicesRegistry = servicesRegistry;
+		this(Suppliers.ofInstance(servicesRegistry));
+	}
+
+	/**
+	 * Initializes me with a variable service registry.
+	 *
+	 * @param servicesRegistrySupplier a supplier of a dynamically variable service registry
+	 */
+	public DoubleClickListener(Supplier<ServicesRegistry> servicesRegistrySupplier) {
+		this.servicesRegistry = servicesRegistrySupplier;
 	}
 
 	/**
@@ -53,7 +73,7 @@ public class DoubleClickListener implements IDoubleClickListener {
 		final IPageManager pageManager;
 		// get the page Manager
 		try {
-			pageManager = ServiceUtils.getInstance().getIPageManager(servicesRegistry);
+			pageManager = ServiceUtils.getInstance().getIPageManager(servicesRegistry.get());
 		} catch (Exception e) {
 			Activator.log.error(Messages.DoubleClickListener_Error_NoLoadManagerToOpen, e);
 			return;
