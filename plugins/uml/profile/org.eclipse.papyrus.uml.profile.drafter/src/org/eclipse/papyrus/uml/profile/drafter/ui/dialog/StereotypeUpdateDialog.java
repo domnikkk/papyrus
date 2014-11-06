@@ -86,7 +86,7 @@ public class StereotypeUpdateDialog extends Dialog {
 		this.anyUmlElement = selectedElement;
 		this.selectedMetaclasses = metaclassesToSelect;
 		this.profileCatalog = new ProfileCatalog(selectedElement);
-		stereotypeModel = new StereoptypeModel(profileCatalog);
+		stereotypeModel = new StereoptypeModel(profileCatalog, selectedElement);
 //		stereotypeNameToProfileSynchronizer = new StereotypeNameToProfileSynchronizer(profileCatalog);
 		
 	}

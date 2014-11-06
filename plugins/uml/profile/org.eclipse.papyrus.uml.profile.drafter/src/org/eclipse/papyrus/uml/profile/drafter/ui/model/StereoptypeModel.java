@@ -17,6 +17,7 @@ package org.eclipse.papyrus.uml.profile.drafter.ui.model;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.eclipse.core.databinding.observable.list.IObservableList;
@@ -24,6 +25,9 @@ import org.eclipse.core.databinding.observable.list.WritableList;
 import org.eclipse.papyrus.uml.profile.drafter.ProfileCatalog;
 import org.eclipse.papyrus.uml.profile.drafter.exceptions.NotFoundException;
 import org.eclipse.uml2.uml.Class;
+import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.NamedElement;
+import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
 
@@ -75,6 +79,11 @@ public class StereoptypeModel extends StereotypeURL {
 	 * Event manager
 	 */
 	private PropertyChangeSupport changeSupport = new PropertyChangeSupport(this);
+
+	/**
+	 * List of property names that should not be edited.
+	 */
+	private List<String> excludedPropertyNames = Arrays.asList( "base_Class" );
 	
 	
 	/**
@@ -89,10 +98,12 @@ public class StereoptypeModel extends StereotypeURL {
 	 * 
 	 * Constructor.
 	 *
-	 * @param profileApplicator
+	 * @param profileCatalog The {@link ProfileCatalog} used to lookup {@link Profile} and {@link Stereotype} from a name.
+	 * @param selectedElement The targetted uml {@link NamedElement}. This is the element to which the {@link Stereotype} is to be applied.
 	 */
-	public StereoptypeModel( ProfileCatalog profileCatalog) {
+	public StereoptypeModel( ProfileCatalog profileCatalog, Element selectedElement) {
 		this.profileCatalog = profileCatalog;
+		this.targetElement = selectedElement;
 	}
 	
 	
@@ -333,17 +344,46 @@ public class StereoptypeModel extends StereotypeURL {
 		// Add owned metaclasses
 		List<Property> ownedProperties = stereotype.getOwnedAttributes();
 		for( Property property : ownedProperties) {
-			properties.add(new PropertyModel(MemberKind.owned, property));
+			// filter some properties
+			if(excludedPropertyNames .contains( property.getName())) {
+				continue;
+			}
+			properties.add(new PropertyModel(MemberKind.owned, property, getPropertyValue(property)));
 		}
 		
 		// Add inherited (not owned) metaclasses.
 		for( Property property : stereotype.getAllAttributes()) {
+			// filter some properties
+			if(excludedPropertyNames.contains( property.getName())) {
+				continue;
+			}
 			if( ! ownedProperties.contains(property)) {
-				properties.add(new PropertyModel(MemberKind.inherited, property));
+				properties.add(new PropertyModel(MemberKind.inherited, property, getPropertyValue(property)));
 			}
 		}
 	}
 
+	/**
+	 * The uml element that is target of this StereotypeModel.
+	 * Only methods reacting to the StereotypeName change should use this property.
+	 */
+	protected Element targetElement;
+	
+	/**
+	 * Return the value of the specified property attached to the {@link #targetElement}.
+	 * @param property
+	 * @return
+	 */
+	protected Object getPropertyValue(Property property) {
+		Object value = null;
+		if(property == null || stereotype == null) {
+			return null;
+		}
+		
+		value = targetElement.getValue(stereotype, property.getName());
+		
+		return value;
+	}
 	/**
 	 * Create a new {@link PropertyModel} and add it to the {@link StereoptypeModel#properties}
 	 */

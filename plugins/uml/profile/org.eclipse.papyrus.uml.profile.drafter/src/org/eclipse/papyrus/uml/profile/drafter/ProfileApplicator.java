@@ -960,9 +960,9 @@ public class ProfileApplicator {
 			isProfileModified = updateStereotypeMetaclasses( stereotype, metaclassesModel.getSelectedMetaclasses()) || isProfileModified  ;
 		}
 		
-		// Update properties
+		// Update property definitions
 		if( !stereoptypeModel.getProperties().isEmpty()) {
-			isProfileModified = checkProperties( stereotype, stereoptypeModel.getProperties()) || isProfileModified;
+			isProfileModified = createOrUpdateProperties( stereotype, stereoptypeModel.getProperties()) || isProfileModified;
 		}
 		
 		
@@ -978,33 +978,81 @@ public class ProfileApplicator {
 		
 		// Apply stereotype to element
 		applyStereotype( stereotype );
+		// Update or set property values
+		// This should be done once the profile is applied
+		if( !stereoptypeModel.getProperties().isEmpty()) {
+			updatePropertyValues( stereotype, stereoptypeModel.getProperties()) ;
+		}
+		
+		
 		
 	}
 
 	/**
-	 * Update the stereotype with the specified {@link PropertyModel}s.
-	 * @param stereotype 
+	 * Update any values associated to properties. 
+	 * Check if a value need to be modified, and modify it accordingly.
 	 * 
+	 * @param stereotype
 	 * @param properties
+	 */
+	private void updatePropertyValues(Stereotype stereotype, List<PropertyModel> properties) {
+		
+		for( PropertyModel propertyModel : properties) {
+			updatePropertyValue( stereotype, propertyModel);
+		}
+
+	}
+
+	/**
+	 * Update the value of the property if needed.
+	 * 
+	 * @param stereotype
+	 * @param propertyModel
+	 */
+	private void updatePropertyValue(Stereotype stereotype, PropertyModel propertyModel) {
+		
+		// Get the actual value
+		Object actualValue = getUmlElement().getValue(stereotype, propertyModel.getProposedName());
+
+//		org.eclipse.papyrus.uml.profile.utils.Util.getValueObjectFromString(String, Type)
+		// Need to check if the Property value is modified
+		if(propertyModel.isValueModified() ) {
+			Object newValue = propertyModel.createPropertyValue();
+			getUmlElement().setValue(stereotype, propertyModel.getProposedName(), newValue);
+		}
+		
+	}
+
+	/**
+	 * Check if the property definitions need to be updated or created, accordingly to
+	 * {@link PropertyModel}s.
+	 * Create missing property, and update modified ones.
+	 * 
+	 * @param stereotype The stereotype that own the properties.
+	 * 
+	 * @param properties models used to update the properties
 	 * @return 
 	 */
-	private boolean checkProperties(Stereotype stereotype, List<PropertyModel> properties) {
+	private boolean createOrUpdateProperties(Stereotype stereotype, List<PropertyModel> properties) {
 	
 		boolean isUpdated = false;
 		for( PropertyModel propertyModel : properties) {
-			isUpdated = checkProperty( stereotype, propertyModel) || isUpdated;
+			isUpdated = createOrUpdateProperty( stereotype, propertyModel) || isUpdated;
 		}
 		
 		return isUpdated;
 	}
 
 	/**
+	 * Check if the property associated to {@link PropertyModel} need to be updated or created.
+	 * 
 	 * Update the specified {@link Property} of the {@link Stereotype}
 	 * @param stereotype The {@link Stereotype} owning the property.
 	 * @param propertyModel The {@link PropertyModel} to use to update stereotype's corresponding property.
 	 * 
 	 */
-	private boolean checkProperty(Stereotype stereotype, PropertyModel propertyModel) {
+	
+	private boolean createOrUpdateProperty(Stereotype stereotype, PropertyModel propertyModel) {
 		
 		boolean isUpdated = false;
 		boolean isPropertyExistIn = propertyModel.isPropertyExistIn(stereotype);
@@ -1046,6 +1094,7 @@ public class ProfileApplicator {
 			stereotype.setName(newName);
 			isUpdated = true;
 		}
+		
 		return isUpdated;
 		
 	}

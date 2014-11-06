@@ -54,8 +54,11 @@ public class PropertyModel {
 	 */
 	protected String proposedName;
 	protected String type;
-	protected String value;
+	protected String value = "defaultValue";
 
+	protected Object initialValue;
+	protected Object objectValue;
+	
 	/**
 	 * Event manager
 	 */
@@ -88,6 +91,30 @@ public class PropertyModel {
 		}
 	}
 
+	/**
+	 * 
+	 * Constructor.
+	 *
+	 * @param modelStatusKind
+	 * @param property
+	 * @param propertyValue The value attached to the targetted object, if any.
+	 */
+	public PropertyModel(MemberKind modelStatusKind, Property property, Object propertyValue) {
+		this.memberKind = modelStatusKind;
+		this.stateKind = StateKind.loaded;
+		this.property = property;
+		if(property != null) {
+			this.proposedName = property.getName();
+			this.type = property.getType().getName();
+		}
+		if( propertyValue != null) {
+			this.initialValue = propertyValue;
+			this.objectValue = propertyValue;
+			this.value = propertyValue.toString();
+		}
+		
+	}
+
 
 
 	/**
@@ -102,6 +129,8 @@ public class PropertyModel {
 		this.stateKind = StateKind.created;
 		this.proposedName = proposedName;
 	}
+
+
 
 
 
@@ -173,6 +202,26 @@ public class PropertyModel {
 	public void setValue(String value) {
 		firePropertyChange("value", this.value, this.value = value);
 	}
+
+	
+	/**
+	 * @return the objectValue
+	 */
+	public Object getObjectValue() {
+		return objectValue;
+	}
+
+
+
+	
+	/**
+	 * @param objectValue the objectValue to set
+	 */
+	public void setObjectValue(Object objectValue) {
+		this.objectValue = objectValue;
+	}
+
+
 
 	/**
 	 * Visitor entry to visit this Model and its nested classes.
@@ -300,4 +349,51 @@ public class PropertyModel {
 		return stereotype.getAttribute(proposedName, null) != null;
 	}
 
+
+
+	/**
+	 * Check if the value of the property has been modified. Return true if the value has been modified by user, false otherwise.
+	 * The actual implementation compare the original value as String to the String entered by user.
+	 * 
+	 * @return
+	 */
+	public boolean isValueModified() {
+		
+		if( initialValue == null || getValue() == null) {
+			// One of the two is null.
+			// If only one is not null, there is  modification.
+			return (initialValue != null || getValue() != null);
+		}
+		
+		// None is null
+		String originalValue = initialValue.toString();
+		if( getValue().equals(originalValue)) {
+			return true;
+		}
+		return false;
+	}
+
+	/**
+	 * 
+	 * @return
+	 */
+	public Object createPropertyValue() {
+		return createPropertyValue( type, value);
+	}
+
+
+
+	private Object createPropertyValue(String type, String value) {
+
+		// TODO : change it !!!
+
+		if( "String".equals(type) ) {
+			return value;
+		}
+		else if ( "Integer".equals(type) ) {
+			return Integer.valueOf(value);
+		}
+		
+		return value;
+	}
 }

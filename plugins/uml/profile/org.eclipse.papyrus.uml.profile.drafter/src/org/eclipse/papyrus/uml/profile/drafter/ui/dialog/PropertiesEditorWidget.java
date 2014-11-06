@@ -60,6 +60,7 @@ public class PropertiesEditorWidget {
 	private TableViewer treeViewer;
 	private TableViewerColumn treeViewerColumn;
 	private TableViewerColumn treeViewerColumn_1;
+	private TableViewerColumn tableViewerColumn_type;
 	private TableViewerColumn tableViewerColumn;
 	private TableViewerColumn treeViewerColumn_2;
 
@@ -177,7 +178,9 @@ public class PropertiesEditorWidget {
 		
 		treeViewer = new TableViewer(composite, SWT.BORDER | SWT.FULL_SELECTION );
 		Table tree = treeViewer.getTable();
-		tree.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true, 1, 1));
+		GridData gd_tree = new GridData(SWT.FILL, SWT.FILL, true, true, 1, 1);
+		gd_tree.minimumHeight = 100;
+		tree.setLayoutData(gd_tree);
 		
 		treeViewerColumn = new TableViewerColumn(treeViewer, SWT.NONE);
 		TableColumn trclmnName = treeViewerColumn.getColumn();
@@ -190,6 +193,11 @@ public class PropertiesEditorWidget {
 		TableColumn trclmnType = treeViewerColumn_1.getColumn();
 		trclmnType.setWidth(100);
 		trclmnType.setText("type");
+		
+		tableViewerColumn_type = new TableViewerColumn(treeViewer, SWT.NONE);
+		TableColumn tblclmnType = tableViewerColumn_type.getColumn();
+		tblclmnType.setWidth(100);
+		tblclmnType.setText("type");
 		
 		tableViewerColumn = new TableViewerColumn(treeViewer, SWT.NONE);
 		TableColumn tblclmnStatus = tableViewerColumn.getColumn();
@@ -426,6 +434,8 @@ public class PropertiesEditorWidget {
 			protected CellEditor getCellEditor(Object element) {
 				return cellEditor;
 			}
+			
+			
 		};
 	}
 
@@ -448,6 +458,11 @@ public class PropertiesEditorWidget {
 		IValueProperty cellEditorProperty =  WidgetProperties.text(SWT.Modify);
 		IBeanValueProperty valueProperty_1 = BeanProperties.value("type");
 		treeViewerColumn_1.setEditingSupport(create(treeViewer, bindingContext, cellEditor_1, cellEditorProperty, valueProperty_1));
+		// Type with dedicated CellEditor
+		CellEditor cellEditor_11 = new TextCellEditor(treeViewer.getTable());
+		IValueProperty cellEditorProperty_11 =  WidgetProperties.text(SWT.Modify);
+		IBeanValueProperty valueProperty_11 = BeanProperties.value("type");
+		treeViewerColumn_1.setEditingSupport(create(treeViewer, bindingContext, cellEditor_11, cellEditorProperty_11, valueProperty_11));
 		//
 		CellEditor cellEditor_2 = new TextCellEditor(treeViewer.getTable());
 		IValueProperty cellEditorProperty_1 =  WidgetProperties.text(SWT.Modify);
