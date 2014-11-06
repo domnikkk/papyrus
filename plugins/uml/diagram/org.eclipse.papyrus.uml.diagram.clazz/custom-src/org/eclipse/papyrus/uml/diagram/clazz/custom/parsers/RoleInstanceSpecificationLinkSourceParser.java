@@ -14,62 +14,46 @@
 package org.eclipse.papyrus.uml.diagram.clazz.custom.parsers;
 
 import org.eclipse.core.runtime.IAdaptable;
-import org.eclipse.gmf.runtime.common.core.command.ICommand;
-import org.eclipse.gmf.runtime.common.ui.services.parser.IParser;
-import org.eclipse.gmf.runtime.common.ui.services.parser.IParserEditStatus;
 import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
-import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
 import org.eclipse.uml2.uml.Association;
+import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.InstanceSpecification;
 import org.eclipse.uml2.uml.Slot;
 
-public class RoleInstanceSpecificationLinkSourceParser implements IParser {
 
-	@Override
-	public String getEditString(IAdaptable element, int flags) {
-		InstanceSpecification instanceSpecification = ((InstanceSpecification) ((EObjectAdapter) element).getRealObject());
-		if (instanceSpecification.getClassifiers().size() > 0) {
-			if (instanceSpecification.getClassifiers().get(0) instanceof Association) {
-				Slot slotSource = instanceSpecification.getSlots().get(0);
-				return slotSource.getValues().get(0).getType().getName();
-			}
-		}
-		return "<UNSPECIFIED>";
-	}
 
-	@Override
-	public IParserEditStatus isValidEditString(IAdaptable element, String editString) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+public class RoleInstanceSpecificationLinkSourceParser extends RoleInstanceSpecificationLinkParser {
 
-	@Override
-	public ICommand getParseCommand(IAdaptable element, String newString, int flags) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public String getPrintString(IAdaptable element, int flags) {
-		InstanceSpecification instanceSpecification = ((InstanceSpecification) ((EObjectAdapter) element).getRealObject());
-		if (instanceSpecification.getClassifiers().size() > 0) {
-			if (instanceSpecification.getClassifiers().get(0) instanceof Association) {
-				Slot slotSource = instanceSpecification.getSlots().get(0);
-				return slotSource.getValues().get(0).getType().getName();
-			}
-		}
-		return "<UNSPECIFIED>";
+	public RoleInstanceSpecificationLinkSourceParser() {
+		super();
 	}
 
 	@Override
 	public boolean isAffectingEvent(Object event, int flags) {
-		// TODO Auto-generated method stub
 		return true;
 	}
 
+	private String getPrintString(IAdaptable element) {
+		InstanceSpecification instanceSpecification = ((InstanceSpecification) ((EObjectAdapter) element).getRealObject());
+		if (instanceSpecification.getClassifiers().size() > 0) {
+			Classifier classifier = instanceSpecification.getClassifiers().get(0);
+			if (classifier instanceof Association && instanceSpecification.getSlots().size() > 0) {
+				Slot slotSource = instanceSpecification.getSlots().get(0);
+				if (slotSource.getValues().size() > 0) {
+					return slotSource.getValues().get(0).getType().getName().toLowerCase();
+				}
+			}
+		}
+		return UNSPECIFIED_LABEL;
+	}
+
+	/**
+	 * @see org.eclipse.papyrus.uml.diagram.clazz.custom.parsers.RoleInstanceSpecificationLinkParser#getClissifierMemberKind()
+	 *
+	 * @return
+	 */
 	@Override
-	public IContentAssistProcessor getCompletionProcessor(IAdaptable element) {
-		// TODO Auto-generated method stub
-		return null;
+	protected ClassifierMemberKind getClissifierMemberKind() {
+		return ClassifierMemberKind.UNKNOWN;
 	}
 }
