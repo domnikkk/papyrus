@@ -11,28 +11,22 @@
  *****************************************************************************/
 package org.eclipse.papyrus.customization.wizard;
 
-import java.util.Set;
-
-import org.eclipse.jface.viewers.IStructuredSelection;
-import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.wizard.WizardPage;
-import org.eclipse.papyrus.customization.display.DisplayManager;
 import org.eclipse.papyrus.customization.messages.Messages;
 import org.eclipse.papyrus.customization.model.customizationplugin.CustomizationConfiguration;
 import org.eclipse.papyrus.customization.model.customizationplugin.CustomizationPluginFactory;
-import org.eclipse.papyrus.views.properties.contexts.View;
-import org.eclipse.papyrus.views.properties.runtime.EmbeddedDisplayEngine;
-import org.eclipse.papyrus.views.properties.runtime.ViewConstraintEngine;
+import org.eclipse.papyrus.views.properties.runtime.DisplayEngine;
+import org.eclipse.papyrus.views.properties.util.PropertiesDisplayHelper;
 import org.eclipse.papyrus.views.properties.widgets.layout.PropertiesLayout;
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.layout.FillLayout;
-import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Composite;
 
 
 public class CustomizationPage extends WizardPage {
 
 	private CustomizationConfiguration configuration;
+
+	private DisplayEngine displayEngine;
 
 	protected CustomizationPage() {
 		this(null);
@@ -57,17 +51,7 @@ public class CustomizationPage extends WizardPage {
 			this.configuration = CustomizationPluginFactory.eINSTANCE.createCustomizationConfiguration();
 		}
 
-		IStructuredSelection selection = new StructuredSelection(configuration);
-
-		ViewConstraintEngine constraintEngine = DisplayManager.instance.constraintEngine;
-		Set<View> views = constraintEngine.getViews(selection);
-
-		Composite self = new Composite(container, SWT.BORDER);
-		self.setLayoutData(new GridData(SWT.FILL, SWT.BEGINNING, true, false));
-		self.setLayout(new FillLayout());
-
-		EmbeddedDisplayEngine display = new EmbeddedDisplayEngine();
-		display.display(views, self, selection, SWT.NONE);
+		displayEngine = PropertiesDisplayHelper.display(this.configuration, container);
 
 		setControl(container);
 	}
@@ -87,6 +71,18 @@ public class CustomizationPage extends WizardPage {
 
 	public CustomizationConfiguration getConfiguration() {
 		return configuration;
+	}
+
+	/**
+	 * @see org.eclipse.jface.dialogs.DialogPage#dispose()
+	 *
+	 */
+	@Override
+	public void dispose() {
+		if (displayEngine != null) {
+			displayEngine.dispose();
+		}
+		super.dispose();
 	}
 
 }
