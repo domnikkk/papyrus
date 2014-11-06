@@ -7,6 +7,7 @@ import org.eclipse.jface.action.IAction;
 import org.eclipse.papyrus.FCM.InteractionComponent;
 import org.eclipse.papyrus.FCM.util.FCMUtil;
 import org.eclipse.papyrus.qompass.designer.core.Log;
+import org.eclipse.papyrus.uml.diagram.common.handlers.CmdHandler;
 import org.eclipse.ui.IViewPart;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.util.UMLUtil;

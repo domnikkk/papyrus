@@ -17,6 +17,7 @@ import org.eclipse.papyrus.qompass.designer.core.CommandSupport;
 import org.eclipse.papyrus.qompass.designer.core.RunnableWithResult;
 import org.eclipse.papyrus.qompass.designer.ui.Messages;
 import org.eclipse.papyrus.qompass.designer.ui.dialogs.ConfigurePortDialog;
+import org.eclipse.papyrus.uml.diagram.common.handlers.CmdHandler;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.NamedElement;

@@ -15,7 +15,7 @@ package org.eclipse.papyrus.acceleo.debug.handlers;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.papyrus.acceleo.debug.dialogs.TestAcceleoDialog;
-import org.eclipse.papyrus.acceleo.ui.handlers.CmdHandler;
+import org.eclipse.papyrus.uml.diagram.common.handlers.CmdHandler;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.uml2.uml.NamedElement;
 

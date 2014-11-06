@@ -5,6 +5,7 @@ import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.jface.action.IAction;
 import org.eclipse.papyrus.FCM.Connector;
 import org.eclipse.papyrus.FCM.util.FCMUtil;
+import org.eclipse.papyrus.uml.diagram.common.handlers.CmdHandler;
 import org.eclipse.uml2.uml.util.UMLUtil;
 
 /**
