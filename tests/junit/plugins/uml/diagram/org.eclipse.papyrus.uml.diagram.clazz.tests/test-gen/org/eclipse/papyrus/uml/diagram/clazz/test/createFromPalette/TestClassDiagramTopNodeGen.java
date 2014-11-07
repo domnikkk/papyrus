@@ -19,18 +19,26 @@ import org.eclipse.papyrus.commands.ICreationCommand;
 import org.eclipse.papyrus.junit.framework.classification.GeneratedTest;
 import org.eclipse.papyrus.uml.diagram.clazz.CreateClassDiagramCommand;
 import org.eclipse.papyrus.uml.diagram.clazz.custom.edit.part.CustomUMLDiagramUpdater;
+import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.AssociationClassEditPart;
+import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.AssociationNodeEditPart;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.ClassEditPart;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.CommentEditPart;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.ComponentEditPart;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.ConstraintEditPart;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.DataTypeEditPart;
+import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.DefaultNamedElementEditPart;
+import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.DependencyNodeEditPart;
+import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.DurationObservationEditPart;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.EnumerationEditPart;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.InformationItemEditPart;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.InstanceSpecificationEditPart;
+import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.InterfaceEditPart;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.ModelEditPartTN;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.PackageEditPart;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.PrimitiveTypeEditPart;
+import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.ShortCutDiagramEditPart;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.SignalEditPart;
+import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.TimeObservationEditPart;
 import org.eclipse.papyrus.uml.diagram.clazz.providers.UMLElementTypes;
 import org.eclipse.papyrus.uml.diagram.clazz.test.IClassDiagramTestsConstants;
 import org.eclipse.papyrus.uml.diagram.tests.createFromPalette.CreateNodeFromPaletteTest;
@@ -59,36 +67,12 @@ public class TestClassDiagramTopNodeGen extends CreateNodeFromPaletteTest {
 	}
 
 	/**
-	 * Test to manage component InformationItem.
+	 * Test to manage component Class.
 	 */
 	@Test
 	@GeneratedTest
-	public void testTopNodeInformationItemEditPart() {
-		testCreateNodeFromPalette(UMLElementTypes.getElementType(InformationItemEditPart.VISUAL_ID), UMLElementTypes.getElementType(PackageEditPart.VISUAL_ID), true);
-	}
-	/**
-	 * Test to manage component Enumeration.
-	 */
-	@Test
-	@GeneratedTest
-	public void testTopNodeEnumerationEditPart() {
-		testCreateNodeFromPalette(UMLElementTypes.getElementType(EnumerationEditPart.VISUAL_ID), UMLElementTypes.getElementType(PackageEditPart.VISUAL_ID), true);
-	}
-	/**
-	 * Test to manage component DataType.
-	 */
-	@Test
-	@GeneratedTest
-	public void testTopNodeDataTypeEditPart() {
-		testCreateNodeFromPalette(UMLElementTypes.getElementType(DataTypeEditPart.VISUAL_ID), UMLElementTypes.getElementType(PackageEditPart.VISUAL_ID), true);
-	}
-	/**
-	 * Test to manage component Signal.
-	 */
-	@Test
-	@GeneratedTest
-	public void testTopNodeSignalEditPart() {
-		testCreateNodeFromPalette(UMLElementTypes.getElementType(SignalEditPart.VISUAL_ID), UMLElementTypes.getElementType(PackageEditPart.VISUAL_ID), true);
+	public void testTopNodeClassEditPart() {
+		testCreateNodeFromPalette(UMLElementTypes.getElementType(ClassEditPart.VISUAL_ID), UMLElementTypes.getElementType(PackageEditPart.VISUAL_ID), true);
 	}
 	/**
 	 * Test to manage component PrimitiveType.
@@ -99,44 +83,20 @@ public class TestClassDiagramTopNodeGen extends CreateNodeFromPaletteTest {
 		testCreateNodeFromPalette(UMLElementTypes.getElementType(PrimitiveTypeEditPart.VISUAL_ID), UMLElementTypes.getElementType(PackageEditPart.VISUAL_ID), true);
 	}
 	/**
-	 * Test to manage component Comment.
+	 * Test to manage component Interface.
 	 */
 	@Test
 	@GeneratedTest
-	public void testTopNodeCommentEditPart() {
-		testCreateNodeFromPalette(UMLElementTypes.getElementType(CommentEditPart.VISUAL_ID), UMLElementTypes.getElementType(PackageEditPart.VISUAL_ID), true);
+	public void testTopNodeInterfaceEditPart() {
+		testCreateNodeFromPalette(UMLElementTypes.getElementType(InterfaceEditPart.VISUAL_ID), UMLElementTypes.getElementType(PackageEditPart.VISUAL_ID), true);
 	}
 	/**
-	 * Test to manage component Model.
+	 * Test to manage component Association.
 	 */
 	@Test
 	@GeneratedTest
-	public void testTopNodeModelEditPartTN() {
-		testCreateNodeFromPalette(UMLElementTypes.getElementType(ModelEditPartTN.VISUAL_ID), UMLElementTypes.getElementType(PackageEditPart.VISUAL_ID), true);
-	}
-	/**
-	 * Test to manage component Class.
-	 */
-	@Test
-	@GeneratedTest
-	public void testTopNodeClassEditPart() {
-		testCreateNodeFromPalette(UMLElementTypes.getElementType(ClassEditPart.VISUAL_ID), UMLElementTypes.getElementType(PackageEditPart.VISUAL_ID), true);
-	}
-	/**
-	 * Test to manage component Component.
-	 */
-	@Test
-	@GeneratedTest
-	public void testTopNodeComponentEditPart() {
-		testCreateNodeFromPalette(UMLElementTypes.getElementType(ComponentEditPart.VISUAL_ID), UMLElementTypes.getElementType(PackageEditPart.VISUAL_ID), true);
-	}
-	/**
-	 * Test to manage component InstanceSpecification.
-	 */
-	@Test
-	@GeneratedTest
-	public void testTopNodeInstanceSpecificationEditPart() {
-		testCreateNodeFromPalette(UMLElementTypes.getElementType(InstanceSpecificationEditPart.VISUAL_ID), UMLElementTypes.getElementType(PackageEditPart.VISUAL_ID), true);
+	public void testTopNodeAssociationNodeEditPart() {
+		testCreateNodeFromPalette(UMLElementTypes.getElementType(AssociationNodeEditPart.VISUAL_ID), UMLElementTypes.getElementType(PackageEditPart.VISUAL_ID), true);
 	}
 	/**
 	 * Test to manage component Constraint.
@@ -147,12 +107,124 @@ public class TestClassDiagramTopNodeGen extends CreateNodeFromPaletteTest {
 		testCreateNodeFromPalette(UMLElementTypes.getElementType(ConstraintEditPart.VISUAL_ID), UMLElementTypes.getElementType(PackageEditPart.VISUAL_ID), true);
 	}
 	/**
+	 * Test to manage component InformationItem.
+	 */
+	@Test
+	@GeneratedTest
+	public void testTopNodeInformationItemEditPart() {
+		testCreateNodeFromPalette(UMLElementTypes.getElementType(InformationItemEditPart.VISUAL_ID), UMLElementTypes.getElementType(PackageEditPart.VISUAL_ID), true);
+	}
+	/**
+	 * Test to manage component Component.
+	 */
+	@Test
+	@GeneratedTest
+	public void testTopNodeComponentEditPart() {
+		testCreateNodeFromPalette(UMLElementTypes.getElementType(ComponentEditPart.VISUAL_ID), UMLElementTypes.getElementType(PackageEditPart.VISUAL_ID), true);
+	}
+	/**
+	 * Test to manage component NamedElement.
+	 */
+	@Test
+	@GeneratedTest
+	public void testTopNodeDefaultNamedElementEditPart() {
+		testCreateNodeFromPalette(UMLElementTypes.getElementType(DefaultNamedElementEditPart.VISUAL_ID), UMLElementTypes.getElementType(PackageEditPart.VISUAL_ID), true);
+	}
+	/**
+	 * Test to manage component AssociationClass.
+	 */
+	@Test
+	@GeneratedTest
+	public void testTopNodeAssociationClassEditPart() {
+		testCreateNodeFromPalette(UMLElementTypes.getElementType(AssociationClassEditPart.VISUAL_ID), UMLElementTypes.getElementType(PackageEditPart.VISUAL_ID), true);
+	}
+	/**
+	 * Test to manage component Dependency.
+	 */
+	@Test
+	@GeneratedTest
+	public void testTopNodeDependencyNodeEditPart() {
+		testCreateNodeFromPalette(UMLElementTypes.getElementType(DependencyNodeEditPart.VISUAL_ID), UMLElementTypes.getElementType(PackageEditPart.VISUAL_ID), true);
+	}
+	/**
+	 * Test to manage component DurationObservation.
+	 */
+	@Test
+	@GeneratedTest
+	public void testTopNodeDurationObservationEditPart() {
+		testCreateNodeFromPalette(UMLElementTypes.getElementType(DurationObservationEditPart.VISUAL_ID), UMLElementTypes.getElementType(PackageEditPart.VISUAL_ID), true);
+	}
+	/**
+	 * Test to manage component Comment.
+	 */
+	@Test
+	@GeneratedTest
+	public void testTopNodeCommentEditPart() {
+		testCreateNodeFromPalette(UMLElementTypes.getElementType(CommentEditPart.VISUAL_ID), UMLElementTypes.getElementType(PackageEditPart.VISUAL_ID), true);
+	}
+	/**
+	 * Test to manage component DataType.
+	 */
+	@Test
+	@GeneratedTest
+	public void testTopNodeDataTypeEditPart() {
+		testCreateNodeFromPalette(UMLElementTypes.getElementType(DataTypeEditPart.VISUAL_ID), UMLElementTypes.getElementType(PackageEditPart.VISUAL_ID), true);
+	}
+	/**
 	 * Test to manage component Package.
 	 */
 	@Test
 	@GeneratedTest
 	public void testTopNodePackageEditPart() {
 		testCreateNodeFromPalette(UMLElementTypes.getElementType(PackageEditPart.VISUAL_ID), UMLElementTypes.getElementType(PackageEditPart.VISUAL_ID), true);
+	}
+	/**
+	 * Test to manage component .
+	 */
+	@Test
+	@GeneratedTest
+	public void testTopNodeShortCutDiagramEditPart() {
+		testCreateNodeFromPalette(UMLElementTypes.getElementType(ShortCutDiagramEditPart.VISUAL_ID), UMLElementTypes.getElementType(PackageEditPart.VISUAL_ID), true);
+	}
+	/**
+	 * Test to manage component TimeObservation.
+	 */
+	@Test
+	@GeneratedTest
+	public void testTopNodeTimeObservationEditPart() {
+		testCreateNodeFromPalette(UMLElementTypes.getElementType(TimeObservationEditPart.VISUAL_ID), UMLElementTypes.getElementType(PackageEditPart.VISUAL_ID), true);
+	}
+	/**
+	 * Test to manage component Enumeration.
+	 */
+	@Test
+	@GeneratedTest
+	public void testTopNodeEnumerationEditPart() {
+		testCreateNodeFromPalette(UMLElementTypes.getElementType(EnumerationEditPart.VISUAL_ID), UMLElementTypes.getElementType(PackageEditPart.VISUAL_ID), true);
+	}
+	/**
+	 * Test to manage component InstanceSpecification.
+	 */
+	@Test
+	@GeneratedTest
+	public void testTopNodeInstanceSpecificationEditPart() {
+		testCreateNodeFromPalette(UMLElementTypes.getElementType(InstanceSpecificationEditPart.VISUAL_ID), UMLElementTypes.getElementType(PackageEditPart.VISUAL_ID), true);
+	}
+	/**
+	 * Test to manage component Model.
+	 */
+	@Test
+	@GeneratedTest
+	public void testTopNodeModelEditPartTN() {
+		testCreateNodeFromPalette(UMLElementTypes.getElementType(ModelEditPartTN.VISUAL_ID), UMLElementTypes.getElementType(PackageEditPart.VISUAL_ID), true);
+	}
+	/**
+	 * Test to manage component Signal.
+	 */
+	@Test
+	@GeneratedTest
+	public void testTopNodeSignalEditPart() {
+		testCreateNodeFromPalette(UMLElementTypes.getElementType(SignalEditPart.VISUAL_ID), UMLElementTypes.getElementType(PackageEditPart.VISUAL_ID), true);
 	}
 	
 	/**

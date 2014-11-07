@@ -65,6 +65,7 @@ import org.junit.runners.Suite.SuiteClasses;
 // canonical
 AllCanonicalTests.class,
 PackageDiagramLegacyTest.class,
+AllGenTests.class,
 // load
 LoadTests.class
 })

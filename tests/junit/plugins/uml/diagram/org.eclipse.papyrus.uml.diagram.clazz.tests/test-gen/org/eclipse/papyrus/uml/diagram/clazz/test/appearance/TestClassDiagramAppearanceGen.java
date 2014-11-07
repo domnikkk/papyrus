@@ -62,36 +62,12 @@ public class TestClassDiagramAppearanceGen extends AppearanceNodeTest {
 	}
 
 	/**
-	 * Test to manage component PrimitiveType.
+	 * Test to manage component Package.
 	 */
 	@Test
 	@GeneratedTest
-	public void testAppearanceNodePrimitiveTypeEditPart() {
-		testAppearance(UMLElementTypes.getElementType(PrimitiveTypeEditPart.VISUAL_ID));
-	}
-	/**
-	 * Test to manage component Interface.
-	 */
-	@Test
-	@GeneratedTest
-	public void testAppearanceNodeInterfaceEditPart() {
-		testAppearance(UMLElementTypes.getElementType(InterfaceEditPart.VISUAL_ID));
-	}
-	/**
-	 * Test to manage component Comment.
-	 */
-	@Test
-	@GeneratedTest
-	public void testAppearanceNodeCommentEditPart() {
-		testAppearance(UMLElementTypes.getElementType(CommentEditPart.VISUAL_ID));
-	}
-	/**
-	 * Test to manage component Class.
-	 */
-	@Test
-	@GeneratedTest
-	public void testAppearanceNodeClassEditPart() {
-		testAppearance(UMLElementTypes.getElementType(ClassEditPart.VISUAL_ID));
+	public void testAppearanceNodePackageEditPart() {
+		testAppearance(UMLElementTypes.getElementType(PackageEditPart.VISUAL_ID));
 	}
 	/**
 	 * Test to manage component Enumeration.
@@ -102,22 +78,6 @@ public class TestClassDiagramAppearanceGen extends AppearanceNodeTest {
 		testAppearance(UMLElementTypes.getElementType(EnumerationEditPart.VISUAL_ID));
 	}
 	/**
-	 * Test to manage component Component.
-	 */
-	@Test
-	@GeneratedTest
-	public void testAppearanceNodeComponentEditPart() {
-		testAppearance(UMLElementTypes.getElementType(ComponentEditPart.VISUAL_ID));
-	}
-	/**
-	 * Test to manage component Package.
-	 */
-	@Test
-	@GeneratedTest
-	public void testAppearanceNodePackageEditPart() {
-		testAppearance(UMLElementTypes.getElementType(PackageEditPart.VISUAL_ID));
-	}
-	/**
 	 * Test to manage component InformationItem.
 	 */
 	@Test
@@ -126,20 +86,28 @@ public class TestClassDiagramAppearanceGen extends AppearanceNodeTest {
 		testAppearance(UMLElementTypes.getElementType(InformationItemEditPart.VISUAL_ID));
 	}
 	/**
-	 * Test to manage component Model.
+	 * Test to manage component Component.
 	 */
 	@Test
 	@GeneratedTest
-	public void testAppearanceNodeModelEditPartTN() {
-		testAppearance(UMLElementTypes.getElementType(ModelEditPartTN.VISUAL_ID));
+	public void testAppearanceNodeComponentEditPart() {
+		testAppearance(UMLElementTypes.getElementType(ComponentEditPart.VISUAL_ID));
 	}
 	/**
-	 * Test to manage component DataType.
+	 * Test to manage component DurationObservation.
 	 */
 	@Test
 	@GeneratedTest
-	public void testAppearanceNodeDataTypeEditPart() {
-		testAppearance(UMLElementTypes.getElementType(DataTypeEditPart.VISUAL_ID));
+	public void testAppearanceNodeDurationObservationEditPart() {
+		testAppearance(UMLElementTypes.getElementType(DurationObservationEditPart.VISUAL_ID));
+	}
+	/**
+	 * Test to manage component PrimitiveType.
+	 */
+	@Test
+	@GeneratedTest
+	public void testAppearanceNodePrimitiveTypeEditPart() {
+		testAppearance(UMLElementTypes.getElementType(PrimitiveTypeEditPart.VISUAL_ID));
 	}
 	/**
 	 * Test to manage component Constraint.
@@ -150,12 +118,44 @@ public class TestClassDiagramAppearanceGen extends AppearanceNodeTest {
 		testAppearance(UMLElementTypes.getElementType(ConstraintEditPart.VISUAL_ID));
 	}
 	/**
+	 * Test to manage component Interface.
+	 */
+	@Test
+	@GeneratedTest
+	public void testAppearanceNodeInterfaceEditPart() {
+		testAppearance(UMLElementTypes.getElementType(InterfaceEditPart.VISUAL_ID));
+	}
+	/**
+	 * Test to manage component DataType.
+	 */
+	@Test
+	@GeneratedTest
+	public void testAppearanceNodeDataTypeEditPart() {
+		testAppearance(UMLElementTypes.getElementType(DataTypeEditPart.VISUAL_ID));
+	}
+	/**
+	 * Test to manage component Model.
+	 */
+	@Test
+	@GeneratedTest
+	public void testAppearanceNodeModelEditPartTN() {
+		testAppearance(UMLElementTypes.getElementType(ModelEditPartTN.VISUAL_ID));
+	}
+	/**
 	 * Test to manage component TimeObservation.
 	 */
 	@Test
 	@GeneratedTest
 	public void testAppearanceNodeTimeObservationEditPart() {
 		testAppearance(UMLElementTypes.getElementType(TimeObservationEditPart.VISUAL_ID));
+	}
+	/**
+	 * Test to manage component Comment.
+	 */
+	@Test
+	@GeneratedTest
+	public void testAppearanceNodeCommentEditPart() {
+		testAppearance(UMLElementTypes.getElementType(CommentEditPart.VISUAL_ID));
 	}
 	/**
 	 * Test to manage component Signal.
@@ -174,11 +174,11 @@ public class TestClassDiagramAppearanceGen extends AppearanceNodeTest {
 		testAppearance(UMLElementTypes.getElementType(InstanceSpecificationEditPart.VISUAL_ID));
 	}
 	/**
-	 * Test to manage component DurationObservation.
+	 * Test to manage component Class.
 	 */
 	@Test
 	@GeneratedTest
-	public void testAppearanceNodeDurationObservationEditPart() {
-		testAppearance(UMLElementTypes.getElementType(DurationObservationEditPart.VISUAL_ID));
+	public void testAppearanceNodeClassEditPart() {
+		testAppearance(UMLElementTypes.getElementType(ClassEditPart.VISUAL_ID));
 	}
 }

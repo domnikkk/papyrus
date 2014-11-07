@@ -17,25 +17,24 @@ import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequestFactory;
 import org.eclipse.gmf.tooling.runtime.update.DiagramUpdater;
 import org.eclipse.papyrus.commands.ICreationCommand;
 import org.eclipse.papyrus.junit.framework.classification.GeneratedTest;
-import org.eclipse.papyrus.uml.diagram.clazz.custom.edit.part.CustomUMLDiagramUpdater;
-import org.eclipse.papyrus.uml.diagram.tests.CreateNodeFromPaletteTest;
 import org.eclipse.papyrus.uml.diagram.clazz.CreateClassDiagramCommand;
+import org.eclipse.papyrus.uml.diagram.clazz.custom.edit.part.CustomUMLDiagramUpdater;
+import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.ClassEditPartCN;
+import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.CommentEditPartCN;
+import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.ComponentEditPartCN;
+import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.ConstraintEditPartCN;
+import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.DataTypeEditPartCN;
+import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.EnumerationEditPartCN;
+import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.InformationItemEditPartCN;
+import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.InstanceSpecificationEditPartCN;
+import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.ModelEditPartCN;
+import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.PackageEditPartCN;
+import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.PrimitiveTypeEditPart;
+import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.PrimitiveTypeEditPartCN;
+import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.SignalEditPartCN;
 import org.eclipse.papyrus.uml.diagram.clazz.providers.UMLElementTypes;
 import org.eclipse.papyrus.uml.diagram.clazz.test.IClassDiagramTestsConstants;
-import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.SignalEditPartCN;
-import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.PrimitiveTypeEditPart;
-import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.ModelEditPartCN;
-import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.DataTypeEditPartCN;
-import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.ConstraintEditPartCN;
-import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.PrimitiveTypeEditPartCN;
-import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.EnumerationEditPartCN;
-import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.PackageEditPartCN;
-import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.ComponentEditPartCN;
-import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.ClassEditPartCN;
-import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.InformationItemEditPartCN;
-import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.CommentEditPartCN;
-import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.InstanceSpecificationEditPartCN;
-import org.eclipse.uml2.uml.UMLPackage;
+import org.eclipse.papyrus.uml.diagram.tests.createFromPalette.CreateNodeFromPaletteTest;
 import org.junit.Test;
 
 // TODO: Auto-generated Javadoc
@@ -69,6 +68,14 @@ public class TestClassDiagramChildNodeInPrimitiveTypeEditPartGen extends CreateN
 		testCreateNodeFromPalette(UMLElementTypes.getElementType(PrimitiveTypeEditPartCN.VISUAL_ID), UMLElementTypes.getElementType(PrimitiveTypeEditPart.VISUAL_ID), true);
 	}
 	/**
+	 * Test to manage component Component.
+	 */
+	@Test
+	@GeneratedTest
+	public void testChildNodeComponentEditPartCN() {
+		testCreateNodeFromPalette(UMLElementTypes.getElementType(ComponentEditPartCN.VISUAL_ID), UMLElementTypes.getElementType(PrimitiveTypeEditPart.VISUAL_ID), true);
+	}
+	/**
 	 * Test to manage component Comment.
 	 */
 	@Test
@@ -85,36 +92,12 @@ public class TestClassDiagramChildNodeInPrimitiveTypeEditPartGen extends CreateN
 		testCreateNodeFromPalette(UMLElementTypes.getElementType(InformationItemEditPartCN.VISUAL_ID), UMLElementTypes.getElementType(PrimitiveTypeEditPart.VISUAL_ID), true);
 	}
 	/**
-	 * Test to manage component InstanceSpecification.
-	 */
-	@Test
-	@GeneratedTest
-	public void testChildNodeInstanceSpecificationEditPartCN() {
-		testCreateNodeFromPalette(UMLElementTypes.getElementType(InstanceSpecificationEditPartCN.VISUAL_ID), UMLElementTypes.getElementType(PrimitiveTypeEditPart.VISUAL_ID), true);
-	}
-	/**
 	 * Test to manage component Model.
 	 */
 	@Test
 	@GeneratedTest
 	public void testChildNodeModelEditPartCN() {
 		testCreateNodeFromPalette(UMLElementTypes.getElementType(ModelEditPartCN.VISUAL_ID), UMLElementTypes.getElementType(PrimitiveTypeEditPart.VISUAL_ID), true);
-	}
-	/**
-	 * Test to manage component Package.
-	 */
-	@Test
-	@GeneratedTest
-	public void testChildNodePackageEditPartCN() {
-		testCreateNodeFromPalette(UMLElementTypes.getElementType(PackageEditPartCN.VISUAL_ID), UMLElementTypes.getElementType(PrimitiveTypeEditPart.VISUAL_ID), true);
-	}
-	/**
-	 * Test to manage component DataType.
-	 */
-	@Test
-	@GeneratedTest
-	public void testChildNodeDataTypeEditPartCN() {
-		testCreateNodeFromPalette(UMLElementTypes.getElementType(DataTypeEditPartCN.VISUAL_ID), UMLElementTypes.getElementType(PrimitiveTypeEditPart.VISUAL_ID), true);
 	}
 	/**
 	 * Test to manage component Class.
@@ -125,22 +108,6 @@ public class TestClassDiagramChildNodeInPrimitiveTypeEditPartGen extends CreateN
 		testCreateNodeFromPalette(UMLElementTypes.getElementType(ClassEditPartCN.VISUAL_ID), UMLElementTypes.getElementType(PrimitiveTypeEditPart.VISUAL_ID), true);
 	}
 	/**
-	 * Test to manage component Constraint.
-	 */
-	@Test
-	@GeneratedTest
-	public void testChildNodeConstraintEditPartCN() {
-		testCreateNodeFromPalette(UMLElementTypes.getElementType(ConstraintEditPartCN.VISUAL_ID), UMLElementTypes.getElementType(PrimitiveTypeEditPart.VISUAL_ID), true);
-	}
-	/**
-	 * Test to manage component Enumeration.
-	 */
-	@Test
-	@GeneratedTest
-	public void testChildNodeEnumerationEditPartCN() {
-		testCreateNodeFromPalette(UMLElementTypes.getElementType(EnumerationEditPartCN.VISUAL_ID), UMLElementTypes.getElementType(PrimitiveTypeEditPart.VISUAL_ID), true);
-	}
-	/**
 	 * Test to manage component Signal.
 	 */
 	@Test
@@ -149,12 +116,44 @@ public class TestClassDiagramChildNodeInPrimitiveTypeEditPartGen extends CreateN
 		testCreateNodeFromPalette(UMLElementTypes.getElementType(SignalEditPartCN.VISUAL_ID), UMLElementTypes.getElementType(PrimitiveTypeEditPart.VISUAL_ID), true);
 	}
 	/**
-	 * Test to manage component Component.
+	 * Test to manage component Package.
 	 */
 	@Test
 	@GeneratedTest
-	public void testChildNodeComponentEditPartCN() {
-		testCreateNodeFromPalette(UMLElementTypes.getElementType(ComponentEditPartCN.VISUAL_ID), UMLElementTypes.getElementType(PrimitiveTypeEditPart.VISUAL_ID), true);
+	public void testChildNodePackageEditPartCN() {
+		testCreateNodeFromPalette(UMLElementTypes.getElementType(PackageEditPartCN.VISUAL_ID), UMLElementTypes.getElementType(PrimitiveTypeEditPart.VISUAL_ID), true);
+	}
+	/**
+	 * Test to manage component InstanceSpecification.
+	 */
+	@Test
+	@GeneratedTest
+	public void testChildNodeInstanceSpecificationEditPartCN() {
+		testCreateNodeFromPalette(UMLElementTypes.getElementType(InstanceSpecificationEditPartCN.VISUAL_ID), UMLElementTypes.getElementType(PrimitiveTypeEditPart.VISUAL_ID), true);
+	}
+	/**
+	 * Test to manage component Constraint.
+	 */
+	@Test
+	@GeneratedTest
+	public void testChildNodeConstraintEditPartCN() {
+		testCreateNodeFromPalette(UMLElementTypes.getElementType(ConstraintEditPartCN.VISUAL_ID), UMLElementTypes.getElementType(PrimitiveTypeEditPart.VISUAL_ID), true);
+	}
+	/**
+	 * Test to manage component DataType.
+	 */
+	@Test
+	@GeneratedTest
+	public void testChildNodeDataTypeEditPartCN() {
+		testCreateNodeFromPalette(UMLElementTypes.getElementType(DataTypeEditPartCN.VISUAL_ID), UMLElementTypes.getElementType(PrimitiveTypeEditPart.VISUAL_ID), true);
+	}
+	/**
+	 * Test to manage component Enumeration.
+	 */
+	@Test
+	@GeneratedTest
+	public void testChildNodeEnumerationEditPartCN() {
+		testCreateNodeFromPalette(UMLElementTypes.getElementType(EnumerationEditPartCN.VISUAL_ID), UMLElementTypes.getElementType(PrimitiveTypeEditPart.VISUAL_ID), true);
 	}
 	
 	/**

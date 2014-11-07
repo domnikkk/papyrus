@@ -184,26 +184,26 @@ class GenerateTestsWorkflow extends XtendWorkflow {
 				'tests/framework/org.eclipse.papyrus.tests.framework/qvto/TestModelCreationUtilities.qvto'
 			targetFile = projectUri + 'qvto/TestModelCreationUtilities.qvto'
 		]
-//		components += new QvtoTransformationWorkflow => [
-//			addInputSlots('inputGmfgenUml')
-//			addInputSlots('gmfgenUmlMetamodel')
-//			addInputSlots('frameworkBase')
-//			addInputSlots('utp')
-//			transformationURI = qvtoScriptUri
-//			outputSlot = 'papyrusTestModel'
-//		]
-//		components += new Writer => [
-//			modelSlot = 'papyrusTestModel'
-//			uri = testModelUri
-//			useSingleGlobalResourceSet = true
-//		]
-//		components += new DeleteFile => [
-//			addUri('qvto/CanonicalTests.qvto')
-//			addUri('qvto/CreateFromPaletteTests.qvto')
-//			addUri('qvto/AppearanceTests.qvto')
-//			addUri('qvto/DropTests.qvto')
-//			addUri('qvto/TestModelCreationUtilities.qvto')
-//		]
+		components += new QvtoTransformationWorkflow => [
+			addInputSlots('inputGmfgenUml')
+			addInputSlots('gmfgenUmlMetamodel')
+			addInputSlots('frameworkBase')
+			addInputSlots('utp')
+			transformationURI = qvtoScriptUri
+			outputSlot = 'papyrusTestModel'
+		]
+		components += new Writer => [
+			modelSlot = 'papyrusTestModel'
+			uri = testModelUri
+			useSingleGlobalResourceSet = true
+		]
+		components += new DeleteFile => [
+			addUri('qvto/CanonicalTests.qvto')
+			addUri('qvto/CreateFromPaletteTests.qvto')
+			addUri('qvto/AppearanceTests.qvto')
+			addUri('qvto/DropTests.qvto')
+			addUri('qvto/TestModelCreationUtilities.qvto')
+		]
 
 
 		//3. Generate Test code

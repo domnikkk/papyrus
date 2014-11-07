@@ -69,75 +69,12 @@ public class TestClassDiagramDropGen extends AbstractDropNodeTest {
 	}
 
 	/**
-	 * Test to manage component PrimitiveType.
-	 */
-	@Test
-	@GeneratedTest
-	public void testDropNodePrimitiveTypeEditPart() {
-		testToDropNode(UMLElementTypes.getElementType(PrimitiveTypeEditPart.VISUAL_ID), UMLPackage.eINSTANCE.getPrimitiveType()
-		, true);
-	}
-	/**
-	 * Test to manage component Package.
-	 */
-	@Test
-	@GeneratedTest
-	public void testDropNodePackageEditPart() {
-		testToDropNode(UMLElementTypes.getElementType(PackageEditPart.VISUAL_ID), UMLPackage.eINSTANCE.getPackage()
-		, true);
-	}
-	/**
-	 * Test to manage component Model.
-	 */
-	@Test
-	@GeneratedTest
-	public void testDropNodeModelEditPartTN() {
-		testToDropNode(UMLElementTypes.getElementType(ModelEditPartTN.VISUAL_ID), UMLPackage.eINSTANCE.getModel()
-		, true);
-	}
-	/**
-	 * Test to manage component Signal.
-	 */
-	@Test
-	@GeneratedTest
-	public void testDropNodeSignalEditPart() {
-		testToDropNode(UMLElementTypes.getElementType(SignalEditPart.VISUAL_ID), UMLPackage.eINSTANCE.getSignal()
-		, true);
-	}
-	/**
-	 * Test to manage component Enumeration.
-	 */
-	@Test
-	@GeneratedTest
-	public void testDropNodeEnumerationEditPart() {
-		testToDropNode(UMLElementTypes.getElementType(EnumerationEditPart.VISUAL_ID), UMLPackage.eINSTANCE.getEnumeration()
-		, true);
-	}
-	/**
-	 * Test to manage component Component.
-	 */
-	@Test
-	@GeneratedTest
-	public void testDropNodeComponentEditPart() {
-		testToDropNode(UMLElementTypes.getElementType(ComponentEditPart.VISUAL_ID), UMLPackage.eINSTANCE.getComponent()
-		, true);
-	}
-	/**
 	 * Test to manage component Comment.
 	 */
 	@Test
 	@GeneratedTest
 	public void testDropNodeCommentEditPart() {
 		testToDropNode(UMLElementTypes.getElementType(CommentEditPart.VISUAL_ID), UMLPackage.eINSTANCE.getComment()
-		, true);
-	}
-	/**
-	 * Test to manage component Class.
-	 */
-	@Test
-	@GeneratedTest
-	public void testDropNodeClassEditPart() {
-		testToDropNode(UMLElementTypes.getElementType(ClassEditPart.VISUAL_ID), UMLPackage.eINSTANCE.getClass_()
 		, true);
 	}
 	/**
@@ -150,12 +87,57 @@ public class TestClassDiagramDropGen extends AbstractDropNodeTest {
 		, true);
 	}
 	/**
+	 * Test to manage component Constraint.
+	 */
+	@Test
+	@GeneratedTest
+	public void testDropNodeConstraintEditPart() {
+		testToDropNode(UMLElementTypes.getElementType(ConstraintEditPart.VISUAL_ID), UMLPackage.eINSTANCE.getConstraint()
+		, true);
+	}
+	/**
+	 * Test to manage component Package.
+	 */
+	@Test
+	@GeneratedTest
+	public void testDropNodePackageEditPart() {
+		testToDropNode(UMLElementTypes.getElementType(PackageEditPart.VISUAL_ID), UMLPackage.eINSTANCE.getPackage()
+		, true);
+	}
+	/**
 	 * Test to manage component DataType.
 	 */
 	@Test
 	@GeneratedTest
 	public void testDropNodeDataTypeEditPart() {
 		testToDropNode(UMLElementTypes.getElementType(DataTypeEditPart.VISUAL_ID), UMLPackage.eINSTANCE.getDataType()
+		, true);
+	}
+	/**
+	 * Test to manage component PrimitiveType.
+	 */
+	@Test
+	@GeneratedTest
+	public void testDropNodePrimitiveTypeEditPart() {
+		testToDropNode(UMLElementTypes.getElementType(PrimitiveTypeEditPart.VISUAL_ID), UMLPackage.eINSTANCE.getPrimitiveType()
+		, true);
+	}
+	/**
+	 * Test to manage component Component.
+	 */
+	@Test
+	@GeneratedTest
+	public void testDropNodeComponentEditPart() {
+		testToDropNode(UMLElementTypes.getElementType(ComponentEditPart.VISUAL_ID), UMLPackage.eINSTANCE.getComponent()
+		, true);
+	}
+	/**
+	 * Test to manage component Model.
+	 */
+	@Test
+	@GeneratedTest
+	public void testDropNodeModelEditPartTN() {
+		testToDropNode(UMLElementTypes.getElementType(ModelEditPartTN.VISUAL_ID), UMLPackage.eINSTANCE.getModel()
 		, true);
 	}
 	/**
@@ -168,12 +150,30 @@ public class TestClassDiagramDropGen extends AbstractDropNodeTest {
 		, true);
 	}
 	/**
-	 * Test to manage component Constraint.
+	 * Test to manage component Class.
 	 */
 	@Test
 	@GeneratedTest
-	public void testDropNodeConstraintEditPart() {
-		testToDropNode(UMLElementTypes.getElementType(ConstraintEditPart.VISUAL_ID), UMLPackage.eINSTANCE.getConstraint()
+	public void testDropNodeClassEditPart() {
+		testToDropNode(UMLElementTypes.getElementType(ClassEditPart.VISUAL_ID), UMLPackage.eINSTANCE.getClass_()
+		, true);
+	}
+	/**
+	 * Test to manage component Enumeration.
+	 */
+	@Test
+	@GeneratedTest
+	public void testDropNodeEnumerationEditPart() {
+		testToDropNode(UMLElementTypes.getElementType(EnumerationEditPart.VISUAL_ID), UMLPackage.eINSTANCE.getEnumeration()
+		, true);
+	}
+	/**
+	 * Test to manage component Signal.
+	 */
+	@Test
+	@GeneratedTest
+	public void testDropNodeSignalEditPart() {
+		testToDropNode(UMLElementTypes.getElementType(SignalEditPart.VISUAL_ID), UMLPackage.eINSTANCE.getSignal()
 		, true);
 	}
 	

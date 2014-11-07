@@ -24,8 +24,8 @@ import org.junit.runners.Suite.SuiteClasses;
  */
 @RunWith(Suite.class)
 @SuiteClasses({
-AllCreateNodeFromPaletteTestGen.class,
 AllAbstractDropNodeTestGen.class,
+AllCreateNodeFromPaletteTestGen.class,
 AllAppearanceNodeTestGen.class,
 })
 public class AllGenTests {
