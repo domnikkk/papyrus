@@ -82,6 +82,10 @@ public class SemanticUMLContentProvider extends SemanticEMFContentProvider {
 	}
 
 	protected static EObject[] getRoots(ResourceSet root) {
+		if (root == null) {
+			throw new IllegalArgumentException("Cannot retrieve the roots of the Model without a ResourceSet");
+		}
+
 		EObject rootElement = null;
 
 		if (root instanceof ModelSet) {
@@ -92,6 +96,13 @@ public class SemanticUMLContentProvider extends SemanticEMFContentProvider {
 					rootElement = umlModel.lookupRoot();
 				} catch (NotFoundException ex) {
 					// Ignore and treat the ModelSet as a standard resource set
+				}
+			}
+		} else { // Standard resource set, used e.g. in a Papyrus generic Tree Editor
+			for (Resource resource : root.getResources()) {
+				if ("uml".equals(resource.getURI().fileExtension()) && !resource.getContents().isEmpty()) {
+					rootElement = resource.getContents().get(0);
+					break;
 				}
 			}
 		}

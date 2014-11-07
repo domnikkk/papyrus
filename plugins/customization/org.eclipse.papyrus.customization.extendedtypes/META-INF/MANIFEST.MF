@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.papyrus.views.properties;bundle-version="1.1.0"
+Bundle-Vendor: Eclipse Modeling Project
+Bundle-ActivationPolicy: lazy
+Bundle-Version: 1.1.0.qualifier
+Bundle-Name: Extendedtypes Customization
+Bundle-Activator: org.eclipse.papyrus.customization.extendedtypes.Acti
+ vator
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: org.eclipse.papyrus.customization.extendedtypes;s
+ ingleton:=true
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+

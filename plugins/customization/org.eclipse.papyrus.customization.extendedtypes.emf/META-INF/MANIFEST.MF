@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.papyrus.views.properties;bundle-version="1.1.0",
+ org.eclipse.papyrus.customization.extendedtypes;bundle-version="1.1.0"
+Bundle-Vendor: Eclipse Modeling Project
+Bundle-ActivationPolicy: lazy
+Bundle-Version: 1.1.0.qualifier
+Bundle-Name: EMF Extended Types customization
+Bundle-Activator: org.eclipse.papyrus.customization.extendedtypes.emf.
+ Activator
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: org.eclipse.papyrus.customization.extendedtypes.e
+ mf;singleton:=true
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+

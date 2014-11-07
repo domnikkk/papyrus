@@ -1,3 +1,14 @@
+/*****************************************************************************
+ * Copyright (c) 2014 CEA LIST.
+ *
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
+ *****************************************************************************/
 package org.eclipse.papyrus.infra.emf.editor.part;
 
 import java.util.EventObject;
@@ -12,17 +23,14 @@ import org.eclipse.emf.common.command.CommandStack;
 import org.eclipse.emf.common.command.CommandStackListener;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.presentation.EcoreEditor;
-import org.eclipse.emf.ecore.provider.EcoreItemProviderAdapterFactory;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
-import org.eclipse.emf.edit.provider.ReflectiveItemProviderAdapterFactory;
-import org.eclipse.emf.edit.provider.resource.ResourceItemProviderAdapterFactory;
 import org.eclipse.emf.edit.ui.celleditor.AdapterFactoryTreeEditor;
 import org.eclipse.emf.edit.ui.dnd.LocalTransfer;
 import org.eclipse.emf.edit.ui.dnd.ViewerDragAdapter;
-import org.eclipse.emf.transaction.TransactionalCommandStack;
-import org.eclipse.emf.transaction.impl.TransactionalCommandStackImpl;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.impl.TransactionalEditingDomainImpl;
 import org.eclipse.jface.action.MenuManager;
 import org.eclipse.jface.action.Separator;
@@ -33,8 +41,11 @@ import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.jface.viewers.ViewerFilter;
 import org.eclipse.papyrus.emf.facet.custom.core.ICustomizationManager;
 import org.eclipse.papyrus.emf.facet.custom.ui.ICustomizedContentProviderFactory;
+import org.eclipse.papyrus.infra.core.services.ServiceException;
+import org.eclipse.papyrus.infra.emf.editor.Activator;
 import org.eclipse.papyrus.infra.emf.editor.actions.MoDiscoDropAdapter;
-import org.eclipse.papyrus.infra.emf.providers.EMFLabelProvider;
+import org.eclipse.papyrus.infra.services.labelprovider.service.LabelProviderService;
+import org.eclipse.papyrus.infra.services.labelprovider.service.impl.LabelProviderServiceImpl;
 import org.eclipse.papyrus.infra.widgets.editors.AbstractEditor;
 import org.eclipse.papyrus.infra.widgets.editors.ICommitListener;
 import org.eclipse.papyrus.infra.widgets.editors.StringEditor;
@@ -69,7 +80,7 @@ import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
  * @author Camille Letavernier
  *
  */
-public class PapyrusEditor2 extends EcoreEditor implements ITabbedPropertySheetPageContributor, CommandStackListener {
+public class PapyrusEditor extends EcoreEditor implements ITabbedPropertySheetPageContributor, CommandStackListener {
 
 	public static final String PROPERTY_VIEW_ID = "CustomizablePropertyView"; //$NON-NLS-1$
 
@@ -108,6 +119,7 @@ public class PapyrusEditor2 extends EcoreEditor implements ITabbedPropertySheetP
 			final StringEditor filterPattern = new StringEditor(parent, SWT.NONE, "Filter");
 			filterPattern.addCommitListener(new ICommitListener() {
 
+				@Override
 				public void commit(AbstractEditor editor) {
 					filter.setPattern((String) filterPattern.getValue());
 					selectionViewer.refresh();
@@ -144,10 +156,6 @@ public class PapyrusEditor2 extends EcoreEditor implements ITabbedPropertySheetP
 
 			setActivePage(0);
 
-			// Preview preview = new Preview(this);
-			// preview.createPartControl(parent);
-			// addPreview(preview);
-
 			parent.layout();
 		}
 
@@ -175,6 +183,12 @@ public class PapyrusEditor2 extends EcoreEditor implements ITabbedPropertySheetP
 		updateProblemIndication();
 	}
 
+	@Override
+	protected void handleChangedResources() {
+		super.handleChangedResources();
+		getViewer().setInput(getTreeViewerInput());
+	}
+
 	protected Object getTreeViewerInput() {
 		List<EObject> roots = new LinkedList<EObject>();
 		for (Resource resource : getResourceSet().getResources()) {
@@ -191,25 +205,19 @@ public class PapyrusEditor2 extends EcoreEditor implements ITabbedPropertySheetP
 
 	@Override
 	protected void initializeEditingDomain() {
-		// Create an adapter factory that yields item providers.
-		//
-		adapterFactory = new ComposedAdapterFactory(ComposedAdapterFactory.Descriptor.Registry.INSTANCE);
+		ResourceSet resourceSet = new ResourceSetImpl();
 
-		adapterFactory.addAdapterFactory(new ResourceItemProviderAdapterFactory());
-		adapterFactory.addAdapterFactory(new EcoreItemProviderAdapterFactory());
-		adapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
-
-		// Create the command stack that will notify this editor as commands are executed.
-		//
-		TransactionalCommandStack commandStack = new TransactionalCommandStackImpl();
+		editingDomain = (TransactionalEditingDomainImpl) TransactionalEditingDomain.Factory.INSTANCE.createEditingDomain(resourceSet);
+		editingDomain.setResourceToReadOnlyMap(new HashMap<Resource, Boolean>());
 
 		// Add a listener to set the most recent command's affected objects to be the selection of the viewer with focus.
-		//
-		commandStack.addCommandStackListener(new CommandStackListener() {
+		editingDomain.getCommandStack().addCommandStackListener(new CommandStackListener() {
 
+			@Override
 			public void commandStackChanged(final EventObject event) {
 				getContainer().getDisplay().asyncExec(new Runnable() {
 
+					@Override
 					public void run() {
 						firePropertyChange(IEditorPart.PROP_DIRTY);
 
@@ -234,20 +242,20 @@ public class PapyrusEditor2 extends EcoreEditor implements ITabbedPropertySheetP
 			}
 		});
 
-		// Create the editing domain with a special command stack.
-		//
-		editingDomain = new TransactionalEditingDomainImpl(adapterFactory, commandStack);
-		editingDomain.setResourceToReadOnlyMap(new HashMap<Resource, Boolean>());
+		adapterFactory = (ComposedAdapterFactory) editingDomain.getAdapterFactory();
 	}
 
 	@Override
 	protected void createContextMenuFor(StructuredViewer viewer) {
 		MenuManager contextMenu = new MenuManager("#PopUp"); //$NON-NLS-1$
+		contextMenu.add(new Separator("newChild")); //$NON-NLS-1$
 		contextMenu.add(new Separator("additions")); //$NON-NLS-1$
 		contextMenu.setRemoveAllWhenShown(true);
 		contextMenu.addMenuListener(this);
 		Menu menu = contextMenu.createContextMenu(viewer.getControl());
 		viewer.getControl().setMenu(menu);
+		System.out.println(menu.hashCode());
+		System.out.println(contextMenu.hashCode());
 
 		int dndOperations = DND.DROP_COPY | DND.DROP_MOVE | DND.DROP_LINK;
 		Transfer[] transfers = new Transfer[] { LocalTransfer.getInstance() };
@@ -263,20 +271,23 @@ public class PapyrusEditor2 extends EcoreEditor implements ITabbedPropertySheetP
 		return iPropertySheetPage;
 	}
 
-	protected ICustomizationManager getCustomizationManager() {
+	protected final ICustomizationManager getCustomizationManager() {
+		if (customizationManager == null) {
+			customizationManager = createCustomizationManager();
+		}
+		return customizationManager;
+	}
+
+	protected ICustomizationManager createCustomizationManager() {
 		return org.eclipse.papyrus.infra.emf.Activator.getDefault().getCustomizationManager();
-		// if(customizationManager == null) {
-		// customizationManager = ICustomizationManagerFactory.DEFAULT.getOrCreateICustomizationManager(getResourceSet());
-		// }
-		// return customizationManager;
 	}
 
 	protected void initializeCustomizationCatalogManager() {
 		// ICustomizationCatalogManager customCatalog = ICustomizationCatalogManagerFactory.DEFAULT.getOrCreateCustomizationCatalogManager(getResourceSet());
-		// ICustomizationCatalogManager customCatalog = Activator.getDefault().getCustomizationManager()
+		// ICustomizationCatalogManager customCatalog = Activator.getDefault().getCustomizationManager();
 		// List<Customization> allCustomizations = customCatalog.getRegisteredCustomizations();
-		// for(Customization customization : allCustomizations) {
-		// if(customization.isMustBeLoadedByDefault()) {
+		// for (Customization customization : allCustomizations) {
+		// if (customization.isMustBeLoadedByDefault()) {
 		// System.out.println("Apply default customization: " + customization.getName());
 		// getCustomizationManager().getManagedCustomizations().add(customization);
 		// }
@@ -292,10 +303,16 @@ public class PapyrusEditor2 extends EcoreEditor implements ITabbedPropertySheetP
 	}
 
 	protected ILabelProvider createLabelProvider() {
-		// return IResolvingCustomizedLabelProviderFactory.DEFAULT.createCustomizedLabelProvider(getCustomizationManager());
-		return new EMFLabelProvider();
+		LabelProviderService labelService = new LabelProviderServiceImpl();
+		try {
+			labelService.startService();
+		} catch (ServiceException ex) {
+			Activator.log.error(ex);
+		}
+		return labelService.getLabelProvider();
 	}
 
+	@Override
 	public void commandStackChanged(EventObject event) {
 		getViewer().refresh();
 	}
@@ -305,6 +322,7 @@ public class PapyrusEditor2 extends EcoreEditor implements ITabbedPropertySheetP
 		super.doSave(monitor);
 	}
 
+	@Override
 	public String getContributorId() {
 		return PROPERTY_VIEW_ID;
 	}
