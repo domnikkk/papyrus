@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -18,6 +18,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.ENamedElement;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -32,12 +33,13 @@ import org.eclipse.uml2.uml.Extension;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
+import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.util.UMLUtil;
 
 
 /**
  * Listener of all stereotype application actions in Resource set.
- * 
+ *
  * @author Gabriel Pascual
  *
  */
@@ -50,7 +52,7 @@ public class StereotypeElementListener extends ResourceSetListenerImpl {
 
 	/**
 	 * Instantiates a new stereotype element listener on an editing domain.
-	 * 
+	 *
 	 * @param editingDomain
 	 *            the editing-domain context in which the listener responds to events
 	 */
@@ -60,7 +62,7 @@ public class StereotypeElementListener extends ResourceSetListenerImpl {
 
 	/**
 	 * Instantiates a new stereotype element listener on a resource set.
-	 * 
+	 *
 	 * @param resourceSet
 	 *            the resource-set context in which the listener responds to events
 	 */
@@ -209,6 +211,26 @@ public class StereotypeElementListener extends ResourceSetListenerImpl {
 		}
 
 		NamedElement getUMLDefinition(ENamedElement ecoreElement, EObject context) {
+
+			// Bug 450523: Quick pre-check: verify the existence of a base_X property typed with Element
+			boolean mayBeStereotype = false;
+			for (EReference reference : context.eClass().getEAllReferences()) {
+				String name = reference.getName();
+				if (name != null && name.startsWith(Extension.METACLASS_ROLE_PREFIX)) {
+					EClass type = reference.getEType() instanceof EClass ? (EClass) reference.getEType() : null;
+					if (type != null && UMLPackage.eINSTANCE.getElement().isSuperTypeOf(type)) {
+						mayBeStereotype = true;
+						break;
+					}
+				}
+			}
+
+			// If the quick check failed, don't go further
+			if (!mayBeStereotype) {
+				return null;
+			}
+
+			// If the quick pre-check is successful, do a complete check
 			NamedElement result = getNamedElement(ecoreElement, context);
 
 			if ((result == null) && (resourceSet != null)) {
