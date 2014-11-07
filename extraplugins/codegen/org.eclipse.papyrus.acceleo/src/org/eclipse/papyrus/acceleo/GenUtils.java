@@ -14,6 +14,8 @@ package org.eclipse.papyrus.acceleo;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
@@ -556,10 +558,10 @@ public class GenUtils {
 	 * @return Return the first body of a selected language that is provided by
 	 *         one of the operation's methods
 	 */
-	public static String getBody(Operation operation, String selectedLanguage) {
+	public static String getBody(Operation operation, Pattern selectedLanguages) {
 		for (Behavior behavior : operation.getMethods()) {
 			if (behavior instanceof OpaqueBehavior) {
-				return getBodyFromOB((OpaqueBehavior) behavior, selectedLanguage);
+				return getBodyFromOB((OpaqueBehavior) behavior, selectedLanguages);
 			}
 		}
 		return ""; //$NON-NLS-1$
@@ -570,18 +572,19 @@ public class GenUtils {
 	 * @param ob
 	 *            an opaque behavior
 	 * @param selectedLanguage
-	 *            the selected language
+	 *            the selected language, this may be a regular expression
 	 * @return Return the first body of a selected language that is provided by
 	 *         one of the operation's methods
 	 */
-	public static String getBodyFromOB(OpaqueBehavior ob, String selectedLanguage) {
+	public static String getBodyFromOB(OpaqueBehavior ob, Pattern selectedLanguages) {
 		Iterator<String> bodies = ob.getBodies().iterator();
 		for (String language : ob.getLanguages()) {
 			// additional sanity check: number of languages and number of bodies should be synchronized,
 			// but there is no guarantee that this is the case
 			if (bodies.hasNext()) {
 				String body = bodies.next();
-				if (language.equals(selectedLanguage)) {
+				Matcher matcher = selectedLanguages.matcher(language);
+				if (matcher.matches()) {
 					// additional "\r" confuses Acceleo
 					return cleanCR(body);
 				}
