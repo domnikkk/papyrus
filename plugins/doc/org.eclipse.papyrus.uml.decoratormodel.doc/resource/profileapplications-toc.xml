@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<toc label="profileapplications" topic="resource/profileapplications.html">
+	<topic href="resource/profileapplications.html" label="About Externalized Profile Applications"></topic>
+	<topic href="resource/profileapplications.html#Externalizing_a_Profile_Application" label="Externalizing a Profile Application"></topic>
+	<topic href="resource/profileapplications.html#Loading_and_Unloading_Profile_Applications" label="Loading and Unloading Profile Applications"></topic>
+    <topic href="resource/profileapplications.html#Duplicating_Profile_Applications" label="Duplicating Profile Applications"></topic>
+    <topic href="resource/profileapplications.html#Opening_Profile_Application_Models" label="Opening Profile Application Models"></topic>
+    <topic href="resource/profileapplications.html#Reintegrating_Profile_Applications" label="Reintegrating Profile Applications"></topic>
+    <topic href="resource/profileapplications.html#Preferences" label="Preferences"></topic>
+</toc>

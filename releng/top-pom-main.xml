@@ -207,6 +207,7 @@
 		<module>../plugins/uml/org.eclipse.papyrus.uml.controlmode.profile</module>
         <module>../plugins/uml/decoratormodel/org.eclipse.papyrus.uml.decoratormodel</module>
         <module>../plugins/uml/decoratormodel/org.eclipse.papyrus.uml.decoratormodel.controlmode</module>
+        <module>../plugins/uml/decoratormodel/org.eclipse.papyrus.uml.decoratormodel.doc</module>
         <module>../plugins/uml/decoratormodel/org.eclipse.papyrus.uml.decoratormodel.properties</module>
         <module>../plugins/uml/decoratormodel/org.eclipse.papyrus.uml.decoratormodel.ui</module>
 		<module>../plugins/uml/diagram/org.eclipse.papyrus.uml.diagram.activity</module>

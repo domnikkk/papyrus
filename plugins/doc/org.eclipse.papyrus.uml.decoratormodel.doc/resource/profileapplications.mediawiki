@@ -1,0 +1,176 @@
+=About Externalized Profile Applications=
+
+Ordinarily, profile applications in UML models are owned by the packages to which they apply profiles.  However, Papyrus provides an extended
+semantics that externalizes the application of profiles, letting profile applications be defined separately from the packages that apply them.
+This has a few advantages:
+
+* profile applications may be loaded and unloaded as required, to present extended attributes of model elements (as defined by stereotypes) when and if they are needed by the modeling user
+* multiple applications of the same profile to a package can provide alternative values for stereotype extensions of model elements
+
+=Externalizing a Profile Application=
+
+Consider the following small example of a model that has the Ecore profile applied: 
+
+[[image:images/profile.png]] 
+
+This model has two classes, both stereotyped as <tt>«eClass»</tt>.  A CSS stylesheet paints EClasses yellow that specify the <tt>xmlName</tt> attribute and red that do not. Initially, this profile application is owned by the model.  To separate it out into its own resource, invoke the '''Refactor &rarr; Externalize Profile Applications...''' context menu action on the applying package:
+
+[[image:images/refactor_externalize_menu.png]]
+
+or select the profile application in the applying package's properties and press the externalize action button:
+
+[[image:images/externalize_button.png]]
+
+Either way brings up the '''Externalize Profile Applications''' dialog:
+
+[[image:images/externalize_dlg.png]]
+
+In this dialog, you must:
+
+* select which profile applications to externalize (there may be more than one)
+* enter or browse to a model resource in which to put the profile application.  It may be a new resource, or it may be an existing resource
+** '''''Note''''' that in the case of an existing resource, it must be a "profile application model".  Profile applications may not be added to regular UML models
+* enter a name for the profile application model (if it is new)
+** if an existing profile application model is chosen to add the profile application to, then the name field is not editable as the model already has a name
+
+After completing this dialog, it is recommended to save to create the new profile application model.  This is similar to sub-model units, which are created when saving the parent model.  The result is something like this:
+
+[[image:images/externalized.png]]
+
+Note the new elements in the user interface, indicated by the arrows in the graphic above:
+
+* a new UML resource is created containing the profile application.  It shows a decoration indicating that it is a special kind of model, a ''profile application model''
+* the Model Explorer decorates the applying package (in this case, the root package) with the names of all of its externalized profile applications that are currently loaded
+* the properties of the applying package decorate the names of externalized profile applications to show which profile application model they are loaded from
+
+Moreover, the applying package has a new tab in its property sheet listing available and loaded profile applications.  This is discussed further in the next section.
+
+Note that in this example, the profile application model was created in the same project as the model to which it applies profiles.  Profile application models may be created in any project in the workspace; they do not have to be in the same project as the models that they extend.  Also, a profile application model may contain applications of any number of profiles on any number of packages in any number of models.  The only restriction is that a single profile application model may not apply the same profile more than once to the same package.  Two or more different profile application models may apply the profile to the same package in a user model, but then only one of them may be loaded at any one time in the context of that package.
+
+=Loading and Unloading Profile Applications=
+
+Once a profile application has been externalized (see the preceding section), it may be unloaded and loaded again as needed.  There are two ways to unload profile applications.
+
+==Unload In Model Explorer View==
+
+In the Model Explorer, select a package that has profile applications loaded and choose the '''Unload Profile Applications...''' action in the context menu:
+
+[[image:images/unload_menu.png]]
+
+This brings up a dialog that lets you choose which profile application models to unload:
+
+[[image:images/unload_dlg.png]]
+
+Finish the dialog to unload the selected models.
+
+==Unload in Properties View==
+
+Alternatively, in the '''Applications''' tab of the property sheet for a package that has externalized profile applications, select one or more loaded profile applications and press the unload button to quickly unload them:
+
+[[image:images/unload_button.png]]
+
+The result on our example Ecore-profiled model is this:
+
+[[image:images/unloaded.png]]
+
+The default styling in the diagram suggests that the <tt>«eClass»</tt> stereotype applications are now unloaded and the profile application's state in the property sheet is changed to '''Unloaded'''.  Also, the root package no longer shows the decoration indicating loaded profile applications.
+
+==Load in Model Explorer View==
+
+For packages that have available unloaded profile applications, the Model Explorer provides a '''Load Profile Applications...''' context menu action:
+
+[[image:images/load_menu.png]]
+
+This brings up the '''Load Profile Applications''' dialog in which you may select the profile applications to load:
+
+[[image:images/load_dlg.png]]
+
+Select the profile applications to load and finish the dialog to load them.
+
+==Load in Properties View==
+
+In addition to any profile applications that are already loaded, the '''Applications''' tab in the property sheet shows those that are currently available to load:
+
+[[image:images/load_button.png]]
+
+Select one or more unloaded profile applications and press the load action button to load them:
+
+[[image:images/loaded.png]]
+
+As a quick alternative, you can double-click on an unloaded profile application to load it.
+
+==Profile Application Resources==
+
+An externalized profile application is defined in a UML package in its own, separate, resource.  As such, when it is loaded into the Papyrus editor, it appears in many respects like any other UML package.  For convenience, the packages containing profile applications are hidden in the Model Explorer.  However, they can be revealed if necessary by disabling the filter in the '''Customize View...''' view menu action:
+
+[[image:images/customize_view.png]]
+
+Uncheck the '''Profile Applications''' filter and complete the dialog to see the loaded profile application models in the explorer:
+
+[[image:images/show_in_explorer.png]]
+
+=Duplicating Profile Applications=
+
+Using externalized profile applications, not only is it possible to apply multiple profiles externally to a package, but the same profile may be applied multiple times to the same package.  This facilitates development of alternative extensions of the same model elements, such as for "what if" analysis or other comparisons.
+
+The simplest way to create another application of the same profile is to duplicate an existing one.  Simply select a profile application in the property sheet (it may be either loaded or unloaded) and press the duplicate action button:
+
+[[image:images/duplicate_button.png]]
+
+This opens the '''Duplicate Profile Application''' dialog in which you select which of the profile applications in the model that you are duplicating you want to copy (you don't have to duplicate all of them) and then specify a new file name and profile-application model name:
+
+[[image:images/duplicate_dlg.png]]
+
+The result looks something like this:
+
+[[image:images/duplicated.png]]
+
+If the original profile application was loaded, then the new duplicate is loaded in its place (because the new profile application applies at least one of the same profiles as the original to the same package, only one can be loaded at a time).  Otherwise, you can proceed by opening the new profile application and configuring its stereotype applications differently than in the original:
+
+[[image:images/variant2.png]]
+
+==Restrictions==
+
+There are certain restrictions in working with multiple profile applications, especially when they concern the same combinations of profiles and applying packages:
+
+* a profile application model cannot be loaded if it applies a profile to a package that already has that profile applied
+** this is concerned only with the actual package that the profile is applied to.  A package may apply a profile that is also applied to some package containing it
+** this applies equally to the case where the package already owns an application of the profile and also the case where an externalized application of the profile is already loaded.  However, in the latter case, there is a remedy available:  the current profile application model may be unloaded.  Papyrus will prompt to unload the conflicting profile application, with the option to just automatically unload it in the future, which is convenient for quickly switching between alternative configurations of stereotypes
+* a profile application may not be externalized into a model that already has an application of the same profile for the same package.  A different model must be selected or created
+
+=Opening Profile Application Models=
+
+Profile application models may be opened in their own editors to provide convenient access to the perspective that they offer on the models that they extend.  Ordinarily, they contain only stereotype applications extending elements in the user model, but it may be useful in some circumstances to create diagrams in a profile application model that are specific to the profile applications that it contains.  It is '''highly recommended''' never to add UML content to a profile application model; only stereotype applications extending UML content. 
+
+The '''New &rarr; Papyrus Model''' wizard may be used to initialize a complete Papyrus model from the UML resource of a profile application:
+
+[[image:images/init_model_menu.png]]
+
+Complete the wizard, creating for example a class diagram, and you can drag and drop elements from the profiled model onto the diagram to visualize them in some way specific to the profile application:
+
+[[image:images/decorator_model.png]]
+
+Note that the Model Explorer shows the profile model, not the profile application model itself, simply by virtue of the latter being filtered out of the view by default (see above for details).  In this way, various different perspectives on the same user model may be revealed in separate editors through the profile applications.  Of course, the same caveats apply for making changes to the same UML content in multiple such editors as would normally apply to editing shared "library" models.
+
+=Reintegrating Profile Applications=
+
+The opposite process to externalizing a profile application is reintegrating it into the model proper.  There are two ways to reintegrate a loaded profile application:  using the '''Refactor &rarr; Internalize Profile Applications...''' action in the context menu:
+
+[[image:images/internalize_menu.png]]
+
+or by selecting one or more profile applications in the property sheet and pressing the internalize action button:
+
+[[image:images/internalize_button.png]]
+
+The context menu action opens a dialog in which you may choose which profile applications, for the selected package, that are currently loaded should be reintegrated.  Upon saving the model, then, these profile applications and the stereotype applications that they define are stored once more in the same resources as the UML elements that they extend.
+
+=Preferences=
+
+A few preference options are available to control how Papyrus behaves in working with externalized profile applications.  These are:
+
+[[image:images/preferences.png]]
+
+# Whether Papyrus should automatically prompt you to select one or more profile applications to load when opening a model that has externalized profile applications available for one or more packages within the model.
+# When loading a profile application model, whether Papyrus should prompt to confirm that applications of the same profile(s) to the same package(s) that are already loaded should first be unloaded, or else cancel loading the new profile application.  Disabling this prompt makes for quick switching of profile applications by double-clicking in the property sheet to load alternatives.
+# What to do when a profile application model is emptied of all profile applications by reintegration.  Ordinarily, no useful data besides stereotype applications is stored in a profile application model, and these are simply moved into the main model resource by reintegration, so it is safe and practical to delete the profile application model when it is no longer needed.  However, in the case that it has specialized diagrams or (though not recommended) other UML content, it may be important to retain that model.
+
