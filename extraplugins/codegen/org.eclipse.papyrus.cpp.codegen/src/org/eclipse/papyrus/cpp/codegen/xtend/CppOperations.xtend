@@ -17,17 +17,18 @@ import org.eclipse.uml2.uml.profile.standard.Create
 import org.eclipse.uml2.uml.profile.standard.Destroy
 import org.eclipse.papyrus.C_Cpp.ConstInit
 import org.eclipse.uml2.uml.util.UMLUtil
+import org.eclipse.papyrus.cpp.codegen.Constants
 
 class CppOperations {
 	static def CppOperationImplementation(Operation operation) '''
 		«CppDocumentation.CppOperationDoc(operation)»
 		«IF (operation.name == 'main')»
 			«CppReturnSpec(operation)»«operation.name»(«CppParameter.CppOperationParameters(operation,false)») {
-				«GenUtils.getBody(operation, 'C/C++')»
+				«GenUtils.getBody(operation, Constants.supportedLanguages)»
 			} 
 		«ELSE»
 			«CppTemplates.templateSignature(operation)»«InlineTxt(operation)»«CppReturnSpec(operation)»«operation.featuringClassifiers.get(0).name»«CppTemplates.templateShortSignature(operation)»::«destructor(operation)»«operation.name»(«CppParameter.CppOperationParameters(operation, false)»)«throwss(operation)»«Modifier.modCVQualifier(operation)»«CppConstInit(operation)» {
-				«GenUtils.getBody(operation, 'C/C++')»
+				«GenUtils.getBody(operation, Constants.supportedLanguages)»
 			}
 		«ENDIF»
 	'''	
@@ -88,7 +89,7 @@ class CppOperations {
 	static def CppBehaviorImplementation(OpaqueBehavior behavior) '''
 		«CppDocumentation.CppBehaviorDoc(behavior)»
 		«CppReturnSpec(behavior)»«behavior.context.name»::«behavior.name»(«CppParameter.CppBehaviorParameters(behavior, false)»)«Modifier.modCVQualifier(behavior)» {
-			«GenUtils.getBodyFromOB(behavior, 'C/C++')»
+			«GenUtils.getBodyFromOB(behavior, Constants.supportedLanguages)»
 		}
 	'''
 	
