@@ -243,17 +243,17 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String createUml1Group_title;
+	public static String Uml1Group_title;
 
 	/**
 	 * @generated
 	 */
-	public static String createComponent1CreationTool_title;
+	public static String Component1CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String createComponent1CreationTool_desc;
+	public static String Component1CreationTool_desc;
 
 	/**
 	 * @generated
@@ -264,21 +264,6 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String NavigatorActionProvider_OpenDiagramActionName;
-
-	/**
-	 * @generated
-	 */
-	public static String AbstractParser_UnexpectedValueType;
-
-	/**
-	 * @generated
-	 */
-	public static String AbstractParser_WrongStringConversion;
-
-	/**
-	 * @generated
-	 */
-	public static String AbstractParser_UnknownLiteral;
 
 	/**
 	 * @generated

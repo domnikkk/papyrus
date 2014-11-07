@@ -2,12 +2,12 @@
 <gmfgen:GenEditorGenerator xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:gmfgen="http://www.eclipse.org/gmf/2009/GenModel" packageNamePrefix="org.eclipse.papyrus.diagram.newdiagram"
+    xmlns:gmfgen="http://www.eclipse.org/gmf/2009/GenModel" packageNamePrefix="org.eclipse.papyrus.example.diagram.simplediagram"
     modelID="PapyrusNewDiagram"
     domainFileExtension="PapyrusNewDiagram"
     dynamicTemplates="true"
     templateDirectory="/org.eclipse.papyrus.def/dynamic-templates3.5/codegen"
-    pluginDirectory="/org.eclipse.papyrus.diagram.newdiagram/src">
+    pluginDirectory="/org.eclipse.papyrus.example.diagram.simplediagram/src">
   <diagram
       visualID="1000"
       editPartClassName="ModelEditPart"

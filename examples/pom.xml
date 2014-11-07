@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<artifactId>org.eclipse.papyrus</artifactId>
+		<groupId>org.eclipse.papyrus</groupId>
+		<version>1.0.1-SNAPSHOT</version>
+		<relativePath>../releng/top-pom-main.xml</relativePath>
+	</parent>
+	<artifactId>org.eclipse.papyrus.examples</artifactId>
+	<groupId>org.eclipse.papyrus</groupId>
+	<version>1.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<modules>
+		<module>./core/org.eclipse.papyrus.example.core.lifecycleevents</module>
+		<module>./core/org.eclipse.papyrus.example.core.sashwindows.fulleditor</module>
+		<module>./core/org.eclipse.papyrus.example.core.sashwindows.simpleeditor</module>
+		<!-- FIXME compilation error <module>./others/org.eclipse.papyrus.example.diagram.simplediagram</module>  -->
+		<module>./infra/org.eclipse.papyrus.example.infra.servicesregistry.retrieval</module>
+		<module>./org.eclipse.papyrus.example.text.instance</module>
+		<module>./org.eclipse.papyrus.example.uml.comment.editor.newresource</module>
+		<module>./org.eclipse.papyrus.example.uml.comment.editor.sharedresource</module>
+		<module>./infra/org.eclipse.papyrus.infra.gmfdiag.connectionpoint.preferences</module>
+		<module>./emf/org.eclipse.papyrus.outline.emftree</module>
+		<module>./uml/org.eclipse.papyrus.thousandcreation</module>
+		<module>./uml/org.eclipse.papyrus.uml.diagram.example.programmaticcreation</module>
+	</modules>	
+</project>

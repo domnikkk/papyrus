@@ -203,5 +203,9 @@ public class CommentEditorFactory extends AbstractEditorFactory {
 		public String getTabTitle() {
 			return rawModel.getName();
 		}
+
+		public void dispose() {
+			// Pass
+		}
 	}
 }

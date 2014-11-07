@@ -14,6 +14,5 @@ public class DiagramConnectionsPreferencePage extends ConnectionsPreferencePage 
 	public DiagramConnectionsPreferencePage() {
 		setPreferenceStore(UMLDiagramEditorPlugin.getInstance()
 				.getPreferenceStore());
-
 	}
 }

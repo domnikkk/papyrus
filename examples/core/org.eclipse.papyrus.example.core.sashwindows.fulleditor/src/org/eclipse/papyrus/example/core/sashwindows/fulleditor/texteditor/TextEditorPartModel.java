@@ -78,4 +78,9 @@ public class TextEditorPartModel implements IEditorModel {
 	public EditorActionBarContributor getActionBarContributor() {
 		return null;
 	}
+
+	@Override
+	public void dispose() {
+		// Pass
+	}
 }
