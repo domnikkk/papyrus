@@ -156,8 +156,11 @@ public class StereotypeElementListener extends ResourceSetListenerImpl {
 
 			}
 
-			element.eNotify(
-					new StereotypeExtensionNotification(element, eventType, oldValue, newValue));
+			// Bug 450523: If element is null, the notification has already been sent. Simply ignore this case
+			if (element != null) {
+				element.eNotify(
+						new StereotypeExtensionNotification(element, eventType, oldValue, newValue));
+			}
 		}
 
 	}
