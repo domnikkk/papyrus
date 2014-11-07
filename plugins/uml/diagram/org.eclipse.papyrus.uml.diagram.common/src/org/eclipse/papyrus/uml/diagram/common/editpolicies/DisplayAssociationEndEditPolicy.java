@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2009 CEA LIST.
+ * Copyright (c) 2009, 2014 CEA LIST, Christian W. Damus, and others.
  *
  *
  * All rights reserved. This program and the accompanying materials
@@ -10,6 +10,7 @@
  * Contributors:
  *  Patrick Tessier (CEA LIST) Patrick.tessier@cea.fr - Initial API and implementation
  *  Nizar GUEDIDI (CEA LIST) - Update getUMLElement()
+ *  Christian W. Damus - bug 393532
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.common.editpolicies;
@@ -108,15 +109,15 @@ public class DisplayAssociationEndEditPolicy extends AbstractMaskManagedEditPoli
 			return;
 		}
 		// in order to find the role to display we need to now target of the edge, so it is important to have a notification about the change of the target
-		if ((notification.getFeature().equals(NotationPackage.eINSTANCE.getEdge_Target())) || (notification.getFeature().equals(NotationPackage.eINSTANCE.getEdge_Source()))) {
+		if ((notification.getFeature() == NotationPackage.Literals.EDGE__TARGET) || (notification.getFeature() == NotationPackage.Literals.EDGE__SOURCE)) {
 			refreshDisplay();
 		}
 		if (object == null) {
 			return;
 		}
-		if (notification.getFeature().equals(UMLPackage.eINSTANCE.getLiteralInteger_Value())) {
+		if (notification.getFeature() == UMLPackage.Literals.LITERAL_INTEGER__VALUE) {
 			refreshDisplay();
-		} else if (notification.getFeature().equals(UMLPackage.eINSTANCE.getLiteralUnlimitedNatural_Value())) {
+		} else if (notification.getFeature() == UMLPackage.Literals.LITERAL_UNLIMITED_NATURAL__VALUE) {
 			refreshDisplay();
 		}
 		if (object.equals(property)) {
