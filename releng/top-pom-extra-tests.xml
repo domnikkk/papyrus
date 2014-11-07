@@ -25,8 +25,8 @@
     <module>../tests/junit/extraplugins/umlrt/org.eclipse.papyrus.umlrt.validation.tests</module>
   </modules>
   <properties>
-		<tycho-version>0.20.0</tycho-version>
-		<tychoExtrasVersion>0.20.0</tychoExtrasVersion>
+		<tycho-version>0.21.0</tycho-version>
+		<tychoExtrasVersion>0.21.0</tychoExtrasVersion>
 	</properties>
 	<repositories>
 		<repository>
