@@ -6,6 +6,7 @@ import org.eclipse.papyrus.C_Cpp.ConstInit;
 import org.eclipse.papyrus.C_Cpp.Inline;
 import org.eclipse.papyrus.C_Cpp.Virtual;
 import org.eclipse.papyrus.acceleo.GenUtils;
+import org.eclipse.papyrus.cpp.codegen.Constants;
 import org.eclipse.papyrus.cpp.codegen.utils.CppGenUtils;
 import org.eclipse.papyrus.cpp.codegen.utils.Modifier;
 import org.eclipse.papyrus.cpp.codegen.xtend.CppDocumentation;
@@ -48,7 +49,7 @@ public class CppOperations {
         _builder.append(") {");
         _builder.newLineIfNotEmpty();
         _builder.append("\t");
-        String _body = GenUtils.getBody(operation, "C/C++");
+        String _body = GenUtils.getBody(operation, Constants.supportedLanguages);
         _builder.append(_body, "\t");
         _builder.newLineIfNotEmpty();
         _builder.append("} ");
@@ -84,7 +85,7 @@ public class CppOperations {
         _builder.append(" {");
         _builder.newLineIfNotEmpty();
         _builder.append("\t");
-        String _body_1 = GenUtils.getBody(operation, "C/C++");
+        String _body_1 = GenUtils.getBody(operation, Constants.supportedLanguages);
         _builder.append(_body_1, "\t");
         _builder.newLineIfNotEmpty();
         _builder.append("}");
@@ -265,7 +266,7 @@ public class CppOperations {
     _builder.append(" {");
     _builder.newLineIfNotEmpty();
     _builder.append("\t");
-    String _bodyFromOB = GenUtils.getBodyFromOB(behavior, "C/C++");
+    String _bodyFromOB = GenUtils.getBodyFromOB(behavior, Constants.supportedLanguages);
     _builder.append(_bodyFromOB, "\t");
     _builder.newLineIfNotEmpty();
     _builder.append("}");
