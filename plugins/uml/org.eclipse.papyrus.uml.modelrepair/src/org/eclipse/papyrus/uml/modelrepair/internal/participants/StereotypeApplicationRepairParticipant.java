@@ -9,6 +9,7 @@
  * Contributors:
  *   Christian W. Damus (CEA) - Initial API and implementation
  *   Christian W. Damus - bug 399859
+ *   Christian W. Damus - bug 450524
  *
  */
 package org.eclipse.papyrus.uml.modelrepair.internal.participants;
@@ -43,6 +44,7 @@ import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.util.EContentsEList;
 import org.eclipse.emf.ecore.util.ECrossReferenceAdapter;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.FeatureMap;
@@ -291,28 +293,44 @@ public class StereotypeApplicationRepairParticipant extends PackageOperations im
 
 			// Delete all trace of the old stereotype applications
 			for (EObject root : stereotypeApplications) {
-				removeCrossReferences(root);
-
-				for (TreeIterator<EObject> iter = root.eAllContents(); iter.hasNext();) {
-					EObject next = iter.next();
-
-					// The 'mixed' feature-map of an AnyType typically includes EReferences that think they are containments but aren't,
-					// where there are cross-document references (which are represented in the XMI as nested elements)
-					if (next.eIsProxy() || !EcoreUtil.isAncestor(root, next)) {
-						// Don't mess with objects contained elsewhere; they are referenced, not actually contained
-						iter.prune();
-					} else {
-						removeCrossReferences(next);
-					}
-				}
-
-				// And detach it from wherever it may be (if anywhere)
+				safelyDestroy(root);
 				EcoreUtil.remove(root);
 			}
 
 			sub.worked(1);
 
 			copier.clear();
+		}
+
+		private void safelyDestroy(EObject eObject) {
+			removeCrossReferences(eObject);
+			List<EStructuralFeature> fakeContainmentReferences = null;
+
+			for (EContentsEList.FeatureIterator<EObject> iter = (EContentsEList.FeatureIterator<EObject>) eObject.eContents().iterator(); iter.hasNext();) {
+				EObject next = iter.next();
+
+				// The 'mixed' feature-map of an AnyType typically includes EReferences that think they are containments but aren't,
+				// where there are cross-document references (which are represented in the XMI as nested elements)
+				if (next.eIsProxy() || (next.eContainer() != eObject)) {
+					// Don't mess with objects contained elsewhere; they are referenced, not actually contained
+					if (fakeContainmentReferences == null) {
+						fakeContainmentReferences = Lists.newArrayListWithExpectedSize(1);
+					}
+					fakeContainmentReferences.add(iter.feature());
+				} else {
+					safelyDestroy(next);
+				}
+			}
+
+			// If there are any fake-contained references from AnyTypes, remove them so that we don't purge the CacheAdapter from them by mistake
+			if (fakeContainmentReferences != null) {
+				for (EStructuralFeature toClear : fakeContainmentReferences) {
+					eObject.eUnset(toClear);
+				}
+			}
+
+			// Now we can remove the CacheAdapter without it propagating its removal to non-contained objects
+			eObject.eAdapters().clear();
 		}
 
 		private void removeCrossReferences(EObject object) {
