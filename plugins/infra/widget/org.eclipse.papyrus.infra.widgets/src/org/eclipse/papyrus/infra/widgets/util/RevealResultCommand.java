@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2014 CEA LIST and others.
+ * Copyright (c) 2014 CEA LIST, Christian W. Damus, and others.
  * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,6 +8,7 @@
  *
  * Contributors:
  *   Gabriel Pascual (ALL4TEC) gabriel.pascual@all4tec.fr - Initial API and implementation
+ *   Christian W. Damus - bug 436954
  *   
  *****************************************************************************/
 
@@ -46,7 +47,7 @@ public class RevealResultCommand extends CommandWrapper {
 	 * @param command
 	 */
 	public RevealResultCommand(Command command, IViewPart part, Object editObject) {
-		super("Select result", command);
+		super(command);
 		viewPart = part;
 		sourceObject = editObject;
 	}
