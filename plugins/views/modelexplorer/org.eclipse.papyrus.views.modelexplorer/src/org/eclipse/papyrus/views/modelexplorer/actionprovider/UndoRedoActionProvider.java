@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2014 CEA LIST and others.
+ * Copyright (c) 2014 CEA LIST, Christian W. Damus, and others.
  * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,6 +8,7 @@
  *
  * Contributors:
  *   Gabriel Pascual (ALL4TEC) gabriel.pascual@all4tec.net - Initial API and implementation
+ *   Christian W. Damus - bug 450536
  *   
  *****************************************************************************/
 
@@ -21,7 +22,6 @@ import org.eclipse.emf.common.command.CommandStack;
 import org.eclipse.emf.common.command.CommandStackListener;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.domain.IEditingDomainProvider;
-import org.eclipse.jface.action.IAction;
 import org.eclipse.ui.IActionBars;
 import org.eclipse.ui.IWorkbenchPartSite;
 import org.eclipse.ui.actions.ActionFactory;
@@ -29,7 +29,6 @@ import org.eclipse.ui.navigator.CommonNavigator;
 import org.eclipse.ui.navigator.ICommonActionExtensionSite;
 import org.eclipse.ui.navigator.ICommonViewerSite;
 import org.eclipse.ui.navigator.ICommonViewerWorkbenchSite;
-import org.eclipse.ui.operations.OperationHistoryActionHandler;
 import org.eclipse.ui.operations.RedoActionHandler;
 import org.eclipse.ui.operations.UndoActionHandler;
 
@@ -43,10 +42,10 @@ public class UndoRedoActionProvider extends AbstractCommonActionProvider impleme
 
 
 	/** The undo action. */
-	IAction undoAction = null;
+	private UndoActionHandler undoAction = null;
 
 	/** The redo action. */
-	private IAction redoAction = null;
+	private RedoActionHandler redoAction = null;
 
 	/** Listened command stack. */
 	private CommandStack commandStack;
@@ -57,8 +56,6 @@ public class UndoRedoActionProvider extends AbstractCommonActionProvider impleme
 	 */
 	public UndoRedoActionProvider() {
 		super();
-
-
 	}
 
 	/**
@@ -81,11 +78,6 @@ public class UndoRedoActionProvider extends AbstractCommonActionProvider impleme
 		return commandStack;
 	}
 
-	/**
-	 * @see org.eclipse.ui.navigator.CommonActionProvider#init(org.eclipse.ui.navigator.ICommonActionExtensionSite)
-	 *
-	 * @param aSite
-	 */
 	@Override
 	public void init(ICommonActionExtensionSite aSite) {
 		super.init(aSite);
@@ -119,11 +111,6 @@ public class UndoRedoActionProvider extends AbstractCommonActionProvider impleme
 		return context;
 	}
 
-	/**
-	 * @see org.eclipse.ui.actions.ActionGroup#fillActionBars(org.eclipse.ui.IActionBars)
-	 *
-	 * @param actionBars
-	 */
 	@Override
 	public void fillActionBars(IActionBars actionBars) {
 
@@ -143,26 +130,32 @@ public class UndoRedoActionProvider extends AbstractCommonActionProvider impleme
 	public void commandStackChanged(EventObject event) {
 
 		// Refresh Undo handler after Command stack state has changed
-		if (undoAction instanceof OperationHistoryActionHandler) {
-			((OperationHistoryActionHandler) undoAction).update();
+		if (undoAction != null) {
+			undoAction.update();
 		}
 
 		// Refresh Redo handler after Command stack state has changed
-		if (redoAction instanceof OperationHistoryActionHandler) {
-			((OperationHistoryActionHandler) redoAction).update();
+		if (redoAction != null) {
+			redoAction.update();
 		}
 
 	}
 
-	/**
-	 * @see org.eclipse.ui.actions.ActionGroup#dispose()
-	 *
-	 */
 	@Override
 	public void dispose() {
 
 		// Detach listener of command stack
 		getCommandStack().removeCommandStackListener(this);
+		commandStack = null;
+
+		if (undoAction != null) {
+			undoAction.dispose();
+			undoAction = null;
+		}
+		if (redoAction != null) {
+			redoAction.dispose();
+			redoAction = null;
+		}
 
 		super.dispose();
 	}

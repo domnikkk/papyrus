@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2010, 2014 LIFL, CEA LIST, and others.
+ * Copyright (c) 2010, 2014 LIFL, CEA LIST, Christian W. Damus, and others.
  *
  *
  * All rights reserved. This program and the accompanying materials
@@ -10,6 +10,7 @@
  * Contributors:
  *  Cedric Dumoulin (LIFL) cedric.dumoulin@lifl.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 434635
+ *  Christian W. Damus - bug 450536
  *
  *****************************************************************************/
 
@@ -21,6 +22,8 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.ui.IViewPart;
 import org.eclipse.ui.IWorkbenchPart;
+import org.eclipse.ui.views.properties.IPropertySheetPage;
+import org.eclipse.ui.views.properties.tabbed.ITabbedPropertySheetPageContributor;
 
 
 /**
@@ -33,12 +36,25 @@ public class ModelExplorerPage extends ViewPartPage {
 
 	private SharedModelExplorerState state;
 
-	/**
-	 * Constructor.
-	 *
-	 * @param part
-	 */
-	public ModelExplorerPage() {
+	private final ITabbedPropertySheetPageContributor propertySheetContributor;
+	private IPropertySheetPage propertySheet;
+
+	public ModelExplorerPage(ITabbedPropertySheetPageContributor propertySheetContributor) {
+		super();
+
+		this.propertySheetContributor = propertySheetContributor;
+	}
+
+	@Override
+	public void dispose() {
+		try {
+			if (propertySheet != null) {
+				propertySheet.dispose();
+			}
+		} finally {
+			propertySheet = null;
+			super.dispose();
+		}
 	}
 
 	/**
@@ -82,5 +98,25 @@ public class ModelExplorerPage extends ViewPartPage {
 
 	void setSharedState(SharedModelExplorerState state) {
 		this.state = state;
+	}
+
+	@Override
+	public Object getAdapter(@SuppressWarnings("rawtypes") Class adapter) {
+		Object result;
+
+		if (adapter == IPropertySheetPage.class) {
+			result = getPropertySheetPage();
+		} else {
+			result = super.getAdapter(adapter);
+		}
+
+		return result;
+	}
+
+	private IPropertySheetPage getPropertySheetPage() {
+		if (propertySheet == null) {
+			propertySheet = new ModelExplorerPropertySheetPage(propertySheetContributor);
+		}
+		return propertySheet;
 	}
 }

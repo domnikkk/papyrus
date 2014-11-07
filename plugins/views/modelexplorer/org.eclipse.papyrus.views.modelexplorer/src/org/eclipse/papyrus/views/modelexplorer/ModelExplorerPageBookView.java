@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2010, 2014 LIFL, CEA LIST, and others.
+ * Copyright (c) 2010, 2014 LIFL, CEA LIST, Christian W. Damus, and others.
  *
  *
  * All rights reserved. This program and the accompanying materials
@@ -12,13 +12,11 @@
  *  Ansgar Radermacher (CEA) ansgar.radermacher@cea.fr - Added support for IGotoMarker
  *  Christian W. Damus (CEA) - bug 434635
  *  Gabriel Pascual (ALL4TEC) gabriel.pascual@all4tec.net - Bug 431117
+ *   Christian W. Damus - bug 450536
  *
  *****************************************************************************/
 
 package org.eclipse.papyrus.views.modelexplorer;
-
-import java.util.LinkedList;
-import java.util.List;
 
 import org.eclipse.core.resources.IMarker;
 import org.eclipse.emf.common.util.URI;
@@ -35,7 +33,6 @@ import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.ide.IGotoMarker;
 import org.eclipse.ui.navigator.CommonViewer;
-import org.eclipse.ui.views.properties.IPropertySheetPage;
 import org.eclipse.ui.views.properties.tabbed.ITabbedPropertySheetPageContributor;
 
 import com.google.common.collect.Lists;
@@ -54,9 +51,6 @@ public class ModelExplorerPageBookView extends MultiViewPageBookView implements 
 
 	private final SharedModelExplorerState state = new SharedModelExplorerState();
 
-	/** The property sheet pages. */
-	private List<IPropertySheetPage> propertiesSheetPages = new LinkedList<IPropertySheetPage>();
-
 	@Override
 	public void init(IViewSite site, IMemento memento) throws PartInitException {
 		super.init(site, memento);
@@ -66,15 +60,12 @@ public class ModelExplorerPageBookView extends MultiViewPageBookView implements 
 		}
 	}
 
-	/**
-	 * {@inheritDoc}
-	 */
 	@Override
 	protected PageRec doCreatePage(IWorkbenchPart part) {
 
 		// part is of type IMultiDiagramEditor (because of isImportant() )
 
-		ModelExplorerPage page = new ModelExplorerPage();
+		ModelExplorerPage page = new ModelExplorerPage(this);
 		page.setSharedState(state);
 
 		// Init the page, and so the View
@@ -83,28 +74,8 @@ public class ModelExplorerPageBookView extends MultiViewPageBookView implements 
 		return new PageRec(part, page);
 	}
 
-	/**
-	 * Retrieves the {@link IPropertySheetPage} that his Model Explorer uses.
-	 *
-	 * @return
-	 */
-	private IPropertySheetPage getPropertySheetPage() {
-		IPropertySheetPage propertySheetPage = new ModelExplorerPropertySheetPage(this);
-		propertiesSheetPages.add(propertySheetPage);
-		return propertySheetPage;
-	}
-
-	/**
-	 * {@inheritDoc}
-	 */
 	@Override
 	public Object getAdapter(@SuppressWarnings("rawtypes") Class adapter) {
-
-		if (IPropertySheetPage.class == adapter) {
-			// Do not test if tabbedPropertySheetPage is null before calling new
-			// this is managed by Eclipse which only call current method when necessary
-			return getPropertySheetPage();
-		}
 
 		if (adapter == ITreeViewerSorting.class) {
 			return new DefaultTreeViewerSorting() {
@@ -127,17 +98,11 @@ public class ModelExplorerPageBookView extends MultiViewPageBookView implements 
 		return super.getAdapter(adapter);
 	}
 
-	/**
-	 * {@inheritDoc}
-	 */
 	public String getContributorId() {
 		// return Activator.PLUGIN_ID;
 		return "TreeOutlinePage"; //$NON-NLS-1$
 	}
 
-	/**
-	 * {@inheritDoc}
-	 */
 	public void gotoMarker(IMarker marker) {
 		String uriAttribute = marker.getAttribute(EValidator.URI_ATTRIBUTE, null);
 		if (uriAttribute != null) {
@@ -162,18 +127,5 @@ public class ModelExplorerPageBookView extends MultiViewPageBookView implements 
 		state.save(memento);
 
 		super.saveState(memento);
-	}
-
-	/**
-	 * @see org.eclipse.ui.part.PageBookView#dispose()
-	 *
-	 */
-	@Override
-	public void dispose() {
-		for (IPropertySheetPage page : propertiesSheetPages) {
-			page.dispose();
-		}
-		propertiesSheetPages.clear();
-		super.dispose();
 	}
 }
