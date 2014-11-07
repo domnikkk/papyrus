@@ -261,6 +261,9 @@ public abstract class CommonDiagramDragDropEditPolicy extends DiagramDragDropEdi
 
 		while (iter.hasNext()) {
 			EObject droppedObject = (EObject) iter.next();
+			if (getCompositeCommandRegistry().findAdapter((Element) droppedObject) != null) {
+				continue;
+			}
 			cc.add(getDropObjectCommand(dropRequest, droppedObject));
 		}
 		getCompositeCommandRegistry().clear();
@@ -565,7 +568,9 @@ public abstract class CommonDiagramDragDropEditPolicy extends DiagramDragDropEdi
 		}
 		// set the viewdescriptor as result
 		// it then can be used as an adaptable to retrieve the View
-		return new CommandProxyWithResult(command, descriptor);
+		ICommand result = new CommandProxyWithResult(command, descriptor);
+		getCompositeCommandRegistry().registerAdapter((Element) droppedObject, (IAdaptable) result.getCommandResult().getReturnValue());
+		return result;
 		// }
 
 		// return org.eclipse.gmf.runtime.common.core.command.UnexecutableCommand.INSTANCE;
@@ -879,7 +884,6 @@ public abstract class CommonDiagramDragDropEditPolicy extends DiagramDragDropEdi
 			ICommand createCommand = getDefaultDropNodeCommand(dropLocation, source);
 			cc.add(createCommand);
 			result = (IAdaptable) createCommand.getCommandResult().getReturnValue();
-			getCompositeCommandRegistry().registerAdapter(source, result);
 			return result;
 		} else {
 			return new SemanticAdapter(null, editPart.getModel());
@@ -922,7 +926,9 @@ public abstract class CommonDiagramDragDropEditPolicy extends DiagramDragDropEdi
 		 * {@inheritDoc}
 		 */
 		public void registerAdapter(Element element, IAdaptable adapter) {
-			myElement2Adapter.put(element, adapter);
+			if (myElement2Adapter.get(element) == null) {
+				myElement2Adapter.put(element, adapter);
+			}
 		}
 	}
 
