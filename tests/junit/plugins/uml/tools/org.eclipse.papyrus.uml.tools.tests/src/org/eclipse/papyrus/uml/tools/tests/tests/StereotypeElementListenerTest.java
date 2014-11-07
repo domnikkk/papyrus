@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2014 CEA LIST.
+ * Copyright (c) 2014 CEA LIST, Christian W. Damus, and others.
  * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,6 +8,8 @@
  *
  * Contributors:
  *	Gabriel Pascual (ALL4TEC) gabriel.pascual@all4tec.net - Initial API and implementation
+ *  Christian W. Damus - bug 450523
+ *  
  *****************************************************************************/
 package org.eclipse.papyrus.uml.tools.tests.tests;
 
@@ -722,6 +724,7 @@ public class StereotypeElementListenerTest extends AbstractPapyrusTest {
 				return;
 			}
 
+			StereotypeExtensionNotification seMsg = (StereotypeExtensionNotification) msg;
 			Object eventNotifier = msg.getNotifier();
 
 			// Check if notifier is known
@@ -749,10 +752,8 @@ public class StereotypeElementListenerTest extends AbstractPapyrusTest {
 			// Record the stereotype applied/unapplied
 			switch (notificationEventType) {
 			case StereotypeExtensionNotification.STEREOTYPE_APPLIED_TO_ELEMENT:
-				stereotypes.add((Stereotype) msg.getNewValue());
-				break;
 			case StereotypeExtensionNotification.STEREOTYPE_UNAPPLIED_FROM_ELEMENT:
-				stereotypes.add((Stereotype) msg.getOldValue());
+				stereotypes.add(seMsg.getStereotype());
 				break;
 			}
 

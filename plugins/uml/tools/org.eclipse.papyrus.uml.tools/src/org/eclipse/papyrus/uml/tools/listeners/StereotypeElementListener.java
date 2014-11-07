@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2014 CEA LIST.
+ * Copyright (c) 2014 CEA LIST, Christian W. Damus, and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -9,6 +9,8 @@
  * Contributors:
  *	Gabriel Pascual (ALL4TEC) gabriel.pascual@all4tec.net - Initial API and implementation
  *  Gabriel Pascual (ALL4TEC) gabriel.pascual@all4tec.fr - Bug 393532
+ *  Christian W. Damus - bug 450523
+ *  
  *****************************************************************************/
 package org.eclipse.papyrus.uml.tools.listeners;
 
@@ -101,7 +103,7 @@ public class StereotypeElementListener extends ResourceSetListenerImpl {
 	 */
 	private void handleFilteredNotification(Notification notification) {
 
-		Object notifier = notification.getNotifier();
+		final Object notifier = notification.getNotifier();
 
 		Element extendedElement = null;
 		Stereotype stereotype = null;
@@ -114,9 +116,6 @@ public class StereotypeElementListener extends ResourceSetListenerImpl {
 				extendedElement = finder.getExtendedElement((EObject) notifier);
 				isBaseFeature = ((EStructuralFeature) notification.getFeature()).getName().startsWith(Extension.METACLASS_ROLE_PREFIX);
 			}
-
-
-
 		}
 
 
@@ -137,15 +136,15 @@ public class StereotypeElementListener extends ResourceSetListenerImpl {
 
 
 		if (stereotype != null) {
-			EObject oldValue = null;
+			Object oldValue = null;
 			Object newValue = null;
 			Element element = extendedElement;
 			switch (eventType) {
 			case StereotypeExtensionNotification.STEREOTYPE_UNAPPLIED_FROM_ELEMENT:
-				oldValue = stereotype;
+				oldValue = notifier;
 				break;
 			case StereotypeExtensionNotification.STEREOTYPE_APPLIED_TO_ELEMENT:
-				newValue = stereotype;
+				newValue = notifier;
 				break;
 			case StereotypeExtensionNotification.MODIFIED_STEREOTYPE_OF_ELEMENT:
 				// New value is the modified element
@@ -159,7 +158,7 @@ public class StereotypeElementListener extends ResourceSetListenerImpl {
 			// Bug 450523: If element is null, the notification has already been sent. Simply ignore this case
 			if (element != null) {
 				element.eNotify(
-						new StereotypeExtensionNotification(element, eventType, oldValue, newValue));
+						new StereotypeExtensionNotification(element, eventType, oldValue, newValue, stereotype));
 			}
 		}
 
@@ -337,8 +336,6 @@ public class StereotypeElementListener extends ResourceSetListenerImpl {
 	 */
 	public class StereotypeExtensionNotification extends ENotificationImpl {
 
-
-
 		/** Event type notification for stereotype application action. */
 		public static final int STEREOTYPE_APPLIED_TO_ELEMENT = Notification.EVENT_TYPE_COUNT + 21;
 
@@ -348,6 +345,8 @@ public class StereotypeElementListener extends ResourceSetListenerImpl {
 		/** The Constant MODIFIED_STEREOTYPE_OF_ELEMENT. */
 		public static final int MODIFIED_STEREOTYPE_OF_ELEMENT = Notification.EVENT_TYPE_COUNT + 23;
 
+		private Stereotype stereotype;
+
 		/**
 		 * Creates a new StereotypeExtensionNotification.
 		 *
@@ -356,12 +355,18 @@ public class StereotypeElementListener extends ResourceSetListenerImpl {
 		 * @param eventType
 		 *            the type of event
 		 * @param oldValue
-		 *            the {@link Stereotype} that was unapplied, or {@code null} if this is notification of a stereotype application
+		 *            the instance (an {@link EObject} of some kind) of the {@link Stereotype} that was unapplied, or {@code null} if this is notification of a stereotype application;
+		 *            or the old value of a stereotype property if this is a notification of a stereotype modification
 		 * @param newValue
-		 *            the {@link Stereotype} that was applied, or {@code null} if this is notification of a stereotype unapplication
+		 *            the instance (an {@link EObject} of some kind) of the {@link Stereotype} that was applied, or {@code null} if this is notification of a stereotype unapplication;
+		 *            or the new value of a stereotype property if this is a notification of a stereotype modification
+		 * @param stereotype
+		 *            the {@link Stereotype} defining the extension object that was attached to or unattached from its base element or was modified
 		 */
-		public StereotypeExtensionNotification(Element notifier, int eventType, Object oldValue, Object newValue) {
+		public StereotypeExtensionNotification(Element notifier, int eventType, Object oldValue, Object newValue, Stereotype stereotype) {
 			super((InternalEObject) notifier, eventType, null, oldValue, newValue);
+
+			this.stereotype = stereotype;
 		}
 
 		/**
@@ -372,6 +377,14 @@ public class StereotypeElementListener extends ResourceSetListenerImpl {
 			return false;
 		}
 
+		/**
+		 * Queries the stereotype that was applied to or unapplied from a model element, or an instance of which changed in some other way.
+		 * 
+		 * @return the stereotype defining the element extension instance that changed
+		 */
+		public Stereotype getStereotype() {
+			return stereotype;
+		}
 	}
 
 }
