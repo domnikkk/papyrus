@@ -9,6 +9,7 @@
  * Contributors:
  *	Gabriel Pascual (ALL4TEC) gabriel.pascual@all4tec.net - Initial API and implementation
  *  Christian W. Damus - bug 450523
+ *  Christian W. Damus - bug 399859
  *  
  *****************************************************************************/
 package org.eclipse.papyrus.uml.tools.tests.tests;
@@ -22,6 +23,8 @@ import java.util.Map;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.impl.AdapterImpl;
+import org.eclipse.emf.common.util.ECollections;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.edit.command.SetCommand;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
@@ -59,6 +62,7 @@ import org.junit.Test;
  * @author Gabriel Pascual
  *
  */
+@PluginResource("/resources/stereotypeListenerTest/profileApplicationTest.di")
 public class StereotypeElementListenerTest extends AbstractPapyrusTest {
 
 	/** Model set rule to have an editing domain. */
@@ -121,7 +125,6 @@ public class StereotypeElementListenerTest extends AbstractPapyrusTest {
 	 * Test add stereotype.
 	 */
 	@Test
-	@PluginResource("/resources/stereotypeListenerTest/profileApplicationTest.di")
 	public void testAddStereotype() {
 
 		initialiseTestCase();
@@ -142,7 +145,6 @@ public class StereotypeElementListenerTest extends AbstractPapyrusTest {
 	 * Test remove stereotype.
 	 */
 	@Test
-	@PluginResource("/resources/stereotypeListenerTest/profileApplicationTest.di")
 	public void testRemoveStereotype() {
 
 		initialiseTestCase();
@@ -164,7 +166,6 @@ public class StereotypeElementListenerTest extends AbstractPapyrusTest {
 	 * Test stereotype modification.
 	 */
 	@Test
-	@PluginResource("/resources/stereotypeListenerTest/profileApplicationTest.di")
 	public void testModifiedStereotype() {
 
 		initialiseTestCase();
@@ -197,7 +198,6 @@ public class StereotypeElementListenerTest extends AbstractPapyrusTest {
 	 * Test undo action on stereotype modification.
 	 */
 	@Test
-	@PluginResource("/resources/stereotypeListenerTest/profileApplicationTest.di")
 	public void testUndoModifiedStereotype() {
 
 		initialiseTestCase();
@@ -231,7 +231,6 @@ public class StereotypeElementListenerTest extends AbstractPapyrusTest {
 	 * Test undo action on stereotype application.
 	 */
 	@Test
-	@PluginResource("/resources/stereotypeListenerTest/profileApplicationTest.di")
 	public void testUndoAddStereotype() {
 
 		initialiseTestCase();
@@ -255,7 +254,6 @@ public class StereotypeElementListenerTest extends AbstractPapyrusTest {
 	 * Test undo action on stereotype unapplication.
 	 */
 	@Test
-	@PluginResource("/resources/stereotypeListenerTest/profileApplicationTest.di")
 	public void testUndoRemoveStereotype() {
 
 		initialiseTestCase();
@@ -284,7 +282,6 @@ public class StereotypeElementListenerTest extends AbstractPapyrusTest {
 	 * Test of unapplication Profile.
 	 */
 	@Test
-	@PluginResource("/resources/stereotypeListenerTest/profileApplicationTest.di")
 	public void testUnapplyProfile() {
 
 		initialiseTestCase();
@@ -314,7 +311,6 @@ public class StereotypeElementListenerTest extends AbstractPapyrusTest {
 	 * Test of unapplication Profile.
 	 */
 	@Test
-	@PluginResource("/resources/stereotypeListenerTest/profileApplicationTest.di")
 	public void testUndoUnapplyProfile() {
 
 		initialiseTestCase();
@@ -345,7 +341,6 @@ public class StereotypeElementListenerTest extends AbstractPapyrusTest {
 	 * Test add several stereotypes.
 	 */
 	@Test
-	@PluginResource("/resources/stereotypeListenerTest/profileApplicationTest.di")
 	public void testAddStereotypeOnSeveralElements() {
 		initialiseTestCase();
 
@@ -384,7 +379,6 @@ public class StereotypeElementListenerTest extends AbstractPapyrusTest {
 	 * Test undo of stereotype's addition on different element.
 	 */
 	@Test
-	@PluginResource("/resources/stereotypeListenerTest/profileApplicationTest.di")
 	public void testUndoAddStereotypeOnSeveralElements() {
 		initialiseTestCase();
 
@@ -429,7 +423,6 @@ public class StereotypeElementListenerTest extends AbstractPapyrusTest {
 	 * Test add several stereotypes on one element.
 	 */
 	@Test
-	@PluginResource("/resources/stereotypeListenerTest/profileApplicationTest.di")
 	public void testAddStereotypes() {
 		initialiseTestCase();
 
@@ -453,7 +446,6 @@ public class StereotypeElementListenerTest extends AbstractPapyrusTest {
 	 * Test undo of several stereotype's application.
 	 */
 	@Test
-	@PluginResource("/resources/stereotypeListenerTest/profileApplicationTest.di")
 	public void testUndoAddStereotypes() {
 		initialiseTestCase();
 
@@ -481,7 +473,6 @@ public class StereotypeElementListenerTest extends AbstractPapyrusTest {
 	 * interpreted as stereotype (un)applications.
 	 */
 	@Test
-	@PluginResource("/resources/stereotypeListenerTest/profileApplicationTest.di")
 	public void testFakeBasedProperty() {
 		initialiseTestCase();
 
@@ -513,7 +504,6 @@ public class StereotypeElementListenerTest extends AbstractPapyrusTest {
 	 * Test add stereotype with static profile.
 	 */
 	@Test
-	@PluginResource("/resources/stereotypeListenerTest/profileApplicationTest.di")
 	public void testAddSysMLStereotype() {
 
 		initialiseTestCase();
@@ -535,7 +525,6 @@ public class StereotypeElementListenerTest extends AbstractPapyrusTest {
 	 * Test remove stereotype with static profile.
 	 */
 	@Test
-	@PluginResource("/resources/stereotypeListenerTest/profileApplicationTest.di")
 	public void testRemoveSysMLStereotype() {
 
 		initialiseTestCase();
@@ -558,7 +547,6 @@ public class StereotypeElementListenerTest extends AbstractPapyrusTest {
 	 * Test undo action on stereotype application with static Profile.
 	 */
 	@Test
-	@PluginResource("/resources/stereotypeListenerTest/profileApplicationTest.di")
 	public void testUndoAddSysMLStereotype() {
 
 		initialiseTestCase();
@@ -582,7 +570,6 @@ public class StereotypeElementListenerTest extends AbstractPapyrusTest {
 	 * Test undo action on stereotype unapplication with static Profile.
 	 */
 	@Test
-	@PluginResource("/resources/stereotypeListenerTest/profileApplicationTest.di")
 	public void testUndoRemoveSysMLStereotype() {
 
 		initialiseTestCase();
@@ -612,7 +599,6 @@ public class StereotypeElementListenerTest extends AbstractPapyrusTest {
 	 * Test modification of applied stereotype with static Profile.
 	 */
 	@Test
-	@PluginResource("/resources/stereotypeListenerTest/profileApplicationTest.di")
 	public void testModifiedSysMLStereotype() {
 
 		initialiseTestCase();
@@ -640,7 +626,6 @@ public class StereotypeElementListenerTest extends AbstractPapyrusTest {
 	 * Test undo action on stereotype modification with static Profile.
 	 */
 	@Test
-	@PluginResource("/resources/stereotypeListenerTest/profileApplicationTest.di")
 	public void testUndoModifiedSysMLStereotype() {
 
 		initialiseTestCase();
@@ -662,6 +647,77 @@ public class StereotypeElementListenerTest extends AbstractPapyrusTest {
 		assertModifiedStereotypeNotification.assertNotification(2, element);
 		assertUnappliedStereotypeNotification.assertNoNotification(element);
 
+	}
+
+	/**
+	 * Test modification of a stereotype attribute that isn't a 'set' change, but a list change.
+	 */
+	@Test
+	public void testStereotypeListAttributeChange() {
+		initialiseTestCase();
+
+		// First, apply a stereotype and prime a list-valued feature
+		TransactionalEditingDomain editingDomain = modelSetFixture.getEditingDomain();
+		final Stereotype stereotype = profile.getOwnedStereotype("First");
+		editingDomain.getCommandStack().execute(new ApplyStereotypeCommand(element, stereotype, editingDomain));
+		editingDomain.getCommandStack().execute(new RecordingCommand(editingDomain) {
+
+			@Override
+			protected void doExecute() {
+				element.setValue(stereotype, "tag", ECollections.asEList("blue"));
+			}
+		});
+
+		// Add a listener to detect list-value change in the stereotype
+		element.eAdapters().add(assertModifiedStereotypeNotification);
+
+		// Add a value to the list feature
+		editingDomain.getCommandStack().execute(new RecordingCommand(editingDomain) {
+
+			@Override
+			protected void doExecute() {
+				@SuppressWarnings("unchecked")
+				List<String> list = (List<String>) element.getValue(stereotype, "tag");
+				list.add("green");
+			}
+		});
+
+		assertModifiedStereotypeNotification.assertNotification(element);
+	}
+
+	/**
+	 * Test modification of a stereotype attribute that isn't a 'set' change, but an unset change.
+	 */
+	@Test
+	public void testStereotypeUnsetAttributeChange() {
+		initialiseTestCase();
+
+		// First, apply a stereotype and prime an unsettable feature
+		TransactionalEditingDomain editingDomain = modelSetFixture.getEditingDomain();
+		final Stereotype stereotype = profile.getOwnedStereotype("First");
+		editingDomain.getCommandStack().execute(new ApplyStereotypeCommand(element, stereotype, editingDomain));
+		editingDomain.getCommandStack().execute(new RecordingCommand(editingDomain) {
+
+			@Override
+			protected void doExecute() {
+				element.setValue(stereotype, "unsettableInt", 42);
+			}
+		});
+
+		// Add a listener to detect the 'unset' change in the stereotype
+		element.eAdapters().add(assertModifiedStereotypeNotification);
+
+		// Add a value to the list feature
+		editingDomain.getCommandStack().execute(new RecordingCommand(editingDomain) {
+
+			@Override
+			protected void doExecute() {
+				EObject stereo = element.getStereotypeApplication(stereotype);
+				stereo.eUnset(stereo.eClass().getEStructuralFeature("unsettableInt"));
+			}
+		});
+
+		assertModifiedStereotypeNotification.assertNotification(element);
 	}
 
 	/**

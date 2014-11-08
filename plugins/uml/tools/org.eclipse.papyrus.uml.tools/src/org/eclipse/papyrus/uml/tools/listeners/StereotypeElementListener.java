@@ -10,6 +10,7 @@
  *	Gabriel Pascual (ALL4TEC) gabriel.pascual@all4tec.net - Initial API and implementation
  *  Gabriel Pascual (ALL4TEC) gabriel.pascual@all4tec.fr - Bug 393532
  *  Christian W. Damus - bug 450523
+ *  Christian W. Damus - bug 399859
  *  
  *****************************************************************************/
 package org.eclipse.papyrus.uml.tools.listeners;
@@ -172,7 +173,7 @@ public class StereotypeElementListener extends ResourceSetListenerImpl {
 	 */
 	@Override
 	public NotificationFilter getFilter() {
-		return stereotypeFilter.and(NotificationFilter.createEventTypeFilter(Notification.SET));
+		return stereotypeFilter;
 	}
 
 	/**
@@ -307,6 +308,20 @@ public class StereotypeElementListener extends ResourceSetListenerImpl {
 				isBaseFeature = ((EStructuralFeature) feature).getName().startsWith(Extension.METACLASS_ROLE_PREFIX);
 			}
 
+			switch (notification.getEventType()) {
+			case Notification.RESOLVE:
+				// Only interested in proxy resolution when it is the base feature, because this is how we detect
+				// application of a stereotype by loading a resource containing stereotype instances
+				if (!isBaseFeature) {
+					return false;
+				}
+				break;
+			default:
+				if (notification.isTouch()) {
+					return false;
+				}
+				break;
+			}
 
 			// Fields of a stereotype extension
 			Property extensionProperty = null;
@@ -320,8 +335,6 @@ public class StereotypeElementListener extends ResourceSetListenerImpl {
 						baseElement = StereotypeExtensionFinder.getBaseElement((EObject) notifier);
 					}
 				}
-
-
 			}
 
 			return (extensionProperty != null && isBaseFeature) || (!isBaseFeature && baseElement instanceof Element);

@@ -8,6 +8,14 @@
           <element xmi:type="uml:Property" href="profileTest.profile.uml#_bb6ewF9XEeSfdIAduA4EWQ"/>
           <layoutConstraint xmi:type="notation:Location" xmi:id="_bdsAYV9XEeSfdIAduA4EWQ"/>
         </children>
+        <children xmi:type="notation:Node" xmi:id="_eBxM0GdREeS24ryD4Kyq_Q" type="3002">
+          <element xmi:type="uml:Property" href="profileTest.profile.uml#_eADVkGdREeS24ryD4Kyq_Q"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_eBxM0WdREeS24ryD4Kyq_Q"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_ROEbYGdSEeS24ryD4Kyq_Q" type="3002">
+          <element xmi:type="uml:Property" href="profileTest.profile.uml#_ROCmMGdSEeS24ryD4Kyq_Q"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_ROEbYWdSEeS24ryD4Kyq_Q"/>
+        </children>
         <styles xmi:type="notation:TitleStyle" xmi:id="_4aK-wfIzEeOTVMj9kvFRzQ"/>
         <styles xmi:type="notation:SortingStyle" xmi:id="_4aK-wvIzEeOTVMj9kvFRzQ"/>
         <styles xmi:type="notation:FilteringStyle" xmi:id="_4aK-w_IzEeOTVMj9kvFRzQ"/>
