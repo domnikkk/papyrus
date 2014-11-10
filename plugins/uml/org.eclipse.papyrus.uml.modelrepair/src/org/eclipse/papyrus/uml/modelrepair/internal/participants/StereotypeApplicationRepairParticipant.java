@@ -162,7 +162,7 @@ public class StereotypeApplicationRepairParticipant extends PackageOperations im
 			}
 		}
 
-		createStereotypeApplicationMigrator(newProfile, diagnostics).migrate(oldStereotypeApplications, null);
+		createStereotypeApplicationMigrator(profileApplication.eResource(), newProfile, diagnostics).migrate(oldStereotypeApplications, null);
 
 		if (!newProfile.getOwnedExtensions(true).isEmpty()) {
 			// Ensure that required stereotypes of the new profile are applied
@@ -203,8 +203,8 @@ public class StereotypeApplicationRepairParticipant extends PackageOperations im
 		return result;
 	}
 
-	public static StereotypeApplicationMigrator createStereotypeApplicationMigrator(Profile profile, DiagnosticChain diagnostics) {
-		return new StereotypeApplicationMigrator(profile, diagnostics);
+	public static StereotypeApplicationMigrator createStereotypeApplicationMigrator(Resource resourceUnderRepair, Profile profile, DiagnosticChain diagnostics) {
+		return new StereotypeApplicationMigrator(resourceUnderRepair, profile, diagnostics);
 	}
 
 	//
@@ -215,8 +215,8 @@ public class StereotypeApplicationRepairParticipant extends PackageOperations im
 
 		private StereotypeApplicationRepairCopier copier;
 
-		StereotypeApplicationMigrator(Profile profile, DiagnosticChain diagnostics) {
-			copier = new StereotypeApplicationRepairCopier(profile, diagnostics);
+		StereotypeApplicationMigrator(Resource resourceUnderRepair, Profile profile, DiagnosticChain diagnostics) {
+			copier = new StereotypeApplicationRepairCopier(resourceUnderRepair, profile, diagnostics);
 		}
 
 		public void migrate(Collection<? extends EObject> stereotypeApplications, IProgressMonitor monitor) {
@@ -355,6 +355,8 @@ public class StereotypeApplicationRepairParticipant extends PackageOperations im
 
 		private final DiagnosticChain diagnostics;
 
+		private final StereotypeApplicationHelper stereotypeApplicationHelper;
+
 		private EObject copying;
 
 		/**
@@ -362,9 +364,11 @@ public class StereotypeApplicationRepairParticipant extends PackageOperations im
 		 * @param diagnostics
 		 *            may be {@code null}
 		 */
-		public StereotypeApplicationRepairCopier(Profile profile, DiagnosticChain diagnostics) {
+		public StereotypeApplicationRepairCopier(Resource resourceUnderRepair, Profile profile, DiagnosticChain diagnostics) {
 			super(profile);
+
 			this.diagnostics = diagnostics;
+			stereotypeApplicationHelper = StereotypesUtil.getSameResourceStereotypeApplicationHelper(resourceUnderRepair);
 		}
 
 		@Override
@@ -700,7 +704,10 @@ public class StereotypeApplicationRepairParticipant extends PackageOperations im
 		@Override
 		protected EObject createCopy(EObject eObject) {
 			try {
-				return super.createCopy(eObject);
+				Element baseElement = getBaseElement(eObject);
+				return baseElement == null
+						? super.createCopy(eObject)
+						: stereotypeApplicationHelper.applyStereotype(baseElement, getTarget(eObject.eClass()));
 			} catch (IllegalStateException e) {
 				// target EClass does not exist in the profile
 				handleException(e);

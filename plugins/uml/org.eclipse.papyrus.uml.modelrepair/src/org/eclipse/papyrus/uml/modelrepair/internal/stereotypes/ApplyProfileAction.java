@@ -42,27 +42,29 @@ import com.google.common.collect.Sets;
  */
 public class ApplyProfileAction extends AbstractRepairAction {
 
+	private final Resource resourceUnderRepair;
 	private final Set<Package> packages;
 
 	private Supplier<Profile> profileSupplier;
 
 	private String label;
 
-	public ApplyProfileAction(Iterable<? extends Package> packages, Profile profile, LabelProviderService labelProviderService) {
-		this(packages, Suppliers.ofInstance(profile));
+	public ApplyProfileAction(Resource resourceUnderRepair, Iterable<? extends Package> packages, Profile profile, LabelProviderService labelProviderService) {
+		this(resourceUnderRepair, packages, Suppliers.ofInstance(profile));
 
 		// Don't have to worry about the profile not having any definition because if it didn't, we couldn't be
 		// looking at a previous version that traced to it to let us know that we need to apply this profile
 		this.label = NLS.bind("Migrate to {0}", labelProviderService.getLabelProvider().getText(profile.getDefinition()));
 	}
 
-	public ApplyProfileAction(Iterable<? extends Package> packages, Supplier<Profile> profileSupplier) {
+	public ApplyProfileAction(Resource resourceUnderRepair, Iterable<? extends Package> packages, Supplier<Profile> profileSupplier) {
 		super(Kind.APPLY_LATEST_PROFILE_DEFINITION);
 
 		if (Iterables.isEmpty(packages)) {
 			throw new IllegalArgumentException("no packages"); //$NON-NLS-1$
 		}
 
+		this.resourceUnderRepair = resourceUnderRepair;
 		this.packages = Sets.newLinkedHashSet(packages);
 		this.profileSupplier = profileSupplier;
 	}
@@ -86,7 +88,7 @@ public class ApplyProfileAction extends AbstractRepairAction {
 			SubMonitor sub = SubMonitor.convert(monitor, taskName, stereotypeApplications.size() * 3 / 2);
 
 			// Apply the profile
-			StereotypeApplicationRepairParticipant.createStereotypeApplicationMigrator(profile, diagnostics).migrate(stereotypeApplications, sub.newChild(stereotypeApplications.size()));
+			StereotypeApplicationRepairParticipant.createStereotypeApplicationMigrator(resource, profile, diagnostics).migrate(stereotypeApplications, sub.newChild(stereotypeApplications.size()));
 			for (Package next : packages) {
 				applyProfile(next, profile);
 			}
@@ -111,7 +113,15 @@ public class ApplyProfileAction extends AbstractRepairAction {
 			delegate.reapplyProfile(package_, profile);
 			result = existing;
 		} else {
-			package_.applyProfile(profile);
+			// Try to get a delegate appropriate to the resource we're repairing (it could be a profile-application model)
+			Package root = Iterables.getFirst(Iterables.filter(resourceUnderRepair.getContents(), Package.class), null);
+			if (root != null) {
+				delegate = ProfileApplicationDelegateRegistry.INSTANCE.getDelegate(root);
+				delegate.applyProfile(package_, profile, root);
+			} else {
+				// Simple profile application scenario
+				package_.applyProfile(profile);
+			}
 			result = delegate.getProfileApplication(package_, profile);
 		}
 

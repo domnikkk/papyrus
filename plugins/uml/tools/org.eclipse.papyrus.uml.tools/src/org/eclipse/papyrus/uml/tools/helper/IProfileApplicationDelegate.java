@@ -57,6 +57,21 @@ public interface IProfileApplicationDelegate {
 	ProfileApplication getProfileApplication(Package package_, Profile profile);
 
 	/**
+	 * Applies the specified {@code profile} to a package in a given {@link context}.
+	 * 
+	 * @param package_
+	 *            the package to which to apply the {@code profile}. The profile must not already be applied
+	 * @param profile
+	 *            the profile to apply
+	 * @param context
+	 *            a context in which to apply the profile, which may be the same as or a nesting package of the applying package, or some distinct other package
+	 *            altogether (such as a profile-application model)
+	 * 
+	 * @return any new stereotype applications created as a consequence of required metaclass extensions
+	 */
+	EList<EObject> applyProfile(Package package_, Profile profile, Package context);
+
+	/**
 	 * Queries whether I am applicable to (support introspection/manipulation of) a given profile application.
 	 * 
 	 * @param profileApplication
@@ -114,6 +129,11 @@ public interface IProfileApplicationDelegate {
 
 		public ProfileApplication getProfileApplication(Package package_, Profile profile) {
 			return package_.getProfileApplication(profile);
+		}
+
+		public EList<EObject> applyProfile(Package package_, Profile profile, Package context) {
+			// I just simply apply the profile (I don't handle weird context scenarios)
+			return package_.applyProfile(profile);
 		}
 
 		public boolean appliesTo(ProfileApplication profileApplication) {

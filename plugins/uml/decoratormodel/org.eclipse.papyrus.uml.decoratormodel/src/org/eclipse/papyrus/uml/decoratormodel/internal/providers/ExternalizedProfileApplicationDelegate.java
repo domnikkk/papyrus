@@ -79,6 +79,25 @@ public class ExternalizedProfileApplicationDelegate implements IProfileApplicati
 	}
 
 	@Override
+	public EList<EObject> applyProfile(Package package_, Profile profile, Package context) {
+		EList<EObject> result;
+
+		if (!DecoratorModelUtils.isDecoratorModel(context)) {
+			// The context is meaningless to me
+			result = package_.applyProfile(profile);
+		} else {
+			Package decorator = DecoratorModelUtils.getDecoratorPackage(context, package_, true);
+
+			// Create the new profile application and then "reapply" it in place
+			ProfileApplication profileApplication = decorator.createProfileApplication();
+			profileApplication.setAppliedProfile(profile);
+			result = util.reapplyProfile(package_, profileApplication);
+		}
+
+		return result;
+	}
+
+	@Override
 	public boolean appliesTo(ProfileApplication profileApplication) {
 		Resource resource = profileApplication.eResource();
 		return (resource != null) && DecoratorModelUtils.isDecoratorModel(resource);

@@ -222,9 +222,9 @@ public class ZombieStereotypesDescriptor {
 		Collection<Package> packages = getContextPackages(schema);
 		Profile profile = findProfile(schema);
 		if (profile == null) {
-			applyProfile = new ApplyProfileAction(packages, curry(schema, dynamicProfileSupplier));
+			applyProfile = new ApplyProfileAction(resource, packages, curry(schema, dynamicProfileSupplier));
 		} else {
-			applyProfile = new ApplyProfileAction(packages, profile, labelProviderService);
+			applyProfile = new ApplyProfileAction(resource, packages, profile, labelProviderService);
 		}
 		result.put(applyProfile.kind(), applyProfile);
 
@@ -290,7 +290,10 @@ public class ZombieStereotypesDescriptor {
 			} else {
 				// Find the profile application
 				result = null;
-				out: for (Package pkg = base.getNearestPackage(); pkg != null; pkg = (pkg.getOwner() == null) ? null : pkg.getOwner().getNearestPackage()) {
+				Package pkg = null;
+				out: for (Package successor = base.getNearestPackage(); successor != null; successor = (pkg.getOwner() == null) ? null : pkg.getOwner().getNearestPackage()) {
+					pkg = successor;
+
 					IProfileApplicationDelegate delegate = ProfileApplicationDelegateRegistry.INSTANCE.getDelegate(pkg);
 					for (ProfileApplication next : delegate.getProfileApplications(pkg)) {
 						if (equal(next.getAppliedDefinition(), schema, root)) {
@@ -298,11 +301,15 @@ public class ZombieStereotypesDescriptor {
 							break out;
 						}
 					}
+
+					;
 				}
 
 				if (result == null) {
-					// Couldn't infer the package context from a matching profile application. Oh, well
-					result = new ProfileContext(root, schema);
+					// Couldn't infer the package context from a matching profile application. Oh, well. Take the root
+					// package, then (which could be different from the 'root' we started with in the case that it's
+					// a profile-application model: we need the root of the user model content)
+					result = new ProfileContext((pkg == null) ? root : pkg, schema);
 				}
 			}
 		}

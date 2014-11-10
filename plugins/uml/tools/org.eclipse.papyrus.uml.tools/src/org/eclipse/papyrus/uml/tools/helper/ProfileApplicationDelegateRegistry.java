@@ -229,6 +229,10 @@ public class ProfileApplicationDelegateRegistry {
 				return getInstance().getProfileApplication(package_, profile);
 			}
 
+			public EList<EObject> applyProfile(Package package_, Profile profile, Package context) {
+				return getInstance().applyProfile(package_, profile, context);
+			}
+
 			public Package getApplyingPackage(ProfileApplication profileApplication) {
 				return getInstance().getApplyingPackage(profileApplication);
 			}

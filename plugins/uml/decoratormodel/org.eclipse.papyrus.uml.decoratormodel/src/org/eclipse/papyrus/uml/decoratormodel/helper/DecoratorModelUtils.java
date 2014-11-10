@@ -39,6 +39,7 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.resource.ContentHandler;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
@@ -652,6 +653,23 @@ public class DecoratorModelUtils {
 	}
 
 	/**
+	 * Queries whether a package is the root of a decorator model.
+	 * <p>
+	 * This method does <em>not</em> access the decorator model index.
+	 * 
+	 * @param package_
+	 *            the root package of some UML model
+	 * 
+	 * @return whether it is a loaded decorator model
+	 */
+	public static boolean isDecoratorModel(Package package_) {
+		// Must be a root
+		return (((InternalEObject) package_).eDirectResource() != null) &&
+				// Must have the externalization profile applied
+				hasExternalizationProfile(package_);
+	}
+
+	/**
 	 * Queries whether a resource is a loaded decorator model resource.
 	 * <p>
 	 * This method does <em>not</em> access the decorator model index.
@@ -664,10 +682,9 @@ public class DecoratorModelUtils {
 	public static boolean isDecoratorModel(Resource resource) {
 		boolean result = false;
 
-		ResourceSet rset = resource.getResourceSet();
-		if (rset != null) {
-			// There must be at least one <<applyProfiles>> dependency in a profile applications resource
-			result = EcoreUtil.getObjectByType(resource.getContents(), ProfileExternalizationPackage.Literals.APPLY_PROFILES) != null;
+		Package root = Iterables.getFirst(Iterables.filter(resource.getContents(), Package.class), null);
+		if (root != null) {
+			result = isDecoratorModel(root);
 		}
 
 		return result;

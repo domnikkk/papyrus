@@ -29,7 +29,6 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.ExtendedMetaData;
 import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.eclipse.papyrus.infra.core.utils.TransactionHelper;
-import org.eclipse.papyrus.junit.framework.classification.FailingTest;
 import org.eclipse.papyrus.junit.utils.rules.HouseKeeper;
 import org.eclipse.papyrus.junit.utils.rules.PluginResource;
 import org.eclipse.papyrus.uml.modelrepair.internal.stereotypes.IRepairAction;
@@ -87,7 +86,6 @@ public class StereotypeApplicationRepairTest extends AbstractProfileExternalizat
 	 */
 	@Test
 	@PluginResource("/resources/missingProfileApplication/testmodel.di")
-	@FailingTest("Don't know yet how to detect on which package the missing externalized profile application was meant to be applied")
 	public void missingProfileApplication() {
 		assertThat("Should have found zombie stereotypes", zombies, notNullValue());
 
