@@ -178,96 +178,100 @@ import xpt.navigator.Utils_qvto
 	'''
 
 	override utilityMethods(GenNavigator it) '''
-«««		«generatedMemberComment»
-«««		private java.util.Collection getLinksSourceByType(java.util.Collection edges, String type) {
-«««			java.util.Collection result = new java.util.ArrayList();
-«««		 	for (java.util.Iterator it = edges.iterator(); it.hasNext();) {
-«««		 		org.eclipse.gmf.runtime.notation.Edge nextEdge = (org.eclipse.gmf.runtime.notation.Edge) it.next();
-«««		 		org.eclipse.gmf.runtime.notation.View nextEdgeSource = nextEdge.getSource();
-«««		 		if (type.equals(nextEdgeSource.getType()) && isOwnView(nextEdgeSource)) {
-«««		 			result.add(nextEdgeSource);
-«««		 		}
-«««		 	}
-«««		 	return result;
-«««		}
-«««			
-«««		«generatedMemberComment»
-«««		 private java.util.Collection getLinksTargetByType(java.util.Collection edges, String type) {
-«««			java.util.Collection result = new java.util.ArrayList();
-«««		 	for (java.util.Iterator it = edges.iterator(); it.hasNext();) {
-«««		 		org.eclipse.gmf.runtime.notation.Edge nextEdge = (org.eclipse.gmf.runtime.notation.Edge) it.next();
-«««		 		org.eclipse.gmf.runtime.notation.View nextEdgeTarget = nextEdge.getTarget();
-«««		 		if (type.equals(nextEdgeTarget.getType()) && isOwnView(nextEdgeTarget)) {
-«««		 			result.add(nextEdgeTarget);
-«««		 		}
-«««		 	}
-«««		 	return result;
-«««		}
-«««		«generatedMemberComment»
-«««		 private java.util.Collection getOutgoingLinksByType(java.util.Collection nodes, String type) {
-«««			java.util.Collection result = new java.util.ArrayList();
-«««		 	for (java.util.Iterator it = nodes.iterator(); it.hasNext();) {
-«««		 		org.eclipse.gmf.runtime.notation.View nextNode = (org.eclipse.gmf.runtime.notation.View) it.next();
-«««				result.addAll(selectViewsByType(nextNode.getSourceEdges(), type));
-«««		 	}
-«««		 	return result;
-«««		}
-«««			
-«««		«generatedMemberComment»
-«««		private java.util.Collection getIncomingLinksByType(java.util.Collection nodes, String type) {
-«««			java.util.Collection result = new java.util.ArrayList();
-«««		 	for (java.util.Iterator it = nodes.iterator(); it.hasNext();) {
-«««		 		org.eclipse.gmf.runtime.notation.View nextNode = (org.eclipse.gmf.runtime.notation.View) it.next();
-«««				result.addAll(selectViewsByType(nextNode.getTargetEdges(), type));
-«««		 	}
-«««		 	return result;
-«««		}
-«««			
-«««		«generatedMemberComment»
-«««		private java.util.Collection getChildrenByType(java.util.Collection nodes, String type) {
-«««			java.util.Collection result = new java.util.ArrayList();
-«««			for (java.util.Iterator it = nodes.iterator(); it.hasNext();) {
-«««				org.eclipse.gmf.runtime.notation.View nextNode = (org.eclipse.gmf.runtime.notation.View) it.next();
-«««				result.addAll(selectViewsByType(nextNode.getChildren(), type));
-«««			}
-«««			return result;
-«««		}
-«««			
-«««		«generatedMemberComment»
-«««		private java.util.Collection getDiagramLinksByType(java.util.Collection diagrams, String type) {
-«««			java.util.Collection result = new java.util.ArrayList();
-«««			for (java.util.Iterator it = diagrams.iterator(); it.hasNext();) {
-«««				org.eclipse.gmf.runtime.notation.Diagram nextDiagram = (org.eclipse.gmf.runtime.notation.Diagram) it.next();
-«««				result.addAll(selectViewsByType(nextDiagram.getEdges(), type));
-«««			}
-«««			return result;
-«««		}
-«««		«generatedMemberComment»
-«««		private java.util.Collection selectViewsByType(java.util.Collection views, String type) {
-«««			java.util.Collection result = new java.util.ArrayList();
-«««			for (java.util.Iterator it = views.iterator(); it.hasNext();) {
-«««				org.eclipse.gmf.runtime.notation.View nextView = (org.eclipse.gmf.runtime.notation.View) it.next();
-«««				if (type.equals(nextView.getType()) && isOwnView(nextView)) {
-«««					result.add(nextView);
-«««				}
-«««			}
-«««			return result;
-«««		}
+		«IF getNavigatorContainerNodes(it).notEmpty»
+		«generatedMemberComment»
+		private java.util.Collection getLinksSourceByType(java.util.Collection edges, String type) {
+			java.util.Collection result = new java.util.ArrayList();
+		 	for (java.util.Iterator it = edges.iterator(); it.hasNext();) {
+		 		org.eclipse.gmf.runtime.notation.Edge nextEdge = (org.eclipse.gmf.runtime.notation.Edge) it.next();
+		 		org.eclipse.gmf.runtime.notation.View nextEdgeSource = nextEdge.getSource();
+		 		if (type.equals(nextEdgeSource.getType()) && isOwnView(nextEdgeSource)) {
+		 			result.add(nextEdgeSource);
+		 		}
+		 	}
+		 	return result;
+		}
 			
+		«generatedMemberComment»
+		 private java.util.Collection getLinksTargetByType(java.util.Collection edges, String type) {
+			java.util.Collection result = new java.util.ArrayList();
+		 	for (java.util.Iterator it = edges.iterator(); it.hasNext();) {
+		 		org.eclipse.gmf.runtime.notation.Edge nextEdge = (org.eclipse.gmf.runtime.notation.Edge) it.next();
+		 		org.eclipse.gmf.runtime.notation.View nextEdgeTarget = nextEdge.getTarget();
+		 		if (type.equals(nextEdgeTarget.getType()) && isOwnView(nextEdgeTarget)) {
+		 			result.add(nextEdgeTarget);
+		 		}
+		 	}
+		 	return result;
+		}
+		«generatedMemberComment»
+		 private java.util.Collection getOutgoingLinksByType(java.util.Collection nodes, String type) {
+			java.util.Collection result = new java.util.ArrayList();
+		 	for (java.util.Iterator it = nodes.iterator(); it.hasNext();) {
+		 		org.eclipse.gmf.runtime.notation.View nextNode = (org.eclipse.gmf.runtime.notation.View) it.next();
+				result.addAll(selectViewsByType(nextNode.getSourceEdges(), type));
+		 	}
+		 	return result;
+		}
+			
+		«generatedMemberComment»
+		private java.util.Collection getIncomingLinksByType(java.util.Collection nodes, String type) {
+			java.util.Collection result = new java.util.ArrayList();
+		 	for (java.util.Iterator it = nodes.iterator(); it.hasNext();) {
+		 		org.eclipse.gmf.runtime.notation.View nextNode = (org.eclipse.gmf.runtime.notation.View) it.next();
+				result.addAll(selectViewsByType(nextNode.getTargetEdges(), type));
+		 	}
+		 	return result;
+		}
+«««			
+		«generatedMemberComment»
+		private java.util.Collection getChildrenByType(java.util.Collection nodes, String type) {
+			java.util.Collection result = new java.util.ArrayList();
+			for (java.util.Iterator it = nodes.iterator(); it.hasNext();) {
+				org.eclipse.gmf.runtime.notation.View nextNode = (org.eclipse.gmf.runtime.notation.View) it.next();
+				result.addAll(selectViewsByType(nextNode.getChildren(), type));
+			}
+			return result;
+		}
+			
+		«generatedMemberComment»
+		private java.util.Collection getDiagramLinksByType(java.util.Collection diagrams, String type) {
+			java.util.Collection result = new java.util.ArrayList();
+			for (java.util.Iterator it = diagrams.iterator(); it.hasNext();) {
+				org.eclipse.gmf.runtime.notation.Diagram nextDiagram = (org.eclipse.gmf.runtime.notation.Diagram) it.next();
+				result.addAll(selectViewsByType(nextDiagram.getEdges(), type));
+			}
+			return result;
+		}
+		«generatedMemberComment»
+		private java.util.Collection selectViewsByType(java.util.Collection views, String type) {
+			java.util.Collection result = new java.util.ArrayList();
+			for (java.util.Iterator it = views.iterator(); it.hasNext();) {
+				org.eclipse.gmf.runtime.notation.View nextView = (org.eclipse.gmf.runtime.notation.View) it.next();
+				if (type.equals(nextView.getType()) && isOwnView(nextView)) {
+					result.add(nextView);
+				}
+			}
+			return result;
+		}
+			
+		«generatedMemberComment»
+		private java.util.Collection createNavigatorItems(java.util.Collection views, Object parent, boolean isLeafs) {
+			java.util.Collection result = new java.util.ArrayList();
+			for (java.util.Iterator it = views.iterator(); it.hasNext();) {
+				result.add(new «getNavigatorItemQualifiedClassName()»((org.eclipse.gmf.runtime.notation.View) it.next(), parent, isLeafs));
+			}
+			return result;
+		}
+		«ENDIF»
+		
 				«generatedMemberComment()»
 				private boolean isOwnView(org.eclipse.gmf.runtime.notation.View view) {
 					return «VisualIDRegistry::modelID(editorGen.diagram)».equals(«xptVisualIDRegistry.
 					getModelIDMethodCall(editorGen.diagram)»(view));
 				}
 			
-«««		«generatedMemberComment»
-«««		private java.util.Collection createNavigatorItems(java.util.Collection views, Object parent, boolean isLeafs) {
-«««			java.util.Collection result = new java.util.ArrayList();
-«««			for (java.util.Iterator it = views.iterator(); it.hasNext();) {
-«««				result.add(new «getNavigatorItemQualifiedClassName()»((org.eclipse.gmf.runtime.notation.View) it.next(), parent, isLeafs));
-«««			}
-«««			return result;
-«««		}
+		
 		«getForeignShortcuts(it)»
 	'''
 
