@@ -996,7 +996,9 @@ public class ProfileApplicator {
 	 * @param properties
 	 */
 	private void updatePropertyValues(Stereotype stereotype, List<PropertyModel> properties) {
-		
+
+//		System.err.println("uml.profile.drafter.ProfileApplicator.updatePropertyValues() is disabled - values are not updated.");
+
 		for( PropertyModel propertyModel : properties) {
 			updatePropertyValue( stereotype, propertyModel);
 		}
@@ -1017,7 +1019,13 @@ public class ProfileApplicator {
 //		org.eclipse.papyrus.uml.profile.utils.Util.getValueObjectFromString(String, Type)
 		// Need to check if the Property value is modified
 		if(propertyModel.isValueModified() ) {
-			Object newValue = propertyModel.createPropertyValue();
+			String valueAsStr = propertyModel.getValue();
+			if( valueAsStr == null || valueAsStr.length() == 0 ) {
+				getUmlElement().setValue(stereotype, propertyModel.getProposedName(), null);
+				return;
+			}
+			
+			Object newValue = org.eclipse.papyrus.uml.profile.utils.Util.getValueObjectFromString(valueAsStr, propertyModel.getType());
 			getUmlElement().setValue(stereotype, propertyModel.getProposedName(), newValue);
 		}
 		
@@ -1110,8 +1118,8 @@ public class ProfileApplicator {
 	
 		boolean isUpdated = true;
 
-		System.err.println("createProperty(" + stereotype.getName() + "." + propertyModel.getProposedName() );
-		stereotype.createOwnedAttribute(propertyModel.getProposedName(), null);
+//		System.err.println("createProperty(" + stereotype.getName() + "." + propertyModel.getProposedName() );
+		stereotype.createOwnedAttribute(propertyModel.getProposedName(), propertyModel.getType());
 		
 		return isUpdated;
 	}

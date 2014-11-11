@@ -14,10 +14,16 @@ import org.eclipse.jface.databinding.swt.WidgetProperties;
 import org.eclipse.jface.databinding.viewers.ObservableListContentProvider;
 import org.eclipse.jface.databinding.viewers.ObservableMapLabelProvider;
 import org.eclipse.jface.databinding.viewers.ObservableValueEditingSupport;
+import org.eclipse.jface.databinding.viewers.ViewerProperties;
+import org.eclipse.jface.databinding.viewers.ViewersObservables;
+import org.eclipse.jface.viewers.ArrayContentProvider;
 import org.eclipse.jface.viewers.CellEditor;
 import org.eclipse.jface.viewers.ColumnLabelProvider;
 import org.eclipse.jface.viewers.ColumnViewer;
+import org.eclipse.jface.viewers.ComboBoxViewerCellEditor;
 import org.eclipse.jface.viewers.EditingSupport;
+import org.eclipse.jface.viewers.IBaseLabelProvider;
+import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.ITreeContentProvider;
@@ -26,9 +32,12 @@ import org.eclipse.jface.viewers.TableViewerColumn;
 import org.eclipse.jface.viewers.TextCellEditor;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.jface.viewers.ViewerCell;
+import org.eclipse.papyrus.uml.profile.drafter.ui.model.AccessibleTypeCatalog;
+import org.eclipse.papyrus.uml.profile.drafter.ui.model.ITypeCatalog;
 import org.eclipse.papyrus.uml.profile.drafter.ui.model.MemberKind;
 import org.eclipse.papyrus.uml.profile.drafter.ui.model.PropertyModel;
 import org.eclipse.papyrus.uml.profile.drafter.ui.model.StateKind;
+import org.eclipse.papyrus.uml.profile.drafter.ui.providers.TypeLabelProvider;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
@@ -43,6 +52,7 @@ import org.eclipse.swt.widgets.TableColumn;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
+import org.eclipse.uml2.uml.Type;
 
 /**
  * A widget used to edit a list of {@link PropertyModel}.
@@ -59,7 +69,7 @@ public class PropertiesEditorWidget {
 	
 	private TableViewer treeViewer;
 	private TableViewerColumn treeViewerColumn;
-	private TableViewerColumn treeViewerColumn_1;
+	private TableViewerColumn typeViewerColumn;
 	private TableViewerColumn tableViewerColumn_type;
 	private TableViewerColumn tableViewerColumn;
 	private TableViewerColumn treeViewerColumn_2;
@@ -67,6 +77,16 @@ public class PropertiesEditorWidget {
 	private TableViewerColumn tableViewerColumn_1;
 
 	private TableViewerColumn tableViewerColumn_2;
+
+	/**
+	 * Label provider associated to this class. Lazy creation.
+	 */
+	private ILabelProvider typeLabelProvider;
+
+	/**
+	 * The catalog of type associated to this class. Lazy creation.
+	 */
+	private ITypeCatalog typeCatalog;
 	
 	/**
 	 * Create the composite.
@@ -188,11 +208,11 @@ public class PropertiesEditorWidget {
 		trclmnName.setText("name");
 //		treeViewerColumn.setLabelProvider( new TaggedValueNameColumnLabelProvider() );
 
-		
-		treeViewerColumn_1 = new TableViewerColumn(treeViewer, SWT.NONE);
-		TableColumn trclmnType = treeViewerColumn_1.getColumn();
-		trclmnType.setWidth(100);
-		trclmnType.setText("type");
+		// Type column
+		typeViewerColumn = new TableViewerColumn(treeViewer, SWT.NONE);
+		TableColumn typeTableColumn = typeViewerColumn.getColumn();
+		typeTableColumn.setWidth(100);
+		typeTableColumn.setText("type");
 		
 		tableViewerColumn_type = new TableViewerColumn(treeViewer, SWT.NONE);
 		TableColumn tblclmnType = tableViewerColumn_type.getColumn();
@@ -424,6 +444,10 @@ public class PropertiesEditorWidget {
 		return new ObservableValueEditingSupport(viewer, dbc) {
 			protected IObservableValue doCreateCellEditorObservable( CellEditor cellEditor) {
 				//WidgetProperties.text(SWT.Modify).observe(cellEditor.getControl());
+				if( cellEditor instanceof ComboBoxViewerCellEditor) {
+					return cellEditorProperty.observe(((ComboBoxViewerCellEditor)cellEditor).getViewer() );
+				}
+				
 				return cellEditorProperty.observe(cellEditor.getControl());
 			}
 
@@ -443,26 +467,63 @@ public class PropertiesEditorWidget {
 		DataBindingContext bindingContext = new DataBindingContext();
 		//
 		ObservableListContentProvider listContentProvider = new ObservableListContentProvider();
-		IObservableMap[] observeMaps = BeansObservables.observeMaps(listContentProvider.getKnownElements(), PropertyModel.class, new String[]{"proposedName", "type", "stateKind", "memberKind", "lifeStatusKind", "value"});
-		treeViewer.setLabelProvider(new ObservableMapLabelProvider(observeMaps));
+		IObservableMap[] observeMaps = BeansObservables.observeMaps(listContentProvider.getKnownElements(), PropertyModel.class, new String[]{"proposedName", "type", "type", "stateKind", "memberKind", "lifeStatusKind", "value"});
+		treeViewer.setLabelProvider(new ObservableMapLabelProvider(observeMaps) {
+			/**
+			 * Handle Type
+			 * @see org.eclipse.jface.databinding.viewers.ObservableMapLabelProvider#getColumnText(java.lang.Object, int)
+			 *
+			 * @param element
+			 * @param columnIndex
+			 * @return
+			 */
+			@Override
+			public String getColumnText(Object element, int columnIndex) {
+				
+				if (columnIndex < attributeMaps.length) {
+					Object result = attributeMaps[columnIndex].get(element);
+					if(result instanceof Type) {
+						return getTypeLabelProvider().getText(result);
+					}
+					return result == null ? "" : result.toString(); //$NON-NLS-1$
+				}
+				return null;
+			}
+		});
+		
+		
+		
+		
+		
+		
 		treeViewer.setContentProvider(listContentProvider);
 		//
 		treeViewer.setInput(properties);
+		
+		// Set Cell Editors
 		//
 		CellEditor cellEditor_0 = new TextCellEditor(treeViewer.getTable());
 		IValueProperty cellEditorProperty_0 = WidgetProperties.text(SWT.Modify);
 		IBeanValueProperty valueProperty_0 = BeanProperties.value("proposedName");
 		treeViewerColumn.setEditingSupport(create(treeViewer, bindingContext, cellEditor_0, cellEditorProperty_0, valueProperty_0));
 		//
-		CellEditor cellEditor_1 = new TextCellEditor(treeViewer.getTable());
-		IValueProperty cellEditorProperty =  WidgetProperties.text(SWT.Modify);
-		IBeanValueProperty valueProperty_1 = BeanProperties.value("type");
-		treeViewerColumn_1.setEditingSupport(create(treeViewer, bindingContext, cellEditor_1, cellEditorProperty, valueProperty_1));
-		// Type with dedicated CellEditor
-		CellEditor cellEditor_11 = new TextCellEditor(treeViewer.getTable());
-		IValueProperty cellEditorProperty_11 =  WidgetProperties.text(SWT.Modify);
-		IBeanValueProperty valueProperty_11 = BeanProperties.value("type");
-		treeViewerColumn_1.setEditingSupport(create(treeViewer, bindingContext, cellEditor_11, cellEditorProperty_11, valueProperty_11));
+		// Type column
+//		CellEditor cellEditor_1 = new TextCellEditor(treeViewer.getTable());
+//		IValueProperty cellEditorProperty =  WidgetProperties.text(SWT.Modify);
+//		IBeanValueProperty valueProperty_1 = BeanProperties.value("type");
+//		treeViewerColumn_1.setEditingSupport(create(treeViewer, bindingContext, cellEditor_1, cellEditorProperty, valueProperty_1));
+		// Use a dedicated ComboBox CellEditor for type
+		ComboBoxViewerCellEditor typeCellEditor = new ComboBoxViewerCellEditor(treeViewer.getTable());
+		typeCellEditor.setContentProvider(ArrayContentProvider.getInstance());
+		typeCellEditor.setLabelProvider(getTypeLabelProvider());
+		typeCellEditor.setInput(getTypeCatalog().getTypes());
+		// Use a special label provider
+		
+		IValueProperty typeCellEditorBindAnchor =  ViewerProperties.singleSelection();
+		WidgetProperties.text(SWT.Modify);
+		IBeanValueProperty typeModelPropertyBindAnchor = BeanProperties.value("type");
+		typeViewerColumn.setEditingSupport(create(treeViewer, bindingContext, typeCellEditor, typeCellEditorBindAnchor, typeModelPropertyBindAnchor));
+
 		//
 		CellEditor cellEditor_2 = new TextCellEditor(treeViewer.getTable());
 		IValueProperty cellEditorProperty_1 =  WidgetProperties.text(SWT.Modify);
@@ -492,6 +553,31 @@ public class PropertiesEditorWidget {
 	}
 	
 	/**
+	 * Return the {@link TypeLabelProvider} associated to this class.
+	 * 
+	 * @return
+	 */
+	private ILabelProvider getTypeLabelProvider() {
+		if( typeLabelProvider == null) {
+			typeLabelProvider = new TypeLabelProvider();
+		}
+		return typeLabelProvider;
+	}
+
+	/**
+	 * Return the {@link ITypeCatalog} associated to this class.
+	 * 
+	 * @return
+	 */
+	private ITypeCatalog getTypeCatalog() {
+		if( typeCatalog == null) {
+			typeCatalog = new AccessibleTypeCatalog(selectedElement);
+		}
+		return typeCatalog;
+	}
+
+
+	/**
 	 * Additional databinding done manually.
 	 * @param bindingContext
 	 * @return
@@ -507,7 +593,7 @@ public class PropertiesEditorWidget {
 		CellEditor cellEditor_1 = new TextCellEditor(treeViewer.getTable());
 		IValueProperty cellEditorProperty =  WidgetProperties.text(SWT.Modify);
 		IBeanValueProperty valueProperty_1 = BeanProperties.value("type");
-		treeViewerColumn_1.setEditingSupport(create(treeViewer, bindingContext, cellEditor_1, cellEditorProperty, valueProperty_1));
+		typeViewerColumn.setEditingSupport(create(treeViewer, bindingContext, cellEditor_1, cellEditorProperty, valueProperty_1));
 		//
 		CellEditor cellEditor_2 = new TextCellEditor(treeViewer.getTable());
 		IValueProperty cellEditorProperty_1 =  WidgetProperties.text(SWT.Modify);

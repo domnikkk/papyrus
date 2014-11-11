@@ -19,6 +19,7 @@ import java.beans.PropertyChangeSupport;
 
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
+import org.eclipse.uml2.uml.Type;
 
 
 /**
@@ -53,7 +54,7 @@ public class PropertyModel {
 	 * The name proposed by the user for this Property.
 	 */
 	protected String proposedName;
-	protected String type;
+	protected Type type;
 	protected String value = "defaultValue";
 
 	protected Object initialValue;
@@ -105,7 +106,7 @@ public class PropertyModel {
 		this.property = property;
 		if(property != null) {
 			this.proposedName = property.getName();
-			this.type = property.getType().getName();
+			this.type = property.getType();
 		}
 		if( propertyValue != null) {
 			this.initialValue = propertyValue;
@@ -169,7 +170,7 @@ public class PropertyModel {
 	/**
 	 * @return the type
 	 */
-	public String getType() {
+	public Type getType() {
 		return type;
 	}
 
@@ -179,7 +180,7 @@ public class PropertyModel {
 	/**
 	 * @param type the type to set
 	 */
-	public void setType(String type) {
+	public void setType(Type type) {
 		firePropertyChange("type", this.type, this.type = type);
 	}
 
@@ -368,32 +369,32 @@ public class PropertyModel {
 		// None is null
 		String originalValue = initialValue.toString();
 		if( getValue().equals(originalValue)) {
-			return true;
+			return false;
 		}
-		return false;
+		return true;
 	}
 
 	/**
 	 * 
 	 * @return
 	 */
-	public Object createPropertyValue() {
-		return createPropertyValue( type, value);
-	}
-
-
-
-	private Object createPropertyValue(String type, String value) {
-
-		// TODO : change it !!!
-
-		if( "String".equals(type) ) {
-			return value;
-		}
-		else if ( "Integer".equals(type) ) {
-			return Integer.valueOf(value);
-		}
-		
-		return value;
-	}
+//	public Object createPropertyValue() {
+//		return createPropertyValue( type, value);
+//	}
+//
+//
+//
+//	private Object createPropertyValue(Type type, String value) {
+//
+//		// TODO : change it !!!
+//
+//		if( "String".equals(type) ) {
+//			return value;
+//		}
+//		else if ( "Integer".equals(type) ) {
+//			return Integer.valueOf(value);
+//		}
+//		
+//		return value;
+//	}
 }
