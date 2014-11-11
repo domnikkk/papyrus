@@ -303,7 +303,7 @@
 					<useUIHarness>true</useUIHarness>
 					<useUIThread>true</useUIThread>
 					<testFailureIgnore>true</testFailureIgnore>
-					<argLine>-Xms512m -Xmx2048m -XX:MaxPermSize=512M</argLine>
+					<argLine>-Xms512m -Xmx2048m -XX:MaxPermSize=512M -XX:SoftRefLRUPolicyMSPerMB=100</argLine>
 					<appArgLine>-testConfig=${testConfig}</appArgLine>
 					<product>org.eclipse.sdk.ide</product>
 					

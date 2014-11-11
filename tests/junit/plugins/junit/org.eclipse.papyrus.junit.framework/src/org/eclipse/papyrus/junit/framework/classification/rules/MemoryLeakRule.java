@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014 CEA and others.
+ * Copyright (c) 2014 CEA, Christian W. Damus, and others.
  * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,6 +8,7 @@
  *
  * Contributors:
  *   Christian W. Damus (CEA) - Initial API and implementation
+ *   Christian W. Damus - bug 451013
  *
  */
 package org.eclipse.papyrus.junit.framework.classification.rules;
@@ -140,7 +141,11 @@ public class MemoryLeakRule extends TestWatcher {
 
 			if(!tracker.remove(ref) && !tracker.isEmpty()) {
 				// The remaining tracked elements are leaked
-				fail("One or more objects leaked:\n" + Joiner.on('\n').join(Iterables.transform(tracker, label())));
+				final String leaks = Joiner.on('\n').join(Iterables.transform(tracker, label()));
+				if (warmingUp) {
+					System.err.printf("[MEM] Warm-up detected leaks: %s%n", leaks.replace('\n', ' '));
+				}
+				fail("One or more objects leaked:\n" + leaks);
 				break; // Unreachable
 			}
 		}
@@ -252,6 +257,7 @@ public class MemoryLeakRule extends TestWatcher {
 		// always fail, so run such a test once up-front. Call this a metahack
 
 		try {
+			System.err.printf("[MEM] Warming up test suite: %s (%s)%n", testClass.getName(), testName);
 			new JUnitCore().run(Request.method(testClass, testName));
 		} catch (Exception e) {
 			// Fine, so the warm-up didn't work
