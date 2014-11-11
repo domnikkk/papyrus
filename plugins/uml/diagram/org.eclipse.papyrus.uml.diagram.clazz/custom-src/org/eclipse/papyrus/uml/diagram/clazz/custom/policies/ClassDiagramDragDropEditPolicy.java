@@ -19,18 +19,21 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
+import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.commands.UnexecutableCommand;
 import org.eclipse.gef.requests.ChangeBoundsRequest;
 import org.eclipse.gmf.runtime.common.core.command.CompositeCommand;
+import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand;
 import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IPrimaryEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.ListCompartmentEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.requests.DropObjectsRequest;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.notation.Diagram;
@@ -408,5 +411,40 @@ public class ClassDiagramDragDropEditPolicy extends CommonDiagramDragDropEditPol
 			}
 			return cmd;
 		}
+	}
+
+	/**
+	 * @Overrided org.eclipse.papyrus.uml.diagram.common.editpolicies.CommonDiagramDragDropEditPolicy to resolve cause of repeated definition
+	 *            of attributes shown outside classes when dragged back
+	 *
+	 * @param hostEP
+	 *            The host edit part which will be the parent of the new node
+	 * @param semanticHint
+	 *            the semantic hint of the view to create
+	 * @param location
+	 *            the drop location
+	 * @param droppedObject
+	 *            the object to drop
+	 * @param request
+	 *            the drop request (use to test ctrl key)
+	 * @return the creation node command
+	 */
+	@Override
+	protected ICommand getDefaultDropNodeCommand(EditPart hostEP, String semanticHint, Point absoluteLocation, EObject droppedObject, DropObjectsRequest request) {
+		GraphicalEditPart parent = (GraphicalEditPart) getHost();
+		if (parent instanceof ListCompartmentEditPart) {
+			@SuppressWarnings("unchecked")
+			List<EditPart> allChildren = parent.getChildren();
+			for (EditPart nextChild : allChildren) {
+				if (!(nextChild instanceof GraphicalEditPart)) {
+					continue;
+				}
+				EObject nextChildSemantic = ((GraphicalEditPart) nextChild).resolveSemanticElement();
+				if (nextChildSemantic == droppedObject) {
+					return org.eclipse.gmf.runtime.common.core.command.UnexecutableCommand.INSTANCE;
+				}
+			}
+		}
+		return super.getDefaultDropNodeCommand(hostEP, semanticHint, absoluteLocation, droppedObject, request);
 	}
 }
