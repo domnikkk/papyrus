@@ -68,15 +68,14 @@ public class PropertiesEditorWidget {
 	private NamedElement selectedElement;
 	
 	private TableViewer treeViewer;
-	private TableViewerColumn treeViewerColumn;
+	private TableViewerColumn nameViewerColumn;
 	private TableViewerColumn typeViewerColumn;
-	private TableViewerColumn tableViewerColumn_type;
-	private TableViewerColumn tableViewerColumn;
-	private TableViewerColumn treeViewerColumn_2;
+	private TableViewerColumn statusViewerColumn;
+	private TableViewerColumn valueViewerColumn;
 
-	private TableViewerColumn tableViewerColumn_1;
+	private TableViewerColumn memberViewerColumn;
 
-	private TableViewerColumn tableViewerColumn_2;
+	private TableViewerColumn deletedViewerColumn;
 
 	/**
 	 * Label provider associated to this class. Lazy creation.
@@ -202,10 +201,10 @@ public class PropertiesEditorWidget {
 		gd_tree.minimumHeight = 100;
 		tree.setLayoutData(gd_tree);
 		
-		treeViewerColumn = new TableViewerColumn(treeViewer, SWT.NONE);
-		TableColumn trclmnName = treeViewerColumn.getColumn();
-		trclmnName.setWidth(100);
-		trclmnName.setText("name");
+		nameViewerColumn = new TableViewerColumn(treeViewer, SWT.NONE);
+		TableColumn NameTableColumn = nameViewerColumn.getColumn();
+		NameTableColumn.setWidth(100);
+		NameTableColumn.setText("name");
 //		treeViewerColumn.setLabelProvider( new TaggedValueNameColumnLabelProvider() );
 
 		// Type column
@@ -214,31 +213,26 @@ public class PropertiesEditorWidget {
 		typeTableColumn.setWidth(100);
 		typeTableColumn.setText("type");
 		
-		tableViewerColumn_type = new TableViewerColumn(treeViewer, SWT.NONE);
-		TableColumn tblclmnType = tableViewerColumn_type.getColumn();
-		tblclmnType.setWidth(100);
-		tblclmnType.setText("type");
+		statusViewerColumn = new TableViewerColumn(treeViewer, SWT.NONE);
+		TableColumn statusTableColumn = statusViewerColumn.getColumn();
+		statusTableColumn.setWidth(67);
+		statusTableColumn.setText("status");
 		
-		tableViewerColumn = new TableViewerColumn(treeViewer, SWT.NONE);
-		TableColumn tblclmnStatus = tableViewerColumn.getColumn();
-		tblclmnStatus.setWidth(67);
-		tblclmnStatus.setText("status");
+		memberViewerColumn = new TableViewerColumn(treeViewer, SWT.NONE);
+		TableColumn memberTableColumn = memberViewerColumn.getColumn();
+		memberTableColumn.setWidth(64);
+		memberTableColumn.setText("member");
 		
-		tableViewerColumn_1 = new TableViewerColumn(treeViewer, SWT.NONE);
-		TableColumn tblclmnMember = tableViewerColumn_1.getColumn();
-		tblclmnMember.setWidth(64);
-		tblclmnMember.setText("member");
-		
-		tableViewerColumn_2 = new TableViewerColumn(treeViewer, SWT.NONE);
-		TableColumn tblclmnDel = tableViewerColumn_2.getColumn();
-		tblclmnDel.setWidth(37);
-		tblclmnDel.setText("del");
+		deletedViewerColumn = new TableViewerColumn(treeViewer, SWT.NONE);
+		TableColumn deletedTableColumn = deletedViewerColumn.getColumn();
+		deletedTableColumn.setWidth(37);
+		deletedTableColumn.setText("deleted");
 //		treeViewerColumn_1.setLabelProvider( new TaggedValueNameColumnLabelProvider() );
 		
-		treeViewerColumn_2 = new TableViewerColumn(treeViewer, SWT.NONE);
-		TableColumn trclmnValue = treeViewerColumn_2.getColumn();
-		trclmnValue.setWidth(100);
-		trclmnValue.setText("value");
+		valueViewerColumn = new TableViewerColumn(treeViewer, SWT.NONE);
+		TableColumn valueTableColumn = valueViewerColumn.getColumn();
+		valueTableColumn.setWidth(100);
+		valueTableColumn.setText("value");
 //		treeViewerColumn_2.setLabelProvider( new TaggedValueValueColumnLabelProvider() );
 
 		tree.setHeaderVisible(true);
@@ -467,7 +461,7 @@ public class PropertiesEditorWidget {
 		DataBindingContext bindingContext = new DataBindingContext();
 		//
 		ObservableListContentProvider listContentProvider = new ObservableListContentProvider();
-		IObservableMap[] observeMaps = BeansObservables.observeMaps(listContentProvider.getKnownElements(), PropertyModel.class, new String[]{"proposedName", "type", "type", "stateKind", "memberKind", "lifeStatusKind", "value"});
+		IObservableMap[] observeMaps = BeansObservables.observeMaps(listContentProvider.getKnownElements(), PropertyModel.class, new String[]{"proposedName", "type", "stateKind", "memberKind", "lifeStatusKind", "value"});
 		treeViewer.setLabelProvider(new ObservableMapLabelProvider(observeMaps) {
 			/**
 			 * Handle Type
@@ -505,7 +499,7 @@ public class PropertiesEditorWidget {
 		CellEditor cellEditor_0 = new TextCellEditor(treeViewer.getTable());
 		IValueProperty cellEditorProperty_0 = WidgetProperties.text(SWT.Modify);
 		IBeanValueProperty valueProperty_0 = BeanProperties.value("proposedName");
-		treeViewerColumn.setEditingSupport(create(treeViewer, bindingContext, cellEditor_0, cellEditorProperty_0, valueProperty_0));
+		nameViewerColumn.setEditingSupport(create(treeViewer, bindingContext, cellEditor_0, cellEditorProperty_0, valueProperty_0));
 		//
 		// Type column
 //		CellEditor cellEditor_1 = new TextCellEditor(treeViewer.getTable());
@@ -528,23 +522,23 @@ public class PropertiesEditorWidget {
 		CellEditor cellEditor_2 = new TextCellEditor(treeViewer.getTable());
 		IValueProperty cellEditorProperty_1 =  WidgetProperties.text(SWT.Modify);
 		IBeanValueProperty valueProperty_2 = BeanProperties.value("stateKind");
-		tableViewerColumn.setEditingSupport(create(treeViewer, bindingContext, cellEditor_2, cellEditorProperty_1, valueProperty_2));
+		statusViewerColumn.setEditingSupport(create(treeViewer, bindingContext, cellEditor_2, cellEditorProperty_1, valueProperty_2));
 		//
 		CellEditor cellEditor_3 = new TextCellEditor(treeViewer.getTable());
 		IValueProperty cellEditorProperty_2 =  WidgetProperties.text(SWT.Modify);
 		IBeanValueProperty valueProperty_3 = BeanProperties.value("value");
-		treeViewerColumn_2.setEditingSupport(create(treeViewer, bindingContext, cellEditor_3, cellEditorProperty_2, valueProperty_3));
+		valueViewerColumn.setEditingSupport(create(treeViewer, bindingContext, cellEditor_3, cellEditorProperty_2, valueProperty_3));
 		//
 		//
 		CellEditor cellEditor_member = new TextCellEditor(treeViewer.getTable());
 		IValueProperty cellEditorPropertyMember =  WidgetProperties.text(SWT.Modify);
 		IBeanValueProperty valuePropertyMember = BeanProperties.value("memberKind");
-		tableViewerColumn_1.setEditingSupport(create(treeViewer, bindingContext, cellEditor_member, cellEditorPropertyMember, valuePropertyMember));
+		memberViewerColumn.setEditingSupport(create(treeViewer, bindingContext, cellEditor_member, cellEditorPropertyMember, valuePropertyMember));
 		//
 		CellEditor cellEditor_del = new TextCellEditor(treeViewer.getTable());
 		IValueProperty cellEditorPropertyDel =  WidgetProperties.text(SWT.Modify);
 		IBeanValueProperty valuePropertyDel = BeanProperties.value("lifeStatusKind");
-		tableViewerColumn_1.setEditingSupport(create(treeViewer, bindingContext, cellEditor_del, cellEditorPropertyDel, valuePropertyDel));
+		memberViewerColumn.setEditingSupport(create(treeViewer, bindingContext, cellEditor_del, cellEditorPropertyDel, valuePropertyDel));
 
 		
 		
@@ -588,7 +582,7 @@ public class PropertiesEditorWidget {
 		CellEditor cellEditor_0 = new TextCellEditor(treeViewer.getTable());
 		IValueProperty cellEditorProperty_0 = WidgetProperties.text(SWT.Modify);
 		IBeanValueProperty valueProperty_0 = BeanProperties.value("proposedName");
-		treeViewerColumn.setEditingSupport(create(treeViewer, bindingContext, cellEditor_0, cellEditorProperty_0, valueProperty_0));
+		nameViewerColumn.setEditingSupport(create(treeViewer, bindingContext, cellEditor_0, cellEditorProperty_0, valueProperty_0));
 		//
 		CellEditor cellEditor_1 = new TextCellEditor(treeViewer.getTable());
 		IValueProperty cellEditorProperty =  WidgetProperties.text(SWT.Modify);
@@ -598,12 +592,12 @@ public class PropertiesEditorWidget {
 		CellEditor cellEditor_2 = new TextCellEditor(treeViewer.getTable());
 		IValueProperty cellEditorProperty_1 =  WidgetProperties.text(SWT.Modify);
 		IBeanValueProperty valueProperty_2 = BeanProperties.value("modelStatus");
-		tableViewerColumn.setEditingSupport(create(treeViewer, bindingContext, cellEditor_2, cellEditorProperty_1, valueProperty_2));
+		statusViewerColumn.setEditingSupport(create(treeViewer, bindingContext, cellEditor_2, cellEditorProperty_1, valueProperty_2));
 		//
 		CellEditor cellEditor_3 = new TextCellEditor(treeViewer.getTable());
 		IValueProperty cellEditorProperty_2 =  WidgetProperties.text(SWT.Modify);
 		IBeanValueProperty valueProperty_3 = BeanProperties.value("value");
-		treeViewerColumn_2.setEditingSupport(create(treeViewer, bindingContext, cellEditor_3, cellEditorProperty_2, valueProperty_3));
+		valueViewerColumn.setEditingSupport(create(treeViewer, bindingContext, cellEditor_3, cellEditorProperty_2, valueProperty_3));
 		//
 		return bindingContext;
 	}

@@ -70,7 +70,7 @@ public class StereotypeNameContentProposal extends AbstractStereotypeContentProp
 			return stereotype.getName();
 		}
 		else {
-			return stereotype.getName() + "(" + qualifiedName + ")";
+			return stereotype.getName() + "  (" + qualifiedName + ")";
 		}
 	}
 
