@@ -187,7 +187,7 @@
       <repositoryList
           name="Mars">
         <repository
-            url="http://download.eclipse.org/eclipse/updates/4.5milestones/S-4.5M2-201409180330/">
+            url="http://download.eclipse.org/eclipse/updates/4.5milestones/S-4.5M3-201410292000/">
           <annotation
               source="http://www.eclipse.org/Papyrus/2014/releng/dependencytools">
             <detail
@@ -279,7 +279,7 @@
           </annotation>
         </repository>
         <repository
-            url="http://download.eclipse.org/modeling/emft/mwe/updates/milestones/S201409300336/mwe">
+            url="http://download.eclipse.org/modeling/emft/mwe/updates/milestones/S201411111017/mwe">
           <annotation
               source="http://www.eclipse.org/Papyrus/2014/releng/dependencytools">
             <detail
@@ -289,7 +289,7 @@
           </annotation>
         </repository>
         <repository
-            url="http://download.eclipse.org/modeling/emft/mwe/updates/milestones/S201409300856/mwe2lang">
+            url="http://download.eclipse.org/modeling/emft/mwe/updates/milestones/S201411111103/mwe2lang">
           <annotation
               source="http://www.eclipse.org/Papyrus/2014/releng/dependencytools">
             <detail
@@ -299,7 +299,7 @@
           </annotation>
         </repository>
         <repository
-            url="http://download.eclipse.org/mmt/qvto/updates/milestones/3.4.0/S201406101621">
+            url="http://download.eclipse.org/mmt/qvto/updates/milestones/3.5.0/S201411111552">
           <annotation
               source="http://www.eclipse.org/Papyrus/2014/releng/dependencytools">
             <detail
@@ -319,7 +319,7 @@
           </annotation>
         </repository>
         <repository
-            url="http://download.eclipse.org/modeling/mdt/ocl/updates/milestones/5.1.0/S201410011441">
+            url="http://download.eclipse.org/modeling/mdt/ocl/updates/milestones/5.1.0/S201411101552">
           <annotation
               source="http://www.eclipse.org/Papyrus/2014/releng/dependencytools">
             <detail
@@ -329,7 +329,7 @@
           </annotation>
         </repository>
         <repository
-            url="http://download.eclipse.org/modeling/mdt/uml2/updates/5.1-I-builds">
+            url="http://download.eclipse.org/modeling/mdt/uml2/updates/5.1milestones">
           <annotation
               source="http://www.eclipse.org/Papyrus/2014/releng/dependencytools">
             <detail
@@ -339,7 +339,7 @@
           </annotation>
         </repository>
         <repository
-            url="http://download.eclipse.org/modeling/m2t/xpand/updates/milestones/S201409300343/">
+            url="http://download.eclipse.org/modeling/m2t/xpand/updates/milestones/S201411111024/">
           <annotation
               source="http://www.eclipse.org/Papyrus/2014/releng/dependencytools">
             <detail
@@ -349,7 +349,7 @@
           </annotation>
         </repository>
         <repository
-            url="http://download.eclipse.org/modeling/tmf/xtext/updates/milestones/head/S201409300608/">
+            url="http://download.eclipse.org/modeling/tmf/xtext/updates/milestones/head/S201411111037/">
           <annotation
               source="http://www.eclipse.org/Papyrus/2014/releng/dependencytools">
             <detail
@@ -359,7 +359,7 @@
           </annotation>
         </repository>
         <repository
-            url="http://download.eclipse.org/modeling/emf/compare/updates/milestones/3.1/S201408190703">
+            url="http://download.eclipse.org/modeling/emf/compare/updates/milestones/3.1/S201411071344">
           <annotation
               source="http://www.eclipse.org/Papyrus/2014/releng/dependencytools">
             <detail
@@ -369,7 +369,7 @@
           </annotation>
         </repository>
         <repository
-            url="http://download.eclipse.org/webtools/downloads/drops/R3.7.0/S-3.7.0M2-20140925000031/repository/">
+            url="http://download.eclipse.org/webtools/downloads/drops/R3.7.0/S-3.7.0M3-20141111153131/repository/">
           <annotation
               source="http://www.eclipse.org/Papyrus/2014/releng/dependencytools">
             <detail
@@ -1965,7 +1965,7 @@
           <repositoryList
               name="Mars">
             <repository
-                url="http://download.eclipse.org/tools/cdt/builds/luna/milestones">
+                url="http://download.eclipse.org/tools/cdt/builds/mars/milestones">
               <annotation
                   source="http://www.eclipse.org/Papyrus/2014/releng/dependencytools">
                 <detail
@@ -1975,7 +1975,7 @@
               </annotation>
             </repository>
             <repository
-                url="http://download.eclipse.org/facet/updates/integration/0.5.0/I201408050748/">
+                url="http://download.eclipse.org/facet/updates/integration/0.5.0/I201409220856/">
               <annotation
                   source="http://www.eclipse.org/Papyrus/2014/releng/dependencytools">
                 <detail

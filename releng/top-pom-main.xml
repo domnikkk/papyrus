@@ -324,13 +324,13 @@
 			<id>emft-mwe[0]</id>
 			<layout>p2</layout>
 			<!-- updateFrom("EMFT MWE",0) -->
-			<url>http://download.eclipse.org/modeling/emft/mwe/updates/milestones/S201409300336/mwe</url>
+			<url>http://download.eclipse.org/modeling/emft/mwe/updates/milestones/S201411111017/mwe</url>
 		</repository>
 		<repository>
 			<id>emft-mwe[1]</id>
 			<layout>p2</layout>
 			<!-- updateFrom("EMFT MWE",1) -->
-			<url>http://download.eclipse.org/modeling/emft/mwe/updates/milestones/S201409300856/mwe2lang</url>
+			<url>http://download.eclipse.org/modeling/emft/mwe/updates/milestones/S201411111103/mwe2lang</url>
 		</repository>
 		<repository>
 			<id>emf-transaction</id>
@@ -378,25 +378,25 @@
 			<id>m2t-xpand</id>
 			<layout>p2</layout>
 			<!-- updateFrom("M2T XPAND",0) -->
-			<url>http://download.eclipse.org/modeling/m2t/xpand/updates/milestones/S201409300343/</url>
+			<url>http://download.eclipse.org/modeling/m2t/xpand/updates/milestones/S201411111024/</url>
 		</repository>
 		<repository>
 			<id>mdt-ocl</id>
 			<layout>p2</layout>
 			<!-- updateFrom("MDT OCL 5.1",0) -->
-			<url>http://download.eclipse.org/modeling/mdt/ocl/updates/interim/5.1.0</url>
+			<url>http://download.eclipse.org/modeling/mdt/ocl/updates/milestones/5.1.0/S201411101552</url>
 		</repository>
 		<repository>
 			<id>mdt-uml2</id>
 			<layout>p2</layout>
 			<!-- updateFrom("MDT UML2",0) -->
-			<url>http://download.eclipse.org/modeling/mdt/uml2/updates/5.1-I-builds</url>
+			<url>http://download.eclipse.org/modeling/mdt/uml2/updates/5.1milestones</url>
 		</repository>
 		<repository>
 			<id>mmt-qvto</id>
 			<layout>p2</layout>
 			<!-- updateFrom("QVT Operational",0) -->
-			<url>http://download.eclipse.org/mmt/qvto/updates/milestones/3.4.0/S201406101621</url>
+			<url>http://download.eclipse.org/mmt/qvto/updates/milestones/3.5.0/S201411111552</url>
 		</repository>
 		<repository>
 			<id>nattable</id>
@@ -412,13 +412,13 @@
 			<id>tmf-xtext</id>
 			<layout>p2</layout>
 			<!-- updateFrom("Xtext, Xtend",0) -->
-			<url>http://download.eclipse.org/modeling/tmf/xtext/updates/milestones/head/S201409300608/</url>
+			<url>http://download.eclipse.org/modeling/tmf/xtext/updates/milestones/head/S201411111037/</url>
 		</repository>
 		<repository>
 			<id>webtools</id>
 			<layout>p2</layout>
 			<!-- updateFrom("WebTools",0) -->
-			<url>http://download.eclipse.org/webtools/downloads/drops/R3.7.0/S-3.7.0M2-20140925000031/repository/</url>
+			<url>http://download.eclipse.org/webtools/downloads/drops/R3.7.0/S-3.7.0M3-20141111153131/repository/</url>
 		</repository>
 	</repositories>
 	<pluginRepositories>
