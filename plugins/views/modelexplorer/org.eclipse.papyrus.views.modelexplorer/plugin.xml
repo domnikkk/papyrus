@@ -542,7 +542,7 @@ TODO: PAPYRUS EMF-FACET update uiCustom Here
          <command
                commandId="org.eclipse.papyrus.infra.services.controlmode.createsubmodel"
                icon="icons/CreateSubModel_16.png"
-               label="Create submodel unit"
+               label="Create Submodel"
                style="push"
                tooltip="Move this submodel into its own resource (file)">
             <visibleWhen
@@ -560,7 +560,7 @@ TODO: PAPYRUS EMF-FACET update uiCustom Here
          <command
                commandId="org.eclipse.papyrus.infra.services.controlmode.reintegratesubmodel"
                icon="icons/ReintegrateSubModel_16.png"
-               label="Reintegrate submodel unit into parent model"
+               label="Reintegrate Submodel"
                style="push"
                tooltip="Reintegrate this submodel into the resource (file) of the parent model">
             <visibleWhen
