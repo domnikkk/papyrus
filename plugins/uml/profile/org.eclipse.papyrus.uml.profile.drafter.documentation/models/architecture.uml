@@ -58,6 +58,1553 @@
                       </ownedParameter>
                     </ownedOperation>
                   </packagedElement>
+                  <packagedElement xmi:type="uml:Package" xmi:id="_-nhLAGpGEeSHJZbEOSiM7A" name="utils">
+                    <packagedElement xmi:type="uml:Class" xmi:id="_-nhLAWpGEeSHJZbEOSiM7A" name="UMLPrimitiveTypesModel">
+                      <ownedComment xmi:type="uml:Comment" xmi:id="_-nnRoGpGEeSHJZbEOSiM7A">
+                        <body>&#xD;
+ * A class encapsulating the UMLPrimitiveTypes library.&#xD;
+ * &#xD;
+ * @author cedric dumoulin&#xD;
+ *&#xD;
+ </body>
+                      </ownedComment>
+                      <ownedAttribute xmi:type="uml:Property" xmi:id="_-nnRp2pGEeSHJZbEOSiM7A" name="UMLPrimitiveTypes_BOOLEAN" visibility="public" type="_-nnRpmpGEeSHJZbEOSiM7A" isUnique="false">
+                        <ownedComment xmi:type="uml:Comment" xmi:id="_-nnRqGpGEeSHJZbEOSiM7A">
+                          <body> constant to identify the type of a Boolean property </body>
+                        </ownedComment>
+                      </ownedAttribute>
+                      <ownedAttribute xmi:type="uml:Property" xmi:id="_-nnRqWpGEeSHJZbEOSiM7A" name="UMLPrimitiveTypes_INTEGER" visibility="public" type="_-nnRpmpGEeSHJZbEOSiM7A" isUnique="false">
+                        <ownedComment xmi:type="uml:Comment" xmi:id="_-nnRqmpGEeSHJZbEOSiM7A">
+                          <body> constant to identify the type of an Integer property </body>
+                        </ownedComment>
+                      </ownedAttribute>
+                      <ownedAttribute xmi:type="uml:Property" xmi:id="_-nnRq2pGEeSHJZbEOSiM7A" name="UMLPrimitiveTypes_STRING" visibility="public" type="_-nnRpmpGEeSHJZbEOSiM7A" isUnique="false">
+                        <ownedComment xmi:type="uml:Comment" xmi:id="_-nnRrGpGEeSHJZbEOSiM7A">
+                          <body> constant to identify the type of a String property </body>
+                        </ownedComment>
+                      </ownedAttribute>
+                      <ownedAttribute xmi:type="uml:Property" xmi:id="_-nnRrWpGEeSHJZbEOSiM7A" name="UMLPrimitiveTypes_UNLIMITED_NATURAL" visibility="public" type="_-nnRpmpGEeSHJZbEOSiM7A" isUnique="false">
+                        <ownedComment xmi:type="uml:Comment" xmi:id="_-ntYQGpGEeSHJZbEOSiM7A">
+                          <body> constant to identify the type of an Unlimited Natural property </body>
+                        </ownedComment>
+                      </ownedAttribute>
+                      <ownedAttribute xmi:type="uml:Property" xmi:id="_-ntYQWpGEeSHJZbEOSiM7A" name="UMLPrimitiveTypes_REAL" visibility="public" type="_-nnRpmpGEeSHJZbEOSiM7A" isUnique="false">
+                        <ownedComment xmi:type="uml:Comment" xmi:id="_-ntYQmpGEeSHJZbEOSiM7A">
+                          <body> constant to identify the type of an Unlimited Natural property </body>
+                        </ownedComment>
+                      </ownedAttribute>
+                      <ownedAttribute xmi:type="uml:Property" xmi:id="_-ntYQ2pGEeSHJZbEOSiM7A" name="UMLPrimitiveTypes_BOOLEAN_NAME" visibility="public" isLeaf="true" isStatic="true" type="_qhilUVR7EeSbnPFbgpN9Ow" isUnique="false">
+                        <ownedComment xmi:type="uml:Comment" xmi:id="_-ntYRGpGEeSHJZbEOSiM7A">
+                          <body> constant to identify the type of a Boolean property </body>
+                        </ownedComment>
+                      </ownedAttribute>
+                      <ownedAttribute xmi:type="uml:Property" xmi:id="_-ntYRWpGEeSHJZbEOSiM7A" name="UMLPrimitiveTypes_INTEGER_NAME" visibility="public" isLeaf="true" isStatic="true" type="_qhilUVR7EeSbnPFbgpN9Ow" isUnique="false">
+                        <ownedComment xmi:type="uml:Comment" xmi:id="_-ntYRmpGEeSHJZbEOSiM7A">
+                          <body> constant to identify the type of an Integer property </body>
+                        </ownedComment>
+                      </ownedAttribute>
+                      <ownedAttribute xmi:type="uml:Property" xmi:id="_-ntYR2pGEeSHJZbEOSiM7A" name="UMLPrimitiveTypes_STRING_NAME" visibility="public" isLeaf="true" isStatic="true" type="_qhilUVR7EeSbnPFbgpN9Ow" isUnique="false">
+                        <ownedComment xmi:type="uml:Comment" xmi:id="_-ntYSGpGEeSHJZbEOSiM7A">
+                          <body> constant to identify the type of a String property </body>
+                        </ownedComment>
+                      </ownedAttribute>
+                      <ownedAttribute xmi:type="uml:Property" xmi:id="_-ntYSWpGEeSHJZbEOSiM7A" name="UMLPrimitiveTypes_UNLIMITED_NATURAL_NAME" visibility="public" isLeaf="true" isStatic="true" type="_qhilUVR7EeSbnPFbgpN9Ow" isUnique="false">
+                        <ownedComment xmi:type="uml:Comment" xmi:id="_-ntYSmpGEeSHJZbEOSiM7A">
+                          <body> constant to identify the type of an Unlimited Natural property </body>
+                        </ownedComment>
+                      </ownedAttribute>
+                      <ownedAttribute xmi:type="uml:Property" xmi:id="_-ntYS2pGEeSHJZbEOSiM7A" name="UMLPrimitiveTypes_REAL_NAME" visibility="public" isLeaf="true" isStatic="true" type="_qhilUVR7EeSbnPFbgpN9Ow" isUnique="false">
+                        <ownedComment xmi:type="uml:Comment" xmi:id="_-ntYTGpGEeSHJZbEOSiM7A">
+                          <body> constant to identify the type of an Unlimited Natural property </body>
+                        </ownedComment>
+                      </ownedAttribute>
+                      <ownedAttribute xmi:type="uml:Property" xmi:id="_-ntYTWpGEeSHJZbEOSiM7A" name="UMLPrimitiveTypes_LIBRARY_NAME" visibility="public" isLeaf="true" isStatic="true" type="_qhilUVR7EeSbnPFbgpN9Ow" isUnique="false"/>
+                      <ownedAttribute xmi:type="uml:Property" xmi:id="_-nze4WpGEeSHJZbEOSiM7A" name="UMLPrimitiveTypes_PACKAGE_NAME" visibility="private" isLeaf="true" isStatic="true" type="_-nze4GpGEeSHJZbEOSiM7A" isUnique="false"/>
+                      <ownedAttribute xmi:type="uml:Property" xmi:id="_-nze4mpGEeSHJZbEOSiM7A" name="libraryResource" visibility="protected" type="_cMuqOOy4EeOcMebkujJNBQ" isUnique="false">
+                        <ownedComment xmi:type="uml:Comment" xmi:id="_-nze42pGEeSHJZbEOSiM7A">
+                          <body>&#xD;
+	 * The resource containing the library.&#xD;
+	 </body>
+                        </ownedComment>
+                      </ownedAttribute>
+                      <ownedAttribute xmi:type="uml:Property" xmi:id="_-nze5WpGEeSHJZbEOSiM7A" name="libraryPackage" visibility="private" type="_-nze5GpGEeSHJZbEOSiM7A" isUnique="false"/>
+                      <ownedOperation xmi:type="uml:Operation" xmi:id="_-nze5mpGEeSHJZbEOSiM7A" name="extractTypes" visibility="private">
+                        <ownedComment xmi:type="uml:Comment" xmi:id="_-nze52pGEeSHJZbEOSiM7A">
+                          <body>&#xD;
+	 * Extract types from the resource&#xD;
+	 </body>
+                        </ownedComment>
+                      </ownedOperation>
+                      <ownedOperation xmi:type="uml:Operation" xmi:id="_-nze6WpGEeSHJZbEOSiM7A" name="lookupPrimitiveTypesResource" visibility="private">
+                        <ownedComment xmi:type="uml:Comment" xmi:id="_-nze6mpGEeSHJZbEOSiM7A">
+                          <body>&#xD;
+	 * Lookup for the {@link Resource} containing the Library.&#xD;
+	 * &#xD;
+	 * @param resourceSet The {@link ResourceSet} into which we lookup&#xD;
+	 * @return The {@link Resource}, or null if not found.&#xD;
+	 * @throws NotFoundException &#xD;
+	 </body>
+                        </ownedComment>
+                        <ownedParameter xmi:type="uml:Parameter" xmi:id="_-n5lgGpGEeSHJZbEOSiM7A" type="_cMuqOOy4EeOcMebkujJNBQ" direction="return"/>
+                        <ownedParameter xmi:type="uml:Parameter" xmi:id="_-n5lgWpGEeSHJZbEOSiM7A" name="resourceSet" type="_-nze6GpGEeSHJZbEOSiM7A"/>
+                      </ownedOperation>
+                      <ownedOperation xmi:type="uml:Operation" xmi:id="_-n5lgmpGEeSHJZbEOSiM7A" name="getIRegisteredLibrary" visibility="private">
+                        <ownedComment xmi:type="uml:Comment" xmi:id="_-n5lg2pGEeSHJZbEOSiM7A">
+                          <body>&#xD;
+	 * @throws NotFoundException &#xD;
+	 * &#xD;
+	 </body>
+                        </ownedComment>
+                        <ownedParameter xmi:type="uml:Parameter" xmi:id="_-n5lh2pGEeSHJZbEOSiM7A" type="_-n5lhmpGEeSHJZbEOSiM7A" direction="return"/>
+                        <ownedParameter xmi:type="uml:Parameter" xmi:id="_-n5liGpGEeSHJZbEOSiM7A" name="libraryName" type="_qhilUVR7EeSbnPFbgpN9Ow"/>
+                      </ownedOperation>
+                      <ownedOperation xmi:type="uml:Operation" xmi:id="_-n5liWpGEeSHJZbEOSiM7A" name="getLibraryResource" visibility="public">
+                        <ownedComment xmi:type="uml:Comment" xmi:id="_-n5limpGEeSHJZbEOSiM7A">
+                          <body>&#xD;
+	 * @return the libraryResource&#xD;
+	 </body>
+                        </ownedComment>
+                        <ownedParameter xmi:type="uml:Parameter" xmi:id="_-n5li2pGEeSHJZbEOSiM7A" type="_cMuqOOy4EeOcMebkujJNBQ" direction="return"/>
+                      </ownedOperation>
+                      <ownedOperation xmi:type="uml:Operation" xmi:id="_-n5ljGpGEeSHJZbEOSiM7A" name="getLibraryPackage" visibility="public">
+                        <ownedComment xmi:type="uml:Comment" xmi:id="_-n5ljWpGEeSHJZbEOSiM7A">
+                          <body>&#xD;
+	 * @return the libraryResource&#xD;
+	 </body>
+                        </ownedComment>
+                        <ownedParameter xmi:type="uml:Parameter" xmi:id="_-n5ljmpGEeSHJZbEOSiM7A" type="_-nze5GpGEeSHJZbEOSiM7A" direction="return"/>
+                      </ownedOperation>
+                    </packagedElement>
+                  </packagedElement>
+                  <packagedElement xmi:type="uml:Package" xmi:id="_kG650GpJEeSHJZbEOSiM7A" name="ui">
+                    <packagedElement xmi:type="uml:Package" xmi:id="_kG650WpJEeSHJZbEOSiM7A" name="dialog">
+                      <packagedElement xmi:type="uml:Class" xmi:id="_kG650mpJEeSHJZbEOSiM7A" name="PropertiesEditorWidget">
+                        <ownedComment xmi:type="uml:Comment" xmi:id="_kG6502pJEeSHJZbEOSiM7A">
+                          <body>&#xD;
+ * A widget used to edit a list of {@link PropertyModel}.&#xD;
+ * @author dumoulin&#xD;
+ *&#xD;
+ </body>
+                        </ownedComment>
+                        <ownedAttribute xmi:type="uml:Property" xmi:id="_kHBAdmpJEeSHJZbEOSiM7A" name="m_bindingContext" visibility="private" type="_kHBAdWpJEeSHJZbEOSiM7A" isUnique="false"/>
+                        <ownedAttribute xmi:type="uml:Property" xmi:id="_kHBAfWpJEeSHJZbEOSiM7A" name="contentArea" visibility="private" type="_kHBAfGpJEeSHJZbEOSiM7A" isUnique="false"/>
+                        <ownedAttribute xmi:type="uml:Property" xmi:id="_kHBAgWpJEeSHJZbEOSiM7A" name="properties" visibility="private" type="_kHBAgGpJEeSHJZbEOSiM7A" isUnique="false"/>
+                        <ownedAttribute xmi:type="uml:Property" xmi:id="_kHHHEWpJEeSHJZbEOSiM7A" name="selectedElement" visibility="private" type="_kHHHEGpJEeSHJZbEOSiM7A" isUnique="false" aggregation="composite" association="_eGNF0GpPEeSHJZbEOSiM7A"/>
+                        <ownedAttribute xmi:type="uml:Property" xmi:id="_kHHHFGpJEeSHJZbEOSiM7A" name="treeViewer" visibility="private" type="_kHHHE2pJEeSHJZbEOSiM7A" isUnique="false"/>
+                        <ownedAttribute xmi:type="uml:Property" xmi:id="_kHHHFmpJEeSHJZbEOSiM7A" name="nameViewerColumn" visibility="private" type="_kHHHFWpJEeSHJZbEOSiM7A" isUnique="false"/>
+                        <ownedAttribute xmi:type="uml:Property" xmi:id="_kHHHF2pJEeSHJZbEOSiM7A" name="typeViewerColumn" visibility="private" type="_kHHHFWpJEeSHJZbEOSiM7A" isUnique="false"/>
+                        <ownedAttribute xmi:type="uml:Property" xmi:id="_kHHHGGpJEeSHJZbEOSiM7A" name="statusViewerColumn" visibility="private" type="_kHHHFWpJEeSHJZbEOSiM7A" isUnique="false"/>
+                        <ownedAttribute xmi:type="uml:Property" xmi:id="_kHNNsGpJEeSHJZbEOSiM7A" name="valueViewerColumn" visibility="private" type="_kHHHFWpJEeSHJZbEOSiM7A" isUnique="false"/>
+                        <ownedAttribute xmi:type="uml:Property" xmi:id="_kHNNsWpJEeSHJZbEOSiM7A" name="memberViewerColumn" visibility="private" type="_kHHHFWpJEeSHJZbEOSiM7A" isUnique="false"/>
+                        <ownedAttribute xmi:type="uml:Property" xmi:id="_kHNNsmpJEeSHJZbEOSiM7A" name="deletedViewerColumn" visibility="private" type="_kHHHFWpJEeSHJZbEOSiM7A" isUnique="false"/>
+                        <ownedAttribute xmi:type="uml:Property" xmi:id="_kHNNtGpJEeSHJZbEOSiM7A" name="typeLabelProvider" visibility="private" type="_kHNNs2pJEeSHJZbEOSiM7A" isUnique="false" aggregation="composite" association="_6pA70GpLEeSHJZbEOSiM7A">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_kHNNtWpJEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * Label provider associated to this class. Lazy creation.&#xD;
+	 </body>
+                          </ownedComment>
+                        </ownedAttribute>
+                        <ownedAttribute xmi:type="uml:Property" xmi:id="_kHNNuGpJEeSHJZbEOSiM7A" name="typeCatalog" visibility="private" type="_kHNNt2pJEeSHJZbEOSiM7A" isUnique="false" aggregation="composite" association="_7i5xMGpLEeSHJZbEOSiM7A">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_kHNNuWpJEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * The catalog of type associated to this class. Lazy creation.&#xD;
+	 </body>
+                          </ownedComment>
+                        </ownedAttribute>
+                        <ownedAttribute xmi:type="uml:Property" xmi:id="_g1QigGpOEeSHJZbEOSiM7A" name="propertyModel" type="_kHTUUGpJEeSHJZbEOSiM7A" association="_g1Qig2pOEeSHJZbEOSiM7A">
+                          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_g1QigWpOEeSHJZbEOSiM7A"/>
+                          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_g1QigmpOEeSHJZbEOSiM7A" value="*"/>
+                        </ownedAttribute>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_kHTUUWpJEeSHJZbEOSiM7A" name="setProperties" visibility="public">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_kHTUUmpJEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * @param stereotype the stereotype to set&#xD;
+	 </body>
+                          </ownedComment>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_kHTUU2pJEeSHJZbEOSiM7A" name="properties" type="_kHTUUGpJEeSHJZbEOSiM7A">
+                            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_kHTUVGpJEeSHJZbEOSiM7A"/>
+                            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_kHTUVWpJEeSHJZbEOSiM7A" value="*"/>
+                          </ownedParameter>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_kHTUVmpJEeSHJZbEOSiM7A" name="createContent" visibility="protected">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_kHTUV2pJEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * Create the overall component.&#xD;
+	 * @param parent&#xD;
+	 </body>
+                          </ownedComment>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_kHTUWGpJEeSHJZbEOSiM7A" name="parent" type="_kHBAfGpJEeSHJZbEOSiM7A"/>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_kHTUWWpJEeSHJZbEOSiM7A" name="createContentArea" visibility="protected">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_kHTUWmpJEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * Create the content area.&#xD;
+	 * &#xD;
+	 * @param parent&#xD;
+	 * @return&#xD;
+	 </body>
+                          </ownedComment>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_kHTUW2pJEeSHJZbEOSiM7A" type="_kHBAfGpJEeSHJZbEOSiM7A" direction="return"/>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_kHTUXGpJEeSHJZbEOSiM7A" name="parent" type="_kHBAfGpJEeSHJZbEOSiM7A"/>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_kHTUX2pJEeSHJZbEOSiM7A" name="addPropertyPressed" visibility="private">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_kHTUYGpJEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * The add button has been pressed.&#xD;
+	 * @param e&#xD;
+	 </body>
+                          </ownedComment>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_kHTUYWpJEeSHJZbEOSiM7A" name="e" type="_kHTUXmpJEeSHJZbEOSiM7A"/>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_kHTUYmpJEeSHJZbEOSiM7A" name="removePropertyPressed" visibility="private">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_kHTUY2pJEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * The remove button has been pressed.&#xD;
+	 * @param e&#xD;
+	 </body>
+                          </ownedComment>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_kHTUZGpJEeSHJZbEOSiM7A" name="e" type="_kHTUXmpJEeSHJZbEOSiM7A"/>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_kHTUZWpJEeSHJZbEOSiM7A" name="removeProperty" visibility="private">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_kHZa8GpJEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * remove the specified property from the property list.&#xD;
+	 * &#xD;
+	 * @param propertyModel model to remove. Can be null.&#xD;
+	 </body>
+                          </ownedComment>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_kHZa8WpJEeSHJZbEOSiM7A" name="propertyModel" type="_kHTUUGpJEeSHJZbEOSiM7A"/>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_kHZa8mpJEeSHJZbEOSiM7A" name="createDialogContents" visibility="private"/>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_kHZa82pJEeSHJZbEOSiM7A" name="fillContentArea" visibility="private">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_kHZa9GpJEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * Fill the content area with values found in stereotype.&#xD;
+	 </body>
+                          </ownedComment>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_kHloRmpJEeSHJZbEOSiM7A" name="create" visibility="protected" isStatic="true">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_kHloR2pJEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * Returns an ObservableValueEditingSupport instance which binds the given&#xD;
+	 * cell editor property to the given element property.&#xD;
+	 * &#xD;
+	 * @param viewer&#xD;
+	 *            the column viewer&#xD;
+	 * @param dbc&#xD;
+	 *            the DataBindingContext used for binding between the cell&#xD;
+	 *            editor and the viewer element.&#xD;
+	 * @param cellEditor&#xD;
+	 *            the cell editor&#xD;
+	 * @param cellEditorProperty&#xD;
+	 *            the cell editor property to be bound to the element.&#xD;
+	 * @param elementProperty&#xD;
+	 *            the element property to be bound to the cell editor.&#xD;
+	 * @return an ObservableValueEditingSupport instance using the given&#xD;
+	 *         arguments.&#xD;
+	 * copied from org.eclipse.jface.databinding.viewers.ObservableValueEditingSupport.create(ColumnViewer, DataBindingContext, CellEditor, IValueProperty, IValueProperty)&#xD;
+	 </body>
+                          </ownedComment>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_kHru0GpJEeSHJZbEOSiM7A" type="_kHloSGpJEeSHJZbEOSiM7A" direction="return"/>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_kHru0WpJEeSHJZbEOSiM7A" name="viewer" type="_kHloQWpJEeSHJZbEOSiM7A"/>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_kHru0mpJEeSHJZbEOSiM7A" name="dbc" type="_kHBAdWpJEeSHJZbEOSiM7A"/>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_kHru02pJEeSHJZbEOSiM7A" name="cellEditor" type="_kHloQmpJEeSHJZbEOSiM7A"/>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_kHru1GpJEeSHJZbEOSiM7A" name="cellEditorProperty" type="_kHloRWpJEeSHJZbEOSiM7A"/>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_kHru1WpJEeSHJZbEOSiM7A" name="elementProperty" type="_kHloRWpJEeSHJZbEOSiM7A"/>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_kHru1mpJEeSHJZbEOSiM7A" name="initDataBindings" visibility="protected">
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_kHru12pJEeSHJZbEOSiM7A" type="_kHBAdWpJEeSHJZbEOSiM7A" direction="return"/>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_kHru2GpJEeSHJZbEOSiM7A" name="getTypeLabelProvider" visibility="private">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_kHru2WpJEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * Return the {@link TypeLabelProvider} associated to this class.&#xD;
+	 * &#xD;
+	 * @return&#xD;
+	 </body>
+                          </ownedComment>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_kHru2mpJEeSHJZbEOSiM7A" type="_kHNNs2pJEeSHJZbEOSiM7A" direction="return"/>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_kHru22pJEeSHJZbEOSiM7A" name="getTypeCatalog" visibility="private">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_kHru3GpJEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * Return the {@link ITypeCatalog} associated to this class.&#xD;
+	 * &#xD;
+	 * @return&#xD;
+	 </body>
+                          </ownedComment>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_kHru3WpJEeSHJZbEOSiM7A" type="_kHNNt2pJEeSHJZbEOSiM7A" direction="return"/>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_kHru3mpJEeSHJZbEOSiM7A" name="initManualDataBindings" visibility="protected">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_kHru32pJEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * Additional databinding done manually.&#xD;
+	 * @param bindingContext&#xD;
+	 * @return&#xD;
+	 </body>
+                          </ownedComment>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_kHru4GpJEeSHJZbEOSiM7A" type="_kHBAdWpJEeSHJZbEOSiM7A" direction="return"/>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_kHru4WpJEeSHJZbEOSiM7A" name="bindingContext" type="_kHBAdWpJEeSHJZbEOSiM7A"/>
+                        </ownedOperation>
+                        <nestedClassifier xmi:type="uml:Class" xmi:id="_kHZa9WpJEeSHJZbEOSiM7A" name="TaggedValueNameColumnLabelProvider">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_kHZa9mpJEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * Get the name of the taggedValue&#xD;
+	 * @author dumoulin&#xD;
+	 *&#xD;
+	 </body>
+                          </ownedComment>
+                          <generalization xmi:type="uml:Generalization" xmi:id="_kHZa-GpJEeSHJZbEOSiM7A" general="_kHZa92pJEeSHJZbEOSiM7A"/>
+                          <ownedOperation xmi:type="uml:Operation" xmi:id="_kHZa-WpJEeSHJZbEOSiM7A" name="getText" visibility="public">
+                            <ownedParameter xmi:type="uml:Parameter" xmi:id="_kHZa-mpJEeSHJZbEOSiM7A" type="_qhilUVR7EeSbnPFbgpN9Ow" direction="return"/>
+                            <ownedParameter xmi:type="uml:Parameter" xmi:id="_kHZa-2pJEeSHJZbEOSiM7A" name="element" type="_-nze4GpGEeSHJZbEOSiM7A"/>
+                          </ownedOperation>
+                        </nestedClassifier>
+                        <nestedClassifier xmi:type="uml:Class" xmi:id="_kHZa_GpJEeSHJZbEOSiM7A" name="TaggedValueValueColumnLabelProvider">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_kHZa_WpJEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * Get the value of the taggedValue&#xD;
+	 *&#xD;
+	 </body>
+                          </ownedComment>
+                          <generalization xmi:type="uml:Generalization" xmi:id="_kHZa_mpJEeSHJZbEOSiM7A" general="_kHZa92pJEeSHJZbEOSiM7A"/>
+                          <ownedOperation xmi:type="uml:Operation" xmi:id="_kHZa_2pJEeSHJZbEOSiM7A" name="getText" visibility="public">
+                            <ownedParameter xmi:type="uml:Parameter" xmi:id="_kHZbAGpJEeSHJZbEOSiM7A" type="_qhilUVR7EeSbnPFbgpN9Ow" direction="return"/>
+                            <ownedParameter xmi:type="uml:Parameter" xmi:id="_kHZbAWpJEeSHJZbEOSiM7A" name="element" type="_-nze4GpGEeSHJZbEOSiM7A"/>
+                          </ownedOperation>
+                        </nestedClassifier>
+                        <nestedClassifier xmi:type="uml:Class" xmi:id="_kHZbAmpJEeSHJZbEOSiM7A" name="MyContentProvider" visibility="private">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_kHZbA2pJEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * Content Provider for TaggedValues hierarchy&#xD;
+	 *&#xD;
+	 </body>
+                          </ownedComment>
+                          <ownedAttribute xmi:type="uml:Property" xmi:id="_kHfhkWpJEeSHJZbEOSiM7A" name="EMPTY_ARRAY" visibility="private" type="_-nze4GpGEeSHJZbEOSiM7A" isUnique="false">
+                            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_kHfhkmpJEeSHJZbEOSiM7A"/>
+                            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_kHfhk2pJEeSHJZbEOSiM7A" value="*"/>
+                          </ownedAttribute>
+                          <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_kHfhkGpJEeSHJZbEOSiM7A" name="MyContentProvider implements ITreeContentProvider" client="_kHZbAmpJEeSHJZbEOSiM7A" supplier="_kHZbBGpJEeSHJZbEOSiM7A" contract="_kHZbBGpJEeSHJZbEOSiM7A"/>
+                          <ownedOperation xmi:type="uml:Operation" xmi:id="_kHfhlGpJEeSHJZbEOSiM7A" name="dispose" visibility="public"/>
+                          <ownedOperation xmi:type="uml:Operation" xmi:id="_kHfhlmpJEeSHJZbEOSiM7A" name="inputChanged" visibility="public">
+                            <ownedParameter xmi:type="uml:Parameter" xmi:id="_kHfhl2pJEeSHJZbEOSiM7A" name="viewer" type="_kHfhlWpJEeSHJZbEOSiM7A"/>
+                            <ownedParameter xmi:type="uml:Parameter" xmi:id="_kHfhmGpJEeSHJZbEOSiM7A" name="oldInput" type="_-nze4GpGEeSHJZbEOSiM7A"/>
+                            <ownedParameter xmi:type="uml:Parameter" xmi:id="_kHfhmWpJEeSHJZbEOSiM7A" name="newInput" type="_-nze4GpGEeSHJZbEOSiM7A"/>
+                          </ownedOperation>
+                          <ownedOperation xmi:type="uml:Operation" xmi:id="_kHfhmmpJEeSHJZbEOSiM7A" name="getElements" visibility="public">
+                            <ownedComment xmi:type="uml:Comment" xmi:id="_kHfhm2pJEeSHJZbEOSiM7A">
+                              <body>&#xD;
+		 * &#xD;
+		 * @see org.eclipse.jface.viewers.ITreeContentProvider#getElements(java.lang.Object)&#xD;
+		 *&#xD;
+		 * @param inputElement&#xD;
+		 * @return&#xD;
+		 </body>
+                            </ownedComment>
+                            <ownedParameter xmi:type="uml:Parameter" xmi:id="_kHloMGpJEeSHJZbEOSiM7A" type="_-nze4GpGEeSHJZbEOSiM7A" direction="return">
+                              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_kHloMWpJEeSHJZbEOSiM7A"/>
+                              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_kHloMmpJEeSHJZbEOSiM7A" value="*"/>
+                            </ownedParameter>
+                            <ownedParameter xmi:type="uml:Parameter" xmi:id="_kHloM2pJEeSHJZbEOSiM7A" name="inputElement" type="_-nze4GpGEeSHJZbEOSiM7A"/>
+                          </ownedOperation>
+                          <ownedOperation xmi:type="uml:Operation" xmi:id="_kHloNGpJEeSHJZbEOSiM7A" name="getChildren" visibility="public">
+                            <ownedComment xmi:type="uml:Comment" xmi:id="_kHloNWpJEeSHJZbEOSiM7A">
+                              <body>&#xD;
+		 * &#xD;
+		 * @see org.eclipse.jface.viewers.ITreeContentProvider#getChildren(java.lang.Object)&#xD;
+		 *&#xD;
+		 * @param parentElement&#xD;
+		 * @return&#xD;
+		 </body>
+                            </ownedComment>
+                            <ownedParameter xmi:type="uml:Parameter" xmi:id="_kHloNmpJEeSHJZbEOSiM7A" type="_-nze4GpGEeSHJZbEOSiM7A" direction="return">
+                              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_kHloN2pJEeSHJZbEOSiM7A"/>
+                              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_kHloOGpJEeSHJZbEOSiM7A" value="*"/>
+                            </ownedParameter>
+                            <ownedParameter xmi:type="uml:Parameter" xmi:id="_kHloOWpJEeSHJZbEOSiM7A" name="parentElement" type="_-nze4GpGEeSHJZbEOSiM7A"/>
+                          </ownedOperation>
+                          <ownedOperation xmi:type="uml:Operation" xmi:id="_kHloOmpJEeSHJZbEOSiM7A" name="getParent" visibility="public">
+                            <ownedComment xmi:type="uml:Comment" xmi:id="_kHloO2pJEeSHJZbEOSiM7A">
+                              <body>&#xD;
+		 * &#xD;
+		 * @see org.eclipse.jface.viewers.ITreeContentProvider#getParent(java.lang.Object)&#xD;
+		 *&#xD;
+		 * @param element&#xD;
+		 * @return&#xD;
+		 </body>
+                            </ownedComment>
+                            <ownedParameter xmi:type="uml:Parameter" xmi:id="_kHloPGpJEeSHJZbEOSiM7A" type="_-nze4GpGEeSHJZbEOSiM7A" direction="return"/>
+                            <ownedParameter xmi:type="uml:Parameter" xmi:id="_kHloPWpJEeSHJZbEOSiM7A" name="element" type="_-nze4GpGEeSHJZbEOSiM7A"/>
+                          </ownedOperation>
+                          <ownedOperation xmi:type="uml:Operation" xmi:id="_kHloPmpJEeSHJZbEOSiM7A" name="hasChildren" visibility="public">
+                            <ownedParameter xmi:type="uml:Parameter" xmi:id="_kHloP2pJEeSHJZbEOSiM7A" type="_cM0ww-y4EeOcMebkujJNBQ" direction="return"/>
+                            <ownedParameter xmi:type="uml:Parameter" xmi:id="_kHloQGpJEeSHJZbEOSiM7A" name="element" type="_-nze4GpGEeSHJZbEOSiM7A"/>
+                          </ownedOperation>
+                        </nestedClassifier>
+                      </packagedElement>
+                      <packagedElement xmi:type="uml:Class" xmi:id="_kHx1cGpJEeSHJZbEOSiM7A" name="StereotypeUpdateDialog">
+                        <ownedComment xmi:type="uml:Comment" xmi:id="_kH38EGpJEeSHJZbEOSiM7A">
+                          <body>&#xD;
+ * &#xD;
+ * @author cedric dumoulin&#xD;
+ *&#xD;
+ </body>
+                        </ownedComment>
+                        <generalization xmi:type="uml:Generalization" xmi:id="_kH38E2pJEeSHJZbEOSiM7A" general="_kH38EmpJEeSHJZbEOSiM7A"/>
+                        <ownedAttribute xmi:type="uml:Property" xmi:id="_kH38FWpJEeSHJZbEOSiM7A" name="stereotypeNameBinding" visibility="private" type="_kH38FGpJEeSHJZbEOSiM7A" isUnique="false"/>
+                        <ownedAttribute xmi:type="uml:Property" xmi:id="_kH38FmpJEeSHJZbEOSiM7A" name="profileNameBinding" visibility="private" type="_kH38FGpJEeSHJZbEOSiM7A" isUnique="false"/>
+                        <ownedAttribute xmi:type="uml:Property" xmi:id="_kH38F2pJEeSHJZbEOSiM7A" name="stereotypeBinding" visibility="private" type="_kH38FGpJEeSHJZbEOSiM7A" isUnique="false"/>
+                        <ownedAttribute xmi:type="uml:Property" xmi:id="_kH38GGpJEeSHJZbEOSiM7A" name="m_bindingContext" visibility="private" type="_kHBAdWpJEeSHJZbEOSiM7A" isUnique="false"/>
+                        <ownedAttribute xmi:type="uml:Property" xmi:id="_kH38GWpJEeSHJZbEOSiM7A" name="profileBinding" visibility="private" type="_kH38FGpJEeSHJZbEOSiM7A" isUnique="false"/>
+                        <ownedAttribute xmi:type="uml:Property" xmi:id="_kH38G2pJEeSHJZbEOSiM7A" name="quickSetText" visibility="private" type="_kH38GmpJEeSHJZbEOSiM7A" isUnique="false"/>
+                        <ownedAttribute xmi:type="uml:Property" xmi:id="_kH38HGpJEeSHJZbEOSiM7A" name="stereotypeText" visibility="private" type="_kH38GmpJEeSHJZbEOSiM7A" isUnique="false"/>
+                        <ownedAttribute xmi:type="uml:Property" xmi:id="_kH38HWpJEeSHJZbEOSiM7A" name="profileText" visibility="private" type="_kH38GmpJEeSHJZbEOSiM7A" isUnique="false"/>
+                        <ownedAttribute xmi:type="uml:Property" xmi:id="_kH38HmpJEeSHJZbEOSiM7A" name="title" visibility="private" type="_qhilUVR7EeSbnPFbgpN9Ow" isUnique="false"/>
+                        <ownedAttribute xmi:type="uml:Property" xmi:id="_kH38IGpJEeSHJZbEOSiM7A" name="value" visibility="private" type="_kH38H2pJEeSHJZbEOSiM7A" isUnique="false"/>
+                        <ownedAttribute xmi:type="uml:Property" xmi:id="_kH-CsWpJEeSHJZbEOSiM7A" name="extendedMetaclassSelector" visibility="private" type="_kH-CsGpJEeSHJZbEOSiM7A" isUnique="false" aggregation="composite" association="_NA_DkGpKEeSHJZbEOSiM7A"/>
+                        <ownedAttribute xmi:type="uml:Property" xmi:id="_kH-CsmpJEeSHJZbEOSiM7A" name="propertiesEditorWidget" visibility="private" type="_kG650mpJEeSHJZbEOSiM7A" isUnique="false" aggregation="composite" association="_Ave1sGpKEeSHJZbEOSiM7A"/>
+                        <ownedAttribute xmi:type="uml:Property" xmi:id="_kH-CtGpJEeSHJZbEOSiM7A" name="anyUmlElement" visibility="private" type="_kH-Cs2pJEeSHJZbEOSiM7A" isUnique="false" aggregation="composite" association="_QCUGkGpKEeSHJZbEOSiM7A">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_kH-CtWpJEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * An UML Element used to get the associated Resource.&#xD;
+	 </body>
+                          </ownedComment>
+                        </ownedAttribute>
+                        <ownedAttribute xmi:type="uml:Property" xmi:id="_kH-Ct2pJEeSHJZbEOSiM7A" name="selectedMetaclasses" visibility="private" type="_kH-CtmpJEeSHJZbEOSiM7A" isUnique="false">
+                          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_kH-CuGpJEeSHJZbEOSiM7A"/>
+                          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_kH-CuWpJEeSHJZbEOSiM7A" value="*"/>
+                        </ownedAttribute>
+                        <ownedAttribute xmi:type="uml:Property" xmi:id="_kH-Cu2pJEeSHJZbEOSiM7A" name="stereotypeModel" visibility="private" type="_kH-CumpJEeSHJZbEOSiM7A" isUnique="false" aggregation="composite" association="_RGijsGpKEeSHJZbEOSiM7A"/>
+                        <ownedAttribute xmi:type="uml:Property" xmi:id="_kH-CvWpJEeSHJZbEOSiM7A" name="profileCatalog" visibility="private" type="_kH-CvGpJEeSHJZbEOSiM7A" isUnique="false" aggregation="composite" association="_RsyEUGpKEeSHJZbEOSiM7A"/>
+                        <ownedAttribute xmi:type="uml:Property" xmi:id="_kH-Cv2pJEeSHJZbEOSiM7A" name="quickSetLabel" visibility="private" type="_kH-CvmpJEeSHJZbEOSiM7A" isUnique="false"/>
+                        <ownedAttribute xmi:type="uml:Property" xmi:id="_kIEJUGpJEeSHJZbEOSiM7A" name="profileNameLabel" visibility="private" type="_kH-CvmpJEeSHJZbEOSiM7A" isUnique="false"/>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_kIEJUWpJEeSHJZbEOSiM7A" name="createDialogArea" visibility="protected">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_kIEJUmpJEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * Create contents of the dialog.&#xD;
+	 * @param parent&#xD;
+	 </body>
+                          </ownedComment>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_kIEJVGpJEeSHJZbEOSiM7A" type="_kIEJU2pJEeSHJZbEOSiM7A" direction="return"/>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_kIEJVWpJEeSHJZbEOSiM7A" name="parent" type="_kHBAfGpJEeSHJZbEOSiM7A"/>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_kIEJVmpJEeSHJZbEOSiM7A" name="installContentAssistantProvider" visibility="protected">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_kIEJV2pJEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * Install content assistant provider.&#xD;
+	 * &#xD;
+	 * @param control The control to which content assist is installed.&#xD;
+	 *&#xD;
+	 * @param contentProposalProvider The associated {@link ContentProposalAdapter}.&#xD;
+	 </body>
+                          </ownedComment>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_kIEJWGpJEeSHJZbEOSiM7A" name="control" type="_kH38GmpJEeSHJZbEOSiM7A"/>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_kIEJWWpJEeSHJZbEOSiM7A" name="contentProposalProvider" type="_qhcetVR7EeSbnPFbgpN9Ow"/>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_kIEJWmpJEeSHJZbEOSiM7A" name="createExtendedMetaclassArea" visibility="private">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_kIEJW2pJEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * &#xD;
+	 * @param parent&#xD;
+	 </body>
+                          </ownedComment>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_kIEJXGpJEeSHJZbEOSiM7A" name="parent" type="_kHBAfGpJEeSHJZbEOSiM7A"/>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_kIEJXWpJEeSHJZbEOSiM7A" name="createButtonsForButtonBar" visibility="protected">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_kIEJXmpJEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * Create contents of the button bar.&#xD;
+	 * @param parent&#xD;
+	 </body>
+                          </ownedComment>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_kIEJX2pJEeSHJZbEOSiM7A" name="parent" type="_kHBAfGpJEeSHJZbEOSiM7A"/>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_kIEJYWpJEeSHJZbEOSiM7A" name="configureShell" visibility="protected">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_kIEJYmpJEeSHJZbEOSiM7A">
+                            <body>&#xD;
+     * (non-Javadoc)&#xD;
+     * &#xD;
+     * @see org.eclipse.jface.window.Window#configureShell(org.eclipse.swt.widgets.Shell)&#xD;
+     </body>
+                          </ownedComment>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_kIEJY2pJEeSHJZbEOSiM7A" name="shell" type="_kIEJYGpJEeSHJZbEOSiM7A"/>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_kIEJZGpJEeSHJZbEOSiM7A" name="getInitialSize" visibility="protected">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_kIEJZWpJEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * Return the initial size of the dialog.&#xD;
+	 </body>
+                          </ownedComment>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_kIKP8mpJEeSHJZbEOSiM7A" type="_kIKP8WpJEeSHJZbEOSiM7A" direction="return"/>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_kIKP82pJEeSHJZbEOSiM7A" name="okPressed" visibility="protected">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_kIKP9GpJEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * Collect user data when the ok button is pressed.&#xD;
+	 * &#xD;
+	 * @see org.eclipse.jface.dialogs.Dialog#okPressed()&#xD;
+	 *&#xD;
+	 </body>
+                          </ownedComment>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_kIKP9WpJEeSHJZbEOSiM7A" name="collectInput" visibility="private">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_kIKP9mpJEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * Collect data from the dialog.&#xD;
+	 * &#xD;
+	 </body>
+                          </ownedComment>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_kIKP92pJEeSHJZbEOSiM7A" name="getUpdateArgs" visibility="public">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_kIKP-GpJEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * return the update args collected by the dialog.&#xD;
+	 * @return&#xD;
+	 </body>
+                          </ownedComment>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_kIKP-mpJEeSHJZbEOSiM7A" type="_kIKP-WpJEeSHJZbEOSiM7A" direction="return"/>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_kIKP-2pJEeSHJZbEOSiM7A" name="initDataBindings" visibility="protected">
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_kIKP_GpJEeSHJZbEOSiM7A" type="_kHBAdWpJEeSHJZbEOSiM7A" direction="return"/>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_kIKP_WpJEeSHJZbEOSiM7A" name="getStereotypeModel" visibility="public">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_kIKP_mpJEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * @return the stereotypeModel&#xD;
+	 </body>
+                          </ownedComment>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_kIKP_2pJEeSHJZbEOSiM7A" type="_kH-CumpJEeSHJZbEOSiM7A" direction="return"/>
+                        </ownedOperation>
+                      </packagedElement>
+                      <packagedElement xmi:type="uml:Class" xmi:id="_kH38H2pJEeSHJZbEOSiM7A" name="StereotypeUpdateArgs"/>
+                      <packagedElement xmi:type="uml:Class" xmi:id="_kH-CsGpJEeSHJZbEOSiM7A" name="MultipleValueSelectorWidget"/>
+                      <packagedElement xmi:type="uml:Interface" xmi:id="_kIKP-WpJEeSHJZbEOSiM7A" name="IStereotypeUpdateArgs"/>
+                      <packagedElement xmi:type="uml:Association" xmi:id="_Ave1sGpKEeSHJZbEOSiM7A" name="A_propertiesEditorWidget_stereotypeUpdateDialog" memberEnd="_kH-CsmpJEeSHJZbEOSiM7A _Avk8UGpKEeSHJZbEOSiM7A">
+                        <ownedEnd xmi:type="uml:Property" xmi:id="_Avk8UGpKEeSHJZbEOSiM7A" name="stereotypeUpdateDialog" type="_kHx1cGpJEeSHJZbEOSiM7A" association="_Ave1sGpKEeSHJZbEOSiM7A">
+                          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Avk8UWpKEeSHJZbEOSiM7A"/>
+                          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Avk8UmpKEeSHJZbEOSiM7A" value="1"/>
+                        </ownedEnd>
+                      </packagedElement>
+                      <packagedElement xmi:type="uml:Association" xmi:id="_NA_DkGpKEeSHJZbEOSiM7A" name="A_extendedMetaclassSelector_stereotypeUpdateDialog" memberEnd="_kH-CsWpJEeSHJZbEOSiM7A _NA_DkWpKEeSHJZbEOSiM7A">
+                        <ownedEnd xmi:type="uml:Property" xmi:id="_NA_DkWpKEeSHJZbEOSiM7A" name="stereotypeUpdateDialog" type="_kHx1cGpJEeSHJZbEOSiM7A" association="_NA_DkGpKEeSHJZbEOSiM7A">
+                          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_NA_DkmpKEeSHJZbEOSiM7A"/>
+                          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_NA_Dk2pKEeSHJZbEOSiM7A" value="1"/>
+                        </ownedEnd>
+                      </packagedElement>
+                      <packagedElement xmi:type="uml:Association" xmi:id="_QCUGkGpKEeSHJZbEOSiM7A" name="A_anyUmlElement_stereotypeUpdateDialog" memberEnd="_kH-CtGpJEeSHJZbEOSiM7A _QCUGkWpKEeSHJZbEOSiM7A">
+                        <ownedEnd xmi:type="uml:Property" xmi:id="_QCUGkWpKEeSHJZbEOSiM7A" name="stereotypeUpdateDialog" type="_kHx1cGpJEeSHJZbEOSiM7A" association="_QCUGkGpKEeSHJZbEOSiM7A">
+                          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_QCUGkmpKEeSHJZbEOSiM7A"/>
+                          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_QCUGk2pKEeSHJZbEOSiM7A" value="1"/>
+                        </ownedEnd>
+                      </packagedElement>
+                      <packagedElement xmi:type="uml:Association" xmi:id="_RGijsGpKEeSHJZbEOSiM7A" name="A_stereotypeModel_stereotypeUpdateDialog" memberEnd="_kH-Cu2pJEeSHJZbEOSiM7A _RGijsWpKEeSHJZbEOSiM7A">
+                        <ownedEnd xmi:type="uml:Property" xmi:id="_RGijsWpKEeSHJZbEOSiM7A" name="stereotypeUpdateDialog" type="_kHx1cGpJEeSHJZbEOSiM7A" association="_RGijsGpKEeSHJZbEOSiM7A">
+                          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_RGoqUGpKEeSHJZbEOSiM7A"/>
+                          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_RGoqUWpKEeSHJZbEOSiM7A" value="1"/>
+                        </ownedEnd>
+                      </packagedElement>
+                      <packagedElement xmi:type="uml:Association" xmi:id="_RsyEUGpKEeSHJZbEOSiM7A" name="A_profileCatalog_stereotypeUpdateDialog" memberEnd="_kH-CvWpJEeSHJZbEOSiM7A _RsyEUWpKEeSHJZbEOSiM7A">
+                        <ownedEnd xmi:type="uml:Property" xmi:id="_RsyEUWpKEeSHJZbEOSiM7A" name="stereotypeUpdateDialog" type="_kHx1cGpJEeSHJZbEOSiM7A" association="_RsyEUGpKEeSHJZbEOSiM7A">
+                          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_RsyEUmpKEeSHJZbEOSiM7A"/>
+                          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_RsyEU2pKEeSHJZbEOSiM7A" value="1"/>
+                        </ownedEnd>
+                      </packagedElement>
+                      <packagedElement xmi:type="uml:Association" xmi:id="_6pA70GpLEeSHJZbEOSiM7A" name="A_typeLabelProvider_propertiesEditorWidget" memberEnd="_kHNNtGpJEeSHJZbEOSiM7A _6pA70WpLEeSHJZbEOSiM7A">
+                        <ownedEnd xmi:type="uml:Property" xmi:id="_6pA70WpLEeSHJZbEOSiM7A" name="propertiesEditorWidget" type="_kG650mpJEeSHJZbEOSiM7A" association="_6pA70GpLEeSHJZbEOSiM7A">
+                          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_6pA70mpLEeSHJZbEOSiM7A"/>
+                          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_6pA702pLEeSHJZbEOSiM7A" value="1"/>
+                        </ownedEnd>
+                      </packagedElement>
+                      <packagedElement xmi:type="uml:Association" xmi:id="_7i5xMGpLEeSHJZbEOSiM7A" name="A_typeCatalog_propertiesEditorWidget" memberEnd="_kHNNuGpJEeSHJZbEOSiM7A _7i5xMWpLEeSHJZbEOSiM7A">
+                        <ownedEnd xmi:type="uml:Property" xmi:id="_7i5xMWpLEeSHJZbEOSiM7A" name="propertiesEditorWidget" type="_kG650mpJEeSHJZbEOSiM7A" association="_7i5xMGpLEeSHJZbEOSiM7A">
+                          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_7i5xMmpLEeSHJZbEOSiM7A"/>
+                          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_7i5xM2pLEeSHJZbEOSiM7A" value="1"/>
+                        </ownedEnd>
+                      </packagedElement>
+                      <packagedElement xmi:type="uml:Usage" xmi:id="_gUfCoGpMEeSHJZbEOSiM7A" client="_kG650mpJEeSHJZbEOSiM7A" supplier="_aqCBQWpMEeSHJZbEOSiM7A"/>
+                      <packagedElement xmi:type="uml:Usage" xmi:id="_iEKQgGpMEeSHJZbEOSiM7A" client="_kG650mpJEeSHJZbEOSiM7A" supplier="_URjcQGpMEeSHJZbEOSiM7A"/>
+                      <packagedElement xmi:type="uml:Association" xmi:id="_g1Qig2pOEeSHJZbEOSiM7A" memberEnd="_g1QihGpOEeSHJZbEOSiM7A _g1QigGpOEeSHJZbEOSiM7A">
+                        <ownedEnd xmi:type="uml:Property" xmi:id="_g1QihGpOEeSHJZbEOSiM7A" name="propertiesEditorWidget" type="_kG650mpJEeSHJZbEOSiM7A" association="_g1Qig2pOEeSHJZbEOSiM7A">
+                          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_g1QihWpOEeSHJZbEOSiM7A" value="1"/>
+                          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_g1QihmpOEeSHJZbEOSiM7A" value="1"/>
+                        </ownedEnd>
+                      </packagedElement>
+                      <packagedElement xmi:type="uml:Association" xmi:id="_eGNF0GpPEeSHJZbEOSiM7A" name="A_selectedElement_propertiesEditorWidget" memberEnd="_kHHHEWpJEeSHJZbEOSiM7A _eGNF0WpPEeSHJZbEOSiM7A">
+                        <ownedEnd xmi:type="uml:Property" xmi:id="_eGNF0WpPEeSHJZbEOSiM7A" name="propertiesEditorWidget" type="_kG650mpJEeSHJZbEOSiM7A" association="_eGNF0GpPEeSHJZbEOSiM7A">
+                          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eGNF0mpPEeSHJZbEOSiM7A"/>
+                          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eGNF02pPEeSHJZbEOSiM7A" value="1"/>
+                        </ownedEnd>
+                      </packagedElement>
+                    </packagedElement>
+                    <packagedElement xmi:type="uml:Package" xmi:id="_kHNNtmpJEeSHJZbEOSiM7A" name="model">
+                      <packagedElement xmi:type="uml:Interface" xmi:id="_kHNNt2pJEeSHJZbEOSiM7A" name="ITypeCatalog"/>
+                      <packagedElement xmi:type="uml:Class" xmi:id="_kHTUUGpJEeSHJZbEOSiM7A" name="PropertyModel">
+                        <ownedComment xmi:type="uml:Comment" xmi:id="_80vhoGpNEeSHJZbEOSiM7A">
+                          <body>&#xD;
+ * Model that represent one StereotypeModel' Property&#xD;
+ * &#xD;
+ * @author cedric dumoulin&#xD;
+ *&#xD;
+ </body>
+                        </ownedComment>
+                        <ownedAttribute xmi:type="uml:Property" xmi:id="_801oQWpNEeSHJZbEOSiM7A" name="memberKind" visibility="protected" type="_801oQGpNEeSHJZbEOSiM7A" isUnique="false">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_801oQmpNEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * The status of the model. ModelStatusKind.created mean that the model is created by the user.&#xD;
+	 </body>
+                          </ownedComment>
+                        </ownedAttribute>
+                        <ownedAttribute xmi:type="uml:Property" xmi:id="_801oRGpNEeSHJZbEOSiM7A" name="stateKind" visibility="protected" type="_801oQ2pNEeSHJZbEOSiM7A" isUnique="false">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_801oRWpNEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * state of this model.&#xD;
+	 </body>
+                          </ownedComment>
+                        </ownedAttribute>
+                        <ownedAttribute xmi:type="uml:Property" xmi:id="_801oR2pNEeSHJZbEOSiM7A" name="lifeStatusKind" visibility="protected" type="_801oRmpNEeSHJZbEOSiM7A" isUnique="false">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_801oSGpNEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * Life status of this model. Value is deleted if the user request deletion of this model.&#xD;
+	 </body>
+                          </ownedComment>
+                        </ownedAttribute>
+                        <ownedAttribute xmi:type="uml:Property" xmi:id="_801oSmpNEeSHJZbEOSiM7A" name="property" visibility="protected" type="_801oSWpNEeSHJZbEOSiM7A" isUnique="false">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_801oS2pNEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * The {@link Property} that the Stereotype extends. This is the property represented by this model.&#xD;
+	 </body>
+                          </ownedComment>
+                        </ownedAttribute>
+                        <ownedAttribute xmi:type="uml:Property" xmi:id="_801oTGpNEeSHJZbEOSiM7A" name="proposedName" visibility="protected" type="_qhilUVR7EeSbnPFbgpN9Ow" isUnique="false">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_807u4GpNEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * The name proposed by the user for this Property.&#xD;
+	 </body>
+                          </ownedComment>
+                        </ownedAttribute>
+                        <ownedAttribute xmi:type="uml:Property" xmi:id="_807u4WpNEeSHJZbEOSiM7A" name="type" visibility="protected" type="_-nnRpmpGEeSHJZbEOSiM7A" isUnique="false"/>
+                        <ownedAttribute xmi:type="uml:Property" xmi:id="_807u4mpNEeSHJZbEOSiM7A" name="value" visibility="protected" type="_qhilUVR7EeSbnPFbgpN9Ow" isUnique="false"/>
+                        <ownedAttribute xmi:type="uml:Property" xmi:id="_807u42pNEeSHJZbEOSiM7A" name="initialValue" visibility="protected" type="_-nze4GpGEeSHJZbEOSiM7A" isUnique="false"/>
+                        <ownedAttribute xmi:type="uml:Property" xmi:id="_807u5GpNEeSHJZbEOSiM7A" name="objectValue" visibility="protected" type="_-nze4GpGEeSHJZbEOSiM7A" isUnique="false"/>
+                        <ownedAttribute xmi:type="uml:Property" xmi:id="_807u52pNEeSHJZbEOSiM7A" name="changeSupport" visibility="private" type="_807u5mpNEeSHJZbEOSiM7A" isUnique="false">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_807u6GpNEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * Event manager&#xD;
+	 </body>
+                          </ownedComment>
+                        </ownedAttribute>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_807u6WpNEeSHJZbEOSiM7A" name="getMemberKind" visibility="public">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_807u6mpNEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * &#xD;
+	 * @return&#xD;
+	 </body>
+                          </ownedComment>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_807u62pNEeSHJZbEOSiM7A" type="_801oQGpNEeSHJZbEOSiM7A" direction="return"/>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_807u7GpNEeSHJZbEOSiM7A" name="getProposedName" visibility="public">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_807u7WpNEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * @return the proposedName&#xD;
+	 </body>
+                          </ownedComment>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_807u7mpNEeSHJZbEOSiM7A" type="_qhilUVR7EeSbnPFbgpN9Ow" direction="return"/>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_807u72pNEeSHJZbEOSiM7A" name="setProposedName" visibility="public">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_807u8GpNEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * @param proposedName the proposedName to set&#xD;
+	 </body>
+                          </ownedComment>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_807u8WpNEeSHJZbEOSiM7A" name="proposedName" type="_qhilUVR7EeSbnPFbgpN9Ow"/>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_807u8mpNEeSHJZbEOSiM7A" name="getType" visibility="public">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_807u82pNEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * @return the type&#xD;
+	 </body>
+                          </ownedComment>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_807u9GpNEeSHJZbEOSiM7A" type="_-nnRpmpGEeSHJZbEOSiM7A" direction="return"/>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_807u9WpNEeSHJZbEOSiM7A" name="setType" visibility="public">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_807u9mpNEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * @param type the type to set&#xD;
+	 </body>
+                          </ownedComment>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_81B1gGpNEeSHJZbEOSiM7A" name="type" type="_-nnRpmpGEeSHJZbEOSiM7A"/>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_81B1gWpNEeSHJZbEOSiM7A" name="getValue" visibility="public">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_81B1gmpNEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * @return the value&#xD;
+	 </body>
+                          </ownedComment>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_81B1g2pNEeSHJZbEOSiM7A" type="_qhilUVR7EeSbnPFbgpN9Ow" direction="return"/>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_81B1hGpNEeSHJZbEOSiM7A" name="setValue" visibility="public">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_81B1hWpNEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * @param value the value to set&#xD;
+	 </body>
+                          </ownedComment>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_81B1hmpNEeSHJZbEOSiM7A" name="value" type="_qhilUVR7EeSbnPFbgpN9Ow"/>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_81B1h2pNEeSHJZbEOSiM7A" name="getObjectValue" visibility="public">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_81B1iGpNEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * @return the objectValue&#xD;
+	 </body>
+                          </ownedComment>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_81B1iWpNEeSHJZbEOSiM7A" type="_-nze4GpGEeSHJZbEOSiM7A" direction="return"/>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_81B1impNEeSHJZbEOSiM7A" name="setObjectValue" visibility="public">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_81B1i2pNEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * @param objectValue the objectValue to set&#xD;
+	 </body>
+                          </ownedComment>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_81B1jGpNEeSHJZbEOSiM7A" name="objectValue" type="_-nze4GpGEeSHJZbEOSiM7A"/>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_81B1jmpNEeSHJZbEOSiM7A" name="accept" visibility="public">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_81B1j2pNEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * Visitor entry to visit this Model and its nested classes.&#xD;
+	 * @param visitor&#xD;
+	 </body>
+                          </ownedComment>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_81B1kGpNEeSHJZbEOSiM7A" name="visitor" type="_81B1jWpNEeSHJZbEOSiM7A"/>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_81B1kmpNEeSHJZbEOSiM7A" name="addPropertyChangeListener" visibility="public">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_81B1k2pNEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * &#xD;
+	 * @param listener&#xD;
+	 </body>
+                          </ownedComment>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_81B1lGpNEeSHJZbEOSiM7A" name="listener" type="_81B1kWpNEeSHJZbEOSiM7A"/>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_81B1lWpNEeSHJZbEOSiM7A" name="removePropertyChangeListener" visibility="public">
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_81B1lmpNEeSHJZbEOSiM7A" name="listener" type="_81B1kWpNEeSHJZbEOSiM7A"/>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_81B1l2pNEeSHJZbEOSiM7A" name="addPropertyChangeListener" visibility="public">
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_81B1mGpNEeSHJZbEOSiM7A" name="propertyName" type="_qhilUVR7EeSbnPFbgpN9Ow"/>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_81H8IGpNEeSHJZbEOSiM7A" name="listener" type="_81B1kWpNEeSHJZbEOSiM7A"/>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_81H8IWpNEeSHJZbEOSiM7A" name="removePropertyChangeListener" visibility="public">
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_81H8ImpNEeSHJZbEOSiM7A" name="propertyName" type="_qhilUVR7EeSbnPFbgpN9Ow"/>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_81H8I2pNEeSHJZbEOSiM7A" name="listener" type="_81B1kWpNEeSHJZbEOSiM7A"/>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_81H8JGpNEeSHJZbEOSiM7A" name="firePropertyChange" visibility="protected">
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_81H8JWpNEeSHJZbEOSiM7A" name="propertyName" type="_qhilUVR7EeSbnPFbgpN9Ow"/>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_81H8JmpNEeSHJZbEOSiM7A" name="oldValue" type="_-nze4GpGEeSHJZbEOSiM7A"/>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_81H8J2pNEeSHJZbEOSiM7A" name="newValue" type="_-nze4GpGEeSHJZbEOSiM7A"/>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_81H8KGpNEeSHJZbEOSiM7A" name="fireIndexedPropertyChange" visibility="protected">
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_81H8KWpNEeSHJZbEOSiM7A" name="propertyName" type="_qhilUVR7EeSbnPFbgpN9Ow"/>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_81H8KmpNEeSHJZbEOSiM7A" name="index" type="_qhilUlR7EeSbnPFbgpN9Ow"/>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_81H8K2pNEeSHJZbEOSiM7A" name="oldValue" type="_-nze4GpGEeSHJZbEOSiM7A"/>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_81H8LGpNEeSHJZbEOSiM7A" name="newValue" type="_-nze4GpGEeSHJZbEOSiM7A"/>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_81H8LWpNEeSHJZbEOSiM7A" name="getStateKind" visibility="public">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_81H8LmpNEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * @return the stateKind&#xD;
+	 </body>
+                          </ownedComment>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_81H8L2pNEeSHJZbEOSiM7A" type="_801oQ2pNEeSHJZbEOSiM7A" direction="return"/>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_81H8MGpNEeSHJZbEOSiM7A" name="setStateKind" visibility="public">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_81H8MWpNEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * @param stateKind the stateKind to set&#xD;
+	 </body>
+                          </ownedComment>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_81H8MmpNEeSHJZbEOSiM7A" name="stateKind" type="_801oQ2pNEeSHJZbEOSiM7A"/>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_81H8M2pNEeSHJZbEOSiM7A" name="getLifeStatusKind" visibility="public">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_81H8NGpNEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * @return the lifeStatusKind&#xD;
+	 </body>
+                          </ownedComment>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_81H8NWpNEeSHJZbEOSiM7A" type="_801oRmpNEeSHJZbEOSiM7A" direction="return"/>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_81H8NmpNEeSHJZbEOSiM7A" name="setLifeStatusKind" visibility="public">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_81OCwGpNEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * @param lifeStatusKind the lifeStatusKind to set&#xD;
+	 </body>
+                          </ownedComment>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_81OCwWpNEeSHJZbEOSiM7A" name="lifeStatusKind" type="_801oRmpNEeSHJZbEOSiM7A"/>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_81OCwmpNEeSHJZbEOSiM7A" name="modelChangedEvent" visibility="public">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_81OCw2pNEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * Apply a model changed event on this model. This change the {@link #lifeStatusKind}.&#xD;
+	 </body>
+                          </ownedComment>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_81OCxGpNEeSHJZbEOSiM7A" name="deleteModelEvent" visibility="public">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_81OCxWpNEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * A delete is applied to the model. If the model is alive, it is marked deleted.&#xD;
+	 * If it is deleted, it is marked alive.&#xD;
+	 </body>
+                          </ownedComment>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_81OCx2pNEeSHJZbEOSiM7A" name="isPropertyExistIn" visibility="public">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_81OCyGpNEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * Check if a property with the name of this {@link PropertyModel} exist in the specified {@link Stereotype}.&#xD;
+	 * Return true if a property with the same name exist in the provided stereotype, false otherwise.&#xD;
+	 * &#xD;
+	 * @param stereotype The stereotype into which we want to check if a property exists.&#xD;
+	 * @return&#xD;
+	 </body>
+                          </ownedComment>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_81OCyWpNEeSHJZbEOSiM7A" type="_cM0ww-y4EeOcMebkujJNBQ" direction="return"/>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_81OCympNEeSHJZbEOSiM7A" name="stereotype" type="_81OCxmpNEeSHJZbEOSiM7A"/>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_81OCy2pNEeSHJZbEOSiM7A" name="isValueModified" visibility="public">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_81OCzGpNEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * Check if the value of the property has been modified. Return true if the value has been modified by user, false otherwise.&#xD;
+	 * The actual implementation compare the original value as String to the String entered by user.&#xD;
+	 * &#xD;
+	 * @return&#xD;
+	 </body>
+                          </ownedComment>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_81OCzWpNEeSHJZbEOSiM7A" type="_cM0ww-y4EeOcMebkujJNBQ" direction="return"/>
+                        </ownedOperation>
+                      </packagedElement>
+                      <packagedElement xmi:type="uml:Class" xmi:id="_kH-CumpJEeSHJZbEOSiM7A" name="StereoptypeModel">
+                        <ownedComment xmi:type="uml:Comment" xmi:id="_AX8ioGpOEeSHJZbEOSiM7A">
+                          <body>&#xD;
+ * Model used by UI to render Stereotype content.&#xD;
+ * &#xD;
+ * @author cedric dumoulin&#xD;
+ *&#xD;
+ </body>
+                        </ownedComment>
+                        <generalization xmi:type="uml:Generalization" xmi:id="_AX8ioWpOEeSHJZbEOSiM7A" general="_-q_4oGpNEeSHJZbEOSiM7A"/>
+                        <ownedAttribute xmi:type="uml:Property" xmi:id="_AX8iompOEeSHJZbEOSiM7A" name="PROPERTIES" visibility="private" isLeaf="true" isStatic="true" type="_qhilUVR7EeSbnPFbgpN9Ow" isUnique="false"/>
+                        <ownedAttribute xmi:type="uml:Property" xmi:id="_AX8io2pOEeSHJZbEOSiM7A" name="stereotype" visibility="protected" type="_81OCxmpNEeSHJZbEOSiM7A" isUnique="false">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_AX8ipGpOEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * Associated {@link Stereotype}. Can be null if the Stereotype is not found in {@link ProfileCatalog}.&#xD;
+	 </body>
+                          </ownedComment>
+                        </ownedAttribute>
+                        <ownedAttribute xmi:type="uml:Property" xmi:id="_AX8ipmpOEeSHJZbEOSiM7A" name="properties" visibility="protected" type="_AX8ipWpOEeSHJZbEOSiM7A" isUnique="false"/>
+                        <ownedAttribute xmi:type="uml:Property" xmi:id="_AYCpQWpOEeSHJZbEOSiM7A" name="extendedStereotypes" visibility="protected" type="_AYCpQGpOEeSHJZbEOSiM7A" isUnique="false">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_AYCpQmpOEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * The extendedStereotypes that should be attached to this stereotype.&#xD;
+	 </body>
+                          </ownedComment>
+                          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_AYCpQ2pOEeSHJZbEOSiM7A"/>
+                          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_AYCpRGpOEeSHJZbEOSiM7A" value="*"/>
+                        </ownedAttribute>
+                        <ownedAttribute xmi:type="uml:Property" xmi:id="_AYCpRmpOEeSHJZbEOSiM7A" name="metaclasses" visibility="protected" type="_AYCpRWpOEeSHJZbEOSiM7A" isUnique="false">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_AYCpR2pOEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * The metaclasses that should be attached to this stereotype.&#xD;
+	 * Not used for now (should replace metaclassesCollection).&#xD;
+	 </body>
+                          </ownedComment>
+                          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_AYCpSGpOEeSHJZbEOSiM7A"/>
+                          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_AYCpSWpOEeSHJZbEOSiM7A" value="*"/>
+                        </ownedAttribute>
+                        <ownedAttribute xmi:type="uml:Property" xmi:id="_AYCpS2pOEeSHJZbEOSiM7A" name="metaclassesCollection" visibility="protected" type="_AYCpSmpOEeSHJZbEOSiM7A" isUnique="false">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_AYCpTGpOEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * The collection of metaclasses in one single model. &#xD;
+	 * This is for history reasons.&#xD;
+	 </body>
+                          </ownedComment>
+                        </ownedAttribute>
+                        <ownedAttribute xmi:type="uml:Property" xmi:id="_AYCpTWpOEeSHJZbEOSiM7A" name="profileCatalog" visibility="protected" type="_kH-CvGpJEeSHJZbEOSiM7A" isUnique="false">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_AYCpTmpOEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * Catalog used to search {@link Stereotype} by the name provided in {@link #qualifiedName}.&#xD;
+	 </body>
+                          </ownedComment>
+                        </ownedAttribute>
+                        <ownedAttribute xmi:type="uml:Property" xmi:id="_AYCpT2pOEeSHJZbEOSiM7A" name="changeSupport" visibility="private" type="_807u5mpNEeSHJZbEOSiM7A" isUnique="false">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_AYCpUGpOEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * Event manager&#xD;
+	 </body>
+                          </ownedComment>
+                        </ownedAttribute>
+                        <ownedAttribute xmi:type="uml:Property" xmi:id="_AYCpUWpOEeSHJZbEOSiM7A" name="excludedPropertyNames" visibility="private" type="_qhilUVR7EeSbnPFbgpN9Ow" isUnique="false">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_AYCpUmpOEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * List of property names that should not be edited.&#xD;
+	 </body>
+                          </ownedComment>
+                          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_AYCpU2pOEeSHJZbEOSiM7A"/>
+                          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_AYCpVGpOEeSHJZbEOSiM7A" value="*"/>
+                        </ownedAttribute>
+                        <ownedAttribute xmi:type="uml:Property" xmi:id="_AYO2g2pOEeSHJZbEOSiM7A" name="targetElement" visibility="protected" type="_kH-Cs2pJEeSHJZbEOSiM7A" isUnique="false">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_AYO2hGpOEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * The uml element that is target of this StereotypeModel.&#xD;
+	 * Only methods reacting to the StereotypeName change should use this property.&#xD;
+	 </body>
+                          </ownedComment>
+                        </ownedAttribute>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_AYCpVWpOEeSHJZbEOSiM7A" name="getStereotype" visibility="public">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_AYCpVmpOEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * @return the stereotype&#xD;
+	 </body>
+                          </ownedComment>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_AYCpV2pOEeSHJZbEOSiM7A" type="_81OCxmpNEeSHJZbEOSiM7A" direction="return"/>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_AYIv4GpOEeSHJZbEOSiM7A" name="setStereotype" visibility="public">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_AYIv4WpOEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * Set the stereotype property. &#xD;
+	 * @param stereotype the stereotype to set&#xD;
+	 </body>
+                          </ownedComment>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_AYIv4mpOEeSHJZbEOSiM7A" name="stereotype" type="_81OCxmpNEeSHJZbEOSiM7A"/>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_AYIv42pOEeSHJZbEOSiM7A" name="getProperties" visibility="public">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_AYIv5GpOEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * @return the properties&#xD;
+	 </body>
+                          </ownedComment>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_AYIv5WpOEeSHJZbEOSiM7A" type="_kHTUUGpJEeSHJZbEOSiM7A" direction="return">
+                            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_AYIv5mpOEeSHJZbEOSiM7A"/>
+                            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_AYIv52pOEeSHJZbEOSiM7A" value="*"/>
+                          </ownedParameter>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_AYIv6GpOEeSHJZbEOSiM7A" name="getMetaclasses" visibility="public">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_AYIv6WpOEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * @return the metaclasses&#xD;
+	 </body>
+                          </ownedComment>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_AYIv6mpOEeSHJZbEOSiM7A" type="_AYCpRWpOEeSHJZbEOSiM7A" direction="return">
+                            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_AYIv62pOEeSHJZbEOSiM7A"/>
+                            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_AYIv7GpOEeSHJZbEOSiM7A" value="*"/>
+                          </ownedParameter>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_AYIv7WpOEeSHJZbEOSiM7A" name="getExtendedStereotypes" visibility="public">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_AYIv7mpOEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * @return the extendedStereotypes&#xD;
+	 </body>
+                          </ownedComment>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_AYIv72pOEeSHJZbEOSiM7A" type="_AYCpQGpOEeSHJZbEOSiM7A" direction="return">
+                            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_AYIv8GpOEeSHJZbEOSiM7A"/>
+                            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_AYIv8WpOEeSHJZbEOSiM7A" value="*"/>
+                          </ownedParameter>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_AYIv8mpOEeSHJZbEOSiM7A" name="qualifiedNameChanged" visibility="protected">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_AYIv82pOEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * Intercept {@link #qualifiedNameChanged(StereotypeURLChangeEvent)} call in order to set the {@link Stereotype} ans its&#xD;
+	 * associated properties.&#xD;
+	 * &#xD;
+	 * @see org.eclipse.papyrus.uml.profile.drafter.ui.model.StereotypeURL#qualifiedNameChanged(org.eclipse.papyrus.uml.profile.drafter.ui.model.StereotypeURLChangeEvent)&#xD;
+	 *&#xD;
+	 * @param event&#xD;
+	 </body>
+                          </ownedComment>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_AYIv9GpOEeSHJZbEOSiM7A" name="event" type="_-rF_WWpNEeSHJZbEOSiM7A"/>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_AYIv9WpOEeSHJZbEOSiM7A" name="resetMetaclasses" visibility="protected">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_AYIv9mpOEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * Reset the {@link #properties}&#xD;
+	 </body>
+                          </ownedComment>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_AYIv92pOEeSHJZbEOSiM7A" name="clearInheritedMetaclasses" visibility="protected">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_AYIv-GpOEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * Remove all metaclasses that are not tagged 'created'.&#xD;
+	 </body>
+                          </ownedComment>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_AYIv-WpOEeSHJZbEOSiM7A" name="addStereotypeMetaclasses" visibility="protected">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_AYIv-mpOEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * Add all metaclasses already existing in the Stereotype.&#xD;
+	 </body>
+                          </ownedComment>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_AYIv-2pOEeSHJZbEOSiM7A" name="resetExtendedStereotypes" visibility="protected">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_AYIv_GpOEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * Reset the {@link #extendedStereotypes} properties to the models created by the users.&#xD;
+	 * &#xD;
+	 </body>
+                          </ownedComment>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_AYIv_WpOEeSHJZbEOSiM7A" name="clearInheritedExtendedStereotypes" visibility="protected">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_AYIv_mpOEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * Remove all extened stereotypes that are not tagged 'created'.&#xD;
+	 </body>
+                          </ownedComment>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_AYIv_2pOEeSHJZbEOSiM7A" name="addProfileExtendedStereotypes" visibility="protected"/>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_AYIwAGpOEeSHJZbEOSiM7A" name="resetProperties" visibility="protected">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_AYIwAWpOEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * Reset the list {@link #properties} of {@link PropertyModel}. Only retains {@link PropertyModel} created by the user.&#xD;
+	 * &#xD;
+	 </body>
+                          </ownedComment>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_AYIwAmpOEeSHJZbEOSiM7A" name="clearProfileProperties" visibility="protected">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_AYO2gGpOEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * Clear all the {@link PropertyModel} that are not created by the user.&#xD;
+	 </body>
+                          </ownedComment>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_AYO2gWpOEeSHJZbEOSiM7A" name="addProfileProperties" visibility="protected">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_AYO2gmpOEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * Create a {@link PropertyModel} for each property found in {@link #stereotype}, and add them to {@link #properties}. &#xD;
+	 </body>
+                          </ownedComment>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_AYO2hWpOEeSHJZbEOSiM7A" name="getPropertyValue" visibility="protected">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_AYO2hmpOEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * Return the value of the specified property attached to the {@link #targetElement}.&#xD;
+	 * @param property&#xD;
+	 * @return&#xD;
+	 </body>
+                          </ownedComment>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_AYO2h2pOEeSHJZbEOSiM7A" type="_-nze4GpGEeSHJZbEOSiM7A" direction="return"/>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_AYO2iGpOEeSHJZbEOSiM7A" name="property" type="_801oSWpNEeSHJZbEOSiM7A"/>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_AYO2iWpOEeSHJZbEOSiM7A" name="createNewPropertyModel" visibility="public">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_AYO2impOEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * Create a new {@link PropertyModel} and add it to the {@link StereoptypeModel#properties}&#xD;
+	 </body>
+                          </ownedComment>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_AYO2i2pOEeSHJZbEOSiM7A" type="_kHTUUGpJEeSHJZbEOSiM7A" direction="return"/>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_AYO2jGpOEeSHJZbEOSiM7A" name="createNewPropertyModel" visibility="public">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_AYO2jWpOEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * Create a new {@link PropertyModel} and add it to the {@link StereoptypeModel#properties}&#xD;
+	 </body>
+                          </ownedComment>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_AYO2jmpOEeSHJZbEOSiM7A" type="_kHTUUGpJEeSHJZbEOSiM7A" direction="return"/>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_AYO2j2pOEeSHJZbEOSiM7A" name="propertyName" type="_qhilUVR7EeSbnPFbgpN9Ow"/>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_AYO2kGpOEeSHJZbEOSiM7A" name="createMetaclassModel" visibility="public">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_AYO2kWpOEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * Create a new {@link MetaclassModel} and add it to the {@link StereoptypeModel#metaclasses}&#xD;
+	 </body>
+                          </ownedComment>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_AYO2kmpOEeSHJZbEOSiM7A" type="_AYCpRWpOEeSHJZbEOSiM7A" direction="return"/>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_AYO2k2pOEeSHJZbEOSiM7A" name="propertyName" type="_qhilUVR7EeSbnPFbgpN9Ow"/>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_AYO2lGpOEeSHJZbEOSiM7A" name="createExtendedStereotypeModel" visibility="public">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_AYO2lWpOEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * Create a new {@link Ext} and add it to the {@link StereoptypeModel#metaclasses}&#xD;
+	 </body>
+                          </ownedComment>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_AYO2lmpOEeSHJZbEOSiM7A" type="_AYCpQGpOEeSHJZbEOSiM7A" direction="return"/>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_AYO2l2pOEeSHJZbEOSiM7A" name="propertyName" type="_qhilUVR7EeSbnPFbgpN9Ow"/>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_AYO2mGpOEeSHJZbEOSiM7A" name="accept" visibility="public">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_AYO2mWpOEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * Visitor entry to visit this Model and its nested classes.&#xD;
+	 * @param visitor&#xD;
+	 </body>
+                          </ownedComment>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_AYO2mmpOEeSHJZbEOSiM7A" name="visitor" type="_81B1jWpNEeSHJZbEOSiM7A"/>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_AYU9IGpOEeSHJZbEOSiM7A" name="removePropertyModel" visibility="public">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_AYU9IWpOEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * Remove the property at the specified index.&#xD;
+	 * @param index&#xD;
+	 </body>
+                          </ownedComment>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_AYU9ImpOEeSHJZbEOSiM7A" name="index" type="_qhilUlR7EeSbnPFbgpN9Ow"/>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_AYU9I2pOEeSHJZbEOSiM7A" name="addPropertyChangeListener" visibility="public">
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_AYU9JGpOEeSHJZbEOSiM7A" name="listener" type="_81B1kWpNEeSHJZbEOSiM7A"/>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_AYU9JWpOEeSHJZbEOSiM7A" name="removePropertyChangeListener" visibility="public">
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_AYU9JmpOEeSHJZbEOSiM7A" name="listener" type="_81B1kWpNEeSHJZbEOSiM7A"/>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_AYU9J2pOEeSHJZbEOSiM7A" name="addPropertyChangeListener" visibility="public">
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_AYU9KGpOEeSHJZbEOSiM7A" name="propertyName" type="_qhilUVR7EeSbnPFbgpN9Ow"/>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_AYU9KWpOEeSHJZbEOSiM7A" name="listener" type="_81B1kWpNEeSHJZbEOSiM7A"/>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_AYU9KmpOEeSHJZbEOSiM7A" name="removePropertyChangeListener" visibility="public">
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_AYU9K2pOEeSHJZbEOSiM7A" name="propertyName" type="_qhilUVR7EeSbnPFbgpN9Ow"/>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_AYU9LGpOEeSHJZbEOSiM7A" name="listener" type="_81B1kWpNEeSHJZbEOSiM7A"/>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_AYU9LWpOEeSHJZbEOSiM7A" name="firePropertyChange" visibility="protected">
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_AYU9LmpOEeSHJZbEOSiM7A" name="propertyName" type="_qhilUVR7EeSbnPFbgpN9Ow"/>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_AYU9L2pOEeSHJZbEOSiM7A" name="oldValue" type="_-nze4GpGEeSHJZbEOSiM7A"/>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_AYU9MGpOEeSHJZbEOSiM7A" name="newValue" type="_-nze4GpGEeSHJZbEOSiM7A"/>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_AYU9MWpOEeSHJZbEOSiM7A" name="getMetaclassesCollection" visibility="public">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_AYU9MmpOEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * @return the metaclassesCollection&#xD;
+	 </body>
+                          </ownedComment>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_AYU9M2pOEeSHJZbEOSiM7A" type="_AYCpSmpOEeSHJZbEOSiM7A" direction="return"/>
+                        </ownedOperation>
+                      </packagedElement>
+                      <packagedElement xmi:type="uml:Class" xmi:id="_URjcQGpMEeSHJZbEOSiM7A" name="AccessibleTypeCatalog">
+                        <ownedComment xmi:type="uml:Comment" xmi:id="_URjcQWpMEeSHJZbEOSiM7A">
+                          <body>&#xD;
+ * A {@link ITypeCatalog} listing the type accessible from a specified {@link Element}.&#xD;
+ * &#xD;
+ * @author cedric dumoulin&#xD;
+ *&#xD;
+ </body>
+                        </ownedComment>
+                        <ownedAttribute xmi:type="uml:Property" xmi:id="_URjcQ2pMEeSHJZbEOSiM7A" name="element" visibility="protected" type="_kH-Cs2pJEeSHJZbEOSiM7A" isUnique="false">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_URjcRGpMEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * &#xD;
+	 </body>
+                          </ownedComment>
+                        </ownedAttribute>
+                        <ownedAttribute xmi:type="uml:Property" xmi:id="_URjcRWpMEeSHJZbEOSiM7A" name="primitiveTypesModel" visibility="protected" type="_-nhLAWpGEeSHJZbEOSiM7A" isUnique="false" aggregation="composite" association="_5XVKIGpOEeSHJZbEOSiM7A"/>
+                        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_URjcQmpMEeSHJZbEOSiM7A" name="AccessibleTypeCatalog implements ITypeCatalog" client="_URjcQGpMEeSHJZbEOSiM7A" supplier="_kHNNt2pJEeSHJZbEOSiM7A" contract="_kHNNt2pJEeSHJZbEOSiM7A"/>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_URjcRmpMEeSHJZbEOSiM7A" name="getTypeLabel" visibility="public">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_URjcR2pMEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * @see org.eclipse.papyrus.uml.profile.drafter.ui.model.ITypeCatalog#getTypeLabel(org.eclipse.uml2.uml.Type)&#xD;
+	 *&#xD;
+	 * @param type&#xD;
+	 * @return&#xD;
+	 </body>
+                          </ownedComment>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_URjcSGpMEeSHJZbEOSiM7A" type="_qhilUVR7EeSbnPFbgpN9Ow" direction="return"/>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_URjcSWpMEeSHJZbEOSiM7A" name="type" type="_-nnRpmpGEeSHJZbEOSiM7A"/>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_URjcSmpMEeSHJZbEOSiM7A" name="getType" visibility="public">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_URjcS2pMEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * @see org.eclipse.papyrus.uml.profile.drafter.ui.model.ITypeCatalog#getType(java.lang.String)&#xD;
+	 *&#xD;
+	 * @param typeLabel&#xD;
+	 * @return&#xD;
+	 * @throws NotFoundException&#xD;
+	 </body>
+                          </ownedComment>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_URjcTGpMEeSHJZbEOSiM7A" type="_-nnRpmpGEeSHJZbEOSiM7A" direction="return"/>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_URpi4GpMEeSHJZbEOSiM7A" name="typeLabel" type="_qhilUVR7EeSbnPFbgpN9Ow"/>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_URpi4WpMEeSHJZbEOSiM7A" name="getTypes" visibility="public">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_URpi4mpMEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * @see org.eclipse.papyrus.uml.profile.drafter.ui.model.ITypeCatalog#getTypes()&#xD;
+	 *&#xD;
+	 * @return&#xD;
+	 </body>
+                          </ownedComment>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_URpi42pMEeSHJZbEOSiM7A" type="_-nnRpmpGEeSHJZbEOSiM7A" direction="return">
+                            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_URpi5GpMEeSHJZbEOSiM7A"/>
+                            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_URpi5WpMEeSHJZbEOSiM7A" value="*"/>
+                          </ownedParameter>
+                        </ownedOperation>
+                      </packagedElement>
+                      <packagedElement xmi:type="uml:Class" xmi:id="_801oQGpNEeSHJZbEOSiM7A" name="MemberKind"/>
+                      <packagedElement xmi:type="uml:Class" xmi:id="_801oQ2pNEeSHJZbEOSiM7A" name="StateKind"/>
+                      <packagedElement xmi:type="uml:Class" xmi:id="_801oRmpNEeSHJZbEOSiM7A" name="LifeStatusKind"/>
+                      <packagedElement xmi:type="uml:Interface" xmi:id="_81B1jWpNEeSHJZbEOSiM7A" name="IModelVisitor"/>
+                      <packagedElement xmi:type="uml:Class" xmi:id="_-q_4oGpNEeSHJZbEOSiM7A" name="StereotypeURL">
+                        <ownedComment xmi:type="uml:Comment" xmi:id="_-q_4oWpNEeSHJZbEOSiM7A">
+                          <body>&#xD;
+ * A class encapsulating an URL identifying a Stereotype.&#xD;
+ * The class does not ensure that a corresponding UML {@link Stereotype} exists. It is only a identifier to a Stereotype.&#xD;
+ * &#xD;
+ * &#xD;
+ * @author cedric dumoulin&#xD;
+ *&#xD;
+ </body>
+                        </ownedComment>
+                        <ownedAttribute xmi:type="uml:Property" xmi:id="_-q_4ompNEeSHJZbEOSiM7A" name="QUALIFIED_NAME" isLeaf="true" isStatic="true" type="_qhilUVR7EeSbnPFbgpN9Ow" isUnique="false"/>
+                        <ownedAttribute xmi:type="uml:Property" xmi:id="_-q_4o2pNEeSHJZbEOSiM7A" name="PROFILE_NAME" isLeaf="true" isStatic="true" type="_qhilUVR7EeSbnPFbgpN9Ow" isUnique="false"/>
+                        <ownedAttribute xmi:type="uml:Property" xmi:id="_-q_4pGpNEeSHJZbEOSiM7A" name="STEREOTYPEE_NAME" isLeaf="true" isStatic="true" type="_qhilUVR7EeSbnPFbgpN9Ow" isUnique="false"/>
+                        <ownedAttribute xmi:type="uml:Property" xmi:id="_-q_4pWpNEeSHJZbEOSiM7A" name="RESOURCEE_NAME" isLeaf="true" isStatic="true" type="_qhilUVR7EeSbnPFbgpN9Ow" isUnique="false"/>
+                        <ownedAttribute xmi:type="uml:Property" xmi:id="_-q_4pmpNEeSHJZbEOSiM7A" name="qualifiedName" visibility="protected" type="_qhilUVR7EeSbnPFbgpN9Ow" isUnique="false"/>
+                        <ownedAttribute xmi:type="uml:Property" xmi:id="_-q_4p2pNEeSHJZbEOSiM7A" name="profileName" visibility="protected" type="_qhilUVR7EeSbnPFbgpN9Ow" isUnique="false"/>
+                        <ownedAttribute xmi:type="uml:Property" xmi:id="_-q_4qGpNEeSHJZbEOSiM7A" name="stereotypeName" visibility="protected" type="_qhilUVR7EeSbnPFbgpN9Ow" isUnique="false"/>
+                        <ownedAttribute xmi:type="uml:Property" xmi:id="_-rF_QGpNEeSHJZbEOSiM7A" name="resourceName" visibility="protected" type="_qhilUVR7EeSbnPFbgpN9Ow" isUnique="false">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_-rF_QWpNEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * The resource that should contains the Stereotype.&#xD;
+	 * Not yet used&#xD;
+	 * TODO : used this extra property&#xD;
+	 </body>
+                          </ownedComment>
+                        </ownedAttribute>
+                        <ownedAttribute xmi:type="uml:Property" xmi:id="_-rF_QmpNEeSHJZbEOSiM7A" name="changeSupport" visibility="private" type="_807u5mpNEeSHJZbEOSiM7A" isUnique="false">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_-rF_Q2pNEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * Event manager&#xD;
+	 </body>
+                          </ownedComment>
+                        </ownedAttribute>
+                        <ownedAttribute xmi:type="uml:Property" xmi:id="_-rF_RGpNEeSHJZbEOSiM7A" name="count" visibility="private" isStatic="true" type="_qhilUlR7EeSbnPFbgpN9Ow" isUnique="false"/>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_-rF_RWpNEeSHJZbEOSiM7A" name="getQualifiedName" visibility="public">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_-rF_RmpNEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * @return the qualifiedName&#xD;
+	 </body>
+                          </ownedComment>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_-rF_R2pNEeSHJZbEOSiM7A" type="_qhilUVR7EeSbnPFbgpN9Ow" direction="return"/>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_-rF_SGpNEeSHJZbEOSiM7A" name="setQualifiedName" visibility="public">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_-rF_SWpNEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * @param qualifiedName the qualifiedName to set&#xD;
+	 </body>
+                          </ownedComment>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_-rF_SmpNEeSHJZbEOSiM7A" name="qualifiedName" type="_qhilUVR7EeSbnPFbgpN9Ow"/>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_-rF_S2pNEeSHJZbEOSiM7A" name="clear" visibility="public">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_-rF_TGpNEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * Clear this URL. All segments are set to null or empty.&#xD;
+	 </body>
+                          </ownedComment>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_-rF_TWpNEeSHJZbEOSiM7A" name="getStereotypeName" visibility="public">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_-rF_TmpNEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * @return the stereotypeName&#xD;
+	 </body>
+                          </ownedComment>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_-rF_T2pNEeSHJZbEOSiM7A" type="_qhilUVR7EeSbnPFbgpN9Ow" direction="return"/>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_-rF_UGpNEeSHJZbEOSiM7A" name="setStereotypeName" visibility="public">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_-rF_UWpNEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * @param stereotypeName the stereotypeName to set&#xD;
+	 </body>
+                          </ownedComment>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_-rF_UmpNEeSHJZbEOSiM7A" name="stereotypeName" type="_qhilUVR7EeSbnPFbgpN9Ow"/>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_-rF_U2pNEeSHJZbEOSiM7A" name="getProfileName" visibility="public">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_-rF_VGpNEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * @return the profileNames&#xD;
+	 </body>
+                          </ownedComment>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_-rF_VWpNEeSHJZbEOSiM7A" type="_qhilUVR7EeSbnPFbgpN9Ow" direction="return"/>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_-rF_VmpNEeSHJZbEOSiM7A" name="setProfileName" visibility="public">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_-rF_V2pNEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * @param profilePath The name of the profile to add to {@link #profileNames}.&#xD;
+	 * @return the profileNames&#xD;
+	 </body>
+                          </ownedComment>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_-rF_WGpNEeSHJZbEOSiM7A" name="profileName" type="_qhilUVR7EeSbnPFbgpN9Ow"/>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_-rMF4GpNEeSHJZbEOSiM7A" name="qualifiedNameChanged" visibility="protected">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_-rMF4WpNEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * Method called when the {@link #qualifiedName} property has changed. This method is called directly by methods&#xD;
+	 * modifying the properties.&#xD;
+	 * The provided parameter is the event that has been created and filled with appropriate values. It is ready to be fired.&#xD;
+	 * &#xD;
+	 * &#xD;
+	 * @param event The event indicating the changes. This event is not yet fired. The method should fire the event.&#xD;
+	 * &#xD;
+	 </body>
+                          </ownedComment>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_-rMF4mpNEeSHJZbEOSiM7A" name="event" type="_-rF_WWpNEeSHJZbEOSiM7A"/>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_-rMF42pNEeSHJZbEOSiM7A" name="createStereotypeURLChangeEvent" visibility="protected">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_-rMF5GpNEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * Create a new {@link StereotypeURLChangeEvent} initialized with provided values.&#xD;
+	 * &#xD;
+	 * @param oldValue The old {@link #qualifiedName} value&#xD;
+	 * @param newValue The new {@link #qualifiedName} value&#xD;
+	 * @return&#xD;
+	 </body>
+                          </ownedComment>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_-rMF5WpNEeSHJZbEOSiM7A" type="_-rF_WWpNEeSHJZbEOSiM7A" direction="return"/>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_-rMF5mpNEeSHJZbEOSiM7A" name="oldValue" type="_-nze4GpGEeSHJZbEOSiM7A"/>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_-rMF52pNEeSHJZbEOSiM7A" name="newValue" type="_-nze4GpGEeSHJZbEOSiM7A"/>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_-rMF6GpNEeSHJZbEOSiM7A" name="computeQualifiedName" visibility="public">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_-rMF6WpNEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * Compute the qualifiedName from {@link #resourceName}, {@link #profileNames} and {@link #stereotypeName}.&#xD;
+	 * Add necessary '::' and '/'.&#xD;
+	 * Profile paths and stereotype name are separated with '::'.&#xD;
+	 * ResourceName and paths are separated by '/'.&#xD;
+	 * &#xD;
+	 * @return&#xD;
+	 </body>
+                          </ownedComment>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_-rMF6mpNEeSHJZbEOSiM7A" type="_qhilUVR7EeSbnPFbgpN9Ow" direction="return"/>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_-rMF62pNEeSHJZbEOSiM7A" name="toString" visibility="public">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_-rMF7GpNEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * &#xD;
+	 * @see java.lang.Object#toString()&#xD;
+	 *&#xD;
+	 * @return&#xD;
+	 </body>
+                          </ownedComment>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_-rMF7WpNEeSHJZbEOSiM7A" type="_qhilUVR7EeSbnPFbgpN9Ow" direction="return"/>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_-rMF7mpNEeSHJZbEOSiM7A" name="addPropertyChangeListener" visibility="public">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_-rMF72pNEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * &#xD;
+	 * @param listener&#xD;
+	 </body>
+                          </ownedComment>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_-rMF8GpNEeSHJZbEOSiM7A" name="listener" type="_81B1kWpNEeSHJZbEOSiM7A"/>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_-rMF8WpNEeSHJZbEOSiM7A" name="removePropertyChangeListener" visibility="public">
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_-rMF8mpNEeSHJZbEOSiM7A" name="listener" type="_81B1kWpNEeSHJZbEOSiM7A"/>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_-rMF82pNEeSHJZbEOSiM7A" name="addPropertyChangeListener" visibility="public">
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_-rMF9GpNEeSHJZbEOSiM7A" name="propertyName" type="_qhilUVR7EeSbnPFbgpN9Ow"/>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_-rMF9WpNEeSHJZbEOSiM7A" name="listener" type="_81B1kWpNEeSHJZbEOSiM7A"/>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_-rMF9mpNEeSHJZbEOSiM7A" name="removePropertyChangeListener" visibility="public">
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_-rMF92pNEeSHJZbEOSiM7A" name="propertyName" type="_qhilUVR7EeSbnPFbgpN9Ow"/>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_-rMF-GpNEeSHJZbEOSiM7A" name="listener" type="_81B1kWpNEeSHJZbEOSiM7A"/>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_-rMF-WpNEeSHJZbEOSiM7A" name="firePropertyChange" visibility="protected">
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_-rMF-mpNEeSHJZbEOSiM7A" name="propertyName" type="_qhilUVR7EeSbnPFbgpN9Ow"/>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_-rSMgGpNEeSHJZbEOSiM7A" name="oldValue" type="_-nze4GpGEeSHJZbEOSiM7A"/>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_-rSMgWpNEeSHJZbEOSiM7A" name="newValue" type="_-nze4GpGEeSHJZbEOSiM7A"/>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_-rSMgmpNEeSHJZbEOSiM7A" name="fireIndexedPropertyChange" visibility="protected">
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_-rSMg2pNEeSHJZbEOSiM7A" name="propertyName" type="_qhilUVR7EeSbnPFbgpN9Ow"/>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_-rSMhGpNEeSHJZbEOSiM7A" name="index" type="_qhilUlR7EeSbnPFbgpN9Ow"/>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_-rSMhWpNEeSHJZbEOSiM7A" name="oldValue" type="_-nze4GpGEeSHJZbEOSiM7A"/>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_-rSMhmpNEeSHJZbEOSiM7A" name="newValue" type="_-nze4GpGEeSHJZbEOSiM7A"/>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_-rSMh2pNEeSHJZbEOSiM7A" name="getChangeSupport" visibility="protected">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_-rSMiGpNEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * @return the changeSupport&#xD;
+	 </body>
+                          </ownedComment>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_-rSMiWpNEeSHJZbEOSiM7A" type="_807u5mpNEeSHJZbEOSiM7A" direction="return"/>
+                        </ownedOperation>
+                      </packagedElement>
+                      <packagedElement xmi:type="uml:Class" xmi:id="_-rF_WWpNEeSHJZbEOSiM7A" name="StereotypeURLChangeEvent"/>
+                      <packagedElement xmi:type="uml:Class" xmi:id="_AYCpQGpOEeSHJZbEOSiM7A" name="ExtendedStereotypeModel"/>
+                      <packagedElement xmi:type="uml:Class" xmi:id="_AYCpRWpOEeSHJZbEOSiM7A" name="MetaclassModel">
+                        <ownedComment xmi:type="uml:Comment" xmi:id="_Bxr8wGpOEeSHJZbEOSiM7A">
+                          <body>&#xD;
+ * Model that represent one {@link StereoptypeModel}'s extended metaclasses.&#xD;
+&#xD;
+ * @author cedric dumoulin&#xD;
+ *&#xD;
+ </body>
+                        </ownedComment>
+                        <ownedAttribute xmi:type="uml:Property" xmi:id="_Bxr8wWpOEeSHJZbEOSiM7A" name="memberKind" visibility="protected" type="_801oQGpNEeSHJZbEOSiM7A" isUnique="false">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_Bxr8wmpOEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * The status of the model. ModelStatusKind.created mean that the model is created by the user.&#xD;
+	 </body>
+                          </ownedComment>
+                        </ownedAttribute>
+                        <ownedAttribute xmi:type="uml:Property" xmi:id="_Bxr8w2pOEeSHJZbEOSiM7A" name="stateKind" visibility="protected" type="_801oQ2pNEeSHJZbEOSiM7A" isUnique="false">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_Bxr8xGpOEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * state of this model.&#xD;
+	 </body>
+                          </ownedComment>
+                        </ownedAttribute>
+                        <ownedAttribute xmi:type="uml:Property" xmi:id="_Bxr8xWpOEeSHJZbEOSiM7A" name="lifeStatusKind" visibility="protected" type="_801oRmpNEeSHJZbEOSiM7A" isUnique="false">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_Bxr8xmpOEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * Life status of this model. Value is deleted if the user request deletion of this model.&#xD;
+	 </body>
+                          </ownedComment>
+                        </ownedAttribute>
+                        <ownedAttribute xmi:type="uml:Property" xmi:id="_Bxr8x2pOEeSHJZbEOSiM7A" name="extendedMetaClass" visibility="private" type="_kH-CtmpJEeSHJZbEOSiM7A" isUnique="false">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_Bxr8yGpOEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * The Metaclass that the Stereotype extends. This is the metaclass represented by this model.&#xD;
+	 </body>
+                          </ownedComment>
+                        </ownedAttribute>
+                        <ownedAttribute xmi:type="uml:Property" xmi:id="_Bxr8yWpOEeSHJZbEOSiM7A" name="proposedName" visibility="protected" type="_qhilUVR7EeSbnPFbgpN9Ow" isUnique="false">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_Bxr8ympOEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * The name proposed by the user for this Property.&#xD;
+	 </body>
+                          </ownedComment>
+                        </ownedAttribute>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_Bxr8y2pOEeSHJZbEOSiM7A" name="getExtendedMetaClass" visibility="protected">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_Bxr8zGpOEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * @return the extendedMetaClass&#xD;
+	 </body>
+                          </ownedComment>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_Bxr8zWpOEeSHJZbEOSiM7A" type="_kH-CtmpJEeSHJZbEOSiM7A" direction="return"/>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_Bxr8zmpOEeSHJZbEOSiM7A" name="accept" visibility="public">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_Bxr8z2pOEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * Visitor entry to visit this Model and its nested classes.&#xD;
+	 * @param visitor&#xD;
+	 </body>
+                          </ownedComment>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_Bxr80GpOEeSHJZbEOSiM7A" name="visitor" type="_81B1jWpNEeSHJZbEOSiM7A"/>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_Bxr80WpOEeSHJZbEOSiM7A" name="getLifeStatusKind" visibility="public">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_Bxr80mpOEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * @return the lifeStatusKind&#xD;
+	 </body>
+                          </ownedComment>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_Bxr802pOEeSHJZbEOSiM7A" type="_801oRmpNEeSHJZbEOSiM7A" direction="return"/>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_Bxr81GpOEeSHJZbEOSiM7A" name="setLifeStatusKind" visibility="public">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_BxyDYGpOEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * @param lifeStatusKind the lifeStatusKind to set&#xD;
+	 </body>
+                          </ownedComment>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_BxyDYWpOEeSHJZbEOSiM7A" name="lifeStatusKind" type="_801oRmpNEeSHJZbEOSiM7A"/>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_BxyDYmpOEeSHJZbEOSiM7A" name="getMemberKind" visibility="public">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_BxyDY2pOEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * @return the memberKind&#xD;
+	 </body>
+                          </ownedComment>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_BxyDZGpOEeSHJZbEOSiM7A" type="_801oQGpNEeSHJZbEOSiM7A" direction="return"/>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_BxyDZWpOEeSHJZbEOSiM7A" name="getStateKind" visibility="public">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_BxyDZmpOEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * @return the stateKind&#xD;
+	 </body>
+                          </ownedComment>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_BxyDZ2pOEeSHJZbEOSiM7A" type="_801oQ2pNEeSHJZbEOSiM7A" direction="return"/>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_BxyDaGpOEeSHJZbEOSiM7A" name="modelChangedEvent" visibility="public">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_BxyDaWpOEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * Apply a model changed event on this model. This change the {@link #lifeStatusKind}.&#xD;
+	 </body>
+                          </ownedComment>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_BxyDampOEeSHJZbEOSiM7A" name="deleteModelEvent" visibility="public">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_BxyDa2pOEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * A delete is applied to the model. If the model is alive, it is marked deleted.&#xD;
+	 * If it is deleted, it is marked alive.&#xD;
+	 </body>
+                          </ownedComment>
+                        </ownedOperation>
+                      </packagedElement>
+                      <packagedElement xmi:type="uml:Class" xmi:id="_AYCpSmpOEeSHJZbEOSiM7A" name="MetaclassesModel">
+                        <ownedComment xmi:type="uml:Comment" xmi:id="_LCrnAGpOEeSHJZbEOSiM7A">
+                          <body>&#xD;
+ * Model representing a Collection of Metaclasses.&#xD;
+ * This model is here for Histiric reasons. It may be replaced by List&lt;MetaclassModel>.&#xD;
+ * &#xD;
+ * @author cedric dumoulin&#xD;
+ *&#xD;
+ </body>
+                        </ownedComment>
+                        <ownedAttribute xmi:type="uml:Property" xmi:id="_LCxtoGpOEeSHJZbEOSiM7A" name="requiredMetaclasses" visibility="private" type="_kH-CtmpJEeSHJZbEOSiM7A" isUnique="false">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_LCxtoWpOEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * Metaclasses required by the user before modifying the Stereotype.&#xD;
+	 </body>
+                          </ownedComment>
+                          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_LCxtompOEeSHJZbEOSiM7A"/>
+                          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_LCxto2pOEeSHJZbEOSiM7A" value="*"/>
+                        </ownedAttribute>
+                        <ownedAttribute xmi:type="uml:Property" xmi:id="_LCxtpGpOEeSHJZbEOSiM7A" name="selectedMetaclasses" visibility="private" type="_kH-CtmpJEeSHJZbEOSiM7A" isUnique="false">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_LCxtpWpOEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * Metaclasses selected by the user.&#xD;
+	 </body>
+                          </ownedComment>
+                          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_LCxtpmpOEeSHJZbEOSiM7A"/>
+                          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_LCxtp2pOEeSHJZbEOSiM7A" value="*"/>
+                        </ownedAttribute>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_LCxtqGpOEeSHJZbEOSiM7A" name="getRequiredMetaclasses" visibility="public">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_LCxtqWpOEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * @return the requiredMetaclasses&#xD;
+	 </body>
+                          </ownedComment>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_LCxtqmpOEeSHJZbEOSiM7A" type="_kH-CtmpJEeSHJZbEOSiM7A" direction="return">
+                            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_LCxtq2pOEeSHJZbEOSiM7A"/>
+                            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_LCxtrGpOEeSHJZbEOSiM7A" value="*"/>
+                          </ownedParameter>
+                        </ownedOperation>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_LCxtrWpOEeSHJZbEOSiM7A" name="getSelectedMetaclasses" visibility="public">
+                          <ownedComment xmi:type="uml:Comment" xmi:id="_LCxtrmpOEeSHJZbEOSiM7A">
+                            <body>&#xD;
+	 * @return the selectedMetaclasses&#xD;
+	 </body>
+                          </ownedComment>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_LCxtr2pOEeSHJZbEOSiM7A" type="_kH-CtmpJEeSHJZbEOSiM7A" direction="return">
+                            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_LCxtsGpOEeSHJZbEOSiM7A"/>
+                            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_LCxtsWpOEeSHJZbEOSiM7A" value="*"/>
+                          </ownedParameter>
+                        </ownedOperation>
+                      </packagedElement>
+                      <packagedElement xmi:type="uml:Association" xmi:id="_5XVKIGpOEeSHJZbEOSiM7A" name="A_primitiveTypesModel_accessibleTypeCatalog" memberEnd="_URjcRWpMEeSHJZbEOSiM7A _5XVKIWpOEeSHJZbEOSiM7A">
+                        <ownedEnd xmi:type="uml:Property" xmi:id="_5XVKIWpOEeSHJZbEOSiM7A" name="accessibleTypeCatalog" type="_URjcQGpMEeSHJZbEOSiM7A" association="_5XVKIGpOEeSHJZbEOSiM7A">
+                          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_5XVKImpOEeSHJZbEOSiM7A"/>
+                          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_5XVKI2pOEeSHJZbEOSiM7A" value="1"/>
+                        </ownedEnd>
+                      </packagedElement>
+                    </packagedElement>
+                    <packagedElement xmi:type="uml:Package" xmi:id="_aqCBQGpMEeSHJZbEOSiM7A" name="providers">
+                      <packagedElement xmi:type="uml:Class" xmi:id="_aqCBQWpMEeSHJZbEOSiM7A" name="TypeLabelProvider">
+                        <ownedComment xmi:type="uml:Comment" xmi:id="_aqCBQmpMEeSHJZbEOSiM7A">
+                          <body>&#xD;
+ * A {@link ILabelProvider} for uml {@link Type}&#xD;
+ * @author cedric dumoulin&#xD;
+ *&#xD;
+ </body>
+                        </ownedComment>
+                        <generalization xmi:type="uml:Generalization" xmi:id="_aqCBRGpMEeSHJZbEOSiM7A" general="_aqCBQ2pMEeSHJZbEOSiM7A"/>
+                        <ownedOperation xmi:type="uml:Operation" xmi:id="_aqCBRWpMEeSHJZbEOSiM7A" name="getText" visibility="public">
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_aqCBRmpMEeSHJZbEOSiM7A" type="_qhilUVR7EeSbnPFbgpN9Ow" direction="return"/>
+                          <ownedParameter xmi:type="uml:Parameter" xmi:id="_aqCBR2pMEeSHJZbEOSiM7A" name="element" type="_-nze4GpGEeSHJZbEOSiM7A"/>
+                        </ownedOperation>
+                      </packagedElement>
+                    </packagedElement>
+                  </packagedElement>
+                  <packagedElement xmi:type="uml:Class" xmi:id="_kH-CvGpJEeSHJZbEOSiM7A" name="ProfileCatalog"/>
+                </packagedElement>
+              </packagedElement>
+              <packagedElement xmi:type="uml:Package" xmi:id="_-n5lhGpGEeSHJZbEOSiM7A" name="extensionpoints">
+                <packagedElement xmi:type="uml:Package" xmi:id="_-n5lhWpGEeSHJZbEOSiM7A" name="library">
+                  <packagedElement xmi:type="uml:Interface" xmi:id="_-n5lhmpGEeSHJZbEOSiM7A" name="IRegisteredLibrary"/>
                 </packagedElement>
               </packagedElement>
             </packagedElement>
@@ -87,6 +1634,11 @@
         </packagedElement>
         <packagedElement xmi:type="uml:Package" xmi:id="_qhilUFR7EeSbnPFbgpN9Ow" name="lang">
           <packagedElement xmi:type="uml:Class" xmi:id="_qhilUVR7EeSbnPFbgpN9Ow" name="String"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_-nze4GpGEeSHJZbEOSiM7A" name="Object"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_807u5WpNEeSHJZbEOSiM7A" name="beans">
+          <packagedElement xmi:type="uml:Class" xmi:id="_807u5mpNEeSHJZbEOSiM7A" name="PropertyChangeSupport"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_81B1kWpNEeSHJZbEOSiM7A" name="PropertyChangeListener"/>
         </packagedElement>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_NnufMFRsEeSbnPFbgpN9Ow" name="Object"/>
@@ -103,6 +1655,7 @@
             <packagedElement xmi:type="uml:Package" xmi:id="_cMuqNuy4EeOcMebkujJNBQ" name="ecore">
               <packagedElement xmi:type="uml:Package" xmi:id="_cMuqN-y4EeOcMebkujJNBQ" name="resource">
                 <packagedElement xmi:type="uml:Class" xmi:id="_cMuqOOy4EeOcMebkujJNBQ" name="Resource"/>
+                <packagedElement xmi:type="uml:Class" xmi:id="_-nze6GpGEeSHJZbEOSiM7A" name="ResourceSet"/>
               </packagedElement>
             </packagedElement>
           </packagedElement>
@@ -316,13 +1869,131 @@
         </packagedElement>
         <packagedElement xmi:type="uml:Association" xmi:id="_wbsNY1RsEeSbnPFbgpN9Ow" memberEnd="_wbsNZFRsEeSbnPFbgpN9Ow _wbsNYFRsEeSbnPFbgpN9Ow">
           <name xsi:nil="true"/>
-          <ownedEnd xmi:type="uml:Property" xmi:id="_wbsNZFRsEeSbnPFbgpN9Ow" name="typeModel" type="_mmAeUFRDEeSbnPFbgpN9Ow" association="_wbsNY1RsEeSbnPFbgpN9Ow">
+          <ownedEnd xmi:type="uml:Property" xmi:id="_wbsNZFRsEeSbnPFbgpN9Ow" name="typeModel" type="_vJUjMFRDEeSbnPFbgpN9Ow" association="_wbsNY1RsEeSbnPFbgpN9Ow">
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_wbsNZVRsEeSbnPFbgpN9Ow" value="1"/>
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_wbsNZlRsEeSbnPFbgpN9Ow" value="1"/>
           </ownedEnd>
         </packagedElement>
       </packagedElement>
       <packagedElement xmi:type="uml:Model" xmi:id="_JWVksFR7EeSbnPFbgpN9Ow" name="contentassist"/>
+      <packagedElement xmi:type="uml:Package" xmi:id="_wzASQGpGEeSHJZbEOSiM7A" name="utils">
+        <packagedElement xmi:type="uml:Class" xmi:id="_Foi9wGpHEeSHJZbEOSiM7A" name="UMLPrimitiveTypesModel">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_Foi9wWpHEeSHJZbEOSiM7A">
+            <body>&#xD;
+ * A class encapsulating the UMLPrimitiveTypes library.&#xD;
+ * &#xD;
+ * @author cedric dumoulin&#xD;
+ *&#xD;
+ </body>
+          </ownedComment>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_Foi9wmpHEeSHJZbEOSiM7A" name="UMLPrimitiveTypes_BOOLEAN" visibility="public" type="_-nnRpmpGEeSHJZbEOSiM7A" isUnique="false">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_Foi9w2pHEeSHJZbEOSiM7A">
+              <body> constant to identify the type of a Boolean property </body>
+            </ownedComment>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_Foi9xGpHEeSHJZbEOSiM7A" name="UMLPrimitiveTypes_INTEGER" visibility="public" type="_-nnRpmpGEeSHJZbEOSiM7A" isUnique="false">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_Foi9xWpHEeSHJZbEOSiM7A">
+              <body> constant to identify the type of an Integer property </body>
+            </ownedComment>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_Foi9xmpHEeSHJZbEOSiM7A" name="UMLPrimitiveTypes_STRING" visibility="public" type="_-nnRpmpGEeSHJZbEOSiM7A" isUnique="false">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_Foi9x2pHEeSHJZbEOSiM7A">
+              <body> constant to identify the type of a String property </body>
+            </ownedComment>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_Foi9yGpHEeSHJZbEOSiM7A" name="UMLPrimitiveTypes_UNLIMITED_NATURAL" visibility="public" type="_-nnRpmpGEeSHJZbEOSiM7A" isUnique="false">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_Foi9yWpHEeSHJZbEOSiM7A">
+              <body> constant to identify the type of an Unlimited Natural property </body>
+            </ownedComment>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_Foi9ympHEeSHJZbEOSiM7A" name="UMLPrimitiveTypes_REAL" visibility="public" type="_-nnRpmpGEeSHJZbEOSiM7A" isUnique="false">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_Foi9y2pHEeSHJZbEOSiM7A">
+              <body> constant to identify the type of an Unlimited Natural property </body>
+            </ownedComment>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_Foi9zGpHEeSHJZbEOSiM7A" name="UMLPrimitiveTypes_BOOLEAN_NAME" visibility="public" isLeaf="true" isStatic="true" type="_qhilUVR7EeSbnPFbgpN9Ow" isUnique="false">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_Foi9zWpHEeSHJZbEOSiM7A">
+              <body> constant to identify the type of a Boolean property </body>
+            </ownedComment>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_Foi9zmpHEeSHJZbEOSiM7A" name="UMLPrimitiveTypes_INTEGER_NAME" visibility="public" isLeaf="true" isStatic="true" type="_qhilUVR7EeSbnPFbgpN9Ow" isUnique="false">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_Foi9z2pHEeSHJZbEOSiM7A">
+              <body> constant to identify the type of an Integer property </body>
+            </ownedComment>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_Foi90GpHEeSHJZbEOSiM7A" name="UMLPrimitiveTypes_STRING_NAME" visibility="public" isLeaf="true" isStatic="true" type="_qhilUVR7EeSbnPFbgpN9Ow" isUnique="false">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_Foi90WpHEeSHJZbEOSiM7A">
+              <body> constant to identify the type of a String property </body>
+            </ownedComment>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_Foi90mpHEeSHJZbEOSiM7A" name="UMLPrimitiveTypes_UNLIMITED_NATURAL_NAME" visibility="public" isLeaf="true" isStatic="true" type="_qhilUVR7EeSbnPFbgpN9Ow" isUnique="false">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_Foi902pHEeSHJZbEOSiM7A">
+              <body> constant to identify the type of an Unlimited Natural property </body>
+            </ownedComment>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_Foi91GpHEeSHJZbEOSiM7A" name="UMLPrimitiveTypes_REAL_NAME" visibility="public" isLeaf="true" isStatic="true" type="_qhilUVR7EeSbnPFbgpN9Ow" isUnique="false">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_Foi91WpHEeSHJZbEOSiM7A">
+              <body> constant to identify the type of an Unlimited Natural property </body>
+            </ownedComment>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_Foi91mpHEeSHJZbEOSiM7A" name="UMLPrimitiveTypes_LIBRARY_NAME" visibility="public" isLeaf="true" isStatic="true" type="_qhilUVR7EeSbnPFbgpN9Ow" isUnique="false"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_Foi912pHEeSHJZbEOSiM7A" name="UMLPrimitiveTypes_PACKAGE_NAME" visibility="private" isLeaf="true" isStatic="true" type="_-nze4GpGEeSHJZbEOSiM7A" isUnique="false"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_Foi92GpHEeSHJZbEOSiM7A" name="libraryResource" visibility="protected" type="_cMuqOOy4EeOcMebkujJNBQ" isUnique="false">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_Foi92WpHEeSHJZbEOSiM7A">
+              <body>&#xD;
+	 * The resource containing the library.&#xD;
+	 </body>
+            </ownedComment>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_Foi92mpHEeSHJZbEOSiM7A" name="libraryPackage" visibility="private" type="_-nze5GpGEeSHJZbEOSiM7A" isUnique="false"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_Foi922pHEeSHJZbEOSiM7A" name="extractTypes" visibility="private">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_Foi93GpHEeSHJZbEOSiM7A">
+              <body>&#xD;
+	 * Extract types from the resource&#xD;
+	 </body>
+            </ownedComment>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_Foi93WpHEeSHJZbEOSiM7A" name="lookupPrimitiveTypesResource" visibility="private">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_Foi93mpHEeSHJZbEOSiM7A">
+              <body>&#xD;
+	 * Lookup for the {@link Resource} containing the Library.&#xD;
+	 * &#xD;
+	 * @param resourceSet The {@link ResourceSet} into which we lookup&#xD;
+	 * @return The {@link Resource}, or null if not found.&#xD;
+	 * @throws NotFoundException &#xD;
+	 </body>
+            </ownedComment>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_Foi932pHEeSHJZbEOSiM7A" type="_cMuqOOy4EeOcMebkujJNBQ" direction="return"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_Foi94GpHEeSHJZbEOSiM7A" name="resourceSet" type="_-nze6GpGEeSHJZbEOSiM7A"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_Foi94WpHEeSHJZbEOSiM7A" name="getIRegisteredLibrary" visibility="private">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_Foi94mpHEeSHJZbEOSiM7A">
+              <body>&#xD;
+	 * @throws NotFoundException &#xD;
+	 * &#xD;
+	 </body>
+            </ownedComment>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_Foi942pHEeSHJZbEOSiM7A" type="_-n5lhmpGEeSHJZbEOSiM7A" direction="return"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_Foi95GpHEeSHJZbEOSiM7A" name="libraryName" type="_qhilUVR7EeSbnPFbgpN9Ow"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_Foi95WpHEeSHJZbEOSiM7A" name="getLibraryResource" visibility="public">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_Foi95mpHEeSHJZbEOSiM7A">
+              <body>&#xD;
+	 * @return the libraryResource&#xD;
+	 </body>
+            </ownedComment>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_Foi952pHEeSHJZbEOSiM7A" type="_cMuqOOy4EeOcMebkujJNBQ" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_Foi96GpHEeSHJZbEOSiM7A" name="getLibraryPackage" visibility="public">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_Foi96WpHEeSHJZbEOSiM7A">
+              <body>&#xD;
+	 * @return the libraryResource&#xD;
+	 </body>
+            </ownedComment>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_Foi96mpHEeSHJZbEOSiM7A" type="_-nze5GpGEeSHJZbEOSiM7A" direction="return"/>
+          </ownedOperation>
+        </packagedElement>
+      </packagedElement>
     </packagedElement>
     <packagedElement xmi:type="uml:Model" xmi:id="_qhcesFR7EeSbnPFbgpN9Ow" name="jface">
       <packagedElement xmi:type="uml:Package" xmi:id="_qhcesVR7EeSbnPFbgpN9Ow" name="org">
@@ -427,6 +2098,126 @@
                   <ownedParameter xmi:type="uml:Parameter" xmi:id="_6cQVnFR7EeSbnPFbgpN9Ow" type="_qhilUVR7EeSbnPFbgpN9Ow" direction="return"/>
                 </ownedOperation>
               </packagedElement>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Package" xmi:id="_kHHHEmpJEeSHJZbEOSiM7A" name="viewers">
+              <packagedElement xmi:type="uml:Class" xmi:id="_kHHHE2pJEeSHJZbEOSiM7A" name="TableViewer"/>
+              <packagedElement xmi:type="uml:Class" xmi:id="_kHHHFWpJEeSHJZbEOSiM7A" name="TableViewerColumn"/>
+              <packagedElement xmi:type="uml:Interface" xmi:id="_kHNNs2pJEeSHJZbEOSiM7A" name="ILabelProvider"/>
+              <packagedElement xmi:type="uml:Class" xmi:id="_kHZa92pJEeSHJZbEOSiM7A" name="ColumnLabelProvider"/>
+              <packagedElement xmi:type="uml:Interface" xmi:id="_kHZbBGpJEeSHJZbEOSiM7A" name="ITreeContentProvider"/>
+              <packagedElement xmi:type="uml:Class" xmi:id="_kHfhlWpJEeSHJZbEOSiM7A" name="Viewer"/>
+              <packagedElement xmi:type="uml:Class" xmi:id="_kHloQWpJEeSHJZbEOSiM7A" name="ColumnViewer"/>
+              <packagedElement xmi:type="uml:Class" xmi:id="_kHloQmpJEeSHJZbEOSiM7A" name="CellEditor"/>
+              <packagedElement xmi:type="uml:Class" xmi:id="_kHloSGpJEeSHJZbEOSiM7A" name="EditingSupport"/>
+              <packagedElement xmi:type="uml:Class" xmi:id="_aqCBQ2pMEeSHJZbEOSiM7A" name="LabelProvider">
+                <ownedComment xmi:type="uml:Comment" xmi:id="_2Fl-gGpMEeSHJZbEOSiM7A">
+                  <body>
+ * A label provider implementation which, by default, uses an element's
+ * &lt;code>toString&lt;/code> value for its text and &lt;code>null&lt;/code> for its
+ * image.
+ * &lt;p>
+ * This class may be used as is, or subclassed to provide richer labels.
+ * Subclasses may override any of the following methods:
+ * &lt;ul>
+ * &lt;li>&lt;code>isLabelProperty&lt;/code>&lt;/li>
+ * &lt;li>&lt;code>getImage&lt;/code>&lt;/li>
+ * &lt;li>&lt;code>getText&lt;/code>&lt;/li>
+ * &lt;li>&lt;code>dispose&lt;/code>&lt;/li>
+ * &lt;/ul>
+ * &lt;/p>
+ </body>
+                </ownedComment>
+                <generalization xmi:type="uml:Generalization" xmi:id="_2Fl-gmpMEeSHJZbEOSiM7A" general="_2Fl-gWpMEeSHJZbEOSiM7A"/>
+                <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_2FsFIGpMEeSHJZbEOSiM7A" name="LabelProvider implements ILabelProvider" client="_aqCBQ2pMEeSHJZbEOSiM7A" supplier="_kHNNs2pJEeSHJZbEOSiM7A" contract="_kHNNs2pJEeSHJZbEOSiM7A"/>
+                <ownedOperation xmi:type="uml:Operation" xmi:id="_2FsFIWpMEeSHJZbEOSiM7A" name="getImage" visibility="public">
+                  <ownedComment xmi:type="uml:Comment" xmi:id="_2FsFImpMEeSHJZbEOSiM7A">
+                    <body>
+	 * The &lt;code>LabelProvider&lt;/code> implementation of this
+	 * &lt;code>ILabelProvider&lt;/code> method returns &lt;code>null&lt;/code>.
+	 * Subclasses may override.
+	 </body>
+                  </ownedComment>
+                  <ownedParameter xmi:type="uml:Parameter" xmi:id="_2FsFJGpMEeSHJZbEOSiM7A" type="_2FsFI2pMEeSHJZbEOSiM7A" direction="return"/>
+                  <ownedParameter xmi:type="uml:Parameter" xmi:id="_2FsFJWpMEeSHJZbEOSiM7A" name="element" type="_-nze4GpGEeSHJZbEOSiM7A"/>
+                </ownedOperation>
+                <ownedOperation xmi:type="uml:Operation" xmi:id="_2FsFJmpMEeSHJZbEOSiM7A" name="getText" visibility="public">
+                  <ownedComment xmi:type="uml:Comment" xmi:id="_2FyLwGpMEeSHJZbEOSiM7A">
+                    <body>
+	 * The &lt;code>LabelProvider&lt;/code> implementation of this
+	 * &lt;code>ILabelProvider&lt;/code> method returns the element's
+	 * &lt;code>toString&lt;/code> string. Subclasses may override.
+	 </body>
+                  </ownedComment>
+                  <ownedParameter xmi:type="uml:Parameter" xmi:id="_2FyLwWpMEeSHJZbEOSiM7A" type="_qhilUVR7EeSbnPFbgpN9Ow" direction="return"/>
+                  <ownedParameter xmi:type="uml:Parameter" xmi:id="_2FyLwmpMEeSHJZbEOSiM7A" name="element" type="_-nze4GpGEeSHJZbEOSiM7A"/>
+                </ownedOperation>
+              </packagedElement>
+              <packagedElement xmi:type="uml:Class" xmi:id="_2Fl-gWpMEeSHJZbEOSiM7A" name="BaseLabelProvider"/>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Package" xmi:id="_kH38EWpJEeSHJZbEOSiM7A" name="dialogs">
+              <packagedElement xmi:type="uml:Class" xmi:id="_kH38EmpJEeSHJZbEOSiM7A" name="Dialog"/>
+            </packagedElement>
+          </packagedElement>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Model" xmi:id="_-nnRoWpGEeSHJZbEOSiM7A" name="uml2">
+      <packagedElement xmi:type="uml:Package" xmi:id="_-nnRompGEeSHJZbEOSiM7A" name="org">
+        <packagedElement xmi:type="uml:Package" xmi:id="_-nnRo2pGEeSHJZbEOSiM7A" name="eclipse">
+          <packagedElement xmi:type="uml:Package" xmi:id="_-nnRpGpGEeSHJZbEOSiM7A" name="uml2">
+            <packagedElement xmi:type="uml:Package" xmi:id="_-nnRpWpGEeSHJZbEOSiM7A" name="uml">
+              <packagedElement xmi:type="uml:Class" xmi:id="_-nnRpmpGEeSHJZbEOSiM7A" name="Type"/>
+              <packagedElement xmi:type="uml:Class" xmi:id="_-nze5GpGEeSHJZbEOSiM7A" name="Package"/>
+              <packagedElement xmi:type="uml:Class" xmi:id="_kHHHEGpJEeSHJZbEOSiM7A" name="NamedElement"/>
+              <packagedElement xmi:type="uml:Class" xmi:id="_kH-Cs2pJEeSHJZbEOSiM7A" name="Element"/>
+              <packagedElement xmi:type="uml:Class" xmi:id="_kH-CtmpJEeSHJZbEOSiM7A" name="Class"/>
+              <packagedElement xmi:type="uml:Class" xmi:id="_801oSWpNEeSHJZbEOSiM7A" name="Property"/>
+              <packagedElement xmi:type="uml:Class" xmi:id="_81OCxmpNEeSHJZbEOSiM7A" name="Stereotype"/>
+            </packagedElement>
+          </packagedElement>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Model" xmi:id="_kHBAcGpJEeSHJZbEOSiM7A" name="core">
+      <packagedElement xmi:type="uml:Package" xmi:id="_kHBAcWpJEeSHJZbEOSiM7A" name="org">
+        <packagedElement xmi:type="uml:Package" xmi:id="_kHBAcmpJEeSHJZbEOSiM7A" name="eclipse">
+          <packagedElement xmi:type="uml:Package" xmi:id="_kHBAc2pJEeSHJZbEOSiM7A" name="core">
+            <packagedElement xmi:type="uml:Package" xmi:id="_kHBAdGpJEeSHJZbEOSiM7A" name="databinding">
+              <packagedElement xmi:type="uml:Class" xmi:id="_kHBAdWpJEeSHJZbEOSiM7A" name="DataBindingContext"/>
+              <packagedElement xmi:type="uml:Package" xmi:id="_kHBAfmpJEeSHJZbEOSiM7A" name="observable">
+                <packagedElement xmi:type="uml:Package" xmi:id="_kHBAf2pJEeSHJZbEOSiM7A" name="list">
+                  <packagedElement xmi:type="uml:Class" xmi:id="_kHBAgGpJEeSHJZbEOSiM7A" name="WritableList"/>
+                  <packagedElement xmi:type="uml:Interface" xmi:id="_AX8ipWpOEeSHJZbEOSiM7A" name="IObservableList"/>
+                </packagedElement>
+              </packagedElement>
+              <packagedElement xmi:type="uml:Package" xmi:id="_kHloQ2pJEeSHJZbEOSiM7A" name="property">
+                <packagedElement xmi:type="uml:Package" xmi:id="_kHloRGpJEeSHJZbEOSiM7A" name="value">
+                  <packagedElement xmi:type="uml:Interface" xmi:id="_kHloRWpJEeSHJZbEOSiM7A" name="IValueProperty"/>
+                </packagedElement>
+              </packagedElement>
+              <packagedElement xmi:type="uml:Class" xmi:id="_kH38FGpJEeSHJZbEOSiM7A" name="Binding"/>
+            </packagedElement>
+          </packagedElement>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Model" xmi:id="_kHBAd2pJEeSHJZbEOSiM7A" name="swt">
+      <packagedElement xmi:type="uml:Package" xmi:id="_kHBAeGpJEeSHJZbEOSiM7A" name="org">
+        <packagedElement xmi:type="uml:Package" xmi:id="_kHBAeWpJEeSHJZbEOSiM7A" name="eclipse">
+          <packagedElement xmi:type="uml:Package" xmi:id="_kHBAempJEeSHJZbEOSiM7A" name="swt">
+            <packagedElement xmi:type="uml:Package" xmi:id="_kHBAe2pJEeSHJZbEOSiM7A" name="widgets">
+              <packagedElement xmi:type="uml:Class" xmi:id="_kHBAfGpJEeSHJZbEOSiM7A" name="Composite"/>
+              <packagedElement xmi:type="uml:Class" xmi:id="_kH38GmpJEeSHJZbEOSiM7A" name="Text"/>
+              <packagedElement xmi:type="uml:Class" xmi:id="_kH-CvmpJEeSHJZbEOSiM7A" name="Label"/>
+              <packagedElement xmi:type="uml:Class" xmi:id="_kIEJU2pJEeSHJZbEOSiM7A" name="Control"/>
+              <packagedElement xmi:type="uml:Class" xmi:id="_kIEJYGpJEeSHJZbEOSiM7A" name="Shell"/>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Package" xmi:id="_kHTUXWpJEeSHJZbEOSiM7A" name="events">
+              <packagedElement xmi:type="uml:Class" xmi:id="_kHTUXmpJEeSHJZbEOSiM7A" name="SelectionEvent"/>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Package" xmi:id="_kIKP8GpJEeSHJZbEOSiM7A" name="graphics">
+              <packagedElement xmi:type="uml:Class" xmi:id="_kIKP8WpJEeSHJZbEOSiM7A" name="Point"/>
+              <packagedElement xmi:type="uml:Class" xmi:id="_2FsFI2pMEeSHJZbEOSiM7A" name="Image"/>
             </packagedElement>
           </packagedElement>
         </packagedElement>
