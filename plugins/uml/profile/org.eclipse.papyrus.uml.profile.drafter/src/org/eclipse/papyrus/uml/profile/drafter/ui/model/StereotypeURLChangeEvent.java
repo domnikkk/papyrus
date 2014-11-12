@@ -53,8 +53,11 @@ public class StereotypeURLChangeEvent extends PropertyChangeEvent {
 	 * @param oldValue The old {@link StereotypeURL#qualifiedName} value
 	 * @param newValue The new {@link StereotypeURL#qualifiedName} value
 	 */
-	public StereotypeURLChangeEvent(Object source, Object oldValue, Object newValue) {
-		super(source, StereotypeURL.QUALIFIED_NAME, oldValue, newValue);
+	public StereotypeURLChangeEvent(Object source, String oldValue, String newValue) {
+//		super(source, StereotypeURL.QUALIFIED_NAME, oldValue, newValue);
+		super(source, "StereotypeURL.QUALIFIED_NAME", oldValue, newValue);
+		this.oldQualifiedName = (String)oldValue;
+		this.qualifiedName = (String)newValue;
 		// TODO Auto-generated constructor stub
 	}
 
@@ -171,7 +174,7 @@ public class StereotypeURLChangeEvent extends PropertyChangeEvent {
 	 * @return
 	 */
 	public boolean isQualifiedNameChanged() {
-		return isValuesChanged(oldStereotypeName, stereotypeName);
+		return isValuesChanged(oldQualifiedName, qualifiedName);
 	}
 	/**
 	 * Return true is the specified property has changed.

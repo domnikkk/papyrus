@@ -106,7 +106,7 @@ public class StereotypeUpdateDialog extends Dialog {
 		
 		quickSetLabel = new Label(namesContainer, SWT.NONE);
 		quickSetLabel.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false, 1, 1));
-		quickSetLabel.setText("Quick Set");
+		quickSetLabel.setText("Qualified Name");
 		
 		quickSetText = new Text(namesContainer, SWT.BORDER);
 		quickSetText.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1));

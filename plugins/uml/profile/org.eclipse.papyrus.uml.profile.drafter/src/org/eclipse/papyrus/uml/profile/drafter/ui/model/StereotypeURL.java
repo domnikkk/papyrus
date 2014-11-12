@@ -208,6 +208,8 @@ public class StereotypeURL {
 	 * @return the profileNames
 	 */
 	public void setProfileName(String profileName) {
+		
+		System.err.println("setProfileName(" + profileName + ")");
 		// parameter should be set.
 		if(profileName == null) {
 			return;
@@ -227,6 +229,22 @@ public class StereotypeURL {
 		qualifiedNameChanged(ev);
 	}
 	
+	
+	/**
+	 * @return the resourceName
+	 */
+	public String getResourceName() {
+		return resourceName;
+	}
+
+	
+	/**
+	 * @param resourceName the resourceName to set
+	 */
+	public void setResourceName(String resourceName) {
+		this.resourceName = resourceName;
+	}
+
 	/**
 	 * Method called when the {@link #qualifiedName} property has changed. This method is called directly by methods
 	 * modifying the properties.
@@ -249,6 +267,9 @@ public class StereotypeURL {
 		if(event.isResourceNameChanged() ) {
 			firePropertyChange(RESOURCEE_NAME, event.getOldResourceName(), event.getResourceName());
 		}
+		if(event.isQualifiedNameChanged() ) {
+			firePropertyChange(QUALIFIED_NAME, event.getOldQualifiedName(), event.getQualifiedName());
+		}
 	}
 	
 	/**
@@ -258,7 +279,7 @@ public class StereotypeURL {
 	 * @param newValue The new {@link #qualifiedName} value
 	 * @return
 	 */
-	protected StereotypeURLChangeEvent createStereotypeURLChangeEvent( Object oldValue, Object newValue) {
+	protected StereotypeURLChangeEvent createStereotypeURLChangeEvent( String oldValue, String newValue) {
 		return new StereotypeURLChangeEvent(this,  oldValue, newValue);
 	}
 	
@@ -275,7 +296,7 @@ public class StereotypeURL {
 		StringBuilder buf = new StringBuilder();
 		
 		if( resourceName != null && resourceName.length()>0) {
-			buf.append("url://").append(resourceName).append("/");
+			buf.append("//").append(resourceName).append("/");
 		}
 		if( profileName != null && profileName.length()>0) {
 			buf.append(profileName);
