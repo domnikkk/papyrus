@@ -10,19 +10,18 @@ import org.eclipse.core.databinding.observable.list.WritableList;
 import org.eclipse.core.databinding.observable.map.IObservableMap;
 import org.eclipse.core.databinding.observable.value.IObservableValue;
 import org.eclipse.core.databinding.property.value.IValueProperty;
+import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.jface.databinding.swt.WidgetProperties;
 import org.eclipse.jface.databinding.viewers.ObservableListContentProvider;
 import org.eclipse.jface.databinding.viewers.ObservableMapLabelProvider;
 import org.eclipse.jface.databinding.viewers.ObservableValueEditingSupport;
 import org.eclipse.jface.databinding.viewers.ViewerProperties;
-import org.eclipse.jface.databinding.viewers.ViewersObservables;
 import org.eclipse.jface.viewers.ArrayContentProvider;
 import org.eclipse.jface.viewers.CellEditor;
 import org.eclipse.jface.viewers.ColumnLabelProvider;
 import org.eclipse.jface.viewers.ColumnViewer;
 import org.eclipse.jface.viewers.ComboBoxViewerCellEditor;
 import org.eclipse.jface.viewers.EditingSupport;
-import org.eclipse.jface.viewers.IBaseLabelProvider;
 import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
@@ -38,6 +37,7 @@ import org.eclipse.papyrus.uml.profile.drafter.ui.model.MemberKind;
 import org.eclipse.papyrus.uml.profile.drafter.ui.model.PropertyModel;
 import org.eclipse.papyrus.uml.profile.drafter.ui.model.StateKind;
 import org.eclipse.papyrus.uml.profile.drafter.ui.providers.TypeLabelProvider;
+import org.eclipse.papyrus.uml.profile.drafter.utils.UMLPrimitiveTypesModel;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
@@ -86,6 +86,11 @@ public class PropertiesEditorWidget {
 	 * The catalog of type associated to this class. Lazy creation.
 	 */
 	private ITypeCatalog typeCatalog;
+	
+	/**
+	 * Library of UML Primitive types. Lazy loading.
+	 */
+	private UMLPrimitiveTypesModel umlPrimitiveTypesLibrary;
 	
 	/**
 	 * Create the composite.
@@ -250,7 +255,13 @@ public class PropertiesEditorWidget {
 	private void addPropertyPressed(SelectionEvent e) {
 		System.err.println("addPropertyPressed()");
 		// Create PropertyModem
-		PropertyModel model = new PropertyModel(MemberKind.owned, "newProperty");
+		PropertyModel model;
+		try {
+			model = new PropertyModel(MemberKind.owned, "newProperty", getUMLPrimitiveTypeLibrary().getDefaultType());
+		} catch (NullPointerException e1) {
+			// Provide a Property with no type.
+			model = new PropertyModel(MemberKind.owned, "newProperty");
+		}
 
 		properties.add(model);
 	}
@@ -565,9 +576,31 @@ public class PropertiesEditorWidget {
 	 */
 	private ITypeCatalog getTypeCatalog() {
 		if( typeCatalog == null) {
-			typeCatalog = new AccessibleTypeCatalog(selectedElement);
+			typeCatalog = new AccessibleTypeCatalog(selectedElement, getUMLPrimitiveTypeLibrary());
 		}
 		return typeCatalog;
+	}
+
+	/**
+	 * Get the Library of UML Primitive types. Lookup in the {@link ResourceSet} associated to the selected NamedElement.
+	 * 
+	 * @return the library found.
+	 * 
+	 * @throws UnsupportedOperationException If the Library can't be found in the associated {@link ResourceSet}.
+	 */
+	private UMLPrimitiveTypesModel getUMLPrimitiveTypeLibrary() {
+		if( umlPrimitiveTypesLibrary == null) {
+			// Create primitiveTypeModel from the ResourceSet associated to the element.
+			// It will be used to add such types.
+			try {
+				umlPrimitiveTypesLibrary = new UMLPrimitiveTypesModel(selectedElement.eResource().getResourceSet());
+			} catch (UnsupportedOperationException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+		}
+		return umlPrimitiveTypesLibrary;
 	}
 
 

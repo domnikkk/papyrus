@@ -17,14 +17,10 @@ package org.eclipse.papyrus.uml.profile.drafter.ui.model;
 import java.util.Collections;
 import java.util.List;
 
-import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.papyrus.uml.profile.drafter.exceptions.NotFoundException;
 import org.eclipse.papyrus.uml.profile.drafter.utils.UMLPrimitiveTypesModel;
 import org.eclipse.uml2.uml.Element;
-import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Type;
-import org.eclipse.uml2.uml.UMLFactory;
-import org.eclipse.uml2.uml.UMLPackage;
 
 
 /**
@@ -52,10 +48,19 @@ public class AccessibleTypeCatalog implements ITypeCatalog {
 		// It will be used to add such types.
 		try {
 			primitiveTypesModel = new UMLPrimitiveTypesModel(element.eResource().getResourceSet());
-		} catch (NotFoundException e) {
+		} catch (UnsupportedOperationException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+
+	/**
+	 * Constructor.
+	 *
+	 */
+	public AccessibleTypeCatalog(Element element, UMLPrimitiveTypesModel primitiveTypesLibrary) {
+		this.element = element;
+		this.primitiveTypesModel = primitiveTypesLibrary;
 	}
 
 	/**

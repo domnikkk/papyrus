@@ -131,6 +131,20 @@ public class PropertyModel {
 		this.proposedName = proposedName;
 	}
 
+	/**
+	 * 
+	 * Constructor.
+	 *
+	 * @param created
+	 * @param string
+	 */
+	public PropertyModel(MemberKind modelStatusKind, String proposedName, Type type) {
+		this.memberKind = modelStatusKind;
+		this.stateKind = StateKind.created;
+		this.proposedName = proposedName;
+		this.type = type;
+	}
+
 
 
 

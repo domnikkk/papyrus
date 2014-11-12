@@ -1,5 +1,6 @@
 package org.eclipse.papyrus.uml.profile.drafter.utils;
 
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
@@ -67,23 +68,44 @@ public class UMLPrimitiveTypesModel {
 	private org.eclipse.uml2.uml.Package libraryPackage;
 	
 	/**
+	 * Constructor.
 	 * Initialize the model from the specified ResourceSet.
 	 * Try to find the library. Create it if needed.
+	 * In case of creation, Types are not created. So, types will be initialized to null.
+	 * <br>
+	 * This class may be instanciated several times.
 	 * 
-	 * Constructor.
+	 * 
+	 * TODO Create the types in case of Library creation.
+	 * 
 	 *
-	 * @param resourceSet
-	 * @throws NotFoundException If the Model cannot be found.
+	 * @param resourceSet The {@link ResourceSet} used to llokup or create the PrimitiveType Library.
+	 * @throws UnsupportedOperationException If the Library cannot be found.
 	 */
-	public UMLPrimitiveTypesModel(ResourceSet resourceSet) throws  NotFoundException {
+	public UMLPrimitiveTypesModel(ResourceSet resourceSet) {
 		// TODO Auto-generated constructor stub
 		
-		libraryResource = lookupPrimitiveTypesResource(resourceSet);
+		try {
+			libraryResource = lookupPrimitiveTypesResource(resourceSet);
+		} catch (NotFoundException e) {
+			libraryResource = createPrimitiveTypesLibrary(resourceSet);
+		}
 		
 		// Set types
 		extractTypes();
 	}
 	
+	/**
+	 * Create a Library containing the requested Primitive types.
+	 * 
+	 * @param resourceSet
+	 * @return
+	 */
+	private Resource createPrimitiveTypesLibrary(ResourceSet resourceSet) {
+		// 
+		throw new UnsupportedOperationException("UML Primitive type library creation not yet implemented");
+	}
+
 	/**
 	 * Extract types from the resource
 	 */
@@ -138,6 +160,7 @@ public class UMLPrimitiveTypesModel {
 	}
 
 	/**
+	 * Get a Papyrus Registered Library by its name.
 	 * @throws NotFoundException 
 	 * 
 	 */
@@ -167,5 +190,27 @@ public class UMLPrimitiveTypesModel {
 		return libraryPackage;
 	}
 
-	
+	/**
+	 * @see org.eclipse.papyrus.uml.profile.drafter.ui.model.ITypeCatalog#getTypes()
+	 *
+	 * @return
+	 */
+	public List<Type> getTypes() {
+		
+		if(libraryPackage != null) {
+			return libraryPackage.getOwnedTypes();
+		}
+		
+		// Retutn empty list
+		return Collections.emptyList();
+	}
+
+	/**
+	 * Get a Type that is used as default.
+	 * 
+	 * @return
+	 */
+	public Type getDefaultType() {
+		return UMLPrimitiveTypes_STRING;
+	}
 }
