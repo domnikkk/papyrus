@@ -102,6 +102,8 @@ public class StereotypeURL {
 	 */
 	synchronized public void setQualifiedName(String qualifiedName) {
 		
+		qualifiedName = qualifiedName.trim();
+		
 		int num = count++;
 
 		try {
@@ -117,11 +119,31 @@ public class StereotypeURL {
 			}
 			
 			// Remember old values
-			String oldStereotypeName = stereotypeName;
-			String oldProfileName = profileName;
+			String stereotypeName="";
+			String profileName="";
+			String resourceName="";
+			
+			
+			// Remove trailing '/'
+			if( qualifiedName.startsWith("//")) {
+				qualifiedName = qualifiedName.substring(2);
+			}
+			else if( qualifiedName.startsWith("/")) {
+				qualifiedName = qualifiedName.substring(1);				
+			}
+			
+			// Is there a resource name ?
+			// "resourceName/endOfName"
+			int index = qualifiedName.indexOf("/");
+			if(index > 0) {
+				// Extract resourceName, and the end of the qualified name (ie: endOfName)
+				resourceName = qualifiedName.substring(0, index);
+				qualifiedName = qualifiedName.substring(index+1);
+			}
+			
 			
 			// Parse the qualifiedName and set other names accordingly.
-			int index = qualifiedName.lastIndexOf("::");
+			index = qualifiedName.lastIndexOf("::");
 			if(index == -1) {
 				// no profile names
 				stereotypeName = qualifiedName;
@@ -132,9 +154,10 @@ public class StereotypeURL {
 				profileName = qualifiedName.substring(0, index);
 			}
 			
-			StereotypeURLChangeEvent ev = createStereotypeURLChangeEvent(this.qualifiedName, this.qualifiedName=computeQualifiedName());
-			ev.setStereotypeNameValues(oldStereotypeName, stereotypeName);
-			ev.setProfileNameValues(oldProfileName, profileName);
+			StereotypeURLChangeEvent ev = createStereotypeURLChangeEvent(this.qualifiedName, this.qualifiedName=computeQualifiedName(resourceName, profileName, stereotypeName));
+			ev.setStereotypeNameValues(this.stereotypeName, this.stereotypeName = stereotypeName);
+			ev.setProfileNameValues(this.profileName, this.profileName = profileName);
+			ev.setResourceNameValues(this.resourceName, this.resourceName = resourceName);
 			
 			qualifiedNameChanged(ev);
 		} catch (Exception e) {
@@ -242,7 +265,25 @@ public class StereotypeURL {
 	 * @param resourceName the resourceName to set
 	 */
 	public void setResourceName(String resourceName) {
+		
+		// parameter should be set.
+		if(resourceName == null) {
+			return;
+		}
+		
+		if(this.resourceName != null && this.resourceName.equals(resourceName)) {
+			// No change
+			return;
+		}
+		
+		String oldResourceName = this.resourceName;
 		this.resourceName = resourceName;
+
+		StereotypeURLChangeEvent ev = createStereotypeURLChangeEvent(qualifiedName, qualifiedName = computeQualifiedName());
+		ev.setResourceNameValues( oldResourceName, resourceName);
+		
+		qualifiedNameChanged(ev);
+
 	}
 
 	/**
@@ -255,8 +296,11 @@ public class StereotypeURL {
 	 * 
 	 */
 	protected void qualifiedNameChanged( StereotypeURLChangeEvent event) {
-		changeSupport.firePropertyChange(event);
 		
+		// Fire QUALIFIED_NAME event
+		// The event already hold the QUALIFIED_NAME id.
+		changeSupport.firePropertyChange(event);
+
 		// Also propagate other change events.
 		if(event.isProfileNameChanged() ) {
 			firePropertyChange(PROFILE_NAME, event.getOldProfileName(), event.getProfileName());
@@ -270,6 +314,7 @@ public class StereotypeURL {
 		if(event.isQualifiedNameChanged() ) {
 			firePropertyChange(QUALIFIED_NAME, event.getOldQualifiedName(), event.getQualifiedName());
 		}
+		
 	}
 	
 	/**
@@ -291,7 +336,20 @@ public class StereotypeURL {
 	 * 
 	 * @return
 	 */
-	public String computeQualifiedName() {
+	protected String computeQualifiedName() {
+		
+		return computeQualifiedName(resourceName, profileName, stereotypeName);
+	}
+
+	/**
+	 * Compute the qualifiedName from {@link #resourceName}, {@link #profileNames} and {@link #stereotypeName}.
+	 * Add necessary '::' and '/'.
+	 * Profile paths and stereotype name are separated with '::'.
+	 * ResourceName and paths are separated by '/'.
+	 * 
+	 * @return
+	 */
+	static public String computeQualifiedName(String resourceName, String profileName, String stereotypeName) {
 		
 		StringBuilder buf = new StringBuilder();
 		

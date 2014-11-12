@@ -54,11 +54,10 @@ public class StereotypeURLChangeEvent extends PropertyChangeEvent {
 	 * @param newValue The new {@link StereotypeURL#qualifiedName} value
 	 */
 	public StereotypeURLChangeEvent(Object source, String oldValue, String newValue) {
-//		super(source, StereotypeURL.QUALIFIED_NAME, oldValue, newValue);
-		super(source, "StereotypeURL.QUALIFIED_NAME", oldValue, newValue);
+		super(source, StereotypeURL.QUALIFIED_NAME, oldValue, newValue);
+//		super(source, "StereotypeURL.QUALIFIED_NAME", oldValue, newValue);
 		this.oldQualifiedName = (String)oldValue;
 		this.qualifiedName = (String)newValue;
-		// TODO Auto-generated constructor stub
 	}
 
 	/**

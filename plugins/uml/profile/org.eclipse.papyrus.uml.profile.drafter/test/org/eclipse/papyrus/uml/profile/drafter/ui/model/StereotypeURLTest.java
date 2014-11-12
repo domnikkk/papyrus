@@ -33,7 +33,7 @@ public class StereotypeURLTest {
 	final String profileName ="profileName1::profileName2";
 	final String stereotypeName ="stereotypeName";
 	final String resourceName ="resourceName";
-	final String qualifiedName =  "/" + resourceName + "/" +profileName + "::" + stereotypeName;
+	final String qualifiedName =  "//" + resourceName + "/" +profileName + "::" + stereotypeName;
 	final String qualifiedNameNoResource =  profileName + "::" + stereotypeName;
 
 	/**
@@ -80,7 +80,7 @@ public class StereotypeURLTest {
 			return computeQualifiedName(profile, stereotype);
 		}
 		
-		return "/" + resource + "/" + profile + "::" + stereotype;
+		return "//" + resource + "/" + profile + "::" + stereotype;
 	}
 	
 	/**
@@ -114,7 +114,6 @@ public class StereotypeURLTest {
 	 * Test method for {@link org.eclipse.papyrus.uml.profile.drafter.ui.model.StereotypeURL#StereotypeURL(java.lang.String)}.
 	 */
 	@Test
-	@Ignore
 	public void testStereotypeURLStringWithResource() {
 
 		StereotypeURL url = new StereotypeURL(qualifiedName);
@@ -161,7 +160,6 @@ public class StereotypeURLTest {
 	 * Test method for {@link org.eclipse.papyrus.uml.profile.drafter.ui.model.StereotypeURL#setQualifiedName(java.lang.String)}.
 	 */
 	@Test
-	@Ignore
 	public void testSetQualifiedNameWithResource() {
 		StereotypeURL url = new StereotypeURL();
 		
@@ -171,6 +169,40 @@ public class StereotypeURLTest {
 		assertEquals("qualifiedname", qualifiedName, url.getQualifiedName());
 		assertEquals("stereotypeName", stereotypeName, url.getStereotypeName());
 		assertEquals("profileName", profileName, url.getProfileName());
+		assertEquals("resourceName", resourceName, url.getResourceName());
+	}
+
+	/**
+	 * Test method for {@link org.eclipse.papyrus.uml.profile.drafter.ui.model.StereotypeURL#setQualifiedName(java.lang.String)}.
+	 */
+	@Test
+	public void testSetQualifiedNameWithoutProfile() {
+		StereotypeURL url = new StereotypeURL();
+		
+		String qualifiedName =  stereotypeName;
+		url.setQualifiedName(qualifiedName);
+		
+		assertNotNull("object created", url);
+		assertEquals("qualifiedname", qualifiedName, url.getQualifiedName());
+		assertEquals("stereotypeName", stereotypeName, url.getStereotypeName());
+		assertEquals("profileName", "", url.getProfileName());
+		assertEquals("resourceName", "", url.getResourceName());
+	}
+
+	/**
+	 * Test method for {@link org.eclipse.papyrus.uml.profile.drafter.ui.model.StereotypeURL#setQualifiedName(java.lang.String)}.
+	 */
+	@Test
+	public void testSetQualifiedNameWithoutProfileWithResource() {
+		StereotypeURL url = new StereotypeURL();
+		
+		String qualifiedName =  "//" + resourceName + "/" + stereotypeName;
+		url.setQualifiedName(qualifiedName);
+		
+		assertNotNull("object created", url);
+		assertEquals("qualifiedname", qualifiedName, url.getQualifiedName());
+		assertEquals("stereotypeName", stereotypeName, url.getStereotypeName());
+		assertEquals("profileName", "", url.getProfileName());
 		assertEquals("resourceName", resourceName, url.getResourceName());
 	}
 
@@ -212,7 +244,6 @@ public class StereotypeURLTest {
 	 * Test method for {@link org.eclipse.papyrus.uml.profile.drafter.ui.model.StereotypeURL#setResourceName(java.lang.String)}.
 	 */
 	@Test
-	@Ignore
 	public void testSetResourceName() {
 		StereotypeURL url = new StereotypeURL(qualifiedName);
 		
@@ -220,10 +251,10 @@ public class StereotypeURLTest {
 		url.setResourceName(newName);
 		
 		assertNotNull("object created", url);
-		assertEquals("qualifiedname", computeQualifiedName(newName, profileName, stereotypeName), url.getQualifiedName());
+		assertEquals("resourceName", newName, url.getResourceName());
 		assertEquals("stereotypeName", stereotypeName, url.getStereotypeName());
 		assertEquals("profileName", profileName, url.getProfileName());
-		assertEquals("resourceName", newName, url.getResourceName());
+		assertEquals("qualifiedname", computeQualifiedName(newName, profileName, stereotypeName), url.getQualifiedName());
 	}
 
 	/**
