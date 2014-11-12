@@ -101,6 +101,52 @@ main() {
 		"CommentEditPart",
 		"InformationItemEditPart"
 	};
+	
+	deleteNodesToTest := Set{
+		"DependencyNodeEditPart",
+		"AssociationClassEditPart",
+		"AssociationNodeEditPart",
+		"InstanceSpecificationEditPart",
+		"ComponentEditPart",
+		"SignalEditPart",
+		"InterfaceEditPart",
+		"ModelEditPartTN",
+		"EnumerationEditPart",
+		"PackageEditPart",
+		"InformationItemEditPart",
+		"ClassEditPart",
+		"PrimitiveTypeEditPart",
+		"DataTypeEditPart",
+		"ConstraintEditPart",
+		"CommentEditPart",
+		"ShortCutDiagramEditPart",
+		"DurationObservationEditPart",
+		"TimeObservationEditPart",
+		"DefaultNamedElementEditPart"
+	} ;
+	
+	editionNodesToTest := Set{
+		"DependencyNodeEditPart",
+		"AssociationClassEditPart",
+		"AssociationNodeEditPart",
+		"InstanceSpecificationEditPart",
+		"ComponentEditPart",
+		"SignalEditPart",
+		"InterfaceEditPart",
+		"ModelEditPartTN",
+		"EnumerationEditPart",
+		"PackageEditPart",
+		"InformationItemEditPart",
+		"ClassEditPart",
+		"PrimitiveTypeEditPart",
+		"DataTypeEditPart",
+		"ConstraintEditPart",
+		"CommentEditPart",
+		"ShortCutDiagramEditPart",
+		"DurationObservationEditPart",
+		"TimeObservationEditPart",
+		"DefaultNamedElementEditPart"
+	} ;
 	gmfgenUml.rootObjects()[UML::Model]->collectOne(canonicalTests("org.eclipse.papyrus.uml.diagram.clazz.test"));
 }
 
