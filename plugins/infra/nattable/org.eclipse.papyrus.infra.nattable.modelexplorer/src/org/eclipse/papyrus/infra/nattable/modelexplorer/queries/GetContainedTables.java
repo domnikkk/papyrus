@@ -40,7 +40,8 @@ public class GetContainedTables extends AbstractEditorContainerQuery implements 
 			EObject root = roots.next();
 			if (root instanceof Table) {
 				Table table = (Table) root;
-				if (table.getOwner() == source) {
+				EObject parent = table.getOwner() == null ? table.getContext() : table.getOwner();
+				if (parent == source) {
 					result.add(table);
 				}
 			}

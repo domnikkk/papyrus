@@ -38,7 +38,9 @@ public class IsTableContainer extends AbstractEditorContainerQuery implements IJ
 		while (roots.hasNext()) {
 			EObject root = roots.next();
 			if (root instanceof Table) {
-				if (((Table) root).getOwner() == source) {
+				Table table = (Table) root;
+				EObject parent = table.getOwner() == null ? table.getContext() : table.getOwner();
+				if (parent == source) {
 					return true;
 				}
 			}
