@@ -67,6 +67,9 @@ public class CallBehaviorActionToInteractionDropStrategy extends TransactionalDr
 			return null;
 		}
 		View targetView = getTargetView(targetEditPart);
+		if (targetView == null) {
+			return null;
+		}
 		String containingDiagramType = org.eclipse.papyrus.infra.gmfdiag.common.utils.DiagramUtils.getContainingDiagramType(targetView);
 
 		if (!ElementTypes.DIAGRAM_ID.equals(containingDiagramType)) {
