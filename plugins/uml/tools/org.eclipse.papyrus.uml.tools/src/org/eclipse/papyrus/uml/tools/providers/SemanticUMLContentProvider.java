@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2012, 2014 CEA LIST and others.
+ * Copyright (c) 2012, 2014 CEA LIST, Christian W. Damus, and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -9,6 +9,7 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 410346
+ *  Christian W. Damus - bug 451338
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.tools.providers;
@@ -24,6 +25,10 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.transaction.ResourceSetChangeEvent;
+import org.eclipse.emf.transaction.ResourceSetListener;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.papyrus.infra.core.resource.ModelSet;
 import org.eclipse.papyrus.infra.core.resource.NotFoundException;
@@ -253,7 +258,7 @@ public class SemanticUMLContentProvider extends SemanticEMFContentProvider {
 		}
 
 		if (newInput == null) {
-			resourceSetListener.unsetTarget(root);
+			rootsAdapter.detach(root);
 		} else {
 			listenOnResourceSet(resourceSet);
 		}
@@ -265,13 +270,13 @@ public class SemanticUMLContentProvider extends SemanticEMFContentProvider {
 
 	protected void listenOnResourceSet(ResourceSet resourceSet) {
 		if (root != null) {
-			resourceSetListener.unsetTarget(root);
+			rootsAdapter.detach(root);
 			root = null;
 			roots = null;
 		}
 
 		if (resourceSet != null) {
-			resourceSetListener.setTarget(resourceSet);
+			rootsAdapter.attach(resourceSet);
 			this.root = resourceSet;
 			this.roots = getRoots(root);
 		}
@@ -280,7 +285,7 @@ public class SemanticUMLContentProvider extends SemanticEMFContentProvider {
 	@Override
 	public void dispose() {
 		if (root != null) {
-			resourceSetListener.unsetTarget(root);
+			rootsAdapter.detach(root);
 		}
 		root = null;
 		roots = null;
@@ -292,22 +297,55 @@ public class SemanticUMLContentProvider extends SemanticEMFContentProvider {
 
 	private Viewer viewer;
 
-	private ResourceSetRootsAdapter resourceSetListener = new ResourceSetRootsAdapter() {
+	private class RootsAdapter {
 
 		private boolean needsRefresh = false;
 
-		@Override
-		protected void doNotify(Notification msg) {
-			if (root == null || msg.isTouch()) {
-				return;
-			}
+		private Object listener;
 
-			switch (msg.getEventType()) {
-			case Notification.ADD:
-			case Notification.ADD_MANY:
-			case Notification.REMOVE:
-			case Notification.REMOVE_MANY:
-				triggerRefresh();
+		void attach(ResourceSet resourceSet) {
+			TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(resourceSet);
+			if (domain != null) {
+				ResourceSetListener rsl = new ResourceSetRootsAdapter.Transactional() {
+					@Override
+					protected void handleResourceSetChangeEvent(ResourceSetChangeEvent event) {
+						triggerRefresh();
+					}
+				};
+				domain.addResourceSetListener(rsl);
+				listener = rsl;
+			} else {
+				ResourceSetRootsAdapter adapter = new ResourceSetRootsAdapter() {
+					@Override
+					protected void doNotify(Notification msg) {
+						if (root == null || msg.isTouch()) {
+							return;
+						}
+
+						switch (msg.getEventType()) {
+						case Notification.ADD:
+						case Notification.ADD_MANY:
+						case Notification.REMOVE:
+						case Notification.REMOVE_MANY:
+							triggerRefresh();
+						}
+					}
+				};
+				adapter.setTarget(resourceSet);
+				listener = adapter;
+			}
+		}
+
+		void detach(ResourceSet resourceSet) {
+			if (listener instanceof ResourceSetRootsAdapter.Transactional) {
+				TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(resourceSet);
+				if (domain != null) {
+					domain.removeResourceSetListener((ResourceSetListener) listener);
+					listener = null;
+				}
+			} else if (listener instanceof ResourceSetRootsAdapter) {
+				((ResourceSetRootsAdapter) listener).unsetTarget(resourceSet);
+				listener = null;
 			}
 		}
 
@@ -329,6 +367,8 @@ public class SemanticUMLContentProvider extends SemanticEMFContentProvider {
 				});
 			}
 		}
-	};
+	}
+
+	private RootsAdapter rootsAdapter = new RootsAdapter();
 
 }

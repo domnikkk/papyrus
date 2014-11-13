@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014 CEA and others.
+ * Copyright (c) 2014 CEA, Christian W. Damus, and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,6 +8,7 @@
  *
  * Contributors:
  *   Christian W. Damus (CEA) - Initial API and implementation
+ *  Christian W. Damus - bug 451338
  *
  */
 package org.eclipse.papyrus.uml.modelrepair.internal.stereotypes;
@@ -40,6 +41,7 @@ import org.eclipse.uml2.uml.Extension;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.ProfileApplication;
+import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.util.UMLUtil;
 
 import com.google.common.base.Function;
@@ -63,6 +65,8 @@ public class ZombieStereotypesDescriptor {
 
 	private static final Pattern AUTO_NSURI_PATTERN = Pattern.compile("^http://.*/([^/]+)/\\d+$");
 
+	private final Profile nullProfile = UMLFactory.eINSTANCE.createProfile();
+
 	private final Resource resource;
 
 	private final Package root;
@@ -78,6 +82,8 @@ public class ZombieStereotypesDescriptor {
 	private final Function<? super EPackage, Profile> dynamicProfileSupplier;
 
 	private Map<EPackage, Map<IRepairAction.Kind, IRepairAction>> repairActions = Maps.newHashMap();
+
+	private Map<EPackage, Profile> definitionToProfileMap = Maps.newHashMap();
 
 	public ZombieStereotypesDescriptor(Resource resource, Package root, Set<EPackage> appliedProfileDefinitions, Function<? super EPackage, Profile> dynamicProfileSupplier, LabelProviderService labelProviderService) {
 		this.resource = resource;
@@ -269,7 +275,16 @@ public class ZombieStereotypesDescriptor {
 	}
 
 	protected Profile findProfile(EPackage definition) {
-		return UMLUtil.getProfile(definition, root);
+		Profile result = definitionToProfileMap.get(definition);
+		if (result == null) {
+			result = UMLUtil.getProfile(definition, root);
+			if (result == null) {
+				result = nullProfile;
+			}
+			definitionToProfileMap.put(definition, result);
+		}
+
+		return (result == nullProfile) ? /* cache miss */null : /* cache hit */result;
 	}
 
 	protected ProfileContext getProfileContext(EObject stereotypeApplication, EPackage schema) {
