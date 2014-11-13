@@ -753,6 +753,10 @@ public class DecoratorModelUtils {
 			}
 		}
 
+		// In case of a malformed decorator model that has decorator packages for packages within itself, don't
+		// report the decorator model itself as a user model
+		result.remove(decoratorModelResource.getURI());
+
 		return result;
 	}
 

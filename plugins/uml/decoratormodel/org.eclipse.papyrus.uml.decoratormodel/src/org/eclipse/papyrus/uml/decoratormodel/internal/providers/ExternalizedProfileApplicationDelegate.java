@@ -29,6 +29,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EStructuralFeature.Setting;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.eclipse.papyrus.uml.decoratormodel.helper.DecoratorModelUtils;
 import org.eclipse.papyrus.uml.tools.helper.IProfileApplicationDelegate;
@@ -82,8 +83,8 @@ public class ExternalizedProfileApplicationDelegate implements IProfileApplicati
 	public EList<EObject> applyProfile(Package package_, Profile profile, Package context) {
 		EList<EObject> result;
 
-		if (!DecoratorModelUtils.isDecoratorModel(context)) {
-			// The context is meaningless to me
+		if (!DecoratorModelUtils.isDecoratorModel(context) || EcoreUtil.isAncestor(context, package_)) {
+			// The context is meaningless to me or we are creating an externalized profile application
 			result = package_.applyProfile(profile);
 		} else {
 			Package decorator = DecoratorModelUtils.getDecoratorPackage(context, package_, true);
