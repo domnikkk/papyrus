@@ -9,6 +9,7 @@
  * Contributors:
  *   CEA - Initial API and implementation
  *   Christian W. Damus (CEA) - bug 431953 (adapted from SwitchProfileDialog)
+ *   Christian W. Damus - bug 451338
  *
  */
 package org.eclipse.papyrus.uml.modelrepair.ui;
@@ -16,6 +17,7 @@ package org.eclipse.papyrus.uml.modelrepair.ui;
 import java.lang.reflect.InvocationTargetException;
 import java.util.AbstractCollection;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
@@ -29,6 +31,9 @@ import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.transaction.RecordingCommand;
+import org.eclipse.emf.transaction.RollbackException;
+import org.eclipse.emf.transaction.Transaction;
+import org.eclipse.emf.transaction.TransactionalCommandStack;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.jface.dialogs.IDialogConstants;
 import org.eclipse.jface.dialogs.MessageDialog;
@@ -227,55 +232,64 @@ public class ZombieStereotypesDialog extends TrayDialog {
 		}
 
 		final List<MissingSchema> repairActions = Lists.newArrayList(actionsToApply);
-		editingDomain.getCommandStack().execute(new RecordingCommand(editingDomain, "Repair stereotypes") {
+		try {
+			((TransactionalCommandStack) editingDomain.getCommandStack()).execute(new RecordingCommand(editingDomain, "Repair stereotypes") {
 
-			@Override
-			protected void doExecute() {
+				@Override
+				protected void doExecute() {
 
-				final BasicDiagnostic diagnostics = new BasicDiagnostic(Activator.PLUGIN_ID, 0, "Problems in repairing stereotypes", null);
+					final BasicDiagnostic diagnostics = new BasicDiagnostic(Activator.PLUGIN_ID, 0, "Problems in repairing stereotypes", null);
 
-				IRunnableWithProgress runnable = TransactionHelper.createPrivilegedRunnableWithProgress(editingDomain, new IRunnableWithProgress() {
+					IRunnableWithProgress runnable = TransactionHelper.createPrivilegedRunnableWithProgress(editingDomain, new IRunnableWithProgress() {
 
-					public void run(IProgressMonitor monitor) {
-						SubMonitor subMonitor = SubMonitor.convert(monitor, actionsToApply.size());
+						public void run(IProgressMonitor monitor) {
+							SubMonitor subMonitor = SubMonitor.convert(monitor, actionsToApply.size());
 
-						for (Iterator<MissingSchema> iter = repairActions.iterator(); iter.hasNext();) {
-							if (!iter.next().apply(diagnostics, subMonitor.newChild(1, SubMonitor.SUPPRESS_NONE))) {
-								// Leave this one to try it again
-								iter.remove();
+							for (Iterator<MissingSchema> iter = repairActions.iterator(); iter.hasNext();) {
+								if (!iter.next().apply(diagnostics, subMonitor.newChild(1, SubMonitor.SUPPRESS_NONE))) {
+									// Leave this one to try it again
+									iter.remove();
+								}
 							}
+
+							subMonitor.done();
 						}
+					});
 
-						subMonitor.done();
+					Cursor waitCursor = new Cursor(getShell().getDisplay(), SWT.CURSOR_WAIT);
+					try {
+						getShell().setCursor(waitCursor);
+						progress.setVisible(true);
+						ModalContext.run(runnable, true, progress, getShell().getDisplay());
+					} catch (Exception e) {
+						getShell().setCursor(null);
+						Throwable t = e;
+						if (e instanceof InvocationTargetException) {
+							t = ((InvocationTargetException) e).getTargetException();
+						}
+						StatusManager.getManager().handle(new Status(IStatus.ERROR, Activator.PLUGIN_ID, "Failed to repair stereotypes.", t), StatusManager.BLOCK | StatusManager.LOG);
+					} finally {
+						getShell().setCursor(null);
+						waitCursor.dispose();
+						progress.setVisible(false);
 					}
-				});
 
-				Cursor waitCursor = new Cursor(getShell().getDisplay(), SWT.CURSOR_WAIT);
-				try {
-					getShell().setCursor(waitCursor);
-					progress.setVisible(true);
-					ModalContext.run(runnable, true, progress, getShell().getDisplay());
-				} catch (Exception e) {
-					getShell().setCursor(null);
-					Throwable t = e;
-					if (e instanceof InvocationTargetException) {
-						t = ((InvocationTargetException) e).getTargetException();
+					if (diagnostics.getSeverity() > Diagnostic.OK) {
+						DiagnosticDialog dialog = new DiagnosticDialog(getShell(), "Problems in Repairing Stereotypes",
+								"Some repair actions could not be completed normally. Please review the specific details and take any corrective action that may be required.",
+								diagnostics, Diagnostic.ERROR | Diagnostic.WARNING);
+						dialog.setBlockOnOpen(true);
+						dialog.open();
 					}
-					StatusManager.getManager().handle(new Status(IStatus.ERROR, Activator.PLUGIN_ID, "Failed to repair stereotypes.", t), StatusManager.BLOCK | StatusManager.LOG);
-				} finally {
-					getShell().setCursor(null);
-					waitCursor.dispose();
-					progress.setVisible(false);
 				}
-
-				if (diagnostics.getSeverity() > Diagnostic.OK) {
-					DiagnosticDialog dialog = new DiagnosticDialog(getShell(), "Problems in Repairing Stereotypes", "Some repair actions could not be completed normally. Please review the specific details and take any corrective action that may be required.",
-							diagnostics, Diagnostic.ERROR | Diagnostic.WARNING);
-					dialog.setBlockOnOpen(true);
-					dialog.open();
-				}
-			}
-		});
+			}, Collections.singletonMap(Transaction.OPTION_NO_VALIDATION, true));
+		} catch (RollbackException e) {
+			// Shouldn't happen without validation!
+			Activator.log.error(e);
+		} catch (InterruptedException e) {
+			IStatus status = new Status(IStatus.ERROR, Activator.PLUGIN_ID, "Repair operation was cancelled.", e);
+			StatusManager.getManager().handle(status, StatusManager.SHOW | StatusManager.LOG);
+		}
 
 		getMissingSchemas().removeAll(repairActions);
 		updateControls();
