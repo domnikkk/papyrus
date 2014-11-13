@@ -1387,6 +1387,12 @@
     <sections name="MultipleSignalEvent" sectionFile="ui/SingleSignalEvent.xwt">
       <widget href="ui/SingleSignalEvent.xwt#/"/>
     </sections>
+     <sections name="SingleImportedPackage" sectionFile="ui/SingleImportedPackage.xwt">
+      <constraints xsi:type="constraints:SimpleConstraint" name="IsImportedPackage">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.4"/>
+      </constraints>
+      <widget href="ui/SingleImportedPackage.xwt#/"/>
+    </sections>
   </tabs>
   <tabs label="Comments" id="comments" category="org.eclipse.papyrus" image="" priority="20">
     <sections name="SingleElementAppliedComments" sectionFile="ui/SingleElementAppliedComments.xwt">
@@ -1430,7 +1436,7 @@
       <properties xsi:type="constraints:ValueProperty" name="umlClassName" value="Element"/>
     </constraints>
   </views>
-  <views name="SinglePackage" sections="//@tabs.0/@sections.0" automaticContext="true">
+  <views name="SinglePackage" sections="//@tabs.0/@sections.0  //@tabs.0/@sections.462" automaticContext="true">
     <constraints xsi:type="constraints:SimpleConstraint" name="isSinglePackage">
       <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.0"/>
       <properties xsi:type="constraints:ValueProperty" name="umlClassName" value="Package"/>
@@ -5316,5 +5322,11 @@
       <properties name="Comment"/>
     </elements>
     <modelElementFactory href="ppe:/environment/org.eclipse.papyrus.views.properties/model/Environment.xmi#//@modelElementFactories.1"/>
+  </dataContexts>
+  <dataContexts name="ImportedPackage" label="Imported Package">
+    <elements name="Package">
+      <properties name="location" label="Location" description="The location of imported package"/>
+    </elements>
+    <modelElementFactory href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@modelElementFactories.9"/>
   </dataContexts>
 </contexts:Context>
