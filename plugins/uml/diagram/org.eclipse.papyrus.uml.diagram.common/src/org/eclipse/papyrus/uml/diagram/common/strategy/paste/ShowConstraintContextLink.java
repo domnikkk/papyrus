@@ -62,9 +62,22 @@ public class ShowConstraintContextLink extends AbstractTransactionalCommand {
 		this.constraint = (Constraint) constraintView.getElement();
 	}
 
+	/**
+	 * Show the <<context>> link between a constraint and its context
+	 *
+	 * @param domain
+	 * @param targetEditPart
+	 * @param constraint
+	 */
+	public ShowConstraintContextLink(TransactionalEditingDomain domain, GraphicalEditPart targetEditPart, Constraint constraint) {
+		super(domain, "Show Constraint Context Link", null);
+		this.diagramEP = DiagramEditPartsUtil.getDiagramEditPart(targetEditPart);
+		this.constraint = constraint;
+	}
+
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see
 	 * org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand#doExecuteWithResult(org.eclipse.core.runtime.IProgressMonitor,
 	 * org.eclipse.core.runtime.IAdaptable)

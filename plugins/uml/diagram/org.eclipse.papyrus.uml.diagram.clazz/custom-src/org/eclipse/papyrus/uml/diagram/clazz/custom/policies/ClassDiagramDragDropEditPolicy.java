@@ -38,6 +38,7 @@ import org.eclipse.gmf.runtime.diagram.ui.requests.DropObjectsRequest;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.papyrus.commands.wrappers.GMFtoGEFCommandWrapper;
 import org.eclipse.papyrus.uml.diagram.clazz.custom.helper.AssociationClassHelper;
 import org.eclipse.papyrus.uml.diagram.clazz.custom.helper.ClassLinkMappingHelper;
 import org.eclipse.papyrus.uml.diagram.clazz.custom.helper.ContainmentHelper;
@@ -49,6 +50,7 @@ import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.AssociationEditPart;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.AssociationNodeEditPart;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.ClassEditPart;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.ClassEditPartCN;
+import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.ConstraintEditPart;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.DependencyEditPart;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.DependencyNodeEditPart;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.EnumerationLiteralEditPart;
@@ -67,8 +69,10 @@ import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.UsageEditPart;
 import org.eclipse.papyrus.uml.diagram.clazz.part.UMLVisualIDRegistry;
 import org.eclipse.papyrus.uml.diagram.clazz.providers.UMLElementTypes;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.CommonDiagramDragDropEditPolicy;
+import org.eclipse.papyrus.uml.diagram.common.strategy.paste.ShowConstraintContextLink;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.AssociationClass;
+import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.Dependency;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.InstanceSpecification;
@@ -107,6 +111,7 @@ public class ClassDiagramDragDropEditPolicy extends CommonDiagramDragDropEditPol
 		droppableElementsVisualID.add(PackageEditPart.VISUAL_ID);
 		droppableElementsVisualID.add(InstanceSpecificationEditPart.VISUAL_ID);
 		droppableElementsVisualID.add(InstanceSpecificationLinkEditPart.VISUAL_ID);
+		droppableElementsVisualID.add(ConstraintEditPart.VISUAL_ID);
 		return droppableElementsVisualID;
 	}
 
@@ -143,6 +148,7 @@ public class ClassDiagramDragDropEditPolicy extends CommonDiagramDragDropEditPol
 			return dropAssociation(dropRequest, semanticLink);
 		case NestedClassForClassEditPart.VISUAL_ID:
 		case ClassEditPartCN.VISUAL_ID:
+
 		case PackageEditPartCN.VISUAL_ID:
 		case ModelEditPartCN.VISUAL_ID:
 			return dropChildNodeWithContainmentLink(dropRequest, semanticLink, nodeVISUALID);
@@ -150,6 +156,8 @@ public class ClassDiagramDragDropEditPolicy extends CommonDiagramDragDropEditPol
 		case ClassEditPart.VISUAL_ID:
 		case PackageEditPart.VISUAL_ID:
 			return dropTopLevelNodeWithContainmentLink(dropRequest, semanticLink, nodeVISUALID);
+		case ConstraintEditPart.VISUAL_ID:
+			return dropConstraintNode(dropRequest, (Constraint) semanticLink, nodeVISUALID);
 		default:
 			return UnexecutableCommand.INSTANCE;
 		}
@@ -349,6 +357,26 @@ public class ClassDiagramDragDropEditPolicy extends CommonDiagramDragDropEditPol
 		}
 		return new ICommandProxy(cc);
 	}
+
+
+	/**
+	 * Use to drop a constraint, will also display the contextlink
+	 * 
+	 * @param dropRequest
+	 * @param droppedConstraint
+	 * @param nodeVISUALID
+	 * @return
+	 */
+	protected Command dropConstraintNode(DropObjectsRequest dropRequest, Constraint droppedConstraint, int nodeVISUALID) {
+		ICommand dropConstraintCommand = getDefaultDropNodeCommand(nodeVISUALID, dropRequest.getLocation(), droppedConstraint, dropRequest);
+		if (droppedConstraint.getContext() != null) {
+			ShowConstraintContextLink showConstraintContextLink = new ShowConstraintContextLink(getEditingDomain(), (GraphicalEditPart) getHost(), droppedConstraint);
+			dropConstraintCommand = dropConstraintCommand.compose(showConstraintContextLink);
+		}
+		return GMFtoGEFCommandWrapper.wrap(dropConstraintCommand);
+	}
+
+
 
 	/**
 	 * call the mechanism to drop a binary link without specific type
