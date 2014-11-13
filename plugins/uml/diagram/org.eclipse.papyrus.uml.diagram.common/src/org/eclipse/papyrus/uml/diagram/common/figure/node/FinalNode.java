@@ -25,6 +25,7 @@ import org.eclipse.swt.graphics.Image;
  * this figure is a final node a circle into a circle
  *
  */
+// unused! to delete
 public class FinalNode extends PapyrusNodeFigure implements IPapyrusNodeUMLElementFigure {
 
 	/**

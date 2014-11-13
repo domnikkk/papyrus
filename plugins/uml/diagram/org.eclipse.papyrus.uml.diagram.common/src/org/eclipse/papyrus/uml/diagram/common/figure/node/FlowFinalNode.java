@@ -28,6 +28,7 @@ import org.eclipse.swt.graphics.Image;
  *
  * this figure is a circle with cross
  */
+// Unused: To delete
 public class FlowFinalNode extends PapyrusNodeFigure implements IPapyrusNodeUMLElementFigure {
 	/**
 	 * {@inheritDoc}

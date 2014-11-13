@@ -36,23 +36,22 @@ import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.IPapyrusNodeFigure;
 import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.SelectableBorderedNodeFigure;
-import org.eclipse.papyrus.uml.diagram.clazz.custom.edit.part.AbstractObservationEditPart;
-import org.eclipse.papyrus.uml.diagram.clazz.custom.figure.TimeObservationNodeFigure;
-import org.eclipse.papyrus.uml.diagram.clazz.custom.policies.ObservationLayoutEditPolicy;
 import org.eclipse.papyrus.uml.diagram.clazz.custom.policies.itemsemantic.CustomTimeObservationItemSemanticEditPolicy;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.policies.TimeObservationItemSemanticEditPolicy;
 import org.eclipse.papyrus.uml.diagram.clazz.part.UMLVisualIDRegistry;
+import org.eclipse.papyrus.uml.diagram.common.editparts.RoundedCompartmentEditPart;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeIconlDisplayEditPolicy;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeLabelDisplayEditPolicy;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.QualifiedNameDisplayEditPolicy;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.ShowHideLabelEditPolicy;
+import org.eclipse.papyrus.uml.diagram.common.figure.node.RoundedCompartmentFigure;
 import org.eclipse.papyrus.uml.diagram.common.locator.ExternalLabelPositionLocator;
 import org.eclipse.swt.graphics.Color;
 
 /**
  * @generated
  */
-public class TimeObservationEditPart extends AbstractObservationEditPart {
+public class TimeObservationEditPart extends RoundedCompartmentEditPart {
 
 	/**
 	 * @generated
@@ -86,7 +85,6 @@ public class TimeObservationEditPart extends AbstractObservationEditPart {
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		installEditPolicy(AppliedStereotypeLabelDisplayEditPolicy.STEREOTYPE_LABEL_POLICY, new AppliedStereotypeIconlDisplayEditPolicy());
 		installEditPolicy(QualifiedNameDisplayEditPolicy.QUALIFIED_NAME_POLICY, new QualifiedNameDisplayEditPolicy());
-		installEditPolicy(EditPolicy.LAYOUT_ROLE, new ObservationLayoutEditPolicy());
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new CustomTimeObservationItemSemanticEditPolicy());
 		installEditPolicy(ShowHideLabelEditPolicy.SHOW_HIDE_LABEL_ROLE, new ShowHideLabelEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
@@ -103,7 +101,7 @@ public class TimeObservationEditPart extends AbstractObservationEditPart {
 			protected EditPolicy createChildEditPolicy(EditPart child) {
 				View childView = (View) child.getModel();
 				switch (UMLVisualIDRegistry.getVisualID(childView)) {
-				case TimeObservationNameEditPart.VISUAL_ID:
+				case TimeObservationFloatingNameEditPart.VISUAL_ID:
 				case TimeObservationStereotypeLabelEditPart.VISUAL_ID:
 					return new BorderItemSelectionEditPolicy() {
 
@@ -165,7 +163,7 @@ public class TimeObservationEditPart extends AbstractObservationEditPart {
 	 */
 	@Override
 	protected IFigure createNodeShape() {
-		return primaryShape = new TimeObservationNodeFigure();
+		return primaryShape = new RoundedCompartmentFigure();
 	}
 
 	/**
@@ -174,8 +172,8 @@ public class TimeObservationEditPart extends AbstractObservationEditPart {
 	 * @generated
 	 */
 	@Override
-	public TimeObservationNodeFigure getPrimaryShape() {
-		return (TimeObservationNodeFigure) primaryShape;
+	public RoundedCompartmentFigure getPrimaryShape() {
+		return (RoundedCompartmentFigure) primaryShape;
 	}
 
 	/**
@@ -183,7 +181,7 @@ public class TimeObservationEditPart extends AbstractObservationEditPart {
 	 */
 	@Override
 	protected void addBorderItem(IFigure borderItemContainer, IBorderItemEditPart borderItemEditPart) {
-		if (borderItemEditPart instanceof TimeObservationNameEditPart) {
+		if (borderItemEditPart instanceof TimeObservationFloatingNameEditPart) {
 			IBorderItemLocator locator = new ExternalLabelPositionLocator(getMainFigure());
 			borderItemContainer.add(borderItemEditPart.getFigure(), locator);
 		} else if (borderItemEditPart instanceof TimeObservationStereotypeLabelEditPart) {
@@ -275,6 +273,6 @@ public class TimeObservationEditPart extends AbstractObservationEditPart {
 	 */
 	@Override
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(UMLVisualIDRegistry.getType(TimeObservationNameEditPart.VISUAL_ID));
+		return getChildBySemanticHint(UMLVisualIDRegistry.getType(TimeObservationFloatingNameEditPart.VISUAL_ID));
 	}
 }

@@ -17,7 +17,6 @@ import java.util.Collections;
 import java.util.List;
 
 import org.eclipse.draw2d.IFigure;
-import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.gef.GraphicalEditPart;
 import org.eclipse.gef.commands.Command;
@@ -31,7 +30,6 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.NonResizableLabelEditPoli
 import org.eclipse.gmf.runtime.diagram.ui.l10n.DiagramUIMessages;
 import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.papyrus.infra.gmfdiag.common.editpart.PapyrusLabelEditPart;
 import org.eclipse.papyrus.infra.gmfdiag.common.utils.FigureUtils;
 import org.eclipse.papyrus.uml.diagram.timing.custom.edit.commands.RefreshCommandForDo;
 import org.eclipse.papyrus.uml.diagram.timing.custom.edit.commands.RefreshCommandForUndo;
@@ -70,22 +68,6 @@ public class ExternalLabelPrimaryDragRoleEditPolicy extends NonResizableLabelEdi
 		// Then translate the bounds so that they are relative to the figure (BorderItemContainerFigure)
 		// to which the label is attached
 		updatedBounds = updatedBounds.getTranslated(parentBounds.getLocation().getNegated());
-
-		// translate according to the text alignments
-		if (editPart instanceof PapyrusLabelEditPart) {
-			switch (((PapyrusLabelEditPart) editPart).getTextAlignment()) {
-			case PositionConstants.LEFT:
-				break;
-			case PositionConstants.CENTER:
-				updatedBounds.translate(getHostFigure().getBounds().width / 2, 0);
-				break;
-			case PositionConstants.RIGHT:
-				updatedBounds.translate(getHostFigure().getBounds().width, 0);
-				break;
-			default:
-				break;
-			}
-		}
 
 		final CompoundCommand compoundCommand = new CompoundCommand();
 		compoundCommand.add(new RefreshCommandForUndo((GraphicalEditPart) editPart.getParent().getParent()));
