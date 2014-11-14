@@ -37,7 +37,7 @@ import org.eclipse.ui.IViewPart;
  */
 public class AddExternalNodeFloatingNameDisplayBehavior extends Action {
 
-	public static final String FIGURE_VIEWMAP_PATH = "org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"; //$NON-NLS-1$
+	public static final String FIGURE_VIEWMAP_PATH = "org.eclipse.papyrus.infra.gmfdiag.common.figure.node.PapyrusWrappingLabel";//"org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"; //$NON-NLS-1$
 
 	public static final String LABEL_POLICY_CLASS = "org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.ExternalLabelPrimaryDragRoleEditPolicy"; //$NON-NLS-1$
 
@@ -49,7 +49,7 @@ public class AddExternalNodeFloatingNameDisplayBehavior extends Action {
 
 	public static final String DEFAULT_EDITPOLICY_NAME_SUFFIX = "FloatingNameItemSemanticEditPolicy"; //$NON-NLS-1$
 
-	public static final String DEFAULT_WRAPPING_LABEL_CLASS = "org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"; //$NON-NLS-1$
+	//	public static final String DEFAULT_WRAPPING_LABEL_CLASS = "org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"; //$NON-NLS-1$
 
 	public static final String DEFAULT_PARSER_PATTERN = ""; //$NON-NLS-1$
 
@@ -80,12 +80,12 @@ public class AddExternalNodeFloatingNameDisplayBehavior extends Action {
 	public void run(IAction action) {
 		// Parse selected GenLink(s) and add the desired CustomBehavior
 		Iterator<EObject> it = getSelectedEObject().iterator();
-		while(it.hasNext()) {
+		while (it.hasNext()) {
 			EObject eObject = it.next();
-			if(eObject instanceof GenNode) {
-				//test if it has got a external node to display floating name
-				if(!hasAnFloatingNameExternalNode((GenNode)eObject)) {
-					createAnFloatingNameExternalNode((GenNode)eObject);
+			if (eObject instanceof GenNode) {
+				// test if it has got a external node to display floating name
+				if (!hasAnFloatingNameExternalNode((GenNode) eObject)) {
+					createAnFloatingNameExternalNode((GenNode) eObject);
 				}
 			}
 		}
@@ -95,17 +95,17 @@ public class AddExternalNodeFloatingNameDisplayBehavior extends Action {
 	 * creation an external node floating name
 	 * 
 	 * @param eObject
-	 *        the parent genNode
+	 *            the parent genNode
 	 */
 	private void createAnFloatingNameExternalNode(GenNode eObject) {
-		//Create une external node label
+		// Create une external node label
 		GenExternalNodeLabel label = GMFGenFactory.eINSTANCE.createGenExternalNodeLabel();
 
-		//Set Name of the edit part
+		// Set Name of the edit part
 		label.setEditPartClassName(eObject.getClassNamePrefix() + DEFAULT_EDITPART_NAME_SUFFIX);
-		//Set item semantic edit policy
+		// Set item semantic edit policy
 		label.setItemSemanticEditPolicyClassName(eObject.getClassNamePrefix() + DEFAULT_EDITPOLICY_NAME_SUFFIX);
-		//Set the Read only
+		// Set the Read only
 		label.setReadOnly(false);
 
 		// Set GenLinkLabel VisualID with new unique ID
@@ -131,10 +131,10 @@ public class AddExternalNodeFloatingNameDisplayBehavior extends Action {
 		URI uri_uml = URI.createPlatformPluginURI(URI_UML_GENMODEL, false);
 		Resource uml = eObject.eResource().getResourceSet().getResource(uri_uml, true);
 		facet.getMetaFeatures().add(findGenFeature(uml, GEN_CLASS_FACET_META_FEATURE, GEN_FEATURE_FACET_META_FEATURE));
-		//Attach Predefined Parser MessageFormatParser
-		//not good must find the predifined parser of the model...
+		// Attach Predefined Parser MessageFormatParser
+		// not good must find the predifined parser of the model...
 
-		//Get the predefined parser.
+		// Get the predefined parser.
 		PredefinedParser parser = getPredefinedParser(eObject);
 		facet.setParser(parser);
 
@@ -142,7 +142,7 @@ public class AddExternalNodeFloatingNameDisplayBehavior extends Action {
 		label.setViewmap(viewmap);
 		label.setModelFacet(facet);
 
-		//Add custom Policy to have feedback
+		// Add custom Policy to have feedback
 		addCustomBehavior(label, LABEL_POLICY_KEY, LABEL_POLICY_CLASS);
 
 		eObject.getLabels().add(label);
@@ -152,22 +152,22 @@ public class AddExternalNodeFloatingNameDisplayBehavior extends Action {
 	 * Gets the predefined parser.
 	 *
 	 * @param eObject
-	 *        the e object
+	 *            the e object
 	 * @return the predefined parser
 	 */
 	private PredefinedParser getPredefinedParser(GenNode eObject) {
 		PredefinedParser parser = null;
-		///get the ressource contents
+		// /get the ressource contents
 		EList<EObject> ressourceContents = eObject.eResource().getContents();
-		for(EObject ressourceContent : ressourceContents) {
-			//get the Gen Editor Node
-			if(ressourceContent instanceof GenEditorGenerator) {
-				//Get Parsers node
-				GenParsers genParsers = ((GenEditorGenerator)ressourceContent).getLabelParsers();
-				for(EObject GenParsersContent : genParsers.eContents()) {
-					//Get the predefined parser
-					if(GenParsersContent instanceof PredefinedParser) {
-						parser = (PredefinedParser)GenParsersContent;
+		for (EObject ressourceContent : ressourceContents) {
+			// get the Gen Editor Node
+			if (ressourceContent instanceof GenEditorGenerator) {
+				// Get Parsers node
+				GenParsers genParsers = ((GenEditorGenerator) ressourceContent).getLabelParsers();
+				for (EObject GenParsersContent : genParsers.eContents()) {
+					// Get the predefined parser
+					if (GenParsersContent instanceof PredefinedParser) {
+						parser = (PredefinedParser) GenParsersContent;
 					}
 				}
 			}
@@ -179,16 +179,16 @@ public class AddExternalNodeFloatingNameDisplayBehavior extends Action {
 	 * Checks for a floating name external node.
 	 *
 	 * @param node
-	 *        the node
+	 *            the node
 	 * @return true, if successful
 	 */
 	public boolean hasAnFloatingNameExternalNode(GenNode node) {
 		Iterator<GenNodeLabel> iterator = node.getLabels().iterator();
-		while(iterator.hasNext()) {
+		while (iterator.hasNext()) {
 			GenNodeLabel currentGenNodeLabel = iterator.next();
-			//check each child node
-			if(currentGenNodeLabel instanceof GenExternalNodeLabel) {
-				if(isAnFloatingNameExternalNode((GenExternalNodeLabel)currentGenNodeLabel)) {
+			// check each child node
+			if (currentGenNodeLabel instanceof GenExternalNodeLabel) {
+				if (isAnFloatingNameExternalNode((GenExternalNodeLabel) currentGenNodeLabel)) {
 					return true;
 				}
 			}
@@ -200,12 +200,12 @@ public class AddExternalNodeFloatingNameDisplayBehavior extends Action {
 	 * Checks if is an floating name external node.
 	 *
 	 * @param node
-	 *        the node
+	 *            the node
 	 * @return true, if is an floating name external node
 	 */
 	public boolean isAnFloatingNameExternalNode(GenExternalNodeLabel node) {
-		//Look if the edit part name contains the default edit part name suffix
-		if(node.getEditPartClassName().contains(DEFAULT_EDITPART_NAME_SUFFIX)) {
+		// Look if the edit part name contains the default edit part name suffix
+		if (node.getEditPartClassName().contains(DEFAULT_EDITPART_NAME_SUFFIX)) {
 			return true;
 		} else {
 			return false;

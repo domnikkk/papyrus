@@ -62,6 +62,7 @@ import org.eclipse.papyrus.extensionpoints.editors.utils.IDirectEditorsIds;
 import org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.ExternalLabelPrimaryDragRoleEditPolicy;
 import org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.IMaskManagedLabelEditPolicy;
 import org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.IndirectMaskLabelEditPolicy;
+import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.PapyrusWrappingLabel;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.policies.UMLTextSelectionEditPolicy;
 import org.eclipse.papyrus.uml.diagram.clazz.part.UMLVisualIDRegistry;
 import org.eclipse.papyrus.uml.diagram.clazz.providers.UMLElementTypes;
@@ -115,14 +116,14 @@ public class PrimitiveTypeFloatingNameEditPart extends
 
 	/**
 	 * direct edition mode (default, undefined, registered editor, etc.)
-	 * 
+	 *
 	 * @generated
 	 */
 	protected int directEditionMode = IDirectEdition.UNDEFINED_DIRECT_EDITOR;
 
 	/**
 	 * configuration from a registered edit dialog
-	 * 
+	 *
 	 * @generated
 	 */
 	protected IDirectEditorConfiguration configuration;
@@ -739,7 +740,7 @@ public class PrimitiveTypeFloatingNameEditPart extends
 
 	/**
 	 * Initializes the extended editor configuration
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void initExtendedEditorConfiguration() {
@@ -755,7 +756,7 @@ public class PrimitiveTypeFloatingNameEditPart extends
 
 	/**
 	 * Updates the preference configuration
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void updateExtendedEditorConfiguration() {
@@ -771,7 +772,7 @@ public class PrimitiveTypeFloatingNameEditPart extends
 
 	/**
 	 * Performs the direct edit usually used by GMF editors.
-	 * 
+	 *
 	 * @param theRequest
 	 *            the direct edit request that starts the direct edit system
 	 * @generated
@@ -854,7 +855,7 @@ public class PrimitiveTypeFloatingNameEditPart extends
 	 * @generated
 	 */
 	protected IFigure createFigurePrim() {
-		return new WrappingLabel();
+		return new PapyrusWrappingLabel();
 	}
 
 }

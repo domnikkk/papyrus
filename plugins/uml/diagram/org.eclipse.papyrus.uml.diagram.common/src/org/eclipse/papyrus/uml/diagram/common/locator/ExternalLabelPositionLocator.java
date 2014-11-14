@@ -35,6 +35,7 @@ import org.eclipse.papyrus.commands.wrappers.GEFtoEMFCommandWrapper;
 import org.eclipse.papyrus.infra.gmfdiag.common.editpart.IPapyrusEditPart;
 import org.eclipse.papyrus.infra.gmfdiag.common.editpart.PapyrusLabelEditPart;
 import org.eclipse.papyrus.infra.gmfdiag.common.locator.IPapyrusBorderItemLocator;
+import org.eclipse.papyrus.infra.gmfdiag.common.model.NotationUtils;
 
 /**
  * This class is used to constrain the position of ExternalNodeLabel. The
@@ -99,7 +100,7 @@ public class ExternalLabelPositionLocator implements IPapyrusBorderItemLocator {
 	 */
 	@Override
 	public int getCurrentSideOfParent() {
-		return position;
+		return getPosition();
 	}
 
 	/**
@@ -119,6 +120,27 @@ public class ExternalLabelPositionLocator implements IPapyrusBorderItemLocator {
 	 */
 	@Override
 	public int getPosition() {
+		// Get the forced value(CSS, Notation)
+		String ForcedPosition = NotationUtils.getStringValue(view, "position", "none");
+		// if there is a forced position
+		if (!"none".equals(ForcedPosition)) {
+			if ("EAST".equals(ForcedPosition)) {
+				position = PositionConstants.EAST;
+			}
+			if ("WEST".equals(ForcedPosition)) {
+				position = PositionConstants.WEST;
+			}
+			if ("NORTH".equals(ForcedPosition)) {
+				position = PositionConstants.NORTH;
+			}
+			if ("SOUTH".equals(ForcedPosition)) {
+				position = PositionConstants.SOUTH;
+			}
+		} else {
+			// Return the position on parent
+			position = getPositionOnParent();
+		}
+
 		return position;
 	}
 
@@ -227,10 +249,10 @@ public class ExternalLabelPositionLocator implements IPapyrusBorderItemLocator {
 			Point newConstraint;
 			// The new Offset to be saved one the resource
 			Point newOffset;
-			// get the nummber of labels and set the number of this label
+			// get the number of labels and set the number of this label
 			int numberOfLabel = getNumberOfVisibleLabels();
 			// Set the translation when alignment is auto
-			switch (getPositionOnParent()) {
+			switch (getPosition()) {
 			case PositionConstants.WEST:
 				// alignRight:
 				newConstraint = new Point(-proposedBounds.width - offset.width, offset.height);
@@ -261,7 +283,7 @@ public class ExternalLabelPositionLocator implements IPapyrusBorderItemLocator {
 			proposedBounds.setLocation(newConstraint.translate(parentFigure.getBounds().getTopLeft()));
 
 			// translate the label in case of multiple label
-			switch (getPositionOnParent()) {
+			switch (getPosition()) {
 			case PositionConstants.WEST:
 				proposedBounds.translate(0, (numLabel - 1) * proposedBounds.height + margin.y - (numberOfLabel - 1) * (proposedBounds.height + margin.y) / 2);
 				break;

@@ -12,8 +12,8 @@
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.common.editparts;
 
-import org.eclipse.gmf.runtime.diagram.ui.editparts.LabelEditPart;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.papyrus.infra.gmfdiag.common.editpart.PapyrusLabelEditPart;
 import org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.IndirectMaskLabelEditPolicy;
 import org.eclipse.papyrus.infra.gmfdiag.common.model.NotationUtils;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.FloatingLabelEditPolicy;
@@ -21,7 +21,7 @@ import org.eclipse.papyrus.uml.diagram.common.editpolicies.FloatingLabelEditPoli
 /**
  * The Class FloatingNameEditPart.
  */
-public class FloatingLabelEditPart extends LabelEditPart {
+public class FloatingLabelEditPart extends PapyrusLabelEditPart {
 
 	/** The Constant DISPLAY_FLOATING_NAME. */
 	private static final String DISPLAY_FLOATING_LABEL = "visible";

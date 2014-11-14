@@ -1437,7 +1437,7 @@
               href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
           <viewmap
               xsi:type="gmfgen:FigureViewmap"
-              figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+              figureQualifiedClassName="org.eclipse.papyrus.infra.gmfdiag.common.figure.node.PapyrusWrappingLabel"/>
           <behaviour
               xsi:type="gmfgen:CustomBehaviour"
               key="org.eclipse.gef.EditPolicy.PRIMARY_DRAG_ROLE"
@@ -1531,7 +1531,7 @@
               href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
           <viewmap
               xsi:type="gmfgen:FigureViewmap"
-              figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+              figureQualifiedClassName="org.eclipse.papyrus.infra.gmfdiag.common.figure.node.PapyrusWrappingLabel"/>
           <behaviour
               xsi:type="gmfgen:CustomBehaviour"
               key="org.eclipse.gef.EditPolicy.PRIMARY_DRAG_ROLE"
@@ -1625,7 +1625,7 @@
               href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
           <viewmap
               xsi:type="gmfgen:FigureViewmap"
-              figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+              figureQualifiedClassName="org.eclipse.papyrus.infra.gmfdiag.common.figure.node.PapyrusWrappingLabel"/>
           <behaviour
               xsi:type="gmfgen:CustomBehaviour"
               key="org.eclipse.gef.EditPolicy.PRIMARY_DRAG_ROLE"
@@ -1733,7 +1733,7 @@
               href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
           <viewmap
               xsi:type="gmfgen:FigureViewmap"
-              figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+              figureQualifiedClassName="org.eclipse.papyrus.infra.gmfdiag.common.figure.node.PapyrusWrappingLabel"/>
           <behaviour
               xsi:type="gmfgen:CustomBehaviour"
               key="org.eclipse.gef.EditPolicy.PRIMARY_DRAG_ROLE"
@@ -2189,7 +2189,7 @@
               href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
           <viewmap
               xsi:type="gmfgen:FigureViewmap"
-              figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+              figureQualifiedClassName="org.eclipse.papyrus.infra.gmfdiag.common.figure.node.PapyrusWrappingLabel"/>
           <behaviour
               xsi:type="gmfgen:CustomBehaviour"
               key="org.eclipse.gef.EditPolicy.PRIMARY_DRAG_ROLE"
@@ -2661,7 +2661,7 @@
               href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
           <viewmap
               xsi:type="gmfgen:FigureViewmap"
-              figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+              figureQualifiedClassName="org.eclipse.papyrus.infra.gmfdiag.common.figure.node.PapyrusWrappingLabel"/>
           <behaviour
               xsi:type="gmfgen:CustomBehaviour"
               key="org.eclipse.gef.EditPolicy.PRIMARY_DRAG_ROLE"
@@ -4222,7 +4222,7 @@
               href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
           <viewmap
               xsi:type="gmfgen:FigureViewmap"
-              figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+              figureQualifiedClassName="org.eclipse.papyrus.infra.gmfdiag.common.figure.node.PapyrusWrappingLabel"/>
           <behaviour
               xsi:type="gmfgen:CustomBehaviour"
               key="org.eclipse.gef.EditPolicy.PRIMARY_DRAG_ROLE"
@@ -4311,7 +4311,7 @@
               href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
           <viewmap
               xsi:type="gmfgen:FigureViewmap"
-              figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+              figureQualifiedClassName="org.eclipse.papyrus.infra.gmfdiag.common.figure.node.PapyrusWrappingLabel"/>
           <behaviour
               xsi:type="gmfgen:CustomBehaviour"
               key="org.eclipse.gef.EditPolicy.PRIMARY_DRAG_ROLE"
@@ -4405,7 +4405,7 @@
               href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
           <viewmap
               xsi:type="gmfgen:FigureViewmap"
-              figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+              figureQualifiedClassName="org.eclipse.papyrus.infra.gmfdiag.common.figure.node.PapyrusWrappingLabel"/>
           <behaviour
               xsi:type="gmfgen:CustomBehaviour"
               key="org.eclipse.gef.EditPolicy.PRIMARY_DRAG_ROLE"
@@ -4513,7 +4513,7 @@
               href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
           <viewmap
               xsi:type="gmfgen:FigureViewmap"
-              figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+              figureQualifiedClassName="org.eclipse.papyrus.infra.gmfdiag.common.figure.node.PapyrusWrappingLabel"/>
           <behaviour
               xsi:type="gmfgen:CustomBehaviour"
               key="org.eclipse.gef.EditPolicy.PRIMARY_DRAG_ROLE"
@@ -4582,7 +4582,7 @@
               href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
           <viewmap
               xsi:type="gmfgen:ParentAssignedViewmap"
-              getterName="getObjectNodeLabel"
+              getterName="getNameLabel"
               figureQualifiedClassName="org.eclipse.papyrus.infra.gmfdiag.common.figure.node.PapyrusWrappingLabel"/>
           <modelFacet
               parser="/0/@labelParsers/@implementations.20"/>
@@ -4615,7 +4615,7 @@
               href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
           <viewmap
               xsi:type="gmfgen:FigureViewmap"
-              figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+              figureQualifiedClassName="org.eclipse.papyrus.infra.gmfdiag.common.figure.node.PapyrusWrappingLabel"/>
           <behaviour
               xsi:type="gmfgen:CustomBehaviour"
               key="org.eclipse.gef.EditPolicy.PRIMARY_DRAG_ROLE"
@@ -4727,7 +4727,7 @@
               href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
           <viewmap
               xsi:type="gmfgen:FigureViewmap"
-              figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+              figureQualifiedClassName="org.eclipse.papyrus.infra.gmfdiag.common.figure.node.PapyrusWrappingLabel"/>
           <behaviour
               xsi:type="gmfgen:CustomBehaviour"
               key="org.eclipse.gef.EditPolicy.PRIMARY_DRAG_ROLE"
@@ -5383,7 +5383,7 @@
               href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
           <viewmap
               xsi:type="gmfgen:FigureViewmap"
-              figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+              figureQualifiedClassName="org.eclipse.papyrus.infra.gmfdiag.common.figure.node.PapyrusWrappingLabel"/>
           <behaviour
               xsi:type="gmfgen:CustomBehaviour"
               key="org.eclipse.gef.EditPolicy.PRIMARY_DRAG_ROLE"
@@ -6140,7 +6140,7 @@
               href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
           <viewmap
               xsi:type="gmfgen:FigureViewmap"
-              figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+              figureQualifiedClassName="org.eclipse.papyrus.infra.gmfdiag.common.figure.node.PapyrusWrappingLabel"/>
           <behaviour
               xsi:type="gmfgen:CustomBehaviour"
               key="org.eclipse.gef.EditPolicy.PRIMARY_DRAG_ROLE"
@@ -6333,7 +6333,7 @@
               href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
           <viewmap
               xsi:type="gmfgen:FigureViewmap"
-              figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+              figureQualifiedClassName="org.eclipse.papyrus.infra.gmfdiag.common.figure.node.PapyrusWrappingLabel"/>
           <behaviour
               xsi:type="gmfgen:CustomBehaviour"
               key="org.eclipse.gef.EditPolicy.PRIMARY_DRAG_ROLE"
@@ -7261,7 +7261,7 @@
               href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
           <viewmap
               xsi:type="gmfgen:FigureViewmap"
-              figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+              figureQualifiedClassName="org.eclipse.papyrus.infra.gmfdiag.common.figure.node.PapyrusWrappingLabel"/>
           <behaviour
               xsi:type="gmfgen:CustomBehaviour"
               key="org.eclipse.gef.EditPolicy.PRIMARY_DRAG_ROLE"
@@ -7479,7 +7479,7 @@
               href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
           <viewmap
               xsi:type="gmfgen:FigureViewmap"
-              figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+              figureQualifiedClassName="org.eclipse.papyrus.infra.gmfdiag.common.figure.node.PapyrusWrappingLabel"/>
           <behaviour
               xsi:type="gmfgen:CustomBehaviour"
               key="org.eclipse.gef.EditPolicy.PRIMARY_DRAG_ROLE"
@@ -7778,7 +7778,7 @@
               href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
           <viewmap
               xsi:type="gmfgen:FigureViewmap"
-              figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+              figureQualifiedClassName="org.eclipse.papyrus.infra.gmfdiag.common.figure.node.PapyrusWrappingLabel"/>
           <behaviour
               xsi:type="gmfgen:CustomBehaviour"
               key="org.eclipse.gef.EditPolicy.PRIMARY_DRAG_ROLE"
@@ -8024,7 +8024,7 @@
               href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
           <viewmap
               xsi:type="gmfgen:FigureViewmap"
-              figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+              figureQualifiedClassName="org.eclipse.papyrus.infra.gmfdiag.common.figure.node.PapyrusWrappingLabel"/>
           <behaviour
               xsi:type="gmfgen:CustomBehaviour"
               key="org.eclipse.gef.EditPolicy.PRIMARY_DRAG_ROLE"
@@ -8290,7 +8290,7 @@
               href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
           <viewmap
               xsi:type="gmfgen:FigureViewmap"
-              figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+              figureQualifiedClassName="org.eclipse.papyrus.infra.gmfdiag.common.figure.node.PapyrusWrappingLabel"/>
           <behaviour
               xsi:type="gmfgen:CustomBehaviour"
               key="org.eclipse.gef.EditPolicy.PRIMARY_DRAG_ROLE"
@@ -8635,7 +8635,7 @@
               href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
           <viewmap
               xsi:type="gmfgen:FigureViewmap"
-              figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+              figureQualifiedClassName="org.eclipse.papyrus.infra.gmfdiag.common.figure.node.PapyrusWrappingLabel"/>
           <behaviour
               xsi:type="gmfgen:CustomBehaviour"
               key="org.eclipse.gef.EditPolicy.PRIMARY_DRAG_ROLE"
@@ -8823,7 +8823,7 @@
               href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
           <viewmap
               xsi:type="gmfgen:FigureViewmap"
-              figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+              figureQualifiedClassName="org.eclipse.papyrus.infra.gmfdiag.common.figure.node.PapyrusWrappingLabel"/>
           <behaviour
               xsi:type="gmfgen:CustomBehaviour"
               key="org.eclipse.gef.EditPolicy.PRIMARY_DRAG_ROLE"
@@ -9012,7 +9012,7 @@
               href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
           <viewmap
               xsi:type="gmfgen:FigureViewmap"
-              figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+              figureQualifiedClassName="org.eclipse.papyrus.infra.gmfdiag.common.figure.node.PapyrusWrappingLabel"/>
           <behaviour
               xsi:type="gmfgen:CustomBehaviour"
               key="org.eclipse.gef.EditPolicy.PRIMARY_DRAG_ROLE"
@@ -9280,7 +9280,7 @@
               href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
           <viewmap
               xsi:type="gmfgen:FigureViewmap"
-              figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+              figureQualifiedClassName="org.eclipse.papyrus.infra.gmfdiag.common.figure.node.PapyrusWrappingLabel"/>
           <behaviour
               xsi:type="gmfgen:CustomBehaviour"
               key="org.eclipse.gef.EditPolicy.PRIMARY_DRAG_ROLE"
@@ -9439,7 +9439,7 @@
               href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
           <viewmap
               xsi:type="gmfgen:ParentAssignedViewmap"
-              getterName="getObjectNodeLabel"
+              getterName="getNameLabel"
               figureQualifiedClassName="org.eclipse.papyrus.infra.gmfdiag.common.figure.node.PapyrusWrappingLabel"/>
           <modelFacet
               parser="/0/@labelParsers/@implementations.20"/>
@@ -9467,7 +9467,7 @@
               href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
           <viewmap
               xsi:type="gmfgen:FigureViewmap"
-              figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+              figureQualifiedClassName="org.eclipse.papyrus.infra.gmfdiag.common.figure.node.PapyrusWrappingLabel"/>
           <behaviour
               xsi:type="gmfgen:CustomBehaviour"
               key="org.eclipse.gef.EditPolicy.PRIMARY_DRAG_ROLE"
@@ -18380,8 +18380,25 @@
       comment="Papyrus Extensions">
     <extensionNodes
         xsi:type="papyrusgmfgenextension:ExtendedGenView"
+        comment="add superclass for floating Label"
+        genView="/0/@diagram/@childNodes.67/@labels.1 /0/@diagram/@childNodes.87/@labels.1 /0/@diagram/@childNodes.90/@labels.1 /0/@diagram/@childNodes.16/@labels.1 /0/@diagram/@childNodes.6/@labels.1 /0/@diagram/@childNodes.37/@labels.1 /0/@diagram/@childNodes.54/@labels.1 /0/@diagram/@childNodes.70/@labels.1 /0/@diagram/@childNodes.73/@labels.1 /0/@diagram/@childNodes.76/@labels.1 /0/@diagram/@childNodes.79/@labels.1 /0/@diagram/@childNodes.83/@labels.1 /0/@diagram/@childNodes.85/@labels.1 /0/@diagram/@childNodes.11/@labels.1 /0/@diagram/@childNodes.92/@labels.2 /0/@diagram/@childNodes.36/@labels.2 /0/@diagram/@childNodes.44/@labels.1 /0/@diagram/@childNodes.3/@labels.1 /0/@diagram/@childNodes.4/@labels.1 /0/@diagram/@childNodes.5/@labels.1 /0/@diagram/@childNodes.32/@labels.2 /0/@diagram/@childNodes.33/@labels.1 /0/@diagram/@childNodes.34/@labels.1 /0/@diagram/@childNodes.35/@labels.2 /0/@diagram/@childNodes.52/@labels.3"
+        name="FloatingLabelEditPart"
+        superOwnedEditPart="org.eclipse.papyrus.uml.diagram.common.editparts.FloatingLabelEditPart"/>
+    <extensionNodes
+        xsi:type="papyrusgmfgenextension:ExtendedGenView"
+        comment="Elements that inherits RoundedCompartmentEditPart"
+        genView="/0/@diagram/@childNodes.87 /0/@diagram/@childNodes.67 /0/@diagram/@childNodes.90 /0/@diagram/@childNodes.68 /0/@diagram/@childNodes.57 /0/@diagram/@childNodes.56 /0/@diagram/@childNodes.60 /0/@diagram/@childNodes.64 /0/@diagram/@childNodes.65 /0/@diagram/@childNodes.11 /0/@diagram/@childNodes.16 /0/@diagram/@childNodes.79 /0/@diagram/@childNodes.73 /0/@diagram/@childNodes.83 /0/@diagram/@childNodes.6 /0/@diagram/@childNodes.70 /0/@diagram/@childNodes.76 /0/@diagram/@childNodes.85 /0/@diagram/@childNodes.37 /0/@diagram/@childNodes.54 /0/@diagram/@childNodes.92 /0/@diagram/@childNodes.36 /0/@diagram/@childNodes.44 /0/@diagram/@childNodes.4 /0/@diagram/@childNodes.3 /0/@diagram/@childNodes.5 /0/@diagram/@childNodes.32 /0/@diagram/@childNodes.33 /0/@diagram/@childNodes.34 /0/@diagram/@childNodes.35 /0/@diagram/@childNodes.52"
+        name="Rounded Compartment EP inheritance"
+        superOwnedEditPart="org.eclipse.papyrus.uml.diagram.common.editparts.RoundedCompartmentEditPart"/>
+    <extensionNodes
+        xsi:type="papyrusgmfgenextension:ExtendedGenView"
+        comment="Elements that inherits RoundedBorderNamedElementEditPart"
+        genView="/0/@diagram/@childNodes.51"
+        name="Rounded Border Named Element Edit Part inheritance"
+        superOwnedEditPart="org.eclipse.papyrus.uml.diagram.common.editparts.RoundedBorderNamedElementEditPart"/>
+    <extensionNodes
+        xsi:type="papyrusgmfgenextension:ExtendedGenView"
         comment="This extension enables to draw a rake on a CallBehaviorActionEditPart linked to an activity"
-        genView="/0/@diagram/@childNodes.11"
         name="CallBehaviorAction"
         superOwnedEditPart="org.eclipse.papyrus.uml.diagram.common.editparts.NamedElementEditPart">
       <propRefreshHook
@@ -18408,13 +18425,11 @@
     <extensionNodes
         xsi:type="papyrusgmfgenextension:ExtendedGenView"
         comment="Node with label for named element"
-        genView="/0/@diagram/@childNodes.36 /0/@diagram/@childNodes.16 /0/@diagram/@childNodes.6 /0/@diagram/@childNodes.37 /0/@diagram/@childNodes.54 /0/@diagram/@childNodes.44 /0/@diagram/@childNodes.70 /0/@diagram/@childNodes.72 /0/@diagram/@topLevelNodes.0"
         name="NamedElementEditPart"
         superOwnedEditPart="org.eclipse.papyrus.uml.diagram.common.editparts.NamedElementEditPart"/>
     <extensionNodes
         xsi:type="papyrusgmfgenextension:ExtendedGenView"
         comment="Node with no name"
-        genView="/0/@diagram/@childNodes.68"
         name="NodeEditPart"
         superOwnedEditPart="org.eclipse.papyrus.infra.gmfdiag.common.editpart.NodeEditPart"/>
     <extensionNodes
@@ -18444,13 +18459,11 @@
     <extensionNodes
         xsi:type="papyrusgmfgenextension:ExtendedGenView"
         comment="elements that intherit form UMLNodeEditpart"
-        genView="/0/@diagram/@childNodes.4 /0/@diagram/@childNodes.5 /0/@diagram/@childNodes.32 /0/@diagram/@childNodes.33 /0/@diagram/@childNodes.35 /0/@diagram/@childNodes.34 /0/@diagram/@childNodes.3 /0/@diagram/@childNodes.52 /0/@diagram/@childNodes.65 /0/@diagram/@childNodes.60 /0/@diagram/@childNodes.64 /0/@diagram/@childNodes.56 /0/@diagram/@childNodes.57"
         name="UMLNodeEditPart"
         superOwnedEditPart="org.eclipse.papyrus.uml.diagram.common.editparts.UMLNodeEditPart"/>
     <extensionNodes
         xsi:type="papyrusgmfgenextension:ExtendedGenView"
         comment="add inheritance to BorderNamedElementEditPart"
-        genView="/0/@diagram/@childNodes.51"
         name="BorderNamedElementEditPart"
         superOwnedEditPart="org.eclipse.papyrus.uml.diagram.common.editparts.BorderNamedElementEditPart"/>
     <extensionNodes
@@ -18514,7 +18527,6 @@
     <extensionNodes
         xsi:type="papyrusgmfgenextension:ExtendedGenView"
         comment="elements that intherit form UMLNodeEditpart"
-        genView="/0/@diagram/@childNodes.67"
         name="UMLNodeEditPart"
         superOwnedEditPart="org.eclipse.papyrus.uml.diagram.common.editparts.UMLNodeEditPart"/>
     <extensionNodes
@@ -18536,23 +18548,5 @@
         genExternalNodeLabel="/0/@diagram/@childNodes.75/@labels.0 /0/@diagram/@childNodes.3/@labels.0 /0/@diagram/@childNodes.4/@labels.0 /0/@diagram/@childNodes.5/@labels.0 /0/@diagram/@childNodes.7/@labels.2 /0/@diagram/@childNodes.8/@labels.2 /0/@diagram/@childNodes.9/@labels.1 /0/@diagram/@childNodes.10/@labels.1 /0/@diagram/@childNodes.12/@labels.2 /0/@diagram/@childNodes.13/@labels.2 /0/@diagram/@childNodes.14/@labels.1 /0/@diagram/@childNodes.15/@labels.1 /0/@diagram/@childNodes.17/@labels.2 /0/@diagram/@childNodes.18/@labels.2 /0/@diagram/@childNodes.19/@labels.1 /0/@diagram/@childNodes.20/@labels.1 /0/@diagram/@childNodes.21/@labels.2 /0/@diagram/@childNodes.22/@labels.2 /0/@diagram/@childNodes.23/@labels.1 /0/@diagram/@childNodes.32/@labels.1 /0/@diagram/@childNodes.33/@labels.0 /0/@diagram/@childNodes.34/@labels.0 /0/@diagram/@childNodes.35/@labels.1 /0/@diagram/@childNodes.38/@labels.2 /0/@diagram/@childNodes.39/@labels.2 /0/@diagram/@childNodes.40/@labels.1 /0/@diagram/@childNodes.41/@labels.2 /0/@diagram/@childNodes.42/@labels.2 /0/@diagram/@childNodes.43/@labels.1 /0/@diagram/@childNodes.45/@labels.2 /0/@diagram/@childNodes.46/@labels.2 /0/@diagram/@childNodes.47/@labels.1 /0/@diagram/@childNodes.48/@labels.2 /0/@diagram/@childNodes.49/@labels.2 /0/@diagram/@childNodes.50/@labels.1 /0/@diagram/@childNodes.52/@labels.2 /0/@diagram/@childNodes.53/@labels.1 /0/@diagram/@childNodes.55/@labels.1 /0/@diagram/@childNodes.71/@labels.1 /0/@diagram/@childNodes.74/@labels.1 /0/@diagram/@childNodes.77/@labels.1 /0/@diagram/@childNodes.80/@labels.1 /0/@diagram/@childNodes.81/@labels.1 /0/@diagram/@childNodes.82/@labels.1 /0/@diagram/@childNodes.84/@labels.1 /0/@diagram/@childNodes.86/@labels.1 /0/@diagram/@childNodes.88/@labels.1 /0/@diagram/@childNodes.89/@labels.1 /0/@diagram/@childNodes.91/@labels.2 /0/@diagram/@childNodes.63/@labels.0 /0/@diagram/@childNodes.61/@labels.1 /0/@diagram/@childNodes.62/@labels.1 /0/@diagram/@childNodes.63/@labels.1 /0/@diagram/@childNodes.66/@labels.1 /0/@diagram/@childNodes.53/@labels.0 /0/@diagram/@childNodes.7/@labels.0 /0/@diagram/@childNodes.7/@labels.1 /0/@diagram/@childNodes.8/@labels.0 /0/@diagram/@childNodes.8/@labels.1 /0/@diagram/@childNodes.9/@labels.0 /0/@diagram/@childNodes.10/@labels.0 /0/@diagram/@childNodes.12/@labels.0 /0/@diagram/@childNodes.12/@labels.1 /0/@diagram/@childNodes.13/@labels.0 /0/@diagram/@childNodes.13/@labels.1 /0/@diagram/@childNodes.14/@labels.0 /0/@diagram/@childNodes.15/@labels.0 /0/@diagram/@childNodes.17/@labels.0 /0/@diagram/@childNodes.17/@labels.1 /0/@diagram/@childNodes.18/@labels.0 /0/@diagram/@childNodes.18/@labels.1 /0/@diagram/@childNodes.19/@labels.0 /0/@diagram/@childNodes.20/@labels.0 /0/@diagram/@childNodes.21/@labels.0 /0/@diagram/@childNodes.21/@labels.1 /0/@diagram/@childNodes.22/@labels.0 /0/@diagram/@childNodes.22/@labels.1 /0/@diagram/@childNodes.23/@labels.0 /0/@diagram/@childNodes.32/@labels.0 /0/@diagram/@childNodes.35/@labels.0 /0/@diagram/@childNodes.36/@labels.1 /0/@diagram/@childNodes.38/@labels.0 /0/@diagram/@childNodes.38/@labels.1 /0/@diagram/@childNodes.39/@labels.0 /0/@diagram/@childNodes.39/@labels.1 /0/@diagram/@childNodes.40/@labels.0 /0/@diagram/@childNodes.41/@labels.0 /0/@diagram/@childNodes.41/@labels.1 /0/@diagram/@childNodes.42/@labels.0 /0/@diagram/@childNodes.42/@labels.1 /0/@diagram/@childNodes.43/@labels.0 /0/@diagram/@childNodes.45/@labels.0 /0/@diagram/@childNodes.45/@labels.1 /0/@diagram/@childNodes.46/@labels.0 /0/@diagram/@childNodes.46/@labels.1 /0/@diagram/@childNodes.47/@labels.0 /0/@diagram/@childNodes.48/@labels.0 /0/@diagram/@childNodes.48/@labels.1 /0/@diagram/@childNodes.49/@labels.0 /0/@diagram/@childNodes.49/@labels.1 /0/@diagram/@childNodes.50/@labels.0 /0/@diagram/@childNodes.52/@labels.1 /0/@diagram/@childNodes.55/@labels.0 /0/@diagram/@childNodes.61/@labels.0 /0/@diagram/@childNodes.62/@labels.0 /0/@diagram/@childNodes.66/@labels.0 /0/@diagram/@childNodes.71/@labels.0 /0/@diagram/@childNodes.74/@labels.0 /0/@diagram/@childNodes.77/@labels.0 /0/@diagram/@childNodes.78/@labels.0 /0/@diagram/@childNodes.78/@labels.1 /0/@diagram/@childNodes.80/@labels.0 /0/@diagram/@childNodes.81/@labels.0 /0/@diagram/@childNodes.82/@labels.0 /0/@diagram/@childNodes.84/@labels.0 /0/@diagram/@childNodes.86/@labels.0 /0/@diagram/@childNodes.88/@labels.0 /0/@diagram/@childNodes.89/@labels.0 /0/@diagram/@childNodes.91/@labels.0 /0/@diagram/@childNodes.91/@labels.1 /0/@diagram/@childNodes.92/@labels.1"/>
     <extensionNodes
         xsi:type="papyrusgmfgenextension:GenerateUsingElementTypeCreationCommand"/>
-    <extensionNodes
-        xsi:type="papyrusgmfgenextension:ExtendedGenView"
-        comment="add superclass for floating Label"
-        genView="/0/@diagram/@childNodes.67/@labels.1 /0/@diagram/@childNodes.87/@labels.1 /0/@diagram/@childNodes.90/@labels.1 /0/@diagram/@childNodes.16/@labels.1 /0/@diagram/@childNodes.6/@labels.1 /0/@diagram/@childNodes.37/@labels.1 /0/@diagram/@childNodes.54/@labels.1 /0/@diagram/@childNodes.70/@labels.1 /0/@diagram/@childNodes.73/@labels.1 /0/@diagram/@childNodes.76/@labels.1 /0/@diagram/@childNodes.79/@labels.1 /0/@diagram/@childNodes.83/@labels.1 /0/@diagram/@childNodes.85/@labels.1 /0/@diagram/@childNodes.11/@labels.1 /0/@diagram/@childNodes.92/@labels.2 /0/@diagram/@childNodes.36/@labels.2 /0/@diagram/@childNodes.44/@labels.1 /0/@diagram/@childNodes.3/@labels.1 /0/@diagram/@childNodes.4/@labels.1 /0/@diagram/@childNodes.5/@labels.1 /0/@diagram/@childNodes.32/@labels.2 /0/@diagram/@childNodes.33/@labels.1 /0/@diagram/@childNodes.34/@labels.1 /0/@diagram/@childNodes.35/@labels.2 /0/@diagram/@childNodes.52/@labels.3"
-        name="FloatingLabelEditPart"
-        superOwnedEditPart="org.eclipse.papyrus.uml.diagram.common.editparts.FloatingLabelEditPart"/>
-    <extensionNodes
-        xsi:type="papyrusgmfgenextension:ExtendedGenView"
-        comment="Elements that inherits RoundedCompartmentEditPart"
-        genView="/0/@diagram/@childNodes.87 /0/@diagram/@childNodes.67 /0/@diagram/@childNodes.90 /0/@diagram/@childNodes.68 /0/@diagram/@childNodes.57 /0/@diagram/@childNodes.56 /0/@diagram/@childNodes.60 /0/@diagram/@childNodes.64 /0/@diagram/@childNodes.65 /0/@diagram/@childNodes.11 /0/@diagram/@childNodes.16 /0/@diagram/@childNodes.79 /0/@diagram/@childNodes.73 /0/@diagram/@childNodes.83 /0/@diagram/@childNodes.6 /0/@diagram/@childNodes.70 /0/@diagram/@childNodes.76 /0/@diagram/@childNodes.85 /0/@diagram/@childNodes.37 /0/@diagram/@childNodes.54 /0/@diagram/@childNodes.92 /0/@diagram/@childNodes.36 /0/@diagram/@childNodes.44 /0/@diagram/@childNodes.4 /0/@diagram/@childNodes.3 /0/@diagram/@childNodes.5 /0/@diagram/@childNodes.32 /0/@diagram/@childNodes.33 /0/@diagram/@childNodes.34 /0/@diagram/@childNodes.35 /0/@diagram/@childNodes.52"
-        name="Rounded Compartment EP inheritance"
-        superOwnedEditPart="org.eclipse.papyrus.uml.diagram.common.editparts.RoundedCompartmentEditPart"/>
-    <extensionNodes
-        xsi:type="papyrusgmfgenextension:ExtendedGenView"
-        comment="Elements that inherits RoundedBorderNamedElementEditPart"
-        genView="/0/@diagram/@childNodes.51"
-        name="Rounded Border Named Element Edit Part inheritance"
-        superOwnedEditPart="org.eclipse.papyrus.uml.diagram.common.editparts.RoundedBorderNamedElementEditPart"/>
   </papyrusgmfgenextension:PapyrusExtensionRootNode>
 </xmi:XMI>

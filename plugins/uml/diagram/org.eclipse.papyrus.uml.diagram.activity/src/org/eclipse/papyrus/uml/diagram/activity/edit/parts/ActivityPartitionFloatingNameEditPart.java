@@ -1,15 +1,4 @@
-/**
- * Copyright (c) 2014 CEA LIST.
- *
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- *
- * Contributors:
- *  CEA LIST - Initial API and implementation
- */
-package org.eclipse.papyrus.uml.diagram.clazz.edit.parts;
+package org.eclipse.papyrus.uml.diagram.activity.edit.parts;
 
 import java.util.Collections;
 import java.util.List;
@@ -30,6 +19,7 @@ import org.eclipse.gef.requests.DirectEditRequest;
 import org.eclipse.gef.tools.DirectEditManager;
 import org.eclipse.gmf.runtime.common.ui.services.parser.IParser;
 import org.eclipse.gmf.runtime.common.ui.services.parser.IParserEditStatus;
+import org.eclipse.gmf.runtime.common.ui.services.parser.ParserEditStatus;
 import org.eclipse.gmf.runtime.common.ui.services.parser.ParserOptions;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
@@ -63,10 +53,10 @@ import org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.ExternalLabelPrimar
 import org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.IMaskManagedLabelEditPolicy;
 import org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.IndirectMaskLabelEditPolicy;
 import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.PapyrusWrappingLabel;
-import org.eclipse.papyrus.uml.diagram.clazz.edit.policies.UMLTextSelectionEditPolicy;
-import org.eclipse.papyrus.uml.diagram.clazz.part.UMLVisualIDRegistry;
-import org.eclipse.papyrus.uml.diagram.clazz.providers.UMLElementTypes;
-import org.eclipse.papyrus.uml.diagram.clazz.providers.UMLParserProvider;
+import org.eclipse.papyrus.uml.diagram.activity.edit.policies.UMLTextSelectionEditPolicy;
+import org.eclipse.papyrus.uml.diagram.activity.part.UMLVisualIDRegistry;
+import org.eclipse.papyrus.uml.diagram.activity.providers.UMLElementTypes;
+import org.eclipse.papyrus.uml.diagram.activity.providers.UMLParserProvider;
 import org.eclipse.papyrus.uml.diagram.common.directedit.MultilineLabelDirectEditManager;
 import org.eclipse.papyrus.uml.diagram.common.editparts.FloatingLabelEditPart;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.IDirectEdition;
@@ -84,7 +74,7 @@ import org.eclipse.uml2.uml.Feature;
 /**
  * @generated
  */
-public class InformationItemFloatingNameEditPart extends
+public class ActivityPartitionFloatingNameEditPart extends
 		FloatingLabelEditPart
 		implements ITextAwareEditPart, IBorderItemEditPart
 {
@@ -92,7 +82,7 @@ public class InformationItemFloatingNameEditPart extends
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 8512;
+	public static final int VISUAL_ID = 6016;
 
 	/**
 	 * @generated
@@ -116,14 +106,12 @@ public class InformationItemFloatingNameEditPart extends
 
 	/**
 	 * direct edition mode (default, undefined, registered editor, etc.)
-	 *
 	 * @generated
 	 */
 	protected int directEditionMode = IDirectEdition.UNDEFINED_DIRECT_EDITOR;
 
 	/**
 	 * configuration from a registered edit dialog
-	 *
 	 * @generated
 	 */
 	protected IDirectEditorConfiguration configuration;
@@ -133,20 +121,19 @@ public class InformationItemFloatingNameEditPart extends
 	 * @generated
 	 */
 	static {
-		registerSnapBackPosition(UMLVisualIDRegistry.getType(org.eclipse.papyrus.uml.diagram.clazz.edit.parts.InformationItemFloatingNameEditPart.VISUAL_ID), new Point(0, 0));
+		registerSnapBackPosition(UMLVisualIDRegistry.getType(org.eclipse.papyrus.uml.diagram.activity.edit.parts.ActivityPartitionFloatingNameEditPart.VISUAL_ID), new Point(0, 0));
 	}
 
 	/**
 	 * @generated
 	 */
-	public InformationItemFloatingNameEditPart(View view) {
+	public ActivityPartitionFloatingNameEditPart(View view) {
 		super(view);
 	}
 
 	/**
 	 * @generated
 	 */
-	@Override
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicy.DIRECT_EDIT_ROLE, new LabelDirectEditPolicy());
@@ -157,7 +144,6 @@ public class InformationItemFloatingNameEditPart extends
 	/**
 	 * @generated
 	 */
-	@Override
 	public IBorderItemLocator getBorderItemLocator() {
 		IFigure parentFigure = getFigure().getParent();
 		if (parentFigure != null && parentFigure.getLayoutManager() != null) {
@@ -170,7 +156,6 @@ public class InformationItemFloatingNameEditPart extends
 	/**
 	 * @generated
 	 */
-	@Override
 	public void refreshBounds() {
 		int x = ((Integer) getStructuralFeatureValue(NotationPackage.eINSTANCE.getLocation_X())).intValue();
 		int y = ((Integer) getStructuralFeatureValue(NotationPackage.eINSTANCE.getLocation_Y())).intValue();
@@ -247,7 +232,6 @@ public class InformationItemFloatingNameEditPart extends
 	/**
 	 * @generated
 	 */
-	@Override
 	protected List<?> getModelChildren() {
 		return Collections.EMPTY_LIST;
 	}
@@ -255,7 +239,6 @@ public class InformationItemFloatingNameEditPart extends
 	/**
 	 * @generated
 	 */
-	@Override
 	public IGraphicalEditPart getChildBySemanticHint(String semanticHint) {
 		return null;
 	}
@@ -301,7 +284,6 @@ public class InformationItemFloatingNameEditPart extends
 	/**
 	 * @generated
 	 */
-	@Override
 	public void setLabelText(String text) {
 		setLabelTextHelper(getFigure(), text);
 		Object pdEditPolicy = getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
@@ -317,7 +299,6 @@ public class InformationItemFloatingNameEditPart extends
 	/**
 	 * @generated
 	 */
-	@Override
 	public String getEditText() {
 		if (getParserElement() == null || getParser() == null) {
 			return ""; //$NON-NLS-1$
@@ -337,11 +318,9 @@ public class InformationItemFloatingNameEditPart extends
 	/**
 	 * @generated
 	 */
-	@Override
 	public ICellEditorValidator getEditTextValidator() {
 		return new ICellEditorValidator() {
 
-			@Override
 			public String isValid(final Object value) {
 				if (value instanceof String) {
 					final EObject element = getParserElement();
@@ -351,12 +330,11 @@ public class InformationItemFloatingNameEditPart extends
 								(IParserEditStatus) getEditingDomain().runExclusive(
 										new RunnableWithResult.Impl<java.lang.Object>() {
 
-											@Override
 											public void run() {
 												setResult(parser.isValidEditString(new EObjectAdapter(element), (String) value));
 											}
 										});
-						return valid.getCode() == IParserEditStatus.EDITABLE ? null : valid.getMessage();
+						return valid.getCode() == ParserEditStatus.EDITABLE ? null : valid.getMessage();
 					} catch (InterruptedException ie) {
 						ie.printStackTrace();
 					}
@@ -371,7 +349,6 @@ public class InformationItemFloatingNameEditPart extends
 	/**
 	 * @generated
 	 */
-	@Override
 	public IContentAssistProcessor getCompletionProcessor() {
 		if (getParserElement() == null || getParser() == null) {
 			return null;
@@ -382,7 +359,6 @@ public class InformationItemFloatingNameEditPart extends
 	/**
 	 * @generated
 	 */
-	@Override
 	public ParserOptions getParserOptions() {
 		return ParserOptions.NONE;
 	}
@@ -390,10 +366,9 @@ public class InformationItemFloatingNameEditPart extends
 	/**
 	 * @generated
 	 */
-	@Override
 	public IParser getParser() {
 		if (parser == null) {
-			parser = UMLParserProvider.getParser(UMLElementTypes.InformationItem_2099, getParserElement(), UMLVisualIDRegistry.getType(org.eclipse.papyrus.uml.diagram.clazz.edit.parts.InformationItemFloatingNameEditPart.VISUAL_ID));
+			parser = UMLParserProvider.getParser(UMLElementTypes.ActivityPartition_3067, getParserElement(), UMLVisualIDRegistry.getType(org.eclipse.papyrus.uml.diagram.activity.edit.parts.ActivityPartitionFloatingNameEditPart.VISUAL_ID));
 		}
 		return parser;
 	}
@@ -423,7 +398,6 @@ public class InformationItemFloatingNameEditPart extends
 	protected void performDirectEdit() {
 		BusyIndicator.showWhile(Display.getDefault(), new java.lang.Runnable() {
 
-			@Override
 			public void run() {
 				getManager().show();
 			}
@@ -453,7 +427,6 @@ public class InformationItemFloatingNameEditPart extends
 	/**
 	 * @generated
 	 */
-	@Override
 	protected void performDirectEditRequest(Request request) {
 
 		final Request theRequest = request;
@@ -488,8 +461,8 @@ public class InformationItemFloatingNameEditPart extends
 				else if (configuration instanceof IAdvancedEditorConfiguration) {
 					dialog = ((IAdvancedEditorConfiguration) configuration).createDialog(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), resolveSemanticElement(), configuration.getTextToEdit(resolveSemanticElement()));
 				} else if (configuration instanceof IDirectEditorConfiguration) {
-					dialog = new ExtendedDirectEditionDialog(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), resolveSemanticElement(), configuration.getTextToEdit(resolveSemanticElement()),
-							configuration);
+					dialog = new ExtendedDirectEditionDialog(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), resolveSemanticElement(), ((IDirectEditorConfiguration) configuration).getTextToEdit(resolveSemanticElement()),
+							(IDirectEditorConfiguration) configuration);
 				} else {
 					return;
 				}
@@ -524,7 +497,6 @@ public class InformationItemFloatingNameEditPart extends
 		// initialize the direct edit manager
 		try {
 			getEditingDomain().runExclusive(new Runnable() {
-				@Override
 				public void run() {
 					if (isActive() && isEditable()) {
 						if (request.getExtendedData().get(
@@ -546,7 +518,6 @@ public class InformationItemFloatingNameEditPart extends
 	/**
 	 * @generated
 	 */
-	@Override
 	protected void refreshVisuals() {
 		super.refreshVisuals();
 		refreshLabel();
@@ -620,7 +591,6 @@ public class InformationItemFloatingNameEditPart extends
 	/**
 	 * @generated
 	 */
-	@Override
 	protected void refreshFont() {
 		FontStyle style =
 				(FontStyle) getFontStyleOwnerView().getStyle(
@@ -637,7 +607,6 @@ public class InformationItemFloatingNameEditPart extends
 	/**
 	 * @generated
 	 */
-	@Override
 	protected void setFontColor(Color color) {
 		getFigure().setForegroundColor(color);
 	}
@@ -645,7 +614,6 @@ public class InformationItemFloatingNameEditPart extends
 	/**
 	 * @generated
 	 */
-	@Override
 	protected void addSemanticListeners() {
 		if (getParser() instanceof ISemanticParser) {
 			EObject element = resolveSemanticElement();
@@ -661,7 +629,6 @@ public class InformationItemFloatingNameEditPart extends
 	/**
 	 * @generated
 	 */
-	@Override
 	protected void removeSemanticListeners() {
 		if (parserElements != null) {
 			for (int i = 0; i < parserElements.size(); i++) {
@@ -675,12 +642,10 @@ public class InformationItemFloatingNameEditPart extends
 	/**
 	 * @generated
 	 */
-	@Override
 	protected AccessibleEditPart getAccessibleEditPart() {
 		if (accessibleEP == null) {
 			accessibleEP = new AccessibleGraphicalEditPart() {
 
-				@Override
 				public void getName(AccessibleEvent e) {
 					e.result = getLabelTextHelper(getFigure());
 				}
@@ -698,7 +663,7 @@ public class InformationItemFloatingNameEditPart extends
 
 	/**
 	 * Returns the kind of associated editor for direct edition.
-	 *
+	 * 
 	 * @return an <code>int</code> corresponding to the kind of direct editor, @see org.eclipse.papyrus.uml.diagram.common.editpolicies.IDirectEdition
 	 * @generated
 	 */
@@ -717,7 +682,7 @@ public class InformationItemFloatingNameEditPart extends
 
 	/**
 	 * Checks if an extended editor is present.
-	 *
+	 * 
 	 * @return <code>true</code> if an extended editor is present.
 	 * @generated
 	 */
@@ -730,7 +695,7 @@ public class InformationItemFloatingNameEditPart extends
 
 	/**
 	 * Checks if a default direct edition is available
-	 *
+	 * 
 	 * @return <code>true</code> if a default direct edition is available
 	 * @generated
 	 */
@@ -740,7 +705,6 @@ public class InformationItemFloatingNameEditPart extends
 
 	/**
 	 * Initializes the extended editor configuration
-	 *
 	 * @generated
 	 */
 	protected void initExtendedEditorConfiguration() {
@@ -756,7 +720,6 @@ public class InformationItemFloatingNameEditPart extends
 
 	/**
 	 * Updates the preference configuration
-	 *
 	 * @generated
 	 */
 	protected void updateExtendedEditorConfiguration() {
@@ -772,9 +735,7 @@ public class InformationItemFloatingNameEditPart extends
 
 	/**
 	 * Performs the direct edit usually used by GMF editors.
-	 *
-	 * @param theRequest
-	 *            the direct edit request that starts the direct edit system
+	 * @param theRequest the direct edit request that starts the direct edit system
 	 * @generated
 	 */
 	protected void performDefaultDirectEditorEdit(final Request theRequest) {
@@ -782,7 +743,6 @@ public class InformationItemFloatingNameEditPart extends
 		try {
 			getEditingDomain().runExclusive(new Runnable() {
 
-				@Override
 				public void run() {
 					if (isActive() && isEditable()) {
 						if (theRequest.getExtendedData().get(RequestConstants.REQ_DIRECTEDIT_EXTENDEDDATA_INITIAL_CHAR) instanceof Character) {
@@ -807,7 +767,6 @@ public class InformationItemFloatingNameEditPart extends
 	/**
 	 * @generated
 	 */
-	@Override
 	protected void handleNotificationEvent(Notification event) {
 		Object feature = event.getFeature();
 		if (NotationPackage.eINSTANCE.getFontStyle_FontColor().equals(feature)) {
@@ -844,7 +803,6 @@ public class InformationItemFloatingNameEditPart extends
 	/**
 	 * @generated
 	 */
-	@Override
 	protected IFigure createFigure() {
 		IFigure label = createFigurePrim();
 		defaultText = getLabelTextHelper(label);
