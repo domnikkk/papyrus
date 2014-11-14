@@ -3194,7 +3194,7 @@
         xsi:type="papyrusgmfgenextension:SpecificLocatorExternalLabel"
         comment="External node label locator"
         classpath="org.eclipse.papyrus.uml.diagram.common.locator.ExternalLabelPositionLocator"
-        genExternalNodeLabel="/0/@diagram/@topLevelNodes.8/@labels.0 /0/@diagram/@childNodes.11/@labels.0 /0/@diagram/@childNodes.0/@labels.0 /0/@diagram/@topLevelNodes.0/@labels.0"/>
+        genExternalNodeLabel="/0/@diagram/@topLevelNodes.8/@labels.0 /0/@diagram/@childNodes.11/@labels.0 /0/@diagram/@childNodes.0/@labels.0 /0/@diagram/@topLevelNodes.0/@labels.0 /0/@diagram/@childNodes.0/@labels.1"/>
     <extensionNodes
         xsi:type="papyrusgmfgenextension:GenNodeConstraint"
         comment="Creation constraint for TopLevelNode in virtual canvas"
