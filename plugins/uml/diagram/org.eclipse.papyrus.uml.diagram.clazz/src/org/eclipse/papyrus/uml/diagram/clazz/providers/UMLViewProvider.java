@@ -579,6 +579,11 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		Location location1 = (Location) label1.getLayoutConstraint();
 		location1.setX(0);
 		location1.setY(5);
+		Node label8522 = createLabel(node, UMLVisualIDRegistry.getType(DependencyFloatingNameEditPart.VISUAL_ID));
+		label8522.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
+		Location location8522 = (Location) label8522.getLayoutConstraint();
+		location8522.setX(0);
+		location8522.setY(5);
 		return node;
 	}
 
@@ -623,6 +628,11 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint.getPreferenceStore();
 
 		PreferenceInitializerForElementHelper.initFontStyleFromPrefs(node, prefStore, "AssociationNode");
+		Node label8521 = createLabel(node, UMLVisualIDRegistry.getType(AssociationFloatingNameEditPart.VISUAL_ID));
+		label8521.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
+		Location location8521 = (Location) label8521.getLayoutConstraint();
+		location8521.setX(0);
+		location8521.setY(5);
 		return node;
 	}
 

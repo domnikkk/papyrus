@@ -31,6 +31,7 @@ import org.eclipse.papyrus.infra.gmfdiag.common.service.shape.ProviderNotificati
 import org.eclipse.papyrus.uml.diagram.symbols.Activator;
 import org.eclipse.uml2.uml.AcceptEventAction;
 import org.eclipse.uml2.uml.ActivityFinalNode;
+import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.DecisionNode;
 import org.eclipse.uml2.uml.DurationObservation;
 import org.eclipse.uml2.uml.Element;
@@ -60,19 +61,19 @@ public class UMLElementShapeProvider extends AbstractShapeProvider {
 
 	private static final String TIME_OBSERVATION_SVG_PATH = "/icons/symbols/TimeObservation.svg";
 
-	/** The Constant SYMBOL_SVG_PATH. */
+	/** The Constant ROUND_WITH_DOT_SVG_PATH. */
 	private static final String ROUND_WITH_DOT_SVG_PATH = "/icons/symbols/round_with_dot.svg";
 
-	/** The Constant SYMBOL_SVG_PATH. */
+	/** The Constant ROUND_FULL_SVG_PATH. */
 	private static final String ROUND_FULL_SVG_PATH = "/icons/symbols/round_full.svg";
 
-	/** The Constant SYMBOL_SVG_PATH. */
+	/** The Constant ROUND_WITH_CROSS_SVG_PATH. */
 	private static final String ROUND_WITH_CROSS_SVG_PATH = "/icons/symbols/round_with_cross.svg";
 
-	/** The Constant SYMBOL_SVG_PATH. */
+	/** The Constant ARROW_SVG_PATH. */
 	private static final String ARROW_SVG_PATH = "/icons/symbols/arrow.svg";
 
-	/** The Constant SYMBOL_SVG_PATH. */
+	/** The Constant DIAMOND_SVG_PATH. */
 	private static final String DIAMOND_SVG_PATH = "/icons/symbols/diamond.svg";
 
 	/**
@@ -137,6 +138,9 @@ public class UMLElementShapeProvider extends AbstractShapeProvider {
 		if (element instanceof ActivityFinalNode || (element instanceof TypedElement && ((TypedElement) element).getType() instanceof ActivityFinalNode)) {
 			return true;
 		}// RoundWDot
+		if (element instanceof Association || (element instanceof TypedElement && ((TypedElement) element).getType() instanceof Association)) {
+			return true;
+		}// Diamond
 
 		return false;
 	}
@@ -256,6 +260,9 @@ public class UMLElementShapeProvider extends AbstractShapeProvider {
 			if (element instanceof ActivityFinalNode || (element instanceof TypedElement && ((TypedElement) element).getType() instanceof ActivityFinalNode)) {
 				uri = URI.createPlatformPluginURI(org.eclipse.papyrus.infra.gmfdiag.common.Activator.ID + ROUND_WITH_DOT_SVG_PATH, true);
 			}// RoundWDot
+			if (element instanceof Association || (element instanceof TypedElement && ((TypedElement) element).getType() instanceof Association)) {
+				uri = URI.createPlatformPluginURI(org.eclipse.papyrus.infra.gmfdiag.common.Activator.ID + DIAMOND_SVG_PATH, true);
+			}// Diamond
 
 			String path = uri.toString();
 			SVGDocument document = getSVGDocument(path);

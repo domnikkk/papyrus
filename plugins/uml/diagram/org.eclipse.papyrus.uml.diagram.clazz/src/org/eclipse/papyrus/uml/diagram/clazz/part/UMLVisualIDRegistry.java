@@ -823,6 +823,9 @@ public class UMLVisualIDRegistry {
 			if (MultiDependencyLabelEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (DependencyFloatingNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			break;
 		case AssociationClassEditPart.VISUAL_ID:
 			if (AssociationClassNameEditPart.VISUAL_ID == nodeVisualID) {
@@ -838,6 +841,11 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			if (AssociationClassNestedClassifierCompartmentEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case AssociationNodeEditPart.VISUAL_ID:
+			if (AssociationFloatingNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;

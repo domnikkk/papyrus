@@ -48,6 +48,9 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case MultiDependencyLabelEditPart.VISUAL_ID:
 				return new MultiDependencyLabelEditPart(view);
 
+			case DependencyFloatingNameEditPart.VISUAL_ID:
+				return new DependencyFloatingNameEditPart(view);
+
 			case AssociationClassEditPart.VISUAL_ID:
 				return new AssociationClassEditPart(view);
 
@@ -59,6 +62,9 @@ public class UMLEditPartFactory implements EditPartFactory {
 
 			case AssociationNodeEditPart.VISUAL_ID:
 				return new AssociationNodeEditPart(view);
+
+			case AssociationFloatingNameEditPart.VISUAL_ID:
+				return new AssociationFloatingNameEditPart(view);
 
 			case InstanceSpecificationEditPart.VISUAL_ID:
 				return new InstanceSpecificationEditPart(view);

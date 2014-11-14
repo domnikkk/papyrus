@@ -66,6 +66,25 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
+	private IParser dependencyName_8522Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getDependencyName_8522Parser() {
+		if (dependencyName_8522Parser == null) {
+			EAttribute[] features = new EAttribute[] {
+					UMLPackage.eINSTANCE.getNamedElement_Name()
+			};
+			MessageFormatParser parser = new MessageFormatParser(features);
+			dependencyName_8522Parser = parser;
+		}
+		return dependencyName_8522Parser;
+	}
+
+	/**
+	 * @generated
+	 */
 	private IParser associationClassName_5066Parser;
 
 	/**
@@ -99,6 +118,25 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			associationClassName_8504Parser = parser;
 		}
 		return associationClassName_8504Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser associationName_8521Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getAssociationName_8521Parser() {
+		if (associationName_8521Parser == null) {
+			EAttribute[] features = new EAttribute[] {
+					UMLPackage.eINSTANCE.getNamedElement_Name()
+			};
+			MessageFormatParser parser = new MessageFormatParser(features);
+			associationName_8521Parser = parser;
+		}
+		return associationName_8521Parser;
 	}
 
 	/**
@@ -2302,12 +2340,16 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 		switch (visualID) {
 		case MultiDependencyLabelEditPart.VISUAL_ID:
 			return getDependencyName_1Parser();
+		case DependencyFloatingNameEditPart.VISUAL_ID:
+			return getDependencyName_8522Parser();
 
 		case AssociationClassNameEditPart.VISUAL_ID:
 			return getAssociationClassName_5066Parser();
 		case AssociationClassFloatingNameEditPart.VISUAL_ID:
 			return getAssociationClassName_8504Parser();
 
+		case AssociationFloatingNameEditPart.VISUAL_ID:
+			return getAssociationName_8521Parser();
 
 		case InstanceSpecificationNameEditPart.VISUAL_ID:
 			return getInstanceSpecificationName_5002Parser();
