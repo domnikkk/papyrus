@@ -73,13 +73,6 @@ public class Fixbug_OrderFragmentsAfterResizeExecutions_417374 extends AbstractN
 		//resize behavior
 		resize(execution2, SequenceUtil.getAbsoluteBounds(execution2).getLocation(), PositionConstants.SOUTH, new Dimension(0, 100));
 		//validate
-		actualList = new ArrayList<InteractionFragment>();
-		actualList.add(actionES.getStart());
-		actualList.add(actionES);
-		actualList.add(behaviorES.getStart());
-		actualList.add(behaviorES);
-		actualList.add(actionES.getFinish());
-		actualList.add(behaviorES.getFinish());
 		validateOrders(interaction.getFragments(), actualList);
 	}
 
