@@ -33,14 +33,6 @@
             target="platform:/plugin/org.eclipse.papyrus.uml.decoratormodel/model/">
       </mapping>
    </extension>
-
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated ProfileExternalization.profile -->
-      <package
-            uri="http://www.eclipse.org/Papyrus/2014/profile/profileExternalization"
-            class="org.eclipse.papyrus.uml.decoratormodel.profileExternalization.ProfileExternalizationPackage"
-            genModel="model/ProfileExternalization.profile.genmodel"/>
-   </extension>
    <extension
          point="org.eclipse.uml2.uml.generated_package">
       <profile
@@ -80,4 +72,12 @@
             class="org.eclipse.papyrus.uml.decoratormodel.internal.providers.ExternalizedProfileApplicationDelegate">
       </delegate>
    </extension>
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated ProfileExternalization.profile -->
+      <package
+            uri="http://www.eclipse.org/Papyrus/2014/profile/profileExternalization"
+            class="org.eclipse.papyrus.uml.decoratormodel.profileExternalization.ProfileExternalizationPackage"
+            genModel="model/ProfileExternalization.profile.genmodel"/>
+   </extension>
+
 </plugin>
