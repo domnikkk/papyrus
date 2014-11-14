@@ -11,7 +11,7 @@
  *  Patrick Tessier (CEA LIST) patrick.tessier@cea.fr - Initial API and implementation
  *
  *****************************************************************************/
-package org.eclipse.papyrus.revision.tool.ui;
+package org.eclipse.papyrus.revision.tool.dialogs;
 
 import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.preference.PreferenceConverter;

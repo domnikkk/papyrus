@@ -13,6 +13,11 @@
  *****************************************************************************/
 package org.eclipse.papyrus.revision.tool.core;
 
+import java.text.DateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
+
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.emf.common.util.URI;
@@ -30,9 +35,9 @@ import org.eclipse.papyrus.infra.core.resource.NotFoundException;
 import org.eclipse.papyrus.infra.core.services.ServiceException;
 import org.eclipse.papyrus.infra.core.services.ServicesRegistry;
 import org.eclipse.papyrus.revision.tool.Activator;
+import org.eclipse.papyrus.revision.tool.dialogs.CreateAuthorDialog;
+import org.eclipse.papyrus.revision.tool.dialogs.CreateOrSelectReviewModelDialog;
 import org.eclipse.papyrus.revision.tool.preference.PreferenceConstants;
-import org.eclipse.papyrus.revision.tool.ui.CreateAuthorDialog;
-import org.eclipse.papyrus.revision.tool.ui.CreateOrSelectReviewModelDialog;
 import org.eclipse.papyrus.uml.extensionpoints.profile.RegisteredProfile;
 import org.eclipse.papyrus.uml.extensionpoints.utils.Util;
 import org.eclipse.papyrus.uml.tools.model.UmlModel;
@@ -49,6 +54,7 @@ import org.eclipse.ui.model.BaseWorkbenchContentProvider;
 import org.eclipse.ui.model.WorkbenchLabelProvider;
 import org.eclipse.uml2.uml.Actor;
 import org.eclipse.uml2.uml.Comment;
+import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Model;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Profile;
@@ -119,7 +125,7 @@ public class ReviewResourceManager {
 	/**
 	 *  used to add a review in the review model
 	 */
-	public void addAReview(){
+	public void addAReview(final Element element){
 		getCurrentReviewModel();
 		final Actor theauthor=getCurrentAuthor();
 
@@ -128,12 +134,22 @@ public class ReviewResourceManager {
 			protected void doExecute() {
 				Comment cmt= UMLFactory.eINSTANCE.createComment();
 				cmt.setBody("Your review");
-				reviewModel.getOwnedComments().add(cmt);
+				if(element instanceof Comment ){
+					((Comment)element).getOwnedComments().add(cmt);
+				}
+				else{	reviewModel.getOwnedComments().add(cmt);}
+			
 				Stereotype review= cmt.getApplicableStereotype(I_ReviewStereotype.REVIEW_STEREOTYPE);
 				cmt.applyStereotype(review);
 				cmt.setValue(review, I_ReviewStereotype.COMMENT_SUBJECT_ATT, "subject");
+				
 				Stereotype authorStereotype= theauthor.getApplicableStereotype(I_VersioningStereotype.AUTHOR_STEREOTYPE);
 				cmt.setValue(review, I_VersioningStereotype.VERSIONINGELEMENT_AUTHOR_ATT, theauthor.getStereotypeApplication(authorStereotype));
+				
+				// add tthe date
+				Date today = new Date();
+				DateFormat shortDateFormat = DateFormat.getDateTimeInstance(DateFormat.SHORT,DateFormat.SHORT);
+				cmt.setValue(review, I_VersioningStereotype.VERSIONINGELEMENT_DATE_ATT, shortDateFormat.format(today));
 			}
 		};
 		getDomain().getCommandStack().execute(cmd);
@@ -304,7 +320,7 @@ public class ReviewResourceManager {
 	 * get the working model
 	 * @return the model that is modified inside papyrus
 	 */
-	protected Model getWorkingModel(){
+	public Model getWorkingModel(){
 		if(UMLModel!=null){
 			return UMLModel;
 		}

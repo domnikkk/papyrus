@@ -55,4 +55,112 @@
 <extension point="org.eclipse.papyrus.views.properties.context">
 <context contextModel="properties/Review.ctx"/>
 </extension>
+<extension
+      point="org.eclipse.ui.commands">
+   <category
+         id="org.eclipse.papyrus.revisiontool.commands.category"
+         name="Sample Category">
+   </category>
+   <command
+         categoryId="org.eclipse.papyrus.revisiontool.commands.category"
+         id="org.eclipse.papyrus.revisiontool.commands.sampleCommand"
+         name="Sample Command">
+   </command>
+</extension>
+<extension
+      point="org.eclipse.ui.handlers">
+   <handler
+         class="org.eclipse.papyrus.revision.tool.handlers.ReviewCreateHandler"
+         commandId="org.eclipse.papyrus.revisiontool.commands.sampleCommand">
+   </handler>
+   <handler
+         class="org.eclipse.papyrus.revision.tool.handlers.DeleteReviewCreateHandler"
+         commandId="org.eclipse.papyrus.revisiontool.commands.deletereview">
+   </handler>
+   <handler
+         class="org.eclipse.papyrus.revision.tool.handlers.HookReviewHandler"
+         commandId="org.eclipse.papyrus.revisiontool.commands.hookreview">
+   </handler>
+</extension>
+<extension
+      point="org.eclipse.ui.bindings">
+   <key
+         commandId="org.eclipse.papyrus.revisiontool.commands.sampleCommand"
+         contextId="org.eclipse.ui.contexts.window"
+         schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+         sequence="M1+1">
+   </key>
+   <key
+         commandId="org.eclipse.papyrus.revisiontool.commands.deletereview"
+         contextId="org.eclipse.ui.contexts.window"
+         schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+         sequence="M1+4">
+   </key>
+   <key
+         commandId="org.eclipse.papyrus.revisiontool.commands.hookreview"
+         contextId="org.eclipse.ui.contexts.window"
+         schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+         sequence="M1+7">
+   </key>
+</extension>
+<extension
+      point="org.eclipse.ui.menus">
+   <menuContribution
+         allPopups="true"
+         locationURI="popup:org.eclipse.papyrus.revisiontool.commentview">
+      <menu
+            id="org.eclipse.papyrus.revisiontool.menus.new"
+            label="New"
+            mnemonic="M">
+         <command
+               commandId="org.eclipse.papyrus.revisiontool.commands.sampleCommand"
+               icon="img/Add.png"
+               id="org.eclipse.papyrus.revisiontool.menus.sampleCommand"
+               label="Review"
+               mnemonic="S"
+               style="push">
+         </command>
+      </menu>
+      <command
+            commandId="org.eclipse.papyrus.revisiontool.commands.deletereview"
+            icon="img/delete.png"
+            id="org.eclipse.papyrus.revisiontool.commands.deletereview"
+            label="Delete"
+            mnemonic="S"
+            style="push"
+            tooltip="Delete">
+      </command>
+      <command
+            commandId="org.eclipse.papyrus.revisiontool.commands.hookreview"
+            icon="img/hook.png"
+            id="org.eclipse.papyrus.revisiontool.commands.hookreview"
+            label="Hook"
+            mnemonic="S"
+            style="push"
+            tooltip="Hook">
+      </command>
+   </menuContribution>
+   <menuContribution
+         allPopups="true"
+         locationURI="toolbar:org.eclipse.papyrus.revisiontool.commentview">
+      <command
+            commandId="org.eclipse.papyrus.revisiontool.commands.deletereview"
+            icon="img/delete.png"
+            id="org.eclipse.papyrus.revisiontool.commands.deletereview"
+            label="Delete"
+            mnemonic="S"
+            style="push"
+            tooltip="Delete">
+      </command>
+      <command
+            commandId="org.eclipse.papyrus.revisiontool.commands.hookreview"
+            icon="img/hook.png"
+            id="org.eclipse.papyrus.revisiontool.commands.hookreview"
+            label="Hook"
+            mnemonic="S"
+            style="push"
+            tooltip="Hook">
+      </command>
+   </menuContribution>
+</extension>
 </plugin>

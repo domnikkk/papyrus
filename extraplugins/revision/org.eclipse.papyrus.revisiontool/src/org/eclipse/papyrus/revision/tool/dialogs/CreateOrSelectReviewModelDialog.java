@@ -11,7 +11,7 @@
  *  Patrick Tessier (CEA LIST) patrick.tessier@cea.fr - Initial API and implementation
  *
  *****************************************************************************/
-package org.eclipse.papyrus.revision.tool.ui;
+package org.eclipse.papyrus.revision.tool.dialogs;
 
 import java.net.MalformedURLException;
 import java.net.URL;

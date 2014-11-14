@@ -21,7 +21,11 @@ import java.util.List;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.util.EContentAdapter;
 import org.eclipse.jface.action.Action;
+import org.eclipse.jface.action.IContributionItem;
+import org.eclipse.jface.action.IMenuListener;
+import org.eclipse.jface.action.IMenuManager;
 import org.eclipse.jface.action.IToolBarManager;
+import org.eclipse.jface.action.MenuManager;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.papyrus.infra.core.editor.IMultiDiagramEditor;
@@ -37,12 +41,14 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Listener;
+import org.eclipse.swt.widgets.Menu;
 import org.eclipse.swt.widgets.TreeItem;
 import org.eclipse.ui.part.ViewPart;
 import org.eclipse.ui.views.properties.IPropertySheetPage;
 import org.eclipse.ui.views.properties.PropertySheetPage;
 import org.eclipse.ui.views.properties.tabbed.ITabbedPropertySheetPageContributor;
 import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
+import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Model;
 import org.eclipse.uml2.uml.Package;
 
@@ -52,6 +58,7 @@ import org.eclipse.uml2.uml.Package;
  */
 public class ReviewsEditor extends ViewPart implements ITabbedPropertySheetPageContributor{
 
+	protected static final String ORG_ECLIPSE_PAPYRUS_REVISIONTOOL = "org.eclipse.papyrus.revisiontool";
 	protected ReviewResourceManager reviewResourceManager= new ReviewResourceManager();
 	private TreeViewer viewer;
 	protected List<IPropertySheetPage> propertySheetPages = new ArrayList<IPropertySheetPage>();
@@ -65,12 +72,51 @@ public class ReviewsEditor extends ViewPart implements ITabbedPropertySheetPageC
 		return styleData;
 	}
 
+	public ReviewResourceManager getReviewResourceManager(){
+		return reviewResourceManager;
+	}
 	
+	/**
+	 * create the contextual menu
+	 */
+	protected  void createContextMenu() {
+		// Create menu manager.
+		MenuManager menuMgr = new MenuManager("#PopMenu");
+		menuMgr.setRemoveAllWhenShown(true);
+		// Register menu for extension.
+		getSite().registerContextMenu(menuMgr, viewer);
+		menuMgr.addMenuListener(new IMenuListener() {
+			@Override
+			public void menuAboutToShow(IMenuManager manager) {
+				filterContextMenu(manager);
+			}
+		});
+
+		// Create menu.
+		Menu menu = menuMgr.createContextMenu(viewer.getControl());
+		viewer.getControl().setMenu(menu);
+		getSite().setSelectionProvider(viewer);
+
+
+	}
+	/**
+	 * filter contextual menu
+	 * @param mgr the menumanager
+	 */
+	protected void filterContextMenu(IMenuManager mgr) {
+		IContributionItem[] contributionItems=mgr.getItems();
+		for (int i = 0; i < contributionItems.length; i++) {
+			if(!(contributionItems[i].getId().startsWith(ORG_ECLIPSE_PAPYRUS_REVISIONTOOL))){
+				mgr.remove(contributionItems[i]);
+			}
+		}
+	}
+
 	/**
 	 * 
 	 * @return listener to refresh the editor
 	 */
-	protected EContentAdapter getresourceListener(){
+	public EContentAdapter getresourceListener(){
 		return new EContentAdapter(){
 			@Override
 			public void notifyChanged(Notification notification) {
@@ -78,6 +124,14 @@ public class ReviewsEditor extends ViewPart implements ITabbedPropertySheetPageC
 			}
 		};
 	}
+	
+	public void addAReview(Element container) {
+		reviewResourceManager.addAReview(container);
+		viewer.setInput(reviewResourceManager.getCurrentReviewModel());
+		Model reviewModel=reviewResourceManager.getCurrentReviewModel();
+		reviewModel.eResource().eAdapters().add(getresourceListener());
+	}
+	
 	public void createActions() {
 		Action	loadReview = new Action("Load a review model") {
 			@Override
@@ -95,11 +149,9 @@ public class ReviewsEditor extends ViewPart implements ITabbedPropertySheetPageC
 		Action	addReview = new Action("Add a review") {
 			@Override
 			public void run() {
-				reviewResourceManager.addAReview();
-				viewer.setInput(reviewResourceManager.getCurrentReviewModel());
-				Model reviewModel=reviewResourceManager.getCurrentReviewModel();
-				reviewModel.eResource().eAdapters().add(getresourceListener());
+				addAReview(null);
 			}
+			
 			@Override
 			public String getDescription() {
 				return "Add a review";
@@ -109,7 +161,7 @@ public class ReviewsEditor extends ViewPart implements ITabbedPropertySheetPageC
 		try {
 			loadReview.setImageDescriptor( ImageDescriptor.createFromURL(new URL("platform:/plugin/org.eclipse.papyrus.revisiontool/img/load.png")));
 			addReview.setImageDescriptor( ImageDescriptor.createFromURL(new URL("platform:/plugin/org.eclipse.papyrus.revisiontool/img/Add.png")));
-			
+
 		} catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -124,12 +176,13 @@ public class ReviewsEditor extends ViewPart implements ITabbedPropertySheetPageC
 	@Override
 	public void createPartControl(Composite parent) {
 		viewer = new TreeViewer(parent,  SWT.MULTI | SWT.FULL_SELECTION);
-		viewer.setContentProvider(new CommentTreeContentProvider());
+		viewer.setContentProvider(new ReviewsTreeContentProvider());
 		FontData[] boldFontData= getModifiedFontData(viewer.getTree().getFont().getFontData(), SWT.BOLD);
 		FontData[] italicFontData= getModifiedFontData(viewer.getTree().getFont().getFontData(), SWT.ITALIC);
 		Font boldFont = new Font(Display.getCurrent(), boldFontData);
 		Font italicFont = new Font(Display.getCurrent(), italicFontData);
-		viewer.setLabelProvider(new CommentsTreeLabelProvider(boldFont,  italicFont));
+		viewer.setLabelProvider(new ReviewsTreeLabelProvider(boldFont,  italicFont));
+		createContextMenu();
 		createActions();
 
 
@@ -189,12 +242,12 @@ public class ReviewsEditor extends ViewPart implements ITabbedPropertySheetPageC
 		}
 		return null;
 	}
-	
+
 	public Object getAdapter(Class adapter) {
-		 if ((IPropertySheetPage.class.equals(adapter))) {
+		if ((IPropertySheetPage.class.equals(adapter))) {
 			return getPropertySheetPage();
 		}
-		
+
 		else {
 			return super.getAdapter(adapter);
 		}
@@ -207,7 +260,7 @@ public class ReviewsEditor extends ViewPart implements ITabbedPropertySheetPageC
 	}
 	@Override
 	public void setFocus() {
-	
+
 
 	}
 

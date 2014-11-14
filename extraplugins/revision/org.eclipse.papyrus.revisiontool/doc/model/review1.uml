@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:PapyrusVersioningExtensions="http:///schemas/PapyrusVersioningExtensions/_SVfbwGW4EeSPMtL3PG5w7g/0" xmlns:ReviewProfile="http:///schemas/ReviewProfile/_VpvawGW4EeSPMtL3PG5w7g/0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/PapyrusVersioningExtensions/_SVfbwGW4EeSPMtL3PG5w7g/0 pathmap://Review_PROFILES/Versioning.profile.uml#_SVfbwWW4EeSPMtL3PG5w7g http:///schemas/ReviewProfile/_VpvawGW4EeSPMtL3PG5w7g/0 pathmap://Review_PROFILES/Review.profile.uml#_VpwB0GW4EeSPMtL3PG5w7g">
+  <ReviewProfile:ReviewRepository xmi:id="_sthqoGpGEeSv7cgzSP0qFA" base_Model="_stnKMGpGEeSv7cgzSP0qFA"/>
+  <uml:Model xmi:id="_stnKMGpGEeSv7cgzSP0qFA" name="review1">
+    <ownedComment xmi:type="uml:Comment" xmi:id="_tOiAsGscEeSz_dXi0SmP1g">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_N49vMGsgEeS6geBhc_tqFQ">
+        <annotatedElement xmi:type="uml:Class" href="../../../testModel/model.uml#_h0sTwGAdEeSblIIyLhl73A"/>
+        <annotatedElement xmi:type="uml:Class" href="../../../testModel/model.uml#_iK8QkGAdEeSblIIyLhl73A"/>
+        <body>Your review</body>
+      </ownedComment>
+      <ownedComment xmi:type="uml:Comment" xmi:id="_PUaZgGsgEeS6geBhc_tqFQ">
+        <body>Your review</body>
+      </ownedComment>
+      <ownedComment xmi:type="uml:Comment" xmi:id="_PjrkkGsgEeS6geBhc_tqFQ">
+        <body>Your review</body>
+      </ownedComment>
+      <body>Your review</body>
+    </ownedComment>
+    <packagedElement xmi:type="uml:Actor" xmi:id="_s0M6YGpGEeSv7cgzSP0qFA" name="Anonymous                            "/>
+    <packagedElement xmi:type="uml:Actor" xmi:id="_sx2rwGscEeSz_dXi0SmP1g" name="P. Tessier                     "/>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_stnKMWpGEeSv7cgzSP0qFA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_stnKMmpGEeSv7cgzSP0qFA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://Review_PROFILES/Review.profile.uml#_VpwB0GW4EeSPMtL3PG5w7g"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://Review_PROFILES/Review.profile.uml#_Tr7GcGAWEeS-2dbNdHDnFw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_stnKM2pGEeSv7cgzSP0qFA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_stnKNGpGEeSv7cgzSP0qFA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://Review_PROFILES/Versioning.profile.uml#_SVfbwWW4EeSPMtL3PG5w7g"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://Review_PROFILES/Versioning.profile.uml#_oQIXkM7dEeOUWOjBbvvZ9Q"/>
+    </profileApplication>
+  </uml:Model>
+  <PapyrusVersioningExtensions:Author xmi:id="_s0TBAGpGEeSv7cgzSP0qFA" language="Eng" color="0:128:0" base_Actor="_s0M6YGpGEeSv7cgzSP0qFA" versioningElements="_s0spoGpGEeSv7cgzSP0qFA"/>
+  <ReviewProfile:Review xmi:id="_s0spoGpGEeSv7cgzSP0qFA" author="_s0TBAGpGEeSv7cgzSP0qFA" subject="subject"/>
+  <PapyrusVersioningExtensions:Author xmi:id="_tMq_gGscEeSz_dXi0SmP1g" language="Eng" color="255:255:128" base_Actor="_sx2rwGscEeSz_dXi0SmP1g" versioningElements="_tOlEAGscEeSz_dXi0SmP1g _0j8vEGscEeSz_dXi0SmP1g _1Thx4GscEeSz_dXi0SmP1g _1d09YGscEeSz_dXi0SmP1g _1khbQGscEeSz_dXi0SmP1g _1s-zsGscEeSz_dXi0SmP1g _13CuoGscEeSz_dXi0SmP1g _2DB8MGscEeSz_dXi0SmP1g _2QxdQGscEeSz_dXi0SmP1g _2gNncGscEeSz_dXi0SmP1g _2xaFIGscEeSz_dXi0SmP1g _3Ebu0GscEeSz_dXi0SmP1g _3Y9NUGscEeSz_dXi0SmP1g _3vhTMGscEeSz_dXi0SmP1g _4H0ecGscEeSz_dXi0SmP1g _4h5yYGscEeSz_dXi0SmP1g _N5TtcGsgEeS6geBhc_tqFQ _PU6IwGsgEeS6geBhc_tqFQ _PkbygGsgEeS6geBhc_tqFQ _QMROkGsgEeS6geBhc_tqFQ _QhDy0GsgEeS6geBhc_tqFQ"/>
+  <ReviewProfile:Review xmi:id="_tOlEAGscEeSz_dXi0SmP1g" base_Element="_tOiAsGscEeSz_dXi0SmP1g" date="13/11/14 11:06" author="_tMq_gGscEeSz_dXi0SmP1g" base_Comment="_tOiAsGscEeSz_dXi0SmP1g" subject="subject"/>
+  <ReviewProfile:Review xmi:id="_0j8vEGscEeSz_dXi0SmP1g" date="13/11/14 11:07" author="_tMq_gGscEeSz_dXi0SmP1g" subject="subject"/>
+  <ReviewProfile:Review xmi:id="_1Thx4GscEeSz_dXi0SmP1g" date="13/11/14 11:07" author="_tMq_gGscEeSz_dXi0SmP1g" subject="subject"/>
+  <ReviewProfile:Review xmi:id="_1d09YGscEeSz_dXi0SmP1g" date="13/11/14 11:07" author="_tMq_gGscEeSz_dXi0SmP1g" subject="subject"/>
+  <ReviewProfile:Review xmi:id="_1khbQGscEeSz_dXi0SmP1g" date="13/11/14 11:07" author="_tMq_gGscEeSz_dXi0SmP1g" subject="subject"/>
+  <ReviewProfile:Review xmi:id="_1s-zsGscEeSz_dXi0SmP1g" date="13/11/14 11:07" author="_tMq_gGscEeSz_dXi0SmP1g" subject="subject"/>
+  <ReviewProfile:Review xmi:id="_13CuoGscEeSz_dXi0SmP1g" date="13/11/14 11:07" author="_tMq_gGscEeSz_dXi0SmP1g" subject="subject"/>
+  <ReviewProfile:Review xmi:id="_2DB8MGscEeSz_dXi0SmP1g" date="13/11/14 11:07" author="_tMq_gGscEeSz_dXi0SmP1g" subject="subject"/>
+  <ReviewProfile:Review xmi:id="_2QxdQGscEeSz_dXi0SmP1g" date="13/11/14 11:07" author="_tMq_gGscEeSz_dXi0SmP1g" subject="subject"/>
+  <ReviewProfile:Review xmi:id="_2gNncGscEeSz_dXi0SmP1g" date="13/11/14 11:07" author="_tMq_gGscEeSz_dXi0SmP1g" subject="subject"/>
+  <ReviewProfile:Review xmi:id="_2xaFIGscEeSz_dXi0SmP1g" date="13/11/14 11:07" author="_tMq_gGscEeSz_dXi0SmP1g" subject="subject"/>
+  <ReviewProfile:Review xmi:id="_3Ebu0GscEeSz_dXi0SmP1g" date="13/11/14 11:07" author="_tMq_gGscEeSz_dXi0SmP1g" subject="subject"/>
+  <ReviewProfile:Review xmi:id="_3Y9NUGscEeSz_dXi0SmP1g" date="13/11/14 11:07" author="_tMq_gGscEeSz_dXi0SmP1g" subject="subject"/>
+  <ReviewProfile:Review xmi:id="_3vhTMGscEeSz_dXi0SmP1g" date="13/11/14 11:07" author="_tMq_gGscEeSz_dXi0SmP1g" subject="subject"/>
+  <ReviewProfile:Review xmi:id="_4H0ecGscEeSz_dXi0SmP1g" date="13/11/14 11:07" author="_tMq_gGscEeSz_dXi0SmP1g" subject="subject"/>
+  <ReviewProfile:Review xmi:id="_4h5yYGscEeSz_dXi0SmP1g" date="13/11/14 11:07" author="_tMq_gGscEeSz_dXi0SmP1g" subject="subject"/>
+  <ReviewProfile:Review xmi:id="_N5TtcGsgEeS6geBhc_tqFQ" base_Element="_N49vMGsgEeS6geBhc_tqFQ" date="13/11/14 11:31" author="_tMq_gGscEeSz_dXi0SmP1g" base_Comment="_N49vMGsgEeS6geBhc_tqFQ" subject="subject"/>
+  <ReviewProfile:Review xmi:id="_PU6IwGsgEeS6geBhc_tqFQ" base_Element="_PUaZgGsgEeS6geBhc_tqFQ" date="13/11/14 11:31" author="_tMq_gGscEeSz_dXi0SmP1g" base_Comment="_PUaZgGsgEeS6geBhc_tqFQ" subject="subject"/>
+  <ReviewProfile:Review xmi:id="_PkbygGsgEeS6geBhc_tqFQ" base_Element="_PjrkkGsgEeS6geBhc_tqFQ" date="13/11/14 11:31" author="_tMq_gGscEeSz_dXi0SmP1g" base_Comment="_PjrkkGsgEeS6geBhc_tqFQ" subject="subject"/>
+  <ReviewProfile:Review xmi:id="_QMROkGsgEeS6geBhc_tqFQ" date="13/11/14 11:31" author="_tMq_gGscEeSz_dXi0SmP1g" subject="subject"/>
+  <ReviewProfile:Review xmi:id="_QhDy0GsgEeS6geBhc_tqFQ" date="13/11/14 11:31" author="_tMq_gGscEeSz_dXi0SmP1g" subject="subject"/>
+</xmi:XMI>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ASCII"?>
 <contexts:Context xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:constraints="http://www.eclipse.org/papyrus/constraints/0.9" xmlns:contexts="http://www.eclipse.org/papyrus/properties/contexts/0.9" name="ReviewProfile">
   <dependencies href="ppe:/context/org.eclipse.papyrus.uml.properties/Model/UML/UML.ctx#/"/>
-  <tabs label="Review" id="reviewprofile" priority="100">
+  <tabs label="Review" id="reviewprofile" priority="1">
     <sections name="Single ReviewRepository" sectionFile="ui/SingleReviewRepository.xwt">
       <widget href="ui/SingleReviewRepository.xwt#/"/>
     </sections>

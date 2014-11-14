@@ -19,7 +19,7 @@ import org.eclipse.papyrus.revision.tool.core.I_ReviewStereotype;
 import org.eclipse.uml2.uml.Comment;
 import org.eclipse.uml2.uml.Package;
 
-public class CommentTreeContentProvider implements ITreeContentProvider{
+public class ReviewsTreeContentProvider implements ITreeContentProvider{
 
 	@Override
 	public void dispose() {

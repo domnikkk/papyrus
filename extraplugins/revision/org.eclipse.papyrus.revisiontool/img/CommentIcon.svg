@@ -15,7 +15,7 @@
    inkscape:version="0.48.4 r9939"
    width="256"
    height="140"
-   sodipodi:docname="CommentIcon.gif">
+   sodipodi:docname="CommentIcon.svg">
   <metadata
      id="metadata2991">
     <rdf:RDF>
@@ -31,22 +31,32 @@
   <defs
      id="defs2989">
     <linearGradient
-       inkscape:collect="always"
-       id="linearGradient3799">
+       id="linearGradient4401">
       <stop
-         style="stop-color:#fbffc1;stop-opacity:1;"
+         style="stop-color:#fcff02;stop-opacity:1;"
          offset="0"
-         id="stop3801" />
+         id="stop4403" />
       <stop
-         style="stop-color:#fbffc1;stop-opacity:0;"
+         id="stop4413"
+         offset="0.125"
+         style="stop-color:#bdbf10;stop-opacity:0.8745098;" />
+      <stop
+         id="stop4411"
+         offset="0.25"
+         style="stop-color:#7e7f1f;stop-opacity:0.74901961;" />
+      <stop
+         id="stop4409"
+         offset="0.5"
+         style="stop-color:#000000;stop-opacity:0.49803922;" />
+      <stop
+         style="stop-color:#000000;stop-opacity:0;"
          offset="1"
-         id="stop3803" />
+         id="stop4405" />
     </linearGradient>
     <linearGradient
-       inkscape:collect="always"
        id="linearGradient3773">
       <stop
-         style="stop-color:#fbffc1;stop-opacity:1;"
+         style="stop-color:#fbff00;stop-opacity:1;"
          offset="0"
          id="stop3775" />
       <stop
@@ -83,12 +93,12 @@
        y2="94.415955" />
     <linearGradient
        inkscape:collect="always"
-       xlink:href="#linearGradient3799"
-       id="linearGradient3805"
+       xlink:href="#linearGradient3773"
+       id="linearGradient4407"
        x1="29.437943"
-       y1="72.157124"
-       x2="230.5"
-       y2="72.157124"
+       y1="72.157127"
+       x2="187.10399"
+       y2="72.157127"
        gradientUnits="userSpaceOnUse" />
   </defs>
   <sodipodi:namedview
@@ -106,7 +116,7 @@
      showgrid="true"
      showguides="false"
      inkscape:zoom="2.7421875"
-     inkscape:cx="162.72048"
+     inkscape:cx="99.996833"
      inkscape:cy="97.702807"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
@@ -117,8 +127,8 @@
        id="grid3797" />
   </sodipodi:namedview>
   <path
-     style="fill:url(#linearGradient3805);stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1"
-     d="M 29.937943,14.314249 230,15 l 0,75 -20,0 -70,40 25,-40 -135,0 z"
+     style="fill:url(#linearGradient4407);fill-opacity:1;stroke:#000000;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+     d="m 29.880784,14.25709 156.780366,0.686429 0,75.074113 -15.67318,0 -54.8561,40.039528 19.59146,-40.039528 -105.793914,0 z"
      id="path3795"
      inkscape:connector-curvature="0"
      sodipodi:nodetypes="cccccccc" />

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   id="svg4415"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="hook.svg"
+   inkscape:export-filename="C:\git\org.eclipse.papyrus\extraplugins\revision\org.eclipse.papyrus.revisiontool\img\hook.png"
+   inkscape:export-xdpi="1.6"
+   inkscape:export-ydpi="1.6">
+  <defs
+     id="defs4417" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.7"
+     inkscape:cx="-35.457793"
+     inkscape:cy="534.38275"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="true"
+     inkscape:window-width="1920"
+     inkscape:window-height="1018"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:snap-global="false">
+    <inkscape:grid
+       type="xygrid"
+       id="grid4435" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata4420">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Calque 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     style="display:inline">
+    <g
+       id="g4949"
+       transform="matrix(2.2861084,0,0,1.5257772,-467.67963,-369.91827)"
+       inkscape:export-filename="C:\git\org.eclipse.papyrus\extraplugins\revision\org.eclipse.papyrus.revisiontool\img\Hook.png"
+       inkscape:export-xdpi="2.8760118"
+       inkscape:export-ydpi="2.8760118">
+      <path
+         inkscape:connector-curvature="0"
+         id="path4433"
+         d="m 277.14286,419.50504 -38.57143,57.14286 0,75.71428 40,35.71429 107.14286,-1.42857 28.57142,-28.57143 -2.85714,-274.28572"
+         style="fill:none;stroke:#2a2a2a;stroke-width:47;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+    </g>
+    <path
+       style="fill:#2a2a2a;fill-opacity:1;stroke:#000000;stroke-width:8.05124569;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       d="M 89.420511,265.916 252.62643,325.49339 198.22446,176.54992 z"
+       id="path4947"
+       inkscape:connector-curvature="0" />
+  </g>
+</svg>

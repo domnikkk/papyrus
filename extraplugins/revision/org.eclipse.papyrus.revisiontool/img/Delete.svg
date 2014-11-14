@@ -17,8 +17,8 @@
    height="140"
    sodipodi:docname="Add.png"
    inkscape:export-filename="C:\git\org.eclipse.papyrus\extraplugins\revision\org.eclipse.papyrus.revisiontool\img\Add.png"
-   inkscape:export-xdpi="8.8275862"
-   inkscape:export-ydpi="8.8275862">
+   inkscape:export-xdpi="8.727273"
+   inkscape:export-ydpi="8.727273">
   <metadata
      id="metadata2991">
     <rdf:RDF>
@@ -47,52 +47,14 @@
     </linearGradient>
     <linearGradient
        inkscape:collect="always"
-       id="linearGradient3773">
-      <stop
-         style="stop-color:#fbffc1;stop-opacity:1;"
-         offset="0"
-         id="stop3775" />
-      <stop
-         style="stop-color:#fbffc1;stop-opacity:0;"
-         offset="1"
-         id="stop3777" />
-    </linearGradient>
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient3773"
-       id="linearGradient3779"
-       x1="25.027065"
-       y1="56.490029"
-       x2="237.53703"
-       y2="94.415955"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient3773"
-       id="linearGradient3789"
-       gradientUnits="userSpaceOnUse"
-       x1="25.027065"
-       y1="56.490029"
-       x2="237.53703"
-       y2="94.415955" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient3773"
-       id="linearGradient3792"
-       gradientUnits="userSpaceOnUse"
-       x1="25.027065"
-       y1="56.490029"
-       x2="237.53703"
-       y2="94.415955" />
-    <linearGradient
-       inkscape:collect="always"
        xlink:href="#linearGradient3827"
        id="linearGradient3833"
        x1="69.5"
        y1="72.5"
        x2="230.5"
        y2="72.5"
-       gradientUnits="userSpaceOnUse" />
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(-15.316239,-1.4586895)" />
   </defs>
   <sodipodi:namedview
      pagecolor="#ffffff"
@@ -109,7 +71,7 @@
      showgrid="true"
      showguides="false"
      inkscape:zoom="2.7421875"
-     inkscape:cx="162.72048"
+     inkscape:cx="160.35011"
      inkscape:cy="97.702807"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
@@ -120,8 +82,8 @@
        id="grid3797" />
   </sodipodi:namedview>
   <path
-     style="fill:url(#linearGradient3833);fill-opacity:1;stroke:#000000;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
-     d="m 70,15 160,0 0,75 -20,0 -70,40 25,-40 -95,0 z"
+     style="fill:url(#linearGradient3833);fill-opacity:1;stroke:#000000;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+     d="m 54.683761,13.541311 159.999999,0 0,75 -20,0 -70,39.999999 25,-39.999999 -94.999999,0 z"
      id="path3795"
      inkscape:connector-curvature="0"
      sodipodi:nodetypes="cccccccc"
@@ -130,10 +92,12 @@
      inkscape:export-filename="C:\git\org.eclipse.papyrus\extraplugins\revision\org.eclipse.papyrus.revisiontool\img\CommentIcon.png" />
   <g
      id="g3835"
-     style="stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none;stroke:#000000;stroke-opacity:1">
+     style="fill:#ff0100;fill-opacity:1;stroke:#000000;stroke-width:5;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+     transform="matrix(0.84601777,-1.0082447,0.93156987,0.78167994,-95.265039,188.51836)">
     <path
-       style="fill:#00f63a;fill-opacity:1;stroke:#000000;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none"
-       d="M 170 50 L 170 80 L 135 80 L 135 100 L 170 100 L 170 135 L 195 135 L 195 100 L 230 100 L 230 80 L 195 80 L 195 50 L 170 50 z "
-       id="rect3809" />
+       style="fill:#ff0100;fill-opacity:1;stroke:#000000;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none"
+       d="m 170,50 0,30 -35,0 0,20 35,0 0,35 25,0 0,-35 35,0 0,-20 -35,0 0,-30 -25,0 z"
+       id="rect3809"
+       inkscape:connector-curvature="0" />
   </g>
 </svg>

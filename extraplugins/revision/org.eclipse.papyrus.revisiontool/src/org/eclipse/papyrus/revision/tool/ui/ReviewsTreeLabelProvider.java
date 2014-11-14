@@ -35,13 +35,13 @@ import org.eclipse.uml2.uml.util.UMLUtil;
  * the label provider for the review editor
  *
  */
-public class CommentsTreeLabelProvider extends StyledCellLabelProvider  {
+public class ReviewsTreeLabelProvider extends StyledCellLabelProvider  {
 	protected Font italicFont;
 	protected Font boldFont;
 	private  Styler fBoldStyler;
 	private  Styler fItalicStyler;
 
-	public CommentsTreeLabelProvider( final Font boldFont, final Font italicFont ) {
+	public ReviewsTreeLabelProvider( final Font boldFont, final Font italicFont ) {
 		this.boldFont= boldFont;
 		this.italicFont= italicFont;
 		// Multi-font support only works in JFace 3.5 and above (specifically, 3.5 M4 and above).
@@ -110,17 +110,21 @@ public class CommentsTreeLabelProvider extends StyledCellLabelProvider  {
 					styledString.append( "No author", fBoldStyler);
 				}
 				if(cmt.getValue(reviewStereotype, I_ReviewStereotype.COMMENT_SUBJECT_ATT)!=null){
-									styledString.append( " "+cmt.getValue(reviewStereotype, I_ReviewStereotype.COMMENT_SUBJECT_ATT),fItalicStyler );
+					styledString.append( " "+cmt.getValue(reviewStereotype, I_ReviewStereotype.COMMENT_SUBJECT_ATT),fItalicStyler );
 				}
 				else{
-				styledString.append( " No subject",fItalicStyler );
+					styledString.append( " No subject",fItalicStyler );
+				}
+
+				if(cmt.getValue(reviewStereotype, I_VersioningStereotype.VERSIONINGELEMENT_DATE_ATT)!=null){
+					styledString.append( " "+cmt.getValue(reviewStereotype,  I_VersioningStereotype.VERSIONINGELEMENT_DATE_ATT),fBoldStyler );
 				}
 				styledString.append(" (" +	cmt.getOwnedComments().size() +")", StyledString.COUNTER_STYLER);
 				styledString.append("\n" +	cmt.getBody() , StyledString.DECORATIONS_STYLER);
 
 				cell.setText(styledString.toString());
 				cell.setStyleRanges(styledString.getStyleRanges());
-							
+
 			}
 			else{
 				//no stereotype
