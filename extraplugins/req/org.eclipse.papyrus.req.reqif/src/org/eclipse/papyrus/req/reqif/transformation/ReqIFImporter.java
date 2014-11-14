@@ -36,7 +36,6 @@ import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.papyrus.req.reqif.I_SysMLStereotype;
 import org.eclipse.papyrus.req.reqif.assistant.CreateOrSelectProfilDialog;
 import org.eclipse.papyrus.req.reqif.integration.assistant.ChooseAttributeEnumerationDialog;
-import org.eclipse.papyrus.req.reqif.integration.assistant.ChooseReqIFTypeDialog;
 import org.eclipse.papyrus.uml.extensionpoints.utils.Util;
 import org.eclipse.rmf.reqif10.AttributeDefinition;
 import org.eclipse.rmf.reqif10.AttributeDefinitionBoolean;
@@ -56,7 +55,6 @@ import org.eclipse.rmf.reqif10.DatatypeDefinitionEnumeration;
 import org.eclipse.rmf.reqif10.EnumValue;
 import org.eclipse.rmf.reqif10.Identifiable;
 import org.eclipse.rmf.reqif10.ReqIF;
-import org.eclipse.rmf.reqif10.ReqIF10Factory;
 import org.eclipse.rmf.reqif10.SpecElementWithAttributes;
 import org.eclipse.rmf.reqif10.SpecHierarchy;
 import org.eclipse.rmf.reqif10.SpecObject;
@@ -119,7 +117,7 @@ public abstract class ReqIFImporter extends ReqIFBaseTransformation {
 	 */
 	public void preProcess( ReqIF reqIFModel){
 		//1. first make sure that all reqIFelement have a name
-		setANameForTypes(reqIFModel);
+		normalizeNames(reqIFModel);
 
 
 		//2. patterns, if 1 type, maybe there is an enumeration?
@@ -130,7 +128,7 @@ public abstract class ReqIFImporter extends ReqIFBaseTransformation {
 	 * set a name of all type of the ReqIF model if there is no name
 	 * @param reqIFModel
 	 */
-	protected void setANameForTypes(ReqIF reqIFModel) {
+	protected void normalizeNames(ReqIF reqIFModel) {
 		Iterator<EObject> reqIFElementIterator= reqIFModel.eAllContents();
 		int index =0;
 		while(reqIFElementIterator.hasNext()) {
@@ -141,6 +139,7 @@ public abstract class ReqIFImporter extends ReqIFBaseTransformation {
 					identifiable.setLongName(eObject.getClass().getSimpleName()+"_"+index);
 					index++;
 				}
+				identifiable.setLongName(getNormalName(identifiable.getLongName()));
 			}
 		}
 	}
@@ -202,7 +201,6 @@ public abstract class ReqIFImporter extends ReqIFBaseTransformation {
 				if(attValue!=null){
 					if( attValue.getValues().size()>0){
 						specObject.setType(newTypes.get(attValue.getValues().get(0).getLongName()));
-						System.err.println(specObject);
 					}
 				}
 			}
@@ -320,6 +318,16 @@ public abstract class ReqIFImporter extends ReqIFBaseTransformation {
 
 		//all types has been created so import elspecifications and specObjects
 		reqStereotypes=getAllPossibleRequirementType(UMLModel);
+		
+		 HashMap<String,Stereotype> filteredreqStereotypes=new HashMap<String, Stereotype>();
+		
+		//filter Type to import, because reqstereotype may be too large
+		for(SpecType specObjectType : reqiFTypeMap.values()) {
+			if( reqStereotypes.containsKey(specObjectType.getLongName())){
+				filteredreqStereotypes.put(specObjectType.getLongName(), reqStereotypes.get(specObjectType.getLongName()));
+			}
+		}
+		reqStereotypes=filteredreqStereotypes;
 		reqstereotypeSpecification= getAllPossibleSpecificationType(UMLModel);
 		reqstereotypeSpecRelation= getAllPossibleSpecRelationType();
 		importReqIFspecification(reqIFModel, UMLModel, reqStereotypes);
@@ -439,7 +447,7 @@ public abstract class ReqIFImporter extends ReqIFBaseTransformation {
 			Package apackage=UMLModel.createNestedPackage(specif.getLongName());
 			if(reqstereotypeSpecification.get(specif.getType().getLongName())!=null){
 				apackage.applyStereotype(reqstereotypeSpecification.get(specif.getType().getLongName()));
-				importSpecAttributesValue(reqStereotypes, specif, apackage, specif.getType());
+				importSpecAttributesValue(reqstereotypeSpecification, specif, apackage, specif.getType());
 			}
 			for(SpecHierarchy specHierarchy : specif.getChildren()) {
 				importReqIFHyerarchy(specHierarchy, apackage, reqStereotypes);
@@ -763,6 +771,10 @@ public abstract class ReqIFImporter extends ReqIFBaseTransformation {
 	protected Element importReqIFSpecObjects(SpecObject reqIFObject, org.eclipse.uml2.uml.Element owner, HashMap<String, Stereotype> reqStereotypes) {
 		//test of the the specObject could be imported
 		if(reqIFObject==null){
+			return null;
+		}
+		if(reqIFObject.getType()==null){
+			System.out.println(reqIFObject.getLongName() + " type is null");
 			return null;
 		}
 		if(reqStereotypes.get(reqIFObject.getType().getLongName())!=null){
