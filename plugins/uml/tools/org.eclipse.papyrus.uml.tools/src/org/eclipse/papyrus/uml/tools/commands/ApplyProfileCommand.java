@@ -10,6 +10,7 @@
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Gabriel Pascual	(ALL4TEC) gabriel.pascual@all4tec.net - Initial API and implementation
  *  Christian W. Damus - bug 399859
+ *  Christian W. Damus - bug 451557
  *  
  *****************************************************************************/
 package org.eclipse.papyrus.uml.tools.commands;
@@ -156,7 +157,7 @@ public class ApplyProfileCommand extends RecordingCommand {
 		ProfileApplication existing = delegate.getProfileApplication(package_, profile);
 		if (existing != null) {
 			delegate = ProfileApplicationDelegateRegistry.INSTANCE.getDelegate(existing);
-			delegate.reapplyProfile(package_, profile);
+			delegate.reapplyProfile(package_, profile, null);
 			result = existing;
 		} else {
 			package_.applyProfile(profile);

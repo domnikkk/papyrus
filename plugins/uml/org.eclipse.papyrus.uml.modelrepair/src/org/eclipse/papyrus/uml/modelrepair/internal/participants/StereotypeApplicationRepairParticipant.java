@@ -10,6 +10,7 @@
  *   Christian W. Damus (CEA) - Initial API and implementation
  *   Christian W. Damus - bug 399859
  *   Christian W. Damus - bug 450524
+ *   Christian W. Damus - bug 451557
  *
  */
 package org.eclipse.papyrus.uml.modelrepair.internal.participants;
@@ -22,6 +23,7 @@ import java.util.Queue;
 import java.util.regex.Pattern;
 
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.OperationCanceledException;
 import org.eclipse.core.runtime.SubMonitor;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
@@ -235,6 +237,10 @@ public class StereotypeApplicationRepairParticipant extends PackageOperations im
 			}
 
 			for (EObject next : stereotypeApplications) {
+				if (sub.isCanceled()) {
+					throw new OperationCanceledException();
+				}
+
 				EObject newInstance = copier.copy(next);
 				if ((newInstance != null) && (newInstance != next)) {
 					// Depends how we copied the stereotype instance (by applying again or not),
@@ -255,6 +261,10 @@ public class StereotypeApplicationRepairParticipant extends PackageOperations im
 			// Preserve the identities of stereotype applications and their contents and update references not accounted for by the copier
 			// (for example, references from Notation views/styles in the diagrams)
 			for (Map.Entry<EObject, EObject> next : copier.entrySet()) {
+				if (sub.isCanceled()) {
+					throw new OperationCanceledException();
+				}
+
 				EObject original = next.getKey();
 				EObject copy = next.getValue();
 
@@ -293,6 +303,10 @@ public class StereotypeApplicationRepairParticipant extends PackageOperations im
 
 			// Delete all trace of the old stereotype applications
 			for (EObject root : stereotypeApplications) {
+				if (sub.isCanceled()) {
+					throw new OperationCanceledException();
+				}
+
 				safelyDestroy(root);
 				EcoreUtil.remove(root);
 			}
@@ -300,6 +314,8 @@ public class StereotypeApplicationRepairParticipant extends PackageOperations im
 			sub.worked(1);
 
 			copier.clear();
+
+			sub.done();
 		}
 
 		private void safelyDestroy(EObject eObject) {

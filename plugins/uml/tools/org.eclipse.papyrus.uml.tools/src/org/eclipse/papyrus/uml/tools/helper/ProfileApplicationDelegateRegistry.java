@@ -18,6 +18,7 @@ import java.util.List;
 import java.util.ListIterator;
 
 import org.eclipse.core.runtime.IConfigurationElement;
+import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
@@ -229,8 +230,8 @@ public class ProfileApplicationDelegateRegistry {
 				return getInstance().getProfileApplication(package_, profile);
 			}
 
-			public EList<EObject> applyProfile(Package package_, Profile profile, Package context) {
-				return getInstance().applyProfile(package_, profile, context);
+			public EList<EObject> applyProfile(Package package_, Profile profile, Package context, IProgressMonitor monitor) {
+				return getInstance().applyProfile(package_, profile, context, monitor);
 			}
 
 			public Package getApplyingPackage(ProfileApplication profileApplication) {
@@ -241,8 +242,8 @@ public class ProfileApplicationDelegateRegistry {
 				return getInstance().getAppliedProfile(profileApplication);
 			}
 
-			public EList<EObject> reapplyProfile(Package package_, Profile profile) {
-				return getInstance().reapplyProfile(package_, profile);
+			public EList<EObject> reapplyProfile(Package package_, Profile profile, IProgressMonitor monitor) {
+				return getInstance().reapplyProfile(package_, profile, monitor);
 			}
 		}
 	}
