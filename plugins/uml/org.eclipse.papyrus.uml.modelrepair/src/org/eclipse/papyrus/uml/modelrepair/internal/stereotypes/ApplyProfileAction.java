@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014 CEA and others.
+ * Copyright (c) 2014 CEA, Christian W. Damus, and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,6 +8,7 @@
  *
  * Contributors:
  *   Christian W. Damus (CEA) - Initial API and implementation
+ *   Christian W. Damus - bug 451557
  *
  */
 package org.eclipse.papyrus.uml.modelrepair.internal.stereotypes;
@@ -16,6 +17,7 @@ import java.util.Collection;
 import java.util.Set;
 
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.OperationCanceledException;
 import org.eclipse.core.runtime.SubMonitor;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.ecore.EObject;
@@ -84,6 +86,10 @@ public class ApplyProfileAction extends AbstractRepairAction {
 			// Apply the profile
 			StereotypeApplicationRepairParticipant.createStereotypeApplicationMigrator(profile, diagnostics).migrate(stereotypeApplications, sub.newChild(stereotypeApplications.size()));
 			for (Package next : packages) {
+				if (sub.isCanceled()) {
+					throw new OperationCanceledException();
+				}
+
 				next.applyProfile(profile);
 			}
 

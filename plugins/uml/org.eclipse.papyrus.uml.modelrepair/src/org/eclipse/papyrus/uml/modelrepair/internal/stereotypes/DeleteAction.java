@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014 CEA and others.
+ * Copyright (c) 2014 CEA, Christian W. Damus, and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,6 +8,7 @@
  *
  * Contributors:
  *   Christian W. Damus (CEA) - Initial API and implementation
+ *   Christian W. Damus - bug 451557
  *
  */
 package org.eclipse.papyrus.uml.modelrepair.internal.stereotypes;
@@ -15,6 +16,7 @@ package org.eclipse.papyrus.uml.modelrepair.internal.stereotypes;
 import java.util.Collection;
 
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.OperationCanceledException;
 import org.eclipse.core.runtime.SubMonitor;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.ecore.EObject;
@@ -37,6 +39,10 @@ public class DeleteAction extends AbstractRepairAction {
 		monitor = SubMonitor.convert(monitor, "Deleting stereotype applications...", stereotypeApplications.size());
 
 		for (EObject next : stereotypeApplications) {
+			if (monitor.isCanceled()) {
+				throw new OperationCanceledException();
+			}
+
 			destroy(next);
 			monitor.worked(1);
 		}

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014 CEA and others.
+ * Copyright (c) 2014 CEA, Christian W. Damus, and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,6 +8,7 @@
  *
  * Contributors:
  *   Christian W. Damus (CEA) - Initial API and implementation
+ *   Christian W. Damus - bug 451557
  *
  */
 package org.eclipse.papyrus.uml.modelrepair.internal.participants;
@@ -20,6 +21,7 @@ import java.util.Queue;
 import java.util.regex.Pattern;
 
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.OperationCanceledException;
 import org.eclipse.core.runtime.SubMonitor;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
@@ -219,6 +221,10 @@ public class StereotypeApplicationRepairParticipant extends PackageOperations im
 			SubMonitor sub = SubMonitor.convert(monitor, (2 * stereotypeApplications.size()) + 2);
 
 			for (EObject next : stereotypeApplications) {
+				if (sub.isCanceled()) {
+					throw new OperationCanceledException();
+				}
+
 				EObject newInstance = copier.copy(next);
 				if ((newInstance != null) && (newInstance != next)) {
 					// Depends how we copied the stereotype instance (by applying again or not),
@@ -239,6 +245,10 @@ public class StereotypeApplicationRepairParticipant extends PackageOperations im
 			// Preserve the identities of stereotype applications and their contents and update references not accounted for by the copier
 			// (for example, references from Notation views/styles in the diagrams)
 			for (Map.Entry<EObject, EObject> next : copier.entrySet()) {
+				if (sub.isCanceled()) {
+					throw new OperationCanceledException();
+				}
+
 				EObject original = next.getKey();
 				EObject copy = next.getValue();
 
@@ -273,10 +283,16 @@ public class StereotypeApplicationRepairParticipant extends PackageOperations im
 			}
 			sub2.done();
 
+			if (sub.isCanceled()) {
+				throw new OperationCanceledException();
+			}
+
 			UML2Util.destroyAll(stereotypeApplications);
 			sub.worked(1);
 
 			copier.clear();
+
+			sub.done();
 		}
 	}
 
