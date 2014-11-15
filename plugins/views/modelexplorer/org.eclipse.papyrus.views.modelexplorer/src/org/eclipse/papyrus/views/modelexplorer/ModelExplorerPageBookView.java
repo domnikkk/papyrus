@@ -12,7 +12,8 @@
  *  Ansgar Radermacher (CEA) ansgar.radermacher@cea.fr - Added support for IGotoMarker
  *  Christian W. Damus (CEA) - bug 434635
  *  Gabriel Pascual (ALL4TEC) gabriel.pascual@all4tec.net - Bug 431117
- *   Christian W. Damus - bug 450536
+ *  Christian W. Damus - bug 450536
+ *  Christian W. Damus - bug 451683
  *
  *****************************************************************************/
 
@@ -127,5 +128,18 @@ public class ModelExplorerPageBookView extends MultiViewPageBookView implements 
 		state.save(memento);
 
 		super.saveState(memento);
+	}
+
+	@Override
+	public void partClosed(IWorkbenchPart part) {
+		PageRec rec = getPageRec(part);
+		if ((rec != null) && (rec.page instanceof ModelExplorerPage)) {
+			ModelExplorerView explorer = (ModelExplorerView) ((ModelExplorerPage) rec.page).getViewer();
+
+			// Clear the explorer tree input to prompt the CNF to clear caches, promoting garbage collection
+			explorer.aboutToDispose();
+		}
+
+		super.partClosed(part);
 	}
 }

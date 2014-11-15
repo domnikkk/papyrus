@@ -14,6 +14,7 @@
  *  Christian W. Damus (CEA) - bug 437217
  *  Christian W. Damus (CEA) - bug 441857
  *  Christian W. Damus - bug 450235
+ *  Christian W. Damus - bug 451683
  *
  *****************************************************************************/
 package org.eclipse.papyrus.views.modelexplorer;
@@ -26,7 +27,6 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Set;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 import org.eclipse.core.commands.operations.IUndoContext;
@@ -110,13 +110,12 @@ import org.eclipse.ui.IViewSite;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.PartInitException;
-import org.eclipse.ui.internal.navigator.NavigatorContentService;
-import org.eclipse.ui.internal.navigator.extensions.NavigatorContentDescriptor;
 import org.eclipse.ui.navigator.CommonNavigator;
 import org.eclipse.ui.navigator.CommonViewer;
 import org.eclipse.ui.navigator.CommonViewerSorter;
 import org.eclipse.ui.navigator.IExtensionActivationListener;
 import org.eclipse.ui.navigator.ILinkHelper;
+import org.eclipse.ui.navigator.INavigatorContentService;
 import org.eclipse.ui.navigator.LinkHelperService;
 import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.ui.views.properties.IPropertySheetPage;
@@ -904,6 +903,22 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 		editingDomain = null;
 		editingDomain = null;
 		lastTrans = null;
+	}
+
+	/**
+	 * Invoked internally to clear the common viewer's associate listener in order to promote garbage collection.
+	 */
+	void aboutToDispose() {
+		final CommonViewer viewer = getCommonViewer();
+		if ((viewer.getTree() != null) && !viewer.getTree().isDisposed()) {
+			viewer.setInput(null);
+
+			// Kick the NavigatorContentService to clear the cache in its StructuredViewerManager that leaks all of our tree elements
+			INavigatorContentService contentService = getNavigatorContentService();
+			if (contentService instanceof IExtensionActivationListener) {
+				((IExtensionActivationListener) getNavigatorContentService()).onExtensionActivation(contentService.getViewerId(), new String[0], false);
+			}
+		}
 	}
 
 	/**
