@@ -20,10 +20,14 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.e4.ui.workbench.renderers.swt,
  org.eclipse.papyrus.infra.widgets,
  org.eclipse.papyrus.infra.services.labelprovider,
- org.eclipse.papyrus.infra.emf;bundle-version="1.1.0"
+ org.eclipse.papyrus.infra.emf;bundle-version="1.1.0",
+ org.eclipse.emf.compare,
+ org.eclipse.emf.compare.rcp
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.eclipse.papyrus.revision.tool,
  org.eclipse.papyrus.revision.tool.core,
+ org.eclipse.papyrus.revision.tool.dialogs,
+ org.eclipse.papyrus.revision.tool.handlers,
  org.eclipse.papyrus.revision.tool.preference,
  org.eclipse.papyrus.revision.tool.ui
 Bundle-ActivationPolicy: lazy

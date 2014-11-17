@@ -13,17 +13,34 @@
  *****************************************************************************/
 package org.eclipse.papyrus.revision.tool.core;
 
+import java.io.IOException;
 import java.text.DateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.List;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.compare.Comparison;
+import org.eclipse.emf.compare.Diff;
+import org.eclipse.emf.compare.EMFCompare;
+import org.eclipse.emf.compare.match.DefaultComparisonFactory;
+import org.eclipse.emf.compare.match.DefaultEqualityHelperFactory;
+import org.eclipse.emf.compare.match.DefaultMatchEngine;
+import org.eclipse.emf.compare.match.IComparisonFactory;
+import org.eclipse.emf.compare.match.IMatchEngine;
+import org.eclipse.emf.compare.match.eobject.IEObjectMatcher;
+import org.eclipse.emf.compare.match.impl.MatchEngineFactoryImpl;
+import org.eclipse.emf.compare.match.impl.MatchEngineFactoryRegistryImpl;
+import org.eclipse.emf.compare.scope.DefaultComparisonScope;
+import org.eclipse.emf.compare.scope.IComparisonScope;
+import org.eclipse.emf.compare.utils.UseIdentifiers;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.jface.preference.IPreferenceStore;
@@ -71,6 +88,8 @@ public class ReviewResourceManager {
 	protected ModelSet modelSet;
 	protected Model reviewModel;
 	protected Actor currentAuthor;
+	protected WorkingModelListener workingModelListener= new WorkingModelListener();
+	protected Model snapshotyModel;
 
 
 	/**
@@ -138,14 +157,14 @@ public class ReviewResourceManager {
 					((Comment)element).getOwnedComments().add(cmt);
 				}
 				else{	reviewModel.getOwnedComments().add(cmt);}
-			
+
 				Stereotype review= cmt.getApplicableStereotype(I_ReviewStereotype.REVIEW_STEREOTYPE);
 				cmt.applyStereotype(review);
 				cmt.setValue(review, I_ReviewStereotype.COMMENT_SUBJECT_ATT, "subject");
-				
+
 				Stereotype authorStereotype= theauthor.getApplicableStereotype(I_VersioningStereotype.AUTHOR_STEREOTYPE);
 				cmt.setValue(review, I_VersioningStereotype.VERSIONINGELEMENT_AUTHOR_ATT, theauthor.getStereotypeApplication(authorStereotype));
-				
+
 				// add tthe date
 				Date today = new Date();
 				DateFormat shortDateFormat = DateFormat.getDateTimeInstance(DateFormat.SHORT,DateFormat.SHORT);
@@ -385,5 +404,81 @@ public class ReviewResourceManager {
 		}
 
 		return false;
+	}
+
+	protected void compare(final Model modelBefore, Model modelAfter) {
+	
+		IEObjectMatcher matcher = DefaultMatchEngine.createDefaultEObjectMatcher(UseIdentifiers.NEVER);
+		IComparisonFactory comparisonFactory = new DefaultComparisonFactory(new DefaultEqualityHelperFactory());
+		final IMatchEngine thematchEngine = new DefaultMatchEngine(matcher , comparisonFactory);
+		IMatchEngine.Factory.Registry registry = MatchEngineFactoryRegistryImpl.createStandaloneInstance();
+		IMatchEngine.Factory engineFactory = new MatchEngineFactoryImpl() {
+			public IMatchEngine getMatchEngine() {
+				return thematchEngine;
+			}
+		};
+		engineFactory.setRanking(20); // default engine ranking is 10, must be higher to override.
+		registry.add(engineFactory);
+		IComparisonScope scope = new DefaultComparisonScope(modelBefore,modelAfter,null);
+		 final Comparison comparison = EMFCompare.builder().setMatchEngineFactoryRegistry(registry).build().compare(scope);
+		List<Diff> differences = comparison.getDifferences();
+		for (Diff diff : differences) {
+			final Diff diffRef= diff;
+			System.out.println(diff);
+			RecordingCommand cmd= new RecordingCommand(getDomain(), "createAReview") {
+				@Override
+				protected void doExecute() {
+					Actor theauthor= getCurrentAuthor();
+					Comment cmt= UMLFactory.eINSTANCE.createComment();
+					cmt.setBody("Your review");
+					reviewModel.getOwnedComments().add(cmt);
+
+					Stereotype review= cmt.getApplicableStereotype(I_ReviewStereotype.REVIEW_STEREOTYPE);
+					cmt.applyStereotype(review);
+					cmt.setValue(review, I_ReviewStereotype.COMMENT_SUBJECT_ATT, diffRef.getKind().getName()+ diffRef.getSource().getName());
+
+					Stereotype authorStereotype= theauthor.getApplicableStereotype(I_VersioningStereotype.AUTHOR_STEREOTYPE);
+					cmt.setValue(review, I_VersioningStereotype.VERSIONINGELEMENT_AUTHOR_ATT, theauthor.getStereotypeApplication(authorStereotype));
+
+					// add tthe date
+					Date today = new Date();
+					DateFormat shortDateFormat = DateFormat.getDateTimeInstance(DateFormat.SHORT,DateFormat.SHORT);
+					cmt.setValue(review, I_VersioningStereotype.VERSIONINGELEMENT_DATE_ATT, shortDateFormat.format(today));
+				}
+			};
+			//getDomain().getCommandStack().execute(cmd);
+		}
+		
+		RecordingCommand cmd= new RecordingCommand(getDomain(), "saveSnaphsot") {
+			@Override
+			protected void doExecute() {
+				URI umlModel_URI=getWorkingModel().eResource().getURI();
+				String tmpURI=umlModel_URI.toString().replaceAll(umlModel_URI.lastSegment().toString(), "diff.xmi");
+				URI reviewURI=URI.createURI(tmpURI);
+				Resource resourcesnapshot = getCurrentModelSet().createResource(reviewURI);
+				resourcesnapshot.getContents().add(comparison);
+				try {
+					resourcesnapshot.save(null);
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		};
+		getDomain().getCommandStack().execute(cmd);
+	}
+
+	public void saveDiff(){
+		compare(getWorkingModel(),snapshotyModel);
+	}
+	public void startModeRevision(){
+		snapshotyModel = EcoreUtil.copy(getWorkingModel());
+		UmlModel iumlModel=(UmlModel) getCurrentModelSet().getModel(UmlModel.MODEL_ID);
+		iumlModel.getResource().eAdapters().add(workingModelListener);
+	}
+	public void stopModelRevision(){
+		UmlModel iumlModel=(UmlModel) getCurrentModelSet().getModel(UmlModel.MODEL_ID);
+		iumlModel.getResource().eAdapters().remove(workingModelListener);
+		compare(snapshotyModel,getWorkingModel());
 	}
 }

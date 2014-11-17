@@ -33,11 +33,11 @@ import org.eclipse.uml2.uml.UMLFactory;
  * @see org.eclipse.core.commands.IHandler
  * @see org.eclipse.core.commands.AbstractHandler
  */
-public class DeleteReviewCreateHandler extends AbstractHandler {
+public class DeleteReviewHandler extends RevisionAbstractHandler {
 	/**
 	 * The constructor.
 	 */
-	public DeleteReviewCreateHandler() {
+	public DeleteReviewHandler() {
 	}
 
 	/**
@@ -62,48 +62,4 @@ public class DeleteReviewCreateHandler extends AbstractHandler {
 		return null;
 	}
 	
-	/**
-	 * getSelected element in the diagram or in hte model explorer
-	 * @return Element or null
-	 */
-	protected Element getSelection(){
-		org.eclipse.uml2.uml.Element selectedElement =null;
-		ISelectionService selectionService = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getSelectionService();
-		ISelection selection = selectionService.getSelection();
-
-		if(selection instanceof IStructuredSelection) {
-			Object selectedobject = ((IStructuredSelection)selection).getFirstElement();
-				if (selectedobject instanceof org.eclipse.uml2.uml.Element){
-					selectedElement=(Element)selectedobject;
-				}
-
-			return selectedElement;
-		}
-		return null;
-	}
-	/**
-	 * getSelected element in the diagram or in hte model explorer
-	 * @return Element or null
-	 */
-	protected ArrayList<Element> getSelectionSet(){
-		ArrayList<Element> selectedSet =new ArrayList<Element>();
-		ISelectionService selectionService = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getSelectionService();
-		ISelection selection = selectionService.getSelection();
-
-		//look for papyrus
-
-		if(selection instanceof IStructuredSelection) {
-			@SuppressWarnings("rawtypes")
-			Iterator selectedobjectIteractor = ((IStructuredSelection)selection).iterator();
-			while (selectedobjectIteractor.hasNext()) {
-				Object currentSelection = selectedobjectIteractor.next();
-					if (currentSelection instanceof org.eclipse.uml2.uml.Element){
-						selectedSet.add((Element)currentSelection);
-					}
-				}
-
-
-		}
-		return selectedSet;
-	}
 }

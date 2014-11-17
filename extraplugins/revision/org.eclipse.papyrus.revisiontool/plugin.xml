@@ -56,25 +56,13 @@
 <context contextModel="properties/Review.ctx"/>
 </extension>
 <extension
-      point="org.eclipse.ui.commands">
-   <category
-         id="org.eclipse.papyrus.revisiontool.commands.category"
-         name="Sample Category">
-   </category>
-   <command
-         categoryId="org.eclipse.papyrus.revisiontool.commands.category"
-         id="org.eclipse.papyrus.revisiontool.commands.sampleCommand"
-         name="Sample Command">
-   </command>
-</extension>
-<extension
       point="org.eclipse.ui.handlers">
    <handler
          class="org.eclipse.papyrus.revision.tool.handlers.ReviewCreateHandler"
-         commandId="org.eclipse.papyrus.revisiontool.commands.sampleCommand">
+         commandId="org.eclipse.papyrus.revisiontool.commands.ReviewCreateHandler">
    </handler>
    <handler
-         class="org.eclipse.papyrus.revision.tool.handlers.DeleteReviewCreateHandler"
+         class="org.eclipse.papyrus.revision.tool.handlers.DeleteReviewHandler"
          commandId="org.eclipse.papyrus.revisiontool.commands.deletereview">
    </handler>
    <handler
@@ -85,7 +73,7 @@
 <extension
       point="org.eclipse.ui.bindings">
    <key
-         commandId="org.eclipse.papyrus.revisiontool.commands.sampleCommand"
+         commandId="org.eclipse.papyrus.revisiontool.commands.ReviewCreateHandler"
          contextId="org.eclipse.ui.contexts.window"
          schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
          sequence="M1+1">
@@ -113,7 +101,7 @@
             label="New"
             mnemonic="M">
          <command
-               commandId="org.eclipse.papyrus.revisiontool.commands.sampleCommand"
+               commandId="org.eclipse.papyrus.revisiontool.commands.ReviewCreateHandler"
                icon="img/Add.png"
                id="org.eclipse.papyrus.revisiontool.menus.sampleCommand"
                label="Review"
@@ -162,5 +150,46 @@
             tooltip="Hook">
       </command>
    </menuContribution>
+   <menuContribution
+         locationURI="menu:org.eclipse.ui.main.menu?after=additions">
+      <menu
+            id="org.eclipse.papyrus.revisiontool.menus.revisionmenu"
+            label="Revision"
+            mnemonic="M">
+         <command
+               commandId="org.eclipse.papyrus.revisiontool.commands.revisionlaunch"
+               hoverIcon="Revision Mode"
+               label="Revision Mode"
+               style="toggle">
+         </command>
+         <command
+               commandId="org.eclipse.papyrus.revision.tool.handlers.SaveSnapshotRevision"
+               hoverIcon="Save snapshot Revision Mode"
+               label="Save snapshot Revision Mode (TMP)"
+               style="push">
+         </command>
+      </menu>
+   </menuContribution>
+</extension>
+<extension
+      point="org.eclipse.ui.commands">
+   <command
+         defaultHandler="org.eclipse.papyrus.revision.tool.handlers.LaunchRevisionMode"
+         id="org.eclipse.papyrus.revisiontool.commands.revisionlaunch"
+         name="org.eclipse.papyrus.revisiontool.commands.revisionlaunch">
+       <state
+         class="org.eclipse.ui.handlers.RegistryToggleState:false"
+         id="org.eclipse.ui.commands.toggleState">
+   </state>
+   </command>
+   <command
+         defaultHandler="org.eclipse.papyrus.revision.tool.handlers.SaveSnapshotRevision"
+         id="org.eclipse.papyrus.revision.tool.handlers.SaveSnapshotRevision"
+         name="org.eclipse.papyrus.revision.tool.handlers.SaveSnapshotRevision">
+      <state
+            class="org.eclipse.ui.handlers.RegistryToggleState:false"
+            id="org.eclipse.ui.commands.toggleState">
+      </state>
+   </command>
 </extension>
 </plugin>
