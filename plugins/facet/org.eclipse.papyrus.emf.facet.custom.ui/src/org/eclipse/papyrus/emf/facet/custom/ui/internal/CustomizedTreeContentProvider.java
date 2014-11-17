@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2012, 2014 Mia-Software, CEA, and others.
+ * Copyright (c) 2012, 2014 Mia-Software, CEA, Christian W. Damus, and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -13,6 +13,7 @@
  *    Christian W. Damus (CEA) - bug 440795
  *    Christian W. Damus (CEA) - bug 441857
  *    Sebastien Gabel (Esterel Technologies) - Bug 438931 - Non deterministic order of the facet references defined in custom file
+ *    Christian W. Damus - bug 451683
  *
  *******************************************************************************/
 package org.eclipse.papyrus.emf.facet.custom.ui.internal;
@@ -503,5 +504,6 @@ public class CustomizedTreeContentProvider implements ICustomizedTreeContentProv
 
 	public void dispose() {
 		cache.clear();
+		rootElements = null;
 	}
 }

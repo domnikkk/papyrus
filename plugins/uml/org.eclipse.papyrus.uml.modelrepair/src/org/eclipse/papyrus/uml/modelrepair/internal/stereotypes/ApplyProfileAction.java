@@ -9,6 +9,7 @@
  * Contributors:
  *   Christian W. Damus (CEA) - Initial API and implementation
  *   Christian W. Damus - bug 399859
+ *   Christian W. Damus - bug 451557
  *
  */
 package org.eclipse.papyrus.uml.modelrepair.internal.stereotypes;
@@ -17,6 +18,7 @@ import java.util.Collection;
 import java.util.Set;
 
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.OperationCanceledException;
 import org.eclipse.core.runtime.SubMonitor;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.ecore.EObject;
@@ -90,7 +92,11 @@ public class ApplyProfileAction extends AbstractRepairAction {
 			// Apply the profile
 			StereotypeApplicationRepairParticipant.createStereotypeApplicationMigrator(resource, profile, diagnostics).migrate(stereotypeApplications, sub.newChild(stereotypeApplications.size()));
 			for (Package next : packages) {
-				applyProfile(next, profile);
+				if (sub.isCanceled()) {
+					throw new OperationCanceledException();
+				}
+
+				applyProfile(next, profile, sub.newChild(stereotypeApplications.size() / 2));
 			}
 
 			result = true;
@@ -101,7 +107,9 @@ public class ApplyProfileAction extends AbstractRepairAction {
 		return result;
 	}
 
-	protected ProfileApplication applyProfile(Package package_, Profile profile) {
+	protected ProfileApplication applyProfile(Package package_, Profile profile, IProgressMonitor monitor) {
+		monitor = SubMonitor.convert(monitor);
+
 		ProfileApplication result;
 
 		IProfileApplicationDelegate delegate = ProfileApplicationDelegateRegistry.INSTANCE.getDelegate(package_);
@@ -110,20 +118,22 @@ public class ApplyProfileAction extends AbstractRepairAction {
 		ProfileApplication existing = delegate.getProfileApplication(package_, profile);
 		if (existing != null) {
 			delegate = ProfileApplicationDelegateRegistry.INSTANCE.getDelegate(existing);
-			delegate.reapplyProfile(package_, profile);
+			delegate.reapplyProfile(package_, profile, monitor);
 			result = existing;
 		} else {
 			// Try to get a delegate appropriate to the resource we're repairing (it could be a profile-application model)
 			Package root = Iterables.getFirst(Iterables.filter(resourceUnderRepair.getContents(), Package.class), null);
 			if (root != null) {
 				delegate = ProfileApplicationDelegateRegistry.INSTANCE.getDelegate(root);
-				delegate.applyProfile(package_, profile, root);
+				delegate.applyProfile(package_, profile, root, monitor);
 			} else {
 				// Simple profile application scenario
 				package_.applyProfile(profile);
 			}
 			result = delegate.getProfileApplication(package_, profile);
 		}
+
+		monitor.done();
 
 		return result;
 	}

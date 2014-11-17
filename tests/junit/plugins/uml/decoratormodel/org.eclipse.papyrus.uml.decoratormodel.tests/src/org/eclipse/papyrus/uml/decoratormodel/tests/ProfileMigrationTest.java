@@ -82,7 +82,7 @@ public class ProfileMigrationTest extends AbstractProfileExternalizationTest {
 			public void run() {
 				@SuppressWarnings("restriction")
 				IProfileApplicationDelegate delegate = new org.eclipse.papyrus.uml.decoratormodel.internal.providers.ExternalizedProfileApplicationDelegate();
-				delegate.reapplyProfile(package_, profile);
+				delegate.reapplyProfile(package_, profile, null);
 			}
 		});
 	}

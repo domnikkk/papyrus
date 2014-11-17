@@ -12,7 +12,7 @@
  *   Kenn Hussey - 323181, 348433
  *   Kenn Hussey (CEA) - 327039, 369492, 313951, 163556, 418466, 447901
  *   Christian W. Damus (CEA) - 300957, 431998
- *   Christian W. Damus - 444588, 399859
+ *   Christian W. Damus - 444588, 399859, 451557
  *   
  *****************************************************************************/
 
@@ -21,6 +21,9 @@ package org.eclipse.papyrus.uml.decoratormodel.internal.providers;
 import java.util.ArrayList;
 import java.util.Collection;
 
+import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.OperationCanceledException;
+import org.eclipse.core.runtime.SubMonitor;
 import org.eclipse.emf.common.util.ECollections;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.TreeIterator;
@@ -31,6 +34,7 @@ import org.eclipse.emf.ecore.EStructuralFeature.Setting;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.xmi.XMLResource;
+import org.eclipse.osgi.util.NLS;
 import org.eclipse.papyrus.uml.decoratormodel.helper.DecoratorModelUtils;
 import org.eclipse.papyrus.uml.tools.helper.IProfileApplicationDelegate;
 import org.eclipse.uml2.uml.Element;
@@ -80,33 +84,37 @@ public class ExternalizedProfileApplicationDelegate implements IProfileApplicati
 	}
 
 	@Override
-	public EList<EObject> applyProfile(Package package_, Profile profile, Package context) {
-		EList<EObject> result;
-
+	public EList<EObject> applyProfile(Package package_, Profile profile, Package context, IProgressMonitor monitor) {
+		// Create the new profile application and then "reapply" it in place
+		ProfileApplication profileApplication;
 		if (!DecoratorModelUtils.isDecoratorModel(context) || EcoreUtil.isAncestor(context, package_)) {
 			// The context is meaningless to me or we are creating an externalized profile application
-			result = package_.applyProfile(profile);
+			profileApplication = package_.createProfileApplication();
 		} else {
 			Package decorator = DecoratorModelUtils.getDecoratorPackage(context, package_, true);
-
-			// Create the new profile application and then "reapply" it in place
-			ProfileApplication profileApplication = decorator.createProfileApplication();
-			profileApplication.setAppliedProfile(profile);
-			result = util.reapplyProfile(package_, profileApplication);
+			profileApplication = decorator.createProfileApplication();
 		}
 
-		return result;
+		profileApplication.setAppliedProfile(profile);
+
+		return util.reapplyProfile(package_, profileApplication, monitor);
 	}
 
 	@Override
 	public boolean appliesTo(ProfileApplication profileApplication) {
-		Resource resource = profileApplication.eResource();
-		return (resource != null) && DecoratorModelUtils.isDecoratorModel(resource);
+		return true;
 	}
 
 	@Override
 	public Package getApplyingPackage(ProfileApplication profileApplication) {
-		return DecoratorModelUtils.getUserModelApplyingPackage(profileApplication);
+		Package result = profileApplication.getApplyingPackage();
+
+		Resource resource = (result == null) ? null : result.eResource();
+		if ((resource != null) && DecoratorModelUtils.isDecoratorModel(resource)) {
+			result = DecoratorModelUtils.getUserModelApplyingPackage(profileApplication);
+		}
+
+		return result;
 	}
 
 	@Override
@@ -115,11 +123,10 @@ public class ExternalizedProfileApplicationDelegate implements IProfileApplicati
 	}
 
 	@Override
-	public EList<EObject> reapplyProfile(Package package_, Profile profile) {
+	public EList<EObject> reapplyProfile(Package package_, Profile profile, IProgressMonitor monitor) {
 		ProfileApplication existing = getProfileApplication(package_, profile);
 		return (existing == null) ? ECollections.<EObject> emptyEList() // Nothing to do
-				: (existing.getApplyingPackage() == package_) ? package_.applyProfile(profile) // Simple UML case
-						: util.reapplyProfile(package_, existing); // Our extended UML case
+				: util.reapplyProfile(package_, existing, monitor); // Our extended UML case
 	}
 
 	//
@@ -130,9 +137,11 @@ public class ExternalizedProfileApplicationDelegate implements IProfileApplicati
 	@SuppressWarnings("restriction")
 	private class PrivateUtil extends org.eclipse.uml2.uml.internal.operations.PackageOperations {
 
-		EList<EObject> reapplyProfile(Package package_, ProfileApplication profileApplication) {
+		EList<EObject> reapplyProfile(Package package_, ProfileApplication profileApplication, IProgressMonitor monitor) {
 			Profile profile = ExternalizedProfileApplicationDelegate.this.getAppliedProfile(profileApplication);
 			EPackage definition = profile.getDefinition();
+
+			monitor = SubMonitor.convert(monitor, NLS.bind("Re-applying profile \"{0}\" to package \"{1}\"", profile.getName(), package_.getName()), IProgressMonitor.UNKNOWN);
 
 			Collection<EObject> originals = Lists.newArrayList();
 			StereotypeApplicationCopier copier = new PrivateStereotypeCopier(profile);
@@ -142,6 +151,10 @@ public class ExternalizedProfileApplicationDelegate implements IProfileApplicati
 				EObject eObject = allContents.next();
 
 				if (eObject instanceof Element) {
+					if (monitor.isCanceled()) {
+						throw new OperationCanceledException();
+					}
+
 					Element element = (Element) eObject;
 
 					if (element instanceof Package) {
@@ -183,11 +196,19 @@ public class ExternalizedProfileApplicationDelegate implements IProfileApplicati
 				}
 			}
 
+			if (monitor.isCanceled()) {
+				throw new OperationCanceledException();
+			}
+
 			// Copy cross-references within the stereotype application forest that was copied
 			copier.copyReferences();
 
 			// Propagate object IDs of stereotype applications and update all incoming cross-references from objects that were not copied
 			for (EObject key : copier.keySet()) {
+				if (monitor.isCanceled()) {
+					throw new OperationCanceledException();
+				}
+
 				EObject copy = copier.get(key);
 
 				Resource eResource = key.eResource();
@@ -220,8 +241,16 @@ public class ExternalizedProfileApplicationDelegate implements IProfileApplicati
 				}
 			}
 
+			if (monitor.isCanceled()) {
+				throw new OperationCanceledException();
+			}
+
 			// Delete all of the original stereotype applications (leaving only the copies)
 			destroyAll(originals);
+
+			if (monitor.isCanceled()) {
+				throw new OperationCanceledException();
+			}
 
 			// Easy result in the common case of the profile not having any required metaclass extensions
 			return profile.getOwnedExtensions(true).isEmpty() ? ECollections.<EObject> emptyEList() : applyAllRequiredStereotypes(package_);

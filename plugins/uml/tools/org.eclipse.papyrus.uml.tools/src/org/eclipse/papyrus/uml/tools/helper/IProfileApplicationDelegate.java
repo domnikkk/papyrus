@@ -13,6 +13,7 @@
 
 package org.eclipse.papyrus.uml.tools.helper;
 
+import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.uml2.uml.Package;
@@ -66,10 +67,12 @@ public interface IProfileApplicationDelegate {
 	 * @param context
 	 *            a context in which to apply the profile, which may be the same as or a nesting package of the applying package, or some distinct other package
 	 *            altogether (such as a profile-application model)
+	 * @param monitor
+	 *            an optional monitor for reporting profile re-application progress (may be {@code null})
 	 * 
 	 * @return any new stereotype applications created as a consequence of required metaclass extensions
 	 */
-	EList<EObject> applyProfile(Package package_, Profile profile, Package context);
+	EList<EObject> applyProfile(Package package_, Profile profile, Package context, IProgressMonitor monitor);
 
 	/**
 	 * Queries whether I am applicable to (support introspection/manipulation of) a given profile application.
@@ -105,10 +108,12 @@ public interface IProfileApplicationDelegate {
 	 *            the package to which to re-apply the {@code profile}. The profile must already be applied
 	 * @param profile
 	 *            the profile to re-apply
+	 * @param monitor
+	 *            an optional monitor for reporting profile re-application progress (may be {@code null})
 	 * 
 	 * @return any new stereotype applications created as a consequence of required metaclass extensions
 	 */
-	EList<EObject> reapplyProfile(Package package_, Profile profile);
+	EList<EObject> reapplyProfile(Package package_, Profile profile, IProgressMonitor monitor);
 
 	//
 	// Nested types
@@ -131,7 +136,7 @@ public interface IProfileApplicationDelegate {
 			return package_.getProfileApplication(profile);
 		}
 
-		public EList<EObject> applyProfile(Package package_, Profile profile, Package context) {
+		public EList<EObject> applyProfile(Package package_, Profile profile, Package context, IProgressMonitor monitor) {
 			// I just simply apply the profile (I don't handle weird context scenarios)
 			return package_.applyProfile(profile);
 		}
@@ -148,7 +153,7 @@ public interface IProfileApplicationDelegate {
 			return profileApplication.getAppliedProfile();
 		}
 
-		public EList<EObject> reapplyProfile(Package package_, Profile profile) {
+		public EList<EObject> reapplyProfile(Package package_, Profile profile, IProgressMonitor monitor) {
 			return package_.applyProfile(profile);
 		}
 	}

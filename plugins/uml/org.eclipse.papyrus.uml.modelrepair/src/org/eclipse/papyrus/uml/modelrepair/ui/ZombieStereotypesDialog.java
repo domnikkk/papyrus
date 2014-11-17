@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2013, 2014 CEA and others.
+ * Copyright (c) 2013, 2014 CEA, Christian W. Damus, and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -10,6 +10,7 @@
  *   CEA - Initial API and implementation
  *   Christian W. Damus (CEA) - bug 431953 (adapted from SwitchProfileDialog)
  *   Christian W. Damus - bug 451338
+ *   Christian W. Damus - bug 451557
  *
  */
 package org.eclipse.papyrus.uml.modelrepair.ui;
@@ -61,6 +62,7 @@ import org.eclipse.papyrus.infra.core.utils.TransactionHelper;
 import org.eclipse.papyrus.infra.emf.utils.ServiceUtilsForResourceSet;
 import org.eclipse.papyrus.infra.services.labelprovider.service.LabelProviderService;
 import org.eclipse.papyrus.infra.services.markerlistener.dialogs.DiagnosticDialog;
+import org.eclipse.papyrus.infra.tools.util.UIUtil;
 import org.eclipse.papyrus.uml.modelrepair.Activator;
 import org.eclipse.papyrus.uml.modelrepair.internal.stereotypes.IRepairAction;
 import org.eclipse.papyrus.uml.modelrepair.internal.stereotypes.ZombieStereotypesDescriptor;
@@ -68,6 +70,7 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Cursor;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
+import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Label;
@@ -194,7 +197,7 @@ public class ZombieStereotypesDialog extends TrayDialog {
 		table.setLabelProvider(new ZombiesLabelProvider());
 		table.setInput(getMissingSchemas());
 
-		progress = new ProgressMonitorPart(self, null);
+		progress = new ProgressMonitorPart(self, null, true);
 		progress.setLayoutData(new GridData(SWT.FILL, SWT.LEAD, true, false));
 		progress.setVisible(false);
 
@@ -256,21 +259,26 @@ public class ZombieStereotypesDialog extends TrayDialog {
 						}
 					});
 
-					Cursor waitCursor = new Cursor(getShell().getDisplay(), SWT.CURSOR_WAIT);
+					final Cursor previousCursor = getShell().getCursor();
+					Cursor waitCursor = getShell().getDisplay().getSystemCursor(SWT.CURSOR_WAIT);
 					try {
 						getShell().setCursor(waitCursor);
 						progress.setVisible(true);
+						progress.attachToCancelComponent(null); // Enable the stop button
+						enableButtons(false);
 						ModalContext.run(runnable, true, progress, getShell().getDisplay());
+					} catch (InterruptedException e) {
+						// User cancelled. That's normal
 					} catch (Exception e) {
-						getShell().setCursor(null);
+						getShell().setCursor(previousCursor);
 						Throwable t = e;
 						if (e instanceof InvocationTargetException) {
 							t = ((InvocationTargetException) e).getTargetException();
 						}
 						StatusManager.getManager().handle(new Status(IStatus.ERROR, Activator.PLUGIN_ID, "Failed to repair stereotypes.", t), StatusManager.BLOCK | StatusManager.LOG);
 					} finally {
-						getShell().setCursor(null);
-						waitCursor.dispose();
+						enableButtons(true);
+						getShell().setCursor(previousCursor);
 						progress.setVisible(false);
 					}
 
@@ -318,6 +326,12 @@ public class ZombieStereotypesDialog extends TrayDialog {
 		super.buttonPressed(buttonId);
 	}
 
+	void enableButtons(boolean enable) {
+		for (Iterator<Button> iter = UIUtil.allChildren(getButtonBar(), Button.class); iter.hasNext();) {
+			iter.next().setEnabled(enable);
+		}
+	}
+
 	@Override
 	public void create() {
 		super.create();
@@ -343,7 +357,12 @@ public class ZombieStereotypesDialog extends TrayDialog {
 	protected void okPressed() {
 		applyPressed();
 
-		super.okPressed();
+		updateControls();
+
+		// Maybe the user cancelled the work
+		if (!getButton(APPLY_ID).isEnabled()) {
+			super.okPressed();
+		}
 	}
 
 	@Override

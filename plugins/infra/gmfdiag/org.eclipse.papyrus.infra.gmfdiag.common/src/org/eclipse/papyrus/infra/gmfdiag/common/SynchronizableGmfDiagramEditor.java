@@ -1,6 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2010 CEA LIST.
- *
+ * Copyright (c) 2010, 2014 CEA LIST, Christian W. Damus, and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -10,6 +9,7 @@
  * Contributors:
  *  Patrick Tessier (CEA LIST) Patrick.tessier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 437217
+ *  Christian W. Damus - bug 451683
  *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.gmfdiag.common;
@@ -30,6 +30,7 @@ import org.eclipse.gef.DefaultEditDomain;
 import org.eclipse.gef.GraphicalViewer;
 import org.eclipse.gef.commands.CommandStack;
 import org.eclipse.gef.ui.palette.PaletteViewer;
+import org.eclipse.gef.ui.parts.ContentOutlinePage;
 import org.eclipse.gef.ui.views.palette.PalettePage;
 import org.eclipse.gmf.runtime.common.core.command.CompositeCommand;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
@@ -45,6 +46,8 @@ import org.eclipse.gmf.runtime.draw2d.ui.figures.FigureUtilities;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.preference.PreferenceConverter;
+import org.eclipse.jface.viewers.ISelection;
+import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.papyrus.commands.CheckedDiagramCommandStack;
@@ -64,9 +67,12 @@ import org.eclipse.swt.graphics.RGB;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.ui.IActionBars;
+import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.commands.ICommandService;
+import org.eclipse.ui.part.IPageBookViewPage;
 import org.eclipse.ui.part.IPageSite;
+import org.eclipse.ui.views.contentoutline.IContentOutlinePage;
 
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
@@ -202,6 +208,13 @@ public class SynchronizableGmfDiagramEditor extends DiagramDocumentEditor implem
 			palettePages.add(result);
 			return result;
 		}
+		if (type == IContentOutlinePage.class) {
+			Object result = super.getAdapter(type);
+			if (result instanceof ContentOutlinePage) {
+				result = new OutlinePageWrapper((ContentOutlinePage) result);
+			}
+			return result;
+		}
 		return super.getAdapter(type);
 	}
 
@@ -266,7 +279,7 @@ public class SynchronizableGmfDiagramEditor extends DiagramDocumentEditor implem
 	 * this command update the status of the toggle actions
 	 */
 	protected void updateToggleActionState() {
-		final ICommandService commandService = (ICommandService) PlatformUI.getWorkbench().getActiveWorkbenchWindow().getService(ICommandService.class);
+		final ICommandService commandService = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getService(ICommandService.class);
 		if (commandService != null) {
 			final IPreferenceStore wsPreferenceStore = ((DiagramGraphicalViewer) getDiagramGraphicalViewer()).getWorkspaceViewerPreferenceStore();
 			org.eclipse.core.commands.Command command = commandService.getCommand(CommandIds.VIEW_GRID_COMMAND);
@@ -540,4 +553,76 @@ public class SynchronizableGmfDiagramEditor extends DiagramDocumentEditor implem
 
 	}
 
+	/**
+	 * A wrapper for the GMF-provided outline page that lets us clean up references to the model content leaked via the Outline View tool bar.
+	 */
+	private class OutlinePageWrapper implements IPageBookViewPage, IContentOutlinePage {
+		private final ContentOutlinePage delegate;
+
+		OutlinePageWrapper(ContentOutlinePage delegate) {
+			this.delegate = delegate;
+		}
+
+		@Override
+		public void createControl(Composite parent) {
+			delegate.createControl(parent);
+		}
+
+		@Override
+		public void dispose() {
+			try {
+				// Remove the toolbar items that reference me and, through me, the diagram and its associated semantic model
+				IActionBars bars = getSite().getActionBars();
+				bars.getToolBarManager().removeAll();
+				bars.updateActionBars();
+			} finally {
+				delegate.dispose();
+			}
+		}
+
+		@Override
+		public Control getControl() {
+			return delegate.getControl();
+		}
+
+		@Override
+		public void setActionBars(IActionBars actionBars) {
+			delegate.setActionBars(actionBars);
+		}
+
+		@Override
+		public void setFocus() {
+			delegate.setFocus();
+		}
+
+		@Override
+		public void init(IPageSite site) throws PartInitException {
+			delegate.init(site);
+		}
+
+		@Override
+		public IPageSite getSite() {
+			return delegate.getSite();
+		}
+
+		@Override
+		public void addSelectionChangedListener(ISelectionChangedListener listener) {
+			delegate.addSelectionChangedListener(listener);
+		}
+
+		@Override
+		public ISelection getSelection() {
+			return delegate.getSelection();
+		}
+
+		@Override
+		public void removeSelectionChangedListener(ISelectionChangedListener listener) {
+			delegate.removeSelectionChangedListener(listener);
+		}
+
+		@Override
+		public void setSelection(ISelection selection) {
+			delegate.setSelection(selection);
+		}
+	}
 }
