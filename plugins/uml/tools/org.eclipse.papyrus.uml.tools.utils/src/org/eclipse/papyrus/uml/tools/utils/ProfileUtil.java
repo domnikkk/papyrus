@@ -10,11 +10,15 @@
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - Handle dynamic profile applications in CDO
  *  Christian W. Damus - bug 399859
+ *  Christian W. Damus - bug 451613
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.tools.utils;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
@@ -30,15 +34,24 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 import org.eclipse.uml2.common.util.UML2Util;
 import org.eclipse.uml2.uml.Association;
+import org.eclipse.uml2.uml.AttributeOwner;
 import org.eclipse.uml2.uml.Class;
+import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.NamedElement;
+import org.eclipse.uml2.uml.Operation;
+import org.eclipse.uml2.uml.OperationOwner;
 import org.eclipse.uml2.uml.Package;
+import org.eclipse.uml2.uml.PackageableElement;
+import org.eclipse.uml2.uml.Parameter;
 import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.ProfileApplication;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.UMLPackage;
+
+import com.google.common.collect.HashMultimap;
+import com.google.common.collect.SetMultimap;
 
 /**
  * A class containing static utility method regarding UML profiles
@@ -283,5 +296,108 @@ public class ProfileUtil extends org.eclipse.uml2.uml.util.UMLUtil {
 		}
 
 		return result;
+	}
+
+	/**
+	 * Sort a list of profiles in dependency order, such that profiles that are used by other profiles sort ahead of the profiles that use them.
+	 * A profile uses another profile when it has classifiers that either:
+	 * <ul>
+	 * <li>specialize classifiers contained in the other profile (possibly in nested packages), or</li>
+	 * <li>have attributes typed by classifiers in the other profile, or</li>
+	 * <li>have operations with parameters typed by classifiers in the other profile</li>
+	 * </ul>
+	 * 
+	 * @param profiles
+	 *            a list of profiles to sort in place
+	 */
+	public static void sortProfiles(List<Profile> profiles) {
+		// Analyze profiles for inter-dependencies
+		final SetMultimap<Profile, Profile> dependencies = computeProfileDependencies(profiles);
+
+		// Expand to find transitive dependencies
+		expand(dependencies);
+
+		// Now sort by used profiles ahead of those that use them
+		Collections.sort(profiles, new Comparator<Profile>() {
+			public int compare(Profile o1, Profile o2) {
+				return dependencies.get(o1).contains(o2) ? +1 : dependencies.get(o2).contains(o1) ? -1 : 0;
+			}
+		});
+	}
+
+	/**
+	 * Compute a mapping of profiles to the profiles that they depend on.
+	 * 
+	 * @param profiles
+	 *            profiles for which to compute dependencies
+	 * @return the dependency mapping (one-to-many)
+	 */
+	private static SetMultimap<Profile, Profile> computeProfileDependencies(Collection<? extends Profile> profiles) {
+		SetMultimap<Profile, Profile> result = HashMultimap.create();
+		for (Profile next : profiles) {
+			for (PackageableElement member : next.getPackagedElements()) {
+				if (member instanceof Classifier) {
+					// Look for supertype dependencies
+					for (Classifier general : ((Classifier) member).allParents()) {
+						addProfileContaining(general, next, result);
+					}
+				}
+				if (member instanceof AttributeOwner) {
+					// Look for attribute type dependencies
+					for (Property property : ((AttributeOwner) member).getOwnedAttributes()) {
+						addProfileContaining(property.getType(), next, result);
+					}
+				}
+				if (member instanceof OperationOwner) {
+					// Look for operation parameter type dependencies
+					for (Operation operation : ((OperationOwner) member).getOwnedOperations()) {
+						for (Parameter parameter : operation.getOwnedParameters()) {
+							addProfileContaining(parameter.getType(), next, result);
+						}
+					}
+				}
+			}
+
+			// Exclude self dependencies
+			result.remove(next, next);
+		}
+
+		return result;
+	}
+
+	private static void addProfileContaining(PackageableElement element, Profile dependent, SetMultimap<Profile, Profile> dependencies) {
+		if (element != null) {
+			Package containingPackage = element.getNearestPackage();
+			while ((containingPackage != null) && !(containingPackage instanceof Profile) && (containingPackage.getOwner() != null)) {
+				containingPackage = containingPackage.getOwner().getNearestPackage();
+			}
+
+			if (containingPackage instanceof Profile) {
+				dependencies.put(dependent, (Profile) containingPackage);
+			}
+		}
+	}
+
+	/**
+	 * Expands a profile dependency map to include all transitive dependencies in the mapping for each profile.
+	 * 
+	 * @param dependencies
+	 *            a dependency map to expand
+	 */
+	private static void expand(SetMultimap<Profile, Profile> dependencies) {
+		for (boolean changed = true; changed;) {
+			changed = false;
+
+			for (Profile next : new ArrayList<Profile>(dependencies.keySet())) {
+				for (Profile dep : new ArrayList<Profile>(dependencies.get(next))) {
+					Set<Profile> transitive = dependencies.get(dep);
+
+					// Add the transitive dependencies to my own
+					if ((transitive != null) && dependencies.putAll(next, transitive)) {
+						changed = true;
+					}
+				}
+			}
+		}
 	}
 }

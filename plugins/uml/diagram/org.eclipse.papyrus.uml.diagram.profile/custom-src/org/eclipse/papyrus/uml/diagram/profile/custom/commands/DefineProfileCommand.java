@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2010 CEA LIST.
+ * Copyright (c) 2010, 2014 CEA LIST, Christian W. Damus, and others.
  *
  *
  * All rights reserved. This program and the accompanying materials
@@ -9,14 +9,14 @@
  *
  * Contributors:
  *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
+ *  Christian W. Damus - bug 451613
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.profile.custom.commands;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.Iterator;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
@@ -31,6 +31,7 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -46,6 +47,8 @@ import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 import org.eclipse.papyrus.uml.profile.Activator;
 import org.eclipse.papyrus.uml.tools.profile.definition.PapyrusDefinitionAnnotation;
 import org.eclipse.papyrus.uml.tools.profile.definition.ProfileRedefinition;
+import org.eclipse.papyrus.uml.tools.utils.ProfileUtil;
+import org.eclipse.uml2.common.util.UML2Util;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.util.UMLUtil;
@@ -125,19 +128,25 @@ public class DefineProfileCommand extends AbstractTransactionalCommand {
 
 		options.put(UML2EcoreConverter.OPTION__UNTYPED_PROPERTIES, UMLUtil.OPTION__PROCESS); // Closer to the UML semantics of untyped properties
 
-		List<EPackage> result = new LinkedList<EPackage>();
-
-		// we want to define
-		if (thePackage instanceof Profile) {
-			EPackage profileDefinition = ((Profile) thePackage).define(options, null, null);
-			result.add(profileDefinition);
+		List<Profile> toDefine = new ArrayList<Profile>();
+		for (TreeIterator<EObject> all = UML2Util.getAllContents(thePackage, true, false); all.hasNext();) {
+			EObject next = all.next();
+			if (next instanceof Profile) {
+				toDefine.add((Profile) next);
+			} else if (!(next instanceof Package)) {
+				all.prune();
+			}
 		}
 
-		Iterator<Package> it = thePackage.getNestedPackages().iterator();
-		while (it.hasNext()) {
-			Package p = it.next();
-			List<EPackage> profileDefinitions = defineProfiles(p, saveConstraintInDef);
-			result.addAll(profileDefinitions);
+		if (toDefine.size() > 1) {
+			// Sort the profiles in dependency order: used profiles ahead of the profiles that use them. This ensures that
+			// Ecore definitions are available for reference in the 4.1.0-style annotations instead of 4.0.0-style
+			ProfileUtil.sortProfiles(toDefine);
+		}
+
+		List<EPackage> result = new ArrayList<EPackage>(toDefine.size());
+		for (Profile next : toDefine) {
+			result.add(next.define(options, null, null));
 		}
 
 		return result;
