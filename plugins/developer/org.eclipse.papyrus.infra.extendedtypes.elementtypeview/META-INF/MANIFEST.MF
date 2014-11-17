@@ -3,7 +3,6 @@ Export-Package: org.eclipse.papyrus.infra.extendedtypes.elementtypeview,
  org.eclipse.papyrus.infra.extendedtypes.elementtypeview.view
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
- org.eclipse.emf.facet.common.ui,
  org.eclipse.gmf.runtime.diagram.ui,
  org.eclipse.papyrus.editor;bundle-version="1.1.0",
  org.eclipse.papyrus.infra.gmfdiag.dnd;bundle-version="1.1.0",
