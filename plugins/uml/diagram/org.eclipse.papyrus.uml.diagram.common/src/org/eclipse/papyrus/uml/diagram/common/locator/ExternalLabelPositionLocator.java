@@ -54,7 +54,7 @@ public class ExternalLabelPositionLocator implements IPapyrusBorderItemLocator {
 	private boolean isConstrained = false;
 
 	/** The margin. */
-	private Point margin;
+	private Point margin = new Point();
 
 	/** The offset. */
 	private Dimension offset = new Dimension();
