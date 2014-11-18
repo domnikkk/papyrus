@@ -81,6 +81,9 @@
                <documentation>
                   path of the xml file in charge of this palette definition
                </documentation>
+               <appInfo>
+                  <meta.attribute kind="resource"/>
+               </appInfo>
             </annotation>
          </attribute>
          <attribute name="icon" type="string">
