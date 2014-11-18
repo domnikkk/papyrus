@@ -54,13 +54,13 @@ import org.eclipse.papyrus.uml.diagram.menu.dialogs.ShowHideLabelSelectionDialog
 import org.eclipse.papyrus.uml.diagram.menu.messages.Messages;
 
 /**
- * Adapted code from {@link ShowConnectionLabelsAction}
+ * Adapted code from {@link ShowConnectionLabelsAction}.
  *
- * This action allows to manage connection labels. 3 parameters are available for this actio :
+ * This action allows to manage connection labels. Three parameters are available for this action :
  * <ul>
- * <li> {@link #HIDE_PARAMETER} : hide all labels for the selected elements</li>
- * <li>  {@link #SHOW_PARAMETER} : show all labels for the selected elements</li>
- * <li> {@link #MANAGE_PARAMETER} : open a dialog to choose labels to display and labels to hide for the selected element</li>
+ * <li>{@link #HIDE_PARAMETER} : hide all labels for the selected elements</li>
+ * <li>{@link #SHOW_PARAMETER} : show all labels for the selected elements</li>
+ * <li>{@link #MANAGE_PARAMETER} : open a dialog to choose labels to display and labels to hide for the selected element</li>
  * </ul>
  *
  */
@@ -74,11 +74,11 @@ public class ShowHideLabelsAction extends AbstractGraphicalParametricAction {
 	public static final String HIDE_PARAMETER = "hide"; //$NON-NLS-1$
 
 	public static final String SHOW_PARAMETER = "show"; //$NON-NLS-1$
-	
+
 	public ILabelProvider labelProvider;
-	
+
 	public ITreeContentProvider contentProvider;
-	
+
 	private DiagramEditPart diagramEditPart;
 
 
@@ -95,13 +95,15 @@ public class ShowHideLabelsAction extends AbstractGraphicalParametricAction {
 		super(parameter, selectedEditPart);
 
 		try {
-			// Gets the diagram edit part
-			diagramEditPart = DiagramEditPartsUtil.getDiagramEditPart(selectedEditPart.get(0));
-			if (diagramEditPart != null) {
-				// Initializes the label provider
-				LabelProviderService labelProviderService = (LabelProviderService) ServiceUtilsForEditPart.getInstance().getServiceRegistry(diagramEditPart).getService(LabelProviderService.class);
-				labelProvider = labelProviderService.getLabelProvider(diagramEditPart);
-				contentProvider = new ContentProvider(diagramEditPart);
+			// Gets the diagram edit part if the selection is not empty
+			if (!selectedEditPart.isEmpty()) {
+				diagramEditPart = DiagramEditPartsUtil.getDiagramEditPart(selectedEditPart.get(0));
+				if (diagramEditPart != null) {
+					// Initializes the label provider
+					LabelProviderService labelProviderService = (LabelProviderService) ServiceUtilsForEditPart.getInstance().getServiceRegistry(diagramEditPart).getService(LabelProviderService.class);
+					labelProvider = labelProviderService.getLabelProvider(diagramEditPart);
+					contentProvider = new ContentProvider(diagramEditPart);
+				}
 			}
 		} catch (ServiceException e) {
 			Activator.log.error(e);
