@@ -157,11 +157,9 @@ public class RoundedCompartmentFigure extends NodeNamedElementFigure implements 
 		shadowborder.setColor(getForegroundColor());
 		graphics.pushState();
 		Rectangle rectangle = getBounds().getCopy();
-		// Set the corner dimension if is oval in case of resizing
-		if (isOval) {
-			cornerDimension.width = rectangle.width;
-			cornerDimension.height = rectangle.height;
-		}
+
+		refreshCornerSizeWhenOval();
+
 		// paintBackground:
 		applyTransparency(graphics);
 		if (isUsingGradient()) {
@@ -254,6 +252,9 @@ public class RoundedCompartmentFigure extends NodeNamedElementFigure implements 
 		if (!shadow) {
 			// If shadow is set to false we set the border
 			if (getBorder() != null) {
+
+				refreshCornerSizeWhenOval();
+
 				RoundedRectangleBorder border = new RoundedRectangleBorder(cornerDimension.width, cornerDimension.height);
 				border.setWidth(getLineWidth());
 				border.setStyle(borderStyle);
@@ -261,6 +262,21 @@ public class RoundedCompartmentFigure extends NodeNamedElementFigure implements 
 			}
 		}
 		setLineStyle(borderStyle);
+	}
+
+	/**
+	 * 
+	 */
+	private void refreshCornerSizeWhenOval() {
+		// Set the corner dimension if is oval in case of resizing
+		if (isOval) {
+			if (cornerDimension.width != getBounds().width || cornerDimension.height != getBounds().height) {
+				cornerDimension.width = getBounds().width;
+				cornerDimension.height = getBounds().height;
+				// Force to repaint the border thought setShadow()
+				setShadow(isShadow());
+			}
+		}
 	}
 
 	/**
@@ -278,9 +294,7 @@ public class RoundedCompartmentFigure extends NodeNamedElementFigure implements 
 	public void setOval(boolean booleanValue) {
 		isOval = booleanValue;
 		if (booleanValue) {
-			Rectangle rectangle = getBounds().getCopy();
-			cornerDimension.width = rectangle.width;
-			cornerDimension.height = rectangle.height;
+			refreshCornerSizeWhenOval();
 		}
 	}
 

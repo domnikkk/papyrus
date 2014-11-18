@@ -279,6 +279,16 @@ public interface PapyrusgmfgenextensionFactory extends EFactory {
 	CustomDiagramUpdaterSingleton createCustomDiagramUpdaterSingleton();
 
 	/**
+	 * Returns a new object of class '<em>Specific Node Plate</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return a new object of class '<em>Specific Node Plate</em>'.
+	 * @generated
+	 */
+	SpecificNodePlate createSpecificNodePlate();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

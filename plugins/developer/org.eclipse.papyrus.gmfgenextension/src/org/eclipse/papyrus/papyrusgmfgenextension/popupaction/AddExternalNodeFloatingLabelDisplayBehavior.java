@@ -8,7 +8,7 @@
  *
  * Contributors:
  *  Mickael ADAM (ALL4TEC) mickael.adam@all4tec.net - Initial API and implementation
- * 
+ *
  *****************************************************************************/
 
 package org.eclipse.papyrus.papyrusgmfgenextension.popupaction;
@@ -35,7 +35,7 @@ import org.eclipse.ui.IViewPart;
 /**
  * this class is used to add a label to display name from external node
  */
-public class AddExternalNodeFloatingNameDisplayBehavior extends Action {
+public class AddExternalNodeFloatingLabelDisplayBehavior extends Action {
 
 	public static final String FIGURE_VIEWMAP_PATH = "org.eclipse.papyrus.infra.gmfdiag.common.figure.node.PapyrusWrappingLabel";//"org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"; //$NON-NLS-1$
 
@@ -45,9 +45,9 @@ public class AddExternalNodeFloatingNameDisplayBehavior extends Action {
 
 	public static final String DEFAULT_GETTER_NAME = "getFloatingNameLabel"; //$NON-NLS-1$
 
-	public static final String DEFAULT_EDITPART_NAME_SUFFIX = "FloatingNameEditPart"; //$NON-NLS-1$
+	public static final String DEFAULT_EDITPART_NAME_SUFFIX = "FloatingLabelEditPart"; //$NON-NLS-1$
 
-	public static final String DEFAULT_EDITPOLICY_NAME_SUFFIX = "FloatingNameItemSemanticEditPolicy"; //$NON-NLS-1$
+	public static final String DEFAULT_EDITPOLICY_NAME_SUFFIX = "FloatingLabelItemSemanticEditPolicy"; //$NON-NLS-1$
 
 	//	public static final String DEFAULT_WRAPPING_LABEL_CLASS = "org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"; //$NON-NLS-1$
 
@@ -77,6 +77,7 @@ public class AddExternalNodeFloatingNameDisplayBehavior extends Action {
 	 * 
 	 * @see org.eclipse.ui.IActionDelegate#run(org.eclipse.jface.action.IAction)
 	 */
+	@Override
 	public void run(IAction action) {
 		// Parse selected GenLink(s) and add the desired CustomBehavior
 		Iterator<EObject> it = getSelectedEObject().iterator();
@@ -93,28 +94,33 @@ public class AddExternalNodeFloatingNameDisplayBehavior extends Action {
 
 	/**
 	 * creation an external node floating name
-	 * 
-	 * @param eObject
+	 *
+	 * @param genNode
 	 *            the parent genNode
 	 */
-	private void createAnFloatingNameExternalNode(GenNode eObject) {
+	private void createAnFloatingNameExternalNode(GenNode genNode) {
 		// Create une external node label
 		GenExternalNodeLabel label = GMFGenFactory.eINSTANCE.createGenExternalNodeLabel();
 
 		// Set Name of the edit part
-		label.setEditPartClassName(eObject.getClassNamePrefix() + DEFAULT_EDITPART_NAME_SUFFIX);
+		// label.setEditPartClassName(genNode.getClassNamePrefix() + DEFAULT_EDITPART_NAME_SUFFIX);
+
+		String editPartClassName = genNode.getEditPartClassName();
+		int index = editPartClassName.indexOf("EditPart");
+		String name = editPartClassName.substring(0, index) + DEFAULT_EDITPART_NAME_SUFFIX + editPartClassName.substring(index + "EditPart".length());
+		label.setEditPartClassName(name);
 		// Set item semantic edit policy
-		label.setItemSemanticEditPolicyClassName(eObject.getClassNamePrefix() + DEFAULT_EDITPOLICY_NAME_SUFFIX);
+		label.setItemSemanticEditPolicyClassName(genNode.getClassNamePrefix() + DEFAULT_EDITPOLICY_NAME_SUFFIX);
 		// Set the Read only
 		label.setReadOnly(false);
 
 		// Set GenLinkLabel VisualID with new unique ID
-		int visualID = SetVisualIDWithUnusedValue.getNewVisualID(eObject.eResource(), GenLinkLabel.class);
+		int visualID = SetVisualIDWithUnusedValue.getNewVisualID(genNode.eResource(), GenLinkLabel.class);
 		label.setVisualID(visualID);
 
 		// Retrieve DiagramRunTimeClass in notation.genmodel (Node -> View)
 		URI uri_notation = URI.createPlatformPluginURI(URI_NOTATION_GENMODEL, false);
-		Resource notation = eObject.eResource().getResourceSet().getResource(uri_notation, true);
+		Resource notation = genNode.eResource().getResourceSet().getResource(uri_notation, true);
 		label.setDiagramRunTimeClass(findGenClass(notation, GEN_CLASS_RT_CLASS));
 
 		// Create Viewmap
@@ -129,13 +135,13 @@ public class AddExternalNodeFloatingNameDisplayBehavior extends Action {
 
 		// Select NamedElement::name property in UML.genmodel for MetaFeatures
 		URI uri_uml = URI.createPlatformPluginURI(URI_UML_GENMODEL, false);
-		Resource uml = eObject.eResource().getResourceSet().getResource(uri_uml, true);
+		Resource uml = genNode.eResource().getResourceSet().getResource(uri_uml, true);
 		facet.getMetaFeatures().add(findGenFeature(uml, GEN_CLASS_FACET_META_FEATURE, GEN_FEATURE_FACET_META_FEATURE));
 		// Attach Predefined Parser MessageFormatParser
 		// not good must find the predifined parser of the model...
 
 		// Get the predefined parser.
-		PredefinedParser parser = getPredefinedParser(eObject);
+		PredefinedParser parser = getPredefinedParser(genNode);
 		facet.setParser(parser);
 
 		// Attach created element one to another in the model
@@ -143,9 +149,12 @@ public class AddExternalNodeFloatingNameDisplayBehavior extends Action {
 		label.setModelFacet(facet);
 
 		// Add custom Policy to have feedback
-		addCustomBehavior(label, LABEL_POLICY_KEY, LABEL_POLICY_CLASS);
+		// addCustomBehavior(label, LABEL_POLICY_KEY, LABEL_POLICY_CLASS);
 
-		eObject.getLabels().add(label);
+		// edit policy which permit to take into account of specific locator of external label
+		addCustomBehavior(genNode, "org.eclipse.gef.EditPolicy.LAYOUT_ROLE", "org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.GetChildLayoutEditPolicy");
+
+		genNode.getLabels().add(label);
 	}
 
 	/**

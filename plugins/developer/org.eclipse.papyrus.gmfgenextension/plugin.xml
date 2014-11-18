@@ -115,10 +115,10 @@
                     </enablement>
                  </action>
                  <action
-                       class="org.eclipse.papyrus.papyrusgmfgenextension.popupaction.AddExternalNodeFloatingNameDisplayBehavior"
+                       class="org.eclipse.papyrus.papyrusgmfgenextension.popupaction.AddExternalNodeFloatingLabelDisplayBehavior"
                        enablesFor="*"
                        id="org.eclipse.papyrus.papyrusgmfgenextension.popupaction.AddExternalNodeFloatingNameDisplayBehavior"
-                       label="Add label to display Name as an external Floating node label"
+                       label="Add label to display Label as an external Floating node label"
                        menubarPath="org.eclipse.papyrus.papyrusgmfgenextension.popupaction.MenuPapyrus/AddExternalNodeFloatingNameDisplayBehavior">
                     <enablement>
                        <objectClass
