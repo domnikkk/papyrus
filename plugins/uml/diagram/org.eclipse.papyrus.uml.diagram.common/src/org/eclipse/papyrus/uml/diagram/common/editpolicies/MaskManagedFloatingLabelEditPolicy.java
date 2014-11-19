@@ -38,12 +38,12 @@ import org.eclipse.uml2.uml.UMLPackage;
  * Specific edit policy for label displaying stereotypes and their properties for edges representing
  * UML elements.
  */
-public class FloatingLabelEditPolicy extends AbstractMaskManagedEditPolicy {
+public class MaskManagedFloatingLabelEditPolicy extends AbstractMaskManagedEditPolicy {
 
 	/**
 	 * Creates a new PropertyLabelEditPolicy.
 	 */
-	public FloatingLabelEditPolicy() {
+	public MaskManagedFloatingLabelEditPolicy() {
 		super();
 	}
 

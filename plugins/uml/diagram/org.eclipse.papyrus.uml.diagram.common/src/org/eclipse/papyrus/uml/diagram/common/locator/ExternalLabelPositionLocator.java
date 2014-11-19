@@ -36,6 +36,7 @@ import org.eclipse.papyrus.infra.gmfdiag.common.editpart.IPapyrusEditPart;
 import org.eclipse.papyrus.infra.gmfdiag.common.editpart.PapyrusLabelEditPart;
 import org.eclipse.papyrus.infra.gmfdiag.common.locator.IPapyrusBorderItemLocator;
 import org.eclipse.papyrus.infra.gmfdiag.common.model.NotationUtils;
+import org.eclipse.papyrus.uml.diagram.common.editparts.RoundedCompartmentEditPart;
 
 /**
  * This class is used to constrain the position of ExternalNodeLabel. The
@@ -121,9 +122,9 @@ public class ExternalLabelPositionLocator implements IPapyrusBorderItemLocator {
 	@Override
 	public int getPosition() {
 		// Get the forced value(CSS, Notation)
-		String ForcedPosition = NotationUtils.getStringValue(view, "position", "none");
+		String ForcedPosition = NotationUtils.getStringValue(view, "position", "AUTO").toUpperCase();
 		// if there is a forced position
-		if (!"none".equals(ForcedPosition)) {
+		if (!"AUTO".equals(ForcedPosition)) {
 			if ("EAST".equals(ForcedPosition)) {
 				position = PositionConstants.EAST;
 			}
@@ -150,7 +151,7 @@ public class ExternalLabelPositionLocator implements IPapyrusBorderItemLocator {
 	 * @return the position on parent
 	 */
 	public int getPositionOnParent() {
-		Rectangle portBounds = null;
+		Rectangle bounds = null;
 		Rectangle parentBounds = null;
 		int position = this.position;
 
@@ -159,24 +160,43 @@ public class ExternalLabelPositionLocator implements IPapyrusBorderItemLocator {
 			EditPart parent = editPart.getParent();
 			if (parent instanceof IPapyrusEditPart) {
 				IFigure portPrimaryShape = ((IPapyrusEditPart) parent).getPrimaryShape();
-				portBounds = portPrimaryShape.getBounds();
+				bounds = portPrimaryShape.getBounds();
 
 				// Get the port's parent figure
 				// if it's a papyrus edit part and the figure is paint(width !=0)
-				if (parent.getParent() instanceof IPapyrusEditPart && portBounds.width != 0) {
+				if (parent.getParent() instanceof IPapyrusEditPart && bounds.width != 0) {
 					IFigure parentPrimaryShape = ((IPapyrusEditPart) parent.getParent()).getPrimaryShape();
 					parentBounds = parentPrimaryShape.getBounds();
 
-					if (portBounds.x + portBounds.width / 2 == parentBounds.x) {
+					if (bounds.x + bounds.width / 2 == parentBounds.x) {
 						// West position
 						position = PositionConstants.WEST;
-					} else if (portBounds.x + portBounds.width / 2 == parentBounds.getBottomRight().x) {
+					} else if (bounds.x + bounds.width / 2 == parentBounds.getBottomRight().x) {
 						// East Position
 						position = PositionConstants.EAST;
-					} else if (portBounds.y + portBounds.height / 2 == parentBounds.y) {
+					} else if (bounds.y + bounds.height / 2 == parentBounds.y) {
+						// North Position
 						position = PositionConstants.NORTH;
-					} else if (portBounds.y + portBounds.height / 2 == parentBounds.getBottomRight().y) {
+					} else if (bounds.y + bounds.height / 2 == parentBounds.getBottomRight().y) {
+						// South Position
 						position = PositionConstants.SOUTH;
+					} else
+
+					// Take into account of rounded corner
+					if (parent.getParent() instanceof RoundedCompartmentEditPart && bounds.width != 0) {
+						// West position
+						if (bounds.x + bounds.width / 2 < parentBounds.x + parentBounds.width / 4) {
+							position = PositionConstants.WEST;
+							// East Position
+						} else if (bounds.x + bounds.width / 2 > parentBounds.x + parentBounds.width / 4 * 3) {
+							position = PositionConstants.EAST;
+							// North Position
+						} else if (bounds.y + bounds.height / 2 < parentBounds.y + parentBounds.height / 2) {
+							position = PositionConstants.NORTH;
+							// South Position
+						} else if (bounds.y + bounds.height / 2 > parentBounds.y + parentBounds.height / 2) {
+							position = PositionConstants.SOUTH;
+						}
 					}
 				}
 			}

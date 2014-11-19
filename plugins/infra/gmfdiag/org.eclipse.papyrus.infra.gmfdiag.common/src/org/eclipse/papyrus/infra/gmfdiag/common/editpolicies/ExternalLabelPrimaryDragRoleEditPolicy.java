@@ -17,7 +17,12 @@ package org.eclipse.papyrus.infra.gmfdiag.common.editpolicies;
 import java.util.Collections;
 import java.util.List;
 
+import org.eclipse.draw2d.Connection;
+import org.eclipse.draw2d.Graphics;
+import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.Polyline;
 import org.eclipse.draw2d.PositionConstants;
+import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.draw2d.geometry.PrecisionRectangle;
 import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.gef.GraphicalEditPart;
@@ -27,8 +32,11 @@ import org.eclipse.gef.requests.ChangeBoundsRequest;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
 import org.eclipse.gmf.runtime.diagram.ui.commands.SetBoundsCommand;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.LabelEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.NonResizableLabelEditPolicy;
+import org.eclipse.gmf.runtime.diagram.ui.figures.IBorderItemLocator;
 import org.eclipse.gmf.runtime.diagram.ui.l10n.DiagramUIMessages;
 import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.notation.View;
@@ -42,6 +50,8 @@ import org.eclipse.papyrus.infra.gmfdiag.common.utils.DiagramEditPartsUtil;
  * towards its parent figure during the move.
  */
 public class ExternalLabelPrimaryDragRoleEditPolicy extends NonResizableLabelEditPolicy {
+
+	private Polyline tether = null;
 
 	/**
 	 * Creates the selection handles.
@@ -95,4 +105,97 @@ public class ExternalLabelPrimaryDragRoleEditPolicy extends NonResizableLabelEdi
 		ICommand moveCommand = new SetBoundsCommand(editPart.getEditingDomain(), DiagramUIMessages.MoveLabelCommand_Label_Location, new EObjectAdapter((View) editPart.getModel()), updatedRect);
 		return new ICommandProxy(moveCommand);
 	}
+
+	/**
+	 * Shows or updates feedback for a change bounds request.
+	 *
+	 * @param request
+	 *            the request
+	 */
+	@Override
+	protected void showChangeBoundsFeedback(ChangeBoundsRequest request) {
+
+		IBorderItemEditPart borderItemEP = (IBorderItemEditPart) getHost();
+		IBorderItemLocator borderItemLocator = borderItemEP.getBorderItemLocator();
+
+		if (borderItemLocator != null) {
+			IFigure feedback = getDragSourceFeedbackFigure();
+			PrecisionRectangle rect = new PrecisionRectangle(getInitialFeedbackBounds().getCopy());
+			getHostFigure().translateToAbsolute(rect);
+			rect.translate(request.getMoveDelta());
+			rect.resize(request.getSizeDelta());
+			getHostFigure().translateToRelative(rect);
+			Rectangle realLocation = borderItemLocator.getValidLocation(rect.getCopy(), borderItemEP.getFigure());
+			getHostFigure().translateToAbsolute(realLocation);
+			feedback.translateToRelative(realLocation);
+			feedback.setBounds(realLocation);
+		}
+
+		drawTether(request);
+	}
+
+	protected IFigure createDragSourceFeedbackFigure() {
+		IFigure feedback = super.createDragSourceFeedbackFigure();
+		tether = new Polyline();
+		tether.setLineStyle(Graphics.LINE_DASH);
+		tether.setForegroundColor(((IGraphicalEditPart) getHost()).getFigure()
+				.getForegroundColor());
+		addFeedback(tether);
+		return feedback;
+	}
+
+	/**
+	 * @param request
+	 */
+	private void drawTether(ChangeBoundsRequest request) {
+		IFigure p = getDragSourceFeedbackFigure();
+		Rectangle r = p.getBounds();
+		Point refPoint = ((LabelEditPart) getHost()).getReferencePoint();
+
+		Rectangle centerMain = null;
+		if (((IGraphicalEditPart) getHost().getParent()).getFigure() instanceof Connection) {
+			centerMain = new Rectangle(refPoint.x, refPoint.y, 0, 0);
+			getHostFigure().translateToAbsolute(centerMain);
+			// p.translateToRelative(centerMain);
+		} else {
+			centerMain = ((IGraphicalEditPart) getHost().getParent())
+					.getFigure().getBounds().getCopy();
+			centerMain.translate(centerMain.width / 2, centerMain.height / 2);
+			getHostFigure().translateToAbsolute(centerMain);
+			// p.translateToRelative(centerMain);
+		}
+
+		PrecisionRectangle ref = new PrecisionRectangle(centerMain);
+
+		Point midTop = new Point(r.x + r.width / 2, r.y);
+		Point midBottom = new Point(r.x + r.width / 2, r.y + r.height);
+		Point midLeft = new Point(r.x, r.y + r.height / 2);
+		Point midRight = new Point(r.x + r.width, r.y + r.height / 2);
+
+		Point startPoint = midTop;
+
+		int x = r.x + r.width / 2 - refPoint.x;
+		int y = r.y + r.height / 2 - refPoint.y;
+
+		if (y > 0 && y > x && y > -x)
+			startPoint = midTop;
+		else if (y < 0 && y < x && y < -x)
+			startPoint = midBottom;
+		else if (x < 0 && y > x && y < -x)
+			startPoint = midRight;
+		else
+			startPoint = midLeft;
+
+		tether.setStart(startPoint);
+		tether.setEnd(ref.getLocation());
+	}
+
+	protected void eraseChangeBoundsFeedback(ChangeBoundsRequest request) {
+		super.eraseChangeBoundsFeedback(request);
+		if (tether != null)
+			removeFeedback(tether);
+		tether = null;
+	}
+
+
 }

@@ -16,7 +16,7 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.infra.gmfdiag.common.editpart.PapyrusLabelEditPart;
 import org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.IndirectMaskLabelEditPolicy;
 import org.eclipse.papyrus.infra.gmfdiag.common.model.NotationUtils;
-import org.eclipse.papyrus.uml.diagram.common.editpolicies.FloatingLabelEditPolicy;
+import org.eclipse.papyrus.uml.diagram.common.editpolicies.MaskManagedFloatingLabelEditPolicy;
 
 /**
  * The Class FloatingNameEditPart.
@@ -50,7 +50,9 @@ public class FloatingLabelEditPart extends PapyrusLabelEditPart {
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		// installEditPolicy(org.eclipse.papyrus.uml.diagram.common.editpolicies.ExternalLabelDisplayEditPolicy.EXTERNAL_LABEL_POLICY, new ExternalLabelDisplayEditPolicy());
-		installEditPolicy(IndirectMaskLabelEditPolicy.INDRIRECT_MASK_MANAGED_LABEL, new FloatingLabelEditPolicy());
+		installEditPolicy(IndirectMaskLabelEditPolicy.INDRIRECT_MASK_MANAGED_LABEL, new MaskManagedFloatingLabelEditPolicy());
+		// installEditPolicy("test", new FeedBackFloatingLabelEditPolicy());
+
 	}
 
 	/**
