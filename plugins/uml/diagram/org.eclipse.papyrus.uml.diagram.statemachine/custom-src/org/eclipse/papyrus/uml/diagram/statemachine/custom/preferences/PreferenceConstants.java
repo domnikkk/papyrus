@@ -18,15 +18,15 @@ public class PreferenceConstants {
 	/**
 	 * integer: Maximum length of displayed bodies.
 	 */
-	public final static String BODY_CUT_LENGTH = "bodyCutLength";
+	public final static String BODY_CUT_LENGTH = "bodyCutLength"; //$NON-NLS-1$
 
 	/**
 	 * Boolean: if true, indicate presence of parameters (attributes) by adding (...) to call or signal event.
 	 */
-	public final static String INDICATE_PARAMETERS = "indicateParameters";
+	public final static String INDICATE_PARAMETERS = "indicateParameters"; //$NON-NLS-1$
 
 	/**
 	 * Boolean: if true, add a line-break to the transition label before the effect
 	 */
-	public final static String LINEBREAK_BEFORE_EFFECT = "lineBreakBeforeEffect";
+	public final static String LINEBREAK_BEFORE_EFFECT = "lineBreakBeforeEffect"; //$NON-NLS-1$
 }
