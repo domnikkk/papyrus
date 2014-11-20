@@ -100,10 +100,4 @@
       </Priority>
    </shapeProvider>
 </extension>
-<extension
-      point="org.eclipse.papyrus.infra.gmfdiag.common.svgPostProcessors">
-   <postProcessor
-         implementation="org.eclipse.papyrus.uml.diagram.symbols.NamedSvgPostProcessor">
-   </postProcessor>
-</extension>
 </plugin>

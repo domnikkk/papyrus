@@ -16,7 +16,6 @@ package org.eclipse.papyrus.uml.diagram.activity.figures;
 
 import org.eclipse.draw2d.geometry.PointList;
 import org.eclipse.papyrus.uml.diagram.activity.draw2d.CenteredColumnConstraint;
-import org.eclipse.papyrus.uml.diagram.common.figure.node.CenteredWrappedLabel;
 import org.eclipse.papyrus.uml.diagram.common.figure.node.RoundedCompartmentFigure;
 import org.eclipse.papyrus.uml.diagram.common.helper.StereotypeFigureHelper;
 import org.eclipse.swt.graphics.Image;
@@ -31,7 +30,7 @@ public class AcceptEventActionFigure extends RoundedCompartmentFigure {
 	/**
 	 * this label is internal to the figure and represents the name of the acceptEventAction
 	 */
-	private CenteredWrappedLabel fAcceptEventActionLabel;
+	// private CenteredWrappedLabel fAcceptEventActionLabel;
 
 	// private final Insets marginTemplate;
 
@@ -83,7 +82,7 @@ public class AcceptEventActionFigure extends RoundedCompartmentFigure {
 		// this.add(labelRect0, constraintLabelRect0);
 		// CenterLayout layoutLabelRect0 = new CenterLayout();
 		// labelRect0.setLayoutManager(layoutLabelRect0);
-		fAcceptEventActionLabel = new CenteredWrappedLabel();
+		// fAcceptEventActionLabel = new CenteredWrappedLabel();
 		// fAcceptEventActionLabel.setBorder(new MarginBorder(5, 5, 5, 5));
 		// this.add(fAcceptEventActionLabel);
 	}
@@ -102,11 +101,11 @@ public class AcceptEventActionFigure extends RoundedCompartmentFigure {
 	// myTemplateBounds = null;
 	// }
 
-	// /**
-	// * Refresh the layout of the figure
-	// */
-	// protected void refreshLayout() {
-	// }
+	/**
+	 * Refresh the layout of the figure
+	 */
+	protected void refreshLayout() {
+	}
 
 	/** The value to display as stereotype display when available */
 	String stereotypeDisplayText = null;
@@ -123,16 +122,16 @@ public class AcceptEventActionFigure extends RoundedCompartmentFigure {
 	 *            the image representing the stereotypes to be displayed
 	 * @see org.eclipse.papyrus.uml.diagram.common.figure.node.IPapyrusUMLElementFigure#setStereotypeDisplay(java.lang.String, org.eclipse.swt.graphics.Image)
 	 */
-	// @Override
-	// public void setStereotypeDisplay(String stereotypes, Image image) {
-	// if (!isTemplateForAcceptTimeEventActionUsed()) {
-	// stereotypeHelper.setStereotypeDisplay(stereotypes, image);
-	// refreshLayout();
-	// }
-	// // record values in case figure changes
-	// stereotypeDisplayText = stereotypes;
-	// stereotypeDisplayImg = image;
-	// }
+	@Override
+	public void setStereotypeDisplay(String stereotypes, Image image) {
+		if (!isTemplateForAcceptTimeEventActionUsed()) {
+			stereotypeHelper.setStereotypeDisplay(stereotypes, image);
+			refreshLayout();
+		}
+		// record values in case figure changes
+		stereotypeDisplayText = stereotypes;
+		stereotypeDisplayImg = image;
+	}
 
 	/** The value to display as stereotype in brace when available */
 	String stereotypePropertiesInBrace = null;
@@ -143,15 +142,15 @@ public class AcceptEventActionFigure extends RoundedCompartmentFigure {
 	 * @param stereotypeProperties
 	 *            the string representing the stereotype properties to be displayed
 	 */
-	// @Override
-	// public void setStereotypePropertiesInBrace(String stereotypeProperties) {
-	// if (!isTemplateForAcceptTimeEventActionUsed()) {
-	// stereotypeHelper.setStereotypePropertiesInBrace(stereotypeProperties);
-	// refreshLayout();
-	// }
-	// // record values in case figure changes
-	// stereotypePropertiesInBrace = stereotypeProperties;
-	// }
+	@Override
+	public void setStereotypePropertiesInBrace(String stereotypeProperties) {
+		if (!isTemplateForAcceptTimeEventActionUsed()) {
+			stereotypeHelper.setStereotypePropertiesInBrace(stereotypeProperties);
+			refreshLayout();
+		}
+		// record values in case figure changes
+		stereotypePropertiesInBrace = stereotypeProperties;
+	}
 
 	/** The value to display as stereotype in brace when available */
 	String stereotypePropertiesInCompartment = null;
@@ -162,15 +161,15 @@ public class AcceptEventActionFigure extends RoundedCompartmentFigure {
 	 * @param stereotypeProperties
 	 *            the string to be displayed.
 	 */
-	// @Override
-	// public void setStereotypePropertiesInCompartment(String stereotypeProperties) {
-	// if (!isTemplateForAcceptTimeEventActionUsed()) {
-	// stereotypeHelper.setStereotypePropertiesInCompartment(stereotypeProperties);
-	// refreshLayout();
-	// }
-	// // record values in case figure changes
-	// stereotypePropertiesInCompartment = stereotypeProperties;
-	// }
+	@Override
+	public void setStereotypePropertiesInCompartment(String stereotypeProperties) {
+		if (!isTemplateForAcceptTimeEventActionUsed()) {
+			stereotypeHelper.setStereotypePropertiesInCompartment(stereotypeProperties);
+			refreshLayout();
+		}
+		// record values in case figure changes
+		stereotypePropertiesInCompartment = stereotypeProperties;
+	}
 
 	/**
 	 * Gets the stereotype label.
@@ -195,27 +194,27 @@ public class AcceptEventActionFigure extends RoundedCompartmentFigure {
 	 */
 	private boolean useTemplateTime = false;
 
-	// /**
-	// * Set whether the figure must use the classic concave pentagon template for AcceptEventAction or the hourglass template for
-	// * AcceptTimeEventAction
-	// *
-	// * @param useAcceptTimeEventActionTemplate
-	// * true if the hourglass template must be used, false for default template
-	// */
-	// public void useTemplateForAcceptTimeEventAction(boolean useAcceptTimeEventActionTemplate) {
-	// if (useAcceptTimeEventActionTemplate) {
-	// // erase stereotypes representation in block
-	// stereotypeHelper.setStereotypeDisplay(null, null);
-	// stereotypeHelper.setStereotypePropertiesInBrace(null);
-	// stereotypeHelper.setStereotypePropertiesInCompartment(null);
-	// } else {
-	// // restore stereotypes representation in block
-	// stereotypeHelper.setStereotypeDisplay(stereotypeDisplayText, stereotypeDisplayImg);
-	// stereotypeHelper.setStereotypePropertiesInBrace(stereotypePropertiesInBrace);
-	// stereotypeHelper.setStereotypePropertiesInCompartment(stereotypePropertiesInCompartment);
-	// }
-	// useTemplateTime = useAcceptTimeEventActionTemplate;
-	// }
+	/**
+	 * Set whether the figure must use the classic concave pentagon template for AcceptEventAction or the hourglass template for
+	 * AcceptTimeEventAction
+	 *
+	 * @param useAcceptTimeEventActionTemplate
+	 *            true if the hourglass template must be used, false for default template
+	 */
+	public void useTemplateForAcceptTimeEventAction(boolean useAcceptTimeEventActionTemplate) {
+		if (useAcceptTimeEventActionTemplate) {
+			// erase stereotypes representation in block
+			stereotypeHelper.setStereotypeDisplay(null, null);
+			stereotypeHelper.setStereotypePropertiesInBrace(null);
+			stereotypeHelper.setStereotypePropertiesInCompartment(null);
+		} else {
+			// restore stereotypes representation in block
+			stereotypeHelper.setStereotypeDisplay(stereotypeDisplayText, stereotypeDisplayImg);
+			stereotypeHelper.setStereotypePropertiesInBrace(stereotypePropertiesInBrace);
+			stereotypeHelper.setStereotypePropertiesInCompartment(stereotypePropertiesInCompartment);
+		}
+		useTemplateTime = useAcceptTimeEventActionTemplate;
+	}
 
 	/**
 	 * Ask whether the figure uses the classic concave pentagon template for AcceptEventAction or the hourglass template for
@@ -335,13 +334,13 @@ public class AcceptEventActionFigure extends RoundedCompartmentFigure {
 	// return scaled;
 	// }
 
-	/**
-	 * @generated
-	 */
-	public CenteredWrappedLabel getAcceptEventActionLabel() {
-		return fAcceptEventActionLabel;
-		// return getNameLabel();
-	}
+	// /**
+	// * @generated
+	// */
+	// public CenteredWrappedLabel getAcceptEventActionLabel() {
+	// return fAcceptEventActionLabel;
+	// // return getNameLabel();
+	// }
 
 	// @Override
 	// public Color getBorderColor() {

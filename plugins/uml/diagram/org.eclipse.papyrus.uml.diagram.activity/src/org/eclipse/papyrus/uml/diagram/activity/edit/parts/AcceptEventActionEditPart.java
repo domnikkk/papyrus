@@ -210,7 +210,7 @@ public class AcceptEventActionEditPart extends RoundedCompartmentEditPart {
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof AcceptEventActionLabelEditPart) {
-			((AcceptEventActionLabelEditPart) childEditPart).setLabel(getPrimaryShape().getAcceptEventActionLabel());
+			((AcceptEventActionLabelEditPart) childEditPart).setLabel(getPrimaryShape().getNameLabel());
 			return true;
 		}
 		// Papyrus Gencode :Affixed Pin locator for Actions
