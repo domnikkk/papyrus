@@ -14,6 +14,7 @@
 package org.eclipse.papyrus.uml.developper.mde.handler;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
 
 import org.eclipse.core.commands.AbstractHandler;
@@ -40,8 +41,9 @@ public abstract class IDMAbstractHandler extends AbstractHandler {
 
 	protected TransactionalEditingDomain transactionalEditingDomain = null;
 	protected PapyrusMultiDiagramEditor papyrusEditor;
-
-
+	public static HashMap<Element, Element> elt2DocElt = new HashMap<Element, Element>();
+	public static HashMap<Package, Package> Toc2DocElt = new HashMap<Package, Package>();
+	
 	/**
 	 * get the root package
 	 *
@@ -85,9 +87,7 @@ public abstract class IDMAbstractHandler extends AbstractHandler {
 				return (Element) selectedElement;
 			}
 		}
-
 		return null;
-
 	}
 
 	/**

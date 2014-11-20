@@ -85,5 +85,117 @@ public interface ITranscription {
 	 * @return the name of the document to generate
 	 */
 	public abstract String getNameFile();
-
+	
+	
+	/**
+	 * write the beginning of the table (header, style)
+	 * 
+	 * @param out
+	 * @param tableCaption
+	 */
+	public abstract void writeTable(StringBuffer out, String tableCaption);
+	
+	/**
+	 * write line in the table
+	 * 
+	 * @param out
+	 * @param uri 
+	 * 			represents the uri of the referent element
+	 * @param referenceName
+	 * 			name of the referent element
+	 * @param text
+	 * 			represents content of the line
+	 */
+	public abstract void writeLine(StringBuffer out, String uri, String referenceName, String text);
+	
+	
+	/**
+	 * 
+	 * write the beginning of a line
+	 * 
+	 * @param out
+	 */
+	public abstract void writeBeginTRTag(StringBuffer out);
+	
+	/**
+	 * write the ending of a line
+	 * 
+	 * @param out
+	 */
+	public abstract void writeEndTRTag(StringBuffer out);
+	
+	/**
+	 * finalize the table
+	 * 
+	 * @param out
+	 */
+	public abstract void writeEndingTable(StringBuffer out);
+	
+	/**
+	 * write the beginning of a column
+	 * 
+	 * @param out
+	 */
+	public abstract void writeBeginTDTag(StringBuffer out);
+	
+	/**
+	 * write the ending of a column
+	 * 
+	 * @param out
+	 */
+	public abstract void writeEndTDTag(StringBuffer out);
+	
+	public abstract void writeBeginTOC(StringBuffer out);
+	
+	public abstract void writeEndTOC(StringBuffer out);
+	
+	
+	/**
+	 * write the requirements which aren't covered
+	 * 
+	 * @param out
+	 * @param uri
+	 * 		represents the uri of the Requirements Doc Element
+	 * @param requirementName
+	 * 		the requirement name
+	 * @param reqID
+	 * 		id of the requirement
+	 */
+	public abstract void writeRefContent(StringBuffer out, String uri, String requirementName, String reqID);
+	
+	/**
+	 * write beginning of a paragraph
+	 * 
+	 * @param out
+	 */
+	public abstract void writeBeginParagraph(StringBuffer out);
+	
+	/**
+	 * write ending of a paragraph
+	 * 
+	 * @param out
+	 */
+	public abstract void writeEndingParagraph(StringBuffer out);
+	
+	/**
+	 * write section in table of contents
+	 * 
+	 * @param out
+	 * @param chapterName
+	 * 		represents the name of the section
+	 * @param uri
+	 * 		represents the uri of the Section Doc Element
+	 */
+	
+	public abstract void writeTOCSection(StringBuffer out, String chapterName, String uri);
+	
+	/**
+	 * 
+	 * @param out
+	 * @param subSectionName
+	 * 		represents the name of the sub section
+	 * @param uri
+	 * 		represents the uri of the sub section doc element
+	 */
+	public abstract void writeTOCSubSection(StringBuffer out, String subSectionName, String uri);
 }

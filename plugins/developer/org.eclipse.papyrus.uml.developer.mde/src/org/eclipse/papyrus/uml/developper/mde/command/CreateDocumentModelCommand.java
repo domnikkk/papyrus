@@ -39,7 +39,9 @@ import org.eclipse.papyrus.infra.hyperlink.util.HyperLinkException;
 import org.eclipse.papyrus.infra.hyperlink.util.HyperLinkHelpersRegistrationUtil;
 import org.eclipse.papyrus.uml.developper.mde.I_DeveloperIDMStereotype;
 import org.eclipse.papyrus.uml.developper.mde.I_DocumentStereotype;
+import org.eclipse.papyrus.uml.developper.mde.handler.IDMAbstractHandler;
 import org.eclipse.papyrus.views.modelexplorer.NavigatorUtils;
+import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Comment;
 import org.eclipse.uml2.uml.Dependency;
 import org.eclipse.uml2.uml.Element;
@@ -100,14 +102,14 @@ public class CreateDocumentModelCommand extends RecordingCommand {
 		documentModel.setValue(stereotypeDocument, I_DocumentStereotype.DOCUMENT_AUTHOR_ATT, (topModel.getValue(stereotypeProject, I_DeveloperIDMStereotype.PROJECT_AUTHOR_ATT)));
 		documentModel.setValue(stereotypeDocument, I_DocumentStereotype.DOCUMENT_VERSION_ATT, (topModel.getValue(stereotypeProject, I_DeveloperIDMStereotype.PROJECT_VERSION_ATT)));
 
-
-
 		for (Iterator<Comment> iteComment = (topModel).getOwnedComments().iterator(); iteComment.hasNext();) {
 			Comment currentComment = iteComment.next();
 			transformToContentComment(documentModel, currentComment);
 
 		}
 
+		// generate Table Of Content package
+		createTableOfContents(documentModel, "Table of Contents");
 		// get Requirement package
 		generateRequirements(documentModel);
 		// get UseCases package
@@ -117,16 +119,63 @@ public class CreateDocumentModelCommand extends RecordingCommand {
 
 		generateTests(copyImageUtil, documentModel);
 
+		generateTableCoverage(documentModel);
+
+		// Generate content of the Table of Contents package
+		generateTableOfContents(documentModel);
+
 	}
 
-	protected void generateRequirements(Model documentModel) {
-		Model requirementsIn = null;
-		for (Iterator<PackageableElement> iterator = topModel.getPackagedElements().iterator(); iterator.hasNext();) {
-			PackageableElement packageableElement = iterator.next();
-			if ((packageableElement.getAppliedStereotype(I_DeveloperIDMStereotype.REQUIREMENTS_STEREOTYPE)) != null) {
-				requirementsIn = (Model) packageableElement;
+
+	/**
+	 * Generate a package which represents a section on the table of content.
+	 * First, iterates on each "Section" Package of the document model.
+	 * Then, retrieves if the section has owned "section" package.
+	 * 
+	 * @param documentModel
+	 */
+	protected void generateTableOfContents(Model documentModel) {
+		for (Iterator<Element> sections = documentModel.getOwnedElements().iterator(); sections.hasNext();) {
+			Element section = sections.next();
+			Stereotype sectionStereotype = section.getAppliedStereotype(I_DocumentStereotype.SECTION_STEREOTYPE);
+			if (sectionStereotype != null) {
+				Package toc = (Package) documentModel.getPackagedElement("Table of Contents");
+				Stereotype tableOfContentStereotype = toc.getAppliedStereotype(I_DocumentStereotype.TABLEOFCONTENT_STEREOTYPE);
+				if (!(section.isStereotypeApplied(tableOfContentStereotype))) {
+					Package chapter = createSection(toc, ((Package)section).getName());
+					IDMAbstractHandler.Toc2DocElt.put(chapter, (Package) section);
+					setTableOfContents(section, chapter);
+				}
 			}
 		}
+	}
+
+	/**
+	 * 
+	 * Generate a package which represents a sub section on the table of content
+	 * This is the same algorithm as @see {@link CreateDocumentModelCommand}.generateTableOfContents()
+	 * This method is recursive.
+	 * 
+	 * @param packageElement
+	 * @param chapterPackage
+	 */
+	protected void setTableOfContents(Element packageElement, Package chapterPackage) {
+		if (packageElement.getOwnedElements() != null) {
+			for (Iterator<Element> elements = packageElement.getOwnedElements().iterator(); elements.hasNext();) {
+				Element cddElement = elements.next();
+				Stereotype sectionStereotype = cddElement.getAppliedStereotype(I_DocumentStereotype.SECTION_STEREOTYPE);
+				if (sectionStereotype != null) {
+					Package chapter = createSection(chapterPackage, ((Package)cddElement).getName());
+					IDMAbstractHandler.Toc2DocElt.put(chapter, (Package) cddElement);
+					setTableOfContents(cddElement, chapter);
+				} 
+			}
+		}
+	}
+
+
+	protected void generateRequirements(Model documentModel) {
+		Model requirementsIn = getStereotypedPackage(I_DeveloperIDMStereotype.REQUIREMENTS_STEREOTYPE);
 
 		if (requirementsIn != null) {
 			Package requirementsOUT = UMLFactory.eINSTANCE.createPackage();
@@ -146,19 +195,14 @@ public class CreateDocumentModelCommand extends RecordingCommand {
 					Stereotype contentStereotype = comment.getApplicableStereotype(I_DocumentStereotype.CONTENT_STEREOTYPE);
 					comment.applyStereotype(contentStereotype);
 					comment.setBody(out);
+					IDMAbstractHandler.elt2DocElt.put(currentReq, comment);
 				}
 			}
 		}
 	}
 
 	protected Model generateUseCases(CopyToImageUtil copyImageUtil, Model documentModel) {
-		Model useCaseIN = null;
-		for (Iterator<PackageableElement> iterator = topModel.getPackagedElements().iterator(); iterator.hasNext();) {
-			PackageableElement packageableElement = iterator.next();
-			if ((packageableElement.getAppliedStereotype(I_DeveloperIDMStereotype.USECASES_STEREOTYPE)) != null) {
-				useCaseIN = (Model) packageableElement;
-			}
-		}
+		Model useCaseIN = getStereotypedPackage(I_DeveloperIDMStereotype.USECASES_STEREOTYPE);
 
 		if (useCaseIN != null) {
 			Package useCaseModelOUT = createSection(documentModel, USE_CASES);
@@ -210,13 +254,7 @@ public class CreateDocumentModelCommand extends RecordingCommand {
 
 	protected void generateDesign(CopyToImageUtil copyImageUtil, Model documentModel) {
 		// get Design package
-		Model designPackageIn = null;
-		for (Iterator<PackageableElement> iterator = topModel.getPackagedElements().iterator(); iterator.hasNext();) {
-			PackageableElement packageableElement = iterator.next();
-			if ((packageableElement.getAppliedStereotype(I_DeveloperIDMStereotype.DESIGN_STEREOTYPE)) != null) {
-				designPackageIn = (Model) packageableElement;
-			}
-		}
+		Model designPackageIn = getStereotypedPackage(I_DeveloperIDMStereotype.DESIGN_STEREOTYPE);
 		if (designPackageIn != null) {
 			Package designPackageOUT = createSection(documentModel, DESIGN);
 			// createRef diagram
@@ -229,20 +267,23 @@ public class CreateDocumentModelCommand extends RecordingCommand {
 				createImageFromHyperLink(copyImageUtil, designPackageOUT, currentComment);
 				transformToContentComment(designPackageOUT, currentComment);
 			}
+
+			for (Iterator<EObject> iterator = designPackageIn.eAllContents(); iterator.hasNext();) {
+				EObject packageableElement = iterator.next();
+				if (packageableElement instanceof Class) {
+					Package designSectionOUT = createSection(designPackageOUT, ((Class)packageableElement).getName());
+					IDMAbstractHandler.elt2DocElt.put((Element) packageableElement, designSectionOUT);
+					for (Iterator<Comment> iteComment = ((Class) packageableElement).getOwnedComments().iterator(); iteComment.hasNext();) {
+						Comment currentComment = iteComment.next();
+						transformToContentWithUser(copyImageUtil, designSectionOUT, currentComment);
+					}
+				}
+			}
 		}
-
-
-
 	}
 
 	protected Model generateTests(CopyToImageUtil copyImageUtil, Model documentModel) {
-		Model testIN = null;
-		for (Iterator<PackageableElement> iterator = topModel.getPackagedElements().iterator(); iterator.hasNext();) {
-			PackageableElement packageableElement = iterator.next();
-			if ((packageableElement.getAppliedStereotype(I_DeveloperIDMStereotype.TESTS_STEREOTYPE)) != null) {
-				testIN = (Model) packageableElement;
-			}
-		}
+		Model testIN = getStereotypedPackage(I_DeveloperIDMStereotype.TESTS_STEREOTYPE);
 
 		if (testIN != null) {
 			Package testModelOUT = createSection(documentModel, TESTS);
@@ -255,21 +296,21 @@ public class CreateDocumentModelCommand extends RecordingCommand {
 			for (Iterator<Comment> iteComment = (testIN).getOwnedComments().iterator(); iteComment.hasNext();) {
 				Comment currentComment = iteComment.next();
 				transformToContentComment(testModelOUT, currentComment);
-
 			}
 
 			for (Iterator<EObject> iterator = testIN.eAllContents(); iterator.hasNext();) {
 				EObject packageableElement = iterator.next();
 				if (packageableElement instanceof UseCase) {
-					Package useCaseSectionOUT = createSection(testModelOUT, ((UseCase) packageableElement).getName());
+					Package testCaseSectionOUT = createSection(testModelOUT, ((UseCase) packageableElement).getName());
+					IDMAbstractHandler.elt2DocElt.put((Element) packageableElement, testCaseSectionOUT);
 					for (Iterator<Comment> iteComment = ((UseCase) packageableElement).getOwnedComments().iterator(); iteComment.hasNext();) {
 						Comment currentComment = iteComment.next();
-						transformToContentComment(useCaseSectionOUT, currentComment);
+						transformToContentComment(testCaseSectionOUT, currentComment);
 					}
 					ArrayList<NamedElement> test = getAllDependentElement((UseCase) packageableElement, topModel);
 					for (Iterator<NamedElement> iteratorTest = test.iterator(); iteratorTest.hasNext();) {
 						NamedElement currentTest = iteratorTest.next();
-						createSection(useCaseSectionOUT, currentTest.getName());
+						createSection(testCaseSectionOUT, currentTest.getName());
 
 					}
 				}
@@ -279,6 +320,183 @@ public class CreateDocumentModelCommand extends RecordingCommand {
 		}
 		return testIN;
 	}
+
+	/**
+	 * 
+	 * Generate the Requirements Coverage "Section" Package in the document model.
+	 * First, retrieves the requirements package in the model. 
+	 * Then, for each requirement, create a comment with "Line" stereotype.
+	 * A line has cells, and those cells are represented by a comment with the "Cell" stereotype.
+	 * And a cell has contents, those contents are represented by a comment with the "CellContent" stereotype
+	 * 
+	 * @param documentModel
+	 */
+	protected void generateTableCoverage(Model documentModel) {
+
+		// Get the requirements model package from the model
+		Model requirementsModel = getStereotypedPackage(I_DeveloperIDMStereotype.REQUIREMENTS_STEREOTYPE);
+
+		//  For each requirements, creates a line in the table
+		if (requirementsModel != null) {
+			int nbRequirement = 0;
+			int nbUnsatisfiedRequirement = 0;
+			int nbUnverifiedRequirement = 0;
+			// Creates the requirements coverage "Section" package
+			Package requirementsCoverageOUT = UMLFactory.eINSTANCE.createPackage();
+			documentModel.getPackagedElements().add(requirementsCoverageOUT);
+			Stereotype sectionStereotype = requirementsCoverageOUT.getApplicableStereotype(I_DocumentStereotype.SECTION_STEREOTYPE);
+			requirementsCoverageOUT.applyStereotype(sectionStereotype);
+			requirementsCoverageOUT.setName("Requirements Coverage");
+
+			// Create the comment with the table stereotype
+			Comment table = requirementsCoverageOUT.createOwnedComment();
+			table.setBody("Requirements Coverage Table");
+
+			Comment unsatisfiedRequirementComment = requirementsCoverageOUT.createOwnedComment();
+			unsatisfiedRequirementComment.setBody("");
+			Stereotype contentStereotype = unsatisfiedRequirementComment.getApplicableStereotype(I_DocumentStereotype.CONTENT_STEREOTYPE);
+			unsatisfiedRequirementComment.applyStereotype(contentStereotype);
+
+			Comment unverifiedRequirementComment = requirementsCoverageOUT.createOwnedComment();
+			unverifiedRequirementComment.setBody("");
+			unverifiedRequirementComment.applyStereotype(contentStereotype);
+
+			// "Loads" stereotypes will be used
+			Stereotype tableStereotype = table.getApplicableStereotype(I_DocumentStereotype.TABLE_STEREOTYPE);
+			Stereotype refContentStereotype = table.getApplicableStereotype(I_DocumentStereotype.REF_CONTENT_STEREOTYPE);
+			Stereotype cellStereotype = table.getApplicableStereotype(I_DocumentStereotype.CELL_STEREOTYPE);
+			Stereotype lineStereotype = table.getApplicableStereotype(I_DocumentStereotype.LINE_STEREOTYPE);
+
+			// Add the caption of the table
+			table.applyStereotype(tableStereotype);
+			table.setValue(tableStereotype, I_DocumentStereotype.TABLE_CAPTION_ATT, "RequirementsCoverageTable");
+
+			// Iterates for each requirements 
+			for (Iterator<Element> itereq = requirementsModel.getOwnedElements().iterator(); itereq.hasNext();) {
+				Element currentReq = itereq.next();
+				Stereotype reqStereotype = currentReq.getApplicableStereotype(SYS_ML_REQUIREMENTS_REQUIREMENT);
+				if (reqStereotype != null) {
+					nbRequirement++;
+					String reqID = (String) currentReq.getValue(reqStereotype, "id");
+
+					// Generate line of the table
+					Comment lineComment = table.createOwnedComment();
+					lineComment.applyStereotype(lineStereotype);
+					lineComment.setBody("Line for the requirement with " + reqID + " as id");
+
+					// Generate the cell ID of the table
+					Comment commentCellID = lineComment.createOwnedComment();
+					commentCellID.applyStereotype(cellStereotype);
+
+					commentCellID.setBody("Requirement ID");
+
+					// Generate the cellContent for the cell ID of the table
+					Comment commentContentID = commentCellID.createOwnedComment();
+					commentContentID.applyStereotype(refContentStereotype);
+
+					if (currentReq instanceof NamedElement) {
+						commentContentID.setBody(reqID);
+					}
+
+					commentContentID.setValue(refContentStereotype, I_DocumentStereotype.REF_CONTENT_REF_ATT, currentReq);
+
+					// Generate SatisfiedBy cell of the table
+					Comment satisfiedByCell = lineComment.createOwnedComment();
+					satisfiedByCell.applyStereotype(cellStereotype);
+
+					@SuppressWarnings("unchecked")
+					List<NamedElement> cddSatisfiedBy = (List<NamedElement>) currentReq.getValue(reqStereotype, "satisfiedBy");
+
+					/* If the requirement is unsatisfied,
+					 * add it to the unsatisfiedRequirement list (for tracability)
+					 * creates a comment with the cellContentStereotype (to add reference in the documentation)
+					 */
+					if (cddSatisfiedBy.size() == 0) {
+						nbUnsatisfiedRequirement++;
+
+						Comment unsatisfiedReq = unsatisfiedRequirementComment.createOwnedComment();
+						unsatisfiedReq.applyStereotype(refContentStereotype);
+						unsatisfiedReq.setValue(refContentStereotype, I_DocumentStereotype.REF_CONTENT_REF_ATT, currentReq);
+						unsatisfiedReq.setBody((String) currentReq.getValue(reqStereotype, "id"));
+					}
+
+					/* Iterate on satisfied elements of the requirements.
+					 * For each one, create the cellContent.
+					 * Then, add it to the SatisfiedBy cell of the table */
+					for (Iterator<NamedElement> iterSatisified = cddSatisfiedBy.iterator(); iterSatisified.hasNext();) {
+						NamedElement satisfiedElement = iterSatisified.next();
+
+						Comment satisfiedByCellContent = satisfiedByCell.createOwnedComment();
+						satisfiedByCellContent.applyStereotype(refContentStereotype);		
+						satisfiedByCellContent.setValue(refContentStereotype, I_DocumentStereotype.REF_CONTENT_REF_ATT, satisfiedElement);
+
+						satisfiedByCellContent.setBody(satisfiedElement.getName());
+					}
+
+					satisfiedByCell.setBody("Satisfied elements");
+
+					// Generate VerifiedBy cell of the table			
+					Comment verifiedByCell = lineComment.createOwnedComment();
+					verifiedByCell.applyStereotype(cellStereotype);
+
+					@SuppressWarnings("unchecked")
+					List<NamedElement> cddVerifiededBy = (List<NamedElement>) currentReq.getValue(reqStereotype, "verifiedBy");
+
+					/* If the requirement is unverified,
+					 * add it to the unverifiedRequirement list (for tracability)
+					 * creates a comment with the cellContentStereotype (to add reference in the documentation)
+					 */
+					if (cddVerifiededBy.size() == 0) {
+						nbUnverifiedRequirement++;
+
+						Comment unverifiedReq = unverifiedRequirementComment.createOwnedComment();
+						unverifiedReq.applyStereotype(refContentStereotype);
+						unverifiedReq.setValue(refContentStereotype, I_DocumentStereotype.REF_CONTENT_REF_ATT, currentReq);
+						unverifiedReq.setBody((String) currentReq.getValue(reqStereotype, "id"));
+					}
+
+					/* Iterate on verified elements of the requirements.
+					 * For each one, create the cellContent.
+					 * Then, add it to the VerifiedBy cell of the table 
+					 */
+					for (Iterator<NamedElement> iterVerified = cddVerifiededBy.iterator(); iterVerified.hasNext();) {
+						NamedElement verifiedElement = iterVerified.next();
+
+						Comment verifiedByCellContent = verifiedByCell.createOwnedComment();
+						verifiedByCellContent.applyStereotype(refContentStereotype);		
+						verifiedByCellContent.setValue(refContentStereotype, I_DocumentStereotype.REF_CONTENT_REF_ATT, verifiedElement);
+
+						verifiedByCellContent.setBody(verifiedElement.getName()) ;
+					}
+
+					verifiedByCell.setBody("Verified elements");
+				}
+
+				unsatisfiedRequirementComment.setBody("Unsatisfied requirements (" + nbUnsatisfiedRequirement  + " out of " + nbRequirement + ") : ");
+				unverifiedRequirementComment.setBody("Unverified requirements (" + nbUnverifiedRequirement + " out of " + nbRequirement + ") : ");
+			}
+		}
+	}
+
+	/**
+	 * 
+	 * Return the stereotyped model element.
+	 * 
+	 * @param stereotypeName
+	 * @return
+	 */
+	public Model getStereotypedPackage(String stereotypeName) {
+		Model cddModel = null;
+		for (Iterator<PackageableElement> iterator = topModel.getPackagedElements().iterator(); iterator.hasNext();) {
+			PackageableElement packageableElement = iterator.next();
+			if ((packageableElement.getAppliedStereotype(stereotypeName)) != null) {
+				cddModel = (Model) packageableElement;
+			}
+		}
+		return cddModel;
+	}
+
+
 
 	/**
 	 *
@@ -338,19 +556,35 @@ public class CreateDocumentModelCommand extends RecordingCommand {
 	}
 
 	/**
+	 * create the element table of content from the package
+	 * 
+	 * @param documentModelOUT
+	 * @param title
+	 * @return
+	 */
+	protected Package createTableOfContents(Package documentModelOUT, String title) {
+		Package tocPackageOUT = UMLFactory.eINSTANCE.createPackage();
+		documentModelOUT.getPackagedElements().add(tocPackageOUT);
+		Stereotype tocStereotype = tocPackageOUT.getApplicableStereotype(I_DocumentStereotype.TABLEOFCONTENT_STEREOTYPE);
+		tocPackageOUT.applyStereotype(tocStereotype);
+		tocPackageOUT.setName(title);
+		return tocPackageOUT;
+	}
+
+	/**
 	 * create the element section from the package
 	 *
 	 * @param documentModelOUT
-	 * @param sectiontitle
+	 * @param sectionTitle
 	 * @return
 	 */
-	protected Package createSection(Package documentModelOUT, String sectiontitle) {
-		Package SectionPackageOUT = UMLFactory.eINSTANCE.createPackage();
-		documentModelOUT.getPackagedElements().add(SectionPackageOUT);
-		Stereotype sectionStereotype = SectionPackageOUT.getApplicableStereotype(I_DocumentStereotype.SECTION_STEREOTYPE);
-		SectionPackageOUT.applyStereotype(sectionStereotype);
-		SectionPackageOUT.setName(sectiontitle);
-		return SectionPackageOUT;
+	protected Package createSection(Package documentModelOUT, String sectionTitle) {
+		Package sectionPackageOUT = UMLFactory.eINSTANCE.createPackage();
+		documentModelOUT.getPackagedElements().add(sectionPackageOUT);
+		Stereotype sectionStereotype = sectionPackageOUT.getApplicableStereotype(I_DocumentStereotype.SECTION_STEREOTYPE);
+		sectionPackageOUT.applyStereotype(sectionStereotype);
+		sectionPackageOUT.setName(sectionTitle);
+		return sectionPackageOUT;
 	}
 
 	/**

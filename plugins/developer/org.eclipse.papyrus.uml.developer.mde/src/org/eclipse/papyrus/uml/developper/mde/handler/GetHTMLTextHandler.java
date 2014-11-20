@@ -13,6 +13,8 @@
  *****************************************************************************/
 package org.eclipse.papyrus.uml.developper.mde.handler;
 
+import java.util.List;
+
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.resources.IProject;
@@ -24,6 +26,7 @@ import org.eclipse.papyrus.uml.developper.mde.command.CreateDocumentModelCommand
 import org.eclipse.papyrus.uml.developper.mde.transcription.HTMLTranscription;
 import org.eclipse.papyrus.uml.developper.mde.transcription.TranscriptionEngine;
 import org.eclipse.uml2.uml.Model;
+import org.eclipse.uml2.uml.Stereotype;
 
 /**
  * This class is used to create and html developper doc file.
@@ -32,6 +35,7 @@ import org.eclipse.uml2.uml.Model;
 public class GetHTMLTextHandler extends IDMAbstractHandler {
 
 	protected static final String INTERNAL_DIRECTORY_NAME = "/doc"; //$NON-NLS-1$
+	
 
 
 
@@ -39,6 +43,8 @@ public class GetHTMLTextHandler extends IDMAbstractHandler {
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		super.execute(event);
 		System.err.println(getCurrentProject().getLocationURI().getPath());
+		IDMAbstractHandler.elt2DocElt.clear();
+		IDMAbstractHandler.Toc2DocElt.clear();
 		CreateDocumentModelCommand createDocumentModelCommand = new CreateDocumentModelCommand(transactionalEditingDomain, (Model) getSelection(), getCurrentProject().getLocationURI().getPath() + INTERNAL_DIRECTORY_NAME);
 		transactionalEditingDomain.getCommandStack().execute(createDocumentModelCommand);
 		IProject project = getCurrentProject();
@@ -46,7 +52,6 @@ public class GetHTMLTextHandler extends IDMAbstractHandler {
 		engine.traduce();
 		return null;
 	}
-
 
 	private IProject getCurrentProject() {
 		IWorkspace workspace = ResourcesPlugin.getWorkspace();
@@ -63,11 +68,11 @@ public class GetHTMLTextHandler extends IDMAbstractHandler {
 		return project;
 	}
 
-
-
 	@Override
 	public boolean isEnabled() {
 		if (getSelection() instanceof Model) {
+			Model model = (Model) getSelection();
+			List<Stereotype> stereotypes = model.getAppliedStereotypes();
 			if (((Model) getSelection()).getAppliedStereotype(I_DeveloperIDMStereotype.PROJECT_STEREOTYPE) != null) {
 				return true;
 			}

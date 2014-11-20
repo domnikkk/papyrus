@@ -24,6 +24,12 @@ public interface I_DocumentStereotype {
 
 	/** name of property base_Package of the stereotype Section */
 	public static final String SECTION_BASE_PACKAGE_ATT = "base_Package"; //$NON-NLS-1$
+	
+	public static final String TABLE_STEREOTYPE = "Document::Table";
+	
+	public static final String TABLE_BASE_PACKAGE_ATT = "base_Element";
+	
+	public static final String TABLE_CAPTION_ATT = "caption";
 
 	/** Qualified name of the stereotype Document */
 	public static final String DOCUMENT_STEREOTYPE = "Document::Document"; //$NON-NLS-1$
@@ -51,6 +57,20 @@ public interface I_DocumentStereotype {
 
 	/** name of property base_Comment of the stereotype Content */
 	public static final String CONTENT_BASE_COMMENT_ATT = "base_Comment"; //$NON-NLS-1$
+	
+	public static final String LINE_STEREOTYPE = "Document::Line";
+	
+	public static final String LINE_BASE_PACKAGE_ATT = "base_Comment";
+	
+	public static final String CELL_STEREOTYPE = "Document::Cell";
+	
+	public static final String CELL_BASE_PACKAGE_ATT = "base_Comment";
+	
+	public static final String REF_CONTENT_STEREOTYPE = "Document::RefContent";
+	
+	public static final String REF_CONTENT_BASE_PACKAGE_ATT = "base_Comment";
+	
+	public static final String REF_CONTENT_REF_ATT = "ref";
 
 	/** Qualified name of the stereotype TableOfContent */
 	public static final String TABLEOFCONTENT_STEREOTYPE = "Document::TableOfContent"; //$NON-NLS-1$

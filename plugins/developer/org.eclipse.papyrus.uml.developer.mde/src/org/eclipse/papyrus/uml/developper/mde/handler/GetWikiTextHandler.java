@@ -37,6 +37,8 @@ public class GetWikiTextHandler extends IDMAbstractHandler {
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		super.execute(event);
 		System.err.println(getCurrentProject().getLocationURI().getPath());
+		IDMAbstractHandler.elt2DocElt.clear();
+		IDMAbstractHandler.Toc2DocElt.clear();
 		CreateDocumentModelCommand createDocumentModelCommand = new CreateDocumentModelCommand(transactionalEditingDomain, (Model) getSelection(), getCurrentProject().getLocationURI().getPath() + INTERNAL_DIRECTORY_NAME);
 		transactionalEditingDomain.getCommandStack().execute(createDocumentModelCommand);
 		IProject project = getCurrentProject();
