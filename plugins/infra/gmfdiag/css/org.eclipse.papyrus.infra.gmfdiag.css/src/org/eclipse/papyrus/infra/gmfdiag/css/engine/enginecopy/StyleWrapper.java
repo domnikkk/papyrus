@@ -11,6 +11,7 @@ package org.eclipse.papyrus.infra.gmfdiag.css.engine.enginecopy;
 
 import java.util.Comparator;
 
+import org.eclipse.papyrus.infra.gmfdiag.css.engine.ExtendedCSSEngine.CascadeScope;
 import org.w3c.dom.css.CSSStyleDeclaration;
 
 /**
@@ -26,7 +27,12 @@ final class StyleWrapper {
 		@Override
 		public int compare(final StyleWrapper wrapper1, final StyleWrapper wrapper2) {
 			int result = 0;
-			if (wrapper1.specificity > wrapper2.specificity) {
+
+			if (wrapper1.scope.getOrder() > wrapper2.scope.getOrder()) {
+				result = 1;
+			} else if (wrapper1.scope.getOrder() < wrapper2.scope.getOrder()) {
+				result = -1;
+			} else if (wrapper1.specificity > wrapper2.specificity) {
 				result = 1;
 			} else if (wrapper1.specificity < wrapper2.specificity) {
 				result = -1;
@@ -35,6 +41,7 @@ final class StyleWrapper {
 			} else if (wrapper1.position < wrapper2.position) {
 				result = -1;
 			}
+
 			return result;
 		}
 	}
@@ -50,9 +57,12 @@ final class StyleWrapper {
 
 	public final int position;
 
-	public StyleWrapper(CSSStyleDeclaration style, int specificity, int position) {
+	public final CascadeScope scope;
+
+	public StyleWrapper(CSSStyleDeclaration style, int specificity, int position, CascadeScope scope) {
 		this.style = style;
 		this.specificity = specificity;
 		this.position = position;
+		this.scope = scope;
 	}
 }

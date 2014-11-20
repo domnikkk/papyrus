@@ -79,4 +79,14 @@ public class BaseCSSEngine extends ExtendedCSSEngineImpl implements IRefreshHand
 	public CSSElementContext getCSSElementContext(Object node) {
 		throw new UnsupportedOperationException();
 	}
+
+	/**
+	 * @see org.eclipse.papyrus.infra.gmfdiag.css.engine.ExtendedCSSEngineImpl#getCascadeScope()
+	 *
+	 * @return
+	 */
+	@Override
+	public CascadeScope getCascadeScope() {
+		return CascadeScope.USER_AGENT;
+	}
 }

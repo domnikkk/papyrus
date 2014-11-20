@@ -222,4 +222,14 @@ public class ProjectCSSEngine extends ExtendedCSSEngineImpl {
 			}
 		}
 	}
+
+	/**
+	 * @see org.eclipse.papyrus.infra.gmfdiag.css.engine.ExtendedCSSEngineImpl#getCascadeScope()
+	 *
+	 * @return
+	 */
+	@Override
+	public CascadeScope getCascadeScope() {
+		return CascadeScope.AUTHOR;
+	}
 }

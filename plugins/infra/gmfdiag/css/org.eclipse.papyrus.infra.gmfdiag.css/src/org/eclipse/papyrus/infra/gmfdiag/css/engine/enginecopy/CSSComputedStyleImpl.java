@@ -28,7 +28,7 @@ import org.w3c.dom.css.CSSStyleDeclaration;
  * (ex : Label).
  */
 // Copied from org.eclipse.e4.ui.css.core.impl.dom.CSSComputedStyleImpl
-@SuppressWarnings({ "serial", "restriction" })
+@SuppressWarnings({ "restriction" })
 public class CSSComputedStyleImpl extends CSSStyleDeclarationImpl implements CSSStyleDeclaration {
 
 	private List<StyleWrapper> styleRules;
