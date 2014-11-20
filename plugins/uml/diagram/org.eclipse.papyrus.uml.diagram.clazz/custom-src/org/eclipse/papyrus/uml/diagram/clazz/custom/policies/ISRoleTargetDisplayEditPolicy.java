@@ -9,14 +9,13 @@
  *
  * Contributors:
  *  Patrick Tessier (CEA LIST) Patrick.tessier@cea.fr - Initial API and implementation
+ *  Gabriel Pascual (ALL4TEC)  gabriel.pascual@all4tec.net -  bug 382954
  */
 package org.eclipse.papyrus.uml.diagram.clazz.custom.policies;
 
 import java.util.List;
 
-import org.eclipse.gef.ConnectionEditPart;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
-import org.eclipse.uml2.uml.InstanceSpecification;
+import org.eclipse.papyrus.uml.diagram.clazz.custom.parsers.EndMemberKind;
 import org.eclipse.uml2.uml.Property;
 
 /**
@@ -26,12 +25,7 @@ import org.eclipse.uml2.uml.Property;
 public class ISRoleTargetDisplayEditPolicy extends InstanceSpecificationRoleDisplayEditPolicy {
 
 	@Override
-	public InstanceSpecification getEnd() {
-		return (InstanceSpecification) ((GraphicalEditPart) ((ConnectionEditPart) getHost().getParent()).getSource()).resolveSemanticElement();
-	}
-
-	@Override
 	protected Property getprefvalue(List<Property> array) {
-		return array.get(1);
+		return array.get(EndMemberKind.TARGET.getIndex());
 	}
 }

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_rCNpMG_1EeSvZv9bRuRjlg" name="model">
+  <packagedElement xmi:type="uml:Class" xmi:id="_ftLOIG_2EeSvZv9bRuRjlg" name="A">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_bwlnUG_3EeSvZv9bRuRjlg" name="b" type="_q9LiwG_2EeSvZv9bRuRjlg" association="_bwrt8G_3EeSvZv9bRuRjlg">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_bwlnUW_3EeSvZv9bRuRjlg" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_bwlnUm_3EeSvZv9bRuRjlg" value="1"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_q9LiwG_2EeSvZv9bRuRjlg" name="B">
+    <generalization xmi:type="uml:Generalization" xmi:id="_fx3nMHDCEeSAifI4sMbueQ" general="_dXcMIHDCEeSAifI4sMbueQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_SHXqUG_3EeSvZv9bRuRjlg" name="C">
+    <generalization xmi:type="uml:Generalization" xmi:id="_ckkpAG_3EeSvZv9bRuRjlg" general="_q9LiwG_2EeSvZv9bRuRjlg"/>
+    <generalization xmi:type="uml:Generalization" xmi:id="_Kxd14HDKEeSAifI4sMbueQ" general="_gb1KMHDCEeSAifI4sMbueQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_bwrt8G_3EeSvZv9bRuRjlg" memberEnd="_bwrt8W_3EeSvZv9bRuRjlg _bwlnUG_3EeSvZv9bRuRjlg">
+    <name xsi:nil="true"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_bwrt8W_3EeSvZv9bRuRjlg" name="a" type="_ftLOIG_2EeSvZv9bRuRjlg" association="_bwrt8G_3EeSvZv9bRuRjlg">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_bwrt8m_3EeSvZv9bRuRjlg" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_bwrt82_3EeSvZv9bRuRjlg" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_jdWesG_3EeSvZv9bRuRjlg" name="a" classifier="_ftLOIG_2EeSvZv9bRuRjlg"/>
+  <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_IPy2UG_5EeSvZv9bRuRjlg" name="b" classifier="_q9LiwG_2EeSvZv9bRuRjlg"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_dXcMIHDCEeSAifI4sMbueQ" name="E">
+    <generalization xmi:type="uml:Generalization" xmi:id="_hjLMwHDCEeSAifI4sMbueQ" general="_gb1KMHDCEeSAifI4sMbueQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_gb1KMHDCEeSAifI4sMbueQ" name="F">
+    <generalization xmi:type="uml:Generalization" xmi:id="_PTXTwHDKEeSAifI4sMbueQ" general="_OpTDEHDKEeSAifI4sMbueQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_RXSIwHDJEeSAifI4sMbueQ" name="c" classifier="_SHXqUG_3EeSvZv9bRuRjlg"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_OpTDEHDKEeSAifI4sMbueQ" name="Class1">
+    <generalization xmi:type="uml:Generalization" xmi:id="_Pu9qoHDKEeSAifI4sMbueQ" general="_dXcMIHDCEeSAifI4sMbueQ"/>
+  </packagedElement>
+</uml:Model>

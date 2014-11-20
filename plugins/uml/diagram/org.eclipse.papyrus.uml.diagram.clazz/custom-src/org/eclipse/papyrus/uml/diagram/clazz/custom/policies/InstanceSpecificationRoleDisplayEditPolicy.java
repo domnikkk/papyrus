@@ -9,6 +9,7 @@
  *
  * Contributors:
  *  Patrick Tessier (CEA LIST) Patrick.tessier@cea.fr - Initial API and implementation
+ *  Gabriel Pascual (ALL4TEC)  gabriel.pascual@all4tec.net -  bug 382954
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.clazz.custom.policies;
@@ -22,7 +23,7 @@ import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gmf.runtime.diagram.core.listener.DiagramEventBroker;
 import org.eclipse.gmf.runtime.diagram.core.listener.NotificationListener;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
-import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart;
 import org.eclipse.gmf.runtime.gef.ui.internal.editpolicies.GraphicalEditPolicyEx;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.infra.core.listenerservice.IPapyrusListener;
@@ -38,7 +39,10 @@ import org.eclipse.uml2.uml.Property;
 @SuppressWarnings("restriction")
 public abstract class InstanceSpecificationRoleDisplayEditPolicy extends GraphicalEditPolicyEx implements NotificationListener, IPapyrusListener {
 
-	public static String INSTANCE_SPECIFICATION_ROLE_DISPLAY = "INSTANCE_SPECIFICATION_ROLE_DISPLAY";
+	/** The Constant ACTIVATION_ERROR_MESSAGE. */
+	private static final String ACTIVATION_ERROR_MESSAGE = "No semantic element was found during activation of the mask managed label edit policy";
+
+	public static String INSTANCE_SPECIFICATION_ROLE_DISPLAY = "INSTANCE_SPECIFICATION_ROLE_DISPLAY"; //$NON-NLS-1$
 
 	/**
 	 * Stores the semantic element related to the edit policy. If resolveSemanticElement is used, there are problems when the edit part is getting
@@ -100,7 +104,7 @@ public abstract class InstanceSpecificationRoleDisplayEditPolicy extends Graphic
 			}
 			refreshDisplay();
 		} else {
-			Activator.log.error("No semantic element was found during activation of the mask managed label edit policy", null);
+			Activator.log.error(ACTIVATION_ERROR_MESSAGE, null);
 		}
 	}
 
@@ -126,11 +130,13 @@ public abstract class InstanceSpecificationRoleDisplayEditPolicy extends Graphic
 	}
 
 	/**
-	 * return the end of the Instance specification that it listen
+	 * Return the end of the Instance specification that it listen
 	 *
 	 * @return an instancespecification
 	 */
-	public abstract InstanceSpecification getEnd();
+	public InstanceSpecification getEnd() {
+		return (InstanceSpecification) ((IGraphicalEditPart) getHost()).resolveSemanticElement();
+	}
 
 	/**
 	 * It look for the property that has to be listen o norder to refresh the role in the instancespecification Link
@@ -181,7 +187,7 @@ public abstract class InstanceSpecificationRoleDisplayEditPolicy extends Graphic
 	protected void refreshDisplay() {
 		if (hostSemanticElement != null) {
 			if (getInterestingProperty() != null) {
-				((WrappingLabel) getHostFigure()).setText(getInterestingProperty().getName());
+				((ITextAwareEditPart) getHost()).setLabelText(getInterestingProperty().getName());
 			}
 		}
 	}
