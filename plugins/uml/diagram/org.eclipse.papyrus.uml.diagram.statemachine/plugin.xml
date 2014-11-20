@@ -1080,6 +1080,19 @@
 		
 </extension>
 
-
+	<extension point="org.eclipse.ui.preferencePages">
+		<page
+			category="org.eclipse.papyrus.infra.gmfdiag.preferences.diagrams.PapyrusUMLStateMachineDiagram"
+			class="org.eclipse.papyrus.uml.diagram.statemachine.custom.preferences.CustomTransitionPreferencePage"
+			id="org.eclipse.papyrus.uml.diagram.statemachine.custom.preferences.CustomTransitionPreferencePage_ID"
+			name="Transition options">
+      </page>
+	</extension>
+ 
+	<extension point="org.eclipse.core.runtime.preferences">
+		<initializer
+			class="org.eclipse.papyrus.uml.diagram.statemachine.custom.preferences.CustomTransitionPreferenceInitializer">
+		</initializer>
+	</extension>
 
 </plugin>

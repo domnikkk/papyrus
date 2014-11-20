@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Profile xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_o3c88G6kEeSZfPEMQPlFwg" name="Profile" metaclassReference="_V3ePcG6lEeS5SaiahSFsUg" metamodelReference="_o3c88W6kEeSZfPEMQPlFwg">
+  <elementImport xmi:id="_V3ePcG6lEeS5SaiahSFsUg" alias="Classifier">
+    <importedElement xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Classifier"/>
+  </elementImport>
+  <packageImport xmi:id="_o3c88W6kEeSZfPEMQPlFwg">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_METAMODELS/UML.metamodel.uml#_0"/>
+  </packageImport>
+  <packageImport xmi:id="_o3c88m6kEeSZfPEMQPlFwg">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Profile" xmi:id="_REtEAG6lEeS5SaiahSFsUg" name="Profile1">
+    <packagedElement xmi:type="uml:Stereotype" xmi:id="_Xc-0sG6lEeS5SaiahSFsUg" name="Stereotype1">
+      <ownedAttribute xmi:id="_YmrnsG6lEeS5SaiahSFsUg" name="base_Classifier" association="_YmsOwG6lEeS5SaiahSFsUg">
+        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Classifier"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_iEqlEG6lEeS5SaiahSFsUg" name="author" type="_ZmamYG6lEeS5SaiahSFsUg"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Extension" xmi:id="_YmsOwG6lEeS5SaiahSFsUg" name="E_Stereotype1_Classifier1" memberEnd="_YmsOwW6lEeS5SaiahSFsUg _YmrnsG6lEeS5SaiahSFsUg">
+      <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_YmsOwW6lEeS5SaiahSFsUg" name="extension_Stereotype1" type="_Xc-0sG6lEeS5SaiahSFsUg" aggregation="composite" association="_YmsOwG6lEeS5SaiahSFsUg"/>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Profile" xmi:id="_RxwXQG6lEeS5SaiahSFsUg" name="Profile2">
+    <packagedElement xmi:type="uml:DataType" xmi:id="_ZmamYG6lEeS5SaiahSFsUg" name="Name">
+      <ownedAttribute xmi:id="_ao6lMG6lEeS5SaiahSFsUg" name="first">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_dWV0wG6lEeS5SaiahSFsUg" name="last">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+    </packagedElement>
+  </packagedElement>
+</uml:Profile>

@@ -135,4 +135,14 @@ public class DiagramCSSEngine extends ExtendedCSSEngineImpl implements IChangeLi
 		return super.getElement(canonicalNotationElement);
 	}
 
+	/**
+	 * @see org.eclipse.papyrus.infra.gmfdiag.css.engine.ExtendedCSSEngineImpl#getCascadeScope()
+	 *
+	 * @return
+	 */
+	@Override
+	public CascadeScope getCascadeScope() {
+		return CascadeScope.AUTHOR;
+	}
+
 }

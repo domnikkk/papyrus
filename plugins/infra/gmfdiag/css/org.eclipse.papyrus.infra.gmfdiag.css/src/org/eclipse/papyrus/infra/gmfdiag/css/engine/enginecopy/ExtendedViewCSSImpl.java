@@ -20,6 +20,7 @@ import org.eclipse.e4.ui.css.core.dom.ExtendedCSSRule;
 import org.eclipse.e4.ui.css.core.impl.dom.ViewCSSImpl;
 import org.eclipse.e4.ui.css.core.impl.sac.ExtendedSelector;
 import org.eclipse.papyrus.infra.gmfdiag.css.engine.ExtendedCSSEngine;
+import org.eclipse.papyrus.infra.gmfdiag.css.engine.ExtendedCSSEngine.CascadeScope;
 import org.eclipse.papyrus.infra.gmfdiag.css.lists.ExtendedStyleSheetList;
 import org.w3c.css.sac.Selector;
 import org.w3c.css.sac.SelectorList;
@@ -81,7 +82,7 @@ public class ExtendedViewCSSImpl implements ViewCSS {
 		CSSStyleDeclaration style;
 		try {
 			style = engine.parseStyleDeclaration(localStyles);
-			StyleWrapper wrapper = new StyleWrapper(style, Integer.MAX_VALUE, 0);
+			StyleWrapper wrapper = new StyleWrapper(style, Integer.MAX_VALUE, 0, CascadeScope.AUTHOR);
 			return wrapper;
 		} catch (IOException ex) {
 			engine.handleExceptions(ex);
@@ -114,7 +115,7 @@ public class ExtendedViewCSSImpl implements ViewCSS {
 							if (extendedSelector.match(elt, pseudoElt)) {
 								CSSStyleDeclaration style = styleRule.getStyle();
 								int specificity = extendedSelector.getSpecificity();
-								StyleWrapper wrapper = new StyleWrapper(style, specificity, position++);
+								StyleWrapper wrapper = new StyleWrapper(style, specificity, position++, engine.getCascadeScope(styleSheet));
 								styleDeclarations.add(wrapper);
 							}
 						} else {

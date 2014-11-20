@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Profile xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_VYM7sG60EeS2Prjkx98SQA" name="Profile" metaclassReference="_c8l6MG60EeS2Prjkx98SQA" metamodelReference="_VYM7sW60EeS2Prjkx98SQA">
+  <elementImport xmi:type="uml:ElementImport" xmi:id="_c8l6MG60EeS2Prjkx98SQA" alias="Classifier">
+    <importedElement xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Classifier"/>
+  </elementImport>
+  <packageImport xmi:type="uml:PackageImport" xmi:id="_VYM7sW60EeS2Prjkx98SQA">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_METAMODELS/UML.metamodel.uml#_0"/>
+  </packageImport>
+  <packageImport xmi:type="uml:PackageImport" xmi:id="_VYM7sm60EeS2Prjkx98SQA">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="_X18JcG60EeS2Prjkx98SQA" name="Stereotype1">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_deHS4G60EeS2Prjkx98SQA" name="base_Classifier" association="_deH58G60EeS2Prjkx98SQA">
+      <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Classifier"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="_ZH_AIG60EeS2Prjkx98SQA" name="Stereotype2">
+    <generalization xmi:type="uml:Generalization" xmi:id="_aq16AG60EeS2Prjkx98SQA" general="_X18JcG60EeS2Prjkx98SQA"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_fMFQkG60EeS2Prjkx98SQA" name="author" type="_irfWsG60EeS2Prjkx98SQA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Extension" xmi:id="_deH58G60EeS2Prjkx98SQA" name="E_Stereotype1_Classifier1" memberEnd="_deH58W60EeS2Prjkx98SQA _deHS4G60EeS2Prjkx98SQA">
+    <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_deH58W60EeS2Prjkx98SQA" name="extension_Stereotype1" type="_X18JcG60EeS2Prjkx98SQA" aggregation="composite" association="_deH58G60EeS2Prjkx98SQA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:DataType" xmi:id="_irfWsG60EeS2Prjkx98SQA" name="Name">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_j4pGUG60EeS2Prjkx98SQA" name="last">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_nZTwsG60EeS2Prjkx98SQA" name="first">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+  </packagedElement>
+</uml:Profile>

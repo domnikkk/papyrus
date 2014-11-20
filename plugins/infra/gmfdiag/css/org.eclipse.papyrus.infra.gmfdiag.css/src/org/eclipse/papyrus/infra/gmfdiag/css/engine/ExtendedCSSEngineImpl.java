@@ -398,4 +398,35 @@ public abstract class ExtendedCSSEngineImpl extends AbstractCSSEngine implements
 	public void reapply() {
 		resetCache();
 	}
+
+	/**
+	 * @see org.eclipse.papyrus.infra.gmfdiag.css.engine.ExtendedCSSEngine#getCascadeScope(org.w3c.dom.stylesheets.StyleSheet)
+	 *
+	 * @param stylesheet
+	 * @return
+	 */
+	@Override
+	public CascadeScope getCascadeScope(org.w3c.dom.stylesheets.StyleSheet stylesheet) {
+		if (contains(getDocumentCSS().getStyleSheets(), stylesheet)) {
+			return getCascadeScope();
+		}
+
+		if (parent != null) {
+			return parent.getCascadeScope(stylesheet);
+		}
+
+		return CascadeScope.USER_AGENT;
+	}
+
+	private static boolean contains(StyleSheetList collection, org.w3c.dom.stylesheets.StyleSheet value) {
+		for (int i = 0; i < collection.getLength(); i++) {
+			org.w3c.dom.stylesheets.StyleSheet item = collection.item(i);
+			if (item == value) {
+				return true;
+			}
+		}
+
+		return false;
+	}
+
 }

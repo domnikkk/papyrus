@@ -47,7 +47,7 @@ public abstract class AbstractPinEditPart extends BorderedBorderItemEditPart {
 	}
 
 	/**
-	 * undraw the pin arrow
+	 * Undraw the pin arrow
 	 *
 	 * @param connection
 	 *            <code>ConnectionEditPart</code> being added as child.
@@ -61,12 +61,24 @@ public abstract class AbstractPinEditPart extends BorderedBorderItemEditPart {
 	}
 
 	/**
+	 * Draw the pin arrow
+	 *
+	 */
+	private void drawPinArrow() {
+		PinFigure pinFigure = getPrimaryShape();
+		AbstractPointListShape arrow = pinFigure.getOptionalArrowFigure();
+		int side = getBorderItemLocator().getCurrentSideOfParent();
+		int direction = ActivityFigureDrawer.getOppositeDirection(side);
+		ActivityFigureDrawer.redrawPinArrow(arrow, getMapMode(), getSize(), direction);
+	}
+
+	/**
 	 * redraw the pin arrow if current connection doesnt set
 	 *
 	 * @param connection
 	 *            <code>ConnectionEditPart</code> being added as child.
 	 */
-	private void redrawPinArrow(List connections) {
+	private void redrawPinArrow(List<?> connections) {
 		this.redrawPinArrow(null, connections);
 	}
 
@@ -76,21 +88,32 @@ public abstract class AbstractPinEditPart extends BorderedBorderItemEditPart {
 	 * @param connection
 	 *            <code>ConnectionEditPart</code> being added as child.
 	 */
-	private void redrawPinArrow(ConnectionEditPart connection, List connections) {
-		boolean hasActivityEdge = false;
-		for (Object connect : connections) {
-			if (!connection.equals(connect) && isConnectionSupported((ConnectionEditPart) connect)) {
-				hasActivityEdge = true;
-				break;
+	private void redrawPinArrow(ConnectionEditPart connection, List<?> connections) {
+		if (isHasActiveEdge(connection, connections)) {
+			undrawPinArrow(connection);
+			return;
+		}
+		drawPinArrow();
+	}
+
+	private boolean isHasActiveEdge(ConnectionEditPart connection, List<?> connections) {
+		if (connection == null && (connections == null || connections.isEmpty())) {
+			return false;
+		}
+		if (connection == null) {
+			for (Object next : connections) {
+				if (isConnectionSupported((ConnectionEditPart) next)) {
+					return true;
+				}
+			}
+			return false;
+		}
+		for (Object next : connections) {
+			if (!connection.equals(next) && isConnectionSupported((ConnectionEditPart) next)) {
+				return true;
 			}
 		}
-		if (!hasActivityEdge) {
-			PinFigure pinFigure = getPrimaryShape();
-			AbstractPointListShape arrow = pinFigure.getOptionalArrowFigure();
-			int side = getBorderItemLocator().getCurrentSideOfParent();
-			int direction = ActivityFigureDrawer.getOppositeDirection(side);
-			ActivityFigureDrawer.redrawPinArrow(arrow, getMapMode(), getSize(), direction);
-		}
+		return false;
 	}
 
 	/**
@@ -141,7 +164,6 @@ public abstract class AbstractPinEditPart extends BorderedBorderItemEditPart {
 	public void activate() {
 		super.activate();
 		// redraw the pin arrow if no connection
-		redrawPinArrow(getTargetConnections());
-		redrawPinArrow(getSourceConnections());
+		redrawPinArrow(getTargetConnections().isEmpty() ? getSourceConnections() : getTargetConnections());
 	}
 }

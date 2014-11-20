@@ -24,7 +24,6 @@ import java.util.Map;
 
 import org.eclipse.core.commands.operations.AbstractOperation;
 import org.eclipse.emf.common.command.AbstractCommand;
-import org.eclipse.emf.facet.common.ui.internal.views.AbstractTreeView;
 import org.eclipse.gmf.runtime.emf.type.core.requests.IEditCommandRequest;
 import org.eclipse.jface.action.Action;
 import org.eclipse.jface.action.IToolBarManager;
@@ -33,6 +32,7 @@ import org.eclipse.jface.viewers.IContentProvider;
 import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.papyrus.dev.view.services.edit.request.messages.Messages;
+import org.eclipse.papyrus.emf.facet.common.ui.internal.views.AbstractTreeView;
 
 public class RequestView extends AbstractTreeView {
 

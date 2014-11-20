@@ -16,6 +16,7 @@ import org.eclipse.papyrus.infra.gmfdiag.css.listener.StyleSheetChangeListener;
 import org.eclipse.papyrus.infra.gmfdiag.css.lists.ExtendedStyleSheetList;
 import org.w3c.dom.Element;
 import org.w3c.dom.css.CSSValue;
+import org.w3c.dom.stylesheets.StyleSheet;
 
 /**
  * An extended, lazy version of a CSSEngine
@@ -87,4 +88,40 @@ public interface ExtendedCSSEngine extends LazyCSSEngine, CSSEngine {
 	 */
 	@Override
 	public Element getElement(Object node);
+
+
+	/**
+	 * Returns the scope of this Stylesheet Engine
+	 *
+	 * @see {@link http://www.w3.org/TR/CSS2/cascade.html#cascading-order}
+	 *
+	 * @return
+	 */
+	public CascadeScope getCascadeScope();
+
+	/**
+	 * Returns the {@link CascadeScope} associated to the given stylesheet
+	 *
+	 * @param stylesheet
+	 * @return
+	 */
+	public CascadeScope getCascadeScope(StyleSheet stylesheet);
+
+	public enum CascadeScope {
+		USER_AGENT(0),
+		USER(1),
+		AUTHOR(2);
+
+		private int order;
+
+		private CascadeScope(int order) {
+			this.order = order;
+		}
+
+		public int getOrder() {
+			return order;
+		}
+
+	}
+
 }
