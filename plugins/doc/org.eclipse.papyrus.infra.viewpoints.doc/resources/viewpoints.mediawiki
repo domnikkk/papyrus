@@ -11,137 +11,107 @@
 
 =Viewpoints in Papyrus=
 
+
 ==Introduction==
-Viewpoints in Papyrus enables the specialization of the user experiences by constraining what can be seen and interacted with in models through views.
-The most obvious ways to look at and interact with a model is through diagrams; and viewpoints enables the specification of constraints upon them as well as their specialization.
-Papyrus also define additional views, including textual ones.
+Viewpoints in Papyrus enable the specialization and customization of the user experience by constraining what can be seen and interacted with in Papyrus diagrams and tables. Viewpoints can be used for the following purposes in Papyrus:
+* Constrain the set  of diagrams and tables that are available to a particular class of users
+* Define new kinds of diagrams with custom names, icons, figures and palette in order to implement domain-specific views in Papyrus, based on the classical UML and SysML diagrams.
 
 
+==Configuration Options for Viewpoints==
 
+At any given time, there can only be one viewpoint that is currently applied to an Eclipse instance. Users are free to select any viewpoint that is provided to them. Papyrus itself comes with a default viewpoint that is automatically selected when to other viewpoint is specified.
 
-==Impacts of Viewpoints in the Papyrus Interface==
-The enforcement of a particular viewpoint will have noticeable consequences on the user interface of Papyrus, i.e. what a user will be able to see and do.
-Viewpoints also have impacts on the edition experience of the model themselves.
-
-===Contextual Menus===
-The definition a viewpoints specify which views and diagrams can be applied to specified model elements.
-A consequence is that the Papyrus tool bar as well as the contextual menus are aware of the currently enforced viewpoint and only make available actions that are in conformance with the viewpoint.
-For example, in the two captures hereafter the content of the same menu for the creation of a new diagram  depends on the enforced viewpoint.
-{|
-| [[image:captures/menu_normal.png]]
-| [[image:captures/menu_filtered.png]]
-|}
-
-===Toolbar Elements===
-The toolbar elements for the creation of new diagrams are also adapted in the same way as the contextual menus to reflect the currently enforced viewpoint.
-The elements that appeat in the contextual menus should also appear in the toolbar.
-
-===Diagram Properties===
-Papyrus views and diagrams have a set of properties related to the management of viewpoints.
-They are visible in the '''Properties''' view of the diagrams.
-
-[[image:captures/properties.png]]
-
-In the image above the selected diagram have two properties related to the management of viewpoints:
-* '''View Type''': This property shows the diagram's type as defined in the viewpoints' configuration. In the example above, it is a ''UML Activity Diagram'', part of the ''Default Papyrus Viewpoint'' configuration.
-* '''Owner''': This property shows the current owner of the diagram, i.e. the model element which the diagram is attached to. In the example above, the diagram is within the ''Diagrams'' package, meaning this package owns the diagram.
-* '''Root element''': This property shows the model element that is visualized through the diagram. In the example above, the top element visualized in the selected diagram is the UML activity named ''Activity1''. It is possible to retarget a diagram, i.e. change its root element. The user will be prompted to select a model element that fits the constraints that apply for this type of diagram.
-
-
-
-
-==Changing the Applied Viewpoint==
-The Papyrus viewpoints can be configured in a preference panel accessible along the other Papyrus preferences under the name '''Viewpoints Configuration'''.
-The panel looks like the following:
+All the viewpoints-related configuration options available to the users are provided in the ''Papyrus > Viewpoints Configuration'' preference page of Eclipse:
 
 [[image:captures/preferences.png]]
 
-===Configuration Kinds===
-The first preference element is the selection of the kind of configuration to apply to the user's environment.
-In the above capture, the radio buttons are used to determine which kind of configuration to use.
-Papyrus comes with two built-in configurations.
-It is nevertheless possible to define new configurations and viewpoints, and select them in this position.
+The first available option is the ''Configuration selection''. It determines how the current viewpoint is selected. The possible options are:
 
-====Built-in Configurations====
-The built-in configurations are provided for convenience and have the following properties:
-* ''Any number of diagrams per model element'' is a configuration with a viewpoint that allow any kind of view and diagram and does not restrain the number of diagrams that can be created for each model element.
-* ''At most one diagram per model element'' is a configuration with a viewpoint that allow any kind of view and diagram but limit the number of diagrams that can be created for each model element at one.
+* '''Default (Papyrus built-in configuration)'''. This option forces the selection of the default viewpoint provided by Papyrus. This default viewpoint exposes all the UML and SysML diagrams and tables implemented in Papyrus and does not restrict their use.
+* '''Deployed through the extension point'''. This option allows Papyrus to choose the viewpoint with the highest priority provided through the appropriate extension point. This option is typically chosen when 3rd party viewpoints are provided through the extension point. In this way they are automatically applied. When no custom viewpoint is provide through the extension point the default Papyrus viewpoint is applied instead.
+* '''Manual configuration selection'''. This option allows the user to force the application of a specific viewpoint that is manually selected. When this option is chosen the second part of the preference page becomes available. The appropriate configuration file containing the viewpoint can be selected through 3 possible schemes:
+** '''Absolute path''': The absolute path a file in the local file system.
+** '''Workspace file''': The selection of a file in the current Eclipse workspace
+** '''Embedded in a plugin''': The selection of a file contained within a plugin that has been loaded by the current Eclipse instance.
 
-====Extension Point-Defined Configuration====
-It is possible to deploy custom viewpoints configuration through an Eclipse plugin and its contribution to an extension point.
-The identifier of the extension point to use is ''org.eclipse.papyrus.infra.viewpoints.policy.custom'' and is defined in the ''org.eclipse.papyrus.infra.viewpoints.policy'' plugin.
-Each extension can contribute a viewpoints configuration and give it a priority (0 is lowest).
-The setting of the contributed configuration is achieved by giving the path to the configuration file.
-The path can be relative to the contributing plugin's root, or be an absolute URI in the form of ''platform:/plugin/<pluginID>/<path>''.
-If no contribution is made and this option is selected, the builtin configuration named ''Any number of diagrams per model element'' will be used as a fallback.
+In the case where multiple viewpoints are available through the current configuration options as explained above the specific viewpoint to be applied can be chosen through the two drop-down lists:
 
-====Custom Configuration====
-To select a custom configuration, choose the ''Custom'' option.
-This will activate the corresponding preferences fields:
-* ''Access scheme'' lets the user select how the custom configuration should be looked for. The possible options are:
-** ''Absolute path'' means that the configuration will be looked for on the host's file system.
-** ''Workspace file'' means that the configuration file will be looked for as a resource in the workspace.
-** ''Embedded in a plugin'' means that the configuration file will be looked for as a resource in a loaded Eclipse plugin.
+* '''Stakeholder'''. The class of user that is associated to a list of possible viewpoints.
+* '''Viewpoint'''. The viewpoint will be applied. The list is populated based on the Stakeholder field.
 
-* ''Path'' lets the user select the configuration file based on the selected scheme:
-** Using the scheme ''Absolute path'' the file is selected using a simple file selection dialog.
-** Using the scheme ''Workspace file'' the file is selected using a workspace resource selection dialog.
-** Using the scheme ''Embedded in a plugin'' the file is selected using a plugin content selection dialog.
+In addition, the checkbox '''Multiplicity''' can be activated so that at most one diagram or table of the each kind defined in the applied viewpoint can be created for each model element. For example, at most one class diagram per package, etc.
 
-===Stakeholder and Viewpoint Selection===
-Once a configuration is selected, the use can select one of the viewpoint defined within it.
-This is achieved through the two dropdown boxes:
-* ''Stakeholder'' is used to select the user's archetype
-* ''Viewpoint'' is used to select the viewpoint
+It is possible at any time to see the details of the diagrams and tables offered by the currently used viewpoint in the ''Viewpoint Explorer'' view in Eclipse. This view is available in ''Window > Show View > Other'', and then selecting ''Papyrus > Viewpoint Explorer''.
+
+[[image:captures/explorer.png]]
+
+This view summarizes the currently available diagrams and tables, as well as the conditions for their availability.
 
 
+==Viewpoints-Related UI Elements==
+
+The application of a viewpoint has some impacts on the following UI elements in Papyrus:
+* The diagram selection window in the '''New Model''' wizard is populated with only the diagrams and tables that are available in the current viewpoint.
+* The '''New Diagram''' and '''New Table''' contextual menus for the model elements provides only the diagrams and tables that are available in the current viewpoint and are applicable to the currently selected model element. For example, when a UML Activity is selected, the '''New Diagram''' context menu will not offer to create a Package diagram, or a class diagram.
+* The same holds for the toolbar elements for the creation of diagrams and tables.
+* The diagrams properties show the following information:
+
+[[image:captures/properties.png]]
+
+* '''View Type''' is the qualified name of the diagram’s type. It gives an indication of which viewpoint is providing it.
+* The '''Owner''' attribute is the model element that syntactically contains the diagram in the model explorer. It can be different from the root element.
+* The '''Root''' element attribute is the model element that is the diagram’s root semantic element.
 
 
-==Defining New Viewpoints==
-Papyrus supports the definition of new viewpoints that can subsequently used by selecting them in the Papyrus Viewpoints preferences panel.
-A configuration file is simply an Ecore model that can be edited with the provided Viewpoints configuration editor in Papyrus.
+==Definition of New Viewpoints==
 
-===Available Concepts===
-This subsection summarizes the different concepts that are leveraged for the definition of viewpoints in Papyrus.
-It is important to note that these concepts rely on and extend the ISO 42010 standard for viewpoints.
+Papyrus supports the definition of new viewpoints that can subsequently be used by selecting them in the Papyrus Viewpoints preference panel, as presented above. Papyrus viewpoints are defined in configuration files with the ‘.configuration’ extension. They are really just an ECore model that can be edited with the specialized viewpoint configuration editor provided by Papyrus.
 
-* A ''configuration'' is a specification of a set of ''viewpoints'' and ''stakeholders''. A ''configuration'' is typically stored in a .configuration file and has to be selected in the preference window (Window/Preferences/Papyrus/Viewpoints Configuration).
-* The concept of ''stakeholder'' (see ISO 42010) in Papyrus represents a user archetype that pertains in the construction and/or review of a model. A ''stakeholder'' is associated to a set of ''viewpoints'' defining how he/she can see a model.
-* The concept of ''viewpoint'' (see ISO 42010) in Papyrus represents a set of constrains about what can be seen in a model. A Papyrus ''viewpoint'' mainly defines what are the accessible ''diagrams'' and the particular constraints to be applied on each of them.
-* A Papyrus ''diagram'' is a specialized view on a model in the form of a visual language. It is supported by an implementation artifact, i.e. the actual code that implements the diagram. Moreover, it can be constrained using ''rules''.
-* A ''model rule'' specifies if a model element can be represented through a ''diagram'', i.e. whether it can be selected as the root element of a ''diagram''.
-* An ''owning rule'' specifies whether a model element is allowed to own a ''diagram''.
-* ''Child rules'' specify whether a given model element can be added to the model through a ''diagram''.
-* ''Palette rules'' specify the palette elements that are visible for a ''diagram''.
+===Basic Concepts===
 
-===Building a Configuration===
-The first step is to create the configuration file.
-Papyrus comes with a wizard for this purpose:
-* In the contextual menu of a project, or in the Eclipse '''File'' menu, select '''New''', '''Other ...'''.
-* The wizard is called '''Viewpoints configuration''' and is located in the '''Papyrus''' category.
+Viewpoints in Papyrus are implemented as an extension to the ISO 42010 standard for architecture description framework. Hence many concepts presented here are derived from those presented in the ISO 42010 standard. However, the standard has been extended with Papyrus-specific concepts and properties.
+* A ''configuration'' is a top element of a configuration file. It contains can contains ''viewpoints'' specifications, ''stakeholders'', as well as ''view categories''.
+* A ''stakeholder'' (from ISO 42010) represents in Papyrus an archetype of users. They can be attributed ''viewpoints'', thus defining what users of this kind can see.
+* A ''viewpoint'' (from ISO 42010) in Papyrus is simply set of ''views'', which can be ''diagrams'' or ''tables''.
+* A ''diagram'' in this context does not represent a single instance (for example the diagram named X in model Y), but the specification (or prototype) of future diagrams of this kind. For example the ''UML Class Diagram''.
+* A ''table'' is another kind of view in Papyrus that enables the presentation of models in a tabular format.
 
-====Configuration element====
-Once the configuration file is created, it should be automatically opened with the Papyrus viewpoints configuration editor.
-The top element is the ''configuration''.
-It has two properties:
-* ''Default Stakeholder'', which should be used to select the default stakeholder for this configuration (once one has been created).
-* ''Metamodel'', which should be used to select the metamodel on which the viewpoint will apply. The property field proposes a list of the loaded metamodels identified by their URI. Usually, the UML metamodel (http://www.eclipse.org/uml2/4.0.0/UML/) should be used.
+===Walkthrough===
 
-====Stakeholders and Viewpoints====
-It is then possible to add new ''Viewpoints'' and ''Stakeholders'' to the configuration by the conxtual menu '''New Child''' on the configuration element.
-A ''stakeholder'' has two properties, ''name''' and ''viewpoints''. The ''viewpoints'' properties must be filled with references to the appropriate viewpoints for the ''stakeholder''.
-A ''viewpoint'' also has two properties, ''name'' and ''parent''. The ''parent'' property is used to specify that a ''viewpoint'' inherits from another one.
+The definition of a new viewpoint in Papyrus starts with the creation of a new configuration file: ''Viewpoint s configuration'' in the Papyrus folder of the Eclipse new element creation dialog. The top element of the file should be a ''Papyrus Configuration'' element.
 
-====Diagram element====
-Once a viewpoint has been created, it is possible to add to it ''diagrams'' using the '''New Child''' contextual menu.
-A ''diagram'' will define a specialized view on a model, based on the implementation in Papyrus.
-For this purpose, the ''diagram'' elements have the following properties:
-* ''name'', which specifies a descriptor for the diagram
-* ''parent'', which enables the declaration of an inheritance relationship with another diagram
-* ''implementation ID'', which is the unique identifier of the software component in papyrus that will effectively implements the diagram
-* ''profiles'', which is the set of profiles that need to be applied for this diagram. The profiles can be selected through their metamodel identified by their URI. This implies that the profiles must be loaded at this point.
+<u>Step 1</u>: Select the metamodel that is applicable to this configuration. Generally, this should be UML. The metamodel is selected as the ''metamodel'' property of the ''Papyrus Configuration'' root element. The drop-down value selection is automatically filled with the currently metamodel currently loaded in Eclipse. For UML select, "http://www.eclipse.org/uml2/5.0.0/UML".
 
-The list of recognized implementation IDs is as follow:
+<u>Step 2</u>: Add the basic elements. The setting of the elements below is required for the configuration to work correctly.
+* Right click on the ''Papyrus Configuration'' root element to a new ''Stakeholder'' child.
+* Give it an appropriate name
+* Right click on the ''Papyrus Configuration'' root element to a new ''Viewpoint'' child.
+* Give it an appropriate name
+* In the properties of the new stakeholder, add the new viewpoint to the ''viewpoints'' property to specify that this stakeholder will have to the specified viewpoint.
+* In the properties of the ''Papyrus Configuration'' root element, select the new stakeholder in the ''Default Stakeholder'' property.
+Notes:
+* Stakeholder attributes other than ''viewpoints'' and ''name'' are inherited from the ISO 42010 implementation and are currently not used in Papyrus.
+* Viewpoint attributes other than ''parent'' and ''name'' are inherited from the ISO 42010 implementation and are currently not used in Papyrus.
+
+<u>Step 3</u>: Complete the viewpoint with new diagrams and tables. Those elements can be added by right clicking on the viewpoint element, in the ''New child'' menu. Refer to the sections below for more information on the specification of diagrams and tables.
+
+<u>Step 4</u>: Deploy the configuration. The new configuration file can be deployed in an Eclipse plugin and registered through an extension point. The extension point to use is <code>org.eclipse.papyrus.infra.viewpoints.policy.custom</code>. It comes in two flavors that are the possible child elements for it:
+* The ''configuration'' element lets you register a configuration file and give it a priority. The configuration file is selected with the ''file'' property. Giving an URI of the form <code>platform:/plugin/my.plugin.name/path/myconfig.configuration</code> is a good practice. The ''priority'' is a value between 0 and 100, 100 is the highest priority. This value will be used to select the configuration with the highest priority when the user selects the ''Deployed through the extension point'' option in the configuration page as explained above. In this mode, the deployed configuration replaces the default Papyrus configuration and its viewpoint. This means that unless the provided viewpoint extends the default one or replicate it, the UML and SysML diagrams and tables will not be available.
+* The ''contribution'' elements lets you specifies a configuration file as an extension of another one. The custom configuration file is selected with the ''file'' property. The ''original'' property is used to select the configuration file that is extended. To extend the default Papyrus configuration, this value must be <code>platform:/plugin/org.eclipse.papyrus.infra.viewpoints.policy/builtin/default.configuration</code>. In this mode the custom viewpoints must have the same name as the extended on in the original configuration file. In essence, the diagrams and tables defined in the new custom viewpoint will be available along the one in the original viewpoints, instead of replacing them. This mode is used by RobotML to add the RobotML diagrams to the default Papyrus viewpoint.
+
+===Diagram Specification===
+
+A diagram has the following attributes:
+* A ''name'' (required) that is the user-visible name of the diagram. It will appear in the creation menus and property panel.
+* An ''icon'' (required), as an URI of the form <code>platform:/plugin/...</code>.
+* An ''implementation ID'' (required) which selects the physical (hard-coded) diagram in Papyrus that will be used as a base. The possible values for this property are summarized in the following table.
+* An optional ''parent'' that specifies a parent viewpoint-defined diagram to inherit from. Essentially, the inheriting diagram will defer to its parent’s rules (see below) when its own are not sufficient to take a decision.
+* An optional list of ''profiles'' that must be applied on the model for this diagram to be available. The possible values are automatically populated from the loaded EPackages.
+* An optional ''custom style'' as an URI of the form <code>platform:/plugin/...</code>. It must point to a CSS file that will then be automatically applied to the diagram.
+* An optional ''custom palette'' as an URI of the form <code>platform:/plugin/...</code>. It must point a palette definition in XML that will be automatically applied to the diagram.
+* Other attributes are inherited from the ISO 42010 implementation and are currently not used in Papyrus.
+
 {| border="solid 1px grey"
 ! Implementation ID
 ! Description
@@ -195,46 +165,34 @@ The list of recognized implementation IDs is as follow:
 | SysML Requirements Diagram
 |}
 
-Once a diagram has been created it is possible to constraint it using rules.
-There are four kinds of rules:
-* ''Model rules'' constrain the type of the (root) model elements that can be visualized through this view.
-* ''Owning rules'' constrain the type of the model elements that can own the diagram itself.
-* ''Child rules'' constrain the type of the model elements that can be dropped within this diagram.
-* ''Palette rules'' constrain the display of the diagram's palette elements.
-Each rule has a ''permit'' property that specify whether the rule authorizes or forbids the action it represents.
-Otherwise, the properties of the rules are as follow:
+Once a diagram has been created it is possible to constraint it using rules. There are four kinds of rules:
+* Model rules constrain the type of the (root) model elements that can be visualized through this view. Hence model rules control what model elements can be selected for the ''Root element'' property of the diagrams, as shown in the capture below.
+* Owning rules constrain the type of the model elements that can own the diagram itself. In practice this materializes as the type of model elements under which the diagrams can appear in the model explorer. Owning rules control what model elements can be selected for the ''Owner'' property of the diagrams, as shown in the capture below.
+* Child rules constrain the type of the model elements that can be dropped within this diagram.
+* Palette rules constrain the display of the diagram's palette elements.
+
+[[image:captures/properties.png]]
+
+Each rule has a ''permit'' property that specify whether the rule authorizes or forbids the action it represents. Otherwise, the properties of the rules are as follow:
 * ''Model rules''
-** ''element'' represents the type of the model elements to apply the rule on.
-** ''multiplicity'' represents the maximum number of this kind of diagram that can be created for the referenced model element. -1 represents an unbounded number.
+** ''element'' (required) represents the type of the model elements to apply the rule on.
+** ''multiplicity'' (required, default is -1) represents the maximum number of this kind of diagram that can be created for the referenced model element. -1 represents an unbounded number.
 ** ''stereotypes'' represents the set of stereotypes that must be applied in the model element for the rule to match. The stereotypes can be picked from the classifiers of the ''profiles'' defined in the parent diagram.
 * ''Owning rules''
-** ''element'' represents the type of the model elements to apply the rule on.
-** ''multiplicity'' represents the maximum number of this kind of diagram that can be created for the referenced model element. -1 represents an unbounded number.
+** ''element'' (required) represents the type of the model elements to apply the rule on.
+** ''multiplicity'' (required, default is -1) represents the maximum number of this kind of diagram that can be created for the referenced model element. -1 represents an unbounded number.
 ** ''stereotypes'' represents the set of stereotypes that must be applied in the model element for the rule to match. The stereotypes can be picked from the classifiers of the ''profiles'' defined in the parent diagram.
 * ''Child rules''
-** ''element'' represents the type of the model elements begin dropped.
+** ''element'' (required) represents the type of the model elements begin dropped.
 ** ''stereotypes'' represents the set of stereotypes that must be applied in the model element for the rule to match. The stereotypes can be picked from the classifiers of the ''profiles'' defined in the parent diagram.
-** ''origin'' represents the type of the model elements that are the target of the drop. It is usually one of the type defined in the ''model rules''.
+** ''origin'' (required) represents the type of the model elements that are the target of the drop. It is usually one of the type defined in the ''model rules''.
 ** Additionally, ''child rules'' can be completed with children called ''path elements'' using the '''New Child''' contextual menu. ''Path elements'' defines a path of properties that must be used from the ''origin'' to insert the new ''element'' in the model.
 * ''Palette rules''
-** ''element'' represents a pattern to match for the identifier of a palette element.
+** ''element'' (required) represents a pattern to match for the identifier of a palette element.
+*** If the value ends with '*', it will match any palette element with the prefix specified before the '*'.
+*** If the value is '*', it will match any palette element.
 
-As an example, it is possible to define a diagram of the inner classes of classes as follow:
-
-[[image:captures/config_sample.png]]
-
-In this example, the sole ''model rule'' defines that this kind of diagram can only be applied on '''Class'''.
-The ''owning rules'' define that the diagrams can be owned only by '''Class''' and '''Package''' elements.
-Then two ''child rules'' are used to define that it is only possible to add new '''Classifier''' and '''Comment''' elements thorugh this diagram.
-The first ''child rule'' specifies that the '''Classifier''' elements should be added to the model with the '''nestedClassifier''' property of the root '''Class''' element.
-In the same way, the second one specifies that the '''Comment''' elements should be added to the model with the '''ownedComment''' property of the root '''Class''' element.
-
-
-
-
-====Viewpoint Enforcement Principles====
-When enforcing a viewpoint, the following principles are used when authorizing, or denying user actions:
-* If the selected viewpoint does not enable to decide for the action at hand (no mathcing diagram), the parent viewpoints are recursively considered.
-* If a diagram is matched, but the defined rules do not enable to decide for the action at hand, then the parent diagrams are recursively considered.
-* The rules are considered in the order of their definition in the viewpoints configuration editor.
-* The first rule to match the condition (e.g. type of the considered model element) is used to decide upon the user action. Subsequent rules are not considered. Parent diagrams/viewpoints are also not considered.
+The minimal required rules for a diagram specification to work are:
+* A model rule that allows the diagram to be created for a model element. For example, a model rule with ''element'' set to UML Package, ''multiplicity'' to -1 and ''permit'' to true; meaning this diagram can be created for UML Packages and an unlimited number of diagrams can be created for each UML Package.
+* An owning rule that allows the diagram to be owned by a model element (appear under an element in the model explorer). For example, an owning rule with ''element'' set to UML Package, ''multiplicity'' set to -1 and ''permit'' to true; meaning an unlimited number of diagrams of this kind can be placed under each UML Package element in the model explorer.
+* A child rule that allows the dropping of any element in the diagram, expressed with the ''permit'' attribute set to true and other attributes left empty.
