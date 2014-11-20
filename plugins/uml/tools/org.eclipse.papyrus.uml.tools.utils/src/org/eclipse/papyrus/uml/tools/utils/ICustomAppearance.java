@@ -111,6 +111,12 @@ public interface ICustomAppearance {
 	public final static Collection<String> DEFAULT_UML_PROPERTY = Arrays.asList(DISP_VISIBILITY, DISP_DERIVE, DISP_NAME, DISP_TYPE, DISP_MULTIPLICITY);
 
 	/**
+	 * default uml property display in for floating label edit part.
+	 */
+	public final static Collection<String> DEFAULT_UML_FLOATING_LABEL = Arrays.asList(DISP_NAME);
+
+
+	/**
 	 * default uml property display in classes edit part.
 	 */
 	public final static Collection<String> DEFAULT_UML_ROLE = Arrays.asList(DISP_VISIBILITY, DISP_DERIVE, DISP_NAME, DISP_TYPE);

@@ -88,4 +88,16 @@
       </Priority>
    </shapeProvider>
 </extension>
+<extension
+      point="org.eclipse.papyrus.infra.gmfdiag.common.shapeProvider">
+   <shapeProvider
+         class="org.eclipse.papyrus.uml.diagram.symbols.provider.UMLElementShapeProvider"
+         description="Provides the shapes for UMLElement  or elements typed by"
+         id="org.eclipse.papyrus.uml.diagram.symbols.umlshapeprovider"
+         name="UML Element Shape Provider">
+      <Priority
+            name="Lowest">
+      </Priority>
+   </shapeProvider>
+</extension>
 </plugin>

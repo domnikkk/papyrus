@@ -182,6 +182,7 @@ public class UMLDiagramEditorUtil {
 	 * Create a new instance of domain element associated with canvas.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private static Profile createInitialModel() {
@@ -192,6 +193,7 @@ public class UMLDiagramEditorUtil {
 	 * Store model element in the resource.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private static void attachModelToResource(Profile model, Resource resource) {

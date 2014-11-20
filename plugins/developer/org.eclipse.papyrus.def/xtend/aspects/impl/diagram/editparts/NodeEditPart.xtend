@@ -33,12 +33,16 @@ import utils.EditPartsUtils_qvto
 import xpt.Common
 import xpt.diagram.editparts.EditPartFactory
 import xpt.diagram.editparts.Utils_qvto
+import xpt.diagram.ViewmapAttributesUtils_qvto
+import org.eclipse.papyrus.papyrusgmfgenextension.SpecificNodePlate
 
 @Singleton class NodeEditPart extends impl.diagram.editparts.NodeEditPart {
 	@Inject extension Common;
 
 	@Inject extension EditPartsUtils_qvto;
 	@Inject extension  VisualIDRegistry;
+	
+	@Inject extension ViewmapAttributesUtils_qvto;
 	
 	@Inject extension Utils_qvto;
 	@Inject extension xpt.diagram.Utils_qvto;
@@ -173,6 +177,26 @@ override addFixedChild (GenNode it)'''
 //			return result;
 //		}
 //	'''
+
+	override createNodePlate(GenNode it) '''
+	«IF it.eResource.allContents.filter(typeof(SpecificNodePlate)).filter[v |v.editParts.contains(it) && v.nodePlateQualifiedName!=null].size != 0»
+		«val  editPart = it.eResource.allContents.filter(typeof(SpecificNodePlate)).filter[v |v.editParts.contains(it) && v.nodePlateQualifiedName!=null].head»
+		protected org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure createNodePlate() {
+			«editPart.nodePlateQualifiedName» result = new «editPart.nodePlateQualifiedName»(«IF getDiagram().isPixelMapMode()»«defaultSizeWidth(viewmap, 40)», «defaultSizeHeight(viewmap, 40)»«ELSE»getMapMode().DPtoLP(«defaultSizeWidth(viewmap, 40)»), getMapMode().DPtoLP(«defaultSizeHeight(viewmap, 40)»)«ENDIF»);
+			«setupNodePlate»
+			return result;
+		}
+	«««END: BEGIN: PapyrusGenCode
+	«ELSE»
+		«««	«super.createNodePlate(it)»
+		«««	By default node edit part are now RoundedRectangleNodePlateFigure
+		protected org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure createNodePlate() {
+			org.eclipse.papyrus.infra.gmfdiag.common.figure.node.RoundedRectangleNodePlateFigure result = new org.eclipse.papyrus.infra.gmfdiag.common.figure.node.RoundedRectangleNodePlateFigure(«IF getDiagram().isPixelMapMode()»«defaultSizeWidth(viewmap, 40)», «defaultSizeHeight(viewmap, 40)»«ELSE»getMapMode().DPtoLP(«defaultSizeWidth(viewmap, 40)»), getMapMode().DPtoLP(«defaultSizeHeight(viewmap, 40)»)«ENDIF»);
+			«setupNodePlate»
+			return result;
+		}
+	«ENDIF»
+	'''
 
 override borderItemSelectionEditPolicy(GenNode it)'''
 	«IF hasBorderItems(it)»

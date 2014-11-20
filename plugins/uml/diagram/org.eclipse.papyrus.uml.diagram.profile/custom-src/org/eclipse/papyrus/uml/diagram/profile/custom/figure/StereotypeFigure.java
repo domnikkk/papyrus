@@ -13,12 +13,12 @@
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.profile.custom.figure;
 
-import org.eclipse.papyrus.uml.diagram.common.figure.node.ClassifierFigure;
+import org.eclipse.papyrus.uml.diagram.common.figure.node.ClassFigure;
 
 /**
  * Figure for representation of Stereotype
  */
-public class StereotypeFigure extends ClassifierFigure {
+public class StereotypeFigure extends ClassFigure {
 
 	/**
 	 * the tag

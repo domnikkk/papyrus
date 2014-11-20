@@ -54,6 +54,15 @@ public class ShapeDisplayCompartmentEditPart extends ResizableCompartmentEditPar
 
 	/** Title of this compartment */
 	public final static String COMPARTMENT_NAME = "symbol"; // $NON-NLS-1$
+	private boolean useOriginalColors = true;
+
+	/**
+	 * @param useOriginalColors
+	 *            the useOriginalColors to set
+	 */
+	public void setUseOriginalColors(boolean useOriginalColors) {
+		this.useOriginalColors = useOriginalColors;
+	}
 
 	/**
 	 * Creates a new ShapeDisplayCompartmentEditPart
@@ -117,7 +126,8 @@ public class ShapeDisplayCompartmentEditPart extends ResizableCompartmentEditPar
 			}
 
 		}
-		if (!maintainRatio) {
+		int nbShapeToDisplay = ShapeService.getInstance().getShapesToDisplay(getPrimaryView()).size();
+		if (!maintainRatio && nbShapeToDisplay == 1) {
 			OneShapeLayoutManager layout = new OneShapeLayoutManager();
 			contentPane.setLayoutManager(layout);
 		} else {
@@ -132,16 +142,9 @@ public class ShapeDisplayCompartmentEditPart extends ResizableCompartmentEditPar
 	@Override
 	public IFigure createFigure() {
 		ResizableCompartmentFigure result = new ScalableCompartmentFigure(getCompartmentName(), getMapMode());
-		// result.setBackgroundColor(ColorConstants.lightBlue);
-		// result.setForegroundColor(ColorConstants.blue);
-		// result.getParent().setBackgroundColor(ColorConstants.lightGray);
 		ShapeCompartmentLayoutManager layoutManager = new ShapeCompartmentLayoutManager();
 		result.setLayoutManager(layoutManager);
 		ShapeFlowLayout layout = new ShapeFlowLayout();
-		// layout.setHorizontal(true);
-		// layout.setStretchMinorAxis(true);
-		// layout.setStretchMajorAxis(true);
-		// layout.setMinorAlignment(OrderedLayout.ALIGN_CENTER);
 
 		result.getContentPane().setLayoutManager(layout);
 
@@ -169,7 +172,7 @@ public class ShapeDisplayCompartmentEditPart extends ResizableCompartmentEditPar
 		if (shapesToDisplay != null && !shapesToDisplay.isEmpty()) {
 			for (RenderedImage image : shapesToDisplay) {
 				if (image != null) {
-					IFigure imageFigure = new BorderedScalableImageFigure(image, false, true, true);
+					IFigure imageFigure = new BorderedScalableImageFigure(image, false, useOriginalColors, true);
 					imageFigure.setOpaque(false);
 					imageFigure.setVisible(true);
 					contentPane.add(imageFigure);
@@ -230,7 +233,8 @@ public class ShapeDisplayCompartmentEditPart extends ResizableCompartmentEditPar
 		protected Dimension calculatePreferredSize(IFigure figure, int wHint, int hHint) {
 			Dimension dim = super.calculatePreferredSize(figure, wHint, hHint);
 
-			dim.height = Math.max(MIN_PREFERRED_SIZE, dim.height);
+			if (figure.getParent().getBounds().height > MIN_PREFERRED_SIZE) // Patch to permit to have shape dimension < 40
+				dim.height = Math.max(MIN_PREFERRED_SIZE, dim.height);
 
 			return dim;
 		}
@@ -247,8 +251,8 @@ public class ShapeDisplayCompartmentEditPart extends ResizableCompartmentEditPar
 		@Override
 		protected Dimension calculatePreferredSize(IFigure container, int hint, int hint2) {
 
-			int minimumWith = 50;
-			int minimumHeight = 50;
+			int minimumWith = 16;
+			int minimumHeight = 16;
 
 			return new Dimension(minimumWith, minimumHeight);
 		}

@@ -658,6 +658,13 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		Location location5080 = (Location) label5080.getLayoutConstraint();
 		location5080.setX(0);
 		location5080.setY(5);
+		// not generated but changes include on gmfgen, can be override at the generation
+		Node label6034 = createLabel(node, UMLVisualIDRegistry.getType(InitialNodeFloatingNameEditPart.VISUAL_ID));
+		label6034.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
+		Location location6034 = (Location) label6034.getLayoutConstraint();
+		location6034.setX(0);
+		location6034.setY(5);
+
 		return node;
 	}
 
@@ -681,6 +688,13 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		Location location5081 = (Location) label5081.getLayoutConstraint();
 		location5081.setX(0);
 		location5081.setY(5);
+		// not generated but changes include on gmfgen, can be override at the generation
+		Node label6033 = createLabel(node, UMLVisualIDRegistry.getType(ActivityFinalNodeFloatingNameEditPart.VISUAL_ID));
+		label6033.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
+		Location location6033 = (Location) label6033.getLayoutConstraint();
+		location6033.setX(0);
+		location6033.setY(5);
+
 		return node;
 	}
 
@@ -704,6 +718,13 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		Location location5082 = (Location) label5082.getLayoutConstraint();
 		location5082.setX(0);
 		location5082.setY(5);
+		// not generated but changes include on gmfgen, can be override at the generation
+		Node label6035 = createLabel(node, UMLVisualIDRegistry.getType(FlowFinalNodeFloatingNameEditPart.VISUAL_ID));
+		label6035.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
+		Location location6035 = (Location) label6035.getLayoutConstraint();
+		location6035.setX(0);
+		location6035.setY(5);
+
 		return node;
 	}
 
@@ -726,6 +747,13 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		PreferenceInitializerForElementHelper.initFontStyleFromPrefs(node, prefStore, "OpaqueAction");
 		PreferenceInitializerForElementHelper.initBackgroundFromPrefs(node, prefStore, "OpaqueAction");
 		Node label5003 = createLabel(node, UMLVisualIDRegistry.getType(OpaqueActionNameEditPart.VISUAL_ID));
+		// not generated but changes include on gmfgen, can be override at the generation
+		Node label6028 = createLabel(node, UMLVisualIDRegistry.getType(OpaqueActionFloatingNameEditPart.VISUAL_ID));
+		label6028.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
+		Location location6028 = (Location) label6028.getLayoutConstraint();
+		location6028.setX(0);
+		location6028.setY(5);
+
 		// Add pins
 		createPins(domainElement, node, persisted, preferencesHint);
 		return node;
@@ -872,6 +900,14 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		PreferenceInitializerForElementHelper.initFontStyleFromPrefs(node, prefStore, "CallBehaviorAction");
 		PreferenceInitializerForElementHelper.initBackgroundFromPrefs(node, prefStore, "CallBehaviorAction");
 		Node label5004 = createLabel(node, UMLVisualIDRegistry.getType(CallBehaviorActionNameEditPart.VISUAL_ID));
+
+		// not generated but change include on gmfgen, can be override at the generation
+		Node label6020 = createLabel(node, UMLVisualIDRegistry.getType(CallBehaviorActionFloatingNameEditPart.VISUAL_ID));
+		label6020.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
+		Location location6020 = (Location) label6020.getLayoutConstraint();
+		location6020.setX(0);
+		location6020.setY(5);
+
 		// Add pins
 		createPins(domainElement, node, persisted, preferencesHint);
 		return node;
@@ -1094,6 +1130,13 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		PreferenceInitializerForElementHelper.initFontStyleFromPrefs(node, prefStore, "CallOperationAction");
 		PreferenceInitializerForElementHelper.initBackgroundFromPrefs(node, prefStore, "CallOperationAction");
 		Node label5006 = createLabel(node, UMLVisualIDRegistry.getType(CallOperationActionNameEditPart.VISUAL_ID));
+		// not generated but changes include on gmfgen, can be override at the generation
+		Node label6020 = createLabel(node, UMLVisualIDRegistry.getType(CallOperationActionFloatingNameEditPart.VISUAL_ID));
+		label6020.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
+		Location location6020 = (Location) label6020.getLayoutConstraint();
+		location6020.setX(0);
+		location6020.setY(5);
+
 		// Add pins
 		createPins(domainElement, node, persisted, preferencesHint);
 		return node;
@@ -1380,6 +1423,13 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		Location location5098 = (Location) label5098.getLayoutConstraint();
 		location5098.setX(0);
 		location5098.setY(5);
+		// not generated but changes include on gmfgen, can be override at the generation
+		Node label6036 = createLabel(node, UMLVisualIDRegistry.getType(DecisionNodeFloatingNameEditPart.VISUAL_ID));
+		label6036.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
+		Location location6036 = (Location) label6036.getLayoutConstraint();
+		location6036.setX(0);
+		location6036.setY(5);
+
 		return node;
 	}
 
@@ -1403,6 +1453,13 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		Location location5099 = (Location) label5099.getLayoutConstraint();
 		location5099.setX(0);
 		location5099.setY(5);
+		// not generated but changes include on gmfgen, can be override at the generation
+		Node label6037 = createLabel(node, UMLVisualIDRegistry.getType(MergeNodeFloatingNameEditPart.VISUAL_ID));
+		label6037.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
+		Location location6037 = (Location) label6037.getLayoutConstraint();
+		location6037.setX(0);
+		location6037.setY(5);
+
 		return node;
 	}
 
@@ -1426,6 +1483,13 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		Location location5100 = (Location) label5100.getLayoutConstraint();
 		location5100.setX(0);
 		location5100.setY(5);
+		// not generated but changes include on gmfgen, can be override at the generation
+		Node label6038 = createLabel(node, UMLVisualIDRegistry.getType(ForkNodeFloatingNameEditPart.VISUAL_ID));
+		label6038.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
+		Location location6038 = (Location) label6038.getLayoutConstraint();
+		location6038.setX(0);
+		location6038.setY(5);
+
 		return node;
 	}
 
@@ -1454,6 +1518,13 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		Location location5101 = (Location) label5101.getLayoutConstraint();
 		location5101.setX(0);
 		location5101.setY(5);
+		// not generated but changes include on gmfgen, can be override at the generation
+		Node label6039 = createLabel(node, UMLVisualIDRegistry.getType(JoinNodeFloatingNameEditPart.VISUAL_ID));
+		label6039.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
+		Location location6039 = (Location) label6039.getLayoutConstraint();
+		location6039.setX(0);
+		location6039.setY(5);
+
 		return node;
 	}
 
@@ -1473,6 +1544,13 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		PreferenceInitializerForElementHelper.initFontStyleFromPrefs(node, prefStore, "SendObjectAction");
 		PreferenceInitializerForElementHelper.initBackgroundFromPrefs(node, prefStore, "SendObjectAction");
 		Node label5059 = createLabel(node, UMLVisualIDRegistry.getType(SendObjectActionNameEditPart.VISUAL_ID));
+		// not generated but changes include on gmfgen, can be override at the generation
+		Node label6027 = createLabel(node, UMLVisualIDRegistry.getType(SendObjectActionFloatingNameEditPart.VISUAL_ID));
+		label6027.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
+		Location location6027 = (Location) label6027.getLayoutConstraint();
+		location6027.setX(0);
+		location6027.setY(5);
+
 		return node;
 	}
 
@@ -1680,6 +1758,13 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		PreferenceInitializerForElementHelper.initFontStyleFromPrefs(node, prefStore, "SendSignalAction");
 		PreferenceInitializerForElementHelper.initBackgroundFromPrefs(node, prefStore, "SendSignalAction");
 		Node label5060 = createLabel(node, UMLVisualIDRegistry.getType(SendSignalActionNameEditPart.VISUAL_ID));
+		// not generated but changes include on gmfgen, can be override at the generation
+		Node label6032 = createLabel(node, UMLVisualIDRegistry.getType(SendSignalActionFloatingNameEditPart.VISUAL_ID));
+		label6032.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
+		Location location6032 = (Location) label6032.getLayoutConstraint();
+		location6032.setX(0);
+		location6032.setY(5);
+
 		return node;
 	}
 
@@ -2071,6 +2156,13 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		PreferenceInitializerForElementHelper.initFontStyleFromPrefs(node, prefStore, "ReadSelfAction");
 		PreferenceInitializerForElementHelper.initBackgroundFromPrefs(node, prefStore, "ReadSelfAction");
 		Node label5139 = createLabel(node, UMLVisualIDRegistry.getType(ReadSelfActionNameEditPart.VISUAL_ID));
+		// not generated but changes include on gmfgen, can be override at the generation
+		Node label6025 = createLabel(node, UMLVisualIDRegistry.getType(ReadSelfActionFloatingNameEditPart.VISUAL_ID));
+		label6025.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
+		Location location6025 = (Location) label6025.getLayoutConstraint();
+		location6025.setX(0);
+		location6025.setY(5);
+
 		return node;
 	}
 
@@ -2164,6 +2256,13 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		PreferenceInitializerForElementHelper.initFontStyleFromPrefs(node, prefStore, "CreateObjectAction");
 		PreferenceInitializerForElementHelper.initBackgroundFromPrefs(node, prefStore, "CreateObjectAction");
 		Node label5148 = createLabel(node, UMLVisualIDRegistry.getType(CreateObjectActionNameEditPart.VISUAL_ID));
+		// not generated but changes include on gmfgen, can be override at the generation
+		Node label6024 = createLabel(node, UMLVisualIDRegistry.getType(CreateObjectActionFloatingNameEditPart.VISUAL_ID));
+		label6024.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
+		Location location6024 = (Location) label6024.getLayoutConstraint();
+		location6024.setX(0);
+		location6024.setY(5);
+
 		return node;
 	}
 
@@ -2211,6 +2310,13 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		PreferenceInitializerForElementHelper.initFontStyleFromPrefs(node, prefStore, "ReadStructuralFeatureAction");
 		PreferenceInitializerForElementHelper.initBackgroundFromPrefs(node, prefStore, "ReadStructuralFeatureAction");
 		Node label5153 = createLabel(node, UMLVisualIDRegistry.getType(ReadStructuralFeatureActionNameEditPart.VISUAL_ID));
+		// not generated but changes include on gmfgen, can be override at the generation
+		Node label6023 = createLabel(node, UMLVisualIDRegistry.getType(ReadStructuralFeatureActionFloatingNameEditPart.VISUAL_ID));
+		label6023.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
+		Location location6023 = (Location) label6023.getLayoutConstraint();
+		location6023.setX(0);
+		location6023.setY(5);
+
 		return node;
 	}
 
@@ -2286,6 +2392,13 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		PreferenceInitializerForElementHelper.initFontStyleFromPrefs(node, prefStore, "AddStructuralFeatureValueAction");
 		PreferenceInitializerForElementHelper.initBackgroundFromPrefs(node, prefStore, "AddStructuralFeatureValueAction");
 		Node label5160 = createLabel(node, UMLVisualIDRegistry.getType(AddStructuralFeatureValueActionNameEditPart.VISUAL_ID));
+		// not generated but changes include on gmfgen, can be override at the generation
+		Node label6019 = createLabel(node, UMLVisualIDRegistry.getType(AddStructuralFeatureValueActionFloatingNameEditPart.VISUAL_ID));
+		label6019.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
+		Location location6019 = (Location) label6019.getLayoutConstraint();
+		location6019.setX(0);
+		location6019.setY(5);
+
 		return node;
 	}
 
@@ -2389,6 +2502,13 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		PreferenceInitializerForElementHelper.initFontStyleFromPrefs(node, prefStore, "DestroyObjectAction");
 		PreferenceInitializerForElementHelper.initBackgroundFromPrefs(node, prefStore, "DestroyObjectAction");
 		Node label5163 = createLabel(node, UMLVisualIDRegistry.getType(DestroyObjectActionNameEditPart.VISUAL_ID));
+		// not generated but changes include on gmfgen, can be override at the generation
+		Node label6022 = createLabel(node, UMLVisualIDRegistry.getType(DestroyObjectActionFloatingNameEditPart.VISUAL_ID));
+		label6022.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
+		Location location6022 = (Location) label6022.getLayoutConstraint();
+		location6022.setX(0);
+		location6022.setY(5);
+
 		return node;
 	}
 
@@ -2435,6 +2555,13 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		PreferenceInitializerForElementHelper.initFontStyleFromPrefs(node, prefStore, "ReadVariableAction");
 		PreferenceInitializerForElementHelper.initBackgroundFromPrefs(node, prefStore, "ReadVariableAction");
 		Node label5166 = createLabel(node, UMLVisualIDRegistry.getType(ReadVariableActionNameEditPart.VISUAL_ID));
+		// not generated but changes include on gmfgen, can be override at the generation
+		Node label6021 = createLabel(node, UMLVisualIDRegistry.getType(ReadVariableActionFloatingNameEditPart.VISUAL_ID));
+		label6021.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
+		Location location6021 = (Location) label6021.getLayoutConstraint();
+		location6021.setX(0);
+		location6021.setY(5);
+
 		return node;
 	}
 
@@ -2482,6 +2609,13 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		PreferenceInitializerForElementHelper.initFontStyleFromPrefs(node, prefStore, "AddVariableValueAction");
 		PreferenceInitializerForElementHelper.initBackgroundFromPrefs(node, prefStore, "AddVariableValueAction");
 		Node label5171 = createLabel(node, UMLVisualIDRegistry.getType(AddVariableValueActionNameEditPart.VISUAL_ID));
+		// not generated but change include on gmfgen, can be override at the generation
+		Node label6018 = createLabel(node, UMLVisualIDRegistry.getType(AddVariableValueActionFloatingNameEditPart.VISUAL_ID));
+		label6018.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
+		Location location6018 = (Location) label6018.getLayoutConstraint();
+		location6018.setX(0);
+		location6018.setY(5);
+
 		return node;
 	}
 
@@ -2557,6 +2691,13 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		PreferenceInitializerForElementHelper.initFontStyleFromPrefs(node, prefStore, "BroadcastSignalAction");
 		PreferenceInitializerForElementHelper.initBackgroundFromPrefs(node, prefStore, "BroadcastSignalAction");
 		Node label5175 = createLabel(node, UMLVisualIDRegistry.getType(BroadcastSignalActionNameEditPart.VISUAL_ID));
+		// not generated but change include on gmfgen, can be override at the generation
+		Node label6017 = createLabel(node, UMLVisualIDRegistry.getType(BroadcastSignalActionFloatingNameEditPart.VISUAL_ID));
+		label6017.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
+		Location location6017 = (Location) label6017.getLayoutConstraint();
+		location6017.setX(0);
+		location6017.setY(5);
+
 		return node;
 	}
 
@@ -2614,6 +2755,13 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		Location location5177 = (Location) label5177.getLayoutConstraint();
 		location5177.setX(0);
 		location5177.setY(5);
+		// not generated but changes include on gmfgen, can be override at the generation
+		Node label6030 = createLabel(node, UMLVisualIDRegistry.getType(CentralBufferNodeFloatingNameEditPart.VISUAL_ID));
+		label6030.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
+		Location location6030 = (Location) label6030.getLayoutConstraint();
+		location6030.setX(0);
+		location6030.setY(5);
+
 		return node;
 	}
 
@@ -2652,6 +2800,13 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		PreferenceInitializerForElementHelper.initFontStyleFromPrefs(node, prefStore, "ValueSpecificationAction");
 		PreferenceInitializerForElementHelper.initBackgroundFromPrefs(node, prefStore, "ValueSpecificationAction");
 		Node label5126 = createLabel(node, UMLVisualIDRegistry.getType(ValueSpecificationActionNameEditPart.VISUAL_ID));
+		// not generated but changes include on gmfgen, can be override at the generation
+		Node label6026 = createLabel(node, UMLVisualIDRegistry.getType(ValueSpecificationActionFloatingNameEditPart.VISUAL_ID));
+		label6026.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
+		Location location6026 = (Location) label6026.getLayoutConstraint();
+		location6026.setX(0);
+		location6026.setY(5);
+
 		return node;
 	}
 
@@ -2704,6 +2859,13 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		Location location5128 = (Location) label5128.getLayoutConstraint();
 		location5128.setX(0);
 		location5128.setY(5);
+		// not generated but changes include on gmfgen, can be override at the generation
+		Node label6031 = createLabel(node, UMLVisualIDRegistry.getType(DataStoreNodeFloatingNameEditPart.VISUAL_ID));
+		label6031.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
+		Location location6031 = (Location) label6031.getLayoutConstraint();
+		location6031.setX(0);
+		location6031.setY(5);
+
 		return node;
 	}
 
