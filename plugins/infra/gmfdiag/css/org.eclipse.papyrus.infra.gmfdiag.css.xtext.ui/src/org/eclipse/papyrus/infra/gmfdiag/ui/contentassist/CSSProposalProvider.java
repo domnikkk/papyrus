@@ -3,9 +3,403 @@
  */
 package org.eclipse.papyrus.infra.gmfdiag.ui.contentassist;
 
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.LinkedHashSet;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Set;
+
+import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EClassifier;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.gmf.runtime.notation.NotationPackage;
+import org.eclipse.jface.text.contentassist.CompletionProposal;
+import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
+import org.eclipse.papyrus.infra.gmfdiag.css.Attribute;
+import org.eclipse.papyrus.infra.gmfdiag.css.Declaration;
+import org.eclipse.uml2.uml.UMLPackage;
+import org.eclipse.xtext.Assignment;
+import org.eclipse.xtext.RuleCall;
+import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext;
+import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor;
+
 /**
  * see http://www.eclipse.org/Xtext/documentation/latest/xtext.html#contentAssist on how to customize content assistant
  */
 public class CSSProposalProvider extends AbstractCSSProposalProvider {
+
+	static final Set<String> colorNames = new LinkedHashSet<String>();
+
+	static final Set<String> umlProperties = new LinkedHashSet<String>();
+
+	static {
+		colorNames.add("aliceblue");
+		colorNames.add("aqua");
+		colorNames.add("aquamarine");
+		colorNames.add("azure");
+		colorNames.add("beige");
+		colorNames.add("bisque");
+		colorNames.add("black");
+		colorNames.add("blanchedalmond");
+		colorNames.add("blue");
+		colorNames.add("blueviolet");
+		colorNames.add("brown");
+		colorNames.add("burlywood");
+		colorNames.add("cadetblue");
+		colorNames.add("chartreuse");
+		colorNames.add("chocolate");
+		colorNames.add("coral");
+		colorNames.add("cornflowerblue");
+		colorNames.add("cornsilk");
+		colorNames.add("crimson");
+		colorNames.add("cyan");
+		colorNames.add("darkblue");
+		colorNames.add("darkcyan");
+		colorNames.add("darkgoldenrod");
+		colorNames.add("darkgray");
+		colorNames.add("darkgrey");
+		colorNames.add("darkgreen");
+		colorNames.add("darkkhaki");
+		colorNames.add("darkmagenta");
+		colorNames.add("darkolivegreen");
+		colorNames.add("darkorange");
+		colorNames.add("darkorchid");
+		colorNames.add("darkred");
+		colorNames.add("darksalmon");
+		colorNames.add("darkseagreen");
+		colorNames.add("darkslateblue");
+		colorNames.add("darkslategray");
+		colorNames.add("darkslategrey");
+		colorNames.add("darkturquoise");
+		colorNames.add("darkviolet");
+		colorNames.add("deeppink");
+		colorNames.add("deepskyblue");
+		colorNames.add("dimgray");
+		colorNames.add("dimgrey");
+		colorNames.add("dodgerblue");
+		colorNames.add("firebrick");
+		colorNames.add("floralwhite");
+		colorNames.add("forestgreen");
+		colorNames.add("fuchsia");
+		colorNames.add("gainsboro");
+		colorNames.add("ghostwhite");
+		colorNames.add("gold");
+		colorNames.add("goldenrod");
+		colorNames.add("gray");
+		colorNames.add("grey");
+		colorNames.add("green");
+		colorNames.add("greenyellow");
+		colorNames.add("honeydew");
+		colorNames.add("hotpink");
+		colorNames.add("indianred");
+		colorNames.add("indigo");
+		colorNames.add("ivory");
+		colorNames.add("khaki");
+		colorNames.add("lavender");
+		colorNames.add("lavenderblush");
+		colorNames.add("lawngreen");
+		colorNames.add("lemonchiffon");
+		colorNames.add("lightblue");
+		colorNames.add("lightcoral");
+		colorNames.add("lightcyan");
+		colorNames.add("lightgoldenrodyellow");
+		colorNames.add("lightgray");
+		colorNames.add("lightgrey");
+		colorNames.add("lightgreen");
+		colorNames.add("lightpink");
+		colorNames.add("lightsalmon");
+		colorNames.add("lightseagreen");
+		colorNames.add("lightskyblue");
+		colorNames.add("lightslategray");
+		colorNames.add("lightslategrey");
+		colorNames.add("lightsteelblue");
+		colorNames.add("lightyellow");
+		colorNames.add("lime");
+		colorNames.add("limegreen");
+		colorNames.add("linen");
+		colorNames.add("magenta");
+		colorNames.add("maroon");
+		colorNames.add("mediumaquamarine");
+		colorNames.add("mediumblue");
+		colorNames.add("mediumorchid");
+		colorNames.add("mediumpurple");
+		colorNames.add("mediumseagreen");
+		colorNames.add("mediumslateblue");
+		colorNames.add("mediumspringgreen");
+		colorNames.add("mediumturquoise");
+		colorNames.add("mediumvioletred");
+		colorNames.add("midnightblue");
+		colorNames.add("mintcream");
+		colorNames.add("mistyrose");
+		colorNames.add("moccasin");
+		colorNames.add("navajowhite");
+		colorNames.add("navy");
+		colorNames.add("oldlace");
+		colorNames.add("olive");
+		colorNames.add("olivedrab");
+		colorNames.add("orange");
+		colorNames.add("orangered");
+		colorNames.add("orchid");
+		colorNames.add("palegoldenrod");
+		colorNames.add("palegreen");
+		colorNames.add("paleturquoise");
+		colorNames.add("palevioletred");
+		colorNames.add("papayawhip");
+		colorNames.add("peachpuff");
+		colorNames.add("peru");
+		colorNames.add("pink");
+		colorNames.add("plum");
+		colorNames.add("powderblue");
+		colorNames.add("purple");
+		colorNames.add("red");
+		colorNames.add("rosybrown");
+		colorNames.add("royalblue");
+		colorNames.add("saddlebrown");
+		colorNames.add("salmon");
+		colorNames.add("sandybrown");
+		colorNames.add("seagreen");
+		colorNames.add("seashell");
+		colorNames.add("sienna");
+		colorNames.add("silver");
+		colorNames.add("skyblue");
+		colorNames.add("slateblue");
+		colorNames.add("slategray");
+		colorNames.add("slategrey");
+		colorNames.add("snow");
+		colorNames.add("springgreen");
+		colorNames.add("steelblue");
+		colorNames.add("tan");
+		colorNames.add("teal");
+		colorNames.add("thistle");
+		colorNames.add("tomato");
+		colorNames.add("turquoise");
+		colorNames.add("violet");
+		colorNames.add("wheat");
+		colorNames.add("white");
+		colorNames.add("whitesmoke");
+		colorNames.add("yellow");
+		colorNames.add("yellowgreen");
+	}
+
+	static {
+		for (EClassifier umlMetaclass : UMLPackage.eINSTANCE.getEClassifiers()) {
+			if (umlMetaclass instanceof EClass) {
+				EClass umlClass = (EClass) umlMetaclass;
+				for (EAttribute attribute : umlClass.getEAllAttributes()) {
+					umlProperties.add(attribute.getName());
+				}
+
+				for (EReference reference : umlClass.getEAllReferences()) {
+					EClassifier type = reference.getEType();
+					if (type instanceof EClass) {
+						EClass eType = (EClass) type;
+						if (EMFHelper.isSubclass(eType, UMLPackage.eINSTANCE.getNamedElement())) {
+							umlProperties.add(reference.getName());
+						}
+					}
+				}
+			}
+		}
+	}
+
+	/**
+	 * @see org.eclipse.papyrus.infra.gmfdiag.ui.contentassist.AbstractCSSProposalProvider#completeDeclaration_Property(org.eclipse.emf.ecore.EObject, org.eclipse.xtext.Assignment, org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext,
+	 *      org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor)
+	 *
+	 * @param model
+	 * @param assignment
+	 * @param context
+	 * @param acceptor
+	 */
+	@Override
+	public void completeDeclaration_Property(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+
+		String prefix = context.getPrefix();
+
+		Set<String> allProperties = new HashSet<String>(getStyleProperties());
+		allProperties.addAll(getCustomProperties());
+
+		Iterator<String> filterIterator = allProperties.iterator();
+		while (filterIterator.hasNext()) {
+			if (!filterIterator.next().contains(prefix)) {
+				filterIterator.remove();
+			}
+		}
+
+		List<String> properties = new LinkedList<String>(allProperties);
+		Collections.sort(properties);
+
+		for (String property : properties) {
+			String proposal = property + ": ";
+			acceptor.accept(buildProposal(proposal, context));
+		}
+	}
+
+	protected CompletionProposal buildProposal(String proposal, ContentAssistContext context) {
+		String prefix = context.getPrefix();
+		return new CompletionProposal(proposal, context.getOffset() - prefix.length(), prefix.length(), proposal.length());
+	}
+
+	protected Collection<String> getStyleProperties() {
+		Set<String> propertiesNames = new HashSet<String>();
+		for (EClass styleClass : EMFHelper.getSubclassesOf(NotationPackage.eINSTANCE.getStyle(), false)) {
+			if (styleClass.getEAllSuperTypes().contains(NotationPackage.eINSTANCE.getNamedStyle())) {
+				continue;
+			}
+
+			for (EStructuralFeature styleFeature : styleClass.getEStructuralFeatures()) {
+				propertiesNames.add(styleFeature.getName());
+			}
+		}
+
+		return propertiesNames;
+	}
+
+	protected Collection<String> getCustomProperties() {
+		String[] properties = new String[] {
+				"visible",
+				"elementIcon",
+				"shadow",
+				"displayBorder",
+				"displayName",
+				"displayTag",
+				"maintainSymbolRatio",
+				"qualifiedNameDepth",
+				"lineStyle",
+				"lineDashLength",
+				"lineDashGap",
+				"targetDecoration",
+				"sourceDecoration",
+				"maskLabel",
+				"svgFile",
+				"followSVGSymbol",
+				"svgCssFile",
+				"svgCssClass",
+		};
+
+		return Arrays.asList(properties);
+	}
+
+	/**
+	 * @see org.eclipse.papyrus.infra.gmfdiag.ui.contentassist.AbstractCSSProposalProvider#complete_Name(org.eclipse.emf.ecore.EObject, org.eclipse.xtext.RuleCall, org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext,
+	 *      org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor)
+	 *
+	 * @param model
+	 * @param ruleCall
+	 * @param context
+	 * @param acceptor
+	 */
+	@Override
+	public void complete_Name(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+
+		super.complete_Name(model, ruleCall, context, acceptor);
+	}
+
+	/**
+	 * @see org.eclipse.papyrus.infra.gmfdiag.ui.contentassist.AbstractCSSProposalProvider#complete_Term(org.eclipse.emf.ecore.EObject, org.eclipse.xtext.RuleCall, org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext,
+	 *      org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor)
+	 *
+	 * @param model
+	 * @param ruleCall
+	 * @param context
+	 * @param acceptor
+	 */
+	@Override
+	public void complete_Term(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		if (model instanceof Declaration) {
+			Declaration declaration = (Declaration) model;
+			String property = declaration.getProperty();
+			if (property != null && (property.contains("color") || property.contains("Color") || property.contains("gradient"))) {
+				for (String colorName : colorNames) {
+					if (colorName.contains(context.getPrefix())) {
+						acceptor.accept(buildProposal(colorName, context));
+					}
+				}
+			}
+		}
+	}
+
+	/**
+	 * @see org.eclipse.papyrus.infra.gmfdiag.ui.contentassist.AbstractCSSProposalProvider#complete_Ruleset(org.eclipse.emf.ecore.EObject, org.eclipse.xtext.RuleCall, org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext,
+	 *      org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor)
+	 *
+	 * @param model
+	 * @param ruleCall
+	 * @param context
+	 * @param acceptor
+	 */
+	@Override
+	public void complete_Ruleset(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		// complete_Selector(model, ruleCall, context, acceptor);
+	}
+
+
+	/**
+	 * @see org.eclipse.papyrus.infra.gmfdiag.ui.contentassist.AbstractCSSProposalProvider#complete_Selector(org.eclipse.emf.ecore.EObject, org.eclipse.xtext.RuleCall, org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext,
+	 *      org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor)
+	 *
+	 * @param model
+	 * @param ruleCall
+	 * @param context
+	 * @param acceptor
+	 */
+	@Override
+	public void complete_Selector(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		for (EClassifier umlMetaclass : UMLPackage.eINSTANCE.getEClassifiers()) {
+			if (umlMetaclass instanceof EClass) {
+				EClass umlClass = (EClass) umlMetaclass;
+				if (umlClass.getName().contains(context.getPrefix())) {
+					acceptor.accept(buildProposal(umlClass.getName(), context));
+				}
+			}
+		}
+
+		String[] otherSemanticElements = new String[] {
+				"Compartment",
+				"Label"
+		};
+
+		for (String element : otherSemanticElements) {
+			if (element.contains(context.getPrefix())) {
+				acceptor.accept(buildProposal(element, context));
+			}
+		}
+
+		super.complete_Ruleset(model, ruleCall, context, acceptor);
+	}
+
+	/**
+	 * @see org.eclipse.papyrus.infra.gmfdiag.ui.contentassist.AbstractCSSProposalProvider#complete_ID(org.eclipse.emf.ecore.EObject, org.eclipse.xtext.RuleCall, org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext,
+	 *      org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor)
+	 *
+	 * @param model
+	 * @param ruleCall
+	 * @param context
+	 * @param acceptor
+	 */
+	@Override
+	public void complete_ID(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		if (model instanceof Attribute) {
+			String prefix = context.getPrefix();
+			if (prefix.startsWith("[")) {
+				prefix = prefix.substring(1);
+			}
+
+			for (String umlProperty : umlProperties) {
+				if (umlProperty.contains(prefix)) {
+					acceptor.accept(buildProposal(umlProperty, context));
+				}
+			}
+		} else {
+			super.complete_ID(model, ruleCall, context, acceptor);
+		}
+	}
 
 }
