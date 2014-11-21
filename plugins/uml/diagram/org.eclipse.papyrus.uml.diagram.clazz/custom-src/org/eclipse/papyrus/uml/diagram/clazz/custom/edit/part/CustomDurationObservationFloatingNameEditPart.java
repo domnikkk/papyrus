@@ -13,6 +13,7 @@
 package org.eclipse.papyrus.uml.diagram.clazz.custom.edit.part;
 
 
+import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.DurationObservationFloatingNameEditPart;
 
@@ -37,5 +38,15 @@ public class CustomDurationObservationFloatingNameEditPart extends DurationObser
 	@Override
 	protected boolean getDefaultLabelDisplayedValue() {
 		return LABEL_DISPLAYED_VALUE;
+	}
+
+	/**
+	 * Gets the default text alignment.
+	 *
+	 * @return the default text alignment
+	 */
+	@Override
+	protected int getDefaultTextAlignment() {
+		return PositionConstants.LEFT;
 	}
 }
