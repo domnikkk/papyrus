@@ -29,7 +29,6 @@ import org.eclipse.swt.events.SelectionListener;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
-import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Shell;
@@ -66,7 +65,7 @@ public class CreateOrSelectReviewModelDialog extends FormDialog {
 	 * Constructor.
 	 *
 	 * @param shell
-	 * @param appliedLocalProfiles list of local profiles
+	 * @param reviewResourceManager the resource manager of reviews
 	 */
 	public CreateOrSelectReviewModelDialog(Shell shell, ReviewResourceManager reviewResourceManager) {
 		super(shell);

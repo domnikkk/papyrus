@@ -12,6 +12,10 @@
  *
  *****************************************************************************/
 package org.eclipse.papyrus.revision.tool.core;
+/**
+ * contains all string about name of stereotypes attributes of the review profile 
+ *
+ */
 public interface I_ReviewStereotype {
 /** Qualified name of the stereotype ReviewRepository */
 public static final String REVIEWREPOSITORY_STEREOTYPE = "ReviewProfile::ReviewRepository";

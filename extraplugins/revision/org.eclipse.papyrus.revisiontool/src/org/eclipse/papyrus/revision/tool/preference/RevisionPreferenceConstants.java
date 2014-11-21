@@ -16,16 +16,25 @@ package org.eclipse.papyrus.revision.tool.preference;
 /**
  * Constant definitions for plug-in preferences
  */
-public class PreferenceConstants {
+public class RevisionPreferenceConstants {
 
 	
 	
 	/**
+	 * the constant author name
 	 */
 	public static final String AUTHOR_NAME = "AUTHOR_NAME";
-	public static final String REQUIREMENT_ID_DIGIT = "REQUIREMENT_ID_DIGIT";
+	/**
+	 * the constant for the color of the author
+	 */
 	public static final String AUTHOR_COLOR="AUTHOR_COLOR";
+	/**
+	 * the constant for the author language
+	 */
 	public static final String AUTHOR_LANGUAGE="AUTHOR_LANGUAGE";
+	/**
+	 * the anonymous author
+	 */
 	public static final String ANONYMOUS_AUTHOR="Anonymous";
 	
 }

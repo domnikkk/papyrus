@@ -15,17 +15,17 @@ package org.eclipse.papyrus.revision.tool.core;
 
 import java.io.IOException;
 import java.text.DateFormat;
-import java.util.Calendar;
 import java.util.Date;
-import java.util.GregorianCalendar;
 import java.util.List;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.compare.CompareFactory;
 import org.eclipse.emf.compare.Comparison;
 import org.eclipse.emf.compare.Diff;
 import org.eclipse.emf.compare.EMFCompare;
+import org.eclipse.emf.compare.Match;
 import org.eclipse.emf.compare.match.DefaultComparisonFactory;
 import org.eclipse.emf.compare.match.DefaultEqualityHelperFactory;
 import org.eclipse.emf.compare.match.DefaultMatchEngine;
@@ -39,8 +39,6 @@ import org.eclipse.emf.compare.scope.IComparisonScope;
 import org.eclipse.emf.compare.utils.UseIdentifiers;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.jface.preference.IPreferenceStore;
@@ -54,7 +52,7 @@ import org.eclipse.papyrus.infra.core.services.ServicesRegistry;
 import org.eclipse.papyrus.revision.tool.Activator;
 import org.eclipse.papyrus.revision.tool.dialogs.CreateAuthorDialog;
 import org.eclipse.papyrus.revision.tool.dialogs.CreateOrSelectReviewModelDialog;
-import org.eclipse.papyrus.revision.tool.preference.PreferenceConstants;
+import org.eclipse.papyrus.revision.tool.preference.RevisionPreferenceConstants;
 import org.eclipse.papyrus.uml.extensionpoints.profile.RegisteredProfile;
 import org.eclipse.papyrus.uml.extensionpoints.utils.Util;
 import org.eclipse.papyrus.uml.tools.model.UmlModel;
@@ -71,6 +69,7 @@ import org.eclipse.ui.model.BaseWorkbenchContentProvider;
 import org.eclipse.ui.model.WorkbenchLabelProvider;
 import org.eclipse.uml2.uml.Actor;
 import org.eclipse.uml2.uml.Comment;
+import org.eclipse.uml2.uml.Dependency;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Model;
 import org.eclipse.uml2.uml.NamedElement;
@@ -84,14 +83,36 @@ import org.eclipse.uml2.uml.UMLFactory;
  */
 public class ReviewResourceManager {
 
-	protected Model UMLModel;
+	protected Model UMLWorkingModel;
 	protected ModelSet modelSet;
 	protected Model reviewModel;
 	protected Actor currentAuthor;
-	protected WorkingModelListener workingModelListener= new WorkingModelListener();
-	protected Model snapshotyModel;
+	protected AddingDiffListener addingDiffListener=null;
+	protected Comparison diffModel=null;
+	protected boolean modeRevisionRunning=false;
 
 
+	/**
+	 * constructor
+	 */
+	public ReviewResourceManager(){
+		this.addingDiffListener= new AddingDiffListener(this);
+	}
+
+	/**
+	 * used before kill the the resourcemanager, it remove listeners...
+	 */
+	public void dispose(){
+		if(addingDiffListener!=null){
+			getDomain().removeResourceSetListener(addingDiffListener);
+		}
+		modeRevisionRunning=false;
+		diffModel=null;
+		reviewModel=null;
+		currentAuthor=null;
+		UMLWorkingModel=null;
+		modelSet=null;
+	}
 	/**
 	 * used to get the the current workbenchPart
 	 * @return
@@ -125,13 +146,35 @@ public class ReviewResourceManager {
 	 */
 	public Model getCurrentReviewModel(){
 		if( reviewModel==null){
-			System.out.println("ReviewModel is null!, we must to create or load it.");
 			CreateOrSelectReviewModelDialog dialog=new CreateOrSelectReviewModelDialog(new Shell(), this);
 			dialog.open();
 
 		}
 
 		return reviewModel;
+	}
+
+	/**
+	 * 
+	 * @return the EMF compare Diff model
+	 */
+	public Comparison getDiffModel(){
+		if( diffModel==null){
+			getCurrentReviewModel();
+			Resource reviewResource= getCurrentReviewModel().eResource();
+			for (EObject currentRoot : reviewResource.getContents()) {
+				if( currentRoot instanceof Comparison){
+					diffModel= (Comparison)currentRoot;
+				}
+			}
+			if( diffModel==null){
+				diffModel= CompareFactory.eINSTANCE.createComparison();
+				Match match= CompareFactory.eINSTANCE.createMatch();
+				match.setLeft(getWorkingModel());
+				reviewResource.getContents().add(diffModel);
+			}
+		}
+		return diffModel;
 	}
 	/**
 	 * 
@@ -143,6 +186,7 @@ public class ReviewResourceManager {
 
 	/**
 	 *  used to add a review in the review model
+	 *  @param element the container of the review
 	 */
 	public void addAReview(final Element element){
 		getCurrentReviewModel();
@@ -183,12 +227,12 @@ public class ReviewResourceManager {
 		if(currentAuthor==null||currentAuthor.eContainer()==null){
 			//1. test if the author of preferences is not anonymous
 			final IPreferenceStore store = Activator.getDefault().getPreferenceStore();
-			final String  authorNamefromPreference=store.getString(PreferenceConstants.AUTHOR_NAME);
-			if( authorNamefromPreference.equals(PreferenceConstants.ANONYMOUS_AUTHOR)){
+			final String  authorNamefromPreference=store.getString(RevisionPreferenceConstants.AUTHOR_NAME);
+			if( authorNamefromPreference.equals(RevisionPreferenceConstants.ANONYMOUS_AUTHOR)){
 				CreateAuthorDialog authorDialog= new CreateAuthorDialog(new Shell());
 				authorDialog.open();
 			}
-			final String  authorName=store.getString(PreferenceConstants.AUTHOR_NAME);
+			final String  authorName=store.getString(RevisionPreferenceConstants.AUTHOR_NAME);
 			final Model reviewModel=getCurrentReviewModel();
 			NamedElement author=reviewModel.getPackagedElement(authorName);
 			if( author==null||!(author instanceof Actor)){
@@ -200,8 +244,8 @@ public class ReviewResourceManager {
 						reviewModel.getPackagedElements().add(currentAuthor);
 						Stereotype authorStereotype= currentAuthor.getApplicableStereotype(I_VersioningStereotype.AUTHOR_STEREOTYPE);
 						currentAuthor.applyStereotype(authorStereotype);
-						currentAuthor.setValue(authorStereotype, I_VersioningStereotype.AUTHOR_LANGUAGE_ATT, store.getString(PreferenceConstants.AUTHOR_LANGUAGE));
-						RGB authorColor=PreferenceConverter.getColor(store, PreferenceConstants.AUTHOR_COLOR);
+						currentAuthor.setValue(authorStereotype, I_VersioningStereotype.AUTHOR_LANGUAGE_ATT, store.getString(RevisionPreferenceConstants.AUTHOR_LANGUAGE));
+						RGB authorColor=PreferenceConverter.getColor(store, RevisionPreferenceConstants.AUTHOR_COLOR);
 						String colorString=authorColor.red+":"+authorColor.green+":"+authorColor.blue;
 						currentAuthor.setValue(authorStereotype, I_VersioningStereotype.AUTHOR_COLOR_ATT, colorString);
 					}
@@ -236,7 +280,6 @@ public class ReviewResourceManager {
 			dialog.open();
 			if(dialog.getResult().length>0){
 				Object object=dialog.getResult()[0];
-				System.err.println(object);
 				if(object instanceof IFile){
 					IFile aReviewModel=((IFile)object);
 					Resource tmpResource =  getCurrentModelSet().getResource(URI.createPlatformResourceURI(aReviewModel.getFullPath().toOSString(), true),true);
@@ -251,6 +294,8 @@ public class ReviewResourceManager {
 	}
 	/**
 	 * create a review model
+	 * @param reviewModelName the name of the review model that will be created
+	 * @return the review model
 	 */
 	public Model createReviewModel(final String reviewModelName){
 		RecordingCommand cmd= new RecordingCommand(getDomain(), "createReviewModel") {
@@ -273,7 +318,7 @@ public class ReviewResourceManager {
 					EObject stereappl=reviewModel.getStereotypeApplication(reviewModel.getApplicableStereotype(I_ReviewStereotype.REVIEWREPOSITORY_STEREOTYPE));
 					resource.getContents().add(stereappl);
 				}
-				//aply profile versioning
+				//apply profile versioning
 				{
 					RegisteredProfile registeredProfile=(RegisteredProfile)RegisteredProfile.getRegisteredProfile("VersioningProfile");
 					URI reviewProfileUri = registeredProfile.uri;
@@ -282,9 +327,17 @@ public class ReviewResourceManager {
 					reviewModel.applyProfile(reviewProfile);
 				}
 
-
-				createInput();
+				Dependency dependency= UMLFactory.eINSTANCE.createDependency();
+				dependency.getSuppliers().add(getWorkingModel());
+				dependency.getClients().add(reviewModel);
+				dependency.setName("WorkingModelDependency");
+				reviewModel.getPackagedElements().add(dependency);
 				resource.getContents().add(reviewModel);
+
+				diffModel= CompareFactory.eINSTANCE.createComparison();
+				Match match= CompareFactory.eINSTANCE.createMatch();
+				match.setLeft(getWorkingModel());
+				resource.getContents().add(diffModel);
 
 			}
 		};
@@ -293,65 +346,23 @@ public class ReviewResourceManager {
 		return reviewModel;
 	}
 
-	public void createInput(){
-		//	Actor author= UMLFactory.eINSTANCE.createActor();
-		//	author.setName("Durand T.");
-		//	reviewModel.getPackagedElements().add(author);
-		//	Stereotype authorStereotype= author.getApplicableStereotype(I_ReviewStereotype.AUTHOR_STEREOTYPE);
-		//	author.applyStereotype(authorStereotype);
-		//	author.setValue(authorStereotype, I_ReviewStereotype.AUTHOR_LANGUAGE_ATT, "Eng");
-		//	author.setValue(authorStereotype, I_ReviewStereotype.AUTHOR_COLOR_ATT, "128:255:128");
-		//
-		//	Actor author2= UMLFactory.eINSTANCE.createActor();
-		//	author2.setName("Raph R.");
-		//	reviewModel.getPackagedElements().add(author2);
-		//	Stereotype authorStereotype2= author2.getApplicableStereotype(I_ReviewStereotype.AUTHOR_STEREOTYPE);
-		//	author2.applyStereotype(authorStereotype2);
-		//	author.setValue(authorStereotype2, I_ReviewStereotype.AUTHOR_LANGUAGE_ATT, "Eng");
-		//	author.setValue(authorStereotype2, I_ReviewStereotype.AUTHOR_COLOR_ATT, "128:250:255");
-		//
-		//
-		//	Comment cmt= UMLFactory.eINSTANCE.createComment();
-		//	cmt.setBody("I think that this class is not useful");
-		//	reviewModel.getOwnedComments().add(cmt);
-		//	Stereotype review= cmt.getApplicableStereotype(I_ReviewStereotype.REVIEW_STEREOTYPE);
-		//	cmt.applyStereotype(review);
-		//	cmt.setValue(review, I_ReviewStereotype.REVIEW_SUBJECT_ATT, "About Class color");
-		//	cmt.setValue(review, I_ReviewStereotype.REVIEW_AUTHOR_ATT, author.getStereotypeApplication(authorStereotype));
-		//
-		//
-		//	Comment cmt2= UMLFactory.eINSTANCE.createComment();
-		//	cmt2.setBody("This class will be used for next extension.");
-		//	cmt.getOwnedComments().add(cmt2);
-		//
-		//	cmt2.applyStereotype(review);
-		//	cmt2.setValue(review, I_ReviewStereotype.REVIEW_SUBJECT_ATT, "About Class color");
-		//	cmt2.setValue(review, I_ReviewStereotype.REVIEW_AUTHOR_ATT, author2.getStereotypeApplication(authorStereotype2));
-		//
-		//	Comment cmt3= UMLFactory.eINSTANCE.createComment();
-		//	cmt3.setBody("Other blabla3");
-		//	reviewModel.getOwnedComments().add(cmt3);
-		//	cmt3.applyStereotype(review);
-		//	cmt3.setValue(review, I_ReviewStereotype.REVIEW_SUBJECT_ATT, "Test3");
-		//	cmt3.setValue(review, I_ReviewStereotype.REVIEW_AUTHOR_ATT, author.getStereotypeApplication(authorStereotype));
-	}
 	/**
 	 * get the working model
 	 * @return the model that is modified inside papyrus
 	 */
 	public Model getWorkingModel(){
-		if(UMLModel!=null){
-			return UMLModel;
+		if(UMLWorkingModel!=null){
+			return UMLWorkingModel;
 		}
 
 		modelSet = getCurrentModelSet();
 		UmlModel IUMLModel=(UmlModel)modelSet.getModel(UmlModel.MODEL_ID);
 		try {
-			UMLModel = (Model)IUMLModel.lookupRoot();
+			UMLWorkingModel = (Model)IUMLModel.lookupRoot();
 		} catch (NotFoundException e) {
 			e.printStackTrace();
 		}
-		return UMLModel;
+		return UMLWorkingModel;
 	}
 
 	/**
@@ -378,9 +389,6 @@ public class ReviewResourceManager {
 	 * @return current service registry
 	 */
 	public ServicesRegistry getServiceRegistry(){
-		if(modelSet!=null){
-			return null;
-		}
 		IWorkbenchPart part=getBootstrapPart();
 		if (part instanceof IMultiDiagramEditor){
 			ServicesRegistry  registry=((IMultiDiagramEditor)part).getServicesRegistry();
@@ -407,7 +415,7 @@ public class ReviewResourceManager {
 	}
 
 	protected void compare(final Model modelBefore, Model modelAfter) {
-	
+
 		IEObjectMatcher matcher = DefaultMatchEngine.createDefaultEObjectMatcher(UseIdentifiers.NEVER);
 		IComparisonFactory comparisonFactory = new DefaultComparisonFactory(new DefaultEqualityHelperFactory());
 		final IMatchEngine thematchEngine = new DefaultMatchEngine(matcher , comparisonFactory);
@@ -420,42 +428,20 @@ public class ReviewResourceManager {
 		engineFactory.setRanking(20); // default engine ranking is 10, must be higher to override.
 		registry.add(engineFactory);
 		IComparisonScope scope = new DefaultComparisonScope(modelBefore,modelAfter,null);
-		 final Comparison comparison = EMFCompare.builder().setMatchEngineFactoryRegistry(registry).build().compare(scope);
+		final Comparison comparison = EMFCompare.builder().setMatchEngineFactoryRegistry(registry).build().compare(scope);
 		List<Diff> differences = comparison.getDifferences();
 		for (Diff diff : differences) {
 			final Diff diffRef= diff;
 			System.out.println(diff);
-			RecordingCommand cmd= new RecordingCommand(getDomain(), "createAReview") {
-				@Override
-				protected void doExecute() {
-					Actor theauthor= getCurrentAuthor();
-					Comment cmt= UMLFactory.eINSTANCE.createComment();
-					cmt.setBody("Your review");
-					reviewModel.getOwnedComments().add(cmt);
-
-					Stereotype review= cmt.getApplicableStereotype(I_ReviewStereotype.REVIEW_STEREOTYPE);
-					cmt.applyStereotype(review);
-					cmt.setValue(review, I_ReviewStereotype.COMMENT_SUBJECT_ATT, diffRef.getKind().getName()+ diffRef.getSource().getName());
-
-					Stereotype authorStereotype= theauthor.getApplicableStereotype(I_VersioningStereotype.AUTHOR_STEREOTYPE);
-					cmt.setValue(review, I_VersioningStereotype.VERSIONINGELEMENT_AUTHOR_ATT, theauthor.getStereotypeApplication(authorStereotype));
-
-					// add tthe date
-					Date today = new Date();
-					DateFormat shortDateFormat = DateFormat.getDateTimeInstance(DateFormat.SHORT,DateFormat.SHORT);
-					cmt.setValue(review, I_VersioningStereotype.VERSIONINGELEMENT_DATE_ATT, shortDateFormat.format(today));
-				}
-			};
-			//getDomain().getCommandStack().execute(cmd);
 		}
-		
+
 		RecordingCommand cmd= new RecordingCommand(getDomain(), "saveSnaphsot") {
 			@Override
 			protected void doExecute() {
 				URI umlModel_URI=getWorkingModel().eResource().getURI();
 				String tmpURI=umlModel_URI.toString().replaceAll(umlModel_URI.lastSegment().toString(), "diff.xmi");
 				URI reviewURI=URI.createURI(tmpURI);
-				Resource resourcesnapshot = getCurrentModelSet().createResource(reviewURI);
+				Resource resourcesnapshot = Util.createTemporaryResourceSet().createResource(reviewURI);
 				resourcesnapshot.getContents().add(comparison);
 				try {
 					resourcesnapshot.save(null);
@@ -468,17 +454,64 @@ public class ReviewResourceManager {
 		getDomain().getCommandStack().execute(cmd);
 	}
 
-	public void saveDiff(){
-		compare(getWorkingModel(),snapshotyModel);
+	/**
+	 * used to save compare model as another file
+	 */
+	public void savediff(){
+		RecordingCommand cmd= new RecordingCommand(getDomain(), "savediff") {
+			@Override
+			protected void doExecute() {
+
+				URI umlModel_URI=getWorkingModel().eResource().getURI();
+				String tmpURIresultDiff=umlModel_URI.toString().replaceAll(umlModel_URI.lastSegment().toString(), "resultDiff.xmi");
+				URI resultDiffURI=URI.createURI(tmpURIresultDiff);
+				Resource resourceresultDiff = Util.createTemporaryResourceSet().createResource(resultDiffURI);
+				resourceresultDiff.getContents().add(diffModel);
+				try {
+					resourceresultDiff.save(null);
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		};
+		//getDomain().getCommandStack().execute(cmd);
 	}
+
+	/**
+	 * 
+	 * @return true is the revison mode is running
+	 */
+	public boolean modeRevisionRunning(){
+		return modeRevisionRunning;
+	}
+	/**
+	 * start the mode revision is order to register modif
+	 */
 	public void startModeRevision(){
-		snapshotyModel = EcoreUtil.copy(getWorkingModel());
-		UmlModel iumlModel=(UmlModel) getCurrentModelSet().getModel(UmlModel.MODEL_ID);
-		iumlModel.getResource().eAdapters().add(workingModelListener);
+		modeRevisionRunning=true;
+		RecordingCommand cmd= new RecordingCommand(getDomain(), "savediff") {
+			@Override
+			protected void doExecute() {
+				//getDiffModel().getConflicts().clear();
+				//getDiffModel().getDifferences().clear();
+				//getDiffModel().getMatches().clear();
+				if( getDiffModel().getMatches().size()==0){
+					Match match= CompareFactory.eINSTANCE.createMatch();
+					match.setLeft(getWorkingModel());
+					getDiffModel().getMatches().add(match);
+				}
+			}
+		};
+		getDomain().getCommandStack().execute(cmd);
+		getDomain().addResourceSetListener(addingDiffListener);
 	}
+	/**
+	 * stop the revision model and stop listening modifications
+	 */
 	public void stopModelRevision(){
-		UmlModel iumlModel=(UmlModel) getCurrentModelSet().getModel(UmlModel.MODEL_ID);
-		iumlModel.getResource().eAdapters().remove(workingModelListener);
-		compare(snapshotyModel,getWorkingModel());
+		modeRevisionRunning=false;
+		getDomain().removeResourceSetListener(addingDiffListener);
+
 	}
 }

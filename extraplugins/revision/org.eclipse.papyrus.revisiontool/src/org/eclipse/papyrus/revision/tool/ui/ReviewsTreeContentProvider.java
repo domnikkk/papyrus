@@ -19,8 +19,13 @@ import org.eclipse.papyrus.revision.tool.core.I_ReviewStereotype;
 import org.eclipse.uml2.uml.Comment;
 import org.eclipse.uml2.uml.Package;
 
+/**
+ * content provider to display reviews
+ *
+ */
 public class ReviewsTreeContentProvider implements ITreeContentProvider{
 
+	private static Object[] EMPTY={};
 	@Override
 	public void dispose() {
 
@@ -33,6 +38,7 @@ public class ReviewsTreeContentProvider implements ITreeContentProvider{
 
 	@Override
 	public Object[] getElements(Object inputElement) {
+		
 		if( inputElement instanceof org.eclipse.uml2.uml.Package){
 			Package package1=(Package)inputElement;
 			if(package1.getAppliedStereotype(I_ReviewStereotype.REVIEWREPOSITORY_STEREOTYPE)!=null){
@@ -45,7 +51,7 @@ public class ReviewsTreeContentProvider implements ITreeContentProvider{
 				((Comment)inputElement).getOwnedComments().toArray();
 			}
 		}
-		return null;
+		return  EMPTY;
 	}
 
 	@Override
@@ -62,7 +68,7 @@ public class ReviewsTreeContentProvider implements ITreeContentProvider{
 				return ((Comment)parentElement).getOwnedComments().toArray();
 			}
 		}
-		return null;
+		return EMPTY;
 	}
 
 	@Override

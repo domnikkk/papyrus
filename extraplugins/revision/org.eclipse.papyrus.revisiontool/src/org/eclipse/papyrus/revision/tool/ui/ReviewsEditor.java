@@ -16,10 +16,15 @@ package org.eclipse.papyrus.revision.tool.ui;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.ecore.util.EContentAdapter;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.transaction.ResourceSetChangeEvent;
+import org.eclipse.emf.transaction.ResourceSetListener;
+import org.eclipse.emf.transaction.ResourceSetListenerImpl;
 import org.eclipse.jface.action.Action;
 import org.eclipse.jface.action.IContributionItem;
 import org.eclipse.jface.action.IMenuListener;
@@ -30,7 +35,6 @@ import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.papyrus.infra.core.editor.IMultiDiagramEditor;
 import org.eclipse.papyrus.infra.core.services.ServiceException;
-import org.eclipse.papyrus.infra.core.utils.ServiceUtils;
 import org.eclipse.papyrus.revision.tool.core.ReviewResourceManager;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Font;
@@ -42,13 +46,14 @@ import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Menu;
 import org.eclipse.swt.widgets.TreeItem;
+import org.eclipse.ui.IViewPart;
+import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.part.ViewPart;
 import org.eclipse.ui.views.properties.IPropertySheetPage;
 import org.eclipse.ui.views.properties.tabbed.ITabbedPropertySheetPageContributor;
 import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Model;
-import org.eclipse.uml2.uml.Package;
 
 /**
  * the review editor that display reviews or comments 
@@ -60,6 +65,7 @@ public class ReviewsEditor extends ViewPart implements ITabbedPropertySheetPageC
 	protected ReviewResourceManager reviewResourceManager= new ReviewResourceManager();
 	private TreeViewer viewer;
 	protected List<IPropertySheetPage> propertySheetPages = new ArrayList<IPropertySheetPage>();
+	protected ResourceSetListenerImpl reviewEditorResourceListener=null;
 
 	private static FontData[] getModifiedFontData(FontData[] originalData, int additionalStyle) {
 		FontData[] styleData = new FontData[originalData.length];
@@ -69,11 +75,23 @@ public class ReviewsEditor extends ViewPart implements ITabbedPropertySheetPageC
 		}
 		return styleData;
 	}
-
+	/**
+	 * only his class can create it
+	 * @return review resource manger
+	 */
 	public ReviewResourceManager getReviewResourceManager(){
 		return reviewResourceManager;
 	}
-	
+
+
+	@Override
+	public void dispose() {
+		reviewResourceManager.getDomain().removeResourceSetListener(getresourceListener());
+		reviewResourceManager.dispose();
+		reviewResourceManager=null;
+		super.dispose();
+
+	}
 	/**
 	 * create the contextual menu
 	 */
@@ -108,35 +126,71 @@ public class ReviewsEditor extends ViewPart implements ITabbedPropertySheetPageC
 				mgr.remove(contributionItems[i]);
 			}
 		}
+
 	}
 
 	/**
 	 * 
 	 * @return listener to refresh the editor
 	 */
-	public EContentAdapter getresourceListener(){
-		return new EContentAdapter(){
-			@Override
-			public void notifyChanged(Notification notification) {
-				viewer.setInput(reviewResourceManager.getCurrentReviewModel());
-			}
-		};
+	public ResourceSetListener getresourceListener(){
+		if(reviewEditorResourceListener==null){
+			reviewEditorResourceListener= new ResourceSetListenerImpl(){
+
+				@Override
+				public void resourceSetChanged(ResourceSetChangeEvent event) {
+					HashSet<Resource> notifiers=new HashSet<Resource>();
+					boolean closeSignal=false;
+
+					for (Notification notification : event.getNotifications()) {
+						if(notification.getNotifier() instanceof EObject){
+							notifiers.add(((EObject)notification.getNotifier()).eResource());
+						}
+						if((notification.getNotifier()) instanceof Resource){
+							if(((reviewResourceManager.getWorkingModel().eResource()==null)&&notification.getEventType()==Notification.REMOVE_MANY)){
+								closeSignal=true;
+							}
+						}
+					}
+					for ( Resource currentResource : notifiers) {
+						if(reviewResourceManager.getCurrentReviewModel().eResource().equals(currentResource)){
+							viewer.setInput(reviewResourceManager.getCurrentReviewModel());
+						}
+					}
+					if (closeSignal){
+						IViewPart part=(IViewPart)PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().findView("org.eclipse.papyrus.revisiontool.commentview");
+						PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().hideView(part);
+					}
+				}
+				@Override
+				public boolean isPostcommitOnly() {
+					return true;
+				}
+
+			};
+		}
+		return reviewEditorResourceListener;
 	}
-	
+
+	/**
+	 * add a review
+	 * @param container
+	 */
 	public void addAReview(Element container) {
 		reviewResourceManager.addAReview(container);
 		viewer.setInput(reviewResourceManager.getCurrentReviewModel());
-		Model reviewModel=reviewResourceManager.getCurrentReviewModel();
-		reviewModel.eResource().eAdapters().add(getresourceListener());
+		reviewResourceManager.getDomain().addResourceSetListener(getresourceListener());
 	}
-	
+	/**
+	 * create action in the view
+	 */
 	public void createActions() {
 		Action	loadReview = new Action("Load a review model") {
 			@Override
 			public void run() {
 				Model reviewModel=reviewResourceManager.loadReviewModel();
 				viewer.setInput(reviewModel);
-				reviewModel.eResource().eAdapters().add(getresourceListener());
+				reviewResourceManager.getDomain().addResourceSetListener(getresourceListener());
 			}
 			@Override
 			public String getDescription() {
@@ -147,9 +201,9 @@ public class ReviewsEditor extends ViewPart implements ITabbedPropertySheetPageC
 		Action	addReview = new Action("Add a review") {
 			@Override
 			public void run() {
-				addAReview(null);
+				addAReview(null);	
 			}
-			
+
 			@Override
 			public String getDescription() {
 				return "Add a review";
@@ -225,7 +279,7 @@ public class ReviewsEditor extends ViewPart implements ITabbedPropertySheetPageC
 	 */
 	private IPropertySheetPage getPropertySheetPage() {
 		try {
-			final IMultiDiagramEditor multiDiagramEditor = ServiceUtils.getInstance().getService(IMultiDiagramEditor.class,reviewResourceManager.getServiceRegistry());
+			final IMultiDiagramEditor multiDiagramEditor = getReviewResourceManager().getServiceRegistry().getService(IMultiDiagramEditor.class);
 
 			if (multiDiagramEditor != null) {
 				if (multiDiagramEditor instanceof ITabbedPropertySheetPageContributor) {
@@ -250,12 +304,7 @@ public class ReviewsEditor extends ViewPart implements ITabbedPropertySheetPageC
 			return super.getAdapter(adapter);
 		}
 	}
-	public Package createInput(){
-
-		Model reviewModel=null;//reviewResourceManager.createReviewModel();
-		return reviewModel;
-
-	}
+	
 	@Override
 	public void setFocus() {
 

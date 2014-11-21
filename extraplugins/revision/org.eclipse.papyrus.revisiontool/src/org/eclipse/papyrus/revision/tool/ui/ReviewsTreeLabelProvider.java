@@ -40,7 +40,11 @@ public class ReviewsTreeLabelProvider extends StyledCellLabelProvider  {
 	protected Font boldFont;
 	private  Styler fBoldStyler;
 	private  Styler fItalicStyler;
-
+	/**
+	 * constructor
+	 * @param boldFont
+	 * @param italicFont
+	 */
 	public ReviewsTreeLabelProvider( final Font boldFont, final Font italicFont ) {
 		this.boldFont= boldFont;
 		this.italicFont= italicFont;

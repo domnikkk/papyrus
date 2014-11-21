@@ -21,18 +21,22 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.widgets.Display;
 
+/**
+ * initialize constant about revision mode
+ *
+ */
 
-public class PreferenceInitializer extends AbstractPreferenceInitializer {
+public class ReviewPreferenceInitializer extends AbstractPreferenceInitializer {
 
 
 	@Override
 	public void initializeDefaultPreferences() {
 		IPreferenceStore store = Activator.getDefault().getPreferenceStore();
-		store.setDefault(PreferenceConstants.AUTHOR_NAME, "Anonymous");
-		store.setDefault(PreferenceConstants.AUTHOR_LANGUAGE, "Eng");
+		store.setDefault(RevisionPreferenceConstants.AUTHOR_NAME, RevisionPreferenceConstants.ANONYMOUS_AUTHOR);
+		store.setDefault(RevisionPreferenceConstants.AUTHOR_LANGUAGE, "Eng");
 
 		Color color = Display.getDefault().getSystemColor(SWT.COLOR_YELLOW);
-		PreferenceConverter.setDefault(store,PreferenceConstants.AUTHOR_COLOR,
+		PreferenceConverter.setDefault(store,RevisionPreferenceConstants.AUTHOR_COLOR,
 				color.getRGB());
 
 

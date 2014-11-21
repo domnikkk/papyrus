@@ -1,7 +1,32 @@
 /*
  * Style sheet for the CSS2 specification
  */
+table, td, th {
+    border: 1px solid #005A9C;
+   
+}
 
+table {
+    width: 100%;
+}
+
+th {
+    background-color: #005A9C;
+    color: white;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+ul li {
+    list-style-type: none;
+    background-repeat: no-repeat;
+    background-position: 0px 5px; 
+    padding-left: 14px; 
+}
 body {
   padding: 2em 1em 2em 70px;
   margin: 0;

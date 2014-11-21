@@ -12,6 +12,10 @@
  *
  *****************************************************************************/
 package org.eclipse.papyrus.revision.tool.core;
+/**
+ * contains all string about name of stereotypes attributes of the versioning profile 
+ *
+ */
 public interface I_VersioningStereotype {
 /** Qualified name of the stereotype VersioningElement */
 public static final String VERSIONINGELEMENT_STEREOTYPE = "PapyrusVersioningExtensions::VersioningElement";

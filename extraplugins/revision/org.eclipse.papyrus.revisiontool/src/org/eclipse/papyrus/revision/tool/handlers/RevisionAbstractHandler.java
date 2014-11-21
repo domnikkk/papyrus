@@ -1,3 +1,16 @@
+/*****************************************************************************
+ * Copyright (c) 2014 CEA LIST.
+ *
+ *
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Patrick Tessier (CEA LIST) patrick.tessier@cea.fr - Initial API and implementation
+ *
+ *****************************************************************************/
 package org.eclipse.papyrus.revision.tool.handlers;
 
 import java.util.ArrayList;
@@ -10,8 +23,15 @@ import org.eclipse.ui.ISelectionService;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.uml2.uml.Element;
 
+/**
+ * this is an abstract handler that can be used by other handlers
+ *
+ */
 public abstract class RevisionAbstractHandler extends AbstractHandler {
 
+	/**
+	 * the constructor
+	 */
 	public RevisionAbstractHandler() {
 		super();
 	}

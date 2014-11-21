@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Document="http:///schemas/Document/_qR4REMn0EeO9CYUoXDRplw/0" xmlns:Requirements="http://www.eclipse.org/papyrus/0.7.0/SysML/Requirements" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:structure="http://DeveloperProcess/schemas/structure/_VA9p4McPEeO9CYUoXDRplw/1" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/Document/_qR4REMn0EeO9CYUoXDRplw/0 pathmap://DEVELOPER_PROFILES/Document.profile.uml#_qR44IMn0EeO9CYUoXDRplw http://www.eclipse.org/papyrus/0.7.0/SysML/Requirements http://www.eclipse.org/papyrus/0.7.0/SysML#//requirements http://DeveloperProcess/schemas/structure/_VA9p4McPEeO9CYUoXDRplw/1 pathmap://DEVELOPER_PROFILES/developerprocess.profile.uml#_VA-4AMcPEeO9CYUoXDRplw">
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Document="http:///schemas/Document/_RQrLoGwBEeSIYu1Ih2FYyQ/10" xmlns:Requirements="http://www.eclipse.org/papyrus/0.7.0/SysML/Requirements" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:structure="http://DeveloperProcess/schemas/structure/_VA9p4McPEeO9CYUoXDRplw/1" xmlns:trace="http://DeveloperProcess/schemas/trace/_VBAtMMcPEeO9CYUoXDRplw/1" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/Document/_RQrLoGwBEeSIYu1Ih2FYyQ/10 pathmap://DEVELOPER_PROFILES/Document.profile.uml#_RQrLoWwBEeSIYu1Ih2FYyQ http://www.eclipse.org/papyrus/0.7.0/SysML/Requirements http://www.eclipse.org/papyrus/0.7.0/SysML#//requirements http://DeveloperProcess/schemas/structure/_VA9p4McPEeO9CYUoXDRplw/1 pathmap://DEVELOPER_PROFILES/developerprocess.profile.uml#_VA-4AMcPEeO9CYUoXDRplw http://DeveloperProcess/schemas/trace/_VBAtMMcPEeO9CYUoXDRplw/1 pathmap://DEVELOPER_PROFILES/developerprocess.profile.uml#_VBAtMccPEeO9CYUoXDRplw">
   <uml:Model xmi:id="_PURk0E6_EeSsPatWHMT5jQ" name="RevisionTool">
     <packageImport xmi:type="uml:PackageImport" xmi:id="_PUSL4E6_EeSsPatWHMT5jQ">
       <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
@@ -73,7 +73,7 @@
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OSgWNk-5EeSWG8b7b00v3Q" value="1"/>
         </ownedEnd>
       </packagedElement>
-      <packagedElement xmi:type="uml:Component" xmi:id="_mBiIkE-_EeSWG8b7b00v3Q" name="ReviewTool" useCase="_L3uyYGALEeSu6d79yLoqDA">
+      <packagedElement xmi:type="uml:Component" xmi:id="_mBiIkE-_EeSWG8b7b00v3Q" name="ReviewTool" useCase="_L3uyYGALEeSu6d79yLoqDA _OCgFYHFlEeSV7vTAYq-uEw">
         <ownedUseCase xmi:type="uml:UseCase" xmi:id="_EADO8E-5EeSWG8b7b00v3Q" name="Add or change information about the current author for the versionning" subject="_PUSL5E6_EeSsPatWHMT5jQ">
           <ownedComment xmi:type="uml:Comment" xmi:id="_f77D8E-5EeSWG8b7b00v3Q" annotatedElement="_1ygkUE7KEeSjDupdFZ5PpA">
             <body>When the user wants to add for the first time a review, the review system must ask the identity, the language and the wanted color of the user in order to add it in the associated review.&#xD;
@@ -153,6 +153,7 @@ This review could be displayed on diagrams. A dedicated view must be displayed d
 The revision model cannot be opened without the associated &quot;working model&quot;.</body>
           </ownedComment>
         </ownedUseCase>
+        <ownedUseCase xmi:type="uml:UseCase" xmi:id="_OCgFYHFlEeSV7vTAYq-uEw" name="Close  WorkingModel or close review editor " subject="_mBiIkE-_EeSWG8b7b00v3Q"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Component" xmi:id="_PUSL5E6_EeSsPatWHMT5jQ" name="RevisionTool" useCase="_1ygkUE7KEeSjDupdFZ5PpA _7eGOIE7KEeSjDupdFZ5PpA __i7VgE7KEeSjDupdFZ5PpA _rCRfcE7LEeSjDupdFZ5PpA _vWS5YE7LEeSjDupdFZ5PpA _2WHLME7LEeSjDupdFZ5PpA _5QGQEE7LEeSjDupdFZ5PpA _EADO8E-5EeSWG8b7b00v3Q">
         <ownedUseCase xmi:type="uml:UseCase" xmi:id="_rCRfcE7LEeSjDupdFZ5PpA" name="Launch Revision mode" subject="_PUSL5E6_EeSsPatWHMT5jQ">
@@ -198,6 +199,24 @@ If the modification is not accepted, the adding or deletion or the set is not ap
         <ownedEnd xmi:type="uml:Property" xmi:id="_R-Hh1GALEeSu6d79yLoqDA" name="create a model or save a review model " type="_L3uyYGALEeSu6d79yLoqDA" association="_R-Hh0GALEeSu6d79yLoqDA">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_R-Hh1WALEeSu6d79yLoqDA" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_R-Hh1mALEeSu6d79yLoqDA" value="1"/>
+        </ownedEnd>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_0WcJIHFfEeSbnbmZnYsqkw" name="Satisfy1" client="_L3uyYGALEeSu6d79yLoqDA" supplier="_ydw5cGAKEeSu6d79yLoqDA"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_1Wt6YHFfEeSbnbmZnYsqkw" name="Satisfy2" client="_1ygkUE7KEeSjDupdFZ5PpA" supplier="_CHiSME7JEeSjDupdFZ5PpA"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_3DxSEHFfEeSbnbmZnYsqkw" name="Satisfy3" client="_7eGOIE7KEeSjDupdFZ5PpA" supplier="_Um500E-rEeSWG8b7b00v3Q"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_3oER8HFfEeSbnbmZnYsqkw" name="Satisfy4" client="_7eGOIE7KEeSjDupdFZ5PpA" supplier="_CHiSME7JEeSjDupdFZ5PpA"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_4xjpkHFfEeSbnbmZnYsqkw" name="Satisfy5" client="__i7VgE7KEeSjDupdFZ5PpA" supplier="_CHiSME7JEeSjDupdFZ5PpA"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_6Z2dEHFfEeSbnbmZnYsqkw" name="Satisfy6" client="_EADO8E-5EeSWG8b7b00v3Q" supplier="_CHiSME7JEeSjDupdFZ5PpA"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_77TBsHFfEeSbnbmZnYsqkw" name="Satisfy7" client="_EADO8E-5EeSWG8b7b00v3Q" supplier="_2LldkE7IEeSjDupdFZ5PpA"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_9GbYEHFfEeSbnbmZnYsqkw" name="Satisfy8" client="_1ygkUE7KEeSjDupdFZ5PpA" supplier="_2LldkE7IEeSjDupdFZ5PpA"/>
+      <packagedElement xmi:type="uml:Association" xmi:id="_SmbjkHFlEeSV7vTAYq-uEw" name="A_user_close  workingmodel or close review editor " memberEnd="_SmbjkXFlEeSV7vTAYq-uEw _SmbjlHFlEeSV7vTAYq-uEw">
+        <ownedEnd xmi:type="uml:Property" xmi:id="_SmbjkXFlEeSV7vTAYq-uEw" name="user" type="_E5WOcE-5EeSWG8b7b00v3Q" association="_SmbjkHFlEeSV7vTAYq-uEw">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_SmbjknFlEeSV7vTAYq-uEw" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Smbjk3FlEeSV7vTAYq-uEw" value="1"/>
+        </ownedEnd>
+        <ownedEnd xmi:type="uml:Property" xmi:id="_SmbjlHFlEeSV7vTAYq-uEw" name="close  workingmodel or close review editor " type="_OCgFYHFlEeSV7vTAYq-uEw" association="_SmbjkHFlEeSV7vTAYq-uEw">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_SmbjlXFlEeSV7vTAYq-uEw" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_SmbjlnFlEeSV7vTAYq-uEw" value="1"/>
         </ownedEnd>
       </packagedElement>
     </packagedElement>
@@ -273,6 +292,30 @@ If the modification is not accepted, the adding or deletion or the set is not ap
     <packagedElement xmi:type="uml:Model" xmi:id="_PUSL506_EeSsPatWHMT5jQ" name="Test">
       <packagedElement xmi:type="uml:Dependency" xmi:id="_PUSL6E6_EeSsPatWHMT5jQ" name="Dependency1" client="_PUSL506_EeSsPatWHMT5jQ" supplier="_PUSL4k6_EeSsPatWHMT5jQ"/>
       <packagedElement xmi:type="uml:Dependency" xmi:id="_PUSy8E6_EeSsPatWHMT5jQ" name="Dependency2" client="_PUSL506_EeSsPatWHMT5jQ" supplier="_PUSL5U6_EeSsPatWHMT5jQ"/>
+      <packagedElement xmi:type="uml:Package" xmi:id="_i46F0HFgEeSbnbmZnYsqkw" name="reviewTest">
+        <packagedElement xmi:type="uml:Package" xmi:id="_mv4XYHFgEeSbnbmZnYsqkw" name="CreateLoadReview">
+          <packagedElement xmi:type="uml:UseCase" xmi:id="_PzYxAHFhEeSbnbmZnYsqkw" name="load a model without stereotypes"/>
+          <packagedElement xmi:type="uml:Abstraction" xmi:id="_T-I6MHFhEeSbnbmZnYsqkw" name="Verify1" client="_PzYxAHFhEeSbnbmZnYsqkw" supplier="_L3uyYGALEeSu6d79yLoqDA"/>
+          <packagedElement xmi:type="uml:UseCase" xmi:id="_UmdecHFhEeSbnbmZnYsqkw" name="load a model without dependency"/>
+          <packagedElement xmi:type="uml:Abstraction" xmi:id="_YsmNYHFhEeSbnbmZnYsqkw" name="Verify2" client="_UmdecHFhEeSbnbmZnYsqkw" supplier="_L3uyYGALEeSu6d79yLoqDA"/>
+          <packagedElement xmi:type="uml:Abstraction" xmi:id="_eo3XgHFhEeSbnbmZnYsqkw" name="Verify3" client="_PzYxAHFhEeSbnbmZnYsqkw" supplier="_CHiSME7JEeSjDupdFZ5PpA"/>
+          <packagedElement xmi:type="uml:Abstraction" xmi:id="_fM3ccHFhEeSbnbmZnYsqkw" name="Verify4" client="_UmdecHFhEeSbnbmZnYsqkw" supplier="_CHiSME7JEeSjDupdFZ5PpA"/>
+          <packagedElement xmi:type="uml:UseCase" xmi:id="_3EcOMHFkEeSV7vTAYq-uEw" name="Load a file"/>
+          <packagedElement xmi:type="uml:UseCase" xmi:id="_7P7-QHFkEeSV7vTAYq-uEw" name="create a file"/>
+          <packagedElement xmi:type="uml:Abstraction" xmi:id="_9WR_sHFkEeSV7vTAYq-uEw" name="Verify5" client="_3EcOMHFkEeSV7vTAYq-uEw" supplier="_L3uyYGALEeSu6d79yLoqDA"/>
+          <packagedElement xmi:type="uml:Abstraction" xmi:id="_9tMq4HFkEeSV7vTAYq-uEw" name="Verify6" client="_7P7-QHFkEeSV7vTAYq-uEw" supplier="_L3uyYGALEeSu6d79yLoqDA"/>
+          <packagedElement xmi:type="uml:Abstraction" xmi:id="_-GCosHFkEeSV7vTAYq-uEw" name="Verify7" client="_3EcOMHFkEeSV7vTAYq-uEw" supplier="_CHiSME7JEeSjDupdFZ5PpA"/>
+          <packagedElement xmi:type="uml:Abstraction" xmi:id="_-elrkHFkEeSV7vTAYq-uEw" name="Verify8" client="_7P7-QHFkEeSV7vTAYq-uEw" supplier="_CHiSME7JEeSjDupdFZ5PpA"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_5fpP4HFlEeSV7vTAYq-uEw" name="CloseEditor">
+          <packagedElement xmi:type="uml:UseCase" xmi:id="_X8oWwHFmEeSV7vTAYq-uEw" name="CloseandReopenReviewEditor"/>
+          <packagedElement xmi:type="uml:UseCase" xmi:id="_a2v-gHFmEeSV7vTAYq-uEw" name="CloseAndReopenWorkingModel"/>
+          <packagedElement xmi:type="uml:Abstraction" xmi:id="_dZY6YHFmEeSV7vTAYq-uEw" name="Verify1" client="_a2v-gHFmEeSV7vTAYq-uEw" supplier="_OCgFYHFlEeSV7vTAYq-uEw"/>
+          <packagedElement xmi:type="uml:Abstraction" xmi:id="_dzbLAHFmEeSV7vTAYq-uEw" name="Verify2" client="_X8oWwHFmEeSV7vTAYq-uEw" supplier="_OCgFYHFlEeSV7vTAYq-uEw"/>
+          <packagedElement xmi:type="uml:Abstraction" xmi:id="_eQI8MHFmEeSV7vTAYq-uEw" name="Verify3" client="_a2v-gHFmEeSV7vTAYq-uEw" supplier="_CHiSME7JEeSjDupdFZ5PpA"/>
+          <packagedElement xmi:type="uml:Abstraction" xmi:id="_ess8YHFmEeSV7vTAYq-uEw" name="Verify4" client="_X8oWwHFmEeSV7vTAYq-uEw" supplier="_CHiSME7JEeSjDupdFZ5PpA"/>
+        </packagedElement>
+      </packagedElement>
     </packagedElement>
     <packagedElement xmi:type="uml:Model" xmi:id="_4v1uoGtGEeSP88AAeuHqVQ" name="Revision model for Papyrus">
       <packagedElement xmi:type="uml:Package" xmi:id="_4v4x8GtGEeSP88AAeuHqVQ" name="Requirements">
@@ -713,6 +756,302 @@ If the modification is not accepted, the adding or deletion or the set is not ap
       </packagedElement>
       <packagedElement xmi:type="uml:Package" xmi:id="_CyPBYGvbEeSP88AAeuHqVQ" name="Tests"/>
     </packagedElement>
+    <packagedElement xmi:type="uml:Model" xmi:id="_pRQW8HC7EeSn09tfactLXw" name="Revision model for Papyrus">
+      <packagedElement xmi:type="uml:Package" xmi:id="_pRZg4XC7EeSn09tfactLXw" name="Table of Contents">
+        <packagedElement xmi:type="uml:Package" xmi:id="_sXJw7XC7EeSn09tfactLXw" name="Requirements"/>
+        <packagedElement xmi:type="uml:Package" xmi:id="_sXS60HC7EeSn09tfactLXw" name="Use Cases">
+          <packagedElement xmi:type="uml:Package" xmi:id="_sXS60nC7EeSn09tfactLXw" name="Add or change information about the current author for the versionning"/>
+          <packagedElement xmi:type="uml:Package" xmi:id="_sXS61HC7EeSn09tfactLXw" name="Respond to a review"/>
+          <packagedElement xmi:type="uml:Package" xmi:id="_sXS61nC7EeSn09tfactLXw" name="Add a review about modification on the current model"/>
+          <packagedElement xmi:type="uml:Package" xmi:id="_sXvmwXC7EeSn09tfactLXw" name="Add, update or remove a review on the current model"/>
+          <packagedElement xmi:type="uml:Package" xmi:id="_sX5XwXC7EeSn09tfactLXw" name="Create, load or save a review model "/>
+          <packagedElement xmi:type="uml:Package" xmi:id="_sX5Xw3C7EeSn09tfactLXw" name="Launch Revision mode"/>
+          <packagedElement xmi:type="uml:Package" xmi:id="_sX5XxXC7EeSn09tfactLXw" name="Register all modifications with Versioning information"/>
+          <packagedElement xmi:type="uml:Package" xmi:id="_sX5Xx3C7EeSn09tfactLXw" name="Stop RevisionMode"/>
+          <packagedElement xmi:type="uml:Package" xmi:id="_sX5XyXC7EeSn09tfactLXw" name="Accept or refuse modifications"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_sX5Xy3C7EeSn09tfactLXw" name="Design">
+          <packagedElement xmi:type="uml:Package" xmi:id="_sYChsHC7EeSn09tfactLXw" name="ReviewResourceManager"/>
+          <packagedElement xmi:type="uml:Package" xmi:id="_sYChsnC7EeSn09tfactLXw" name="ReviewsView"/>
+          <packagedElement xmi:type="uml:Package" xmi:id="_sYChtHC7EeSn09tfactLXw" name="ReviewsTreeLabelProvider"/>
+          <packagedElement xmi:type="uml:Package" xmi:id="_sYMSsXC7EeSn09tfactLXw" name="ReviewsTreeContentProvider"/>
+          <packagedElement xmi:type="uml:Package" xmi:id="_sYVcoXC7EeSn09tfactLXw" name="CreateOrSelectReviewModelDialog"/>
+          <packagedElement xmi:type="uml:Package" xmi:id="_sYVco3C7EeSn09tfactLXw" name="CreateAuthorDialog"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_sYVcpXC7EeSn09tfactLXw" name="Tests"/>
+        <packagedElement xmi:type="uml:Package" xmi:id="_sYVcp3C7EeSn09tfactLXw" name="Requirements Coverage"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_pRjR4HC7EeSn09tfactLXw" name="Requirements">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_pRjR4nC7EeSn09tfactLXw">
+          <body>- Versioning (id=Req_010): 
+ Papyrus must integrate versioning in order to display in comment author and date.</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_pRsb0XC7EeSn09tfactLXw">
+          <body>- VersionInfoReq (id=Req_011): 
+ Papyrus must integrate versionning. This information comes from O&quot;4.3.2 Pre-Defined Metadata Elements&quot; of the OASIS standard, &quot;Open Document Format for Office Applications (OpenDocument) Version 1.2-Part 1: OpenDocument Schema&quot;. </body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_pR2M0HC7EeSn09tfactLXw">
+          <body>- ReviewSystem (id=Req_020): 
+ Papyrus must integrate a review system to add comments with the possibility to respond to this comment. Each comment must have information about the user the date.</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_pR_90HC7EeSn09tfactLXw">
+          <body>- RevisionMode (id=Req_030): 
+ Papyrus must integrate a means to make revision mechanism to register, accept or refuse modification done by an user</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_pR_90nC7EeSn09tfactLXw">
+          <body>- IndependantReview (id=Req_021): 
+  It can exits several review models for one design “working model”. The working model is the current model edited by papyrus.</body>
+        </ownedComment>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_pSJHwHC7EeSn09tfactLXw" name="Use Cases">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_qyGeoHC7EeSn09tfactLXw">
+          <body>ReviewSystem UseCases</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_qyGeonC7EeSn09tfactLXw">
+          <body>The functionality revision can be divided into two parts:&#xD;
+- Management of review&#xD;
+&#xD;
+</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_q5jKcHC7EeSn09tfactLXw">
+          <body>ReviewSystem UseCases</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_q5jKcnC7EeSn09tfactLXw">
+          <body>- Management of revisions</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_rjEBgHC7EeSn09tfactLXw">
+          <body>Revision mode Use Case</body>
+        </ownedComment>
+        <packagedElement xmi:type="uml:Package" xmi:id="_rjEBgnC7EeSn09tfactLXw" name="Add or change information about the current author for the versionning">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_rjEBhHC7EeSn09tfactLXw">
+            <body>When the user wants to add for the first time a review, the review system must ask the identity, the language and the wanted color of the user in order to add it in the associated review.&#xD;
+This information could be changed at any time in the preference of papyrus&#xD;
+</body>
+          </ownedComment>
+          <ownedComment xmi:type="uml:Comment" xmi:id="_rjEBhnC7EeSn09tfactLXw">
+            <body>UserIdentity</body>
+          </ownedComment>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_rjEokHC7EeSn09tfactLXw" name="Respond to a review">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_rjEoknC7EeSn09tfactLXw">
+            <body>A user could have the possibility to respond to an existing review. Thanks to this, it is possible to see the discussion flow about a subject. </body>
+          </ownedComment>
+          <ownedComment xmi:type="uml:Comment" xmi:id="_rjEolHC7EeSn09tfactLXw">
+            <body>RespondComment</body>
+          </ownedComment>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_rjEolnC7EeSn09tfactLXw" name="Add a review about modification on the current model">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_rjEomHC7EeSn09tfactLXw">
+            <body>When the revision mode is activated, the user can add review about the modification done in the model.&#xD;
+A review can be added about a deletion of UML element. In order to model a modification in a model, a Diff element from EMF compare can be used.&#xD;
+&#xD;
+</body>
+          </ownedComment>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_rjXjgXC7EeSn09tfactLXw" name="Add, update or remove a review on the current model">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_rjXjg3C7EeSn09tfactLXw">
+            <body>The user adds a review on an element of the model. This review will be not directly store in the model but into a new model that will contain all review comments.&#xD;
+In order to create a review, the review tool can create a review model if needed. &#xD;
+The review tool creates also a &quot;user author&quot;. From all preferences, the system creates an author that will associated to a review.&#xD;
+Finally this created review contains all informations see in the version information.&#xD;
+&#xD;
+This review could be displayed on diagrams. A dedicated view must be displayed dedicated to review comment. (it can be sorted by date author, subject..)&#xD;
+</body>
+          </ownedComment>
+          <ownedComment xmi:type="uml:Comment" xmi:id="_rqEBYHC7EeSn09tfactLXw">
+            <body>Add A review diagram</body>
+          </ownedComment>
+          <ownedComment xmi:type="uml:Comment" xmi:id="_rqEBYnC7EeSn09tfactLXw">
+            <body>Add a Comment</body>
+          </ownedComment>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_rqEBZHC7EeSn09tfactLXw" name="Create, load or save a review model ">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_rqNLUHC7EeSn09tfactLXw">
+            <body>When a model is opened in papyrus. The user can :&#xD;
+- create a new revision model&#xD;
+- load a new revision model&#xD;
+- save a revision model.&#xD;
+The revision model cannot be opened without the associated &quot;working model&quot;.</body>
+          </ownedComment>
+          <ownedComment xmi:type="uml:Comment" xmi:id="_rqNLUnC7EeSn09tfactLXw">
+            <body>Open save a review</body>
+          </ownedComment>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_rqNLVHC7EeSn09tfactLXw" name="Launch Revision mode">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_rqNLVnC7EeSn09tfactLXw">
+            <body>The user can launch revision mode. &#xD;
+From this time all modifications will be register and associated to the user. &#xD;
+A modification could be:&#xD;
+	- a deletion&#xD;
+	- an adding&#xD;
+	- a set of a property of the graphical model or the semantic model&#xD;
+&#xD;
+</body>
+          </ownedComment>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_rqNLWHC7EeSn09tfactLXw" name="Register all modifications with Versioning information">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_rqNLWnC7EeSn09tfactLXw">
+            <body>All modifications are store and associated to the current user.&#xD;
+A modification must have a timestamp, an author.&#xD;
+</body>
+          </ownedComment>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_rqNLXHC7EeSn09tfactLXw" name="Stop RevisionMode">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_rqW8UHC7EeSn09tfactLXw">
+            <body>When the user stop the revision mode, modifications are not registered and done directly on the model.&#xD;
+</body>
+          </ownedComment>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_rqW8UnC7EeSn09tfactLXw" name="Accept or refuse modifications">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_rqW8VHC7EeSn09tfactLXw">
+            <body>Thanks to registered modification the user can accept or refuse the modification.&#xD;
+If the modification is accepted, the adding or the deletion or the set is really done on the model, and the modification is removed from the stack.&#xD;
+If the modification is not accepted, the adding or deletion or the set is not applied, and the modification is removed from the stack.&#xD;
+</body>
+          </ownedComment>
+        </packagedElement>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_rqW8VnC7EeSn09tfactLXw" name="Design">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_r07NkHC7EeSn09tfactLXw">
+          <body>Architecture Overview</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_r-KCEHC7EeSn09tfactLXw">
+          <body>ProfileDiagram</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_r-TMAXC7EeSn09tfactLXw">
+          <body>Versioning profile</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_sWGoAHC7EeSn09tfactLXw">
+          <body>Review profile</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_sWGoAnC7EeSn09tfactLXw">
+          <body>Review Profile</body>
+        </ownedComment>
+        <packagedElement xmi:type="uml:Package" xmi:id="_sWQZAHC7EeSn09tfactLXw" name="ReviewResourceManager"/>
+        <packagedElement xmi:type="uml:Package" xmi:id="_sWQZAnC7EeSn09tfactLXw" name="ReviewsView"/>
+        <packagedElement xmi:type="uml:Package" xmi:id="_sWQZBHC7EeSn09tfactLXw" name="ReviewsTreeLabelProvider"/>
+        <packagedElement xmi:type="uml:Package" xmi:id="_sWQZBnC7EeSn09tfactLXw" name="ReviewsTreeContentProvider"/>
+        <packagedElement xmi:type="uml:Package" xmi:id="_sWQZCHC7EeSn09tfactLXw" name="CreateOrSelectReviewModelDialog"/>
+        <packagedElement xmi:type="uml:Package" xmi:id="_sWQZCnC7EeSn09tfactLXw" name="CreateAuthorDialog"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_sWQZDHC7EeSn09tfactLXw" name="Tests"/>
+      <packagedElement xmi:type="uml:Package" xmi:id="_sWaKAHC7EeSn09tfactLXw" name="Requirements Coverage">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_sWaKAnC7EeSn09tfactLXw">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_sWaKCHC7EeSn09tfactLXw">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_sWaKCnC7EeSn09tfactLXw">
+              <ownedComment xmi:type="uml:Comment" xmi:id="_sWaKDHC7EeSn09tfactLXw">
+                <body>Req_010</body>
+              </ownedComment>
+              <body>Requirement ID</body>
+            </ownedComment>
+            <ownedComment xmi:type="uml:Comment" xmi:id="_sWaKDnC7EeSn09tfactLXw">
+              <body>Satisfied elements</body>
+            </ownedComment>
+            <ownedComment xmi:type="uml:Comment" xmi:id="_sWjT8HC7EeSn09tfactLXw">
+              <body>Verified elements</body>
+            </ownedComment>
+            <body>Line for the requirement with Req_010 as id</body>
+          </ownedComment>
+          <ownedComment xmi:type="uml:Comment" xmi:id="_sWjT9HC7EeSn09tfactLXw">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_sWjT9nC7EeSn09tfactLXw">
+              <ownedComment xmi:type="uml:Comment" xmi:id="_sWjT-HC7EeSn09tfactLXw">
+                <body>Req_011</body>
+              </ownedComment>
+              <body>Requirement ID</body>
+            </ownedComment>
+            <ownedComment xmi:type="uml:Comment" xmi:id="_sWjT-nC7EeSn09tfactLXw">
+              <body>Satisfied elements</body>
+            </ownedComment>
+            <ownedComment xmi:type="uml:Comment" xmi:id="_sWtE8HC7EeSn09tfactLXw">
+              <body>Verified elements</body>
+            </ownedComment>
+            <body>Line for the requirement with Req_011 as id</body>
+          </ownedComment>
+          <ownedComment xmi:type="uml:Comment" xmi:id="_sWtE9HC7EeSn09tfactLXw">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_sWtE9nC7EeSn09tfactLXw">
+              <ownedComment xmi:type="uml:Comment" xmi:id="_sWtE-HC7EeSn09tfactLXw">
+                <body>Req_020</body>
+              </ownedComment>
+              <body>Requirement ID</body>
+            </ownedComment>
+            <ownedComment xmi:type="uml:Comment" xmi:id="_sWtE-nC7EeSn09tfactLXw">
+              <body>Satisfied elements</body>
+            </ownedComment>
+            <ownedComment xmi:type="uml:Comment" xmi:id="_sW2O4XC7EeSn09tfactLXw">
+              <body>Verified elements</body>
+            </ownedComment>
+            <body>Line for the requirement with Req_020 as id</body>
+          </ownedComment>
+          <ownedComment xmi:type="uml:Comment" xmi:id="_sW2O5XC7EeSn09tfactLXw">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_sW2O53C7EeSn09tfactLXw">
+              <ownedComment xmi:type="uml:Comment" xmi:id="_sW2O6XC7EeSn09tfactLXw">
+                <body>Req_030</body>
+              </ownedComment>
+              <body>Requirement ID</body>
+            </ownedComment>
+            <ownedComment xmi:type="uml:Comment" xmi:id="_sW__4HC7EeSn09tfactLXw">
+              <body>Satisfied elements</body>
+            </ownedComment>
+            <ownedComment xmi:type="uml:Comment" xmi:id="_sW__5HC7EeSn09tfactLXw">
+              <body>Verified elements</body>
+            </ownedComment>
+            <body>Line for the requirement with Req_030 as id</body>
+          </ownedComment>
+          <ownedComment xmi:type="uml:Comment" xmi:id="_sW__6HC7EeSn09tfactLXw">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_sXJw4XC7EeSn09tfactLXw">
+              <ownedComment xmi:type="uml:Comment" xmi:id="_sXJw43C7EeSn09tfactLXw">
+                <body>Req_021</body>
+              </ownedComment>
+              <body>Requirement ID</body>
+            </ownedComment>
+            <ownedComment xmi:type="uml:Comment" xmi:id="_sXJw5XC7EeSn09tfactLXw">
+              <body>Satisfied elements</body>
+            </ownedComment>
+            <ownedComment xmi:type="uml:Comment" xmi:id="_sXJw6XC7EeSn09tfactLXw">
+              <body>Verified elements</body>
+            </ownedComment>
+            <body>Line for the requirement with Req_021 as id</body>
+          </ownedComment>
+          <body>Requirements Coverage Table</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_sWaKA3C7EeSn09tfactLXw">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_sWaKEHC7EeSn09tfactLXw">
+            <body>Req_010</body>
+          </ownedComment>
+          <ownedComment xmi:type="uml:Comment" xmi:id="_sWjT_HC7EeSn09tfactLXw">
+            <body>Req_011</body>
+          </ownedComment>
+          <ownedComment xmi:type="uml:Comment" xmi:id="_sWtE_HC7EeSn09tfactLXw">
+            <body>Req_020</body>
+          </ownedComment>
+          <ownedComment xmi:type="uml:Comment" xmi:id="_sW__4nC7EeSn09tfactLXw">
+            <body>Req_030</body>
+          </ownedComment>
+          <ownedComment xmi:type="uml:Comment" xmi:id="_sXJw53C7EeSn09tfactLXw">
+            <body>Req_021</body>
+          </ownedComment>
+          <body>Unsatisfied requirements (5 out of 5) : </body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_sWaKBXC7EeSn09tfactLXw">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_sWjT8nC7EeSn09tfactLXw">
+            <body>Req_010</body>
+          </ownedComment>
+          <ownedComment xmi:type="uml:Comment" xmi:id="_sWtE8nC7EeSn09tfactLXw">
+            <body>Req_011</body>
+          </ownedComment>
+          <ownedComment xmi:type="uml:Comment" xmi:id="_sW2O43C7EeSn09tfactLXw">
+            <body>Req_020</body>
+          </ownedComment>
+          <ownedComment xmi:type="uml:Comment" xmi:id="_sW__5nC7EeSn09tfactLXw">
+            <body>Req_030</body>
+          </ownedComment>
+          <ownedComment xmi:type="uml:Comment" xmi:id="_sXJw63C7EeSn09tfactLXw">
+            <body>Req_021</body>
+          </ownedComment>
+          <body>Unverified requirements (5 out of 5) : </body>
+        </ownedComment>
+      </packagedElement>
+    </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_PUSy8U6_EeSsPatWHMT5jQ">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_PUSy8k6_EeSsPatWHMT5jQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="pathmap://DEVELOPER_PROFILES/developerprocess.profile.uml#_VA6mkMcPEeO9CYUoXDRplw"/>
@@ -738,10 +1077,77 @@ If the modification is not accepted, the adding or deletion or the set is not ap
       <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML_PROFILES/SysML.profile.uml#_OOJC4LX8EduFmqQsrNB9lw"/>
     </profileApplication>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_PUSy-U6_EeSsPatWHMT5jQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_m6YmMHC7EeSn09tfactLXw" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_m6YmMXC7EeSn09tfactLXw" key="Version" value="0.0.11"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_m6YmMnC7EeSn09tfactLXw" key="Comment" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_m6YmM3C7EeSn09tfactLXw" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_m6YmNHC7EeSn09tfactLXw" key="Date" value="2014-11-14"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_m6YmNXC7EeSn09tfactLXw" key="Author" value=""/>
+      </eAnnotations>
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_PUSy-k6_EeSsPatWHMT5jQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
-        <references xmi:type="ecore:EPackage" href="pathmap://DEVELOPER_PROFILES/Document.profile.uml#_qR44IMn0EeO9CYUoXDRplw"/>
+        <references xmi:type="ecore:EPackage" href="pathmap://DEVELOPER_PROFILES/Document.profile.uml#_RQrLoWwBEeSIYu1Ih2FYyQ"/>
       </eAnnotations>
       <appliedProfile xmi:type="uml:Profile" href="pathmap://DEVELOPER_PROFILES/Document.profile.uml#_D0JcUMnzEeO9CYUoXDRplw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_ByH1sHFhEeSbnbmZnYsqkw">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_B0DvYHFhEeSbnbmZnYsqkw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/0.7.0/SysML#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML_PROFILES/SysML.profile.uml#_TZ_nULU5EduiKqCzJMWbGw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_B0DvYXFhEeSbnbmZnYsqkw">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_B2bt8HFhEeSbnbmZnYsqkw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/0.7.0/SysML#//modelelements"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML_PROFILES/SysML.profile.uml#_Gx8MgLX7EduFmqQsrNB9lw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_B2bt8XFhEeSbnbmZnYsqkw">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_B4XnoHFhEeSbnbmZnYsqkw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/0.7.0/SysML#//blocks"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML_PROFILES/SysML.profile.uml#_fSw28LX7EduFmqQsrNB9lw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_B4XnoXFhEeSbnbmZnYsqkw">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_B65XMHFhEeSbnbmZnYsqkw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/0.7.0/SysML#//portandflows"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML_PROFILES/SysML.profile.uml#_rpx28LX7EduFmqQsrNB9lw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_B65XMXFhEeSbnbmZnYsqkw">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_B81Q4HFhEeSbnbmZnYsqkw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/0.7.0/SysML#//constraints"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML_PROFILES/SysML.profile.uml#_5WYJ0LX7EduFmqQsrNB9lw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_B81Q4XFhEeSbnbmZnYsqkw">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_B-nZkHFhEeSbnbmZnYsqkw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/0.7.0/SysML#//activities"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML_PROFILES/SysML.profile.uml#_C2zXMLX8EduFmqQsrNB9lw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_B-xKkHFhEeSbnbmZnYsqkw">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_CA__MHFhEeSbnbmZnYsqkw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/0.7.0/SysML#//allocations"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML_PROFILES/SysML.profile.uml#_NxdG4LX8EduFmqQsrNB9lw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_CCDIEHFhEeSbnbmZnYsqkw">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_CEILsHFhEeSbnbmZnYsqkw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/0.7.0/SysML#//interactions"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML_PROFILES/SysML.profile.uml#_meOioLX8EduFmqQsrNB9lw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_CEILsXFhEeSbnbmZnYsqkw">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_CGgxUHFhEeSbnbmZnYsqkw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/0.7.0/SysML#//statemachines"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML_PROFILES/SysML.profile.uml#_nAF5kLX8EduFmqQsrNB9lw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_CGgxUXFhEeSbnbmZnYsqkw">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_CIcrAHFhEeSbnbmZnYsqkw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/0.7.0/SysML#//usecases"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML_PROFILES/SysML.profile.uml#_neZmMLX8EduFmqQsrNB9lw"/>
     </profileApplication>
   </uml:Model>
   <structure:Project xmi:id="_PPfoAGtGEeSP88AAeuHqVQ" author="P. Tessier" version="1.0" base_Model="_PURk0E6_EeSsPatWHMT5jQ" title="Revision model for Papyrus"/>
@@ -755,90 +1161,90 @@ If the modification is not accepted, the adding or deletion or the set is not ap
   <Requirements:Requirement xmi:id="_Um7qAE-rEeSWG8b7b00v3Q" text="Papyrus must integrate versionning. This information comes from O&quot;4.3.2 Pre-Defined Metadata Elements&quot; of the OASIS standard, &quot;Open Document Format for Office Applications (OpenDocument) Version 1.2-Part 1: OpenDocument Schema&quot;. " id="Req_011" base_Class="_Um500E-rEeSWG8b7b00v3Q"/>
   <Requirements:DeriveReqt xmi:id="_Um_UYE-rEeSWG8b7b00v3Q" base_Abstraction="_Um-GQE-rEeSWG8b7b00v3Q"/>
   <Requirements:Requirement xmi:id="_yd6qcGAKEeSu6d79yLoqDA" text=" It can exits several review models for one design “working model”. The working model is the current model edited by papyrus." id="Req_021" base_Class="_ydw5cGAKEeSu6d79yLoqDA"/>
-  <Document:Document xmi:id="_PWavYGtGEeSP88AAeuHqVQ" author="P. Tessier" version="1.0"/>
-  <Document:Section xmi:id="_PWb9gGtGEeSP88AAeuHqVQ"/>
-  <Document:Content xmi:id="_PWckkGtGEeSP88AAeuHqVQ"/>
-  <Document:Content xmi:id="_PWdysGtGEeSP88AAeuHqVQ"/>
-  <Document:Content xmi:id="_PWeZwGtGEeSP88AAeuHqVQ"/>
-  <Document:Content xmi:id="_PWfA0GtGEeSP88AAeuHqVQ"/>
-  <Document:Content xmi:id="_PWfA0WtGEeSP88AAeuHqVQ"/>
-  <Document:Section xmi:id="_PWfn4GtGEeSP88AAeuHqVQ"/>
-  <Document:Content xmi:id="_PWgO8GtGEeSP88AAeuHqVQ"/>
-  <Document:ImageRef xmi:id="_PWg2AGtGEeSP88AAeuHqVQ" ref="C:/git/org.eclipse.papyrus/extraplugins/revision/org.eclipse.papyrus.revisiontool/doc/imgDOC/ReviewSystem_UseCases.png"/>
-  <Document:Content xmi:id="_PWhdEGtGEeSP88AAeuHqVQ"/>
-  <Document:ImageRef xmi:id="_PWiEIGtGEeSP88AAeuHqVQ" ref="C:/git/org.eclipse.papyrus/extraplugins/revision/org.eclipse.papyrus.revisiontool/doc/imgDOC/Revision_mode_Use_Case.png"/>
-  <Document:Section xmi:id="_PWiEIWtGEeSP88AAeuHqVQ"/>
-  <Document:Content xmi:id="_PWirMGtGEeSP88AAeuHqVQ"/>
-  <Document:ImageRef xmi:id="_PWjSQGtGEeSP88AAeuHqVQ" ref="C:\git\org.eclipse.papyrus\extraplugins\revision\org.eclipse.papyrus.revisiontool\doc\imgDOC\UserIdentity.png"/>
-  <Document:Section xmi:id="_PWj5UGtGEeSP88AAeuHqVQ"/>
-  <Document:Content xmi:id="_PWj5UWtGEeSP88AAeuHqVQ"/>
-  <Document:ImageRef xmi:id="_PWkgYGtGEeSP88AAeuHqVQ" ref="C:\git\org.eclipse.papyrus\extraplugins\revision\org.eclipse.papyrus.revisiontool\doc\imgDOC\RespondComment.png"/>
-  <Document:Section xmi:id="_PWlHcGtGEeSP88AAeuHqVQ"/>
-  <Document:Content xmi:id="_PWlugGtGEeSP88AAeuHqVQ"/>
-  <Document:Section xmi:id="_PWlugWtGEeSP88AAeuHqVQ"/>
-  <Document:Content xmi:id="_PWmVkGtGEeSP88AAeuHqVQ"/>
-  <Document:ImageRef xmi:id="_PWm8oGtGEeSP88AAeuHqVQ" ref="C:/git/org.eclipse.papyrus/extraplugins/revision/org.eclipse.papyrus.revisiontool/doc/imgDOC/Add_A_review_diagram.png"/>
-  <Document:ImageRef xmi:id="_PWnjsGtGEeSP88AAeuHqVQ" ref="C:\git\org.eclipse.papyrus\extraplugins\revision\org.eclipse.papyrus.revisiontool\doc\imgDOC\addComment.png"/>
-  <Document:Section xmi:id="_PWoKwGtGEeSP88AAeuHqVQ"/>
-  <Document:Content xmi:id="_PWoKwWtGEeSP88AAeuHqVQ"/>
-  <Document:ImageRef xmi:id="_PWox0GtGEeSP88AAeuHqVQ" ref="C:\git\org.eclipse.papyrus\extraplugins\revision\org.eclipse.papyrus.revisiontool\doc\imgDOC\OpenSaveReview.png"/>
-  <Document:Section xmi:id="_PWpY4GtGEeSP88AAeuHqVQ"/>
-  <Document:Content xmi:id="_PWp_8GtGEeSP88AAeuHqVQ"/>
-  <Document:Section xmi:id="_PWp_8WtGEeSP88AAeuHqVQ"/>
-  <Document:Content xmi:id="_PWqnAGtGEeSP88AAeuHqVQ"/>
-  <Document:Section xmi:id="_PWrOEGtGEeSP88AAeuHqVQ"/>
-  <Document:Content xmi:id="_PWr1IGtGEeSP88AAeuHqVQ"/>
-  <Document:Section xmi:id="_PWr1IWtGEeSP88AAeuHqVQ"/>
-  <Document:Content xmi:id="_PWscMGtGEeSP88AAeuHqVQ"/>
-  <Document:Section xmi:id="_PWtDQGtGEeSP88AAeuHqVQ"/>
-  <Document:ImageRef xmi:id="_PWtqUGtGEeSP88AAeuHqVQ" ref="C:/git/org.eclipse.papyrus/extraplugins/revision/org.eclipse.papyrus.revisiontool/doc/imgDOC/ClassDiagram.png"/>
-  <Document:ImageRef xmi:id="_PWtqUWtGEeSP88AAeuHqVQ" ref="C:/git/org.eclipse.papyrus/extraplugins/revision/org.eclipse.papyrus.revisiontool/doc/imgDOC/Papyrus_Model_Versionning_profile_description..png"/>
-  <Document:Content xmi:id="_PWuRYGtGEeSP88AAeuHqVQ"/>
-  <Document:ImageRef xmi:id="_PWu4cGtGEeSP88AAeuHqVQ" ref="C:/git/org.eclipse.papyrus/extraplugins/revision/org.eclipse.papyrus.revisiontool/doc/imgDOC/Review_profile.png"/>
-  <Document:Content xmi:id="_PWvfgGtGEeSP88AAeuHqVQ"/>
-  <Document:Section xmi:id="_PWwGkGtGEeSP88AAeuHqVQ"/>
-  <Document:Document xmi:id="_PWwtoGtGEeSP88AAeuHqVQ" author="P. Tessier" version="1.0"/>
-  <Document:Section xmi:id="_PWwtoWtGEeSP88AAeuHqVQ"/>
-  <Document:Content xmi:id="_PWxUsGtGEeSP88AAeuHqVQ"/>
-  <Document:Content xmi:id="_PWx7wGtGEeSP88AAeuHqVQ"/>
-  <Document:Content xmi:id="_PWyi0GtGEeSP88AAeuHqVQ"/>
-  <Document:Content xmi:id="_PWyi0WtGEeSP88AAeuHqVQ"/>
-  <Document:Content xmi:id="_PWzJ4GtGEeSP88AAeuHqVQ"/>
-  <Document:Section xmi:id="_PWzw8GtGEeSP88AAeuHqVQ"/>
-  <Document:Content xmi:id="_PW0YAGtGEeSP88AAeuHqVQ"/>
-  <Document:ImageRef xmi:id="_PW0_EGtGEeSP88AAeuHqVQ" ref="C:/git/org.eclipse.papyrus/extraplugins/revision/org.eclipse.papyrus.revisiontool/doc/imgDOC/ReviewSystem_UseCases.png"/>
-  <Document:Content xmi:id="_PW1mIGtGEeSP88AAeuHqVQ"/>
-  <Document:ImageRef xmi:id="_PW1mIWtGEeSP88AAeuHqVQ" ref="C:/git/org.eclipse.papyrus/extraplugins/revision/org.eclipse.papyrus.revisiontool/doc/imgDOC/Revision_mode_Use_Case.png"/>
-  <Document:Section xmi:id="_PW2NMGtGEeSP88AAeuHqVQ"/>
-  <Document:Content xmi:id="_PW20QGtGEeSP88AAeuHqVQ"/>
-  <Document:ImageRef xmi:id="_PW3bUGtGEeSP88AAeuHqVQ" ref="C:\git\org.eclipse.papyrus\extraplugins\revision\org.eclipse.papyrus.revisiontool\doc\imgDOC\UserIdentity.png"/>
-  <Document:Section xmi:id="_PW3bUWtGEeSP88AAeuHqVQ"/>
-  <Document:Content xmi:id="_PW4CYGtGEeSP88AAeuHqVQ"/>
-  <Document:ImageRef xmi:id="_PW4pcGtGEeSP88AAeuHqVQ" ref="C:\git\org.eclipse.papyrus\extraplugins\revision\org.eclipse.papyrus.revisiontool\doc\imgDOC\RespondComment.png"/>
-  <Document:Section xmi:id="_PW5QgGtGEeSP88AAeuHqVQ"/>
-  <Document:Content xmi:id="_PW53kGtGEeSP88AAeuHqVQ"/>
-  <Document:Section xmi:id="_PW6eoGtGEeSP88AAeuHqVQ"/>
-  <Document:Content xmi:id="_PW6eoWtGEeSP88AAeuHqVQ"/>
-  <Document:ImageRef xmi:id="_PW7FsGtGEeSP88AAeuHqVQ" ref="C:/git/org.eclipse.papyrus/extraplugins/revision/org.eclipse.papyrus.revisiontool/doc/imgDOC/Add_A_review_diagram.png"/>
-  <Document:ImageRef xmi:id="_PW7swGtGEeSP88AAeuHqVQ" ref="C:\git\org.eclipse.papyrus\extraplugins\revision\org.eclipse.papyrus.revisiontool\doc\imgDOC\addComment.png"/>
-  <Document:Section xmi:id="_PW8T0GtGEeSP88AAeuHqVQ"/>
-  <Document:Content xmi:id="_PW8T0WtGEeSP88AAeuHqVQ"/>
-  <Document:ImageRef xmi:id="_PW864GtGEeSP88AAeuHqVQ" ref="C:\git\org.eclipse.papyrus\extraplugins\revision\org.eclipse.papyrus.revisiontool\doc\imgDOC\OpenSaveReview.png"/>
-  <Document:Section xmi:id="_PW9h8GtGEeSP88AAeuHqVQ"/>
-  <Document:Content xmi:id="_PW9h8WtGEeSP88AAeuHqVQ"/>
-  <Document:Section xmi:id="_PW-JAGtGEeSP88AAeuHqVQ"/>
-  <Document:Content xmi:id="_PW-wEGtGEeSP88AAeuHqVQ"/>
-  <Document:Section xmi:id="_PW_XIGtGEeSP88AAeuHqVQ"/>
-  <Document:Content xmi:id="_PW_-MGtGEeSP88AAeuHqVQ"/>
-  <Document:Section xmi:id="_PXAlQGtGEeSP88AAeuHqVQ"/>
-  <Document:Content xmi:id="_PXAlQWtGEeSP88AAeuHqVQ"/>
-  <Document:Section xmi:id="_PXBMUGtGEeSP88AAeuHqVQ"/>
-  <Document:ImageRef xmi:id="_PXBzYGtGEeSP88AAeuHqVQ" ref="C:/git/org.eclipse.papyrus/extraplugins/revision/org.eclipse.papyrus.revisiontool/doc/imgDOC/ClassDiagram.png"/>
-  <Document:ImageRef xmi:id="_PXCacGtGEeSP88AAeuHqVQ" ref="C:/git/org.eclipse.papyrus/extraplugins/revision/org.eclipse.papyrus.revisiontool/doc/imgDOC/ProfileDiagram.png"/>
-  <Document:Content xmi:id="_PXCacWtGEeSP88AAeuHqVQ"/>
-  <Document:ImageRef xmi:id="_PXDBgGtGEeSP88AAeuHqVQ" ref="C:/git/org.eclipse.papyrus/extraplugins/revision/org.eclipse.papyrus.revisiontool/doc/imgDOC/Review_profile.png"/>
-  <Document:Content xmi:id="_PXDokGtGEeSP88AAeuHqVQ"/>
-  <Document:Section xmi:id="_PXEPoGtGEeSP88AAeuHqVQ"/>
+  <Document:Document xmi:id="_k6i_sHFbEeSg6MouyiKQ3Q" author="P. Tessier" version="1.0"/>
+  <Document:Section xmi:id="_k6i_sXFbEeSg6MouyiKQ3Q"/>
+  <Document:Content xmi:id="_k6i_snFbEeSg6MouyiKQ3Q"/>
+  <Document:Content xmi:id="_k6i_s3FbEeSg6MouyiKQ3Q"/>
+  <Document:Content xmi:id="_k6i_tHFbEeSg6MouyiKQ3Q"/>
+  <Document:Content xmi:id="_k6i_tXFbEeSg6MouyiKQ3Q"/>
+  <Document:Content xmi:id="_k6i_tnFbEeSg6MouyiKQ3Q"/>
+  <Document:Section xmi:id="_k6i_t3FbEeSg6MouyiKQ3Q"/>
+  <Document:Content xmi:id="_k6i_uHFbEeSg6MouyiKQ3Q"/>
+  <Document:ImageRef xmi:id="_k6i_uXFbEeSg6MouyiKQ3Q" ref="C:/git/org.eclipse.papyrus/extraplugins/revision/org.eclipse.papyrus.revisiontool/doc/imgDOC/ReviewSystem_UseCases.png"/>
+  <Document:Content xmi:id="_k6sJoHFbEeSg6MouyiKQ3Q"/>
+  <Document:ImageRef xmi:id="_k6sJoXFbEeSg6MouyiKQ3Q" ref="C:/git/org.eclipse.papyrus/extraplugins/revision/org.eclipse.papyrus.revisiontool/doc/imgDOC/Revision_mode_Use_Case.png"/>
+  <Document:Section xmi:id="_k6sJonFbEeSg6MouyiKQ3Q"/>
+  <Document:Content xmi:id="_k6sJo3FbEeSg6MouyiKQ3Q"/>
+  <Document:ImageRef xmi:id="_k6sJpHFbEeSg6MouyiKQ3Q" ref="C:\git\org.eclipse.papyrus\extraplugins\revision\org.eclipse.papyrus.revisiontool\doc\imgDOC\UserIdentity.png"/>
+  <Document:Section xmi:id="_k6sJpXFbEeSg6MouyiKQ3Q"/>
+  <Document:Content xmi:id="_k6sJpnFbEeSg6MouyiKQ3Q"/>
+  <Document:ImageRef xmi:id="_k6sJp3FbEeSg6MouyiKQ3Q" ref="C:\git\org.eclipse.papyrus\extraplugins\revision\org.eclipse.papyrus.revisiontool\doc\imgDOC\RespondComment.png"/>
+  <Document:Section xmi:id="_k6sJqHFbEeSg6MouyiKQ3Q"/>
+  <Document:Content xmi:id="_k6sJqXFbEeSg6MouyiKQ3Q"/>
+  <Document:Section xmi:id="_k6sJqnFbEeSg6MouyiKQ3Q"/>
+  <Document:Content xmi:id="_k6sJq3FbEeSg6MouyiKQ3Q"/>
+  <Document:ImageRef xmi:id="_k6sJrHFbEeSg6MouyiKQ3Q" ref="C:/git/org.eclipse.papyrus/extraplugins/revision/org.eclipse.papyrus.revisiontool/doc/imgDOC/Add_A_review_diagram.png"/>
+  <Document:ImageRef xmi:id="_k6sJrXFbEeSg6MouyiKQ3Q" ref="C:\git\org.eclipse.papyrus\extraplugins\revision\org.eclipse.papyrus.revisiontool\doc\imgDOC\addComment.png"/>
+  <Document:Section xmi:id="_k6sJrnFbEeSg6MouyiKQ3Q"/>
+  <Document:Content xmi:id="_k6sJr3FbEeSg6MouyiKQ3Q"/>
+  <Document:ImageRef xmi:id="_k6sJsHFbEeSg6MouyiKQ3Q" ref="C:\git\org.eclipse.papyrus\extraplugins\revision\org.eclipse.papyrus.revisiontool\doc\imgDOC\OpenSaveReview.png"/>
+  <Document:Section xmi:id="_k6sJsXFbEeSg6MouyiKQ3Q"/>
+  <Document:Content xmi:id="_k6sJsnFbEeSg6MouyiKQ3Q"/>
+  <Document:Section xmi:id="_k6sJs3FbEeSg6MouyiKQ3Q"/>
+  <Document:Content xmi:id="_k6sJtHFbEeSg6MouyiKQ3Q"/>
+  <Document:Section xmi:id="_k6sJtXFbEeSg6MouyiKQ3Q"/>
+  <Document:Content xmi:id="_k6sJtnFbEeSg6MouyiKQ3Q"/>
+  <Document:Section xmi:id="_k616oHFbEeSg6MouyiKQ3Q"/>
+  <Document:Content xmi:id="_k616oXFbEeSg6MouyiKQ3Q"/>
+  <Document:Section xmi:id="_k616onFbEeSg6MouyiKQ3Q"/>
+  <Document:ImageRef xmi:id="_k616o3FbEeSg6MouyiKQ3Q" ref="C:/git/org.eclipse.papyrus/extraplugins/revision/org.eclipse.papyrus.revisiontool/doc/imgDOC/ClassDiagram.png"/>
+  <Document:ImageRef xmi:id="_k616pHFbEeSg6MouyiKQ3Q" ref="C:/git/org.eclipse.papyrus/extraplugins/revision/org.eclipse.papyrus.revisiontool/doc/imgDOC/Papyrus_Model_Versionning_profile_description..png"/>
+  <Document:Content xmi:id="_k616pXFbEeSg6MouyiKQ3Q"/>
+  <Document:ImageRef xmi:id="_k616pnFbEeSg6MouyiKQ3Q" ref="C:/git/org.eclipse.papyrus/extraplugins/revision/org.eclipse.papyrus.revisiontool/doc/imgDOC/Review_profile.png"/>
+  <Document:Content xmi:id="_k616p3FbEeSg6MouyiKQ3Q"/>
+  <Document:Section xmi:id="_k616qHFbEeSg6MouyiKQ3Q"/>
+  <Document:Document xmi:id="_k616qXFbEeSg6MouyiKQ3Q" author="P. Tessier" version="1.0"/>
+  <Document:Section xmi:id="_k616qnFbEeSg6MouyiKQ3Q"/>
+  <Document:Content xmi:id="_k616q3FbEeSg6MouyiKQ3Q"/>
+  <Document:Content xmi:id="_k616rHFbEeSg6MouyiKQ3Q"/>
+  <Document:Content xmi:id="_k616rXFbEeSg6MouyiKQ3Q"/>
+  <Document:Content xmi:id="_k616rnFbEeSg6MouyiKQ3Q"/>
+  <Document:Content xmi:id="_k616r3FbEeSg6MouyiKQ3Q"/>
+  <Document:Section xmi:id="_k616sHFbEeSg6MouyiKQ3Q"/>
+  <Document:Content xmi:id="_k616sXFbEeSg6MouyiKQ3Q"/>
+  <Document:ImageRef xmi:id="_k616snFbEeSg6MouyiKQ3Q" ref="C:/git/org.eclipse.papyrus/extraplugins/revision/org.eclipse.papyrus.revisiontool/doc/imgDOC/ReviewSystem_UseCases.png"/>
+  <Document:Content xmi:id="_k616s3FbEeSg6MouyiKQ3Q"/>
+  <Document:ImageRef xmi:id="_k616tHFbEeSg6MouyiKQ3Q" ref="C:/git/org.eclipse.papyrus/extraplugins/revision/org.eclipse.papyrus.revisiontool/doc/imgDOC/Revision_mode_Use_Case.png"/>
+  <Document:Section xmi:id="_k616tXFbEeSg6MouyiKQ3Q"/>
+  <Document:Content xmi:id="_k616tnFbEeSg6MouyiKQ3Q"/>
+  <Document:ImageRef xmi:id="_k616t3FbEeSg6MouyiKQ3Q" ref="C:\git\org.eclipse.papyrus\extraplugins\revision\org.eclipse.papyrus.revisiontool\doc\imgDOC\UserIdentity.png"/>
+  <Document:Section xmi:id="_k616uHFbEeSg6MouyiKQ3Q"/>
+  <Document:Content xmi:id="_k616uXFbEeSg6MouyiKQ3Q"/>
+  <Document:ImageRef xmi:id="_k616unFbEeSg6MouyiKQ3Q" ref="C:\git\org.eclipse.papyrus\extraplugins\revision\org.eclipse.papyrus.revisiontool\doc\imgDOC\RespondComment.png"/>
+  <Document:Section xmi:id="_k616u3FbEeSg6MouyiKQ3Q"/>
+  <Document:Content xmi:id="_k616vHFbEeSg6MouyiKQ3Q"/>
+  <Document:Section xmi:id="_k616vXFbEeSg6MouyiKQ3Q"/>
+  <Document:Content xmi:id="_k616vnFbEeSg6MouyiKQ3Q"/>
+  <Document:ImageRef xmi:id="_k616v3FbEeSg6MouyiKQ3Q" ref="C:/git/org.eclipse.papyrus/extraplugins/revision/org.eclipse.papyrus.revisiontool/doc/imgDOC/Add_A_review_diagram.png"/>
+  <Document:ImageRef xmi:id="_k616wHFbEeSg6MouyiKQ3Q" ref="C:\git\org.eclipse.papyrus\extraplugins\revision\org.eclipse.papyrus.revisiontool\doc\imgDOC\addComment.png"/>
+  <Document:Section xmi:id="_k616wXFbEeSg6MouyiKQ3Q"/>
+  <Document:Content xmi:id="_k616wnFbEeSg6MouyiKQ3Q"/>
+  <Document:ImageRef xmi:id="_k6_roHFbEeSg6MouyiKQ3Q" ref="C:\git\org.eclipse.papyrus\extraplugins\revision\org.eclipse.papyrus.revisiontool\doc\imgDOC\OpenSaveReview.png"/>
+  <Document:Section xmi:id="_k6_roXFbEeSg6MouyiKQ3Q"/>
+  <Document:Content xmi:id="_k6_ronFbEeSg6MouyiKQ3Q"/>
+  <Document:Section xmi:id="_k6_ro3FbEeSg6MouyiKQ3Q"/>
+  <Document:Content xmi:id="_k6_rpHFbEeSg6MouyiKQ3Q"/>
+  <Document:Section xmi:id="_k6_rpXFbEeSg6MouyiKQ3Q"/>
+  <Document:Content xmi:id="_k6_rpnFbEeSg6MouyiKQ3Q"/>
+  <Document:Section xmi:id="_k6_rp3FbEeSg6MouyiKQ3Q"/>
+  <Document:Content xmi:id="_k6_rqHFbEeSg6MouyiKQ3Q"/>
+  <Document:Section xmi:id="_k6_rqXFbEeSg6MouyiKQ3Q"/>
+  <Document:ImageRef xmi:id="_k6_rqnFbEeSg6MouyiKQ3Q" ref="C:/git/org.eclipse.papyrus/extraplugins/revision/org.eclipse.papyrus.revisiontool/doc/imgDOC/ClassDiagram.png"/>
+  <Document:ImageRef xmi:id="_k6_rq3FbEeSg6MouyiKQ3Q" ref="C:/git/org.eclipse.papyrus/extraplugins/revision/org.eclipse.papyrus.revisiontool/doc/imgDOC/ProfileDiagram.png"/>
+  <Document:Content xmi:id="_k6_rrHFbEeSg6MouyiKQ3Q"/>
+  <Document:ImageRef xmi:id="_k6_rrXFbEeSg6MouyiKQ3Q" ref="C:/git/org.eclipse.papyrus/extraplugins/revision/org.eclipse.papyrus.revisiontool/doc/imgDOC/Review_profile.png"/>
+  <Document:Content xmi:id="_k6_rrnFbEeSg6MouyiKQ3Q"/>
+  <Document:Section xmi:id="_k6_rr3FbEeSg6MouyiKQ3Q"/>
   <Document:Document xmi:id="_4v3j0GtGEeSP88AAeuHqVQ" base_Model="_4v1uoGtGEeSP88AAeuHqVQ" author="P. Tessier" version="1.0"/>
   <Document:Section xmi:id="_4v5ZAGtGEeSP88AAeuHqVQ" base_Package="_4v4x8GtGEeSP88AAeuHqVQ"/>
   <Document:Content xmi:id="_4v7OMGtGEeSP88AAeuHqVQ" base_Comment="_4v6nIGtGEeSP88AAeuHqVQ"/>
@@ -965,4 +1371,139 @@ If the modification is not accepted, the adding or deletion or the set is not ap
   <Document:ImageRef xmi:id="_CyNMMGvbEeSP88AAeuHqVQ" base_Comment="_CyL-EGvbEeSP88AAeuHqVQ" ref="C:/git/org.eclipse.papyrus/extraplugins/revision/org.eclipse.papyrus.revisiontool/doc/imgDOC/Review_profile.png"/>
   <Document:Content xmi:id="_CyOaUGvbEeSP88AAeuHqVQ" base_Comment="_CyNzQGvbEeSP88AAeuHqVQ"/>
   <Document:Section xmi:id="_CyPocGvbEeSP88AAeuHqVQ" base_Package="_CyPBYGvbEeSP88AAeuHqVQ"/>
+  <Document:Document xmi:id="_pRZg4HC7EeSn09tfactLXw" base_Model="_pRQW8HC7EeSn09tfactLXw" author="P. Tessier" version="1.0"/>
+  <Document:TableOfContent xmi:id="_pRZg4nC7EeSn09tfactLXw" base_Package="_pRZg4XC7EeSn09tfactLXw"/>
+  <Document:Section xmi:id="_pRjR4XC7EeSn09tfactLXw" base_Package="_pRjR4HC7EeSn09tfactLXw"/>
+  <Document:Content xmi:id="_pRsb0HC7EeSn09tfactLXw" base_Comment="_pRjR4nC7EeSn09tfactLXw"/>
+  <Document:Content xmi:id="_pRsb0nC7EeSn09tfactLXw" base_Comment="_pRsb0XC7EeSn09tfactLXw"/>
+  <Document:Content xmi:id="_pR2M0XC7EeSn09tfactLXw" base_Comment="_pR2M0HC7EeSn09tfactLXw"/>
+  <Document:Content xmi:id="_pR_90XC7EeSn09tfactLXw" base_Comment="_pR_90HC7EeSn09tfactLXw"/>
+  <Document:Content xmi:id="_pR_903C7EeSn09tfactLXw" base_Comment="_pR_90nC7EeSn09tfactLXw"/>
+  <Document:Section xmi:id="_pSJHwXC7EeSn09tfactLXw" base_Package="_pSJHwHC7EeSn09tfactLXw"/>
+  <Document:ImageRef xmi:id="_qyGeoXC7EeSn09tfactLXw" base_Comment="_qyGeoHC7EeSn09tfactLXw" ref="C:/git/org.eclipse.papyrus/extraplugins/revision/org.eclipse.papyrus.revisiontool/doc/imgDOC/ReviewSystem_UseCases.png"/>
+  <Document:Content xmi:id="_qyQPoHC7EeSn09tfactLXw" base_Comment="_qyGeonC7EeSn09tfactLXw"/>
+  <Document:ImageRef xmi:id="_q5jKcXC7EeSn09tfactLXw" base_Comment="_q5jKcHC7EeSn09tfactLXw" ref="C:/git/org.eclipse.papyrus/extraplugins/revision/org.eclipse.papyrus.revisiontool/doc/imgDOC/ReviewSystem_UseCases.png"/>
+  <Document:Content xmi:id="_q5jKc3C7EeSn09tfactLXw" base_Comment="_q5jKcnC7EeSn09tfactLXw"/>
+  <Document:ImageRef xmi:id="_rjEBgXC7EeSn09tfactLXw" base_Comment="_rjEBgHC7EeSn09tfactLXw" ref="C:/git/org.eclipse.papyrus/extraplugins/revision/org.eclipse.papyrus.revisiontool/doc/imgDOC/Revision_mode_Use_Case.png"/>
+  <Document:Section xmi:id="_rjEBg3C7EeSn09tfactLXw" base_Package="_rjEBgnC7EeSn09tfactLXw"/>
+  <Document:Content xmi:id="_rjEBhXC7EeSn09tfactLXw" base_Comment="_rjEBhHC7EeSn09tfactLXw"/>
+  <Document:ImageRef xmi:id="_rjEBh3C7EeSn09tfactLXw" base_Comment="_rjEBhnC7EeSn09tfactLXw" ref="C:\git\org.eclipse.papyrus\extraplugins\revision\org.eclipse.papyrus.revisiontool\doc\imgDOC\UserIdentity.png"/>
+  <Document:Section xmi:id="_rjEokXC7EeSn09tfactLXw" base_Package="_rjEokHC7EeSn09tfactLXw"/>
+  <Document:Content xmi:id="_rjEok3C7EeSn09tfactLXw" base_Comment="_rjEoknC7EeSn09tfactLXw"/>
+  <Document:ImageRef xmi:id="_rjEolXC7EeSn09tfactLXw" base_Comment="_rjEolHC7EeSn09tfactLXw" ref="C:\git\org.eclipse.papyrus\extraplugins\revision\org.eclipse.papyrus.revisiontool\doc\imgDOC\RespondComment.png"/>
+  <Document:Section xmi:id="_rjEol3C7EeSn09tfactLXw" base_Package="_rjEolnC7EeSn09tfactLXw"/>
+  <Document:Content xmi:id="_rjXjgHC7EeSn09tfactLXw" base_Comment="_rjEomHC7EeSn09tfactLXw"/>
+  <Document:Section xmi:id="_rjXjgnC7EeSn09tfactLXw" base_Package="_rjXjgXC7EeSn09tfactLXw"/>
+  <Document:Content xmi:id="_rjXjhHC7EeSn09tfactLXw" base_Comment="_rjXjg3C7EeSn09tfactLXw"/>
+  <Document:ImageRef xmi:id="_rqEBYXC7EeSn09tfactLXw" base_Comment="_rqEBYHC7EeSn09tfactLXw" ref="C:/git/org.eclipse.papyrus/extraplugins/revision/org.eclipse.papyrus.revisiontool/doc/imgDOC/Add_A_review_diagram.png"/>
+  <Document:ImageRef xmi:id="_rqEBY3C7EeSn09tfactLXw" base_Comment="_rqEBYnC7EeSn09tfactLXw" ref="C:\git\org.eclipse.papyrus\extraplugins\revision\org.eclipse.papyrus.revisiontool\doc\imgDOC\addComment.png"/>
+  <Document:Section xmi:id="_rqEBZXC7EeSn09tfactLXw" base_Package="_rqEBZHC7EeSn09tfactLXw"/>
+  <Document:Content xmi:id="_rqNLUXC7EeSn09tfactLXw" base_Comment="_rqNLUHC7EeSn09tfactLXw"/>
+  <Document:ImageRef xmi:id="_rqNLU3C7EeSn09tfactLXw" base_Comment="_rqNLUnC7EeSn09tfactLXw" ref="C:\git\org.eclipse.papyrus\extraplugins\revision\org.eclipse.papyrus.revisiontool\doc\imgDOC\OpenSaveReview.png"/>
+  <Document:Section xmi:id="_rqNLVXC7EeSn09tfactLXw" base_Package="_rqNLVHC7EeSn09tfactLXw"/>
+  <Document:Content xmi:id="_rqNLV3C7EeSn09tfactLXw" base_Comment="_rqNLVnC7EeSn09tfactLXw"/>
+  <Document:Section xmi:id="_rqNLWXC7EeSn09tfactLXw" base_Package="_rqNLWHC7EeSn09tfactLXw"/>
+  <Document:Content xmi:id="_rqNLW3C7EeSn09tfactLXw" base_Comment="_rqNLWnC7EeSn09tfactLXw"/>
+  <Document:Section xmi:id="_rqNLXXC7EeSn09tfactLXw" base_Package="_rqNLXHC7EeSn09tfactLXw"/>
+  <Document:Content xmi:id="_rqW8UXC7EeSn09tfactLXw" base_Comment="_rqW8UHC7EeSn09tfactLXw"/>
+  <Document:Section xmi:id="_rqW8U3C7EeSn09tfactLXw" base_Package="_rqW8UnC7EeSn09tfactLXw"/>
+  <Document:Content xmi:id="_rqW8VXC7EeSn09tfactLXw" base_Comment="_rqW8VHC7EeSn09tfactLXw"/>
+  <Document:Section xmi:id="_rqW8V3C7EeSn09tfactLXw" base_Package="_rqW8VnC7EeSn09tfactLXw"/>
+  <Document:ImageRef xmi:id="_r07NkXC7EeSn09tfactLXw" base_Comment="_r07NkHC7EeSn09tfactLXw" ref="C:/git/org.eclipse.papyrus/extraplugins/revision/org.eclipse.papyrus.revisiontool/doc/imgDOC/Architecture_Overview.png"/>
+  <Document:ImageRef xmi:id="_r-TMAHC7EeSn09tfactLXw" base_Comment="_r-KCEHC7EeSn09tfactLXw" ref="C:/git/org.eclipse.papyrus/extraplugins/revision/org.eclipse.papyrus.revisiontool/doc/imgDOC/ProfileDiagram.png"/>
+  <Document:Content xmi:id="_r-TMAnC7EeSn09tfactLXw" base_Comment="_r-TMAXC7EeSn09tfactLXw"/>
+  <Document:ImageRef xmi:id="_sWGoAXC7EeSn09tfactLXw" base_Comment="_sWGoAHC7EeSn09tfactLXw" ref="C:/git/org.eclipse.papyrus/extraplugins/revision/org.eclipse.papyrus.revisiontool/doc/imgDOC/Review_profile.png"/>
+  <Document:Content xmi:id="_sWGoA3C7EeSn09tfactLXw" base_Comment="_sWGoAnC7EeSn09tfactLXw"/>
+  <Document:Section xmi:id="_sWQZAXC7EeSn09tfactLXw" base_Package="_sWQZAHC7EeSn09tfactLXw"/>
+  <Document:Section xmi:id="_sWQZA3C7EeSn09tfactLXw" base_Package="_sWQZAnC7EeSn09tfactLXw"/>
+  <Document:Section xmi:id="_sWQZBXC7EeSn09tfactLXw" base_Package="_sWQZBHC7EeSn09tfactLXw"/>
+  <Document:Section xmi:id="_sWQZB3C7EeSn09tfactLXw" base_Package="_sWQZBnC7EeSn09tfactLXw"/>
+  <Document:Section xmi:id="_sWQZCXC7EeSn09tfactLXw" base_Package="_sWQZCHC7EeSn09tfactLXw"/>
+  <Document:Section xmi:id="_sWQZC3C7EeSn09tfactLXw" base_Package="_sWQZCnC7EeSn09tfactLXw"/>
+  <Document:Section xmi:id="_sWQZDXC7EeSn09tfactLXw" base_Package="_sWQZDHC7EeSn09tfactLXw"/>
+  <Document:Section xmi:id="_sWaKAXC7EeSn09tfactLXw" base_Package="_sWaKAHC7EeSn09tfactLXw"/>
+  <Document:Content xmi:id="_sWaKBHC7EeSn09tfactLXw" base_Comment="_sWaKA3C7EeSn09tfactLXw"/>
+  <Document:Content xmi:id="_sWaKBnC7EeSn09tfactLXw" base_Comment="_sWaKBXC7EeSn09tfactLXw"/>
+  <Document:Table xmi:id="_sWaKB3C7EeSn09tfactLXw" caption="RequirementsCoverageTable" base_Comment="_sWaKAnC7EeSn09tfactLXw"/>
+  <Document:Line xmi:id="_sWaKCXC7EeSn09tfactLXw" base_Comment="_sWaKCHC7EeSn09tfactLXw"/>
+  <Document:Cell xmi:id="_sWaKC3C7EeSn09tfactLXw" base_Comment="_sWaKCnC7EeSn09tfactLXw"/>
+  <Document:RefContent xmi:id="_sWaKDXC7EeSn09tfactLXw" base_Comment="_sWaKDHC7EeSn09tfactLXw" ref="_2LldkE7IEeSjDupdFZ5PpA"/>
+  <Document:Cell xmi:id="_sWaKD3C7EeSn09tfactLXw" base_Comment="_sWaKDnC7EeSn09tfactLXw"/>
+  <Document:RefContent xmi:id="_sWaKEXC7EeSn09tfactLXw" base_Comment="_sWaKEHC7EeSn09tfactLXw" ref="_2LldkE7IEeSjDupdFZ5PpA"/>
+  <Document:Cell xmi:id="_sWjT8XC7EeSn09tfactLXw" base_Comment="_sWjT8HC7EeSn09tfactLXw"/>
+  <Document:RefContent xmi:id="_sWjT83C7EeSn09tfactLXw" base_Comment="_sWjT8nC7EeSn09tfactLXw" ref="_2LldkE7IEeSjDupdFZ5PpA"/>
+  <Document:Line xmi:id="_sWjT9XC7EeSn09tfactLXw" base_Comment="_sWjT9HC7EeSn09tfactLXw"/>
+  <Document:Cell xmi:id="_sWjT93C7EeSn09tfactLXw" base_Comment="_sWjT9nC7EeSn09tfactLXw"/>
+  <Document:RefContent xmi:id="_sWjT-XC7EeSn09tfactLXw" base_Comment="_sWjT-HC7EeSn09tfactLXw" ref="_Um500E-rEeSWG8b7b00v3Q"/>
+  <Document:Cell xmi:id="_sWjT-3C7EeSn09tfactLXw" base_Comment="_sWjT-nC7EeSn09tfactLXw"/>
+  <Document:RefContent xmi:id="_sWjT_XC7EeSn09tfactLXw" base_Comment="_sWjT_HC7EeSn09tfactLXw" ref="_Um500E-rEeSWG8b7b00v3Q"/>
+  <Document:Cell xmi:id="_sWtE8XC7EeSn09tfactLXw" base_Comment="_sWtE8HC7EeSn09tfactLXw"/>
+  <Document:RefContent xmi:id="_sWtE83C7EeSn09tfactLXw" base_Comment="_sWtE8nC7EeSn09tfactLXw" ref="_Um500E-rEeSWG8b7b00v3Q"/>
+  <Document:Line xmi:id="_sWtE9XC7EeSn09tfactLXw" base_Comment="_sWtE9HC7EeSn09tfactLXw"/>
+  <Document:Cell xmi:id="_sWtE93C7EeSn09tfactLXw" base_Comment="_sWtE9nC7EeSn09tfactLXw"/>
+  <Document:RefContent xmi:id="_sWtE-XC7EeSn09tfactLXw" base_Comment="_sWtE-HC7EeSn09tfactLXw" ref="_CHiSME7JEeSjDupdFZ5PpA"/>
+  <Document:Cell xmi:id="_sWtE-3C7EeSn09tfactLXw" base_Comment="_sWtE-nC7EeSn09tfactLXw"/>
+  <Document:RefContent xmi:id="_sW2O4HC7EeSn09tfactLXw" base_Comment="_sWtE_HC7EeSn09tfactLXw" ref="_CHiSME7JEeSjDupdFZ5PpA"/>
+  <Document:Cell xmi:id="_sW2O4nC7EeSn09tfactLXw" base_Comment="_sW2O4XC7EeSn09tfactLXw"/>
+  <Document:RefContent xmi:id="_sW2O5HC7EeSn09tfactLXw" base_Comment="_sW2O43C7EeSn09tfactLXw" ref="_CHiSME7JEeSjDupdFZ5PpA"/>
+  <Document:Line xmi:id="_sW2O5nC7EeSn09tfactLXw" base_Comment="_sW2O5XC7EeSn09tfactLXw"/>
+  <Document:Cell xmi:id="_sW2O6HC7EeSn09tfactLXw" base_Comment="_sW2O53C7EeSn09tfactLXw"/>
+  <Document:RefContent xmi:id="_sW2O6nC7EeSn09tfactLXw" base_Comment="_sW2O6XC7EeSn09tfactLXw" ref="_lf9YUE7JEeSjDupdFZ5PpA"/>
+  <Document:Cell xmi:id="_sW__4XC7EeSn09tfactLXw" base_Comment="_sW__4HC7EeSn09tfactLXw"/>
+  <Document:RefContent xmi:id="_sW__43C7EeSn09tfactLXw" base_Comment="_sW__4nC7EeSn09tfactLXw" ref="_lf9YUE7JEeSjDupdFZ5PpA"/>
+  <Document:Cell xmi:id="_sW__5XC7EeSn09tfactLXw" base_Comment="_sW__5HC7EeSn09tfactLXw"/>
+  <Document:RefContent xmi:id="_sW__53C7EeSn09tfactLXw" base_Comment="_sW__5nC7EeSn09tfactLXw" ref="_lf9YUE7JEeSjDupdFZ5PpA"/>
+  <Document:Line xmi:id="_sXJw4HC7EeSn09tfactLXw" base_Comment="_sW__6HC7EeSn09tfactLXw"/>
+  <Document:Cell xmi:id="_sXJw4nC7EeSn09tfactLXw" base_Comment="_sXJw4XC7EeSn09tfactLXw"/>
+  <Document:RefContent xmi:id="_sXJw5HC7EeSn09tfactLXw" base_Comment="_sXJw43C7EeSn09tfactLXw" ref="_ydw5cGAKEeSu6d79yLoqDA"/>
+  <Document:Cell xmi:id="_sXJw5nC7EeSn09tfactLXw" base_Comment="_sXJw5XC7EeSn09tfactLXw"/>
+  <Document:RefContent xmi:id="_sXJw6HC7EeSn09tfactLXw" base_Comment="_sXJw53C7EeSn09tfactLXw" ref="_ydw5cGAKEeSu6d79yLoqDA"/>
+  <Document:Cell xmi:id="_sXJw6nC7EeSn09tfactLXw" base_Comment="_sXJw6XC7EeSn09tfactLXw"/>
+  <Document:RefContent xmi:id="_sXJw7HC7EeSn09tfactLXw" base_Comment="_sXJw63C7EeSn09tfactLXw" ref="_ydw5cGAKEeSu6d79yLoqDA"/>
+  <Document:Section xmi:id="_sXJw7nC7EeSn09tfactLXw" base_Package="_sXJw7XC7EeSn09tfactLXw"/>
+  <Document:Section xmi:id="_sXS60XC7EeSn09tfactLXw" base_Package="_sXS60HC7EeSn09tfactLXw"/>
+  <Document:Section xmi:id="_sXS603C7EeSn09tfactLXw" base_Package="_sXS60nC7EeSn09tfactLXw"/>
+  <Document:Section xmi:id="_sXS61XC7EeSn09tfactLXw" base_Package="_sXS61HC7EeSn09tfactLXw"/>
+  <Document:Section xmi:id="_sXvmwHC7EeSn09tfactLXw" base_Package="_sXS61nC7EeSn09tfactLXw"/>
+  <Document:Section xmi:id="_sX5XwHC7EeSn09tfactLXw" base_Package="_sXvmwXC7EeSn09tfactLXw"/>
+  <Document:Section xmi:id="_sX5XwnC7EeSn09tfactLXw" base_Package="_sX5XwXC7EeSn09tfactLXw"/>
+  <Document:Section xmi:id="_sX5XxHC7EeSn09tfactLXw" base_Package="_sX5Xw3C7EeSn09tfactLXw"/>
+  <Document:Section xmi:id="_sX5XxnC7EeSn09tfactLXw" base_Package="_sX5XxXC7EeSn09tfactLXw"/>
+  <Document:Section xmi:id="_sX5XyHC7EeSn09tfactLXw" base_Package="_sX5Xx3C7EeSn09tfactLXw"/>
+  <Document:Section xmi:id="_sX5XynC7EeSn09tfactLXw" base_Package="_sX5XyXC7EeSn09tfactLXw"/>
+  <Document:Section xmi:id="_sX5XzHC7EeSn09tfactLXw" base_Package="_sX5Xy3C7EeSn09tfactLXw"/>
+  <Document:Section xmi:id="_sYChsXC7EeSn09tfactLXw" base_Package="_sYChsHC7EeSn09tfactLXw"/>
+  <Document:Section xmi:id="_sYChs3C7EeSn09tfactLXw" base_Package="_sYChsnC7EeSn09tfactLXw"/>
+  <Document:Section xmi:id="_sYMSsHC7EeSn09tfactLXw" base_Package="_sYChtHC7EeSn09tfactLXw"/>
+  <Document:Section xmi:id="_sYVcoHC7EeSn09tfactLXw" base_Package="_sYMSsXC7EeSn09tfactLXw"/>
+  <Document:Section xmi:id="_sYVconC7EeSn09tfactLXw" base_Package="_sYVcoXC7EeSn09tfactLXw"/>
+  <Document:Section xmi:id="_sYVcpHC7EeSn09tfactLXw" base_Package="_sYVco3C7EeSn09tfactLXw"/>
+  <Document:Section xmi:id="_sYVcpnC7EeSn09tfactLXw" base_Package="_sYVcpXC7EeSn09tfactLXw"/>
+  <Document:Section xmi:id="_sYVcqHC7EeSn09tfactLXw" base_Package="_sYVcp3C7EeSn09tfactLXw"/>
+  <Requirements:Satisfy xmi:id="_0W41EHFfEeSbnbmZnYsqkw" base_Abstraction="_0WcJIHFfEeSbnbmZnYsqkw"/>
+  <Requirements:Satisfy xmi:id="_1XA1UXFfEeSbnbmZnYsqkw" base_Abstraction="_1Wt6YHFfEeSbnbmZnYsqkw"/>
+  <Requirements:Satisfy xmi:id="_3EENAHFfEeSbnbmZnYsqkw" base_Abstraction="_3DxSEHFfEeSbnbmZnYsqkw"/>
+  <Requirements:Satisfy xmi:id="_3oXM4XFfEeSbnbmZnYsqkw" base_Abstraction="_3oER8HFfEeSbnbmZnYsqkw"/>
+  <Requirements:Satisfy xmi:id="_4x3LkHFfEeSbnbmZnYsqkw" base_Abstraction="_4xjpkHFfEeSbnbmZnYsqkw"/>
+  <Requirements:Satisfy xmi:id="_6aJYAHFfEeSbnbmZnYsqkw" base_Abstraction="_6Z2dEHFfEeSbnbmZnYsqkw"/>
+  <Requirements:Satisfy xmi:id="_77cysHFfEeSbnbmZnYsqkw" base_Abstraction="_77TBsHFfEeSbnbmZnYsqkw"/>
+  <Requirements:Satisfy xmi:id="_9GlJEHFfEeSbnbmZnYsqkw" base_Abstraction="_9GbYEHFfEeSbnbmZnYsqkw"/>
+  <trace:UseCaseTest xmi:id="_PziiA3FhEeSbnbmZnYsqkw" base_UseCase="_PzYxAHFhEeSbnbmZnYsqkw"/>
+  <Requirements:Verify xmi:id="_UB28kHFhEeSbnbmZnYsqkw" base_Abstraction="_T-I6MHFhEeSbnbmZnYsqkw"/>
+  <trace:UseCaseTest xmi:id="_UmmoY3FhEeSbnbmZnYsqkw" base_UseCase="_UmdecHFhEeSbnbmZnYsqkw"/>
+  <Requirements:Verify xmi:id="_Ysv-YHFhEeSbnbmZnYsqkw" base_Abstraction="_YsmNYHFhEeSbnbmZnYsqkw"/>
+  <Requirements:Verify xmi:id="_epAhcXFhEeSbnbmZnYsqkw" base_Abstraction="_eo3XgHFhEeSbnbmZnYsqkw"/>
+  <Requirements:Verify xmi:id="_fNKXYHFhEeSbnbmZnYsqkw" base_Abstraction="_fM3ccHFhEeSbnbmZnYsqkw"/>
+  <trace:UseCaseTest xmi:id="_3EvwMHFkEeSV7vTAYq-uEw" base_UseCase="_3EcOMHFkEeSV7vTAYq-uEw"/>
+  <trace:UseCaseTest xmi:id="_7QPgQHFkEeSV7vTAYq-uEw" base_UseCase="_7P7-QHFkEeSV7vTAYq-uEw"/>
+  <Requirements:Verify xmi:id="_9ZaMMHFkEeSV7vTAYq-uEw" base_Abstraction="_9WR_sHFkEeSV7vTAYq-uEw"/>
+  <Requirements:Verify xmi:id="_9tV00XFkEeSV7vTAYq-uEw" base_Abstraction="_9tMq4HFkEeSV7vTAYq-uEw"/>
+  <Requirements:Verify xmi:id="_-GLyoHFkEeSV7vTAYq-uEw" base_Abstraction="_-GCosHFkEeSV7vTAYq-uEw"/>
+  <Requirements:Verify xmi:id="_-e4mgnFkEeSV7vTAYq-uEw" base_Abstraction="_-elrkHFkEeSV7vTAYq-uEw"/>
+  <trace:UseCaseTest xmi:id="_X874wHFmEeSV7vTAYq-uEw" base_UseCase="_X8oWwHFmEeSV7vTAYq-uEw"/>
+  <trace:UseCaseTest xmi:id="_a25vg3FmEeSV7vTAYq-uEw" base_UseCase="_a2v-gHFmEeSV7vTAYq-uEw"/>
+  <Requirements:Verify xmi:id="_dZr1UXFmEeSV7vTAYq-uEw" base_Abstraction="_dZY6YHFmEeSV7vTAYq-uEw"/>
+  <Requirements:Verify xmi:id="_dz328HFmEeSV7vTAYq-uEw" base_Abstraction="_dzbLAHFmEeSV7vTAYq-uEw"/>
+  <Requirements:Verify xmi:id="_eQb3IHFmEeSV7vTAYq-uEw" base_Abstraction="_eQI8MHFmEeSV7vTAYq-uEw"/>
+  <Requirements:Verify xmi:id="_es_3UHFmEeSV7vTAYq-uEw" base_Abstraction="_ess8YHFmEeSV7vTAYq-uEw"/>
 </xmi:XMI>

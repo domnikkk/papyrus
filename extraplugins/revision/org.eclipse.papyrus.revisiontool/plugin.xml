@@ -27,7 +27,7 @@
    <extension
          point="org.eclipse.core.runtime.preferences">
       <initializer
-            class="org.eclipse.papyrus.revision.tool.preference.PreferenceInitializer">
+            class="org.eclipse.papyrus.revision.tool.preference.ReviewPreferenceInitializer">
       </initializer>
    </extension>
    <extension
@@ -191,5 +191,32 @@
             id="org.eclipse.ui.commands.toggleState">
       </state>
    </command>
+</extension>
+ <extension
+         point="org.eclipse.gmf.runtime.emf.type.core.elementTypes">
+      <metamodel
+            nsURI="http://www.eclipse.org/uml2/5.0.0/UML">
+         <adviceBinding
+               class="org.eclipse.papyrus.revision.tool.advice.AdviceRemove"
+               id="org.eclipse.papyrus.uml.advice.fobidremove"
+               inheritance="all"
+               typeId="org.eclipse.papyrus.uml.Element">
+         </adviceBinding>
+      </metamodel>
+   </extension>
+   <!-- UML ElementType bindings to Papyrus shared IClientContext -->
+<extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings">
+
+	<!-- Bindings declaration to shared IClientContext -->
+	<binding context="org.eclipse.papyrus.infra.services.edit.TypeContext">	
+		<elementType ref="org.eclipse.papyrus.uml.advice.fobidremove"/>
+	</binding>
+		
+</extension>
+<extension
+      point="org.eclipse.papyrus.emf.facet.util.emf.core.modeldeclaration">
+   <modeldeclaration
+         file="resource/revision.custom">
+   </modeldeclaration>
 </extension>
 </plugin>

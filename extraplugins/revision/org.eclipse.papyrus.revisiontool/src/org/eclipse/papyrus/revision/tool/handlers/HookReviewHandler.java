@@ -1,14 +1,21 @@
+/*****************************************************************************
+ * Copyright (c) 2014 CEA LIST.
+ *
+ *
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Patrick Tessier (CEA LIST) patrick.tessier@cea.fr - Initial API and implementation
+ *
+ *****************************************************************************/
 package org.eclipse.papyrus.revision.tool.handlers;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-
-import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.emf.transaction.RecordingCommand;
-import org.eclipse.jface.viewers.ISelection;
-import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.papyrus.infra.widgets.editors.MultipleValueSelectorDialog;
 import org.eclipse.papyrus.infra.widgets.providers.IStaticContentProvider;
 import org.eclipse.papyrus.infra.widgets.selectors.ReferenceSelector;
@@ -17,7 +24,6 @@ import org.eclipse.papyrus.revision.tool.ui.ReviewsEditor;
 import org.eclipse.papyrus.uml.tools.providers.UMLContentProvider;
 import org.eclipse.papyrus.uml.tools.providers.UMLLabelProvider;
 import org.eclipse.swt.widgets.Display;
-import org.eclipse.ui.ISelectionService;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.uml2.uml.Comment;
@@ -47,7 +53,7 @@ public class HookReviewHandler extends RevisionAbstractHandler {
 		if( part instanceof ReviewsEditor&& (element instanceof Comment)){
 			ReviewsEditor reviewsEditor=(ReviewsEditor)part;
 			ReviewResourceManager reviewResourceManager= reviewsEditor.getReviewResourceManager();
-			
+
 			final IStaticContentProvider provider =new UMLContentProvider(reviewResourceManager.getWorkingModel(), UMLPackage.eINSTANCE.getPackage_PackagedElement());
 			ReferenceSelector selector = new ReferenceSelector();
 			selector.setLabelProvider(new UMLLabelProvider());
@@ -65,15 +71,18 @@ public class HookReviewHandler extends RevisionAbstractHandler {
 						Object[] result=dialog.getResult();
 						for (Object object : result) {
 							if(object instanceof Element){
-							((Comment)element).getAnnotatedElements().add((Element) object);
+								((Comment)element).getAnnotatedElements().add((Element) object);
 							}
 						}
 					}
 				};
 				((ReviewsEditor)part).getReviewResourceManager().getDomain().getCommandStack().execute(cmd);
 			}
+			
+			
+			
 		}
 		return null;
 	}
-	
+
 }

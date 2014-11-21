@@ -15,7 +15,6 @@ package org.eclipse.papyrus.revision.tool.preference;
 
 import org.eclipse.jface.preference.ColorFieldEditor;
 import org.eclipse.jface.preference.FieldEditorPreferencePage;
-import org.eclipse.jface.preference.IntegerFieldEditor;
 import org.eclipse.jface.preference.StringFieldEditor;
 import org.eclipse.papyrus.revision.tool.Activator;
 import org.eclipse.swt.SWT;
@@ -25,12 +24,19 @@ import org.eclipse.swt.widgets.Group;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchPreferencePage;
 
+/**
+ * 
+ * preference page the revision 
+ *
+ */
 public class RevisionPreferencePage  extends FieldEditorPreferencePage implements IWorkbenchPreferencePage {
 
+	/**
+	 * Constructor
+	 */
 	public RevisionPreferencePage() {
 		super(GRID);
 		setPreferenceStore(Activator.getDefault().getPreferenceStore());
-		setDescription("Darwin");
 	}
 
 
@@ -44,8 +50,8 @@ public class RevisionPreferencePage  extends FieldEditorPreferencePage implement
 	public void createFieldEditors() {
 		
 		Group dmGroup = createGroup("Revision");
-		addField(new StringFieldEditor(PreferenceConstants.AUTHOR_NAME,"Author name",dmGroup));
-		addField(new ColorFieldEditor(PreferenceConstants.AUTHOR_COLOR,"Highlight Color",dmGroup));				
+		addField(new StringFieldEditor(RevisionPreferenceConstants.AUTHOR_NAME,"Author name",dmGroup));
+		addField(new ColorFieldEditor(RevisionPreferenceConstants.AUTHOR_COLOR,"Highlight Color",dmGroup));				
 				
 		
 	}
