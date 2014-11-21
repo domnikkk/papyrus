@@ -139,11 +139,18 @@ public class ReviewResourceManager {
 		// The current active part is not for us.
 		return null;
 	}
-
 	/**
 	 * 
 	 * @return the current Review model, maybe null
 	 */
+	public Model getCurrentReviewModelWithoutLoading(){
+		return  reviewModel;
+	}
+	/**
+	 * 
+	 * @return the current Review model,if null load it with GUI
+	 */
+
 	public Model getCurrentReviewModel(){
 		if( reviewModel==null){
 			CreateOrSelectReviewModelDialog dialog=new CreateOrSelectReviewModelDialog(new Shell(), this);

@@ -30,6 +30,7 @@ public class GetBackgroundColor implements  IJavaQuery2<EObject, IColor> {
 			IWorkbenchPart part=PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().findView("org.eclipse.papyrus.revisiontool.commentview");
 			if( part instanceof ReviewsEditor){
 				ReviewResourceManager reviewResourceManager=((ReviewsEditor)part).getReviewResourceManager();
+				if(reviewResourceManager.getCurrentReviewModelWithoutLoading()!=null){
 				Comparison comparison=reviewResourceManager.getDiffModel();
 				if(comparison.getDifferences(element).size()>0){
 					if(comparison.getDifferences(element).get(0).getKind().equals(DifferenceKind.DELETE)){
@@ -42,6 +43,7 @@ public class GetBackgroundColor implements  IJavaQuery2<EObject, IColor> {
 					
 				}
 				else{return new Color(0,0,0);}
+			}
 			}
 		}
 		return new Color(0,0,0);

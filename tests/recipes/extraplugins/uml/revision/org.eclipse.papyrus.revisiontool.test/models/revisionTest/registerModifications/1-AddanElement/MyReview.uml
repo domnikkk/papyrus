@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001"
+    xmlns:xmi="http://www.omg.org/spec/XMI/20131001"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:PapyrusVersioningExtensions="http:///schemas/PapyrusVersioningExtensions/_SVfbwGW4EeSPMtL3PG5w7g/0"
+    xmlns:ReviewProfile="http:///schemas/ReviewProfile/_VpvawGW4EeSPMtL3PG5w7g/0"
+    xmlns:compare="http://www.eclipse.org/emf/compare"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML"
+    xsi:schemaLocation="http:///schemas/PapyrusVersioningExtensions/_SVfbwGW4EeSPMtL3PG5w7g/0 pathmap://Review_PROFILES/Versioning.profile.uml#_SVfbwWW4EeSPMtL3PG5w7g http:///schemas/ReviewProfile/_VpvawGW4EeSPMtL3PG5w7g/0 pathmap://Review_PROFILES/Review.profile.uml#_VpwB0GW4EeSPMtL3PG5w7g">
+  <ReviewProfile:ReviewRepository
+      xmi:id="_3fmgYHGJEeS3EdgtJYAZRQ"
+      base_Model="_3fmgYXGJEeS3EdgtJYAZRQ"/>
+  <uml:Model
+      xmi:id="_3fmgYXGJEeS3EdgtJYAZRQ"
+      name="MyReview">
+    <ownedComment
+        xmi:id="_3h_tEnGJEeS3EdgtJYAZRQ">
+      <body>Your review</body>
+    </ownedComment>
+    <ownedComment
+        xmi:id="_KIpfIHGKEeS3EdgtJYAZRQ">
+      <body>Your review</body>
+    </ownedComment>
+    <ownedComment
+        xmi:id="_KIpfI3GKEeS3EdgtJYAZRQ">
+      <body>Your review</body>
+    </ownedComment>
+    <packagedElement
+        xmi:type="uml:Dependency"
+        xmi:id="_3fmgYnGJEeS3EdgtJYAZRQ"
+        name="WorkingModelDependency"
+        client="_3fmgYXGJEeS3EdgtJYAZRQ">
+      <supplier
+          xmi:type="uml:Model"
+          href="WorkingModel.uml#_bOVDIHGJEeS3EdgtJYAZRQ"/>
+    </packagedElement>
+    <packagedElement
+        xmi:type="uml:Actor"
+        xmi:id="_3h_tEHGJEeS3EdgtJYAZRQ"
+        name="Titi "/>
+    <profileApplication
+        xmi:id="_3fmgY3GJEeS3EdgtJYAZRQ">
+      <eAnnotations
+          xmi:id="_3fmgZHGJEeS3EdgtJYAZRQ"
+          source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references
+            xmi:type="ecore:EPackage"
+            href="pathmap://Review_PROFILES/Review.profile.uml#_VpwB0GW4EeSPMtL3PG5w7g"/>
+      </eAnnotations>
+      <appliedProfile
+          href="pathmap://Review_PROFILES/Review.profile.uml#_Tr7GcGAWEeS-2dbNdHDnFw"/>
+    </profileApplication>
+    <profileApplication
+        xmi:id="_3fmgZXGJEeS3EdgtJYAZRQ">
+      <eAnnotations
+          xmi:id="_3fmgZnGJEeS3EdgtJYAZRQ"
+          source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references
+            xmi:type="ecore:EPackage"
+            href="pathmap://Review_PROFILES/Versioning.profile.uml#_SVfbwWW4EeSPMtL3PG5w7g"/>
+      </eAnnotations>
+      <appliedProfile
+          href="pathmap://Review_PROFILES/Versioning.profile.uml#_oQIXkM7dEeOUWOjBbvvZ9Q"/>
+    </profileApplication>
+  </uml:Model>
+  <compare:Comparison
+      xmi:id="_3fmgZ3GJEeS3EdgtJYAZRQ"/>
+  <PapyrusVersioningExtensions:Author
+      xmi:id="_3h_tEXGJEeS3EdgtJYAZRQ"
+      language="Eng"
+      color="255:128:255"
+      base_Actor="_3h_tEHGJEeS3EdgtJYAZRQ"
+      versioningElements="_3h_tE3GJEeS3EdgtJYAZRQ _KIpfIXGKEeS3EdgtJYAZRQ _KIpfJHGKEeS3EdgtJYAZRQ"/>
+  <ReviewProfile:Review
+      xmi:id="_3h_tE3GJEeS3EdgtJYAZRQ"
+      base_Element="_3h_tEnGJEeS3EdgtJYAZRQ"
+      date="21/11/14 15:22"
+      author="_3h_tEXGJEeS3EdgtJYAZRQ"
+      base_Comment="_3h_tEnGJEeS3EdgtJYAZRQ"
+      subject="subject"/>
+  <ReviewProfile:Review
+      xmi:id="_KIpfIXGKEeS3EdgtJYAZRQ"
+      base_Element="_KIpfIHGKEeS3EdgtJYAZRQ"
+      date="21/11/14 15:24"
+      author="_3h_tEXGJEeS3EdgtJYAZRQ"
+      base_Comment="_KIpfIHGKEeS3EdgtJYAZRQ"
+      subject="Add seat"/>
+  <ReviewProfile:Review
+      xmi:id="_KIpfJHGKEeS3EdgtJYAZRQ"
+      base_Element="_KIpfI3GKEeS3EdgtJYAZRQ"
+      date="21/11/14 15:24"
+      author="_3h_tEXGJEeS3EdgtJYAZRQ"
+      base_Comment="_KIpfI3GKEeS3EdgtJYAZRQ"
+      subject="Add null"/>
+</xmi:XMI>

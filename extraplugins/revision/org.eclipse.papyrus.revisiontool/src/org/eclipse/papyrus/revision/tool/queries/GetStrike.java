@@ -28,15 +28,16 @@ public class GetStrike implements  IJavaQuery2<EObject, Boolean> {
 			IWorkbenchPart part=PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().findView("org.eclipse.papyrus.revisiontool.commentview");
 			if( part instanceof ReviewsEditor){
 				ReviewResourceManager reviewResourceManager=((ReviewsEditor)part).getReviewResourceManager();
-				Comparison comparison=reviewResourceManager.getDiffModel();
-				if(comparison.getDifferences(element).size()>0){
-					if(comparison.getDifferences(element).get(0).getKind().equals(DifferenceKind.DELETE)){
-						return true;
+				if(reviewResourceManager.getCurrentReviewModelWithoutLoading()!=null){
+					Comparison comparison=reviewResourceManager.getDiffModel();
+					if(comparison.getDifferences(element).size()>0){
+						if(comparison.getDifferences(element).get(0).getKind().equals(DifferenceKind.DELETE)){
+							return true;
+						}
+
+
 					}
-					
-					
 				}
-				
 			}
 		}
 		return false;

@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ActionLanguage="http://www.omg.org/spec/ALF/20120827/ActionLanguage-Profile" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http://www.omg.org/spec/ALF/20120827/ActionLanguage-Profile pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#_sYse0YZLEeKyw49uR6nx3g">
   <uml:Profile xmi:id="_oQIXkM7dEeOUWOjBbvvZ9Q" name="PapyrusVersioningExtensions" metaclassReference="_EtKG8M7gEeOUWOjBbvvZ9Q _EzFY0GTKEeS0T8QWLYAQCA" metamodelReference="_oQIXkc7dEeOUWOjBbvvZ9Q">
-    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_wYsycM7jEeOUWOjBbvvZ9Q" source="http://www.eclipse.org/uml2/2.0.0/UML">
+    <eAnnotations xmi:id="_wYsycM7jEeOUWOjBbvvZ9Q" source="http://www.eclipse.org/uml2/2.0.0/UML">
       <contents xmi:type="ecore:EPackage" xmi:id="_SVfbwWW4EeSPMtL3PG5w7g" name="PapyrusVersioningExtensions" nsURI="http:///schemas/PapyrusVersioningExtensions/_SVfbwGW4EeSPMtL3PG5w7g/0" nsPrefix="PapyrusVersioningExtensions">
-        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_SVhQ8GW4EeSPMtL3PG5w7g" source="PapyrusVersion">
-          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_SVhQ8WW4EeSPMtL3PG5w7g" key="Version" value="0.0.1"/>
-          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_SVhQ8mW4EeSPMtL3PG5w7g" key="Comment" value=""/>
-          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_SVhQ82W4EeSPMtL3PG5w7g" key="Copyright" value="CEA LIST"/>
-          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_SVhQ9GW4EeSPMtL3PG5w7g" key="Date" value="2014-11-06"/>
-          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_SVhQ9WW4EeSPMtL3PG5w7g" key="Author" value="CEA LIST"/>
+        <eAnnotations xmi:id="_SVhQ8GW4EeSPMtL3PG5w7g" source="PapyrusVersion">
+          <details xmi:id="_SVhQ8WW4EeSPMtL3PG5w7g" key="Version" value="0.0.1"/>
+          <details xmi:id="_SVhQ8mW4EeSPMtL3PG5w7g" key="Comment" value=""/>
+          <details xmi:id="_SVhQ82W4EeSPMtL3PG5w7g" key="Copyright" value="CEA LIST"/>
+          <details xmi:id="_SVhQ9GW4EeSPMtL3PG5w7g" key="Date" value="2014-11-06"/>
+          <details xmi:id="_SVhQ9WW4EeSPMtL3PG5w7g" key="Author" value="CEA LIST"/>
         </eAnnotations>
         <eClassifiers xmi:type="ecore:EClass" xmi:id="_SVfbwmW4EeSPMtL3PG5w7g" name="VersioningElement">
-          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_SVfbw2W4EeSPMtL3PG5w7g" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_HoZwEM7gEeOUWOjBbvvZ9Q"/>
+          <eAnnotations xmi:id="_SVfbw2W4EeSPMtL3PG5w7g" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_HoZwEM7gEeOUWOjBbvvZ9Q"/>
           <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_SVfbxGW4EeSPMtL3PG5w7g" name="base_Element" ordered="false" lowerBound="1">
             <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
           </eStructuralFeatures>
@@ -39,7 +39,7 @@
           <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_SVfb1GW4EeSPMtL3PG5w7g" name="author" ordered="false" lowerBound="1" eType="_SVfb1mW4EeSPMtL3PG5w7g" eOpposite="_SVfb3mW4EeSPMtL3PG5w7g"/>
         </eClassifiers>
         <eClassifiers xmi:type="ecore:EClass" xmi:id="_SVfb1mW4EeSPMtL3PG5w7g" name="Author">
-          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_SVfb12W4EeSPMtL3PG5w7g" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_9x2KsGTJEeS0T8QWLYAQCA"/>
+          <eAnnotations xmi:id="_SVfb12W4EeSPMtL3PG5w7g" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_9x2KsGTJEeS0T8QWLYAQCA"/>
           <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_SVfb2GW4EeSPMtL3PG5w7g" name="language" ordered="false">
             <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/5.0.0/Types#//String"/>
           </eStructuralFeatures>
@@ -53,29 +53,29 @@
         </eClassifiers>
       </contents>
     </eAnnotations>
-    <ownedComment xmi:type="uml:Comment" xmi:id="_p4BF8M7eEeOUWOjBbvvZ9Q" annotatedElement="_oQIXkM7dEeOUWOjBbvvZ9Q">
+    <ownedComment xmi:id="_p4BF8M7eEeOUWOjBbvvZ9Q" annotatedElement="_oQIXkM7dEeOUWOjBbvvZ9Q">
       <body>This profile proposes the set of UML extenssions dedictated to annotate model and model elements with versionning information. &#xD;
 It is based on concepts defined in the chapter &quot;4.3.2 Pre-Defined Metadata Elements&quot; of the OASIS standard, &quot;Open Document Format for Office Applications (OpenDocument) Version 1.2&#xD;
 - Part 1: OpenDocument Schema&quot;. </body>
     </ownedComment>
-    <elementImport xmi:type="uml:ElementImport" xmi:id="_EtKG8M7gEeOUWOjBbvvZ9Q" alias="Element">
+    <elementImport xmi:id="_EtKG8M7gEeOUWOjBbvvZ9Q" alias="Element">
       <importedElement xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Element"/>
     </elementImport>
-    <elementImport xmi:type="uml:ElementImport" xmi:id="_EzFY0GTKEeS0T8QWLYAQCA" alias="Actor">
+    <elementImport xmi:id="_EzFY0GTKEeS0T8QWLYAQCA" alias="Actor">
       <importedElement xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Actor"/>
     </elementImport>
-    <packageImport xmi:type="uml:PackageImport" xmi:id="_oQIXkc7dEeOUWOjBbvvZ9Q">
+    <packageImport xmi:id="_oQIXkc7dEeOUWOjBbvvZ9Q">
       <importedPackage xmi:type="uml:Model" href="pathmap://UML_METAMODELS/UML.metamodel.uml#_0"/>
     </packageImport>
-    <packageImport xmi:type="uml:PackageImport" xmi:id="_oQIXks7dEeOUWOjBbvvZ9Q">
+    <packageImport xmi:id="_oQIXks7dEeOUWOjBbvvZ9Q">
       <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
     </packageImport>
     <packagedElement xmi:type="uml:Stereotype" xmi:id="_HoZwEM7gEeOUWOjBbvvZ9Q" name="VersioningElement">
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_MFHzAM7gEeOUWOjBbvvZ9Q" name="base_Element" association="_MFIaEM7gEeOUWOjBbvvZ9Q">
+      <ownedAttribute xmi:id="_MFHzAM7gEeOUWOjBbvvZ9Q" name="base_Element" association="_MFIaEM7gEeOUWOjBbvvZ9Q">
         <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Element"/>
       </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_cV7IAM7gEeOUWOjBbvvZ9Q" name="generator" visibility="public" isUnique="false" isReadOnly="true">
-        <ownedComment xmi:type="uml:Comment" xmi:id="_GyU08M7mEeOUWOjBbvvZ9Q" annotatedElement="_cV7IAM7gEeOUWOjBbvvZ9Q">
+      <ownedAttribute xmi:id="_cV7IAM7gEeOUWOjBbvvZ9Q" name="generator" visibility="public" isUnique="false" isReadOnly="true">
+        <ownedComment xmi:id="_GyU08M7mEeOUWOjBbvvZ9Q" annotatedElement="_cV7IAM7gEeOUWOjBbvvZ9Q">
           <body>The {@link #_cV7IAM7gEeOUWOjBbvvZ9Q} attribute contains a string that identifies the OpenDocument producer that was used to create or last modify the document.</body>
         </ownedComment>
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
@@ -83,8 +83,8 @@ It is based on concepts defined in the chapter &quot;4.3.2 Pre-Defined Metadata 
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qNjmMM7gEeOUWOjBbvvZ9Q" value="1"/>
         <defaultValue xmi:type="uml:LiteralString" xmi:id="_qN6LgM7gEeOUWOjBbvvZ9Q" value="org.eclipse.papyrus"/>
       </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_S3LgMM7hEeOUWOjBbvvZ9Q" name="description" visibility="public" isUnique="false">
-        <ownedComment xmi:type="uml:Comment" xmi:id="_ZEngkM7mEeOUWOjBbvvZ9Q" annotatedElement="_S3LgMM7hEeOUWOjBbvvZ9Q">
+      <ownedAttribute xmi:id="_S3LgMM7hEeOUWOjBbvvZ9Q" name="description" visibility="public" isUnique="false">
+        <ownedComment xmi:id="_ZEngkM7mEeOUWOjBbvvZ9Q" annotatedElement="_S3LgMM7hEeOUWOjBbvvZ9Q">
           <body>The {@link #_S3LgMM7hEeOUWOjBbvvZ9Q} attributes contains a description of a model element.</body>
         </ownedComment>
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
@@ -92,24 +92,24 @@ It is based on concepts defined in the chapter &quot;4.3.2 Pre-Defined Metadata 
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_TZp7IM7hEeOUWOjBbvvZ9Q" value="1"/>
         <defaultValue xmi:type="uml:LiteralString" xmi:id="_PTQbkM7jEeOUWOjBbvvZ9Q" value="&lt;Enter the description of your model element here>"/>
       </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_XkpU4M7hEeOUWOjBbvvZ9Q" name="keyword" visibility="public" isUnique="false">
-        <ownedComment xmi:type="uml:Comment" xmi:id="_tKsWoM7pEeOUWOjBbvvZ9Q" annotatedElement="_XkpU4M7hEeOUWOjBbvvZ9Q">
+      <ownedAttribute xmi:id="_XkpU4M7hEeOUWOjBbvvZ9Q" name="keyword" visibility="public" isUnique="false">
+        <ownedComment xmi:id="_tKsWoM7pEeOUWOjBbvvZ9Q" annotatedElement="_XkpU4M7hEeOUWOjBbvvZ9Q">
           <body>The {@link #_XkpU4M7hEeOUWOjBbvvZ9Q} attribute specifies a list of keywords pertaining to a model element.</body>
         </ownedComment>
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_bpS2EM7hEeOUWOjBbvvZ9Q"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_bpUEMM7hEeOUWOjBbvvZ9Q" value="*"/>
       </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_A7t8AM7oEeOUWOjBbvvZ9Q" name="creationDate" visibility="public" isUnique="false">
-        <ownedComment xmi:type="uml:Comment" xmi:id="_v371cM7oEeOUWOjBbvvZ9Q" annotatedElement="_A7t8AM7oEeOUWOjBbvvZ9Q">
+      <ownedAttribute xmi:id="_A7t8AM7oEeOUWOjBbvvZ9Q" name="creationDate" visibility="public" isUnique="false">
+        <ownedComment xmi:id="_v371cM7oEeOUWOjBbvvZ9Q" annotatedElement="_A7t8AM7oEeOUWOjBbvvZ9Q">
           <body>The {@link #_A7t8AM7oEeOUWOjBbvvZ9Q} attribute specifies the date and time when a model element was created.</body>
         </ownedComment>
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_A7t8Ac7oEeOUWOjBbvvZ9Q" value="1"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_A7t8As7oEeOUWOjBbvvZ9Q" value="1"/>
       </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_BD3LYM7oEeOUWOjBbvvZ9Q" name="date" visibility="public" isUnique="false">
-        <ownedComment xmi:type="uml:Comment" xmi:id="_WwczoM7oEeOUWOjBbvvZ9Q" annotatedElement="_BD3LYM7oEeOUWOjBbvvZ9Q">
+      <ownedAttribute xmi:id="_BD3LYM7oEeOUWOjBbvvZ9Q" name="date" visibility="public" isUnique="false">
+        <ownedComment xmi:id="_WwczoM7oEeOUWOjBbvvZ9Q" annotatedElement="_BD3LYM7oEeOUWOjBbvvZ9Q">
           <body>The {@link #_BD3LYM7oEeOUWOjBbvvZ9Q} attribute specifies the date and time when the model elemeent was last modified.&#xD;
 </body>
         </ownedComment>
@@ -118,22 +118,22 @@ It is based on concepts defined in the chapter &quot;4.3.2 Pre-Defined Metadata 
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_BD3LYs7oEeOUWOjBbvvZ9Q" value="1"/>
         <defaultValue xmi:type="uml:LiteralString" xmi:id="_kG_W8M7oEeOUWOjBbvvZ9Q" value="self.creation-date"/>
       </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_B9Y-8M7pEeOUWOjBbvvZ9Q" name="language" visibility="public" isUnique="false">
-        <ownedComment xmi:type="uml:Comment" xmi:id="_B9Y-8c7pEeOUWOjBbvvZ9Q" annotatedElement="_B9Y-8M7pEeOUWOjBbvvZ9Q">
+      <ownedAttribute xmi:id="_B9Y-8M7pEeOUWOjBbvvZ9Q" name="language" visibility="public" isUnique="false">
+        <ownedComment xmi:id="_B9Y-8c7pEeOUWOjBbvvZ9Q" annotatedElement="_B9Y-8M7pEeOUWOjBbvvZ9Q">
           <body>The {@link #_B9Y-8M7pEeOUWOjBbvvZ9Q} attribute specifies the default language of a document.&#xD;</body>
         </ownedComment>
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_B9Y-8s7pEeOUWOjBbvvZ9Q"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_B9Y-887pEeOUWOjBbvvZ9Q" value="1"/>
       </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_TVAyEM7pEeOUWOjBbvvZ9Q" name="editingCycles" isUnique="false">
-        <ownedComment xmi:type="uml:Comment" xmi:id="_cOX_cM7pEeOUWOjBbvvZ9Q">
+      <ownedAttribute xmi:id="_TVAyEM7pEeOUWOjBbvvZ9Q" name="editingCycles" isUnique="false">
+        <ownedComment xmi:id="_cOX_cM7pEeOUWOjBbvvZ9Q">
           <body>The {@link #_TVAyEM7pEeOUWOjBbvvZ9Q} attribute specifies the number of times a document has been edited. When a document is created, this value is set to 1. Each time a document is saved, the editing-cycles number is incremented by 1.&#xD;</body>
         </ownedComment>
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
         <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_ZPwSMM7pEeOUWOjBbvvZ9Q" name="editing-cycles-defaultValue" value="1"/>
       </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_IpV4sWTKEeS0T8QWLYAQCA" name="author" type="_9x2KsGTJEeS0T8QWLYAQCA" association="_IpV4sGTKEeS0T8QWLYAQCA">
+      <ownedAttribute xmi:id="_IpV4sWTKEeS0T8QWLYAQCA" name="author" type="_9x2KsGTJEeS0T8QWLYAQCA" association="_IpV4sGTKEeS0T8QWLYAQCA">
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_IpV4smTKEeS0T8QWLYAQCA" value="1"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_IpV4s2TKEeS0T8QWLYAQCA" value="1"/>
       </ownedAttribute>
@@ -142,21 +142,21 @@ It is based on concepts defined in the chapter &quot;4.3.2 Pre-Defined Metadata 
       <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_MFIaEc7gEeOUWOjBbvvZ9Q" name="extension_VersioningElement" type="_HoZwEM7gEeOUWOjBbvvZ9Q" aggregation="composite" association="_MFIaEM7gEeOUWOjBbvvZ9Q"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Stereotype" xmi:id="_9x2KsGTJEeS0T8QWLYAQCA" name="Author">
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_9x2KsmTJEeS0T8QWLYAQCA" name="language" visibility="public">
+      <ownedAttribute xmi:id="_9x2KsmTJEeS0T8QWLYAQCA" name="language" visibility="public">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_9x2Ks2TJEeS0T8QWLYAQCA"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_9x2KtGTJEeS0T8QWLYAQCA" value="1"/>
       </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_9x2KtWTJEeS0T8QWLYAQCA" name="color" visibility="public">
+      <ownedAttribute xmi:id="_9x2KtWTJEeS0T8QWLYAQCA" name="color" visibility="public">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_9x2KtmTJEeS0T8QWLYAQCA"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_9x2Kt2TJEeS0T8QWLYAQCA" value="1"/>
       </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_IpVRoGTKEeS0T8QWLYAQCA" name="versioningElements" type="_HoZwEM7gEeOUWOjBbvvZ9Q" association="_IpV4sGTKEeS0T8QWLYAQCA">
+      <ownedAttribute xmi:id="_IpVRoGTKEeS0T8QWLYAQCA" name="versioningElements" type="_HoZwEM7gEeOUWOjBbvvZ9Q" association="_IpV4sGTKEeS0T8QWLYAQCA">
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_IpVRoWTKEeS0T8QWLYAQCA"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_IpVRomTKEeS0T8QWLYAQCA" value="*"/>
       </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_hkFH0GWiEeSPMtL3PG5w7g" name="base_Actor" association="_hkG9AGWiEeSPMtL3PG5w7g">
+      <ownedAttribute xmi:id="_hkFH0GWiEeSPMtL3PG5w7g" name="base_Actor" association="_hkG9AGWiEeSPMtL3PG5w7g">
         <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Actor"/>
       </ownedAttribute>
     </packagedElement>
@@ -164,11 +164,11 @@ It is based on concepts defined in the chapter &quot;4.3.2 Pre-Defined Metadata 
     <packagedElement xmi:type="uml:Extension" xmi:id="_hkG9AGWiEeSPMtL3PG5w7g" name="E_Author_Actor1" memberEnd="_hkHkEGWiEeSPMtL3PG5w7g _hkFH0GWiEeSPMtL3PG5w7g">
       <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_hkHkEGWiEeSPMtL3PG5w7g" name="extension_Author" type="_9x2KsGTJEeS0T8QWLYAQCA" aggregation="composite" association="_hkG9AGWiEeSPMtL3PG5w7g"/>
     </packagedElement>
-    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_mynJUM7gEeOUWOjBbvvZ9Q">
-      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_m-544M7gEeOUWOjBbvvZ9Q" source="http://www.eclipse.org/uml2/2.0.0/UML">
+    <profileApplication xmi:id="_mynJUM7gEeOUWOjBbvvZ9Q">
+      <eAnnotations xmi:id="_m-544M7gEeOUWOjBbvvZ9Q" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#_sYse0YZLEeKyw49uR6nx3g"/>
       </eAnnotations>
-      <appliedProfile xmi:type="uml:Profile" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#ActionLanguage"/>
+      <appliedProfile href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#ActionLanguage"/>
     </profileApplication>
   </uml:Profile>
   <ActionLanguage:TextualRepresentation xmi:id="_m--KUM7gEeOUWOjBbvvZ9Q" language="org.eclipse.papyrus.uml.textedit.property.xtext.UmlProperty"/>
