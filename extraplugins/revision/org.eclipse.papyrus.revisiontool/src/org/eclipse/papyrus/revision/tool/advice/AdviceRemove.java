@@ -75,7 +75,8 @@ public class AdviceRemove extends AbstractEditHelperAdvice {
 
 				}
 			});
+			return UnexecutableCommand.INSTANCE;
 		}
-		return UnexecutableCommand.INSTANCE;
+		return IdentityCommand.INSTANCE;
 	}
 }

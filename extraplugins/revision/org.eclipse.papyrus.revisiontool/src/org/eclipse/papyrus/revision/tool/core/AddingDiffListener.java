@@ -61,35 +61,33 @@ public class AddingDiffListener implements ResourceSetListener {
 			throws RollbackException {
 		ArrayList<Command> commands = new ArrayList<Command>();
 
-		Notification notification = (Notification) event.getNotifications().get(0);
-		if( notification.getNotifier() instanceof EObject){
-			EObject notifier = (EObject) notification.getNotifier();
-			if( reviewResourceManager.getWorkingModel().eResource().equals(notifier.eResource()))
-				if( notification.getEventType()==Notification.ADD&& (notification.getNewValue() instanceof NamedElement)){
-					for (Notification notif : event.getNotifications()) {
-						if( notif.getEventType()==Notification.ADD){
-							String subjectToWrite=""+notif.getNewValue().getClass().getSimpleName();
-							if(notif.getNewValue() instanceof NamedElement){
-								subjectToWrite=((NamedElement)notif.getNewValue()).getName();
-							}
 
-							CreateReviewCommand createReviewCommand= new CreateReviewCommand(
-									reviewResourceManager.getDomain(), 
-									reviewResourceManager.getCurrentAuthor(), 
-									reviewResourceManager.getCurrentReviewModel(),
-									"Add "+subjectToWrite );
-							commands.add(createReviewCommand);
-							final ReferenceChange difference= CompareFactory.eINSTANCE.createReferenceChange();
-							difference.setSource(DifferenceSource.LEFT);
-							difference.setKind(DifferenceKind.ADD);
-							difference.setReference((EReference)notif.getFeature());
-							difference.setValue((EObject)notif.getNewValue());
-							CreateDifferenceCommand createDifferenceCommand= new CreateDifferenceCommand(
-									reviewResourceManager.getDomain(), reviewResourceManager.getDiffModel().getMatch(reviewResourceManager.getWorkingModel()), difference);
-							commands.add(createDifferenceCommand);
-						} 
+
+		for (Notification notif : event.getNotifications()) {
+			if( notif.getEventType()==Notification.ADD&&notif.getNotifier() instanceof EObject){
+				EObject notifier = (EObject) notif.getNotifier();
+				if( reviewResourceManager.getWorkingModel().eResource().equals(notifier.eResource())){
+					String subjectToWrite=""+notif.getNewValue().getClass().getSimpleName();
+					if(notif.getNewValue() instanceof NamedElement&&((NamedElement)notif.getNewValue()).getName()!=null){
+						subjectToWrite=((NamedElement)notif.getNewValue()).getName();
 					}
-				}
+
+					CreateReviewCommand createReviewCommand= new CreateReviewCommand(
+							reviewResourceManager.getDomain(), 
+							reviewResourceManager.getCurrentAuthor(), 
+							reviewResourceManager.getCurrentReviewModel(),
+							"Add "+subjectToWrite );
+					commands.add(createReviewCommand);
+					final ReferenceChange difference= CompareFactory.eINSTANCE.createReferenceChange();
+					difference.setSource(DifferenceSource.LEFT);
+					difference.setKind(DifferenceKind.ADD);
+					difference.setReference((EReference)notif.getFeature());
+					difference.setValue((EObject)notif.getNewValue());
+					CreateDifferenceCommand createDifferenceCommand= new CreateDifferenceCommand(
+							reviewResourceManager.getDomain(), reviewResourceManager.getDiffModel().getMatch(reviewResourceManager.getWorkingModel()), difference);
+					commands.add(createDifferenceCommand);
+				} 
+			}
 		}
 		return commands.isEmpty()? null : new CompoundCommand(commands);
 	}
