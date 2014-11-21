@@ -410,7 +410,7 @@
         <repository
             url="${base.downloads.url}/acceleo/updates/releases/3.5"/>
         <repository
-            url="${base.downloads.url}/modeling/mdt/ocl/updates/releases/5.0.1"/>
+            url="${base.downloads.url}/modeling/mdt/ocl/updates/releases/5.0.2"/>
         <repository
             url="${base.downloads.url}/modeling/mdt/uml2/updates/5.0"/>
         <repository
