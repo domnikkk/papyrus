@@ -37,13 +37,21 @@ public class LaunchRevisionMode extends RevisionAbstractHandler {
 			if(oldValue==false){
 				//now the revison mode is activated
 
-				((ReviewsEditor)part).getReviewResourceManager().startModeRevision();
+				((ReviewsEditor)part).startModeRevision();
 			}
 			else{
-				((ReviewsEditor)part).getReviewResourceManager().stopModelRevision();
+				((ReviewsEditor)part).stopModelRevision();
 			}
 		}
 		return null;
+	}
+	@Override
+	public boolean isEnabled() {
+		IWorkbenchPart part=PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().findView("org.eclipse.papyrus.revisiontool.commentview");
+		if( part ==null){
+			return false;
+		}
+		return true;
 	}
 
 }

@@ -37,5 +37,12 @@ public class SaveSnapshotRevision extends RevisionAbstractHandler {
 		}
 		return null;
 	}
-
+	@Override
+	public boolean isEnabled() {
+		IWorkbenchPart part=PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().findView("org.eclipse.papyrus.revisiontool.commentview");
+		if( part ==null){
+			return false;
+		}
+		return true;
+	}
 }

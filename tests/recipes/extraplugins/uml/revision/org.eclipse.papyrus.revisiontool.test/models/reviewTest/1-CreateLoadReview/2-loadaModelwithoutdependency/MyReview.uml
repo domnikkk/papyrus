@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:PapyrusVersioningExtensions="http:///schemas/PapyrusVersioningExtensions/_SVfbwGW4EeSPMtL3PG5w7g/0" xmlns:ReviewProfile="http:///schemas/ReviewProfile/_VpvawGW4EeSPMtL3PG5w7g/0" xmlns:compare="http://www.eclipse.org/emf/compare" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/PapyrusVersioningExtensions/_SVfbwGW4EeSPMtL3PG5w7g/0 pathmap://Review_PROFILES/Versioning.profile.uml#_SVfbwWW4EeSPMtL3PG5w7g http:///schemas/ReviewProfile/_VpvawGW4EeSPMtL3PG5w7g/0 pathmap://Review_PROFILES/Review.profile.uml#_VpwB0GW4EeSPMtL3PG5w7g">
+  <ReviewProfile:ReviewRepository xmi:id="_9o4S_3FhEeSbnbmZnYsqkw" base_Model="_9o4TAHFhEeSbnbmZnYsqkw"/>
+  <uml:Model xmi:id="_9o4TAHFhEeSbnbmZnYsqkw" name="MyReview">
+    <ownedComment xmi:id="_AQHa8XFiEeSbnbmZnYsqkw">
+      <body>Your review</body>
+    </ownedComment>
+    <packagedElement xmi:type="uml:Actor" xmi:id="__stL4HFhEeSbnbmZnYsqkw" name="Titi "/>
+    <profileApplication xmi:id="_9o4TAnFhEeSbnbmZnYsqkw">
+      <eAnnotations xmi:id="_9o4TA3FhEeSbnbmZnYsqkw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://Review_PROFILES/Review.profile.uml#_VpwB0GW4EeSPMtL3PG5w7g"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://Review_PROFILES/Review.profile.uml#_Tr7GcGAWEeS-2dbNdHDnFw"/>
+    </profileApplication>
+    <profileApplication xmi:id="_9o4TBHFhEeSbnbmZnYsqkw">
+      <eAnnotations xmi:id="_9o4TBXFhEeSbnbmZnYsqkw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://Review_PROFILES/Versioning.profile.uml#_SVfbwWW4EeSPMtL3PG5w7g"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://Review_PROFILES/Versioning.profile.uml#_oQIXkM7dEeOUWOjBbvvZ9Q"/>
+    </profileApplication>
+  </uml:Model>
+  <compare:Comparison xmi:id="_9pCD8HFhEeSbnbmZnYsqkw"/>
+  <PapyrusVersioningExtensions:Author xmi:id="_AQHa8HFiEeSbnbmZnYsqkw" language="Eng" color="255:128:255" base_Actor="__stL4HFhEeSbnbmZnYsqkw" versioningElements="_AQHa8nFiEeSbnbmZnYsqkw"/>
+  <ReviewProfile:Review xmi:id="_AQHa8nFiEeSbnbmZnYsqkw" base_Element="_AQHa8XFiEeSbnbmZnYsqkw" date="21/11/14 10:37" author="_AQHa8HFiEeSbnbmZnYsqkw" base_Comment="_AQHa8XFiEeSbnbmZnYsqkw" subject="subject"/>
+</xmi:XMI>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doc:Documentation
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:doc="http://www.eclipse.org/papyrus/documentation/plugin/documentation"
+    description="The goal of this plugin is to test functionality about revision of model">
+  <referent
+      firstName="Patrick"
+      lastName="Tessier"
+      eMail="patrick.tessier@cea.fr"
+      currentCompany="CEA LIST"/>
+</doc:Documentation>

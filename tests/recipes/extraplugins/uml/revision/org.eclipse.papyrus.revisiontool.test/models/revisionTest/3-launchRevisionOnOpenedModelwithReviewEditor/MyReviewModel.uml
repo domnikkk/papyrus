@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:PapyrusVersioningExtensions="http:///schemas/PapyrusVersioningExtensions/_SVfbwGW4EeSPMtL3PG5w7g/0" xmlns:ReviewProfile="http:///schemas/ReviewProfile/_VpvawGW4EeSPMtL3PG5w7g/0" xmlns:compare="http://www.eclipse.org/emf/compare" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/PapyrusVersioningExtensions/_SVfbwGW4EeSPMtL3PG5w7g/0 pathmap://Review_PROFILES/Versioning.profile.uml#_SVfbwWW4EeSPMtL3PG5w7g http:///schemas/ReviewProfile/_VpvawGW4EeSPMtL3PG5w7g/0 pathmap://Review_PROFILES/Review.profile.uml#_VpwB0GW4EeSPMtL3PG5w7g">
+  <ReviewProfile:ReviewRepository xmi:id="_FtC3jXF_EeSENPH62bfYEw" base_Model="_FtC3jnF_EeSENPH62bfYEw"/>
+  <uml:Model xmi:id="_FtC3jnF_EeSENPH62bfYEw" name="MyReviewModel">
+    <ownedComment xmi:type="uml:Comment" xmi:id="_Fvl1MnF_EeSENPH62bfYEw">
+      <body>Your review</body>
+    </ownedComment>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_FtC3j3F_EeSENPH62bfYEw" name="WorkingModelDependency" client="_FtC3jnF_EeSENPH62bfYEw">
+      <supplier xmi:type="uml:Model" href="WorkingModel.uml#_7knO8HF-EeSENPH62bfYEw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Actor" xmi:id="_Fvl1MHF_EeSENPH62bfYEw" name="Titi "/>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_FtC3kHF_EeSENPH62bfYEw">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_FtC3kXF_EeSENPH62bfYEw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://Review_PROFILES/Review.profile.uml#_VpwB0GW4EeSPMtL3PG5w7g"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://Review_PROFILES/Review.profile.uml#_Tr7GcGAWEeS-2dbNdHDnFw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_FtC3knF_EeSENPH62bfYEw">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_FtC3k3F_EeSENPH62bfYEw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://Review_PROFILES/Versioning.profile.uml#_SVfbwWW4EeSPMtL3PG5w7g"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://Review_PROFILES/Versioning.profile.uml#_oQIXkM7dEeOUWOjBbvvZ9Q"/>
+    </profileApplication>
+  </uml:Model>
+  <compare:Comparison xmi:id="_FtMogHF_EeSENPH62bfYEw">
+    <matches xmi:type="compare:Match" xmi:id="_JbyaIHF_EeSENPH62bfYEw">
+      <differences xmi:type="compare:ReferenceChange" xmi:id="_K3dG4XF_EeSENPH62bfYEw" kind="DELETE">
+        <reference xmi:type="ecore:EReference" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package/packagedElement"/>
+      </differences>
+      <differences xmi:type="compare:ReferenceChange" xmi:id="_K3wB0XF_EeSENPH62bfYEw" kind="DELETE">
+        <reference xmi:type="ecore:EReference" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package/packagedElement"/>
+      </differences>
+      <differences xmi:type="compare:ReferenceChange" xmi:id="_K4C8wHF_EeSENPH62bfYEw" kind="DELETE">
+        <reference xmi:type="ecore:EReference" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package/packagedElement"/>
+      </differences>
+      <differences xmi:type="compare:ReferenceChange" xmi:id="_K4MtwnF_EeSENPH62bfYEw" kind="DELETE">
+        <reference xmi:type="ecore:EReference" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package/packagedElement"/>
+      </differences>
+      <left xmi:type="uml:Model" href="WorkingModel.uml#_7knO8HF-EeSENPH62bfYEw"/>
+    </matches>
+  </compare:Comparison>
+  <PapyrusVersioningExtensions:Author xmi:id="_Fvl1MXF_EeSENPH62bfYEw" language="Eng" color="255:128:255" base_Actor="_Fvl1MHF_EeSENPH62bfYEw" versioningElements="_Fvl1M3F_EeSENPH62bfYEw _K3dG4HF_EeSENPH62bfYEw _K3wB0HF_EeSENPH62bfYEw _K35LwXF_EeSENPH62bfYEw _K4MtwXF_EeSENPH62bfYEw"/>
+  <ReviewProfile:Review xmi:id="_Fvl1M3F_EeSENPH62bfYEw" base_Element="_Fvl1MnF_EeSENPH62bfYEw" date="21/11/14 14:05" author="_Fvl1MXF_EeSENPH62bfYEw" base_Comment="_Fvl1MnF_EeSENPH62bfYEw" subject="subject"/>
+  <ReviewProfile:Review xmi:id="_K3dG4HF_EeSENPH62bfYEw" date="21/11/14 14:06" author="_Fvl1MXF_EeSENPH62bfYEw" subject="Remove Class2"/>
+  <ReviewProfile:Review xmi:id="_K3wB0HF_EeSENPH62bfYEw" date="21/11/14 14:06" author="_Fvl1MXF_EeSENPH62bfYEw" subject="Remove Class2"/>
+  <ReviewProfile:Review xmi:id="_K35LwXF_EeSENPH62bfYEw" date="21/11/14 14:06" author="_Fvl1MXF_EeSENPH62bfYEw" subject="Remove Class2"/>
+  <ReviewProfile:Review xmi:id="_K4MtwXF_EeSENPH62bfYEw" date="21/11/14 14:06" author="_Fvl1MXF_EeSENPH62bfYEw" subject="Remove Class2"/>
+</xmi:XMI>

@@ -161,12 +161,18 @@
                hoverIcon="Revision Mode"
                label="Revision Mode"
                style="toggle">
+            <visibleWhen
+                  checkEnabled="true">
+            </visibleWhen>
          </command>
          <command
                commandId="org.eclipse.papyrus.revision.tool.handlers.SaveSnapshotRevision"
                hoverIcon="Save snapshot Revision Mode"
                label="Save snapshot Revision Mode (TMP)"
                style="push">
+            <visibleWhen
+                  checkEnabled="true">
+            </visibleWhen>
          </command>
       </menu>
    </menuContribution>

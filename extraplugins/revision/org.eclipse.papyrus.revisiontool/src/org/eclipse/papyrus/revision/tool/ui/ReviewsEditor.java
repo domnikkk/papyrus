@@ -86,7 +86,7 @@ public class ReviewsEditor extends ViewPart implements ITabbedPropertySheetPageC
 
 	@Override
 	public void dispose() {
-		reviewResourceManager.getDomain().removeResourceSetListener(getresourceListener());
+		reviewResourceManager.getDomain().removeResourceSetListener(getResourceListener());
 		reviewResourceManager.dispose();
 		reviewResourceManager=null;
 		super.dispose();
@@ -133,7 +133,7 @@ public class ReviewsEditor extends ViewPart implements ITabbedPropertySheetPageC
 	 * 
 	 * @return listener to refresh the editor
 	 */
-	public ResourceSetListener getresourceListener(){
+	public ResourceSetListener getResourceListener(){
 		if(reviewEditorResourceListener==null){
 			reviewEditorResourceListener= new ResourceSetListenerImpl(){
 
@@ -179,7 +179,7 @@ public class ReviewsEditor extends ViewPart implements ITabbedPropertySheetPageC
 	public void addAReview(Element container) {
 		reviewResourceManager.addAReview(container);
 		viewer.setInput(reviewResourceManager.getCurrentReviewModel());
-		reviewResourceManager.getDomain().addResourceSetListener(getresourceListener());
+		reviewResourceManager.getDomain().addResourceSetListener(getResourceListener());
 	}
 	/**
 	 * create action in the view
@@ -190,7 +190,7 @@ public class ReviewsEditor extends ViewPart implements ITabbedPropertySheetPageC
 			public void run() {
 				Model reviewModel=reviewResourceManager.loadReviewModel();
 				viewer.setInput(reviewModel);
-				reviewResourceManager.getDomain().addResourceSetListener(getresourceListener());
+				reviewResourceManager.getDomain().addResourceSetListener(getResourceListener());
 			}
 			@Override
 			public String getDescription() {
@@ -271,6 +271,23 @@ public class ReviewsEditor extends ViewPart implements ITabbedPropertySheetPageC
 
 
 
+	}
+	/**
+	 * launch the model revision and load review model in the editor
+	 */
+	public void startModeRevision(){
+		viewer.setInput(reviewResourceManager.getCurrentReviewModel());
+		reviewResourceManager.getDomain().addResourceSetListener(getResourceListener());
+		reviewResourceManager.startModeRevision();
+	}
+	/**
+	 * stop the model revision and load review model in the editor
+	 */
+	public void stopModelRevision(){
+		viewer.setInput(reviewResourceManager.getCurrentReviewModel());
+		reviewResourceManager.getDomain().addResourceSetListener(getResourceListener());
+		reviewResourceManager.stopModelRevision();
+		
 	}
 	/**
 	 * Retrieves the {@link IPropertySheetPage} that his Model Explorer uses.

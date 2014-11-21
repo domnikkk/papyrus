@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:PapyrusVersioningExtensions="http:///schemas/PapyrusVersioningExtensions/_SVfbwGW4EeSPMtL3PG5w7g/0" xmlns:ReviewProfile="http:///schemas/ReviewProfile/_VpvawGW4EeSPMtL3PG5w7g/0" xmlns:compare="http://www.eclipse.org/emf/compare" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/PapyrusVersioningExtensions/_SVfbwGW4EeSPMtL3PG5w7g/0 pathmap://Review_PROFILES/Versioning.profile.uml#_SVfbwWW4EeSPMtL3PG5w7g http:///schemas/ReviewProfile/_VpvawGW4EeSPMtL3PG5w7g/0 pathmap://Review_PROFILES/Review.profile.uml#_VpwB0GW4EeSPMtL3PG5w7g">
+  <ReviewProfile:ReviewRepository xmi:id="_yW_VsHFmEeSV7vTAYq-uEw" base_Model="_yW_VsXFmEeSV7vTAYq-uEw"/>
+  <uml:Model xmi:id="_yW_VsXFmEeSV7vTAYq-uEw" name="MyReviewModel">
+    <ownedComment xmi:type="uml:Comment" xmi:id="_yYLogHFmEeSV7vTAYq-uEw">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_1NiFAHFmEeSV7vTAYq-uEw">
+        <body>Your review</body>
+      </ownedComment>
+      <body>Your review</body>
+    </ownedComment>
+    <ownedComment xmi:type="uml:Comment" xmi:id="_z2zioHFmEeSV7vTAYq-uEw">
+      <body>Your review</body>
+    </ownedComment>
+    <ownedComment xmi:type="uml:Comment" xmi:id="_0h8xYHFmEeSV7vTAYq-uEw">
+      <body>Your review</body>
+    </ownedComment>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_yW_VsnFmEeSV7vTAYq-uEw" name="WorkingModelDependency" client="_yW_VsXFmEeSV7vTAYq-uEw">
+      <supplier xmi:type="uml:Model" href="WorkingModel.uml#_3zvrkHFhEeSbnbmZnYsqkw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Actor" xmi:id="_yYB3gHFmEeSV7vTAYq-uEw" name="Titi "/>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_yW_Vs3FmEeSV7vTAYq-uEw">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_yW_VtHFmEeSV7vTAYq-uEw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://Review_PROFILES/Review.profile.uml#_VpwB0GW4EeSPMtL3PG5w7g"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://Review_PROFILES/Review.profile.uml#_Tr7GcGAWEeS-2dbNdHDnFw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_yW_VtXFmEeSV7vTAYq-uEw">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_yW_VtnFmEeSV7vTAYq-uEw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://Review_PROFILES/Versioning.profile.uml#_SVfbwWW4EeSPMtL3PG5w7g"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://Review_PROFILES/Versioning.profile.uml#_oQIXkM7dEeOUWOjBbvvZ9Q"/>
+    </profileApplication>
+  </uml:Model>
+  <compare:Comparison xmi:id="_yW_Vt3FmEeSV7vTAYq-uEw"/>
+  <PapyrusVersioningExtensions:Author xmi:id="_yYB3gXFmEeSV7vTAYq-uEw" language="Eng" color="255:128:255" base_Actor="_yYB3gHFmEeSV7vTAYq-uEw" versioningElements="_yYLogXFmEeSV7vTAYq-uEw _z3GdkHFmEeSV7vTAYq-uEw _0iY2QHFmEeSV7vTAYq-uEw _1OIh8HFmEeSV7vTAYq-uEw"/>
+  <ReviewProfile:Review xmi:id="_yYLogXFmEeSV7vTAYq-uEw" base_Element="_yYLogHFmEeSV7vTAYq-uEw" date="21/11/14 11:11" author="_yYB3gXFmEeSV7vTAYq-uEw" base_Comment="_yYLogHFmEeSV7vTAYq-uEw" subject="subject"/>
+  <ReviewProfile:Review xmi:id="_z3GdkHFmEeSV7vTAYq-uEw" base_Element="_z2zioHFmEeSV7vTAYq-uEw" date="21/11/14 11:11" author="_yYB3gXFmEeSV7vTAYq-uEw" base_Comment="_z2zioHFmEeSV7vTAYq-uEw" subject="subject"/>
+  <ReviewProfile:Review xmi:id="_0iY2QHFmEeSV7vTAYq-uEw" base_Element="_0h8xYHFmEeSV7vTAYq-uEw" date="21/11/14 11:11" author="_yYB3gXFmEeSV7vTAYq-uEw" base_Comment="_0h8xYHFmEeSV7vTAYq-uEw" subject="subject"/>
+  <ReviewProfile:Review xmi:id="_1OIh8HFmEeSV7vTAYq-uEw" base_Element="_1NiFAHFmEeSV7vTAYq-uEw" date="21/11/14 11:12" author="_yYB3gXFmEeSV7vTAYq-uEw" base_Comment="_1NiFAHFmEeSV7vTAYq-uEw" subject="subject"/>
+</xmi:XMI>
