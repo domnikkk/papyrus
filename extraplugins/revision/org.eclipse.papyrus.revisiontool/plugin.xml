@@ -51,6 +51,12 @@
             path="pathmap://Review_PROFILES/Versioning.profile.uml"
             provider="CEA LIST">
       </profile>
+      <profile
+            description="Profile used to store some changes during revision"
+            name="ChangeProfile"
+            path="pathmap://Review_PROFILES/Changes.profile.uml"
+            provider="CEA LIST">
+      </profile>
    </extension>
 <extension point="org.eclipse.papyrus.views.properties.context">
 <context contextModel="properties/Review.ctx"/>

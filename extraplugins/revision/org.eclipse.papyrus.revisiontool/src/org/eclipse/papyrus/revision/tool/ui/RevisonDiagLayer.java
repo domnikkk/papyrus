@@ -104,9 +104,11 @@ public class RevisonDiagLayer {
 
 				if(fig instanceof PolylineConnectionEx){
 					Rectangle rect = new Rectangle(((PolylineConnectionEx)fig).getPoints().getFirstPoint(), ((PolylineConnectionEx)fig).getPoints().getLastPoint());
-					if(editPart instanceof ConnectionEditPart){
-						rect=((GraphicalEditPart)((ConnectionEditPart)editPart).getSource()).getFigure().getBounds().getCopy();
-						rect=rect.getUnion(((GraphicalEditPart)((ConnectionEditPart)editPart).getTarget()).getFigure().getBounds());
+					if(rect.x==0 &&rect.y==0){
+						if(editPart instanceof ConnectionEditPart){
+							rect=((GraphicalEditPart)((ConnectionEditPart)editPart).getSource()).getFigure().getBounds().getCopy();
+							rect=rect.getUnion(((GraphicalEditPart)((ConnectionEditPart)editPart).getTarget()).getFigure().getBounds());
+						}
 					}
 					removedFig.setBounds(rect);
 
