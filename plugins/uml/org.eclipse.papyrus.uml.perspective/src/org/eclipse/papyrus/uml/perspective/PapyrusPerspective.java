@@ -88,9 +88,6 @@ public class PapyrusPerspective implements IPerspectiveFactory {
 		// Place the ModelExplorer under the Navigator
 		layout.addView(ID_MODELEXPLORER, IPageLayout.BOTTOM, 0.33f, IPageLayout.ID_PROJECT_EXPLORER);
 
-		// place outline under the model explorer
-		layout.addView(IPageLayout.ID_OUTLINE, IPageLayout.BOTTOM, 0.5f, ID_MODELEXPLORER);
-
 		// place properties and problem views under the editor
 		IFolderLayout bottomFolder = layout.createFolder(ID_BOTTOM_FOLDER, IPageLayout.BOTTOM, 0.70f, editorArea);
 
@@ -98,5 +95,9 @@ public class PapyrusPerspective implements IPerspectiveFactory {
 		bottomFolder.addView(ModelValidationView.VIEW_ID);
 
 		// bottom.addView("org.eclipse.pde.runtime.LogView");
+
+		// place outline under the model explorer
+		// open the outline after all other views, since it is slower to refresh
+		layout.addView(IPageLayout.ID_OUTLINE, IPageLayout.BOTTOM, 0.5f, ID_MODELEXPLORER);
 	}
 }
