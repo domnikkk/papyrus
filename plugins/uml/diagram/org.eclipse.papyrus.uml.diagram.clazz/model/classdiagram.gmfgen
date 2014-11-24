@@ -8028,8 +8028,12 @@
           qualifiedName="org.eclipse.papyrus.uml.diagram.clazz.custom.parsers.TemplateBindingParser"/>
       <implementations
           xsi:type="gmfgen:CustomParser"
-          uses="/0/@diagram/@links.20/@labels.0/@modelFacet /0/@diagram/@links.20/@labels.1/@modelFacet"
-          qualifiedName="org.eclipse.papyrus.uml.diagram.clazz.custom.parsers.RoleInstanceSpecificationLinkParser"/>
+          uses="/0/@diagram/@links.20/@labels.0/@modelFacet"
+          qualifiedName="org.eclipse.papyrus.uml.diagram.clazz.custom.parsers.RoleInstanceSpecificationSourceLinkParser"/>
+      <implementations
+          xsi:type="gmfgen:CustomParser"
+          uses="/0/@diagram/@links.20/@labels.1/@modelFacet"
+          qualifiedName="org.eclipse.papyrus.uml.diagram.clazz.custom.parsers.RoleInstanceSpecificationTargetLinkParser"/>
     </labelParsers>
     <contextMenus
         context="/0/@diagram">
