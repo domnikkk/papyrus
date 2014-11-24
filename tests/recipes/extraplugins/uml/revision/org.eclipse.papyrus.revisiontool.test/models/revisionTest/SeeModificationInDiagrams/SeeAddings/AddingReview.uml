@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:PapyrusVersioningExtensions="http:///schemas/PapyrusVersioningExtensions/_SVfbwGW4EeSPMtL3PG5w7g/0" xmlns:ReviewProfile="http:///schemas/ReviewProfile/_VpvawGW4EeSPMtL3PG5w7g/0" xmlns:compare="http://www.eclipse.org/emf/compare" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/PapyrusVersioningExtensions/_SVfbwGW4EeSPMtL3PG5w7g/0 pathmap://Review_PROFILES/Versioning.profile.uml#_SVfbwWW4EeSPMtL3PG5w7g http:///schemas/ReviewProfile/_VpvawGW4EeSPMtL3PG5w7g/0 pathmap://Review_PROFILES/Review.profile.uml#_VpwB0GW4EeSPMtL3PG5w7g">
+  <ReviewProfile:ReviewRepository xmi:id="_bwxrvXO0EeS3--5UptsX7w" base_Model="_bwxrvnO0EeS3--5UptsX7w"/>
+  <uml:Model xmi:id="_bwxrvnO0EeS3--5UptsX7w" name="AddingReview">
+    <ownedComment xmi:type="uml:Comment" xmi:id="_by3WYnO0EeS3--5UptsX7w">
+      <body>The purpose is to see adding in the diagrams</body>
+    </ownedComment>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_bwxrv3O0EeS3--5UptsX7w" name="WorkingModelDependency" client="_bwxrvnO0EeS3--5UptsX7w">
+      <supplier xmi:type="uml:Model" href="WorkingModel.uml#_bOVDIHGJEeS3EdgtJYAZRQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Actor" xmi:id="_by3WYHO0EeS3--5UptsX7w" name="Bob"/>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_bwxrwHO0EeS3--5UptsX7w">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_bwxrwXO0EeS3--5UptsX7w" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://Review_PROFILES/Review.profile.uml#_VpwB0GW4EeSPMtL3PG5w7g"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://Review_PROFILES/Review.profile.uml#_Tr7GcGAWEeS-2dbNdHDnFw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_bwxrwnO0EeS3--5UptsX7w">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_bwxrw3O0EeS3--5UptsX7w" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://Review_PROFILES/Versioning.profile.uml#_SVfbwWW4EeSPMtL3PG5w7g"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://Review_PROFILES/Versioning.profile.uml#_oQIXkM7dEeOUWOjBbvvZ9Q"/>
+    </profileApplication>
+  </uml:Model>
+  <compare:Comparison xmi:id="_bwxrxHO0EeS3--5UptsX7w"/>
+  <PapyrusVersioningExtensions:Author xmi:id="_by3WYXO0EeS3--5UptsX7w" language="Eng" color="254:237:177" base_Actor="_by3WYHO0EeS3--5UptsX7w" versioningElements="_by3WY3O0EeS3--5UptsX7w"/>
+  <ReviewProfile:Review xmi:id="_by3WY3O0EeS3--5UptsX7w" base_Element="_by3WYnO0EeS3--5UptsX7w" date="24/11/14 09:32" author="_by3WYXO0EeS3--5UptsX7w" base_Comment="_by3WYnO0EeS3--5UptsX7w" subject="See Adding Review"/>
+</xmi:XMI>
