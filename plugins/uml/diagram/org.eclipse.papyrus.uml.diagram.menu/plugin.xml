@@ -50,7 +50,7 @@
             label="Se&amp;lect"
             tooltip="Select Menu">
          <command
-               commandId="org.eclipse.papyrus.uml.diagram.menu.commands.SelectAllCommand"
+               commandId="org.eclipse.ui.edit.selectAll"
                icon="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui.actions/icons/elcl16/selectall.gif"
                id="org.eclipse.papyrus.uml.diagram.ui.popupmenu.select.all"
                label="&amp;All"
@@ -483,7 +483,7 @@
    <menuContribution
          locationURI="menu:org.eclipse.papyrus.menu.select.toolbar.command">
       <command
-            commandId="org.eclipse.papyrus.uml.diagram.menu.commands.SelectAllCommand"
+            commandId="org.eclipse.ui.edit.selectAll"
             icon="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui.actions/icons/elcl16/selectall.gif"
             label="Select &amp;All"
             style="push"
@@ -1058,7 +1058,7 @@
             label="Se&amp;lect"
             tooltip="Select Menu">
          <command
-               commandId="org.eclipse.papyrus.uml.diagram.menu.commands.SelectAllCommand"
+               commandId="org.eclipse.ui.edit.selectAll"
                icon="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui.actions/icons/elcl16/selectall.gif"
                label="&amp;All"
                style="push"
@@ -2710,12 +2710,6 @@
    </command>
    <command
          categoryId="org.eclipse.papyrus.editor.category"
-         description="The command to select all elements"
-         id="org.eclipse.papyrus.uml.diagram.menu.commands.SelectAllCommand"
-         name="Select All Command">
-   </command>
-   <command
-         categoryId="org.eclipse.papyrus.editor.category"
          description="The command to select all shapes"
          id="org.eclipse.papyrus.uml.diagram.menu.commands.SelectAllShapesCommand"
          name="Select All Shapes Command">
@@ -3084,10 +3078,10 @@
          sequence="CTRL+=">
    </key>
    <key
-         commandId="org.eclipse.papyrus.uml.diagram.menu.commands.SelectAllCommand"
+         commandId="org.eclipse.ui.edit.selectAll"
          contextId="org.eclipse.gmf.runtime.diagram.ui.diagramContext"
          schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
-         sequence="CTRL+A">
+         sequence="M1+A">
    </key>
    <key
          commandId="org.eclipse.papyrus.uml.diagram.menu.commands.ZoomInCommand"
@@ -3352,13 +3346,32 @@
       </class>
    </handler>
    <handler
-         commandId="org.eclipse.papyrus.uml.diagram.menu.commands.SelectAllCommand">
+         commandId="org.eclipse.ui.edit.selectAll">
       <class
             class="org.eclipse.papyrus.uml.diagram.menu.actions.handlers.SelectHandler">
          <parameter
                name="select_parameter"
                value="selectAll">
          </parameter></class>
+     <activeWhen>
+        <and>
+           <with
+                 variable="activeContexts">
+              <test
+                    property="org.eclipse.papyrus.infra.gmfdiag.common.diagram.context.tester.isGmfDiagramContextActive"
+                    value="true">
+              </test>
+           </with>
+           <with
+                 variable="selection">
+              <test
+                    forcePluginActivation="true"
+                    property="org.eclipse.papyrus.infra.gmfdiag.common.diagram.tester.isDiagramEditor"
+                    value="true">
+              </test>
+           </with>
+        </and>
+     </activeWhen>         
    </handler>
    <handler
          commandId="org.eclipse.papyrus.uml.diagram.menu.commands.SelectAllShapesCommand">
