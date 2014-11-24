@@ -28,6 +28,7 @@ import org.eclipse.papyrus.infra.core.editor.IMultiDiagramEditor;
 import org.eclipse.papyrus.infra.core.services.ServiceException;
 import org.eclipse.papyrus.revision.tool.core.ReviewResourceManager;
 import org.eclipse.papyrus.uml.diagram.common.part.UmlGmfDiagramEditor;
+import org.eclipse.swt.internal.image.GIFFileFormat;
 
 /**
  * this class is used to add figure in current diagrams for remove add or set during the revision mode
@@ -103,6 +104,10 @@ public class RevisonDiagLayer {
 
 				if(fig instanceof PolylineConnectionEx){
 					Rectangle rect = new Rectangle(((PolylineConnectionEx)fig).getPoints().getFirstPoint(), ((PolylineConnectionEx)fig).getPoints().getLastPoint());
+					if(editPart instanceof ConnectionEditPart){
+						rect=((GraphicalEditPart)((ConnectionEditPart)editPart).getSource()).getFigure().getBounds().getCopy();
+						rect=rect.getUnion(((GraphicalEditPart)((ConnectionEditPart)editPart).getTarget()).getFigure().getBounds());
+					}
 					removedFig.setBounds(rect);
 
 				}
@@ -117,6 +122,12 @@ public class RevisonDiagLayer {
 				}
 				if(fig instanceof PolylineConnectionEx){
 					Rectangle rect = new Rectangle(((PolylineConnectionEx)fig).getPoints().getFirstPoint(), ((PolylineConnectionEx)fig).getPoints().getLastPoint());
+					if(rect.x==0 &&rect.y==0){
+						if(editPart instanceof ConnectionEditPart){
+							rect=((GraphicalEditPart)((ConnectionEditPart)editPart).getSource()).getFigure().getBounds().getCopy();
+							rect=rect.getUnion(((GraphicalEditPart)((ConnectionEditPart)editPart).getTarget()).getFigure().getBounds());
+						}
+					}
 					addingFig.setBounds(rect);
 				}
 				else{
