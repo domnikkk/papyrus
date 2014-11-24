@@ -24,6 +24,8 @@ import org.eclipse.gmf.codegen.gmfgen.Viewmap
 import parsers.ParserProvider
 import xpt.Common
 import xpt.diagram.ViewmapAttributesUtils_qvto
+import xpt.Common_qvto
+import org.eclipse.gmf.codegen.gmfgen.GenLinkLabel
 
 //DOCUMENTATION: PapyrusGencode
 //This template has been modified to take in account the possibility to have extended direct editors
@@ -35,7 +37,9 @@ import xpt.diagram.ViewmapAttributesUtils_qvto
 
 	@Inject extension ParserProvider
 
-
+	@Inject extension Common_qvto 
+	
+	@Inject TextAware testVar
 	override fields(GenCommonBase it)'''
 	«generatedMemberComment»
 	private org.eclipse.gef.tools.DirectEditManager manager;
@@ -58,8 +62,7 @@ import xpt.diagram.ViewmapAttributesUtils_qvto
 	protected org.eclipse.papyrus.extensionpoints.editors.configuration.IDirectEditorConfiguration configuration;
 	«««	END: BEGIN: PapyrusGenCode
 	
-'''
-
+''' 
 	override methods(GenCommonBase it, boolean needsRefreshBounds, boolean readOnly, boolean useElementIcon, Viewmap viewmap,
 		LabelModelFacet modelFacet, GenCommonBase host, GenDiagram diagram) '''
 		
@@ -570,6 +573,10 @@ override refreshLabel(GenCommonBase it , GenDiagram diagram )'''
 			 maskLabelPolicy = getEditPolicy(org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.IndirectMaskLabelEditPolicy.INDRIRECT_MASK_MANAGED_LABEL);
 		}
 		if (maskLabelPolicy == null) {
+		«IF it.oclIsKindOf(typeof(GenLinkLabel))»
+			setLabelTextHelper(getFigure(), getLabelText());
+			setLabelIconHelper(getFigure(), getLabelIcon());
+		«ELSE»
 			org.eclipse.gmf.runtime.notation.View view = (org.eclipse.gmf.runtime.notation.View)getModel();
 			if(view.isVisible()) {
 				setLabelTextHelper(getFigure(), getLabelText());
@@ -578,7 +585,8 @@ override refreshLabel(GenCommonBase it , GenDiagram diagram )'''
 			else {
 				setLabelTextHelper(getFigure(), ""); //$NON-NLS-1$
 				setLabelIconHelper(getFigure(), null);
-			}
+			}	
+		«ENDIF»
 		}
 		Object pdEditPolicy = getEditPolicy(org.eclipse.gef.EditPolicy.PRIMARY_DRAG_ROLE);
 		if (pdEditPolicy instanceof «diagram.getTextSelectionEditPolicyQualifiedClassName()») {
