@@ -9,7 +9,7 @@
  *
  * Contributors:
  *  Laurent Wouters laurent.wouters@cea.fr - Initial API and implementation
- *
+ *  Benoit  Maggi   benoit.maggi@cea.fr - #451968
  *****************************************************************************/
 package org.eclipse.papyrus.infra.viewpoints.policy;
 
@@ -31,7 +31,7 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
 	@Override
 	public void initializeDefaultPreferences() {
 		IPreferenceStore store = Activator.getDefault().getPreferenceStore();
-		store.setDefault(PreferenceConstants.P_CONF_TYPE, PreferenceConstants.P_CONF_TYPE_EXTENSION_VALUE);
+		store.setDefault(PreferenceConstants.P_CONF_TYPE, PreferenceConstants.P_CONF_TYPE_DEFAULT_VALUE);
 		store.setDefault(PreferenceConstants.P_CONF_PATH_SCHEME, PreferenceConstants.P_CONF_PATH_SCHEME_FILE_VALUE);
 		store.setDefault(PreferenceConstants.P_CONF_PATH, "");
 		store.setDefault(PreferenceConstants.P_STAKEHOLDER, "");
