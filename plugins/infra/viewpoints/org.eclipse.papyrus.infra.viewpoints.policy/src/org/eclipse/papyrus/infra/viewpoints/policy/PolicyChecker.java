@@ -17,6 +17,7 @@ package org.eclipse.papyrus.infra.viewpoints.policy;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -47,6 +48,7 @@ import org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusConfiguration;
 import org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusDiagram;
 import org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusView;
 import org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusViewpoint;
+import org.eclipse.papyrus.infra.viewpoints.configuration.RootAutoSelect;
 import org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureViewpoint;
 import org.eclipse.papyrus.infra.viewpoints.iso42010.ModelKind;
 import org.eclipse.papyrus.infra.viewpoints.iso42010.Stakeholder;
@@ -646,6 +648,8 @@ public class PolicyChecker {
 				if (rule.getNewModelPath() != null && !rule.getNewModelPath().isEmpty()) {
 					// Auto-created root => always OK
 					result.add(proto);
+				} else if (rule.getSelectDiagramRoot() != null && !rule.getSelectDiagramRoot().isEmpty()){
+					result.add(proto);
 				} else {
 					// We have to check if the owner can also be a root
 					count = proto.getViewCountOn(element);
@@ -922,12 +926,12 @@ public class PolicyChecker {
 	 * @return <code>true</code> if it is possible
 	 */
 	private boolean allows(OwningRule rule, EObject owner) {
-		List<ModelAutoCreate> list = rule.getNewModelPath();
-		if (list == null || list.isEmpty()) {
+		List<ModelAutoCreate> modelAutoCreateList = rule.getNewModelPath();
+		if (modelAutoCreateList == null || modelAutoCreateList.isEmpty()) {
 			return true;
 		}
 		EObject current = owner;
-		for (ModelAutoCreate elem : list) {
+		for (ModelAutoCreate elem : modelAutoCreateList) {
 			EReference ref = elem.getFeature();
 			if (ref.isMany()) {
 				return true;
@@ -938,7 +942,7 @@ public class PolicyChecker {
 			}
 			current = (EObject) e;
 		}
-		return false;
+		return false; // by default a rule is not allowed
 	}
 
 	/**

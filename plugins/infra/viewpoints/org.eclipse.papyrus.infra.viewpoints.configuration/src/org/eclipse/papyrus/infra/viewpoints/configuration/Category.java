@@ -23,7 +23,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- * <li>{@link org.eclipse.papyrus.infra.viewpoints.configuration.Category#getName <em>Name</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.infra.viewpoints.configuration.Category#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
@@ -39,7 +39,6 @@ public interface Category extends EObject {
 	 * If the meaning of the '<em>Name</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.ConfigurationPackage#getCategory_Name()
@@ -52,9 +51,7 @@ public interface Category extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.viewpoints.configuration.Category#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Name</em>' attribute.
+	 * @param value the new value of the '<em>Name</em>' attribute.
 	 * @see #getName()
 	 * @generated
 	 */

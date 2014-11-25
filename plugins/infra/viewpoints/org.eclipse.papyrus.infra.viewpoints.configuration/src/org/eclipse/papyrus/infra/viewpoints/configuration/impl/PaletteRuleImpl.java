@@ -26,7 +26,7 @@ import org.eclipse.papyrus.infra.viewpoints.configuration.PaletteRule;
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.eclipse.papyrus.infra.viewpoints.configuration.impl.PaletteRuleImpl#getElement <em>Element</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.infra.viewpoints.configuration.impl.PaletteRuleImpl#getElement <em>Element</em>}</li>
  * </ul>
  * </p>
  *
@@ -37,7 +37,6 @@ public class PaletteRuleImpl extends RuleImpl implements PaletteRule {
 	 * The default value of the '{@link #getElement() <em>Element</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getElement()
 	 * @generated
 	 * @ordered
@@ -48,7 +47,6 @@ public class PaletteRuleImpl extends RuleImpl implements PaletteRule {
 	 * The cached value of the '{@link #getElement() <em>Element</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getElement()
 	 * @generated
 	 * @ordered
@@ -58,7 +56,6 @@ public class PaletteRuleImpl extends RuleImpl implements PaletteRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected PaletteRuleImpl() {
@@ -68,7 +65,6 @@ public class PaletteRuleImpl extends RuleImpl implements PaletteRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -79,7 +75,6 @@ public class PaletteRuleImpl extends RuleImpl implements PaletteRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public String getElement() {
@@ -89,28 +84,25 @@ public class PaletteRuleImpl extends RuleImpl implements PaletteRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public void setElement(String newElement) {
 		String oldElement = element;
 		element = newElement;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ConfigurationPackage.PALETTE_RULE__ELEMENT, oldElement, element));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case ConfigurationPackage.PALETTE_RULE__ELEMENT:
-			return getElement();
+			case ConfigurationPackage.PALETTE_RULE__ELEMENT:
+				return getElement();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -118,15 +110,14 @@ public class PaletteRuleImpl extends RuleImpl implements PaletteRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case ConfigurationPackage.PALETTE_RULE__ELEMENT:
-			setElement((String) newValue);
-			return;
+			case ConfigurationPackage.PALETTE_RULE__ELEMENT:
+				setElement((String)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -134,15 +125,14 @@ public class PaletteRuleImpl extends RuleImpl implements PaletteRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case ConfigurationPackage.PALETTE_RULE__ELEMENT:
-			setElement(ELEMENT_EDEFAULT);
-			return;
+			case ConfigurationPackage.PALETTE_RULE__ELEMENT:
+				setElement(ELEMENT_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -150,14 +140,13 @@ public class PaletteRuleImpl extends RuleImpl implements PaletteRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case ConfigurationPackage.PALETTE_RULE__ELEMENT:
-			return ELEMENT_EDEFAULT == null ? element != null : !ELEMENT_EDEFAULT.equals(element);
+			case ConfigurationPackage.PALETTE_RULE__ELEMENT:
+				return ELEMENT_EDEFAULT == null ? element != null : !ELEMENT_EDEFAULT.equals(element);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -165,14 +154,11 @@ public class PaletteRuleImpl extends RuleImpl implements PaletteRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
-			return super.toString();
-		}
+		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (element: ");

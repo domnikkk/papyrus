@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import org.eclipse.papyrus.infra.viewpoints.configuration.*;
 import org.eclipse.papyrus.infra.viewpoints.configuration.Category;
 import org.eclipse.papyrus.infra.viewpoints.configuration.ChildRule;
 import org.eclipse.papyrus.infra.viewpoints.configuration.ConfigurationFactory;
@@ -38,7 +39,6 @@ import org.eclipse.papyrus.infra.viewpoints.configuration.PathElement;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- *
  * @generated
  */
 public class ConfigurationFactoryImpl extends EFactoryImpl implements ConfigurationFactory {
@@ -46,16 +46,16 @@ public class ConfigurationFactoryImpl extends EFactoryImpl implements Configurat
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public static ConfigurationFactory init() {
 		try {
-			ConfigurationFactory theConfigurationFactory = (ConfigurationFactory) EPackage.Registry.INSTANCE.getEFactory(ConfigurationPackage.eNS_URI);
+			ConfigurationFactory theConfigurationFactory = (ConfigurationFactory)EPackage.Registry.INSTANCE.getEFactory(ConfigurationPackage.eNS_URI);
 			if (theConfigurationFactory != null) {
 				return theConfigurationFactory;
 			}
-		} catch (Exception exception) {
+		}
+		catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new ConfigurationFactoryImpl();
@@ -65,7 +65,6 @@ public class ConfigurationFactoryImpl extends EFactoryImpl implements Configurat
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public ConfigurationFactoryImpl() {
@@ -75,47 +74,33 @@ public class ConfigurationFactoryImpl extends EFactoryImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-		case ConfigurationPackage.PAPYRUS_CONFIGURATION:
-			return createPapyrusConfiguration();
-		case ConfigurationPackage.PAPYRUS_VIEWPOINT:
-			return createPapyrusViewpoint();
-		case ConfigurationPackage.PAPYRUS_VIEW:
-			return createPapyrusView();
-		case ConfigurationPackage.PAPYRUS_DIAGRAM:
-			return createPapyrusDiagram();
-		case ConfigurationPackage.PAPYRUS_SYNC_TABLE:
-			return createPapyrusSyncTable();
-		case ConfigurationPackage.PAPYRUS_TABLE:
-			return createPapyrusTable();
-		case ConfigurationPackage.MODEL_RULE:
-			return createModelRule();
-		case ConfigurationPackage.OWNING_RULE:
-			return createOwningRule();
-		case ConfigurationPackage.CHILD_RULE:
-			return createChildRule();
-		case ConfigurationPackage.PALETTE_RULE:
-			return createPaletteRule();
-		case ConfigurationPackage.PATH_ELEMENT:
-			return createPathElement();
-		case ConfigurationPackage.CATEGORY:
-			return createCategory();
-		case ConfigurationPackage.MODEL_AUTO_CREATE:
-			return createModelAutoCreate();
-		default:
-			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+			case ConfigurationPackage.PAPYRUS_CONFIGURATION: return createPapyrusConfiguration();
+			case ConfigurationPackage.PAPYRUS_VIEWPOINT: return createPapyrusViewpoint();
+			case ConfigurationPackage.PAPYRUS_VIEW: return createPapyrusView();
+			case ConfigurationPackage.PAPYRUS_DIAGRAM: return createPapyrusDiagram();
+			case ConfigurationPackage.PAPYRUS_SYNC_TABLE: return createPapyrusSyncTable();
+			case ConfigurationPackage.PAPYRUS_TABLE: return createPapyrusTable();
+			case ConfigurationPackage.MODEL_RULE: return createModelRule();
+			case ConfigurationPackage.OWNING_RULE: return createOwningRule();
+			case ConfigurationPackage.CHILD_RULE: return createChildRule();
+			case ConfigurationPackage.PALETTE_RULE: return createPaletteRule();
+			case ConfigurationPackage.PATH_ELEMENT: return createPathElement();
+			case ConfigurationPackage.CATEGORY: return createCategory();
+			case ConfigurationPackage.MODEL_AUTO_CREATE: return createModelAutoCreate();
+			case ConfigurationPackage.ROOT_AUTO_SELECT: return createRootAutoSelect();
+			default:
+				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public PapyrusConfiguration createPapyrusConfiguration() {
@@ -126,7 +111,6 @@ public class ConfigurationFactoryImpl extends EFactoryImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public PapyrusViewpoint createPapyrusViewpoint() {
@@ -137,7 +121,6 @@ public class ConfigurationFactoryImpl extends EFactoryImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public PapyrusView createPapyrusView() {
@@ -148,7 +131,6 @@ public class ConfigurationFactoryImpl extends EFactoryImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public PapyrusDiagram createPapyrusDiagram() {
@@ -159,7 +141,6 @@ public class ConfigurationFactoryImpl extends EFactoryImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public PapyrusSyncTable createPapyrusSyncTable() {
@@ -170,7 +151,6 @@ public class ConfigurationFactoryImpl extends EFactoryImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public PapyrusTable createPapyrusTable() {
@@ -181,7 +161,6 @@ public class ConfigurationFactoryImpl extends EFactoryImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public ModelRule createModelRule() {
@@ -192,7 +171,6 @@ public class ConfigurationFactoryImpl extends EFactoryImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public OwningRule createOwningRule() {
@@ -203,7 +181,6 @@ public class ConfigurationFactoryImpl extends EFactoryImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public ChildRule createChildRule() {
@@ -214,7 +191,6 @@ public class ConfigurationFactoryImpl extends EFactoryImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public PaletteRule createPaletteRule() {
@@ -225,7 +201,6 @@ public class ConfigurationFactoryImpl extends EFactoryImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public PathElement createPathElement() {
@@ -236,7 +211,6 @@ public class ConfigurationFactoryImpl extends EFactoryImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public Category createCategory() {
@@ -247,7 +221,6 @@ public class ConfigurationFactoryImpl extends EFactoryImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public ModelAutoCreate createModelAutoCreate() {
@@ -258,17 +231,25 @@ public class ConfigurationFactoryImpl extends EFactoryImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
-	public ConfigurationPackage getConfigurationPackage() {
-		return (ConfigurationPackage) getEPackage();
+	public RootAutoSelect createRootAutoSelect() {
+		RootAutoSelectImpl rootAutoSelect = new RootAutoSelectImpl();
+		return rootAutoSelect;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * @generated
+	 */
+	public ConfigurationPackage getConfigurationPackage() {
+		return (ConfigurationPackage)getEPackage();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @deprecated
 	 * @generated
 	 */

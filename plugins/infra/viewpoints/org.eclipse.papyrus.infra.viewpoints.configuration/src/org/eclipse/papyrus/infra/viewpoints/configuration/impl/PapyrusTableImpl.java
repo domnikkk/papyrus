@@ -26,7 +26,7 @@ import org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusTable;
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.eclipse.papyrus.infra.viewpoints.configuration.impl.PapyrusTableImpl#getConfiguration <em>Configuration</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.infra.viewpoints.configuration.impl.PapyrusTableImpl#getConfiguration <em>Configuration</em>}</li>
  * </ul>
  * </p>
  *
@@ -37,7 +37,6 @@ public class PapyrusTableImpl extends PapyrusViewImpl implements PapyrusTable {
 	 * The default value of the '{@link #getConfiguration() <em>Configuration</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getConfiguration()
 	 * @generated
 	 * @ordered
@@ -48,7 +47,6 @@ public class PapyrusTableImpl extends PapyrusViewImpl implements PapyrusTable {
 	 * The cached value of the '{@link #getConfiguration() <em>Configuration</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getConfiguration()
 	 * @generated
 	 * @ordered
@@ -58,7 +56,6 @@ public class PapyrusTableImpl extends PapyrusViewImpl implements PapyrusTable {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected PapyrusTableImpl() {
@@ -68,7 +65,6 @@ public class PapyrusTableImpl extends PapyrusViewImpl implements PapyrusTable {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -79,7 +75,6 @@ public class PapyrusTableImpl extends PapyrusViewImpl implements PapyrusTable {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public String getConfiguration() {
@@ -89,28 +84,25 @@ public class PapyrusTableImpl extends PapyrusViewImpl implements PapyrusTable {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public void setConfiguration(String newConfiguration) {
 		String oldConfiguration = configuration;
 		configuration = newConfiguration;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ConfigurationPackage.PAPYRUS_TABLE__CONFIGURATION, oldConfiguration, configuration));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case ConfigurationPackage.PAPYRUS_TABLE__CONFIGURATION:
-			return getConfiguration();
+			case ConfigurationPackage.PAPYRUS_TABLE__CONFIGURATION:
+				return getConfiguration();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -118,15 +110,14 @@ public class PapyrusTableImpl extends PapyrusViewImpl implements PapyrusTable {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case ConfigurationPackage.PAPYRUS_TABLE__CONFIGURATION:
-			setConfiguration((String) newValue);
-			return;
+			case ConfigurationPackage.PAPYRUS_TABLE__CONFIGURATION:
+				setConfiguration((String)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -134,15 +125,14 @@ public class PapyrusTableImpl extends PapyrusViewImpl implements PapyrusTable {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case ConfigurationPackage.PAPYRUS_TABLE__CONFIGURATION:
-			setConfiguration(CONFIGURATION_EDEFAULT);
-			return;
+			case ConfigurationPackage.PAPYRUS_TABLE__CONFIGURATION:
+				setConfiguration(CONFIGURATION_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -150,14 +140,13 @@ public class PapyrusTableImpl extends PapyrusViewImpl implements PapyrusTable {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case ConfigurationPackage.PAPYRUS_TABLE__CONFIGURATION:
-			return CONFIGURATION_EDEFAULT == null ? configuration != null : !CONFIGURATION_EDEFAULT.equals(configuration);
+			case ConfigurationPackage.PAPYRUS_TABLE__CONFIGURATION:
+				return CONFIGURATION_EDEFAULT == null ? configuration != null : !CONFIGURATION_EDEFAULT.equals(configuration);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -165,14 +154,11 @@ public class PapyrusTableImpl extends PapyrusViewImpl implements PapyrusTable {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
-			return super.toString();
-		}
+		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (configuration: ");

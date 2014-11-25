@@ -34,7 +34,6 @@ import org.eclipse.papyrus.infra.viewpoints.configuration.StereotypePropertyDesc
  * This is the item provider adapter for a {@link org.eclipse.papyrus.infra.viewpoints.configuration.OwningRule} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- *
  * @generated
  */
 public class OwningRuleItemProvider
@@ -43,7 +42,6 @@ public class OwningRuleItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public OwningRuleItemProvider(AdapterFactory adapterFactory) {
@@ -117,31 +115,30 @@ public class OwningRuleItemProvider
 	 * This adds a property descriptor for the Multiplicity feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected void addMultiplicityPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-				(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(),
-						getString("_UI_OwningRule_multiplicity_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_OwningRule_multiplicity_feature", "_UI_OwningRule_type"),
-						ConfigurationPackage.Literals.OWNING_RULE__MULTIPLICITY,
-						true,
-						false,
-						false,
-						ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-						null,
-						null));
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_OwningRule_multiplicity_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_OwningRule_multiplicity_feature", "_UI_OwningRule_type"),
+				 ConfigurationPackage.Literals.OWNING_RULE__MULTIPLICITY,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -149,6 +146,7 @@ public class OwningRuleItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(ConfigurationPackage.Literals.OWNING_RULE__NEW_MODEL_PATH);
+			childrenFeatures.add(ConfigurationPackage.Literals.OWNING_RULE__SELECT_DIAGRAM_ROOT);
 		}
 		return childrenFeatures;
 	}
@@ -156,7 +154,6 @@ public class OwningRuleItemProvider
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -211,7 +208,6 @@ public class OwningRuleItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -219,12 +215,13 @@ public class OwningRuleItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(OwningRule.class)) {
-		case ConfigurationPackage.OWNING_RULE__MULTIPLICITY:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-			return;
-		case ConfigurationPackage.OWNING_RULE__NEW_MODEL_PATH:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-			return;
+			case ConfigurationPackage.OWNING_RULE__MULTIPLICITY:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+			case ConfigurationPackage.OWNING_RULE__NEW_MODEL_PATH:
+			case ConfigurationPackage.OWNING_RULE__SELECT_DIAGRAM_ROOT:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+				return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -234,7 +231,6 @@ public class OwningRuleItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -242,9 +238,14 @@ public class OwningRuleItemProvider
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
 		newChildDescriptors.add
-				(createChildParameter
+			(createChildParameter
 				(ConfigurationPackage.Literals.OWNING_RULE__NEW_MODEL_PATH,
-						ConfigurationFactory.eINSTANCE.createModelAutoCreate()));
+				 ConfigurationFactory.eINSTANCE.createModelAutoCreate()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ConfigurationPackage.Literals.OWNING_RULE__SELECT_DIAGRAM_ROOT,
+				 ConfigurationFactory.eINSTANCE.createRootAutoSelect()));
 	}
 
 }

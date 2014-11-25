@@ -30,7 +30,6 @@ import org.eclipse.papyrus.infra.viewpoints.configuration.PaletteRule;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.infra.viewpoints.configuration.PaletteRule} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- *
  * @generated
  */
 public class PaletteRuleItemProvider
@@ -39,7 +38,6 @@ public class PaletteRuleItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public PaletteRuleItemProvider(AdapterFactory adapterFactory) {
@@ -50,7 +48,6 @@ public class PaletteRuleItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -67,23 +64,22 @@ public class PaletteRuleItemProvider
 	 * This adds a property descriptor for the Element feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected void addElementPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-				(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(),
-						getString("_UI_PaletteRule_element_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_PaletteRule_element_feature", "_UI_PaletteRule_type"),
-						ConfigurationPackage.Literals.PALETTE_RULE__ELEMENT,
-						true,
-						false,
-						false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-						null,
-						null));
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_PaletteRule_element_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_PaletteRule_element_feature", "_UI_PaletteRule_type"),
+				 ConfigurationPackage.Literals.PALETTE_RULE__ELEMENT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -118,7 +114,6 @@ public class PaletteRuleItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -126,9 +121,9 @@ public class PaletteRuleItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(PaletteRule.class)) {
-		case ConfigurationPackage.PALETTE_RULE__ELEMENT:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-			return;
+			case ConfigurationPackage.PALETTE_RULE__ELEMENT:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -138,7 +133,6 @@ public class PaletteRuleItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override

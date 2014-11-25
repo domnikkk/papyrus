@@ -1,65 +1,60 @@
 /**
  * Copyright (c) 2013 CEA LIST.
- *
+ * 
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- *
+ *  
  *  Contributors:
  *  Laurent Wouters laurent.wouters@cea.fr - Initial API and implementation
- *
- *
+ *  
+ * 
  */
 package org.eclipse.papyrus.infra.viewpoints.configuration.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-import org.eclipse.papyrus.infra.viewpoints.configuration.Category;
+
 import org.eclipse.papyrus.infra.viewpoints.configuration.ConfigurationPackage;
+import org.eclipse.papyrus.infra.viewpoints.configuration.RootAutoSelect;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Category</b></em>'.
+ * An implementation of the model object '<em><b>Root Auto Select</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.infra.viewpoints.configuration.impl.CategoryImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.infra.viewpoints.configuration.impl.RootAutoSelectImpl#getFeature <em>Feature</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class CategoryImpl extends MinimalEObjectImpl.Container implements Category {
+public class RootAutoSelectImpl extends MinimalEObjectImpl.Container implements RootAutoSelect {
 	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * The cached value of the '{@link #getFeature() <em>Feature</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getName()
+	 * @see #getFeature()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String name = NAME_EDEFAULT;
+	protected EReference feature;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected CategoryImpl() {
+	protected RootAutoSelectImpl() {
 		super();
 	}
 
@@ -70,7 +65,7 @@ public class CategoryImpl extends MinimalEObjectImpl.Container implements Catego
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ConfigurationPackage.Literals.CATEGORY;
+		return ConfigurationPackage.Literals.ROOT_AUTO_SELECT;
 	}
 
 	/**
@@ -78,8 +73,16 @@ public class CategoryImpl extends MinimalEObjectImpl.Container implements Catego
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getName() {
-		return name;
+	public EReference getFeature() {
+		if (feature != null && feature.eIsProxy()) {
+			InternalEObject oldFeature = (InternalEObject)feature;
+			feature = (EReference)eResolveProxy(oldFeature);
+			if (feature != oldFeature) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ConfigurationPackage.ROOT_AUTO_SELECT__FEATURE, oldFeature, feature));
+			}
+		}
+		return feature;
 	}
 
 	/**
@@ -87,11 +90,20 @@ public class CategoryImpl extends MinimalEObjectImpl.Container implements Catego
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setName(String newName) {
-		String oldName = name;
-		name = newName;
+	public EReference basicGetFeature() {
+		return feature;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setFeature(EReference newFeature) {
+		EReference oldFeature = feature;
+		feature = newFeature;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ConfigurationPackage.CATEGORY__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, ConfigurationPackage.ROOT_AUTO_SELECT__FEATURE, oldFeature, feature));
 	}
 
 	/**
@@ -102,8 +114,9 @@ public class CategoryImpl extends MinimalEObjectImpl.Container implements Catego
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ConfigurationPackage.CATEGORY__NAME:
-				return getName();
+			case ConfigurationPackage.ROOT_AUTO_SELECT__FEATURE:
+				if (resolve) return getFeature();
+				return basicGetFeature();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -116,8 +129,8 @@ public class CategoryImpl extends MinimalEObjectImpl.Container implements Catego
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ConfigurationPackage.CATEGORY__NAME:
-				setName((String)newValue);
+			case ConfigurationPackage.ROOT_AUTO_SELECT__FEATURE:
+				setFeature((EReference)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -131,8 +144,8 @@ public class CategoryImpl extends MinimalEObjectImpl.Container implements Catego
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ConfigurationPackage.CATEGORY__NAME:
-				setName(NAME_EDEFAULT);
+			case ConfigurationPackage.ROOT_AUTO_SELECT__FEATURE:
+				setFeature((EReference)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -146,26 +159,10 @@ public class CategoryImpl extends MinimalEObjectImpl.Container implements Catego
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ConfigurationPackage.CATEGORY__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case ConfigurationPackage.ROOT_AUTO_SELECT__FEATURE:
+				return feature != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (name: ");
-		result.append(name);
-		result.append(')');
-		return result.toString();
-	}
-
-} // CategoryImpl
+} //RootAutoSelectImpl

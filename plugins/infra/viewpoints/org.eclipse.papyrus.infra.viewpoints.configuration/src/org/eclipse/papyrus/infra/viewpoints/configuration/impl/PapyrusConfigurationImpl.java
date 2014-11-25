@@ -37,9 +37,9 @@ import org.eclipse.papyrus.infra.viewpoints.iso42010.impl.ArchitectureFrameworkI
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.eclipse.papyrus.infra.viewpoints.configuration.impl.PapyrusConfigurationImpl#getDefaultStakeholder <em>Default Stakeholder</em>}</li>
- * <li>{@link org.eclipse.papyrus.infra.viewpoints.configuration.impl.PapyrusConfigurationImpl#getMetamodel <em>Metamodel</em>}</li>
- * <li>{@link org.eclipse.papyrus.infra.viewpoints.configuration.impl.PapyrusConfigurationImpl#getCategories <em>Categories</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.infra.viewpoints.configuration.impl.PapyrusConfigurationImpl#getDefaultStakeholder <em>Default Stakeholder</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.infra.viewpoints.configuration.impl.PapyrusConfigurationImpl#getMetamodel <em>Metamodel</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.infra.viewpoints.configuration.impl.PapyrusConfigurationImpl#getCategories <em>Categories</em>}</li>
  * </ul>
  * </p>
  *
@@ -50,7 +50,6 @@ public class PapyrusConfigurationImpl extends ArchitectureFrameworkImpl implemen
 	 * The cached value of the '{@link #getDefaultStakeholder() <em>Default Stakeholder</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getDefaultStakeholder()
 	 * @generated
 	 * @ordered
@@ -61,7 +60,6 @@ public class PapyrusConfigurationImpl extends ArchitectureFrameworkImpl implemen
 	 * The cached value of the '{@link #getMetamodel() <em>Metamodel</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getMetamodel()
 	 * @generated
 	 * @ordered
@@ -72,7 +70,6 @@ public class PapyrusConfigurationImpl extends ArchitectureFrameworkImpl implemen
 	 * The cached value of the '{@link #getCategories() <em>Categories</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getCategories()
 	 * @generated
 	 * @ordered
@@ -82,7 +79,6 @@ public class PapyrusConfigurationImpl extends ArchitectureFrameworkImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected PapyrusConfigurationImpl() {
@@ -92,7 +88,6 @@ public class PapyrusConfigurationImpl extends ArchitectureFrameworkImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -103,17 +98,15 @@ public class PapyrusConfigurationImpl extends ArchitectureFrameworkImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public Stakeholder getDefaultStakeholder() {
 		if (defaultStakeholder != null && defaultStakeholder.eIsProxy()) {
-			InternalEObject oldDefaultStakeholder = (InternalEObject) defaultStakeholder;
-			defaultStakeholder = (Stakeholder) eResolveProxy(oldDefaultStakeholder);
+			InternalEObject oldDefaultStakeholder = (InternalEObject)defaultStakeholder;
+			defaultStakeholder = (Stakeholder)eResolveProxy(oldDefaultStakeholder);
 			if (defaultStakeholder != oldDefaultStakeholder) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ConfigurationPackage.PAPYRUS_CONFIGURATION__DEFAULT_STAKEHOLDER, oldDefaultStakeholder, defaultStakeholder));
-				}
 			}
 		}
 		return defaultStakeholder;
@@ -122,7 +115,6 @@ public class PapyrusConfigurationImpl extends ArchitectureFrameworkImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public Stakeholder basicGetDefaultStakeholder() {
@@ -132,31 +124,27 @@ public class PapyrusConfigurationImpl extends ArchitectureFrameworkImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public void setDefaultStakeholder(Stakeholder newDefaultStakeholder) {
 		Stakeholder oldDefaultStakeholder = defaultStakeholder;
 		defaultStakeholder = newDefaultStakeholder;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ConfigurationPackage.PAPYRUS_CONFIGURATION__DEFAULT_STAKEHOLDER, oldDefaultStakeholder, defaultStakeholder));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EPackage getMetamodel() {
 		if (metamodel != null && metamodel.eIsProxy()) {
-			InternalEObject oldMetamodel = (InternalEObject) metamodel;
-			metamodel = (EPackage) eResolveProxy(oldMetamodel);
+			InternalEObject oldMetamodel = (InternalEObject)metamodel;
+			metamodel = (EPackage)eResolveProxy(oldMetamodel);
 			if (metamodel != oldMetamodel) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ConfigurationPackage.PAPYRUS_CONFIGURATION__METAMODEL, oldMetamodel, metamodel));
-				}
 			}
 		}
 		return metamodel;
@@ -165,7 +153,6 @@ public class PapyrusConfigurationImpl extends ArchitectureFrameworkImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EPackage basicGetMetamodel() {
@@ -175,21 +162,18 @@ public class PapyrusConfigurationImpl extends ArchitectureFrameworkImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public void setMetamodel(EPackage newMetamodel) {
 		EPackage oldMetamodel = metamodel;
 		metamodel = newMetamodel;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ConfigurationPackage.PAPYRUS_CONFIGURATION__METAMODEL, oldMetamodel, metamodel));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EList<Category> getCategories() {
@@ -202,14 +186,13 @@ public class PapyrusConfigurationImpl extends ArchitectureFrameworkImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case ConfigurationPackage.PAPYRUS_CONFIGURATION__CATEGORIES:
-			return ((InternalEList<?>) getCategories()).basicRemove(otherEnd, msgs);
+			case ConfigurationPackage.PAPYRUS_CONFIGURATION__CATEGORIES:
+				return ((InternalEList<?>)getCategories()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -217,24 +200,19 @@ public class PapyrusConfigurationImpl extends ArchitectureFrameworkImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case ConfigurationPackage.PAPYRUS_CONFIGURATION__DEFAULT_STAKEHOLDER:
-			if (resolve) {
-				return getDefaultStakeholder();
-			}
-			return basicGetDefaultStakeholder();
-		case ConfigurationPackage.PAPYRUS_CONFIGURATION__METAMODEL:
-			if (resolve) {
-				return getMetamodel();
-			}
-			return basicGetMetamodel();
-		case ConfigurationPackage.PAPYRUS_CONFIGURATION__CATEGORIES:
-			return getCategories();
+			case ConfigurationPackage.PAPYRUS_CONFIGURATION__DEFAULT_STAKEHOLDER:
+				if (resolve) return getDefaultStakeholder();
+				return basicGetDefaultStakeholder();
+			case ConfigurationPackage.PAPYRUS_CONFIGURATION__METAMODEL:
+				if (resolve) return getMetamodel();
+				return basicGetMetamodel();
+			case ConfigurationPackage.PAPYRUS_CONFIGURATION__CATEGORIES:
+				return getCategories();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -242,23 +220,22 @@ public class PapyrusConfigurationImpl extends ArchitectureFrameworkImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case ConfigurationPackage.PAPYRUS_CONFIGURATION__DEFAULT_STAKEHOLDER:
-			setDefaultStakeholder((Stakeholder) newValue);
-			return;
-		case ConfigurationPackage.PAPYRUS_CONFIGURATION__METAMODEL:
-			setMetamodel((EPackage) newValue);
-			return;
-		case ConfigurationPackage.PAPYRUS_CONFIGURATION__CATEGORIES:
-			getCategories().clear();
-			getCategories().addAll((Collection<? extends Category>) newValue);
-			return;
+			case ConfigurationPackage.PAPYRUS_CONFIGURATION__DEFAULT_STAKEHOLDER:
+				setDefaultStakeholder((Stakeholder)newValue);
+				return;
+			case ConfigurationPackage.PAPYRUS_CONFIGURATION__METAMODEL:
+				setMetamodel((EPackage)newValue);
+				return;
+			case ConfigurationPackage.PAPYRUS_CONFIGURATION__CATEGORIES:
+				getCategories().clear();
+				getCategories().addAll((Collection<? extends Category>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -266,21 +243,20 @@ public class PapyrusConfigurationImpl extends ArchitectureFrameworkImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case ConfigurationPackage.PAPYRUS_CONFIGURATION__DEFAULT_STAKEHOLDER:
-			setDefaultStakeholder((Stakeholder) null);
-			return;
-		case ConfigurationPackage.PAPYRUS_CONFIGURATION__METAMODEL:
-			setMetamodel((EPackage) null);
-			return;
-		case ConfigurationPackage.PAPYRUS_CONFIGURATION__CATEGORIES:
-			getCategories().clear();
-			return;
+			case ConfigurationPackage.PAPYRUS_CONFIGURATION__DEFAULT_STAKEHOLDER:
+				setDefaultStakeholder((Stakeholder)null);
+				return;
+			case ConfigurationPackage.PAPYRUS_CONFIGURATION__METAMODEL:
+				setMetamodel((EPackage)null);
+				return;
+			case ConfigurationPackage.PAPYRUS_CONFIGURATION__CATEGORIES:
+				getCategories().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -288,18 +264,17 @@ public class PapyrusConfigurationImpl extends ArchitectureFrameworkImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case ConfigurationPackage.PAPYRUS_CONFIGURATION__DEFAULT_STAKEHOLDER:
-			return defaultStakeholder != null;
-		case ConfigurationPackage.PAPYRUS_CONFIGURATION__METAMODEL:
-			return metamodel != null;
-		case ConfigurationPackage.PAPYRUS_CONFIGURATION__CATEGORIES:
-			return categories != null && !categories.isEmpty();
+			case ConfigurationPackage.PAPYRUS_CONFIGURATION__DEFAULT_STAKEHOLDER:
+				return defaultStakeholder != null;
+			case ConfigurationPackage.PAPYRUS_CONFIGURATION__METAMODEL:
+				return metamodel != null;
+			case ConfigurationPackage.PAPYRUS_CONFIGURATION__CATEGORIES:
+				return categories != null && !categories.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

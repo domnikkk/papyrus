@@ -30,7 +30,6 @@ import org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusTable;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusTable} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- *
  * @generated
  */
 public class PapyrusTableItemProvider
@@ -39,7 +38,6 @@ public class PapyrusTableItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public PapyrusTableItemProvider(AdapterFactory adapterFactory) {
@@ -50,7 +48,6 @@ public class PapyrusTableItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -67,23 +64,22 @@ public class PapyrusTableItemProvider
 	 * This adds a property descriptor for the Configuration feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected void addConfigurationPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-				(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(),
-						getString("_UI_PapyrusTable_configuration_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_PapyrusTable_configuration_feature", "_UI_PapyrusTable_type"),
-						ConfigurationPackage.Literals.PAPYRUS_TABLE__CONFIGURATION,
-						true,
-						false,
-						false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-						null,
-						null));
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_PapyrusTable_configuration_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_PapyrusTable_configuration_feature", "_UI_PapyrusTable_type"),
+				 ConfigurationPackage.Literals.PAPYRUS_TABLE__CONFIGURATION,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -113,7 +109,6 @@ public class PapyrusTableItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -121,9 +116,9 @@ public class PapyrusTableItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(PapyrusTable.class)) {
-		case ConfigurationPackage.PAPYRUS_TABLE__CONFIGURATION:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-			return;
+			case ConfigurationPackage.PAPYRUS_TABLE__CONFIGURATION:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -133,7 +128,6 @@ public class PapyrusTableItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
