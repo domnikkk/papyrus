@@ -17,17 +17,9 @@ import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.uml.diagram.usecase.custom.edit.parts.CustomAssociationEditPart;
 import org.eclipse.papyrus.uml.diagram.usecase.custom.edit.parts.CustomShortCutDiagramEditPart;
-import org.eclipse.papyrus.uml.diagram.usecase.custom.edit.parts.CustomUseCaseEditPartTN;
-import org.eclipse.papyrus.uml.diagram.usecase.custom.edit.parts.CustomUseCaseInComponentEditPart;
-import org.eclipse.papyrus.uml.diagram.usecase.custom.edit.parts.CustomUseCaseInPackageEditPart;
-import org.eclipse.papyrus.uml.diagram.usecase.custom.edit.parts.CustomUseCasePointsEditPartTN;
 import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.AssociationEditPart;
 import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.ShortCutDiagramEditPart;
 import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.UMLEditPartFactory;
-import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.UseCaseEditPartTN;
-import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.UseCaseInComponentEditPart;
-import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.UseCaseInPackageEditPart;
-import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.UseCasePointsEditPartTN;
 import org.eclipse.papyrus.uml.diagram.usecase.part.UMLVisualIDRegistry;
 
 /**
@@ -44,14 +36,14 @@ public class CustomUMLEditPartFactory extends UMLEditPartFactory {
 				return new CustomAssociationEditPart(view);
 			case ShortCutDiagramEditPart.VISUAL_ID:
 				return new CustomShortCutDiagramEditPart(view);
-			case UseCaseEditPartTN.VISUAL_ID:
-				return new CustomUseCaseEditPartTN(view);
-			case UseCaseInComponentEditPart.VISUAL_ID:
-				return new CustomUseCaseInComponentEditPart(view);
-			case UseCaseInPackageEditPart.VISUAL_ID:
-				return new CustomUseCaseInPackageEditPart(view);
-			case UseCasePointsEditPartTN.VISUAL_ID:
-				return new CustomUseCasePointsEditPartTN(view);
+				// case UseCaseEditPartTN.VISUAL_ID:
+				// return new CustomUseCaseEditPartTN(view);
+				// case UseCaseInComponentEditPart.VISUAL_ID:
+				// return new CustomUseCaseInComponentEditPart(view);
+				// case UseCaseInPackageEditPart.VISUAL_ID:
+				// return new CustomUseCaseInPackageEditPart(view);
+				// case UseCasePointsEditPartTN.VISUAL_ID:
+				// return new CustomUseCasePointsEditPartTN(view);
 			}
 		}
 		return super.createEditPart(context, model);

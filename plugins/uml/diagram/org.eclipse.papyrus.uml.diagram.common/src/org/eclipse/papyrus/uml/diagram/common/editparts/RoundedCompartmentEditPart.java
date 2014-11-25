@@ -97,6 +97,11 @@ public abstract class RoundedCompartmentEditPart extends NamedElementEditPart {
 		return DEFAULT_CORNER_WIDTH;
 	}
 
+	/**
+	 * Gets the default cutom dash.
+	 *
+	 * @return the default cutom dash
+	 */
 	private int[] getDefaultCutomDash() {
 		return DEFAULT_CUTOM_DASH;
 	}

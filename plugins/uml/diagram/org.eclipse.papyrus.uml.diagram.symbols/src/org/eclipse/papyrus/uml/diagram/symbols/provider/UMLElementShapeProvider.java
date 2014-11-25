@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2011 CEA LIST.
+ * Copyright (c) 2010, 2014 CEA LIST and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -7,8 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
- *		CEA LIST - Initial API and implementation
+ *   Mickael ADAM (ALL4TEC) mickael.adam@all4tec.net - Initial API and Implementation
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.symbols.provider;
@@ -31,6 +30,7 @@ import org.eclipse.papyrus.infra.gmfdiag.common.service.shape.ProviderNotificati
 import org.eclipse.papyrus.uml.diagram.symbols.Activator;
 import org.eclipse.uml2.uml.AcceptEventAction;
 import org.eclipse.uml2.uml.ActivityFinalNode;
+import org.eclipse.uml2.uml.Actor;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.DecisionNode;
 import org.eclipse.uml2.uml.DurationObservation;
@@ -53,12 +53,16 @@ import org.w3c.dom.svg.SVGDocument;
  */
 public class UMLElementShapeProvider extends AbstractShapeProvider {
 
+	/** The Constant FLAG_SVG_PATH. */
 	private static final String FLAG_SVG_PATH = "/icons/symbols/flag.svg";
 
+	/** The Constant HOURGLASS_SVG_PATH. */
 	private static final String HOURGLASS_SVG_PATH = "/icons/symbols/hourglass.svg";
 
+	/** The Constant DURATION_OBSERVATION_SVG_PATH. */
 	private static final String DURATION_OBSERVATION_SVG_PATH = "/icons/symbols/DurationObservation.svg";
 
+	/** The Constant TIME_OBSERVATION_SVG_PATH. */
 	private static final String TIME_OBSERVATION_SVG_PATH = "/icons/symbols/TimeObservation.svg";
 
 	/** The Constant ROUND_WITH_DOT_SVG_PATH. */
@@ -75,6 +79,9 @@ public class UMLElementShapeProvider extends AbstractShapeProvider {
 
 	/** The Constant DIAMOND_SVG_PATH. */
 	private static final String DIAMOND_SVG_PATH = "/icons/symbols/diamond.svg";
+
+	/** The Constant STICKMAN_SVG_PATH. */
+	private static final String STICKMAN_SVG_PATH = "/icons/symbols/stickman.svg";
 
 	/**
 	 * {@inheritDoc}
@@ -141,6 +148,9 @@ public class UMLElementShapeProvider extends AbstractShapeProvider {
 		if (element instanceof Association || (element instanceof TypedElement && ((TypedElement) element).getType() instanceof Association)) {
 			return true;
 		}// Diamond
+		if (element instanceof Actor || (element instanceof TypedElement && ((TypedElement) element).getType() instanceof Actor)) {
+			return true;
+		}// StickMan
 
 		return false;
 	}
@@ -263,6 +273,9 @@ public class UMLElementShapeProvider extends AbstractShapeProvider {
 			if (element instanceof Association || (element instanceof TypedElement && ((TypedElement) element).getType() instanceof Association)) {
 				uri = URI.createPlatformPluginURI(org.eclipse.papyrus.infra.gmfdiag.common.Activator.ID + DIAMOND_SVG_PATH, true);
 			}// Diamond
+			if (element instanceof Actor || (element instanceof TypedElement && ((TypedElement) element).getType() instanceof Actor)) {
+				uri = URI.createPlatformPluginURI(org.eclipse.papyrus.infra.gmfdiag.common.Activator.ID + STICKMAN_SVG_PATH, true);
+			}// StickMan
 
 			String path = uri.toString();
 			SVGDocument document = getSVGDocument(path);

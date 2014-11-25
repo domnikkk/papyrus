@@ -29,25 +29,26 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.BorderItemSelectionEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.figures.IBorderItemLocator;
-import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.GetChildLayoutEditPolicy;
 import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.IPapyrusNodeFigure;
+import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.RoundedRectangleNodePlateFigure;
 import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.SelectableBorderedNodeFigure;
-import org.eclipse.papyrus.uml.diagram.common.editparts.UMLNodeEditPart;
+import org.eclipse.papyrus.uml.diagram.common.editparts.RoundedCompartmentEditPart;
+import org.eclipse.papyrus.uml.diagram.common.figure.node.RoundedCompartmentFigure;
 import org.eclipse.papyrus.uml.diagram.common.locator.ExternalLabelPositionLocator;
-import org.eclipse.papyrus.uml.diagram.usecase.draw2d.StickMan;
+import org.eclipse.papyrus.uml.diagram.common.locator.RoundedRectangleLabelPositionLocator;
 import org.eclipse.papyrus.uml.diagram.usecase.edit.policies.ActorItemSemanticEditPolicyTN;
-import org.eclipse.papyrus.uml.diagram.usecase.edit.policies.ExternalNodeActorLayoutEditPolicy;
 import org.eclipse.papyrus.uml.diagram.usecase.part.UMLVisualIDRegistry;
 import org.eclipse.swt.graphics.Color;
 
 /**
  * @generated
  */
-public class ActorEditPartTN extends UMLNodeEditPart {
+public class ActorEditPartTN extends RoundedCompartmentEditPart {
 
 	/**
 	 * @generated
@@ -79,7 +80,7 @@ public class ActorEditPartTN extends UMLNodeEditPart {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new ActorItemSemanticEditPolicyTN());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
-		installEditPolicy(EditPolicy.LAYOUT_ROLE, new ExternalNodeActorLayoutEditPolicy());
+		installEditPolicy(EditPolicy.LAYOUT_ROLE, new GetChildLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 	}
@@ -97,6 +98,7 @@ public class ActorEditPartTN extends UMLNodeEditPart {
 				case ActorNameEditPartTN.VISUAL_ID:
 				case ActorAppliedStereotypeEditPartTN.VISUAL_ID:
 				case ActorQualifiedNameEditPartTN.VISUAL_ID:
+				case ActorFloatingLabelEditPartTN.VISUAL_ID:
 					return new BorderItemSelectionEditPolicy() {
 
 						@Override
@@ -157,7 +159,7 @@ public class ActorEditPartTN extends UMLNodeEditPart {
 	 */
 	@Override
 	protected IFigure createNodeShape() {
-		return primaryShape = new StickMan();
+		return primaryShape = new RoundedCompartmentFigure();
 	}
 
 	/**
@@ -166,8 +168,8 @@ public class ActorEditPartTN extends UMLNodeEditPart {
 	 * @generated
 	 */
 	@Override
-	public StickMan getPrimaryShape() {
-		return (StickMan) primaryShape;
+	public RoundedCompartmentFigure getPrimaryShape() {
+		return (RoundedCompartmentFigure) primaryShape;
 	}
 
 	/**
@@ -184,6 +186,9 @@ public class ActorEditPartTN extends UMLNodeEditPart {
 		} else if (borderItemEditPart instanceof ActorQualifiedNameEditPartTN) {
 			IBorderItemLocator locator = new ExternalLabelPositionLocator(getMainFigure());
 			borderItemContainer.add(borderItemEditPart.getFigure(), locator);
+		} else if (borderItemEditPart instanceof ActorFloatingLabelEditPartTN) {
+			IBorderItemLocator locator = new RoundedRectangleLabelPositionLocator(getMainFigure());
+			borderItemContainer.add(borderItemEditPart.getFigure(), locator);
 		} else
 		{
 			super.addBorderItem(borderItemContainer, borderItemEditPart);
@@ -195,7 +200,7 @@ public class ActorEditPartTN extends UMLNodeEditPart {
 	 */
 	@Override
 	protected NodeFigure createNodePlate() {
-		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(30, 50);
+		RoundedRectangleNodePlateFigure result = new RoundedRectangleNodePlateFigure(30, 50);
 		return result;
 	}
 

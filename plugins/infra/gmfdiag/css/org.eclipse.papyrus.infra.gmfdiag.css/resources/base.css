@@ -126,4 +126,32 @@ ClassDiagram Dependency
 	gradient:none;
 }
 
+/*---------- UseCase Diagram ----------*/
+UseCaseDiagram UseCase > Compartment {
+	lineLengthRatio:"0.70";
+}
+
+UseCaseDiagram UseCase {
+	topMarginLabel:10;
+}
+
+UseCaseDiagram Actor
+{
+	displayBorder:false;
+	displayName:false;
+	diplayIcon:false;
+	displayTag:false;
+	followSVGSymbol:true;
+	maintainSymbolRatio:true;
+	transparency:100;
+	displayFloatingLabel:true;
+	maxNumberOfSymbol:1;
+	useOriginalColors:false;
+	gradient:none;
+	fillColor:white;
+}
+UseCaseDiagram Actor > Compartment[kind="symbol"]
+{
+    visible:true;
+}
 

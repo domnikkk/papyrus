@@ -1,6 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2008-2014 CEA LIST.
- *
+ * Copyright (c) 2010, 2014 CEA LIST and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,8 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *  Patrick Tessier (CEA LIST) Patrick.tessier@cea.fr - Initial API and implementation
- *  Céline Janssens (ALL4TEC) celine.janssens@all4tec.net - Bug 440230 : Label Margin
+ *   Mickael ADAM (ALL4TEC) mickael.adam@all4tec.net - Initial API and Implementation
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.common.editparts;
@@ -17,10 +15,12 @@ package org.eclipse.papyrus.uml.diagram.common.editparts;
 import java.util.List;
 
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.BooleanValueStyle;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
+import org.eclipse.gmf.runtime.notation.StringValueStyle;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.infra.emf.appearance.helper.AppearanceHelper;
 import org.eclipse.papyrus.infra.gmfdiag.common.editpart.IPapyrusEditPart;
@@ -31,6 +31,7 @@ import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.SelectableBorderedNo
 import org.eclipse.papyrus.infra.gmfdiag.common.model.NotationUtils;
 import org.eclipse.papyrus.infra.gmfdiag.common.utils.FigureUtils;
 import org.eclipse.papyrus.uml.diagram.common.figure.node.IPapyrusNodeNamedElementFigure;
+import org.eclipse.papyrus.uml.diagram.common.figure.node.NodeNamedElementFigure;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Font;
 import org.eclipse.uml2.uml.NamedElement;
@@ -42,39 +43,28 @@ import org.eclipse.uml2.uml.NamedElement;
  */
 public abstract class NamedElementEditPart extends UMLNodeEditPart implements IUMLNamedElementEditPart {
 
-	/**
-	 * CSS boolean property controlling whether stereotypes should be displayed
-	 */
+	/** The Constant NAME_POSITION. */
+	public static final String NAME_POSITION = "namePosition";
+
+	/** CSS boolean property controlling whether stereotypes should be displayed. */
 	public static final String DISPLAY_STEREOTYPES = "displayStereotypes"; // $NON-NLS$
 
-	/**
-	 * CSS boolean property controlling whether tags should be displayed
-	 */
+	/** CSS boolean property controlling whether tags should be displayed. */
 	public static final String DISPLAY_TAGS = "displayTags"; // $NON-NLS$
 
-	/**
-	 * Default Margin when not present in CSS
-	 */
+	/** Default Margin when not present in CSS. */
 	public static final int DEFAULT_MARGIN = 0;
 
-	/**
-	 * CSS Integer property to define the horizontal Label Margin
-	 */
+	/** CSS Integer property to define the horizontal Label Margin. */
 	public static final String TOP_MARGIN_PROPERTY = "topMarginLabel"; // $NON-NLS$
 
-	/**
-	 * CSS Integer property to define the vertical Label Margin
-	 */
+	/** CSS Integer property to define the vertical Label Margin. */
 	public static final String LEFT_MARGIN_PROPERTY = "leftMarginLabel"; // $NON-NLS$
 
-	/**
-	 * CSS Integer property to define the horizontal Label Margin
-	 */
+	/** CSS Integer property to define the horizontal Label Margin. */
 	public static final String BOTTOM_MARGIN_PROPERTY = "bottomMarginLabel"; // $NON-NLS$
 
-	/**
-	 * CSS Integer property to define the vertical Label Margin
-	 */
+	/** CSS Integer property to define the vertical Label Margin. */
 	public static final String RIGHT_MARGIN_PROPERTY = "rightMarginLabel"; // $NON-NLS$
 
 
@@ -86,6 +76,11 @@ public abstract class NamedElementEditPart extends UMLNodeEditPart implements IU
 		super(view);
 	}
 
+	/**
+	 * @see org.eclipse.papyrus.uml.diagram.common.editparts.IUMLNamedElementEditPart#getNamedElement()
+	 *
+	 * @return
+	 */
 	@Override
 	public NamedElement getNamedElement() {
 		return (NamedElement) getUMLElement();
@@ -106,11 +101,30 @@ public abstract class NamedElementEditPart extends UMLNodeEditPart implements IU
 		}
 	}
 
+	/**
+	 * Refresh icon named label.
+	 */
 	private void refreshIconNamedLabel() {
 		getNodeNamedElementFigure().setNameLabelIcon(AppearanceHelper.showElementIcon((View) getModel()));
 	}
 
 
+	/**
+	 * Refresh.
+	 *
+	 * @see org.eclipse.papyrus.uml.diagram.common.editparts.UMLNodeEditPart#refresh()
+	 */
+	@Override
+	public void refresh() {
+		refreshNamePosition();
+		super.refresh();
+	}
+
+	/**
+	 * Refresh visuals.
+	 *
+	 * @see org.eclipse.papyrus.uml.diagram.common.editparts.UMLNodeEditPart#refreshVisuals()
+	 */
 	@Override
 	protected void refreshVisuals() {
 		super.refreshVisuals();
@@ -120,10 +134,55 @@ public abstract class NamedElementEditPart extends UMLNodeEditPart implements IU
 			refreshLabelDisplay();
 			refreshLabelMargin();
 		}
-
 	}
 
 
+	/**
+	 * Refresh name position.
+	 */
+	private void refreshNamePosition() {
+		if (getPrimaryShape() instanceof NodeNamedElementFigure) {
+			((NodeNamedElementFigure) getPrimaryShape()).setNamePosition(getNamePosition());
+		}
+	}
+
+
+	/**
+	 * Gets the name position.
+	 *
+	 * @return the name position
+	 */
+	public int getNamePosition() {
+		// get the value of the CSS property
+		View model = (View) getModel();
+		StringValueStyle labelAlignment = (StringValueStyle) model.getNamedStyle(NotationPackage.eINSTANCE.getStringValueStyle(), NAME_POSITION);
+
+		int textAlignment = 0;
+		if (labelAlignment != null) {
+			if ("left".equals(labelAlignment.getStringValue())) {
+				textAlignment = PositionConstants.LEFT;
+			}
+			if ("right".equals(labelAlignment.getStringValue())) {
+				textAlignment = PositionConstants.RIGHT;
+			}
+			if ("center".equals(labelAlignment.getStringValue())) {
+				textAlignment = PositionConstants.CENTER;
+			}
+		} else {
+			textAlignment = getDefaultNamePosition();
+		}
+		return textAlignment;
+	}
+
+
+	/**
+	 * Gets the default name position.
+	 *
+	 * @return the default name position
+	 */
+	protected int getDefaultNamePosition() {
+		return PositionConstants.CENTER;
+	}
 
 	/**
 	 * Refresh margin of named element children labels
@@ -132,6 +191,7 @@ public abstract class NamedElementEditPart extends UMLNodeEditPart implements IU
 	 * <li>Get all the children figure</li>
 	 * <li>If the child is a label then apply the margin</li>
 	 * </ul>
+	 * .
 	 */
 	private void refreshLabelMargin() {
 		IFigure figure = null;
@@ -167,11 +227,18 @@ public abstract class NamedElementEditPart extends UMLNodeEditPart implements IU
 
 	}
 
+	/**
+	 * @see org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart#activate()
+	 *
+	 */
 	@Override
 	public void activate() {
 		super.activate();
 	}
 
+	/**
+	 * Refresh label display.
+	 */
 	protected void refreshLabelDisplay() {
 		View view = getNotationView();
 		// SVGNodePlate can be null!
@@ -227,6 +294,11 @@ public abstract class NamedElementEditPart extends UMLNodeEditPart implements IU
 		}
 	}
 
+	/**
+	 * Gets the node named element figure.
+	 *
+	 * @return the node named element figure
+	 */
 	private IPapyrusNodeNamedElementFigure getNodeNamedElementFigure() {
 		return (IPapyrusNodeNamedElementFigure) getPrimaryShape();
 	}
@@ -248,6 +320,10 @@ public abstract class NamedElementEditPart extends UMLNodeEditPart implements IU
 		}
 	}
 
+	/**
+	 * @see org.eclipse.papyrus.uml.diagram.common.editparts.UMLNodeEditPart#createDefaultEditPolicies()
+	 *
+	 */
 	@Override
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
@@ -255,6 +331,11 @@ public abstract class NamedElementEditPart extends UMLNodeEditPart implements IU
 		installEditPolicy(FollowSVGSymbolEditPolicy.FOLLOW_SVG_SYMBOL_EDITPOLICY, new FollowSVGSymbolEditPolicy());
 	}
 
+	/**
+	 * @see org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderedShapeEditPart#createNodeFigure()
+	 *
+	 * @return
+	 */
 	@Override
 	protected NodeFigure createNodeFigure() {
 		return new SelectableBorderedNodeFigure(createMainFigureWithSVG());

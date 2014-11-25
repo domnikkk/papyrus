@@ -152,7 +152,6 @@ public class OneTopLineResizableBorder extends OneLineBorder {
 				}
 			}
 		}
-
 		return (int) (length * lengthRatio);
 	}
 

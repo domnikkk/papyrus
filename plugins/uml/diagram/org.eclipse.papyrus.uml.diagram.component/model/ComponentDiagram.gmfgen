@@ -3441,12 +3441,6 @@
         name="RoundedCompartmentEditPart"
         superOwnedEditPart="org.eclipse.papyrus.uml.diagram.common.editparts.RoundedCompartmentEditPart"/>
     <extensionNodes
-        xsi:type="papyrusgmfgenextension:SpecificNodePlate"
-        comment="Use to override createNodePlate on the EP"
-        editParts="/0/@diagram/@childNodes.4 /0/@diagram/@childNodes.5 /0/@diagram/@childNodes.3 /0/@diagram/@childNodes.0 /0/@diagram/@topLevelNodes.4 /0/@diagram/@topLevelNodes.8 /0/@diagram/@topLevelNodes.1 /0/@diagram/@topLevelNodes.0 /0/@diagram/@childNodes.11"
-        name="RoundedRectangleNodePlateFigure"
-        nodePlateQualifiedName="org.eclipse.papyrus.infra.gmfdiag.common.figure.node.RoundedRectangleNodePlateFigure"/>
-    <extensionNodes
         xsi:type="papyrusgmfgenextension:SpecificLocatorExternalLabel"
         comment="Locator for external Floating label of RoundedCompartment EP"
         classpath="org.eclipse.papyrus.uml.diagram.common.locator.RoundedRectangleLabelPositionLocator"
