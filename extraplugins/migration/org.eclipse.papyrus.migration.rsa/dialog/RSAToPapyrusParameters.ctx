@@ -4,8 +4,14 @@
     <sections name="Single Config" sectionFile="ui/SingleConfig.xwt">
       <widget href="ui/SingleConfig.xwt#/"/>
     </sections>
+    <sections name="Single URIMapping" sectionFile="ui/SingleURIMapping.xwt">
+      <widget href="ui/SingleURIMapping.xwt#/"/>
+    </sections>
     <sections name="Multiple Config" sectionFile="ui/MultipleConfig.xwt">
       <widget href="ui/MultipleConfig.xwt#/"/>
+    </sections>
+    <sections name="Multiple URIMapping" sectionFile="ui/MultipleURIMapping.xwt">
+      <widget href="ui/MultipleURIMapping.xwt#/"/>
     </sections>
   </tabs>
   <views name="Single Config" sections="//@tabs.0/@sections.0" automaticContext="true" datacontexts="//@dataContexts.0/@elements.0">
@@ -15,11 +21,25 @@
       <properties xsi:type="constraints:ValueProperty" name="className" value="Config"/>
     </constraints>
   </views>
-  <views elementMultiplicity="-1" name="Multiple Config" sections="//@tabs.0/@sections.1" automaticContext="true" datacontexts="//@dataContexts.0/@elements.0">
+  <views name="Single URIMapping" sections="//@tabs.0/@sections.1" automaticContext="true" datacontexts="//@dataContexts.0/@elements.1">
+    <constraints xsi:type="constraints:SimpleConstraint" name="isSingleURIMapping">
+      <constraintType href="ppe:/environment/org.eclipse.papyrus.views.properties/model/Environment.xmi#//@constraintTypes.0"/>
+      <properties xsi:type="constraints:ValueProperty" name="nsUri" value="http:///RSAToPapyrusParameters.ecore"/>
+      <properties xsi:type="constraints:ValueProperty" name="className" value="URIMapping"/>
+    </constraints>
+  </views>
+  <views elementMultiplicity="-1" name="Multiple Config" sections="//@tabs.0/@sections.2" automaticContext="true" datacontexts="//@dataContexts.0/@elements.0">
     <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleConfig">
       <constraintType href="ppe:/environment/org.eclipse.papyrus.views.properties/model/Environment.xmi#//@constraintTypes.0"/>
-      <properties xsi:type="constraints:ValueProperty" name="className" value="Config"/>
       <properties xsi:type="constraints:ValueProperty" name="nsUri" value="http:///RSAToPapyrusParameters.ecore"/>
+      <properties xsi:type="constraints:ValueProperty" name="className" value="Config"/>
+    </constraints>
+  </views>
+  <views elementMultiplicity="-1" name="Multiple URIMapping" sections="//@tabs.0/@sections.3" automaticContext="true" datacontexts="//@dataContexts.0/@elements.1">
+    <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleURIMapping">
+      <constraintType href="ppe:/environment/org.eclipse.papyrus.views.properties/model/Environment.xmi#//@constraintTypes.0"/>
+      <properties xsi:type="constraints:ValueProperty" name="nsUri" value="http:///RSAToPapyrusParameters.ecore"/>
+      <properties xsi:type="constraints:ValueProperty" name="className" value="URIMapping"/>
     </constraints>
   </views>
   <dataContexts name="RSAToPapyrusParameters" label="RSAToPapyrusParameters">
@@ -27,7 +47,13 @@
       <properties name="convertOpaqueExpressionToLiteralString" type="Boolean" description="If true, the Opaque Expressions with a single body and no language (or a single empty language) will be converted to LiteralString"/>
       <properties name="removeUnmappedProfilesAndStereotypes" type="Boolean" description="If true, the unsupported RSA profiles and stereotypes will be deleted. This includes the Deployment profile and a few stereotypes"/>
       <properties name="removeUnmappedAnnotations" type="Boolean" description="If true, the unmapped RSA EAnnotations will be deleted from the imported model"/>
-      <properties name="removeUnmappedDiagrams" label="" type="Boolean" description="If true, the diagrams which were not migrated will be removed. Otherwise, only the successfully imported diagrams will be removed"/>
+      <properties name="removeUnmappedDiagrams" type="Boolean" description="If true, the diagrams which were not migrated will be removed. Otherwise, only the successfully imported diagrams will be removed"/>
+      <properties name="maxThreads" type="Integer" description="The maximum number of threads to use during the migration.&#xD;&#xA;More threads will provide faster results, at the cost of memory consumption."/>
+      <properties name="uriMappings" type="Reference" multiplicity="-1" description="When models/libraries have been migrated separately, maps the libraries imported from RSA to their Papyrus equivalent"/>
+    </elements>
+    <elements name="URIMapping">
+      <properties name="sourceURI"/>
+      <properties name="targetURI"/>
     </elements>
     <modelElementFactory href="ppe:/environment/org.eclipse.papyrus.views.properties/model/Environment.xmi#//@modelElementFactories.0"/>
   </dataContexts>

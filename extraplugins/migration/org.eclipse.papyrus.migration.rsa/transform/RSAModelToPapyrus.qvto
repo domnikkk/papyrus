@@ -13,6 +13,7 @@ import org.eclipse.papyrus.m2m.qvto.UI;
 import org.eclipse.papyrus.m2m.qvto.NotationTypes;
 import libraries.EclipseUI;
 import org.eclipse.papyrus.migration.rsa.RTMappings; 
+import org.eclipse.papyrus.m2m.qvto.EMFResource;
 
 modeltype notation "strict" uses 'http://www.eclipse.org/gmf/runtime/1.0.2/notation';
 modeltype umlNotation "strict" uses 'http://www.eclipse.org/papyrus/umlnotation';
@@ -32,7 +33,7 @@ main() {
 
 	map createSashModel();
 	
-	semantics.objectsOfType(Element).map deleteSourceDiagrams();
+	//semantics.objectsOfType(Element).map deleteSourceDiagrams(); //TODO programatically to clean up everything (Avoid memory leaks)
 	
 	if param.rootObjects()[Config]->any(true).convertOpaqueExpressionToLiteralString then
 		semantics.objectsOfType(OpaqueExpression).map convertToLiteralString()
@@ -41,13 +42,8 @@ main() {
 	semantics.objectsOfType(OpaqueExpression).map fixLanguage();
 }
 
-mapping inout Element::deleteSourceDiagrams() {
-
-	self.eAnnotations := self.eAnnotations->reject(source = 'uml2.diagrams' or source = 'uml2.profile.diagrams'); /* Delete diagrams from resulting UML Model */
-}
-
 //If the OpaqueExpression doesn't have a language, and a single body, replace it with a LiteralString
-mapping OpaqueExpression::convertToLiteralString() : LiteralString when {
+mapping inout OpaqueExpression::convertToLiteralString() : LiteralString when {
 	(self.language->size() = 0 and self.body->size() <= 1) or
 	(self.language->size() = 1 and self.body->size() <= 1 and 
 		self.language->at(1).isEmpty()
@@ -59,7 +55,7 @@ mapping OpaqueExpression::convertToLiteralString() : LiteralString when {
 
 	result.value := if self.body->size() = 0 then null else self.body->at(1) endif;	
 	
-	semantics.removeElement(self); //Destroy the source OpaqueExpression
+	self.oclAsType(EObject).forceDelete(true); //Destroy the source OpaqueExpression
 	worked(1);
 }
 

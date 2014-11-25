@@ -41,6 +41,35 @@
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Yj3BwUL2EeSSlqpbHKLCqA" value="1"/>
         <defaultValue xmi:type="uml:LiteralBoolean" xmi:id="_Zf9doEL2EeSSlqpbHKLCqA"/>
       </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_AYwUoFOJEeSGbsrkEkSKIA" name="maxThreads" visibility="public" isUnique="false">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_W1iDAGW5EeS5_vjAduszYQ" annotatedElement="_AYwUoFOJEeSGbsrkEkSKIA">
+          <body>The maximum number of threads to use during the migration.&#xD;
+More threads will provide faster results, at the cost of memory consumption.</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_DhmU4FOJEeSGbsrkEkSKIA" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_DhwF4FOJEeSGbsrkEkSKIA" value="1"/>
+        <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_E7A-4FOJEeSGbsrkEkSKIA" value="8"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_LgpPEFOJEeSGbsrkEkSKIA" name="uriMappings" visibility="public" type="_MDmyMFOJEeSGbsrkEkSKIA" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_iBwD0GW5EeS5_vjAduszYQ" annotatedElement="_LgpPEFOJEeSGbsrkEkSKIA">
+          <body>When models/libraries have been migrated separately, maps the libraries imported from RSA to their Papyrus equivalent</body>
+        </ownedComment>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_T5kB0FOJEeSGbsrkEkSKIA"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_T5kB0VOJEeSGbsrkEkSKIA" value="*"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_MDmyMFOJEeSGbsrkEkSKIA" name="URIMapping">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_MiP2AFOJEeSGbsrkEkSKIA" name="sourceURI" visibility="public" isUnique="false">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OrbJAFOJEeSGbsrkEkSKIA" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OrbJAVOJEeSGbsrkEkSKIA" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_O-dZwFOJEeSGbsrkEkSKIA" name="targetURI" visibility="public" isUnique="false">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_RAos4FOJEeSGbsrkEkSKIA" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_RAos4VOJEeSGbsrkEkSKIA" value="1"/>
+      </ownedAttribute>
     </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_zg2CEEL1EeSSlqpbHKLCqA">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_zhSuAEL1EeSSlqpbHKLCqA" source="http://www.eclipse.org/uml2/2.0.0/UML">
@@ -51,4 +80,5 @@
   </uml:Model>
   <ActionLanguage:TextualRepresentation xmi:id="_zhuy4EL1EeSSlqpbHKLCqA" language="org.eclipse.papyrus.uml.textedit.property.xtext.UmlProperty"/>
   <ActionLanguage:TextualRepresentation xmi:id="_8D4aIUL1EeSSlqpbHKLCqA" language="org.eclipse.papyrus.uml.textedit.property.xtext.UmlProperty"/>
+  <ActionLanguage:TextualRepresentation xmi:id="_Pp6KgFOJEeSGbsrkEkSKIA" language="org.eclipse.papyrus.uml.textedit.property.xtext.UmlProperty"/>
 </xmi:XMI>

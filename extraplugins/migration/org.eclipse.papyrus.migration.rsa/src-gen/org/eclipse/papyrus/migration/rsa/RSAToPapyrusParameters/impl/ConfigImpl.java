@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -11,12 +11,20 @@
  *****************************************************************************/
 package org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.impl;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 import org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.Config;
 import org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.RSAToPapyrusParametersPackage;
+import org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.URIMapping;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,6 +37,8 @@ import org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.RSAToPapyrusPara
  * <li>{@link org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.impl.ConfigImpl#isRemoveUnmappedProfilesAndStereotypes <em>Remove Unmapped Profiles And Stereotypes</em>}</li>
  * <li>{@link org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.impl.ConfigImpl#isRemoveUnmappedAnnotations <em>Remove Unmapped Annotations</em>}</li>
  * <li>{@link org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.impl.ConfigImpl#isRemoveUnmappedDiagrams <em>Remove Unmapped Diagrams</em>}</li>
+ * <li>{@link org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.impl.ConfigImpl#getMaxThreads <em>Max Threads</em>}</li>
+ * <li>{@link org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.impl.ConfigImpl#getUriMappings <em>Uri Mappings</em>}</li>
  * </ul>
  * </p>
  *
@@ -122,6 +132,39 @@ public class ConfigImpl extends MinimalEObjectImpl.Container implements Config {
 	 * @ordered
 	 */
 	protected boolean removeUnmappedDiagrams = REMOVE_UNMAPPED_DIAGRAMS_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getMaxThreads() <em>Max Threads</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see #getMaxThreads()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int MAX_THREADS_EDEFAULT = 8;
+
+	/**
+	 * The cached value of the '{@link #getMaxThreads() <em>Max Threads</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see #getMaxThreads()
+	 * @generated
+	 * @ordered
+	 */
+	protected int maxThreads = MAX_THREADS_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getUriMappings() <em>Uri Mappings</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see #getUriMappings()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<URIMapping> uriMappings;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -255,6 +298,61 @@ public class ConfigImpl extends MinimalEObjectImpl.Container implements Config {
 	 * @generated
 	 */
 	@Override
+	public int getMaxThreads() {
+		return maxThreads;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public void setMaxThreads(int newMaxThreads) {
+		int oldMaxThreads = maxThreads;
+		maxThreads = newMaxThreads;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(this, Notification.SET, RSAToPapyrusParametersPackage.CONFIG__MAX_THREADS, oldMaxThreads, maxThreads));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EList<URIMapping> getUriMappings() {
+		if (uriMappings == null) {
+			uriMappings = new EObjectContainmentEList<URIMapping>(URIMapping.class, this, RSAToPapyrusParametersPackage.CONFIG__URI_MAPPINGS);
+		}
+		return uriMappings;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+		case RSAToPapyrusParametersPackage.CONFIG__URI_MAPPINGS:
+			return ((InternalEList<?>) getUriMappings()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case RSAToPapyrusParametersPackage.CONFIG__CONVERT_OPAQUE_EXPRESSION_TO_LITERAL_STRING:
@@ -265,6 +363,10 @@ public class ConfigImpl extends MinimalEObjectImpl.Container implements Config {
 			return isRemoveUnmappedAnnotations();
 		case RSAToPapyrusParametersPackage.CONFIG__REMOVE_UNMAPPED_DIAGRAMS:
 			return isRemoveUnmappedDiagrams();
+		case RSAToPapyrusParametersPackage.CONFIG__MAX_THREADS:
+			return getMaxThreads();
+		case RSAToPapyrusParametersPackage.CONFIG__URI_MAPPINGS:
+			return getUriMappings();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -275,6 +377,7 @@ public class ConfigImpl extends MinimalEObjectImpl.Container implements Config {
 	 *
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -289,6 +392,13 @@ public class ConfigImpl extends MinimalEObjectImpl.Container implements Config {
 			return;
 		case RSAToPapyrusParametersPackage.CONFIG__REMOVE_UNMAPPED_DIAGRAMS:
 			setRemoveUnmappedDiagrams((Boolean) newValue);
+			return;
+		case RSAToPapyrusParametersPackage.CONFIG__MAX_THREADS:
+			setMaxThreads((Integer) newValue);
+			return;
+		case RSAToPapyrusParametersPackage.CONFIG__URI_MAPPINGS:
+			getUriMappings().clear();
+			getUriMappings().addAll((Collection<? extends URIMapping>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -315,6 +425,12 @@ public class ConfigImpl extends MinimalEObjectImpl.Container implements Config {
 		case RSAToPapyrusParametersPackage.CONFIG__REMOVE_UNMAPPED_DIAGRAMS:
 			setRemoveUnmappedDiagrams(REMOVE_UNMAPPED_DIAGRAMS_EDEFAULT);
 			return;
+		case RSAToPapyrusParametersPackage.CONFIG__MAX_THREADS:
+			setMaxThreads(MAX_THREADS_EDEFAULT);
+			return;
+		case RSAToPapyrusParametersPackage.CONFIG__URI_MAPPINGS:
+			getUriMappings().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -336,6 +452,10 @@ public class ConfigImpl extends MinimalEObjectImpl.Container implements Config {
 			return removeUnmappedAnnotations != REMOVE_UNMAPPED_ANNOTATIONS_EDEFAULT;
 		case RSAToPapyrusParametersPackage.CONFIG__REMOVE_UNMAPPED_DIAGRAMS:
 			return removeUnmappedDiagrams != REMOVE_UNMAPPED_DIAGRAMS_EDEFAULT;
+		case RSAToPapyrusParametersPackage.CONFIG__MAX_THREADS:
+			return maxThreads != MAX_THREADS_EDEFAULT;
+		case RSAToPapyrusParametersPackage.CONFIG__URI_MAPPINGS:
+			return uriMappings != null && !uriMappings.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -361,6 +481,8 @@ public class ConfigImpl extends MinimalEObjectImpl.Container implements Config {
 		result.append(removeUnmappedAnnotations);
 		result.append(", removeUnmappedDiagrams: ");
 		result.append(removeUnmappedDiagrams);
+		result.append(", maxThreads: ");
+		result.append(maxThreads);
 		result.append(')');
 		return result.toString();
 	}

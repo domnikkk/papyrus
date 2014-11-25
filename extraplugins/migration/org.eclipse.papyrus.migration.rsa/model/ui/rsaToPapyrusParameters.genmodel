@@ -40,6 +40,13 @@
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute RSAToPapyrusParameters.ecore#//Config/removeUnmappedProfilesAndStereotypes"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute RSAToPapyrusParameters.ecore#//Config/removeUnmappedAnnotations"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute RSAToPapyrusParameters.ecore#//Config/removeUnmappedDiagrams"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute RSAToPapyrusParameters.ecore#//Config/maxThreads"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference RSAToPapyrusParameters.ecore#//Config/uriMappings"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="RSAToPapyrusParameters.ecore#//URIMapping">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute RSAToPapyrusParameters.ecore#//URIMapping/sourceURI"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute RSAToPapyrusParameters.ecore#//URIMapping/targetURI"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
