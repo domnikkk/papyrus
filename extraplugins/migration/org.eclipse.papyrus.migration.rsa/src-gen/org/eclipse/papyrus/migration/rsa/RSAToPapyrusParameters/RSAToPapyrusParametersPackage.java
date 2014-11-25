@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -14,6 +14,7 @@ package org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,9 +28,6 @@ import org.eclipse.emf.ecore.EPackage;
  * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * <!-- begin-model-doc -->
- * If true, the unsupported EAnnotation from RSA will be removed
- * <!-- end-model-doc -->
  *
  * @see org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.RSAToPapyrusParametersFactory
  * @model kind="package"
@@ -124,6 +122,26 @@ public interface RSAToPapyrusParametersPackage extends EPackage {
 	int CONFIG__REMOVE_UNMAPPED_DIAGRAMS = 3;
 
 	/**
+	 * The feature id for the '<em><b>Max Threads</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int CONFIG__MAX_THREADS = 4;
+
+	/**
+	 * The feature id for the '<em><b>Uri Mappings</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int CONFIG__URI_MAPPINGS = 5;
+
+	/**
 	 * The number of structural features of the '<em>Config</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -131,7 +149,7 @@ public interface RSAToPapyrusParametersPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONFIG_FEATURE_COUNT = 4;
+	int CONFIG_FEATURE_COUNT = 6;
 
 	/**
 	 * The number of operations of the '<em>Config</em>' class.
@@ -142,6 +160,58 @@ public interface RSAToPapyrusParametersPackage extends EPackage {
 	 * @ordered
 	 */
 	int CONFIG_OPERATION_COUNT = 0;
+
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.impl.URIMappingImpl <em>URI Mapping</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.impl.URIMappingImpl
+	 * @see org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.impl.RSAToPapyrusParametersPackageImpl#getURIMapping()
+	 * @generated
+	 */
+	int URI_MAPPING = 1;
+
+	/**
+	 * The feature id for the '<em><b>Source URI</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int URI_MAPPING__SOURCE_URI = 0;
+
+	/**
+	 * The feature id for the '<em><b>Target URI</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int URI_MAPPING__TARGET_URI = 1;
+
+	/**
+	 * The number of structural features of the '<em>URI Mapping</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int URI_MAPPING_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>URI Mapping</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int URI_MAPPING_OPERATION_COUNT = 0;
 
 
 	/**
@@ -202,6 +272,65 @@ public interface RSAToPapyrusParametersPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getConfig_RemoveUnmappedDiagrams();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.Config#getMaxThreads <em>Max Threads</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Max Threads</em>'.
+	 * @see org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.Config#getMaxThreads()
+	 * @see #getConfig()
+	 * @generated
+	 */
+	EAttribute getConfig_MaxThreads();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.Config#getUriMappings <em>Uri Mappings</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the containment reference list '<em>Uri Mappings</em>'.
+	 * @see org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.Config#getUriMappings()
+	 * @see #getConfig()
+	 * @generated
+	 */
+	EReference getConfig_UriMappings();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.URIMapping <em>URI Mapping</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>URI Mapping</em>'.
+	 * @see org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.URIMapping
+	 * @generated
+	 */
+	EClass getURIMapping();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.URIMapping#getSourceURI <em>Source URI</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Source URI</em>'.
+	 * @see org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.URIMapping#getSourceURI()
+	 * @see #getURIMapping()
+	 * @generated
+	 */
+	EAttribute getURIMapping_SourceURI();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.URIMapping#getTargetURI <em>Target URI</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Target URI</em>'.
+	 * @see org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.URIMapping#getTargetURI()
+	 * @see #getURIMapping()
+	 * @generated
+	 */
+	EAttribute getURIMapping_TargetURI();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -274,6 +403,53 @@ public interface RSAToPapyrusParametersPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute CONFIG__REMOVE_UNMAPPED_DIAGRAMS = eINSTANCE.getConfig_RemoveUnmappedDiagrams();
+
+		/**
+		 * The meta object literal for the '<em><b>Max Threads</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute CONFIG__MAX_THREADS = eINSTANCE.getConfig_MaxThreads();
+
+		/**
+		 * The meta object literal for the '<em><b>Uri Mappings</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EReference CONFIG__URI_MAPPINGS = eINSTANCE.getConfig_UriMappings();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.impl.URIMappingImpl <em>URI Mapping</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.impl.URIMappingImpl
+		 * @see org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.impl.RSAToPapyrusParametersPackageImpl#getURIMapping()
+		 * @generated
+		 */
+		EClass URI_MAPPING = eINSTANCE.getURIMapping();
+
+		/**
+		 * The meta object literal for the '<em><b>Source URI</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute URI_MAPPING__SOURCE_URI = eINSTANCE.getURIMapping_SourceURI();
+
+		/**
+		 * The meta object literal for the '<em><b>Target URI</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute URI_MAPPING__TARGET_URI = eINSTANCE.getURIMapping_TargetURI();
 
 	}
 

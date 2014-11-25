@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
 import org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.Config;
 import org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.RSAToPapyrusParametersPackage;
+import org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.URIMapping;
 
 /**
  * <!-- begin-user-doc -->
@@ -86,6 +87,14 @@ public class RSAToPapyrusParametersSwitch<T> extends Switch<T> {
 			}
 			return result;
 		}
+		case RSAToPapyrusParametersPackage.URI_MAPPING: {
+			URIMapping uriMapping = (URIMapping) theEObject;
+			T result = caseURIMapping(uriMapping);
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
 		default:
 			return defaultCase(theEObject);
 		}
@@ -105,6 +114,23 @@ public class RSAToPapyrusParametersSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseConfig(Config object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>URI Mapping</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>URI Mapping</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseURIMapping(URIMapping object) {
 		return null;
 	}
 
