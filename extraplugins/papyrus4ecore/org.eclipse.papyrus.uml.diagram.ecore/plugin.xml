@@ -21,4 +21,44 @@
             isCustomizable="true">
       </context>
    </extension>
+   <extension
+         point="org.eclipse.ui.exportWizards">
+      <wizard
+            category="org.eclipse.papyrus.infra.core.exportcategory"
+            id="org.eclipse.papyrus.uml.diagram.ecore.converttoecorewizard"
+            class="org.eclipse.papyrus.uml.diagram.ecore.wizard.ConvertToEcoreWizard"
+            name="Convert To Ecore">
+         <selection
+               class="org.eclipse.core.resources.IFile"
+               name="*.di">
+         </selection>
+         <selection
+               class="org.eclipse.papyrus.infra.onefile.model.IPapyrusFile">
+         </selection>
+      </wizard>
+   </extension>
+  <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="true"
+            locationURI="popup:org.eclipse.papyrus.uml.export.menu">
+         <command
+               commandId="org.eclipse.papyrus.uml.diagram.ecore.convertToEcore"
+               id="org.eclipse.papyrus.uml.diagram.ecore.convertToEcore"
+               label="Convert To Ecore..."
+               style="push">
+         </command>
+      </menuContribution>
+   </extension>
+  <extension
+        id="convert"
+        name="Convert Uml To Ecore"
+        point="org.eclipse.ui.commands">
+      <command
+            id="org.eclipse.papyrus.uml.diagram.ecore.convertToEcore"
+            defaultHandler="org.eclipse.papyrus.uml.diagram.ecore.handler.ConvertToEcoreHandler"
+            name="Convert To Ecore">
+      </command>        
+  </extension>
+   
 </plugin>
