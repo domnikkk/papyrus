@@ -568,7 +568,7 @@ public class ElementInitializers {
 	 * @generated
 	 */
 	private Boolean isAbstract_Class_1031(Class it) {
-		//isAbstract = true
+		// isAbstract = true
 		return true;
 	}
 
@@ -697,7 +697,7 @@ public class ElementInitializers {
 	 * @generated
 	 */
 	private Boolean isAbstract_Class_3028(Class it) {
-		//isAbstract = true
+		// isAbstract = true
 		return true;
 	}
 

@@ -1,25 +1,30 @@
 package org.eclipse.papyrus.uml.diagram.activity.edit.parts;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.StackLayout;
+import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
+import org.eclipse.gef.GraphicalEditPart;
 import org.eclipse.gef.Request;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
 import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
+import org.eclipse.gef.handles.MoveHandle;
 import org.eclipse.gef.requests.CreateRequest;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderedShapeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.BorderItemSelectionEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.DragDropEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
+import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
 import org.eclipse.gmf.runtime.diagram.ui.figures.IBorderItemLocator;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.FigureUtilities;
@@ -45,19 +50,20 @@ import org.eclipse.papyrus.uml.diagram.activity.locator.PinPositionLocator;
 import org.eclipse.papyrus.uml.diagram.activity.part.UMLDiagramEditorPlugin;
 import org.eclipse.papyrus.uml.diagram.activity.part.UMLVisualIDRegistry;
 import org.eclipse.papyrus.uml.diagram.activity.providers.UMLElementTypes;
+import org.eclipse.papyrus.uml.diagram.common.editparts.RoundedCompartmentEditPart;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeLabelDisplayEditPolicy;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeNodeLabelDisplayEditPolicy;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.BorderItemResizableEditPolicy;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.ChangeStereotypedShapeEditPolicy;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.PapyrusCreationEditPolicy;
-import org.eclipse.papyrus.uml.diagram.common.figure.node.PapyrusRoundedNodeFigure;
+import org.eclipse.papyrus.uml.diagram.common.figure.node.RoundedCompartmentFigure;
 import org.eclipse.papyrus.uml.diagram.common.helper.PreferenceInitializerForElementHelper;
 import org.eclipse.swt.graphics.Color;
 
 /**
  * @generated
  */
-public class BroadcastSignalActionEditPart extends AbstractBorderedShapeEditPart {
+public class BroadcastSignalActionEditPart extends RoundedCompartmentEditPart {
 
 	/**
 	 * @generated
@@ -113,10 +119,22 @@ public class BroadcastSignalActionEditPart extends AbstractBorderedShapeEditPart
 
 			@Override
 			protected EditPolicy createChildEditPolicy(EditPart child) {
+
 				View childView = (View) child.getModel();
 				switch (UMLVisualIDRegistry.getVisualID(childView)) {
+				case BroadcastSignalActionFloatingNameEditPart.VISUAL_ID:
+					return new BorderItemSelectionEditPolicy() {
+
+						@Override
+						protected List<?> createSelectionHandles() {
+							MoveHandle mh = new MoveHandle((GraphicalEditPart) getHost());
+							mh.setBorder(null);
+							return Collections.singletonList(mh);
+						}
+					};
 				case InputPinInBroadcastSignalActionEditPart.VISUAL_ID:
 					return new BorderItemResizableEditPolicy();
+
 				}
 				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 				if (result == null) {
@@ -141,15 +159,31 @@ public class BroadcastSignalActionEditPart extends AbstractBorderedShapeEditPart
 	/**
 	 * @generated
 	 */
+	// not generated but change include on gmfgen, can be override at the generation
+	@Override
+	protected void addBorderItem(IFigure borderItemContainer, IBorderItemEditPart borderItemEditPart) {
+		if (borderItemEditPart instanceof BroadcastSignalActionFloatingNameEditPart) {
+			BorderItemLocator locator = new BorderItemLocator(getMainFigure(), PositionConstants.SOUTH);
+			locator.setBorderItemOffset(new Dimension(-20, -20));
+			borderItemContainer.add(borderItemEditPart.getFigure(), locator);
+		} else {
+			super.addBorderItem(borderItemContainer, borderItemEditPart);
+		}
+	}
+
+
+	/**
+	 * @generated
+	 */
 	protected IFigure createNodeShape() {
-		return primaryShape = new PapyrusRoundedNodeFigure();
+		return primaryShape = new RoundedCompartmentFigure();
 	}
 
 	/**
 	 * @generated
 	 */
-	public PapyrusRoundedNodeFigure getPrimaryShape() {
-		return (PapyrusRoundedNodeFigure) primaryShape;
+	public RoundedCompartmentFigure getPrimaryShape() {
+		return (RoundedCompartmentFigure) primaryShape;
 	}
 
 	/**

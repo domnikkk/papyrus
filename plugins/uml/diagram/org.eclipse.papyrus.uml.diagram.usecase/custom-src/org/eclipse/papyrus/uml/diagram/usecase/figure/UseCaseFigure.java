@@ -13,40 +13,59 @@
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.usecase.figure;
 
-import org.eclipse.draw2d.Border;
-import org.eclipse.draw2d.ColorConstants;
-import org.eclipse.draw2d.Graphics;
+import java.util.ArrayList;
+import java.util.List;
+
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.RectangleFigure;
-import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.gmf.runtime.diagram.ui.figures.ShapeCompartmentFigure;
-import org.eclipse.papyrus.uml.diagram.common.draw2d.SplitEllipseLayout;
 import org.eclipse.papyrus.uml.diagram.common.figure.node.IEllipseFigure;
 import org.eclipse.papyrus.uml.diagram.common.figure.node.IPapyrusNodeUMLElementFigure;
-import org.eclipse.papyrus.uml.diagram.common.figure.node.NodeNamedElementFigure;
+import org.eclipse.papyrus.uml.diagram.common.figure.node.RoundedCompartmentFigure;
 
 /**
  * The Class UseCaseFigure.
  * modified by Patrick Tessier inorder to extends nodeName
  */
-public class UseCaseFigure extends NodeNamedElementFigure implements IPapyrusNodeUMLElementFigure, IEllipseFigure {
+public class UseCaseFigure extends RoundedCompartmentFigure implements IPapyrusNodeUMLElementFigure, IEllipseFigure {
 
-	private final RectangleFigure shapeCompartment;
+	/** The Attribute Compartment */
+	private final static String EXTENSION_POINT_COMPARTMENT = "extensionPointCompartment";
+
+
+	/** The List of Compartment */
+	private final static List<String> COMPARTMENT = new ArrayList<String>() {
+
+		private static final long serialVersionUID = 1L;
+		{
+			add(EXTENSION_POINT_COMPARTMENT);
+		}
+	};
 
 	/**
-	 * Instantiates a new use case figure.
+	 * Default Constructor
 	 */
 	public UseCaseFigure() {
-		super();
-		SplitEllipseLayout layoutThis = new SplitEllipseLayout();
-		this.setLayoutManager(layoutThis);
-		shapeCompartment = new RectangleFigure();
-		add(shapeCompartment);
-		shapeCompartment.setBorder(null);
-		shapeCompartment.setLineWidth(10);
-		shapeCompartment.setOpaque(false);
-		shapeCompartment.setFill(false);
-		this.setBorder(null);
+		this(null);
+	}
+
+	/**
+	 * Create a new Classifier figure with the given tag
+	 *
+	 * @param tagLabel
+	 *            a String that will be displayed at the top of the figure
+	 */
+	public UseCaseFigure(String tagLabel) {
+		super(COMPARTMENT, tagLabel);
+	}
+
+	/**
+	 * Get the attribute's compartment figure
+	 *
+	 * @return
+	 */
+	public IFigure getAttributeCompartmentFigure() {
+		return getCompartment(EXTENSION_POINT_COMPARTMENT);
 	}
 
 	/**
@@ -55,37 +74,55 @@ public class UseCaseFigure extends NodeNamedElementFigure implements IPapyrusNod
 	 * @return the gmf container
 	 */
 	public ShapeCompartmentFigure getGMFExtensionPointContainer() {
-		if (shapeCompartment.getChildren().size() > 0) {
-			return (ShapeCompartmentFigure) shapeCompartment.getChildren().get(0);
+		if (getCompartment(EXTENSION_POINT_COMPARTMENT).getChildren().size() > 0) {
+			return (ShapeCompartmentFigure) getCompartment(EXTENSION_POINT_COMPARTMENT).getChildren().get(0);
 		}
 		return null;
 	}
 
 	public RectangleFigure getExtensionPointContainerFigure() {
-		return shapeCompartment;
+		return getCompartment(EXTENSION_POINT_COMPARTMENT);
 	}
 
-	@Override
-	protected void setBorder(IFigure borderedFigure, Border border) {
-	}
+	// private final RectangleFigure shapeCompartment;
 
-	@Override
-	public void paintFigure(Graphics graphics) {
-		shapeCompartment.setForegroundColor(getBackgroundColor());
-		graphics.fillOval(getBounds());
-		paintBackground(graphics, getBounds());
-		for (Object iterable_element : shapeCompartment.getChildren()) {
-			((IFigure) iterable_element).setForegroundColor(ColorConstants.black);
+	/**
+	 * Instantiates a new use case figure.
+	 */
+	// public UseCaseFigure() {
+	// super();
+	// SplitEllipseLayout layoutThis = new SplitEllipseLayout();
+	// this.setLayoutManager(layoutThis);
+	// shapeCompartment = new RectangleFigure();
+	// add(shapeCompartment);
+	// shapeCompartment.setBorder(null);
+	// shapeCompartment.setLineWidth(10);
+	// shapeCompartment.setOpaque(false);
+	// shapeCompartment.setFill(false);
+	// this.setBorder(null);
+	// }
 
-		}
-		// shadowborder.setColor(getForegroundColor());
-	}
+	// @Override
+	// protected void setBorder(IFigure borderedFigure, Border border) {
+	// }
 
-	@Override
-	protected void paintBackground(Graphics graphics, Rectangle rectangle) {
-		graphics.setBackgroundColor(getBackgroundColor());
-		graphics.setForegroundColor(getForegroundColor());
-		graphics.fillOval(rectangle);
-		graphics.drawOval(rectangle);
-	}
+	// @Override
+	// public void paintFigure(Graphics graphics) {
+	// shapeCompartment.setForegroundColor(getBackgroundColor());
+	// graphics.fillOval(getBounds());
+	// paintBackground(graphics, getBounds());
+	// for (Object iterable_element : shapeCompartment.getChildren()) {
+	// ((IFigure) iterable_element).setForegroundColor(ColorConstants.black);
+	//
+	// }
+	// // shadowborder.setColor(getForegroundColor());
+	// }
+
+	// @Override
+	// protected void paintBackground(Graphics graphics, Rectangle rectangle) {
+	// graphics.setBackgroundColor(getBackgroundColor());
+	// graphics.setForegroundColor(getForegroundColor());
+	// graphics.fillOval(rectangle);
+	// graphics.drawOval(rectangle);
+	// }
 }

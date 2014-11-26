@@ -20,7 +20,7 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * Abstract EditPart for Border elements like Port
  */
-public abstract class AbstractBorderEditPart extends BorderNamedElementEditPart implements IUMLNamedElementEditPart {
+public abstract class AbstractBorderEditPart extends RoundedBorderNamedElementEditPart implements IUMLNamedElementEditPart {
 
 	/** Constructor */
 	public AbstractBorderEditPart(View view) {

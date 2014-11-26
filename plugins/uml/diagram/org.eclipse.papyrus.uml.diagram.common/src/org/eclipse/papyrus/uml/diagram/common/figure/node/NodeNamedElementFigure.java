@@ -80,6 +80,8 @@ public class NodeNamedElementFigure extends PapyrusNodeFigure implements IPapyru
 	 */
 	protected Label stereotypesLabel;
 
+	private int namePosition = PositionConstants.MIDDLE;
+
 	/**
 	 * Create a basic figure.
 	 */
@@ -161,20 +163,31 @@ public class NodeNamedElementFigure extends PapyrusNodeFigure implements IPapyru
 	 * Create a label that contains the name of the element.
 	 */
 	protected void createNameLabel() {
-		
+
 		nameLabel = new PapyrusWrappingLabel();
 
 		nameLabel.setOpaque(false);
-		nameLabel.setAlignment(PositionConstants.MIDDLE);
+		nameLabel.setAlignment(namePosition);
 		getNameLabelContainer().add(nameLabel, getNameLabelConstraint(), -1);
+	}
+
+	/**
+	 * @param namePosition
+	 *            the labelAlignment to set
+	 */
+	public void setNamePosition(int namePosition) {
+		this.namePosition = namePosition;
 	}
 
 	@Override
 	public void restoreNameLabel() {
 		nameLabel.setOpaque(false);
-		nameLabel.setAlignment(PositionConstants.MIDDLE);
+		nameLabel.setAlignment(namePosition);
 		getNameLabelContainer().add(nameLabel, getNameLabelConstraint(), getNameLabelPosition());
 	}
+
+
+
 
 
 	/**

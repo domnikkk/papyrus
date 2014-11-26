@@ -14,32 +14,39 @@
 package org.eclipse.papyrus.uml.diagram.activity.edit.parts;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.StackLayout;
+import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
+import org.eclipse.gef.GraphicalEditPart;
 import org.eclipse.gef.Request;
 import org.eclipse.gef.RequestConstants;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
 import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
+import org.eclipse.gef.handles.MoveHandle;
 import org.eclipse.gef.requests.CreateRequest;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.BorderItemSelectionEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.DragDropEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
+import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
 import org.eclipse.gmf.runtime.diagram.ui.figures.IBorderItemLocator;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.FigureUtilities;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
+import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.jface.preference.IPreferenceStore;
@@ -59,7 +66,7 @@ import org.eclipse.papyrus.uml.diagram.activity.locator.PinPositionLocator;
 import org.eclipse.papyrus.uml.diagram.activity.part.UMLDiagramEditorPlugin;
 import org.eclipse.papyrus.uml.diagram.activity.part.UMLVisualIDRegistry;
 import org.eclipse.papyrus.uml.diagram.activity.providers.UMLElementTypes;
-import org.eclipse.papyrus.uml.diagram.common.editparts.NamedElementEditPart;
+import org.eclipse.papyrus.uml.diagram.common.editparts.RoundedCompartmentEditPart;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeLabelDisplayEditPolicy;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeNodeLabelDisplayEditPolicy;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.BorderItemResizableEditPolicy;
@@ -74,7 +81,7 @@ import org.eclipse.uml2.uml.UMLPackage;
 /**
  * @generated
  */
-public class CallBehaviorActionEditPart extends NamedElementEditPart {
+public class CallBehaviorActionEditPart extends RoundedCompartmentEditPart {
 
 	/**
 	 * @generated
@@ -128,6 +135,19 @@ public class CallBehaviorActionEditPart extends NamedElementEditPart {
 	 **/
 	@Override
 	protected void handleNotificationEvent(Notification event) {
+		/*
+		 * when a node have external node labels, the methods refreshChildren() remove the EditPart corresponding to the Label from the EditPart
+		 * Registry. After that, we can't reset the visibility to true (using the Show/Hide Label Action)!
+		 */
+		if (NotationPackage.eINSTANCE.getView_Visible().equals(event.getFeature())) {
+			Object notifier = event.getNotifier();
+			List<?> modelChildren = ((View) getModel()).getChildren();
+			if (!(notifier instanceof Edge)) {
+				if (modelChildren.contains(event.getNotifier())) {
+					return;
+				}
+			}
+		}
 		super.handleNotificationEvent(event);
 		// Add/Remove the RakeFigure when an Activity is selected as behavior or deselected
 		if (resolveSemanticElement() != null) {
@@ -147,6 +167,21 @@ public class CallBehaviorActionEditPart extends NamedElementEditPart {
 	/**
 	 * @generated
 	 */
+	// not generated but change include on gmfgen, can be override at the generation
+	@Override
+	protected void addBorderItem(IFigure borderItemContainer, IBorderItemEditPart borderItemEditPart) {
+		if (borderItemEditPart instanceof CallBehaviorActionFloatingNameEditPart) {
+			BorderItemLocator locator = new BorderItemLocator(getMainFigure(), PositionConstants.SOUTH);
+			locator.setBorderItemOffset(new Dimension(-20, -20));
+			borderItemContainer.add(borderItemEditPart.getFigure(), locator);
+		} else {
+			super.addBorderItem(borderItemContainer, borderItemEditPart);
+		}
+	}
+
+	/**
+	 * @generated
+	 */
 	protected LayoutEditPolicy createLayoutEditPolicy() {
 		org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy lep = new org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy() {
 
@@ -154,6 +189,16 @@ public class CallBehaviorActionEditPart extends NamedElementEditPart {
 			protected EditPolicy createChildEditPolicy(EditPart child) {
 				View childView = (View) child.getModel();
 				switch (UMLVisualIDRegistry.getVisualID(childView)) {
+				case CallBehaviorActionFloatingNameEditPart.VISUAL_ID:
+					return new BorderItemSelectionEditPolicy() {
+
+						@Override
+						protected List<?> createSelectionHandles() {
+							MoveHandle mh = new MoveHandle((GraphicalEditPart) getHost());
+							mh.setBorder(null);
+							return Collections.singletonList(mh);
+						}
+					};
 				case ValuePinInCallBeActEditPart.VISUAL_ID:
 				case ActionInputPinInCallBeActEditPart.VISUAL_ID:
 				case InputPinInCallBeActEditPart.VISUAL_ID:

@@ -17,14 +17,14 @@ import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.papyrus.uml.diagram.activity.part.UMLDiagramEditorPlugin;
 import org.eclipse.papyrus.uml.diagram.common.Activator;
-import org.eclipse.papyrus.uml.diagram.common.figure.node.PapyrusRoundedNodeFigure;
+import org.eclipse.papyrus.uml.diagram.common.figure.node.RoundedCompartmentFigure;
 import org.eclipse.swt.graphics.Image;
 
 /**
  * this is a specific figure to display the rake of this action
  *
  */
-public class CallBehaviorActionFigure extends PapyrusRoundedNodeFigure {
+public class CallBehaviorActionFigure extends RoundedCompartmentFigure {
 
 	protected static final String IMAGE_PATH = "/icons/obj16/rake.gif";
 

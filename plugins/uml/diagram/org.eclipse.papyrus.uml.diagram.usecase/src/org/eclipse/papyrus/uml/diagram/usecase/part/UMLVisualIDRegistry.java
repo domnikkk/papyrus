@@ -24,11 +24,14 @@ import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.ActorAppliedStereotype
 import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.ActorAsRectangleEditPartTN;
 import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.ActorAsRectangleNameEditPartTN;
 import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.ActorEditPartTN;
+import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.ActorFloatingLabelEditPartTN;
 import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.ActorInComponentAppliedStereotypeEditPart;
 import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.ActorInComponentEditPart;
+import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.ActorInComponentFloatingLabelEditPart;
 import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.ActorInComponentNameEditPart;
 import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.ActorInPackageAppliedStereotypeEditPart;
 import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.ActorInPackageEditPart;
+import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.ActorInPackageFloatingLabelEditPart;
 import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.ActorInPackageNameEditPart;
 import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.ActorNameEditPartTN;
 import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.ActorQualifiedNameEditPartTN;
@@ -89,6 +92,7 @@ import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.RealizationEditPart;
 import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.RealizationNameEditPart;
 import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.ShortCutDiagramEditPart;
 import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.SubjectClassifierEditPartTN;
+import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.SubjectClassifierFloatingLabelEditPartTN;
 import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.SubjectClassifierNameEditPartTN;
 import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.SubjectComponentUsecasesEditPart;
 import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.UsageEditPart;
@@ -97,9 +101,12 @@ import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.UseCaseAsRectangleEdit
 import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.UseCaseAsRectangleNameEditPartTN;
 import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.UseCaseDiagramEditPart;
 import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.UseCaseEditPartTN;
+import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.UseCaseFloatingLabelEditPartTN;
 import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.UseCaseInComponentEditPart;
+import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.UseCaseInComponentFloatingLabelEditPart;
 import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.UseCaseInComponentNameEditPart;
 import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.UseCaseInPackageEditPart;
+import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.UseCaseInPackageFloatingLabelEditPart;
 import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.UseCaseInPackageNameEditPart;
 import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.UseCaseNameEditPartTN;
 import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.UseCasePointsEditPartTN;
@@ -413,6 +420,9 @@ public class UMLVisualIDRegistry {
 			if (ActorQualifiedNameEditPartTN.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (ActorFloatingLabelEditPartTN.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			break;
 		case ActorAsRectangleEditPartTN.VISUAL_ID:
 			if (ActorAsRectangleNameEditPartTN.VISUAL_ID == nodeVisualID) {
@@ -421,6 +431,9 @@ public class UMLVisualIDRegistry {
 			break;
 		case UseCaseEditPartTN.VISUAL_ID:
 			if (UseCaseNameEditPartTN.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (UseCaseFloatingLabelEditPartTN.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (UseCasePointsEditPartTN.VISUAL_ID == nodeVisualID) {
@@ -437,6 +450,9 @@ public class UMLVisualIDRegistry {
 			break;
 		case SubjectClassifierEditPartTN.VISUAL_ID:
 			if (SubjectClassifierNameEditPartTN.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (SubjectClassifierFloatingLabelEditPartTN.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (SubjectComponentUsecasesEditPart.VISUAL_ID == nodeVisualID) {
@@ -478,6 +494,9 @@ public class UMLVisualIDRegistry {
 			if (UseCaseInComponentNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (UseCaseInComponentFloatingLabelEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			if (UseCasePointsInComponentEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
@@ -513,6 +532,9 @@ public class UMLVisualIDRegistry {
 			if (ActorQualifiedNameInCEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (ActorInComponentFloatingLabelEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			break;
 		case ConstraintInPackageEditPart.VISUAL_ID:
 			if (ConstraintInPackageNameEditPart.VISUAL_ID == nodeVisualID) {
@@ -532,9 +554,15 @@ public class UMLVisualIDRegistry {
 			if (ActorQualifiedNameInPEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (ActorInPackageFloatingLabelEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			break;
 		case UseCaseInPackageEditPart.VISUAL_ID:
 			if (UseCaseInPackageNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (UseCaseInPackageFloatingLabelEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (UseCasePointsInPackageEditPart.VISUAL_ID == nodeVisualID) {
@@ -832,7 +860,7 @@ public class UMLVisualIDRegistry {
 	 */
 	public static boolean checkNodeVisualID(View containerView, EObject domainElement, int candidate) {
 		if (candidate == -1) {
-			//unrecognized id is always bad
+			// unrecognized id is always bad
 			return false;
 		}
 		int basic = getNodeVisualID(containerView, domainElement);

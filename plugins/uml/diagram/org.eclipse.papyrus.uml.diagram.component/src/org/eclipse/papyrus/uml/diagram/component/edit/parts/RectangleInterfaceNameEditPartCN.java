@@ -847,7 +847,7 @@ public class RectangleInterfaceNameEditPartCN extends PapyrusCompartmentEditPart
 	 * @generated
 	 */
 	protected void addOwnerElementListeners() {
-		addListenerFilter(ADD_PARENT_MODEL, this, ((View) getParent().getModel())); 
+		addListenerFilter(ADD_PARENT_MODEL, this, ((View) getParent().getModel()));
 
 	}
 

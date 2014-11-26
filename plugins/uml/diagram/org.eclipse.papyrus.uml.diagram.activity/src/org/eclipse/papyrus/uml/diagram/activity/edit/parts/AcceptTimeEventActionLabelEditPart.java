@@ -36,7 +36,6 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.ParserOptions;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.LabelEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.LabelDirectEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.figures.IBorderItemLocator;
 import org.eclipse.gmf.runtime.diagram.ui.l10n.DiagramColorRegistry;
@@ -62,12 +61,13 @@ import org.eclipse.papyrus.extensionpoints.editors.ui.IPopupEditorHelper;
 import org.eclipse.papyrus.extensionpoints.editors.utils.DirectEditorsUtil;
 import org.eclipse.papyrus.extensionpoints.editors.utils.IDirectEditorsIds;
 import org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.IMaskManagedLabelEditPolicy;
+import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.PapyrusWrappingLabel;
 import org.eclipse.papyrus.uml.diagram.activity.edit.policies.UMLTextSelectionEditPolicy;
-import org.eclipse.papyrus.uml.diagram.activity.figures.SimpleLabel;
 import org.eclipse.papyrus.uml.diagram.activity.part.UMLVisualIDRegistry;
 import org.eclipse.papyrus.uml.diagram.activity.providers.UMLElementTypes;
 import org.eclipse.papyrus.uml.diagram.activity.providers.UMLParserProvider;
 import org.eclipse.papyrus.uml.diagram.common.directedit.MultilineLabelDirectEditManager;
+import org.eclipse.papyrus.uml.diagram.common.editparts.FloatingLabelEditPart;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.IDirectEdition;
 import org.eclipse.papyrus.uml.diagram.common.figure.node.ILabelFigure;
 import org.eclipse.swt.SWT;
@@ -81,7 +81,7 @@ import org.eclipse.uml2.uml.Feature;
 /**
  * @generated
  */
-public class AcceptTimeEventActionLabelEditPart extends LabelEditPart implements ITextAwareEditPart, IBorderItemEditPart {
+public class AcceptTimeEventActionLabelEditPart extends FloatingLabelEditPart implements ITextAwareEditPart, IBorderItemEditPart {
 
 	/**
 	 * @generated
@@ -765,6 +765,6 @@ public class AcceptTimeEventActionLabelEditPart extends LabelEditPart implements
 	 * @generated
 	 */
 	protected IFigure createFigurePrim() {
-		return new SimpleLabel();
+		return new PapyrusWrappingLabel();
 	}
 }

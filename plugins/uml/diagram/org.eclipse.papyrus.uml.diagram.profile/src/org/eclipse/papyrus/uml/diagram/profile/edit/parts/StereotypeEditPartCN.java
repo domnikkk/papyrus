@@ -32,13 +32,13 @@ import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.IPapyrusNodeFigure;
 import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.SelectableBorderedNodeFigure;
-import org.eclipse.papyrus.uml.diagram.common.editparts.ClassifierEditPart;
+import org.eclipse.papyrus.uml.diagram.common.editparts.ClassEditPart;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.ConstrainedItemBorderLayoutEditPolicy;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.PapyrusCreationEditPolicy;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.QualifiedNameDisplayEditPolicy;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.ShowHideClassifierContentsEditPolicy;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.ShowHideCompartmentEditPolicy;
-import org.eclipse.papyrus.uml.diagram.common.figure.node.ClassifierFigure;
+import org.eclipse.papyrus.uml.diagram.common.figure.node.ClassFigure;
 import org.eclipse.papyrus.uml.diagram.profile.custom.figure.StereotypeFigure;
 import org.eclipse.papyrus.uml.diagram.profile.custom.policies.CustomGraphicalNodeEditPolicy;
 import org.eclipse.papyrus.uml.diagram.profile.custom.policies.itemsemantic.CustomStereotypeItemSemanticEditPolicyCN;
@@ -50,7 +50,7 @@ import org.eclipse.swt.graphics.Color;
 /**
  * @generated
  */
-public class StereotypeEditPartCN extends ClassifierEditPart {
+public class StereotypeEditPartCN extends ClassEditPart {
 
 	/**
 	 * @generated
@@ -129,10 +129,10 @@ public class StereotypeEditPartCN extends ClassifierEditPart {
 	@Override
 	protected void handleNotificationEvent(Notification event) {
 		super.handleNotificationEvent(event);
-		//set the figure active when the feature of the of a class is true
+		// set the figure active when the feature of the of a class is true
 		if (resolveSemanticElement() != null) {
 			if (resolveSemanticElement().equals(event.getNotifier()) && (event.getFeature() instanceof EAttribute) && ((EAttribute) (event.getFeature())).getName().equals("isActive")) {
-				((ClassifierFigure) getFigure()).setActive(event.getNewBooleanValue());
+				((ClassFigure) getFigure()).setActive(event.getNewBooleanValue());
 				refreshVisuals();
 			}
 		}

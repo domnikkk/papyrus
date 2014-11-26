@@ -33,6 +33,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.l10n.DiagramUIMessages;
 import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.papyrus.uml.diagram.common.editparts.FloatingLabelEditPart;
 
 /**
  * @author Patrick Tessier
@@ -65,7 +66,7 @@ public class ConstrainedItemBorderLayoutEditPolicy extends ConstrainedLayoutEdit
 	 */
 	@Override
 	protected EditPolicy createChildEditPolicy(EditPart child) {
-		if (child instanceof IBorderItemEditPart) {
+		if ((child instanceof IBorderItemEditPart) && !(child instanceof FloatingLabelEditPart)) {
 			// return new BorderItemSelectionEditPolicy();
 			return new BorderItemResizableEditPolicy();
 		}

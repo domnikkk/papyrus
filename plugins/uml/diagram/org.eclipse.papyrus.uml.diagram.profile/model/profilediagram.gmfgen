@@ -457,7 +457,7 @@
             metamodelType="/0/@diagram/@topLevelNodes.3/@elementType"/>
         <viewmap
             xsi:type="gmfgen:FigureViewmap"
-            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.common.figure.node.ClassifierFigure">
+            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.common.figure.node.ClassFigure">
           <attributes
               xsi:type="gmfgen:DefaultSizeAttributes"
               width="100"
@@ -538,7 +538,7 @@
             editHelperClassName="MetaclassEditHelper"/>
         <viewmap
             xsi:type="gmfgen:FigureViewmap"
-            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.common.figure.node.ClassifierFigure">
+            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.common.figure.node.ClassFigure">
           <attributes
               xsi:type="gmfgen:DefaultSizeAttributes"
               width="100"
@@ -619,8 +619,9 @@
             xsi:type="gmfgen:CustomBehaviour"
             key="org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeLabelDisplayEditPolicy.STEREOTYPE_LABEL_POLICY"
             editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeNodeLabelDisplayEditPolicy"/>
-        <behaviour xsi:type="gmfgen:CustomBehaviour" 
-            key="org.eclipse.gef.EditPolicy.PRIMARY_DRAG_ROLE" 
+        <behaviour
+            xsi:type="gmfgen:CustomBehaviour"
+            key="org.eclipse.gef.EditPolicy.PRIMARY_DRAG_ROLE"
             editPolicyQualifiedClassName="org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.PapyrusReflowableShapeEditPolicy"/>
         <modelFacet>
           <metaClass
@@ -1306,7 +1307,7 @@
             editHelperClassName="ClassEditHelper"/>
         <viewmap
             xsi:type="gmfgen:FigureViewmap"
-            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.common.figure.node.ClassifierFigure">
+            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.common.figure.node.ClassFigure">
           <attributes
               xsi:type="gmfgen:DefaultSizeAttributes"
               width="100"
@@ -1386,7 +1387,7 @@
             metamodelType="/0/@diagram/@childNodes.8/@elementType"/>
         <viewmap
             xsi:type="gmfgen:FigureViewmap"
-            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.common.figure.node.ClassifierFigure">
+            figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.common.figure.node.ClassFigure">
           <attributes
               xsi:type="gmfgen:DefaultSizeAttributes"
               width="100"
@@ -3545,7 +3546,8 @@
     <plugin
         iD="org.eclipse.papyrus.uml.diagram.profile"
         name="PapyrusUMLProfileDiagram"
-        provider="CEA LIST">
+        provider="CEA LIST"
+        version="1.1.0.qualifier">
       <requiredPlugins>org.eclipse.draw2d</requiredPlugins>
       <requiredPlugins>org.eclipse.gmf.runtime.draw2d.ui</requiredPlugins>
     </plugin>
@@ -3675,11 +3677,11 @@
         comment="Manage the class"
         genView="/0/@diagram/@topLevelNodes.4 /0/@diagram/@topLevelNodes.2 /0/@diagram/@childNodes.6 /0/@diagram/@childNodes.8"
         name="Extended class editpart"
-        superOwnedEditPart="org.eclipse.papyrus.uml.diagram.common.editparts.ClassifierEditPart">
+        superOwnedEditPart="org.eclipse.papyrus.uml.diagram.common.editparts.ClassEditPart">
       <propRefreshHook
           comment="set the figure active when the feature of the of a class is true"
           triggeringCondition="resolveSemanticElement().equals(event.getNotifier()) &amp;&amp; (event.getFeature() instanceof org.eclipse.emf.ecore.EAttribute)&amp;&amp; ((org.eclipse.emf.ecore.EAttribute) (event.getFeature())).getName().equals(&quot;isActive&quot;)"
-          action="((org.eclipse.papyrus.uml.diagram.common.figure.node.ClassifierFigure) getFigure()).setActive(event.getNewBooleanValue())"/>
+          action="((org.eclipse.papyrus.uml.diagram.common.figure.node.ClassFigure) getFigure()).setActive(event.getNewBooleanValue())"/>
     </extensionNodes>
     <extensionNodes
         xsi:type="papyrusgmfgenextension:ExtendedGenView"

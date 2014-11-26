@@ -44,7 +44,7 @@ public class InteractionUseFigure extends CallBehaviorActionFigure {
 
 	public InteractionUseFigure() {
 		createContents();
-		this.corner = 0;
+		this.setCornerDimensions(new Dimension());
 	}
 
 	protected void createContents() {

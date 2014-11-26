@@ -131,6 +131,11 @@ ActivityDiagram Activity *,InteractionOverviewDiagram Activity * {
 	elementIcon:false; 
 }
 
+ClassDiagram Dependency{
+	fillColor:Black;
+	gradient:none;
+}
+
 /*
  * The Actor element icon is not useful either
  */
@@ -141,3 +146,8 @@ UseCaseDiagram Actor {
 TimingDiagram * {
 	gradient:none;
 }
+
+UseCaseDiagram UseCase {
+	fillColor:white;
+}
+
