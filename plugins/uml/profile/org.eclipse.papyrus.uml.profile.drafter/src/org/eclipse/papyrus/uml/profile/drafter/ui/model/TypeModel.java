@@ -30,6 +30,7 @@ public class TypeModel extends ModelChangeSupport {
 	
 	/**
 	 * Catalog used to find a type from its label.
+	 * TODO Is this still used ? Remove ?
 	 */
 	private ITypeCatalog typeCatalog;
 	
@@ -72,10 +73,10 @@ public class TypeModel extends ModelChangeSupport {
 	public void setTypeLabel(String typeLabel) throws NotFoundException {
 		// Lookup the corresponding type
 		
-		
-			Type type = typeCatalog.getType(typeLabel);
-			setTypeInternal(type);
-			setTypeLabelInternal(typeLabel);
+		throw new UnsupportedOperationException("Not implemented");
+//			Type type = typeCatalog.getType(typeLabel);
+//			setTypeInternal(type);
+//			setTypeLabelInternal(typeLabel);
 		
 	}
 
@@ -93,9 +94,9 @@ public class TypeModel extends ModelChangeSupport {
 	 */
 	public void setType(Type type) {
 		
-		String typeLabel = typeCatalog.getTypeLabel(type);
+//		String typeLabel = typeCatalog.getTypeLabel(type);
 		setTypeInternal(type);
-		setTypeLabelInternal(typeLabel);
+//		setTypeLabelInternal(typeLabel);
 	}
 
 

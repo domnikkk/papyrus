@@ -14,6 +14,8 @@ import org.eclipse.uml2.uml.Type;
  * 
  * @author cedric dumoulin
  *
+ * TODO : 20141126 not used - can be removed
+
  */
 public class TypeContentProposalProvider implements IContentProposalProvider {
 

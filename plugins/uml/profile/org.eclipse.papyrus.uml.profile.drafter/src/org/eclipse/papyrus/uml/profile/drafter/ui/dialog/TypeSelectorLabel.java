@@ -20,6 +20,7 @@ import org.eclipse.jface.fieldassist.IContentProposal;
 import org.eclipse.jface.fieldassist.IContentProposalListener;
 import org.eclipse.jface.fieldassist.IContentProposalProvider;
 import org.eclipse.jface.fieldassist.TextContentAdapter;
+import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.papyrus.uml.profile.drafter.ui.contentassist.TypeContentProposalBase;
 import org.eclipse.papyrus.uml.profile.drafter.ui.contentassist.TypeContentProposalProvider;
 import org.eclipse.papyrus.uml.profile.drafter.ui.model.ITypeCatalog;
@@ -32,6 +33,8 @@ import org.eclipse.uml2.uml.Type;
  * A Label used to select a uml {@link Type}.
  * 
  * @author cedric dumoulin
+ * 
+ * TODO : 20141126 not used - can be removed
  *
  */
 public class TypeSelectorLabel extends Text {
@@ -39,7 +42,9 @@ public class TypeSelectorLabel extends Text {
 	/**
 	 * Type catalog used to propose existing types.
 	 */
-	protected ITypeCatalog typeCatalog;
+	protected ITypeCatalog typeProvider;
+	
+	protected ILabelProvider typeLabelProvider;
 	
 	protected Type type;
 	
@@ -49,11 +54,13 @@ public class TypeSelectorLabel extends Text {
 	 * @param parent
 	 * @param style
 	 */
-	public TypeSelectorLabel(Composite parent, int style, ITypeCatalog typeCatalog) {
+	public TypeSelectorLabel(Composite parent, int style, ITypeCatalog typeProvider, ILabelProvider typeLabelProvider, Type defaultType) {
 		super(parent, style);
 		
+		this.typeProvider = typeProvider;
+		this.typeLabelProvider = typeLabelProvider;
 		// TODO: set first type
-		setType(typeCatalog.getTypes().get(0));
+		setType(defaultType);
 		
 		// Set content assist
 		installContentAssist();
@@ -63,7 +70,7 @@ public class TypeSelectorLabel extends Text {
 	 * Associate a ContentAssist based on the {@link ITypeCatalog}.
 	 */
 	private void installContentAssist() {
-		installContentAssistantProvider( new TypeContentProposalProvider( typeCatalog ));
+		installContentAssistantProvider( new TypeContentProposalProvider( typeProvider ));
 	}
 
 	/**
@@ -118,7 +125,7 @@ public class TypeSelectorLabel extends Text {
 	 */
 	public void setType(Type type) {
 		
-		String label = typeCatalog.getTypeLabel(type);
+		String label = typeLabelProvider.getText(type);
 		setText(label);
 		
 		setTypeInternal(type);

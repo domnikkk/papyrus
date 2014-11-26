@@ -1362,7 +1362,7 @@
         <layoutConstraint xmi:type="notation:Location" xmi:id="_S51tVmpKEeSHJZbEOSiM7A" y="20"/>
       </children>
       <children xmi:type="notation:DecorationNode" xmi:id="_S51tV2pKEeSHJZbEOSiM7A" type="6003">
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_S51tWGpKEeSHJZbEOSiM7A" x="22" y="-72"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_S51tWGpKEeSHJZbEOSiM7A" x="26" y="-25"/>
       </children>
       <children xmi:type="notation:DecorationNode" xmi:id="_S51tWWpKEeSHJZbEOSiM7A" visible="false" type="6005">
         <layoutConstraint xmi:type="notation:Location" xmi:id="_S51tWmpKEeSHJZbEOSiM7A" y="20"/>

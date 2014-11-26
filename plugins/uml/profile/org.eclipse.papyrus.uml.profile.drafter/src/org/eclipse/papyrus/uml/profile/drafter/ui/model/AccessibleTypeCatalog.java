@@ -15,6 +15,7 @@
 package org.eclipse.papyrus.uml.profile.drafter.ui.model;
 
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
 
 import org.eclipse.papyrus.uml.profile.drafter.exceptions.NotFoundException;
@@ -69,7 +70,7 @@ public class AccessibleTypeCatalog implements ITypeCatalog {
 	 * @param type
 	 * @return
 	 */
-	@Override
+//	@Override
 	public String getTypeLabel(Type type) {
 		return type.getLabel();
 	}
@@ -81,7 +82,7 @@ public class AccessibleTypeCatalog implements ITypeCatalog {
 	 * @return
 	 * @throws NotFoundException
 	 */
-	@Override
+//	@Override
 	public Type getType(String typeLabel) throws NotFoundException {
 		
 		for( Type type : getTypes()) {
@@ -116,6 +117,11 @@ public class AccessibleTypeCatalog implements ITypeCatalog {
 //		element.eResource().g
 //		// TODO Auto-generated method stub
 //		return null;
+	}
+
+	@Override
+	public Iterator<Type> iterator() {
+		return getTypes().iterator();
 	}
 
 }

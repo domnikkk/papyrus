@@ -14,9 +14,9 @@
 
 package org.eclipse.papyrus.uml.profile.drafter.ui.model;
 
+import java.util.Iterator;
 import java.util.List;
 
-import org.eclipse.papyrus.uml.profile.drafter.exceptions.NotFoundException;
 import org.eclipse.uml2.uml.Type;
 
 
@@ -26,14 +26,14 @@ import org.eclipse.uml2.uml.Type;
  * @author cedric dumoulin
  *
  */
-public interface ITypeCatalog {
+public interface ITypeCatalog extends Iterable<Type> {
 
 	/**
 	 * Get the label (human representation) of the specified type.
 	 * @param type
 	 * @return
 	 */
-	public String getTypeLabel(Type type);
+//	public String getTypeLabel(Type type);
 
 	/**
 	 * Get the type corresponding to the specified label.
@@ -42,7 +42,7 @@ public interface ITypeCatalog {
 	 * 
 	 * @return The {@link Type} corresponding to 
 	 */
-	public Type getType(String typeLabel) throws NotFoundException;
+//	public Type getType(String typeLabel) throws NotFoundException;
 
 	/**
 	 * Return a list of available types.
@@ -51,5 +51,12 @@ public interface ITypeCatalog {
 	 */
 	public List<Type> getTypes();
 
-	
+	/**
+	 * Return an iterator over the list of types.
+	 * 
+	 * @see java.lang.Iterable#iterator()
+	 *
+	 * @return
+	 */
+	public Iterator<Type> iterator();
 }
