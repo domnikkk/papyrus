@@ -311,7 +311,7 @@ public class RSAToPapyrusParametersPackageImpl extends EPackageImpl implements R
 				!IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getConfig_RemoveUnmappedAnnotations(), theTypesPackage.getBoolean(), "removeUnmappedAnnotations", "false", 1, 1, Config.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getConfig_RemoveUnmappedDiagrams(), theTypesPackage.getBoolean(), "removeUnmappedDiagrams", "false", 1, 1, Config.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getConfig_MaxThreads(), theTypesPackage.getInteger(), "maxThreads", "8", 1, 1, Config.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getConfig_MaxThreads(), theTypesPackage.getInteger(), "maxThreads", "2", 1, 1, Config.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getConfig_UriMappings(), this.getURIMapping(), null, "uriMappings", null, 0, -1, Config.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(uriMappingEClass, URIMapping.class, "URIMapping", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

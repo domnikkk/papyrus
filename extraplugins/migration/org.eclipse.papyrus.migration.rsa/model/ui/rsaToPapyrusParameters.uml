@@ -49,7 +49,7 @@ More threads will provide faster results, at the cost of memory consumption.</bo
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_DhmU4FOJEeSGbsrkEkSKIA" value="1"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_DhwF4FOJEeSGbsrkEkSKIA" value="1"/>
-        <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_E7A-4FOJEeSGbsrkEkSKIA" value="8"/>
+        <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_E7A-4FOJEeSGbsrkEkSKIA" value="2"/>
       </ownedAttribute>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_LgpPEFOJEeSGbsrkEkSKIA" name="uriMappings" visibility="public" type="_MDmyMFOJEeSGbsrkEkSKIA" aggregation="composite">
         <ownedComment xmi:type="uml:Comment" xmi:id="_iBwD0GW5EeS5_vjAduszYQ" annotatedElement="_LgpPEFOJEeSGbsrkEkSKIA">
