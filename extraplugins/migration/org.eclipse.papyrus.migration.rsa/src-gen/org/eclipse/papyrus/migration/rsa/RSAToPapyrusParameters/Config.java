@@ -163,7 +163,7 @@ public interface Config extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Max Threads</b></em>' attribute.
-	 * The default value is <code>"8"</code>.
+	 * The default value is <code>"2"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Max Threads</em>' attribute isn't clear, there really should be more of a description here...
@@ -177,7 +177,7 @@ public interface Config extends EObject {
 	 * @return the value of the '<em>Max Threads</em>' attribute.
 	 * @see #setMaxThreads(int)
 	 * @see org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.RSAToPapyrusParametersPackage#getConfig_MaxThreads()
-	 * @model default="8" unique="false" dataType="org.eclipse.uml2.types.Integer" required="true" ordered="false"
+	 * @model default="2" unique="false" dataType="org.eclipse.uml2.types.Integer" required="true" ordered="false"
 	 * @generated
 	 */
 	int getMaxThreads();

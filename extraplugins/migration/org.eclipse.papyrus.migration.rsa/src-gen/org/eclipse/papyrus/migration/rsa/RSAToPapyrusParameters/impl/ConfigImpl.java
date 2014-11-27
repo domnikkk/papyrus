@@ -142,7 +142,7 @@ public class ConfigImpl extends MinimalEObjectImpl.Container implements Config {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int MAX_THREADS_EDEFAULT = 8;
+	protected static final int MAX_THREADS_EDEFAULT = 2;
 
 	/**
 	 * The cached value of the '{@link #getMaxThreads() <em>Max Threads</em>}' attribute.
