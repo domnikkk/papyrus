@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.eclipse.papyrus.migration.rsa.edit;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-ClassPath: .
+Bundle-Activator: org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.provider.RsaToPapyrusParametersEditPlugin$Implementation
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.provider
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.emf.edit,
+ org.eclipse.uml2.types,
+ org.eclipse.uml2.common.edit,
+ org.eclipse.papyrus.migration.rsa;bundle-version="1.1.0"
+Bundle-ActivationPolicy: lazy
