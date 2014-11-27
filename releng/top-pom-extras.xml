@@ -138,6 +138,7 @@
 		<module>../extraplugins/umlrt/org.eclipse.papyrus.umlrt.wizard</module>
 		<module>../extraplugins/migration/org.eclipse.papyrus.m2m.qvto</module>
 		<module>../extraplugins/migration/org.eclipse.papyrus.migration.rsa</module>
+		<module>../extraplugins/migration/org.eclipse.papyrus.migration.rsa.edit</module>
 		<module>../extraplugins/codegen/org.eclipse.papyrus.views.cpp</module>
 		<module>../extraplugins/qompass-designer/tracing/org.eclipse.papyrus.views.tracepoints</module>
 		<!-- Papyrus Uml Diagram Ecore -->

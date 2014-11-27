@@ -49,7 +49,7 @@
       <properties xmi:id="_nvb1KnYwEeSuA5uSkVmRVg" name="removeUnmappedAnnotations" type="Boolean" description="If true, the unmapped RSA EAnnotations will be deleted from the imported model"/>
       <properties xmi:id="_nvb1K3YwEeSuA5uSkVmRVg" name="removeUnmappedDiagrams" type="Boolean" description="If true, the diagrams which were not migrated will be removed. Otherwise, only the successfully imported diagrams will be removed"/>
       <properties xmi:id="_nvb1LHYwEeSuA5uSkVmRVg" name="maxThreads" type="Integer" description="The maximum number of threads to use during the migration.&#xD;&#xA;More threads will provide faster results, at the cost of memory consumption."/>
-      <properties xmi:id="_nvb1LXYwEeSuA5uSkVmRVg" name="uriMappings" type="Reference" multiplicity="-1" description="When models/libraries have been migrated separately, maps the libraries imported from RSA to their Papyrus equivalent"/>
+      <properties xmi:id="_nvb1LXYwEeSuA5uSkVmRVg" name="uriMappings" label="URI Mappings" type="Reference" multiplicity="-1" description="When models/libraries have been migrated separately, maps the libraries imported from RSA to their Papyrus equivalent"/>
     </elements>
     <elements xmi:id="_nvb1LnYwEeSuA5uSkVmRVg" name="URIMapping">
       <properties xmi:id="_nvb1L3YwEeSuA5uSkVmRVg" name="sourceURI"/>

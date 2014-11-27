@@ -32,17 +32,18 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.ui.workbench,
  org.eclipse.ui.navigator;bundle-version="3.5.500"
 Export-Package: org.eclipse.papyrus.migration.rsa,
+ org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters,
+ org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.impl,
+ org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.util,
+ org.eclipse.papyrus.migration.rsa.blackbox,
+ org.eclipse.papyrus.migration.rsa.default_,
+ org.eclipse.papyrus.migration.rsa.default_.impl,
+ org.eclipse.papyrus.migration.rsa.default_.util,
  org.eclipse.papyrus.migration.rsa.handler,
  org.eclipse.papyrus.migration.rsa.transformation,
  org.eclipse.papyrus.migration.rsa.umlrt,
  org.eclipse.papyrus.migration.rsa.umlrt.impl,
- org.eclipse.papyrus.migration.rsa.umlrt.util,
- org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters,
- org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.impl,
- org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.util,
- org.eclipse.papyrus.migration.rsa.default_,
- org.eclipse.papyrus.migration.rsa.default_.impl,
- org.eclipse.papyrus.migration.rsa.default_.util
+ org.eclipse.papyrus.migration.rsa.umlrt.util
 Bundle-Vendor: %providerName
 Bundle-ActivationPolicy: lazy
 Bundle-ClassPath: .
