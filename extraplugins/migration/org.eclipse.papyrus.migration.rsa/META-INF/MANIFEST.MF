@@ -30,7 +30,6 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.papyrus.infra.services.labelprovider;bundle-version="1.1.0",
  org.eclipse.swt,
  org.eclipse.ui.workbench,
- org.eclipse.papyrus.views.properties.model;bundle-version="1.1.0",
  org.eclipse.ui.navigator;bundle-version="3.5.500"
 Export-Package: org.eclipse.papyrus.migration.rsa,
  org.eclipse.papyrus.migration.rsa.handler,
