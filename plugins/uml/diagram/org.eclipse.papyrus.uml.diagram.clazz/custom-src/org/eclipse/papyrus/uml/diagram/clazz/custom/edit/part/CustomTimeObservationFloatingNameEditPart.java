@@ -17,7 +17,6 @@ import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.TimeObservationFloatingNameEditPart;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class CDataTypeEditPart.
  */
