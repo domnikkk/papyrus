@@ -415,15 +415,7 @@ public class ImportTransformation {
 
 			List<EObject> outUMLObjects = getInOutUMLModel().getContents();
 
-			for (EObject object : outUMLObjects) {
-				System.out.println(EcoreUtil.getURI(object));
-			}
-
 			umlResource.getContents().addAll(outUMLObjects);
-
-			for (EObject object : umlResource.getContents()) {
-				System.out.println(EcoreUtil.getURI(object));
-			}
 
 			GMFResource notationResource = new GMFResource(notationModelURI); // GMF Resource content type?
 			resourceSet.getResources().add(notationResource);
