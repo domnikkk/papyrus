@@ -40,6 +40,13 @@
         <details key="documentation" value="If true, the unmapped RSA EAnnotations will be deleted from the imported model"/>
       </eAnnotations>
     </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="alwaysAcceptSuggestedMappings"
+        ordered="false" lowerBound="1" eType="ecore:EDataType ../../../org.eclipse.uml2.types/model/Types.ecore#//Boolean"
+        defaultValueLiteral="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="If true, the Transformation will not open a dialog to ask user-confirmation for the dependency mappings. The tool will automatically keep going by &quot;guessing&quot; the proper mapping"/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MappingParameters">
     <eStructuralFeatures xsi:type="ecore:EReference" name="uriMappings" ordered="false"

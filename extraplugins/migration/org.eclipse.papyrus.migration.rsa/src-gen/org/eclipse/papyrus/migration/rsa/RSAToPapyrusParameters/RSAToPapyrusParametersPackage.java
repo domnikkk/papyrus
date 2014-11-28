@@ -142,6 +142,16 @@ public interface RSAToPapyrusParametersPackage extends EPackage {
 	int CONFIG__REMOVE_UNMAPPED_ANNOTATIONS = 5;
 
 	/**
+	 * The feature id for the '<em><b>Always Accept Suggested Mappings</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int CONFIG__ALWAYS_ACCEPT_SUGGESTED_MAPPINGS = 6;
+
+	/**
 	 * The number of structural features of the '<em>Config</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -149,7 +159,7 @@ public interface RSAToPapyrusParametersPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONFIG_FEATURE_COUNT = 6;
+	int CONFIG_FEATURE_COUNT = 7;
 
 	/**
 	 * The number of operations of the '<em>Config</em>' class.
@@ -339,6 +349,18 @@ public interface RSAToPapyrusParametersPackage extends EPackage {
 	EAttribute getConfig_RemoveUnmappedAnnotations();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.Config#isAlwaysAcceptSuggestedMappings <em>Always Accept Suggested Mappings</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Always Accept Suggested Mappings</em>'.
+	 * @see org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.Config#isAlwaysAcceptSuggestedMappings()
+	 * @see #getConfig()
+	 * @generated
+	 */
+	EAttribute getConfig_AlwaysAcceptSuggestedMappings();
+
+	/**
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.MappingParameters <em>Mapping Parameters</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -485,6 +507,15 @@ public interface RSAToPapyrusParametersPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute CONFIG__REMOVE_UNMAPPED_ANNOTATIONS = eINSTANCE.getConfig_RemoveUnmappedAnnotations();
+
+		/**
+		 * The meta object literal for the '<em><b>Always Accept Suggested Mappings</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute CONFIG__ALWAYS_ACCEPT_SUGGESTED_MAPPINGS = eINSTANCE.getConfig_AlwaysAcceptSuggestedMappings();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.impl.MappingParametersImpl <em>Mapping Parameters</em>}' class.

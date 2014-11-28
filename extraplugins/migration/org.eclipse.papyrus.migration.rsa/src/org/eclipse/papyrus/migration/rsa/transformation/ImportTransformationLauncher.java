@@ -425,6 +425,10 @@ public class ImportTransformationLauncher {
 	}
 
 	protected MappingParameters confirmURIMappings(final MappingParameters mappingParameters) {
+		if (config.isAlwaysAcceptSuggestedMappings()) {
+			return mappingParameters;
+		}
+
 		final AtomicReference<MappingParameters> newParameters = new AtomicReference<MappingParameters>(mappingParameters);
 
 		if (baseControl != null && !baseControl.isDisposed()) {

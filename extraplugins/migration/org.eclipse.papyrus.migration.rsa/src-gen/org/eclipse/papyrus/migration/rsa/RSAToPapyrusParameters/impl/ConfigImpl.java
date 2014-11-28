@@ -34,6 +34,7 @@ import org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.RSAToPapyrusPara
  * <li>{@link org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.impl.ConfigImpl#isConvertOpaqueExpressionToLiteralString <em>Convert Opaque Expression To Literal String</em>}</li>
  * <li>{@link org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.impl.ConfigImpl#isRemoveUnmappedProfilesAndStereotypes <em>Remove Unmapped Profiles And Stereotypes</em>}</li>
  * <li>{@link org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.impl.ConfigImpl#isRemoveUnmappedAnnotations <em>Remove Unmapped Annotations</em>}</li>
+ * <li>{@link org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.impl.ConfigImpl#isAlwaysAcceptSuggestedMappings <em>Always Accept Suggested Mappings</em>}</li>
  * </ul>
  * </p>
  *
@@ -160,6 +161,28 @@ public class ConfigImpl extends MinimalEObjectImpl.Container implements Config {
 	 * @ordered
 	 */
 	protected boolean removeUnmappedAnnotations = REMOVE_UNMAPPED_ANNOTATIONS_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isAlwaysAcceptSuggestedMappings() <em>Always Accept Suggested Mappings</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see #isAlwaysAcceptSuggestedMappings()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean ALWAYS_ACCEPT_SUGGESTED_MAPPINGS_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isAlwaysAcceptSuggestedMappings() <em>Always Accept Suggested Mappings</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see #isAlwaysAcceptSuggestedMappings()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean alwaysAcceptSuggestedMappings = ALWAYS_ACCEPT_SUGGESTED_MAPPINGS_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -376,6 +399,32 @@ public class ConfigImpl extends MinimalEObjectImpl.Container implements Config {
 	 * @generated
 	 */
 	@Override
+	public boolean isAlwaysAcceptSuggestedMappings() {
+		return alwaysAcceptSuggestedMappings;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public void setAlwaysAcceptSuggestedMappings(boolean newAlwaysAcceptSuggestedMappings) {
+		boolean oldAlwaysAcceptSuggestedMappings = alwaysAcceptSuggestedMappings;
+		alwaysAcceptSuggestedMappings = newAlwaysAcceptSuggestedMappings;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(this, Notification.SET, RSAToPapyrusParametersPackage.CONFIG__ALWAYS_ACCEPT_SUGGESTED_MAPPINGS, oldAlwaysAcceptSuggestedMappings, alwaysAcceptSuggestedMappings));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case RSAToPapyrusParametersPackage.CONFIG__MAPPING_PARAMETERS:
@@ -405,6 +454,8 @@ public class ConfigImpl extends MinimalEObjectImpl.Container implements Config {
 			return isRemoveUnmappedProfilesAndStereotypes();
 		case RSAToPapyrusParametersPackage.CONFIG__REMOVE_UNMAPPED_ANNOTATIONS:
 			return isRemoveUnmappedAnnotations();
+		case RSAToPapyrusParametersPackage.CONFIG__ALWAYS_ACCEPT_SUGGESTED_MAPPINGS:
+			return isAlwaysAcceptSuggestedMappings();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -437,6 +488,9 @@ public class ConfigImpl extends MinimalEObjectImpl.Container implements Config {
 		case RSAToPapyrusParametersPackage.CONFIG__REMOVE_UNMAPPED_ANNOTATIONS:
 			setRemoveUnmappedAnnotations((Boolean) newValue);
 			return;
+		case RSAToPapyrusParametersPackage.CONFIG__ALWAYS_ACCEPT_SUGGESTED_MAPPINGS:
+			setAlwaysAcceptSuggestedMappings((Boolean) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -468,6 +522,9 @@ public class ConfigImpl extends MinimalEObjectImpl.Container implements Config {
 		case RSAToPapyrusParametersPackage.CONFIG__REMOVE_UNMAPPED_ANNOTATIONS:
 			setRemoveUnmappedAnnotations(REMOVE_UNMAPPED_ANNOTATIONS_EDEFAULT);
 			return;
+		case RSAToPapyrusParametersPackage.CONFIG__ALWAYS_ACCEPT_SUGGESTED_MAPPINGS:
+			setAlwaysAcceptSuggestedMappings(ALWAYS_ACCEPT_SUGGESTED_MAPPINGS_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -493,6 +550,8 @@ public class ConfigImpl extends MinimalEObjectImpl.Container implements Config {
 			return removeUnmappedProfilesAndStereotypes != REMOVE_UNMAPPED_PROFILES_AND_STEREOTYPES_EDEFAULT;
 		case RSAToPapyrusParametersPackage.CONFIG__REMOVE_UNMAPPED_ANNOTATIONS:
 			return removeUnmappedAnnotations != REMOVE_UNMAPPED_ANNOTATIONS_EDEFAULT;
+		case RSAToPapyrusParametersPackage.CONFIG__ALWAYS_ACCEPT_SUGGESTED_MAPPINGS:
+			return alwaysAcceptSuggestedMappings != ALWAYS_ACCEPT_SUGGESTED_MAPPINGS_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -520,6 +579,8 @@ public class ConfigImpl extends MinimalEObjectImpl.Container implements Config {
 		result.append(removeUnmappedProfilesAndStereotypes);
 		result.append(", removeUnmappedAnnotations: ");
 		result.append(removeUnmappedAnnotations);
+		result.append(", alwaysAcceptSuggestedMappings: ");
+		result.append(alwaysAcceptSuggestedMappings);
 		result.append(')');
 		return result.toString();
 	}

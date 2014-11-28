@@ -27,6 +27,7 @@ import org.eclipse.emf.ecore.EObject;
  * <li>{@link org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.Config#isConvertOpaqueExpressionToLiteralString <em>Convert Opaque Expression To Literal String</em>}</li>
  * <li>{@link org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.Config#isRemoveUnmappedProfilesAndStereotypes <em>Remove Unmapped Profiles And Stereotypes</em>}</li>
  * <li>{@link org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.Config#isRemoveUnmappedAnnotations <em>Remove Unmapped Annotations</em>}</li>
+ * <li>{@link org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.Config#isAlwaysAcceptSuggestedMappings <em>Always Accept Suggested Mappings</em>}</li>
  * </ul>
  * </p>
  *
@@ -208,5 +209,34 @@ public interface Config extends EObject {
 	 * @generated
 	 */
 	void setRemoveUnmappedAnnotations(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Always Accept Suggested Mappings</b></em>' attribute.
+	 * The default value is <code>"false"</code>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * If true, the Transformation will not open a dialog to ask user-confirmation for the dependency mappings. The tool will automatically keep going by "guessing" the proper mapping
+	 * <!-- end-model-doc -->
+	 *
+	 * @return the value of the '<em>Always Accept Suggested Mappings</em>' attribute.
+	 * @see #setAlwaysAcceptSuggestedMappings(boolean)
+	 * @see org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.RSAToPapyrusParametersPackage#getConfig_AlwaysAcceptSuggestedMappings()
+	 * @model default="false" dataType="org.eclipse.uml2.types.Boolean" required="true" ordered="false"
+	 * @generated
+	 */
+	boolean isAlwaysAcceptSuggestedMappings();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.Config#isAlwaysAcceptSuggestedMappings <em>Always Accept Suggested Mappings</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @param value
+	 *            the new value of the '<em>Always Accept Suggested Mappings</em>' attribute.
+	 * @see #isAlwaysAcceptSuggestedMappings()
+	 * @generated
+	 */
+	void setAlwaysAcceptSuggestedMappings(boolean value);
 
 } // Config

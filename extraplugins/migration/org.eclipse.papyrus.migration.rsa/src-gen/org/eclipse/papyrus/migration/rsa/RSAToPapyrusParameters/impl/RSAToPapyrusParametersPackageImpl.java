@@ -203,6 +203,17 @@ public class RSAToPapyrusParametersPackageImpl extends EPackageImpl implements R
 	 * @generated
 	 */
 	@Override
+	public EAttribute getConfig_AlwaysAcceptSuggestedMappings() {
+		return (EAttribute) configEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public EClass getMappingParameters() {
 		return mappingParametersEClass;
 	}
@@ -292,6 +303,7 @@ public class RSAToPapyrusParametersPackageImpl extends EPackageImpl implements R
 		createEAttribute(configEClass, CONFIG__CONVERT_OPAQUE_EXPRESSION_TO_LITERAL_STRING);
 		createEAttribute(configEClass, CONFIG__REMOVE_UNMAPPED_PROFILES_AND_STEREOTYPES);
 		createEAttribute(configEClass, CONFIG__REMOVE_UNMAPPED_ANNOTATIONS);
+		createEAttribute(configEClass, CONFIG__ALWAYS_ACCEPT_SUGGESTED_MAPPINGS);
 
 		mappingParametersEClass = createEClass(MAPPING_PARAMETERS);
 		createEReference(mappingParametersEClass, MAPPING_PARAMETERS__URI_MAPPINGS);
@@ -348,6 +360,8 @@ public class RSAToPapyrusParametersPackageImpl extends EPackageImpl implements R
 		initEAttribute(getConfig_RemoveUnmappedProfilesAndStereotypes(), theTypesPackage.getBoolean(), "removeUnmappedProfilesAndStereotypes", "true", 1, 1, Config.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE,
 				!IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getConfig_RemoveUnmappedAnnotations(), theTypesPackage.getBoolean(), "removeUnmappedAnnotations", "false", 1, 1, Config.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getConfig_AlwaysAcceptSuggestedMappings(), theTypesPackage.getBoolean(), "alwaysAcceptSuggestedMappings", "false", 1, 1, Config.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
+				!IS_ORDERED);
 
 		initEClass(mappingParametersEClass, MappingParameters.class, "MappingParameters", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMappingParameters_UriMappings(), this.getURIMapping(), null, "uriMappings", null, 0, -1, MappingParameters.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,

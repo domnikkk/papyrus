@@ -70,6 +70,7 @@
       <properties xmi:id="_zJ4D7nZLEeSwiJkQAQl2Jg" name="convertOpaqueExpressionToLiteralString" type="Boolean" description="If true, the Opaque Expressions with a single body and no language (or a single empty language) will be converted to LiteralString"/>
       <properties xmi:id="_zJ4D73ZLEeSwiJkQAQl2Jg" name="removeUnmappedProfilesAndStereotypes" type="Boolean" description="If true, the unsupported RSA profiles and stereotypes will be deleted. This includes the Deployment profile and a few stereotypes"/>
       <properties xmi:id="_zJ4D8HZLEeSwiJkQAQl2Jg" name="removeUnmappedAnnotations" type="Boolean" description="If true, the unmapped RSA EAnnotations will be deleted from the imported model"/>
+      <properties xmi:id="_jJtVUHcbEeSwiJkQAQl2Jg" name="alwaysAcceptSuggestedMappings" type="Boolean" description="If true, the Transformation will not open a dialog to ask user-confirmation for the dependency mappings. The tool will automatically keep going by &quot;guessing&quot; the proper mapping"/>
     </elements>
     <elements xmi:id="_zJ4D8XZLEeSwiJkQAQl2Jg" name="MappingParameters">
       <properties xmi:id="_zJ4D8nZLEeSwiJkQAQl2Jg" name="uriMappings" label="URI Mappings" type="Reference" multiplicity="-1" description="When models/libraries have been migrated separately, maps the libraries imported from RSA to their Papyrus equivalent"/>

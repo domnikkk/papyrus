@@ -43,6 +43,7 @@
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute RSAToPapyrusParameters.ecore#//Config/convertOpaqueExpressionToLiteralString"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute RSAToPapyrusParameters.ecore#//Config/removeUnmappedProfilesAndStereotypes"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute RSAToPapyrusParameters.ecore#//Config/removeUnmappedAnnotations"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute RSAToPapyrusParameters.ecore#//Config/alwaysAcceptSuggestedMappings"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="RSAToPapyrusParameters.ecore#//MappingParameters">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
