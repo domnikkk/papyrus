@@ -88,4 +88,63 @@ import xpt.Externalizer
 			}	
 		}
 	'''
+	
+	override createEditingDomain(GenDiagram it) '''
+		«generatedMemberComment»
+		private org.eclipse.emf.transaction.TransactionalEditingDomain createEditingDomain() {
+			org.eclipse.emf.transaction.TransactionalEditingDomain editingDomain = org.eclipse.gmf.runtime.diagram.core.DiagramEditingDomainFactory.getInstance().createEditingDomain();
+			editingDomain.setID("«editingDomainID»"); «nonNLS(1)»
+			final org.eclipse.emf.transaction.NotificationFilter diagramResourceModifiedFilter = org.eclipse.emf.transaction.NotificationFilter.createNotifierFilter(editingDomain.getResourceSet()).and(org.eclipse.emf.transaction.NotificationFilter.createEventTypeFilter(org.eclipse.emf.common.notify.Notification.ADD)).and(org.eclipse.emf.transaction.NotificationFilter.createFeatureFilter(org.eclipse.emf.ecore.resource.ResourceSet.class, org.eclipse.emf.ecore.resource.ResourceSet.RESOURCE_SET__RESOURCES));
+			editingDomain.getResourceSet().eAdapters().add(new org.eclipse.emf.common.notify.Adapter() {
+		
+				private org.eclipse.emf.common.notify.Notifier myTarger;
+		
+				public org.eclipse.emf.common.notify.Notifier getTarget() {
+					return myTarger;
+				}
+		
+				public boolean isAdapterForType(Object type) {
+					return false;
+				}
+		
+				public void notifyChanged(org.eclipse.emf.common.notify.Notification notification) {
+					if (diagramResourceModifiedFilter.matches(notification)) {
+						Object value = notification.getNewValue();
+						if (value instanceof org.eclipse.emf.ecore.resource.Resource) {
+							((org.eclipse.emf.ecore.resource.Resource) value).setTrackingModification(true);
+						}
+					}
+				}
+		
+				public void setTarget(org.eclipse.emf.common.notify.Notifier newTarget) {
+					myTarger = newTarget;
+				}
+					
+			});	
+			
+			return editingDomain;
+		}
+	'''
+	
+	override computeSchedulingRule(GenDiagram it) '''
+		«generatedMemberComment»
+		private org.eclipse.core.runtime.jobs.ISchedulingRule computeSchedulingRule(org.eclipse.core.resources.IResource toCreateOrModify) {
+			if (toCreateOrModify.exists()) {
+				return org.eclipse.core.resources.ResourcesPlugin.getWorkspace().getRuleFactory().modifyRule(toCreateOrModify);
+			}
+			org.eclipse.core.resources.IResource parent = toCreateOrModify;
+			do {«/*FIXME [MG] the bug is closed long ago, still need? */»
+				/*
+				 * XXX This is a workaround for
+				 * https://bugs.eclipse.org/bugs/show_bug.cgi?id=67601
+				 * IResourceRuleFactory.createRule should iterate the hierarchy
+				 * itself.
+				 */
+				toCreateOrModify = parent;
+				parent = toCreateOrModify.getParent();
+			} while (parent != null && !parent.exists());
+		
+			return org.eclipse.core.resources.ResourcesPlugin.getWorkspace().getRuleFactory().createRule(toCreateOrModify);
+		}
+	'''
 }

@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2013 Atos.
+ * Copyright (c) 2013, 2014 Atos, CEA LIST and etc..
  *
  *
  * All rights reserved. This program and the accompanying materials
@@ -9,6 +9,7 @@
  *
  * Contributors:
  *  Arthur Daussy (Atos) arthur.daussy@atos.net - Initial API and implementation
+ *  Gabriel Pascual (ALL4TEC) gabriel.pascual@all4tec.net -  Bug 436947
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.controlmode.profile;
@@ -40,6 +41,16 @@ import org.eclipse.uml2.uml.Package;
  */
 public class UMLProfileControlParticipant implements IControlCommandParticipant, IUncontrolCommandParticipant {
 
+
+	/** The Constant PRE_UNCONTROL_COMMAND_LABEL. */
+	private static final String PRE_UNCONTROL_COMMAND_LABEL = Messages.UMLProfileControlParticipant_Pre_Uncontrol_Command_Label;
+
+	/** The Constant POST_UNCONTROL_COMMAND_LABEL. */
+	private static final String POST_UNCONTROL_COMMAND_LABEL = Messages.UMLProfileControlParticipant_Post_Uncontrol_Command_Label;
+
+	/** The Constant POST_CONTROL_COMMAND_LABEL. */
+	private static final String POST_CONTROL_COMMAND_LABEL = Messages.UMLProfileControlParticipant_Post_Control_Command_Label;
+
 	/**
 	 * Return the command to copy profile application
 	 *
@@ -51,11 +62,11 @@ public class UMLProfileControlParticipant implements IControlCommandParticipant,
 	}
 
 	public String getID() {
-		return "org.eclipse.papyrus.uml.controlmode.profile.UMLProfileControlParticipant";
+		return "org.eclipse.papyrus.uml.controlmode.profile.UMLProfileControlParticipant"; //$NON-NLS-1$
 	}
 
 	private String getPreControlCommandMessage(Element objectToControl) {
-		return "This element is not a package. Due to UML restrictions, the newly created model fragment is not allowed to be modified in the standalone mode";//
+		return Messages.UMLProfileControlParticipant_controlmode_dialog_message;
 	}
 
 	/**
@@ -69,7 +80,7 @@ public class UMLProfileControlParticipant implements IControlCommandParticipant,
 	}
 
 	public ICommand getPostControlCommand(ControlModeRequest request) {
-		CompositeCommand cc = new CompositeCommand("Composite command for control command [UML Part]");
+		CompositeCommand cc = new CompositeCommand(POST_CONTROL_COMMAND_LABEL);
 		// Move stereotype application
 		if (request.getTargetObject() instanceof Package) {
 			cc.compose(getMoveProfileAppliationCommand(request));
@@ -84,7 +95,7 @@ public class UMLProfileControlParticipant implements IControlCommandParticipant,
 	}
 
 	public ICommand getPostUncontrolCommand(ControlModeRequest request) {
-		CompositeCommand cc = new CompositeCommand("Composite command for uncontrol command [UML Part]");
+		CompositeCommand cc = new CompositeCommand(POST_UNCONTROL_COMMAND_LABEL);
 
 		if (cc.isEmpty()) {
 			return null;
@@ -115,13 +126,13 @@ public class UMLProfileControlParticipant implements IControlCommandParticipant,
 	public ICommand getPreControlCommand(ControlModeRequest request) {
 		Element elem = (Element) request.getTargetObject();
 		if (request.isUIAction() && !(elem instanceof org.eclipse.uml2.uml.Package)) {
-			return new AskUserCommand(request.getEditingDomain(), getPreControlCommandMessage(elem), getPreControlCommandDialogTitle(elem), true, "org.eclipse.papyrus.controlmode.umlprofiles.participants.UMLProfileParticipant.openstandalonemodeldialog");
+			return new AskUserCommand(request.getEditingDomain(), getPreControlCommandMessage(elem), getPreControlCommandDialogTitle(elem), true, "org.eclipse.papyrus.controlmode.umlprofiles.participants.UMLProfileParticipant.openstandalonemodeldialog"); //$NON-NLS-1$
 		}
 		return null;
 	}
 
 	public ICommand getPreUncontrolCommand(ControlModeRequest request) {
-		CompositeCommand cc = new CompositeCommand("Composite command for pre uncontrol command [UML Part]");
+		CompositeCommand cc = new CompositeCommand(PRE_UNCONTROL_COMMAND_LABEL);
 		// Copy profile application
 		if (request.getTargetObject() instanceof Package) {
 			cc.compose(getRemoveProfileApplication(request));
@@ -135,7 +146,7 @@ public class UMLProfileControlParticipant implements IControlCommandParticipant,
 	}
 
 	protected String getPreControlCommandDialogTitle(Element elem) {
-		return "Warning: The element is not a Package";
+		return Messages.UMLProfileControlParticipant_controlmode_dialog_title;
 	}
 
 	public boolean provideControlCommand(ControlModeRequest request) {
