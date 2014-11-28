@@ -43,6 +43,16 @@ public interface RSAToPapyrusParametersFactory extends EFactory {
 	Config createConfig();
 
 	/**
+	 * Returns a new object of class '<em>Mapping Parameters</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return a new object of class '<em>Mapping Parameters</em>'.
+	 * @generated
+	 */
+	MappingParameters createMappingParameters();
+
+	/**
 	 * Returns a new object of class '<em>URI Mapping</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

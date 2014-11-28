@@ -3,6 +3,22 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="RSAToPapyrusParameters" nsURI="http:///RSAToPapyrusParameters.ecore"
     nsPrefix="RSAToPapyrusParameters">
   <eClassifiers xsi:type="ecore:EClass" name="Config">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mappingParameters" ordered="false"
+        lowerBound="1" eType="#//MappingParameters" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxThreads" ordered="false"
+        unique="false" lowerBound="1" eType="ecore:EDataType ../../../org.eclipse.uml2.types/model/Types.ecore#//Integer"
+        defaultValueLiteral="2">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The maximum number of threads to use during the migration.&#xD;&#xA;More threads will provide faster results, at the cost of memory consumption."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="removeUnmappedDiagrams"
+        ordered="false" unique="false" lowerBound="1" eType="ecore:EDataType ../../../org.eclipse.uml2.types/model/Types.ecore#//Boolean"
+        defaultValueLiteral="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="If true, the diagrams which were not migrated will be removed. Otherwise, only the successfully imported diagrams will be removed"/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="convertOpaqueExpressionToLiteralString"
         ordered="false" unique="false" lowerBound="1" eType="ecore:EDataType ../../../org.eclipse.uml2.types/model/Types.ecore#//Boolean"
         defaultValueLiteral="true">
@@ -24,20 +40,8 @@
         <details key="documentation" value="If true, the unmapped RSA EAnnotations will be deleted from the imported model"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="removeUnmappedDiagrams"
-        ordered="false" unique="false" lowerBound="1" eType="ecore:EDataType ../../../org.eclipse.uml2.types/model/Types.ecore#//Boolean"
-        defaultValueLiteral="false">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="If true, the diagrams which were not migrated will be removed. Otherwise, only the successfully imported diagrams will be removed"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxThreads" ordered="false"
-        unique="false" lowerBound="1" eType="ecore:EDataType ../../../org.eclipse.uml2.types/model/Types.ecore#//Integer"
-        defaultValueLiteral="2">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="The maximum number of threads to use during the migration.&#xD;&#xA;More threads will provide faster results, at the cost of memory consumption."/>
-      </eAnnotations>
-    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MappingParameters">
     <eStructuralFeatures xsi:type="ecore:EReference" name="uriMappings" ordered="false"
         upperBound="-1" eType="#//URIMapping" containment="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">

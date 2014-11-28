@@ -10,8 +10,8 @@ Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.provider
 Require-Bundle: org.eclipse.core.runtime,
- org.eclipse.emf.edit,
- org.eclipse.uml2.types,
- org.eclipse.uml2.common.edit,
- org.eclipse.papyrus.migration.rsa;bundle-version="1.1.0"
+ org.eclipse.emf.edit;visibility:=reexport,
+ org.eclipse.uml2.types;visibility:=reexport,
+ org.eclipse.uml2.common.edit;visibility:=reexport,
+ org.eclipse.papyrus.migration.rsa;bundle-version="1.1.0";visibility:=reexport
 Bundle-ActivationPolicy: lazy
