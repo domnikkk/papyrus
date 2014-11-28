@@ -12,11 +12,15 @@
 package org.eclipse.papyrus.migration.rsa.transformation;
 
 import java.io.IOException;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
+import java.util.concurrent.atomic.AtomicReference;
 
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
@@ -227,12 +231,14 @@ public class ImportTransformationLauncher {
 					}
 				}
 
-				if (!config.getMappingParameters().getUriMappings().isEmpty()) {
+				filterKnownMappings(config.getMappingParameters(), urisToReplace);
 
-					confirmURIMappings(config.getMappingParameters());
+				if (!config.getMappingParameters().getUriMappings().isEmpty()) {
+					MappingParameters parameters = confirmURIMappings(config.getMappingParameters());
+					config.setMappingParameters(parameters);
 
 					// Include the user-defined URI mappings
-					for (URIMapping mapping : config.getMappingParameters().getUriMappings()) {
+					for (URIMapping mapping : parameters.getUriMappings()) {
 
 						String source = mapping.getSourceURI();
 						String target = mapping.getTargetURI();
@@ -242,11 +248,14 @@ public class ImportTransformationLauncher {
 							URI sourceURI = URI.createURI(mapping.getSourceURI());
 							URI targetURI = URI.createURI(mapping.getTargetURI());
 
+							if (urisToReplace.containsKey(sourceURI)) {
+								continue;
+							}
+
 							urisToReplace.put(sourceURI, targetURI);
 						}
 					}
 				}
-
 
 
 				for (ImportTransformation transformation : transformations) {
@@ -391,23 +400,54 @@ public class ImportTransformationLauncher {
 		importDependencies.schedule();
 	}
 
-	protected void confirmURIMappings(final MappingParameters mappingParameters) {
+	/**
+	 * Remove automatic mappings (When multiple files are imported simultaneously) and duplicates
+	 *
+	 * @param mappingParameters
+	 *            All unresolved proxies
+	 * @param currentMappings
+	 *            The map of known (automatic) mappings
+	 */
+	protected void filterKnownMappings(final MappingParameters mappingParameters, final Map<URI, URI> currentMappings) {
+
+		Set<URI> userMappings = new HashSet<URI>();
+
+		Iterator<URIMapping> mappings = mappingParameters.getUriMappings().iterator();
+		while (mappings.hasNext()) {
+			URIMapping mapping = mappings.next();
+			URI sourceURI = URI.createURI(mapping.getSourceURI());
+			if (currentMappings.containsKey(sourceURI) || userMappings.contains(sourceURI)) {
+				mappings.remove();
+			} else {
+				userMappings.add(sourceURI);
+			}
+		}
+
+	}
+
+	protected MappingParameters confirmURIMappings(final MappingParameters mappingParameters) {
+		final AtomicReference<MappingParameters> newParameters = new AtomicReference<MappingParameters>(mappingParameters);
+
 		if (baseControl != null && !baseControl.isDisposed()) {
 			baseControl.getDisplay().syncExec(new Runnable() {
 				@Override
 				public void run() {
-					openMappingsDialog(mappingParameters);
+					newParameters.set(openMappingsDialog(mappingParameters));
 				}
 			});
 		}
+
+		return newParameters.get();
 	}
 
-	protected void openMappingsDialog(final MappingParameters mappingParameters) {
+	protected MappingParameters openMappingsDialog(final MappingParameters mappingParameters) {
 		final Shell shell = baseControl.getShell();
 
 		SelectionDialog dialog = new SelectionDialog(shell) {
 
 			DisplayEngine engine;
+
+			MappingParameters result;
 
 			@Override
 			protected Control createDialogArea(Composite parent) {
@@ -421,8 +461,18 @@ public class ImportTransformationLauncher {
 				self.setLayout(new FillLayout());
 				self.setLayoutData(new GridData(GridData.FILL_BOTH));
 
-				engine = PropertiesDisplayHelper.display(mappingParameters, self);
+				// Do a copy: if Cancel is pressed, it can be discarded
+				result = EcoreUtil.copy(mappingParameters);
+				setResult(Collections.singletonList(mappingParameters)); // Default result (If Cancel is pressed)
+
+				engine = PropertiesDisplayHelper.display(result, self);
 				return self;
+			}
+
+			@Override
+			protected void okPressed() {
+				setResult(Collections.singletonList(result)); // Set the new result
+				super.okPressed();
 			}
 
 			@Override
@@ -435,5 +485,6 @@ public class ImportTransformationLauncher {
 
 		dialog.setTitle("Some dependencies are missing");
 		dialog.open();
+		return (MappingParameters) dialog.getResult()[0];
 	}
 }
