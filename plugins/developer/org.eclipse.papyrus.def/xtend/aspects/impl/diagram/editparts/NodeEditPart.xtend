@@ -214,7 +214,7 @@ def genSpecificLocator(ToolEntry it, GenChildSideAffixedNode child) ''''''
 def genSpecificLocator(GenNavigatorChildReference it,GenChildSideAffixedNode child)''''''
 
 def genSpecificLocator(SpecificLocator it, GenChildSideAffixedNode child)'''
-//Papyrus Gencode :«it.comment»
+// Papyrus Gencode :«it.comment»
 	if (childEditPart instanceof «child.getEditPartQualifiedClassName()») {
 			org.eclipse.gmf.runtime.diagram.ui.figures.IBorderItemLocator locator = new «it.classpath»(getMainFigure(), org.eclipse.draw2d.PositionConstants.«child.preferredSideName»);
 			getBorderedFigure().getBorderItemContainer().add(((«child.getEditPartQualifiedClassName()») childEditPart).getFigure(), locator);
