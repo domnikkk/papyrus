@@ -509,9 +509,7 @@ public class ImportTransformation {
 
 	protected void handleDanglingURIs(Collection<Resource> resourcesToSave) {
 		ConfigHelper helper = new ConfigHelper(parameters);
-		for (Resource resource : resourcesToSave) {
-			helper.computeURIMappings(resource);
-		}
+		helper.computeURIMappings(resourcesToSave);
 	}
 
 	protected void unloadResourceSet(ResourceSet resourceSet) {
