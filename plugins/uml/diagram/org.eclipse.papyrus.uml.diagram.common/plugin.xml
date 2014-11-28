@@ -218,16 +218,6 @@
          realization="org.eclipse.papyrus.uml.diagram.common.providers.DefaultPasteCommandProvider">
    </PasteCommandProvider>
 </extension>
-<extension
-      id="update-cmd-binding"
-      point="org.eclipse.ui.bindings">
-   <key
-         commandId="org.eclipse.papyrus.uml.diagram.common.commands.DeleteFromDiagram"
-         contextId="org.eclipse.gmf.runtime.diagram.ui.diagramContext"
-         schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
-         sequence="M2+DEL">
-   </key>
-</extension>
    <extension
          point="org.eclipse.papyrus.infra.core.papyrusDiagram">
       <diagramCategory
@@ -285,7 +275,7 @@
              value="true">
        </test>
     </with>
-	</definition>	
+	</definition>
 </extension>
 
 <!-- The location is based on menu id defined in GMF runtime 
@@ -296,59 +286,7 @@
 	<menuContribution locationURI="popup:org.eclipse.gmf.runtime.diagram.ui.DiagramEditorContextMenu?endof=editMenu"
 		allPopups="false">
 
-  <command
-        commandId="org.eclipse.ui.edit.delete"
-        disabledIcon="IMG_TOOL_DELETE_DISABLED"
-        icon="IMG_TOOL_DELETE"
-        label="Delete Selected Element"
-        style="push">
-     <visibleWhen>
-        <and>
-           <with
-                 variable="activeEditorId">
-              <equals
-                    value="org.eclipse.papyrus.infra.core.papyrusEditor">
-              </equals>
-           </with>
-           <with
-                 variable="selection">
-              <iterate
-                    ifEmpty="false"
-                    operator="and">
-                 <instanceof
-                       value="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
-                 </instanceof>
-              </iterate>
-           </with>
-        </and>
-     </visibleWhen>
-  </command>
 
-		<command commandId="org.eclipse.papyrus.uml.diagram.common.commands.DeleteFromDiagram"
-			icon="icons/obj16/eraser.gif"
-			label="Delete From diagram"
-			style="push">
-     <visibleWhen>
-        <and>
-           <with
-                 variable="activeEditorId">
-              <equals
-                    value="org.eclipse.papyrus.infra.core.papyrusEditor">
-              </equals>
-           </with>
-           <with
-                 variable="selection">
-              <iterate
-                    ifEmpty="false"
-                    operator="and">
-                 <instanceof
-                       value="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
-                 </instanceof>
-              </iterate>
-           </with>
-        </and>
-     </visibleWhen>
-		</command>
 		
   <separator
         name="org.eclipse.papyrus.uml.diagram.common.commands.LoadSeparator">
@@ -424,12 +362,6 @@
 <extension point="org.eclipse.ui.commands">
 
 	<command
-       categoryId="org.eclipse.papyrus.editor.category"
-       description="Delete the selection from diagram"
-       id="org.eclipse.papyrus.uml.diagram.common.commands.DeleteFromDiagram"
-       name="Delete From Diagram Command">
-	</command>
-	<command
 		categoryId="org.eclipse.papyrus.editor.category"
 		defaultHandler="org.eclipse.papyrus.uml.diagram.common.handlers.LoadHandler"
 		description="Load the corresponding submodel"
@@ -450,10 +382,6 @@
    <sourceProvider
          provider="org.eclipse.papyrus.uml.diagram.common.providers.ActionStateSourceProvider">
       <variable
-            name="deleteInDiagram"
-            priorityLevel="workbench">
-      </variable>
-      <variable
             name="renameNamedElement"
             priorityLevel="workbench">
       </variable>
@@ -461,62 +389,6 @@
 </extension>
 <extension
       point="org.eclipse.ui.handlers">
-   <handler
-         class="org.eclipse.papyrus.uml.diagram.common.handlers.DeleteFromModelCommandHandler"
-         commandId="org.eclipse.ui.edit.delete">
-      <activeWhen>
-         <and>
-            <with
-                  variable="activeEditorId">
-               <equals
-                     value="org.eclipse.papyrus.infra.core.papyrusEditor">
-               </equals>
-            </with>
-            <with
-                  variable="selection">
-               <iterate
-                     ifEmpty="false"
-                     operator="and">
-                  <instanceof
-                        value="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
-                  </instanceof>
-                  <test
-                        property="org.eclipse.papyrus.uml.diagram.common.isSemanticDeletion"
-                        value="true">
-                  </test>
-               </iterate>
-            </with>
-         </and>
-      </activeWhen>
-   </handler>
-   <handler
-         class="org.eclipse.papyrus.uml.diagram.common.handlers.DeleteFromDiagramCommandHandler"
-         commandId="org.eclipse.ui.edit.delete">
-      <activeWhen>
-         <and>
-            <with
-                  variable="activeEditorId">
-               <equals
-                     value="org.eclipse.papyrus.infra.core.papyrusEditor">
-               </equals>
-            </with>
-            <with
-                  variable="selection">
-               <iterate
-                     ifEmpty="false"
-                     operator="and">
-                  <instanceof
-                        value="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
-                  </instanceof>
-                  <test
-                        property="org.eclipse.papyrus.uml.diagram.common.isSemanticDeletion"
-                        value="false">
-                  </test>
-               </iterate>
-            </with>
-         </and>
-      </activeWhen>
-   </handler>
    <handler
          class="org.eclipse.papyrus.uml.diagram.common.handlers.RenamedElementHandler"
          commandId="org.eclipse.ui.edit.rename">
@@ -527,34 +399,6 @@
                <equals
                      value="enabled">
                </equals>
-            </with>
-         </and>
-      </activeWhen>
-   </handler>
-   <handler
-         class="org.eclipse.papyrus.uml.diagram.common.handlers.DeleteFromDiagramCommandHandler"
-         commandId="org.eclipse.papyrus.uml.diagram.common.commands.DeleteFromDiagram">
-      <activeWhen>
-         <and>
-            <with
-                  variable="activeEditorId">
-               <equals
-                     value="org.eclipse.papyrus.infra.core.papyrusEditor">
-               </equals>
-            </with>
-            <with
-                  variable="selection">
-               <iterate
-                     ifEmpty="false"
-                     operator="and">
-                  <test
-                        property="org.eclipse.papyrus.uml.diagram.common.isSemanticDeletion"
-                        value="true">
-                  </test>
-                  <instanceof
-                        value="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
-                  </instanceof>
-               </iterate>
             </with>
          </and>
       </activeWhen>
@@ -694,13 +538,13 @@
    </initializer>
 </extension>
 <extension
-      point="org.eclipse.core.expressions.propertyTesters">
-   <propertyTester
-         class="org.eclipse.papyrus.uml.diagram.common.propertytester.DeleteActionPropertyTester"
-         id="org.eclipse.papyrus.uml.diagram.common.deleteActionTester"
-         namespace="org.eclipse.papyrus.uml.diagram.common"
-         properties="isSemanticDeletion"
-         type="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
-   </propertyTester>
-</extension>
+         point="org.eclipse.core.expressions.propertyTesters">
+      <propertyTester
+            class="org.eclipse.papyrus.uml.diagram.common.propertytester.DeleteActionPropertyTester"
+            id="org.eclipse.papyrus.uml.diagram.common.propertytester.deleteActionTester"
+            namespace="org.eclipse.papyrus.uml.diagram.common"
+            properties="isSemanticDeletion"
+            type="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+      </propertyTester>
+   </extension>
 </plugin>
