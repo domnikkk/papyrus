@@ -14,7 +14,6 @@ package org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.provider;
 
 import java.util.Collection;
 import java.util.List;
-
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
@@ -37,7 +36,6 @@ import org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.RSAToPapyrusPara
  * This is the item provider adapter for a {@link org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.Config} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- *
  * @generated
  */
 public class ConfigItemProvider
@@ -52,7 +50,6 @@ public class ConfigItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public ConfigItemProvider(AdapterFactory adapterFactory) {
@@ -63,7 +60,6 @@ public class ConfigItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -71,143 +67,138 @@ public class ConfigItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addMaxThreadsPropertyDescriptor(object);
+			addRemoveUnmappedDiagramsPropertyDescriptor(object);
 			addConvertOpaqueExpressionToLiteralStringPropertyDescriptor(object);
 			addRemoveUnmappedProfilesAndStereotypesPropertyDescriptor(object);
 			addRemoveUnmappedAnnotationsPropertyDescriptor(object);
-			addRemoveUnmappedDiagramsPropertyDescriptor(object);
-			addMaxThreadsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Convert Opaque Expression To Literal String feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	protected void addConvertOpaqueExpressionToLiteralStringPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-				(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(),
-						getString("_UI_Config_convertOpaqueExpressionToLiteralString_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Config_convertOpaqueExpressionToLiteralString_feature", "_UI_Config_type"),
-						RSAToPapyrusParametersPackage.Literals.CONFIG__CONVERT_OPAQUE_EXPRESSION_TO_LITERAL_STRING,
-						true,
-						false,
-						false,
-						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-						null,
-						null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Remove Unmapped Profiles And Stereotypes feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	protected void addRemoveUnmappedProfilesAndStereotypesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-				(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(),
-						getString("_UI_Config_removeUnmappedProfilesAndStereotypes_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Config_removeUnmappedProfilesAndStereotypes_feature", "_UI_Config_type"),
-						RSAToPapyrusParametersPackage.Literals.CONFIG__REMOVE_UNMAPPED_PROFILES_AND_STEREOTYPES,
-						true,
-						false,
-						false,
-						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-						null,
-						null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Remove Unmapped Annotations feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	protected void addRemoveUnmappedAnnotationsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-				(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(),
-						getString("_UI_Config_removeUnmappedAnnotations_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Config_removeUnmappedAnnotations_feature", "_UI_Config_type"),
-						RSAToPapyrusParametersPackage.Literals.CONFIG__REMOVE_UNMAPPED_ANNOTATIONS,
-						true,
-						false,
-						false,
-						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-						null,
-						null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Remove Unmapped Diagrams feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	protected void addRemoveUnmappedDiagramsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-				(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(),
-						getString("_UI_Config_removeUnmappedDiagrams_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Config_removeUnmappedDiagrams_feature", "_UI_Config_type"),
-						RSAToPapyrusParametersPackage.Literals.CONFIG__REMOVE_UNMAPPED_DIAGRAMS,
-						true,
-						false,
-						false,
-						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-						null,
-						null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Max Threads feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected void addMaxThreadsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-				(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(),
-						getString("_UI_Config_maxThreads_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Config_maxThreads_feature", "_UI_Config_type"),
-						RSAToPapyrusParametersPackage.Literals.CONFIG__MAX_THREADS,
-						true,
-						false,
-						false,
-						ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-						null,
-						null));
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Config_maxThreads_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Config_maxThreads_feature", "_UI_Config_type"),
+				 RSAToPapyrusParametersPackage.Literals.CONFIG__MAX_THREADS,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * This adds a property descriptor for the Remove Unmapped Diagrams feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRemoveUnmappedDiagramsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Config_removeUnmappedDiagrams_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Config_removeUnmappedDiagrams_feature", "_UI_Config_type"),
+				 RSAToPapyrusParametersPackage.Literals.CONFIG__REMOVE_UNMAPPED_DIAGRAMS,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Convert Opaque Expression To Literal String feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addConvertOpaqueExpressionToLiteralStringPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Config_convertOpaqueExpressionToLiteralString_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Config_convertOpaqueExpressionToLiteralString_feature", "_UI_Config_type"),
+				 RSAToPapyrusParametersPackage.Literals.CONFIG__CONVERT_OPAQUE_EXPRESSION_TO_LITERAL_STRING,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Remove Unmapped Profiles And Stereotypes feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRemoveUnmappedProfilesAndStereotypesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Config_removeUnmappedProfilesAndStereotypes_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Config_removeUnmappedProfilesAndStereotypes_feature", "_UI_Config_type"),
+				 RSAToPapyrusParametersPackage.Literals.CONFIG__REMOVE_UNMAPPED_PROFILES_AND_STEREOTYPES,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Remove Unmapped Annotations feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRemoveUnmappedAnnotationsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Config_removeUnmappedAnnotations_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Config_removeUnmappedAnnotations_feature", "_UI_Config_type"),
+				 RSAToPapyrusParametersPackage.Literals.CONFIG__REMOVE_UNMAPPED_ANNOTATIONS,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(RSAToPapyrusParametersPackage.Literals.CONFIG__URI_MAPPINGS);
+			childrenFeatures.add(RSAToPapyrusParametersPackage.Literals.CONFIG__MAPPING_PARAMETERS);
 		}
 		return childrenFeatures;
 	}
@@ -215,7 +206,6 @@ public class ConfigItemProvider
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -230,7 +220,6 @@ public class ConfigItemProvider
 	 * This returns Config.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -242,13 +231,12 @@ public class ConfigItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		Config config = (Config) object;
-		return getString("_UI_Config_type") + " " + config.isConvertOpaqueExpressionToLiteralString();
+		Config config = (Config)object;
+		return getString("_UI_Config_type") + " " + config.getMaxThreads();
 	}
 
 
@@ -257,7 +245,6 @@ public class ConfigItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -265,16 +252,16 @@ public class ConfigItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Config.class)) {
-		case RSAToPapyrusParametersPackage.CONFIG__CONVERT_OPAQUE_EXPRESSION_TO_LITERAL_STRING:
-		case RSAToPapyrusParametersPackage.CONFIG__REMOVE_UNMAPPED_PROFILES_AND_STEREOTYPES:
-		case RSAToPapyrusParametersPackage.CONFIG__REMOVE_UNMAPPED_ANNOTATIONS:
-		case RSAToPapyrusParametersPackage.CONFIG__REMOVE_UNMAPPED_DIAGRAMS:
-		case RSAToPapyrusParametersPackage.CONFIG__MAX_THREADS:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-			return;
-		case RSAToPapyrusParametersPackage.CONFIG__URI_MAPPINGS:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-			return;
+			case RSAToPapyrusParametersPackage.CONFIG__MAX_THREADS:
+			case RSAToPapyrusParametersPackage.CONFIG__REMOVE_UNMAPPED_DIAGRAMS:
+			case RSAToPapyrusParametersPackage.CONFIG__CONVERT_OPAQUE_EXPRESSION_TO_LITERAL_STRING:
+			case RSAToPapyrusParametersPackage.CONFIG__REMOVE_UNMAPPED_PROFILES_AND_STEREOTYPES:
+			case RSAToPapyrusParametersPackage.CONFIG__REMOVE_UNMAPPED_ANNOTATIONS:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+			case RSAToPapyrusParametersPackage.CONFIG__MAPPING_PARAMETERS:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+				return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -284,7 +271,6 @@ public class ConfigItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -292,16 +278,15 @@ public class ConfigItemProvider
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
 		newChildDescriptors.add
-				(createChildParameter
-				(RSAToPapyrusParametersPackage.Literals.CONFIG__URI_MAPPINGS,
-						RSAToPapyrusParametersFactory.eINSTANCE.createURIMapping()));
+			(createChildParameter
+				(RSAToPapyrusParametersPackage.Literals.CONFIG__MAPPING_PARAMETERS,
+				 RSAToPapyrusParametersFactory.eINSTANCE.createMappingParameters()));
 	}
 
 	/**
 	 * Return the resource locator for this item provider's resources.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override

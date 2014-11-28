@@ -412,8 +412,18 @@ public class ImportTransformation {
 			uriMappings.put(sourceURI, targetURI);
 
 			umlResource = createUMLResource(resourceSet, targetURI);
+
 			List<EObject> outUMLObjects = getInOutUMLModel().getContents();
+
+			for (EObject object : outUMLObjects) {
+				System.out.println(EcoreUtil.getURI(object));
+			}
+
 			umlResource.getContents().addAll(outUMLObjects);
+
+			for (EObject object : umlResource.getContents()) {
+				System.out.println(EcoreUtil.getURI(object));
+			}
 
 			GMFResource notationResource = new GMFResource(notationModelURI); // GMF Resource content type?
 			resourceSet.getResources().add(notationResource);
@@ -472,6 +482,8 @@ public class ImportTransformation {
 				}
 			}
 
+			handleDanglingURIs(resourcesToSave);
+
 			for (Resource resource : resourcesToSave) {
 				try {
 					resource.save(null);
@@ -501,6 +513,13 @@ public class ImportTransformation {
 
 		monitor.done();
 		return generationStatus;
+	}
+
+	protected void handleDanglingURIs(Collection<Resource> resourcesToSave) {
+		ConfigHelper helper = new ConfigHelper(parameters);
+		for (Resource resource : resourcesToSave) {
+			helper.computeURIMappings(resource);
+		}
 	}
 
 	protected void unloadResourceSet(ResourceSet resourceSet) {
@@ -733,7 +752,10 @@ public class ImportTransformation {
 	}
 
 	protected Resource createUMLResource(ResourceSet resourceSet, URI umlModelURI) {
-		return resourceSet.createResource(umlModelURI, UMLResource.UML_CONTENT_TYPE_IDENTIFIER);
+		// Use the same resource to ensure that XMI IDs are maintained
+		Resource resource = resourceSet.getResource(sourceURI, false);
+		resource.setURI(umlModelURI);
+		return resource;
 	}
 
 	protected ModelExtent getInConfig() {

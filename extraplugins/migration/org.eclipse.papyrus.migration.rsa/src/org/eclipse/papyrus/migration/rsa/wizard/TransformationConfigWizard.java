@@ -74,7 +74,8 @@ public class TransformationConfigWizard extends Wizard {
 			urisToImport.add(uri);
 		}
 
-		ImportTransformationLauncher launcher = new ImportTransformationLauncher(config);
+		// The wizard's Shell will be disposed because the transformation is asynchronous. Use the Shell's parent instead
+		ImportTransformationLauncher launcher = new ImportTransformationLauncher(config, this.getShell().getParent());
 		launcher.run(urisToImport);
 	}
 

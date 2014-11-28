@@ -39,7 +39,6 @@ import org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.util.RSAToPapyru
  * Note that most of the adapters are shared among multiple instances.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- *
  * @generated
  */
 public class RSAToPapyrusParametersItemProviderAdapterFactory extends RSAToPapyrusParametersAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
@@ -47,7 +46,6 @@ public class RSAToPapyrusParametersItemProviderAdapterFactory extends RSAToPapyr
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected ComposedAdapterFactory parentAdapterFactory;
@@ -56,7 +54,6 @@ public class RSAToPapyrusParametersItemProviderAdapterFactory extends RSAToPapyr
 	 * This is used to implement {@link org.eclipse.emf.edit.provider.IChangeNotifier}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected IChangeNotifier changeNotifier = new ChangeNotifier();
@@ -65,7 +62,6 @@ public class RSAToPapyrusParametersItemProviderAdapterFactory extends RSAToPapyr
 	 * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected Collection<Object> supportedTypes = new ArrayList<Object>();
@@ -74,7 +70,6 @@ public class RSAToPapyrusParametersItemProviderAdapterFactory extends RSAToPapyr
 	 * This constructs an instance.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public RSAToPapyrusParametersItemProviderAdapterFactory() {
@@ -89,7 +84,6 @@ public class RSAToPapyrusParametersItemProviderAdapterFactory extends RSAToPapyr
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.Config} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected ConfigItemProvider configItemProvider;
@@ -98,7 +92,6 @@ public class RSAToPapyrusParametersItemProviderAdapterFactory extends RSAToPapyr
 	 * This creates an adapter for a {@link org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.Config}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -111,10 +104,32 @@ public class RSAToPapyrusParametersItemProviderAdapterFactory extends RSAToPapyr
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.MappingParameters} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected MappingParametersItemProvider mappingParametersItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.MappingParameters}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createMappingParametersAdapter() {
+		if (mappingParametersItemProvider == null) {
+			mappingParametersItemProvider = new MappingParametersItemProvider(this);
+		}
+
+		return mappingParametersItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.URIMapping} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected URIMappingItemProvider uriMappingItemProvider;
@@ -123,7 +138,6 @@ public class RSAToPapyrusParametersItemProviderAdapterFactory extends RSAToPapyr
 	 * This creates an adapter for a {@link org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.URIMapping}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -139,7 +153,6 @@ public class RSAToPapyrusParametersItemProviderAdapterFactory extends RSAToPapyr
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -151,7 +164,6 @@ public class RSAToPapyrusParametersItemProviderAdapterFactory extends RSAToPapyr
 	 * This sets the composed adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -162,7 +174,6 @@ public class RSAToPapyrusParametersItemProviderAdapterFactory extends RSAToPapyr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -174,7 +185,6 @@ public class RSAToPapyrusParametersItemProviderAdapterFactory extends RSAToPapyr
 	 * This implementation substitutes the factory itself as the key for the adapter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -185,14 +195,13 @@ public class RSAToPapyrusParametersItemProviderAdapterFactory extends RSAToPapyr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public Object adapt(Object object, Object type) {
 		if (isFactoryForType(type)) {
 			Object adapter = super.adapt(object, type);
-			if (!(type instanceof Class<?>) || (((Class<?>) type).isInstance(adapter))) {
+			if (!(type instanceof Class<?>) || (((Class<?>)type).isInstance(adapter))) {
 				return adapter;
 			}
 		}
@@ -204,7 +213,6 @@ public class RSAToPapyrusParametersItemProviderAdapterFactory extends RSAToPapyr
 	 * This adds a listener.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -216,7 +224,6 @@ public class RSAToPapyrusParametersItemProviderAdapterFactory extends RSAToPapyr
 	 * This removes a listener.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -228,7 +235,6 @@ public class RSAToPapyrusParametersItemProviderAdapterFactory extends RSAToPapyr
 	 * This delegates to {@link #changeNotifier} and to {@link #parentAdapterFactory}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -241,20 +247,16 @@ public class RSAToPapyrusParametersItemProviderAdapterFactory extends RSAToPapyr
 	}
 
 	/**
-	 * This disposes all of the item providers created by this factory.
+	 * This disposes all of the item providers created by this factory. 
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public void dispose() {
-		if (configItemProvider != null) {
-			configItemProvider.dispose();
-		}
-		if (uriMappingItemProvider != null) {
-			uriMappingItemProvider.dispose();
-		}
+		if (configItemProvider != null) configItemProvider.dispose();
+		if (mappingParametersItemProvider != null) mappingParametersItemProvider.dispose();
+		if (uriMappingItemProvider != null) uriMappingItemProvider.dispose();
 	}
 
 }

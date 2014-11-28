@@ -40,8 +40,20 @@ import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 import org.eclipse.papyrus.infra.gmfdiag.common.utils.GMFUnsafe;
 import org.eclipse.papyrus.migration.rsa.Activator;
 import org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.Config;
+import org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.MappingParameters;
+import org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.URIMapping;
+import org.eclipse.papyrus.views.properties.runtime.DisplayEngine;
+import org.eclipse.papyrus.views.properties.util.PropertiesDisplayHelper;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.layout.FillLayout;
+import org.eclipse.swt.layout.GridData;
+import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Label;
+import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.PlatformUI;
+import org.eclipse.ui.dialogs.SelectionDialog;
 import org.eclipse.ui.statushandlers.StatusManager;
 
 /**
@@ -55,10 +67,22 @@ public class ImportTransformationLauncher {
 
 	protected final Config config;
 
+	protected final Control baseControl;
+
 	public ImportTransformationLauncher(Config config) {
-		this.config = config;
+		this(config, null);
 	}
 
+	public ImportTransformationLauncher(Config config, Control baseControl) {
+		this.config = config;
+		this.baseControl = baseControl;
+	}
+
+	/**
+	 * Executes the transformation (Asynchronous)
+	 *
+	 * @param urisToImport
+	 */
 	public void run(List<URI> urisToImport) {
 		List<ImportTransformation> transformations = new LinkedList<ImportTransformation>();
 
@@ -70,7 +94,7 @@ public class ImportTransformationLauncher {
 		if (transformations.size() > 1) {
 			importModelDependencies(transformations);
 		} else if (!transformations.isEmpty()) {
-			transformations.get(0).run(true);
+			transformations.get(0).run(true); // TODO URI Mappings
 		}
 	}
 
@@ -98,7 +122,7 @@ public class ImportTransformationLauncher {
 						for (ImportTransformation transformation : runningTransformations) {
 							transformation.cancel();
 						}
-						remainingTransformations.clear(); //Don't start these transformations at all
+						remainingTransformations.clear(); // Don't start these transformations at all
 						// Keep waiting: the cancel operation is asynchronous, we still need to wait for the jobs to complete
 					}
 
@@ -203,6 +227,28 @@ public class ImportTransformationLauncher {
 					}
 				}
 
+				if (!config.getMappingParameters().getUriMappings().isEmpty()) {
+
+					confirmURIMappings(config.getMappingParameters());
+
+					// Include the user-defined URI mappings
+					for (URIMapping mapping : config.getMappingParameters().getUriMappings()) {
+
+						String source = mapping.getSourceURI();
+						String target = mapping.getTargetURI();
+
+						if (source != null && target != null && !source.trim().isEmpty() && !target.trim().isEmpty()) {
+
+							URI sourceURI = URI.createURI(mapping.getSourceURI());
+							URI targetURI = URI.createURI(mapping.getTargetURI());
+
+							urisToReplace.put(sourceURI, targetURI);
+						}
+					}
+				}
+
+
+
 				for (ImportTransformation transformation : transformations) {
 
 					if (monitor.isCanceled()) {
@@ -230,6 +276,11 @@ public class ImportTransformationLauncher {
 						if (monitor.isCanceled()) {
 							return;
 						}
+
+						if (entry.getKey().equals(entry.getValue())) {
+							continue;
+						}
+
 						domain.getCommandStack().execute(new AbstractCommand("Import dependencies") {
 
 							@Override
@@ -340,4 +391,49 @@ public class ImportTransformationLauncher {
 		importDependencies.schedule();
 	}
 
+	protected void confirmURIMappings(final MappingParameters mappingParameters) {
+		if (baseControl != null && !baseControl.isDisposed()) {
+			baseControl.getDisplay().syncExec(new Runnable() {
+				@Override
+				public void run() {
+					openMappingsDialog(mappingParameters);
+				}
+			});
+		}
+	}
+
+	protected void openMappingsDialog(final MappingParameters mappingParameters) {
+		final Shell shell = baseControl.getShell();
+
+		SelectionDialog dialog = new SelectionDialog(shell) {
+
+			DisplayEngine engine;
+
+			@Override
+			protected Control createDialogArea(Composite parent) {
+				Composite area = (Composite) super.createDialogArea(parent);
+
+				Label description = new Label(area, SWT.WRAP);
+				description.setLayoutData(new GridData(SWT.FILL, SWT.BEGINNING, true, false));
+				description.setText("Some elements of the following resources can't be resolved. Please choose the model to use to replace them");
+
+				Composite self = new Composite(area, SWT.NONE);
+				self.setLayout(new FillLayout());
+				self.setLayoutData(new GridData(GridData.FILL_BOTH));
+
+				engine = PropertiesDisplayHelper.display(mappingParameters, self);
+				return self;
+			}
+
+			@Override
+			public boolean close() {
+				boolean result = super.close();
+				engine.dispose();
+				return result;
+			}
+		};
+
+		dialog.setTitle("Some dependencies are missing");
+		dialog.open();
+	}
 }

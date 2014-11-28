@@ -14,6 +14,7 @@ package org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.util;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
+import org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.*;
 import org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.Config;
 import org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.RSAToPapyrusParametersPackage;
 import org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.URIMapping;
@@ -87,6 +88,14 @@ public class RSAToPapyrusParametersSwitch<T> extends Switch<T> {
 			}
 			return result;
 		}
+		case RSAToPapyrusParametersPackage.MAPPING_PARAMETERS: {
+			MappingParameters mappingParameters = (MappingParameters) theEObject;
+			T result = caseMappingParameters(mappingParameters);
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
 		case RSAToPapyrusParametersPackage.URI_MAPPING: {
 			URIMapping uriMapping = (URIMapping) theEObject;
 			T result = caseURIMapping(uriMapping);
@@ -114,6 +123,23 @@ public class RSAToPapyrusParametersSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseConfig(Config object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Mapping Parameters</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Mapping Parameters</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMappingParameters(MappingParameters object) {
 		return null;
 	}
 
