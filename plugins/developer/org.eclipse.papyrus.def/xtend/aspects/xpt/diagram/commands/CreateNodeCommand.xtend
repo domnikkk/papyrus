@@ -197,8 +197,9 @@ import xpt.diagram.Utils_qvto
 				org.eclipse.papyrus.infra.viewpoints.policy.ModelAddData data = org.eclipse.papyrus.infra.viewpoints.policy.PolicyChecker.getCurrent().getChildAddData(diagram, target, «varName»);
 				if (data.isPermitted()) {
 					if (data.isPathDefined()) {
-						if (!data.execute(target, «varName»))
+						if (!data.execute(target, «varName»)) {
 							return org.eclipse.gmf.runtime.common.core.command.CommandResult.newErrorCommandResult("Failed to follow the policy-specified for the insertion of the new element");
+						}
 					} else {
 		«extraLineBreak»
 		«IF containmentMetaFeature != null»
