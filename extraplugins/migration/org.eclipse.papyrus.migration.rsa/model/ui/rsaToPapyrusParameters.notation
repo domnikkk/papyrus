@@ -66,6 +66,18 @@
         <element xmi:type="uml:Property" href="rsaToPapyrusParameters.uml#_Mv8HwEL2EeSSlqpbHKLCqA"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_Mv8HwkL2EeSSlqpbHKLCqA"/>
       </children>
+      <children xmi:type="notation:Shape" xmi:id="_JWjgUXcbEeSwiJkQAQl2Jg" type="3012">
+        <styles xmi:type="notation:StringListValueStyle" xmi:id="_Ro7mMHcbEeSwiJkQAQl2Jg" name="maskLabel">
+          <stringListValue>visibility</stringListValue>
+          <stringListValue>name</stringListValue>
+          <stringListValue>derived</stringListValue>
+          <stringListValue>multiplicity</stringListValue>
+          <stringListValue>defaultValue</stringListValue>
+          <stringListValue>type</stringListValue>
+        </styles>
+        <element xmi:type="uml:Property" href="rsaToPapyrusParameters.uml#_JWjgUHcbEeSwiJkQAQl2Jg"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_JWjgUncbEeSwiJkQAQl2Jg"/>
+      </children>
       <styles xmi:type="notation:TitleStyle" xmi:id="_tKu0lUL1EeSSlqpbHKLCqA"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_tKu0lkL1EeSSlqpbHKLCqA"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_tKu0l0L1EeSSlqpbHKLCqA"/>
@@ -84,7 +96,7 @@
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tKu0okL1EeSSlqpbHKLCqA"/>
     </children>
     <element xmi:type="uml:Class" href="rsaToPapyrusParameters.uml#_tKu0kEL1EeSSlqpbHKLCqA"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tKu0kkL1EeSSlqpbHKLCqA" x="79" y="55" width="373" height="112"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tKu0kkL1EeSSlqpbHKLCqA" x="79" y="55" width="373" height="129"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_MDv8IFOJEeSGbsrkEkSKIA" type="2010">
     <children xmi:type="notation:DecorationNode" xmi:id="_MDv8IlOJEeSGbsrkEkSKIA" type="5035"/>

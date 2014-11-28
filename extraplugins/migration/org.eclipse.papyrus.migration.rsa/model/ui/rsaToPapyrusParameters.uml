@@ -55,6 +55,15 @@ More threads will provide faster results, at the cost of memory consumption.</bo
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_S39O4UL2EeSSlqpbHKLCqA" value="1"/>
         <defaultValue xmi:type="uml:LiteralBoolean" xmi:id="_UQehAEL2EeSSlqpbHKLCqA"/>
       </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_JWjgUHcbEeSwiJkQAQl2Jg" name="alwaysAcceptSuggestedMappings" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_aOft0HcbEeSwiJkQAQl2Jg" annotatedElement="_JWjgUHcbEeSwiJkQAQl2Jg">
+          <body>If true, the Transformation will not open a dialog to ask user-confirmation for the dependency mappings. The tool will automatically keep going by &quot;guessing&quot; the proper mapping</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_P_5L0HcbEeSwiJkQAQl2Jg" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_P_5L0XcbEeSwiJkQAQl2Jg" value="1"/>
+        <defaultValue xmi:type="uml:LiteralBoolean" xmi:id="_P_5L0ncbEeSwiJkQAQl2Jg"/>
+      </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:DataType" xmi:id="_MDmyMFOJEeSGbsrkEkSKIA" name="URIMapping">
       <ownedAttribute xmi:type="uml:Property" xmi:id="_MiP2AFOJEeSGbsrkEkSKIA" name="sourceURI" visibility="public" isUnique="false">
