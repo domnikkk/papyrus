@@ -12,7 +12,6 @@
 package org.eclipse.papyrus.migration.rsa.transformation;
 
 import java.io.IOException;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -46,15 +45,9 @@ import org.eclipse.papyrus.migration.rsa.Activator;
 import org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.Config;
 import org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.MappingParameters;
 import org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.URIMapping;
-import org.eclipse.papyrus.views.properties.runtime.DisplayEngine;
-import org.eclipse.papyrus.views.properties.util.PropertiesDisplayHelper;
-import org.eclipse.swt.SWT;
-import org.eclipse.swt.layout.FillLayout;
-import org.eclipse.swt.layout.GridData;
-import org.eclipse.swt.widgets.Composite;
+import org.eclipse.papyrus.migration.rsa.transformation.ui.URIMappingDialog;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Display;
-import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.dialogs.SelectionDialog;
@@ -102,240 +95,14 @@ public class ImportTransformationLauncher {
 		}
 	}
 
-	public void importModelDependencies(final List<ImportTransformation> transformations) {
+	protected void importModelDependencies(final List<ImportTransformation> transformations) {
 		Job importDependencies = new Job("Import Models") {
+
 			@Override
 			protected IStatus run(IProgressMonitor monitor) {
-				monitor.setTaskName("Waiting for import tasks to complete...");
-				int numTasks = transformations.size() * 2; // For each transformation: wait for completion, then handle dependencies
-				monitor.beginTask("Importing Models...", numTasks);
-
-				boolean runAsUserJob = transformations.size() == 1;
-
-				int maxThreads = Math.max(1, config.getMaxThreads());
-
-				List<ImportTransformation> remainingTransformations = new LinkedList<ImportTransformation>(transformations);
-				List<ImportTransformation> runningTransformations = new LinkedList<ImportTransformation>();
-
-				// Iterate on transformations
-				// Schedule maximum MAX_THREADS transformations at the same time (At least 1)
-				// When a transformation is complete, keep going. Otherwise, sleep
-				while (!remainingTransformations.isEmpty()) {
-					if (monitor.isCanceled()) {
-						monitor.subTask("Canceling remaining jobs...");
-						for (ImportTransformation transformation : runningTransformations) {
-							transformation.cancel();
-						}
-						remainingTransformations.clear(); // Don't start these transformations at all
-						// Keep waiting: the cancel operation is asynchronous, we still need to wait for the jobs to complete
-					}
-
-					// Schedule transformations if we have enough threads and they have not all been scheduled
-					while (runningTransformations.size() < maxThreads && !remainingTransformations.isEmpty()) {
-						ImportTransformation transformation = remainingTransformations.remove(0); // Get and remove
-						transformation.run(runAsUserJob);
-						runningTransformations.add(transformation);
-					}
-
-					if (!runningTransformations.isEmpty()) {
-						String waitFor = runningTransformations.get(0).getModelName();
-						monitor.subTask("Waiting for " + waitFor + " to complete...");
-					}
-
-					// We can continue if at least one transformation is complete (Leaving a free Thread)
-					boolean canContinue = false;
-
-					Iterator<ImportTransformation> iterator = runningTransformations.iterator();
-					while (iterator.hasNext()) {
-						ImportTransformation runningTransformation = iterator.next();
-						if (runningTransformation.isComplete()) {
-							canContinue = true;
-							iterator.remove();
-							monitor.worked(1);
-						}
-					}
-
-					if (!canContinue) {
-						try {
-							Thread.sleep(100);
-						} catch (InterruptedException ex) {
-							Activator.log.error(ex);
-						}
-					}
-				}
-
-				// All transformations have been scheduled (But not necessarily completed): wait for all of them to complete
-				wait(runningTransformations, monitor);
-
-				if (monitor.isCanceled()) {
-					return new Status(IStatus.CANCEL, Activator.PLUGIN_ID, "Operation canceled");
-				}
-
-				handleModelDependencies(transformations, monitor);
-
-				return Status.OK_STATUS;
+				return ImportTransformationLauncher.this.run(monitor, transformations);
 			}
 
-			// Wait for all (remaining) import transformations to complete
-			protected void wait(List<ImportTransformation> transformations, IProgressMonitor monitor) {
-
-				// Transformations still running
-				List<ImportTransformation> runningTransformations = new LinkedList<ImportTransformation>(transformations);
-
-				while (!runningTransformations.isEmpty()) {
-
-					if (monitor.isCanceled()) {
-						monitor.subTask("Canceling remaining jobs...");
-						for (ImportTransformation transformation : runningTransformations) {
-							transformation.cancel();
-						}
-						// Keep waiting: the cancel operation is asynchronous, we still need to wait for the jobs to complete
-					}
-
-					Iterator<ImportTransformation> iterator = runningTransformations.iterator();
-					while (iterator.hasNext()) {
-						ImportTransformation transformation = iterator.next();
-						if (transformation.isComplete()) {
-							iterator.remove();
-							monitor.worked(1);
-						}
-					}
-
-					if (!runningTransformations.isEmpty()) {
-						String waitFor = runningTransformations.get(0).getModelName();
-						monitor.subTask("Waiting for " + waitFor + " to complete...");
-
-						try {
-							Thread.sleep(100);
-						} catch (InterruptedException ex) {
-							Activator.log.error(ex);
-							return;
-						}
-					}
-				}
-
-			}
-
-
-			// Convert all model dependencies (For "imported model -> emx library" to "imported model -> imported library")
-			protected void handleModelDependencies(List<ImportTransformation> transformations, IProgressMonitor monitor) {
-				Map<URI, URI> urisToReplace = new HashMap<URI, URI>();
-				for (ImportTransformation transformation : transformations) {
-					// Only transform EMX/EFX models. Profiles (epx) will be handled separately
-
-					for (Map.Entry<URI, URI> entry : transformation.getURIMappings().entrySet()) {
-						String fileExtension = entry.getKey().fileExtension();
-						if ("emx".equals(fileExtension) || "efx".equals(fileExtension)) {
-							urisToReplace.put(entry.getKey(), entry.getValue());
-						}
-					}
-				}
-
-				filterKnownMappings(config.getMappingParameters(), urisToReplace);
-
-				if (!config.getMappingParameters().getUriMappings().isEmpty()) {
-					MappingParameters parameters = confirmURIMappings(config.getMappingParameters());
-					config.setMappingParameters(parameters);
-
-					// Include the user-defined URI mappings
-					for (URIMapping mapping : parameters.getUriMappings()) {
-
-						String source = mapping.getSourceURI();
-						String target = mapping.getTargetURI();
-
-						if (source != null && target != null && !source.trim().isEmpty() && !target.trim().isEmpty()) {
-
-							URI sourceURI = URI.createURI(mapping.getSourceURI());
-							URI targetURI = URI.createURI(mapping.getTargetURI());
-
-							if (urisToReplace.containsKey(sourceURI)) {
-								continue;
-							}
-
-							urisToReplace.put(sourceURI, targetURI);
-						}
-					}
-				}
-
-
-				for (ImportTransformation transformation : transformations) {
-
-					if (monitor.isCanceled()) {
-						return;
-					}
-
-					monitor.subTask("Importing dependencies for " + transformation.getModelName());
-					final ModelSet modelSet = new DiResourceSet();
-					try {
-						URI targetURI = transformation.getTargetURI();
-						if (targetURI == null) {
-							// The transformation didn't complete properly
-							monitor.worked(1);
-							continue;
-						}
-						modelSet.loadModels(transformation.getTargetURI());
-					} catch (ModelMultiException e) {
-						Activator.log.error(e);
-						monitor.worked(1);
-						continue;
-					}
-					final TransactionalEditingDomain domain = modelSet.getTransactionalEditingDomain();
-
-					for (final Map.Entry<URI, URI> entry : urisToReplace.entrySet()) {
-						if (monitor.isCanceled()) {
-							return;
-						}
-
-						if (entry.getKey().equals(entry.getValue())) {
-							continue;
-						}
-
-						domain.getCommandStack().execute(new AbstractCommand("Import dependencies") {
-
-							@Override
-							public void execute() {
-								DependencyManagementHelper.updateDependencies(entry.getKey(), entry.getValue(), modelSet, domain);
-							}
-
-							@Override
-							public void redo() {
-								// Nothing
-							}
-
-							@Override
-							protected boolean prepare() {
-								return true;
-							};
-						});
-
-					}
-
-					try {
-						modelSet.save(new NullProgressMonitor());
-						monitor.worked(1);
-
-						EcoreUtil.resolveAll(modelSet); // Resolve all before unload to ensure all proxies are cleaned up in the CacheAdapter
-						GMFUnsafe.write(domain, new Runnable() {
-							@Override
-							public void run() {
-								EMFHelper.unload(modelSet);
-							}
-						});
-
-						domain.dispose();
-
-					} catch (IOException ex) {
-						Activator.log.error(ex);
-						continue;
-					} catch (RollbackException ex) {
-						Activator.log.error(ex);
-						continue;
-					} catch (InterruptedException ex) {
-						Activator.log.error(ex);
-						continue;
-					}
-				}
-			}
 		};
 
 		importDependencies.addJobChangeListener(new JobChangeAdapter() {
@@ -400,6 +167,238 @@ public class ImportTransformationLauncher {
 		importDependencies.schedule();
 	}
 
+	protected IStatus run(IProgressMonitor monitor, List<ImportTransformation> transformations) {
+		monitor.setTaskName("Waiting for import tasks to complete...");
+		int numTasks = transformations.size() * 2; // For each transformation: wait for completion, then handle dependencies
+		monitor.beginTask("Importing Models...", numTasks);
+
+		boolean runAsUserJob = transformations.size() == 1;
+
+		int maxThreads = Math.max(1, config.getMaxThreads());
+
+		List<ImportTransformation> remainingTransformations = new LinkedList<ImportTransformation>(transformations);
+		List<ImportTransformation> runningTransformations = new LinkedList<ImportTransformation>();
+
+		// Iterate on transformations
+		// Schedule maximum MAX_THREADS transformations at the same time (At least 1)
+		// When a transformation is complete, keep going. Otherwise, sleep
+		while (!remainingTransformations.isEmpty()) {
+			if (monitor.isCanceled()) {
+				monitor.subTask("Canceling remaining jobs...");
+				for (ImportTransformation transformation : runningTransformations) {
+					transformation.cancel();
+				}
+				remainingTransformations.clear(); // Don't start these transformations at all
+				// Keep waiting: the cancel operation is asynchronous, we still need to wait for the jobs to complete
+			}
+
+			// Schedule transformations if we have enough threads and they have not all been scheduled
+			while (runningTransformations.size() < maxThreads && !remainingTransformations.isEmpty()) {
+				ImportTransformation transformation = remainingTransformations.remove(0); // Get and remove
+				transformation.run(runAsUserJob);
+				runningTransformations.add(transformation);
+			}
+
+			if (!runningTransformations.isEmpty()) {
+				String waitFor = runningTransformations.get(0).getModelName();
+				monitor.subTask("Waiting for " + waitFor + " to complete...");
+			}
+
+			// We can continue if at least one transformation is complete (Leaving a free Thread)
+			boolean canContinue = false;
+
+			Iterator<ImportTransformation> iterator = runningTransformations.iterator();
+			while (iterator.hasNext()) {
+				ImportTransformation runningTransformation = iterator.next();
+				if (runningTransformation.isComplete()) {
+					canContinue = true;
+					iterator.remove();
+					monitor.worked(1);
+				}
+			}
+
+			if (!canContinue) {
+				try {
+					Thread.sleep(100);
+				} catch (InterruptedException ex) {
+					Activator.log.error(ex);
+				}
+			}
+		}
+
+		// All transformations have been scheduled (But not necessarily completed): wait for all of them to complete
+		wait(runningTransformations, monitor);
+
+		if (monitor.isCanceled()) {
+			return new Status(IStatus.CANCEL, Activator.PLUGIN_ID, "Operation canceled");
+		}
+
+		handleModelDependencies(transformations, monitor);
+
+		return Status.OK_STATUS;
+	}
+
+	// Wait for all (remaining) import transformations to complete
+	protected void wait(List<ImportTransformation> transformations, IProgressMonitor monitor) {
+
+		// Transformations still running
+		List<ImportTransformation> runningTransformations = new LinkedList<ImportTransformation>(transformations);
+
+		while (!runningTransformations.isEmpty()) {
+
+			if (monitor.isCanceled()) {
+				monitor.subTask("Canceling remaining jobs...");
+				for (ImportTransformation transformation : runningTransformations) {
+					transformation.cancel();
+				}
+				// Keep waiting: the cancel operation is asynchronous, we still need to wait for the jobs to complete
+			}
+
+			Iterator<ImportTransformation> iterator = runningTransformations.iterator();
+			while (iterator.hasNext()) {
+				ImportTransformation transformation = iterator.next();
+				if (transformation.isComplete()) {
+					iterator.remove();
+					monitor.worked(1);
+				}
+			}
+
+			if (!runningTransformations.isEmpty()) {
+				String waitFor = runningTransformations.get(0).getModelName();
+				monitor.subTask("Waiting for " + waitFor + " to complete...");
+
+				try {
+					Thread.sleep(100);
+				} catch (InterruptedException ex) {
+					Activator.log.error(ex);
+					return;
+				}
+			}
+		}
+
+	}
+
+
+	// Convert all model dependencies (For "imported model -> emx library" to "imported model -> imported library")
+	protected void handleModelDependencies(List<ImportTransformation> transformations, IProgressMonitor monitor) {
+		Map<URI, URI> urisToReplace = new HashMap<URI, URI>();
+		for (ImportTransformation transformation : transformations) {
+			// Only transform EMX/EFX models. Profiles (epx) will be handled separately
+
+			for (Map.Entry<URI, URI> entry : transformation.getURIMappings().entrySet()) {
+				String fileExtension = entry.getKey().fileExtension();
+				if ("emx".equals(fileExtension) || "efx".equals(fileExtension)) {
+					urisToReplace.put(entry.getKey(), entry.getValue());
+				}
+			}
+		}
+
+		filterKnownMappings(config.getMappingParameters(), urisToReplace);
+
+		if (!config.getMappingParameters().getUriMappings().isEmpty()) {
+			MappingParameters parameters = confirmURIMappings(config.getMappingParameters());
+			config.setMappingParameters(parameters);
+
+			// Include the user-defined URI mappings
+			for (URIMapping mapping : parameters.getUriMappings()) {
+
+				String source = mapping.getSourceURI();
+				String target = mapping.getTargetURI();
+
+				if (source != null && target != null && !source.trim().isEmpty() && !target.trim().isEmpty()) {
+
+					URI sourceURI = URI.createURI(mapping.getSourceURI());
+					URI targetURI = URI.createURI(mapping.getTargetURI());
+
+					if (urisToReplace.containsKey(sourceURI)) {
+						continue;
+					}
+
+					urisToReplace.put(sourceURI, targetURI);
+				}
+			}
+		}
+
+
+		for (ImportTransformation transformation : transformations) {
+
+			if (monitor.isCanceled()) {
+				return;
+			}
+
+			monitor.subTask("Importing dependencies for " + transformation.getModelName());
+			final ModelSet modelSet = new DiResourceSet();
+			try {
+				URI targetURI = transformation.getTargetURI();
+				if (targetURI == null) {
+					// The transformation didn't complete properly
+					monitor.worked(1);
+					continue;
+				}
+				modelSet.loadModels(transformation.getTargetURI());
+			} catch (ModelMultiException e) {
+				Activator.log.error(e);
+				monitor.worked(1);
+				continue;
+			}
+			final TransactionalEditingDomain domain = modelSet.getTransactionalEditingDomain();
+
+			for (final Map.Entry<URI, URI> entry : urisToReplace.entrySet()) {
+				if (monitor.isCanceled()) {
+					return;
+				}
+
+				if (entry.getKey().equals(entry.getValue())) {
+					continue;
+				}
+
+				domain.getCommandStack().execute(new AbstractCommand("Import dependencies") {
+
+					@Override
+					public void execute() {
+						DependencyManagementHelper.updateDependencies(entry.getKey(), entry.getValue(), modelSet, domain);
+					}
+
+					@Override
+					public void redo() {
+						// Nothing
+					}
+
+					@Override
+					protected boolean prepare() {
+						return true;
+					};
+				});
+
+			}
+
+			try {
+				modelSet.save(new NullProgressMonitor());
+				monitor.worked(1);
+
+				EcoreUtil.resolveAll(modelSet); // Resolve all before unload to ensure all proxies are cleaned up in the CacheAdapter
+				GMFUnsafe.write(domain, new Runnable() {
+					@Override
+					public void run() {
+						EMFHelper.unload(modelSet);
+					}
+				});
+
+				domain.dispose();
+
+			} catch (IOException ex) {
+				Activator.log.error(ex);
+				continue;
+			} catch (RollbackException ex) {
+				Activator.log.error(ex);
+				continue;
+			} catch (InterruptedException ex) {
+				Activator.log.error(ex);
+				continue;
+			}
+		}
+	}
+
 	/**
 	 * Remove automatic mappings (When multiple files are imported simultaneously) and duplicates
 	 *
@@ -443,47 +442,8 @@ public class ImportTransformationLauncher {
 	protected MappingParameters openMappingsDialog(final MappingParameters mappingParameters) {
 		final Shell shell = baseControl.getShell();
 
-		SelectionDialog dialog = new SelectionDialog(shell) {
+		SelectionDialog dialog = new URIMappingDialog(shell, mappingParameters);
 
-			DisplayEngine engine;
-
-			MappingParameters result;
-
-			@Override
-			protected Control createDialogArea(Composite parent) {
-				Composite area = (Composite) super.createDialogArea(parent);
-
-				Label description = new Label(area, SWT.WRAP);
-				description.setLayoutData(new GridData(SWT.FILL, SWT.BEGINNING, true, false));
-				description.setText("Some elements of the following resources can't be resolved. Please choose the model to use to replace them");
-
-				Composite self = new Composite(area, SWT.NONE);
-				self.setLayout(new FillLayout());
-				self.setLayoutData(new GridData(GridData.FILL_BOTH));
-
-				// Do a copy: if Cancel is pressed, it can be discarded
-				result = EcoreUtil.copy(mappingParameters);
-				setResult(Collections.singletonList(mappingParameters)); // Default result (If Cancel is pressed)
-
-				engine = PropertiesDisplayHelper.display(result, self);
-				return self;
-			}
-
-			@Override
-			protected void okPressed() {
-				setResult(Collections.singletonList(result)); // Set the new result
-				super.okPressed();
-			}
-
-			@Override
-			public boolean close() {
-				boolean result = super.close();
-				engine.dispose();
-				return result;
-			}
-		};
-
-		dialog.setTitle("Some dependencies are missing");
 		dialog.open();
 		return (MappingParameters) dialog.getResult()[0];
 	}
