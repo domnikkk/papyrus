@@ -144,7 +144,12 @@ public abstract class AbstractBaseHandler extends AbstractHandler {
 
 			@Override
 			protected void doExecute() {
-				AbstractBaseHandler.this.doExecute(finalEvent, context);
+				try {
+					AbstractBaseHandler.this.doExecute(finalEvent, context);
+				} catch (Exception e) {
+					// TODO for debug. To be removed or logged
+					e.printStackTrace();
+				}
 			}
 
 			
