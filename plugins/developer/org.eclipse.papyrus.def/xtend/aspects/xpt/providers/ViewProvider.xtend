@@ -441,7 +441,6 @@ import xpt.editor.VisualIDRegistry
 		«FOR label : it.labels»
 			«initLabel(label, 'edge', 'prefStore')»
 		«ENDFOR»
-		«initLabelVisibility(it,'edge', 'prefStore')»
 		return edge;
 	}
 	'''
@@ -652,23 +651,6 @@ def specificInitRountingFromPrefs(GenLink it, String viewVar, String prefStoreVa
 '''
 
 def specificInitRountingFromPrefs(GenCommonBase it,String viewVar, String prefStoreVar) '''
-'''
-
-//write the line to initialize the property isVisible for the label of the link
-def initLabelVisibility(GenLink it,String viewVar, String prefStoreVar) '''
-
-	«IF it.labels.filter(typeof (GenLinkLabel)).exists[lbl  | 
-		(it.eResource.allContents.filter(typeof (LabelVisibilityPreference)).filter[label | label.linkLabels.contains(lbl)]).size !=0]»
-	 org.eclipse.papyrus.uml.diagram.common.helper.PreferenceInitializerForElementHelper.initLabelVisibilityFromPrefs(«viewVar», «prefStoreVar», "«elementType.displayName»");
-	«ENDIF»
-'''
-
-//write the line to initialize the property isVisible for the label of the link
-def initLabelVisibility(GenNode it,String viewVar, String prefStoreVar) '''
-	«IF it.labels.filter(typeof (GenExternalNodeLabel)).exists[lbl  | 
-		(it.eResource.allContents.filter(typeof (LabelVisibilityPreference)).filter[label | label.externalNodeLabels.contains(lbl)]).size !=0]»
-	 org.eclipse.papyrus.uml.diagram.common.helper.PreferenceInitializerForElementHelper.initLabelVisibilityFromPrefs(«viewVar», «prefStoreVar», "«elementType.displayName»");
-	«ENDIF»
 '''
 
 }
