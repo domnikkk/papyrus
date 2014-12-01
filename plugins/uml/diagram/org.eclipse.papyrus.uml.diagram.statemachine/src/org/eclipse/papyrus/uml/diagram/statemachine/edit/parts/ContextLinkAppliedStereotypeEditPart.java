@@ -64,6 +64,7 @@ import org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.IndirectMaskLabelEd
 import org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.NoSemanticParserEditPolicy;
 import org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.PapyrusLinkLabelDragPolicy;
 import org.eclipse.papyrus.uml.diagram.common.directedit.MultilineLabelDirectEditManager;
+import org.eclipse.papyrus.uml.diagram.common.editparts.ILabelRoleProvider;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.IDirectEdition;
 import org.eclipse.papyrus.uml.diagram.common.figure.node.ILabelFigure;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.policies.UMLTextSelectionEditPolicy;
@@ -83,7 +84,7 @@ import org.eclipse.uml2.uml.Feature;
 /**
  * @generated
  */
-public class ContextLinkAppliedStereotypeEditPart extends PapyrusLabelEditPart implements ITextAwareEditPart, IControlParserForDirectEdit {
+public class ContextLinkAppliedStereotypeEditPart extends PapyrusLabelEditPart implements ITextAwareEditPart, IControlParserForDirectEdit, ILabelRoleProvider {
 
 	/**
 	 * @generated
@@ -112,12 +113,14 @@ public class ContextLinkAppliedStereotypeEditPart extends PapyrusLabelEditPart i
 
 	/**
 	 * direct edition mode (default, undefined, registered editor, etc.)
+	 *
 	 * @generated
 	 */
 	protected int directEditionMode = IDirectEdition.UNDEFINED_DIRECT_EDITOR;
 
 	/**
 	 * configuration from a registered edit dialog
+	 *
 	 * @generated
 	 */
 	protected IDirectEditorConfiguration configuration;
@@ -708,6 +711,7 @@ public class ContextLinkAppliedStereotypeEditPart extends PapyrusLabelEditPart i
 
 	/**
 	 * Initializes the extended editor configuration
+	 *
 	 * @generated
 	 */
 	protected void initExtendedEditorConfiguration() {
@@ -723,6 +727,7 @@ public class ContextLinkAppliedStereotypeEditPart extends PapyrusLabelEditPart i
 
 	/**
 	 * Updates the preference configuration
+	 *
 	 * @generated
 	 */
 	protected void updateExtendedEditorConfiguration() {
@@ -738,7 +743,9 @@ public class ContextLinkAppliedStereotypeEditPart extends PapyrusLabelEditPart i
 
 	/**
 	 * Performs the direct edit usually used by GMF editors.
-	 * @param theRequest the direct edit request that starts the direct edit system
+	 *
+	 * @param theRequest
+	 *            the direct edit request that starts the direct edit system
 	 * @generated
 	 */
 	protected void performDefaultDirectEditorEdit(final Request theRequest) {
@@ -812,5 +819,21 @@ public class ContextLinkAppliedStereotypeEditPart extends PapyrusLabelEditPart i
 	protected IFigure createFigure() {
 		// Parent should assign one using setLabel() method
 		return null;
+	}
+
+	/**
+	 * @generated
+	 */
+	@Override
+	public String getLabelRole() {
+		return "Stereotype";//$NON-NLS-1$
+	}
+
+	/**
+	 * @generated
+	 */
+	@Override
+	public String getIconPathRole() {
+		return "platform:/plugin/org.eclipse.papyrus.uml.diagram.common/icons/stereotype.gif";//$NON-NLS-1$
 	}
 }
