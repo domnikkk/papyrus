@@ -113,7 +113,7 @@ public class EclipseProject {
 		
 		try {
 			Path toURL = new Path(toResourceName);
-			System.out.println(toURL);
+//			System.out.println(toURL);
 			
 			IFile file = project.getFile(toResourceName);
 			// link all the models resources

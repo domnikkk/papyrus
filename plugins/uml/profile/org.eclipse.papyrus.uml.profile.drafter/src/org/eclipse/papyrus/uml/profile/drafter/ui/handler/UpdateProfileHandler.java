@@ -29,7 +29,6 @@ import org.eclipse.papyrus.uml.profile.drafter.ProfileApplicator;
 import org.eclipse.papyrus.uml.profile.drafter.exceptions.DraftProfileException;
 import org.eclipse.papyrus.uml.profile.drafter.ui.dialog.IStereotypeUpdateArgs;
 import org.eclipse.papyrus.uml.profile.drafter.ui.dialog.StereotypeUpdateDialog;
-import org.eclipse.papyrus.uml.profile.drafter.ui.model.CommandBuilderVisitor;
 import org.eclipse.papyrus.uml.profile.drafter.ui.model.StereoptypeModel;
 import org.eclipse.papyrus.uml.profile.drafter.utils.UMLMetamodelUtils;
 import org.eclipse.swt.widgets.Display;
@@ -98,12 +97,13 @@ public class UpdateProfileHandler extends AbstractProfileBaseHandler {
 	protected boolean preExecute(ExecutionEvent event, IEvaluationContext context) throws ExecutionException {
 
 		// Check if an element is selected.
-		System.err.println("Add Profile called. Selected elements:");
 		List<NamedElement> selected = getSelectionAsNamedElements(context);
-		for( NamedElement ele : selected) {
-				System.err.println(ele.getName());
-		}
-		System.err.println("********************");
+
+//		System.err.println("Add Profile called. Selected elements:");
+//		for( NamedElement ele : selected) {
+//				System.err.println(ele.getName());
+//		}
+//		System.err.println("********************");
 		
 		if( selected.isEmpty()) {
 			// Stop if no NamedElement is selected
@@ -143,7 +143,6 @@ public class UpdateProfileHandler extends AbstractProfileBaseHandler {
 
 		taggedValeNameInput = "";
 		
-		System.err.println("Try to apply stereotype '" + profileNameInput + ":" +stereotypeNameInput + "'");
 		return true;
 	}
 	

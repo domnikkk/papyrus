@@ -253,7 +253,6 @@ public class PropertiesEditorWidget {
 	 * @param e
 	 */
 	private void addPropertyPressed(SelectionEvent e) {
-		System.err.println("addPropertyPressed()");
 		// Create PropertyModem
 		PropertyModel model;
 		try {

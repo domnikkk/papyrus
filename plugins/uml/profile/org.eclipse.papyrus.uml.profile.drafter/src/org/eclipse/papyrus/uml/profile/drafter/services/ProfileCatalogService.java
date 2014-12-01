@@ -14,14 +14,18 @@
 
 package org.eclipse.papyrus.uml.profile.drafter.services;
 
+import static org.eclipse.papyrus.uml.profile.drafter.Activator.log;
 import org.eclipse.papyrus.infra.core.resource.ModelSet;
 import org.eclipse.papyrus.infra.core.services.IService;
 import org.eclipse.papyrus.infra.core.services.ServiceException;
 import org.eclipse.papyrus.infra.core.services.ServicesRegistry;
+import org.eclipse.papyrus.uml.profile.drafter.ProfileCatalog;
 import org.eclipse.papyrus.uml.profile.drafter.UserProfileCatalog;
 
 /**
- * @author dumoulin
+ * A service used to access a singleton {@link ProfileCatalog}.
+ * 
+ * @author cedric dumoulin
  *
  */
 public class ProfileCatalogService implements IService {
@@ -55,7 +59,7 @@ public class ProfileCatalogService implements IService {
 	 */
 	@Override
 	public void startService() throws ServiceException {
-		System.err.println("Service started:" + this.getClass().getSimpleName());
+		log.info("Service started:" + this.getClass().getSimpleName());
 
 	}
 

@@ -14,6 +14,7 @@
 
 package org.eclipse.papyrus.uml.profile.drafter.ui.model;
 
+import static org.eclipse.papyrus.uml.profile.drafter.Activator.log;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 
@@ -107,8 +108,6 @@ public class StereotypeURL {
 		int num = count++;
 
 		try {
-//			qualifiedName+=count++;
-			System.err.println("setQualifiedName(" + qualifiedName +" : " + num +")");
 			if(qualifiedName == null) {
 				return;
 			}
@@ -161,10 +160,8 @@ public class StereotypeURL {
 			
 			qualifiedNameChanged(ev);
 		} catch (Exception e) {
-			System.err.println("Exception caught:" + e.getMessage());
-//			e.printStackTrace();
+			log.error(e);
 		}
-		System.err.println("exit setQualifiedName(" + qualifiedName +" : " + num +")");
 
 		}
 
@@ -196,7 +193,6 @@ public class StereotypeURL {
 	 */
 	public void setStereotypeName(String stereotypeName) {
 		
-		System.err.println("setStereotypeName(" + stereotypeName + ")");
 		// StereotypeName should be set.
 		if(stereotypeName == null) {
 			return;
@@ -232,7 +228,6 @@ public class StereotypeURL {
 	 */
 	public void setProfileName(String profileName) {
 		
-		System.err.println("setProfileName(" + profileName + ")");
 		// parameter should be set.
 		if(profileName == null) {
 			return;

@@ -83,7 +83,7 @@ public class StereotypeNameToProfileSynchronizer {
 	 * @param profileName the profileName to set
 	 */
 	protected void doSetQualifiedName(String qualifiedName) {
-		System.err.println("Qualified name set to '" + qualifiedName + "'");
+//		System.err.println("Qualified name set to '" + qualifiedName + "'");
 		firePropertyChange("profileName", this.qualifiedName, this.qualifiedName = qualifiedName);
 	}
 
@@ -106,7 +106,7 @@ public class StereotypeNameToProfileSynchronizer {
 	 * @param profileName the profileName to set
 	 */
 	protected void doSetProfileName(String profileName) {
-		System.err.println("ProfileName set to '" + profileName + "'");
+//		System.err.println("ProfileName set to '" + profileName + "'");
 		firePropertyChange("profileName", this.profileName, this.profileName = profileName);
 	}
 
@@ -131,7 +131,7 @@ public class StereotypeNameToProfileSynchronizer {
 	 * @param stereotypeName the stereotypeName to set
 	 */
 	protected void doSetStereotypeName(String stereotypeName) {
-		System.err.println("StereotypeName set to '" + stereotypeName + "'");
+//		System.err.println("StereotypeName set to '" + stereotypeName + "'");
 		firePropertyChange("stereotypeName", this.stereotypeName, this.stereotypeName = stereotypeName);
 	}
 
@@ -161,7 +161,7 @@ public class StereotypeNameToProfileSynchronizer {
 	 * @param stereotype the stereotype to set
 	 */
 	protected void doSetStereotype(Stereotype stereotype) {
-		System.err.println("Stereotype set to '" + (stereotype!=null?stereotype.getQualifiedName():"null") + "'");
+//		System.err.println("Stereotype set to '" + (stereotype!=null?stereotype.getQualifiedName():"null") + "'");
 		firePropertyChange("stereotype", this.stereotype, this.stereotype = stereotype);
 	}
 

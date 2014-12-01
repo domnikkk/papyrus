@@ -307,7 +307,6 @@ public abstract class AbstractBaseHandler extends AbstractHandler {
 		
 		if( ! (evaluationContext instanceof IEvaluationContext)) {
 			setBaseEnabled(false);
-			System.out.println(getCommandName() + ".setEnabled(" + isEnabled() + ") - no context");
 			return;
 		}
 		
@@ -317,8 +316,6 @@ public abstract class AbstractBaseHandler extends AbstractHandler {
 		// Ask the subclass
 		setBaseEnabled(isEnabled(context, selections));
 		
-		
-		System.out.println(getCommandName() + ".setEnabled(" + isEnabled() + ")");
 	}
 	
 	/**

@@ -521,7 +521,6 @@ public class ProfileApplicator {
 	 */
 	protected Stereotype createStereotypeAndRedefineProfile( Profile profile, String stereotypeName) {
 		
-		System.err.println("Try to create stereotype");
 		// Remember which package apply the profile
 		Package applicantPackage = getApplicantPackage(profile);
 		

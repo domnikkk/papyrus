@@ -14,6 +14,7 @@
 
 package org.eclipse.papyrus.uml.profile.drafter.ui.handler;
 
+import static org.eclipse.papyrus.uml.profile.drafter.Activator.log;
 import java.util.List;
 
 import org.eclipse.core.commands.ExecutionEvent;
@@ -96,7 +97,7 @@ public class CreateProfileHandler extends AbstractBaseHandler {
 			return;
 		}
 		try {
-			System.err.println("Create new profile called ...");
+			log.info("Create new profile called ...");
 			
 			Profile profile = (Profile)selections.get(0);
 			
@@ -134,15 +135,15 @@ public class CreateProfileHandler extends AbstractBaseHandler {
 			
 			rootPackage.applyProfile(profile);
 			
-			System.err.println("    ... New profile created");
+			log.info("    ... New profile created");
 		} catch (NotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			System.err.println("    ... Profile creation failed !!");
+			log.error("    ... Profile creation failed !!", e);
 		} catch (ServiceException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			System.err.println("    ... Profile creation failed !!");
+			log.error("    ... Profile creation failed !!", e);
 		}
 		
 		

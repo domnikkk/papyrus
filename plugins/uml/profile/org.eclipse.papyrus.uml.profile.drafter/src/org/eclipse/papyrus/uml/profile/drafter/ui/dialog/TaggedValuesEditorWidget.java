@@ -53,8 +53,8 @@ public class TaggedValuesEditorWidget {
 	 * @param stereotype the stereotype to set
 	 */
 	public void setStereotype(Stereotype stereotype) {
-		System.err.println(this.getClass().getSimpleName() 
-				+ ".setStereotype(" + (stereotype!=null?stereotype.getName():"null") + ")");
+//		System.err.println(this.getClass().getSimpleName() 
+//				+ ".setStereotype(" + (stereotype!=null?stereotype.getName():"null") + ")");
 		this.stereotype = stereotype;
 		treeViewer.setInput(stereotype);
 	}

@@ -14,6 +14,7 @@
 
 package org.eclipse.papyrus.uml.profile.drafter.ui.handler;
 
+import static org.eclipse.papyrus.uml.profile.drafter.Activator.log;
 import java.util.List;
 
 import org.eclipse.core.commands.ExecutionEvent;
@@ -95,7 +96,7 @@ public class AddProfileHandler extends AbstractProfileBaseHandler {
 		String args[] = inputName.split(":");
 		switch (args.length) {
 		case 0:
-			System.err.println("No names found in '" + inputName + "'" );
+			log.warn("No names found in '" + inputName + "'" );
 			return false;
 		case 1:
 			// Stereotype
@@ -118,7 +119,7 @@ public class AddProfileHandler extends AbstractProfileBaseHandler {
 			break;
 		} 
 		
-		System.err.println("Try to apply stereotype '" + profileNameInput + ":" +stereotypeNameInput + "'");
+//		System.err.println("Try to apply stereotype '" + profileNameInput + ":" +stereotypeNameInput + "'");
 		return true;
 	}
 	
@@ -132,12 +133,13 @@ public class AddProfileHandler extends AbstractProfileBaseHandler {
 	@Override
 	protected void doExecute(ExecutionEvent event, IEvaluationContext context) {
 
-		System.err.println("Add Profile called. Selected elements:");
 		List<NamedElement> selected = getSelectionAsNamedElements(context);
-		for( NamedElement ele : selected) {
-				System.err.println(ele.getName());
-		}
-		System.err.println("********************");
+
+//		System.err.println("Add Profile called. Selected elements:");
+//		for( NamedElement ele : selected) {
+//				System.err.println(ele.getName());
+//		}
+//		System.err.println("********************");
 		
 		if( selected.isEmpty()) {
 			return;

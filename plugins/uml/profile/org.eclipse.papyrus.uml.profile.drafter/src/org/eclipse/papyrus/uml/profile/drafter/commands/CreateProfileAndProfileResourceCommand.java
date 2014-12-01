@@ -102,10 +102,8 @@ public class CreateProfileAndProfileResourceCommand {
 	private URI getResourceURIFromProfileName(String profileName) {
 		
 		URI baseURI = modelSet.getURIWithoutExtension().trimSegments(1);
-		System.err.println("baseURI =" + baseURI.toString());
 		
 		baseURI = baseURI.appendSegment(profileName).appendFileExtension("profile");
-		System.err.println("baseURI =" + baseURI.toString());
 		
 		return baseURI;
 	}
