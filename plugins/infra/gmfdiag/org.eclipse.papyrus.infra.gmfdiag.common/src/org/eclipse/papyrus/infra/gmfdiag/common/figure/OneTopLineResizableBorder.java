@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *   Mickaël ADAM (ALL4TEC) mickael.adam@all4tec.net - Initial API and Implementation
+ *   Mickael ADAM (ALL4TEC) mickael.adam@all4tec.net - Initial API and Implementation
  *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.gmfdiag.common.figure;
@@ -27,16 +27,32 @@ import org.eclipse.papyrus.infra.gmfdiag.common.utils.FigureUtils;
 import org.eclipse.swt.graphics.Color;
 
 /**
- * The Class OneLineResizableBorder.
+ * The Class OneLineResizableBorder. A border set on the top which can be resize and positioned.
  */
 public class OneTopLineResizableBorder extends OneLineBorder {
 
 	/** The forced length. */
 	private int forcedLength = -1;
 
+	/** The length ratio. */
 	private float lengthRatio = (float) 1.0;
 
+	/** The line position. */
+	private int linePosition = PositionConstants.CENTER;
+
 	/**
+	 * Sets the line position.
+	 *
+	 * @param linePosition
+	 *            the linePosition to set
+	 */
+	public void setLinePosition(int linePosition) {
+		this.linePosition = linePosition;
+	}
+
+	/**
+	 * Sets the length ratio.
+	 *
 	 * @param lengthRatio
 	 *            the lengthRatio to set
 	 */
@@ -75,7 +91,7 @@ public class OneTopLineResizableBorder extends OneLineBorder {
 	/**
 	 * Constructor.
 	 *
-	 * @param lenght
+	 * @param length
 	 *            the length
 	 * @param width
 	 *            the width
@@ -86,7 +102,7 @@ public class OneTopLineResizableBorder extends OneLineBorder {
 	}
 
 	/**
-	 * Paints the border based on the inputs given.
+	 * Paints the oneTopBorder based on the inputs given.
 	 *
 	 * @param figure
 	 *            <code>IFigure</code> for which this is the border.
@@ -99,13 +115,33 @@ public class OneTopLineResizableBorder extends OneLineBorder {
 	public void paint(IFigure figure, Graphics graphics, Insets insets) {
 		tempRect.setBounds(getPaintRectangle(figure, insets));
 
-		int length;
-
-		// get the length of the line
-		length = getLineLength(figure);
-
+		// get the length of the line according to the corner
+		int length = getLineLength(figure);
 		tempRect.x += (tempRect.width - length - 2) / 2;
 		tempRect.width = (int) (length - 1);
+
+
+		// if the length is forced or a ratio is applied
+		if (forcedLength != -1) {
+			tempRect.width = forcedLength;
+		}
+		tempRect.width = (int) (tempRect.width * lengthRatio);
+
+
+		// Position the line
+		switch (linePosition) {
+		case PositionConstants.CENTER:
+			tempRect.x += (length - tempRect.width) / 2;
+			break;
+		case PositionConstants.LEFT:
+			break;
+		case PositionConstants.RIGHT:
+			tempRect.x += (length - tempRect.width);
+			break;
+		default:
+			tempRect.x += (length - tempRect.width) / 2;
+			break;
+		}
 
 		int one = MapModeUtil.getMapMode(figure).DPtoLP(1);
 		int widthInDP = getWidth() / one;
@@ -124,41 +160,44 @@ public class OneTopLineResizableBorder extends OneLineBorder {
 	}
 
 	/**
+	 * Gets the line length.
+	 *
 	 * @param figure
-	 * @return
+	 *            the figure
+	 * @return the line length
 	 */
 	private int getLineLength(IFigure figure) {
 		int length = tempRect.width;
-		// if the length is forced
-		if (forcedLength != -1) {
-			length = forcedLength;
-		} else {
-			SVGNodePlateFigure mainFigure = FigureUtils.findParentFigureInstance(figure, SVGNodePlateFigure.class);
-			// Get the connection anchor
-			ConnectionAnchor connectionAnchor = ((SVGNodePlateFigure) mainFigure).getConnectionAnchor("");
-			if (connectionAnchor instanceof SlidableRoundedRectangleAnchor && !(mainFigure.getBounds().equals(new Rectangle()))) {
-				// Calculate the length off the border thanks the SlidableRoundedRectangleAnchor
-				Rectangle rect = figure.getBounds().getCopy();
-				figure.translateToAbsolute(rect);
+		// // if the length is forced
+		// if (forcedLength != -1) {
+		// length = forcedLength;
+		// } else {
+		SVGNodePlateFigure mainFigure = FigureUtils.findParentFigureInstance(figure, SVGNodePlateFigure.class);
+		// Get the connection anchor
+		ConnectionAnchor connectionAnchor = ((SVGNodePlateFigure) mainFigure).getConnectionAnchor("");
+		if (connectionAnchor instanceof SlidableRoundedRectangleAnchor && !(mainFigure.getBounds().equals(new Rectangle()))) {
+			// Calculate the length off the border thanks the SlidableRoundedRectangleAnchor
+			Rectangle rect = figure.getBounds().getCopy();
+			figure.translateToAbsolute(rect);
 
-				Point locationLeft = ((SlidableRoundedRectangleAnchor) connectionAnchor).getLocation(rect.getTopLeft().translate(rect.width / 2, 0), rect.getTopLeft());
-				Point locationRight = ((SlidableRoundedRectangleAnchor) connectionAnchor).getLocation(rect.getTopLeft().translate(rect.width / 2, 0), rect.getTopRight());
+			Point locationLeft = ((SlidableRoundedRectangleAnchor) connectionAnchor).getLocation(rect.getTopLeft().translate(rect.width / 2, 0), rect.getTopLeft());
+			Point locationRight = ((SlidableRoundedRectangleAnchor) connectionAnchor).getLocation(rect.getTopLeft().translate(rect.width / 2, 0), rect.getTopRight());
 
-				if (locationLeft != null && locationRight != null) {
-					rect.width = locationRight.x - locationLeft.x;
-					// translate the length according to the zoom
-					figure.translateToRelative(rect);
-					length = rect.width;
-				}
+			if (locationLeft != null && locationRight != null) {
+				rect.width = locationRight.x - locationLeft.x;
+				// translate the length according to the zoom
+				figure.translateToRelative(rect);
+				length = rect.width;
 			}
 		}
-		return (int) (length * lengthRatio);
+		// }
+		return (int) (length);
 	}
 
 	/**
 	 * Sets the length.
 	 *
-	 * @param lenght
+	 * @param length
 	 *            the new length
 	 */
 	public void setLength(int length) {

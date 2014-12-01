@@ -20,6 +20,7 @@ import org.eclipse.core.databinding.observable.IChangeListener;
 import org.eclipse.core.databinding.observable.value.IObservableValue;
 import org.eclipse.draw2d.Border;
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
@@ -45,19 +46,25 @@ import org.eclipse.papyrus.infra.gmfdiag.common.model.NotationUtils;
  */
 public class BorderDisplayEditPolicy extends GraphicalEditPolicyEx implements IChangeListener, NotificationListener {
 
+	/** The notation NameStyle property to define line position. */
+	public static final String LINE_POSITION = "linePosition";
+
+	/** The default value for the line position of compartment. */
+	private static final String LINE_POSITION_DEFAULT_VALUE = "center";
+
 	/** The default value for the line length ratio of compartment. */
 	private static final String LINE_LENGTH_RATIO_DEFAULT_VALUE = "1.0";
 
-	/** The notation property to define the line length ratio of compartment's topLine. */
+	/** The notation NameStyle property to define the line length ratio of compartment's topLine. */
 	private static final String LINE_LENGTH_RATIO = "lineLengthRatio";
 
 	/** the default value for the line length of compartment. If the length is set to this default value, the length will be not forced */
 	private static final int DEFAULT_LENGTH_VALUE = -1;
 
-	/** The notation property to define the line length of compartment's topLine. */
+	/** The notation NameStyle property to define the line length of compartment's topLine. */
 	public static final String LENGTH = "lineLength";
 
-	/** The notation property to display. */
+	/** The notation NameStyle property to display. */
 	public static final String DISPLAY_BORDER = "displayBorder";
 
 	/** key for this edit policy. */
@@ -216,6 +223,7 @@ public class BorderDisplayEditPolicy extends GraphicalEditPolicyEx implements IC
 				// If a length or a length ratio is defined in notation or CSS
 				((OneTopLineResizableBorder) defaultBorder).setLength(NotationUtils.getIntValue(view, LENGTH, DEFAULT_LENGTH_VALUE));
 				((OneTopLineResizableBorder) defaultBorder).setLengthRatio(new Float(NotationUtils.getStringValue(view, LINE_LENGTH_RATIO, LINE_LENGTH_RATIO_DEFAULT_VALUE)));
+				((OneTopLineResizableBorder) defaultBorder).setLinePosition(getlinePosition());
 
 				// If it's the first one, set border to null.
 				final List<View> allVisibleCompartments = getAllVisibleCompartments(view, getHost().getParent());
@@ -229,6 +237,27 @@ public class BorderDisplayEditPolicy extends GraphicalEditPolicyEx implements IC
 				}
 			}
 		}
+	}
+
+	public int getlinePosition() {
+		// get the value of the CSS property
+		View view = getNotationView();
+
+		String linePosition = NotationUtils.getStringValue(view, LINE_POSITION, LINE_POSITION_DEFAULT_VALUE).toLowerCase();
+
+		int position = PositionConstants.CENTER;
+
+		if ("left".equals(linePosition)) {
+			position = PositionConstants.LEFT;
+		}
+		if ("right".equals(linePosition)) {
+			position = PositionConstants.RIGHT;
+		}
+		if ("center".equals(linePosition)) {
+			position = PositionConstants.CENTER;
+		}
+
+		return position;
 	}
 
 	/**
