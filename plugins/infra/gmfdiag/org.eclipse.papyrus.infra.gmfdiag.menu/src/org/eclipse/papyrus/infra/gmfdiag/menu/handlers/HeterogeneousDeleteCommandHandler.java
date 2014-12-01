@@ -20,10 +20,7 @@ import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.commands.CompoundCommand;
 import org.eclipse.gef.commands.UnexecutableCommand;
-import org.eclipse.gmf.runtime.common.core.command.ICommand;
-import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
-import org.eclipse.papyrus.infra.gmfdiag.controlmode.utils.ControlModeUtil;
 import org.eclipse.papyrus.infra.gmfdiag.menu.utils.DeleteActionUtil;
 
 /**
@@ -72,12 +69,6 @@ public class HeterogeneousDeleteCommandHandler extends AbstractGraphicalCommandH
 
 				// Get delete command
 				deleteCommand = DeleteActionUtil.getDeleteFromModelCommand(editPart, editingDomain);
-
-				// Get control mode command
-				ICommand controlCommand = ControlModeUtil.getUncontrolledCommand(editPart, editingDomain);
-				if (deleteCommand != null && controlCommand != null) {
-					command.add(new ICommandProxy(controlCommand));
-				}
 
 			} else {
 				if (DeleteActionUtil.isSupportView(editPart) || !(DeleteActionUtil.isCanonicalView(editPart) || DeleteActionUtil.isCanonical(editPart))) {
