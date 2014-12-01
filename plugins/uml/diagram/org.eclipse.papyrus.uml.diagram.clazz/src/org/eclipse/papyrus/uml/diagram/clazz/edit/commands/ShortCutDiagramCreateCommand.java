@@ -68,9 +68,9 @@ public class ShortCutDiagramCreateCommand extends EditElementCommand {
 
 		// Uncomment to put "phantom" objects into the diagram file.
 		// org.eclipse.emf.ecore.resource.Resource resource =
-		// 		((org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest) getRequest()).getContainer().eResource();
+		// ((org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest) getRequest()).getContainer().eResource();
 		// if (resource == null) {
-		// 	return null;
+		// return null;
 		// }
 		Resource resource = getElementToEdit().eResource();
 		Diagram newElement = NotationFactory.eINSTANCE.createDiagram();
