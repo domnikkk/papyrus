@@ -21,7 +21,6 @@ import java.util.List;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.papyrus.uml.profile.drafter.tests.utils.UMLModelCreator;
-import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.junit.After;

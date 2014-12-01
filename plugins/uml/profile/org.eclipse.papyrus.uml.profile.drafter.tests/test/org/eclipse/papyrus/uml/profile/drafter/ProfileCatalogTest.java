@@ -32,6 +32,7 @@ import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 
 
@@ -304,6 +305,7 @@ public class ProfileCatalogTest {
 	 * Test method for {@link org.eclipse.papyrus.uml.profile.drafter.ProfileCatalog#getAllStereotypeNames()}.
 	 */
 	@Test
+	@Ignore
 	public void testGetAllStereotypeNames() {
 		fail("Not yet implemented");
 	}
