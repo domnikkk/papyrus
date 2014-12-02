@@ -209,7 +209,7 @@
           </annotation>
         </repository>
         <repository
-            url="http://download.eclipse.org/modeling/emf/transaction/updates/milestones/S201409241440">
+            url="http://download.eclipse.org/modeling/emf/transaction/updates/milestones/S201411230352">
           <annotation
               source="http://www.eclipse.org/Papyrus/2014/releng/dependencytools">
             <detail
@@ -219,7 +219,7 @@
           </annotation>
         </repository>
         <repository
-            url="http://download.eclipse.org/modeling/emf/validation/updates/milestones/S201409241438">
+            url="http://download.eclipse.org/modeling/emf/validation/updates/milestones/S201411230228">
           <annotation
               source="http://www.eclipse.org/Papyrus/2014/releng/dependencytools">
             <detail
@@ -229,7 +229,7 @@
           </annotation>
         </repository>
         <repository
-            url="http://download.eclipse.org/modeling/emf/query/updates/milestones/S201409241406/">
+            url="http://download.eclipse.org/modeling/emf/query/updates/milestones/S201411230232/">
           <annotation
               source="http://www.eclipse.org/Papyrus/2014/releng/dependencytools">
             <detail
@@ -249,7 +249,7 @@
           </annotation>
         </repository>
         <repository
-            url="http://download.eclipse.org/modeling/gmp/gmf-runtime/updates/milestones/S201409241816">
+            url="http://download.eclipse.org/modeling/gmp/gmf-runtime/updates/milestones/S201411230102">
           <annotation
               source="http://www.eclipse.org/Papyrus/2014/releng/dependencytools">
             <detail
@@ -259,7 +259,7 @@
           </annotation>
         </repository>
         <repository
-            url="http://download.eclipse.org/modeling/gmp/gmf-notation/updates/milestones/S201409241407">
+            url="http://download.eclipse.org/modeling/gmp/gmf-notation/updates/milestones/S201411230248">
           <annotation
               source="http://www.eclipse.org/Papyrus/2014/releng/dependencytools">
             <detail
@@ -410,7 +410,7 @@
         <repository
             url="${base.downloads.url}/acceleo/updates/releases/3.5"/>
         <repository
-            url="${base.downloads.url}/modeling/mdt/ocl/updates/releases/5.0.2"/>
+            url="${base.downloads.url}/modeling/mdt/ocl/updates/maintenance/5.0.3/M201411191814"/>
         <repository
             url="${base.downloads.url}/modeling/mdt/uml2/updates/5.0"/>
         <repository

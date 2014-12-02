@@ -23,10 +23,10 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
- * <li>{@link org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusDiagram#getCustomPalette <em>Custom Palette</em>}</li>
- * <li>{@link org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusDiagram#getCustomStyle <em>Custom Style</em>}</li>
- * <li>{@link org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusDiagram#getChildRules <em>Child Rules</em>}</li>
- * <li>{@link org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusDiagram#getPaletteRules <em>Palette Rules</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusDiagram#getCustomPalette <em>Custom Palette</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusDiagram#getCustomStyle <em>Custom Style</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusDiagram#getChildRules <em>Child Rules</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusDiagram#getPaletteRules <em>Palette Rules</em>}</li>
  * </ul>
  * </p>
  *
@@ -42,7 +42,6 @@ public interface PapyrusDiagram extends PapyrusView {
 	 * If the meaning of the '<em>Custom Palette</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Custom Palette</em>' attribute.
 	 * @see #setCustomPalette(String)
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.ConfigurationPackage#getPapyrusDiagram_CustomPalette()
@@ -55,9 +54,7 @@ public interface PapyrusDiagram extends PapyrusView {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusDiagram#getCustomPalette <em>Custom Palette</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Custom Palette</em>' attribute.
+	 * @param value the new value of the '<em>Custom Palette</em>' attribute.
 	 * @see #getCustomPalette()
 	 * @generated
 	 */
@@ -70,7 +67,6 @@ public interface PapyrusDiagram extends PapyrusView {
 	 * If the meaning of the '<em>Custom Style</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Custom Style</em>' attribute.
 	 * @see #setCustomStyle(String)
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.ConfigurationPackage#getPapyrusDiagram_CustomStyle()
@@ -83,9 +79,7 @@ public interface PapyrusDiagram extends PapyrusView {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusDiagram#getCustomStyle <em>Custom Style</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Custom Style</em>' attribute.
+	 * @param value the new value of the '<em>Custom Style</em>' attribute.
 	 * @see #getCustomStyle()
 	 * @generated
 	 */
@@ -99,7 +93,6 @@ public interface PapyrusDiagram extends PapyrusView {
 	 * <!-- begin-model-doc -->
 	 * These rules determine which model elements can be added as child of the origin through this diagram
 	 * <!-- end-model-doc -->
-	 *
 	 * @return the value of the '<em>Child Rules</em>' containment reference list.
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.ConfigurationPackage#getPapyrusDiagram_ChildRules()
 	 * @model containment="true"
@@ -115,7 +108,6 @@ public interface PapyrusDiagram extends PapyrusView {
 	 * <!-- begin-model-doc -->
 	 * These rules determine which palette elements should be available for this diagram
 	 * <!-- end-model-doc -->
-	 *
 	 * @return the value of the '<em>Palette Rules</em>' containment reference list.
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.ConfigurationPackage#getPapyrusDiagram_PaletteRules()
 	 * @model containment="true"

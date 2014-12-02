@@ -15,6 +15,9 @@
   <constraintTypes
       label="Is UML Datatype Instance"
       constraintClass="org.eclipse.papyrus.uml.properties.constraints.IsUMLDatatypeInstance"/>
+  <constraintTypes
+      label="Is Imported Package"
+      constraintClass="org.eclipse.papyrus.uml.properties.constraints.IsImportedPackage"/>
   <modelElementFactories
       name="UML Specific Factory"
       factoryClass="org.eclipse.papyrus.uml.properties.modelelement.UMLEditorFactory"/>
@@ -42,6 +45,9 @@
   <modelElementFactories
       name="Profile definitions"
       factoryClass="org.eclipse.papyrus.uml.properties.modelelement.ProfileDefinitionModelElementFactory"/>
+  <modelElementFactories
+      name="Imported Package Model Element Factory"
+      factoryClass="org.eclipse.papyrus.uml.properties.modelelement.ImportedPackageModelElementFactory"/>
   <propertyEditorTypes
       label="ExpressionEditor"
       widgetClass="ExpressionEditor"

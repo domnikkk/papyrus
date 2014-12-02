@@ -79,7 +79,7 @@ public class AvailableDecoratorModelsSnippet extends ResourceAdapter implements 
 			if (isPromptEnabled()) {
 				// Only prompt for resources in this user model
 				Resource root = EcoreUtil.getRootContainer(package_).eResource();
-				if (modelSet.getURIWithoutExtension().equals(root.getURI().trimFileExtension())) {
+				if (root != null && modelSet.getURIWithoutExtension().equals(root.getURI().trimFileExtension())) {
 					// Schedule a call-back on the UI thread to prompt if there are unloaded profile applications available
 					Futures.addCallback(DecoratorModelUtils.hasUnloadedDecoratorModelsAsync(package_, false), //
 							promptToLoadDecoratorModels(package_), Activator.getDefault().getExecutorService());

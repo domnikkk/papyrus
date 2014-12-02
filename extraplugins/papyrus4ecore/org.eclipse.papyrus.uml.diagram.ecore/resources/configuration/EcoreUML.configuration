@@ -6,19 +6,17 @@
       <modelRules xmi:id="_Q9t2YBP8EeSS0oyATXohNA">
         <element href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
       </modelRules>
+      <owningRules xmi:id="_MxjyIl6yEeS6cqrRNqDmLA">
+        <element href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+        <selectDiagramRoot xmi:id="_lSTOsF9PEeSbqL0QobSE0Q">
+          <feature href="http://www.eclipse.org/uml2/5.0.0/UML#//Element/owner"/>
+        </selectDiagramRoot>
+      </owningRules>
       <owningRules xmi:id="_URJ9EBP8EeSS0oyATXohNA">
         <element href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
       </owningRules>
       <childRules xmi:id="_dwcpMBZFEeSzr5rzfsl7Yg"/>
       <paletteRules xmi:id="_K89jwBY_EeSzr5rzfsl7Yg" permit="false" element="clazz.group.*"/>
-    </modelKinds>
-    <modelKinds xsi:type="configuration:PapyrusSyncTable" xmi:id="_KqtBUD5bEeSnHrSUDQ71Qg" name="View Table" icon="platform:/plugin/org.eclipse.papyrus.infra.nattable.views.config/icons/nattablepageeditor.png" implementationID="PapyrusViewsTable" categories="_vUL7ABP7EeSS0oyATXohNA">
-      <modelRules xmi:id="_PrW3wD5bEeSnHrSUDQ71Qg">
-        <element href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement"/>
-      </modelRules>
-      <owningRules xmi:id="_QGbqMD5bEeSnHrSUDQ71Qg">
-        <element href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement"/>
-      </owningRules>
     </modelKinds>
     <modelKinds xsi:type="configuration:PapyrusDiagram" xmi:id="_XVzPEESqEeS8O6aS0R2EUw" name="Ecore UML Package Diagram" icon="platform:/plugin/org.eclipse.papyrus.infra.viewpoints.policy/icons/Diagram_Package.gif" implementationID="PapyrusUMLClassDiagram" categories="_vUL7ABP7EeSS0oyATXohNA">
       <modelRules xmi:id="_9LGnUESqEeS8O6aS0R2EUw">
@@ -38,6 +36,22 @@
       <paletteRules xmi:id="_S0Hht0SsEeSsn_oN1_b7YA" element="clazz.tool.link"/>
       <paletteRules xmi:id="_S0HhuESsEeSsn_oN1_b7YA" permit="false" element="clazz.tool.*"/>
       <paletteRules xmi:id="_S0HhuUSsEeSsn_oN1_b7YA" element=""/>
+    </modelKinds>
+    <modelKinds xsi:type="configuration:PapyrusSyncTable" xmi:id="_KqtBUD5bEeSnHrSUDQ71Qg" name="View Table" icon="platform:/plugin/org.eclipse.papyrus.infra.nattable.views.config/icons/nattablepageeditor.png" implementationID="PapyrusViewsTable" categories="_vUL7ABP7EeSS0oyATXohNA">
+      <modelRules xmi:id="_PrW3wD5bEeSnHrSUDQ71Qg">
+        <element href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement"/>
+      </modelRules>
+      <owningRules xmi:id="_QGbqMD5bEeSnHrSUDQ71Qg">
+        <element href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement"/>
+      </owningRules>
+    </modelKinds>
+    <modelKinds xsi:type="configuration:PapyrusSyncTable" xmi:id="_Qc9aEHC_EeSHl8_TF-njMA" name="Generic Table" icon="platform:/plugin/org.eclipse.papyrus.uml.nattable.generic.config/icons/uml_generic_table.png" implementationID="PapyrusGenericTable" categories="_vUL7ABP7EeSS0oyATXohNA">
+      <modelRules xmi:id="_T5tNwHC_EeSHl8_TF-njMA">
+        <element href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement"/>
+      </modelRules>
+      <owningRules xmi:id="_UMyh0HC_EeSHl8_TF-njMA">
+        <element href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement"/>
+      </owningRules>
     </modelKinds>
   </viewpoints>
   <metamodel href="http://www.eclipse.org/uml2/5.0.0/UML#/"/>

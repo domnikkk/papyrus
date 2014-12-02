@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.RunnableWithResult;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
+import org.eclipse.papyrus.junit.utils.rules.PluginResource;
 import org.eclipse.papyrus.views.modelexplorer.ModelExplorerPageBookView;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.IWorkbenchPage;
@@ -30,7 +31,7 @@ import org.eclipse.ui.PlatformUI;
 import org.junit.Assert;
 import org.junit.Test;
 
-
+@PluginResource("/resources/modelExplorerViewTests/model.di")
 public class ModelExplorerViewTests extends AbstractHandlerTest {
 
 	/**
@@ -76,7 +77,7 @@ public class ModelExplorerViewTests extends AbstractHandlerTest {
 		final IStructuredSelection currentSelection = getCurrentSelection();
 		Assert.assertEquals("Only one element should be selected", currentSelection.size(), 1); //$NON-NLS-1$
 		Object obj = currentSelection.getFirstElement();
-			obj = EMFHelper.getEObject(obj);
+		obj = EMFHelper.getEObject(obj);
 		Assert.assertSame("The function revealSemanticElement seems doesn't work on the root of the model", obj, getRootOfTheModel()); //$NON-NLS-1$
 	}
 

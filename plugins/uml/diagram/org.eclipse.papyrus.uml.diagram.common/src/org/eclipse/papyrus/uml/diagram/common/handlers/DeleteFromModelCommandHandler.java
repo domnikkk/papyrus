@@ -11,18 +11,16 @@
  *  Yann Tanguy (CEA LIST) yann.tanguy@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 429826
  *  Gabriel Pascual (ALL4TEC) gabriel.pascual@all4tec.net - Bug 436952
+ *  Gabriel Pascual (ALL4TEC) gabriel.pascual@all4tec.net - Bug 411570
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.common.handlers;
 
 import java.util.Iterator;
-import java.util.LinkedList;
 import java.util.List;
 
 import org.eclipse.core.commands.IHandler;
-import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.commands.UnexecutableCommand;
@@ -34,23 +32,17 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.requests.EditCommandRequestWrapper;
 import org.eclipse.gmf.runtime.emf.commands.core.command.CompositeTransactionalCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
-import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.papyrus.infra.core.resource.IReadOnlyHandler2;
-import org.eclipse.papyrus.infra.core.resource.ReadOnlyAxis;
-import org.eclipse.papyrus.infra.emf.readonly.ReadOnlyManager;
 import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
-import org.eclipse.papyrus.infra.gmfdiag.common.helper.NotationHelper;
+import org.eclipse.papyrus.infra.gmfdiag.menu.handlers.AbstractGraphicalCommandHandler;
 import org.eclipse.papyrus.infra.services.controlmode.ControlModeManager;
 import org.eclipse.papyrus.infra.services.controlmode.ControlModeRequest;
 import org.eclipse.papyrus.infra.services.controlmode.IControlModeManager;
 import org.eclipse.papyrus.infra.services.controlmode.util.ControlHelper;
 
-import com.google.common.base.Optional;
-
 /**
  * Command handler for delete from diagram
  */
-public class DeleteFromModelCommandHandler extends GraphicalCommandHandler implements IHandler {
+public class DeleteFromModelCommandHandler extends AbstractGraphicalCommandHandler implements IHandler {
 
 	@Override
 	protected Command getCommand() {
@@ -60,7 +52,7 @@ public class DeleteFromModelCommandHandler extends GraphicalCommandHandler imple
 		if (editingDomain == null) {
 			return UnexecutableCommand.INSTANCE;
 		}
-		
+
 		// Retrieve currently selected IGraphicalEditPart(s)
 		List<IGraphicalEditPart> editParts = getSelectedElements();
 		if (editParts.isEmpty()) {
@@ -77,7 +69,7 @@ public class DeleteFromModelCommandHandler extends GraphicalCommandHandler imple
 			IGraphicalEditPart editPart = it.next();
 
 			if (!(editPart instanceof DiagramEditPart)) {
-				
+
 				// Look for uncontrol mode command
 				EObject eObjectToControl = EMFHelper.getEObject(editPart);
 				if (eObjectToControl != null && ControlHelper.isRootControlledObject(eObjectToControl)) {
@@ -86,18 +78,18 @@ public class DeleteFromModelCommandHandler extends GraphicalCommandHandler imple
 					ICommand controlCommand = controlMng.getUncontrolCommand(controlRequest);
 					command.compose(controlCommand);
 				}
-				
+
 				// Look for the GMF deletion command
 				Command curCommand = editPart.getCommand(new EditCommandRequestWrapper(new DestroyElementRequest(false)));
-				
-				
+
+
 				if (curCommand != null) {
 					command.compose(new CommandProxy(curCommand));
 				}
-				
-				
-			
-		
+
+
+
+
 			}
 		}
 
@@ -105,45 +97,10 @@ public class DeleteFromModelCommandHandler extends GraphicalCommandHandler imple
 			return UnexecutableCommand.INSTANCE;
 		}
 
-		
-		
+
+
 		return new ICommandProxy(command);
 	}
 
-	@Override
-	protected boolean computeEnabled() {
-		TransactionalEditingDomain editingDomain = getEditingDomain();
-		IReadOnlyHandler2 readOnly = ReadOnlyManager.getReadOnlyHandler(editingDomain);
-
-		for (IGraphicalEditPart editPart : getSelectedElements()) {
-			EObject semantic = EMFHelper.getEObject(editPart);
-
-			View graphical = NotationHelper.findView(editPart);
-
-			if (readOnly != null) {
-				List<URI> uris = new LinkedList<URI>();
-				if (semantic == null || semantic == graphical) {
-					return false;
-				} else {
-					if (semantic.eContainer() == null) {
-						// Do not delete root semantic element
-						return false;
-					}
-					uris.add(EcoreUtil.getURI(semantic));
-				}
-
-				if (graphical != null) {
-					uris.add(EcoreUtil.getURI(graphical));
-				}
-
-				Optional<Boolean> result = readOnly.anyReadOnly(ReadOnlyAxis.anyAxis(), uris.toArray(new URI[uris.size()]));
-				if (result.isPresent() && result.get()) {
-					return false;
-				}
-			}
-		}
-
-		return true;
-	}
 
 }

@@ -38,7 +38,6 @@ import org.eclipse.papyrus.infra.viewpoints.configuration.ConfigurationPackage;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.infra.viewpoints.configuration.Category} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- *
  * @generated
  */
 public class CategoryItemProvider
@@ -53,7 +52,6 @@ public class CategoryItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public CategoryItemProvider(AdapterFactory adapterFactory) {
@@ -64,7 +62,6 @@ public class CategoryItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -81,23 +78,22 @@ public class CategoryItemProvider
 	 * This adds a property descriptor for the Name feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected void addNamePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-				(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(),
-						getString("_UI_Category_name_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Category_name_feature", "_UI_Category_type"),
-						ConfigurationPackage.Literals.CATEGORY__NAME,
-						true,
-						false,
-						false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-						null,
-						null));
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Category_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Category_name_feature", "_UI_Category_type"),
+				 ConfigurationPackage.Literals.CATEGORY__NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -116,15 +112,14 @@ public class CategoryItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Category) object).getName();
+		String label = ((Category)object).getName();
 		return label == null || label.length() == 0 ?
-				getString("_UI_Category_type") :
-				getString("_UI_Category_type") + " " + label;
+			getString("_UI_Category_type") :
+			getString("_UI_Category_type") + " " + label;
 	}
 
 
@@ -133,7 +128,6 @@ public class CategoryItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -141,9 +135,9 @@ public class CategoryItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Category.class)) {
-		case ConfigurationPackage.CATEGORY__NAME:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-			return;
+			case ConfigurationPackage.CATEGORY__NAME:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -153,7 +147,6 @@ public class CategoryItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -165,12 +158,11 @@ public class CategoryItemProvider
 	 * Return the resource locator for this item provider's resources.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return ((IChildCreationExtender) adapterFactory).getResourceLocator();
+		return ((IChildCreationExtender)adapterFactory).getResourceLocator();
 	}
 
 }

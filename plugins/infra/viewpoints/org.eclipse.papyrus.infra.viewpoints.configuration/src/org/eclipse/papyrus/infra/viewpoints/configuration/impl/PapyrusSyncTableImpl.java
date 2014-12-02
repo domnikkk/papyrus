@@ -30,7 +30,6 @@ public class PapyrusSyncTableImpl extends PapyrusViewImpl implements PapyrusSync
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected PapyrusSyncTableImpl() {
@@ -40,7 +39,6 @@ public class PapyrusSyncTableImpl extends PapyrusViewImpl implements PapyrusSync
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override

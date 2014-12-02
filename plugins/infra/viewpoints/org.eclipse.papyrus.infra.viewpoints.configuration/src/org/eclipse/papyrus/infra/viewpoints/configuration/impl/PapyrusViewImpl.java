@@ -39,13 +39,13 @@ import org.eclipse.papyrus.infra.viewpoints.iso42010.impl.ModelKindImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.eclipse.papyrus.infra.viewpoints.configuration.impl.PapyrusViewImpl#getIcon <em>Icon</em>}</li>
- * <li>{@link org.eclipse.papyrus.infra.viewpoints.configuration.impl.PapyrusViewImpl#getParent <em>Parent</em>}</li>
- * <li>{@link org.eclipse.papyrus.infra.viewpoints.configuration.impl.PapyrusViewImpl#getProfiles <em>Profiles</em>}</li>
- * <li>{@link org.eclipse.papyrus.infra.viewpoints.configuration.impl.PapyrusViewImpl#getModelRules <em>Model Rules</em>}</li>
- * <li>{@link org.eclipse.papyrus.infra.viewpoints.configuration.impl.PapyrusViewImpl#getOwningRules <em>Owning Rules</em>}</li>
- * <li>{@link org.eclipse.papyrus.infra.viewpoints.configuration.impl.PapyrusViewImpl#getImplementationID <em>Implementation ID</em>}</li>
- * <li>{@link org.eclipse.papyrus.infra.viewpoints.configuration.impl.PapyrusViewImpl#getCategories <em>Categories</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.infra.viewpoints.configuration.impl.PapyrusViewImpl#getIcon <em>Icon</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.infra.viewpoints.configuration.impl.PapyrusViewImpl#getParent <em>Parent</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.infra.viewpoints.configuration.impl.PapyrusViewImpl#getProfiles <em>Profiles</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.infra.viewpoints.configuration.impl.PapyrusViewImpl#getModelRules <em>Model Rules</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.infra.viewpoints.configuration.impl.PapyrusViewImpl#getOwningRules <em>Owning Rules</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.infra.viewpoints.configuration.impl.PapyrusViewImpl#getImplementationID <em>Implementation ID</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.infra.viewpoints.configuration.impl.PapyrusViewImpl#getCategories <em>Categories</em>}</li>
  * </ul>
  * </p>
  *
@@ -56,7 +56,6 @@ public class PapyrusViewImpl extends ModelKindImpl implements PapyrusView {
 	 * The default value of the '{@link #getIcon() <em>Icon</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getIcon()
 	 * @generated
 	 * @ordered
@@ -66,7 +65,6 @@ public class PapyrusViewImpl extends ModelKindImpl implements PapyrusView {
 	 * The cached value of the '{@link #getIcon() <em>Icon</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getIcon()
 	 * @generated
 	 * @ordered
@@ -76,7 +74,6 @@ public class PapyrusViewImpl extends ModelKindImpl implements PapyrusView {
 	 * The cached value of the '{@link #getParent() <em>Parent</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getParent()
 	 * @generated
 	 * @ordered
@@ -86,7 +83,6 @@ public class PapyrusViewImpl extends ModelKindImpl implements PapyrusView {
 	 * The cached value of the '{@link #getProfiles() <em>Profiles</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getProfiles()
 	 * @generated
 	 * @ordered
@@ -96,7 +92,6 @@ public class PapyrusViewImpl extends ModelKindImpl implements PapyrusView {
 	 * The cached value of the '{@link #getModelRules() <em>Model Rules</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getModelRules()
 	 * @generated
 	 * @ordered
@@ -106,7 +101,6 @@ public class PapyrusViewImpl extends ModelKindImpl implements PapyrusView {
 	 * The cached value of the '{@link #getOwningRules() <em>Owning Rules</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getOwningRules()
 	 * @generated
 	 * @ordered
@@ -117,7 +111,6 @@ public class PapyrusViewImpl extends ModelKindImpl implements PapyrusView {
 	 * The default value of the '{@link #getImplementationID() <em>Implementation ID</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getImplementationID()
 	 * @generated
 	 * @ordered
@@ -127,7 +120,6 @@ public class PapyrusViewImpl extends ModelKindImpl implements PapyrusView {
 	 * The cached value of the '{@link #getImplementationID() <em>Implementation ID</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getImplementationID()
 	 * @generated
 	 * @ordered
@@ -138,7 +130,6 @@ public class PapyrusViewImpl extends ModelKindImpl implements PapyrusView {
 	 * The cached value of the '{@link #getCategories() <em>Categories</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getCategories()
 	 * @generated
 	 * @ordered
@@ -148,7 +139,6 @@ public class PapyrusViewImpl extends ModelKindImpl implements PapyrusView {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected PapyrusViewImpl() {
@@ -158,7 +148,6 @@ public class PapyrusViewImpl extends ModelKindImpl implements PapyrusView {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -169,7 +158,6 @@ public class PapyrusViewImpl extends ModelKindImpl implements PapyrusView {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public String getIcon() {
@@ -179,31 +167,27 @@ public class PapyrusViewImpl extends ModelKindImpl implements PapyrusView {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public void setIcon(String newIcon) {
 		String oldIcon = icon;
 		icon = newIcon;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ConfigurationPackage.PAPYRUS_VIEW__ICON, oldIcon, icon));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public PapyrusView getParent() {
 		if (parent != null && parent.eIsProxy()) {
-			InternalEObject oldParent = (InternalEObject) parent;
-			parent = (PapyrusView) eResolveProxy(oldParent);
+			InternalEObject oldParent = (InternalEObject)parent;
+			parent = (PapyrusView)eResolveProxy(oldParent);
 			if (parent != oldParent) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ConfigurationPackage.PAPYRUS_VIEW__PARENT, oldParent, parent));
-				}
 			}
 		}
 		return parent;
@@ -212,7 +196,6 @@ public class PapyrusViewImpl extends ModelKindImpl implements PapyrusView {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public PapyrusView basicGetParent() {
@@ -222,21 +205,18 @@ public class PapyrusViewImpl extends ModelKindImpl implements PapyrusView {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public void setParent(PapyrusView newParent) {
 		PapyrusView oldParent = parent;
 		parent = newParent;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ConfigurationPackage.PAPYRUS_VIEW__PARENT, oldParent, parent));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EList<EPackage> getProfiles() {
@@ -249,7 +229,6 @@ public class PapyrusViewImpl extends ModelKindImpl implements PapyrusView {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EList<ModelRule> getModelRules() {
@@ -262,7 +241,6 @@ public class PapyrusViewImpl extends ModelKindImpl implements PapyrusView {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EList<OwningRule> getOwningRules() {
@@ -275,7 +253,6 @@ public class PapyrusViewImpl extends ModelKindImpl implements PapyrusView {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public String getImplementationID() {
@@ -285,21 +262,18 @@ public class PapyrusViewImpl extends ModelKindImpl implements PapyrusView {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public void setImplementationID(String newImplementationID) {
 		String oldImplementationID = implementationID;
 		implementationID = newImplementationID;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ConfigurationPackage.PAPYRUS_VIEW__IMPLEMENTATION_ID, oldImplementationID, implementationID));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EList<Category> getCategories() {
@@ -312,16 +286,15 @@ public class PapyrusViewImpl extends ModelKindImpl implements PapyrusView {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case ConfigurationPackage.PAPYRUS_VIEW__MODEL_RULES:
-			return ((InternalEList<?>) getModelRules()).basicRemove(otherEnd, msgs);
-		case ConfigurationPackage.PAPYRUS_VIEW__OWNING_RULES:
-			return ((InternalEList<?>) getOwningRules()).basicRemove(otherEnd, msgs);
+			case ConfigurationPackage.PAPYRUS_VIEW__MODEL_RULES:
+				return ((InternalEList<?>)getModelRules()).basicRemove(otherEnd, msgs);
+			case ConfigurationPackage.PAPYRUS_VIEW__OWNING_RULES:
+				return ((InternalEList<?>)getOwningRules()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -329,29 +302,26 @@ public class PapyrusViewImpl extends ModelKindImpl implements PapyrusView {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case ConfigurationPackage.PAPYRUS_VIEW__ICON:
-			return getIcon();
-		case ConfigurationPackage.PAPYRUS_VIEW__PARENT:
-			if (resolve) {
-				return getParent();
-			}
-			return basicGetParent();
-		case ConfigurationPackage.PAPYRUS_VIEW__PROFILES:
-			return getProfiles();
-		case ConfigurationPackage.PAPYRUS_VIEW__MODEL_RULES:
-			return getModelRules();
-		case ConfigurationPackage.PAPYRUS_VIEW__OWNING_RULES:
-			return getOwningRules();
-		case ConfigurationPackage.PAPYRUS_VIEW__IMPLEMENTATION_ID:
-			return getImplementationID();
-		case ConfigurationPackage.PAPYRUS_VIEW__CATEGORIES:
-			return getCategories();
+			case ConfigurationPackage.PAPYRUS_VIEW__ICON:
+				return getIcon();
+			case ConfigurationPackage.PAPYRUS_VIEW__PARENT:
+				if (resolve) return getParent();
+				return basicGetParent();
+			case ConfigurationPackage.PAPYRUS_VIEW__PROFILES:
+				return getProfiles();
+			case ConfigurationPackage.PAPYRUS_VIEW__MODEL_RULES:
+				return getModelRules();
+			case ConfigurationPackage.PAPYRUS_VIEW__OWNING_RULES:
+				return getOwningRules();
+			case ConfigurationPackage.PAPYRUS_VIEW__IMPLEMENTATION_ID:
+				return getImplementationID();
+			case ConfigurationPackage.PAPYRUS_VIEW__CATEGORIES:
+				return getCategories();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -359,38 +329,37 @@ public class PapyrusViewImpl extends ModelKindImpl implements PapyrusView {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case ConfigurationPackage.PAPYRUS_VIEW__ICON:
-			setIcon((String) newValue);
-			return;
-		case ConfigurationPackage.PAPYRUS_VIEW__PARENT:
-			setParent((PapyrusView) newValue);
-			return;
-		case ConfigurationPackage.PAPYRUS_VIEW__PROFILES:
-			getProfiles().clear();
-			getProfiles().addAll((Collection<? extends EPackage>) newValue);
-			return;
-		case ConfigurationPackage.PAPYRUS_VIEW__MODEL_RULES:
-			getModelRules().clear();
-			getModelRules().addAll((Collection<? extends ModelRule>) newValue);
-			return;
-		case ConfigurationPackage.PAPYRUS_VIEW__OWNING_RULES:
-			getOwningRules().clear();
-			getOwningRules().addAll((Collection<? extends OwningRule>) newValue);
-			return;
-		case ConfigurationPackage.PAPYRUS_VIEW__IMPLEMENTATION_ID:
-			setImplementationID((String) newValue);
-			return;
-		case ConfigurationPackage.PAPYRUS_VIEW__CATEGORIES:
-			getCategories().clear();
-			getCategories().addAll((Collection<? extends Category>) newValue);
-			return;
+			case ConfigurationPackage.PAPYRUS_VIEW__ICON:
+				setIcon((String)newValue);
+				return;
+			case ConfigurationPackage.PAPYRUS_VIEW__PARENT:
+				setParent((PapyrusView)newValue);
+				return;
+			case ConfigurationPackage.PAPYRUS_VIEW__PROFILES:
+				getProfiles().clear();
+				getProfiles().addAll((Collection<? extends EPackage>)newValue);
+				return;
+			case ConfigurationPackage.PAPYRUS_VIEW__MODEL_RULES:
+				getModelRules().clear();
+				getModelRules().addAll((Collection<? extends ModelRule>)newValue);
+				return;
+			case ConfigurationPackage.PAPYRUS_VIEW__OWNING_RULES:
+				getOwningRules().clear();
+				getOwningRules().addAll((Collection<? extends OwningRule>)newValue);
+				return;
+			case ConfigurationPackage.PAPYRUS_VIEW__IMPLEMENTATION_ID:
+				setImplementationID((String)newValue);
+				return;
+			case ConfigurationPackage.PAPYRUS_VIEW__CATEGORIES:
+				getCategories().clear();
+				getCategories().addAll((Collection<? extends Category>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -398,33 +367,32 @@ public class PapyrusViewImpl extends ModelKindImpl implements PapyrusView {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case ConfigurationPackage.PAPYRUS_VIEW__ICON:
-			setIcon(ICON_EDEFAULT);
-			return;
-		case ConfigurationPackage.PAPYRUS_VIEW__PARENT:
-			setParent((PapyrusView) null);
-			return;
-		case ConfigurationPackage.PAPYRUS_VIEW__PROFILES:
-			getProfiles().clear();
-			return;
-		case ConfigurationPackage.PAPYRUS_VIEW__MODEL_RULES:
-			getModelRules().clear();
-			return;
-		case ConfigurationPackage.PAPYRUS_VIEW__OWNING_RULES:
-			getOwningRules().clear();
-			return;
-		case ConfigurationPackage.PAPYRUS_VIEW__IMPLEMENTATION_ID:
-			setImplementationID(IMPLEMENTATION_ID_EDEFAULT);
-			return;
-		case ConfigurationPackage.PAPYRUS_VIEW__CATEGORIES:
-			getCategories().clear();
-			return;
+			case ConfigurationPackage.PAPYRUS_VIEW__ICON:
+				setIcon(ICON_EDEFAULT);
+				return;
+			case ConfigurationPackage.PAPYRUS_VIEW__PARENT:
+				setParent((PapyrusView)null);
+				return;
+			case ConfigurationPackage.PAPYRUS_VIEW__PROFILES:
+				getProfiles().clear();
+				return;
+			case ConfigurationPackage.PAPYRUS_VIEW__MODEL_RULES:
+				getModelRules().clear();
+				return;
+			case ConfigurationPackage.PAPYRUS_VIEW__OWNING_RULES:
+				getOwningRules().clear();
+				return;
+			case ConfigurationPackage.PAPYRUS_VIEW__IMPLEMENTATION_ID:
+				setImplementationID(IMPLEMENTATION_ID_EDEFAULT);
+				return;
+			case ConfigurationPackage.PAPYRUS_VIEW__CATEGORIES:
+				getCategories().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -432,26 +400,25 @@ public class PapyrusViewImpl extends ModelKindImpl implements PapyrusView {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case ConfigurationPackage.PAPYRUS_VIEW__ICON:
-			return ICON_EDEFAULT == null ? icon != null : !ICON_EDEFAULT.equals(icon);
-		case ConfigurationPackage.PAPYRUS_VIEW__PARENT:
-			return parent != null;
-		case ConfigurationPackage.PAPYRUS_VIEW__PROFILES:
-			return profiles != null && !profiles.isEmpty();
-		case ConfigurationPackage.PAPYRUS_VIEW__MODEL_RULES:
-			return modelRules != null && !modelRules.isEmpty();
-		case ConfigurationPackage.PAPYRUS_VIEW__OWNING_RULES:
-			return owningRules != null && !owningRules.isEmpty();
-		case ConfigurationPackage.PAPYRUS_VIEW__IMPLEMENTATION_ID:
-			return IMPLEMENTATION_ID_EDEFAULT == null ? implementationID != null : !IMPLEMENTATION_ID_EDEFAULT.equals(implementationID);
-		case ConfigurationPackage.PAPYRUS_VIEW__CATEGORIES:
-			return categories != null && !categories.isEmpty();
+			case ConfigurationPackage.PAPYRUS_VIEW__ICON:
+				return ICON_EDEFAULT == null ? icon != null : !ICON_EDEFAULT.equals(icon);
+			case ConfigurationPackage.PAPYRUS_VIEW__PARENT:
+				return parent != null;
+			case ConfigurationPackage.PAPYRUS_VIEW__PROFILES:
+				return profiles != null && !profiles.isEmpty();
+			case ConfigurationPackage.PAPYRUS_VIEW__MODEL_RULES:
+				return modelRules != null && !modelRules.isEmpty();
+			case ConfigurationPackage.PAPYRUS_VIEW__OWNING_RULES:
+				return owningRules != null && !owningRules.isEmpty();
+			case ConfigurationPackage.PAPYRUS_VIEW__IMPLEMENTATION_ID:
+				return IMPLEMENTATION_ID_EDEFAULT == null ? implementationID != null : !IMPLEMENTATION_ID_EDEFAULT.equals(implementationID);
+			case ConfigurationPackage.PAPYRUS_VIEW__CATEGORIES:
+				return categories != null && !categories.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -459,14 +426,11 @@ public class PapyrusViewImpl extends ModelKindImpl implements PapyrusView {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
-			return super.toString();
-		}
+		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (icon: ");

@@ -422,7 +422,7 @@ public abstract class AbstractExecutionEngine implements IExecutionEngine {
 	 */
 	public IVariable[] getVariables(IDebugElement stackFrameOrValue) {
 		// By default, returns an empty array of variables
-		return new IVariable[] {};
+		return new MokaVariable[] {};
 	}
 
 	/*

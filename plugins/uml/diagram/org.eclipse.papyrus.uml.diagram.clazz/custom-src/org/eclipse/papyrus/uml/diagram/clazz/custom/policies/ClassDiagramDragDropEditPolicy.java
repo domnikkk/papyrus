@@ -46,6 +46,7 @@ import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.AssociationEditPart;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.AssociationNodeEditPart;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.ClassEditPart;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.ClassEditPartCN;
+import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.DependencyEditPart;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.DependencyNodeEditPart;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.EnumerationLiteralEditPart;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.InstanceSpecificationEditPart;
@@ -59,6 +60,7 @@ import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.PackageEditPart;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.PackageEditPartCN;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.RedefinableTemplateSignatureEditPart;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.SubstitutionEditPart;
+import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.UsageEditPart;
 import org.eclipse.papyrus.uml.diagram.clazz.part.UMLVisualIDRegistry;
 import org.eclipse.papyrus.uml.diagram.clazz.providers.UMLElementTypes;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.CommonDiagramDragDropEditPolicy;
@@ -124,15 +126,18 @@ public class ClassDiagramDragDropEditPolicy extends CommonDiagramDragDropEditPol
 			return dropAsNormalBinaryLink(dropRequest, semanticLink, linkVISUALID);
 		}
 		if (linkVISUALID == AssociationEditPart.VISUAL_ID) {
-			return dropAssociation(dropRequest, semanticLink, linkVISUALID);
+			return dropAssociation(dropRequest, semanticLink);
+		}
+		if (linkVISUALID == UsageEditPart.VISUAL_ID) {
+			return dropAsNormalBinaryLink(dropRequest, semanticLink, linkVISUALID);
 		}
 		switch (nodeVISUALID) {
 		case DependencyNodeEditPart.VISUAL_ID:
-			return dropDependency(dropRequest, semanticLink, nodeVISUALID);
+			return dropDependency(dropRequest, semanticLink);
 		case AssociationClassEditPart.VISUAL_ID:
 			return dropAssociationClass(dropRequest, semanticLink, nodeVISUALID);
 		case AssociationNodeEditPart.VISUAL_ID:
-			return dropAssociation(dropRequest, semanticLink, nodeVISUALID);
+			return dropAssociation(dropRequest, semanticLink);
 		case NestedClassForClassEditPart.VISUAL_ID:
 		case ClassEditPartCN.VISUAL_ID:
 		case PackageEditPartCN.VISUAL_ID:
@@ -225,17 +230,17 @@ public class ClassDiagramDragDropEditPolicy extends CommonDiagramDragDropEditPol
 	 *
 	 * @return the command
 	 */
-	protected Command dropAssociation(DropObjectsRequest dropRequest, Element semanticLink, int nodeVISUALID) {
+	protected Command dropAssociation(DropObjectsRequest dropRequest, Element semanticLink) {
 		Collection<?> endtypes = ClassLinkMappingHelper.getInstance().getSource(semanticLink);
 		if (endtypes.size() == 1) {
 			Element source = (Element) endtypes.toArray()[0];
 			Element target = (Element) endtypes.toArray()[0];
-			return new ICommandProxy(dropBinaryLink(new CompositeCommand("drop Association"), source, target, 4001, dropRequest.getLocation(), semanticLink));
+			return new ICommandProxy(dropBinaryLink(new CompositeCommand("drop Association"), source, target, AssociationEditPart.VISUAL_ID, dropRequest.getLocation(), semanticLink));
 		}
 		if (endtypes.size() == 2) {
 			Element source = (Element) endtypes.toArray()[0];
 			Element target = (Element) endtypes.toArray()[1];
-			return new ICommandProxy(dropBinaryLink(new CompositeCommand("drop Association"), source, target, 4001, dropRequest.getLocation(), semanticLink));
+			return new ICommandProxy(dropBinaryLink(new CompositeCommand("drop Association"), source, target, AssociationEditPart.VISUAL_ID, dropRequest.getLocation(), semanticLink));
 		}
 		if (endtypes.size() > 2) {
 			CustomMultiAssociationHelper associationHelper = new CustomMultiAssociationHelper(getEditingDomain());
@@ -273,13 +278,13 @@ public class ClassDiagramDragDropEditPolicy extends CommonDiagramDragDropEditPol
 	 *
 	 * @return the command
 	 */
-	protected Command dropDependency(DropObjectsRequest dropRequest, Element semanticLink, int nodeVISUALID) {
+	protected Command dropDependency(DropObjectsRequest dropRequest, Element semanticLink) {
 		Collection<?> sources = ClassLinkMappingHelper.getInstance().getSource(semanticLink);
 		Collection<?> targets = ClassLinkMappingHelper.getInstance().getTarget(semanticLink);
 		if (sources.size() == 1 && targets.size() == 1) {
 			Element source = (Element) sources.toArray()[0];
 			Element target = (Element) targets.toArray()[0];
-			return new ICommandProxy(dropBinaryLink(new CompositeCommand("drop Association"), source, target, 4008, dropRequest.getLocation(), semanticLink));
+			return new ICommandProxy(dropBinaryLink(new CompositeCommand("drop Dependency"), source, target, DependencyEditPart.VISUAL_ID, dropRequest.getLocation(), semanticLink));
 		}
 		if (sources.size() > 1 || targets.size() > 1) {
 			MultiDependencyHelper dependencyHelper = new MultiDependencyHelper(getEditingDomain(), getCompositeCommandRegistry());

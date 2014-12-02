@@ -21,7 +21,6 @@ import org.eclipse.emf.ecore.resource.impl.ResourceFactoryImpl;
  * <!-- begin-user-doc -->
  * The <b>Resource Factory</b> associated with the package.
  * <!-- end-user-doc -->
- *
  * @see org.eclipse.papyrus.infra.viewpoints.configuration.util.ConfigurationResourceImpl
  * @generated
  */
@@ -30,7 +29,6 @@ public class ConfigurationResourceFactoryImpl extends ResourceFactoryImpl {
 	 * Creates an instance of the resource factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public ConfigurationResourceFactoryImpl() {
@@ -41,7 +39,6 @@ public class ConfigurationResourceFactoryImpl extends ResourceFactoryImpl {
 	 * Creates an instance of the resource.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override

@@ -69,6 +69,7 @@ import org.eclipse.papyrus.infra.services.edit.service.ElementEditServiceUtils;
 import org.eclipse.papyrus.infra.services.edit.service.IElementEditService;
 import org.eclipse.papyrus.infra.viewpoints.configuration.ModelAutoCreate;
 import org.eclipse.papyrus.infra.viewpoints.configuration.OwningRule;
+import org.eclipse.papyrus.infra.viewpoints.configuration.RootAutoSelect;
 import org.eclipse.papyrus.infra.viewpoints.policy.PolicyChecker;
 import org.eclipse.papyrus.infra.viewpoints.policy.ViewPrototype;
 import org.eclipse.papyrus.uml.tools.model.UmlUtils;
@@ -176,6 +177,14 @@ public abstract class AbstractPapyrusGmfCreateDiagramCommandHandler extends Abst
 				}
 			}
 
+			if (rule.getSelectDiagramRoot() != null) {
+				// We have a path for the root auto-selection
+				for (RootAutoSelect auto : rule.getSelectDiagramRoot()) {
+					EReference ref = auto.getFeature();
+					element =(EObject) element.eGet(ref);
+				}
+			}			
+			
 			if (name == null) {
 				name = openDiagramNameDialog(prototype.isNatural() ? getDefaultDiagramName() : "New" + prototype.getLabel().replace(" ", ""));
 			}

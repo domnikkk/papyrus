@@ -96,7 +96,12 @@
          point="org.eclipse.ui.menus">
       <menuContribution
             allPopups="true"
-            locationURI="popup:org.eclipse.papyrus.views.modelexplorer.modelexplorer.popup?after=tools">
+            locationURI="popup:org.eclipse.papyrus.views.modelexplorer.modelexplorer.popup?after=org.eclipse.papyrus.uml.import.menu">
+         <menu
+               id="org.eclipse.papyrus.uml.export.menu"
+               label="&amp;Export"
+               icon="icons/export_wiz_16x16-papyrusColor.gif"
+               tooltip="Papyrus Export Menu">            
          <command
                commandId="org.eclipse.papyrus.export.exportAllDiagrams"
                icon="icons/exportAll.png"
@@ -114,7 +119,7 @@
                </with>
             </visibleWhen>
          </command>
+        </menu> 
       </menuContribution>
    </extension>
-
 </plugin>

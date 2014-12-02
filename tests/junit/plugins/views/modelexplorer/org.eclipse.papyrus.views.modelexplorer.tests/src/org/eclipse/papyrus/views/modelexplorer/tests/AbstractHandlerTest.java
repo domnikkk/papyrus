@@ -20,72 +20,56 @@ import java.util.List;
 
 import org.eclipse.core.commands.Command;
 import org.eclipse.core.commands.IHandler;
-import org.eclipse.core.resources.IFile;
-import org.eclipse.core.resources.IProject;
-import org.eclipse.core.resources.IWorkspace;
-import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IStatus;
-import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.command.CommandStack;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.RunnableWithResult;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
+import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.Customization;
 import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.internal.treeproxy.TreeElement;
-import org.eclipse.papyrus.emf.facet.util.core.internal.exported.FileUtils;
 import org.eclipse.papyrus.infra.core.editor.CoreMultiDiagramEditor;
+import org.eclipse.papyrus.infra.core.sasheditor.contentprovider.IPageManager;
+import org.eclipse.papyrus.infra.core.services.ServiceException;
 import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
+import org.eclipse.papyrus.infra.emf.utils.ServiceUtilsForResourceSet;
+import org.eclipse.papyrus.infra.nattable.model.nattable.Table;
 import org.eclipse.papyrus.junit.framework.classification.tests.AbstractPapyrusTest;
-import org.eclipse.papyrus.views.modelexplorer.ModelExplorerPage;
+import org.eclipse.papyrus.junit.utils.rules.PapyrusEditorFixture;
 import org.eclipse.papyrus.views.modelexplorer.ModelExplorerPageBookView;
 import org.eclipse.papyrus.views.modelexplorer.ModelExplorerView;
 import org.eclipse.swt.widgets.Display;
-import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.ISelectionService;
-import org.eclipse.ui.IViewPart;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.IWorkbenchWindow;
-import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.commands.ICommandService;
-import org.eclipse.ui.ide.IDE;
 import org.eclipse.ui.internal.handlers.HandlerProxy;
 import org.eclipse.ui.navigator.CommonViewer;
-import org.eclipse.ui.part.IPage;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.Rule;
 import org.osgi.framework.Bundle;
 
 //TODO a part of this plugin should be moved in an upper test plugin
 public abstract class AbstractHandlerTest extends AbstractPapyrusTest {
 
-	/** the di extension */
-	protected static final String EXTENSION_DI = ".di"; //$NON-NLS-1$
-
-	/** the notation extension */
-	protected static final String EXTENSION_NOTATION = ".notation"; //$NON-NLS-1$
-
-	/** the uml extension */
-	protected static final String EXTENSION_UML = ".uml"; //$NON-NLS-1$
-
-	/** the name of the file to open */
-	protected static final String FILE_NAME = "model"; //$NON-NLS-1$
-
-	/** the name of the project used to test the handler */
-	protected static final String PROJECT_NAME = "Project Handler Test"; //$NON-NLS-1$
-
 	/** the id of the model explorer */
 	public static final String viewId = "org.eclipse.papyrus.views.modelexplorer.modelexplorer"; //$NON-NLS-1$
 
-	/** the root of the model */
-	protected EObject modelRoot;
+	/** all the papyrus diagrams of the model */
+	protected List<Diagram> diagrams = new ArrayList<Diagram>();
+
+	/** Papyrus editor fixture. */
+	@Rule
+	public final PapyrusEditorFixture editorFixture = new PapyrusEditorFixture();
 
 	protected ModelExplorerView modelExplorerView;
 
@@ -109,7 +93,7 @@ public abstract class AbstractHandlerTest extends AbstractPapyrusTest {
 	 * Constructor.
 	 *
 	 * @param bundle
-	 *        the bundle used to load the model
+	 *            the bundle used to load the model
 	 */
 	public AbstractHandlerTest(Bundle bundle) {
 		this(null, bundle);
@@ -120,7 +104,7 @@ public abstract class AbstractHandlerTest extends AbstractPapyrusTest {
 	 * Constructor.
 	 *
 	 * @param commandId
-	 *        the id of the command to test
+	 *            the id of the command to test
 	 */
 	public AbstractHandlerTest(String commandId, Bundle bundle) {
 		Assert.assertNotNull("Bundle can't be null to do the test.", bundle); //$NON-NLS-1$
@@ -128,34 +112,6 @@ public abstract class AbstractHandlerTest extends AbstractPapyrusTest {
 		this.bundle = bundle;
 	}
 
-	/**
-	 *
-	 * @param file
-	 *        the file to open
-	 * @return the opened editor
-	 * @throws PartInitException
-	 */
-	// TODO should be moved in an upper plugin test
-	protected IEditorPart openEditor(final IFile file) throws PartInitException {
-		RunnableWithResult<IEditorPart> runnable;
-		Display.getDefault().syncExec(runnable = new RunnableWithResult.Impl<IEditorPart>() {
-
-			public void run() {
-				IWorkbenchPage activePage = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
-				try {
-					IEditorPart editor = IDE.openEditor(activePage, file);
-					setResult(editor);
-					setStatus(Status.OK_STATUS);
-				} catch (Exception ex) {
-					setStatus(new Status(IStatus.ERROR, bundle.getSymbolicName(), "Cannot open the editor"));
-				}
-			}
-		});
-
-		Assert.assertEquals(runnable.getStatus().getMessage(), IStatus.OK, runnable.getStatus().getSeverity());
-
-		return runnable.getResult();
-	}
 
 	/**
 	 * This method tests if the active part is the model explorer
@@ -179,7 +135,7 @@ public abstract class AbstractHandlerTest extends AbstractPapyrusTest {
 	 * selection is the wanted selection using assertion
 	 *
 	 * @param elementToSelect
-	 *        the element to select
+	 *            the element to select
 	 */
 	protected void selectElementInTheModelexplorer(EObject elementToSelect) {
 		final List<EObject> selectedElement = new ArrayList<EObject>();
@@ -191,7 +147,7 @@ public abstract class AbstractHandlerTest extends AbstractPapyrusTest {
 			}
 		});
 
-		IStructuredSelection currentSelection = (IStructuredSelection)selectionService.getSelection();
+		IStructuredSelection currentSelection = (IStructuredSelection) selectionService.getSelection();
 		Assert.assertEquals("Only one element should be selected", 1, currentSelection.size()); //$NON-NLS-1$
 		Object obj = currentSelection.getFirstElement();
 		obj = EMFHelper.getEObject(obj);
@@ -203,7 +159,7 @@ public abstract class AbstractHandlerTest extends AbstractPapyrusTest {
 	 * selection is the wanted selection using assertion
 	 *
 	 * @param elementToSelect
-	 *        the element to select
+	 *            the element to select
 	 */
 	protected void selectElementInTheModelexplorer(final TreeElement elementToSelect) {
 		Display.getDefault().syncExec(new Runnable() {
@@ -213,14 +169,14 @@ public abstract class AbstractHandlerTest extends AbstractPapyrusTest {
 			}
 		});
 
-		IStructuredSelection currentSelection = (IStructuredSelection)selectionService.getSelection();
+		IStructuredSelection currentSelection = (IStructuredSelection) selectionService.getSelection();
 		Assert.assertEquals("Only one element should be selected", 1, currentSelection.size()); //$NON-NLS-1$
 		Object obj = currentSelection.getFirstElement();
 		Assert.assertSame("the current selected element is not the wanted element", elementToSelect, obj); //$NON-NLS-1$
 	}
 
 	protected IStructuredSelection getCurrentSelection() {
-		return (IStructuredSelection)selectionService.getSelection();
+		return (IStructuredSelection) selectionService.getSelection();
 	}
 
 	/**
@@ -229,34 +185,55 @@ public abstract class AbstractHandlerTest extends AbstractPapyrusTest {
 	 */
 	protected IHandler getActiveHandler() {
 		IHandler currentHandler = testedCommand.getHandler();
-		if(currentHandler instanceof HandlerProxy) {
-			currentHandler = ((HandlerProxy)currentHandler).getHandler();
+		if (currentHandler instanceof HandlerProxy) {
+			currentHandler = ((HandlerProxy) currentHandler).getHandler();
 		}
 		return currentHandler;
 	}
 
-	@Before
-	public void initTests() throws CoreException, IOException {
-		// we clean the workspace and create a new project to test the handlers
-		IWorkspace workspace = ResourcesPlugin.getWorkspace();
-		for(IProject project : workspace.getRoot().getProjects()) {
-			project.delete(true, new NullProgressMonitor());
-		}
-		IProject testProject = workspace.getRoot().getProject(AbstractHandlerTest.PROJECT_NAME);
-		testProject.create(new NullProgressMonitor());
-		testProject.open(new NullProgressMonitor());
+	/**
+	 * 
+	 * @return
+	 *         the diagrams owned by the IPageMngr
+	 * @throws ServiceException
+	 */
+	protected List<Diagram> getDiagrams() throws ServiceException {
 
-		// we copy the file of the tested model in the new project
-		FileUtils.copyFileFromBundle("/resources/" + AbstractHandlerTest.FILE_NAME + AbstractHandlerTest.EXTENSION_UML, //$NON-NLS-1$
-			testProject, '/' + AbstractHandlerTest.FILE_NAME + AbstractHandlerTest.EXTENSION_UML, bundle);
-		FileUtils.copyFileFromBundle("/resources/" + AbstractHandlerTest.FILE_NAME + AbstractHandlerTest.EXTENSION_NOTATION, //$NON-NLS-1$
-			testProject, '/' + AbstractHandlerTest.FILE_NAME + AbstractHandlerTest.EXTENSION_NOTATION, bundle);
-		FileUtils.copyFileFromBundle("/resources/" + AbstractHandlerTest.FILE_NAME + AbstractHandlerTest.EXTENSION_DI, //$NON-NLS-1$
-			testProject, '/' + AbstractHandlerTest.FILE_NAME + AbstractHandlerTest.EXTENSION_DI, bundle);
-		IFile file = testProject.getFile(AbstractHandlerTest.FILE_NAME + AbstractHandlerTest.EXTENSION_DI);
+		IPageManager pageManager = ServiceUtilsForResourceSet.getInstance().getIPageManager(editorFixture.getResourceSet());
+		List<Object> pages = pageManager.allPages();
+		List<Diagram> diagrams = new ArrayList<Diagram>();
+		for (Object current : pages) {
+			if (current instanceof Diagram) {
+				diagrams.add((Diagram) current);
+			}
+		}
+		return diagrams;
+	}
+
+	/**
+	 * 
+	 * @return
+	 *         the diagrams owned by the IPageMngr
+	 * @throws ServiceException
+	 */
+	protected List<Table> getTables() throws ServiceException {
+
+		IPageManager pageManager = ServiceUtilsForResourceSet.getInstance().getIPageManager(editorFixture.getResourceSet());
+		List<Object> pages = pageManager.allPages();
+		List<Table> diagrams = new ArrayList<Table>();
+		for (Object current : pages) {
+			if (current instanceof Table) {
+				diagrams.add((Table) current);
+			}
+		}
+		return diagrams;
+	}
+
+	@Before
+	public void initTests() throws CoreException, IOException, ServiceException {
 
 		// we open the editor
-		editor = (CoreMultiDiagramEditor)openEditor(file);
+		editor = (CoreMultiDiagramEditor) editorFixture.open();
 
 		RunnableWithResult<?> runnable;
 
@@ -265,20 +242,7 @@ public abstract class AbstractHandlerTest extends AbstractPapyrusTest {
 			public void run() {
 				IWorkbenchWindow activeWorkbenchWindow = PlatformUI.getWorkbench().getActiveWorkbenchWindow();
 
-				// we look for the modelexplorer
-				IViewPart modelexplorer;
-				try {
-					modelexplorer = activeWorkbenchWindow.getActivePage().showView(AbstractHandlerTest.viewId);
-				} catch (PartInitException ex) {
-					ex.printStackTrace(System.out);
-					setStatus(new Status(IStatus.ERROR, bundle.getSymbolicName(), ex.getMessage()));
-					return;
-				}
-				ModelExplorerPageBookView view = (ModelExplorerPageBookView)modelexplorer;
-				IPage currentPage = view.getCurrentPage();
-				ModelExplorerPage page = (ModelExplorerPage)currentPage;
-				IViewPart viewer = page.getViewer();
-				modelExplorerView = (ModelExplorerView)viewer;
+				modelExplorerView = editorFixture.getModelExplorerView();
 				modelExplorerView.setFocus();
 
 				// we look for the common viewer
@@ -288,37 +252,38 @@ public abstract class AbstractHandlerTest extends AbstractPapyrusTest {
 				selectionService = activeWorkbenchWindow.getSelectionService();
 
 				// we look for the testedCommand
-				ICommandService commandService = (ICommandService)activeWorkbenchWindow.getService(ICommandService.class);
-				if(commandId != null) {
+				ICommandService commandService = activeWorkbenchWindow.getService(ICommandService.class);
+				if (commandId != null) {
 					testedCommand = commandService.getCommand(commandId);
 				}
 
 				commonViewer.expandToLevel(2);
 
-				// store the root of the model
-				Object[] visibleElement = commonViewer.getVisibleExpandedElements();
-				modelRoot = EMFHelper.getEObject(visibleElement[0]);
-
 				List<Customization> appliedCustomizations = org.eclipse.papyrus.views.modelexplorer.Activator.getDefault().getCustomizationManager().getManagedCustomizations();
-				Customization SimpleUML = null;
+				Customization facetSimpleUML = null;
+				Customization facetPapyrusTable = null;
 				Iterator<?> iter = appliedCustomizations.iterator();
-				while(iter.hasNext()) {
-					Customization custo = (Customization)iter.next();
-					if(custo.getName().equals("SimpleUML")) {
-						SimpleUML = custo;
+				while (iter.hasNext()) {
+					Customization custo = (Customization) iter.next();
+					if (custo.getName().equals("SimpleUML")) {
+						facetSimpleUML = custo;
+					} else if (custo.getName().equals("PapyrusTable")) {
+						facetPapyrusTable = custo;
 					}
 				}
-				Assert.assertNotNull("Custom SimpleUML not found", SimpleUML); //$NON-NLS-1$
-				org.eclipse.papyrus.views.modelexplorer.Activator.getDefault().getCustomizationManager().getManagedCustomizations().add(0, SimpleUML);
+				Assert.assertNotNull("Custom SimpleUML not found", facetSimpleUML); //$NON-NLS-1$
+				Assert.assertNotNull("Custom PapyrusTable not found", facetPapyrusTable); //$NON-NLS-1$
+
+				org.eclipse.papyrus.views.modelexplorer.Activator.getDefault().getCustomizationManager().getManagedCustomizations().add(0, facetPapyrusTable);
+				org.eclipse.papyrus.views.modelexplorer.Activator.getDefault().getCustomizationManager().getManagedCustomizations().add(0, facetSimpleUML);
+				;
 				setStatus(Status.OK_STATUS);
 			}
 		});
 
 		Assert.assertEquals(runnable.getStatus().getMessage(), IStatus.OK, runnable.getStatus().getSeverity());
+		diagrams = getDiagrams();
 
-		while(modelRoot.eContainer() != null) {
-			modelRoot = modelRoot.eContainer();
-		}
 	}
 
 	/**
@@ -326,7 +291,7 @@ public abstract class AbstractHandlerTest extends AbstractPapyrusTest {
 	 * @return the root of the model
 	 */
 	public EObject getRootOfTheModel() {
-		return modelRoot;
+		return editorFixture.getModel();
 	}
 
 	/**
@@ -361,7 +326,7 @@ public abstract class AbstractHandlerTest extends AbstractPapyrusTest {
 	}
 
 	public void undoRedo(int time) {
-		for(int i = 0; i < time; i++) {
+		for (int i = 0; i < time; i++) {
 			undoRedoTest();
 		}
 	}

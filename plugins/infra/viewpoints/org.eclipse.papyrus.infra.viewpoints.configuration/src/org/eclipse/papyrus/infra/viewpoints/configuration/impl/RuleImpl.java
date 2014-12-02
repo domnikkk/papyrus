@@ -27,7 +27,7 @@ import org.eclipse.papyrus.infra.viewpoints.configuration.Rule;
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.eclipse.papyrus.infra.viewpoints.configuration.impl.RuleImpl#isPermit <em>Permit</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.infra.viewpoints.configuration.impl.RuleImpl#isPermit <em>Permit</em>}</li>
  * </ul>
  * </p>
  *
@@ -38,7 +38,6 @@ public abstract class RuleImpl extends MinimalEObjectImpl.Container implements R
 	 * The default value of the '{@link #isPermit() <em>Permit</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #isPermit()
 	 * @generated
 	 * @ordered
@@ -49,7 +48,6 @@ public abstract class RuleImpl extends MinimalEObjectImpl.Container implements R
 	 * The cached value of the '{@link #isPermit() <em>Permit</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #isPermit()
 	 * @generated
 	 * @ordered
@@ -59,7 +57,6 @@ public abstract class RuleImpl extends MinimalEObjectImpl.Container implements R
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected RuleImpl() {
@@ -69,7 +66,6 @@ public abstract class RuleImpl extends MinimalEObjectImpl.Container implements R
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -80,7 +76,6 @@ public abstract class RuleImpl extends MinimalEObjectImpl.Container implements R
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public boolean isPermit() {
@@ -90,28 +85,25 @@ public abstract class RuleImpl extends MinimalEObjectImpl.Container implements R
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public void setPermit(boolean newPermit) {
 		boolean oldPermit = permit;
 		permit = newPermit;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ConfigurationPackage.RULE__PERMIT, oldPermit, permit));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case ConfigurationPackage.RULE__PERMIT:
-			return isPermit();
+			case ConfigurationPackage.RULE__PERMIT:
+				return isPermit();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -119,15 +111,14 @@ public abstract class RuleImpl extends MinimalEObjectImpl.Container implements R
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case ConfigurationPackage.RULE__PERMIT:
-			setPermit((Boolean) newValue);
-			return;
+			case ConfigurationPackage.RULE__PERMIT:
+				setPermit((Boolean)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -135,15 +126,14 @@ public abstract class RuleImpl extends MinimalEObjectImpl.Container implements R
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case ConfigurationPackage.RULE__PERMIT:
-			setPermit(PERMIT_EDEFAULT);
-			return;
+			case ConfigurationPackage.RULE__PERMIT:
+				setPermit(PERMIT_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -151,14 +141,13 @@ public abstract class RuleImpl extends MinimalEObjectImpl.Container implements R
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case ConfigurationPackage.RULE__PERMIT:
-			return permit != PERMIT_EDEFAULT;
+			case ConfigurationPackage.RULE__PERMIT:
+				return permit != PERMIT_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -166,14 +155,11 @@ public abstract class RuleImpl extends MinimalEObjectImpl.Container implements R
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
-			return super.toString();
-		}
+		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (permit: ");

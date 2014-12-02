@@ -24,8 +24,6 @@ import org.eclipse.papyrus.views.properties.runtime.ConfigurationManager;
 import org.eclipse.papyrus.views.properties.runtime.DisplayEngine;
 import org.eclipse.papyrus.views.properties.runtime.EmbeddedDisplayEngine;
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.layout.FillLayout;
-import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Composite;
 
 /**
@@ -108,11 +106,10 @@ public class PropertiesDisplayHelper {
 
 		Set<? extends View> views = constraints.getDisplayUnits(selection);
 
-		Composite self = new Composite(parent, SWT.BORDER);
-		self.setLayoutData(new GridData(SWT.FILL, SWT.BEGINNING, true, false));
-		self.setLayout(new FillLayout());
+		// Composite self = new Composite(parent, SWT.BORDER);
+		// self.setLayout(new GridLayout(1, false));
 
-		display.display(views, self, selection, SWT.NONE);
+		display.display(views, parent, selection, SWT.NONE);
 
 		return display;
 	}

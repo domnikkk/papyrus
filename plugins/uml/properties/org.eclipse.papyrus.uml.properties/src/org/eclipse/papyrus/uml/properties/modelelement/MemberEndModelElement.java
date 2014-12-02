@@ -129,7 +129,10 @@ public class MemberEndModelElement extends AbstractModelElement {
 	}
 
 	private boolean isAssociation(Property property) {
-		return property.getType().eClass() == UMLPackage.eINSTANCE.getAssociation();
+		if (property.getType() == null) {
+			return false;
+		}
+		 return property.getType().eClass() == UMLPackage.eINSTANCE.getAssociation();
 	}
 
 	@Override

@@ -11,6 +11,7 @@ import org.eclipse.gmf.codegen.gmfgen.ToolGroup
 import xpt.Common
 import xpt.editor.extensions
 import xpt.plugin.pluginUtils
+import org.eclipse.emf.ecore.EObject
 
 @Singleton class plugin extends xpt.plugin.plugin {
 
@@ -102,7 +103,7 @@ import xpt.plugin.pluginUtils
 				<predefinedEntry id="standardGroup/noteStack/textTool" remove="true"/> 
 				<predefinedEntry id="standardGroup/noteStack/noteattachmentTool" remove="true"/>
 				
-				«FOR tool : collectGroups(diagram.palette)»
+				«FOR tool : diagram.palette.groups»
 					«groupUsage(tool)»
 				«ENDFOR»
 				</contribution>
@@ -116,26 +117,51 @@ import xpt.plugin.pluginUtils
 		<entry
 		      description="«it.description»"
 		      id=«IF isQuoted(id,'"')»«id»«ELSE»"«id»"«ENDIF»
-		      kind="drawer"
+		      kind="«IF it.stack && it.toolsOnly»stack«ELSE»drawer«ENDIF»"
 		      label="«it.title»"
 		      large_icon="«largeIconPath»"
-		      path="/"
+		      path="«getPath(it)»"
 		      small_icon="«smallIconPath»">
-		      <expand
-		             force="true">
-		      </expand>
-			</entry>
-			««« TODO: call sub entries... 
- 	«FOR entry : it.entries»
-			«toolUsage(entry as ToolEntry, it)»
+		   <expand
+		         force="true">
+		   </expand>
+		</entry>
+		««« TODO: call sub entries... 
+		«FOR entry : it.entries.filter[e| e instanceof ToolEntry]»
+			«toolUsage(entry, it)»
+		«ENDFOR»
+		«FOR entry : it.entries.filter[e| e instanceof ToolGroup]»
+			«toolUsage(entry, it)»
 		«ENDFOR»
 	'''
 
-	def toolUsage(ToolEntry it, ToolGroup group) '''
-		<predefinedEntry
-		        id=«IF isQuoted(id,'"')»«id»«ELSE»"«id»"«ENDIF»
-		        path="«getToolPath(group.id)»">
-		  </predefinedEntry>
+	private def getPath(ToolEntry it) {
+		return buildPath(it.eContainer);
+	}
+
+	private def getPath(ToolGroup it) {
+		return buildPath(it.eContainer);
+	}
+
+	private def buildPath(EObject it) {
+		var path = new StringBuilder();
+		var container = it;
+		while (container instanceof ToolGroup) {
+			path.insert(0, getToolPath((container as ToolGroup).id));
+			container = container.eContainer;
+		}
+		return if(path.length() != 0) path.toString else "/" ;
+	}
+	
+	def dispatch toolUsage(ToolEntry it, ToolGroup group) '''
+ 		<predefinedEntry
+ 		        id=«IF isQuoted(id,'"')»«id»«ELSE»"«id»"«ENDIF»
+ 				path="«getPath(it)»">
+ 		  </predefinedEntry>
+ 	'''
+
+	def dispatch toolUsage(ToolGroup it, ToolGroup group) '''
+		«groupUsage(it)»
 	'''
 
 	def predefinedEntryDefinition(AbstractToolEntry it) '''

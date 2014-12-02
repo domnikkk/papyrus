@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -15,8 +15,10 @@ import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.*;
 import org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.Config;
 import org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.RSAToPapyrusParametersPackage;
+import org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.URIMapping;
 
 /**
  * <!-- begin-user-doc -->
@@ -85,6 +87,16 @@ public class RSAToPapyrusParametersAdapterFactory extends AdapterFactoryImpl {
 				}
 
 				@Override
+				public Adapter caseMappingParameters(MappingParameters object) {
+					return createMappingParametersAdapter();
+				}
+
+				@Override
+				public Adapter caseURIMapping(URIMapping object) {
+					return createURIMappingAdapter();
+				}
+
+				@Override
 				public Adapter defaultCase(EObject object) {
 					return createEObjectAdapter();
 				}
@@ -118,6 +130,36 @@ public class RSAToPapyrusParametersAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createConfigAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.MappingParameters <em>Mapping Parameters</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.MappingParameters
+	 * @generated
+	 */
+	public Adapter createMappingParametersAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.URIMapping <em>URI Mapping</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.URIMapping
+	 * @generated
+	 */
+	public Adapter createURIMappingAdapter() {
 		return null;
 	}
 

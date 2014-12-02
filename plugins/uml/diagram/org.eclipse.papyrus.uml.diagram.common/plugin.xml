@@ -326,22 +326,28 @@
 
 		<command commandId="org.eclipse.papyrus.uml.diagram.common.commands.DeleteFromDiagram"
 			icon="icons/obj16/eraser.gif"
-			label="Hide Selected Element"
+			label="Delete From diagram"
 			style="push">
-			<visibleWhen>
-				<and>
-					<with variable="activeEditorId">
-                        <equals value="org.eclipse.papyrus.infra.core.papyrusEditor"/>
-					</with>
-					<with variable="selection">
-						<iterate
-							ifEmpty="false"
-							operator="and">
-							<instanceof value="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart"/>
-						</iterate>
-					</with>
-				</and>
-			</visibleWhen>			
+     <visibleWhen>
+        <and>
+           <with
+                 variable="activeEditorId">
+              <equals
+                    value="org.eclipse.papyrus.infra.core.papyrusEditor">
+              </equals>
+           </with>
+           <with
+                 variable="selection">
+              <iterate
+                    ifEmpty="false"
+                    operator="and">
+                 <instanceof
+                       value="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+                 </instanceof>
+              </iterate>
+           </with>
+        </and>
+     </visibleWhen>
 		</command>
 		
   <separator
@@ -418,11 +424,10 @@
 <extension point="org.eclipse.ui.commands">
 
 	<command
-		categoryId="org.eclipse.papyrus.editor.category"
-		defaultHandler="org.eclipse.papyrus.uml.diagram.common.handlers.DeleteFromDiagramCommandHandler"
-		description="Delete the selection from diagram"
-		id="org.eclipse.papyrus.uml.diagram.common.commands.DeleteFromDiagram"
-		name="Delete From Diagram Command">
+       categoryId="org.eclipse.papyrus.editor.category"
+       description="Delete the selection from diagram"
+       id="org.eclipse.papyrus.uml.diagram.common.commands.DeleteFromDiagram"
+       name="Delete From Diagram Command">
 	</command>
 	<command
 		categoryId="org.eclipse.papyrus.editor.category"
@@ -462,11 +467,33 @@
       <activeWhen>
          <and>
             <with
-                  variable="deleteInDiagram">
+                  variable="activeEditorId">
                <equals
-                     value="enabled">
+                     value="org.eclipse.papyrus.infra.core.papyrusEditor">
                </equals>
             </with>
+            <with
+                  variable="selection">
+               <iterate
+                     ifEmpty="false"
+                     operator="and">
+                  <instanceof
+                        value="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+                  </instanceof>
+                  <test
+                        property="org.eclipse.papyrus.uml.diagram.common.isSemanticDeletion"
+                        value="true">
+                  </test>
+               </iterate>
+            </with>
+         </and>
+      </activeWhen>
+   </handler>
+   <handler
+         class="org.eclipse.papyrus.uml.diagram.common.handlers.DeleteFromDiagramCommandHandler"
+         commandId="org.eclipse.ui.edit.delete">
+      <activeWhen>
+         <and>
             <with
                   variable="activeEditorId">
                <equals
@@ -481,6 +508,10 @@
                   <instanceof
                         value="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
                   </instanceof>
+                  <test
+                        property="org.eclipse.papyrus.uml.diagram.common.isSemanticDeletion"
+                        value="false">
+                  </test>
                </iterate>
             </with>
          </and>
@@ -496,6 +527,34 @@
                <equals
                      value="enabled">
                </equals>
+            </with>
+         </and>
+      </activeWhen>
+   </handler>
+   <handler
+         class="org.eclipse.papyrus.uml.diagram.common.handlers.DeleteFromDiagramCommandHandler"
+         commandId="org.eclipse.papyrus.uml.diagram.common.commands.DeleteFromDiagram">
+      <activeWhen>
+         <and>
+            <with
+                  variable="activeEditorId">
+               <equals
+                     value="org.eclipse.papyrus.infra.core.papyrusEditor">
+               </equals>
+            </with>
+            <with
+                  variable="selection">
+               <iterate
+                     ifEmpty="false"
+                     operator="and">
+                  <test
+                        property="org.eclipse.papyrus.uml.diagram.common.isSemanticDeletion"
+                        value="true">
+                  </test>
+                  <instanceof
+                        value="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+                  </instanceof>
+               </iterate>
             </with>
          </and>
       </activeWhen>
@@ -633,5 +692,15 @@
    <initializer
          class="org.eclipse.papyrus.uml.diagram.common.preferences.StereotypePasteStrategyPreferenceInitializer">
    </initializer>
+</extension>
+<extension
+      point="org.eclipse.core.expressions.propertyTesters">
+   <propertyTester
+         class="org.eclipse.papyrus.uml.diagram.common.propertytester.DeleteActionPropertyTester"
+         id="org.eclipse.papyrus.uml.diagram.common.deleteActionTester"
+         namespace="org.eclipse.papyrus.uml.diagram.common"
+         properties="isSemanticDeletion"
+         type="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+   </propertyTester>
 </extension>
 </plugin>

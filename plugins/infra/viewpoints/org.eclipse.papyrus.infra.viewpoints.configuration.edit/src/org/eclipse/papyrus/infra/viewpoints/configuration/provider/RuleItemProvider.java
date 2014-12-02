@@ -38,7 +38,6 @@ import org.eclipse.papyrus.infra.viewpoints.configuration.Rule;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.infra.viewpoints.configuration.Rule} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- *
  * @generated
  */
 public class RuleItemProvider
@@ -53,7 +52,6 @@ public class RuleItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public RuleItemProvider(AdapterFactory adapterFactory) {
@@ -64,7 +62,6 @@ public class RuleItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -81,35 +78,33 @@ public class RuleItemProvider
 	 * This adds a property descriptor for the Permit feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected void addPermitPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-				(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(),
-						getString("_UI_Rule_permit_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Rule_permit_feature", "_UI_Rule_type"),
-						ConfigurationPackage.Literals.RULE__PERMIT,
-						true,
-						false,
-						false,
-						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-						null,
-						null));
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Rule_permit_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Rule_permit_feature", "_UI_Rule_type"),
+				 ConfigurationPackage.Literals.RULE__PERMIT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		Rule rule = (Rule) object;
+		Rule rule = (Rule)object;
 		return getString("_UI_Rule_type") + " " + rule.isPermit();
 	}
 
@@ -118,7 +113,6 @@ public class RuleItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -126,9 +120,9 @@ public class RuleItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Rule.class)) {
-		case ConfigurationPackage.RULE__PERMIT:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-			return;
+			case ConfigurationPackage.RULE__PERMIT:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -138,7 +132,6 @@ public class RuleItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -150,12 +143,11 @@ public class RuleItemProvider
 	 * Return the resource locator for this item provider's resources.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return ((IChildCreationExtender) adapterFactory).getResourceLocator();
+		return ((IChildCreationExtender)adapterFactory).getResourceLocator();
 	}
 
 }

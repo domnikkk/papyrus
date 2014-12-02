@@ -33,7 +33,6 @@ import org.eclipse.papyrus.infra.viewpoints.configuration.StereotypePropertyDesc
  * This is the item provider adapter for a {@link org.eclipse.papyrus.infra.viewpoints.configuration.ChildRule} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- *
  * @generated
  */
 public class ChildRuleItemProvider
@@ -42,7 +41,6 @@ public class ChildRuleItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public ChildRuleItemProvider(AdapterFactory adapterFactory) {
@@ -53,7 +51,6 @@ public class ChildRuleItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -138,11 +135,11 @@ public class ChildRuleItemProvider
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -157,7 +154,6 @@ public class ChildRuleItemProvider
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -212,7 +208,6 @@ public class ChildRuleItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -220,9 +215,9 @@ public class ChildRuleItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ChildRule.class)) {
-		case ConfigurationPackage.CHILD_RULE__INSERTION_PATH:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-			return;
+			case ConfigurationPackage.CHILD_RULE__INSERTION_PATH:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+				return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -232,7 +227,6 @@ public class ChildRuleItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -240,9 +234,9 @@ public class ChildRuleItemProvider
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
 		newChildDescriptors.add
-				(createChildParameter
+			(createChildParameter
 				(ConfigurationPackage.Literals.CHILD_RULE__INSERTION_PATH,
-						ConfigurationFactory.eINSTANCE.createPathElement()));
+				 ConfigurationFactory.eINSTANCE.createPathElement()));
 	}
 
 }
