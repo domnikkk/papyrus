@@ -326,7 +326,10 @@ public class ImportTransformation {
 	// The source Diagnostic contains references to the QVTo ModelExtents, referencing the Model elements (used in #extractPapyrusProfiles())
 	// When using the standard conversion, these references are not discarded
 	protected static IStatus createStatusFromDiagnostic(Diagnostic diagnostic) {
-		return new Status(diagnostic.getSeverity(), diagnostic.getSource(), diagnostic.getMessage(), diagnostic.getException());
+		return new Status(diagnostic.getSeverity(),
+				diagnostic.getSource(),
+				diagnostic.getMessage(),
+				diagnostic.getException());
 	}
 
 	/**
@@ -409,7 +412,9 @@ public class ImportTransformation {
 			uriMappings.put(sourceURI, targetURI);
 
 			umlResource = createUMLResource(resourceSet, targetURI);
+
 			List<EObject> outUMLObjects = getInOutUMLModel().getContents();
+
 			umlResource.getContents().addAll(outUMLObjects);
 
 			GMFResource notationResource = new GMFResource(notationModelURI); // GMF Resource content type?
@@ -459,17 +464,19 @@ public class ImportTransformation {
 
 			Collection<Resource> resourcesToSave = handleFragments(umlResource, notationResource, sashResource);
 
-			for(Resource resource : resourcesToSave) {
+			for (Resource resource : resourcesToSave) {
 				List<EObject> rootElements = new LinkedList<EObject>(resource.getContents());
-				for(EObject rootElement : rootElements) {
+				for (EObject rootElement : rootElements) {
 					EPackage ePackage = rootElement.eClass().getEPackage();
-					if(ePackage == ProfileBasePackage.eINSTANCE || ePackage == DefaultPackage.eINSTANCE) {
+					if (ePackage == ProfileBasePackage.eINSTANCE || ePackage == DefaultPackage.eINSTANCE) {
 						delete(rootElement);
 					}
 				}
 			}
 
-			for(Resource resource : resourcesToSave) {
+			handleDanglingURIs(resourcesToSave);
+
+			for (Resource resource : resourcesToSave) {
 				try {
 					resource.save(null);
 				} catch (Exception ex) {
@@ -498,6 +505,11 @@ public class ImportTransformation {
 
 		monitor.done();
 		return generationStatus;
+	}
+
+	protected void handleDanglingURIs(Collection<Resource> resourcesToSave) {
+		ConfigHelper helper = new ConfigHelper(parameters);
+		helper.computeURIMappings(resourcesToSave);
 	}
 
 	protected void unloadResourceSet(ResourceSet resourceSet) {
@@ -637,11 +649,16 @@ public class ImportTransformation {
 	}
 
 	protected ModelExtent getInProfileDefinitions() {
-		return new BasicModelExtent(Arrays.asList(new EPackage[]{ PapyrusDSMLValidationRulePackage.eINSTANCE, DocumentationPackage.eINSTANCE, org.eclipse.papyrus.umlrt.UMLRealTime.UMLRealTimePackage.eINSTANCE, UMLRealTimeStateMachPackage.eINSTANCE }));
+		return new BasicModelExtent(Arrays.asList(new EPackage[] {
+				PapyrusDSMLValidationRulePackage.eINSTANCE,
+				DocumentationPackage.eINSTANCE,
+				org.eclipse.papyrus.umlrt.UMLRealTime.UMLRealTimePackage.eINSTANCE,
+				UMLRealTimeStateMachPackage.eINSTANCE
+		}));
 	}
 
 	protected ModelExtent getInPapyrusProfiles() {
-		if(inPapyrusProfiles == null) {
+		if (inPapyrusProfiles == null) {
 			loadInPapyrusProfiles();
 		}
 
@@ -725,7 +742,10 @@ public class ImportTransformation {
 	}
 
 	protected Resource createUMLResource(ResourceSet resourceSet, URI umlModelURI) {
-		return resourceSet.createResource(umlModelURI, UMLResource.UML_CONTENT_TYPE_IDENTIFIER);
+		// Use the same resource to ensure that XMI IDs are maintained
+		Resource resource = resourceSet.getResource(sourceURI, false);
+		resource.setURI(umlModelURI);
+		return resource;
 	}
 
 	protected ModelExtent getInConfig() {
@@ -974,17 +994,26 @@ public class ImportTransformation {
 	}
 
 	static {
-		supportedDiagramIds.addAll(Arrays.asList(new String[]{ "Class", // Includes Profiles
-		"Object", "Activity",
-			// "Component", //Not yet
-			// "Sequence", // Not yet
-		"Statechart", "Structure" }));
+		supportedDiagramIds.addAll(Arrays.asList(new String[] {
+				"Class", // Includes Profiles
+				"Object",
+				"Activity",
+				// "Component", //Not yet
+				// "Sequence", // Not yet
+				"Statechart",
+				"Structure"
+		}));
 	}
 
 	protected Collection<URI> getDiagramTransformationURIs() {
-		return ListHelper.asList(new URI[]{ getTransformationURI("RSAClassDiagram"),
-			// getTransformationURI("RSASequenceDiagram"), //Disabled since Sequence Diagrams are not properly supported
-		getTransformationURI("RSAStructureDiagram"), getTransformationURI("RSAActivityDiagram"), getTransformationURI("RSAStateMachineDiagram"), getTransformationURI("RSAProfileDiagram") });
+		return ListHelper.asList(new URI[] {
+				getTransformationURI("RSAClassDiagram"),
+				// getTransformationURI("RSASequenceDiagram"), //Disabled since Sequence Diagrams are not properly supported
+				getTransformationURI("RSAStructureDiagram"),
+				getTransformationURI("RSAActivityDiagram"),
+				getTransformationURI("RSAStateMachineDiagram"),
+				getTransformationURI("RSAProfileDiagram")
+		});
 	}
 
 	protected URI getSemanticTransformationURI() {

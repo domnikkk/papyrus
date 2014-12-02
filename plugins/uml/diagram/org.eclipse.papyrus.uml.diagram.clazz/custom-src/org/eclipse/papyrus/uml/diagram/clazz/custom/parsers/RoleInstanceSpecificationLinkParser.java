@@ -26,9 +26,9 @@ import org.eclipse.uml2.uml.Property;
 
 /**
  * The base class of InstanceSpecification link edge parser
- * 
+ *
  * @see the getClissifierMemberType() method for specify the type of end
- * 
+ *
  */
 
 public abstract class RoleInstanceSpecificationLinkParser implements IParser {

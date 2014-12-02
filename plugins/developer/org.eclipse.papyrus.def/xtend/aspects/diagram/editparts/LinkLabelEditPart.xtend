@@ -27,7 +27,7 @@ import org.eclipse.gmf.codegen.gmfgen.CustomBehaviour
 	override implementsList(GenLinkLabel it) '''
 	implements org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart, org.eclipse.papyrus.infra.gmfdiag.common.editpart.IControlParserForDirectEdit
 	«««	BEGIN: PapyrusGenCode
-	«IF it.eResource.allContents.filter(typeof (LabelVisibilityPreference)).filter[v |v.externalNodeLabels.contains(it)].size != 0»
+	«IF it.eResource.allContents.filter(typeof (LabelVisibilityPreference)).filter[v |v.linkLabels.contains(it)].size != 0»
 	, org.eclipse.papyrus.uml.diagram.common.editparts.ILabelRoleProvider
 	«ENDIF»
 	«««	END: PapyrusGenCode
@@ -36,15 +36,15 @@ import org.eclipse.gmf.codegen.gmfgen.CustomBehaviour
 
 	override additions(GenLinkLabel it) '''
 	«««	BEGIN: PapyrusGenCode
-	«IF it.eResource.allContents.filter(typeof (LabelVisibilityPreference)).filter[v | v.externalNodeLabels.contains(it)].size != 0»
+	«IF it.eResource.allContents.filter(typeof (LabelVisibilityPreference)).filter[v | v.linkLabels.contains(it)].size != 0»
 		«generatedClassComment»
 		public String getLabelRole(){
-		return "«it.eResource.allContents.filter(typeof (LabelVisibilityPreference)).filter[v |v.externalNodeLabels.contains(it)].head.role»";//$NON-NLS-1$
+		return "«it.eResource.allContents.filter(typeof (LabelVisibilityPreference)).filter[v |v.linkLabels.contains(it)].head.role»";//$NON-NLS-1$
 		}
 		
 		«generatedClassComment»
 		public String getIconPathRole(){
-		return "«it.eResource.allContents.filter(typeof (LabelVisibilityPreference)).filter[v |v.externalNodeLabels.contains(it)].head.iconPathRole»";//$NON-NLS-1$
+		return "«it.eResource.allContents.filter(typeof (LabelVisibilityPreference)).filter[v |v.linkLabels.contains(it)].head.iconPathRole»";//$NON-NLS-1$
 		}
 	«ENDIF»
 	«««	END: PapyrusGenCode

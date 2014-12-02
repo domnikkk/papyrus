@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.*;
 import org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.Config;
 import org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.RSAToPapyrusParametersFactory;
 import org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.RSAToPapyrusParametersPackage;
@@ -70,6 +71,8 @@ public class RSAToPapyrusParametersFactoryImpl extends EFactoryImpl implements R
 		switch (eClass.getClassifierID()) {
 		case RSAToPapyrusParametersPackage.CONFIG:
 			return createConfig();
+		case RSAToPapyrusParametersPackage.MAPPING_PARAMETERS:
+			return createMappingParameters();
 		case RSAToPapyrusParametersPackage.URI_MAPPING:
 			return createURIMapping();
 		default:
@@ -87,6 +90,18 @@ public class RSAToPapyrusParametersFactoryImpl extends EFactoryImpl implements R
 	public Config createConfig() {
 		ConfigImpl config = new ConfigImpl();
 		return config;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public MappingParameters createMappingParameters() {
+		MappingParametersImpl mappingParameters = new MappingParametersImpl();
+		return mappingParameters;
 	}
 
 	/**
