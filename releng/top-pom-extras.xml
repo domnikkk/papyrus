@@ -143,6 +143,9 @@
 		<!-- Papyrus Uml Diagram Ecore -->
 		<module>../extraplugins/papyrus4ecore/org.eclipse.papyrus.uml.diagram.ecore</module>
 		<module>../features/papyrus-extra-features/org.eclipse.papyrus.uml.diagram.ecore.feature</module>		
+		<!-- Module EPF -->
+		<module>../extraplugins/epf-richtext/org.eclipse.papyrus.infra.widgets.epf.richtext.extension</module>
+		<module>../features/papyrus-extra-features/org.eclipse.papyrus.extra.epf.richtext.feature</module>
 		<module>extras</module>
 	</modules>
 	<properties>
@@ -150,6 +153,11 @@
 		<tychoExtrasVersion>0.21.0</tychoExtrasVersion>
 	</properties>
 	<repositories>
+		<repository>
+			<id>org.eclipse.epf.richtext_1.5.1.6-update-site</id>
+			<layout>p2</layout>
+			<url>http://download.eclipse.org/modeling/mdt/papyrus/updates/epf/main</url>
+		</repository>
 		<repository>
 			<id>papyrus-main</id>
 			<layout>p2</layout>

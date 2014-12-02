@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<artifactId>org.eclipse.papyrus</artifactId>
+		<groupId>org.eclipse.papyrus</groupId>
+		<version>1.1.0-SNAPSHOT</version>
+		<relativePath>../../releng/top-pom-extras.xml</relativePath>
+	</parent>
+	<groupId>org.eclipse.papyrus</groupId>
+	<artifactId>org.eclipse.papyrus.infra.widgets.epf</artifactId>
+	<version>1.1.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<properties>
+		<papyrus.repo.main>http://download.eclipse.org/modeling/mdt/papyrus/updates/nightly/mars/main/</papyrus.repo.main>
+	</properties>	
+	
+	<!--  <repositories>
+		<repository>
+			<id>luna-papyrus</id>
+			<layout>p2</layout>
+			<url>http://download.eclipse.org/modeling/mdt/papyrus/updates/releases/luna/1.0.1/</url>
+		</repository>
+	</repositories>		-->
+	<modules>
+		<module>./org.eclipse.papyrus.infra.widgets.epf.richtext.extension</module>
+	</modules> 
+
+</project>
