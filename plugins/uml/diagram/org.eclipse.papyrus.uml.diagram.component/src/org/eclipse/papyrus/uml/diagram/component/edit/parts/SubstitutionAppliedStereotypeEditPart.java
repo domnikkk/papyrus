@@ -83,7 +83,8 @@ import org.eclipse.uml2.uml.Feature;
 /**
  * @generated
  */
-public class SubstitutionAppliedStereotypeEditPart extends PapyrusLabelEditPart implements ITextAwareEditPart, IControlParserForDirectEdit {
+public class SubstitutionAppliedStereotypeEditPart extends PapyrusLabelEditPart implements ITextAwareEditPart,
+		IControlParserForDirectEdit {
 
 	/**
 	 * @generated

@@ -148,11 +148,26 @@ public class PortPositionLocator implements IBorderItemLocator {
 				}
 			}
 		}
-		//If it's a SVGNodePlate get the anchor to get the position
+		// If it's a SVGNodePlate get the anchor to get the position
 		if (parentFigure instanceof SVGNodePlateFigure) {
+
+			// Translate location to absolute before calculate location Point
+			parentFigure.translateToAbsolute(proposedLocation);
+			parentFigure.translateToAbsolute(parentRec);
+
+			// Get the anchor
 			ConnectionAnchor connectionAnchor = ((SVGNodePlateFigure) parentFigure).getConnectionAnchor("");
+
+			// Get the location point, with anchor.
 			Point locationForPort = ((SlidableRoundedRectangleAnchor) connectionAnchor).getLocation(parentRec.getCenter(), proposedLocation.getLocation());
-			realLocation.setLocation(locationForPort);
+			if (locationForPort != null) {
+				proposedLocation.setLocation(locationForPort);
+			}
+			// Translate to relative the location
+			parentFigure.translateToRelative(proposedLocation);
+
+			// Set the location
+			realLocation.setLocation(proposedLocation.getLocation());
 		}
 
 		// Return constrained location

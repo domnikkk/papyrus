@@ -87,7 +87,8 @@ import org.eclipse.uml2.uml.Feature;
 /**
  * @generated
  */
-public class PortAppliedStereotypeEditPart extends PapyrusLabelEditPart implements ITextAwareEditPart, IBorderItemEditPart, ILabelRoleProvider {
+public class PortAppliedStereotypeEditPart extends PapyrusLabelEditPart implements ITextAwareEditPart,
+		IBorderItemEditPart, ILabelRoleProvider {
 
 	/**
 	 * @generated

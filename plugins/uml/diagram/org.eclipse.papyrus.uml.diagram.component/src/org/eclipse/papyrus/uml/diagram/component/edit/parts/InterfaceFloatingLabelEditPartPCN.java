@@ -84,10 +84,8 @@ import org.eclipse.uml2.uml.Feature;
 /**
  * @generated
  */
-public class InterfaceFloatingLabelEditPartPCN extends
-		FloatingLabelEditPart
-		implements ITextAwareEditPart, IBorderItemEditPart
-{
+public class InterfaceFloatingLabelEditPartPCN extends FloatingLabelEditPart implements ITextAwareEditPart,
+		IBorderItemEditPart {
 
 	/**
 	 * @generated
@@ -127,7 +125,6 @@ public class InterfaceFloatingLabelEditPartPCN extends
 	 * @generated
 	 */
 	protected IDirectEditorConfiguration configuration;
-
 
 	/**
 	 * @generated
@@ -178,7 +175,6 @@ public class InterfaceFloatingLabelEditPartPCN extends
 		int height = ((Integer) getStructuralFeatureValue(NotationPackage.eINSTANCE.getSize_Height())).intValue();
 		getBorderItemLocator().setConstraint(new Rectangle(x, y, width, height));
 	}
-
 
 	/**
 	 * @generated
@@ -802,7 +798,6 @@ public class InterfaceFloatingLabelEditPartPCN extends
 			e.printStackTrace();
 		}
 	}
-
 
 	/**
 	 * @generated

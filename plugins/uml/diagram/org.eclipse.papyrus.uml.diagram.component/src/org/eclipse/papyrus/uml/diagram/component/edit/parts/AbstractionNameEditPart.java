@@ -83,7 +83,8 @@ import org.eclipse.uml2.uml.Feature;
 /**
  * @generated
  */
-public class AbstractionNameEditPart extends PapyrusLabelEditPart implements ITextAwareEditPart, IControlParserForDirectEdit {
+public class AbstractionNameEditPart extends PapyrusLabelEditPart implements ITextAwareEditPart,
+		IControlParserForDirectEdit {
 
 	/**
 	 * @generated

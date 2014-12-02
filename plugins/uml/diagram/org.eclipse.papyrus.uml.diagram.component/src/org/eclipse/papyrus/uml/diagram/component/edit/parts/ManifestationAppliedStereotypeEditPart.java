@@ -83,7 +83,8 @@ import org.eclipse.uml2.uml.Feature;
 /**
  * @generated
  */
-public class ManifestationAppliedStereotypeEditPart extends AbstractLabelEditPart implements ITextAwareEditPart, IControlParserForDirectEdit {
+public class ManifestationAppliedStereotypeEditPart extends AbstractLabelEditPart implements ITextAwareEditPart,
+		IControlParserForDirectEdit {
 
 	/**
 	 * @generated

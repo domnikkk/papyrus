@@ -85,7 +85,8 @@ import org.eclipse.uml2.uml.Feature;
 /**
  * @generated
  */
-public class InterfaceNameEditPartPCN extends PapyrusLabelEditPart implements ITextAwareEditPart, IBorderItemEditPart, ILabelRoleProvider {
+public class InterfaceNameEditPartPCN extends PapyrusLabelEditPart implements ITextAwareEditPart, IBorderItemEditPart,
+		ILabelRoleProvider {
 
 	/**
 	 * @generated

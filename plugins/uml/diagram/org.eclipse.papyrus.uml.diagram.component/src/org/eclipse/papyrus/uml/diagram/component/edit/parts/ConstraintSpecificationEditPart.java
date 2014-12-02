@@ -85,7 +85,8 @@ import org.eclipse.uml2.uml.Feature;
 /**
  * @generated
  */
-public class ConstraintSpecificationEditPart extends PapyrusCompartmentEditPart implements ITextAwareEditPart, IControlParserForDirectEdit {
+public class ConstraintSpecificationEditPart extends PapyrusCompartmentEditPart implements ITextAwareEditPart,
+		IControlParserForDirectEdit {
 
 	/**
 	 * @generated

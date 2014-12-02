@@ -83,7 +83,8 @@ import org.eclipse.uml2.uml.Feature;
 /**
  * @generated
  */
-public class MultiDependencyLabelEditPart extends PapyrusLabelEditPart implements ITextAwareEditPart, IBorderItemEditPart {
+public class MultiDependencyLabelEditPart extends PapyrusLabelEditPart implements ITextAwareEditPart,
+		IBorderItemEditPart {
 
 	/**
 	 * @generated

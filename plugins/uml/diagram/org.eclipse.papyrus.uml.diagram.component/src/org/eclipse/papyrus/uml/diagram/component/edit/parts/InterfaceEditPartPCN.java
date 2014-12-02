@@ -198,7 +198,7 @@ public class InterfaceEditPartPCN extends RoundedCompartmentEditPart {
 	 */
 	@Override
 	protected NodeFigure createNodePlate() {
-		RoundedRectangleNodePlateFigure result = new RoundedRectangleNodePlateFigure(100, 100);
+		RoundedRectangleNodePlateFigure result = new RoundedRectangleNodePlateFigure(40, 40);
 		return result;
 	}
 
