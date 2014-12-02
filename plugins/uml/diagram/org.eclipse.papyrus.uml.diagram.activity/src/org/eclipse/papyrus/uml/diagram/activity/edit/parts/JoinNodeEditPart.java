@@ -302,7 +302,7 @@ public class JoinNodeEditPart extends RoundedCompartmentEditPart {
 	 */
 	@Override
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(UMLVisualIDRegistry.getType(JoinSpecEditPart.VISUAL_ID));
+		return getChildBySemanticHint(UMLVisualIDRegistry.getType(JoinNodeFloatingNameEditPart.VISUAL_ID));
 	}
 
 	/**

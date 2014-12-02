@@ -282,7 +282,7 @@ public class InitialNodeEditPart extends RoundedCompartmentEditPart {
 	 */
 	@Override
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(UMLVisualIDRegistry.getType(InitialNodeAppliedStereotypeEditPart.VISUAL_ID));
+		return getChildBySemanticHint(UMLVisualIDRegistry.getType(InitialNodeFloatingNameEditPart.VISUAL_ID));
 	}
 
 	/**

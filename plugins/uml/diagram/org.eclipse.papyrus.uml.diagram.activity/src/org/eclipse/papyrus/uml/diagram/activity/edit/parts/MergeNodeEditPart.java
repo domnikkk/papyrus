@@ -279,7 +279,7 @@ public class MergeNodeEditPart extends RoundedCompartmentEditPart {
 	 */
 	@Override
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(UMLVisualIDRegistry.getType(MergeNodeAppliedStereotypeEditPart.VISUAL_ID));
+		return getChildBySemanticHint(UMLVisualIDRegistry.getType(MergeNodeFloatingNameEditPart.VISUAL_ID));
 	}
 
 	/**

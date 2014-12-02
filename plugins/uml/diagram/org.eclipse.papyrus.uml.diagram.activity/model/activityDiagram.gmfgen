@@ -1410,26 +1410,6 @@
         </modelFacet>
         <labels
             xsi:type="gmfgen:GenExternalNodeLabel"
-            visualID="5080"
-            editPartClassName="InitialNodeAppliedStereotypeEditPart"
-            itemSemanticEditPolicyClassName="InitialNodeAppliedStereotypeItemSemanticEditPolicy"
-            notationViewFactoryClassName="InitialNodeLabelViewFactory"
-            readOnly="true"
-            elementIcon="true">
-          <diagramRunTimeClass
-              href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-          <viewmap
-              xsi:type="gmfgen:FigureViewmap"
-              figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.common.figure.node.AppliedStereotypeWrappingLabelFigure"/>
-          <behaviour
-              xsi:type="gmfgen:CustomBehaviour"
-              key="org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeLabelDisplayEditPolicy.STEREOTYPE_LABEL_POLICY"
-              editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeExternalNodeEditPolicy"/>
-          <modelFacet
-              parser="/0/@labelParsers/@implementations.1"/>
-        </labels>
-        <labels
-            xsi:type="gmfgen:GenExternalNodeLabel"
             visualID="6034"
             editPartClassName="InitialNodeFloatingNameEditPart"
             itemSemanticEditPolicyClassName="InitialNodeFloatingNameItemSemanticEditPolicy">
@@ -1451,6 +1431,26 @@
             <metaFeatures
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
           </modelFacet>
+        </labels>
+        <labels
+            xsi:type="gmfgen:GenExternalNodeLabel"
+            visualID="5080"
+            editPartClassName="InitialNodeAppliedStereotypeEditPart"
+            itemSemanticEditPolicyClassName="InitialNodeAppliedStereotypeItemSemanticEditPolicy"
+            notationViewFactoryClassName="InitialNodeLabelViewFactory"
+            readOnly="true"
+            elementIcon="true">
+          <diagramRunTimeClass
+              href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+          <viewmap
+              xsi:type="gmfgen:FigureViewmap"
+              figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.common.figure.node.AppliedStereotypeWrappingLabelFigure"/>
+          <behaviour
+              xsi:type="gmfgen:CustomBehaviour"
+              key="org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeLabelDisplayEditPolicy.STEREOTYPE_LABEL_POLICY"
+              editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeExternalNodeEditPolicy"/>
+          <modelFacet
+              parser="/0/@labelParsers/@implementations.1"/>
         </labels>
       </childNodes>
       <childNodes
@@ -1504,26 +1504,6 @@
         </modelFacet>
         <labels
             xsi:type="gmfgen:GenExternalNodeLabel"
-            visualID="5081"
-            editPartClassName="ActivityFinalNodeAppliedStereotypeEditPart"
-            itemSemanticEditPolicyClassName="ActivityFinalNodeAppliedStereotypeItemSemanticEditPolicy"
-            notationViewFactoryClassName="ActivityFinalNodeLabelViewFactory"
-            readOnly="true"
-            elementIcon="true">
-          <diagramRunTimeClass
-              href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-          <viewmap
-              xsi:type="gmfgen:FigureViewmap"
-              figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.common.figure.node.AppliedStereotypeWrappingLabelFigure"/>
-          <behaviour
-              xsi:type="gmfgen:CustomBehaviour"
-              key="org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeLabelDisplayEditPolicy.STEREOTYPE_LABEL_POLICY"
-              editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeExternalNodeEditPolicy"/>
-          <modelFacet
-              parser="/0/@labelParsers/@implementations.1"/>
-        </labels>
-        <labels
-            xsi:type="gmfgen:GenExternalNodeLabel"
             visualID="6033"
             editPartClassName="ActivityFinalNodeFloatingNameEditPart"
             itemSemanticEditPolicyClassName="ActivityFinalNodeFloatingNameItemSemanticEditPolicy">
@@ -1545,6 +1525,26 @@
             <metaFeatures
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
           </modelFacet>
+        </labels>
+        <labels
+            xsi:type="gmfgen:GenExternalNodeLabel"
+            visualID="5081"
+            editPartClassName="ActivityFinalNodeAppliedStereotypeEditPart"
+            itemSemanticEditPolicyClassName="ActivityFinalNodeAppliedStereotypeItemSemanticEditPolicy"
+            notationViewFactoryClassName="ActivityFinalNodeLabelViewFactory"
+            readOnly="true"
+            elementIcon="true">
+          <diagramRunTimeClass
+              href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+          <viewmap
+              xsi:type="gmfgen:FigureViewmap"
+              figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.common.figure.node.AppliedStereotypeWrappingLabelFigure"/>
+          <behaviour
+              xsi:type="gmfgen:CustomBehaviour"
+              key="org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeLabelDisplayEditPolicy.STEREOTYPE_LABEL_POLICY"
+              editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeExternalNodeEditPolicy"/>
+          <modelFacet
+              parser="/0/@labelParsers/@implementations.1"/>
         </labels>
       </childNodes>
       <childNodes
@@ -1598,26 +1598,6 @@
         </modelFacet>
         <labels
             xsi:type="gmfgen:GenExternalNodeLabel"
-            visualID="5082"
-            editPartClassName="FlowFinalNodeAppliedStereotypeEditPart"
-            itemSemanticEditPolicyClassName="FlowFinalNodeAppliedStereotypeItemSemanticEditPolicy"
-            notationViewFactoryClassName="FlowFinalNodeLabelViewFactory"
-            readOnly="true"
-            elementIcon="true">
-          <diagramRunTimeClass
-              href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-          <viewmap
-              xsi:type="gmfgen:FigureViewmap"
-              figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.common.figure.node.AppliedStereotypeWrappingLabelFigure"/>
-          <behaviour
-              xsi:type="gmfgen:CustomBehaviour"
-              key="org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeLabelDisplayEditPolicy.STEREOTYPE_LABEL_POLICY"
-              editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeExternalNodeEditPolicy"/>
-          <modelFacet
-              parser="/0/@labelParsers/@implementations.1"/>
-        </labels>
-        <labels
-            xsi:type="gmfgen:GenExternalNodeLabel"
             visualID="6035"
             editPartClassName="FlowFinalNodeFloatingNameEditPart"
             itemSemanticEditPolicyClassName="FlowFinalNodeFloatingNameItemSemanticEditPolicy">
@@ -1639,6 +1619,26 @@
             <metaFeatures
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
           </modelFacet>
+        </labels>
+        <labels
+            xsi:type="gmfgen:GenExternalNodeLabel"
+            visualID="5082"
+            editPartClassName="FlowFinalNodeAppliedStereotypeEditPart"
+            itemSemanticEditPolicyClassName="FlowFinalNodeAppliedStereotypeItemSemanticEditPolicy"
+            notationViewFactoryClassName="FlowFinalNodeLabelViewFactory"
+            readOnly="true"
+            elementIcon="true">
+          <diagramRunTimeClass
+              href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+          <viewmap
+              xsi:type="gmfgen:FigureViewmap"
+              figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.common.figure.node.AppliedStereotypeWrappingLabelFigure"/>
+          <behaviour
+              xsi:type="gmfgen:CustomBehaviour"
+              key="org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeLabelDisplayEditPolicy.STEREOTYPE_LABEL_POLICY"
+              editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeExternalNodeEditPolicy"/>
+          <modelFacet
+              parser="/0/@labelParsers/@implementations.1"/>
         </labels>
       </childNodes>
       <childNodes
@@ -4176,6 +4176,30 @@
         </modelFacet>
         <labels
             xsi:type="gmfgen:GenExternalNodeLabel"
+            visualID="6036"
+            editPartClassName="DecisionNodeFloatingNameEditPart"
+            itemSemanticEditPolicyClassName="DecisionNodeFloatingNameItemSemanticEditPolicy">
+          <diagramRunTimeClass
+              href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+          <viewmap
+              xsi:type="gmfgen:FigureViewmap"
+              figureQualifiedClassName="org.eclipse.papyrus.infra.gmfdiag.common.figure.node.PapyrusWrappingLabel"/>
+          <behaviour
+              xsi:type="gmfgen:CustomBehaviour"
+              key="org.eclipse.gef.EditPolicy.PRIMARY_DRAG_ROLE"
+              editPolicyQualifiedClassName="org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.ExternalLabelPrimaryDragRoleEditPolicy"/>
+          <modelFacet
+              xsi:type="gmfgen:FeatureLabelModelFacet"
+              parser="/0/@labelParsers/@implementations.0"
+              viewPattern=""
+              editorPattern=""
+              editPattern="">
+            <metaFeatures
+                href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
+          </modelFacet>
+        </labels>
+        <labels
+            xsi:type="gmfgen:GenExternalNodeLabel"
             visualID="5043"
             editPartClassName="DecisionInputEditPart"
             itemSemanticEditPolicyClassName="DecisionInputItemSemanticEditPolicy"
@@ -4212,30 +4236,6 @@
               editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeExternalNodeEditPolicy"/>
           <modelFacet
               parser="/0/@labelParsers/@implementations.1"/>
-        </labels>
-        <labels
-            xsi:type="gmfgen:GenExternalNodeLabel"
-            visualID="6036"
-            editPartClassName="DecisionNodeFloatingNameEditPart"
-            itemSemanticEditPolicyClassName="DecisionNodeFloatingNameItemSemanticEditPolicy">
-          <diagramRunTimeClass
-              href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-          <viewmap
-              xsi:type="gmfgen:FigureViewmap"
-              figureQualifiedClassName="org.eclipse.papyrus.infra.gmfdiag.common.figure.node.PapyrusWrappingLabel"/>
-          <behaviour
-              xsi:type="gmfgen:CustomBehaviour"
-              key="org.eclipse.gef.EditPolicy.PRIMARY_DRAG_ROLE"
-              editPolicyQualifiedClassName="org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.ExternalLabelPrimaryDragRoleEditPolicy"/>
-          <modelFacet
-              xsi:type="gmfgen:FeatureLabelModelFacet"
-              parser="/0/@labelParsers/@implementations.0"
-              viewPattern=""
-              editorPattern=""
-              editPattern="">
-            <metaFeatures
-                href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
-          </modelFacet>
         </labels>
       </childNodes>
       <childNodes
@@ -4284,26 +4284,6 @@
         </modelFacet>
         <labels
             xsi:type="gmfgen:GenExternalNodeLabel"
-            visualID="5099"
-            editPartClassName="MergeNodeAppliedStereotypeEditPart"
-            itemSemanticEditPolicyClassName="MergeNodeAppliedStereotypeItemSemanticEditPolicy"
-            notationViewFactoryClassName="MergeNodeLabelViewFactory"
-            readOnly="true"
-            elementIcon="true">
-          <diagramRunTimeClass
-              href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-          <viewmap
-              xsi:type="gmfgen:FigureViewmap"
-              figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.common.figure.node.AppliedStereotypeWrappingLabelFigure"/>
-          <behaviour
-              xsi:type="gmfgen:CustomBehaviour"
-              key="org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeLabelDisplayEditPolicy.STEREOTYPE_LABEL_POLICY"
-              editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeExternalNodeEditPolicy"/>
-          <modelFacet
-              parser="/0/@labelParsers/@implementations.1"/>
-        </labels>
-        <labels
-            xsi:type="gmfgen:GenExternalNodeLabel"
             visualID="6037"
             editPartClassName="MergeNodeFloatingNameEditPart"
             itemSemanticEditPolicyClassName="MergeNodeFloatingNameItemSemanticEditPolicy">
@@ -4325,6 +4305,26 @@
             <metaFeatures
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
           </modelFacet>
+        </labels>
+        <labels
+            xsi:type="gmfgen:GenExternalNodeLabel"
+            visualID="5099"
+            editPartClassName="MergeNodeAppliedStereotypeEditPart"
+            itemSemanticEditPolicyClassName="MergeNodeAppliedStereotypeItemSemanticEditPolicy"
+            notationViewFactoryClassName="MergeNodeLabelViewFactory"
+            readOnly="true"
+            elementIcon="true">
+          <diagramRunTimeClass
+              href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+          <viewmap
+              xsi:type="gmfgen:FigureViewmap"
+              figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.common.figure.node.AppliedStereotypeWrappingLabelFigure"/>
+          <behaviour
+              xsi:type="gmfgen:CustomBehaviour"
+              key="org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeLabelDisplayEditPolicy.STEREOTYPE_LABEL_POLICY"
+              editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeExternalNodeEditPolicy"/>
+          <modelFacet
+              parser="/0/@labelParsers/@implementations.1"/>
         </labels>
       </childNodes>
       <childNodes
@@ -4378,26 +4378,6 @@
         </modelFacet>
         <labels
             xsi:type="gmfgen:GenExternalNodeLabel"
-            visualID="5100"
-            editPartClassName="ForkNodeAppliedStereotypeEditPart"
-            itemSemanticEditPolicyClassName="ForkNodeAppliedStereotypeItemSemanticEditPolicy"
-            notationViewFactoryClassName="ForkNodeLabelViewFactory"
-            readOnly="true"
-            elementIcon="true">
-          <diagramRunTimeClass
-              href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-          <viewmap
-              xsi:type="gmfgen:FigureViewmap"
-              figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.common.figure.node.AppliedStereotypeWrappingLabelFigure"/>
-          <behaviour
-              xsi:type="gmfgen:CustomBehaviour"
-              key="org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeLabelDisplayEditPolicy.STEREOTYPE_LABEL_POLICY"
-              editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeExternalNodeEditPolicy"/>
-          <modelFacet
-              parser="/0/@labelParsers/@implementations.1"/>
-        </labels>
-        <labels
-            xsi:type="gmfgen:GenExternalNodeLabel"
             visualID="6038"
             editPartClassName="ForkNodeFloatingNameEditPart"
             itemSemanticEditPolicyClassName="ForkNodeFloatingNameItemSemanticEditPolicy">
@@ -4419,6 +4399,26 @@
             <metaFeatures
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
           </modelFacet>
+        </labels>
+        <labels
+            xsi:type="gmfgen:GenExternalNodeLabel"
+            visualID="5100"
+            editPartClassName="ForkNodeAppliedStereotypeEditPart"
+            itemSemanticEditPolicyClassName="ForkNodeAppliedStereotypeItemSemanticEditPolicy"
+            notationViewFactoryClassName="ForkNodeLabelViewFactory"
+            readOnly="true"
+            elementIcon="true">
+          <diagramRunTimeClass
+              href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+          <viewmap
+              xsi:type="gmfgen:FigureViewmap"
+              figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.common.figure.node.AppliedStereotypeWrappingLabelFigure"/>
+          <behaviour
+              xsi:type="gmfgen:CustomBehaviour"
+              key="org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeLabelDisplayEditPolicy.STEREOTYPE_LABEL_POLICY"
+              editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeExternalNodeEditPolicy"/>
+          <modelFacet
+              parser="/0/@labelParsers/@implementations.1"/>
         </labels>
       </childNodes>
       <childNodes
@@ -4486,26 +4486,6 @@
         </labels>
         <labels
             xsi:type="gmfgen:GenExternalNodeLabel"
-            visualID="5101"
-            editPartClassName="JoinNodeAppliedStereotypeEditPart"
-            itemSemanticEditPolicyClassName="JoinNodeAppliedStereotypeItemSemanticEditPolicy"
-            notationViewFactoryClassName="JoinNodeLabelViewFactory"
-            readOnly="true"
-            elementIcon="true">
-          <diagramRunTimeClass
-              href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-          <viewmap
-              xsi:type="gmfgen:FigureViewmap"
-              figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.common.figure.node.AppliedStereotypeWrappingLabelFigure"/>
-          <behaviour
-              xsi:type="gmfgen:CustomBehaviour"
-              key="org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeLabelDisplayEditPolicy.STEREOTYPE_LABEL_POLICY"
-              editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeExternalNodeEditPolicy"/>
-          <modelFacet
-              parser="/0/@labelParsers/@implementations.1"/>
-        </labels>
-        <labels
-            xsi:type="gmfgen:GenExternalNodeLabel"
             visualID="6039"
             editPartClassName="JoinNodeFloatingNameEditPart"
             itemSemanticEditPolicyClassName="JoinNodeFloatingNameItemSemanticEditPolicy">
@@ -4527,6 +4507,26 @@
             <metaFeatures
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
           </modelFacet>
+        </labels>
+        <labels
+            xsi:type="gmfgen:GenExternalNodeLabel"
+            visualID="5101"
+            editPartClassName="JoinNodeAppliedStereotypeEditPart"
+            itemSemanticEditPolicyClassName="JoinNodeAppliedStereotypeItemSemanticEditPolicy"
+            notationViewFactoryClassName="JoinNodeLabelViewFactory"
+            readOnly="true"
+            elementIcon="true">
+          <diagramRunTimeClass
+              href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+          <viewmap
+              xsi:type="gmfgen:FigureViewmap"
+              figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.common.figure.node.AppliedStereotypeWrappingLabelFigure"/>
+          <behaviour
+              xsi:type="gmfgen:CustomBehaviour"
+              key="org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeLabelDisplayEditPolicy.STEREOTYPE_LABEL_POLICY"
+              editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeExternalNodeEditPolicy"/>
+          <modelFacet
+              parser="/0/@labelParsers/@implementations.1"/>
         </labels>
       </childNodes>
       <childNodes
@@ -18267,10 +18267,10 @@
         extensibleViaService="true">
       <implementations
           xsi:type="gmfgen:PredefinedParser"
-          uses="/0/@diagram/@childNodes.6/@labels.0/@modelFacet /0/@diagram/@childNodes.24/@labels.0/@modelFacet /0/@diagram/@childNodes.25/@labels.0/@modelFacet /0/@diagram/@childNodes.26/@labels.0/@modelFacet /0/@diagram/@childNodes.27/@labels.0/@modelFacet /0/@diagram/@childNodes.28/@labels.0/@modelFacet /0/@diagram/@childNodes.29/@labels.0/@modelFacet /0/@diagram/@childNodes.30/@labels.0/@modelFacet /0/@diagram/@childNodes.31/@labels.0/@modelFacet /0/@diagram/@childNodes.37/@labels.0/@modelFacet /0/@diagram/@childNodes.44/@labels.0/@modelFacet /0/@diagram/@childNodes.54/@labels.0/@modelFacet /0/@diagram/@childNodes.67/@labels.0/@modelFacet /0/@diagram/@childNodes.70/@labels.0/@modelFacet /0/@diagram/@childNodes.73/@labels.0/@modelFacet /0/@diagram/@childNodes.76/@labels.0/@modelFacet /0/@diagram/@childNodes.79/@labels.0/@modelFacet /0/@diagram/@childNodes.83/@labels.0/@modelFacet /0/@diagram/@childNodes.85/@labels.0/@modelFacet /0/@diagram/@childNodes.87/@labels.0/@modelFacet /0/@diagram/@childNodes.90/@labels.0/@modelFacet /0/@diagram/@childNodes.72/@labels.0/@modelFacet /0/@diagram/@topLevelNodes.0/@labels.0/@modelFacet /0/@diagram/@links.2/@labels.0/@modelFacet /0/@diagram/@links.3/@labels.0/@modelFacet /0/@diagram/@childNodes.93/@labels.0/@modelFacet /0/@diagram/@childNodes.67/@labels.1/@modelFacet /0/@diagram/@childNodes.90/@labels.1/@modelFacet /0/@diagram/@childNodes.87/@labels.1/@modelFacet /0/@diagram/@childNodes.16/@labels.1/@modelFacet /0/@diagram/@childNodes.79/@labels.1/@modelFacet /0/@diagram/@childNodes.85/@labels.1/@modelFacet /0/@diagram/@childNodes.83/@labels.1/@modelFacet /0/@diagram/@childNodes.76/@labels.1/@modelFacet /0/@diagram/@childNodes.73/@labels.1/@modelFacet /0/@diagram/@childNodes.70/@labels.1/@modelFacet /0/@diagram/@childNodes.54/@labels.1/@modelFacet /0/@diagram/@childNodes.37/@labels.1/@modelFacet /0/@diagram/@childNodes.6/@labels.1/@modelFacet /0/@diagram/@childNodes.11/@labels.1/@modelFacet /0/@diagram/@childNodes.92/@labels.2/@modelFacet /0/@diagram/@childNodes.36/@labels.2/@modelFacet /0/@diagram/@childNodes.44/@labels.1/@modelFacet /0/@diagram/@childNodes.4/@labels.1/@modelFacet /0/@diagram/@childNodes.3/@labels.1/@modelFacet /0/@diagram/@childNodes.5/@labels.1/@modelFacet /0/@diagram/@childNodes.32/@labels.2/@modelFacet /0/@diagram/@childNodes.33/@labels.1/@modelFacet /0/@diagram/@childNodes.34/@labels.1/@modelFacet /0/@diagram/@childNodes.35/@labels.2/@modelFacet /0/@diagram/@childNodes.52/@labels.3/@modelFacet"/>
+          uses="/0/@diagram/@childNodes.6/@labels.0/@modelFacet /0/@diagram/@childNodes.24/@labels.0/@modelFacet /0/@diagram/@childNodes.25/@labels.0/@modelFacet /0/@diagram/@childNodes.26/@labels.0/@modelFacet /0/@diagram/@childNodes.27/@labels.0/@modelFacet /0/@diagram/@childNodes.28/@labels.0/@modelFacet /0/@diagram/@childNodes.29/@labels.0/@modelFacet /0/@diagram/@childNodes.30/@labels.0/@modelFacet /0/@diagram/@childNodes.31/@labels.0/@modelFacet /0/@diagram/@childNodes.37/@labels.0/@modelFacet /0/@diagram/@childNodes.44/@labels.0/@modelFacet /0/@diagram/@childNodes.54/@labels.0/@modelFacet /0/@diagram/@childNodes.67/@labels.0/@modelFacet /0/@diagram/@childNodes.70/@labels.0/@modelFacet /0/@diagram/@childNodes.73/@labels.0/@modelFacet /0/@diagram/@childNodes.76/@labels.0/@modelFacet /0/@diagram/@childNodes.79/@labels.0/@modelFacet /0/@diagram/@childNodes.83/@labels.0/@modelFacet /0/@diagram/@childNodes.85/@labels.0/@modelFacet /0/@diagram/@childNodes.87/@labels.0/@modelFacet /0/@diagram/@childNodes.90/@labels.0/@modelFacet /0/@diagram/@childNodes.72/@labels.0/@modelFacet /0/@diagram/@topLevelNodes.0/@labels.0/@modelFacet /0/@diagram/@links.2/@labels.0/@modelFacet /0/@diagram/@links.3/@labels.0/@modelFacet /0/@diagram/@childNodes.93/@labels.0/@modelFacet /0/@diagram/@childNodes.67/@labels.1/@modelFacet /0/@diagram/@childNodes.90/@labels.1/@modelFacet /0/@diagram/@childNodes.87/@labels.1/@modelFacet /0/@diagram/@childNodes.16/@labels.1/@modelFacet /0/@diagram/@childNodes.79/@labels.1/@modelFacet /0/@diagram/@childNodes.85/@labels.1/@modelFacet /0/@diagram/@childNodes.83/@labels.1/@modelFacet /0/@diagram/@childNodes.76/@labels.1/@modelFacet /0/@diagram/@childNodes.73/@labels.1/@modelFacet /0/@diagram/@childNodes.70/@labels.1/@modelFacet /0/@diagram/@childNodes.54/@labels.1/@modelFacet /0/@diagram/@childNodes.37/@labels.1/@modelFacet /0/@diagram/@childNodes.6/@labels.1/@modelFacet /0/@diagram/@childNodes.11/@labels.1/@modelFacet /0/@diagram/@childNodes.92/@labels.2/@modelFacet /0/@diagram/@childNodes.36/@labels.2/@modelFacet /0/@diagram/@childNodes.44/@labels.1/@modelFacet /0/@diagram/@childNodes.4/@labels.0/@modelFacet /0/@diagram/@childNodes.3/@labels.0/@modelFacet /0/@diagram/@childNodes.5/@labels.0/@modelFacet /0/@diagram/@childNodes.32/@labels.0/@modelFacet /0/@diagram/@childNodes.33/@labels.0/@modelFacet /0/@diagram/@childNodes.34/@labels.0/@modelFacet /0/@diagram/@childNodes.35/@labels.1/@modelFacet /0/@diagram/@childNodes.52/@labels.3/@modelFacet"/>
       <implementations
           xsi:type="gmfgen:CustomParser"
-          uses="/0/@diagram/@childNodes.89/@labels.1/@modelFacet /0/@diagram/@childNodes.49/@labels.2/@modelFacet /0/@diagram/@childNodes.82/@labels.1/@modelFacet /0/@diagram/@childNodes.53/@labels.1/@modelFacet /0/@diagram/@childNodes.81/@labels.1/@modelFacet /0/@diagram/@childNodes.12/@labels.2/@modelFacet /0/@diagram/@childNodes.22/@labels.2/@modelFacet /0/@diagram/@childNodes.45/@labels.2/@modelFacet /0/@diagram/@childNodes.47/@labels.1/@modelFacet /0/@diagram/@childNodes.23/@labels.1/@modelFacet /0/@diagram/@links.2/@labels.6/@modelFacet /0/@diagram/@childNodes.19/@labels.1/@modelFacet /0/@diagram/@childNodes.4/@labels.0/@modelFacet /0/@diagram/@childNodes.15/@labels.1/@modelFacet /0/@diagram/@childNodes.43/@labels.1/@modelFacet /0/@diagram/@childNodes.80/@labels.1/@modelFacet /0/@diagram/@childNodes.91/@labels.2/@modelFacet /0/@diagram/@childNodes.84/@labels.1/@modelFacet /0/@diagram/@childNodes.13/@labels.2/@modelFacet /0/@diagram/@childNodes.35/@labels.1/@modelFacet /0/@diagram/@childNodes.9/@labels.1/@modelFacet /0/@diagram/@childNodes.33/@labels.0/@modelFacet /0/@diagram/@childNodes.88/@labels.1/@modelFacet /0/@diagram/@childNodes.20/@labels.1/@modelFacet /0/@diagram/@childNodes.52/@labels.2/@modelFacet /0/@diagram/@childNodes.41/@labels.2/@modelFacet /0/@diagram/@childNodes.32/@labels.1/@modelFacet /0/@diagram/@childNodes.77/@labels.1/@modelFacet /0/@diagram/@childNodes.8/@labels.2/@modelFacet /0/@diagram/@childNodes.34/@labels.0/@modelFacet /0/@diagram/@links.3/@labels.3/@modelFacet /0/@diagram/@childNodes.74/@labels.1/@modelFacet /0/@diagram/@childNodes.86/@labels.1/@modelFacet /0/@diagram/@childNodes.17/@labels.2/@modelFacet /0/@diagram/@childNodes.50/@labels.1/@modelFacet /0/@diagram/@childNodes.78/@labels.1/@modelFacet /0/@diagram/@childNodes.10/@labels.1/@modelFacet /0/@diagram/@childNodes.21/@labels.2/@modelFacet /0/@diagram/@childNodes.14/@labels.1/@modelFacet /0/@diagram/@childNodes.55/@labels.1/@modelFacet /0/@diagram/@childNodes.71/@labels.1/@modelFacet /0/@diagram/@childNodes.39/@labels.2/@modelFacet /0/@diagram/@childNodes.18/@labels.2/@modelFacet /0/@diagram/@childNodes.42/@labels.2/@modelFacet /0/@diagram/@childNodes.3/@labels.0/@modelFacet /0/@diagram/@childNodes.46/@labels.2/@modelFacet /0/@diagram/@childNodes.48/@labels.2/@modelFacet /0/@diagram/@childNodes.7/@labels.2/@modelFacet /0/@diagram/@childNodes.38/@labels.2/@modelFacet /0/@diagram/@childNodes.5/@labels.0/@modelFacet /0/@diagram/@childNodes.40/@labels.1/@modelFacet /0/@diagram/@childNodes.66/@labels.1/@modelFacet /0/@diagram/@childNodes.63/@labels.1/@modelFacet /0/@diagram/@childNodes.62/@labels.1/@modelFacet /0/@diagram/@childNodes.61/@labels.1/@modelFacet"
+          uses="/0/@diagram/@childNodes.89/@labels.1/@modelFacet /0/@diagram/@childNodes.49/@labels.2/@modelFacet /0/@diagram/@childNodes.82/@labels.1/@modelFacet /0/@diagram/@childNodes.53/@labels.1/@modelFacet /0/@diagram/@childNodes.81/@labels.1/@modelFacet /0/@diagram/@childNodes.12/@labels.2/@modelFacet /0/@diagram/@childNodes.22/@labels.2/@modelFacet /0/@diagram/@childNodes.45/@labels.2/@modelFacet /0/@diagram/@childNodes.47/@labels.1/@modelFacet /0/@diagram/@childNodes.23/@labels.1/@modelFacet /0/@diagram/@links.2/@labels.6/@modelFacet /0/@diagram/@childNodes.19/@labels.1/@modelFacet /0/@diagram/@childNodes.4/@labels.1/@modelFacet /0/@diagram/@childNodes.15/@labels.1/@modelFacet /0/@diagram/@childNodes.43/@labels.1/@modelFacet /0/@diagram/@childNodes.80/@labels.1/@modelFacet /0/@diagram/@childNodes.91/@labels.2/@modelFacet /0/@diagram/@childNodes.84/@labels.1/@modelFacet /0/@diagram/@childNodes.13/@labels.2/@modelFacet /0/@diagram/@childNodes.35/@labels.2/@modelFacet /0/@diagram/@childNodes.9/@labels.1/@modelFacet /0/@diagram/@childNodes.33/@labels.1/@modelFacet /0/@diagram/@childNodes.88/@labels.1/@modelFacet /0/@diagram/@childNodes.20/@labels.1/@modelFacet /0/@diagram/@childNodes.52/@labels.2/@modelFacet /0/@diagram/@childNodes.41/@labels.2/@modelFacet /0/@diagram/@childNodes.32/@labels.2/@modelFacet /0/@diagram/@childNodes.77/@labels.1/@modelFacet /0/@diagram/@childNodes.8/@labels.2/@modelFacet /0/@diagram/@childNodes.34/@labels.1/@modelFacet /0/@diagram/@links.3/@labels.3/@modelFacet /0/@diagram/@childNodes.74/@labels.1/@modelFacet /0/@diagram/@childNodes.86/@labels.1/@modelFacet /0/@diagram/@childNodes.17/@labels.2/@modelFacet /0/@diagram/@childNodes.50/@labels.1/@modelFacet /0/@diagram/@childNodes.78/@labels.1/@modelFacet /0/@diagram/@childNodes.10/@labels.1/@modelFacet /0/@diagram/@childNodes.21/@labels.2/@modelFacet /0/@diagram/@childNodes.14/@labels.1/@modelFacet /0/@diagram/@childNodes.55/@labels.1/@modelFacet /0/@diagram/@childNodes.71/@labels.1/@modelFacet /0/@diagram/@childNodes.39/@labels.2/@modelFacet /0/@diagram/@childNodes.18/@labels.2/@modelFacet /0/@diagram/@childNodes.42/@labels.2/@modelFacet /0/@diagram/@childNodes.3/@labels.1/@modelFacet /0/@diagram/@childNodes.46/@labels.2/@modelFacet /0/@diagram/@childNodes.48/@labels.2/@modelFacet /0/@diagram/@childNodes.7/@labels.2/@modelFacet /0/@diagram/@childNodes.38/@labels.2/@modelFacet /0/@diagram/@childNodes.5/@labels.1/@modelFacet /0/@diagram/@childNodes.40/@labels.1/@modelFacet /0/@diagram/@childNodes.66/@labels.1/@modelFacet /0/@diagram/@childNodes.63/@labels.1/@modelFacet /0/@diagram/@childNodes.62/@labels.1/@modelFacet /0/@diagram/@childNodes.61/@labels.1/@modelFacet"
           qualifiedName="org.eclipse.papyrus.uml.diagram.common.parser.stereotype.AppliedStereotypeParser"/>
       <implementations
           xsi:type="gmfgen:CustomParser"
@@ -18306,7 +18306,7 @@
           qualifiedName="org.eclipse.papyrus.uml.diagram.activity.parser.custom.JoinSpecParser"/>
       <implementations
           xsi:type="gmfgen:CustomParser"
-          uses="/0/@diagram/@childNodes.32/@labels.0/@modelFacet"
+          uses="/0/@diagram/@childNodes.32/@labels.1/@modelFacet"
           qualifiedName="org.eclipse.papyrus.uml.diagram.activity.parser.custom.InputDecisionParser"/>
       <implementations
           xsi:type="gmfgen:CustomParser"
@@ -18381,7 +18381,7 @@
     <extensionNodes
         xsi:type="papyrusgmfgenextension:ExtendedGenView"
         comment="add superclass for floating Label"
-        genView="/0/@diagram/@childNodes.67/@labels.1 /0/@diagram/@childNodes.87/@labels.1 /0/@diagram/@childNodes.90/@labels.1 /0/@diagram/@childNodes.16/@labels.1 /0/@diagram/@childNodes.6/@labels.1 /0/@diagram/@childNodes.37/@labels.1 /0/@diagram/@childNodes.54/@labels.1 /0/@diagram/@childNodes.70/@labels.1 /0/@diagram/@childNodes.73/@labels.1 /0/@diagram/@childNodes.76/@labels.1 /0/@diagram/@childNodes.79/@labels.1 /0/@diagram/@childNodes.83/@labels.1 /0/@diagram/@childNodes.85/@labels.1 /0/@diagram/@childNodes.11/@labels.1 /0/@diagram/@childNodes.92/@labels.2 /0/@diagram/@childNodes.36/@labels.2 /0/@diagram/@childNodes.44/@labels.1 /0/@diagram/@childNodes.3/@labels.1 /0/@diagram/@childNodes.4/@labels.1 /0/@diagram/@childNodes.5/@labels.1 /0/@diagram/@childNodes.32/@labels.2 /0/@diagram/@childNodes.33/@labels.1 /0/@diagram/@childNodes.34/@labels.1 /0/@diagram/@childNodes.35/@labels.2 /0/@diagram/@childNodes.52/@labels.3"
+        genView="/0/@diagram/@childNodes.67/@labels.1 /0/@diagram/@childNodes.87/@labels.1 /0/@diagram/@childNodes.90/@labels.1 /0/@diagram/@childNodes.16/@labels.1 /0/@diagram/@childNodes.6/@labels.1 /0/@diagram/@childNodes.37/@labels.1 /0/@diagram/@childNodes.54/@labels.1 /0/@diagram/@childNodes.70/@labels.1 /0/@diagram/@childNodes.73/@labels.1 /0/@diagram/@childNodes.76/@labels.1 /0/@diagram/@childNodes.79/@labels.1 /0/@diagram/@childNodes.83/@labels.1 /0/@diagram/@childNodes.85/@labels.1 /0/@diagram/@childNodes.11/@labels.1 /0/@diagram/@childNodes.92/@labels.2 /0/@diagram/@childNodes.36/@labels.2 /0/@diagram/@childNodes.44/@labels.1 /0/@diagram/@childNodes.3/@labels.0 /0/@diagram/@childNodes.4/@labels.0 /0/@diagram/@childNodes.5/@labels.0 /0/@diagram/@childNodes.32/@labels.0 /0/@diagram/@childNodes.33/@labels.0 /0/@diagram/@childNodes.34/@labels.0 /0/@diagram/@childNodes.35/@labels.1 /0/@diagram/@childNodes.52/@labels.3"
         name="FloatingLabelEditPart"
         superOwnedEditPart="org.eclipse.papyrus.uml.diagram.common.editparts.FloatingLabelEditPart"/>
     <extensionNodes
@@ -18502,7 +18502,7 @@
         role="Stereotype"
         iconPathRole="platform:/plugin/org.eclipse.papyrus.uml.diagram.common/icons/stereotype.gif"
         linkLabels="/0/@diagram/@links.2/@labels.6 /0/@diagram/@links.3/@labels.3"
-        externalNodeLabels="/0/@diagram/@childNodes.3/@labels.0 /0/@diagram/@childNodes.4/@labels.0 /0/@diagram/@childNodes.5/@labels.0 /0/@diagram/@childNodes.7/@labels.2 /0/@diagram/@childNodes.8/@labels.2 /0/@diagram/@childNodes.9/@labels.1 /0/@diagram/@childNodes.10/@labels.1 /0/@diagram/@childNodes.12/@labels.2 /0/@diagram/@childNodes.13/@labels.2 /0/@diagram/@childNodes.14/@labels.1 /0/@diagram/@childNodes.15/@labels.1 /0/@diagram/@childNodes.17/@labels.2 /0/@diagram/@childNodes.18/@labels.2 /0/@diagram/@childNodes.19/@labels.1 /0/@diagram/@childNodes.20/@labels.1 /0/@diagram/@childNodes.21/@labels.2 /0/@diagram/@childNodes.22/@labels.2 /0/@diagram/@childNodes.23/@labels.1 /0/@diagram/@childNodes.32/@labels.1 /0/@diagram/@childNodes.33/@labels.0 /0/@diagram/@childNodes.34/@labels.0 /0/@diagram/@childNodes.35/@labels.1 /0/@diagram/@childNodes.38/@labels.2 /0/@diagram/@childNodes.39/@labels.2 /0/@diagram/@childNodes.40/@labels.1 /0/@diagram/@childNodes.41/@labels.2 /0/@diagram/@childNodes.42/@labels.2 /0/@diagram/@childNodes.43/@labels.1 /0/@diagram/@childNodes.45/@labels.2 /0/@diagram/@childNodes.46/@labels.2 /0/@diagram/@childNodes.47/@labels.1 /0/@diagram/@childNodes.48/@labels.2 /0/@diagram/@childNodes.49/@labels.2 /0/@diagram/@childNodes.50/@labels.1 /0/@diagram/@childNodes.52/@labels.2 /0/@diagram/@childNodes.53/@labels.1 /0/@diagram/@childNodes.55/@labels.1 /0/@diagram/@childNodes.71/@labels.1 /0/@diagram/@childNodes.74/@labels.1 /0/@diagram/@childNodes.77/@labels.1 /0/@diagram/@childNodes.80/@labels.1 /0/@diagram/@childNodes.81/@labels.1 /0/@diagram/@childNodes.82/@labels.1 /0/@diagram/@childNodes.84/@labels.1 /0/@diagram/@childNodes.86/@labels.1 /0/@diagram/@childNodes.88/@labels.1 /0/@diagram/@childNodes.89/@labels.1 /0/@diagram/@childNodes.91/@labels.2"/>
+        externalNodeLabels="/0/@diagram/@childNodes.3/@labels.1 /0/@diagram/@childNodes.4/@labels.1 /0/@diagram/@childNodes.5/@labels.1 /0/@diagram/@childNodes.7/@labels.2 /0/@diagram/@childNodes.8/@labels.2 /0/@diagram/@childNodes.9/@labels.1 /0/@diagram/@childNodes.10/@labels.1 /0/@diagram/@childNodes.12/@labels.2 /0/@diagram/@childNodes.13/@labels.2 /0/@diagram/@childNodes.14/@labels.1 /0/@diagram/@childNodes.15/@labels.1 /0/@diagram/@childNodes.17/@labels.2 /0/@diagram/@childNodes.18/@labels.2 /0/@diagram/@childNodes.19/@labels.1 /0/@diagram/@childNodes.20/@labels.1 /0/@diagram/@childNodes.21/@labels.2 /0/@diagram/@childNodes.22/@labels.2 /0/@diagram/@childNodes.23/@labels.1 /0/@diagram/@childNodes.32/@labels.2 /0/@diagram/@childNodes.33/@labels.1 /0/@diagram/@childNodes.34/@labels.1 /0/@diagram/@childNodes.35/@labels.2 /0/@diagram/@childNodes.38/@labels.2 /0/@diagram/@childNodes.39/@labels.2 /0/@diagram/@childNodes.40/@labels.1 /0/@diagram/@childNodes.41/@labels.2 /0/@diagram/@childNodes.42/@labels.2 /0/@diagram/@childNodes.43/@labels.1 /0/@diagram/@childNodes.45/@labels.2 /0/@diagram/@childNodes.46/@labels.2 /0/@diagram/@childNodes.47/@labels.1 /0/@diagram/@childNodes.48/@labels.2 /0/@diagram/@childNodes.49/@labels.2 /0/@diagram/@childNodes.50/@labels.1 /0/@diagram/@childNodes.52/@labels.2 /0/@diagram/@childNodes.53/@labels.1 /0/@diagram/@childNodes.55/@labels.1 /0/@diagram/@childNodes.71/@labels.1 /0/@diagram/@childNodes.74/@labels.1 /0/@diagram/@childNodes.77/@labels.1 /0/@diagram/@childNodes.80/@labels.1 /0/@diagram/@childNodes.81/@labels.1 /0/@diagram/@childNodes.82/@labels.1 /0/@diagram/@childNodes.84/@labels.1 /0/@diagram/@childNodes.86/@labels.1 /0/@diagram/@childNodes.88/@labels.1 /0/@diagram/@childNodes.89/@labels.1 /0/@diagram/@childNodes.91/@labels.2"/>
     <extensionNodes
         xsi:type="papyrusgmfgenextension:LabelVisibilityPreference"
         comment="Selection"
@@ -18532,7 +18532,7 @@
     <extensionNodes
         xsi:type="papyrusgmfgenextension:ExtendedGenView"
         comment="set the super class as AbstractLabelEditPart"
-        genView="/0/@diagram/@childNodes.3/@labels.0 /0/@diagram/@childNodes.4/@labels.0 /0/@diagram/@childNodes.5/@labels.0 /0/@diagram/@childNodes.7/@labels.2 /0/@diagram/@childNodes.8/@labels.2 /0/@diagram/@childNodes.9/@labels.1 /0/@diagram/@childNodes.10/@labels.1 /0/@diagram/@childNodes.12/@labels.2 /0/@diagram/@childNodes.13/@labels.2 /0/@diagram/@childNodes.14/@labels.1 /0/@diagram/@childNodes.15/@labels.1 /0/@diagram/@childNodes.17/@labels.2 /0/@diagram/@childNodes.18/@labels.2 /0/@diagram/@childNodes.19/@labels.1 /0/@diagram/@childNodes.20/@labels.1 /0/@diagram/@childNodes.21/@labels.2 /0/@diagram/@childNodes.22/@labels.2 /0/@diagram/@childNodes.23/@labels.1 /0/@diagram/@childNodes.32/@labels.1 /0/@diagram/@childNodes.33/@labels.0 /0/@diagram/@childNodes.34/@labels.0 /0/@diagram/@childNodes.35/@labels.1 /0/@diagram/@childNodes.38/@labels.2 /0/@diagram/@childNodes.39/@labels.2 /0/@diagram/@childNodes.40/@labels.1 /0/@diagram/@childNodes.41/@labels.2 /0/@diagram/@childNodes.42/@labels.2 /0/@diagram/@childNodes.43/@labels.1 /0/@diagram/@childNodes.45/@labels.2 /0/@diagram/@childNodes.46/@labels.2 /0/@diagram/@childNodes.47/@labels.1 /0/@diagram/@childNodes.48/@labels.2 /0/@diagram/@childNodes.49/@labels.2 /0/@diagram/@childNodes.50/@labels.1 /0/@diagram/@childNodes.52/@labels.2 /0/@diagram/@childNodes.53/@labels.1 /0/@diagram/@childNodes.55/@labels.1 /0/@diagram/@childNodes.71/@labels.1 /0/@diagram/@childNodes.74/@labels.1 /0/@diagram/@childNodes.77/@labels.1 /0/@diagram/@childNodes.80/@labels.1 /0/@diagram/@childNodes.81/@labels.1 /0/@diagram/@childNodes.82/@labels.1 /0/@diagram/@childNodes.84/@labels.1 /0/@diagram/@childNodes.86/@labels.1 /0/@diagram/@childNodes.88/@labels.1 /0/@diagram/@childNodes.89/@labels.1 /0/@diagram/@childNodes.91/@labels.2 /0/@diagram/@childNodes.61/@labels.1 /0/@diagram/@childNodes.62/@labels.1 /0/@diagram/@childNodes.63/@labels.1 /0/@diagram/@childNodes.66/@labels.1"
+        genView="/0/@diagram/@childNodes.3/@labels.1 /0/@diagram/@childNodes.4/@labels.1 /0/@diagram/@childNodes.5/@labels.1 /0/@diagram/@childNodes.7/@labels.2 /0/@diagram/@childNodes.8/@labels.2 /0/@diagram/@childNodes.9/@labels.1 /0/@diagram/@childNodes.10/@labels.1 /0/@diagram/@childNodes.12/@labels.2 /0/@diagram/@childNodes.13/@labels.2 /0/@diagram/@childNodes.14/@labels.1 /0/@diagram/@childNodes.15/@labels.1 /0/@diagram/@childNodes.17/@labels.2 /0/@diagram/@childNodes.18/@labels.2 /0/@diagram/@childNodes.19/@labels.1 /0/@diagram/@childNodes.20/@labels.1 /0/@diagram/@childNodes.21/@labels.2 /0/@diagram/@childNodes.22/@labels.2 /0/@diagram/@childNodes.23/@labels.1 /0/@diagram/@childNodes.32/@labels.2 /0/@diagram/@childNodes.33/@labels.1 /0/@diagram/@childNodes.34/@labels.1 /0/@diagram/@childNodes.35/@labels.2 /0/@diagram/@childNodes.38/@labels.2 /0/@diagram/@childNodes.39/@labels.2 /0/@diagram/@childNodes.40/@labels.1 /0/@diagram/@childNodes.41/@labels.2 /0/@diagram/@childNodes.42/@labels.2 /0/@diagram/@childNodes.43/@labels.1 /0/@diagram/@childNodes.45/@labels.2 /0/@diagram/@childNodes.46/@labels.2 /0/@diagram/@childNodes.47/@labels.1 /0/@diagram/@childNodes.48/@labels.2 /0/@diagram/@childNodes.49/@labels.2 /0/@diagram/@childNodes.50/@labels.1 /0/@diagram/@childNodes.52/@labels.2 /0/@diagram/@childNodes.53/@labels.1 /0/@diagram/@childNodes.55/@labels.1 /0/@diagram/@childNodes.71/@labels.1 /0/@diagram/@childNodes.74/@labels.1 /0/@diagram/@childNodes.77/@labels.1 /0/@diagram/@childNodes.80/@labels.1 /0/@diagram/@childNodes.81/@labels.1 /0/@diagram/@childNodes.82/@labels.1 /0/@diagram/@childNodes.84/@labels.1 /0/@diagram/@childNodes.86/@labels.1 /0/@diagram/@childNodes.88/@labels.1 /0/@diagram/@childNodes.89/@labels.1 /0/@diagram/@childNodes.91/@labels.2 /0/@diagram/@childNodes.61/@labels.1 /0/@diagram/@childNodes.62/@labels.1 /0/@diagram/@childNodes.63/@labels.1 /0/@diagram/@childNodes.66/@labels.1"
         name="AbstractLabelEditPart"
         superOwnedEditPart="org.eclipse.papyrus.uml.diagram.common.editparts.AbstractLabelEditPart"/>
     <extensionNodes
@@ -18545,7 +18545,7 @@
         xsi:type="papyrusgmfgenextension:SpecificLocatorExternalLabel"
         comment="locator for external label of pins"
         classpath="org.eclipse.papyrus.uml.diagram.common.locator.ExternalLabelPositionLocator"
-        genExternalNodeLabel="/0/@diagram/@childNodes.75/@labels.0 /0/@diagram/@childNodes.3/@labels.0 /0/@diagram/@childNodes.4/@labels.0 /0/@diagram/@childNodes.5/@labels.0 /0/@diagram/@childNodes.7/@labels.2 /0/@diagram/@childNodes.8/@labels.2 /0/@diagram/@childNodes.9/@labels.1 /0/@diagram/@childNodes.10/@labels.1 /0/@diagram/@childNodes.12/@labels.2 /0/@diagram/@childNodes.13/@labels.2 /0/@diagram/@childNodes.14/@labels.1 /0/@diagram/@childNodes.15/@labels.1 /0/@diagram/@childNodes.17/@labels.2 /0/@diagram/@childNodes.18/@labels.2 /0/@diagram/@childNodes.19/@labels.1 /0/@diagram/@childNodes.20/@labels.1 /0/@diagram/@childNodes.21/@labels.2 /0/@diagram/@childNodes.22/@labels.2 /0/@diagram/@childNodes.23/@labels.1 /0/@diagram/@childNodes.32/@labels.1 /0/@diagram/@childNodes.33/@labels.0 /0/@diagram/@childNodes.34/@labels.0 /0/@diagram/@childNodes.35/@labels.1 /0/@diagram/@childNodes.38/@labels.2 /0/@diagram/@childNodes.39/@labels.2 /0/@diagram/@childNodes.40/@labels.1 /0/@diagram/@childNodes.41/@labels.2 /0/@diagram/@childNodes.42/@labels.2 /0/@diagram/@childNodes.43/@labels.1 /0/@diagram/@childNodes.45/@labels.2 /0/@diagram/@childNodes.46/@labels.2 /0/@diagram/@childNodes.47/@labels.1 /0/@diagram/@childNodes.48/@labels.2 /0/@diagram/@childNodes.49/@labels.2 /0/@diagram/@childNodes.50/@labels.1 /0/@diagram/@childNodes.52/@labels.2 /0/@diagram/@childNodes.53/@labels.1 /0/@diagram/@childNodes.55/@labels.1 /0/@diagram/@childNodes.71/@labels.1 /0/@diagram/@childNodes.74/@labels.1 /0/@diagram/@childNodes.77/@labels.1 /0/@diagram/@childNodes.80/@labels.1 /0/@diagram/@childNodes.81/@labels.1 /0/@diagram/@childNodes.82/@labels.1 /0/@diagram/@childNodes.84/@labels.1 /0/@diagram/@childNodes.86/@labels.1 /0/@diagram/@childNodes.88/@labels.1 /0/@diagram/@childNodes.89/@labels.1 /0/@diagram/@childNodes.91/@labels.2 /0/@diagram/@childNodes.63/@labels.0 /0/@diagram/@childNodes.61/@labels.1 /0/@diagram/@childNodes.62/@labels.1 /0/@diagram/@childNodes.63/@labels.1 /0/@diagram/@childNodes.66/@labels.1 /0/@diagram/@childNodes.53/@labels.0 /0/@diagram/@childNodes.7/@labels.0 /0/@diagram/@childNodes.7/@labels.1 /0/@diagram/@childNodes.8/@labels.0 /0/@diagram/@childNodes.8/@labels.1 /0/@diagram/@childNodes.9/@labels.0 /0/@diagram/@childNodes.10/@labels.0 /0/@diagram/@childNodes.12/@labels.0 /0/@diagram/@childNodes.12/@labels.1 /0/@diagram/@childNodes.13/@labels.0 /0/@diagram/@childNodes.13/@labels.1 /0/@diagram/@childNodes.14/@labels.0 /0/@diagram/@childNodes.15/@labels.0 /0/@diagram/@childNodes.17/@labels.0 /0/@diagram/@childNodes.17/@labels.1 /0/@diagram/@childNodes.18/@labels.0 /0/@diagram/@childNodes.18/@labels.1 /0/@diagram/@childNodes.19/@labels.0 /0/@diagram/@childNodes.20/@labels.0 /0/@diagram/@childNodes.21/@labels.0 /0/@diagram/@childNodes.21/@labels.1 /0/@diagram/@childNodes.22/@labels.0 /0/@diagram/@childNodes.22/@labels.1 /0/@diagram/@childNodes.23/@labels.0 /0/@diagram/@childNodes.32/@labels.0 /0/@diagram/@childNodes.35/@labels.0 /0/@diagram/@childNodes.36/@labels.1 /0/@diagram/@childNodes.38/@labels.0 /0/@diagram/@childNodes.38/@labels.1 /0/@diagram/@childNodes.39/@labels.0 /0/@diagram/@childNodes.39/@labels.1 /0/@diagram/@childNodes.40/@labels.0 /0/@diagram/@childNodes.41/@labels.0 /0/@diagram/@childNodes.41/@labels.1 /0/@diagram/@childNodes.42/@labels.0 /0/@diagram/@childNodes.42/@labels.1 /0/@diagram/@childNodes.43/@labels.0 /0/@diagram/@childNodes.45/@labels.0 /0/@diagram/@childNodes.45/@labels.1 /0/@diagram/@childNodes.46/@labels.0 /0/@diagram/@childNodes.46/@labels.1 /0/@diagram/@childNodes.47/@labels.0 /0/@diagram/@childNodes.48/@labels.0 /0/@diagram/@childNodes.48/@labels.1 /0/@diagram/@childNodes.49/@labels.0 /0/@diagram/@childNodes.49/@labels.1 /0/@diagram/@childNodes.50/@labels.0 /0/@diagram/@childNodes.52/@labels.1 /0/@diagram/@childNodes.55/@labels.0 /0/@diagram/@childNodes.61/@labels.0 /0/@diagram/@childNodes.62/@labels.0 /0/@diagram/@childNodes.66/@labels.0 /0/@diagram/@childNodes.71/@labels.0 /0/@diagram/@childNodes.74/@labels.0 /0/@diagram/@childNodes.77/@labels.0 /0/@diagram/@childNodes.78/@labels.0 /0/@diagram/@childNodes.78/@labels.1 /0/@diagram/@childNodes.80/@labels.0 /0/@diagram/@childNodes.81/@labels.0 /0/@diagram/@childNodes.82/@labels.0 /0/@diagram/@childNodes.84/@labels.0 /0/@diagram/@childNodes.86/@labels.0 /0/@diagram/@childNodes.88/@labels.0 /0/@diagram/@childNodes.89/@labels.0 /0/@diagram/@childNodes.91/@labels.0 /0/@diagram/@childNodes.91/@labels.1 /0/@diagram/@childNodes.92/@labels.1"/>
+        genExternalNodeLabel="/0/@diagram/@childNodes.75/@labels.0 /0/@diagram/@childNodes.3/@labels.1 /0/@diagram/@childNodes.4/@labels.1 /0/@diagram/@childNodes.5/@labels.1 /0/@diagram/@childNodes.7/@labels.2 /0/@diagram/@childNodes.8/@labels.2 /0/@diagram/@childNodes.9/@labels.1 /0/@diagram/@childNodes.10/@labels.1 /0/@diagram/@childNodes.12/@labels.2 /0/@diagram/@childNodes.13/@labels.2 /0/@diagram/@childNodes.14/@labels.1 /0/@diagram/@childNodes.15/@labels.1 /0/@diagram/@childNodes.17/@labels.2 /0/@diagram/@childNodes.18/@labels.2 /0/@diagram/@childNodes.19/@labels.1 /0/@diagram/@childNodes.20/@labels.1 /0/@diagram/@childNodes.21/@labels.2 /0/@diagram/@childNodes.22/@labels.2 /0/@diagram/@childNodes.23/@labels.1 /0/@diagram/@childNodes.32/@labels.2 /0/@diagram/@childNodes.33/@labels.1 /0/@diagram/@childNodes.34/@labels.1 /0/@diagram/@childNodes.35/@labels.2 /0/@diagram/@childNodes.38/@labels.2 /0/@diagram/@childNodes.39/@labels.2 /0/@diagram/@childNodes.40/@labels.1 /0/@diagram/@childNodes.41/@labels.2 /0/@diagram/@childNodes.42/@labels.2 /0/@diagram/@childNodes.43/@labels.1 /0/@diagram/@childNodes.45/@labels.2 /0/@diagram/@childNodes.46/@labels.2 /0/@diagram/@childNodes.47/@labels.1 /0/@diagram/@childNodes.48/@labels.2 /0/@diagram/@childNodes.49/@labels.2 /0/@diagram/@childNodes.50/@labels.1 /0/@diagram/@childNodes.52/@labels.2 /0/@diagram/@childNodes.53/@labels.1 /0/@diagram/@childNodes.55/@labels.1 /0/@diagram/@childNodes.71/@labels.1 /0/@diagram/@childNodes.74/@labels.1 /0/@diagram/@childNodes.77/@labels.1 /0/@diagram/@childNodes.80/@labels.1 /0/@diagram/@childNodes.81/@labels.1 /0/@diagram/@childNodes.82/@labels.1 /0/@diagram/@childNodes.84/@labels.1 /0/@diagram/@childNodes.86/@labels.1 /0/@diagram/@childNodes.88/@labels.1 /0/@diagram/@childNodes.89/@labels.1 /0/@diagram/@childNodes.91/@labels.2 /0/@diagram/@childNodes.63/@labels.0 /0/@diagram/@childNodes.61/@labels.1 /0/@diagram/@childNodes.62/@labels.1 /0/@diagram/@childNodes.63/@labels.1 /0/@diagram/@childNodes.66/@labels.1 /0/@diagram/@childNodes.53/@labels.0 /0/@diagram/@childNodes.7/@labels.0 /0/@diagram/@childNodes.7/@labels.1 /0/@diagram/@childNodes.8/@labels.0 /0/@diagram/@childNodes.8/@labels.1 /0/@diagram/@childNodes.9/@labels.0 /0/@diagram/@childNodes.10/@labels.0 /0/@diagram/@childNodes.12/@labels.0 /0/@diagram/@childNodes.12/@labels.1 /0/@diagram/@childNodes.13/@labels.0 /0/@diagram/@childNodes.13/@labels.1 /0/@diagram/@childNodes.14/@labels.0 /0/@diagram/@childNodes.15/@labels.0 /0/@diagram/@childNodes.17/@labels.0 /0/@diagram/@childNodes.17/@labels.1 /0/@diagram/@childNodes.18/@labels.0 /0/@diagram/@childNodes.18/@labels.1 /0/@diagram/@childNodes.19/@labels.0 /0/@diagram/@childNodes.20/@labels.0 /0/@diagram/@childNodes.21/@labels.0 /0/@diagram/@childNodes.21/@labels.1 /0/@diagram/@childNodes.22/@labels.0 /0/@diagram/@childNodes.22/@labels.1 /0/@diagram/@childNodes.23/@labels.0 /0/@diagram/@childNodes.32/@labels.1 /0/@diagram/@childNodes.35/@labels.0 /0/@diagram/@childNodes.36/@labels.1 /0/@diagram/@childNodes.38/@labels.0 /0/@diagram/@childNodes.38/@labels.1 /0/@diagram/@childNodes.39/@labels.0 /0/@diagram/@childNodes.39/@labels.1 /0/@diagram/@childNodes.40/@labels.0 /0/@diagram/@childNodes.41/@labels.0 /0/@diagram/@childNodes.41/@labels.1 /0/@diagram/@childNodes.42/@labels.0 /0/@diagram/@childNodes.42/@labels.1 /0/@diagram/@childNodes.43/@labels.0 /0/@diagram/@childNodes.45/@labels.0 /0/@diagram/@childNodes.45/@labels.1 /0/@diagram/@childNodes.46/@labels.0 /0/@diagram/@childNodes.46/@labels.1 /0/@diagram/@childNodes.47/@labels.0 /0/@diagram/@childNodes.48/@labels.0 /0/@diagram/@childNodes.48/@labels.1 /0/@diagram/@childNodes.49/@labels.0 /0/@diagram/@childNodes.49/@labels.1 /0/@diagram/@childNodes.50/@labels.0 /0/@diagram/@childNodes.52/@labels.1 /0/@diagram/@childNodes.55/@labels.0 /0/@diagram/@childNodes.61/@labels.0 /0/@diagram/@childNodes.62/@labels.0 /0/@diagram/@childNodes.66/@labels.0 /0/@diagram/@childNodes.71/@labels.0 /0/@diagram/@childNodes.74/@labels.0 /0/@diagram/@childNodes.77/@labels.0 /0/@diagram/@childNodes.78/@labels.0 /0/@diagram/@childNodes.78/@labels.1 /0/@diagram/@childNodes.80/@labels.0 /0/@diagram/@childNodes.81/@labels.0 /0/@diagram/@childNodes.82/@labels.0 /0/@diagram/@childNodes.84/@labels.0 /0/@diagram/@childNodes.86/@labels.0 /0/@diagram/@childNodes.88/@labels.0 /0/@diagram/@childNodes.89/@labels.0 /0/@diagram/@childNodes.91/@labels.0 /0/@diagram/@childNodes.91/@labels.1 /0/@diagram/@childNodes.92/@labels.1"/>
     <extensionNodes
         xsi:type="papyrusgmfgenextension:GenerateUsingElementTypeCreationCommand"/>
   </papyrusgmfgenextension:PapyrusExtensionRootNode>

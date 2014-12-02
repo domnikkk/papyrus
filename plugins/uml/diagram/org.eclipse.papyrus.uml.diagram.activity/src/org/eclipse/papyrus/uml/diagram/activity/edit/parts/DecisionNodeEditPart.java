@@ -271,7 +271,7 @@ public class DecisionNodeEditPart extends RoundedCompartmentEditPart {
 	 */
 	@Override
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(UMLVisualIDRegistry.getType(DecisionInputEditPart.VISUAL_ID));
+		return getChildBySemanticHint(UMLVisualIDRegistry.getType(DecisionNodeFloatingNameEditPart.VISUAL_ID));
 	}
 
 	/**
