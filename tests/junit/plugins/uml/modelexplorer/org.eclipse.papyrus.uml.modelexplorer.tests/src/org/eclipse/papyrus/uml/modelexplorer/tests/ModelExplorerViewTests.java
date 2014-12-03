@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.RunnableWithResult;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
+import org.eclipse.papyrus.junit.utils.rules.PluginResource;
 import org.eclipse.papyrus.views.modelexplorer.ModelExplorerPageBookView;
 import org.eclipse.papyrus.views.modelexplorer.tests.AbstractHandlerTest;
 import org.eclipse.swt.widgets.Display;
@@ -32,7 +33,7 @@ import org.eclipse.uml2.uml.Package;
 import org.junit.Assert;
 import org.junit.Test;
 
-
+@PluginResource("/resources/model.di")
 public class ModelExplorerViewTests extends AbstractHandlerTest {
 
 	/**
@@ -66,7 +67,7 @@ public class ModelExplorerViewTests extends AbstractHandlerTest {
 		final IStructuredSelection currentSelection = getCurrentSelection();
 		Assert.assertEquals("Only one element should be selected", 1, currentSelection.size()); //$NON-NLS-1$
 		Object obj = currentSelection.getFirstElement();
-			obj =EMFHelper.getEObject(obj);
+		obj = EMFHelper.getEObject(obj);
 
 		Assert.assertEquals("The function revealSemanticElement seems doesn't work on the root of the model", getRootOfTheModel(), obj);
 	}
@@ -78,11 +79,11 @@ public class ModelExplorerViewTests extends AbstractHandlerTest {
 	@Test
 	public void revealSemanticElement_selectChildrenTest() {
 		final List<EObject> selectedElement = new ArrayList<EObject>();
-		final Package pack = (Package)getRootOfTheModel();
+		final Package pack = (Package) getRootOfTheModel();
 		final List<NamedElement> members = pack.getOwnedMembers();
 		final int size = members.size();
-		Assert.assertTrue(size != 0);//to be sure that the tested model is correct
-		for(NamedElement current : members) {
+		Assert.assertTrue(size != 0);// to be sure that the tested model is correct
+		for (NamedElement current : members) {
 			selectedElement.clear();
 			selectedElement.add(current);
 
@@ -104,7 +105,7 @@ public class ModelExplorerViewTests extends AbstractHandlerTest {
 			final IStructuredSelection currentSelection = getCurrentSelection();
 			Assert.assertTrue("Only one element should be selected", currentSelection.size() == 1); //$NON-NLS-1$
 			Object obj = currentSelection.getFirstElement();
-			obj =org.eclipse.papyrus.infra.emf.utils.EMFHelper.getEObject(obj);
+			obj = org.eclipse.papyrus.infra.emf.utils.EMFHelper.getEObject(obj);
 			Assert.assertTrue("The function revealSemanticElement seems doesn't work with children", obj == current); //$NON-NLS-1$
 		}
 	}
@@ -115,10 +116,10 @@ public class ModelExplorerViewTests extends AbstractHandlerTest {
 	@Test
 	public void revealSemanticElement_selectChildrenTestList() {
 		final List<EObject> selectedElement = new ArrayList<EObject>();
-		final Package pack = (Package)getRootOfTheModel();
+		final Package pack = (Package) getRootOfTheModel();
 		final List<NamedElement> members = pack.getOwnedMembers();
 		final int size = members.size();
-		Assert.assertTrue(size != 0);//to be sure that the tested model is correct
+		Assert.assertTrue(size != 0);// to be sure that the tested model is correct
 		selectedElement.addAll(members);
 
 		RunnableWithResult<IWorkbenchPart> runnable;
@@ -147,11 +148,11 @@ public class ModelExplorerViewTests extends AbstractHandlerTest {
 	@Test
 	public void revealSemanticElement_selectImportedPackage() {
 		final List<EObject> selectedElement = new ArrayList<EObject>();
-		final Package pack = (Package)getRootOfTheModel();
+		final Package pack = (Package) getRootOfTheModel();
 		final EList<Package> importedPackage = pack.getImportedPackages();
 		final int size = importedPackage.size();
-		Assert.assertTrue(size != 0);//to be sure that the tested model is correct
-		for(NamedElement current : importedPackage) {
+		Assert.assertTrue(size != 0);// to be sure that the tested model is correct
+		for (NamedElement current : importedPackage) {
 
 			waitForPendingMessages();
 
@@ -172,17 +173,17 @@ public class ModelExplorerViewTests extends AbstractHandlerTest {
 			final IStructuredSelection currentSelection = getCurrentSelection();
 			Assert.assertEquals("I don't get the correct selection", 1, currentSelection.size()); //$NON-NLS-1$
 			Object obj = currentSelection.getFirstElement();
-			obj =EMFHelper.getEObject(obj);
+			obj = EMFHelper.getEObject(obj);
 			Assert.assertEquals("The function revealSemanticElement seems doesn't work with importedPackage", current, obj); //$NON-NLS-1$
 		}
 	}
 
 	private void waitForPendingMessages() {
-		//Run all pending tasks to refresh the ModelExplorer
-		if(Display.getCurrent() != null) {
-			while(true) {
+		// Run all pending tasks to refresh the ModelExplorer
+		if (Display.getCurrent() != null) {
+			while (true) {
 				try {
-					if(!Display.getCurrent().readAndDispatch()) {
+					if (!Display.getCurrent().readAndDispatch()) {
 						break;
 					}
 				} catch (Throwable t) {
@@ -195,12 +196,12 @@ public class ModelExplorerViewTests extends AbstractHandlerTest {
 	@Test
 	public void revealSemanticElement_selectImportedPackageList() {
 		final List<EObject> selectedElement = new ArrayList<EObject>();
-		final Package pack = (Package)getRootOfTheModel();
+		final Package pack = (Package) getRootOfTheModel();
 		final EList<Package> importedPackage = pack.getImportedPackages();
 		final int size = importedPackage.size();
-		Assert.assertNotSame(0, size);//to be sure that the tested model is correct
+		Assert.assertNotSame(0, size);// to be sure that the tested model is correct
 
-		//Run all pending tasks to refresh the ModelExplorer
+		// Run all pending tasks to refresh the ModelExplorer
 		waitForPendingMessages();
 
 		selectedElement.addAll(importedPackage);
@@ -220,4 +221,3 @@ public class ModelExplorerViewTests extends AbstractHandlerTest {
 		Assert.assertEquals("I don't get the current selection for revealSemanticElement_importedPackageList", 1, currentSelection.size()); //$NON-NLS-1$
 	}
 }
-
