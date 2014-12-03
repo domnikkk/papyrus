@@ -382,7 +382,7 @@ public abstract class AbstractElementLabelEditPart extends PapyrusLabelEditPart 
 
 				if (Window.OK == dialog.open()) {
 					TransactionalEditingDomain domain = getEditingDomain();
-					RecordingCommand command = new RecordingCommand(domain, "Edit Label") {
+					RecordingCommand command = new RecordingCommand(domain, "Edit Label") { //$NON-NLS-1$
 
 						@Override
 						protected void doExecute() {
@@ -564,7 +564,7 @@ public abstract class AbstractElementLabelEditPart extends PapyrusLabelEditPart 
 	protected void initExtendedEditorConfiguration() {
 		if (configuration == null) {
 			final String languagePreferred = Activator.getDefault().getPreferenceStore().getString(IDirectEditorsIds.EDITOR_FOR_ELEMENT + resolveSemanticElement().eClass().getInstanceClassName());
-			if (languagePreferred != null && !languagePreferred.equals("")) {
+			if (languagePreferred != null && !languagePreferred.equals("")) { //$NON-NLS-1$
 				configuration = DirectEditorsUtil.findEditorConfiguration(languagePreferred, resolveSemanticElement().eClass().getInstanceClassName());
 			} else {
 				configuration = DirectEditorsUtil.findEditorConfiguration(IDirectEditorsIds.UML_LANGUAGE, resolveSemanticElement().eClass().getInstanceClassName());
@@ -577,7 +577,7 @@ public abstract class AbstractElementLabelEditPart extends PapyrusLabelEditPart 
 	 */
 	protected void updateExtendedEditorConfiguration() {
 		String languagePreferred = Activator.getDefault().getPreferenceStore().getString(IDirectEditorsIds.EDITOR_FOR_ELEMENT + resolveSemanticElement().eClass().getInstanceClassName());
-		if (languagePreferred != null && !languagePreferred.equals("") && languagePreferred != configuration.getLanguage()) {
+		if (languagePreferred != null && !languagePreferred.equals("") && languagePreferred != configuration.getLanguage()) { //$NON-NLS-1$
 			configuration = DirectEditorsUtil.findEditorConfiguration(languagePreferred, resolveSemanticElement().eClass().getInstanceClassName());
 		} else if (IDirectEditorsIds.SIMPLE_DIRECT_EDITOR.equals(languagePreferred)) {
 			configuration = null;
@@ -669,7 +669,7 @@ public abstract class AbstractElementLabelEditPart extends PapyrusLabelEditPart 
 		String diagramType = getNotationView().getDiagram().getType();
 		String parentType = ViewUtil.getViewContainer(getNotationView()).getType();
 		String labelType = getNotationView().getType();
-		return diagramType + "_" + parentType + "-" + labelType;
+		return diagramType + "_" + parentType + "-" + labelType; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	/**
