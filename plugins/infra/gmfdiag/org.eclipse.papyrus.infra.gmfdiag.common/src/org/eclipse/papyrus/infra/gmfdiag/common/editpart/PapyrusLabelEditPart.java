@@ -52,34 +52,34 @@ public abstract class PapyrusLabelEditPart extends LabelEditPart {
 	/**
 	 * CSS Integer property to define the horizontal Label Margin
 	 */
-	public static final String TOP_MARGIN_PROPERTY = "topMarginLabel"; // $NON-NLS$
+	public static final String TOP_MARGIN_PROPERTY = "topMarginLabel"; //$NON-NLS-1$
 
 	/**
 	 * CSS Integer property to define the vertical Label Margin
 	 */
-	public static final String LEFT_MARGIN_PROPERTY = "leftMarginLabel"; // $NON-NLS$
+	public static final String LEFT_MARGIN_PROPERTY = "leftMarginLabel"; //$NON-NLS-1$
 
 	/**
 	 * CSS Integer property to define the horizontal Label Margin
 	 */
-	public static final String BOTTOM_MARGIN_PROPERTY = "bottomMarginLabel"; // $NON-NLS$
+	public static final String BOTTOM_MARGIN_PROPERTY = "bottomMarginLabel"; //$NON-NLS-1$
 
 	/**
 	 * CSS Integer property to define the vertical Label Margin
 	 */
-	public static final String RIGHT_MARGIN_PROPERTY = "rightMarginLabel"; // $NON-NLS$
+	public static final String RIGHT_MARGIN_PROPERTY = "rightMarginLabel"; //$NON-NLS-1$
 
 	/** The Constant TEXT_ALIGNMENT. */
-	public static final String TEXT_ALIGNMENT = "textAlignment"; // $NON-NLS$
+	public static final String TEXT_ALIGNMENT = "textAlignment"; //$NON-NLS-1$
 
 	/** The Constant LABEL_OFFSET_Y. */
-	public static final String LABEL_OFFSET_Y = "labelOffsetY"; // $NON-NLS$
+	public static final String LABEL_OFFSET_Y = "labelOffsetY"; //$NON-NLS-1$
 
 	/** The Constant LABEL_OFFSET_X. */
-	public static final String LABEL_OFFSET_X = "labelOffsetX"; // $NON-NLS$
+	public static final String LABEL_OFFSET_X = "labelOffsetX"; //$NON-NLS-1$
 
 	/** The Constant LABEL_CONSTRAINED. */
-	public static final String LABEL_CONSTRAINED = "labelConstrained"; // $NON-NLS$
+	public static final String LABEL_CONSTRAINED = "labelConstrained"; //$NON-NLS-1$
 
 	/** The external label locator. */
 	protected PapyrusLabelLocator papyrusLabelLocator = null;
@@ -208,13 +208,13 @@ public abstract class PapyrusLabelEditPart extends LabelEditPart {
 
 		int textAlignment = 0;
 		if (labelAlignment != null) {
-			if ("left".equals(labelAlignment.getStringValue())) {
+			if ("left".equals(labelAlignment.getStringValue())) { //$NON-NLS-1$
 				textAlignment = PositionConstants.LEFT;
 			}
-			if ("right".equals(labelAlignment.getStringValue())) {
+			if ("right".equals(labelAlignment.getStringValue())) {//$NON-NLS-1$
 				textAlignment = PositionConstants.RIGHT;
 			}
-			if ("center".equals(labelAlignment.getStringValue())) {
+			if ("center".equals(labelAlignment.getStringValue())) {//$NON-NLS-1$
 				textAlignment = PositionConstants.CENTER;
 			}
 		} else {
