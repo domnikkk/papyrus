@@ -235,4 +235,26 @@ public class RoundedRectangleNodePlateFigure extends DefaultSizeNodeFigure imple
 
 	}
 
+	/**
+	 * @see org.eclipse.papyrus.infra.gmfdiag.common.figure.node.IRoundedRectangleFigure#setHasHeader(boolean)
+	 *
+	 * @param hasHeader
+	 */
+	@Override
+	public void setHasHeader(boolean hasHeader) {
+		// TODO Auto-generated method stub
+
+	}
+
+	/**
+	 * @see org.eclipse.papyrus.infra.gmfdiag.common.figure.node.IRoundedRectangleFigure#hasHeader()
+	 *
+	 * @return
+	 */
+	@Override
+	public boolean hasHeader() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 }

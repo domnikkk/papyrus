@@ -46,6 +46,8 @@ public abstract class RoundedUMLNodeEditPart extends UMLNodeEditPart {
 	/** The Constant DEFAULT_IS_OVAL. */
 	private static final boolean DEFAULT_IS_OVAL = false;
 
+	private static final boolean DEFAULT_HAS_HEADER = false;
+
 	/**
 	 * Instantiates a new rounded compartment edit part.
 	 *
@@ -156,6 +158,14 @@ public abstract class RoundedUMLNodeEditPart extends UMLNodeEditPart {
 		PapyrusRoundedEditPartHelper.refreshOval(this, getDefaultIsOvalValue());
 		PapyrusRoundedEditPartHelper.refreshFloatingName(this, getDefaultIsFloatingNameConstrained(), getDefaultFloatingLabelOffsetWidth(), getDefaultFloatingLabelOffsetHeight());
 		PapyrusRoundedEditPartHelper.refreshBorderStyle(this, getDefaultBorderStyle(), getDefaultCutomDash());
-		PapyrusRoundedEditPartHelper.refreshSVGOriginalColors(this, getDefaultUseOriginalColors());
+		PapyrusRoundedEditPartHelper.refreshHasHeader(this, getDefaultHasHeader());
+		super.refreshVisuals();
+	}
+
+	/**
+	 * @return
+	 */
+	protected boolean getDefaultHasHeader() {
+		return DEFAULT_HAS_HEADER;
 	}
 }

@@ -7,9 +7,8 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *   Mickael ADAM (ALL4TEC) mickael.adam@all4tec.net - Initial API and Implementation
- *   Patrick Tessier (CEA LIST), Thibault Landre (Atos Origin) - Initial API and implementation
- * 
+ *   Mickaël ADAM (ALL4TEC) mickael.adam@all4tec.net - Initial API and Implementation
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.common.figure.node;
 
@@ -21,6 +20,8 @@ import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.draw2d.geometry.Insets;
+import org.eclipse.draw2d.geometry.Point;
+import org.eclipse.draw2d.geometry.PointList;
 import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.RoundedRectangleBorder;
 import org.eclipse.gmf.runtime.draw2d.ui.graphics.ColorRegistry;
@@ -39,17 +40,20 @@ public class RoundedCompartmentFigure extends NodeNamedElementFigure implements 
 	/** The corner dimension. */
 	protected Dimension cornerDimension = new Dimension();
 
-	/** The is oval. */
-	protected boolean isOval;
+	/** True if the figure is oval. */
+	protected boolean isOval = false;
 
 	/** The is label constrained. */
-	protected boolean isLabelConstrained;
+	protected boolean isLabelConstrained = false;
 
 	/** The floating name offset. */
 	protected Dimension floatingNameOffset = new Dimension();
 
 	/** The border style. */
 	protected int borderStyle = Graphics.LINE_SOLID;
+
+	/** True if the figure has header. */
+	private boolean hasHeader = false;
 
 	/**
 	 * @param borderStyle
@@ -154,6 +158,7 @@ public class RoundedCompartmentFigure extends NodeNamedElementFigure implements 
 	 */
 	@Override
 	public void paintFigure(Graphics graphics) {
+
 		shadowborder.setColor(getForegroundColor());
 		graphics.pushState();
 		Rectangle rectangle = getBounds().getCopy();
@@ -238,6 +243,12 @@ public class RoundedCompartmentFigure extends NodeNamedElementFigure implements 
 			graphics.fillRoundRectangle(rectangle, cornerDimension.width, cornerDimension.height);
 			graphics.popState();
 		}
+
+		if (hasHeader) {
+			graphics.drawPolyline(getHeader());
+			getHeader();
+		}
+
 		graphics.popState();
 	}
 
@@ -322,6 +333,73 @@ public class RoundedCompartmentFigure extends NodeNamedElementFigure implements 
 	@Override
 	public Dimension getFloatingNameOffset() {
 		return floatingNameOffset;
+	}
+
+
+	protected PointList getHeader() {
+
+		Rectangle labelBounds = nameLabel.getBounds().getCopy();
+		PointList points = new PointList();
+
+		int labelWidth = -1;
+		labelWidth = Math.max(labelWidth, nameLabel.getPreferredSize().width);
+
+		// case the size of the label is 0 or -1 (no label)
+		if (labelWidth <= 0) {
+			labelWidth = getBounds().width / 4;
+		}
+
+		Point verticalStart = new Point();
+		Point verticalEnd = new Point();
+		Point diagonalStart = new Point();
+		Point diagonalEnd = new Point();
+		Point horizontalStart = new Point();
+		Point horizontalEnd = new Point();
+
+		verticalStart.x = labelBounds.x + labelWidth + 4;
+		verticalStart.y = getBounds().y; // labelBounds.y;
+		points.addPoint(verticalStart);
+
+		verticalEnd.x = verticalStart.x;
+		verticalEnd.y = verticalStart.y + labelBounds.height / 2 + 3;
+		points.addPoint(verticalEnd);
+
+		diagonalStart.x = verticalEnd.x;
+		diagonalStart.y = verticalEnd.y;
+		points.addPoint(diagonalStart);
+
+		diagonalEnd.x = diagonalStart.x - labelBounds.height / 2 + 3;
+		diagonalEnd.y = labelBounds.y + labelBounds.height - 1;
+		points.addPoint(diagonalEnd);
+
+		horizontalStart.x = diagonalEnd.x;
+		horizontalStart.y = diagonalEnd.y;
+		points.addPoint(horizontalStart);
+
+		horizontalEnd.x = labelBounds.x;
+		horizontalEnd.y = horizontalStart.y;
+		points.addPoint(horizontalEnd);
+		return points;
+	}
+
+	/**
+	 * @see org.eclipse.papyrus.infra.gmfdiag.common.figure.node.IRoundedRectangleFigure#setHasHeader(boolean)
+	 *
+	 * @param hasHeader
+	 */
+	@Override
+	public void setHasHeader(boolean hasHeader) {
+		this.hasHeader = hasHeader;
+	}
+
+	/**
+	 * @see org.eclipse.papyrus.infra.gmfdiag.common.figure.node.IRoundedRectangleFigure#hasHeader()
+	 *
+	 * @return
+	 */
+	@Override
+	public boolean hasHeader() {
+		return hasHeader;
 	}
 
 }

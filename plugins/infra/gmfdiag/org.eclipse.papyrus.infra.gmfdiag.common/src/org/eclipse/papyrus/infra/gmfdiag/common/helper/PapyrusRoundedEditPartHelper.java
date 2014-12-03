@@ -1,3 +1,15 @@
+/*****************************************************************************
+ * Copyright (c) 2010, 2014 CEA LIST and others.
+ *
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *   Mickael ADAM (ALL4TEC) mickael.adam@all4tec.net - Initial API and Implementation
+ *
+ *****************************************************************************/
 package org.eclipse.papyrus.infra.gmfdiag.common.helper;
 
 import org.eclipse.draw2d.Graphics;
@@ -18,6 +30,9 @@ import org.eclipse.papyrus.infra.gmfdiag.common.model.NotationUtils;
  * The Class RoundedCompartmentEditPart provides refresh method to apply notation properties specific to roundedRectangleFigure
  */
 public abstract class PapyrusRoundedEditPartHelper {
+
+	/** The Constant HAS_HEADER. */
+	public static final String HAS_HEADER = "hasHeader";
 
 	/** The Constant USE_ORIGINAL_COLORS. */
 	private static final String USE_ORIGINAL_COLORS = "useOriginalColors";//$NON-NLS-N$
@@ -180,6 +195,30 @@ public abstract class PapyrusRoundedEditPartHelper {
 						}
 					}
 				}
+			}
+		}
+
+	}
+
+	/**
+	 * Refresh has header.
+	 *
+	 * @param editpart
+	 *            the editpart
+	 * @param defaultHasHeader
+	 *            the default has header
+	 */
+	public static void refreshHasHeader(IPapyrusEditPart editpart, boolean defaultHasHeader) {
+		if (editpart.getPrimaryShape() instanceof IRoundedRectangleFigure) {
+			if (((GraphicalEditPart) editpart).getModel() instanceof View) {
+				// The figure
+				IRoundedRectangleFigure roundedRectangleFigure = (IRoundedRectangleFigure) editpart.getPrimaryShape();
+
+				// get the CSS value of hasHeader
+				boolean hasHeader = NotationUtils.getBooleanValue((View) ((GraphicalEditPart) editpart).getModel(), HAS_HEADER, defaultHasHeader);
+
+				// Set hasHeader
+				roundedRectangleFigure.setHasHeader(hasHeader);
 			}
 		}
 

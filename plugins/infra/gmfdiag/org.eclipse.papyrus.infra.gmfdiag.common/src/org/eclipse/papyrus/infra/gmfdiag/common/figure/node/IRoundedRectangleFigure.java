@@ -101,4 +101,19 @@ public interface IRoundedRectangleFigure extends IFigure {
 
 	/** Set custom dash values */
 	public void setCustomDash(int[] dash);
+
+	/**
+	 * Sets the checks for header.
+	 *
+	 * @param hasHeader
+	 *            the new checks for header
+	 */
+	public void setHasHeader(boolean hasHeader);
+
+	/**
+	 * Checks for header.
+	 *
+	 * @return true, if successful
+	 */
+	public boolean hasHeader();
 }

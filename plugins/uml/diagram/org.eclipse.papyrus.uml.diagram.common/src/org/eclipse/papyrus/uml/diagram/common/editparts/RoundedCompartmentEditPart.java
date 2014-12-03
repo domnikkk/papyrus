@@ -22,6 +22,9 @@ import org.eclipse.papyrus.uml.diagram.common.editpolicies.ShowHideCompartmentEd
  */
 public abstract class RoundedCompartmentEditPart extends NamedElementEditPart {
 
+	/** The Constant DEFAULT_HAS_HEADER. True if has a header, as interaction figure */
+	private static final boolean DEFAULT_HAS_HEADER = false;
+
 	/** The Constant DEFAULT_BORDER_STYLE. */
 	private static final int DEFAULT_BORDER_STYLE = Graphics.LINE_SOLID;
 
@@ -164,6 +167,14 @@ public abstract class RoundedCompartmentEditPart extends NamedElementEditPart {
 		PapyrusRoundedEditPartHelper.refreshFloatingName(this, getDefaultIsFloatingNameConstrained(), getDefaultFloatingLabelOffsetWidth(), getDefaultFloatingLabelOffsetHeight());
 		PapyrusRoundedEditPartHelper.refreshBorderStyle(this, getDefaultBorderStyle(), getDefaultCutomDash());
 		PapyrusRoundedEditPartHelper.refreshSVGOriginalColors(this, getDefaultUseOriginalColors());
+		PapyrusRoundedEditPartHelper.refreshHasHeader(this, getDefaultHasHeader());
 		super.refreshVisuals();
+	}
+
+	/**
+	 * @return
+	 */
+	protected boolean getDefaultHasHeader() {
+		return DEFAULT_HAS_HEADER;
 	}
 }

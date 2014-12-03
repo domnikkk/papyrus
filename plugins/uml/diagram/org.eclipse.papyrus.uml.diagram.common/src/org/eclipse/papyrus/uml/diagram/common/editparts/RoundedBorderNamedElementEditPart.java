@@ -33,6 +33,8 @@ public abstract class RoundedBorderNamedElementEditPart extends BorderNamedEleme
 
 	private static final boolean DEFAULT_USE_ORIGINAL_COLORS = true;
 
+	private static final boolean DEFAULT_HAS_HEADER = false;
+
 	/**
 	 * Constructor.
 	 *
@@ -140,6 +142,14 @@ public abstract class RoundedBorderNamedElementEditPart extends BorderNamedEleme
 		PapyrusRoundedEditPartHelper.refreshFloatingName(this, getDefaultIsFloatingNameConstrained(), getDefaultFloatingLabelOffsetWidth(), getDefaultFloatingLabelOffsetHeight());
 		PapyrusRoundedEditPartHelper.refreshBorderStyle(this, getDefaultBorderStyle(), getDefaultCutomDash());
 		PapyrusRoundedEditPartHelper.refreshSVGOriginalColors(this, getDefaultUseOriginalColors());
+		PapyrusRoundedEditPartHelper.refreshHasHeader(this, getDefaultHasHeader());
 		super.refreshVisuals();
+	}
+
+	/**
+	 * @return
+	 */
+	protected boolean getDefaultHasHeader() {
+		return DEFAULT_HAS_HEADER;
 	}
 }

@@ -149,24 +149,22 @@ public class ExternalLabelPrimaryDragRoleEditPolicy extends NonResizableLabelEdi
 	 */
 	private void drawTether(ChangeBoundsRequest request) {
 		IFigure p = getDragSourceFeedbackFigure();
-		Rectangle r = p.getBounds();
 		Point refPoint = ((LabelEditPart) getHost()).getReferencePoint();
 
 		Rectangle centerMain = null;
 		if (((IGraphicalEditPart) getHost().getParent()).getFigure() instanceof Connection) {
 			centerMain = new Rectangle(refPoint.x, refPoint.y, 0, 0);
 			getHostFigure().translateToAbsolute(centerMain);
-			// p.translateToRelative(centerMain);
+			p.translateToRelative(centerMain);
 		} else {
-			centerMain = ((IGraphicalEditPart) getHost().getParent())
-					.getFigure().getBounds().getCopy();
-			centerMain.translate(centerMain.width / 2, centerMain.height / 2);
+			centerMain = ((IGraphicalEditPart) getHost().getParent()).getFigure().getBounds().getCopy();
 			getHostFigure().translateToAbsolute(centerMain);
-			// p.translateToRelative(centerMain);
+			centerMain.translate(centerMain.width / 2, centerMain.height / 2);
+			p.translateToRelative(centerMain);
 		}
 
 		PrecisionRectangle ref = new PrecisionRectangle(centerMain);
-
+		Rectangle r = p.getBounds();
 		Point midTop = new Point(r.x + r.width / 2, r.y);
 		Point midBottom = new Point(r.x + r.width / 2, r.y + r.height);
 		Point midLeft = new Point(r.x, r.y + r.height / 2);
