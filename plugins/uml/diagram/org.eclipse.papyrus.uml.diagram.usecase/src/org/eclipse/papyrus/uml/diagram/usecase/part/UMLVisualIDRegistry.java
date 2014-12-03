@@ -50,6 +50,7 @@ import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.CommentEditPartTN;
 import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.ComponentInComponentEditPart;
 import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.ComponentInComponentNameEditPart;
 import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.ComponentInPackageEditPart;
+import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.ComponentInPackageFloatingLabelEditPart;
 import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.ComponentInPackageNameEditPart;
 import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.ComponentUsecases2EditPart;
 import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.ComponentUsecases3EditPart;
@@ -571,6 +572,9 @@ public class UMLVisualIDRegistry {
 			break;
 		case ComponentInPackageEditPart.VISUAL_ID:
 			if (ComponentInPackageNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ComponentInPackageFloatingLabelEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (ComponentUsecases3EditPart.VISUAL_ID == nodeVisualID) {

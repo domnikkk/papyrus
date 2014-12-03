@@ -46,6 +46,7 @@ import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.AssociationNameEditPar
 import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.CommentBodyEditPartCN;
 import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.CommentBodyEditPartTN;
 import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.ComponentInComponentNameEditPart;
+import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.ComponentInPackageFloatingLabelEditPart;
 import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.ComponentInPackageNameEditPart;
 import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.ConstraintBodyEditPart;
 import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.ConstraintBodyInCEditPart;
@@ -703,6 +704,25 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
+	private IParser componentName_6051Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getComponentName_6051Parser() {
+		if (componentName_6051Parser == null) {
+			EAttribute[] features = new EAttribute[] {
+					UMLPackage.eINSTANCE.getNamedElement_Name()
+			};
+			MessageFormatParser parser = new MessageFormatParser(features);
+			componentName_6051Parser = parser;
+		}
+		return componentName_6051Parser;
+	}
+
+	/**
+	 * @generated
+	 */
 	private IParser packageName_5024Parser;
 
 	/**
@@ -1055,6 +1075,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 
 		case ComponentInPackageNameEditPart.VISUAL_ID:
 			return getComponentName_5023Parser();
+		case ComponentInPackageFloatingLabelEditPart.VISUAL_ID:
+			return getComponentName_6051Parser();
 
 		case PackageNameEditPartCN.VISUAL_ID:
 			return getPackageName_5024Parser();

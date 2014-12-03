@@ -116,14 +116,14 @@ public class UseCaseFloatingLabelEditPartTN extends
 
 	/**
 	 * direct edition mode (default, undefined, registered editor, etc.)
-	 * 
+	 *
 	 * @generated
 	 */
 	protected int directEditionMode = IDirectEdition.UNDEFINED_DIRECT_EDITOR;
 
 	/**
 	 * configuration from a registered edit dialog
-	 * 
+	 *
 	 * @generated
 	 */
 	protected IDirectEditorConfiguration configuration;
@@ -740,7 +740,7 @@ public class UseCaseFloatingLabelEditPartTN extends
 
 	/**
 	 * Initializes the extended editor configuration
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void initExtendedEditorConfiguration() {
@@ -756,7 +756,7 @@ public class UseCaseFloatingLabelEditPartTN extends
 
 	/**
 	 * Updates the preference configuration
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void updateExtendedEditorConfiguration() {
@@ -772,7 +772,7 @@ public class UseCaseFloatingLabelEditPartTN extends
 
 	/**
 	 * Performs the direct edit usually used by GMF editors.
-	 * 
+	 *
 	 * @param theRequest
 	 *            the direct edit request that starts the direct edit system
 	 * @generated

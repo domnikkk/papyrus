@@ -210,6 +210,9 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case ComponentInPackageNameEditPart.VISUAL_ID:
 				return new ComponentInPackageNameEditPart(view);
 
+			case ComponentInPackageFloatingLabelEditPart.VISUAL_ID:
+				return new ComponentInPackageFloatingLabelEditPart(view);
+
 			case PackageEditPartCN.VISUAL_ID:
 				return new PackageEditPartCN(view);
 
