@@ -28,7 +28,6 @@ import org.eclipse.papyrus.uml.diagram.common.figure.node.RoundedCompartmentFigu
 public class SubjectFigure extends RoundedCompartmentFigure {
 
 
-	/** The Attribute Compartment */
 	private final static String USE_CASES_CONTAINER_COMPARTMENT = "UseCaseContainerCompartment";
 
 	/** The List of Compartment */

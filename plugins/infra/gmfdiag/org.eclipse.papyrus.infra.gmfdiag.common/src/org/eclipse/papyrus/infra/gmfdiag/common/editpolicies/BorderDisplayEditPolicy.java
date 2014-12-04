@@ -219,7 +219,6 @@ public class BorderDisplayEditPolicy extends GraphicalEditPolicyEx implements IC
 				}
 				// Set OneLineResizableBorder as border
 				getPrimaryShape().setBorder(defaultBorder);
-
 				// If a length or a length ratio is defined in notation or CSS
 				((OneTopLineResizableBorder) defaultBorder).setLength(NotationUtils.getIntValue(view, LENGTH, DEFAULT_LENGTH_VALUE));
 				((OneTopLineResizableBorder) defaultBorder).setLengthRatio(new Float(NotationUtils.getStringValue(view, LINE_LENGTH_RATIO, LINE_LENGTH_RATIO_DEFAULT_VALUE)));

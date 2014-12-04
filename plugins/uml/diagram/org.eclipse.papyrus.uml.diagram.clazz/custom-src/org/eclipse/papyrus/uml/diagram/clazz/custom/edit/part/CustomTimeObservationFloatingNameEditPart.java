@@ -35,7 +35,7 @@ public class CustomTimeObservationFloatingNameEditPart extends TimeObservationFl
 	}
 
 	@Override
-	protected boolean getDefaultLabelDisplayedValue() {
+	protected boolean getDefaultLabelVisibility() {
 		return LABEL_DISPLAYED_VALUE;
 	}
 

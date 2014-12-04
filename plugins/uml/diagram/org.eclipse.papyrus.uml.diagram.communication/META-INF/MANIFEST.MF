@@ -71,11 +71,11 @@ Require-Bundle: org.eclipse.gmf.runtime.diagram.ui.properties,
  org.eclipse.emf.ecore.edit;visibility:=reexport,
  org.eclipse.emf.validation;visibility:=reexport,
  org.eclipse.gef,
- org.eclipse.papyrus.infra.core.log;bundle-version="1.1.0"
+ org.eclipse.papyrus.infra.core.log;bundle-version="1.1.0",
+ org.eclipse.core.databinding.observable
 Bundle-Vendor: %providerName
 Eclipse-LazyStart: true
 Bundle-Version: 1.1.0.qualifier
-Bundle-Activator: org.eclipse.papyrus.uml.diagram.communication.part.U
- MLDiagramEditorPlugin
+Bundle-Activator: org.eclipse.papyrus.uml.diagram.communication.part.UMLDiagramEditorPlugin
 Bundle-ManifestVersion: 2
 Bundle-SymbolicName: org.eclipse.papyrus.uml.diagram.communication; singleton:=true

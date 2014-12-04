@@ -32,7 +32,7 @@ import org.eclipse.papyrus.infra.gmfdiag.common.model.NotationUtils;
 public abstract class PapyrusRoundedEditPartHelper {
 
 	/** The Constant HAS_HEADER. */
-	public static final String HAS_HEADER = "hasHeader";
+	public static final String HAS_HEADER = "diplayHeader";
 
 	/** The Constant USE_ORIGINAL_COLORS. */
 	private static final String USE_ORIGINAL_COLORS = "useOriginalColors";//$NON-NLS-N$

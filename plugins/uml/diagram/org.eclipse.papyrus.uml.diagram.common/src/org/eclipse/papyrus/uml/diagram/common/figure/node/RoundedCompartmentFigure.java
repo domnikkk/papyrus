@@ -246,7 +246,6 @@ public class RoundedCompartmentFigure extends NodeNamedElementFigure implements 
 
 		if (hasHeader) {
 			graphics.drawPolyline(getHeader());
-			getHeader();
 		}
 
 		graphics.popState();

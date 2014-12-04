@@ -24,7 +24,7 @@ import org.eclipse.papyrus.uml.diagram.common.editpolicies.MaskManagedFloatingLa
 public class FloatingLabelEditPart extends PapyrusLabelEditPart {
 
 	/** The Constant DISPLAY_FLOATING_NAME. */
-	private static final String DISPLAY_FLOATING_LABEL = "visible";
+	public static final String DISPLAY_FLOATING_LABEL = "visible";
 
 	// private static final String DISPLAY_FLOATING_LABEL = "displayFloatingLabel";
 
@@ -63,7 +63,7 @@ public class FloatingLabelEditPart extends PapyrusLabelEditPart {
 	protected void refreshVisibility() {
 		super.refreshVisibility();
 		// get the value of the CSS property
-		boolean isLabelDisplayed = NotationUtils.getBooleanValue((View) getModel(), getDisplayFloatingLabel(), getDefaultLabelDisplayedValue());
+		boolean isLabelDisplayed = NotationUtils.getBooleanValue((View) getModel(), DISPLAY_FLOATING_LABEL, getDefaultLabelVisibility());
 
 		// Set the visibility of the label
 		getFigure().setVisible(isLabelDisplayed);
@@ -74,17 +74,8 @@ public class FloatingLabelEditPart extends PapyrusLabelEditPart {
 	 *
 	 * @return the default label displayed value
 	 */
-	protected boolean getDefaultLabelDisplayedValue() {
+	protected boolean getDefaultLabelVisibility() {
 		return DEFAULT_LABEL_DISPLAYED;
-	}
-
-	/**
-	 * Gets the display floating label.
-	 *
-	 * @return the display floating label
-	 */
-	public static String getDisplayFloatingLabel() {
-		return DISPLAY_FLOATING_LABEL;
 	}
 
 }

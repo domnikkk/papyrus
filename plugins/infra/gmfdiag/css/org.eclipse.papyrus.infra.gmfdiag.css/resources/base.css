@@ -155,3 +155,13 @@ UseCaseDiagram Actor > Compartment[kind="symbol"]
     visible:true;
 }
 
+/*---------- Communication Diagram ----------*/
+CommunicationDiagram  DurationObservation > Compartment[kind="symbol"],
+CommunicationDiagram  TimeObservation > Compartment[kind="symbol"]
+{
+    visible:true;
+}
+CommunicationDiagram Interaction > Compartment
+{
+	lineLength:0;
+}

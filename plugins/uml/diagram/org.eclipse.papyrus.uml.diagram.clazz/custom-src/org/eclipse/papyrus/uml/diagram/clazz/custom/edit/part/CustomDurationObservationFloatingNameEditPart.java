@@ -36,7 +36,7 @@ public class CustomDurationObservationFloatingNameEditPart extends DurationObser
 	}
 
 	@Override
-	protected boolean getDefaultLabelDisplayedValue() {
+	protected boolean getDefaultLabelVisibility() {
 		return LABEL_DISPLAYED_VALUE;
 	}
 

@@ -62,8 +62,9 @@ import org.eclipse.papyrus.extensionpoints.editors.utils.IDirectEditorsIds;
 import org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.ExternalLabelPrimaryDragRoleEditPolicy;
 import org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.IMaskManagedLabelEditPolicy;
 import org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.IndirectMaskLabelEditPolicy;
+import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.PapyrusWrappingLabel;
 import org.eclipse.papyrus.uml.diagram.common.directedit.MultilineLabelDirectEditManager;
-import org.eclipse.papyrus.uml.diagram.common.editparts.AbstractShortcutDiagramNameEditPart;
+import org.eclipse.papyrus.uml.diagram.common.editparts.FloatingLabelEditPart;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.IDirectEdition;
 import org.eclipse.papyrus.uml.diagram.common.figure.node.ILabelFigure;
 import org.eclipse.papyrus.uml.diagram.communication.edit.policies.UMLTextSelectionEditPolicy;
@@ -83,12 +84,15 @@ import org.eclipse.uml2.uml.Feature;
 /**
  * @generated
  */
-public class DiagramNameEditPart extends AbstractShortcutDiagramNameEditPart implements ITextAwareEditPart, IBorderItemEditPart {
+public class LifelineFloatingLabelEditPartCN extends
+		FloatingLabelEditPart
+		implements ITextAwareEditPart, IBorderItemEditPart
+{
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 0;
+	public static final int VISUAL_ID = 6014;
 
 	/**
 	 * @generated
@@ -112,28 +116,30 @@ public class DiagramNameEditPart extends AbstractShortcutDiagramNameEditPart imp
 
 	/**
 	 * direct edition mode (default, undefined, registered editor, etc.)
-	 *
+	 * 
 	 * @generated
 	 */
 	protected int directEditionMode = IDirectEdition.UNDEFINED_DIRECT_EDITOR;
 
 	/**
 	 * configuration from a registered edit dialog
-	 *
+	 * 
 	 * @generated
 	 */
 	protected IDirectEditorConfiguration configuration;
+
+
 	/**
 	 * @generated
 	 */
 	static {
-		registerSnapBackPosition(UMLVisualIDRegistry.getType(org.eclipse.papyrus.uml.diagram.communication.edit.parts.DiagramNameEditPart.VISUAL_ID), new Point(0, 0));
+		registerSnapBackPosition(UMLVisualIDRegistry.getType(org.eclipse.papyrus.uml.diagram.communication.edit.parts.LifelineFloatingLabelEditPartCN.VISUAL_ID), new Point(0, 0));
 	}
 
 	/**
 	 * @generated
 	 */
-	public DiagramNameEditPart(View view) {
+	public LifelineFloatingLabelEditPartCN(View view) {
 		super(view);
 	}
 
@@ -172,6 +178,7 @@ public class DiagramNameEditPart extends AbstractShortcutDiagramNameEditPart imp
 		int height = ((Integer) getStructuralFeatureValue(NotationPackage.eINSTANCE.getSize_Height())).intValue();
 		getBorderItemLocator().setConstraint(new Rectangle(x, y, width, height));
 	}
+
 
 	/**
 	 * @generated
@@ -378,7 +385,7 @@ public class DiagramNameEditPart extends AbstractShortcutDiagramNameEditPart imp
 	 */
 	public IParser getParser() {
 		if (parser == null) {
-			parser = UMLParserProvider.getParser(UMLElementTypes.Diagram_8016, getParserElement(), UMLVisualIDRegistry.getType(org.eclipse.papyrus.uml.diagram.communication.edit.parts.DiagramNameEditPart.VISUAL_ID));
+			parser = UMLParserProvider.getParser(UMLElementTypes.Lifeline_8001, getParserElement(), UMLVisualIDRegistry.getType(org.eclipse.papyrus.uml.diagram.communication.edit.parts.LifelineFloatingLabelEditPartCN.VISUAL_ID));
 		}
 		return parser;
 	}
@@ -723,7 +730,7 @@ public class DiagramNameEditPart extends AbstractShortcutDiagramNameEditPart imp
 
 	/**
 	 * Initializes the extended editor configuration
-	 *
+	 * 
 	 * @generated
 	 */
 	protected void initExtendedEditorConfiguration() {
@@ -739,7 +746,7 @@ public class DiagramNameEditPart extends AbstractShortcutDiagramNameEditPart imp
 
 	/**
 	 * Updates the preference configuration
-	 *
+	 * 
 	 * @generated
 	 */
 	protected void updateExtendedEditorConfiguration() {
@@ -755,7 +762,7 @@ public class DiagramNameEditPart extends AbstractShortcutDiagramNameEditPart imp
 
 	/**
 	 * Performs the direct edit usually used by GMF editors.
-	 *
+	 * 
 	 * @param theRequest
 	 *            the direct edit request that starts the direct edit system
 	 * @generated
@@ -784,6 +791,7 @@ public class DiagramNameEditPart extends AbstractShortcutDiagramNameEditPart imp
 			e.printStackTrace();
 		}
 	}
+
 
 	/**
 	 * @generated
@@ -836,6 +844,7 @@ public class DiagramNameEditPart extends AbstractShortcutDiagramNameEditPart imp
 	 * @generated
 	 */
 	protected IFigure createFigurePrim() {
-		return new WrappingLabel();
+		return new PapyrusWrappingLabel();
 	}
+
 }

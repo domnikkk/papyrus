@@ -2686,7 +2686,6 @@
           canonicalEditPolicyClassName="ComponentUsecases3CanonicalEditPolicy"
           childNodes="/0/@diagram/@childNodes.2 /0/@diagram/@childNodes.3 /0/@diagram/@childNodes.4 /0/@diagram/@childNodes.5 /0/@diagram/@childNodes.6"
           title="use cases"
-          canCollapse="false"
           needsTitle="false"
           node="/0/@diagram/@childNodes.10"
           listLayout="false">

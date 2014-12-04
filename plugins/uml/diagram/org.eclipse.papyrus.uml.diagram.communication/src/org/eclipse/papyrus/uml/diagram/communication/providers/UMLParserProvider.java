@@ -35,7 +35,9 @@ import org.eclipse.papyrus.uml.diagram.communication.edit.parts.ConstraintNameEd
 import org.eclipse.papyrus.uml.diagram.communication.edit.parts.DiagramNameEditPart;
 import org.eclipse.papyrus.uml.diagram.communication.edit.parts.DurationObservationLabelEditPartCN;
 import org.eclipse.papyrus.uml.diagram.communication.edit.parts.DurationObservationStereotypeLabelEditPartCN;
+import org.eclipse.papyrus.uml.diagram.communication.edit.parts.InteractionFloatingLabelEditPart;
 import org.eclipse.papyrus.uml.diagram.communication.edit.parts.InteractionNameEditPart;
+import org.eclipse.papyrus.uml.diagram.communication.edit.parts.LifelineFloatingLabelEditPartCN;
 import org.eclipse.papyrus.uml.diagram.communication.edit.parts.LifelineNameEditPart;
 import org.eclipse.papyrus.uml.diagram.communication.edit.parts.MessageNameEditPart;
 import org.eclipse.papyrus.uml.diagram.communication.edit.parts.TimeObservationNameEditPartCN;
@@ -74,6 +76,25 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
+	private IParser interactionName_6013Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getInteractionName_6013Parser() {
+		if (interactionName_6013Parser == null) {
+			EAttribute[] features = new EAttribute[] {
+					UMLPackage.eINSTANCE.getNamedElement_Name()
+			};
+			MessageFormatParser parser = new MessageFormatParser(features);
+			interactionName_6013Parser = parser;
+		}
+		return interactionName_6013Parser;
+	}
+
+	/**
+	 * @generated
+	 */
 	private ShortcutDiagramParser diagramName_0Parser;
 
 	/**
@@ -99,6 +120,25 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			lifelineName_5002Parser = new LifelineCustomParsers();
 		}
 		return lifelineName_5002Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser lifelineName_6014Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getLifelineName_6014Parser() {
+		if (lifelineName_6014Parser == null) {
+			EAttribute[] features = new EAttribute[] {
+					UMLPackage.eINSTANCE.getNamedElement_Name()
+			};
+			MessageFormatParser parser = new MessageFormatParser(features);
+			lifelineName_6014Parser = parser;
+		}
+		return lifelineName_6014Parser;
 	}
 
 	/**
@@ -261,12 +301,16 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 		switch (visualID) {
 		case InteractionNameEditPart.VISUAL_ID:
 			return getInteractionName_5001Parser();
+		case InteractionFloatingLabelEditPart.VISUAL_ID:
+			return getInteractionName_6013Parser();
 
 		case DiagramNameEditPart.VISUAL_ID:
 			return getDiagramName_0Parser();
 
 		case LifelineNameEditPart.VISUAL_ID:
 			return getLifelineName_5002Parser();
+		case LifelineFloatingLabelEditPartCN.VISUAL_ID:
+			return getLifelineName_6014Parser();
 
 		case ConstraintNameEditPartCN.VISUAL_ID:
 			return getConstraintName_5064Parser();

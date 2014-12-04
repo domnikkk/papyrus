@@ -926,7 +926,7 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		Location location6051 = (Location) label6051.getLayoutConstraint();
 		location6051.setX(0);
 		location6051.setY(5);
-		createCompartment(node, UMLVisualIDRegistry.getType(ComponentUsecases3EditPart.VISUAL_ID), false, false, false, false);
+		createCompartment(node, UMLVisualIDRegistry.getType(ComponentUsecases3EditPart.VISUAL_ID), true, false, false, false);
 		PreferenceInitializerForElementHelper.initCompartmentsStatusFromPrefs(node, prefStore, "Component");
 		return node;
 	}
