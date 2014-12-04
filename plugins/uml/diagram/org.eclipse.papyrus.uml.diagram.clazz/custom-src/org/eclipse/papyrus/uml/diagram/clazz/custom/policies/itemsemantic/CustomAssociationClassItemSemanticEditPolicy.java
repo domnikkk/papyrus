@@ -13,11 +13,21 @@
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.clazz.custom.policies.itemsemantic;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gef.commands.Command;
+import org.eclipse.gef.commands.CompoundCommand;
 import org.eclipse.gef.commands.UnexecutableCommand;
+import org.eclipse.gmf.runtime.common.core.command.ICommand;
+import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
+import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
 import org.eclipse.papyrus.infra.gmfdiag.common.utils.DiagramUtils;
+import org.eclipse.papyrus.infra.services.edit.service.ElementEditServiceUtils;
+import org.eclipse.papyrus.infra.services.edit.service.IElementEditService;
 import org.eclipse.papyrus.uml.diagram.clazz.custom.command.BranchDependenctReorientCommand;
 import org.eclipse.papyrus.uml.diagram.clazz.custom.command.CAssociationClassCreateCommand;
 import org.eclipse.papyrus.uml.diagram.clazz.custom.command.CAssociationReorientCommand;
@@ -25,6 +35,8 @@ import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.AssociationClassLinkEdit
 import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.AssociationEditPart;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.DependencyBranchEditPart;
 import org.eclipse.papyrus.uml.diagram.clazz.providers.UMLElementTypes;
+import org.eclipse.uml2.uml.Association;
+import org.eclipse.uml2.uml.Property;
 
 /**
  * this a specialization to manage creation of association and associationClass
@@ -49,6 +61,9 @@ public class CustomAssociationClassItemSemanticEditPolicy extends org.eclipse.pa
 		return super.getCompleteCreateRelationshipCommand(req);
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	protected Command getReorientRelationshipCommand(ReorientRelationshipRequest req) {
 		switch (getVisualID(req)) {
@@ -60,6 +75,36 @@ public class CustomAssociationClassItemSemanticEditPolicy extends org.eclipse.pa
 			return getGEFWrapper(new BranchDependenctReorientCommand(req));
 		}
 		return super.getReorientRelationshipCommand(req);
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	protected Command getDestroyElementCommand(DestroyElementRequest req) {
+		CompoundCommand cmd = new CompoundCommand();
+		List<EObject> todestroy = new ArrayList<EObject>();
+		EObject mainObjectToDelete = req.getElementToDestroy();
+		todestroy.add(mainObjectToDelete);
+		if (mainObjectToDelete instanceof Association) {
+			// check end properties. If they do not belong to the association, they should be deleted also
+			Association association = (Association) mainObjectToDelete;
+			for (Property end : association.getMemberEnds()) {
+				if (end.getOwner() != association) {
+					IElementEditService provider = ElementEditServiceUtils.getCommandProvider(end);
+					DestroyElementRequest Destructreq = new DestroyElementRequest(end, false);
+					if (provider != null) {
+						// Retrieve delete command from the Element Edit service
+						ICommand deleteCommand = provider.getEditCommand(Destructreq);
+						if (deleteCommand != null) {
+							cmd.add(new ICommandProxy(deleteCommand));
+						}
+					}
+				}
+			}
+		}
+		cmd.add(super.getDestroyElementCommand(req));
+		return cmd.unwrap();
 	}
 
 	/**
