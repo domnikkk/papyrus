@@ -10,6 +10,7 @@
  * 	Cedric Dumoulin (LIFL) cedric.dumoulin@lifl.fr - Initial API
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr
  *  Gabriel Pascual (ALL4TEC) gabriel.pascual@all4tec.net - Bug 440754
+ *  Céline Janssens (ALL4TEC) celine.janssens@all4tec.net - Bug 415638
  *****************************************************************************/
 package org.eclipse.papyrus.infra.core.sasheditor.contentprovider;
 
@@ -31,6 +32,17 @@ import org.eclipse.papyrus.infra.core.sasheditor.internal.SashWindowsContainer;
  * @author dumoulin
  */
 public interface IPageManager extends IPageMngr {
+
+	/**
+	 * Reload the Diagram
+	 * This used when a resource is reloaded, the related diagrams are reloaded as well
+	 * 
+	 * @see org.eclipse.papyrus.infra.services.controlmode.listener.LoadResourceSnippet
+	 * 
+	 * @param pageIdentifier
+	 *            Identifier of the page to reload
+	 */
+	public void reloadPage(Object pageIdentifier);
 
 	/**
 	 * Close the page corresponding to the identifier.
@@ -125,10 +137,13 @@ public interface IPageManager extends IPageMngr {
 	public void selectPage(Object pageIdentifier);
 
 	/**
-	 * Returns the active page identifier
-	 *
-	 * @return
+	 * Get the open pages associated to the passed Object
+	 * 
+	 * @param uri
+	 *            URI of the Object from which we want the associated open pages
+	 * @return List of Pages identifier of the related object'URI
 	 */
-	// public Object getActivePage();
+	public List<Object> getAssociatedPages(Object uri);
+
 
 }

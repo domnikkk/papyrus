@@ -18,5 +18,12 @@
             class="org.eclipse.papyrus.infra.services.controlmode.participants.SashControlParticipant">
       </participant>
    </extension>
+   <extension
+         point="org.eclipse.papyrus.infra.core.model">
+      <modelSetSnippet
+            classname="org.eclipse.papyrus.infra.services.controlmode.listener.LoadResourceSnippet"
+            description="Snippet to attach listener on the resourceSet">
+      </modelSetSnippet>
+   </extension>
 
 </plugin>
