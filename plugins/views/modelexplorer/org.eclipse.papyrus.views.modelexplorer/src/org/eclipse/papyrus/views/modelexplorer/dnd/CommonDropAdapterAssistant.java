@@ -9,7 +9,7 @@
  *
  * Contributors:
  *  Patrick Tessier (CEA LIST) Patrick.tessier@cea.fr - Initial API and implementation
- *
+ *  Gabriel Pascual (ALL4TEC) gabriel.pascual@all4tec.net - Bug 447025
  *****************************************************************************/
 
 package org.eclipse.papyrus.views.modelexplorer.dnd;
@@ -38,12 +38,11 @@ import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.MoveRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
+import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.jface.util.LocalSelectionTransfer;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.ViewerDropAdapter;
-import org.eclipse.papyrus.commands.CreationCommandRegistry;
-import org.eclipse.papyrus.commands.ICreationCommandRegistry;
 import org.eclipse.papyrus.commands.wrappers.GMFtoEMFCommandWrapper;
 import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.internal.treeproxy.EObjectTreeElement;
 import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.internal.treeproxy.EReferenceTreeElement;
@@ -109,14 +108,6 @@ public class CommonDropAdapterAssistant extends org.eclipse.ui.navigator.CommonD
 		return commandList;
 	}
 
-	/**
-	 * Get the creation command registry to test when diagrams can be created
-	 *
-	 * @return instance
-	 */
-	private static ICreationCommandRegistry getCreationCommandRegistry() {
-		return CreationCommandRegistry.getInstance(org.eclipse.papyrus.infra.core.Activator.PLUGIN_ID);
-	}
 
 	/**
 	 * get a list that contains command to move a view into a new element
@@ -164,7 +155,7 @@ public class CommonDropAdapterAssistant extends org.eclipse.ui.navigator.CommonD
 	protected Resource getTargetNotationResource(EObject targetOwner) {
 		if (targetOwner.eResource() != null && targetOwner.eResource().getResourceSet() instanceof ModelSet) {
 			ModelSet modelSet = (ModelSet) targetOwner.eResource().getResourceSet();
-			return modelSet.getAssociatedResource(targetOwner, NotationModel.NOTATION_FILE_EXTENSION);
+			return modelSet.getAssociatedResource(targetOwner, NotationModel.NOTATION_FILE_EXTENSION, true);
 		}
 		return null;
 	}
@@ -185,15 +176,40 @@ public class CommonDropAdapterAssistant extends org.eclipse.ui.navigator.CommonD
 	 */
 	protected List<Command> getOrderChangeCommand(TransactionalEditingDomain domain, EObject targetOwner, EObject objectLocation, EObject newElement, boolean before) {
 		ArrayList<Command> commandList = new ArrayList<Command>();
-		ArrayList<EStructuralFeature> possibleEFeatures = new ArrayList<EStructuralFeature>();
-		EList<EStructuralFeature> featureList = targetOwner.eClass().getEAllStructuralFeatures();
+
 
 		// Abort when trying to change order moving the element in one of its children
 		if (EcoreUtil.isAncestor(newElement, targetOwner)) {
 			return Collections.emptyList();
 		}
 
-		// find the feature between childreen and owner
+		// Sequencing eOject
+		commandList.addAll(handleEObject(targetOwner, objectLocation, newElement, before));
+
+		return commandList;
+	}
+
+	/**
+	 * Handle EObjects.
+	 *
+	 * @param targetOwner
+	 *            the target owner
+	 * @param objectLocation
+	 *            the object location
+	 * @param newElement
+	 *            the new element
+	 * @param before
+	 *            the before
+	 * @return the list
+	 */
+	private List<Command> handleEObject(final EObject targetOwner, final EObject objectLocation, final EObject newElement, boolean before) {
+
+		// Ordered EObject of the model
+		ArrayList<EStructuralFeature> possibleEFeatures = new ArrayList<EStructuralFeature>();
+		EList<EStructuralFeature> featureList = targetOwner.eClass().getEAllStructuralFeatures();
+		List<Command> commandList = new ArrayList<Command>();
+
+		// Find the feature between children and owner
 		Iterator<EStructuralFeature> iterator = featureList.iterator();
 		while (iterator.hasNext()) {
 			EStructuralFeature eStructuralFeature = iterator.next();
@@ -211,45 +227,62 @@ public class CommonDropAdapterAssistant extends org.eclipse.ui.navigator.CommonD
 			}
 		}
 
-		// create the command
+		// Create the command
 		Iterator<EStructuralFeature> iteratorFeature = possibleEFeatures.iterator();
 		while (iteratorFeature.hasNext()) {
 			EStructuralFeature eStructuralFeature = iteratorFeature.next();
-			ArrayList<EObject> tmp = new ArrayList<EObject>();
-			if (targetOwner.eGet(eStructuralFeature) instanceof Collection<?>) {
-				// get all element of this efeature
+			List<EObject> tmp = new ArrayList<EObject>();
+
+			if (eStructuralFeature.isMany()) {
+
+				// Get all element of this EStructuralFeature
 				tmp.addAll((Collection<EObject>) targetOwner.eGet(eStructuralFeature));
 
 				if (!newElement.equals(objectLocation)) {
 					tmp.remove(newElement);
 					// normally tmp.indexOf(objectLocation)!= -1
-					// if this the case objectlocation=new element and
+					// if this the case objectLocation=new element and
 					// it has been removed
 					int indexObject = tmp.indexOf(objectLocation);
 					if (before && indexObject != -1) {
-						tmp.add(tmp.indexOf(objectLocation), newElement);
+						tmp.add(indexObject, newElement);
 					} else if (!before && indexObject != -1) {
-						tmp.add(tmp.indexOf(objectLocation) + 1, newElement);
+						tmp.add(indexObject + 1, newElement);
 					}
 				}
 			} else {
 				tmp.add(newElement);
 			}
 
+			// Get the command from Edit service
 			SetRequest setRequest = new SetRequest(targetOwner, eStructuralFeature, tmp);
 			IElementEditService provider = ElementEditServiceUtils.getCommandProvider(targetOwner);
 			if (provider != null) {
 				// Retrieve delete command from the Element Edit service
 				ICommand command = provider.getEditCommand(setRequest);
 
-				if (command != null) {
+				/*
+				 * Add only the executable command because, if the command cannot be executed,
+				 * it was a bad possible EStructuralFeature which was selected before.
+				 */
+				if (command != null && command.canExecute()) {
+
 					commandList.add(new GMFtoEMFCommandWrapper(command));
 				}
 			}
 		}
+
 		return commandList;
 	}
 
+	/**
+	 * Execute.
+	 *
+	 * @param domain
+	 *            the domain
+	 * @param dropCommand
+	 *            the drop command
+	 */
 	protected void execute(EditingDomain domain, Command dropCommand) {
 		domain.getCommandStack().execute(dropCommand);
 	}
@@ -369,7 +402,7 @@ public class CommonDropAdapterAssistant extends org.eclipse.ui.navigator.CommonD
 	 */
 	private List<Object> getEditors(EObject context) {
 		try {
-			return ServiceUtilsForEObject.getInstance().getIPageMngr(context).allPages();
+			return ServiceUtilsForEObject.getInstance().getIPageManager(context).allPages();
 		} catch (ServiceException ex) {
 			return Collections.emptyList();
 		}
@@ -393,8 +426,11 @@ public class CommonDropAdapterAssistant extends org.eclipse.ui.navigator.CommonD
 		if (objectLocation == null) {
 			return result;
 		}
-
-		objectOwner = objectLocation.eContainer();
+		if (objectLocation instanceof Diagram) {
+			objectOwner = ((Diagram) objectLocation).getElement();
+		} else {
+			objectOwner = objectLocation.eContainer();
+		}
 
 		// get Command from the selection
 		ISelection selection = LocalSelectionTransfer.getTransfer().getSelection();
