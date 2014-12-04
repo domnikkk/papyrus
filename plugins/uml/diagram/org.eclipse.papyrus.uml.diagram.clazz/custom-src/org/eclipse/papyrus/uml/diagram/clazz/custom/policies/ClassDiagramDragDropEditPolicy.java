@@ -287,7 +287,7 @@ public class ClassDiagramDragDropEditPolicy extends CommonDiagramDragDropEditPol
 			return new ICommandProxy(dropBinaryLink(new CompositeCommand("drop Dependency"), source, target, DependencyEditPart.VISUAL_ID, dropRequest.getLocation(), semanticLink));
 		}
 		if (sources.size() > 1 || targets.size() > 1) {
-			MultiDependencyHelper dependencyHelper = new MultiDependencyHelper(getEditingDomain(), getCompositeCommandRegistry());
+			MultiDependencyHelper dependencyHelper = new MultiDependencyHelper(getEditingDomain(), getElement2IAdaptableRegistryHelper());
 			return dependencyHelper.dropMutliDependency((Dependency) semanticLink, getViewer(), getDiagramPreferencesHint(), dropRequest.getLocation(), ((GraphicalEditPart) getHost()).getNotationView());
 		}
 		return UnexecutableCommand.INSTANCE;
