@@ -121,8 +121,9 @@ public class ClassEditPart extends ClassifierEditPart {
 	}
 
 	/**
-	 *Papyrus codeGen
-	 *@generated
+	 * Papyrus codeGen
+	 *
+	 * @generated
 	 **/
 	@Override
 	protected void handleNotificationEvent(Notification event) {

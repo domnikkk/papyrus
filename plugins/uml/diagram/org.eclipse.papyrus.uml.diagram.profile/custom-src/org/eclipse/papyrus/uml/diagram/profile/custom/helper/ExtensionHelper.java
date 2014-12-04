@@ -108,7 +108,7 @@ public class ExtensionHelper extends ElementHelper {
 					EList<Extension> extensionList = metaclass.getExtensions();
 					/*
 					 * get the extensions to destroy
-					 *
+					 * 
 					 * All the user's extension are owned by the rootProfile or a sub-profile
 					 */
 					ArrayList<Extension> extensionsToDestroy = new ArrayList<Extension>();

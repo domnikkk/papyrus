@@ -46,7 +46,7 @@ public class CustomCreateElementRequestAdapter extends org.eclipse.gmf.runtime.d
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see org.eclipse.core.runtime.IAdaptable#getAdapter(java.lang.Class)
 	 */
 	public Object getAdapter(java.lang.Class<?> adapter, int i) {
