@@ -1,102 +1,65 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *
+ *    
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *  Atos Origin - Initial API and implementation
- *  Saadia DHOUIB (CEA LIST) saadia.dhouib@cea.fr - adapted from sequence diagram
+ *  Mickael ADAM (ALL4TEC) - mickael.adam@all4tec.net
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.communication.custom.figures;
 
-import org.eclipse.draw2d.BorderLayout;
-import org.eclipse.draw2d.MarginBorder;
-import org.eclipse.draw2d.OrderedLayout;
+import java.util.ArrayList;
+import java.util.List;
+
 import org.eclipse.draw2d.RectangleFigure;
-import org.eclipse.draw2d.ToolbarLayout;
-import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
-import org.eclipse.papyrus.uml.diagram.common.draw2d.InteractionFigure;
-import org.eclipse.papyrus.uml.diagram.common.draw2d.LeftToolbarLayout;
-import org.eclipse.papyrus.uml.diagram.common.figure.node.NodeNamedElementFigure;
+import org.eclipse.papyrus.uml.diagram.common.figure.node.RoundedCompartmentFigure;
 
 /**
- *
- *
- *
+ * The Class InteractionRectangleFigure.
  */
-public class InteractionRectangleFigure extends NodeNamedElementFigure {
+public class InteractionRectangleFigure extends RoundedCompartmentFigure {
 
-	protected InteractionFigure interactionLabelContainer;
+	/** The Attribute Compartment. */
+	private final static String INTERACTION_CONTENT_PANE_COMPARTMENT = "interactionContentPaneCompartment";
 
-	protected RectangleFigure interactionContentPane;
+	/** The List of Compartment. */
+	private final static List<String> COMPARTMENT = new ArrayList<String>() {
 
-	protected WrappingLabel interactionLabel;
+		private static final long serialVersionUID = 1L;
 
-	private boolean myUseLocalCoordinates = false;
+		{
+			add(INTERACTION_CONTENT_PANE_COMPARTMENT);
+		}
+	};
 
 	/**
-	 * @param marginBorder
-	 *
+	 * Default Constructor.
 	 */
 	public InteractionRectangleFigure() {
-		setLayoutManager(new BorderLayout());
-		createContents();
-	}
-
-	protected void createContents() {
-		add(createHeader(), BorderLayout.TOP);
-		add(createContentPane(), BorderLayout.CENTER);
-	}
-
-	protected RectangleFigure createContentPane() {
-		interactionContentPane = new RectangleFigure();
-		// Margin allow to add message easily
-		interactionContentPane.setBorder(new MarginBorder(5, 5, 5, 5));
-		interactionContentPane.setFill(false);
-		interactionContentPane.setOutline(true);
-		return interactionContentPane;
-	}
-
-	protected RectangleFigure createHeader() {
-		interactionLabel = new WrappingLabel();
-		interactionLabelContainer = new InteractionFigure();
-		interactionLabelContainer.setBorder(new MarginBorder(3, 3, 3, 3));
-		interactionLabelContainer.setLayoutManager(new LeftToolbarLayout());
-		interactionLabelContainer.add(interactionLabel);
-		RectangleFigure container = new RectangleFigure();
-		container.setOutline(false);
-		container.setFill(false);
-		container.setLayoutManager(new ToolbarLayout(false));
-		container.add(interactionLabelContainer, OrderedLayout.ALIGN_CENTER);
-		return container;
-	}
-
-	@Override
-	protected boolean useLocalCoordinates() {
-		return myUseLocalCoordinates;
-	}
-
-	protected void setUseLocalCoordinates(boolean useLocalCoordinates) {
-		myUseLocalCoordinates = useLocalCoordinates;
+		this(null);
 	}
 
 	/**
+	 * Create a new Classifier figure with the given tag.
 	 *
-	 * @return the interaction wrapping label
+	 * @param tagLabel
+	 *            a String that will be displayed at the top of the figure
 	 */
-	public WrappingLabel getHeaderLabel() {
-		return interactionLabel;
+	public InteractionRectangleFigure(String tagLabel) {
+		super(COMPARTMENT, tagLabel);
 	}
 
 	/**
+	 * Gets the compartment figure.
 	 *
 	 * @return the interactionContentPane
 	 */
 	public RectangleFigure getCompartmentFigure() {
-		return interactionContentPane;
+		return getCompartment(INTERACTION_CONTENT_PANE_COMPARTMENT);
 	}
 }

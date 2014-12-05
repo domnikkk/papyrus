@@ -18,6 +18,7 @@ import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.RunnableWithResult;
@@ -29,7 +30,6 @@ import org.eclipse.gef.requests.DirectEditRequest;
 import org.eclipse.gef.tools.DirectEditManager;
 import org.eclipse.gmf.runtime.common.ui.services.parser.IParser;
 import org.eclipse.gmf.runtime.common.ui.services.parser.IParserEditStatus;
-import org.eclipse.gmf.runtime.common.ui.services.parser.ParserEditStatus;
 import org.eclipse.gmf.runtime.common.ui.services.parser.ParserOptions;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart;
@@ -58,6 +58,8 @@ import org.eclipse.papyrus.extensionpoints.editors.ui.ILabelEditorDialog;
 import org.eclipse.papyrus.extensionpoints.editors.ui.IPopupEditorHelper;
 import org.eclipse.papyrus.extensionpoints.editors.utils.DirectEditorsUtil;
 import org.eclipse.papyrus.extensionpoints.editors.utils.IDirectEditorsIds;
+import org.eclipse.papyrus.infra.emf.appearance.helper.AppearanceHelper;
+import org.eclipse.papyrus.infra.emf.appearance.helper.VisualInformationPapyrusConstants;
 import org.eclipse.papyrus.infra.gmfdiag.common.editpart.IControlParserForDirectEdit;
 import org.eclipse.papyrus.infra.gmfdiag.common.editpart.PapyrusCompartmentEditPart;
 import org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.IMaskManagedLabelEditPolicy;
@@ -65,6 +67,7 @@ import org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.IndirectMaskLabelEd
 import org.eclipse.papyrus.uml.diagram.common.directedit.MultilineLabelDirectEditManager;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.IDirectEdition;
 import org.eclipse.papyrus.uml.diagram.common.figure.node.ILabelFigure;
+import org.eclipse.papyrus.uml.diagram.common.util.DiagramEditPartsUtil;
 import org.eclipse.papyrus.uml.diagram.communication.edit.policies.UMLTextSelectionEditPolicy;
 import org.eclipse.papyrus.uml.diagram.communication.part.UMLVisualIDRegistry;
 import org.eclipse.papyrus.uml.diagram.communication.providers.UMLElementTypes;
@@ -239,6 +242,16 @@ public class InteractionNameEditPart extends PapyrusCompartmentEditPart implemen
 	 * @generated
 	 */
 	protected Image getLabelIcon() {
+		EObject parserElement = getParserElement();
+		if (parserElement == null) {
+			return null;
+		}
+		List<View> views = DiagramEditPartsUtil.findViews(parserElement, getViewer());
+		for (View view : views) {
+			if (AppearanceHelper.showElementIcon(view)) {
+				return UMLElementTypes.getImage(parserElement.eClass());
+			}
+		}
 		return null;
 	}
 
@@ -806,6 +819,9 @@ public class InteractionNameEditPart extends PapyrusCompartmentEditPart implemen
 				}
 			}
 		}
+		if (event.getNewValue() instanceof EAnnotation && VisualInformationPapyrusConstants.DISPLAY_NAMELABELICON.equals(((EAnnotation) event.getNewValue()).getSource())) {
+			refreshLabel();
+		}
 		super.handleNotificationEvent(event);
 	}
 
@@ -836,7 +852,7 @@ public class InteractionNameEditPart extends PapyrusCompartmentEditPart implemen
 	 * @generated
 	 */
 	protected void addOwnerElementListeners() {
-		addListenerFilter(ADD_PARENT_MODEL, this, ((View) getParent().getModel())); 
+		addListenerFilter(ADD_PARENT_MODEL, this, ((View) getParent().getModel()));
 
 	}
 

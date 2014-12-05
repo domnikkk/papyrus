@@ -39,7 +39,7 @@ public class ActivityAsInteractionFigure extends ActivityFigure {
 
 	public ActivityAsInteractionFigure() {
 		createContents();
-		this.corner = 0;
+		// this.corner = 0; //use of roundedCompartmentFigure on ActivityFigure witch have corner set to 0 by default
 	}
 
 	protected void createContents() {

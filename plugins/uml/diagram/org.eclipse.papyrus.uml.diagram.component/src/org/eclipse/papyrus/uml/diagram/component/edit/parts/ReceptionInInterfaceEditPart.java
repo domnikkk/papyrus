@@ -89,7 +89,8 @@ import org.eclipse.uml2.uml.UMLPackage;
 /**
  * @generated
  */
-public class ReceptionInInterfaceEditPart extends CompartmentEditPart implements ITextAwareEditPart, IPrimaryEditPart, IControlParserForDirectEdit {
+public class ReceptionInInterfaceEditPart extends CompartmentEditPart implements ITextAwareEditPart, IPrimaryEditPart,
+		IControlParserForDirectEdit {
 
 	/**
 	 * @generated

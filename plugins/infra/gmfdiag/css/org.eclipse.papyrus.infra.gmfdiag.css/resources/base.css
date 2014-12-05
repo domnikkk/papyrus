@@ -29,6 +29,62 @@ Compartment[kind=symbol]{
  	showTitle:false;
 }
 
+
+/*
+ * The Actor element icon is not useful either
+ */
+UseCaseDiagram Actor {
+	elementIcon:false;
+}
+
+TimingDiagram * {
+	gradient:none;
+}
+
+/*---------- Activity Diagram ----------*/
+
+ActivityDiagram MergeNode, 
+ActivityDiagram InitialNode, 
+ActivityDiagram ActivityFinalNode, 
+ActivityDiagram FlowFinalNode, 
+ActivityDiagram DecisionNode, 
+ActivityDiagram MergeNode, 
+ActivityDiagram SendSignalAction,
+ActivityDiagram AcceptEventAction
+{
+	displayBorder:false;
+	displayName:false;
+	diplayIcon:false;
+	displayTag:false;
+	followSVGSymbol:true;
+	maintainSymbolRatio:true;
+	transparency:100;
+	displayFloatingLabel:true;
+	maxNumberOfSymbol:1;
+	useOriginalColors:false;
+	gradient:none;
+	fillColor:white;
+}
+
+
+ActivityDiagram MergeNode > Compartment[kind="symbol"], 
+ActivityDiagram InitialNode > Compartment[kind="symbol"], 
+ActivityDiagram ActivityFinalNode > Compartment[kind="symbol"], 
+ActivityDiagram FlowFinalNode > Compartment[kind="symbol"], 
+ActivityDiagram MergeNode > Compartment[kind="symbol"], 
+ActivityDiagram SendSignalAction > Compartment[kind="symbol"], 
+ActivityDiagram DecisionNode > Compartment[kind="symbol"], 
+ActivityDiagram AcceptEventAction > Compartment[kind="symbol"]
+{
+    visible:true;
+}
+
+ActivityDiagram SendSignalAction, 
+ActivityDiagram AcceptEventAction{
+	maintainSymbolRatio:false;
+	displayName:true;
+}
+
 /* For most Activity diagram nodes (e.g. initial, final, fork, decision, ...), 
  * the element icon is displayed next to the actual object. 
  * By default, we prevent this. 
@@ -40,13 +96,72 @@ ActivityDiagram Activity *,InteractionOverviewDiagram Activity * {
 	elementIcon:false; 
 }
 
-/*
- * The Actor element icon is not useful either
- */
-UseCaseDiagram Actor {
-	elementIcon:false;
+/*---------- Class Diagram ----------*/
+ClassDiagram Association
+{
+	displayBorder:false;
+	displayName:false;
+	diplayIcon:false;
+	displayTag:false;
+	followSVGSymbol:true;
+	maintainSymbolRatio:true;
+	transparency:100;
+	displayFloatingLabel:true;
+	maxNumberOfSymbol:1;
+	useOriginalColors:false;
+	gradient:none;
+	fillColor:white;
 }
 
-TimingDiagram * {
+ClassDiagram  Association > Compartment[kind="symbol"],
+ClassDiagram  DurationObservation > Compartment[kind="symbol"],
+ClassDiagram  TimeObservation > Compartment[kind="symbol"]
+{
+    visible:true;
+}
+
+ClassDiagram Dependency
+{
+	fillColor:Black;
 	gradient:none;
+}
+
+/*---------- UseCase Diagram ----------*/
+UseCaseDiagram UseCase > Compartment {
+	lineLengthRatio:"0.70";
+}
+
+UseCaseDiagram UseCase {
+	topMarginLabel:10;
+}
+
+UseCaseDiagram Actor
+{
+	displayBorder:false;
+	displayName:false;
+	diplayIcon:false;
+	displayTag:false;
+	followSVGSymbol:true;
+	maintainSymbolRatio:true;
+	transparency:100;
+	displayFloatingLabel:true;
+	maxNumberOfSymbol:1;
+	useOriginalColors:false;
+	gradient:none;
+	fillColor:white;
+}
+UseCaseDiagram Actor > Compartment[kind="symbol"]
+{
+    visible:true;
+}
+
+/*---------- Communication Diagram ----------*/
+CommunicationDiagram  DurationObservation > Compartment[kind="symbol"],
+CommunicationDiagram  TimeObservation > Compartment[kind="symbol"]
+{
+    visible:true;
+}
+CommunicationDiagram Interaction > Compartment
+{
+	lineLength:0;
 }

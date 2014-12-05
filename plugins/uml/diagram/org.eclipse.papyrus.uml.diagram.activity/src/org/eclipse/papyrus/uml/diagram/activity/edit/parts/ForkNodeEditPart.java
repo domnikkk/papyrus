@@ -19,7 +19,9 @@ import java.util.LinkedList;
 import java.util.List;
 
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.StackLayout;
+import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.gef.EditPart;
@@ -35,6 +37,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.BorderItemSelectionEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
+import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
 import org.eclipse.gmf.runtime.diagram.ui.figures.IBorderItemLocator;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.FigureUtilities;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
@@ -55,9 +58,9 @@ import org.eclipse.papyrus.uml.diagram.activity.edit.policies.OpenDiagramEditPol
 import org.eclipse.papyrus.uml.diagram.activity.part.UMLDiagramEditorPlugin;
 import org.eclipse.papyrus.uml.diagram.activity.part.UMLVisualIDRegistry;
 import org.eclipse.papyrus.uml.diagram.activity.providers.UMLElementTypes;
-import org.eclipse.papyrus.uml.diagram.common.editparts.UMLNodeEditPart;
+import org.eclipse.papyrus.uml.diagram.common.editparts.RoundedCompartmentEditPart;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.ChangeStereotypedShapeEditPolicy;
-import org.eclipse.papyrus.uml.diagram.common.figure.node.ForkNode;
+import org.eclipse.papyrus.uml.diagram.common.figure.node.RoundedCompartmentFigure;
 import org.eclipse.papyrus.uml.diagram.common.helper.PreferenceInitializerForElementHelper;
 import org.eclipse.papyrus.uml.diagram.common.locator.ExternalLabelPositionLocator;
 import org.eclipse.swt.graphics.Color;
@@ -65,7 +68,7 @@ import org.eclipse.swt.graphics.Color;
 /**
  * @generated
  */
-public class ForkNodeEditPart extends UMLNodeEditPart {
+public class ForkNodeEditPart extends RoundedCompartmentEditPart {
 
 	/**
 	 * @generated
@@ -158,6 +161,17 @@ public class ForkNodeEditPart extends UMLNodeEditPart {
 							return Collections.singletonList(mh);
 						}
 					};
+				case ForkNodeFloatingNameEditPart.VISUAL_ID:
+					return new BorderItemSelectionEditPolicy() {
+
+						@Override
+						protected List<?> createSelectionHandles() {
+							MoveHandle mh = new MoveHandle((GraphicalEditPart) getHost());
+							mh.setBorder(null);
+							return Collections.singletonList(mh);
+						}
+					};
+
 				}
 				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 				if (result == null) {
@@ -184,15 +198,15 @@ public class ForkNodeEditPart extends UMLNodeEditPart {
 	 */
 	@Override
 	protected IFigure createNodeShape() {
-		return primaryShape = new ForkNode();
+		return primaryShape = new RoundedCompartmentFigure();
 	}
 
 	/**
 	 * @generated
 	 */
 	@Override
-	public ForkNode getPrimaryShape() {
-		return (ForkNode) primaryShape;
+	public RoundedCompartmentFigure getPrimaryShape() {
+		return (RoundedCompartmentFigure) primaryShape;
 	}
 
 	/**
@@ -200,7 +214,11 @@ public class ForkNodeEditPart extends UMLNodeEditPart {
 	 */
 	@Override
 	protected void addBorderItem(IFigure borderItemContainer, IBorderItemEditPart borderItemEditPart) {
-		if (borderItemEditPart instanceof ForkNodeAppliedStereotypeEditPart) {
+		if (borderItemEditPart instanceof ForkNodeFloatingNameEditPart) {
+			BorderItemLocator locator = new BorderItemLocator(getMainFigure(), PositionConstants.SOUTH);
+			locator.setBorderItemOffset(new Dimension(-20, -20));
+			borderItemContainer.add(borderItemEditPart.getFigure(), locator);
+		} else if (borderItemEditPart instanceof ForkNodeAppliedStereotypeEditPart) {
 			IBorderItemLocator locator = new ExternalLabelPositionLocator(getMainFigure());
 			borderItemContainer.add(borderItemEditPart.getFigure(), locator);
 		} else {
@@ -298,7 +316,7 @@ public class ForkNodeEditPart extends UMLNodeEditPart {
 	 */
 	@Override
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(UMLVisualIDRegistry.getType(ForkNodeAppliedStereotypeEditPart.VISUAL_ID));
+		return getChildBySemanticHint(UMLVisualIDRegistry.getType(ForkNodeFloatingNameEditPart.VISUAL_ID));
 	}
 
 	/**

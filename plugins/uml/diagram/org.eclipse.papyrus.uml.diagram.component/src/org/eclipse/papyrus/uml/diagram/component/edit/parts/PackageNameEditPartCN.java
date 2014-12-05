@@ -85,7 +85,8 @@ import org.eclipse.uml2.uml.Feature;
 /**
  * @generated
  */
-public class PackageNameEditPartCN extends PapyrusCompartmentEditPart implements ITextAwareEditPart, IControlParserForDirectEdit {
+public class PackageNameEditPartCN extends PapyrusCompartmentEditPart implements ITextAwareEditPart,
+		IControlParserForDirectEdit {
 
 	/**
 	 * @generated
@@ -864,7 +865,7 @@ public class PackageNameEditPartCN extends PapyrusCompartmentEditPart implements
 	 * @generated
 	 */
 	protected void addOwnerElementListeners() {
-		addListenerFilter(ADD_PARENT_MODEL, this, ((View) getParent().getModel())); 
+		addListenerFilter(ADD_PARENT_MODEL, this, ((View) getParent().getModel()));
 
 	}
 

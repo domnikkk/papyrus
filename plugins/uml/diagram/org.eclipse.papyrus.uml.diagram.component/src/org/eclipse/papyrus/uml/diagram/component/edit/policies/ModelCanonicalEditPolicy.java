@@ -587,7 +587,8 @@ public class ModelCanonicalEditPolicy extends CanonicalEditPolicy {
 	/**
 	 * @generated
 	 */
-	private Collection<IAdaptable> createConnections(Collection<UMLLinkDescriptor> linkDescriptors, Domain2Notation domain2NotationMap) {
+	private Collection<IAdaptable> createConnections(Collection<UMLLinkDescriptor> linkDescriptors,
+			Domain2Notation domain2NotationMap) {
 		LinkedList<IAdaptable> adapters = new LinkedList<IAdaptable>();
 		for (UMLLinkDescriptor nextLinkDescriptor : linkDescriptors) {
 			EditPart sourceEditPart = getSourceEditPart(nextLinkDescriptor, domain2NotationMap);
@@ -650,7 +651,8 @@ public class ModelCanonicalEditPolicy extends CanonicalEditPolicy {
 	/**
 	 * @generated
 	 */
-	protected final EditPart getHintedEditPart(EObject domainModelElement, Domain2Notation domain2NotationMap, int hintVisualId) {
+	protected final EditPart getHintedEditPart(EObject domainModelElement, Domain2Notation domain2NotationMap,
+			int hintVisualId) {
 		View view = domain2NotationMap.getHinted(domainModelElement, UMLVisualIDRegistry.getType(hintVisualId));
 		if (view != null) {
 			return (EditPart) getHost().getViewer().getEditPartRegistry().get(view);

@@ -10,6 +10,7 @@
  * Contributors:
 
  * Saadia DHOUIB (CEA LIST) saadia.dhouib@cea.fr
+ * Mickael ADAM (ALL4TEC) mickael.adam@all4tec.net - use of rounded compartment edit part as super type.
  *
  *****************************************************************************/
 
@@ -18,18 +19,12 @@ package org.eclipse.papyrus.uml.diagram.communication.custom.edit.parts;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gef.EditPart;
-import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
-import org.eclipse.gmf.runtime.notation.FillStyle;
-import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.gmf.runtime.notation.datatype.GradientData;
 import org.eclipse.papyrus.uml.diagram.common.helper.NotificationHelper;
 import org.eclipse.papyrus.uml.diagram.common.providers.UIAdapterImpl;
 import org.eclipse.papyrus.uml.diagram.communication.edit.parts.LifelineEditPartCN;
-import org.eclipse.swt.graphics.Color;
 import org.eclipse.uml2.uml.ConnectableElement;
 import org.eclipse.uml2.uml.Lifeline;
 import org.eclipse.uml2.uml.Property;
@@ -168,56 +163,6 @@ public class CustomLifelineEditPartCN extends LifelineEditPartCN {
 	}
 
 	/**
-	 * Create specific anchor to handle connection on top, on center and on
-	 * bottom of the lifeline
-	 */
-	/*
-	 * @Override
-	 * public ConnectionAnchor getTargetConnectionAnchor(
-	 * ConnectionEditPart connEditPart) {
-	 * if (connEditPart instanceof MessageEditPart) {
-	 * // Create message
-	 * return new org.eclipse.papyrus.uml.diagram.communication.custom.figures.LifelineAnchor(
-	 * getPrimaryShape().getNameLabel());
-	 * } else {
-	 * return super.getTargetConnectionAnchor(connEditPart);
-	 * }
-	 *
-	 * }
-	 */
-	/**
-	 * Create specific anchor to handle connection on top, on center and on
-	 * bottom of the lifeline
-	 */
-	/*
-	 * @Override
-	 * public ConnectionAnchor getTargetConnectionAnchor(Request request) {
-	 * if (request instanceof CreateUnspecifiedTypeConnectionRequest) {
-	 * CreateUnspecifiedTypeConnectionRequest createRequest = (CreateUnspecifiedTypeConnectionRequest) request;
-	 * List<?> relationshipTypes = createRequest.getElementTypes();
-	 * for (Object obj : relationshipTypes) {
-	 * if (org.eclipse.papyrus.uml.diagram.communication.providers.UMLElementTypes.Message_8009
-	 * .equals(obj)) {
-	 * // Create Message
-	 * return new org.eclipse.papyrus.uml.diagram.communication.custom.figures.LifelineAnchor(
-	 * getPrimaryShape().getNameLabel());
-	 * }
-	 * }
-	 * } else if (request instanceof ReconnectRequest) {
-	 * ReconnectRequest reconnectRequest = (ReconnectRequest) request;
-	 * ConnectionEditPart connectionEditPart = reconnectRequest
-	 * .getConnectionEditPart();
-	 * if (connectionEditPart instanceof MessageEditPart) {
-	 * // Create
-	 * return new LifelineAnchor(getPrimaryShape().getNameLabel());
-	 * }
-	 * }
-	 *
-	 * return super.getTargetConnectionAnchor(request);
-	 * }
-	 */
-
-	/**
 	 * Remove listeners for Lifeline to handle notification in the message
 	 * occurence specification
 	 */
@@ -225,82 +170,6 @@ public class CustomLifelineEditPartCN extends LifelineEditPartCN {
 	public void removeNotify() {
 		notifier.unlistenAll();
 		super.removeNotify();
-	}
-
-	/**
-	 * Overrides because getNodeFigure() doesn't return the getFigure() anymore.
-	 *
-	 * @see org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart#setBackgroundColor(org.eclipse.swt.graphics.Color)
-	 */
-	@Override
-	protected void setBackgroundColor(Color c) {
-		NodeFigure fig = (NodeFigure) getFigure();
-		fig.setBackgroundColor(c);
-		fig.setIsUsingGradient(false);
-		fig.setGradientData(-1, -1, 0);
-	}
-
-	/**
-	 * Overrides because getNodeFigure() doesn't return the getFigure() anymore.
-	 *
-	 * @see org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart#setGradient(org.eclipse.gmf.runtime.notation.datatype.GradientData)
-	 */
-	@Override
-	protected void setGradient(GradientData gradient) {
-		NodeFigure fig = (NodeFigure) getFigure();
-		FillStyle style = (FillStyle) getPrimaryView().getStyle(NotationPackage.Literals.FILL_STYLE);
-		if (gradient != null) {
-			fig.setIsUsingGradient(true);
-			fig.setGradientData(style.getFillColor(), gradient.getGradientColor1(), gradient.getGradientStyle());
-		} else {
-			fig.setIsUsingGradient(false);
-		}
-	}
-
-	/**
-	 * Overrides because getNodeFigure() doesn't return the getFigure() anymore.
-	 *
-	 * @see org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart#setTransparency(int)
-	 */
-	@Override
-	protected void setTransparency(int transp) {
-		NodeFigure fig = (NodeFigure) getFigure();
-		fig.setTransparency(transp);
-	}
-
-	/**
-	 * Update the rectangle bounds. In case of a creation, the lifeline width
-	 * and height will be 0. Get the preferred size In case of a move, when the
-	 * lifeline has not be resize, the width or height may be set to -1. Get the
-	 * according figure bounds.
-	 *
-	 * @param rect
-	 *            the rectangle to update
-	 */
-	@SuppressWarnings("unused")
-	private void updateRectangleBounds(Rectangle rect) {
-
-		// When moving the lifeline
-		if (rect.width == -1) {
-			rect.width = getFigure().getBounds().width;
-		}
-		if (rect.height == -1) {
-			rect.height = getFigure().getBounds().height;
-		}
-		if (rect.x == -1) {
-			rect.x = getFigure().getBounds().x;
-		}
-		if (rect.y == -1) {
-			rect.y = getFigure().getBounds().y;
-		}
-
-		// When creating the lifeline
-		if (rect.width == 0) {
-			rect.width = getFigure().getPreferredSize().width;
-		}
-		if (rect.height == 0) {
-			rect.height = getFigure().getPreferredSize().height;
-		}
 	}
 
 }

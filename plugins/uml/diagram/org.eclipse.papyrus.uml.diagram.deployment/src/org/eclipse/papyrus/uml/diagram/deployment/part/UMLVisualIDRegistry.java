@@ -23,6 +23,9 @@ import org.eclipse.papyrus.uml.diagram.deployment.edit.parts.ArtifactCompositeCo
 import org.eclipse.papyrus.uml.diagram.deployment.edit.parts.ArtifactEditPart;
 import org.eclipse.papyrus.uml.diagram.deployment.edit.parts.ArtifactEditPartACN;
 import org.eclipse.papyrus.uml.diagram.deployment.edit.parts.ArtifactEditPartCN;
+import org.eclipse.papyrus.uml.diagram.deployment.edit.parts.ArtifactFloatingLabelEditPart;
+import org.eclipse.papyrus.uml.diagram.deployment.edit.parts.ArtifactFloatingLabelEditPartACN;
+import org.eclipse.papyrus.uml.diagram.deployment.edit.parts.ArtifactFloatingLabelEditPartCN;
 import org.eclipse.papyrus.uml.diagram.deployment.edit.parts.ArtifactNameEditPart;
 import org.eclipse.papyrus.uml.diagram.deployment.edit.parts.ArtifactNameEditPartACN;
 import org.eclipse.papyrus.uml.diagram.deployment.edit.parts.ArtifactNameEditPartCN;
@@ -513,6 +516,9 @@ public class UMLVisualIDRegistry {
 			if (ArtifactNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (ArtifactFloatingLabelEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			if (ArtifactCompositeCompartmentEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
@@ -589,9 +595,18 @@ public class UMLVisualIDRegistry {
 			if (ArtifactNameEditPartCN.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (ArtifactFloatingLabelEditPartCN.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ArtifactCompositeCompartmentEditPartCN.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			break;
 		case ArtifactEditPartACN.VISUAL_ID:
 			if (ArtifactNameEditPartACN.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ArtifactFloatingLabelEditPartACN.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (ArtifactCompositeCompartmentEditPartACN.VISUAL_ID == nodeVisualID) {
@@ -600,9 +615,6 @@ public class UMLVisualIDRegistry {
 			break;
 		case NestedArtifactNodeEditPartCN.VISUAL_ID:
 			if (NestedArtifactNameEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (ArtifactCompositeCompartmentEditPartCN.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -874,7 +886,7 @@ public class UMLVisualIDRegistry {
 	 */
 	public static boolean checkNodeVisualID(View containerView, EObject domainElement, int candidate) {
 		if (candidate == -1) {
-			//unrecognized id is always bad
+			// unrecognized id is always bad
 			return false;
 		}
 		int basic = getNodeVisualID(containerView, domainElement);
@@ -916,7 +928,7 @@ public class UMLVisualIDRegistry {
 		case DeviceEditPartCN.VISUAL_ID:
 		case ExecutionEnvironmentEditPartCN.VISUAL_ID:
 		case NodeEditPartCN.VISUAL_ID:
-		case ArtifactEditPartCN.VISUAL_ID:
+		case NestedArtifactNodeEditPartCN.VISUAL_ID:
 		case CommentEditPartCN.VISUAL_ID:
 		case ConstraintEditPartCN.VISUAL_ID:
 		case CommentEditPart.VISUAL_ID:

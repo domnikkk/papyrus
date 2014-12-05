@@ -52,15 +52,15 @@ public class CustomGraphicalNodeEditPolicy extends GraphicalNodeEditPolicy {
 	 * <pre>
 	 * This method is overridden in order to add information (graphical parent of Port)
 	 * in the CreationRelationshipRequest.
-	 *
+	 * 
 	 * These information is stored in the request as Parameters under the following keys:
 	 * - &quot;SOURCE_PARENT&quot; : UML Element used as Graphical parent of the source Port (end of Connector)
 	 * - &quot;TARGET_PARENT&quot; : UML Element used as Graphical parent of the target Port (end of Connector)
 	 * - &quot;SOURCE_GRAPHICAL&quot; : GraphicalEditPart of the source
 	 * - &quot;TARGET_GRAPHICAL&quot; : GraphicalEditPart of the target
-	 *
+	 * 
 	 * This method is used too to call the custom command for InformationFlow creation.
-	 *
+	 * 
 	 * @param request the request
 	 * @return the connection and relationship complete command
 	 * {@inheritDoc}
@@ -98,8 +98,14 @@ public class CustomGraphicalNodeEditPolicy extends GraphicalNodeEditPolicy {
 		if (target == null) {
 			target = targetView;
 		}
-		// resolve the source parent (meaning graphical parent here)
-		View targetParentView = (View) request.getTargetEditPart().getParent().getModel();
+		View targetParentView = null;
+		if (!(request.getTargetEditPart().getParent().getModel() instanceof View)) {
+			// in connection case, he don't have parent's
+			targetParentView = (View) request.getTargetEditPart().getModel();
+		} else {
+			// resolve the source parent (meaning graphical parent here)
+			targetParentView = (View) request.getTargetEditPart().getParent().getModel();
+		}
 		EObject targetParent = ViewUtil.resolveSemanticElement(targetParentView);
 		if (targetParent == null) {
 			targetParent = targetParentView;

@@ -10,6 +10,8 @@
  * Contributors:
  *  Patrick Tessier (CEA LIST) Patrick.tessier@cea.fr - Initial API and implementation
  *  Laurent Wouters (CEA LIST) laurent.wouters@cea.fr - Refactoring, cleanup, added support for PapyrusLabel element
+ *  Mickael ADAM (ALL4TEC) mickael.adam@all4tec.net - Add IRoundedRectangleFigure use case(436547)
+ *  
  *****************************************************************************/
 package org.eclipse.papyrus.infra.gmfdiag.common.figure.node;
 
@@ -26,8 +28,10 @@ import org.eclipse.draw2d.geometry.PrecisionPoint;
 import org.eclipse.draw2d.geometry.PrecisionRectangle;
 import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.IOvalAnchorableFigure;
+import org.eclipse.gmf.runtime.draw2d.ui.render.figures.ScalableImageFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.papyrus.infra.gmfdiag.common.figure.SlidableEllipseAnchor;
+import org.eclipse.papyrus.infra.gmfdiag.common.utils.FigureUtils;
 import org.w3c.dom.Element;
 import org.w3c.dom.svg.SVGAnimatedLength;
 import org.w3c.dom.svg.SVGDocument;
@@ -204,6 +208,8 @@ public class SVGNodePlateFigure extends DefaultSizeNodeFigure {
 		// current coordinates
 		double currentX = 0;
 		double currentY = 0;
+		PrecisionPoint firstPoint = new PrecisionPoint();
+		Boolean firstPointAbsolue = true;
 		for (int i = 0; i < segments.getNumberOfItems(); i++) {
 			SVGPathSeg seg = segments.getItem(i);
 			if (seg instanceof SVGPathSegMovetoLinetoItem) {
@@ -214,10 +220,14 @@ public class SVGNodePlateFigure extends DefaultSizeNodeFigure {
 				if (letter.equals("M")) {
 					currentX = x;
 					currentY = y;
+					firstPoint.setPreciseLocation(currentX, currentY);
+					firstPointAbsolue = true;
 					pointList.add(new PrecisionPoint(currentX, currentY));
 				} else if (letter.equals("m")) {
 					currentX = currentX + x;
 					currentY = currentY + y;
+					firstPoint.setPreciseLocation(currentX, currentY);
+					firstPointAbsolue = false;
 					pointList.add(new PrecisionPoint(currentX, currentY));
 				} else if (letter.equals("L")) {
 					currentX = x;
@@ -227,6 +237,18 @@ public class SVGNodePlateFigure extends DefaultSizeNodeFigure {
 					currentX = currentX + x;
 					currentY = currentY + y;
 					pointList.add(new PrecisionPoint(currentX, currentY));
+				}
+			} else if (seg instanceof SVGPathSeg) {
+				// Take into account the z letter
+				String letter = seg.getPathSegTypeAsLetter();
+				if (letter.equals("z")) {
+					if (firstPointAbsolue) {
+						pointList.add(firstPoint);
+					} else {
+						currentX = currentX + firstPoint.preciseX();
+						currentY = currentY + firstPoint.preciseY();
+						pointList.add(new PrecisionPoint(currentX, currentY));
+					}
 				}
 			} else {
 				System.err.println("Unsupported SVG segment in PapyrusPath at index " + i + " in SVG document");
@@ -261,11 +283,7 @@ public class SVGNodePlateFigure extends DefaultSizeNodeFigure {
 	 * @return The equivalent Draw2D rectangle
 	 */
 	private PrecisionRectangle toDraw2DRectangle(SVGRectElement element) {
-		return new PrecisionRectangle(
-				getValueOf(element.getX()),
-				getValueOf(element.getY()),
-				getValueOf(element.getWidth()),
-				getValueOf(element.getHeight()));
+		return new PrecisionRectangle(getValueOf(element.getX()), getValueOf(element.getY()), getValueOf(element.getWidth()), getValueOf(element.getHeight()));
 	}
 
 
@@ -298,11 +316,48 @@ public class SVGNodePlateFigure extends DefaultSizeNodeFigure {
 	 */
 	private SvgToDraw2DTransform getTransform(double innerWidth, double innerHeight, Rectangle anchor) {
 		PrecisionDimension maxDim = new PrecisionDimension(Math.max(svgDimension.preciseWidth(), innerWidth), Math.max(svgDimension.preciseHeight(), innerHeight));
-		return new SvgToDraw2DTransform(
-				anchor.width / maxDim.preciseWidth(),
-				anchor.height / maxDim.preciseHeight(),
-				anchor.x,
-				anchor.y);
+
+		// Look for the ScalableImage to know if the ration is maintain
+		boolean isRatioMaintained = false;
+		ScalableImageFigure scalableImage = FigureUtils.findChildFigureInstance(getParent(), ScalableImageFigure.class);
+		if (scalableImage != null) {
+			isRatioMaintained = scalableImage.isMaintainAspectRatio();
+		}
+		if (isRatioMaintained) {
+			// Calculate Transform if we want to keep the ratio of the Figure.
+			double ratio = svgDimension.preciseWidth() / svgDimension.preciseHeight();
+			// double ratio = scalableImage.getBounds().preciseWidth() / scalableImage.getBounds().preciseHeight();
+			double scaleX = 0;
+			double scaleY = 0;
+			double tranlationX = anchor.x;
+			double tranlationY = anchor.y;
+
+			if (anchor.height < anchor.width) {
+				if (anchor.height * ratio < anchor.width) {
+					scaleX = (anchor.height / maxDim.preciseHeight());
+					scaleY = (anchor.height / maxDim.preciseHeight());
+					tranlationX = anchor.x + (anchor.preciseWidth() / 2 - (anchor.preciseHeight() * ratio) / 2);
+				} else {
+					scaleX = (anchor.width / maxDim.preciseWidth());
+					scaleY = (anchor.width / maxDim.preciseWidth());
+					tranlationY = anchor.y + (anchor.preciseHeight() / 2 - (anchor.preciseWidth() / ratio) / 2);
+				}
+			} else {
+				if (anchor.height > anchor.width / ratio) {
+					scaleX = (anchor.width / maxDim.preciseWidth());
+					scaleY = (anchor.width / maxDim.preciseWidth());
+					tranlationY = anchor.y + (anchor.preciseHeight() / 2 - (anchor.preciseWidth() / ratio) / 2);
+				} else {
+					scaleX = (anchor.height / maxDim.preciseHeight());
+					scaleY = (anchor.height / maxDim.preciseHeight());
+					tranlationX = anchor.x + (anchor.preciseWidth() / 2 - (anchor.preciseHeight() * ratio) / 2);
+				}
+			}
+
+			return new SvgToDraw2DTransform(scaleX, scaleY, tranlationX, tranlationY);
+		} else {
+			return new SvgToDraw2DTransform(anchor.width / maxDim.preciseWidth(), anchor.height / maxDim.preciseHeight(), anchor.x, anchor.y);
+		}
 	}
 
 	/**
@@ -322,10 +377,9 @@ public class SVGNodePlateFigure extends DefaultSizeNodeFigure {
 		return getHandleBounds();
 	}
 
-
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure#createAnchor(org.eclipse.draw2d.geometry.PrecisionPoint)
 	 */
 	@Override
@@ -339,6 +393,14 @@ public class SVGNodePlateFigure extends DefaultSizeNodeFigure {
 					return new SlidableEllipseAnchor(this, p);
 				}
 			}
+			if (defaultNodePlate instanceof IRoundedRectangleFigure) {
+				defaultNodePlate.setBounds(this.getBounds());
+				if (p != null) {
+					// If the old terminal for the connection anchor cannot be resolved (by SlidableAnchor) a null
+					// PrecisionPoint will passed in - this is handled here
+					return new SlidableRoundedRectangleAnchor(this, p);
+				}
+			}
 			return super.createAnchor(p);
 		}
 
@@ -347,7 +409,7 @@ public class SVGNodePlateFigure extends DefaultSizeNodeFigure {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure#createDefaultAnchor()
 	 */
 	@Override
@@ -356,6 +418,10 @@ public class SVGNodePlateFigure extends DefaultSizeNodeFigure {
 			if (defaultNodePlate instanceof IOvalAnchorableFigure) {
 				defaultNodePlate.setBounds(this.getBounds());
 				return new SlidableEllipseAnchor(this);
+			}
+			if (defaultNodePlate instanceof IRoundedRectangleFigure) {
+				defaultNodePlate.setBounds(this.getBounds());
+				return new SlidableRoundedRectangleAnchor(this);
 			}
 		}
 		return super.createDefaultAnchor();

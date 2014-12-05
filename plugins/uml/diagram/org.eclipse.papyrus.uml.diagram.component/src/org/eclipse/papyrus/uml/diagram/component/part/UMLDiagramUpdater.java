@@ -113,7 +113,7 @@ public class UMLDiagramUpdater implements DiagramUpdater {
 	 * @generated
 	 */
 	protected UMLDiagramUpdater() {
-		//to prevent instantiation allowing the override
+		// to prevent instantiation allowing the override
 	}
 
 	/**
@@ -3155,7 +3155,8 @@ public class UMLDiagramUpdater implements DiagramUpdater {
 	/**
 	 * @generated
 	 */
-	protected Collection<UMLLinkDescriptor> getContainedTypeModelFacetLinks_Connector_4019(StructuredClassifier container) {
+	protected Collection<UMLLinkDescriptor> getContainedTypeModelFacetLinks_Connector_4019(
+			StructuredClassifier container) {
 		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		for (Iterator<?> links = container.getOwnedConnectors()
 				.iterator(); links.hasNext();) {
@@ -3187,7 +3188,8 @@ public class UMLDiagramUpdater implements DiagramUpdater {
 	/**
 	 * @generated
 	 */
-	protected Collection<UMLLinkDescriptor> getIncomingTypeModelFacetLinks_Usage_4001(NamedElement target, CrossReferenceAdapter crossReferencer) {
+	protected Collection<UMLLinkDescriptor> getIncomingTypeModelFacetLinks_Usage_4001(NamedElement target,
+			CrossReferenceAdapter crossReferencer) {
 		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		Collection<EStructuralFeature.Setting> settings = crossReferencer.getInverseReferences(target);
 		for (EStructuralFeature.Setting setting : settings) {
@@ -3212,7 +3214,8 @@ public class UMLDiagramUpdater implements DiagramUpdater {
 	/**
 	 * @generated
 	 */
-	protected Collection<UMLLinkDescriptor> getIncomingTypeModelFacetLinks_InterfaceRealization_4006(Interface target, CrossReferenceAdapter crossReferencer) {
+	protected Collection<UMLLinkDescriptor> getIncomingTypeModelFacetLinks_InterfaceRealization_4006(Interface target,
+			CrossReferenceAdapter crossReferencer) {
 		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		Collection<EStructuralFeature.Setting> settings = crossReferencer.getInverseReferences(target);
 		for (EStructuralFeature.Setting setting : settings) {
@@ -3237,7 +3240,8 @@ public class UMLDiagramUpdater implements DiagramUpdater {
 	/**
 	 * @generated
 	 */
-	protected Collection<UMLLinkDescriptor> getIncomingTypeModelFacetLinks_Generalization_4003(Classifier target, CrossReferenceAdapter crossReferencer) {
+	protected Collection<UMLLinkDescriptor> getIncomingTypeModelFacetLinks_Generalization_4003(Classifier target,
+			CrossReferenceAdapter crossReferencer) {
 		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		Collection<EStructuralFeature.Setting> settings = crossReferencer.getInverseReferences(target);
 		for (EStructuralFeature.Setting setting : settings) {
@@ -3257,7 +3261,8 @@ public class UMLDiagramUpdater implements DiagramUpdater {
 	/**
 	 * @generated
 	 */
-	protected Collection<UMLLinkDescriptor> getIncomingTypeModelFacetLinks_Substitution_4012(NamedElement target, CrossReferenceAdapter crossReferencer) {
+	protected Collection<UMLLinkDescriptor> getIncomingTypeModelFacetLinks_Substitution_4012(NamedElement target,
+			CrossReferenceAdapter crossReferencer) {
 		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		Collection<EStructuralFeature.Setting> settings = crossReferencer.getInverseReferences(target);
 		for (EStructuralFeature.Setting setting : settings) {
@@ -3282,7 +3287,8 @@ public class UMLDiagramUpdater implements DiagramUpdater {
 	/**
 	 * @generated
 	 */
-	protected Collection<UMLLinkDescriptor> getIncomingTypeModelFacetLinks_Manifestation_4014(NamedElement target, CrossReferenceAdapter crossReferencer) {
+	protected Collection<UMLLinkDescriptor> getIncomingTypeModelFacetLinks_Manifestation_4014(NamedElement target,
+			CrossReferenceAdapter crossReferencer) {
 		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		Collection<EStructuralFeature.Setting> settings = crossReferencer.getInverseReferences(target);
 		for (EStructuralFeature.Setting setting : settings) {
@@ -3307,7 +3313,8 @@ public class UMLDiagramUpdater implements DiagramUpdater {
 	/**
 	 * @generated
 	 */
-	protected Collection<UMLLinkDescriptor> getIncomingTypeModelFacetLinks_ComponentRealization_4007(NamedElement target, CrossReferenceAdapter crossReferencer) {
+	protected Collection<UMLLinkDescriptor> getIncomingTypeModelFacetLinks_ComponentRealization_4007(
+			NamedElement target, CrossReferenceAdapter crossReferencer) {
 		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		Collection<EStructuralFeature.Setting> settings = crossReferencer.getInverseReferences(target);
 		for (EStructuralFeature.Setting setting : settings) {
@@ -3332,7 +3339,8 @@ public class UMLDiagramUpdater implements DiagramUpdater {
 	/**
 	 * @generated
 	 */
-	protected Collection<UMLLinkDescriptor> getIncomingTypeModelFacetLinks_Abstraction_4013(NamedElement target, CrossReferenceAdapter crossReferencer) {
+	protected Collection<UMLLinkDescriptor> getIncomingTypeModelFacetLinks_Abstraction_4013(NamedElement target,
+			CrossReferenceAdapter crossReferencer) {
 		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		Collection<EStructuralFeature.Setting> settings = crossReferencer.getInverseReferences(target);
 		for (EStructuralFeature.Setting setting : settings) {
@@ -3357,7 +3365,8 @@ public class UMLDiagramUpdater implements DiagramUpdater {
 	/**
 	 * @generated
 	 */
-	protected Collection<UMLLinkDescriptor> getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4015(Element target, CrossReferenceAdapter crossReferencer) {
+	protected Collection<UMLLinkDescriptor> getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4015(
+			Element target, CrossReferenceAdapter crossReferencer) {
 		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		Collection<EStructuralFeature.Setting> settings = crossReferencer.getInverseReferences(target);
 		for (EStructuralFeature.Setting setting : settings) {
@@ -3371,7 +3380,8 @@ public class UMLDiagramUpdater implements DiagramUpdater {
 	/**
 	 * @generated
 	 */
-	protected Collection<UMLLinkDescriptor> getIncomingFeatureModelFacetLinks_Constraint_ConstrainedElement_4009(Element target, CrossReferenceAdapter crossReferencer) {
+	protected Collection<UMLLinkDescriptor> getIncomingFeatureModelFacetLinks_Constraint_ConstrainedElement_4009(
+			Element target, CrossReferenceAdapter crossReferencer) {
 		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		Collection<EStructuralFeature.Setting> settings = crossReferencer.getInverseReferences(target);
 		for (EStructuralFeature.Setting setting : settings) {
@@ -3385,7 +3395,8 @@ public class UMLDiagramUpdater implements DiagramUpdater {
 	/**
 	 * @generated
 	 */
-	protected Collection<UMLLinkDescriptor> getIncomingTypeModelFacetLinks_Dependency_4010(NamedElement target, CrossReferenceAdapter crossReferencer) {
+	protected Collection<UMLLinkDescriptor> getIncomingTypeModelFacetLinks_Dependency_4010(NamedElement target,
+			CrossReferenceAdapter crossReferencer) {
 		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		Collection<EStructuralFeature.Setting> settings = crossReferencer.getInverseReferences(target);
 		for (EStructuralFeature.Setting setting : settings) {
@@ -3410,7 +3421,8 @@ public class UMLDiagramUpdater implements DiagramUpdater {
 	/**
 	 * @generated
 	 */
-	protected Collection<UMLLinkDescriptor> getIncomingTypeModelFacetLinks_Dependency_4017(NamedElement target, CrossReferenceAdapter crossReferencer) {
+	protected Collection<UMLLinkDescriptor> getIncomingTypeModelFacetLinks_Dependency_4017(NamedElement target,
+			CrossReferenceAdapter crossReferencer) {
 		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		Collection<EStructuralFeature.Setting> settings = crossReferencer.getInverseReferences(target);
 		for (EStructuralFeature.Setting setting : settings) {
@@ -3749,7 +3761,8 @@ public class UMLDiagramUpdater implements DiagramUpdater {
 	/**
 	 * @generated
 	 */
-	protected Collection<UMLLinkDescriptor> getOutgoingFeatureModelFacetLinks_Comment_AnnotatedElement_4015(Comment source) {
+	protected Collection<UMLLinkDescriptor> getOutgoingFeatureModelFacetLinks_Comment_AnnotatedElement_4015(
+			Comment source) {
 		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		for (Iterator<?> destinations = source.getAnnotatedElements()
 				.iterator(); destinations.hasNext();) {
@@ -3762,7 +3775,8 @@ public class UMLDiagramUpdater implements DiagramUpdater {
 	/**
 	 * @generated
 	 */
-	protected Collection<UMLLinkDescriptor> getOutgoingFeatureModelFacetLinks_Constraint_ConstrainedElement_4009(Constraint source) {
+	protected Collection<UMLLinkDescriptor> getOutgoingFeatureModelFacetLinks_Constraint_ConstrainedElement_4009(
+			Constraint source) {
 		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		for (Iterator<?> destinations = source.getConstrainedElements()
 				.iterator(); destinations.hasNext();) {

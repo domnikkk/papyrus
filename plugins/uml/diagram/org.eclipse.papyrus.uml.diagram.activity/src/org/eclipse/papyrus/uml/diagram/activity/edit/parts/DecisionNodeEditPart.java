@@ -52,15 +52,15 @@ import org.eclipse.papyrus.uml.diagram.activity.edit.policies.OpenDiagramEditPol
 import org.eclipse.papyrus.uml.diagram.activity.locator.LinkedBehaviorLocator;
 import org.eclipse.papyrus.uml.diagram.activity.part.UMLVisualIDRegistry;
 import org.eclipse.papyrus.uml.diagram.activity.providers.UMLElementTypes;
-import org.eclipse.papyrus.uml.diagram.common.editparts.UMLNodeEditPart;
+import org.eclipse.papyrus.uml.diagram.common.editparts.RoundedCompartmentEditPart;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.ChangeStereotypedShapeEditPolicy;
-import org.eclipse.papyrus.uml.diagram.common.figure.node.DiamondNode;
+import org.eclipse.papyrus.uml.diagram.common.figure.node.RoundedCompartmentFigure;
 import org.eclipse.swt.graphics.Color;
 
 /**
  * @generated
  */
-public class DecisionNodeEditPart extends UMLNodeEditPart {
+public class DecisionNodeEditPart extends RoundedCompartmentEditPart {
 
 	/**
 	 * @generated
@@ -159,15 +159,15 @@ public class DecisionNodeEditPart extends UMLNodeEditPart {
 	 */
 	@Override
 	protected IFigure createNodeShape() {
-		return primaryShape = new DiamondNode();
+		return primaryShape = new RoundedCompartmentFigure();
 	}
 
 	/**
 	 * @generated
 	 */
 	@Override
-	public DiamondNode getPrimaryShape() {
-		return (DiamondNode) primaryShape;
+	public RoundedCompartmentFigure getPrimaryShape() {
+		return (RoundedCompartmentFigure) primaryShape;
 	}
 
 	/**
@@ -271,7 +271,7 @@ public class DecisionNodeEditPart extends UMLNodeEditPart {
 	 */
 	@Override
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(UMLVisualIDRegistry.getType(DecisionInputEditPart.VISUAL_ID));
+		return getChildBySemanticHint(UMLVisualIDRegistry.getType(DecisionNodeFloatingNameEditPart.VISUAL_ID));
 	}
 
 	/**

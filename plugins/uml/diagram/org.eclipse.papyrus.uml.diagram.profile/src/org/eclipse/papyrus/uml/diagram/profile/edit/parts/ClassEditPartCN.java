@@ -36,7 +36,7 @@ import org.eclipse.papyrus.uml.diagram.common.editpolicies.ConstrainedItemBorder
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.PapyrusCreationEditPolicy;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.QualifiedNameDisplayEditPolicy;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.ShowHideCompartmentEditPolicy;
-import org.eclipse.papyrus.uml.diagram.common.figure.node.ClassifierFigure;
+import org.eclipse.papyrus.uml.diagram.common.figure.node.ClassFigure;
 import org.eclipse.papyrus.uml.diagram.profile.custom.policies.CustomGraphicalNodeEditPolicy;
 import org.eclipse.papyrus.uml.diagram.profile.custom.policies.itemsemantic.CustomClassItemSemanticEditPolicyCN;
 import org.eclipse.papyrus.uml.diagram.profile.edit.policies.ClassItemSemanticEditPolicyCN;
@@ -118,8 +118,9 @@ public class ClassEditPartCN extends ClassifierEditPart {
 	}
 
 	/**
-	 *Papyrus codeGen
-	 *@generated
+	 * Papyrus codeGen
+	 *
+	 * @generated
 	 **/
 	@Override
 	protected void handleNotificationEvent(Notification event) {
@@ -132,7 +133,7 @@ public class ClassEditPartCN extends ClassifierEditPart {
 	 */
 	@Override
 	protected IFigure createNodeShape() {
-		return primaryShape = new ClassifierFigure();
+		return primaryShape = new ClassFigure();
 	}
 
 	/**
@@ -141,8 +142,8 @@ public class ClassEditPartCN extends ClassifierEditPart {
 	 * @generated
 	 */
 	@Override
-	public ClassifierFigure getPrimaryShape() {
-		return (ClassifierFigure) primaryShape;
+	public ClassFigure getPrimaryShape() {
+		return (ClassFigure) primaryShape;
 	}
 
 	/**
