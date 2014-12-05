@@ -5,4 +5,21 @@
 	<Composite.layout>
 		<ppel:PropertiesLayout></ppel:PropertiesLayout>
 	</Composite.layout>
+	<Composite>
+		<Composite.layout>
+			<ppel:PropertiesLayout></ppel:PropertiesLayout>
+		</Composite.layout>
+		<ppe:StringEditor input="{Binding}" property="UML:NamedElement:name"></ppe:StringEditor>
+	</Composite>
+	<Composite>
+		<Composite.layout>
+			<ppel:PropertiesLayout numColumns="3"></ppel:PropertiesLayout>
+		</Composite.layout>
+		<ppe:MultiReference input="{Binding}"
+			property="UMLRealTimeExt:Protocol:provides" customLabel="Provided"></ppe:MultiReference>
+		<ppe:MultiReference input="{Binding}"
+			property="UMLRealTimeExt:Protocol:required" customLabel="Required"></ppe:MultiReference>
+		<ppe:MultiReference input="{Binding}"
+			property="UMLRealTimeExt:Protocol:provreq" customLabel="Prov/Req"></ppe:MultiReference>
+	</Composite>
 </Composite>

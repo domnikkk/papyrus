@@ -56,7 +56,7 @@ import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.DependencyNodeEditPart;
 import org.eclipse.papyrus.uml.diagram.clazz.providers.UMLElementTypes;
 import org.eclipse.papyrus.uml.diagram.common.commands.DeleteLinkDuringCreationCommand;
 import org.eclipse.papyrus.uml.diagram.common.commands.SemanticAdapter;
-import org.eclipse.papyrus.uml.diagram.common.editpolicies.CommonDiagramDragDropEditPolicy;
+import org.eclipse.papyrus.uml.diagram.common.helper.Element2IAdaptableRegistryHelper;
 import org.eclipse.papyrus.uml.diagram.common.helper.ElementHelper;
 import org.eclipse.uml2.uml.Dependency;
 import org.eclipse.uml2.uml.NamedElement;
@@ -69,7 +69,7 @@ import org.eclipse.uml2.uml.UMLPackage;
 @SuppressWarnings("restriction")
 public class MultiDependencyHelper extends ElementHelper {
 
-	private final CommonDiagramDragDropEditPolicy.CompositeCommandRegistryHelper myVirtualNodesRegistry;
+	private final Element2IAdaptableRegistryHelper myVirtualNodesRegistry;
 
 	/**
 	 * Instantiates a new multi dependency helper.
@@ -78,10 +78,10 @@ public class MultiDependencyHelper extends ElementHelper {
 	 *            the edit domain
 	 */
 	public MultiDependencyHelper(TransactionalEditingDomain editDomain) {
-		this(editDomain, new CommonDiagramDragDropEditPolicy.CompositeCommandRegistryHelper());
+		this(editDomain, new Element2IAdaptableRegistryHelper());
 	}
 
-	public MultiDependencyHelper(TransactionalEditingDomain editDomain, CommonDiagramDragDropEditPolicy.CompositeCommandRegistryHelper virtualNodesRegistry) {
+	public MultiDependencyHelper(TransactionalEditingDomain editDomain, Element2IAdaptableRegistryHelper virtualNodesRegistry) {
 		super();
 		this.editDomain = editDomain;
 		myVirtualNodesRegistry = virtualNodesRegistry;
