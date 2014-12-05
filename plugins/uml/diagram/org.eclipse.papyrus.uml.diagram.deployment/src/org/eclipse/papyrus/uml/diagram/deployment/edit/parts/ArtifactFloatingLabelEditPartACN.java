@@ -17,6 +17,7 @@ import java.util.List;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.geometry.Point;
+import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.RecordingCommand;
@@ -30,9 +31,11 @@ import org.eclipse.gef.tools.DirectEditManager;
 import org.eclipse.gmf.runtime.common.ui.services.parser.IParser;
 import org.eclipse.gmf.runtime.common.ui.services.parser.IParserEditStatus;
 import org.eclipse.gmf.runtime.common.ui.services.parser.ParserOptions;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.LabelDirectEditPolicy;
+import org.eclipse.gmf.runtime.diagram.ui.figures.IBorderItemLocator;
 import org.eclipse.gmf.runtime.diagram.ui.l10n.DiagramColorRegistry;
 import org.eclipse.gmf.runtime.diagram.ui.requests.RequestConstants;
 import org.eclipse.gmf.runtime.diagram.ui.tools.TextDirectEditManager;
@@ -42,7 +45,6 @@ import org.eclipse.gmf.runtime.emf.ui.services.parser.ISemanticParser;
 import org.eclipse.gmf.runtime.notation.FontStyle;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.gmf.tooling.runtime.edit.policies.DefaultNodeLabelDragPolicy;
 import org.eclipse.jface.dialogs.Dialog;
 import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
 import org.eclipse.jface.viewers.ICellEditorValidator;
@@ -57,11 +59,12 @@ import org.eclipse.papyrus.extensionpoints.editors.ui.ILabelEditorDialog;
 import org.eclipse.papyrus.extensionpoints.editors.ui.IPopupEditorHelper;
 import org.eclipse.papyrus.extensionpoints.editors.utils.DirectEditorsUtil;
 import org.eclipse.papyrus.extensionpoints.editors.utils.IDirectEditorsIds;
-import org.eclipse.papyrus.infra.gmfdiag.common.editpart.IControlParserForDirectEdit;
-import org.eclipse.papyrus.infra.gmfdiag.common.editpart.PapyrusCompartmentEditPart;
+import org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.ExternalLabelPrimaryDragRoleEditPolicy;
 import org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.IMaskManagedLabelEditPolicy;
 import org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.IndirectMaskLabelEditPolicy;
+import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.PapyrusWrappingLabel;
 import org.eclipse.papyrus.uml.diagram.common.directedit.MultilineLabelDirectEditManager;
+import org.eclipse.papyrus.uml.diagram.common.editparts.FloatingLabelEditPart;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.IDirectEdition;
 import org.eclipse.papyrus.uml.diagram.common.figure.node.ILabelFigure;
 import org.eclipse.papyrus.uml.diagram.deployment.edit.policies.UMLTextSelectionEditPolicy;
@@ -81,12 +84,15 @@ import org.eclipse.uml2.uml.Feature;
 /**
  * @generated
  */
-public class NestedArtifactNameEditPart extends PapyrusCompartmentEditPart implements ITextAwareEditPart, IControlParserForDirectEdit {
+public class ArtifactFloatingLabelEditPartACN extends
+		FloatingLabelEditPart
+		implements ITextAwareEditPart, IBorderItemEditPart
+{
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 41;
+	public static final int VISUAL_ID = 60;
 
 	/**
 	 * @generated
@@ -122,10 +128,18 @@ public class NestedArtifactNameEditPart extends PapyrusCompartmentEditPart imple
 	 */
 	protected IDirectEditorConfiguration configuration;
 
+
 	/**
 	 * @generated
 	 */
-	public NestedArtifactNameEditPart(View view) {
+	static {
+		registerSnapBackPosition(UMLVisualIDRegistry.getType(org.eclipse.papyrus.uml.diagram.deployment.edit.parts.ArtifactFloatingLabelEditPartACN.VISUAL_ID), new Point(0, 0));
+	}
+
+	/**
+	 * @generated
+	 */
+	public ArtifactFloatingLabelEditPartACN(View view) {
 		super(view);
 	}
 
@@ -135,10 +149,36 @@ public class NestedArtifactNameEditPart extends PapyrusCompartmentEditPart imple
 	@Override
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicy.SELECTION_FEEDBACK_ROLE, new UMLTextSelectionEditPolicy());
 		installEditPolicy(EditPolicy.DIRECT_EDIT_ROLE, new LabelDirectEditPolicy());
-		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, new DefaultNodeLabelDragPolicy());
+		installEditPolicy(EditPolicy.SELECTION_FEEDBACK_ROLE, new UMLTextSelectionEditPolicy());
+		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, new ExternalLabelPrimaryDragRoleEditPolicy());
 	}
+
+	/**
+	 * @generated
+	 */
+	@Override
+	public IBorderItemLocator getBorderItemLocator() {
+		IFigure parentFigure = getFigure().getParent();
+		if (parentFigure != null && parentFigure.getLayoutManager() != null) {
+			Object constraint = parentFigure.getLayoutManager().getConstraint(getFigure());
+			return (IBorderItemLocator) constraint;
+		}
+		return null;
+	}
+
+	/**
+	 * @generated
+	 */
+	@Override
+	public void refreshBounds() {
+		int x = ((Integer) getStructuralFeatureValue(NotationPackage.eINSTANCE.getLocation_X())).intValue();
+		int y = ((Integer) getStructuralFeatureValue(NotationPackage.eINSTANCE.getLocation_Y())).intValue();
+		int width = ((Integer) getStructuralFeatureValue(NotationPackage.eINSTANCE.getSize_Width())).intValue();
+		int height = ((Integer) getStructuralFeatureValue(NotationPackage.eINSTANCE.getSize_Height())).intValue();
+		getBorderItemLocator().setConstraint(new Rectangle(x, y, width, height));
+	}
+
 
 	/**
 	 * @generated
@@ -223,7 +263,6 @@ public class NestedArtifactNameEditPart extends PapyrusCompartmentEditPart imple
 	/**
 	 * @generated
 	 */
-	@Override
 	public void setParser(IParser parser) {
 		this.parser = parser;
 	}
@@ -354,7 +393,7 @@ public class NestedArtifactNameEditPart extends PapyrusCompartmentEditPart imple
 	@Override
 	public IParser getParser() {
 		if (parser == null) {
-			parser = UMLParserProvider.getParser(UMLElementTypes.Artifact_40, getParserElement(), UMLVisualIDRegistry.getType(org.eclipse.papyrus.uml.diagram.deployment.edit.parts.NestedArtifactNameEditPart.VISUAL_ID));
+			parser = UMLParserProvider.getParser(UMLElementTypes.Artifact_28, getParserElement(), UMLVisualIDRegistry.getType(org.eclipse.papyrus.uml.diagram.deployment.edit.parts.ArtifactFloatingLabelEditPartACN.VISUAL_ID));
 		}
 		return parser;
 	}
@@ -764,30 +803,12 @@ public class NestedArtifactNameEditPart extends PapyrusCompartmentEditPart imple
 		}
 	}
 
-	/**
-	 * @generated
-	 */
-	@Override
-	protected void addNotationalListeners() {
-		super.addNotationalListeners();
-		addListenerFilter("PrimaryView", this, getPrimaryView()); //$NON-NLS-1$
-	}
-
-	/**
-	 * @generated
-	 */
-	@Override
-	protected void removeNotationalListeners() {
-		super.removeNotationalListeners();
-		removeListenerFilter("PrimaryView"); //$NON-NLS-1$
-	}
 
 	/**
 	 * @generated
 	 */
 	@Override
 	protected void handleNotificationEvent(Notification event) {
-		refreshLabel();
 		Object feature = event.getFeature();
 		if (NotationPackage.eINSTANCE.getFontStyle_FontColor().equals(feature)) {
 			Integer c = (Integer) event.getNewValue();
@@ -825,47 +846,16 @@ public class NestedArtifactNameEditPart extends PapyrusCompartmentEditPart imple
 	 */
 	@Override
 	protected IFigure createFigure() {
-		// Parent should assign one using setLabel() method
-		return null;
+		IFigure label = createFigurePrim();
+		defaultText = getLabelTextHelper(label);
+		return label;
 	}
 
 	/**
 	 * @generated
 	 */
-	private static final String ADD_PARENT_MODEL = "AddParentModel";
-
-	/**
-	 * @generated
-	 */
-	@Override
-	public void activate() {
-		super.activate();
-		addOwnerElementListeners();
+	protected IFigure createFigurePrim() {
+		return new PapyrusWrappingLabel();
 	}
 
-	/**
-	 * @generated
-	 */
-	protected void addOwnerElementListeners() {
-		addListenerFilter(ADD_PARENT_MODEL, this, ((View) getParent().getModel()));
-
-	}
-
-	/**
-	 * @generated
-	 */
-	@Override
-	public void deactivate() {
-		removeOwnerElementListeners();
-		super.deactivate();
-
-	}
-
-	/**
-	 * @generated
-	 */
-	protected void removeOwnerElementListeners() {
-		removeListenerFilter(ADD_PARENT_MODEL);
-
-	}
 }

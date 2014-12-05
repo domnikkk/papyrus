@@ -27,7 +27,7 @@ public class ArtifactCompositeCompartmentItemSemanticEditPolicyCN extends UMLBas
 	 * @generated
 	 */
 	public ArtifactCompositeCompartmentItemSemanticEditPolicyCN() {
-		super(UMLElementTypes.Artifact_40);
+		super(UMLElementTypes.Artifact_25);
 	}
 
 	/**
