@@ -10,6 +10,7 @@ package org.eclipse.papyrus.revision.tool.queries;
 
 import org.eclipse.emf.compare.Comparison;
 import org.eclipse.emf.compare.DifferenceKind;
+import org.eclipse.emf.compare.ReferenceChange;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.papyrus.emf.facet.custom.metamodel.custompt.IColor;
 import org.eclipse.papyrus.emf.facet.custom.ui.internal.custompt.Color;
@@ -24,6 +25,11 @@ import org.eclipse.uml2.uml.Element;
 
 /** isAVariableElement */
 public class GetBackgroundColor implements  IJavaQuery2<EObject, IColor> {
+	protected Color blue=new Color(0,0,250);
+	protected Color red=new Color(250,0,0);
+	protected Color green=new Color(0,250,0);
+	protected Color black=new Color(0,0,0);
+	
 	public IColor evaluate(final EObject context, final IParameterValueList2 parameterValues, final IFacetManager facetManager){
 		if( context instanceof Element){
 			Element element= (Element)context;
@@ -32,20 +38,36 @@ public class GetBackgroundColor implements  IJavaQuery2<EObject, IColor> {
 				ReviewResourceManager reviewResourceManager=((ReviewsEditor)part).getReviewResourceManager();
 				if(reviewResourceManager.getCurrentReviewModelWithoutLoading()!=null){
 				Comparison comparison=reviewResourceManager.getDiffModel();
+				if(comparison.getMatch(element)!=null){
+					return blue;
+				}
+				
 				if(comparison.getDifferences(element).size()>0){
-					if(comparison.getDifferences(element).get(0).getKind().equals(DifferenceKind.DELETE)){
-						return new Color(250,0,0);
+					if(comparison.getDifferences(element).get(0).getKind().equals(DifferenceKind.DELETE)&& isChangeAboutContaiment(comparison, element)){
+								return red;
 					}
-					if(comparison.getDifferences(element).get(0).getKind().equals(DifferenceKind.ADD)){
-						return new Color(0,250,0);
+					if(comparison.getDifferences(element).get(0).getKind().equals(DifferenceKind.ADD)&& isChangeAboutContaiment(comparison, element)){
+								return green;
 					}
-					else{return new Color(0,0,250);}
+					if(comparison.getDifferences(element).get(0).getKind().equals(DifferenceKind.CHANGE)){
+						return blue;
+					}
+					else{return black;}
 					
 				}
-				else{return new Color(0,0,0);}
+				else{return black;}
 			}
 			}
 		}
-		return new Color(0,0,0);
+		return black;
+	}
+	protected boolean isChangeAboutContaiment(Comparison comparison, EObject element){
+		if(comparison.getDifferences(element).get(0) instanceof ReferenceChange){
+			ReferenceChange refChange=(ReferenceChange)comparison.getDifferences(element).get(0);
+			if( refChange.getReference().isContainment()){
+				return true;
+			}
+		}
+		return false;
 	}
 }

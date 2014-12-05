@@ -13,11 +13,14 @@
  *****************************************************************************/
 package org.eclipse.papyrus.revision.tool.ui;
 
+import java.util.List;
+
 import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.papyrus.revision.tool.core.I_ReviewStereotype;
 import org.eclipse.uml2.uml.Comment;
 import org.eclipse.uml2.uml.Package;
+import org.eclipse.uml2.uml.Stereotype;
 
 /**
  * content provider to display reviews
@@ -47,7 +50,17 @@ public class ReviewsTreeContentProvider implements ITreeContentProvider{
 		}
 		if(inputElement instanceof Comment ){
 			Comment cmt=(Comment)inputElement;
-			if(cmt.getApplicableStereotype(I_ReviewStereotype.REVIEW_STEREOTYPE)!=null){
+			Stereotype theReviewStereotype=cmt.getApplicableStereotype(I_ReviewStereotype.COMMENT_STEREOTYPE);
+			Stereotype reviewStereotype=null;
+			List<Stereotype> stereotypes= cmt.getAppliedStereotypes();
+			System.out.println(cmt);
+			for (Stereotype stereotype : stereotypes) {
+				if(stereotype.getGenerals().contains(theReviewStereotype)){
+					reviewStereotype=stereotype;
+				}
+			}
+			
+			if(reviewStereotype!=null){
 				((Comment)inputElement).getOwnedComments().toArray();
 			}
 		}
@@ -64,7 +77,17 @@ public class ReviewsTreeContentProvider implements ITreeContentProvider{
 		}
 		if(parentElement instanceof Comment ){
 			Comment cmt=(Comment)parentElement;
-			if(cmt.getApplicableStereotype(I_ReviewStereotype.REVIEW_STEREOTYPE)!=null){
+			Stereotype theReviewStereotype=cmt.getApplicableStereotype(I_ReviewStereotype.COMMENT_STEREOTYPE);
+			Stereotype reviewStereotype=null;
+			List<Stereotype> stereotypes= cmt.getAppliedStereotypes();
+			System.out.println(cmt);
+			for (Stereotype stereotype : stereotypes) {
+				if(stereotype.getGenerals().contains(theReviewStereotype)){
+					reviewStereotype=stereotype;
+				}
+			}
+			
+			if(reviewStereotype!=null){
 				return ((Comment)parentElement).getOwnedComments().toArray();
 			}
 		}

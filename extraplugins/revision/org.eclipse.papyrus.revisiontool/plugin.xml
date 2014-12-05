@@ -75,6 +75,14 @@
          class="org.eclipse.papyrus.revision.tool.handlers.HookReviewHandler"
          commandId="org.eclipse.papyrus.revisiontool.commands.hookreview">
    </handler>
+   <handler
+         class="org.eclipse.papyrus.revision.tool.handlers.RefuseReviewHandler"
+         commandId="org.eclipse.papyrus.revisiontool.commands.refusereview">
+   </handler>
+   <handler
+         class="org.eclipse.papyrus.revision.tool.handlers.AcceptReviewHandler"
+         commandId="org.eclipse.papyrus.revisiontool.commands.acceptreview">
+   </handler>
 </extension>
 <extension
       point="org.eclipse.ui.bindings">
@@ -133,6 +141,22 @@
             style="push"
             tooltip="Hook">
       </command>
+      <command
+            commandId="org.eclipse.papyrus.revisiontool.commands.acceptreview"
+            icon="img/accept.JPG"
+            id="org.eclipse.papyrus.revisiontool.commands.acceptreview"
+            label="Accept Review"
+            style="push"
+            tooltip="Accept Review">
+      </command>
+      <command
+            commandId="org.eclipse.papyrus.revisiontool.commands.refusereview"
+            icon="img/refuse.JPG"
+            id="org.eclipse.papyrus.revisiontool.commands.refusereview"
+            label="Refuse Review"
+            style="push"
+            tooltip="Refuse Review">
+      </command>
    </menuContribution>
    <menuContribution
          allPopups="true"
@@ -167,15 +191,6 @@
                hoverIcon="Revision Mode"
                label="Revision Mode"
                style="toggle">
-            <visibleWhen
-                  checkEnabled="true">
-            </visibleWhen>
-         </command>
-         <command
-               commandId="org.eclipse.papyrus.revision.tool.handlers.SaveSnapshotRevision"
-               hoverIcon="Save snapshot Revision Mode"
-               label="Save snapshot Revision Mode (TMP)"
-               style="push">
             <visibleWhen
                   checkEnabled="true">
             </visibleWhen>

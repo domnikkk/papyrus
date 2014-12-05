@@ -153,7 +153,11 @@ This review could be displayed on diagrams. A dedicated view must be displayed d
 The revision model cannot be opened without the associated &quot;working model&quot;.</body>
           </ownedComment>
         </ownedUseCase>
-        <ownedUseCase xmi:type="uml:UseCase" xmi:id="_OCgFYHFlEeSV7vTAYq-uEw" name="Close  WorkingModel or close review editor " subject="_mBiIkE-_EeSWG8b7b00v3Q"/>
+        <ownedUseCase xmi:type="uml:UseCase" xmi:id="_OCgFYHFlEeSV7vTAYq-uEw" name="Close  WorkingModel or close review editor " subject="_mBiIkE-_EeSWG8b7b00v3Q">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_MFUSsHr3EeSTvs152JJ-KQ">
+            <body>When user close the papyrus where  the &quot;working model&quot; is edited, the review editor is closed</body>
+          </ownedComment>
+        </ownedUseCase>
       </packagedElement>
       <packagedElement xmi:type="uml:Component" xmi:id="_PUSL5E6_EeSsPatWHMT5jQ" name="RevisionTool" useCase="_1ygkUE7KEeSjDupdFZ5PpA _7eGOIE7KEeSjDupdFZ5PpA __i7VgE7KEeSjDupdFZ5PpA _rCRfcE7LEeSjDupdFZ5PpA _vWS5YE7LEeSjDupdFZ5PpA _2WHLME7LEeSjDupdFZ5PpA _5QGQEE7LEeSjDupdFZ5PpA _EADO8E-5EeSWG8b7b00v3Q _W-O9YHF9EeSENPH62bfYEw _ZOwOgHF9EeSENPH62bfYEw _WEvvoHGIEeS3EdgtJYAZRQ">
         <ownedUseCase xmi:type="uml:UseCase" xmi:id="_rCRfcE7LEeSjDupdFZ5PpA" name="Launch Revision mode" subject="_PUSL5E6_EeSsPatWHMT5jQ">

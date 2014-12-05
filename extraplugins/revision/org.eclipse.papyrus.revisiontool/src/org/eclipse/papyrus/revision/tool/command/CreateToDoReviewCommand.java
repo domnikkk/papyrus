@@ -16,6 +16,11 @@ package org.eclipse.papyrus.revision.tool.command;
 import java.text.DateFormat;
 import java.util.Date;
 
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.impl.BinaryResourceImpl;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.papyrus.revision.tool.core.I_ReviewStereotype;
@@ -30,23 +35,26 @@ import org.eclipse.uml2.uml.UMLFactory;
  * this command is used to create a comment stereotyped review with filled information about author and versioning
  *
  */
-public class CreateReviewCommand extends RecordingCommand {
+public class CreateToDoReviewCommand extends RecordingCommand {
 	protected Actor theauthor=null;
 	protected Element container=null;
 	protected String subject; 
-	
+	protected EObject diff;
+
 	/**
 	 * use to create a review
 	 * @param domain the transactional editing domain in order to execute the command
 	 * @param currentAuthor the current author
 	 * @param container the container of the review
 	 * @param subject the subject of the review
+	 * @param diff the Eobject that represent a modif in compare model
 	 */
-	public CreateReviewCommand(TransactionalEditingDomain domain, Actor currentAuthor, Element container, String subject) {
+	public CreateToDoReviewCommand(TransactionalEditingDomain domain, Actor currentAuthor, Element container, String subject,EObject diff) {
 		super(domain, "create Review");
 		this.theauthor= currentAuthor;
 		this.container= container;
 		this.subject= subject;
+		this.diff= diff;
 	}
 
 	@Override
@@ -56,9 +64,10 @@ public class CreateReviewCommand extends RecordingCommand {
 		cmt.setBody("Your review");
 		container.getOwnedComments().add(cmt);
 
-		Stereotype review= cmt.getApplicableStereotype(I_ReviewStereotype.REVIEW_STEREOTYPE);
+		Stereotype review= cmt.getApplicableStereotype(I_ReviewStereotype.TODO_STEREOTYPE);
 		cmt.applyStereotype(review);
 		cmt.setValue(review, I_ReviewStereotype.COMMENT_SUBJECT_ATT, subject);
+		cmt.setBody(theauthor.getName() +" has done "+ subject);
 
 		Stereotype authorStereotype= theauthor.getApplicableStereotype(I_VersioningStereotype.AUTHOR_STEREOTYPE);
 		cmt.setValue(review, I_VersioningStereotype.VERSIONINGELEMENT_AUTHOR_ATT, theauthor.getStereotypeApplication(authorStereotype));
@@ -67,7 +76,12 @@ public class CreateReviewCommand extends RecordingCommand {
 		Date today = new Date();
 		DateFormat shortDateFormat = DateFormat.getDateTimeInstance(DateFormat.SHORT,DateFormat.SHORT);
 		cmt.setValue(review, I_VersioningStereotype.VERSIONINGELEMENT_DATE_ATT, shortDateFormat.format(today));
-
+		Resource resource = diff.eResource();
+		if (resource != null)
+		{
+			String uriFragment = resource.getURIFragment(diff);
+			cmt.setValue(review, I_ReviewStereotype.COMMENT_DIFFREF_ATT,resource.getURIFragment(diff) );
+		}
 	}
 
 }

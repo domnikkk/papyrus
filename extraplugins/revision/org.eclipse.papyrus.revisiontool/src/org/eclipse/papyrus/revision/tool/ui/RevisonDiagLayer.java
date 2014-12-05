@@ -16,7 +16,9 @@ package org.eclipse.papyrus.revision.tool.ui;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.emf.compare.Comparison;
+import org.eclipse.emf.compare.Diff;
 import org.eclipse.emf.compare.DifferenceKind;
+import org.eclipse.emf.compare.ReferenceChange;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.CompartmentEditPart;
@@ -86,6 +88,7 @@ public class RevisonDiagLayer {
 		Comparison comparison=reviewResourceManager.getDiffModel();
 		RemovedFig removedFig=null;
 		AddingFig addingFig=null;
+		SetFig setFig=null;
 		for (Object subFig : fig.getChildren()) {
 			if(subFig instanceof RemovedFig){
 				removedFig=(RemovedFig)subFig;
@@ -93,47 +96,39 @@ public class RevisonDiagLayer {
 			if(subFig instanceof AddingFig){
 				addingFig=(AddingFig)subFig;
 			}
+			if(subFig instanceof SetFig){
+				setFig=(SetFig)subFig;
+			}
+		}
+		if(comparison.getMatch(semanticEObject)!=null){
+			if(setFig==null){
+				setFig= new SetFig("Bob");
+				fig.add(setFig);
+			}
+			setFigurePosition(editPart, fig, setFig);
+		}
+		else{
+			if(setFig!=null){
+				fig.remove(setFig);
+			}
 		}
 
 		if(comparison.getDifferences(semanticEObject).size()>0){
-			if(comparison.getDifferences(semanticEObject).get(0).getKind().equals(DifferenceKind.DELETE)){
+			Diff diff=comparison.getDifferences(semanticEObject).get(0);
+			if(diff.getKind().equals(DifferenceKind.DELETE)&&isChangeAboutContaiment(comparison, semanticEObject)){
 				if(removedFig==null){
 					removedFig= new RemovedFig();
 					fig.add(removedFig);
 				}
-
-				if(fig instanceof PolylineConnectionEx){
-					Rectangle rect = new Rectangle(((PolylineConnectionEx)fig).getPoints().getFirstPoint(), ((PolylineConnectionEx)fig).getPoints().getLastPoint());
-					if(rect.x==0 &&rect.y==0){
-						if(editPart instanceof ConnectionEditPart){
-							rect=((GraphicalEditPart)((ConnectionEditPart)editPart).getSource()).getFigure().getBounds().getCopy();
-							rect=rect.getUnion(((GraphicalEditPart)((ConnectionEditPart)editPart).getTarget()).getFigure().getBounds());
-						}
-					}
-					removedFig.setBounds(rect);
-
-				}
-				else{
-					removedFig.setBounds(fig.getBounds());}
+				setFigurePosition(editPart, fig, removedFig);
 			}
 
-			else if(comparison.getDifferences(semanticEObject).get(0).getKind().equals(DifferenceKind.ADD)){
+			else if(diff.getKind().equals(DifferenceKind.ADD)&& isChangeAboutContaiment(comparison, semanticEObject)){
 				if(addingFig==null){
 					addingFig= new AddingFig();
 					fig.add(addingFig);
 				}
-				if(fig instanceof PolylineConnectionEx){
-					Rectangle rect = new Rectangle(((PolylineConnectionEx)fig).getPoints().getFirstPoint(), ((PolylineConnectionEx)fig).getPoints().getLastPoint());
-					if(rect.x==0 &&rect.y==0){
-						if(editPart instanceof ConnectionEditPart){
-							rect=((GraphicalEditPart)((ConnectionEditPart)editPart).getSource()).getFigure().getBounds().getCopy();
-							rect=rect.getUnion(((GraphicalEditPart)((ConnectionEditPart)editPart).getTarget()).getFigure().getBounds());
-						}
-					}
-					addingFig.setBounds(rect);
-				}
-				else{
-					addingFig.setBounds(fig.getBounds());}
+				setFigurePosition(editPart, fig, addingFig);
 			}
 			else{
 				if(removedFig!=null){
@@ -141,8 +136,41 @@ public class RevisonDiagLayer {
 				}
 				if(addingFig!=null){
 					fig.remove(addingFig);
-				}		
+				}
+
 			}
 		}
+		else{
+			if(removedFig!=null){
+				fig.remove(removedFig);
+			}
+			if(addingFig!=null){
+				fig.remove(addingFig);
+			}
+		}
+	}
+
+	protected boolean isChangeAboutContaiment(Comparison comparison, EObject element){
+		if(comparison.getDifferences(element).get(0) instanceof ReferenceChange){
+			ReferenceChange refChange=(ReferenceChange)comparison.getDifferences(element).get(0);
+			if( refChange.getReference().isContainment()){
+				return true;
+			}
+		}
+		return false;
+	}
+	protected void setFigurePosition(Object editPart, IFigure fig, IFigure addingFig) {
+		if(fig instanceof PolylineConnectionEx){
+			Rectangle rect = new Rectangle(((PolylineConnectionEx)fig).getPoints().getFirstPoint(), ((PolylineConnectionEx)fig).getPoints().getLastPoint());
+			if(rect.x==0 &&rect.y==0){
+				if(editPart instanceof ConnectionEditPart){
+					rect=((GraphicalEditPart)((ConnectionEditPart)editPart).getSource()).getFigure().getBounds().getCopy();
+					rect=rect.getUnion(((GraphicalEditPart)((ConnectionEditPart)editPart).getTarget()).getFigure().getBounds());
+				}
+			}
+			addingFig.setBounds(rect);
+		}
+		else{
+			addingFig.setBounds(fig.getBounds());}
 	}
 }
