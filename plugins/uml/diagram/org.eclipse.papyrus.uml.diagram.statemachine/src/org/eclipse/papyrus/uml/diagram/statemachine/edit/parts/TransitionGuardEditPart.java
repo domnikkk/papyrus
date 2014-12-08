@@ -64,6 +64,7 @@ import org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.IndirectMaskLabelEd
 import org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.PapyrusLinkLabelDragPolicy;
 import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.PapyrusWrappingLabel;
 import org.eclipse.papyrus.uml.diagram.common.directedit.MultilineLabelDirectEditManager;
+import org.eclipse.papyrus.uml.diagram.common.editparts.ILabelRoleProvider;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.IDirectEdition;
 import org.eclipse.papyrus.uml.diagram.common.figure.node.ILabelFigure;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.policies.UMLTextSelectionEditPolicy;
@@ -83,7 +84,7 @@ import org.eclipse.uml2.uml.Feature;
 /**
  * @generated
  */
-public class TransitionGuardEditPart extends PapyrusLabelEditPart implements ITextAwareEditPart, IControlParserForDirectEdit {
+public class TransitionGuardEditPart extends PapyrusLabelEditPart implements ITextAwareEditPart, IControlParserForDirectEdit, ILabelRoleProvider {
 
 	/**
 	 * @generated
@@ -833,5 +834,21 @@ public class TransitionGuardEditPart extends PapyrusLabelEditPart implements ITe
 	 */
 	protected IFigure createFigurePrim() {
 		return new PapyrusWrappingLabel();
+	}
+
+	/**
+	 * @generated
+	 */
+	@Override
+	public String getLabelRole() {
+		return "Specification";//$NON-NLS-1$
+	}
+
+	/**
+	 * @generated
+	 */
+	@Override
+	public String getIconPathRole() {
+		return "platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Transition.gif";//$NON-NLS-1$
 	}
 }

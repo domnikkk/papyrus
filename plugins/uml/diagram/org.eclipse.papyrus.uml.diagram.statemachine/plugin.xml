@@ -1093,7 +1093,7 @@
 		  </predefinedEntry>
 		</contribution>
 		<editor id="org.eclipse.papyrus.uml.diagram.statemachine"/>
-	</paletteProvider>
+	</paletteProvider>	
 		
 </extension>
 
