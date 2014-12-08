@@ -15,8 +15,10 @@ package org.eclipse.papyrus.uml.diagram.usecase.handler;
 
 import org.eclipse.core.commands.IHandler;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
+import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.papyrus.uml.diagram.usecase.command.ChangetoDefaultShapeCommand;
 import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.SubjectClassifierEditPartTN;
+import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.UseCaseDiagramEditPart;
 import org.eclipse.uml2.uml.Actor;
 import org.eclipse.uml2.uml.UseCase;
 
@@ -35,6 +37,13 @@ public class SubjectHandler extends ChangeShapeHandler implements IHandler {
 			return false;
 		}
 
+		
+		Diagram diagram = editPart.getNotationView().getDiagram();
+		String diagramType = diagram.getType();
+		if (false == UseCaseDiagramEditPart.MODEL_ID.equals(diagramType)) {
+			return false;
+		}
+		
 		if ((editPart.resolveSemanticElement() instanceof org.eclipse.uml2.uml.Classifier && (!(editPart.resolveSemanticElement() instanceof Actor)) && (!(editPart.resolveSemanticElement() instanceof UseCase)))) {
 			if ((editPart instanceof SubjectClassifierEditPartTN)) {
 				return false;
