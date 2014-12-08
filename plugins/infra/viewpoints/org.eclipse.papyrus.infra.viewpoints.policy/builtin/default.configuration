@@ -251,6 +251,12 @@
           <feature href="http://www.eclipse.org/uml2/5.0.0/UML#//Package/packagedElement"/>
         </newModelPath>
       </owningRules>
+      <owningRules xmi:id="_Ouh-YHr8EeSCLb0lj5u3Mg">
+        <element href="http://www.eclipse.org/uml2/5.0.0/UML#//UseCase"/>
+        <newModelPath xmi:id="_Ouh-YXr8EeSCLb0lj5u3Mg" creationType="org.eclipse.papyrus.uml.Interaction">
+          <feature href="http://www.eclipse.org/uml2/5.0.0/UML#//BehavioredClassifier/classifierBehavior"/>
+        </newModelPath>
+      </owningRules>
       <childRules xmi:id="_7wM0wNxhEeOqHvRyiN87hA"/>
     </modelKinds>
     <modelKinds xsi:type="configuration:PapyrusDiagram" xmi:id="_7wM0wdxhEeOqHvRyiN87hA" implementationID="PapyrusUMLStateMachineDiagram" categories="_7wNb4txhEeOqHvRyiN87hA">
