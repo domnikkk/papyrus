@@ -35,6 +35,7 @@
 				</executions>
 				<configuration>
 					<excludes>
+						<plugin id="org.eclipse.epf.common.ui" />
 						<plugin id="org.eclipse.epf.common" />
 						<plugin id="org.eclipse.epf.common.html" />
 						<plugin id="org.eclipse.epf.richtext" />
