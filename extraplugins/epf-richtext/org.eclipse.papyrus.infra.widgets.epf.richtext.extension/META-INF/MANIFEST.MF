@@ -23,7 +23,8 @@ Require-Bundle: org.eclipse.epf.common,
  org.eclipse.papyrus.infra.emf;bundle-version="1.1.0",
  org.eclipse.papyrus.views.properties;bundle-version="1.1.0",
  org.eclipse.papyrus.uml.tools;bundle-version="1.1.0",
- org.eclipse.emf.transaction;bundle-version="1.8.0"
+ org.eclipse.emf.transaction;bundle-version="1.8.0",
+ org.eclipse.papyrus.emf.facet.custom.ui;bundle-version="1.1.0"
 Export-Package: org.eclipse.papyrus.infra.widgets.epf.richtext,
  org.eclipse.papyrus.infra.widgets.epf.richtext.extension,
  org.eclipse.papyrus.infra.widgets.epf.richtext.extension.actions,
