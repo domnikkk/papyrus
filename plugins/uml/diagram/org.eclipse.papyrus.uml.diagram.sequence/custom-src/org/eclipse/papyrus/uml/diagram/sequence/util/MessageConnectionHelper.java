@@ -49,7 +49,9 @@ public class MessageConnectionHelper {
 			if (!covereds.isEmpty()) {
 				target = covereds.get(0);
 			}
-		} else if (receiveEvent instanceof Gate) {
+		} else if (receiveEvent instanceof Gate 
+				// special handling of SyncMessages due to #425666
+				&& MessageSort.SYNCH_CALL_LITERAL != message.getMessageSort()) {
 			target = ((Gate) receiveEvent).getOwner();
 		}
 		return canExist(message, newSource, target);
@@ -66,7 +68,9 @@ public class MessageConnectionHelper {
 			if (!covereds.isEmpty()) {
 				source = covereds.get(0);
 			}
-		} else if (sendEvent instanceof Gate) {
+		} else if (sendEvent instanceof Gate
+				// special handling of SyncMessages due to #425666
+				&& MessageSort.SYNCH_CALL_LITERAL != message.getMessageSort()) {
 			source = ((Gate) sendEvent).getOwner();
 		}
 		return canExist(message, source, newTarget);
@@ -177,10 +181,20 @@ public class MessageConnectionHelper {
 	}
 
 	public static boolean canExistSynchMessage(Message message, Element source, Element target) {
-		if (source != null && !(source instanceof ExecutionSpecification || source instanceof Lifeline || source instanceof ExecutionOccurrenceSpecification)) {
+		if (target instanceof Message) {
 			return false;
 		}
-		if (target != null && !(target instanceof ExecutionSpecification || target instanceof Lifeline || target instanceof ExecutionOccurrenceSpecification)) {
+		if (source != null && !(source instanceof ExecutionSpecification || source instanceof Lifeline || source instanceof ExecutionOccurrenceSpecification || source instanceof MessageEnd)) {
+			return false;
+		}
+		if (target != null && !(target instanceof ExecutionSpecification || target instanceof Lifeline || target instanceof ExecutionOccurrenceSpecification || target instanceof MessageEnd)) {
+			return false;
+		}
+		if (source instanceof Gate) {
+			Message ownerMessage = ((Gate) source).getMessage();
+			return ownerMessage == null ? true : ownerMessage == message;
+		}
+		if (target instanceof Gate) {
 			return false;
 		}
 		return true;
