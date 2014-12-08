@@ -17,12 +17,13 @@ import com.google.inject.Inject
 import com.google.inject.Singleton
 import org.eclipse.gmf.codegen.gmfgen.GenDiagram
 import plugin.Activator
-import xpt.Common
+import xpt.Commonimport xpt.CodeStyle
 
 //We remove the dependance with DeleteElementAction. Now this action is added to the popup menu with the extension point org.eclipse.ui.popup 
 //in org.eclipse.papyrus.uml.diagram.common 
 @Singleton class DiagramEditorContextMenuProvider extends xpt.editor.DiagramEditorContextMenuProvider {
 	@Inject extension Common;
+	@Inject extension CodeStyle
 
 	@Inject Activator xptActivator;
 
@@ -64,6 +65,7 @@ import xpt.Common
 					org.eclipse.emf.transaction.util.TransactionUtil.getEditingDomain(
 							(org.eclipse.emf.ecore.EObject) getViewer().getContents().getModel()).runExclusive(new Runnable() {
 		
+						«overrideI(it.editorGen.diagram)»
 						public void run() {
 							org.eclipse.gmf.runtime.common.ui.services.action.contributionitem.ContributionItemService.getInstance().contributeToPopupMenu(
 									DiagramEditorContextMenuProvider.this, part);

@@ -23,11 +23,13 @@ import org.eclipse.gmf.codegen.gmfgen.GenNavigator
 import org.eclipse.gmf.codegen.gmfgen.Palette
 import xpt.Common
 import xpt.navigator.Utils_qvto
+import xpt.CodeStyle
 
 @Singleton class Editor extends xpt.editor.Editor {
 	@Inject extension Common;
 	@Inject NavigatorLinkHelper xptNavigatorLinkHelper;
-		@Inject extension Utils_qvto;
+	@Inject extension Utils_qvto;
+	@Inject extension CodeStyle
 
 	override extendsList(GenEditorView it) '''extends org.eclipse.papyrus.uml.diagram.common.part.UmlGmfDiagramEditor'''
 
@@ -212,6 +214,7 @@ protected org.eclipse.gef.ui.palette.PaletteViewerProvider createPaletteViewerPr
 			 * with a defaultTool that is the SelectToolEx that undestands how to handle the enter
 			 * key which will result in the creation of the shape also.
 			 */
+			«overrideC(it.editorGen.diagram)»
 			protected void configurePaletteViewer(org.eclipse.gef.ui.palette.PaletteViewer viewer) {
 				super.configurePaletteViewer(viewer);
 
@@ -229,6 +232,7 @@ protected org.eclipse.gef.ui.palette.PaletteViewerProvider createPaletteViewerPr
 				viewer.setCustomizer(createPaletteCustomizer());
 			}
 
+			«overrideC(it.editorGen.diagram)»
 			public org.eclipse.gef.ui.palette.PaletteViewer createPaletteViewer(org.eclipse.swt.widgets.Composite parent) {
 				org.eclipse.gef.ui.palette.PaletteViewer pViewer = constructPaletteViewer();
 				pViewer.createControl(parent);
@@ -256,6 +260,7 @@ protected org.eclipse.gef.ui.palette.PaletteViewerProvider createPaletteViewerPr
 						 *            the KeyEvent
 						 * @return <code>true</code> if KeyEvent was handled in some way
 						 */
+						«overrideC(it.editorGen.diagram)»
 						public boolean keyReleased(org.eclipse.swt.events.KeyEvent event) {
 
 							if (event.keyCode == org.eclipse.swt.SWT.Selection) {
@@ -303,6 +308,7 @@ protected org.eclipse.gef.ui.palette.PaletteViewerProvider createPaletteViewerPr
 						 * 
 						 * @see org.eclipse.swt.events.MouseListener#mouseDoubleClick(org.eclipse.swt.events.MouseEvent)
 						 */
+						«overrideI(it.editorGen.diagram)»
 						public void mouseDoubleClick(org.eclipse.swt.events.MouseEvent e) {
 							org.eclipse.gef.Tool tool = getPaletteViewer().getActiveTool().createTool();
 
@@ -320,10 +326,12 @@ protected org.eclipse.gef.ui.palette.PaletteViewerProvider createPaletteViewerPr
 							}
 						}
 
+						«overrideI(it.editorGen.diagram)»
 						public void mouseDown(org.eclipse.swt.events.MouseEvent e) {
 							// do nothing
 						}
 
+						«overrideI(it.editorGen.diagram)»
 						public void mouseUp(org.eclipse.swt.events.MouseEvent e) {
 							// Deactivate current active tool here if a
 							// double-click was handled.
@@ -374,6 +382,7 @@ def configureDiagramEditDomain (GenEditorView it)'''
 		super.configureDiagramEditDomain();
 		getDiagramEditDomain().getDiagramCommandStack().addCommandStackListener(new org.eclipse.gef.commands.CommandStackListener() {
 
+			«overrideI(it.editorGen.diagram)»
 			public void commandStackChanged(java.util.EventObject event) {
 				firePropertyChange( org.eclipse.ui.IEditorPart.PROP_DIRTY);
 			}
@@ -499,5 +508,32 @@ protected String getContextID() {
 	return CONTEXT_ID;
 }
 '''
+
+	override getAdapter(GenEditorView it) '''
+		«IF !hasPropertySheet(it) || hasNavigator(it)»
+			
+			«generatedMemberComment»
+			@SuppressWarnings("rawtypes")
+			public Object getAdapter(Class type) {
+				«IF !hasPropertySheet(it)»
+					if (type == org.eclipse.ui.views.properties.IPropertySheetPage.class) {
+						return null;
+					}
+				«ENDIF»
+				«IF hasNavigator(it)»
+					if (type == org.eclipse.ui.part.IShowInTargetList.class) {
+						return new org.eclipse.ui.part.IShowInTargetList() {
+							
+							«overrideI(it.editorGen.diagram)»
+							public String[] getShowInTargetIds() {
+								return new String[] { org.eclipse.ui.navigator.resources.ProjectExplorer.VIEW_ID };
+							}
+						};
+					}
+				«ENDIF»
+				return super.getAdapter(type);
+			}
+		«ENDIF»
+	'''
 
 }

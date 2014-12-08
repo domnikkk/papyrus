@@ -15,10 +15,11 @@ package aspects.xpt.navigator
 import com.google.inject.Inject
 import com.google.inject.Singleton
 import org.eclipse.gmf.codegen.gmfgen.GenNavigator
-import xpt.Common
+import xpt.Commonimport xpt.CodeStyle
 
 @Singleton class AbstractNavigatorItem extends xpt.navigator.AbstractNavigatorItem {
 	@Inject extension Common;
+	@Inject extension CodeStyle
 
 	override def registerAdapterFactory(GenNavigator it) '''
 		«generatedMemberComment()»
@@ -26,12 +27,14 @@ import xpt.Common
 			@SuppressWarnings("rawtypes")
 			final Class[] supportedTypes = new Class[] { org.eclipse.ui.views.properties.tabbed.ITabbedPropertySheetPageContributor.class };
 			final org.eclipse.ui.views.properties.tabbed.ITabbedPropertySheetPageContributor propertySheetPageContributor = new org.eclipse.ui.views.properties.tabbed.ITabbedPropertySheetPageContributor() {
+				«overrideI(it.editorGen.diagram)»
 				public String getContributorId() {
 					return "«editorGen.plugin.ID»";  «nonNLS(1)»
 				}
 			};
 			org.eclipse.core.runtime.Platform.getAdapterManager().registerAdapters(new org.eclipse.core.runtime.IAdapterFactory() {
 				
+				«overrideI(it.editorGen.diagram)»
 				@SuppressWarnings("rawtypes")
 				public Object getAdapter(Object adaptableObject, Class adapterType) {
 					if (adaptableObject instanceof «qualifiedClassName(it)» && adapterType == org.eclipse.ui.views.properties.tabbed.ITabbedPropertySheetPageContributor.class) {
@@ -40,6 +43,7 @@ import xpt.Common
 					return null;
 				}
 		
+				«overrideI(it.editorGen.diagram)»
 				@SuppressWarnings("rawtypes")
 				public Class[] getAdapterList() {
 					return supportedTypes;
