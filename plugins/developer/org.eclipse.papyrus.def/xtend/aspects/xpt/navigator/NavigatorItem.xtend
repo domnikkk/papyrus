@@ -15,10 +15,11 @@ package aspects.xpt.navigator
 import com.google.inject.Inject
 import com.google.inject.Singleton
 import org.eclipse.gmf.codegen.gmfgen.GenNavigator
-import xpt.Common
+import xpt.Commonimport xpt.CodeStyle
 
 @Singleton class NavigatorItem extends xpt.navigator.NavigatorItem {
 	@Inject extension Common;
+	@Inject extension CodeStyle
 
 		override def registerAdapterFactory(GenNavigator it) '''
 		«generatedMemberComment()»
@@ -27,6 +28,7 @@ import xpt.Common
 			final Class[] supportedTypes = new Class[] { org.eclipse.gmf.runtime.notation.View.class, org.eclipse.emf.ecore.EObject.class };
 			org.eclipse.core.runtime.Platform.getAdapterManager().registerAdapters(new org.eclipse.core.runtime.IAdapterFactory() {
 				
+				«overrideI(it.editorGen.diagram)»
 				@SuppressWarnings("rawtypes")
 				public Object getAdapter(Object adaptableObject, Class adapterType) {
 					if (adaptableObject instanceof «qualifiedClassName(it)» && (adapterType == org.eclipse.gmf.runtime.notation.View.class || adapterType == org.eclipse.emf.ecore.EObject.class)) {
@@ -35,6 +37,7 @@ import xpt.Common
 					return null;
 				}
 				
+				«overrideI(it.editorGen.diagram)»
 				@SuppressWarnings("rawtypes")
 				public Class[] getAdapterList() {
 					return supportedTypes;

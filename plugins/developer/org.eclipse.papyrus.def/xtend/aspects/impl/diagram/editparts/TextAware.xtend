@@ -26,6 +26,7 @@ import xpt.Common
 import xpt.diagram.ViewmapAttributesUtils_qvto
 import xpt.Common_qvto
 import org.eclipse.gmf.codegen.gmfgen.GenLinkLabel
+import xpt.CodeStyle
 
 //DOCUMENTATION: PapyrusGencode
 //This template has been modified to take in account the possibility to have extended direct editors
@@ -33,13 +34,14 @@ import org.eclipse.gmf.codegen.gmfgen.GenLinkLabel
 @Singleton class TextAware extends impl.diagram.editparts.TextAware {
 	@Inject extension Common
 
+	@Inject extension CodeStyle
+
 	@Inject extension ViewmapAttributesUtils_qvto
 
 	@Inject extension ParserProvider
 
 	@Inject extension Common_qvto 
 	
-	@Inject TextAware testVar
 	override fields(GenCommonBase it)'''
 	«generatedMemberComment»
 	private org.eclipse.gef.tools.DirectEditManager manager;
@@ -356,6 +358,7 @@ override getEditTextValidator (GenCommonBase it)'''
 	public org.eclipse.jface.viewers.ICellEditorValidator getEditTextValidator() {
 		return new org.eclipse.jface.viewers.ICellEditorValidator() {
 
+			«overrideI»
 			public String isValid(final Object value) {
 				if (value instanceof String) {
 					final org.eclipse.emf.ecore.EObject element = getParserElement();
@@ -365,6 +368,7 @@ override getEditTextValidator (GenCommonBase it)'''
 							(org.eclipse.gmf.runtime.common.ui.services.parser.IParserEditStatus) getEditingDomain().runExclusive(
 								new org.eclipse.emf.transaction.RunnableWithResult.Impl<java.lang.Object>() {
 
+							«overrideI»
 							public void run() {
 								setResult(parser.isValidEditString(new org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter(element), (String) value));
 							}
@@ -433,6 +437,7 @@ override performDirectEdit (GenCommonBase it)'''
 	protected void performDirectEdit() {
 		org.eclipse.swt.custom.BusyIndicator.showWhile(org.eclipse.swt.widgets.Display.getDefault(), new java.lang.Runnable() {
 					
+			«overrideI»
 			public void run() {
 				getManager().show();
 			}
@@ -531,6 +536,7 @@ def initializeDirectEditManager (GenCommonBase it)'''
 		// initialize the direct edit manager
 		try {
 			getEditingDomain().runExclusive(new Runnable() {
+				«overrideI»
 				public void run() {
 					if (isActive() && isEditable()) {
 						if (request.getExtendedData().get(
@@ -686,6 +692,7 @@ override getAccessibleEditPart (GenCommonBase it)'''
 		if (accessibleEP == null) {
 			accessibleEP = new AccessibleGraphicalEditPart() {
 
+				«overrideC»
 				public void getName(org.eclipse.swt.accessibility.AccessibleEvent e) {
 					e.result = getLabelTextHelper(getFigure());
 				}
@@ -808,6 +815,7 @@ def performDefaultDirectEditorEdit (GenCommonBase it)'''
 		try {
 			getEditingDomain().runExclusive(new Runnable() {
 
+				«overrideI»
 				public void run() {
 					if (isActive() && isEditable()) {
 						if (theRequest.getExtendedData().get(org.eclipse.gmf.runtime.diagram.ui.requests.RequestConstants.REQ_DIRECTEDIT_EXTENDEDDATA_INITIAL_CHAR) instanceof Character) {

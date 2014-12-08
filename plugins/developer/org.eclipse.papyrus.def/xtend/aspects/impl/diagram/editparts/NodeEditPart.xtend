@@ -33,17 +33,20 @@ import utils.EditPartsUtils_qvto
 import xpt.Common
 import xpt.diagram.editparts.EditPartFactory
 import xpt.diagram.editparts.Utils_qvto
+import xpt.diagram.editpolicies.TextSelectionEditPolicy
+import xpt.CodeStyle
 
 @Singleton class NodeEditPart extends impl.diagram.editparts.NodeEditPart {
 	@Inject extension Common;
+	@Inject extension CodeStyle
 
 	@Inject extension EditPartsUtils_qvto;
 	@Inject extension  VisualIDRegistry;
 	
 	@Inject extension Utils_qvto;
-	@Inject extension xpt.diagram.Utils_qvto;
+	
 	@Inject EditPartFactory xptEditPartFactory;
-		@Inject impl.diagram.editparts.TextAware xptTextAware;
+	@Inject impl.diagram.editparts.TextAware xptTextAware;
 	
 //---------
 //   GMF
@@ -196,7 +199,62 @@ override borderItemSelectionEditPolicy(GenNode it)'''
 	}
 «ENDIF»
 '''
+
+	override createLayoutEditPolicyBody_FLOW_LAYOUT(GenNode it) '''
+		org.eclipse.gmf.runtime.diagram.ui.editpolicies.FlowLayoutEditPolicy lep = new org.eclipse.gmf.runtime.diagram.ui.editpolicies.FlowLayoutEditPolicy() {
+			«IF hasBorderItems(it)»
+			«extraLineBreak»
+			«overrideC»
+			protected org.eclipse.gef.EditPolicy createChildEditPolicy(org.eclipse.gef.EditPart child) {
+				«borderItemSelectionEditPolicy()»
+				return super.createChildEditPolicy(child);
+			}
+			«ENDIF»
+
+			«overrideC»
+			protected org.eclipse.gef.commands.Command createAddCommand(org.eclipse.gef.EditPart child, org.eclipse.gef.EditPart after) {
+				return null;
+			}
+
+			«overrideC»
+			protected org.eclipse.gef.commands.Command createMoveChildCommand(org.eclipse.gef.EditPart child, org.eclipse.gef.EditPart after) {
+				return null;
+			}
+
+			«overrideC»
+			protected org.eclipse.gef.commands.Command getCreateCommand(org.eclipse.gef.requests.CreateRequest request) {
+				return null;
+			}
+		};
+		return lep;
+	'''
 	
+	override createLayoutEditPolicyBody_DEFAULT(GenNode it) '''
+		org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy lep = new org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy() {
+
+			«overrideC»
+			protected org.eclipse.gef.EditPolicy createChildEditPolicy(org.eclipse.gef.EditPart child) {
+				«borderItemSelectionEditPolicy(it)»
+				org.eclipse.gef.EditPolicy result = child.getEditPolicy(org.eclipse.gef.EditPolicy.PRIMARY_DRAG_ROLE);
+				if (result == null) {
+					result = new org.eclipse.gef.editpolicies.NonResizableEditPolicy();
+				}
+				return result;
+			}
+
+			«overrideC»
+			protected org.eclipse.gef.commands.Command getMoveChildrenCommand(org.eclipse.gef.Request request) {
+				return null;
+			}
+
+			«overrideC»
+			protected org.eclipse.gef.commands.Command getCreateCommand(org.eclipse.gef.requests.CreateRequest request) {
+				return null;
+			}
+		};
+		return lep;
+	'''
+		
 //---------
 // PAPYRUS
 //---------
@@ -226,6 +284,7 @@ def genSpecificLocator(SpecificLocator it, GenChildSideAffixedNode child)'''
 	override def borderItemSelectionEP(GenNode it) '''
 	new org.eclipse.gmf.runtime.diagram.ui.editpolicies.BorderItemSelectionEditPolicy() {
 	
+		«overrideC»
 		protected java.util.List<?> createSelectionHandles() {
 			org.eclipse.gef.handles.MoveHandle mh = new org.eclipse.gef.handles.MoveHandle((org.eclipse.gef.GraphicalEditPart) getHost());
 			mh.setBorder(null);
@@ -367,4 +426,5 @@ def setupNodePlate (GenChildSideAffixedNode it)'''
 	result.getBounds().setSize(result.getPreferredSize());
 '''
 		
+	
 }
