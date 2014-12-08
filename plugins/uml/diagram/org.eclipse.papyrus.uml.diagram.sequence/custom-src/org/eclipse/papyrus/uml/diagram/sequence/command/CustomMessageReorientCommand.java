@@ -17,7 +17,6 @@ import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
 import org.eclipse.papyrus.uml.diagram.sequence.edit.commands.MessageReorientCommand;
-import org.eclipse.papyrus.uml.diagram.sequence.edit.policies.UMLBaseItemSemanticEditPolicy;
 import org.eclipse.papyrus.uml.diagram.sequence.util.MessageConnectionHelper;
 import org.eclipse.papyrus.uml.diagram.sequence.util.OccurrenceSpecificationHelper;
 import org.eclipse.papyrus.uml.diagram.sequence.util.ReconnectMessageHelper;
@@ -26,6 +25,7 @@ import org.eclipse.uml2.uml.ExecutionSpecification;
 import org.eclipse.uml2.uml.Interaction;
 import org.eclipse.uml2.uml.MessageEnd;
 import org.eclipse.uml2.uml.MessageOccurrenceSpecification;
+import org.eclipse.uml2.uml.MessageSort;
 import org.eclipse.uml2.uml.UMLFactory;
 
 /**
@@ -50,16 +50,12 @@ public class CustomMessageReorientCommand extends MessageReorientCommand {
 		if (!(getOldSource() instanceof Element && getNewSource() instanceof Element)) {
 			return false;
 		}
+		Element target = getLink().getReceiveEvent();
 		if (!(getLink().eContainer() instanceof Interaction)) {
 			return false;
 		}
-		Interaction container = (Interaction) getLink().eContainer();
-		boolean canExistMessage = UMLBaseItemSemanticEditPolicy.getLinkConstraints().canExistMessage_4003(container, getLink(), getNewSource(), getOldTarget());
+		boolean canExistMessage = MessageConnectionHelper.canExist(getLink(), MessageSort.SYNCH_CALL_LITERAL, getNewSource(), target);
 		if (!canExistMessage) {
-			return false;
-		}
-		// Fixed bug about reconnect messages.
-		if (!(getNewSource() instanceof ExecutionSpecification)) {
 			return false;
 		}
 		return MessageConnectionHelper.canReorientSource(getLink(), getNewSource());
@@ -73,16 +69,11 @@ public class CustomMessageReorientCommand extends MessageReorientCommand {
 		if (!(getOldTarget() instanceof Element && getNewTarget() instanceof Element)) {
 			return false;
 		}
-		Element source = getLink().getOwner();
+		Element source = getLink().getSendEvent();
 		if (!(getLink().eContainer() instanceof Interaction)) {
 			return false;
 		}
-		Interaction container = (Interaction) getLink().eContainer();
-		if (!UMLBaseItemSemanticEditPolicy.getLinkConstraints().canExistMessage_4003(container, getLink(), source, getNewTarget())) {
-			return false;
-		}
-		// Fixed bug about reconnect messages.
-		if (!(getNewTarget() instanceof ExecutionSpecification)) {
+		if (!MessageConnectionHelper.canExist(getLink(), MessageSort.SYNCH_CALL_LITERAL, source, getNewTarget())) {
 			return false;
 		}
 		return MessageConnectionHelper.canReorientTarget(getLink(), getNewTarget());

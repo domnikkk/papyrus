@@ -36,6 +36,7 @@ import org.eclipse.papyrus.uml.diagram.sequence.command.CustomMessage6CreateComm
 import org.eclipse.papyrus.uml.diagram.sequence.command.CustomMessage6ReorientCommand;
 import org.eclipse.papyrus.uml.diagram.sequence.command.CustomMessage7CreateCommand;
 import org.eclipse.papyrus.uml.diagram.sequence.command.CustomMessage7ReorientCommand;
+import org.eclipse.papyrus.uml.diagram.sequence.command.CustomMessageCreateCommand;
 import org.eclipse.papyrus.uml.diagram.sequence.command.CustomMessageReorientCommand;
 import org.eclipse.papyrus.uml.diagram.sequence.edit.parts.Message2EditPart;
 import org.eclipse.papyrus.uml.diagram.sequence.edit.parts.Message3EditPart;
@@ -143,7 +144,9 @@ public class GateItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy {
 	 */
 	@Override
 	protected Command getCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if (UMLElementTypes.Message_4004 == req.getElementType()) {
+		if (UMLElementTypes.Message_4003 == req.getElementType()) {
+			return new ICommandProxy(new CustomMessageCreateCommand(req, req.getSource(), req.getTarget()));
+		} else if (UMLElementTypes.Message_4004 == req.getElementType()) {
 			return new ICommandProxy(new CustomMessage2CreateCommand(req, req.getSource(), req.getTarget()));
 		} else if (UMLElementTypes.Message_4005 == req.getElementType()) {
 			return new ICommandProxy(new CustomMessage3CreateCommand(req, req.getSource(), req.getTarget()));

@@ -15,6 +15,7 @@
 package org.eclipse.papyrus.uml.diagram.sequence.util;
 
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand;
 import org.eclipse.uml2.uml.CombinedFragment;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.ExecutionSpecification;
@@ -173,6 +174,22 @@ public class ReconnectMessageHelper {
 			}
 			// update interaction operands covered lifelines
 			updateCoveredLifelinesOfCoregionOperand(cf);
+		} else if (newElement instanceof Gate) {
+			Gate newEnd = (Gate) newElement;
+			Message message = messageEnd.getMessage();
+			if (message != null) {
+				if (messageEnd == message.getSendEvent()) {
+					message.setSendEvent(newEnd);
+				} else if (messageEnd == message.getReceiveEvent()) {
+					message.setReceiveEvent(newEnd);
+				}
+				newEnd.setMessage(message);
+				messageEnd.setMessage(null);
+				// Destroy orphan MessageOccurrenceSpecification
+				if (messageEnd instanceof MessageOccurrenceSpecification) {
+					DestroyElementCommand.destroy(messageEnd);
+				}
+			}
 		}
 	}
 
