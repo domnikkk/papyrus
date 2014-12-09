@@ -8,6 +8,8 @@
  *
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr
+ *  Mickaël ADAM (ALL4TEC) mickael.adam@all4tec.net - Generic shape default value implementation. Default symbol implementation.
+ *
  *****************************************************************************/
 
 /**
@@ -41,6 +43,70 @@ TimingDiagram * {
 	gradient:none;
 }
 
+/*---------- Default SVG symbols ----------*/
+
+/* Round full */
+StateMachineDiagram Pseudostate[kind="initial"],
+StateMachineDiagram Pseudostate[kind="junction"],
+ActivityDiagram InitialNode
+{
+svgFile:"platform:/plugin/org.eclipse.papyrus.infra.gmfdiag.common/icons/symbols/round_full.svg";
+}
+
+ActivityDiagram ActivityFinalNode, 
+StateMachineDiagram FinalState
+{
+svgFile:"platform:/plugin/org.eclipse.papyrus.infra.gmfdiag.common/icons/symbols/round_with_dot.svg";
+}
+
+ActivityDiagram FlowFinalNode
+{
+svgFile:"platform:/plugin/org.eclipse.papyrus.infra.gmfdiag.common/icons/symbols/round_with_cross.svg";
+}
+
+ActivityDiagram SendSignalAction
+{
+svgFile:"platform:/plugin/org.eclipse.papyrus.infra.gmfdiag.common/icons/symbols/arrow.svg";
+}
+
+StateMachineDiagram Pseudostate[kind="terminate"]
+{
+svgFile:"platform:/plugin/org.eclipse.papyrus.infra.gmfdiag.common/icons/symbols/cross.svg";
+}
+
+ActivityDiagram MergeNode,
+ActivityDiagram DecisionNode,
+StateMachineDiagram Pseudostate[kind="choice"],
+ClassDiagram Association
+{
+svgFile:"platform:/plugin/org.eclipse.papyrus.infra.gmfdiag.common/icons/symbols/diamond.svg";
+}
+
+Actor
+{
+svgFile:"platform:/plugin/org.eclipse.papyrus.infra.gmfdiag.common/icons/symbols/stickman.svg";
+}
+
+DurationObservation 
+{
+svgFile:"platform:/plugin/org.eclipse.papyrus.uml.diagram.common/icons/symbols/DurationObservation.svg";
+}
+
+TimeObservation 
+{
+svgFile:"platform:/plugin/org.eclipse.papyrus.uml.diagram.common/icons/symbols/TimeObservation.svg";
+}
+
+StateMachineDiagram Pseudostate[kind="shallowHistory"]
+{
+svgFile:"platform:/plugin/org.eclipse.papyrus.uml.diagram.common/icons/symbols/shallowHistory.svg";
+}
+
+StateMachineDiagram Pseudostate[kind="deepHistory"]
+{
+svgFile:"platform:/plugin/org.eclipse.papyrus.uml.diagram.common/icons/symbols/deepHistory.svg";
+}
+
 /*---------- Activity Diagram ----------*/
 
 ActivityDiagram MergeNode, 
@@ -48,7 +114,6 @@ ActivityDiagram InitialNode,
 ActivityDiagram ActivityFinalNode, 
 ActivityDiagram FlowFinalNode, 
 ActivityDiagram DecisionNode, 
-ActivityDiagram MergeNode, 
 ActivityDiagram SendSignalAction,
 ActivityDiagram AcceptEventAction
 {
@@ -59,14 +124,14 @@ ActivityDiagram AcceptEventAction
 	followSVGSymbol:true;
 	maintainSymbolRatio:true;
 	transparency:100;
-	displayFloatingLabel:true;
+	/*displayFloatingLabel:true;*/
 	maxNumberOfSymbol:1;
 	useOriginalColors:false;
 	gradient:none;
 	fillColor:white;
 }
 
-
+/*symbol compartment set to visible */
 ActivityDiagram MergeNode > Compartment[kind="symbol"], 
 ActivityDiagram InitialNode > Compartment[kind="symbol"], 
 ActivityDiagram ActivityFinalNode > Compartment[kind="symbol"], 
@@ -78,6 +143,21 @@ ActivityDiagram AcceptEventAction > Compartment[kind="symbol"]
 {
     visible:true;
 }
+
+/*External Label set to visible*/
+ActivityDiagram MergeNode > Label, 
+ActivityDiagram InitialNode > Label, 
+ActivityDiagram ActivityFinalNode > Label, 
+ActivityDiagram FlowFinalNode > Label, 
+ActivityDiagram DecisionNode > Label, 
+ActivityDiagram SendSignalAction > Label,
+ActivityDiagram ForkNode > Label,
+ActivityDiagram JoinNode > Label
+{
+	 visible:true;
+}
+
+
 
 ActivityDiagram SendSignalAction, 
 ActivityDiagram AcceptEventAction{
@@ -144,12 +224,13 @@ UseCaseDiagram Actor
 	followSVGSymbol:true;
 	maintainSymbolRatio:true;
 	transparency:100;
-	displayFloatingLabel:true;
+	/*displayFloatingLabel:true;*/
 	maxNumberOfSymbol:1;
 	useOriginalColors:false;
 	gradient:none;
 	fillColor:white;
 }
+
 UseCaseDiagram Actor > Compartment[kind="symbol"]
 {
     visible:true;
@@ -165,3 +246,59 @@ CommunicationDiagram Interaction > Compartment
 {
 	lineLength:0;
 }
+
+/*---------- State Machine Diagram ----------*/
+StateMachineDiagram Pseudostate[kind="initial"],
+StateMachineDiagram Pseudostate[kind="junction"],
+StateMachineDiagram Pseudostate[kind="shallowHistory"],
+StateMachineDiagram Pseudostate[kind="terminate"],
+StateMachineDiagram Pseudostate[kind="deepHistory"],
+StateMachineDiagram Pseudostate[kind="choice"],
+StateMachineDiagram FinalState
+{
+	displayBorder:false;
+	displayName:false;
+	diplayIcon:false;
+	displayTag:false;
+	followSVGSymbol:true;
+	maintainSymbolRatio:true;
+	transparency:100;
+	displayFloatingLabel:true;
+	maxNumberOfSymbol:1;
+	useOriginalColors:false;
+	gradient:none;
+	fillColor:white;
+}
+
+StateMachineDiagram Pseudostate[kind="initial"] > Label,
+StateMachineDiagram Pseudostate[kind="junction"] > Label,
+StateMachineDiagram Pseudostate[kind="shallowHistory"] > Label,
+StateMachineDiagram Pseudostate[kind="terminate"] > Label,
+StateMachineDiagram Pseudostate[kind="deepHistory"] > Label,
+StateMachineDiagram Pseudostate[kind="choice"] > Label,
+StateMachineDiagram FinalState> Label,
+StateMachineDiagram Pseudostate[kind="exitPoint"] > Label,
+StateMachineDiagram Pseudostate[kind="entryPoint"] > Label,
+StateMachineDiagram Pseudostate[kind="join"] > Label,
+StateMachineDiagram Pseudostate[kind="fork"] > Label
+{
+	visible:true;
+	textAlignment:"Left";
+}
+
+StateMachineDiagram Pseudostate[kind="initial"] > Compartment[kind="symbol"],
+StateMachineDiagram Pseudostate[kind="shallowHistory"] > Compartment[kind="symbol"],
+StateMachineDiagram Pseudostate[kind="terminate"] > Compartment[kind="symbol"],
+StateMachineDiagram Pseudostate[kind="deepHistory"] > Compartment[kind="symbol"],
+StateMachineDiagram Pseudostate[kind="choice"] > Compartment[kind="symbol"],
+StateMachineDiagram Pseudostate[kind="junction"] > Compartment[kind="symbol"],
+StateMachineDiagram FinalState > Compartment[kind="symbol"]
+{
+    visible:true;
+}
+
+StateMachineDiagram Pseudostate[kind="choice"]{
+	maintainSymbolRatio:false;
+}
+
+

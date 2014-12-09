@@ -151,3 +151,9 @@ UseCaseDiagram UseCase {
 	fillColor:white;
 }
 
+StateMachineDiagram Pseudostate[kind="exitPoint"],
+StateMachineDiagram Pseudostate[kind="entryPoint"]
+{
+	fillColor:white;
+}
+

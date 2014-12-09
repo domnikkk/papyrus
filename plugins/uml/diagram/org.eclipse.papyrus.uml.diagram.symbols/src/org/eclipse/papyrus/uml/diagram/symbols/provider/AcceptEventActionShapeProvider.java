@@ -29,19 +29,10 @@ import org.eclipse.papyrus.infra.gmfdiag.common.service.shape.AbstractShapeProvi
 import org.eclipse.papyrus.infra.gmfdiag.common.service.shape.ProviderNotificationManager;
 import org.eclipse.papyrus.uml.diagram.symbols.Activator;
 import org.eclipse.uml2.uml.AcceptEventAction;
-import org.eclipse.uml2.uml.ActivityFinalNode;
-import org.eclipse.uml2.uml.Actor;
-import org.eclipse.uml2.uml.Association;
-import org.eclipse.uml2.uml.DecisionNode;
 import org.eclipse.uml2.uml.DurationObservation;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Event;
-import org.eclipse.uml2.uml.FlowFinalNode;
-import org.eclipse.uml2.uml.InitialNode;
-import org.eclipse.uml2.uml.MergeNode;
-import org.eclipse.uml2.uml.SendSignalAction;
 import org.eclipse.uml2.uml.TimeEvent;
-import org.eclipse.uml2.uml.TimeObservation;
 import org.eclipse.uml2.uml.Trigger;
 import org.eclipse.uml2.uml.TypedElement;
 import org.eclipse.uml2.uml.UMLPackage;
@@ -51,37 +42,13 @@ import org.w3c.dom.svg.SVGDocument;
 /**
  * Shape Provider for {@link DurationObservation} or for {@link TypedElement} that are typed by an {@link DurationObservation}.
  */
-public class UMLElementShapeProvider extends AbstractShapeProvider {
+public class AcceptEventActionShapeProvider extends AbstractShapeProvider {
 
 	/** The Constant FLAG_SVG_PATH. */
 	private static final String FLAG_SVG_PATH = "/icons/symbols/flag.svg";
 
 	/** The Constant HOURGLASS_SVG_PATH. */
 	private static final String HOURGLASS_SVG_PATH = "/icons/symbols/hourglass.svg";
-
-	/** The Constant DURATION_OBSERVATION_SVG_PATH. */
-	private static final String DURATION_OBSERVATION_SVG_PATH = "/icons/symbols/DurationObservation.svg";
-
-	/** The Constant TIME_OBSERVATION_SVG_PATH. */
-	private static final String TIME_OBSERVATION_SVG_PATH = "/icons/symbols/TimeObservation.svg";
-
-	/** The Constant ROUND_WITH_DOT_SVG_PATH. */
-	private static final String ROUND_WITH_DOT_SVG_PATH = "/icons/symbols/round_with_dot.svg";
-
-	/** The Constant ROUND_FULL_SVG_PATH. */
-	private static final String ROUND_FULL_SVG_PATH = "/icons/symbols/round_full.svg";
-
-	/** The Constant ROUND_WITH_CROSS_SVG_PATH. */
-	private static final String ROUND_WITH_CROSS_SVG_PATH = "/icons/symbols/round_with_cross.svg";
-
-	/** The Constant ARROW_SVG_PATH. */
-	private static final String ARROW_SVG_PATH = "/icons/symbols/arrow.svg";
-
-	/** The Constant DIAMOND_SVG_PATH. */
-	private static final String DIAMOND_SVG_PATH = "/icons/symbols/diamond.svg";
-
-	/** The Constant STICKMAN_SVG_PATH. */
-	private static final String STICKMAN_SVG_PATH = "/icons/symbols/stickman.svg";
 
 	/**
 	 * {@inheritDoc}
@@ -118,39 +85,9 @@ public class UMLElementShapeProvider extends AbstractShapeProvider {
 
 		EObject element = ((View) view).getElement();
 
-		if (element instanceof DurationObservation || (element instanceof TypedElement && ((TypedElement) element).getType() instanceof DurationObservation)) {
-			return true;
-		}// duration
-		if (element instanceof TimeObservation || (element instanceof TypedElement && ((TypedElement) element).getType() instanceof TimeObservation)) {
-			return true;
-		}// time
-		if (element instanceof SendSignalAction || (element instanceof TypedElement && ((TypedElement) element).getType() instanceof SendSignalAction)) {
-			return true;
-		}// Arrow
-		if (element instanceof DecisionNode || (element instanceof TypedElement && ((TypedElement) element).getType() instanceof DecisionNode)) {
-			return true;
-		}// Diamond
-		if (element instanceof MergeNode || (element instanceof TypedElement && ((TypedElement) element).getType() instanceof MergeNode)) {
-			return true;
-		}// Diamond
 		if (element instanceof AcceptEventAction || (element instanceof TypedElement && ((TypedElement) element).getType() instanceof AcceptEventAction)) {
 			return true;
 		}// flag and hourglass
-		if (element instanceof InitialNode || (element instanceof TypedElement && ((TypedElement) element).getType() instanceof InitialNode)) {
-			return true;
-		}// roundfull
-		if (element instanceof FlowFinalNode || (element instanceof TypedElement && ((TypedElement) element).getType() instanceof FlowFinalNode)) {
-			return true;
-		}// roundWCross
-		if (element instanceof ActivityFinalNode || (element instanceof TypedElement && ((TypedElement) element).getType() instanceof ActivityFinalNode)) {
-			return true;
-		}// RoundWDot
-		if (element instanceof Association || (element instanceof TypedElement && ((TypedElement) element).getType() instanceof Association)) {
-			return true;
-		}// Diamond
-		if (element instanceof Actor || (element instanceof TypedElement && ((TypedElement) element).getType() instanceof Actor)) {
-			return true;
-		}// StickMan
 
 		return false;
 	}
@@ -165,14 +102,14 @@ public class UMLElementShapeProvider extends AbstractShapeProvider {
 			return null;
 		}
 
-		DurationObservationShapeProviderNotificationManager notificationManager = new DurationObservationShapeProviderNotificationManager(diagramEventBroker, view, listener);
+		ShapeProviderNotificationManager notificationManager = new ShapeProviderNotificationManager(diagramEventBroker, view, listener);
 		return notificationManager;
 	}
 
 	/**
-	 * Notification Manager for the {@link UMLElementShapeProvider}.
+	 * Notification Manager for the {@link AcceptEventActionShapeProvider}.
 	 */
-	public class DurationObservationShapeProviderNotificationManager extends ProviderNotificationManager implements NotificationListener {
+	public class ShapeProviderNotificationManager extends ProviderNotificationManager implements NotificationListener {
 
 		/**
 		 * Creates a new DurationObservationShapeProviderNotificationManager.
@@ -184,7 +121,7 @@ public class UMLElementShapeProvider extends AbstractShapeProvider {
 		 * @param listener
 		 *            the listener to which notifications will be forwarded.
 		 */
-		public DurationObservationShapeProviderNotificationManager(DiagramEventBroker diagramEventBroker, EObject view, NotificationListener listener) {
+		public ShapeProviderNotificationManager(DiagramEventBroker diagramEventBroker, EObject view, NotificationListener listener) {
 			super(diagramEventBroker, view, listener);
 		}
 
@@ -239,21 +176,6 @@ public class UMLElementShapeProvider extends AbstractShapeProvider {
 		if (providesShapes(view)) {
 			EObject element = ((View) view).getElement();
 			URI uri = URI.createPlatformPluginURI("", true);
-			if (element instanceof DurationObservation || (element instanceof TypedElement && ((TypedElement) element).getType() instanceof DurationObservation)) {
-				uri = URI.createPlatformPluginURI(org.eclipse.papyrus.uml.diagram.common.Activator.ID + DURATION_OBSERVATION_SVG_PATH, true);
-			}// duration
-			if (element instanceof TimeObservation || (element instanceof TypedElement && ((TypedElement) element).getType() instanceof TimeObservation)) {
-				uri = URI.createPlatformPluginURI(org.eclipse.papyrus.uml.diagram.common.Activator.ID + TIME_OBSERVATION_SVG_PATH, true);
-			}// time
-			if (element instanceof SendSignalAction || (element instanceof TypedElement && ((TypedElement) element).getType() instanceof SendSignalAction)) {
-				uri = URI.createPlatformPluginURI(org.eclipse.papyrus.infra.gmfdiag.common.Activator.ID + ARROW_SVG_PATH, true);
-			}// Arrow
-			if (element instanceof DecisionNode || (element instanceof TypedElement && ((TypedElement) element).getType() instanceof DecisionNode)) {
-				uri = URI.createPlatformPluginURI(org.eclipse.papyrus.infra.gmfdiag.common.Activator.ID + DIAMOND_SVG_PATH, true);
-			}// Diamond
-			if (element instanceof MergeNode || (element instanceof TypedElement && ((TypedElement) element).getType() instanceof MergeNode)) {
-				uri = URI.createPlatformPluginURI(org.eclipse.papyrus.infra.gmfdiag.common.Activator.ID + DIAMOND_SVG_PATH, true);
-			}// Diamond
 			if (element instanceof AcceptEventAction || (element instanceof TypedElement && ((TypedElement) element).getType() instanceof AcceptEventAction)) {
 				if (isAcceptTimeEventAction((AcceptEventAction) element)) {
 					uri = URI.createPlatformPluginURI(org.eclipse.papyrus.infra.gmfdiag.common.Activator.ID + HOURGLASS_SVG_PATH, true);
@@ -261,21 +183,6 @@ public class UMLElementShapeProvider extends AbstractShapeProvider {
 					uri = URI.createPlatformPluginURI(org.eclipse.papyrus.infra.gmfdiag.common.Activator.ID + FLAG_SVG_PATH, true);
 				}
 			}// flag and hourglass
-			if (element instanceof InitialNode || (element instanceof TypedElement && ((TypedElement) element).getType() instanceof InitialNode)) {
-				uri = URI.createPlatformPluginURI(org.eclipse.papyrus.infra.gmfdiag.common.Activator.ID + ROUND_FULL_SVG_PATH, true);
-			}// roundfull
-			if (element instanceof FlowFinalNode || (element instanceof TypedElement && ((TypedElement) element).getType() instanceof FlowFinalNode)) {
-				uri = URI.createPlatformPluginURI(org.eclipse.papyrus.infra.gmfdiag.common.Activator.ID + ROUND_WITH_CROSS_SVG_PATH, true);
-			}// roundWCross
-			if (element instanceof ActivityFinalNode || (element instanceof TypedElement && ((TypedElement) element).getType() instanceof ActivityFinalNode)) {
-				uri = URI.createPlatformPluginURI(org.eclipse.papyrus.infra.gmfdiag.common.Activator.ID + ROUND_WITH_DOT_SVG_PATH, true);
-			}// RoundWDot
-			if (element instanceof Association || (element instanceof TypedElement && ((TypedElement) element).getType() instanceof Association)) {
-				uri = URI.createPlatformPluginURI(org.eclipse.papyrus.infra.gmfdiag.common.Activator.ID + DIAMOND_SVG_PATH, true);
-			}// Diamond
-			if (element instanceof Actor || (element instanceof TypedElement && ((TypedElement) element).getType() instanceof Actor)) {
-				uri = URI.createPlatformPluginURI(org.eclipse.papyrus.infra.gmfdiag.common.Activator.ID + STICKMAN_SVG_PATH, true);
-			}// StickMan
 
 			String path = uri.toString();
 			SVGDocument document = getSVGDocument(path);
