@@ -104,6 +104,10 @@ public class OccurrenceSpecificationHelper {
 			execution.setFinish(newEnd);
 		}
 		if (canBeRemoved(oldEnd, newEnd, isStart)) {
+			// "coveredBy" is bidirectional so must be cleaned prior to deletion of element itself
+			// see https://bugs.eclipse.org/bugs/show_bug.cgi?id=451320
+			oldEnd.getCovereds().clear(); 
+			
 			EcoreUtil.remove(oldEnd);
 		}
 		return true;

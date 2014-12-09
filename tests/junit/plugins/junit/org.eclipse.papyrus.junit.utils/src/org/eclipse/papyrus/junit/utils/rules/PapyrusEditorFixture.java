@@ -17,6 +17,7 @@ import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.Assert.fail;
 
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
@@ -92,12 +93,14 @@ import com.google.common.collect.Lists;
 
 
 /**
- * A fixture that presents editors on a model specified via an annotation as for {@link ProjectFixture. The editor is closed automatically upon
+ * A fixture that presents editors on a model specified via an annotation as for {@link ProjectFixture}. The editor is closed automatically upon
  * completion of the test.
  */
 public class PapyrusEditorFixture extends AbstractModelFixture<TransactionalEditingDomain> {
 
 	private final Collection<IEditorPart> editorsToClose = Lists.newArrayList();
+
+	private final List<String> excludedTypeView = Arrays.asList(new String[] { "Note" });
 
 	private IMultiDiagramEditor editor;
 
@@ -123,9 +126,9 @@ public class PapyrusEditorFixture extends AbstractModelFixture<TransactionalEdit
 		IMultiDiagramEditor result = null;
 
 		final String fileName = new Path(path).lastSegment();
-		for(IEditorReference next : getWorkbenchPage().getEditorReferences()) {
-			if(PapyrusMultiDiagramEditor.EDITOR_ID.equals(next.getId()) && fileName.equals(next.getName())) {
-				result = (IMultiDiagramEditor)next.getEditor(true);
+		for (IEditorReference next : getWorkbenchPage().getEditorReferences()) {
+			if (PapyrusMultiDiagramEditor.EDITOR_ID.equals(next.getId()) && fileName.equals(next.getName())) {
+				result = (IMultiDiagramEditor) next.getEditor(true);
 			}
 		}
 
@@ -137,7 +140,7 @@ public class PapyrusEditorFixture extends AbstractModelFixture<TransactionalEdit
 		testClass = description.getTestClass();
 		testDescription = description;
 
-		if(hasRequiredViews()) {
+		if (hasRequiredViews()) {
 			openRequiredViews();
 		}
 
@@ -151,17 +154,17 @@ public class PapyrusEditorFixture extends AbstractModelFixture<TransactionalEdit
 		try {
 			Exception exception = null;
 
-			for(IEditorPart editor : ImmutableList.copyOf(editorsToClose)) {
+			for (IEditorPart editor : ImmutableList.copyOf(editorsToClose)) {
 				try {
 					close(editor);
 				} catch (Exception e) {
-					if(exception == null) {
+					if (exception == null) {
 						exception = e;
 					}
 				}
 			}
 
-			if(exception != null) {
+			if (exception != null) {
 				exception.printStackTrace();
 				fail("Failed to close an editor: " + exception.getLocalizedMessage());
 			}
@@ -171,7 +174,7 @@ public class PapyrusEditorFixture extends AbstractModelFixture<TransactionalEdit
 			activeDiagramEditor = null;
 
 			try {
-				if(hasRequiredViews()) {
+				if (hasRequiredViews()) {
 					closeRequiredViews();
 				}
 			} finally {
@@ -184,7 +187,7 @@ public class PapyrusEditorFixture extends AbstractModelFixture<TransactionalEdit
 	public TransactionalEditingDomain getEditingDomain() {
 		TransactionalEditingDomain result = null;
 
-		if(editor != null) {
+		if (editor != null) {
 			result = getEditingDomain(editor);
 		}
 
@@ -226,18 +229,18 @@ public class PapyrusEditorFixture extends AbstractModelFixture<TransactionalEdit
 			}
 		});
 
-		if(firstEditor && !editorsToClose.isEmpty()) {
+		if (firstEditor && !editorsToClose.isEmpty()) {
 			final IWorkbenchPage page = editor.getSite().getPage();
 			page.addPartListener(new IPartListener() {
 
 				public void partClosed(IWorkbenchPart part) {
 					editorsToClose.remove(part);
 
-					if(part == editor) {
+					if (part == editor) {
 						editor = null;
 					}
 
-					if(editorsToClose.isEmpty()) {
+					if (editorsToClose.isEmpty()) {
 						page.removePartListener(this);
 					}
 				}
@@ -273,7 +276,7 @@ public class PapyrusEditorFixture extends AbstractModelFixture<TransactionalEdit
 	protected Iterable<IMultiDiagramEditor> openAll(Description description) {
 		List<IMultiDiagramEditor> result = Lists.newArrayList();
 
-		for(Resource resource : initModelResources(description)) {
+		for (Resource resource : initModelResources(description)) {
 			IFile papyrusModel = getProject().getFile(resource.getURI().trimFileExtension().appendFileExtension(DiModel.DI_FILE_EXTENSION));
 			result.add(open(papyrusModel));
 		}
@@ -299,7 +302,7 @@ public class PapyrusEditorFixture extends AbstractModelFixture<TransactionalEdit
 	}
 
 	public void activate() {
-		if(editor != null) {
+		if (editor != null) {
 			activate(editor);
 		}
 	}
@@ -307,14 +310,14 @@ public class PapyrusEditorFixture extends AbstractModelFixture<TransactionalEdit
 	public void activate(IWorkbenchPart part) {
 		IWorkbenchPage page = part.getSite().getPage();
 
-		if(page.getActivePart() != part) {
+		if (page.getActivePart() != part) {
 			page.activate(part);
 			flushDisplayEvents();
 		}
 	}
 
 	public void close() {
-		if(editor != null) {
+		if (editor != null) {
 			close(editor);
 			editor = null;
 		}
@@ -332,16 +335,16 @@ public class PapyrusEditorFixture extends AbstractModelFixture<TransactionalEdit
 			public void run() {
 				ModelExplorerPageBookView view;
 				try {
-					view = (ModelExplorerPageBookView)getWorkbenchPage().showView(AbstractEditorTest.MODELEXPLORER_VIEW_ID);
+					view = (ModelExplorerPageBookView) getWorkbenchPage().showView(AbstractEditorTest.MODELEXPLORER_VIEW_ID);
 				} catch (PartInitException e) {
 					e.printStackTrace();
 					return;
 				}
 
 				IPage currentPage = view.getCurrentPage();
-				ModelExplorerPage page = (ModelExplorerPage)currentPage;
+				ModelExplorerPage page = (ModelExplorerPage) currentPage;
 				IViewPart viewer = page.getViewer();
-				modelExplorer = (ModelExplorerView)viewer;
+				modelExplorer = (ModelExplorerView) viewer;
 			}
 		});
 
@@ -351,7 +354,7 @@ public class PapyrusEditorFixture extends AbstractModelFixture<TransactionalEdit
 	protected final IWorkbenchPage getWorkbenchPage() {
 		IWorkbench bench = PlatformUI.getWorkbench();
 		IWorkbenchWindow window = bench.getActiveWorkbenchWindow();
-		if(window == null) {
+		if (window == null) {
 			window = bench.getWorkbenchWindows()[0];
 		}
 		return window.getActivePage();
@@ -388,10 +391,10 @@ public class PapyrusEditorFixture extends AbstractModelFixture<TransactionalEdit
 		Package result = null;
 
 		ModelSet modelSet = getModelSet(editor);
-		UmlModel uml = (UmlModel)modelSet.getModel(UmlModel.MODEL_ID);
+		UmlModel uml = (UmlModel) modelSet.getModel(UmlModel.MODEL_ID);
 		assertThat("No UML model present in resource set", uml.getResource(), notNullValue());
 
-		result = (Package)EcoreUtil.getObjectByType(uml.getResource().getContents(), UMLPackage.Literals.PACKAGE);
+		result = (Package) EcoreUtil.getObjectByType(uml.getResource().getContents(), UMLPackage.Literals.PACKAGE);
 		assertThat("Model resource contains no UML Package", result, notNullValue());
 
 		return result;
@@ -424,9 +427,9 @@ public class PapyrusEditorFixture extends AbstractModelFixture<TransactionalEdit
 		sashContainer.visit(new IPageVisitor() {
 
 			public void accept(IEditorPage page) {
-				if(name.equals(page.getPageTitle()) && (page.getIEditorPart() instanceof DiagramEditorWithFlyOutPalette)) {
+				if (name.equals(page.getPageTitle()) && (page.getIEditorPart() instanceof DiagramEditorWithFlyOutPalette)) {
 					select[0] = page;
-					activeDiagramEditor = (DiagramEditorWithFlyOutPalette)page.getIEditorPart();
+					activeDiagramEditor = (DiagramEditorWithFlyOutPalette) page.getIEditorPart();
 				}
 			}
 
@@ -435,7 +438,7 @@ public class PapyrusEditorFixture extends AbstractModelFixture<TransactionalEdit
 			}
 		});
 
-		if(select[0] != null) {
+		if (select[0] != null) {
 			sashContainer.selectPage(select[0]);
 			flushDisplayEvents();
 		}
@@ -446,12 +449,12 @@ public class PapyrusEditorFixture extends AbstractModelFixture<TransactionalEdit
 	public DiagramEditorWithFlyOutPalette getActiveDiagramEditor() {
 		DiagramEditorWithFlyOutPalette result = activeDiagramEditor;
 
-		if(result == null) {
+		if (result == null) {
 			IEditorPart activeEditor = getWorkbenchPage().getActiveEditor();
-			if(activeEditor instanceof IMultiDiagramEditor) {
-				activeEditor = ((IMultiDiagramEditor)activeEditor).getActiveEditor();
-				if(activeEditor instanceof DiagramEditorWithFlyOutPalette) {
-					result = (DiagramEditorWithFlyOutPalette)activeEditor;
+			if (activeEditor instanceof IMultiDiagramEditor) {
+				activeEditor = ((IMultiDiagramEditor) activeEditor).getActiveEditor();
+				if (activeEditor instanceof DiagramEditorWithFlyOutPalette) {
+					result = (DiagramEditorWithFlyOutPalette) activeEditor;
 				}
 			}
 		}
@@ -468,7 +471,7 @@ public class PapyrusEditorFixture extends AbstractModelFixture<TransactionalEdit
 	public EditPart findEditPart(IMultiDiagramEditor editor, EObject modelElement) {
 		IEditorPart activeEditor = editor.getActiveEditor();
 		assertThat("No diagram active", activeEditor, instanceOf(DiagramEditor.class));
-		return findEditPart((DiagramEditor)activeEditor, modelElement);
+		return findEditPart((DiagramEditor) activeEditor, modelElement);
 	}
 
 	public EditPart findEditPart(IDiagramWorkbenchPart editor, EObject modelElement) {
@@ -476,25 +479,73 @@ public class PapyrusEditorFixture extends AbstractModelFixture<TransactionalEdit
 		return findEditPart(diagram, modelElement);
 	}
 
+
+	/**
+	 * Find orphan edit part with a type.
+	 *
+	 * @param type
+	 *            the type
+	 * @return the edits the part
+	 */
+	public EditPart findOrphanEditPart(String type) {
+		IDiagramWorkbenchPart activeEditor = (IDiagramWorkbenchPart) editor.getActiveEditor();
+		EditPart result = null;
+		for (Iterator<View> views = Iterators.filter(activeEditor.getDiagram().eAllContents(), View.class); views.hasNext();) {
+			View next = views.next();
+			EObject element = next.getElement();
+			if (element == null && type.equals(next.getType())) {
+				result = (EditPart) activeEditor.getDiagramGraphicalViewer().getEditPartRegistry().get(next);
+				break;
+			}
+		}
+
+		return result;
+
+	}
+
+	/**
+	 * Find orphan edit part.
+	 *
+	 * @return the edits the part
+	 */
+	public EditPart findOrphanEditPart() {
+		IDiagramWorkbenchPart activeEditor = (IDiagramWorkbenchPart) editor.getActiveEditor();
+		EditPart result = null;
+		for (Iterator<View> views = Iterators.filter(activeEditor.getDiagram().eAllContents(), View.class); views.hasNext();) {
+			View next = views.next();
+
+			String type = next.getType();
+			EObject element = next.getElement();
+
+			if (element == null && !excludedTypeView.contains(type)) {
+				result = (EditPart) activeEditor.getDiagramGraphicalViewer().getEditPartRegistry().get(next);
+				break;
+			}
+		}
+
+		return result;
+
+	}
+
 	private EditPart findEditPart(EditPart editPart, EObject modelElement) {
 		EditPart result = null;
 
 		Optional<View> view = AdapterUtils.adapt(editPart, View.class);
-		if(view.isPresent() && (view.get().getElement() == modelElement)) {
+		if (view.isPresent() && (view.get().getElement() == modelElement)) {
 			result = editPart;
 		}
 
-		if(result == null) {
+		if (result == null) {
 			// Search children
-			for(Iterator<?> iter = editPart.getChildren().iterator(); (result == null) && iter.hasNext();) {
-				result = findEditPart((EditPart)iter.next(), modelElement);
+			for (Iterator<?> iter = editPart.getChildren().iterator(); (result == null) && iter.hasNext();) {
+				result = findEditPart((EditPart) iter.next(), modelElement);
 			}
 		}
 
-		if((result == null) && (editPart instanceof GraphicalEditPart)) {
+		if ((result == null) && (editPart instanceof GraphicalEditPart)) {
 			// Search edges
-			for(Iterator<?> iter = ((GraphicalEditPart)editPart).getSourceConnections().iterator(); (result == null) && iter.hasNext();) {
-				result = findEditPart((EditPart)iter.next(), modelElement);
+			for (Iterator<?> iter = ((GraphicalEditPart) editPart).getSourceConnections().iterator(); (result == null) && iter.hasNext();) {
+				result = findEditPart((EditPart) iter.next(), modelElement);
 			}
 		}
 
@@ -508,17 +559,17 @@ public class PapyrusEditorFixture extends AbstractModelFixture<TransactionalEdit
 	public EditPart findEditPart(IMultiDiagramEditor editor, String name, Class<? extends NamedElement> type) {
 		IEditorPart activeEditor = editor.getActiveEditor();
 		assertThat("No diagram active", activeEditor, instanceOf(DiagramEditor.class));
-		return findEditPart((DiagramEditor)activeEditor, name, type);
+		return findEditPart((DiagramEditor) activeEditor, name, type);
 	}
 
 	public EditPart findEditPart(IDiagramWorkbenchPart editor, String name, Class<? extends NamedElement> type) {
 		EditPart result = null;
 
-		for(Iterator<View> views = Iterators.filter(editor.getDiagram().eAllContents(), View.class); views.hasNext();) {
+		for (Iterator<View> views = Iterators.filter(editor.getDiagram().eAllContents(), View.class); views.hasNext();) {
 			View next = views.next();
 			EObject element = next.getElement();
-			if(type.isInstance(element) && name.equals(type.cast(element).getName())) {
-				result = (EditPart)editor.getDiagramGraphicalViewer().getEditPartRegistry().get(next);
+			if (type.isInstance(element) && name.equals(type.cast(element).getName())) {
+				result = (EditPart) editor.getDiagramGraphicalViewer().getEditPartRegistry().get(next);
 				break;
 			}
 		}
@@ -537,7 +588,7 @@ public class PapyrusEditorFixture extends AbstractModelFixture<TransactionalEdit
 	public PaletteViewer getPalette(IMultiDiagramEditor editor) {
 		IEditorPart activeEditor = editor.getActiveEditor();
 		assertThat("No diagram active", activeEditor, instanceOf(DiagramEditor.class));
-		return getPalette((DiagramEditor)activeEditor);
+		return getPalette((DiagramEditor) activeEditor);
 	}
 
 	public PaletteViewer getPalette(IDiagramWorkbenchPart editor) {
@@ -545,9 +596,9 @@ public class PapyrusEditorFixture extends AbstractModelFixture<TransactionalEdit
 	}
 
 	public void flushDisplayEvents() {
-		for(;;) {
+		for (;;) {
 			try {
-				if(!Display.getCurrent().readAndDispatch()) {
+				if (!Display.getCurrent().readAndDispatch()) {
 					break;
 				}
 			} catch (Exception e) {
@@ -564,11 +615,11 @@ public class PapyrusEditorFixture extends AbstractModelFixture<TransactionalEdit
 
 		try {
 			result = wbPage.findView(id);
-			if((result == null) && open) {
+			if ((result == null) && open) {
 				result = wbPage.showView(id);
 			}
 
-			if(result != null) {
+			if (result != null) {
 				result.getSite().getPage().activate(result);
 				flushDisplayEvents();
 			}
@@ -583,7 +634,7 @@ public class PapyrusEditorFixture extends AbstractModelFixture<TransactionalEdit
 	}
 
 	public void save(ISaveablePart part) {
-		if(part.isDirty()) {
+		if (part.isDirty()) {
 			try {
 				part.doSave(new NullProgressMonitor());
 			} catch (Exception e) {
@@ -609,9 +660,9 @@ public class PapyrusEditorFixture extends AbstractModelFixture<TransactionalEdit
 	}
 
 	public void splitEditorArea(IEditorPart editorToMove, boolean splitHorizontally) {
-		MPart editorPart = (MPart)editorToMove.getSite().getService(MPart.class);
+		MPart editorPart = editorToMove.getSite().getService(MPart.class);
 		EModelService modelService = editorPart.getContext().get(EModelService.class);
-		MPartStack oldStack = (MPartStack)modelService.getContainer(editorPart);
+		MPartStack oldStack = (MPartStack) modelService.getContainer(editorPart);
 		MPartStack newStack = modelService.createModelElement(MPartStack.class);
 		modelService.insert(newStack, oldStack, splitHorizontally ? EModelService.RIGHT_OF : EModelService.BELOW, 0.5f);
 		newStack.getChildren().add(editorPart);
@@ -622,14 +673,14 @@ public class PapyrusEditorFixture extends AbstractModelFixture<TransactionalEdit
 	public List<IWorkbenchPart> getPartStack(IWorkbenchPart part) {
 		List<IWorkbenchPart> result;
 
-		MPart mpart = (MPart)part.getSite().getService(MPart.class);
+		MPart mpart = part.getSite().getService(MPart.class);
 		EModelService modelService = mpart.getContext().get(EModelService.class);
-		MPartStack stack = (MPartStack)modelService.getContainer(mpart);
+		MPartStack stack = (MPartStack) modelService.getContainer(mpart);
 
 		result = Lists.newArrayListWithCapacity(stack.getChildren().size());
-		for(MPart next : Iterables.filter(stack.getChildren(), MPart.class)) {
+		for (MPart next : Iterables.filter(stack.getChildren(), MPart.class)) {
 			IWorkbenchPart wbPart = next.getContext().get(IWorkbenchPart.class);
-			if(wbPart != null) {
+			if (wbPart != null) {
 				result.add(wbPart);
 			}
 		}
@@ -644,8 +695,8 @@ public class PapyrusEditorFixture extends AbstractModelFixture<TransactionalEdit
 	protected final ShowView getRequiredViews() {
 		ShowView result = testDescription.getAnnotation(ShowView.class);
 
-		if(result == null) {
-			for(Class<?> clazz = testClass; (result == null) && (clazz != null) && (clazz != Object.class); clazz = clazz.getSuperclass()) {
+		if (result == null) {
+			for (Class<?> clazz = testClass; (result == null) && (clazz != null) && (clazz != Object.class); clazz = clazz.getSuperclass()) {
 				result = clazz.getAnnotation(ShowView.class);
 			}
 		}
@@ -656,15 +707,15 @@ public class PapyrusEditorFixture extends AbstractModelFixture<TransactionalEdit
 	protected void openRequiredViews() {
 		IWorkbenchPage page = getWorkbenchPage();
 
-		for(ShowViewDescriptor next : ShowViewDescriptor.getDescriptors(getRequiredViews())) {
+		for (ShowViewDescriptor next : ShowViewDescriptor.getDescriptors(getRequiredViews())) {
 			IViewPart part = page.findView(next.viewID());
-			if(part == null) {
+			if (part == null) {
 				// Must open it
 				try {
 					part = page.showView(next.viewID());
 					movePartRelativeTo(part, next.relativeTo(), next.location());
 
-					if(viewsToClose == null) {
+					if (viewsToClose == null) {
 						viewsToClose = Lists.newArrayListWithExpectedSize(1);
 					}
 					viewsToClose.add(part);
@@ -679,21 +730,21 @@ public class PapyrusEditorFixture extends AbstractModelFixture<TransactionalEdit
 	}
 
 	private void movePartRelativeTo(IWorkbenchPart part, String relativeTo, int where) {
-		MPart mPart = (MPart)part.getSite().getService(MPart.class);
+		MPart mPart = part.getSite().getService(MPart.class);
 		EModelService modelService = mPart.getContext().get(EModelService.class);
 		MUIElement relativePart = modelService.find(relativeTo, modelService.getTopLevelWindowFor(mPart));
-		if(relativePart instanceof MPartSashContainerElement) {
+		if (relativePart instanceof MPartSashContainerElement) {
 			MStackElement toMove = mPart;
 			MPlaceholder placeHolder = mPart.getCurSharedRef();
-			if(placeHolder != null) {
+			if (placeHolder != null) {
 				toMove = placeHolder;
 			}
 
-			if(where < 0) {
+			if (where < 0) {
 				// Add it to the relative part's containing stack
-				if(relativePart instanceof MPart) {
-					MPart relativeMPart = (MPart)relativePart;
-					if(relativeMPart.getCurSharedRef() != null) {
+				if (relativePart instanceof MPart) {
+					MPart relativeMPart = (MPart) relativePart;
+					if (relativeMPart.getCurSharedRef() != null) {
 						// This is where the part is stacked
 						relativePart = relativeMPart.getCurSharedRef();
 					}
@@ -703,15 +754,15 @@ public class PapyrusEditorFixture extends AbstractModelFixture<TransactionalEdit
 				// Insert it next to the relative part
 				MPartStack newStack = modelService.createModelElement(MPartStack.class);
 				newStack.getChildren().add(toMove);
-				modelService.insert(newStack, (MPartSashContainerElement)relativePart, where, 0.3f);
+				modelService.insert(newStack, (MPartSashContainerElement) relativePart, where, 0.3f);
 			}
 		}
 	}
 
 	protected void closeRequiredViews() {
 		// Only close the Palette view if we opened it
-		if(viewsToClose != null) {
-			for(IViewPart closeMe : viewsToClose) {
+		if (viewsToClose != null) {
+			for (IViewPart closeMe : viewsToClose) {
 				closeMe.getSite().getPage().hideView(closeMe);
 			}
 			viewsToClose = null;
@@ -747,7 +798,7 @@ public class PapyrusEditorFixture extends AbstractModelFixture<TransactionalEdit
 			ImmutableList.Builder<ShowViewDescriptor> result = ImmutableList.builder();
 
 			String[] ids = annotation.value();
-			for(int i = 0; i < ids.length; i++) {
+			for (int i = 0; i < ids.length; i++) {
 				result.add(new ShowViewDescriptor(annotation, i));
 			}
 

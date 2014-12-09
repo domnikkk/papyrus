@@ -108,21 +108,28 @@ public abstract class AbstractPackageImportSource implements IPackageImportSourc
 
 		validateSelection(model);
 
+		URI resourceURI = null;
 		try {
 			if (model instanceof Resource) {
 				resource = (Resource) model;
+				resourceURI = resource.getURI();
 				if (!resource.isLoaded()) {
-					resource.load(null);
+					resource = resourceSet.getResource(resourceURI, true);
 				}
 			} else if (model instanceof IFile) {
 				IFile file = (IFile) model;
-				resource = resourceSet.getResource(URI.createPlatformResourceURI(file.getFullPath().toString(), true), true);
+				resourceURI = URI.createPlatformResourceURI(file.getFullPath().toString(), true);
+				resource = resourceSet.getResource(resourceURI, true);
 			} else if (model instanceof URI) {
-				resource = resourceSet.getResource((URI) model, true);
+				resourceURI = (URI) model;
+				resource = resourceSet.getResource(resourceURI, true);
 			}
 		} catch (Exception e) {
-			// resource load failed
-			throw new CoreException(new Status(IStatus.ERROR, Activator.PLUGIN_ID, NLS.bind("Failed to load packages from resource \"{0}\".", getText(model)), e));
+			Activator.log.error(e);
+			// resource load failed, but may still provide a (partially) valid Package. Keep going (We will validate the resource later on)
+			if (resourceURI != null) {
+				resource = resourceSet.getResource(resourceURI, false);
+			}
 		}
 
 		if (resource == null) {

@@ -89,6 +89,9 @@ public class AllTests {
 		/* css */
 		suiteClasses.add(new PluginTestSuiteClass(org.eclipse.papyrus.infra.gmfdiag.css.tests.tests.AllTests.class));
 
+		/* menu */
+		suiteClasses.add(new PluginTestSuiteClass(org.eclipse.papyrus.infra.gmfdiag.menu.tests.tests.AllTests.class));
+
 		/* control mode */
 		suiteClasses.add(new PluginTestSuiteClass(org.eclipse.papyrus.infra.services.controlmode.tests.AllTests.class));
 
