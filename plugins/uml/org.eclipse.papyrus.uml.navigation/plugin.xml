@@ -9,6 +9,12 @@
             id="org.eclipse.papyrus.uml.navigation.typedElement"
             label="UML Typed Element navigation">
       </contributor>
+      <contributor
+            contributor="org.eclipse.papyrus.uml.navigation.contributor.CBANavigationContributor"
+            description="Navigates to the Behavior linked to the current UML CallBehaviourAction"
+            id="org.eclipse.papyrus.uml.navigation.callBehaviorAction"
+            label="UML Call Behavior Action navigation">
+      </contributor>
    </extension>
 
 </plugin>
