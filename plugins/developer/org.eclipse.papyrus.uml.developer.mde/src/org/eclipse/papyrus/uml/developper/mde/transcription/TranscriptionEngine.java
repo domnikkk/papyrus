@@ -294,12 +294,13 @@ public class TranscriptionEngine {
 								}
 
 								if (cellSize > 1 && cddRefContentComment.hasNext()) {
-									text = refContentComment.getBody() + ", ";
+									text = refContentComment.getBody() + ", \n";
 								} else {
 									text = refContentComment.getBody();
 								}
 								// Write the content of the cell in the table
 								transcription.writeLine(out, referentURI, referenceName, text);
+								transcription.writeNewLine(out);
 							}
 						}
 						transcription.writeEndTDTag(out);
