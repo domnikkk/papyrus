@@ -50,6 +50,10 @@ public class TestParentBarAutoresize_385603 extends TestTopNode {
 
 	private static final String MOVE = "Move: ";
 
+	private final int CHILD_OFFSET = 10;
+	
+	private final int SPACING_HEIGHT = 5; // LifelineXYLayoutEditPolicy.SPACING_HEIGHT
+	
 	@Override
 	protected ICreationCommand getDiagramCommandCreation() {
 		return new CreateSequenceDiagramCommand();
@@ -91,89 +95,72 @@ public class TestParentBarAutoresize_385603 extends TestTopNode {
 		waitForComplete();
 
 		// create nested execution specification
-		createNode(elementType, lifeline1, new Point(131, 300), new Dimension(20, 40));
+		createNode(elementType, lifeline1, new Point(131, 200), new Dimension(20, 40));
 		waitForComplete();
 		IGraphicalEditPart parent = (IGraphicalEditPart)lifeline1.getChildren().get(1);
 		Rectangle before = getAbsoluteBounds(parent);
 
 		// create child
-		/* With location (131, 270), the new Execution will not the child of parent. */
-		createNode(elementType, lifeline1, new Point(131, 310), new Dimension(20, 40));
+		createNode(elementType, lifeline1, new Point(131, 200+CHILD_OFFSET), new Dimension(20, 40));
 		waitForComplete();
 		IGraphicalEditPart child = (IGraphicalEditPart)lifeline1.getChildren().get(2);
 
 		//The parent will not be expand when creation.
 		assertTrue(RESIZE + TEST_THE_EXECUTION, getAbsoluteBounds(parent).getTop().y == before.getTop().y);
-		assertTrue(RESIZE + TEST_THE_EXECUTION, getAbsoluteBounds(parent).height == before.height);
+		assertTrue(RESIZE + TEST_THE_EXECUTION, getAbsoluteBounds(parent).height == before.height+CHILD_OFFSET+SPACING_HEIGHT*2);
 
 		// move up
 		before = getAbsoluteBounds(parent);
-		Point moveDelta = new Point(0, -20);
+		Point moveDelta = new Point(0, -CHILD_OFFSET*2);
 		move(child, moveDelta);
-		assertTrue(MOVE + TEST_THE_EXECUTION, getAbsoluteBounds(parent).getTop().y == getAbsoluteBounds(child).getTop().y);
-		/*
-		 * the parent would not be always expanded.
-		 *
-		 * assertTrue(MOVE + TEST_THE_EXECUTION, getAbsoluteBounds(parent).getTop().y - before.getTop().y == moveDelta.y);
-		 */
+		assertTrue(MOVE + TEST_THE_EXECUTION, getAbsoluteBounds(parent).getTop().y == getAbsoluteBounds(child).getTop().y-SPACING_HEIGHT);
+		assertTrue(MOVE + TEST_THE_EXECUTION, getAbsoluteBounds(parent).getTop().y - before.getTop().y == moveDelta.y+SPACING_HEIGHT);
 		assertTrue(MOVE + TEST_THE_EXECUTION, getAbsoluteBounds(parent).getTop().y <= getAbsoluteBounds(child).getTop().y);
 
 		// resize
 		before = getAbsoluteBounds(parent);
-		Dimension deltaSize = new Dimension(0, 20);
+		Dimension deltaSize = new Dimension(0, CHILD_OFFSET*2);
 		resize(child, getAbsoluteBounds(child).getTop(), PositionConstants.NORTH, deltaSize);
-		assertTrue(MOVE + TEST_THE_EXECUTION, getAbsoluteBounds(parent).getTop().y == getAbsoluteBounds(child).getTop().y);
+		assertTrue(MOVE + TEST_THE_EXECUTION, getAbsoluteBounds(parent).getTop().y == getAbsoluteBounds(child).getTop().y-SPACING_HEIGHT);
 		assertTrue(MOVE + TEST_THE_EXECUTION, getAbsoluteBounds(parent).height - before.height == deltaSize.height);
 	}
 
 	private void moveDown(IElementType elementType) {
-		createNode(UMLElementTypes.Lifeline_3001, getRootEditPart(), new Point(100, 100), new Dimension(62, 200));
+		createNode(UMLElementTypes.Lifeline_3001, getRootEditPart(), new Point(100, 100), new Dimension(62, 300));
 		final LifelineEditPart lifeline1 = (LifelineEditPart)getRootEditPart().getChildren().get(0);
 		waitForComplete();
 
 		// create nested execution specification
-		createNode(elementType, lifeline1, new Point(131, 200), new Dimension(20, 50));
+		createNode(elementType, lifeline1, new Point(131, 200), new Dimension(20, 40));
 		waitForComplete();
 		IGraphicalEditPart parent = (IGraphicalEditPart)lifeline1.getChildren().get(1);
 		Rectangle before = getAbsoluteBounds(parent);
 
 		// create child
-		createNode(elementType, lifeline1, before.getRight().getTranslated(-1, 0), new Dimension(20, 50));
+		createNode(elementType, lifeline1, new Point(131, 200+CHILD_OFFSET), new Dimension(20, 40));
 		waitForComplete();
 		IGraphicalEditPart child = (IGraphicalEditPart)lifeline1.getChildren().get(2);
 
-		/*
-		 * DISABLED: the parent is not always expanded when adding a child.
-		 *
-		 * assertTrue(RESIZE + TEST_THE_EXECUTION, getAbsoluteBounds(parent).getBottom().y > before.getBottom().y);
-		 * assertTrue(RESIZE + TEST_THE_EXECUTION, getAbsoluteBounds(parent).getBottom().y == getAbsoluteBounds(child).getBottom().y);
-		 */
-		assertTrue(RESIZE + TEST_THE_EXECUTION, getAbsoluteBounds(parent).getBottom().y == before.getBottom().y);
+		assertTrue(RESIZE + TEST_THE_EXECUTION, getAbsoluteBounds(parent).getBottom().y > before.getBottom().y);
+		assertTrue(RESIZE + TEST_THE_EXECUTION, getAbsoluteBounds(parent).getBottom().y == getAbsoluteBounds(child).getBottom().y+SPACING_HEIGHT*2);
+		assertTrue(RESIZE + TEST_THE_EXECUTION, getAbsoluteBounds(parent).getBottom().y == before.getBottom().y+CHILD_OFFSET+SPACING_HEIGHT*2);
 
 		// move
 		before = getAbsoluteBounds(parent);
-		Point moveDelta = new Point(0, 20);
+		Point moveDelta = new Point(0, CHILD_OFFSET*2);
 		move(child, moveDelta);
 		assertTrue(MOVE + TEST_THE_EXECUTION, before.getLocation().equals(getAbsoluteBounds(parent).getLocation()));
-
-		/*
-		 * The height of parent will not be changed when move down child.
-		 * assertTrue(MOVE + TEST_THE_EXECUTION, before.height + moveDelta.y == getAbsoluteBounds(parent).height);
-		 * assertTrue(MOVE + TEST_THE_EXECUTION, getAbsoluteBounds(parent).getBottom().y == getAbsoluteBounds(child).getBottom().y);
-		 */
-		assertTrue(MOVE + TEST_THE_EXECUTION, before.height == getAbsoluteBounds(parent).height);
+		assertTrue(MOVE + TEST_THE_EXECUTION, before.height + moveDelta.y == getAbsoluteBounds(parent).height+SPACING_HEIGHT);
+		assertTrue(MOVE + TEST_THE_EXECUTION, getAbsoluteBounds(parent).getBottom().y == getAbsoluteBounds(child).getBottom().y+SPACING_HEIGHT);
+		assertTrue(MOVE + TEST_THE_EXECUTION, getAbsoluteBounds(parent).height == before.height+CHILD_OFFSET*2-SPACING_HEIGHT);
 
 		// resize
 		before = getAbsoluteBounds(parent);
 		Dimension deltaSize = new Dimension(0, 30);
 		resize(child, getAbsoluteBounds(child).getBottom(), PositionConstants.SOUTH, deltaSize);
 
-		/*
-		 * parent would not be changed.
-		 *
-		 * assertTrue(RESIZE + TEST_THE_EXECUTION, getAbsoluteBounds(parent).getBottom().y == getAbsoluteBounds(child).getBottom().y);
-		 * assertTrue(RESIZE + TEST_THE_EXECUTION, getAbsoluteBounds(parent).height == before.height + deltaSize.height);
-		 */
+		assertTrue(RESIZE + TEST_THE_EXECUTION, getAbsoluteBounds(parent).getBottom().y == getAbsoluteBounds(child).getBottom().y+SPACING_HEIGHT);
+		assertTrue(RESIZE + TEST_THE_EXECUTION, getAbsoluteBounds(parent).height == before.height + deltaSize.height);
 		assertTrue(RESIZE + TEST_THE_EXECUTION, getAbsoluteBounds(parent).getTop().equals(before.getTop()));
 
 		// move parent will move child bar
