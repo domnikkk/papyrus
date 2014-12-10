@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2009 CEA LIST.
+ * Copyright (c) 2009, 2014 CEA LIST, Christian W. Damus, and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,6 +8,7 @@
  *
  * Contributors:
  *  Remi Schnekenburger (CEA LIST) remi.schnekenburger@cea.fr - Initial API and implementation
+ *  Christian W. Damus - bug 454578
  *
  *****************************************************************************/
 package org.eclipse.papyrus.customization.palette.dialog;
@@ -38,9 +39,11 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.gef.palette.CombinedTemplateCreationEntry;
 import org.eclipse.gef.palette.PaletteContainer;
 import org.eclipse.gef.palette.PaletteDrawer;
@@ -73,6 +76,7 @@ import org.eclipse.jface.viewers.ViewerComparator;
 import org.eclipse.jface.viewers.ViewerFilter;
 import org.eclipse.jface.wizard.WizardDialog;
 import org.eclipse.jface.wizard.WizardPage;
+import org.eclipse.osgi.util.NLS;
 import org.eclipse.papyrus.customization.palette.proxies.XMLPaletteDefinitionProxyFactory;
 import org.eclipse.papyrus.uml.diagram.common.Activator;
 import org.eclipse.papyrus.uml.diagram.common.Messages;
@@ -510,13 +514,13 @@ public class LocalPaletteContentPage extends WizardPage implements Listener {
 			@Override
 			public void dragOver(DropTargetEvent event) {
 				super.dragOver(event);
-				
+
 				LocalSelectionTransfer localTransfer = LocalSelectionTransfer.getTransfer();
 				IStructuredSelection transferedSelection = null;
 				if (localTransfer.isSupportedType(event.currentDataType)) {
 					transferedSelection = (IStructuredSelection) localTransfer.getSelection();
 				}
-				
+
 				// check selection is compatible for drop target
 
 				TreeItem item = paletteTreeViewer.getTree().getItem(paletteTreeViewer.getTree().toControl(new Point(event.x, event.y)));
@@ -553,7 +557,7 @@ public class LocalPaletteContentPage extends WizardPage implements Listener {
 	 */
 	protected void checkSelectionForDrop(IStructuredSelection transferedSelection, TreeItem item, DropTargetEvent event) {
 		event.detail = DND.DROP_NONE;
-		
+
 		if (transferedSelection == null) {
 			return;
 		}
@@ -1228,7 +1232,16 @@ public class LocalPaletteContentPage extends WizardPage implements Listener {
 
 		int profileNumber = profiles.size();
 		for (int i = 0; i < profileNumber; i++) {
-			profileComboList.add(i, profiles.get(i).getName());
+			String name;
+			if (profiles.get(i).eIsProxy()) {
+				name = NLS.bind("<unresolved: {0}>", URI.decode(EcoreUtil.getURI(profiles.get(i)).lastSegment()));
+			} else {
+				name = profiles.get(i).getName();
+				if (name == null) {
+					name = NLS.bind("<unnamed: {0}>", URI.decode(EcoreUtil.getURI(profiles.get(i)).lastSegment()));
+				}
+			}
+			profileComboList.add(i, name);
 		}
 		profileComboList.add(UML_TOOLS_LABEL);
 		profileCombo.setItems(profileComboList.toArray(new String[] {}));
@@ -2438,14 +2451,14 @@ public class LocalPaletteContentPage extends WizardPage implements Listener {
 	public void setPriority(ProviderPriority priority) {
 		this.priority = priority;
 	}
-	
+
 	protected static class LocalSelectionDragSource extends DragSourceAdapter {
 		private ISelectionProvider selectionSource;
-		
+
 		public LocalSelectionDragSource(ISelectionProvider selectionProvider) {
 			selectionSource = selectionProvider;
 		}
-		
+
 		@Override
 		public void dragStart(DragSourceEvent event) {
 			super.dragStart(event);
