@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<toc label="Papyrus Profiles" link_to="../org.eclipse.papyrus.infra.doc/toc.xml#PapyrusDocUser">
+   <topic label="Using UML Profiles">
+      <anchor id="profiles-start"/>
+      <link toc="resource/users/whatIsAUmlProfile-toc.xml"/>
+      <link toc="resource/users/papyrusProfileArchitecture-toc.xml" />
+      <topic label="Defining Profiles And Stereotypes">
+          <link toc="resource/users/definingProfilesAndStereotypes-toc.xml" />
+      </topic>
+      <topic label="Using Profiles And Stereotypes">
+          <link toc="resource/users/usingProfilesAndStereotypes-toc.xml" />
+      </topic>
+      <anchor id="profiles-end" />
+   </topic>
+</toc>
