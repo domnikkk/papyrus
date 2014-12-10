@@ -26,7 +26,8 @@ import org.junit.runners.Suite.SuiteClasses;
 @SuiteClasses({
 // canonical
 AllCanonicalTests.class,
-PackageDiagramLegacyTest.class
+PackageDiagramLegacyTest.class,
+AllGenTests.class,
 // load
 //LoadTests.class
 })

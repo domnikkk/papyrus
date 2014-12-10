@@ -1,5 +1,7 @@
 bin/
 target/
+xtend-gen/
 *.java._trace
 *.pyc
 .DS_Store
+*.gmfgen.uml

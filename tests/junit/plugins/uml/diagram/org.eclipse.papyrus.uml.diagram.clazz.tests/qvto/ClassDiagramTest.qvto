@@ -1,0 +1,144 @@
+import CanonicalTests;
+
+modeltype UML uses uml('http://www.eclipse.org/uml2/5.0.0/UML');
+
+transformation ClassDiagramTest(in gmfgenUml : UML, in gmfgenMm : UML, in frameworkBase : UML, in utp : UML, out testModel : UML) extends CanonicalTests(in gmfgenUml : UML, in gmfgenMm : UML, in frameworkBase : UML, in utp : UML, out testModel : UML);
+
+main() {
+	diagramUpdater := "CustomUMLDiagramUpdater";
+	topContainerEditPart := "PackageEditPart";
+	topNodesToTest := Set{
+		"DependencyNodeEditPart",
+		//"AssociationClassEditPart",
+		"AssociationNodeEditPart",
+		"InstanceSpecificationEditPart",
+		"ComponentEditPart",
+		"SignalEditPart",
+		"InterfaceEditPart",
+		"ModelEditPartTN",
+		"EnumerationEditPart",
+		"PackageEditPart",
+		"InformationItemEditPart",
+		"ClassEditPart",
+		"PrimitiveTypeEditPart",
+		"DataTypeEditPart",
+		"ConstraintEditPart",
+		"CommentEditPart",
+		"ShortCutDiagramEditPart",
+		"DurationObservationEditPart",
+		"TimeObservationEditPart"  //19 top nodes
+	} ;
+	childNodesToTest := Set{
+		"ComponentEditPartCN",
+		"InstanceSpecificationEditPartCN",
+		"SignalEditPartCN",
+		"ModelEditPartCN",
+		"EnumerationEditPartCN",
+		"ClassEditPartCN",
+		"PackageEditPartCN",
+		"InformationItemEditPartCN",
+		"PrimitiveTypeEditPartCN",
+		"DataTypeEditPartCN",
+		"ConstraintEditPartCN",
+		"CommentEditPartCN" //13 child notes
+	};
+	
+	childLabelNodesToTest := Set{
+		"PropertyForClassEditPart",
+		"PropertyForComponentEditPart",
+		"PropertyForSignalEditPart",
+		"PropertyForInterfaceEditPart",
+		"PropertyforPrimitiveTypeEditPart",
+		"PropertyforDataTypeEditPart",
+		"NestedClassForClassEditPart"
+		,
+		"NestedClassForComponentEditPart",
+		"NestedClassForInterfaceEditPart"
+		,
+		"OperationForClassEditPart"
+		,
+		"OperationForComponentEditPart",
+		"OperationForInterfaceEditpart",
+		"OperationForPrimitiveTypeEditPart"
+		,
+		"OperationForDataTypeEditPart",
+		"ConnectableElementTemplateParameterEditPart",
+		"OperationTemplateParameterEditPart",
+		"ClassifierTemplateParameterEditPart",
+		"TemplateParameterEditPart"
+		,
+		"EnumerationLiteralEditPart",
+		"ReceptionEditPart",
+		"ReceptionInInterfaceEditPart",
+		"SlotEditPart",
+		"NestedInterfaceForClassEditPart",
+		"NestedInterfaceForComponentEditPart",
+		"NestedInterfaceForInterfaceEditPart",
+		"NestedEnumerationForClassEditPart",
+		"NestedEnumerationForComponentEditPart",
+		"NestedEnumerationForInterfaceEditPart",
+		"NestedPrimitiveTypeForClassEditPart",
+		"NestedPrimitiveTypeForComponentEditPart",
+		"NestedPrimitiveTypeForInterfaceEditPart",
+		"NestedDataTypeForClassEditPart",
+		"NestedDataTypeForComponentEditPart",
+		"NestedDataTypeForInterfaceEditPart",
+		"NestedSignalForClassEditPart",
+		"NestedSignalForComponentEditPart",
+		"NestedSignalForInterfaceEditPart"
+	};
+	
+	linksToTest := Set{
+		//"AssociationClassLinkEditPart",
+		"AssociationEditPart",
+		//"AssociationBranchEditPart",
+		"DependencyEditPart",
+		//"DependencyBranchEditPart",
+		"AssociationEditPart",
+		"RealizationEditPart",
+		"AbstractionEditPart",
+		"UsageEditPart",
+		"ProfileApplicationEditPart",
+		"TemplateBindingEditPart",
+		"InstanceSpecificationLinkEditPart",
+		"InformationFlowEditPart" //13 link types
+	};
+	linksOwnedBySourceToTest := Set{
+		"GeneralizationEditPart",
+		"InterfaceRealizationEditPart",
+		"SubstitutionEditPart",
+		"ElementImportEditPart",
+		"PackageImportEditPart",
+		"PackageMergeEditPart",
+		"GeneralizationSetEditPart"
+		
+	};
+	
+	elementTypesAppearanceTest := topNodesToTest;
+	
+	elementTypesDropTests := Set{
+		"DependencyNodeEditPart",
+		"AssociationNodeEditPart",
+		"InstanceSpecificationEditPart",
+		"ComponentEditPart",
+		"SignalEditPart",
+		"InterfaceEditPart",
+		"ModelEditPartTN",
+		"EnumerationEditPart",
+		"PackageEditPart",
+		"InformationItemEditPart",
+		"ClassEditPart",
+		"PrimitiveTypeEditPart",
+		"DataTypeEditPart",
+		"ConstraintEditPart",
+		"CommentEditPart",
+		"DurationObservationEditPart",
+		"TimeObservationEditPart"  
+	} ;
+	
+	elementTypesDeleteTests := topNodesToTest;
+	
+	elementTypesEditTests := topNodesToTest;
+	gmfgenUml.rootObjects()[UML::Model]->collectOne(canonicalTests("org.eclipse.papyrus.uml.diagram.clazz.test"));
+}
+

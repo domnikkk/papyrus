@@ -51,7 +51,6 @@ public class TestClassDiagramLink extends TestLink {
 	 * Test to manage component.
 	 */
 	@Test
-	@FailingTest
 	public void testToManageDependency() {
 		testToManageLink(UMLElementTypes.Component_2002, UMLElementTypes.Component_2002, UMLElementTypes.Dependency_4008, UMLElementTypes.Package_2007, true);
 	}

@@ -3,7 +3,9 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.mwe.core,
  org.eclipse.uml2.uml,
  org.apache.commons.logging,
- org.eclipse.m2m.qvt.oml
+ org.eclipse.m2m.qvt.oml,
+ com.google.guava,
+ org.eclipse.xtext.xbase.lib;bundle-version="2.7.0"
 Export-Package: org.eclipse.papyrus.mwe2.utils,
  org.eclipse.papyrus.mwe2.utils.components,
  org.eclipse.papyrus.mwe2.utils.messages

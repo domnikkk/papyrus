@@ -13,5 +13,5 @@
 package org.eclipse.papyrus.uml.diagram.tests.appearance;
 
 
-public abstract class AppearanceNodeLabelTest extends AppearanceNodeTest {
+public abstract class AppearanceNodeLabelTest extends AbstractAppearanceNodeTest {
 }

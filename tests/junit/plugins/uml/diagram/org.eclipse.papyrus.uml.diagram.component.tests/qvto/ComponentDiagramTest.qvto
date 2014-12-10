@@ -1,0 +1,58 @@
+import CanonicalTests;
+
+modeltype UML uses uml('http://www.eclipse.org/uml2/5.0.0/UML');
+
+transformation ComponentDiagramTest(in gmfgenUml : UML, in gmfgenMm : UML, in frameworkBase : UML, in utp : UML, out testModel : UML) extends CanonicalTests(in gmfgenUml : UML, in gmfgenMm : UML, in frameworkBase : UML, in utp : UML, out testModel : UML);
+
+main() {
+	topContainerEditPart := "PackageEditPart";
+	topNodesToTest := Set{
+		"PackageEditPart", 
+		"ModelEditPart", 
+		"ComponentEditPart", 
+		"InterfaceEditPart", 
+		"CommentEditPart", 
+		"ConstraintEditPart"
+	} ;
+	childNodesToTest := Set{
+		"ModelEditPartCN", 
+		"PackageEditPartCN",
+		"RectangleInterfaceEditPartCN" 
+		"ComponentEditPartCN", 
+		"ComponentEditPartPCN", 
+		"CommentEditPartPCN", 
+		"ConstraintEditPartPCN",
+		"InterfaceEditPartPCN"
+	};
+	linksToTest := Set{
+		"UsageEditPart",
+		"InterfaceRealizationEditPart",
+		"ManifestationEditPart",
+		"ComponentRealizationEditPart",
+		"AbstractionEditPart",
+		"DependencyEditPart"
+	};
+	linksOwnedBySourceToTest := Set{
+		"GeneralizationEditPart"
+	};
+	
+	elementTypesAppearanceTest := Set{
+		"PackageEditPart", 
+		"ModelEditPart", 
+		"ComponentEditPart", 
+		"InterfaceEditPart", 
+		"CommentEditPart", 
+		"ConstraintEditPart"
+	} ;
+	elementTypesDropTests := Set{
+		"PackageEditPart", 
+		"ModelEditPart", 
+		"ComponentEditPart", 
+		"InterfaceEditPart", 
+		"CommentEditPart", 
+		"ConstraintEditPart"
+	};
+	gmfgenUml.rootObjects()[UML::Model]->collectOne(canonicalTests("org.eclipse.papyrus.uml.diagram.component.test"));
+}
+
+

@@ -1,0 +1,319 @@
+modeltype gmfgen uses 'http://www.eclipse.org/gmf/2009/GenModel';
+modeltype uml uses uml('http://www.eclipse.org/uml2/5.0.0/UML');
+modeltype ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+
+transformation gmfgen2uml(in gmfgenIn : gmfgen, in gmfgenMm : uml, out uml);
+
+main(){
+	gmfgenIn.rootObjects()->map gmfgen2uml();
+}
+
+mapping Set(Stdlib::Element)::gmfgen2uml() : Model{
+	var genEditorGenerator := self->selectByType(gmfgen::GenEditorGenerator);
+	name := genEditorGenerator->any(true).modelID;
+	packagedElement := genEditorGenerator->map gmfGen2UmlEditorGenerator()->asSequence()
+		->union(genEditorGenerator.diagram.resolveIn(gmfgen::GenDiagram::gmfgenDiagram2uml, InstanceSpecification))
+		->union(genEditorGenerator.diagram.topLevelNodes.resolveIn(gmfgen::GenTopLevelNode::gmfgenTopLevelNodes2uml, InstanceSpecification))
+		->union(genEditorGenerator.diagram.topLevelNodes.elementType[MetamodelType].resolveIn(gmfgen::MetamodelType::gmfgenMetamodelType2uml, InstanceSpecification))
+		->union(genEditorGenerator.diagram.topLevelNodes.elementType[SpecializationType].resolveIn(gmfgen::SpecializationType::gmfgenSpecializationType2uml, InstanceSpecification))
+		->union(genEditorGenerator.diagram.topLevelNodes.modelFacet[TypeModelFacet].resolveIn(gmfgen::TypeModelFacet::gmfgenTypeModelFacet2uml, InstanceSpecification))
+		->union(genEditorGenerator.diagram.childNodes.resolveIn(gmfgen::GenChildNode::gmfgenChildLevelNodes2uml, InstanceSpecification))
+		->union(genEditorGenerator.diagram.childNodes.elementType[MetamodelType].resolveIn(gmfgen::MetamodelType::gmfgenMetamodelType2uml, InstanceSpecification))
+		->union(genEditorGenerator.diagram.childNodes.elementType[SpecializationType].resolveIn(gmfgen::SpecializationType::gmfgenSpecializationType2uml, InstanceSpecification))
+		->union(genEditorGenerator.diagram.childNodes.modelFacet[TypeModelFacet].resolveIn(gmfgen::TypeModelFacet::gmfgenTypeModelFacet2uml, InstanceSpecification))
+		->union(genEditorGenerator.diagram.links.resolveIn(gmfgen::GenLink::gmfgenLinks2uml, InstanceSpecification))
+		->union(genEditorGenerator.diagram.links.elementType[MetamodelType].resolveIn(gmfgen::MetamodelType::gmfgenMetamodelType2uml, InstanceSpecification))
+		->union(genEditorGenerator.diagram.links.elementType[SpecializationType].resolveIn(gmfgen::SpecializationType::gmfgenSpecializationType2uml, InstanceSpecification))
+		->union(genEditorGenerator.diagram.links.modelFacet[TypeLinkModelFacet].resolveIn(gmfgen::TypeLinkModelFacet::gmfgenTypeLinkModelFacet2uml, InstanceSpecification))
+		->union(genEditorGenerator.diagram.compartments.resolveIn(gmfgen::GenCompartment::gmfgenCompartment2uml, InstanceSpecification))
+		->asOrderedSet();
+}
+
+mapping gmfgen::GenEditorGenerator::gmfGen2UmlEditorGenerator() : InstanceSpecification{
+	name := self.metaClassName() + '_' + self.packageNamePrefix;
+	var umlClassifier := getUmlClassifier(self.metaClassName());
+	classifier := umlClassifier;
+	var diagram := self.diagram;
+	slot := Set{ 
+		object Slot{
+			definingFeature := getUmlStructuralFeature(umlClassifier, 'packageNamePrefix');
+			value := object LiteralString{ value := self.packageNamePrefix };
+		},
+		object Slot{
+			definingFeature := getUmlStructuralFeature(umlClassifier, 'diagram');
+			value := object InstanceValue { instance := diagram.map gmfgenDiagram2uml(); };
+		},
+		object Slot{
+			definingFeature := getUmlStructuralFeature(umlClassifier, 'modelID');
+			value := object LiteralString { value := self.modelID };
+		},
+		object Slot{
+			definingFeature := getUmlStructuralFeature(umlClassifier, 'domainFileExtension');
+			value := object LiteralString { value := self.domainFileExtension };
+		}
+	};
+}
+
+mapping gmfgen::GenDiagram::gmfgenDiagram2uml() : InstanceSpecification{
+	name := self.metaClassName() + '_' + self.editPartClassName;
+	var umlClassifier : Classifier := getUmlClassifier(self.metaClassName());
+	classifier := umlClassifier;
+	slot := Set{
+		object Slot{
+			definingFeature := getUmlStructuralFeature(umlClassifier, 'visualID');
+			value := object LiteralInteger { value := self.visualID };
+		},
+		object Slot{
+			definingFeature  := getUmlStructuralFeature(umlClassifier, 'editPartClassName');
+			value := object LiteralString { value := self.editPartClassName };
+		},
+		object Slot {
+			definingFeature := getUmlStructuralFeature(umlClassifier, 'itemSemanticEditPolicyClassName');
+			value := object LiteralString { value := self.itemSemanticEditPolicyClassName };
+		},
+		object Slot {
+			definingFeature := getUmlStructuralFeature(umlClassifier, 'canonicalEditPolicyClassName');
+			value := object LiteralString { value := self.canonicalEditPolicyClassName };
+		},
+		object Slot{
+			definingFeature := getUmlStructuralFeature(umlClassifier, 'topLevelNodes');
+			value := self.topLevelNodes.map gmfgenTopLevelNodes2uml()->collect(c | object InstanceValue { instance := c})
+				->union(self.childNodes.map gmfgenChildLevelNodes2uml()->collect(c | object InstanceValue {instance := c}))
+				->union(self.compartments.map gmfgenCompartment2uml()->collect(c | object InstanceValue {instance := c}))
+				->union(self.links.map gmfgenLinks2uml()->collect(c | object InstanceValue {instance := c}))
+				;
+		}
+	};
+}
+
+mapping gmfgen::GenTopLevelNode::gmfgenTopLevelNodes2uml() : InstanceSpecification{
+	name := self.metaClassName() + '_' + self.editPartClassName;
+	var umlClassifier : Classifier := getUmlClassifier(self.metaClassName());
+	classifier := umlClassifier;
+	slot := Set{
+		object Slot{
+			definingFeature := getUmlStructuralFeature(umlClassifier, 'visualID');
+			value := object LiteralInteger { value := self.visualID };
+		},
+		object Slot{
+			definingFeature := getUmlStructuralFeature(umlClassifier, 'editPartClassName');
+			value := object LiteralString { value := self.editPartClassName };
+		},
+		object Slot{
+			definingFeature := getUmlStructuralFeature(umlClassifier, 'itemSemanticEditPolicyClassName');
+			value := object LiteralString { value := self.itemSemanticEditPolicyClassName };
+		},
+		object Slot{
+			definingFeature := getUmlStructuralFeature(umlClassifier, 'elementType');
+			value := self.elementType[MetamodelType].map gmfgenMetamodelType2uml()
+					->union(self.elementType[SpecializationType].map gmfgenSpecializationType2uml())
+					->collect(c | object InstanceValue {instance := c} )
+		},
+		object Slot{
+			definingFeature := getUmlStructuralFeature(umlClassifier, 'modelFacet');
+			value := self.modelFacet[TypeModelFacet].map gmfgenTypeModelFacet2uml()->collect(c | object InstanceValue {instance := c} );
+		}
+	}
+}
+
+mapping gmfgen::GenChildNode::gmfgenChildLevelNodes2uml() : InstanceSpecification{
+	name := self.metaClassName() + '_' + self.editPartClassName;
+	var umlClassifier : Classifier := getUmlClassifier(self.metaClassName());
+	classifier := umlClassifier;
+	slot := Set{
+		object Slot{
+			definingFeature := getUmlStructuralFeature(umlClassifier, 'visualID');
+			value := object LiteralInteger { value := self.visualID };
+		},
+		object Slot{
+			definingFeature := getUmlStructuralFeature(umlClassifier, 'editPartClassName');
+			value := object LiteralString { value := self.editPartClassName };
+		},
+		object Slot{
+			definingFeature := getUmlStructuralFeature(umlClassifier, 'itemSemanticEditPolicyClassName');
+			value := object LiteralString { value := self.itemSemanticEditPolicyClassName };
+		},
+		object Slot{
+			definingFeature := getUmlStructuralFeature(umlClassifier, 'elementType');
+			value := self.elementType[MetamodelType].map gmfgenMetamodelType2uml()
+					->union(self.elementType[SpecializationType].map gmfgenSpecializationType2uml())
+					->collect(c | object InstanceValue {instance := c} )
+		},
+		object Slot{
+			definingFeature := getUmlStructuralFeature(umlClassifier, 'modelFacet');
+			value := self.modelFacet[TypeModelFacet].map gmfgenTypeModelFacet2uml()->collect(c | object InstanceValue {instance := c} );
+		}
+		/*
+		,
+		object Slot{
+			definingFeature := getUmlStructuralFeature(umlClassifier, 'containers');
+			value := self.containers[gmfgen::GenCompartment]->resolveIn(gmfgen::GenCompartment::gmfgenCompartment2uml, InstanceSpecification)
+				->collect(c | object InstanceValue {instance := c} );
+		}
+		*/
+	}
+}
+
+mapping gmfgen::GenLink::gmfgenLinks2uml() : InstanceSpecification{
+	name := self.metaClassName() + '_' + self.editPartClassName;
+	var umlClassifier : Classifier := getUmlClassifier(self.metaClassName());
+	classifier := umlClassifier;
+	slot := Set{
+		object Slot{
+			definingFeature := getUmlStructuralFeature(umlClassifier, 'visualID');
+			value := object LiteralInteger { value := self.visualID };
+		},
+		object Slot{
+			definingFeature := getUmlStructuralFeature(umlClassifier, 'editPartClassName');
+			value := object LiteralString { value := self.editPartClassName };
+		},
+		object Slot{
+			definingFeature := getUmlStructuralFeature(umlClassifier, 'itemSemanticEditPolicyClassName');
+			value := object LiteralString { value := self.itemSemanticEditPolicyClassName };
+		},
+		object Slot{
+			definingFeature := getUmlStructuralFeature(umlClassifier, 'elementType');
+			value := self.elementType[MetamodelType].map gmfgenMetamodelType2uml()
+					->union(self.elementType[SpecializationType].map gmfgenSpecializationType2uml())
+					->collect(c | object InstanceValue {instance := c} )
+		},
+		object Slot{
+			definingFeature := getUmlStructuralFeature(umlClassifier, 'modelFacet');
+			value := self.modelFacet[TypeLinkModelFacet].map gmfgenTypeLinkModelFacet2uml()->collect(c | object InstanceValue {instance := c} );
+		}
+	}
+}
+
+mapping gmfgen::GenCompartment::gmfgenCompartment2uml() : InstanceSpecification{
+	name := self.metaClassName() + '_' + self.editPartClassName;
+	var umlClassifier : Classifier := getUmlClassifier(self.metaClassName());
+	classifier := umlClassifier;
+	slot := Set{
+		object Slot{
+			definingFeature := getUmlStructuralFeature(umlClassifier, 'visualID');
+			value := object LiteralInteger { value := self.visualID };
+		},
+		object Slot{
+			definingFeature := getUmlStructuralFeature(umlClassifier, 'editPartClassName');
+			value := object LiteralString { value := self.editPartClassName };
+		},
+		object Slot{
+			definingFeature := getUmlStructuralFeature(umlClassifier, 'itemSemanticEditPolicyClassName');
+			value := object LiteralString { value := self.itemSemanticEditPolicyClassName };
+		},
+		object Slot{
+			definingFeature := getUmlStructuralFeature(umlClassifier, 'node');
+			value := object InstanceValue{
+				instance := self.node->resolveIn (gmfgen::GenTopLevelNode::gmfgenTopLevelNodes2uml, InstanceSpecification)->any(true);
+				if (instance = null){
+					instance := self.node->resolveIn (gmfgen::GenChildNode::gmfgenChildLevelNodes2uml, InstanceSpecification)->any(true);
+				}
+				
+			}
+		},
+		object Slot{
+			definingFeature := getUmlStructuralFeature(umlClassifier, 'childNodes');
+			value := object InstanceValue{
+				instance := self.childNodes->resolveIn (gmfgen::GenChildNode::gmfgenChildLevelNodes2uml, InstanceSpecification)->any(true);
+			}
+		}
+	}
+	end{
+		//set eOpposite references
+		setOppositeReference("node", "compartments", result);
+		setOppositeReference("childNodes", "containers", result);
+	}
+}
+
+helper setOppositeReference(thisRef : String, oppositeRef : String,  thisIs : InstanceSpecification){
+		thisIs.getSlot(thisRef).value.oclAsType(InstanceValue).instance->forEach(nodeIs){
+			var compartmentsSlot := nodeIs.getSlot(oppositeRef);
+			if(compartmentsSlot != null){
+				var compartmentsIs : Set(InstanceValue) := compartmentsSlot.value.oclAsType(InstanceValue)->asSet() ;
+				compartmentsIs := compartmentsIs->including(object InstanceValue { instance := thisIs})->asSet();
+				compartmentsSlot.value := compartmentsIs;
+				nodeIs.slot := nodeIs.slot->including(compartmentsSlot);
+			}else{
+				nodeIs.slot := nodeIs.slot->including(object Slot{
+					definingFeature := getUmlStructuralFeature(nodeIs.classifier->any(true), oppositeRef);
+					value := object InstanceValue { instance := thisIs};
+				});
+			};
+		}
+}
+
+mapping gmfgen::MetamodelType::gmfgenMetamodelType2uml() : InstanceSpecification {
+	name := self.metaClassName() + '_' + self.displayName;
+	var umlClassifier : Classifier := getUmlClassifier(self.metaClassName());
+	classifier := umlClassifier;
+	slot := object Slot{
+		definingFeature := getUmlStructuralFeature(umlClassifier, 'displayName');
+		value := object LiteralString { value := self.displayName }
+	}
+}
+
+mapping gmfgen::SpecializationType::gmfgenSpecializationType2uml() : InstanceSpecification {
+	name := self.metaClassName() + '_' + self.displayName;
+	var umlClassifier : Classifier := getUmlClassifier(self.metaClassName());
+	classifier := umlClassifier;
+	slot := object Slot{
+		definingFeature := getUmlStructuralFeature(umlClassifier, 'displayName');
+		value := object LiteralString { value := self.displayName }
+	}
+}
+
+mapping gmfgen::TypeModelFacet::gmfgenTypeModelFacet2uml() : InstanceSpecification {
+	name := self.metaClassName() + '_' + self.metaClass.ecoreClass.name;
+	var umlClassifier : Classifier := getUmlClassifier(self.metaClassName());
+	classifier := umlClassifier;
+	slot := Set{
+		object Slot{
+			definingFeature := getUmlStructuralFeature(umlClassifier, 'metaClass');
+			value := object LiteralString {value := self.metaClass.ecoreClass.name};
+		}
+	}
+}
+
+mapping gmfgen::TypeLinkModelFacet::gmfgenTypeLinkModelFacet2uml() : InstanceSpecification {
+	name := self.metaClassName() + '_' + self.metaClass.ecoreClass.name;
+	var umlClassifier : Classifier := getUmlClassifier(self.metaClassName());
+	classifier := umlClassifier;
+	slot := Set{
+		object Slot{
+			definingFeature := getUmlStructuralFeature(umlClassifier, 'metaClass');
+			value := object LiteralString {value := self.metaClass.ecoreClass.name};
+		}
+	}
+}
+
+query getUmlStructuralFeature(classifier : Classifier, structuralFeatureName : String) : StructuralFeature{
+	return classifier.getAllInheritedAttributes()->any(ne : Property | ne.name.equalsIgnoreCase(structuralFeatureName)).oclAsType(StructuralFeature);
+}
+
+query Classifier::getAllInheritedAttributes() : Set(Property){
+	return self.getAllAttributes()->union(self.clientDependency.oclAsType(InterfaceRealization).contract.getAllAttributes()->asSet())->union(self.general.getAllInheritedAttributes()->asSet());
+}
+
+
+query Model::getInstanceSpecification(classifierName: String) : InstanceSpecification{
+	return self.packagedElement[InstanceSpecification]->any(classifier->collectOne(name) = classifierName);
+}
+
+query Model::getInstanceSpecificationByName(searchedName: String) : InstanceSpecification{
+	return self.packagedElement[InstanceSpecification]->any(name = searchedName);
+}
+
+query InstanceSpecification::getSlotStringValue(slotName : String) : String
+{
+	return self.getSlot(slotName).value->oclAsType(LiteralString).value->any(true)
+}
+
+query getUmlClassifier(name : String) : Classifier{
+	var classifiers : Collection(Classifier) := gmfgenMm.rootObjects()[Model].packagedElement->selectByKind(Classifier);
+	return classifiers->any(classifier : Classifier | classifier.name = name);
+}
+
+query InstanceSpecification::getSlot(slotName : String) : Slot
+{
+	return self.slot->select(slot : Slot | slot.definingFeature.name = slotName)->any(true)
+}

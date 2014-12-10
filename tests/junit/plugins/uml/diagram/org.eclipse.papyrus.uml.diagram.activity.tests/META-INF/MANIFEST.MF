@@ -17,17 +17,18 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.gmf.tooling.runtime,
  org.eclipse.papyrus.uml.service.types;bundle-version="1.1.0",
  org.eclipse.uml2.uml.editor,
- org.eclipse.papyrus.junit.utils;bundle-version="1.1.0"
-Export-Package: org.eclipse.papyrus.uml.diagram.activity.tests
+ org.eclipse.papyrus.junit.utils;bundle-version="1.1.0",
+ org.eclipse.papyrus.tests.framework;bundle-version="1.1.0"
+Export-Package: org.eclipse.papyrus.uml.diagram.activity.test,
+ org.eclipse.papyrus.uml.diagram.activity.tests,
+ org.eclipse.papyrus.uml.diagram.activity.tests.generation
 Bundle-Vendor: %providerName
 Bundle-ActivationPolicy: lazy
 Bundle-Version: 1.1.0.qualifier
 Bundle-Name: %pluginName
 Bundle-Localization: plugin
 Bundle-ManifestVersion: 2
-Bundle-Activator: org.eclipse.papyrus.uml.diagram.activity.tests.Activ
- ator
-Bundle-SymbolicName: org.eclipse.papyrus.uml.diagram.activity.tests;si
- ngleton:=true
+Bundle-Activator: org.eclipse.papyrus.uml.diagram.activity.tests.Activator
+Bundle-SymbolicName: org.eclipse.papyrus.uml.diagram.activity.tests;singleton:=true
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 

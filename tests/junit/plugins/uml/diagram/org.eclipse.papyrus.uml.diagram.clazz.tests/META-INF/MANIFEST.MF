@@ -18,11 +18,17 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.ui.ide;bundle-version="3.10.0",
  org.eclipse.emf.common.ui;bundle-version="2.9.0",
  org.eclipse.papyrus.infra.widgets;bundle-version="1.1.0",
- org.eclipse.papyrus.junit.utils;bundle-version="1.1.0"
+ org.eclipse.papyrus.junit.utils;bundle-version="1.1.0",
+ org.eclipse.xtend.lib,
+ com.google.guava,
+ org.eclipse.xtext.xbase.lib,
+ org.eclipse.papyrus.tests.framework;bundle-version="1.1.0"
 Export-Package: org.eclipse.papyrus.diagram.clazz.test.createFromPalette,
  org.eclipse.papyrus.uml.diagram.clazz.test,
+Export-Package: org.eclipse.papyrus.uml.diagram.clazz.test,
  org.eclipse.papyrus.uml.diagram.clazz.test.canonical,
- org.eclipse.papyrus.uml.diagram.clazz.test.load
+ org.eclipse.papyrus.uml.diagram.clazz.test.load,
+ org.eclipse.papyrus.uml.diagram.clazz.tests.generation
 Bundle-Vendor: %providerName
 Bundle-ActivationPolicy: lazy
 Bundle-Version: 1.1.0.qualifier
