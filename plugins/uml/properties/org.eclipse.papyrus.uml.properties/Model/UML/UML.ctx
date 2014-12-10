@@ -5317,4 +5317,10 @@
     </elements>
     <modelElementFactory href="ppe:/environment/org.eclipse.papyrus.views.properties/model/Environment.xmi#//@modelElementFactories.1"/>
   </dataContexts>
+  <dataContexts name="ImportedPackage" label="Imported Package">
+    <elements name="Package">
+      <properties name="location" label="Location" description="The location of imported package"/>
+    </elements>
+    <modelElementFactory href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@modelElementFactories.9"/>
+  </dataContexts>
 </contexts:Context>
