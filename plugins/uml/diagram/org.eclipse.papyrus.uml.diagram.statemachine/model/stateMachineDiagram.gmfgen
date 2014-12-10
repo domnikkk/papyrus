@@ -2646,5 +2646,23 @@
         genView="/0/@diagram/@childNodes.1/@labels.0 /0/@diagram/@childNodes.3/@labels.0 /0/@diagram/@childNodes.4/@labels.0 /0/@diagram/@childNodes.5/@labels.0 /0/@diagram/@childNodes.6/@labels.0 /0/@diagram/@childNodes.7/@labels.0 /0/@diagram/@childNodes.8/@labels.0 /0/@diagram/@childNodes.9/@labels.0 /0/@diagram/@childNodes.10/@labels.0 /0/@diagram/@childNodes.11/@labels.0 /0/@diagram/@childNodes.12/@labels.0"
         name="PapyrusLabelEditPart"
         superOwnedEditPart="org.eclipse.papyrus.infra.gmfdiag.common.editpart.PapyrusLabelEditPart"/>
+    <extensionNodes
+        xsi:type="papyrusgmfgenextension:LabelVisibilityPreference"
+        comment="Name"
+        role="Name"
+        iconPathRole="platform:/plugin/org.eclipse.papyrus.uml.diagram.common/icons/label_role/name.png"
+        linkLabels="/0/@diagram/@links.0/@labels.0"/>
+    <extensionNodes
+        xsi:type="papyrusgmfgenextension:LabelVisibilityPreference"
+        comment="Stereotype"
+        role="Stereotype"
+        iconPathRole="platform:/plugin/org.eclipse.papyrus.uml.diagram.common/icons/stereotype.gif"
+        linkLabels="/0/@diagram/@links.0/@labels.2 /0/@diagram/@links.4/@labels.0"/>
+    <extensionNodes
+        xsi:type="papyrusgmfgenextension:LabelVisibilityPreference"
+        comment="Specification"
+        role="Specification"
+        iconPathRole="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Transition.gif"
+        linkLabels="/0/@diagram/@links.0/@labels.1"/>
   </papyrusgmfgenextension:PapyrusExtensionRootNode>
 </xmi:XMI>

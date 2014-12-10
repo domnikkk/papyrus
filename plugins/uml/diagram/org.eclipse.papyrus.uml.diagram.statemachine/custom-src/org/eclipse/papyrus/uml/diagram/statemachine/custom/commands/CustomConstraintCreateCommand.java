@@ -46,14 +46,14 @@ public class CustomConstraintCreateCommand extends ConstraintCreateCommand {
 		Constraint newElement = UMLFactory.eINSTANCE.createConstraint();
 		EObject target = getElementToEdit();
 		ModelAddData data = PolicyChecker.getCurrent().getChildAddData(diagram, target, newElement);
-		if(data.isPermitted()) {
-			if(data.isPathDefined()) {
-				if(!data.execute(target, newElement))
-				 {
+		if (data.isPermitted()) {
+			if (data.isPathDefined()) {
+				if (!data.execute(target, newElement))
+				{
 					return CommandResult.newErrorCommandResult("Failed to follow the policy-specified for the insertion of the new element"); //$NON-NLS-1$
 				}
 			} else {
-				Package qualifiedTarget = ((Element)target).getNearestPackage();
+				Package qualifiedTarget = ((Element) target).getNearestPackage();
 				qualifiedTarget.getPackagedElements().add(newElement);
 			}
 		} else {
@@ -61,7 +61,7 @@ public class CustomConstraintCreateCommand extends ConstraintCreateCommand {
 		}
 		ElementInitializers.getInstance().init_Constraint_668(newElement);
 		doConfigure(newElement, monitor, info);
-		((CreateElementRequest)getRequest()).setNewElement(newElement);
+		((CreateElementRequest) getRequest()).setNewElement(newElement);
 		return CommandResult.newOKCommandResult(newElement);
 	}
 }

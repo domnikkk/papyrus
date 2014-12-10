@@ -64,6 +64,14 @@
         <bc:propertyRef key="buckminster.component"/>
       </rm:uri>
     </rm:provider>
+        
+    <!-- EPF -->
+    <rm:provider componentTypes="osgi.bundle" readerType="local">
+      <rm:uri format="{0}/extraplugins/epf-richtext/{1}">
+        <bc:propertyRef key="local.repository"/>
+        <bc:propertyRef key="buckminster.component"/>
+      </rm:uri>
+    </rm:provider>
 
 	<!-- layout-->
     <rm:provider componentTypes="osgi.bundle" readerType="local">
@@ -467,11 +475,11 @@
   	  </rm:provider>
 
     <!-- Papyrus Richtext -->
-<!--     <rm:provider componentTypes="eclipse.feature,osgi.bundle" mutable="false" readerType="p2" source="false"> -->
-<!--       <rm:uri format="{0}/modeling/mdt/papyrus/extra/updates/richtext"> -->
-<!--         <bc:propertyRef key="eclipse.downloads"/> -->
-<!--       </rm:uri> -->
-<!--     </rm:provider> -->
+    <rm:provider componentTypes="eclipse.feature,osgi.bundle" mutable="false" readerType="p2" source="false">
+       <rm:uri format="http://download.eclipse.org/modeling/mdt/papyrus/updates/epf/main">
+         <bc:propertyRef key="eclipse.downloads"/> 
+       </rm:uri>
+    </rm:provider>
    
 
   </rm:searchPath>

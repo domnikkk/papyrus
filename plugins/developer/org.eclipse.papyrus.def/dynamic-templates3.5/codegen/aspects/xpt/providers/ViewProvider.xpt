@@ -464,7 +464,6 @@ public class «notationViewProviderClassName»«EXPAND xpt::providers::ViewProvi
 		//}
 		«EXPAND initRountingFromPrefs('edge', 'prefStore')-»
         «EXPAND initLabel('edge', 'prefStore') FOREACH labels-»
-		«EXPAND initLabelVisibility('edge', 'prefStore') FOR self-»
 		return edge;
 	}
 «ENDDEFINE»
@@ -669,18 +668,4 @@ protected org.eclipse.gmf.runtime.emf.type.core.IElementType getSemanticElementT
 «ENDDEFINE»
 
 «DEFINE specificInitRountingFromPrefs(String viewVar, String prefStoreVar) FOR gmfgen::GenCommonBase»
-«ENDDEFINE»
-
-«REM» write the line to initialize the property isVisible for the label of the link «ENDREM»
-«DEFINE initLabelVisibility(String viewVar, String prefStoreVar) FOR gmfgen::GenLink»
-	«IF self.labels->exists(lbl : gmfgen::GenLinkLabel | (papyrusgmfgenextension::LabelVisibilityPreference.allInstances()->select(label : papyrusgmfgenextension::LabelVisibilityPreference | label.linkLabels->includes(lbl))->size()<>0))»
-	 org.eclipse.papyrus.uml.diagram.common.helper.PreferenceInitializerForElementHelper.initLabelVisibilityFromPrefs(«viewVar», «prefStoreVar», "«elementType.displayName»");
-	«ENDIF»
-«ENDDEFINE»
-
-«REM» write the line to initialize the property isVisible for the label of the link «ENDREM»
-«DEFINE initLabelVisibility(String viewVar, String prefStoreVar) FOR gmfgen::GenNode»
-	«IF self.labels->exists(lbl : gmfgen::GenExternalNodeLabel | (papyrusgmfgenextension::LabelVisibilityPreference.allInstances()->select(label : papyrusgmfgenextension::LabelVisibilityPreference | label.externalNodeLabels->includes(lbl))->size()<>0))»
-	 org.eclipse.papyrus.uml.diagram.common.helper.PreferenceInitializerForElementHelper.initLabelVisibilityFromPrefs(«viewVar», «prefStoreVar», "«elementType.displayName»");
-	«ENDIF»
 «ENDDEFINE»

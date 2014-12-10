@@ -105,8 +105,9 @@ public class ConstraintEditPart extends AbstractConstraintEditPart {
 	}
 
 	/**
-	 *Papyrus codeGen
-	 *@generated
+	 * Papyrus codeGen
+	 *
+	 * @generated
 	 **/
 	@Override
 	protected void handleNotificationEvent(Notification event) {

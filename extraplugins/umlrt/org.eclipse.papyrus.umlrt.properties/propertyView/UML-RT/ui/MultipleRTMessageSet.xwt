@@ -13,4 +13,11 @@
 		<ppe:EnumCombo input="{Binding}"
 			property="UMLRealTime:RTMessageSet:rtMsgKind"></ppe:EnumCombo>
 	</Composite>
+	<Composite>
+		<Composite.layout>
+			<ppel:PropertiesLayout></ppel:PropertiesLayout>
+		</Composite.layout>
+		<ppe:MultiReference property="UML:Interface:ownedOperation"
+			input="{Binding}"></ppe:MultiReference>
+	</Composite>
 </Composite>

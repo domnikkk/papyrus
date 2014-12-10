@@ -1,20 +1,22 @@
+/**
+ * Copyright (c) 2014 CEA LIST.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *     CEA LIST - initial API and implementation
+ */
 package org.eclipse.papyrus.cpp.codegen.xtend;
 
 import com.google.common.base.Objects;
+import java.util.Collection;
 import java.util.List;
-import org.eclipse.core.resources.IContainer;
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.papyrus.C_Cpp.ExternLibrary;
-import org.eclipse.papyrus.C_Cpp.External;
-import org.eclipse.papyrus.C_Cpp.Include;
-import org.eclipse.papyrus.C_Cpp.ManualGeneration;
-import org.eclipse.papyrus.C_Cpp.NoCodeGen;
-import org.eclipse.papyrus.C_Cpp.Template;
 import org.eclipse.papyrus.C_Cpp.Union;
-import org.eclipse.papyrus.acceleo.AcceleoDriver;
-import org.eclipse.papyrus.acceleo.GenUtils;
+import org.eclipse.papyrus.codegen.base.GenUtils;
 import org.eclipse.papyrus.cpp.codegen.preferences.CppCodeGenUtils;
-import org.eclipse.papyrus.cpp.codegen.transformation.CppModelElementsCreator;
 import org.eclipse.papyrus.cpp.codegen.utils.CppGenUtils;
 import org.eclipse.papyrus.cpp.codegen.xtend.CppAttribute;
 import org.eclipse.papyrus.cpp.codegen.xtend.CppClassAttributesDeclaration;
@@ -25,11 +27,9 @@ import org.eclipse.papyrus.cpp.codegen.xtend.CppClassOperationsDeclaration;
 import org.eclipse.papyrus.cpp.codegen.xtend.CppClassOperationsImplementation;
 import org.eclipse.papyrus.cpp.codegen.xtend.CppClassTypeAndEnum;
 import org.eclipse.papyrus.cpp.codegen.xtend.CppDocumentation;
-import org.eclipse.papyrus.cpp.codegen.xtend.CppFileGenerator;
 import org.eclipse.papyrus.cpp.codegen.xtend.CppIncludeUtil;
 import org.eclipse.papyrus.cpp.codegen.xtend.CppOperations;
 import org.eclipse.papyrus.cpp.codegen.xtend.CppTemplates;
-import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.DataType;
 import org.eclipse.uml2.uml.Element;
@@ -41,140 +41,25 @@ import org.eclipse.uml2.uml.TemplateParameterSubstitution;
 import org.eclipse.uml2.uml.ValueSpecification;
 import org.eclipse.uml2.uml.VisibilityKind;
 import org.eclipse.uml2.uml.profile.standard.Create;
-import org.eclipse.uml2.uml.util.UMLUtil;
 import org.eclipse.xtend2.lib.StringConcatenation;
-import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 
 /**
- * @author Önder GÜRCAN (onder.gurcan@cea.fr)
+ * @author Ansgar Radermacher (ansgar.radermacher@cea.fr)
  */
 @SuppressWarnings("all")
-public class CppClassifierGenerator extends CppFileGenerator {
-  public static void generate(final IContainer container, final Classifier classifier, final String commentHeader) {
-    try {
-      boolean _hasStereotype = GenUtils.hasStereotype(classifier, ManualGeneration.class);
-      if (_hasStereotype) {
-        ManualGeneration mg = UMLUtil.<ManualGeneration>getStereotypeApplication(classifier, ManualGeneration.class);
-        Include cppInclude = UMLUtil.<Include>getStereotypeApplication(classifier, Include.class);
-        String _header = cppInclude.getHeader();
-        String _evaluate = AcceleoDriver.evaluate(_header, classifier, null);
-        String fileContentH = (commentHeader + _evaluate);
-        String _name = classifier.getName();
-        String _plus = (_name + CppModelElementsCreator.DOT);
-        String _headerSuffix = CppCodeGenUtils.getHeaderSuffix();
-        final String fileNameH = (_plus + _headerSuffix);
-        CppFileGenerator.generateFile(container, fileNameH, fileContentH, true);
-        String _preBody = cppInclude.getPreBody();
-        String _evaluate_1 = AcceleoDriver.evaluate(_preBody, classifier, null);
-        String _plus_1 = (commentHeader + _evaluate_1);
-        String _plus_2 = (_plus_1 + GenUtils.NL);
-        String _body = cppInclude.getBody();
-        String _evaluate_2 = AcceleoDriver.evaluate(_body, classifier, null);
-        String _plus_3 = (_plus_2 + _evaluate_2);
-        final String fileContentB = (_plus_3 + GenUtils.NL);
-        String _extensionBody = mg.getExtensionBody();
-        String ext = GenUtils.maskNull(_extensionBody);
-        int _length = ext.length();
-        boolean _equals = (_length == 0);
-        if (_equals) {
-          String _bodySuffix = CppCodeGenUtils.getBodySuffix();
-          ext = _bodySuffix;
-        }
-        String _name_1 = classifier.getName();
-        String _plus_4 = (_name_1 + CppModelElementsCreator.DOT);
-        final String fileNameB = (_plus_4 + ext);
-        CppFileGenerator.generateFile(container, fileNameB, fileContentB, true);
-      } else {
-        boolean _and = false;
-        boolean _and_1 = false;
-        boolean _noCodeGen = CppClassifierGenerator.noCodeGen(classifier);
-        boolean _not = (!_noCodeGen);
-        if (!_not) {
-          _and_1 = false;
-        } else {
-          boolean _hasStereotype_1 = GenUtils.hasStereotype(classifier, Template.class);
-          boolean _not_1 = (!_hasStereotype_1);
-          _and_1 = _not_1;
-        }
-        if (!_and_1) {
-          _and = false;
-        } else {
-          _and = (!(classifier instanceof Association));
-        }
-        if (_and) {
-          boolean _isTemplateBoundElement = GenUtils.isTemplateBoundElement(classifier);
-          if (_isTemplateBoundElement) {
-            String _name_2 = classifier.getName();
-            String _plus_5 = (_name_2 + ".");
-            String _headerSuffix_1 = CppCodeGenUtils.getHeaderSuffix();
-            final String bindHeaderFileName = (_plus_5 + _headerSuffix_1);
-            String _generateBindHeaderCode = CppClassifierGenerator.generateBindHeaderCode(classifier);
-            String _plus_6 = (commentHeader + _generateBindHeaderCode);
-            CppFileGenerator.generateFile(container, bindHeaderFileName, _plus_6, true);
-            String _name_3 = classifier.getName();
-            String _plus_7 = (_name_3 + ".");
-            String _bodySuffix_1 = CppCodeGenUtils.getBodySuffix();
-            String bindBodyFileName = (_plus_7 + _bodySuffix_1);
-            String _generateBindBodyCode = CppClassifierGenerator.generateBindBodyCode(classifier);
-            String _plus_8 = (commentHeader + _generateBindBodyCode);
-            CppFileGenerator.generateFile(container, bindBodyFileName, _plus_8, true);
-          } else {
-            String _name_4 = classifier.getName();
-            String _plus_9 = (_name_4 + ".");
-            String _headerSuffix_2 = CppCodeGenUtils.getHeaderSuffix();
-            final String classHeaderFileName = (_plus_9 + _headerSuffix_2);
-            String _generateClassHeaderCode = CppClassifierGenerator.generateClassHeaderCode(classifier);
-            String _plus_10 = (commentHeader + _generateClassHeaderCode);
-            CppFileGenerator.generateFile(container, classHeaderFileName, _plus_10, true);
-            if ((classifier instanceof org.eclipse.uml2.uml.Class)) {
-              String _name_5 = ((org.eclipse.uml2.uml.Class)classifier).getName();
-              String _plus_11 = (_name_5 + ".");
-              String _bodySuffix_2 = CppCodeGenUtils.getBodySuffix();
-              String classBodyFileName = (_plus_11 + _bodySuffix_2);
-              String _generateClassBodyCode = CppClassifierGenerator.generateClassBodyCode(classifier);
-              String _plus_12 = (commentHeader + _generateClassBodyCode);
-              CppFileGenerator.generateFile(container, classBodyFileName, _plus_12, true);
-            }
-          }
-        }
-      }
-    } catch (Throwable _e) {
-      throw Exceptions.sneakyThrow(_e);
-    }
-  }
-  
-  public static boolean noCodeGen(final Element element) {
-    boolean _or = false;
-    boolean _or_1 = false;
-    boolean _hasStereotype = GenUtils.hasStereotype(element, NoCodeGen.class);
-    if (_hasStereotype) {
-      _or_1 = true;
-    } else {
-      boolean _hasStereotype_1 = GenUtils.hasStereotype(element, External.class);
-      _or_1 = _hasStereotype_1;
-    }
-    if (_or_1) {
-      _or = true;
-    } else {
-      boolean _hasStereotypeTree = GenUtils.hasStereotypeTree(element, ExternLibrary.class);
-      _or = _hasStereotypeTree;
-    }
-    return _or;
-  }
-  
-  public static String generateHeaderCode(final Classifier classifier, final String commentHeader) {
+public class CppClassifierGenerator {
+  public static CharSequence generateHeaderCode(final Classifier classifier, final String commentHeader) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append(commentHeader, "");
     _builder.newLineIfNotEmpty();
     _builder.append("AcceleoDriver.evaluate(cppInclude.getHeader(), classifier, null);");
     _builder.newLine();
-    String code = _builder.toString();
-    return code;
+    return _builder;
   }
   
-  public static String generateBindHeaderCode(final Classifier classifier) {
+  public static CharSequence generateBindHeaderCode(final Classifier classifier) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("#ifndef ");
     String _fullNameUC = GenUtils.getFullNameUC(classifier);
@@ -273,8 +158,8 @@ public class CppClassifierGenerator extends CppFileGenerator {
     _builder.newLine();
     _builder.newLine();
     _builder.append("#endif");
-    String code = _builder.toString();
-    return code;
+    _builder.newLine();
+    return _builder;
   }
   
   public static List<String> getSortedIncludePathList(final Classifier classifier) {
@@ -283,7 +168,7 @@ public class CppClassifierGenerator extends CppFileGenerator {
     return includePathList;
   }
   
-  public static String generateBindBodyCode(final Classifier classifier) {
+  public static CharSequence generateBindBodyCode(final Classifier classifier) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("#define ");
     String _fullNameUC = GenUtils.getFullNameUC(classifier);
@@ -376,11 +261,11 @@ public class CppClassifierGenerator extends CppFileGenerator {
     _builder.newLineIfNotEmpty();
     _builder.append(" ");
     _builder.append("************************************************************/");
-    String code = _builder.toString();
-    return code;
+    _builder.newLine();
+    return _builder;
   }
   
-  public static String generateClassHeaderCode(final Classifier classifier) {
+  public static CharSequence generateClassHeaderCode(final Classifier classifier) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("#ifndef ");
     String _fullNameUC = GenUtils.getFullNameUC(classifier);
@@ -450,54 +335,54 @@ public class CppClassifierGenerator extends CppFileGenerator {
     _builder.append("\t");
     VisibilityKind publicVisibility = VisibilityKind.PUBLIC_LITERAL;
     _builder.newLineIfNotEmpty();
-    _builder.append("\t   ");
+    _builder.append("\t");
     String _defaultInitializer = CppClassifierGenerator.defaultInitializer(classifier);
     String _section = CppGenUtils.getSection(publicVisibility, _defaultInitializer);
-    _builder.append(_section, "\t   ");
+    _builder.append(_section, "\t");
     _builder.newLineIfNotEmpty();
-    _builder.append("\t   ");
+    _builder.append("\t");
     CharSequence _CppClassAttributesDeclaration = CppClassAttributesDeclaration.CppClassAttributesDeclaration(classifier, publicVisibility);
     String _string = _CppClassAttributesDeclaration.toString();
     String _section_1 = CppGenUtils.getSection(publicVisibility, _string);
-    _builder.append(_section_1, "\t   ");
+    _builder.append(_section_1, "\t");
     _builder.newLineIfNotEmpty();
-    _builder.append("\t   ");
+    _builder.append("\t");
     CharSequence _CppClassOperationsDeclaration = CppClassOperationsDeclaration.CppClassOperationsDeclaration(classifier, publicVisibility);
     String _string_1 = _CppClassOperationsDeclaration.toString();
     String _section_2 = CppGenUtils.getSection(publicVisibility, _string_1);
-    _builder.append(_section_2, "\t   ");
+    _builder.append(_section_2, "\t");
     _builder.newLineIfNotEmpty();
     _builder.newLine();
     _builder.append("\t");
     VisibilityKind protectedVisibility = VisibilityKind.PROTECTED_LITERAL;
     _builder.newLineIfNotEmpty();
-    _builder.append("\t   ");
+    _builder.append("\t");
     CharSequence _CppClassAttributesDeclaration_1 = CppClassAttributesDeclaration.CppClassAttributesDeclaration(classifier, protectedVisibility);
     String _string_2 = _CppClassAttributesDeclaration_1.toString();
     String _section_3 = CppGenUtils.getSection(protectedVisibility, _string_2);
-    _builder.append(_section_3, "\t   ");
+    _builder.append(_section_3, "\t");
     _builder.newLineIfNotEmpty();
-    _builder.append("\t   ");
+    _builder.append("\t");
     CharSequence _CppClassOperationsDeclaration_1 = CppClassOperationsDeclaration.CppClassOperationsDeclaration(classifier, protectedVisibility);
     String _string_3 = _CppClassOperationsDeclaration_1.toString();
     String _section_4 = CppGenUtils.getSection(protectedVisibility, _string_3);
-    _builder.append(_section_4, "\t   ");
+    _builder.append(_section_4, "\t");
     _builder.newLineIfNotEmpty();
     _builder.newLine();
     _builder.append("\t");
     VisibilityKind privateVisibility = VisibilityKind.PRIVATE_LITERAL;
     _builder.newLineIfNotEmpty();
-    _builder.append("\t   ");
+    _builder.append("\t");
     CharSequence _CppClassAttributesDeclaration_2 = CppClassAttributesDeclaration.CppClassAttributesDeclaration(classifier, privateVisibility);
     String _string_4 = _CppClassAttributesDeclaration_2.toString();
     String _section_5 = CppGenUtils.getSection(privateVisibility, _string_4);
-    _builder.append(_section_5, "\t   ");
+    _builder.append(_section_5, "\t");
     _builder.newLineIfNotEmpty();
-    _builder.append("\t   ");
+    _builder.append("\t");
     CharSequence _CppClassOperationsDeclaration_2 = CppClassOperationsDeclaration.CppClassOperationsDeclaration(classifier, privateVisibility);
     String _string_5 = _CppClassOperationsDeclaration_2.toString();
     String _section_6 = CppGenUtils.getSection(privateVisibility, _string_5);
-    _builder.append(_section_6, "\t   ");
+    _builder.append(_section_6, "\t");
     _builder.newLineIfNotEmpty();
     _builder.append("};");
     _builder.newLine();
@@ -551,8 +436,8 @@ public class CppClassifierGenerator extends CppFileGenerator {
     _builder.newLine();
     _builder.newLine();
     _builder.append("#endif");
-    String code = _builder.toString();
-    return code;
+    _builder.newLine();
+    return _builder;
   }
   
   public static String classUnionOrStruct(final Classifier classifier) {
@@ -576,16 +461,15 @@ public class CppClassifierGenerator extends CppFileGenerator {
   public static String defaultInitializer(final Classifier classifier) {
     StringConcatenation _builder = new StringConcatenation();
     {
-      EList<Operation> _ownedOperations = CppOperations.getOwnedOperations(classifier);
+      Collection<Operation> _ownedOperations = CppOperations.getOwnedOperations(classifier);
       final Function1<Operation, Boolean> _function = new Function1<Operation, Boolean>() {
         public Boolean apply(final Operation it) {
           return Boolean.valueOf(GenUtils.hasStereotype(it, Create.class));
         }
       };
       Iterable<Operation> _filter = IterableExtensions.<Operation>filter(_ownedOperations, _function);
-      int _size = IterableExtensions.size(_filter);
-      boolean _equals = (_size == 0);
-      if (_equals) {
+      boolean _isEmpty = IterableExtensions.isEmpty(_filter);
+      if (_isEmpty) {
         EList<Property> _attributes = classifier.getAttributes();
         final Function1<Property, Boolean> _function_1 = new Function1<Property, Boolean>() {
           public Boolean apply(final Property it) {
@@ -614,8 +498,8 @@ public class CppClassifierGenerator extends CppFileGenerator {
         Iterable<Property> attributeList = IterableExtensions.<Property>filter(_attributes, _function_1);
         _builder.newLineIfNotEmpty();
         {
-          boolean _isEmpty = IterableExtensions.isEmpty(attributeList);
-          boolean _not = (!_isEmpty);
+          boolean _isEmpty_1 = IterableExtensions.isEmpty(attributeList);
+          boolean _not = (!_isEmpty_1);
           if (_not) {
             String _name = classifier.getName();
             _builder.append(_name, "");
@@ -648,7 +532,7 @@ public class CppClassifierGenerator extends CppFileGenerator {
     return code.trim();
   }
   
-  public static String generateClassBodyCode(final Classifier classifier) {
+  public static CharSequence generateClassBodyCode(final Classifier classifier) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("#define ");
     String _fullName = GenUtils.getFullName(classifier);
@@ -733,7 +617,7 @@ public class CppClassifierGenerator extends CppFileGenerator {
     _builder.newLineIfNotEmpty();
     _builder.append(" ");
     _builder.append("************************************************************/");
-    String code = _builder.toString();
-    return code;
+    _builder.newLine();
+    return _builder;
   }
 }

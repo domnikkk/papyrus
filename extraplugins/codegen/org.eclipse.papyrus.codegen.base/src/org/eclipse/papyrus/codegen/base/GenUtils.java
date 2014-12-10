@@ -9,7 +9,7 @@
  *     CEA LIST - initial API and implementation
  *******************************************************************************/
 
-package org.eclipse.papyrus.acceleo;
+package org.eclipse.papyrus.codegen.base;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -600,6 +600,9 @@ public class GenUtils {
 	 * @return
 	 */
 	public static String cleanCR(String str) {
+		if (str == null) {
+			return "// <null>"; //$NON-NLS-1$
+		}
 		return str.replace("\r", ""); //$NON-NLS-1$ //$NON-NLS-2$
 	}
 

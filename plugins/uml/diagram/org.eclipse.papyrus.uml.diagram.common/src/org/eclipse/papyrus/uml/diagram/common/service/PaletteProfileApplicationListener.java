@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2009 CEA LIST.
+ * Copyright (c) 2009, 2014 CEA LIST, Christian W. Damus, and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,6 +8,7 @@
  *
  * Contributors:
  *  Remi Schnekenburger (CEA LIST) remi.schnekenburger@cea.fr - Initial API and implementation
+ *  Christian W. Damus - bug 454578
  *
  *****************************************************************************/
 
@@ -19,6 +20,7 @@ import org.eclipse.papyrus.commands.Activator;
 import org.eclipse.papyrus.infra.core.listenerservice.IPapyrusListener;
 import org.eclipse.papyrus.infra.core.services.ServiceException;
 import org.eclipse.papyrus.infra.emf.utils.ServiceUtilsForEObject;
+import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.uml2.uml.ProfileApplication;
 
@@ -50,7 +52,22 @@ public class PaletteProfileApplicationListener implements IPapyrusListener {
 					if (editor == null) {
 						return;
 					}
-					PapyrusPaletteService.getInstance().providerChanged(new ProviderChangeEvent(PapyrusPaletteService.getInstance()));
+
+					Display display = editor.getSite().getWorkbenchWindow().getShell().getDisplay();
+					if ((display != null) && (display != Display.getCurrent())) {
+						// Update the palette service on the UI thread because it may need to add/remove palette content,
+						// which implies changing SWT controls
+						display.asyncExec(new Runnable() {
+
+							@Override
+							public void run() {
+								updatePaletteService();
+							}
+						});
+					} else {
+						// Just do it synchronously
+						updatePaletteService();
+					}
 				} catch (ServiceException ex) {
 					// Nothing to do. The ServiceRegistry is not available or there is no active editor. Don't update the palette
 				} catch (Exception ex) {
@@ -59,5 +76,9 @@ public class PaletteProfileApplicationListener implements IPapyrusListener {
 				}
 			}
 		}
+	}
+
+	protected void updatePaletteService() {
+		PapyrusPaletteService.getInstance().providerChanged(new ProviderChangeEvent(PapyrusPaletteService.getInstance()));
 	}
 }

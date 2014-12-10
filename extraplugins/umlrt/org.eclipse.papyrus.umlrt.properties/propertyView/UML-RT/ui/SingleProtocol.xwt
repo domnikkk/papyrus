@@ -1,8 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Composite xmlns:x="http://www.eclipse.org/xwt" xmlns="http://www.eclipse.org/xwt/presentation"
+	xmlns:ppe="clr-namespace:org.eclipse.papyrus.views.properties.widgets"
+	xmlns:umlrt="clr-namespace:org.eclipse.papyrus.umlrt.properties.widgets"
 	xmlns:j="clr-namespace:java.lang"
 	xmlns:ppel="clr-namespace:org.eclipse.papyrus.views.properties.widgets.layout">
 	<Composite.layout>
 		<ppel:PropertiesLayout></ppel:PropertiesLayout>
 	</Composite.layout>
+	<Composite>
+		<Composite.layout>
+			<ppel:PropertiesLayout></ppel:PropertiesLayout>
+		</Composite.layout>
+		<ppe:StringEditor input="{Binding}" property="UML:NamedElement:name"></ppe:StringEditor>
+	</Composite>
+	<Composite>
+		<Composite.layout>
+			<ppel:PropertiesLayout numColumns="3"></ppel:PropertiesLayout>
+		</Composite.layout>
+		<ppe:MultiReference input="{Binding}"
+			property="UMLRealTimeExt:Protocol:provides" customLabel="Provided"></ppe:MultiReference>
+		<ppe:MultiReference input="{Binding}"
+			property="UMLRealTimeExt:Protocol:required" customLabel="Required"></ppe:MultiReference>
+		<ppe:MultiReference input="{Binding}"
+			property="UMLRealTimeExt:Protocol:provreq" customLabel="Prov/Req"></ppe:MultiReference>
+	</Composite>
 </Composite>

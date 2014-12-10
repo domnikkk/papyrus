@@ -1,100 +1,38 @@
-package org.eclipse.papyrus.cpp.codegen.xtend
+/*******************************************************************************
+ * Copyright (c) 2014 CEA LIST.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *     CEA LIST - initial API and implementation
+ *******************************************************************************/
+ 
+ package org.eclipse.papyrus.cpp.codegen.xtend
 
-import org.eclipse.core.resources.IContainer
-import org.eclipse.papyrus.C_Cpp.ExternLibrary
-import org.eclipse.papyrus.C_Cpp.External
-import org.eclipse.papyrus.C_Cpp.Include
-import org.eclipse.papyrus.C_Cpp.ManualGeneration
-import org.eclipse.papyrus.C_Cpp.NoCodeGen
-import org.eclipse.papyrus.C_Cpp.Template
 import org.eclipse.papyrus.C_Cpp.Union
-import org.eclipse.papyrus.acceleo.GenUtils
+import org.eclipse.papyrus.codegen.base.GenUtils
 import org.eclipse.papyrus.cpp.codegen.preferences.CppCodeGenUtils
 import org.eclipse.papyrus.cpp.codegen.utils.CppGenUtils
-import org.eclipse.uml2.uml.Association
 import org.eclipse.uml2.uml.Class
 import org.eclipse.uml2.uml.Classifier
 import org.eclipse.uml2.uml.DataType
-import org.eclipse.uml2.uml.Element
 import org.eclipse.uml2.uml.NamedElement
 import org.eclipse.uml2.uml.VisibilityKind
 import org.eclipse.uml2.uml.profile.standard.Create
-import org.eclipse.uml2.uml.util.UMLUtil
-import org.eclipse.papyrus.acceleo.AcceleoDriver
-import org.eclipse.papyrus.cpp.codegen.transformation.CppModelElementsCreator
 
 /**
- * @author Önder GÜRCAN (onder.gurcan@cea.fr)
+ * @author Ansgar Radermacher (ansgar.radermacher@cea.fr)
  */
-class CppClassifierGenerator extends CppFileGenerator {
+class CppClassifierGenerator {
 
-	static def generate(IContainer container, Classifier classifier, String commentHeader) {
+	static def generateHeaderCode(Classifier classifier, String commentHeader) ''' 
+		«commentHeader»
+		AcceleoDriver.evaluate(cppInclude.getHeader(), classifier, null);
+	'''
 
-		// treat case of manual code generation
-		if (GenUtils.hasStereotype(classifier, ManualGeneration)) {
-			var ManualGeneration mg = UMLUtil.getStereotypeApplication(classifier, ManualGeneration);
-			var Include cppInclude = UMLUtil.getStereotypeApplication(classifier, Include);
-			var fileContentH = commentHeader +
-					AcceleoDriver.evaluate(cppInclude.getHeader(), classifier, null);
-
-			// generate header code
-			val fileNameH = classifier.getName() + CppModelElementsCreator.DOT + CppCodeGenUtils.getHeaderSuffix()
-			generateFile(container, fileNameH, fileContentH, true);
-
-			// generate body code
-			val fileContentB = commentHeader +
-				AcceleoDriver.evaluate(cppInclude.getPreBody(), classifier, null) + GenUtils.NL +
-				AcceleoDriver.evaluate(cppInclude.getBody(), classifier, null) + GenUtils.NL;
-			var ext = GenUtils.maskNull(mg.getExtensionBody());
-			if (ext.length() == 0) {
-				ext = CppCodeGenUtils.getBodySuffix();
-			}
-			val fileNameB = classifier.getName() + CppModelElementsCreator.DOT + ext;
-			generateFile(container, fileNameB, fileContentB, true);
-		}
-
-		// Only generate when no CppNoCodeGen stereotype is applied to the class
-		else if ((!classifier.noCodeGen) && (!GenUtils.hasStereotype(classifier, Template)) &&
-			(!(classifier instanceof Association))) {
-
-			// Template Bound Class
-			if (GenUtils.isTemplateBoundElement(classifier)) {
-				val bindHeaderFileName = classifier.getName() + "." + CppCodeGenUtils.getHeaderSuffix()
-				generateFile(container, bindHeaderFileName, commentHeader + classifier.generateBindHeaderCode, true);
-
-				var bindBodyFileName = classifier.getName() + "." + CppCodeGenUtils.getBodySuffix()
-				generateFile(container, bindBodyFileName, commentHeader + classifier.generateBindBodyCode, true);
-			}
-			else {
-
-				// Class Header file generation
-				val classHeaderFileName = classifier.getName() + "." + CppCodeGenUtils.getHeaderSuffix()
-				generateFile(container, classHeaderFileName, commentHeader + classifier.generateClassHeaderCode, true);
-
-				// Class Body file generation
-				if (classifier instanceof Class) {
-					var classBodyFileName = classifier.getName() + "." + CppCodeGenUtils.getBodySuffix()
-					generateFile(container, classBodyFileName, commentHeader + classifier.generateClassBodyCode, true);
-				}
-			}
-		}
-	}
-
-	static def noCodeGen(Element element) {
-		return GenUtils.hasStereotype(element, NoCodeGen) || GenUtils.hasStereotype(element, External) ||
-			GenUtils.hasStereotypeTree(element, ExternLibrary);
-	}
-
-	static def generateHeaderCode(Classifier classifier, String commentHeader) {
-		var code = ''' 
-			«commentHeader»
-			AcceleoDriver.evaluate(cppInclude.getHeader(), classifier, null);
-		'''
-		return code
-	}
-
-	static def generateBindHeaderCode(Classifier classifier) {
-		var code = ''' 
+	static def generateBindHeaderCode(Classifier classifier) ''' 
 		#ifndef «GenUtils.getFullNameUC(classifier)»_H
 		#define «GenUtils.getFullNameUC(classifier)»_H
 		
@@ -127,17 +65,15 @@ class CppClassifierGenerator extends CppFileGenerator {
 		              End of «classifier.name» template binding header
 		 ************************************************************/
 		
-		#endif'''
-		return code
-	}
-
+		#endif
+	'''
+	
 	static def getSortedIncludePathList(Classifier classifier) {
 		var includePathList = CppClassIncludeClassDeclaration.CppClassAllIncludes(classifier).sort;
 		return includePathList
 	}
 
-	static def generateBindBodyCode(Classifier classifier) {
-		var code = '''
+	static def generateBindBodyCode(Classifier classifier) '''
 		#define «GenUtils.getFullNameUC(classifier)»_BODY
 		
 		/************************************************************
@@ -169,12 +105,10 @@ class CppClassifierGenerator extends CppFileGenerator {
 		
 		/************************************************************
 		              End of «classifier.name» template binding body
-		 ************************************************************/'''
-		return code
-	}
-
-	static def generateClassHeaderCode(Classifier classifier) {
-		var code = '''
+		 ************************************************************/
+	'''
+	
+	static def generateClassHeaderCode(Classifier classifier) '''
 		#ifndef «GenUtils.getFullNameUC(classifier)»_H
 		#define «GenUtils.getFullNameUC(classifier)»_H
 		
@@ -196,25 +130,24 @@ class CppClassifierGenerator extends CppFileGenerator {
 		«CppDocumentation.CppElementDoc(classifier)»
 		«CppTemplates.templateSignature(classifier)»«classUnionOrStruct(classifier)» «classifier.name»«CppClassInheritedDeclarations.
 			CppClassInheritedDeclarations(classifier)» {
-		«CppClassFriendDeclaration.CppClassIncludeFriendDeclaration(classifier)»«CppClassTypeAndEnum.
-			CppClassTypeAndEnum(classifier)»
+		«CppClassFriendDeclaration.CppClassIncludeFriendDeclaration(classifier)»«CppClassTypeAndEnum.CppClassTypeAndEnum(classifier)»
 			«var publicVisibility = VisibilityKind.PUBLIC_LITERAL»
-			   «CppGenUtils.getSection(publicVisibility, defaultInitializer(classifier))»
-			   «CppGenUtils.getSection(publicVisibility,
+			«CppGenUtils.getSection(publicVisibility, defaultInitializer(classifier))»
+			«CppGenUtils.getSection(publicVisibility,
 			CppClassAttributesDeclaration.CppClassAttributesDeclaration(classifier, publicVisibility).toString)»
-			   «CppGenUtils.getSection(publicVisibility,
+			«CppGenUtils.getSection(publicVisibility,
 			CppClassOperationsDeclaration.CppClassOperationsDeclaration(classifier, publicVisibility).toString)»
 		
 			«var protectedVisibility = VisibilityKind.PROTECTED_LITERAL»
-			   «CppGenUtils.getSection(protectedVisibility,
+			«CppGenUtils.getSection(protectedVisibility,
 			CppClassAttributesDeclaration.CppClassAttributesDeclaration(classifier, protectedVisibility).toString)»
-			   «CppGenUtils.getSection(protectedVisibility,
+			«CppGenUtils.getSection(protectedVisibility,
 			CppClassOperationsDeclaration.CppClassOperationsDeclaration(classifier, protectedVisibility).toString)»
 		
 			«var privateVisibility = VisibilityKind.PRIVATE_LITERAL»
-			   «CppGenUtils.getSection(privateVisibility,
+			«CppGenUtils.getSection(privateVisibility,
 			CppClassAttributesDeclaration.CppClassAttributesDeclaration(classifier, privateVisibility).toString)»
-			   «CppGenUtils.getSection(privateVisibility,
+			«CppGenUtils.getSection(privateVisibility,
 			CppClassOperationsDeclaration.CppClassOperationsDeclaration(classifier, privateVisibility).toString)»
 		};
 		/************************************************************/
@@ -238,10 +171,9 @@ class CppClassifierGenerator extends CppFileGenerator {
 		              End of «classifier.name» class header
 		 ************************************************************/
 		
-		#endif'''
-		return code
-	}
-
+		#endif
+	'''
+	
 	static def classUnionOrStruct(Classifier classifier) {
 		if (GenUtils.hasStereotype(classifier, Union)) {
 			return 'union'
@@ -279,7 +211,7 @@ class CppClassifierGenerator extends CppFileGenerator {
 		CppClassOperationsDeclaration.
 		*/
 		var code = '''
-		«IF CppOperations.getOwnedOperations(classifier).filter[GenUtils.hasStereotype(it, Create)].size() == 0»
+		«IF CppOperations.getOwnedOperations(classifier).filter[GenUtils.hasStereotype(it, Create)].empty»
 			«var attributeList = classifier.attributes.filter[
 			(it.isStatic == false) && (it.defaultValue != null) && (it.defaultValue.stringValue != null)]»
 			«IF !attributeList.empty»
@@ -289,8 +221,7 @@ class CppClassifierGenerator extends CppFileGenerator {
 		return code.trim
 	}
 
-	static def generateClassBodyCode(Classifier classifier) {
-		var code = '''
+	static def generateClassBodyCode(Classifier classifier) '''
 		#define «GenUtils.getFullName(classifier)»_BODY
 		
 		/************************************************************
@@ -323,8 +254,6 @@ class CppClassifierGenerator extends CppFileGenerator {
 		
 		/************************************************************
 		              End of «classifier.name» class body
-		 ************************************************************/'''
-		return code
-	}
-
+		 ************************************************************/
+	'''
 }

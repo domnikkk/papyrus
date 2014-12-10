@@ -1,4 +1,4 @@
-package org.eclipse.papyrus.acceleo;
+package org.eclipse.papyrus.codegen.base;
 
 import org.eclipse.osgi.util.NLS;
 

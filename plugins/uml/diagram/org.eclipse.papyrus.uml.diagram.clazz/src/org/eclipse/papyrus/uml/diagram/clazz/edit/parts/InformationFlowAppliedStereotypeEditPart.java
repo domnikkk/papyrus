@@ -68,6 +68,7 @@ import org.eclipse.papyrus.uml.diagram.clazz.part.UMLVisualIDRegistry;
 import org.eclipse.papyrus.uml.diagram.clazz.providers.UMLElementTypes;
 import org.eclipse.papyrus.uml.diagram.clazz.providers.UMLParserProvider;
 import org.eclipse.papyrus.uml.diagram.common.directedit.MultilineLabelDirectEditManager;
+import org.eclipse.papyrus.uml.diagram.common.editparts.ILabelRoleProvider;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.IDirectEdition;
 import org.eclipse.papyrus.uml.diagram.common.figure.node.ILabelFigure;
 import org.eclipse.swt.SWT;
@@ -83,7 +84,7 @@ import org.eclipse.uml2.uml.Feature;
 /**
  * @generated
  */
-public class InformationFlowAppliedStereotypeEditPart extends PapyrusLabelEditPart implements ITextAwareEditPart, IControlParserForDirectEdit {
+public class InformationFlowAppliedStereotypeEditPart extends PapyrusLabelEditPart implements ITextAwareEditPart, IControlParserForDirectEdit, ILabelRoleProvider {
 
 	/**
 	 * @generated
@@ -818,5 +819,21 @@ public class InformationFlowAppliedStereotypeEditPart extends PapyrusLabelEditPa
 	protected IFigure createFigure() {
 		// Parent should assign one using setLabel() method
 		return null;
+	}
+
+	/**
+	 * @generated
+	 */
+	@Override
+	public String getLabelRole() {
+		return "Stereotype";//$NON-NLS-1$
+	}
+
+	/**
+	 * @generated
+	 */
+	@Override
+	public String getIconPathRole() {
+		return "platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Stereotype.gif";//$NON-NLS-1$
 	}
 }

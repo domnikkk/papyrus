@@ -64,6 +64,7 @@ public class CustomTransitionPreferencePage extends FieldEditorPreferencePage
 	 *
 	 * @param workbench
 	 */
+	@Override
 	public void init(IWorkbench workbench) {
 	}
 }

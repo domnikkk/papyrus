@@ -83,5 +83,4 @@ Eclipse-LazyStart: true
 Bundle-Version: 1.0.1.qualifier
 Bundle-Activator: org.eclipse.papyrus.uml.diagram.statemachine.part.UMLDiagramEditorPlugin
 Bundle-ManifestVersion: 2
-Bundle-SymbolicName: org.eclipse.papyrus.uml.diagram.statemachine;singleton:=true
-
+Bundle-SymbolicName: org.eclipse.papyrus.uml.diagram.statemachine; singleton:=true

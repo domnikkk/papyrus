@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2014 CEA LIST and others.
+ * Copyright (c) 2014 CEA LIST, Christian W. Damus, and others.
  * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,6 +8,7 @@
  *
  * Contributors:
  *   Gabriel Pascual (ALL4TEC) gabriel.pascual@all4tec.net - Initial API and implementation
+ *   Christian W. Damus - bug 454536
  *   
  *****************************************************************************/
 
@@ -20,8 +21,9 @@ import org.eclipse.ui.IActionBars;
 import org.eclipse.ui.actions.ActionFactory;
 import org.eclipse.ui.operations.RedoActionHandler;
 import org.eclipse.ui.operations.UndoActionHandler;
-import org.eclipse.ui.views.properties.tabbed.ITabbedPropertySheetPageContributor;
 import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
+
+import com.google.common.base.Supplier;
 
 /**
  * Specific PropertySheetPage for Model Explorer view to contribute to Undo/Redo Edit menu.
@@ -30,6 +32,7 @@ import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
  *
  */
 class ModelExplorerPropertySheetPage extends TabbedPropertySheetPage {
+	private final ModelExplorerPageBookView modelExplorer;
 
 	/** The undo. */
 	private UndoActionHandler undo = null;
@@ -43,11 +46,13 @@ class ModelExplorerPropertySheetPage extends TabbedPropertySheetPage {
 	/**
 	 * Constructor.
 	 *
-	 * @param tabbedPropertySheetPageContributor
-	 *            the tabbed property sheet page contributor
+	 * @param modelExplorer
+	 *            the Model Explorer view that owns me
 	 */
-	public ModelExplorerPropertySheetPage(ITabbedPropertySheetPageContributor tabbedPropertySheetPageContributor) {
-		super(tabbedPropertySheetPageContributor);
+	public ModelExplorerPropertySheetPage(ModelExplorerPageBookView modelExplorer) {
+		super(modelExplorer);
+
+		this.modelExplorer = modelExplorer;
 	}
 
 	/**
@@ -59,8 +64,12 @@ class ModelExplorerPropertySheetPage extends TabbedPropertySheetPage {
 	public void setActionBars(IActionBars actionBars) {
 		super.setActionBars(actionBars);
 
-		undoContext = new DelegatingUndoContext();
-		undoContext.setDelegate(AdapterUtils.adapt(getSite().getPage().getActivePart(), IUndoContext.class, null));
+		undoContext = new DelegatingUndoContext.Dynamic(new Supplier<IUndoContext>() {
+
+			public IUndoContext get() {
+				return AdapterUtils.adapt(modelExplorer, IUndoContext.class, null);
+			}
+		});
 
 		undo = new UndoActionHandler(getSite().getPage().getActivePart().getSite(), undoContext);
 		redo = new RedoActionHandler(getSite().getPage().getActivePart().getSite(), undoContext);
@@ -85,9 +94,4 @@ class ModelExplorerPropertySheetPage extends TabbedPropertySheetPage {
 
 		super.dispose();
 	}
-
-
-
-
-
 }

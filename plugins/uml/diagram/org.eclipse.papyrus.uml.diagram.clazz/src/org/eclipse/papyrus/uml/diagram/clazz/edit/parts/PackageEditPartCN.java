@@ -84,8 +84,8 @@ public class PackageEditPartCN extends NamedElementEditPart {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new PackageItemSemanticEditPolicyCN());
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
-		//in Papyrus diagrams are not strongly synchronised
-		//installEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CANONICAL_ROLE, new org.eclipse.papyrus.uml.diagram.clazz.edit.policies.PackageCanonicalEditPolicyCN());
+		// in Papyrus diagrams are not strongly synchronised
+		// installEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CANONICAL_ROLE, new org.eclipse.papyrus.uml.diagram.clazz.edit.policies.PackageCanonicalEditPolicyCN());
 
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		installEditPolicy("RESIZE_BORDER_ITEMS", new ConstrainedItemBorderLayoutEditPolicy()); //$NON-NLS-1$
@@ -180,7 +180,7 @@ public class PackageEditPartCN extends NamedElementEditPart {
 
 
 
-		//Papyrus Gencode :precise the locator for a template signature
+		// Papyrus Gencode :precise the locator for a template signature
 		if (childEditPart instanceof RedefinableTemplateSignatureEditPart) {
 			IBorderItemLocator locator = new TemplateBorderItemLocator(getMainFigure(), PositionConstants.EAST);
 			getBorderedFigure().getBorderItemContainer().add(((RedefinableTemplateSignatureEditPart) childEditPart).getFigure(), locator);
@@ -190,7 +190,7 @@ public class PackageEditPartCN extends NamedElementEditPart {
 
 
 
-		//Papyrus Gencode :precise the locator for a template signature
+		// Papyrus Gencode :precise the locator for a template signature
 		if (childEditPart instanceof TemplateSignatureEditPart) {
 			IBorderItemLocator locator = new TemplateBorderItemLocator(getMainFigure(), PositionConstants.EAST);
 			getBorderedFigure().getBorderItemContainer().add(((TemplateSignatureEditPart) childEditPart).getFigure(), locator);

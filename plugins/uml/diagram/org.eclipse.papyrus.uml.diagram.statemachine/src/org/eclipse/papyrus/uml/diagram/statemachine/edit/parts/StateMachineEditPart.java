@@ -84,8 +84,8 @@ public class StateMachineEditPart extends NamedElementEditPart {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new StateMachineItemSemanticEditPolicy());
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
-		//in Papyrus diagrams are not strongly synchronised
-		//installEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CANONICAL_ROLE, new org.eclipse.papyrus.uml.diagram.statemachine.edit.policies.StateMachineCanonicalEditPolicy());
+		// in Papyrus diagrams are not strongly synchronised
+		// installEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CANONICAL_ROLE, new org.eclipse.papyrus.uml.diagram.statemachine.edit.policies.StateMachineCanonicalEditPolicy());
 
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		installEditPolicy(QualifiedNameDisplayEditPolicy.QUALIFIED_NAME_POLICY, new QualifiedNameDisplayEditPolicy());
@@ -180,7 +180,7 @@ public class StateMachineEditPart extends NamedElementEditPart {
 
 
 
-		//Papyrus Gencode :Affixed EntryExitPoints ConnectionPointReferences Locator
+		// Papyrus Gencode :Affixed EntryExitPoints ConnectionPointReferences Locator
 		if (childEditPart instanceof PseudostateEntryPointEditPart) {
 			IBorderItemLocator locator = new CustomEntryExitPointPositionLocator(getMainFigure(), PositionConstants.NONE);
 			getBorderedFigure().getBorderItemContainer().add(((PseudostateEntryPointEditPart) childEditPart).getFigure(), locator);
@@ -190,7 +190,7 @@ public class StateMachineEditPart extends NamedElementEditPart {
 
 
 
-		//Papyrus Gencode :Affixed EntryExitPoints ConnectionPointReferences Locator
+		// Papyrus Gencode :Affixed EntryExitPoints ConnectionPointReferences Locator
 		if (childEditPart instanceof PseudostateExitPointEditPart) {
 			IBorderItemLocator locator = new CustomEntryExitPointPositionLocator(getMainFigure(), PositionConstants.NONE);
 			getBorderedFigure().getBorderItemContainer().add(((PseudostateExitPointEditPart) childEditPart).getFigure(), locator);

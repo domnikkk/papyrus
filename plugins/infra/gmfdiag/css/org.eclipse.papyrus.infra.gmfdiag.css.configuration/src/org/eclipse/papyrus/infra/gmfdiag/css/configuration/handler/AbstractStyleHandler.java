@@ -270,7 +270,11 @@ public abstract class AbstractStyleHandler extends AbstractHandler {
 				Object currentValue = style.eGet(feature);
 				Object defaultValue = feature.getDefaultValue();
 				boolean check = currentValue == null ? currentValue != defaultValue : !currentValue.equals(defaultValue);
-				declarations.put(handleStyleFeature(style, feature), check);
+
+				Declaration declaration = handleStyleFeature(style, feature);
+				if (declaration.getExpression() != null) { // If expression is null, the type of this property is not supported
+					declarations.put(declaration, check);
+				}
 			}
 		}
 

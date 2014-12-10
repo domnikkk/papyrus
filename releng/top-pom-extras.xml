@@ -42,6 +42,7 @@
 		<module>../extraplugins/cdo/org.eclipse.papyrus.cdo.uml.ui</module>
 		<module>../extraplugins/cdo/org.eclipse.papyrus.cdo.validation.problems</module>
 		<module>../extraplugins/cdo/org.eclipse.papyrus.cdo.validation.problems.edit</module>
+		<module>../extraplugins/codegen/org.eclipse.papyrus.codegen.base</module>
 		<module>../extraplugins/codegen/org.eclipse.papyrus.codegen.extensionpoints</module>
 		<module>../extraplugins/codegen/org.eclipse.papyrus.cpp.cdtproject</module>
 		<module>../extraplugins/codegen/org.eclipse.papyrus.cpp.codegen</module>
