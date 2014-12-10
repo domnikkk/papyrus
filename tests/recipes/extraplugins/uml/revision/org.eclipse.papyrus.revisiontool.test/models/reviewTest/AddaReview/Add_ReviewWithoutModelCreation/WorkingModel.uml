@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_bOVDIHGJEeS3EdgtJYAZRQ" name="WorkingModel">
   <ownedComment xmi:type="uml:Comment" xmi:id="_XqIHIHGKEeS3EdgtJYAZRQ">
-    <body>Create a class &quot;seat&quot; with an association</body>
+    <body>The goal of this test is create a review without a model review.&#xD;
+1. open this model&#xD;
+2. open review editor by using show view.&#xD;
+3. create directly a review&#xD;
+&#xD;
+--> a popup appears in order to set the name of review model&#xD;
+--> a review is added and can be seen in the review editor</body>
   </ownedComment>
   <packagedElement xmi:type="uml:Class" xmi:id="_jOtaEHGJEeS3EdgtJYAZRQ" name="Car">
     <ownedAttribute xmi:type="uml:Property" xmi:id="_mUk-0HGJEeS3EdgtJYAZRQ" name="wheel" type="_j81EUHGJEeS3EdgtJYAZRQ" association="_mUuv0HGJEeS3EdgtJYAZRQ">

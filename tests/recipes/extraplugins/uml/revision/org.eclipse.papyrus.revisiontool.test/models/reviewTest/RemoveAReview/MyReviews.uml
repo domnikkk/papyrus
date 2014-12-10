@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:PapyrusVersioningExtensions="http:///schemas/PapyrusVersioningExtensions/_SVfbwGW4EeSPMtL3PG5w7g/0" xmlns:ReviewProfile="http:///schemas/ReviewProfile/_VpvawGW4EeSPMtL3PG5w7g/0" xmlns:compare="http://www.eclipse.org/emf/compare" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/PapyrusVersioningExtensions/_SVfbwGW4EeSPMtL3PG5w7g/0 pathmap://Review_PROFILES/Versioning.profile.uml#_SVfbwWW4EeSPMtL3PG5w7g http:///schemas/ReviewProfile/_VpvawGW4EeSPMtL3PG5w7g/0 pathmap://Review_PROFILES/Review.profile.uml#_VpwB0GW4EeSPMtL3PG5w7g">
+  <ReviewProfile:ReviewRepository xmi:id="_QTWV8IB0EeS5K6NVM7NMJA" base_Model="_QTWV8YB0EeS5K6NVM7NMJA"/>
+  <uml:Model xmi:id="_QTWV8YB0EeS5K6NVM7NMJA" name="MyReviews">
+    <ownedComment xmi:type="uml:Comment" xmi:id="_QWd7YIB0EeS5K6NVM7NMJA">
+      <body>Your review</body>
+    </ownedComment>
+    <ownedComment xmi:type="uml:Comment" xmi:id="_Qrd7AIB0EeS5K6NVM7NMJA">
+      <body>Your review</body>
+    </ownedComment>
+    <ownedComment xmi:type="uml:Comment" xmi:id="_Qx4FAIB0EeS5K6NVM7NMJA">
+      <body>Your review</body>
+    </ownedComment>
+    <ownedComment xmi:type="uml:Comment" xmi:id="_Q15CUIB0EeS5K6NVM7NMJA">
+      <body>Your review</body>
+    </ownedComment>
+    <ownedComment xmi:type="uml:Comment" xmi:id="_Q3iBEIB0EeS5K6NVM7NMJA">
+      <body>Your review</body>
+    </ownedComment>
+    <ownedComment xmi:type="uml:Comment" xmi:id="_Q5d6wIB0EeS5K6NVM7NMJA">
+      <body>Your review</body>
+    </ownedComment>
+    <ownedComment xmi:type="uml:Comment" xmi:id="_Q7G5gIB0EeS5K6NVM7NMJA">
+      <body>Your review</body>
+    </ownedComment>
+    <ownedComment xmi:type="uml:Comment" xmi:id="_Q85CMIB0EeS5K6NVM7NMJA">
+      <body>Your review</body>
+    </ownedComment>
+    <ownedComment xmi:type="uml:Comment" xmi:id="_Q-rK4IB0EeS5K6NVM7NMJA">
+      <body>Your review</body>
+    </ownedComment>
+    <ownedComment xmi:type="uml:Comment" xmi:id="_RAdTkIB0EeS5K6NVM7NMJA">
+      <body>Your review</body>
+    </ownedComment>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_QTWV8oB0EeS5K6NVM7NMJA" name="WorkingModelDependency" client="_QTWV8YB0EeS5K6NVM7NMJA">
+      <supplier xmi:type="uml:Model" href="WorkingModel.uml#_bOVDIHGJEeS3EdgtJYAZRQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Actor" xmi:id="_QWLAcIB0EeS5K6NVM7NMJA" name="Bob"/>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_QTWV84B0EeS5K6NVM7NMJA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_QTWV9IB0EeS5K6NVM7NMJA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://Review_PROFILES/Review.profile.uml#_VpwB0GW4EeSPMtL3PG5w7g"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://Review_PROFILES/Review.profile.uml#_Tr7GcGAWEeS-2dbNdHDnFw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_QTWV9YB0EeS5K6NVM7NMJA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_QTWV9oB0EeS5K6NVM7NMJA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://Review_PROFILES/Versioning.profile.uml#_SVfbwWW4EeSPMtL3PG5w7g"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://Review_PROFILES/Versioning.profile.uml#_oQIXkM7dEeOUWOjBbvvZ9Q"/>
+    </profileApplication>
+  </uml:Model>
+  <compare:Comparison xmi:id="_QTff4IB0EeS5K6NVM7NMJA"/>
+  <PapyrusVersioningExtensions:Author xmi:id="_QWLAcYB0EeS5K6NVM7NMJA" language="Eng" color="255:255:0" base_Actor="_QWLAcIB0EeS5K6NVM7NMJA" versioningElements="_QWd7YYB0EeS5K6NVM7NMJA _Qrd7AYB0EeS5K6NVM7NMJA _Qx4FAYB0EeS5K6NVM7NMJA _Q15CUYB0EeS5K6NVM7NMJA _Q3iBEYB0EeS5K6NVM7NMJA _Q5d6wYB0EeS5K6NVM7NMJA _Q7G5gYB0EeS5K6NVM7NMJA _Q85CMYB0EeS5K6NVM7NMJA _Q-rK4YB0EeS5K6NVM7NMJA _RAdTkYB0EeS5K6NVM7NMJA"/>
+  <ReviewProfile:Review xmi:id="_QWd7YYB0EeS5K6NVM7NMJA" base_Element="_QWd7YIB0EeS5K6NVM7NMJA" date="10/12/14 14:55" author="_QWLAcYB0EeS5K6NVM7NMJA" base_Comment="_QWd7YIB0EeS5K6NVM7NMJA" subject="subject"/>
+  <ReviewProfile:Review xmi:id="_Qrd7AYB0EeS5K6NVM7NMJA" base_Element="_Qrd7AIB0EeS5K6NVM7NMJA" date="10/12/14 14:55" author="_QWLAcYB0EeS5K6NVM7NMJA" base_Comment="_Qrd7AIB0EeS5K6NVM7NMJA" subject="subject"/>
+  <ReviewProfile:Review xmi:id="_Qx4FAYB0EeS5K6NVM7NMJA" base_Element="_Qx4FAIB0EeS5K6NVM7NMJA" date="10/12/14 14:55" author="_QWLAcYB0EeS5K6NVM7NMJA" base_Comment="_Qx4FAIB0EeS5K6NVM7NMJA" subject="subject"/>
+  <ReviewProfile:Review xmi:id="_Q15CUYB0EeS5K6NVM7NMJA" base_Element="_Q15CUIB0EeS5K6NVM7NMJA" date="10/12/14 14:55" author="_QWLAcYB0EeS5K6NVM7NMJA" base_Comment="_Q15CUIB0EeS5K6NVM7NMJA" subject="subject"/>
+  <ReviewProfile:Review xmi:id="_Q3iBEYB0EeS5K6NVM7NMJA" base_Element="_Q3iBEIB0EeS5K6NVM7NMJA" date="10/12/14 14:55" author="_QWLAcYB0EeS5K6NVM7NMJA" base_Comment="_Q3iBEIB0EeS5K6NVM7NMJA" subject="subject"/>
+  <ReviewProfile:Review xmi:id="_Q5d6wYB0EeS5K6NVM7NMJA" base_Element="_Q5d6wIB0EeS5K6NVM7NMJA" date="10/12/14 14:55" author="_QWLAcYB0EeS5K6NVM7NMJA" base_Comment="_Q5d6wIB0EeS5K6NVM7NMJA" subject="subject"/>
+  <ReviewProfile:Review xmi:id="_Q7G5gYB0EeS5K6NVM7NMJA" base_Element="_Q7G5gIB0EeS5K6NVM7NMJA" date="10/12/14 14:55" author="_QWLAcYB0EeS5K6NVM7NMJA" base_Comment="_Q7G5gIB0EeS5K6NVM7NMJA" subject="subject"/>
+  <ReviewProfile:Review xmi:id="_Q85CMYB0EeS5K6NVM7NMJA" base_Element="_Q85CMIB0EeS5K6NVM7NMJA" date="10/12/14 14:55" author="_QWLAcYB0EeS5K6NVM7NMJA" base_Comment="_Q85CMIB0EeS5K6NVM7NMJA" subject="subject"/>
+  <ReviewProfile:Review xmi:id="_Q-rK4YB0EeS5K6NVM7NMJA" base_Element="_Q-rK4IB0EeS5K6NVM7NMJA" date="10/12/14 14:55" author="_QWLAcYB0EeS5K6NVM7NMJA" base_Comment="_Q-rK4IB0EeS5K6NVM7NMJA" subject="subject"/>
+  <ReviewProfile:Review xmi:id="_RAdTkYB0EeS5K6NVM7NMJA" base_Element="_RAdTkIB0EeS5K6NVM7NMJA" date="10/12/14 14:55" author="_QWLAcYB0EeS5K6NVM7NMJA" base_Comment="_RAdTkIB0EeS5K6NVM7NMJA" subject="subject"/>
+</xmi:XMI>
