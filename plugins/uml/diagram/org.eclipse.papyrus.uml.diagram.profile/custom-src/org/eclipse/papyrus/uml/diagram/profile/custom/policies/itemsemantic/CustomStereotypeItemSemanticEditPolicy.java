@@ -86,7 +86,7 @@ public class CustomStereotypeItemSemanticEditPolicy extends StereotypeItemSemant
 	 * <pre>
 	 * Calls a custom creation command to allow the creation of an Extension connected to a Stereotype
 	 * on its source end.
-	 *
+	 * 
 	 * {@inheritDoc}
 	 * </pre>
 	 */
