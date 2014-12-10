@@ -1,22 +1,27 @@
 package org.eclipse.papyrus.cpp.codegen.xtend
 
-import org.eclipse.core.resources.IContainer
-import org.eclipse.papyrus.acceleo.GenUtils
+/*******************************************************************************
+ * Copyright (c) 2014 CEA LIST.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *     CEA LIST - initial API and implementation
+ *******************************************************************************/
+ 
 import org.eclipse.papyrus.cpp.codegen.preferences.CppCodeGenUtils
 import org.eclipse.papyrus.cpp.codegen.utils.CppGenUtils
 import org.eclipse.uml2.uml.Package
+import org.eclipse.papyrus.codegen.base.GenUtils
 
 /**
  * @author Önder GÜRCAN (onder.gurcan@cea.fr)
  */
-class CppPackageHeaderGenerator extends CppFileGenerator {
-	static def generate(IContainer packageContainer, Package pkg) {
-		val fileName = "Pkg_" + pkg.name + "." + CppCodeGenUtils.getHeaderSuffix()
-		generateFile(packageContainer, fileName, pkg.generateCode, true)
-	}
-
-	static def generateCode(Package pkg) {
-		val code = '''
+class CppPackageHeaderGenerator {
+	
+	static def generateCode(Package pkg) '''
 		#ifndef PKG_«GenUtils.getFullNameUC(pkg)»
 		#define PKG_«GenUtils.getFullNameUC(pkg)»
 
@@ -47,9 +52,6 @@ class CppPackageHeaderGenerator extends CppFileGenerator {
 		«CppGenUtils.openNS(pkg)»
 		
 		// Types defined within the package
-		«IF pkg.name == "root"»
-		«var x = 0»
-		«ENDIF»
 		«CppClassTypeAndEnum.CppClassTypeAndEnumPackage(pkg)»
 		«CppGenUtils.closeNS(pkg)»
 		
@@ -57,7 +59,6 @@ class CppPackageHeaderGenerator extends CppFileGenerator {
 		              End of Pkg_«pkg.name» package header
 		 ************************************************************/
 		
-		#endif'''
-		return code
-	}
+		#endif
+	'''
 }

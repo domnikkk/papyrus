@@ -1,11 +1,12 @@
 package org.eclipse.papyrus.cpp.codegen.xtend;
 
 import com.google.common.base.Objects;
+import java.util.Collection;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.papyrus.C_Cpp.ConstInit;
 import org.eclipse.papyrus.C_Cpp.Inline;
 import org.eclipse.papyrus.C_Cpp.Virtual;
-import org.eclipse.papyrus.acceleo.GenUtils;
+import org.eclipse.papyrus.codegen.base.GenUtils;
 import org.eclipse.papyrus.cpp.codegen.Constants;
 import org.eclipse.papyrus.cpp.codegen.utils.CppGenUtils;
 import org.eclipse.papyrus.cpp.codegen.utils.Modifier;
@@ -26,6 +27,7 @@ import org.eclipse.uml2.uml.profile.standard.Create;
 import org.eclipse.uml2.uml.profile.standard.Destroy;
 import org.eclipse.uml2.uml.util.UMLUtil;
 import org.eclipse.xtend2.lib.StringConcatenation;
+import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 import org.eclipse.xtext.xbase.lib.Conversions;
 
 @SuppressWarnings("all")
@@ -222,7 +224,23 @@ public class CppOperations {
     return _xifexpression;
   }
   
-  public static EList<Operation> getOwnedOperations(final Classifier cl) {
+  public static Collection<Operation> getOwnedOperations(final Classifier cl) {
+    Collection<Operation> _xblockexpression = null;
+    {
+      final EList<Operation> operations = CppOperations.getOwnedOperationsWNull(cl);
+      Collection<Operation> _xifexpression = null;
+      boolean _equals = Objects.equal(operations, null);
+      if (_equals) {
+        _xifexpression = CollectionLiterals.<Operation>emptySet();
+      } else {
+        _xifexpression = operations;
+      }
+      _xblockexpression = _xifexpression;
+    }
+    return _xblockexpression;
+  }
+  
+  public static EList<Operation> getOwnedOperationsWNull(final Classifier cl) {
     EList<Operation> _xifexpression = null;
     if ((cl instanceof org.eclipse.uml2.uml.Class)) {
       _xifexpression = ((org.eclipse.uml2.uml.Class) cl).getOwnedOperations();

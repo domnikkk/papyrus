@@ -1,9 +1,20 @@
 package org.eclipse.papyrus.cpp.codegen.xtend
 
-import org.eclipse.uml2.uml.NamedElement
-import org.eclipse.papyrus.acceleo.GenUtils
+/*******************************************************************************
+ * Copyright (c) 2014 CEA LIST.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *     CEA LIST - initial API and implementation
+ *******************************************************************************/
+ 
+ import org.eclipse.uml2.uml.NamedElement
 import org.eclipse.papyrus.C_Cpp.Include
 import org.eclipse.uml2.uml.util.UMLUtil
+import org.eclipse.papyrus.codegen.base.GenUtils
 
 /**
  * @author Önder GÜRCAN (onder.gurcan@cea.fr)

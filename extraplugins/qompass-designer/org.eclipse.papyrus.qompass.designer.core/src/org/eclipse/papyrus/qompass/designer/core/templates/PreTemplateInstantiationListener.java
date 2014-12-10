@@ -43,6 +43,7 @@ public class PreTemplateInstantiationListener implements PreCopyListener {
 
 	public void init(LazyCopier copy, TemplateBinding binding, Object[] args) {
 		this.binding = binding;
+		preTemplateInstantiationListener.treatTemplate = false;
 	}
 
 	private TemplateBinding binding;
