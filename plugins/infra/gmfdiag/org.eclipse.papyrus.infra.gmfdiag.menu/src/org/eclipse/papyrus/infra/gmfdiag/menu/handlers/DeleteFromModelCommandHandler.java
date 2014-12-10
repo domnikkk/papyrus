@@ -23,12 +23,10 @@ import org.eclipse.core.commands.IHandler;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.commands.UnexecutableCommand;
-import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.gmf.runtime.diagram.ui.commands.CommandProxy;
 import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.emf.commands.core.command.CompositeTransactionalCommand;
-import org.eclipse.papyrus.infra.gmfdiag.controlmode.utils.ControlModeUtil;
 import org.eclipse.papyrus.infra.gmfdiag.menu.utils.DeleteActionUtil;
 
 /**
@@ -62,11 +60,6 @@ public class DeleteFromModelCommandHandler extends AbstractGraphicalCommandHandl
 		Iterator<IGraphicalEditPart> it = editParts.iterator();
 		while (it.hasNext()) {
 			IGraphicalEditPart editPart = it.next();
-
-			ICommand controlCommand = ControlModeUtil.getUncontrolledCommand(editPart, editingDomain);
-			if (controlCommand != null) {
-				command.compose(controlCommand);
-			}
 
 			Command curCommand = DeleteActionUtil.getDeleteFromModelCommand(editPart, editingDomain);
 			if (curCommand != null) {

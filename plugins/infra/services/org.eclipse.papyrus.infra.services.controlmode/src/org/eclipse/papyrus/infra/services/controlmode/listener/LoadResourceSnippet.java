@@ -76,11 +76,7 @@ public class LoadResourceSnippet implements IModelSetSnippet {
 			EditingDomain editingDomain = AdapterFactoryEditingDomain.getEditingDomainFor(resource);
 			final LoadDiagramCommand loadCommand = new LoadDiagramCommand(resource);
 			try {
-				TransactionHelper.run(editingDomain, new Runnable() {
-					public void run() {
-						loadCommand.run();
-					}
-				});
+				TransactionHelper.run(editingDomain, loadCommand);
 			} catch (InterruptedException e) {
 				// Nothing to do
 			} catch (RollbackException e) {
