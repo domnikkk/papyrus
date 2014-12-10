@@ -14,7 +14,6 @@
 package org.eclipse.papyrus.uml.diagram.clazz.test;
 
 import org.eclipse.papyrus.uml.diagram.clazz.test.canonical.AllCanonicalTests;
-import org.eclipse.papyrus.uml.diagram.clazz.test.canonical.TestClassDiagram;
 import org.eclipse.papyrus.uml.diagram.clazz.test.legacy.PackageDiagramLegacyTest;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
@@ -27,11 +26,10 @@ import org.junit.runners.Suite.SuiteClasses;
 @SuiteClasses({
 // canonical
 AllCanonicalTests.class,
-TestClassDiagram.class,
-PackageDiagramLegacyTest.class
+PackageDiagramLegacyTest.class,
+AllGenTests.class,
 // load
 //LoadTests.class
-
 })
 public class AllTests {
 }

@@ -1,0 +1,114 @@
+
+__TOC__
+= Papyrus Test Generation Framework =
+==Framework Goals==
+* Automate the  development of test cases for Papyrus diagrams
+* Set the bases for a model-based testing approach
+* Ease the transition towards test-driven development
+Currently, the framework supports the generation of unit tests for a diagram editor, taking as input an input .gmfgen. See below the generation workflow to understand how it works.
+==Requirements==
+- JUnit Generation (id=req01): 
+ The framework shall allow to generate JUnit tests for UML diagram editors, its nodes and links
+- Functional test cases (id=req02): 
+ The framework shall test functional test cases: for example creation of elements, hide, delete, edition, drop from model explorer, among many others.
+- Extensibility (id=req03): 
+ The framework shall be extensible with new diagram editors based on GMF, and other technologies where an editor description is available as a model (such as Nattable).
+- Functional Coverage (id=req04): 
+ The framework shall attain complete functional coverage for a diagram editor.
+- Code Coverage (id=req05): 
+ The framework shall cover all the possible code coverable by generated tests (expected to be around 80%)
+==Use Cases==
+[[Image:C:/Users/jc236769/OomphRoot/git/org.eclipse.papyrus/tests/framework/org.eclipse.papyrus.tests.framework/doc/imgDOC/UseCasesDiagram.png|UseCasesDiagram]]<br>
+As a pre-requirement, the tests plug-in must have already been created.
+Create tests plug-in, if it doesn't exist already. As a requirement, following the Papyrus development guidelines an Eclipse plug-in project must be created to contain the tests. Example: org.eclipse.papyrus.uml.diagram.component.tests.
+Add the dependency in the plug-in manifest towards the testing framework: org.eclipse.papyrus.tests.framework.
+Example: Generation for the UML Component diagram
+Here is an example (componentdiagramtest.qvto):
+
+import canonicalTests;
+
+modeltype UML uses uml('http://www.eclipse.org/uml2/5.0.0/UML');
+
+transformation componentdiagramtest(in gmfgenUml : UML, in gmfgenMm : UML, in frameworkBase : UML, in utp : UML, out testModel : UML) extends canonicalTests(in gmfgenUml : UML, in gmfgenMm : UML, in frameworkBase : UML, in utp : UML, out testModel : UML);
+
+main() {
+	topContainerEditPart := "PackageEditPart";
+	topNodesToTest := Set{
+		"PackageEditPart", 
+		"ModelEditPart", 
+		"ComponentEditPart", 
+		"InterfaceEditPart", 
+		"CommentEditPart", 
+		"ConstraintEditPart"
+	} ;
+	childNodesToTest := Set{
+		"ModelEditPartCN", 
+		"PackageEditPartCN",
+		"RectangleInterfaceEditPartCN" 
+		"ComponentEditPartCN", 
+		"ComponentEditPartPCN", 
+		"CommentEditPartPCN", 
+		"ConstraintEditPartPCN",
+		"InterfaceEditPartPCN"
+	};
+	linksToTest := Set{
+		"UsageEditPart",
+		"InterfaceRealizationEditPart",
+		"ManifestationEditPart",
+		"ComponentRealizationEditPart",
+		"AbstractionEditPart",
+		"DependencyEditPart"
+	};
+	linksOwnedBySourceToTest := Set{
+		"GeneralizationEditPart"
+	};
+	gmfgenUml.rootObjects()[UML::Model]->map gmfgen2papyrusTest("org.eclipse.papyrus.uml.diagram.component.test");
+}
+
+
+Here is an example for the workflow launcher:
+
+package org.eclipse.papyrus.uml.diagram.component.test.generation
+
+import org.eclipse.emf.mwe2.runtime.workflow.WorkflowContextImpl
+import org.eclipse.papyrus.tests.framework.mwe.GenerateTestsWorkflow
+
+class ComponentDiagramGenerateTestsWorkflow {
+
+	def static void main(String[] args) {
+		val workflow = new GenerateTestsWorkflow()
+		workflow.uriPrefix = "platform:/resource"
+		runWorkflow(workflow);
+	}
+
+	def static void runWorkflow(GenerateTestsWorkflow workflow) {
+		workflow.gmfgenUri = workflow.uriPrefix + '/org.eclipse.papyrus.uml.diagram.component/model/ComponentDiagram.gmfgen'
+		workflow.testSrcGenLocation = 'test-gen-15072014'
+		workflow.qvtoScriptUri = workflow.uriPrefix + '/org.eclipse.papyrus.uml.diagram.component.tests/qvto/componentdiagramtest.qvto'
+		workflow.testModelUri = workflow.uriPrefix + '/org.eclipse.papyrus.uml.diagram.component.tests/model/ComponentDiagramTest.uml'
+		workflow.run(new WorkflowContextImpl());
+	}
+
+}
+
+
+===Define list of element edit parts under test===
+Create the QVTO script for your diagram editor, detailing the name of the generated package of tests and the desired edit parts to test, as they are described in the gmfgen (See example below). 
+===Generate test model===
+Create the generation launcher (either Xtend-based or Java-based) in an appropiate package, for instance org.eclipse.papyrus.uml.diagram.component.test.generation, in a file such as ComponentDiagramGenerateTestsWorkflow.xtend. Copy the example launcher below and replace with the values for the generation parameters for your own diagram editor. The parameters are:
+gmfgenUri: URI for the input GMFGen file
+testSrcGenLocation: Folder in the project where the launcher is located where the test code will be generated, for instance test-gen.
+qvtoScriptUri: URI for the QVTO script
+testModelUri: URI where the UML-UTP intermediate model will be generated. After launching the generation, this model provides an overview of all the generated test artifacts.
+Launch the main method as a normal Java class.
+The intermediate model and the JUnit code are generated.
+===Generate JUnit test code===
+The generated JUnit tests extend the abstract test cases defined in the Papyrus test framework base
+[[Image:C:/Users/jc236769/OomphRoot/git/org.eclipse.papyrus/tests/framework/org.eclipse.papyrus.tests.framework/doc/imgDOC/AbstractTestClassesDiagram.png|AbstractTestClassesDiagram]]<br>
+==Design==
+[[Image:C:/Users/jc236769/OomphRoot/git/org.eclipse.papyrus/tests/framework/org.eclipse.papyrus.tests.framework/doc/imgDOC/DesignOverview.png|DesignOverview]]<br>
+[[Image:C:/Users/jc236769/OomphRoot/git/org.eclipse.papyrus/tests/framework/org.eclipse.papyrus.tests.framework/doc/imgDOC/GenerationWorkflow.png|GenerationWorkflow]]<br>
+This is the sequence of actions performed in the workflow to generate the tests. The input and output pins represent the inputs and outputs of every action.
+
+[[Image:C:/Users/jc236769/OomphRoot/git/org.eclipse.papyrus/tests/framework/org.eclipse.papyrus.tests.framework/doc/imgDOC/ClassDiagram.png|ClassDiagram]]<br>
+This is the structure of launchers for the generation workflow according to each type of diagram.

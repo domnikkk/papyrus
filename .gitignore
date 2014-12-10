@@ -6,3 +6,6 @@ target/
 
 # Workspace metadata folder created by Oomph when launching tests.
 tests/**/.metadata/
+
+xtend-gen/
+*.gmfgen.uml

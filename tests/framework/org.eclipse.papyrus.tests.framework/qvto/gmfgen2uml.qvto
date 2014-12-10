@@ -1,0 +1,112 @@
+modeltype gmfgen uses 'http://www.eclipse.org/gmf/2009/GenModel';
+modeltype uml uses uml('http://www.eclipse.org/uml2/5.0.0/UML');
+
+transformation gmfgen2uml(in gmfgenIn : gmfgen, in gmfgenMm : uml, out uml);
+
+main(){
+	gmfgenIn.rootObjects()->map gmfgen2uml();
+}
+
+mapping Set(Stdlib::Element)::gmfgen2uml() : Model{
+	var genEditorGenerator := self->selectByType(gmfgen::GenEditorGenerator);
+	name := genEditorGenerator->any(true).modelID;
+	packagedElement := genEditorGenerator->map gmfGen2UmlEditorGenerator().oclAsType(PackageableElement)->asSequence()
+		->union(genEditorGenerator.diagram.map gmfgenDiagram2uml().oclAsType(PackageableElement)->asSequence())
+		->union(genEditorGenerator.diagram.topLevelNodes.map gmfgenTopLevelNodes2uml().oclAsType(PackageableElement)->asSequence())
+}
+
+mapping gmfgen::GenEditorGenerator::gmfGen2UmlEditorGenerator() : Class{
+	name := 'GenEditorGenerator' + self.modelID;
+	var umlClassifier := getUmlClassifier(self.metaClassName());
+	generalization := object Generalization {general := umlClassifier};
+	var diagram := self.diagram;
+	ownedAttribute := Set{ 
+		object Property{
+			name := 'packageNamePrefix';
+			type := getUmlStructuralFeature(umlClassifier, 'packageNamePrefix').type;
+			defaultValue := object LiteralString { value := self.packageNamePrefix.toString() };
+		},
+		object Property{
+			name := 'diagram';
+			type := getUmlStructuralFeature(umlClassifier, 'diagram').type;
+			defaultValue := object LiteralString { value := self.diagram.toString() };
+		},
+		object Property{
+			name := 'modelID';
+			type := getUmlStructuralFeature(umlClassifier, 'modelID').type;
+			defaultValue := object LiteralString { value := self.modelID.toString() };
+		},
+		object Property{
+			name := 'domainFileExtension';
+			type := getUmlStructuralFeature(umlClassifier, 'domainFileExtension').type;
+			defaultValue := object LiteralString { value := self.domainFileExtension.toString() };
+		}
+	};
+}
+
+mapping gmfgen::GenDiagram::gmfgenDiagram2uml() : Class{
+	name := 'GenDiagram' + self.editPartClassName;
+	var umlClassifier : Classifier := getUmlClassifier(self.metaClassName());
+	generalization := object Generalization {general := umlClassifier};
+	var topLevelNodes = self.topLevelNodes;
+	ownedAttribute := Set{
+		object Property{
+			name := 'visualID';
+			type := getUmlStructuralFeature(umlClassifier, 'visualID').type;
+			_default := self.visualID.toString();
+		},
+		object Property{
+			name := 'editPartClassName';
+			type := getUmlStructuralFeature(umlClassifier, 'editPartClassName').type;
+			_default := self.editPartClassName;
+		},
+		object Property {
+			name := 'itemSemanticEditPolicyClassName';
+			type := getUmlStructuralFeature(umlClassifier, 'itemSemanticEditPolicyClassName').type;
+			_default := self.itemSemanticEditPolicyClassName;
+		},
+		object Property {
+			name := 'canonicalEditPolicyClassName';
+			type := getUmlStructuralFeature(umlClassifier, 'canonicalEditPolicyClassName').type;
+			_default := self.canonicalEditPolicyClassName;
+		}
+	};
+}
+
+mapping gmfgen::GenTopLevelNode::gmfgenTopLevelNodes2uml() : Class{
+	name := 'GenTopLevelNode' + self.elementType.displayName;
+	var umlClassifier : Classifier := getUmlClassifier(self.metaClassName());
+	generalization := object Generalization {general := umlClassifier }; 
+	ownedAttribute := Set{
+		object Property{
+			name := 'visualID';
+			type := getUmlStructuralFeature(umlClassifier, 'visualID').type;
+			_default := self.visualID.toString();
+		},
+		object Property{
+			name := 'editPartClassName';
+			type := getUmlStructuralFeature(umlClassifier, 'editPartClassName').type;
+			_default := self.editPartClassName;
+		},
+		object Property{
+			name := 'itemSemanticEditPolicyClassName';
+			type := getUmlStructuralFeature(umlClassifier, 'itemSemanticEditPolicyClassName').type;
+		},
+		object Property{
+			name := 'elementType';
+			type := getUmlStructuralFeature(umlClassifier, 'visualID').type;
+			_default := self.visualID.toString();
+			
+		}
+	}
+}
+
+query getUmlStructuralFeature(classifier : Classifier, structuralFeatureName : String) : StructuralFeature{
+	return classifier.getOwnedMembers()->any(ne : NamedElement | ne.name.equalsIgnoreCase(structuralFeatureName))->collectOne(oclAsType(StructuralFeature));
+}
+
+query getUmlClassifier(name : String) : Classifier{
+	var classifiers : Collection(Classifier) := gmfgenMm.rootObjects()[Model].packagedElement->selectByKind(Classifier);
+	return classifiers->any(classifier : Classifier | classifier.name = name);
+
+}

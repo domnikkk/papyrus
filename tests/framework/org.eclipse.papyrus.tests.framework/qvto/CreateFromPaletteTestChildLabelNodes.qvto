@@ -1,0 +1,67 @@
+import TestModelCreationUtilities;
+
+library CreateFromPaletteTestChildLabelNodes;
+
+modeltype UML uses uml('http://www.eclipse.org/uml2/5.0.0/UML');
+modeltype Ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+
+property childLabelNodesIs : Set(InstanceSpecification);
+
+helper Model::childLabelNodeTestClass() : Class{
+	childLabelNodesIs := self.packagedElement[InstanceSpecification]
+				->select(is | is.classifier->collectOne(name = "GenChildLabelNode") and childLabelNodesToTest->exists(s | s = is.getSlotStringValue("editPartClassName")));
+	var testClass := object Class{
+		name := "Test" + self.getDiagramName() + "ChildLabelNodeGen";
+		ownedAttribute := childLabelNodesIs->createEditPartNodesIs2Property("GenChildLabelNode");
+		generalization := object Generalization{ general := frameworkBase.getUmlClassifier("AbstractCreateChildLabelNodeFromPaletteTest") };
+		elementImport := self.computeImports(childLabelNodesToTest);
+	};
+	testClass.ownedAttribute := testClass.ownedAttribute->including(testClass.createSelfProperty());
+	testClass.ownedAttribute := testClass.ownedAttribute->including(self.getInstanceSpecification("GenDiagram").diagramIs2Property());
+	testClass.ownedAttribute := testClass.ownedAttribute->including(self.getInstanceSpecification("GenEditorGenerator").editorGeneratorIs2Property());
+	testClass.ownedAttribute := testClass.ownedAttribute->including(self.createDiagramUpdaterProperty());
+	var testBehavior : Activity := self.map createCallTestChildLabelNodeOperationActivity();
+	testClass.ownedBehavior := testBehavior;
+	testClass.ownedOperation := object Operation {
+		name := testClass.name + "Operation";
+		method := testBehavior;
+	};
+	return testClass;
+}
+
+mapping Model::createCallTestChildLabelNodeOperationActivity(): Activity{
+	name :=  self.getDiagramName() + "ChildLabelTestBehavior" ; 
+	ownedNode := childLabelNodesIs
+		->select(childLabelNodeIs : InstanceSpecification | childLabelNodeIs.getSlot("containers") != null)
+		->collect(childLabelNodeIs : InstanceSpecification | childLabelNodeIs.getSlot("containers").value.oclAsType(InstanceValue).instance
+		->select(compartmentIs : InstanceSpecification | compartmentIs.getSlot("node") != null)
+		->collect(compartmentIs : InstanceSpecification | compartmentIs.getSlot("node").value.oclAsType(InstanceValue).instance
+		->collect(topNodesIs : InstanceSpecification | object CallOperationAction{
+			name := "ChildLabelTestNodeActivity_" +  topNodesIs.name + "_" + childLabelNodeIs.name + "_" + compartmentIs.name;
+			operation := frameworkBase.getUmlClassifier('AbstractCreateChildLabelNodeFromPaletteTest')[Class]->collectOne(getAllOperations()->any(true)); 
+			argument := Set{
+				object ValuePin{
+					name := "topNode";
+					value := object InstanceValue{
+						instance := topNodesIs;
+						name := topNodesIs.name;
+					};
+				},
+				object ValuePin{
+					name := "childNode";
+					value := object InstanceValue{
+						instance := childLabelNodeIs;
+						name := childLabelNodeIs.name;
+					};
+				},
+				object ValuePin{
+					name := "compartment";
+					value := object InstanceValue{
+						instance := compartmentIs;
+						name := compartmentIs.name;
+					};
+				}
+			};
+		})));
+}
+

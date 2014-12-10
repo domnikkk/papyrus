@@ -4,7 +4,19 @@ import org.eclipse.osgi.util.NLS;
 
 public class Messages extends NLS {
 
-	private static final String BUNDLE_NAME = "org.eclipse.papyrus.mwe.utils.messages.messages"; //$NON-NLS-1$
+	private static final String BUNDLE_NAME = "org.eclipse.papyrus.mwe2.utils.messages.messages"; //$NON-NLS-1$
+
+	public static String DeleteFile_0;
+
+	public static String DeleteFile_1;
+
+	public static String DeleteFile_2;
+
+	public static String DeleteFile_3;
+
+	public static String DeleteFile_4;
+
+	public static String DeleteFile_5;
 
 	public static String QvtoTransformationWorkflowComponent_1;
 
