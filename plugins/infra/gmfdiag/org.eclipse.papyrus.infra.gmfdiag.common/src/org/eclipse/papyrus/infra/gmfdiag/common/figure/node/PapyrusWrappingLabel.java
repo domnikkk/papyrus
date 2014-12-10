@@ -16,7 +16,6 @@
 package org.eclipse.papyrus.infra.gmfdiag.common.figure.node;
 
 import org.eclipse.draw2d.MarginBorder;
-import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.papyrus.infra.gmfdiag.common.figure.IPapyrusWrappingLabel;
 import org.eclipse.swt.graphics.Image;
