@@ -50,12 +50,12 @@ import org.eclipse.papyrus.uml.diagram.common.editpolicies.PapyrusCreationEditPo
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.QualifiedNameDisplayEditPolicy;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.ShowHideClassifierContentsEditPolicy;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.ShowHideCompartmentEditPolicy;
+import org.eclipse.papyrus.uml.diagram.common.locator.PortPositionLocator;
 import org.eclipse.papyrus.uml.diagram.common.locator.RoundedRectangleLabelPositionLocator;
 import org.eclipse.papyrus.uml.diagram.component.custom.edit.policies.CustomDiagramDragDropEditPolicy;
 import org.eclipse.papyrus.uml.diagram.component.custom.edit.policies.CustomGraphicalNodeEditPolicy;
 import org.eclipse.papyrus.uml.diagram.component.custom.edit.policies.StructuredClassifierLayoutEditPolicy;
 import org.eclipse.papyrus.uml.diagram.component.custom.figure.nodes.CompositeFigure;
-import org.eclipse.papyrus.uml.diagram.component.custom.locators.PortPositionLocator;
 import org.eclipse.papyrus.uml.diagram.component.edit.policies.ComponentItemSemanticEditPolicyCN;
 import org.eclipse.papyrus.uml.diagram.component.part.UMLVisualIDRegistry;
 import org.eclipse.swt.graphics.Color;

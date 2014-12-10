@@ -37,7 +37,7 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.IMaskManagedLabelEditPolicy;
 import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.IPapyrusNodeFigure;
 import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.RoundedRectangleNodePlateFigure;
-import org.eclipse.papyrus.uml.diagram.common.editparts.AbstractBorderEditPart;
+import org.eclipse.papyrus.uml.diagram.common.editparts.RoundedBorderNamedElementEditPart;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeIconlDisplayEditPolicy;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeLabelDisplayEditPolicy;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.MaskManagedNodeEditPolicy;
@@ -55,7 +55,7 @@ import org.eclipse.swt.graphics.Color;
 /**
  * @generated
  */
-public class PortEditPart extends AbstractBorderEditPart {
+public class PortEditPart extends RoundedBorderNamedElementEditPart {
 
 	/**
 	 * @generated

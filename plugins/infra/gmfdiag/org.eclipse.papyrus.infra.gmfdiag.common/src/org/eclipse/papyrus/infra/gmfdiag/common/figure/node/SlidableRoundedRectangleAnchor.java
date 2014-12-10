@@ -31,6 +31,8 @@ import org.eclipse.gmf.runtime.gef.ui.figures.SlidableAnchor;
  * @author Mickael ADAM - ALL4TEC - mickael.adam@all4tec.net - Integration and adaptation for Papyrus API
  */
 public class SlidableRoundedRectangleAnchor extends SlidableAnchor {
+	/** the offset applied to the size of the rectangle*/
+	private Dimension offset = new Dimension();
 
 	/**
 	 * Constructs a SlidableRoundedRectangleAnchor without a desired anchor
@@ -61,12 +63,12 @@ public class SlidableRoundedRectangleAnchor extends SlidableAnchor {
 	 */
 	protected Rectangle getBox() {
 		PrecisionRectangle rBox = null;
-		if ((getOwner().getChildren().get(0)) instanceof IRoundedRectangleFigure) {
-			rBox = new PrecisionRectangle(((IRoundedRectangleFigure) ((IFigure) getOwner().getChildren().get(0))).getRoundedRectangleBounds());
-		} else if ((getOwner().getChildren().get(0)) instanceof IFigure) {
-			rBox = new PrecisionRectangle(((IFigure) getOwner()).getBounds());
-		}
-		((IFigure) getOwner().getChildren().get(0)).translateToAbsolute(rBox);
+			if ((getOwner().getChildren().get(0)) instanceof IRoundedRectangleFigure) {
+				rBox = new PrecisionRectangle(((IRoundedRectangleFigure) ((IFigure) getOwner().getChildren().get(0))).getRoundedRectangleBounds());
+			} else if ((getOwner().getChildren().get(0)) instanceof IFigure) {
+				rBox = new PrecisionRectangle(((IFigure) getOwner()).getBounds());
+			}
+			((IFigure) getOwner().getChildren().get(0)).translateToAbsolute(rBox);
 		return rBox;
 	}
 
@@ -74,7 +76,7 @@ public class SlidableRoundedRectangleAnchor extends SlidableAnchor {
 	 * {@inheritDoc}
 	 */
 	protected PointList getIntersectionPoints(final Point ownReference, final Point foreignReference) {
-		Rectangle rect = getBox();
+		Rectangle rect = getBox().expand(offset.width, offset.height);
 		Dimension dimension = null;
 		// Get the dimension of the owner figure
 		if (getOwner().getChildren().size() > 0 && getOwner().getChildren().get(0) instanceof IRoundedRectangleFigure) {
@@ -92,6 +94,7 @@ public class SlidableRoundedRectangleAnchor extends SlidableAnchor {
 			dimension.width = rect.width;
 		PrecisionRectangle corner = new PrecisionRectangle(new Rectangle(0, 0, dimension.width, dimension.height));
 		((IFigure) getOwner().getChildren().get(0)).translateToAbsolute(corner);
+
 		return getLineIntersectionsWithRoundedRectangle(new LineSeg(ownReference, foreignReference), rect.x, rect.y, rect.width, rect.height, corner.width, corner.height);
 	}
 
@@ -206,5 +209,13 @@ public class SlidableRoundedRectangleAnchor extends SlidableAnchor {
 	// Used for the PortEditPart
 	public Point getLocation(Point refParent, Point refPort) {
 		return super.getLocation(refParent, refPort);
+	}
+
+	/**
+	 * @param portOffset
+	 */
+	public void setOffset(Dimension portOffset) {
+		offset.height = portOffset.height;
+		offset.width = portOffset.width;
 	}
 }

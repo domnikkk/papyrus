@@ -2,11 +2,17 @@ package org.eclipse.papyrus.uml.diagram.common.editparts;
 
 import org.eclipse.draw2d.Graphics;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.IRoundedRectangleFigure;
 import org.eclipse.papyrus.infra.gmfdiag.common.helper.PapyrusRoundedEditPartHelper;
+import org.eclipse.papyrus.infra.gmfdiag.common.model.NotationUtils;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.ShowHideCompartmentEditPolicy;
+import org.eclipse.papyrus.uml.diagram.common.locator.PortPositionLocator;
 
 
 public abstract class RoundedBorderNamedElementEditPart extends BorderNamedElementEditPart {
+
+	/** The port position namedStyle property */
+	private static final String PORT_POSITION = "portPosition";
 
 	/** The Constant DEFAULT_BORDER_STYLE. */
 	private static final int DEFAULT_BORDER_STYLE = Graphics.LINE_SOLID;
@@ -34,6 +40,8 @@ public abstract class RoundedBorderNamedElementEditPart extends BorderNamedEleme
 	private static final boolean DEFAULT_USE_ORIGINAL_COLORS = true;
 
 	private static final boolean DEFAULT_HAS_HEADER = false;
+
+	private static final String DEFAULT_PORT_POSITION_VALUE = "onLine";
 
 	/**
 	 * Constructor.
@@ -73,6 +81,7 @@ public abstract class RoundedBorderNamedElementEditPart extends BorderNamedEleme
 	protected int getDefaultCornerHeight() {
 		return DEFAULT_CORNER_HEIGHT;
 	}
+
 
 	/**
 	 * Gets the default corner width value.
@@ -143,7 +152,31 @@ public abstract class RoundedBorderNamedElementEditPart extends BorderNamedEleme
 		PapyrusRoundedEditPartHelper.refreshBorderStyle(this, getDefaultBorderStyle(), getDefaultCutomDash());
 		PapyrusRoundedEditPartHelper.refreshSVGOriginalColors(this, getDefaultUseOriginalColors());
 		PapyrusRoundedEditPartHelper.refreshHasHeader(this, getDefaultHasHeader());
+		refreshPortPosition();
 		super.refreshVisuals();
+	}
+
+	/**
+	 *  Refresh the port position
+	 */
+	private void refreshPortPosition() {
+		if (getPrimaryShape() instanceof IRoundedRectangleFigure) {
+			if (getModel() instanceof View) {
+				Object constraint = ((RoundedCompartmentEditPart) getParent()).getBorderedFigure().getBorderItemContainer().getLayoutManager().getConstraint(getFigure());
+				if (constraint instanceof PortPositionLocator) {
+					PortPositionLocator portLocator = (PortPositionLocator) constraint;
+					String position = NotationUtils.getStringValue((View) getModel(), PORT_POSITION, "onLine");
+					portLocator.setPortPosition(position);
+				}
+			}
+		}
+	}
+
+	/**
+	 * get the default Port Position(can be inside, outside or onLine).
+	 */
+	protected String getDefaultPortPosition() {
+		return DEFAULT_PORT_POSITION_VALUE;
 	}
 
 	/**

@@ -47,6 +47,8 @@ import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.SlidableRoundedRecta
  *
  * .
  */
+@Deprecated
+// use org.eclipse.papyrus.uml.diagram.common.locator.PortPositionLocator instead
 public class PortPositionLocator implements IBorderItemLocator {
 
 	/** the figure around which this border item appears. */

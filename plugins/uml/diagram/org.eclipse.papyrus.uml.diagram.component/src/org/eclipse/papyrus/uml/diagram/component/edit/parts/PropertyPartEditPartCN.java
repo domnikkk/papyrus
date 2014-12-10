@@ -40,13 +40,13 @@ import org.eclipse.papyrus.uml.diagram.common.editpolicies.MaskManagedNodeEditPo
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.PapyrusCreationEditPolicy;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.QualifiedNameDisplayEditPolicy;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.ShowHideCompartmentEditPolicy;
+import org.eclipse.papyrus.uml.diagram.common.locator.PortPositionLocator;
 import org.eclipse.papyrus.uml.diagram.component.custom.edit.part.CustomPropertyPartEditPartCN;
 import org.eclipse.papyrus.uml.diagram.component.custom.edit.policies.CustomDiagramDragDropEditPolicy;
 import org.eclipse.papyrus.uml.diagram.component.custom.edit.policies.CustomGraphicalNodeEditPolicy;
 import org.eclipse.papyrus.uml.diagram.component.custom.edit.policies.PropertyLayoutEditPolicy;
 import org.eclipse.papyrus.uml.diagram.component.custom.edit.policies.itemsemantic.PropertyPartItemSemanticEditPolicyCN;
 import org.eclipse.papyrus.uml.diagram.component.custom.figure.nodes.PropertyPartFigure;
-import org.eclipse.papyrus.uml.diagram.component.custom.locators.PortPositionLocator;
 import org.eclipse.papyrus.uml.diagram.component.edit.policies.PropertyItemSemanticEditPolicy;
 import org.eclipse.papyrus.uml.diagram.component.part.UMLVisualIDRegistry;
 import org.eclipse.swt.graphics.Color;

@@ -51,6 +51,8 @@ public class PortPositionLocator implements IBorderItemLocator {
 	/** the figure around which this border item appears */
 	protected IFigure parentFigure = null;
 
+	String position = "onLine";
+
 	/** the width of the area surrounding the parent figure where border item can be put */
 	protected int borderItemOffset = 10;
 
@@ -74,6 +76,9 @@ public class PortPositionLocator implements IBorderItemLocator {
 
 	/** the position constraint */
 	protected Rectangle constraint = new Rectangle(0, 0, 0, 0);
+
+	/** the figure */
+	private IFigure figure;
 
 	/**
 	 * Constructor *.
@@ -126,54 +131,17 @@ public class PortPositionLocator implements IBorderItemLocator {
 			parentFigure.translateToAbsolute(proposedLocation);
 			parentFigure.translateToAbsolute(parentRec);
 
-
-
-			// Get the anchor
 			ConnectionAnchor connectionAnchor = ((SVGNodePlateFigure) parentFigure).getConnectionAnchor("");
 
-			// Get the location point, with anchor.
-			Point locationForPort = ((SlidableRoundedRectangleAnchor) connectionAnchor).getLocation(parentRec.getCenter(), proposedLocation.getLocation());
-			if (locationForPort != null) {
-				proposedLocation.setLocation(locationForPort);
+			if (connectionAnchor instanceof SlidableRoundedRectangleAnchor) {
+				// Get the location point, with anchor.
+				((SlidableRoundedRectangleAnchor) connectionAnchor).setOffset(getPortOffset());
+				Point locationForPort = ((SlidableRoundedRectangleAnchor) connectionAnchor).getLocation(parentRec.getCenter(), proposedLocation.getLocation());
+				((SlidableRoundedRectangleAnchor) connectionAnchor).setOffset(new Dimension());
+				if (locationForPort != null) {
+					proposedLocation.setLocation(locationForPort);
+				}
 			}
-
-			// final Rectangle maxRect = parentRec.getCopy();
-			// maxRect.shrink(-borderItemOffset, -borderItemOffset);
-			// while (maxRect.contains(proposedLocation.getLocation())) {
-			// maxRect.shrink(1, 1);
-			// }
-			// int pos = maxRect.getPosition(proposedLocation.getLocation());
-			//
-			// switch (pos) {
-			// case PositionConstants.NORTH:
-			// proposedLocation.y -= borderItemOffset;
-			// break;
-			// case PositionConstants.SOUTH:
-			// proposedLocation.y += borderItemOffset;
-			// break;
-			// case PositionConstants.EAST:
-			// proposedLocation.x += borderItemOffset;
-			// break;
-			// case PositionConstants.WEST:
-			// proposedLocation.x -= borderItemOffset;
-			// break;
-			// case PositionConstants.NORTH_EAST:
-			// proposedLocation.x += borderItemOffset;
-			// proposedLocation.y -= borderItemOffset;
-			// break;
-			// case PositionConstants.NORTH_WEST:
-			// proposedLocation.x -= borderItemOffset;
-			// proposedLocation.y -= borderItemOffset;
-			// break;
-			// case PositionConstants.SOUTH_EAST:
-			// proposedLocation.x += borderItemOffset;
-			// proposedLocation.y += borderItemOffset;
-			// break;
-			// case PositionConstants.SOUTH_WEST:
-			// proposedLocation.x -= borderItemOffset;
-			// proposedLocation.y += borderItemOffset;
-			// break;
-			// }
 
 			// Translate to relative the location
 			parentFigure.translateToRelative(proposedLocation);
@@ -245,7 +213,37 @@ public class PortPositionLocator implements IBorderItemLocator {
 	}
 
 	/**
-	 * Gets the current side of parent.
+	 * @return
+	 */
+	private Dimension getPortOffset() {
+		Dimension portOffset = new Dimension();
+		if (figure != null) {
+			if ("inside".equals(position)) {
+				portOffset.width = -figure.getBounds().width / 2;
+				portOffset.height = -figure.getBounds().height / 2;
+			} else if ("outside".equals(position)) {
+				portOffset.width = figure.getBounds().width / 2;
+				portOffset.height = figure.getBounds().height / 2;
+			}
+			// Else onLine: no offset is applied and the port is on the line.
+		}
+		return portOffset;
+	}
+
+	/**
+	 * @param position
+	 *            the position to set
+	 */
+	public void setPortPosition(String position) {
+		this.position = position;
+	}
+
+	/**
+	 * @param view
+	 *            the view to set
+	 * 
+	 *            /**
+	 *            Gets the current side of parent.
 	 *
 	 * @return the current side of parent
 	 * @see org.eclipse.gmf.runtime.draw2d.ui.figures.IBorderItemLocator#getCurrentSideOfParent()
@@ -268,36 +266,28 @@ public class PortPositionLocator implements IBorderItemLocator {
 		// we are not on EAST, not on WEST, but we are on the NORTH
 		if ((constraint.x != parentFigure.getBounds().width - borderItemOffset) && (constraint.x != -this.borderItemOffset) && (constraint.y == -this.borderItemOffset)) {
 			position = PositionConstants.NORTH;
-
 			// we are not on the EAST and not on the WEST, but we are on the SOUTH
 		} else if ((constraint.x != parentFigure.getBounds().width - borderItemOffset) && (constraint.x != -this.borderItemOffset) && (constraint.y == parentFigure.getBounds().height - borderItemOffset)) {
 			position = PositionConstants.SOUTH;
-
 			// we are on the EAST, but we are not on the NORTH and not on the SOUTH
 		} else if ((constraint.x == parentFigure.getBounds().width - borderItemOffset) && (constraint.y != -this.borderItemOffset) && (constraint.y != parentFigure.getBounds().height - borderItemOffset)) {
 			position = PositionConstants.EAST;
-
 			// we are on the WEST, but we are not on the on the NORTH and not on the SOUTH
 		} else if ((constraint.x == -this.borderItemOffset) && (constraint.y != -this.borderItemOffset) && (constraint.y != parentFigure.getBounds().height - borderItemOffset)) {
 			position = PositionConstants.WEST;
-
 			// we are on the NORTH and on the EAST
 		} else if ((constraint.x == parentFigure.getBounds().width - borderItemOffset) && (constraint.y == -this.borderItemOffset)) {
 			position = PositionConstants.NORTH_EAST;
-
 			// we are on the NORTH and on the WEST
 		} else if ((constraint.x == -this.borderItemOffset) && (constraint.y == -this.borderItemOffset)) {
 			position = PositionConstants.NORTH_WEST;
-
 			// we are on the EAST and on the SOUTH
 		} else if ((constraint.x == parentFigure.getBounds().width - borderItemOffset) && (constraint.y == parentFigure.getBounds().height - borderItemOffset)) {
 			position = PositionConstants.SOUTH_EAST;
-
 			// we are on the WEST and on the SOUTH
 		} else if ((constraint.x == -this.borderItemOffset) && (constraint.y == parentFigure.getBounds().height - borderItemOffset)) {
 			position = PositionConstants.SOUTH_WEST;
 		}
-
 		return position;
 	}
 
@@ -311,7 +301,6 @@ public class PortPositionLocator implements IBorderItemLocator {
 	@Override
 	public void setConstraint(Rectangle constraint) {
 		this.constraint = constraint;
-
 	}
 
 	/**
@@ -324,19 +313,17 @@ public class PortPositionLocator implements IBorderItemLocator {
 	@Override
 	public void relocate(IFigure target) {
 
+		if (figure == null) {
+			figure = target;
+		}
 		Rectangle proposedLocation = constraint.getCopy();
 		proposedLocation.setLocation(constraint.getLocation().translate(parentFigure.getBounds().getTopLeft()));
 
 		Point validLocation = getValidLocation(proposedLocation, target).getLocation();
 
-		if (parentFigure instanceof SVGNodePlateFigure) {
-			Dimension preferredSize = target.getPreferredSize();
-			Rectangle rect = new Rectangle(validLocation, preferredSize);
-			rect.translate(-preferredSize.width / 2, -preferredSize.height / 2);
-			target.setBounds(rect);
-		} else {
-			target.setBounds(new Rectangle(validLocation, target.getPreferredSize()));
-		}
-
+		Dimension preferredSize = target.getPreferredSize();
+		Rectangle rect = new Rectangle(validLocation, preferredSize);
+		rect.translate(-preferredSize.width / 2, -preferredSize.height / 2);
+		target.setBounds(rect);
 	}
 }

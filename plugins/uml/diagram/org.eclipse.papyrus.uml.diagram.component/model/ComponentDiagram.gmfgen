@@ -3014,7 +3014,6 @@
             smallIconPath="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
             createMethodName="createNodesGroup"
             id="&quot;component.group.nodes&quot;"
-            stack="true"
             collapse="true">
           <entries
               xsi:type="gmfgen:ToolEntry"
@@ -3116,7 +3115,6 @@
             smallIconPath="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
             createMethodName="createLinksGroup"
             id="&quot;component.group.links&quot;"
-            stack="true"
             collapse="true">
           <entries
               xsi:type="gmfgen:ToolEntry"
@@ -3350,8 +3348,8 @@
         xsi:type="papyrusgmfgenextension:ExtendedGenView"
         comment="Manage named element figure relying on Affixed Node"
         genView="/0/@diagram/@childNodes.0"
-        name="EP_NamedElement_AFF_NODE"
-        superOwnedEditPart="org.eclipse.papyrus.uml.diagram.common.editparts.AbstractBorderEditPart"/>
+        name="RoundedBorderNamedElementEditPart"
+        superOwnedEditPart="org.eclipse.papyrus.uml.diagram.common.editparts.RoundedBorderNamedElementEditPart"/>
     <extensionNodes
         xsi:type="papyrusgmfgenextension:ExtendedGenView"
         comment="Label in charge to display applied stereotypes on links"
@@ -3403,7 +3401,7 @@
     <extensionNodes
         xsi:type="papyrusgmfgenextension:SpecificLocator"
         comment="Affixed Port locator"
-        classpath="org.eclipse.papyrus.uml.diagram.component.custom.locators.PortPositionLocator"
+        classpath="org.eclipse.papyrus.uml.diagram.common.locator.PortPositionLocator"
         genChildSideAffixedNode="/0/@diagram/@childNodes.0"/>
     <extensionNodes
         xsi:type="papyrusgmfgenextension:SpecificLocatorExternalLabel"

@@ -506,7 +506,6 @@ public class UMLDocumentProvider extends AbstractDocumentProvider implements IDi
 		if (toCreateOrModify.exists()) {
 			return ResourcesPlugin.getWorkspace().getRuleFactory().modifyRule(toCreateOrModify);
 		}
-
 		IResource parent = toCreateOrModify;
 		do {
 			/*
