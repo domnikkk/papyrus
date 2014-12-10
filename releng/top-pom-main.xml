@@ -309,8 +309,8 @@
 		<module>main</module>
 	</modules>
 	<properties>
-		<tycho-version>0.21.0</tycho-version>
-		<tychoExtrasVersion>0.21.0</tychoExtrasVersion>
+		<tycho-version>0.22.0</tycho-version>
+		<tychoExtrasVersion>0.22.0</tychoExtrasVersion>
 		<findbugs.version>2.5.3</findbugs.version>
 	</properties>
 	<repositories>
