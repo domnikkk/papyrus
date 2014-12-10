@@ -18,7 +18,9 @@ import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.Path;
-import org.eclipse.papyrus.acceleo.ModelElementsCreator;
+import org.eclipse.papyrus.codegen.base.ModelElementsCreator;
+import org.eclipse.papyrus.cpp.codegen.Constants;
+import org.eclipse.papyrus.cpp.codegen.preferences.CppCodeGenUtils;
 import org.eclipse.papyrus.cpp.codegen.transformation.CppModelElementsCreator;
 import org.eclipse.papyrus.cpp.codegen.utils.LocateCppProject;
 import org.eclipse.papyrus.infra.core.Activator;
@@ -50,19 +52,13 @@ public class SyncModelToCDT {
 		IContainer srcPkg = null;
 		IFile cppFile = null;
 		try {
-			String name = classifier.getName();
-			// System.err.println("regen: " + name);
-
 			// get the container for the current element
 			ModelElementsCreator mec = new CppModelElementsCreator(modelProject);
-			srcPkg = mec.getContainer(classifier);
-			mec.createPackageableElement(srcPkg, null, classifier, false); // need listener for sync in both directions!
+			mec.createPackageableElement(classifier, null, false); // need listener for sync in both directions!
 
-			cppFile = srcPkg.getFile(new Path(name + ".cpp")); // TODO: extension is configurable! //$NON-NLS-1$
-
+			cppFile = modelProject.getFile(new Path(mec.getFileName(classifier) + Constants.DOT + CppCodeGenUtils.getBodySuffix()));
+	
 			// IStorage storage = new TextStorage(string);
-		} catch (CoreException e) {
-			Activator.log.error(e);
 		} finally {
 			// Refresh the container for the newly created files. This needs to be done even
 			// during error because of the possibility for partial results.
