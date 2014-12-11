@@ -21,6 +21,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import org.eclipse.core.commands.IHandler;
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EReference;
@@ -47,10 +48,13 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.gmf.runtime.notation.Shape;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.update.DiagramUpdater;
+import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.IMaskManagedLabelEditPolicy;
 import org.eclipse.papyrus.uml.diagram.common.editparts.NamedElementEditPart;
 import org.eclipse.papyrus.uml.diagram.common.editparts.UMLCompartmentEditPart;
 import org.eclipse.swt.widgets.Display;
+import org.eclipse.ui.PlatformUI;
+import org.eclipse.ui.commands.ICommandService;
 import org.eclipse.uml2.uml.Element;
 import org.junit.Assert;
 import org.junit.Before;
@@ -266,6 +270,7 @@ public abstract class AbstractTestNode extends org.eclipse.papyrus.uml.diagram.t
 		assertNotNull(DESTROY_DELETION + COMMAND_NULL, command);
 		assertTrue(DESTROY_DELETION + TEST_IF_THE_COMMAND_IS_CREATED, command != UnexecutableCommand.INSTANCE);
 		assertTrue(DESTROY_DELETION + TEST_IF_THE_COMMAND_CAN_BE_EXECUTED, command.canExecute());
+		testEnableForDeleteFromModel(currentEditPart);
 		executeOnUIThread(command);
 		assertEquals(DESTROY_DELETION + TEST_THE_EXECUTION, expectedGraphicalChildren - removedGraphicalChildren, getRootView().getChildren().size());
 		if (testSemantic) {
@@ -283,7 +288,19 @@ public abstract class AbstractTestNode extends org.eclipse.papyrus.uml.diagram.t
 		}
 	}
 
-
+	/**
+	 * test id the handler delete from model is enable
+	 * 
+	 * @param currentEditPart
+	 */
+	protected void testEnableForDeleteFromModel(EditPart currentEditPart) {
+		diagramEditor.getSite().getSelectionProvider().setSelection(new StructuredSelection(currentEditPart));
+		ICommandService commandService = PlatformUI.getWorkbench().getService(ICommandService.class);
+		org.eclipse.core.commands.Command cmd = commandService.getCommand("org.eclipse.ui.edit.delete"); //$NON-NLS-1$
+		IHandler handler = cmd.getHandler();
+		boolean enabled = handler != null && handler.isHandled() && handler.isEnabled();
+		assertTrue("Delete from model handler must be enable", enabled); //$NON-NLS-1$
+	}
 
 	/**
 	 * Test drop.
