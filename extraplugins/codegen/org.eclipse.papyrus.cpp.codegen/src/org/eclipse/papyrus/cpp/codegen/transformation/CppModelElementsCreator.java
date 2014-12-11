@@ -28,6 +28,7 @@ import org.eclipse.papyrus.C_Cpp.ManualGeneration;
 import org.eclipse.papyrus.C_Cpp.NoCodeGen;
 import org.eclipse.papyrus.C_Cpp.Template;
 import org.eclipse.papyrus.codegen.base.GenUtils;
+import org.eclipse.papyrus.codegen.base.IPFileSystemAccess;
 import org.eclipse.papyrus.codegen.base.ModelElementsCreator;
 import org.eclipse.papyrus.codegen.base.ProjectBasedFileAccess;
 import org.eclipse.papyrus.cpp.codegen.Activator;
@@ -55,7 +56,7 @@ import org.eclipse.uml2.uml.util.UMLUtil;
 
 
 /**
- * Main class of code generator
+ * Main class of C++ code generator
  * 
  * @author Ansgar Radermacher (ansgar.radermacher@cea.fr)
  * @author Önder GÜRCAN (onder.gurcan@cea.fr)
@@ -63,20 +64,17 @@ import org.eclipse.uml2.uml.util.UMLUtil;
 public class CppModelElementsCreator extends ModelElementsCreator {
 
 	/**
-	 * 
 	 * Constructor.
 	 * 
 	 * @param project
 	 *            the project in which the generated code should be placed
 	 */
 	public CppModelElementsCreator(IProject project) {
-		this(project, CppCodeGenUtils.getCommentHeader());
-
+		this(new ProjectBasedFileAccess(project), null);
 	}
 
 	/**
-	 * 
-	 * Constructor.
+	 * Constructor, allows for non-standard commentHeader
 	 * 
 	 * @param project
 	 *            the project in which the generated code should be placed
@@ -84,13 +82,25 @@ public class CppModelElementsCreator extends ModelElementsCreator {
 	 *            Custom prefix for each generated file
 	 */
 	public CppModelElementsCreator(IProject project, String commentHeader) {
-		super(project, new ProjectBasedFileAccess(), new CppLocationStrategy());
-		((ProjectBasedFileAccess) fsa).setProject(project);
-		this.commentHeader = commentHeader;
+		this(new ProjectBasedFileAccess(project), commentHeader);
+	}
+
+	/**
+	 * Constructor. Pass caller defined file system access and commentHeader
+	 * 
+	 * @param project
+	 *            the project in which the generated code should be placed
+	 * @param commentHeader
+	 *            commentHeader. If null, take from preferences
+	 */
+	public CppModelElementsCreator(IPFileSystemAccess fileSystemAccess, String commentHeader) {
+		super(fileSystemAccess, new CppLocationStrategy());
+		this.commentHeader = (commentHeader != null) ?
+				commentHeader :
+				CppCodeGenUtils.getCommentHeader();
 		hppExt = CppCodeGenUtils.getHeaderSuffix();
 		cppExt = CppCodeGenUtils.getBodySuffix();
 	}
-
 
 	protected String hppExt;
 
@@ -192,7 +202,7 @@ public class CppModelElementsCreator extends ModelElementsCreator {
 	}
 
 	protected void generateFile(String fileName, String content) {
-		fsa.generateFile(fileName, format(content));
+		fileSystemAccess.generateFile(fileName, format(content));
 	}
 
 	/**

@@ -14,16 +14,13 @@ package org.eclipse.papyrus.dsml.validation.wizard;
 
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
-import java.util.ArrayList;
 import java.util.List;
 
-import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
-import org.eclipse.emf.common.util.URI;
 import org.eclipse.jface.operation.IRunnableWithProgress;
 import org.eclipse.papyrus.dsml.validation.model.profilenames.Utils;
 import org.eclipse.ui.PlatformUI;
@@ -71,13 +68,9 @@ public class JavaContentGenerator {
 	public void run() {
 		IRunnableWithProgress operation = new IRunnableWithProgress() {
 			public void run(IProgressMonitor monitor) {
-
-				URI modelURI = umlProfile.eResource().getURI();
-
 				try {
-					IContainer target = project.getFolder(srcFolder); 
 					Utils.setPluginID(project.getName());
-					ClassesGenerator generator = new ClassesGenerator(modelURI, target, getArguments());
+					ClassesGenerator generator = new ClassesGenerator(umlProfile.eResource(), project);
 					generator.doGenerate(monitor);
 				} catch (IOException e) {
 					IStatus status = new Status(IStatus.ERROR, Activator.PLUGIN_ID, e.getMessage(), e);
@@ -96,9 +89,4 @@ public class JavaContentGenerator {
 			Activator.getDefault().getLog().log(status);
 		}
 	}
-
-	protected List<? extends Object> getArguments() {
-		return new ArrayList<String>();
-	}
-
 }

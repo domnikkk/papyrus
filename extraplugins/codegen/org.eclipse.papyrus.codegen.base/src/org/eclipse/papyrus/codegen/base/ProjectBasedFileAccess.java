@@ -36,6 +36,28 @@ public class ProjectBasedFileAccess implements IPFileSystemAccess {
 	boolean force = true;
 
 	/**
+	 * Create a project based file access for a specific project.
+	 * 
+	 * @param project
+	 *            the project for which file system access is provided
+	 */
+	public ProjectBasedFileAccess(IProject project) {
+		this.project = project;
+		subFolderName = null;
+	}
+
+	/**
+	 * Create a project based file access for a specific project.
+	 * 
+	 * @param project
+	 *            the project for which file system access is provided
+	 */
+	public ProjectBasedFileAccess(IProject project, String subFolderName) {
+		this.project = project;
+		this.subFolderName = subFolderName;
+	}
+	
+	/**
 	 * @see org.eclipse.IPFileSystemAccess.generator.IFileSystemAccess#generateFile(java.lang.String, java.lang.CharSequence)
 	 *
 	 * @param fileName
@@ -77,12 +99,12 @@ public class ProjectBasedFileAccess implements IPFileSystemAccess {
 		this.project = project;
 	}
 
-	public void setProject(IProject project, String folderName) {
+	public void setProject(IProject project, String subFolderName) {
 		this.project = project;
-		this.subFolderName = folderName;
+		this.subFolderName = subFolderName;
 	}
 
-	
+
 
 	/**
 	 * Return a container (folder) for a given filename.
