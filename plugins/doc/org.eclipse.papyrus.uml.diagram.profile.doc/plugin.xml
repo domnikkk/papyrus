@@ -27,6 +27,14 @@
             file="resource/users/papyrusProfileArchitecture-toc.xml"
             primary="false">
       </toc>
+      <toc
+            file="resource/users/papyrusProfileLimitations-toc.xml"
+            primary="true">
+      </toc>
+      <toc
+            file="resource/users/simplifiedUsageOfProfilesAndStereotypes-toc.xml"
+            primary="true">
+      </toc>
    </extension>
 
 </plugin>

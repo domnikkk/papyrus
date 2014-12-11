@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8' ?>
-<toc label="Externalized Profile Applications" link_to="../org.eclipse.papyrus.uml.diagram.profile.doc/resource/profile-main-toc.xml#profiles">
+<toc label="Externalized Profile Applications" link_to="../org.eclipse.papyrus.uml.diagram.profile.doc/resource/users/profile-main-toc.xml#profiles">
    <topic href="resource/profileapplications.html" label="Externalizing Profile Applications">
       <link toc="resource/profileapplications-toc.xml"/>
       <anchor id="profileapplications"/>
