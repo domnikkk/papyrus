@@ -17,13 +17,8 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-import org.eclipse.draw2d.GridData;
-import org.eclipse.draw2d.GridLayout;
 import org.eclipse.draw2d.IFigure;
-import org.eclipse.draw2d.Label;
-import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.StackLayout;
-import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.gef.EditPart;
@@ -44,7 +39,6 @@ import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.preference.PreferenceConverter;
-import org.eclipse.papyrus.infra.gmfdiag.common.editpart.IPapyrusEditPart;
 import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.IPapyrusNodeFigure;
 import org.eclipse.papyrus.infra.gmfdiag.common.preferences.PreferencesConstantsHelper;
 import org.eclipse.papyrus.infra.gmfdiag.preferences.utils.GradientPreferenceConverter;
@@ -54,20 +48,17 @@ import org.eclipse.papyrus.uml.diagram.activity.edit.policies.PinLayoutEditPolic
 import org.eclipse.papyrus.uml.diagram.activity.part.UMLDiagramEditorPlugin;
 import org.eclipse.papyrus.uml.diagram.activity.part.UMLVisualIDRegistry;
 import org.eclipse.papyrus.uml.diagram.activity.providers.UMLElementTypes;
-import org.eclipse.papyrus.uml.diagram.common.editparts.BorderNamedElementEditPart;
+import org.eclipse.papyrus.uml.diagram.common.editparts.RoundedBorderNamedElementEditPart;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeLabelDisplayEditPolicy;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeNodeLabelDisplayEditPolicy;
-import org.eclipse.papyrus.uml.diagram.common.figure.node.IPapyrusNodeUMLElementFigure;
-import org.eclipse.papyrus.uml.diagram.common.figure.node.NodeNamedElementFigure;
+import org.eclipse.papyrus.uml.diagram.common.figure.node.RoundedCompartmentFigure;
 import org.eclipse.papyrus.uml.diagram.common.helper.PreferenceInitializerForElementHelper;
-import org.eclipse.papyrus.uml.diagram.common.helper.StereotypeFigureHelper;
 import org.eclipse.swt.graphics.Color;
-import org.eclipse.swt.graphics.Image;
 
 /**
- * @generated NOT implements IPapyrusEditPart
+ * @generated
  */
-public class ActivityParameterNodeEditPart extends BorderNamedElementEditPart implements IPapyrusEditPart {
+public class ActivityParameterNodeEditPart extends RoundedBorderNamedElementEditPart { // BorderNamedElementEditPart RoundedCompartmentEditPart
 
 	/**
 	 * @generated
@@ -149,15 +140,15 @@ public class ActivityParameterNodeEditPart extends BorderNamedElementEditPart im
 	 * @generated
 	 */
 	protected IFigure createNodeShape() {
-		return primaryShape = new NodeNamedElementFigure();
+		return primaryShape = new RoundedCompartmentFigure();
 	}
 
 	/**
 	 * @generated
 	 */
 	@Override
-	public NodeNamedElementFigure getPrimaryShape() {
-		return (NodeNamedElementFigure) primaryShape;
+	public RoundedCompartmentFigure getPrimaryShape() {
+		return (RoundedCompartmentFigure) primaryShape;
 	}
 
 	/**
@@ -1197,102 +1188,102 @@ public class ActivityParameterNodeEditPart extends BorderNamedElementEditPart im
 		return result;
 	}
 
-	/**
-	 * @generated NOT implements IPapyrusNodeUMLElementFigure
-	 */
-	public class ActivityParameterNodeDescriptor extends RectangleFigure implements IPapyrusNodeUMLElementFigure {
-
-		/** The helper which handles stereotype aspects */
-		private StereotypeFigureHelper stereotypeHelper;
-
-		/**
-		 * @generated NOT use StereotypeFigureHelper
-		 */
-		public ActivityParameterNodeDescriptor() {
-			GridLayout layoutThis = new GridLayout();
-			layoutThis.numColumns = 1;
-			layoutThis.makeColumnsEqualWidth = true;
-			this.setLayoutManager(layoutThis);
-			this.setLineWidth(1);
-			this.setPreferredSize(new Dimension(getMapMode().DPtoLP(100), getMapMode().DPtoLP(50)));
-			// use StereotypeFigureHelper
-			stereotypeHelper = new StereotypeFigureHelper(this) {
-
-				// @Override
-				// public IMapMode getMapMode() {
-				// return ActivityParameterNodeEditPart.this.getMapMode();
-				// }
-				@Override
-				public Object getStereotypeRectangleConstraint() {
-					GridData constraintStereotypeRect0 = new GridData();
-					constraintStereotypeRect0.verticalAlignment = GridData.BEGINNING;
-					constraintStereotypeRect0.horizontalAlignment = GridData.FILL;
-					constraintStereotypeRect0.horizontalIndent = 0;
-					constraintStereotypeRect0.horizontalSpan = 1;
-					constraintStereotypeRect0.verticalSpan = 1;
-					constraintStereotypeRect0.grabExcessHorizontalSpace = false;
-					constraintStereotypeRect0.grabExcessVerticalSpace = false;
-					return constraintStereotypeRect0;
-				}
-			};
-		}
-
-		/**
-		 * Refresh the layout of the figure
-		 */
-		protected void refreshLayout() {
-		}
-
-		/**
-		 * Sets the stereotypes for this figure.
-		 *
-		 * @param stereotypes
-		 *            the string representing the stereotypes to be displayed
-		 * @param image
-		 *            the image representing the stereotypes to be displayed
-		 * @see org.eclipse.papyrus.uml.diagram.common.figure.node.IPapyrusUMLElementFigure#setStereotypeDisplay(java.lang.String, org.eclipse.swt.graphics.Image)
-		 */
-		@Override
-		public void setStereotypeDisplay(String stereotypes, Image image) {
-			stereotypeHelper.setStereotypeDisplay(stereotypes, image);
-			refreshLayout();
-		}
-
-		/**
-		 * Sets the stereotypes properties for this figure.
-		 *
-		 * @param stereotypeProperties
-		 *            the string representing the stereotype properties to be displayed
-		 */
-		@Override
-		public void setStereotypePropertiesInBrace(String stereotypeProperties) {
-			stereotypeHelper.setStereotypePropertiesInBrace(stereotypeProperties);
-			refreshLayout();
-		}
-
-		/**
-		 * displays the new string corresponding to the list of stereotypes.
-		 *
-		 * @param stereotypeProperties
-		 *            the string to be displayed.
-		 */
-		@Override
-		public void setStereotypePropertiesInCompartment(String stereotypeProperties) {
-			stereotypeHelper.setStereotypePropertiesInCompartment(stereotypeProperties);
-			refreshLayout();
-		}
-
-		/**
-		 * Gets the stereotype label.
-		 *
-		 * @return the stereotype label
-		 * @unused
-		 * @deprecated
-		 */
-		@Deprecated
-		@Override
-		public Label getStereotypesLabel() {
-			return null;// fActionStereotypeLabel;
-		}
-	}
+	// /**
+	// * @generated NOT implements IPapyrusNodeUMLElementFigure
+	// */
+	// public class ActivityParameterNodeDescriptor extends RectangleFigure implements IPapyrusNodeUMLElementFigure {
+	//
+	// /** The helper which handles stereotype aspects */
+	// private StereotypeFigureHelper stereotypeHelper;
+	//
+	// /**
+	// * @generated NOT use StereotypeFigureHelper
+	// */
+	// public ActivityParameterNodeDescriptor() {
+	// GridLayout layoutThis = new GridLayout();
+	// layoutThis.numColumns = 1;
+	// layoutThis.makeColumnsEqualWidth = true;
+	// this.setLayoutManager(layoutThis);
+	// this.setLineWidth(1);
+	// this.setPreferredSize(new Dimension(getMapMode().DPtoLP(100), getMapMode().DPtoLP(50)));
+	// // use StereotypeFigureHelper
+	// stereotypeHelper = new StereotypeFigureHelper(this) {
+	//
+	// // @Override
+	// // public IMapMode getMapMode() {
+	// // return ActivityParameterNodeEditPart.this.getMapMode();
+	// // }
+	// @Override
+	// public Object getStereotypeRectangleConstraint() {
+	// GridData constraintStereotypeRect0 = new GridData();
+	// constraintStereotypeRect0.verticalAlignment = GridData.BEGINNING;
+	// constraintStereotypeRect0.horizontalAlignment = GridData.FILL;
+	// constraintStereotypeRect0.horizontalIndent = 0;
+	// constraintStereotypeRect0.horizontalSpan = 1;
+	// constraintStereotypeRect0.verticalSpan = 1;
+	// constraintStereotypeRect0.grabExcessHorizontalSpace = false;
+	// constraintStereotypeRect0.grabExcessVerticalSpace = false;
+	// return constraintStereotypeRect0;
+	// }
+	// };
+	// }
+	//
+	// /**
+	// * Refresh the layout of the figure
+	// */
+	// protected void refreshLayout() {
+	// }
+	//
+	// /**
+	// * Sets the stereotypes for this figure.
+	// *
+	// * @param stereotypes
+	// * the string representing the stereotypes to be displayed
+	// * @param image
+	// * the image representing the stereotypes to be displayed
+	// * @see org.eclipse.papyrus.uml.diagram.common.figure.node.IPapyrusUMLElementFigure#setStereotypeDisplay(java.lang.String, org.eclipse.swt.graphics.Image)
+	// */
+	// @Override
+	// public void setStereotypeDisplay(String stereotypes, Image image) {
+	// stereotypeHelper.setStereotypeDisplay(stereotypes, image);
+	// refreshLayout();
+	// }
+	//
+	// /**
+	// * Sets the stereotypes properties for this figure.
+	// *
+	// * @param stereotypeProperties
+	// * the string representing the stereotype properties to be displayed
+	// */
+	// @Override
+	// public void setStereotypePropertiesInBrace(String stereotypeProperties) {
+	// stereotypeHelper.setStereotypePropertiesInBrace(stereotypeProperties);
+	// refreshLayout();
+	// }
+	//
+	// /**
+	// * displays the new string corresponding to the list of stereotypes.
+	// *
+	// * @param stereotypeProperties
+	// * the string to be displayed.
+	// */
+	// @Override
+	// public void setStereotypePropertiesInCompartment(String stereotypeProperties) {
+	// stereotypeHelper.setStereotypePropertiesInCompartment(stereotypeProperties);
+	// refreshLayout();
+	// }
+	//
+	// /**
+	// * Gets the stereotype label.
+	// *
+	// * @return the stereotype label
+	// * @unused
+	// * @deprecated
+	// */
+	// @Deprecated
+	// @Override
+	// public Label getStereotypesLabel() {
+	// return null;// fActionStereotypeLabel;
+	// }
+	// }
 }

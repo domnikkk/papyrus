@@ -18,6 +18,8 @@ import org.eclipse.papyrus.uml.diagram.statemachine.custom.edit.part.CustomConne
 import org.eclipse.papyrus.uml.diagram.statemachine.custom.edit.part.CustomConstraintEditPart;
 import org.eclipse.papyrus.uml.diagram.statemachine.custom.edit.part.CustomFinalStateEditPart;
 import org.eclipse.papyrus.uml.diagram.statemachine.custom.edit.part.CustomPackageEditPart;
+import org.eclipse.papyrus.uml.diagram.statemachine.custom.edit.part.CustomPseudostateEntryPointEditPart;
+import org.eclipse.papyrus.uml.diagram.statemachine.custom.edit.part.CustomPseudostateExitPointEditPart;
 import org.eclipse.papyrus.uml.diagram.statemachine.custom.edit.part.CustomRegionCompartmentEditPart;
 import org.eclipse.papyrus.uml.diagram.statemachine.custom.edit.part.CustomRegionEditPart;
 import org.eclipse.papyrus.uml.diagram.statemachine.custom.edit.part.CustomStateCompartmentEditPart;
@@ -32,6 +34,8 @@ import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.ConnectionPointRe
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.ConstraintEditPart;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.FinalStateEditPart;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.PackageEditPart;
+import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.PseudostateEntryPointEditPart;
+import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.PseudostateExitPointEditPart;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.RegionCompartmentEditPart;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.RegionEditPart;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.StateCompartmentEditPart;
@@ -81,6 +85,10 @@ public class CustomUMLEditPartFactory extends UMLEditPartFactory {
 				return new CustomTransitionEditPart(view);
 			case ConstraintEditPart.VISUAL_ID:
 				return new CustomConstraintEditPart(view);
+			case PseudostateEntryPointEditPart.VISUAL_ID:
+				return new CustomPseudostateEntryPointEditPart(view);
+			case PseudostateExitPointEditPart.VISUAL_ID:
+				return new CustomPseudostateExitPointEditPart(view);
 			}
 		}
 		return super.createEditPart(context, model);

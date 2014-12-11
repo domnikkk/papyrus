@@ -63,7 +63,7 @@ import org.eclipse.papyrus.uml.diagram.activity.locator.PinPositionLocator;
 import org.eclipse.papyrus.uml.diagram.activity.part.UMLDiagramEditorPlugin;
 import org.eclipse.papyrus.uml.diagram.activity.part.UMLVisualIDRegistry;
 import org.eclipse.papyrus.uml.diagram.activity.providers.UMLElementTypes;
-import org.eclipse.papyrus.uml.diagram.common.editparts.UMLNodeEditPart;
+import org.eclipse.papyrus.uml.diagram.common.editparts.RoundedCompartmentEditPart;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeLabelDisplayEditPolicy;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeNodeLabelDisplayEditPolicy;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.BorderItemResizableEditPolicy;
@@ -75,7 +75,7 @@ import org.eclipse.swt.graphics.Color;
 /**
  * @generated
  */
-public class AcceptEventActionEditPart extends UMLNodeEditPart {
+public class AcceptEventActionEditPart extends RoundedCompartmentEditPart {
 
 	/**
 	 * @generated
@@ -210,7 +210,7 @@ public class AcceptEventActionEditPart extends UMLNodeEditPart {
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof AcceptEventActionLabelEditPart) {
-			((AcceptEventActionLabelEditPart) childEditPart).setLabel(getPrimaryShape().getAcceptEventActionLabel());
+			((AcceptEventActionLabelEditPart) childEditPart).setLabel(getPrimaryShape().getNameLabel());
 			return true;
 		}
 		// Papyrus Gencode :Affixed Pin locator for Actions

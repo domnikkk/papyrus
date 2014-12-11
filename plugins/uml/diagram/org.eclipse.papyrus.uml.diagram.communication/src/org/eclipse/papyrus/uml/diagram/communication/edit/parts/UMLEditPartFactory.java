@@ -47,6 +47,9 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case InteractionNameEditPart.VISUAL_ID:
 				return new InteractionNameEditPart(view);
 
+			case InteractionFloatingLabelEditPart.VISUAL_ID:
+				return new InteractionFloatingLabelEditPart(view);
+
 			case ShortCutDiagramEditPart.VISUAL_ID:
 				return new ShortCutDiagramEditPart(view);
 
@@ -58,6 +61,9 @@ public class UMLEditPartFactory implements EditPartFactory {
 
 			case LifelineNameEditPart.VISUAL_ID:
 				return new LifelineNameEditPart(view);
+
+			case LifelineFloatingLabelEditPartCN.VISUAL_ID:
+				return new LifelineFloatingLabelEditPartCN(view);
 
 			case ConstraintEditPartCN.VISUAL_ID:
 				return new ConstraintEditPartCN(view);

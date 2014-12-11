@@ -98,16 +98,6 @@ public class RefreshTextAlignmentEditPolicy extends GraphicalEditPolicyEx implem
 
 		}
 
-		// Save new location only on change
-		// final Point offset = newOffset;
-		// ChangeBoundsRequest req = new ChangeBoundsRequest(RequestConstants.REQ_MOVE);
-		// req.setEditParts(editPart);
-		// req.setLocation(offset);
-		// Command command = editPart.getCommand(req);
-		// if (command != null && command.canExecute() && !cachedIsConstrained) {
-		// TransactionUtil.getEditingDomain(view).getCommandStack().execute(GEFtoEMFCommandWrapper.wrap(command));
-		// }
-
 		getHost().refresh();
 	}
 }

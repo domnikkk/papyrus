@@ -18,14 +18,14 @@ import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.papyrus.uml.diagram.common.figure.node.IPapyrusNodeUMLElementFigure;
-import org.eclipse.papyrus.uml.diagram.common.figure.node.PapyrusNodeFigure;
+import org.eclipse.papyrus.uml.diagram.common.figure.node.RoundedCompartmentFigure;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Image;
 
 /**
  * Figure for Required interface. It draws an half circle.
  */
-public class LollipopInterfaceFigure extends PapyrusNodeFigure implements IPapyrusNodeUMLElementFigure {
+public class LollipopInterfaceFigure extends RoundedCompartmentFigure implements IPapyrusNodeUMLElementFigure {
 
 	/** sets the beginning of the arc */
 	protected int arcStarting = 0;
@@ -105,7 +105,7 @@ public class LollipopInterfaceFigure extends PapyrusNodeFigure implements IPapyr
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see
 	 * com.cea.papyrus.diagram.composite.figure.ProvidedInterfaceFigure#paintFigure(org.eclipse.
 	 * draw2d.Graphics)
@@ -148,10 +148,7 @@ public class LollipopInterfaceFigure extends PapyrusNodeFigure implements IPapyr
 
 			graphics.drawOval(area.x, area.y, area.width - 1, area.height - 1);
 			graphics.popState();
-
 		}
-
-
 	}
 
 	@Override

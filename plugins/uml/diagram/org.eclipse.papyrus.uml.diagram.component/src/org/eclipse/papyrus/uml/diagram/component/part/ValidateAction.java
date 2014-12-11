@@ -266,7 +266,8 @@ public class ValidateAction extends Action {
 	/**
 	 * @generated
 	 */
-	private static Set<EObject> collectTargetElements(IStatus status, Set<EObject> targetElementCollector, List<IConstraintStatus> allConstraintStatuses) {
+	private static Set<EObject> collectTargetElements(IStatus status, Set<EObject> targetElementCollector,
+			List<IConstraintStatus> allConstraintStatuses) {
 		if (status instanceof IConstraintStatus) {
 			targetElementCollector.add(((IConstraintStatus) status).getTarget());
 			allConstraintStatuses.add((IConstraintStatus) status);
@@ -283,7 +284,8 @@ public class ValidateAction extends Action {
 	/**
 	 * @generated
 	 */
-	private static Set<EObject> collectTargetElements(Diagnostic diagnostic, Set<EObject> targetElementCollector, List<Diagnostic> allDiagnostics) {
+	private static Set<EObject> collectTargetElements(Diagnostic diagnostic, Set<EObject> targetElementCollector,
+			List<Diagnostic> allDiagnostics) {
 		List<?> data = diagnostic.getData();
 		EObject target = null;
 		if (data != null && !data.isEmpty() && data.get(0) instanceof EObject) {

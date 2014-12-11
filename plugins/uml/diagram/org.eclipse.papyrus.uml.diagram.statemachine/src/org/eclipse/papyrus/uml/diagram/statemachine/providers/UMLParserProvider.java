@@ -40,30 +40,31 @@ import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.ContextLinkApplie
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.DoActivityStateBehaviorStateEditPart;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.EntryStateBehaviorEditPart;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.ExitStateBehaviorEditPart;
-import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.FinalStateNameEditPart;
+import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.FinalStateFloatingLabelEditPart;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.FinalStateStereotypeEditPart;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.GeneralizationStereotypeEditPart;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.InternalTransitionEditPart;
-import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.PseudostateChoiceNameEditPart;
+import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.PseudostateChoiceFloatingLabelEditPart;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.PseudostateChoiceStereotypeEditPart;
-import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.PseudostateDeepHistoryNameEditPart;
+import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.PseudostateDeepHistoryFloatingLabelEditPart;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.PseudostateDeepHistoryStereotypeEditPart;
-import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.PseudostateEntryPointNameEditPart;
+import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.PseudostateEntryPointFloatingLabelEditPart;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.PseudostateEntryPointStereotypeEditPart;
-import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.PseudostateExitPointNameEditPart;
+import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.PseudostateExitPointFloatingLabelEditPart;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.PseudostateExitPointStereotypeEditPart;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.PseudostateForkNameEditPart;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.PseudostateForkStereotypeEditPart;
-import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.PseudostateInitialNameEditPart;
+import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.PseudostateInitialFloatingLabelEditPart;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.PseudostateInitialStereotypeEditPart;
-import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.PseudostateJoinNameEditPart;
+import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.PseudostateJoinFloatingLabelEditPart;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.PseudostateJoinStereotypeEditPart;
-import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.PseudostateJunctionNameEditPart;
+import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.PseudostateJunctionFloatingLabelEditPart;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.PseudostateJunctionStereotypeEditPart;
-import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.PseudostateShallowHistoryNameEditPart;
+import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.PseudostateShallowHistoryFloatingLabelEditPart;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.PseudostateShallowHistoryStereotypeEditPart;
-import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.PseudostateTerminateNameEditPart;
+import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.PseudostateTerminateFloatingLabelEditPart;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.PseudostateTerminateStereotypeEditPart;
+import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.StateFloatingLabelEditPart;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.StateMachineNameEditPart;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.StateNameEditPart;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.TransitionGuardEditPart;
@@ -148,6 +149,25 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			stateName_6001Parser = parser;
 		}
 		return stateName_6001Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser stateName_19003Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getStateName_19003Parser() {
+		if (stateName_19003Parser == null) {
+			EAttribute[] features = new EAttribute[] {
+					UMLPackage.eINSTANCE.getNamedElement_Name()
+			};
+			MessageFormatParser parser = new MessageFormatParser(features);
+			stateName_19003Parser = parser;
+		}
+		return stateName_19003Parser;
 	}
 
 	/**
@@ -735,20 +755,22 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getStateMachineName_2001Parser();
 
 
-		case FinalStateNameEditPart.VISUAL_ID:
+		case FinalStateFloatingLabelEditPart.VISUAL_ID:
 			return getFinalStateName_5001Parser();
 		case FinalStateStereotypeEditPart.VISUAL_ID:
 			return getFinalStateName_5002Parser();
 
 		case StateNameEditPart.VISUAL_ID:
 			return getStateName_6001Parser();
+		case StateFloatingLabelEditPart.VISUAL_ID:
+			return getStateName_19003Parser();
 
-		case PseudostateInitialNameEditPart.VISUAL_ID:
+		case PseudostateInitialFloatingLabelEditPart.VISUAL_ID:
 			return getPseudostateName_8001Parser();
 		case PseudostateInitialStereotypeEditPart.VISUAL_ID:
 			return getPseudostateName_8002Parser();
 
-		case PseudostateJoinNameEditPart.VISUAL_ID:
+		case PseudostateJoinFloatingLabelEditPart.VISUAL_ID:
 			return getPseudostateName_9001Parser();
 		case PseudostateJoinStereotypeEditPart.VISUAL_ID:
 			return getPseudostateName_9002Parser();
@@ -758,37 +780,37 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 		case PseudostateForkStereotypeEditPart.VISUAL_ID:
 			return getPseudostateName_10002Parser();
 
-		case PseudostateChoiceNameEditPart.VISUAL_ID:
+		case PseudostateChoiceFloatingLabelEditPart.VISUAL_ID:
 			return getPseudostateName_11001Parser();
 		case PseudostateChoiceStereotypeEditPart.VISUAL_ID:
 			return getPseudostateName_11002Parser();
 
-		case PseudostateJunctionNameEditPart.VISUAL_ID:
+		case PseudostateJunctionFloatingLabelEditPart.VISUAL_ID:
 			return getPseudostateName_12001Parser();
 		case PseudostateJunctionStereotypeEditPart.VISUAL_ID:
 			return getPseudostateName_12002Parser();
 
-		case PseudostateShallowHistoryNameEditPart.VISUAL_ID:
+		case PseudostateShallowHistoryFloatingLabelEditPart.VISUAL_ID:
 			return getPseudostateName_13001Parser();
 		case PseudostateShallowHistoryStereotypeEditPart.VISUAL_ID:
 			return getPseudostateName_13002Parser();
 
-		case PseudostateDeepHistoryNameEditPart.VISUAL_ID:
+		case PseudostateDeepHistoryFloatingLabelEditPart.VISUAL_ID:
 			return getPseudostateName_14001Parser();
 		case PseudostateDeepHistoryStereotypeEditPart.VISUAL_ID:
 			return getPseudostateName_14002Parser();
 
-		case PseudostateTerminateNameEditPart.VISUAL_ID:
+		case PseudostateTerminateFloatingLabelEditPart.VISUAL_ID:
 			return getPseudostateName_15001Parser();
 		case PseudostateTerminateStereotypeEditPart.VISUAL_ID:
 			return getPseudostateName_15002Parser();
 
-		case PseudostateEntryPointNameEditPart.VISUAL_ID:
+		case PseudostateEntryPointFloatingLabelEditPart.VISUAL_ID:
 			return getPseudostateName_16001Parser();
 		case PseudostateEntryPointStereotypeEditPart.VISUAL_ID:
 			return getPseudostateName_16002Parser();
 
-		case PseudostateExitPointNameEditPart.VISUAL_ID:
+		case PseudostateExitPointFloatingLabelEditPart.VISUAL_ID:
 			return getPseudostateName_17001Parser();
 		case PseudostateExitPointStereotypeEditPart.VISUAL_ID:
 			return getPseudostateName_17002Parser();

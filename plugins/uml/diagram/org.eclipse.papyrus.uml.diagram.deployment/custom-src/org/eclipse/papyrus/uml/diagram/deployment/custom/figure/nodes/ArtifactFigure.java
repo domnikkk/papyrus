@@ -18,7 +18,7 @@ import java.util.List;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.papyrus.uml.diagram.common.Activator;
-import org.eclipse.papyrus.uml.diagram.common.figure.node.CompartmentFigure;
+import org.eclipse.papyrus.uml.diagram.common.figure.node.RoundedCompartmentFigure;
 import org.eclipse.papyrus.uml.diagram.deployment.part.UMLDiagramEditorPlugin;
 import org.eclipse.swt.graphics.Image;
 
@@ -26,7 +26,7 @@ import org.eclipse.swt.graphics.Image;
 /**
  * The Class ArtifactFigure.
  */
-public class ArtifactFigure extends CompartmentFigure {
+public class ArtifactFigure extends RoundedCompartmentFigure {
 
 	/** The Internal Structure Compartment. */
 	private final static String COMPOSITE_COMPARTMENT = "compositeCompartment";

@@ -15,14 +15,18 @@ package org.eclipse.papyrus.uml.diagram.communication.custom.factory;
 
 import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.papyrus.uml.diagram.communication.custom.edit.parts.CustomDurationObservationLabelEditPartCN;
 import org.eclipse.papyrus.uml.diagram.communication.custom.edit.parts.CustomInteractionEditPart;
 import org.eclipse.papyrus.uml.diagram.communication.custom.edit.parts.CustomLifelineEditPartCN;
 import org.eclipse.papyrus.uml.diagram.communication.custom.edit.parts.CustomMessageEditPart;
 import org.eclipse.papyrus.uml.diagram.communication.custom.edit.parts.CustomMessageNameEditPart;
+import org.eclipse.papyrus.uml.diagram.communication.custom.edit.parts.CustomTimeObservationNameEditPartCN;
+import org.eclipse.papyrus.uml.diagram.communication.edit.parts.DurationObservationLabelEditPartCN;
 import org.eclipse.papyrus.uml.diagram.communication.edit.parts.InteractionEditPart;
 import org.eclipse.papyrus.uml.diagram.communication.edit.parts.LifelineEditPartCN;
 import org.eclipse.papyrus.uml.diagram.communication.edit.parts.MessageEditPart;
 import org.eclipse.papyrus.uml.diagram.communication.edit.parts.MessageNameEditPart;
+import org.eclipse.papyrus.uml.diagram.communication.edit.parts.TimeObservationNameEditPartCN;
 import org.eclipse.papyrus.uml.diagram.communication.edit.parts.UMLEditPartFactory;
 import org.eclipse.papyrus.uml.diagram.communication.part.UMLVisualIDRegistry;
 
@@ -54,6 +58,10 @@ public class CustomUMLeditPartFactory extends UMLEditPartFactory {
 				return new CustomMessageEditPart(view);
 			case InteractionEditPart.VISUAL_ID:
 				return new CustomInteractionEditPart(view);
+			case TimeObservationNameEditPartCN.VISUAL_ID:
+				return new CustomTimeObservationNameEditPartCN(view);
+			case DurationObservationLabelEditPartCN.VISUAL_ID:
+				return new CustomDurationObservationLabelEditPartCN(view);
 			}
 		}
 		return super.createEditPart(context, model);

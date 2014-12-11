@@ -42,6 +42,7 @@ import org.eclipse.papyrus.papyrusgmfgenextension.PropertyRefreshHook;
 import org.eclipse.papyrus.papyrusgmfgenextension.SpecificDiagramUpdater;
 import org.eclipse.papyrus.papyrusgmfgenextension.SpecificLocator;
 import org.eclipse.papyrus.papyrusgmfgenextension.SpecificLocatorExternalLabel;
+import org.eclipse.papyrus.papyrusgmfgenextension.SpecificNodePlate;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Package</b>. <!-- end-user-doc -->
@@ -238,6 +239,14 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 	 * @generated
 	 */
 	private EClass customDiagramUpdaterSingletonEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass specificNodePlateEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
@@ -1019,6 +1028,50 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 	}
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EClass getSpecificNodePlate() {
+		return specificNodePlateEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EReference getSpecificNodePlate_EditParts() {
+		return (EReference) specificNodePlateEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getSpecificNodePlate_Name() {
+		return (EAttribute) specificNodePlateEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getSpecificNodePlate_NodePlateQualifiedName() {
+		return (EAttribute) specificNodePlateEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @generated
@@ -1141,6 +1194,11 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 
 		customDiagramUpdaterSingletonEClass = createEClass(CUSTOM_DIAGRAM_UPDATER_SINGLETON);
 		createEAttribute(customDiagramUpdaterSingletonEClass, CUSTOM_DIAGRAM_UPDATER_SINGLETON__SINGLETON_PATH);
+
+		specificNodePlateEClass = createEClass(SPECIFIC_NODE_PLATE);
+		createEReference(specificNodePlateEClass, SPECIFIC_NODE_PLATE__EDIT_PARTS);
+		createEAttribute(specificNodePlateEClass, SPECIFIC_NODE_PLATE__NAME);
+		createEAttribute(specificNodePlateEClass, SPECIFIC_NODE_PLATE__NODE_PLATE_QUALIFIED_NAME);
 	}
 
 	/**
@@ -1204,6 +1262,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 		externalMetamodelTypeEClass.getESuperTypes().add(theGMFGenPackage.getMetamodelType());
 		generateUsingElementTypeCreationCommandEClass.getESuperTypes().add(this.getCommentedElement());
 		customDiagramUpdaterSingletonEClass.getESuperTypes().add(this.getCommentedElement());
+		specificNodePlateEClass.getESuperTypes().add(this.getCommentedElement());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(extendedGenViewEClass, ExtendedGenView.class, "ExtendedGenView", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1330,6 +1389,13 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 
 		initEClass(customDiagramUpdaterSingletonEClass, CustomDiagramUpdaterSingleton.class, "CustomDiagramUpdaterSingleton", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCustomDiagramUpdaterSingleton_SingletonPath(), ecorePackage.getEString(), "singletonPath", null, 1, 1, CustomDiagramUpdaterSingleton.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+
+		initEClass(specificNodePlateEClass, SpecificNodePlate.class, "SpecificNodePlate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getSpecificNodePlate_EditParts(), theGMFGenPackage.getGenNode(), null, "editParts", null, 1, -1, SpecificNodePlate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE,
+				!IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getSpecificNodePlate_Name(), theEcorePackage.getEString(), "name", null, 0, 1, SpecificNodePlate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSpecificNodePlate_NodePlateQualifiedName(), theEcorePackage.getEString(), "nodePlateQualifiedName", null, 0, 1, SpecificNodePlate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
 
 		// Create resource

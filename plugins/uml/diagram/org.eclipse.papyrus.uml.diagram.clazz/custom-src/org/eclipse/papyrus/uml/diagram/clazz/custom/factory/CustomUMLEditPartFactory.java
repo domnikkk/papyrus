@@ -19,34 +19,32 @@ import org.eclipse.papyrus.uml.diagram.clazz.custom.edit.part.AssociationEndSour
 import org.eclipse.papyrus.uml.diagram.clazz.custom.edit.part.AssociationEndTargetEditPart;
 import org.eclipse.papyrus.uml.diagram.clazz.custom.edit.part.CAssociationClassEndSourceEditPart;
 import org.eclipse.papyrus.uml.diagram.clazz.custom.edit.part.CAssociationClassEndTargetEditPart;
-import org.eclipse.papyrus.uml.diagram.clazz.custom.edit.part.CAssociationNodeEditPart;
 import org.eclipse.papyrus.uml.diagram.clazz.custom.edit.part.CContainmentCircleEditPart;
 import org.eclipse.papyrus.uml.diagram.clazz.custom.edit.part.CDependencyBranchEditPart;
-import org.eclipse.papyrus.uml.diagram.clazz.custom.edit.part.CDependencyNodeEditPart;
 import org.eclipse.papyrus.uml.diagram.clazz.custom.edit.part.CModelEditPart;
 import org.eclipse.papyrus.uml.diagram.clazz.custom.edit.part.CModelEditPartCN;
 import org.eclipse.papyrus.uml.diagram.clazz.custom.edit.part.CPackageEditPart;
 import org.eclipse.papyrus.uml.diagram.clazz.custom.edit.part.CPackageEditPartCN;
 import org.eclipse.papyrus.uml.diagram.clazz.custom.edit.part.CustomConstraintEditPart;
-import org.eclipse.papyrus.uml.diagram.clazz.custom.edit.part.CustomConstraintEditPartCN;
-import org.eclipse.papyrus.uml.diagram.clazz.custom.edit.part.CustomDurationObservationNameEditPart;
-import org.eclipse.papyrus.uml.diagram.clazz.custom.edit.part.CustomTimeObservationNameEditPart;
+import org.eclipse.papyrus.uml.diagram.clazz.custom.edit.part.CustomDurationObservationEditPart;
+import org.eclipse.papyrus.uml.diagram.clazz.custom.edit.part.CustomDurationObservationFloatingNameEditPart;
+import org.eclipse.papyrus.uml.diagram.clazz.custom.edit.part.CustomTimeObservationEditPart;
+import org.eclipse.papyrus.uml.diagram.clazz.custom.edit.part.CustomTimeObservationFloatingNameEditPart;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.AssociationClassRoleSourceEditPart;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.AssociationClassRoleTargetEditPart;
-import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.AssociationNodeEditPart;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.AssociationSourceNameEditPart;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.AssociationTargetNameEditPart;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.ConstraintEditPart;
-import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.ConstraintEditPartCN;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.ContainmentCircleEditPart;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.DependencyBranchEditPart;
-import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.DependencyNodeEditPart;
-import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.DurationObservationNameEditPart;
+import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.DurationObservationEditPart;
+import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.DurationObservationFloatingNameEditPart;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.ModelEditPartCN;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.ModelEditPartTN;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.PackageEditPart;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.PackageEditPartCN;
-import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.TimeObservationNameEditPart;
+import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.TimeObservationEditPart;
+import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.TimeObservationFloatingNameEditPart;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.UMLEditPartFactory;
 import org.eclipse.papyrus.uml.diagram.clazz.part.UMLVisualIDRegistry;
 
@@ -63,6 +61,14 @@ public class CustomUMLEditPartFactory extends UMLEditPartFactory {
 			// redefined classes to modify the method createNodePlate
 			case PackageEditPart.VISUAL_ID:
 				return new CPackageEditPart(view);
+			case DurationObservationEditPart.VISUAL_ID:
+				return new CustomDurationObservationEditPart(view);
+			case TimeObservationEditPart.VISUAL_ID:
+				return new CustomTimeObservationEditPart(view);
+			case DurationObservationFloatingNameEditPart.VISUAL_ID:
+				return new CustomDurationObservationFloatingNameEditPart(view);
+			case TimeObservationFloatingNameEditPart.VISUAL_ID:
+				return new CustomTimeObservationFloatingNameEditPart(view);
 			case PackageEditPartCN.VISUAL_ID:
 				return new CPackageEditPartCN(view);
 			case ModelEditPartTN.VISUAL_ID:
@@ -71,10 +77,6 @@ public class CustomUMLEditPartFactory extends UMLEditPartFactory {
 				return new CContainmentCircleEditPart(view);
 			case ModelEditPartCN.VISUAL_ID:
 				return new CModelEditPartCN(view);
-			case AssociationNodeEditPart.VISUAL_ID:
-				return new CAssociationNodeEditPart(view);
-			case DependencyNodeEditPart.VISUAL_ID:
-				return new CDependencyNodeEditPart(view);
 			case AssociationSourceNameEditPart.VISUAL_ID:
 				return new AssociationEndSourceEditPart(view);
 			case AssociationTargetNameEditPart.VISUAL_ID:
@@ -87,12 +89,6 @@ public class CustomUMLEditPartFactory extends UMLEditPartFactory {
 				return new CDependencyBranchEditPart(view);
 			case ConstraintEditPart.VISUAL_ID:
 				return new CustomConstraintEditPart(view);
-			case ConstraintEditPartCN.VISUAL_ID:
-				return new CustomConstraintEditPartCN(view);
-			case DurationObservationNameEditPart.VISUAL_ID:
-				return new CustomDurationObservationNameEditPart(view);
-			case TimeObservationNameEditPart.VISUAL_ID:
-				return new CustomTimeObservationNameEditPart(view);
 			}
 		}
 		return super.createEditPart(context, model);

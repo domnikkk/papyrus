@@ -48,11 +48,17 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case MultiDependencyLabelEditPart.VISUAL_ID:
 				return new MultiDependencyLabelEditPart(view);
 
+			case DependencyNodeFloatingLabelEditPart.VISUAL_ID:
+				return new DependencyNodeFloatingLabelEditPart(view);
+
 			case ComponentEditPart.VISUAL_ID:
 				return new ComponentEditPart(view);
 
 			case ComponentNameEditPart.VISUAL_ID:
 				return new ComponentNameEditPart(view);
+
+			case ComponentFloatingLabelEditPart.VISUAL_ID:
+				return new ComponentFloatingLabelEditPart(view);
 
 			case ModelEditPart.VISUAL_ID:
 				return new ModelEditPart(view);
@@ -71,6 +77,9 @@ public class UMLEditPartFactory implements EditPartFactory {
 
 			case RectangleInterfaceNameEditPart.VISUAL_ID:
 				return new RectangleInterfaceNameEditPart(view);
+
+			case RectangleInterfaceFloatingLabelEditPart.VISUAL_ID:
+				return new RectangleInterfaceFloatingLabelEditPart(view);
 
 			case CommentEditPart.VISUAL_ID:
 				return new CommentEditPart(view);
@@ -99,6 +108,9 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case InterfaceNameEditPart.VISUAL_ID:
 				return new InterfaceNameEditPart(view);
 
+			case InterfaceFloatingLabelEditPart.VISUAL_ID:
+				return new InterfaceFloatingLabelEditPart(view);
+
 			case PortEditPart.VISUAL_ID:
 				return new PortEditPart(view);
 
@@ -126,17 +138,26 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case RectangleInterfaceNameEditPartCN.VISUAL_ID:
 				return new RectangleInterfaceNameEditPartCN(view);
 
+			case RectangleInterfaceFloatingLabelEditPartCN.VISUAL_ID:
+				return new RectangleInterfaceFloatingLabelEditPartCN(view);
+
 			case ComponentEditPartCN.VISUAL_ID:
 				return new ComponentEditPartCN(view);
 
 			case ComponentNameEditPartCN.VISUAL_ID:
 				return new ComponentNameEditPartCN(view);
 
+			case ComponentFloatingLabelEditPartCN.VISUAL_ID:
+				return new ComponentFloatingLabelEditPartCN(view);
+
 			case ComponentEditPartPCN.VISUAL_ID:
 				return new ComponentEditPartPCN(view);
 
 			case ComponentNameEditPartPCN.VISUAL_ID:
 				return new ComponentNameEditPartPCN(view);
+
+			case ComponentFloatingLabelEditPartPCN.VISUAL_ID:
+				return new ComponentFloatingLabelEditPartPCN(view);
 
 			case CommentEditPartPCN.VISUAL_ID:
 				return new CommentEditPartPCN(view);
@@ -167,6 +188,9 @@ public class UMLEditPartFactory implements EditPartFactory {
 
 			case InterfaceNameEditPartPCN.VISUAL_ID:
 				return new InterfaceNameEditPartPCN(view);
+
+			case InterfaceFloatingLabelEditPartPCN.VISUAL_ID:
+				return new InterfaceFloatingLabelEditPartPCN(view);
 
 			case PropertyPartEditPartCN.VISUAL_ID:
 				return new PropertyPartEditPartCN(view);

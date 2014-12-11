@@ -8,6 +8,7 @@
  *
  * Contributors:
  *		Thibault Landre (Atos Origin) - Initial API and implementation
+ *		Mickaël ADAM (ALL4TEC) - mickael.adam@all4tec.net - moved class behavior to classEditPart
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.common.editparts;
@@ -15,7 +16,6 @@ package org.eclipse.papyrus.uml.diagram.common.editparts;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gmf.runtime.notation.FontStyle;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.papyrus.uml.diagram.common.figure.node.ClassifierFigure;
 import org.eclipse.papyrus.uml.diagram.common.helper.BasicClassifierCompartmentLayoutHelper;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.FontData;
@@ -27,7 +27,7 @@ import org.eclipse.uml2.uml.UMLPackage;
  *
  * @author tlandre
  */
-public abstract class ClassifierEditPart extends NamedElementEditPart {
+public abstract class ClassifierEditPart extends RoundedCompartmentEditPart {
 
 	/**
 	 * isAbstract Classifier property
@@ -65,15 +65,6 @@ public abstract class ClassifierEditPart extends NamedElementEditPart {
 		super.refreshVisuals();
 		if (getPrimaryShape() != null && resolveSemanticElement() != null) {
 			refreshAbstract();
-			refreshIsActive();
-		}
-	}
-
-	protected void refreshIsActive() {
-		if (getUMLElement() instanceof org.eclipse.uml2.uml.Class) {
-			if (getPrimaryShape() instanceof ClassifierFigure) {
-				((ClassifierFigure) getPrimaryShape()).setActive(((org.eclipse.uml2.uml.Class) getUMLElement()).isActive());
-			}
 		}
 	}
 

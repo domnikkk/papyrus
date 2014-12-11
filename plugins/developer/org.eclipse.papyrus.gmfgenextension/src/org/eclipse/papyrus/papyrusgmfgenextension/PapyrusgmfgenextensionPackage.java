@@ -1586,6 +1586,68 @@ public interface PapyrusgmfgenextensionPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.papyrusgmfgenextension.impl.SpecificNodePlateImpl <em>Specific Node Plate</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.papyrus.papyrusgmfgenextension.impl.SpecificNodePlateImpl
+	 * @see org.eclipse.papyrus.papyrusgmfgenextension.impl.PapyrusgmfgenextensionPackageImpl#getSpecificNodePlate()
+	 * @generated
+	 */
+	int SPECIFIC_NODE_PLATE = 25;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int SPECIFIC_NODE_PLATE__COMMENT = COMMENTED_ELEMENT__COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>Edit Parts</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int SPECIFIC_NODE_PLATE__EDIT_PARTS = COMMENTED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int SPECIFIC_NODE_PLATE__NAME = COMMENTED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Node Plate Qualified Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int SPECIFIC_NODE_PLATE__NODE_PLATE_QUALIFIED_NAME = COMMENTED_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>Specific Node Plate</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int SPECIFIC_NODE_PLATE_FEATURE_COUNT = COMMENTED_ELEMENT_FEATURE_COUNT + 3;
+
+
+	/**
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.papyrusgmfgenextension.ExtendedGenView <em>Extended Gen View</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2377,6 +2439,53 @@ public interface PapyrusgmfgenextensionPackage extends EPackage {
 	EAttribute getCustomDiagramUpdaterSingleton_SingletonPath();
 
 	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.papyrusgmfgenextension.SpecificNodePlate <em>Specific Node Plate</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>Specific Node Plate</em>'.
+	 * @see org.eclipse.papyrus.papyrusgmfgenextension.SpecificNodePlate
+	 * @generated
+	 */
+	EClass getSpecificNodePlate();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.papyrusgmfgenextension.SpecificNodePlate#getEditParts <em>Edit Parts</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the reference list '<em>Edit Parts</em>'.
+	 * @see org.eclipse.papyrus.papyrusgmfgenextension.SpecificNodePlate#getEditParts()
+	 * @see #getSpecificNodePlate()
+	 * @generated
+	 */
+	EReference getSpecificNodePlate_EditParts();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.papyrusgmfgenextension.SpecificNodePlate#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see org.eclipse.papyrus.papyrusgmfgenextension.SpecificNodePlate#getName()
+	 * @see #getSpecificNodePlate()
+	 * @generated
+	 */
+	EAttribute getSpecificNodePlate_Name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.papyrusgmfgenextension.SpecificNodePlate#getNodePlateQualifiedName <em>Node Plate Qualified Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Node Plate Qualified Name</em>'.
+	 * @see org.eclipse.papyrus.papyrusgmfgenextension.SpecificNodePlate#getNodePlateQualifiedName()
+	 * @see #getSpecificNodePlate()
+	 * @generated
+	 */
+	EAttribute getSpecificNodePlate_NodePlateQualifiedName();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3062,6 +3171,44 @@ public interface PapyrusgmfgenextensionPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute CUSTOM_DIAGRAM_UPDATER_SINGLETON__SINGLETON_PATH = eINSTANCE.getCustomDiagramUpdaterSingleton_SingletonPath();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.papyrusgmfgenextension.impl.SpecificNodePlateImpl <em>Specific Node Plate</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.papyrus.papyrusgmfgenextension.impl.SpecificNodePlateImpl
+		 * @see org.eclipse.papyrus.papyrusgmfgenextension.impl.PapyrusgmfgenextensionPackageImpl#getSpecificNodePlate()
+		 * @generated
+		 */
+		EClass SPECIFIC_NODE_PLATE = eINSTANCE.getSpecificNodePlate();
+
+		/**
+		 * The meta object literal for the '<em><b>Edit Parts</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EReference SPECIFIC_NODE_PLATE__EDIT_PARTS = eINSTANCE.getSpecificNodePlate_EditParts();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute SPECIFIC_NODE_PLATE__NAME = eINSTANCE.getSpecificNodePlate_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Node Plate Qualified Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute SPECIFIC_NODE_PLATE__NODE_PLATE_QUALIFIED_NAME = eINSTANCE.getSpecificNodePlate_NodePlateQualifiedName();
 
 	}
 

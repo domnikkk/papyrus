@@ -18,6 +18,8 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.UseCaseEditPartTN;
 import org.eclipse.papyrus.uml.diagram.usecase.figure.UseCaseNodeFigure;
 
+@Deprecated
+// unused
 public class CustomUseCaseEditPartTN extends UseCaseEditPartTN {
 
 	public CustomUseCaseEditPartTN(View view) {
@@ -26,7 +28,6 @@ public class CustomUseCaseEditPartTN extends UseCaseEditPartTN {
 
 	/**
 	 * Use custom figure to return EllipseAnchors
-	 *
 	 *
 	 */
 	@Override
