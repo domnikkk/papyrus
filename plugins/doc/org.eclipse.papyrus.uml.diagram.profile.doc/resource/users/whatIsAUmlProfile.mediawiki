@@ -1,4 +1,7 @@
 = What is a UML Profile =
+'''Contents'''
+__TOC__
+
 
 The purpose of this chapter is to provide the Papyrus users all the documentation needed in order to be able to use UML profiles. It includes the information for modeling and defining a profile using the Papyrus UML profile editor, but also the information for the usage of a profile within a user application model.
 

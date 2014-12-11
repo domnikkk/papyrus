@@ -2,25 +2,13 @@
 <toc label="Papyrus Profiles" link_to="../org.eclipse.papyrus.infra.doc/toc.xml#PapyrusDocUser">
    <topic label="Using UML Profiles">
       <anchor id="profiles-start"/>
-      <topic label="What is a UML Profile">
         <link toc="resource/users/whatIsAUmlProfile-toc.xml"/>
-      </topic>
-      <topic label="Papyrus Profiles Architecture">
         <link toc="resource/users/papyrusProfileArchitecture-toc.xml" />
-      </topic>
-      <topic label="Defining Profiles And Stereotypes">
           <link toc="resource/users/definingProfilesAndStereotypes-toc.xml" />
-      </topic>
-      <topic label="Using Profiles And Stereotypes">
-          <link toc="resource/users/usingProfilesAndStereotypes-toc.xml" />
-      </topic>
-      <topic label="Simplified Usage of Profiles and Stereotypes">
-        <link toc="resource/users/simplifiedUsageOfProfilesAndStereotypes-toc.xml" />
-      </topic>
-      <anchor id="profiles" />
-      <topic label="Papyrus Profiles Limitations">
+           <link toc="resource/users/usingProfilesAndStereotypes-toc.xml" />
+      <link toc="resource/users/simplifiedUsageOfProfilesAndStereotypes-toc.xml" />
+       <anchor id="profiles" />
         <link toc="resource/users/papyrusProfileLimitations-toc.xml" />
-      </topic>
       <anchor id="profiles-end" />
 
    </topic>

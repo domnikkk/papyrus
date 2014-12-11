@@ -1,4 +1,7 @@
 = Papyrus Profile Limitations =
+'''Contents'''
+__TOC__
+
 
 == Cyclic Profile Definitions ==
 

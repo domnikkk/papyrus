@@ -1,5 +1,5 @@
 = Simplified Usage of Profiles and Stereotypes =
-
+'''Contents'''
 __TOC__
 
 Papyrus provides a simplified way to create, apply and modify Profiles and Stereotypes.
@@ -8,7 +8,7 @@ We call it 'simplified' comparatively to the way where one should first define P
 The simplified usage propose one single Dialog used to create a Profile and a Stereotype, then apply both to the selected element, and all in no more than two clicks !
 Also, the same Dialog can be used to update the Stereotype definition, or the application values.
 
-= Creating Profile and Stereotype =
+== Creating Profile and Stereotype ==
 Select the UML element to apply the profile, right click -> Profile -> Update Profile ...<br>
 The following Dialog appears:
 
@@ -28,7 +28,7 @@ Clicking ''''OK'''' will do the following:
 * '''Apply the Stereotype''', if needed, to the selected uml element.
 * '''Set values to the applied stereotype''', if some values are set to the properties.
 
-= Updating Stereotype =
+== Updating Stereotype ==
 Select the UML element applying the profile to update, right click -> Profile -> Update Profile ...<br>
 In '''Qualified Name''', type the beginning of the name of the Stereotype to update. The Content Assist should propose Stereotypes matching your input. Select your Stereotype.
 The Dialog should show the actual values of the Stereotype. You can change the Properties and their values.

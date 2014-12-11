@@ -1,8 +1,11 @@
 = Using Profiles and Stereotypes =
+'''Contents'''
+__TOC__
+
 
 Once a profile has been designed and defined as previously explained, it now times to use it. The first step to process is to apply the profile on your model or a part of the model. This is the purpose of the next section to explain this first step. Then, we will explain how to use the applied profile and mainly how to use its extensions, i.e. its stereotypes.
 
-= Applying a Profile =
+== Applying a Profile ==
 
 To apply a profile, first you need to open your model.
 
@@ -24,7 +27,7 @@ Your model should now look like this:
 
 [[Image:images/appliedProfiles.png|Applied Profiles]]<br>
 
-= Applying a Stereotype =
+== Applying a Stereotype ==
 
 Once the profile is applied on your model, its extensions, i.e. stereotypes, are available in the modeling tool and can be used in your model to annotate uml elements.
 
@@ -46,7 +49,7 @@ At this point, your Papyrus should look like this:
 
 [[Image:images/appliedStereotype.png|Applied Stereotype]]<br>
 
-= Setting values to stereotype' properties =
+== Setting values to stereotype' properties ==
 
 As already mentioned, Stereotypes may have properties. Consequently, when applying a stereotype to a model element, it may be necessary to set the values of those properties. For that, you will go to the profile tab of the properties view and then you can unfold the stereotype application as shown in following figure:
 
@@ -58,7 +61,7 @@ Once you have selected the property to edit, its value (if already set, as for e
 
 Ps: If you want to delete a value set to property, let’s use the [[Image:images/Delete.gif|Delete]] button located on the top right of the widget named “Properties values”.
 
-= Display options of a stereotype application =
+== Display options of a stereotype application ==
 
 Stereotype applications may be graphically rendered under different forms, either textually, or using specific icons. Details to specify those icons associated to a stereotype are given in previous chapters (See [[definingProfilesAndStereotypes#Stereotype display options]]).
 
