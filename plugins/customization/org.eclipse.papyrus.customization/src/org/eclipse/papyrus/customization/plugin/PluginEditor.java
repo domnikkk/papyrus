@@ -44,6 +44,10 @@ public class PluginEditor extends PluginProjectEditor implements IPluginProjectE
 		init();
 	}
 
+	public void disableFormatting() {
+		manifest.disableFormatting();
+	}
+	
 	public PluginProjectEditor getPluginEditor() {
 		return this;
 	}

@@ -12,35 +12,27 @@
 package org.eclipse.papyrus.dsml.validation.wizard;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
-import org.eclipse.core.resources.IContainer;
+import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.emf.common.util.BasicMonitor;
-import org.eclipse.emf.common.util.URI;
-import org.eclipse.papyrus.dsml.validation.generator.main.Generate;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.papyrus.dsml.validation.generator.xtend.Generate;
 
 /**
- * Main entry point of the 'Uml To Java' generation module.
+ * Main entry point of the 'UML To Java' generation module.
  *
  */
 public class ClassesGenerator {
 
 	/**
-	 * The model URI.
+	 * The profile for which to generate code.
 	 */
-	private URI modelURI;
+	private Resource resource;
 
 	/**
 	 * The output folder.
 	 */
-	private IContainer targetFolder;
-
-	/**
-	 * The other arguments.
-	 */
-	List<? extends Object> arguments;
+	private IProject project;
 
 	/**
 	 * Constructor.
@@ -55,11 +47,9 @@ public class ClassesGenerator {
 	 *             Thrown when the output cannot be saved.
 	 * @generated
 	 */
-	public ClassesGenerator(URI modelURI, IContainer targetFolder,
-			List<? extends Object> arguments) {
-		this.modelURI = modelURI;
-		this.targetFolder = targetFolder;
-		this.arguments = arguments;
+	public ClassesGenerator(Resource resource, IProject project) {
+		this.resource = resource;
+		this.project = project;
 	}
 
 	/**
@@ -69,24 +59,13 @@ public class ClassesGenerator {
 	 * @throws IOException
 	 */
 	public void doGenerate(IProgressMonitor monitor) throws IOException {
-		if (!targetFolder.getLocation().toFile().exists()) {
-			targetFolder.getLocation().toFile().mkdirs();
+		if (!project.getLocation().toFile().exists()) {
+			project.getLocation().toFile().mkdirs();
 		}
 
-		monitor.subTask("Loading...");
-
-		Generate gen0 = new Generate(modelURI, targetFolder.getLocation()
-				.toFile(), arguments);
 		monitor.worked(1);
 
-		String generationID = org.eclipse.acceleo.engine.utils.AcceleoLaunchingUtil
-				.computeUIProjectID(
-						"org.eclipse.papyrus.dsml.validation.generator",
-						"org.eclipse.papyrus.dsml.validation.generator.GenerateAllJava",
-						modelURI.toString(),
-						targetFolder.getLocation().toString(), new ArrayList<String>());
-		gen0.setGenerationID(generationID);
-		gen0.doGenerate(BasicMonitor.toMonitor(monitor));
-
+		Generate.generateClientSelector(resource, project, monitor);
+		Generate.generateConstraints(resource, project, monitor);
 	}
 }
