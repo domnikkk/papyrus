@@ -345,7 +345,7 @@ public class StereoptypeModel extends StereotypeURL {
 		List<Property> ownedProperties = stereotype.getOwnedAttributes();
 		for( Property property : ownedProperties) {
 			// filter some properties
-			if(excludedPropertyNames .contains( property.getName())) {
+			if(isPropertyExcluded(property)) {
 				continue;
 			}
 			properties.add(new PropertyModel(MemberKind.owned, property, getPropertyValue(property)));
@@ -354,13 +354,43 @@ public class StereoptypeModel extends StereotypeURL {
 		// Add inherited (not owned) metaclasses.
 		for( Property property : stereotype.getAllAttributes()) {
 			// filter some properties
-			if(excludedPropertyNames.contains( property.getName())) {
+			if(isPropertyExcluded(property)) {
 				continue;
 			}
 			if( ! ownedProperties.contains(property)) {
 				properties.add(new PropertyModel(MemberKind.inherited, property, getPropertyValue(property)));
 			}
 		}
+	}
+
+	final String BASE_PROPERTY_PREFIX = "base_";
+	
+	/**
+	 * Return true if the Property is excluded from the list of available properties.
+	 * Especially, remove all base_xxx properties.
+	 * @param property
+	 * @return
+	 */
+	private boolean isPropertyExcluded(Property property) {
+		
+		String propertyName = property.getName();
+		if( propertyName == null) {
+			return false;
+		}
+
+		if( propertyName.startsWith(BASE_PROPERTY_PREFIX) ) {
+			// Check if this is the profile base_xxx reference
+			String base_name = "base_" + property.getType().getName();
+			// TODO improve by checking the name and the metaclasses
+			
+			if( propertyName.equals(base_name)) {
+				// The property name is made of the BASE_PROPERTY_PREFIX and the Metaclass type name.
+				// So, qwe remove it.
+				return true;
+			}
+		}
+		
+		return excludedPropertyNames .contains( property.getName());
 	}
 
 	/**
