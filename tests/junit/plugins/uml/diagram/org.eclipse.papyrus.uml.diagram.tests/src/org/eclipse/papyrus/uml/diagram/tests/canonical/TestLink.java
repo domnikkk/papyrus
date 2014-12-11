@@ -51,7 +51,6 @@ import org.eclipse.gmf.tooling.runtime.update.DiagramUpdater;
 import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.papyrus.infra.core.services.ServiceException;
 import org.eclipse.papyrus.infra.core.utils.ServiceUtilsForActionHandlers;
-import org.eclipse.papyrus.junit.utils.DisplayUtils;
 import org.eclipse.papyrus.uml.diagram.common.Activator;
 import org.eclipse.papyrus.uml.tools.utils.NamedElementUtil;
 import org.eclipse.ui.PlatformUI;
@@ -524,13 +523,8 @@ public abstract class TestLink extends AbstractPapyrusTestCase {
 	 * test id the handler delete from model is enable
 	 */
 	protected void testEnableForDeleteFromModel() {
-		DisplayUtils.flushEventLoop();
-
 		EditPart linkEditPart = (EditPart) source.getSourceConnections().get(0);
 		diagramEditor.getSite().getSelectionProvider().setSelection(new StructuredSelection(linkEditPart));
-		diagramEditor.setFocus();
-
-		DisplayUtils.flushEventLoop(); // Flush events to get Focus
 
 		ICommandService commandService = PlatformUI.getWorkbench().getService(ICommandService.class);
 		org.eclipse.core.commands.Command cmd = commandService.getCommand("org.eclipse.ui.edit.delete"); //$NON-NLS-1$

@@ -34,6 +34,7 @@ import org.eclipse.papyrus.infra.core.services.ServiceException;
 import org.eclipse.papyrus.infra.core.utils.TransactionHelper;
 import org.eclipse.papyrus.infra.emf.utils.ServiceUtilsForHandlers;
 import org.eclipse.papyrus.infra.gmfdiag.common.utils.ServiceUtilsForEditPart;
+import org.eclipse.ui.ISources;
 import org.eclipse.ui.handlers.HandlerUtil;
 
 /**
@@ -113,11 +114,13 @@ public abstract class AbstractGraphicalCommandHandler extends AbstractHandler {
 	@Override
 	public void setEnabled(Object evaluationContext) {
 		if (evaluationContext instanceof IEvaluationContext) {
-			Object selection = ((IEvaluationContext) evaluationContext).getDefaultVariable();
+			Object selection = ((IEvaluationContext) evaluationContext).getVariable(ISources.ACTIVE_CURRENT_SELECTION_NAME);
 			if (selection instanceof Collection<?>) {
 				this.selection = (selection instanceof List<?>) ? (List<?>) selection : new java.util.ArrayList<Object>((Collection<?>) selection);
 				setBaseEnabled(computeEnabled());
 				this.selection = Collections.EMPTY_LIST;
+			} else if (selection instanceof IStructuredSelection) {
+				this.selection = ((IStructuredSelection) selection).toList();
 			}
 		}
 		super.setEnabled(evaluationContext);
