@@ -492,7 +492,7 @@
     <setupTask
         xsi:type="setup:VariableTask"
         name="papyrus.bugzilla.prefix"
-        value="/buglist.cgi?classification=Modeling&amp;product=MDT.Papyrus"/>
+        value="/buglist.cgi?classification=Modeling&amp;product=Papyrus"/>
     <setupTask
         xsi:type="setup:VariableTask"
         name="papyrus.bugzilla.open"
@@ -501,16 +501,16 @@
         xsi:type="mylyn:MylynQueriesTask"
         repositoryURL="${papyrus.bugzilla.repository}">
       <query
-          summary="Flagged for Review"
+          summary="Papyrus Flagged for Review"
           url="${papyrus.bugzilla.prefix}&amp;version=${papyrus.bugzilla.version}&amp;${papyrus.bugzilla.open}&amp;query_format=advanced&amp;field0-0-0=flagtypes.name&amp;type0-0-0=equals&amp;value0-0-0=review%3F"/>
       <query
-          summary="Open Bugs"
+          summary="Papyrus Open Bugs"
           url="${papyrus.bugzilla.prefix}&amp;version=${papyrus.bugzilla.version}&amp;${papyrus.bugzilla.open}&amp;bug_severity=blocker&amp;bug_severity=critical&amp;bug_severity=major&amp;bug_severity=normal&amp;bug_severity=minor&amp;bug_severity=trivial"/>
       <query
-          summary="Open Enhancement Requests"
+          summary="Papyrus Open Enhancement Requests"
           url="${papyrus.bugzilla.prefix}&amp;version=${papyrus.bugzilla.version}&amp;${papyrus.bugzilla.open}&amp;bug_severity=enhancement"/>
       <query
-          summary="Resolved Items"
+          summary="Papyrus Resolved Items"
           url="${papyrus.bugzilla.prefix}&amp;version=${papyrus.bugzilla.version}&amp;bug_status=RESOLVED&amp;resolution=FIXED"/>
     </setupTask>
     <setupTask
@@ -520,7 +520,7 @@
         userID="${bugzilla.id}"
         password="${eclipse.user.password}">
       <query
-          summary="Open Gerrit Reviews">
+          summary="Papyrus Open Gerrit Reviews">
         <attribute
             key="gerrit query type"
             value="custom"/>

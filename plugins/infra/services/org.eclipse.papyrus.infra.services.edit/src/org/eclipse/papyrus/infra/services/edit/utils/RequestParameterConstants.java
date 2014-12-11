@@ -94,4 +94,9 @@ public interface RequestParameterConstants {
 	 */
 	public static final String EDGE_TARGET_POINT = "EDGE_TARGET_POINT"; //$NON-NLS-1$
 
+	/**
+	 * the ID to enable transactional nesting for the used command in edit helper.
+	 */
+	public static final String TRANSACTIONAL_NESTING = "TRANSACTIONAL_NESTING"; //$NON-NLS-1$
+
 }

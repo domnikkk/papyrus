@@ -22,10 +22,12 @@ import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.draw2d.geometry.Rectangle;
+import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.editparts.AbstractConnectionEditPart;
 import org.eclipse.gef.editparts.AbstractGraphicalEditPart;
 import org.eclipse.gef.editpolicies.ResizableEditPolicy;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.LabelEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.internal.figures.ResizableLabelLocator;
@@ -339,6 +341,12 @@ public abstract class PapyrusLabelEditPart extends LabelEditPart {
 	 * @return the default text alignment
 	 */
 	protected int getDefaultTextAlignment() {
+		EditPart parent = getParent();
+		if (parent instanceof NodeEditPart || parent instanceof AbstractBorderItemEditPart) {
+			return PositionConstants.LEFT;
+		} else if (parent instanceof ConnectionEditPart) {
+			return PositionConstants.CENTER;
+		}
 		return PositionConstants.CENTER;
 	}
 

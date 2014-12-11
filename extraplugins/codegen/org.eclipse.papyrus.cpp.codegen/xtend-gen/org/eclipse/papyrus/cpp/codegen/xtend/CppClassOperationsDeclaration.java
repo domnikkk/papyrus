@@ -1,9 +1,19 @@
+/**
+ * Copyright (c) 2014 CEA LIST.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *     CEA LIST - initial API and implementation
+ */
 package org.eclipse.papyrus.cpp.codegen.xtend;
 
 import com.google.common.base.Objects;
 import com.google.common.collect.Iterables;
+import java.util.Collection;
 import java.util.List;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.papyrus.cpp.codegen.xtend.CppOperations;
@@ -25,7 +35,7 @@ public class CppClassOperationsDeclaration {
   public static CharSequence CppClassOperationsDeclaration(final Classifier clazz, final VisibilityKind visibilityFilter) {
     StringConcatenation _builder = new StringConcatenation();
     {
-      EList<Operation> _ownedOperations = CppOperations.getOwnedOperations(clazz);
+      Collection<Operation> _ownedOperations = CppOperations.getOwnedOperations(clazz);
       final Function1<Operation, Boolean> _function = new Function1<Operation, Boolean>() {
         public Boolean apply(final Operation it) {
           VisibilityKind _visibility = it.getVisibility();

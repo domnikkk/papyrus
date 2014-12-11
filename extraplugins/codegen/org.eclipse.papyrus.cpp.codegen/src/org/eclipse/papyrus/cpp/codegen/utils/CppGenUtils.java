@@ -20,7 +20,7 @@ import org.eclipse.papyrus.C_Cpp.External;
 import org.eclipse.papyrus.C_Cpp.NoCodeGen;
 import org.eclipse.papyrus.C_Cpp.Typedef;
 import org.eclipse.papyrus.C_Cpp.Visibility;
-import org.eclipse.papyrus.acceleo.GenUtils;
+import org.eclipse.papyrus.codegen.base.GenUtils;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.ClassifierTemplateParameter;
 import org.eclipse.uml2.uml.ConnectableElementTemplateParameter;
@@ -250,7 +250,7 @@ public class CppGenUtils {
 			openNS = "namespace " + ne.getName() + " {\n"; //$NON-NLS-1$ //$NON-NLS-2$
 		}
 		for (Namespace ns : ne.allNamespaces()) {
-			if (ns.getOwner() != null) {
+			if (ns.getOwner() != null) {	// skip top-level package (useful?)
 				openNS = "namespace " + ns.getName() + " {\n" + openNS; //$NON-NLS-1$ //$NON-NLS-2$
 			}
 		}

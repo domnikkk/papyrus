@@ -23,6 +23,7 @@ import org.eclipse.papyrus.qompass.designer.core.templates.TemplateUtils;
 import org.eclipse.papyrus.qompass.designer.core.transformations.LazyCopier;
 import org.eclipse.papyrus.qompass.designer.core.transformations.TransformationException;
 import org.eclipse.papyrus.qompass.designer.core.transformations.filters.FixTemplateSync;
+import org.eclipse.papyrus.qompass.modellibs.core.Activator;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Interface;
@@ -139,6 +140,7 @@ public class TemplatePort implements ITemplateMappingRule {
 				// create a bound element of the extended port. Add bound class to derived interface class
 				ti.bindNamedElement(extendedPort);
 			} catch (TransformationException e) {
+				Activator.log.error("Could not create template binding", e);
 			}
 		}
 	}

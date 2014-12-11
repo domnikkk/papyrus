@@ -1,4 +1,15 @@
-package org.eclipse.papyrus.cpp.codegen.xtend
+/*******************************************************************************
+ * Copyright (c) 2014 CEA LIST.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *     CEA LIST - initial API and implementation
+ *******************************************************************************/
+ 
+ package org.eclipse.papyrus.cpp.codegen.xtend
 
 import org.eclipse.uml2.uml.Classifier
 import org.eclipse.uml2.uml.Class
@@ -6,7 +17,7 @@ import org.eclipse.uml2.uml.DataType
 import org.eclipse.uml2.uml.Interface
 import org.eclipse.uml2.uml.Signal
 import org.eclipse.uml2.uml.Property
-import org.eclipse.papyrus.acceleo.GenUtils
+import org.eclipse.papyrus.codegen.base.GenUtils
 import org.eclipse.papyrus.C_Cpp.Const
 import org.eclipse.papyrus.cpp.codegen.utils.Modifier
 import org.eclipse.papyrus.cpp.codegen.utils.CppGenUtils
@@ -30,8 +41,19 @@ class CppAttribute {
 		return code
 	}
 
-	//return a list of owned attributes, since this is not supported directly on a classifier
+	// return a list of owned attributes, empty set, if null
 	static def getOwnedAttributes(Classifier cl) {
+		val attributes = getOwnedAttributesWNull(cl)
+		if (attributes == null) {
+			emptySet
+		}
+		else {
+			attributes
+		}
+	}
+	
+	// return a list of owned attributes, since this is not supported directly on a classifier
+	static def getOwnedAttributesWNull(Classifier cl) {	
 		if (cl instanceof Class) {
 			(cl as Class).ownedAttributes
 		} else if (cl instanceof DataType) {

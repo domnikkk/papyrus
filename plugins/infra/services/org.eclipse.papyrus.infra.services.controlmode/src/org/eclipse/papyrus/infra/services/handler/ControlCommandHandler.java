@@ -15,11 +15,11 @@
  *  Gabriel Pascual (ALL4TEC) gabriel.pascual@all4tec.net - Bug 436952
  *
  *****************************************************************************/
-package org.eclipse.papyrus.views.modelexplorer.handler;
+package org.eclipse.papyrus.infra.services.handler;
 
-import java.util.List;
 import java.util.regex.Pattern;
 
+import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.Command;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
@@ -29,13 +29,17 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.jface.dialogs.Dialog;
+import org.eclipse.jface.viewers.ISelection;
+import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.window.Window;
 import org.eclipse.papyrus.commands.wrappers.GMFtoEMFCommandWrapper;
 import org.eclipse.papyrus.infra.core.resource.ModelSet;
 import org.eclipse.papyrus.infra.core.services.ServiceException;
 import org.eclipse.papyrus.infra.core.utils.AdapterUtils;
+import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 import org.eclipse.papyrus.infra.emf.utils.ServiceUtilsForEObject;
 import org.eclipse.papyrus.infra.services.controlmode.ControlModeManager;
 import org.eclipse.papyrus.infra.services.controlmode.ControlModePlugin;
@@ -46,40 +50,58 @@ import org.eclipse.papyrus.infra.services.controlmode.ui.IControlModeFragmentDia
 import org.eclipse.papyrus.infra.services.controlmode.util.LabelHelper;
 import org.eclipse.papyrus.infra.widgets.toolbox.notification.builders.NotificationBuilder;
 import org.eclipse.swt.widgets.Display;
+import org.eclipse.ui.handlers.HandlerUtil;
 
 /**
  * Handler used to control an element
  *
  * @author adaussy
  */
-public class ControlCommandHandler extends AbstractModelExplorerHandler {
+public class ControlCommandHandler extends AbstractHandler {
 
-	public static final String CONTROLMODE_USE_DIALOG_PARAMETER = "org.eclipse.papyrus.infra.services.controlmode.useDialogParameter";
+	/** The Constant NO_EDITING_DOMAIN_MESSAGE. */
+	private static final String NO_EDITING_DOMAIN_MESSAGE = "No editing domain has not be found. The Uncontrol failed.";
+
+	/** The Constant EMPTY_SELECTION_MESSAGE. */
+	private static final String EMPTY_SELECTION_MESSAGE = "Nothing to control";
+
+	/** The Constant CONTROLMODE_USE_DIALOG_PARAMETER. */
+	public static final String CONTROLMODE_USE_DIALOG_PARAMETER = "org.eclipse.papyrus.infra.services.controlmode.useDialogParameter"; //$NON-NLS-1$
 
 	public Object execute(ExecutionEvent event) throws ExecutionException {
-		List<EObject> selection = getCurrentSelectionAdaptedToType(event, EObject.class);
-		if (selection == null || selection.isEmpty() || selection.size() > 1) {
-			NotificationBuilder.createInfoPopup("Nothing to control").run();
-			return null;
-		}
-		EObject eObjectToControl = selection.get(0);
+		ISelection selection = HandlerUtil.getCurrentSelection(event);
 
-		if (getShowDialogParameterValue(event)) {
-			IControlModeFragmentDialogProvider provider = getDialogProvider(eObjectToControl);
-			Dialog dialog = provider.createDialog(Display.getCurrent().getActiveShell(), eObjectToControl.eResource(), getDefaultLabelResource(eObjectToControl));
-			if (dialog.open() == Window.OK) {
-				ControlModeRequest controlRequest = ControlModeRequest.createUIControlModelRequest(getEditingDomain(), eObjectToControl, provider.getSelectedURI(dialog));
-				IControlModeManager controlMng = ControlModeManager.getInstance();
-				ICommand controlCommand = controlMng.getControlCommand(controlRequest);
-				getEditingDomain().getCommandStack().execute(new GMFtoEMFCommandWrapper(controlCommand));
+		if (selection instanceof IStructuredSelection) {
+			if (selection == null || selection.isEmpty() || ((IStructuredSelection) selection).size() > 1) {
+				NotificationBuilder.createInfoPopup(EMPTY_SELECTION_MESSAGE).run();
+				return null;
+			}
+			EObject eObjectToControl = EMFHelper.getEObject(((IStructuredSelection) selection).getFirstElement());
+			try {
+				TransactionalEditingDomain editingDomain = ServiceUtilsForEObject.getInstance().getTransactionalEditingDomain(eObjectToControl);
+				if (getShowDialogParameterValue(event)) {
+					IControlModeFragmentDialogProvider provider = getDialogProvider(eObjectToControl);
+					Dialog dialog = provider.createDialog(Display.getCurrent().getActiveShell(), eObjectToControl.eResource(), getDefaultLabelResource(eObjectToControl));
+					if (dialog.open() == Window.OK) {
+						ControlModeRequest controlRequest = ControlModeRequest.createUIControlModelRequest(editingDomain, eObjectToControl, provider.getSelectedURI(dialog));
+						IControlModeManager controlMng = ControlModeManager.getInstance();
+						ICommand controlCommand = controlMng.getControlCommand(controlRequest);
+						editingDomain.getCommandStack().execute(new GMFtoEMFCommandWrapper(controlCommand));
+					}
+				} else {
+					URI defaultURI = computeDefaultURI(eObjectToControl.eResource(), getDefaultLabelResource(eObjectToControl));
+					ControlModeRequest controlRequest = ControlModeRequest.createUIControlModelRequest(editingDomain, eObjectToControl, defaultURI);
+					IControlModeManager controlMng = ControlModeManager.getInstance();
+					ICommand controlCommand = controlMng.getControlCommand(controlRequest);
+					editingDomain.getCommandStack().execute(new GMFtoEMFCommandWrapper(controlCommand));
+				}
+			} catch (ServiceException e) {
+				NotificationBuilder.createInfoPopup(NO_EDITING_DOMAIN_MESSAGE).run();
 			}
 		} else {
-			URI defaultURI = computeDefaultURI(eObjectToControl.eResource(), getDefaultLabelResource(eObjectToControl));
-			ControlModeRequest controlRequest = ControlModeRequest.createUIControlModelRequest(getEditingDomain(), eObjectToControl, defaultURI);
-			IControlModeManager controlMng = ControlModeManager.getInstance();
-			ICommand controlCommand = controlMng.getControlCommand(controlRequest);
-			getEditingDomain().getCommandStack().execute(new GMFtoEMFCommandWrapper(controlCommand));
+			NotificationBuilder.createInfoPopup(EMPTY_SELECTION_MESSAGE).run();
 		}
+
 		return null;
 	}
 

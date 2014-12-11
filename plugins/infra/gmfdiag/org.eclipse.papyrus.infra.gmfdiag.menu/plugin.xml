@@ -349,10 +349,6 @@
                   <iterate
                         ifEmpty="false"
                         operator="and">
-                     <test
-                           property="org.eclipse.papyrus.uml.diagram.common.isSemanticDeletion"
-                           value="true">
-                     </test>
                      <instanceof
                            value="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
                      </instanceof>
@@ -378,23 +374,6 @@
             </and>
          </activeWhen>
       </handler>
-      <handler
-            class="org.eclipse.papyrus.infra.gmfdiag.menu.handlers.DeleteFromDiagramCommandHandler"
-            commandId="org.eclipse.papyrus.uml.diagram.common.commands.DeleteFromDiagram">
-         <activeWhen>
-            <and>
-               <with
-                     variable="activeEditorId">
-                  <equals
-                        value="org.eclipse.papyrus.infra.core.papyrusEditor">
-                  </equals>
-               </with>
-               <reference
-                     definitionId="org.eclipse.papyrus.infra.gmfdiag.menu.isHeterogeneousMultiSelection">
-               </reference>
-            </and>
-         </activeWhen>
-      </handler>                 
    </extension>
    <extension
          point="org.eclipse.ui.commands">

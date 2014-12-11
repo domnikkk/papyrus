@@ -11,7 +11,7 @@
 
 package org.eclipse.papyrus.cpp.codegen;
 
-import org.eclipse.papyrus.acceleo.GenUtils;
+import org.eclipse.papyrus.codegen.base.GenUtils;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.NamedElement;
 

@@ -46,3 +46,4 @@ public class DeleteFromModelCommandHandler extends org.eclipse.papyrus.infra.gmf
 	}
 
 }
+

@@ -13,7 +13,8 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.papyrus.cpp.profile;bundle-version="1.1.0",
  org.eclipse.papyrus.codegen.extensionpoints;bundle-version="1.1.0",
  org.eclipse.papyrus.cpp.codegen;bundle-version="1.1.0",
- org.eclipse.cdt.managedbuilder.ui;bundle-version="8.0.0"
+ org.eclipse.cdt.managedbuilder.ui;bundle-version="8.0.0",
+ org.eclipse.papyrus.codegen.base;bundle-version="1.1.0"
 Bundle-Vendor: %providerName
 Bundle-ActivationPolicy: lazy
 Bundle-Version: 1.1.0.qualifier

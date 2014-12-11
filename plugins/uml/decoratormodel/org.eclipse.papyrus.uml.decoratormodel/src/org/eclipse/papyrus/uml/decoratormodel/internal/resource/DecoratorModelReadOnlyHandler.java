@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2014 Christian W. Damus and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -8,7 +8,7 @@
  *
  * Contributors:
  *   Christian W. Damus - Initial API and implementation
- *   
+ *
  *****************************************************************************/
 
 package org.eclipse.papyrus.uml.decoratormodel.internal.resource;
@@ -48,7 +48,7 @@ public class DecoratorModelReadOnlyHandler extends AbstractReadOnlyHandler {
 				Set<URI> userModels = Sets.newHashSet();
 
 				for (URI next : uris) {
-					Resource resource = rset.getResource(next, false);
+					Resource resource = rset.getResource(next.trimFragment(), false);
 					if ((resource != null) && resource.isLoaded() && DecoratorModelUtils.isDecoratorModel(resource)) {
 						userModels.addAll(DecoratorModelUtils.getUserModelResources(resource));
 					}
