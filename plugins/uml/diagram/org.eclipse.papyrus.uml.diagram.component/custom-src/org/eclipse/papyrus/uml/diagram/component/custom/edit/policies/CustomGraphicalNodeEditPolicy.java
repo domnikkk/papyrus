@@ -68,7 +68,6 @@ public class CustomGraphicalNodeEditPolicy extends GraphicalNodeEditPolicy {
 	 */
 	@Override
 	protected Command getConnectionAndRelationshipCompleteCommand(CreateConnectionViewAndElementRequest request) {
-		// return super.getConnectionAndRelationshipCompleteCommand(request);
 		// get the element descriptor
 		CreateElementRequestAdapter requestAdapter = request.getConnectionViewAndElementDescriptor().getCreateElementRequestAdapter();
 		// get the semantic request
@@ -85,7 +84,12 @@ public class CustomGraphicalNodeEditPolicy extends GraphicalNodeEditPolicy {
 			source = sourceView;
 		}
 		// resolve the source parent (meaning graphical parent here)
-		View sourceParentView = (View) request.getSourceEditPart().getParent().getModel();
+		Object sourceParentViewObject = request.getSourceEditPart().getParent().getModel();
+		if(!(sourceParentViewObject instanceof View)) {
+			// parent view is not a view (in case of a cretion of a Dependency on a Dependency link for example)
+			return super.getConnectionAndRelationshipCompleteCommand(request);
+		}
+		View sourceParentView = (View)sourceParentViewObject;
 		EObject sourceParent = ViewUtil.resolveSemanticElement(sourceParentView);
 		if (sourceParent == null) {
 			sourceParent = sourceParentView;
@@ -98,8 +102,13 @@ public class CustomGraphicalNodeEditPolicy extends GraphicalNodeEditPolicy {
 		if (target == null) {
 			target = targetView;
 		}
-		// resolve the source parent (meaning graphical parent here)
-		View targetParentView = (View) request.getTargetEditPart().getParent().getModel();
+		// resolve the target parent (meaning graphical parent here)
+		Object targetParentViewObject = request.getSourceEditPart().getParent().getModel();
+		if(!(targetParentViewObject instanceof View)) {
+			// parent view is not a view (in case of a cretion of a Dependency on a Dependency link for example)
+			return super.getConnectionAndRelationshipCompleteCommand(request);
+		}
+		View targetParentView = (View)targetParentViewObject;
 		EObject targetParent = ViewUtil.resolveSemanticElement(targetParentView);
 		if (targetParent == null) {
 			targetParent = targetParentView;
