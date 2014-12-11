@@ -4,8 +4,9 @@
  * Eclipse Public License v1.0 which accompanies this distribution, and is
  * available at http://www.eclipse.org/legal/epl-v10.html
  *
- * Contributors: Jacques Lescot (Anyware Technologies) - initial API and
- * implementation
+ * Contributors: 
+ *    Jacques Lescot (Anyware Technologies) - Initial API and implementation
+ *    Gabriel Pascual (ALL4TEC) gabriel.pascual@all4tec.net - Bug 436947
  ******************************************************************************/
 package org.eclipse.papyrus.infra.services.controlmode.ui;
 
@@ -15,7 +16,6 @@ import org.eclipse.emf.common.ui.dialogs.ResourceDialog;
 import org.eclipse.emf.common.ui.dialogs.WorkspaceResourceDialog;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.edit.ui.EMFEditUIPlugin;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
@@ -32,6 +32,9 @@ import org.eclipse.swt.widgets.Shell;
  */
 public class CreateModelFragmentDialog extends ResourceDialog {
 
+	/** The Constant DIALOG_TITLE. */
+	private static final String DIALOG_TITLE = "Submodel Resource";
+
 	private URI uri;
 
 	private Resource currentResource;
@@ -47,7 +50,7 @@ public class CreateModelFragmentDialog extends ResourceDialog {
 	 * @param defaultName
 	 */
 	public CreateModelFragmentDialog(Shell parent, Resource theCurrentResource, String defaultName) {
-		super(parent, EMFEditUIPlugin.INSTANCE.getString("_UI_ControlDialog_title"), SWT.SAVE); //$NON-NLS-1$
+		super(parent, DIALOG_TITLE, SWT.SAVE); //$NON-NLS-1$
 		this.currentResource = theCurrentResource;
 		this.defaultName = defaultName;
 	}
