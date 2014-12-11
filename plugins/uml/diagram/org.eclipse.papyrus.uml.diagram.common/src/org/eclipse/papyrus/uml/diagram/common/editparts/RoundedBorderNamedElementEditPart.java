@@ -1,6 +1,7 @@
 package org.eclipse.papyrus.uml.diagram.common.editparts;
 
 import org.eclipse.draw2d.Graphics;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderedShapeEditPart;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.IRoundedRectangleFigure;
 import org.eclipse.papyrus.infra.gmfdiag.common.helper.PapyrusRoundedEditPartHelper;
@@ -157,12 +158,12 @@ public abstract class RoundedBorderNamedElementEditPart extends BorderNamedEleme
 	}
 
 	/**
-	 *  Refresh the port position
+	 * Refresh the port position
 	 */
 	private void refreshPortPosition() {
 		if (getPrimaryShape() instanceof IRoundedRectangleFigure) {
 			if (getModel() instanceof View) {
-				Object constraint = ((RoundedCompartmentEditPart) getParent()).getBorderedFigure().getBorderItemContainer().getLayoutManager().getConstraint(getFigure());
+				Object constraint = ((AbstractBorderedShapeEditPart) getParent()).getBorderedFigure().getBorderItemContainer().getLayoutManager().getConstraint(getFigure());
 				if (constraint instanceof PortPositionLocator) {
 					PortPositionLocator portLocator = (PortPositionLocator) constraint;
 					String position = NotationUtils.getStringValue((View) getModel(), PORT_POSITION, "onLine");

@@ -20,8 +20,10 @@ import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.gmf.runtime.diagram.ui.figures.IBorderItemLocator;
+import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.RoundedRectangleNodePlateFigure;
 import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.SVGNodePlateFigure;
 import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.SlidableRoundedRectangleAnchor;
+import org.eclipse.papyrus.infra.gmfdiag.common.utils.FigureUtils;
 
 /**
  *
@@ -120,27 +122,25 @@ public class PortPositionLocator implements IBorderItemLocator {
 
 		// Initialize port location with proposed location
 		// and resolve the bounds of it graphical parent
+
 		Rectangle realLocation = new Rectangle(proposedLocation);
 		Rectangle parentRec = getParentFigure().getBounds().getCopy();
 
 
 		// If it's a SVGNodePlate get the anchor to get the position
-		if (parentFigure instanceof SVGNodePlateFigure) {
+		if (parentFigure instanceof SVGNodePlateFigure && ((SVGNodePlateFigure) parentFigure).getConnectionAnchor("") instanceof SlidableRoundedRectangleAnchor) {
 
 			// Translate location to absolute before calculate location Point
 			parentFigure.translateToAbsolute(proposedLocation);
 			parentFigure.translateToAbsolute(parentRec);
 
 			ConnectionAnchor connectionAnchor = ((SVGNodePlateFigure) parentFigure).getConnectionAnchor("");
-
-			if (connectionAnchor instanceof SlidableRoundedRectangleAnchor) {
-				// Get the location point, with anchor.
-				((SlidableRoundedRectangleAnchor) connectionAnchor).setOffset(getPortOffset());
-				Point locationForPort = ((SlidableRoundedRectangleAnchor) connectionAnchor).getLocation(parentRec.getCenter(), proposedLocation.getLocation());
-				((SlidableRoundedRectangleAnchor) connectionAnchor).setOffset(new Dimension());
-				if (locationForPort != null) {
-					proposedLocation.setLocation(locationForPort);
-				}
+			// Get the location point, with anchor.
+			((SlidableRoundedRectangleAnchor) connectionAnchor).setOffset(getPortOffset());
+			Point locationForPort = ((SlidableRoundedRectangleAnchor) connectionAnchor).getLocation(parentRec.getCenter(), proposedLocation.getLocation());
+			((SlidableRoundedRectangleAnchor) connectionAnchor).setOffset(new Dimension());
+			if (locationForPort != null) {
+				proposedLocation.setLocation(locationForPort);
 			}
 
 			// Translate to relative the location
@@ -316,14 +316,19 @@ public class PortPositionLocator implements IBorderItemLocator {
 		if (figure == null) {
 			figure = target;
 		}
+
 		Rectangle proposedLocation = constraint.getCopy();
 		proposedLocation.setLocation(constraint.getLocation().translate(parentFigure.getBounds().getTopLeft()));
 
 		Point validLocation = getValidLocation(proposedLocation, target).getLocation();
+		if (FigureUtils.findChildFigureInstance(figure, RoundedRectangleNodePlateFigure.class) != null) {
 
-		Dimension preferredSize = target.getPreferredSize();
-		Rectangle rect = new Rectangle(validLocation, preferredSize);
-		rect.translate(-preferredSize.width / 2, -preferredSize.height / 2);
-		target.setBounds(rect);
+			Dimension preferredSize = target.getPreferredSize();
+			Rectangle rect = new Rectangle(validLocation, preferredSize);
+			rect.translate(-preferredSize.width / 2, -preferredSize.height / 2);
+			target.setBounds(rect);
+		} else {
+			target.setBounds(new Rectangle(validLocation, target.getPreferredSize()));
+		}
 	}
 }
