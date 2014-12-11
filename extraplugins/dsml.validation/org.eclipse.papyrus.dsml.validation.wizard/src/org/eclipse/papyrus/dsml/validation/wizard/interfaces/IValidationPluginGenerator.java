@@ -19,6 +19,7 @@ public interface IValidationPluginGenerator {
 
 	final static String PLUGIN_NATURE_ID = "org.eclipse.pde.PluginNature"; //$NON-NLS-1$
 
+	@SuppressWarnings("restriction")
 	public void generate(IProject project, NewPluginProjectWizard wizard, IConstraintsManager constraintsManager);
 
 }

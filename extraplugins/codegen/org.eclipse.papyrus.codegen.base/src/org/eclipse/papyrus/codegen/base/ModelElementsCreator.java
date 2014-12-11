@@ -11,7 +11,6 @@
 
 package org.eclipse.papyrus.codegen.base;
 
-import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.uml2.uml.Element;
@@ -25,11 +24,9 @@ import org.eclipse.uml2.uml.PackageableElement;
  */
 abstract public class ModelElementsCreator {
 
-	protected IProject project;
-
 	protected ILocationStrategy locStrategy;
 
-	protected IPFileSystemAccess fsa;
+	protected IPFileSystemAccess fileSystemAccess;
 
 	/**
 	 *
@@ -37,14 +34,13 @@ abstract public class ModelElementsCreator {
 	 *
 	 * @param project
 	 *            the project in which the generated code should be placed
-	 * @param fsa
+	 * @param fileSystemAccess
 	 *            a file system access implementation
 	 * @param locStrategy
 	 *            a strategy that chooses suitable file names for generated code.
 	 */
-	public ModelElementsCreator(IProject project, IPFileSystemAccess fsa, ILocationStrategy locStrategy) {
-		this.project = project;
-		this.fsa = fsa;
+	public ModelElementsCreator(IPFileSystemAccess fileSystemAccess, ILocationStrategy locStrategy) {
+		this.fileSystemAccess = fileSystemAccess;
 		this.locStrategy = locStrategy;
 	}
 
@@ -139,7 +135,7 @@ abstract public class ModelElementsCreator {
 	 * @throws CoreException
 	 */
 	public void removePackageableElement(PackageableElement element, IProgressMonitor monitor) {
-		String fileName = locStrategy.getFileName(element);
-		fsa.deleteFile(fileName); // need recursion support?
+		String fileName = getFileName(element);
+		fileSystemAccess.deleteFile(fileName); // need recursion support?
 	}
 }
