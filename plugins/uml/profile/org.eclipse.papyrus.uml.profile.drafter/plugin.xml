@@ -45,12 +45,12 @@
             allPopups="false"
             locationURI="menu:org.eclipse.papyrus.ui.menu">
          <menu
-               label="Profiles ...">
+               label="Profiles">
             <command
                   commandId="org.eclipse.papyrus.uml.profile.drafter.updateprofile"
-                  label="Update Profile"
+                  label="Update Profile..."
                   style="push"
-                  tooltip="Update or/and Add a UML Profile to selected element">
+                  tooltip="Create, update or/and Add a UML Profile to selected element">
             </command>
          </menu>
       </menuContribution>
@@ -58,12 +58,12 @@
             allPopups="false"
             locationURI="popup:org.eclipse.gmf.runtime.diagram.ui.DiagramEditorContextMenu">
          <menu
-               label="Profiles ...">
+               label="Profiles">
             <command
                   commandId="org.eclipse.papyrus.uml.profile.drafter.updateprofile"
-                  label="Update Profile"
+                  label="Update Profile..."
                   style="push"
-                  tooltip="Update or/and Add a UML Profile to selected element">
+                  tooltip="Create, update or/and Add a UML Profile to selected element">
             </command>
          </menu>
       </menuContribution>
@@ -72,12 +72,12 @@
             locationURI="popup:org.eclipse.papyrus.views.modelexplorer.modelexplorer.popup">
          <menu
                id="org.eclipse.papyrus.uml.profile.drafter.contextmenu"
-               label="Profiles ...">
+               label="Profiles">
             <command
                   commandId="org.eclipse.papyrus.uml.profile.drafter.updateprofile"
-                  label="Update Profile"
+                  label="Update Profile..."
                   style="push"
-                  tooltip="Update or/and Add a UML Profile to selected element">
+                  tooltip="Create, update or/and Add a UML Profile to selected element">
             </command>
          </menu>
       </menuContribution>
