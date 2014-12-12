@@ -117,11 +117,11 @@ public abstract class AbstractGraphicalCommandHandler extends AbstractHandler {
 			Object selection = ((IEvaluationContext) evaluationContext).getVariable(ISources.ACTIVE_CURRENT_SELECTION_NAME);
 			if (selection instanceof Collection<?>) {
 				this.selection = (selection instanceof List<?>) ? (List<?>) selection : new java.util.ArrayList<Object>((Collection<?>) selection);
-				setBaseEnabled(computeEnabled());
-				this.selection = Collections.EMPTY_LIST;
 			} else if (selection instanceof IStructuredSelection) {
 				this.selection = ((IStructuredSelection) selection).toList();
 			}
+			setBaseEnabled(computeEnabled());
+			this.selection = Collections.EMPTY_LIST;
 		}
 		super.setEnabled(evaluationContext);
 	}

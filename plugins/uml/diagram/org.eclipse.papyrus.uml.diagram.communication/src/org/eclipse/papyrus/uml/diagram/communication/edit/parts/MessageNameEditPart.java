@@ -550,15 +550,8 @@ public class MessageNameEditPart extends PapyrusLabelEditPart implements ITextAw
 			maskLabelPolicy = getEditPolicy(IndirectMaskLabelEditPolicy.INDRIRECT_MASK_MANAGED_LABEL);
 		}
 		if (maskLabelPolicy == null) {
-			View view = (View) getModel();
-			if (view.isVisible()) {
-				setLabelTextHelper(getFigure(), getLabelText());
-				setLabelIconHelper(getFigure(), getLabelIcon());
-			}
-			else {
-				setLabelTextHelper(getFigure(), ""); //$NON-NLS-1$
-				setLabelIconHelper(getFigure(), null);
-			}
+			setLabelTextHelper(getFigure(), getLabelText());
+			setLabelIconHelper(getFigure(), getLabelIcon());
 		}
 		Object pdEditPolicy = getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 		if (pdEditPolicy instanceof UMLTextSelectionEditPolicy) {
