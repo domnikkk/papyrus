@@ -169,7 +169,7 @@ public class ImportTransformationLauncher {
 		int numTasks = transformations.size() * 2; // For each transformation: wait for completion, then handle dependencies
 		monitor.beginTask("Importing Models...", numTasks);
 
-		boolean runAsUserJob = transformations.size() == 1;
+		boolean runAsUserJob = false; // Never show individual progress-bar for transformations (Bug 455012)
 
 		int maxThreads = Math.max(1, config.getMaxThreads());
 
