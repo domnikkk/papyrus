@@ -411,7 +411,7 @@ public class ImportTransformation {
 
 			uriMappings.put(sourceURI, targetURI);
 
-			umlResource = createUMLResource(resourceSet, targetURI);
+			umlResource = createUMLResource(resourceSet, sourceURI, targetURI);
 
 			List<EObject> outUMLObjects = getInOutUMLModel().getContents();
 
@@ -741,10 +741,10 @@ public class ImportTransformation {
 		}
 	}
 
-	protected Resource createUMLResource(ResourceSet resourceSet, URI umlModelURI) {
+	protected Resource createUMLResource(ResourceSet resourceSet, URI sourceResourceURI, URI targetResourceURI) {
 		// Use the same resource to ensure that XMI IDs are maintained
-		Resource resource = resourceSet.getResource(sourceURI, false);
-		resource.setURI(umlModelURI);
+		Resource resource = resourceSet.getResource(sourceResourceURI, false);
+		resource.setURI(targetResourceURI);
 		return resource;
 	}
 
@@ -775,16 +775,16 @@ public class ImportTransformation {
 		}
 
 		for(Resource fragmentResource : fragmentResources) {
-			URI fragmentURI = convertToPapyrus(fragmentResource.getURI(), UMLResource.FILE_EXTENSION);
+			URI papyrusFragmentURI = convertToPapyrus(fragmentResource.getURI(), UMLResource.FILE_EXTENSION);
 
-			uriMappings.put(fragmentResource.getURI(), fragmentURI);
+			uriMappings.put(fragmentResource.getURI(), papyrusFragmentURI);
 
-			Resource newResource = resourceSet.getResource(fragmentURI, false);
+			Resource newResource = resourceSet.getResource(papyrusFragmentURI, false);
 			if(newResource == null) {
-				newResource = createUMLResource(resourceSet, fragmentURI);
+				newResource = createUMLResource(resourceSet, fragmentResource.getURI(), papyrusFragmentURI);
 
-				Resource fragmentNotationResource = new GMFResource(convertToPapyrus(fragmentURI, "notation"));
-				Resource fragmentDiResource = new XMIResourceImpl(convertToPapyrus(fragmentURI, "di"));
+				Resource fragmentNotationResource = new GMFResource(convertToPapyrus(papyrusFragmentURI, "notation"));
+				Resource fragmentDiResource = new XMIResourceImpl(convertToPapyrus(papyrusFragmentURI, "di"));
 
 				result.add(fragmentNotationResource);
 				result.add(fragmentDiResource);
