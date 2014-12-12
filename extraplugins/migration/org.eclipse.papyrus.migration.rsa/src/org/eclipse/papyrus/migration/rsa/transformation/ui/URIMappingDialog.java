@@ -103,7 +103,7 @@ public class URIMappingDialog extends SelectionDialog {
 
 		Label description = new Label(area, SWT.WRAP);
 		description.setLayoutData(new GridData(SWT.FILL, SWT.BEGINNING, true, false));
-		description.setText("Some elements of the following resources can't be resolved. Please choose the model to use to replace them");
+		description.setText("Some elements in the following resources can't be resolved. Please choose the resources to replace them.");
 
 		Composite self = new Composite(area, SWT.NONE);
 		self.setLayout(new GridLayout(1, true));
