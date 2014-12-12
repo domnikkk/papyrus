@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_bOVDIHGJEeS3EdgtJYAZRQ" name="WorkingModel">
   <ownedComment xmi:type="uml:Comment" xmi:id="_XqIHIHGKEeS3EdgtJYAZRQ">
-    <body>Create a class &quot;seat&quot; with an association</body>
+    <body>The goal of this model is to test that a review model element can reference an element&#xD;
+1. open this model&#xD;
+2. load a review model named MyReviews&#xD;
+3. select a review form the review editor&#xD;
+4. select the menu hook and choose the class Car of the working model&#xD;
+--> the review must reference the Car</body>
   </ownedComment>
   <packagedElement xmi:type="uml:Class" xmi:id="_jOtaEHGJEeS3EdgtJYAZRQ" name="Car">
     <ownedAttribute xmi:type="uml:Property" xmi:id="_mUk-0HGJEeS3EdgtJYAZRQ" name="wheel" type="_j81EUHGJEeS3EdgtJYAZRQ" association="_mUuv0HGJEeS3EdgtJYAZRQ">
@@ -27,7 +32,7 @@
       </end>
     </ownedConnector>
   </packagedElement>
-  <packagedElement xmi:type="uml:Class" xmi:id="_j81EUHGJEeS3EdgtJYAZRQ" name="WheelSS"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_j81EUHGJEeS3EdgtJYAZRQ" name="Wheel"/>
   <packagedElement xmi:type="uml:Class" xmi:id="_lAhV8HGJEeS3EdgtJYAZRQ" name="Engine"/>
   <packagedElement xmi:type="uml:Association" xmi:id="_mUuv0HGJEeS3EdgtJYAZRQ" memberEnd="_mUuv0XGJEeS3EdgtJYAZRQ _mUk-0HGJEeS3EdgtJYAZRQ">
     <ownedEnd xmi:type="uml:Property" xmi:id="_mUuv0XGJEeS3EdgtJYAZRQ" name="car" type="_jOtaEHGJEeS3EdgtJYAZRQ" association="_mUuv0HGJEeS3EdgtJYAZRQ">

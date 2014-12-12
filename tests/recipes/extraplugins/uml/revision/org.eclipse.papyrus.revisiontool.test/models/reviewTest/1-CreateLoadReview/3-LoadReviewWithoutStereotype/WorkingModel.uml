@@ -1,4 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_3zvrkHFhEeSbnbmZnYsqkw" name="model">
+  <ownedComment xmi:type="uml:Comment" xmi:id="_0xcXsIFFEeS_F5h8EFt7DA">
+    <body> The goals of this model is to test if a review model can be loaded even if it has no stereotypes have been applied on the working model&#xD;
+1. Open this model.&#xD;
+2. Load a review model named MyReview-lessModelStere.&#xD;
+--> The review editor must display one review.</body>
+  </ownedComment>
+  <ownedComment xmi:type="uml:Comment" xmi:id="_pp9QcIFGEeS_F5h8EFt7DA">
+    <body> The goals of this model is to test if a review model can be loaded even if it has no stereotypes have been applied on the working model&#xD;
+1. Open this model.&#xD;
+2. Load a review model named MyReview.&#xD;
+--> The review editor must display one review.</body>
+  </ownedComment>
   <packagedElement xmi:type="uml:Class" xmi:id="_5qw3kHFhEeSbnbmZnYsqkw" name="Class1"/>
 </uml:Model>
