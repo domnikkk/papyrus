@@ -21,6 +21,7 @@ package org.eclipse.papyrus.views.modelexplorer;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 import org.eclipse.core.resources.IMarker;
 import org.eclipse.emf.common.util.URI;
@@ -28,6 +29,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.papyrus.views.modelexplorer.core.ui.pagebookview.MultiViewPageBookView;
+import org.eclipse.papyrus.views.modelexplorer.core.ui.pagebookview.ViewPartPage;
 import org.eclipse.papyrus.views.modelexplorer.sorting.DefaultTreeViewerSorting;
 import org.eclipse.papyrus.views.modelexplorer.sorting.ITreeViewerSorting;
 import org.eclipse.ui.IMemento;
@@ -37,6 +39,7 @@ import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.ide.IGotoMarker;
 import org.eclipse.ui.navigator.CommonViewer;
+import org.eclipse.ui.part.IPage;
 import org.eclipse.ui.views.properties.IPropertySheetPage;
 import org.eclipse.ui.views.properties.tabbed.ITabbedPropertySheetPageContributor;
 
@@ -58,6 +61,8 @@ public class ModelExplorerPageBookView extends MultiViewPageBookView implements 
 
 	/** The property sheet pages. */
 	private List<IPropertySheetPage> propertiesSheetPages = new LinkedList<IPropertySheetPage>();
+
+	private final CopyOnWriteArrayList<IPageBookViewPageListener> pageListeners = new CopyOnWriteArrayList<IPageBookViewPageListener>();
 
 	@Override
 	public void init(IViewSite site, IMemento memento) throws PartInitException {
@@ -157,14 +162,42 @@ public class ModelExplorerPageBookView extends MultiViewPageBookView implements 
 	@Override
 	public void partClosed(IWorkbenchPart part) {
 		PageRec rec = getPageRec(part);
-		if ((rec != null) && (rec.page instanceof ModelExplorerPage)) {
-			ModelExplorerView explorer = (ModelExplorerView) ((ModelExplorerPage) rec.page).getViewer();
+		if (rec != null) {
+			if (rec.page instanceof ModelExplorerPage) {
+				ModelExplorerView explorer = (ModelExplorerView) ((ModelExplorerPage) rec.page).getViewer();
 
-			// Clear the explorer tree input to prompt the CNF to clear caches, promoting garbage collection
-			explorer.aboutToDispose();
+				// Clear the explorer tree input to prompt the CNF to clear caches, promoting garbage collection
+				explorer.aboutToDispose();
+			}
+
+			if (rec.page instanceof ViewPartPage) {
+				// Forget the current selection in any property page that is targeting the model that is closing
+				firePageClosing((ViewPartPage) rec.page);
+			}
 		}
 
 		super.partClosed(part);
+	}
+
+	@Override
+	protected void showPageRec(PageRec pageRec) {
+		super.showPageRec(pageRec);
+
+		if (getSite().getPage().getActivePart() == this) {
+			if ((pageRec != null) && (pageRec.page instanceof ViewPartPage)) {
+				firePageActivated((ViewPartPage) pageRec.page);
+			}
+		}
+	}
+
+	@Override
+	public void setFocus() {
+		super.setFocus();
+
+		IPage page = getCurrentPage();
+		if (page instanceof ViewPartPage) {
+			firePageActivated((ViewPartPage) page);
+		}
 	}
 
 	@Override
@@ -174,5 +207,33 @@ public class ModelExplorerPageBookView extends MultiViewPageBookView implements 
 		}
 		propertiesSheetPages.clear();
 		super.dispose();
+	}
+
+	void addPageListener(IPageBookViewPageListener listener) {
+		pageListeners.addIfAbsent(listener);
+	}
+
+	void removePageListener(IPageBookViewPageListener listener) {
+		pageListeners.remove(listener);
+	}
+
+	private void firePageActivated(ViewPartPage page) {
+		for (IPageBookViewPageListener next : pageListeners) {
+			try {
+				next.pageActivated(this, page);
+			} catch (Exception e) {
+				Activator.log.error("Uncaught exception in page activation listener.", e); //$NON-NLS-1$
+			}
+		}
+	}
+
+	private void firePageClosing(ViewPartPage page) {
+		for (IPageBookViewPageListener next : pageListeners) {
+			try {
+				next.pageClosing(this, page);
+			} catch (Exception e) {
+				Activator.log.error("Uncaught exception in page closing listener.", e); //$NON-NLS-1$
+			}
+		}
 	}
 }
