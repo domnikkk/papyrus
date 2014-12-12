@@ -161,8 +161,10 @@ public class RichText extends org.eclipse.epf.richtext.RichText {
 		XSLTProcessor.transform(this.rteFolder + "rte.xsl", rteXML.toString(), result);
 		JDebugConsol debugConsol= new JDebugConsol();
 		debugConsol.run();
-		debugConsol.write("RichText.generateEditorHTML"+ editable);
-		debugConsol.write("result.toString()"+result.toString());
+		debugConsol.write("RichText.generateEditorHTML: "+ editable);
+		debugConsol.write("this.rteFolder: "+ this.rteFolder);
+		debugConsol.write("rteXML.toString(): "+ rteXML.toString());
+		debugConsol.write("result.toString() -->BEGIN:\n"+result.toString()+"\nEND");
 		return result.toString();
 	}
 
