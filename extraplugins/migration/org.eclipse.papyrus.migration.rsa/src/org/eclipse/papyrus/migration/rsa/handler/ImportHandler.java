@@ -33,6 +33,7 @@ import org.eclipse.papyrus.migration.rsa.transformation.ImportTransformationLaun
 import org.eclipse.papyrus.views.properties.creation.PropertyEditorFactory;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Shell;
+import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.handlers.HandlerUtil;
 
 
@@ -92,9 +93,15 @@ public class ImportHandler extends AbstractHandler {
 			urisToImport.add(uri);
 		}
 
+		// The Event's control is (or may be) a Context Menu, which will be disposed soon: retrieve its own parent instead (The main Window), if it has one.
 		Control baseControl = HandlerUtil.getActiveShell(event);
-		if (baseControl != null && baseControl.getParent() != null) {
+		if (baseControl != null && !baseControl.isDisposed() && baseControl.getParent() != null) {
 			baseControl = baseControl.getParent();
+		}
+
+		// On some platforms, it seems that the ActiveShell (Context Menu) may already be disposed (Bug 455011). Use the Active Workbench Window directly
+		if (baseControl == null || baseControl.isDisposed()) {
+			baseControl = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell();
 		}
 
 		ImportTransformationLauncher launcher = new ImportTransformationLauncher(config, baseControl);
