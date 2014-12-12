@@ -68,6 +68,7 @@ import org.eclipse.jface.text.source.AnnotationModel;
 import org.eclipse.jface.text.source.IAnnotationAccess;
 import org.eclipse.jface.text.source.SourceViewer;
 import org.eclipse.jface.text.source.SourceViewerConfiguration;
+import org.eclipse.papyrus.infra.widgets.epf.richtext.JDebugConsol;
 import org.eclipse.papyrus.infra.widgets.epf.richtext.extension.actions.BackgroundColorAction;
 import org.eclipse.papyrus.infra.widgets.epf.richtext.extension.actions.FontNameAction;
 import org.eclipse.papyrus.infra.widgets.epf.richtext.extension.actions.FontSizeAction;
@@ -470,6 +471,16 @@ public class RichTextEditor extends Composite {
 	 *        the editable state
 	 */
 	public void setEditable(boolean editable) {
+		JDebugConsol debugConsol= new JDebugConsol();
+		debugConsol.run();
+		debugConsol.write("RichTextEditor.setEditable(boolean editable)"+ editable);
+		debugConsol.write("toolBar"+toolBar);
+		debugConsol.write("tabFolder"+tabFolder);
+		debugConsol.write("richText"+richText);
+		debugConsol.write("sourceViewer"+sourceViewer);
+		debugConsol.write("isHTMLTabSelected "+isHTMLTabSelected());
+		
+
 		this.editable = editable;
 		if(toolBar != null && tabFolder != null) {
 			toolBar.updateToolBar(editable && !isHTMLTabSelected());
@@ -1107,6 +1118,19 @@ public class RichTextEditor extends Composite {
 	 * Inserts text at the selection (overwriting the selection).
 	 */
 	public void addHTML(String text) {
+		JDebugConsol debugConsol= new JDebugConsol();
+		debugConsol.run();
+		debugConsol.write("--------info--------------");
+		debugConsol.write("richText"+richText);
+		debugConsol.write("richText.getEditable()"+richText.getEditable());
+		debugConsol.write("--------------------------");
+		debugConsol.write("try to add "+ text);
+		debugConsol.write("tabFolder "+tabFolder);
+		debugConsol.write("tabFolder.getSelection() "+tabFolder.getSelection());
+		debugConsol.write("richTextTab "+richTextTab);
+		debugConsol.write("tabFolder.getSelection() == richTextTab "+ (tabFolder.getSelection() == richTextTab));
+		debugConsol.write("htmlTab "+htmlTab);
+		debugConsol.write("tabFolder.getSelection() == htmlTab "+(tabFolder.getSelection() == htmlTab));
 		if(text == null || text.length() == 0)
 			return;
 		if(tabFolder.getSelection() == richTextTab) {
