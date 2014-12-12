@@ -88,11 +88,8 @@ public class ImportTransformationLauncher {
 			transformations.add(transformation);
 		}
 
-		if (transformations.size() > 1) {
-			importModelDependencies(transformations);
-		} else if (!transformations.isEmpty()) {
-			transformations.get(0).run(true); // TODO URI Mappings
-		}
+		// Always use the batch launcher, even if there is only 1 transformation (Bug 455012)
+		importModelDependencies(transformations);
 	}
 
 	protected void importModelDependencies(final List<ImportTransformation> transformations) {
@@ -172,7 +169,7 @@ public class ImportTransformationLauncher {
 		int numTasks = transformations.size() * 2; // For each transformation: wait for completion, then handle dependencies
 		monitor.beginTask("Importing Models...", numTasks);
 
-		boolean runAsUserJob = transformations.size() == 1;
+		boolean runAsUserJob = false; // Never show individual progress-bar for transformations (Bug 455012)
 
 		int maxThreads = Math.max(1, config.getMaxThreads());
 

@@ -436,7 +436,7 @@
    			class="org.eclipse.papyrus.migration.rsa.wizard.TransformationScopeWizard"
    			icon="icons/import_wiz_16x16.gif"
    			id="org.eclipse.papyrus.migration.rsa.transformationWizard"
-   			name="Import RSA Models">
+   			name="RSA Models/Profiles">
    			<description>
    				Select and transform .emx and .epx files through the wizard window
    			</description>

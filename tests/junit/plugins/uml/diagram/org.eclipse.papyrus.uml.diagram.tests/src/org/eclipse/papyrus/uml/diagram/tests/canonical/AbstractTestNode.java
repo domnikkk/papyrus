@@ -50,6 +50,7 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.update.DiagramUpdater;
 import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.IMaskManagedLabelEditPolicy;
+import org.eclipse.papyrus.junit.utils.DisplayUtils;
 import org.eclipse.papyrus.uml.diagram.common.editparts.NamedElementEditPart;
 import org.eclipse.papyrus.uml.diagram.common.editparts.UMLCompartmentEditPart;
 import org.eclipse.swt.widgets.Display;
@@ -290,11 +291,16 @@ public abstract class AbstractTestNode extends org.eclipse.papyrus.uml.diagram.t
 
 	/**
 	 * test id the handler delete from model is enable
-	 * 
+	 *
 	 * @param currentEditPart
 	 */
 	protected void testEnableForDeleteFromModel(EditPart currentEditPart) {
+		diagramEditor.setFocus();
+		DisplayUtils.flushEventLoop();
+
 		diagramEditor.getSite().getSelectionProvider().setSelection(new StructuredSelection(currentEditPart));
+		DisplayUtils.flushEventLoop();
+
 		ICommandService commandService = PlatformUI.getWorkbench().getService(ICommandService.class);
 		org.eclipse.core.commands.Command cmd = commandService.getCommand("org.eclipse.ui.edit.delete"); //$NON-NLS-1$
 		IHandler handler = cmd.getHandler();
@@ -481,7 +487,7 @@ public abstract class AbstractTestNode extends org.eclipse.papyrus.uml.diagram.t
 
 	/**
 	 * this method is used to test the created editpart
-	 * 
+	 *
 	 * @param maskmanaged
 	 * @param createdEditPart
 	 */
