@@ -41,7 +41,10 @@ import org.eclipse.papyrus.uml.developper.mde.I_DeveloperIDMStereotype;
 import org.eclipse.papyrus.uml.developper.mde.I_DocumentStereotype;
 import org.eclipse.papyrus.uml.developper.mde.handler.IDMAbstractHandler;
 import org.eclipse.papyrus.views.modelexplorer.NavigatorUtils;
+import org.eclipse.uml2.uml.Actor;
+import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Class;
+import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Comment;
 import org.eclipse.uml2.uml.Dependency;
 import org.eclipse.uml2.uml.Element;
@@ -232,7 +235,6 @@ public class CreateDocumentModelCommand extends RecordingCommand {
 	}
 
 	protected void generateUseCases(CopyToImageUtil copyImageUtil, Model useCaseIN, Package useCaseModelOUT) {
-
 		// createRef diagram
 		if (containedDiagrams(useCaseIN).size() > 0) {
 			Diagram currentDiagram = containedDiagrams(useCaseIN).get(0);
@@ -242,11 +244,32 @@ public class CreateDocumentModelCommand extends RecordingCommand {
 			Comment currentComment = iteComment.next();
 			transformToContentComment(useCaseModelOUT, currentComment);
 			createImageFromHyperLink(copyImageUtil, useCaseModelOUT, currentComment);
-
-
+		}
+		
+		for (PackageableElement packageableElement : useCaseIN.getPackagedElements()) {
+			if( (packageableElement instanceof Classifier) &&(!(packageableElement instanceof Actor)) &&(!(packageableElement instanceof Association) )){
+				Classifier subjectIn = (Classifier) packageableElement;
+				Package subSectionOUT = createSection(useCaseModelOUT, subjectIn.getName());
+				generateUseCaseFromSubject(copyImageUtil, subjectIn, subSectionOUT);
+			}
 		}
 
-		for (Iterator<EObject> iterator = useCaseIN.eAllContents(); iterator.hasNext();) {
+		
+	}
+
+	protected void generateUseCaseFromSubject(CopyToImageUtil copyImageUtil, Classifier subjectIN, Package useCaseModelOUT){
+		// createRef diagram
+				if (containedDiagrams(subjectIN).size() > 0) {
+					Diagram currentDiagram = containedDiagrams(subjectIN).get(0);
+					generateImg(copyImageUtil, useCaseModelOUT, currentDiagram);
+				}
+				for (Iterator<Comment> iteComment = (subjectIN).getOwnedComments().iterator(); iteComment.hasNext();) {
+					Comment currentComment = iteComment.next();
+					transformToContentComment(useCaseModelOUT, currentComment);
+					createImageFromHyperLink(copyImageUtil, useCaseModelOUT, currentComment);
+				}
+				
+		for (Iterator<EObject> iterator = subjectIN.eAllContents(); iterator.hasNext();) {
 			EObject packageableElement = iterator.next();
 			if (packageableElement instanceof UseCase) {
 				Package useCaseSectionOUT = createSection(useCaseModelOUT, ((UseCase) packageableElement).getName());
@@ -263,8 +286,9 @@ public class CreateDocumentModelCommand extends RecordingCommand {
 				}
 			}
 		}
+		
 	}
-
+	
 	protected void transformToContentWithUser(CopyToImageUtil copyImageUtil, Package useCaseSectionOUT, Comment currentComment) {
 		Stereotype isUser = currentComment.getAppliedStereotype(I_DeveloperIDMStereotype.USERDOC_STEREOTYPE);
 		if (isUser != null) {

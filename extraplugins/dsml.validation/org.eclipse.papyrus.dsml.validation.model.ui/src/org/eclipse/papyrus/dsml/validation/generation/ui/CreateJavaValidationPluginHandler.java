@@ -16,6 +16,7 @@ import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.resources.IProject;
+import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.emf.common.util.URI;
@@ -23,7 +24,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.viewers.IStructuredSelection;
-import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.jface.window.Window;
 import org.eclipse.papyrus.dsml.validation.model.elements.impl.ConstraintManagerImpl;
 import org.eclipse.papyrus.dsml.validation.model.elements.interfaces.IConstraintProvider;
@@ -39,7 +39,7 @@ import org.eclipse.papyrus.infra.widgets.toolbox.notification.builders.Notificat
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.PlatformUI;
-import org.eclipse.ui.dialogs.ElementListSelectionDialog;
+import org.eclipse.ui.dialogs.ResourceListSelectionDialog;
 import org.eclipse.uml2.uml.Profile;
 
 
@@ -146,26 +146,17 @@ public class CreateJavaValidationPluginHandler extends AbstractHandler {
 			if ((question == 1) || (question == 2)) {
 				if (question == 1) {
 					// get object which represents the workspace
-					IProject projects[] = root.getProjects();
 
-					LabelProvider labelProvider = new LabelProvider() {
-
-						public String getText(Object element) {
-							if (element instanceof IProject) {
-								return ((IProject) element).getName();
-							}
-							return super.getText(element);
-						}
-					};
-					ElementListSelectionDialog dialog = new ElementListSelectionDialog(shell, labelProvider);
+					ResourceListSelectionDialog dialog =
+						    new ResourceListSelectionDialog(shell, root, IResource.PROJECT);
 					dialog.setTitle(Messages.CreateJavaValidationPluginHandler_SelectExisting);
-					dialog.setMessage(Messages.CreateJavaValidationPluginHandler_GenerateIntoExisting);
-					dialog.setMultipleSelection(false);
-					dialog.setElements(projects);
+				
 					if (dialog.open() == Window.OK) {
-						existingProject = (IProject) dialog.getFirstResult();
+						existingProject = (IProject) dialog.getResult()[0];
 					}
-					else existingProject = null;
+					else {
+						existingProject = null;
+					}
 				}
 
 				if (existingProject != null) {

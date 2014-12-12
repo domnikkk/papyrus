@@ -525,7 +525,6 @@ public abstract class TestLink extends AbstractPapyrusTestCase {
 	protected void testEnableForDeleteFromModel() {
 		EditPart linkEditPart = (EditPart) source.getSourceConnections().get(0);
 		diagramEditor.getSite().getSelectionProvider().setSelection(new StructuredSelection(linkEditPart));
-		diagramEditor.setFocus();
 
 		ICommandService commandService = PlatformUI.getWorkbench().getService(ICommandService.class);
 		org.eclipse.core.commands.Command cmd = commandService.getCommand("org.eclipse.ui.edit.delete"); //$NON-NLS-1$

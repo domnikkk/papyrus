@@ -33,11 +33,24 @@ import org.eclipse.pde.internal.ui.editor.actions.FormatOperation;
 
 public class ManifestEditor extends ProjectEditor implements IManifestEditor {
 
+	// string constants
+	private static final String SEMICOLON = ";"; //$NON-NLS-1$
+
+	private static final String COMMA = ","; //$NON-NLS-1$
+
+	private static final String ASSIGN = "="; //$NON-NLS-1$
+
+	private static final String BUNDLE_SYMBOLIC_NAME = "bundle-symbolicName"; //$NON-NLS-1$
+
+	private static final String SINGLETON = "singleton:="; //$NON-NLS-1$
+
 	/** the manifest file */
 	private IFile manifestFile;
 
 	/** the manifest itself */
 	private Manifest manifest;
+
+	protected boolean doFormat;
 
 	/**
 	 *
@@ -49,8 +62,16 @@ public class ManifestEditor extends ProjectEditor implements IManifestEditor {
 	 */
 	public ManifestEditor(final IProject project) throws IOException, CoreException {
 		super(project);
+		doFormat = true;
 	}
 
+	/**
+	 * @see org.eclipse.papyrus.eclipse.project.editors.interfaces.IManifestEditor#disableFormatting()
+	 */
+	public void disableFormatting() {
+		doFormat = false;
+	}
+	
 	/**
 	 *
 	 * @see org.eclipse.papyrus.eclipse.project.editors.interfaces.IManifestEditor#initOk()
@@ -122,12 +143,12 @@ public class ManifestEditor extends ProjectEditor implements IManifestEditor {
 		if (requireBundle == null) {
 			requireBundle = dependency;
 			if (version != null) {
-				requireBundle += ";" + version; //$NON-NLS-1$
+				requireBundle += SEMICOLON + version;
 			}
 		} else if (!requireBundle.contains(dependency)) {
-			requireBundle += "," + dependency; //$NON-NLS-1$
+			requireBundle += COMMA + dependency;
 			if (version != null) {
-				requireBundle += ";" + version; //$NON-NLS-1$
+				requireBundle += SEMICOLON + version;
 			}
 		}
 		this.manifest.getMainAttributes().put(rqBundle, requireBundle);
@@ -136,27 +157,27 @@ public class ManifestEditor extends ProjectEditor implements IManifestEditor {
 	public void setDependenciesVersion(final String dependencyPattern, final String newVersion) {
 		final Name rqBundle = new Name(REQUIRED_BUNDLE);
 		final String requireBundles = this.manifest.getMainAttributes().getValue(rqBundle);
-		final String[] bundles = requireBundles.split(",");
-		String newRequiredBundles = "";
+		final String[] bundles = requireBundles.split(COMMA);
+		String newRequiredBundles = ""; //$NON-NLS-1$
 		for (int ii = 0; ii < bundles.length; ii++) {// we iterate on the declared dependencies
 			final String currentDependency = bundles[ii];
-			final String[] dependencyValue = currentDependency.split(";");
+			final String[] dependencyValue = currentDependency.split(SEMICOLON);
 			if (dependencyValue[0].contains(dependencyPattern)) {
-				final String newBundleVersion = BUNDLE_VERSION + "=" + '"' + newVersion + '"';
-				newRequiredBundles += dependencyValue[0] + ";" + newBundleVersion;
+				final String newBundleVersion = BUNDLE_VERSION + ASSIGN + '"' + newVersion + '"';
+				newRequiredBundles += dependencyValue[0] + SEMICOLON + newBundleVersion;
 				for (int i = 1; i < dependencyValue.length; i++) {
 					final String declaration = dependencyValue[i];
-					if (declaration.contains(BUNDLE_VERSION + "=")) {
+					if (declaration.contains(BUNDLE_VERSION + ASSIGN)) {
 						// we ignore it
 					} else {
-						newRequiredBundles += ";" + dependencyValue[i];// we add the others declaration
+						newRequiredBundles += SEMICOLON + dependencyValue[i];// we add the others declaration
 					}
 				}
 			} else {
 				newRequiredBundles += currentDependency;// we copy the existing declaration
 			}
 			if (ii < (bundles.length - 1)) {
-				newRequiredBundles += ",";
+				newRequiredBundles += COMMA;
 			}
 		}
 		setValue(REQUIRED_BUNDLE, newRequiredBundles);
@@ -250,12 +271,14 @@ public class ManifestEditor extends ProjectEditor implements IManifestEditor {
 				}
 			}, true, true, null);
 
-			// Use the PDE formatter for ManifestFiles
-			try {
-				FormatOperation.format(this.manifestFile, new NullProgressMonitor());
-			} catch (final Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+			if (doFormat) {
+				// Use the PDE formatter for ManifestFiles
+				try {
+					FormatOperation.format(this.manifestFile, new NullProgressMonitor());
+				} catch (final Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 		} catch (final IOException ex) {
 			Activator.log.error(ex);
@@ -349,7 +372,7 @@ public class ManifestEditor extends ProjectEditor implements IManifestEditor {
 		if (this.manifest != null) {
 			final Name symbolicName = new Name(BUNDLE_SYMBOLIC_NAME);
 			final String name = this.manifest.getMainAttributes().getValue(symbolicName);
-			int semiColon = name.indexOf(";"); //$NON-NLS-1$
+			int semiColon = name.indexOf(SEMICOLON);
 			if (semiColon != -1) {
 				return name.substring(0, semiColon);
 			}
@@ -462,8 +485,8 @@ public class ManifestEditor extends ProjectEditor implements IManifestEditor {
 	}
 
 	public void setSingleton(final boolean singleton) {
-		String value = this.manifest.getMainAttributes().getValue("bundle-symbolicName");
-		final String[] directives = value.split(";");
+		String value = this.manifest.getMainAttributes().getValue(BUNDLE_SYMBOLIC_NAME);
+		final String[] directives = value.split(SEMICOLON);
 
 		if (directives.length == 0) {
 			return; // This should not happen if the Manifest is well-formed
@@ -472,17 +495,17 @@ public class ManifestEditor extends ProjectEditor implements IManifestEditor {
 			boolean isDefined = false;
 			for (int i = 1; i < directives.length; i++) {
 				String directive = directives[i];
-				if (directive.startsWith("singleton:=")) {
-					directive = "singleton:=" + singleton;
+				if (directive.startsWith(SINGLETON)) {
+					directive = SINGLETON + singleton;
 					isDefined = true;
 				}
-				value += ";" + directive;
+				value += SEMICOLON + directive;
 			}
 			if (!isDefined) {
-				value += ";singleton:=" + singleton;
+				value += SEMICOLON + SINGLETON + singleton;
 			}
 		}
 
-		this.manifest.getMainAttributes().putValue("bundle-symbolicName", value);
+		this.manifest.getMainAttributes().putValue(BUNDLE_SYMBOLIC_NAME, value);
 	}
 }

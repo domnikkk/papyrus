@@ -28,8 +28,8 @@ import org.eclipse.uml2.uml.ValueSpecification;
  */
 public class Utils {
 
-	private static final String JAVA_LANGUAGE = "JAVA";
-	private static final String OCL_LANGUAGE = "OCL";
+	private static final String JAVA_LANGUAGE = "JAVA"; //$NON-NLS-1$
+	private static final String OCL_LANGUAGE = "OCL"; //$NON-NLS-1$
 	/*
 	 * Map holding relations between String representing the qualified name of a
 	 * constraint and name of a package to which it belongs. Package name in
@@ -39,19 +39,6 @@ public class Utils {
 	 * constraint is located.
 	 */
 	private static Map<String, String> constraintToItsPackage = new HashMap<String, String>();
-
-	/**
-	 * This method returns the package for the specific constraint.
-	 *
-	 * @param constraint
-	 *            constraint for which the method will return name of its
-	 *            package
-	 * @return string representing name of the package
-	 */
-	public static String getPackageForConstraint(Constraint constraint) {
-
-		return constraint.getContext().getQualifiedName().toLowerCase().replace("::", ".");
-	}
 
 	/**
 	 * Retrieval of a java constraint body.
@@ -119,12 +106,11 @@ public class Utils {
 		if (nameSpace instanceof Stereotype) {
 			return ((Stereotype) constraint.getContext()).getQualifiedName();
 		}
-		return "";
+		return ""; //$NON-NLS-1$
 	}
 
 	/**
-	 * /**
-	 * return true if the constraint is to validate something about a stereotype
+	 * Return true if the constraint is to validate something about a stereotype
 	 *
 	 * @param constraint
 	 *            the constraint

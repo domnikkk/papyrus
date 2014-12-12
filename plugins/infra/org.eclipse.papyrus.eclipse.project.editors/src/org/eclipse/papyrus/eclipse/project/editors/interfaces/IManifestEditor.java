@@ -51,6 +51,11 @@ public interface IManifestEditor extends IProjectEditor, IFileEditor {
 	public static final String BUNDLE_LOCALIZATION = "Bundle-Localization"; //$NON-NLS-1$
 
 	/**
+	 * disable the formatting of the manifest file
+	 */
+	public void disableFormatting();
+	
+	/**
 	 *
 	 * @param dependency
 	 *            the dependency to add
