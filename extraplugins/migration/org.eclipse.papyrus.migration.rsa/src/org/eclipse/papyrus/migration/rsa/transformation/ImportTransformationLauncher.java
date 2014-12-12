@@ -88,11 +88,8 @@ public class ImportTransformationLauncher {
 			transformations.add(transformation);
 		}
 
-		if (transformations.size() > 1) {
-			importModelDependencies(transformations);
-		} else if (!transformations.isEmpty()) {
-			transformations.get(0).run(true); // TODO URI Mappings
-		}
+		// Always use the batch launcher, even if there is only 1 transformation (Bug 455012)
+		importModelDependencies(transformations);
 	}
 
 	protected void importModelDependencies(final List<ImportTransformation> transformations) {
