@@ -204,4 +204,7 @@ public interface ITranscription {
 	 * @param out
 	 */
 	public abstract void writeNewLine(StringBuffer out);
+	
+
+	
 }

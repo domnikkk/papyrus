@@ -43,6 +43,7 @@ import org.eclipse.papyrus.uml.developper.mde.handler.IDMAbstractHandler;
 import org.eclipse.papyrus.views.modelexplorer.NavigatorUtils;
 import org.eclipse.uml2.uml.Actor;
 import org.eclipse.uml2.uml.Association;
+import org.eclipse.uml2.uml.Behavior;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Comment;
@@ -245,7 +246,7 @@ public class CreateDocumentModelCommand extends RecordingCommand {
 			transformToContentComment(useCaseModelOUT, currentComment);
 			createImageFromHyperLink(copyImageUtil, useCaseModelOUT, currentComment);
 		}
-		
+
 		for (PackageableElement packageableElement : useCaseIN.getPackagedElements()) {
 			if( (packageableElement instanceof Classifier) &&(!(packageableElement instanceof Actor)) &&(!(packageableElement instanceof Association) )){
 				Classifier subjectIn = (Classifier) packageableElement;
@@ -254,21 +255,21 @@ public class CreateDocumentModelCommand extends RecordingCommand {
 			}
 		}
 
-		
+
 	}
 
 	protected void generateUseCaseFromSubject(CopyToImageUtil copyImageUtil, Classifier subjectIN, Package useCaseModelOUT){
 		// createRef diagram
-				if (containedDiagrams(subjectIN).size() > 0) {
-					Diagram currentDiagram = containedDiagrams(subjectIN).get(0);
-					generateImg(copyImageUtil, useCaseModelOUT, currentDiagram);
-				}
-				for (Iterator<Comment> iteComment = (subjectIN).getOwnedComments().iterator(); iteComment.hasNext();) {
-					Comment currentComment = iteComment.next();
-					transformToContentComment(useCaseModelOUT, currentComment);
-					createImageFromHyperLink(copyImageUtil, useCaseModelOUT, currentComment);
-				}
-				
+		if (containedDiagrams(subjectIN).size() > 0) {
+			Diagram currentDiagram = containedDiagrams(subjectIN).get(0);
+			generateImg(copyImageUtil, useCaseModelOUT, currentDiagram);
+		}
+		for (Iterator<Comment> iteComment = (subjectIN).getOwnedComments().iterator(); iteComment.hasNext();) {
+			Comment currentComment = iteComment.next();
+			transformToContentComment(useCaseModelOUT, currentComment);
+			createImageFromHyperLink(copyImageUtil, useCaseModelOUT, currentComment);
+		}
+
 		for (Iterator<EObject> iterator = subjectIN.eAllContents(); iterator.hasNext();) {
 			EObject packageableElement = iterator.next();
 			if (packageableElement instanceof UseCase) {
@@ -286,9 +287,9 @@ public class CreateDocumentModelCommand extends RecordingCommand {
 				}
 			}
 		}
-		
+
 	}
-	
+
 	protected void transformToContentWithUser(CopyToImageUtil copyImageUtil, Package useCaseSectionOUT, Comment currentComment) {
 		Stereotype isUser = currentComment.getAppliedStereotype(I_DeveloperIDMStereotype.USERDOC_STEREOTYPE);
 		if (isUser != null) {
@@ -350,7 +351,17 @@ public class CreateDocumentModelCommand extends RecordingCommand {
 	}
 
 
-	protected void generateTests(CopyToImageUtil copyImageUtil, Model testIN, Package testModelOUT) {
+	protected void generateTests(CopyToImageUtil copyImageUtil, Package testIN, Package testModelOUT) {
+		if(testIN.getPackageImports().size()>0){
+			for (PackageImport packageImport : testIN.getPackageImports()) {
+				if (packageImport.getAppliedStereotype(I_DeveloperIDMStereotype.EXECUTABLETEST_STEREOTYPE) != null
+						|| packageImport.getAppliedStereotype(SYS_ML_REQUIREMENTS_TESTCASE) != null
+						|| packageImport.getAppliedStereotype(I_DeveloperIDMStereotype.MANUALTEST_STEREOTYPE) != null) {
+					Model importedTestPackageIn = (Model) packageImport.getImportedPackage();
+					generateTests(copyImageUtil, importedTestPackageIn, testModelOUT);
+				}
+			}
+		}
 
 		// createRef diagram
 		if (containedDiagrams(testIN).size() > 0) {
@@ -359,34 +370,34 @@ public class CreateDocumentModelCommand extends RecordingCommand {
 		}
 		for (Iterator<Comment> iteComment = (testIN).getOwnedComments().iterator(); iteComment.hasNext();) {
 			Comment currentComment = iteComment.next();
+			createImageFromHyperLink(copyImageUtil, testModelOUT, currentComment);
 			transformToContentComment(testModelOUT, currentComment);
 		}
 
-		for (Iterator<EObject> iterator = testIN.eAllContents(); iterator.hasNext();) {
+		for (Iterator<PackageableElement> iterator = testIN.getPackagedElements().iterator(); iterator.hasNext();) {
 			EObject packageableElement = iterator.next();
 
 			if (packageableElement instanceof Package) {
 				Package testCaseSectionOUT = createSection(testModelOUT, ((Package) packageableElement).getName());
 				IDMAbstractHandler.elt2DocElt.put((Element) packageableElement, testCaseSectionOUT);
+				generateTests(copyImageUtil, (Package)packageableElement, testCaseSectionOUT);
 				for (Iterator<Comment> iteComment = ((Package) packageableElement).getOwnedComments().iterator(); iteComment.hasNext();) {
 					Comment currentComment = iteComment.next();
+					createImageFromHyperLink(copyImageUtil, testCaseSectionOUT, currentComment);
 					transformToContentComment(testCaseSectionOUT, currentComment);
 				}
-				ArrayList<NamedElement> test = getAllDependentElement((Package) packageableElement, topModel);
-				for (Iterator<NamedElement> iteratorTest = test.iterator(); iteratorTest.hasNext();) {
-					NamedElement currentTest = iteratorTest.next();
-					createSection(testCaseSectionOUT, currentTest.getName());
+			}
+			else if	(packageableElement instanceof Behavior ||packageableElement instanceof Classifier) {
 
-				}
-			} else if (packageableElement instanceof PackageImport) {
-				PackageImport importedPackage = (PackageImport)packageableElement;
-				if (importedPackage.getAppliedStereotype(I_DeveloperIDMStereotype.EXECUTABLETEST_STEREOTYPE) != null
-						|| importedPackage.getAppliedStereotype(SYS_ML_REQUIREMENTS_TESTCASE) != null
-						|| importedPackage.getAppliedStereotype(I_DeveloperIDMStereotype.MANUALTEST_STEREOTYPE) != null) {
-					Model importedTestPackageIn = (Model) importedPackage.getImportedPackage();
-					generateTests(copyImageUtil, importedTestPackageIn, testModelOUT);
+				Package testCaseSectionOUT = createSection(testModelOUT, ((NamedElement) packageableElement).getName());
+				IDMAbstractHandler.elt2DocElt.put((Element) packageableElement, testCaseSectionOUT);
+				for (Iterator<Comment> iteComment = ((NamedElement) packageableElement).getOwnedComments().iterator(); iteComment.hasNext();) {
+					Comment currentComment = iteComment.next();
+					createImageFromHyperLink(copyImageUtil, testCaseSectionOUT, currentComment);
+					transformToContentComment(testCaseSectionOUT, currentComment);
 				}
 			}
+
 		}
 	}
 

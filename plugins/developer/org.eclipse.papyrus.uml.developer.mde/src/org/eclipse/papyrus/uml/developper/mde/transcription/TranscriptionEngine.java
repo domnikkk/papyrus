@@ -235,7 +235,9 @@ public class TranscriptionEngine {
 				Package subSectionDocElt = IDMAbstractHandler.Toc2DocElt.get(subSection);
 				String URI = ((XMIResource)subSectionDocElt.eResource()).getID(subSectionDocElt);
 				transcription.writeTOCSubSection(out, subSection.getName(), URI);
+				transcription.writeBeginTOC(out);
 				writeSubSectionTOC(out, subSection);
+				transcription.writeEndTOC(out);
 			}
 		}
 	}
