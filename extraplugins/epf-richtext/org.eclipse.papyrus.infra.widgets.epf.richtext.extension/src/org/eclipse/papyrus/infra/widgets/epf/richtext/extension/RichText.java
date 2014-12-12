@@ -20,7 +20,6 @@ import org.eclipse.epf.common.xml.XSLTProcessor;
 import org.eclipse.epf.richtext.actions.CopyAction;
 import org.eclipse.epf.richtext.actions.CutAction;
 import org.eclipse.epf.richtext.actions.PastePlainTextAction;
-import org.eclipse.papyrus.infra.widgets.epf.richtext.JDebugConsol;
 import org.eclipse.papyrus.infra.widgets.epf.richtext.extension.actions.PasteAction;
 import org.eclipse.papyrus.infra.widgets.epf.richtext.extension.actions.PasteTextOnlyAction;
 import org.eclipse.swt.SWT;
@@ -159,12 +158,6 @@ public class RichText extends org.eclipse.epf.richtext.RichText {
 		rteXML.append("<rte id=\"").append("rte").append("\" css=\"").append(escapedRteUTL + "rte.css").append("\" js=\"").append(escapedRteUTL + "rte.js").append("\" baseURL=\"").append(escapedBasePath).append("\"/>");
 		StringWriter result = new StringWriter();
 		XSLTProcessor.transform(this.rteFolder + "rte.xsl", rteXML.toString(), result);
-		JDebugConsol debugConsol= new JDebugConsol();
-		debugConsol.run();
-		debugConsol.write("RichText.generateEditorHTML: "+ editable);
-		debugConsol.write("this.rteFolder: "+ this.rteFolder);
-		debugConsol.write("rteXML.toString(): "+ rteXML.toString());
-		debugConsol.write("result.toString() -->BEGIN:\n"+result.toString()+"\nEND");
 		return result.toString();
 	}
 
