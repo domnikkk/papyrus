@@ -37,19 +37,19 @@
 			<id>emf-transaction</id>
 			<layout>p2</layout>
 			<!-- updateFrom("EMF TRANSACTION",0) -->
-			<url>http://download.eclipse.org/modeling/emf/transaction/updates/milestones/S201409241440</url>
+			<url>http://download.eclipse.org/modeling/emf/transaction/updates/milestones/S201411230352</url>
 		</repository>
 		<repository>
 			<id>emf-validation</id>
 			<layout>p2</layout>
 			<!-- updateFrom("EMF VALIDATION",0) -->
-			<url>http://download.eclipse.org/modeling/emf/validation/updates/milestones/S201409241438</url>
+			<url>http://download.eclipse.org/modeling/emf/validation/updates/milestones/S201411230228</url>
 		</repository>
 		<repository>
 			<id>ep</id>
 			<layout>p2</layout>
 			<!-- updateFrom("Eclipse",0) -->
-			<url>http://download.eclipse.org/eclipse/updates/4.5milestones/S-4.5M3-201410292000/</url>
+			<url>http://download.eclipse.org/eclipse/updates/4.5milestones/S-4.5M4-201412102000/</url>
 		</repository>
 		<repository>
 			<id>gef</id>
@@ -61,13 +61,13 @@
 			<id>gmp-gmf-notation</id>
 			<layout>p2</layout>
 			<!-- updateFrom("GMF Notation",0) -->
-			<url>http://download.eclipse.org/modeling/gmp/gmf-notation/updates/milestones/S201409241407</url>
+			<url>http://download.eclipse.org/modeling/gmp/gmf-notation/updates/milestones/S201411230248</url>
 		</repository>
 		<repository>
 			<id>gmp-gmf-runtime</id>
 			<layout>p2</layout>
 			<!-- updateFrom("GMF Runtime",0) -->
-			<url>http://download.eclipse.org/modeling/gmp/gmf-runtime/updates/milestones/S201409241816</url>
+			<url>http://download.eclipse.org/modeling/gmp/gmf-runtime/updates/milestones/S201411230102</url>
 		</repository>
 		<repository>
 			<id>gmf-tooling</id>

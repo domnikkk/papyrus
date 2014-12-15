@@ -348,7 +348,7 @@
 			<id>ep</id>
 			<layout>p2</layout>
 			<!-- updateFrom("Eclipse",0) -->
-			<url>http://download.eclipse.org/eclipse/updates/4.5milestones/S-4.5M3-201410292000/</url>
+			<url>http://download.eclipse.org/eclipse/updates/4.5milestones/S-4.5M4-201412102000/</url>
 		</repository>
 		<repository>
 			<id>gef</id>
