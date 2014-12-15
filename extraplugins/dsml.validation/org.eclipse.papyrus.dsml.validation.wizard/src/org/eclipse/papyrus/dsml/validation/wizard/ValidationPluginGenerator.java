@@ -141,7 +141,6 @@ public class ValidationPluginGenerator {
 		editor.getManifestEditor().addDependency(EMF_VALIDATION_PLUGIN);
 		editor.getManifestEditor().addDependency(UML_VALIDATION_PLUGIN);
 		editor.getManifestEditor().addDependency(UML_PLUGIN);
-		editor.disableFormatting();
 		
 		Element constraintProviderExtension =
 				createOrCleanExtension(editor, EMF_VALIDATION_CONSTRAINT_PROVIDERS_EXTENSIONPOINT);
