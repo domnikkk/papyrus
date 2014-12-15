@@ -155,7 +155,7 @@ public class AvailabilityUpdater {
 		public VerifyUpdateSiteJob call() throws Exception {
 			URI baseUrl = URI.createURI(removeTraillingSlash(url));
 			List<URI> locations = new ArrayList<URI>();
-			for (String location : new String[] { "compositeContent.jar", "content.jar", "content.xml", "site.xml" }) { //$NON-NLS-1$//$NON-NLS-2$//$NON-NLS-3$
+			for (String location : new String[] { "compositeContent.jar", "content.jar", "content.xml", "site.xml", "compositeContent.xml" }) { //$NON-NLS-1//$NON-NLS-1//$NON-NLS-1$//$NON-NLS-2$//$NON-NLS-3$
 				URI locationURI = baseUrl.appendSegment(location);
 				locations.add(locationURI);
 			}
