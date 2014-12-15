@@ -91,6 +91,8 @@ public class ModelValidationPage
 
 	private SelectAllAction selectAllAction;
 
+	ServicesRegistry services;
+	
 	private boolean ready;
 
 	public ModelValidationPage(ServicesRegistry services, ViewSettings settings)
@@ -99,7 +101,8 @@ public class ModelValidationPage
 		super();
 
 		this.settings = settings;
-
+		this.services = services;
+		
 		this.markers = ServiceUtils.getInstance().getService(
 				ValidationMarkersService.class, services);
 		this.labelProviders = ServiceUtils.getInstance().getService(
@@ -168,6 +171,19 @@ public class ModelValidationPage
 		});
 	}
 
+	public void updateInput(ServicesRegistry newServices) {
+		try {
+			if (services != newServices) {
+				services = newServices;
+				markers = ServiceUtils.getInstance().getService(ValidationMarkersService.class, services);
+				table.setInput(markers);
+			}	
+		}
+		catch (ServiceException e) {
+			System.err.println(e);
+		}
+	}
+	
 	private TableViewerColumn column(TableViewer table, String title) {
 		TableViewerColumn result = new TableViewerColumn(table, SWT.NONE);
 		result.getColumn().setText(title);

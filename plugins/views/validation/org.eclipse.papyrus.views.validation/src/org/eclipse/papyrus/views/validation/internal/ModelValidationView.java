@@ -60,6 +60,20 @@ public class ModelValidationView
 	}
 
 	@Override
+	public void partActivated(IWorkbenchPart part) {
+		super.partActivated(part);
+		PageRec rec = getPageRec(part);
+		if (rec != null) {
+			IPage page = rec.page;
+			if (page instanceof ModelValidationPage) {
+				// page already exist. Assure update of service registry after a reload
+				// (triggered by resource change)
+				((ModelValidationPage) page).updateInput(getServicesRegistry(part));
+			}
+		}
+	}
+	
+	@Override
 	protected IPage createDefaultPage(PageBook book) {
 		IPageBookViewPage result = new MessagePage(
 				"No model editor is currently active.");
