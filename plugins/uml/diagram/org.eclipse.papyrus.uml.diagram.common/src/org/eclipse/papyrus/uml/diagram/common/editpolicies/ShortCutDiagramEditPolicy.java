@@ -9,7 +9,7 @@
  *
  * Contributors:
  *  Patrick Tessier (CEA LIST) Patrick.tessier@cea.fr - Initial API and implementation
- *
+ *  Benoit Maggi (CEA LIST) benoit.maggi@cea.fr - Bug 454386
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.common.editpolicies;
 
@@ -32,7 +32,10 @@ import org.eclipse.papyrus.infra.emf.utils.ServiceUtilsForEObject;
 /**
  * This class is used to open a new diagram when the double click is detected.
  * It is dependent of papyrus environment
+ * @deprecated since 1.0.2 / use org.eclipse.papyrus.infra.gmfdiag.hyperlink.editpolicies.NavigationEditPolicy
+ * 
  */
+@Deprecated
 public class ShortCutDiagramEditPolicy extends OpenEditPolicy {
 
 	/**
