@@ -416,7 +416,7 @@
         <repository
             url="${base.downloads.url}/modeling/m2t/xpand/updates/releases/R201406030414/"/>
         <repository
-            url="${base.downloads.url}/modeling/tmf/xtext/updates/releases/head/R201405210727/"/>
+            url="${base.downloads.url}/modeling/tmf/xtext/updates/releases/maintenance/R201409160908/"/>
         <repository
             url="${base.downloads.url}/modeling/emf/compare/updates/releases/3.0"/>
         <repository
