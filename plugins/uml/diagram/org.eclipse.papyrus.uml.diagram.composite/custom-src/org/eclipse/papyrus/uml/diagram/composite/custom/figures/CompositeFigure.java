@@ -17,12 +17,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.draw2d.IFigure;
-import org.eclipse.papyrus.uml.diagram.common.figure.node.CompartmentFigure;
+import org.eclipse.papyrus.uml.diagram.common.figure.node.RoundedCompartmentFigure;
 
 /**
  * Figure for Composite representation of Class.
  */
-public class CompositeFigure extends CompartmentFigure {
+public class CompositeFigure extends RoundedCompartmentFigure {
 
 	/** The Internal Structure Compartment */
 	private final static String COMPOSITE_COMPARTMENT = "compositeCompartment";

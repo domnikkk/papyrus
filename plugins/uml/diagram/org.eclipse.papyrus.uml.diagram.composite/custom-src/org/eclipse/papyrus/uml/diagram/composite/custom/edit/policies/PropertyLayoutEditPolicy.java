@@ -13,7 +13,6 @@
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.composite.custom.edit.policies;
 
-import org.eclipse.papyrus.uml.diagram.composite.custom.edit.parts.CustomPropertyPartEditPartCN;
 
 
 /**

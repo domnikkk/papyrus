@@ -18,14 +18,14 @@ import org.eclipse.draw2d.ImageFigure;
 import org.eclipse.draw2d.OrderedLayout;
 import org.eclipse.draw2d.Panel;
 import org.eclipse.draw2d.ToolbarLayout;
-import org.eclipse.papyrus.uml.diagram.common.figure.node.NodeNamedElementFigure;
+import org.eclipse.papyrus.uml.diagram.common.figure.node.RoundedCompartmentFigure;
 import org.eclipse.papyrus.uml.diagram.composite.part.UMLDiagramEditorPlugin;
 import org.eclipse.swt.graphics.Image;
 
 /**
  * Figure for CollaborationRole (in Composite) representation of ConnectableElement.
  */
-public class CollaborationRoleFigure extends NodeNamedElementFigure {
+public class CollaborationRoleFigure extends RoundedCompartmentFigure {
 
 	/**
 	 * Path of the Arrow image used in the figure.

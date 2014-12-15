@@ -301,4 +301,21 @@ StateMachineDiagram Pseudostate[kind="choice"]{
 	maintainSymbolRatio:false;
 }
 
+/*---------- Composite Diagram ---------*/
 
+CompositeDiagram Property[aggregation="shared"]{
+	borderStyle: custom;
+}
+
+CompositeDiagram  DurationObservation > Compartment[kind="symbol"],
+CompositeDiagram  TimeObservation > Compartment[kind="symbol"]
+{
+    visible:true;
+}
+
+CompositeDiagram  DurationObservation > Label,
+CompositeDiagram  TimeObservation > Label
+{
+    visible:true;
+    textAlignment:"Left";
+}

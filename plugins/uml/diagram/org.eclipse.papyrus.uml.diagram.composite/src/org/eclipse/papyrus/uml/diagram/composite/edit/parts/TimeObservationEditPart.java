@@ -29,22 +29,23 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.BorderItemSelectionEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.figures.IBorderItemLocator;
-import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.IPapyrusNodeFigure;
+import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.RoundedRectangleNodePlateFigure;
 import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.SelectableBorderedNodeFigure;
+import org.eclipse.papyrus.uml.diagram.common.editparts.RoundedCompartmentEditPart;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeIconlDisplayEditPolicy;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeLabelDisplayEditPolicy;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.QualifiedNameDisplayEditPolicy;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.ShowHideLabelEditPolicy;
+import org.eclipse.papyrus.uml.diagram.common.figure.node.RoundedCompartmentFigure;
 import org.eclipse.papyrus.uml.diagram.common.locator.ExternalLabelPositionLocator;
-import org.eclipse.papyrus.uml.diagram.composite.custom.edit.parts.AbstractObservationEditPart;
+import org.eclipse.papyrus.uml.diagram.common.locator.RoundedRectangleLabelPositionLocator;
 import org.eclipse.papyrus.uml.diagram.composite.custom.edit.policies.CustomDiagramDragDropEditPolicy;
 import org.eclipse.papyrus.uml.diagram.composite.custom.edit.policies.ObservationLayoutEditPolicy;
-import org.eclipse.papyrus.uml.diagram.composite.custom.figures.TimeObservationNodeFigure;
 import org.eclipse.papyrus.uml.diagram.composite.edit.policies.TimeObservationItemSemanticEditPolicy;
 import org.eclipse.papyrus.uml.diagram.composite.part.UMLVisualIDRegistry;
 import org.eclipse.swt.graphics.Color;
@@ -52,7 +53,7 @@ import org.eclipse.swt.graphics.Color;
 /**
  * @generated
  */
-public class TimeObservationEditPart extends AbstractObservationEditPart {
+public class TimeObservationEditPart extends RoundedCompartmentEditPart {
 
 	/**
 	 * @generated
@@ -165,7 +166,7 @@ public class TimeObservationEditPart extends AbstractObservationEditPart {
 	 */
 	@Override
 	protected IFigure createNodeShape() {
-		return primaryShape = new TimeObservationNodeFigure();
+		return primaryShape = new RoundedCompartmentFigure();
 	}
 
 	/**
@@ -174,8 +175,8 @@ public class TimeObservationEditPart extends AbstractObservationEditPart {
 	 * @generated
 	 */
 	@Override
-	public TimeObservationNodeFigure getPrimaryShape() {
-		return (TimeObservationNodeFigure) primaryShape;
+	public RoundedCompartmentFigure getPrimaryShape() {
+		return (RoundedCompartmentFigure) primaryShape;
 	}
 
 	/**
@@ -184,7 +185,7 @@ public class TimeObservationEditPart extends AbstractObservationEditPart {
 	@Override
 	protected void addBorderItem(IFigure borderItemContainer, IBorderItemEditPart borderItemEditPart) {
 		if (borderItemEditPart instanceof TimeObservationNameEditPart) {
-			IBorderItemLocator locator = new ExternalLabelPositionLocator(getMainFigure());
+			IBorderItemLocator locator = new RoundedRectangleLabelPositionLocator(getMainFigure());
 			borderItemContainer.add(borderItemEditPart.getFigure(), locator);
 		} else if (borderItemEditPart instanceof TimeObservationStereotypeLabelEditPart) {
 			IBorderItemLocator locator = new ExternalLabelPositionLocator(getMainFigure());
@@ -200,7 +201,7 @@ public class TimeObservationEditPart extends AbstractObservationEditPart {
 	 */
 	@Override
 	protected NodeFigure createNodePlate() {
-		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(40, 40);
+		RoundedRectangleNodePlateFigure result = new RoundedRectangleNodePlateFigure(20, 20);
 		return result;
 	}
 
