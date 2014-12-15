@@ -11,7 +11,7 @@
  *  Mathieu Velten (Atos Origin) mathieu.velten@atosorigin.com - Initial API and implementation
  *  Patrick Tessier (CEA LIST)-modification
  *  Christian W. Damus (CEA) - bug 421411
- *
+ *  Benoit Maggi (CEA LIST) benoit.maggi@cea.fr - Bug 454386
  *****************************************************************************/
 package org.eclipse.papyrus.infra.gmfdiag.hyperlink.editpolicies;
 
@@ -32,7 +32,9 @@ import org.eclipse.gef.commands.UnexecutableCommand;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.common.core.command.CompositeCommand;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
+import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.CompartmentEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.OpenEditPolicy;
 import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
@@ -42,7 +44,9 @@ import org.eclipse.papyrus.commands.INonDirtying;
 import org.eclipse.papyrus.commands.util.NonDirtyingUtils;
 import org.eclipse.papyrus.infra.core.editorsfactory.IPageIconsRegistry;
 import org.eclipse.papyrus.infra.core.editorsfactory.PageIconsRegistry;
+import org.eclipse.papyrus.infra.core.sasheditor.contentprovider.IPageManager;
 import org.eclipse.papyrus.infra.core.services.ServiceException;
+import org.eclipse.papyrus.infra.emf.utils.ServiceUtilsForEObject;
 import org.eclipse.papyrus.infra.gmfdiag.common.utils.DiagramUtils;
 import org.eclipse.papyrus.infra.gmfdiag.common.utils.ServiceUtilsForEditPart;
 import org.eclipse.papyrus.infra.gmfdiag.hyperlink.Activator;
@@ -63,18 +67,33 @@ import org.eclipse.papyrus.infra.hyperlink.util.HyperLinkHelpersRegistrationUtil
  */
 public class NavigationEditPolicy extends OpenEditPolicy {
 
-	public static final String NAVIGATION_POLICY = "NavigationEditPolicy";
+	public static final String NAVIGATION_POLICY =  "NavigationEditPolicy";
 
 	public NavigationEditPolicy() {
 	}
 
 	/**
+	 * @see org.eclipse.gmf.runtime.diagram.ui.editpolicies.OpenEditPolicy#getOpenCommand(org.eclipse.gef.Request)
+	 *
+	 * @param request
+	 * @return
+	 */
+	@Override
+	protected Command getOpenCommand(Request request) {
+		Command openCommand = getHyperlinkOpenCommand(request);
+		if (openCommand== null || !openCommand.canExecute()){
+			openCommand = getShortCutOpenCommand(request);
+		}
+		return openCommand;
+	}
+	
+	
+	/**
 	 *
 	 * @param request
 	 * @return get the command to open a new diagram
 	 */
-	@Override
-	protected Command getOpenCommand(Request request) {
+	protected Command getHyperlinkOpenCommand(Request request) {
 		final IGraphicalEditPart gep;
 
 		// in order to obtain the list of default diagram we need to fin the
@@ -344,8 +363,6 @@ public class NavigationEditPolicy extends OpenEditPolicy {
 	 * extension point namespace.
 	 *
 	 * @return the EditorRegistry for nested editor descriptors
-	 *
-	 * @generated NOT
 	 */
 	protected IPageIconsRegistry createEditorRegistry() {
 		try {
@@ -376,4 +393,60 @@ public class NavigationEditPolicy extends OpenEditPolicy {
 		}
 	};
 
+	/**
+	 * The Class OpenDiagramCommand.
+	 */
+	private static class OpenDiagramCommand extends AbstractTransactionalCommand {
+
+		/** The diagram to open. */
+		private Diagram diagramToOpen = null;
+
+		/**
+		 * Instantiates a new open diagram command.
+		 *
+		 * @param domain
+		 *            the domain
+		 * @param diagram
+		 *            the diagram
+		 */
+		public OpenDiagramCommand(TransactionalEditingDomain domain, Diagram diagram) {
+			super(domain, "open diagram", null);
+			diagramToOpen = diagram;
+		}
+
+		/**
+		 * {@inheritedDoc}
+		 */
+		@Override
+		protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+			try {
+				IPageManager pageMngr = ServiceUtilsForEObject.getInstance().getIPageManager(diagramToOpen);
+				if (pageMngr.isOpen(diagramToOpen)) {
+					pageMngr.selectPage(diagramToOpen);
+				} else {
+					pageMngr.openPage(diagramToOpen);
+				}
+				return CommandResult.newOKCommandResult();
+			} catch (Exception e) {
+				throw new ExecutionException("Can't open diagram", e);
+			}
+		}
+	}
+
+
+	/**
+	 * Get the open command previously defined by ShortCutEditPolicy
+	 * @param request
+	 * @return
+	 */
+	protected Command getShortCutOpenCommand(Request request) {
+		if (((GraphicalEditPart) getHost()).getNotationView().getElement() instanceof Diagram && ((GraphicalEditPart) getHost()).getNotationView().getElement().eResource() != null) {
+			Diagram diagram = (Diagram) ((GraphicalEditPart) getHost()).getNotationView().getElement();
+			OpenDiagramCommand openDiagramCommand = new OpenDiagramCommand(((GraphicalEditPart) getHost()).getEditingDomain(), diagram);
+			return new ICommandProxy(openDiagramCommand);
+		} else {
+			return UnexecutableCommand.INSTANCE;
+		}
+	}
+	
 }
