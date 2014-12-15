@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014 CEA and others.
+ * Copyright (c) 2014 CEA, Christian W. Damus, and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,6 +8,7 @@
  *
  * Contributors:
  *   Christian W. Damus (CEA) - Initial API and implementation
+ *   Christian W. Damus - bug 455248
  *
  */
 package org.eclipse.papyrus.uml.modelrepair.internal.stereotypes;
@@ -164,6 +165,14 @@ public class StereotypeApplicationRepairSnippet implements IModelSetSnippet {
 			} else if (!(next instanceof Package) && !(next instanceof Component)) {
 				// No sense looking for packages except in the things that can contain packages
 				iter.prune();
+			}
+		}
+
+		// We also need to get all profile applications inherited from containing packages in parent model units
+		if (root.eContainer() instanceof Element) {
+			Package containingPackage = ((Element) root.eContainer()).getNearestPackage();
+			if (containingPackage != null) {
+				profileApplications.addAll(containingPackage.getAllProfileApplications());
 			}
 		}
 
