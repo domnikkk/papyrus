@@ -23,7 +23,7 @@ Since UML is general-purpose modeling language in the field of software engineer
 
 In this user guide, bold text is used for menu selections, e.g. '''Help &gt; Welcome''' means from the '''Help''' item on the main menu, select the '''Welcome''' item.
 
-A context menu is the pop-up menu that appears when right clicking on something, e.g. right click on a class select '''New Child &gt; Create a new Operation''', will create a new operation on the class, using the class' context menu.
+A context menu is the pop-up menu that appears when right clicking on something, e.g. right click on a class select '''New Child &gt; Operation''', will create a new operation on the class, using the class' context menu.
 
 When text should be typed in, it is indicated by inline code, e.g. <code>this text should be typed in</code>.
 
@@ -31,17 +31,17 @@ Fields in wizards, pop-up windows, different editors, radio buttons and check bo
 
 = <div id="Installation">3 Installation</div> =
 
-It is a several step process to install Papyrus and its optional components. The ''Eclipse Standard'' must first be installed and when that is done, Papyrus is installed on top of ''Eclipse Standard''.
+It is a several step process to install Papyrus and its optional components. Basic ''Eclipse'' must first be installed and when that is done, Papyrus is installed on top of it.
 
-== 3.1 Install Eclipse Standard ==
+== 3.1 Install basic Eclipse ==
 
-''Eclipse Standard'' is installed from the [http://www.eclipse.org/downloads/ Eclipse download page]. On the download page select ''Eclipse Standard <version number>'' to install. Follow the install wizard to complete the installation.
+Basic ''Eclipse'' is installed from the [http://www.eclipse.org/downloads/ Eclipse download page]. On the download page select ''Eclipse Modeling Tools'' to install. Follow the installation guide to complete the installation.
 
 == 3.2 Install basic Papyrus ==
 
-When ''Eclipse Standard'' is installed, go to '''Help &gt; Install New Software''' and type in <code>http://download.eclipse.org/releases/kepler/</code> in the field named ''Work with:''.
+When basic ''Eclipse'' is installed, start it, go to '''Help &gt; Install New Software''' and type in <code>http://download.eclipse.org/releases</code> in the field named ''Work with:''.
 
-'''Note!''' When this user guide was written, the Kepler release of Eclipse was the latest. Select the latest official Eclipse release.
+'''Note!''' When this user guide was written, the Luna release of Eclipse was the latest. The latest official Eclipse release will pop up.
 
 '''Note!''' In some industrial environments, a proxy has to be used instead of this type of direct URL to the Eclipse web-site. To configure Eclipse to use a proxy is done under '''Windows &gt; Preferences''' and '''General &gt; Network Connections'''
 
@@ -53,7 +53,7 @@ When Eclipse is restarted, the environment is now ready for UML modeling.
 
 == 3.3 Additional installation steps ==
 
-After installation of the basic Papyrus feature, go to '''Help &gt; Install Papyrus Additional Components'''. In the wizard that pops up, select the needed additional Papyrus components, e.g. to be able to do UML RT modeling, the ''Real Time'' component is needed. It is also recommended to install the ''Diagram Stylesheets'' and ''Papyrus Compare'' components. Follow the installation wizard to complete the installation.
+After installation of the basic Papyrus feature, go to '''Help &gt; Install Papyrus Additional Components'''. In the wizard that pops up, select the needed additional Papyrus components, e.g. to be able to do UML RT modeling, the ''Real Time'' component is needed. It is also recommended to install the ''Diagram generation'', ''C++ code generation'', ''Papyrus Compare'' and ''RSA Model Importer'' components. Follow the installation wizard to complete the installation.
 
 <center>[[File:InstallPapyrusComp.bmp|thumb|center|thumb|437px|Figure 2: The Install Papyrus Additional Components wizard]]</center>
 
@@ -73,13 +73,13 @@ Plug-ins are coded in Java. A typical plug-in consists of Java code in a JAR (Ja
 
 Each plug-in has a manifest file declaring its interconnections to other plug-ins. The interconnection model is simple: a plug-in declares any number of named extension points, and any number of extensions to one or more extension points in other plug-ins.
 
-<center>[[File:Feature-Plug-in.bmp|center|thumb|290px|Figure 4: Plug-ins and Features]]</center>
+<center>[[File:Feature-Plug-in.bmp|center|thumb|100px|Figure 4: Plug-ins and Features]]</center>
 
 == <div id="Workspace">4.2 Workspace</div> ==
 
 The workspace is located in the file-system and is the place where Eclipse resources (files, folders and projects) are stored. When Eclipse is started, a pop-up window appears, where a workspace should be selected. One instance of Eclipse is connected to one workspace.
 
-<center>[[File:WorkspacePopup.bmp|center|thumb|593px|Figure 5: Pop-up window to select the workspace]]</center>
+<center>[[File:WorkspacePopup.bmp|center|thumb|400px|Figure 5: Pop-up window to select the workspace]]</center>
 
 In the file system all resources are stored in the selected workspace and in the same hierarchical structure as in the ''Project Explorer''.
 
@@ -95,15 +95,15 @@ Projects can be viewed as the top level folder in the file system under the work
 
 The workbench is the Eclipse user interface and is used to navigate, view, and edit resources in a workspace, i.e. the workbench is the Eclipse IDE's application window. The workbench presents one or more editors and ''views'' that are gathered into adjustable groups (''perspectives'').
 
-The first time Eclipse is started, after the installation, a ''Welcome'' page is presented. Take a few minutes to explore the product overview and getting started information that is located here.
+The first time Eclipse is started, after the installation, a ''Welcome'' page is presented, which may look different depending on the features installed. Take a few minutes to explore the product overview and getting started information that is located here.
 
-<center>[[File:WelcomePage.bmp|center|thumb|480px|Figure 6: The Eclipse welcome page]]</center>
+<center>[[File:WelcomePage.bmp|center|thumb|500px|Figure 6: The Eclipse welcome page]]</center>
 
 To return to the ordinary workbench, just click on the workbench icon up to the right. When starting Eclipse, subsequent times, the workbench appears directly. To visit the welcome page at any time, just select '''Help &gt; Welcome'''.
 
-The title bar of the workbench window and the little Papyrus icon to the right indicates which ''perspective'' is active. In this example, the Papyrus ''perspective'' is in use. The ''Project Explorer'' and the ''Model Explorer, Outline, Properties'' views, etc. are open, along with a ''Class Diagram'' editor and its tool palette.
+The title bar of the workbench window and the little Papyrus icon to the right indicates which ''perspective'' is active. In this example, the Papyrus ''perspective'' is in use. The ''Project Explorer'' and the ''Model Explorer, Outline, Properties'' views, etc. are open, along with a ''Class Diagram'' editor and its tool palette. If the ''Papyrus perspective'' is not active, activate by '''Windows &gt; Open Perspective &gt; Other''' and select ''Papyrus'' from the ''Open Perspective'' pop up window.
 
-<center>[[File:Workbench.bmp|center|thumb|512px|Figure 7: The Papyrus perspective in the workbench]]</center>
+<center>[[File:Workbench.bmp|center|thumb|600px|Figure 7: The Papyrus perspective in the workbench]]</center>
 
 It is easy to toggle between perspectives by clicking on some shown ''perspective'' in top of the right hand corner or open a new one by clicking on the ''Open Perspective'' icon [[File:IkonOpenPerspective.png]] and browse to the ''perspective'' to open. It is also possible to reorganize a ''perspective'', open/close ''views'', customize menus, etc. and then save the ''perspective'' with a new name by '''Window &gt; Save Perspective As ...'''.
 
@@ -111,9 +111,9 @@ It is easy to toggle between perspectives by clicking on some shown ''perspectiv
 
 ''Views'' and editors are the main visual entities that appear in the workbench. Any given ''perspective'' can contain multiple editors and a number of surrounding ''views'' that provide context.''Views'' provide different ways to visualize, navigate and edit the resources in the Eclipse workspace. ''Views'' can be single or stacked on top of each other.
 
-''Views'', including editor views, can be resize, moved, detached. In addition, a ''view'' can be maximized to cover the entire workbench by double-clicking on its tab. By double-clicking once more, it will return to its original size. Some ''views'' has a view specific menu, e.g. ''Project Explorer'' view, where some specific view settings could be done.
+''Views'', including editor views, can be resized, moved, detached. In addition, a ''view'' can be maximized to cover the entire workbench by double-clicking on its tab. By double-clicking once more, it will return to its original size. Some ''views'' has a view specific menu, e.g. ''Project Explorer'' view, where some specific view settings could be done.
 
-To add a new ''view'' to the active ''perspective'', use '''Window &gt; Show View'''and if the desired ''view'' does not appear on top of the pop-up menu, select '''Other''', which opens up a ''view'' browser, where all available ''views'' are organized in different categories.
+To add a new ''view'' to the active ''perspective'', use '''Window &gt; Show View''' and if the desired ''view'' does not appear on top of the pop-up menu, select '''Other''', which opens up a ''view'' browser, where all available ''views'' are organized in different categories.
 
 ==== 4.4.1.1 Single views ====
 
@@ -127,7 +127,7 @@ In the workbench figure, above, also ''stacked views'' appear, e.g. ''Properties
 
 To customize the settings for the Eclipse workbench and the installed features, the preference window is used. Use '''Windows &gt; Preferences''' to open it, e.g. under '''General &gt; Keys''' in the preference window there are shortcuts and keys defined for the user interface. Here they can be redefined or own sets could be defined.
 
-<center>[[File:Preferences.bmp|center|thumb|556px|Figure 8: The preference window]]</center>
+<center>[[File:Preferences.bmp|center|thumb|500px|Figure 8: The preference window]]</center>
 
 The preference window pages can be searched using the filter function. To filter by matching the page title, simply type the name of the page and the available pages will be presented below.
 
@@ -135,18 +135,18 @@ The filter also searches on keywords. By the history controls (the left, right a
 
 == 4.6 Import and Export ==
 
-Projects can be shared between workspaces by using project import and export, which are done through wizards. To open the import wizard, use '''File &gt; Import''' and in several steps select what, where from and if it should be imported as a copy or just referenced. To export resources, There are also an export wizard, which is opened by '''File &gt; Export''' and select details about what should be exported, if it should be compressed and where to export it to.
+Projects can be shared between workspaces by using project import and export, which are done through wizards. To open the import wizard, use '''File &gt; Import''' and in several steps select what, where from and if it should be imported as a copy or just referenced. To export resources, there is an export wizard, which is opened by '''File &gt; Export''' and select details about what should be exported, if it should be compressed and where to export it to.
 
 {|
 |
-[[File:ImportWiz.bmp|center|thumb|420px|Figure 9: Import wizard]]    
+[[File:ImportWiz.bmp|center|thumb|300px|Figure 9: Import wizard]]    
 |
-[[File:ExportWiz.bmp|center|thumb|538px|Figure 10: Export wizard]]
+[[File:ExportWiz.bmp|center|thumb|300px|Figure 10: Export wizard]]
 |}
 
 When importing a project into the used workspace, it can be copied by checking the box ''Copy ...'' in the import wizard. If this check box is unchecked, there will just be a reference to the other workspace and when editing that project, it will be edited in its original place. Be aware of that when doing so, several instances of Eclipse may edit the same resource.
 
-When exporting a project, browse to the place where to export it to name it and select if and how compression should be used.
+When exporting a project, browse to the place where to export it to, name it and select if and how compression should be used.
 
 = 5 Modeling =
 
@@ -298,21 +298,18 @@ Export ''My Project'' to a compressed file:
 Remove ''My Project'' from the workspace:
 
 # Right-click ''My Project'' in the ''Project Explorer'' and select '''Delete''' from the context menu.
-# In the ''Delete Resources'' pop-up window, make sure to check the
-
-''Delete project contents on disk'' check box. Click ''OK''. Note: If this check box is unchecked, the resource will just be deleted from the Workbench, but it will still exist in the workspace. (Notice ''My Project'' is no longer listed in the ''Project Explorer'')
+# In the ''Delete Resources'' pop-up window, make sure to check the ''Delete project contents on disk'' check box. Click ''OK''. Note: If this check box is unchecked, the resource will just be deleted from the Workbench, but it will still exist in the workspace, hence left in the file system. (Notice ''My Project'' is no longer listed in the ''Project Explorer'')
 
 ==== 6.1.4.3 Importing a project ====
 
 Import ''My Project'' from a compressed file:
 
 # Select '''File &gt; Import...''' from the workbench menu.
-# In the ''Import'' wizard, expand '''General''', and then select '''Existing Projects into Workspace'''. Click ''Next''.
+# In the ''Import'' wizard, expand '''General''' and then select '''Existing Projects into Workspace'''. Click ''Next''.
 # Click the '''Select archive file''' radio button.
 # Click the ''Browse'' button.
 # In the ''Browse'' window, browse to the ''Desktop'' and select '''My Project.zip''' and click ''Open''.
-
-<nowiki>#In the </nowiki>''Import'' wizard, check the check box next to ''My Project'' and click ''Finish'' to perform the import process. (Notice ''My Project'' is once again listed in the ''Project Explorer'')
+# In the ''Import'' wizard, check the check box next to ''My Project'' and click ''Finish'' to perform the import process. (Notice ''My Project'' is once again listed in the ''Project Explorer'')
 
 === 6.1.5 Conclusion ===
 
@@ -347,90 +344,95 @@ Create a new UML modeling project as follows:
 
 Create two packages in the model:
 
-# Right-click on the ''model'' package in the ''Model Explorer'', select '''New Child &gt; Create a new Package''' and select the created package in the ''Model Explorer''.
+# Right-click on the ''model'' package in the ''Model Explorer'', select '''New Child &gt; Package''' and select the created package in the ''Model Explorer''.
 # In the ''Properties'' view type <code>Clients</code> in the the field ''Name''.
-# Right-click on the ''model'' package in the ''Model Explorer'', select '''New Child &gt; Create a new Package''' and select the created package in the ''Model Explorer''.
+# Right-click on the ''model'' package in the ''Model Explorer'', select '''New Child &gt; Package''' and select the created package in the ''Model Explorer''.
 # In the ''Properties'' view type <code>Server</code> in the the field ''Name''.
 
 ==== 6.3.2.3 Create new classes ====
 
 Create two classes in the ''Server'' package. One is called ''Server1'' and the other is called ''DataClass1'':
 
-# Right-click on the ''Server'' package in the ''Model Explorer'', select '''New Child &gt; Create a new Class''' and select the created class in the ''Model Explorer''.
+# Right-click on the ''Server'' package in the ''Model Explorer'', select '''New Child &gt; Class''' and select the created class in the ''Model Explorer''.
 # In the ''Properties'' view type <code>Server1</code> in the the field ''Name''.
-# Right-click on the ''Server'' package in the ''Model Explorer'', select '''New Child &gt; Create a new Class''' and select the created class in the ''Model Explorer''.
+# Right-click on the ''Server'' package in the ''Model Explorer'', select '''New Child &gt; Class''' and select the created class in the ''Model Explorer''.
 # In the ''Properties'' view type <code>DataClass1</code> in the the field ''Name''.
 
 Create three different client classes in the ''Clients'' package:
 
-# Right-click on the ''Clients'' package in the ''Model Explorer'', select '''New Child &gt; Create a new Class''' and select the created class in the ''Model Explorer''.
+# Right-click on the ''Clients'' package in the ''Model Explorer'', select '''New Child &gt; Class''' and select the created class in the ''Model Explorer''.
 # In the ''Properties'' view type <code>Client1</code> in the the field ''Name''.
-# Right-click on the ''Clients'' package in the ''Model Explorer'', select '''New Child &gt; Create a new Class''' and select the created class in the ''Model Explorer''.
+# Right-click on the ''Clients'' package in the ''Model Explorer'', select '''New Child &gt; Class''' and select the created class in the ''Model Explorer''.
 # In the ''Properties'' view type <code>Client2</code> in the the field ''Name''.
-# Right-click on the ''Clients'' package in the ''Model Explorer'', select '''New Child &gt; Create a new Class''' and select the created class in the ''Model Explorer''.
+# Right-click on the ''Clients'' package in the ''Model Explorer'', select '''New Child &gt; Class''' and select the created class in the ''Model Explorer''.
 # In the ''Properties'' view type <code>ClientRoot</code> in the the field ''Name''.
 
 ==== 6.3.2.4 Create new class diagrams ====
 
+The terminology used in diagram editors is described in section [[#7.3.1_Diagram_editors]]. 
+
 Create two class diagrams in the model:
 
-# Right-click on the ''model'' package in the ''Model Explorer'', select '''New Diagram &gt; Create a new Class Diagram''' and type <code>Packages</code> in the ''Enter a new diagram name'' pop-up window.
-# Right-click on the ''model'' package in the ''Model Explorer'', select '''New Diagram &gt; Create a new Class Diagram''' and type <code>Classes</code> in the ''Enter a new diagram name'' pop-up window.
+# Right-click on the ''model'' package in the ''Model Explorer'', select '''New Diagram &gt; Create a new UML Class Diagram''' and type <code>Packages</code> in the ''Enter a new diagram name'' pop-up window.
+# Right-click on the ''model'' package in the ''Model Explorer'', select '''New Diagram &gt; Create a new UML Class Diagram''' and type <code>Classes</code> in the ''Enter a new diagram name'' pop-up window.
 
-==== 6.3.2.5 Create new operations and attributes ====
+==== 6.3.2.5 Create new attributes ====
 
-# Right-click on the class ''DataClass1'' and select '''New Child &gt; Create a new Property''' and select the created attribute in the ''Model Explorer''.  
+# Right-click on the class ''DataClass1'' and select '''New Child &gt; Property''' and select the created attribute in the ''Model Explorer''.  
 # In the ''Properties'' view, type <code>Field1</code> in the field ''Name'' and by the ''Type'' field click on the [[File:TypeKey.bmp]] key and select ''Integer'' from the ''UML Primitive Types''. This cause the created attribute to be named ''Field1'' and to be of type ''Integer''.
 # Follow the above pattern to also create the attributes ''Field2'' of type ''Integer'', ''Field3'' of type ''String'', and ''Field4'' of type ''String'' on class ''DataClass1''.
 # Create the attributes ''Attribute2'' of type ''String'', ''Attribute4'' of type ''Integer'' and ''Attribute5'' of type ''DataClass1'' on class ''Client1''.
-# Create the attribute ''Attribute3'' on class ''Client2''.
-# Create the attribute ''Attribute1'' on class ''Server1''.
-# Create the operation ''service1'' on class ''Server1'' by right-click on on the class ''Server1'' and select '''New Child &gt; Create a new Operation''' and select the created operation in the ''Model Explorer''.
+# Create the attribute ''Attribute3'' of type ''Integer'' on class ''Client2''.
+# Create the attribute ''Attribute1'' of type ''DataClass1'' on class ''Server1''.
+
+==== 6.3.2.6 Create new operations ====
+
+# Create the operation ''service1'' on class ''Server1'' by right-click on on the class ''Server1'' and select '''New Child &gt; Operation''' and select the created operation in the ''Model Explorer''.
 # In the ''Properties'' view, type <code>service1</code> in the the field ''Name'' and by the ''Owned parameter'' field click on the [[File:PlusKey.bmp]] key.
 # In the ''Create a new parameter'' pop-up window, type <code>service1return</code> in the ''Name'' field, select ''return'' from the ''Direction'' field drop down list and by the ''Type'' field click on the [[File:TypeKey.bmp]] key and select ''Integer'' from the ''UML Primitive Types''. This causes the return type of the operation to be defined as an integer.
 
 
-==== 6.3.2.6 Create new relationships between classes ====
+==== 6.3.2.7 Create new relationships between classes ====
 
 Create a ''Dependency'' relationship between the ''Clients'' and the ''Server'' packages:
 
-# Open the ''Diagram Packages'' diagram by double click on it in the ''Model Explorer''
-# Drag the ''Clients'' package to the class diagram (by click on it and while holding the mouse button down, move the cursor to the editing area in the class diagram editor and release it).
+# Open the ''Packages'' diagram by double clicking on it in the ''Model Explorer''
+# Drag the ''Clients'' package to the class diagram (by clicking on it, holding the mouse button down, move the cursor to the editing area in the class diagram editor and release it the mouse button).
 # Drag the '' Server'' package to the class diagram.
 # Select the ''Dependency'' tool from the ''Edges'' drawer in the ''Palette'', click on the ''Clients'' package and then on the ''Server'' package in the class diagram.
 # Type <code>Dependency</code> as the name of the relationship.
 
 Create a ''Generalization'' relationship between the classes ''Client2'' and ''Client1'', i.e. make ''Client2'' a sub-class of ''Client1'':
 
-# Open the ''Diagram Classes'' diagram by double click on it in the ''Model Explorer''
+# Open the ''Classes'' diagram by double click on it in the ''Model Explorer''
 # Drag the ''Client1'' class to the class diagram.
 # Drag the ''Client2'' class to the class diagram.
 # Select the ''Generalization'' tool from the ''Edges'' drawer in the ''Palette'', click on the ''Client2'' class and then on the ''Client1'' class in the class diagram.
 
-Create a ''Composite'' relationships between the classes ''ClientRoot'' and ''Client1'' plus ''ClientRoot'' and ''Client2'':
+Create a ''Composite'' relationship between the classes ''ClientRoot'' and ''Client1'' plus ''ClientRoot'' and ''Client2'':
 
 # Continue with the already opened class diagram ''Diagram Classes''.
 # Drag the ''ClientRoot'' class to the class diagram.
 # Select the ''Association'' tool from the ''Edges'' drawer in the ''Palette'', click on the ''ClientRoot'' class and the on the ''Client1'' class in the class diagram.
 # Select the created association in the class diagram and in the ''Properties'' view, rename the association to <code>cr-c1</code>.
 # Also in the same ''Properties'' view, at the member end, named ''client1'', by the ''Aggregation'' field, select ''composite'' from the drop down list.
-# Select the ''Association'' tool from the ''Edges'' drawer in the ''Palette'', click on the ''ClientRoot'' class and the on the ''Client2'' class in the class diagram.
+# Select the ''Association'' tool from the ''Edges'' drawer in the ''Palette'', click on the ''ClientRoot'' class and on the ''Client2'' class in the class diagram.
 # Select the created association in the class diagram and in the ''Properties'' view, rename the association to <code>cr-c2</code>.
 # Also in the same ''Properties'' view, at the member end, named ''client2'', by the ''Aggregation'' field, select ''composite'' from the drop down list.
 
-==== 6.3.2.7 Create a new package to be used for objects ====
+==== 6.3.2.8 Create a new package to be used for objects ====
 
 Create a new package in the model:
 
-# Right-click on the ''model'' package in the ''Model Explorer'', select '''New Child &gt; Create a new Package''' and select the created package in the ''Model Explorer''.
+# Right-click on the ''model'' package in the ''Model Explorer'', select '''New Child &gt; Package''' and select the created package in the ''Model Explorer''.
 # In the ''Properties'' view type <code>Objects</code> in the the field ''Name''.
 
-==== 6.3.2.8 Create new objects ====
+==== 6.3.2.9 Create new objects ====
 
 Create objects (instances of classes) in the ''Objects'' package:
 
-# Right-click on the ''Objects'' package in the ''Model Explorer'', select '''New Child &gt; Create a new InstanceSpecification''' and select the created object (InstanceSpecification) in the ''Model Explorer''.
-# In the ''Properties'' view type <code>clientObj1</code> in the the field ''Name'' and by the ''Classifier'' field click on the [[File:PlusKey.bmp]] key. In the ''Classifier'' window that pops up, browse to the ''Client2'' class and click on the [[File:Arrow.bmp]] key, which specifies the object's class as shown in figure 11.
+# Right-click on the ''Objects'' package in the ''Model Explorer'', select '''New Child &gt; InstanceSpecification''' and select the created object (InstanceSpecification) in the ''Model Explorer''.
+# In the ''Properties'' view, type <code>clientObj1</code> in the the field ''Name'' and by the ''Classifier'' field click on the [[File:PlusKey.bmp]] key. In the ''Classifier'' window that pops up, browse to the ''Client2'' class and click on the [[File:Arrow.bmp]] key, which specifies the object's class as shown in figure 11.
 
 <center>[[File:ClassifierPopUp.bmp|center|thumb|400px|Figure 11: The Classifier pop up window]]</center>
 
@@ -439,13 +441,13 @@ Follow the same pattern to create:
 # An object called ''clientObj2'' in the ''Objects'' package based on class ''Clent2''.
 # An object called ''serverObj1'' in the ''Objects'' package based on class ''Server1''.
 
-==== 6.3.2.9 Create a new class diagram ====
+==== 6.3.2.10 Create a new class diagram ====
 
 Create a class diagrams in the model to depicts the created objects:
 
-# Right-click on the ''model'' package in the ''Model Explorer'', select '''New Diagram &gt; Create a new Class Diagram''' and type <code>Objects</code> in the the ''Enter a new diagram name'' pop-up window.
+# Right-click on the ''model'' package in the ''Model Explorer'', select '''New Diagram &gt; Create a new UML Class Diagram''' and type <code>Objects</code> in the the ''Enter a new diagram name'' pop-up window.
 
-==== 6.3.2.10 Create new relationships between objects ====
+==== 6.3.2.11 Create new relationships between objects ====
 
 Create a ''Dependency'' relationship between the clients and the server objects:
 
@@ -454,9 +456,9 @@ Create a ''Dependency'' relationship between the clients and the server objects:
 # Drag the ''clientObj2'' object to the class diagram
 # Drag the ''serverObj1'' object to the class diagram.
 # Select the ''Dependency'' tool from the ''Edges'' drawer in the ''Palette'', click on the ''clientObj1'' object and then on the ''serverObj1'' object in the class diagram. Leave the default name on the relationship.
-# Also create a ''Dependency'' relationship between the ''clientObj2 and the ''serverObj1''.
+# Also create a ''Dependency'' relationship between the ''clientObj2'' and the ''serverObj1''.
 
-==== 6.3.2.11 Conclusion ====
+==== 6.3.2.12 Conclusion ====
 
 In this tutorial the following model was created:
 
@@ -480,9 +482,9 @@ Papyrus can be used to do
 * UML RT modeling, which is described in the section [[#6.3.3_RT_modeling]] when the UML RT profile is applied.
 * SysML modeling when the SysML profile is applied.
 * MARTE modeling when the MARTE profile is applied.
-* UML profiles, which is described in the section [[#7.10_UML_profiling|UMLprofiling]] .
+* UML profiles, which is described in the section [[#7.10_UML_profiling]] .
 
-In Papyrus, different UML profiles can be applied. When installing Papyrus, as described in section [[#3_Installation|Installation]] , also the UML, UML RT, SysML and MARTE profiles can be added. When creating a new Papyrus project, the type of Papyrus project is selected. Project types to chose from are SysML, Profile and UML.
+In Papyrus, different UML profiles can be applied. When installing Papyrus, as described in section [[#3_Installation]], also the UML, UML RT, SysML and MARTE profiles can be added. When creating a new Papyrus project, the type of Papyrus project is selected. Project types to chose from are SysML, Profile and UML.
 
 == 7.1 Papyrus resources in the workspace ==
 
@@ -497,11 +499,11 @@ When modeling in Papyrus, three types of resources are stored in the workspace.
 * '''.notation''' file persists the information about the diagrams in the model.
 * '''.uml''' file persists the UML model.
 
-Note! In this case the model is contained in three files. When working in an industrial context, the model may need to be split up into several fragments in order for several designers to work concurrently with the same model. This is described in section [[#7.6_Papyrus_in_a_team_environment|Papyrus in a team environment]] .
+Note! In this case the model is contained in three files. When working in an industrial context, the model may need to be split up into several fragments in order for several designers to work concurrently with the same model. This is described in section [[#7.6_Papyrus_in_a_team_environment]].
 
 == 7.2 The Papyrus perspective ==
 
-When Papyrus is installed a predefined perspective called ''Papyrus'' is made available. This is the perspective to use when modeling with Papyrus. The Papyrus perspective can be customized to the user needs and saved as new perspective ( see section [[#4.4_Workbench|Workbench]] ).
+When Papyrus is installed a predefined perspective called ''Papyrus'' is made available. This is the perspective to use when modeling with Papyrus. The Papyrus perspective can be customized to the user needs and saved as new perspective ( see section [[#4.4_Workbench]] ).
 
 === 7.2.1 Project Explorer view ===
 
@@ -509,7 +511,7 @@ The ''Project Explorer'' view is used to browse, select and manipulate resources
 
 <center>[[File:ProjectExpl.bmp|center|thumb|200px|Figure 17: The Project Explorer]]</center>
 
-In some views, as in this case, there is a view specific menu (indicated in Figure 13 with a red ring). Here some settings can be applied for the view, e.g. if the top level should be working sets or projects.
+In some views, as in this case, there is a view specific menu (indicated in Figure 17 with a red ring). Here some settings can be applied for the view, e.g. if the top level should be working sets or projects.
 
 === 7.2.2 Model Explorer view ===
 
@@ -523,7 +525,7 @@ The ''Editing View'' is in the middle part of the workbench and here opens diffe
 
 <center>[[File:EditingView.bmp|center|thumb|400px|Figure 19: The Editing View]]</center>
 
-How to use editors is described in section [[#7.3_Diagram_editing_in_Papyrus|Editors in Papyrus]].
+How to use editors is described in section [[#7.3_Diagram_editing_in_Papyrus]].
 
 === 7.2.4 Outline view ===
 
@@ -543,16 +545,16 @@ In this view the properties may be viewed and edited, e.g. rename the operation 
 
 === 7.2.6 Model Validation view ===
 
-From the context menu in the ''Model Explorer'' it is possible to validate the entire model or parts of it (for more details see section [[#7.7_Model_validation|Model validation]] . All warnings and errors appear in the ''Model Validation View'', which is a stacked view together with the ''Properties View'' and the ''Search View'' at the bottom of the workbench.
+From the context menu in the ''Model Explorer'' it is possible to validate the entire model or parts of it (for more details see section [[#7.7_Model_validation]] . All warnings and errors appear in the ''Model Validation View'', which is a stacked view together with the ''Properties View'' and the ''Search View'' at the bottom of the workbench.
 
 <center>[[File:ModelValidationView.bmp|center|thumb|500px|Figure 22: The Model Validation View]]</center>
 
 
-The model validation constraints are customizable and how to work with it is described in section [[#7.7_Model_validation|Model validation]] .
+The model validation constraints are customizable and how to work with it is described in section [[#7.7_Model_validation]] .
 
 === 7.2.7 Search view ===
 
-It is possible to do searches on a selected resource in a specific project or in the entire workspace. When the search is finished, the result appears in the ''Search View''. Details about specifying searches is described in the [[#7.8_Searching|Searching]] section.
+It is possible to do searches on a selected resource in a specific project or in the entire workspace. When the search is finished, the result appears in the ''Search View''. Details about specifying searches is described in the section [[#7.8_Searching]].
 
 <center>[[File:SearchView.bmp|center|thumb|500px|Figure 23: The Search View]]</center>
 
@@ -580,11 +582,11 @@ Diagrams can be created in different places in the model such as they can be own
 
 ==== 7.3.2.1 Creating diagrams ====
 
-To create a diagram, right click on the model element that should be the owner of the diagram and select '''New Diagram''' from the context menu. A new level of menu appears, displaying all types of diagrams that are available to create in this place, e.g. Figure 21 shows the available diagram types that can be created directly on top in the model package.
+To create a diagram, right click on the model element that should be the owner of the diagram and select '''New Diagram''' from the context menu. A new level of menu appears, displaying all types of diagrams that are available to create in this place, e.g. Figure 25 shows the available diagram types that can be created directly on top in the model package.
 
 <center>[[File:NewDiagram.bmp|center|thumb|500px|Figure 25: Available diagram types that can be created directly under the model package]]</center>
 
-'''Note!''' In Figure 25, no adaptation of Papyrus has taken place, hence all diagram types according pops up.
+'''Note!''' In Figure 25, no customization of Papyrus has taken place, hence all diagram types according pops up. 
 
 ==== 7.3.2.2 Scrolling and panning in diagrams ====
 
@@ -607,7 +609,7 @@ If an element already exists in the model, just click on (hold down) the element
 
 ==== 7.3.2.4 Delete and hide ====
 
-In a diagram, elements can be deleted or hided.
+In a diagram, elements can be deleted or hidden.
 
 <center>[[File:ElementContextMenuDiaDelHide.bmp|center|thumb|200px|Figure 26: Context menu of an element in a diagram]]</center>
 
@@ -627,12 +629,12 @@ Diagrams can be adjusted and graphically edited to get a nicer look also using t
 In Figure 27 several menu items are shown, e.g.:
 
 * '''Validation''' to validate the model partly or fully
-* '''Format''' to do some advanced formating of the diagram like adjustments, routing, etc. as shown in the sub context menu in Figure 25
+* '''Format''' to do some advanced formating of the diagram like adjustments, routing, etc. as shown in the sub context menu in Figure 27
 * '''Filter''' to select/unselect parts of symbols that should be visible or not
 
 == <div id="UMLmodeling">7.4 UML modeling</div> ==
 
-With Papyrus, UML models can be created. This is done using different types of diagrams. Modeling elements can be created in these diagrams or directly in the ''Model Explorer''. Diagrams are created in the ''Model Explorer'' and when doing so a diagram editor together with its tool palette and outline view are also opened. Section [[#7.3_Diagram_editing_in_Papyrus|Diagram editing in Papyrus]] describes how to work with diagram editors.
+With Papyrus, UML models can be created. This is done using different types of diagrams. Modeling elements can be created in these diagrams or directly in the ''Model Explorer''. Diagrams are created in the ''Model Explorer'' and when doing so a diagram editor together with its tool palette and outline view are also opened. Section [[#7.3_Diagram_editing_in_Papyrus]] describes how to work with diagram editors.
 
 The most common modeling elements are:
 
@@ -644,9 +646,9 @@ The most common modeling elements are:
 
 === 7.4.1 Package ===
 
-A ''package'' is a general UML grouping element, comparable to a folder in Windows or a directory in Unix. It is used to bring order in the model. A ''package'' may have a semantical meaning (e.g. representing a subsystem) and then a UML stereotype, defined in a applied UML Profile, may be added to it (e.g. &lt;&lt; subsystem &gt;&gt;). To create a new ''package'', right click on the owning element, e.g. the model package and from the context menu select '''New Child &gt; Create a new Package'''
+A ''package'' is a general UML grouping element, comparable to a folder in Windows or a directory in Unix. It is used to bring order in the model. A ''package'' may have a semantical meaning (e.g. representing a subsystem) and then a UML stereotype, defined in a applied UML Profile, may be added to it (e.g. &lt;&lt; subsystem &gt;&gt;). To create a new ''package'', right click on the owning element, e.g. the model package and from the context menu select '''New Child &gt; Package'''
 
-<center>[[File:NewPackage.bmp|center|thumb|500px|Figure 28: Create a new Package]]</center>
+<center>[[File:NewPackage.bmp|center|thumb|400px|Figure 28: Create a new Package]]</center>
 
 === 7.4.2 Use-case ===
 
@@ -654,17 +656,17 @@ A ''use-case'' is a functionality in the system. A ''use-case'' is a model of th
 A ''use-case'' is a complete and meaningful flow of events.
 Taken together, all ''use-cases'' constitute all possible ways of using the system.
 
-To create a new ''use-case'', right click on the owning element, e.g. a package and from the context menu select '''New Child &gt; Create a new UseCase'''
+To create a new ''use-case'', right click on the owning element, e.g. a package and from the context menu select '''New Child &gt; UseCase'''
 
-<center>[[File:NewUseCase.bmp|center|thumb|500px|Figure 29: Create a new use-case]]</center>
+<center>[[File:NewUseCase.bmp|center|thumb|400px|Figure 29: Create a new use-case]]</center>
 
 === 7.4.3 Actor ===
 
 An ''actor'' is something external to the system, but interacts with it. An ''actor'' may be a human being or another system. It may be active or passive. An ''actor'' interacts (active ''actor'') or receive (passive ''actor'') information from one or several use-cases.
 
-To create a new ''actor'', right click on the owning element, e.g. a package and from the context menu select '''New Child &gt; Create a new Actor'''
+To create a new ''actor'', right click on the owning element, e.g. a package and from the context menu select '''New Child &gt; Actor'''
 
-<center>[[File:NewActor.bmp|center|thumb|500px|Figure 30: Create a new actor]]</center>
+<center>[[File:NewActor.bmp|center|thumb|400px|Figure 30: Create a new actor]]</center>
 
 === 7.4.4 Class ===
 
@@ -674,33 +676,33 @@ Collectively attributes define the structure of a ''class''. A class may have an
 
 Collectively operations define the behavior of the ''class''. A ''class'' may have any number of operations or none. Operations are implemented as functions or procedures.
 
-To create a new ''class'', right click on the owning element, e.g. a package and from the context menu select '''New Child &gt; Create a new Class'''
+To create a new ''class'', right click on the owning element, e.g. a package and from the context menu select '''New Child &gt; Class'''
 
-<center>[[File:NewClass.bmp|center|thumb|500px|Figure 31: Create a new class]]</center>
+<center>[[File:NewClass.bmp|center|thumb|400px|Figure 31: Create a new class]]</center>
 
 ==== 7.4.4.1 Attributes on classes ====
 
-When a ''class'' is created, ''attributes'' can be added to it by using the context menu of the ''class''. To create a new ''attribute'' on the a ''class'' select '''New Child &gt; Create a new Property''' from its context menu.
+When a ''class'' is created, ''attributes'' can be added to it by using the context menu of the ''class''. To create a new ''attribute'' on the a ''class'' select '''New Child &gt; Property''' from its context menu.
 
-<center>[[File:NewAttribute.bmp|center|thumb|500px|Figure 32: Create a new attribute]]</center>
+<center>[[File:NewAttribute.bmp|center|thumb|400px|Figure 32: Create a new attribute]]</center>
 
 The visibility, type and default value of the attribute are set in the properties view when the attribute is selected.
 
 ==== 7.4.4.2 Operations on classes ====
 
-When a ''class'' is created, ''operations'' can be added to it by using the context menu of the ''class''. To create a new ''operation'' on the a ''class'' select '''New Child &gt; Create a new Operation''' from its context menu.
+When a ''class'' is created, ''operations'' can be added to it by using the context menu of the ''class''. To create a new ''operation'' on the a ''class'' select '''New Child &gt; Operation''' from its context menu.
 
-<center>[[File:NewOperation.bmp|center|thumb|500px|Figure 33: Create a new operation]]</center>
+<center>[[File:NewOperation.bmp|center|thumb|400px|Figure 33: Create a new operation]]</center>
 
 The visibility, arguments and return type of the operation are set in the properties view when the operation is selected.
 
 Regarding the arguments and return type of the an operation, select the [[File:PlusKey.bmp]] key by the ''Owned parameter'' field.
 
-<center>[[File:ClassOp1.bmp|center|thumb|600px|Figure 34: Create a new argument]]</center>
+<center>[[File:ClassOp1.bmp|center|thumb|500px|Figure 34: Create a new argument]]</center>
 
 Then the following window pops up and from the drop list in the ''Direction'' field, select the direction of the argument. In the ''Name'' field the name of the argument is written and the type is defined in the ''Type'' field.
 
-<center>[[File:ClassOp2.bmp|center|thumb|600px|Figure 35: Select the argument´s direction]]</center>
+<center>[[File:ClassOp2.bmp|center|thumb|500px|Figure 35: Select the argument´s direction]]</center>
 
 The direction ''return'' defines the return type of the operation. Only one argument can have the return direction.
 
@@ -708,19 +710,25 @@ The direction ''return'' defines the return type of the operation. Only one argu
 
 An ''object'' is an instance of a class. In UML it is called and ''InstanceSpecification'', which is a more general term since it can be used for instances of other classifiers than classes. 
 
-To create a new ''object'', right click on the owning element, e.g. a package and from the context menu select '''New Child &gt; Create a new InstanceSpecification'''
+==== 7.4.5.1 One way to create an object ====
 
-<center>[[File:NewObject.bmp|center|thumb|500px|Figure 36: Create a new object]]</center>
+To create a new ''object'', right click on the owning element, e.g. a package and from the context menu select '''New Child &gt; InstanceSpecification'''
+
+<center>[[File:NewObject.bmp|center|thumb|400px|Figure 36: Create a new object]]</center>
 
 The class to be instanciated is selected by clicking on the [[File:PlusKey.bmp]] key by the ''Classifier'' field in the ''Properties'' view of the ''InstanceSpecification''. This will open the ''Classifier'' pop-up window (figure 37), where the class to be used is selected.
 
 <center>[[File:ClassifierPopup.bmp|center|thumb|500px|Figure 37: Classifier pop-up window]]</center>
 
+==== 7.4.5.2 Another way to create an object ====
+
+When creating and classifying an object in a diagram, it is done in a special way why this is explicitly described here. Open or create a class diagram and create or drag a class, which later will be used classifier, in the diagram. Create an ''InstanceSpecification'' in the same diagram using the palette. Now drag the class onto the ''InstanceSpecification'', which causes the ''InstanceSpecification'' to be classified to the class used. Name the object in the properties view.
+
 === 7.4.6 Relationships ===
 
 There are different types of relationships that can be used in diagrams, hence in the model between different modeling elements.
 
-     [[Image:Relationships.bmp|center|thumb|300px]]
+[[File:Relationships.bmp|300px]]
 
 Navigability can be unidirectional or bidirectional for ''Association'', ''Aggregation'' and ''Composition''.
 
@@ -740,16 +748,16 @@ The ''Realizes'' relationship specifies that, e.g. an implementation realizes a 
 
 To create a relationship between two modeling elements, use the tool palette in the diagram editor, e.g. to create an ''Association'' between two classes, select the ''Association'' tool in the tool palette, click on the source element and then click on the destination element as described in figure 38.
 
-[[Image:ClassDiagramEditorNewAss.bmp|center|thumb|500px|Figure 38: Create a new Association]]
+<center>[[File:ClassDiagramEditorNewAss.bmp|center|thumb|500px|Figure 38: Create a new Association]]</center>
 
 
 In the ''Edges'' drawer in the tool palette, all available relationships are shown. To create a ''Generalization'' relationship, select the ''Generalization'' tool from the tool palette and follow the same procedure as described.
 
 The ''Aggregation'' and the ''Composition'' relationships are a special kind of an ''Association'' relationship. To create any of these, an ''Association'' relationship needs first to be created. Then select the created ''Association'' and in the properties view, change the ''Aggregation'' field at the appropriate end of the ''Association'' to ''shared''(if an ''Aggregation'' is desired) or to ''composite'' (if a ''Composition'' is desired). Figure 39 shows how to do it.
 
-[[Image:ClassDiagramEditorNewAgg.bmp|center|thumb|500px|Figure 39: Create a new Association]]
+<center>[[File:ClassDiagramEditorNewAgg.bmp|center|thumb|500px|Figure 39: Create a new Association]]</center>
 
-When the ''Association'' is created, the ''Aggregation'' field is set to ''none'' by default. When doing the change at the destination end (as in figure 35), the diamond shows up at the source end of the relationship.
+When the ''Association'' is created, the ''Aggregation'' field is set to ''none'' by default. When doing the change at the destination end (as in figure 39), the diamond shows up at the source end of the relationship.
 
 === 7.4.7 Diagrams ===
 
@@ -757,7 +765,7 @@ UML has many different types of diagrams to capture all different aspects of a s
 
 The different diagrams in UML 2 are shown in figure 40 and here they are structured after diagram type. In the following of this section they are organized how they are used. 
 
-<center>[[File:UMLdiagrams.png|center|thumb|500px|Figure 40: UMl 2 diagram types]]</center>
+<center>[[File:UMLdiagrams.png|center|thumb|500px|Figure 40: UML 2 diagram types]]</center>
 
 '''Note!''' In Papyrus class diagrams are also used as object diagrams.
 
@@ -786,7 +794,7 @@ A ''use-case'' interacts with an ''actor'' and perform something useful for that
 
 All ''use-cases'' together span the entire functionality of the system. ''Actors'', ''use-cases'' and ''use-case diagrams'' are owned by packages (general UML packages or model packages).
 
-To create a ''use-case diagram'', right click on the owning package and select '''New Diagram &gt; Create a new UseCase Diagram''' from its context menu.
+To create a ''use-case diagram'', right click on the owning package and select '''New Diagram &gt; Create a new UML UseCase Diagram''' from its context menu.
 
 
 An ''activity diagram'' is a kind of behavioral diagram and shows flow of control from activity to activity. It is used to specify a use-case black box view. It can also be used to specify a flow chart for a class operation.
@@ -805,7 +813,7 @@ The main elements in an ''activity diagram'' are:
 
 The ''activity diagram'' is preferably used to specify the black box behavior of a use-case instead of using plain text. It may also be used to specify a flow chart for a class operation.''Activity diagrams'' are owned by use-cases or classes. 
 
-To create an ''activity diagram'', right click on the owning use-case or class and select '''New Diagram &gt; Create a new Activity Diagram''' from its context menu.
+To create an ''activity diagram'', right click on the owning use-case or class and select '''New Diagram &gt; Create a new UML Activity Diagram''' from its context menu.
 
 
 Interaction diagrams are used to specify how different modeling elements interacts. Here two types are described, the ''sequence diagram'' and the ''communication diagram''.
@@ -826,7 +834,7 @@ The example (Figure 43) describes Interaction1, two objects (instances of Class1
 
 ''Sequence diagrams'' are owned by use-cases or communication diagrams (see below). 
 
-To create a ''sequence diagram'', right click on the owning use-case or communication diagram and select '''New Diagram &gt; Create a new Sequence Diagram''' from its context menu.
+To create a ''sequence diagram'', right click on the owning use-case or communication diagram and select '''New Diagram &gt; Create a new UML Sequence Diagram''' from its context menu.
 
 
 ''Communication diagrams'' show the lines of communication among a set of objects to accomplish a specific purpose. They act as the framework for sequence diagrams and define access paths between elements. i.e. ''communication diagrams'' are used to specify a use-case's white box communication channels between elements in the system.
@@ -842,7 +850,7 @@ The main elements in a ''collaboration diagram'' are:
 
 The example (Figure 44) describes access paths between objects and which messages are passed in these paths.''Communication diagrams'' are owned by use-cases. 
 
-To create a ''communication diagram'', right click on the owning use-case and select '''New Diagram &gt; Create a new Communication Diagram''' from its context menu.
+To create a ''communication diagram'', right click on the owning use-case and select '''New Diagram &gt; Create a new UML Communication Diagram''' from its context menu.
 
 ==== 7.4.7.2 Diagrams related to classes ====
 
@@ -869,7 +877,7 @@ The example (Figure 45) shows a ''class diagram'' used to specify an inheritance
 
 ''Class diagrams'' are owned by ordinary UML packages or model packages. 
 
-To create a ''class diagram'', right click on the owning package and select '''New Diagram &gt; Create a new Class Diagram''' from its context menu.
+To create a ''class diagram'', right click on the owning package and select '''New Diagram &gt; Create a new UML Class Diagram''' from its context menu.
 
 
 The ''composite structure diagram'' specifies structure classes contents, i.e. how the class uses ''roles'' (instances from other classes) and how they are connected to fulfill its responsibility.
@@ -886,7 +894,7 @@ The example (Figure 46) shows a ''composite structure diagram'' used to specify 
 
 ''Composite structure diagrams'' are owned by structured classes. 
 
-To create a ''composite structure diagram'', right click on the owning class and select '''New Diagram &gt; Create a new Composite Structure Diagram''' from its context menu.
+To create a ''composite structure diagram'', right click on the owning class and select '''New Diagram &gt; Create a new UML Composite Structure Diagram''' from its context menu.
 
 
 The ''state machine diagram'' specifies the behavior of a class. It is used when the class is state rich, i.e. has an event driven behavior. If the class has no states, activity diagrams can be used.
@@ -905,12 +913,12 @@ The example (Figure 47) shows a ''state machine diagram'' that has an initial ps
 
 ''State machine diagrams'' are owned by classes. 
 
-To create a ''state machine diagram'', right click on the owning class and select '''New Diagram &gt; Create a new State Machine Diagram''' from its context menu.
+To create a ''state machine diagram'', right click on the owning class and select '''New Diagram &gt; Create a new UML StateMachine Diagram''' from its context menu.
 
 
 == <div id="UMLRTmodeling">7.5 UML RT modeling</div> ==
 
-When creating models UML is used. Since UML is general-purpose modeling language in the field of software engineering, it is possible to adapt UML to specific domains. This is done by creating and applying UML profiles. When using UML for RT modeling with Capsules and Protocols, the UML RT profile is applied. When a profile is applied we can say that Papyrus has been specialized. There is a specific use-case in Papyrus to develop UML profiles and when doing so a domain specific modeling language is defined. This use-case is described in section [[#7.10_UML_profiling |UML profiling]] in this user guide.
+When creating models UML is used. Since UML is general-purpose modeling language in the field of software engineering, it is possible to adapt UML to specific domains. This is done by creating and applying UML profiles. When using UML for RT modeling with Capsules and Protocols, the UML RT profile is applied. When a profile is applied we can say that Papyrus has been specialized. There is a specific use-case in Papyrus to develop UML profiles and when doing so a domain specific modeling language is defined. This use-case is described in section [[#7.10_UML_profiling]] in this user guide.
 
 === 7.5.1 Additional modeling elements ===
 

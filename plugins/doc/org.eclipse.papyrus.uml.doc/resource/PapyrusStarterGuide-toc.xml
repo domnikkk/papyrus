@@ -7,9 +7,9 @@
 		<topic href="resource/PapyrusStarterGuide.html#2.1_Legend" label="2.1 Legend"></topic>
 	</topic>
 	<topic href="resource/PapyrusStarterGuide.html#3_Installation" label="3 Installation">
-		<topic href="resource/PapyrusStarterGuide.html#3.1_Install_Eclipse_Standard" label="3.1 Install Eclipse Standard"></topic>
+		<topic href="resource/PapyrusStarterGuide.html#3.1_Install_basic_Eclipse" label="3.1 Install basic Eclipse"></topic>
 		<topic href="resource/PapyrusStarterGuide.html#3.2_Install_basic_Papyrus" label="3.2 Install basic Papyrus"></topic>
-		<topic href="resource/PapyrusStarterGuide.html#3.3_Additional_installation_for_Papyrus_UML_RT_modeling" label="3.3 Additional installation for Papyrus UML RT modeling"></topic>
+		<topic href="resource/PapyrusStarterGuide.html#3.3_Additional_installation_steps" label="3.3 Additional installation steps"></topic>
 	</topic>
 	<topic href="resource/PapyrusStarterGuide.html#4_Eclipse" label="4 Eclipse">
 		<topic href="resource/PapyrusStarterGuide.html#4.1_Architecture" label="4.1 Architecture"></topic>
@@ -28,12 +28,12 @@
 		<topic href="resource/PapyrusStarterGuide.html#5.1_Model_and_diagrams" label="5.1 Model and diagrams"></topic>
 	</topic>
 	<topic href="resource/PapyrusStarterGuide.html#6_Tutorials" label="6 Tutorials">
-		<topic href="resource/PapyrusStarterGuide.html#6.1_Getting_started" label="6.1 Getting started">
+		<topic href="resource/PapyrusStarterGuide.html#6.1_Getting_started_with_general_Eclipse_functionality" label="6.1 Getting started with general Eclipse functionality">
 			<topic href="resource/PapyrusStarterGuide.html#6.1.1_Exploring_perspectives" label="6.1.1 Exploring perspectives">
 				<topic href="resource/PapyrusStarterGuide.html#6.1.1.1_Exploring_the_.27.27Papyrus.27.27_perspective" label="6.1.1.1 Exploring the ''Papyrus'' perspective"></topic>
 				<topic href="resource/PapyrusStarterGuide.html#6.1.1.2_Exploring_and_customizing_the_Resource_perspective" label="6.1.1.2 Exploring and customizing the Resource perspective"></topic>
 			</topic>
-			<topic href="resource/PapyrusStarterGuide.html#6.1.2_Creating_a_project.2C_folder_and_files" label="6.1.2 Creating a project, folder and files">
+			<topic href="resource/PapyrusStarterGuide.html#6.1.2_Creating_a_new_project.2C_folder_and_files" label="6.1.2 Creating a new project, folder and files">
 				<topic href="resource/PapyrusStarterGuide.html#6.1.2.1_Creating_a_new_general_project" label="6.1.2.1 Creating a new general project"></topic>
 				<topic href="resource/PapyrusStarterGuide.html#6.1.2.2_Creating_a_new_folder" label="6.1.2.2 Creating a new folder"></topic>
 				<topic href="resource/PapyrusStarterGuide.html#6.1.2.3_Creating_and_editing_a_new_file" label="6.1.2.3 Creating and editing a new file"></topic>
@@ -54,9 +54,22 @@
 			<topic href="resource/PapyrusStarterGuide.html#6.1.5_Conclusion" label="6.1.5 Conclusion"></topic>
 		</topic>
 		<topic href="resource/PapyrusStarterGuide.html#6.2_Creating_profiles" label="6.2 Creating profiles"></topic>
-		<topic href="resource/PapyrusStarterGuide.html#6.3_Creating_models" label="6.3 Creating models">
-			<topic href="resource/PapyrusStarterGuide.html#6.3.1_Use_case_modeling" label="6.3.1 Use case modeling"></topic>
-			<topic href="resource/PapyrusStarterGuide.html#6.3.2_Design_modeling" label="6.3.2 Design modeling"></topic>
+		<topic href="resource/PapyrusStarterGuide.html#6.3_Creating_models_using_Papyrus" label="6.3 Creating models using Papyrus">
+			<topic href="resource/PapyrusStarterGuide.html#6.3.1_Use-case_modeling" label="6.3.1 Use-case modeling"></topic>
+			<topic href="resource/PapyrusStarterGuide.html#6.3.2_Design_modeling" label="6.3.2 Design modeling">
+				<topic href="resource/PapyrusStarterGuide.html#6.3.2.1_Create_a_new_UML_project" label="6.3.2.1 Create a new UML project"></topic>
+				<topic href="resource/PapyrusStarterGuide.html#6.3.2.2_Create_new_packages_to_be_used_for_classes" label="6.3.2.2 Create new packages to be used for classes"></topic>
+				<topic href="resource/PapyrusStarterGuide.html#6.3.2.3_Create_new_classes" label="6.3.2.3 Create new classes"></topic>
+				<topic href="resource/PapyrusStarterGuide.html#6.3.2.4_Create_new_class_diagrams" label="6.3.2.4 Create new class diagrams"></topic>
+				<topic href="resource/PapyrusStarterGuide.html#6.3.2.5_Create_new_attributes" label="6.3.2.5 Create new attributes"></topic>
+				<topic href="resource/PapyrusStarterGuide.html#6.3.2.6_Create_new_operations" label="6.3.2.6 Create new operations"></topic>
+				<topic href="resource/PapyrusStarterGuide.html#6.3.2.7_Create_new_relationships_between_classes" label="6.3.2.7 Create new relationships between classes"></topic>
+				<topic href="resource/PapyrusStarterGuide.html#6.3.2.8_Create_a_new_package_to_be_used_for_objects" label="6.3.2.8 Create a new package to be used for objects"></topic>
+				<topic href="resource/PapyrusStarterGuide.html#6.3.2.9_Create_new_objects" label="6.3.2.9 Create new objects"></topic>
+				<topic href="resource/PapyrusStarterGuide.html#6.3.2.10_Create_a_new_class_diagram" label="6.3.2.10 Create a new class diagram"></topic>
+				<topic href="resource/PapyrusStarterGuide.html#6.3.2.11_Create_new_relationships_between_objects" label="6.3.2.11 Create new relationships between objects"></topic>
+				<topic href="resource/PapyrusStarterGuide.html#6.3.2.12_Conclusion" label="6.3.2.12 Conclusion"></topic>
+			</topic>
 			<topic href="resource/PapyrusStarterGuide.html#6.3.3_RT_modeling" label="6.3.3 RT modeling"></topic>
 		</topic>
 	</topic>
@@ -82,47 +95,37 @@
 			</topic>
 		</topic>
 		<topic href="resource/PapyrusStarterGuide.html#7.4_UML_modeling" label="7.4 UML modeling">
-			<topic href="resource/PapyrusStarterGuide.html#7.4.1_Diagrams" label="7.4.1 Diagrams">
-				<topic href="resource/PapyrusStarterGuide.html#7.4.1.1_Diagrams_related_to_Use_Cases" label="7.4.1.1 Diagrams related to Use Cases">
-					<topic href="resource/PapyrusStarterGuide.html#7.4.1.1.1_Use_case_diagram" label="7.4.1.1.1 Use case diagram"></topic>
-					<topic href="resource/PapyrusStarterGuide.html#7.4.1.1.2_Activity_diagram" label="7.4.1.1.2 Activity diagram"></topic>
-					<topic href="resource/PapyrusStarterGuide.html#7.4.1.1.3_Interaction_diagrams" label="7.4.1.1.3 Interaction diagrams">
-						<topic href="resource/PapyrusStarterGuide.html#7.4.1.1.3.1_Sequence_diagram" label="7.4.1.1.3.1 Sequence diagram"></topic>
-						<topic href="resource/PapyrusStarterGuide.html#7.4.1.1.3.2_Communication_diagram" label="7.4.1.1.3.2 Communication diagram"></topic>
-					</topic>
-				</topic>
-				<topic href="resource/PapyrusStarterGuide.html#7.4.1.2_Diagrams_related_to_Classes" label="7.4.1.2 Diagrams related to Classes">
-					<topic href="resource/PapyrusStarterGuide.html#7.4.1.2.1_Class_diagram" label="7.4.1.2.1 Class diagram"></topic>
-					<topic href="resource/PapyrusStarterGuide.html#7.4.1.2.2_Composite_structure_diagram" label="7.4.1.2.2 Composite structure diagram"></topic>
-					<topic href="resource/PapyrusStarterGuide.html#7.4.1.2.3_State_machine_diagram" label="7.4.1.2.3 State machine diagram"></topic>
-				</topic>
+			<topic href="resource/PapyrusStarterGuide.html#7.4.1_Package" label="7.4.1 Package"></topic>
+			<topic href="resource/PapyrusStarterGuide.html#7.4.2_Use-case" label="7.4.2 Use-case"></topic>
+			<topic href="resource/PapyrusStarterGuide.html#7.4.3_Actor" label="7.4.3 Actor"></topic>
+			<topic href="resource/PapyrusStarterGuide.html#7.4.4_Class" label="7.4.4 Class">
+				<topic href="resource/PapyrusStarterGuide.html#7.4.4.1_Attributes_on_classes" label="7.4.4.1 Attributes on classes"></topic>
+				<topic href="resource/PapyrusStarterGuide.html#7.4.4.2_Operations_on_classes" label="7.4.4.2 Operations on classes"></topic>
 			</topic>
-			<topic href="resource/PapyrusStarterGuide.html#7.4.2_Model_elements" label="7.4.2 Model elements">
-				<topic href="resource/PapyrusStarterGuide.html#7.4.2.1_Package" label="7.4.2.1 Package"></topic>
-				<topic href="resource/PapyrusStarterGuide.html#7.4.2.2_Use_Case" label="7.4.2.2 Use Case"></topic>
-				<topic href="resource/PapyrusStarterGuide.html#7.4.2.3_Actor" label="7.4.2.3 Actor"></topic>
-				<topic href="resource/PapyrusStarterGuide.html#7.4.2.4_Class" label="7.4.2.4 Class">
-					<topic href="resource/PapyrusStarterGuide.html#7.4.2.5.1_Attributes_on_Classes" label="7.4.2.5.1 Attributes on Classes"></topic>
-					<topic href="resource/PapyrusStarterGuide.html#7.4.2.5.2_Operations_on_Classes" label="7.4.2.5.2 Operations on Classes"></topic>
-				</topic>
+			<topic href="resource/PapyrusStarterGuide.html#7.4.5_Object" label="7.4.5 Object">
+				<topic href="resource/PapyrusStarterGuide.html#7.4.5.1_One_way_to_create_an_object" label="7.4.5.1 One way to create an object"></topic>
+				<topic href="resource/PapyrusStarterGuide.html#7.4.5.2_Another_way_to_create_an_object" label="7.4.5.2 Another way to create an object"></topic>
 			</topic>
-			<topic href="resource/PapyrusStarterGuide.html#7.4.3_Relationships" label="7.4.3 Relationships"></topic>
+			<topic href="resource/PapyrusStarterGuide.html#7.4.6_Relationships" label="7.4.6 Relationships"></topic>
+			<topic href="resource/PapyrusStarterGuide.html#7.4.7_Diagrams" label="7.4.7 Diagrams">
+				<topic href="resource/PapyrusStarterGuide.html#7.4.7.1_Diagrams_related_to_use-cases" label="7.4.7.1 Diagrams related to use-cases"></topic>
+				<topic href="resource/PapyrusStarterGuide.html#7.4.7.2_Diagrams_related_to_classes" label="7.4.7.2 Diagrams related to classes"></topic>
+			</topic>
 		</topic>
 		<topic href="resource/PapyrusStarterGuide.html#7.5_UML_RT_modeling" label="7.5 UML RT modeling">
 			<topic href="resource/PapyrusStarterGuide.html#7.5.1_Additional_modeling_elements" label="7.5.1 Additional modeling elements">
-				<topic href="resource/PapyrusStarterGuide.html#7.5.1.1_Capsule_Class" label="7.5.1.1 Capsule Class"></topic>
-				<topic href="resource/PapyrusStarterGuide.html#7.5.1.2_Protocol_Class" label="7.5.1.2 Protocol Class"></topic>
+				<topic href="resource/PapyrusStarterGuide.html#7.5.1.1_Capsule_class" label="7.5.1.1 Capsule class"></topic>
+				<topic href="resource/PapyrusStarterGuide.html#7.5.1.2_Protocol_class" label="7.5.1.2 Protocol class"></topic>
 			</topic>
-			<topic href="resource/PapyrusStarterGuide.html#7.5.2_Using_C_in_a_model" label="7.5.2 Using C in a model"></topic>
-			<topic href="resource/PapyrusStarterGuide.html#7.5.3_C_service_library" label="7.5.3 C service library">
+			<topic href="resource/PapyrusStarterGuide.html#7.5.2_Using_C.2B.2B_in_a_model" label="7.5.2 Using C++ in a model"></topic>
+			<topic href="resource/PapyrusStarterGuide.html#7.5.3_C.2B.2B_service_library" label="7.5.3 C++ service library">
 				<topic href="resource/PapyrusStarterGuide.html#7.5.3.1_Sending_messages" label="7.5.3.1 Sending messages"></topic>
 			</topic>
 			<topic href="resource/PapyrusStarterGuide.html#7.5.4_Transformation_from_model_to_code" label="7.5.4 Transformation from model to code"></topic>
 			<topic href="resource/PapyrusStarterGuide.html#7.5.5_Edit_the_generated_code" label="7.5.5 Edit the generated code"></topic>
 			<topic href="resource/PapyrusStarterGuide.html#7.5.6_Compiling_and_linking_the_generated_code" label="7.5.6 Compiling and linking the generated code"></topic>
 			<topic href="resource/PapyrusStarterGuide.html#7.5.7_Using_external_libraries" label="7.5.7 Using external libraries"></topic>
-			<topic href="resource/PapyrusStarterGuide.html#7.5.8_Running_the_application" label="7.5.8 Running the application"></topic>
-			<topic href="resource/PapyrusStarterGuide.html#7.5.9_Model_components" label="7.5.9 Model components"></topic>
+			<topic href="resource/PapyrusStarterGuide.html#7.5.8_Running_the_system" label="7.5.8 Running the system"></topic>
 		</topic>
 		<topic href="resource/PapyrusStarterGuide.html#7.6_Papyrus_in_a_team_environment" label="7.6 Papyrus in a team environment">
 			<topic href="resource/PapyrusStarterGuide.html#7.6.1_Model_fragmentation" label="7.6.1 Model fragmentation"></topic>
