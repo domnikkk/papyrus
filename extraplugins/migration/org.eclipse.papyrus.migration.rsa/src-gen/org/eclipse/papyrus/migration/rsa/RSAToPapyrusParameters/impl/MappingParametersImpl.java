@@ -37,6 +37,7 @@ import org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.URIMapping;
  * The following features are implemented:
  * <ul>
  * <li>{@link org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.impl.MappingParametersImpl#getUriMappings <em>Uri Mappings</em>}</li>
+ * <li>{@link org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.impl.MappingParametersImpl#getProfileUriMappings <em>Profile Uri Mappings</em>}</li>
  * </ul>
  * </p>
  *
@@ -53,6 +54,17 @@ public class MappingParametersImpl extends MinimalEObjectImpl.Container implemen
 	 * @ordered
 	 */
 	protected EList<URIMapping> uriMappings;
+
+	/**
+	 * The cached value of the '{@link #getProfileUriMappings() <em>Profile Uri Mappings</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see #getProfileUriMappings()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<URIMapping> profileUriMappings;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -96,10 +108,26 @@ public class MappingParametersImpl extends MinimalEObjectImpl.Container implemen
 	 * @generated
 	 */
 	@Override
+	public EList<URIMapping> getProfileUriMappings() {
+		if (profileUriMappings == null) {
+			profileUriMappings = new EObjectContainmentEList<URIMapping>(URIMapping.class, this, RSAToPapyrusParametersPackage.MAPPING_PARAMETERS__PROFILE_URI_MAPPINGS);
+		}
+		return profileUriMappings;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case RSAToPapyrusParametersPackage.MAPPING_PARAMETERS__URI_MAPPINGS:
 			return ((InternalEList<?>) getUriMappings()).basicRemove(otherEnd, msgs);
+		case RSAToPapyrusParametersPackage.MAPPING_PARAMETERS__PROFILE_URI_MAPPINGS:
+			return ((InternalEList<?>) getProfileUriMappings()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -115,6 +143,8 @@ public class MappingParametersImpl extends MinimalEObjectImpl.Container implemen
 		switch (featureID) {
 		case RSAToPapyrusParametersPackage.MAPPING_PARAMETERS__URI_MAPPINGS:
 			return getUriMappings();
+		case RSAToPapyrusParametersPackage.MAPPING_PARAMETERS__PROFILE_URI_MAPPINGS:
+			return getProfileUriMappings();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -133,6 +163,10 @@ public class MappingParametersImpl extends MinimalEObjectImpl.Container implemen
 			getUriMappings().clear();
 			getUriMappings().addAll((Collection<? extends URIMapping>) newValue);
 			return;
+		case RSAToPapyrusParametersPackage.MAPPING_PARAMETERS__PROFILE_URI_MAPPINGS:
+			getProfileUriMappings().clear();
+			getProfileUriMappings().addAll((Collection<? extends URIMapping>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -149,6 +183,9 @@ public class MappingParametersImpl extends MinimalEObjectImpl.Container implemen
 		case RSAToPapyrusParametersPackage.MAPPING_PARAMETERS__URI_MAPPINGS:
 			getUriMappings().clear();
 			return;
+		case RSAToPapyrusParametersPackage.MAPPING_PARAMETERS__PROFILE_URI_MAPPINGS:
+			getProfileUriMappings().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -164,6 +201,8 @@ public class MappingParametersImpl extends MinimalEObjectImpl.Container implemen
 		switch (featureID) {
 		case RSAToPapyrusParametersPackage.MAPPING_PARAMETERS__URI_MAPPINGS:
 			return uriMappings != null && !uriMappings.isEmpty();
+		case RSAToPapyrusParametersPackage.MAPPING_PARAMETERS__PROFILE_URI_MAPPINGS:
+			return profileUriMappings != null && !profileUriMappings.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

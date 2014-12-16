@@ -112,8 +112,11 @@ public class ImportTransformation {
 
 	protected boolean complete = false;
 
-	/** Source URI to Target URI map */
+	/** Source URI to Target URI map (For Models/Libraries/Fragments) */
 	protected final Map<URI, URI> uriMappings = new HashMap<URI, URI>();
+
+	/** Source URI to Target URI map (For Profiles) */
+	protected final Map<URI, URI> profileURIMappings = new HashMap<URI, URI>();
 
 	protected List<Diagram> diagramsToDelete = new LinkedList<Diagram>();
 
@@ -162,8 +165,8 @@ public class ImportTransformation {
 			@Override
 			public void done(IJobChangeEvent event) {
 				complete = true;
-				if(isUserJob) {
-					if(event.getResult().getSeverity() == IStatus.OK) {
+				if (isUserJob) {
+					if (event.getResult().getSeverity() == IStatus.OK) {
 						Display.getDefault().asyncExec(new Runnable() {
 
 							@Override
@@ -172,7 +175,7 @@ public class ImportTransformation {
 							}
 						});
 
-					} else if(event.getResult().getSeverity() == IStatus.CANCEL) {
+					} else if (event.getResult().getSeverity() == IStatus.CANCEL) {
 						Display.getDefault().asyncExec(new Runnable() {
 
 							@Override
@@ -204,7 +207,7 @@ public class ImportTransformation {
 	}
 
 	public IStatus getStatus() {
-		if(job == null) { // If job hasn't been created, the operation has probably been canceled before the transformation is ran
+		if (job == null) { // If job hasn't been created, the operation has probably been canceled before the transformation is ran
 			return new Status(IStatus.CANCEL, Activator.PLUGIN_ID, "Operation canceled");
 		}
 		return job.getResult();
@@ -212,6 +215,10 @@ public class ImportTransformation {
 
 	public Map<URI, URI> getURIMappings() {
 		return uriMappings;
+	}
+
+	public Map<URI, URI> getProfileURIMappings() {
+		return profileURIMappings;
 	}
 
 	public URI getTargetURI() {
@@ -251,23 +258,23 @@ public class ImportTransformation {
 		int i = 0;
 
 		ModelExtent extent = getInOutUMLModel();
-		for(EObject eObject : extent.getContents()) {
+		for (EObject eObject : extent.getContents()) {
 
 			// We already called ResolveAll, there is no need to try resolution again
 			TreeIterator<EObject> modelIterator = EcoreUtil.getAllContents(eObject, false);
-			while(modelIterator.hasNext()) {
+			while (modelIterator.hasNext()) {
 				EObject next = modelIterator.next();
-				if(next instanceof Diagram) {
-					Diagram diagram = (Diagram)next;
-					if(isSupported(diagram)) {
+				if (next instanceof Diagram) {
+					Diagram diagram = (Diagram) next;
+					if (isSupported(diagram)) {
 						i++;
 						diagramsToDelete.add(diagram);
 					}
 					modelIterator.prune(); // Don't navigate Diagram children
-				} else if(next instanceof OpaqueExpression) {
-					if(parameters.isConvertOpaqueExpressionToLiteralString()) {
-						OpaqueExpression exp = (OpaqueExpression)next;
-						if(needsConversion(exp)) {
+				} else if (next instanceof OpaqueExpression) {
+					if (parameters.isConvertOpaqueExpressionToLiteralString()) {
+						OpaqueExpression exp = (OpaqueExpression) next;
+						if (needsConversion(exp)) {
 							i++;
 						}
 					}
@@ -290,11 +297,11 @@ public class ImportTransformation {
 	protected static boolean needsConversion(OpaqueExpression exp) {
 		List<String> languages = exp.getLanguages();
 		List<String> bodies = exp.getBodies();
-		if(bodies.size() > 1) {
+		if (bodies.size() > 1) {
 			return false;
 		}
 
-		if(languages.isEmpty() || (languages.size() == 1 && exp.getLanguages().get(0).isEmpty())) {
+		if (languages.isEmpty() || (languages.size() == 1 && exp.getLanguages().get(0).isEmpty())) {
 			return true;
 		}
 
@@ -309,7 +316,7 @@ public class ImportTransformation {
 
 	// Preloads all required transformations (Either locally or statically, depending on the cache parameter)
 	protected IStatus loadTransformations(IProgressMonitor monitor) {
-		for(URI transformationURI : getAllTransformationURIs()) {
+		for (URI transformationURI : getAllTransformationURIs()) {
 			try {
 				// Don't use a subprogress monitor, since it may be confusing
 				getTransformation(transformationURI, new NullProgressMonitor());
@@ -377,7 +384,7 @@ public class ImportTransformation {
 		Collection<URI> transformations = getDiagramTransformationURIs();
 
 		monitor.subTask("Importing diagrams...");
-		for(URI transformationURI : transformations) {
+		for (URI transformationURI : transformations) {
 			result = runTransformation(transformationURI, context, monitor, extents);
 			generationStatus.add(result);
 		}
@@ -387,7 +394,7 @@ public class ImportTransformation {
 		result = runTransformation(getSemanticTransformationURI(), context, monitor, extents);
 		generationStatus.add(result);
 
-		if(!monitor.isCanceled()) {
+		if (!monitor.isCanceled()) {
 			monitor.subTask("Handle additional profiles...");
 			// Default.epx and ProfileBase.epx
 			result = importRSAProfiles(context, monitor);
@@ -398,7 +405,7 @@ public class ImportTransformation {
 		// FRAGMENTS & SAVE
 		//
 
-		if(generationStatus.getSeverity() <= Diagnostic.WARNING) {
+		if (generationStatus.getSeverity() <= Diagnostic.WARNING) {
 
 			monitor.subTask("Saving models...");
 			URI notationModelURI = null;
@@ -409,6 +416,10 @@ public class ImportTransformation {
 			notationModelURI = convertToPapyrus(sourceURI, "notation"); // TODO use constant
 			sashModelURI = convertToPapyrus(sourceURI, "di"); // TODO use constant
 
+			if ("epx".equals(sourceURI.fileExtension())) {
+				profileURIMappings.put(sourceURI, targetURI);
+			}
+			// Profile mappings are also library mappings
 			uriMappings.put(sourceURI, targetURI);
 
 			umlResource = createUMLResource(resourceSet, sourceURI, targetURI);
@@ -424,10 +435,10 @@ public class ImportTransformation {
 
 			// Cleanup empty diagrams (FIXME: They should not be generated)
 			List<EObject> contentsCopy = new LinkedList<EObject>(notationResource.getContents());
-			for(EObject next : contentsCopy) {
-				if(next instanceof Diagram) {
-					Diagram diagram = (Diagram)next;
-					if(diagram.getType() == null || "".equals(diagram.getType())) {
+			for (EObject next : contentsCopy) {
+				if (next instanceof Diagram) {
+					Diagram diagram = (Diagram) next;
+					if (diagram.getType() == null || "".equals(diagram.getType())) {
 						delete(diagram);
 					}
 				}
@@ -440,21 +451,21 @@ public class ImportTransformation {
 
 			configureResource(sashResource);
 			configureResource(notationResource);
-			configureResource((XMIResource)umlResource);
+			configureResource((XMIResource) umlResource);
 
 			// Handle orphaned elements: remove them and log a warning
 			List<EObject> notationRootElements = new LinkedList<EObject>(notationResource.getContents());
-			for(EObject rootElement : notationRootElements) {
-				if(rootElement instanceof View) {
-					View rootView = (View)rootElement;
-					if(!(rootView instanceof Diagram)) {
+			for (EObject rootElement : notationRootElements) {
+				if (rootElement instanceof View) {
+					View rootView = (View) rootElement;
+					if (!(rootView instanceof Diagram)) {
 						String objectType = rootView.getElement() == null ? "None" : rootView.getElement().eClass().getName();
 						String viewType = rootView.getType() == null ? "None" : rootView.getType();
 						generationStatus.add(new Status(IStatus.WARNING, Activator.PLUGIN_ID, "An orphaned view has been found after the migration. It will be removed. View Type: " + viewType + ", semantic type: " + objectType));
 
 						delete(rootElement);
 					}
-				} else if(rootElement instanceof Style) {
+				} else if (rootElement instanceof Style) {
 					String styleType = rootElement.eClass().getName();
 					generationStatus.add(new Status(IStatus.WARNING, Activator.PLUGIN_ID, "An orphaned style has been found after the migration. It will be removed. Style Type: " + styleType));
 
@@ -484,10 +495,10 @@ public class ImportTransformation {
 				}
 			}
 
-			for(Diagram diagram : diagramsToDelete) {
+			for (Diagram diagram : diagramsToDelete) {
 				EObject container = diagram.eContainer();
 				delete(diagram);
-				if(container instanceof EAnnotation) {
+				if (container instanceof EAnnotation) {
 					delete(container);
 				}
 			}
@@ -538,9 +549,9 @@ public class ImportTransformation {
 		}
 
 		ExecutionDiagnostic transformationResult;
-		synchronized(executor) {
+		synchronized (executor) {
 			transformationResult = executor.execute(context, extents.toArray(new ModelExtent[0]));
-			//executor.cleanup(); N/A on Luna
+			// executor.cleanup(); N/A on Luna
 		}
 
 		IStatus loadedProfilesStatus = createStatusFromDiagnostic(loadedProfiles);
@@ -549,29 +560,29 @@ public class ImportTransformation {
 		int severity = Math.max(loadedProfiles.getSeverity(), transformationResult.getSeverity());
 
 		String message;
-		if(severity > IStatus.OK) {
+		if (severity > IStatus.OK) {
 			message = "The following errors occurred:";
 		} else {
 			message = "OK";
 		}
 
-		IStatus completeResult = new MultiStatus(Activator.PLUGIN_ID, severity, new IStatus[]{ loadedProfilesStatus, transformationStatus }, message, null);
+		IStatus completeResult = new MultiStatus(Activator.PLUGIN_ID, severity, new IStatus[] { loadedProfilesStatus, transformationStatus }, message, null);
 
 		return completeResult;
 	}
 
 	protected TransformationExecutor getTransformation(URI transformationURI, IProgressMonitor monitor) throws DiagnosticException {
 
-		if(!cacheTransformations) {
-			if(!localTransformations.containsKey(transformationURI)) {
+		if (!cacheTransformations) {
+			if (!localTransformations.containsKey(transformationURI)) {
 				TransformationExecutor executor = loadTransformationExecutor(transformationURI, monitor);
 				localTransformations.put(transformationURI, executor);
 			}
 			return localTransformations.get(transformationURI);
 		}
 
-		synchronized(sharedTransformations) {
-			if(!sharedTransformations.containsKey(transformationURI)) {
+		synchronized (sharedTransformations) {
+			if (!sharedTransformations.containsKey(transformationURI)) {
 				TransformationExecutor executor = loadTransformationExecutor(transformationURI, monitor);
 				sharedTransformations.put(transformationURI, executor);
 			}
@@ -584,7 +595,7 @@ public class ImportTransformation {
 		TransformationExecutor executor = new TransformationExecutor(transformationURI);
 		Diagnostic diagnostic = executor.loadTransformation(monitor);
 
-		if(diagnostic.getSeverity() != Diagnostic.OK) {
+		if (diagnostic.getSeverity() != Diagnostic.OK) {
 			throw new DiagnosticException(diagnostic);
 		}
 
@@ -606,7 +617,7 @@ public class ImportTransformation {
 		} catch (IOException ex) {
 			Activator.log.error(ex);
 		} finally {
-			if(inputStream != null) {
+			if (inputStream != null) {
 				try {
 					inputStream.close();
 				} catch (IOException ex) {
@@ -640,9 +651,9 @@ public class ImportTransformation {
 		}
 
 		ExecutionDiagnostic result;
-		synchronized(executor) {
+		synchronized (executor) {
 			result = executor.execute(context, extents.toArray(new ModelExtent[0]));
-			//executor.cleanup(); N/A on Luna
+			// executor.cleanup(); N/A on Luna
 		}
 
 		return createStatusFromDiagnostic(result);
@@ -672,8 +683,8 @@ public class ImportTransformation {
 	 * @throws WrappedException
 	 */
 	protected Diagnostic loadInPapyrusProfiles() {
-		if(inPapyrusProfiles != null) {
-			return BasicDiagnostic.OK_INSTANCE;
+		if (inPapyrusProfiles != null) {
+			return Diagnostic.OK_INSTANCE;
 		}
 
 		List<String> missingProfiles = new LinkedList<String>();
@@ -721,7 +732,7 @@ public class ImportTransformation {
 
 		String message;
 		int code;
-		if(missingProfiles.isEmpty()) {
+		if (missingProfiles.isEmpty()) {
 			message = "OK";
 			code = Diagnostic.OK;
 		} else {
@@ -736,7 +747,7 @@ public class ImportTransformation {
 
 	protected void checkResource(Resource resource) {
 		Assert.isTrue(!resource.getContents().isEmpty(), "The resource " + resource.getURI() + " is empty");
-		for(EObject rootElement : resource.getContents()) {
+		for (EObject rootElement : resource.getContents()) {
 			Assert.isTrue(!rootElement.eIsProxy());
 		}
 	}
@@ -749,7 +760,7 @@ public class ImportTransformation {
 	}
 
 	protected ModelExtent getInConfig() {
-		if(inParameters == null) {
+		if (inParameters == null) {
 			inParameters = new BasicModelExtent(Collections.singletonList(parameters));
 		}
 		return inParameters;
@@ -767,20 +778,20 @@ public class ImportTransformation {
 
 		Set<Resource> fragmentResources = new HashSet<Resource>();
 
-		while(elementIterator.hasNext()) {
+		while (elementIterator.hasNext()) {
 			EObject element = elementIterator.next();
-			if(element.eResource() != umlResource && element.eResource().getContents().contains(element)) { // Controlled/Fragment root
+			if (element.eResource() != umlResource && element.eResource().getContents().contains(element)) { // Controlled/Fragment root
 				fragmentResources.add(element.eResource());
 			}
 		}
 
-		for(Resource fragmentResource : fragmentResources) {
+		for (Resource fragmentResource : fragmentResources) {
 			URI papyrusFragmentURI = convertToPapyrus(fragmentResource.getURI(), UMLResource.FILE_EXTENSION);
 
 			uriMappings.put(fragmentResource.getURI(), papyrusFragmentURI);
 
 			Resource newResource = resourceSet.getResource(papyrusFragmentURI, false);
-			if(newResource == null) {
+			if (newResource == null) {
 				newResource = createUMLResource(resourceSet, fragmentResource.getURI(), papyrusFragmentURI);
 
 				Resource fragmentNotationResource = new GMFResource(convertToPapyrus(papyrusFragmentURI, "notation"));
@@ -800,15 +811,15 @@ public class ImportTransformation {
 		deleteSourceRTStereotypes(fragmentResources);
 
 		List<EObject> importedElements = new LinkedList<EObject>(notationResource.getContents());
-		for(EObject notationElement : importedElements) {
-			if(notationElement instanceof Diagram) {
-				EObject semanticElement = ((Diagram)notationElement).getElement();
-				if(semanticElement.eResource() != umlResource && semanticElement.eResource() != null) {
+		for (EObject notationElement : importedElements) {
+			if (notationElement instanceof Diagram) {
+				EObject semanticElement = ((Diagram) notationElement).getElement();
+				if (semanticElement.eResource() != umlResource && semanticElement.eResource() != null) {
 
 					URI notationFragmentURI = convertToPapyrus(semanticElement.eResource().getURI(), "notation");
 
 					Resource newNotationResource = resourceSet.getResource(notationFragmentURI, false);
-					if(newNotationResource == null) {
+					if (newNotationResource == null) {
 						newNotationResource = new GMFResource(notationFragmentURI);
 						resourceSet.getResources().add(newNotationResource);
 					}
@@ -825,13 +836,13 @@ public class ImportTransformation {
 		Set<Resource> allResources = new HashSet<Resource>(fragmentResources);
 		allResources.add(umlResource);
 
-		for(Resource resource : allResources) {
+		for (Resource resource : allResources) {
 
 			// For performance reasons, RSA RT Stereotypes have not been deleted during the QVTo transformation (Bug 444379)
 			// Delete them as a post-action. Iterate on all controlled models and delete the RealTime stereotypes at the root of each resource
 			List<EObject> resourceContents = new LinkedList<EObject>(resource.getContents());
-			for(EObject rootElement : resourceContents) {
-				if(rootElement.eClass().getEPackage() == org.eclipse.papyrus.migration.rsa.umlrt.UMLRealTimePackage.eINSTANCE) {
+			for (EObject rootElement : resourceContents) {
+				if (rootElement.eClass().getEPackage() == org.eclipse.papyrus.migration.rsa.umlrt.UMLRealTimePackage.eINSTANCE) {
 					delete(rootElement);
 				}
 			}
@@ -839,7 +850,7 @@ public class ImportTransformation {
 	}
 
 	protected URI convertToPapyrus(URI rsaURI, String extension) {
-		if("epx".equals(rsaURI.fileExtension())) { //$NON-NLS-1$
+		if ("epx".equals(rsaURI.fileExtension())) { //$NON-NLS-1$
 			// Profiles: myProfile.profile.uml, myProfile.profile.notation, ...
 			return rsaURI.trimFileExtension().appendFileExtension("profile").appendFileExtension(extension); //$NON-NLS-1$
 		} else {
@@ -849,7 +860,7 @@ public class ImportTransformation {
 	}
 
 	protected IStatus runTransformation(URI transformationURI, ExecutionContext context, IProgressMonitor monitor, List<ModelExtent> extents) {
-		if(monitor.isCanceled()) {
+		if (monitor.isCanceled()) {
 			return new Status(IStatus.CANCEL, Activator.PLUGIN_ID, "Operation canceled");
 		}
 
@@ -864,9 +875,9 @@ public class ImportTransformation {
 		}
 
 		ExecutionDiagnostic result;
-		synchronized(executor) {
+		synchronized (executor) {
 			result = executor.execute(context, extents.toArray(new ModelExtent[0]));
-			//executor.cleanup(); N/A on Luna
+			// executor.cleanup(); N/A on Luna
 		}
 
 		return createStatusFromDiagnostic(result);
@@ -894,7 +905,7 @@ public class ImportTransformation {
 			@Override
 			public void log(int level, String message) {
 				super.log(level, message);
-				if(level >= 1) {
+				if (level >= 1) {
 					generationStatus.merge(new Status(level, Activator.PLUGIN_ID, message));
 				}
 
@@ -903,7 +914,7 @@ public class ImportTransformation {
 			@Override
 			public void log(int level, String message, Object param) {
 				super.log(level, message, param);
-				if(level >= 1) {
+				if (level >= 1) {
 					generationStatus.merge(new Status(level, Activator.PLUGIN_ID, message + ", data:" + param));
 				}
 			}
@@ -938,16 +949,16 @@ public class ImportTransformation {
 		Map<Object, Object> saveOptions = new HashMap<Object, Object>();
 
 		// default save options.
-		saveOptions.put(XMIResource.OPTION_DECLARE_XML, Boolean.TRUE);
-		saveOptions.put(XMIResource.OPTION_PROCESS_DANGLING_HREF, XMIResource.OPTION_PROCESS_DANGLING_HREF_DISCARD);
-		saveOptions.put(XMIResource.OPTION_SCHEMA_LOCATION, Boolean.TRUE);
+		saveOptions.put(XMLResource.OPTION_DECLARE_XML, Boolean.TRUE);
+		saveOptions.put(XMLResource.OPTION_PROCESS_DANGLING_HREF, XMLResource.OPTION_PROCESS_DANGLING_HREF_DISCARD);
+		saveOptions.put(XMLResource.OPTION_SCHEMA_LOCATION, Boolean.TRUE);
 		saveOptions.put(XMIResource.OPTION_USE_XMI_TYPE, Boolean.TRUE);
-		saveOptions.put(XMIResource.OPTION_SAVE_TYPE_INFORMATION, Boolean.TRUE);
-		saveOptions.put(XMIResource.OPTION_SKIP_ESCAPE_URI, Boolean.FALSE);
-		saveOptions.put(XMIResource.OPTION_ENCODING, "UTF-8");
+		saveOptions.put(XMLResource.OPTION_SAVE_TYPE_INFORMATION, Boolean.TRUE);
+		saveOptions.put(XMLResource.OPTION_SKIP_ESCAPE_URI, Boolean.FALSE);
+		saveOptions.put(XMLResource.OPTION_ENCODING, "UTF-8");
 
 		// see bug 397987: [Core][Save] The referenced plugin models are saved using relative path
-		saveOptions.put(XMIResource.OPTION_URI_HANDLER, new org.eclipse.emf.ecore.xmi.impl.URIHandlerImpl.PlatformSchemeAware());
+		saveOptions.put(XMLResource.OPTION_URI_HANDLER, new org.eclipse.emf.ecore.xmi.impl.URIHandlerImpl.PlatformSchemeAware());
 
 		resource.setEncoding("UTF-8");
 		resource.getDefaultSaveOptions().putAll(saveOptions);
@@ -963,7 +974,7 @@ public class ImportTransformation {
 	}
 
 	protected ModelExtent getInOutUMLModel() {
-		if(outUML == null) {
+		if (outUML == null) {
 			try {
 				Resource resource = resourceSet.getResource(sourceURI, true);
 				outUML = new BasicModelExtent(resource.getContents());
@@ -978,7 +989,7 @@ public class ImportTransformation {
 
 	/* Notation model is initially empty, but will be filled successively by each transformation */
 	protected ModelExtent getInoutNotationModel() {
-		if(outNotation == null) {
+		if (outNotation == null) {
 			outNotation = new BasicModelExtent();
 		}
 
@@ -986,7 +997,7 @@ public class ImportTransformation {
 	}
 
 	protected ModelExtent getOutSashModel() {
-		if(outSashModel == null) {
+		if (outSashModel == null) {
 			outSashModel = new BasicModelExtent();
 		}
 
@@ -1050,11 +1061,11 @@ public class ImportTransformation {
 
 	public void delete(EObject rootElement) {
 		CacheAdapter adapter = CacheAdapter.getCacheAdapter(rootElement);
-		if(adapter == null) {
+		if (adapter == null) {
 			adapter = CacheAdapter.getInstance();
 		}
 		adapter.unsetTarget(rootElement);
-		if(rootElement.eResource() != null) {
+		if (rootElement.eResource() != null) {
 			rootElement.eResource().getContents().remove(rootElement);
 		}
 	}

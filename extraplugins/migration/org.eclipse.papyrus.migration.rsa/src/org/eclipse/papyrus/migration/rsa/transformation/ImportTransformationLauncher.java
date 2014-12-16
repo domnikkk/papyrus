@@ -52,6 +52,7 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.dialogs.SelectionDialog;
 import org.eclipse.ui.statushandlers.StatusManager;
+import org.eclipse.uml2.uml.util.UMLUtil;
 
 /**
  * Executes a batch of {@link ImportTransformation}s, then restores the dependencies (References)
@@ -278,44 +279,32 @@ public class ImportTransformationLauncher {
 
 	// Convert all model dependencies (For "imported model -> emx library" to "imported model -> imported library")
 	protected void handleModelDependencies(List<ImportTransformation> transformations, IProgressMonitor monitor) {
-		Map<URI, URI> urisToReplace = new HashMap<URI, URI>();
-		for (ImportTransformation transformation : transformations) {
-			// Only transform EMX/EFX models. Profiles (epx) will be handled separately
 
-			for (Map.Entry<URI, URI> entry : transformation.getURIMappings().entrySet()) {
-				String fileExtension = entry.getKey().fileExtension();
-				if ("emx".equals(fileExtension) || "efx".equals(fileExtension)) {
-					urisToReplace.put(entry.getKey(), entry.getValue());
+		Map<URI, URI> urisToReplace = new HashMap<URI, URI>();
+		Map<URI, URI> profileUrisToReplace = new HashMap<URI, URI>();
+
+		for (ImportTransformation transformation : transformations) {
+			for (Map.Entry<URI, URI> mapping : transformation.getURIMappings().entrySet()) {
+				URI sourceURI = mapping.getKey();
+				URI targetURI = mapping.getValue();
+				if ("emx".equals(sourceURI.fileExtension()) || "efx".equals(sourceURI.fileExtension())) {
+					urisToReplace.put(sourceURI, targetURI);
 				}
 			}
+			urisToReplace.putAll(transformation.getURIMappings());
+			profileUrisToReplace.putAll(transformation.getProfileURIMappings());
 		}
 
-		filterKnownMappings(config.getMappingParameters(), urisToReplace);
+		filterKnownMappings(config.getMappingParameters(), urisToReplace, profileUrisToReplace);
 
-		if (!config.getMappingParameters().getUriMappings().isEmpty()) {
+		if (!config.getMappingParameters().getUriMappings().isEmpty() || !config.getMappingParameters().getProfileUriMappings().isEmpty()) {
 			MappingParameters parameters = confirmURIMappings(config.getMappingParameters());
 			config.setMappingParameters(parameters);
 
 			// Include the user-defined URI mappings
-			for (URIMapping mapping : parameters.getUriMappings()) {
-
-				String source = mapping.getSourceURI();
-				String target = mapping.getTargetURI();
-
-				if (source != null && target != null && !source.trim().isEmpty() && !target.trim().isEmpty()) {
-
-					URI sourceURI = URI.createURI(mapping.getSourceURI());
-					URI targetURI = URI.createURI(mapping.getTargetURI());
-
-					if (urisToReplace.containsKey(sourceURI)) {
-						continue;
-					}
-
-					urisToReplace.put(sourceURI, targetURI);
-				}
-			}
+			populateURIMap(parameters.getUriMappings(), urisToReplace);
+			populateURIMap(parameters.getProfileUriMappings(), profileUrisToReplace);
 		}
-
 
 		for (ImportTransformation transformation : transformations) {
 
@@ -325,6 +314,7 @@ public class ImportTransformationLauncher {
 
 			monitor.subTask("Importing dependencies for " + transformation.getModelName());
 			final ModelSet modelSet = new DiResourceSet();
+			UMLUtil.init(modelSet);
 			try {
 				URI targetURI = transformation.getTargetURI();
 				if (targetURI == null) {
@@ -338,40 +328,17 @@ public class ImportTransformationLauncher {
 				monitor.worked(1);
 				continue;
 			}
-			final TransactionalEditingDomain domain = modelSet.getTransactionalEditingDomain();
 
-			for (final Map.Entry<URI, URI> entry : urisToReplace.entrySet()) {
-				if (monitor.isCanceled()) {
-					return;
-				}
+			repairProxies(modelSet, urisToReplace, monitor); // Repairing proxies first will change the Applied Profiles. This helps repairing stereotypes
 
-				if (entry.getKey().equals(entry.getValue())) {
-					continue;
-				}
-
-				domain.getCommandStack().execute(new AbstractCommand("Import dependencies") {
-
-					@Override
-					public void execute() {
-						DependencyManagementHelper.updateDependencies(entry.getKey(), entry.getValue(), modelSet, domain);
-					}
-
-					@Override
-					public void redo() {
-						// Nothing
-					}
-
-					@Override
-					protected boolean prepare() {
-						return true;
-					};
-				});
-
-			}
+			RepairStereotypes repairStereotypesAction = new RepairStereotypes(modelSet, profileUrisToReplace);
+			repairStereotypesAction.execute();
 
 			try {
 				modelSet.save(new NullProgressMonitor());
 				monitor.worked(1);
+
+				final TransactionalEditingDomain domain = modelSet.getTransactionalEditingDomain();
 
 				EcoreUtil.resolveAll(modelSet); // Resolve all before unload to ensure all proxies are cleaned up in the CacheAdapter
 				GMFUnsafe.write(domain, new Runnable() {
@@ -396,6 +363,64 @@ public class ImportTransformationLauncher {
 		}
 	}
 
+	protected void repairProxies(final ModelSet modelSet, Map<URI, URI> urisToReplace, IProgressMonitor monitor) {
+
+		final TransactionalEditingDomain domain = modelSet.getTransactionalEditingDomain();
+
+		for (final Map.Entry<URI, URI> entry : urisToReplace.entrySet()) {
+			if (monitor.isCanceled()) {
+				return;
+			}
+
+			if (entry.getKey().equals(entry.getValue())) {
+				continue;
+			}
+
+			domain.getCommandStack().execute(new AbstractCommand("Import dependencies") {
+
+				@Override
+				public void execute() {
+					DependencyManagementHelper.updateDependencies(entry.getKey(), entry.getValue(), modelSet, domain);
+				}
+
+				@Override
+				public void redo() {
+					// Nothing
+				}
+
+				@Override
+				protected boolean prepare() {
+					return true;
+				};
+			});
+		}
+	}
+
+	/**
+	 * Convert and add all the URIMappings into the URI Map
+	 *
+	 * @param mappings
+	 * @param uriMap
+	 */
+	protected static void populateURIMap(List<URIMapping> mappings, Map<URI, URI> uriMap) {
+		for (URIMapping mapping : mappings) {
+			String source = mapping.getSourceURI();
+			String target = mapping.getTargetURI();
+
+			if (source != null && target != null && !source.trim().isEmpty() && !target.trim().isEmpty()) {
+
+				URI sourceURI = URI.createURI(mapping.getSourceURI());
+				URI targetURI = URI.createURI(mapping.getTargetURI());
+
+				if (uriMap.containsKey(sourceURI)) {
+					continue;
+				}
+
+				uriMap.put(sourceURI, targetURI);
+			}
+		}
+	}
+
 	/**
 	 * Remove automatic mappings (When multiple files are imported simultaneously) and duplicates
 	 *
@@ -404,15 +429,20 @@ public class ImportTransformationLauncher {
 	 * @param currentMappings
 	 *            The map of known (automatic) mappings
 	 */
-	protected void filterKnownMappings(final MappingParameters mappingParameters, final Map<URI, URI> currentMappings) {
+	protected void filterKnownMappings(final MappingParameters mappingParameters, final Map<URI, URI> currentMappings, final Map<URI, URI> currentProfileMappings) {
+		filterKnownMappings(mappingParameters.getUriMappings(), currentMappings);
+		filterKnownMappings(mappingParameters.getProfileUriMappings(), currentProfileMappings);
+	}
+
+	protected void filterKnownMappings(List<URIMapping> allMappings, Map<URI, URI> knownMappings) {
 
 		Set<URI> userMappings = new HashSet<URI>();
 
-		Iterator<URIMapping> mappings = mappingParameters.getUriMappings().iterator();
+		Iterator<URIMapping> mappings = allMappings.iterator();
 		while (mappings.hasNext()) {
 			URIMapping mapping = mappings.next();
 			URI sourceURI = URI.createURI(mapping.getSourceURI());
-			if (currentMappings.containsKey(sourceURI) || userMappings.contains(sourceURI)) {
+			if (knownMappings.containsKey(sourceURI) || userMappings.contains(sourceURI)) {
 				mappings.remove();
 			} else {
 				userMappings.add(sourceURI);

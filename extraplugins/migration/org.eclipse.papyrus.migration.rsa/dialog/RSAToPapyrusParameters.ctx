@@ -74,6 +74,7 @@
     </elements>
     <elements xmi:id="_zJ4D8XZLEeSwiJkQAQl2Jg" name="MappingParameters">
       <properties xmi:id="_zJ4D8nZLEeSwiJkQAQl2Jg" name="uriMappings" label="URI Mappings" type="Reference" multiplicity="-1" description="When models/libraries have been migrated separately, maps the libraries imported from RSA to their Papyrus equivalent"/>
+      <properties name="profileUriMappings" label="Profile URI Mappings" type="Reference" multiplicity="-1" description="When profiles have been migrated separately, maps the profiles imported from RSA to their Papyrus equivalent"/>
     </elements>
     <elements xmi:id="_zJ4D83ZLEeSwiJkQAQl2Jg" name="URIMapping">
       <properties xmi:id="_zJ4D9HZLEeSwiJkQAQl2Jg" name="sourceURI"/>
