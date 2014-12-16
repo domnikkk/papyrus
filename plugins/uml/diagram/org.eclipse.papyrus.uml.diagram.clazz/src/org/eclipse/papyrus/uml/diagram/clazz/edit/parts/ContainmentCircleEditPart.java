@@ -23,10 +23,10 @@ import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
 import org.eclipse.gef.requests.CreateRequest;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
-import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.IPapyrusNodeFigure;
+import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.RoundedRectangleNodePlateFigure;
 import org.eclipse.papyrus.uml.diagram.clazz.custom.figure.ContainmentFigure;
 import org.eclipse.papyrus.uml.diagram.clazz.custom.policies.itemsemantic.CustomContainmentCircleItemSemanticEditPolicy;
 import org.eclipse.swt.graphics.Color;
@@ -131,7 +131,7 @@ public class ContainmentCircleEditPart extends AbstractBorderItemEditPart {
 	 * @generated
 	 */
 	protected NodeFigure createNodePlate() {
-		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(20, 20);
+		RoundedRectangleNodePlateFigure result = new RoundedRectangleNodePlateFigure(20, 20);
 		return result;
 	}
 

@@ -21,10 +21,8 @@ import org.eclipse.gef.editpolicies.LayoutEditPolicy;
 import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
 import org.eclipse.gef.requests.CreateRequest;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.DurationObservationNameEditPart;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.DurationObservationStereotypeLabelEditPart;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.TimeObservationEditPart;
-import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.TimeObservationNameEditPart;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.TimeObservationStereotypeLabelEditPart;
 import org.eclipse.papyrus.uml.diagram.clazz.part.UMLVisualIDRegistry;
 
@@ -40,9 +38,7 @@ public class ObservationLayoutEditPolicy extends LayoutEditPolicy {
 	protected EditPolicy createChildEditPolicy(EditPart child) {
 		View childView = (View) child.getModel();
 		switch (UMLVisualIDRegistry.getVisualID(childView)) {
-		case DurationObservationNameEditPart.VISUAL_ID:
 		case DurationObservationStereotypeLabelEditPart.VISUAL_ID:
-		case TimeObservationNameEditPart.VISUAL_ID:
 		case TimeObservationStereotypeLabelEditPart.VISUAL_ID:
 			return new ExternalLabelPrimaryDragRoleEditPolicy();
 		}

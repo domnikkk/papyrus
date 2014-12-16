@@ -30,8 +30,10 @@ import org.eclipse.papyrus.uml.diagram.communication.edit.parts.DurationObservat
 import org.eclipse.papyrus.uml.diagram.communication.edit.parts.DurationObservationStereotypeLabelEditPartCN;
 import org.eclipse.papyrus.uml.diagram.communication.edit.parts.InteractionCompartmentEditPart;
 import org.eclipse.papyrus.uml.diagram.communication.edit.parts.InteractionEditPart;
+import org.eclipse.papyrus.uml.diagram.communication.edit.parts.InteractionFloatingLabelEditPart;
 import org.eclipse.papyrus.uml.diagram.communication.edit.parts.InteractionNameEditPart;
 import org.eclipse.papyrus.uml.diagram.communication.edit.parts.LifelineEditPartCN;
+import org.eclipse.papyrus.uml.diagram.communication.edit.parts.LifelineFloatingLabelEditPartCN;
 import org.eclipse.papyrus.uml.diagram.communication.edit.parts.LifelineNameEditPart;
 import org.eclipse.papyrus.uml.diagram.communication.edit.parts.MessageEditPart;
 import org.eclipse.papyrus.uml.diagram.communication.edit.parts.MessageNameEditPart;
@@ -201,6 +203,9 @@ public class UMLVisualIDRegistry {
 			if (InteractionNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (InteractionFloatingLabelEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			if (InteractionCompartmentEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
@@ -212,6 +217,9 @@ public class UMLVisualIDRegistry {
 			break;
 		case LifelineEditPartCN.VISUAL_ID:
 			if (LifelineNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (LifelineFloatingLabelEditPartCN.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -309,7 +317,7 @@ public class UMLVisualIDRegistry {
 	 */
 	public static boolean checkNodeVisualID(View containerView, EObject domainElement, int candidate) {
 		if (candidate == -1) {
-			//unrecognized id is always bad
+			// unrecognized id is always bad
 			return false;
 		}
 		int basic = getNodeVisualID(containerView, domainElement);

@@ -35,10 +35,12 @@ public class TestComponentDiagramComponentChildNode extends TestChildNode {
 	public DiagramUpdater getDiagramUpdater() {
 		return UMLDiagramUpdater.INSTANCE;
 	}
+
 	@Override
 	protected ICreationCommand getDiagramCommandCreation() {
 		return new CreateComponentDiagramCommand();
 	}
+
 	@Override
 	protected CreateViewRequest createViewRequestShapeContainer() {
 		return CreateViewRequestFactory.getCreateShapeRequest(UMLElementTypes.Component_2002, getDiagramEditPart().getDiagramPreferencesHint());
@@ -60,15 +62,16 @@ public class TestComponentDiagramComponentChildNode extends TestChildNode {
 	 */
 	@Test
 	public void testToManagePropertyPart() {
-		testToManageNodeWithMask(UMLElementTypes.Property_3079, UMLPackage.eINSTANCE.getProperty(), UMLElementTypes.Component_2002, false, "Attribute",0);
+		testToManageNodeWithMask(UMLElementTypes.Property_3079, UMLPackage.eINSTANCE.getProperty(), UMLElementTypes.Component_2002, false, "Attribute", 0);
 	}
+
 	/**
 	 * Test to manage Constraint
 	 */
 	@Test
 	public void testToManagePort() {
 		setTestAffixedNode(true);
-		testToManageNode(UMLElementTypes.Port_3069, UMLPackage.eINSTANCE.getPort(), UMLElementTypes.Component_2002, false,3,0,1,1,true, null,0);
+		testToManageNode(UMLElementTypes.Port_3069, UMLPackage.eINSTANCE.getPort(), UMLElementTypes.Component_2002, false, 4, 0, 1, 1, true, null, 0);
 		setTestAffixedNode(false);
 	}
 }

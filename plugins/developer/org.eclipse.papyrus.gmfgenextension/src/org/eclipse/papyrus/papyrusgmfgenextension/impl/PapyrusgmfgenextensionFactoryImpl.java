@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import org.eclipse.papyrus.papyrusgmfgenextension.*;
 import org.eclipse.papyrus.papyrusgmfgenextension.AdditionalEditPartCandies;
 import org.eclipse.papyrus.papyrusgmfgenextension.AlternateCanvas;
 import org.eclipse.papyrus.papyrusgmfgenextension.AlternateGenLink;
@@ -137,6 +138,8 @@ public class PapyrusgmfgenextensionFactoryImpl extends EFactoryImpl implements P
 			return createGenerateUsingElementTypeCreationCommand();
 		case PapyrusgmfgenextensionPackage.CUSTOM_DIAGRAM_UPDATER_SINGLETON:
 			return createCustomDiagramUpdaterSingleton();
+		case PapyrusgmfgenextensionPackage.SPECIFIC_NODE_PLATE:
+			return createSpecificNodePlate();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -440,6 +443,18 @@ public class PapyrusgmfgenextensionFactoryImpl extends EFactoryImpl implements P
 	public CustomDiagramUpdaterSingleton createCustomDiagramUpdaterSingleton() {
 		CustomDiagramUpdaterSingletonImpl customDiagramUpdaterSingleton = new CustomDiagramUpdaterSingletonImpl();
 		return customDiagramUpdaterSingleton;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public SpecificNodePlate createSpecificNodePlate() {
+		SpecificNodePlateImpl specificNodePlate = new SpecificNodePlateImpl();
+		return specificNodePlate;
 	}
 
 	/**

@@ -115,6 +115,18 @@
                     </enablement>
                  </action>
                  <action
+                       class="org.eclipse.papyrus.papyrusgmfgenextension.popupaction.AddExternalNodeFloatingLabelDisplayBehavior"
+                       enablesFor="*"
+                       id="org.eclipse.papyrus.papyrusgmfgenextension.popupaction.AddExternalNodeFloatingNameDisplayBehavior"
+                       label="Add label to display Label as an external Floating node label"
+                       menubarPath="org.eclipse.papyrus.papyrusgmfgenextension.popupaction.MenuPapyrus/AddExternalNodeFloatingNameDisplayBehavior">
+                    <enablement>
+                       <objectClass
+                             name="org.eclipse.gmf.codegen.gmfgen.GenNode">
+                       </objectClass>
+                    </enablement>
+                 </action>
+                 <action
                        class="org.eclipse.papyrus.papyrusgmfgenextension.popupaction.AddHyperLinkPopupBarBehavior"
                        enablesFor="*"
                        id="org.eclipse.papyrus.papyrusgmfgenextension.popupaction.AddHyperLinkPopupBarBehavior"

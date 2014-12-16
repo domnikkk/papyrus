@@ -29,17 +29,19 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.BorderItemSelectionEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.figures.IBorderItemLocator;
-import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.GetChildLayoutEditPolicy;
 import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.IPapyrusNodeFigure;
+import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.RoundedRectangleNodePlateFigure;
 import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.SelectableBorderedNodeFigure;
-import org.eclipse.papyrus.uml.diagram.common.editparts.UMLNodeEditPart;
+import org.eclipse.papyrus.uml.diagram.common.editparts.RoundedCompartmentEditPart;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.QualifiedNameDisplayEditPolicy;
+import org.eclipse.papyrus.uml.diagram.common.figure.node.RoundedCompartmentFigure;
 import org.eclipse.papyrus.uml.diagram.common.locator.ExternalLabelPositionLocator;
-import org.eclipse.papyrus.uml.diagram.statemachine.custom.figures.FinalStateFigure;
+import org.eclipse.papyrus.uml.diagram.common.locator.RoundedRectangleLabelPositionLocator;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.policies.FinalStateItemSemanticEditPolicy;
 import org.eclipse.papyrus.uml.diagram.statemachine.part.UMLVisualIDRegistry;
 import org.eclipse.swt.graphics.Color;
@@ -47,7 +49,7 @@ import org.eclipse.swt.graphics.Color;
 /**
  * @generated
  */
-public class FinalStateEditPart extends UMLNodeEditPart {
+public class FinalStateEditPart extends RoundedCompartmentEditPart {
 
 	/**
 	 * @generated
@@ -80,6 +82,7 @@ public class FinalStateEditPart extends UMLNodeEditPart {
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new FinalStateItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		installEditPolicy(QualifiedNameDisplayEditPolicy.QUALIFIED_NAME_POLICY, new QualifiedNameDisplayEditPolicy());
+		installEditPolicy(EditPolicy.LAYOUT_ROLE, new GetChildLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 	}
@@ -94,7 +97,7 @@ public class FinalStateEditPart extends UMLNodeEditPart {
 			protected EditPolicy createChildEditPolicy(EditPart child) {
 				View childView = (View) child.getModel();
 				switch (UMLVisualIDRegistry.getVisualID(childView)) {
-				case FinalStateNameEditPart.VISUAL_ID:
+				case FinalStateFloatingLabelEditPart.VISUAL_ID:
 				case FinalStateStereotypeEditPart.VISUAL_ID:
 					return new BorderItemSelectionEditPolicy() {
 
@@ -156,7 +159,7 @@ public class FinalStateEditPart extends UMLNodeEditPart {
 	 */
 	@Override
 	protected IFigure createNodeShape() {
-		return primaryShape = new FinalStateFigure();
+		return primaryShape = new RoundedCompartmentFigure();
 	}
 
 	/**
@@ -165,8 +168,8 @@ public class FinalStateEditPart extends UMLNodeEditPart {
 	 * @generated
 	 */
 	@Override
-	public FinalStateFigure getPrimaryShape() {
-		return (FinalStateFigure) primaryShape;
+	public RoundedCompartmentFigure getPrimaryShape() {
+		return (RoundedCompartmentFigure) primaryShape;
 	}
 
 	/**
@@ -174,8 +177,8 @@ public class FinalStateEditPart extends UMLNodeEditPart {
 	 */
 	@Override
 	protected void addBorderItem(IFigure borderItemContainer, IBorderItemEditPart borderItemEditPart) {
-		if (borderItemEditPart instanceof FinalStateNameEditPart) {
-			IBorderItemLocator locator = new ExternalLabelPositionLocator(getMainFigure());
+		if (borderItemEditPart instanceof FinalStateFloatingLabelEditPart) {
+			IBorderItemLocator locator = new RoundedRectangleLabelPositionLocator(getMainFigure());
 			borderItemContainer.add(borderItemEditPart.getFigure(), locator);
 		} else if (borderItemEditPart instanceof FinalStateStereotypeEditPart) {
 			IBorderItemLocator locator = new ExternalLabelPositionLocator(getMainFigure());
@@ -191,7 +194,7 @@ public class FinalStateEditPart extends UMLNodeEditPart {
 	 */
 	@Override
 	protected NodeFigure createNodePlate() {
-		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(16, 16);
+		RoundedRectangleNodePlateFigure result = new RoundedRectangleNodePlateFigure(20, 20);
 		return result;
 	}
 
@@ -266,6 +269,6 @@ public class FinalStateEditPart extends UMLNodeEditPart {
 	 */
 	@Override
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(UMLVisualIDRegistry.getType(FinalStateNameEditPart.VISUAL_ID));
+		return getChildBySemanticHint(UMLVisualIDRegistry.getType(FinalStateFloatingLabelEditPart.VISUAL_ID));
 	}
 }

@@ -60,6 +60,7 @@ import org.eclipse.papyrus.extensionpoints.editors.ui.IPopupEditorHelper;
 import org.eclipse.papyrus.extensionpoints.editors.utils.DirectEditorsUtil;
 import org.eclipse.papyrus.extensionpoints.editors.utils.IDirectEditorsIds;
 import org.eclipse.papyrus.infra.gmfdiag.common.editpart.PapyrusLabelEditPart;
+import org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.ExternalLabelPrimaryDragRoleEditPolicy;
 import org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.IMaskManagedLabelEditPolicy;
 import org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.IndirectMaskLabelEditPolicy;
 import org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.LabelAlignmentEditPolicy;
@@ -86,7 +87,8 @@ import org.eclipse.uml2.uml.Feature;
 /**
  * @generated
  */
-public class PortNameEditPart extends PapyrusLabelEditPart implements ITextAwareEditPart, IBorderItemEditPart, ILabelRoleProvider {
+public class PortNameEditPart extends PapyrusLabelEditPart implements ITextAwareEditPart, IBorderItemEditPart,
+		ILabelRoleProvider {
 
 	/**
 	 * @generated
@@ -150,6 +152,7 @@ public class PortNameEditPart extends PapyrusLabelEditPart implements ITextAware
 		installEditPolicy(EditPolicy.SELECTION_FEEDBACK_ROLE, new UMLTextSelectionEditPolicy());
 		installEditPolicy(IndirectMaskLabelEditPolicy.INDRIRECT_MASK_MANAGED_LABEL, new IndirectPortLabelEditPolicy());
 		installEditPolicy(LabelAlignmentEditPolicy.LABEL_ALIGNMENT_KEY, new LabelAlignmentEditPolicy());
+		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, new ExternalLabelPrimaryDragRoleEditPolicy());
 	}
 
 	/**

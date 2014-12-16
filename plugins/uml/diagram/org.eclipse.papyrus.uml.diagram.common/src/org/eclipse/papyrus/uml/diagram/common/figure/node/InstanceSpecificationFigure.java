@@ -21,7 +21,7 @@ import org.eclipse.draw2d.RectangleFigure;
 /**
  * Represents an InstanceSpecification.
  */
-public class InstanceSpecificationFigure extends CompartmentFigure {
+public class InstanceSpecificationFigure extends RoundedCompartmentFigure {
 
 	/** Slot Compartment */
 	private static final String SLOT_COMPARTMENT = "slotCompartment";

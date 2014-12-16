@@ -96,6 +96,7 @@ public class BorderItemResizableEditPolicy extends ResizableShapeEditPolicy {
 			rect.resize(request.getSizeDelta());
 			getHostFigure().translateToRelative(rect);
 			Rectangle realLocation = borderItemLocator.getValidLocation(rect.getCopy(), borderItemEP.getFigure());
+			realLocation.translate(-borderItemEP.getFigure().getSize().width / 2, -borderItemEP.getFigure().getSize().height / 2);
 			getHostFigure().translateToAbsolute(realLocation);
 			feedback.translateToRelative(realLocation);
 			feedback.setBounds(realLocation);

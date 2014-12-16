@@ -53,8 +53,8 @@ public class ModelEditPart extends PapyrusDiagramEditPart {
 		installEditPolicy(DuplicatePasteEditPolicy.PASTE_ROLE, new DuplicatePasteEditPolicy());
 
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new PackageItemSemanticEditPolicy());
-		//in Papyrus diagrams are not strongly synchronised
-		//installEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CANONICAL_ROLE, new org.eclipse.papyrus.uml.diagram.communication.edit.policies.ModelCanonicalEditPolicy());
+		// in Papyrus diagrams are not strongly synchronised
+		// installEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CANONICAL_ROLE, new org.eclipse.papyrus.uml.diagram.communication.edit.policies.ModelCanonicalEditPolicy());
 
 		installEditPolicy("RemoveOrphanView", new CustomOrphanViewPolicy()); //$NON-NLS-1$
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new CustomDiagramDragDropEditPolicy());

@@ -22,7 +22,7 @@ import org.eclipse.draw2d.IFigure;
 /**
  * Represents a Primitive Type
  */
-public class PrimitiveTypeFigure extends CompartmentFigure {
+public class PrimitiveTypeFigure extends RoundedCompartmentFigure {
 
 	/** Attribute Compartment */
 	private final static String ATTRIBUTE_COMPARTMENT = "attributeCompartment";

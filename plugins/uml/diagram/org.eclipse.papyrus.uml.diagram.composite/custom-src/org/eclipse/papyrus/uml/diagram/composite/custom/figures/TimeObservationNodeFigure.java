@@ -20,6 +20,7 @@ import org.eclipse.swt.graphics.Image;
 /**
  * Figure for TimeObservation
  */
+// To delete
 public class TimeObservationNodeFigure extends AbstractObservationNodeFigure {
 
 	public static final String IMAGE_OBSERVATION = "TimeObservation.gif"; //$NON-NLS-1$

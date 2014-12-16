@@ -13,8 +13,6 @@
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.activity.draw2d;
 
-import org.eclipse.draw2d.Border;
-import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.LayoutManager;
 import org.eclipse.draw2d.OrderedLayout;
@@ -28,10 +26,7 @@ import org.eclipse.gmf.runtime.draw2d.ui.mapmode.IMapMode;
 import org.eclipse.gmf.runtime.notation.MeasurementUnit;
 import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.papyrus.uml.diagram.activity.part.UMLDiagramEditorPlugin;
-import org.eclipse.papyrus.uml.diagram.activity.preferences.IActivityPreferenceConstants;
-import org.eclipse.papyrus.uml.diagram.common.draw2d.RoundedRectangleDashedBorder;
-import org.eclipse.papyrus.uml.diagram.common.figure.node.PapyrusRoundedNodeFigure;
-import org.eclipse.swt.graphics.Color;
+import org.eclipse.papyrus.uml.diagram.common.figure.node.RoundedCompartmentFigure;
 
 /**
  * Figure for structured activity node and its derived element
@@ -39,7 +34,7 @@ import org.eclipse.swt.graphics.Color;
  * @author arthur daussy
  *
  */
-public class StructuredActivityNodeFigure extends PapyrusRoundedNodeFigure {
+public class StructuredActivityNodeFigure extends RoundedCompartmentFigure {
 
 	/**
 	 * Since the Activity diagram is using Pixel unit we can use this as constant
@@ -66,27 +61,7 @@ public class StructuredActivityNodeFigure extends PapyrusRoundedNodeFigure {
 	 */
 	public StructuredActivityNodeFigure() {
 		super();
-		corner = 8;
-		this.shadowborder = createBorder0();
-		setBorder(getBorderedFigure(), this.shadowborder);
 		createContentPane();
-	}
-
-	@Override
-	protected Border getDefaultBorder(Color borderColor) {
-		return createBorder0();
-	}
-
-	/**
-	 * Custom border (Used to avoid the alpha setting affect the border)
-	 *
-	 * @return
-	 */
-	private org.eclipse.draw2d.LineBorder createBorder0() {
-		RoundedRectangleDashedBorder result = new RoundedRectangleDashedBorder(8, 8);
-		result.setWidth(1);
-		result.setStyle(Graphics.LINE_DASH);
-		return result;
 	}
 
 	@Override
@@ -151,21 +126,6 @@ public class StructuredActivityNodeFigure extends PapyrusRoundedNodeFigure {
 			fFigureCompartmentLabelStructuredActivityNode.setLayoutManager(layoutFFigureCompartmentLabelStructuredActivityNode);
 		}
 		return fFigureCompartmentLabelStructuredActivityNode;
-	}
-
-	/**
-	 * Override in order to use alpha component
-	 */
-	@Override
-	public void paintFigure(Graphics graphics) {
-		int transparency = getTransparency();
-		if (transparency == 0) {
-			transparency = UMLDiagramEditorPlugin.getInstance().getPreferenceStore().getInt(IActivityPreferenceConstants.PREF_STRUCTURED_NODE_ALPHA);
-		} else {
-			transparency = 100 - getTransparency();
-		}
-		graphics.setAlpha(transparency);
-		super.paintFigure(graphics);
 	}
 
 	/**

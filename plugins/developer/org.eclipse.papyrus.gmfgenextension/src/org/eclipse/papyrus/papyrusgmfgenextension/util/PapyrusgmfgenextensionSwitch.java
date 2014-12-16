@@ -16,6 +16,7 @@ import org.eclipse.gmf.codegen.gmfgen.GenContainerBase;
 import org.eclipse.gmf.codegen.gmfgen.GenLinkEnd;
 import org.eclipse.gmf.codegen.gmfgen.GenNode;
 import org.eclipse.gmf.codegen.gmfgen.MetamodelType;
+import org.eclipse.papyrus.papyrusgmfgenextension.*;
 import org.eclipse.papyrus.papyrusgmfgenextension.AdditionalEditPartCandies;
 import org.eclipse.papyrus.papyrusgmfgenextension.AlternateCanvas;
 import org.eclipse.papyrus.papyrusgmfgenextension.AlternateGenLink;
@@ -404,6 +405,17 @@ public class PapyrusgmfgenextensionSwitch<T> extends Switch<T> {
 			T result = caseCustomDiagramUpdaterSingleton(customDiagramUpdaterSingleton);
 			if (result == null) {
 				result = caseCommentedElement(customDiagramUpdaterSingleton);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case PapyrusgmfgenextensionPackage.SPECIFIC_NODE_PLATE: {
+			SpecificNodePlate specificNodePlate = (SpecificNodePlate) theEObject;
+			T result = caseSpecificNodePlate(specificNodePlate);
+			if (result == null) {
+				result = caseCommentedElement(specificNodePlate);
 			}
 			if (result == null) {
 				result = defaultCase(theEObject);
@@ -837,6 +849,23 @@ public class PapyrusgmfgenextensionSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseCustomDiagramUpdaterSingleton(CustomDiagramUpdaterSingleton object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Specific Node Plate</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Specific Node Plate</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSpecificNodePlate(SpecificNodePlate object) {
 		return null;
 	}
 
