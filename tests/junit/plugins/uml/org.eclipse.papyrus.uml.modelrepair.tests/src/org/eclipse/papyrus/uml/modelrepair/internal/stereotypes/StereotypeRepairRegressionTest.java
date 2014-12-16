@@ -9,6 +9,7 @@
  * Contributors:
  *   Christian W. Damus (CEA) - Initial API and implementation
  *   Christian W. Damus - bug 455248
+ *   Christian W. Damus - bug 455329
  *
  */
 package org.eclipse.papyrus.uml.modelrepair.internal.stereotypes;
@@ -218,6 +219,19 @@ public class StereotypeRepairRegressionTest extends AbstractPapyrusTest {
 		assertThat("Should not have found zombie stereotypes", zombies, nullValue());
 	}
 
+	/**
+	 * Tests that a model applying a registered dynamic profile does not detect spurious broken
+	 * stereotype applications.
+	 * 
+	 * @see https://bugs.eclipse.org/bugs/show_bug.cgi?id=455329
+	 */
+	@Test
+	@Bug("455329")
+	@PluginResource("/resources/regression/bug455329/model.uml")
+	public void registeredDynamicProfie_bug455329() {
+		assertThat("Should not have found zombie stereotypes", zombies, nullValue());
+	}
+
 	//
 	// Test framework
 	//
@@ -300,7 +314,7 @@ public class StereotypeRepairRegressionTest extends AbstractPapyrusTest {
 		}), "dispose", modelSet.getResourceSet());
 	}
 
-	@Bug({ "436666bis", "455248" })
+	@Bug({ "436666bis", "455248", "455329" })
 	protected StereotypeApplicationRepairSnippet createSimpleFixture() {
 		return houseKeeper.cleanUpLater(new StereotypeApplicationRepairSnippet(Functions.constant((Profile) null)), "dispose", modelSet.getResourceSet());
 	}
