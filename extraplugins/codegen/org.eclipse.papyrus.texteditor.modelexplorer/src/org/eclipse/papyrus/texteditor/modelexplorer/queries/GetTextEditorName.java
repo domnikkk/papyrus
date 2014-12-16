@@ -15,19 +15,21 @@
 
 package org.eclipse.papyrus.texteditor.modelexplorer.queries;
 
-import org.eclipse.emf.facet.infra.query.core.exception.ModelQueryExecutionException;
-import org.eclipse.emf.facet.infra.query.core.java.IJavaModelQuery;
-import org.eclipse.emf.facet.infra.query.core.java.ParameterValueList;
+import org.eclipse.papyrus.emf.facet.efacet.core.IFacetManager;
+import org.eclipse.papyrus.emf.facet.efacet.core.exception.DerivedTypedElementException;
+import org.eclipse.papyrus.emf.facet.query.java.core.IJavaQuery2;
+import org.eclipse.papyrus.emf.facet.query.java.core.IParameterValueList2;
 import org.eclipse.papyrus.texteditor.model.texteditormodel.TextEditorModel;
 
 /** Return the name for the table */
-public class GetTextEditorName implements IJavaModelQuery<TextEditorModel, String> {
+public class GetTextEditorName implements IJavaQuery2<TextEditorModel, String> {
 
 	/**
 	 * {@inheritDoc}
 	 */
 	@Override
-	public String evaluate(final TextEditorModel context, final ParameterValueList parameterValues) throws ModelQueryExecutionException {
+	public String evaluate(TextEditorModel context, IParameterValueList2 parameterValues, IFacetManager manager)
+			throws DerivedTypedElementException {
 		return context.getName();
 	}
 }

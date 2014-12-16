@@ -9,6 +9,7 @@
  * Contributors:
  *   Christian W. Damus (CEA) - Initial API and implementation
  *   Christian W. Damus - bug 455248
+ *   Christian W. Damus - bug 455329
  *
  */
 package org.eclipse.papyrus.uml.modelrepair.internal.stereotypes;
@@ -204,11 +205,26 @@ public class StereotypeApplicationRepairSnippet implements IModelSetSnippet {
 		for (ProfileApplication next : profileApplications) {
 			EPackage definition = next.getAppliedDefinition();
 			if ((definition != null) && !definition.eIsProxy()) {
-				result.add(definition);
+				if (result.add(definition)) {
+					// Maybe it's a registered dynamic package? Look for a Doppelgänger in the registry
+					EPackage.Registry registry = getPackageRegistry();
+					if (registry != null) {
+						EPackage registered = registry.getEPackage(definition.getNsURI());
+						if ((registered != null) && (registered != definition)) {
+							// This is the schema that EMF actually used to create stereotype instances
+							result.add(registered);
+						}
+					}
+				}
 			}
 		}
 
 		return result;
+	}
+
+	private EPackage.Registry getPackageRegistry() {
+		ResourceSet resourceSet = adapter.getResourceSet();
+		return (resourceSet == null) ? EPackage.Registry.INSTANCE : resourceSet.getPackageRegistry();
 	}
 
 	private LabelProviderService getLabelProvider() {
