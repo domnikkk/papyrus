@@ -187,7 +187,7 @@
       <repositoryList
           name="Mars">
         <repository
-            url="http://download.eclipse.org/eclipse/updates/4.5milestones/S-4.5M3-201410292000/">
+            url="http://download.eclipse.org/eclipse/updates/4.5milestones/S-4.5M4-201412102000/">
           <annotation
               source="http://www.eclipse.org/Papyrus/2014/releng/dependencytools">
             <detail
@@ -416,7 +416,7 @@
         <repository
             url="${base.downloads.url}/modeling/m2t/xpand/updates/releases/R201406030414/"/>
         <repository
-            url="${base.downloads.url}/modeling/tmf/xtext/updates/releases/head/R201405210727/"/>
+            url="${base.downloads.url}/modeling/tmf/xtext/updates/releases/maintenance/R201409160908/"/>
         <repository
             url="${base.downloads.url}/modeling/emf/compare/updates/releases/3.0"/>
         <repository
@@ -1714,7 +1714,7 @@
           <repositoryList
               name="Mars">
             <repository
-                url="http://download.eclipse.org/technology/subversive/2.0/luna-site/">
+                url="http://download.eclipse.org/technology/subversive/2.0/mars-site/">
               <annotation
                   source="http://www.eclipse.org/Papyrus/2014/releng/dependencytools">
                 <detail
@@ -1975,7 +1975,7 @@
               </annotation>
             </repository>
             <repository
-                url="http://download.eclipse.org/facet/updates/integration/0.5.0/I201409220856/">
+                url="http://download.eclipse.org/facet/updates/integration/1.0.0/I201411271427/">
               <annotation
                   source="http://www.eclipse.org/Papyrus/2014/releng/dependencytools">
                 <detail

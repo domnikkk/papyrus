@@ -25,15 +25,17 @@ import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.CoreException;
-import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.papyrus.eclipse.project.editors.Activator;
 import org.eclipse.papyrus.eclipse.project.editors.interfaces.IManifestEditor;
 import org.eclipse.papyrus.eclipse.project.editors.project.ProjectEditor;
-import org.eclipse.pde.internal.ui.editor.actions.FormatOperation;
 
 public class ManifestEditor extends ProjectEditor implements IManifestEditor {
 
 	// string constants
+	private static final String CRNL = "\r\n"; //$NON-NLS-1$
+
+	private static final String CRNLSP = "\r\n "; //$NON-NLS-1$
+
 	private static final String SEMICOLON = ";"; //$NON-NLS-1$
 
 	private static final String COMMA = ","; //$NON-NLS-1$
@@ -50,8 +52,6 @@ public class ManifestEditor extends ProjectEditor implements IManifestEditor {
 	/** the manifest itself */
 	private Manifest manifest;
 
-	protected boolean doFormat;
-
 	/**
 	 *
 	 * Constructor.
@@ -62,16 +62,8 @@ public class ManifestEditor extends ProjectEditor implements IManifestEditor {
 	 */
 	public ManifestEditor(final IProject project) throws IOException, CoreException {
 		super(project);
-		doFormat = true;
 	}
 
-	/**
-	 * @see org.eclipse.papyrus.eclipse.project.editors.interfaces.IManifestEditor#disableFormatting()
-	 */
-	public void disableFormatting() {
-		doFormat = false;
-	}
-	
 	/**
 	 *
 	 * @see org.eclipse.papyrus.eclipse.project.editors.interfaces.IManifestEditor#initOk()
@@ -151,6 +143,7 @@ public class ManifestEditor extends ProjectEditor implements IManifestEditor {
 				requireBundle += SEMICOLON + version;
 			}
 		}
+
 		this.manifest.getMainAttributes().put(rqBundle, requireBundle);
 	}
 
@@ -262,7 +255,7 @@ public class ManifestEditor extends ProjectEditor implements IManifestEditor {
 		try {
 			this.manifest.write(os);
 
-			final StringReader reader = new StringReader(os.toString("UTF-8")); //$NON-NLS-1$
+			final StringReader reader = new StringReader(format(os.toString("UTF-8"))); //$NON-NLS-1$
 			this.manifestFile.setContents(new InputStream() {
 
 				@Override
@@ -271,20 +264,34 @@ public class ManifestEditor extends ProjectEditor implements IManifestEditor {
 				}
 			}, true, true, null);
 
-			if (doFormat) {
-				// Use the PDE formatter for ManifestFiles
-				try {
-					FormatOperation.format(this.manifestFile, new NullProgressMonitor());
-				} catch (final Exception e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			}
 		} catch (final IOException ex) {
 			Activator.log.error(ex);
 		} catch (final CoreException ex) {
 			Activator.log.error(ex);
 		}
+	}
+
+	/**
+	 * Simple formatting of the MANIFEST. Do not use the PDE formatter, since this makes an already opened
+	 * MANIFEST editor dirty (see bug 447548 [OCL for Papyrus] Buggy DSML plugin generator)
+	 */
+	protected String format(String text) {
+		// 1. undo 72safe formatting
+		String[] lines = text.split(CRNLSP);
+		String non72safe = ""; //$NON-NLS-1$
+		for (String line : lines) {
+			non72safe += line;
+		}
+		// 2. split lines on comma
+		lines = non72safe.split(COMMA);
+		String newText = ""; //$NON-NLS-1$
+		for (int i = 0; i < lines.length; i++) {
+			newText += lines[i].trim();
+			if (i < lines.length - 1) {
+				newText += COMMA + CRNLSP;
+			}
+		}
+		return newText + CRNL;
 	}
 
 	@Override
