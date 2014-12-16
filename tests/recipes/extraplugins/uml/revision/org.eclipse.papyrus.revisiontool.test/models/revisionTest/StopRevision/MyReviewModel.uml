@@ -36,10 +36,6 @@
       <differences xmi:type="compare:ReferenceChange" xmi:id="_K4MtwnF_EeSENPH62bfYEw" kind="DELETE">
         <reference xmi:type="ecore:EReference" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package/packagedElement"/>
       </differences>
-      <differences xmi:type="compare:ReferenceChange" xmi:id="_fIDYoIUPEeSDAN4sQjBA6Q" kind="DELETE">
-        <reference xmi:type="ecore:EReference" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package/packagedElement"/>
-        <value xmi:type="uml:Class" href="../../registerModifications/1-AddanElement/WorkingModel.uml#_lAhV8HGJEeS3EdgtJYAZRQ"/>
-      </differences>
       <left xmi:type="uml:Model" href="WorkingModel.uml#_7knO8HF-EeSENPH62bfYEw"/>
     </matches>
   </compare:Comparison>
