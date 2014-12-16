@@ -552,8 +552,11 @@ public class RoundedRectangleLabelPositionLocator extends ExternalLabelPositionL
 			// proposedBounds.setSize(target.getPreferredSize());//To block the Label
 			// target.setBounds(proposedBounds);//To block the Label
 
-			super.relocate(target);
-			// target.setBounds(new Rectangle(getPreferredLocation(target), size));
+			if (!getFloatingItemOffset().equals(new Dimension())) {
+				target.setBounds(new Rectangle(getPreferredLocation(target), size));
+			} else {
+				super.relocate(target);
+			}
 
 		} else {
 			Rectangle rectSuggested = new Rectangle(getPreferredLocation(target), size);

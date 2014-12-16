@@ -39,9 +39,6 @@ public class BorderedScalableImageFigure extends ScalableImageFigure {
 
 	public BorderedScalableImageFigure(RenderedImage renderedImage, boolean useDefaultImageSize, boolean useOriginalColors, boolean antiAlias) {
 		super(renderedImage, useDefaultImageSize, useOriginalColors, antiAlias);
-
-		// setBorder(new LineBorder(ColorConstants.red, 1));
-
 		// set a layout manager to override maintain ratio behavior
 		setLayoutManager(new BorderedLayoutManager());
 	}
@@ -51,20 +48,9 @@ public class BorderedScalableImageFigure extends ScalableImageFigure {
 		// Get the parent bounds
 		Rectangle parentBounds = getParent().getBounds().getCopy();
 
-		// IRoundedRectangleFigure parentFigure = FigureUtils.findParentFigureInstance(this, IRoundedRectangleFigure.class);
-		// if (parentFigure != null) {
-		// // IRoundedRectangleFigure parentFigure = (IRoundedRectangleFigure) getParent();
-		// // manual management of use UseOriginalColors to permit to change
-		// if (!parentFigure.getUseOriginalColors()) {
 		// Set the color from the color of the parent
 		setBackgroundColor(getParent().getBackgroundColor());
 		setForegroundColor(getParent().getForegroundColor());
-		// } else {
-		// // Set the color to the original color
-		// setBackgroundColor(ColorConstants.yellow);
-		// setForegroundColor(ColorConstants.red);
-		// }
-		// }
 
 		// set the clip of the graphics to the parent clip
 		graphics.setClip(parentBounds);

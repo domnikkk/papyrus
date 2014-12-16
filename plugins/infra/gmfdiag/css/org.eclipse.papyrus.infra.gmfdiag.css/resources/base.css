@@ -303,18 +303,18 @@ StateMachineDiagram Pseudostate[kind="choice"]{
 
 /*---------- Composite Diagram ---------*/
 
-CompositeDiagram Property[aggregation="shared"]{
+CompositeStructureDiagram Property[aggregation="shared"]{
 	borderStyle: custom;
 }
 
-CompositeDiagram  DurationObservation > Compartment[kind="symbol"],
-CompositeDiagram  TimeObservation > Compartment[kind="symbol"]
+CompositeStructureDiagram DurationObservation > Compartment[kind="symbol"],
+CompositeStructureDiagram TimeObservation > Compartment[kind="symbol"]
 {
     visible:true;
 }
 
-CompositeDiagram  DurationObservation > Label,
-CompositeDiagram  TimeObservation > Label
+CompositeStructureDiagram DurationObservation > Label,
+CompositeStructureDiagram TimeObservation > Label
 {
     visible:true;
     textAlignment:"Left";

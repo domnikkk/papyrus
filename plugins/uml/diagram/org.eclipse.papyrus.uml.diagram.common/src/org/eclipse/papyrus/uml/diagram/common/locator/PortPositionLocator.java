@@ -136,7 +136,13 @@ public class PortPositionLocator implements IBorderItemLocator {
 
 			ConnectionAnchor connectionAnchor = ((SVGNodePlateFigure) parentFigure).getConnectionAnchor("");
 			// Get the location point, with anchor.
-			((SlidableRoundedRectangleAnchor) connectionAnchor).setOffset(getPortOffset());
+
+			// get the offset depending of the position of the port (inside, outside or onLine)
+			Dimension offset = getPortOffset().getCopy();
+			parentFigure.translateToAbsolute(offset);
+
+			((SlidableRoundedRectangleAnchor) connectionAnchor).setOffset(offset);
+
 			Point locationForPort = ((SlidableRoundedRectangleAnchor) connectionAnchor).getLocation(parentRec.getCenter(), proposedLocation.getLocation());
 			((SlidableRoundedRectangleAnchor) connectionAnchor).setOffset(new Dimension());
 			if (locationForPort != null) {
@@ -222,8 +228,8 @@ public class PortPositionLocator implements IBorderItemLocator {
 				portOffset.width = -figure.getBounds().width / 2;
 				portOffset.height = -figure.getBounds().height / 2;
 			} else if ("outside".equals(position)) {
-				portOffset.width = figure.getBounds().width / 2;
-				portOffset.height = figure.getBounds().height / 2;
+				portOffset.width = figure.getBounds().width / 2 - 1;
+				portOffset.height = figure.getBounds().height / 2 - 1;
 			}
 			// Else onLine: no offset is applied and the port is on the line.
 		}
