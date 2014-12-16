@@ -1879,81 +1879,81 @@
 		      large_icon="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
 		      path="/"
 		      small_icon="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif">
-		      <expand
-		             force="true">
-		      </expand>
-			</entry>
+		   <expand
+		         force="true">
+		   </expand>
+		</entry>
 		<predefinedEntry
 		        id="composite.tool.class"
-		        path="/composite.group.nodes">
+				path="/composite.group.nodes">
 		  </predefinedEntry>
 		<predefinedEntry
 		        id="composite.tool.property"
-		        path="/composite.group.nodes">
+				path="/composite.group.nodes">
 		  </predefinedEntry>
 		<predefinedEntry
 		        id="composite.tool.port"
-		        path="/composite.group.nodes">
+				path="/composite.group.nodes">
 		  </predefinedEntry>
 		<predefinedEntry
 		        id="composite.tool.collaboration"
-		        path="/composite.group.nodes">
+				path="/composite.group.nodes">
 		  </predefinedEntry>
 		<predefinedEntry
 		        id="composite.tool.collaborationrole"
-		        path="/composite.group.nodes">
+				path="/composite.group.nodes">
 		  </predefinedEntry>
 		<predefinedEntry
 		        id="composite.tool.collaborationuse"
-		        path="/composite.group.nodes">
+				path="/composite.group.nodes">
 		  </predefinedEntry>
 		<predefinedEntry
 		        id="composite.tool.comment"
-		        path="/composite.group.nodes">
+				path="/composite.group.nodes">
 		  </predefinedEntry>
 		<predefinedEntry
 		        id="composite.tool.constraint"
-		        path="/composite.group.nodes">
+				path="/composite.group.nodes">
 		  </predefinedEntry>
 		<predefinedEntry
 		        id="composite.tool.timeobservation"
-		        path="/composite.group.nodes">
+				path="/composite.group.nodes">
 		  </predefinedEntry>
 		<predefinedEntry
 		        id="composite.tool.durationobservation"
-		        path="/composite.group.nodes">
+				path="/composite.group.nodes">
 		  </predefinedEntry>
 		<predefinedEntry
 		        id="composite.tool.informationitem"
-		        path="/composite.group.nodes">
+				path="/composite.group.nodes">
 		  </predefinedEntry>
 		<predefinedEntry
 		        id="composite.tool.parameter"
-		        path="/composite.group.nodes">
+				path="/composite.group.nodes">
 		  </predefinedEntry>
 		<predefinedEntry
 		        id="composite.tool.activity"
-		        path="/composite.group.nodes">
+				path="/composite.group.nodes">
 		  </predefinedEntry>
 		<predefinedEntry
 		        id="composite.tool.interaction"
-		        path="/composite.group.nodes">
+				path="/composite.group.nodes">
 		  </predefinedEntry>
 		<predefinedEntry
 		        id="composite.tool.protocolstatemachine"
-		        path="/composite.group.nodes">
+				path="/composite.group.nodes">
 		  </predefinedEntry>
 		<predefinedEntry
 		        id="composite.tool.statemachine"
-		        path="/composite.group.nodes">
+				path="/composite.group.nodes">
 		  </predefinedEntry>
 		<predefinedEntry
 		        id="composite.tool.functionbehavior"
-		        path="/composite.group.nodes">
+				path="/composite.group.nodes">
 		  </predefinedEntry>
 		<predefinedEntry
 		        id="composite.tool.opaquebehavior"
-		        path="/composite.group.nodes">
+				path="/composite.group.nodes">
 		  </predefinedEntry>
 		<entry
 		      description="Edges"
@@ -1963,53 +1963,53 @@
 		      large_icon="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
 		      path="/"
 		      small_icon="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif">
-		      <expand
-		             force="true">
-		      </expand>
-			</entry>
+		   <expand
+		         force="true">
+		   </expand>
+		</entry>
 		<predefinedEntry
 		        id="composite.tool.link"
-		        path="/composite.group.edges">
+				path="/composite.group.edges">
 		  </predefinedEntry>
 		<predefinedEntry
 		        id="composite.tool.connector"
-		        path="/composite.group.edges">
+				path="/composite.group.edges">
 		  </predefinedEntry>
 		<predefinedEntry
 		        id="composite.tool.rolebinding"
-		        path="/composite.group.edges">
+				path="/composite.group.edges">
 		  </predefinedEntry>
 		<predefinedEntry
 		        id="composite.tool.generalization"
-		        path="/composite.group.edges">
+				path="/composite.group.edges">
 		  </predefinedEntry>
 		<predefinedEntry
 		        id="composite.tool.realization"
-		        path="/composite.group.edges">
+				path="/composite.group.edges">
 		  </predefinedEntry>
 		<predefinedEntry
 		        id="composite.tool.substitution"
-		        path="/composite.group.edges">
+				path="/composite.group.edges">
 		  </predefinedEntry>
 		<predefinedEntry
 		        id="composite.tool.abstraction"
-		        path="/composite.group.edges">
+				path="/composite.group.edges">
 		  </predefinedEntry>
 		<predefinedEntry
 		        id="composite.tool.usage"
-		        path="/composite.group.edges">
+				path="/composite.group.edges">
 		  </predefinedEntry>
 		<predefinedEntry
 		        id="composite.tool.dependency"
-		        path="/composite.group.edges">
+				path="/composite.group.edges">
 		  </predefinedEntry>
 		<predefinedEntry
 		        id="composite.tool.representation"
-		        path="/composite.group.edges">
+				path="/composite.group.edges">
 		  </predefinedEntry>
 		<predefinedEntry
 		        id="composite.tool.informationflow"
-		        path="/composite.group.edges">
+				path="/composite.group.edges">
 		  </predefinedEntry>
 		</contribution>
 		<editor id="org.eclipse.papyrus.uml.diagram.composite"/>

@@ -170,7 +170,7 @@
             <method name="getType()" value="7000,19000,667,670,8500"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
-            <method name="getType()" value="2001,5001,5002,6001,8001,8002,9001,9002,10001,10002,11001,11002,12001,12002,13001,13002,14001,14002,15001,15002,16001,16002,17001,17002,18001,18002,6666,6668,6669"/>
+            <method name="getType()" value="2001,5001,5002,6001,19003,8001,8002,9001,9002,10001,10002,11001,11002,12001,12002,13001,13002,14001,14002,15001,15002,16001,16002,17001,17002,18001,18002,6666,6668,6669"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-compartments">
             <method name="getType()" value="3002,2002,6002"/>
@@ -982,73 +982,73 @@
 		      large_icon="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
 		      path="/"
 		      small_icon="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif">
-		      <expand
-		             force="true">
-		      </expand>
-			</entry>
+		   <expand
+		         force="true">
+		   </expand>
+		</entry>
 		<predefinedEntry
 		        id="createRegionCreationTool"
-		        path="/createNodesGroup">
+				path="/createNodesGroup">
 		  </predefinedEntry>
 		<predefinedEntry
 		        id="createStateCreationTool"
-		        path="/createNodesGroup">
+				path="/createNodesGroup">
 		  </predefinedEntry>
 		<predefinedEntry
 		        id="createInitialCreationTool"
-		        path="/createNodesGroup">
+				path="/createNodesGroup">
 		  </predefinedEntry>
 		<predefinedEntry
 		        id="createFinalStateCreationTool"
-		        path="/createNodesGroup">
+				path="/createNodesGroup">
 		  </predefinedEntry>
 		<predefinedEntry
 		        id="createShallowHistoryCreationTool"
-		        path="/createNodesGroup">
+				path="/createNodesGroup">
 		  </predefinedEntry>
 		<predefinedEntry
 		        id="createDeepHistoryCreationTool"
-		        path="/createNodesGroup">
+				path="/createNodesGroup">
 		  </predefinedEntry>
 		<predefinedEntry
 		        id="createForkCreationTool"
-		        path="/createNodesGroup">
+				path="/createNodesGroup">
 		  </predefinedEntry>
 		<predefinedEntry
 		        id="createJoinCreationTool"
-		        path="/createNodesGroup">
+				path="/createNodesGroup">
 		  </predefinedEntry>
 		<predefinedEntry
 		        id="createChoiceCreationTool"
-		        path="/createNodesGroup">
+				path="/createNodesGroup">
 		  </predefinedEntry>
 		<predefinedEntry
 		        id="createJunctionCreationTool"
-		        path="/createNodesGroup">
+				path="/createNodesGroup">
 		  </predefinedEntry>
 		<predefinedEntry
 		        id="createEntryPointCreationTool"
-		        path="/createNodesGroup">
+				path="/createNodesGroup">
 		  </predefinedEntry>
 		<predefinedEntry
 		        id="createExitPointCreationTool"
-		        path="/createNodesGroup">
+				path="/createNodesGroup">
 		  </predefinedEntry>
 		<predefinedEntry
 		        id="createTerminateCreationTool"
-		        path="/createNodesGroup">
+				path="/createNodesGroup">
 		  </predefinedEntry>
 		<predefinedEntry
 		        id="createConnectionPointReferenceCreationTool"
-		        path="/createNodesGroup">
+				path="/createNodesGroup">
 		  </predefinedEntry>
 		<predefinedEntry
 		        id="createStateMachineCommentCreationTool"
-		        path="/createNodesGroup">
+				path="/createNodesGroup">
 		  </predefinedEntry>
 		<predefinedEntry
 		        id="createConstraintCreationTool"
-		        path="/createNodesGroup">
+				path="/createNodesGroup">
 		  </predefinedEntry>
 		<entry
 		      description=""
@@ -1058,21 +1058,21 @@
 		      large_icon="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
 		      path="/"
 		      small_icon="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif">
-		      <expand
-		             force="true">
-		      </expand>
-			</entry>
+		   <expand
+		         force="true">
+		   </expand>
+		</entry>
 		<predefinedEntry
 		        id="createTransitionCreationTool"
-		        path="/createEdgesGroup">
+				path="/createEdgesGroup">
 		  </predefinedEntry>
 		<predefinedEntry
 		        id="createCommentlinkCreationTool"
-		        path="/createEdgesGroup">
+				path="/createEdgesGroup">
 		  </predefinedEntry>
 		<predefinedEntry
 		        id="createContextLink3CreationTool"
-		        path="/createEdgesGroup">
+				path="/createEdgesGroup">
 		  </predefinedEntry>
 		</contribution>
 		<editor id="org.eclipse.papyrus.uml.diagram.statemachine"/>

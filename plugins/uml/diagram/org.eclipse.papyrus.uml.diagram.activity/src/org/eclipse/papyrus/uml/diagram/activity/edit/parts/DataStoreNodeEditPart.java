@@ -18,7 +18,6 @@ import java.util.LinkedList;
 import java.util.List;
 
 import org.eclipse.draw2d.IFigure;
-import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.StackLayout;
 import org.eclipse.draw2d.geometry.Dimension;
@@ -37,7 +36,6 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.FigureUtilities;
-import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
@@ -56,17 +54,17 @@ import org.eclipse.papyrus.uml.diagram.activity.locator.LinkedBehaviorLocator;
 import org.eclipse.papyrus.uml.diagram.activity.part.UMLDiagramEditorPlugin;
 import org.eclipse.papyrus.uml.diagram.activity.part.UMLVisualIDRegistry;
 import org.eclipse.papyrus.uml.diagram.activity.providers.UMLElementTypes;
-import org.eclipse.papyrus.uml.diagram.common.editparts.NamedElementEditPart;
+import org.eclipse.papyrus.uml.diagram.common.editparts.RoundedCompartmentEditPart;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeLabelDisplayEditPolicy;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeNodeLabelDisplayEditPolicy;
-import org.eclipse.papyrus.uml.diagram.common.figure.node.NodeNamedElementFigure;
+import org.eclipse.papyrus.uml.diagram.common.figure.node.RoundedCompartmentFigure;
 import org.eclipse.papyrus.uml.diagram.common.helper.PreferenceInitializerForElementHelper;
 import org.eclipse.swt.graphics.Color;
 
 /**
  * @generated
  */
-public class DataStoreNodeEditPart extends NamedElementEditPart {
+public class DataStoreNodeEditPart extends RoundedCompartmentEditPart {
 
 	/**
 	 * @generated
@@ -165,15 +163,15 @@ public class DataStoreNodeEditPart extends NamedElementEditPart {
 	 */
 	@Override
 	protected IFigure createNodeShape() {
-		return primaryShape = new ObjectNodeDescriptor();
+		return primaryShape = new RoundedCompartmentFigure();
 	}
 
 	/**
 	 * @generated
 	 */
 	@Override
-	public ObjectNodeDescriptor getPrimaryShape() {
-		return (ObjectNodeDescriptor) primaryShape;
+	public RoundedCompartmentFigure getPrimaryShape() {
+		return (RoundedCompartmentFigure) primaryShape;
 	}
 
 	/**
@@ -181,7 +179,7 @@ public class DataStoreNodeEditPart extends NamedElementEditPart {
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof DataStoreNodeLabelEditPart) {
-			((DataStoreNodeLabelEditPart) childEditPart).setLabel(getPrimaryShape().getObjectNodeLabel());
+			((DataStoreNodeLabelEditPart) childEditPart).setLabel(getPrimaryShape().getNameLabel());
 			return true;
 		}
 		return false;
@@ -1199,52 +1197,52 @@ public class DataStoreNodeEditPart extends NamedElementEditPart {
 		return types;
 	}
 
-	/**
-	 * @generated
-	 */
-	public class ObjectNodeDescriptor extends NodeNamedElementFigure {
-
-		/**
-		 * @generated
-		 */
-		private WrappingLabel fObjectNodeLabel;
-
-		/**
-		 * @generated NOT call super
-		 */
-		public ObjectNodeDescriptor() {
-			// call super
-			super();
-			createContents();
-		}
-
-		/**
-		 * @generated NOT use super figure name label instead
-		 */
-		private void createContents() {
-			// use super figure name label instead
-			getNameLabel().setTextJustification(PositionConstants.CENTER);
-			getNameLabel().setAlignment(PositionConstants.CENTER);
-			getNameLabel().setTextWrap(true);
-			getNameLabel().setBorder(new MarginBorder(getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5)));
-			// fObjectNodeLabel = new WrappingLabel();
-			//
-			//
-			//
-			// fObjectNodeLabel.setBorder(new MarginBorder(getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5)));
-			//
-			// this.add(fObjectNodeLabel);
-		}
-
-		/**
-		 * @generated NOT get label from super figure instead
-		 */
-		public WrappingLabel getObjectNodeLabel() {
-			// get label from super figure instead
-			return getNameLabel();
-			// return fObjectNodeLabel;
-		}
-	}
+	// /**
+	// * @generated
+	// */
+	// public class ObjectNodeDescriptor extends NodeNamedElementFigure {
+	//
+	// /**
+	// * @generated
+	// */
+	// private WrappingLabel fObjectNodeLabel;
+	//
+	// /**
+	// * @generated NOT call super
+	// */
+	// public ObjectNodeDescriptor() {
+	// // call super
+	// super();
+	// createContents();
+	// }
+	//
+	// /**
+	// * @generated NOT use super figure name label instead
+	// */
+	// private void createContents() {
+	// // use super figure name label instead
+	// getNameLabel().setTextJustification(PositionConstants.CENTER);
+	// getNameLabel().setAlignment(PositionConstants.CENTER);
+	// getNameLabel().setTextWrap(true);
+	// getNameLabel().setBorder(new MarginBorder(getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5)));
+	// // fObjectNodeLabel = new WrappingLabel();
+	// //
+	// //
+	// //
+	// // fObjectNodeLabel.setBorder(new MarginBorder(getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5)));
+	// //
+	// // this.add(fObjectNodeLabel);
+	// }
+	//
+	// /**
+	// * @generated NOT get label from super figure instead
+	// */
+	// public WrappingLabel getObjectNodeLabel() {
+	// // get label from super figure instead
+	// return getNameLabel();
+	// // return fObjectNodeLabel;
+	// }
+	// }
 
 	/**
 	 * @generated

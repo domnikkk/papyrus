@@ -17,6 +17,7 @@ import org.eclipse.gmf.codegen.gmfgen.GenContainerBase;
 import org.eclipse.gmf.codegen.gmfgen.GenLinkEnd;
 import org.eclipse.gmf.codegen.gmfgen.GenNode;
 import org.eclipse.gmf.codegen.gmfgen.MetamodelType;
+import org.eclipse.papyrus.papyrusgmfgenextension.*;
 import org.eclipse.papyrus.papyrusgmfgenextension.AdditionalEditPartCandies;
 import org.eclipse.papyrus.papyrusgmfgenextension.AlternateCanvas;
 import org.eclipse.papyrus.papyrusgmfgenextension.AlternateGenLink;
@@ -228,6 +229,11 @@ public class PapyrusgmfgenextensionAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseCustomDiagramUpdaterSingleton(CustomDiagramUpdaterSingleton object) {
 			return createCustomDiagramUpdaterSingletonAdapter();
+		}
+
+		@Override
+		public Adapter caseSpecificNodePlate(SpecificNodePlate object) {
+			return createSpecificNodePlateAdapter();
 		}
 
 		@Override
@@ -659,6 +665,21 @@ public class PapyrusgmfgenextensionAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createCustomDiagramUpdaterSingletonAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.papyrusgmfgenextension.SpecificNodePlate <em>Specific Node Plate</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.papyrusgmfgenextension.SpecificNodePlate
+	 * @generated
+	 */
+	public Adapter createSpecificNodePlateAdapter() {
 		return null;
 	}
 

@@ -32,46 +32,47 @@ import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.DoActivityStateBe
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.EntryStateBehaviorEditPart;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.ExitStateBehaviorEditPart;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.FinalStateEditPart;
-import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.FinalStateNameEditPart;
+import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.FinalStateFloatingLabelEditPart;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.FinalStateStereotypeEditPart;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.GeneralizationEditPart;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.GeneralizationStereotypeEditPart;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.InternalTransitionEditPart;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.PackageEditPart;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.PseudostateChoiceEditPart;
-import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.PseudostateChoiceNameEditPart;
+import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.PseudostateChoiceFloatingLabelEditPart;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.PseudostateChoiceStereotypeEditPart;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.PseudostateDeepHistoryEditPart;
-import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.PseudostateDeepHistoryNameEditPart;
+import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.PseudostateDeepHistoryFloatingLabelEditPart;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.PseudostateDeepHistoryStereotypeEditPart;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.PseudostateEntryPointEditPart;
-import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.PseudostateEntryPointNameEditPart;
+import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.PseudostateEntryPointFloatingLabelEditPart;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.PseudostateEntryPointStereotypeEditPart;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.PseudostateExitPointEditPart;
-import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.PseudostateExitPointNameEditPart;
+import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.PseudostateExitPointFloatingLabelEditPart;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.PseudostateExitPointStereotypeEditPart;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.PseudostateForkEditPart;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.PseudostateForkNameEditPart;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.PseudostateForkStereotypeEditPart;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.PseudostateInitialEditPart;
-import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.PseudostateInitialNameEditPart;
+import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.PseudostateInitialFloatingLabelEditPart;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.PseudostateInitialStereotypeEditPart;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.PseudostateJoinEditPart;
-import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.PseudostateJoinNameEditPart;
+import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.PseudostateJoinFloatingLabelEditPart;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.PseudostateJoinStereotypeEditPart;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.PseudostateJunctionEditPart;
-import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.PseudostateJunctionNameEditPart;
+import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.PseudostateJunctionFloatingLabelEditPart;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.PseudostateJunctionStereotypeEditPart;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.PseudostateShallowHistoryEditPart;
-import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.PseudostateShallowHistoryNameEditPart;
+import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.PseudostateShallowHistoryFloatingLabelEditPart;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.PseudostateShallowHistoryStereotypeEditPart;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.PseudostateTerminateEditPart;
-import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.PseudostateTerminateNameEditPart;
+import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.PseudostateTerminateFloatingLabelEditPart;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.PseudostateTerminateStereotypeEditPart;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.RegionCompartmentEditPart;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.RegionEditPart;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.StateCompartmentEditPart;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.StateEditPart;
+import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.StateFloatingLabelEditPart;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.StateMachineCompartmentEditPart;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.StateMachineEditPart;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.StateMachineNameEditPart;
@@ -332,7 +333,7 @@ public class UMLVisualIDRegistry {
 			}
 			break;
 		case FinalStateEditPart.VISUAL_ID:
-			if (FinalStateNameEditPart.VISUAL_ID == nodeVisualID) {
+			if (FinalStateFloatingLabelEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (FinalStateStereotypeEditPart.VISUAL_ID == nodeVisualID) {
@@ -341,6 +342,9 @@ public class UMLVisualIDRegistry {
 			break;
 		case StateEditPart.VISUAL_ID:
 			if (StateNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (StateFloatingLabelEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (StateCompartmentEditPart.VISUAL_ID == nodeVisualID) {
@@ -372,7 +376,7 @@ public class UMLVisualIDRegistry {
 			}
 			break;
 		case PseudostateInitialEditPart.VISUAL_ID:
-			if (PseudostateInitialNameEditPart.VISUAL_ID == nodeVisualID) {
+			if (PseudostateInitialFloatingLabelEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (PseudostateInitialStereotypeEditPart.VISUAL_ID == nodeVisualID) {
@@ -380,7 +384,7 @@ public class UMLVisualIDRegistry {
 			}
 			break;
 		case PseudostateJoinEditPart.VISUAL_ID:
-			if (PseudostateJoinNameEditPart.VISUAL_ID == nodeVisualID) {
+			if (PseudostateJoinFloatingLabelEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (PseudostateJoinStereotypeEditPart.VISUAL_ID == nodeVisualID) {
@@ -396,7 +400,7 @@ public class UMLVisualIDRegistry {
 			}
 			break;
 		case PseudostateChoiceEditPart.VISUAL_ID:
-			if (PseudostateChoiceNameEditPart.VISUAL_ID == nodeVisualID) {
+			if (PseudostateChoiceFloatingLabelEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (PseudostateChoiceStereotypeEditPart.VISUAL_ID == nodeVisualID) {
@@ -404,7 +408,7 @@ public class UMLVisualIDRegistry {
 			}
 			break;
 		case PseudostateJunctionEditPart.VISUAL_ID:
-			if (PseudostateJunctionNameEditPart.VISUAL_ID == nodeVisualID) {
+			if (PseudostateJunctionFloatingLabelEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (PseudostateJunctionStereotypeEditPart.VISUAL_ID == nodeVisualID) {
@@ -412,7 +416,7 @@ public class UMLVisualIDRegistry {
 			}
 			break;
 		case PseudostateShallowHistoryEditPart.VISUAL_ID:
-			if (PseudostateShallowHistoryNameEditPart.VISUAL_ID == nodeVisualID) {
+			if (PseudostateShallowHistoryFloatingLabelEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (PseudostateShallowHistoryStereotypeEditPart.VISUAL_ID == nodeVisualID) {
@@ -420,7 +424,7 @@ public class UMLVisualIDRegistry {
 			}
 			break;
 		case PseudostateDeepHistoryEditPart.VISUAL_ID:
-			if (PseudostateDeepHistoryNameEditPart.VISUAL_ID == nodeVisualID) {
+			if (PseudostateDeepHistoryFloatingLabelEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (PseudostateDeepHistoryStereotypeEditPart.VISUAL_ID == nodeVisualID) {
@@ -428,7 +432,7 @@ public class UMLVisualIDRegistry {
 			}
 			break;
 		case PseudostateTerminateEditPart.VISUAL_ID:
-			if (PseudostateTerminateNameEditPart.VISUAL_ID == nodeVisualID) {
+			if (PseudostateTerminateFloatingLabelEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (PseudostateTerminateStereotypeEditPart.VISUAL_ID == nodeVisualID) {
@@ -436,7 +440,7 @@ public class UMLVisualIDRegistry {
 			}
 			break;
 		case PseudostateEntryPointEditPart.VISUAL_ID:
-			if (PseudostateEntryPointNameEditPart.VISUAL_ID == nodeVisualID) {
+			if (PseudostateEntryPointFloatingLabelEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (PseudostateEntryPointStereotypeEditPart.VISUAL_ID == nodeVisualID) {
@@ -444,7 +448,7 @@ public class UMLVisualIDRegistry {
 			}
 			break;
 		case PseudostateExitPointEditPart.VISUAL_ID:
-			if (PseudostateExitPointNameEditPart.VISUAL_ID == nodeVisualID) {
+			if (PseudostateExitPointFloatingLabelEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (PseudostateExitPointStereotypeEditPart.VISUAL_ID == nodeVisualID) {
@@ -755,7 +759,7 @@ public class UMLVisualIDRegistry {
 	 */
 	public static boolean checkNodeVisualID(View containerView, EObject domainElement, int candidate) {
 		if (candidate == -1) {
-			//unrecognized id is always bad
+			// unrecognized id is always bad
 			return false;
 		}
 		int basic = getNodeVisualID(containerView, domainElement);

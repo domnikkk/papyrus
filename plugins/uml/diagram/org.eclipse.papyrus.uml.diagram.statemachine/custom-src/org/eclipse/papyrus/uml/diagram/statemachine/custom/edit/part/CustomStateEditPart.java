@@ -30,4 +30,23 @@ public class CustomStateEditPart extends StateEditPart {
 
 	}
 
+	/**
+	 * @see org.eclipse.papyrus.uml.diagram.common.editparts.RoundedCompartmentEditPart#getDefaultCornerHeight()
+	 *
+	 * @return
+	 */
+	@Override
+	protected int getDefaultCornerHeight() {
+		return 20;
+	}
+
+	/**
+	 * @see org.eclipse.papyrus.uml.diagram.common.editparts.RoundedCompartmentEditPart#getDefaultCornerWidth()
+	 *
+	 * @return
+	 */
+	@Override
+	protected int getDefaultCornerWidth() {
+		return 20;
+	}
 }

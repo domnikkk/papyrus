@@ -22,11 +22,11 @@ import org.eclipse.gef.requests.CreateRequest;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
-import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.infra.gmfdiag.common.editpart.NodeEditPart;
 import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.IPapyrusNodeFigure;
+import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.RoundedRectangleNodePlateFigure;
 import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.SelectableBorderedNodeFigure;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeLabelDisplayEditPolicy;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeNodeLabelDisplayEditPolicy;
@@ -143,13 +143,6 @@ public class NestedArtifactNodeEditPartCN extends NodeEditPart {
 		}
 
 
-		if (childEditPart instanceof ArtifactCompositeCompartmentEditPartCN) {
-			IFigure pane = getPrimaryShape().getCompositeCompartmentFigure();
-			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way
-			pane.add(((ArtifactCompositeCompartmentEditPartCN) childEditPart).getFigure());
-			return true;
-		}
-
 		return false;
 	}
 
@@ -158,11 +151,6 @@ public class NestedArtifactNodeEditPartCN extends NodeEditPart {
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof NestedArtifactNameEditPart) {
-			return true;
-		}
-		if (childEditPart instanceof ArtifactCompositeCompartmentEditPartCN) {
-			IFigure pane = getPrimaryShape().getCompositeCompartmentFigure();
-			pane.remove(((ArtifactCompositeCompartmentEditPartCN) childEditPart).getFigure());
 			return true;
 		}
 		return false;
@@ -195,9 +183,6 @@ public class NestedArtifactNodeEditPartCN extends NodeEditPart {
 	 */
 	@Override
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-		if (editPart instanceof ArtifactCompositeCompartmentEditPartCN) {
-			return getPrimaryShape().getCompositeCompartmentFigure();
-		}
 		return getContentPane();
 	}
 
@@ -206,7 +191,7 @@ public class NestedArtifactNodeEditPartCN extends NodeEditPart {
 	 */
 	@Override
 	protected NodeFigure createNodePlate() {
-		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(150, 70);
+		RoundedRectangleNodePlateFigure result = new RoundedRectangleNodePlateFigure(150, 70);
 		return result;
 	}
 

@@ -35,7 +35,7 @@ public class InteractionWithSnapshotFigure extends InteractionUseFigure {
 	protected Image currentSnapshot;
 
 	public InteractionWithSnapshotFigure() {
-		this.corner = 0;
+		this.setCornerDimensions(new Dimension());
 		originalSnapshot = null;
 		currentSnapshot = null;
 	}

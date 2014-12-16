@@ -31,6 +31,9 @@ import org.eclipse.papyrus.uml.diagram.component.edit.parts.ComponentDiagramEdit
 import org.eclipse.papyrus.uml.diagram.component.edit.parts.ComponentEditPart;
 import org.eclipse.papyrus.uml.diagram.component.edit.parts.ComponentEditPartCN;
 import org.eclipse.papyrus.uml.diagram.component.edit.parts.ComponentEditPartPCN;
+import org.eclipse.papyrus.uml.diagram.component.edit.parts.ComponentFloatingLabelEditPart;
+import org.eclipse.papyrus.uml.diagram.component.edit.parts.ComponentFloatingLabelEditPartCN;
+import org.eclipse.papyrus.uml.diagram.component.edit.parts.ComponentFloatingLabelEditPartPCN;
 import org.eclipse.papyrus.uml.diagram.component.edit.parts.ComponentNameEditPart;
 import org.eclipse.papyrus.uml.diagram.component.edit.parts.ComponentNameEditPartCN;
 import org.eclipse.papyrus.uml.diagram.component.edit.parts.ComponentNameEditPartPCN;
@@ -53,12 +56,15 @@ import org.eclipse.papyrus.uml.diagram.component.edit.parts.DependencyBranchEdit
 import org.eclipse.papyrus.uml.diagram.component.edit.parts.DependencyEditPart;
 import org.eclipse.papyrus.uml.diagram.component.edit.parts.DependencyNameEditPart;
 import org.eclipse.papyrus.uml.diagram.component.edit.parts.DependencyNodeEditPart;
+import org.eclipse.papyrus.uml.diagram.component.edit.parts.DependencyNodeFloatingLabelEditPart;
 import org.eclipse.papyrus.uml.diagram.component.edit.parts.GeneralizationAppliedStereotypeEditPart;
 import org.eclipse.papyrus.uml.diagram.component.edit.parts.GeneralizationEditPart;
 import org.eclipse.papyrus.uml.diagram.component.edit.parts.InterfaceAttributeCompartmentEditPart;
 import org.eclipse.papyrus.uml.diagram.component.edit.parts.InterfaceAttributeCompartmentEditPartCN;
 import org.eclipse.papyrus.uml.diagram.component.edit.parts.InterfaceEditPart;
 import org.eclipse.papyrus.uml.diagram.component.edit.parts.InterfaceEditPartPCN;
+import org.eclipse.papyrus.uml.diagram.component.edit.parts.InterfaceFloatingLabelEditPart;
+import org.eclipse.papyrus.uml.diagram.component.edit.parts.InterfaceFloatingLabelEditPartPCN;
 import org.eclipse.papyrus.uml.diagram.component.edit.parts.InterfaceNameEditPart;
 import org.eclipse.papyrus.uml.diagram.component.edit.parts.InterfaceNameEditPartPCN;
 import org.eclipse.papyrus.uml.diagram.component.edit.parts.InterfaceOperationCompartmentEditPart;
@@ -90,6 +96,8 @@ import org.eclipse.papyrus.uml.diagram.component.edit.parts.PropertyPartNameEdit
 import org.eclipse.papyrus.uml.diagram.component.edit.parts.ReceptionInInterfaceEditPart;
 import org.eclipse.papyrus.uml.diagram.component.edit.parts.RectangleInterfaceEditPart;
 import org.eclipse.papyrus.uml.diagram.component.edit.parts.RectangleInterfaceEditPartCN;
+import org.eclipse.papyrus.uml.diagram.component.edit.parts.RectangleInterfaceFloatingLabelEditPart;
+import org.eclipse.papyrus.uml.diagram.component.edit.parts.RectangleInterfaceFloatingLabelEditPartCN;
 import org.eclipse.papyrus.uml.diagram.component.edit.parts.RectangleInterfaceNameEditPart;
 import org.eclipse.papyrus.uml.diagram.component.edit.parts.RectangleInterfaceNameEditPartCN;
 import org.eclipse.papyrus.uml.diagram.component.edit.parts.SubstitutionAppliedStereotypeEditPart;
@@ -442,9 +450,15 @@ public class UMLVisualIDRegistry {
 			if (MultiDependencyLabelEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (DependencyNodeFloatingLabelEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			break;
 		case ComponentEditPart.VISUAL_ID:
 			if (ComponentNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ComponentFloatingLabelEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (ComponentCompositeCompartmentEditPart.VISUAL_ID == nodeVisualID) {
@@ -472,6 +486,9 @@ public class UMLVisualIDRegistry {
 			break;
 		case RectangleInterfaceEditPart.VISUAL_ID:
 			if (RectangleInterfaceNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (RectangleInterfaceFloatingLabelEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (InterfaceAttributeCompartmentEditPart.VISUAL_ID == nodeVisualID) {
@@ -503,6 +520,9 @@ public class UMLVisualIDRegistry {
 			if (InterfaceNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (InterfaceFloatingLabelEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			break;
 		case PortEditPart.VISUAL_ID:
 			if (PortNameEditPart.VISUAL_ID == nodeVisualID) {
@@ -532,6 +552,9 @@ public class UMLVisualIDRegistry {
 			if (RectangleInterfaceNameEditPartCN.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (RectangleInterfaceFloatingLabelEditPartCN.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			if (InterfaceAttributeCompartmentEditPartCN.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
@@ -543,6 +566,9 @@ public class UMLVisualIDRegistry {
 			if (ComponentNameEditPartCN.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (ComponentFloatingLabelEditPartCN.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			if (ComponentCompositeCompartmentEditPartCN.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
@@ -552,6 +578,9 @@ public class UMLVisualIDRegistry {
 			break;
 		case ComponentEditPartPCN.VISUAL_ID:
 			if (ComponentNameEditPartPCN.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ComponentFloatingLabelEditPartPCN.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (ComponentCompositeCompartmentEditPartPCN.VISUAL_ID == nodeVisualID) {
@@ -576,6 +605,9 @@ public class UMLVisualIDRegistry {
 			break;
 		case InterfaceEditPartPCN.VISUAL_ID:
 			if (InterfaceNameEditPartPCN.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (InterfaceFloatingLabelEditPartPCN.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -841,7 +873,7 @@ public class UMLVisualIDRegistry {
 	 */
 	public static boolean checkNodeVisualID(View containerView, EObject domainElement, int candidate) {
 		if (candidate == -1) {
-			//unrecognized id is always bad
+			// unrecognized id is always bad
 			return false;
 		}
 		int basic = getNodeVisualID(containerView, domainElement);

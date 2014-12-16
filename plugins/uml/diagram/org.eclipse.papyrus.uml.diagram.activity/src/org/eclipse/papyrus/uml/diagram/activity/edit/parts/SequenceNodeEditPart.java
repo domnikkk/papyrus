@@ -48,7 +48,7 @@ import org.eclipse.papyrus.uml.diagram.activity.edit.policies.SequenceNodeItemSe
 import org.eclipse.papyrus.uml.diagram.activity.part.UMLDiagramEditorPlugin;
 import org.eclipse.papyrus.uml.diagram.activity.part.UMLVisualIDRegistry;
 import org.eclipse.papyrus.uml.diagram.activity.providers.UMLElementTypes;
-import org.eclipse.papyrus.uml.diagram.common.editparts.UMLNodeEditPart;
+import org.eclipse.papyrus.uml.diagram.common.editparts.RoundedCompartmentEditPart;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeLabelDisplayEditPolicy;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeNodeLabelDisplayEditPolicy;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.ShowHideCompartmentEditPolicy;
@@ -58,7 +58,7 @@ import org.eclipse.swt.graphics.Color;
 /**
  * @generated
  */
-public class SequenceNodeEditPart extends UMLNodeEditPart {
+public class SequenceNodeEditPart extends RoundedCompartmentEditPart {
 
 	/**
 	 * @generated

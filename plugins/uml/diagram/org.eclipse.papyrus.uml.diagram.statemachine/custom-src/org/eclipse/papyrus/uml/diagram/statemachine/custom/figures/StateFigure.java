@@ -15,15 +15,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.draw2d.RectangleFigure;
-import org.eclipse.papyrus.uml.diagram.common.figure.node.AutomaticCompartmentLayoutManager;
-import org.eclipse.papyrus.uml.diagram.common.figure.node.CompartmentFigure;
+import org.eclipse.papyrus.uml.diagram.common.figure.node.RoundedCompartmentFigure;
 
 /**
  * Represents a classifier.
  */
-public class StateFigure extends CompartmentFigure {
-
-	int arcwidth = 20;
+public class StateFigure extends RoundedCompartmentFigure {
 
 	protected String submachineStateName = "";
 
@@ -56,9 +53,6 @@ public class StateFigure extends CompartmentFigure {
 	 */
 	public StateFigure(String tagLabel) {
 		super(COMPARTMENT, tagLabel);
-		shadowborder = new RoundedShadowBorder(getForegroundColor());
-		setBorder(shadowborder);
-		((AutomaticCompartmentLayoutManager) getLayoutManager()).setAddExtraHeight(false);
 	}
 
 	public void setSubmachineStateName(String text) {
@@ -67,13 +61,6 @@ public class StateFigure extends CompartmentFigure {
 
 	public void setIsSubmachineState(boolean b) {
 		isSubmachineState = b;
-	}
-
-
-	protected void refreshName() {
-		if (isSubmachineState) {
-			nameLabel.setText(submachineStateName);
-		}
 	}
 
 	/**
@@ -85,12 +72,4 @@ public class StateFigure extends CompartmentFigure {
 		return getCompartment(STATE_COMPARTMENT);
 	}
 
-	@Override
-	public void setShadow(boolean shadow) {
-		super.setShadow(shadow);
-		if (!shadow) {
-			RoundedBorder bord = new RoundedBorder(arcwidth, arcwidth);
-			this.setBorder(bord);
-		}
-	}
 }

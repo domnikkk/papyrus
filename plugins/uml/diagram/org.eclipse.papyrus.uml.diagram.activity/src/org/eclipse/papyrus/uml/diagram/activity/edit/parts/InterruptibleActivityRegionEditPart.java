@@ -39,10 +39,10 @@ import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.preference.PreferenceConverter;
-import org.eclipse.papyrus.infra.gmfdiag.common.editpart.NodeEditPart;
 import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.IPapyrusNodeFigure;
 import org.eclipse.papyrus.infra.gmfdiag.common.preferences.PreferencesConstantsHelper;
 import org.eclipse.papyrus.infra.gmfdiag.preferences.utils.GradientPreferenceConverter;
+import org.eclipse.papyrus.uml.diagram.activity.edit.part.RoundedUMLNodeEditPart;
 import org.eclipse.papyrus.uml.diagram.activity.edit.policies.InterruptibleActivityRegionItemSemanticEditPolicy;
 import org.eclipse.papyrus.uml.diagram.activity.edit.policies.OpenDiagramEditPolicy;
 import org.eclipse.papyrus.uml.diagram.activity.figures.InterruptibleActivityRegionFigure;
@@ -55,7 +55,7 @@ import org.eclipse.swt.graphics.Color;
 /**
  * @generated
  */
-public class InterruptibleActivityRegionEditPart extends NodeEditPart {
+public class InterruptibleActivityRegionEditPart extends RoundedUMLNodeEditPart {
 
 	/**
 	 * @generated

@@ -13,11 +13,15 @@
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.component.custom.locators;
 
+import org.eclipse.draw2d.ConnectionAnchor;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.PositionConstants;
+import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.gmf.runtime.diagram.ui.figures.IBorderItemLocator;
+import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.SVGNodePlateFigure;
+import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.SlidableRoundedRectangleAnchor;
 
 // TODO: Auto-generated Javadoc
 /**
@@ -43,6 +47,8 @@ import org.eclipse.gmf.runtime.diagram.ui.figures.IBorderItemLocator;
  *
  * .
  */
+@Deprecated
+// use org.eclipse.papyrus.uml.diagram.common.locator.PortPositionLocator instead
 public class PortPositionLocator implements IBorderItemLocator {
 
 	/** the figure around which this border item appears. */
@@ -105,6 +111,7 @@ public class PortPositionLocator implements IBorderItemLocator {
 		// and resolve the bounds of it graphical parent
 		Rectangle realLocation = new Rectangle(proposedLocation);
 
+
 		Rectangle parentRec = getParentFigure().getBounds().getCopy();
 
 		// Calculate Max position around the graphical parent (1/2 size or the port around
@@ -142,6 +149,27 @@ public class PortPositionLocator implements IBorderItemLocator {
 					realLocation.x = xMax;
 				}
 			}
+		}
+		// If it's a SVGNodePlate get the anchor to get the position
+		if (parentFigure instanceof SVGNodePlateFigure) {
+
+			// Translate location to absolute before calculate location Point
+			parentFigure.translateToAbsolute(proposedLocation);
+			parentFigure.translateToAbsolute(parentRec);
+
+			// Get the anchor
+			ConnectionAnchor connectionAnchor = ((SVGNodePlateFigure) parentFigure).getConnectionAnchor("");
+
+			// Get the location point, with anchor.
+			Point locationForPort = ((SlidableRoundedRectangleAnchor) connectionAnchor).getLocation(parentRec.getCenter(), proposedLocation.getLocation());
+			if (locationForPort != null) {
+				proposedLocation.setLocation(locationForPort);
+			}
+			// Translate to relative the location
+			parentFigure.translateToRelative(proposedLocation);
+
+			// Set the location
+			realLocation.setLocation(proposedLocation.getLocation());
 		}
 
 		// Return constrained location
@@ -233,6 +261,10 @@ public class PortPositionLocator implements IBorderItemLocator {
 
 		Point validLocation = getValidLocation(proposedLocation, target).getLocation();
 
-		target.setBounds(new Rectangle(validLocation, target.getPreferredSize()));
+		Dimension preferredSize = target.getPreferredSize();
+		Rectangle rect = new Rectangle(validLocation, preferredSize);
+		rect.translate(-preferredSize.width / 2, -preferredSize.height / 2);
+
+		target.setBounds(rect);
 	}
 }

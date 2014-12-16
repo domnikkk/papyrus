@@ -29,6 +29,7 @@ import org.eclipse.swt.graphics.Image;
 /**
  * Provides stereotype and name management for {@link TimeObservationNodeFigure} and {@link DurationObservationNodeFigure}
  */
+// To delete
 public class AbstractObservationNodeFigure extends NodeNamedElementFigure {
 
 	/** Plug-in ID where UML2 icons can be found */
