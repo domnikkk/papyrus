@@ -23,7 +23,7 @@ import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Stereotype;
 
 /**
- * content provider to display reviews
+ * This is the content provider to display reviews in the review editor
  *
  */
 public class ReviewsTreeContentProvider implements ITreeContentProvider{

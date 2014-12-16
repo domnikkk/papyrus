@@ -19,7 +19,7 @@ import org.eclipse.swt.graphics.Device;
 import org.eclipse.swt.widgets.Display;
 
 /**
- * figure that represent a remove of element
+ * This figure specifies that  a change about an attribute has been done on an element
  *
  */
 public class SetFig extends Figure{

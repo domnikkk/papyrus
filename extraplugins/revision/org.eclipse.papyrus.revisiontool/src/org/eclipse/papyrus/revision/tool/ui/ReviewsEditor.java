@@ -56,7 +56,7 @@ import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Model;
 
 /**
- * the review editor that display reviews or comments 
+ *  This class is the review editor that displays reviews or comments. This is an instance of a eclipse view. It references a content and label provider to display reviews. 
  *
  */
 public class ReviewsEditor extends ViewPart implements ITabbedPropertySheetPageContributor{

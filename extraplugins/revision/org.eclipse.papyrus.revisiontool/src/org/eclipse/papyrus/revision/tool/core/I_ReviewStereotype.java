@@ -13,7 +13,7 @@
  *****************************************************************************/
 package org.eclipse.papyrus.revision.tool.core;
 /**
- * contains all string about name of stereotypes attributes of the review profile 
+ * This interface contains all string about name of stereotypes attributes of the review profile 
  *
  */
 public interface I_ReviewStereotype {

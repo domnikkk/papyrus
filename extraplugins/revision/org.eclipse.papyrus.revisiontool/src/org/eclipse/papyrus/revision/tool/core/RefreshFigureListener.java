@@ -13,35 +13,15 @@
  *****************************************************************************/
 package org.eclipse.papyrus.revision.tool.core;
 
-import java.util.ArrayList;
-
 import org.eclipse.emf.common.command.Command;
-import org.eclipse.emf.common.command.CompoundCommand;
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.compare.AttributeChange;
-import org.eclipse.emf.compare.CompareFactory;
-import org.eclipse.emf.compare.DifferenceKind;
-import org.eclipse.emf.compare.DifferenceSource;
-import org.eclipse.emf.compare.Match;
-import org.eclipse.emf.compare.ReferenceChange;
-import org.eclipse.emf.ecore.EAttribute;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.transaction.NotificationFilter;
 import org.eclipse.emf.transaction.ResourceSetChangeEvent;
 import org.eclipse.emf.transaction.ResourceSetListener;
 import org.eclipse.emf.transaction.RollbackException;
-import org.eclipse.papyrus.revision.tool.command.CreateDiffSetCommand;
-import org.eclipse.papyrus.revision.tool.command.CreateDifferenceCommand;
-import org.eclipse.papyrus.revision.tool.command.CreateMatchCommand;
-import org.eclipse.papyrus.revision.tool.command.CreateToDoReviewCommand;
 import org.eclipse.papyrus.revision.tool.ui.RevisonDiagLayer;
-import org.eclipse.uml2.uml.NamedElement;
 
 /**
- * this listener is used to refresh figures
- * revision mode
+ * This listener is used to refresh figures when the revision mode has been used.
  *
  */
 public class RefreshFigureListener implements ResourceSetListener {

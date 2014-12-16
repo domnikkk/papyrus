@@ -30,7 +30,6 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
-import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
@@ -42,7 +41,8 @@ import org.eclipse.ui.forms.widgets.Section;
 import org.eclipse.uml2.uml.Model;
 import org.eclipse.uml2.uml.Profile;
 
-/** this dialog is used to select or create a profile**/
+/**  This dialog is used to select or create a review model
+ * **/
 public class CreateOrSelectReviewModelDialog extends FormDialog {
 
 

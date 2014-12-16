@@ -23,7 +23,7 @@ import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.uml2.uml.Element;
 
-/** isAVariableElement */
+/** This class is query that returns the color of the element by taking account information about Compare model. */
 public class GetBackgroundColor implements  IJavaQuery2<EObject, IColor> {
 	protected Color blue=new Color(0,0,250);
 	protected Color red=new Color(250,0,0);

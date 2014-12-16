@@ -27,21 +27,18 @@ import org.eclipse.emf.compare.ReferenceChange;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.transaction.NotificationFilter;
 import org.eclipse.emf.transaction.ResourceSetChangeEvent;
 import org.eclipse.emf.transaction.ResourceSetListener;
 import org.eclipse.emf.transaction.RollbackException;
-import org.eclipse.papyrus.revision.tool.command.CreateDiffSetCommand;
 import org.eclipse.papyrus.revision.tool.command.CreateDifferenceCommand;
 import org.eclipse.papyrus.revision.tool.command.CreateMatchCommand;
 import org.eclipse.papyrus.revision.tool.command.CreateToDoReviewCommand;
-import org.eclipse.papyrus.revision.tool.ui.RevisonDiagLayer;
 import org.eclipse.uml2.uml.NamedElement;
 
 /**
- * this listener is used to add diff about add and set in the diff model during the launch of the 
- * revision mode
+ *  This listener is used to register ADD ant SET about in the diff model during the launch of the  revision mode. It also create  review element in the review model.
+ * See package commands for specification of review creation commands.
  *
  */
 public class AddingDiffListener implements ResourceSetListener {

@@ -42,6 +42,7 @@
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_m0RLhnGJEeS3EdgtJYAZRQ" value="1"/>
     </ownedEnd>
   </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_tIB9sIUTEeSVSpmUeqlzmw" name="Class1"/>
   <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_bT-YIHGJEeS3EdgtJYAZRQ">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_bT-YIXGJEeS3EdgtJYAZRQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
       <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/0.7.0/SysML#/"/>

@@ -19,7 +19,7 @@ import org.eclipse.swt.graphics.Device;
 import org.eclipse.swt.widgets.Display;
 
 /**
- * figure that represent a remove of element
+ * This figure represents a remove of an element.
  *
  */
 public class RemovedFig extends Figure{

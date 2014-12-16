@@ -20,7 +20,7 @@ import org.eclipse.swt.widgets.Display;
 
 /**
  * 
- * figure about the add of element
+ * This figure is about the adding of an element.
  *
  */
 public class AddingFig extends Figure{

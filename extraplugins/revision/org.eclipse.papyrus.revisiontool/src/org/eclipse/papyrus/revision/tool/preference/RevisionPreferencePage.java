@@ -26,7 +26,7 @@ import org.eclipse.ui.IWorkbenchPreferencePage;
 
 /**
  * 
- * preference page the revision 
+ * This class is the preference page the revision tool.
  *
  */
 public class RevisionPreferencePage  extends FieldEditorPreferencePage implements IWorkbenchPreferencePage {

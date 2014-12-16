@@ -39,7 +39,6 @@ import org.eclipse.emf.compare.scope.IComparisonScope;
 import org.eclipse.emf.compare.utils.UseIdentifiers;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.jface.preference.IPreferenceStore;
@@ -79,8 +78,11 @@ import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.UMLFactory;
 
 /**
- * this class is used to manage the resource about Review
- *
+ * This class is used to manage the resource about the reviews and revisions.
+ * It contains several important methods:
+ *- load or get the current review model
+ *- start and stop revision the connect or disconnect listener to register modification in the working model
+ *- method to access to the ServiceRegistry
  */
 public class ReviewResourceManager {
 

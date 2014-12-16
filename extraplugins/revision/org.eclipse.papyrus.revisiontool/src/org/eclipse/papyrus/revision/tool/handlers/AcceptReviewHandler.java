@@ -13,32 +13,21 @@
  *****************************************************************************/
 package org.eclipse.papyrus.revision.tool.handlers;
 
-import java.text.DateFormat;
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
 
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.NullProgressMonitor;
-import org.eclipse.emf.common.command.Command;
-import org.eclipse.emf.compare.AttributeChange;
-import org.eclipse.emf.compare.Diff;
 import org.eclipse.emf.compare.DifferenceKind;
 import org.eclipse.emf.compare.Match;
 import org.eclipse.emf.compare.ReferenceChange;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.edit.command.SetCommand;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
-import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
 import org.eclipse.papyrus.infra.services.edit.service.ElementEditServiceUtils;
 import org.eclipse.papyrus.infra.services.edit.service.IElementEditService;
 import org.eclipse.papyrus.revision.tool.core.I_ReviewStereotype;
-import org.eclipse.papyrus.revision.tool.core.I_VersioningStereotype;
 import org.eclipse.papyrus.revision.tool.core.ReviewResourceManager;
 import org.eclipse.papyrus.revision.tool.ui.ReviewsEditor;
 import org.eclipse.ui.IWorkbenchPart;
@@ -47,9 +36,7 @@ import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Stereotype;
 
 /**
- * Our sample handler extends AbstractHandler, an IHandler base class.
- * @see org.eclipse.core.commands.IHandler
- * @see org.eclipse.core.commands.AbstractHandler
+ *This handler is used to accept a ToDo revision.
  */
 public class AcceptReviewHandler extends RevisionAbstractHandler {
 	/**

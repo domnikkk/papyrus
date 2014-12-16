@@ -21,7 +21,7 @@ import org.eclipse.ui.PlatformUI;
 
 /**
  * 
- * used to save the diff
+ * This handler is used to save a EMF compare model.
  *
  */
 public class SaveSnapshotRevision extends RevisionAbstractHandler {

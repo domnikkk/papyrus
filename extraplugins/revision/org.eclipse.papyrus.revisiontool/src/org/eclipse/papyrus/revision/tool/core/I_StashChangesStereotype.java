@@ -14,7 +14,7 @@
 package org.eclipse.papyrus.revision.tool.core;
 
 /**
- * store constant about names of stereotypes and properties
+ * This interface  store constant about names of stereotypes and properties of the stashChangeProfile
  *
  */
 public interface I_StashChangesStereotype {

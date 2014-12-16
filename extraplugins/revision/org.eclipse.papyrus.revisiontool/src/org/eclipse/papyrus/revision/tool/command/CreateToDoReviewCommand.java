@@ -16,11 +16,8 @@ package org.eclipse.papyrus.revision.tool.command;
 import java.text.DateFormat;
 import java.util.Date;
 
-import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.resource.impl.BinaryResourceImpl;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.papyrus.revision.tool.core.I_ReviewStereotype;
@@ -32,7 +29,7 @@ import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.UMLFactory;
 
 /**
- * this command is used to create a comment stereotyped review with filled information about author and versioning
+ * this command is used to create a comment stereotyped "Todo" with filled information about author and versioning
  *
  */
 public class CreateToDoReviewCommand extends RecordingCommand {

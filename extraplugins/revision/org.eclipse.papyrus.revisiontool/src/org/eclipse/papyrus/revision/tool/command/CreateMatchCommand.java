@@ -13,7 +13,6 @@
  *****************************************************************************/
 package org.eclipse.papyrus.revision.tool.command;
 
-import org.eclipse.emf.compare.Diff;
 import org.eclipse.emf.compare.Match;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
@@ -21,7 +20,7 @@ import org.eclipse.uml2.uml.Element;
 
 /**
  * 
- * this command is used to attach a diff Element into the EMF compare model
+ * this command is used to attach a Match Element into the EMF compare model
  *
  */
 public class CreateMatchCommand extends RecordingCommand {

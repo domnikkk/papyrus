@@ -24,7 +24,7 @@ import org.eclipse.ui.PlatformUI;
 import org.eclipse.uml2.uml.Element;
 
 /**
- * this is an abstract handler that can be used by other handlers
+ *This is an abstract handler that can be used by other handlers. it provides methods to get list of selected elements.
  *
  */
 public abstract class RevisionAbstractHandler extends AbstractHandler {

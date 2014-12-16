@@ -29,7 +29,7 @@ import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
- * This class is used to register  in the review model the poropostion of deletion 
+ * This class is used to register in the review model the proposition of a deletion 
  *
  */
 public class PreventRemoveCommand extends RecordingCommand {

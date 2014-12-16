@@ -16,7 +16,6 @@ package org.eclipse.papyrus.revision.tool.ui;
 import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.jface.viewers.StyledCellLabelProvider;
 import org.eclipse.jface.viewers.StyledString;
 import org.eclipse.jface.viewers.StyledString.Styler;
@@ -35,7 +34,7 @@ import org.eclipse.uml2.uml.util.UMLUtil;
 
 /**
  * 
- * the label provider for the review editor
+ * This is the label provider to display reviews for the review editor
  *
  */
 public class ReviewsTreeLabelProvider extends StyledCellLabelProvider  {

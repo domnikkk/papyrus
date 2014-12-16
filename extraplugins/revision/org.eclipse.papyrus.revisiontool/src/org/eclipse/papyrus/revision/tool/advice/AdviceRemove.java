@@ -25,6 +25,7 @@ import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.PlatformUI;
 /**
  * The purpose of this advice is to prevent remove during the running of the revision mode
+ * When the remove is done during the activation of the revision model, a diff and a review are created in the review model
  */
 public class AdviceRemove extends AbstractEditHelperAdvice {
 

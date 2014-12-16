@@ -21,7 +21,7 @@ import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.uml2.uml.Element;
 
-/** isAVariableElement */
+/** This class is query that returns the boolean. It returns true if the element is deleted from the Compare model */
 public class GetStrike implements  IJavaQuery2<EObject, Boolean> {
 	public Boolean evaluate(final EObject context, final IParameterValueList2 parameterValues, final IFacetManager facetManager){
 		if( context instanceof Element){

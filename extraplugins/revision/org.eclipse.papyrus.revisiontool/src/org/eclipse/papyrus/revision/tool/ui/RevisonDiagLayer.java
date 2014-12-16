@@ -30,10 +30,9 @@ import org.eclipse.papyrus.infra.core.editor.IMultiDiagramEditor;
 import org.eclipse.papyrus.infra.core.services.ServiceException;
 import org.eclipse.papyrus.revision.tool.core.ReviewResourceManager;
 import org.eclipse.papyrus.uml.diagram.common.part.UmlGmfDiagramEditor;
-import org.eclipse.swt.internal.image.GIFFileFormat;
 
 /**
- * this class is used to add figure in current diagrams for remove add or set during the revision mode
+ * This class is used to add figures in current diagrams for remove add or set during the revision mode.
  *
  */
 public class RevisonDiagLayer {

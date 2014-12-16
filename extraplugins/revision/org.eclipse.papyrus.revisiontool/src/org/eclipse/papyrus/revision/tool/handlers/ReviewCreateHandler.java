@@ -21,9 +21,7 @@ import org.eclipse.ui.PlatformUI;
 import org.eclipse.uml2.uml.Element;
 
 /**
- * Our sample handler extends AbstractHandler, an IHandler base class.
- * @see org.eclipse.core.commands.IHandler
- * @see org.eclipse.core.commands.AbstractHandler
+ * This handler is used to create a review in the review editor
  */
 public class ReviewCreateHandler extends RevisionAbstractHandler {
 	/**
