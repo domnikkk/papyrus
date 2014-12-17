@@ -73,12 +73,8 @@ import org.eclipse.papyrus.infra.core.sasheditor.editor.ISashWindowsContainer;
 import org.eclipse.papyrus.infra.core.services.ServiceException;
 import org.eclipse.papyrus.infra.core.services.ServicesRegistry;
 import org.eclipse.papyrus.infra.core.utils.AdapterUtils;
+import org.eclipse.papyrus.infra.core.utils.EMFHelper;
 import org.eclipse.papyrus.infra.core.utils.ServiceUtils;
-import org.eclipse.papyrus.infra.emf.providers.SemanticFromModelExplorer;
-import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
-import org.eclipse.papyrus.infra.services.labelprovider.service.LabelProviderService;
-import org.eclipse.papyrus.infra.services.navigation.service.NavigableElement;
-import org.eclipse.papyrus.infra.services.navigation.service.NavigationService;
 import org.eclipse.papyrus.infra.widgets.editors.SelectionMenu;
 import org.eclipse.papyrus.infra.widgets.util.IRevealSemanticElement;
 import org.eclipse.papyrus.views.modelexplorer.SharedModelExplorerState.StateChangedEvent;
@@ -107,7 +103,6 @@ import org.eclipse.ui.IPropertyListener;
 import org.eclipse.ui.ISaveablePart;
 import org.eclipse.ui.ISelectionListener;
 import org.eclipse.ui.IViewSite;
-import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.navigator.CommonNavigator;
@@ -683,18 +678,6 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 	}
 
 	/**
-	 * {@inheritDoc}
-	 */
-	@Override
-	public void init(IViewSite site) throws PartInitException {
-		super.init(site);
-		IWorkbenchPage page = site.getPage();
-		// an ISelectionListener to react to workbench selection changes.
-
-		page.addSelectionListener(pageSelectionListener);
-	}
-
-	/**
 	 * {@link ResourceSetListener} to listen and react to changes in the
 	 * resource set.
 	 */
@@ -854,6 +837,9 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 			// Can't get EditingDomain, skip
 		}
 
+		// listen to change events
+		getSite().getPage().addSelectionListener(pageSelectionListener);
+				
 		// Listen to isDirty flag
 		saveAndDirtyService.addInputChangedListener(editorInputChangedListener);
 
