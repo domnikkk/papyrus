@@ -120,7 +120,6 @@
 		<module>../extraplugins/robotml/generators/org.eclipse.papyrus.robotml.generators.common</module>
 		<module>../extraplugins/robotml/generators/rtmaps/org.eclipse.papyrus.robotml.generators.intempora.rtmaps</module>
 		<module>../extraplugins/robotml/generators/rtmaps/org.eclipse.papyrus.robotml.generators.intempora.rtmaps.ui</module>
-		<module>../extraplugins/robotml/org.eclipse.papyrus.robotml.modelexplorer</module>
 		<module>../extraplugins/robotml/org.eclipse.papyrus.robotml.perspective</module>
 		<module>../extraplugins/robotml/org.eclipse.papyrus.robotml.templaterepository</module>
 		<module>../extraplugins/robotml/org.eclipse.papyrus.robotml.validation</module>
