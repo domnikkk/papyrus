@@ -7,7 +7,8 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *   Mickael ADAM (ALL4TEC) mickael.adam@all4tec.net - Initial API and Implementation
+ *   Patrick Tessier (CEA LIST) Patrick.tessier@cea.fr - Initial API and implementation
+ *   Mickael ADAM (ALL4TEC) mickael.adam@all4tec.net
  *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.gmfdiag.common.editpolicies;

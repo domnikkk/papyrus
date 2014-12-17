@@ -57,6 +57,7 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.commands.ICommandService;
 import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.Pseudostate;
 import org.junit.Assert;
 import org.junit.Before;
 
@@ -514,12 +515,15 @@ public abstract class AbstractTestNode extends org.eclipse.papyrus.uml.diagram.t
 			if (initialName != null) {
 				name = initialName;
 			}
-			if (name.length() < ((ITextAwareEditPart) namedEditPart).getEditText().length()) {
-				Assert.assertEquals(" the name must contain the name of the metaclass", name, ((ITextAwareEditPart) namedEditPart).getEditText().substring(0, name.length())); //$NON-NLS-1$
-			}
-			else {
-				// not the same it sure but display the mistake is important
-				Assert.assertEquals(" the name must contain the name of the metaclass", name, ((ITextAwareEditPart) namedEditPart).getEditText()); //$NON-NLS-1$
+			// Don't test if it's a Pseudostate: the name = the kind of element
+			if (!(((View) namedEditPart.getModel()).getElement() instanceof Pseudostate)) {
+				if (name.length() < ((ITextAwareEditPart) namedEditPart).getEditText().length()) {
+					Assert.assertEquals(" the name must contain the name of the metaclass", name, ((ITextAwareEditPart) namedEditPart).getEditText().substring(0, name.length())); //$NON-NLS-1$
+				}
+				else {
+					// not the same it sure but display the mistake is important
+					Assert.assertEquals(" the name must contain the name of the metaclass", name, ((ITextAwareEditPart) namedEditPart).getEditText()); //$NON-NLS-1$
+				}
 			}
 			if (namedEditPart instanceof CompartmentEditPart) {
 				Assert.assertTrue("the primary editpart must be the namelabelEditpart", namedEditPart instanceof CompartmentEditPart); //$NON-NLS-1$

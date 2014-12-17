@@ -25,40 +25,12 @@ import org.eclipse.papyrus.infra.gmfdiag.common.editpart.IPapyrusEditPart;
 import org.eclipse.papyrus.infra.gmfdiag.common.editpart.ShapeDisplayCompartmentEditPart;
 import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.IRoundedRectangleFigure;
 import org.eclipse.papyrus.infra.gmfdiag.common.model.NotationUtils;
+import org.eclipse.papyrus.infra.gmfdiag.common.utils.ICSSNamedStyles;
 
 /**
  * The Class RoundedCompartmentEditPart provides refresh method to apply notation properties specific to roundedRectangleFigure
  */
-public abstract class PapyrusRoundedEditPartHelper {
-
-	/** The Constant HAS_HEADER. */
-	public static final String HAS_HEADER = "displayHeader";//$NON-NLS-N$
-
-	/** The Constant USE_ORIGINAL_COLORS. */
-	private static final String USE_ORIGINAL_COLORS = "useOriginalColors";//$NON-NLS-N$
-
-	/** The Constant BORDER_STYLE. */
-	protected static final String BORDER_STYLE = "borderStyle"; //$NON-NLS-N$
-
-	/** CSS boolean property controlling whether label should be constrained. */
-	public static final String FLOATING_LABEL_CONSTRAINED = "isFloatingLabelConstrained";//$NON-NLS-N$
-
-	/** The Constant FLOATING_NAME_OFFSET_HEIGHT. */
-	public static final String FLOATING_LABEL_OFFSET_HEIGHT = "floatingLabelOffsetHeight";//$NON-NLS-N$
-
-	/** The Constant FLOATING_NAME_OFFSET_WIDTH. */
-	public static final String FLOATING_LABEL_OFFSET_WIDTH = "floatingLabelOffsetWidth";//$NON-NLS-N$
-
-	/** CSS boolean property controlling whether. */
-	public static final String IS_OVAL = "isOval";//$NON-NLS-N$
-
-	/** CSS boolean property controlling whether. */
-	public static final String RADIUS_HEIGHT = "radiusHeight";//$NON-NLS-N$
-
-	/** CSS boolean property controlling whether. */
-	public static final String RADIUS_WIDTH = "radiusWidth";//$NON-NLS-N$
-
-	private static final String LINE_CUSTOM_VALUE = "customDash";//$NON-NLS-N$
+public abstract class PapyrusRoundedEditPartHelper implements ICSSNamedStyles {
 
 	/**
 	 * Refresh border style.
@@ -215,7 +187,7 @@ public abstract class PapyrusRoundedEditPartHelper {
 				IRoundedRectangleFigure roundedRectangleFigure = (IRoundedRectangleFigure) editpart.getPrimaryShape();
 
 				// get the CSS value of hasHeader
-				boolean hasHeader = NotationUtils.getBooleanValue((View) ((GraphicalEditPart) editpart).getModel(), HAS_HEADER, defaultHasHeader);
+				boolean hasHeader = NotationUtils.getBooleanValue((View) ((GraphicalEditPart) editpart).getModel(), DISPLAY_HEADER, defaultHasHeader);
 
 				// Set hasHeader
 				roundedRectangleFigure.setHasHeader(hasHeader);

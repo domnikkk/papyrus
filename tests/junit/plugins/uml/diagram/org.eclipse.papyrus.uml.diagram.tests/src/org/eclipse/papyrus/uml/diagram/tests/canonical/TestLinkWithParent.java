@@ -34,6 +34,7 @@ import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequestFactory;
 import org.eclipse.gmf.runtime.diagram.ui.requests.DropObjectsRequest;
 import org.eclipse.gmf.runtime.diagram.ui.requests.EditCommandRequestWrapper;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
+import org.eclipse.gmf.runtime.emf.type.core.IHintedType;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.View;
@@ -97,8 +98,7 @@ public abstract class TestLinkWithParent extends TestLink {
 
 
 	/**
-	 * @see org.eclipse.papyrus.uml.diagram.tests.canonical.TestLink#installEnvironment(org.eclipse.gmf.runtime.emf.type.core.IElementType,
-	 *      org.eclipse.gmf.runtime.emf.type.core.IElementType)
+	 * @see org.eclipse.papyrus.uml.diagram.tests.canonical.TestLink#installEnvironment(org.eclipse.gmf.runtime.emf.type.core.IElementType, org.eclipse.gmf.runtime.emf.type.core.IElementType)
 	 *
 	 * @param sourceType
 	 * @param targetType
@@ -107,23 +107,26 @@ public abstract class TestLinkWithParent extends TestLink {
 	@Override
 	public void installEnvironment(IElementType sourceType, IElementType targetType) {
 
-		//create the parent source
+		// create the parent source
 		CreateViewRequest requestcreation = CreateViewRequestFactory.getCreateShapeRequest(parentType, getDiagramEditPart().getDiagramPreferencesHint());
 		requestcreation.setLocation(DEFAULT_PARENT_LOCATION);
 		Command command = getDiagramEditPart().getCommand(requestcreation);
 		assertTrue(command.canExecute());
-		diagramEditor.getDiagramEditDomain().getDiagramCommandStack().execute(command);;
-		parent = (GraphicalEditPart)getDiagramEditPart().getChildren().get(0);
+		diagramEditor.getDiagramEditDomain().getDiagramCommandStack().execute(command);
+		parent = (GraphicalEditPart) getDiagramEditPart().getChildren().get(0);
 
-		//create the source
+		// create the source
 		requestcreation = CreateViewRequestFactory.getCreateShapeRequest(sourceType, getDiagramEditPart().getDiagramPreferencesHint());
 		requestcreation.setLocation(DEFAULT_SOURCE_LOCATION);
 		command = parent.getCommand(requestcreation);
 		assertTrue(command.canExecute());
 		diagramEditor.getDiagramEditDomain().getDiagramCommandStack().execute(command);
-		// FIXME : get(0) : header; get(1) : container
-		List<GraphicalEditPart> children = parent.getChildren();
-		source = children.get(2);
+		// FIXME : get(0) : header; get(1): FloatingLabel get(2) : container
+		// List<GraphicalEditPart> children = parent.getChildren();
+		// source = children.get(3);
+
+		// Get the source edit part using the semantic hint from source type.
+		source = (GraphicalEditPart) parent.getChildBySemanticHint(((IHintedType) sourceType).getSemanticHint());
 	}
 
 
@@ -132,11 +135,11 @@ public abstract class TestLinkWithParent extends TestLink {
 	 * Check that the link is impossible to create
 	 *
 	 * @param sourceType
-	 *        the source type
+	 *            the source type
 	 * @param targetType
-	 *        the target type
+	 *            the target type
 	 * @param linkType
-	 *        the link type
+	 *            the link type
 	 */
 	public void testImpossibleToManageLink(IElementType sourceType, IElementType targetType, IElementType linkType) {
 		installEnvironment(sourceType, targetType);
@@ -146,8 +149,7 @@ public abstract class TestLinkWithParent extends TestLink {
 
 
 	/**
-	 * @see org.eclipse.papyrus.uml.diagram.tests.canonical.TestLink#testToManageLink(org.eclipse.gmf.runtime.emf.type.core.IElementType,
-	 *      org.eclipse.gmf.runtime.emf.type.core.IElementType, org.eclipse.gmf.runtime.emf.type.core.IElementType,
+	 * @see org.eclipse.papyrus.uml.diagram.tests.canonical.TestLink#testToManageLink(org.eclipse.gmf.runtime.emf.type.core.IElementType, org.eclipse.gmf.runtime.emf.type.core.IElementType, org.eclipse.gmf.runtime.emf.type.core.IElementType,
 	 *      org.eclipse.gmf.runtime.emf.type.core.IElementType, boolean)
 	 *
 	 * @param sourceType
@@ -160,26 +162,26 @@ public abstract class TestLinkWithParent extends TestLink {
 	@Override
 	public void testToManageLink(IElementType sourceType, IElementType targetType, IElementType linkType, IElementType containerType, boolean allowedOntheSame) {
 		installEnvironment(sourceType, targetType);
-		testToCreateALink(linkType,null);
+		testToCreateALink(linkType, null);
 		testDestroy(linkType);
 		diagramEditor.getDiagramEditDomain().getDiagramCommandStack().undo();
 		testViewDeletion(linkType);
 		testDrop(linkType);
 		// destroy the element
 		Request deleteViewRequest = new EditCommandRequestWrapper(new DestroyElementRequest(false));
-		Command command = ((ConnectionEditPart)source.getSourceConnections().get(0)).getCommand(deleteViewRequest);
+		Command command = ((ConnectionEditPart) source.getSourceConnections().get(0)).getCommand(deleteViewRequest);
 		diagramEditor.getDiagramEditDomain().getDiagramCommandStack().execute(command);
 		// test link on the same
 		testToCreateAlinkOnTheSame(linkType, allowedOntheSame);
 
-		if(allowedOntheSame) {
+		if (allowedOntheSame) {
 
-			ConnectionEditPart graphicalEditPart = (ConnectionEditPart)source.getSourceConnections().get(0);
-			View view = (View)graphicalEditPart.getModel();
-			linkElement = (Element)view.getElement();
+			ConnectionEditPart graphicalEditPart = (ConnectionEditPart) source.getSourceConnections().get(0);
+			View view = (View) graphicalEditPart.getModel();
+			linkElement = (Element) view.getElement();
 
 			deleteViewRequest = new GroupRequest(RequestConstants.REQ_DELETE);
-			command = ((ConnectionEditPart)source.getSourceConnections().get(0)).getCommand(deleteViewRequest);
+			command = ((ConnectionEditPart) source.getSourceConnections().get(0)).getCommand(deleteViewRequest);
 			assertNotNull(VIEW_DELETION + COMMAND_NULL, command);
 			assertTrue(VIEW_DELETION + TEST_IF_THE_COMMAND_IS_CREATED, command != UnexecutableCommand.INSTANCE);
 			assertTrue(VIEW_DELETION + TEST_IF_THE_COMMAND_CAN_BE_EXECUTED, command.canExecute() == true);
@@ -206,16 +208,16 @@ public abstract class TestLinkWithParent extends TestLink {
 		assertTrue(CONTAINER_CREATION + TEST_IF_THE_COMMAND_CAN_BE_EXECUTED, command.canExecute() == true);
 		diagramEditor.getDiagramEditDomain().getDiagramCommandStack().execute(command);
 		assertTrue(CREATION + INITIALIZATION_TEST, source.getSourceConnections().size() == endSourceConnectionsSize);
-		ConnectionEditPart graphicalEditPart = (ConnectionEditPart)source.getSourceConnections().get(0);
-		View view = (View)graphicalEditPart.getModel();
-		linkElement = (Element)view.getElement();
-		assertTrue(CREATION + INITIALIZATION_TEST, ((Diagram)getRootView()).getEdges().size() == endRootEdgeSize);
+		ConnectionEditPart graphicalEditPart = (ConnectionEditPart) source.getSourceConnections().get(0);
+		View view = (View) graphicalEditPart.getModel();
+		linkElement = (Element) view.getElement();
+		assertTrue(CREATION + INITIALIZATION_TEST, ((Diagram) getRootView()).getEdges().size() == endRootEdgeSize);
 		assertEquals(CREATION + INITIALIZATION_TEST, endRootSemanticOwnedElementSize, getRootSemanticModel().getOwnedElements().size());
 		diagramEditor.getDiagramEditDomain().getDiagramCommandStack().undo();
 		assertEquals(CREATION + TEST_THE_UNDO, endRootViewChildrenSize, getRootView().getChildren().size());
 		assertTrue(CREATION + TEST_THE_UNDO, getRootSemanticModel().getOwnedElements().size() == beginRootSemanticOwnedElementSize);
 		diagramEditor.getDiagramEditDomain().getDiagramCommandStack().redo();
-		assertTrue(CREATION + TEST_THE_REDO, ((Diagram)getRootView()).getEdges().size() == endRootEdgeSize);
+		assertTrue(CREATION + TEST_THE_REDO, ((Diagram) getRootView()).getEdges().size() == endRootEdgeSize);
 		assertTrue(CREATION + TEST_THE_REDO, getRootSemanticModel().getOwnedElements().size() == endRootSemanticOwnedElementSize);
 	}
 
@@ -227,27 +229,27 @@ public abstract class TestLinkWithParent extends TestLink {
 
 	@Override
 	public void testDestroy(IElementType type) { // BMA : FIXME : unused param
-		//DESTROY SEMANTIC+ VIEW
-		assertTrue(DESTROY_DELETION + INITIALIZATION_TEST, ((Diagram)getRootView()).getEdges().size() == endRootEdgeSize);
+		// DESTROY SEMANTIC+ VIEW
+		assertTrue(DESTROY_DELETION + INITIALIZATION_TEST, ((Diagram) getRootView()).getEdges().size() == endRootEdgeSize);
 		assertTrue(DESTROY_DELETION + INITIALIZATION_TEST, source.getSourceConnections().size() == endSourceConnectionsSize);
 		assertTrue(DESTROY_DELETION + INITIALIZATION_TEST, getRootSemanticModel().getOwnedElements().size() == endRootSemanticOwnedElementSize);
 		Request deleteViewRequest = new EditCommandRequestWrapper(new DestroyElementRequest(false));
-		Command command = ((ConnectionEditPart)source.getSourceConnections().get(0)).getCommand(deleteViewRequest);
+		Command command = ((ConnectionEditPart) source.getSourceConnections().get(0)).getCommand(deleteViewRequest);
 		assertNotNull(DESTROY_DELETION + COMMAND_NULL, command);
 		assertTrue(DESTROY_DELETION + TEST_IF_THE_COMMAND_IS_CREATED, command != UnexecutableCommand.INSTANCE);
 		assertTrue(DESTROY_DELETION + TEST_IF_THE_COMMAND_CAN_BE_EXECUTED, command.canExecute() == true);
 		testEnableForDeleteFromModel();
 		diagramEditor.getDiagramEditDomain().getDiagramCommandStack().execute(command);
-		assertTrue(DESTROY_DELETION + TEST_THE_EXECUTION, ((Diagram)getRootView()).getEdges().size() == beginRootEdgeSize);
+		assertTrue(DESTROY_DELETION + TEST_THE_EXECUTION, ((Diagram) getRootView()).getEdges().size() == beginRootEdgeSize);
 		assertTrue(DESTROY_DELETION + TEST_THE_EXECUTION, source.getSourceConnections().size() == beginSourceConnectionsSize);
 		assertTrue(DESTROY_DELETION + TEST_THE_EXECUTION, getRootSemanticModel().getOwnedElements().size() == beginRootSemanticOwnedElementSize);
 		assertTrue(DESTROY_DELETION + TEST_THE_UNDO, diagramEditor.getDiagramEditDomain().getDiagramCommandStack().canUndo() == true);
 		diagramEditor.getDiagramEditDomain().getDiagramCommandStack().undo();
-		assertTrue(DESTROY_DELETION + TEST_THE_UNDO, ((Diagram)getRootView()).getEdges().size() == endRootEdgeSize);
+		assertTrue(DESTROY_DELETION + TEST_THE_UNDO, ((Diagram) getRootView()).getEdges().size() == endRootEdgeSize);
 		assertTrue(DESTROY_DELETION + TEST_THE_UNDO, source.getSourceConnections().size() == endSourceConnectionsSize);
 		assertTrue(DESTROY_DELETION + TEST_THE_UNDO, getRootSemanticModel().getOwnedElements().size() == endRootSemanticOwnedElementSize);
 		diagramEditor.getDiagramEditDomain().getDiagramCommandStack().redo();
-		assertTrue(DESTROY_DELETION + INITIALIZATION_TEST, ((Diagram)getRootView()).getEdges().size() == beginRootEdgeSize);
+		assertTrue(DESTROY_DELETION + INITIALIZATION_TEST, ((Diagram) getRootView()).getEdges().size() == beginRootEdgeSize);
 		assertTrue(DESTROY_DELETION + TEST_THE_REDO, source.getSourceConnections().size() == beginSourceConnectionsSize);
 		assertTrue(DESTROY_DELETION + TEST_THE_REDO, getRootSemanticModel().getOwnedElements().size() == beginRootSemanticOwnedElementSize);
 	}
@@ -261,11 +263,11 @@ public abstract class TestLinkWithParent extends TestLink {
 
 	@Override
 	public void testViewDeletion(IElementType type) { // BMA : FIXME : unused param
-		//DELETION OF THE VIEW
+		// DELETION OF THE VIEW
 		assertTrue(VIEW_DELETION + INITIALIZATION_TEST, source.getSourceConnections().size() == endSourceConnectionsSize);
 		assertTrue(VIEW_DELETION + INITIALIZATION_TEST, getRootSemanticModel().getOwnedElements().size() == endRootSemanticOwnedElementSize);
 		Request deleteViewRequest = new GroupRequest(RequestConstants.REQ_DELETE);
-		Command command = ((ConnectionEditPart)source.getSourceConnections().get(0)).getCommand(deleteViewRequest);
+		Command command = ((ConnectionEditPart) source.getSourceConnections().get(0)).getCommand(deleteViewRequest);
 		assertNotNull(VIEW_DELETION + COMMAND_NULL, command);
 		assertTrue(VIEW_DELETION + TEST_IF_THE_COMMAND_IS_CREATED, command != UnexecutableCommand.INSTANCE);
 		assertTrue(VIEW_DELETION + TEST_IF_THE_COMMAND_CAN_BE_EXECUTED, command.canExecute() == true);
@@ -288,10 +290,10 @@ public abstract class TestLinkWithParent extends TestLink {
 
 	@Override
 	public void testDrop(IElementType type) {// BMA : FIXME : unused param
-		//DROP
+		// DROP
 		assertTrue(DROP + INITIALIZATION_TEST, getDiagramEditPart().getChildren().size() == beginDiagramEditPartChildrenSize);
 		assertTrue(DROP + INITIALIZATION_TEST, getRootSemanticModel().getOwnedElements().size() == endRootSemanticOwnedElementSize);
-		assertTrue(CREATION + INITIALIZATION_TEST, ((Diagram)getRootView()).getEdges().size() == beginRootEdgeSize);
+		assertTrue(CREATION + INITIALIZATION_TEST, ((Diagram) getRootView()).getEdges().size() == beginRootEdgeSize);
 		DropObjectsRequest dropObjectsRequest = new DropObjectsRequest();
 		List<Element> list = new ArrayList<Element>();
 		list.add(linkElement);
@@ -304,15 +306,15 @@ public abstract class TestLinkWithParent extends TestLink {
 		diagramEditor.getDiagramEditDomain().getDiagramCommandStack().execute(command);
 		assertTrue(DROP + TEST_THE_EXECUTION, getDiagramEditPart().getChildren().size() == endDiagramEditPartChildrenSize);
 		assertTrue(DROP + TEST_THE_EXECUTION, getRootSemanticModel().getOwnedElements().size() == endRootSemanticOwnedElementSize);
-		assertTrue(DROP + TEST_THE_EXECUTION, ((Diagram)getRootView()).getEdges().size() == endRootEdgeSize);
+		assertTrue(DROP + TEST_THE_EXECUTION, ((Diagram) getRootView()).getEdges().size() == endRootEdgeSize);
 		diagramEditor.getDiagramEditDomain().getDiagramCommandStack().undo();
 		assertTrue(DROP + TEST_THE_UNDO, getDiagramEditPart().getChildren().size() == beginDiagramEditPartChildrenSize);
 		assertTrue(DROP + TEST_THE_UNDO, getRootSemanticModel().getOwnedElements().size() == endRootSemanticOwnedElementSize);
-		assertTrue(DROP + TEST_THE_UNDO, ((Diagram)getRootView()).getEdges().size() == beginRootEdgeSize);
+		assertTrue(DROP + TEST_THE_UNDO, ((Diagram) getRootView()).getEdges().size() == beginRootEdgeSize);
 		diagramEditor.getDiagramEditDomain().getDiagramCommandStack().redo();
 		assertTrue(DROP + TEST_THE_REDO, getDiagramEditPart().getChildren().size() == endDiagramEditPartChildrenSize);
 		assertTrue(DROP + TEST_THE_REDO, getRootSemanticModel().getOwnedElements().size() == endRootSemanticOwnedElementSize);
-		assertTrue(DROP + TEST_THE_REDO, ((Diagram)getRootView()).getEdges().size() == endRootEdgeSize);
+		assertTrue(DROP + TEST_THE_REDO, ((Diagram) getRootView()).getEdges().size() == endRootEdgeSize);
 	}
 
 
@@ -321,17 +323,17 @@ public abstract class TestLinkWithParent extends TestLink {
 	 * test the drop of a link where the source and the target are the same objects.
 	 *
 	 * @param linkType
-	 *        the link type
+	 *            the link type
 	 * @param allowed
-	 *        the allowed
+	 *            the allowed
 	 */
 	@Override
 	protected void testToDropAlinkOnTheSame(IElementType linkType, boolean allowed) {
-		//DROP
-		if(allowed) {
+		// DROP
+		if (allowed) {
 			assertTrue(DROP + INITIALIZATION_TEST, getDiagramEditPart().getChildren().size() == beginDiagramEditPartChildrenSize);
 			assertTrue(DROP + INITIALIZATION_TEST, getRootSemanticModel().getOwnedElements().size() == endRootSemanticOwnedElementSize);
-			assertTrue(CREATION + INITIALIZATION_TEST, ((Diagram)getRootView()).getEdges().size() == beginRootEdgeSize);
+			assertTrue(CREATION + INITIALIZATION_TEST, ((Diagram) getRootView()).getEdges().size() == beginRootEdgeSize);
 			DropObjectsRequest dropObjectsRequest = new DropObjectsRequest();
 			List<Element> list = new ArrayList<Element>();
 			list.add(linkElement);
@@ -344,15 +346,15 @@ public abstract class TestLinkWithParent extends TestLink {
 			diagramEditor.getDiagramEditDomain().getDiagramCommandStack().execute(command);
 			assertTrue(DROP + TEST_THE_EXECUTION, getDiagramEditPart().getChildren().size() == endDiagramEditPartChildrenSize);
 			assertTrue(DROP + TEST_THE_EXECUTION, getRootSemanticModel().getOwnedElements().size() == endRootSemanticOwnedElementSize);
-			assertTrue(DROP + TEST_THE_EXECUTION, ((Diagram)getRootView()).getEdges().size() == endRootEdgeSize);
+			assertTrue(DROP + TEST_THE_EXECUTION, ((Diagram) getRootView()).getEdges().size() == endRootEdgeSize);
 			diagramEditor.getDiagramEditDomain().getDiagramCommandStack().undo();
 			assertTrue(DROP + TEST_THE_UNDO, getDiagramEditPart().getChildren().size() == beginDiagramEditPartChildrenSize);
 			assertTrue(DROP + TEST_THE_UNDO, getRootSemanticModel().getOwnedElements().size() == endRootSemanticOwnedElementSize);
-			assertTrue(DROP + TEST_THE_UNDO, ((Diagram)getRootView()).getEdges().size() == beginRootEdgeSize);
+			assertTrue(DROP + TEST_THE_UNDO, ((Diagram) getRootView()).getEdges().size() == beginRootEdgeSize);
 			diagramEditor.getDiagramEditDomain().getDiagramCommandStack().redo();
 			assertTrue(DROP + TEST_THE_REDO, getDiagramEditPart().getChildren().size() == endDiagramEditPartChildrenSize);
 			assertTrue(DROP + TEST_THE_REDO, getRootSemanticModel().getOwnedElements().size() == endRootSemanticOwnedElementSize);
-			assertTrue(DROP + TEST_THE_REDO, ((Diagram)getRootView()).getEdges().size() == endRootEdgeSize);
+			assertTrue(DROP + TEST_THE_REDO, ((Diagram) getRootView()).getEdges().size() == endRootEdgeSize);
 		}
 	}
 
@@ -360,9 +362,9 @@ public abstract class TestLinkWithParent extends TestLink {
 	 * test the creation of a link where the source and the target are the same objects.
 	 *
 	 * @param linkType
-	 *        the link type
+	 *            the link type
 	 * @param allowed
-	 *        the allowed
+	 *            the allowed
 	 */
 	@Override
 	protected void testToCreateAlinkOnTheSame(IElementType linkType, boolean allowed) {
@@ -371,15 +373,15 @@ public abstract class TestLinkWithParent extends TestLink {
 		Command command = target.getCommand(createConnectionViewRequest(linkType, source, source));
 		assertNotNull(CREATION + COMMAND_NULL, command);
 		assertEquals(CONTAINER_CREATION + TEST_IF_THE_COMMAND_CAN_BE_EXECUTED, command.canExecute(), allowed);
-		if(allowed) {
+		if (allowed) {
 			diagramEditor.getDiagramEditDomain().getDiagramCommandStack().execute(command);
-			assertEquals(CREATION + INITIALIZATION_TEST, endRootEdgeSize, ((Diagram)getRootView()).getEdges().size());
+			assertEquals(CREATION + INITIALIZATION_TEST, endRootEdgeSize, ((Diagram) getRootView()).getEdges().size());
 			assertEquals(CREATION + INITIALIZATION_TEST, endRootSemanticOwnedElementSize, getRootSemanticModel().getOwnedElements().size());
 			diagramEditor.getDiagramEditDomain().getDiagramCommandStack().undo();
 			assertEquals(CREATION + TEST_THE_UNDO, beginRootViewChildrenSize, getRootView().getChildren().size());
 			assertEquals(CREATION + TEST_THE_UNDO, beginRootSemanticOwnedElementSize, getRootSemanticModel().getOwnedElements().size());
 			diagramEditor.getDiagramEditDomain().getDiagramCommandStack().redo();
-			assertEquals(CREATION + TEST_THE_REDO, endRootEdgeSize, ((Diagram)getRootView()).getEdges().size());
+			assertEquals(CREATION + TEST_THE_REDO, endRootEdgeSize, ((Diagram) getRootView()).getEdges().size());
 			assertEquals(CREATION + TEST_THE_REDO, endRootSemanticOwnedElementSize, getRootSemanticModel().getOwnedElements().size());
 		}
 	}
