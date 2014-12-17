@@ -380,6 +380,16 @@
         </repository>
         <repository
             url="${base.downloads.url}/nattable/releases/1.1.0/repository/"/>
+        <repository
+            url="http://download.eclipse.org/xwt/release-1.1.0">
+          <annotation
+              source="http://www.eclipse.org/Papyrus/2014/releng/dependencytools">
+            <detail
+                key="updateFrom">
+              <value>XWT</value>
+            </detail>
+          </annotation>
+        </repository>
       </repositoryList>
       <repositoryList
           name="Luna">
@@ -793,14 +803,12 @@
         <sourceLocator
             rootFolder="${papyrus.git.clone.location/plugins/views}"/>
         <sourceLocator
-            rootFolder="${papyrus.git.clone.location/plugins/xwt}"/>
-        <sourceLocator
             rootFolder="${papyrus.git.clone.location/tests/junit/plugins/views}"/>
         <sourceLocator
             rootFolder="${papyrus.git.clone.location/features}">
           <predicate
               xsi:type="predicates:NamePredicate"
-              pattern="org\.eclipse\.papyrus\.(tests\.)?(views|xwt)($|\..+)"/>
+              pattern="org\.eclipse\.papyrus\.(tests\.)?views($|\..+)"/>
         </sourceLocator>
       </setupTask>
       <setupTask
@@ -818,7 +826,7 @@
                 nature="org.eclipse.pde.PluginNature"/>
             <operand
                 xsi:type="predicates:NamePredicate"
-                pattern="org\.eclipse\.papyrus\.(views|xwt)($|\..+)"/>
+                pattern="org\.eclipse\.papyrus\.views($|\..+)"/>
             <operand
                 xsi:type="workingsets:ExclusionPredicate"
                 excludedWorkingSet="//@projects[name='main']/@projects[name='views']/@setupTasks.1/@workingSets.1"/>
@@ -853,7 +861,7 @@
                 nature="org.eclipse.pde.FeatureNature"/>
             <operand
                 xsi:type="predicates:NamePredicate"
-                pattern="org\.eclipse\.papyrus\.(tests\.)?(views|xwt)($|\..+)"/>
+                pattern="org\.eclipse\.papyrus\.(tests\.)?views($|\..+)"/>
           </predicate>
         </workingSet>
       </setupTask>
@@ -872,6 +880,52 @@
             xsi:type="setup:VariableTask"
             name="papyrus.bugzilla.version"
             value="1.0.0&amp;version=1.0.1&amp;version=1.0.2"/>
+        <setupTask
+            xsi:type="projects:ProjectsImportTask">
+          <sourceLocator
+              rootFolder="${papyrus.git.clone.location/plugins/xwt}"/>
+          <sourceLocator
+              rootFolder="${papyrus.git.clone.location/features}">
+            <predicate
+                xsi:type="predicates:NamePredicate"
+                pattern="org\.eclipse\.papyrus\.(tests\.)?xwt($|\..+)"/>
+          </sourceLocator>
+        </setupTask>
+        <setupTask
+            xsi:type="setup.workingsets:WorkingSetTask">
+          <workingSet
+              name="Papyrus XWT"
+              id="papyrus-xwt">
+            <predicate
+                xsi:type="predicates:AndPredicate">
+              <operand
+                  xsi:type="predicates:RepositoryPredicate"
+                  project="org.eclipse.papyrus.views.properties"/>
+              <operand
+                  xsi:type="predicates:NaturePredicate"
+                  nature="org.eclipse.pde.PluginNature"/>
+              <operand
+                  xsi:type="predicates:NamePredicate"
+                  pattern="org\.eclipse\.papyrus\.xwt($|\..+)"/>
+            </predicate>
+          </workingSet>
+          <workingSet
+              name="Papyrus XWT Features"
+              id="papyrus-xwt-features">
+            <predicate
+                xsi:type="predicates:AndPredicate">
+              <operand
+                  xsi:type="predicates:RepositoryPredicate"
+                  project="org.eclipse.papyrus.views.properties.feature"/>
+              <operand
+                  xsi:type="predicates:NaturePredicate"
+                  nature="org.eclipse.pde.FeatureNature"/>
+              <operand
+                  xsi:type="predicates:NamePredicate"
+                  pattern="org\.eclipse\.papyrus\.(tests\.)?xwt($|\..+)"/>
+            </predicate>
+          </workingSet>
+        </setupTask>
       </stream>
     </project>
     <project
