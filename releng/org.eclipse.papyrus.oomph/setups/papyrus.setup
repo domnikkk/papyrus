@@ -384,43 +384,179 @@
       <repositoryList
           name="Luna">
         <repository
-            url="${base.downloads.url}/eclipse/updates/4.4/"/>
+            url="http://download.eclipse.org/eclipse/updates/4.4/R-4.4.1-201409250400/">
+          <annotation
+              source="http://www.eclipse.org/Papyrus/2014/releng/dependencytools">
+            <detail
+                key="updateFrom">
+              <value>Eclipse</value>
+            </detail>
+          </annotation>
+        </repository>
         <repository
             url="${base.downloads.url}/tools/orbit/downloads/drops/R20140525021250/repository"/>
         <repository
-            url="${base.downloads.url}/modeling/emf/emf/updates/2.10/core/R201405190339"/>
+            url="http://download.eclipse.org/modeling/emf/emf/updates/2.10.x/">
+          <annotation
+              source="http://www.eclipse.org/Papyrus/2014/releng/dependencytools">
+            <detail
+                key="updateFrom">
+              <value>EMF (Core)</value>
+            </detail>
+          </annotation>
+        </repository>
         <repository
-            url="${base.downloads.url}/modeling/emf/transaction/updates/releases/R201405281451"/>
+            url="http://download.eclipse.org/modeling/emf/transaction/updates/releases/R201405281451/">
+          <annotation
+              source="http://www.eclipse.org/Papyrus/2014/releng/dependencytools">
+            <detail
+                key="updateFrom">
+              <value>EMF TRANSACTION</value>
+            </detail>
+          </annotation>
+        </repository>
         <repository
-            url="${base.downloads.url}/modeling/emf/validation/updates/releases/R201405281429"/>
+            url="http://download.eclipse.org/modeling/emf/validation/updates/releases/R201405281429/">
+          <annotation
+              source="http://www.eclipse.org/Papyrus/2014/releng/dependencytools">
+            <detail
+                key="updateFrom">
+              <value>EMF VALIDATION</value>
+            </detail>
+          </annotation>
+        </repository>
         <repository
             url="${base.downloads.url}/modeling/emf/query/updates/releases/R201405281426"/>
         <repository
-            url="${base.downloads.url}/tools/gef/updates/releases"/>
+            url="http://download.eclipse.org/tools/gef/updates/milestones">
+          <annotation
+              source="http://www.eclipse.org/Papyrus/2014/releng/dependencytools">
+            <detail
+                key="updateFrom">
+              <value>GEF</value>
+            </detail>
+          </annotation>
+        </repository>
         <repository
-            url="${base.downloads.url}/modeling/gmp/gmf-runtime/updates/releases/R201406111639"/>
+            url="http://download.eclipse.org/modeling/gmp/gmf-runtime/updates/releases/R201408201453/">
+          <annotation
+              source="http://www.eclipse.org/Papyrus/2014/releng/dependencytools">
+            <detail
+                key="updateFrom">
+              <value>GMF Runtime</value>
+            </detail>
+          </annotation>
+        </repository>
         <repository
-            url="${base.downloads.url}/modeling/gmp/gmf-notation/updates/releases/R201405281433"/>
+            url="http://download.eclipse.org/modeling/gmp/gmf-notation/updates/releases/R201405281433/">
+          <annotation
+              source="http://www.eclipse.org/Papyrus/2014/releng/dependencytools">
+            <detail
+                key="updateFrom">
+              <value>GMF Notation</value>
+            </detail>
+          </annotation>
+        </repository>
         <repository
-            url="${base.downloads.url}/modeling/gmp/gmf-tooling/updates/releases"/>
+            url="http://download.eclipse.org/modeling/gmp/gmf-tooling/updates/milestones-3.2.1.RC4">
+          <annotation
+              source="http://www.eclipse.org/Papyrus/2014/releng/dependencytools">
+            <detail
+                key="updateFrom">
+              <value>GMF Tooling</value>
+            </detail>
+          </annotation>
+        </repository>
         <repository
-            url="${base.downloads.url}/modeling/emft/mwe/updates/releases/R201405200714/mwe"/>
+            url="http://download.eclipse.org/modeling/emft/mwe/updates/releases/R201409021027/mwe">
+          <annotation
+              source="http://www.eclipse.org/Papyrus/2014/releng/dependencytools">
+            <detail
+                key="updateFrom">
+              <value>EMFT MWE</value>
+            </detail>
+          </annotation>
+        </repository>
         <repository
-            url="${base.downloads.url}/mmt/qvto/updates/releases/3.4.0"/>
+            url="http://download.eclipse.org/mmt/qvto/updates/milestones/3.4.0/S201406101621">
+          <annotation
+              source="http://www.eclipse.org/Papyrus/2014/releng/dependencytools">
+            <detail
+                key="updateFrom">
+              <value>QVT Operational</value>
+            </detail>
+          </annotation>
+        </repository>
         <repository
-            url="${base.downloads.url}/acceleo/updates/releases/3.5"/>
+            url="http://download.eclipse.org/acceleo/updates/milestones/3.5/S201409021433">
+          <annotation
+              source="http://www.eclipse.org/Papyrus/2014/releng/dependencytools">
+            <detail
+                key="updateFrom">
+              <value>M2T ACCELEO</value>
+            </detail>
+          </annotation>
+        </repository>
         <repository
-            url="${base.downloads.url}/modeling/mdt/ocl/updates/maintenance/5.0.3/M201411191814"/>
+            url="http://download.eclipse.org/modeling/mdt/ocl/updates/milestones/5.0.2/S201409011459">
+          <annotation
+              source="http://www.eclipse.org/Papyrus/2014/releng/dependencytools">
+            <detail
+                key="updateFrom">
+              <value>MDT OCL 5.0</value>
+            </detail>
+          </annotation>
+        </repository>
         <repository
-            url="${base.downloads.url}/modeling/mdt/uml2/updates/5.0"/>
+            url="http://download.eclipse.org/modeling/mdt/uml2/updates/5.0">
+          <annotation
+              source="http://www.eclipse.org/Papyrus/2014/releng/dependencytools">
+            <detail
+                key="updateFrom">
+              <value>MDT UML2</value>
+            </detail>
+          </annotation>
+        </repository>
         <repository
-            url="${base.downloads.url}/modeling/m2t/xpand/updates/releases/R201406030414/"/>
+            url="http://download.eclipse.org/modeling/m2t/xpand/updates/releases/R201406030414/">
+          <annotation
+              source="http://www.eclipse.org/Papyrus/2014/releng/dependencytools">
+            <detail
+                key="updateFrom">
+              <value>M2T XPAND</value>
+            </detail>
+          </annotation>
+        </repository>
         <repository
-            url="${base.downloads.url}/modeling/tmf/xtext/updates/releases/maintenance/R201409160908/"/>
+            url="http://download.eclipse.org/modeling/tmf/xtext/updates/releases/maintenance/R201409160908/">
+          <annotation
+              source="http://www.eclipse.org/Papyrus/2014/releng/dependencytools">
+            <detail
+                key="updateFrom">
+              <value>Xtext, Xtend</value>
+            </detail>
+          </annotation>
+        </repository>
         <repository
-            url="${base.downloads.url}/modeling/emf/compare/updates/releases/3.0"/>
+            url="http://download.eclipse.org/modeling/emf/compare/updates/milestones/3.0/S201408191310">
+          <annotation
+              source="http://www.eclipse.org/Papyrus/2014/releng/dependencytools">
+            <detail
+                key="updateFrom">
+              <value>EMF COMPARE</value>
+            </detail>
+          </annotation>
+        </repository>
         <repository
-            url="${base.downloads.url}/webtools/downloads/drops/R3.6.0/R-3.6.0-20140602160322/repository"/>
+            url="http://download.eclipse.org/webtools/downloads/drops/R3.6.1/R-3.6.1-20140912000031/repository/">
+          <annotation
+              source="http://www.eclipse.org/Papyrus/2014/releng/dependencytools">
+            <detail
+                key="updateFrom">
+              <value>WebTools</value>
+            </detail>
+          </annotation>
+        </repository>
         <repository
             url="${base.downloads.url}/nattable/releases/1.1.0/repository/"/>
       </repositoryList>
