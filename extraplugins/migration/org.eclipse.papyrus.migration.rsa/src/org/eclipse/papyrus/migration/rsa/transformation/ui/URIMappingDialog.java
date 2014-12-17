@@ -13,7 +13,10 @@ package org.eclipse.papyrus.migration.rsa.transformation.ui;
 
 import java.text.Collator;
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.LinkedHashMap;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
 
 import org.eclipse.core.resources.IFile;
@@ -78,6 +81,8 @@ public class URIMappingDialog extends SelectionDialog {
 	private static final int BROWSE_WORKSPACE_ID = IDialogConstants.CLIENT_ID + 1;
 
 	private static final int BROWSE_REGISTERED_ID = IDialogConstants.CLIENT_ID + 2;
+
+	List<URIMapping> allMappings;
 
 	public URIMappingDialog(Shell shell, MappingParameters mappingParameters) {
 		super(shell);
@@ -160,7 +165,13 @@ public class URIMappingDialog extends SelectionDialog {
 			}
 		});
 
-		viewer.setInput(result.getUriMappings());
+		allMappings = new LinkedList<URIMapping>();
+		allMappings.addAll(result.getUriMappings());
+		allMappings.addAll(result.getProfileUriMappings());
+
+		removeDuplicates(allMappings);
+
+		viewer.setInput(allMappings);
 
 		viewer.addSelectionChangedListener(new ISelectionChangedListener() {
 
@@ -171,6 +182,22 @@ public class URIMappingDialog extends SelectionDialog {
 		});
 
 		return self;
+	}
+
+	protected void removeDuplicates(List<URIMapping> allMappings) {
+		Iterator<URIMapping> iterator = allMappings.iterator();
+		while (iterator.hasNext()) {
+			URIMapping mapping = iterator.next();
+			for (URIMapping m : allMappings) {
+				if (m == mapping) { // Don't compare an object with itself
+					continue;
+				}
+				if (mapping.getSourceURI().equals(m.getSourceURI())) {
+					iterator.remove(); // Remove from the merged list
+					break;
+				}
+			}
+		}
 	}
 
 	@Override
@@ -203,10 +230,10 @@ public class URIMappingDialog extends SelectionDialog {
 			return;
 		}
 
+		// TODO: Registered profiles
+
 		super.buttonPressed(buttonId);
 	}
-
-
 
 	protected URIMapping getSelectedMapping() {
 		ISelection selection = viewer.getSelection();
@@ -310,8 +337,26 @@ public class URIMappingDialog extends SelectionDialog {
 
 	@Override
 	protected void okPressed() {
+		propagateURIMappings();
 		setResult(Collections.singletonList(result)); // Set the new result
 		super.okPressed();
+	}
+
+	/** Propagates the URI Mappings to all duplicates */
+	protected void propagateURIMappings() {
+		for (URIMapping mapping : allMappings) {
+			for (URIMapping uriMapping : result.getUriMappings()) {
+				if (uriMapping.getSourceURI().equals(mapping.getSourceURI())) {
+					uriMapping.setTargetURI(mapping.getTargetURI());
+				}
+			}
+
+			for (URIMapping profileURIMapping : result.getProfileUriMappings()) {
+				if (profileURIMapping.getSourceURI().equals(mapping.getSourceURI())) {
+					profileURIMapping.setTargetURI(mapping.getTargetURI());
+				}
+			}
+		}
 	}
 
 	private class URIColumnsLabelProvider extends ColumnLabelProvider {

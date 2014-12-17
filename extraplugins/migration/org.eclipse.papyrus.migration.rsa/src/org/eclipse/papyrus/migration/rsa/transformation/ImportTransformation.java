@@ -112,8 +112,11 @@ public class ImportTransformation {
 
 	protected boolean complete = false;
 
-	/** Source URI to Target URI map */
+	/** Source URI to Target URI map (For Models/Libraries/Fragments) */
 	protected final Map<URI, URI> uriMappings = new HashMap<URI, URI>();
+
+	/** Source URI to Target URI map (For Profiles) */
+	protected final Map<URI, URI> profileURIMappings = new HashMap<URI, URI>();
 
 	protected List<Diagram> diagramsToDelete = new LinkedList<Diagram>();
 
@@ -212,6 +215,10 @@ public class ImportTransformation {
 
 	public Map<URI, URI> getURIMappings() {
 		return uriMappings;
+	}
+
+	public Map<URI, URI> getProfileURIMappings() {
+		return profileURIMappings;
 	}
 
 	public URI getTargetURI() {
@@ -409,6 +416,10 @@ public class ImportTransformation {
 			notationModelURI = convertToPapyrus(sourceURI, "notation"); // TODO use constant
 			sashModelURI = convertToPapyrus(sourceURI, "di"); // TODO use constant
 
+			if ("epx".equals(sourceURI.fileExtension())) {
+				profileURIMappings.put(sourceURI, targetURI);
+			}
+			// Profile mappings are also library mappings
 			uriMappings.put(sourceURI, targetURI);
 
 			umlResource = createUMLResource(resourceSet, sourceURI, targetURI);
@@ -673,7 +684,7 @@ public class ImportTransformation {
 	 */
 	protected Diagnostic loadInPapyrusProfiles() {
 		if (inPapyrusProfiles != null) {
-			return BasicDiagnostic.OK_INSTANCE;
+			return Diagnostic.OK_INSTANCE;
 		}
 
 		List<String> missingProfiles = new LinkedList<String>();
@@ -938,16 +949,16 @@ public class ImportTransformation {
 		Map<Object, Object> saveOptions = new HashMap<Object, Object>();
 
 		// default save options.
-		saveOptions.put(XMIResource.OPTION_DECLARE_XML, Boolean.TRUE);
-		saveOptions.put(XMIResource.OPTION_PROCESS_DANGLING_HREF, XMIResource.OPTION_PROCESS_DANGLING_HREF_DISCARD);
-		saveOptions.put(XMIResource.OPTION_SCHEMA_LOCATION, Boolean.TRUE);
+		saveOptions.put(XMLResource.OPTION_DECLARE_XML, Boolean.TRUE);
+		saveOptions.put(XMLResource.OPTION_PROCESS_DANGLING_HREF, XMLResource.OPTION_PROCESS_DANGLING_HREF_DISCARD);
+		saveOptions.put(XMLResource.OPTION_SCHEMA_LOCATION, Boolean.TRUE);
 		saveOptions.put(XMIResource.OPTION_USE_XMI_TYPE, Boolean.TRUE);
-		saveOptions.put(XMIResource.OPTION_SAVE_TYPE_INFORMATION, Boolean.TRUE);
-		saveOptions.put(XMIResource.OPTION_SKIP_ESCAPE_URI, Boolean.FALSE);
-		saveOptions.put(XMIResource.OPTION_ENCODING, "UTF-8");
+		saveOptions.put(XMLResource.OPTION_SAVE_TYPE_INFORMATION, Boolean.TRUE);
+		saveOptions.put(XMLResource.OPTION_SKIP_ESCAPE_URI, Boolean.FALSE);
+		saveOptions.put(XMLResource.OPTION_ENCODING, "UTF-8");
 
 		// see bug 397987: [Core][Save] The referenced plugin models are saved using relative path
-		saveOptions.put(XMIResource.OPTION_URI_HANDLER, new org.eclipse.emf.ecore.xmi.impl.URIHandlerImpl.PlatformSchemeAware());
+		saveOptions.put(XMLResource.OPTION_URI_HANDLER, new org.eclipse.emf.ecore.xmi.impl.URIHandlerImpl.PlatformSchemeAware());
 
 		resource.setEncoding("UTF-8");
 		resource.getDefaultSaveOptions().putAll(saveOptions);

@@ -17,18 +17,23 @@ import java.util.Set;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.xmi.XMLResource;
+import org.eclipse.emf.ecore.xml.type.AnyType;
 import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 import org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.Config;
 import org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.RSAToPapyrusParametersFactory;
 import org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.URIMapping;
 import org.eclipse.papyrus.uml.extensionpoints.library.IRegisteredLibrary;
 import org.eclipse.papyrus.uml.extensionpoints.library.RegisteredLibrary;
+import org.eclipse.papyrus.uml.extensionpoints.profile.IRegisteredProfile;
+import org.eclipse.papyrus.uml.extensionpoints.profile.RegisteredProfile;
+import org.eclipse.uml2.uml.Element;
 
 import com.google.common.collect.Sets;
 
@@ -91,6 +96,8 @@ public class ConfigHelper {
 
 	protected void doComputeURIMappings(Resource sourceModel) {
 		try {
+			doComputeProfileURIMappings(sourceModel);
+
 			TreeIterator<EObject> resourceContents = sourceModel.getAllContents();
 			ResourceSet resourceSet = sourceModel.getResourceSet();
 
@@ -115,6 +122,53 @@ public class ConfigHelper {
 			}
 		} finally {
 			unloadResourceSet();
+		}
+	}
+
+	protected void doComputeProfileURIMappings(Resource sourceModel) {
+		ResourceSet resourceSet = sourceModel.getResourceSet();
+
+		for (EObject rootObject : sourceModel.getContents()) {
+			if (isInvalidStereotypeApplication(rootObject)) {
+				handleProfileURIMapping(rootObject, resourceSet);
+			}
+		}
+	}
+
+	protected boolean isInvalidStereotypeApplication(EObject eObject) {
+		if (eObject instanceof Element) {
+			return false;
+		}
+
+		// The package is not resolved: probably a missing profile
+		if (eObject instanceof AnyType) {
+			return true;
+		}
+
+		// If the package is resolved but is contained in an EPX resource, it needs to be mapped to the Papyrus equivalent
+		EPackage ePackage = eObject.eClass().getEPackage();
+		if ("epx".equals(ePackage.eResource().getURI().fileExtension())) {
+			return true;
+		}
+
+		return false;
+	}
+
+	protected void handleProfileURIMapping(EObject stereotypeApplication, ResourceSet resourceSet) {
+		Collection<URIMapping> mappings = config.getMappingParameters().getProfileUriMappings();
+
+		URIMapping existingMapping = findExistingProfileMapping(stereotypeApplication, resourceSet);
+		if (existingMapping == null) {
+			URI packageURI = EcoreUtil.getURI(stereotypeApplication.eClass().getEPackage());
+
+			URIMapping mapping = RSAToPapyrusParametersFactory.eINSTANCE.createURIMapping();
+
+			mapping.setSourceURI(packageURI.trimFragment().trimQuery().toString());
+			mapping.setTargetURI(packageURI.trimFragment().trimQuery().toString());
+
+			mappings.add(mapping);
+		} else {
+			mappings.add(existingMapping);
 		}
 	}
 
@@ -143,13 +197,41 @@ public class ConfigHelper {
 	}
 
 	protected boolean isRSAModelElement(EObject eObject) {
-		URI objectURI = EcoreUtil.getURI(eObject);
+		return isRSAModelElement(EcoreUtil.getURI(eObject));
+	}
+
+	protected boolean isRSAModelElement(URI objectURI) {
 		String fileExtension = objectURI.fileExtension();
 		return rsaExtensions.contains(fileExtension) || rsaProfileExtension.equals(fileExtension);
 	}
 
-	protected URIMapping findExistingMapping(EObject proxy, ResourceSet resourceSet) {
-		URI proxyURI = EcoreUtil.getURI(proxy);
+	protected URIMapping findExistingProfileMapping(EObject stereotypeApplication, ResourceSet resourceSet) {
+		URI proxyURI = EcoreUtil.getURI(stereotypeApplication.eClass().getEPackage());
+		String fileExtension = proxyURI.fileExtension();
+
+		URIMapping mapping = RSAToPapyrusParametersFactory.eINSTANCE.createURIMapping();
+		URI sourceURI = proxyURI.trimFragment().trimQuery();
+		mapping.setSourceURI(sourceURI.toString());
+
+		URI targetURI = null;
+
+		if ("epx".equals(fileExtension)) {
+			targetURI = sourceURI.trimFileExtension().appendFileExtension("profile").appendFileExtension("uml");
+			try {
+				Resource resource = resourceSet.getResource(targetURI, true);
+				if (resource != null && !resource.getContents().isEmpty()) {
+					mapping.setTargetURI(targetURI.toString());
+					return mapping;
+				}
+			} catch (Exception ex) {
+				// Ignore: we can't find the target resource
+			}
+		}
+
+		return findExistingMapping(proxyURI, resourceSet);
+	}
+
+	protected URIMapping findExistingMapping(URI proxyURI, ResourceSet resourceSet) {
 		String fileExtension = proxyURI.fileExtension();
 
 		URIMapping mapping = RSAToPapyrusParametersFactory.eINSTANCE.createURIMapping();
@@ -180,7 +262,7 @@ public class ConfigHelper {
 		}
 
 
-		if (!isRSAModelElement(proxy)) {
+		if (!isRSAModelElement(proxyURI)) {
 			// Maybe the resource exists, but doesn't contain this specific element
 			URI resourceURI = proxyURI.trimFragment().trimQuery();
 			try {
@@ -214,7 +296,30 @@ public class ConfigHelper {
 			}
 		}
 
+		// Maybe the object is a Profile, so let's browse registered profiles as well
+		for (IRegisteredProfile profile : RegisteredProfile.getRegisteredProfiles()) {
+			URI profileURI = profile.getUri();
+			try {
+				Resource profileResource = localResourceSet.getResource(profileURI, true);
+				if (profileResource != null) {
+					EObject resolvedElement = profileResource.getEObject(proxyURI.fragment());
+					if (resolvedElement != null && !resolvedElement.eIsProxy()) {
+						mapping.setTargetURI(profileURI.toString());
+
+						return mapping;
+					}
+				}
+			} catch (Exception ex) {
+				// Ignore
+			}
+		}
+
 		return null;
+	}
+
+	protected URIMapping findExistingMapping(EObject proxy, ResourceSet resourceSet) {
+		URI proxyURI = EcoreUtil.getURI(proxy);
+		return findExistingMapping(proxyURI, resourceSet);
 	}
 
 }
