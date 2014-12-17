@@ -55,5 +55,5 @@ public class DataTypeProvider {
 		return this.observableDataTypes.containsKey(eType.getName());
 	}
 
-	public static DataTypeProvider instance = new DataTypeProvider();
+	public static final DataTypeProvider instance = new DataTypeProvider();
 }
