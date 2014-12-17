@@ -27,7 +27,6 @@
 		<module>../features/papyrus-extra-features/org.eclipse.papyrus.java.reverse.feature</module>
 		<module>../features/papyrus-extra-features/org.eclipse.papyrus.layers.feature</module>
 		<module>../features/papyrus-extra-features/org.eclipse.papyrus.robotml.generators.intempora.rtmaps.feature</module>
-		<module>../features/papyrus-extra-features/org.eclipse.papyrus.tablemigration.feature</module>
 		<module>../features/papyrus-extra-features/org.eclipse.papyrus.uml.export.feature</module>
 		<module>../features/papyrus-extra-features/org.eclipse.papyrus.migration.rsa.feature</module>
 		<module>../extraplugins/codegen/org.eclipse.papyrus.acceleo</module>
@@ -67,10 +66,7 @@
 		<module>../extraplugins/eastadl/org.eclipse.papyrus.eastadl.service.types</module>
 		<module>../plugins/infra/org.eclipse.papyrus.eclipse.project.editors</module>
 		<module>../extraplugins/qompass-designer/org.eclipse.papyrus.fcm.profile</module>
-		<module>../extraplugins/tablemigration/org.eclipse.papyrus.infra.emf.nattable.converter</module>
 		<module>../extraplugins/qompass-designer/tracing/org.eclipse.papyrus.infra.services.tracepoints</module>
-		<module>../extraplugins/tablemigration/org.eclipse.papyrus.infra.table.instance</module>
-		<module>../extraplugins/tablemigration/org.eclipse.papyrus.infra.table.modelexplorer</module>
 		<module>../extraplugins/java/org.eclipse.papyrus.java.generator.jdtsynchronizer</module>
 		<module>../extraplugins/java/org.eclipse.papyrus.java.generator.metamodel.jdt</module>
 		<module>../extraplugins/java/org.eclipse.papyrus.java.generator.metamodel.jdt.edit</module>
