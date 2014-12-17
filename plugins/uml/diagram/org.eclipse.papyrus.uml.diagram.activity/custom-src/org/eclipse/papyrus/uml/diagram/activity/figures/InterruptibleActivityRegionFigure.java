@@ -63,6 +63,7 @@ public class InterruptibleActivityRegionFigure extends PapyrusNodeFigure impleme
 	 * @param borderStyle
 	 *            the borderStyle to set
 	 */
+	@Override
 	public void setBorderStyle(int borderStyle) {
 		this.borderStyle = borderStyle;
 		if (shadowborder != null) {
@@ -89,7 +90,7 @@ public class InterruptibleActivityRegionFigure extends PapyrusNodeFigure impleme
 
 	/**
 	 * Constructor with a tagged value.
-	 * 
+	 *
 	 * @param compartmentFigure
 	 *            a list of id for the compartment figure
 	 * @param taggedLabelValue
@@ -129,7 +130,7 @@ public class InterruptibleActivityRegionFigure extends PapyrusNodeFigure impleme
 
 	/**
 	 * Get the RectangleFigure containing the wanted compartment.
-	 * 
+	 *
 	 * @param id
 	 *            the id to find the right compartment
 	 * @return the RectangleFigure
@@ -251,8 +252,8 @@ public class InterruptibleActivityRegionFigure extends PapyrusNodeFigure impleme
 		}
 		graphics.popState();
 		// Force to repaint the border thought setShadow()
-		setShadow(isShadow());
-		repaint();
+		// setShadow(isShadow());
+		// repaint();
 	}
 
 	/**
