@@ -108,7 +108,6 @@ import org.eclipse.ui.IPropertyListener;
 import org.eclipse.ui.ISaveablePart;
 import org.eclipse.ui.ISelectionListener;
 import org.eclipse.ui.IViewSite;
-import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.internal.navigator.NavigatorContentService;
@@ -696,18 +695,6 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 	}
 
 	/**
-	 * {@inheritDoc}
-	 */
-	@Override
-	public void init(IViewSite site) throws PartInitException {
-		super.init(site);
-		IWorkbenchPage page = site.getPage();
-		// an ISelectionListener to react to workbench selection changes.
-
-		page.addSelectionListener(pageSelectionListener);
-	}
-
-	/**
 	 * {@link ResourceSetListener} to listen and react to changes in the
 	 * resource set.
 	 */
@@ -867,6 +854,9 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 			// Can't get EditingDomain, skip
 		}
 
+		// an ISelectionListener to react to workbench selection changes.
+		getSite().getPage().addSelectionListener(pageSelectionListener);
+		
 		// Listen to isDirty flag
 		saveAndDirtyService.addInputChangedListener(editorInputChangedListener);
 
