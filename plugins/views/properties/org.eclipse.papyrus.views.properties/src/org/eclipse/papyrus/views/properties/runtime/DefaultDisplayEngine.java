@@ -41,10 +41,6 @@ import org.eclipse.papyrus.views.properties.contexts.View;
 import org.eclipse.papyrus.views.properties.modelelement.DataSource;
 import org.eclipse.papyrus.views.properties.util.EMFURLStreamHandler;
 import org.eclipse.papyrus.views.properties.xwt.XWTTabDescriptor;
-import org.eclipse.papyrus.xwt.DefaultLoadingContext;
-import org.eclipse.papyrus.xwt.ILoadingContext;
-import org.eclipse.papyrus.xwt.IXWTLoader;
-import org.eclipse.papyrus.xwt.XWT;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.DisposeEvent;
 import org.eclipse.swt.events.DisposeListener;
@@ -53,6 +49,10 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.ui.views.properties.tabbed.ITabDescriptor;
+import org.eclipse.xwt.DefaultLoadingContext;
+import org.eclipse.xwt.ILoadingContext;
+import org.eclipse.xwt.IXWTLoader;
+import org.eclipse.xwt.XWT;
 
 /**
  * A default implementation for {@link DisplayEngine}
@@ -228,7 +228,7 @@ public class DefaultDisplayEngine implements DisplayEngine {
 
 	/**
 	 * Queries whether any object selected in a data source is unloaded (now an EMF proxy object).
-	 * 
+	 *
 	 * @param dataSource
 	 *            a data source
 	 * @return whether it contains an unloaded model element
@@ -238,7 +238,7 @@ public class DefaultDisplayEngine implements DisplayEngine {
 
 		for (Iterator<?> iter = dataSource.getSelection().iterator(); !result && iter.hasNext();) {
 			EObject next = EMFHelper.getEObject(iter.next());
-			result = (next != null) && ((EObject) next).eIsProxy();
+			result = (next != null) && next.eIsProxy();
 		}
 
 		return result;
@@ -360,12 +360,12 @@ public class DefaultDisplayEngine implements DisplayEngine {
 	/**
 	 * Creates a proxy for a {@code section} that makes it distinct from other occurrences of the same section, according to some
 	 * arbitrary {@code disciminator}.
-	 * 
+	 *
 	 * @param section
 	 *            a section to be repeated with unique discriminators
 	 * @param discriminator
 	 *            this {@code section}'s discriminator value
-	 * 
+	 *
 	 * @return the proxy instance combining the identity of the {@code section} with its unique {@code discriminator}
 	 */
 	public static Section discriminate(Section section, Object discriminator) {
@@ -384,7 +384,7 @@ public class DefaultDisplayEngine implements DisplayEngine {
 
 	/**
 	 * Obtains the discriminator for a {@code section} proxy, if it is a proxy.
-	 * 
+	 *
 	 * @param section
 	 *            a section that is repeated with unique discriminators
 	 * @return this {@code section}'s discriminator value, or {@code null} if it is a singleton (non-proxy) section
