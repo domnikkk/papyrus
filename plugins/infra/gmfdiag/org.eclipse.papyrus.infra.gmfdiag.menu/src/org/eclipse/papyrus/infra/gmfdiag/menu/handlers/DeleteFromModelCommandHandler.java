@@ -12,6 +12,7 @@
  *  Christian W. Damus (CEA) - bug 429826
  *  Gabriel Pascual (ALL4TEC) gabriel.pascual@all4tec.net - Bug 436952
  *  Gabriel Pascual (ALL4TEC) gabriel.pascual@all4tec.net - Bug 411570
+ *  Gabriel Pascual (ALL4TEC) gabriel.pascual@all4tec.net - Bug 454891
  *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.gmfdiag.menu.handlers;
@@ -25,6 +26,7 @@ import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.commands.UnexecutableCommand;
 import org.eclipse.gmf.runtime.diagram.ui.commands.CommandProxy;
 import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.emf.commands.core.command.CompositeTransactionalCommand;
 import org.eclipse.papyrus.infra.gmfdiag.menu.utils.DeleteActionUtil;
@@ -62,7 +64,7 @@ public class DeleteFromModelCommandHandler extends AbstractGraphicalCommandHandl
 			IGraphicalEditPart editPart = it.next();
 
 			Command curCommand = DeleteActionUtil.getDeleteFromModelCommand(editPart, editingDomain);
-			if (curCommand != null) {
+			if (curCommand != null && curCommand.canExecute()) {
 				command.compose(new CommandProxy(curCommand));
 			}
 		}
@@ -77,5 +79,24 @@ public class DeleteFromModelCommandHandler extends AbstractGraphicalCommandHandl
 	}
 
 
+	/**
+	 * @see org.eclipse.papyrus.infra.gmfdiag.menu.handlers.AbstractGraphicalCommandHandler#computeEnabled()
+	 *
+	 * @return
+	 */
+	@Override
+	protected boolean computeEnabled() {
+		boolean enable = true;
+		List<IGraphicalEditPart> selectedElement = getSelectedElements();
 
+		Iterator<IGraphicalEditPart> iteratorSelection = selectedElement.iterator();
+		while (iteratorSelection.hasNext() && enable) {
+			IGraphicalEditPart editPart = iteratorSelection.next();
+
+			// Check if the selected edit part is not a Diagram and it is not Root Element
+			enable = enable && !(editPart instanceof DiagramEditPart) && DeleteActionUtil.isSemanticDeletion(editPart);
+
+		}
+		return enable;
+	}
 }

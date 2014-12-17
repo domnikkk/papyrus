@@ -11,6 +11,7 @@
  *  Patrick Tessier (CEA LIST) Patrick.tessier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 430701
  *  Christian W. Damus (CEA) - bug 433320
+ *  Gabriel Pascual (ALL4TEC) gabriel.pascual@all4tec.net - Bug 454891
  *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.gmfdiag.menu.handlers;
@@ -133,7 +134,7 @@ public abstract class AbstractGraphicalCommandHandler extends AbstractHandler {
 		if ((domain != null) && !TransactionHelper.isDisposed(domain)) {
 			Command command = getCommand();
 			if (command != null) {
-				result = getCommand().canExecute();
+				result = command.canExecute();
 				command.dispose();
 			}
 		}
