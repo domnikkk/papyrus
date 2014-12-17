@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extendedtypes:ExtendedElementTypeSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:applystereotypeactionconfiguration="http://www.eclipse.org/papyrus/infra/extendedtypes/uml/applystereotypeaction/1.0" xmlns:extendedtypes="http://www.eclipse.org/papyrus/infra/extendedtypes/1.0" xmlns:invariantsemantictypeconfiguration="http://www.eclipse.org/papyrus/infra/extendedtypes/semantictype/invariant/1.0" xmlns:invariantstereotypeconfiguration="http://www.eclipse.org/papyrus/infra/extendedtypes/semantictype/invariant/stereotype/1.0" name="UML-RT Element Types" description="Element Types for the UML-RT profile" identifier="org.eclipse.papyrus.umlrt.elementtypes">
+  <elementType xsi:type="invariantsemantictypeconfiguration:InvariantSemanticTypeConfiguration" name="UMLRealTime::Capsule" description="Invariant element type for capsule" identifier="org.eclipse.papyrus.umlrt.Capsule">
+    <specializedTypesID>org.eclipse.papyrus.uml.Class</specializedTypesID>
+    <invariantRuleConfiguration xsi:type="invariantstereotypeconfiguration:InvariantStereotypeConfiguration" stereotypeQualifiedName="UMLRealTime::Capsule" requiredProfile="UMLRealTime"/>
+  </elementType>
+  <elementType xsi:type="extendedtypes:AspectSemanticTypeConfiguration" name="Capsule Basic Aspect Type" identifier="org.eclipse.papyrus.umlrt.Capsule.BasicCreationType">
+    <specializedTypesID>org.eclipse.papyrus.umlrt.Capsule</specializedTypesID>
+    <actionConfiguration xsi:type="applystereotypeactionconfiguration:ApplyStereotypeActionConfiguration">
+      <stereotypesToApply stereotypeQualifiedName="UMLRealTime::Capsule" updateName="true">
+        <requiredProfiles>UMLRealTime</requiredProfiles>
+      </stereotypesToApply>
+    </actionConfiguration>
+  </elementType>
+  <elementType xsi:type="invariantsemantictypeconfiguration:InvariantSemanticTypeConfiguration" name="UMLRealTime::CapsulePart" description="Invariant element type for capsule part" identifier="org.eclipse.papyrus.umlrt.CapsulePart">
+    <specializedTypesID>org.eclipse.papyrus.uml.Property</specializedTypesID>
+    <invariantRuleConfiguration xsi:type="invariantstereotypeconfiguration:InvariantStereotypeConfiguration" stereotypeQualifiedName="UMLRealTime::CapsulePart" requiredProfile="UMLRealTime"/>
+  </elementType>
+  <elementType xsi:type="extendedtypes:AspectSemanticTypeConfiguration" name="CapsulePart Basic Aspect Type" identifier="org.eclipse.papyrus.umlrt.CapsulePart.BasicCreationType">
+    <specializedTypesID>org.eclipse.papyrus.umlrt.CapsulePart</specializedTypesID>
+    <actionConfiguration xsi:type="applystereotypeactionconfiguration:ApplyStereotypeActionConfiguration">
+      <stereotypesToApply stereotypeQualifiedName="UMLRealTime::CapsulePart" updateName="true">
+        <requiredProfiles>UMLRealTime</requiredProfiles>
+      </stereotypesToApply>
+    </actionConfiguration>
+  </elementType>
+  <elementType xsi:type="invariantsemantictypeconfiguration:InvariantSemanticTypeConfiguration" name="UMLRealTime::RTPort" description="Invariant element type for rtport" identifier="org.eclipse.papyrus.umlrt.RTPort">
+    <specializedTypesID>org.eclipse.papyrus.uml.Port</specializedTypesID>
+    <invariantRuleConfiguration xsi:type="invariantstereotypeconfiguration:InvariantStereotypeConfiguration" stereotypeQualifiedName="UMLRealTime::RTPort" requiredProfile="UMLRealTime"/>
+  </elementType>
+  <elementType xsi:type="extendedtypes:AspectSemanticTypeConfiguration" name="RTPort Basic Aspect Type" identifier="org.eclipse.papyrus.umlrt.RTPort.BasicCreationType">
+    <specializedTypesID>org.eclipse.papyrus.umlrt.RTPort</specializedTypesID>
+    <actionConfiguration xsi:type="applystereotypeactionconfiguration:ApplyStereotypeActionConfiguration">
+      <stereotypesToApply stereotypeQualifiedName="UMLRealTime::RTPort" updateName="true">
+        <requiredProfiles>UMLRealTime</requiredProfiles>
+      </stereotypesToApply>
+    </actionConfiguration>
+  </elementType>
+  <elementType xsi:type="invariantsemantictypeconfiguration:InvariantSemanticTypeConfiguration" name="UMLRealTime::RTConnector" description="Invariant element type for rtconnector" identifier="org.eclipse.papyrus.umlrt.RTConnector">
+    <specializedTypesID>org.eclipse.papyrus.uml.Connector</specializedTypesID>
+    <invariantRuleConfiguration xsi:type="invariantstereotypeconfiguration:InvariantStereotypeConfiguration" stereotypeQualifiedName="UMLRealTime::RTConnector" requiredProfile="UMLRealTime"/>
+  </elementType>
+  <elementType xsi:type="extendedtypes:AspectSemanticTypeConfiguration" name="RTConnector Basic Aspect Type" identifier="org.eclipse.papyrus.umlrt.RTConnector.BasicCreationType">
+    <specializedTypesID>org.eclipse.papyrus.umlrt.RTConnector</specializedTypesID>
+    <actionConfiguration xsi:type="applystereotypeactionconfiguration:ApplyStereotypeActionConfiguration">
+      <stereotypesToApply stereotypeQualifiedName="UMLRealTime::RTConnector" updateName="true">
+        <requiredProfiles>UMLRealTime</requiredProfiles>
+      </stereotypesToApply>
+    </actionConfiguration>
+  </elementType>
+  <elementType xsi:type="invariantsemantictypeconfiguration:InvariantSemanticTypeConfiguration" name="UMLRealTime::ProtocolContainer" description="Invariant element type for protocol container" identifier="org.eclipse.papyrus.umlrt.ProtocolContainer">
+    <specializedTypesID>org.eclipse.papyrus.uml.Package</specializedTypesID>
+    <invariantRuleConfiguration xsi:type="invariantstereotypeconfiguration:InvariantStereotypeConfiguration" stereotypeQualifiedName="UMLRealTime::ProtocolContainer" requiredProfile="UMLRealTime"/>
+  </elementType>
+  <elementType xsi:type="extendedtypes:AspectSemanticTypeConfiguration" name="ProtocolContainer Basic Aspect Type" identifier="org.eclipse.papyrus.umlrt.ProtocolContainer.BasicCreationType">
+    <specializedTypesID>org.eclipse.papyrus.umlrt.ProtocolContainer</specializedTypesID>
+    <actionConfiguration xsi:type="applystereotypeactionconfiguration:ApplyStereotypeActionConfiguration">
+      <stereotypesToApply stereotypeQualifiedName="UMLRealTime::ProtocolContainer" updateName="true">
+        <requiredProfiles>UMLRealTime</requiredProfiles>
+      </stereotypesToApply>
+    </actionConfiguration>
+  </elementType>
+  <elementType xsi:type="invariantsemantictypeconfiguration:InvariantSemanticTypeConfiguration" name="UMLRealTime::Protocol" description="Invariant element type for protocol" identifier="org.eclipse.papyrus.umlrt.Protocol">
+    <specializedTypesID>org.eclipse.papyrus.uml.Collaboration</specializedTypesID>
+    <invariantRuleConfiguration xsi:type="invariantstereotypeconfiguration:InvariantStereotypeConfiguration" stereotypeQualifiedName="UMLRealTime::Protocol" requiredProfile="UMLRealTime"/>
+  </elementType>
+  <elementType xsi:type="extendedtypes:AspectSemanticTypeConfiguration" name="Protocol Basic Aspect Type" identifier="org.eclipse.papyrus.umlrt.Protocol.BasicCreationType">
+    <specializedTypesID>org.eclipse.papyrus.umlrt.Protocol</specializedTypesID>
+    <actionConfiguration xsi:type="applystereotypeactionconfiguration:ApplyStereotypeActionConfiguration">
+      <stereotypesToApply stereotypeQualifiedName="UMLRealTime::Protocol" updateName="true">
+        <requiredProfiles>UMLRealTime</requiredProfiles>
+      </stereotypesToApply>
+    </actionConfiguration>
+  </elementType>
+  <elementType xsi:type="invariantsemantictypeconfiguration:InvariantSemanticTypeConfiguration" name="UMLRealTime::RTMessageSet" description="Invariant element type for rtmessageset" identifier="org.eclipse.papyrus.umlrt.RTMessageSet">
+    <specializedTypesID>org.eclipse.papyrus.uml.Interface</specializedTypesID>
+    <invariantRuleConfiguration xsi:type="invariantstereotypeconfiguration:InvariantStereotypeConfiguration" stereotypeQualifiedName="UMLRealTime::RTMessageSet" requiredProfile="UMLRealTime"/>
+  </elementType>
+  <elementType xsi:type="extendedtypes:AspectSemanticTypeConfiguration" name="RTMessageSet Basic Aspect Type" identifier="org.eclipse.papyrus.umlrt.RTMessageSet.BasicCreationType">
+    <specializedTypesID>org.eclipse.papyrus.umlrt.RTMessageSet</specializedTypesID>
+    <actionConfiguration xsi:type="applystereotypeactionconfiguration:ApplyStereotypeActionConfiguration">
+      <stereotypesToApply stereotypeQualifiedName="UMLRealTime::RTMessageSet" updateName="true">
+        <requiredProfiles>UMLRealTime</requiredProfiles>
+      </stereotypesToApply>
+    </actionConfiguration>
+  </elementType>
+</extendedtypes:ExtendedElementTypeSet>
