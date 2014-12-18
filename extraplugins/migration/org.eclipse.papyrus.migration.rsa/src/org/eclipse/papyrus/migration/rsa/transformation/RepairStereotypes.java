@@ -30,6 +30,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.papyrus.infra.core.resource.ModelSet;
 import org.eclipse.papyrus.infra.core.services.ServiceException;
+import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 import org.eclipse.papyrus.infra.services.labelprovider.service.LabelProviderService;
 import org.eclipse.papyrus.infra.services.labelprovider.service.impl.LabelProviderServiceImpl;
 import org.eclipse.papyrus.migration.rsa.Activator;
@@ -43,13 +44,15 @@ import org.eclipse.uml2.uml.ProfileApplication;
 import org.eclipse.uml2.uml.UMLPackage;
 
 import com.google.common.base.Function;
+import com.google.common.base.Predicates;
+import com.google.common.collect.Iterators;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
 
 /**
  * Repairs stereotype applications in the specified model set, using the default action for each
  *
- * The given profile supplier is used when the proper profile can't be found automatically
+ * The given URI Map is used when the proper profile can't be found automatically
  *
  * @author Camille Letavernier
  *
@@ -168,6 +171,7 @@ public class RepairStereotypes {
 	protected Function<? super EPackage, Profile> getProfileSupplier() {
 		return new Function<EPackage, Profile>() {
 
+			// If we're here, we didn't find a perfect match for the profile. We need to make some guesses
 			@Override
 			public Profile apply(EPackage input) {
 				if (input.eResource() == null || input.eResource().getURI() == null) {
@@ -176,23 +180,25 @@ public class RepairStereotypes {
 
 				URI packageResourceURI = input.eResource().getURI();
 				URI targetResourceURI = profileMappings.get(packageResourceURI);
-				if (targetResourceURI == null) {
-					return null;
+
+				Profile result = null;
+				URI selectedProfileURI = targetResourceURI;
+				if (selectedProfileURI != null) {
+					result = EMFHelper.load(modelSet, selectedProfileURI, Profile.class);
+
+					// If there is a single Profile, there is no ambiguity. Just return it
+					if ((result != null) && !hasNestedProfiles(result)) {
+						return result;
+					}
+
+					// TODO: handle the case with nested profiles (We already opened a popup dialog earlier; wouldn't be a good idea to pop another dialog here)
 				}
 
-				Resource resource = null;
-				try {
-					resource = modelSet.getResource(targetResourceURI, true);
-				} catch (Exception ex) {
-					resource = modelSet.getResource(targetResourceURI, false);
-				}
-
-				if (resource == null || !resource.isLoaded()) {
-					return null;
-				}
-
-				// Find the proper profile for the given EPackage
 				return null;
+			}
+
+			boolean hasNestedProfiles(Profile profile) {
+				return Iterators.any(profile.eAllContents(), Predicates.instanceOf(Profile.class));
 			}
 		};
 	}
