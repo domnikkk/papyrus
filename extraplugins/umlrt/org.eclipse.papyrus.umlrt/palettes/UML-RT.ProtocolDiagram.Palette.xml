@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<paletteDefinition>
+	<content>
+		<drawer iconpath="/icons/drawer.gif"  id="Drawer__1416993599968"
+			name="UML-RT">			
+			<aspectTool description="Create a ProtocolContainer"
+				iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Package.gif"
+				id="clazz.tool.package_1416993803624" name="ProtocolContainer"
+				refToolId="clazz.tool.package">
+				<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
+					<stereotypesToApply>
+						<stereotype stereotypeName="UMLRealTime::ProtocolContainer" />
+					</stereotypesToApply>
+				</postAction>
+			</aspectTool>
+			<aspectTool description="Create a Protocol"
+				iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Collaboration.gif"
+				id="composite.tool.collaboration_1417096522723" name="Protocol"
+				refToolId="composite.tool.collaboration">
+				<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
+					<stereotypesToApply>
+						<stereotype stereotypeName="UMLRealTime::Protocol" />
+					</stereotypesToApply>
+				</postAction>
+			</aspectTool>		
+			<aspectTool description="Create an RTMessageSet"
+				iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Interface.gif"
+				id="clazz.tool.interface_1416994043249" name="RTMessageSet"
+				refToolId="clazz.tool.interface">
+				<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
+					<stereotypesToApply>
+						<stereotype stereotypeName="UMLRealTime::RTMessageSet" />
+					</stereotypesToApply>
+				</postAction>
+			</aspectTool>
+			<aspectTool description="Create an RTTrigger"
+				iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Operation.gif"
+				id="clazz.tool.operation_1416994043249" name="RTTrigger"
+				refToolId="clazz.tool.operation">
+				<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
+					<stereotypesToApply>
+						<stereotype stereotypeName="UMLRealTimeStateMach::RTTrigger" />
+					</stereotypesToApply>
+				</postAction>
+			</aspectTool>
+			<aspectTool description="Create a Realization"
+				iconpath="bundleentry://1075.fwk31149847/icons/full/obj16/Realization.gif"
+				id="clazz.tool.realization_1417455608460" name="Realization"
+				refToolId="clazz.tool.realization" />	
+			<aspectTool description="Create an Usage"
+				iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Usage.gif"
+				id="clazz.tool.usage_1417516786109" name="Usage" refToolId="clazz.tool.usage" />			
+		</drawer>
+	</content>
+</paletteDefinition>

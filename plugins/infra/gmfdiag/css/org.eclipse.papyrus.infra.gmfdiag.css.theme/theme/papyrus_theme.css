@@ -131,6 +131,24 @@ ActivityDiagram Activity *,InteractionOverviewDiagram Activity * {
 	elementIcon:false; 
 }
 
+/* no gradiant for symbol to permit to change color */
+ActivityDiagram MergeNode, 
+ActivityDiagram InitialNode, 
+ActivityDiagram ActivityFinalNode, 
+ActivityDiagram FlowFinalNode, 
+ActivityDiagram DecisionNode, 
+ActivityDiagram SendSignalAction,
+ActivityDiagram AcceptEventAction
+{
+	gradient:none;
+	fillColor:white;
+}
+
+ClassDiagram Dependency{
+	fillColor:Black;
+	gradient:none;
+}
+
 /*
  * The Actor element icon is not useful either
  */
@@ -141,3 +159,14 @@ UseCaseDiagram Actor {
 TimingDiagram * {
 	gradient:none;
 }
+
+UseCaseDiagram UseCase {
+	fillColor:white;
+}
+
+StateMachineDiagram Pseudostate[kind="exitPoint"],
+StateMachineDiagram Pseudostate[kind="entryPoint"]
+{
+	fillColor:white;
+}
+

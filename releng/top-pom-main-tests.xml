@@ -102,7 +102,7 @@
 			<id>emf-compare</id>
 			<layout>p2</layout>
 			<!-- updateFrom("EMF COMPARE",0) -->
-			<url>http://download.eclipse.org/modeling/emf/compare/updates/milestones/3.1/S201411071344</url>
+			<url>http://download.eclipse.org/modeling/emf/compare/updates/milestones/3.1/S201412161011</url>
 		</repository>
 		<repository>
 			<id>emf-emf</id>
@@ -114,25 +114,25 @@
 			<id>emft-mwe[0]</id>
 			<layout>p2</layout>
 			<!-- updateFrom("EMFT MWE",0) -->
-			<url>http://download.eclipse.org/modeling/emft/mwe/updates/milestones/S201411111017/mwe</url>
+			<url>http://download.eclipse.org/modeling/emft/mwe/updates/milestones/S201412160330/mwe</url>
 		</repository>
 		<repository>
 			<id>emft-mwe[1]</id>
 			<layout>p2</layout>
 			<!-- updateFrom("EMFT MWE",1) -->
-			<url>http://download.eclipse.org/modeling/emft/mwe/updates/milestones/S201411111103/mwe2lang</url>
+			<url>http://download.eclipse.org/modeling/emft/mwe/updates/milestones/S201412160441/mwe2lang</url>
 		</repository>
 		<repository>
 			<id>emf-transaction</id>
 			<layout>p2</layout>
 			<!-- updateFrom("EMF TRANSACTION",0) -->
-			<url>http://download.eclipse.org/modeling/emf/transaction/updates/milestones/S201411230352</url>
+			<url>http://download.eclipse.org/modeling/emf/transaction/updates/milestones/S201412161904</url>
 		</repository>
 		<repository>
 			<id>emf-validation</id>
 			<layout>p2</layout>
 			<!-- updateFrom("EMF VALIDATION",0) -->
-			<url>http://download.eclipse.org/modeling/emf/validation/updates/milestones/S201411230228</url>
+			<url>http://download.eclipse.org/modeling/emf/validation/updates/milestones/S201412161741</url>
 		</repository>
 		<repository>
 			<id>ep</id>
@@ -150,13 +150,13 @@
 			<id>gmp-gmf-notation</id>
 			<layout>p2</layout>
 			<!-- updateFrom("GMF Notation",0) -->
-			<url>http://download.eclipse.org/modeling/gmp/gmf-notation/updates/milestones/S201411230248</url>
+			<url>http://download.eclipse.org/modeling/gmp/gmf-notation/updates/milestones/S201412161742</url>
 		</repository>
 		<repository>
 			<id>gmp-gmf-runtime</id>
 			<layout>p2</layout>
 			<!-- updateFrom("GMF Runtime",0) -->
-			<url>http://download.eclipse.org/modeling/gmp/gmf-runtime/updates/milestones/S201411230102</url>
+			<url>http://download.eclipse.org/modeling/gmp/gmf-runtime/updates/milestones/S201412162002</url>
 		</repository>
 		<repository>
 			<id>gmf-tooling</id>
@@ -174,13 +174,13 @@
 			<id>m2t-xpand</id>
 			<layout>p2</layout>
 			<!-- updateFrom("M2T XPAND",0) -->
-			<url>http://download.eclipse.org/modeling/m2t/xpand/updates/milestones/S201411111024/</url>
+			<url>http://download.eclipse.org/modeling/m2t/xpand/updates/milestones/S201412160338/</url>
 		</repository>
 		<repository>
 			<id>mdt-ocl</id>
 			<layout>p2</layout>
 			<!-- updateFrom("MDT OCL 5.1",0) -->
-			<url>http://download.eclipse.org/modeling/mdt/ocl/updates/milestones/5.1.0/S201411101552</url>
+			<url>http://download.eclipse.org/modeling/mdt/ocl/updates/milestones/5.1.0/S201412151441</url>
 		</repository>
 		<repository>
 			<id>mdt-uml2</id>
@@ -192,7 +192,7 @@
 			<id>mmt-qvto</id>
 			<layout>p2</layout>
 			<!-- updateFrom("QVT Operational",0) -->
-			<url>http://download.eclipse.org/mmt/qvto/updates/milestones/3.5.0/S201411111552</url>
+			<url>http://download.eclipse.org/mmt/qvto/updates/milestones/3.5.0/S201412161054</url>
 		</repository>
 		<repository>
 			<id>nattable</id>
@@ -214,7 +214,7 @@
 			<id>tmf-xtext</id>
 			<layout>p2</layout>
 			<!-- updateFrom("Xtext, Xtend",0) -->
-			<url>http://download.eclipse.org/modeling/tmf/xtext/updates/milestones/head/S201411111037/</url>
+			<url>http://download.eclipse.org/modeling/tmf/xtext/updates/milestones/head/S201412160421/</url>
 		</repository>
 		<repository>
 			<id>swtbot</id>
@@ -225,7 +225,13 @@
 			<id>webtools</id>
 			<layout>p2</layout>
 			<!-- updateFrom("WebTools",0) -->
-			<url>http://download.eclipse.org/webtools/downloads/drops/R3.7.0/S-3.7.0M3-20141111153131/repository/</url>
+			<url>http://download.eclipse.org/webtools/downloads/drops/R3.7.0/S-3.7.0M4-20141211000148/repository/</url>
+		</repository>
+		<repository>
+			<id>XWT</id>
+			<layout>p2</layout>
+			<!-- updateFrom("XWT",0) -->
+			<url>http://download.eclipse.org/xwt/release-1.1.0</url>
 		</repository>
 	</repositories>
 	<build>

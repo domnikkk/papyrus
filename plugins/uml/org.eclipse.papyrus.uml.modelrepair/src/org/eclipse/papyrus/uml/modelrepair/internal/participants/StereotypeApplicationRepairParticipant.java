@@ -550,6 +550,9 @@ public class StereotypeApplicationRepairParticipant extends PackageOperations im
 
 		protected EObject resolveRef(EObject anyType, String ref) {
 			Resource baseResource = anyType.eResource();
+			if (baseResource == null) {
+				return null; // Already resolved & removed?
+			}
 
 			URI uri;
 			if (ref.contains("#")) {

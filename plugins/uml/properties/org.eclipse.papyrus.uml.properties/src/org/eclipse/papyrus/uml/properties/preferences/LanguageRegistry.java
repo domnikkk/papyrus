@@ -45,7 +45,7 @@ public class LanguageRegistry {
 	/**
 	 * The singleton instance for the LanguageRegistry
 	 */
-	public static LanguageRegistry instance = new LanguageRegistry();
+	public static final LanguageRegistry instance = new LanguageRegistry();
 
 	private LanguageRegistry() {
 		languageMapping = new HashMap<String, List<Editor>>();
@@ -155,7 +155,7 @@ public class LanguageRegistry {
 		}
 
 		List<Editor> editors = languageMapping.get(language);
-		if (!editors.contains(editors)) {
+		if (!editors.contains(editor)) {
 			editors.add(editor);
 		}
 	}

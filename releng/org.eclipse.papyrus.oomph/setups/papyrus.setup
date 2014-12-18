@@ -209,7 +209,7 @@
           </annotation>
         </repository>
         <repository
-            url="http://download.eclipse.org/modeling/emf/transaction/updates/milestones/S201411230352">
+            url="http://download.eclipse.org/modeling/emf/transaction/updates/milestones/S201412161904">
           <annotation
               source="http://www.eclipse.org/Papyrus/2014/releng/dependencytools">
             <detail
@@ -219,22 +219,12 @@
           </annotation>
         </repository>
         <repository
-            url="http://download.eclipse.org/modeling/emf/validation/updates/milestones/S201411230228">
+            url="http://download.eclipse.org/modeling/emf/validation/updates/milestones/S201412161741">
           <annotation
               source="http://www.eclipse.org/Papyrus/2014/releng/dependencytools">
             <detail
                 key="updateFrom">
               <value>EMF VALIDATION</value>
-            </detail>
-          </annotation>
-        </repository>
-        <repository
-            url="http://download.eclipse.org/modeling/emf/query/updates/milestones/S201411230232/">
-          <annotation
-              source="http://www.eclipse.org/Papyrus/2014/releng/dependencytools">
-            <detail
-                key="updateFrom">
-              <value>EMF QUERY</value>
             </detail>
           </annotation>
         </repository>
@@ -249,7 +239,7 @@
           </annotation>
         </repository>
         <repository
-            url="http://download.eclipse.org/modeling/gmp/gmf-runtime/updates/milestones/S201411230102">
+            url="http://download.eclipse.org/modeling/gmp/gmf-runtime/updates/milestones/S201412162002">
           <annotation
               source="http://www.eclipse.org/Papyrus/2014/releng/dependencytools">
             <detail
@@ -259,7 +249,7 @@
           </annotation>
         </repository>
         <repository
-            url="http://download.eclipse.org/modeling/gmp/gmf-notation/updates/milestones/S201411230248">
+            url="http://download.eclipse.org/modeling/gmp/gmf-notation/updates/milestones/S201412161742">
           <annotation
               source="http://www.eclipse.org/Papyrus/2014/releng/dependencytools">
             <detail
@@ -279,7 +269,7 @@
           </annotation>
         </repository>
         <repository
-            url="http://download.eclipse.org/modeling/emft/mwe/updates/milestones/S201411111017/mwe">
+            url="http://download.eclipse.org/modeling/emft/mwe/updates/milestones/S201412160330/mwe">
           <annotation
               source="http://www.eclipse.org/Papyrus/2014/releng/dependencytools">
             <detail
@@ -289,7 +279,7 @@
           </annotation>
         </repository>
         <repository
-            url="http://download.eclipse.org/modeling/emft/mwe/updates/milestones/S201411111103/mwe2lang">
+            url="http://download.eclipse.org/modeling/emft/mwe/updates/milestones/S201412160441/mwe2lang">
           <annotation
               source="http://www.eclipse.org/Papyrus/2014/releng/dependencytools">
             <detail
@@ -299,7 +289,7 @@
           </annotation>
         </repository>
         <repository
-            url="http://download.eclipse.org/mmt/qvto/updates/milestones/3.5.0/S201411111552">
+            url="http://download.eclipse.org/mmt/qvto/updates/milestones/3.5.0/S201412161054">
           <annotation
               source="http://www.eclipse.org/Papyrus/2014/releng/dependencytools">
             <detail
@@ -319,7 +309,7 @@
           </annotation>
         </repository>
         <repository
-            url="http://download.eclipse.org/modeling/mdt/ocl/updates/milestones/5.1.0/S201411101552">
+            url="http://download.eclipse.org/modeling/mdt/ocl/updates/milestones/5.1.0/S201412151441">
           <annotation
               source="http://www.eclipse.org/Papyrus/2014/releng/dependencytools">
             <detail
@@ -339,7 +329,7 @@
           </annotation>
         </repository>
         <repository
-            url="http://download.eclipse.org/modeling/m2t/xpand/updates/milestones/S201411111024/">
+            url="http://download.eclipse.org/modeling/m2t/xpand/updates/milestones/S201412160338/">
           <annotation
               source="http://www.eclipse.org/Papyrus/2014/releng/dependencytools">
             <detail
@@ -349,7 +339,7 @@
           </annotation>
         </repository>
         <repository
-            url="http://download.eclipse.org/modeling/tmf/xtext/updates/milestones/head/S201411111037/">
+            url="http://download.eclipse.org/modeling/tmf/xtext/updates/milestones/head/S201412160421/">
           <annotation
               source="http://www.eclipse.org/Papyrus/2014/releng/dependencytools">
             <detail
@@ -359,7 +349,7 @@
           </annotation>
         </repository>
         <repository
-            url="http://download.eclipse.org/modeling/emf/compare/updates/milestones/3.1/S201411071344">
+            url="http://download.eclipse.org/modeling/emf/compare/updates/milestones/3.1/S201412161011">
           <annotation
               source="http://www.eclipse.org/Papyrus/2014/releng/dependencytools">
             <detail
@@ -369,7 +359,7 @@
           </annotation>
         </repository>
         <repository
-            url="http://download.eclipse.org/webtools/downloads/drops/R3.7.0/S-3.7.0M3-20141111153131/repository/">
+            url="http://download.eclipse.org/webtools/downloads/drops/R3.7.0/S-3.7.0M4-20141211000148/repository/">
           <annotation
               source="http://www.eclipse.org/Papyrus/2014/releng/dependencytools">
             <detail
@@ -380,47 +370,193 @@
         </repository>
         <repository
             url="${base.downloads.url}/nattable/releases/1.1.0/repository/"/>
+        <repository
+            url="http://download.eclipse.org/xwt/release-1.1.0">
+          <annotation
+              source="http://www.eclipse.org/Papyrus/2014/releng/dependencytools">
+            <detail
+                key="updateFrom">
+              <value>XWT</value>
+            </detail>
+          </annotation>
+        </repository>
       </repositoryList>
       <repositoryList
           name="Luna">
         <repository
-            url="${base.downloads.url}/eclipse/updates/4.4/"/>
+            url="http://download.eclipse.org/eclipse/updates/4.4/R-4.4.1-201409250400/">
+          <annotation
+              source="http://www.eclipse.org/Papyrus/2014/releng/dependencytools">
+            <detail
+                key="updateFrom">
+              <value>Eclipse</value>
+            </detail>
+          </annotation>
+        </repository>
         <repository
             url="${base.downloads.url}/tools/orbit/downloads/drops/R20140525021250/repository"/>
         <repository
-            url="${base.downloads.url}/modeling/emf/emf/updates/2.10/core/R201405190339"/>
+            url="http://download.eclipse.org/modeling/emf/emf/updates/2.10.x/">
+          <annotation
+              source="http://www.eclipse.org/Papyrus/2014/releng/dependencytools">
+            <detail
+                key="updateFrom">
+              <value>EMF (Core)</value>
+            </detail>
+          </annotation>
+        </repository>
         <repository
-            url="${base.downloads.url}/modeling/emf/transaction/updates/releases/R201405281451"/>
+            url="http://download.eclipse.org/modeling/emf/transaction/updates/releases/R201405281451/">
+          <annotation
+              source="http://www.eclipse.org/Papyrus/2014/releng/dependencytools">
+            <detail
+                key="updateFrom">
+              <value>EMF TRANSACTION</value>
+            </detail>
+          </annotation>
+        </repository>
         <repository
-            url="${base.downloads.url}/modeling/emf/validation/updates/releases/R201405281429"/>
+            url="http://download.eclipse.org/modeling/emf/validation/updates/releases/R201405281429/">
+          <annotation
+              source="http://www.eclipse.org/Papyrus/2014/releng/dependencytools">
+            <detail
+                key="updateFrom">
+              <value>EMF VALIDATION</value>
+            </detail>
+          </annotation>
+        </repository>
         <repository
             url="${base.downloads.url}/modeling/emf/query/updates/releases/R201405281426"/>
         <repository
-            url="${base.downloads.url}/tools/gef/updates/releases"/>
+            url="http://download.eclipse.org/tools/gef/updates/milestones">
+          <annotation
+              source="http://www.eclipse.org/Papyrus/2014/releng/dependencytools">
+            <detail
+                key="updateFrom">
+              <value>GEF</value>
+            </detail>
+          </annotation>
+        </repository>
         <repository
-            url="${base.downloads.url}/modeling/gmp/gmf-runtime/updates/releases/R201406111639"/>
+            url="http://download.eclipse.org/modeling/gmp/gmf-runtime/updates/releases/R201408201453/">
+          <annotation
+              source="http://www.eclipse.org/Papyrus/2014/releng/dependencytools">
+            <detail
+                key="updateFrom">
+              <value>GMF Runtime</value>
+            </detail>
+          </annotation>
+        </repository>
         <repository
-            url="${base.downloads.url}/modeling/gmp/gmf-notation/updates/releases/R201405281433"/>
+            url="http://download.eclipse.org/modeling/gmp/gmf-notation/updates/releases/R201405281433/">
+          <annotation
+              source="http://www.eclipse.org/Papyrus/2014/releng/dependencytools">
+            <detail
+                key="updateFrom">
+              <value>GMF Notation</value>
+            </detail>
+          </annotation>
+        </repository>
         <repository
-            url="${base.downloads.url}/modeling/gmp/gmf-tooling/updates/releases"/>
+            url="http://download.eclipse.org/modeling/gmp/gmf-tooling/updates/milestones-3.2.1.RC4">
+          <annotation
+              source="http://www.eclipse.org/Papyrus/2014/releng/dependencytools">
+            <detail
+                key="updateFrom">
+              <value>GMF Tooling</value>
+            </detail>
+          </annotation>
+        </repository>
         <repository
-            url="${base.downloads.url}/modeling/emft/mwe/updates/releases/R201405200714/mwe"/>
+            url="http://download.eclipse.org/modeling/emft/mwe/updates/releases/R201409021027/mwe">
+          <annotation
+              source="http://www.eclipse.org/Papyrus/2014/releng/dependencytools">
+            <detail
+                key="updateFrom">
+              <value>EMFT MWE</value>
+            </detail>
+          </annotation>
+        </repository>
         <repository
-            url="${base.downloads.url}/mmt/qvto/updates/releases/3.4.0"/>
+            url="http://download.eclipse.org/mmt/qvto/updates/milestones/3.4.0/S201406101621">
+          <annotation
+              source="http://www.eclipse.org/Papyrus/2014/releng/dependencytools">
+            <detail
+                key="updateFrom">
+              <value>QVT Operational</value>
+            </detail>
+          </annotation>
+        </repository>
         <repository
-            url="${base.downloads.url}/acceleo/updates/releases/3.5"/>
+            url="http://download.eclipse.org/acceleo/updates/milestones/3.5/S201409021433">
+          <annotation
+              source="http://www.eclipse.org/Papyrus/2014/releng/dependencytools">
+            <detail
+                key="updateFrom">
+              <value>M2T ACCELEO</value>
+            </detail>
+          </annotation>
+        </repository>
         <repository
-            url="${base.downloads.url}/modeling/mdt/ocl/updates/maintenance/5.0.3/M201411191814"/>
+            url="http://download.eclipse.org/modeling/mdt/ocl/updates/milestones/5.0.2/S201409011459">
+          <annotation
+              source="http://www.eclipse.org/Papyrus/2014/releng/dependencytools">
+            <detail
+                key="updateFrom">
+              <value>MDT OCL 5.0</value>
+            </detail>
+          </annotation>
+        </repository>
         <repository
-            url="${base.downloads.url}/modeling/mdt/uml2/updates/5.0"/>
+            url="http://download.eclipse.org/modeling/mdt/uml2/updates/5.0">
+          <annotation
+              source="http://www.eclipse.org/Papyrus/2014/releng/dependencytools">
+            <detail
+                key="updateFrom">
+              <value>MDT UML2</value>
+            </detail>
+          </annotation>
+        </repository>
         <repository
-            url="${base.downloads.url}/modeling/m2t/xpand/updates/releases/R201406030414/"/>
+            url="http://download.eclipse.org/modeling/m2t/xpand/updates/releases/R201406030414/">
+          <annotation
+              source="http://www.eclipse.org/Papyrus/2014/releng/dependencytools">
+            <detail
+                key="updateFrom">
+              <value>M2T XPAND</value>
+            </detail>
+          </annotation>
+        </repository>
         <repository
-            url="${base.downloads.url}/modeling/tmf/xtext/updates/releases/maintenance/R201409160908/"/>
+            url="http://download.eclipse.org/modeling/tmf/xtext/updates/releases/maintenance/R201409160908/">
+          <annotation
+              source="http://www.eclipse.org/Papyrus/2014/releng/dependencytools">
+            <detail
+                key="updateFrom">
+              <value>Xtext, Xtend</value>
+            </detail>
+          </annotation>
+        </repository>
         <repository
-            url="${base.downloads.url}/modeling/emf/compare/updates/releases/3.0"/>
+            url="http://download.eclipse.org/modeling/emf/compare/updates/milestones/3.0/S201408191310">
+          <annotation
+              source="http://www.eclipse.org/Papyrus/2014/releng/dependencytools">
+            <detail
+                key="updateFrom">
+              <value>EMF COMPARE</value>
+            </detail>
+          </annotation>
+        </repository>
         <repository
-            url="${base.downloads.url}/webtools/downloads/drops/R3.6.0/R-3.6.0-20140602160322/repository"/>
+            url="http://download.eclipse.org/webtools/downloads/drops/R3.6.1/R-3.6.1-20140912000031/repository/">
+          <annotation
+              source="http://www.eclipse.org/Papyrus/2014/releng/dependencytools">
+            <detail
+                key="updateFrom">
+              <value>WebTools</value>
+            </detail>
+          </annotation>
+        </repository>
         <repository
             url="${base.downloads.url}/nattable/releases/1.1.0/repository/"/>
       </repositoryList>
@@ -793,14 +929,12 @@
         <sourceLocator
             rootFolder="${papyrus.git.clone.location/plugins/views}"/>
         <sourceLocator
-            rootFolder="${papyrus.git.clone.location/plugins/xwt}"/>
-        <sourceLocator
             rootFolder="${papyrus.git.clone.location/tests/junit/plugins/views}"/>
         <sourceLocator
             rootFolder="${papyrus.git.clone.location/features}">
           <predicate
               xsi:type="predicates:NamePredicate"
-              pattern="org\.eclipse\.papyrus\.(tests\.)?(views|xwt)($|\..+)"/>
+              pattern="org\.eclipse\.papyrus\.(tests\.)?views($|\..+)"/>
         </sourceLocator>
       </setupTask>
       <setupTask
@@ -818,7 +952,7 @@
                 nature="org.eclipse.pde.PluginNature"/>
             <operand
                 xsi:type="predicates:NamePredicate"
-                pattern="org\.eclipse\.papyrus\.(views|xwt)($|\..+)"/>
+                pattern="org\.eclipse\.papyrus\.views($|\..+)"/>
             <operand
                 xsi:type="workingsets:ExclusionPredicate"
                 excludedWorkingSet="//@projects[name='main']/@projects[name='views']/@setupTasks.1/@workingSets.1"/>
@@ -853,7 +987,7 @@
                 nature="org.eclipse.pde.FeatureNature"/>
             <operand
                 xsi:type="predicates:NamePredicate"
-                pattern="org\.eclipse\.papyrus\.(tests\.)?(views|xwt)($|\..+)"/>
+                pattern="org\.eclipse\.papyrus\.(tests\.)?views($|\..+)"/>
           </predicate>
         </workingSet>
       </setupTask>
@@ -872,6 +1006,52 @@
             xsi:type="setup:VariableTask"
             name="papyrus.bugzilla.version"
             value="1.0.0&amp;version=1.0.1&amp;version=1.0.2"/>
+        <setupTask
+            xsi:type="projects:ProjectsImportTask">
+          <sourceLocator
+              rootFolder="${papyrus.git.clone.location/plugins/xwt}"/>
+          <sourceLocator
+              rootFolder="${papyrus.git.clone.location/features}">
+            <predicate
+                xsi:type="predicates:NamePredicate"
+                pattern="org\.eclipse\.papyrus\.(tests\.)?xwt($|\..+)"/>
+          </sourceLocator>
+        </setupTask>
+        <setupTask
+            xsi:type="setup.workingsets:WorkingSetTask">
+          <workingSet
+              name="Papyrus XWT"
+              id="papyrus-xwt">
+            <predicate
+                xsi:type="predicates:AndPredicate">
+              <operand
+                  xsi:type="predicates:RepositoryPredicate"
+                  project="org.eclipse.papyrus.views.properties"/>
+              <operand
+                  xsi:type="predicates:NaturePredicate"
+                  nature="org.eclipse.pde.PluginNature"/>
+              <operand
+                  xsi:type="predicates:NamePredicate"
+                  pattern="org\.eclipse\.papyrus\.xwt($|\..+)"/>
+            </predicate>
+          </workingSet>
+          <workingSet
+              name="Papyrus XWT Features"
+              id="papyrus-xwt-features">
+            <predicate
+                xsi:type="predicates:AndPredicate">
+              <operand
+                  xsi:type="predicates:RepositoryPredicate"
+                  project="org.eclipse.papyrus.views.properties.feature"/>
+              <operand
+                  xsi:type="predicates:NaturePredicate"
+                  nature="org.eclipse.pde.FeatureNature"/>
+              <operand
+                  xsi:type="predicates:NamePredicate"
+                  pattern="org\.eclipse\.papyrus\.(tests\.)?xwt($|\..+)"/>
+            </predicate>
+          </workingSet>
+        </setupTask>
       </stream>
     </project>
     <project
@@ -1852,8 +2032,6 @@
       <sourceLocator
           rootFolder="${papyrus.git.clone.location/extraplugins}/${papyrus.extraplugins.folder}"/>
       <sourceLocator
-          rootFolder="${papyrus.git.clone.location/tests/junit/extraplugins}/${papyrus.extratests.folder}"/>
-      <sourceLocator
           rootFolder="${papyrus.git.clone.location/features/papyrus-extra-features}">
         <predicate
             xsi:type="predicates:NamePredicate"
@@ -1933,6 +2111,11 @@
           xsi:type="setup:VariableTask"
           name="papyrus.extraplugins.folder"
           value="cdo"/>
+      <setupTask
+          xsi:type="projects:ProjectsImportTask">
+        <sourceLocator
+            rootFolder="${papyrus.git.clone.location/tests/junit/extraplugins}/${papyrus.extratests.folder}"/>
+      </setupTask>
       <stream
           name="master"
           label="master (Mars/1.1)">
@@ -2010,6 +2193,11 @@
           xsi:type="setup:VariableTask"
           name="papyrus.extratestsfeature"
           value="tests.extra.codegen.cpp"/>
+      <setupTask
+          xsi:type="projects:ProjectsImportTask">
+        <sourceLocator
+            rootFolder="${papyrus.git.clone.location/tests/junit/extraplugins}/${papyrus.extratests.folder}"/>
+      </setupTask>
       <stream
           name="master"
           label="master (Mars/1.1)">
@@ -2059,6 +2247,20 @@
           xsi:type="setup:VariableTask"
           name="papyrus.extraplugins.folder"
           value="dsml.validation"/>
+      <setupTask
+          xsi:type="projects:ProjectsImportTask">
+        <sourceLocator
+            rootFolder="${papyrus.git.clone.location/extraplugins}/codegen">
+          <predicate
+              xsi:type="predicates:NamePredicate"
+              pattern="org\.eclipse\.papyrus\.codegen\.base"/>
+        </sourceLocator>
+      </setupTask>
+      <setupTask
+          xsi:type="setup.p2:P2Task">
+        <requirement
+            name="org.eclipse.xtend.sdk.feature.group"/>
+      </setupTask>
       <stream
           name="master"
           label="master (Mars/1.1)">
@@ -2209,12 +2411,47 @@
       <description></description>
     </project>
     <project
+        name="migration"
+        label="Model Migration">
+      <setupTask
+          xsi:type="setup:VariableTask"
+          name="papyrus.extraplugins.folder"
+          value="migration"/>
+      <setupTask
+          xsi:type="projects:ProjectsImportTask">
+        <sourceLocator
+            rootFolder="${papyrus.git.clone.location/tests/junit/extraplugins}/${papyrus.extratests.folder}"/>
+      </setupTask>
+      <stream
+          name="master"
+          label="master (Mars/1.1)">
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="papyrus.bugzilla.version"
+            value="1.0.0&amp;version=1.0.1&amp;version=1.0.2&amp;version=1.1.0"/>
+      </stream>
+      <stream
+          name="streams/1.0-maintenance"
+          label="streams/1.0-maintenance (Luna/1.0.x)">
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="papyrus.bugzilla.version"
+            value="1.0.0&amp;version=1.0.1&amp;version=1.0.2"/>
+      </stream>
+      <description></description>
+    </project>
+    <project
         name="moka"
         label="Moka">
       <setupTask
           xsi:type="setup:VariableTask"
           name="papyrus.extraplugins.folder"
           value="moka"/>
+      <setupTask
+          xsi:type="projects:ProjectsImportTask">
+        <sourceLocator
+            rootFolder="${papyrus.git.clone.location/tests/junit/extraplugins}/${papyrus.extratests.folder}"/>
+      </setupTask>
       <stream
           name="master"
           label="master (Mars/1.1)">
@@ -2298,6 +2535,11 @@
           xsi:type="setup:VariableTask"
           name="papyrus.extrafeature"
           value="extra.uml.compare"/>
+      <setupTask
+          xsi:type="projects:ProjectsImportTask">
+        <sourceLocator
+            rootFolder="${papyrus.git.clone.location/tests/junit/extraplugins}/${papyrus.extratests.folder}"/>
+      </setupTask>
       <stream
           name="master"
           label="master (Mars/1.1)">
@@ -2352,6 +2594,11 @@
           xsi:type="setup:VariableTask"
           name="papyrus.extraplugins.folder"
           value="umlrt"/>
+      <setupTask
+          xsi:type="projects:ProjectsImportTask">
+        <sourceLocator
+            rootFolder="${papyrus.git.clone.location/tests/junit/extraplugins}/${papyrus.extratests.folder}"/>
+      </setupTask>
       <stream
           name="master"
           label="master (Mars/1.1)">

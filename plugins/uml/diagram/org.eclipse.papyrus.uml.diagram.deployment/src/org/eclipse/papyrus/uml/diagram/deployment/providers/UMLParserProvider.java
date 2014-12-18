@@ -26,6 +26,9 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.uml.diagram.common.parser.CommentParser;
 import org.eclipse.papyrus.uml.diagram.common.parser.ConstraintParser;
 import org.eclipse.papyrus.uml.diagram.common.parser.stereotype.AppliedStereotypeParser;
+import org.eclipse.papyrus.uml.diagram.deployment.edit.parts.ArtifactFloatingLabelEditPart;
+import org.eclipse.papyrus.uml.diagram.deployment.edit.parts.ArtifactFloatingLabelEditPartACN;
+import org.eclipse.papyrus.uml.diagram.deployment.edit.parts.ArtifactFloatingLabelEditPartCN;
 import org.eclipse.papyrus.uml.diagram.deployment.edit.parts.ArtifactNameEditPart;
 import org.eclipse.papyrus.uml.diagram.deployment.edit.parts.ArtifactNameEditPartACN;
 import org.eclipse.papyrus.uml.diagram.deployment.edit.parts.ArtifactNameEditPartCN;
@@ -228,6 +231,25 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			artifactName_8Parser = parser;
 		}
 		return artifactName_8Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser artifactName_61Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getArtifactName_61Parser() {
+		if (artifactName_61Parser == null) {
+			EAttribute[] features = new EAttribute[] {
+					UMLPackage.eINSTANCE.getNamedElement_Name()
+			};
+			MessageFormatParser parser = new MessageFormatParser(features);
+			artifactName_61Parser = parser;
+		}
+		return artifactName_61Parser;
 	}
 
 	/**
@@ -442,6 +464,25 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
+	private IParser artifactName_59Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getArtifactName_59Parser() {
+		if (artifactName_59Parser == null) {
+			EAttribute[] features = new EAttribute[] {
+					UMLPackage.eINSTANCE.getNamedElement_Name()
+			};
+			MessageFormatParser parser = new MessageFormatParser(features);
+			artifactName_59Parser = parser;
+		}
+		return artifactName_59Parser;
+	}
+
+	/**
+	 * @generated
+	 */
 	private IParser artifactName_29Parser;
 
 	/**
@@ -456,6 +497,25 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			artifactName_29Parser = parser;
 		}
 		return artifactName_29Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser artifactName_60Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getArtifactName_60Parser() {
+		if (artifactName_60Parser == null) {
+			EAttribute[] features = new EAttribute[] {
+					UMLPackage.eINSTANCE.getNamedElement_Name()
+			};
+			MessageFormatParser parser = new MessageFormatParser(features);
+			artifactName_60Parser = parser;
+		}
+		return artifactName_60Parser;
 	}
 
 	/**
@@ -673,6 +733,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 
 		case ArtifactNameEditPart.VISUAL_ID:
 			return getArtifactName_8Parser();
+		case ArtifactFloatingLabelEditPart.VISUAL_ID:
+			return getArtifactName_61Parser();
 
 		case NodeNameEditPart.VISUAL_ID:
 			return getNodeName_9Parser();
@@ -706,9 +768,13 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 
 		case ArtifactNameEditPartCN.VISUAL_ID:
 			return getArtifactName_27Parser();
+		case ArtifactFloatingLabelEditPartCN.VISUAL_ID:
+			return getArtifactName_59Parser();
 
 		case ArtifactNameEditPartACN.VISUAL_ID:
 			return getArtifactName_29Parser();
+		case ArtifactFloatingLabelEditPartACN.VISUAL_ID:
+			return getArtifactName_60Parser();
 
 		case NestedArtifactNameEditPart.VISUAL_ID:
 			return getArtifactName_41Parser();

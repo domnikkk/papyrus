@@ -10,7 +10,7 @@
  * Contributors:
  *   Yann Tanguy (CEA LIST) yann.tanguy@cea.fr - Initial API and implementation
  *   Gabriel Pascual (ALL4TEC) gabriel.pascual@all4tec.net - Bug 411570
- *
+ *   Gabriel Pascual (ALL4TEC) gabriel.pascual@all4tec.net - Bug 454891
  *****************************************************************************/
 package org.eclipse.papyrus.infra.gmfdiag.menu.handlers;
 
@@ -22,6 +22,7 @@ import org.eclipse.core.commands.IHandler;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.commands.CompoundCommand;
 import org.eclipse.gef.commands.UnexecutableCommand;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.papyrus.infra.gmfdiag.menu.utils.DeleteActionUtil;
 
@@ -60,6 +61,27 @@ public class DeleteFromDiagramCommandHandler extends AbstractGraphicalCommandHan
 			command.add(DeleteActionUtil.getDeleteFromDiagramCommand(editPart));
 		}
 		return command;
+	}
+
+	/**
+	 * @see org.eclipse.papyrus.infra.gmfdiag.menu.handlers.AbstractGraphicalCommandHandler#computeEnabled()
+	 *
+	 * @return
+	 */
+	@Override
+	protected boolean computeEnabled() {
+		boolean enable = true;
+		List<IGraphicalEditPart> selectedElement = getSelectedElements();
+
+		Iterator<IGraphicalEditPart> iteratorSelection = selectedElement.iterator();
+		while (iteratorSelection.hasNext() && enable) {
+			IGraphicalEditPart editPart = iteratorSelection.next();
+
+			// Check if the selected edit part is not a Diagram and it is not a canonical edit Part
+			enable = enable && !(editPart instanceof DiagramEditPart) && DeleteActionUtil.isSupportView(editPart) && !(DeleteActionUtil.isCanonicalView(editPart) && DeleteActionUtil.isCanonicalEditPart(editPart));
+
+		}
+		return enable;
 	}
 
 }

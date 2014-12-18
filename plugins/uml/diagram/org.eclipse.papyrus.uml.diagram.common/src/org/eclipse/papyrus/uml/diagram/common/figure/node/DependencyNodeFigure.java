@@ -18,6 +18,7 @@ import org.eclipse.draw2d.geometry.Rectangle;
 /**
  * this figure is fill circle
  */
+// TODO: use rounded compartment figure instead with CSS square.
 public class DependencyNodeFigure extends PapyrusNodeFigure {
 
 	/**

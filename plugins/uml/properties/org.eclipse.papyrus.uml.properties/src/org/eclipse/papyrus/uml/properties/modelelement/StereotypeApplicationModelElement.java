@@ -45,8 +45,6 @@ public class StereotypeApplicationModelElement extends EMFModelElement {
 
 	protected Element umlSource;
 
-	protected EditingDomain domain;
-
 	protected EditPart sourceElement;
 
 	/**
@@ -80,6 +78,9 @@ public class StereotypeApplicationModelElement extends EMFModelElement {
 	public StereotypeApplicationModelElement(Element umlSource, EditingDomain domain) {
 		super(umlSource, domain);
 		this.umlSource = umlSource;
+	}
+
+	protected void setEditingDomain(EditingDomain domain) {
 		this.domain = domain;
 	}
 

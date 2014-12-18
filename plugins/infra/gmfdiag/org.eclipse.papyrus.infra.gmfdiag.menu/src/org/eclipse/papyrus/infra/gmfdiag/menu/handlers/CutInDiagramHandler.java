@@ -9,6 +9,7 @@
  *
  * Contributors:
  *  Benoit Maggi (CEA LIST) benoit.maggi@cea.fr - Initial API and implementation
+ *  Gabriel Pascual (ALL4TEC) gabriel.pascual@all4tec.net - bug 455305
  *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.gmfdiag.menu.handlers;
@@ -40,12 +41,27 @@ import org.eclipse.swt.widgets.Text;
  */
 public class CutInDiagramHandler extends AbstractGraphicalCommandHandler {
 
+	/** The Constant DELETE_COMMAND_LABEL. */
+	private static final String DELETE_COMMAND_LABEL = "Delete From Model"; //$NON-NLS-1$
+
+	/** The Constant CUT_COMMAND_LABEL. */
+	private static final String CUT_COMMAND_LABEL = "Cut In Diagram Command"; //$NON-NLS-1$
+
+	/** The Constant ACTIVE_SHELL. */
 	private static final String ACTIVE_SHELL = "activeShell"; //$NON-NLS-1$
+
+	/** The Constant ACTIVE_FOCUS_CONTROL. */
 	private static final String ACTIVE_FOCUS_CONTROL = "activeFocusControl"; //$NON-NLS-1$
+
+	/** The active focus control. */
+	private Object activeFocusControl;
+
+	/** The active shell. */
+	private Object activeShell;
 
 	@Override
 	protected Command getCommand() {
-		CompoundCommand cutInDiagramCommand = new CompoundCommand("Cut in Diagram Command"); //$NON-NLS-1$
+		CompoundCommand cutInDiagramCommand = new CompoundCommand(CUT_COMMAND_LABEL);
 		Command buildCopy = CopyInDiagramHandler.buildCopyCommand(getEditingDomain(), getSelectedElements());
 		cutInDiagramCommand.add(buildCopy);
 		Command buildDelete = buildDeleteCommand();
@@ -75,7 +91,7 @@ public class CutInDiagramHandler extends AbstractGraphicalCommandHandler {
 		// Iterate over selection and retrieve the deletion command from each
 		// edit part
 		// Add each returned command to the composite command
-		CompositeTransactionalCommand command = new CompositeTransactionalCommand(editingDomain, "Delete From Model"); //$NON-NLS-1$
+		CompositeTransactionalCommand command = new CompositeTransactionalCommand(editingDomain, DELETE_COMMAND_LABEL);
 
 		Iterator<IGraphicalEditPart> it = editParts.iterator();
 		while (it.hasNext()) {
@@ -99,7 +115,7 @@ public class CutInDiagramHandler extends AbstractGraphicalCommandHandler {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see org.eclipse.papyrus.infra.gmfdiag.menu.handlers.
 	 * AbstractGraphicalCommandHandler#setEnabled(java.lang.Object)
 	 */
@@ -107,26 +123,37 @@ public class CutInDiagramHandler extends AbstractGraphicalCommandHandler {
 	public void setEnabled(Object evaluationContext) {
 		if (evaluationContext instanceof IEvaluationContext) {
 			IEvaluationContext iEvaluationContext = (IEvaluationContext) evaluationContext;
-			Object activeFocusControl = iEvaluationContext.getVariable(ACTIVE_FOCUS_CONTROL);
-			Object activeShell = iEvaluationContext.getVariable(ACTIVE_SHELL);
-			Control focusControl = null;
-			if (activeShell instanceof Shell) {
-				Shell shell = (Shell) activeShell;
-				Display display = shell.getDisplay();
-				if (display != null) {
-					focusControl = display.getFocusControl();
-				}
-			}
-			if (activeFocusControl instanceof StyledText || focusControl instanceof Text) { // true if the focus is
-																							// on an internal xtext
-																							// editor or a text edit
-				setBaseEnabled(false);
-			} else {
-				PapyrusClipboard<Object> instance = PapyrusClipboard.getInstance();
-				super.setEnabled(evaluationContext);
-				PapyrusClipboard.setInstance(instance);
+			activeFocusControl = iEvaluationContext.getVariable(ACTIVE_FOCUS_CONTROL);
+			activeShell = iEvaluationContext.getVariable(ACTIVE_SHELL);
+
+		}
+
+		super.setEnabled(evaluationContext);
+	}
+
+	/**
+	 * @see org.eclipse.papyrus.infra.gmfdiag.menu.handlers.AbstractGraphicalCommandHandler#computeEnabled()
+	 *
+	 * @return
+	 */
+	@Override
+	protected boolean computeEnabled() {
+		boolean isEnabled = false;
+		Control focusControl = null;
+		if (activeShell instanceof Shell) {
+			Shell shell = (Shell) activeShell;
+			Display display = shell.getDisplay();
+			if (display != null) {
+				focusControl = display.getFocusControl();
 			}
 		}
+		if (!(activeFocusControl instanceof StyledText) && !(focusControl instanceof Text)) { // false if the focus is on an internal xtext editor or a text edit
+			PapyrusClipboard<Object> instance = PapyrusClipboard.getInstance();
+			PapyrusClipboard.setInstance(instance);
+			isEnabled = true;
+		}
+
+		return isEnabled;
 	}
 
 }

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Copyright (c) 2014 Christian W. Damus and others.
+
+ All rights reserved. This program and the accompanying materials
+ are made available under the terms of the Eclipse Public License v1.0
+ which accompanies this distribution, and is available at
+ http://www.eclipse.org/legal/epl-v10.html
+
+ Contributors:
+   Christian W. Damus - Initial API and implementation
+   
+ -->
+<?eclipse version="3.4"?>
+<fragment>
+   <extension
+         point="org.eclipse.emf.ecore.uri_mapping">
+      <mapping
+            source="pathmap://modelrepairtests/dynamicprofiles/"
+            target="platform:/plugin/org.eclipse.papyrus.uml.modelrepair.tests/resources/profile/dynamic/">
+      </mapping>
+   </extension>
+   <extension
+         point="org.eclipse.uml2.uml.dynamic_package">
+      <profile
+            location="pathmap://modelrepairtests/dynamicprofiles/dynamic.profile.uml#_0"
+            uri="http://www.eclipse.org/papyrus/2014/test/profile/dynamic">
+      </profile>
+   </extension>
+   <extension
+         point="org.eclipse.emf.ecore.dynamic_package">
+      <resource
+            location="pathmap://modelrepairtests/dynamicprofiles/dynamic.profile.uml#_1"
+            uri="http://www.eclipse.org/papyrus/2014/test/profile/dynamic">
+      </resource>
+   </extension>
+   <extension
+         point="org.eclipse.papyrus.uml.extensionpoints.UMLProfile">
+      <profile
+            name="Model Repair Tests Dynamic Profile"
+            path="pathmap://modelrepairtests/dynamicprofiles/dynamic.profile.uml">
+      </profile>
+   </extension>
+</fragment>

@@ -8,6 +8,7 @@
  *
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
+ *  Gabriel Pascual (ALL4TEC) gabriel.pascual@all4tec.net - Bug 454891
  *****************************************************************************/
 package org.eclipse.papyrus.infra.gmfdiag.properties.modelelement;
 
@@ -199,10 +200,14 @@ public class GMFModelElement extends EMFModelElement {
 	 */
 	private EObject getRoot(EObject obj) {
 		EObject current = obj;
-		EObject parent = obj.eContainer();
-		while (parent != null) {
-			current = parent;
-			parent = parent.eContainer();
+
+		// Check if parameter is not null
+		if (obj != null) {
+			EObject parent = obj.eContainer();
+			while (parent != null) {
+				current = parent;
+				parent = parent.eContainer();
+			}
 		}
 		return current;
 	}

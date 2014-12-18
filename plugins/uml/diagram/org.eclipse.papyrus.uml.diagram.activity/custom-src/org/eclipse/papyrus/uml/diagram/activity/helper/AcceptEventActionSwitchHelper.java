@@ -18,9 +18,6 @@ import java.util.List;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.gmf.runtime.diagram.core.util.ViewUtil;
-import org.eclipse.gmf.runtime.notation.NotationPackage;
-import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.AcceptEventActionEditPart;
 import org.eclipse.papyrus.uml.diagram.activity.figures.AcceptEventActionFigure;
 import org.eclipse.papyrus.uml.diagram.common.helper.NotificationHelper;
@@ -130,24 +127,24 @@ public class AcceptEventActionSwitchHelper extends NotificationHelper {
 		if (useHourglassFigure != hourglassAlreadyUsed) {
 
 			// set usage of the correct figure
-			actionFigure.useTemplateForAcceptTimeEventAction(useHourglassFigure);
+			// actionFigure.useTemplateForAcceptTimeEventAction(useHourglassFigure);
 
 			// arrange the figure so that style remains coherent
-			if (editPart.getModel() instanceof View) {
-				int locX = actionFigure.getLocation().x;
-				int width = actionFigure.getSize().width;
-				int newWidth = width;
-				if (useHourglassFigure) {
-					// switching to hourglass, reduce width
-					newWidth = width / REDUCE_WIDTH_FACTOR_FOR_HOURGLASS;
-				} else {
-					// switching to pentagon, augment width
-					newWidth = width * REDUCE_WIDTH_FACTOR_FOR_HOURGLASS;
-				}
-				// adapt location to keep same center
-				ViewUtil.setStructuralFeatureValue((View) editPart.getModel(), NotationPackage.eINSTANCE.getLocation_X(), locX + (width - newWidth) / 2);
-				ViewUtil.setStructuralFeatureValue((View) editPart.getModel(), NotationPackage.eINSTANCE.getSize_Width(), newWidth);
-			}
+			// if (editPart.getModel() instanceof View) {
+			// int locX = actionFigure.getLocation().x;
+			// int width = actionFigure.getSize().width;
+			// int newWidth = width;
+			// if (useHourglassFigure) {
+			// // switching to hourglass, reduce width
+			// newWidth = width / REDUCE_WIDTH_FACTOR_FOR_HOURGLASS;
+			// } else {
+			// // switching to pentagon, augment width
+			// newWidth = width * REDUCE_WIDTH_FACTOR_FOR_HOURGLASS;
+			// }
+			// // adapt location to keep same center
+			// ViewUtil.setStructuralFeatureValue((View) editPart.getModel(), NotationPackage.eINSTANCE.getLocation_X(), locX + (width - newWidth) / 2);
+			// ViewUtil.setStructuralFeatureValue((View) editPart.getModel(), NotationPackage.eINSTANCE.getSize_Width(), newWidth);
+			// }
 		}
 	}
 

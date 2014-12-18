@@ -31,7 +31,9 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.swt,
  org.eclipse.ui.workbench,
  org.eclipse.ui.navigator;bundle-version="3.5.500",
- com.google.guava;bundle-version="11.0.0"
+ com.google.guava;bundle-version="11.0.0",
+ org.eclipse.papyrus.uml.tools;bundle-version="1.1.0",
+ org.eclipse.papyrus.uml.modelrepair;bundle-version="1.1.0"
 Export-Package: org.eclipse.papyrus.migration.rsa,
  org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters,
  org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.impl,

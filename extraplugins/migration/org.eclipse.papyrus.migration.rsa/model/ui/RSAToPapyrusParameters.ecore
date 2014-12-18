@@ -55,6 +55,8 @@
         <details key="documentation" value="When models/libraries have been migrated separately, maps the libraries imported from RSA to their Papyrus equivalent"/>
       </eAnnotations>
     </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="profileUriMappings" ordered="false"
+        upperBound="-1" eType="#//URIMapping" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="URIMapping">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="sourceURI" ordered="false"

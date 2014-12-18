@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2014 CEA LIST and others.
+ * Copyright (c) 2014 CEA LIST, Christian W. Damus, and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -9,6 +9,7 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - Add support for updating Oomph setup models
+ *  Christian W. Damus - Add support for updating multiple development streams in a setup model
  *  
  *****************************************************************************/
 package org.eclipse.papyrus.releng.tools.internal.popup.actions;
@@ -42,8 +43,12 @@ public class OomphSetupUpdater extends DependencyUpdater {
 
 	private final Pattern indexPattern = Pattern.compile(":\\d+$"); //$NON-NLS-1$
 
-	public OomphSetupUpdater(final IFile mapFile, final EList<Contribution> contributions) {
+	private final String streamName;
+
+	public OomphSetupUpdater(final IFile mapFile, final EList<Contribution> contributions, final String streamName) {
 		super(mapFile, contributions);
+
+		this.streamName = streamName;
 	}
 
 	@Override
@@ -109,7 +114,7 @@ public class OomphSetupUpdater extends DependencyUpdater {
 
 	@Override
 	protected String getXpath() {
-		return "//setupTask[@type='setup.targlets:TargletTask']/targlet/repositoryList/repository";
+		return String.format("//setupTask[@type='setup.targlets:TargletTask']/targlet/repositoryList[@name='%s']/repository", streamName);
 	}
 
 	@Override

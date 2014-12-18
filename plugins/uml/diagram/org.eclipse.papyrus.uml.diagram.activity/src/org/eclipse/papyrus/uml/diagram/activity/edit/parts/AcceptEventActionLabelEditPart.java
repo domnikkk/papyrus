@@ -65,7 +65,6 @@ import org.eclipse.papyrus.uml.diagram.activity.providers.UMLElementTypes;
 import org.eclipse.papyrus.uml.diagram.activity.providers.UMLParserProvider;
 import org.eclipse.papyrus.uml.diagram.common.directedit.MultilineLabelDirectEditManager;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.IDirectEdition;
-import org.eclipse.papyrus.uml.diagram.common.figure.node.CenteredWrappedLabel;
 import org.eclipse.papyrus.uml.diagram.common.figure.node.ILabelFigure;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.accessibility.AccessibleEvent;
@@ -184,10 +183,10 @@ public class AcceptEventActionLabelEditPart extends PapyrusCompartmentEditPart i
 	/**
 	 * @generated
 	 */
-	public void setLabel(CenteredWrappedLabel figure) {
+	public void setLabel(WrappingLabel wrappingLabel) {
 		unregisterVisuals();
-		setFigure(figure);
-		defaultText = getLabelTextHelper(figure);
+		setFigure(wrappingLabel);
+		defaultText = getLabelTextHelper(wrappingLabel);
 		registerVisuals();
 		refreshVisuals();
 	}

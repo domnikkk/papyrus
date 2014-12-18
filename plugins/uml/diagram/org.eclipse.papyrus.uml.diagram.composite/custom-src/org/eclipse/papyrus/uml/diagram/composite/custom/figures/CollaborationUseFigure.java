@@ -13,29 +13,27 @@
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.composite.custom.figures;
 
-import org.eclipse.draw2d.Graphics;
-import org.eclipse.draw2d.ToolbarLayout;
-import org.eclipse.papyrus.uml.diagram.common.figure.node.NodeNamedElementFigure;
+import org.eclipse.papyrus.uml.diagram.common.figure.node.RoundedCompartmentFigure;
 
 /**
  * Figure for CollaborationUse representation.
  */
-public class CollaborationUseFigure extends NodeNamedElementFigure {
+public class CollaborationUseFigure extends RoundedCompartmentFigure {
 
 	/**
 	 * Creates a new CollaborationUseFigure.
 	 */
 	public CollaborationUseFigure() {
 		super();
-
-		// Use custom dashed line border.
-		setCustomDash(DEFAULT_CUSTOM_DASH);
-		setLineStyle(Graphics.LINE_CUSTOM);
-
-		// Set layout (Vertical ToolbarLayout)
-		ToolbarLayout layout = new ToolbarLayout();
-		layout.setHorizontal(false);
-		setLayoutManager(layout);
+		//
+		// // Use custom dashed line border.
+		// setCustomDash(DEFAULT_CUSTOM_DASH);
+		// setLineStyle(Graphics.LINE_CUSTOM);
+		//
+		// // Set layout (Vertical ToolbarLayout)
+		// ToolbarLayout layout = new ToolbarLayout();
+		// layout.setHorizontal(false);
+		// setLayoutManager(layout);
 	}
 
 }

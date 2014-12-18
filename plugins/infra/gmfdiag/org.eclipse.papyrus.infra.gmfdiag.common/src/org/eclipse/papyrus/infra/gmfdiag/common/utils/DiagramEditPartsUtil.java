@@ -21,6 +21,7 @@ import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPartViewer;
 import org.eclipse.gef.RootEditPart;
 import org.eclipse.gef.editparts.AbstractConnectionEditPart;
+import org.eclipse.gef.editparts.ZoomManager;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramRootEditPart;
@@ -227,28 +228,48 @@ public class DiagramEditPartsUtil {
 		}
 		return -1.0;
 	}
-	
+
 	/**
 	 * This Method return the Graphical container of an EditPart.
 	 * Depending on the type of EditPart, the container can be the Direct Parent or the grand parent.
+	 * 
 	 * @param currentEP
 	 * @return
 	 */
 	public static final EditPart getContainerEditPart(GraphicalEditPart currentEP) {
-	
+
 		EditPart container;
 		EditPart parent = currentEP.getParent();
-		if (parent instanceof AbstractConnectionEditPart){
-			container =  parent.getParent();
-		}else if (parent instanceof AbstractBorderItemEditPart){
-			container =  parent.getParent().getParent();
-		}else if (currentEP instanceof AbstractBorderItemEditPart){
-			container =  parent.getParent();
-		}else {
+		if (parent instanceof AbstractConnectionEditPart) {
+			container = parent.getParent();
+		} else if (parent instanceof AbstractBorderItemEditPart) {
+			container = parent.getParent().getParent();
+		} else if (currentEP instanceof AbstractBorderItemEditPart) {
+			container = parent.getParent();
+		} else {
 			container = parent;
 		}
 
 		return container;
 	}
 
+	/*
+	 * @param anEditPart
+	 * an edit part
+	 * 
+	 * @return
+	 * the zoom level in the diagram or 1.0 when {@link ZoomManager} has not been found
+	 */
+
+	public static final double getDiagramZoomLevel(final EditPart anEditPart) {
+
+		final RootEditPart rootEP = anEditPart.getRoot();
+		if (rootEP instanceof DiagramRootEditPart) {
+			final ZoomManager zoomManager = ((DiagramRootEditPart) rootEP).getZoomManager();
+			if (zoomManager != null) {
+				return zoomManager.getZoom();
+			}
+		}
+		return 1.0;
+	}
 }

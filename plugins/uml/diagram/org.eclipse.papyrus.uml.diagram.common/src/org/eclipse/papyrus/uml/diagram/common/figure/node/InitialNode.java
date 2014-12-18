@@ -23,6 +23,7 @@ import org.eclipse.swt.graphics.Image;
 /**
  * this figure is fill circle
  */
+// Unused: to delete
 public class InitialNode extends PapyrusNodeFigure implements IPapyrusNodeUMLElementFigure {
 
 	/**

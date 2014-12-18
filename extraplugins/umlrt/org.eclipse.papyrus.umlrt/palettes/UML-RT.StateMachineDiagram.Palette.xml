@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<paletteDefinition>
+	<content>
+		<drawer iconpath="/icons/drawer.gif" id="Drawer__1416993599969"
+			name="UML-RT">
+			<aspectTool description="Create an element with a stereotype"
+				iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Class.gif"
+				id="createStateMachineCreationTool_1416993776146" name="RTStateMachine"
+				refToolId="createStateMachineCreationTool">
+				<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
+					<stereotypesToApply>
+						<stereotype stereotypeName="UMLRealTimeStateMach::RTStateMachine" />
+					</stereotypesToApply>
+				</postAction>
+			</aspectTool>
+			<aspectTool description="Create an element with a stereotype"
+				iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Region.gif"
+				id="createRegionCreationTool_1416993785626" name="RTRegion"
+				refToolId="createRegionCreationTool">
+				<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
+					<stereotypesToApply>
+						<stereotype stereotypeName="UMLRealTimeStateMach::RTRegion" />
+					</stereotypesToApply>
+				</postAction>
+			</aspectTool>
+			<aspectTool description="Create an element with a stereotype"
+				iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Package.gif"
+				id="createPseudostateCreationTool_1416993803624" name="RTPseudostate"
+				refToolId="createPseudostateCreationTool">
+				<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
+					<stereotypesToApply>
+						<stereotype stereotypeName="UMLRealTimeStateMach::RTPseudostate" />
+					</stereotypesToApply>
+				</postAction>
+			</aspectTool>
+			<aspectTool description="Create an element with a stereotype"
+				iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Collaboration.gif"
+				id="createTriggerCreationTool_1416993803625" name="RTTrigger"
+				refToolId="createTriggerCreationTool">
+				<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
+					<stereotypesToApply>
+						<stereotype stereotypeName="UMLRealTimeStateMach::RTTrigger" />
+					</stereotypesToApply>
+				</postAction>
+			</aspectTool>			
+			<aspectTool description="Create an element with a stereotype"
+				iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/State.gif"
+				id="createStateCreationTool_1416994043249" name="RTState (State)"
+				refToolId="createStateCreationTool">
+				<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
+					<stereotypesToApply>
+						<stereotype stereotypeName="UMLRealTime::RTState" />
+					</stereotypesToApply>
+				</postAction>
+			</aspectTool>
+			<aspectTool description="Create an element with a stereotype"
+				iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/State.gif"
+				id="createFinalStateCreationTool_1416994043249" name="RTState (Final State)"
+				refToolId="createFinalStateCreationTool">
+				<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
+					<stereotypesToApply>
+						<stereotype stereotypeName="UMLRealTime::RTState" />
+					</stereotypesToApply>
+				</postAction>
+			</aspectTool>
+		</drawer>
+	</content>
+</paletteDefinition>

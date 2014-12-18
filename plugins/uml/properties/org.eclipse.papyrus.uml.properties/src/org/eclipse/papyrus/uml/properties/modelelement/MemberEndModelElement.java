@@ -53,17 +53,17 @@ public class MemberEndModelElement extends AbstractModelElement {
 	/**
 	 * The "multiplicity" virtual property
 	 */
-	public static String MULTIPLICITY = "multiplicity"; //$NON-NLS-1$
+	public static final String MULTIPLICITY = "multiplicity"; //$NON-NLS-1$
 
 	/**
 	 * The "owner" virtual property
 	 */
-	public static String OWNER = "owner"; //$NON-NLS-1$
+	public static final String OWNER = "owner"; //$NON-NLS-1$
 
 	/**
 	 * The "navigable" virtual property
 	 */
-	public static String NAVIGABLE = "navigable"; //$NON-NLS-1$
+	public static final String NAVIGABLE = "navigable"; //$NON-NLS-1$
 
 	/**
 	 *
@@ -132,7 +132,7 @@ public class MemberEndModelElement extends AbstractModelElement {
 		if (property.getType() == null) {
 			return false;
 		}
-		 return property.getType().eClass() == UMLPackage.eINSTANCE.getAssociation();
+		return property.getType().eClass() == UMLPackage.eINSTANCE.getAssociation();
 	}
 
 	@Override

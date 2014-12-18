@@ -9,6 +9,7 @@
  *
  * Contributors:
  *  Patrick Tessier (CEA LIST) Patrick.tessier@cea.fr - Initial API and implementation
+ *	Mickaël ADAM (ALL4TEC) - mickael.adam@all4tec.net - moved class behavior to classEditPart
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.common.figure.node;
@@ -16,21 +17,12 @@ package org.eclipse.papyrus.uml.diagram.common.figure.node;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
-import org.eclipse.draw2d.geometry.Point;
-import org.eclipse.draw2d.geometry.Rectangle;
 
 /**
  * Represents a classifier.
  */
-public class ClassifierFigure extends CompartmentFigure {
-
-	protected static final int SPACE_FOR_ACTIVE_CLASS = 4;
-
-	/* to present the class as an active class */
-	/** The active. Default value is false */
-	private boolean active = false;
+public class ClassifierFigure extends RoundedCompartmentFigure {
 
 	/** The Attribute Compartment */
 	private final static String ATTRIBUTE_COMPARTMENT = "attributeCompartment";
@@ -70,33 +62,6 @@ public class ClassifierFigure extends CompartmentFigure {
 	}
 
 	/**
-	 * {@inheritDoc}
-	 */
-	@Override
-	public void paint(Graphics graphics) {
-		super.paint(graphics);
-		if (active) {
-			Rectangle rect = this.getBounds();
-			graphics.pushState();
-			graphics.setForegroundColor(getForegroundColor());
-			// do not forget to set line width to 1, if not the color will
-			// change because of the anti-aliasing
-			graphics.setLineWidth(1);
-
-			graphics.drawLine(new Point(rect.x + SPACE_FOR_ACTIVE_CLASS, rect.y), new Point(rect.x + SPACE_FOR_ACTIVE_CLASS, rect.y + rect.height - 1));
-			graphics.drawLine(new Point(rect.x - SPACE_FOR_ACTIVE_CLASS - 1 + rect.width, rect.y), new Point(rect.x - SPACE_FOR_ACTIVE_CLASS - 1 + rect.width, rect.y + rect.height - 1));
-			graphics.setBackgroundColor(getBackgroundColor());
-			graphics.setForegroundColor(getBackgroundColor());
-			graphics.setLineWidth(3);
-
-			graphics.drawLine(new Point(rect.x + 2, rect.y + 1), new Point(rect.x + 2, rect.y + rect.height - 2));
-			graphics.drawLine(new Point(rect.x - 3 + rect.width, rect.y + 1), new Point(rect.x - 3 + rect.width, rect.y + rect.height - 2));
-
-			graphics.popState();
-		}
-	}
-
-	/**
 	 * Get the attribute's compartment figure
 	 *
 	 * @return
@@ -121,25 +86,6 @@ public class ClassifierFigure extends CompartmentFigure {
 	 */
 	public IFigure getNestedClassifierFigure() {
 		return getCompartment(NESTEDCLASSIFIER_COMPARTMENT);
-	}
-
-	/**
-	 * Checks if is active.
-	 *
-	 * @return true, if is active
-	 */
-	// @unused
-	public boolean isActive() {
-		return active;
-	}
-
-	/**
-	 * Set the active
-	 *
-	 * @param active
-	 */
-	public void setActive(boolean active) {
-		this.active = active;
 	}
 
 }

@@ -85,6 +85,13 @@ More threads will provide faster results, at the cost of memory consumption.</bo
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_T5kB0FOJEeSGbsrkEkSKIA"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_T5kB0VOJEeSGbsrkEkSKIA" value="*"/>
       </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_pR2YYIQ5EeSC0ajaKNekyw" name="profileUriMappings" visibility="public" type="_MDmyMFOJEeSGbsrkEkSKIA" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_49zT4IQ5EeSC0ajaKNekyw" annotatedElement="_pR2YYIQ5EeSC0ajaKNekyw">
+          <body>When profiles have been migrated separately, maps the profiles imported from RSA to their Papyrus equivalent</body>
+        </ownedComment>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qweSgIQ5EeSC0ajaKNekyw"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qwfgoIQ5EeSC0ajaKNekyw" value="*"/>
+      </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_slkew3ZKEeSwiJkQAQl2Jg" memberEnd="_slkexHZKEeSwiJkQAQl2Jg _slkewHZKEeSwiJkQAQl2Jg">
       <ownedEnd xmi:type="uml:Property" xmi:id="_slkexHZKEeSwiJkQAQl2Jg" name="config" type="_tKu0kEL1EeSSlqpbHKLCqA" association="_slkew3ZKEeSwiJkQAQl2Jg">
