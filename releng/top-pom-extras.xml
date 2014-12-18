@@ -128,10 +128,14 @@
 		<module>../extraplugins/codegen/org.eclipse.papyrus.texteditor.modelexplorer</module>
 		<module>../extraplugins/uml/compare/org.eclipse.papyrus.uml.compare</module>
 		<module>../extraplugins/uml/org.eclipse.papyrus.uml.export</module>
+		
+		<!-- Papyrus Uml Rt  -->
 		<module>../extraplugins/umlrt/org.eclipse.papyrus.umlrt</module>
+		<module>../extraplugins/umlrt/org.eclipse.papyrus.umlrt.elementtypes</module>
 		<module>../extraplugins/umlrt/org.eclipse.papyrus.umlrt.properties</module>
 		<module>../extraplugins/umlrt/org.eclipse.papyrus.umlrt.validation</module>
-		<module>../extraplugins/umlrt/org.eclipse.papyrus.umlrt.wizard</module>
+		<module>../extraplugins/umlrt/org.eclipse.papyrus.umlrt.wizard</module>		
+		
 		<module>../extraplugins/migration/org.eclipse.papyrus.m2m.qvto</module>
 		<module>../extraplugins/migration/org.eclipse.papyrus.migration.rsa</module>
 		<module>../extraplugins/codegen/org.eclipse.papyrus.views.cpp</module>

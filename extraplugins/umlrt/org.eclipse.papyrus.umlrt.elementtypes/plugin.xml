@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.papyrus.infra.extendedtypes.extendedElementTypeSet">
+      <extendedTypesSet
+            id="org.eclipse.papyrus.umlrt.elementtypes.extendedTypesSet"
+            name="UML-RT Element Type Set"
+            path="model/umlrt.extendedtypes">
+      </extendedTypesSet>
+   </extension>
+   <extension
+         point="org.eclipse.papyrus.infra.newchild">
+      <menuCreationModel
+            model="model/umlrt.creationmenumodel">
+      </menuCreationModel>
+   </extension>
+
+</plugin>

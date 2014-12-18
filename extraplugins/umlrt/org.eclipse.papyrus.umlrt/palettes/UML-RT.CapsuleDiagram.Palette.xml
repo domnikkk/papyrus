@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<paletteDefinition>
+	<content>
+		<drawer iconpath="/icons/drawer.gif" id="Drawer__1417096439749"
+			name="UML-RT">
+			<aspectTool description="Create a Capsule"
+				iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Class.gif"
+				id="composite.tool.class_1417096476020" name="Capsule"
+				refToolId="composite.tool.class">
+				<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
+					<stereotypesToApply>
+						<stereotype stereotypeName="UMLRealTime::Capsule" />
+					</stereotypesToApply>
+				</postAction>
+			</aspectTool>
+			<aspectTool description="Create a CapsulePart"
+				iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Property.gif"
+				id="composite.tool.property_1417096489619" name="CapsulePart"
+				refToolId="composite.tool.property">
+				<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
+					<stereotypesToApply>
+						<stereotype stereotypeName="UMLRealTime::CapsulePart" />
+					</stereotypesToApply>
+				</postAction>
+			</aspectTool>				
+			<aspectTool description="Create an RTConnector"
+				iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Connector.gif"
+				id="composite.tool.connector_1417096565130" name="RTConnector"
+				refToolId="composite.tool.connector">
+				<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
+					<stereotypesToApply>
+						<stereotype stereotypeName="UMLRealTime::RTConnector" />
+					</stereotypesToApply>
+				</postAction>
+			</aspectTool>			
+			<aspectTool description="Create an RTPort"
+				iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Port.gif"
+				id="composite.tool.port_1417096575355" name="RTPort"
+				refToolId="composite.tool.port">
+				<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
+					<stereotypesToApply>
+						<stereotype stereotypeName="UMLRealTime::RTPort" />
+					</stereotypesToApply>
+				</postAction>
+			</aspectTool>
+		</drawer>
+	</content>
+</paletteDefinition>
