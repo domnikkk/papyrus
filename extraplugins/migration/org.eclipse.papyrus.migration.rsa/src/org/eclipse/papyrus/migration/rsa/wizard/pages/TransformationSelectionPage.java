@@ -14,38 +14,30 @@ package org.eclipse.papyrus.migration.rsa.wizard.pages;
 import java.util.Collection;
 import java.util.LinkedList;
 
+import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.jface.wizard.WizardPage;
-import org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.Config;
-import org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.RSAToPapyrusParametersFactory;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 
+public class TransformationSelectionPage extends WizardPage {
 
-public class TransformationConfigPage extends WizardPage {
+	SelectionTreeComposite treeComposite;
 
-	protected Config config;
+	Collection<Object> selectedFiles;
 
-	protected Collection<Object> transformationFiles;
+	String[] extensions = { "*", "*.emx", "*.epx", "*.epx;*.emx" }; //$NON-NLS-1$  //$NON-NLS-2$  //$NON-NLS-3$
+	String[] extensionsNames = { "All", "*.emx", "*.epx", "*.epx and *.emx" }; //$NON-NLS-1$  //$NON-NLS-2$  //$NON-NLS-3$
 
-	ConfigurationComposite configComposite;
-
-
-	/**
-	 *
-	 * Constructor.
-	 * 
-	 * @param selectedFiles
-	 */
-	public TransformationConfigPage() {
-		super("Parameters selection"); //$NON-NLS-1$
-		setTitle("Define the transformation parameters"); //$NON-NLS-1$
-		setDescription("Select the files and the configuration options for the transformation"); //$NON-NLS-1$
+	public TransformationSelectionPage() {
+		super("Workspace selection");
+		setTitle("Select a scope for the transformation");
+		setDescription("Select the folders or files for the transformation");
 		// String iconPath = "icons/import_wiz_75x66.png"; //$NON-NLS-1$
 		// ImageDescriptor imgDescriptior = Activator.getDefault().getImageDescriptor(iconPath);
 		// setImageDescriptor(imgDescriptior);
-		transformationFiles = new LinkedList<Object>();
-		config = RSAToPapyrusParametersFactory.eINSTANCE.createConfig();
+
+		selectedFiles = new LinkedList<Object>();
 	}
 
 	@Override
@@ -54,22 +46,17 @@ public class TransformationConfigPage extends WizardPage {
 		Composite pageComposite = new Composite(parent, SWT.NONE);
 		pageComposite.setLayout(new GridLayout());
 
-		configComposite = new ConfigurationComposite(pageComposite, SWT.NONE, config);
+		treeComposite = new SelectionTreeComposite(pageComposite, SWT.NONE, extensions, extensionsNames);
 
 		setControl(pageComposite);
 	}
 
-	public Collection<Object> getTransformationFiles() {
-		return configComposite.getTransformationFiles();
+	public TreeViewer getTreeViewer() {
+		return treeComposite.getTreeViewer();
 	}
 
-	public Config getConfig() {
-		return configComposite.getConfig();
+	public Collection<Object> getSelectedFiles() {
+		return treeComposite.getSelectedFiles();
 	}
-
-	public void setViewerInput(Collection<Object> selectedFiles) {
-		configComposite.setViewerInput(selectedFiles);
-	}
-
 
 }
