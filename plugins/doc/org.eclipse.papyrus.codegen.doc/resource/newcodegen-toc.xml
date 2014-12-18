@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<toc topic="resource/newcodegen.html" label="newcodegen">
+	<topic href="resource/newcodegen.html" label="Preparing the Development Environment (Prerequisites)"></topic>
+	<topic href="resource/newcodegen.html#Preparing_the_Required_Projects" label="Preparing the Required Projects">
+		<topic href="resource/newcodegen.html#The_Main_Code_Generation_Project_for_the_Hypothetical_X_Programming_Language" label="The Main Code Generation Project for the Hypothetical X Programming Language"></topic>
+		<topic href="resource/newcodegen.html#The_User_Interface_Project" label="The User Interface Project"></topic>
+		<topic href="resource/newcodegen.html#The_Test_Project" label="The Test Project"></topic>
+	</topic>
+	<topic href="resource/newcodegen.html#Developing_the_New_Code_Generator" label="Developing the New Code Generator">
+		<topic href="resource/newcodegen.html#Basic_Configuration" label="Basic Configuration"></topic>
+		<topic href="resource/newcodegen.html#Advanced_Options" label="Advanced Options">
+			<topic href="resource/newcodegen.html#Generating_the_Code_in_a_New_Project" label="Generating the Code in a New Project"></topic>
+			<topic href="resource/newcodegen.html#Dealing_with_Errors" label="Dealing with Errors"></topic>
+		</topic>
+	</topic>
+	<topic href="resource/newcodegen.html#Integrating_the_New_Code_Generator_to_Papyrus.2FQompass" label="Integrating the New Code Generator to Papyrus/Qompass"></topic>
+</toc>

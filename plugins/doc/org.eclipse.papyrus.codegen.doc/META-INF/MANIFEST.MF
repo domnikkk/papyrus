@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Doc
+Bundle-SymbolicName: org.eclipse.papyrus.codegen.doc;singleton:=true
+Bundle-Version: 1.0.1.qualifier
+Bundle-Activator: org.eclipse.papyrus.codegen.doc.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.help;bundle-version="3.6.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-ActivationPolicy: lazy
