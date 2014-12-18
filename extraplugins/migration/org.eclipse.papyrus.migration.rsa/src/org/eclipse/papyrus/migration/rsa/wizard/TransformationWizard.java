@@ -19,34 +19,63 @@ import java.util.Set;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.jface.wizard.IWizardPage;
 import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.Config;
 import org.eclipse.papyrus.migration.rsa.transformation.ImportTransformationLauncher;
 import org.eclipse.papyrus.migration.rsa.wizard.pages.TransformationConfigPage;
+import org.eclipse.papyrus.migration.rsa.wizard.pages.TransformationSelectionPage;
+import org.eclipse.ui.IImportWizard;
+import org.eclipse.ui.IWorkbench;
 
-public class TransformationConfigWizard extends Wizard {
+public class TransformationWizard extends Wizard implements IImportWizard {
 
-	Collection<Object> selectedFiles;
+	private TransformationSelectionPage selectionPage = new TransformationSelectionPage();
 
-	TransformationConfigPage transformationConfigPage;
+	private TransformationConfigPage configPage = new TransformationConfigPage();
 
-	public TransformationConfigWizard(Collection<Object> selectedFiles) {
-		setWindowTitle("RSA transformation wizard");
-		this.selectedFiles = selectedFiles;
+	IWizardPage currentPage;
+
+	public TransformationWizard() {
+		setWindowTitle("RSA transformation wizard"); //$NON-NLS-1$ 
+
 	}
 
 	@Override
 	public void addPages() {
-		transformationConfigPage = new TransformationConfigPage(selectedFiles);
-		addPage(transformationConfigPage);
+		this.addPage(selectionPage);
+		this.addPage(configPage);
+
+	}
+
+	@Override
+	public IWizardPage getNextPage(IWizardPage currentPage) {
+		if (currentPage == selectionPage) {
+			this.currentPage = configPage;
+			Collection<Object> selectedFiles = selectionPage.getSelectedFiles();
+			configPage.setViewerInput(selectedFiles);
+			return configPage;
+		}
+		if (this.currentPage == configPage) {
+			this.currentPage = selectionPage;
+		}
+		return null;
+	}
+
+	@Override
+	public boolean canFinish() {
+		if (currentPage == configPage) {
+			return super.canFinish();
+		}
+		return false;
 	}
 
 	@Override
 	public boolean performFinish() {
 		importFiles();
-		return true;
+		return false;
 	}
-
 
 	/**
 	 *
@@ -54,13 +83,13 @@ public class TransformationConfigWizard extends Wizard {
 	 *
 	 */
 	public void importFiles() {
-		Config config = transformationConfigPage.getConfig();
+		Config config = configPage.getConfig();
 		if (config == null) {
 			return;
 		}
 
 		Set<IFile> selectedFiles = new HashSet<IFile>();
-		for (Object file : transformationConfigPage.getTransformationFiles()) {
+		for (Object file : configPage.getTransformationFiles()) {
 			if (file instanceof IFile) {
 				selectedFiles.add((IFile) file);
 			}
@@ -78,5 +107,12 @@ public class TransformationConfigWizard extends Wizard {
 		ImportTransformationLauncher launcher = new ImportTransformationLauncher(config, this.getShell().getParent());
 		launcher.run(urisToImport);
 	}
+
+	@Override
+	public void init(IWorkbench workbench, IStructuredSelection selection) {
+		// TODO Auto-generated method stub
+
+	}
+
 
 }
