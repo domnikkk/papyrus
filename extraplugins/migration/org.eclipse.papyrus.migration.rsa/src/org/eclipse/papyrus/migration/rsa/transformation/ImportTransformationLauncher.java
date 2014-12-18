@@ -199,7 +199,7 @@ public class ImportTransformationLauncher {
 
 			if (!runningTransformations.isEmpty()) {
 				String waitFor = runningTransformations.get(0).getModelName();
-				monitor.subTask("Waiting for " + waitFor + " to complete...");
+				monitor.subTask("Waiting for Import " + waitFor + " to complete...");
 			}
 
 			// We can continue if at least one transformation is complete (Leaving a free Thread)
