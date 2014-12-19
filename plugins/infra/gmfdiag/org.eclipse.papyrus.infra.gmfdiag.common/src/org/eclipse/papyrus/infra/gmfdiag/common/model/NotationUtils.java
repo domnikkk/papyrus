@@ -259,9 +259,14 @@ public class NotationUtils {
 	}
 
 	/**
+	 * Gets the int value from a NamedStyle property.
+	 *
 	 * @param view
+	 *            the view
 	 * @param property
-	 * @param defaultValue
+	 *            the property
+	 * @param defaultInt
+	 *            the default int
 	 * @return Integer corresponding to the property
 	 */
 	public static int getIntValue(View view, String property, int defaultInt) {
@@ -270,23 +275,25 @@ public class NotationUtils {
 		NamedStyle style;
 
 		if (intValueStyle != null) {
-
 			style = view.getNamedStyle(intValueStyle, property);
-
 			if (style instanceof IntValueStyle) {
 				value = ((IntValueStyle) style).getIntValue();
 			}
 		}
-
 		return value;
 	}
 
 
 
 	/**
+	 * Gets the boolean value from a NamedStyle property.
+	 *
 	 * @param view
+	 *            the view
 	 * @param property
+	 *            the property
 	 * @param defaultValue
+	 *            the default value
 	 * @return Boolean corresponding to the property
 	 */
 	public static boolean getBooleanValue(View view, String property, boolean defaultValue) {
@@ -295,23 +302,26 @@ public class NotationUtils {
 		NamedStyle style;
 
 		if (booleanValueStyle != null) {
-
 			style = view.getNamedStyle(booleanValueStyle, property);
-
 			if (style instanceof BooleanValueStyle) {
 				value = ((BooleanValueStyle) style).isBooleanValue();
 			}
 		}
-
 		return value;
 	}
 
 
+
 	/**
+	 * Gets the string value from a NamedStyle property.
+	 *
 	 * @param view
+	 *            the view
 	 * @param property
+	 *            the property
 	 * @param defaultValue
-	 * @return String corresponding to the property
+	 *            the default value
+	 * @return the string value
 	 */
 	public static String getStringValue(View view, String property, String defaultValue) {
 		String value = defaultValue;
@@ -319,14 +329,11 @@ public class NotationUtils {
 		NamedStyle style;
 
 		if (stringValueStyle != null) {
-
 			style = view.getNamedStyle(stringValueStyle, property);
-
 			if (style instanceof StringValueStyle) {
 				value = ((StringValueStyle) style).getStringValue();
 			}
 		}
-
 		return value;
 	}
 
@@ -345,9 +352,7 @@ public class NotationUtils {
 		NamedStyle style;
 
 		if (intValueStyle != null) {
-
 			style = view.getNamedStyle(intValueStyle, property);
-
 			if (style instanceof StringListValueStyle) {
 				// Get the string list
 				EList<String> valueList = ((StringListValueStyle) style).getStringListValue();
@@ -360,7 +365,6 @@ public class NotationUtils {
 				}
 			}
 		}
-
 		return value;
 	}
 }
