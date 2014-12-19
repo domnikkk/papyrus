@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2010 CEA LIST.
+ * Copyright (c) 2010, 2014 CEA LIST, Christian W. Damus, and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,6 +8,8 @@
  *
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
+ *  Christian W. Damus - bug 455075
+ *  
  *****************************************************************************/
 package org.eclipse.papyrus.infra.widgets.providers;
 
@@ -100,6 +102,23 @@ public class EncapsulatedContentProvider implements IHierarchicContentProvider, 
 	public void dispose() {
 		// encapsulated.dispose();
 		// encapsulated = null;
+	}
+
+	/**
+	 * Updates me to encapsulate a new {@code delegate}. If it makes sense for a particular instance, this may
+	 * collapse any chain of providers that are exactly of {@link EncapsulatedContentProvider} type (not some
+	 * subclass that may have different behaviour). If it is necessary to delegate to another encapsulated
+	 * instance as is, then simply assign the protected {@link #encapsulated} field.
+	 * 
+	 * @param delegate
+	 *            my new delegate, or {@code null} to simply forget the previous delegate
+	 */
+	protected void encapsulate(IStructuredContentProvider delegate) {
+		while ((delegate != null) && (delegate.getClass() == EncapsulatedContentProvider.class)) {
+			delegate = ((EncapsulatedContentProvider) delegate).encapsulated;
+		}
+
+		this.encapsulated = delegate;
 	}
 
 	protected void addViewerFilter(StructuredViewer viewer, ViewerFilter filter) {
