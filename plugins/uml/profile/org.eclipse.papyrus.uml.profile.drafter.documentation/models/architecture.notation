@@ -153,7 +153,7 @@
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aNtb5uy8EeOcMebkujJNBQ"/>
       </children>
       <element xmi:type="uml:Package" href="architecture.uml#_aNtb4Oy8EeOcMebkujJNBQ"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aNtb4uy8EeOcMebkujJNBQ" x="550" y="577"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aNtb4uy8EeOcMebkujJNBQ" x="550" y="577" width="214" height="112"/>
     </children>
     <styles xmi:type="notation:StringValueStyle" xmi:id="_TPYCsey6EeOcMebkujJNBQ" name="diagram_compatibility_version" stringValue="1.0.0"/>
     <styles xmi:type="notation:DiagramStyle" xmi:id="_TPYCsuy6EeOcMebkujJNBQ"/>
@@ -209,7 +209,7 @@
       <styles xmi:type="notation:FontStyle" xmi:id="_12Jpcey6EeOcMebkujJNBQ"/>
       <element xmi:type="uml:Association" href="architecture.uml#_12Di0-y6EeOcMebkujJNBQ"/>
       <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_12Jpcuy6EeOcMebkujJNBQ" points="[-7, 6, 0, -67]$[-8, 72, -1, -1]"/>
-      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_120X0Oy6EeOcMebkujJNBQ" id="(0.23353293413173654,1.0)"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_120X0Oy6EeOcMebkujJNBQ" id="(0.31137724550898205,0.9811320754716981)"/>
       <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_120X0ey6EeOcMebkujJNBQ" id="(0.27049180327868855,0.0)"/>
     </edges>
     <edges xmi:type="notation:Connector" xmi:id="_SWTawey8EeOcMebkujJNBQ" type="4008" source="_VcD8sey6EeOcMebkujJNBQ" target="_OGRwAey8EeOcMebkujJNBQ">
@@ -975,7 +975,7 @@
     <element xmi:type="uml:Model" href="architecture.uml#_O_LY0Oy6EeOcMebkujJNBQ"/>
   </notation:Diagram>
   <css:ModelStyleSheets xmi:id="_Pu7ecFR7EeSbnPFbgpN9Ow"/>
-  <notation:Diagram xmi:id="_bJg58GpJEeSHJZbEOSiM7A" type="PapyrusUMLClassDiagram" name="overview" measurementUnit="Pixel">
+  <notation:Diagram xmi:id="_bJg58GpJEeSHJZbEOSiM7A" type="PapyrusUMLClassDiagram" name="Dialog overview" measurementUnit="Pixel">
     <children xmi:type="notation:Shape" xmi:id="_otaj0GpJEeSHJZbEOSiM7A" type="2008">
       <children xmi:type="notation:DecorationNode" xmi:id="_otgqcGpJEeSHJZbEOSiM7A" type="5029"/>
       <children xmi:type="notation:BasicCompartment" xmi:id="_otgqcWpJEeSHJZbEOSiM7A" type="7017">
