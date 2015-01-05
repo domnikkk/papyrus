@@ -48,7 +48,7 @@
 			<id>birt</id>
 			<layout>p2</layout>
 			<!-- updateFrom("BIRT",0) -->
-			<url>http://download.eclipse.org/birt/update-site/4.4/</url>
+			<url>http://download.eclipse.org/birt/update-site/mars-interim/</url>
 		</repository>
 		<repository>
 			<id>cdt</id>
@@ -138,7 +138,7 @@
 			<id>gmf-tooling</id>
 			<layout>p2</layout>
 			<!-- updateFrom("GMF Tooling",0) -->
-			<url>http://download.eclipse.org/modeling/gmp/gmf-tooling/updates/milestones-3.2.RC4a</url>
+			<url>http://download.eclipse.org/modeling/gmp/gmf-tooling/updates/milestones-3.3/M4</url>
 		</repository>
 		<repository>
 			<id>m2t-acceleo</id>
