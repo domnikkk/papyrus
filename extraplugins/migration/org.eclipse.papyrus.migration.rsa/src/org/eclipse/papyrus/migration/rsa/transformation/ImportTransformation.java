@@ -32,7 +32,6 @@ import org.eclipse.core.runtime.Assert;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.MultiStatus;
-import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.core.runtime.jobs.IJobChangeEvent;
 import org.eclipse.core.runtime.jobs.Job;
@@ -92,6 +91,9 @@ import org.eclipse.uml2.uml.resource.UMLResource;
  */
 public class ImportTransformation {
 
+	/** For debug purpose */
+	private static final boolean DEBUG = false;
+
 	// SourceURI is the input
 	protected final URI sourceURI;
 
@@ -102,8 +104,6 @@ public class ImportTransformation {
 
 	protected ResourceSet resourceSet;
 
-	protected boolean cacheTransformations;
-
 	protected Job job;
 
 	protected Resource umlResource;
@@ -111,6 +111,14 @@ public class ImportTransformation {
 	protected Config parameters;
 
 	protected boolean complete = false;
+
+	// For logging purpose (Bug 455001)
+	// Starts when the job starts; ends when the job returns
+	/** Execution time, in nano-seconds */
+	protected long executionTime = 0L;
+
+	/** Execution time of the initial model loading */
+	protected long loadingTime = 0L;
 
 	/** Source URI to Target URI map (For Models/Libraries/Fragments) */
 	protected final Map<URI, URI> uriMappings = new HashMap<URI, URI>();
@@ -120,12 +128,7 @@ public class ImportTransformation {
 
 	protected List<Diagram> diagramsToDelete = new LinkedList<Diagram>();
 
-	// The cache can be used to increase performances (For small and medium sized models, most of the execution time is spent in loading the transformation)
-	// Warning: using the cache prevents dynamic transformations (i.e. it should not be used in Debug Mode)
-	protected static final Map<URI, TransformationExecutor> sharedTransformations = new HashMap<URI, TransformationExecutor>();
-
-	// Separate local cache for preloading transformations if cacheTransformations = false (Mostly for debug purpose)
-	protected final Map<URI, TransformationExecutor> localTransformations = new HashMap<URI, TransformationExecutor>();
+	protected static final ExecutorsPool executorsPool = new ExecutorsPool(4);
 
 	public ImportTransformation(URI sourceURI) {
 		this(sourceURI, RSAToPapyrusParametersFactory.eINSTANCE.createConfig());
@@ -135,8 +138,6 @@ public class ImportTransformation {
 		Assert.isNotNull(sourceURI);
 		this.sourceURI = sourceURI;
 		this.parameters = config;
-
-		this.cacheTransformations = true;
 	}
 
 	public void run() {
@@ -154,7 +155,11 @@ public class ImportTransformation {
 
 			@Override
 			protected IStatus run(IProgressMonitor monitor) {
-				return ImportTransformation.this.run(monitor);
+				long begin = System.nanoTime();
+				IStatus result = ImportTransformation.this.run(monitor);
+				long end = System.nanoTime();
+				executionTime = end - begin;
+				return result;
 			}
 		};
 
@@ -213,6 +218,14 @@ public class ImportTransformation {
 		return job.getResult();
 	}
 
+	public long getExecutionTime() {
+		return executionTime;
+	}
+
+	public long getLoadingTime() {
+		return loadingTime;
+	}
+
 	public Map<URI, URI> getURIMappings() {
 		return uriMappings;
 	}
@@ -260,8 +273,7 @@ public class ImportTransformation {
 		ModelExtent extent = getInOutUMLModel();
 		for (EObject eObject : extent.getContents()) {
 
-			// We already called ResolveAll, there is no need to try resolution again
-			TreeIterator<EObject> modelIterator = EcoreUtil.getAllContents(eObject, false);
+			TreeIterator<EObject> modelIterator = EcoreUtil.getAllContents(eObject, true);
 			while (modelIterator.hasNext()) {
 				EObject next = modelIterator.next();
 				if (next instanceof Diagram) {
@@ -317,13 +329,8 @@ public class ImportTransformation {
 	// Preloads all required transformations (Either locally or statically, depending on the cache parameter)
 	protected IStatus loadTransformations(IProgressMonitor monitor) {
 		for (URI transformationURI : getAllTransformationURIs()) {
-			try {
-				// Don't use a subprogress monitor, since it may be confusing
-				getTransformation(transformationURI, new NullProgressMonitor());
-				monitor.worked(1);
-			} catch (DiagnosticException ex) {
-				return createStatusFromDiagnostic(ex.getDiagnostic());
-			}
+			IStatus status = executorsPool.preLoad(transformationURI);
+			monitor.worked(1);
 		}
 
 		return Status.OK_STATUS;
@@ -353,14 +360,18 @@ public class ImportTransformation {
 
 		monitor.subTask("Loading source model " + getModelName());
 
+		long startLoad = System.nanoTime();
 		initResourceSet(monitor);
 
 		int numberOfElements = countSupportedElements();
+
 
 		monitor.beginTask("Importing " + getModelName(), numberOfElements);
 
 		monitor.subTask("Loading transformations (This may take a few seconds for the first import)...");
 		loadTransformations(monitor);
+		long endLoad = System.nanoTime();
+		loadingTime = endLoad - startLoad;
 
 
 		List<ModelExtent> extents = getModelExtents();
@@ -460,15 +471,20 @@ public class ImportTransformation {
 				if (rootElement instanceof View) {
 					View rootView = (View) rootElement;
 					if (!(rootView instanceof Diagram)) {
-						String objectType = rootView.getElement() == null ? "None" : rootView.getElement().eClass().getName();
-						String viewType = rootView.getType() == null ? "None" : rootView.getType();
-						// generationStatus.add(new Status(IStatus.WARNING, Activator.PLUGIN_ID, "An orphaned view has been found after the migration. It will be removed. View Type: " + viewType + ", semantic type: " + objectType));
+						if (DEBUG) {
+							String objectType = rootView.getElement() == null ? "None" : rootView.getElement().eClass().getName();
+							String viewType = rootView.getType() == null ? "None" : rootView.getType();
+							generationStatus.add(new Status(IStatus.WARNING, Activator.PLUGIN_ID, "An orphaned view has been found after the migration. It will be removed. View Type: " + viewType + ", semantic type: " + objectType));
+						}
 
 						delete(rootElement);
 					}
 				} else if (rootElement instanceof Style) {
-					String styleType = rootElement.eClass().getName();
-					// generationStatus.add(new Status(IStatus.WARNING, Activator.PLUGIN_ID, "An orphaned style has been found after the migration. It will be removed. Style Type: " + styleType));
+
+					if (DEBUG) {
+						String styleType = rootElement.eClass().getName();
+						generationStatus.add(new Status(IStatus.WARNING, Activator.PLUGIN_ID, "An orphaned style has been found after the migration. It will be removed. Style Type: " + styleType));
+					}
 
 					delete(rootElement);
 				}
@@ -551,8 +567,12 @@ public class ImportTransformation {
 
 		ExecutionDiagnostic transformationResult;
 		synchronized (executor) {
-			transformationResult = executor.execute(context, extents.toArray(new ModelExtent[0]));
-			executor.cleanup();
+			try {
+				transformationResult = executor.execute(context, extents.toArray(new ModelExtent[0]));
+			} finally {
+				executor.cleanup();
+				executorsPool.releaseExecutor(executor);
+			}
 		}
 
 		IStatus loadedProfilesStatus = createStatusFromDiagnostic(loadedProfiles);
@@ -573,22 +593,7 @@ public class ImportTransformation {
 	}
 
 	protected TransformationExecutor getTransformation(URI transformationURI, IProgressMonitor monitor) throws DiagnosticException {
-
-		if (!cacheTransformations) {
-			if (!localTransformations.containsKey(transformationURI)) {
-				TransformationExecutor executor = loadTransformationExecutor(transformationURI, monitor);
-				localTransformations.put(transformationURI, executor);
-			}
-			return localTransformations.get(transformationURI);
-		}
-
-		synchronized (sharedTransformations) {
-			if (!sharedTransformations.containsKey(transformationURI)) {
-				TransformationExecutor executor = loadTransformationExecutor(transformationURI, monitor);
-				sharedTransformations.put(transformationURI, executor);
-			}
-			return sharedTransformations.get(transformationURI);
-		}
+		return executorsPool.getExecutor(transformationURI);
 	}
 
 	// Static synchronized, as it seems that QVTo can't load 2 transformations at the same time, even in separate execution contexts
@@ -653,8 +658,12 @@ public class ImportTransformation {
 
 		ExecutionDiagnostic result;
 		synchronized (executor) {
-			result = executor.execute(context, extents.toArray(new ModelExtent[0]));
-			executor.cleanup();
+			try {
+				result = executor.execute(context, extents.toArray(new ModelExtent[0]));
+			} finally {
+				executor.cleanup();
+				executorsPool.releaseExecutor(executor);
+			}
 		}
 
 		return createStatusFromDiagnostic(result);
@@ -726,8 +735,6 @@ public class ImportTransformation {
 		} catch (WrappedException ex) {
 			missingProfiles.add("UML RT / StateMachine extension Profile");
 		}
-
-		EcoreUtil.resolveAll(resourceSet);
 
 		inPapyrusProfiles = new BasicModelExtent(allContents);
 
@@ -877,8 +884,12 @@ public class ImportTransformation {
 
 		ExecutionDiagnostic result;
 		synchronized (executor) {
-			result = executor.execute(context, extents.toArray(new ModelExtent[0]));
-			executor.cleanup();
+			try {
+				result = executor.execute(context, extents.toArray(new ModelExtent[0]));
+			} finally {
+				executor.cleanup();
+				executorsPool.releaseExecutor(executor);
+			}
 		}
 
 		return createStatusFromDiagnostic(result);

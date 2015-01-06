@@ -66,9 +66,29 @@ import org.eclipse.uml2.uml.util.UMLUtil;
  */
 public class ImportTransformationLauncher {
 
+	// Nano to Second
+	protected final static long SECOND = 1000 * 1000 * 1000;
+
 	protected final Config config;
 
 	protected final Control baseControl;
+
+	/**
+	 * Own execution time, in nano-seconds. Doesn't take individual transformation's exec
+	 * time into account. Also ignores the time when Blocking user Dialogs are opened
+	 */
+	protected long ownExecutionTime;
+
+	/**
+	 * Own loading time (For initial model loading)
+	 */
+	protected long ownLoadingTime;
+
+	/**
+	 * Total time for all invidivual transformations to complete. Since they are executed in parallel,
+	 * this may be different from their cumulated execution time (Unless a single thread is used)
+	 */
+	protected long transformationsExecutionTime = 0L;
 
 	public ImportTransformationLauncher(Config config) {
 		this(config, null);
@@ -101,7 +121,30 @@ public class ImportTransformationLauncher {
 
 			@Override
 			protected IStatus run(IProgressMonitor monitor) {
-				return ImportTransformationLauncher.this.run(monitor, transformations);
+				IStatus result = ImportTransformationLauncher.this.run(monitor, transformations);
+
+				long totalLoadingTime = 0L;
+				long totalTransformationTime = 0L;
+				for (ImportTransformation transformation : transformations) {
+					totalTransformationTime += transformation.getExecutionTime();
+					totalLoadingTime += transformation.getLoadingTime();
+				}
+
+				int nbThreads = config.getMaxThreads();
+				System.out.println("--- First phase (0-50%) / Multi-threaded (" + nbThreads + ")---");
+				System.out.println("Cumulated Transformation Time: " + timeFormat(totalTransformationTime));
+				System.out.println("Total Transformation Time: " + timeFormat(transformationsExecutionTime));
+				System.out.println("Cumulated Loading Time: " + timeFormat(totalLoadingTime));
+
+				System.out.println("--- Second phase (50-100%) / Single-threaded ---");
+				System.out.println("Total Loading Time: " + timeFormat(ownLoadingTime));
+				System.out.println("Total Fix Dependencies Time: " + timeFormat(ownExecutionTime));
+
+				System.out.println("--- Total ---");
+				System.out.println("Cumulated Total time: " + timeFormat(ownExecutionTime + totalTransformationTime));
+				System.out.println("Total time: " + timeFormat(ownExecutionTime + transformationsExecutionTime));
+
+				return result;
 			}
 
 		};
@@ -168,7 +211,15 @@ public class ImportTransformationLauncher {
 		importDependencies.schedule();
 	}
 
+	protected String timeFormat(long nano) {
+		long seconds = nano / SECOND;
+		return String.format("%d:%02d:%02d", seconds / 3600, (seconds % 3600) / 60, (seconds % 60));
+	}
+
 	protected IStatus run(IProgressMonitor monitor, List<ImportTransformation> transformations) {
+
+		long begin = System.nanoTime();
+
 		monitor.setTaskName("Waiting for import tasks to complete...");
 		int numTasks = transformations.size() * 2; // For each transformation: wait for completion, then handle dependencies
 		monitor.beginTask("Importing Models...", numTasks);
@@ -230,6 +281,9 @@ public class ImportTransformationLauncher {
 		// All transformations have been scheduled (But not necessarily completed): wait for all of them to complete
 		wait(runningTransformations, monitor);
 
+		long end = System.nanoTime();
+		transformationsExecutionTime = end - begin;
+
 		if (monitor.isCanceled()) {
 			return new Status(IStatus.CANCEL, Activator.PLUGIN_ID, "Operation canceled");
 		}
@@ -283,6 +337,11 @@ public class ImportTransformationLauncher {
 	// Convert all model dependencies (For "imported model -> emx library" to "imported model -> imported library")
 	protected void handleModelDependencies(List<ImportTransformation> transformations, IProgressMonitor monitor) {
 
+		long begin = System.nanoTime();
+
+		long timeToIgnore = 0L;
+
+
 		Map<URI, URI> urisToReplace = new HashMap<URI, URI>();
 		Map<URI, URI> profileUrisToReplace = new HashMap<URI, URI>();
 
@@ -301,7 +360,12 @@ public class ImportTransformationLauncher {
 		filterKnownMappings(config.getMappingParameters(), urisToReplace, profileUrisToReplace);
 
 		if (!config.getMappingParameters().getUriMappings().isEmpty() || !config.getMappingParameters().getProfileUriMappings().isEmpty()) {
+
+			long beginDialog = System.nanoTime();
 			MappingParameters parameters = confirmURIMappings(config.getMappingParameters());
+			long endDialog = System.nanoTime();
+			timeToIgnore = endDialog - beginDialog;
+
 			config.setMappingParameters(parameters);
 
 			// Include the user-defined URI mappings
@@ -315,61 +379,74 @@ public class ImportTransformationLauncher {
 				return;
 			}
 
-			monitor.subTask("Importing dependencies for " + transformation.getModelName());
-			final ModelSet modelSet = new DiResourceSet();
-			UMLUtil.init(modelSet);
-
-			final Collection<Resource> resourcesToRepair;
 			try {
-				URI targetURI = transformation.getTargetURI();
-				if (targetURI == null) {
-					// The transformation didn't complete properly
+
+				monitor.subTask("Importing dependencies for " + transformation.getModelName());
+				final ModelSet modelSet = new DiResourceSet();
+				UMLUtil.init(modelSet);
+
+				final Collection<Resource> resourcesToRepair;
+				try {
+					URI targetURI = transformation.getTargetURI();
+					if (targetURI == null) {
+						// The transformation didn't complete properly
+						monitor.worked(1);
+						continue;
+					}
+
+					long startLoading = System.nanoTime();
+					modelSet.loadModels(transformation.getTargetURI());
+					resourcesToRepair = resolveOwnResources(modelSet);
+					long endLoading = System.nanoTime();
+					ownLoadingTime += endLoading - startLoading;
+				} catch (ModelMultiException e) {
+					Activator.log.error(e);
 					monitor.worked(1);
 					continue;
 				}
 
-				modelSet.loadModels(transformation.getTargetURI());
-				resourcesToRepair = resolveOwnResources(modelSet);
-			} catch (ModelMultiException e) {
-				Activator.log.error(e);
-				monitor.worked(1);
-				continue;
-			}
+				repairProxies(modelSet, resourcesToRepair, urisToReplace, monitor); // Repairing proxies first will change the Applied Profiles. This helps repairing stereotypes
 
-			repairProxies(modelSet, resourcesToRepair, urisToReplace, monitor); // Repairing proxies first will change the Applied Profiles. This helps repairing stereotypes
+				RepairStereotypes repairStereotypesAction = new RepairStereotypes(modelSet, profileUrisToReplace);
+				repairStereotypesAction.execute();
 
-			RepairStereotypes repairStereotypesAction = new RepairStereotypes(modelSet, profileUrisToReplace);
-			repairStereotypesAction.execute();
+				try {
 
-			try {
-
-				for (Resource resource : resourcesToRepair) {
-					resource.save(null);
-				}
-				monitor.worked(1);
-
-				final TransactionalEditingDomain domain = modelSet.getTransactionalEditingDomain();
-
-				GMFUnsafe.write(domain, new Runnable() {
-					@Override
-					public void run() {
-						EMFHelper.unload(modelSet);
+					for (Resource resource : resourcesToRepair) {
+						resource.save(null);
 					}
-				});
+					monitor.worked(1);
 
-				domain.dispose();
+					final TransactionalEditingDomain domain = modelSet.getTransactionalEditingDomain();
 
-			} catch (IOException ex) {
-				Activator.log.error(ex);
-				continue;
-			} catch (RollbackException ex) {
-				Activator.log.error(ex);
-				continue;
-			} catch (InterruptedException ex) {
+					GMFUnsafe.write(domain, new Runnable() {
+						@Override
+						public void run() {
+							EMFHelper.unload(modelSet);
+						}
+					});
+
+					domain.dispose();
+
+				} catch (IOException ex) {
+					Activator.log.error(ex);
+					continue;
+				} catch (RollbackException ex) {
+					Activator.log.error(ex);
+					continue;
+				} catch (InterruptedException ex) {
+					Activator.log.error(ex);
+					continue;
+				}
+			} catch (Exception ex) {
 				Activator.log.error(ex);
 				continue;
 			}
 		}
+
+		long end = System.nanoTime();
+
+		ownExecutionTime = end - begin - timeToIgnore;
 	}
 
 	protected Collection<Resource> resolveOwnResources(ModelSet modelSet) {
@@ -441,6 +518,9 @@ public class ImportTransformationLauncher {
 	 */
 	protected static void populateURIMap(List<URIMapping> mappings, Map<URI, URI> uriMap) {
 		for (URIMapping mapping : mappings) {
+			if (mapping == null) {
+				continue;
+			}
 			String source = mapping.getSourceURI();
 			String target = mapping.getTargetURI();
 
