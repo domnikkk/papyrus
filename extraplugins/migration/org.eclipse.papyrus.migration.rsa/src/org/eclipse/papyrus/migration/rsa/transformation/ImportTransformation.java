@@ -241,7 +241,7 @@ public class ImportTransformation {
 			resourceSet.getResource(sourceURI, true);
 			loadInPapyrusProfiles();
 		} catch (Exception ex) {
-			Activator.log.error(ex);
+			Activator.log.error("An error occurred while loading " + getModelName(), ex);
 		}
 
 		monitor.subTask("Resolving all dependencies...");
@@ -365,7 +365,8 @@ public class ImportTransformation {
 
 		List<ModelExtent> extents = getModelExtents();
 
-		MultiStatus generationStatus = new MultiStatus(Activator.PLUGIN_ID, IStatus.OK, "Operation complete", null);
+		String statusMessage = String.format("Import %s", getModelName());
+		MultiStatus generationStatus = new MultiStatus(Activator.PLUGIN_ID, IStatus.OK, statusMessage, null);
 
 		ExecutionContext context = createExecutionContext(monitor, generationStatus);
 
@@ -453,7 +454,7 @@ public class ImportTransformation {
 			configureResource(notationResource);
 			configureResource((XMIResource) umlResource);
 
-			// Handle orphaned elements: remove them and log a warning
+			// Handle orphaned elements: remove them and log a warning (Log temporarily disabled to avoid spamming the console)
 			List<EObject> notationRootElements = new LinkedList<EObject>(notationResource.getContents());
 			for (EObject rootElement : notationRootElements) {
 				if (rootElement instanceof View) {
@@ -461,13 +462,13 @@ public class ImportTransformation {
 					if (!(rootView instanceof Diagram)) {
 						String objectType = rootView.getElement() == null ? "None" : rootView.getElement().eClass().getName();
 						String viewType = rootView.getType() == null ? "None" : rootView.getType();
-						generationStatus.add(new Status(IStatus.WARNING, Activator.PLUGIN_ID, "An orphaned view has been found after the migration. It will be removed. View Type: " + viewType + ", semantic type: " + objectType));
+						// generationStatus.add(new Status(IStatus.WARNING, Activator.PLUGIN_ID, "An orphaned view has been found after the migration. It will be removed. View Type: " + viewType + ", semantic type: " + objectType));
 
 						delete(rootElement);
 					}
 				} else if (rootElement instanceof Style) {
 					String styleType = rootElement.eClass().getName();
-					generationStatus.add(new Status(IStatus.WARNING, Activator.PLUGIN_ID, "An orphaned style has been found after the migration. It will be removed. Style Type: " + styleType));
+					// generationStatus.add(new Status(IStatus.WARNING, Activator.PLUGIN_ID, "An orphaned style has been found after the migration. It will be removed. Style Type: " + styleType));
 
 					delete(rootElement);
 				}

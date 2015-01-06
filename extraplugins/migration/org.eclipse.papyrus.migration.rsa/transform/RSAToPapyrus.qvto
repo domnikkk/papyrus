@@ -292,7 +292,7 @@ helper View::fail() : String {
 	var type := self.type;
 	var isProxy := self.element != null and self.element.oclIsUndefined();
 	var semanticEClassName := if isProxy then 'Unresolved (proxy) reference' elif self.element = null then 'No semantic element' else self.element.eClass().name endif;
-	warning('Unknown element type. Type = "'+self.type+'", element type = "'+semanticEClassName+'"');
+	warning('Unknown or unsupported element type. Graphical Type = "'+self.type+'", Semantic Type = "'+semanticEClassName+'". Diagram Type: "'+self.diagram.type+'". The element will be ignored.');
 	return '';
 }
 
