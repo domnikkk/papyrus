@@ -278,6 +278,14 @@ public class ConfigHelper {
 			}
 		}
 
+		// If the URI fragment is a path, don't explore registered libraries/profiles: almost all libraries will
+		// have a matching element, although there is no specific correspondence
+		if (isPathFragment(proxyURI)) {
+			return null;
+		}
+
+		// Otherwise, we have an ID fragment
+
 		// Maybe the resource has already been migrated, then deployed as a static library. Browse all registered libraries and try to find a matching XMI ID
 		for (IRegisteredLibrary library : RegisteredLibrary.getRegisteredLibraries()) {
 			URI libraryURI = library.getUri();
@@ -315,6 +323,12 @@ public class ConfigHelper {
 		}
 
 		return null;
+	}
+
+	protected boolean isPathFragment(URI proxyURI) {
+		String uriFragment = proxyURI.fragment();
+
+		return uriFragment.charAt(0) == '/';
 	}
 
 	protected URIMapping findExistingMapping(EObject proxy, ResourceSet resourceSet) {

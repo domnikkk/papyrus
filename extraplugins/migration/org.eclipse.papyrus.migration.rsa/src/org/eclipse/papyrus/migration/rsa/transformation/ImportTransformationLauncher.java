@@ -12,6 +12,8 @@
 package org.eclipse.papyrus.migration.rsa.transformation;
 
 import java.io.IOException;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -24,14 +26,14 @@ import java.util.concurrent.atomic.AtomicReference;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.MultiStatus;
-import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.core.runtime.jobs.IJobChangeEvent;
 import org.eclipse.core.runtime.jobs.Job;
 import org.eclipse.core.runtime.jobs.JobChangeAdapter;
 import org.eclipse.emf.common.command.AbstractCommand;
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.transaction.RollbackException;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.jface.dialogs.MessageDialog;
@@ -46,6 +48,7 @@ import org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.Config;
 import org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.MappingParameters;
 import org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.URIMapping;
 import org.eclipse.papyrus.migration.rsa.transformation.ui.URIMappingDialog;
+import org.eclipse.papyrus.uml.tools.model.UmlModel;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
@@ -315,6 +318,8 @@ public class ImportTransformationLauncher {
 			monitor.subTask("Importing dependencies for " + transformation.getModelName());
 			final ModelSet modelSet = new DiResourceSet();
 			UMLUtil.init(modelSet);
+
+			final Collection<Resource> resourcesToRepair;
 			try {
 				URI targetURI = transformation.getTargetURI();
 				if (targetURI == null) {
@@ -322,25 +327,29 @@ public class ImportTransformationLauncher {
 					monitor.worked(1);
 					continue;
 				}
+
 				modelSet.loadModels(transformation.getTargetURI());
+				resourcesToRepair = resolveOwnResources(modelSet);
 			} catch (ModelMultiException e) {
 				Activator.log.error(e);
 				monitor.worked(1);
 				continue;
 			}
 
-			repairProxies(modelSet, urisToReplace, monitor); // Repairing proxies first will change the Applied Profiles. This helps repairing stereotypes
+			repairProxies(modelSet, resourcesToRepair, urisToReplace, monitor); // Repairing proxies first will change the Applied Profiles. This helps repairing stereotypes
 
 			RepairStereotypes repairStereotypesAction = new RepairStereotypes(modelSet, profileUrisToReplace);
 			repairStereotypesAction.execute();
 
 			try {
-				modelSet.save(new NullProgressMonitor());
+
+				for (Resource resource : resourcesToRepair) {
+					resource.save(null);
+				}
 				monitor.worked(1);
 
 				final TransactionalEditingDomain domain = modelSet.getTransactionalEditingDomain();
 
-				EcoreUtil.resolveAll(modelSet); // Resolve all before unload to ensure all proxies are cleaned up in the CacheAdapter
 				GMFUnsafe.write(domain, new Runnable() {
 					@Override
 					public void run() {
@@ -363,7 +372,35 @@ public class ImportTransformationLauncher {
 		}
 	}
 
-	protected void repairProxies(final ModelSet modelSet, Map<URI, URI> urisToReplace, IProgressMonitor monitor) {
+	protected Collection<Resource> resolveOwnResources(ModelSet modelSet) {
+		UmlModel umlModel = (UmlModel) modelSet.getModel(UmlModel.MODEL_ID);
+		if (umlModel == null) {
+			return Collections.emptySet();
+		}
+
+		// Iterate on the main resource's contents (Including fragments).
+		// The ModelSet will take care of loading any associated resource (notation, di)
+
+		Resource mainResource = umlModel.getResource();
+		if (mainResource == null) {
+			return Collections.emptySet();
+		}
+
+		Iterator<EObject> contents = mainResource.getAllContents();
+		while (contents.hasNext()) {
+			contents.next();
+		}
+
+		Set<Resource> resourcesToRepair = new HashSet<Resource>();
+		for (Resource resource : modelSet.getResources()) {
+			if (modelSet.isUserModelResource(resource.getURI())) {
+				resourcesToRepair.add(resource);
+			}
+		}
+		return resourcesToRepair;
+	}
+
+	protected void repairProxies(final ModelSet modelSet, final Collection<Resource> resourcesToRepair, Map<URI, URI> urisToReplace, IProgressMonitor monitor) {
 
 		final TransactionalEditingDomain domain = modelSet.getTransactionalEditingDomain();
 
@@ -380,7 +417,7 @@ public class ImportTransformationLauncher {
 
 				@Override
 				public void execute() {
-					DependencyManagementHelper.updateDependencies(entry.getKey(), entry.getValue(), modelSet, domain);
+					DependencyManagementHelper.updateDependencies(entry.getKey(), entry.getValue(), resourcesToRepair, domain);
 				}
 
 				@Override
