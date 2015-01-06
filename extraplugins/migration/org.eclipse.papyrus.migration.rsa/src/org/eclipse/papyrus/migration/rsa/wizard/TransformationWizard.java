@@ -74,7 +74,7 @@ public class TransformationWizard extends Wizard implements IImportWizard {
 	@Override
 	public boolean performFinish() {
 		importFiles();
-		return false;
+		return true;
 	}
 
 	/**
