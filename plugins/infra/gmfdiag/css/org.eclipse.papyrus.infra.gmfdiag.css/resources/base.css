@@ -319,3 +319,8 @@ CompositeStructureDiagram TimeObservation > Label
     visible:true;
     textAlignment:"Left";
 }
+CompositeStructureDiagram Port > Label
+{
+	visible: true;
+	textAlignment:"Left";
+}
