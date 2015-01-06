@@ -487,7 +487,8 @@ query View::doGetDecorationType(element : Element) : String{
 
 query View::getEdgeType(element : Element) : String {
 	return
-		if element.oclIsTypeOf(Extension) then '1013'
+		if self.type = 'Reference' then '' /* Context Links handled separately */
+		elif element.oclIsTypeOf(Extension) then '1013'
 		elif element.oclIsTypeOf(Association) then '4001'
 		elif element.oclIsTypeOf(ProfileApplication) then '1045'
 		elif element.oclIsTypeOf(Association) then '4019'

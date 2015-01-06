@@ -71,8 +71,9 @@ mapping Node::toNode() : Node disjuncts
 ;
 
 mapping Edge::toEdge() : Edge disjuncts
-	UMLConnector::toPapyrusConnector,
-	UMLConnector::toCommentLink
+	UMLConnector::toCommentLink,
+	UMLConnector::toConstraintLink,
+	UMLConnector::toPapyrusConnector
 	//TODO: Disjunct edges mapping
 ;
 
@@ -245,34 +246,26 @@ mapping uml::Enumeration::fillEnumerationLiteral(node : BasicSemanticCompartment
 }
 
 mapping UMLConnector::toCommentLink() : Connector inherits Connector::toCommentLink when{
-	self.type='Reference'
+	self.type='Reference' and ( 
+	 	self.source.element.oclIsTypeOf(Comment) or 
+	 	self.target.element.oclIsKindOf(Comment)
+	)
 }{	
 	result.type :='4002';
-	result.bendpoints := self.bendpoints.toBendpoint(self.diagram);
+	result.bendpoints := self.bendpoints.map toBendpoint(self.diagram);
 	result.sourceAnchor := object IdentityAnchor{};		
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+mapping UMLConnector::toConstraintLink() : Connector inherits Connector::toPapyrusConnector when{
+	self.type='Reference' and ( 
+	 	self.source.element.oclIsTypeOf(Constraint) or 
+	 	self.target.element.oclIsKindOf(Constraint)
+	)
+}{	
+	result.type :='4003';
+	result.bendpoints := self.bendpoints.map toBendpoint(self.diagram);
+	result.sourceAnchor := object IdentityAnchor{};		
+}
 
 mapping Property::toPropertyInDataType(node : Node) : Shape inherits Element::toCompartmentEntry {
 	result.type := '3101';
@@ -798,7 +791,8 @@ query View::doGetDecorationType(element : Element) : String{
 
 query View::getEdgeType(element : Element) : String {
 	return
-		if element.oclIsTypeOf(ComponentRealization) then '4004'
+		if self.type = 'Reference' then '' /* Comment/Constraint Links handled separately */
+		elif element.oclIsTypeOf(ComponentRealization) then '4004'
 		elif element.oclIsTypeOf(InterfaceRealization) then '4005'
 		elif element.oclIsTypeOf(Substitution) then '4011'
 		elif element.oclIsTypeOf(Realization) then '4006'
