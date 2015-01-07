@@ -41,35 +41,24 @@ import org.eclipse.papyrus.infra.gmfdiag.common.databinding.custom.CustomBoolean
 import org.eclipse.papyrus.infra.gmfdiag.common.editpart.IPapyrusEditPart;
 import org.eclipse.papyrus.infra.gmfdiag.common.figure.OneTopLineResizableBorder;
 import org.eclipse.papyrus.infra.gmfdiag.common.model.NotationUtils;
+import org.eclipse.papyrus.infra.gmfdiag.common.utils.NamedStyleProperties;
 
 /**
  * this edit policy has in charge to toggle the border of its edit part's figure.
  */
-public class BorderDisplayEditPolicy extends GraphicalEditPolicyEx implements IChangeListener, NotificationListener {
-
-	/** The notation NameStyle property to define line position. */
-	public static final String LINE_POSITION = "linePosition";
+public class BorderDisplayEditPolicy extends GraphicalEditPolicyEx implements IChangeListener, NotificationListener, NamedStyleProperties {
 
 	/** The default value for the line position of compartment. */
-	private static final String LINE_POSITION_DEFAULT_VALUE = "center";
+	private static final String LINE_POSITION_DEFAULT_VALUE = NamedStyleProperties.PositionAsString.CENTER;//$NON-NLS-1$
 
 	/** The default value for the line length ratio of compartment. */
-	private static final String LINE_LENGTH_RATIO_DEFAULT_VALUE = "1.0";
-
-	/** The notation NameStyle property to define the line length ratio of compartment's topLine. */
-	private static final String LINE_LENGTH_RATIO = "lineLengthRatio";
+	private static final String LINE_LENGTH_RATIO_DEFAULT_VALUE = "1.0";//$NON-NLS-1$
 
 	/** the default value for the line length of compartment. If the length is set to this default value, the length will be not forced */
 	private static final int DEFAULT_LENGTH_VALUE = -1;
 
-	/** The notation NameStyle property to define the line length of compartment's topLine. */
-	public static final String LENGTH = "lineLength";
-
-	/** The notation NameStyle property to display. */
-	public static final String DISPLAY_BORDER = "displayBorder";
-
 	/** key for this edit policy. */
-	public final static String BORDER_DISPLAY_EDITPOLICY = "BORDER_DISPLAY_EDITPOLICY";
+	public final static String BORDER_DISPLAY_EDITPOLICY = "BORDER_DISPLAY_EDITPOLICY";//$NON-NLS-1$
 
 	/** The style observable. */
 	protected IObservableValue styleObservable;
@@ -243,17 +232,17 @@ public class BorderDisplayEditPolicy extends GraphicalEditPolicyEx implements IC
 		// get the value of the CSS property
 		View view = getNotationView();
 
-		String linePosition = NotationUtils.getStringValue(view, LINE_POSITION, LINE_POSITION_DEFAULT_VALUE).toLowerCase();
+		String linePosition = NotationUtils.getStringValue(view, LINE_POSITION, LINE_POSITION_DEFAULT_VALUE).toUpperCase();
 
 		int position = PositionConstants.CENTER;
 
-		if ("left".equals(linePosition)) {
+		if (NamedStyleProperties.PositionAsString.LEFT.equals(linePosition)) {
 			position = PositionConstants.LEFT;
 		}
-		if ("right".equals(linePosition)) {
+		if (NamedStyleProperties.PositionAsString.RIGHT.equals(linePosition)) {
 			position = PositionConstants.RIGHT;
 		}
-		if ("center".equals(linePosition)) {
+		if (NamedStyleProperties.PositionAsString.CENTER.equals(linePosition)) {
 			position = PositionConstants.CENTER;
 		}
 
@@ -313,9 +302,7 @@ public class BorderDisplayEditPolicy extends GraphicalEditPolicyEx implements IC
 			} else {
 				break;
 			}
-
 		}
-
 		return null;
 	}
 }

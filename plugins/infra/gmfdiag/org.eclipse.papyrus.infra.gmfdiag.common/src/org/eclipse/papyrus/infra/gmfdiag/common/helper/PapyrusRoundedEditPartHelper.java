@@ -25,12 +25,12 @@ import org.eclipse.papyrus.infra.gmfdiag.common.editpart.IPapyrusEditPart;
 import org.eclipse.papyrus.infra.gmfdiag.common.editpart.ShapeDisplayCompartmentEditPart;
 import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.IRoundedRectangleFigure;
 import org.eclipse.papyrus.infra.gmfdiag.common.model.NotationUtils;
-import org.eclipse.papyrus.infra.gmfdiag.common.utils.ICSSNamedStyles;
+import org.eclipse.papyrus.infra.gmfdiag.common.utils.NamedStyleProperties;
 
 /**
  * The Class RoundedCompartmentEditPart provides refresh method to apply notation properties specific to roundedRectangleFigure
  */
-public abstract class PapyrusRoundedEditPartHelper implements ICSSNamedStyles {
+public abstract class PapyrusRoundedEditPartHelper implements NamedStyleProperties {
 
 	/**
 	 * Refresh border style.
@@ -53,22 +53,22 @@ public abstract class PapyrusRoundedEditPartHelper implements ICSSNamedStyles {
 					if (borderValueStyle instanceof StringValueStyle) {
 						String value = ((StringValueStyle) borderValueStyle).getStringValue();
 
-						if ("dash".equals(value)) {
+						if (NamedStyleProperties.BorderStyle.DASH.equals(value)) {
 							borderStyle = Graphics.LINE_DASH;
 						}
-						if ("dashDot".equals(value)) {
+						if (NamedStyleProperties.BorderStyle.DASH_DOT.equals(value)) {
 							borderStyle = Graphics.LINE_DASHDOT;
 						}
-						if ("dashDotDot".equals(value)) {
+						if (NamedStyleProperties.BorderStyle.DASH_DOT_DOT.equals(value)) {
 							borderStyle = Graphics.LINE_DASHDOTDOT;
 						}
-						if ("dot".equals(value)) {
+						if (NamedStyleProperties.BorderStyle.DOT.equals(value)) {
 							borderStyle = Graphics.LINE_DOT;
 						}
-						if ("solid".equals(value)) {
+						if (NamedStyleProperties.BorderStyle.SOLID.equals(value)) {
 							borderStyle = Graphics.LINE_SOLID;
 						}
-						if ("custom".equals(value)) {
+						if (NamedStyleProperties.BorderStyle.CUSTOM.equals(value)) {
 							borderStyle = Graphics.LINE_CUSTOM;
 						}
 					}

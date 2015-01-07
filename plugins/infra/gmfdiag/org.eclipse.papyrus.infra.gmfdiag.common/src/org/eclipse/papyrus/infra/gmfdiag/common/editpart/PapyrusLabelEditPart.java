@@ -42,46 +42,16 @@ import org.eclipse.papyrus.infra.gmfdiag.common.figure.IPapyrusWrappingLabel;
 import org.eclipse.papyrus.infra.gmfdiag.common.locator.IPapyrusBorderItemLocator;
 import org.eclipse.papyrus.infra.gmfdiag.common.locator.PapyrusLabelLocator;
 import org.eclipse.papyrus.infra.gmfdiag.common.model.NotationUtils;
+import org.eclipse.papyrus.infra.gmfdiag.common.utils.NamedStyleProperties;
 
 
-public abstract class PapyrusLabelEditPart extends LabelEditPart {
+public abstract class PapyrusLabelEditPart extends LabelEditPart implements NamedStyleProperties {
 
 	/**
 	 * Default Margin when not present in CSS
 	 */
 	public static final int DEFAULT_MARGIN = 0;
 
-	/**
-	 * CSS Integer property to define the horizontal Label Margin
-	 */
-	public static final String TOP_MARGIN_PROPERTY = "topMarginLabel"; //$NON-NLS-1$
-
-	/**
-	 * CSS Integer property to define the vertical Label Margin
-	 */
-	public static final String LEFT_MARGIN_PROPERTY = "leftMarginLabel"; //$NON-NLS-1$
-
-	/**
-	 * CSS Integer property to define the horizontal Label Margin
-	 */
-	public static final String BOTTOM_MARGIN_PROPERTY = "bottomMarginLabel"; //$NON-NLS-1$
-
-	/**
-	 * CSS Integer property to define the vertical Label Margin
-	 */
-	public static final String RIGHT_MARGIN_PROPERTY = "rightMarginLabel"; //$NON-NLS-1$
-
-	/** The Constant TEXT_ALIGNMENT. */
-	public static final String TEXT_ALIGNMENT = "textAlignment"; //$NON-NLS-1$
-
-	/** The Constant LABEL_OFFSET_Y. */
-	public static final String LABEL_OFFSET_Y = "labelOffsetY"; //$NON-NLS-1$
-
-	/** The Constant LABEL_OFFSET_X. */
-	public static final String LABEL_OFFSET_X = "labelOffsetX"; //$NON-NLS-1$
-
-	/** The Constant LABEL_CONSTRAINED. */
-	public static final String LABEL_CONSTRAINED = "labelConstrained"; //$NON-NLS-1$
 
 	/** The external label locator. */
 	protected PapyrusLabelLocator papyrusLabelLocator = null;
@@ -384,4 +354,5 @@ public abstract class PapyrusLabelEditPart extends LabelEditPart {
 		}
 
 	}
+
 }

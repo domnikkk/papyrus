@@ -36,6 +36,7 @@ import org.eclipse.papyrus.infra.gmfdiag.common.editpart.IPapyrusEditPart;
 import org.eclipse.papyrus.infra.gmfdiag.common.editpart.PapyrusLabelEditPart;
 import org.eclipse.papyrus.infra.gmfdiag.common.locator.IPapyrusBorderItemLocator;
 import org.eclipse.papyrus.infra.gmfdiag.common.model.NotationUtils;
+import org.eclipse.papyrus.infra.gmfdiag.common.utils.NamedStyleProperties;
 import org.eclipse.papyrus.uml.diagram.common.editparts.RoundedCompartmentEditPart;
 
 /**
@@ -122,19 +123,19 @@ public class ExternalLabelPositionLocator implements IPapyrusBorderItemLocator {
 	@Override
 	public int getPosition() {
 		// Get the forced value(CSS, Notation)
-		String ForcedPosition = NotationUtils.getStringValue(view, "position", "AUTO").toUpperCase();
+		String ForcedPosition = NotationUtils.getStringValue(view, NamedStyleProperties.POSITION, NamedStyleProperties.PositionAsString.AUTO);
 		// if there is a forced position
-		if (!"AUTO".equals(ForcedPosition)) {
-			if ("EAST".equals(ForcedPosition)) {
+		if (!NamedStyleProperties.PositionAsString.AUTO.equals(ForcedPosition)) {
+			if (NamedStyleProperties.PositionAsString.EAST.equals(ForcedPosition)) {
 				position = PositionConstants.EAST;
 			}
-			if ("WEST".equals(ForcedPosition)) {
+			if (NamedStyleProperties.PositionAsString.WEST.equals(ForcedPosition)) {
 				position = PositionConstants.WEST;
 			}
-			if ("NORTH".equals(ForcedPosition)) {
+			if (NamedStyleProperties.PositionAsString.NORTH.equals(ForcedPosition)) {
 				position = PositionConstants.NORTH;
 			}
-			if ("SOUTH".equals(ForcedPosition)) {
+			if (NamedStyleProperties.PositionAsString.SOUTH.equals(ForcedPosition)) {
 				position = PositionConstants.SOUTH;
 			}
 		} else {
@@ -332,7 +333,7 @@ public class ExternalLabelPositionLocator implements IPapyrusBorderItemLocator {
 				req.setLocation(offset);
 				Command command = editPart.getCommand(req);
 				if (command != null && command.canExecute()) {
-					command.setLabel(RequestConstants.REQ_MOVE + ": " + offset.toString());
+					command.setLabel(RequestConstants.REQ_MOVE + ": " + offset.toString()); //$NON-NLS-1$
 					TransactionUtil.getEditingDomain(view).getCommandStack().execute(GEFtoEMFCommandWrapper.wrap(command));
 				}
 			}
