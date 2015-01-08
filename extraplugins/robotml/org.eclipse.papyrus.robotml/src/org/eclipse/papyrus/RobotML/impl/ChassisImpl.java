@@ -19,7 +19,6 @@ public class ChassisImpl extends SupportingStructureImpl implements Chassis {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected ChassisImpl() {
@@ -29,7 +28,6 @@ public class ChassisImpl extends SupportingStructureImpl implements Chassis {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override

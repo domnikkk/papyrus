@@ -22,8 +22,8 @@ import org.eclipse.uml2.uml.Node;
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.eclipse.papyrus.RobotML.impl.PlatformImpl#getBase_Node <em>Base Node</em>}</li>
- * <li>{@link org.eclipse.papyrus.RobotML.impl.PlatformImpl#getLibrary <em>Library</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotML.impl.PlatformImpl#getBase_Node <em>Base Node</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotML.impl.PlatformImpl#getLibrary <em>Library</em>}</li>
  * </ul>
  * </p>
  *
@@ -34,7 +34,6 @@ public class PlatformImpl extends SystemImpl implements Platform {
 	 * The cached value of the '{@link #getBase_Node() <em>Base Node</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getBase_Node()
 	 * @generated
 	 * @ordered
@@ -45,7 +44,6 @@ public class PlatformImpl extends SystemImpl implements Platform {
 	 * The cached value of the '{@link #getLibrary() <em>Library</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getLibrary()
 	 * @generated
 	 * @ordered
@@ -55,7 +53,6 @@ public class PlatformImpl extends SystemImpl implements Platform {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected PlatformImpl() {
@@ -65,7 +62,6 @@ public class PlatformImpl extends SystemImpl implements Platform {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -76,17 +72,15 @@ public class PlatformImpl extends SystemImpl implements Platform {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public Node getBase_Node() {
 		if (base_Node != null && base_Node.eIsProxy()) {
-			InternalEObject oldBase_Node = (InternalEObject) base_Node;
-			base_Node = (Node) eResolveProxy(oldBase_Node);
+			InternalEObject oldBase_Node = (InternalEObject)base_Node;
+			base_Node = (Node)eResolveProxy(oldBase_Node);
 			if (base_Node != oldBase_Node) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RobotMLPackage.PLATFORM__BASE_NODE, oldBase_Node, base_Node));
-				}
 			}
 		}
 		return base_Node;
@@ -95,7 +89,6 @@ public class PlatformImpl extends SystemImpl implements Platform {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public Node basicGetBase_Node() {
@@ -105,21 +98,18 @@ public class PlatformImpl extends SystemImpl implements Platform {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public void setBase_Node(Node newBase_Node) {
 		Node oldBase_Node = base_Node;
 		base_Node = newBase_Node;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RobotMLPackage.PLATFORM__BASE_NODE, oldBase_Node, base_Node));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EList<ExternalLibrary> getLibrary() {
@@ -132,19 +122,16 @@ public class PlatformImpl extends SystemImpl implements Platform {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case RobotMLPackage.PLATFORM__BASE_NODE:
-			if (resolve) {
-				return getBase_Node();
-			}
-			return basicGetBase_Node();
-		case RobotMLPackage.PLATFORM__LIBRARY:
-			return getLibrary();
+			case RobotMLPackage.PLATFORM__BASE_NODE:
+				if (resolve) return getBase_Node();
+				return basicGetBase_Node();
+			case RobotMLPackage.PLATFORM__LIBRARY:
+				return getLibrary();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -152,20 +139,19 @@ public class PlatformImpl extends SystemImpl implements Platform {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case RobotMLPackage.PLATFORM__BASE_NODE:
-			setBase_Node((Node) newValue);
-			return;
-		case RobotMLPackage.PLATFORM__LIBRARY:
-			getLibrary().clear();
-			getLibrary().addAll((Collection<? extends ExternalLibrary>) newValue);
-			return;
+			case RobotMLPackage.PLATFORM__BASE_NODE:
+				setBase_Node((Node)newValue);
+				return;
+			case RobotMLPackage.PLATFORM__LIBRARY:
+				getLibrary().clear();
+				getLibrary().addAll((Collection<? extends ExternalLibrary>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -173,18 +159,17 @@ public class PlatformImpl extends SystemImpl implements Platform {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case RobotMLPackage.PLATFORM__BASE_NODE:
-			setBase_Node((Node) null);
-			return;
-		case RobotMLPackage.PLATFORM__LIBRARY:
-			getLibrary().clear();
-			return;
+			case RobotMLPackage.PLATFORM__BASE_NODE:
+				setBase_Node((Node)null);
+				return;
+			case RobotMLPackage.PLATFORM__LIBRARY:
+				getLibrary().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -192,16 +177,15 @@ public class PlatformImpl extends SystemImpl implements Platform {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case RobotMLPackage.PLATFORM__BASE_NODE:
-			return base_Node != null;
-		case RobotMLPackage.PLATFORM__LIBRARY:
-			return library != null && !library.isEmpty();
+			case RobotMLPackage.PLATFORM__BASE_NODE:
+				return base_Node != null;
+			case RobotMLPackage.PLATFORM__LIBRARY:
+				return library != null && !library.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

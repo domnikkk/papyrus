@@ -18,7 +18,7 @@ import org.eclipse.papyrus.RobotML.Surface;
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.eclipse.papyrus.RobotML.impl.AgentImpl#getMovesOver <em>Moves Over</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotML.impl.AgentImpl#getMovesOver <em>Moves Over</em>}</li>
  * </ul>
  * </p>
  *
@@ -29,7 +29,6 @@ public class AgentImpl extends PhysicalObjectImpl implements Agent {
 	 * The cached value of the '{@link #getMovesOver() <em>Moves Over</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getMovesOver()
 	 * @generated
 	 * @ordered
@@ -39,7 +38,6 @@ public class AgentImpl extends PhysicalObjectImpl implements Agent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected AgentImpl() {
@@ -49,7 +47,6 @@ public class AgentImpl extends PhysicalObjectImpl implements Agent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -60,7 +57,6 @@ public class AgentImpl extends PhysicalObjectImpl implements Agent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EList<Surface> getMovesOver() {
@@ -73,14 +69,13 @@ public class AgentImpl extends PhysicalObjectImpl implements Agent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case RobotMLPackage.AGENT__MOVES_OVER:
-			return getMovesOver();
+			case RobotMLPackage.AGENT__MOVES_OVER:
+				return getMovesOver();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -88,17 +83,16 @@ public class AgentImpl extends PhysicalObjectImpl implements Agent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case RobotMLPackage.AGENT__MOVES_OVER:
-			getMovesOver().clear();
-			getMovesOver().addAll((Collection<? extends Surface>) newValue);
-			return;
+			case RobotMLPackage.AGENT__MOVES_OVER:
+				getMovesOver().clear();
+				getMovesOver().addAll((Collection<? extends Surface>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -106,15 +100,14 @@ public class AgentImpl extends PhysicalObjectImpl implements Agent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case RobotMLPackage.AGENT__MOVES_OVER:
-			getMovesOver().clear();
-			return;
+			case RobotMLPackage.AGENT__MOVES_OVER:
+				getMovesOver().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -122,14 +115,13 @@ public class AgentImpl extends PhysicalObjectImpl implements Agent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case RobotMLPackage.AGENT__MOVES_OVER:
-			return movesOver != null && !movesOver.isEmpty();
+			case RobotMLPackage.AGENT__MOVES_OVER:
+				return movesOver != null && !movesOver.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

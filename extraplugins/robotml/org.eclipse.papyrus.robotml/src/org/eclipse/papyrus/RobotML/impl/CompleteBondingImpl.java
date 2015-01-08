@@ -19,7 +19,6 @@ public class CompleteBondingImpl extends JointImpl implements CompleteBonding {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected CompleteBondingImpl() {
@@ -29,7 +28,6 @@ public class CompleteBondingImpl extends JointImpl implements CompleteBonding {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override

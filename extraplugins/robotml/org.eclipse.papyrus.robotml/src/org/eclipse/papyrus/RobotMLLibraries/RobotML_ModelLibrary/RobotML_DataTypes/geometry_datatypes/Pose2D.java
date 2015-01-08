@@ -12,9 +12,9 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.Pose2D#getX <em>X</em>}</li>
- * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.Pose2D#getY <em>Y</em>}</li>
- * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.Pose2D#getTheta <em>Theta</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.Pose2D#getX <em>X</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.Pose2D#getY <em>Y</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.Pose2D#getTheta <em>Theta</em>}</li>
  * </ul>
  * </p>
  *
@@ -30,7 +30,6 @@ public interface Pose2D extends EObject {
 	 * If the meaning of the '<em>X</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>X</em>' attribute.
 	 * @see #setX(double)
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.Geometry_datatypesPackage#getPose2D_X()
@@ -43,9 +42,7 @@ public interface Pose2D extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.Pose2D#getX <em>X</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>X</em>' attribute.
+	 * @param value the new value of the '<em>X</em>' attribute.
 	 * @see #getX()
 	 * @generated
 	 */
@@ -58,7 +55,6 @@ public interface Pose2D extends EObject {
 	 * If the meaning of the '<em>Y</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Y</em>' attribute.
 	 * @see #setY(double)
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.Geometry_datatypesPackage#getPose2D_Y()
@@ -71,9 +67,7 @@ public interface Pose2D extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.Pose2D#getY <em>Y</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Y</em>' attribute.
+	 * @param value the new value of the '<em>Y</em>' attribute.
 	 * @see #getY()
 	 * @generated
 	 */
@@ -86,7 +80,6 @@ public interface Pose2D extends EObject {
 	 * If the meaning of the '<em>Theta</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Theta</em>' attribute.
 	 * @see #setTheta(double)
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.Geometry_datatypesPackage#getPose2D_Theta()
@@ -99,9 +92,7 @@ public interface Pose2D extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.Pose2D#getTheta <em>Theta</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Theta</em>' attribute.
+	 * @param value the new value of the '<em>Theta</em>' attribute.
 	 * @see #getTheta()
 	 * @generated
 	 */

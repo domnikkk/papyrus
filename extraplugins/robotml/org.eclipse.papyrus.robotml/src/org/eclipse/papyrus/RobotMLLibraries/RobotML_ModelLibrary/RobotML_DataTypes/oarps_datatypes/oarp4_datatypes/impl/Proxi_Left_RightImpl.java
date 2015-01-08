@@ -19,8 +19,8 @@ import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTyp
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp4_datatypes.impl.Proxi_Left_RightImpl#getProxi_left <em>Proxi left</em>}</li>
- * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp4_datatypes.impl.Proxi_Left_RightImpl#getProxi_right <em>Proxi right</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp4_datatypes.impl.Proxi_Left_RightImpl#getProxi_left <em>Proxi left</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp4_datatypes.impl.Proxi_Left_RightImpl#getProxi_right <em>Proxi right</em>}</li>
  * </ul>
  * </p>
  *
@@ -31,7 +31,6 @@ public class Proxi_Left_RightImpl extends MinimalEObjectImpl.Container implement
 	 * The cached value of the '{@link #getProxi_left() <em>Proxi left</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getProxi_left()
 	 * @generated
 	 * @ordered
@@ -42,7 +41,6 @@ public class Proxi_Left_RightImpl extends MinimalEObjectImpl.Container implement
 	 * The cached value of the '{@link #getProxi_right() <em>Proxi right</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getProxi_right()
 	 * @generated
 	 * @ordered
@@ -52,7 +50,6 @@ public class Proxi_Left_RightImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected Proxi_Left_RightImpl() {
@@ -62,7 +59,6 @@ public class Proxi_Left_RightImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -73,7 +69,6 @@ public class Proxi_Left_RightImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public Distance getProxi_left() {
@@ -83,7 +78,6 @@ public class Proxi_Left_RightImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetProxi_left(Distance newProxi_left, NotificationChain msgs) {
@@ -91,11 +85,7 @@ public class Proxi_Left_RightImpl extends MinimalEObjectImpl.Container implement
 		proxi_left = newProxi_left;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Oarp4_datatypesPackage.PROXI_LEFT_RIGHT__PROXI_LEFT, oldProxi_left, newProxi_left);
-			if (msgs == null) {
-				msgs = notification;
-			} else {
-				msgs.add(notification);
-			}
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -103,32 +93,25 @@ public class Proxi_Left_RightImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public void setProxi_left(Distance newProxi_left) {
 		if (newProxi_left != proxi_left) {
 			NotificationChain msgs = null;
-			if (proxi_left != null) {
-				msgs = ((InternalEObject) proxi_left).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Oarp4_datatypesPackage.PROXI_LEFT_RIGHT__PROXI_LEFT, null, msgs);
-			}
-			if (newProxi_left != null) {
-				msgs = ((InternalEObject) newProxi_left).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Oarp4_datatypesPackage.PROXI_LEFT_RIGHT__PROXI_LEFT, null, msgs);
-			}
+			if (proxi_left != null)
+				msgs = ((InternalEObject)proxi_left).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Oarp4_datatypesPackage.PROXI_LEFT_RIGHT__PROXI_LEFT, null, msgs);
+			if (newProxi_left != null)
+				msgs = ((InternalEObject)newProxi_left).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Oarp4_datatypesPackage.PROXI_LEFT_RIGHT__PROXI_LEFT, null, msgs);
 			msgs = basicSetProxi_left(newProxi_left, msgs);
-			if (msgs != null) {
-				msgs.dispatch();
-			}
+			if (msgs != null) msgs.dispatch();
 		}
-		else if (eNotificationRequired()) {
+		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Oarp4_datatypesPackage.PROXI_LEFT_RIGHT__PROXI_LEFT, newProxi_left, newProxi_left));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public Distance getProxi_right() {
@@ -138,7 +121,6 @@ public class Proxi_Left_RightImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetProxi_right(Distance newProxi_right, NotificationChain msgs) {
@@ -146,11 +128,7 @@ public class Proxi_Left_RightImpl extends MinimalEObjectImpl.Container implement
 		proxi_right = newProxi_right;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Oarp4_datatypesPackage.PROXI_LEFT_RIGHT__PROXI_RIGHT, oldProxi_right, newProxi_right);
-			if (msgs == null) {
-				msgs = notification;
-			} else {
-				msgs.add(notification);
-			}
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -158,41 +136,34 @@ public class Proxi_Left_RightImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public void setProxi_right(Distance newProxi_right) {
 		if (newProxi_right != proxi_right) {
 			NotificationChain msgs = null;
-			if (proxi_right != null) {
-				msgs = ((InternalEObject) proxi_right).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Oarp4_datatypesPackage.PROXI_LEFT_RIGHT__PROXI_RIGHT, null, msgs);
-			}
-			if (newProxi_right != null) {
-				msgs = ((InternalEObject) newProxi_right).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Oarp4_datatypesPackage.PROXI_LEFT_RIGHT__PROXI_RIGHT, null, msgs);
-			}
+			if (proxi_right != null)
+				msgs = ((InternalEObject)proxi_right).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Oarp4_datatypesPackage.PROXI_LEFT_RIGHT__PROXI_RIGHT, null, msgs);
+			if (newProxi_right != null)
+				msgs = ((InternalEObject)newProxi_right).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Oarp4_datatypesPackage.PROXI_LEFT_RIGHT__PROXI_RIGHT, null, msgs);
 			msgs = basicSetProxi_right(newProxi_right, msgs);
-			if (msgs != null) {
-				msgs.dispatch();
-			}
+			if (msgs != null) msgs.dispatch();
 		}
-		else if (eNotificationRequired()) {
+		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Oarp4_datatypesPackage.PROXI_LEFT_RIGHT__PROXI_RIGHT, newProxi_right, newProxi_right));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case Oarp4_datatypesPackage.PROXI_LEFT_RIGHT__PROXI_LEFT:
-			return basicSetProxi_left(null, msgs);
-		case Oarp4_datatypesPackage.PROXI_LEFT_RIGHT__PROXI_RIGHT:
-			return basicSetProxi_right(null, msgs);
+			case Oarp4_datatypesPackage.PROXI_LEFT_RIGHT__PROXI_LEFT:
+				return basicSetProxi_left(null, msgs);
+			case Oarp4_datatypesPackage.PROXI_LEFT_RIGHT__PROXI_RIGHT:
+				return basicSetProxi_right(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -200,16 +171,15 @@ public class Proxi_Left_RightImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case Oarp4_datatypesPackage.PROXI_LEFT_RIGHT__PROXI_LEFT:
-			return getProxi_left();
-		case Oarp4_datatypesPackage.PROXI_LEFT_RIGHT__PROXI_RIGHT:
-			return getProxi_right();
+			case Oarp4_datatypesPackage.PROXI_LEFT_RIGHT__PROXI_LEFT:
+				return getProxi_left();
+			case Oarp4_datatypesPackage.PROXI_LEFT_RIGHT__PROXI_RIGHT:
+				return getProxi_right();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -217,18 +187,17 @@ public class Proxi_Left_RightImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case Oarp4_datatypesPackage.PROXI_LEFT_RIGHT__PROXI_LEFT:
-			setProxi_left((Distance) newValue);
-			return;
-		case Oarp4_datatypesPackage.PROXI_LEFT_RIGHT__PROXI_RIGHT:
-			setProxi_right((Distance) newValue);
-			return;
+			case Oarp4_datatypesPackage.PROXI_LEFT_RIGHT__PROXI_LEFT:
+				setProxi_left((Distance)newValue);
+				return;
+			case Oarp4_datatypesPackage.PROXI_LEFT_RIGHT__PROXI_RIGHT:
+				setProxi_right((Distance)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -236,18 +205,17 @@ public class Proxi_Left_RightImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case Oarp4_datatypesPackage.PROXI_LEFT_RIGHT__PROXI_LEFT:
-			setProxi_left((Distance) null);
-			return;
-		case Oarp4_datatypesPackage.PROXI_LEFT_RIGHT__PROXI_RIGHT:
-			setProxi_right((Distance) null);
-			return;
+			case Oarp4_datatypesPackage.PROXI_LEFT_RIGHT__PROXI_LEFT:
+				setProxi_left((Distance)null);
+				return;
+			case Oarp4_datatypesPackage.PROXI_LEFT_RIGHT__PROXI_RIGHT:
+				setProxi_right((Distance)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -255,16 +223,15 @@ public class Proxi_Left_RightImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case Oarp4_datatypesPackage.PROXI_LEFT_RIGHT__PROXI_LEFT:
-			return proxi_left != null;
-		case Oarp4_datatypesPackage.PROXI_LEFT_RIGHT__PROXI_RIGHT:
-			return proxi_right != null;
+			case Oarp4_datatypesPackage.PROXI_LEFT_RIGHT__PROXI_LEFT:
+				return proxi_left != null;
+			case Oarp4_datatypesPackage.PROXI_LEFT_RIGHT__PROXI_RIGHT:
+				return proxi_right != null;
 		}
 		return super.eIsSet(featureID);
 	}

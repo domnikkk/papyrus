@@ -243,9 +243,17 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="angle_max" ordered="false"
         lowerBound="1" eType="ecore:EDataType RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/std_datatypes/Float32"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="time_increment" ordered="false"
-        lowerBound="1" eType="ecore:EDataType RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/std_datatypes/Float32"/>
+        lowerBound="1" eType="ecore:EDataType RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/std_datatypes/Float32">
+      <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <details key="originalName" value="time_increment "/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="scan_time" ordered="false"
-        lowerBound="1" eType="ecore:EDataType RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/std_datatypes/Float32"/>
+        lowerBound="1" eType="ecore:EDataType RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/std_datatypes/Float32">
+      <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <details key="originalName" value="scan_time  "/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="range_min" ordered="false"
         lowerBound="1" eType="ecore:EDataType RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/std_datatypes/Float32"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="range_max" ordered="false"
@@ -322,7 +330,11 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="gravity" ordered="false"
         eType="ecore:EDataType RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/std_datatypes/Float32"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="_viewport_shade" ordered="false"
-        eType="#//Shade" defaultValueLiteral="WIREFRAME"/>
+        eType="#//Shade" defaultValueLiteral="WIREFRAME">
+      <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <details key="originalName" value=" viewport_shade"/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Shade">
     <eLiterals name="WIREFRAME"/>
@@ -351,7 +363,7 @@
         lowerBound="1" eType="ecore:EClass ../../org.eclipse.uml2.uml/model/UML.ecore#//InstanceSpecification"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Gyroscope" eSuperTypes="#//SensorSystem"/>
-  <eClassifiers xsi:type="ecore:EClass" name="OnProperty">
+  <eClassifiers xsi:type="ecore:EClass" name="OnVariable">
     <eStructuralFeatures xsi:type="ecore:EReference" name="property" ordered="false"
         lowerBound="1" eType="ecore:EClass ../../org.eclipse.uml2.uml/model/UML.ecore#//Property"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="base_Parameter" ordered="false"
@@ -395,8 +407,16 @@
     </eAnnotations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ManMachineInterfaceSystem" eSuperTypes="#//CyberPhysicalSystem"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ClosedLoopControlSystem" eSuperTypes="#//CyberPhysicalSystem"/>
-  <eClassifiers xsi:type="ecore:EClass" name="OpenLoopControlSystem" eSuperTypes="#//CyberPhysicalSystem"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ClosedLoopControlSystem" eSuperTypes="#//CyberPhysicalSystem">
+    <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
+      <details key="originalName" value="Closed-LoopControlSystem"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OpenLoopControlSystem" eSuperTypes="#//CyberPhysicalSystem">
+    <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
+      <details key="originalName" value="Open-LoopControlSystem"/>
+    </eAnnotations>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RoboticHead" eSuperTypes="#//ManMachineInterfaceSystem"/>
   <eClassifiers xsi:type="ecore:EClass" name="NavigationCommandSystem" eSuperTypes="#//ManMachineInterfaceSystem"/>
   <eClassifiers xsi:type="ecore:EClass" name="JoysticNavigationSystem" eSuperTypes="#//NavigationCommandSystem"/>

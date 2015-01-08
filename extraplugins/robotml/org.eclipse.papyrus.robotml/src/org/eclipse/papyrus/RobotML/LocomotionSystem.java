@@ -10,8 +10,7 @@ package org.eclipse.papyrus.RobotML;
  *
  * <!-- begin-model-doc -->
  * Mechanical device associated to its Driver for moving a Mobile Robot.
- * It is operated by a source of energy, usually in the form of an electric current, hydraulic fluid pressure or pneumatic pressure, and converts that energy into some kind of motion (meaning position of gravity centre of the Robot that is using it has been
- * changed significatively through time).
+ * It is operated by a source of energy, usually in the form of an electric current, hydraulic fluid pressure or pneumatic pressure, and converts that energy into some kind of motion (meaning position of gravity centre of the Robot that is using it has been changed significatively through time).
  * <!-- end-model-doc -->
  *
  *

@@ -19,7 +19,6 @@ public class JoysticNavigationSystemImpl extends NavigationCommandSystemImpl imp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected JoysticNavigationSystemImpl() {
@@ -29,7 +28,6 @@ public class JoysticNavigationSystemImpl extends NavigationCommandSystemImpl imp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override

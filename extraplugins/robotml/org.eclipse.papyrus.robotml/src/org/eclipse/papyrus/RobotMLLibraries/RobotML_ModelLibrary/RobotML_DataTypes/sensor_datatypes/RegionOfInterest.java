@@ -12,11 +12,11 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.RegionOfInterest#getX_offset <em>Xoffset</em>}</li>
- * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.RegionOfInterest#getY_offset <em>Yoffset</em>}</li>
- * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.RegionOfInterest#getHeight <em>Height</em>}</li>
- * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.RegionOfInterest#isDo_rectify <em>Do rectify</em>}</li>
- * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.RegionOfInterest#getWidth <em>Width</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.RegionOfInterest#getX_offset <em>Xoffset</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.RegionOfInterest#getY_offset <em>Yoffset</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.RegionOfInterest#getHeight <em>Height</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.RegionOfInterest#isDo_rectify <em>Do rectify</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.RegionOfInterest#getWidth <em>Width</em>}</li>
  * </ul>
  * </p>
  *
@@ -32,7 +32,6 @@ public interface RegionOfInterest extends EObject {
 	 * If the meaning of the '<em>Xoffset</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Xoffset</em>' attribute.
 	 * @see #setX_offset(long)
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.Sensor_datatypesPackage#getRegionOfInterest_X_offset()
@@ -45,9 +44,7 @@ public interface RegionOfInterest extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.RegionOfInterest#getX_offset <em>Xoffset</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Xoffset</em>' attribute.
+	 * @param value the new value of the '<em>Xoffset</em>' attribute.
 	 * @see #getX_offset()
 	 * @generated
 	 */
@@ -60,7 +57,6 @@ public interface RegionOfInterest extends EObject {
 	 * If the meaning of the '<em>Yoffset</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Yoffset</em>' attribute.
 	 * @see #setY_offset(long)
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.Sensor_datatypesPackage#getRegionOfInterest_Y_offset()
@@ -73,9 +69,7 @@ public interface RegionOfInterest extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.RegionOfInterest#getY_offset <em>Yoffset</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Yoffset</em>' attribute.
+	 * @param value the new value of the '<em>Yoffset</em>' attribute.
 	 * @see #getY_offset()
 	 * @generated
 	 */
@@ -88,7 +82,6 @@ public interface RegionOfInterest extends EObject {
 	 * If the meaning of the '<em>Height</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Height</em>' attribute.
 	 * @see #setHeight(long)
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.Sensor_datatypesPackage#getRegionOfInterest_Height()
@@ -101,9 +94,7 @@ public interface RegionOfInterest extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.RegionOfInterest#getHeight <em>Height</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Height</em>' attribute.
+	 * @param value the new value of the '<em>Height</em>' attribute.
 	 * @see #getHeight()
 	 * @generated
 	 */
@@ -116,7 +107,6 @@ public interface RegionOfInterest extends EObject {
 	 * If the meaning of the '<em>Do rectify</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Do rectify</em>' attribute.
 	 * @see #setDo_rectify(boolean)
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.Sensor_datatypesPackage#getRegionOfInterest_Do_rectify()
@@ -129,9 +119,7 @@ public interface RegionOfInterest extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.RegionOfInterest#isDo_rectify <em>Do rectify</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Do rectify</em>' attribute.
+	 * @param value the new value of the '<em>Do rectify</em>' attribute.
 	 * @see #isDo_rectify()
 	 * @generated
 	 */
@@ -144,7 +132,6 @@ public interface RegionOfInterest extends EObject {
 	 * If the meaning of the '<em>Width</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Width</em>' attribute.
 	 * @see #setWidth(long)
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.Sensor_datatypesPackage#getRegionOfInterest_Width()
@@ -157,9 +144,7 @@ public interface RegionOfInterest extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.RegionOfInterest#getWidth <em>Width</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Width</em>' attribute.
+	 * @param value the new value of the '<em>Width</em>' attribute.
 	 * @see #getWidth()
 	 * @generated
 	 */

@@ -19,7 +19,6 @@ public class ManipulatorImpl extends RobotImpl implements Manipulator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected ManipulatorImpl() {
@@ -29,7 +28,6 @@ public class ManipulatorImpl extends RobotImpl implements Manipulator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override

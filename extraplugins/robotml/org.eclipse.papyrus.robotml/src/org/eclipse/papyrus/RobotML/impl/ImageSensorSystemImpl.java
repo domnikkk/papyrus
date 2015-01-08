@@ -19,7 +19,6 @@ public class ImageSensorSystemImpl extends SensorSystemImpl implements ImageSens
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected ImageSensorSystemImpl() {
@@ -29,7 +28,6 @@ public class ImageSensorSystemImpl extends SensorSystemImpl implements ImageSens
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override

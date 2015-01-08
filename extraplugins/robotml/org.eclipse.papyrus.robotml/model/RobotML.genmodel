@@ -6,7 +6,7 @@
     usedGenPackages="../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../org.eclipse.uml2.types/model/Types.genmodel#//types ../../org.eclipse.uml2.uml/model/UML.genmodel#//uml"
     operationReflection="true" importOrganizing="true">
   <foreignModel>RobotML.ecore</foreignModel>
-  <genPackages prefix="RobotML" basePackage="org.eclipse.papyrus" resource="XML" disposableProviderFactory="true"
+  <genPackages prefix="RobotML" basePackage="org.eclipse.papyrus" disposableProviderFactory="true"
       ecorePackage="RobotML.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="RobotML.ecore#//SynchronizationKind">
       <genEnumLiterals ecoreEnumLiteral="RobotML.ecore#//SynchronizationKind/SYNCH"/>
@@ -231,9 +231,9 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RobotML.ecore#//DeploymentPlan/mainInstance"/>
     </genClasses>
     <genClasses ecoreClass="RobotML.ecore#//Gyroscope"/>
-    <genClasses ecoreClass="RobotML.ecore#//OnProperty">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RobotML.ecore#//OnProperty/property"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RobotML.ecore#//OnProperty/base_Parameter"/>
+    <genClasses ecoreClass="RobotML.ecore#//OnVariable">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RobotML.ecore#//OnVariable/property"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RobotML.ecore#//OnVariable/base_Parameter"/>
     </genClasses>
     <genClasses ecoreClass="RobotML.ecore#//Chassis"/>
     <genClasses ecoreClass="RobotML.ecore#//SupportingStructure"/>

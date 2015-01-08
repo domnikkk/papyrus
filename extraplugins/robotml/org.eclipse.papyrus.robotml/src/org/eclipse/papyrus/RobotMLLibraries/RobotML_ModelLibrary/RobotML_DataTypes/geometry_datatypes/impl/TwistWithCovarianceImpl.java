@@ -23,8 +23,8 @@ import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTyp
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.impl.TwistWithCovarianceImpl#getTwist <em>Twist</em>}</li>
- * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.impl.TwistWithCovarianceImpl#getCovariance <em>Covariance</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.impl.TwistWithCovarianceImpl#getTwist <em>Twist</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.impl.TwistWithCovarianceImpl#getCovariance <em>Covariance</em>}</li>
  * </ul>
  * </p>
  *
@@ -35,7 +35,6 @@ public class TwistWithCovarianceImpl extends MinimalEObjectImpl.Container implem
 	 * The cached value of the '{@link #getTwist() <em>Twist</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getTwist()
 	 * @generated
 	 * @ordered
@@ -46,7 +45,6 @@ public class TwistWithCovarianceImpl extends MinimalEObjectImpl.Container implem
 	 * The cached value of the '{@link #getCovariance() <em>Covariance</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getCovariance()
 	 * @generated
 	 * @ordered
@@ -56,7 +54,6 @@ public class TwistWithCovarianceImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected TwistWithCovarianceImpl() {
@@ -66,7 +63,6 @@ public class TwistWithCovarianceImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -77,7 +73,6 @@ public class TwistWithCovarianceImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public Twist getTwist() {
@@ -87,7 +82,6 @@ public class TwistWithCovarianceImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetTwist(Twist newTwist, NotificationChain msgs) {
@@ -95,11 +89,7 @@ public class TwistWithCovarianceImpl extends MinimalEObjectImpl.Container implem
 		twist = newTwist;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Geometry_datatypesPackage.TWIST_WITH_COVARIANCE__TWIST, oldTwist, newTwist);
-			if (msgs == null) {
-				msgs = notification;
-			} else {
-				msgs.add(notification);
-			}
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -107,32 +97,25 @@ public class TwistWithCovarianceImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public void setTwist(Twist newTwist) {
 		if (newTwist != twist) {
 			NotificationChain msgs = null;
-			if (twist != null) {
-				msgs = ((InternalEObject) twist).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Geometry_datatypesPackage.TWIST_WITH_COVARIANCE__TWIST, null, msgs);
-			}
-			if (newTwist != null) {
-				msgs = ((InternalEObject) newTwist).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Geometry_datatypesPackage.TWIST_WITH_COVARIANCE__TWIST, null, msgs);
-			}
+			if (twist != null)
+				msgs = ((InternalEObject)twist).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Geometry_datatypesPackage.TWIST_WITH_COVARIANCE__TWIST, null, msgs);
+			if (newTwist != null)
+				msgs = ((InternalEObject)newTwist).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Geometry_datatypesPackage.TWIST_WITH_COVARIANCE__TWIST, null, msgs);
 			msgs = basicSetTwist(newTwist, msgs);
-			if (msgs != null) {
-				msgs.dispatch();
-			}
+			if (msgs != null) msgs.dispatch();
 		}
-		else if (eNotificationRequired()) {
+		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Geometry_datatypesPackage.TWIST_WITH_COVARIANCE__TWIST, newTwist, newTwist));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EList<Double> getCovariance() {
@@ -145,14 +128,13 @@ public class TwistWithCovarianceImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case Geometry_datatypesPackage.TWIST_WITH_COVARIANCE__TWIST:
-			return basicSetTwist(null, msgs);
+			case Geometry_datatypesPackage.TWIST_WITH_COVARIANCE__TWIST:
+				return basicSetTwist(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -160,16 +142,15 @@ public class TwistWithCovarianceImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case Geometry_datatypesPackage.TWIST_WITH_COVARIANCE__TWIST:
-			return getTwist();
-		case Geometry_datatypesPackage.TWIST_WITH_COVARIANCE__COVARIANCE:
-			return getCovariance();
+			case Geometry_datatypesPackage.TWIST_WITH_COVARIANCE__TWIST:
+				return getTwist();
+			case Geometry_datatypesPackage.TWIST_WITH_COVARIANCE__COVARIANCE:
+				return getCovariance();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -177,20 +158,19 @@ public class TwistWithCovarianceImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case Geometry_datatypesPackage.TWIST_WITH_COVARIANCE__TWIST:
-			setTwist((Twist) newValue);
-			return;
-		case Geometry_datatypesPackage.TWIST_WITH_COVARIANCE__COVARIANCE:
-			getCovariance().clear();
-			getCovariance().addAll((Collection<? extends Double>) newValue);
-			return;
+			case Geometry_datatypesPackage.TWIST_WITH_COVARIANCE__TWIST:
+				setTwist((Twist)newValue);
+				return;
+			case Geometry_datatypesPackage.TWIST_WITH_COVARIANCE__COVARIANCE:
+				getCovariance().clear();
+				getCovariance().addAll((Collection<? extends Double>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -198,18 +178,17 @@ public class TwistWithCovarianceImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case Geometry_datatypesPackage.TWIST_WITH_COVARIANCE__TWIST:
-			setTwist((Twist) null);
-			return;
-		case Geometry_datatypesPackage.TWIST_WITH_COVARIANCE__COVARIANCE:
-			getCovariance().clear();
-			return;
+			case Geometry_datatypesPackage.TWIST_WITH_COVARIANCE__TWIST:
+				setTwist((Twist)null);
+				return;
+			case Geometry_datatypesPackage.TWIST_WITH_COVARIANCE__COVARIANCE:
+				getCovariance().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -217,16 +196,15 @@ public class TwistWithCovarianceImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case Geometry_datatypesPackage.TWIST_WITH_COVARIANCE__TWIST:
-			return twist != null;
-		case Geometry_datatypesPackage.TWIST_WITH_COVARIANCE__COVARIANCE:
-			return covariance != null && !covariance.isEmpty();
+			case Geometry_datatypesPackage.TWIST_WITH_COVARIANCE__TWIST:
+				return twist != null;
+			case Geometry_datatypesPackage.TWIST_WITH_COVARIANCE__COVARIANCE:
+				return covariance != null && !covariance.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -234,14 +212,11 @@ public class TwistWithCovarianceImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
-			return super.toString();
-		}
+		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (covariance: ");

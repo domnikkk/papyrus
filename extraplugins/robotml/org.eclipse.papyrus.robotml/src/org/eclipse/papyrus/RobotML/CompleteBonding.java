@@ -10,8 +10,8 @@ package org.eclipse.papyrus.RobotML;
  *
  * <!-- begin-model-doc -->
  * This relation specifies that
- * two PhysicalObject are so tightly
- * linked that their frames are statically linked
+ *  two PhysicalObject are so tightly
+ *  linked that their frames are statically linked
  * <!-- end-model-doc -->
  *
  *

@@ -23,9 +23,9 @@ import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTyp
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.CompressedImageImpl#getHeader <em>Header</em>}</li>
- * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.CompressedImageImpl#getFormat <em>Format</em>}</li>
- * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.CompressedImageImpl#getData <em>Data</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.CompressedImageImpl#getHeader <em>Header</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.CompressedImageImpl#getFormat <em>Format</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.CompressedImageImpl#getData <em>Data</em>}</li>
  * </ul>
  * </p>
  *
@@ -36,7 +36,6 @@ public class CompressedImageImpl extends MinimalEObjectImpl.Container implements
 	 * The cached value of the '{@link #getHeader() <em>Header</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getHeader()
 	 * @generated
 	 * @ordered
@@ -47,7 +46,6 @@ public class CompressedImageImpl extends MinimalEObjectImpl.Container implements
 	 * The default value of the '{@link #getFormat() <em>Format</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getFormat()
 	 * @generated
 	 * @ordered
@@ -58,7 +56,6 @@ public class CompressedImageImpl extends MinimalEObjectImpl.Container implements
 	 * The cached value of the '{@link #getFormat() <em>Format</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getFormat()
 	 * @generated
 	 * @ordered
@@ -69,7 +66,6 @@ public class CompressedImageImpl extends MinimalEObjectImpl.Container implements
 	 * The cached value of the '{@link #getData() <em>Data</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getData()
 	 * @generated
 	 * @ordered
@@ -79,7 +75,6 @@ public class CompressedImageImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected CompressedImageImpl() {
@@ -89,7 +84,6 @@ public class CompressedImageImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -100,7 +94,6 @@ public class CompressedImageImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public Header getHeader() {
@@ -110,7 +103,6 @@ public class CompressedImageImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetHeader(Header newHeader, NotificationChain msgs) {
@@ -118,11 +110,7 @@ public class CompressedImageImpl extends MinimalEObjectImpl.Container implements
 		header = newHeader;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Sensor_datatypesPackage.COMPRESSED_IMAGE__HEADER, oldHeader, newHeader);
-			if (msgs == null) {
-				msgs = notification;
-			} else {
-				msgs.add(notification);
-			}
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -130,32 +118,25 @@ public class CompressedImageImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public void setHeader(Header newHeader) {
 		if (newHeader != header) {
 			NotificationChain msgs = null;
-			if (header != null) {
-				msgs = ((InternalEObject) header).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Sensor_datatypesPackage.COMPRESSED_IMAGE__HEADER, null, msgs);
-			}
-			if (newHeader != null) {
-				msgs = ((InternalEObject) newHeader).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Sensor_datatypesPackage.COMPRESSED_IMAGE__HEADER, null, msgs);
-			}
+			if (header != null)
+				msgs = ((InternalEObject)header).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Sensor_datatypesPackage.COMPRESSED_IMAGE__HEADER, null, msgs);
+			if (newHeader != null)
+				msgs = ((InternalEObject)newHeader).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Sensor_datatypesPackage.COMPRESSED_IMAGE__HEADER, null, msgs);
 			msgs = basicSetHeader(newHeader, msgs);
-			if (msgs != null) {
-				msgs.dispatch();
-			}
+			if (msgs != null) msgs.dispatch();
 		}
-		else if (eNotificationRequired()) {
+		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Sensor_datatypesPackage.COMPRESSED_IMAGE__HEADER, newHeader, newHeader));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public String getFormat() {
@@ -165,21 +146,18 @@ public class CompressedImageImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public void setFormat(String newFormat) {
 		String oldFormat = format;
 		format = newFormat;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Sensor_datatypesPackage.COMPRESSED_IMAGE__FORMAT, oldFormat, format));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EList<Character> getData() {
@@ -192,14 +170,13 @@ public class CompressedImageImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case Sensor_datatypesPackage.COMPRESSED_IMAGE__HEADER:
-			return basicSetHeader(null, msgs);
+			case Sensor_datatypesPackage.COMPRESSED_IMAGE__HEADER:
+				return basicSetHeader(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -207,18 +184,17 @@ public class CompressedImageImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case Sensor_datatypesPackage.COMPRESSED_IMAGE__HEADER:
-			return getHeader();
-		case Sensor_datatypesPackage.COMPRESSED_IMAGE__FORMAT:
-			return getFormat();
-		case Sensor_datatypesPackage.COMPRESSED_IMAGE__DATA:
-			return getData();
+			case Sensor_datatypesPackage.COMPRESSED_IMAGE__HEADER:
+				return getHeader();
+			case Sensor_datatypesPackage.COMPRESSED_IMAGE__FORMAT:
+				return getFormat();
+			case Sensor_datatypesPackage.COMPRESSED_IMAGE__DATA:
+				return getData();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -226,23 +202,22 @@ public class CompressedImageImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case Sensor_datatypesPackage.COMPRESSED_IMAGE__HEADER:
-			setHeader((Header) newValue);
-			return;
-		case Sensor_datatypesPackage.COMPRESSED_IMAGE__FORMAT:
-			setFormat((String) newValue);
-			return;
-		case Sensor_datatypesPackage.COMPRESSED_IMAGE__DATA:
-			getData().clear();
-			getData().addAll((Collection<? extends Character>) newValue);
-			return;
+			case Sensor_datatypesPackage.COMPRESSED_IMAGE__HEADER:
+				setHeader((Header)newValue);
+				return;
+			case Sensor_datatypesPackage.COMPRESSED_IMAGE__FORMAT:
+				setFormat((String)newValue);
+				return;
+			case Sensor_datatypesPackage.COMPRESSED_IMAGE__DATA:
+				getData().clear();
+				getData().addAll((Collection<? extends Character>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -250,21 +225,20 @@ public class CompressedImageImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case Sensor_datatypesPackage.COMPRESSED_IMAGE__HEADER:
-			setHeader((Header) null);
-			return;
-		case Sensor_datatypesPackage.COMPRESSED_IMAGE__FORMAT:
-			setFormat(FORMAT_EDEFAULT);
-			return;
-		case Sensor_datatypesPackage.COMPRESSED_IMAGE__DATA:
-			getData().clear();
-			return;
+			case Sensor_datatypesPackage.COMPRESSED_IMAGE__HEADER:
+				setHeader((Header)null);
+				return;
+			case Sensor_datatypesPackage.COMPRESSED_IMAGE__FORMAT:
+				setFormat(FORMAT_EDEFAULT);
+				return;
+			case Sensor_datatypesPackage.COMPRESSED_IMAGE__DATA:
+				getData().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -272,18 +246,17 @@ public class CompressedImageImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case Sensor_datatypesPackage.COMPRESSED_IMAGE__HEADER:
-			return header != null;
-		case Sensor_datatypesPackage.COMPRESSED_IMAGE__FORMAT:
-			return FORMAT_EDEFAULT == null ? format != null : !FORMAT_EDEFAULT.equals(format);
-		case Sensor_datatypesPackage.COMPRESSED_IMAGE__DATA:
-			return data != null && !data.isEmpty();
+			case Sensor_datatypesPackage.COMPRESSED_IMAGE__HEADER:
+				return header != null;
+			case Sensor_datatypesPackage.COMPRESSED_IMAGE__FORMAT:
+				return FORMAT_EDEFAULT == null ? format != null : !FORMAT_EDEFAULT.equals(format);
+			case Sensor_datatypesPackage.COMPRESSED_IMAGE__DATA:
+				return data != null && !data.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -291,14 +264,11 @@ public class CompressedImageImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
-			return super.toString();
-		}
+		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (format: ");

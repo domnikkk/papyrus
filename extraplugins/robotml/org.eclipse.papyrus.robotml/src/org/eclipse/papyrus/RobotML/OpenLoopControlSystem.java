@@ -10,7 +10,7 @@ package org.eclipse.papyrus.RobotML;
  *
  *
  * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getOpenLoopControlSystem()
- * @model
+ * @model annotation="http://www.eclipse.org/uml2/2.0.0/UML originalName='Open-LoopControlSystem'"
  * @generated
  */
 public interface OpenLoopControlSystem extends CyberPhysicalSystem {

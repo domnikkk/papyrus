@@ -12,15 +12,15 @@ import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTyp
  * <p>
  * The following features are supported:
  * <ul>
- * <li>{@link org.eclipse.papyrus.RobotML.CameraSystem#getWidth <em>Width</em>}</li>
- * <li>{@link org.eclipse.papyrus.RobotML.CameraSystem#getHeight <em>Height</em>}</li>
- * <li>{@link org.eclipse.papyrus.RobotML.CameraSystem#getAlpha_u <em>Alpha u</em>}</li>
- * <li>{@link org.eclipse.papyrus.RobotML.CameraSystem#getAlpha_v <em>Alpha v</em>}</li>
- * <li>{@link org.eclipse.papyrus.RobotML.CameraSystem#getU0 <em>U0</em>}</li>
- * <li>{@link org.eclipse.papyrus.RobotML.CameraSystem#getV0 <em>V0</em>}</li>
- * <li>{@link org.eclipse.papyrus.RobotML.CameraSystem#getColor_format <em>Color format</em>}</li>
- * <li>{@link org.eclipse.papyrus.RobotML.CameraSystem#getTranslate <em>Translate</em>}</li>
- * <li>{@link org.eclipse.papyrus.RobotML.CameraSystem#getRotate <em>Rotate</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotML.CameraSystem#getWidth <em>Width</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotML.CameraSystem#getHeight <em>Height</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotML.CameraSystem#getAlpha_u <em>Alpha u</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotML.CameraSystem#getAlpha_v <em>Alpha v</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotML.CameraSystem#getU0 <em>U0</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotML.CameraSystem#getV0 <em>V0</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotML.CameraSystem#getColor_format <em>Color format</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotML.CameraSystem#getTranslate <em>Translate</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotML.CameraSystem#getRotate <em>Rotate</em>}</li>
  * </ul>
  * </p>
  *
@@ -37,7 +37,6 @@ public interface CameraSystem extends ImageSensorSystem {
 	 * If the meaning of the '<em>Width</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Width</em>' attribute.
 	 * @see #setWidth(long)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getCameraSystem_Width()
@@ -50,9 +49,7 @@ public interface CameraSystem extends ImageSensorSystem {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotML.CameraSystem#getWidth <em>Width</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Width</em>' attribute.
+	 * @param value the new value of the '<em>Width</em>' attribute.
 	 * @see #getWidth()
 	 * @generated
 	 */
@@ -65,7 +62,6 @@ public interface CameraSystem extends ImageSensorSystem {
 	 * If the meaning of the '<em>Height</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Height</em>' attribute.
 	 * @see #setHeight(long)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getCameraSystem_Height()
@@ -78,9 +74,7 @@ public interface CameraSystem extends ImageSensorSystem {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotML.CameraSystem#getHeight <em>Height</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Height</em>' attribute.
+	 * @param value the new value of the '<em>Height</em>' attribute.
 	 * @see #getHeight()
 	 * @generated
 	 */
@@ -93,7 +87,6 @@ public interface CameraSystem extends ImageSensorSystem {
 	 * If the meaning of the '<em>Alpha u</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Alpha u</em>' attribute.
 	 * @see #setAlpha_u(float)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getCameraSystem_Alpha_u()
@@ -106,9 +99,7 @@ public interface CameraSystem extends ImageSensorSystem {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotML.CameraSystem#getAlpha_u <em>Alpha u</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Alpha u</em>' attribute.
+	 * @param value the new value of the '<em>Alpha u</em>' attribute.
 	 * @see #getAlpha_u()
 	 * @generated
 	 */
@@ -121,7 +112,6 @@ public interface CameraSystem extends ImageSensorSystem {
 	 * If the meaning of the '<em>Alpha v</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Alpha v</em>' attribute.
 	 * @see #setAlpha_v(float)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getCameraSystem_Alpha_v()
@@ -134,9 +124,7 @@ public interface CameraSystem extends ImageSensorSystem {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotML.CameraSystem#getAlpha_v <em>Alpha v</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Alpha v</em>' attribute.
+	 * @param value the new value of the '<em>Alpha v</em>' attribute.
 	 * @see #getAlpha_v()
 	 * @generated
 	 */
@@ -149,7 +137,6 @@ public interface CameraSystem extends ImageSensorSystem {
 	 * If the meaning of the '<em>U0</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>U0</em>' attribute.
 	 * @see #setU0(float)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getCameraSystem_U0()
@@ -162,9 +149,7 @@ public interface CameraSystem extends ImageSensorSystem {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotML.CameraSystem#getU0 <em>U0</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>U0</em>' attribute.
+	 * @param value the new value of the '<em>U0</em>' attribute.
 	 * @see #getU0()
 	 * @generated
 	 */
@@ -177,7 +162,6 @@ public interface CameraSystem extends ImageSensorSystem {
 	 * If the meaning of the '<em>V0</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>V0</em>' attribute.
 	 * @see #setV0(float)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getCameraSystem_V0()
@@ -190,9 +174,7 @@ public interface CameraSystem extends ImageSensorSystem {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotML.CameraSystem#getV0 <em>V0</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>V0</em>' attribute.
+	 * @param value the new value of the '<em>V0</em>' attribute.
 	 * @see #getV0()
 	 * @generated
 	 */
@@ -205,7 +187,6 @@ public interface CameraSystem extends ImageSensorSystem {
 	 * If the meaning of the '<em>Color format</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Color format</em>' attribute.
 	 * @see #setColor_format(String)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getCameraSystem_Color_format()
@@ -218,9 +199,7 @@ public interface CameraSystem extends ImageSensorSystem {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotML.CameraSystem#getColor_format <em>Color format</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Color format</em>' attribute.
+	 * @param value the new value of the '<em>Color format</em>' attribute.
 	 * @see #getColor_format()
 	 * @generated
 	 */
@@ -233,7 +212,6 @@ public interface CameraSystem extends ImageSensorSystem {
 	 * If the meaning of the '<em>Translate</em>' containment reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Translate</em>' containment reference.
 	 * @see #setTranslate(Point32)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getCameraSystem_Translate()
@@ -246,9 +224,7 @@ public interface CameraSystem extends ImageSensorSystem {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotML.CameraSystem#getTranslate <em>Translate</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Translate</em>' containment reference.
+	 * @param value the new value of the '<em>Translate</em>' containment reference.
 	 * @see #getTranslate()
 	 * @generated
 	 */
@@ -261,7 +237,6 @@ public interface CameraSystem extends ImageSensorSystem {
 	 * If the meaning of the '<em>Rotate</em>' containment reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Rotate</em>' containment reference.
 	 * @see #setRotate(Point32)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getCameraSystem_Rotate()
@@ -274,9 +249,7 @@ public interface CameraSystem extends ImageSensorSystem {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotML.CameraSystem#getRotate <em>Rotate</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Rotate</em>' containment reference.
+	 * @param value the new value of the '<em>Rotate</em>' containment reference.
 	 * @see #getRotate()
 	 * @generated
 	 */

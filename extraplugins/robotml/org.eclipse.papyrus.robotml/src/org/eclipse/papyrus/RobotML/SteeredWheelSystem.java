@@ -11,22 +11,22 @@ package org.eclipse.papyrus.RobotML;
  * <p>
  * The following features are supported:
  * <ul>
- * <li>{@link org.eclipse.papyrus.RobotML.SteeredWheelSystem#getWheelRadius <em>Wheel Radius</em>}</li>
- * <li>{@link org.eclipse.papyrus.RobotML.SteeredWheelSystem#getWheelWidth <em>Wheel Width</em>}</li>
- * <li>{@link org.eclipse.papyrus.RobotML.SteeredWheelSystem#getSuspensionRestLength <em>Suspension Rest Length</em>}</li>
- * <li>{@link org.eclipse.papyrus.RobotML.SteeredWheelSystem#getWheelConnectionHeight <em>Wheel Connection Height</em>}</li>
- * <li>{@link org.eclipse.papyrus.RobotML.SteeredWheelSystem#getTypeOfWheel <em>Type Of Wheel</em>}</li>
- * <li>{@link org.eclipse.papyrus.RobotML.SteeredWheelSystem#getWheelVelocityPIDkp <em>Wheel Velocity PI Dkp</em>}</li>
- * <li>{@link org.eclipse.papyrus.RobotML.SteeredWheelSystem#getWheelVelocityPIDki <em>Wheel Velocity PI Dki</em>}</li>
- * <li>{@link org.eclipse.papyrus.RobotML.SteeredWheelSystem#getWheelVelocityPIDkd <em>Wheel Velocity PI Dkd</em>}</li>
- * <li>{@link org.eclipse.papyrus.RobotML.SteeredWheelSystem#getWheelSteeringPIDkp <em>Wheel Steering PI Dkp</em>}</li>
- * <li>{@link org.eclipse.papyrus.RobotML.SteeredWheelSystem#getWheelSteeringPIDkd <em>Wheel Steering PI Dkd</em>}</li>
- * <li>{@link org.eclipse.papyrus.RobotML.SteeredWheelSystem#getWheelFriction <em>Wheel Friction</em>}</li>
- * <li>{@link org.eclipse.papyrus.RobotML.SteeredWheelSystem#getSuspensionStiffness <em>Suspension Stiffness</em>}</li>
- * <li>{@link org.eclipse.papyrus.RobotML.SteeredWheelSystem#getSuspensionDamping <em>Suspension Damping</em>}</li>
- * <li>{@link org.eclipse.papyrus.RobotML.SteeredWheelSystem#getSuspensionCompression <em>Suspension Compression</em>}</li>
- * <li>{@link org.eclipse.papyrus.RobotML.SteeredWheelSystem#getWheelVelocityPIDmaxSum <em>Wheel Velocity PI Dmax Sum</em>}</li>
- * <li>{@link org.eclipse.papyrus.RobotML.SteeredWheelSystem#getWheelVelocityPIDmaxVal <em>Wheel Velocity PI Dmax Val</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotML.SteeredWheelSystem#getWheelRadius <em>Wheel Radius</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotML.SteeredWheelSystem#getWheelWidth <em>Wheel Width</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotML.SteeredWheelSystem#getSuspensionRestLength <em>Suspension Rest Length</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotML.SteeredWheelSystem#getWheelConnectionHeight <em>Wheel Connection Height</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotML.SteeredWheelSystem#getTypeOfWheel <em>Type Of Wheel</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotML.SteeredWheelSystem#getWheelVelocityPIDkp <em>Wheel Velocity PI Dkp</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotML.SteeredWheelSystem#getWheelVelocityPIDki <em>Wheel Velocity PI Dki</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotML.SteeredWheelSystem#getWheelVelocityPIDkd <em>Wheel Velocity PI Dkd</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotML.SteeredWheelSystem#getWheelSteeringPIDkp <em>Wheel Steering PI Dkp</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotML.SteeredWheelSystem#getWheelSteeringPIDkd <em>Wheel Steering PI Dkd</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotML.SteeredWheelSystem#getWheelFriction <em>Wheel Friction</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotML.SteeredWheelSystem#getSuspensionStiffness <em>Suspension Stiffness</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotML.SteeredWheelSystem#getSuspensionDamping <em>Suspension Damping</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotML.SteeredWheelSystem#getSuspensionCompression <em>Suspension Compression</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotML.SteeredWheelSystem#getWheelVelocityPIDmaxSum <em>Wheel Velocity PI Dmax Sum</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotML.SteeredWheelSystem#getWheelVelocityPIDmaxVal <em>Wheel Velocity PI Dmax Val</em>}</li>
  * </ul>
  * </p>
  *
@@ -42,7 +42,6 @@ public interface SteeredWheelSystem extends LocomotionSystem {
 	 * If the meaning of the '<em>Wheel Radius</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Wheel Radius</em>' attribute.
 	 * @see #setWheelRadius(float)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getSteeredWheelSystem_WheelRadius()
@@ -55,9 +54,7 @@ public interface SteeredWheelSystem extends LocomotionSystem {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotML.SteeredWheelSystem#getWheelRadius <em>Wheel Radius</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Wheel Radius</em>' attribute.
+	 * @param value the new value of the '<em>Wheel Radius</em>' attribute.
 	 * @see #getWheelRadius()
 	 * @generated
 	 */
@@ -70,7 +67,6 @@ public interface SteeredWheelSystem extends LocomotionSystem {
 	 * If the meaning of the '<em>Wheel Width</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Wheel Width</em>' attribute.
 	 * @see #setWheelWidth(float)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getSteeredWheelSystem_WheelWidth()
@@ -83,9 +79,7 @@ public interface SteeredWheelSystem extends LocomotionSystem {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotML.SteeredWheelSystem#getWheelWidth <em>Wheel Width</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Wheel Width</em>' attribute.
+	 * @param value the new value of the '<em>Wheel Width</em>' attribute.
 	 * @see #getWheelWidth()
 	 * @generated
 	 */
@@ -98,7 +92,6 @@ public interface SteeredWheelSystem extends LocomotionSystem {
 	 * If the meaning of the '<em>Suspension Rest Length</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Suspension Rest Length</em>' attribute.
 	 * @see #setSuspensionRestLength(float)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getSteeredWheelSystem_SuspensionRestLength()
@@ -111,9 +104,7 @@ public interface SteeredWheelSystem extends LocomotionSystem {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotML.SteeredWheelSystem#getSuspensionRestLength <em>Suspension Rest Length</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Suspension Rest Length</em>' attribute.
+	 * @param value the new value of the '<em>Suspension Rest Length</em>' attribute.
 	 * @see #getSuspensionRestLength()
 	 * @generated
 	 */
@@ -126,7 +117,6 @@ public interface SteeredWheelSystem extends LocomotionSystem {
 	 * If the meaning of the '<em>Wheel Connection Height</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Wheel Connection Height</em>' attribute.
 	 * @see #setWheelConnectionHeight(float)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getSteeredWheelSystem_WheelConnectionHeight()
@@ -139,9 +129,7 @@ public interface SteeredWheelSystem extends LocomotionSystem {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotML.SteeredWheelSystem#getWheelConnectionHeight <em>Wheel Connection Height</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Wheel Connection Height</em>' attribute.
+	 * @param value the new value of the '<em>Wheel Connection Height</em>' attribute.
 	 * @see #getWheelConnectionHeight()
 	 * @generated
 	 */
@@ -154,7 +142,6 @@ public interface SteeredWheelSystem extends LocomotionSystem {
 	 * If the meaning of the '<em>Type Of Wheel</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Type Of Wheel</em>' attribute.
 	 * @see #setTypeOfWheel(String)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getSteeredWheelSystem_TypeOfWheel()
@@ -167,9 +154,7 @@ public interface SteeredWheelSystem extends LocomotionSystem {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotML.SteeredWheelSystem#getTypeOfWheel <em>Type Of Wheel</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Type Of Wheel</em>' attribute.
+	 * @param value the new value of the '<em>Type Of Wheel</em>' attribute.
 	 * @see #getTypeOfWheel()
 	 * @generated
 	 */
@@ -182,7 +167,6 @@ public interface SteeredWheelSystem extends LocomotionSystem {
 	 * If the meaning of the '<em>Wheel Velocity PI Dkp</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Wheel Velocity PI Dkp</em>' attribute.
 	 * @see #setWheelVelocityPIDkp(float)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getSteeredWheelSystem_WheelVelocityPIDkp()
@@ -195,9 +179,7 @@ public interface SteeredWheelSystem extends LocomotionSystem {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotML.SteeredWheelSystem#getWheelVelocityPIDkp <em>Wheel Velocity PI Dkp</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Wheel Velocity PI Dkp</em>' attribute.
+	 * @param value the new value of the '<em>Wheel Velocity PI Dkp</em>' attribute.
 	 * @see #getWheelVelocityPIDkp()
 	 * @generated
 	 */
@@ -210,7 +192,6 @@ public interface SteeredWheelSystem extends LocomotionSystem {
 	 * If the meaning of the '<em>Wheel Velocity PI Dki</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Wheel Velocity PI Dki</em>' attribute.
 	 * @see #setWheelVelocityPIDki(float)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getSteeredWheelSystem_WheelVelocityPIDki()
@@ -223,9 +204,7 @@ public interface SteeredWheelSystem extends LocomotionSystem {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotML.SteeredWheelSystem#getWheelVelocityPIDki <em>Wheel Velocity PI Dki</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Wheel Velocity PI Dki</em>' attribute.
+	 * @param value the new value of the '<em>Wheel Velocity PI Dki</em>' attribute.
 	 * @see #getWheelVelocityPIDki()
 	 * @generated
 	 */
@@ -238,7 +217,6 @@ public interface SteeredWheelSystem extends LocomotionSystem {
 	 * If the meaning of the '<em>Wheel Velocity PI Dkd</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Wheel Velocity PI Dkd</em>' attribute.
 	 * @see #setWheelVelocityPIDkd(float)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getSteeredWheelSystem_WheelVelocityPIDkd()
@@ -251,9 +229,7 @@ public interface SteeredWheelSystem extends LocomotionSystem {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotML.SteeredWheelSystem#getWheelVelocityPIDkd <em>Wheel Velocity PI Dkd</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Wheel Velocity PI Dkd</em>' attribute.
+	 * @param value the new value of the '<em>Wheel Velocity PI Dkd</em>' attribute.
 	 * @see #getWheelVelocityPIDkd()
 	 * @generated
 	 */
@@ -266,7 +242,6 @@ public interface SteeredWheelSystem extends LocomotionSystem {
 	 * If the meaning of the '<em>Wheel Steering PI Dkp</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Wheel Steering PI Dkp</em>' attribute.
 	 * @see #setWheelSteeringPIDkp(float)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getSteeredWheelSystem_WheelSteeringPIDkp()
@@ -279,9 +254,7 @@ public interface SteeredWheelSystem extends LocomotionSystem {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotML.SteeredWheelSystem#getWheelSteeringPIDkp <em>Wheel Steering PI Dkp</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Wheel Steering PI Dkp</em>' attribute.
+	 * @param value the new value of the '<em>Wheel Steering PI Dkp</em>' attribute.
 	 * @see #getWheelSteeringPIDkp()
 	 * @generated
 	 */
@@ -294,7 +267,6 @@ public interface SteeredWheelSystem extends LocomotionSystem {
 	 * If the meaning of the '<em>Wheel Steering PI Dkd</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Wheel Steering PI Dkd</em>' attribute.
 	 * @see #setWheelSteeringPIDkd(float)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getSteeredWheelSystem_WheelSteeringPIDkd()
@@ -307,9 +279,7 @@ public interface SteeredWheelSystem extends LocomotionSystem {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotML.SteeredWheelSystem#getWheelSteeringPIDkd <em>Wheel Steering PI Dkd</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Wheel Steering PI Dkd</em>' attribute.
+	 * @param value the new value of the '<em>Wheel Steering PI Dkd</em>' attribute.
 	 * @see #getWheelSteeringPIDkd()
 	 * @generated
 	 */
@@ -322,7 +292,6 @@ public interface SteeredWheelSystem extends LocomotionSystem {
 	 * If the meaning of the '<em>Wheel Friction</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Wheel Friction</em>' attribute.
 	 * @see #setWheelFriction(float)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getSteeredWheelSystem_WheelFriction()
@@ -335,9 +304,7 @@ public interface SteeredWheelSystem extends LocomotionSystem {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotML.SteeredWheelSystem#getWheelFriction <em>Wheel Friction</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Wheel Friction</em>' attribute.
+	 * @param value the new value of the '<em>Wheel Friction</em>' attribute.
 	 * @see #getWheelFriction()
 	 * @generated
 	 */
@@ -350,7 +317,6 @@ public interface SteeredWheelSystem extends LocomotionSystem {
 	 * If the meaning of the '<em>Suspension Stiffness</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Suspension Stiffness</em>' attribute.
 	 * @see #setSuspensionStiffness(float)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getSteeredWheelSystem_SuspensionStiffness()
@@ -363,9 +329,7 @@ public interface SteeredWheelSystem extends LocomotionSystem {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotML.SteeredWheelSystem#getSuspensionStiffness <em>Suspension Stiffness</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Suspension Stiffness</em>' attribute.
+	 * @param value the new value of the '<em>Suspension Stiffness</em>' attribute.
 	 * @see #getSuspensionStiffness()
 	 * @generated
 	 */
@@ -378,7 +342,6 @@ public interface SteeredWheelSystem extends LocomotionSystem {
 	 * If the meaning of the '<em>Suspension Damping</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Suspension Damping</em>' attribute.
 	 * @see #setSuspensionDamping(float)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getSteeredWheelSystem_SuspensionDamping()
@@ -391,9 +354,7 @@ public interface SteeredWheelSystem extends LocomotionSystem {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotML.SteeredWheelSystem#getSuspensionDamping <em>Suspension Damping</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Suspension Damping</em>' attribute.
+	 * @param value the new value of the '<em>Suspension Damping</em>' attribute.
 	 * @see #getSuspensionDamping()
 	 * @generated
 	 */
@@ -406,7 +367,6 @@ public interface SteeredWheelSystem extends LocomotionSystem {
 	 * If the meaning of the '<em>Suspension Compression</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Suspension Compression</em>' attribute.
 	 * @see #setSuspensionCompression(float)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getSteeredWheelSystem_SuspensionCompression()
@@ -419,9 +379,7 @@ public interface SteeredWheelSystem extends LocomotionSystem {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotML.SteeredWheelSystem#getSuspensionCompression <em>Suspension Compression</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Suspension Compression</em>' attribute.
+	 * @param value the new value of the '<em>Suspension Compression</em>' attribute.
 	 * @see #getSuspensionCompression()
 	 * @generated
 	 */
@@ -434,7 +392,6 @@ public interface SteeredWheelSystem extends LocomotionSystem {
 	 * If the meaning of the '<em>Wheel Velocity PI Dmax Sum</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Wheel Velocity PI Dmax Sum</em>' attribute.
 	 * @see #setWheelVelocityPIDmaxSum(float)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getSteeredWheelSystem_WheelVelocityPIDmaxSum()
@@ -447,9 +404,7 @@ public interface SteeredWheelSystem extends LocomotionSystem {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotML.SteeredWheelSystem#getWheelVelocityPIDmaxSum <em>Wheel Velocity PI Dmax Sum</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Wheel Velocity PI Dmax Sum</em>' attribute.
+	 * @param value the new value of the '<em>Wheel Velocity PI Dmax Sum</em>' attribute.
 	 * @see #getWheelVelocityPIDmaxSum()
 	 * @generated
 	 */
@@ -462,7 +417,6 @@ public interface SteeredWheelSystem extends LocomotionSystem {
 	 * If the meaning of the '<em>Wheel Velocity PI Dmax Val</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Wheel Velocity PI Dmax Val</em>' attribute.
 	 * @see #setWheelVelocityPIDmaxVal(float)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getSteeredWheelSystem_WheelVelocityPIDmaxVal()
@@ -475,9 +429,7 @@ public interface SteeredWheelSystem extends LocomotionSystem {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotML.SteeredWheelSystem#getWheelVelocityPIDmaxVal <em>Wheel Velocity PI Dmax Val</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Wheel Velocity PI Dmax Val</em>' attribute.
+	 * @param value the new value of the '<em>Wheel Velocity PI Dmax Val</em>' attribute.
 	 * @see #getWheelVelocityPIDmaxVal()
 	 * @generated
 	 */

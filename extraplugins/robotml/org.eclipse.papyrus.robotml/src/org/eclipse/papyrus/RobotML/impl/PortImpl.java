@@ -18,8 +18,8 @@ import org.eclipse.papyrus.RobotML.SynchronizationKind;
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.eclipse.papyrus.RobotML.impl.PortImpl#getBase_Port <em>Base Port</em>}</li>
- * <li>{@link org.eclipse.papyrus.RobotML.impl.PortImpl#getSynchronizationPolicy <em>Synchronization Policy</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotML.impl.PortImpl#getBase_Port <em>Base Port</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotML.impl.PortImpl#getSynchronizationPolicy <em>Synchronization Policy</em>}</li>
  * </ul>
  * </p>
  *
@@ -30,7 +30,6 @@ public abstract class PortImpl extends MinimalEObjectImpl.Container implements P
 	 * The cached value of the '{@link #getBase_Port() <em>Base Port</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getBase_Port()
 	 * @generated
 	 * @ordered
@@ -41,7 +40,6 @@ public abstract class PortImpl extends MinimalEObjectImpl.Container implements P
 	 * The default value of the '{@link #getSynchronizationPolicy() <em>Synchronization Policy</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getSynchronizationPolicy()
 	 * @generated
 	 * @ordered
@@ -52,7 +50,6 @@ public abstract class PortImpl extends MinimalEObjectImpl.Container implements P
 	 * The cached value of the '{@link #getSynchronizationPolicy() <em>Synchronization Policy</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getSynchronizationPolicy()
 	 * @generated
 	 * @ordered
@@ -62,7 +59,6 @@ public abstract class PortImpl extends MinimalEObjectImpl.Container implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected PortImpl() {
@@ -72,7 +68,6 @@ public abstract class PortImpl extends MinimalEObjectImpl.Container implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -83,17 +78,15 @@ public abstract class PortImpl extends MinimalEObjectImpl.Container implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Port getBase_Port() {
 		if (base_Port != null && base_Port.eIsProxy()) {
-			InternalEObject oldBase_Port = (InternalEObject) base_Port;
-			base_Port = (org.eclipse.uml2.uml.Port) eResolveProxy(oldBase_Port);
+			InternalEObject oldBase_Port = (InternalEObject)base_Port;
+			base_Port = (org.eclipse.uml2.uml.Port)eResolveProxy(oldBase_Port);
 			if (base_Port != oldBase_Port) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RobotMLPackage.PORT__BASE_PORT, oldBase_Port, base_Port));
-				}
 			}
 		}
 		return base_Port;
@@ -102,7 +95,6 @@ public abstract class PortImpl extends MinimalEObjectImpl.Container implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Port basicGetBase_Port() {
@@ -112,21 +104,18 @@ public abstract class PortImpl extends MinimalEObjectImpl.Container implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public void setBase_Port(org.eclipse.uml2.uml.Port newBase_Port) {
 		org.eclipse.uml2.uml.Port oldBase_Port = base_Port;
 		base_Port = newBase_Port;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RobotMLPackage.PORT__BASE_PORT, oldBase_Port, base_Port));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public SynchronizationKind getSynchronizationPolicy() {
@@ -136,33 +125,28 @@ public abstract class PortImpl extends MinimalEObjectImpl.Container implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public void setSynchronizationPolicy(SynchronizationKind newSynchronizationPolicy) {
 		SynchronizationKind oldSynchronizationPolicy = synchronizationPolicy;
 		synchronizationPolicy = newSynchronizationPolicy == null ? SYNCHRONIZATION_POLICY_EDEFAULT : newSynchronizationPolicy;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RobotMLPackage.PORT__SYNCHRONIZATION_POLICY, oldSynchronizationPolicy, synchronizationPolicy));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case RobotMLPackage.PORT__BASE_PORT:
-			if (resolve) {
-				return getBase_Port();
-			}
-			return basicGetBase_Port();
-		case RobotMLPackage.PORT__SYNCHRONIZATION_POLICY:
-			return getSynchronizationPolicy();
+			case RobotMLPackage.PORT__BASE_PORT:
+				if (resolve) return getBase_Port();
+				return basicGetBase_Port();
+			case RobotMLPackage.PORT__SYNCHRONIZATION_POLICY:
+				return getSynchronizationPolicy();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -170,18 +154,17 @@ public abstract class PortImpl extends MinimalEObjectImpl.Container implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case RobotMLPackage.PORT__BASE_PORT:
-			setBase_Port((org.eclipse.uml2.uml.Port) newValue);
-			return;
-		case RobotMLPackage.PORT__SYNCHRONIZATION_POLICY:
-			setSynchronizationPolicy((SynchronizationKind) newValue);
-			return;
+			case RobotMLPackage.PORT__BASE_PORT:
+				setBase_Port((org.eclipse.uml2.uml.Port)newValue);
+				return;
+			case RobotMLPackage.PORT__SYNCHRONIZATION_POLICY:
+				setSynchronizationPolicy((SynchronizationKind)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -189,18 +172,17 @@ public abstract class PortImpl extends MinimalEObjectImpl.Container implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case RobotMLPackage.PORT__BASE_PORT:
-			setBase_Port((org.eclipse.uml2.uml.Port) null);
-			return;
-		case RobotMLPackage.PORT__SYNCHRONIZATION_POLICY:
-			setSynchronizationPolicy(SYNCHRONIZATION_POLICY_EDEFAULT);
-			return;
+			case RobotMLPackage.PORT__BASE_PORT:
+				setBase_Port((org.eclipse.uml2.uml.Port)null);
+				return;
+			case RobotMLPackage.PORT__SYNCHRONIZATION_POLICY:
+				setSynchronizationPolicy(SYNCHRONIZATION_POLICY_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -208,16 +190,15 @@ public abstract class PortImpl extends MinimalEObjectImpl.Container implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case RobotMLPackage.PORT__BASE_PORT:
-			return base_Port != null;
-		case RobotMLPackage.PORT__SYNCHRONIZATION_POLICY:
-			return synchronizationPolicy != SYNCHRONIZATION_POLICY_EDEFAULT;
+			case RobotMLPackage.PORT__BASE_PORT:
+				return base_Port != null;
+			case RobotMLPackage.PORT__SYNCHRONIZATION_POLICY:
+				return synchronizationPolicy != SYNCHRONIZATION_POLICY_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -225,14 +206,11 @@ public abstract class PortImpl extends MinimalEObjectImpl.Container implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
-			return super.toString();
-		}
+		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (synchronizationPolicy: ");

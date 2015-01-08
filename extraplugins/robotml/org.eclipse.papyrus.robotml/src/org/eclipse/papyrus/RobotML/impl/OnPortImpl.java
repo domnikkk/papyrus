@@ -19,8 +19,8 @@ import org.eclipse.uml2.uml.Parameter;
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.eclipse.papyrus.RobotML.impl.OnPortImpl#getPort <em>Port</em>}</li>
- * <li>{@link org.eclipse.papyrus.RobotML.impl.OnPortImpl#getBase_Parameter <em>Base Parameter</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotML.impl.OnPortImpl#getPort <em>Port</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotML.impl.OnPortImpl#getBase_Parameter <em>Base Parameter</em>}</li>
  * </ul>
  * </p>
  *
@@ -31,7 +31,6 @@ public class OnPortImpl extends MinimalEObjectImpl.Container implements OnPort {
 	 * The cached value of the '{@link #getPort() <em>Port</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getPort()
 	 * @generated
 	 * @ordered
@@ -42,7 +41,6 @@ public class OnPortImpl extends MinimalEObjectImpl.Container implements OnPort {
 	 * The cached value of the '{@link #getBase_Parameter() <em>Base Parameter</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getBase_Parameter()
 	 * @generated
 	 * @ordered
@@ -52,7 +50,6 @@ public class OnPortImpl extends MinimalEObjectImpl.Container implements OnPort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected OnPortImpl() {
@@ -62,7 +59,6 @@ public class OnPortImpl extends MinimalEObjectImpl.Container implements OnPort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -73,17 +69,15 @@ public class OnPortImpl extends MinimalEObjectImpl.Container implements OnPort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public Port getPort() {
 		if (port != null && port.eIsProxy()) {
-			InternalEObject oldPort = (InternalEObject) port;
-			port = (Port) eResolveProxy(oldPort);
+			InternalEObject oldPort = (InternalEObject)port;
+			port = (Port)eResolveProxy(oldPort);
 			if (port != oldPort) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RobotMLPackage.ON_PORT__PORT, oldPort, port));
-				}
 			}
 		}
 		return port;
@@ -92,7 +86,6 @@ public class OnPortImpl extends MinimalEObjectImpl.Container implements OnPort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public Port basicGetPort() {
@@ -102,31 +95,27 @@ public class OnPortImpl extends MinimalEObjectImpl.Container implements OnPort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public void setPort(Port newPort) {
 		Port oldPort = port;
 		port = newPort;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RobotMLPackage.ON_PORT__PORT, oldPort, port));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public Parameter getBase_Parameter() {
 		if (base_Parameter != null && base_Parameter.eIsProxy()) {
-			InternalEObject oldBase_Parameter = (InternalEObject) base_Parameter;
-			base_Parameter = (Parameter) eResolveProxy(oldBase_Parameter);
+			InternalEObject oldBase_Parameter = (InternalEObject)base_Parameter;
+			base_Parameter = (Parameter)eResolveProxy(oldBase_Parameter);
 			if (base_Parameter != oldBase_Parameter) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RobotMLPackage.ON_PORT__BASE_PARAMETER, oldBase_Parameter, base_Parameter));
-				}
 			}
 		}
 		return base_Parameter;
@@ -135,7 +124,6 @@ public class OnPortImpl extends MinimalEObjectImpl.Container implements OnPort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public Parameter basicGetBase_Parameter() {
@@ -145,36 +133,29 @@ public class OnPortImpl extends MinimalEObjectImpl.Container implements OnPort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public void setBase_Parameter(Parameter newBase_Parameter) {
 		Parameter oldBase_Parameter = base_Parameter;
 		base_Parameter = newBase_Parameter;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RobotMLPackage.ON_PORT__BASE_PARAMETER, oldBase_Parameter, base_Parameter));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case RobotMLPackage.ON_PORT__PORT:
-			if (resolve) {
-				return getPort();
-			}
-			return basicGetPort();
-		case RobotMLPackage.ON_PORT__BASE_PARAMETER:
-			if (resolve) {
-				return getBase_Parameter();
-			}
-			return basicGetBase_Parameter();
+			case RobotMLPackage.ON_PORT__PORT:
+				if (resolve) return getPort();
+				return basicGetPort();
+			case RobotMLPackage.ON_PORT__BASE_PARAMETER:
+				if (resolve) return getBase_Parameter();
+				return basicGetBase_Parameter();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -182,18 +163,17 @@ public class OnPortImpl extends MinimalEObjectImpl.Container implements OnPort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case RobotMLPackage.ON_PORT__PORT:
-			setPort((Port) newValue);
-			return;
-		case RobotMLPackage.ON_PORT__BASE_PARAMETER:
-			setBase_Parameter((Parameter) newValue);
-			return;
+			case RobotMLPackage.ON_PORT__PORT:
+				setPort((Port)newValue);
+				return;
+			case RobotMLPackage.ON_PORT__BASE_PARAMETER:
+				setBase_Parameter((Parameter)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -201,18 +181,17 @@ public class OnPortImpl extends MinimalEObjectImpl.Container implements OnPort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case RobotMLPackage.ON_PORT__PORT:
-			setPort((Port) null);
-			return;
-		case RobotMLPackage.ON_PORT__BASE_PARAMETER:
-			setBase_Parameter((Parameter) null);
-			return;
+			case RobotMLPackage.ON_PORT__PORT:
+				setPort((Port)null);
+				return;
+			case RobotMLPackage.ON_PORT__BASE_PARAMETER:
+				setBase_Parameter((Parameter)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -220,16 +199,15 @@ public class OnPortImpl extends MinimalEObjectImpl.Container implements OnPort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case RobotMLPackage.ON_PORT__PORT:
-			return port != null;
-		case RobotMLPackage.ON_PORT__BASE_PARAMETER:
-			return base_Parameter != null;
+			case RobotMLPackage.ON_PORT__PORT:
+				return port != null;
+			case RobotMLPackage.ON_PORT__BASE_PARAMETER:
+				return base_Parameter != null;
 		}
 		return super.eIsSet(featureID);
 	}

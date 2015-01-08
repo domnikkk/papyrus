@@ -18,8 +18,8 @@ import org.eclipse.uml2.uml.Stereotype;
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.eclipse.papyrus.RobotML.impl.DataFlowPortImpl#getDirection <em>Direction</em>}</li>
- * <li>{@link org.eclipse.papyrus.RobotML.impl.DataFlowPortImpl#getBufferSize <em>Buffer Size</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotML.impl.DataFlowPortImpl#getDirection <em>Direction</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotML.impl.DataFlowPortImpl#getBufferSize <em>Buffer Size</em>}</li>
  * </ul>
  * </p>
  *
@@ -30,7 +30,6 @@ public class DataFlowPortImpl extends PortImpl implements DataFlowPort {
 	 * The default value of the '{@link #getDirection() <em>Direction</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getDirection()
 	 * @generated
 	 * @ordered
@@ -41,7 +40,6 @@ public class DataFlowPortImpl extends PortImpl implements DataFlowPort {
 	 * The cached value of the '{@link #getDirection() <em>Direction</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getDirection()
 	 * @generated
 	 * @ordered
@@ -52,7 +50,6 @@ public class DataFlowPortImpl extends PortImpl implements DataFlowPort {
 	 * The default value of the '{@link #getBufferSize() <em>Buffer Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getBufferSize()
 	 * @generated
 	 * @ordered
@@ -63,7 +60,6 @@ public class DataFlowPortImpl extends PortImpl implements DataFlowPort {
 	 * The cached value of the '{@link #getBufferSize() <em>Buffer Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getBufferSize()
 	 * @generated
 	 * @ordered
@@ -73,7 +69,6 @@ public class DataFlowPortImpl extends PortImpl implements DataFlowPort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected DataFlowPortImpl() {
@@ -83,7 +78,6 @@ public class DataFlowPortImpl extends PortImpl implements DataFlowPort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -94,7 +88,6 @@ public class DataFlowPortImpl extends PortImpl implements DataFlowPort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public DataFlowDirectionKind getDirection() {
@@ -104,21 +97,18 @@ public class DataFlowPortImpl extends PortImpl implements DataFlowPort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public void setDirection(DataFlowDirectionKind newDirection) {
 		DataFlowDirectionKind oldDirection = direction;
 		direction = newDirection == null ? DIRECTION_EDEFAULT : newDirection;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RobotMLPackage.DATA_FLOW_PORT__DIRECTION, oldDirection, direction));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public int getBufferSize() {
@@ -128,30 +118,27 @@ public class DataFlowPortImpl extends PortImpl implements DataFlowPort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public void setBufferSize(int newBufferSize) {
 		int oldBufferSize = bufferSize;
 		bufferSize = newBufferSize;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RobotMLPackage.DATA_FLOW_PORT__BUFFER_SIZE, oldBufferSize, bufferSize));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case RobotMLPackage.DATA_FLOW_PORT__DIRECTION:
-			return getDirection();
-		case RobotMLPackage.DATA_FLOW_PORT__BUFFER_SIZE:
-			return getBufferSize();
+			case RobotMLPackage.DATA_FLOW_PORT__DIRECTION:
+				return getDirection();
+			case RobotMLPackage.DATA_FLOW_PORT__BUFFER_SIZE:
+				return getBufferSize();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -159,18 +146,17 @@ public class DataFlowPortImpl extends PortImpl implements DataFlowPort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case RobotMLPackage.DATA_FLOW_PORT__DIRECTION:
-			setDirection((DataFlowDirectionKind) newValue);
-			return;
-		case RobotMLPackage.DATA_FLOW_PORT__BUFFER_SIZE:
-			setBufferSize((Integer) newValue);
-			return;
+			case RobotMLPackage.DATA_FLOW_PORT__DIRECTION:
+				setDirection((DataFlowDirectionKind)newValue);
+				return;
+			case RobotMLPackage.DATA_FLOW_PORT__BUFFER_SIZE:
+				setBufferSize((Integer)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -178,18 +164,17 @@ public class DataFlowPortImpl extends PortImpl implements DataFlowPort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case RobotMLPackage.DATA_FLOW_PORT__DIRECTION:
-			setDirection(DIRECTION_EDEFAULT);
-			return;
-		case RobotMLPackage.DATA_FLOW_PORT__BUFFER_SIZE:
-			setBufferSize(BUFFER_SIZE_EDEFAULT);
-			return;
+			case RobotMLPackage.DATA_FLOW_PORT__DIRECTION:
+				setDirection(DIRECTION_EDEFAULT);
+				return;
+			case RobotMLPackage.DATA_FLOW_PORT__BUFFER_SIZE:
+				setBufferSize(BUFFER_SIZE_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -197,16 +182,15 @@ public class DataFlowPortImpl extends PortImpl implements DataFlowPort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case RobotMLPackage.DATA_FLOW_PORT__DIRECTION:
-			return direction != DIRECTION_EDEFAULT;
-		case RobotMLPackage.DATA_FLOW_PORT__BUFFER_SIZE:
-			return bufferSize != BUFFER_SIZE_EDEFAULT;
+			case RobotMLPackage.DATA_FLOW_PORT__DIRECTION:
+				return direction != DIRECTION_EDEFAULT;
+			case RobotMLPackage.DATA_FLOW_PORT__BUFFER_SIZE:
+				return bufferSize != BUFFER_SIZE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -214,14 +198,11 @@ public class DataFlowPortImpl extends PortImpl implements DataFlowPort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
-			return super.toString();
-		}
+		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (direction: ");

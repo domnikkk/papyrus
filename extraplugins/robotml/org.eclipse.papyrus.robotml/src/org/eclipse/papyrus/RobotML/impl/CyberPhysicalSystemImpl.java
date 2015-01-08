@@ -19,7 +19,6 @@ public class CyberPhysicalSystemImpl extends SystemImpl implements CyberPhysical
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected CyberPhysicalSystemImpl() {
@@ -29,7 +28,6 @@ public class CyberPhysicalSystemImpl extends SystemImpl implements CyberPhysical
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override

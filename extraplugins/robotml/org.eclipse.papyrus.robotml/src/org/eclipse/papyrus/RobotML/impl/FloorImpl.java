@@ -19,7 +19,6 @@ public class FloorImpl extends GroundImpl implements Floor {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected FloorImpl() {
@@ -29,7 +28,6 @@ public class FloorImpl extends GroundImpl implements Floor {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override

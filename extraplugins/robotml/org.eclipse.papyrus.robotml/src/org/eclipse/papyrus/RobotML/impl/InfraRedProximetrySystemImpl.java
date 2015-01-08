@@ -19,7 +19,6 @@ public class InfraRedProximetrySystemImpl extends ObjectDetectionSensorSystemImp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected InfraRedProximetrySystemImpl() {
@@ -29,7 +28,6 @@ public class InfraRedProximetrySystemImpl extends ObjectDetectionSensorSystemImp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override

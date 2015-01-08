@@ -19,7 +19,6 @@ public class LocomotionHardwareImpl extends ActuatorHardwareImpl implements Loco
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected LocomotionHardwareImpl() {
@@ -29,7 +28,6 @@ public class LocomotionHardwareImpl extends ActuatorHardwareImpl implements Loco
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override

@@ -15,10 +15,10 @@ import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTyp
  * <p>
  * The following features are supported:
  * <ul>
- * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.Odometry#getHeader <em>Header</em>}</li>
- * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.Odometry#getChild_frame_id <em>Child frame id</em>}</li>
- * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.Odometry#getPose <em>Pose</em>}</li>
- * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.Odometry#getTwist <em>Twist</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.Odometry#getHeader <em>Header</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.Odometry#getChild_frame_id <em>Child frame id</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.Odometry#getPose <em>Pose</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.Odometry#getTwist <em>Twist</em>}</li>
  * </ul>
  * </p>
  *
@@ -34,7 +34,6 @@ public interface Odometry extends EObject {
 	 * If the meaning of the '<em>Header</em>' containment reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Header</em>' containment reference.
 	 * @see #setHeader(Header)
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.Nav_datatypesPackage#getOdometry_Header()
@@ -47,9 +46,7 @@ public interface Odometry extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.Odometry#getHeader <em>Header</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Header</em>' containment reference.
+	 * @param value the new value of the '<em>Header</em>' containment reference.
 	 * @see #getHeader()
 	 * @generated
 	 */
@@ -62,7 +59,6 @@ public interface Odometry extends EObject {
 	 * If the meaning of the '<em>Child frame id</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Child frame id</em>' attribute.
 	 * @see #setChild_frame_id(String)
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.Nav_datatypesPackage#getOdometry_Child_frame_id()
@@ -75,9 +71,7 @@ public interface Odometry extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.Odometry#getChild_frame_id <em>Child frame id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Child frame id</em>' attribute.
+	 * @param value the new value of the '<em>Child frame id</em>' attribute.
 	 * @see #getChild_frame_id()
 	 * @generated
 	 */
@@ -90,7 +84,6 @@ public interface Odometry extends EObject {
 	 * If the meaning of the '<em>Pose</em>' containment reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Pose</em>' containment reference.
 	 * @see #setPose(PoseWithCovariance)
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.Nav_datatypesPackage#getOdometry_Pose()
@@ -103,9 +96,7 @@ public interface Odometry extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.Odometry#getPose <em>Pose</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Pose</em>' containment reference.
+	 * @param value the new value of the '<em>Pose</em>' containment reference.
 	 * @see #getPose()
 	 * @generated
 	 */
@@ -118,7 +109,6 @@ public interface Odometry extends EObject {
 	 * If the meaning of the '<em>Twist</em>' containment reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Twist</em>' containment reference.
 	 * @see #setTwist(TwistWithCovariance)
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.Nav_datatypesPackage#getOdometry_Twist()
@@ -131,9 +121,7 @@ public interface Odometry extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.Odometry#getTwist <em>Twist</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Twist</em>' containment reference.
+	 * @param value the new value of the '<em>Twist</em>' containment reference.
 	 * @see #getTwist()
 	 * @generated
 	 */

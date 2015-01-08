@@ -28,10 +28,10 @@ Export-Package: org.eclipse.papyrus.RobotML,
  org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.util
 Require-Bundle: org.eclipse.papyrus.uml.diagram.common;bundle-version="1.0.1",
  org.eclipse.core.runtime,
- org.eclipse.emf.ecore,
+ org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,
  org.eclipse.uml2.types;visibility:=reexport,
- org.eclipse.uml2.uml
+ org.eclipse.uml2.uml;visibility:=reexport
 Bundle-Vendor: %Bundle-Vendor
 Bundle-ActivationPolicy: lazy
 Bundle-ClassPath: .

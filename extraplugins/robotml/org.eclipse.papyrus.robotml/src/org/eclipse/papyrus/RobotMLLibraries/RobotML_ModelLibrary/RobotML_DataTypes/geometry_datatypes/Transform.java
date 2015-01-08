@@ -12,8 +12,8 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.Transform#getTranslation <em>Translation</em>}</li>
- * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.Transform#getRotation <em>Rotation</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.Transform#getTranslation <em>Translation</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.Transform#getRotation <em>Rotation</em>}</li>
  * </ul>
  * </p>
  *
@@ -29,7 +29,6 @@ public interface Transform extends EObject {
 	 * If the meaning of the '<em>Translation</em>' containment reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Translation</em>' containment reference.
 	 * @see #setTranslation(Vector3)
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.Geometry_datatypesPackage#getTransform_Translation()
@@ -42,9 +41,7 @@ public interface Transform extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.Transform#getTranslation <em>Translation</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Translation</em>' containment reference.
+	 * @param value the new value of the '<em>Translation</em>' containment reference.
 	 * @see #getTranslation()
 	 * @generated
 	 */
@@ -57,7 +54,6 @@ public interface Transform extends EObject {
 	 * If the meaning of the '<em>Rotation</em>' containment reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Rotation</em>' containment reference.
 	 * @see #setRotation(Quaternion)
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.Geometry_datatypesPackage#getTransform_Rotation()
@@ -70,9 +66,7 @@ public interface Transform extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.Transform#getRotation <em>Rotation</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Rotation</em>' containment reference.
+	 * @param value the new value of the '<em>Rotation</em>' containment reference.
 	 * @see #getRotation()
 	 * @generated
 	 */

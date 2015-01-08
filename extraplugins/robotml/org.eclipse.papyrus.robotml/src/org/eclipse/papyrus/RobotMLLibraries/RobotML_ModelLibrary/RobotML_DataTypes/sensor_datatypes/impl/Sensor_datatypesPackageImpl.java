@@ -51,14 +51,12 @@ import org.eclipse.uml2.uml.UMLPackage;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
- *
  * @generated
  */
 public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_datatypesPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass regionOfInterestEClass = null;
@@ -66,7 +64,6 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass rangeEClass = null;
@@ -74,7 +71,6 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass cameraInfoEClass = null;
@@ -82,7 +78,6 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass imuEClass = null;
@@ -90,7 +85,6 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass laserScanEClass = null;
@@ -98,7 +92,6 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass imageEClass = null;
@@ -106,7 +99,6 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass channelFloat32EClass = null;
@@ -114,7 +106,6 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass compressedImageEClass = null;
@@ -122,7 +113,6 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass pointCloudEClass = null;
@@ -130,7 +120,6 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass pointFieldEClass = null;
@@ -138,7 +127,6 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass pointCloud2EClass = null;
@@ -146,7 +134,6 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass jointStateEClass = null;
@@ -154,7 +141,6 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass navSatStatusEClass = null;
@@ -162,7 +148,6 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass navSatFixEClass = null;
@@ -170,7 +155,6 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass joyEClass = null;
@@ -178,7 +162,6 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass joyFeedbackEClass = null;
@@ -186,7 +169,6 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass joyFeedbackArrayEClass = null;
@@ -194,7 +176,6 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass carLikeOdometryEClass = null;
@@ -202,7 +183,6 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass differentialOdometryEClass = null;
@@ -210,7 +190,6 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EEnum statuS_TYPEEEnum = null;
@@ -218,7 +197,6 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EEnum servicE_TYPEEEnum = null;
@@ -226,17 +204,19 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EEnum covariancE_TYPEEEnum = null;
 
 	/**
-	 * Creates an instance of the model <b>Package</b>, registered with {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
+	 * Creates an instance of the model <b>Package</b>, registered with
+	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
-	 * <p>
-	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * <p>Note: the correct way to create the package is via the static
+	 * factory method {@link #init init()}, which also performs
+	 * initialization of the package, or returns the registered package,
+	 * if one already exists.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.Sensor_datatypesPackage#eNS_URI
 	 * @see #init()
@@ -249,30 +229,27 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private static boolean isInited = false;
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 *
-	 * <p>
-	 * This method is used to initialize {@link Sensor_datatypesPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!--
+	 * 
+	 * <p>This method is used to initialize {@link Sensor_datatypesPackage#eINSTANCE} when that field is accessed.
+	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
 	 * @generated
 	 */
 	public static Sensor_datatypesPackage init() {
-		if (isInited) {
-			return (Sensor_datatypesPackage) EPackage.Registry.INSTANCE.getEPackage(Sensor_datatypesPackage.eNS_URI);
-		}
+		if (isInited) return (Sensor_datatypesPackage)EPackage.Registry.INSTANCE.getEPackage(Sensor_datatypesPackage.eNS_URI);
 
 		// Obtain or create and register package
-		Sensor_datatypesPackageImpl theSensor_datatypesPackage = (Sensor_datatypesPackageImpl) (EPackage.Registry.INSTANCE.get(eNS_URI) instanceof Sensor_datatypesPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new Sensor_datatypesPackageImpl());
+		Sensor_datatypesPackageImpl theSensor_datatypesPackage = (Sensor_datatypesPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof Sensor_datatypesPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new Sensor_datatypesPackageImpl());
 
 		isInited = true;
 
@@ -280,21 +257,14 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 		UMLPackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
-		RobotMLPackageImpl theRobotMLPackage = (RobotMLPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(RobotMLPackage.eNS_URI) instanceof RobotMLPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(RobotMLPackage.eNS_URI) : RobotMLPackage.eINSTANCE);
-		Diagnostic_datatypesPackageImpl theDiagnostic_datatypesPackage = (Diagnostic_datatypesPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(Diagnostic_datatypesPackage.eNS_URI) instanceof Diagnostic_datatypesPackageImpl ? EPackage.Registry.INSTANCE
-				.getEPackage(Diagnostic_datatypesPackage.eNS_URI) : Diagnostic_datatypesPackage.eINSTANCE);
-		Geometry_datatypesPackageImpl theGeometry_datatypesPackage = (Geometry_datatypesPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(Geometry_datatypesPackage.eNS_URI) instanceof Geometry_datatypesPackageImpl ? EPackage.Registry.INSTANCE
-				.getEPackage(Geometry_datatypesPackage.eNS_URI) : Geometry_datatypesPackage.eINSTANCE);
-		Nav_datatypesPackageImpl theNav_datatypesPackage = (Nav_datatypesPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(Nav_datatypesPackage.eNS_URI) instanceof Nav_datatypesPackageImpl ? EPackage.Registry.INSTANCE
-				.getEPackage(Nav_datatypesPackage.eNS_URI) : Nav_datatypesPackage.eINSTANCE);
-		Actionlib_datatypesPackageImpl theActionlib_datatypesPackage = (Actionlib_datatypesPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(Actionlib_datatypesPackage.eNS_URI) instanceof Actionlib_datatypesPackageImpl ? EPackage.Registry.INSTANCE
-				.getEPackage(Actionlib_datatypesPackage.eNS_URI) : Actionlib_datatypesPackage.eINSTANCE);
-		Oarp1_datatypesPackageImpl theOarp1_datatypesPackage = (Oarp1_datatypesPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(Oarp1_datatypesPackage.eNS_URI) instanceof Oarp1_datatypesPackageImpl ? EPackage.Registry.INSTANCE
-				.getEPackage(Oarp1_datatypesPackage.eNS_URI) : Oarp1_datatypesPackage.eINSTANCE);
-		Oarp4_datatypesPackageImpl theOarp4_datatypesPackage = (Oarp4_datatypesPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(Oarp4_datatypesPackage.eNS_URI) instanceof Oarp4_datatypesPackageImpl ? EPackage.Registry.INSTANCE
-				.getEPackage(Oarp4_datatypesPackage.eNS_URI) : Oarp4_datatypesPackage.eINSTANCE);
-		Std_datatypesPackageImpl theStd_datatypesPackage = (Std_datatypesPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(Std_datatypesPackage.eNS_URI) instanceof Std_datatypesPackageImpl ? EPackage.Registry.INSTANCE
-				.getEPackage(Std_datatypesPackage.eNS_URI) : Std_datatypesPackage.eINSTANCE);
+		RobotMLPackageImpl theRobotMLPackage = (RobotMLPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(RobotMLPackage.eNS_URI) instanceof RobotMLPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(RobotMLPackage.eNS_URI) : RobotMLPackage.eINSTANCE);
+		Diagnostic_datatypesPackageImpl theDiagnostic_datatypesPackage = (Diagnostic_datatypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(Diagnostic_datatypesPackage.eNS_URI) instanceof Diagnostic_datatypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(Diagnostic_datatypesPackage.eNS_URI) : Diagnostic_datatypesPackage.eINSTANCE);
+		Geometry_datatypesPackageImpl theGeometry_datatypesPackage = (Geometry_datatypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(Geometry_datatypesPackage.eNS_URI) instanceof Geometry_datatypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(Geometry_datatypesPackage.eNS_URI) : Geometry_datatypesPackage.eINSTANCE);
+		Nav_datatypesPackageImpl theNav_datatypesPackage = (Nav_datatypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(Nav_datatypesPackage.eNS_URI) instanceof Nav_datatypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(Nav_datatypesPackage.eNS_URI) : Nav_datatypesPackage.eINSTANCE);
+		Actionlib_datatypesPackageImpl theActionlib_datatypesPackage = (Actionlib_datatypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(Actionlib_datatypesPackage.eNS_URI) instanceof Actionlib_datatypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(Actionlib_datatypesPackage.eNS_URI) : Actionlib_datatypesPackage.eINSTANCE);
+		Oarp1_datatypesPackageImpl theOarp1_datatypesPackage = (Oarp1_datatypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(Oarp1_datatypesPackage.eNS_URI) instanceof Oarp1_datatypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(Oarp1_datatypesPackage.eNS_URI) : Oarp1_datatypesPackage.eINSTANCE);
+		Oarp4_datatypesPackageImpl theOarp4_datatypesPackage = (Oarp4_datatypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(Oarp4_datatypesPackage.eNS_URI) instanceof Oarp4_datatypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(Oarp4_datatypesPackage.eNS_URI) : Oarp4_datatypesPackage.eINSTANCE);
+		Std_datatypesPackageImpl theStd_datatypesPackage = (Std_datatypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(Std_datatypesPackage.eNS_URI) instanceof Std_datatypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(Std_datatypesPackage.eNS_URI) : Std_datatypesPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theSensor_datatypesPackage.createPackageContents();
@@ -321,7 +291,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 		// Mark meta-data to indicate it can't be changed
 		theSensor_datatypesPackage.freeze();
 
-
+  
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(Sensor_datatypesPackage.eNS_URI, theSensor_datatypesPackage);
 		return theSensor_datatypesPackage;
@@ -330,7 +300,6 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getRegionOfInterest() {
@@ -340,57 +309,51 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getRegionOfInterest_X_offset() {
-		return (EAttribute) regionOfInterestEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)regionOfInterestEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getRegionOfInterest_Y_offset() {
-		return (EAttribute) regionOfInterestEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)regionOfInterestEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getRegionOfInterest_Height() {
-		return (EAttribute) regionOfInterestEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)regionOfInterestEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getRegionOfInterest_Do_rectify() {
-		return (EAttribute) regionOfInterestEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)regionOfInterestEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getRegionOfInterest_Width() {
-		return (EAttribute) regionOfInterestEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)regionOfInterestEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getRange() {
@@ -400,87 +363,78 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getRange_ULTRASOUND() {
-		return (EAttribute) rangeEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)rangeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getRange_INFRARED() {
-		return (EAttribute) rangeEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)rangeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EReference getRange_Header() {
-		return (EReference) rangeEClass.getEStructuralFeatures().get(2);
+		return (EReference)rangeEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getRange_Radiation_type() {
-		return (EAttribute) rangeEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)rangeEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getRange_Field_of_view() {
-		return (EAttribute) rangeEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)rangeEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getRange_Min_range() {
-		return (EAttribute) rangeEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)rangeEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getRange_Max_range() {
-		return (EAttribute) rangeEClass.getEStructuralFeatures().get(6);
+		return (EAttribute)rangeEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getRange_Range() {
-		return (EAttribute) rangeEClass.getEStructuralFeatures().get(7);
+		return (EAttribute)rangeEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getCameraInfo() {
@@ -490,117 +444,105 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EReference getCameraInfo_Header() {
-		return (EReference) cameraInfoEClass.getEStructuralFeatures().get(0);
+		return (EReference)cameraInfoEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getCameraInfo_Height() {
-		return (EAttribute) cameraInfoEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)cameraInfoEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getCameraInfo_Width() {
-		return (EAttribute) cameraInfoEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)cameraInfoEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getCameraInfo_Distorsion_model() {
-		return (EAttribute) cameraInfoEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)cameraInfoEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getCameraInfo_D() {
-		return (EAttribute) cameraInfoEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)cameraInfoEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getCameraInfo_K() {
-		return (EAttribute) cameraInfoEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)cameraInfoEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getCameraInfo_R() {
-		return (EAttribute) cameraInfoEClass.getEStructuralFeatures().get(6);
+		return (EAttribute)cameraInfoEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getCameraInfo_P() {
-		return (EAttribute) cameraInfoEClass.getEStructuralFeatures().get(7);
+		return (EAttribute)cameraInfoEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getCameraInfo_Binning_x() {
-		return (EAttribute) cameraInfoEClass.getEStructuralFeatures().get(8);
+		return (EAttribute)cameraInfoEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getCameraInfo_Binning_y() {
-		return (EAttribute) cameraInfoEClass.getEStructuralFeatures().get(9);
+		return (EAttribute)cameraInfoEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EReference getCameraInfo_Roi() {
-		return (EReference) cameraInfoEClass.getEStructuralFeatures().get(10);
+		return (EReference)cameraInfoEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getImu() {
@@ -610,77 +552,69 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EReference getImu_Header() {
-		return (EReference) imuEClass.getEStructuralFeatures().get(0);
+		return (EReference)imuEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EReference getImu_Orientation() {
-		return (EReference) imuEClass.getEStructuralFeatures().get(1);
+		return (EReference)imuEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getImu_Orientation_covariance() {
-		return (EAttribute) imuEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)imuEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EReference getImu_Angular_velocity() {
-		return (EReference) imuEClass.getEStructuralFeatures().get(3);
+		return (EReference)imuEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getImu_Angular_velocity_covariance() {
-		return (EAttribute) imuEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)imuEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EReference getImu_Linear_acceleration() {
-		return (EReference) imuEClass.getEStructuralFeatures().get(5);
+		return (EReference)imuEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getImu_Linear_acceleration_covariance() {
-		return (EAttribute) imuEClass.getEStructuralFeatures().get(6);
+		return (EAttribute)imuEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getLaserScan() {
@@ -690,107 +624,96 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EReference getLaserScan_Header() {
-		return (EReference) laserScanEClass.getEStructuralFeatures().get(0);
+		return (EReference)laserScanEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getLaserScan_Angle_min() {
-		return (EAttribute) laserScanEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)laserScanEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getLaserScan_Angle_max() {
-		return (EAttribute) laserScanEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)laserScanEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getLaserScan_Angle_increment() {
-		return (EAttribute) laserScanEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)laserScanEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getLaserScan_Time_increment() {
-		return (EAttribute) laserScanEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)laserScanEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getLaserScan_Scan_time() {
-		return (EAttribute) laserScanEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)laserScanEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getLaserScan_Range_min() {
-		return (EAttribute) laserScanEClass.getEStructuralFeatures().get(6);
+		return (EAttribute)laserScanEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getLaserScan_Range_max() {
-		return (EAttribute) laserScanEClass.getEStructuralFeatures().get(7);
+		return (EAttribute)laserScanEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getLaserScan_Range() {
-		return (EAttribute) laserScanEClass.getEStructuralFeatures().get(8);
+		return (EAttribute)laserScanEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getLaserScan_Intensities() {
-		return (EAttribute) laserScanEClass.getEStructuralFeatures().get(9);
+		return (EAttribute)laserScanEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getImage() {
@@ -800,77 +723,69 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EReference getImage_Header() {
-		return (EReference) imageEClass.getEStructuralFeatures().get(0);
+		return (EReference)imageEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getImage_Height() {
-		return (EAttribute) imageEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)imageEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getImage_Width() {
-		return (EAttribute) imageEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)imageEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getImage_Encoding() {
-		return (EAttribute) imageEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)imageEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getImage_Is_bigendian() {
-		return (EAttribute) imageEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)imageEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getImage_Step() {
-		return (EAttribute) imageEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)imageEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getImage_Data() {
-		return (EAttribute) imageEClass.getEStructuralFeatures().get(6);
+		return (EAttribute)imageEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getChannelFloat32() {
@@ -880,27 +795,24 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getChannelFloat32_Name() {
-		return (EAttribute) channelFloat32EClass.getEStructuralFeatures().get(0);
+		return (EAttribute)channelFloat32EClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getChannelFloat32_Values() {
-		return (EAttribute) channelFloat32EClass.getEStructuralFeatures().get(1);
+		return (EAttribute)channelFloat32EClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getCompressedImage() {
@@ -910,37 +822,33 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EReference getCompressedImage_Header() {
-		return (EReference) compressedImageEClass.getEStructuralFeatures().get(0);
+		return (EReference)compressedImageEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getCompressedImage_Format() {
-		return (EAttribute) compressedImageEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)compressedImageEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getCompressedImage_Data() {
-		return (EAttribute) compressedImageEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)compressedImageEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getPointCloud() {
@@ -950,37 +858,33 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EReference getPointCloud_Header() {
-		return (EReference) pointCloudEClass.getEStructuralFeatures().get(0);
+		return (EReference)pointCloudEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EReference getPointCloud_Points() {
-		return (EReference) pointCloudEClass.getEStructuralFeatures().get(1);
+		return (EReference)pointCloudEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EReference getPointCloud_Channels() {
-		return (EReference) pointCloudEClass.getEStructuralFeatures().get(2);
+		return (EReference)pointCloudEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getPointField() {
@@ -990,47 +894,42 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getPointField_Name() {
-		return (EAttribute) pointFieldEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)pointFieldEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getPointField_Offset() {
-		return (EAttribute) pointFieldEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)pointFieldEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getPointField_Datatype() {
-		return (EAttribute) pointFieldEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)pointFieldEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getPointField_Count() {
-		return (EAttribute) pointFieldEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)pointFieldEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getPointCloud2() {
@@ -1040,97 +939,87 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EReference getPointCloud2_Header() {
-		return (EReference) pointCloud2EClass.getEStructuralFeatures().get(0);
+		return (EReference)pointCloud2EClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getPointCloud2_Height() {
-		return (EAttribute) pointCloud2EClass.getEStructuralFeatures().get(1);
+		return (EAttribute)pointCloud2EClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getPointCloud2_Width() {
-		return (EAttribute) pointCloud2EClass.getEStructuralFeatures().get(2);
+		return (EAttribute)pointCloud2EClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EReference getPointCloud2_Fields() {
-		return (EReference) pointCloud2EClass.getEStructuralFeatures().get(3);
+		return (EReference)pointCloud2EClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getPointCloud2_Is_bigendian() {
-		return (EAttribute) pointCloud2EClass.getEStructuralFeatures().get(4);
+		return (EAttribute)pointCloud2EClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getPointCloud2_Point_step() {
-		return (EAttribute) pointCloud2EClass.getEStructuralFeatures().get(5);
+		return (EAttribute)pointCloud2EClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getPointCloud2_Row_step() {
-		return (EAttribute) pointCloud2EClass.getEStructuralFeatures().get(6);
+		return (EAttribute)pointCloud2EClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getPointCloud2_Data() {
-		return (EAttribute) pointCloud2EClass.getEStructuralFeatures().get(7);
+		return (EAttribute)pointCloud2EClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getPointCloud2_Is_dense() {
-		return (EAttribute) pointCloud2EClass.getEStructuralFeatures().get(8);
+		return (EAttribute)pointCloud2EClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getJointState() {
@@ -1140,47 +1029,42 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getJointState_Name() {
-		return (EAttribute) jointStateEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)jointStateEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getJointState_Position() {
-		return (EAttribute) jointStateEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)jointStateEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getJointState_Velocity() {
-		return (EAttribute) jointStateEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)jointStateEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getJointState_Effort() {
-		return (EAttribute) jointStateEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)jointStateEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getNavSatStatus() {
@@ -1190,107 +1074,96 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getNavSatStatus_STATUS_NO_FIX() {
-		return (EAttribute) navSatStatusEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)navSatStatusEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getNavSatStatus_STATUS_FIX() {
-		return (EAttribute) navSatStatusEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)navSatStatusEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getNavSatStatus_STATUS_SBAS_FIX() {
-		return (EAttribute) navSatStatusEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)navSatStatusEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getNavSatStatus_STATUS_GBAS_FIX() {
-		return (EAttribute) navSatStatusEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)navSatStatusEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getNavSatStatus_Status() {
-		return (EAttribute) navSatStatusEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)navSatStatusEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getNavSatStatus_SERVICE_GPS() {
-		return (EAttribute) navSatStatusEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)navSatStatusEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getNavSatStatus_SERVICE_GLONASS() {
-		return (EAttribute) navSatStatusEClass.getEStructuralFeatures().get(6);
+		return (EAttribute)navSatStatusEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getNavSatStatus_SERVICE_COMPASS() {
-		return (EAttribute) navSatStatusEClass.getEStructuralFeatures().get(7);
+		return (EAttribute)navSatStatusEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getNavSatStatus_SERVICE_GALILEO() {
-		return (EAttribute) navSatStatusEClass.getEStructuralFeatures().get(8);
+		return (EAttribute)navSatStatusEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getNavSatStatus_Service() {
-		return (EAttribute) navSatStatusEClass.getEStructuralFeatures().get(9);
+		return (EAttribute)navSatStatusEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getNavSatFix() {
@@ -1300,87 +1173,78 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getNavSatFix_Status() {
-		return (EAttribute) navSatFixEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)navSatFixEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getNavSatFix_Service() {
-		return (EAttribute) navSatFixEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)navSatFixEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EReference getNavSatFix_Header() {
-		return (EReference) navSatFixEClass.getEStructuralFeatures().get(2);
+		return (EReference)navSatFixEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getNavSatFix_Latitude() {
-		return (EAttribute) navSatFixEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)navSatFixEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getNavSatFix_Longitude() {
-		return (EAttribute) navSatFixEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)navSatFixEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getNavSatFix_Altitude() {
-		return (EAttribute) navSatFixEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)navSatFixEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getNavSatFix_Position_covariance() {
-		return (EAttribute) navSatFixEClass.getEStructuralFeatures().get(6);
+		return (EAttribute)navSatFixEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getNavSatFix_Position_covariance_type() {
-		return (EAttribute) navSatFixEClass.getEStructuralFeatures().get(7);
+		return (EAttribute)navSatFixEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getJoy() {
@@ -1390,37 +1254,33 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EReference getJoy_Header() {
-		return (EReference) joyEClass.getEStructuralFeatures().get(0);
+		return (EReference)joyEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getJoy_Axes() {
-		return (EAttribute) joyEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)joyEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getJoy_Buttons() {
-		return (EAttribute) joyEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)joyEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getJoyFeedback() {
@@ -1430,67 +1290,60 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getJoyFeedback_TYPE_LED() {
-		return (EAttribute) joyFeedbackEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)joyFeedbackEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getJoyFeedback_TYPE_RUMBLE() {
-		return (EAttribute) joyFeedbackEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)joyFeedbackEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getJoyFeedback_TYPE_BUZZER() {
-		return (EAttribute) joyFeedbackEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)joyFeedbackEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getJoyFeedback_Type() {
-		return (EAttribute) joyFeedbackEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)joyFeedbackEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getJoyFeedback_Id() {
-		return (EAttribute) joyFeedbackEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)joyFeedbackEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getJoyFeedback_Intensity() {
-		return (EAttribute) joyFeedbackEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)joyFeedbackEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getJoyFeedbackArray() {
@@ -1500,17 +1353,15 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EReference getJoyFeedbackArray_Array() {
-		return (EReference) joyFeedbackArrayEClass.getEStructuralFeatures().get(0);
+		return (EReference)joyFeedbackArrayEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getCarLikeOdometry() {
@@ -1520,67 +1371,60 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EReference getCarLikeOdometry_Header() {
-		return (EReference) carLikeOdometryEClass.getEStructuralFeatures().get(0);
+		return (EReference)carLikeOdometryEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getCarLikeOdometry_Steering_angle() {
-		return (EAttribute) carLikeOdometryEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)carLikeOdometryEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getCarLikeOdometry_Left_rear_wheel_distance() {
-		return (EAttribute) carLikeOdometryEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)carLikeOdometryEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getCarLikeOdometry_Right_rear_wheel_distance() {
-		return (EAttribute) carLikeOdometryEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)carLikeOdometryEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getCarLikeOdometry_Right_rear_wheel_velocity() {
-		return (EAttribute) carLikeOdometryEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)carLikeOdometryEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getCarLikeOdometry_Left_rear_wheel_velocity() {
-		return (EAttribute) carLikeOdometryEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)carLikeOdometryEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getDifferentialOdometry() {
@@ -1590,57 +1434,51 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EReference getDifferentialOdometry_Header() {
-		return (EReference) differentialOdometryEClass.getEStructuralFeatures().get(0);
+		return (EReference)differentialOdometryEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getDifferentialOdometry_Right_distance() {
-		return (EAttribute) differentialOdometryEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)differentialOdometryEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getDifferentialOdometry_Left_distance() {
-		return (EAttribute) differentialOdometryEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)differentialOdometryEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getDifferentialOdometry_Left_velocity() {
-		return (EAttribute) differentialOdometryEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)differentialOdometryEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getDifferentialOdometry_Right_velocity() {
-		return (EAttribute) differentialOdometryEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)differentialOdometryEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EEnum getSTATUS_TYPE() {
@@ -1650,7 +1488,6 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EEnum getSERVICE_TYPE() {
@@ -1660,7 +1497,6 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EEnum getCOVARIANCE_TYPE() {
@@ -1670,33 +1506,28 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public Sensor_datatypesFactory getSensor_datatypesFactory() {
-		return (Sensor_datatypesFactory) getEFactoryInstance();
+		return (Sensor_datatypesFactory)getEFactoryInstance();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private boolean isCreated = false;
 
 	/**
-	 * Creates the meta-model objects for the package. This method is
+	 * Creates the meta-model objects for the package.  This method is
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public void createPackageContents() {
-		if (isCreated) {
-			return;
-		}
+		if (isCreated) return;
 		isCreated = true;
 
 		// Create classes and their features
@@ -1859,23 +1690,19 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private boolean isInitialized = false;
 
 	/**
-	 * Complete the initialization of the package and its meta-model. This
+	 * Complete the initialization of the package and its meta-model.  This
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public void initializePackageContents() {
-		if (isInitialized) {
-			return;
-		}
+		if (isInitialized) return;
 		isInitialized = true;
 
 		// Initialize package
@@ -1884,8 +1711,8 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		Std_datatypesPackage theStd_datatypesPackage = (Std_datatypesPackage) EPackage.Registry.INSTANCE.getEPackage(Std_datatypesPackage.eNS_URI);
-		Geometry_datatypesPackage theGeometry_datatypesPackage = (Geometry_datatypesPackage) EPackage.Registry.INSTANCE.getEPackage(Geometry_datatypesPackage.eNS_URI);
+		Std_datatypesPackage theStd_datatypesPackage = (Std_datatypesPackage)EPackage.Registry.INSTANCE.getEPackage(Std_datatypesPackage.eNS_URI);
+		Geometry_datatypesPackage theGeometry_datatypesPackage = (Geometry_datatypesPackage)EPackage.Registry.INSTANCE.getEPackage(Geometry_datatypesPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -1912,8 +1739,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 		initEAttribute(getRange_Range(), theStd_datatypesPackage.getFloat32(), "range", null, 1, 1, Range.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(cameraInfoEClass, CameraInfo.class, "CameraInfo", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getCameraInfo_Header(), theStd_datatypesPackage.getHeader(), null, "header", null, 1, 1, CameraInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				!IS_ORDERED);
+		initEReference(getCameraInfo_Header(), theStd_datatypesPackage.getHeader(), null, "header", null, 1, 1, CameraInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getCameraInfo_Height(), theStd_datatypesPackage.getUInt32(), "height", null, 1, 1, CameraInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getCameraInfo_Width(), theStd_datatypesPackage.getUInt32(), "width", null, 1, 1, CameraInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getCameraInfo_Distorsion_model(), theStd_datatypesPackage.getString(), "distorsion_model", null, 1, 1, CameraInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -1927,16 +1753,12 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 
 		initEClass(imuEClass, Imu.class, "Imu", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getImu_Header(), theStd_datatypesPackage.getHeader(), null, "header", null, 1, 1, Imu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getImu_Orientation(), theGeometry_datatypesPackage.getQuaternion(), null, "orientation", null, 1, 1, Imu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				!IS_ORDERED);
+		initEReference(getImu_Orientation(), theGeometry_datatypesPackage.getQuaternion(), null, "orientation", null, 1, 1, Imu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getImu_Orientation_covariance(), theStd_datatypesPackage.getFloat64(), "orientation_covariance", null, 9, 9, Imu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getImu_Angular_velocity(), theGeometry_datatypesPackage.getVector3(), null, "angular_velocity", null, 1, 1, Imu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
-				!IS_DERIVED, !IS_ORDERED);
+		initEReference(getImu_Angular_velocity(), theGeometry_datatypesPackage.getVector3(), null, "angular_velocity", null, 1, 1, Imu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getImu_Angular_velocity_covariance(), theStd_datatypesPackage.getFloat64(), "angular_velocity_covariance", null, 9, 9, Imu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getImu_Linear_acceleration(), theGeometry_datatypesPackage.getVector3(), null, "linear_acceleration", null, 1, 1, Imu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
-				!IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getImu_Linear_acceleration_covariance(), theStd_datatypesPackage.getFloat64(), "linear_acceleration_covariance", null, 9, 9, Imu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
-				!IS_ORDERED);
+		initEReference(getImu_Linear_acceleration(), theGeometry_datatypesPackage.getVector3(), null, "linear_acceleration", null, 1, 1, Imu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getImu_Linear_acceleration_covariance(), theStd_datatypesPackage.getFloat64(), "linear_acceleration_covariance", null, 9, 9, Imu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(laserScanEClass, LaserScan.class, "LaserScan", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getLaserScan_Header(), theStd_datatypesPackage.getHeader(), null, "header", null, 1, 1, LaserScan.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -1964,16 +1786,13 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 		initEAttribute(getChannelFloat32_Values(), theStd_datatypesPackage.getFloat32(), "values", null, 0, -1, ChannelFloat32.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(compressedImageEClass, CompressedImage.class, "CompressedImage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getCompressedImage_Header(), theStd_datatypesPackage.getHeader(), null, "header", null, 1, 1, CompressedImage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				!IS_ORDERED);
+		initEReference(getCompressedImage_Header(), theStd_datatypesPackage.getHeader(), null, "header", null, 1, 1, CompressedImage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getCompressedImage_Format(), theStd_datatypesPackage.getString(), "format", null, 1, 1, CompressedImage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getCompressedImage_Data(), theStd_datatypesPackage.getUInt8(), "data", null, 0, -1, CompressedImage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(pointCloudEClass, PointCloud.class, "PointCloud", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getPointCloud_Header(), theStd_datatypesPackage.getHeader(), null, "header", null, 1, 1, PointCloud.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				!IS_ORDERED);
-		initEReference(getPointCloud_Points(), theGeometry_datatypesPackage.getPoint32(), null, "points", null, 0, -1, PointCloud.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				!IS_ORDERED);
+		initEReference(getPointCloud_Header(), theStd_datatypesPackage.getHeader(), null, "header", null, 1, 1, PointCloud.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getPointCloud_Points(), theGeometry_datatypesPackage.getPoint32(), null, "points", null, 0, -1, PointCloud.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getPointCloud_Channels(), this.getChannelFloat32(), null, "channels", null, 0, -1, PointCloud.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(pointFieldEClass, PointField.class, "PointField", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1983,8 +1802,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 		initEAttribute(getPointField_Count(), theStd_datatypesPackage.getUInt32(), "count", null, 1, 1, PointField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(pointCloud2EClass, PointCloud2.class, "PointCloud2", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getPointCloud2_Header(), theStd_datatypesPackage.getHeader(), null, "header", null, 1, 1, PointCloud2.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				!IS_ORDERED);
+		initEReference(getPointCloud2_Header(), theStd_datatypesPackage.getHeader(), null, "header", null, 1, 1, PointCloud2.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getPointCloud2_Height(), theStd_datatypesPackage.getUInt32(), "height", null, 1, 1, PointCloud2.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getPointCloud2_Width(), theStd_datatypesPackage.getUInt32(), "width", null, 1, 1, PointCloud2.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getPointCloud2_Fields(), this.getPointField(), null, "fields", null, 0, -1, PointCloud2.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -2039,29 +1857,19 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 		initEReference(getJoyFeedbackArray_Array(), this.getJoyFeedback(), null, "array", null, 0, -1, JoyFeedbackArray.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(carLikeOdometryEClass, CarLikeOdometry.class, "CarLikeOdometry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getCarLikeOdometry_Header(), theStd_datatypesPackage.getHeader(), null, "header", null, 1, 1, CarLikeOdometry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				!IS_ORDERED);
+		initEReference(getCarLikeOdometry_Header(), theStd_datatypesPackage.getHeader(), null, "header", null, 1, 1, CarLikeOdometry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getCarLikeOdometry_Steering_angle(), theStd_datatypesPackage.getFloat64(), "steering_angle", null, 1, 1, CarLikeOdometry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getCarLikeOdometry_Left_rear_wheel_distance(), theStd_datatypesPackage.getFloat64(), "left_rear_wheel_distance", null, 1, 1, CarLikeOdometry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
-				!IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getCarLikeOdometry_Right_rear_wheel_distance(), theStd_datatypesPackage.getFloat64(), "right_rear_wheel_distance", null, 1, 1, CarLikeOdometry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
-				!IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getCarLikeOdometry_Right_rear_wheel_velocity(), theStd_datatypesPackage.getFloat64(), "right_rear_wheel_velocity", null, 1, 1, CarLikeOdometry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
-				!IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getCarLikeOdometry_Left_rear_wheel_velocity(), theStd_datatypesPackage.getFloat64(), "left_rear_wheel_velocity", null, 1, 1, CarLikeOdometry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
-				!IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getCarLikeOdometry_Left_rear_wheel_distance(), theStd_datatypesPackage.getFloat64(), "left_rear_wheel_distance", null, 1, 1, CarLikeOdometry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getCarLikeOdometry_Right_rear_wheel_distance(), theStd_datatypesPackage.getFloat64(), "right_rear_wheel_distance", null, 1, 1, CarLikeOdometry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getCarLikeOdometry_Right_rear_wheel_velocity(), theStd_datatypesPackage.getFloat64(), "right_rear_wheel_velocity", null, 1, 1, CarLikeOdometry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getCarLikeOdometry_Left_rear_wheel_velocity(), theStd_datatypesPackage.getFloat64(), "left_rear_wheel_velocity", null, 1, 1, CarLikeOdometry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(differentialOdometryEClass, DifferentialOdometry.class, "DifferentialOdometry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getDifferentialOdometry_Header(), theStd_datatypesPackage.getHeader(), null, "header", null, 1, 1, DifferentialOdometry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
-				!IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getDifferentialOdometry_Right_distance(), theStd_datatypesPackage.getFloat64(), "right_distance", null, 1, 1, DifferentialOdometry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
-				!IS_ORDERED);
-		initEAttribute(getDifferentialOdometry_Left_distance(), theStd_datatypesPackage.getFloat64(), "left_distance", null, 1, 1, DifferentialOdometry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
-				!IS_ORDERED);
-		initEAttribute(getDifferentialOdometry_Left_velocity(), theStd_datatypesPackage.getFloat64(), "left_velocity", null, 1, 1, DifferentialOdometry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
-				!IS_ORDERED);
-		initEAttribute(getDifferentialOdometry_Right_velocity(), theStd_datatypesPackage.getFloat64(), "right_velocity", null, 1, 1, DifferentialOdometry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
-				!IS_ORDERED);
+		initEReference(getDifferentialOdometry_Header(), theStd_datatypesPackage.getHeader(), null, "header", null, 1, 1, DifferentialOdometry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getDifferentialOdometry_Right_distance(), theStd_datatypesPackage.getFloat64(), "right_distance", null, 1, 1, DifferentialOdometry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getDifferentialOdometry_Left_distance(), theStd_datatypesPackage.getFloat64(), "left_distance", null, 1, 1, DifferentialOdometry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getDifferentialOdometry_Left_velocity(), theStd_datatypesPackage.getFloat64(), "left_velocity", null, 1, 1, DifferentialOdometry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getDifferentialOdometry_Right_velocity(), theStd_datatypesPackage.getFloat64(), "right_velocity", null, 1, 1, DifferentialOdometry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(statuS_TYPEEEnum, org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.STATUS_TYPE.class, "STATUS_TYPE");

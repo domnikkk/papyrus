@@ -20,8 +20,8 @@ import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTyp
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.ChannelFloat32Impl#getName <em>Name</em>}</li>
- * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.ChannelFloat32Impl#getValues <em>Values</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.ChannelFloat32Impl#getName <em>Name</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.ChannelFloat32Impl#getValues <em>Values</em>}</li>
  * </ul>
  * </p>
  *
@@ -32,7 +32,6 @@ public class ChannelFloat32Impl extends MinimalEObjectImpl.Container implements 
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -43,7 +42,6 @@ public class ChannelFloat32Impl extends MinimalEObjectImpl.Container implements 
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -54,7 +52,6 @@ public class ChannelFloat32Impl extends MinimalEObjectImpl.Container implements 
 	 * The cached value of the '{@link #getValues() <em>Values</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getValues()
 	 * @generated
 	 * @ordered
@@ -64,7 +61,6 @@ public class ChannelFloat32Impl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected ChannelFloat32Impl() {
@@ -74,7 +70,6 @@ public class ChannelFloat32Impl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -85,7 +80,6 @@ public class ChannelFloat32Impl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public String getName() {
@@ -95,21 +89,18 @@ public class ChannelFloat32Impl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Sensor_datatypesPackage.CHANNEL_FLOAT32__NAME, oldName, name));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EList<Float> getValues() {
@@ -122,16 +113,15 @@ public class ChannelFloat32Impl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case Sensor_datatypesPackage.CHANNEL_FLOAT32__NAME:
-			return getName();
-		case Sensor_datatypesPackage.CHANNEL_FLOAT32__VALUES:
-			return getValues();
+			case Sensor_datatypesPackage.CHANNEL_FLOAT32__NAME:
+				return getName();
+			case Sensor_datatypesPackage.CHANNEL_FLOAT32__VALUES:
+				return getValues();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -139,20 +129,19 @@ public class ChannelFloat32Impl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case Sensor_datatypesPackage.CHANNEL_FLOAT32__NAME:
-			setName((String) newValue);
-			return;
-		case Sensor_datatypesPackage.CHANNEL_FLOAT32__VALUES:
-			getValues().clear();
-			getValues().addAll((Collection<? extends Float>) newValue);
-			return;
+			case Sensor_datatypesPackage.CHANNEL_FLOAT32__NAME:
+				setName((String)newValue);
+				return;
+			case Sensor_datatypesPackage.CHANNEL_FLOAT32__VALUES:
+				getValues().clear();
+				getValues().addAll((Collection<? extends Float>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -160,18 +149,17 @@ public class ChannelFloat32Impl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case Sensor_datatypesPackage.CHANNEL_FLOAT32__NAME:
-			setName(NAME_EDEFAULT);
-			return;
-		case Sensor_datatypesPackage.CHANNEL_FLOAT32__VALUES:
-			getValues().clear();
-			return;
+			case Sensor_datatypesPackage.CHANNEL_FLOAT32__NAME:
+				setName(NAME_EDEFAULT);
+				return;
+			case Sensor_datatypesPackage.CHANNEL_FLOAT32__VALUES:
+				getValues().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -179,16 +167,15 @@ public class ChannelFloat32Impl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case Sensor_datatypesPackage.CHANNEL_FLOAT32__NAME:
-			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-		case Sensor_datatypesPackage.CHANNEL_FLOAT32__VALUES:
-			return values != null && !values.isEmpty();
+			case Sensor_datatypesPackage.CHANNEL_FLOAT32__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case Sensor_datatypesPackage.CHANNEL_FLOAT32__VALUES:
+				return values != null && !values.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -196,14 +183,11 @@ public class ChannelFloat32Impl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
-			return super.toString();
-		}
+		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");

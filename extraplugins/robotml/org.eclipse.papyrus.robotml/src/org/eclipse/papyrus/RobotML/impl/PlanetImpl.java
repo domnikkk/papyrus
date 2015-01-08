@@ -19,7 +19,6 @@ public class PlanetImpl extends PhysicalObjectImpl implements Planet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected PlanetImpl() {
@@ -29,7 +28,6 @@ public class PlanetImpl extends PhysicalObjectImpl implements Planet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override

@@ -19,7 +19,6 @@ public class ClosedLoopControlSystemImpl extends CyberPhysicalSystemImpl impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected ClosedLoopControlSystemImpl() {
@@ -29,7 +28,6 @@ public class ClosedLoopControlSystemImpl extends CyberPhysicalSystemImpl impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override

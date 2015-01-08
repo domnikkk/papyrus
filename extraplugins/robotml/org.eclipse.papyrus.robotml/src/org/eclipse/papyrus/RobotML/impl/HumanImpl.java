@@ -19,7 +19,6 @@ public class HumanImpl extends AgentImpl implements Human {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected HumanImpl() {
@@ -29,7 +28,6 @@ public class HumanImpl extends AgentImpl implements Human {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override

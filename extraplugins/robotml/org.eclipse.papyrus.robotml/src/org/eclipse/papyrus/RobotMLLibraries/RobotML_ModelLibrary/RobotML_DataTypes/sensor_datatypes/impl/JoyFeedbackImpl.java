@@ -16,12 +16,12 @@ import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTyp
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.JoyFeedbackImpl#getTYPE_LED <em>TYPE LED</em>}</li>
- * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.JoyFeedbackImpl#getTYPE_RUMBLE <em>TYPE RUMBLE</em>}</li>
- * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.JoyFeedbackImpl#getTYPE_BUZZER <em>TYPE BUZZER</em>}</li>
- * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.JoyFeedbackImpl#getType <em>Type</em>}</li>
- * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.JoyFeedbackImpl#getId <em>Id</em>}</li>
- * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.JoyFeedbackImpl#getIntensity <em>Intensity</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.JoyFeedbackImpl#getTYPE_LED <em>TYPE LED</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.JoyFeedbackImpl#getTYPE_RUMBLE <em>TYPE RUMBLE</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.JoyFeedbackImpl#getTYPE_BUZZER <em>TYPE BUZZER</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.JoyFeedbackImpl#getType <em>Type</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.JoyFeedbackImpl#getId <em>Id</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.JoyFeedbackImpl#getIntensity <em>Intensity</em>}</li>
  * </ul>
  * </p>
  *
@@ -32,7 +32,6 @@ public class JoyFeedbackImpl extends MinimalEObjectImpl.Container implements Joy
 	 * The default value of the '{@link #getTYPE_LED() <em>TYPE LED</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getTYPE_LED()
 	 * @generated
 	 * @ordered
@@ -43,7 +42,6 @@ public class JoyFeedbackImpl extends MinimalEObjectImpl.Container implements Joy
 	 * The cached value of the '{@link #getTYPE_LED() <em>TYPE LED</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getTYPE_LED()
 	 * @generated
 	 * @ordered
@@ -54,7 +52,6 @@ public class JoyFeedbackImpl extends MinimalEObjectImpl.Container implements Joy
 	 * The default value of the '{@link #getTYPE_RUMBLE() <em>TYPE RUMBLE</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getTYPE_RUMBLE()
 	 * @generated
 	 * @ordered
@@ -65,7 +62,6 @@ public class JoyFeedbackImpl extends MinimalEObjectImpl.Container implements Joy
 	 * The cached value of the '{@link #getTYPE_RUMBLE() <em>TYPE RUMBLE</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getTYPE_RUMBLE()
 	 * @generated
 	 * @ordered
@@ -76,7 +72,6 @@ public class JoyFeedbackImpl extends MinimalEObjectImpl.Container implements Joy
 	 * The default value of the '{@link #getTYPE_BUZZER() <em>TYPE BUZZER</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getTYPE_BUZZER()
 	 * @generated
 	 * @ordered
@@ -87,7 +82,6 @@ public class JoyFeedbackImpl extends MinimalEObjectImpl.Container implements Joy
 	 * The cached value of the '{@link #getTYPE_BUZZER() <em>TYPE BUZZER</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getTYPE_BUZZER()
 	 * @generated
 	 * @ordered
@@ -98,7 +92,6 @@ public class JoyFeedbackImpl extends MinimalEObjectImpl.Container implements Joy
 	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getType()
 	 * @generated
 	 * @ordered
@@ -109,7 +102,6 @@ public class JoyFeedbackImpl extends MinimalEObjectImpl.Container implements Joy
 	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getType()
 	 * @generated
 	 * @ordered
@@ -120,7 +112,6 @@ public class JoyFeedbackImpl extends MinimalEObjectImpl.Container implements Joy
 	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getId()
 	 * @generated
 	 * @ordered
@@ -131,7 +122,6 @@ public class JoyFeedbackImpl extends MinimalEObjectImpl.Container implements Joy
 	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getId()
 	 * @generated
 	 * @ordered
@@ -142,7 +132,6 @@ public class JoyFeedbackImpl extends MinimalEObjectImpl.Container implements Joy
 	 * The default value of the '{@link #getIntensity() <em>Intensity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getIntensity()
 	 * @generated
 	 * @ordered
@@ -153,7 +142,6 @@ public class JoyFeedbackImpl extends MinimalEObjectImpl.Container implements Joy
 	 * The cached value of the '{@link #getIntensity() <em>Intensity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getIntensity()
 	 * @generated
 	 * @ordered
@@ -163,7 +151,6 @@ public class JoyFeedbackImpl extends MinimalEObjectImpl.Container implements Joy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected JoyFeedbackImpl() {
@@ -173,7 +160,6 @@ public class JoyFeedbackImpl extends MinimalEObjectImpl.Container implements Joy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -184,7 +170,6 @@ public class JoyFeedbackImpl extends MinimalEObjectImpl.Container implements Joy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public char getTYPE_LED() {
@@ -194,21 +179,18 @@ public class JoyFeedbackImpl extends MinimalEObjectImpl.Container implements Joy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public void setTYPE_LED(char newTYPE_LED) {
 		char oldTYPE_LED = typE_LED;
 		typE_LED = newTYPE_LED;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Sensor_datatypesPackage.JOY_FEEDBACK__TYPE_LED, oldTYPE_LED, typE_LED));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public char getTYPE_RUMBLE() {
@@ -218,21 +200,18 @@ public class JoyFeedbackImpl extends MinimalEObjectImpl.Container implements Joy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public void setTYPE_RUMBLE(char newTYPE_RUMBLE) {
 		char oldTYPE_RUMBLE = typE_RUMBLE;
 		typE_RUMBLE = newTYPE_RUMBLE;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Sensor_datatypesPackage.JOY_FEEDBACK__TYPE_RUMBLE, oldTYPE_RUMBLE, typE_RUMBLE));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public char getTYPE_BUZZER() {
@@ -242,21 +221,18 @@ public class JoyFeedbackImpl extends MinimalEObjectImpl.Container implements Joy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public void setTYPE_BUZZER(char newTYPE_BUZZER) {
 		char oldTYPE_BUZZER = typE_BUZZER;
 		typE_BUZZER = newTYPE_BUZZER;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Sensor_datatypesPackage.JOY_FEEDBACK__TYPE_BUZZER, oldTYPE_BUZZER, typE_BUZZER));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public char getType() {
@@ -266,21 +242,18 @@ public class JoyFeedbackImpl extends MinimalEObjectImpl.Container implements Joy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public void setType(char newType) {
 		char oldType = type;
 		type = newType;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Sensor_datatypesPackage.JOY_FEEDBACK__TYPE, oldType, type));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public char getId() {
@@ -290,21 +263,18 @@ public class JoyFeedbackImpl extends MinimalEObjectImpl.Container implements Joy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public void setId(char newId) {
 		char oldId = id;
 		id = newId;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Sensor_datatypesPackage.JOY_FEEDBACK__ID, oldId, id));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public float getIntensity() {
@@ -314,38 +284,35 @@ public class JoyFeedbackImpl extends MinimalEObjectImpl.Container implements Joy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public void setIntensity(float newIntensity) {
 		float oldIntensity = intensity;
 		intensity = newIntensity;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Sensor_datatypesPackage.JOY_FEEDBACK__INTENSITY, oldIntensity, intensity));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case Sensor_datatypesPackage.JOY_FEEDBACK__TYPE_LED:
-			return getTYPE_LED();
-		case Sensor_datatypesPackage.JOY_FEEDBACK__TYPE_RUMBLE:
-			return getTYPE_RUMBLE();
-		case Sensor_datatypesPackage.JOY_FEEDBACK__TYPE_BUZZER:
-			return getTYPE_BUZZER();
-		case Sensor_datatypesPackage.JOY_FEEDBACK__TYPE:
-			return getType();
-		case Sensor_datatypesPackage.JOY_FEEDBACK__ID:
-			return getId();
-		case Sensor_datatypesPackage.JOY_FEEDBACK__INTENSITY:
-			return getIntensity();
+			case Sensor_datatypesPackage.JOY_FEEDBACK__TYPE_LED:
+				return getTYPE_LED();
+			case Sensor_datatypesPackage.JOY_FEEDBACK__TYPE_RUMBLE:
+				return getTYPE_RUMBLE();
+			case Sensor_datatypesPackage.JOY_FEEDBACK__TYPE_BUZZER:
+				return getTYPE_BUZZER();
+			case Sensor_datatypesPackage.JOY_FEEDBACK__TYPE:
+				return getType();
+			case Sensor_datatypesPackage.JOY_FEEDBACK__ID:
+				return getId();
+			case Sensor_datatypesPackage.JOY_FEEDBACK__INTENSITY:
+				return getIntensity();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -353,30 +320,29 @@ public class JoyFeedbackImpl extends MinimalEObjectImpl.Container implements Joy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case Sensor_datatypesPackage.JOY_FEEDBACK__TYPE_LED:
-			setTYPE_LED((Character) newValue);
-			return;
-		case Sensor_datatypesPackage.JOY_FEEDBACK__TYPE_RUMBLE:
-			setTYPE_RUMBLE((Character) newValue);
-			return;
-		case Sensor_datatypesPackage.JOY_FEEDBACK__TYPE_BUZZER:
-			setTYPE_BUZZER((Character) newValue);
-			return;
-		case Sensor_datatypesPackage.JOY_FEEDBACK__TYPE:
-			setType((Character) newValue);
-			return;
-		case Sensor_datatypesPackage.JOY_FEEDBACK__ID:
-			setId((Character) newValue);
-			return;
-		case Sensor_datatypesPackage.JOY_FEEDBACK__INTENSITY:
-			setIntensity((Float) newValue);
-			return;
+			case Sensor_datatypesPackage.JOY_FEEDBACK__TYPE_LED:
+				setTYPE_LED((Character)newValue);
+				return;
+			case Sensor_datatypesPackage.JOY_FEEDBACK__TYPE_RUMBLE:
+				setTYPE_RUMBLE((Character)newValue);
+				return;
+			case Sensor_datatypesPackage.JOY_FEEDBACK__TYPE_BUZZER:
+				setTYPE_BUZZER((Character)newValue);
+				return;
+			case Sensor_datatypesPackage.JOY_FEEDBACK__TYPE:
+				setType((Character)newValue);
+				return;
+			case Sensor_datatypesPackage.JOY_FEEDBACK__ID:
+				setId((Character)newValue);
+				return;
+			case Sensor_datatypesPackage.JOY_FEEDBACK__INTENSITY:
+				setIntensity((Float)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -384,30 +350,29 @@ public class JoyFeedbackImpl extends MinimalEObjectImpl.Container implements Joy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case Sensor_datatypesPackage.JOY_FEEDBACK__TYPE_LED:
-			setTYPE_LED(TYPE_LED_EDEFAULT);
-			return;
-		case Sensor_datatypesPackage.JOY_FEEDBACK__TYPE_RUMBLE:
-			setTYPE_RUMBLE(TYPE_RUMBLE_EDEFAULT);
-			return;
-		case Sensor_datatypesPackage.JOY_FEEDBACK__TYPE_BUZZER:
-			setTYPE_BUZZER(TYPE_BUZZER_EDEFAULT);
-			return;
-		case Sensor_datatypesPackage.JOY_FEEDBACK__TYPE:
-			setType(TYPE_EDEFAULT);
-			return;
-		case Sensor_datatypesPackage.JOY_FEEDBACK__ID:
-			setId(ID_EDEFAULT);
-			return;
-		case Sensor_datatypesPackage.JOY_FEEDBACK__INTENSITY:
-			setIntensity(INTENSITY_EDEFAULT);
-			return;
+			case Sensor_datatypesPackage.JOY_FEEDBACK__TYPE_LED:
+				setTYPE_LED(TYPE_LED_EDEFAULT);
+				return;
+			case Sensor_datatypesPackage.JOY_FEEDBACK__TYPE_RUMBLE:
+				setTYPE_RUMBLE(TYPE_RUMBLE_EDEFAULT);
+				return;
+			case Sensor_datatypesPackage.JOY_FEEDBACK__TYPE_BUZZER:
+				setTYPE_BUZZER(TYPE_BUZZER_EDEFAULT);
+				return;
+			case Sensor_datatypesPackage.JOY_FEEDBACK__TYPE:
+				setType(TYPE_EDEFAULT);
+				return;
+			case Sensor_datatypesPackage.JOY_FEEDBACK__ID:
+				setId(ID_EDEFAULT);
+				return;
+			case Sensor_datatypesPackage.JOY_FEEDBACK__INTENSITY:
+				setIntensity(INTENSITY_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -415,24 +380,23 @@ public class JoyFeedbackImpl extends MinimalEObjectImpl.Container implements Joy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case Sensor_datatypesPackage.JOY_FEEDBACK__TYPE_LED:
-			return typE_LED != TYPE_LED_EDEFAULT;
-		case Sensor_datatypesPackage.JOY_FEEDBACK__TYPE_RUMBLE:
-			return typE_RUMBLE != TYPE_RUMBLE_EDEFAULT;
-		case Sensor_datatypesPackage.JOY_FEEDBACK__TYPE_BUZZER:
-			return typE_BUZZER != TYPE_BUZZER_EDEFAULT;
-		case Sensor_datatypesPackage.JOY_FEEDBACK__TYPE:
-			return type != TYPE_EDEFAULT;
-		case Sensor_datatypesPackage.JOY_FEEDBACK__ID:
-			return id != ID_EDEFAULT;
-		case Sensor_datatypesPackage.JOY_FEEDBACK__INTENSITY:
-			return intensity != INTENSITY_EDEFAULT;
+			case Sensor_datatypesPackage.JOY_FEEDBACK__TYPE_LED:
+				return typE_LED != TYPE_LED_EDEFAULT;
+			case Sensor_datatypesPackage.JOY_FEEDBACK__TYPE_RUMBLE:
+				return typE_RUMBLE != TYPE_RUMBLE_EDEFAULT;
+			case Sensor_datatypesPackage.JOY_FEEDBACK__TYPE_BUZZER:
+				return typE_BUZZER != TYPE_BUZZER_EDEFAULT;
+			case Sensor_datatypesPackage.JOY_FEEDBACK__TYPE:
+				return type != TYPE_EDEFAULT;
+			case Sensor_datatypesPackage.JOY_FEEDBACK__ID:
+				return id != ID_EDEFAULT;
+			case Sensor_datatypesPackage.JOY_FEEDBACK__INTENSITY:
+				return intensity != INTENSITY_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -440,14 +404,11 @@ public class JoyFeedbackImpl extends MinimalEObjectImpl.Container implements Joy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
-			return super.toString();
-		}
+		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (TYPE_LED: ");

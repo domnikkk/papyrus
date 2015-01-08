@@ -19,7 +19,6 @@ public class ObjectDetectionSensorSystemImpl extends SensorSystemImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected ObjectDetectionSensorSystemImpl() {
@@ -29,7 +28,6 @@ public class ObjectDetectionSensorSystemImpl extends SensorSystemImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override

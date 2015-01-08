@@ -19,7 +19,6 @@ public class GraspingHardwareImpl extends ActuatorHardwareImpl implements Graspi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected GraspingHardwareImpl() {
@@ -29,7 +28,6 @@ public class GraspingHardwareImpl extends ActuatorHardwareImpl implements Graspi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override

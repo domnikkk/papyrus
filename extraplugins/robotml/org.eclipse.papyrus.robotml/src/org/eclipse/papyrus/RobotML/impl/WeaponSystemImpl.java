@@ -19,7 +19,6 @@ public class WeaponSystemImpl extends ActuatorSystemImpl implements WeaponSystem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected WeaponSystemImpl() {
@@ -29,7 +28,6 @@ public class WeaponSystemImpl extends ActuatorSystemImpl implements WeaponSystem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override

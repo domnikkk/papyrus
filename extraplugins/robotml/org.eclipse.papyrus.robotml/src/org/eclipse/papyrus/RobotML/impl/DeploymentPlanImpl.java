@@ -18,8 +18,8 @@ import org.eclipse.uml2.uml.InstanceSpecification;
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.eclipse.papyrus.RobotML.impl.DeploymentPlanImpl#getBase_Package <em>Base Package</em>}</li>
- * <li>{@link org.eclipse.papyrus.RobotML.impl.DeploymentPlanImpl#getMainInstance <em>Main Instance</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotML.impl.DeploymentPlanImpl#getBase_Package <em>Base Package</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotML.impl.DeploymentPlanImpl#getMainInstance <em>Main Instance</em>}</li>
  * </ul>
  * </p>
  *
@@ -30,7 +30,6 @@ public class DeploymentPlanImpl extends MinimalEObjectImpl.Container implements 
 	 * The cached value of the '{@link #getBase_Package() <em>Base Package</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getBase_Package()
 	 * @generated
 	 * @ordered
@@ -41,7 +40,6 @@ public class DeploymentPlanImpl extends MinimalEObjectImpl.Container implements 
 	 * The cached value of the '{@link #getMainInstance() <em>Main Instance</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getMainInstance()
 	 * @generated
 	 * @ordered
@@ -51,7 +49,6 @@ public class DeploymentPlanImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected DeploymentPlanImpl() {
@@ -61,7 +58,6 @@ public class DeploymentPlanImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -72,17 +68,15 @@ public class DeploymentPlanImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Package getBase_Package() {
 		if (base_Package != null && base_Package.eIsProxy()) {
-			InternalEObject oldBase_Package = (InternalEObject) base_Package;
-			base_Package = (org.eclipse.uml2.uml.Package) eResolveProxy(oldBase_Package);
+			InternalEObject oldBase_Package = (InternalEObject)base_Package;
+			base_Package = (org.eclipse.uml2.uml.Package)eResolveProxy(oldBase_Package);
 			if (base_Package != oldBase_Package) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RobotMLPackage.DEPLOYMENT_PLAN__BASE_PACKAGE, oldBase_Package, base_Package));
-				}
 			}
 		}
 		return base_Package;
@@ -91,7 +85,6 @@ public class DeploymentPlanImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Package basicGetBase_Package() {
@@ -101,31 +94,27 @@ public class DeploymentPlanImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public void setBase_Package(org.eclipse.uml2.uml.Package newBase_Package) {
 		org.eclipse.uml2.uml.Package oldBase_Package = base_Package;
 		base_Package = newBase_Package;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RobotMLPackage.DEPLOYMENT_PLAN__BASE_PACKAGE, oldBase_Package, base_Package));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public InstanceSpecification getMainInstance() {
 		if (mainInstance != null && mainInstance.eIsProxy()) {
-			InternalEObject oldMainInstance = (InternalEObject) mainInstance;
-			mainInstance = (InstanceSpecification) eResolveProxy(oldMainInstance);
+			InternalEObject oldMainInstance = (InternalEObject)mainInstance;
+			mainInstance = (InstanceSpecification)eResolveProxy(oldMainInstance);
 			if (mainInstance != oldMainInstance) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RobotMLPackage.DEPLOYMENT_PLAN__MAIN_INSTANCE, oldMainInstance, mainInstance));
-				}
 			}
 		}
 		return mainInstance;
@@ -134,7 +123,6 @@ public class DeploymentPlanImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public InstanceSpecification basicGetMainInstance() {
@@ -144,36 +132,29 @@ public class DeploymentPlanImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public void setMainInstance(InstanceSpecification newMainInstance) {
 		InstanceSpecification oldMainInstance = mainInstance;
 		mainInstance = newMainInstance;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RobotMLPackage.DEPLOYMENT_PLAN__MAIN_INSTANCE, oldMainInstance, mainInstance));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case RobotMLPackage.DEPLOYMENT_PLAN__BASE_PACKAGE:
-			if (resolve) {
-				return getBase_Package();
-			}
-			return basicGetBase_Package();
-		case RobotMLPackage.DEPLOYMENT_PLAN__MAIN_INSTANCE:
-			if (resolve) {
-				return getMainInstance();
-			}
-			return basicGetMainInstance();
+			case RobotMLPackage.DEPLOYMENT_PLAN__BASE_PACKAGE:
+				if (resolve) return getBase_Package();
+				return basicGetBase_Package();
+			case RobotMLPackage.DEPLOYMENT_PLAN__MAIN_INSTANCE:
+				if (resolve) return getMainInstance();
+				return basicGetMainInstance();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -181,18 +162,17 @@ public class DeploymentPlanImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case RobotMLPackage.DEPLOYMENT_PLAN__BASE_PACKAGE:
-			setBase_Package((org.eclipse.uml2.uml.Package) newValue);
-			return;
-		case RobotMLPackage.DEPLOYMENT_PLAN__MAIN_INSTANCE:
-			setMainInstance((InstanceSpecification) newValue);
-			return;
+			case RobotMLPackage.DEPLOYMENT_PLAN__BASE_PACKAGE:
+				setBase_Package((org.eclipse.uml2.uml.Package)newValue);
+				return;
+			case RobotMLPackage.DEPLOYMENT_PLAN__MAIN_INSTANCE:
+				setMainInstance((InstanceSpecification)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -200,18 +180,17 @@ public class DeploymentPlanImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case RobotMLPackage.DEPLOYMENT_PLAN__BASE_PACKAGE:
-			setBase_Package((org.eclipse.uml2.uml.Package) null);
-			return;
-		case RobotMLPackage.DEPLOYMENT_PLAN__MAIN_INSTANCE:
-			setMainInstance((InstanceSpecification) null);
-			return;
+			case RobotMLPackage.DEPLOYMENT_PLAN__BASE_PACKAGE:
+				setBase_Package((org.eclipse.uml2.uml.Package)null);
+				return;
+			case RobotMLPackage.DEPLOYMENT_PLAN__MAIN_INSTANCE:
+				setMainInstance((InstanceSpecification)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -219,16 +198,15 @@ public class DeploymentPlanImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case RobotMLPackage.DEPLOYMENT_PLAN__BASE_PACKAGE:
-			return base_Package != null;
-		case RobotMLPackage.DEPLOYMENT_PLAN__MAIN_INSTANCE:
-			return mainInstance != null;
+			case RobotMLPackage.DEPLOYMENT_PLAN__BASE_PACKAGE:
+				return base_Package != null;
+			case RobotMLPackage.DEPLOYMENT_PLAN__MAIN_INSTANCE:
+				return mainInstance != null;
 		}
 		return super.eIsSet(featureID);
 	}

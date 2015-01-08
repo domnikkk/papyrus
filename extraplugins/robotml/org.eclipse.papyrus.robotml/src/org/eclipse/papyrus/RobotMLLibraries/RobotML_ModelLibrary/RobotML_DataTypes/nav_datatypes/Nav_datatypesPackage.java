@@ -19,7 +19,6 @@ import org.eclipse.emf.ecore.EReference;
  * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- *
  * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.Nav_datatypesFactory
  * @model kind="package"
  * @generated
@@ -29,7 +28,6 @@ public interface Nav_datatypesPackage extends EPackage {
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	String eNAME = "nav_datatypes";
@@ -38,7 +36,6 @@ public interface Nav_datatypesPackage extends EPackage {
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	String eNS_URI = "http:///RobotMLLibraries/RobotML_ModelLibrary/RobotML_DataTypes/nav_datatypes.ecore";
@@ -47,7 +44,6 @@ public interface Nav_datatypesPackage extends EPackage {
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	String eNS_PREFIX = "RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes";
@@ -56,7 +52,6 @@ public interface Nav_datatypesPackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	Nav_datatypesPackage eINSTANCE = org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.impl.Nav_datatypesPackageImpl.init();
@@ -65,7 +60,6 @@ public interface Nav_datatypesPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.impl.PathImpl <em>Path</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.impl.PathImpl
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.impl.Nav_datatypesPackageImpl#getPath()
 	 * @generated
@@ -76,7 +70,6 @@ public interface Nav_datatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Header</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -86,7 +79,6 @@ public interface Nav_datatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Poses</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -96,7 +88,6 @@ public interface Nav_datatypesPackage extends EPackage {
 	 * The number of structural features of the '<em>Path</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -106,7 +97,6 @@ public interface Nav_datatypesPackage extends EPackage {
 	 * The number of operations of the '<em>Path</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -116,7 +106,6 @@ public interface Nav_datatypesPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.impl.OdometryImpl <em>Odometry</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.impl.OdometryImpl
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.impl.Nav_datatypesPackageImpl#getOdometry()
 	 * @generated
@@ -127,7 +116,6 @@ public interface Nav_datatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Header</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -137,7 +125,6 @@ public interface Nav_datatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Child frame id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -147,7 +134,6 @@ public interface Nav_datatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Pose</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -157,7 +143,6 @@ public interface Nav_datatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Twist</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -167,7 +152,6 @@ public interface Nav_datatypesPackage extends EPackage {
 	 * The number of structural features of the '<em>Odometry</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -177,7 +161,6 @@ public interface Nav_datatypesPackage extends EPackage {
 	 * The number of operations of the '<em>Odometry</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -187,7 +170,6 @@ public interface Nav_datatypesPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.impl.MapMetaDataImpl <em>Map Meta Data</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.impl.MapMetaDataImpl
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.impl.Nav_datatypesPackageImpl#getMapMetaData()
 	 * @generated
@@ -198,7 +180,6 @@ public interface Nav_datatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Map load time</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -208,7 +189,6 @@ public interface Nav_datatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Resolution</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -218,7 +198,6 @@ public interface Nav_datatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Width</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -228,7 +207,6 @@ public interface Nav_datatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Origin</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -238,7 +216,6 @@ public interface Nav_datatypesPackage extends EPackage {
 	 * The number of structural features of the '<em>Map Meta Data</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -248,7 +225,6 @@ public interface Nav_datatypesPackage extends EPackage {
 	 * The number of operations of the '<em>Map Meta Data</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -258,7 +234,6 @@ public interface Nav_datatypesPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.impl.OccupancyGridImpl <em>Occupancy Grid</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.impl.OccupancyGridImpl
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.impl.Nav_datatypesPackageImpl#getOccupancyGrid()
 	 * @generated
@@ -269,7 +244,6 @@ public interface Nav_datatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Header</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -279,7 +253,6 @@ public interface Nav_datatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Info</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -289,7 +262,6 @@ public interface Nav_datatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Data</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -299,7 +271,6 @@ public interface Nav_datatypesPackage extends EPackage {
 	 * The number of structural features of the '<em>Occupancy Grid</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -309,7 +280,6 @@ public interface Nav_datatypesPackage extends EPackage {
 	 * The number of operations of the '<em>Occupancy Grid</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -319,7 +289,6 @@ public interface Nav_datatypesPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.impl.GridCellsImpl <em>Grid Cells</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.impl.GridCellsImpl
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.impl.Nav_datatypesPackageImpl#getGridCells()
 	 * @generated
@@ -330,7 +299,6 @@ public interface Nav_datatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Header</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -340,7 +308,6 @@ public interface Nav_datatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Cell width</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -350,7 +317,6 @@ public interface Nav_datatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Cell height</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -360,7 +326,6 @@ public interface Nav_datatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Cells</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -370,7 +335,6 @@ public interface Nav_datatypesPackage extends EPackage {
 	 * The number of structural features of the '<em>Grid Cells</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -380,7 +344,6 @@ public interface Nav_datatypesPackage extends EPackage {
 	 * The number of operations of the '<em>Grid Cells</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -391,7 +354,6 @@ public interface Nav_datatypesPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.Path <em>Path</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for class '<em>Path</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.Path
 	 * @generated
@@ -402,7 +364,6 @@ public interface Nav_datatypesPackage extends EPackage {
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.Path#getHeader <em>Header</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for the containment reference '<em>Header</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.Path#getHeader()
 	 * @see #getPath()
@@ -414,7 +375,6 @@ public interface Nav_datatypesPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.Path#getPoses <em>Poses</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for the containment reference list '<em>Poses</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.Path#getPoses()
 	 * @see #getPath()
@@ -426,7 +386,6 @@ public interface Nav_datatypesPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.Odometry <em>Odometry</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for class '<em>Odometry</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.Odometry
 	 * @generated
@@ -437,7 +396,6 @@ public interface Nav_datatypesPackage extends EPackage {
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.Odometry#getHeader <em>Header</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for the containment reference '<em>Header</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.Odometry#getHeader()
 	 * @see #getOdometry()
@@ -449,7 +407,6 @@ public interface Nav_datatypesPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.Odometry#getChild_frame_id <em>Child frame id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for the attribute '<em>Child frame id</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.Odometry#getChild_frame_id()
 	 * @see #getOdometry()
@@ -461,7 +418,6 @@ public interface Nav_datatypesPackage extends EPackage {
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.Odometry#getPose <em>Pose</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for the containment reference '<em>Pose</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.Odometry#getPose()
 	 * @see #getOdometry()
@@ -473,7 +429,6 @@ public interface Nav_datatypesPackage extends EPackage {
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.Odometry#getTwist <em>Twist</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for the containment reference '<em>Twist</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.Odometry#getTwist()
 	 * @see #getOdometry()
@@ -485,7 +440,6 @@ public interface Nav_datatypesPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.MapMetaData <em>Map Meta Data</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for class '<em>Map Meta Data</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.MapMetaData
 	 * @generated
@@ -496,7 +450,6 @@ public interface Nav_datatypesPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.MapMetaData#getMap_load_time <em>Map load time</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for the attribute '<em>Map load time</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.MapMetaData#getMap_load_time()
 	 * @see #getMapMetaData()
@@ -508,7 +461,6 @@ public interface Nav_datatypesPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.MapMetaData#getResolution <em>Resolution</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for the attribute '<em>Resolution</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.MapMetaData#getResolution()
 	 * @see #getMapMetaData()
@@ -520,7 +472,6 @@ public interface Nav_datatypesPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.MapMetaData#getWidth <em>Width</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for the attribute '<em>Width</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.MapMetaData#getWidth()
 	 * @see #getMapMetaData()
@@ -532,7 +483,6 @@ public interface Nav_datatypesPackage extends EPackage {
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.MapMetaData#getOrigin <em>Origin</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for the containment reference '<em>Origin</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.MapMetaData#getOrigin()
 	 * @see #getMapMetaData()
@@ -544,7 +494,6 @@ public interface Nav_datatypesPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.OccupancyGrid <em>Occupancy Grid</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for class '<em>Occupancy Grid</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.OccupancyGrid
 	 * @generated
@@ -555,7 +504,6 @@ public interface Nav_datatypesPackage extends EPackage {
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.OccupancyGrid#getHeader <em>Header</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for the containment reference '<em>Header</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.OccupancyGrid#getHeader()
 	 * @see #getOccupancyGrid()
@@ -567,7 +515,6 @@ public interface Nav_datatypesPackage extends EPackage {
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.OccupancyGrid#getInfo <em>Info</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for the containment reference '<em>Info</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.OccupancyGrid#getInfo()
 	 * @see #getOccupancyGrid()
@@ -579,7 +526,6 @@ public interface Nav_datatypesPackage extends EPackage {
 	 * Returns the meta object for the attribute list '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.OccupancyGrid#getData <em>Data</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for the attribute list '<em>Data</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.OccupancyGrid#getData()
 	 * @see #getOccupancyGrid()
@@ -591,7 +537,6 @@ public interface Nav_datatypesPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.GridCells <em>Grid Cells</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for class '<em>Grid Cells</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.GridCells
 	 * @generated
@@ -602,7 +547,6 @@ public interface Nav_datatypesPackage extends EPackage {
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.GridCells#getHeader <em>Header</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for the containment reference '<em>Header</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.GridCells#getHeader()
 	 * @see #getGridCells()
@@ -614,7 +558,6 @@ public interface Nav_datatypesPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.GridCells#getCell_width <em>Cell width</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for the attribute '<em>Cell width</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.GridCells#getCell_width()
 	 * @see #getGridCells()
@@ -626,7 +569,6 @@ public interface Nav_datatypesPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.GridCells#getCell_height <em>Cell height</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for the attribute '<em>Cell height</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.GridCells#getCell_height()
 	 * @see #getGridCells()
@@ -638,7 +580,6 @@ public interface Nav_datatypesPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.GridCells#getCells <em>Cells</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for the containment reference list '<em>Cells</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.GridCells#getCells()
 	 * @see #getGridCells()
@@ -650,7 +591,6 @@ public interface Nav_datatypesPackage extends EPackage {
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -667,7 +607,6 @@ public interface Nav_datatypesPackage extends EPackage {
 	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	interface Literals {
@@ -675,7 +614,6 @@ public interface Nav_datatypesPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.impl.PathImpl <em>Path</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.impl.PathImpl
 		 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.impl.Nav_datatypesPackageImpl#getPath()
 		 * @generated
@@ -686,7 +624,6 @@ public interface Nav_datatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Header</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @generated
 		 */
 		EReference PATH__HEADER = eINSTANCE.getPath_Header();
@@ -695,7 +632,6 @@ public interface Nav_datatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Poses</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @generated
 		 */
 		EReference PATH__POSES = eINSTANCE.getPath_Poses();
@@ -704,7 +640,6 @@ public interface Nav_datatypesPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.impl.OdometryImpl <em>Odometry</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.impl.OdometryImpl
 		 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.impl.Nav_datatypesPackageImpl#getOdometry()
 		 * @generated
@@ -715,7 +650,6 @@ public interface Nav_datatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Header</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @generated
 		 */
 		EReference ODOMETRY__HEADER = eINSTANCE.getOdometry_Header();
@@ -724,7 +658,6 @@ public interface Nav_datatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Child frame id</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @generated
 		 */
 		EAttribute ODOMETRY__CHILD_FRAME_ID = eINSTANCE.getOdometry_Child_frame_id();
@@ -733,7 +666,6 @@ public interface Nav_datatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Pose</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @generated
 		 */
 		EReference ODOMETRY__POSE = eINSTANCE.getOdometry_Pose();
@@ -742,7 +674,6 @@ public interface Nav_datatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Twist</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @generated
 		 */
 		EReference ODOMETRY__TWIST = eINSTANCE.getOdometry_Twist();
@@ -751,7 +682,6 @@ public interface Nav_datatypesPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.impl.MapMetaDataImpl <em>Map Meta Data</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.impl.MapMetaDataImpl
 		 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.impl.Nav_datatypesPackageImpl#getMapMetaData()
 		 * @generated
@@ -762,7 +692,6 @@ public interface Nav_datatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Map load time</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @generated
 		 */
 		EAttribute MAP_META_DATA__MAP_LOAD_TIME = eINSTANCE.getMapMetaData_Map_load_time();
@@ -771,7 +700,6 @@ public interface Nav_datatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Resolution</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @generated
 		 */
 		EAttribute MAP_META_DATA__RESOLUTION = eINSTANCE.getMapMetaData_Resolution();
@@ -780,7 +708,6 @@ public interface Nav_datatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Width</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @generated
 		 */
 		EAttribute MAP_META_DATA__WIDTH = eINSTANCE.getMapMetaData_Width();
@@ -789,7 +716,6 @@ public interface Nav_datatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Origin</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @generated
 		 */
 		EReference MAP_META_DATA__ORIGIN = eINSTANCE.getMapMetaData_Origin();
@@ -798,7 +724,6 @@ public interface Nav_datatypesPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.impl.OccupancyGridImpl <em>Occupancy Grid</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.impl.OccupancyGridImpl
 		 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.impl.Nav_datatypesPackageImpl#getOccupancyGrid()
 		 * @generated
@@ -809,7 +734,6 @@ public interface Nav_datatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Header</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @generated
 		 */
 		EReference OCCUPANCY_GRID__HEADER = eINSTANCE.getOccupancyGrid_Header();
@@ -818,7 +742,6 @@ public interface Nav_datatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Info</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @generated
 		 */
 		EReference OCCUPANCY_GRID__INFO = eINSTANCE.getOccupancyGrid_Info();
@@ -827,7 +750,6 @@ public interface Nav_datatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Data</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @generated
 		 */
 		EAttribute OCCUPANCY_GRID__DATA = eINSTANCE.getOccupancyGrid_Data();
@@ -836,7 +758,6 @@ public interface Nav_datatypesPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.impl.GridCellsImpl <em>Grid Cells</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.impl.GridCellsImpl
 		 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.impl.Nav_datatypesPackageImpl#getGridCells()
 		 * @generated
@@ -847,7 +768,6 @@ public interface Nav_datatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Header</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @generated
 		 */
 		EReference GRID_CELLS__HEADER = eINSTANCE.getGridCells_Header();
@@ -856,7 +776,6 @@ public interface Nav_datatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Cell width</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @generated
 		 */
 		EAttribute GRID_CELLS__CELL_WIDTH = eINSTANCE.getGridCells_Cell_width();
@@ -865,7 +784,6 @@ public interface Nav_datatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Cell height</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @generated
 		 */
 		EAttribute GRID_CELLS__CELL_HEIGHT = eINSTANCE.getGridCells_Cell_height();
@@ -874,7 +792,6 @@ public interface Nav_datatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Cells</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @generated
 		 */
 		EReference GRID_CELLS__CELLS = eINSTANCE.getGridCells_Cells();

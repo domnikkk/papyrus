@@ -19,7 +19,6 @@ public class GyroscopeImpl extends SensorSystemImpl implements Gyroscope {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected GyroscopeImpl() {
@@ -29,7 +28,6 @@ public class GyroscopeImpl extends SensorSystemImpl implements Gyroscope {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override

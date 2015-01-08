@@ -13,15 +13,15 @@ import org.eclipse.uml2.uml.Behavior;
  * <!-- begin-model-doc -->
  * guard is typed with a boolean operation that have to be defined in the model before using it
  * effect is typed by an operation that is owned by the component that is behaviored by the FSM
- *
+ * 
  * <!-- end-model-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- * <li>{@link org.eclipse.papyrus.RobotML.Transition#getBase_Transition <em>Base Transition</em>}</li>
- * <li>{@link org.eclipse.papyrus.RobotML.Transition#getGuard <em>Guard</em>}</li>
- * <li>{@link org.eclipse.papyrus.RobotML.Transition#getEffect <em>Effect</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotML.Transition#getBase_Transition <em>Base Transition</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotML.Transition#getGuard <em>Guard</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotML.Transition#getEffect <em>Effect</em>}</li>
  * </ul>
  * </p>
  *
@@ -37,7 +37,6 @@ public interface Transition extends EObject {
 	 * If the meaning of the '<em>Base Transition</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Base Transition</em>' reference.
 	 * @see #setBase_Transition(org.eclipse.uml2.uml.Transition)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getTransition_Base_Transition()
@@ -50,9 +49,7 @@ public interface Transition extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotML.Transition#getBase_Transition <em>Base Transition</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Base Transition</em>' reference.
+	 * @param value the new value of the '<em>Base Transition</em>' reference.
 	 * @see #getBase_Transition()
 	 * @generated
 	 */
@@ -65,7 +62,6 @@ public interface Transition extends EObject {
 	 * If the meaning of the '<em>Guard</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Guard</em>' reference.
 	 * @see #setGuard(Behavior)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getTransition_Guard()
@@ -78,9 +74,7 @@ public interface Transition extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotML.Transition#getGuard <em>Guard</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Guard</em>' reference.
+	 * @param value the new value of the '<em>Guard</em>' reference.
 	 * @see #getGuard()
 	 * @generated
 	 */
@@ -93,7 +87,6 @@ public interface Transition extends EObject {
 	 * If the meaning of the '<em>Effect</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Effect</em>' reference.
 	 * @see #setEffect(Behavior)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getTransition_Effect()
@@ -106,9 +99,7 @@ public interface Transition extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotML.Transition#getEffect <em>Effect</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Effect</em>' reference.
+	 * @param value the new value of the '<em>Effect</em>' reference.
 	 * @see #getEffect()
 	 * @generated
 	 */

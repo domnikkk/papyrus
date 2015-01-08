@@ -13,8 +13,8 @@ import org.eclipse.uml2.uml.Node;
  * <p>
  * The following features are supported:
  * <ul>
- * <li>{@link org.eclipse.papyrus.RobotML.Platform#getBase_Node <em>Base Node</em>}</li>
- * <li>{@link org.eclipse.papyrus.RobotML.Platform#getLibrary <em>Library</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotML.Platform#getBase_Node <em>Base Node</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotML.Platform#getLibrary <em>Library</em>}</li>
  * </ul>
  * </p>
  *
@@ -30,7 +30,6 @@ public interface Platform extends org.eclipse.papyrus.RobotML.System {
 	 * If the meaning of the '<em>Base Node</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Base Node</em>' reference.
 	 * @see #setBase_Node(Node)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getPlatform_Base_Node()
@@ -43,9 +42,7 @@ public interface Platform extends org.eclipse.papyrus.RobotML.System {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotML.Platform#getBase_Node <em>Base Node</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Base Node</em>' reference.
+	 * @param value the new value of the '<em>Base Node</em>' reference.
 	 * @see #getBase_Node()
 	 * @generated
 	 */
@@ -59,7 +56,6 @@ public interface Platform extends org.eclipse.papyrus.RobotML.System {
 	 * If the meaning of the '<em>Library</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Library</em>' reference list.
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getPlatform_Library()
 	 * @model ordered="false"

@@ -20,7 +20,6 @@ public class ArmImpl extends MinimalEObjectImpl.Container implements Arm {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected ArmImpl() {
@@ -30,7 +29,6 @@ public class ArmImpl extends MinimalEObjectImpl.Container implements Arm {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override

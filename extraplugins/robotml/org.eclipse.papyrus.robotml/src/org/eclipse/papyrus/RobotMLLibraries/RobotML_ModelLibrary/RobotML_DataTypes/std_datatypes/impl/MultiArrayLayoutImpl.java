@@ -24,8 +24,8 @@ import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTyp
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.MultiArrayLayoutImpl#getDim <em>Dim</em>}</li>
- * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.MultiArrayLayoutImpl#getData_offset <em>Data offset</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.MultiArrayLayoutImpl#getDim <em>Dim</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.MultiArrayLayoutImpl#getData_offset <em>Data offset</em>}</li>
  * </ul>
  * </p>
  *
@@ -36,7 +36,6 @@ public class MultiArrayLayoutImpl extends MinimalEObjectImpl.Container implement
 	 * The cached value of the '{@link #getDim() <em>Dim</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getDim()
 	 * @generated
 	 * @ordered
@@ -47,7 +46,6 @@ public class MultiArrayLayoutImpl extends MinimalEObjectImpl.Container implement
 	 * The default value of the '{@link #getData_offset() <em>Data offset</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getData_offset()
 	 * @generated
 	 * @ordered
@@ -58,7 +56,6 @@ public class MultiArrayLayoutImpl extends MinimalEObjectImpl.Container implement
 	 * The cached value of the '{@link #getData_offset() <em>Data offset</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getData_offset()
 	 * @generated
 	 * @ordered
@@ -68,7 +65,6 @@ public class MultiArrayLayoutImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected MultiArrayLayoutImpl() {
@@ -78,7 +74,6 @@ public class MultiArrayLayoutImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -89,7 +84,6 @@ public class MultiArrayLayoutImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EList<MultiArrayDimension> getDim() {
@@ -102,7 +96,6 @@ public class MultiArrayLayoutImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public long getData_offset() {
@@ -112,28 +105,25 @@ public class MultiArrayLayoutImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public void setData_offset(long newData_offset) {
 		long oldData_offset = data_offset;
 		data_offset = newData_offset;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Std_datatypesPackage.MULTI_ARRAY_LAYOUT__DATA_OFFSET, oldData_offset, data_offset));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case Std_datatypesPackage.MULTI_ARRAY_LAYOUT__DIM:
-			return ((InternalEList<?>) getDim()).basicRemove(otherEnd, msgs);
+			case Std_datatypesPackage.MULTI_ARRAY_LAYOUT__DIM:
+				return ((InternalEList<?>)getDim()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -141,16 +131,15 @@ public class MultiArrayLayoutImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case Std_datatypesPackage.MULTI_ARRAY_LAYOUT__DIM:
-			return getDim();
-		case Std_datatypesPackage.MULTI_ARRAY_LAYOUT__DATA_OFFSET:
-			return getData_offset();
+			case Std_datatypesPackage.MULTI_ARRAY_LAYOUT__DIM:
+				return getDim();
+			case Std_datatypesPackage.MULTI_ARRAY_LAYOUT__DATA_OFFSET:
+				return getData_offset();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -158,20 +147,19 @@ public class MultiArrayLayoutImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case Std_datatypesPackage.MULTI_ARRAY_LAYOUT__DIM:
-			getDim().clear();
-			getDim().addAll((Collection<? extends MultiArrayDimension>) newValue);
-			return;
-		case Std_datatypesPackage.MULTI_ARRAY_LAYOUT__DATA_OFFSET:
-			setData_offset((Long) newValue);
-			return;
+			case Std_datatypesPackage.MULTI_ARRAY_LAYOUT__DIM:
+				getDim().clear();
+				getDim().addAll((Collection<? extends MultiArrayDimension>)newValue);
+				return;
+			case Std_datatypesPackage.MULTI_ARRAY_LAYOUT__DATA_OFFSET:
+				setData_offset((Long)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -179,18 +167,17 @@ public class MultiArrayLayoutImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case Std_datatypesPackage.MULTI_ARRAY_LAYOUT__DIM:
-			getDim().clear();
-			return;
-		case Std_datatypesPackage.MULTI_ARRAY_LAYOUT__DATA_OFFSET:
-			setData_offset(DATA_OFFSET_EDEFAULT);
-			return;
+			case Std_datatypesPackage.MULTI_ARRAY_LAYOUT__DIM:
+				getDim().clear();
+				return;
+			case Std_datatypesPackage.MULTI_ARRAY_LAYOUT__DATA_OFFSET:
+				setData_offset(DATA_OFFSET_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -198,16 +185,15 @@ public class MultiArrayLayoutImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case Std_datatypesPackage.MULTI_ARRAY_LAYOUT__DIM:
-			return dim != null && !dim.isEmpty();
-		case Std_datatypesPackage.MULTI_ARRAY_LAYOUT__DATA_OFFSET:
-			return data_offset != DATA_OFFSET_EDEFAULT;
+			case Std_datatypesPackage.MULTI_ARRAY_LAYOUT__DIM:
+				return dim != null && !dim.isEmpty();
+			case Std_datatypesPackage.MULTI_ARRAY_LAYOUT__DATA_OFFSET:
+				return data_offset != DATA_OFFSET_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -215,14 +201,11 @@ public class MultiArrayLayoutImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
-			return super.toString();
-		}
+		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (data_offset: ");

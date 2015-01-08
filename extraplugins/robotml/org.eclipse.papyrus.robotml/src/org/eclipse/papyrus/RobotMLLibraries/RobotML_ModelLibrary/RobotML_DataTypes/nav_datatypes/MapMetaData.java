@@ -15,10 +15,10 @@ import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTyp
  * <p>
  * The following features are supported:
  * <ul>
- * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.MapMetaData#getMap_load_time <em>Map load time</em>}</li>
- * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.MapMetaData#getResolution <em>Resolution</em>}</li>
- * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.MapMetaData#getWidth <em>Width</em>}</li>
- * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.MapMetaData#getOrigin <em>Origin</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.MapMetaData#getMap_load_time <em>Map load time</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.MapMetaData#getResolution <em>Resolution</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.MapMetaData#getWidth <em>Width</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.MapMetaData#getOrigin <em>Origin</em>}</li>
  * </ul>
  * </p>
  *
@@ -34,7 +34,6 @@ public interface MapMetaData extends EObject {
 	 * If the meaning of the '<em>Map load time</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Map load time</em>' attribute.
 	 * @see #setMap_load_time(Date)
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.Nav_datatypesPackage#getMapMetaData_Map_load_time()
@@ -47,9 +46,7 @@ public interface MapMetaData extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.MapMetaData#getMap_load_time <em>Map load time</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Map load time</em>' attribute.
+	 * @param value the new value of the '<em>Map load time</em>' attribute.
 	 * @see #getMap_load_time()
 	 * @generated
 	 */
@@ -62,7 +59,6 @@ public interface MapMetaData extends EObject {
 	 * If the meaning of the '<em>Resolution</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Resolution</em>' attribute.
 	 * @see #setResolution(float)
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.Nav_datatypesPackage#getMapMetaData_Resolution()
@@ -75,9 +71,7 @@ public interface MapMetaData extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.MapMetaData#getResolution <em>Resolution</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Resolution</em>' attribute.
+	 * @param value the new value of the '<em>Resolution</em>' attribute.
 	 * @see #getResolution()
 	 * @generated
 	 */
@@ -90,7 +84,6 @@ public interface MapMetaData extends EObject {
 	 * If the meaning of the '<em>Width</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Width</em>' attribute.
 	 * @see #setWidth(long)
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.Nav_datatypesPackage#getMapMetaData_Width()
@@ -103,9 +96,7 @@ public interface MapMetaData extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.MapMetaData#getWidth <em>Width</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Width</em>' attribute.
+	 * @param value the new value of the '<em>Width</em>' attribute.
 	 * @see #getWidth()
 	 * @generated
 	 */
@@ -118,7 +109,6 @@ public interface MapMetaData extends EObject {
 	 * If the meaning of the '<em>Origin</em>' containment reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Origin</em>' containment reference.
 	 * @see #setOrigin(Pose)
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.Nav_datatypesPackage#getMapMetaData_Origin()
@@ -131,9 +121,7 @@ public interface MapMetaData extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.MapMetaData#getOrigin <em>Origin</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Origin</em>' containment reference.
+	 * @param value the new value of the '<em>Origin</em>' containment reference.
 	 * @see #getOrigin()
 	 * @generated
 	 */

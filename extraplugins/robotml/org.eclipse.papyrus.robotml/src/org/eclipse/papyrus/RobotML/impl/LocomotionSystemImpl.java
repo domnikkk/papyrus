@@ -19,7 +19,6 @@ public class LocomotionSystemImpl extends ActuatorSystemImpl implements Locomoti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected LocomotionSystemImpl() {
@@ -29,7 +28,6 @@ public class LocomotionSystemImpl extends ActuatorSystemImpl implements Locomoti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override

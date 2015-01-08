@@ -19,7 +19,6 @@ public class PedestrianImpl extends HumanImpl implements Pedestrian {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected PedestrianImpl() {
@@ -29,7 +28,6 @@ public class PedestrianImpl extends HumanImpl implements Pedestrian {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override

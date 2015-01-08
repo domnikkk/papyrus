@@ -13,8 +13,8 @@ import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTyp
  * <p>
  * The following features are supported:
  * <ul>
- * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.Vector3Stamped#getHeader <em>Header</em>}</li>
- * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.Vector3Stamped#getVector <em>Vector</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.Vector3Stamped#getHeader <em>Header</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.Vector3Stamped#getVector <em>Vector</em>}</li>
  * </ul>
  * </p>
  *
@@ -30,7 +30,6 @@ public interface Vector3Stamped extends EObject {
 	 * If the meaning of the '<em>Header</em>' containment reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Header</em>' containment reference.
 	 * @see #setHeader(Header)
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.Geometry_datatypesPackage#getVector3Stamped_Header()
@@ -43,9 +42,7 @@ public interface Vector3Stamped extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.Vector3Stamped#getHeader <em>Header</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Header</em>' containment reference.
+	 * @param value the new value of the '<em>Header</em>' containment reference.
 	 * @see #getHeader()
 	 * @generated
 	 */
@@ -58,7 +55,6 @@ public interface Vector3Stamped extends EObject {
 	 * If the meaning of the '<em>Vector</em>' containment reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Vector</em>' containment reference.
 	 * @see #setVector(Vector3)
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.Geometry_datatypesPackage#getVector3Stamped_Vector()
@@ -71,9 +67,7 @@ public interface Vector3Stamped extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.Vector3Stamped#getVector <em>Vector</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Vector</em>' containment reference.
+	 * @param value the new value of the '<em>Vector</em>' containment reference.
 	 * @see #getVector()
 	 * @generated
 	 */

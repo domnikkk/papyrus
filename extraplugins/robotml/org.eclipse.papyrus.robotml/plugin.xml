@@ -157,4 +157,15 @@
             class="org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Std_datatypesPackage"
             genModel="model/RobotML.genmodel"/>
    </extension>
+   <extension point="org.eclipse.papyrus.views.properties.context">
+      <context contextModel="properties/RobotMLProfile.ctx">
+      </context>
+   </extension>
+   <extension
+         point="org.eclipse.uml2.uml.generated_package">
+      <profile
+            location="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_Df4_4AHwEeCQQOKrhO_fIQ"
+            uri="http:///RobotMLLibraries/RobotML_ModelLibrary/RobotML_DataTypes/geometry_datatypes.ecore">
+      </profile>
+   </extension>
 </plugin>

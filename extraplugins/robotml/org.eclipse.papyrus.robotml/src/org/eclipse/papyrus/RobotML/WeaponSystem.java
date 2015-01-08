@@ -9,7 +9,7 @@ package org.eclipse.papyrus.RobotML;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * System of a robotic platform which correspond with the software and hardware of the weapon components (attack-defense) of a robot.
+ * System of a robotic platform which correspond with the software and hardware of the weapon components (attack-defense) of  a robot.
  * <!-- end-model-doc -->
  *
  *

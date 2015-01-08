@@ -19,7 +19,6 @@ public class ObjectTrackingSensorSystemImpl extends SensorSystemImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected ObjectTrackingSensorSystemImpl() {
@@ -29,7 +28,6 @@ public class ObjectTrackingSensorSystemImpl extends SensorSystemImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override

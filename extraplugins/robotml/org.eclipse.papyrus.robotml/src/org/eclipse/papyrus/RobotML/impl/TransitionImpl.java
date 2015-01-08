@@ -18,9 +18,9 @@ import org.eclipse.uml2.uml.Behavior;
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.eclipse.papyrus.RobotML.impl.TransitionImpl#getBase_Transition <em>Base Transition</em>}</li>
- * <li>{@link org.eclipse.papyrus.RobotML.impl.TransitionImpl#getGuard <em>Guard</em>}</li>
- * <li>{@link org.eclipse.papyrus.RobotML.impl.TransitionImpl#getEffect <em>Effect</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotML.impl.TransitionImpl#getBase_Transition <em>Base Transition</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotML.impl.TransitionImpl#getGuard <em>Guard</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotML.impl.TransitionImpl#getEffect <em>Effect</em>}</li>
  * </ul>
  * </p>
  *
@@ -31,7 +31,6 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 	 * The cached value of the '{@link #getBase_Transition() <em>Base Transition</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getBase_Transition()
 	 * @generated
 	 * @ordered
@@ -42,7 +41,6 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 	 * The cached value of the '{@link #getGuard() <em>Guard</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getGuard()
 	 * @generated
 	 * @ordered
@@ -53,7 +51,6 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 	 * The cached value of the '{@link #getEffect() <em>Effect</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getEffect()
 	 * @generated
 	 * @ordered
@@ -63,7 +60,6 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected TransitionImpl() {
@@ -73,7 +69,6 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -84,17 +79,15 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Transition getBase_Transition() {
 		if (base_Transition != null && base_Transition.eIsProxy()) {
-			InternalEObject oldBase_Transition = (InternalEObject) base_Transition;
-			base_Transition = (org.eclipse.uml2.uml.Transition) eResolveProxy(oldBase_Transition);
+			InternalEObject oldBase_Transition = (InternalEObject)base_Transition;
+			base_Transition = (org.eclipse.uml2.uml.Transition)eResolveProxy(oldBase_Transition);
 			if (base_Transition != oldBase_Transition) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RobotMLPackage.TRANSITION__BASE_TRANSITION, oldBase_Transition, base_Transition));
-				}
 			}
 		}
 		return base_Transition;
@@ -103,7 +96,6 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Transition basicGetBase_Transition() {
@@ -113,31 +105,27 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public void setBase_Transition(org.eclipse.uml2.uml.Transition newBase_Transition) {
 		org.eclipse.uml2.uml.Transition oldBase_Transition = base_Transition;
 		base_Transition = newBase_Transition;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RobotMLPackage.TRANSITION__BASE_TRANSITION, oldBase_Transition, base_Transition));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public Behavior getGuard() {
 		if (guard != null && guard.eIsProxy()) {
-			InternalEObject oldGuard = (InternalEObject) guard;
-			guard = (Behavior) eResolveProxy(oldGuard);
+			InternalEObject oldGuard = (InternalEObject)guard;
+			guard = (Behavior)eResolveProxy(oldGuard);
 			if (guard != oldGuard) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RobotMLPackage.TRANSITION__GUARD, oldGuard, guard));
-				}
 			}
 		}
 		return guard;
@@ -146,7 +134,6 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public Behavior basicGetGuard() {
@@ -156,31 +143,27 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public void setGuard(Behavior newGuard) {
 		Behavior oldGuard = guard;
 		guard = newGuard;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RobotMLPackage.TRANSITION__GUARD, oldGuard, guard));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public Behavior getEffect() {
 		if (effect != null && effect.eIsProxy()) {
-			InternalEObject oldEffect = (InternalEObject) effect;
-			effect = (Behavior) eResolveProxy(oldEffect);
+			InternalEObject oldEffect = (InternalEObject)effect;
+			effect = (Behavior)eResolveProxy(oldEffect);
 			if (effect != oldEffect) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RobotMLPackage.TRANSITION__EFFECT, oldEffect, effect));
-				}
 			}
 		}
 		return effect;
@@ -189,7 +172,6 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public Behavior basicGetEffect() {
@@ -199,41 +181,32 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public void setEffect(Behavior newEffect) {
 		Behavior oldEffect = effect;
 		effect = newEffect;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RobotMLPackage.TRANSITION__EFFECT, oldEffect, effect));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case RobotMLPackage.TRANSITION__BASE_TRANSITION:
-			if (resolve) {
-				return getBase_Transition();
-			}
-			return basicGetBase_Transition();
-		case RobotMLPackage.TRANSITION__GUARD:
-			if (resolve) {
-				return getGuard();
-			}
-			return basicGetGuard();
-		case RobotMLPackage.TRANSITION__EFFECT:
-			if (resolve) {
-				return getEffect();
-			}
-			return basicGetEffect();
+			case RobotMLPackage.TRANSITION__BASE_TRANSITION:
+				if (resolve) return getBase_Transition();
+				return basicGetBase_Transition();
+			case RobotMLPackage.TRANSITION__GUARD:
+				if (resolve) return getGuard();
+				return basicGetGuard();
+			case RobotMLPackage.TRANSITION__EFFECT:
+				if (resolve) return getEffect();
+				return basicGetEffect();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -241,21 +214,20 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case RobotMLPackage.TRANSITION__BASE_TRANSITION:
-			setBase_Transition((org.eclipse.uml2.uml.Transition) newValue);
-			return;
-		case RobotMLPackage.TRANSITION__GUARD:
-			setGuard((Behavior) newValue);
-			return;
-		case RobotMLPackage.TRANSITION__EFFECT:
-			setEffect((Behavior) newValue);
-			return;
+			case RobotMLPackage.TRANSITION__BASE_TRANSITION:
+				setBase_Transition((org.eclipse.uml2.uml.Transition)newValue);
+				return;
+			case RobotMLPackage.TRANSITION__GUARD:
+				setGuard((Behavior)newValue);
+				return;
+			case RobotMLPackage.TRANSITION__EFFECT:
+				setEffect((Behavior)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -263,21 +235,20 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case RobotMLPackage.TRANSITION__BASE_TRANSITION:
-			setBase_Transition((org.eclipse.uml2.uml.Transition) null);
-			return;
-		case RobotMLPackage.TRANSITION__GUARD:
-			setGuard((Behavior) null);
-			return;
-		case RobotMLPackage.TRANSITION__EFFECT:
-			setEffect((Behavior) null);
-			return;
+			case RobotMLPackage.TRANSITION__BASE_TRANSITION:
+				setBase_Transition((org.eclipse.uml2.uml.Transition)null);
+				return;
+			case RobotMLPackage.TRANSITION__GUARD:
+				setGuard((Behavior)null);
+				return;
+			case RobotMLPackage.TRANSITION__EFFECT:
+				setEffect((Behavior)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -285,18 +256,17 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case RobotMLPackage.TRANSITION__BASE_TRANSITION:
-			return base_Transition != null;
-		case RobotMLPackage.TRANSITION__GUARD:
-			return guard != null;
-		case RobotMLPackage.TRANSITION__EFFECT:
-			return effect != null;
+			case RobotMLPackage.TRANSITION__BASE_TRANSITION:
+				return base_Transition != null;
+			case RobotMLPackage.TRANSITION__GUARD:
+				return guard != null;
+			case RobotMLPackage.TRANSITION__EFFECT:
+				return effect != null;
 		}
 		return super.eIsSet(featureID);
 	}

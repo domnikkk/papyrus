@@ -26,15 +26,15 @@ import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTyp
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.PointCloud2Impl#getHeader <em>Header</em>}</li>
- * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.PointCloud2Impl#getHeight <em>Height</em>}</li>
- * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.PointCloud2Impl#getWidth <em>Width</em>}</li>
- * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.PointCloud2Impl#getFields <em>Fields</em>}</li>
- * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.PointCloud2Impl#isIs_bigendian <em>Is bigendian</em>}</li>
- * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.PointCloud2Impl#getPoint_step <em>Point step</em>}</li>
- * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.PointCloud2Impl#getRow_step <em>Row step</em>}</li>
- * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.PointCloud2Impl#getData <em>Data</em>}</li>
- * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.PointCloud2Impl#isIs_dense <em>Is dense</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.PointCloud2Impl#getHeader <em>Header</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.PointCloud2Impl#getHeight <em>Height</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.PointCloud2Impl#getWidth <em>Width</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.PointCloud2Impl#getFields <em>Fields</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.PointCloud2Impl#isIs_bigendian <em>Is bigendian</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.PointCloud2Impl#getPoint_step <em>Point step</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.PointCloud2Impl#getRow_step <em>Row step</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.PointCloud2Impl#getData <em>Data</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.PointCloud2Impl#isIs_dense <em>Is dense</em>}</li>
  * </ul>
  * </p>
  *
@@ -45,7 +45,6 @@ public class PointCloud2Impl extends MinimalEObjectImpl.Container implements Poi
 	 * The cached value of the '{@link #getHeader() <em>Header</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getHeader()
 	 * @generated
 	 * @ordered
@@ -56,7 +55,6 @@ public class PointCloud2Impl extends MinimalEObjectImpl.Container implements Poi
 	 * The default value of the '{@link #getHeight() <em>Height</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getHeight()
 	 * @generated
 	 * @ordered
@@ -67,7 +65,6 @@ public class PointCloud2Impl extends MinimalEObjectImpl.Container implements Poi
 	 * The cached value of the '{@link #getHeight() <em>Height</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getHeight()
 	 * @generated
 	 * @ordered
@@ -78,7 +75,6 @@ public class PointCloud2Impl extends MinimalEObjectImpl.Container implements Poi
 	 * The default value of the '{@link #getWidth() <em>Width</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getWidth()
 	 * @generated
 	 * @ordered
@@ -89,7 +85,6 @@ public class PointCloud2Impl extends MinimalEObjectImpl.Container implements Poi
 	 * The cached value of the '{@link #getWidth() <em>Width</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getWidth()
 	 * @generated
 	 * @ordered
@@ -100,7 +95,6 @@ public class PointCloud2Impl extends MinimalEObjectImpl.Container implements Poi
 	 * The cached value of the '{@link #getFields() <em>Fields</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getFields()
 	 * @generated
 	 * @ordered
@@ -111,7 +105,6 @@ public class PointCloud2Impl extends MinimalEObjectImpl.Container implements Poi
 	 * The default value of the '{@link #isIs_bigendian() <em>Is bigendian</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #isIs_bigendian()
 	 * @generated
 	 * @ordered
@@ -122,7 +115,6 @@ public class PointCloud2Impl extends MinimalEObjectImpl.Container implements Poi
 	 * The cached value of the '{@link #isIs_bigendian() <em>Is bigendian</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #isIs_bigendian()
 	 * @generated
 	 * @ordered
@@ -133,7 +125,6 @@ public class PointCloud2Impl extends MinimalEObjectImpl.Container implements Poi
 	 * The default value of the '{@link #getPoint_step() <em>Point step</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getPoint_step()
 	 * @generated
 	 * @ordered
@@ -144,7 +135,6 @@ public class PointCloud2Impl extends MinimalEObjectImpl.Container implements Poi
 	 * The cached value of the '{@link #getPoint_step() <em>Point step</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getPoint_step()
 	 * @generated
 	 * @ordered
@@ -155,7 +145,6 @@ public class PointCloud2Impl extends MinimalEObjectImpl.Container implements Poi
 	 * The default value of the '{@link #getRow_step() <em>Row step</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getRow_step()
 	 * @generated
 	 * @ordered
@@ -166,7 +155,6 @@ public class PointCloud2Impl extends MinimalEObjectImpl.Container implements Poi
 	 * The cached value of the '{@link #getRow_step() <em>Row step</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getRow_step()
 	 * @generated
 	 * @ordered
@@ -177,7 +165,6 @@ public class PointCloud2Impl extends MinimalEObjectImpl.Container implements Poi
 	 * The cached value of the '{@link #getData() <em>Data</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getData()
 	 * @generated
 	 * @ordered
@@ -188,7 +175,6 @@ public class PointCloud2Impl extends MinimalEObjectImpl.Container implements Poi
 	 * The default value of the '{@link #isIs_dense() <em>Is dense</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #isIs_dense()
 	 * @generated
 	 * @ordered
@@ -199,7 +185,6 @@ public class PointCloud2Impl extends MinimalEObjectImpl.Container implements Poi
 	 * The cached value of the '{@link #isIs_dense() <em>Is dense</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #isIs_dense()
 	 * @generated
 	 * @ordered
@@ -209,7 +194,6 @@ public class PointCloud2Impl extends MinimalEObjectImpl.Container implements Poi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected PointCloud2Impl() {
@@ -219,7 +203,6 @@ public class PointCloud2Impl extends MinimalEObjectImpl.Container implements Poi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -230,7 +213,6 @@ public class PointCloud2Impl extends MinimalEObjectImpl.Container implements Poi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public Header getHeader() {
@@ -240,7 +222,6 @@ public class PointCloud2Impl extends MinimalEObjectImpl.Container implements Poi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetHeader(Header newHeader, NotificationChain msgs) {
@@ -248,11 +229,7 @@ public class PointCloud2Impl extends MinimalEObjectImpl.Container implements Poi
 		header = newHeader;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Sensor_datatypesPackage.POINT_CLOUD2__HEADER, oldHeader, newHeader);
-			if (msgs == null) {
-				msgs = notification;
-			} else {
-				msgs.add(notification);
-			}
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -260,32 +237,25 @@ public class PointCloud2Impl extends MinimalEObjectImpl.Container implements Poi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public void setHeader(Header newHeader) {
 		if (newHeader != header) {
 			NotificationChain msgs = null;
-			if (header != null) {
-				msgs = ((InternalEObject) header).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Sensor_datatypesPackage.POINT_CLOUD2__HEADER, null, msgs);
-			}
-			if (newHeader != null) {
-				msgs = ((InternalEObject) newHeader).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Sensor_datatypesPackage.POINT_CLOUD2__HEADER, null, msgs);
-			}
+			if (header != null)
+				msgs = ((InternalEObject)header).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Sensor_datatypesPackage.POINT_CLOUD2__HEADER, null, msgs);
+			if (newHeader != null)
+				msgs = ((InternalEObject)newHeader).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Sensor_datatypesPackage.POINT_CLOUD2__HEADER, null, msgs);
 			msgs = basicSetHeader(newHeader, msgs);
-			if (msgs != null) {
-				msgs.dispatch();
-			}
+			if (msgs != null) msgs.dispatch();
 		}
-		else if (eNotificationRequired()) {
+		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Sensor_datatypesPackage.POINT_CLOUD2__HEADER, newHeader, newHeader));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public long getHeight() {
@@ -295,21 +265,18 @@ public class PointCloud2Impl extends MinimalEObjectImpl.Container implements Poi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public void setHeight(long newHeight) {
 		long oldHeight = height;
 		height = newHeight;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Sensor_datatypesPackage.POINT_CLOUD2__HEIGHT, oldHeight, height));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public long getWidth() {
@@ -319,21 +286,18 @@ public class PointCloud2Impl extends MinimalEObjectImpl.Container implements Poi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public void setWidth(long newWidth) {
 		long oldWidth = width;
 		width = newWidth;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Sensor_datatypesPackage.POINT_CLOUD2__WIDTH, oldWidth, width));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EList<PointField> getFields() {
@@ -346,7 +310,6 @@ public class PointCloud2Impl extends MinimalEObjectImpl.Container implements Poi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public boolean isIs_bigendian() {
@@ -356,21 +319,18 @@ public class PointCloud2Impl extends MinimalEObjectImpl.Container implements Poi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public void setIs_bigendian(boolean newIs_bigendian) {
 		boolean oldIs_bigendian = is_bigendian;
 		is_bigendian = newIs_bigendian;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Sensor_datatypesPackage.POINT_CLOUD2__IS_BIGENDIAN, oldIs_bigendian, is_bigendian));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public long getPoint_step() {
@@ -380,21 +340,18 @@ public class PointCloud2Impl extends MinimalEObjectImpl.Container implements Poi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public void setPoint_step(long newPoint_step) {
 		long oldPoint_step = point_step;
 		point_step = newPoint_step;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Sensor_datatypesPackage.POINT_CLOUD2__POINT_STEP, oldPoint_step, point_step));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public long getRow_step() {
@@ -404,21 +361,18 @@ public class PointCloud2Impl extends MinimalEObjectImpl.Container implements Poi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public void setRow_step(long newRow_step) {
 		long oldRow_step = row_step;
 		row_step = newRow_step;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Sensor_datatypesPackage.POINT_CLOUD2__ROW_STEP, oldRow_step, row_step));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EList<Character> getData() {
@@ -431,7 +385,6 @@ public class PointCloud2Impl extends MinimalEObjectImpl.Container implements Poi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public boolean isIs_dense() {
@@ -441,30 +394,27 @@ public class PointCloud2Impl extends MinimalEObjectImpl.Container implements Poi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public void setIs_dense(boolean newIs_dense) {
 		boolean oldIs_dense = is_dense;
 		is_dense = newIs_dense;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Sensor_datatypesPackage.POINT_CLOUD2__IS_DENSE, oldIs_dense, is_dense));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case Sensor_datatypesPackage.POINT_CLOUD2__HEADER:
-			return basicSetHeader(null, msgs);
-		case Sensor_datatypesPackage.POINT_CLOUD2__FIELDS:
-			return ((InternalEList<?>) getFields()).basicRemove(otherEnd, msgs);
+			case Sensor_datatypesPackage.POINT_CLOUD2__HEADER:
+				return basicSetHeader(null, msgs);
+			case Sensor_datatypesPackage.POINT_CLOUD2__FIELDS:
+				return ((InternalEList<?>)getFields()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -472,30 +422,29 @@ public class PointCloud2Impl extends MinimalEObjectImpl.Container implements Poi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case Sensor_datatypesPackage.POINT_CLOUD2__HEADER:
-			return getHeader();
-		case Sensor_datatypesPackage.POINT_CLOUD2__HEIGHT:
-			return getHeight();
-		case Sensor_datatypesPackage.POINT_CLOUD2__WIDTH:
-			return getWidth();
-		case Sensor_datatypesPackage.POINT_CLOUD2__FIELDS:
-			return getFields();
-		case Sensor_datatypesPackage.POINT_CLOUD2__IS_BIGENDIAN:
-			return isIs_bigendian();
-		case Sensor_datatypesPackage.POINT_CLOUD2__POINT_STEP:
-			return getPoint_step();
-		case Sensor_datatypesPackage.POINT_CLOUD2__ROW_STEP:
-			return getRow_step();
-		case Sensor_datatypesPackage.POINT_CLOUD2__DATA:
-			return getData();
-		case Sensor_datatypesPackage.POINT_CLOUD2__IS_DENSE:
-			return isIs_dense();
+			case Sensor_datatypesPackage.POINT_CLOUD2__HEADER:
+				return getHeader();
+			case Sensor_datatypesPackage.POINT_CLOUD2__HEIGHT:
+				return getHeight();
+			case Sensor_datatypesPackage.POINT_CLOUD2__WIDTH:
+				return getWidth();
+			case Sensor_datatypesPackage.POINT_CLOUD2__FIELDS:
+				return getFields();
+			case Sensor_datatypesPackage.POINT_CLOUD2__IS_BIGENDIAN:
+				return isIs_bigendian();
+			case Sensor_datatypesPackage.POINT_CLOUD2__POINT_STEP:
+				return getPoint_step();
+			case Sensor_datatypesPackage.POINT_CLOUD2__ROW_STEP:
+				return getRow_step();
+			case Sensor_datatypesPackage.POINT_CLOUD2__DATA:
+				return getData();
+			case Sensor_datatypesPackage.POINT_CLOUD2__IS_DENSE:
+				return isIs_dense();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -503,42 +452,41 @@ public class PointCloud2Impl extends MinimalEObjectImpl.Container implements Poi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case Sensor_datatypesPackage.POINT_CLOUD2__HEADER:
-			setHeader((Header) newValue);
-			return;
-		case Sensor_datatypesPackage.POINT_CLOUD2__HEIGHT:
-			setHeight((Long) newValue);
-			return;
-		case Sensor_datatypesPackage.POINT_CLOUD2__WIDTH:
-			setWidth((Long) newValue);
-			return;
-		case Sensor_datatypesPackage.POINT_CLOUD2__FIELDS:
-			getFields().clear();
-			getFields().addAll((Collection<? extends PointField>) newValue);
-			return;
-		case Sensor_datatypesPackage.POINT_CLOUD2__IS_BIGENDIAN:
-			setIs_bigendian((Boolean) newValue);
-			return;
-		case Sensor_datatypesPackage.POINT_CLOUD2__POINT_STEP:
-			setPoint_step((Long) newValue);
-			return;
-		case Sensor_datatypesPackage.POINT_CLOUD2__ROW_STEP:
-			setRow_step((Long) newValue);
-			return;
-		case Sensor_datatypesPackage.POINT_CLOUD2__DATA:
-			getData().clear();
-			getData().addAll((Collection<? extends Character>) newValue);
-			return;
-		case Sensor_datatypesPackage.POINT_CLOUD2__IS_DENSE:
-			setIs_dense((Boolean) newValue);
-			return;
+			case Sensor_datatypesPackage.POINT_CLOUD2__HEADER:
+				setHeader((Header)newValue);
+				return;
+			case Sensor_datatypesPackage.POINT_CLOUD2__HEIGHT:
+				setHeight((Long)newValue);
+				return;
+			case Sensor_datatypesPackage.POINT_CLOUD2__WIDTH:
+				setWidth((Long)newValue);
+				return;
+			case Sensor_datatypesPackage.POINT_CLOUD2__FIELDS:
+				getFields().clear();
+				getFields().addAll((Collection<? extends PointField>)newValue);
+				return;
+			case Sensor_datatypesPackage.POINT_CLOUD2__IS_BIGENDIAN:
+				setIs_bigendian((Boolean)newValue);
+				return;
+			case Sensor_datatypesPackage.POINT_CLOUD2__POINT_STEP:
+				setPoint_step((Long)newValue);
+				return;
+			case Sensor_datatypesPackage.POINT_CLOUD2__ROW_STEP:
+				setRow_step((Long)newValue);
+				return;
+			case Sensor_datatypesPackage.POINT_CLOUD2__DATA:
+				getData().clear();
+				getData().addAll((Collection<? extends Character>)newValue);
+				return;
+			case Sensor_datatypesPackage.POINT_CLOUD2__IS_DENSE:
+				setIs_dense((Boolean)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -546,39 +494,38 @@ public class PointCloud2Impl extends MinimalEObjectImpl.Container implements Poi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case Sensor_datatypesPackage.POINT_CLOUD2__HEADER:
-			setHeader((Header) null);
-			return;
-		case Sensor_datatypesPackage.POINT_CLOUD2__HEIGHT:
-			setHeight(HEIGHT_EDEFAULT);
-			return;
-		case Sensor_datatypesPackage.POINT_CLOUD2__WIDTH:
-			setWidth(WIDTH_EDEFAULT);
-			return;
-		case Sensor_datatypesPackage.POINT_CLOUD2__FIELDS:
-			getFields().clear();
-			return;
-		case Sensor_datatypesPackage.POINT_CLOUD2__IS_BIGENDIAN:
-			setIs_bigendian(IS_BIGENDIAN_EDEFAULT);
-			return;
-		case Sensor_datatypesPackage.POINT_CLOUD2__POINT_STEP:
-			setPoint_step(POINT_STEP_EDEFAULT);
-			return;
-		case Sensor_datatypesPackage.POINT_CLOUD2__ROW_STEP:
-			setRow_step(ROW_STEP_EDEFAULT);
-			return;
-		case Sensor_datatypesPackage.POINT_CLOUD2__DATA:
-			getData().clear();
-			return;
-		case Sensor_datatypesPackage.POINT_CLOUD2__IS_DENSE:
-			setIs_dense(IS_DENSE_EDEFAULT);
-			return;
+			case Sensor_datatypesPackage.POINT_CLOUD2__HEADER:
+				setHeader((Header)null);
+				return;
+			case Sensor_datatypesPackage.POINT_CLOUD2__HEIGHT:
+				setHeight(HEIGHT_EDEFAULT);
+				return;
+			case Sensor_datatypesPackage.POINT_CLOUD2__WIDTH:
+				setWidth(WIDTH_EDEFAULT);
+				return;
+			case Sensor_datatypesPackage.POINT_CLOUD2__FIELDS:
+				getFields().clear();
+				return;
+			case Sensor_datatypesPackage.POINT_CLOUD2__IS_BIGENDIAN:
+				setIs_bigendian(IS_BIGENDIAN_EDEFAULT);
+				return;
+			case Sensor_datatypesPackage.POINT_CLOUD2__POINT_STEP:
+				setPoint_step(POINT_STEP_EDEFAULT);
+				return;
+			case Sensor_datatypesPackage.POINT_CLOUD2__ROW_STEP:
+				setRow_step(ROW_STEP_EDEFAULT);
+				return;
+			case Sensor_datatypesPackage.POINT_CLOUD2__DATA:
+				getData().clear();
+				return;
+			case Sensor_datatypesPackage.POINT_CLOUD2__IS_DENSE:
+				setIs_dense(IS_DENSE_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -586,30 +533,29 @@ public class PointCloud2Impl extends MinimalEObjectImpl.Container implements Poi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case Sensor_datatypesPackage.POINT_CLOUD2__HEADER:
-			return header != null;
-		case Sensor_datatypesPackage.POINT_CLOUD2__HEIGHT:
-			return height != HEIGHT_EDEFAULT;
-		case Sensor_datatypesPackage.POINT_CLOUD2__WIDTH:
-			return width != WIDTH_EDEFAULT;
-		case Sensor_datatypesPackage.POINT_CLOUD2__FIELDS:
-			return fields != null && !fields.isEmpty();
-		case Sensor_datatypesPackage.POINT_CLOUD2__IS_BIGENDIAN:
-			return is_bigendian != IS_BIGENDIAN_EDEFAULT;
-		case Sensor_datatypesPackage.POINT_CLOUD2__POINT_STEP:
-			return point_step != POINT_STEP_EDEFAULT;
-		case Sensor_datatypesPackage.POINT_CLOUD2__ROW_STEP:
-			return row_step != ROW_STEP_EDEFAULT;
-		case Sensor_datatypesPackage.POINT_CLOUD2__DATA:
-			return data != null && !data.isEmpty();
-		case Sensor_datatypesPackage.POINT_CLOUD2__IS_DENSE:
-			return is_dense != IS_DENSE_EDEFAULT;
+			case Sensor_datatypesPackage.POINT_CLOUD2__HEADER:
+				return header != null;
+			case Sensor_datatypesPackage.POINT_CLOUD2__HEIGHT:
+				return height != HEIGHT_EDEFAULT;
+			case Sensor_datatypesPackage.POINT_CLOUD2__WIDTH:
+				return width != WIDTH_EDEFAULT;
+			case Sensor_datatypesPackage.POINT_CLOUD2__FIELDS:
+				return fields != null && !fields.isEmpty();
+			case Sensor_datatypesPackage.POINT_CLOUD2__IS_BIGENDIAN:
+				return is_bigendian != IS_BIGENDIAN_EDEFAULT;
+			case Sensor_datatypesPackage.POINT_CLOUD2__POINT_STEP:
+				return point_step != POINT_STEP_EDEFAULT;
+			case Sensor_datatypesPackage.POINT_CLOUD2__ROW_STEP:
+				return row_step != ROW_STEP_EDEFAULT;
+			case Sensor_datatypesPackage.POINT_CLOUD2__DATA:
+				return data != null && !data.isEmpty();
+			case Sensor_datatypesPackage.POINT_CLOUD2__IS_DENSE:
+				return is_dense != IS_DENSE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -617,14 +563,11 @@ public class PointCloud2Impl extends MinimalEObjectImpl.Container implements Poi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
-			return super.toString();
-		}
+		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (height: ");

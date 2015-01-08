@@ -19,7 +19,6 @@ public class OpenLoopControlSystemImpl extends CyberPhysicalSystemImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected OpenLoopControlSystemImpl() {
@@ -29,7 +28,6 @@ public class OpenLoopControlSystemImpl extends CyberPhysicalSystemImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override

@@ -16,16 +16,16 @@ import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTyp
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.NavSatStatusImpl#getSTATUS_NO_FIX <em>STATUS NO FIX</em>}</li>
- * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.NavSatStatusImpl#getSTATUS_FIX <em>STATUS FIX</em>}</li>
- * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.NavSatStatusImpl#getSTATUS_SBAS_FIX <em>STATUS SBAS FIX</em>}</li>
- * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.NavSatStatusImpl#getSTATUS_GBAS_FIX <em>STATUS GBAS FIX</em>}</li>
- * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.NavSatStatusImpl#getStatus <em>Status</em>}</li>
- * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.NavSatStatusImpl#getSERVICE_GPS <em>SERVICE GPS</em>}</li>
- * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.NavSatStatusImpl#getSERVICE_GLONASS <em>SERVICE GLONASS</em>}</li>
- * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.NavSatStatusImpl#getSERVICE_COMPASS <em>SERVICE COMPASS</em>}</li>
- * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.NavSatStatusImpl#getSERVICE_GALILEO <em>SERVICE GALILEO</em>}</li>
- * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.NavSatStatusImpl#getService <em>Service</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.NavSatStatusImpl#getSTATUS_NO_FIX <em>STATUS NO FIX</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.NavSatStatusImpl#getSTATUS_FIX <em>STATUS FIX</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.NavSatStatusImpl#getSTATUS_SBAS_FIX <em>STATUS SBAS FIX</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.NavSatStatusImpl#getSTATUS_GBAS_FIX <em>STATUS GBAS FIX</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.NavSatStatusImpl#getStatus <em>Status</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.NavSatStatusImpl#getSERVICE_GPS <em>SERVICE GPS</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.NavSatStatusImpl#getSERVICE_GLONASS <em>SERVICE GLONASS</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.NavSatStatusImpl#getSERVICE_COMPASS <em>SERVICE COMPASS</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.NavSatStatusImpl#getSERVICE_GALILEO <em>SERVICE GALILEO</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.NavSatStatusImpl#getService <em>Service</em>}</li>
  * </ul>
  * </p>
  *
@@ -36,7 +36,6 @@ public class NavSatStatusImpl extends MinimalEObjectImpl.Container implements Na
 	 * The default value of the '{@link #getSTATUS_NO_FIX() <em>STATUS NO FIX</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getSTATUS_NO_FIX()
 	 * @generated
 	 * @ordered
@@ -47,7 +46,6 @@ public class NavSatStatusImpl extends MinimalEObjectImpl.Container implements Na
 	 * The cached value of the '{@link #getSTATUS_NO_FIX() <em>STATUS NO FIX</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getSTATUS_NO_FIX()
 	 * @generated
 	 * @ordered
@@ -58,7 +56,6 @@ public class NavSatStatusImpl extends MinimalEObjectImpl.Container implements Na
 	 * The default value of the '{@link #getSTATUS_FIX() <em>STATUS FIX</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getSTATUS_FIX()
 	 * @generated
 	 * @ordered
@@ -69,7 +66,6 @@ public class NavSatStatusImpl extends MinimalEObjectImpl.Container implements Na
 	 * The cached value of the '{@link #getSTATUS_FIX() <em>STATUS FIX</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getSTATUS_FIX()
 	 * @generated
 	 * @ordered
@@ -80,7 +76,6 @@ public class NavSatStatusImpl extends MinimalEObjectImpl.Container implements Na
 	 * The default value of the '{@link #getSTATUS_SBAS_FIX() <em>STATUS SBAS FIX</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getSTATUS_SBAS_FIX()
 	 * @generated
 	 * @ordered
@@ -91,7 +86,6 @@ public class NavSatStatusImpl extends MinimalEObjectImpl.Container implements Na
 	 * The cached value of the '{@link #getSTATUS_SBAS_FIX() <em>STATUS SBAS FIX</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getSTATUS_SBAS_FIX()
 	 * @generated
 	 * @ordered
@@ -102,7 +96,6 @@ public class NavSatStatusImpl extends MinimalEObjectImpl.Container implements Na
 	 * The default value of the '{@link #getSTATUS_GBAS_FIX() <em>STATUS GBAS FIX</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getSTATUS_GBAS_FIX()
 	 * @generated
 	 * @ordered
@@ -113,7 +106,6 @@ public class NavSatStatusImpl extends MinimalEObjectImpl.Container implements Na
 	 * The cached value of the '{@link #getSTATUS_GBAS_FIX() <em>STATUS GBAS FIX</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getSTATUS_GBAS_FIX()
 	 * @generated
 	 * @ordered
@@ -124,7 +116,6 @@ public class NavSatStatusImpl extends MinimalEObjectImpl.Container implements Na
 	 * The default value of the '{@link #getStatus() <em>Status</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getStatus()
 	 * @generated
 	 * @ordered
@@ -135,7 +126,6 @@ public class NavSatStatusImpl extends MinimalEObjectImpl.Container implements Na
 	 * The cached value of the '{@link #getStatus() <em>Status</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getStatus()
 	 * @generated
 	 * @ordered
@@ -146,7 +136,6 @@ public class NavSatStatusImpl extends MinimalEObjectImpl.Container implements Na
 	 * The default value of the '{@link #getSERVICE_GPS() <em>SERVICE GPS</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getSERVICE_GPS()
 	 * @generated
 	 * @ordered
@@ -157,7 +146,6 @@ public class NavSatStatusImpl extends MinimalEObjectImpl.Container implements Na
 	 * The cached value of the '{@link #getSERVICE_GPS() <em>SERVICE GPS</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getSERVICE_GPS()
 	 * @generated
 	 * @ordered
@@ -168,7 +156,6 @@ public class NavSatStatusImpl extends MinimalEObjectImpl.Container implements Na
 	 * The default value of the '{@link #getSERVICE_GLONASS() <em>SERVICE GLONASS</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getSERVICE_GLONASS()
 	 * @generated
 	 * @ordered
@@ -179,7 +166,6 @@ public class NavSatStatusImpl extends MinimalEObjectImpl.Container implements Na
 	 * The cached value of the '{@link #getSERVICE_GLONASS() <em>SERVICE GLONASS</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getSERVICE_GLONASS()
 	 * @generated
 	 * @ordered
@@ -190,7 +176,6 @@ public class NavSatStatusImpl extends MinimalEObjectImpl.Container implements Na
 	 * The default value of the '{@link #getSERVICE_COMPASS() <em>SERVICE COMPASS</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getSERVICE_COMPASS()
 	 * @generated
 	 * @ordered
@@ -201,7 +186,6 @@ public class NavSatStatusImpl extends MinimalEObjectImpl.Container implements Na
 	 * The cached value of the '{@link #getSERVICE_COMPASS() <em>SERVICE COMPASS</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getSERVICE_COMPASS()
 	 * @generated
 	 * @ordered
@@ -212,7 +196,6 @@ public class NavSatStatusImpl extends MinimalEObjectImpl.Container implements Na
 	 * The default value of the '{@link #getSERVICE_GALILEO() <em>SERVICE GALILEO</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getSERVICE_GALILEO()
 	 * @generated
 	 * @ordered
@@ -223,7 +206,6 @@ public class NavSatStatusImpl extends MinimalEObjectImpl.Container implements Na
 	 * The cached value of the '{@link #getSERVICE_GALILEO() <em>SERVICE GALILEO</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getSERVICE_GALILEO()
 	 * @generated
 	 * @ordered
@@ -234,7 +216,6 @@ public class NavSatStatusImpl extends MinimalEObjectImpl.Container implements Na
 	 * The default value of the '{@link #getService() <em>Service</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getService()
 	 * @generated
 	 * @ordered
@@ -245,7 +226,6 @@ public class NavSatStatusImpl extends MinimalEObjectImpl.Container implements Na
 	 * The cached value of the '{@link #getService() <em>Service</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getService()
 	 * @generated
 	 * @ordered
@@ -255,7 +235,6 @@ public class NavSatStatusImpl extends MinimalEObjectImpl.Container implements Na
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected NavSatStatusImpl() {
@@ -265,7 +244,6 @@ public class NavSatStatusImpl extends MinimalEObjectImpl.Container implements Na
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -276,7 +254,6 @@ public class NavSatStatusImpl extends MinimalEObjectImpl.Container implements Na
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public char getSTATUS_NO_FIX() {
@@ -286,7 +263,6 @@ public class NavSatStatusImpl extends MinimalEObjectImpl.Container implements Na
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public char getSTATUS_FIX() {
@@ -296,7 +272,6 @@ public class NavSatStatusImpl extends MinimalEObjectImpl.Container implements Na
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public char getSTATUS_SBAS_FIX() {
@@ -306,7 +281,6 @@ public class NavSatStatusImpl extends MinimalEObjectImpl.Container implements Na
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public char getSTATUS_GBAS_FIX() {
@@ -316,7 +290,6 @@ public class NavSatStatusImpl extends MinimalEObjectImpl.Container implements Na
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public char getStatus() {
@@ -326,21 +299,18 @@ public class NavSatStatusImpl extends MinimalEObjectImpl.Container implements Na
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public void setStatus(char newStatus) {
 		char oldStatus = status;
 		status = newStatus;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Sensor_datatypesPackage.NAV_SAT_STATUS__STATUS, oldStatus, status));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public int getSERVICE_GPS() {
@@ -350,7 +320,6 @@ public class NavSatStatusImpl extends MinimalEObjectImpl.Container implements Na
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public int getSERVICE_GLONASS() {
@@ -360,7 +329,6 @@ public class NavSatStatusImpl extends MinimalEObjectImpl.Container implements Na
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public int getSERVICE_COMPASS() {
@@ -370,7 +338,6 @@ public class NavSatStatusImpl extends MinimalEObjectImpl.Container implements Na
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public int getSERVICE_GALILEO() {
@@ -380,7 +347,6 @@ public class NavSatStatusImpl extends MinimalEObjectImpl.Container implements Na
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public int getService() {
@@ -390,46 +356,43 @@ public class NavSatStatusImpl extends MinimalEObjectImpl.Container implements Na
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public void setService(int newService) {
 		int oldService = service;
 		service = newService;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Sensor_datatypesPackage.NAV_SAT_STATUS__SERVICE, oldService, service));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case Sensor_datatypesPackage.NAV_SAT_STATUS__STATUS_NO_FIX:
-			return getSTATUS_NO_FIX();
-		case Sensor_datatypesPackage.NAV_SAT_STATUS__STATUS_FIX:
-			return getSTATUS_FIX();
-		case Sensor_datatypesPackage.NAV_SAT_STATUS__STATUS_SBAS_FIX:
-			return getSTATUS_SBAS_FIX();
-		case Sensor_datatypesPackage.NAV_SAT_STATUS__STATUS_GBAS_FIX:
-			return getSTATUS_GBAS_FIX();
-		case Sensor_datatypesPackage.NAV_SAT_STATUS__STATUS:
-			return getStatus();
-		case Sensor_datatypesPackage.NAV_SAT_STATUS__SERVICE_GPS:
-			return getSERVICE_GPS();
-		case Sensor_datatypesPackage.NAV_SAT_STATUS__SERVICE_GLONASS:
-			return getSERVICE_GLONASS();
-		case Sensor_datatypesPackage.NAV_SAT_STATUS__SERVICE_COMPASS:
-			return getSERVICE_COMPASS();
-		case Sensor_datatypesPackage.NAV_SAT_STATUS__SERVICE_GALILEO:
-			return getSERVICE_GALILEO();
-		case Sensor_datatypesPackage.NAV_SAT_STATUS__SERVICE:
-			return getService();
+			case Sensor_datatypesPackage.NAV_SAT_STATUS__STATUS_NO_FIX:
+				return getSTATUS_NO_FIX();
+			case Sensor_datatypesPackage.NAV_SAT_STATUS__STATUS_FIX:
+				return getSTATUS_FIX();
+			case Sensor_datatypesPackage.NAV_SAT_STATUS__STATUS_SBAS_FIX:
+				return getSTATUS_SBAS_FIX();
+			case Sensor_datatypesPackage.NAV_SAT_STATUS__STATUS_GBAS_FIX:
+				return getSTATUS_GBAS_FIX();
+			case Sensor_datatypesPackage.NAV_SAT_STATUS__STATUS:
+				return getStatus();
+			case Sensor_datatypesPackage.NAV_SAT_STATUS__SERVICE_GPS:
+				return getSERVICE_GPS();
+			case Sensor_datatypesPackage.NAV_SAT_STATUS__SERVICE_GLONASS:
+				return getSERVICE_GLONASS();
+			case Sensor_datatypesPackage.NAV_SAT_STATUS__SERVICE_COMPASS:
+				return getSERVICE_COMPASS();
+			case Sensor_datatypesPackage.NAV_SAT_STATUS__SERVICE_GALILEO:
+				return getSERVICE_GALILEO();
+			case Sensor_datatypesPackage.NAV_SAT_STATUS__SERVICE:
+				return getService();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -437,18 +400,17 @@ public class NavSatStatusImpl extends MinimalEObjectImpl.Container implements Na
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case Sensor_datatypesPackage.NAV_SAT_STATUS__STATUS:
-			setStatus((Character) newValue);
-			return;
-		case Sensor_datatypesPackage.NAV_SAT_STATUS__SERVICE:
-			setService((Integer) newValue);
-			return;
+			case Sensor_datatypesPackage.NAV_SAT_STATUS__STATUS:
+				setStatus((Character)newValue);
+				return;
+			case Sensor_datatypesPackage.NAV_SAT_STATUS__SERVICE:
+				setService((Integer)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -456,18 +418,17 @@ public class NavSatStatusImpl extends MinimalEObjectImpl.Container implements Na
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case Sensor_datatypesPackage.NAV_SAT_STATUS__STATUS:
-			setStatus(STATUS_EDEFAULT);
-			return;
-		case Sensor_datatypesPackage.NAV_SAT_STATUS__SERVICE:
-			setService(SERVICE_EDEFAULT);
-			return;
+			case Sensor_datatypesPackage.NAV_SAT_STATUS__STATUS:
+				setStatus(STATUS_EDEFAULT);
+				return;
+			case Sensor_datatypesPackage.NAV_SAT_STATUS__SERVICE:
+				setService(SERVICE_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -475,32 +436,31 @@ public class NavSatStatusImpl extends MinimalEObjectImpl.Container implements Na
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case Sensor_datatypesPackage.NAV_SAT_STATUS__STATUS_NO_FIX:
-			return statuS_NO_FIX != STATUS_NO_FIX_EDEFAULT;
-		case Sensor_datatypesPackage.NAV_SAT_STATUS__STATUS_FIX:
-			return statuS_FIX != STATUS_FIX_EDEFAULT;
-		case Sensor_datatypesPackage.NAV_SAT_STATUS__STATUS_SBAS_FIX:
-			return statuS_SBAS_FIX != STATUS_SBAS_FIX_EDEFAULT;
-		case Sensor_datatypesPackage.NAV_SAT_STATUS__STATUS_GBAS_FIX:
-			return statuS_GBAS_FIX != STATUS_GBAS_FIX_EDEFAULT;
-		case Sensor_datatypesPackage.NAV_SAT_STATUS__STATUS:
-			return status != STATUS_EDEFAULT;
-		case Sensor_datatypesPackage.NAV_SAT_STATUS__SERVICE_GPS:
-			return servicE_GPS != SERVICE_GPS_EDEFAULT;
-		case Sensor_datatypesPackage.NAV_SAT_STATUS__SERVICE_GLONASS:
-			return servicE_GLONASS != SERVICE_GLONASS_EDEFAULT;
-		case Sensor_datatypesPackage.NAV_SAT_STATUS__SERVICE_COMPASS:
-			return servicE_COMPASS != SERVICE_COMPASS_EDEFAULT;
-		case Sensor_datatypesPackage.NAV_SAT_STATUS__SERVICE_GALILEO:
-			return servicE_GALILEO != SERVICE_GALILEO_EDEFAULT;
-		case Sensor_datatypesPackage.NAV_SAT_STATUS__SERVICE:
-			return service != SERVICE_EDEFAULT;
+			case Sensor_datatypesPackage.NAV_SAT_STATUS__STATUS_NO_FIX:
+				return statuS_NO_FIX != STATUS_NO_FIX_EDEFAULT;
+			case Sensor_datatypesPackage.NAV_SAT_STATUS__STATUS_FIX:
+				return statuS_FIX != STATUS_FIX_EDEFAULT;
+			case Sensor_datatypesPackage.NAV_SAT_STATUS__STATUS_SBAS_FIX:
+				return statuS_SBAS_FIX != STATUS_SBAS_FIX_EDEFAULT;
+			case Sensor_datatypesPackage.NAV_SAT_STATUS__STATUS_GBAS_FIX:
+				return statuS_GBAS_FIX != STATUS_GBAS_FIX_EDEFAULT;
+			case Sensor_datatypesPackage.NAV_SAT_STATUS__STATUS:
+				return status != STATUS_EDEFAULT;
+			case Sensor_datatypesPackage.NAV_SAT_STATUS__SERVICE_GPS:
+				return servicE_GPS != SERVICE_GPS_EDEFAULT;
+			case Sensor_datatypesPackage.NAV_SAT_STATUS__SERVICE_GLONASS:
+				return servicE_GLONASS != SERVICE_GLONASS_EDEFAULT;
+			case Sensor_datatypesPackage.NAV_SAT_STATUS__SERVICE_COMPASS:
+				return servicE_COMPASS != SERVICE_COMPASS_EDEFAULT;
+			case Sensor_datatypesPackage.NAV_SAT_STATUS__SERVICE_GALILEO:
+				return servicE_GALILEO != SERVICE_GALILEO_EDEFAULT;
+			case Sensor_datatypesPackage.NAV_SAT_STATUS__SERVICE:
+				return service != SERVICE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -508,14 +468,11 @@ public class NavSatStatusImpl extends MinimalEObjectImpl.Container implements Na
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
-			return super.toString();
-		}
+		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (STATUS_NO_FIX: ");

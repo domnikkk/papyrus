@@ -19,7 +19,6 @@ public class SteeredWheelHardwareImpl extends LocomotionHardwareImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected SteeredWheelHardwareImpl() {
@@ -29,7 +28,6 @@ public class SteeredWheelHardwareImpl extends LocomotionHardwareImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override

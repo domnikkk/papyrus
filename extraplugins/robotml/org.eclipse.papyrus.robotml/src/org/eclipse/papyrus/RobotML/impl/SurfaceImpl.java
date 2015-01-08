@@ -19,7 +19,6 @@ public class SurfaceImpl extends PhysicalObjectImpl implements Surface {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected SurfaceImpl() {
@@ -29,7 +28,6 @@ public class SurfaceImpl extends PhysicalObjectImpl implements Surface {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override

@@ -19,7 +19,6 @@ public class LocalizationSensorSystemImpl extends SensorSystemImpl implements Lo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected LocalizationSensorSystemImpl() {
@@ -29,7 +28,6 @@ public class LocalizationSensorSystemImpl extends SensorSystemImpl implements Lo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override

@@ -13,7 +13,6 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>SERVICE TYPE</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- *
  * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.Sensor_datatypesPackage#getSERVICE_TYPE()
  * @model
  * @generated
@@ -23,7 +22,6 @@ public enum SERVICE_TYPE implements Enumerator {
 	 * The '<em><b>SERVICE GPS</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #SERVICE_GPS_VALUE
 	 * @generated
 	 * @ordered
@@ -34,7 +32,6 @@ public enum SERVICE_TYPE implements Enumerator {
 	 * The '<em><b>SERVICE GLONASS</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #SERVICE_GLONASS_VALUE
 	 * @generated
 	 * @ordered
@@ -45,7 +42,6 @@ public enum SERVICE_TYPE implements Enumerator {
 	 * The '<em><b>SERVICE COMPASS</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #SERVICE_COMPASS_VALUE
 	 * @generated
 	 * @ordered
@@ -56,7 +52,6 @@ public enum SERVICE_TYPE implements Enumerator {
 	 * The '<em><b>SERVICE GALILEO</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #SERVICE_GALILEO_VALUE
 	 * @generated
 	 * @ordered
@@ -70,7 +65,6 @@ public enum SERVICE_TYPE implements Enumerator {
 	 * If the meaning of '<em><b>SERVICE GPS</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #SERVICE_GPS
 	 * @model
 	 * @generated
@@ -85,7 +79,6 @@ public enum SERVICE_TYPE implements Enumerator {
 	 * If the meaning of '<em><b>SERVICE GLONASS</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #SERVICE_GLONASS
 	 * @model
 	 * @generated
@@ -100,7 +93,6 @@ public enum SERVICE_TYPE implements Enumerator {
 	 * If the meaning of '<em><b>SERVICE COMPASS</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #SERVICE_COMPASS
 	 * @model
 	 * @generated
@@ -115,7 +107,6 @@ public enum SERVICE_TYPE implements Enumerator {
 	 * If the meaning of '<em><b>SERVICE GALILEO</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #SERVICE_GALILEO
 	 * @model
 	 * @generated
@@ -127,22 +118,20 @@ public enum SERVICE_TYPE implements Enumerator {
 	 * An array of all the '<em><b>SERVICE TYPE</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private static final SERVICE_TYPE[] VALUES_ARRAY =
 			new SERVICE_TYPE[] {
-					SERVICE_GPS,
-					SERVICE_GLONASS,
-					SERVICE_COMPASS,
-					SERVICE_GALILEO,
-			};
+			SERVICE_GPS,
+			SERVICE_GLONASS,
+			SERVICE_COMPASS,
+			SERVICE_GALILEO,
+		};
 
 	/**
 	 * A public read-only list of all the '<em><b>SERVICE TYPE</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public static final List<SERVICE_TYPE> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
@@ -151,7 +140,6 @@ public enum SERVICE_TYPE implements Enumerator {
 	 * Returns the '<em><b>SERVICE TYPE</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public static SERVICE_TYPE get(String literal) {
@@ -168,7 +156,6 @@ public enum SERVICE_TYPE implements Enumerator {
 	 * Returns the '<em><b>SERVICE TYPE</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public static SERVICE_TYPE getByName(String name) {
@@ -185,19 +172,14 @@ public enum SERVICE_TYPE implements Enumerator {
 	 * Returns the '<em><b>SERVICE TYPE</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public static SERVICE_TYPE get(int value) {
 		switch (value) {
-		case SERVICE_GPS_VALUE:
-			return SERVICE_GPS;
-		case SERVICE_GLONASS_VALUE:
-			return SERVICE_GLONASS;
-		case SERVICE_COMPASS_VALUE:
-			return SERVICE_COMPASS;
-		case SERVICE_GALILEO_VALUE:
-			return SERVICE_GALILEO;
+			case SERVICE_GPS_VALUE: return SERVICE_GPS;
+			case SERVICE_GLONASS_VALUE: return SERVICE_GLONASS;
+			case SERVICE_COMPASS_VALUE: return SERVICE_COMPASS;
+			case SERVICE_GALILEO_VALUE: return SERVICE_GALILEO;
 		}
 		return null;
 	}
@@ -205,7 +187,6 @@ public enum SERVICE_TYPE implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private final int value;
@@ -213,7 +194,6 @@ public enum SERVICE_TYPE implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private final String name;
@@ -221,7 +201,6 @@ public enum SERVICE_TYPE implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private final String literal;
@@ -230,7 +209,6 @@ public enum SERVICE_TYPE implements Enumerator {
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private SERVICE_TYPE(int value, String name, String literal) {
@@ -242,38 +220,34 @@ public enum SERVICE_TYPE implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public int getValue() {
-		return value;
+	  return value;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public String getName() {
-		return name;
+	  return name;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public String getLiteral() {
-		return literal;
+	  return literal;
 	}
 
 	/**
 	 * Returns the literal value of the enumerator, which is its string representation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override

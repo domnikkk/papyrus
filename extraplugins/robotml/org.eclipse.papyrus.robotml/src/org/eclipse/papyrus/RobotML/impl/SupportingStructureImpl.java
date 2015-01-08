@@ -19,7 +19,6 @@ public class SupportingStructureImpl extends HardwareImpl implements SupportingS
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected SupportingStructureImpl() {
@@ -29,7 +28,6 @@ public class SupportingStructureImpl extends HardwareImpl implements SupportingS
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override

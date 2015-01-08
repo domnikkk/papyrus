@@ -19,7 +19,6 @@ public class ActuatorHardwareImpl extends HardwareImpl implements ActuatorHardwa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected ActuatorHardwareImpl() {
@@ -29,7 +28,6 @@ public class ActuatorHardwareImpl extends HardwareImpl implements ActuatorHardwa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override

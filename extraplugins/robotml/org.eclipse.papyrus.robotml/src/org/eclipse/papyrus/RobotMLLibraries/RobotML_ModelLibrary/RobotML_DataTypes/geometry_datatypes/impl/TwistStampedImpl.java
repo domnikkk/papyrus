@@ -20,8 +20,8 @@ import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTyp
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.impl.TwistStampedImpl#getHeader <em>Header</em>}</li>
- * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.impl.TwistStampedImpl#getTwist <em>Twist</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.impl.TwistStampedImpl#getHeader <em>Header</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.impl.TwistStampedImpl#getTwist <em>Twist</em>}</li>
  * </ul>
  * </p>
  *
@@ -32,7 +32,6 @@ public class TwistStampedImpl extends MinimalEObjectImpl.Container implements Tw
 	 * The cached value of the '{@link #getHeader() <em>Header</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getHeader()
 	 * @generated
 	 * @ordered
@@ -43,7 +42,6 @@ public class TwistStampedImpl extends MinimalEObjectImpl.Container implements Tw
 	 * The cached value of the '{@link #getTwist() <em>Twist</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getTwist()
 	 * @generated
 	 * @ordered
@@ -53,7 +51,6 @@ public class TwistStampedImpl extends MinimalEObjectImpl.Container implements Tw
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected TwistStampedImpl() {
@@ -63,7 +60,6 @@ public class TwistStampedImpl extends MinimalEObjectImpl.Container implements Tw
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -74,7 +70,6 @@ public class TwistStampedImpl extends MinimalEObjectImpl.Container implements Tw
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public Header getHeader() {
@@ -84,7 +79,6 @@ public class TwistStampedImpl extends MinimalEObjectImpl.Container implements Tw
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetHeader(Header newHeader, NotificationChain msgs) {
@@ -92,11 +86,7 @@ public class TwistStampedImpl extends MinimalEObjectImpl.Container implements Tw
 		header = newHeader;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Geometry_datatypesPackage.TWIST_STAMPED__HEADER, oldHeader, newHeader);
-			if (msgs == null) {
-				msgs = notification;
-			} else {
-				msgs.add(notification);
-			}
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -104,32 +94,25 @@ public class TwistStampedImpl extends MinimalEObjectImpl.Container implements Tw
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public void setHeader(Header newHeader) {
 		if (newHeader != header) {
 			NotificationChain msgs = null;
-			if (header != null) {
-				msgs = ((InternalEObject) header).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Geometry_datatypesPackage.TWIST_STAMPED__HEADER, null, msgs);
-			}
-			if (newHeader != null) {
-				msgs = ((InternalEObject) newHeader).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Geometry_datatypesPackage.TWIST_STAMPED__HEADER, null, msgs);
-			}
+			if (header != null)
+				msgs = ((InternalEObject)header).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Geometry_datatypesPackage.TWIST_STAMPED__HEADER, null, msgs);
+			if (newHeader != null)
+				msgs = ((InternalEObject)newHeader).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Geometry_datatypesPackage.TWIST_STAMPED__HEADER, null, msgs);
 			msgs = basicSetHeader(newHeader, msgs);
-			if (msgs != null) {
-				msgs.dispatch();
-			}
+			if (msgs != null) msgs.dispatch();
 		}
-		else if (eNotificationRequired()) {
+		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Geometry_datatypesPackage.TWIST_STAMPED__HEADER, newHeader, newHeader));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public Twist getTwist() {
@@ -139,7 +122,6 @@ public class TwistStampedImpl extends MinimalEObjectImpl.Container implements Tw
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetTwist(Twist newTwist, NotificationChain msgs) {
@@ -147,11 +129,7 @@ public class TwistStampedImpl extends MinimalEObjectImpl.Container implements Tw
 		twist = newTwist;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Geometry_datatypesPackage.TWIST_STAMPED__TWIST, oldTwist, newTwist);
-			if (msgs == null) {
-				msgs = notification;
-			} else {
-				msgs.add(notification);
-			}
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -159,41 +137,34 @@ public class TwistStampedImpl extends MinimalEObjectImpl.Container implements Tw
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public void setTwist(Twist newTwist) {
 		if (newTwist != twist) {
 			NotificationChain msgs = null;
-			if (twist != null) {
-				msgs = ((InternalEObject) twist).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Geometry_datatypesPackage.TWIST_STAMPED__TWIST, null, msgs);
-			}
-			if (newTwist != null) {
-				msgs = ((InternalEObject) newTwist).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Geometry_datatypesPackage.TWIST_STAMPED__TWIST, null, msgs);
-			}
+			if (twist != null)
+				msgs = ((InternalEObject)twist).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Geometry_datatypesPackage.TWIST_STAMPED__TWIST, null, msgs);
+			if (newTwist != null)
+				msgs = ((InternalEObject)newTwist).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Geometry_datatypesPackage.TWIST_STAMPED__TWIST, null, msgs);
 			msgs = basicSetTwist(newTwist, msgs);
-			if (msgs != null) {
-				msgs.dispatch();
-			}
+			if (msgs != null) msgs.dispatch();
 		}
-		else if (eNotificationRequired()) {
+		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Geometry_datatypesPackage.TWIST_STAMPED__TWIST, newTwist, newTwist));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case Geometry_datatypesPackage.TWIST_STAMPED__HEADER:
-			return basicSetHeader(null, msgs);
-		case Geometry_datatypesPackage.TWIST_STAMPED__TWIST:
-			return basicSetTwist(null, msgs);
+			case Geometry_datatypesPackage.TWIST_STAMPED__HEADER:
+				return basicSetHeader(null, msgs);
+			case Geometry_datatypesPackage.TWIST_STAMPED__TWIST:
+				return basicSetTwist(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -201,16 +172,15 @@ public class TwistStampedImpl extends MinimalEObjectImpl.Container implements Tw
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case Geometry_datatypesPackage.TWIST_STAMPED__HEADER:
-			return getHeader();
-		case Geometry_datatypesPackage.TWIST_STAMPED__TWIST:
-			return getTwist();
+			case Geometry_datatypesPackage.TWIST_STAMPED__HEADER:
+				return getHeader();
+			case Geometry_datatypesPackage.TWIST_STAMPED__TWIST:
+				return getTwist();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -218,18 +188,17 @@ public class TwistStampedImpl extends MinimalEObjectImpl.Container implements Tw
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case Geometry_datatypesPackage.TWIST_STAMPED__HEADER:
-			setHeader((Header) newValue);
-			return;
-		case Geometry_datatypesPackage.TWIST_STAMPED__TWIST:
-			setTwist((Twist) newValue);
-			return;
+			case Geometry_datatypesPackage.TWIST_STAMPED__HEADER:
+				setHeader((Header)newValue);
+				return;
+			case Geometry_datatypesPackage.TWIST_STAMPED__TWIST:
+				setTwist((Twist)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -237,18 +206,17 @@ public class TwistStampedImpl extends MinimalEObjectImpl.Container implements Tw
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case Geometry_datatypesPackage.TWIST_STAMPED__HEADER:
-			setHeader((Header) null);
-			return;
-		case Geometry_datatypesPackage.TWIST_STAMPED__TWIST:
-			setTwist((Twist) null);
-			return;
+			case Geometry_datatypesPackage.TWIST_STAMPED__HEADER:
+				setHeader((Header)null);
+				return;
+			case Geometry_datatypesPackage.TWIST_STAMPED__TWIST:
+				setTwist((Twist)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -256,16 +224,15 @@ public class TwistStampedImpl extends MinimalEObjectImpl.Container implements Tw
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case Geometry_datatypesPackage.TWIST_STAMPED__HEADER:
-			return header != null;
-		case Geometry_datatypesPackage.TWIST_STAMPED__TWIST:
-			return twist != null;
+			case Geometry_datatypesPackage.TWIST_STAMPED__HEADER:
+				return header != null;
+			case Geometry_datatypesPackage.TWIST_STAMPED__TWIST:
+				return twist != null;
 		}
 		return super.eIsSet(featureID);
 	}

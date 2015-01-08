@@ -19,7 +19,6 @@ public class LegImpl extends LocomotionHardwareImpl implements Leg {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected LegImpl() {
@@ -29,7 +28,6 @@ public class LegImpl extends LocomotionHardwareImpl implements Leg {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override

@@ -19,7 +19,6 @@ public class PowerHardwareImpl extends HardwareImpl implements PowerHardware {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected PowerHardwareImpl() {
@@ -29,7 +28,6 @@ public class PowerHardwareImpl extends HardwareImpl implements PowerHardware {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override

@@ -24,17 +24,17 @@ import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTyp
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.CameraInfoImpl#getHeader <em>Header</em>}</li>
- * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.CameraInfoImpl#getHeight <em>Height</em>}</li>
- * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.CameraInfoImpl#getWidth <em>Width</em>}</li>
- * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.CameraInfoImpl#getDistorsion_model <em>Distorsion model</em>}</li>
- * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.CameraInfoImpl#getD <em>D</em>}</li>
- * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.CameraInfoImpl#getK <em>K</em>}</li>
- * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.CameraInfoImpl#getR <em>R</em>}</li>
- * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.CameraInfoImpl#getP <em>P</em>}</li>
- * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.CameraInfoImpl#getBinning_x <em>Binning x</em>}</li>
- * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.CameraInfoImpl#getBinning_y <em>Binning y</em>}</li>
- * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.CameraInfoImpl#getRoi <em>Roi</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.CameraInfoImpl#getHeader <em>Header</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.CameraInfoImpl#getHeight <em>Height</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.CameraInfoImpl#getWidth <em>Width</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.CameraInfoImpl#getDistorsion_model <em>Distorsion model</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.CameraInfoImpl#getD <em>D</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.CameraInfoImpl#getK <em>K</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.CameraInfoImpl#getR <em>R</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.CameraInfoImpl#getP <em>P</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.CameraInfoImpl#getBinning_x <em>Binning x</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.CameraInfoImpl#getBinning_y <em>Binning y</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.CameraInfoImpl#getRoi <em>Roi</em>}</li>
  * </ul>
  * </p>
  *
@@ -45,7 +45,6 @@ public class CameraInfoImpl extends MinimalEObjectImpl.Container implements Came
 	 * The cached value of the '{@link #getHeader() <em>Header</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getHeader()
 	 * @generated
 	 * @ordered
@@ -56,7 +55,6 @@ public class CameraInfoImpl extends MinimalEObjectImpl.Container implements Came
 	 * The default value of the '{@link #getHeight() <em>Height</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getHeight()
 	 * @generated
 	 * @ordered
@@ -67,7 +65,6 @@ public class CameraInfoImpl extends MinimalEObjectImpl.Container implements Came
 	 * The cached value of the '{@link #getHeight() <em>Height</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getHeight()
 	 * @generated
 	 * @ordered
@@ -78,7 +75,6 @@ public class CameraInfoImpl extends MinimalEObjectImpl.Container implements Came
 	 * The default value of the '{@link #getWidth() <em>Width</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getWidth()
 	 * @generated
 	 * @ordered
@@ -89,7 +85,6 @@ public class CameraInfoImpl extends MinimalEObjectImpl.Container implements Came
 	 * The cached value of the '{@link #getWidth() <em>Width</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getWidth()
 	 * @generated
 	 * @ordered
@@ -100,7 +95,6 @@ public class CameraInfoImpl extends MinimalEObjectImpl.Container implements Came
 	 * The default value of the '{@link #getDistorsion_model() <em>Distorsion model</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getDistorsion_model()
 	 * @generated
 	 * @ordered
@@ -111,7 +105,6 @@ public class CameraInfoImpl extends MinimalEObjectImpl.Container implements Came
 	 * The cached value of the '{@link #getDistorsion_model() <em>Distorsion model</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getDistorsion_model()
 	 * @generated
 	 * @ordered
@@ -122,7 +115,6 @@ public class CameraInfoImpl extends MinimalEObjectImpl.Container implements Came
 	 * The cached value of the '{@link #getD() <em>D</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getD()
 	 * @generated
 	 * @ordered
@@ -133,7 +125,6 @@ public class CameraInfoImpl extends MinimalEObjectImpl.Container implements Came
 	 * The cached value of the '{@link #getK() <em>K</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getK()
 	 * @generated
 	 * @ordered
@@ -144,7 +135,6 @@ public class CameraInfoImpl extends MinimalEObjectImpl.Container implements Came
 	 * The cached value of the '{@link #getR() <em>R</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getR()
 	 * @generated
 	 * @ordered
@@ -155,7 +145,6 @@ public class CameraInfoImpl extends MinimalEObjectImpl.Container implements Came
 	 * The cached value of the '{@link #getP() <em>P</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getP()
 	 * @generated
 	 * @ordered
@@ -166,7 +155,6 @@ public class CameraInfoImpl extends MinimalEObjectImpl.Container implements Came
 	 * The default value of the '{@link #getBinning_x() <em>Binning x</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getBinning_x()
 	 * @generated
 	 * @ordered
@@ -177,7 +165,6 @@ public class CameraInfoImpl extends MinimalEObjectImpl.Container implements Came
 	 * The cached value of the '{@link #getBinning_x() <em>Binning x</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getBinning_x()
 	 * @generated
 	 * @ordered
@@ -188,7 +175,6 @@ public class CameraInfoImpl extends MinimalEObjectImpl.Container implements Came
 	 * The default value of the '{@link #getBinning_y() <em>Binning y</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getBinning_y()
 	 * @generated
 	 * @ordered
@@ -199,7 +185,6 @@ public class CameraInfoImpl extends MinimalEObjectImpl.Container implements Came
 	 * The cached value of the '{@link #getBinning_y() <em>Binning y</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getBinning_y()
 	 * @generated
 	 * @ordered
@@ -210,7 +195,6 @@ public class CameraInfoImpl extends MinimalEObjectImpl.Container implements Came
 	 * The cached value of the '{@link #getRoi() <em>Roi</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getRoi()
 	 * @generated
 	 * @ordered
@@ -220,7 +204,6 @@ public class CameraInfoImpl extends MinimalEObjectImpl.Container implements Came
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected CameraInfoImpl() {
@@ -230,7 +213,6 @@ public class CameraInfoImpl extends MinimalEObjectImpl.Container implements Came
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -241,7 +223,6 @@ public class CameraInfoImpl extends MinimalEObjectImpl.Container implements Came
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public Header getHeader() {
@@ -251,7 +232,6 @@ public class CameraInfoImpl extends MinimalEObjectImpl.Container implements Came
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetHeader(Header newHeader, NotificationChain msgs) {
@@ -259,11 +239,7 @@ public class CameraInfoImpl extends MinimalEObjectImpl.Container implements Came
 		header = newHeader;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Sensor_datatypesPackage.CAMERA_INFO__HEADER, oldHeader, newHeader);
-			if (msgs == null) {
-				msgs = notification;
-			} else {
-				msgs.add(notification);
-			}
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -271,32 +247,25 @@ public class CameraInfoImpl extends MinimalEObjectImpl.Container implements Came
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public void setHeader(Header newHeader) {
 		if (newHeader != header) {
 			NotificationChain msgs = null;
-			if (header != null) {
-				msgs = ((InternalEObject) header).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Sensor_datatypesPackage.CAMERA_INFO__HEADER, null, msgs);
-			}
-			if (newHeader != null) {
-				msgs = ((InternalEObject) newHeader).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Sensor_datatypesPackage.CAMERA_INFO__HEADER, null, msgs);
-			}
+			if (header != null)
+				msgs = ((InternalEObject)header).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Sensor_datatypesPackage.CAMERA_INFO__HEADER, null, msgs);
+			if (newHeader != null)
+				msgs = ((InternalEObject)newHeader).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Sensor_datatypesPackage.CAMERA_INFO__HEADER, null, msgs);
 			msgs = basicSetHeader(newHeader, msgs);
-			if (msgs != null) {
-				msgs.dispatch();
-			}
+			if (msgs != null) msgs.dispatch();
 		}
-		else if (eNotificationRequired()) {
+		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Sensor_datatypesPackage.CAMERA_INFO__HEADER, newHeader, newHeader));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public long getHeight() {
@@ -306,21 +275,18 @@ public class CameraInfoImpl extends MinimalEObjectImpl.Container implements Came
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public void setHeight(long newHeight) {
 		long oldHeight = height;
 		height = newHeight;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Sensor_datatypesPackage.CAMERA_INFO__HEIGHT, oldHeight, height));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public long getWidth() {
@@ -330,21 +296,18 @@ public class CameraInfoImpl extends MinimalEObjectImpl.Container implements Came
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public void setWidth(long newWidth) {
 		long oldWidth = width;
 		width = newWidth;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Sensor_datatypesPackage.CAMERA_INFO__WIDTH, oldWidth, width));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public String getDistorsion_model() {
@@ -354,21 +317,18 @@ public class CameraInfoImpl extends MinimalEObjectImpl.Container implements Came
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public void setDistorsion_model(String newDistorsion_model) {
 		String oldDistorsion_model = distorsion_model;
 		distorsion_model = newDistorsion_model;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Sensor_datatypesPackage.CAMERA_INFO__DISTORSION_MODEL, oldDistorsion_model, distorsion_model));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EList<Double> getD() {
@@ -381,7 +341,6 @@ public class CameraInfoImpl extends MinimalEObjectImpl.Container implements Came
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EList<Double> getK() {
@@ -394,7 +353,6 @@ public class CameraInfoImpl extends MinimalEObjectImpl.Container implements Came
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EList<Double> getR() {
@@ -407,7 +365,6 @@ public class CameraInfoImpl extends MinimalEObjectImpl.Container implements Came
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EList<Double> getP() {
@@ -420,7 +377,6 @@ public class CameraInfoImpl extends MinimalEObjectImpl.Container implements Came
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public long getBinning_x() {
@@ -430,21 +386,18 @@ public class CameraInfoImpl extends MinimalEObjectImpl.Container implements Came
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public void setBinning_x(long newBinning_x) {
 		long oldBinning_x = binning_x;
 		binning_x = newBinning_x;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Sensor_datatypesPackage.CAMERA_INFO__BINNING_X, oldBinning_x, binning_x));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public long getBinning_y() {
@@ -454,21 +407,18 @@ public class CameraInfoImpl extends MinimalEObjectImpl.Container implements Came
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public void setBinning_y(long newBinning_y) {
 		long oldBinning_y = binning_y;
 		binning_y = newBinning_y;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Sensor_datatypesPackage.CAMERA_INFO__BINNING_Y, oldBinning_y, binning_y));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public RegionOfInterest getRoi() {
@@ -478,7 +428,6 @@ public class CameraInfoImpl extends MinimalEObjectImpl.Container implements Came
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetRoi(RegionOfInterest newRoi, NotificationChain msgs) {
@@ -486,11 +435,7 @@ public class CameraInfoImpl extends MinimalEObjectImpl.Container implements Came
 		roi = newRoi;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Sensor_datatypesPackage.CAMERA_INFO__ROI, oldRoi, newRoi);
-			if (msgs == null) {
-				msgs = notification;
-			} else {
-				msgs.add(notification);
-			}
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -498,41 +443,34 @@ public class CameraInfoImpl extends MinimalEObjectImpl.Container implements Came
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public void setRoi(RegionOfInterest newRoi) {
 		if (newRoi != roi) {
 			NotificationChain msgs = null;
-			if (roi != null) {
-				msgs = ((InternalEObject) roi).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Sensor_datatypesPackage.CAMERA_INFO__ROI, null, msgs);
-			}
-			if (newRoi != null) {
-				msgs = ((InternalEObject) newRoi).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Sensor_datatypesPackage.CAMERA_INFO__ROI, null, msgs);
-			}
+			if (roi != null)
+				msgs = ((InternalEObject)roi).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Sensor_datatypesPackage.CAMERA_INFO__ROI, null, msgs);
+			if (newRoi != null)
+				msgs = ((InternalEObject)newRoi).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Sensor_datatypesPackage.CAMERA_INFO__ROI, null, msgs);
 			msgs = basicSetRoi(newRoi, msgs);
-			if (msgs != null) {
-				msgs.dispatch();
-			}
+			if (msgs != null) msgs.dispatch();
 		}
-		else if (eNotificationRequired()) {
+		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Sensor_datatypesPackage.CAMERA_INFO__ROI, newRoi, newRoi));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case Sensor_datatypesPackage.CAMERA_INFO__HEADER:
-			return basicSetHeader(null, msgs);
-		case Sensor_datatypesPackage.CAMERA_INFO__ROI:
-			return basicSetRoi(null, msgs);
+			case Sensor_datatypesPackage.CAMERA_INFO__HEADER:
+				return basicSetHeader(null, msgs);
+			case Sensor_datatypesPackage.CAMERA_INFO__ROI:
+				return basicSetRoi(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -540,34 +478,33 @@ public class CameraInfoImpl extends MinimalEObjectImpl.Container implements Came
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case Sensor_datatypesPackage.CAMERA_INFO__HEADER:
-			return getHeader();
-		case Sensor_datatypesPackage.CAMERA_INFO__HEIGHT:
-			return getHeight();
-		case Sensor_datatypesPackage.CAMERA_INFO__WIDTH:
-			return getWidth();
-		case Sensor_datatypesPackage.CAMERA_INFO__DISTORSION_MODEL:
-			return getDistorsion_model();
-		case Sensor_datatypesPackage.CAMERA_INFO__D:
-			return getD();
-		case Sensor_datatypesPackage.CAMERA_INFO__K:
-			return getK();
-		case Sensor_datatypesPackage.CAMERA_INFO__R:
-			return getR();
-		case Sensor_datatypesPackage.CAMERA_INFO__P:
-			return getP();
-		case Sensor_datatypesPackage.CAMERA_INFO__BINNING_X:
-			return getBinning_x();
-		case Sensor_datatypesPackage.CAMERA_INFO__BINNING_Y:
-			return getBinning_y();
-		case Sensor_datatypesPackage.CAMERA_INFO__ROI:
-			return getRoi();
+			case Sensor_datatypesPackage.CAMERA_INFO__HEADER:
+				return getHeader();
+			case Sensor_datatypesPackage.CAMERA_INFO__HEIGHT:
+				return getHeight();
+			case Sensor_datatypesPackage.CAMERA_INFO__WIDTH:
+				return getWidth();
+			case Sensor_datatypesPackage.CAMERA_INFO__DISTORSION_MODEL:
+				return getDistorsion_model();
+			case Sensor_datatypesPackage.CAMERA_INFO__D:
+				return getD();
+			case Sensor_datatypesPackage.CAMERA_INFO__K:
+				return getK();
+			case Sensor_datatypesPackage.CAMERA_INFO__R:
+				return getR();
+			case Sensor_datatypesPackage.CAMERA_INFO__P:
+				return getP();
+			case Sensor_datatypesPackage.CAMERA_INFO__BINNING_X:
+				return getBinning_x();
+			case Sensor_datatypesPackage.CAMERA_INFO__BINNING_Y:
+				return getBinning_y();
+			case Sensor_datatypesPackage.CAMERA_INFO__ROI:
+				return getRoi();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -575,50 +512,49 @@ public class CameraInfoImpl extends MinimalEObjectImpl.Container implements Came
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case Sensor_datatypesPackage.CAMERA_INFO__HEADER:
-			setHeader((Header) newValue);
-			return;
-		case Sensor_datatypesPackage.CAMERA_INFO__HEIGHT:
-			setHeight((Long) newValue);
-			return;
-		case Sensor_datatypesPackage.CAMERA_INFO__WIDTH:
-			setWidth((Long) newValue);
-			return;
-		case Sensor_datatypesPackage.CAMERA_INFO__DISTORSION_MODEL:
-			setDistorsion_model((String) newValue);
-			return;
-		case Sensor_datatypesPackage.CAMERA_INFO__D:
-			getD().clear();
-			getD().addAll((Collection<? extends Double>) newValue);
-			return;
-		case Sensor_datatypesPackage.CAMERA_INFO__K:
-			getK().clear();
-			getK().addAll((Collection<? extends Double>) newValue);
-			return;
-		case Sensor_datatypesPackage.CAMERA_INFO__R:
-			getR().clear();
-			getR().addAll((Collection<? extends Double>) newValue);
-			return;
-		case Sensor_datatypesPackage.CAMERA_INFO__P:
-			getP().clear();
-			getP().addAll((Collection<? extends Double>) newValue);
-			return;
-		case Sensor_datatypesPackage.CAMERA_INFO__BINNING_X:
-			setBinning_x((Long) newValue);
-			return;
-		case Sensor_datatypesPackage.CAMERA_INFO__BINNING_Y:
-			setBinning_y((Long) newValue);
-			return;
-		case Sensor_datatypesPackage.CAMERA_INFO__ROI:
-			setRoi((RegionOfInterest) newValue);
-			return;
+			case Sensor_datatypesPackage.CAMERA_INFO__HEADER:
+				setHeader((Header)newValue);
+				return;
+			case Sensor_datatypesPackage.CAMERA_INFO__HEIGHT:
+				setHeight((Long)newValue);
+				return;
+			case Sensor_datatypesPackage.CAMERA_INFO__WIDTH:
+				setWidth((Long)newValue);
+				return;
+			case Sensor_datatypesPackage.CAMERA_INFO__DISTORSION_MODEL:
+				setDistorsion_model((String)newValue);
+				return;
+			case Sensor_datatypesPackage.CAMERA_INFO__D:
+				getD().clear();
+				getD().addAll((Collection<? extends Double>)newValue);
+				return;
+			case Sensor_datatypesPackage.CAMERA_INFO__K:
+				getK().clear();
+				getK().addAll((Collection<? extends Double>)newValue);
+				return;
+			case Sensor_datatypesPackage.CAMERA_INFO__R:
+				getR().clear();
+				getR().addAll((Collection<? extends Double>)newValue);
+				return;
+			case Sensor_datatypesPackage.CAMERA_INFO__P:
+				getP().clear();
+				getP().addAll((Collection<? extends Double>)newValue);
+				return;
+			case Sensor_datatypesPackage.CAMERA_INFO__BINNING_X:
+				setBinning_x((Long)newValue);
+				return;
+			case Sensor_datatypesPackage.CAMERA_INFO__BINNING_Y:
+				setBinning_y((Long)newValue);
+				return;
+			case Sensor_datatypesPackage.CAMERA_INFO__ROI:
+				setRoi((RegionOfInterest)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -626,45 +562,44 @@ public class CameraInfoImpl extends MinimalEObjectImpl.Container implements Came
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case Sensor_datatypesPackage.CAMERA_INFO__HEADER:
-			setHeader((Header) null);
-			return;
-		case Sensor_datatypesPackage.CAMERA_INFO__HEIGHT:
-			setHeight(HEIGHT_EDEFAULT);
-			return;
-		case Sensor_datatypesPackage.CAMERA_INFO__WIDTH:
-			setWidth(WIDTH_EDEFAULT);
-			return;
-		case Sensor_datatypesPackage.CAMERA_INFO__DISTORSION_MODEL:
-			setDistorsion_model(DISTORSION_MODEL_EDEFAULT);
-			return;
-		case Sensor_datatypesPackage.CAMERA_INFO__D:
-			getD().clear();
-			return;
-		case Sensor_datatypesPackage.CAMERA_INFO__K:
-			getK().clear();
-			return;
-		case Sensor_datatypesPackage.CAMERA_INFO__R:
-			getR().clear();
-			return;
-		case Sensor_datatypesPackage.CAMERA_INFO__P:
-			getP().clear();
-			return;
-		case Sensor_datatypesPackage.CAMERA_INFO__BINNING_X:
-			setBinning_x(BINNING_X_EDEFAULT);
-			return;
-		case Sensor_datatypesPackage.CAMERA_INFO__BINNING_Y:
-			setBinning_y(BINNING_Y_EDEFAULT);
-			return;
-		case Sensor_datatypesPackage.CAMERA_INFO__ROI:
-			setRoi((RegionOfInterest) null);
-			return;
+			case Sensor_datatypesPackage.CAMERA_INFO__HEADER:
+				setHeader((Header)null);
+				return;
+			case Sensor_datatypesPackage.CAMERA_INFO__HEIGHT:
+				setHeight(HEIGHT_EDEFAULT);
+				return;
+			case Sensor_datatypesPackage.CAMERA_INFO__WIDTH:
+				setWidth(WIDTH_EDEFAULT);
+				return;
+			case Sensor_datatypesPackage.CAMERA_INFO__DISTORSION_MODEL:
+				setDistorsion_model(DISTORSION_MODEL_EDEFAULT);
+				return;
+			case Sensor_datatypesPackage.CAMERA_INFO__D:
+				getD().clear();
+				return;
+			case Sensor_datatypesPackage.CAMERA_INFO__K:
+				getK().clear();
+				return;
+			case Sensor_datatypesPackage.CAMERA_INFO__R:
+				getR().clear();
+				return;
+			case Sensor_datatypesPackage.CAMERA_INFO__P:
+				getP().clear();
+				return;
+			case Sensor_datatypesPackage.CAMERA_INFO__BINNING_X:
+				setBinning_x(BINNING_X_EDEFAULT);
+				return;
+			case Sensor_datatypesPackage.CAMERA_INFO__BINNING_Y:
+				setBinning_y(BINNING_Y_EDEFAULT);
+				return;
+			case Sensor_datatypesPackage.CAMERA_INFO__ROI:
+				setRoi((RegionOfInterest)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -672,34 +607,33 @@ public class CameraInfoImpl extends MinimalEObjectImpl.Container implements Came
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case Sensor_datatypesPackage.CAMERA_INFO__HEADER:
-			return header != null;
-		case Sensor_datatypesPackage.CAMERA_INFO__HEIGHT:
-			return height != HEIGHT_EDEFAULT;
-		case Sensor_datatypesPackage.CAMERA_INFO__WIDTH:
-			return width != WIDTH_EDEFAULT;
-		case Sensor_datatypesPackage.CAMERA_INFO__DISTORSION_MODEL:
-			return DISTORSION_MODEL_EDEFAULT == null ? distorsion_model != null : !DISTORSION_MODEL_EDEFAULT.equals(distorsion_model);
-		case Sensor_datatypesPackage.CAMERA_INFO__D:
-			return d != null && !d.isEmpty();
-		case Sensor_datatypesPackage.CAMERA_INFO__K:
-			return k != null && !k.isEmpty();
-		case Sensor_datatypesPackage.CAMERA_INFO__R:
-			return r != null && !r.isEmpty();
-		case Sensor_datatypesPackage.CAMERA_INFO__P:
-			return p != null && !p.isEmpty();
-		case Sensor_datatypesPackage.CAMERA_INFO__BINNING_X:
-			return binning_x != BINNING_X_EDEFAULT;
-		case Sensor_datatypesPackage.CAMERA_INFO__BINNING_Y:
-			return binning_y != BINNING_Y_EDEFAULT;
-		case Sensor_datatypesPackage.CAMERA_INFO__ROI:
-			return roi != null;
+			case Sensor_datatypesPackage.CAMERA_INFO__HEADER:
+				return header != null;
+			case Sensor_datatypesPackage.CAMERA_INFO__HEIGHT:
+				return height != HEIGHT_EDEFAULT;
+			case Sensor_datatypesPackage.CAMERA_INFO__WIDTH:
+				return width != WIDTH_EDEFAULT;
+			case Sensor_datatypesPackage.CAMERA_INFO__DISTORSION_MODEL:
+				return DISTORSION_MODEL_EDEFAULT == null ? distorsion_model != null : !DISTORSION_MODEL_EDEFAULT.equals(distorsion_model);
+			case Sensor_datatypesPackage.CAMERA_INFO__D:
+				return d != null && !d.isEmpty();
+			case Sensor_datatypesPackage.CAMERA_INFO__K:
+				return k != null && !k.isEmpty();
+			case Sensor_datatypesPackage.CAMERA_INFO__R:
+				return r != null && !r.isEmpty();
+			case Sensor_datatypesPackage.CAMERA_INFO__P:
+				return p != null && !p.isEmpty();
+			case Sensor_datatypesPackage.CAMERA_INFO__BINNING_X:
+				return binning_x != BINNING_X_EDEFAULT;
+			case Sensor_datatypesPackage.CAMERA_INFO__BINNING_Y:
+				return binning_y != BINNING_Y_EDEFAULT;
+			case Sensor_datatypesPackage.CAMERA_INFO__ROI:
+				return roi != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -707,14 +641,11 @@ public class CameraInfoImpl extends MinimalEObjectImpl.Container implements Came
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
-			return super.toString();
-		}
+		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (height: ");

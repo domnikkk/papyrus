@@ -19,7 +19,6 @@ public class SensorHardwareImpl extends HardwareImpl implements SensorHardware {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected SensorHardwareImpl() {
@@ -29,7 +28,6 @@ public class SensorHardwareImpl extends HardwareImpl implements SensorHardware {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override

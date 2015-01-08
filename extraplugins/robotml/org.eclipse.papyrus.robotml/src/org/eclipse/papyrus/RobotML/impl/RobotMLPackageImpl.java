@@ -61,7 +61,7 @@ import org.eclipse.papyrus.RobotML.ObjectDetectionSensorSystem;
 import org.eclipse.papyrus.RobotML.ObjectTrackingSensorSystem;
 import org.eclipse.papyrus.RobotML.OdometrySystem;
 import org.eclipse.papyrus.RobotML.OnPort;
-import org.eclipse.papyrus.RobotML.OnProperty;
+import org.eclipse.papyrus.RobotML.OnVariable;
 import org.eclipse.papyrus.RobotML.OpenLoopControlSystem;
 import org.eclipse.papyrus.RobotML.Pedestrian;
 import org.eclipse.papyrus.RobotML.PhysicalObject;
@@ -119,14 +119,12 @@ import org.eclipse.uml2.uml.UMLPackage;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
- *
  * @generated
  */
 public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass transitionEClass = null;
@@ -134,7 +132,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass algorithmEClass = null;
@@ -142,7 +139,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass stateEClass = null;
@@ -150,7 +146,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass actuatedJointEClass = null;
@@ -158,7 +153,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass jointEClass = null;
@@ -166,7 +160,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass completeBondingEClass = null;
@@ -174,7 +167,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass robotEClass = null;
@@ -182,7 +174,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass systemEClass = null;
@@ -190,7 +181,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass agentEClass = null;
@@ -198,7 +188,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass physicalObjectEClass = null;
@@ -206,7 +195,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass environmentEClass = null;
@@ -214,7 +202,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass surfaceEClass = null;
@@ -222,7 +209,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass dataFlowPortEClass = null;
@@ -230,7 +216,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass portEClass = null;
@@ -238,7 +223,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass servicePortEClass = null;
@@ -246,7 +230,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass actuatorSystemEClass = null;
@@ -254,7 +237,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass roboticSystemEClass = null;
@@ -262,7 +244,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass cyberPhysicalSystemEClass = null;
@@ -270,7 +251,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass sensorSystemEClass = null;
@@ -278,7 +258,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass hardwareEClass = null;
@@ -286,7 +265,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass softwareEClass = null;
@@ -294,7 +272,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass engineSystemEClass = null;
@@ -302,7 +279,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass steeredWheelSystemEClass = null;
@@ -310,7 +286,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass locomotionSystemEClass = null;
@@ -318,7 +293,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass imageSensorSystemEClass = null;
@@ -326,7 +300,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass cameraSystemEClass = null;
@@ -334,7 +307,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass objectDetectionSensorSystemEClass = null;
@@ -342,7 +314,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass objectTrackingSensorSystemEClass = null;
@@ -350,7 +321,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass lidarSystemEClass = null;
@@ -358,7 +328,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass localizationSensorSystemEClass = null;
@@ -366,7 +335,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass gpsSystemEClass = null;
@@ -374,7 +342,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass algorithmLibraryEClass = null;
@@ -382,7 +349,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass sensorDriverEClass = null;
@@ -390,7 +356,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass buildingEClass = null;
@@ -398,7 +363,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass planetEClass = null;
@@ -406,7 +370,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass landSurfaceEClass = null;
@@ -414,7 +377,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass groundEClass = null;
@@ -422,7 +384,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass floorEClass = null;
@@ -430,7 +391,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass waterSurfaceEClass = null;
@@ -438,7 +398,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass humanEClass = null;
@@ -446,7 +405,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass pedestrianEClass = null;
@@ -454,7 +412,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass stairsEClass = null;
@@ -462,7 +419,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass platformEClass = null;
@@ -470,7 +426,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass externalLibraryEClass = null;
@@ -478,7 +433,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass roboticMiddlewareEClass = null;
@@ -486,7 +440,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass roboticSimulatorEClass = null;
@@ -494,7 +447,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass cycabTKEClass = null;
@@ -502,7 +454,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass blenderMorseEClass = null;
@@ -510,7 +461,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass onPortEClass = null;
@@ -518,7 +468,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass allocateEClass = null;
@@ -526,7 +475,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass inertialMeasurementUnitSystemEClass = null;
@@ -534,7 +482,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass inertialNavigationSystemEClass = null;
@@ -542,7 +489,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass odometrySystemEClass = null;
@@ -550,7 +496,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass infraRedProximetrySystemEClass = null;
@@ -558,7 +503,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass deploymentPlanEClass = null;
@@ -566,7 +510,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass gyroscopeEClass = null;
@@ -574,15 +517,13 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
-	private EClass onPropertyEClass = null;
+	private EClass onVariableEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass chassisEClass = null;
@@ -590,7 +531,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass supportingStructureEClass = null;
@@ -598,7 +538,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass mechanicalLinkageEClass = null;
@@ -606,7 +545,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass legEClass = null;
@@ -614,7 +552,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass locomotionHardwareEClass = null;
@@ -622,7 +559,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass actuatorHardwareEClass = null;
@@ -630,7 +566,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass mobileRobotEClass = null;
@@ -638,7 +573,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass manipulatorEClass = null;
@@ -646,7 +580,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass pilotedSystemEClass = null;
@@ -654,7 +587,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass powerHardwareEClass = null;
@@ -662,7 +594,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass sensorHardwareEClass = null;
@@ -670,7 +601,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass graspingHardwareEClass = null;
@@ -678,7 +608,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass steeredWheelHardwareEClass = null;
@@ -686,7 +615,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass armEClass = null;
@@ -694,7 +622,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass legSystemEClass = null;
@@ -702,7 +629,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass graspingSystemEClass = null;
@@ -710,7 +636,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass weaponSystemEClass = null;
@@ -718,7 +643,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass manMachineInterfaceSystemEClass = null;
@@ -726,7 +650,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass closedLoopControlSystemEClass = null;
@@ -734,7 +657,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass openLoopControlSystemEClass = null;
@@ -742,7 +664,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass roboticHeadEClass = null;
@@ -750,7 +671,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass navigationCommandSystemEClass = null;
@@ -758,7 +678,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass joysticNavigationSystemEClass = null;
@@ -766,7 +685,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EEnum synchronizationKindEEnum = null;
@@ -774,7 +692,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EEnum dataFlowDirectionKindEEnum = null;
@@ -782,7 +699,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EEnum serviceFlowKindEEnum = null;
@@ -790,7 +706,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EEnum ugvKindEEnum = null;
@@ -798,7 +713,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EEnum roboticMiddlewareKindEEnum = null;
@@ -806,7 +720,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EEnum shadeEEnum = null;
@@ -814,17 +727,19 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EEnum mobileRobotKindEEnum = null;
 
 	/**
-	 * Creates an instance of the model <b>Package</b>, registered with {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
+	 * Creates an instance of the model <b>Package</b>, registered with
+	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
-	 * <p>
-	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * <p>Note: the correct way to create the package is via the static
+	 * factory method {@link #init init()}, which also performs
+	 * initialization of the package, or returns the registered package,
+	 * if one already exists.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#eNS_URI
 	 * @see #init()
@@ -837,29 +752,26 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private static boolean isInited = false;
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 *
-	 * <p>
-	 * This method is used to initialize {@link RobotMLPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
+	 * <p>This method is used to initialize {@link RobotMLPackage#eINSTANCE} when that field is accessed.
+	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
 	 * @generated
 	 */
 	public static RobotMLPackage init() {
-		if (isInited) {
-			return (RobotMLPackage) EPackage.Registry.INSTANCE.getEPackage(RobotMLPackage.eNS_URI);
-		}
+		if (isInited) return (RobotMLPackage)EPackage.Registry.INSTANCE.getEPackage(RobotMLPackage.eNS_URI);
 
 		// Obtain or create and register package
-		RobotMLPackageImpl theRobotMLPackage = (RobotMLPackageImpl) (EPackage.Registry.INSTANCE.get(eNS_URI) instanceof RobotMLPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new RobotMLPackageImpl());
+		RobotMLPackageImpl theRobotMLPackage = (RobotMLPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof RobotMLPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new RobotMLPackageImpl());
 
 		isInited = true;
 
@@ -867,22 +779,14 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 		UMLPackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
-		Diagnostic_datatypesPackageImpl theDiagnostic_datatypesPackage = (Diagnostic_datatypesPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(Diagnostic_datatypesPackage.eNS_URI) instanceof Diagnostic_datatypesPackageImpl ? EPackage.Registry.INSTANCE
-				.getEPackage(Diagnostic_datatypesPackage.eNS_URI) : Diagnostic_datatypesPackage.eINSTANCE);
-		Geometry_datatypesPackageImpl theGeometry_datatypesPackage = (Geometry_datatypesPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(Geometry_datatypesPackage.eNS_URI) instanceof Geometry_datatypesPackageImpl ? EPackage.Registry.INSTANCE
-				.getEPackage(Geometry_datatypesPackage.eNS_URI) : Geometry_datatypesPackage.eINSTANCE);
-		Nav_datatypesPackageImpl theNav_datatypesPackage = (Nav_datatypesPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(Nav_datatypesPackage.eNS_URI) instanceof Nav_datatypesPackageImpl ? EPackage.Registry.INSTANCE
-				.getEPackage(Nav_datatypesPackage.eNS_URI) : Nav_datatypesPackage.eINSTANCE);
-		Sensor_datatypesPackageImpl theSensor_datatypesPackage = (Sensor_datatypesPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(Sensor_datatypesPackage.eNS_URI) instanceof Sensor_datatypesPackageImpl ? EPackage.Registry.INSTANCE
-				.getEPackage(Sensor_datatypesPackage.eNS_URI) : Sensor_datatypesPackage.eINSTANCE);
-		Actionlib_datatypesPackageImpl theActionlib_datatypesPackage = (Actionlib_datatypesPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(Actionlib_datatypesPackage.eNS_URI) instanceof Actionlib_datatypesPackageImpl ? EPackage.Registry.INSTANCE
-				.getEPackage(Actionlib_datatypesPackage.eNS_URI) : Actionlib_datatypesPackage.eINSTANCE);
-		Oarp1_datatypesPackageImpl theOarp1_datatypesPackage = (Oarp1_datatypesPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(Oarp1_datatypesPackage.eNS_URI) instanceof Oarp1_datatypesPackageImpl ? EPackage.Registry.INSTANCE
-				.getEPackage(Oarp1_datatypesPackage.eNS_URI) : Oarp1_datatypesPackage.eINSTANCE);
-		Oarp4_datatypesPackageImpl theOarp4_datatypesPackage = (Oarp4_datatypesPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(Oarp4_datatypesPackage.eNS_URI) instanceof Oarp4_datatypesPackageImpl ? EPackage.Registry.INSTANCE
-				.getEPackage(Oarp4_datatypesPackage.eNS_URI) : Oarp4_datatypesPackage.eINSTANCE);
-		Std_datatypesPackageImpl theStd_datatypesPackage = (Std_datatypesPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(Std_datatypesPackage.eNS_URI) instanceof Std_datatypesPackageImpl ? EPackage.Registry.INSTANCE
-				.getEPackage(Std_datatypesPackage.eNS_URI) : Std_datatypesPackage.eINSTANCE);
+		Diagnostic_datatypesPackageImpl theDiagnostic_datatypesPackage = (Diagnostic_datatypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(Diagnostic_datatypesPackage.eNS_URI) instanceof Diagnostic_datatypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(Diagnostic_datatypesPackage.eNS_URI) : Diagnostic_datatypesPackage.eINSTANCE);
+		Geometry_datatypesPackageImpl theGeometry_datatypesPackage = (Geometry_datatypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(Geometry_datatypesPackage.eNS_URI) instanceof Geometry_datatypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(Geometry_datatypesPackage.eNS_URI) : Geometry_datatypesPackage.eINSTANCE);
+		Nav_datatypesPackageImpl theNav_datatypesPackage = (Nav_datatypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(Nav_datatypesPackage.eNS_URI) instanceof Nav_datatypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(Nav_datatypesPackage.eNS_URI) : Nav_datatypesPackage.eINSTANCE);
+		Sensor_datatypesPackageImpl theSensor_datatypesPackage = (Sensor_datatypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(Sensor_datatypesPackage.eNS_URI) instanceof Sensor_datatypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(Sensor_datatypesPackage.eNS_URI) : Sensor_datatypesPackage.eINSTANCE);
+		Actionlib_datatypesPackageImpl theActionlib_datatypesPackage = (Actionlib_datatypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(Actionlib_datatypesPackage.eNS_URI) instanceof Actionlib_datatypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(Actionlib_datatypesPackage.eNS_URI) : Actionlib_datatypesPackage.eINSTANCE);
+		Oarp1_datatypesPackageImpl theOarp1_datatypesPackage = (Oarp1_datatypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(Oarp1_datatypesPackage.eNS_URI) instanceof Oarp1_datatypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(Oarp1_datatypesPackage.eNS_URI) : Oarp1_datatypesPackage.eINSTANCE);
+		Oarp4_datatypesPackageImpl theOarp4_datatypesPackage = (Oarp4_datatypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(Oarp4_datatypesPackage.eNS_URI) instanceof Oarp4_datatypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(Oarp4_datatypesPackage.eNS_URI) : Oarp4_datatypesPackage.eINSTANCE);
+		Std_datatypesPackageImpl theStd_datatypesPackage = (Std_datatypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(Std_datatypesPackage.eNS_URI) instanceof Std_datatypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(Std_datatypesPackage.eNS_URI) : Std_datatypesPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theRobotMLPackage.createPackageContents();
@@ -909,7 +813,7 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 		// Mark meta-data to indicate it can't be changed
 		theRobotMLPackage.freeze();
 
-
+  
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(RobotMLPackage.eNS_URI, theRobotMLPackage);
 		return theRobotMLPackage;
@@ -918,7 +822,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getTransition() {
@@ -928,37 +831,33 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EReference getTransition_Base_Transition() {
-		return (EReference) transitionEClass.getEStructuralFeatures().get(0);
+		return (EReference)transitionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EReference getTransition_Guard() {
-		return (EReference) transitionEClass.getEStructuralFeatures().get(1);
+		return (EReference)transitionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EReference getTransition_Effect() {
-		return (EReference) transitionEClass.getEStructuralFeatures().get(2);
+		return (EReference)transitionEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getAlgorithm() {
@@ -968,57 +867,51 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EReference getAlgorithm_Base_Operation() {
-		return (EReference) algorithmEClass.getEStructuralFeatures().get(0);
+		return (EReference)algorithmEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getAlgorithm_IsExternal() {
-		return (EAttribute) algorithmEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)algorithmEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getAlgorithm_ExtFunctionName() {
-		return (EAttribute) algorithmEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)algorithmEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getAlgorithm_LibPath() {
-		return (EAttribute) algorithmEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)algorithmEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getAlgorithm_LibFileFormat() {
-		return (EAttribute) algorithmEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)algorithmEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getState() {
@@ -1028,27 +921,24 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EReference getState_Base_State() {
-		return (EReference) stateEClass.getEStructuralFeatures().get(0);
+		return (EReference)stateEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EReference getState_Behavior() {
-		return (EReference) stateEClass.getEStructuralFeatures().get(1);
+		return (EReference)stateEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getActuatedJoint() {
@@ -1058,7 +948,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getJoint() {
@@ -1068,17 +957,15 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EReference getJoint_Base_Connector() {
-		return (EReference) jointEClass.getEStructuralFeatures().get(0);
+		return (EReference)jointEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getCompleteBonding() {
@@ -1088,7 +975,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getRobot() {
@@ -1098,17 +984,15 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getRobot_Width() {
-		return (EAttribute) robotEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)robotEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getSystem() {
@@ -1118,47 +1002,42 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EReference getSystem_Base_Class() {
-		return (EReference) systemEClass.getEStructuralFeatures().get(0);
+		return (EReference)systemEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getSystem_Native() {
-		return (EAttribute) systemEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)systemEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getSystem_LibraryPath() {
-		return (EAttribute) systemEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)systemEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getSystem_LibraryComponentName() {
-		return (EAttribute) systemEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)systemEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getAgent() {
@@ -1168,17 +1047,15 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EReference getAgent_MovesOver() {
-		return (EReference) agentEClass.getEStructuralFeatures().get(0);
+		return (EReference)agentEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getPhysicalObject() {
@@ -1188,47 +1065,42 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EReference getPhysicalObject_EvelovesIn() {
-		return (EReference) physicalObjectEClass.getEStructuralFeatures().get(0);
+		return (EReference)physicalObjectEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EReference getPhysicalObject_HasSurface() {
-		return (EReference) physicalObjectEClass.getEStructuralFeatures().get(1);
+		return (EReference)physicalObjectEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getPhysicalObject_Height() {
-		return (EAttribute) physicalObjectEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)physicalObjectEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getPhysicalObject_Mass() {
-		return (EAttribute) physicalObjectEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)physicalObjectEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getEnvironment() {
@@ -1238,7 +1110,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getSurface() {
@@ -1248,7 +1119,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getDataFlowPort() {
@@ -1258,27 +1128,24 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getDataFlowPort_Direction() {
-		return (EAttribute) dataFlowPortEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)dataFlowPortEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getDataFlowPort_BufferSize() {
-		return (EAttribute) dataFlowPortEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)dataFlowPortEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getPort() {
@@ -1288,27 +1155,24 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EReference getPort_Base_Port() {
-		return (EReference) portEClass.getEStructuralFeatures().get(0);
+		return (EReference)portEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getPort_SynchronizationPolicy() {
-		return (EAttribute) portEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)portEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getServicePort() {
@@ -1318,17 +1182,15 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getServicePort_Kind() {
-		return (EAttribute) servicePortEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)servicePortEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getActuatorSystem() {
@@ -1338,7 +1200,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getRoboticSystem() {
@@ -1348,27 +1209,24 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EReference getRoboticSystem_LocalPosition() {
-		return (EReference) roboticSystemEClass.getEStructuralFeatures().get(0);
+		return (EReference)roboticSystemEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EReference getRoboticSystem_LocalOrientation() {
-		return (EReference) roboticSystemEClass.getEStructuralFeatures().get(1);
+		return (EReference)roboticSystemEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getCyberPhysicalSystem() {
@@ -1378,7 +1236,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getSensorSystem() {
@@ -1388,27 +1245,24 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getSensorSystem_Frequency() {
-		return (EAttribute) sensorSystemEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)sensorSystemEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getSensorSystem_Identifier() {
-		return (EAttribute) sensorSystemEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)sensorSystemEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getHardware() {
@@ -1418,7 +1272,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getSoftware() {
@@ -1428,57 +1281,51 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getSoftware_IsPeriodic() {
-		return (EAttribute) softwareEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)softwareEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getSoftware_Period() {
-		return (EAttribute) softwareEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)softwareEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getSoftware_Priority() {
-		return (EAttribute) softwareEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)softwareEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getSoftware_Deadline() {
-		return (EAttribute) softwareEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)softwareEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getSoftware_Wcet() {
-		return (EAttribute) softwareEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)softwareEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getEngineSystem() {
@@ -1488,67 +1335,60 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getEngineSystem_VehicleTraction() {
-		return (EAttribute) engineSystemEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)engineSystemEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getEngineSystem_MaxEngineForce() {
-		return (EAttribute) engineSystemEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)engineSystemEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getEngineSystem_MaxBreakingForce() {
-		return (EAttribute) engineSystemEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)engineSystemEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getEngineSystem_MaxAllowedSteering() {
-		return (EAttribute) engineSystemEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)engineSystemEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getEngineSystem_MaxAllowedVelocity() {
-		return (EAttribute) engineSystemEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)engineSystemEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getEngineSystem_Gear_ration() {
-		return (EAttribute) engineSystemEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)engineSystemEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getSteeredWheelSystem() {
@@ -1558,167 +1398,150 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getSteeredWheelSystem_WheelRadius() {
-		return (EAttribute) steeredWheelSystemEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)steeredWheelSystemEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getSteeredWheelSystem_WheelWidth() {
-		return (EAttribute) steeredWheelSystemEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)steeredWheelSystemEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getSteeredWheelSystem_SuspensionRestLength() {
-		return (EAttribute) steeredWheelSystemEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)steeredWheelSystemEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getSteeredWheelSystem_WheelConnectionHeight() {
-		return (EAttribute) steeredWheelSystemEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)steeredWheelSystemEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getSteeredWheelSystem_TypeOfWheel() {
-		return (EAttribute) steeredWheelSystemEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)steeredWheelSystemEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getSteeredWheelSystem_WheelVelocityPIDkp() {
-		return (EAttribute) steeredWheelSystemEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)steeredWheelSystemEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getSteeredWheelSystem_WheelVelocityPIDki() {
-		return (EAttribute) steeredWheelSystemEClass.getEStructuralFeatures().get(6);
+		return (EAttribute)steeredWheelSystemEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getSteeredWheelSystem_WheelVelocityPIDkd() {
-		return (EAttribute) steeredWheelSystemEClass.getEStructuralFeatures().get(7);
+		return (EAttribute)steeredWheelSystemEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getSteeredWheelSystem_WheelSteeringPIDkp() {
-		return (EAttribute) steeredWheelSystemEClass.getEStructuralFeatures().get(8);
+		return (EAttribute)steeredWheelSystemEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getSteeredWheelSystem_WheelSteeringPIDkd() {
-		return (EAttribute) steeredWheelSystemEClass.getEStructuralFeatures().get(9);
+		return (EAttribute)steeredWheelSystemEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getSteeredWheelSystem_WheelFriction() {
-		return (EAttribute) steeredWheelSystemEClass.getEStructuralFeatures().get(10);
+		return (EAttribute)steeredWheelSystemEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getSteeredWheelSystem_SuspensionStiffness() {
-		return (EAttribute) steeredWheelSystemEClass.getEStructuralFeatures().get(11);
+		return (EAttribute)steeredWheelSystemEClass.getEStructuralFeatures().get(11);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getSteeredWheelSystem_SuspensionDamping() {
-		return (EAttribute) steeredWheelSystemEClass.getEStructuralFeatures().get(12);
+		return (EAttribute)steeredWheelSystemEClass.getEStructuralFeatures().get(12);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getSteeredWheelSystem_SuspensionCompression() {
-		return (EAttribute) steeredWheelSystemEClass.getEStructuralFeatures().get(13);
+		return (EAttribute)steeredWheelSystemEClass.getEStructuralFeatures().get(13);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getSteeredWheelSystem_WheelVelocityPIDmaxSum() {
-		return (EAttribute) steeredWheelSystemEClass.getEStructuralFeatures().get(14);
+		return (EAttribute)steeredWheelSystemEClass.getEStructuralFeatures().get(14);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getSteeredWheelSystem_WheelVelocityPIDmaxVal() {
-		return (EAttribute) steeredWheelSystemEClass.getEStructuralFeatures().get(15);
+		return (EAttribute)steeredWheelSystemEClass.getEStructuralFeatures().get(15);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getLocomotionSystem() {
@@ -1728,7 +1551,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getImageSensorSystem() {
@@ -1738,7 +1560,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getCameraSystem() {
@@ -1748,97 +1569,87 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getCameraSystem_Width() {
-		return (EAttribute) cameraSystemEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)cameraSystemEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getCameraSystem_Height() {
-		return (EAttribute) cameraSystemEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)cameraSystemEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getCameraSystem_Alpha_u() {
-		return (EAttribute) cameraSystemEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)cameraSystemEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getCameraSystem_Alpha_v() {
-		return (EAttribute) cameraSystemEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)cameraSystemEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getCameraSystem_U0() {
-		return (EAttribute) cameraSystemEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)cameraSystemEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getCameraSystem_V0() {
-		return (EAttribute) cameraSystemEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)cameraSystemEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getCameraSystem_Color_format() {
-		return (EAttribute) cameraSystemEClass.getEStructuralFeatures().get(6);
+		return (EAttribute)cameraSystemEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EReference getCameraSystem_Translate() {
-		return (EReference) cameraSystemEClass.getEStructuralFeatures().get(7);
+		return (EReference)cameraSystemEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EReference getCameraSystem_Rotate() {
-		return (EReference) cameraSystemEClass.getEStructuralFeatures().get(8);
+		return (EReference)cameraSystemEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getObjectDetectionSensorSystem() {
@@ -1848,7 +1659,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getObjectTrackingSensorSystem() {
@@ -1858,7 +1668,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getLidarSystem() {
@@ -1868,127 +1677,114 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getLidarSystem_NbLayers() {
-		return (EAttribute) lidarSystemEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)lidarSystemEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getLidarSystem_LayerAngleMin() {
-		return (EAttribute) lidarSystemEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)lidarSystemEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getLidarSystem_LayerAngleStep() {
-		return (EAttribute) lidarSystemEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)lidarSystemEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getLidarSystem_Noise() {
-		return (EAttribute) lidarSystemEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)lidarSystemEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getLidarSystem_SigmaNoise() {
-		return (EAttribute) lidarSystemEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)lidarSystemEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getLidarSystem_Angle_min() {
-		return (EAttribute) lidarSystemEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)lidarSystemEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getLidarSystem_Angle_max() {
-		return (EAttribute) lidarSystemEClass.getEStructuralFeatures().get(6);
+		return (EAttribute)lidarSystemEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getLidarSystem_Time_increment() {
-		return (EAttribute) lidarSystemEClass.getEStructuralFeatures().get(7);
+		return (EAttribute)lidarSystemEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getLidarSystem_Scan_time() {
-		return (EAttribute) lidarSystemEClass.getEStructuralFeatures().get(8);
+		return (EAttribute)lidarSystemEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getLidarSystem_Range_min() {
-		return (EAttribute) lidarSystemEClass.getEStructuralFeatures().get(9);
+		return (EAttribute)lidarSystemEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getLidarSystem_Range_max() {
-		return (EAttribute) lidarSystemEClass.getEStructuralFeatures().get(10);
+		return (EAttribute)lidarSystemEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getLidarSystem_NbRays() {
-		return (EAttribute) lidarSystemEClass.getEStructuralFeatures().get(11);
+		return (EAttribute)lidarSystemEClass.getEStructuralFeatures().get(11);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getLocalizationSensorSystem() {
@@ -1998,7 +1794,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getGPSSystem() {
@@ -2008,17 +1803,15 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EReference getGPSSystem_OriginPosition() {
-		return (EReference) gpsSystemEClass.getEStructuralFeatures().get(0);
+		return (EReference)gpsSystemEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getAlgorithmLibrary() {
@@ -2028,27 +1821,24 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EReference getAlgorithmLibrary_Base_Class() {
-		return (EReference) algorithmLibraryEClass.getEStructuralFeatures().get(0);
+		return (EReference)algorithmLibraryEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getAlgorithmLibrary_Path() {
-		return (EAttribute) algorithmLibraryEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)algorithmLibraryEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getSensorDriver() {
@@ -2058,7 +1848,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getBuilding() {
@@ -2068,7 +1857,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getPlanet() {
@@ -2078,7 +1866,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getLandSurface() {
@@ -2088,7 +1875,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getGround() {
@@ -2098,7 +1884,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getFloor() {
@@ -2108,7 +1893,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getWaterSurface() {
@@ -2118,7 +1902,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getHuman() {
@@ -2128,7 +1911,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getPedestrian() {
@@ -2138,7 +1920,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getStairs() {
@@ -2148,7 +1929,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getPlatform() {
@@ -2158,27 +1938,24 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EReference getPlatform_Base_Node() {
-		return (EReference) platformEClass.getEStructuralFeatures().get(0);
+		return (EReference)platformEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EReference getPlatform_Library() {
-		return (EReference) platformEClass.getEStructuralFeatures().get(1);
+		return (EReference)platformEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getExternalLibrary() {
@@ -2188,37 +1965,33 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getExternalLibrary_LibPath() {
-		return (EAttribute) externalLibraryEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)externalLibraryEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getExternalLibrary_LibFileFormat() {
-		return (EAttribute) externalLibraryEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)externalLibraryEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EReference getExternalLibrary_Base_Interface() {
-		return (EReference) externalLibraryEClass.getEStructuralFeatures().get(2);
+		return (EReference)externalLibraryEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getRoboticMiddleware() {
@@ -2228,17 +2001,15 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getRoboticMiddleware_Kind() {
-		return (EAttribute) roboticMiddlewareEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)roboticMiddlewareEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getRoboticSimulator() {
@@ -2248,7 +2019,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getCycabTK() {
@@ -2258,37 +2028,33 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getCycabTK_UseRealTime() {
-		return (EAttribute) cycabTKEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)cycabTKEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getCycabTK_TimeStep() {
-		return (EAttribute) cycabTKEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)cycabTKEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getCycabTK_TimeFactor() {
-		return (EAttribute) cycabTKEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)cycabTKEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getBlenderMorse() {
@@ -2298,47 +2064,42 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getBlenderMorse_DebugMode() {
-		return (EAttribute) blenderMorseEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)blenderMorseEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getBlenderMorse_DebugDisplay() {
-		return (EAttribute) blenderMorseEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)blenderMorseEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getBlenderMorse_Gravity() {
-		return (EAttribute) blenderMorseEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)blenderMorseEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getBlenderMorse__viewport_shade() {
-		return (EAttribute) blenderMorseEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)blenderMorseEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getOnPort() {
@@ -2348,27 +2109,24 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EReference getOnPort_Port() {
-		return (EReference) onPortEClass.getEStructuralFeatures().get(0);
+		return (EReference)onPortEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EReference getOnPort_Base_Parameter() {
-		return (EReference) onPortEClass.getEStructuralFeatures().get(1);
+		return (EReference)onPortEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getAllocate() {
@@ -2378,17 +2136,15 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EReference getAllocate_Base_Abstraction() {
-		return (EReference) allocateEClass.getEStructuralFeatures().get(0);
+		return (EReference)allocateEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getInertialMeasurementUnitSystem() {
@@ -2398,7 +2154,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getInertialNavigationSystem() {
@@ -2408,7 +2163,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getOdometrySystem() {
@@ -2418,7 +2172,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getInfraRedProximetrySystem() {
@@ -2428,7 +2181,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getDeploymentPlan() {
@@ -2438,27 +2190,24 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EReference getDeploymentPlan_Base_Package() {
-		return (EReference) deploymentPlanEClass.getEStructuralFeatures().get(0);
+		return (EReference)deploymentPlanEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EReference getDeploymentPlan_MainInstance() {
-		return (EReference) deploymentPlanEClass.getEStructuralFeatures().get(1);
+		return (EReference)deploymentPlanEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getGyroscope() {
@@ -2468,37 +2217,33 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
-	public EClass getOnProperty() {
-		return onPropertyEClass;
+	public EClass getOnVariable() {
+		return onVariableEClass;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
-	public EReference getOnProperty_Property() {
-		return (EReference) onPropertyEClass.getEStructuralFeatures().get(0);
+	public EReference getOnVariable_Property() {
+		return (EReference)onVariableEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
-	public EReference getOnProperty_Base_Parameter() {
-		return (EReference) onPropertyEClass.getEStructuralFeatures().get(1);
+	public EReference getOnVariable_Base_Parameter() {
+		return (EReference)onVariableEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getChassis() {
@@ -2508,7 +2253,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getSupportingStructure() {
@@ -2518,7 +2262,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getMechanicalLinkage() {
@@ -2528,7 +2271,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getLeg() {
@@ -2538,7 +2280,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getLocomotionHardware() {
@@ -2548,7 +2289,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getActuatorHardware() {
@@ -2558,7 +2298,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getMobileRobot() {
@@ -2568,17 +2307,15 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EAttribute getMobileRobot_Kind() {
-		return (EAttribute) mobileRobotEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)mobileRobotEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getManipulator() {
@@ -2588,7 +2325,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getPilotedSystem() {
@@ -2598,7 +2334,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getPowerHardware() {
@@ -2608,7 +2343,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getSensorHardware() {
@@ -2618,7 +2352,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getGraspingHardware() {
@@ -2628,7 +2361,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getSteeredWheelHardware() {
@@ -2638,7 +2370,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getArm() {
@@ -2648,7 +2379,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getLegSystem() {
@@ -2658,7 +2388,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getGraspingSystem() {
@@ -2668,7 +2397,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getWeaponSystem() {
@@ -2678,7 +2406,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getManMachineInterfaceSystem() {
@@ -2688,7 +2415,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getClosedLoopControlSystem() {
@@ -2698,7 +2424,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getOpenLoopControlSystem() {
@@ -2708,7 +2433,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getRoboticHead() {
@@ -2718,7 +2442,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getNavigationCommandSystem() {
@@ -2728,7 +2451,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EClass getJoysticNavigationSystem() {
@@ -2738,7 +2460,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EEnum getSynchronizationKind() {
@@ -2748,7 +2469,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EEnum getDataFlowDirectionKind() {
@@ -2758,7 +2478,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EEnum getServiceFlowKind() {
@@ -2768,7 +2487,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EEnum getUGVKind() {
@@ -2778,7 +2496,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EEnum getRoboticMiddlewareKind() {
@@ -2788,7 +2505,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EEnum getShade() {
@@ -2798,7 +2514,6 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EEnum getMobileRobotKind() {
@@ -2808,33 +2523,28 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public RobotMLFactory getRobotMLFactory() {
-		return (RobotMLFactory) getEFactoryInstance();
+		return (RobotMLFactory)getEFactoryInstance();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private boolean isCreated = false;
 
 	/**
-	 * Creates the meta-model objects for the package. This method is
+	 * Creates the meta-model objects for the package.  This method is
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public void createPackageContents() {
-		if (isCreated) {
-			return;
-		}
+		if (isCreated) return;
 		isCreated = true;
 
 		// Create classes and their features
@@ -3049,9 +2759,9 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 
 		gyroscopeEClass = createEClass(GYROSCOPE);
 
-		onPropertyEClass = createEClass(ON_PROPERTY);
-		createEReference(onPropertyEClass, ON_PROPERTY__PROPERTY);
-		createEReference(onPropertyEClass, ON_PROPERTY__BASE_PARAMETER);
+		onVariableEClass = createEClass(ON_VARIABLE);
+		createEReference(onVariableEClass, ON_VARIABLE__PROPERTY);
+		createEReference(onVariableEClass, ON_VARIABLE__BASE_PARAMETER);
 
 		chassisEClass = createEClass(CHASSIS);
 
@@ -3113,23 +2823,19 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private boolean isInitialized = false;
 
 	/**
-	 * Complete the initialization of the package and its meta-model. This
+	 * Complete the initialization of the package and its meta-model.  This
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public void initializePackageContents() {
-		if (isInitialized) {
-			return;
-		}
+		if (isInitialized) return;
 		isInitialized = true;
 
 		// Initialize package
@@ -3138,10 +2844,10 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		UMLPackage theUMLPackage = (UMLPackage) EPackage.Registry.INSTANCE.getEPackage(UMLPackage.eNS_URI);
-		TypesPackage theTypesPackage = (TypesPackage) EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI);
-		Std_datatypesPackage theStd_datatypesPackage = (Std_datatypesPackage) EPackage.Registry.INSTANCE.getEPackage(Std_datatypesPackage.eNS_URI);
-		Geometry_datatypesPackage theGeometry_datatypesPackage = (Geometry_datatypesPackage) EPackage.Registry.INSTANCE.getEPackage(Geometry_datatypesPackage.eNS_URI);
+		UMLPackage theUMLPackage = (UMLPackage)EPackage.Registry.INSTANCE.getEPackage(UMLPackage.eNS_URI);
+		TypesPackage theTypesPackage = (TypesPackage)EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI);
+		Std_datatypesPackage theStd_datatypesPackage = (Std_datatypesPackage)EPackage.Registry.INSTANCE.getEPackage(Std_datatypesPackage.eNS_URI);
+		Geometry_datatypesPackage theGeometry_datatypesPackage = (Geometry_datatypesPackage)EPackage.Registry.INSTANCE.getEPackage(Geometry_datatypesPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -3224,14 +2930,12 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(transitionEClass, Transition.class, "Transition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getTransition_Base_Transition(), theUMLPackage.getTransition(), null, "base_Transition", null, 1, 1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
-				!IS_DERIVED, !IS_ORDERED);
+		initEReference(getTransition_Base_Transition(), theUMLPackage.getTransition(), null, "base_Transition", null, 1, 1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getTransition_Guard(), theUMLPackage.getBehavior(), null, "guard", null, 1, 1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getTransition_Effect(), theUMLPackage.getBehavior(), null, "effect", null, 1, 1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(algorithmEClass, Algorithm.class, "Algorithm", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAlgorithm_Base_Operation(), theUMLPackage.getOperation(), null, "base_Operation", null, 1, 1, Algorithm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				!IS_ORDERED);
+		initEReference(getAlgorithm_Base_Operation(), theUMLPackage.getOperation(), null, "base_Operation", null, 1, 1, Algorithm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getAlgorithm_IsExternal(), theTypesPackage.getBoolean(), "isExternal", null, 1, 1, Algorithm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getAlgorithm_ExtFunctionName(), theTypesPackage.getString(), "extFunctionName", null, 1, 1, Algorithm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getAlgorithm_LibPath(), theTypesPackage.getString(), "libPath", null, 1, 1, Algorithm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -3252,19 +2956,16 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 		initEAttribute(getRobot_Width(), theStd_datatypesPackage.getFloat32(), "width", null, 1, 1, Robot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(systemEClass, org.eclipse.papyrus.RobotML.System.class, "System", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getSystem_Base_Class(), theUMLPackage.getClass_(), null, "base_Class", null, 1, 1, org.eclipse.papyrus.RobotML.System.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
-				!IS_DERIVED, !IS_ORDERED);
+		initEReference(getSystem_Base_Class(), theUMLPackage.getClass_(), null, "base_Class", null, 1, 1, org.eclipse.papyrus.RobotML.System.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getSystem_Native(), theTypesPackage.getBoolean(), "native", null, 1, 1, org.eclipse.papyrus.RobotML.System.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getSystem_LibraryPath(), theTypesPackage.getString(), "libraryPath", null, 1, 1, org.eclipse.papyrus.RobotML.System.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getSystem_LibraryComponentName(), theTypesPackage.getString(), "libraryComponentName", null, 1, 1, org.eclipse.papyrus.RobotML.System.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
-				!IS_ORDERED);
+		initEAttribute(getSystem_LibraryComponentName(), theTypesPackage.getString(), "libraryComponentName", null, 1, 1, org.eclipse.papyrus.RobotML.System.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(agentEClass, Agent.class, "Agent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAgent_MovesOver(), this.getSurface(), null, "movesOver", null, 0, -1, Agent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(physicalObjectEClass, PhysicalObject.class, "PhysicalObject", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getPhysicalObject_EvelovesIn(), this.getEnvironment(), null, "evelovesIn", null, 0, -1, PhysicalObject.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				!IS_ORDERED);
+		initEReference(getPhysicalObject_EvelovesIn(), this.getEnvironment(), null, "evelovesIn", null, 0, -1, PhysicalObject.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getPhysicalObject_HasSurface(), this.getSurface(), null, "hasSurface", null, 1, 1, PhysicalObject.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getPhysicalObject_Height(), theStd_datatypesPackage.getFloat32(), "height", null, 1, 1, PhysicalObject.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getPhysicalObject_Mass(), theStd_datatypesPackage.getFloat32(), "mass", null, 1, 1, PhysicalObject.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -3287,10 +2988,8 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 		initEClass(actuatorSystemEClass, ActuatorSystem.class, "ActuatorSystem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(roboticSystemEClass, RoboticSystem.class, "RoboticSystem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getRoboticSystem_LocalPosition(), theGeometry_datatypesPackage.getPoint32(), null, "localPosition", null, 1, 1, RoboticSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getRoboticSystem_LocalOrientation(), theGeometry_datatypesPackage.getPoint32(), null, "localOrientation", null, 1, 1, RoboticSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getRoboticSystem_LocalPosition(), theGeometry_datatypesPackage.getPoint32(), null, "localPosition", null, 1, 1, RoboticSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getRoboticSystem_LocalOrientation(), theGeometry_datatypesPackage.getPoint32(), null, "localOrientation", null, 1, 1, RoboticSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(cyberPhysicalSystemEClass, CyberPhysicalSystem.class, "CyberPhysicalSystem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -3318,32 +3017,20 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 		initEClass(steeredWheelSystemEClass, SteeredWheelSystem.class, "SteeredWheelSystem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSteeredWheelSystem_WheelRadius(), theStd_datatypesPackage.getFloat32(), "wheelRadius", null, 1, 1, SteeredWheelSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getSteeredWheelSystem_WheelWidth(), theStd_datatypesPackage.getFloat32(), "wheelWidth", null, 1, 1, SteeredWheelSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getSteeredWheelSystem_SuspensionRestLength(), theStd_datatypesPackage.getFloat32(), "suspensionRestLength", null, 1, 1, SteeredWheelSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
-				!IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getSteeredWheelSystem_WheelConnectionHeight(), theStd_datatypesPackage.getFloat32(), "wheelConnectionHeight", null, 1, 1, SteeredWheelSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
-				!IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getSteeredWheelSystem_SuspensionRestLength(), theStd_datatypesPackage.getFloat32(), "suspensionRestLength", null, 1, 1, SteeredWheelSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getSteeredWheelSystem_WheelConnectionHeight(), theStd_datatypesPackage.getFloat32(), "wheelConnectionHeight", null, 1, 1, SteeredWheelSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getSteeredWheelSystem_TypeOfWheel(), theStd_datatypesPackage.getString(), "typeOfWheel", null, 1, 1, SteeredWheelSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getSteeredWheelSystem_WheelVelocityPIDkp(), theStd_datatypesPackage.getFloat32(), "wheelVelocityPIDkp", null, 1, 1, SteeredWheelSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
-				!IS_ORDERED);
-		initEAttribute(getSteeredWheelSystem_WheelVelocityPIDki(), theStd_datatypesPackage.getFloat32(), "wheelVelocityPIDki", null, 1, 1, SteeredWheelSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
-				!IS_ORDERED);
-		initEAttribute(getSteeredWheelSystem_WheelVelocityPIDkd(), theStd_datatypesPackage.getFloat32(), "wheelVelocityPIDkd", null, 1, 1, SteeredWheelSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
-				!IS_ORDERED);
-		initEAttribute(getSteeredWheelSystem_WheelSteeringPIDkp(), theStd_datatypesPackage.getFloat32(), "wheelSteeringPIDkp", null, 1, 1, SteeredWheelSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
-				!IS_ORDERED);
-		initEAttribute(getSteeredWheelSystem_WheelSteeringPIDkd(), theStd_datatypesPackage.getFloat32(), "wheelSteeringPIDkd", null, 1, 1, SteeredWheelSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
-				!IS_ORDERED);
+		initEAttribute(getSteeredWheelSystem_WheelVelocityPIDkp(), theStd_datatypesPackage.getFloat32(), "wheelVelocityPIDkp", null, 1, 1, SteeredWheelSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getSteeredWheelSystem_WheelVelocityPIDki(), theStd_datatypesPackage.getFloat32(), "wheelVelocityPIDki", null, 1, 1, SteeredWheelSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getSteeredWheelSystem_WheelVelocityPIDkd(), theStd_datatypesPackage.getFloat32(), "wheelVelocityPIDkd", null, 1, 1, SteeredWheelSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getSteeredWheelSystem_WheelSteeringPIDkp(), theStd_datatypesPackage.getFloat32(), "wheelSteeringPIDkp", null, 1, 1, SteeredWheelSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getSteeredWheelSystem_WheelSteeringPIDkd(), theStd_datatypesPackage.getFloat32(), "wheelSteeringPIDkd", null, 1, 1, SteeredWheelSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getSteeredWheelSystem_WheelFriction(), theStd_datatypesPackage.getFloat32(), "wheelFriction", null, 1, 1, SteeredWheelSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getSteeredWheelSystem_SuspensionStiffness(), theStd_datatypesPackage.getFloat32(), "suspensionStiffness", null, 1, 1, SteeredWheelSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
-				!IS_ORDERED);
-		initEAttribute(getSteeredWheelSystem_SuspensionDamping(), theStd_datatypesPackage.getFloat32(), "suspensionDamping", null, 1, 1, SteeredWheelSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
-				!IS_ORDERED);
-		initEAttribute(getSteeredWheelSystem_SuspensionCompression(), theStd_datatypesPackage.getFloat32(), "suspensionCompression", null, 1, 1, SteeredWheelSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
-				!IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getSteeredWheelSystem_WheelVelocityPIDmaxSum(), theStd_datatypesPackage.getFloat32(), "wheelVelocityPIDmaxSum", null, 1, 1, SteeredWheelSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
-				!IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getSteeredWheelSystem_WheelVelocityPIDmaxVal(), theStd_datatypesPackage.getFloat32(), "wheelVelocityPIDmaxVal", null, 1, 1, SteeredWheelSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
-				!IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getSteeredWheelSystem_SuspensionStiffness(), theStd_datatypesPackage.getFloat32(), "suspensionStiffness", null, 1, 1, SteeredWheelSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getSteeredWheelSystem_SuspensionDamping(), theStd_datatypesPackage.getFloat32(), "suspensionDamping", null, 1, 1, SteeredWheelSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getSteeredWheelSystem_SuspensionCompression(), theStd_datatypesPackage.getFloat32(), "suspensionCompression", null, 1, 1, SteeredWheelSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getSteeredWheelSystem_WheelVelocityPIDmaxSum(), theStd_datatypesPackage.getFloat32(), "wheelVelocityPIDmaxSum", null, 1, 1, SteeredWheelSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getSteeredWheelSystem_WheelVelocityPIDmaxVal(), theStd_datatypesPackage.getFloat32(), "wheelVelocityPIDmaxVal", null, 1, 1, SteeredWheelSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(locomotionSystemEClass, LocomotionSystem.class, "LocomotionSystem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -3357,10 +3044,8 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 		initEAttribute(getCameraSystem_U0(), theStd_datatypesPackage.getFloat32(), "u0", null, 1, 1, CameraSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getCameraSystem_V0(), theStd_datatypesPackage.getFloat32(), "v0", null, 1, 1, CameraSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getCameraSystem_Color_format(), theStd_datatypesPackage.getString(), "color_format", null, 1, 1, CameraSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getCameraSystem_Translate(), theGeometry_datatypesPackage.getPoint32(), null, "translate", null, 1, 1, CameraSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
-				!IS_DERIVED, !IS_ORDERED);
-		initEReference(getCameraSystem_Rotate(), theGeometry_datatypesPackage.getPoint32(), null, "rotate", null, 1, 1, CameraSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				!IS_ORDERED);
+		initEReference(getCameraSystem_Translate(), theGeometry_datatypesPackage.getPoint32(), null, "translate", null, 1, 1, CameraSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getCameraSystem_Rotate(), theGeometry_datatypesPackage.getPoint32(), null, "rotate", null, 1, 1, CameraSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(objectDetectionSensorSystemEClass, ObjectDetectionSensorSystem.class, "ObjectDetectionSensorSystem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -3383,12 +3068,10 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 		initEClass(localizationSensorSystemEClass, LocalizationSensorSystem.class, "LocalizationSensorSystem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(gpsSystemEClass, GPSSystem.class, "GPSSystem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getGPSSystem_OriginPosition(), theGeometry_datatypesPackage.getPoint32(), null, "originPosition", null, 0, 1, GPSSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
-				!IS_DERIVED, !IS_ORDERED);
+		initEReference(getGPSSystem_OriginPosition(), theGeometry_datatypesPackage.getPoint32(), null, "originPosition", null, 0, 1, GPSSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(algorithmLibraryEClass, AlgorithmLibrary.class, "AlgorithmLibrary", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAlgorithmLibrary_Base_Class(), theUMLPackage.getClass_(), null, "base_Class", null, 1, 1, AlgorithmLibrary.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				!IS_ORDERED);
+		initEReference(getAlgorithmLibrary_Base_Class(), theUMLPackage.getClass_(), null, "base_Class", null, 1, 1, AlgorithmLibrary.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getAlgorithmLibrary_Path(), theTypesPackage.getString(), "path", null, 1, 1, AlgorithmLibrary.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(sensorDriverEClass, SensorDriver.class, "SensorDriver", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -3418,8 +3101,7 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 		initEClass(externalLibraryEClass, ExternalLibrary.class, "ExternalLibrary", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getExternalLibrary_LibPath(), theTypesPackage.getString(), "libPath", null, 1, 1, ExternalLibrary.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getExternalLibrary_LibFileFormat(), theTypesPackage.getString(), "libFileFormat", "elf", 1, 1, ExternalLibrary.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getExternalLibrary_Base_Interface(), theUMLPackage.getInterface(), null, "base_Interface", null, 1, 1, ExternalLibrary.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
-				!IS_DERIVED, !IS_ORDERED);
+		initEReference(getExternalLibrary_Base_Interface(), theUMLPackage.getInterface(), null, "base_Interface", null, 1, 1, ExternalLibrary.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(roboticMiddlewareEClass, RoboticMiddleware.class, "RoboticMiddleware", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRoboticMiddleware_Kind(), this.getRoboticMiddlewareKind(), "kind", null, 1, 1, RoboticMiddleware.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -3439,12 +3121,10 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 
 		initEClass(onPortEClass, OnPort.class, "OnPort", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getOnPort_Port(), this.getPort(), null, "port", null, 1, 1, OnPort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getOnPort_Base_Parameter(), theUMLPackage.getParameter(), null, "base_Parameter", null, 1, 1, OnPort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				!IS_ORDERED);
+		initEReference(getOnPort_Base_Parameter(), theUMLPackage.getParameter(), null, "base_Parameter", null, 1, 1, OnPort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(allocateEClass, Allocate.class, "Allocate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAllocate_Base_Abstraction(), theUMLPackage.getAbstraction(), null, "base_Abstraction", null, 1, 1, Allocate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				!IS_ORDERED);
+		initEReference(getAllocate_Base_Abstraction(), theUMLPackage.getAbstraction(), null, "base_Abstraction", null, 1, 1, Allocate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(inertialMeasurementUnitSystemEClass, InertialMeasurementUnitSystem.class, "InertialMeasurementUnitSystem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -3455,17 +3135,14 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 		initEClass(infraRedProximetrySystemEClass, InfraRedProximetrySystem.class, "InfraRedProximetrySystem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(deploymentPlanEClass, DeploymentPlan.class, "DeploymentPlan", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getDeploymentPlan_Base_Package(), theUMLPackage.getPackage(), null, "base_Package", null, 1, 1, DeploymentPlan.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				!IS_ORDERED);
-		initEReference(getDeploymentPlan_MainInstance(), theUMLPackage.getInstanceSpecification(), null, "mainInstance", null, 1, 1, DeploymentPlan.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getDeploymentPlan_Base_Package(), theUMLPackage.getPackage(), null, "base_Package", null, 1, 1, DeploymentPlan.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getDeploymentPlan_MainInstance(), theUMLPackage.getInstanceSpecification(), null, "mainInstance", null, 1, 1, DeploymentPlan.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(gyroscopeEClass, Gyroscope.class, "Gyroscope", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(onPropertyEClass, OnProperty.class, "OnProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getOnProperty_Property(), theUMLPackage.getProperty(), null, "property", null, 1, 1, OnProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getOnProperty_Base_Parameter(), theUMLPackage.getParameter(), null, "base_Parameter", null, 1, 1, OnProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				!IS_ORDERED);
+		initEClass(onVariableEClass, OnVariable.class, "OnVariable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getOnVariable_Property(), theUMLPackage.getProperty(), null, "property", null, 1, 1, OnVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getOnVariable_Base_Parameter(), theUMLPackage.getParameter(), null, "base_Parameter", null, 1, 1, OnVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(chassisEClass, Chassis.class, "Chassis", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -3557,6 +3234,50 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 
 		// Create resource
 		createResource(eNS_URI);
+
+		// Create annotations
+		// http://www.eclipse.org/uml2/2.0.0/UML
+		createUMLAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/uml2/2.0.0/UML</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createUMLAnnotations() {
+		String source = "http://www.eclipse.org/uml2/2.0.0/UML";	
+		addAnnotation
+		  (getLidarSystem_Time_increment(), 
+		   source, 
+		   new String[] {
+			 "originalName", "time_increment "
+		   });	
+		addAnnotation
+		  (getLidarSystem_Scan_time(), 
+		   source, 
+		   new String[] {
+			 "originalName", "scan_time  "
+		   });	
+		addAnnotation
+		  (getBlenderMorse__viewport_shade(), 
+		   source, 
+		   new String[] {
+			 "originalName", " viewport_shade"
+		   });	
+		addAnnotation
+		  (closedLoopControlSystemEClass, 
+		   source, 
+		   new String[] {
+			 "originalName", "Closed-LoopControlSystem"
+		   });	
+		addAnnotation
+		  (openLoopControlSystemEClass, 
+		   source, 
+		   new String[] {
+			 "originalName", "Open-LoopControlSystem"
+		   });
 	}
 
 } // RobotMLPackageImpl

@@ -19,7 +19,6 @@ public class InertialNavigationSystemImpl extends GPSSystemImpl implements Inert
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected InertialNavigationSystemImpl() {
@@ -29,7 +28,6 @@ public class InertialNavigationSystemImpl extends GPSSystemImpl implements Inert
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override

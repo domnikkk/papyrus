@@ -19,7 +19,6 @@ public class SensorDriverImpl extends SoftwareImpl implements SensorDriver {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected SensorDriverImpl() {
@@ -29,7 +28,6 @@ public class SensorDriverImpl extends SoftwareImpl implements SensorDriver {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override

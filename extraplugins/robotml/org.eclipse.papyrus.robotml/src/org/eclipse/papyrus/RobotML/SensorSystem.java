@@ -11,8 +11,8 @@ package org.eclipse.papyrus.RobotML;
  * <p>
  * The following features are supported:
  * <ul>
- * <li>{@link org.eclipse.papyrus.RobotML.SensorSystem#getFrequency <em>Frequency</em>}</li>
- * <li>{@link org.eclipse.papyrus.RobotML.SensorSystem#getIdentifier <em>Identifier</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotML.SensorSystem#getFrequency <em>Frequency</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotML.SensorSystem#getIdentifier <em>Identifier</em>}</li>
  * </ul>
  * </p>
  *
@@ -28,7 +28,6 @@ public interface SensorSystem extends RoboticSystem, CyberPhysicalSystem {
 	 * If the meaning of the '<em>Frequency</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Frequency</em>' attribute.
 	 * @see #setFrequency(float)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getSensorSystem_Frequency()
@@ -41,9 +40,7 @@ public interface SensorSystem extends RoboticSystem, CyberPhysicalSystem {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotML.SensorSystem#getFrequency <em>Frequency</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Frequency</em>' attribute.
+	 * @param value the new value of the '<em>Frequency</em>' attribute.
 	 * @see #getFrequency()
 	 * @generated
 	 */
@@ -56,7 +53,6 @@ public interface SensorSystem extends RoboticSystem, CyberPhysicalSystem {
 	 * If the meaning of the '<em>Identifier</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Identifier</em>' attribute.
 	 * @see #setIdentifier(String)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getSensorSystem_Identifier()
@@ -69,9 +65,7 @@ public interface SensorSystem extends RoboticSystem, CyberPhysicalSystem {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotML.SensorSystem#getIdentifier <em>Identifier</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Identifier</em>' attribute.
+	 * @param value the new value of the '<em>Identifier</em>' attribute.
 	 * @see #getIdentifier()
 	 * @generated
 	 */

@@ -19,7 +19,6 @@ public class LandSurfaceImpl extends GroundImpl implements LandSurface {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected LandSurfaceImpl() {
@@ -29,7 +28,6 @@ public class LandSurfaceImpl extends GroundImpl implements LandSurface {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override

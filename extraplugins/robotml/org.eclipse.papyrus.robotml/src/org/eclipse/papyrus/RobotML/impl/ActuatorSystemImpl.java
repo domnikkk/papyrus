@@ -19,7 +19,6 @@ public class ActuatorSystemImpl extends RoboticSystemImpl implements ActuatorSys
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected ActuatorSystemImpl() {
@@ -29,7 +28,6 @@ public class ActuatorSystemImpl extends RoboticSystemImpl implements ActuatorSys
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override

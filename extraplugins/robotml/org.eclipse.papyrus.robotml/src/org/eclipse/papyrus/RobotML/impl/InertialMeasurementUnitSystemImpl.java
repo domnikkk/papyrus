@@ -19,7 +19,6 @@ public class InertialMeasurementUnitSystemImpl extends SensorSystemImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected InertialMeasurementUnitSystemImpl() {
@@ -29,7 +28,6 @@ public class InertialMeasurementUnitSystemImpl extends SensorSystemImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override

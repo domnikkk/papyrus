@@ -24,9 +24,9 @@ import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTyp
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.impl.OccupancyGridImpl#getHeader <em>Header</em>}</li>
- * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.impl.OccupancyGridImpl#getInfo <em>Info</em>}</li>
- * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.impl.OccupancyGridImpl#getData <em>Data</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.impl.OccupancyGridImpl#getHeader <em>Header</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.impl.OccupancyGridImpl#getInfo <em>Info</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.impl.OccupancyGridImpl#getData <em>Data</em>}</li>
  * </ul>
  * </p>
  *
@@ -37,7 +37,6 @@ public class OccupancyGridImpl extends MinimalEObjectImpl.Container implements O
 	 * The cached value of the '{@link #getHeader() <em>Header</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getHeader()
 	 * @generated
 	 * @ordered
@@ -48,7 +47,6 @@ public class OccupancyGridImpl extends MinimalEObjectImpl.Container implements O
 	 * The cached value of the '{@link #getInfo() <em>Info</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getInfo()
 	 * @generated
 	 * @ordered
@@ -59,7 +57,6 @@ public class OccupancyGridImpl extends MinimalEObjectImpl.Container implements O
 	 * The cached value of the '{@link #getData() <em>Data</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getData()
 	 * @generated
 	 * @ordered
@@ -69,7 +66,6 @@ public class OccupancyGridImpl extends MinimalEObjectImpl.Container implements O
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected OccupancyGridImpl() {
@@ -79,7 +75,6 @@ public class OccupancyGridImpl extends MinimalEObjectImpl.Container implements O
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -90,7 +85,6 @@ public class OccupancyGridImpl extends MinimalEObjectImpl.Container implements O
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public Header getHeader() {
@@ -100,7 +94,6 @@ public class OccupancyGridImpl extends MinimalEObjectImpl.Container implements O
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetHeader(Header newHeader, NotificationChain msgs) {
@@ -108,11 +101,7 @@ public class OccupancyGridImpl extends MinimalEObjectImpl.Container implements O
 		header = newHeader;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Nav_datatypesPackage.OCCUPANCY_GRID__HEADER, oldHeader, newHeader);
-			if (msgs == null) {
-				msgs = notification;
-			} else {
-				msgs.add(notification);
-			}
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -120,32 +109,25 @@ public class OccupancyGridImpl extends MinimalEObjectImpl.Container implements O
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public void setHeader(Header newHeader) {
 		if (newHeader != header) {
 			NotificationChain msgs = null;
-			if (header != null) {
-				msgs = ((InternalEObject) header).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Nav_datatypesPackage.OCCUPANCY_GRID__HEADER, null, msgs);
-			}
-			if (newHeader != null) {
-				msgs = ((InternalEObject) newHeader).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Nav_datatypesPackage.OCCUPANCY_GRID__HEADER, null, msgs);
-			}
+			if (header != null)
+				msgs = ((InternalEObject)header).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Nav_datatypesPackage.OCCUPANCY_GRID__HEADER, null, msgs);
+			if (newHeader != null)
+				msgs = ((InternalEObject)newHeader).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Nav_datatypesPackage.OCCUPANCY_GRID__HEADER, null, msgs);
 			msgs = basicSetHeader(newHeader, msgs);
-			if (msgs != null) {
-				msgs.dispatch();
-			}
+			if (msgs != null) msgs.dispatch();
 		}
-		else if (eNotificationRequired()) {
+		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Nav_datatypesPackage.OCCUPANCY_GRID__HEADER, newHeader, newHeader));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public MapMetaData getInfo() {
@@ -155,7 +137,6 @@ public class OccupancyGridImpl extends MinimalEObjectImpl.Container implements O
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetInfo(MapMetaData newInfo, NotificationChain msgs) {
@@ -163,11 +144,7 @@ public class OccupancyGridImpl extends MinimalEObjectImpl.Container implements O
 		info = newInfo;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Nav_datatypesPackage.OCCUPANCY_GRID__INFO, oldInfo, newInfo);
-			if (msgs == null) {
-				msgs = notification;
-			} else {
-				msgs.add(notification);
-			}
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -175,32 +152,25 @@ public class OccupancyGridImpl extends MinimalEObjectImpl.Container implements O
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public void setInfo(MapMetaData newInfo) {
 		if (newInfo != info) {
 			NotificationChain msgs = null;
-			if (info != null) {
-				msgs = ((InternalEObject) info).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Nav_datatypesPackage.OCCUPANCY_GRID__INFO, null, msgs);
-			}
-			if (newInfo != null) {
-				msgs = ((InternalEObject) newInfo).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Nav_datatypesPackage.OCCUPANCY_GRID__INFO, null, msgs);
-			}
+			if (info != null)
+				msgs = ((InternalEObject)info).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Nav_datatypesPackage.OCCUPANCY_GRID__INFO, null, msgs);
+			if (newInfo != null)
+				msgs = ((InternalEObject)newInfo).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Nav_datatypesPackage.OCCUPANCY_GRID__INFO, null, msgs);
 			msgs = basicSetInfo(newInfo, msgs);
-			if (msgs != null) {
-				msgs.dispatch();
-			}
+			if (msgs != null) msgs.dispatch();
 		}
-		else if (eNotificationRequired()) {
+		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Nav_datatypesPackage.OCCUPANCY_GRID__INFO, newInfo, newInfo));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EList<Character> getData() {
@@ -213,16 +183,15 @@ public class OccupancyGridImpl extends MinimalEObjectImpl.Container implements O
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case Nav_datatypesPackage.OCCUPANCY_GRID__HEADER:
-			return basicSetHeader(null, msgs);
-		case Nav_datatypesPackage.OCCUPANCY_GRID__INFO:
-			return basicSetInfo(null, msgs);
+			case Nav_datatypesPackage.OCCUPANCY_GRID__HEADER:
+				return basicSetHeader(null, msgs);
+			case Nav_datatypesPackage.OCCUPANCY_GRID__INFO:
+				return basicSetInfo(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -230,18 +199,17 @@ public class OccupancyGridImpl extends MinimalEObjectImpl.Container implements O
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case Nav_datatypesPackage.OCCUPANCY_GRID__HEADER:
-			return getHeader();
-		case Nav_datatypesPackage.OCCUPANCY_GRID__INFO:
-			return getInfo();
-		case Nav_datatypesPackage.OCCUPANCY_GRID__DATA:
-			return getData();
+			case Nav_datatypesPackage.OCCUPANCY_GRID__HEADER:
+				return getHeader();
+			case Nav_datatypesPackage.OCCUPANCY_GRID__INFO:
+				return getInfo();
+			case Nav_datatypesPackage.OCCUPANCY_GRID__DATA:
+				return getData();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -249,23 +217,22 @@ public class OccupancyGridImpl extends MinimalEObjectImpl.Container implements O
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case Nav_datatypesPackage.OCCUPANCY_GRID__HEADER:
-			setHeader((Header) newValue);
-			return;
-		case Nav_datatypesPackage.OCCUPANCY_GRID__INFO:
-			setInfo((MapMetaData) newValue);
-			return;
-		case Nav_datatypesPackage.OCCUPANCY_GRID__DATA:
-			getData().clear();
-			getData().addAll((Collection<? extends Character>) newValue);
-			return;
+			case Nav_datatypesPackage.OCCUPANCY_GRID__HEADER:
+				setHeader((Header)newValue);
+				return;
+			case Nav_datatypesPackage.OCCUPANCY_GRID__INFO:
+				setInfo((MapMetaData)newValue);
+				return;
+			case Nav_datatypesPackage.OCCUPANCY_GRID__DATA:
+				getData().clear();
+				getData().addAll((Collection<? extends Character>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -273,21 +240,20 @@ public class OccupancyGridImpl extends MinimalEObjectImpl.Container implements O
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case Nav_datatypesPackage.OCCUPANCY_GRID__HEADER:
-			setHeader((Header) null);
-			return;
-		case Nav_datatypesPackage.OCCUPANCY_GRID__INFO:
-			setInfo((MapMetaData) null);
-			return;
-		case Nav_datatypesPackage.OCCUPANCY_GRID__DATA:
-			getData().clear();
-			return;
+			case Nav_datatypesPackage.OCCUPANCY_GRID__HEADER:
+				setHeader((Header)null);
+				return;
+			case Nav_datatypesPackage.OCCUPANCY_GRID__INFO:
+				setInfo((MapMetaData)null);
+				return;
+			case Nav_datatypesPackage.OCCUPANCY_GRID__DATA:
+				getData().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -295,18 +261,17 @@ public class OccupancyGridImpl extends MinimalEObjectImpl.Container implements O
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case Nav_datatypesPackage.OCCUPANCY_GRID__HEADER:
-			return header != null;
-		case Nav_datatypesPackage.OCCUPANCY_GRID__INFO:
-			return info != null;
-		case Nav_datatypesPackage.OCCUPANCY_GRID__DATA:
-			return data != null && !data.isEmpty();
+			case Nav_datatypesPackage.OCCUPANCY_GRID__HEADER:
+				return header != null;
+			case Nav_datatypesPackage.OCCUPANCY_GRID__INFO:
+				return info != null;
+			case Nav_datatypesPackage.OCCUPANCY_GRID__DATA:
+				return data != null && !data.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -314,14 +279,11 @@ public class OccupancyGridImpl extends MinimalEObjectImpl.Container implements O
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
-			return super.toString();
-		}
+		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (data: ");

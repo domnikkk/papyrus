@@ -37,7 +37,6 @@ import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTyp
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- *
  * @generated
  */
 public class Sensor_datatypesFactoryImpl extends EFactoryImpl implements Sensor_datatypesFactory {
@@ -45,16 +44,16 @@ public class Sensor_datatypesFactoryImpl extends EFactoryImpl implements Sensor_
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public static Sensor_datatypesFactory init() {
 		try {
-			Sensor_datatypesFactory theSensor_datatypesFactory = (Sensor_datatypesFactory) EPackage.Registry.INSTANCE.getEFactory(Sensor_datatypesPackage.eNS_URI);
+			Sensor_datatypesFactory theSensor_datatypesFactory = (Sensor_datatypesFactory)EPackage.Registry.INSTANCE.getEFactory(Sensor_datatypesPackage.eNS_URI);
 			if (theSensor_datatypesFactory != null) {
 				return theSensor_datatypesFactory;
 			}
-		} catch (Exception exception) {
+		}
+		catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new Sensor_datatypesFactoryImpl();
@@ -64,7 +63,6 @@ public class Sensor_datatypesFactoryImpl extends EFactoryImpl implements Sensor_
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public Sensor_datatypesFactoryImpl() {
@@ -74,99 +72,76 @@ public class Sensor_datatypesFactoryImpl extends EFactoryImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-		case Sensor_datatypesPackage.REGION_OF_INTEREST:
-			return createRegionOfInterest();
-		case Sensor_datatypesPackage.RANGE:
-			return createRange();
-		case Sensor_datatypesPackage.CAMERA_INFO:
-			return createCameraInfo();
-		case Sensor_datatypesPackage.IMU:
-			return createImu();
-		case Sensor_datatypesPackage.LASER_SCAN:
-			return createLaserScan();
-		case Sensor_datatypesPackage.IMAGE:
-			return createImage();
-		case Sensor_datatypesPackage.CHANNEL_FLOAT32:
-			return createChannelFloat32();
-		case Sensor_datatypesPackage.COMPRESSED_IMAGE:
-			return createCompressedImage();
-		case Sensor_datatypesPackage.POINT_CLOUD:
-			return createPointCloud();
-		case Sensor_datatypesPackage.POINT_FIELD:
-			return createPointField();
-		case Sensor_datatypesPackage.POINT_CLOUD2:
-			return createPointCloud2();
-		case Sensor_datatypesPackage.JOINT_STATE:
-			return createJointState();
-		case Sensor_datatypesPackage.NAV_SAT_STATUS:
-			return createNavSatStatus();
-		case Sensor_datatypesPackage.NAV_SAT_FIX:
-			return createNavSatFix();
-		case Sensor_datatypesPackage.JOY:
-			return createJoy();
-		case Sensor_datatypesPackage.JOY_FEEDBACK:
-			return createJoyFeedback();
-		case Sensor_datatypesPackage.JOY_FEEDBACK_ARRAY:
-			return createJoyFeedbackArray();
-		case Sensor_datatypesPackage.CAR_LIKE_ODOMETRY:
-			return createCarLikeOdometry();
-		case Sensor_datatypesPackage.DIFFERENTIAL_ODOMETRY:
-			return createDifferentialOdometry();
-		default:
-			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+			case Sensor_datatypesPackage.REGION_OF_INTEREST: return createRegionOfInterest();
+			case Sensor_datatypesPackage.RANGE: return createRange();
+			case Sensor_datatypesPackage.CAMERA_INFO: return createCameraInfo();
+			case Sensor_datatypesPackage.IMU: return createImu();
+			case Sensor_datatypesPackage.LASER_SCAN: return createLaserScan();
+			case Sensor_datatypesPackage.IMAGE: return createImage();
+			case Sensor_datatypesPackage.CHANNEL_FLOAT32: return createChannelFloat32();
+			case Sensor_datatypesPackage.COMPRESSED_IMAGE: return createCompressedImage();
+			case Sensor_datatypesPackage.POINT_CLOUD: return createPointCloud();
+			case Sensor_datatypesPackage.POINT_FIELD: return createPointField();
+			case Sensor_datatypesPackage.POINT_CLOUD2: return createPointCloud2();
+			case Sensor_datatypesPackage.JOINT_STATE: return createJointState();
+			case Sensor_datatypesPackage.NAV_SAT_STATUS: return createNavSatStatus();
+			case Sensor_datatypesPackage.NAV_SAT_FIX: return createNavSatFix();
+			case Sensor_datatypesPackage.JOY: return createJoy();
+			case Sensor_datatypesPackage.JOY_FEEDBACK: return createJoyFeedback();
+			case Sensor_datatypesPackage.JOY_FEEDBACK_ARRAY: return createJoyFeedbackArray();
+			case Sensor_datatypesPackage.CAR_LIKE_ODOMETRY: return createCarLikeOdometry();
+			case Sensor_datatypesPackage.DIFFERENTIAL_ODOMETRY: return createDifferentialOdometry();
+			default:
+				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
-		case Sensor_datatypesPackage.STATUS_TYPE:
-			return createSTATUS_TYPEFromString(eDataType, initialValue);
-		case Sensor_datatypesPackage.SERVICE_TYPE:
-			return createSERVICE_TYPEFromString(eDataType, initialValue);
-		case Sensor_datatypesPackage.COVARIANCE_TYPE:
-			return createCOVARIANCE_TYPEFromString(eDataType, initialValue);
-		default:
-			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+			case Sensor_datatypesPackage.STATUS_TYPE:
+				return createSTATUS_TYPEFromString(eDataType, initialValue);
+			case Sensor_datatypesPackage.SERVICE_TYPE:
+				return createSERVICE_TYPEFromString(eDataType, initialValue);
+			case Sensor_datatypesPackage.COVARIANCE_TYPE:
+				return createCOVARIANCE_TYPEFromString(eDataType, initialValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
-		case Sensor_datatypesPackage.STATUS_TYPE:
-			return convertSTATUS_TYPEToString(eDataType, instanceValue);
-		case Sensor_datatypesPackage.SERVICE_TYPE:
-			return convertSERVICE_TYPEToString(eDataType, instanceValue);
-		case Sensor_datatypesPackage.COVARIANCE_TYPE:
-			return convertCOVARIANCE_TYPEToString(eDataType, instanceValue);
-		default:
-			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+			case Sensor_datatypesPackage.STATUS_TYPE:
+				return convertSTATUS_TYPEToString(eDataType, instanceValue);
+			case Sensor_datatypesPackage.SERVICE_TYPE:
+				return convertSERVICE_TYPEToString(eDataType, instanceValue);
+			case Sensor_datatypesPackage.COVARIANCE_TYPE:
+				return convertCOVARIANCE_TYPEToString(eDataType, instanceValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public RegionOfInterest createRegionOfInterest() {
@@ -177,7 +152,6 @@ public class Sensor_datatypesFactoryImpl extends EFactoryImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public Range createRange() {
@@ -188,7 +162,6 @@ public class Sensor_datatypesFactoryImpl extends EFactoryImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public CameraInfo createCameraInfo() {
@@ -199,7 +172,6 @@ public class Sensor_datatypesFactoryImpl extends EFactoryImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public Imu createImu() {
@@ -210,7 +182,6 @@ public class Sensor_datatypesFactoryImpl extends EFactoryImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public LaserScan createLaserScan() {
@@ -221,7 +192,6 @@ public class Sensor_datatypesFactoryImpl extends EFactoryImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public Image createImage() {
@@ -232,7 +202,6 @@ public class Sensor_datatypesFactoryImpl extends EFactoryImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public ChannelFloat32 createChannelFloat32() {
@@ -243,7 +212,6 @@ public class Sensor_datatypesFactoryImpl extends EFactoryImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public CompressedImage createCompressedImage() {
@@ -254,7 +222,6 @@ public class Sensor_datatypesFactoryImpl extends EFactoryImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public PointCloud createPointCloud() {
@@ -265,7 +232,6 @@ public class Sensor_datatypesFactoryImpl extends EFactoryImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public PointField createPointField() {
@@ -276,7 +242,6 @@ public class Sensor_datatypesFactoryImpl extends EFactoryImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public PointCloud2 createPointCloud2() {
@@ -287,7 +252,6 @@ public class Sensor_datatypesFactoryImpl extends EFactoryImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public JointState createJointState() {
@@ -298,7 +262,6 @@ public class Sensor_datatypesFactoryImpl extends EFactoryImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public NavSatStatus createNavSatStatus() {
@@ -309,7 +272,6 @@ public class Sensor_datatypesFactoryImpl extends EFactoryImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public NavSatFix createNavSatFix() {
@@ -320,7 +282,6 @@ public class Sensor_datatypesFactoryImpl extends EFactoryImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public Joy createJoy() {
@@ -331,7 +292,6 @@ public class Sensor_datatypesFactoryImpl extends EFactoryImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public JoyFeedback createJoyFeedback() {
@@ -342,7 +302,6 @@ public class Sensor_datatypesFactoryImpl extends EFactoryImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public JoyFeedbackArray createJoyFeedbackArray() {
@@ -353,7 +312,6 @@ public class Sensor_datatypesFactoryImpl extends EFactoryImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public CarLikeOdometry createCarLikeOdometry() {
@@ -364,7 +322,6 @@ public class Sensor_datatypesFactoryImpl extends EFactoryImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public DifferentialOdometry createDifferentialOdometry() {
@@ -375,21 +332,17 @@ public class Sensor_datatypesFactoryImpl extends EFactoryImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public STATUS_TYPE createSTATUS_TYPEFromString(EDataType eDataType, String initialValue) {
 		STATUS_TYPE result = STATUS_TYPE.get(initialValue);
-		if (result == null) {
-			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		}
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public String convertSTATUS_TYPEToString(EDataType eDataType, Object instanceValue) {
@@ -399,21 +352,17 @@ public class Sensor_datatypesFactoryImpl extends EFactoryImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public SERVICE_TYPE createSERVICE_TYPEFromString(EDataType eDataType, String initialValue) {
 		SERVICE_TYPE result = SERVICE_TYPE.get(initialValue);
-		if (result == null) {
-			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		}
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public String convertSERVICE_TYPEToString(EDataType eDataType, Object instanceValue) {
@@ -423,21 +372,17 @@ public class Sensor_datatypesFactoryImpl extends EFactoryImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public COVARIANCE_TYPE createCOVARIANCE_TYPEFromString(EDataType eDataType, String initialValue) {
 		COVARIANCE_TYPE result = COVARIANCE_TYPE.get(initialValue);
-		if (result == null) {
-			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		}
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public String convertCOVARIANCE_TYPEToString(EDataType eDataType, Object instanceValue) {
@@ -447,17 +392,15 @@ public class Sensor_datatypesFactoryImpl extends EFactoryImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public Sensor_datatypesPackage getSensor_datatypesPackage() {
-		return (Sensor_datatypesPackage) getEPackage();
+		return (Sensor_datatypesPackage)getEPackage();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @deprecated
 	 * @generated
 	 */

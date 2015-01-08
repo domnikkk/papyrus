@@ -11,7 +11,7 @@ package org.eclipse.papyrus.RobotML;
  * <p>
  * The following features are supported:
  * <ul>
- * <li>{@link org.eclipse.papyrus.RobotML.RoboticMiddleware#getKind <em>Kind</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotML.RoboticMiddleware#getKind <em>Kind</em>}</li>
  * </ul>
  * </p>
  *
@@ -28,7 +28,6 @@ public interface RoboticMiddleware extends Platform {
 	 * If the meaning of the '<em>Kind</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Kind</em>' attribute.
 	 * @see org.eclipse.papyrus.RobotML.RoboticMiddlewareKind
 	 * @see #setKind(RoboticMiddlewareKind)
@@ -42,9 +41,7 @@ public interface RoboticMiddleware extends Platform {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotML.RoboticMiddleware#getKind <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Kind</em>' attribute.
+	 * @param value the new value of the '<em>Kind</em>' attribute.
 	 * @see org.eclipse.papyrus.RobotML.RoboticMiddlewareKind
 	 * @see #getKind()
 	 * @generated

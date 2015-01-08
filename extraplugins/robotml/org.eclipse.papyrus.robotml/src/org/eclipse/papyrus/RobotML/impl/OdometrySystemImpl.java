@@ -19,7 +19,6 @@ public class OdometrySystemImpl extends LocalizationSensorSystemImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected OdometrySystemImpl() {
@@ -29,7 +28,6 @@ public class OdometrySystemImpl extends LocalizationSensorSystemImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override

@@ -13,8 +13,8 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.MultiArrayLayout#getDim <em>Dim</em>}</li>
- * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.MultiArrayLayout#getData_offset <em>Data offset</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.MultiArrayLayout#getDim <em>Dim</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.MultiArrayLayout#getData_offset <em>Data offset</em>}</li>
  * </ul>
  * </p>
  *
@@ -31,7 +31,6 @@ public interface MultiArrayLayout extends EObject {
 	 * If the meaning of the '<em>Dim</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Dim</em>' containment reference list.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Std_datatypesPackage#getMultiArrayLayout_Dim()
 	 * @model containment="true" ordered="false"
@@ -46,7 +45,6 @@ public interface MultiArrayLayout extends EObject {
 	 * If the meaning of the '<em>Data offset</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Data offset</em>' attribute.
 	 * @see #setData_offset(long)
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Std_datatypesPackage#getMultiArrayLayout_Data_offset()
@@ -59,9 +57,7 @@ public interface MultiArrayLayout extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.MultiArrayLayout#getData_offset <em>Data offset</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Data offset</em>' attribute.
+	 * @param value the new value of the '<em>Data offset</em>' attribute.
 	 * @see #getData_offset()
 	 * @generated
 	 */

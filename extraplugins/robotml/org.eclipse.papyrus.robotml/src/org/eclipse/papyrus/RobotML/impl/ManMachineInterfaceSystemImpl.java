@@ -19,7 +19,6 @@ public class ManMachineInterfaceSystemImpl extends CyberPhysicalSystemImpl imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected ManMachineInterfaceSystemImpl() {
@@ -29,7 +28,6 @@ public class ManMachineInterfaceSystemImpl extends CyberPhysicalSystemImpl imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override

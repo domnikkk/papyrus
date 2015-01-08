@@ -19,7 +19,6 @@ public class NavigationCommandSystemImpl extends ManMachineInterfaceSystemImpl i
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected NavigationCommandSystemImpl() {
@@ -29,7 +28,6 @@ public class NavigationCommandSystemImpl extends ManMachineInterfaceSystemImpl i
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override

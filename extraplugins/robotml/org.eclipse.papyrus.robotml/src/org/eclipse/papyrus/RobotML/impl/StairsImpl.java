@@ -19,7 +19,6 @@ public class StairsImpl extends GroundImpl implements Stairs {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected StairsImpl() {
@@ -29,7 +28,6 @@ public class StairsImpl extends GroundImpl implements Stairs {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override

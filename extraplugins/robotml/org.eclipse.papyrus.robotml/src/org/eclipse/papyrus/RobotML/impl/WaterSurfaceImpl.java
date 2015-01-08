@@ -19,7 +19,6 @@ public class WaterSurfaceImpl extends SurfaceImpl implements WaterSurface {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected WaterSurfaceImpl() {
@@ -29,7 +28,6 @@ public class WaterSurfaceImpl extends SurfaceImpl implements WaterSurface {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override

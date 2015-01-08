@@ -19,7 +19,6 @@ public class RoboticHeadImpl extends ManMachineInterfaceSystemImpl implements Ro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected RoboticHeadImpl() {
@@ -29,7 +28,6 @@ public class RoboticHeadImpl extends ManMachineInterfaceSystemImpl implements Ro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override

@@ -19,7 +19,6 @@ public class ActuatedJointImpl extends JointImpl implements ActuatedJoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected ActuatedJointImpl() {
@@ -29,7 +28,6 @@ public class ActuatedJointImpl extends JointImpl implements ActuatedJoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override

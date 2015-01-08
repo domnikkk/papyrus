@@ -19,7 +19,6 @@ public class PilotedSystemImpl extends RobotImpl implements PilotedSystem {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected PilotedSystemImpl() {
@@ -29,7 +28,6 @@ public class PilotedSystemImpl extends RobotImpl implements PilotedSystem {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override

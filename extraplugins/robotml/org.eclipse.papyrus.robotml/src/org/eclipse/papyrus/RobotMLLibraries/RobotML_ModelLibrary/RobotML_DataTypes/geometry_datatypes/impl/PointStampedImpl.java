@@ -20,8 +20,8 @@ import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTyp
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.impl.PointStampedImpl#getHeader <em>Header</em>}</li>
- * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.impl.PointStampedImpl#getPoint <em>Point</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.impl.PointStampedImpl#getHeader <em>Header</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.impl.PointStampedImpl#getPoint <em>Point</em>}</li>
  * </ul>
  * </p>
  *
@@ -32,7 +32,6 @@ public class PointStampedImpl extends MinimalEObjectImpl.Container implements Po
 	 * The cached value of the '{@link #getHeader() <em>Header</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getHeader()
 	 * @generated
 	 * @ordered
@@ -43,7 +42,6 @@ public class PointStampedImpl extends MinimalEObjectImpl.Container implements Po
 	 * The cached value of the '{@link #getPoint() <em>Point</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getPoint()
 	 * @generated
 	 * @ordered
@@ -53,7 +51,6 @@ public class PointStampedImpl extends MinimalEObjectImpl.Container implements Po
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected PointStampedImpl() {
@@ -63,7 +60,6 @@ public class PointStampedImpl extends MinimalEObjectImpl.Container implements Po
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -74,7 +70,6 @@ public class PointStampedImpl extends MinimalEObjectImpl.Container implements Po
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public Header getHeader() {
@@ -84,7 +79,6 @@ public class PointStampedImpl extends MinimalEObjectImpl.Container implements Po
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetHeader(Header newHeader, NotificationChain msgs) {
@@ -92,11 +86,7 @@ public class PointStampedImpl extends MinimalEObjectImpl.Container implements Po
 		header = newHeader;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Geometry_datatypesPackage.POINT_STAMPED__HEADER, oldHeader, newHeader);
-			if (msgs == null) {
-				msgs = notification;
-			} else {
-				msgs.add(notification);
-			}
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -104,32 +94,25 @@ public class PointStampedImpl extends MinimalEObjectImpl.Container implements Po
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public void setHeader(Header newHeader) {
 		if (newHeader != header) {
 			NotificationChain msgs = null;
-			if (header != null) {
-				msgs = ((InternalEObject) header).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Geometry_datatypesPackage.POINT_STAMPED__HEADER, null, msgs);
-			}
-			if (newHeader != null) {
-				msgs = ((InternalEObject) newHeader).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Geometry_datatypesPackage.POINT_STAMPED__HEADER, null, msgs);
-			}
+			if (header != null)
+				msgs = ((InternalEObject)header).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Geometry_datatypesPackage.POINT_STAMPED__HEADER, null, msgs);
+			if (newHeader != null)
+				msgs = ((InternalEObject)newHeader).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Geometry_datatypesPackage.POINT_STAMPED__HEADER, null, msgs);
 			msgs = basicSetHeader(newHeader, msgs);
-			if (msgs != null) {
-				msgs.dispatch();
-			}
+			if (msgs != null) msgs.dispatch();
 		}
-		else if (eNotificationRequired()) {
+		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Geometry_datatypesPackage.POINT_STAMPED__HEADER, newHeader, newHeader));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public Point getPoint() {
@@ -139,7 +122,6 @@ public class PointStampedImpl extends MinimalEObjectImpl.Container implements Po
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetPoint(Point newPoint, NotificationChain msgs) {
@@ -147,11 +129,7 @@ public class PointStampedImpl extends MinimalEObjectImpl.Container implements Po
 		point = newPoint;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Geometry_datatypesPackage.POINT_STAMPED__POINT, oldPoint, newPoint);
-			if (msgs == null) {
-				msgs = notification;
-			} else {
-				msgs.add(notification);
-			}
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -159,41 +137,34 @@ public class PointStampedImpl extends MinimalEObjectImpl.Container implements Po
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public void setPoint(Point newPoint) {
 		if (newPoint != point) {
 			NotificationChain msgs = null;
-			if (point != null) {
-				msgs = ((InternalEObject) point).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Geometry_datatypesPackage.POINT_STAMPED__POINT, null, msgs);
-			}
-			if (newPoint != null) {
-				msgs = ((InternalEObject) newPoint).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Geometry_datatypesPackage.POINT_STAMPED__POINT, null, msgs);
-			}
+			if (point != null)
+				msgs = ((InternalEObject)point).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Geometry_datatypesPackage.POINT_STAMPED__POINT, null, msgs);
+			if (newPoint != null)
+				msgs = ((InternalEObject)newPoint).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Geometry_datatypesPackage.POINT_STAMPED__POINT, null, msgs);
 			msgs = basicSetPoint(newPoint, msgs);
-			if (msgs != null) {
-				msgs.dispatch();
-			}
+			if (msgs != null) msgs.dispatch();
 		}
-		else if (eNotificationRequired()) {
+		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Geometry_datatypesPackage.POINT_STAMPED__POINT, newPoint, newPoint));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case Geometry_datatypesPackage.POINT_STAMPED__HEADER:
-			return basicSetHeader(null, msgs);
-		case Geometry_datatypesPackage.POINT_STAMPED__POINT:
-			return basicSetPoint(null, msgs);
+			case Geometry_datatypesPackage.POINT_STAMPED__HEADER:
+				return basicSetHeader(null, msgs);
+			case Geometry_datatypesPackage.POINT_STAMPED__POINT:
+				return basicSetPoint(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -201,16 +172,15 @@ public class PointStampedImpl extends MinimalEObjectImpl.Container implements Po
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case Geometry_datatypesPackage.POINT_STAMPED__HEADER:
-			return getHeader();
-		case Geometry_datatypesPackage.POINT_STAMPED__POINT:
-			return getPoint();
+			case Geometry_datatypesPackage.POINT_STAMPED__HEADER:
+				return getHeader();
+			case Geometry_datatypesPackage.POINT_STAMPED__POINT:
+				return getPoint();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -218,18 +188,17 @@ public class PointStampedImpl extends MinimalEObjectImpl.Container implements Po
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case Geometry_datatypesPackage.POINT_STAMPED__HEADER:
-			setHeader((Header) newValue);
-			return;
-		case Geometry_datatypesPackage.POINT_STAMPED__POINT:
-			setPoint((Point) newValue);
-			return;
+			case Geometry_datatypesPackage.POINT_STAMPED__HEADER:
+				setHeader((Header)newValue);
+				return;
+			case Geometry_datatypesPackage.POINT_STAMPED__POINT:
+				setPoint((Point)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -237,18 +206,17 @@ public class PointStampedImpl extends MinimalEObjectImpl.Container implements Po
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case Geometry_datatypesPackage.POINT_STAMPED__HEADER:
-			setHeader((Header) null);
-			return;
-		case Geometry_datatypesPackage.POINT_STAMPED__POINT:
-			setPoint((Point) null);
-			return;
+			case Geometry_datatypesPackage.POINT_STAMPED__HEADER:
+				setHeader((Header)null);
+				return;
+			case Geometry_datatypesPackage.POINT_STAMPED__POINT:
+				setPoint((Point)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -256,16 +224,15 @@ public class PointStampedImpl extends MinimalEObjectImpl.Container implements Po
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case Geometry_datatypesPackage.POINT_STAMPED__HEADER:
-			return header != null;
-		case Geometry_datatypesPackage.POINT_STAMPED__POINT:
-			return point != null;
+			case Geometry_datatypesPackage.POINT_STAMPED__HEADER:
+				return header != null;
+			case Geometry_datatypesPackage.POINT_STAMPED__POINT:
+				return point != null;
 		}
 		return super.eIsSet(featureID);
 	}

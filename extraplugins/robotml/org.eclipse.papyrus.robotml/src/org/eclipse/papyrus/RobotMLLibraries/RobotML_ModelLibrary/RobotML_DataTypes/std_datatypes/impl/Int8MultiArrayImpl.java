@@ -23,8 +23,8 @@ import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTyp
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Int8MultiArrayImpl#getLayout <em>Layout</em>}</li>
- * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Int8MultiArrayImpl#getData <em>Data</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Int8MultiArrayImpl#getLayout <em>Layout</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Int8MultiArrayImpl#getData <em>Data</em>}</li>
  * </ul>
  * </p>
  *
@@ -35,7 +35,6 @@ public class Int8MultiArrayImpl extends MinimalEObjectImpl.Container implements 
 	 * The cached value of the '{@link #getLayout() <em>Layout</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getLayout()
 	 * @generated
 	 * @ordered
@@ -46,7 +45,6 @@ public class Int8MultiArrayImpl extends MinimalEObjectImpl.Container implements 
 	 * The cached value of the '{@link #getData() <em>Data</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getData()
 	 * @generated
 	 * @ordered
@@ -56,7 +54,6 @@ public class Int8MultiArrayImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected Int8MultiArrayImpl() {
@@ -66,7 +63,6 @@ public class Int8MultiArrayImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -77,7 +73,6 @@ public class Int8MultiArrayImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public MultiArrayLayout getLayout() {
@@ -87,7 +82,6 @@ public class Int8MultiArrayImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetLayout(MultiArrayLayout newLayout, NotificationChain msgs) {
@@ -95,11 +89,7 @@ public class Int8MultiArrayImpl extends MinimalEObjectImpl.Container implements 
 		layout = newLayout;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Std_datatypesPackage.INT8_MULTI_ARRAY__LAYOUT, oldLayout, newLayout);
-			if (msgs == null) {
-				msgs = notification;
-			} else {
-				msgs.add(notification);
-			}
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -107,32 +97,25 @@ public class Int8MultiArrayImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public void setLayout(MultiArrayLayout newLayout) {
 		if (newLayout != layout) {
 			NotificationChain msgs = null;
-			if (layout != null) {
-				msgs = ((InternalEObject) layout).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Std_datatypesPackage.INT8_MULTI_ARRAY__LAYOUT, null, msgs);
-			}
-			if (newLayout != null) {
-				msgs = ((InternalEObject) newLayout).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Std_datatypesPackage.INT8_MULTI_ARRAY__LAYOUT, null, msgs);
-			}
+			if (layout != null)
+				msgs = ((InternalEObject)layout).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Std_datatypesPackage.INT8_MULTI_ARRAY__LAYOUT, null, msgs);
+			if (newLayout != null)
+				msgs = ((InternalEObject)newLayout).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Std_datatypesPackage.INT8_MULTI_ARRAY__LAYOUT, null, msgs);
 			msgs = basicSetLayout(newLayout, msgs);
-			if (msgs != null) {
-				msgs.dispatch();
-			}
+			if (msgs != null) msgs.dispatch();
 		}
-		else if (eNotificationRequired()) {
+		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Std_datatypesPackage.INT8_MULTI_ARRAY__LAYOUT, newLayout, newLayout));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EList<Character> getData() {
@@ -145,14 +128,13 @@ public class Int8MultiArrayImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case Std_datatypesPackage.INT8_MULTI_ARRAY__LAYOUT:
-			return basicSetLayout(null, msgs);
+			case Std_datatypesPackage.INT8_MULTI_ARRAY__LAYOUT:
+				return basicSetLayout(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -160,16 +142,15 @@ public class Int8MultiArrayImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case Std_datatypesPackage.INT8_MULTI_ARRAY__LAYOUT:
-			return getLayout();
-		case Std_datatypesPackage.INT8_MULTI_ARRAY__DATA:
-			return getData();
+			case Std_datatypesPackage.INT8_MULTI_ARRAY__LAYOUT:
+				return getLayout();
+			case Std_datatypesPackage.INT8_MULTI_ARRAY__DATA:
+				return getData();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -177,20 +158,19 @@ public class Int8MultiArrayImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case Std_datatypesPackage.INT8_MULTI_ARRAY__LAYOUT:
-			setLayout((MultiArrayLayout) newValue);
-			return;
-		case Std_datatypesPackage.INT8_MULTI_ARRAY__DATA:
-			getData().clear();
-			getData().addAll((Collection<? extends Character>) newValue);
-			return;
+			case Std_datatypesPackage.INT8_MULTI_ARRAY__LAYOUT:
+				setLayout((MultiArrayLayout)newValue);
+				return;
+			case Std_datatypesPackage.INT8_MULTI_ARRAY__DATA:
+				getData().clear();
+				getData().addAll((Collection<? extends Character>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -198,18 +178,17 @@ public class Int8MultiArrayImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case Std_datatypesPackage.INT8_MULTI_ARRAY__LAYOUT:
-			setLayout((MultiArrayLayout) null);
-			return;
-		case Std_datatypesPackage.INT8_MULTI_ARRAY__DATA:
-			getData().clear();
-			return;
+			case Std_datatypesPackage.INT8_MULTI_ARRAY__LAYOUT:
+				setLayout((MultiArrayLayout)null);
+				return;
+			case Std_datatypesPackage.INT8_MULTI_ARRAY__DATA:
+				getData().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -217,16 +196,15 @@ public class Int8MultiArrayImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case Std_datatypesPackage.INT8_MULTI_ARRAY__LAYOUT:
-			return layout != null;
-		case Std_datatypesPackage.INT8_MULTI_ARRAY__DATA:
-			return data != null && !data.isEmpty();
+			case Std_datatypesPackage.INT8_MULTI_ARRAY__LAYOUT:
+				return layout != null;
+			case Std_datatypesPackage.INT8_MULTI_ARRAY__DATA:
+				return data != null && !data.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -234,14 +212,11 @@ public class Int8MultiArrayImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
-			return super.toString();
-		}
+		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (data: ");
