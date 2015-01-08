@@ -478,6 +478,9 @@ public class ImportTransformationLauncher {
 		Iterator<URIMapping> mappings = allMappings.iterator();
 		while (mappings.hasNext()) {
 			URIMapping mapping = mappings.next();
+			if (mapping == null) {
+				continue;
+			}
 			URI sourceURI = URI.createURI(mapping.getSourceURI());
 			if (knownMappings.containsKey(sourceURI) || userMappings.contains(sourceURI)) {
 				mappings.remove();
