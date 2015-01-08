@@ -126,9 +126,8 @@ public class BurstConstraintImpl extends TimingConstraintImpl implements BurstCo
 	public void setMaxOccurrences(int newMaxOccurrences) {
 		int oldMaxOccurrences = maxOccurrences;
 		maxOccurrences = newMaxOccurrences;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TimingconstraintsPackage.BURST_CONSTRAINT__MAX_OCCURRENCES, oldMaxOccurrences, maxOccurrences));
-		}
 	}
 
 	/**
@@ -143,9 +142,8 @@ public class BurstConstraintImpl extends TimingConstraintImpl implements BurstCo
 			InternalEObject oldEvent = (InternalEObject) event;
 			event = (Event) eResolveProxy(oldEvent);
 			if (event != oldEvent) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TimingconstraintsPackage.BURST_CONSTRAINT__EVENT, oldEvent, event));
-				}
 			}
 		}
 		return event;
@@ -171,9 +169,8 @@ public class BurstConstraintImpl extends TimingConstraintImpl implements BurstCo
 	public void setEvent(Event newEvent) {
 		Event oldEvent = event;
 		event = newEvent;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TimingconstraintsPackage.BURST_CONSTRAINT__EVENT, oldEvent, event));
-		}
 	}
 
 	/**
@@ -188,9 +185,8 @@ public class BurstConstraintImpl extends TimingConstraintImpl implements BurstCo
 			InternalEObject oldLenght = (InternalEObject) lenght;
 			lenght = (TimingExpression) eResolveProxy(oldLenght);
 			if (lenght != oldLenght) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TimingconstraintsPackage.BURST_CONSTRAINT__LENGHT, oldLenght, lenght));
-				}
 			}
 		}
 		return lenght;
@@ -216,9 +212,8 @@ public class BurstConstraintImpl extends TimingConstraintImpl implements BurstCo
 	public void setLenght(TimingExpression newLenght) {
 		TimingExpression oldLenght = lenght;
 		lenght = newLenght;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TimingconstraintsPackage.BURST_CONSTRAINT__LENGHT, oldLenght, lenght));
-		}
 	}
 
 	/**
@@ -233,9 +228,8 @@ public class BurstConstraintImpl extends TimingConstraintImpl implements BurstCo
 			InternalEObject oldMinimum = (InternalEObject) minimum;
 			minimum = (TimingExpression) eResolveProxy(oldMinimum);
 			if (minimum != oldMinimum) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TimingconstraintsPackage.BURST_CONSTRAINT__MINIMUM, oldMinimum, minimum));
-				}
 			}
 		}
 		return minimum;
@@ -261,9 +255,8 @@ public class BurstConstraintImpl extends TimingConstraintImpl implements BurstCo
 	public void setMinimum(TimingExpression newMinimum) {
 		TimingExpression oldMinimum = minimum;
 		minimum = newMinimum;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TimingconstraintsPackage.BURST_CONSTRAINT__MINIMUM, oldMinimum, minimum));
-		}
 	}
 
 	/**
@@ -278,19 +271,16 @@ public class BurstConstraintImpl extends TimingConstraintImpl implements BurstCo
 		case TimingconstraintsPackage.BURST_CONSTRAINT__MAX_OCCURRENCES:
 			return getMaxOccurrences();
 		case TimingconstraintsPackage.BURST_CONSTRAINT__EVENT:
-			if (resolve) {
+			if (resolve)
 				return getEvent();
-			}
 			return basicGetEvent();
 		case TimingconstraintsPackage.BURST_CONSTRAINT__LENGHT:
-			if (resolve) {
+			if (resolve)
 				return getLenght();
-			}
 			return basicGetLenght();
 		case TimingconstraintsPackage.BURST_CONSTRAINT__MINIMUM:
-			if (resolve) {
+			if (resolve)
 				return getMinimum();
-			}
 			return basicGetMinimum();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -375,12 +365,11 @@ public class BurstConstraintImpl extends TimingConstraintImpl implements BurstCo
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
+		if (eIsProxy())
 			return super.toString();
-		}
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (maxOccurrences: ");
+		result.append(" (maxOccurrences: "); //$NON-NLS-1$
 		result.append(maxOccurrences);
 		result.append(')');
 		return result.toString();

@@ -79,9 +79,8 @@ public class ContainerConfigurationImpl extends ConfigurationDecisionModelImpl i
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case VariabilityPackage.CONTAINER_CONFIGURATION__CONFIGURED_CONTAINER:
-			if (resolve) {
+			if (resolve)
 				return getConfiguredContainer();
-			}
 			return basicGetConfiguredContainer();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -157,9 +156,8 @@ public class ContainerConfigurationImpl extends ConfigurationDecisionModelImpl i
 			InternalEObject oldConfiguredContainer = (InternalEObject) configuredContainer;
 			configuredContainer = (ConfigurableContainer) eResolveProxy(oldConfiguredContainer);
 			if (configuredContainer != oldConfiguredContainer) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, VariabilityPackage.CONTAINER_CONFIGURATION__CONFIGURED_CONTAINER, oldConfiguredContainer, configuredContainer));
-				}
 			}
 		}
 		return configuredContainer;
@@ -175,9 +173,8 @@ public class ContainerConfigurationImpl extends ConfigurationDecisionModelImpl i
 	public void setConfiguredContainer(ConfigurableContainer newConfiguredContainer) {
 		ConfigurableContainer oldConfiguredContainer = configuredContainer;
 		configuredContainer = newConfiguredContainer;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VariabilityPackage.CONTAINER_CONFIGURATION__CONFIGURED_CONTAINER, oldConfiguredContainer, configuredContainer));
-		}
 	}
 
 } // ContainerConfigurationImpl

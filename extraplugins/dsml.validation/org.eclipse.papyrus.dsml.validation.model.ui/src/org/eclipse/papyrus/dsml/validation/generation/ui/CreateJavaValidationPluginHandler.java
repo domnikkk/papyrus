@@ -16,6 +16,7 @@ import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.resources.IProject;
+import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.emf.common.util.URI;
@@ -23,6 +24,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.jface.window.Window;
 import org.eclipse.papyrus.dsml.validation.model.elements.impl.ConstraintManagerImpl;
 import org.eclipse.papyrus.dsml.validation.model.elements.interfaces.IConstraintProvider;
 import org.eclipse.papyrus.dsml.validation.model.elements.interfaces.IConstraintsCategory;
@@ -37,6 +39,7 @@ import org.eclipse.papyrus.infra.widgets.toolbox.notification.builders.Notificat
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.PlatformUI;
+import org.eclipse.ui.dialogs.ResourceListSelectionDialog;
 import org.eclipse.uml2.uml.Profile;
 
 
@@ -53,7 +56,7 @@ public class CreateJavaValidationPluginHandler extends AbstractHandler {
 	 * <pre>
 	 * Get the selected element, the first selected element if several are selected or null
 	 * if no selection or the selection is not an {@link EObject}.
-	 *
+	 * 
 	 * @return selected {@link EObject} or null
 	 * </pre>
 	 *
@@ -110,7 +113,7 @@ public class CreateJavaValidationPluginHandler extends AbstractHandler {
 			if (isOCLConstraint) {
 				definition = profileSelection.getDefinition();
 				if (definition == null) {
-					NotificationBuilder errorDialog = NotificationBuilder.createErrorPopup("The profile must be defined in order to generate OCL Constraints");
+					NotificationBuilder errorDialog = NotificationBuilder.createErrorPopup(Messages.CreateJavaValidationPluginHandler_ProfileMustBeDefined);
 					errorDialog.run();
 					// finish by displaying a message for the user to inform that it need to define it before to launch it.
 					return null;
@@ -127,25 +130,50 @@ public class CreateJavaValidationPluginHandler extends AbstractHandler {
 			Shell shell = Display.getDefault().getActiveShell();
 			if ((existingProject != null) && existingProject.exists()) {
 				MessageDialog dialog = new MessageDialog(shell,
-						"Choose plugin generation", null,
-						"How should the plugin be generated?", MessageDialog.QUESTION,
-						new String[] { "Create a new plugin", "write to plugin hosting the model or profile" }, 1);
+						Messages.CreateJavaValidationPluginHandler_ChoosePluginGeneration, null,
+						Messages.CreateJavaValidationPluginHandler_HowtoGeneratePlugin, MessageDialog.QUESTION,
+						new String[] { Messages.CreateJavaValidationPluginHandler_CreateNewPlugin, Messages.CreateJavaValidationPluginHandler_SelectExisting, Messages.CreateJavaValidationPluginHandler_HostCurrent }, 2);
+				question = dialog.open();
+			}
+			else if (root.getProjects().length > 0) {
+				MessageDialog dialog = new MessageDialog(shell,
+						Messages.CreateJavaValidationPluginHandler_ChoosePluginGeneration, null,
+						Messages.CreateJavaValidationPluginHandler_HowtoGeneratePlugin, MessageDialog.QUESTION,
+						new String[] { Messages.CreateJavaValidationPluginHandler_CreateNewPlugin, Messages.CreateJavaValidationPluginHandler_SelectExisting }, 1);
 				question = dialog.open();
 			}
 
-			if (question == 1) {
+			if ((question == 1) || (question == 2)) {
+				if (question == 1) {
+					// get object which represents the workspace
 
-				// generate java code
-				JavaContentGenerator generateAllJava = new JavaContentGenerator(existingProject, profileSelection);
-				generateAllJava.run();
-				// generate plugin + extension point
-				try {
-					ValidationPluginGenerator.instance.generate(existingProject, constraintsManager, definition);
-				} catch (Exception e) {
-					MessageDialog.openInformation(shell, "Exception occured during plugin generation", e.getMessage());
+					ResourceListSelectionDialog dialog =
+						    new ResourceListSelectionDialog(shell, root, IResource.PROJECT);
+					dialog.setTitle(Messages.CreateJavaValidationPluginHandler_SelectExisting);
+				
+					if (dialog.open() == Window.OK) {
+						existingProject = (IProject) dialog.getResult()[0];
+					}
+					else {
+						existingProject = null;
+					}
+				}
+
+				if (existingProject != null) {
+					// generate java code
+					JavaContentGenerator generateAllJava = new JavaContentGenerator(existingProject, profileSelection);
+					generateAllJava.run();
+					// generate plugin + extension point
+					try {
+						ValidationPluginGenerator.instance.generate(existingProject, constraintsManager, definition);
+					} catch (Exception e) {
+						Activator.log.error(e);
+						MessageDialog.openInformation(shell, Messages.CreateJavaValidationPluginHandler_ExceptionDuringPluginGeneration, Messages.CreateJavaValidationPluginHandler_CheckErrorLog);
+					}
 				}
 			}
-			else {
+			else if (question == 0) {
+
 				CreateEMFValidationProject wizard = new CreateEMFValidationProject(profileSelection, constraintsManager, definition);
 				wizard.openDialog();
 			}

@@ -82,9 +82,8 @@ public class DesignFunctionPrototypeImpl extends FunctionPrototypeImpl implement
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case FunctionmodelingPackage.DESIGN_FUNCTION_PROTOTYPE__TYPE:
-			if (resolve) {
+			if (resolve)
 				return getType();
-			}
 			return basicGetType();
 		}
 		return super.eGet(featureID, resolve, coreType);

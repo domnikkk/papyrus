@@ -165,31 +165,26 @@ public class ConfigurableContainerImpl extends EAElementImpl implements Configur
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case VariabilityPackage.CONFIGURABLE_CONTAINER__INTERNAL_BINDING:
-			if (resolve) {
+			if (resolve)
 				return getInternalBinding();
-			}
 			return basicGetInternalBinding();
 		case VariabilityPackage.CONFIGURABLE_CONTAINER__VARIATION_GROUP:
 			return getVariationGroup();
 		case VariabilityPackage.CONFIGURABLE_CONTAINER__BASE_CLASS:
-			if (resolve) {
+			if (resolve)
 				return getBase_Class();
-			}
 			return basicGetBase_Class();
 		case VariabilityPackage.CONFIGURABLE_CONTAINER__BASE_PACKAGE:
-			if (resolve) {
+			if (resolve)
 				return getBase_Package();
-			}
 			return basicGetBase_Package();
 		case VariabilityPackage.CONFIGURABLE_CONTAINER__CONFIGURABLE_ELEMENT:
-			if (resolve) {
+			if (resolve)
 				return getConfigurableElement();
-			}
 			return basicGetConfigurableElement();
 		case VariabilityPackage.CONFIGURABLE_CONTAINER__PUBLIC_FEATURE_MODEL:
-			if (resolve) {
+			if (resolve)
 				return getPublicFeatureModel();
-			}
 			return basicGetPublicFeatureModel();
 		case VariabilityPackage.CONFIGURABLE_CONTAINER__PRIVATE_CONTENT:
 			return getPrivateContent();
@@ -291,9 +286,8 @@ public class ConfigurableContainerImpl extends EAElementImpl implements Configur
 			InternalEObject oldConfigurableElement = (InternalEObject) configurableElement;
 			configurableElement = (NamedElement) eResolveProxy(oldConfigurableElement);
 			if (configurableElement != oldConfigurableElement) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, VariabilityPackage.CONFIGURABLE_CONTAINER__CONFIGURABLE_ELEMENT, oldConfigurableElement, configurableElement));
-				}
 			}
 		}
 		return configurableElement;
@@ -360,9 +354,8 @@ public class ConfigurableContainerImpl extends EAElementImpl implements Configur
 			InternalEObject oldBase_Class = (InternalEObject) base_Class;
 			base_Class = (org.eclipse.uml2.uml.Class) eResolveProxy(oldBase_Class);
 			if (base_Class != oldBase_Class) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, VariabilityPackage.CONFIGURABLE_CONTAINER__BASE_CLASS, oldBase_Class, base_Class));
-				}
 			}
 		}
 		return base_Class;
@@ -388,9 +381,8 @@ public class ConfigurableContainerImpl extends EAElementImpl implements Configur
 	public void setBase_Class(org.eclipse.uml2.uml.Class newBase_Class) {
 		org.eclipse.uml2.uml.Class oldBase_Class = base_Class;
 		base_Class = newBase_Class;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VariabilityPackage.CONFIGURABLE_CONTAINER__BASE_CLASS, oldBase_Class, base_Class));
-		}
 	}
 
 	/**
@@ -405,9 +397,8 @@ public class ConfigurableContainerImpl extends EAElementImpl implements Configur
 			InternalEObject oldBase_Package = (InternalEObject) base_Package;
 			base_Package = (org.eclipse.uml2.uml.Package) eResolveProxy(oldBase_Package);
 			if (base_Package != oldBase_Package) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, VariabilityPackage.CONFIGURABLE_CONTAINER__BASE_PACKAGE, oldBase_Package, base_Package));
-				}
 			}
 		}
 		return base_Package;
@@ -433,9 +424,8 @@ public class ConfigurableContainerImpl extends EAElementImpl implements Configur
 	public void setBase_Package(org.eclipse.uml2.uml.Package newBase_Package) {
 		org.eclipse.uml2.uml.Package oldBase_Package = base_Package;
 		base_Package = newBase_Package;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VariabilityPackage.CONFIGURABLE_CONTAINER__BASE_PACKAGE, oldBase_Package, base_Package));
-		}
 	}
 
 	/**
@@ -448,9 +438,8 @@ public class ConfigurableContainerImpl extends EAElementImpl implements Configur
 	public void setConfigurableElement(NamedElement newConfigurableElement) {
 		NamedElement oldConfigurableElement = configurableElement;
 		configurableElement = newConfigurableElement;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VariabilityPackage.CONFIGURABLE_CONTAINER__CONFIGURABLE_ELEMENT, oldConfigurableElement, configurableElement));
-		}
 	}
 
 	/**

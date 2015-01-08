@@ -127,7 +127,7 @@ public class InfrastructureFactoryImpl extends EFactoryImpl implements Infrastru
 		case InfrastructurePackage.DUMMY:
 			return convertDummyToString(eDataType, instanceValue);
 		default:
-			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 	}
 
@@ -561,7 +561,7 @@ public class InfrastructureFactoryImpl extends EFactoryImpl implements Infrastru
 		case InfrastructurePackage.BEHAVIOR_CONSTRAINT_PROTOTYPE_ERROR_MODEL_TARGET_INSTANCE_REF:
 			return createBehaviorConstraintPrototype_errorModelTargetInstanceRef();
 		default:
-			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 	}
 
@@ -587,7 +587,7 @@ public class InfrastructureFactoryImpl extends EFactoryImpl implements Infrastru
 		case InfrastructurePackage.DUMMY:
 			return createDummyFromString(eDataType, initialValue);
 		default:
-			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 	}
 

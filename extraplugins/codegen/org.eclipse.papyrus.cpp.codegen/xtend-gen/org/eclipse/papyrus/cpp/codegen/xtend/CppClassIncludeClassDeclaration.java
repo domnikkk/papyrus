@@ -7,7 +7,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.papyrus.C_Cpp.CppRoot;
 import org.eclipse.papyrus.C_Cpp.External;
 import org.eclipse.papyrus.C_Cpp.NoCodeGen;
-import org.eclipse.papyrus.acceleo.GenUtils;
+import org.eclipse.papyrus.codegen.base.GenUtils;
 import org.eclipse.papyrus.cpp.codegen.utils.ClassUtils;
 import org.eclipse.papyrus.cpp.codegen.xtend.CppClassIncludeDeclaration;
 import org.eclipse.uml2.uml.Classifier;

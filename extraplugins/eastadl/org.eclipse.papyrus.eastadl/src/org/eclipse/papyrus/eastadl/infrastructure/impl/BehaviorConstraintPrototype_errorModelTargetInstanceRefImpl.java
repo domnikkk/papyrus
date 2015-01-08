@@ -84,9 +84,8 @@ public class BehaviorConstraintPrototype_errorModelTargetInstanceRefImpl extends
 			InternalEObject oldErrorModelPrototype_target = (InternalEObject) errorModelPrototype_target;
 			errorModelPrototype_target = (ErrorModelPrototype) eResolveProxy(oldErrorModelPrototype_target);
 			if (errorModelPrototype_target != oldErrorModelPrototype_target) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InfrastructurePackage.BEHAVIOR_CONSTRAINT_PROTOTYPE_ERROR_MODEL_TARGET_INSTANCE_REF__ERROR_MODEL_PROTOTYPE_TARGET, oldErrorModelPrototype_target, errorModelPrototype_target));
-				}
 			}
 		}
 		return errorModelPrototype_target;
@@ -112,9 +111,8 @@ public class BehaviorConstraintPrototype_errorModelTargetInstanceRefImpl extends
 	public void setErrorModelPrototype_target(ErrorModelPrototype newErrorModelPrototype_target) {
 		ErrorModelPrototype oldErrorModelPrototype_target = errorModelPrototype_target;
 		errorModelPrototype_target = newErrorModelPrototype_target;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, InfrastructurePackage.BEHAVIOR_CONSTRAINT_PROTOTYPE_ERROR_MODEL_TARGET_INSTANCE_REF__ERROR_MODEL_PROTOTYPE_TARGET, oldErrorModelPrototype_target, errorModelPrototype_target));
-		}
 	}
 
 	/**
@@ -141,9 +139,8 @@ public class BehaviorConstraintPrototype_errorModelTargetInstanceRefImpl extends
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case InfrastructurePackage.BEHAVIOR_CONSTRAINT_PROTOTYPE_ERROR_MODEL_TARGET_INSTANCE_REF__ERROR_MODEL_PROTOTYPE_TARGET:
-			if (resolve) {
+			if (resolve)
 				return getErrorModelPrototype_target();
-			}
 			return basicGetErrorModelPrototype_target();
 		case InfrastructurePackage.BEHAVIOR_CONSTRAINT_PROTOTYPE_ERROR_MODEL_TARGET_INSTANCE_REF__ERROR_MODEL_PROTOTYPE_CONTEXT:
 			return getErrorModelPrototype_context();

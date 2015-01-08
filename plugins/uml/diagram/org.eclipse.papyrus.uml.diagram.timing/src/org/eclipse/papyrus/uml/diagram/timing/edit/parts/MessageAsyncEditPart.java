@@ -54,10 +54,12 @@ public class MessageAsyncEditPart extends ConnectionEditPart implements ITreeBra
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof MessageAsyncNameLabelEditPart) {
-			((MessageAsyncNameLabelEditPart) childEditPart).setLabel(getPrimaryShape().getMessageLabel());
+			((MessageAsyncNameLabelEditPart) childEditPart).setLabel(
+					getPrimaryShape().getMessageLabel());
 		}
 		if (childEditPart instanceof MessageAsyncAppliedStereotypeEditPart) {
-			((MessageAsyncAppliedStereotypeEditPart) childEditPart).setLabel(getPrimaryShape().getAppliedStereotypeLabel());
+			((MessageAsyncAppliedStereotypeEditPart) childEditPart).setLabel(
+					getPrimaryShape().getAppliedStereotypeLabel());
 		}
 		return false;
 	}

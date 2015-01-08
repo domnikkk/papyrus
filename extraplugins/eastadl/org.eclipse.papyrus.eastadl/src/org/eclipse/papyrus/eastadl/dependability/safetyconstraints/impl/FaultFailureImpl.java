@@ -93,14 +93,12 @@ public class FaultFailureImpl extends TraceableSpecificationImpl implements Faul
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case SafetyconstraintsPackage.FAULT_FAILURE__BASE_CLASS:
-			if (resolve) {
+			if (resolve)
 				return getBase_Class();
-			}
 			return basicGetBase_Class();
 		case SafetyconstraintsPackage.FAULT_FAILURE__FAULT_FAILURE_VALUE:
-			if (resolve) {
+			if (resolve)
 				return getFaultFailureValue();
-			}
 			return basicGetFaultFailureValue();
 		case SafetyconstraintsPackage.FAULT_FAILURE__ANOMALY:
 			return getAnomaly();
@@ -171,9 +169,8 @@ public class FaultFailureImpl extends TraceableSpecificationImpl implements Faul
 			InternalEObject oldBase_Class = (InternalEObject) base_Class;
 			base_Class = (org.eclipse.uml2.uml.Class) eResolveProxy(oldBase_Class);
 			if (base_Class != oldBase_Class) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SafetyconstraintsPackage.FAULT_FAILURE__BASE_CLASS, oldBase_Class, base_Class));
-				}
 			}
 		}
 		return base_Class;
@@ -199,9 +196,8 @@ public class FaultFailureImpl extends TraceableSpecificationImpl implements Faul
 	public void setBase_Class(org.eclipse.uml2.uml.Class newBase_Class) {
 		org.eclipse.uml2.uml.Class oldBase_Class = base_Class;
 		base_Class = newBase_Class;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SafetyconstraintsPackage.FAULT_FAILURE__BASE_CLASS, oldBase_Class, base_Class));
-		}
 	}
 
 	/**

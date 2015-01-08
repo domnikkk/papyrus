@@ -157,9 +157,8 @@ public class FunctionBehaviorImpl extends ContextImpl implements FunctionBehavio
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case BehaviorPackage.FUNCTION_BEHAVIOR__BASE_BEHAVIOR:
-			if (resolve) {
+			if (resolve)
 				return getBase_Behavior();
-			}
 			return basicGetBase_Behavior();
 		case BehaviorPackage.FUNCTION_BEHAVIOR__PATH:
 			return getPath();
@@ -168,9 +167,8 @@ public class FunctionBehaviorImpl extends ContextImpl implements FunctionBehavio
 		case BehaviorPackage.FUNCTION_BEHAVIOR__MODE:
 			return getMode();
 		case BehaviorPackage.FUNCTION_BEHAVIOR__FUNCTION:
-			if (resolve) {
+			if (resolve)
 				return getFunction();
-			}
 			return basicGetFunction();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -252,9 +250,8 @@ public class FunctionBehaviorImpl extends ContextImpl implements FunctionBehavio
 			InternalEObject oldBase_Behavior = (InternalEObject) base_Behavior;
 			base_Behavior = (Behavior) eResolveProxy(oldBase_Behavior);
 			if (base_Behavior != oldBase_Behavior) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BehaviorPackage.FUNCTION_BEHAVIOR__BASE_BEHAVIOR, oldBase_Behavior, base_Behavior));
-				}
 			}
 		}
 		return base_Behavior;
@@ -280,9 +277,8 @@ public class FunctionBehaviorImpl extends ContextImpl implements FunctionBehavio
 	public void setBase_Behavior(Behavior newBase_Behavior) {
 		Behavior oldBase_Behavior = base_Behavior;
 		base_Behavior = newBase_Behavior;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BehaviorPackage.FUNCTION_BEHAVIOR__BASE_BEHAVIOR, oldBase_Behavior, base_Behavior));
-		}
 	}
 
 	/**
@@ -325,9 +321,8 @@ public class FunctionBehaviorImpl extends ContextImpl implements FunctionBehavio
 			InternalEObject oldFunction = (InternalEObject) function;
 			function = (FunctionType) eResolveProxy(oldFunction);
 			if (function != oldFunction) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BehaviorPackage.FUNCTION_BEHAVIOR__FUNCTION, oldFunction, function));
-				}
 			}
 		}
 		return function;
@@ -379,9 +374,8 @@ public class FunctionBehaviorImpl extends ContextImpl implements FunctionBehavio
 	public void setFunction(FunctionType newFunction) {
 		FunctionType oldFunction = function;
 		function = newFunction;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BehaviorPackage.FUNCTION_BEHAVIOR__FUNCTION, oldFunction, function));
-		}
 	}
 
 	/**
@@ -394,9 +388,8 @@ public class FunctionBehaviorImpl extends ContextImpl implements FunctionBehavio
 	public void setPath(String newPath) {
 		String oldPath = path;
 		path = newPath;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BehaviorPackage.FUNCTION_BEHAVIOR__PATH, oldPath, path));
-		}
 	}
 
 	/**
@@ -409,9 +402,8 @@ public class FunctionBehaviorImpl extends ContextImpl implements FunctionBehavio
 	public void setRepresentation(FunctionBehaviorKind newRepresentation) {
 		FunctionBehaviorKind oldRepresentation = representation;
 		representation = newRepresentation == null ? REPRESENTATION_EDEFAULT : newRepresentation;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BehaviorPackage.FUNCTION_BEHAVIOR__REPRESENTATION, oldRepresentation, representation));
-		}
 	}
 
 	/**
@@ -422,14 +414,13 @@ public class FunctionBehaviorImpl extends ContextImpl implements FunctionBehavio
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
+		if (eIsProxy())
 			return super.toString();
-		}
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (path: ");
+		result.append(" (path: "); //$NON-NLS-1$
 		result.append(path);
-		result.append(", representation: ");
+		result.append(", representation: "); //$NON-NLS-1$
 		result.append(representation);
 		result.append(')');
 		return result.toString();

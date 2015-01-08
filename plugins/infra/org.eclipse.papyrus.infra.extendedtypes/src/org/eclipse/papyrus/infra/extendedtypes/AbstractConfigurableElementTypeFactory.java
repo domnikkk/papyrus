@@ -35,16 +35,29 @@ public abstract class AbstractConfigurableElementTypeFactory<T extends ElementTy
 	/**
 	 * {@inheritDoc}
 	 */
-	public IExtendedHintedElementType createElementType(T configuration) {
+	public IExtendedHintedElementType createElementType(T configuration) throws UnknowElementTypesException {
 		String id = configuration.getIdentifier();
 		// display name of the element Type (used mainly in GUIs)
 		String displayName = configuration.getName();
 		// Specialized element types
+		List<String> unknownTypes = null;
 		List<IElementType> specializedTypes = new ArrayList<IElementType>(configuration.getSpecializedTypesID().size());
 		for (String specializedTypeId : configuration.getSpecializedTypesID()) {
 			IElementType specializedType = ElementTypeRegistry.getInstance().getType(specializedTypeId);
-			specializedTypes.add(specializedType);
+			if(specializedType==null) {
+				if(unknownTypes == null) {
+					unknownTypes = new ArrayList<String>();
+				}
+				unknownTypes.add(specializedTypeId);
+			} else {
+				specializedTypes.add(specializedType);	
+			}
 		}
+		
+		if(unknownTypes!=null && unknownTypes.size() > 0 ) {
+			throw new UnknowElementTypesException(unknownTypes);
+		}
+		
 		IElementType[] elementTypes = specializedTypes.toArray(new IElementType[] {});
 		// icon associated to the element Type (GUI)
 		IconEntry entry = configuration.getIconEntry();

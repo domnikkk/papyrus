@@ -13,10 +13,12 @@
 package org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.impl;
 
 import java.util.Collection;
-
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 import org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.ComposedRuleConfiguration;
 import org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.InvariantRuleConfiguration;
 import org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.InvariantSemanticTypeConfigurationPackage;
@@ -28,7 +30,7 @@ import org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguratio
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.impl.ComposedRuleConfigurationImpl#getComposedRules <em>Composed Rules</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.impl.ComposedRuleConfigurationImpl#getComposedRules <em>Composed Rules</em>}</li>
  * </ul>
  * </p>
  *
@@ -36,10 +38,9 @@ import org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguratio
  */
 public abstract class ComposedRuleConfigurationImpl extends InvariantRuleConfigurationImpl implements ComposedRuleConfiguration {
 	/**
-	 * The cached value of the '{@link #getComposedRules() <em>Composed Rules</em>}' reference list.
+	 * The cached value of the '{@link #getComposedRules() <em>Composed Rules</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getComposedRules()
 	 * @generated
 	 * @ordered
@@ -49,7 +50,6 @@ public abstract class ComposedRuleConfigurationImpl extends InvariantRuleConfigu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected ComposedRuleConfigurationImpl() {
@@ -59,7 +59,6 @@ public abstract class ComposedRuleConfigurationImpl extends InvariantRuleConfigu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -70,12 +69,11 @@ public abstract class ComposedRuleConfigurationImpl extends InvariantRuleConfigu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EList<InvariantRuleConfiguration> getComposedRules() {
 		if (composedRules == null) {
-			composedRules = new EObjectResolvingEList<InvariantRuleConfiguration>(InvariantRuleConfiguration.class, this, InvariantSemanticTypeConfigurationPackage.COMPOSED_RULE_CONFIGURATION__COMPOSED_RULES);
+			composedRules = new EObjectContainmentEList<InvariantRuleConfiguration>(InvariantRuleConfiguration.class, this, InvariantSemanticTypeConfigurationPackage.COMPOSED_RULE_CONFIGURATION__COMPOSED_RULES);
 		}
 		return composedRules;
 	}
@@ -83,14 +81,27 @@ public abstract class ComposedRuleConfigurationImpl extends InvariantRuleConfigu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case InvariantSemanticTypeConfigurationPackage.COMPOSED_RULE_CONFIGURATION__COMPOSED_RULES:
+				return ((InternalEList<?>)getComposedRules()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case InvariantSemanticTypeConfigurationPackage.COMPOSED_RULE_CONFIGURATION__COMPOSED_RULES:
-			return getComposedRules();
+			case InvariantSemanticTypeConfigurationPackage.COMPOSED_RULE_CONFIGURATION__COMPOSED_RULES:
+				return getComposedRules();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -98,17 +109,16 @@ public abstract class ComposedRuleConfigurationImpl extends InvariantRuleConfigu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case InvariantSemanticTypeConfigurationPackage.COMPOSED_RULE_CONFIGURATION__COMPOSED_RULES:
-			getComposedRules().clear();
-			getComposedRules().addAll((Collection<? extends InvariantRuleConfiguration>) newValue);
-			return;
+			case InvariantSemanticTypeConfigurationPackage.COMPOSED_RULE_CONFIGURATION__COMPOSED_RULES:
+				getComposedRules().clear();
+				getComposedRules().addAll((Collection<? extends InvariantRuleConfiguration>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -116,15 +126,14 @@ public abstract class ComposedRuleConfigurationImpl extends InvariantRuleConfigu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case InvariantSemanticTypeConfigurationPackage.COMPOSED_RULE_CONFIGURATION__COMPOSED_RULES:
-			getComposedRules().clear();
-			return;
+			case InvariantSemanticTypeConfigurationPackage.COMPOSED_RULE_CONFIGURATION__COMPOSED_RULES:
+				getComposedRules().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -132,14 +141,13 @@ public abstract class ComposedRuleConfigurationImpl extends InvariantRuleConfigu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case InvariantSemanticTypeConfigurationPackage.COMPOSED_RULE_CONFIGURATION__COMPOSED_RULES:
-			return composedRules != null && !composedRules.isEmpty();
+			case InvariantSemanticTypeConfigurationPackage.COMPOSED_RULE_CONFIGURATION__COMPOSED_RULES:
+				return composedRules != null && !composedRules.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

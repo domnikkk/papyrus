@@ -77,7 +77,8 @@ public class ConstraintConstrainedElementCreateCommand extends EditElementComman
 		}
 
 		if (getSource() != null && getTarget() != null) {
-			getSource().getConstrainedElements().add(getTarget());
+			getSource().getConstrainedElements()
+					.add(getTarget());
 		}
 		return CommandResult.newOKCommandResult();
 

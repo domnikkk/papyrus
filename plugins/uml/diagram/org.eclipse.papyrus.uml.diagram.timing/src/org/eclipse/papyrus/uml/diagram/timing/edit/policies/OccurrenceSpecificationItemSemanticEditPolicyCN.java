@@ -54,6 +54,7 @@ public class OccurrenceSpecificationItemSemanticEditPolicyCN extends UMLBaseItem
 		if (provider != null) {
 			// Retrieve delete command from the Element Edit service
 			ICommand deleteCommand = provider.getEditCommand(req);
+
 			if (deleteCommand != null) {
 				return new ICommandProxy(deleteCommand);
 			}
@@ -66,7 +67,8 @@ public class OccurrenceSpecificationItemSemanticEditPolicyCN extends UMLBaseItem
 	 */
 	@Override
 	protected Command getCreateRelationshipCommand(CreateRelationshipRequest req) {
-		Command command = req.getTarget() == null ? getStartCreateRelationshipCommand(req) : getCompleteCreateRelationshipCommand(req);
+		Command command = req.getTarget() == null ?
+				getStartCreateRelationshipCommand(req) : getCompleteCreateRelationshipCommand(req);
 		return command != null ? command : super.getCreateRelationshipCommand(req);
 	}
 
@@ -97,7 +99,8 @@ public class OccurrenceSpecificationItemSemanticEditPolicyCN extends UMLBaseItem
 			if (isExtendedType) {
 				return getExtendedStartCreateRelationshipCommand(req, (IExtendedHintedElementType) requestElementType);
 			}
-			return getGEFWrapper(new MessageFoundCreateCommand(req, req.getSource(), req.getTarget()));
+			return getGEFWrapper(new MessageFoundCreateCommand(req,
+					req.getSource(), req.getTarget()));
 		}
 		return null;
 	}
@@ -126,7 +129,8 @@ public class OccurrenceSpecificationItemSemanticEditPolicyCN extends UMLBaseItem
 			if (isExtendedType) {
 				return getExtendedCompleteCreateRelationshipCommand(req, (IExtendedHintedElementType) requestElementType);
 			}
-			return getGEFWrapper(new MessageLostCreateCommand(req, req.getSource(), req.getTarget()));
+			return getGEFWrapper(new MessageLostCreateCommand(req,
+					req.getSource(), req.getTarget()));
 		}
 		if (UMLElementTypes.Message_53 == baseElementType) {
 			return null;

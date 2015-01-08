@@ -1,14 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Composite xmlns:x="http://www.eclipse.org/xwt"
-	xmlns:ppe="clr-namespace:org.eclipse.papyrus.views.properties.widgets"
-	xmlns="http://www.eclipse.org/xwt/presentation"
+<Composite xmlns:j="clr-namespace:java.lang"
 	xmlns:ppel="clr-namespace:org.eclipse.papyrus.views.properties.widgets.layout"
-	xmlns:j="clr-namespace:java.lang">
+	xmlns:x="http://www.eclipse.org/xwt" xmlns:ppe="clr-namespace:org.eclipse.papyrus.views.properties.widgets"
+	xmlns="http://www.eclipse.org/xwt/presentation">
 	<Composite.layout>
 		<ppel:PropertiesLayout></ppel:PropertiesLayout>
 	</Composite.layout>
-	<ppe:BooleanCheckbox input="{Binding}"
-		property="RSAToPapyrusParameters:Config:convertOpaqueExpressionToLiteralString"></ppe:BooleanCheckbox>
-	<ppe:BooleanCheckbox input="{Binding}"
-		property="RSAToPapyrusParameters:Config:removeUnmappedProfilesAndStereotypes"></ppe:BooleanCheckbox>
+	<Composite>
+		<Composite.layout>
+			<ppel:PropertiesLayout numColumns="1"></ppel:PropertiesLayout>
+		</Composite.layout>
+		<ppe:BooleanCheckbox input="{Binding}"
+			property="RSAToPapyrusParameters:Config:convertOpaqueExpressionToLiteralString"></ppe:BooleanCheckbox>
+		<ppe:BooleanCheckbox input="{Binding}"
+			property="RSAToPapyrusParameters:Config:removeUnmappedProfilesAndStereotypes"></ppe:BooleanCheckbox>
+		<ppe:BooleanCheckbox
+			property="RSAToPapyrusParameters:Config:alwaysAcceptSuggestedMappings"
+			input="{Binding}"></ppe:BooleanCheckbox>
+		<ppe:IntegerEditor input="{Binding}"
+			property="RSAToPapyrusParameters:Config:maxThreads"></ppe:IntegerEditor>
+	</Composite>
 </Composite>

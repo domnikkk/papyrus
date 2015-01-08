@@ -79,6 +79,7 @@ public class RedefinableTemplateSignatureItemSemanticEditPolicy extends UMLBaseI
 		if (provider != null) {
 			// Retrieve delete command from the Element Edit service
 			ICommand deleteCommand = provider.getEditCommand(req);
+
 			if (deleteCommand != null) {
 				return new ICommandProxy(deleteCommand);
 			}
@@ -91,7 +92,8 @@ public class RedefinableTemplateSignatureItemSemanticEditPolicy extends UMLBaseI
 	 */
 	@Override
 	protected Command getCreateRelationshipCommand(CreateRelationshipRequest req) {
-		Command command = req.getTarget() == null ? getStartCreateRelationshipCommand(req) : getCompleteCreateRelationshipCommand(req);
+		Command command = req.getTarget() == null ?
+				getStartCreateRelationshipCommand(req) : getCompleteCreateRelationshipCommand(req);
 		return command != null ? command : super.getCreateRelationshipCommand(req);
 	}
 
@@ -119,31 +121,36 @@ public class RedefinableTemplateSignatureItemSemanticEditPolicy extends UMLBaseI
 			if (isExtendedType) {
 				return getExtendedStartCreateRelationshipCommand(req, (IExtendedHintedElementType) requestElementType);
 			}
-			return getGEFWrapper(new RealizationCreateCommand(req, req.getSource(), req.getTarget()));
+			return getGEFWrapper(new RealizationCreateCommand(req,
+					req.getSource(), req.getTarget()));
 		}
 		if (UMLElementTypes.Abstraction_4006 == baseElementType) {
 			if (isExtendedType) {
 				return getExtendedStartCreateRelationshipCommand(req, (IExtendedHintedElementType) requestElementType);
 			}
-			return getGEFWrapper(new AbstractionCreateCommand(req, req.getSource(), req.getTarget()));
+			return getGEFWrapper(new AbstractionCreateCommand(req,
+					req.getSource(), req.getTarget()));
 		}
 		if (UMLElementTypes.Usage_4007 == baseElementType) {
 			if (isExtendedType) {
 				return getExtendedStartCreateRelationshipCommand(req, (IExtendedHintedElementType) requestElementType);
 			}
-			return getGEFWrapper(new UsageCreateCommand(req, req.getSource(), req.getTarget()));
+			return getGEFWrapper(new UsageCreateCommand(req,
+					req.getSource(), req.getTarget()));
 		}
 		if (UMLElementTypes.Dependency_4008 == baseElementType) {
 			if (isExtendedType) {
 				return getExtendedStartCreateRelationshipCommand(req, (IExtendedHintedElementType) requestElementType);
 			}
-			return getGEFWrapper(new DependencyCreateCommand(req, req.getSource(), req.getTarget()));
+			return getGEFWrapper(new DependencyCreateCommand(req,
+					req.getSource(), req.getTarget()));
 		}
 		if (UMLElementTypes.Dependency_4018 == baseElementType) {
 			if (isExtendedType) {
 				return getExtendedStartCreateRelationshipCommand(req, (IExtendedHintedElementType) requestElementType);
 			}
-			return getGEFWrapper(new Dependency3CreateCommand(req, req.getSource(), req.getTarget()));
+			return getGEFWrapper(new Dependency3CreateCommand(req,
+					req.getSource(), req.getTarget()));
 		}
 		if (UMLElementTypes.CommentAnnotatedElement_4013 == baseElementType) {
 			return null;
@@ -161,7 +168,8 @@ public class RedefinableTemplateSignatureItemSemanticEditPolicy extends UMLBaseI
 			if (isExtendedType) {
 				return getExtendedStartCreateRelationshipCommand(req, (IExtendedHintedElementType) requestElementType);
 			}
-			return getGEFWrapper(new InformationFlowCreateCommand(req, req.getSource(), req.getTarget()));
+			return getGEFWrapper(new InformationFlowCreateCommand(req,
+					req.getSource(), req.getTarget()));
 		}
 		return null;
 	}
@@ -190,61 +198,71 @@ public class RedefinableTemplateSignatureItemSemanticEditPolicy extends UMLBaseI
 			if (isExtendedType) {
 				return getExtendedCompleteCreateRelationshipCommand(req, (IExtendedHintedElementType) requestElementType);
 			}
-			return getGEFWrapper(new RealizationCreateCommand(req, req.getSource(), req.getTarget()));
+			return getGEFWrapper(new RealizationCreateCommand(req,
+					req.getSource(), req.getTarget()));
 		}
 		if (UMLElementTypes.Abstraction_4006 == baseElementType) {
 			if (isExtendedType) {
 				return getExtendedCompleteCreateRelationshipCommand(req, (IExtendedHintedElementType) requestElementType);
 			}
-			return getGEFWrapper(new AbstractionCreateCommand(req, req.getSource(), req.getTarget()));
+			return getGEFWrapper(new AbstractionCreateCommand(req,
+					req.getSource(), req.getTarget()));
 		}
 		if (UMLElementTypes.Usage_4007 == baseElementType) {
 			if (isExtendedType) {
 				return getExtendedCompleteCreateRelationshipCommand(req, (IExtendedHintedElementType) requestElementType);
 			}
-			return getGEFWrapper(new UsageCreateCommand(req, req.getSource(), req.getTarget()));
+			return getGEFWrapper(new UsageCreateCommand(req,
+					req.getSource(), req.getTarget()));
 		}
 		if (UMLElementTypes.Dependency_4008 == baseElementType) {
 			if (isExtendedType) {
 				return getExtendedCompleteCreateRelationshipCommand(req, (IExtendedHintedElementType) requestElementType);
 			}
-			return getGEFWrapper(new DependencyCreateCommand(req, req.getSource(), req.getTarget()));
+			return getGEFWrapper(new DependencyCreateCommand(req,
+					req.getSource(), req.getTarget()));
 		}
 		if (UMLElementTypes.Dependency_4018 == baseElementType) {
 			if (isExtendedType) {
 				return getExtendedCompleteCreateRelationshipCommand(req, (IExtendedHintedElementType) requestElementType);
 			}
-			return getGEFWrapper(new Dependency3CreateCommand(req, req.getSource(), req.getTarget()));
+			return getGEFWrapper(new Dependency3CreateCommand(req,
+					req.getSource(), req.getTarget()));
 		}
 		if (UMLElementTypes.CommentAnnotatedElement_4013 == baseElementType) {
 			if (isExtendedType) {
 				return getExtendedCompleteCreateRelationshipCommand(req, (IExtendedHintedElementType) requestElementType);
 			}
-			return getGEFWrapper(new CommentAnnotatedElementCreateCommand(req, req.getSource(), req.getTarget()));
+			return getGEFWrapper(new CommentAnnotatedElementCreateCommand(req,
+					req.getSource(), req.getTarget()));
 		}
 		if (UMLElementTypes.ConstraintConstrainedElement_4014 == baseElementType) {
 			if (isExtendedType) {
 				return getExtendedCompleteCreateRelationshipCommand(req, (IExtendedHintedElementType) requestElementType);
 			}
-			return getGEFWrapper(new ConstraintConstrainedElementCreateCommand(req, req.getSource(), req.getTarget()));
+			return getGEFWrapper(new ConstraintConstrainedElementCreateCommand(req,
+					req.getSource(), req.getTarget()));
 		}
 		if (UMLElementTypes.TimeObservationEvent_4024 == baseElementType) {
 			if (isExtendedType) {
 				return getExtendedCompleteCreateRelationshipCommand(req, (IExtendedHintedElementType) requestElementType);
 			}
-			return getGEFWrapper(new ConnectorTimeObservationCreateCommand(req, req.getSource(), req.getTarget()));
+			return getGEFWrapper(new ConnectorTimeObservationCreateCommand(req,
+					req.getSource(), req.getTarget()));
 		}
 		if (UMLElementTypes.DurationObservationEvent_4025 == baseElementType) {
 			if (isExtendedType) {
 				return getExtendedCompleteCreateRelationshipCommand(req, (IExtendedHintedElementType) requestElementType);
 			}
-			return getGEFWrapper(new ConnectorDurationObservationCreateCommand(req, req.getSource(), req.getTarget()));
+			return getGEFWrapper(new ConnectorDurationObservationCreateCommand(req,
+					req.getSource(), req.getTarget()));
 		}
 		if (UMLElementTypes.InformationFlow_4026 == baseElementType) {
 			if (isExtendedType) {
 				return getExtendedCompleteCreateRelationshipCommand(req, (IExtendedHintedElementType) requestElementType);
 			}
-			return getGEFWrapper(new InformationFlowCreateCommand(req, req.getSource(), req.getTarget()));
+			return getGEFWrapper(new InformationFlowCreateCommand(req,
+					req.getSource(), req.getTarget()));
 		}
 		return null;
 	}

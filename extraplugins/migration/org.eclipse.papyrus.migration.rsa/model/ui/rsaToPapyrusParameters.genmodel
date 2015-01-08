@@ -36,10 +36,24 @@
   <genPackages xsi:type="genmodel:GenPackage" prefix="RSAToPapyrusParameters" basePackage="org.eclipse.papyrus.migration.rsa"
       disposableProviderFactory="true" ecorePackage="RSAToPapyrusParameters.ecore#/">
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="RSAToPapyrusParameters.ecore#//Config">
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference RSAToPapyrusParameters.ecore#//Config/mappingParameters"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute RSAToPapyrusParameters.ecore#//Config/maxThreads"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute RSAToPapyrusParameters.ecore#//Config/removeUnmappedDiagrams"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute RSAToPapyrusParameters.ecore#//Config/convertOpaqueExpressionToLiteralString"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute RSAToPapyrusParameters.ecore#//Config/removeUnmappedProfilesAndStereotypes"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute RSAToPapyrusParameters.ecore#//Config/removeUnmappedAnnotations"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute RSAToPapyrusParameters.ecore#//Config/removeUnmappedDiagrams"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute RSAToPapyrusParameters.ecore#//Config/alwaysAcceptSuggestedMappings"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="RSAToPapyrusParameters.ecore#//MappingParameters">
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference RSAToPapyrusParameters.ecore#//MappingParameters/uriMappings"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference RSAToPapyrusParameters.ecore#//MappingParameters/profileUriMappings"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="RSAToPapyrusParameters.ecore#//URIMapping">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute RSAToPapyrusParameters.ecore#//URIMapping/sourceURI"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute RSAToPapyrusParameters.ecore#//URIMapping/targetURI"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

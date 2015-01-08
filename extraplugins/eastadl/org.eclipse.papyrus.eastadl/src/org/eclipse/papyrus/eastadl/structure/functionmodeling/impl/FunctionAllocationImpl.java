@@ -97,9 +97,8 @@ public class FunctionAllocationImpl extends EAElementImpl implements FunctionAll
 		case FunctionmodelingPackage.FUNCTION_ALLOCATION__ALLOCATED_ELEMENT:
 			return getAllocatedElement();
 		case FunctionmodelingPackage.FUNCTION_ALLOCATION__BASE_ABSTRACTION:
-			if (resolve) {
+			if (resolve)
 				return getBase_Abstraction();
-			}
 			return basicGetBase_Abstraction();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -196,11 +195,10 @@ public class FunctionAllocationImpl extends EAElementImpl implements FunctionAll
 		allocatedElement = newAllocatedElement;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FunctionmodelingPackage.FUNCTION_ALLOCATION__ALLOCATED_ELEMENT, oldAllocatedElement, newAllocatedElement);
-			if (msgs == null) {
+			if (msgs == null)
 				msgs = notification;
-			} else {
+			else
 				msgs.add(notification);
-			}
 		}
 		return msgs;
 	}
@@ -215,20 +213,16 @@ public class FunctionAllocationImpl extends EAElementImpl implements FunctionAll
 	public void setAllocatedElement(AllocatedElementInstanceRef newAllocatedElement) {
 		if (newAllocatedElement != allocatedElement) {
 			NotificationChain msgs = null;
-			if (allocatedElement != null) {
+			if (allocatedElement != null)
 				msgs = ((InternalEObject) allocatedElement).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FunctionmodelingPackage.FUNCTION_ALLOCATION__ALLOCATED_ELEMENT, null, msgs);
-			}
-			if (newAllocatedElement != null) {
+			if (newAllocatedElement != null)
 				msgs = ((InternalEObject) newAllocatedElement).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FunctionmodelingPackage.FUNCTION_ALLOCATION__ALLOCATED_ELEMENT, null, msgs);
-			}
 			msgs = basicSetAllocatedElement(newAllocatedElement, msgs);
-			if (msgs != null) {
+			if (msgs != null)
 				msgs.dispatch();
-			}
 		}
-		else if (eNotificationRequired()) {
+		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FunctionmodelingPackage.FUNCTION_ALLOCATION__ALLOCATED_ELEMENT, newAllocatedElement, newAllocatedElement));
-		}
 	}
 
 	/**
@@ -243,9 +237,8 @@ public class FunctionAllocationImpl extends EAElementImpl implements FunctionAll
 			InternalEObject oldBase_Abstraction = (InternalEObject) base_Abstraction;
 			base_Abstraction = (Abstraction) eResolveProxy(oldBase_Abstraction);
 			if (base_Abstraction != oldBase_Abstraction) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FunctionmodelingPackage.FUNCTION_ALLOCATION__BASE_ABSTRACTION, oldBase_Abstraction, base_Abstraction));
-				}
 			}
 		}
 		return base_Abstraction;
@@ -271,9 +264,8 @@ public class FunctionAllocationImpl extends EAElementImpl implements FunctionAll
 	public void setBase_Abstraction(Abstraction newBase_Abstraction) {
 		Abstraction oldBase_Abstraction = base_Abstraction;
 		base_Abstraction = newBase_Abstraction;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FunctionmodelingPackage.FUNCTION_ALLOCATION__BASE_ABSTRACTION, oldBase_Abstraction, base_Abstraction));
-		}
 	}
 
 	/**
@@ -314,11 +306,10 @@ public class FunctionAllocationImpl extends EAElementImpl implements FunctionAll
 		target = newTarget;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FunctionmodelingPackage.FUNCTION_ALLOCATION__TARGET, oldTarget, newTarget);
-			if (msgs == null) {
+			if (msgs == null)
 				msgs = notification;
-			} else {
+			else
 				msgs.add(notification);
-			}
 		}
 		return msgs;
 	}
@@ -333,20 +324,16 @@ public class FunctionAllocationImpl extends EAElementImpl implements FunctionAll
 	public void setTarget(TargetInstanceRef newTarget) {
 		if (newTarget != target) {
 			NotificationChain msgs = null;
-			if (target != null) {
+			if (target != null)
 				msgs = ((InternalEObject) target).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FunctionmodelingPackage.FUNCTION_ALLOCATION__TARGET, null, msgs);
-			}
-			if (newTarget != null) {
+			if (newTarget != null)
 				msgs = ((InternalEObject) newTarget).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FunctionmodelingPackage.FUNCTION_ALLOCATION__TARGET, null, msgs);
-			}
 			msgs = basicSetTarget(newTarget, msgs);
-			if (msgs != null) {
+			if (msgs != null)
 				msgs.dispatch();
-			}
 		}
-		else if (eNotificationRequired()) {
+		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FunctionmodelingPackage.FUNCTION_ALLOCATION__TARGET, newTarget, newTarget));
-		}
 	}
 
 } // FunctionAllocationImpl

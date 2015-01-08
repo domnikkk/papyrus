@@ -87,9 +87,8 @@ public class HardwareConnectorImpl extends EAElementImpl implements HardwareConn
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case HardwaremodelingPackage.HARDWARE_CONNECTOR__BASE_CONNECTOR:
-			if (resolve) {
+			if (resolve)
 				return getBase_Connector();
-			}
 			return basicGetBase_Connector();
 		case HardwaremodelingPackage.HARDWARE_CONNECTOR__PIN:
 			return getPin();
@@ -193,9 +192,8 @@ public class HardwareConnectorImpl extends EAElementImpl implements HardwareConn
 			InternalEObject oldBase_Connector = (InternalEObject) base_Connector;
 			base_Connector = (Connector) eResolveProxy(oldBase_Connector);
 			if (base_Connector != oldBase_Connector) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, HardwaremodelingPackage.HARDWARE_CONNECTOR__BASE_CONNECTOR, oldBase_Connector, base_Connector));
-				}
 			}
 		}
 		return base_Connector;
@@ -221,9 +219,8 @@ public class HardwareConnectorImpl extends EAElementImpl implements HardwareConn
 	public void setBase_Connector(Connector newBase_Connector) {
 		Connector oldBase_Connector = base_Connector;
 		base_Connector = newBase_Connector;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, HardwaremodelingPackage.HARDWARE_CONNECTOR__BASE_CONNECTOR, oldBase_Connector, base_Connector));
-		}
 	}
 
 	/**

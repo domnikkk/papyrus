@@ -155,9 +155,8 @@ public class ProblemStatementImpl extends TraceableSpecificationImpl implements 
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case NeedsPackage.PROBLEM_STATEMENT__BASE_CLASS:
-			if (resolve) {
+			if (resolve)
 				return getBase_Class();
-			}
 			return basicGetBase_Class();
 		case NeedsPackage.PROBLEM_STATEMENT__AFFECTS:
 			return getAffects();
@@ -247,9 +246,8 @@ public class ProblemStatementImpl extends TraceableSpecificationImpl implements 
 			InternalEObject oldBase_Class = (InternalEObject) base_Class;
 			base_Class = (org.eclipse.uml2.uml.Class) eResolveProxy(oldBase_Class);
 			if (base_Class != oldBase_Class) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, NeedsPackage.PROBLEM_STATEMENT__BASE_CLASS, oldBase_Class, base_Class));
-				}
 			}
 		}
 		return base_Class;
@@ -275,9 +273,8 @@ public class ProblemStatementImpl extends TraceableSpecificationImpl implements 
 	public void setBase_Class(org.eclipse.uml2.uml.Class newBase_Class) {
 		org.eclipse.uml2.uml.Class oldBase_Class = base_Class;
 		base_Class = newBase_Class;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, NeedsPackage.PROBLEM_STATEMENT__BASE_CLASS, oldBase_Class, base_Class));
-		}
 	}
 
 	/**
@@ -365,9 +362,8 @@ public class ProblemStatementImpl extends TraceableSpecificationImpl implements 
 	public void setImpact(String newImpact) {
 		String oldImpact = impact;
 		impact = newImpact;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, NeedsPackage.PROBLEM_STATEMENT__IMPACT, oldImpact, impact));
-		}
 	}
 
 	/**
@@ -380,9 +376,8 @@ public class ProblemStatementImpl extends TraceableSpecificationImpl implements 
 	public void setProblem(String newProblem) {
 		String oldProblem = problem;
 		problem = newProblem;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, NeedsPackage.PROBLEM_STATEMENT__PROBLEM, oldProblem, problem));
-		}
 	}
 
 	/**
@@ -395,9 +390,8 @@ public class ProblemStatementImpl extends TraceableSpecificationImpl implements 
 	public void setSolutionBenefits(String newSolutionBenefits) {
 		String oldSolutionBenefits = solutionBenefits;
 		solutionBenefits = newSolutionBenefits;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, NeedsPackage.PROBLEM_STATEMENT__SOLUTION_BENEFITS, oldSolutionBenefits, solutionBenefits));
-		}
 	}
 
 	/**
@@ -408,16 +402,15 @@ public class ProblemStatementImpl extends TraceableSpecificationImpl implements 
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
+		if (eIsProxy())
 			return super.toString();
-		}
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (impact: ");
+		result.append(" (impact: "); //$NON-NLS-1$
 		result.append(impact);
-		result.append(", problem: ");
+		result.append(", problem: "); //$NON-NLS-1$
 		result.append(problem);
-		result.append(", solutionBenefits: ");
+		result.append(", solutionBenefits: "); //$NON-NLS-1$
 		result.append(solutionBenefits);
 		result.append(')');
 		return result.toString();

@@ -107,24 +107,20 @@ public class DelayConstraintImpl extends TimingConstraintImpl implements DelayCo
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case TimingconstraintsPackage.DELAY_CONSTRAINT__TARGET:
-			if (resolve) {
+			if (resolve)
 				return getTarget();
-			}
 			return basicGetTarget();
 		case TimingconstraintsPackage.DELAY_CONSTRAINT__SOURCE:
-			if (resolve) {
+			if (resolve)
 				return getSource();
-			}
 			return basicGetSource();
 		case TimingconstraintsPackage.DELAY_CONSTRAINT__LOWER:
-			if (resolve) {
+			if (resolve)
 				return getLower();
-			}
 			return basicGetLower();
 		case TimingconstraintsPackage.DELAY_CONSTRAINT__UPPER:
-			if (resolve) {
+			if (resolve)
 				return getUpper();
-			}
 			return basicGetUpper();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -199,9 +195,8 @@ public class DelayConstraintImpl extends TimingConstraintImpl implements DelayCo
 			InternalEObject oldTarget = (InternalEObject) target;
 			target = (Event) eResolveProxy(oldTarget);
 			if (target != oldTarget) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TimingconstraintsPackage.DELAY_CONSTRAINT__TARGET, oldTarget, target));
-				}
 			}
 		}
 		return target;
@@ -227,9 +222,8 @@ public class DelayConstraintImpl extends TimingConstraintImpl implements DelayCo
 	public void setTarget(Event newTarget) {
 		Event oldTarget = target;
 		target = newTarget;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TimingconstraintsPackage.DELAY_CONSTRAINT__TARGET, oldTarget, target));
-		}
 	}
 
 	/**
@@ -244,9 +238,8 @@ public class DelayConstraintImpl extends TimingConstraintImpl implements DelayCo
 			InternalEObject oldSource = (InternalEObject) source;
 			source = (Event) eResolveProxy(oldSource);
 			if (source != oldSource) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TimingconstraintsPackage.DELAY_CONSTRAINT__SOURCE, oldSource, source));
-				}
 			}
 		}
 		return source;
@@ -272,9 +265,8 @@ public class DelayConstraintImpl extends TimingConstraintImpl implements DelayCo
 	public void setSource(Event newSource) {
 		Event oldSource = source;
 		source = newSource;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TimingconstraintsPackage.DELAY_CONSTRAINT__SOURCE, oldSource, source));
-		}
 	}
 
 	/**
@@ -289,9 +281,8 @@ public class DelayConstraintImpl extends TimingConstraintImpl implements DelayCo
 			InternalEObject oldLower = (InternalEObject) lower;
 			lower = (TimingExpression) eResolveProxy(oldLower);
 			if (lower != oldLower) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TimingconstraintsPackage.DELAY_CONSTRAINT__LOWER, oldLower, lower));
-				}
 			}
 		}
 		return lower;
@@ -317,9 +308,8 @@ public class DelayConstraintImpl extends TimingConstraintImpl implements DelayCo
 	public void setLower(TimingExpression newLower) {
 		TimingExpression oldLower = lower;
 		lower = newLower;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TimingconstraintsPackage.DELAY_CONSTRAINT__LOWER, oldLower, lower));
-		}
 	}
 
 	/**
@@ -334,9 +324,8 @@ public class DelayConstraintImpl extends TimingConstraintImpl implements DelayCo
 			InternalEObject oldUpper = (InternalEObject) upper;
 			upper = (TimingExpression) eResolveProxy(oldUpper);
 			if (upper != oldUpper) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TimingconstraintsPackage.DELAY_CONSTRAINT__UPPER, oldUpper, upper));
-				}
 			}
 		}
 		return upper;
@@ -362,9 +351,8 @@ public class DelayConstraintImpl extends TimingConstraintImpl implements DelayCo
 	public void setUpper(TimingExpression newUpper) {
 		TimingExpression oldUpper = upper;
 		upper = newUpper;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TimingconstraintsPackage.DELAY_CONSTRAINT__UPPER, oldUpper, upper));
-		}
 	}
 
 	/**

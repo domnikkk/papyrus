@@ -85,105 +85,82 @@ public class BehaviordescriptionSwitch<T> extends Switch<T> {
 		case BehaviordescriptionPackage.BEHAVIOR_CONSTRAINT_BINDING_ATTRIBUTE: {
 			BehaviorConstraintBindingAttribute behaviorConstraintBindingAttribute = (BehaviorConstraintBindingAttribute) theEObject;
 			T result = caseBehaviorConstraintBindingAttribute(behaviorConstraintBindingAttribute);
-			if (result == null) {
+			if (result == null)
 				result = caseAttribute(behaviorConstraintBindingAttribute);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseBehaviorConstraintInternalBinding(behaviorConstraintBindingAttribute);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(behaviorConstraintBindingAttribute);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseBehaviorConstraintParameter(behaviorConstraintBindingAttribute);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case BehaviordescriptionPackage.BEHAVIOR_CONSTRAINT_PARAMETER: {
 			BehaviorConstraintParameter behaviorConstraintParameter = (BehaviorConstraintParameter) theEObject;
 			T result = caseBehaviorConstraintParameter(behaviorConstraintParameter);
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case BehaviordescriptionPackage.BEHAVIOR_CONSTRAINT_INTERNAL_BINDING: {
 			BehaviorConstraintInternalBinding behaviorConstraintInternalBinding = (BehaviorConstraintInternalBinding) theEObject;
 			T result = caseBehaviorConstraintInternalBinding(behaviorConstraintInternalBinding);
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case BehaviordescriptionPackage.BEHAVIOR_CONSTRAINT_BINDING_EVENT: {
 			BehaviorConstraintBindingEvent behaviorConstraintBindingEvent = (BehaviorConstraintBindingEvent) theEObject;
 			T result = caseBehaviorConstraintBindingEvent(behaviorConstraintBindingEvent);
-			if (result == null) {
+			if (result == null)
 				result = caseTransitionEvent(behaviorConstraintBindingEvent);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseBehaviorConstraintInternalBinding(behaviorConstraintBindingEvent);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(behaviorConstraintBindingEvent);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseBehaviorConstraintParameter(behaviorConstraintBindingEvent);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case BehaviordescriptionPackage.BEHAVIOR_CONSTRAINT_PROTOTYPE: {
 			BehaviorConstraintPrototype behaviorConstraintPrototype = (BehaviorConstraintPrototype) theEObject;
 			T result = caseBehaviorConstraintPrototype(behaviorConstraintPrototype);
-			if (result == null) {
+			if (result == null)
 				result = caseTraceableSpecification(behaviorConstraintPrototype);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPackageableElement(behaviorConstraintPrototype);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(behaviorConstraintPrototype);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case BehaviordescriptionPackage.BEHAVIOR_CONSTRAINT_TYPE: {
 			BehaviorConstraintType behaviorConstraintType = (BehaviorConstraintType) theEObject;
 			T result = caseBehaviorConstraintType(behaviorConstraintType);
-			if (result == null) {
+			if (result == null)
 				result = caseContext(behaviorConstraintType);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPackageableElement(behaviorConstraintType);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(behaviorConstraintType);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case BehaviordescriptionPackage.BEHAVIOR_CONSTRAINT_TARGET_BINDING: {
 			BehaviorConstraintTargetBinding behaviorConstraintTargetBinding = (BehaviorConstraintTargetBinding) theEObject;
 			T result = caseBehaviorConstraintTargetBinding(behaviorConstraintTargetBinding);
-			if (result == null) {
+			if (result == null)
 				result = caseRelationship(behaviorConstraintTargetBinding);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(behaviorConstraintTargetBinding);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		default:

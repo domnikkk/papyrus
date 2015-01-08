@@ -98,9 +98,8 @@ public class ExtendImpl extends RelationshipImpl implements Extend {
 			InternalEObject oldBase_Extend = (InternalEObject) base_Extend;
 			base_Extend = (org.eclipse.uml2.uml.Extend) eResolveProxy(oldBase_Extend);
 			if (base_Extend != oldBase_Extend) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, UsecasesPackage.EXTEND__BASE_EXTEND, oldBase_Extend, base_Extend));
-				}
 			}
 		}
 		return base_Extend;
@@ -126,9 +125,8 @@ public class ExtendImpl extends RelationshipImpl implements Extend {
 	public void setBase_Extend(org.eclipse.uml2.uml.Extend newBase_Extend) {
 		org.eclipse.uml2.uml.Extend oldBase_Extend = base_Extend;
 		base_Extend = newBase_Extend;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, UsecasesPackage.EXTEND__BASE_EXTEND, oldBase_Extend, base_Extend));
-		}
 	}
 
 	/**
@@ -157,9 +155,8 @@ public class ExtendImpl extends RelationshipImpl implements Extend {
 			InternalEObject oldExtendedCase = (InternalEObject) extendedCase;
 			extendedCase = (UseCase) eResolveProxy(oldExtendedCase);
 			if (extendedCase != oldExtendedCase) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, UsecasesPackage.EXTEND__EXTENDED_CASE, oldExtendedCase, extendedCase));
-				}
 			}
 		}
 		return extendedCase;
@@ -185,9 +182,8 @@ public class ExtendImpl extends RelationshipImpl implements Extend {
 	public void setExtendedCase(UseCase newExtendedCase) {
 		UseCase oldExtendedCase = extendedCase;
 		extendedCase = newExtendedCase;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, UsecasesPackage.EXTEND__EXTENDED_CASE, oldExtendedCase, extendedCase));
-		}
 	}
 
 	/**
@@ -200,16 +196,14 @@ public class ExtendImpl extends RelationshipImpl implements Extend {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case UsecasesPackage.EXTEND__BASE_EXTEND:
-			if (resolve) {
+			if (resolve)
 				return getBase_Extend();
-			}
 			return basicGetBase_Extend();
 		case UsecasesPackage.EXTEND__EXTENSION_LOCATION:
 			return getExtensionLocation();
 		case UsecasesPackage.EXTEND__EXTENDED_CASE:
-			if (resolve) {
+			if (resolve)
 				return getExtendedCase();
-			}
 			return basicGetExtendedCase();
 		}
 		return super.eGet(featureID, resolve, coreType);

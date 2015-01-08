@@ -84,9 +84,8 @@ public class PrecedenceConstraint_precedingInstanceRefImpl extends InstanceRefIm
 			InternalEObject oldFunctionPrototype_target = (InternalEObject) functionPrototype_target;
 			functionPrototype_target = (FunctionPrototype) eResolveProxy(oldFunctionPrototype_target);
 			if (functionPrototype_target != oldFunctionPrototype_target) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InfrastructurePackage.PRECEDENCE_CONSTRAINT_PRECEDING_INSTANCE_REF__FUNCTION_PROTOTYPE_TARGET, oldFunctionPrototype_target, functionPrototype_target));
-				}
 			}
 		}
 		return functionPrototype_target;
@@ -112,9 +111,8 @@ public class PrecedenceConstraint_precedingInstanceRefImpl extends InstanceRefIm
 	public void setFunctionPrototype_target(FunctionPrototype newFunctionPrototype_target) {
 		FunctionPrototype oldFunctionPrototype_target = functionPrototype_target;
 		functionPrototype_target = newFunctionPrototype_target;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, InfrastructurePackage.PRECEDENCE_CONSTRAINT_PRECEDING_INSTANCE_REF__FUNCTION_PROTOTYPE_TARGET, oldFunctionPrototype_target, functionPrototype_target));
-		}
 	}
 
 	/**
@@ -141,9 +139,8 @@ public class PrecedenceConstraint_precedingInstanceRefImpl extends InstanceRefIm
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case InfrastructurePackage.PRECEDENCE_CONSTRAINT_PRECEDING_INSTANCE_REF__FUNCTION_PROTOTYPE_TARGET:
-			if (resolve) {
+			if (resolve)
 				return getFunctionPrototype_target();
-			}
 			return basicGetFunctionPrototype_target();
 		case InfrastructurePackage.PRECEDENCE_CONSTRAINT_PRECEDING_INSTANCE_REF__FUNCTION_PROTOTYPE_CONTEXT:
 			return getFunctionPrototype_context();

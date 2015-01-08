@@ -24,6 +24,7 @@ import org.eclipse.papyrus.eastadl.infrastructure.elements.ElementsPackage;
  *
  * @see org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsFactory
  * @model kind="package"
+ *        annotation="http://www.eclipse.org/uml2/2.0.0/UML originalName='Requirements'"
  * @generated
  */
 public interface RequirementsPackage extends EPackage {

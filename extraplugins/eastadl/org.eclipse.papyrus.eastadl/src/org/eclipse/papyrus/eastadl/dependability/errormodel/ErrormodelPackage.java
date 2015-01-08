@@ -45,6 +45,7 @@ import org.eclipse.papyrus.eastadl.infrastructure.elements.ElementsPackage;
  *
  * @see org.eclipse.papyrus.eastadl.dependability.errormodel.ErrormodelFactory
  * @model kind="package"
+ *        annotation="http://www.eclipse.org/uml2/2.0.0/UML originalName='ErrorModel'"
  * @generated
  */
 public interface ErrormodelPackage extends EPackage {

@@ -116,14 +116,12 @@ public class UserAttributeableElementImpl extends MinimalEObjectImpl.Container i
 		case UserattributesPackage.USER_ATTRIBUTEABLE_ELEMENT__UA_TYPE:
 			return getUaType();
 		case UserattributesPackage.USER_ATTRIBUTEABLE_ELEMENT__ATTRIBUTED_ELEMENT:
-			if (resolve) {
+			if (resolve)
 				return getAttributedElement();
-			}
 			return basicGetAttributedElement();
 		case UserattributesPackage.USER_ATTRIBUTEABLE_ELEMENT__BASE_NAMED_ELEMENT:
-			if (resolve) {
+			if (resolve)
 				return getBase_NamedElement();
-			}
 			return basicGetBase_NamedElement();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -240,9 +238,8 @@ public class UserAttributeableElementImpl extends MinimalEObjectImpl.Container i
 			InternalEObject oldAttributedElement = (InternalEObject) attributedElement;
 			attributedElement = (NamedElement) eResolveProxy(oldAttributedElement);
 			if (attributedElement != oldAttributedElement) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, UserattributesPackage.USER_ATTRIBUTEABLE_ELEMENT__ATTRIBUTED_ELEMENT, oldAttributedElement, attributedElement));
-				}
 			}
 		}
 		return attributedElement;
@@ -268,9 +265,8 @@ public class UserAttributeableElementImpl extends MinimalEObjectImpl.Container i
 	public void setAttributedElement(NamedElement newAttributedElement) {
 		NamedElement oldAttributedElement = attributedElement;
 		attributedElement = newAttributedElement;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, UserattributesPackage.USER_ATTRIBUTEABLE_ELEMENT__ATTRIBUTED_ELEMENT, oldAttributedElement, attributedElement));
-		}
 	}
 
 	/**
@@ -285,9 +281,8 @@ public class UserAttributeableElementImpl extends MinimalEObjectImpl.Container i
 			InternalEObject oldBase_NamedElement = (InternalEObject) base_NamedElement;
 			base_NamedElement = (NamedElement) eResolveProxy(oldBase_NamedElement);
 			if (base_NamedElement != oldBase_NamedElement) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, UserattributesPackage.USER_ATTRIBUTEABLE_ELEMENT__BASE_NAMED_ELEMENT, oldBase_NamedElement, base_NamedElement));
-				}
 			}
 		}
 		return base_NamedElement;
@@ -313,9 +308,8 @@ public class UserAttributeableElementImpl extends MinimalEObjectImpl.Container i
 	public void setBase_NamedElement(NamedElement newBase_NamedElement) {
 		NamedElement oldBase_NamedElement = base_NamedElement;
 		base_NamedElement = newBase_NamedElement;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, UserattributesPackage.USER_ATTRIBUTEABLE_ELEMENT__BASE_NAMED_ELEMENT, oldBase_NamedElement, base_NamedElement));
-		}
 	}
 
 	/**

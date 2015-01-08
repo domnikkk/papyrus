@@ -68,9 +68,12 @@ public class EnumerationLiteralCreateCommand extends EditElementCommand {
 	 */
 	@Override
 	public boolean canExecute() {
+
 		EObject target = getElementToEdit();
 		ModelAddData data = PolicyChecker.getCurrent().getChildAddData(diagram, target.eClass(), UMLPackage.eINSTANCE.getEnumerationLiteral());
 		return data.isPermitted();
+
+
 	}
 
 	/**
@@ -78,7 +81,9 @@ public class EnumerationLiteralCreateCommand extends EditElementCommand {
 	 */
 	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+
 		EnumerationLiteral newElement = UMLFactory.eINSTANCE.createEnumerationLiteral();
+
 		EObject target = getElementToEdit();
 		ModelAddData data = PolicyChecker.getCurrent().getChildAddData(diagram, target, newElement);
 		if (data.isPermitted()) {
@@ -87,14 +92,21 @@ public class EnumerationLiteralCreateCommand extends EditElementCommand {
 					return CommandResult.newErrorCommandResult("Failed to follow the policy-specified for the insertion of the new element");
 				}
 			} else {
+
 				Enumeration qualifiedTarget = (Enumeration) target;
-				qualifiedTarget.getOwnedLiterals().add(newElement);
+				qualifiedTarget.getOwnedLiterals()
+						.add(newElement);
+
 			}
 		} else {
 			return CommandResult.newErrorCommandResult("The active policy restricts the addition of this element");
 		}
+
+
 		ElementInitializers.getInstance().init_EnumerationLiteral_1037(newElement);
+
 		doConfigure(newElement, monitor, info);
+
 		((CreateElementRequest) getRequest()).setNewElement(newElement);
 		return CommandResult.newOKCommandResult(newElement);
 	}

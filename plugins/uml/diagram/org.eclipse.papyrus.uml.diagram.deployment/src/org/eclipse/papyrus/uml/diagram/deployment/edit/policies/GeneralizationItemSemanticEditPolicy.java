@@ -67,7 +67,8 @@ public class GeneralizationItemSemanticEditPolicy extends UMLBaseItemSemanticEdi
 	 */
 	@Override
 	protected Command getCreateRelationshipCommand(CreateRelationshipRequest req) {
-		Command command = req.getTarget() == null ? getStartCreateRelationshipCommand(req) : getCompleteCreateRelationshipCommand(req);
+		Command command = req.getTarget() == null ?
+				getStartCreateRelationshipCommand(req) : getCompleteCreateRelationshipCommand(req);
 		return command != null ? command : super.getCreateRelationshipCommand(req);
 	}
 
@@ -121,13 +122,15 @@ public class GeneralizationItemSemanticEditPolicy extends UMLBaseItemSemanticEdi
 			if (isExtendedType) {
 				return getExtendedCompleteCreateRelationshipCommand(req, (IExtendedHintedElementType) requestElementType);
 			}
-			return getGEFWrapper(new CommentAnnotatedElementCreateCommand(req, req.getSource(), req.getTarget()));
+			return getGEFWrapper(new CommentAnnotatedElementCreateCommand(req,
+					req.getSource(), req.getTarget()));
 		}
 		if (UMLElementTypes.ConstraintConstrainedElement_4009 == baseElementType) {
 			if (isExtendedType) {
 				return getExtendedCompleteCreateRelationshipCommand(req, (IExtendedHintedElementType) requestElementType);
 			}
-			return getGEFWrapper(new ConstraintConstrainedElementCreateCommand(req, req.getSource(), req.getTarget()));
+			return getGEFWrapper(new ConstraintConstrainedElementCreateCommand(req,
+					req.getSource(), req.getTarget()));
 		}
 		return null;
 	}

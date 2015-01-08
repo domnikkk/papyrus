@@ -85,9 +85,8 @@ public class FaultFailurePropagationLink_fromPortInstanceRefImpl extends Instanc
 			InternalEObject oldFaultFairelurePort = (InternalEObject) faultFairelurePort;
 			faultFairelurePort = (FaultFailurePort) eResolveProxy(oldFaultFairelurePort);
 			if (faultFairelurePort != oldFaultFairelurePort) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InfrastructurePackage.FAULT_FAILURE_PROPAGATION_LINK_FROM_PORT_INSTANCE_REF__FAULT_FAIRELURE_PORT, oldFaultFairelurePort, faultFairelurePort));
-				}
 			}
 		}
 		return faultFairelurePort;
@@ -113,9 +112,8 @@ public class FaultFailurePropagationLink_fromPortInstanceRefImpl extends Instanc
 	public void setFaultFairelurePort(FaultFailurePort newFaultFairelurePort) {
 		FaultFailurePort oldFaultFairelurePort = faultFairelurePort;
 		faultFairelurePort = newFaultFairelurePort;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, InfrastructurePackage.FAULT_FAILURE_PROPAGATION_LINK_FROM_PORT_INSTANCE_REF__FAULT_FAIRELURE_PORT, oldFaultFairelurePort, faultFairelurePort));
-		}
 	}
 
 	/**
@@ -142,9 +140,8 @@ public class FaultFailurePropagationLink_fromPortInstanceRefImpl extends Instanc
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case InfrastructurePackage.FAULT_FAILURE_PROPAGATION_LINK_FROM_PORT_INSTANCE_REF__FAULT_FAIRELURE_PORT:
-			if (resolve) {
+			if (resolve)
 				return getFaultFairelurePort();
-			}
 			return basicGetFaultFairelurePort();
 		case InfrastructurePackage.FAULT_FAILURE_PROPAGATION_LINK_FROM_PORT_INSTANCE_REF__ERROR_MODEL_PROTOTYPE:
 			return getErrorModelPrototype();

@@ -35,10 +35,10 @@ public class CustomAppliedStereotypeContextLinkLabelDisplayEditPolicy extends Ap
 	public void activate() {
 		// retrieve the view
 		View view = getView();
-		if(view == null) {
+		if (view == null) {
 			return;
 		}
-		//call the refresh overridden in this class
+		// call the refresh overridden in this class
 		refreshDisplay();
 	}
 
@@ -47,10 +47,10 @@ public class CustomAppliedStereotypeContextLinkLabelDisplayEditPolicy extends Ap
 	 */
 	@Override
 	protected void refreshStereotypeDisplay() {
-		IFigure figure = ((GraphicalEditPart)getHost()).getFigure();
+		IFigure figure = ((GraphicalEditPart) getHost()).getFigure();
 		// the tag displayed here is <code>&laquo context &raquo</code> see the class constructor
-		if(figure instanceof IPapyrusUMLElementFigure) {
-			((IPapyrusUMLElementFigure)figure).setStereotypeDisplay(tag, null);
+		if (figure instanceof IPapyrusUMLElementFigure) {
+			((IPapyrusUMLElementFigure) figure).setStereotypeDisplay(tag, null);
 		}
 	}
 }

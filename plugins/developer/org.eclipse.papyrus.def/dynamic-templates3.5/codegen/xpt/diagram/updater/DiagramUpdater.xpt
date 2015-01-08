@@ -202,7 +202,7 @@ for (java.util.Iterator links = «EXPAND MetaModel::getFeatureValue('container',
 		«REM»Test if the source and target reference the same feature, in this case generation with collection«ENDREM»
 		
 		«IF self.sourceMetaFeature=self.targetMetaFeature»
-			//Papyrus GenCode 
+			// Papyrus GenCode 
 		    «EXPAND defineLinkDestinationForSet(inLoop) FOR self-»
 			«IF null <> sourceMetaFeature-»
 				«EXPAND defineLinkSource(inLoop)-»

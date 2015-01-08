@@ -31,7 +31,7 @@ import org.eclipse.uml2.uml.PackageableElement;
 public class LocateCppProject {
 	public static final String LANGUAGE_NAME = "C++"; //$NON-NLS-1$
 
-	private static final boolean Headless = Boolean.getBoolean("papyrus.run-headless");
+	private static final boolean Headless = Boolean.getBoolean("papyrus.run-headless"); //$NON-NLS-1$
 
 	/**
 	 * Locate and return the target project for the given packageable element. Return null if

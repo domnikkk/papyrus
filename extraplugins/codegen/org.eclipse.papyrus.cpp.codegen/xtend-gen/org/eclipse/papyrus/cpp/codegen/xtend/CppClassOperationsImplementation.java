@@ -1,12 +1,22 @@
+/**
+ * Copyright (c) 2014 CEA LIST.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *     CEA LIST - initial API and implementation
+ */
 package org.eclipse.papyrus.cpp.codegen.xtend;
 
 import com.google.common.base.Objects;
-import org.eclipse.emf.common.util.EList;
+import java.util.Collection;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.papyrus.C_Cpp.Inline;
 import org.eclipse.papyrus.C_Cpp.NoCodeGen;
-import org.eclipse.papyrus.acceleo.GenUtils;
+import org.eclipse.papyrus.codegen.base.GenUtils;
 import org.eclipse.papyrus.cpp.codegen.xtend.CppOperations;
 import org.eclipse.uml2.uml.BehavioralFeature;
 import org.eclipse.uml2.uml.Classifier;
@@ -25,7 +35,7 @@ public class CppClassOperationsImplementation {
   public static CharSequence CppClassOperationsImplementation(final Classifier clazz, final boolean inline) {
     StringConcatenation _builder = new StringConcatenation();
     {
-      EList<Operation> _ownedOperations = CppOperations.getOwnedOperations(clazz);
+      Collection<Operation> _ownedOperations = CppOperations.getOwnedOperations(clazz);
       final Function1<Operation, Boolean> _function = new Function1<Operation, Boolean>() {
         public Boolean apply(final Operation it) {
           boolean _and = false;

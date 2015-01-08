@@ -229,55 +229,42 @@ public class GenericconstraintsSwitch<T> extends Switch<T> {
 		case GenericconstraintsPackage.GENERIC_CONSTRAINT: {
 			GenericConstraint genericConstraint = (GenericConstraint) theEObject;
 			T result = caseGenericConstraint(genericConstraint);
-			if (result == null) {
+			if (result == null)
 				result = caseTraceableSpecification(genericConstraint);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPackageableElement(genericConstraint);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(genericConstraint);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case GenericconstraintsPackage.GENERIC_CONSTRAINT_SET: {
 			GenericConstraintSet genericConstraintSet = (GenericConstraintSet) theEObject;
 			T result = caseGenericConstraintSet(genericConstraintSet);
-			if (result == null) {
+			if (result == null)
 				result = caseContext(genericConstraintSet);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPackageableElement(genericConstraintSet);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(genericConstraintSet);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case GenericconstraintsPackage.TAKE_RATE_CONSTRAINT: {
 			TakeRateConstraint takeRateConstraint = (TakeRateConstraint) theEObject;
 			T result = caseTakeRateConstraint(takeRateConstraint);
-			if (result == null) {
+			if (result == null)
 				result = caseGenericConstraint(takeRateConstraint);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseTraceableSpecification(takeRateConstraint);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPackageableElement(takeRateConstraint);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(takeRateConstraint);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		default:

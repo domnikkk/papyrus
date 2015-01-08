@@ -30,6 +30,7 @@ import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
 import org.eclipse.jface.viewers.CellEditor;
 import org.eclipse.jface.viewers.TextCellEditor;
+import org.eclipse.papyrus.infra.gmfdiag.common.editpart.PapyrusLabelEditPart;
 import org.eclipse.papyrus.uml.diagram.common.figure.node.IMultilineEditableFigure;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
@@ -42,8 +43,7 @@ import org.eclipse.ui.actions.ActionFactory;
 import org.eclipse.ui.part.CellEditorActionHandler;
 
 /**
- * Inspired from {@link org.eclipse.gmf.runtime.diagram.ui.tools.TextDirectEditManager}
- * but use static to avoid concurrency problem on restore (Bug 444063)
+ * Inspired from {@link org.eclipse.gmf.runtime.diagram.ui.tools.TextDirectEditManager} but use static to avoid concurrency problem on restore (Bug 444063)
  */
 public class MultilineLabelDirectEditManager extends DirectEditManagerBase {
 
@@ -52,8 +52,10 @@ public class MultilineLabelDirectEditManager extends DirectEditManagerBase {
 	private static IActionBars actionBars;
 
 	private CellEditorActionHandler actionHandler;
-	
+
 	protected boolean multiLine = false;
+
+	private GraphicalEditPart source;
 
 	/**
 	 * Constructor.
@@ -64,6 +66,8 @@ public class MultilineLabelDirectEditManager extends DirectEditManagerBase {
 	 */
 	public MultilineLabelDirectEditManager(GraphicalEditPart source, Class editorType, CellEditorLocator locator) {
 		super(source, editorType, locator);
+		this.source = source;
+
 		if (editorType != null && MultiLineCellEditor.class.isAssignableFrom(editorType)) {
 			multiLine = true;
 		}
@@ -101,15 +105,14 @@ public class MultilineLabelDirectEditManager extends DirectEditManagerBase {
 			return new TextCellEditor(composite, SWT.MULTI | SWT.WRAP);
 		}
 		return super.createCellEditorOn(composite);
-	}	
-	
+	}
+
 	/**
 	 * constructor
-	 * 
+	 *
 	 * @param source
 	 *            <code>GraphicalEditPart</code> to support direct edit of. The
-	 *            figure of the <code>source</code> edit part must be of type
-	 *            <code>WrapLabel</code>.
+	 *            figure of the <code>source</code> edit part must be of type <code>WrapLabel</code>.
 	 */
 	public MultilineLabelDirectEditManager(ITextAwareEditPart source) {
 		super(source);
@@ -126,6 +129,7 @@ public class MultilineLabelDirectEditManager extends DirectEditManagerBase {
 		return getCellEditorLocator(source);
 	}
 
+	@Override
 	protected CellEditor doCreateCellEditorOn(Composite composite) {
 
 		ILabelDelegate label = (ILabelDelegate) getEditPart().getAdapter(ILabelDelegate.class);
@@ -153,7 +157,7 @@ public class MultilineLabelDirectEditManager extends DirectEditManagerBase {
 
 	/**
 	 * This method is used to set the cell editors text
-	 * 
+	 *
 	 * @param toEdit
 	 *            String to be set in the cell editor
 	 */
@@ -186,9 +190,25 @@ public class MultilineLabelDirectEditManager extends DirectEditManagerBase {
 	protected void initCellEditor() {
 		super.initCellEditor();
 
-		//Hook the cell editor's copy/paste actions to the actionBars so that they can
+		if (source instanceof PapyrusLabelEditPart) {
+			int alignment = ((PapyrusLabelEditPart) source).getTextAlignment();
+			Text text = (Text) getCellEditor().getControl();
+			switch (alignment) {
+			case PositionConstants.RIGHT:
+				text.setOrientation(SWT.RIGHT_TO_LEFT);
+				break;
+			case PositionConstants.LEFT:
+				text.setOrientation(SWT.LEFT_TO_RIGHT);
+				break;
+			default:
+				text.setOrientation(SWT.LEFT_TO_RIGHT);
+				break;
+			}
+		}
+
+		// Hook the cell editor's copy/paste actions to the actionBars so that they can
 		// be invoked via keyboard shortcuts.
-		
+
 		IActionBars editorActionBars = PlatformUI.getWorkbench()
 				.getActiveWorkbenchWindow().getActivePage().getActiveEditor()
 				.getEditorSite().getActionBars();
@@ -202,7 +222,7 @@ public class MultilineLabelDirectEditManager extends DirectEditManagerBase {
 		actionBars.updateActionBars();
 
 	}
-	
+
 	/**
 	 * @see org.eclipse.gef.tools.DirectEditManager#bringDown()
 	 */

@@ -19,6 +19,7 @@ import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.notation.Diagram;
+import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.Shape;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.infra.core.editor.IMultiDiagramEditor;
@@ -69,9 +70,40 @@ public class DiagramUtils {
 			}
 		}
 
+
 		// Assert.fail("Cannot find the view associated to " + elementName);
 		return null;
 	}
+
+
+
+	/**
+	 * Search and returns the first view in the specified container view with the given name
+	 *
+	 * @param container
+	 *            the container
+	 * @param elementName
+	 *            the element name
+	 * @return the edge
+	 */
+	public static Edge findEdge(View container, String elementName) {
+		for (Object viewObject : container.eContents()) {
+			if (viewObject instanceof View) {
+				View view = (View) viewObject;
+				if (view instanceof Edge && view.getElement() instanceof NamedElement) {
+					NamedElement element = (NamedElement) view.getElement();
+					if (elementName.equals(element.getName())) {
+						return (Edge) view;
+					}
+				}
+			}
+		}
+
+
+		// Assert.fail("Cannot find the view associated to " + elementName);
+		return null;
+	}
+
 
 	/**
 	 * Returns the int corresponding to the given tuple
@@ -91,7 +123,7 @@ public class DiagramUtils {
 		int red = (value >> 16) & 255;
 		return new RGB(red, green, blue);
 	}
-	
+
 	public static String integerToRGBString(int value) {
 		RGB rgb = integerToRGB(value);
 		return rgb.toString();

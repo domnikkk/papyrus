@@ -27,6 +27,7 @@ import org.eclipse.papyrus.qompass.designer.core.deployment.DeployConstants;
 import org.eclipse.papyrus.qompass.designer.core.sync.DepPlanSync;
 import org.eclipse.papyrus.qompass.designer.core.transformations.TransformationException;
 import org.eclipse.papyrus.qompass.designer.ui.Messages;
+import org.eclipse.papyrus.uml.diagram.common.handlers.CmdHandler;
 import org.eclipse.papyrus.uml.tools.utils.StereotypeUtil;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.uml2.uml.Class;

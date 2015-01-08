@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2009 CEA LIST.
+ * Copyright (c) 2009, 2014 CEA LIST, Christian W. Damus, and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,6 +8,7 @@
  *
  * Contributors:
  *  Remi Schnekenburger (CEA LIST) remi.schnekenburger@cea.fr - Initial API and implementation
+ *  Christian W. Damus - bug 454578
  *
  *****************************************************************************/
 package org.eclipse.papyrus.customization.palette.dialog;
@@ -38,9 +39,11 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.gef.palette.CombinedTemplateCreationEntry;
 import org.eclipse.gef.palette.PaletteContainer;
 import org.eclipse.gef.palette.PaletteDrawer;
@@ -61,6 +64,7 @@ import org.eclipse.jface.viewers.IDoubleClickListener;
 import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.jface.viewers.ILabelProviderListener;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
+import org.eclipse.jface.viewers.ISelectionProvider;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.ITreeSelection;
@@ -72,6 +76,7 @@ import org.eclipse.jface.viewers.ViewerComparator;
 import org.eclipse.jface.viewers.ViewerFilter;
 import org.eclipse.jface.wizard.WizardDialog;
 import org.eclipse.jface.wizard.WizardPage;
+import org.eclipse.osgi.util.NLS;
 import org.eclipse.papyrus.customization.palette.proxies.XMLPaletteDefinitionProxyFactory;
 import org.eclipse.papyrus.uml.diagram.common.Activator;
 import org.eclipse.papyrus.uml.diagram.common.Messages;
@@ -472,7 +477,7 @@ public class LocalPaletteContentPage extends WizardPage implements Listener {
 
 				// get the elements from the drag listener (either a palette entry or a palette
 				// entry proxy)
-				IStructuredSelection transferedSelection = (IStructuredSelection) LocalSelectionTransfer.getTransfer().nativeToJava(event.currentDataType);
+				IStructuredSelection transferedSelection = (IStructuredSelection) LocalSelectionTransfer.getTransfer().getSelection();
 				Object entry = transferedSelection.getFirstElement();
 
 				// creates the proxy for the element to be dropped
@@ -510,7 +515,12 @@ public class LocalPaletteContentPage extends WizardPage implements Listener {
 			public void dragOver(DropTargetEvent event) {
 				super.dragOver(event);
 
-				IStructuredSelection transferedSelection = (IStructuredSelection) LocalSelectionTransfer.getTransfer().nativeToJava(event.currentDataType);
+				LocalSelectionTransfer localTransfer = LocalSelectionTransfer.getTransfer();
+				IStructuredSelection transferedSelection = null;
+				if (localTransfer.isSupportedType(event.currentDataType)) {
+					transferedSelection = (IStructuredSelection) localTransfer.getSelection();
+				}
+
 				// check selection is compatible for drop target
 
 				TreeItem item = paletteTreeViewer.getTree().getItem(paletteTreeViewer.getTree().toControl(new Point(event.x, event.y)));
@@ -531,27 +541,7 @@ public class LocalPaletteContentPage extends WizardPage implements Listener {
 		Transfer[] transfers = new Transfer[] { LocalSelectionTransfer.getTransfer() };
 
 		// drag listener
-		DragSourceListener listener = new DragSourceAdapter() {
-
-			/**
-			 * {@inheritDoc}
-			 */
-			@Override
-			public void dragStart(DragSourceEvent event) {
-				super.dragStart(event);
-				event.data = paletteTreeViewer.getSelection();
-			}
-
-			/**
-			 * {@inheritDoc}
-			 */
-			@Override
-			public void dragSetData(DragSourceEvent event) {
-				super.dragSetData(event);
-				LocalSelectionTransfer.getTransfer().setSelection(paletteTreeViewer.getSelection());
-			}
-
-		};
+		DragSourceListener listener = new LocalSelectionDragSource(paletteTreeViewer);
 
 		paletteTreeViewer.addDragSupport(DND.DROP_MOVE, transfers, listener);
 	}
@@ -567,6 +557,11 @@ public class LocalPaletteContentPage extends WizardPage implements Listener {
 	 */
 	protected void checkSelectionForDrop(IStructuredSelection transferedSelection, TreeItem item, DropTargetEvent event) {
 		event.detail = DND.DROP_NONE;
+
+		if (transferedSelection == null) {
+			return;
+		}
+
 		Object entry = transferedSelection.getFirstElement();
 		// handle only first selected element
 		if (item == null) {
@@ -762,7 +757,7 @@ public class LocalPaletteContentPage extends WizardPage implements Listener {
 					return;
 				}
 
-				Iterator<Object> it = selection.iterator();
+				Iterator<?> it = selection.iterator();
 				while (it.hasNext()) {
 					Object o = it.next();
 					if (o instanceof PaletteEntryProxy) {
@@ -1237,7 +1232,16 @@ public class LocalPaletteContentPage extends WizardPage implements Listener {
 
 		int profileNumber = profiles.size();
 		for (int i = 0; i < profileNumber; i++) {
-			profileComboList.add(i, profiles.get(i).getName());
+			String name;
+			if (profiles.get(i).eIsProxy()) {
+				name = NLS.bind("<unresolved: {0}>", URI.decode(EcoreUtil.getURI(profiles.get(i)).lastSegment()));
+			} else {
+				name = profiles.get(i).getName();
+				if (name == null) {
+					name = NLS.bind("<unnamed: {0}>", URI.decode(EcoreUtil.getURI(profiles.get(i)).lastSegment()));
+				}
+			}
+			profileComboList.add(i, name);
 		}
 		profileComboList.add(UML_TOOLS_LABEL);
 		profileCombo.setItems(profileComboList.toArray(new String[] {}));
@@ -1268,7 +1272,7 @@ public class LocalPaletteContentPage extends WizardPage implements Listener {
 		if (topPackage != null) {
 			return topPackage.getAllAppliedProfiles();
 		}
-		return Collections.EMPTY_LIST;
+		return Collections.emptyList();
 	}
 
 	/**
@@ -1279,27 +1283,7 @@ public class LocalPaletteContentPage extends WizardPage implements Listener {
 		Transfer[] transfers = new Transfer[] { LocalSelectionTransfer.getTransfer() };
 
 		// drag listener
-		DragSourceListener listener = new DragSourceAdapter() {
-
-			/**
-			 * {@inheritDoc}
-			 */
-			@Override
-			public void dragStart(DragSourceEvent event) {
-				super.dragStart(event);
-				event.data = availableToolsViewer.getSelection();
-			}
-
-			/**
-			 * {@inheritDoc}
-			 */
-			@Override
-			public void dragSetData(DragSourceEvent event) {
-				super.dragSetData(event);
-				LocalSelectionTransfer.getTransfer().setSelection(availableToolsViewer.getSelection());
-			}
-
-		};
+		DragSourceListener listener = new LocalSelectionDragSource(availableToolsViewer);
 
 		availableToolsViewer.addDragSupport(DND.DROP_LINK, transfers, listener);
 	}
@@ -2164,12 +2148,12 @@ public class LocalPaletteContentPage extends WizardPage implements Listener {
 							List<Class> metaclasses = stereotype.getAllExtendedMetaclasses();
 							for (Class stMetaclass : metaclasses) {
 								// get Eclass
-								java.lang.Class metaclassClass = stMetaclass.getClass();
+								java.lang.Class<?> metaclassClass = stMetaclass.getClass();
 								if (metaclassClass != null) {
 									EClassifier metaClassifier = UMLPackage.eINSTANCE.getEClassifier(stMetaclass.getName());
 									if (((EClass) metaClassifier).isSuperTypeOf(toolMetaclass)) {
 										// should create the palette entry
-										HashMap properties = new HashMap();
+										Map<String, Object> properties = new HashMap<String, Object>();
 										properties.put(IPapyrusPaletteConstant.ASPECT_ACTION_KEY, StereotypeAspectActionProvider.createConfigurationNode(stereotype.getQualifiedName()));
 										AspectCreationEntry aspectEntry = new AspectCreationEntry(stereotype.getName() + " (" + entry.getLabel() + ")", "Create an element with a stereotype", entry.getId() + "_" + System.currentTimeMillis(),
 												entry.getSmallIcon(), (CombinedTemplateCreationEntry) entry, properties);
@@ -2279,13 +2263,12 @@ public class LocalPaletteContentPage extends WizardPage implements Listener {
 							List<Class> metaclasses = stereotype.getAllExtendedMetaclasses();
 							for (Class stMetaclass : metaclasses) {
 								// get Eclass
-								java.lang.Class metaclassClass = stMetaclass.getClass();
+								java.lang.Class<?> metaclassClass = stMetaclass.getClass();
 								if (metaclassClass != null) {
 									EClassifier metaClassifier = UMLPackage.eINSTANCE.getEClassifier(stMetaclass.getName());
 									if (((EClass) metaClassifier).isSuperTypeOf(toolMetaclass)) {
 										// should create the palette entry
-										HashMap properties = new HashMap();
-										ArrayList<String> stereotypesQNToApply = new ArrayList<String>();
+										Map<String, Object> properties = new HashMap<String, Object>();
 										properties.put(IPapyrusPaletteConstant.ASPECT_ACTION_KEY, StereotypeAspectActionProvider.createConfigurationNode(stereotype.getQualifiedName()));
 										AspectCreationEntry aspectEntry = new AspectCreationEntry(stereotype.getName() + " (" + entry.getLabel() + ")", "Create an element with a stereotype", entry.getId() + "_" + System.currentTimeMillis(),
 												entry.getSmallIcon(), entry, properties);
@@ -2467,5 +2450,38 @@ public class LocalPaletteContentPage extends WizardPage implements Listener {
 	 */
 	public void setPriority(ProviderPriority priority) {
 		this.priority = priority;
+	}
+
+	protected static class LocalSelectionDragSource extends DragSourceAdapter {
+		private ISelectionProvider selectionSource;
+
+		public LocalSelectionDragSource(ISelectionProvider selectionProvider) {
+			selectionSource = selectionProvider;
+		}
+
+		@Override
+		public void dragStart(DragSourceEvent event) {
+			super.dragStart(event);
+			LocalSelectionTransfer.getTransfer().setSelection(selectionSource.getSelection());
+		}
+
+		/**
+		 * {@inheritDoc}
+		 */
+		@Override
+		public void dragSetData(DragSourceEvent event) {
+			super.dragSetData(event);
+			LocalSelectionTransfer.getTransfer().setSelection(selectionSource.getSelection());
+		}
+
+		/**
+		 * {@inheritDoc}
+		 */
+		@Override
+		public void dragFinished(DragSourceEvent event) {
+			LocalSelectionTransfer.getTransfer().setSelection(null);
+			super.dragFinished(event);
+		}
+
 	}
 }

@@ -105,9 +105,8 @@ public class UseCaseImpl extends TraceableSpecificationImpl implements UseCase {
 			InternalEObject oldBase_UseCase = (InternalEObject) base_UseCase;
 			base_UseCase = (org.eclipse.uml2.uml.UseCase) eResolveProxy(oldBase_UseCase);
 			if (base_UseCase != oldBase_UseCase) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, UsecasesPackage.USE_CASE__BASE_USE_CASE, oldBase_UseCase, base_UseCase));
-				}
 			}
 		}
 		return base_UseCase;
@@ -133,9 +132,8 @@ public class UseCaseImpl extends TraceableSpecificationImpl implements UseCase {
 	public void setBase_UseCase(org.eclipse.uml2.uml.UseCase newBase_UseCase) {
 		org.eclipse.uml2.uml.UseCase oldBase_UseCase = base_UseCase;
 		base_UseCase = newBase_UseCase;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, UsecasesPackage.USE_CASE__BASE_USE_CASE, oldBase_UseCase, base_UseCase));
-		}
 	}
 
 	/**
@@ -201,9 +199,8 @@ public class UseCaseImpl extends TraceableSpecificationImpl implements UseCase {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case UsecasesPackage.USE_CASE__BASE_USE_CASE:
-			if (resolve) {
+			if (resolve)
 				return getBase_UseCase();
-			}
 			return basicGetBase_UseCase();
 		case UsecasesPackage.USE_CASE__INCLUDE:
 			return getInclude();

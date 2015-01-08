@@ -106,9 +106,8 @@ public class PeriodicConstraintImpl extends TimingConstraintImpl implements Peri
 			InternalEObject oldJitter = (InternalEObject) jitter;
 			jitter = (TimingExpression) eResolveProxy(oldJitter);
 			if (jitter != oldJitter) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TimingconstraintsPackage.PERIODIC_CONSTRAINT__JITTER, oldJitter, jitter));
-				}
 			}
 		}
 		return jitter;
@@ -134,9 +133,8 @@ public class PeriodicConstraintImpl extends TimingConstraintImpl implements Peri
 	public void setJitter(TimingExpression newJitter) {
 		TimingExpression oldJitter = jitter;
 		jitter = newJitter;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TimingconstraintsPackage.PERIODIC_CONSTRAINT__JITTER, oldJitter, jitter));
-		}
 	}
 
 	/**
@@ -151,9 +149,8 @@ public class PeriodicConstraintImpl extends TimingConstraintImpl implements Peri
 			InternalEObject oldPeriod = (InternalEObject) period;
 			period = (TimingExpression) eResolveProxy(oldPeriod);
 			if (period != oldPeriod) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TimingconstraintsPackage.PERIODIC_CONSTRAINT__PERIOD, oldPeriod, period));
-				}
 			}
 		}
 		return period;
@@ -179,9 +176,8 @@ public class PeriodicConstraintImpl extends TimingConstraintImpl implements Peri
 	public void setPeriod(TimingExpression newPeriod) {
 		TimingExpression oldPeriod = period;
 		period = newPeriod;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TimingconstraintsPackage.PERIODIC_CONSTRAINT__PERIOD, oldPeriod, period));
-		}
 	}
 
 	/**
@@ -196,9 +192,8 @@ public class PeriodicConstraintImpl extends TimingConstraintImpl implements Peri
 			InternalEObject oldMinimum = (InternalEObject) minimum;
 			minimum = (TimingExpression) eResolveProxy(oldMinimum);
 			if (minimum != oldMinimum) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TimingconstraintsPackage.PERIODIC_CONSTRAINT__MINIMUM, oldMinimum, minimum));
-				}
 			}
 		}
 		return minimum;
@@ -224,9 +219,8 @@ public class PeriodicConstraintImpl extends TimingConstraintImpl implements Peri
 	public void setMinimum(TimingExpression newMinimum) {
 		TimingExpression oldMinimum = minimum;
 		minimum = newMinimum;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TimingconstraintsPackage.PERIODIC_CONSTRAINT__MINIMUM, oldMinimum, minimum));
-		}
 	}
 
 	/**
@@ -241,9 +235,8 @@ public class PeriodicConstraintImpl extends TimingConstraintImpl implements Peri
 			InternalEObject oldEvent = (InternalEObject) event;
 			event = (Event) eResolveProxy(oldEvent);
 			if (event != oldEvent) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TimingconstraintsPackage.PERIODIC_CONSTRAINT__EVENT, oldEvent, event));
-				}
 			}
 		}
 		return event;
@@ -269,9 +262,8 @@ public class PeriodicConstraintImpl extends TimingConstraintImpl implements Peri
 	public void setEvent(Event newEvent) {
 		Event oldEvent = event;
 		event = newEvent;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TimingconstraintsPackage.PERIODIC_CONSTRAINT__EVENT, oldEvent, event));
-		}
 	}
 
 	/**
@@ -284,24 +276,20 @@ public class PeriodicConstraintImpl extends TimingConstraintImpl implements Peri
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case TimingconstraintsPackage.PERIODIC_CONSTRAINT__JITTER:
-			if (resolve) {
+			if (resolve)
 				return getJitter();
-			}
 			return basicGetJitter();
 		case TimingconstraintsPackage.PERIODIC_CONSTRAINT__PERIOD:
-			if (resolve) {
+			if (resolve)
 				return getPeriod();
-			}
 			return basicGetPeriod();
 		case TimingconstraintsPackage.PERIODIC_CONSTRAINT__MINIMUM:
-			if (resolve) {
+			if (resolve)
 				return getMinimum();
-			}
 			return basicGetMinimum();
 		case TimingconstraintsPackage.PERIODIC_CONSTRAINT__EVENT:
-			if (resolve) {
+			if (resolve)
 				return getEvent();
-			}
 			return basicGetEvent();
 		}
 		return super.eGet(featureID, resolve, coreType);

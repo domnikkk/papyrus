@@ -1,0 +1,223 @@
+Papyrus has already have code generation support for [http://wiki.eclipse.org/Papyrus/Codegen/Cpp_description C++] and  [http://wiki.eclipse.org/Java_Code_Generation Java] programming languages. Besides, support for Ada and C programming languages are also on the way. However, it is possible to develop and integrate new code generators for other programming languages to Papyrus. In this article you will find how add a new code generator to Papyrus from scratch.
+
+== Preparing the Development Environment (Prerequisites) ==
+This section provides a step-by-step guide to set up your development environment in order to be able to add a new code generator for Papyrus.
+
+Assuming that [https://www.eclipse.org/papyrus/updates/ you have already installed Papyrus], here are the steps you need to follow:
+* Install the '''Qompass (Incubation)''' modeler extension from '''Help > Install Papyrus Additional Components'''.
+[[File:Papyrus_Additional_Components_Discovery.png]]
+* Install the ''Xtend IDE''' extension from '''Help > Install New Software...''' (select the site '''Luna - http://download.eclipse.org/releases/luna''').
+[[File:CodeGen-Xtend-Installation.png]]
+* Clone [http://git.eclipse.org/c/papyrus/org.eclipse.papyrus.git the Eclipse/Papyrus git repository] to your local computer.
+
+== Preparing the Required Projects ==
+To be able to develop a new code generator for a programming language (let's say the '''X''' programming language), you need to create three different (but interrelated) projects. 
+* A main eclipse plug-in project for developing the code generator, which you should name it as '''org.eclipse.papyrus.''x''.codegen'''
+* An eclipse plug-in project for connecting the code generator to the user interface of Qompass, which you should name it as '''org.eclipse.papyrus.''x''.codegen.ui'''
+* Another eclipse plug-in project for developing the tests of the code generator, which you should name it as '''org.eclipse.papyrus.''x''.codegen.tests'''
+
+Now, let's create and prepare all these projects one by one.
+
+
+=== The Main Code Generation Project for the Hypothetical X Programming Language===
+Here are the steps for creating and setting the '''org.eclipse.papyrus.x.codegen''' project:
+
+* Create an eclipse plug-in project. In the '''Project name''' box type '''org.eclipse.papyrus.x.codegen''' (as shown) and then click '''Next >'''.
+[[File:CodeGen-Plugin-Project-Creation.png]]
+
+* In the '''Version''' box type the version number of our target Papyrus (in our case to '''1.0.1.qualifier'''), in the '''Name''' box type '''%pluginName''', in the '''Vendor''' box type '''%providerName''' and then click '''Finish'''.
+[[File:CodeGen-Plugin-Project-Creation-2.png]]
+
+* Upon a successful project creation, you will switch to the '''Plug-in Development''' perspective and see an Eclipse workbench window like below.
+[[File:CodeGen-Plugin-Project-Creation-3.png]]
+
+* The project is created. Now, you need to do the required settings for integrating your project to Papyrus. Firstly, add a dependency to the '''org.eclipse.papyrus.codegen.extensionpoints''' extension point.
+[[File:CodeGen-Plugin-Project-Creation-4.png]]
+
+* Then add a new language support extension called '''org.eclipse.papyrus.codegen.extensionpoints.language'''. 
+[[File:CodeGen-Plugin-Project-Creation-5.png]]
+
+* After, create a client for this extension as shown.
+[[File:CodeGen-Plugin-Project-Creation-6.png]]
+
+* And type in this client's '''language*''' box '''X''', and in the '''class''' box type '''org.eclipse.papyrus.x.codegen.XLanguageSupport'''.
+[[File:CodeGen-Plugin-Project-Creation-7.png]]
+
+* Since you do not have such a class yet, you will see a warning like below.
+[[File:CodeGen-Plugin-Project-Creation-8.png]]
+
+* Double click on this warning. go to the warning icon on the opened editor and click '''Create org.eclipse.papyrus.x.codegen.XLanguageSupport ...'''.
+[[File:CodeGen-Plugin-Project-Creation-9.png]]
+
+* On the upcoming dialog box, do not change anything and click '''Finish'''.
+[[File:CodeGen-Plugin-Project-Creation-10.png]]
+
+* Upon creation, you will see "XLanguageSupport.java" as below. To remove the errors, implement the methods coming from the '''ILangSupport''' interface.
+[[File:CodeGen-Plugin-Project-Creation-11.png]]
+
+* However, there will now be other errors due to the new dependencies. 
+[[File:CodeGen-Plugin-Project-Creation-12.png]]
+
+* For importing the '''PackageableElement''' and '''Class''' classes, you need the '''org.eclipse.uml2.uml''' plug-in and, for importing the '''IProject''' interface, you need the '''org.eclipse.core.resources''' plug-in. Add them as dependencies as shown below.
+[[File:CodeGen-Plugin-Project-Creation-13.png]]
+
+* Now, there must be no problem in our project.
+[[File:CodeGen-Plugin-Project-Creation-14.png]]
+
+=== The User Interface Project===
+Here are the steps for creating and setting the '''org.eclipse.papyrus.x.codegen.ui''' project:
+
+* Create an eclipse plug-in project. In the '''Project name''' box type '''org.eclipse.papyrus.x.codegen.ui''' (as shown) and then click '''Next >'''.
+[[File:CodeGen-Plugin-Project-UI-Creation.png]]
+
+* In the '''Version''' box type the version number of our target Papyrus (in your case to '''1.0.1.qualifier'''), in the '''Name''' box type '''%pluginName''', in the '''Vendor''' box type '''%providerName''' and then click '''Finish'''.
+[[File:CodeGen-Plugin-Project-UI-Creation-2.png]]
+
+* Upon a successful project creation, you will switch to the '''Plug-in Development''' perspective and see a window like below.
+[[File:CodeGen-Plugin-Project-UI-Creation-3.png]]
+
+* The project is created. Now, you need to do the required settings for integrating this user interface project to the main code generation project. Firstly, add a dependency to the '''org.eclipse.papyrus.x.codegen''' plug-in, in which you prepared in the previous step.
+[[File:CodeGen-Plugin-Project-UI-Creation-4.png]]
+
+* Now you need to add some extensions for organizing your menus. Firstly, add '''org.eclipse.ui.menus'''.
+[[File:CodeGen-Plugin-Project-UI-Creation-5.png]]
+
+* However, upon this addition, you may see a '''No schema found for the 'org.eclipse.ui.menus' extension point''' warning message as shown.
+[[File:CodeGen-Plugin-Project-UI-Creation-6.png]]
+
+* In this case,install '''Eclipse RCP Target Components''' to your eclipse from '''The Eclipse Project Updates''' software site.
+[[File:CodeGen-Plugin-Project-UI-Creation-7.png]]
+
+* After following the installation instructions and restarting your eclipse, things will be fine.
+[[File:CodeGen-Plugin-Project-UI-Creation-8.png]]
+
+* Now add a menu contribution to the extension you added and...
+[[File:CodeGen-Plugin-Project-UI-Creation-9.png]]
+
+* ...in the '''locationURI''' box type '''popup:org.eclipse.papyrus.views.modelexplorer.popup.codegen'''.
+[[File:CodeGen-Plugin-Project-UI-Creation-10.png]]
+
+* Then create a command for this menu contribution and...
+[[File:CodeGen-Plugin-Project-UI-Creation-11.png]]
+
+* ...in the '''commandID''' box type '''org.eclipse.papyrus.x.codegen.command''', in the '''label''' and '''tooltip''' boxes type '''Generate X code'''.
+[[File:CodeGen-Plugin-Project-UI-Creation-12.png]]
+
+* The second extension you need to add is '''org.eclipse.ui.commands''' and you need to create a command for it also, which has the following the properties: in the '''id''' box type '''org.eclipse.papyrus.x.codegen.command''', in the '''name''' and '''description''' bozes type '''Generate X Code''', in the '''categoryId''' box type '''org.eclipse.papyrus.editor.category''' and in the '''defaultHandler''' box type '''org.eclipse.papyrus.x.codegen.ui.handlers.GenerateCodeHandler'''.
+[[File:CodeGen-Plugin-Project-UI-Creation-13.png]]
+
+* Careful readers has already noticed that there is a warning occuring after this step (see the '''Problems''' tab on the above figure). The reason for this warning is that you defined a default handler that does not exist yet. To go to source of the problem, double-click to the warning and create a new handler class (keep default properties in the create class dialog window).
+[[File:CodeGen-Plugin-Project-UI-Creation-14.png]]
+
+* The created handler class should extend the '''CmdHandler''' class which is located in the '''org.eclipse.papyrus.uml.diagram.common''' plug-in. Thus, add this plug-in to the dependencies and then implement the unimplemented methods. To see how this handler is executed, add a system verbose inside its '''execute()''' method.
+[[File:CodeGen-Plugin-Project-UI-Creation-14-2.png]]
+
+* The last extension you need to add is '''org.eclipse.ui.preferencePages'''. Upon its creation, it comes with a default page. Modify the properties of this page as follows: in the '''id''' box type '''org.eclipse.papyrus.x.codegen.ui.preferences.CodeGenPreferencePage''', in the '''name''' box type '''X code generation''', in the '''class''' box type '''org.eclipse.papyrus.x.codegen.ui.preferences.CodegenPreferencePage''' and in the '''category''' box type '''org.eclipse.papyrus.infra.core.sasheditor.preferences.generalcategory'''.
+[[File:CodeGen-Plugin-Project-UI-Creation-15.png]]
+
+* However, like before, there is a warning occuring after this step (see the '''Problems''' tab on the above figure). The reason for this warning is that you defined a '''preference page''' that does not exist yet. To go to source of the problem, double-click to this warning and creat a new preference page class (keep default properties in the create class dialog window).
+[[File:CodeGen-Plugin-Project-UI-Creation-15-2.png]]
+
+* The created preference page class should extend the '''PreferencePage''' class and implement the '''IWorkbenchPreferencePage''' interface. Normally, no modification is needed after the creation of the preference page class.
+[[File:CodeGen-Plugin-Project-UI-Creation-15-3.png]]
+
+* Now let's try what you have done so far and see your code generation menu on a real case. In this sense, to create an '''Eclipse Application''' run configuration click '''Run > Run Configurations...''' and in the '''VM arguments''' box type: '''-Dosgi.requiredJavaVersion=1.6 -Xms40m -Xmx512m -XX:MaxPermSize=1024m'''.
+[[File:CodeGen-Plugin-Project-UI-Creation-16.png]]
+
+* Then click '''Run''' to run our eclipse application. In the new eclipse instance, click '''File > New > Example...''', click '''C/C++ hello world example''' under the '''Papyrus examples''' folder and click '''Next >'''.
+[[File:CodeGen-Plugin-Project-UI-Creation-17.png]]
+
+* After, select a parent folder for your example and click '''Finish'''. In this example, there is a '''CodeGenerationExamples''' java project that was created in advance. 
+[[File:CodeGen-Plugin-Project-UI-Creation-18.png]]
+
+* The example project will be created and the '''HelloWorldOO.di''' Papyrus model will be opened directly. There is only one class diagram which is called '''HelloWorld''' in this model. Now, right click on the '''HelloWorld''' class and go to '''Code Generation'''. You need to see '''Generate X code''' there, click it! (Curious readers may click '''Generate C++ code''' and see how Qompass generates C++ codes.)
+[[File:CodeGen-Plugin-Project-UI-Creation-19.png]]
+
+* Clicking the '''Generate X code''' pop-up menu will cause the handler to execute and thus you need to see the system verbose you defined the handler class on the console of the main workbench.
+[[File:CodeGen-Plugin-Project-UI-Creation-20.png]]
+
+If all the steps worked fine, you can go on by creating the test project of your code generator.
+
+=== The Test Project===
+Here are the steps for creating and setting the "org.eclipse.papyrus.x.codegen.tests" project:
+
+== Developing the New Code Generator ==
+
+To develop a new code generator, you will use [https://www.eclipse.org/xtend/ the Xtend language]. For starting Xtend, see [https://www.youtube.com/watch?v=EzH5MPd13iI the Xtend introductory video] and [https://www.eclipse.org/xtend/documentation.html the Xtend documentation].
+
+=== Basic Configuration ===
+
+Here are the basic configuration steps for developing the example code generator:
+
+* Add the '''org.eclipse.uml2.uml''' and '''org.eclipse.core.resources''' plug-ins as dependencies to the '''org.eclipse.papyrus.x.codegen.ui''' project.
+[[File:CodeGen-Xtend-00-01.png]]
+
+* Change the '''execute()''' method of  the '''GenerateCodeHandler''' class as follows.
+[[File:CodeGen-Xtend-00-02.png]]
+
+* Create a '''getCurentProject()''' method in the same class.
+[[File:CodeGen-Xtend-00-03.png]]
+
+* Create a new java class named '''XModelElementsCreator'''.
+[[File:CodeGen-Xtend-00-04.png]]
+
+* In the '''Source folder''' box type '''org.eclipse.papyrus.x.codegen/src''', in the '''Package''' box type '''org.eclipse.papyrus.x.codegen.transformations''' and in the '''Superclass''' box type '''org.eclipse.papyrus.codegen.base.ModelElementsCreator'''. Then click '''Finish'''.
+[[File:CodeGen-Xtend-00-05.png]]
+
+* Upon creation, you will have an error about having no contructor methods in '''XModelElementsCreator'''. Add a public constructor as shown.
+[[File:CodeGen-Xtend-00-06.png]]
+
+* Go back to '''GenerateCodeHandler''' and organize imports (Ctrl+Shift+O). You will encounter an access restriction problem. To resolve it, export the '''org.eclipse.papyrus.x.codegen.transformations''' package from the '''org.eclipse.papyrus.x.codegen''' plug-in as shown.
+[[File:CodeGen-Xtend-00-07.png]]
+
+* Add the '''org.eclipse.papyrus.codegen.base''' plug-in as a dependency to the '''org.eclipse.papyrus.x.codegen.ui''' project and then add a '''generate()''' method to the '''GenerateCodeHandler''' class as shown.
+[[File:CodeGen-Xtend-00-08.png]]
+
+* Change the '''createPackageableElementFile()''' method of '''XModelElementsCreator''' and add the '''generatePackage()''' method used by this method.
+[[File:CodeGen-Xtend-00-09.png]]
+
+* Create a new '''org.eclipse.papyrus.x.codegen.xtend''' package inside the '''org.eclipse.papyrus.x.codegen''' project from '''File > New > Package''' and click '''Finish'''.
+[[File:CodeGen-Xtend-00-10.png]]
+
+* Create a new '''Xtend class''' inside this package from '''File > New > Other...''' .
+[[File:CodeGen-Xtend-00-11.png]]
+
+* In the '''Name''' box type '''XPackageHeaderGenerator''' and click '''Finish'''.
+[[File:CodeGen-Xtend-00-12.png]]
+
+* Go back to '''XModelElementsCreator''' and organize imports (Ctrl+Shift+O). Then come back to '''XPackageHeaderGenerator''' and add a '''generateCode()''' method as shown.
+[[File:CodeGen-Xtend-00-13.png]]
+
+* Override the '''isEnabled()''' method in '''GenerateCodeHandler''' as below. 
+[[File:CodeGen-Xtend-00-14.png]]
+
+* Now let's try what you have done so far and see how your code generation works. Run the Eclipse workbench from '''Run > Run History > Eclipse Application'''.
+[[File:CodeGen-Xtend-00-15.png]]
+
+* Right click on the '''HelloWorld''' package and choose '''Code generation > Generate X code'''.
+[[File:CodeGen-Xtend-00-16.png]]
+
+* X code for the '''HelloWorld''' package is created in the '''HelloWorld.xx''' file. Double click on it from the '''Package Explorer''' and see the resulting generation.
+[[File:CodeGen-Xtend-00-17.png]]
+
+=== Advanced Options ===
+
+==== Generating the Code in a New Project ====
+<!--
+It is generally better to put the generated code in a new project, rather than putting it in the same project with the model. In order to this, here are the steps you need to follow:
+
+* Add the '''org.eclipse.papyrus.uml.tools.utils''' and '''org.eclipse.papyrus.codegen.extensionpoints''' plug-ins as dependencies to the '''org.eclipse.papyrus.x.codegen.ui''' project.
+[[File:CodeGen-Xtend-00-18.png]]
+
+* Go to the '''GenerateCodeHandler''' class and create a '''getTargetProject()''' method in this class.
+[[File:CodeGen-Xtend-00-19.png]]
+
+* Then replace the '''getCurrentProject()''' method call in '''execute()''' method with '''getTargetProject()''' method call.
+[[File:CodeGen-Xtend-00-20.png]]
+-->
+
+==== Dealing with Errors ====
+
+== Integrating the New Code Generator to Papyrus/Qompass ==
+
+The ultimate goal of developing a new code generator is to make it available to all users. If you want to integrate your new code generator into Papyrus/Qompass, just contact with us.

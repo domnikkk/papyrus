@@ -16,17 +16,17 @@ package org.eclipse.papyrus.uml.diagram.common.edit.part;
 import java.util.List;
 
 import org.eclipse.draw2d.IFigure;
-import org.eclipse.draw2d.geometry.Rectangle;
+import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.figures.IBorderItemLocator;
-import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.papyrus.infra.emf.appearance.helper.NameLabelIconHelper;
+import org.eclipse.papyrus.infra.emf.appearance.helper.AppearanceHelper;
+import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.PapyrusWrappingLabel;
 import org.eclipse.papyrus.sysml.diagram.common.Activator;
-import org.eclipse.papyrus.uml.diagram.common.figure.node.PapyrusWrappingLabel;
 import org.eclipse.papyrus.uml.diagram.common.util.DiagramEditPartsUtil;
 import org.eclipse.swt.graphics.Image;
+import org.eclipse.uml2.uml.Port;
 
 /**
  * This class implements a {@link Port} affixed label edit part.
@@ -47,6 +47,16 @@ public class PortAffixedLabelNameEditPart extends AbstractElementLabelEditPart i
 		super.createDefaultEditPolicies();
 	}
 
+	/**
+	 * @see org.eclipse.papyrus.infra.gmfdiag.common.editpart.PapyrusLabelEditPart#getDefaultTextAlignment()
+	 *
+	 * @return
+	 */
+	@Override
+	protected int getDefaultTextAlignment() {
+		return PositionConstants.LEFT;
+	}
+
 	@Override
 	public IBorderItemLocator getBorderItemLocator() {
 		IFigure parentFigure = getFigure().getParent();
@@ -55,21 +65,6 @@ public class PortAffixedLabelNameEditPart extends AbstractElementLabelEditPart i
 			return (IBorderItemLocator) constraint;
 		}
 		return null;
-	}
-
-	@Override
-	public void refreshBounds() {
-		int x = ((Integer) getStructuralFeatureValue(NotationPackage.eINSTANCE.getLocation_X())).intValue();
-		int y = ((Integer) getStructuralFeatureValue(NotationPackage.eINSTANCE.getLocation_Y())).intValue();
-		int width = ((Integer) getStructuralFeatureValue(NotationPackage.eINSTANCE.getSize_Width())).intValue();
-		int height = ((Integer) getStructuralFeatureValue(NotationPackage.eINSTANCE.getSize_Height())).intValue();
-
-		// Update locator constraint
-		IBorderItemLocator locator = getBorderItemLocator();
-		locator.setConstraint(new Rectangle(x, y, width, height));
-
-		// Set new constraint on parent figure
-		getFigure().getParent().setConstraint(getFigure(), locator);
 	}
 
 	/**
@@ -84,7 +79,7 @@ public class PortAffixedLabelNameEditPart extends AbstractElementLabelEditPart i
 
 		List<View> views = DiagramEditPartsUtil.findViews(parserElement, getViewer());
 		for (View view : views) {
-			if (NameLabelIconHelper.showLabelIcon(view)) {
+			if (AppearanceHelper.showElementIcon(view)) {
 				return Activator.getInstance().getLabelProvider().getImage(parserElement);
 			}
 		}

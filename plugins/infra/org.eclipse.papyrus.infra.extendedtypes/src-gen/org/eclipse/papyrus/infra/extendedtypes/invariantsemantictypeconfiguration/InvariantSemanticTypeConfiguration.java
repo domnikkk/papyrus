@@ -22,7 +22,7 @@ import org.eclipse.papyrus.infra.extendedtypes.SemanticTypeConfiguration;
  * <p>
  * The following features are supported:
  * <ul>
- * <li>{@link org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.InvariantSemanticTypeConfiguration#getInvariantRuleConfiguration <em>Invariant Rule Configuration</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.InvariantSemanticTypeConfiguration#getInvariantRuleConfiguration <em>Invariant Rule Configuration</em>}</li>
  * </ul>
  * </p>
  *
@@ -38,7 +38,6 @@ public interface InvariantSemanticTypeConfiguration extends SemanticTypeConfigur
 	 * If the meaning of the '<em>Invariant Rule Configuration</em>' containment reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Invariant Rule Configuration</em>' containment reference.
 	 * @see #setInvariantRuleConfiguration(InvariantRuleConfiguration)
 	 * @see org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.InvariantSemanticTypeConfigurationPackage#getInvariantSemanticTypeConfiguration_InvariantRuleConfiguration()
@@ -51,9 +50,7 @@ public interface InvariantSemanticTypeConfiguration extends SemanticTypeConfigur
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.InvariantSemanticTypeConfiguration#getInvariantRuleConfiguration <em>Invariant Rule Configuration</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Invariant Rule Configuration</em>' containment reference.
+	 * @param value the new value of the '<em>Invariant Rule Configuration</em>' containment reference.
 	 * @see #getInvariantRuleConfiguration()
 	 * @generated
 	 */

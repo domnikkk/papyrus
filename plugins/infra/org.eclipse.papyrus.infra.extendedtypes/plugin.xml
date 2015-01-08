@@ -71,22 +71,26 @@
          point="org.eclipse.papyrus.infra.extendedtypes.invariantRule">
       <invariantRule
             configurationClass="org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.AndRule"
-            editHelperAdvice="org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.AndRuleEditHelperAdvice">
+            editHelperAdvice="org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.AndRuleEditHelperAdvice"
+            elementMatcher="org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.AndRuleElementMatcher"
+            semanticTypeDescriptor="org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.AndRuleContainerDescriptor">
       </invariantRule>
    </extension>
    <extension
          point="org.eclipse.papyrus.infra.extendedtypes.invariantRule">
       <invariantRule
             configurationClass="org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.OrRule"
-            editHelperAdvice="org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.OrRuleEditHelperAdvice">
+            editHelperAdvice="org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.OrRuleEditHelperAdvice"
+            elementMatcher="org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.OrRuleElementMatcher"
+            semanticTypeDescriptor="org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.OrRuleContainerDescriptor">
       </invariantRule>
    </extension>
    <extension
          point="org.eclipse.papyrus.infra.extendedtypes.invariantRule">
       <invariantRule
             configurationClass="org.eclipse.papyrus.infra.extendedtypes.invariantcontainerconfiguration.InvariantContainerConfiguration"
-            configurationModelCreation="org.eclipse.papyrus.infra.extendedtypes.invariantcontainerconfiguration.InvariantContainerConfigurationModelCreation"
             editHelperAdvice="org.eclipse.papyrus.infra.extendedtypes.invariantcontainerconfiguration.InvariantContainerEditHelperAdvice"
+            elementMatcher="org.eclipse.papyrus.infra.extendedtypes.invariantcontainerconfiguration.InvariantContainerMatcher"
             semanticTypeDescriptor="org.eclipse.papyrus.infra.extendedtypes.invariantcontainerconfiguration.InvariantContainerConfigurationContainerDescriptor">
       </invariantRule>
    </extension>

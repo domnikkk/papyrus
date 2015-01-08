@@ -43,6 +43,7 @@
 		<module>../features/papyrus-main-features/org.eclipse.papyrus.views.validation.feature</module>
 		<module>../features/papyrus-main-features/org.eclipse.papyrus.xwt.feature</module>
 		<module>../plugins/doc/org.eclipse.papyrus.cdo.ui.doc</module>
+		<module>../plugins/doc/org.eclipse.papyrus.codegen.doc</module>
 		<module>../plugins/doc/org.eclipse.papyrus.copypaste.ui.doc</module>
 		<module>../plugins/doc/org.eclipse.papyrus.infra.services.controlmode.doc</module>
 		<module>../plugins/doc/org.eclipse.papyrus.layers.documentation</module>

@@ -93,9 +93,12 @@ public class DeploymentCreateCommand extends EditElementCommand {
 		}
 
 		Deployment newElement = UMLFactory.eINSTANCE.createDeployment();
-		getContainer().getDeployments().add(newElement);
-		newElement.getClients().add(getSource());
-		newElement.getSuppliers().add(getTarget());
+		getContainer().getDeployments()
+				.add(newElement);
+		newElement.getClients()
+				.add(getSource());
+		newElement.getSuppliers()
+				.add(getTarget());
 		ElementInitializers.getInstance().init_Deployment_4001(newElement);
 		doConfigure(newElement, monitor, info);
 		((CreateElementRequest) getRequest()).setNewElement(newElement);

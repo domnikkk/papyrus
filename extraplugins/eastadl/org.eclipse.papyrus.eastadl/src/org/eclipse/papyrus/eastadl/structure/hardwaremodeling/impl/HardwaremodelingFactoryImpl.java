@@ -103,7 +103,7 @@ public class HardwaremodelingFactoryImpl extends EFactoryImpl implements Hardwar
 		case HardwaremodelingPackage.IO_HARDWARE_PIN_KIND:
 			return convertIOHardwarePinKindToString(eDataType, instanceValue);
 		default:
-			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 	}
 
@@ -141,7 +141,7 @@ public class HardwaremodelingFactoryImpl extends EFactoryImpl implements Hardwar
 		case HardwaremodelingPackage.ACTUATOR:
 			return createActuator();
 		default:
-			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 	}
 
@@ -165,9 +165,8 @@ public class HardwaremodelingFactoryImpl extends EFactoryImpl implements Hardwar
 	 */
 	public HardwareBusKind createHardwareBusKindFromString(EDataType eDataType, String initialValue) {
 		HardwareBusKind result = HardwareBusKind.get(initialValue);
-		if (result == null) {
-			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		}
+		if (result == null)
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 		return result;
 	}
 
@@ -207,7 +206,7 @@ public class HardwaremodelingFactoryImpl extends EFactoryImpl implements Hardwar
 		case HardwaremodelingPackage.IO_HARDWARE_PIN_KIND:
 			return createIOHardwarePinKindFromString(eDataType, initialValue);
 		default:
-			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 	}
 
@@ -279,9 +278,8 @@ public class HardwaremodelingFactoryImpl extends EFactoryImpl implements Hardwar
 	 */
 	public IOHardwarePinKind createIOHardwarePinKindFromString(EDataType eDataType, String initialValue) {
 		IOHardwarePinKind result = IOHardwarePinKind.get(initialValue);
-		if (result == null) {
-			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		}
+		if (result == null)
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 		return result;
 	}
 

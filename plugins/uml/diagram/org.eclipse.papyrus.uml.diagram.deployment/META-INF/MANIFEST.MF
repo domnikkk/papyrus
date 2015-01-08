@@ -72,9 +72,6 @@ Require-Bundle: org.eclipse.gmf.runtime.diagram.ui.properties,
 Bundle-Vendor: %providerName
 Eclipse-LazyStart: true
 Bundle-Version: 1.0.1.qualifier
-Bundle-Activator: org.eclipse.papyrus.uml.diagram.deployment.part.UMLD
- iagramEditorPlugin
+Bundle-Activator: org.eclipse.papyrus.uml.diagram.deployment.part.UMLDiagramEditorPlugin
 Bundle-ManifestVersion: 2
-Bundle-SymbolicName: org.eclipse.papyrus.uml.diagram.deployment;single
- ton:=true
-
+Bundle-SymbolicName: org.eclipse.papyrus.uml.diagram.deployment; singleton:=true

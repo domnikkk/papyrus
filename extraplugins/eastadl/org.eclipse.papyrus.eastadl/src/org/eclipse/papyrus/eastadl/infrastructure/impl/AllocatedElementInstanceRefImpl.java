@@ -84,9 +84,8 @@ public class AllocatedElementInstanceRefImpl extends InstanceRefImpl implements 
 			InternalEObject oldAllocateableElement = (InternalEObject) allocateableElement;
 			allocateableElement = (AllocateableElement) eResolveProxy(oldAllocateableElement);
 			if (allocateableElement != oldAllocateableElement) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InfrastructurePackage.ALLOCATED_ELEMENT_INSTANCE_REF__ALLOCATEABLE_ELEMENT, oldAllocateableElement, allocateableElement));
-				}
 			}
 		}
 		return allocateableElement;
@@ -112,9 +111,8 @@ public class AllocatedElementInstanceRefImpl extends InstanceRefImpl implements 
 	public void setAllocateableElement(AllocateableElement newAllocateableElement) {
 		AllocateableElement oldAllocateableElement = allocateableElement;
 		allocateableElement = newAllocateableElement;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, InfrastructurePackage.ALLOCATED_ELEMENT_INSTANCE_REF__ALLOCATEABLE_ELEMENT, oldAllocateableElement, allocateableElement));
-		}
 	}
 
 	/**
@@ -141,9 +139,8 @@ public class AllocatedElementInstanceRefImpl extends InstanceRefImpl implements 
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case InfrastructurePackage.ALLOCATED_ELEMENT_INSTANCE_REF__ALLOCATEABLE_ELEMENT:
-			if (resolve) {
+			if (resolve)
 				return getAllocateableElement();
-			}
 			return basicGetAllocateableElement();
 		case InfrastructurePackage.ALLOCATED_ELEMENT_INSTANCE_REF__ALLOCATEABLE_ELEMENT_CONTEXT:
 			return getAllocateableElement_context();

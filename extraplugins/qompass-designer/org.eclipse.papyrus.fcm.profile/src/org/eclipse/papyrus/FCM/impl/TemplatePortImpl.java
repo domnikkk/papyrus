@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.papyrus.FCM.FCMPackage;
 import org.eclipse.papyrus.FCM.PortKind;
 import org.eclipse.papyrus.FCM.TemplatePort;
+import org.eclipse.papyrus.FCM.util.MapUtil;
 
 /**
  * <!-- begin-user-doc -->
@@ -69,13 +70,19 @@ public class TemplatePortImpl extends PortImpl implements TemplatePort {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
-	 * @generated
+	 * @generated NOT
 	 */
 	public PortKind basicGetBoundType() {
-		// TODO: implement this method to return the 'Bound Type' reference
-		// -> do not perform proxy resolution
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	       if(base_Port == null) {
+               return null;
+       }
+       if(base_Port.isConjugated()) {
+               return MapUtil.getBoundType(this);
+       }
+       else {
+               return MapUtil.getBoundType(this);
+       }
+
 	}
 
 	/**

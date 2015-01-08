@@ -386,7 +386,7 @@ public class TooltipUtil {
 			View topNodeView = getTopNodeView(model, semanticElement);
 			if (topNodeView != null) {
 				label = labelProvider.getText(topNodeView);
-				if (label.startsWith("<UnknownElement")) {
+				if (label != null && label.startsWith("<UnknownElement")) {
 					label = null;
 				}
 			}

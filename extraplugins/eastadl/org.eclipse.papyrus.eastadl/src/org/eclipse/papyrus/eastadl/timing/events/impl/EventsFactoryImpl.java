@@ -106,7 +106,7 @@ public class EventsFactoryImpl extends EFactoryImpl implements EventsFactory {
 		case EventsPackage.EVENT_FUNCTION_CLIENT_SERVER_PORT_KIND:
 			return convertEventFunctionClientServerPortKindToString(eDataType, instanceValue);
 		default:
-			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 	}
 
@@ -136,7 +136,7 @@ public class EventsFactoryImpl extends EFactoryImpl implements EventsFactory {
 		case EventsPackage.MODE_EVENT:
 			return createModeEvent();
 		default:
-			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 	}
 
@@ -232,9 +232,8 @@ public class EventsFactoryImpl extends EFactoryImpl implements EventsFactory {
 	 */
 	public EventFunctionClientServerPortKind createEventFunctionClientServerPortKindFromString(EDataType eDataType, String initialValue) {
 		EventFunctionClientServerPortKind result = EventFunctionClientServerPortKind.get(initialValue);
-		if (result == null) {
-			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		}
+		if (result == null)
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 		return result;
 	}
 
@@ -262,7 +261,7 @@ public class EventsFactoryImpl extends EFactoryImpl implements EventsFactory {
 		case EventsPackage.EVENT_FUNCTION_CLIENT_SERVER_PORT_KIND:
 			return createEventFunctionClientServerPortKindFromString(eDataType, initialValue);
 		default:
-			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 	}
 

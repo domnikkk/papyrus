@@ -19,7 +19,7 @@ import org.eclipse.gmf.runtime.emf.type.core.IElementMatcher;
 
 
 /**
- * @author RS211865
+ * Element Matcher composed of a list of element matchers that should all match in order for this one to match
  */
 public class ComposedElementMatcher implements IElementMatcher {
 

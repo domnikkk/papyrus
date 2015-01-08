@@ -428,5 +428,19 @@
             uri="http:///RSAToPapyrusParameters.ecore">
       </profile>
    </extension>
-
+   
+   <extension
+   		point="org.eclipse.ui.importWizards">
+   		<wizard
+   			category="org.eclipse.papyrus.infra.core.importcategory"
+   			class="org.eclipse.papyrus.migration.rsa.wizard.TransformationWizard"
+   			icon="icons/import_wiz_16x16.gif"
+   			id="org.eclipse.papyrus.migration.rsa.transformationWizard"
+   			name="RSA Models/Profiles">
+   			<description>
+   				Select and transform .emx and .epx files through the wizard window
+   			</description>
+   		</wizard>
+   	</extension>
+	
 </plugin>

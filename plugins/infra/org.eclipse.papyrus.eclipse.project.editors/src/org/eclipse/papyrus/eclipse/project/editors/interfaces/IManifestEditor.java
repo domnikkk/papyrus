@@ -49,7 +49,7 @@ public interface IManifestEditor extends IProjectEditor, IFileEditor {
 
 	/** the key for the bundle localization */
 	public static final String BUNDLE_LOCALIZATION = "Bundle-Localization"; //$NON-NLS-1$
-
+	
 	/**
 	 *
 	 * @param dependency

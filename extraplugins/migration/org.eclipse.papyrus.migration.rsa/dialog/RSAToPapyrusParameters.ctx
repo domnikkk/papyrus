@@ -1,33 +1,84 @@
 <?xml version="1.0" encoding="ASCII"?>
-<contexts:Context xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:constraints="http://www.eclipse.org/papyrus/constraints/0.9" xmlns:contexts="http://www.eclipse.org/papyrus/properties/contexts/0.9" name="RSAToPapyrusParameters">
-  <tabs label="RSAToPapyrusParameters" id="rsatopapyrusparameters" priority="100">
-    <sections name="Single Config" sectionFile="ui/SingleConfig.xwt">
+<contexts:Context xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:constraints="http://www.eclipse.org/papyrus/constraints/0.9" xmlns:contexts="http://www.eclipse.org/papyrus/properties/contexts/0.9" xmi:id="_zJ4D0HZLEeSwiJkQAQl2Jg" name="RSAToPapyrusParameters">
+  <tabs xmi:id="_5w-6sHZLEeSwiJkQAQl2Jg" label="RSAToPapyrusParameters" id="rsatopapyrusparameters" priority="100">
+    <sections xmi:id="_5w-6sXZLEeSwiJkQAQl2Jg" name="Single Config" sectionFile="ui/SingleConfig.xwt">
       <widget href="ui/SingleConfig.xwt#/"/>
     </sections>
-    <sections name="Multiple Config" sectionFile="ui/MultipleConfig.xwt">
+    <sections xmi:id="_5w-6snZLEeSwiJkQAQl2Jg" name="Single MappingParameters" sectionFile="ui/SingleMappingParameters.xwt">
+      <widget href="ui/SingleMappingParameters.xwt#/"/>
+    </sections>
+    <sections xmi:id="_5w-6s3ZLEeSwiJkQAQl2Jg" name="Single URIMapping" sectionFile="ui/SingleURIMapping.xwt">
+      <widget href="ui/SingleURIMapping.xwt#/"/>
+    </sections>
+    <sections xmi:id="_5w-6tHZLEeSwiJkQAQl2Jg" name="Multiple Config" sectionFile="ui/MultipleConfig.xwt">
       <widget href="ui/MultipleConfig.xwt#/"/>
     </sections>
+    <sections xmi:id="_5w-6tXZLEeSwiJkQAQl2Jg" name="Multiple MappingParameters" sectionFile="ui/MultipleMappingParameters.xwt">
+      <widget href="ui/MultipleMappingParameters.xwt#/"/>
+    </sections>
+    <sections xmi:id="_5w-6tnZLEeSwiJkQAQl2Jg" name="Multiple URIMapping" sectionFile="ui/MultipleURIMapping.xwt">
+      <widget href="ui/MultipleURIMapping.xwt#/"/>
+    </sections>
   </tabs>
-  <views name="Single Config" sections="//@tabs.0/@sections.0" automaticContext="true" datacontexts="//@dataContexts.0/@elements.0">
-    <constraints xsi:type="constraints:SimpleConstraint" name="isSingleConfig">
+  <views xmi:id="_zJ4D0XZLEeSwiJkQAQl2Jg" name="Single Config" sections="_5w-6sXZLEeSwiJkQAQl2Jg" automaticContext="true" datacontexts="_zJ4D6nZLEeSwiJkQAQl2Jg">
+    <constraints xsi:type="constraints:SimpleConstraint" xmi:id="_zJ4D0nZLEeSwiJkQAQl2Jg" name="isSingleConfig">
       <constraintType href="ppe:/environment/org.eclipse.papyrus.views.properties/model/Environment.xmi#//@constraintTypes.0"/>
-      <properties xsi:type="constraints:ValueProperty" name="nsUri" value="http:///RSAToPapyrusParameters.ecore"/>
-      <properties xsi:type="constraints:ValueProperty" name="className" value="Config"/>
+      <properties xsi:type="constraints:ValueProperty" xmi:id="_zJ4D03ZLEeSwiJkQAQl2Jg" name="className" value="Config"/>
+      <properties xsi:type="constraints:ValueProperty" xmi:id="_zJ4D1HZLEeSwiJkQAQl2Jg" name="nsUri" value="http:///RSAToPapyrusParameters.ecore"/>
     </constraints>
   </views>
-  <views elementMultiplicity="-1" name="Multiple Config" sections="//@tabs.0/@sections.1" automaticContext="true" datacontexts="//@dataContexts.0/@elements.0">
-    <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleConfig">
+  <views xmi:id="_zJ4D1XZLEeSwiJkQAQl2Jg" name="Single MappingParameters" sections="_5w-6snZLEeSwiJkQAQl2Jg" automaticContext="true" datacontexts="_zJ4D8XZLEeSwiJkQAQl2Jg">
+    <constraints xsi:type="constraints:SimpleConstraint" xmi:id="_zJ4D1nZLEeSwiJkQAQl2Jg" name="isSingleMappingParameters">
       <constraintType href="ppe:/environment/org.eclipse.papyrus.views.properties/model/Environment.xmi#//@constraintTypes.0"/>
-      <properties xsi:type="constraints:ValueProperty" name="className" value="Config"/>
-      <properties xsi:type="constraints:ValueProperty" name="nsUri" value="http:///RSAToPapyrusParameters.ecore"/>
+      <properties xsi:type="constraints:ValueProperty" xmi:id="_zJ4D13ZLEeSwiJkQAQl2Jg" name="nsUri" value="http:///RSAToPapyrusParameters.ecore"/>
+      <properties xsi:type="constraints:ValueProperty" xmi:id="_zJ4D2HZLEeSwiJkQAQl2Jg" name="className" value="MappingParameters"/>
     </constraints>
   </views>
-  <dataContexts name="RSAToPapyrusParameters" label="RSAToPapyrusParameters">
-    <elements name="Config">
-      <properties name="convertOpaqueExpressionToLiteralString" type="Boolean" description="If true, the Opaque Expressions with a single body and no language (or a single empty language) will be converted to LiteralString"/>
-      <properties name="removeUnmappedProfilesAndStereotypes" type="Boolean" description="If true, the unsupported RSA profiles and stereotypes will be deleted. This includes the Deployment profile and a few stereotypes"/>
-      <properties name="removeUnmappedAnnotations" type="Boolean" description="If true, the unmapped RSA EAnnotations will be deleted from the imported model"/>
-      <properties name="removeUnmappedDiagrams" label="" type="Boolean" description="If true, the diagrams which were not migrated will be removed. Otherwise, only the successfully imported diagrams will be removed"/>
+  <views xmi:id="_zJ4D2XZLEeSwiJkQAQl2Jg" name="Single URIMapping" sections="_5w-6s3ZLEeSwiJkQAQl2Jg" automaticContext="true" datacontexts="_zJ4D83ZLEeSwiJkQAQl2Jg">
+    <constraints xsi:type="constraints:SimpleConstraint" xmi:id="_zJ4D2nZLEeSwiJkQAQl2Jg" name="isSingleURIMapping">
+      <constraintType href="ppe:/environment/org.eclipse.papyrus.views.properties/model/Environment.xmi#//@constraintTypes.0"/>
+      <properties xsi:type="constraints:ValueProperty" xmi:id="_zJ4D23ZLEeSwiJkQAQl2Jg" name="nsUri" value="http:///RSAToPapyrusParameters.ecore"/>
+      <properties xsi:type="constraints:ValueProperty" xmi:id="_zJ4D3HZLEeSwiJkQAQl2Jg" name="className" value="URIMapping"/>
+    </constraints>
+  </views>
+  <views xmi:id="_zJ4D3XZLEeSwiJkQAQl2Jg" elementMultiplicity="-1" name="Multiple Config" sections="_5w-6tHZLEeSwiJkQAQl2Jg" automaticContext="true" datacontexts="_zJ4D6nZLEeSwiJkQAQl2Jg">
+    <constraints xsi:type="constraints:SimpleConstraint" xmi:id="_zJ4D3nZLEeSwiJkQAQl2Jg" name="isMultipleConfig">
+      <constraintType href="ppe:/environment/org.eclipse.papyrus.views.properties/model/Environment.xmi#//@constraintTypes.0"/>
+      <properties xsi:type="constraints:ValueProperty" xmi:id="_zJ4D33ZLEeSwiJkQAQl2Jg" name="className" value="Config"/>
+      <properties xsi:type="constraints:ValueProperty" xmi:id="_zJ4D4HZLEeSwiJkQAQl2Jg" name="nsUri" value="http:///RSAToPapyrusParameters.ecore"/>
+    </constraints>
+  </views>
+  <views xmi:id="_zJ4D4XZLEeSwiJkQAQl2Jg" elementMultiplicity="-1" name="Multiple MappingParameters" sections="_5w-6tXZLEeSwiJkQAQl2Jg" automaticContext="true" datacontexts="_zJ4D8XZLEeSwiJkQAQl2Jg">
+    <constraints xsi:type="constraints:SimpleConstraint" xmi:id="_zJ4D4nZLEeSwiJkQAQl2Jg" name="isMultipleMappingParameters">
+      <constraintType href="ppe:/environment/org.eclipse.papyrus.views.properties/model/Environment.xmi#//@constraintTypes.0"/>
+      <properties xsi:type="constraints:ValueProperty" xmi:id="_zJ4D43ZLEeSwiJkQAQl2Jg" name="className" value="MappingParameters"/>
+      <properties xsi:type="constraints:ValueProperty" xmi:id="_zJ4D5HZLEeSwiJkQAQl2Jg" name="nsUri" value="http:///RSAToPapyrusParameters.ecore"/>
+    </constraints>
+  </views>
+  <views xmi:id="_zJ4D5XZLEeSwiJkQAQl2Jg" elementMultiplicity="-1" name="Multiple URIMapping" sections="_5w-6tnZLEeSwiJkQAQl2Jg" automaticContext="true" datacontexts="_zJ4D83ZLEeSwiJkQAQl2Jg">
+    <constraints xsi:type="constraints:SimpleConstraint" xmi:id="_zJ4D5nZLEeSwiJkQAQl2Jg" name="isMultipleURIMapping">
+      <constraintType href="ppe:/environment/org.eclipse.papyrus.views.properties/model/Environment.xmi#//@constraintTypes.0"/>
+      <properties xsi:type="constraints:ValueProperty" xmi:id="_zJ4D53ZLEeSwiJkQAQl2Jg" name="className" value="URIMapping"/>
+      <properties xsi:type="constraints:ValueProperty" xmi:id="_zJ4D6HZLEeSwiJkQAQl2Jg" name="nsUri" value="http:///RSAToPapyrusParameters.ecore"/>
+    </constraints>
+  </views>
+  <dataContexts xmi:id="_zJ4D6XZLEeSwiJkQAQl2Jg" name="RSAToPapyrusParameters" label="RSAToPapyrusParameters">
+    <elements xmi:id="_zJ4D6nZLEeSwiJkQAQl2Jg" name="Config">
+      <properties xmi:id="_zJ4D63ZLEeSwiJkQAQl2Jg" name="mappingParameters" type="Reference"/>
+      <properties xmi:id="_zJ4D7HZLEeSwiJkQAQl2Jg" name="maxThreads" type="Integer" description="The maximum number of threads to use during the migration.&#xD;&#xA;More threads will provide faster results, at the cost of memory consumption."/>
+      <properties xmi:id="_zJ4D7XZLEeSwiJkQAQl2Jg" name="removeUnmappedDiagrams" type="Boolean" description="If true, the diagrams which were not migrated will be removed. Otherwise, only the successfully imported diagrams will be removed"/>
+      <properties xmi:id="_zJ4D7nZLEeSwiJkQAQl2Jg" name="convertOpaqueExpressionToLiteralString" type="Boolean" description="If true, the Opaque Expressions with a single body and no language (or a single empty language) will be converted to LiteralString"/>
+      <properties xmi:id="_zJ4D73ZLEeSwiJkQAQl2Jg" name="removeUnmappedProfilesAndStereotypes" type="Boolean" description="If true, the unsupported RSA profiles and stereotypes will be deleted. This includes the Deployment profile and a few stereotypes"/>
+      <properties xmi:id="_zJ4D8HZLEeSwiJkQAQl2Jg" name="removeUnmappedAnnotations" type="Boolean" description="If true, the unmapped RSA EAnnotations will be deleted from the imported model"/>
+      <properties xmi:id="_jJtVUHcbEeSwiJkQAQl2Jg" name="alwaysAcceptSuggestedMappings" type="Boolean" description="If true, the Transformation will not open a dialog to ask user-confirmation for the dependency mappings. The tool will automatically keep going by &quot;guessing&quot; the proper mapping"/>
+    </elements>
+    <elements xmi:id="_zJ4D8XZLEeSwiJkQAQl2Jg" name="MappingParameters">
+      <properties xmi:id="_zJ4D8nZLEeSwiJkQAQl2Jg" name="uriMappings" label="URI Mappings" type="Reference" multiplicity="-1" description="When models/libraries have been migrated separately, maps the libraries imported from RSA to their Papyrus equivalent"/>
+      <properties name="profileUriMappings" label="Profile URI Mappings" type="Reference" multiplicity="-1" description="When profiles have been migrated separately, maps the profiles imported from RSA to their Papyrus equivalent"/>
+    </elements>
+    <elements xmi:id="_zJ4D83ZLEeSwiJkQAQl2Jg" name="URIMapping">
+      <properties xmi:id="_zJ4D9HZLEeSwiJkQAQl2Jg" name="sourceURI"/>
+      <properties xmi:id="_zJ4D9XZLEeSwiJkQAQl2Jg" name="targetURI"/>
     </elements>
     <modelElementFactory href="ppe:/environment/org.eclipse.papyrus.views.properties/model/Environment.xmi#//@modelElementFactories.0"/>
   </dataContexts>

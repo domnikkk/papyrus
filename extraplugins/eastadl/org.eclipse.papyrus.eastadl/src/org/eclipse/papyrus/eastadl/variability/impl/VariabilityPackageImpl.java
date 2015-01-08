@@ -132,9 +132,8 @@ public class VariabilityPackageImpl extends EPackageImpl implements VariabilityP
 	 * @generated
 	 */
 	public static VariabilityPackage init() {
-		if (isInited) {
+		if (isInited)
 			return (VariabilityPackage) EPackage.Registry.INSTANCE.getEPackage(VariabilityPackage.eNS_URI);
-		}
 
 		// Obtain or create and register package
 		VariabilityPackageImpl theVariabilityPackage = (VariabilityPackageImpl) (EPackage.Registry.INSTANCE.get(eNS_URI) instanceof VariabilityPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new VariabilityPackageImpl());
@@ -164,8 +163,7 @@ public class VariabilityPackageImpl extends EPackageImpl implements VariabilityP
 		SystemmodelingPackageImpl theSystemmodelingPackage = (SystemmodelingPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(SystemmodelingPackage.eNS_URI) instanceof SystemmodelingPackageImpl ? EPackage.Registry.INSTANCE
 				.getEPackage(SystemmodelingPackage.eNS_URI) : SystemmodelingPackage.eINSTANCE);
 		VehiclefeaturemodelingPackageImpl theVehiclefeaturemodelingPackage = (VehiclefeaturemodelingPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(VehiclefeaturemodelingPackage.eNS_URI) instanceof VehiclefeaturemodelingPackageImpl ? EPackage.Registry.INSTANCE
-				.getEPackage(VehiclefeaturemodelingPackage.eNS_URI)
-				: VehiclefeaturemodelingPackage.eINSTANCE);
+				.getEPackage(VehiclefeaturemodelingPackage.eNS_URI) : VehiclefeaturemodelingPackage.eINSTANCE);
 		HardwaremodelingPackageImpl theHardwaremodelingPackage = (HardwaremodelingPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(HardwaremodelingPackage.eNS_URI) instanceof HardwaremodelingPackageImpl ? EPackage.Registry.INSTANCE
 				.getEPackage(HardwaremodelingPackage.eNS_URI) : HardwaremodelingPackage.eINSTANCE);
 		DependabilityPackageImpl theDependabilityPackage = (DependabilityPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(DependabilityPackage.eNS_URI) instanceof DependabilityPackageImpl ? EPackage.Registry.INSTANCE
@@ -183,8 +181,7 @@ public class VariabilityPackageImpl extends EPackageImpl implements VariabilityP
 		UsecasesPackageImpl theUsecasesPackage = (UsecasesPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(UsecasesPackage.eNS_URI) instanceof UsecasesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(UsecasesPackage.eNS_URI)
 				: UsecasesPackage.eINSTANCE);
 		VerificationvalidationPackageImpl theVerificationvalidationPackage = (VerificationvalidationPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(VerificationvalidationPackage.eNS_URI) instanceof VerificationvalidationPackageImpl ? EPackage.Registry.INSTANCE
-				.getEPackage(VerificationvalidationPackage.eNS_URI)
-				: VerificationvalidationPackage.eINSTANCE);
+				.getEPackage(VerificationvalidationPackage.eNS_URI) : VerificationvalidationPackage.eINSTANCE);
 		org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsPackageImpl theRequirementsPackage_1 = (org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsPackageImpl) (EPackage.Registry.INSTANCE
 				.getEPackage(org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsPackage.eNS_URI) instanceof org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsPackageImpl ? EPackage.Registry.INSTANCE
 				.getEPackage(org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsPackage.eNS_URI) : org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsPackage.eINSTANCE);
@@ -201,13 +198,11 @@ public class VariabilityPackageImpl extends EPackageImpl implements VariabilityP
 		BehaviordescriptionPackageImpl theBehaviordescriptionPackage = (BehaviordescriptionPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(BehaviordescriptionPackage.eNS_URI) instanceof BehaviordescriptionPackageImpl ? EPackage.Registry.INSTANCE
 				.getEPackage(BehaviordescriptionPackage.eNS_URI) : BehaviordescriptionPackage.eINSTANCE);
 		AttributequantificationconstraintPackageImpl theAttributequantificationconstraintPackage = (AttributequantificationconstraintPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(AttributequantificationconstraintPackage.eNS_URI) instanceof AttributequantificationconstraintPackageImpl ? EPackage.Registry.INSTANCE
-				.getEPackage(AttributequantificationconstraintPackage.eNS_URI)
-				: AttributequantificationconstraintPackage.eINSTANCE);
+				.getEPackage(AttributequantificationconstraintPackage.eNS_URI) : AttributequantificationconstraintPackage.eINSTANCE);
 		TemporalconstraintPackageImpl theTemporalconstraintPackage = (TemporalconstraintPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(TemporalconstraintPackage.eNS_URI) instanceof TemporalconstraintPackageImpl ? EPackage.Registry.INSTANCE
 				.getEPackage(TemporalconstraintPackage.eNS_URI) : TemporalconstraintPackage.eINSTANCE);
 		ComputationconstraintPackageImpl theComputationconstraintPackage = (ComputationconstraintPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(ComputationconstraintPackage.eNS_URI) instanceof ComputationconstraintPackageImpl ? EPackage.Registry.INSTANCE
-				.getEPackage(ComputationconstraintPackage.eNS_URI)
-				: ComputationconstraintPackage.eINSTANCE);
+				.getEPackage(ComputationconstraintPackage.eNS_URI) : ComputationconstraintPackage.eINSTANCE);
 		GenericconstraintsPackageImpl theGenericconstraintsPackage = (GenericconstraintsPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(GenericconstraintsPackage.eNS_URI) instanceof GenericconstraintsPackageImpl ? EPackage.Registry.INSTANCE
 				.getEPackage(GenericconstraintsPackage.eNS_URI) : GenericconstraintsPackage.eINSTANCE);
 
@@ -447,9 +442,8 @@ public class VariabilityPackageImpl extends EPackageImpl implements VariabilityP
 	 * @generated
 	 */
 	public void createPackageContents() {
-		if (isCreated) {
+		if (isCreated)
 			return;
-		}
 		isCreated = true;
 
 		// Create classes and their features
@@ -1200,9 +1194,8 @@ public class VariabilityPackageImpl extends EPackageImpl implements VariabilityP
 	 * @generated
 	 */
 	public void initializePackageContents() {
-		if (isInitialized) {
+		if (isInitialized)
 			return;
-		}
 		isInitialized = true;
 
 		// Initialize package
@@ -1240,118 +1233,137 @@ public class VariabilityPackageImpl extends EPackageImpl implements VariabilityP
 		containerConfigurationEClass.getESuperTypes().add(this.getConfigurationDecisionModel());
 
 		// Initialize classes, features, and operations; add parameters
-		initEClass(variationGroupEClass, VariationGroup.class, "VariationGroup", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getVariationGroup_Constraint(), theTypesPackage.getString(), "constraint", null, 1, 1, VariationGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getVariationGroup_Kind(), theFeaturemodelingPackage.getVariabilityDependencyKind(), "kind", null, 1, 1, VariationGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getVariationGroup_Base_Class(), theUMLPackage.getClass_(), null, "base_Class", null, 1, 1, VariationGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED,
-				!IS_ORDERED);
-		initEReference(getVariationGroup_VariableElement(), this.getVariableElement(), null, "variableElement", null, 1, -1, VariationGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
-				!IS_DERIVED, IS_ORDERED);
+		initEClass(variationGroupEClass, VariationGroup.class, "VariationGroup", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEAttribute(getVariationGroup_Constraint(), theTypesPackage.getString(), "constraint", null, 1, 1, VariationGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEAttribute(getVariationGroup_Kind(), theFeaturemodelingPackage.getVariabilityDependencyKind(), "kind", null, 1, 1, VariationGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getVariationGroup_Base_Class(), theUMLPackage.getClass_(), null,
+				"base_Class", null, 1, 1, VariationGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getVariationGroup_VariableElement(), this.getVariableElement(), null,
+				"variableElement", null, 1, -1, VariationGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
 
-		initEClass(variableElementEClass, VariableElement.class, "VariableElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getVariableElement_RequiredBindingTime(), theFeaturemodelingPackage.getBindingTime(), null, "requiredBindingTime", null, 0, 1, VariableElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getVariableElement_ActualBindingTime(), theFeaturemodelingPackage.getBindingTime(), null, "actualBindingTime", null, 1, 1, VariableElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getVariableElement_ReuseMetaInformation(), this.getReuseMetaInformation(), null, "reuseMetaInformation", null, 0, 1, VariableElement.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
-		initEReference(getVariableElement_OptionalElement(), theUMLPackage.getNamedElement(), null, "optionalElement", null, 1, -1, VariableElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				!IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getVariableElement_Base_Class(), theUMLPackage.getClass_(), null, "base_Class", null, 1, 1, VariableElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED,
-				!IS_ORDERED);
+		initEClass(variableElementEClass, VariableElement.class, "VariableElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(getVariableElement_RequiredBindingTime(), theFeaturemodelingPackage.getBindingTime(), null,
+				"requiredBindingTime", null, 0, 1, VariableElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getVariableElement_ActualBindingTime(), theFeaturemodelingPackage.getBindingTime(), null,
+				"actualBindingTime", null, 1, 1, VariableElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getVariableElement_ReuseMetaInformation(), this.getReuseMetaInformation(), null,
+				"reuseMetaInformation", null, 0, 1, VariableElement.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getVariableElement_OptionalElement(), theUMLPackage.getNamedElement(), null,
+				"optionalElement", null, 1, -1, VariableElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getVariableElement_Base_Class(), theUMLPackage.getClass_(), null,
+				"base_Class", null, 1, 1, VariableElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 
-		initEClass(reuseMetaInformationEClass, ReuseMetaInformation.class, "ReuseMetaInformation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getReuseMetaInformation_Information(), theTypesPackage.getString(), "information", null, 1, 1, ReuseMetaInformation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getReuseMetaInformation_IsReusable(), theTypesPackage.getBoolean(), "isReusable", "true", 1, 1, ReuseMetaInformation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getReuseMetaInformation_Base_Class(), theUMLPackage.getClass_(), null, "base_Class", null, 1, 1, ReuseMetaInformation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE,
-				!IS_DERIVED, !IS_ORDERED);
+		initEClass(reuseMetaInformationEClass, ReuseMetaInformation.class, "ReuseMetaInformation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEAttribute(getReuseMetaInformation_Information(), theTypesPackage.getString(), "information", null, 1, 1, ReuseMetaInformation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEAttribute(getReuseMetaInformation_IsReusable(), theTypesPackage.getBoolean(), "isReusable", "true", 1, 1, ReuseMetaInformation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$ //$NON-NLS-2$
+		initEReference(getReuseMetaInformation_Base_Class(), theUMLPackage.getClass_(), null,
+				"base_Class", null, 1, 1, ReuseMetaInformation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 
-		initEClass(configurableContainerEClass, ConfigurableContainer.class, "ConfigurableContainer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getConfigurableContainer_InternalBinding(), this.getInternalBinding(), null, "internalBinding", null, 0, 1, ConfigurableContainer.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
-		initEReference(getConfigurableContainer_VariationGroup(), this.getVariationGroup(), null, "variationGroup", null, 0, -1, ConfigurableContainer.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				!IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
-		initEReference(getConfigurableContainer_Base_Class(), theUMLPackage.getClass_(), null, "base_Class", null, 0, 1, ConfigurableContainer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE,
-				!IS_DERIVED, !IS_ORDERED);
-		initEReference(getConfigurableContainer_Base_Package(), theUMLPackage.getPackage(), null, "base_Package", null, 0, 1, ConfigurableContainer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				!IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getConfigurableContainer_ConfigurableElement(), theUMLPackage.getNamedElement(), null, "configurableElement", null, 1, 1, ConfigurableContainer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getConfigurableContainer_PublicFeatureModel(), theFeaturemodelingPackage.getFeatureModel(), null, "publicFeatureModel", null, 0, 1, ConfigurableContainer.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE,
-				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
-		initEReference(getConfigurableContainer_PrivateContent(), this.getPrivateContent(), null, "privateContent", null, 0, -1, ConfigurableContainer.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				!IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
+		initEClass(configurableContainerEClass, ConfigurableContainer.class, "ConfigurableContainer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(getConfigurableContainer_InternalBinding(), this.getInternalBinding(), null,
+				"internalBinding", null, 0, 1, ConfigurableContainer.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getConfigurableContainer_VariationGroup(), this.getVariationGroup(), null,
+				"variationGroup", null, 0, -1, ConfigurableContainer.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getConfigurableContainer_Base_Class(), theUMLPackage.getClass_(), null,
+				"base_Class", null, 0, 1, ConfigurableContainer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getConfigurableContainer_Base_Package(), theUMLPackage.getPackage(), null,
+				"base_Package", null, 0, 1, ConfigurableContainer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getConfigurableContainer_ConfigurableElement(), theUMLPackage.getNamedElement(), null,
+				"configurableElement", null, 1, 1, ConfigurableContainer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getConfigurableContainer_PublicFeatureModel(), theFeaturemodelingPackage.getFeatureModel(), null,
+				"publicFeatureModel", null, 0, 1, ConfigurableContainer.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getConfigurableContainer_PrivateContent(), this.getPrivateContent(), null,
+				"privateContent", null, 0, -1, ConfigurableContainer.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 
-		initEClass(internalBindingEClass, InternalBinding.class, "InternalBinding", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(internalBindingEClass, InternalBinding.class, "InternalBinding", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 
-		initEClass(configurationDecisionModelEClass, ConfigurationDecisionModel.class, "ConfigurationDecisionModel", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getConfigurationDecisionModel_Base_Package(), theUMLPackage.getPackage(), null, "base_Package", null, 0, 1, ConfigurationDecisionModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				!IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getConfigurationDecisionModel_Base_Class(), theUMLPackage.getClass_(), null, "base_Class", null, 0, 1, ConfigurationDecisionModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				!IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getConfigurationDecisionModel_RootEntry(), this.getConfigurationDecisionModelEntry(), null, "rootEntry", null, 0, -1, ConfigurationDecisionModel.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, !IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
+		initEClass(configurationDecisionModelEClass, ConfigurationDecisionModel.class, "ConfigurationDecisionModel", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(getConfigurationDecisionModel_Base_Package(), theUMLPackage.getPackage(), null,
+				"base_Package", null, 0, 1, ConfigurationDecisionModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getConfigurationDecisionModel_Base_Class(), theUMLPackage.getClass_(), null,
+				"base_Class", null, 0, 1, ConfigurationDecisionModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getConfigurationDecisionModel_RootEntry(), this.getConfigurationDecisionModelEntry(), null,
+				"rootEntry", null, 0, -1, ConfigurationDecisionModel.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 
-		initEClass(configurationDecisionModelEntryEClass, ConfigurationDecisionModelEntry.class, "ConfigurationDecisionModelEntry", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getConfigurationDecisionModelEntry_IsActive(), theTypesPackage.getBoolean(), "isActive", "true", 1, 1, ConfigurationDecisionModelEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED,
-				!IS_ORDERED);
-		initEReference(getConfigurationDecisionModelEntry_Base_Class(), theUMLPackage.getClass_(), null, "base_Class", null, 1, 1, ConfigurationDecisionModelEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(configurationDecisionModelEntryEClass, ConfigurationDecisionModelEntry.class, "ConfigurationDecisionModelEntry", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEAttribute(getConfigurationDecisionModelEntry_IsActive(), theTypesPackage.getBoolean(),
+				"isActive", "true", 1, 1, ConfigurationDecisionModelEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$ //$NON-NLS-2$
+		initEReference(getConfigurationDecisionModelEntry_Base_Class(), theUMLPackage.getClass_(), null,
+				"base_Class", null, 1, 1, ConfigurationDecisionModelEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 
-		initEClass(privateContentEClass, PrivateContent.class, "PrivateContent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getPrivateContent_Base_Class(), theUMLPackage.getClass_(), null, "base_Class", null, 1, 1, PrivateContent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED,
-				!IS_ORDERED);
-		initEReference(getPrivateContent_PrivateElement(), theUMLPackage.getNamedElement(), null, "privateElement", null, 1, 1, PrivateContent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE,
-				!IS_DERIVED, !IS_ORDERED);
+		initEClass(privateContentEClass, PrivateContent.class, "PrivateContent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(getPrivateContent_Base_Class(), theUMLPackage.getClass_(), null,
+				"base_Class", null, 1, 1, PrivateContent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getPrivateContent_PrivateElement(), theUMLPackage.getNamedElement(), null,
+				"privateElement", null, 1, 1, PrivateContent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 
-		initEClass(variabilityEClass, Variability.class, "Variability", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getVariability_Base_Class(), theUMLPackage.getClass_(), null, "base_Class", null, 0, 1, Variability.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED,
-				!IS_ORDERED);
-		initEReference(getVariability_Base_Package(), theUMLPackage.getPackage(), null, "base_Package", null, 0, 1, Variability.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED,
-				!IS_ORDERED);
-		initEReference(getVariability_ConfigurableContainer(), this.getConfigurableContainer(), null, "configurableContainer", null, 0, -1, Variability.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				!IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
-		initEReference(getVariability_Configuration(), this.getFeatureConfiguration(), null, "configuration", null, 0, -1, Variability.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, IS_DERIVED,
-				!IS_ORDERED);
-		initEReference(getVariability_ProductFeatureModel(), theFeaturemodelingPackage.getFeatureModel(), null, "productFeatureModel", null, 0, -1, Variability.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, !IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
-		initEReference(getVariability_DecisionModel(), this.getVehicleLevelBinding(), null, "decisionModel", null, 0, -1, Variability.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, IS_DERIVED,
-				!IS_ORDERED);
-		initEReference(getVariability_VariableElement(), this.getVariableElement(), null, "variableElement", null, 0, -1, Variability.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, IS_DERIVED,
-				!IS_ORDERED);
+		initEClass(variabilityEClass, Variability.class, "Variability", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(getVariability_Base_Class(), theUMLPackage.getClass_(), null,
+				"base_Class", null, 0, 1, Variability.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getVariability_Base_Package(), theUMLPackage.getPackage(), null,
+				"base_Package", null, 0, 1, Variability.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getVariability_ConfigurableContainer(), this.getConfigurableContainer(), null,
+				"configurableContainer", null, 0, -1, Variability.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getVariability_Configuration(), this.getFeatureConfiguration(), null,
+				"configuration", null, 0, -1, Variability.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getVariability_ProductFeatureModel(), theFeaturemodelingPackage.getFeatureModel(), null,
+				"productFeatureModel", null, 0, -1, Variability.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getVariability_DecisionModel(), this.getVehicleLevelBinding(), null,
+				"decisionModel", null, 0, -1, Variability.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getVariability_VariableElement(), this.getVariableElement(), null,
+				"variableElement", null, 0, -1, Variability.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 
-		initEClass(featureConfigurationEClass, FeatureConfiguration.class, "FeatureConfiguration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getFeatureConfiguration_ConfiguredFeatureModel(), theFeaturemodelingPackage.getFeatureModel(), null, "configuredFeatureModel", null, 1, 1, FeatureConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
-				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(featureConfigurationEClass, FeatureConfiguration.class, "FeatureConfiguration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(getFeatureConfiguration_ConfiguredFeatureModel(), theFeaturemodelingPackage.getFeatureModel(), null,
+				"configuredFeatureModel", null, 1, 1, FeatureConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 
-		initEClass(vehicleLevelBindingEClass, VehicleLevelBinding.class, "VehicleLevelBinding", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getVehicleLevelBinding_SourceVehicleFeatureModel(), theFeaturemodelingPackage.getFeatureModel(), null, "sourceVehicleFeatureModel", null, 0, -1, VehicleLevelBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
-				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getVehicleLevelBinding_TargetFeatureModel(), theFeaturemodelingPackage.getFeatureModel(), null, "targetFeatureModel", null, 0, -1, VehicleLevelBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(vehicleLevelBindingEClass, VehicleLevelBinding.class, "VehicleLevelBinding", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(getVehicleLevelBinding_SourceVehicleFeatureModel(), theFeaturemodelingPackage.getFeatureModel(), null,
+				"sourceVehicleFeatureModel", null, 0, -1, VehicleLevelBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
+		initEReference(getVehicleLevelBinding_TargetFeatureModel(), theFeaturemodelingPackage.getFeatureModel(), null,
+				"targetFeatureModel", null, 0, -1, VehicleLevelBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
 
-		initEClass(configurationDecisionEClass, ConfigurationDecision.class, "ConfigurationDecision", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getConfigurationDecision_Effect(), theTypesPackage.getString(), "effect", null, 1, 1, ConfigurationDecision.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getConfigurationDecision_Criterion(), theTypesPackage.getString(), "criterion", null, 0, 1, ConfigurationDecision.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getConfigurationDecision_IsEquivalence(), theTypesPackage.getBoolean(), "isEquivalence", null, 1, 1, ConfigurationDecision.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getConfigurationDecision_Target(), theUMLPackage.getNamedElement(), null, "target", null, 0, -1, ConfigurationDecision.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE,
-				!IS_DERIVED, IS_ORDERED);
-		initEReference(getConfigurationDecision_SelectionCriterion(), this.getSelectionCriterion(), null, "selectionCriterion", null, 0, 1, ConfigurationDecision.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
+		initEClass(configurationDecisionEClass, ConfigurationDecision.class, "ConfigurationDecision", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEAttribute(getConfigurationDecision_Effect(), theTypesPackage.getString(), "effect", null, 1, 1, ConfigurationDecision.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEAttribute(getConfigurationDecision_Criterion(), theTypesPackage.getString(), "criterion", null, 0, 1, ConfigurationDecision.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEAttribute(getConfigurationDecision_IsEquivalence(), theTypesPackage.getBoolean(), "isEquivalence", null, 1, 1, ConfigurationDecision.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getConfigurationDecision_Target(), theUMLPackage.getNamedElement(), null,
+				"target", null, 0, -1, ConfigurationDecision.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
+		initEReference(getConfigurationDecision_SelectionCriterion(), this.getSelectionCriterion(), null,
+				"selectionCriterion", null, 0, 1, ConfigurationDecision.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 
-		initEClass(selectionCriterionEClass, SelectionCriterion.class, "SelectionCriterion", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getSelectionCriterion_Source(), theUMLPackage.getNamedElement(), null, "source", null, 0, -1, SelectionCriterion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE,
-				!IS_DERIVED, IS_ORDERED);
-		initEReference(getSelectionCriterion_Base_Class(), theUMLPackage.getClass_(), null, "base_Class", null, 1, 1, SelectionCriterion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE,
-				!IS_DERIVED, !IS_ORDERED);
+		initEClass(selectionCriterionEClass, SelectionCriterion.class, "SelectionCriterion", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(getSelectionCriterion_Source(), theUMLPackage.getNamedElement(), null,
+				"source", null, 0, -1, SelectionCriterion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
+		initEReference(getSelectionCriterion_Base_Class(), theUMLPackage.getClass_(), null,
+				"base_Class", null, 1, 1, SelectionCriterion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 
-		initEClass(configurationDecisionFolderEClass, ConfigurationDecisionFolder.class, "ConfigurationDecisionFolder", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getConfigurationDecisionFolder_ChildEntry(), this.getConfigurationDecisionModelEntry(), null, "childEntry", null, 0, -1, ConfigurationDecisionFolder.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, !IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
+		initEClass(configurationDecisionFolderEClass, ConfigurationDecisionFolder.class, "ConfigurationDecisionFolder", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(getConfigurationDecisionFolder_ChildEntry(), this.getConfigurationDecisionModelEntry(), null,
+				"childEntry", null, 0, -1, ConfigurationDecisionFolder.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 
-		initEClass(containerConfigurationEClass, ContainerConfiguration.class, "ContainerConfiguration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getContainerConfiguration_ConfiguredContainer(), this.getConfigurableContainer(), null, "configuredContainer", null, 1, 1, ContainerConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(containerConfigurationEClass, ContainerConfiguration.class, "ContainerConfiguration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(getContainerConfiguration_ConfiguredContainer(), this.getConfigurableContainer(), null,
+				"configuredContainer", null, 1, 1, ContainerConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+
+		// Create annotations
+		// http://www.eclipse.org/uml2/2.0.0/UML
+		createUMLAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/uml2/2.0.0/UML</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	protected void createUMLAnnotations() {
+		String source = "http://www.eclipse.org/uml2/2.0.0/UML"; //$NON-NLS-1$
+		addAnnotation(this,
+				source,
+				new String[] { "originalName", "Variability" //$NON-NLS-1$ //$NON-NLS-2$
+				});
 	}
 
 } // VariabilityPackageImpl

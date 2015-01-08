@@ -51,32 +51,52 @@ public class ComponentDiagramItemSemanticEditPolicy extends UMLBaseItemSemanticE
 		if (requestElementType == null) {
 			return super.getCreateCommand(req);
 		}
+
+
 		if (UMLElementTypes.Dependency_3203 == requestElementType) {
+
 			return getGEFWrapper(new DependencyNodeCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
+
 		}
 		if (UMLElementTypes.Component_2002 == requestElementType) {
+
 			return getGEFWrapper(new ComponentCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
+
 		}
 		if (UMLElementTypes.Model_3202 == requestElementType) {
+
 			return getGEFWrapper(new ModelCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
+
 		}
 		if (UMLElementTypes.Package_3200 == requestElementType) {
+
 			return getGEFWrapper(new PackageCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
+
 		}
 		if (UMLElementTypes.Interface_3205 == requestElementType) {
+
 			return getGEFWrapper(new RectangleInterfaceCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
+
 		}
 		if (UMLElementTypes.Comment_3201 == requestElementType) {
+
 			return getGEFWrapper(new CommentCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
+
 		}
 		if (UMLElementTypes.Constraint_3199 == requestElementType) {
+
 			return getGEFWrapper(new ConstraintCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
+
 		}
 		if (UMLElementTypes.NamedElement_3204 == requestElementType) {
+
 			return getGEFWrapper(new DefaultNamedElementCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
+
 		}
 		if (UMLElementTypes.Interface_2003 == requestElementType) {
+
 			return getGEFWrapper(new InterfaceCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
+
 		}
 		return super.getCreateCommand(req);
 	}

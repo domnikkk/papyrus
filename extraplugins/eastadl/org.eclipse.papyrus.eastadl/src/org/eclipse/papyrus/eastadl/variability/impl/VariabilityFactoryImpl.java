@@ -118,7 +118,7 @@ public class VariabilityFactoryImpl extends EFactoryImpl implements VariabilityF
 		case VariabilityPackage.CONTAINER_CONFIGURATION:
 			return createContainerConfiguration();
 		default:
-			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 	}
 

@@ -68,9 +68,8 @@ public class ActorImpl extends TraceableSpecificationImpl implements Actor {
 			InternalEObject oldBase_Actor = (InternalEObject) base_Actor;
 			base_Actor = (org.eclipse.uml2.uml.Actor) eResolveProxy(oldBase_Actor);
 			if (base_Actor != oldBase_Actor) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, UsecasesPackage.ACTOR__BASE_ACTOR, oldBase_Actor, base_Actor));
-				}
 			}
 		}
 		return base_Actor;
@@ -96,9 +95,8 @@ public class ActorImpl extends TraceableSpecificationImpl implements Actor {
 	public void setBase_Actor(org.eclipse.uml2.uml.Actor newBase_Actor) {
 		org.eclipse.uml2.uml.Actor oldBase_Actor = base_Actor;
 		base_Actor = newBase_Actor;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, UsecasesPackage.ACTOR__BASE_ACTOR, oldBase_Actor, base_Actor));
-		}
 	}
 
 	/**
@@ -111,9 +109,8 @@ public class ActorImpl extends TraceableSpecificationImpl implements Actor {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case UsecasesPackage.ACTOR__BASE_ACTOR:
-			if (resolve) {
+			if (resolve)
 				return getBase_Actor();
-			}
 			return basicGetBase_Actor();
 		}
 		return super.eGet(featureID, resolve, coreType);

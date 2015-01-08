@@ -211,52 +211,40 @@ public class SafetyconstraintsSwitch<T> extends Switch<T> {
 		case SafetyconstraintsPackage.FAULT_FAILURE: {
 			FaultFailure faultFailure = (FaultFailure) theEObject;
 			T result = caseFaultFailure(faultFailure);
-			if (result == null) {
+			if (result == null)
 				result = caseTraceableSpecification(faultFailure);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPackageableElement(faultFailure);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(faultFailure);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case SafetyconstraintsPackage.SAFETY_CONSTRAINT: {
 			SafetyConstraint safetyConstraint = (SafetyConstraint) theEObject;
 			T result = caseSafetyConstraint(safetyConstraint);
-			if (result == null) {
+			if (result == null)
 				result = caseTraceableSpecification(safetyConstraint);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPackageableElement(safetyConstraint);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(safetyConstraint);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case SafetyconstraintsPackage.QUANTITATIVE_SAFETY_CONSTRAINT: {
 			QuantitativeSafetyConstraint quantitativeSafetyConstraint = (QuantitativeSafetyConstraint) theEObject;
 			T result = caseQuantitativeSafetyConstraint(quantitativeSafetyConstraint);
-			if (result == null) {
+			if (result == null)
 				result = caseTraceableSpecification(quantitativeSafetyConstraint);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPackageableElement(quantitativeSafetyConstraint);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(quantitativeSafetyConstraint);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		default:

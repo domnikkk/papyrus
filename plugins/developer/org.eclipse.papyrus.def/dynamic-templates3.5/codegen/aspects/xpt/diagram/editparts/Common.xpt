@@ -161,8 +161,8 @@ installEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRole
 	«IF needsCanonicalEditPolicy()-»
 	«REM»BEGIN: PapyrusGenCode«ENDREM»
 	«REM»Used to remove at each time canonical editpolicies«ENDREM»
-//in Papyrus diagrams are not strongly synchronised
-//installEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CANONICAL_ROLE, new «getCanonicalEditPolicyQualifiedClassName()»());
+// in Papyrus diagrams are not strongly synchronised
+// installEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CANONICAL_ROLE, new «getCanonicalEditPolicyQualifiedClassName()»());
 	«REM»END: PapyrusGenCode«ENDREM»
 	«ENDIF-»
 «ENDDEFINE»

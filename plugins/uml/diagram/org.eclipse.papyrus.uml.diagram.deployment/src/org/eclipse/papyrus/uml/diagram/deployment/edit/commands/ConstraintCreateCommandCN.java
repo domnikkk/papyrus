@@ -94,7 +94,8 @@ public class ConstraintCreateCommandCN extends EditElementCommand {
 			} else {
 
 				Namespace qualifiedTarget = (Namespace) target;
-				qualifiedTarget.getOwnedRules().add(newElement);
+				qualifiedTarget.getOwnedRules()
+						.add(newElement);
 
 			}
 		} else {

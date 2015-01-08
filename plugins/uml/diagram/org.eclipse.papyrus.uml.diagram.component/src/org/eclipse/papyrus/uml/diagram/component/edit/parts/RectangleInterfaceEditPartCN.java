@@ -136,18 +136,22 @@ public class RectangleInterfaceEditPartCN extends NodeEditPart {
 			((RectangleInterfaceNameEditPartCN) childEditPart).setLabel(getPrimaryShape().getNameLabel());
 			return true;
 		}
+
+
 		if (childEditPart instanceof InterfaceAttributeCompartmentEditPartCN) {
 			IFigure pane = getPrimaryShape().getAttributeCompartmentFigure();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way
 			pane.add(((InterfaceAttributeCompartmentEditPartCN) childEditPart).getFigure());
 			return true;
 		}
+
 		if (childEditPart instanceof InterfaceOperationCompartmentEditPartCN) {
 			IFigure pane = getPrimaryShape().getOperationCompartmentFigure();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way
 			pane.add(((InterfaceOperationCompartmentEditPartCN) childEditPart).getFigure());
 			return true;
 		}
+
 		return false;
 	}
 
@@ -227,6 +231,7 @@ public class RectangleInterfaceEditPartCN extends NodeEditPart {
 	@Override
 	protected NodeFigure createNodeFigure() {
 		return new SelectableBorderedNodeFigure(createMainFigureWithSVG());
+
 	}
 
 	/**

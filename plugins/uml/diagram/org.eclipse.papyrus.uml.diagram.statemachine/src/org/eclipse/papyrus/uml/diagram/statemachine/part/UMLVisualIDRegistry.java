@@ -552,7 +552,7 @@ public class UMLVisualIDRegistry {
 			}
 			break;
 		case ContextLinkEditPart.VISUAL_ID:
-			if(ContextLinkAppliedStereotypeEditPart.VISUAL_ID == nodeVisualID) {
+			if (ContextLinkAppliedStereotypeEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -813,7 +813,6 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	public static final DiagramStructure TYPED_INSTANCE = new DiagramStructure() {
-
 		/**
 		 * @generated
 		 */

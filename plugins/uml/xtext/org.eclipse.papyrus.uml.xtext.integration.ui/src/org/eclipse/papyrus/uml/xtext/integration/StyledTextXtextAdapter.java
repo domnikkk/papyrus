@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2010 CEA LIST.
+ * Copyright (c) 2010, 2014 Itemis, CEA LIST, and others.
  *
  *
  * All rights reserved. This program and the accompanying materials
@@ -9,6 +9,7 @@
  *
  * Contributors:
  *  Itemis - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 447872
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.xtext.integration;
@@ -104,6 +105,8 @@ public class StyledTextXtextAdapter {
 	protected ControlDecoration decoration;
 
 	protected CompletionProposalAdapter completionProposalAdapter;
+
+	private SourceViewerDecorationSupport decorationSupport;
 
 	public StyledTextXtextAdapter(Injector injector, IXtextFakeContextResourcesProvider contextFakeResourceProvider) {
 		this.contextFakeResourceProvider = contextFakeResourceProvider;
@@ -215,9 +218,9 @@ public class StyledTextXtextAdapter {
 		sourceviewer = new XtextSourceViewerEx(styledText, preferenceStoreAccess.getPreferenceStore());
 		sourceviewer.configure(configuration);
 		sourceviewer.setDocument(document, new AnnotationModel());
-		SourceViewerDecorationSupport support = new SourceViewerDecorationSupport(sourceviewer, null,
+		decorationSupport = new SourceViewerDecorationSupport(sourceviewer, null,
 				new DefaultMarkerAnnotationAccess(), getSharedColors());
-		configureSourceViewerDecorationSupport(support);
+		configureSourceViewerDecorationSupport(decorationSupport);
 	}
 
 	protected ISharedTextColors getSharedColors() {
@@ -243,6 +246,10 @@ public class StyledTextXtextAdapter {
 
 		support.install(preferenceStoreAccess.getPreferenceStore());
 
+	}
+
+	protected void unconfigureSourceViewerDecorationSupport(SourceViewerDecorationSupport support) {
+		support.uninstall();
 	}
 
 	protected void initXtextDocument(XtextFakeResourceContext context) {
@@ -275,6 +282,11 @@ public class StyledTextXtextAdapter {
 
 	public void dispose() {
 		uninstallHighlightingHelper();
+
+		if (decorationSupport != null) {
+			unconfigureSourceViewerDecorationSupport(decorationSupport);
+		}
+
 		document.disposeInput();
 	}
 

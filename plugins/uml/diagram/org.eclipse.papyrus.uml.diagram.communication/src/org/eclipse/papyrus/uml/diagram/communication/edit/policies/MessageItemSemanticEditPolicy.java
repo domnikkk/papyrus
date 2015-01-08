@@ -64,10 +64,10 @@ public class MessageItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy
 		cmd.setTransactionNestingEnabled(true);
 		List<EObject> todestroy = new ArrayList<EObject>();
 		todestroy.add(req.getElementToDestroy());
-		// cmd.add(new org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand(req));
+		//cmd.add(new org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand(req));
 		cmd.add(new EMFtoGMFCommandWrapper(new DeleteCommand(getEditingDomain(), todestroy)));
 		return getGEFWrapper(cmd.reduce());
-		// return getGEFWrapper(new org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand(req));
+		//return getGEFWrapper(new org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand(req));
 	}
 
 	/**
@@ -75,7 +75,8 @@ public class MessageItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy
 	 */
 	@Override
 	protected Command getCreateRelationshipCommand(CreateRelationshipRequest req) {
-		Command command = req.getTarget() == null ? getStartCreateRelationshipCommand(req) : getCompleteCreateRelationshipCommand(req);
+		Command command = req.getTarget() == null ?
+				getStartCreateRelationshipCommand(req) : getCompleteCreateRelationshipCommand(req);
 		return command != null ? command : super.getCreateRelationshipCommand(req);
 	}
 
@@ -103,7 +104,8 @@ public class MessageItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy
 			if (isExtendedType) {
 				return getExtendedStartCreateRelationshipCommand(req, (IExtendedHintedElementType) requestElementType);
 			}
-			return getGEFWrapper(new MessageCreateCommand(req, req.getSource(), req.getTarget()));
+			return getGEFWrapper(new MessageCreateCommand(req,
+					req.getSource(), req.getTarget()));
 		}
 		if (UMLElementTypes.CommentAnnotatedElement_8010 == baseElementType) {
 			return null;
@@ -144,31 +146,36 @@ public class MessageItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy
 			if (isExtendedType) {
 				return getExtendedCompleteCreateRelationshipCommand(req, (IExtendedHintedElementType) requestElementType);
 			}
-			return getGEFWrapper(new MessageCreateCommand(req, req.getSource(), req.getTarget()));
+			return getGEFWrapper(new MessageCreateCommand(req,
+					req.getSource(), req.getTarget()));
 		}
 		if (UMLElementTypes.CommentAnnotatedElement_8010 == baseElementType) {
 			if (isExtendedType) {
 				return getExtendedCompleteCreateRelationshipCommand(req, (IExtendedHintedElementType) requestElementType);
 			}
-			return getGEFWrapper(new CommentAnnotatedElementCreateCommand(req, req.getSource(), req.getTarget()));
+			return getGEFWrapper(new CommentAnnotatedElementCreateCommand(req,
+					req.getSource(), req.getTarget()));
 		}
 		if (UMLElementTypes.ConstraintConstrainedElement_8011 == baseElementType) {
 			if (isExtendedType) {
 				return getExtendedCompleteCreateRelationshipCommand(req, (IExtendedHintedElementType) requestElementType);
 			}
-			return getGEFWrapper(new ConstraintConstrainedElementCreateCommand(req, req.getSource(), req.getTarget()));
+			return getGEFWrapper(new ConstraintConstrainedElementCreateCommand(req,
+					req.getSource(), req.getTarget()));
 		}
 		if (UMLElementTypes.DurationObservationEvent_8012 == baseElementType) {
 			if (isExtendedType) {
 				return getExtendedCompleteCreateRelationshipCommand(req, (IExtendedHintedElementType) requestElementType);
 			}
-			return getGEFWrapper(new ConnectorDurationObservationCreateCommand(req, req.getSource(), req.getTarget()));
+			return getGEFWrapper(new ConnectorDurationObservationCreateCommand(req,
+					req.getSource(), req.getTarget()));
 		}
 		if (UMLElementTypes.TimeObservationEvent_8013 == baseElementType) {
 			if (isExtendedType) {
 				return getExtendedCompleteCreateRelationshipCommand(req, (IExtendedHintedElementType) requestElementType);
 			}
-			return getGEFWrapper(new ConnectorTimeObservationCreateCommand(req, req.getSource(), req.getTarget()));
+			return getGEFWrapper(new ConnectorTimeObservationCreateCommand(req,
+					req.getSource(), req.getTarget()));
 		}
 		return null;
 	}

@@ -16,6 +16,8 @@ package org.eclipse.papyrus.infra.viewpoints.configuration.util;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.impl.ResourceFactoryImpl;
+import org.eclipse.emf.ecore.xmi.XMIResource;
+import org.eclipse.emf.ecore.xmi.impl.URIHandlerImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -42,11 +44,12 @@ public class ConfigurationResourceFactoryImpl extends ResourceFactoryImpl {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public Resource createResource(URI uri) {
-		Resource result = new ConfigurationResourceImpl(uri);
+		XMIResource result = new ConfigurationResourceImpl(uri);
+		result.getDefaultSaveOptions().put(XMIResource.OPTION_URI_HANDLER, new URIHandlerImpl.PlatformSchemeAware());
 		return result;
 	}
 

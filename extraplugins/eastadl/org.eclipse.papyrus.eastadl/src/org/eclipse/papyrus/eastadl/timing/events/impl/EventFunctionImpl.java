@@ -96,9 +96,8 @@ public class EventFunctionImpl extends EventImpl implements EventFunction {
 		case EventsPackage.EVENT_FUNCTION__FUNCTION:
 			return getFunction();
 		case EventsPackage.EVENT_FUNCTION__FUNCTION_TYPE:
-			if (resolve) {
+			if (resolve)
 				return getFunctionType();
-			}
 			return basicGetFunctionType();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -192,11 +191,10 @@ public class EventFunctionImpl extends EventImpl implements EventFunction {
 		function = newFunction;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EventsPackage.EVENT_FUNCTION__FUNCTION, oldFunction, newFunction);
-			if (msgs == null) {
+			if (msgs == null)
 				msgs = notification;
-			} else {
+			else
 				msgs.add(notification);
-			}
 		}
 		return msgs;
 	}
@@ -211,20 +209,16 @@ public class EventFunctionImpl extends EventImpl implements EventFunction {
 	public void setFunction(EventFunctionInstanceRef newFunction) {
 		if (newFunction != function) {
 			NotificationChain msgs = null;
-			if (function != null) {
+			if (function != null)
 				msgs = ((InternalEObject) function).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EventsPackage.EVENT_FUNCTION__FUNCTION, null, msgs);
-			}
-			if (newFunction != null) {
+			if (newFunction != null)
 				msgs = ((InternalEObject) newFunction).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EventsPackage.EVENT_FUNCTION__FUNCTION, null, msgs);
-			}
 			msgs = basicSetFunction(newFunction, msgs);
-			if (msgs != null) {
+			if (msgs != null)
 				msgs.dispatch();
-			}
 		}
-		else if (eNotificationRequired()) {
+		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EventsPackage.EVENT_FUNCTION__FUNCTION, newFunction, newFunction));
-		}
 	}
 
 	/**
@@ -239,9 +233,8 @@ public class EventFunctionImpl extends EventImpl implements EventFunction {
 			InternalEObject oldFunctionType = (InternalEObject) functionType;
 			functionType = (FunctionType) eResolveProxy(oldFunctionType);
 			if (functionType != oldFunctionType) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EventsPackage.EVENT_FUNCTION__FUNCTION_TYPE, oldFunctionType, functionType));
-				}
 			}
 		}
 		return functionType;
@@ -257,9 +250,8 @@ public class EventFunctionImpl extends EventImpl implements EventFunction {
 	public void setFunctionType(FunctionType newFunctionType) {
 		FunctionType oldFunctionType = functionType;
 		functionType = newFunctionType;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EventsPackage.EVENT_FUNCTION__FUNCTION_TYPE, oldFunctionType, functionType));
-		}
 	}
 
 	/**

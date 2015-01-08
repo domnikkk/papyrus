@@ -247,86 +247,66 @@ public class SystemmodelingSwitch<T> extends Switch<T> {
 		case SystemmodelingPackage.SYSTEM_MODEL: {
 			SystemModel systemModel = (SystemModel) theEObject;
 			T result = caseSystemModel(systemModel);
-			if (result == null) {
+			if (result == null)
 				result = caseContext(systemModel);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPackageableElement(systemModel);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(systemModel);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case SystemmodelingPackage.IMPLEMENTATION_LEVEL: {
 			ImplementationLevel implementationLevel = (ImplementationLevel) theEObject;
 			T result = caseImplementationLevel(implementationLevel);
-			if (result == null) {
+			if (result == null)
 				result = caseContext(implementationLevel);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPackageableElement(implementationLevel);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(implementationLevel);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case SystemmodelingPackage.ANALYSIS_LEVEL: {
 			AnalysisLevel analysisLevel = (AnalysisLevel) theEObject;
 			T result = caseAnalysisLevel(analysisLevel);
-			if (result == null) {
+			if (result == null)
 				result = caseContext(analysisLevel);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPackageableElement(analysisLevel);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(analysisLevel);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case SystemmodelingPackage.DESIGN_LEVEL: {
 			DesignLevel designLevel = (DesignLevel) theEObject;
 			T result = caseDesignLevel(designLevel);
-			if (result == null) {
+			if (result == null)
 				result = caseContext(designLevel);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPackageableElement(designLevel);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(designLevel);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case SystemmodelingPackage.VEHICLE_LEVEL: {
 			VehicleLevel vehicleLevel = (VehicleLevel) theEObject;
 			T result = caseVehicleLevel(vehicleLevel);
-			if (result == null) {
+			if (result == null)
 				result = caseContext(vehicleLevel);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPackageableElement(vehicleLevel);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(vehicleLevel);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		default:

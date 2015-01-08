@@ -116,6 +116,7 @@ public class ConstraintEditPartPCN extends AbstractConstraintEditPart {
 	@Override
 	protected void handleNotificationEvent(Notification event) {
 		super.handleNotificationEvent(event);
+
 	}
 
 	/**
@@ -148,6 +149,8 @@ public class ConstraintEditPartPCN extends AbstractConstraintEditPart {
 			((ConstraintSpecificationEditPartPCN) childEditPart).setLabel(getPrimaryShape().getConstraintFigure());
 			return true;
 		}
+
+
 		return false;
 	}
 
@@ -214,6 +217,7 @@ public class ConstraintEditPartPCN extends AbstractConstraintEditPart {
 	@Override
 	protected NodeFigure createNodeFigure() {
 		return new SelectableBorderedNodeFigure(createMainFigureWithSVG());
+
 	}
 
 	/**

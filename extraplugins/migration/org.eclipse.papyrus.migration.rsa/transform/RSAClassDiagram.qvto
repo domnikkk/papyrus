@@ -148,12 +148,12 @@ mapping Node::toNode() : Node disjuncts
 ;
 
 mapping Edge::toEdge() : Edge disjuncts
-	UMLConnector::toPapyrusConnector,
-	UMLConnector::toGeneralizationConnector,
-	UMLConnector::toAssociationClass,
 	UMLConnector::toCommentLink,
 	UMLConnector::toConstraintLink,
-	UMLConnector::toContextLink
+	/*UMLConnector::toContextLink,*/
+	UMLConnector::toPapyrusConnector,
+	UMLConnector::toGeneralizationConnector,
+	UMLConnector::toAssociationClass
 ;
 
 mapping UMLShapeCompartment::toStructureCompartment() : DecorationNode inherits UMLShapeCompartment::toAbstractStructureCompartment when {
@@ -973,6 +973,9 @@ mapping UMLConnector::toConstraintLink() : Connector inherits Connector::toPapyr
 	result.sourceAnchor := object IdentityAnchor{};		
 }
 
+
+/* Context Links are not supported in RSA Class Diagrams */
+/*
 mapping UMLConnector::toContextLink() : Connector inherits Connector::toPapyrusConnector when{
 		self.type='Reference' and ( 
 	 	self.source.element.oclIsTypeOf(Constraint) or 
@@ -989,7 +992,7 @@ mapping UMLConnector::toContextLink() : Connector inherits Connector::toPapyrusC
 		}
 	}
 }
-
+*/
 
 /****** Element Type queries ******/
 
@@ -1246,8 +1249,8 @@ query View::doGetDecorationType(element : Element) : String{
 
 
 query View::getEdgeType(element : Element) : String {
-	return
-		if element.oclIsTypeOf(AssociationClass) then '4017'
+	return if self.type = 'Reference' then '' /* Context and Constraint Links handled separately */
+		elif element.oclIsTypeOf(AssociationClass) then '4017'
 		elif element.oclIsTypeOf(Association) then '4001'
 		elif element.oclIsTypeOf(Association) then '4019'
 		elif element.oclIsTypeOf(Generalization) then '4002'

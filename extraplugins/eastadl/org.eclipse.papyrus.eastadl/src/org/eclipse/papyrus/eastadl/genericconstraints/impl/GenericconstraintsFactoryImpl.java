@@ -101,7 +101,7 @@ public class GenericconstraintsFactoryImpl extends EFactoryImpl implements Gener
 		case GenericconstraintsPackage.GENERIC_CONSTRAINT_KIND:
 			return convertGenericConstraintKindToString(eDataType, instanceValue);
 		default:
-			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 	}
 
@@ -121,7 +121,7 @@ public class GenericconstraintsFactoryImpl extends EFactoryImpl implements Gener
 		case GenericconstraintsPackage.TAKE_RATE_CONSTRAINT:
 			return createTakeRateConstraint();
 		default:
-			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 	}
 
@@ -137,7 +137,7 @@ public class GenericconstraintsFactoryImpl extends EFactoryImpl implements Gener
 		case GenericconstraintsPackage.GENERIC_CONSTRAINT_KIND:
 			return createGenericConstraintKindFromString(eDataType, initialValue);
 		default:
-			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 	}
 
@@ -161,9 +161,8 @@ public class GenericconstraintsFactoryImpl extends EFactoryImpl implements Gener
 	 */
 	public GenericConstraintKind createGenericConstraintKindFromString(EDataType eDataType, String initialValue) {
 		GenericConstraintKind result = GenericConstraintKind.get(initialValue);
-		if (result == null) {
-			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		}
+		if (result == null)
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 		return result;
 	}
 

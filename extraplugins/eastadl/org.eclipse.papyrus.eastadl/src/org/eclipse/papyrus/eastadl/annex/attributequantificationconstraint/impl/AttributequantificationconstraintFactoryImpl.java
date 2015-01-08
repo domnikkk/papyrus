@@ -73,7 +73,7 @@ public class AttributequantificationconstraintFactoryImpl extends EFactoryImpl i
 		case AttributequantificationconstraintPackage.ATTRIBUTE:
 			return createAttribute();
 		default:
-			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 	}
 

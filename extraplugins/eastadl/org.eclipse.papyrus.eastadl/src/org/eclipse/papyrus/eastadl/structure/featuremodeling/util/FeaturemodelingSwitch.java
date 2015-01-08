@@ -280,111 +280,86 @@ public class FeaturemodelingSwitch<T> extends Switch<T> {
 		case FeaturemodelingPackage.FEATURE_TREE_NODE: {
 			FeatureTreeNode featureTreeNode = (FeatureTreeNode) theEObject;
 			T result = caseFeatureTreeNode(featureTreeNode);
-			if (result == null) {
+			if (result == null)
 				result = caseContext(featureTreeNode);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPackageableElement(featureTreeNode);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(featureTreeNode);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case FeaturemodelingPackage.FEATURE_MODEL: {
 			FeatureModel featureModel = (FeatureModel) theEObject;
 			T result = caseFeatureModel(featureModel);
-			if (result == null) {
+			if (result == null)
 				result = caseContext(featureModel);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPackageableElement(featureModel);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(featureModel);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case FeaturemodelingPackage.FEATURE: {
 			Feature feature = (Feature) theEObject;
 			T result = caseFeature(feature);
-			if (result == null) {
+			if (result == null)
 				result = caseFeatureTreeNode(feature);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseContext(feature);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPackageableElement(feature);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(feature);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case FeaturemodelingPackage.BINDING_TIME: {
 			BindingTime bindingTime = (BindingTime) theEObject;
 			T result = caseBindingTime(bindingTime);
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(bindingTime);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case FeaturemodelingPackage.FEATURE_LINK: {
 			FeatureLink featureLink = (FeatureLink) theEObject;
 			T result = caseFeatureLink(featureLink);
-			if (result == null) {
+			if (result == null)
 				result = caseRelationship(featureLink);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(featureLink);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case FeaturemodelingPackage.FEATURE_CONSTRAINT: {
 			FeatureConstraint featureConstraint = (FeatureConstraint) theEObject;
 			T result = caseFeatureConstraint(featureConstraint);
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(featureConstraint);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case FeaturemodelingPackage.FEATURE_GROUP: {
 			FeatureGroup featureGroup = (FeatureGroup) theEObject;
 			T result = caseFeatureGroup(featureGroup);
-			if (result == null) {
+			if (result == null)
 				result = caseFeatureTreeNode(featureGroup);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseContext(featureGroup);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPackageableElement(featureGroup);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(featureGroup);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		default:

@@ -168,9 +168,8 @@ public class FaultFailurePropagationLinkImpl extends EAElementImpl implements Fa
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case ErrormodelPackage.FAULT_FAILURE_PROPAGATION_LINK__BASE_CONNECTOR:
-			if (resolve) {
+			if (resolve)
 				return getBase_Connector();
-			}
 			return basicGetBase_Connector();
 		case ErrormodelPackage.FAULT_FAILURE_PROPAGATION_LINK__IMMEDIATE_PROPAGATION:
 			return isImmediatePropagation();
@@ -286,9 +285,8 @@ public class FaultFailurePropagationLinkImpl extends EAElementImpl implements Fa
 			InternalEObject oldBase_Connector = (InternalEObject) base_Connector;
 			base_Connector = (Connector) eResolveProxy(oldBase_Connector);
 			if (base_Connector != oldBase_Connector) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ErrormodelPackage.FAULT_FAILURE_PROPAGATION_LINK__BASE_CONNECTOR, oldBase_Connector, base_Connector));
-				}
 			}
 		}
 		return base_Connector;
@@ -314,9 +312,8 @@ public class FaultFailurePropagationLinkImpl extends EAElementImpl implements Fa
 	public void setBase_Connector(Connector newBase_Connector) {
 		Connector oldBase_Connector = base_Connector;
 		base_Connector = newBase_Connector;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ErrormodelPackage.FAULT_FAILURE_PROPAGATION_LINK__BASE_CONNECTOR, oldBase_Connector, base_Connector));
-		}
 	}
 
 	/**
@@ -364,11 +361,10 @@ public class FaultFailurePropagationLinkImpl extends EAElementImpl implements Fa
 		fromPort = newFromPort;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ErrormodelPackage.FAULT_FAILURE_PROPAGATION_LINK__FROM_PORT, oldFromPort, newFromPort);
-			if (msgs == null) {
+			if (msgs == null)
 				msgs = notification;
-			} else {
+			else
 				msgs.add(notification);
-			}
 		}
 		return msgs;
 	}
@@ -383,20 +379,16 @@ public class FaultFailurePropagationLinkImpl extends EAElementImpl implements Fa
 	public void setFromPort(FaultFailurePropagationLink_fromPortInstanceRef newFromPort) {
 		if (newFromPort != fromPort) {
 			NotificationChain msgs = null;
-			if (fromPort != null) {
+			if (fromPort != null)
 				msgs = ((InternalEObject) fromPort).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ErrormodelPackage.FAULT_FAILURE_PROPAGATION_LINK__FROM_PORT, null, msgs);
-			}
-			if (newFromPort != null) {
+			if (newFromPort != null)
 				msgs = ((InternalEObject) newFromPort).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ErrormodelPackage.FAULT_FAILURE_PROPAGATION_LINK__FROM_PORT, null, msgs);
-			}
 			msgs = basicSetFromPort(newFromPort, msgs);
-			if (msgs != null) {
+			if (msgs != null)
 				msgs.dispatch();
-			}
 		}
-		else if (eNotificationRequired()) {
+		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ErrormodelPackage.FAULT_FAILURE_PROPAGATION_LINK__FROM_PORT, newFromPort, newFromPort));
-		}
 	}
 
 	/**
@@ -437,11 +429,10 @@ public class FaultFailurePropagationLinkImpl extends EAElementImpl implements Fa
 		toPort = newToPort;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ErrormodelPackage.FAULT_FAILURE_PROPAGATION_LINK__TO_PORT, oldToPort, newToPort);
-			if (msgs == null) {
+			if (msgs == null)
 				msgs = notification;
-			} else {
+			else
 				msgs.add(notification);
-			}
 		}
 		return msgs;
 	}
@@ -456,20 +447,16 @@ public class FaultFailurePropagationLinkImpl extends EAElementImpl implements Fa
 	public void setToPort(FaultFailurePropagationLink_toPortInstanceRef newToPort) {
 		if (newToPort != toPort) {
 			NotificationChain msgs = null;
-			if (toPort != null) {
+			if (toPort != null)
 				msgs = ((InternalEObject) toPort).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ErrormodelPackage.FAULT_FAILURE_PROPAGATION_LINK__TO_PORT, null, msgs);
-			}
-			if (newToPort != null) {
+			if (newToPort != null)
 				msgs = ((InternalEObject) newToPort).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ErrormodelPackage.FAULT_FAILURE_PROPAGATION_LINK__TO_PORT, null, msgs);
-			}
 			msgs = basicSetToPort(newToPort, msgs);
-			if (msgs != null) {
+			if (msgs != null)
 				msgs.dispatch();
-			}
 		}
-		else if (eNotificationRequired()) {
+		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ErrormodelPackage.FAULT_FAILURE_PROPAGATION_LINK__TO_PORT, newToPort, newToPort));
-		}
 	}
 
 	/**
@@ -491,9 +478,8 @@ public class FaultFailurePropagationLinkImpl extends EAElementImpl implements Fa
 	public void setImmediatePropagation(boolean newImmediatePropagation) {
 		boolean oldImmediatePropagation = immediatePropagation;
 		immediatePropagation = newImmediatePropagation;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ErrormodelPackage.FAULT_FAILURE_PROPAGATION_LINK__IMMEDIATE_PROPAGATION, oldImmediatePropagation, immediatePropagation));
-		}
 	}
 
 	/**
@@ -503,12 +489,11 @@ public class FaultFailurePropagationLinkImpl extends EAElementImpl implements Fa
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
+		if (eIsProxy())
 			return super.toString();
-		}
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (immediatePropagation: ");
+		result.append(" (immediatePropagation: "); //$NON-NLS-1$
 		result.append(immediatePropagation);
 		result.append(')');
 		return result.toString();

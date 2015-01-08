@@ -118,21 +118,18 @@ public class UserAttributeValueImpl extends EAElementImpl implements UserAttribu
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case UserattributesPackage.USER_ATTRIBUTE_VALUE__BASE_CLASS:
-			if (resolve) {
+			if (resolve)
 				return getBase_Class();
-			}
 			return basicGetBase_Class();
 		case UserattributesPackage.USER_ATTRIBUTE_VALUE__VALUE:
 			return getValue();
 		case UserattributesPackage.USER_ATTRIBUTE_VALUE__BASE_PROPERTY:
-			if (resolve) {
+			if (resolve)
 				return getBase_Property();
-			}
 			return basicGetBase_Property();
 		case UserattributesPackage.USER_ATTRIBUTE_VALUE__DEFINITION:
-			if (resolve) {
+			if (resolve)
 				return getDefinition();
-			}
 			return basicGetDefinition();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -207,9 +204,8 @@ public class UserAttributeValueImpl extends EAElementImpl implements UserAttribu
 			InternalEObject oldBase_Class = (InternalEObject) base_Class;
 			base_Class = (org.eclipse.uml2.uml.Class) eResolveProxy(oldBase_Class);
 			if (base_Class != oldBase_Class) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, UserattributesPackage.USER_ATTRIBUTE_VALUE__BASE_CLASS, oldBase_Class, base_Class));
-				}
 			}
 		}
 		return base_Class;
@@ -235,9 +231,8 @@ public class UserAttributeValueImpl extends EAElementImpl implements UserAttribu
 	public void setBase_Class(org.eclipse.uml2.uml.Class newBase_Class) {
 		org.eclipse.uml2.uml.Class oldBase_Class = base_Class;
 		base_Class = newBase_Class;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, UserattributesPackage.USER_ATTRIBUTE_VALUE__BASE_CLASS, oldBase_Class, base_Class));
-		}
 	}
 
 	/**
@@ -288,9 +283,8 @@ public class UserAttributeValueImpl extends EAElementImpl implements UserAttribu
 			InternalEObject oldDefinition = (InternalEObject) definition;
 			definition = (UserAttributeDefinition) eResolveProxy(oldDefinition);
 			if (definition != oldDefinition) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, UserattributesPackage.USER_ATTRIBUTE_VALUE__DEFINITION, oldDefinition, definition));
-				}
 			}
 		}
 		return definition;
@@ -316,9 +310,8 @@ public class UserAttributeValueImpl extends EAElementImpl implements UserAttribu
 	public void setDefinition(UserAttributeDefinition newDefinition) {
 		UserAttributeDefinition oldDefinition = definition;
 		definition = newDefinition;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, UserattributesPackage.USER_ATTRIBUTE_VALUE__DEFINITION, oldDefinition, definition));
-		}
 	}
 
 	/**
@@ -331,9 +324,8 @@ public class UserAttributeValueImpl extends EAElementImpl implements UserAttribu
 	public void setValue(String newValue) {
 		String oldValue = value;
 		value = newValue;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, UserattributesPackage.USER_ATTRIBUTE_VALUE__VALUE, oldValue, value));
-		}
 	}
 
 	/**
@@ -348,9 +340,8 @@ public class UserAttributeValueImpl extends EAElementImpl implements UserAttribu
 			InternalEObject oldBase_Property = (InternalEObject) base_Property;
 			base_Property = (Property) eResolveProxy(oldBase_Property);
 			if (base_Property != oldBase_Property) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, UserattributesPackage.USER_ATTRIBUTE_VALUE__BASE_PROPERTY, oldBase_Property, base_Property));
-				}
 			}
 		}
 		return base_Property;
@@ -376,9 +367,8 @@ public class UserAttributeValueImpl extends EAElementImpl implements UserAttribu
 	public void setBase_Property(Property newBase_Property) {
 		Property oldBase_Property = base_Property;
 		base_Property = newBase_Property;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, UserattributesPackage.USER_ATTRIBUTE_VALUE__BASE_PROPERTY, oldBase_Property, base_Property));
-		}
 	}
 
 	/**
@@ -389,12 +379,11 @@ public class UserAttributeValueImpl extends EAElementImpl implements UserAttribu
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
+		if (eIsProxy())
 			return super.toString();
-		}
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (value: ");
+		result.append(" (value: "); //$NON-NLS-1$
 		result.append(value);
 		result.append(')');
 		return result.toString();

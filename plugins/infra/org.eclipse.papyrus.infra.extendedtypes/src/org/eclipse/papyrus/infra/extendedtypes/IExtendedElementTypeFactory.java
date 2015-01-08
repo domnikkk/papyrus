@@ -27,7 +27,7 @@ public interface IExtendedElementTypeFactory<T extends ElementTypeConfiguration>
 	 *            configuration of the element type to create
 	 * @return the newly created element type or <code>null</code> if no element type could be created
 	 */
-	IExtendedHintedElementType createElementType(T configuration);
+	IExtendedHintedElementType createElementType(T configuration) throws UnknowElementTypesException;
 
 
 	/**

@@ -146,19 +146,16 @@ public class ErrorModelPrototypeImpl extends EAElementImpl implements ErrorModel
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case ErrormodelPackage.ERROR_MODEL_PROTOTYPE__BASE_PROPERTY:
-			if (resolve) {
+			if (resolve)
 				return getBase_Property();
-			}
 			return basicGetBase_Property();
 		case ErrormodelPackage.ERROR_MODEL_PROTOTYPE__TYPE:
-			if (resolve) {
+			if (resolve)
 				return getType();
-			}
 			return basicGetType();
 		case ErrormodelPackage.ERROR_MODEL_PROTOTYPE__TARGET:
-			if (resolve) {
+			if (resolve)
 				return getTarget();
-			}
 			return basicGetTarget();
 		case ErrormodelPackage.ERROR_MODEL_PROTOTYPE__FUNCTION_TARGET:
 			return getFunctionTarget();
@@ -293,9 +290,8 @@ public class ErrorModelPrototypeImpl extends EAElementImpl implements ErrorModel
 			InternalEObject oldBase_Property = (InternalEObject) base_Property;
 			base_Property = (Property) eResolveProxy(oldBase_Property);
 			if (base_Property != oldBase_Property) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ErrormodelPackage.ERROR_MODEL_PROTOTYPE__BASE_PROPERTY, oldBase_Property, base_Property));
-				}
 			}
 		}
 		return base_Property;
@@ -321,9 +317,8 @@ public class ErrorModelPrototypeImpl extends EAElementImpl implements ErrorModel
 	public void setBase_Property(Property newBase_Property) {
 		Property oldBase_Property = base_Property;
 		base_Property = newBase_Property;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ErrormodelPackage.ERROR_MODEL_PROTOTYPE__BASE_PROPERTY, oldBase_Property, base_Property));
-		}
 	}
 
 	/**
@@ -387,9 +382,8 @@ public class ErrorModelPrototypeImpl extends EAElementImpl implements ErrorModel
 			InternalEObject oldTarget = (InternalEObject) target;
 			target = (NamedElement) eResolveProxy(oldTarget);
 			if (target != oldTarget) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ErrormodelPackage.ERROR_MODEL_PROTOTYPE__TARGET, oldTarget, target));
-				}
 			}
 		}
 		return target;
@@ -415,9 +409,8 @@ public class ErrorModelPrototypeImpl extends EAElementImpl implements ErrorModel
 	public void setTarget(NamedElement newTarget) {
 		NamedElement oldTarget = target;
 		target = newTarget;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ErrormodelPackage.ERROR_MODEL_PROTOTYPE__TARGET, oldTarget, target));
-		}
 	}
 
 } // ErrorModelPrototypeImpl

@@ -116,9 +116,8 @@ public class FunctionFlowPortImpl extends FunctionPortImpl implements FunctionFl
 			InternalEObject oldDefaultValue = (InternalEObject) defaultValue;
 			defaultValue = (EAValue) eResolveProxy(oldDefaultValue);
 			if (defaultValue != oldDefaultValue) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FunctionmodelingPackage.FUNCTION_FLOW_PORT__DEFAULT_VALUE, oldDefaultValue, defaultValue));
-				}
 			}
 		}
 		return defaultValue;
@@ -144,9 +143,8 @@ public class FunctionFlowPortImpl extends FunctionPortImpl implements FunctionFl
 	public void setDefaultValue(EAValue newDefaultValue) {
 		EAValue oldDefaultValue = defaultValue;
 		defaultValue = newDefaultValue;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FunctionmodelingPackage.FUNCTION_FLOW_PORT__DEFAULT_VALUE, oldDefaultValue, defaultValue));
-		}
 	}
 
 	/**
@@ -170,9 +168,8 @@ public class FunctionFlowPortImpl extends FunctionPortImpl implements FunctionFl
 	public void setDirection(EADirectionKind newDirection) {
 		EADirectionKind oldDirection = direction;
 		direction = newDirection == null ? DIRECTION_EDEFAULT : newDirection;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FunctionmodelingPackage.FUNCTION_FLOW_PORT__DIRECTION, oldDirection, direction));
-		}
 	}
 
 	/**
@@ -184,14 +181,12 @@ public class FunctionFlowPortImpl extends FunctionPortImpl implements FunctionFl
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case FunctionmodelingPackage.FUNCTION_FLOW_PORT__TYPE:
-			if (resolve) {
+			if (resolve)
 				return getType();
-			}
 			return basicGetType();
 		case FunctionmodelingPackage.FUNCTION_FLOW_PORT__DEFAULT_VALUE:
-			if (resolve) {
+			if (resolve)
 				return getDefaultValue();
-			}
 			return basicGetDefaultValue();
 		case FunctionmodelingPackage.FUNCTION_FLOW_PORT__DIRECTION:
 			return getDirection();
@@ -225,12 +220,11 @@ public class FunctionFlowPortImpl extends FunctionPortImpl implements FunctionFl
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
+		if (eIsProxy())
 			return super.toString();
-		}
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (direction: ");
+		result.append(" (direction: "); //$NON-NLS-1$
 		result.append(direction);
 		result.append(')');
 		return result.toString();

@@ -68,9 +68,8 @@ public abstract class RedefinableElementImpl extends EAElementImpl implements Re
 			InternalEObject oldBase_RedefinableElement = (InternalEObject) base_RedefinableElement;
 			base_RedefinableElement = (org.eclipse.uml2.uml.RedefinableElement) eResolveProxy(oldBase_RedefinableElement);
 			if (base_RedefinableElement != oldBase_RedefinableElement) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, UsecasesPackage.REDEFINABLE_ELEMENT__BASE_REDEFINABLE_ELEMENT, oldBase_RedefinableElement, base_RedefinableElement));
-				}
 			}
 		}
 		return base_RedefinableElement;
@@ -96,9 +95,8 @@ public abstract class RedefinableElementImpl extends EAElementImpl implements Re
 	public void setBase_RedefinableElement(org.eclipse.uml2.uml.RedefinableElement newBase_RedefinableElement) {
 		org.eclipse.uml2.uml.RedefinableElement oldBase_RedefinableElement = base_RedefinableElement;
 		base_RedefinableElement = newBase_RedefinableElement;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, UsecasesPackage.REDEFINABLE_ELEMENT__BASE_REDEFINABLE_ELEMENT, oldBase_RedefinableElement, base_RedefinableElement));
-		}
 	}
 
 	/**
@@ -111,9 +109,8 @@ public abstract class RedefinableElementImpl extends EAElementImpl implements Re
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case UsecasesPackage.REDEFINABLE_ELEMENT__BASE_REDEFINABLE_ELEMENT:
-			if (resolve) {
+			if (resolve)
 				return getBase_RedefinableElement();
-			}
 			return basicGetBase_RedefinableElement();
 		}
 		return super.eGet(featureID, resolve, coreType);

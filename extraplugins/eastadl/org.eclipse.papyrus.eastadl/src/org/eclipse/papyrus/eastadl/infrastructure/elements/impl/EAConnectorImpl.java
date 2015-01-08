@@ -69,9 +69,8 @@ public abstract class EAConnectorImpl extends MinimalEObjectImpl.Container imple
 			InternalEObject oldBase_Connector = (InternalEObject) base_Connector;
 			base_Connector = (Connector) eResolveProxy(oldBase_Connector);
 			if (base_Connector != oldBase_Connector) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ElementsPackage.EA_CONNECTOR__BASE_CONNECTOR, oldBase_Connector, base_Connector));
-				}
 			}
 		}
 		return base_Connector;
@@ -97,9 +96,8 @@ public abstract class EAConnectorImpl extends MinimalEObjectImpl.Container imple
 	public void setBase_Connector(Connector newBase_Connector) {
 		Connector oldBase_Connector = base_Connector;
 		base_Connector = newBase_Connector;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ElementsPackage.EA_CONNECTOR__BASE_CONNECTOR, oldBase_Connector, base_Connector));
-		}
 	}
 
 	/**
@@ -112,9 +110,8 @@ public abstract class EAConnectorImpl extends MinimalEObjectImpl.Container imple
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case ElementsPackage.EA_CONNECTOR__BASE_CONNECTOR:
-			if (resolve) {
+			if (resolve)
 				return getBase_Connector();
-			}
 			return basicGetBase_Connector();
 		}
 		return super.eGet(featureID, resolve, coreType);

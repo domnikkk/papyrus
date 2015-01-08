@@ -103,9 +103,8 @@ public class LogicalEventImpl extends QuantificationImpl implements LogicalEvent
 	public void setIsExternVisible(boolean newIsExternVisible) {
 		boolean oldIsExternVisible = isExternVisible;
 		isExternVisible = newIsExternVisible;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, AttributequantificationconstraintPackage.LOGICAL_EVENT__IS_EXTERN_VISIBLE, oldIsExternVisible, isExternVisible));
-		}
 	}
 
 	/**
@@ -204,12 +203,11 @@ public class LogicalEventImpl extends QuantificationImpl implements LogicalEvent
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
+		if (eIsProxy())
 			return super.toString();
-		}
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (isExternVisible: ");
+		result.append(" (isExternVisible: "); //$NON-NLS-1$
 		result.append(isExternVisible);
 		result.append(')');
 		return result.toString();

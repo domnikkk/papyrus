@@ -2,14 +2,7 @@
 <?eclipse version="3.0"?>
 
 
-
 <plugin>
-
-    <extension point="org.eclipse.emf.ecore.extension_parser">
-    <parser 
-       type="EAST-ADL2" 
-       class="org.eclipse.papyrus.eastadl.util.EastadlResourceFactoryImpl" />
-    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated eastadl -->
@@ -175,12 +168,6 @@
        uri = "http://www.papyrusuml.org/EAST-ADL2/Structure/1" 
        class = "org.eclipse.papyrus.eastadl.structure.StructurePackage"
        genModel = "model/eastadl.genmodel" /> 
-  </extension>
-
-  <extension point="org.eclipse.emf.ecore.extension_parser">
-    <parser 
-       type="Structure" 
-       class="org.eclipse.papyrus.eastadl.structure.util.StructureResourceFactoryImpl" />
   </extension>
   
   <extension point="org.eclipse.emf.ecore.generated_package">
@@ -1143,16 +1130,14 @@
           location="platform:/plugin/org.eclipse.papyrus.eastadl/model/eastadl.profile.uml#_a_kcsNjiEd6wXIBypQTswA"
           uri="http://www.papyrusuml.org/EAST-ADL2/Timing/TimingConstraints/1">
     </profile>
- </extension>
-
-	
+ </extension>	
 	
 	<extension
 		point="org.eclipse.uml2.uml.generated_package">
 			<profile
 				uri="http://www.papyrusuml.org/EAST-ADL2/Variability/1"
 				location="platform:/plugin/org.eclipse.papyrus.eastadl/model/eastadl.profile.uml#_i-WL-TxIEdyqfK4bFJstMQ">
-	 </profile></extension>
+	</profile></extension>
 		
 	<extension
 		point="org.eclipse.emf.ecore.uri_mapping">
@@ -1160,15 +1145,8 @@
 				source="pathmap://EAST-ADL2_PROFILES/"
 				target="platform:/plugin/org.eclipse.papyrus.eastadl/model/"/>
 	</extension>
-   
-   
- 
-    
   
-  
-  
-  
-     <extension
+	<extension
            point="org.eclipse.papyrus.uml.diagram.wizards.templates">
         <template
               di_file="resources/templates/initialmodel.di"
@@ -1178,10 +1156,9 @@
               name="An EAST-ADL model with applied profile and system structure"
               notation_file="resources/templates/initialmodel.notation">
         </template>
-     </extension>
+	</extension>
 
-
-   <extension
+	<extension
          point="org.eclipse.papyrus.uml.extensionpoints.UMLProfile">
       <profile
             description="UML Profile for EAST-ADL2"
@@ -1189,11 +1166,8 @@
             name="EAST-ADL2"
             path="pathmap://EAST-ADL2_PROFILES/eastadl.profile.uml"
             provider="CEA LIST"/>
-   </extension>
-	
-  
-  
-  
+	</extension>
+
 </plugin>
 
 

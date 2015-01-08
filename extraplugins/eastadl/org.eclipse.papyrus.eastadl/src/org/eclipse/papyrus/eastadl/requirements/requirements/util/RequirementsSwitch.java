@@ -89,209 +89,158 @@ public class RequirementsSwitch<T> extends Switch<T> {
 		case RequirementsPackage.REQUIREMENTS_RELATIONSHIP: {
 			RequirementsRelationship requirementsRelationship = (RequirementsRelationship) theEObject;
 			T result = caseRequirementsRelationship(requirementsRelationship);
-			if (result == null) {
+			if (result == null)
 				result = caseRelationship(requirementsRelationship);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(requirementsRelationship);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case RequirementsPackage.REQUIREMENT: {
 			Requirement requirement = (Requirement) theEObject;
 			T result = caseRequirement(requirement);
-			if (result == null) {
+			if (result == null)
 				result = caseRequirements_Requirement(requirement);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseTraceableSpecification(requirement);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPackageableElement(requirement);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(requirement);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case RequirementsPackage.OPERATIONAL_SITUATION: {
 			OperationalSituation operationalSituation = (OperationalSituation) theEObject;
 			T result = caseOperationalSituation(operationalSituation);
-			if (result == null) {
+			if (result == null)
 				result = caseTraceableSpecification(operationalSituation);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPackageableElement(operationalSituation);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(operationalSituation);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case RequirementsPackage.REQUIREMENTS_LINK: {
 			RequirementsLink requirementsLink = (RequirementsLink) theEObject;
 			T result = caseRequirementsLink(requirementsLink);
-			if (result == null) {
+			if (result == null)
 				result = caseRequirementsRelationship(requirementsLink);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseRelationship(requirementsLink);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(requirementsLink);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case RequirementsPackage.REQUIREMENTS_MODEL: {
 			RequirementsModel requirementsModel = (RequirementsModel) theEObject;
 			T result = caseRequirementsModel(requirementsModel);
-			if (result == null) {
+			if (result == null)
 				result = caseContext(requirementsModel);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPackageableElement(requirementsModel);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(requirementsModel);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case RequirementsPackage.REQUIREMENTS_RELATIONSHIP_GROUP: {
 			RequirementsRelationshipGroup requirementsRelationshipGroup = (RequirementsRelationshipGroup) theEObject;
 			T result = caseRequirementsRelationshipGroup(requirementsRelationshipGroup);
-			if (result == null) {
+			if (result == null)
 				result = caseTraceableSpecification(requirementsRelationshipGroup);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPackageableElement(requirementsRelationshipGroup);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(requirementsRelationshipGroup);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case RequirementsPackage.SATISFY: {
 			Satisfy satisfy = (Satisfy) theEObject;
 			T result = caseSatisfy(satisfy);
-			if (result == null) {
+			if (result == null)
 				result = caseRequirementsRelationship(satisfy);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseRequirements_Satisfy(satisfy);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseRelationship(satisfy);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseTrace(satisfy);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(satisfy);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case RequirementsPackage.REFINE: {
 			Refine refine = (Refine) theEObject;
 			T result = caseRefine(refine);
-			if (result == null) {
+			if (result == null)
 				result = caseRequirementsRelationship(refine);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseStandard_Refine(refine);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseRelationship(refine);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(refine);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case RequirementsPackage.DERIVE_REQUIREMENT: {
 			DeriveRequirement deriveRequirement = (DeriveRequirement) theEObject;
 			T result = caseDeriveRequirement(deriveRequirement);
-			if (result == null) {
+			if (result == null)
 				result = caseRequirementsRelationship(deriveRequirement);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseDeriveReqt(deriveRequirement);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseRelationship(deriveRequirement);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseTrace(deriveRequirement);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(deriveRequirement);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case RequirementsPackage.QUALITY_REQUIREMENT: {
 			QualityRequirement qualityRequirement = (QualityRequirement) theEObject;
 			T result = caseQualityRequirement(qualityRequirement);
-			if (result == null) {
+			if (result == null)
 				result = caseRequirement(qualityRequirement);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseRequirements_Requirement(qualityRequirement);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseTraceableSpecification(qualityRequirement);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPackageableElement(qualityRequirement);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(qualityRequirement);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case RequirementsPackage.REQUIREMENTS_HIERARCHY: {
 			RequirementsHierarchy requirementsHierarchy = (RequirementsHierarchy) theEObject;
 			T result = caseRequirementsHierarchy(requirementsHierarchy);
-			if (result == null) {
+			if (result == null)
 				result = caseTraceableSpecification(requirementsHierarchy);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPackageableElement(requirementsHierarchy);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(requirementsHierarchy);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		default:

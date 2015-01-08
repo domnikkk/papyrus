@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ASCII"?>
+<ElementCreationMenuModel:Folder
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ElementCreationMenuModel="http://www.eclipse.org/papyrus/infra/newchild/elementcreationmenumodel"
+    label="Test For And/Or Rules">
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
+      label="ClassA"
+      elementTypeIdRef="org.eclipse.papyrus.intra.extendedtypes.tests.aspect.ClassA"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
+      label="ClassB"
+      elementTypeIdRef="org.eclipse.papyrus.intra.extendedtypes.tests.aspect.ClassB"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
+      label="Standard Class"
+      elementTypeIdRef="org.eclipse.papyrus.uml.Class"/>
+</ElementCreationMenuModel:Folder>

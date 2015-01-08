@@ -133,6 +133,8 @@ public class ArtifactEditPartCN extends NodeEditPart {
 			((ArtifactNameEditPartCN) childEditPart).setLabel(getPrimaryShape().getNameLabel());
 			return true;
 		}
+
+
 		return false;
 	}
 
@@ -196,6 +198,7 @@ public class ArtifactEditPartCN extends NodeEditPart {
 	@Override
 	protected NodeFigure createNodeFigure() {
 		return new SelectableBorderedNodeFigure(createMainFigureWithSVG());
+
 	}
 
 	/**

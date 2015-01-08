@@ -146,9 +146,8 @@ public class HardwarePortImpl extends AllocationTargetImpl implements HardwarePo
 			InternalEObject oldBase_Port = (InternalEObject) base_Port;
 			base_Port = (Port) eResolveProxy(oldBase_Port);
 			if (base_Port != oldBase_Port) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, HardwaremodelingPackage.HARDWARE_PORT__BASE_PORT, oldBase_Port, base_Port));
-				}
 			}
 		}
 		return base_Port;
@@ -174,9 +173,8 @@ public class HardwarePortImpl extends AllocationTargetImpl implements HardwarePo
 	public void setBase_Port(Port newBase_Port) {
 		Port oldBase_Port = base_Port;
 		base_Port = newBase_Port;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, HardwaremodelingPackage.HARDWARE_PORT__BASE_PORT, oldBase_Port, base_Port));
-		}
 	}
 
 	/**
@@ -191,9 +189,8 @@ public class HardwarePortImpl extends AllocationTargetImpl implements HardwarePo
 			InternalEObject oldBase_Class = (InternalEObject) base_Class;
 			base_Class = (org.eclipse.uml2.uml.Class) eResolveProxy(oldBase_Class);
 			if (base_Class != oldBase_Class) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, HardwaremodelingPackage.HARDWARE_PORT__BASE_CLASS, oldBase_Class, base_Class));
-				}
 			}
 		}
 		return base_Class;
@@ -219,9 +216,8 @@ public class HardwarePortImpl extends AllocationTargetImpl implements HardwarePo
 	public void setBase_Class(org.eclipse.uml2.uml.Class newBase_Class) {
 		org.eclipse.uml2.uml.Class oldBase_Class = base_Class;
 		base_Class = newBase_Class;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, HardwaremodelingPackage.HARDWARE_PORT__BASE_CLASS, oldBase_Class, base_Class));
-		}
 	}
 
 	/**
@@ -245,9 +241,8 @@ public class HardwarePortImpl extends AllocationTargetImpl implements HardwarePo
 	public void setIsShield(boolean newIsShield) {
 		boolean oldIsShield = isShield;
 		isShield = newIsShield;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, HardwaremodelingPackage.HARDWARE_PORT__IS_SHIELD, oldIsShield, isShield));
-		}
 	}
 
 	/**
@@ -302,14 +297,12 @@ public class HardwarePortImpl extends AllocationTargetImpl implements HardwarePo
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case HardwaremodelingPackage.HARDWARE_PORT__BASE_PORT:
-			if (resolve) {
+			if (resolve)
 				return getBase_Port();
-			}
 			return basicGetBase_Port();
 		case HardwaremodelingPackage.HARDWARE_PORT__BASE_CLASS:
-			if (resolve) {
+			if (resolve)
 				return getBase_Class();
-			}
 			return basicGetBase_Class();
 		case HardwaremodelingPackage.HARDWARE_PORT__IS_SHIELD:
 			return isIsShield();
@@ -460,12 +453,11 @@ public class HardwarePortImpl extends AllocationTargetImpl implements HardwarePo
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
+		if (eIsProxy())
 			return super.toString();
-		}
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (isShield: ");
+		result.append(" (isShield: "); //$NON-NLS-1$
 		result.append(isShield);
 		result.append(')');
 		return result.toString();

@@ -205,9 +205,8 @@ public class TakeRateConstraintImpl extends GenericConstraintImpl implements Tak
 	public void setTakeRate(Float newTakeRate) {
 		Float oldTakeRate = takeRate;
 		takeRate = newTakeRate;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, GenericconstraintsPackage.TAKE_RATE_CONSTRAINT__TAKE_RATE, oldTakeRate, takeRate));
-		}
 	}
 
 	/**
@@ -218,12 +217,11 @@ public class TakeRateConstraintImpl extends GenericConstraintImpl implements Tak
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
+		if (eIsProxy())
 			return super.toString();
-		}
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (takeRate: ");
+		result.append(" (takeRate: "); //$NON-NLS-1$
 		result.append(takeRate);
 		result.append(')');
 		return result.toString();

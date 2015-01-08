@@ -110,7 +110,7 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 		case DatatypesPackage.JAVALANG_FLOAT:
 			return convertjavalangFloatToString(eDataType, instanceValue);
 		default:
-			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 	}
 
@@ -194,7 +194,7 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 		case DatatypesPackage.ARRAY_DATA_TYPE:
 			return createArrayDataType();
 		default:
-			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 	}
 
@@ -304,7 +304,7 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 		case DatatypesPackage.JAVALANG_FLOAT:
 			return createjavalangFloatFromString(eDataType, initialValue);
 		default:
-			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 	}
 

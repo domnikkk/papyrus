@@ -85,9 +85,8 @@ public class EventFunctionFlowPortInstanceRefImpl extends InstanceRefImpl implem
 			InternalEObject oldFunctionFlowPort = (InternalEObject) functionFlowPort;
 			functionFlowPort = (FunctionFlowPort) eResolveProxy(oldFunctionFlowPort);
 			if (functionFlowPort != oldFunctionFlowPort) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InfrastructurePackage.EVENT_FUNCTION_FLOW_PORT_INSTANCE_REF__FUNCTION_FLOW_PORT, oldFunctionFlowPort, functionFlowPort));
-				}
 			}
 		}
 		return functionFlowPort;
@@ -113,9 +112,8 @@ public class EventFunctionFlowPortInstanceRefImpl extends InstanceRefImpl implem
 	public void setFunctionFlowPort(FunctionFlowPort newFunctionFlowPort) {
 		FunctionFlowPort oldFunctionFlowPort = functionFlowPort;
 		functionFlowPort = newFunctionFlowPort;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, InfrastructurePackage.EVENT_FUNCTION_FLOW_PORT_INSTANCE_REF__FUNCTION_FLOW_PORT, oldFunctionFlowPort, functionFlowPort));
-		}
 	}
 
 	/**
@@ -142,9 +140,8 @@ public class EventFunctionFlowPortInstanceRefImpl extends InstanceRefImpl implem
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case InfrastructurePackage.EVENT_FUNCTION_FLOW_PORT_INSTANCE_REF__FUNCTION_FLOW_PORT:
-			if (resolve) {
+			if (resolve)
 				return getFunctionFlowPort();
-			}
 			return basicGetFunctionFlowPort();
 		case InfrastructurePackage.EVENT_FUNCTION_FLOW_PORT_INSTANCE_REF__FUNCTION_PROTOTYPE:
 			return getFunctionPrototype();

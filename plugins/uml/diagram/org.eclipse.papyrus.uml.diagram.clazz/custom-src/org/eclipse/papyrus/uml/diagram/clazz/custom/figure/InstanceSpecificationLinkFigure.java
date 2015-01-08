@@ -17,6 +17,7 @@ package org.eclipse.papyrus.uml.diagram.clazz.custom.figure;
  * it contains moreover two label to display roles
  */
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
+import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.PapyrusWrappingLabel;
 import org.eclipse.papyrus.uml.diagram.common.figure.edge.UMLEdgeFigure;
 
 public class InstanceSpecificationLinkFigure extends UMLEdgeFigure {
@@ -32,9 +33,9 @@ public class InstanceSpecificationLinkFigure extends UMLEdgeFigure {
 	 */
 	public InstanceSpecificationLinkFigure() {
 		super();
-		targetLabel = new WrappingLabel();
+		targetLabel = new PapyrusWrappingLabel();
 		this.add(targetLabel);
-		sourceLabel = new WrappingLabel();
+		sourceLabel = new PapyrusWrappingLabel();
 		this.add(sourceLabel);
 	}
 

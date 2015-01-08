@@ -87,160 +87,122 @@ public class VerificationvalidationSwitch<T> extends Switch<T> {
 		case VerificationvalidationPackage.VV_STIMULI: {
 			VVStimuli vvStimuli = (VVStimuli) theEObject;
 			T result = caseVVStimuli(vvStimuli);
-			if (result == null) {
+			if (result == null)
 				result = caseTraceableSpecification(vvStimuli);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPackageableElement(vvStimuli);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(vvStimuli);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case VerificationvalidationPackage.VV_INTENDED_OUTCOME: {
 			VVIntendedOutcome vvIntendedOutcome = (VVIntendedOutcome) theEObject;
 			T result = caseVVIntendedOutcome(vvIntendedOutcome);
-			if (result == null) {
+			if (result == null)
 				result = caseTraceableSpecification(vvIntendedOutcome);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPackageableElement(vvIntendedOutcome);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(vvIntendedOutcome);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case VerificationvalidationPackage.VV_ACTUAL_OUTCOME: {
 			VVActualOutcome vvActualOutcome = (VVActualOutcome) theEObject;
 			T result = caseVVActualOutcome(vvActualOutcome);
-			if (result == null) {
+			if (result == null)
 				result = caseTraceableSpecification(vvActualOutcome);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPackageableElement(vvActualOutcome);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(vvActualOutcome);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case VerificationvalidationPackage.VV_CASE: {
 			VVCase vvCase = (VVCase) theEObject;
 			T result = caseVVCase(vvCase);
-			if (result == null) {
+			if (result == null)
 				result = caseTraceableSpecification(vvCase);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPackageableElement(vvCase);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(vvCase);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case VerificationvalidationPackage.VV_TARGET: {
 			VVTarget vvTarget = (VVTarget) theEObject;
 			T result = caseVVTarget(vvTarget);
-			if (result == null) {
+			if (result == null)
 				result = caseTraceableSpecification(vvTarget);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPackageableElement(vvTarget);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(vvTarget);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case VerificationvalidationPackage.VV_LOG: {
 			VVLog vvLog = (VVLog) theEObject;
 			T result = caseVVLog(vvLog);
-			if (result == null) {
+			if (result == null)
 				result = caseTraceableSpecification(vvLog);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPackageableElement(vvLog);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(vvLog);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case VerificationvalidationPackage.VV_PROCEDURE: {
 			VVProcedure vvProcedure = (VVProcedure) theEObject;
 			T result = caseVVProcedure(vvProcedure);
-			if (result == null) {
+			if (result == null)
 				result = caseTraceableSpecification(vvProcedure);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPackageableElement(vvProcedure);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(vvProcedure);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case VerificationvalidationPackage.VERIFICATION_VALIDATION: {
 			VerificationValidation verificationValidation = (VerificationValidation) theEObject;
 			T result = caseVerificationValidation(verificationValidation);
-			if (result == null) {
+			if (result == null)
 				result = caseContext(verificationValidation);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPackageableElement(verificationValidation);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(verificationValidation);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case VerificationvalidationPackage.VERIFY: {
 			Verify verify = (Verify) theEObject;
 			T result = caseVerify(verify);
-			if (result == null) {
+			if (result == null)
 				result = caseRequirementsRelationship(verify);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseRequirements_Verify(verify);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseRelationship(verify);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseTrace(verify);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(verify);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		default:

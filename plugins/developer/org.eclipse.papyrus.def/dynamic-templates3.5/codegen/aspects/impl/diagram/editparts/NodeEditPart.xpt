@@ -164,7 +164,7 @@ switch («EXPAND xpt::editor::VisualIDRegistry::getVisualIDMethodCall FOR getDia
 «ENDDEFINE»
 
 «DEFINE genSpecificLocator(gmfgen::GenChildSideAffixedNode child) FOR papyrusgmfgenextension::SpecificLocator-»
-//Papyrus Gencode :«self.comment»
+// Papyrus Gencode :«self.comment»
 	if (childEditPart instanceof «child.getEditPartQualifiedClassName()») {
 			org.eclipse.gmf.runtime.diagram.ui.figures.IBorderItemLocator locator = new «self.classpath»(getMainFigure(), org.eclipse.draw2d.PositionConstants.«child.preferredSideName»);
 			getBorderedFigure().getBorderItemContainer().add(((«child.getEditPartQualifiedClassName()») childEditPart).getFigure(), locator);

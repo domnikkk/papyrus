@@ -162,9 +162,8 @@ public abstract class TraceableSpecificationImpl extends EAPackageableElementImp
 	public void setNote(String newNote) {
 		String oldNote = note;
 		note = newNote;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ElementsPackage.TRACEABLE_SPECIFICATION__NOTE, oldNote, note));
-		}
 	}
 
 	/**
@@ -175,12 +174,11 @@ public abstract class TraceableSpecificationImpl extends EAPackageableElementImp
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
+		if (eIsProxy())
 			return super.toString();
-		}
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (note: ");
+		result.append(" (note: "); //$NON-NLS-1$
 		result.append(note);
 		result.append(')');
 		return result.toString();

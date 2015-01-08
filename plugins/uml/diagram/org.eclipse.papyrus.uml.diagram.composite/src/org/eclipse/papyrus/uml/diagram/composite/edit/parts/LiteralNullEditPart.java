@@ -131,6 +131,8 @@ public class LiteralNullEditPart extends NodeEditPart {
 			((LiteralNullNameEditPart) childEditPart).setLabel(getPrimaryShape().getNameLabel());
 			return true;
 		}
+
+
 		return false;
 	}
 
@@ -194,6 +196,7 @@ public class LiteralNullEditPart extends NodeEditPart {
 	@Override
 	protected NodeFigure createNodeFigure() {
 		return new SelectableBorderedNodeFigure(createMainFigureWithSVG());
+
 	}
 
 	/**

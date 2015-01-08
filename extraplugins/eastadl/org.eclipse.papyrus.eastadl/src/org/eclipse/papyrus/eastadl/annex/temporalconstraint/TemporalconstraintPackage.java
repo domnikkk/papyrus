@@ -24,6 +24,7 @@ import org.eclipse.papyrus.eastadl.timing.TimingPackage;
  *
  * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.TemporalconstraintFactory
  * @model kind="package"
+ *        annotation="http://www.eclipse.org/uml2/2.0.0/UML originalName='TemporalConstraint'"
  * @generated
  */
 public interface TemporalconstraintPackage extends EPackage {

@@ -115,21 +115,18 @@ public class SelectionCriterionImpl extends EAElementImpl implements SelectionCr
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case VariabilityPackage.SELECTION_CRITERION__TYPE:
-			if (resolve) {
+			if (resolve)
 				return getType();
-			}
 			return basicGetType();
 		case VariabilityPackage.SELECTION_CRITERION__BASE_VALUE_SPECIFICATION:
-			if (resolve) {
+			if (resolve)
 				return getBase_ValueSpecification();
-			}
 			return basicGetBase_ValueSpecification();
 		case VariabilityPackage.SELECTION_CRITERION__SOURCE:
 			return getSource();
 		case VariabilityPackage.SELECTION_CRITERION__BASE_CLASS:
-			if (resolve) {
+			if (resolve)
 				return getBase_Class();
-			}
 			return basicGetBase_Class();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -260,9 +257,8 @@ public class SelectionCriterionImpl extends EAElementImpl implements SelectionCr
 			InternalEObject oldType = (InternalEObject) type;
 			type = (EADatatype) eResolveProxy(oldType);
 			if (type != oldType) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, VariabilityPackage.SELECTION_CRITERION__TYPE, oldType, type));
-				}
 			}
 		}
 		return type;
@@ -288,9 +284,8 @@ public class SelectionCriterionImpl extends EAElementImpl implements SelectionCr
 	public void setType(EADatatype newType) {
 		EADatatype oldType = type;
 		type = newType;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VariabilityPackage.SELECTION_CRITERION__TYPE, oldType, type));
-		}
 	}
 
 	/**
@@ -305,9 +300,8 @@ public class SelectionCriterionImpl extends EAElementImpl implements SelectionCr
 			InternalEObject oldBase_ValueSpecification = (InternalEObject) base_ValueSpecification;
 			base_ValueSpecification = (ValueSpecification) eResolveProxy(oldBase_ValueSpecification);
 			if (base_ValueSpecification != oldBase_ValueSpecification) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, VariabilityPackage.SELECTION_CRITERION__BASE_VALUE_SPECIFICATION, oldBase_ValueSpecification, base_ValueSpecification));
-				}
 			}
 		}
 		return base_ValueSpecification;
@@ -333,9 +327,8 @@ public class SelectionCriterionImpl extends EAElementImpl implements SelectionCr
 	public void setBase_ValueSpecification(ValueSpecification newBase_ValueSpecification) {
 		ValueSpecification oldBase_ValueSpecification = base_ValueSpecification;
 		base_ValueSpecification = newBase_ValueSpecification;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VariabilityPackage.SELECTION_CRITERION__BASE_VALUE_SPECIFICATION, oldBase_ValueSpecification, base_ValueSpecification));
-		}
 	}
 
 	/**
@@ -389,9 +382,8 @@ public class SelectionCriterionImpl extends EAElementImpl implements SelectionCr
 			InternalEObject oldBase_Class = (InternalEObject) base_Class;
 			base_Class = (org.eclipse.uml2.uml.Class) eResolveProxy(oldBase_Class);
 			if (base_Class != oldBase_Class) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, VariabilityPackage.SELECTION_CRITERION__BASE_CLASS, oldBase_Class, base_Class));
-				}
 			}
 		}
 		return base_Class;
@@ -417,9 +409,8 @@ public class SelectionCriterionImpl extends EAElementImpl implements SelectionCr
 	public void setBase_Class(org.eclipse.uml2.uml.Class newBase_Class) {
 		org.eclipse.uml2.uml.Class oldBase_Class = base_Class;
 		base_Class = newBase_Class;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VariabilityPackage.SELECTION_CRITERION__BASE_CLASS, oldBase_Class, base_Class));
-		}
 	}
 
 } // SelectionCriterionImpl

@@ -139,9 +139,8 @@ public class TransformationOccurrenceImpl extends EAElementImpl implements Trans
 			InternalEObject oldInvokedLogicalTransformation = (InternalEObject) invokedLogicalTransformation;
 			invokedLogicalTransformation = (LogicalTransformation) eResolveProxy(oldInvokedLogicalTransformation);
 			if (invokedLogicalTransformation != oldInvokedLogicalTransformation) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComputationconstraintPackage.TRANSFORMATION_OCCURRENCE__INVOKED_LOGICAL_TRANSFORMATION, oldInvokedLogicalTransformation, invokedLogicalTransformation));
-				}
 			}
 		}
 		return invokedLogicalTransformation;
@@ -167,9 +166,8 @@ public class TransformationOccurrenceImpl extends EAElementImpl implements Trans
 	public void setInvokedLogicalTransformation(LogicalTransformation newInvokedLogicalTransformation) {
 		LogicalTransformation oldInvokedLogicalTransformation = invokedLogicalTransformation;
 		invokedLogicalTransformation = newInvokedLogicalTransformation;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ComputationconstraintPackage.TRANSFORMATION_OCCURRENCE__INVOKED_LOGICAL_TRANSFORMATION, oldInvokedLogicalTransformation, invokedLogicalTransformation));
-		}
 	}
 
 	/**
@@ -184,9 +182,8 @@ public class TransformationOccurrenceImpl extends EAElementImpl implements Trans
 			InternalEObject oldTimeCondition = (InternalEObject) timeCondition;
 			timeCondition = (LogicalTimeCondition) eResolveProxy(oldTimeCondition);
 			if (timeCondition != oldTimeCondition) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComputationconstraintPackage.TRANSFORMATION_OCCURRENCE__TIME_CONDITION, oldTimeCondition, timeCondition));
-				}
 			}
 		}
 		return timeCondition;
@@ -212,9 +209,8 @@ public class TransformationOccurrenceImpl extends EAElementImpl implements Trans
 	public void setTimeCondition(LogicalTimeCondition newTimeCondition) {
 		LogicalTimeCondition oldTimeCondition = timeCondition;
 		timeCondition = newTimeCondition;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ComputationconstraintPackage.TRANSFORMATION_OCCURRENCE__TIME_CONDITION, oldTimeCondition, timeCondition));
-		}
 	}
 
 	/**
@@ -231,14 +227,12 @@ public class TransformationOccurrenceImpl extends EAElementImpl implements Trans
 		case ComputationconstraintPackage.TRANSFORMATION_OCCURRENCE__OUT_QUANTIFICATION:
 			return getOutQuantification();
 		case ComputationconstraintPackage.TRANSFORMATION_OCCURRENCE__INVOKED_LOGICAL_TRANSFORMATION:
-			if (resolve) {
+			if (resolve)
 				return getInvokedLogicalTransformation();
-			}
 			return basicGetInvokedLogicalTransformation();
 		case ComputationconstraintPackage.TRANSFORMATION_OCCURRENCE__TIME_CONDITION:
-			if (resolve) {
+			if (resolve)
 				return getTimeCondition();
-			}
 			return basicGetTimeCondition();
 		}
 		return super.eGet(featureID, resolve, coreType);

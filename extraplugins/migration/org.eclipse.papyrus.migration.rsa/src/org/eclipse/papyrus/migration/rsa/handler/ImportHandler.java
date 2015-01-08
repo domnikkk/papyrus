@@ -11,13 +11,10 @@
  *****************************************************************************/
 package org.eclipse.papyrus.migration.rsa.handler;
 
-import java.io.IOException;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicBoolean;
 
@@ -26,27 +23,17 @@ import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.IAdaptable;
-import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.core.runtime.IStatus;
-import org.eclipse.core.runtime.NullProgressMonitor;
-import org.eclipse.core.runtime.Status;
-import org.eclipse.core.runtime.jobs.Job;
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.transaction.RecordingCommand;
-import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
-import org.eclipse.papyrus.infra.core.resource.ModelMultiException;
-import org.eclipse.papyrus.infra.core.resource.ModelSet;
-import org.eclipse.papyrus.infra.core.utils.DiResourceSet;
-import org.eclipse.papyrus.infra.emf.resource.DependencyManagementHelper;
 import org.eclipse.papyrus.migration.rsa.Activator;
 import org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.Config;
-import org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.RSAToPapyrusParametersFactory;
-import org.eclipse.papyrus.migration.rsa.transformation.ImportTransformation;
+import org.eclipse.papyrus.migration.rsa.transformation.ConfigHelper;
+import org.eclipse.papyrus.migration.rsa.transformation.ImportTransformationLauncher;
 import org.eclipse.papyrus.views.properties.creation.PropertyEditorFactory;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Shell;
+import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.handlers.HandlerUtil;
 
 
@@ -69,7 +56,6 @@ public class ImportHandler extends AbstractHandler {
 				if (selectedElement instanceof IAdaptable) {
 					IFile selectedFile = (IFile) ((IAdaptable) selectedElement).getAdapter(IFile.class);
 					if (selectedFile == null) {
-						Activator.log.warn("Element %s is not an IFile");
 						continue;
 					}
 
@@ -83,7 +69,9 @@ public class ImportHandler extends AbstractHandler {
 			}
 		}
 
-		if (!filesToImport.isEmpty()) {
+		if (filesToImport.isEmpty()) {
+			Activator.log.warn("The selection doesn't contain any *.epx nor *.emx file");
+		} else {
 			importFiles(filesToImport, event);
 		}
 
@@ -97,24 +85,33 @@ public class ImportHandler extends AbstractHandler {
 			return;
 		}
 
-		List<ImportTransformation> transformations = new LinkedList<ImportTransformation>();
+		List<URI> urisToImport = new LinkedList<URI>();
 
 		for (IFile selectedFile : selectedFiles) {
 			URI uri = URI.createPlatformResourceURI(selectedFile.getFullPath().toString(), true);
 
-			ImportTransformation transformation = new ImportTransformation(uri, config);
-			transformation.run();
-
-			transformations.add(transformation);
+			urisToImport.add(uri);
 		}
 
-		if (selectedFiles.size() > 1) {
-			importModelDependencies(transformations);
+		// The Event's control is (or may be) a Context Menu, which will be disposed soon: retrieve its own parent instead (The main Window), if it has one.
+		Control baseControl = HandlerUtil.getActiveShell(event);
+		if (baseControl != null && !baseControl.isDisposed() && baseControl.getParent() != null) {
+			baseControl = baseControl.getParent();
 		}
+
+		// On some platforms, it seems that the ActiveShell (Context Menu) may already be disposed (Bug 455011). Use the Active Workbench Window directly
+		if (baseControl == null || baseControl.isDisposed()) {
+			baseControl = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell();
+		}
+
+		ImportTransformationLauncher launcher = new ImportTransformationLauncher(config, baseControl);
+		launcher.run(urisToImport);
 	}
 
 	public Config getTransformationParameters(ExecutionEvent event) {
-		Config config = RSAToPapyrusParametersFactory.eINSTANCE.createConfig();
+		ConfigHelper helper = new ConfigHelper();
+
+		Config config = helper.getConfig();
 
 		Shell activeShell = HandlerUtil.getActiveShell(event);
 
@@ -145,82 +142,6 @@ public class ImportHandler extends AbstractHandler {
 
 		return config;
 	}
-
-	public void importModelDependencies(final List<ImportTransformation> transformations) {
-		Job importDependencies = new Job("Import model dependencies") {
-			@Override
-			protected IStatus run(IProgressMonitor monitor) {
-				monitor.setTaskName("Waiting for import tasks to complete...");
-				monitor.beginTask("Import model dependencies", transformations.size() * 2);
-
-				wait(transformations, monitor);
-
-				handleModelDependencies(transformations, monitor);
-
-				return Status.OK_STATUS;
-			}
-
-			// Wait for all import transformations to complete
-			protected void wait(List<ImportTransformation> transformations, IProgressMonitor monitor) {
-				for (ImportTransformation transformation : transformations) {
-					monitor.subTask("Waiting for " + transformation.getModelName() + " to complete...");
-					transformation.waitForCompletion();
-					monitor.worked(1);
-				}
-			}
-
-			// Convert all model dependencies (For "imported model -> emx library" to "imported model -> imported library")
-			protected void handleModelDependencies(List<ImportTransformation> transformations, IProgressMonitor monitor) {
-				Map<URI, URI> urisToReplace = new HashMap<URI, URI>();
-				for (ImportTransformation transformation : transformations) {
-					// Only transform EMX/EFX models. Profiles (epx) will be handled separately
-
-					for (Map.Entry<URI, URI> entry : transformation.getURIMappings().entrySet()) {
-						String fileExtension = entry.getKey().fileExtension();
-						if ("emx".equals(fileExtension) || "efx".equals(fileExtension)) {
-							urisToReplace.put(entry.getKey(), entry.getValue());
-						}
-					}
-				}
-
-				for (ImportTransformation transformation : transformations) {
-
-					monitor.subTask("Importing dependencies for " + transformation.getModelName());
-					final ModelSet modelSet = new DiResourceSet();
-					try {
-						modelSet.loadModels(transformation.getTargetURI());
-					} catch (ModelMultiException e) {
-						Activator.log.error(e);
-						continue;
-					}
-					final TransactionalEditingDomain domain = modelSet.getTransactionalEditingDomain();
-
-					for (final Map.Entry<URI, URI> entry : urisToReplace.entrySet()) {
-						domain.getCommandStack().execute(new RecordingCommand(domain, "Import dependencies") {
-
-							@Override
-							protected void doExecute() {
-								DependencyManagementHelper.updateDependencies(entry.getKey(), entry.getValue(), modelSet, domain);
-							}
-						});
-
-					}
-
-					try {
-						modelSet.save(new NullProgressMonitor());
-						monitor.worked(1);
-					} catch (IOException ex) {
-						Activator.log.error(ex);
-						continue;
-					}
-				}
-			}
-		};
-
-		importDependencies.setUser(true);
-		importDependencies.schedule();
-	}
-
 
 
 

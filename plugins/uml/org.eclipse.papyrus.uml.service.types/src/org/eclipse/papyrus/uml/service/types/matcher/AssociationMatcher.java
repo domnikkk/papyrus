@@ -50,6 +50,7 @@ public class AssociationMatcher implements IElementMatcher {
 	}
 
 	private boolean hasNoNature(Element element) {
-		return (ElementUtil.getNature(element) == null);
+		String nature = ElementUtil.getNature(element);
+		return nature == null || "".equals(nature);
 	}
 }

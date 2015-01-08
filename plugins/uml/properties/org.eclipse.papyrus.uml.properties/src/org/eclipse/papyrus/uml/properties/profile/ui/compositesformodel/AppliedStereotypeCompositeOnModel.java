@@ -11,6 +11,7 @@
  *  Chokri Mraidha (CEA LIST) Chokri.Mraidha@cea.fr - Initial API and implementation
  *  Patrick Tessier (CEA LIST) Patrick.Tessier@cea.fr - modification
  *  Christian W. Damus (CEA) - bug 323802
+ *  Christian W. Damus (CEA) - bug 448139
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.properties.profile.ui.compositesformodel;
@@ -298,10 +299,16 @@ public class AppliedStereotypeCompositeOnModel extends DecoratedTreeComposite im
 		super.refresh();
 
 		if (treeViewer.getTree() != null && !(treeViewer.getTree().isDisposed())) {
-			treeViewer.setInput(null);
-			treeViewer.refresh();
 			if (element != null) {
-				treeViewer.setInput(new StereotypedElementTreeObject(element));
+				// Preserve selection
+				final ISelection selection = treeViewer.getSelection();
+				try {
+					treeViewer.setInput(new StereotypedElementTreeObject(element));
+				} finally {
+					treeViewer.setSelection(selection);
+				}
+			} else {
+				treeViewer.setInput(null);
 			}
 			StereotypedElementTreeObject rTO = (StereotypedElementTreeObject) treeViewer.getInput();
 			if (rTO == null) {
@@ -366,7 +373,13 @@ public class AppliedStereotypeCompositeOnModel extends DecoratedTreeComposite im
 	 *            the element
 	 */
 	public void setInput(StereotypedElementTreeObject element) {
-		treeViewer.setInput(element);
+		// Preserve selection
+		final ISelection selection = treeViewer.getSelection();
+		try {
+			treeViewer.setInput(element);
+		} finally {
+			treeViewer.setSelection(selection);
+		}
 		if (Activator.getDefault().getPreferenceStore().getBoolean(ProfilePreferenceConstants.EXPAND_STEREOTYPES_TREE)) {
 			treeViewer.expandAll();
 		}

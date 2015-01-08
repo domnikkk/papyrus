@@ -67,9 +67,8 @@ public class ExtensionPointImpl extends RedefinableElementImpl implements Extens
 			InternalEObject oldBase_ExtensionPoint = (InternalEObject) base_ExtensionPoint;
 			base_ExtensionPoint = (org.eclipse.uml2.uml.ExtensionPoint) eResolveProxy(oldBase_ExtensionPoint);
 			if (base_ExtensionPoint != oldBase_ExtensionPoint) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, UsecasesPackage.EXTENSION_POINT__BASE_EXTENSION_POINT, oldBase_ExtensionPoint, base_ExtensionPoint));
-				}
 			}
 		}
 		return base_ExtensionPoint;
@@ -95,9 +94,8 @@ public class ExtensionPointImpl extends RedefinableElementImpl implements Extens
 	public void setBase_ExtensionPoint(org.eclipse.uml2.uml.ExtensionPoint newBase_ExtensionPoint) {
 		org.eclipse.uml2.uml.ExtensionPoint oldBase_ExtensionPoint = base_ExtensionPoint;
 		base_ExtensionPoint = newBase_ExtensionPoint;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, UsecasesPackage.EXTENSION_POINT__BASE_EXTENSION_POINT, oldBase_ExtensionPoint, base_ExtensionPoint));
-		}
 	}
 
 	/**
@@ -110,9 +108,8 @@ public class ExtensionPointImpl extends RedefinableElementImpl implements Extens
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case UsecasesPackage.EXTENSION_POINT__BASE_EXTENSION_POINT:
-			if (resolve) {
+			if (resolve)
 				return getBase_ExtensionPoint();
-			}
 			return basicGetBase_ExtensionPoint();
 		}
 		return super.eGet(featureID, resolve, coreType);

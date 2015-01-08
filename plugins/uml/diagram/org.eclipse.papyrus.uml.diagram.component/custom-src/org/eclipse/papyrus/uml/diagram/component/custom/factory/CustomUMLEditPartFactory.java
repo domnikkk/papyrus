@@ -22,6 +22,7 @@ import org.eclipse.papyrus.uml.diagram.component.custom.edit.part.CustomModelEdi
 import org.eclipse.papyrus.uml.diagram.component.custom.edit.part.CustomModelEditPartCN;
 import org.eclipse.papyrus.uml.diagram.component.custom.edit.part.CustomPackageEditPart;
 import org.eclipse.papyrus.uml.diagram.component.custom.edit.part.CustomPackageEditPartCN;
+import org.eclipse.papyrus.uml.diagram.component.custom.edit.part.CustomPortNameEditPart;
 import org.eclipse.papyrus.uml.diagram.component.custom.edit.part.CustomUsageEditPart;
 import org.eclipse.papyrus.uml.diagram.component.edit.parts.DependencyBranchEditPart;
 import org.eclipse.papyrus.uml.diagram.component.edit.parts.DependencyNodeEditPart;

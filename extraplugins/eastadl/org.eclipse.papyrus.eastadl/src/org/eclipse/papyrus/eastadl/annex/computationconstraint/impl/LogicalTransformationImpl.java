@@ -205,9 +205,8 @@ public class LogicalTransformationImpl extends EAElementImpl implements LogicalT
 	public void setIsClientServerInterface(boolean newIsClientServerInterface) {
 		boolean oldIsClientServerInterface = isClientServerInterface;
 		isClientServerInterface = newIsClientServerInterface;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ComputationconstraintPackage.LOGICAL_TRANSFORMATION__IS_CLIENT_SERVER_INTERFACE, oldIsClientServerInterface, isClientServerInterface));
-		}
 	}
 
 	/**
@@ -278,9 +277,8 @@ public class LogicalTransformationImpl extends EAElementImpl implements LogicalT
 			InternalEObject oldExpression = (InternalEObject) expression;
 			expression = (EAExpression) eResolveProxy(oldExpression);
 			if (expression != oldExpression) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComputationconstraintPackage.LOGICAL_TRANSFORMATION__EXPRESSION, oldExpression, expression));
-				}
 			}
 		}
 		return expression;
@@ -306,9 +304,8 @@ public class LogicalTransformationImpl extends EAElementImpl implements LogicalT
 	public void setExpression(EAExpression newExpression) {
 		EAExpression oldExpression = expression;
 		expression = newExpression;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ComputationconstraintPackage.LOGICAL_TRANSFORMATION__EXPRESSION, oldExpression, expression));
-		}
 	}
 
 	/**
@@ -365,9 +362,8 @@ public class LogicalTransformationImpl extends EAElementImpl implements LogicalT
 			InternalEObject oldTimeInvariant = (InternalEObject) timeInvariant;
 			timeInvariant = (LogicalTimeCondition) eResolveProxy(oldTimeInvariant);
 			if (timeInvariant != oldTimeInvariant) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComputationconstraintPackage.LOGICAL_TRANSFORMATION__TIME_INVARIANT, oldTimeInvariant, timeInvariant));
-				}
 			}
 		}
 		return timeInvariant;
@@ -393,9 +389,8 @@ public class LogicalTransformationImpl extends EAElementImpl implements LogicalT
 	public void setTimeInvariant(LogicalTimeCondition newTimeInvariant) {
 		LogicalTimeCondition oldTimeInvariant = timeInvariant;
 		timeInvariant = newTimeInvariant;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ComputationconstraintPackage.LOGICAL_TRANSFORMATION__TIME_INVARIANT, oldTimeInvariant, timeInvariant));
-		}
 	}
 
 	/**
@@ -418,9 +413,8 @@ public class LogicalTransformationImpl extends EAElementImpl implements LogicalT
 		case ComputationconstraintPackage.LOGICAL_TRANSFORMATION__IN:
 			return getIn();
 		case ComputationconstraintPackage.LOGICAL_TRANSFORMATION__EXPRESSION:
-			if (resolve) {
+			if (resolve)
 				return getExpression();
-			}
 			return basicGetExpression();
 		case ComputationconstraintPackage.LOGICAL_TRANSFORMATION__QUANTIFICATION_INVARIANT:
 			return getQuantificationInvariant();
@@ -429,9 +423,8 @@ public class LogicalTransformationImpl extends EAElementImpl implements LogicalT
 		case ComputationconstraintPackage.LOGICAL_TRANSFORMATION__POST_CONDITION:
 			return getPostCondition();
 		case ComputationconstraintPackage.LOGICAL_TRANSFORMATION__TIME_INVARIANT:
-			if (resolve) {
+			if (resolve)
 				return getTimeInvariant();
-			}
 			return basicGetTimeInvariant();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -572,12 +565,11 @@ public class LogicalTransformationImpl extends EAElementImpl implements LogicalT
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
+		if (eIsProxy())
 			return super.toString();
-		}
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (isClientServerInterface: ");
+		result.append(" (isClientServerInterface: "); //$NON-NLS-1$
 		result.append(isClientServerInterface);
 		result.append(')');
 		return result.toString();

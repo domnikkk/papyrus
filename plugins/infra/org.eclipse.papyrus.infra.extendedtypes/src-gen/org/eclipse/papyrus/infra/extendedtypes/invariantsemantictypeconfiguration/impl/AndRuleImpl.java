@@ -29,7 +29,6 @@ public class AndRuleImpl extends ComposedRuleConfigurationImpl implements AndRul
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected AndRuleImpl() {
@@ -39,7 +38,6 @@ public class AndRuleImpl extends ComposedRuleConfigurationImpl implements AndRul
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override

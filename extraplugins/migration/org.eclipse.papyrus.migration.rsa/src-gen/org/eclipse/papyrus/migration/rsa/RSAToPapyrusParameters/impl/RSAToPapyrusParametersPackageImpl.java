@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -14,10 +14,13 @@ package org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.impl;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.Config;
+import org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.MappingParameters;
 import org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.RSAToPapyrusParametersFactory;
 import org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.RSAToPapyrusParametersPackage;
+import org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.URIMapping;
 import org.eclipse.uml2.types.TypesPackage;
 
 /**
@@ -35,6 +38,22 @@ public class RSAToPapyrusParametersPackageImpl extends EPackageImpl implements R
 	 * @generated
 	 */
 	private EClass configEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass mappingParametersEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass uriMappingEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
@@ -118,8 +137,8 @@ public class RSAToPapyrusParametersPackageImpl extends EPackageImpl implements R
 	 * @generated
 	 */
 	@Override
-	public EAttribute getConfig_ConvertOpaqueExpressionToLiteralString() {
-		return (EAttribute) configEClass.getEStructuralFeatures().get(0);
+	public EReference getConfig_MappingParameters() {
+		return (EReference) configEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -129,7 +148,7 @@ public class RSAToPapyrusParametersPackageImpl extends EPackageImpl implements R
 	 * @generated
 	 */
 	@Override
-	public EAttribute getConfig_RemoveUnmappedProfilesAndStereotypes() {
+	public EAttribute getConfig_MaxThreads() {
 		return (EAttribute) configEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -140,7 +159,7 @@ public class RSAToPapyrusParametersPackageImpl extends EPackageImpl implements R
 	 * @generated
 	 */
 	@Override
-	public EAttribute getConfig_RemoveUnmappedAnnotations() {
+	public EAttribute getConfig_RemoveUnmappedDiagrams() {
 		return (EAttribute) configEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -151,8 +170,107 @@ public class RSAToPapyrusParametersPackageImpl extends EPackageImpl implements R
 	 * @generated
 	 */
 	@Override
-	public EAttribute getConfig_RemoveUnmappedDiagrams() {
+	public EAttribute getConfig_ConvertOpaqueExpressionToLiteralString() {
 		return (EAttribute) configEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getConfig_RemoveUnmappedProfilesAndStereotypes() {
+		return (EAttribute) configEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getConfig_RemoveUnmappedAnnotations() {
+		return (EAttribute) configEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getConfig_AlwaysAcceptSuggestedMappings() {
+		return (EAttribute) configEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EClass getMappingParameters() {
+		return mappingParametersEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EReference getMappingParameters_UriMappings() {
+		return (EReference) mappingParametersEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EReference getMappingParameters_ProfileUriMappings() {
+		return (EReference) mappingParametersEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EClass getURIMapping() {
+		return uriMappingEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getURIMapping_SourceURI() {
+		return (EAttribute) uriMappingEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getURIMapping_TargetURI() {
+		return (EAttribute) uriMappingEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -190,10 +308,21 @@ public class RSAToPapyrusParametersPackageImpl extends EPackageImpl implements R
 
 		// Create classes and their features
 		configEClass = createEClass(CONFIG);
+		createEReference(configEClass, CONFIG__MAPPING_PARAMETERS);
+		createEAttribute(configEClass, CONFIG__MAX_THREADS);
+		createEAttribute(configEClass, CONFIG__REMOVE_UNMAPPED_DIAGRAMS);
 		createEAttribute(configEClass, CONFIG__CONVERT_OPAQUE_EXPRESSION_TO_LITERAL_STRING);
 		createEAttribute(configEClass, CONFIG__REMOVE_UNMAPPED_PROFILES_AND_STEREOTYPES);
 		createEAttribute(configEClass, CONFIG__REMOVE_UNMAPPED_ANNOTATIONS);
-		createEAttribute(configEClass, CONFIG__REMOVE_UNMAPPED_DIAGRAMS);
+		createEAttribute(configEClass, CONFIG__ALWAYS_ACCEPT_SUGGESTED_MAPPINGS);
+
+		mappingParametersEClass = createEClass(MAPPING_PARAMETERS);
+		createEReference(mappingParametersEClass, MAPPING_PARAMETERS__URI_MAPPINGS);
+		createEReference(mappingParametersEClass, MAPPING_PARAMETERS__PROFILE_URI_MAPPINGS);
+
+		uriMappingEClass = createEClass(URI_MAPPING);
+		createEAttribute(uriMappingEClass, URI_MAPPING__SOURCE_URI);
+		createEAttribute(uriMappingEClass, URI_MAPPING__TARGET_URI);
 	}
 
 	/**
@@ -234,12 +363,27 @@ public class RSAToPapyrusParametersPackageImpl extends EPackageImpl implements R
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(configEClass, Config.class, "Config", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getConfig_MappingParameters(), this.getMappingParameters(), null, "mappingParameters", null, 1, 1, Config.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				!IS_ORDERED);
+		initEAttribute(getConfig_MaxThreads(), theTypesPackage.getInteger(), "maxThreads", "2", 1, 1, Config.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getConfig_RemoveUnmappedDiagrams(), theTypesPackage.getBoolean(), "removeUnmappedDiagrams", "false", 1, 1, Config.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getConfig_ConvertOpaqueExpressionToLiteralString(), theTypesPackage.getBoolean(), "convertOpaqueExpressionToLiteralString", "true", 1, 1, Config.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE,
 				!IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getConfig_RemoveUnmappedProfilesAndStereotypes(), theTypesPackage.getBoolean(), "removeUnmappedProfilesAndStereotypes", "true", 1, 1, Config.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE,
 				!IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getConfig_RemoveUnmappedAnnotations(), theTypesPackage.getBoolean(), "removeUnmappedAnnotations", "false", 1, 1, Config.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getConfig_RemoveUnmappedDiagrams(), theTypesPackage.getBoolean(), "removeUnmappedDiagrams", "false", 1, 1, Config.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getConfig_AlwaysAcceptSuggestedMappings(), theTypesPackage.getBoolean(), "alwaysAcceptSuggestedMappings", "false", 1, 1, Config.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
+				!IS_ORDERED);
+
+		initEClass(mappingParametersEClass, MappingParameters.class, "MappingParameters", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getMappingParameters_UriMappings(), this.getURIMapping(), null, "uriMappings", null, 0, -1, MappingParameters.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				!IS_ORDERED);
+		initEReference(getMappingParameters_ProfileUriMappings(), this.getURIMapping(), null, "profileUriMappings", null, 0, -1, MappingParameters.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+				!IS_DERIVED, !IS_ORDERED);
+
+		initEClass(uriMappingEClass, URIMapping.class, "URIMapping", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getURIMapping_SourceURI(), theTypesPackage.getString(), "sourceURI", null, 1, 1, URIMapping.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getURIMapping_TargetURI(), theTypesPackage.getString(), "targetURI", null, 1, 1, URIMapping.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

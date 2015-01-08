@@ -144,9 +144,8 @@ public class RangeableValueTypeImpl extends EADatatypeImpl implements RangeableV
 		case DatatypesPackage.RANGEABLE_VALUE_TYPE__SIGNIFICANT_DIGITS:
 			return getSignificantDigits();
 		case DatatypesPackage.RANGEABLE_VALUE_TYPE__BASE_RANGEABLE:
-			if (resolve) {
+			if (resolve)
 				return getBaseRangeable();
-			}
 			return basicGetBaseRangeable();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -277,9 +276,8 @@ public class RangeableValueTypeImpl extends EADatatypeImpl implements RangeableV
 	public void setAccuracy(Float newAccuracy) {
 		Float oldAccuracy = accuracy;
 		accuracy = newAccuracy;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.RANGEABLE_VALUE_TYPE__ACCURACY, oldAccuracy, accuracy));
-		}
 	}
 
 	/**
@@ -292,9 +290,8 @@ public class RangeableValueTypeImpl extends EADatatypeImpl implements RangeableV
 	public void setResolution(Float newResolution) {
 		Float oldResolution = resolution;
 		resolution = newResolution;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.RANGEABLE_VALUE_TYPE__RESOLUTION, oldResolution, resolution));
-		}
 	}
 
 	/**
@@ -307,9 +304,8 @@ public class RangeableValueTypeImpl extends EADatatypeImpl implements RangeableV
 	public void setSignificantDigits(int newSignificantDigits) {
 		int oldSignificantDigits = significantDigits;
 		significantDigits = newSignificantDigits;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.RANGEABLE_VALUE_TYPE__SIGNIFICANT_DIGITS, oldSignificantDigits, significantDigits));
-		}
 	}
 
 	/**
@@ -324,9 +320,8 @@ public class RangeableValueTypeImpl extends EADatatypeImpl implements RangeableV
 			InternalEObject oldBaseRangeable = (InternalEObject) baseRangeable;
 			baseRangeable = (EANumerical) eResolveProxy(oldBaseRangeable);
 			if (baseRangeable != oldBaseRangeable) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DatatypesPackage.RANGEABLE_VALUE_TYPE__BASE_RANGEABLE, oldBaseRangeable, baseRangeable));
-				}
 			}
 		}
 		return baseRangeable;
@@ -352,9 +347,8 @@ public class RangeableValueTypeImpl extends EADatatypeImpl implements RangeableV
 	public void setBaseRangeable(EANumerical newBaseRangeable) {
 		EANumerical oldBaseRangeable = baseRangeable;
 		baseRangeable = newBaseRangeable;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.RANGEABLE_VALUE_TYPE__BASE_RANGEABLE, oldBaseRangeable, baseRangeable));
-		}
 	}
 
 	/**
@@ -365,16 +359,15 @@ public class RangeableValueTypeImpl extends EADatatypeImpl implements RangeableV
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
+		if (eIsProxy())
 			return super.toString();
-		}
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (accuracy: ");
+		result.append(" (accuracy: "); //$NON-NLS-1$
 		result.append(accuracy);
-		result.append(", resolution: ");
+		result.append(", resolution: "); //$NON-NLS-1$
 		result.append(resolution);
-		result.append(", significantDigits: ");
+		result.append(", significantDigits: "); //$NON-NLS-1$
 		result.append(significantDigits);
 		result.append(')');
 		return result.toString();

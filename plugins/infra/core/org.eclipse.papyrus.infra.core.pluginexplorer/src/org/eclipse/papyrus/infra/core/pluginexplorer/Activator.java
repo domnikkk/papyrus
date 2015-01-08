@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2013 CEA LIST.
+ * Copyright (c) 2013, 2014 CEA LIST and others.
  *
  *
  * All rights reserved. This program and the accompanying materials
@@ -9,7 +9,8 @@
  *
  * Contributors:
  *  Laurent Wouters laurent.wouters@cea.fr - Initial API and implementation
- *
+ *  Axel Richard axel.richard@obeo.fr - Bug 449474
+ *  
  *****************************************************************************/
 
 package org.eclipse.papyrus.infra.core.pluginexplorer;
@@ -19,6 +20,7 @@ import java.net.URL;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.resource.ImageRegistry;
 import org.eclipse.papyrus.infra.core.log.LogHelper;
+import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
 
@@ -73,12 +75,14 @@ public class Activator extends AbstractUIPlugin {
 	public void start(BundleContext context) throws Exception {
 		super.start(context);
 		this.context = context;
-		ImageRegistry registry = getImageRegistry();
-		registry.put("plugin", ImageDescriptor.createFromURL(new URL("platform:/plugin/" + PLUGIN_ID + "/icons/plugin_obj.gif")));
-		registry.put("folder", ImageDescriptor.createFromURL(new URL("platform:/plugin/" + PLUGIN_ID + "/icons/packagefolder_obj.gif")));
-		registry.put("class", ImageDescriptor.createFromURL(new URL("platform:/plugin/" + PLUGIN_ID + "/icons/classf_obj.gif")));
-		registry.put("file", ImageDescriptor.createFromURL(new URL("platform:/plugin/" + PLUGIN_ID + "/icons/file_obj.gif")));
-		registry.put("jar", ImageDescriptor.createFromURL(new URL("platform:/plugin/" + PLUGIN_ID + "/icons/jar_obj.gif")));
+		if (PlatformUI.isWorkbenchRunning()) {
+			ImageRegistry registry = getImageRegistry();
+			registry.put("plugin", ImageDescriptor.createFromURL(new URL("platform:/plugin/" + PLUGIN_ID + "/icons/plugin_obj.gif")));
+			registry.put("folder", ImageDescriptor.createFromURL(new URL("platform:/plugin/" + PLUGIN_ID + "/icons/packagefolder_obj.gif")));
+			registry.put("class", ImageDescriptor.createFromURL(new URL("platform:/plugin/" + PLUGIN_ID + "/icons/classf_obj.gif")));
+			registry.put("file", ImageDescriptor.createFromURL(new URL("platform:/plugin/" + PLUGIN_ID + "/icons/file_obj.gif")));
+			registry.put("jar", ImageDescriptor.createFromURL(new URL("platform:/plugin/" + PLUGIN_ID + "/icons/jar_obj.gif")));
+		}
 		plugin = this;
 	}
 

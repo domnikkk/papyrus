@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<toc label="CodeGeneration" link_to="../org.eclipse.papyrus.infra.doc/toc.xml#PapyrusDocUser">
+   <topic href="resource/newcodegen.html" label="Adding a New Code Generator">
+      <link toc="resource/newcodegen-toc.xml"/>
+      <anchor id="addingANewCodeGenerator"/>
+   </topic>	
+</toc>

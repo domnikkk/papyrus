@@ -17,9 +17,26 @@ import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.gmf.runtime.common.ui.services.parser.IParser;
 import org.eclipse.gmf.runtime.common.ui.services.parser.IParserEditStatus;
+import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
+import org.eclipse.uml2.uml.Classifier;
+import org.eclipse.uml2.uml.InstanceSpecification;
+import org.eclipse.uml2.uml.NamedElement;
+import org.eclipse.uml2.uml.Property;
 
-public class RoleInstanceSpecificationLinkParser implements IParser {
+/**
+ * The base class of InstanceSpecification link edge parser
+ *
+ * @see the getClissifierMemberType() method for specify the type of end
+ *
+ */
+
+public abstract class RoleInstanceSpecificationLinkParser implements IParser {
+
+	protected static final String UNSPECIFIED_LABEL = "<UNSPECIFIED>";
+
+	public RoleInstanceSpecificationLinkParser() {
+	}
 
 	@Override
 	public String getEditString(IAdaptable element, int flags) {
@@ -40,7 +57,7 @@ public class RoleInstanceSpecificationLinkParser implements IParser {
 
 	@Override
 	public String getPrintString(IAdaptable element, int flags) {
-		return "<UNSPECIFIED>";
+		return getPrintString(element);
 	}
 
 	@Override
@@ -53,5 +70,48 @@ public class RoleInstanceSpecificationLinkParser implements IParser {
 	public IContentAssistProcessor getCompletionProcessor(IAdaptable element) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	protected abstract ClassifierMemberKind getClissifierMemberKind();
+
+	private String getPrintString(IAdaptable element) {
+		String namedNodeType = getNamedNodeType(element);
+		return (namedNodeType == null || namedNodeType.isEmpty()) ? UNSPECIFIED_LABEL : namedNodeType;
+	}
+
+	private String getNamedNodeType(IAdaptable element) {
+		InstanceSpecification instanceSpecification = ((InstanceSpecification) ((EObjectAdapter) element).getRealObject());
+		if (instanceSpecification.getClassifiers().size() <= 0) {
+			return null;
+		}
+		Classifier classifier = instanceSpecification.getClassifiers().get(0);
+		if (classifier.getMembers().size() < 2) {
+			return null;
+		}
+		NamedElement namedElement = getClissifierMemberKind().extractNamedElement(classifier);
+		if (namedElement == null) {
+			return null;
+		}
+		if (!(namedElement instanceof Property)) {
+			return null;
+		}
+		return ((Property) namedElement).getName();
+	}
+
+	public static enum ClassifierMemberKind {
+		SOURCE(1), TARGET(0), UNKNOWN(-1);
+
+		private final int myIndex;
+
+		private ClassifierMemberKind(int index) {
+			myIndex = index;
+		}
+
+		public NamedElement extractNamedElement(Classifier classifier) {
+			if (myIndex < 0) {
+				return null;
+			}
+			return classifier.getMembers().get(myIndex);
+		}
 	}
 }

@@ -1,6 +1,7 @@
 package org.eclipse.papyrus.uml.diagram.sequence.edit.parts;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import org.eclipse.draw2d.ConnectionAnchor;
@@ -22,6 +23,7 @@ import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.Request;
 import org.eclipse.gef.commands.Command;
+import org.eclipse.gef.commands.CompoundCommand;
 import org.eclipse.gef.commands.UnexecutableCommand;
 import org.eclipse.gef.handles.HandleBounds;
 import org.eclipse.gef.requests.ChangeBoundsRequest;
@@ -60,6 +62,7 @@ import org.eclipse.papyrus.uml.diagram.sequence.edit.policies.LifelineXYLayoutEd
 import org.eclipse.papyrus.uml.diagram.sequence.providers.UMLElementTypes;
 import org.eclipse.papyrus.uml.diagram.sequence.util.HighlightUtil;
 import org.eclipse.papyrus.uml.diagram.sequence.util.LifelineEditPartUtil;
+import org.eclipse.papyrus.uml.diagram.sequence.util.SequenceUtil;
 import org.eclipse.papyrus.uml.diagram.stereotype.edition.editpolicies.AppliedStereotypeCommentCreationEditPolicy;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.uml2.uml.ExecutionSpecification;
@@ -141,25 +144,81 @@ public abstract class AbstractExecutionSpecificationEditPart extends ShapeNodeEd
 
 			@Override
 			protected Command getResizeCommand(ChangeBoundsRequest request) {
-				// Bugfix: Avoid resize ES with the child size is little than parent one.
+				CompoundCommand command = new CompoundCommand();
+				command.add(super.getResizeCommand(request));
 				EditPart host = getHost();
+				LifelineEditPart lifelinePart = SequenceUtil.getParentLifelinePart(host);
+				// Calculate children levels
 				List<ShapeNodeEditPart> movedChildrenParts = LifelineXYLayoutEditPolicy.getAffixedExecutionSpecificationEditParts((ShapeNodeEditPart) host);
-				Rectangle r = getInitialFeedbackBounds().getCopy();
-				getHostFigure().translateToAbsolute(r);
-				r.translate(0, request.getMoveDelta().y);
-				r.resize(0, request.getSizeDelta().height);
+				List<ShapeNodeEditPart> testChildrenParts = new ArrayList<ShapeNodeEditPart>(movedChildrenParts);
+				HashMap<ShapeNodeEditPart, Integer> childrenLevels = new HashMap<ShapeNodeEditPart, Integer>();
+				Integer currentLevel = 0;
+				while (!testChildrenParts.isEmpty()) {
+					currentLevel ++;
+					List<ShapeNodeEditPart> testChildrenPartsNew = new ArrayList<ShapeNodeEditPart>(testChildrenParts);
+					HashMap<ShapeNodeEditPart, Integer> childrenLevelsNew = new HashMap<ShapeNodeEditPart, Integer>(childrenLevels);
+					for (ShapeNodeEditPart child : testChildrenParts) {
+						IFigure figure = child.getFigure();
+						Rectangle childRect = figure.getBounds().getCopy();
+						if (figure instanceof HandleBounds) {
+							childRect = ((HandleBounds) figure).getBounds().getCopy();
+						}
+						movedChildrenParts.remove(child);
+						ShapeNodeEditPart parentTest = LifelineXYLayoutEditPolicy.getParent(lifelinePart, childRect, movedChildrenParts);
+						movedChildrenParts.add(child);
+						if (childrenLevels.containsKey(parentTest) || parentTest == null) {
+							testChildrenPartsNew.remove(child);
+							childrenLevelsNew.put(child, currentLevel);
+						}							
+					}		
+					childrenLevels = childrenLevelsNew;
+					testChildrenParts = testChildrenPartsNew;
+				}
+				// Fetch basic coords
+				Rectangle rectRequest = getInitialFeedbackBounds().getCopy();
+				getHostFigure().translateToAbsolute(rectRequest);
+				rectRequest.translate(0, request.getMoveDelta().y);
+				rectRequest.resize(0, request.getSizeDelta().height);
 				for (ShapeNodeEditPart child : movedChildrenParts) {
 					IFigure figure = child.getFigure();
-					Rectangle rect = figure.getBounds().getCopy();
+					Rectangle originalRect = figure.getBounds().getCopy();
 					if (figure instanceof HandleBounds) {
-						rect = ((HandleBounds) figure).getBounds().getCopy();
+						originalRect = ((HandleBounds) figure).getBounds().getCopy();
 					}
-					figure.translateToAbsolute(rect);
-					if (rect.y < (r.y) || r.bottom() < (rect.y)) {
-						return UnexecutableCommand.INSTANCE;
+					Integer level = childrenLevels.get(child);
+					Rectangle r = rectRequest.getCopy();
+					r.translate(0, level*LifelineXYLayoutEditPolicy.SPACING_HEIGHT);
+					r.resize(0, -2*level*LifelineXYLayoutEditPolicy.SPACING_HEIGHT);
+					Rectangle translatedRect = originalRect.getCopy();
+					figure.translateToAbsolute(translatedRect);
+					if (translatedRect.y < r.y || translatedRect.bottom() > r.bottom()) {
+						int moveAmount = 0;
+						int resizeAmount = 0;
+						if (translatedRect.y < r.y) {
+							moveAmount = r.y - translatedRect.y;
+							resizeAmount = moveAmount;
+						} else  { // translatedRect.bottom() > r.bottom()
+							resizeAmount = translatedRect.bottom() - r.bottom();
+						}
+						if (translatedRect.height() - resizeAmount < figure.getMinimumSize().height()) {
+							return UnexecutableCommand.INSTANCE; 
+						}
+						// Resize child ES
+						ChangeBoundsRequest esRequest = new ChangeBoundsRequest(org.eclipse.gef.RequestConstants.REQ_MOVE);
+						esRequest.setEditParts(child);
+						esRequest.setResizeDirection(PositionConstants.SOUTH);
+						esRequest.setMoveDelta(new Point(0, moveAmount));
+						esRequest.setSizeDelta(new Dimension(0, -resizeAmount));
+						Command moveESCommand = LifelineXYLayoutEditPolicy.getResizeOrMoveChildrenCommand((LifelineEditPart) lifelinePart, esRequest, false, false, true);
+						if (moveESCommand != null && !moveESCommand.canExecute()) {
+							// forbid creation of the message if the es can't be moved correctly
+							return UnexecutableCommand.INSTANCE;
+						} else if (moveESCommand != null) {
+							command.add(moveESCommand);
+						}
 					}
 				}
-				return super.getResizeCommand(request);
+				return command.unwrap();
 			}
 
 			@Override

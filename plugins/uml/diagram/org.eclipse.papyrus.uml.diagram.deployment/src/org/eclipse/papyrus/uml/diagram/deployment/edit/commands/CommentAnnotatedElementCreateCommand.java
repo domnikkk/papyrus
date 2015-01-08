@@ -77,7 +77,8 @@ public class CommentAnnotatedElementCreateCommand extends EditElementCommand {
 		}
 
 		if (getSource() != null && getTarget() != null) {
-			getSource().getAnnotatedElements().add(getTarget());
+			getSource().getAnnotatedElements()
+					.add(getTarget());
 		}
 		return CommandResult.newOKCommandResult();
 

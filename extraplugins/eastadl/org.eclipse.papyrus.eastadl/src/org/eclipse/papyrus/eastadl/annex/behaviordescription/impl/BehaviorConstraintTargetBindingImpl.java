@@ -164,9 +164,8 @@ public class BehaviorConstraintTargetBindingImpl extends RelationshipImpl implem
 			InternalEObject oldBehaviorConstraintType = (InternalEObject) behaviorConstraintType;
 			behaviorConstraintType = (BehaviorConstraintType) eResolveProxy(oldBehaviorConstraintType);
 			if (behaviorConstraintType != oldBehaviorConstraintType) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BehaviordescriptionPackage.BEHAVIOR_CONSTRAINT_TARGET_BINDING__BEHAVIOR_CONSTRAINT_TYPE, oldBehaviorConstraintType, behaviorConstraintType));
-				}
 			}
 		}
 		return behaviorConstraintType;
@@ -192,9 +191,8 @@ public class BehaviorConstraintTargetBindingImpl extends RelationshipImpl implem
 	public void setBehaviorConstraintType(BehaviorConstraintType newBehaviorConstraintType) {
 		BehaviorConstraintType oldBehaviorConstraintType = behaviorConstraintType;
 		behaviorConstraintType = newBehaviorConstraintType;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BehaviordescriptionPackage.BEHAVIOR_CONSTRAINT_TARGET_BINDING__BEHAVIOR_CONSTRAINT_TYPE, oldBehaviorConstraintType, behaviorConstraintType));
-		}
 	}
 
 	/**
@@ -305,9 +303,8 @@ public class BehaviorConstraintTargetBindingImpl extends RelationshipImpl implem
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case BehaviordescriptionPackage.BEHAVIOR_CONSTRAINT_TARGET_BINDING__BEHAVIOR_CONSTRAINT_TYPE:
-			if (resolve) {
+			if (resolve)
 				return getBehaviorConstraintType();
-			}
 			return basicGetBehaviorConstraintType();
 		case BehaviordescriptionPackage.BEHAVIOR_CONSTRAINT_TARGET_BINDING__TARGETED_VEHICLE_FEATURE:
 			return getTargetedVehicleFeature();

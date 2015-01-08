@@ -104,19 +104,16 @@ public class ImplementationLevelImpl extends ContextImpl implements Implementati
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case SystemmodelingPackage.IMPLEMENTATION_LEVEL__AUTOSAR_SYSTEM:
-			if (resolve) {
+			if (resolve)
 				return getAutosarSystem();
-			}
 			return basicGetAutosarSystem();
 		case SystemmodelingPackage.IMPLEMENTATION_LEVEL__BASE_CLASS:
-			if (resolve) {
+			if (resolve)
 				return getBase_Class();
-			}
 			return basicGetBase_Class();
 		case SystemmodelingPackage.IMPLEMENTATION_LEVEL__BASE_PACKAGE:
-			if (resolve) {
+			if (resolve)
 				return getBase_Package();
-			}
 			return basicGetBase_Package();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -208,9 +205,8 @@ public class ImplementationLevelImpl extends ContextImpl implements Implementati
 			InternalEObject oldAutosarSystem = (InternalEObject) autosarSystem;
 			autosarSystem = (NamedElement) eResolveProxy(oldAutosarSystem);
 			if (autosarSystem != oldAutosarSystem) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SystemmodelingPackage.IMPLEMENTATION_LEVEL__AUTOSAR_SYSTEM, oldAutosarSystem, autosarSystem));
-				}
 			}
 		}
 		return autosarSystem;
@@ -226,9 +222,8 @@ public class ImplementationLevelImpl extends ContextImpl implements Implementati
 	public void setAutosarSystem(NamedElement newAutosarSystem) {
 		NamedElement oldAutosarSystem = autosarSystem;
 		autosarSystem = newAutosarSystem;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SystemmodelingPackage.IMPLEMENTATION_LEVEL__AUTOSAR_SYSTEM, oldAutosarSystem, autosarSystem));
-		}
 	}
 
 	/**
@@ -243,9 +238,8 @@ public class ImplementationLevelImpl extends ContextImpl implements Implementati
 			InternalEObject oldBase_Class = (InternalEObject) base_Class;
 			base_Class = (org.eclipse.uml2.uml.Class) eResolveProxy(oldBase_Class);
 			if (base_Class != oldBase_Class) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SystemmodelingPackage.IMPLEMENTATION_LEVEL__BASE_CLASS, oldBase_Class, base_Class));
-				}
 			}
 		}
 		return base_Class;
@@ -271,9 +265,8 @@ public class ImplementationLevelImpl extends ContextImpl implements Implementati
 	public void setBase_Class(org.eclipse.uml2.uml.Class newBase_Class) {
 		org.eclipse.uml2.uml.Class oldBase_Class = base_Class;
 		base_Class = newBase_Class;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SystemmodelingPackage.IMPLEMENTATION_LEVEL__BASE_CLASS, oldBase_Class, base_Class));
-		}
 	}
 
 	/**
@@ -288,9 +281,8 @@ public class ImplementationLevelImpl extends ContextImpl implements Implementati
 			InternalEObject oldBase_Package = (InternalEObject) base_Package;
 			base_Package = (org.eclipse.uml2.uml.Package) eResolveProxy(oldBase_Package);
 			if (base_Package != oldBase_Package) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SystemmodelingPackage.IMPLEMENTATION_LEVEL__BASE_PACKAGE, oldBase_Package, base_Package));
-				}
 			}
 		}
 		return base_Package;
@@ -316,9 +308,8 @@ public class ImplementationLevelImpl extends ContextImpl implements Implementati
 	public void setBase_Package(org.eclipse.uml2.uml.Package newBase_Package) {
 		org.eclipse.uml2.uml.Package oldBase_Package = base_Package;
 		base_Package = newBase_Package;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SystemmodelingPackage.IMPLEMENTATION_LEVEL__BASE_PACKAGE, oldBase_Package, base_Package));
-		}
 	}
 
 } // ImplementationLevelImpl

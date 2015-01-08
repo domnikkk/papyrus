@@ -29,7 +29,6 @@ import org.eclipse.papyrus.infra.extendedtypes.ExtendedtypesPackage;
  * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- *
  * @see org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.InvariantSemanticTypeConfigurationFactory
  * @model kind="package"
  * @generated
@@ -39,7 +38,6 @@ public interface InvariantSemanticTypeConfigurationPackage extends EPackage {
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	String eNAME = "invariantsemantictypeconfiguration";
@@ -48,7 +46,6 @@ public interface InvariantSemanticTypeConfigurationPackage extends EPackage {
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	String eNS_URI = "http://www.eclipse.org/papyrus/infra/extendedtypes/semantictype/invariant/1.0";
@@ -57,7 +54,6 @@ public interface InvariantSemanticTypeConfigurationPackage extends EPackage {
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	String eNS_PREFIX = "invariantsemantictypeconfiguration";
@@ -66,7 +62,6 @@ public interface InvariantSemanticTypeConfigurationPackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	InvariantSemanticTypeConfigurationPackage eINSTANCE = org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.impl.InvariantSemanticTypeConfigurationPackageImpl.init();
@@ -75,7 +70,6 @@ public interface InvariantSemanticTypeConfigurationPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.impl.InvariantSemanticTypeConfigurationImpl <em>Invariant Semantic Type Configuration</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.impl.InvariantSemanticTypeConfigurationImpl
 	 * @see org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.impl.InvariantSemanticTypeConfigurationPackageImpl#getInvariantSemanticTypeConfiguration()
 	 * @generated
@@ -86,7 +80,6 @@ public interface InvariantSemanticTypeConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -96,7 +89,6 @@ public interface InvariantSemanticTypeConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -106,7 +98,6 @@ public interface InvariantSemanticTypeConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Identifier</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -116,7 +107,6 @@ public interface InvariantSemanticTypeConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Icon Entry</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -126,7 +116,6 @@ public interface InvariantSemanticTypeConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Hint</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -136,7 +125,6 @@ public interface InvariantSemanticTypeConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Kind Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -146,7 +134,6 @@ public interface InvariantSemanticTypeConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Specialized Types ID</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -156,7 +143,6 @@ public interface InvariantSemanticTypeConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Matcher Configuration</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -166,7 +152,6 @@ public interface InvariantSemanticTypeConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Invariant Rule Configuration</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -176,7 +161,6 @@ public interface InvariantSemanticTypeConfigurationPackage extends EPackage {
 	 * The number of structural features of the '<em>Invariant Semantic Type Configuration</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -186,7 +170,6 @@ public interface InvariantSemanticTypeConfigurationPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.impl.InvariantRuleConfigurationImpl <em>Invariant Rule Configuration</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.impl.InvariantRuleConfigurationImpl
 	 * @see org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.impl.InvariantSemanticTypeConfigurationPackageImpl#getInvariantRuleConfiguration()
 	 * @generated
@@ -197,7 +180,6 @@ public interface InvariantSemanticTypeConfigurationPackage extends EPackage {
 	 * The number of structural features of the '<em>Invariant Rule Configuration</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -207,7 +189,6 @@ public interface InvariantSemanticTypeConfigurationPackage extends EPackage {
 	 * The number of operations of the '<em>Invariant Rule Configuration</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -217,7 +198,6 @@ public interface InvariantSemanticTypeConfigurationPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.impl.ComposedRuleConfigurationImpl <em>Composed Rule Configuration</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.impl.ComposedRuleConfigurationImpl
 	 * @see org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.impl.InvariantSemanticTypeConfigurationPackageImpl#getComposedRuleConfiguration()
 	 * @generated
@@ -225,10 +205,9 @@ public interface InvariantSemanticTypeConfigurationPackage extends EPackage {
 	int COMPOSED_RULE_CONFIGURATION = 2;
 
 	/**
-	 * The feature id for the '<em><b>Composed Rules</b></em>' reference list.
+	 * The feature id for the '<em><b>Composed Rules</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -238,7 +217,6 @@ public interface InvariantSemanticTypeConfigurationPackage extends EPackage {
 	 * The number of structural features of the '<em>Composed Rule Configuration</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -248,7 +226,6 @@ public interface InvariantSemanticTypeConfigurationPackage extends EPackage {
 	 * The number of operations of the '<em>Composed Rule Configuration</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -258,7 +235,6 @@ public interface InvariantSemanticTypeConfigurationPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.impl.AndRuleImpl <em>And Rule</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.impl.AndRuleImpl
 	 * @see org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.impl.InvariantSemanticTypeConfigurationPackageImpl#getAndRule()
 	 * @generated
@@ -266,10 +242,9 @@ public interface InvariantSemanticTypeConfigurationPackage extends EPackage {
 	int AND_RULE = 3;
 
 	/**
-	 * The feature id for the '<em><b>Composed Rules</b></em>' reference list.
+	 * The feature id for the '<em><b>Composed Rules</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -279,7 +254,6 @@ public interface InvariantSemanticTypeConfigurationPackage extends EPackage {
 	 * The number of structural features of the '<em>And Rule</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -289,7 +263,6 @@ public interface InvariantSemanticTypeConfigurationPackage extends EPackage {
 	 * The number of operations of the '<em>And Rule</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -299,7 +272,6 @@ public interface InvariantSemanticTypeConfigurationPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.impl.OrRuleImpl <em>Or Rule</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.impl.OrRuleImpl
 	 * @see org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.impl.InvariantSemanticTypeConfigurationPackageImpl#getOrRule()
 	 * @generated
@@ -307,10 +279,9 @@ public interface InvariantSemanticTypeConfigurationPackage extends EPackage {
 	int OR_RULE = 4;
 
 	/**
-	 * The feature id for the '<em><b>Composed Rules</b></em>' reference list.
+	 * The feature id for the '<em><b>Composed Rules</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -320,7 +291,6 @@ public interface InvariantSemanticTypeConfigurationPackage extends EPackage {
 	 * The number of structural features of the '<em>Or Rule</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -330,7 +300,6 @@ public interface InvariantSemanticTypeConfigurationPackage extends EPackage {
 	 * The number of operations of the '<em>Or Rule</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -341,7 +310,6 @@ public interface InvariantSemanticTypeConfigurationPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.InvariantSemanticTypeConfiguration <em>Invariant Semantic Type Configuration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for class '<em>Invariant Semantic Type Configuration</em>'.
 	 * @see org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.InvariantSemanticTypeConfiguration
 	 * @generated
@@ -352,7 +320,6 @@ public interface InvariantSemanticTypeConfigurationPackage extends EPackage {
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.InvariantSemanticTypeConfiguration#getInvariantRuleConfiguration <em>Invariant Rule Configuration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for the containment reference '<em>Invariant Rule Configuration</em>'.
 	 * @see org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.InvariantSemanticTypeConfiguration#getInvariantRuleConfiguration()
 	 * @see #getInvariantSemanticTypeConfiguration()
@@ -364,7 +331,6 @@ public interface InvariantSemanticTypeConfigurationPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.InvariantRuleConfiguration <em>Invariant Rule Configuration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for class '<em>Invariant Rule Configuration</em>'.
 	 * @see org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.InvariantRuleConfiguration
 	 * @generated
@@ -375,7 +341,6 @@ public interface InvariantSemanticTypeConfigurationPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.ComposedRuleConfiguration <em>Composed Rule Configuration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for class '<em>Composed Rule Configuration</em>'.
 	 * @see org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.ComposedRuleConfiguration
 	 * @generated
@@ -383,11 +348,10 @@ public interface InvariantSemanticTypeConfigurationPackage extends EPackage {
 	EClass getComposedRuleConfiguration();
 
 	/**
-	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.ComposedRuleConfiguration#getComposedRules <em>Composed Rules</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.ComposedRuleConfiguration#getComposedRules <em>Composed Rules</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @return the meta object for the reference list '<em>Composed Rules</em>'.
+	 * @return the meta object for the containment reference list '<em>Composed Rules</em>'.
 	 * @see org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.ComposedRuleConfiguration#getComposedRules()
 	 * @see #getComposedRuleConfiguration()
 	 * @generated
@@ -398,7 +362,6 @@ public interface InvariantSemanticTypeConfigurationPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.AndRule <em>And Rule</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for class '<em>And Rule</em>'.
 	 * @see org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.AndRule
 	 * @generated
@@ -409,7 +372,6 @@ public interface InvariantSemanticTypeConfigurationPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.OrRule <em>Or Rule</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the meta object for class '<em>Or Rule</em>'.
 	 * @see org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.OrRule
 	 * @generated
@@ -420,7 +382,6 @@ public interface InvariantSemanticTypeConfigurationPackage extends EPackage {
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -437,7 +398,6 @@ public interface InvariantSemanticTypeConfigurationPackage extends EPackage {
 	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	interface Literals {
@@ -445,7 +405,6 @@ public interface InvariantSemanticTypeConfigurationPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.impl.InvariantSemanticTypeConfigurationImpl <em>Invariant Semantic Type Configuration</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @see org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.impl.InvariantSemanticTypeConfigurationImpl
 		 * @see org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.impl.InvariantSemanticTypeConfigurationPackageImpl#getInvariantSemanticTypeConfiguration()
 		 * @generated
@@ -456,7 +415,6 @@ public interface InvariantSemanticTypeConfigurationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Invariant Rule Configuration</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @generated
 		 */
 		EReference INVARIANT_SEMANTIC_TYPE_CONFIGURATION__INVARIANT_RULE_CONFIGURATION = eINSTANCE.getInvariantSemanticTypeConfiguration_InvariantRuleConfiguration();
@@ -465,7 +423,6 @@ public interface InvariantSemanticTypeConfigurationPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.impl.InvariantRuleConfigurationImpl <em>Invariant Rule Configuration</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @see org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.impl.InvariantRuleConfigurationImpl
 		 * @see org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.impl.InvariantSemanticTypeConfigurationPackageImpl#getInvariantRuleConfiguration()
 		 * @generated
@@ -476,7 +433,6 @@ public interface InvariantSemanticTypeConfigurationPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.impl.ComposedRuleConfigurationImpl <em>Composed Rule Configuration</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @see org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.impl.ComposedRuleConfigurationImpl
 		 * @see org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.impl.InvariantSemanticTypeConfigurationPackageImpl#getComposedRuleConfiguration()
 		 * @generated
@@ -484,10 +440,9 @@ public interface InvariantSemanticTypeConfigurationPackage extends EPackage {
 		EClass COMPOSED_RULE_CONFIGURATION = eINSTANCE.getComposedRuleConfiguration();
 
 		/**
-		 * The meta object literal for the '<em><b>Composed Rules</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Composed Rules</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @generated
 		 */
 		EReference COMPOSED_RULE_CONFIGURATION__COMPOSED_RULES = eINSTANCE.getComposedRuleConfiguration_ComposedRules();
@@ -496,7 +451,6 @@ public interface InvariantSemanticTypeConfigurationPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.impl.AndRuleImpl <em>And Rule</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @see org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.impl.AndRuleImpl
 		 * @see org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.impl.InvariantSemanticTypeConfigurationPackageImpl#getAndRule()
 		 * @generated
@@ -507,7 +461,6 @@ public interface InvariantSemanticTypeConfigurationPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.impl.OrRuleImpl <em>Or Rule</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
 		 * @see org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.impl.OrRuleImpl
 		 * @see org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.impl.InvariantSemanticTypeConfigurationPackageImpl#getOrRule()
 		 * @generated

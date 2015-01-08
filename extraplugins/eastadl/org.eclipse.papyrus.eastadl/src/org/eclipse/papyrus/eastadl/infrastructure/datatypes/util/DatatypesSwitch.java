@@ -277,208 +277,159 @@ public class DatatypesSwitch<T> extends Switch<T> {
 		case DatatypesPackage.EA_DATATYPE: {
 			EADatatype eaDatatype = (EADatatype) theEObject;
 			T result = caseEADatatype(eaDatatype);
-			if (result == null) {
+			if (result == null)
 				result = caseTraceableSpecification(eaDatatype);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPackageableElement(eaDatatype);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(eaDatatype);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case DatatypesPackage.EA_DATATYPE_PROTOTYPE: {
 			EADatatypePrototype eaDatatypePrototype = (EADatatypePrototype) theEObject;
 			T result = caseEADatatypePrototype(eaDatatypePrototype);
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(eaDatatypePrototype);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case DatatypesPackage.EA_NUMERICAL: {
 			EANumerical eaNumerical = (EANumerical) theEObject;
 			T result = caseEANumerical(eaNumerical);
-			if (result == null) {
+			if (result == null)
 				result = caseEADatatype(eaNumerical);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseTraceableSpecification(eaNumerical);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPackageableElement(eaNumerical);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(eaNumerical);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case DatatypesPackage.UNIT: {
 			Unit unit = (Unit) theEObject;
 			T result = caseUnit(unit);
-			if (result == null) {
+			if (result == null)
 				result = caseEAPackageableElement(unit);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(unit);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case DatatypesPackage.QUANTITY: {
 			Quantity quantity = (Quantity) theEObject;
 			T result = caseQuantity(quantity);
-			if (result == null) {
+			if (result == null)
 				result = caseEAPackageableElement(quantity);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(quantity);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case DatatypesPackage.RANGEABLE_VALUE_TYPE: {
 			RangeableValueType rangeableValueType = (RangeableValueType) theEObject;
 			T result = caseRangeableValueType(rangeableValueType);
-			if (result == null) {
+			if (result == null)
 				result = caseEADatatype(rangeableValueType);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseTraceableSpecification(rangeableValueType);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPackageableElement(rangeableValueType);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(rangeableValueType);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case DatatypesPackage.COMPOSITE_DATATYPE: {
 			CompositeDatatype compositeDatatype = (CompositeDatatype) theEObject;
 			T result = caseCompositeDatatype(compositeDatatype);
-			if (result == null) {
+			if (result == null)
 				result = caseEADatatype(compositeDatatype);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseTraceableSpecification(compositeDatatype);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPackageableElement(compositeDatatype);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(compositeDatatype);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case DatatypesPackage.EA_STRING: {
 			EAString eaString = (EAString) theEObject;
 			T result = caseEAString(eaString);
-			if (result == null) {
+			if (result == null)
 				result = caseEADatatype(eaString);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseTraceableSpecification(eaString);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPackageableElement(eaString);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(eaString);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case DatatypesPackage.EA_BOOLEAN: {
 			EABoolean eaBoolean = (EABoolean) theEObject;
 			T result = caseEABoolean(eaBoolean);
-			if (result == null) {
+			if (result == null)
 				result = caseEADatatype(eaBoolean);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseTraceableSpecification(eaBoolean);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPackageableElement(eaBoolean);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(eaBoolean);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case DatatypesPackage.ENUMERATION_LITERAL: {
 			EnumerationLiteral enumerationLiteral = (EnumerationLiteral) theEObject;
 			T result = caseEnumerationLiteral(enumerationLiteral);
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(enumerationLiteral);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case DatatypesPackage.ENUMERATION: {
 			Enumeration enumeration = (Enumeration) theEObject;
 			T result = caseEnumeration(enumeration);
-			if (result == null) {
+			if (result == null)
 				result = caseEADatatype(enumeration);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseTraceableSpecification(enumeration);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPackageableElement(enumeration);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(enumeration);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case DatatypesPackage.ARRAY_DATA_TYPE: {
 			ArrayDataType arrayDataType = (ArrayDataType) theEObject;
 			T result = caseArrayDataType(arrayDataType);
-			if (result == null) {
+			if (result == null)
 				result = caseEADatatype(arrayDataType);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseTraceableSpecification(arrayDataType);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPackageableElement(arrayDataType);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(arrayDataType);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		default:

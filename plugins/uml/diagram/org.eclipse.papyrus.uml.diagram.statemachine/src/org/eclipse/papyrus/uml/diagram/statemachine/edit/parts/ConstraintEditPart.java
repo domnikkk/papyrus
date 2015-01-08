@@ -105,12 +105,14 @@ public class ConstraintEditPart extends AbstractConstraintEditPart {
 	}
 
 	/**
-	 *Papyrus codeGen
-	 *@generated
+	 * Papyrus codeGen
+	 *
+	 * @generated
 	 **/
 	@Override
 	protected void handleNotificationEvent(Notification event) {
 		super.handleNotificationEvent(event);
+
 	}
 
 	/**
@@ -143,6 +145,8 @@ public class ConstraintEditPart extends AbstractConstraintEditPart {
 			((ConstraintBodyEditPart) childEditPart).setLabel(getPrimaryShape().getConstraintFigure());
 			return true;
 		}
+
+
 		return false;
 	}
 
@@ -209,6 +213,7 @@ public class ConstraintEditPart extends AbstractConstraintEditPart {
 	@Override
 	protected NodeFigure createNodeFigure() {
 		return new SelectableBorderedNodeFigure(createMainFigureWithSVG());
+
 	}
 
 	/**

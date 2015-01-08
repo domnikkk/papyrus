@@ -155,9 +155,8 @@ public class VehicleFeatureImpl extends FeatureImpl implements VehicleFeature {
 		case VehiclefeaturemodelingPackage.VEHICLE_FEATURE__IS_REMOVED:
 			return isIsRemoved();
 		case VehiclefeaturemodelingPackage.VEHICLE_FEATURE__DEVIATION_ATTRIBUTE_SET:
-			if (resolve) {
+			if (resolve)
 				return getDeviationAttributeSet();
-			}
 			return basicGetDeviationAttributeSet();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -304,9 +303,8 @@ public class VehicleFeatureImpl extends FeatureImpl implements VehicleFeature {
 	public void setIsCustomerVisible(boolean newIsCustomerVisible) {
 		boolean oldIsCustomerVisible = isCustomerVisible;
 		isCustomerVisible = newIsCustomerVisible;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VehiclefeaturemodelingPackage.VEHICLE_FEATURE__IS_CUSTOMER_VISIBLE, oldIsCustomerVisible, isCustomerVisible));
-		}
 	}
 
 	/**
@@ -318,9 +316,8 @@ public class VehicleFeatureImpl extends FeatureImpl implements VehicleFeature {
 	public void setIsDesignVariabilityRationale(boolean newIsDesignVariabilityRationale) {
 		boolean oldIsDesignVariabilityRationale = isDesignVariabilityRationale;
 		isDesignVariabilityRationale = newIsDesignVariabilityRationale;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VehiclefeaturemodelingPackage.VEHICLE_FEATURE__IS_DESIGN_VARIABILITY_RATIONALE, oldIsDesignVariabilityRationale, isDesignVariabilityRationale));
-		}
 	}
 
 	/**
@@ -332,9 +329,8 @@ public class VehicleFeatureImpl extends FeatureImpl implements VehicleFeature {
 	public void setIsRemoved(boolean newIsRemoved) {
 		boolean oldIsRemoved = isRemoved;
 		isRemoved = newIsRemoved;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VehiclefeaturemodelingPackage.VEHICLE_FEATURE__IS_REMOVED, oldIsRemoved, isRemoved));
-		}
 	}
 
 	/**
@@ -344,16 +340,15 @@ public class VehicleFeatureImpl extends FeatureImpl implements VehicleFeature {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
+		if (eIsProxy())
 			return super.toString();
-		}
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (isDesignVariabilityRationale: ");
+		result.append(" (isDesignVariabilityRationale: "); //$NON-NLS-1$
 		result.append(isDesignVariabilityRationale);
-		result.append(", isCustomerVisible: ");
+		result.append(", isCustomerVisible: "); //$NON-NLS-1$
 		result.append(isCustomerVisible);
-		result.append(", isRemoved: ");
+		result.append(", isRemoved: "); //$NON-NLS-1$
 		result.append(isRemoved);
 		result.append(')');
 		return result.toString();

@@ -225,9 +225,8 @@ public class QuantityImpl extends EAPackageableElementImpl implements Quantity {
 	public void setAmountOfSubstanceExp(int newAmountOfSubstanceExp) {
 		int oldAmountOfSubstanceExp = amountOfSubstanceExp;
 		amountOfSubstanceExp = newAmountOfSubstanceExp;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.QUANTITY__AMOUNT_OF_SUBSTANCE_EXP, oldAmountOfSubstanceExp, amountOfSubstanceExp));
-		}
 	}
 
 	/**
@@ -251,9 +250,8 @@ public class QuantityImpl extends EAPackageableElementImpl implements Quantity {
 	public void setElectricCurrentExp(int newElectricCurrentExp) {
 		int oldElectricCurrentExp = electricCurrentExp;
 		electricCurrentExp = newElectricCurrentExp;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.QUANTITY__ELECTRIC_CURRENT_EXP, oldElectricCurrentExp, electricCurrentExp));
-		}
 	}
 
 	/**
@@ -277,9 +275,8 @@ public class QuantityImpl extends EAPackageableElementImpl implements Quantity {
 	public void setLenghtExp(int newLenghtExp) {
 		int oldLenghtExp = lenghtExp;
 		lenghtExp = newLenghtExp;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.QUANTITY__LENGHT_EXP, oldLenghtExp, lenghtExp));
-		}
 	}
 
 	/**
@@ -303,9 +300,8 @@ public class QuantityImpl extends EAPackageableElementImpl implements Quantity {
 	public void setLuminousIntensityExp(int newLuminousIntensityExp) {
 		int oldLuminousIntensityExp = luminousIntensityExp;
 		luminousIntensityExp = newLuminousIntensityExp;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.QUANTITY__LUMINOUS_INTENSITY_EXP, oldLuminousIntensityExp, luminousIntensityExp));
-		}
 	}
 
 	/**
@@ -329,9 +325,8 @@ public class QuantityImpl extends EAPackageableElementImpl implements Quantity {
 	public void setMassExp(int newMassExp) {
 		int oldMassExp = massExp;
 		massExp = newMassExp;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.QUANTITY__MASS_EXP, oldMassExp, massExp));
-		}
 	}
 
 	/**
@@ -355,9 +350,8 @@ public class QuantityImpl extends EAPackageableElementImpl implements Quantity {
 	public void setThermodynamicTemperatureExp(int newThermodynamicTemperatureExp) {
 		int oldThermodynamicTemperatureExp = thermodynamicTemperatureExp;
 		thermodynamicTemperatureExp = newThermodynamicTemperatureExp;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.QUANTITY__THERMODYNAMIC_TEMPERATURE_EXP, oldThermodynamicTemperatureExp, thermodynamicTemperatureExp));
-		}
 	}
 
 	/**
@@ -381,9 +375,8 @@ public class QuantityImpl extends EAPackageableElementImpl implements Quantity {
 	public void setTimeExp(int newTimeExp) {
 		int oldTimeExp = timeExp;
 		timeExp = newTimeExp;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.QUANTITY__TIME_EXP, oldTimeExp, timeExp));
-		}
 	}
 
 	/**
@@ -516,24 +509,23 @@ public class QuantityImpl extends EAPackageableElementImpl implements Quantity {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
+		if (eIsProxy())
 			return super.toString();
-		}
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (amountOfSubstanceExp: ");
+		result.append(" (amountOfSubstanceExp: "); //$NON-NLS-1$
 		result.append(amountOfSubstanceExp);
-		result.append(", electricCurrentExp: ");
+		result.append(", electricCurrentExp: "); //$NON-NLS-1$
 		result.append(electricCurrentExp);
-		result.append(", lenghtExp: ");
+		result.append(", lenghtExp: "); //$NON-NLS-1$
 		result.append(lenghtExp);
-		result.append(", luminousIntensityExp: ");
+		result.append(", luminousIntensityExp: "); //$NON-NLS-1$
 		result.append(luminousIntensityExp);
-		result.append(", massExp: ");
+		result.append(", massExp: "); //$NON-NLS-1$
 		result.append(massExp);
-		result.append(", thermodynamicTemperatureExp: ");
+		result.append(", thermodynamicTemperatureExp: "); //$NON-NLS-1$
 		result.append(thermodynamicTemperatureExp);
-		result.append(", timeExp: ");
+		result.append(", timeExp: "); //$NON-NLS-1$
 		result.append(timeExp);
 		result.append(')');
 		return result.toString();

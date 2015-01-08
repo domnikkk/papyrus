@@ -162,9 +162,8 @@ public class IOHardwarePinImpl extends HardwarePinImpl implements IOHardwarePin 
 	public void setType(IOHardwarePinKind newType) {
 		IOHardwarePinKind oldType = type;
 		type = newType == null ? TYPE_EDEFAULT : newType;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, HardwaremodelingPackage.IO_HARDWARE_PIN__TYPE, oldType, type));
-		}
 	}
 
 	/**
@@ -175,12 +174,11 @@ public class IOHardwarePinImpl extends HardwarePinImpl implements IOHardwarePin 
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
+		if (eIsProxy())
 			return super.toString();
-		}
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (type: ");
+		result.append(" (type: "); //$NON-NLS-1$
 		result.append(type);
 		result.append(')');
 		return result.toString();

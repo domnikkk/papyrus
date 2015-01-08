@@ -125,9 +125,8 @@ public class StrongSynchronizationConstraintImpl extends TimingConstraintImpl im
 		case TimingconstraintsPackage.STRONG_SYNCHRONIZATION_CONSTRAINT__EVENT:
 			return getEvent();
 		case TimingconstraintsPackage.STRONG_SYNCHRONIZATION_CONSTRAINT__TOLERANCE:
-			if (resolve) {
+			if (resolve)
 				return getTolerance();
-			}
 			return basicGetTolerance();
 		}
 		return super.eGet(featureID, resolve, coreType);

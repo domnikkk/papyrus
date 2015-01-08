@@ -10,6 +10,8 @@
  *******************************************************************************/
 package org.eclipse.papyrus.cpp.codegen;
 
+import java.util.regex.Pattern;
+
 /**
  * String constants for the code generation
  *
@@ -35,5 +37,9 @@ public class Constants {
 	public static final String staticAttributes = "// static attributes (if any)"; //$NON-NLS-1$
 
 	public static final String undefinedType = "undefined"; //$NON-NLS-1$
-
+	
+	// support the languages "C++", "C/C++" as well as "cpp". The '+' needs to be escaped in a regular epression
+	public static final Pattern supportedLanguages = Pattern.compile("C\\+\\+|C/C\\+\\+|cpp"); //$NON-NLS-1$
+	
+	public static final String DOT = "."; //$NON-NLS-1$
 }

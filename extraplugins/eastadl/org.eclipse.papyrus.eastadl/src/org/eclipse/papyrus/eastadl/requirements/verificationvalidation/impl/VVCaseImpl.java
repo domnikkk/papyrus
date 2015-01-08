@@ -122,9 +122,8 @@ public class VVCaseImpl extends TraceableSpecificationImpl implements VVCase {
 			InternalEObject oldBase_Class = (InternalEObject) base_Class;
 			base_Class = (org.eclipse.uml2.uml.Class) eResolveProxy(oldBase_Class);
 			if (base_Class != oldBase_Class) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, VerificationvalidationPackage.VV_CASE__BASE_CLASS, oldBase_Class, base_Class));
-				}
 			}
 		}
 		return base_Class;
@@ -150,9 +149,8 @@ public class VVCaseImpl extends TraceableSpecificationImpl implements VVCase {
 	public void setBase_Class(org.eclipse.uml2.uml.Class newBase_Class) {
 		org.eclipse.uml2.uml.Class oldBase_Class = base_Class;
 		base_Class = newBase_Class;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VerificationvalidationPackage.VV_CASE__BASE_CLASS, oldBase_Class, base_Class));
-		}
 	}
 
 	/**
@@ -167,9 +165,8 @@ public class VVCaseImpl extends TraceableSpecificationImpl implements VVCase {
 			InternalEObject oldAbstractVVCase = (InternalEObject) abstractVVCase;
 			abstractVVCase = (VVCase) eResolveProxy(oldAbstractVVCase);
 			if (abstractVVCase != oldAbstractVVCase) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, VerificationvalidationPackage.VV_CASE__ABSTRACT_VV_CASE, oldAbstractVVCase, abstractVVCase));
-				}
 			}
 		}
 		return abstractVVCase;
@@ -195,9 +192,8 @@ public class VVCaseImpl extends TraceableSpecificationImpl implements VVCase {
 	public void setAbstractVVCase(VVCase newAbstractVVCase) {
 		VVCase oldAbstractVVCase = abstractVVCase;
 		abstractVVCase = newAbstractVVCase;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VerificationvalidationPackage.VV_CASE__ABSTRACT_VV_CASE, oldAbstractVVCase, abstractVVCase));
-		}
 	}
 
 	/**
@@ -303,14 +299,12 @@ public class VVCaseImpl extends TraceableSpecificationImpl implements VVCase {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case VerificationvalidationPackage.VV_CASE__BASE_CLASS:
-			if (resolve) {
+			if (resolve)
 				return getBase_Class();
-			}
 			return basicGetBase_Class();
 		case VerificationvalidationPackage.VV_CASE__ABSTRACT_VV_CASE:
-			if (resolve) {
+			if (resolve)
 				return getAbstractVVCase();
-			}
 			return basicGetAbstractVVCase();
 		case VerificationvalidationPackage.VV_CASE__VV_TARGET:
 			return getVvTarget();

@@ -20,6 +20,7 @@ package org.eclipse.papyrus.eastadl.utils;
  * Stereotype ids (QualifiedName) Useful to retrieve applicable or applied stereotypes
  *
  */
+@SuppressWarnings("nls")
 public interface EASTResource {
 
 	public static String ACTUATOR_ID = "EAST-ADL2::Structure::HardwareModeling::Actuator";

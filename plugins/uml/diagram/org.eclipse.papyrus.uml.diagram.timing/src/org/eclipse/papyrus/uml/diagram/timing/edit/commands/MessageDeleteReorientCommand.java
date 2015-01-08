@@ -122,7 +122,9 @@ public class MessageDeleteReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected CommandResult reorientSource() throws ExecutionException {
-		getLink().setReceiveEvent(getNewSource());
+		getLink().setReceiveEvent(
+				getNewSource()
+				);
 		return CommandResult.newOKCommandResult(getLink());
 	}
 
@@ -130,7 +132,9 @@ public class MessageDeleteReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected CommandResult reorientTarget() throws ExecutionException {
-		getLink().setSendEvent(getNewTarget());
+		getLink().setSendEvent(
+				getNewTarget()
+				);
 		return CommandResult.newOKCommandResult(getLink());
 	}
 

@@ -105,9 +105,8 @@ public class ModeGroupImpl extends TraceableSpecificationImpl implements ModeGro
 		case BehaviorPackage.MODE_GROUP__MODE:
 			return getMode();
 		case BehaviorPackage.MODE_GROUP__BASE_CLASS:
-			if (resolve) {
+			if (resolve)
 				return getBase_Class();
-			}
 			return basicGetBase_Class();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -218,9 +217,8 @@ public class ModeGroupImpl extends TraceableSpecificationImpl implements ModeGro
 			InternalEObject oldBase_Class = (InternalEObject) base_Class;
 			base_Class = (org.eclipse.uml2.uml.Class) eResolveProxy(oldBase_Class);
 			if (base_Class != oldBase_Class) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BehaviorPackage.MODE_GROUP__BASE_CLASS, oldBase_Class, base_Class));
-				}
 			}
 		}
 		return base_Class;
@@ -246,9 +244,8 @@ public class ModeGroupImpl extends TraceableSpecificationImpl implements ModeGro
 	public void setBase_Class(org.eclipse.uml2.uml.Class newBase_Class) {
 		org.eclipse.uml2.uml.Class oldBase_Class = base_Class;
 		base_Class = newBase_Class;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BehaviorPackage.MODE_GROUP__BASE_CLASS, oldBase_Class, base_Class));
-		}
 	}
 
 	/**
@@ -272,9 +269,8 @@ public class ModeGroupImpl extends TraceableSpecificationImpl implements ModeGro
 	public void setPrecondition(String newPrecondition) {
 		String oldPrecondition = precondition;
 		precondition = newPrecondition;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BehaviorPackage.MODE_GROUP__PRECONDITION, oldPrecondition, precondition));
-		}
 	}
 
 	/**
@@ -285,12 +281,11 @@ public class ModeGroupImpl extends TraceableSpecificationImpl implements ModeGro
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
+		if (eIsProxy())
 			return super.toString();
-		}
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (precondition: ");
+		result.append(" (precondition: "); //$NON-NLS-1$
 		result.append(precondition);
 		result.append(')');
 		return result.toString();

@@ -29,7 +29,6 @@ public class OrRuleImpl extends ComposedRuleConfigurationImpl implements OrRule 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected OrRuleImpl() {
@@ -39,7 +38,6 @@ public class OrRuleImpl extends ComposedRuleConfigurationImpl implements OrRule 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override

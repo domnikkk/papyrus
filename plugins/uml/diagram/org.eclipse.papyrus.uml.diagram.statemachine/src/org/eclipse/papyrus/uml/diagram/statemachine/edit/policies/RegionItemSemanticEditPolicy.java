@@ -111,6 +111,11 @@ public class RegionItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy 
 					Node cnode = (Node) cit.next();
 					switch (UMLVisualIDRegistry.getVisualID(cnode)) {
 					case PseudostateInitialEditPart.VISUAL_ID:
+
+
+
+
+
 						for (Iterator<?> it = cnode.getTargetEdges().iterator(); it.hasNext();) {
 							Edge incomingLink = (Edge) it.next();
 							switch (UMLVisualIDRegistry.getVisualID(incomingLink)) {
@@ -127,11 +132,17 @@ public class RegionItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy 
 								break;
 							}
 						}
+
 						cmd.add(new DestroyElementCommand(new DestroyElementRequest(getEditingDomain(), cnode.getElement(), false))); // directlyOwned: true
 						// don't need explicit deletion of cnode as parent's view deletion would clean child views as well
 						// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), cnode));
 						break;
 					case PseudostateJoinEditPart.VISUAL_ID:
+
+
+
+
+
 						for (Iterator<?> it = cnode.getTargetEdges().iterator(); it.hasNext();) {
 							Edge incomingLink = (Edge) it.next();
 							switch (UMLVisualIDRegistry.getVisualID(incomingLink)) {
@@ -148,11 +159,17 @@ public class RegionItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy 
 								break;
 							}
 						}
+
 						cmd.add(new DestroyElementCommand(new DestroyElementRequest(getEditingDomain(), cnode.getElement(), false))); // directlyOwned: true
 						// don't need explicit deletion of cnode as parent's view deletion would clean child views as well
 						// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), cnode));
 						break;
 					case PseudostateForkEditPart.VISUAL_ID:
+
+
+
+
+
 						for (Iterator<?> it = cnode.getTargetEdges().iterator(); it.hasNext();) {
 							Edge incomingLink = (Edge) it.next();
 							switch (UMLVisualIDRegistry.getVisualID(incomingLink)) {
@@ -169,11 +186,17 @@ public class RegionItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy 
 								break;
 							}
 						}
+
 						cmd.add(new DestroyElementCommand(new DestroyElementRequest(getEditingDomain(), cnode.getElement(), false))); // directlyOwned: true
 						// don't need explicit deletion of cnode as parent's view deletion would clean child views as well
 						// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), cnode));
 						break;
 					case PseudostateChoiceEditPart.VISUAL_ID:
+
+
+
+
+
 						for (Iterator<?> it = cnode.getTargetEdges().iterator(); it.hasNext();) {
 							Edge incomingLink = (Edge) it.next();
 							switch (UMLVisualIDRegistry.getVisualID(incomingLink)) {
@@ -190,11 +213,17 @@ public class RegionItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy 
 								break;
 							}
 						}
+
 						cmd.add(new DestroyElementCommand(new DestroyElementRequest(getEditingDomain(), cnode.getElement(), false))); // directlyOwned: true
 						// don't need explicit deletion of cnode as parent's view deletion would clean child views as well
 						// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), cnode));
 						break;
 					case PseudostateJunctionEditPart.VISUAL_ID:
+
+
+
+
+
 						for (Iterator<?> it = cnode.getTargetEdges().iterator(); it.hasNext();) {
 							Edge incomingLink = (Edge) it.next();
 							switch (UMLVisualIDRegistry.getVisualID(incomingLink)) {
@@ -211,11 +240,17 @@ public class RegionItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy 
 								break;
 							}
 						}
+
 						cmd.add(new DestroyElementCommand(new DestroyElementRequest(getEditingDomain(), cnode.getElement(), false))); // directlyOwned: true
 						// don't need explicit deletion of cnode as parent's view deletion would clean child views as well
 						// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), cnode));
 						break;
 					case PseudostateShallowHistoryEditPart.VISUAL_ID:
+
+
+
+
+
 						for (Iterator<?> it = cnode.getTargetEdges().iterator(); it.hasNext();) {
 							Edge incomingLink = (Edge) it.next();
 							switch (UMLVisualIDRegistry.getVisualID(incomingLink)) {
@@ -232,11 +267,17 @@ public class RegionItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy 
 								break;
 							}
 						}
+
 						cmd.add(new DestroyElementCommand(new DestroyElementRequest(getEditingDomain(), cnode.getElement(), false))); // directlyOwned: true
 						// don't need explicit deletion of cnode as parent's view deletion would clean child views as well
 						// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), cnode));
 						break;
 					case PseudostateDeepHistoryEditPart.VISUAL_ID:
+
+
+
+
+
 						for (Iterator<?> it = cnode.getTargetEdges().iterator(); it.hasNext();) {
 							Edge incomingLink = (Edge) it.next();
 							switch (UMLVisualIDRegistry.getVisualID(incomingLink)) {
@@ -253,11 +294,17 @@ public class RegionItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy 
 								break;
 							}
 						}
+
 						cmd.add(new DestroyElementCommand(new DestroyElementRequest(getEditingDomain(), cnode.getElement(), false))); // directlyOwned: true
 						// don't need explicit deletion of cnode as parent's view deletion would clean child views as well
 						// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), cnode));
 						break;
 					case PseudostateTerminateEditPart.VISUAL_ID:
+
+
+
+
+
 						for (Iterator<?> it = cnode.getTargetEdges().iterator(); it.hasNext();) {
 							Edge incomingLink = (Edge) it.next();
 							switch (UMLVisualIDRegistry.getVisualID(incomingLink)) {
@@ -274,11 +321,17 @@ public class RegionItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy 
 								break;
 							}
 						}
+
 						cmd.add(new DestroyElementCommand(new DestroyElementRequest(getEditingDomain(), cnode.getElement(), false))); // directlyOwned: true
 						// don't need explicit deletion of cnode as parent's view deletion would clean child views as well
 						// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), cnode));
 						break;
 					case FinalStateEditPart.VISUAL_ID:
+
+
+
+
+
 						for (Iterator<?> it = cnode.getTargetEdges().iterator(); it.hasNext();) {
 							Edge incomingLink = (Edge) it.next();
 							switch (UMLVisualIDRegistry.getVisualID(incomingLink)) {
@@ -296,11 +349,17 @@ public class RegionItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy 
 								break;
 							}
 						}
+
 						cmd.add(new DestroyElementCommand(new DestroyElementRequest(getEditingDomain(), cnode.getElement(), false))); // directlyOwned: true
 						// don't need explicit deletion of cnode as parent's view deletion would clean child views as well
 						// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), cnode));
 						break;
 					case StateEditPart.VISUAL_ID:
+
+
+
+
+
 						for (Iterator<?> it = cnode.getTargetEdges().iterator(); it.hasNext();) {
 							Edge incomingLink = (Edge) it.next();
 							switch (UMLVisualIDRegistry.getVisualID(incomingLink)) {
@@ -318,11 +377,17 @@ public class RegionItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy 
 								break;
 							}
 						}
+
 						cmd.add(new DestroyElementCommand(new DestroyElementRequest(getEditingDomain(), cnode.getElement(), false))); // directlyOwned: true
 						// don't need explicit deletion of cnode as parent's view deletion would clean child views as well
 						// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), cnode));
 						break;
 					case PseudostateEntryPointEditPart.VISUAL_ID:
+
+
+
+
+
 						for (Iterator<?> it = cnode.getTargetEdges().iterator(); it.hasNext();) {
 							Edge incomingLink = (Edge) it.next();
 							switch (UMLVisualIDRegistry.getVisualID(incomingLink)) {
@@ -339,11 +404,17 @@ public class RegionItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy 
 								break;
 							}
 						}
+
 						cmd.add(new DestroyElementCommand(new DestroyElementRequest(getEditingDomain(), cnode.getElement(), false))); // directlyOwned: false
 						// don't need explicit deletion of cnode as parent's view deletion would clean child views as well
 						// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), cnode));
 						break;
 					case PseudostateExitPointEditPart.VISUAL_ID:
+
+
+
+
+
 						for (Iterator<?> it = cnode.getTargetEdges().iterator(); it.hasNext();) {
 							Edge incomingLink = (Edge) it.next();
 							switch (UMLVisualIDRegistry.getVisualID(incomingLink)) {
@@ -360,11 +431,17 @@ public class RegionItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy 
 								break;
 							}
 						}
+
 						cmd.add(new DestroyElementCommand(new DestroyElementRequest(getEditingDomain(), cnode.getElement(), false))); // directlyOwned: false
 						// don't need explicit deletion of cnode as parent's view deletion would clean child views as well
 						// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), cnode));
 						break;
 					case CommentEditPart.VISUAL_ID:
+
+
+
+
+
 						for (Iterator<?> it = cnode.getTargetEdges().iterator(); it.hasNext();) {
 							Edge incomingLink = (Edge) it.next();
 							switch (UMLVisualIDRegistry.getVisualID(incomingLink)) {
@@ -376,11 +453,17 @@ public class RegionItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy 
 								break;
 							}
 						}
+
 						cmd.add(new DestroyElementCommand(new DestroyElementRequest(getEditingDomain(), cnode.getElement(), false))); // directlyOwned: true
 						// don't need explicit deletion of cnode as parent's view deletion would clean child views as well
 						// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), cnode));
 						break;
 					case ConstraintEditPart.VISUAL_ID:
+
+
+
+
+
 						for (Iterator<?> it = cnode.getTargetEdges().iterator(); it.hasNext();) {
 							Edge incomingLink = (Edge) it.next();
 							switch (UMLVisualIDRegistry.getVisualID(incomingLink)) {
@@ -392,6 +475,7 @@ public class RegionItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy 
 								break;
 							}
 						}
+
 						cmd.add(new DestroyElementCommand(new DestroyElementRequest(getEditingDomain(), cnode.getElement(), false))); // directlyOwned: true
 						// don't need explicit deletion of cnode as parent's view deletion would clean child views as well
 						// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), cnode));
@@ -408,7 +492,8 @@ public class RegionItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy 
 	 */
 	@Override
 	protected Command getCreateRelationshipCommand(CreateRelationshipRequest req) {
-		Command command = req.getTarget() == null ? getStartCreateRelationshipCommand(req) : getCompleteCreateRelationshipCommand(req);
+		Command command = req.getTarget() == null ?
+				getStartCreateRelationshipCommand(req) : getCompleteCreateRelationshipCommand(req);
 		return command != null ? command : super.getCreateRelationshipCommand(req);
 	}
 
@@ -435,7 +520,7 @@ public class RegionItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy 
 		if (UMLElementTypes.ConstraintConstrainedElement_670 == baseElementType) {
 			return null;
 		}
-		if(UMLElementTypes.ConstraintContext_8500 == baseElementType) {
+		if (UMLElementTypes.ConstraintContext_8500 == baseElementType) {
 			return null;
 		}
 		return null;
@@ -465,19 +550,22 @@ public class RegionItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy 
 			if (isExtendedType) {
 				return getExtendedCompleteCreateRelationshipCommand(req, (IExtendedHintedElementType) requestElementType);
 			}
-			return getGEFWrapper(new CommentAnnotatedElementCreateCommand(req, req.getSource(), req.getTarget()));
+			return getGEFWrapper(new CommentAnnotatedElementCreateCommand(req,
+					req.getSource(), req.getTarget()));
 		}
 		if (UMLElementTypes.ConstraintConstrainedElement_670 == baseElementType) {
 			if (isExtendedType) {
 				return getExtendedCompleteCreateRelationshipCommand(req, (IExtendedHintedElementType) requestElementType);
 			}
-			return getGEFWrapper(new ConstraintConstrainedElementCreateCommand(req, req.getSource(), req.getTarget()));
+			return getGEFWrapper(new ConstraintConstrainedElementCreateCommand(req,
+					req.getSource(), req.getTarget()));
 		}
-		if(UMLElementTypes.ConstraintContext_8500 == baseElementType) {
-			if(isExtendedType) {
-				return getExtendedCompleteCreateRelationshipCommand(req, (IExtendedHintedElementType)requestElementType);
+		if (UMLElementTypes.ConstraintContext_8500 == baseElementType) {
+			if (isExtendedType) {
+				return getExtendedCompleteCreateRelationshipCommand(req, (IExtendedHintedElementType) requestElementType);
 			}
-			return getGEFWrapper(new ContextLinkCreateCommand(req, req.getSource(), req.getTarget()));
+			return getGEFWrapper(new ContextLinkCreateCommand(req,
+					req.getSource(), req.getTarget()));
 		}
 		return null;
 	}

@@ -42,6 +42,7 @@ import org.eclipse.emf.ecore.EReference;
  *
  * @see org.eclipse.papyrus.eastadl.infrastructure.InfrastructureFactory
  * @model kind="package"
+ *        annotation="http://www.eclipse.org/uml2/2.0.0/UML originalName='Infrastructure'"
  * @generated
  */
 public interface InfrastructurePackage extends EPackage {

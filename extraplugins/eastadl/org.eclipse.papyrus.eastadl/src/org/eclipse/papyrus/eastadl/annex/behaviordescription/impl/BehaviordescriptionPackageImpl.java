@@ -181,9 +181,8 @@ public class BehaviordescriptionPackageImpl extends EPackageImpl implements Beha
 	 * @generated
 	 */
 	public static BehaviordescriptionPackage init() {
-		if (isInited) {
+		if (isInited)
 			return (BehaviordescriptionPackage) EPackage.Registry.INSTANCE.getEPackage(BehaviordescriptionPackage.eNS_URI);
-		}
 
 		// Obtain or create and register package
 		BehaviordescriptionPackageImpl theBehaviordescriptionPackage = (BehaviordescriptionPackageImpl) (EPackage.Registry.INSTANCE.get(eNS_URI) instanceof BehaviordescriptionPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI)
@@ -216,8 +215,7 @@ public class BehaviordescriptionPackageImpl extends EPackageImpl implements Beha
 		SystemmodelingPackageImpl theSystemmodelingPackage = (SystemmodelingPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(SystemmodelingPackage.eNS_URI) instanceof SystemmodelingPackageImpl ? EPackage.Registry.INSTANCE
 				.getEPackage(SystemmodelingPackage.eNS_URI) : SystemmodelingPackage.eINSTANCE);
 		VehiclefeaturemodelingPackageImpl theVehiclefeaturemodelingPackage = (VehiclefeaturemodelingPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(VehiclefeaturemodelingPackage.eNS_URI) instanceof VehiclefeaturemodelingPackageImpl ? EPackage.Registry.INSTANCE
-				.getEPackage(VehiclefeaturemodelingPackage.eNS_URI)
-				: VehiclefeaturemodelingPackage.eINSTANCE);
+				.getEPackage(VehiclefeaturemodelingPackage.eNS_URI) : VehiclefeaturemodelingPackage.eINSTANCE);
 		HardwaremodelingPackageImpl theHardwaremodelingPackage = (HardwaremodelingPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(HardwaremodelingPackage.eNS_URI) instanceof HardwaremodelingPackageImpl ? EPackage.Registry.INSTANCE
 				.getEPackage(HardwaremodelingPackage.eNS_URI) : HardwaremodelingPackage.eINSTANCE);
 		DependabilityPackageImpl theDependabilityPackage = (DependabilityPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(DependabilityPackage.eNS_URI) instanceof DependabilityPackageImpl ? EPackage.Registry.INSTANCE
@@ -235,8 +233,7 @@ public class BehaviordescriptionPackageImpl extends EPackageImpl implements Beha
 		UsecasesPackageImpl theUsecasesPackage = (UsecasesPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(UsecasesPackage.eNS_URI) instanceof UsecasesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(UsecasesPackage.eNS_URI)
 				: UsecasesPackage.eINSTANCE);
 		VerificationvalidationPackageImpl theVerificationvalidationPackage = (VerificationvalidationPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(VerificationvalidationPackage.eNS_URI) instanceof VerificationvalidationPackageImpl ? EPackage.Registry.INSTANCE
-				.getEPackage(VerificationvalidationPackage.eNS_URI)
-				: VerificationvalidationPackage.eINSTANCE);
+				.getEPackage(VerificationvalidationPackage.eNS_URI) : VerificationvalidationPackage.eINSTANCE);
 		org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsPackageImpl theRequirementsPackage_1 = (org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsPackageImpl) (EPackage.Registry.INSTANCE
 				.getEPackage(org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsPackage.eNS_URI) instanceof org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsPackageImpl ? EPackage.Registry.INSTANCE
 				.getEPackage(org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsPackage.eNS_URI) : org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsPackage.eINSTANCE);
@@ -251,13 +248,11 @@ public class BehaviordescriptionPackageImpl extends EPackageImpl implements Beha
 		AnnexPackageImpl theAnnexPackage = (AnnexPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(AnnexPackage.eNS_URI) instanceof AnnexPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(AnnexPackage.eNS_URI) : AnnexPackage.eINSTANCE);
 		NeedsPackageImpl theNeedsPackage = (NeedsPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(NeedsPackage.eNS_URI) instanceof NeedsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(NeedsPackage.eNS_URI) : NeedsPackage.eINSTANCE);
 		AttributequantificationconstraintPackageImpl theAttributequantificationconstraintPackage = (AttributequantificationconstraintPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(AttributequantificationconstraintPackage.eNS_URI) instanceof AttributequantificationconstraintPackageImpl ? EPackage.Registry.INSTANCE
-				.getEPackage(AttributequantificationconstraintPackage.eNS_URI)
-				: AttributequantificationconstraintPackage.eINSTANCE);
+				.getEPackage(AttributequantificationconstraintPackage.eNS_URI) : AttributequantificationconstraintPackage.eINSTANCE);
 		TemporalconstraintPackageImpl theTemporalconstraintPackage = (TemporalconstraintPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(TemporalconstraintPackage.eNS_URI) instanceof TemporalconstraintPackageImpl ? EPackage.Registry.INSTANCE
 				.getEPackage(TemporalconstraintPackage.eNS_URI) : TemporalconstraintPackage.eINSTANCE);
 		ComputationconstraintPackageImpl theComputationconstraintPackage = (ComputationconstraintPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(ComputationconstraintPackage.eNS_URI) instanceof ComputationconstraintPackageImpl ? EPackage.Registry.INSTANCE
-				.getEPackage(ComputationconstraintPackage.eNS_URI)
-				: ComputationconstraintPackage.eINSTANCE);
+				.getEPackage(ComputationconstraintPackage.eNS_URI) : ComputationconstraintPackage.eINSTANCE);
 		GenericconstraintsPackageImpl theGenericconstraintsPackage = (GenericconstraintsPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(GenericconstraintsPackage.eNS_URI) instanceof GenericconstraintsPackageImpl ? EPackage.Registry.INSTANCE
 				.getEPackage(GenericconstraintsPackage.eNS_URI) : GenericconstraintsPackage.eINSTANCE);
 
@@ -700,9 +695,8 @@ public class BehaviordescriptionPackageImpl extends EPackageImpl implements Beha
 	 * @generated
 	 */
 	public void createPackageContents() {
-		if (isCreated) {
+		if (isCreated)
 			return;
-		}
 		isCreated = true;
 
 		// Create classes and their features
@@ -761,9 +755,8 @@ public class BehaviordescriptionPackageImpl extends EPackageImpl implements Beha
 	 * @generated
 	 */
 	public void initializePackageContents() {
-		if (isInitialized) {
+		if (isInitialized)
 			return;
-		}
 		isInitialized = true;
 
 		// Initialize package
@@ -798,65 +791,84 @@ public class BehaviordescriptionPackageImpl extends EPackageImpl implements Beha
 		behaviorConstraintTargetBindingEClass.getESuperTypes().add(theElementsPackage.getRelationship());
 
 		// Initialize classes, features, and operations; add parameters
-		initEClass(behaviorConstraintBindingAttributeEClass, BehaviorConstraintBindingAttribute.class, "BehaviorConstraintBindingAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(behaviorConstraintBindingAttributeEClass, BehaviorConstraintBindingAttribute.class, "BehaviorConstraintBindingAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 
-		initEClass(behaviorConstraintParameterEClass, BehaviorConstraintParameter.class, "BehaviorConstraintParameter", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(behaviorConstraintParameterEClass, BehaviorConstraintParameter.class, "BehaviorConstraintParameter", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 
-		initEClass(behaviorConstraintInternalBindingEClass, BehaviorConstraintInternalBinding.class, "BehaviorConstraintInternalBinding", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getBehaviorConstraintInternalBinding_BindingThroughClampConnector(), theEnvironmentPackage.getClampConnector(), null, "bindingThroughClampConnector", null, 0, -1, BehaviorConstraintInternalBinding.class, !IS_TRANSIENT, !IS_VOLATILE,
-				IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getBehaviorConstraintInternalBinding_BindingThroughFunctionConnector(), theInfrastructurePackage.getBehaviorConstraintInternalBinding_throughFunctionConnectorInstanceRef(), null, "bindingThroughFunctionConnector", null, 0, -1,
-				BehaviorConstraintInternalBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getBehaviorConstraintInternalBinding_BindingThroughHardwareConnector(), theInfrastructurePackage.getBehaviorConstraintInternalBinding_throughHardwareConnectorInstanceRef(), null, "bindingThroughHardwareConnector", null, 0, -1,
-				BehaviorConstraintInternalBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(behaviorConstraintInternalBindingEClass, BehaviorConstraintInternalBinding.class, "BehaviorConstraintInternalBinding", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(getBehaviorConstraintInternalBinding_BindingThroughClampConnector(), theEnvironmentPackage.getClampConnector(), null,
+				"bindingThroughClampConnector", null, 0, -1, BehaviorConstraintInternalBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getBehaviorConstraintInternalBinding_BindingThroughFunctionConnector(), theInfrastructurePackage.getBehaviorConstraintInternalBinding_throughFunctionConnectorInstanceRef(), null,
+				"bindingThroughFunctionConnector", null, 0, -1, BehaviorConstraintInternalBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getBehaviorConstraintInternalBinding_BindingThroughHardwareConnector(), theInfrastructurePackage.getBehaviorConstraintInternalBinding_throughHardwareConnectorInstanceRef(), null,
+				"bindingThroughHardwareConnector", null, 0, -1, BehaviorConstraintInternalBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 
-		initEClass(behaviorConstraintBindingEventEClass, BehaviorConstraintBindingEvent.class, "BehaviorConstraintBindingEvent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(behaviorConstraintBindingEventEClass, BehaviorConstraintBindingEvent.class, "BehaviorConstraintBindingEvent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 
-		initEClass(behaviorConstraintPrototypeEClass, BehaviorConstraintPrototype.class, "BehaviorConstraintPrototype", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getBehaviorConstraintPrototype_InstantiationVariable(), this.getBehaviorConstraintInternalBinding(), null, "instantiationVariable", null, 0, -1, BehaviorConstraintPrototype.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
-				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getBehaviorConstraintPrototype_TargetVehicleFeatureElement(), theVehiclefeaturemodelingPackage.getVehicleFeature(), null, "targetVehicleFeatureElement", null, 0, -1, BehaviorConstraintPrototype.class, !IS_TRANSIENT, !IS_VOLATILE,
-				IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getBehaviorConstraintPrototype_Type(), this.getBehaviorConstraintType(), null, "type", null, 1, 1, BehaviorConstraintPrototype.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getBehaviorConstraintPrototype_FunctionTarget(), theInfrastructurePackage.getBehaviorConstraintPrototype_functionTargetInstanceRef(), null, "functionTarget", null, 0, -1, BehaviorConstraintPrototype.class, !IS_TRANSIENT, !IS_VOLATILE,
-				IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getBehaviorConstraintPrototype_HardwareComponentTarget(), theInfrastructurePackage.getBehaviorConstraintPrototype_hardwareComponentTargetInstanceRef(), null, "hardwareComponentTarget", null, 0, -1, BehaviorConstraintPrototype.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getBehaviorConstraintPrototype_ErrorModelTarget(), theInfrastructurePackage.getBehaviorConstraintPrototype_errorModelTargetInstanceRef(), null, "errorModelTarget", null, 0, -1, BehaviorConstraintPrototype.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(behaviorConstraintPrototypeEClass, BehaviorConstraintPrototype.class, "BehaviorConstraintPrototype", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(getBehaviorConstraintPrototype_InstantiationVariable(), this.getBehaviorConstraintInternalBinding(), null,
+				"instantiationVariable", null, 0, -1, BehaviorConstraintPrototype.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getBehaviorConstraintPrototype_TargetVehicleFeatureElement(), theVehiclefeaturemodelingPackage.getVehicleFeature(), null,
+				"targetVehicleFeatureElement", null, 0, -1, BehaviorConstraintPrototype.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getBehaviorConstraintPrototype_Type(), this.getBehaviorConstraintType(), null,
+				"type", null, 1, 1, BehaviorConstraintPrototype.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getBehaviorConstraintPrototype_FunctionTarget(), theInfrastructurePackage.getBehaviorConstraintPrototype_functionTargetInstanceRef(), null,
+				"functionTarget", null, 0, -1, BehaviorConstraintPrototype.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getBehaviorConstraintPrototype_HardwareComponentTarget(), theInfrastructurePackage.getBehaviorConstraintPrototype_hardwareComponentTargetInstanceRef(), null,
+				"hardwareComponentTarget", null, 0, -1, BehaviorConstraintPrototype.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getBehaviorConstraintPrototype_ErrorModelTarget(), theInfrastructurePackage.getBehaviorConstraintPrototype_errorModelTargetInstanceRef(), null,
+				"errorModelTarget", null, 0, -1, BehaviorConstraintPrototype.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 
-		initEClass(behaviorConstraintTypeEClass, BehaviorConstraintType.class, "BehaviorConstraintType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getBehaviorConstraintType_SharedVariable(), this.getBehaviorConstraintInternalBinding(), null, "sharedVariable", null, 0, -1, BehaviorConstraintType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getBehaviorConstraintType_InterfaceVariable(), this.getBehaviorConstraintParameter(), null, "interfaceVariable", null, 0, -1, BehaviorConstraintType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getBehaviorConstraintType_Part(), this.getBehaviorConstraintPrototype(), null, "part", null, 0, -1, BehaviorConstraintType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
-				!IS_DERIVED, !IS_ORDERED);
-		initEReference(getBehaviorConstraintType_AttributeQuantificationconstraint(), theAttributequantificationconstraintPackage.getAttributeQuantificationconstraint(), null, "attributeQuantificationconstraint", null, 0, -1, BehaviorConstraintType.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getBehaviorConstraintType_TemporalConstraint(), theTemporalconstraintPackage.getTemporalConstraint(), null, "temporalConstraint", null, 0, -1, BehaviorConstraintType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
-				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getBehaviorConstraintType_ComputationConstraint(), theComputationconstraintPackage.getComputationConstraint(), null, "computationConstraint", null, 0, -1, BehaviorConstraintType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
-				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(behaviorConstraintTypeEClass, BehaviorConstraintType.class, "BehaviorConstraintType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(getBehaviorConstraintType_SharedVariable(), this.getBehaviorConstraintInternalBinding(), null,
+				"sharedVariable", null, 0, -1, BehaviorConstraintType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getBehaviorConstraintType_InterfaceVariable(), this.getBehaviorConstraintParameter(), null,
+				"interfaceVariable", null, 0, -1, BehaviorConstraintType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getBehaviorConstraintType_Part(), this.getBehaviorConstraintPrototype(), null,
+				"part", null, 0, -1, BehaviorConstraintType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getBehaviorConstraintType_AttributeQuantificationconstraint(), theAttributequantificationconstraintPackage.getAttributeQuantificationconstraint(), null,
+				"attributeQuantificationconstraint", null, 0, -1, BehaviorConstraintType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getBehaviorConstraintType_TemporalConstraint(), theTemporalconstraintPackage.getTemporalConstraint(), null,
+				"temporalConstraint", null, 0, -1, BehaviorConstraintType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getBehaviorConstraintType_ComputationConstraint(), theComputationconstraintPackage.getComputationConstraint(), null,
+				"computationConstraint", null, 0, -1, BehaviorConstraintType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 
-		initEClass(behaviorConstraintTargetBindingEClass, BehaviorConstraintTargetBinding.class, "BehaviorConstraintTargetBinding", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getBehaviorConstraintTargetBinding_BehaviorConstraintType(), this.getBehaviorConstraintType(), null, "behaviorConstraintType", null, 1, 1, BehaviorConstraintTargetBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
-				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getBehaviorConstraintTargetBinding_TargetedVehicleFeature(), theVehiclefeaturemodelingPackage.getVehicleFeature(), null, "targetedVehicleFeature", null, 0, -1, BehaviorConstraintTargetBinding.class, !IS_TRANSIENT, !IS_VOLATILE,
-				IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getBehaviorConstraintTargetBinding_TargetedFunctionType(), theFunctionmodelingPackage.getFunctionType(), null, "targetedFunctionType", null, 0, -1, BehaviorConstraintTargetBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
-				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getBehaviorConstraintTargetBinding_ConstrainedErrorModel(), theErrormodelPackage.getErrorModelType(), null, "constrainedErrorModel", null, 0, -1, BehaviorConstraintTargetBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
-				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getBehaviorConstraintTargetBinding_TargetedHardwareComponentType(), theHardwaremodelingPackage.getHardwareComponentType(), null, "targetedHardwareComponentType", null, 0, -1, BehaviorConstraintTargetBinding.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getBehaviorConstraintTargetBinding_ConstrainedFunctionTriggering(), theBehaviorPackage.getFunctionTrigger(), null, "constrainedFunctionTriggering", null, 0, -1, BehaviorConstraintTargetBinding.class, !IS_TRANSIENT, !IS_VOLATILE,
-				IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getBehaviorConstraintTargetBinding_ConstrainedModeBehavior(), theBehaviorPackage.getMode(), null, "constrainedModeBehavior", null, 0, -1, BehaviorConstraintTargetBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
-				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getBehaviorConstraintTargetBinding_ConstrainedFunctionBehavior(), theBehaviorPackage.getFunctionBehavior(), null, "constrainedFunctionBehavior", null, 0, -1, BehaviorConstraintTargetBinding.class, !IS_TRANSIENT, !IS_VOLATILE,
-				IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(behaviorConstraintTargetBindingEClass, BehaviorConstraintTargetBinding.class, "BehaviorConstraintTargetBinding", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(getBehaviorConstraintTargetBinding_BehaviorConstraintType(), this.getBehaviorConstraintType(), null,
+				"behaviorConstraintType", null, 1, 1, BehaviorConstraintTargetBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getBehaviorConstraintTargetBinding_TargetedVehicleFeature(), theVehiclefeaturemodelingPackage.getVehicleFeature(), null,
+				"targetedVehicleFeature", null, 0, -1, BehaviorConstraintTargetBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getBehaviorConstraintTargetBinding_TargetedFunctionType(), theFunctionmodelingPackage.getFunctionType(), null,
+				"targetedFunctionType", null, 0, -1, BehaviorConstraintTargetBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getBehaviorConstraintTargetBinding_ConstrainedErrorModel(), theErrormodelPackage.getErrorModelType(), null,
+				"constrainedErrorModel", null, 0, -1, BehaviorConstraintTargetBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getBehaviorConstraintTargetBinding_TargetedHardwareComponentType(), theHardwaremodelingPackage.getHardwareComponentType(), null,
+				"targetedHardwareComponentType", null, 0, -1, BehaviorConstraintTargetBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getBehaviorConstraintTargetBinding_ConstrainedFunctionTriggering(), theBehaviorPackage.getFunctionTrigger(), null,
+				"constrainedFunctionTriggering", null, 0, -1, BehaviorConstraintTargetBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getBehaviorConstraintTargetBinding_ConstrainedModeBehavior(), theBehaviorPackage.getMode(), null,
+				"constrainedModeBehavior", null, 0, -1, BehaviorConstraintTargetBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getBehaviorConstraintTargetBinding_ConstrainedFunctionBehavior(), theBehaviorPackage.getFunctionBehavior(), null,
+				"constrainedFunctionBehavior", null, 0, -1, BehaviorConstraintTargetBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+
+		// Create annotations
+		// http://www.eclipse.org/uml2/2.0.0/UML
+		createUMLAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/uml2/2.0.0/UML</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	protected void createUMLAnnotations() {
+		String source = "http://www.eclipse.org/uml2/2.0.0/UML"; //$NON-NLS-1$
+		addAnnotation(this,
+				source,
+				new String[] { "originalName", "BehaviorDescription" //$NON-NLS-1$ //$NON-NLS-2$
+				});
 	}
 
 } // BehaviordescriptionPackageImpl

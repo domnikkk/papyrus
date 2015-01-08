@@ -470,202 +470,160 @@ public class VariabilitySwitch<T> extends Switch<T> {
 		case VariabilityPackage.VARIATION_GROUP: {
 			VariationGroup variationGroup = (VariationGroup) theEObject;
 			T result = caseVariationGroup(variationGroup);
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(variationGroup);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case VariabilityPackage.VARIABLE_ELEMENT: {
 			VariableElement variableElement = (VariableElement) theEObject;
 			T result = caseVariableElement(variableElement);
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(variableElement);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case VariabilityPackage.REUSE_META_INFORMATION: {
 			ReuseMetaInformation reuseMetaInformation = (ReuseMetaInformation) theEObject;
 			T result = caseReuseMetaInformation(reuseMetaInformation);
-			if (result == null) {
+			if (result == null)
 				result = caseTraceableSpecification(reuseMetaInformation);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPackageableElement(reuseMetaInformation);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(reuseMetaInformation);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case VariabilityPackage.CONFIGURABLE_CONTAINER: {
 			ConfigurableContainer configurableContainer = (ConfigurableContainer) theEObject;
 			T result = caseConfigurableContainer(configurableContainer);
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(configurableContainer);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case VariabilityPackage.INTERNAL_BINDING: {
 			InternalBinding internalBinding = (InternalBinding) theEObject;
 			T result = caseInternalBinding(internalBinding);
-			if (result == null) {
+			if (result == null)
 				result = caseConfigurationDecisionModel(internalBinding);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(internalBinding);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case VariabilityPackage.CONFIGURATION_DECISION_MODEL: {
 			ConfigurationDecisionModel configurationDecisionModel = (ConfigurationDecisionModel) theEObject;
 			T result = caseConfigurationDecisionModel(configurationDecisionModel);
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(configurationDecisionModel);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case VariabilityPackage.CONFIGURATION_DECISION_MODEL_ENTRY: {
 			ConfigurationDecisionModelEntry configurationDecisionModelEntry = (ConfigurationDecisionModelEntry) theEObject;
 			T result = caseConfigurationDecisionModelEntry(configurationDecisionModelEntry);
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(configurationDecisionModelEntry);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case VariabilityPackage.PRIVATE_CONTENT: {
 			PrivateContent privateContent = (PrivateContent) theEObject;
 			T result = casePrivateContent(privateContent);
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(privateContent);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case VariabilityPackage.VARIABILITY: {
 			Variability variability = (Variability) theEObject;
 			T result = caseVariability(variability);
-			if (result == null) {
+			if (result == null)
 				result = caseContext(variability);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPackageableElement(variability);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(variability);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case VariabilityPackage.FEATURE_CONFIGURATION: {
 			FeatureConfiguration featureConfiguration = (FeatureConfiguration) theEObject;
 			T result = caseFeatureConfiguration(featureConfiguration);
-			if (result == null) {
+			if (result == null)
 				result = caseConfigurationDecisionModel(featureConfiguration);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(featureConfiguration);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case VariabilityPackage.VEHICLE_LEVEL_BINDING: {
 			VehicleLevelBinding vehicleLevelBinding = (VehicleLevelBinding) theEObject;
 			T result = caseVehicleLevelBinding(vehicleLevelBinding);
-			if (result == null) {
+			if (result == null)
 				result = caseConfigurationDecisionModel(vehicleLevelBinding);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(vehicleLevelBinding);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case VariabilityPackage.CONFIGURATION_DECISION: {
 			ConfigurationDecision configurationDecision = (ConfigurationDecision) theEObject;
 			T result = caseConfigurationDecision(configurationDecision);
-			if (result == null) {
+			if (result == null)
 				result = caseConfigurationDecisionModelEntry(configurationDecision);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(configurationDecision);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case VariabilityPackage.SELECTION_CRITERION: {
 			SelectionCriterion selectionCriterion = (SelectionCriterion) theEObject;
 			T result = caseSelectionCriterion(selectionCriterion);
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(selectionCriterion);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAExpression(selectionCriterion);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAValue(selectionCriterion);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case VariabilityPackage.CONFIGURATION_DECISION_FOLDER: {
 			ConfigurationDecisionFolder configurationDecisionFolder = (ConfigurationDecisionFolder) theEObject;
 			T result = caseConfigurationDecisionFolder(configurationDecisionFolder);
-			if (result == null) {
+			if (result == null)
 				result = caseConfigurationDecisionModelEntry(configurationDecisionFolder);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(configurationDecisionFolder);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case VariabilityPackage.CONTAINER_CONFIGURATION: {
 			ContainerConfiguration containerConfiguration = (ContainerConfiguration) theEObject;
 			T result = caseContainerConfiguration(containerConfiguration);
-			if (result == null) {
+			if (result == null)
 				result = caseConfigurationDecisionModel(containerConfiguration);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(containerConfiguration);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		default:

@@ -225,6 +225,7 @@ public class PackageFigure extends NodeNamedElementFigure {
 	 */
 	@Override
 	protected void paintBackground(Graphics graphics, Rectangle rectangle) {
+		super.paintBackground(graphics, rectangle);
 		if (isUsingGradient()) {
 			applyTransparency(graphics);
 			graphics.setBackgroundColor(ColorRegistry.getInstance().getColor(getGradientColor2()));
@@ -235,11 +236,11 @@ public class PackageFigure extends NodeNamedElementFigure {
 			graphics.fillGradient(getPackageableElementFigure().getBounds(), isVertical);
 		} else {
 			graphics.setBackgroundColor(getBackgroundColor());
-			graphics.setForegroundColor(getBorderColor());
+			graphics.setForegroundColor(getForegroundColor());
 			graphics.fillRectangle(getHeader());
 			graphics.fillRectangle(getPackageableElementFigure().getBounds());
 		}
-		graphics.setForegroundColor(getBorderColor());
+		graphics.setForegroundColor(getForegroundColor());
 		graphics.setLineWidth(getLineWidth());
 		graphics.drawRectangle(getHeader());
 	}

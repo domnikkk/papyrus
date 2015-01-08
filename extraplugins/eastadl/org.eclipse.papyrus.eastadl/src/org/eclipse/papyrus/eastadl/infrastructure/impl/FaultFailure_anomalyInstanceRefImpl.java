@@ -85,9 +85,8 @@ public class FaultFailure_anomalyInstanceRefImpl extends InstanceRefImpl impleme
 			InternalEObject oldAnomaly = (InternalEObject) anomaly;
 			anomaly = (Anomaly) eResolveProxy(oldAnomaly);
 			if (anomaly != oldAnomaly) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InfrastructurePackage.FAULT_FAILURE_ANOMALY_INSTANCE_REF__ANOMALY, oldAnomaly, anomaly));
-				}
 			}
 		}
 		return anomaly;
@@ -113,9 +112,8 @@ public class FaultFailure_anomalyInstanceRefImpl extends InstanceRefImpl impleme
 	public void setAnomaly(Anomaly newAnomaly) {
 		Anomaly oldAnomaly = anomaly;
 		anomaly = newAnomaly;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, InfrastructurePackage.FAULT_FAILURE_ANOMALY_INSTANCE_REF__ANOMALY, oldAnomaly, anomaly));
-		}
 	}
 
 	/**
@@ -142,9 +140,8 @@ public class FaultFailure_anomalyInstanceRefImpl extends InstanceRefImpl impleme
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case InfrastructurePackage.FAULT_FAILURE_ANOMALY_INSTANCE_REF__ANOMALY:
-			if (resolve) {
+			if (resolve)
 				return getAnomaly();
-			}
 			return basicGetAnomaly();
 		case InfrastructurePackage.FAULT_FAILURE_ANOMALY_INSTANCE_REF__ERROR_MODEL_PROTOTYPE:
 			return getErrorModelPrototype();

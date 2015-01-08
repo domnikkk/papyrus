@@ -96,9 +96,8 @@ public abstract class EAElementImpl extends MinimalEObjectImpl.Container impleme
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case ElementsPackage.EA_ELEMENT__BASE_NAMED_ELEMENT:
-			if (resolve) {
+			if (resolve)
 				return getBase_NamedElement();
-			}
 			return basicGetBase_NamedElement();
 		case ElementsPackage.EA_ELEMENT__NAME:
 			return getName();
@@ -212,9 +211,8 @@ public abstract class EAElementImpl extends MinimalEObjectImpl.Container impleme
 			InternalEObject oldBase_NamedElement = (InternalEObject) base_NamedElement;
 			base_NamedElement = (NamedElement) eResolveProxy(oldBase_NamedElement);
 			if (base_NamedElement != oldBase_NamedElement) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ElementsPackage.EA_ELEMENT__BASE_NAMED_ELEMENT, oldBase_NamedElement, base_NamedElement));
-				}
 			}
 		}
 		return base_NamedElement;
@@ -240,9 +238,8 @@ public abstract class EAElementImpl extends MinimalEObjectImpl.Container impleme
 	public void setBase_NamedElement(NamedElement newBase_NamedElement) {
 		NamedElement oldBase_NamedElement = base_NamedElement;
 		base_NamedElement = newBase_NamedElement;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ElementsPackage.EA_ELEMENT__BASE_NAMED_ELEMENT, oldBase_NamedElement, base_NamedElement));
-		}
 	}
 
 	/**

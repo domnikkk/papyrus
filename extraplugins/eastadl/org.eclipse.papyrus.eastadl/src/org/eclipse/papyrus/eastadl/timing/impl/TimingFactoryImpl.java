@@ -91,7 +91,7 @@ public class TimingFactoryImpl extends EFactoryImpl implements TimingFactory {
 		case TimingPackage.PRECEDENCE_CONSTRAINT:
 			return createPrecedenceConstraint();
 		default:
-			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 	}
 

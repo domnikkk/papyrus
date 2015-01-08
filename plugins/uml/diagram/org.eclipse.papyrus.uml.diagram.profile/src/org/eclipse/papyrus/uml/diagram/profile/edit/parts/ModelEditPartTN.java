@@ -120,6 +120,7 @@ public class ModelEditPartTN extends NamedElementEditPart {
 	@Override
 	protected void handleNotificationEvent(Notification event) {
 		super.handleNotificationEvent(event);
+
 	}
 
 	/**
@@ -148,12 +149,15 @@ public class ModelEditPartTN extends NamedElementEditPart {
 			((ModelNameEditPart) childEditPart).setLabel(getPrimaryShape().getNameLabel());
 			return true;
 		}
+
+
 		if (childEditPart instanceof ModelPackageableElementCompartmentEditPartTN) {
 			IFigure pane = getPrimaryShape().getPackageableElementFigure();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way
 			pane.add(((ModelPackageableElementCompartmentEditPartTN) childEditPart).getFigure());
 			return true;
 		}
+
 		return false;
 	}
 
@@ -225,6 +229,7 @@ public class ModelEditPartTN extends NamedElementEditPart {
 	@Override
 	protected NodeFigure createNodeFigure() {
 		return new SelectableBorderedNodeFigure(createMainFigureWithSVG());
+
 	}
 
 	/**

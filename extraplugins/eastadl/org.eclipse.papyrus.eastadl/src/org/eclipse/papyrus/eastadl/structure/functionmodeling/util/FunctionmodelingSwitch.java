@@ -612,373 +612,284 @@ public class FunctionmodelingSwitch<T> extends Switch<T> {
 		case FunctionmodelingPackage.LOCAL_DEVICE_MANAGER: {
 			LocalDeviceManager localDeviceManager = (LocalDeviceManager) theEObject;
 			T result = caseLocalDeviceManager(localDeviceManager);
-			if (result == null) {
+			if (result == null)
 				result = caseDesignFunctionType(localDeviceManager);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseFunctionType(localDeviceManager);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseContext(localDeviceManager);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAType(localDeviceManager);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPackageableElement(localDeviceManager);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(localDeviceManager);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case FunctionmodelingPackage.DESIGN_FUNCTION_TYPE: {
 			DesignFunctionType designFunctionType = (DesignFunctionType) theEObject;
 			T result = caseDesignFunctionType(designFunctionType);
-			if (result == null) {
+			if (result == null)
 				result = caseFunctionType(designFunctionType);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseContext(designFunctionType);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAType(designFunctionType);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPackageableElement(designFunctionType);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(designFunctionType);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case FunctionmodelingPackage.FUNCTION_TYPE: {
 			FunctionType functionType = (FunctionType) theEObject;
 			T result = caseFunctionType(functionType);
-			if (result == null) {
+			if (result == null)
 				result = caseContext(functionType);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAType(functionType);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPackageableElement(functionType);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(functionType);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case FunctionmodelingPackage.FUNCTION_PORT: {
 			FunctionPort functionPort = (FunctionPort) theEObject;
 			T result = caseFunctionPort(functionPort);
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(functionPort);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPort(functionPort);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case FunctionmodelingPackage.PORT_GROUP: {
 			PortGroup portGroup = (PortGroup) theEObject;
 			T result = casePortGroup(portGroup);
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(portGroup);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case FunctionmodelingPackage.FUNCTION_CONNECTOR: {
 			FunctionConnector functionConnector = (FunctionConnector) theEObject;
 			T result = caseFunctionConnector(functionConnector);
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(functionConnector);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAConnector(functionConnector);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseAllocateableElement(functionConnector);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case FunctionmodelingPackage.ALLOCATEABLE_ELEMENT: {
 			AllocateableElement allocateableElement = (AllocateableElement) theEObject;
 			T result = caseAllocateableElement(allocateableElement);
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case FunctionmodelingPackage.FUNCTION_PROTOTYPE: {
 			FunctionPrototype functionPrototype = (FunctionPrototype) theEObject;
 			T result = caseFunctionPrototype(functionPrototype);
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(functionPrototype);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPrototype(functionPrototype);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case FunctionmodelingPackage.DESIGN_FUNCTION_PROTOTYPE: {
 			DesignFunctionPrototype designFunctionPrototype = (DesignFunctionPrototype) theEObject;
 			T result = caseDesignFunctionPrototype(designFunctionPrototype);
-			if (result == null) {
+			if (result == null)
 				result = caseFunctionPrototype(designFunctionPrototype);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseAllocateableElement(designFunctionPrototype);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(designFunctionPrototype);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPrototype(designFunctionPrototype);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case FunctionmodelingPackage.FUNCTIONAL_DEVICE: {
 			FunctionalDevice functionalDevice = (FunctionalDevice) theEObject;
 			T result = caseFunctionalDevice(functionalDevice);
-			if (result == null) {
+			if (result == null)
 				result = caseAnalysisFunctionType(functionalDevice);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseFunctionType(functionalDevice);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseContext(functionalDevice);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAType(functionalDevice);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPackageableElement(functionalDevice);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(functionalDevice);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case FunctionmodelingPackage.ANALYSIS_FUNCTION_TYPE: {
 			AnalysisFunctionType analysisFunctionType = (AnalysisFunctionType) theEObject;
 			T result = caseAnalysisFunctionType(analysisFunctionType);
-			if (result == null) {
+			if (result == null)
 				result = caseFunctionType(analysisFunctionType);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseContext(analysisFunctionType);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAType(analysisFunctionType);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPackageableElement(analysisFunctionType);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(analysisFunctionType);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case FunctionmodelingPackage.ANALYSIS_FUNCTION_PROTOTYPE: {
 			AnalysisFunctionPrototype analysisFunctionPrototype = (AnalysisFunctionPrototype) theEObject;
 			T result = caseAnalysisFunctionPrototype(analysisFunctionPrototype);
-			if (result == null) {
+			if (result == null)
 				result = caseFunctionPrototype(analysisFunctionPrototype);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(analysisFunctionPrototype);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPrototype(analysisFunctionPrototype);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case FunctionmodelingPackage.FUNCTION_FLOW_PORT: {
 			FunctionFlowPort functionFlowPort = (FunctionFlowPort) theEObject;
 			T result = caseFunctionFlowPort(functionFlowPort);
-			if (result == null) {
+			if (result == null)
 				result = caseFunctionPort(functionFlowPort);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(functionFlowPort);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPort(functionFlowPort);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case FunctionmodelingPackage.FUNCTION_CLIENT_SERVER_PORT: {
 			FunctionClientServerPort functionClientServerPort = (FunctionClientServerPort) theEObject;
 			T result = caseFunctionClientServerPort(functionClientServerPort);
-			if (result == null) {
+			if (result == null)
 				result = caseFunctionPort(functionClientServerPort);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(functionClientServerPort);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPort(functionClientServerPort);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case FunctionmodelingPackage.FUNCTION_CLIENT_SERVER_INTERFACE: {
 			FunctionClientServerInterface functionClientServerInterface = (FunctionClientServerInterface) theEObject;
 			T result = caseFunctionClientServerInterface(functionClientServerInterface);
-			if (result == null) {
+			if (result == null)
 				result = caseTraceableSpecification(functionClientServerInterface);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPackageableElement(functionClientServerInterface);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(functionClientServerInterface);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case FunctionmodelingPackage.OPERATION: {
 			Operation operation = (Operation) theEObject;
 			T result = caseOperation(operation);
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(operation);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case FunctionmodelingPackage.BASIC_SOFTWARE_FUNCTION_TYPE: {
 			BasicSoftwareFunctionType basicSoftwareFunctionType = (BasicSoftwareFunctionType) theEObject;
 			T result = caseBasicSoftwareFunctionType(basicSoftwareFunctionType);
-			if (result == null) {
+			if (result == null)
 				result = caseDesignFunctionType(basicSoftwareFunctionType);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseFunctionType(basicSoftwareFunctionType);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseContext(basicSoftwareFunctionType);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAType(basicSoftwareFunctionType);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPackageableElement(basicSoftwareFunctionType);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(basicSoftwareFunctionType);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case FunctionmodelingPackage.HARDWARE_FUNCTION_TYPE: {
 			HardwareFunctionType hardwareFunctionType = (HardwareFunctionType) theEObject;
 			T result = caseHardwareFunctionType(hardwareFunctionType);
-			if (result == null) {
+			if (result == null)
 				result = caseDesignFunctionType(hardwareFunctionType);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseFunctionType(hardwareFunctionType);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseContext(hardwareFunctionType);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAType(hardwareFunctionType);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPackageableElement(hardwareFunctionType);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(hardwareFunctionType);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case FunctionmodelingPackage.FUNCTION_ALLOCATION: {
 			FunctionAllocation functionAllocation = (FunctionAllocation) theEObject;
 			T result = caseFunctionAllocation(functionAllocation);
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(functionAllocation);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case FunctionmodelingPackage.ALLOCATION: {
 			Allocation allocation = (Allocation) theEObject;
 			T result = caseAllocation(allocation);
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(allocation);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case FunctionmodelingPackage.FUNCTION_POWER_PORT: {
 			FunctionPowerPort functionPowerPort = (FunctionPowerPort) theEObject;
 			T result = caseFunctionPowerPort(functionPowerPort);
-			if (result == null) {
+			if (result == null)
 				result = caseFunctionPort(functionPowerPort);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(functionPowerPort);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPort(functionPowerPort);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		default:

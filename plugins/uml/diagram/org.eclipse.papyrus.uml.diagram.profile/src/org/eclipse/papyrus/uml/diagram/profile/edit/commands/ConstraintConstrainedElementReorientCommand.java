@@ -117,8 +117,10 @@ public class ConstraintConstrainedElementReorientCommand extends EditElementComm
 	 * @generated
 	 */
 	protected CommandResult reorientSource() throws ExecutionException {
-		getOldSource().getConstrainedElements().remove(getOldTarget());
-		getNewSource().getConstrainedElements().add(getOldTarget());
+		getOldSource().getConstrainedElements()
+				.remove(getOldTarget());
+		getNewSource().getConstrainedElements()
+				.add(getOldTarget());
 		return CommandResult.newOKCommandResult(referenceOwner);
 	}
 
@@ -126,8 +128,10 @@ public class ConstraintConstrainedElementReorientCommand extends EditElementComm
 	 * @generated
 	 */
 	protected CommandResult reorientTarget() throws ExecutionException {
-		getOldSource().getConstrainedElements().remove(getOldTarget());
-		getOldSource().getConstrainedElements().add(getNewTarget());
+		getOldSource().getConstrainedElements()
+				.remove(getOldTarget());
+		getOldSource().getConstrainedElements()
+				.add(getNewTarget());
 		return CommandResult.newOKCommandResult(referenceOwner);
 	}
 

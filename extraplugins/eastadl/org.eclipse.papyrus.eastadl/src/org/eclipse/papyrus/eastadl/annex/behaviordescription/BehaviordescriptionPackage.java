@@ -24,6 +24,7 @@ import org.eclipse.papyrus.eastadl.infrastructure.elements.ElementsPackage;
  *
  * @see org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviordescriptionFactory
  * @model kind="package"
+ *        annotation="http://www.eclipse.org/uml2/2.0.0/UML originalName='BehaviorDescription'"
  * @generated
  */
 public interface BehaviordescriptionPackage extends EPackage {

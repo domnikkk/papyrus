@@ -97,9 +97,8 @@ public class RealizationImpl extends RelationshipImpl implements Realization {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case ElementsPackage.REALIZATION__BASE_REALIZATION:
-			if (resolve) {
+			if (resolve)
 				return getBase_Realization();
-			}
 			return basicGetBase_Realization();
 		case ElementsPackage.REALIZATION__REALIZED:
 			return getRealized();
@@ -220,9 +219,8 @@ public class RealizationImpl extends RelationshipImpl implements Realization {
 			InternalEObject oldBase_Realization = (InternalEObject) base_Realization;
 			base_Realization = (org.eclipse.uml2.uml.Realization) eResolveProxy(oldBase_Realization);
 			if (base_Realization != oldBase_Realization) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ElementsPackage.REALIZATION__BASE_REALIZATION, oldBase_Realization, base_Realization));
-				}
 			}
 		}
 		return base_Realization;
@@ -248,9 +246,8 @@ public class RealizationImpl extends RelationshipImpl implements Realization {
 	public void setBase_Realization(org.eclipse.uml2.uml.Realization newBase_Realization) {
 		org.eclipse.uml2.uml.Realization oldBase_Realization = base_Realization;
 		base_Realization = newBase_Realization;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ElementsPackage.REALIZATION__BASE_REALIZATION, oldBase_Realization, base_Realization));
-		}
 	}
 
 	/**

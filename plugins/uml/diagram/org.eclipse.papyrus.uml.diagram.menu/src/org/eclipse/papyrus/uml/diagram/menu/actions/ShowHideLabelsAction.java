@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2011 CEA LIST.
+ * Copyright (c) 2011, 2014 CEA LIST and others.
  *
  *
  * All rights reserved. This program and the accompanying materials
@@ -9,6 +9,7 @@
  *
  * Contributors:
  *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
+ *  Sebastien Gabel (Esterel Technologies) - Fix access to the diagram edit part when called outside of the diagram
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.menu.actions;
@@ -38,27 +39,28 @@ import org.eclipse.gmf.runtime.notation.Location;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.jface.dialogs.Dialog;
 import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.jface.viewers.ITreeContentProvider;
-import org.eclipse.jface.viewers.Viewer;
-import org.eclipse.jface.window.Window;
+import org.eclipse.jface.viewers.TreeNodeContentProvider;
 import org.eclipse.papyrus.infra.core.services.ServiceException;
+import org.eclipse.papyrus.infra.gmfdiag.common.utils.DiagramEditPartsUtil;
 import org.eclipse.papyrus.infra.gmfdiag.common.utils.ServiceUtilsForEditPart;
 import org.eclipse.papyrus.infra.services.labelprovider.service.LabelProviderService;
 import org.eclipse.papyrus.uml.diagram.common.commands.ShowHideLabelsRequest;
 import org.eclipse.papyrus.uml.diagram.common.editparts.ILabelRoleProvider;
-import org.eclipse.papyrus.uml.diagram.common.util.DiagramEditPartsUtil;
+import org.eclipse.papyrus.uml.diagram.menu.Activator;
 import org.eclipse.papyrus.uml.diagram.menu.dialogs.ShowHideLabelSelectionDialog;
 import org.eclipse.papyrus.uml.diagram.menu.messages.Messages;
 
 /**
- * Adapted code from {@link ShowConnectionLabelsAction}
+ * Adapted code from {@link ShowConnectionLabelsAction}.
  *
- * This action allows to manage connection labels. 3 parameters are available for this actio :
+ * This action allows to manage connection labels. Three parameters are available for this action :
  * <ul>
- * <li> {@link #HIDE_PARAMETER} : hide all labels for the selected elements</li>
- * <li>  {@link #SHOW_PARAMETER} : show all labels for the selected elements</li>
- * <li> {@link #MANAGE_PARAMETER} : open a dialog to choose labels to display and labels to hide for the selected element</li>
+ * <li>{@link #HIDE_PARAMETER} : hide all labels for the selected elements</li>
+ * <li>{@link #SHOW_PARAMETER} : show all labels for the selected elements</li>
+ * <li>{@link #MANAGE_PARAMETER} : open a dialog to choose labels to display and labels to hide for the selected element</li>
  * </ul>
  *
  */
@@ -72,7 +74,12 @@ public class ShowHideLabelsAction extends AbstractGraphicalParametricAction {
 	public static final String HIDE_PARAMETER = "hide"; //$NON-NLS-1$
 
 	public static final String SHOW_PARAMETER = "show"; //$NON-NLS-1$
+
 	public ILabelProvider labelProvider;
+
+	public ITreeContentProvider contentProvider;
+
+	private DiagramEditPart diagramEditPart;
 
 
 	/**
@@ -87,12 +94,19 @@ public class ShowHideLabelsAction extends AbstractGraphicalParametricAction {
 	public ShowHideLabelsAction(String parameter, List<IGraphicalEditPart> selectedEditPart) {
 		super(parameter, selectedEditPart);
 
-		LabelProviderService labelProviderService;
 		try {
-			labelProviderService = ServiceUtilsForEditPart.getInstance().getServiceRegistry(getDiagramEditPart()).getService(LabelProviderService.class);
-			labelProvider = labelProviderService.getLabelProvider(getDiagramEditPart());
+			// Gets the diagram edit part if the selection is not empty
+			if (!selectedEditPart.isEmpty()) {
+				diagramEditPart = DiagramEditPartsUtil.getDiagramEditPart(selectedEditPart.get(0));
+				if (diagramEditPart != null) {
+					// Initializes the label provider
+					LabelProviderService labelProviderService = (LabelProviderService) ServiceUtilsForEditPart.getInstance().getServiceRegistry(diagramEditPart).getService(LabelProviderService.class);
+					labelProvider = labelProviderService.getLabelProvider(diagramEditPart);
+					contentProvider = new ContentProvider(diagramEditPart);
+				}
+			}
 		} catch (ServiceException e) {
-			e.printStackTrace();
+			Activator.log.error(e);
 		}
 
 
@@ -111,7 +125,7 @@ public class ShowHideLabelsAction extends AbstractGraphicalParametricAction {
 		CompoundCommand cmd = new CompoundCommand("ShowHideConnectionLabelCommand"); //$NON-NLS-1$
 		if (!selections.isEmpty()) {
 			if (getParameter().equals(MANAGE_PARAMETER)) {
-				ManageLabelsAction action = new ManageLabelsAction(Messages.ShowHideConnectionLabelsAction_LabelsManager, Messages.ShowHideConnectionLabelsAction_SelectTheLabelToDisplay, getSelection());
+				ManageLabelsAction action = new ManageLabelsAction(Messages.ShowHideConnectionLabelsAction_LabelsManager, Messages.ShowHideConnectionLabelsAction_SelectTheLabelToDisplay, selections);
 				cmd.add(action.getActionCommand());
 			} else {
 				/*
@@ -119,9 +133,8 @@ public class ShowHideLabelsAction extends AbstractGraphicalParametricAction {
 				 * because, this request hide the labels and the port too!
 				 * so, we need to use the CustomRequest!
 				 */
-				ContentProvider provider = new ContentProvider(DiagramEditPartsUtil.getDiagramEditPart(selections.get(0)));
 				for (IGraphicalEditPart current : selections) {
-					Object[] children = provider.getChildren(current);
+					Object[] children = contentProvider.getChildren(current);
 					for (Object currentObj : children) {
 						if (currentObj instanceof View) {
 							ShowHideLabelsRequest request = null;
@@ -210,23 +223,8 @@ public class ShowHideLabelsAction extends AbstractGraphicalParametricAction {
 		return false;
 	}
 
-	// @Override
-	// public boolean isEnabled() {
-	// if(super.isEnabled()) {
-	// for(IGraphicalEditPart current : getSelection()) {
-	// if(current.getEditPolicy(ShowHideLabelEditPolicy.SHOW_HIDE_LABEL_ROLE) == null) {
-	// return false;
-	// }
-	// }
-	// }
-	// return true;
-	// }
-
 	/**
 	 * This class provides a dialog to manage the displaying of the labels for connections
-	 *
-	 *
-	 *
 	 */
 	public class ManageLabelsAction {
 
@@ -270,9 +268,7 @@ public class ShowHideLabelsAction extends AbstractGraphicalParametricAction {
 		protected Command getActionCommand() {
 			CompoundCommand cmd = new CompoundCommand("Manage Conection Labels "); //$NON-NLS-1$
 
-			DiagramEditPart diagramEP = DiagramEditPartsUtil.getDiagramEditPart(editparts.get(0));
-
-			ShowHideLabelSelectionDialog selectionDialog = new ShowHideLabelSelectionDialog(DisplayUtils.getDisplay().getActiveShell(), labelProvider, new ContentProvider(diagramEP));
+			ShowHideLabelSelectionDialog selectionDialog = new ShowHideLabelSelectionDialog(DisplayUtils.getDisplay().getActiveShell(), labelProvider, contentProvider);
 			selectionDialog.setTitle(this.title);
 			selectionDialog.setMessage(this.message);
 			selectionDialog.setContainerMode(true);
@@ -280,7 +276,7 @@ public class ShowHideLabelsAction extends AbstractGraphicalParametricAction {
 			selectionDialog.setExpandedElements(editparts.toArray());
 			selectionDialog.setInitialElementSelections(getInitialSelection());
 			selectionDialog.open();
-			if (selectionDialog.getReturnCode() == Window.OK) {
+			if (selectionDialog.getReturnCode() == Dialog.OK) {
 				Object[] userSelection = selectionDialog.getResult();
 				// fill the map with the new values
 				for (Object current : userSelection) {
@@ -331,19 +327,6 @@ public class ShowHideLabelsAction extends AbstractGraphicalParametricAction {
 		 */
 		public List<View> getInitialSelection() {
 			List<View> selection = new ArrayList<View>();
-			// for(ConnectionEditPart current : getConnections()) {
-			// View model = (View)(current).getModel();
-			// Iterator<?> iter = model.getChildren().iterator();
-			// while(iter.hasNext()) {
-			// View childView = (View)iter.next();
-			// if(isLabelView(current, model, childView)) {
-			// if(childView.isVisible()) {
-			// selection.add(childView);
-			// }
-			// }
-			// }
-			// }
-
 			for (IGraphicalEditPart current : getSelection()) {
 				View model = (View) (current).getModel();
 				Iterator<?> iter = model.getChildren().iterator();
@@ -384,7 +367,7 @@ public class ShowHideLabelsAction extends AbstractGraphicalParametricAction {
 	 * Provide the element to fill the tree
 	 *
 	 */
-	protected class ContentProvider implements ITreeContentProvider {
+	protected class ContentProvider extends TreeNodeContentProvider {
 
 		/**
 		 * the diagram EditPart. It's used to find the editpart corresponding to a view
@@ -400,29 +383,6 @@ public class ShowHideLabelsAction extends AbstractGraphicalParametricAction {
 		 */
 		public ContentProvider(DiagramEditPart diagramEP) {
 			this.diagramEP = diagramEP;
-		}
-
-		/**
-		 *
-		 * @see org.eclipse.jface.viewers.IContentProvider#dispose()
-		 *
-		 */
-		public void dispose() {
-			// TODO Auto-generated method stub
-
-		}
-
-		/**
-		 *
-		 * @see org.eclipse.jface.viewers.IContentProvider#inputChanged(org.eclipse.jface.viewers.Viewer, java.lang.Object, java.lang.Object)
-		 *
-		 * @param viewer
-		 * @param oldInput
-		 * @param newInput
-		 */
-		public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
-			// TODO Auto-generated method stub
-
 		}
 
 		/**
@@ -505,20 +465,5 @@ public class ShowHideLabelsAction extends AbstractGraphicalParametricAction {
 			}
 			return 0;
 		}
-	}
-
-	@Override
-	public List<IGraphicalEditPart> getSelection() {
-		List<IGraphicalEditPart> selection = super.getSelection();
-		List<IGraphicalEditPart> delete = new ArrayList<IGraphicalEditPart>();
-		Iterator<IGraphicalEditPart> iter = selection.iterator();
-		// while(iter.hasNext()) {
-		// IGraphicalEditPart current = iter.next();
-		// if(Util.isAffixedChildNode(current)) {
-		// delete.remove(current);
-		// }
-		// }
-		selection.removeAll(delete);
-		return selection;
 	}
 }

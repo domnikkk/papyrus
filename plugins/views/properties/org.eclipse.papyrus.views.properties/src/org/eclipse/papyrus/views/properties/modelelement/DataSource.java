@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2010, 2014 CEA LIST and others.
+ * Copyright (c) 2010, 2014 CEA LIST, Christian W. Damus, and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -10,12 +10,14 @@
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Thibault Le Ouay t.leouay@sherpa-eng.com - Add binding implementation
  *  Christian W. Damus (CEA) - bug 417409
+ *  Christian W. Damus - bug 455075
  *
  *****************************************************************************/
 package org.eclipse.papyrus.views.properties.modelelement;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 import org.eclipse.core.databinding.observable.ChangeEvent;
 import org.eclipse.core.databinding.observable.IChangeListener;
@@ -23,12 +25,17 @@ import org.eclipse.core.databinding.observable.IObservable;
 import org.eclipse.core.databinding.validation.IValidator;
 import org.eclipse.core.runtime.ListenerList;
 import org.eclipse.jface.viewers.ILabelProvider;
+import org.eclipse.jface.viewers.ILabelProviderListener;
 import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.jface.viewers.LabelProvider;
+import org.eclipse.jface.viewers.LabelProviderChangedEvent;
 import org.eclipse.papyrus.infra.widgets.creation.ReferenceValueFactory;
 import org.eclipse.papyrus.infra.widgets.providers.EmptyContentProvider;
+import org.eclipse.papyrus.infra.widgets.providers.EncapsulatedContentProvider;
 import org.eclipse.papyrus.infra.widgets.providers.IStaticContentProvider;
 import org.eclipse.papyrus.views.properties.Activator;
 import org.eclipse.papyrus.views.properties.contexts.View;
+import org.eclipse.swt.graphics.Image;
 
 /**
  * A DataSource is an object encapsulating one or more {@link ModelElement}s.
@@ -143,7 +150,44 @@ public class DataSource implements IChangeListener {
 	 * @return
 	 *         The IStaticContentProvider corresponding to the given propertyPath
 	 */
-	public IStaticContentProvider getContentProvider(String propertyPath) {
+	public IStaticContentProvider getContentProvider(final String propertyPath) {
+		class Delegator extends EncapsulatedContentProvider implements IDataSourceListener {
+
+			{
+				createDelegate();
+				DataSource.this.addDataSourceListener(this);
+			}
+
+			@Override
+			public void dispose() {
+				disposeDelegate();
+				DataSource.this.removeDataSourceListener(this);
+			}
+
+			private void disposeDelegate() {
+				if (encapsulated != null) {
+					encapsulated.dispose();
+					encapsulated = null;
+				}
+
+				// If I had any temporary elements, then they cannot now be relevant
+				clearTemporaryElements();
+			}
+
+			private void createDelegate() {
+				encapsulate(doGetContentProvider(propertyPath));
+			}
+
+			public void dataSourceChanged(DataSourceChangedEvent event) {
+				disposeDelegate();
+				createDelegate();
+			}
+		}
+
+		return new Delegator();
+	}
+
+	protected IStaticContentProvider doGetContentProvider(String propertyPath) {
 		ModelElement element = getModelElement(propertyPath);
 		if (element == null) {
 			return EmptyContentProvider.instance;
@@ -162,7 +206,89 @@ public class DataSource implements IChangeListener {
 	 * @return
 	 *         The ILabelProvider corresponding to the given propertyPath
 	 */
-	public ILabelProvider getLabelProvider(String propertyPath) {
+	public ILabelProvider getLabelProvider(final String propertyPath) {
+		class Delegator extends LabelProvider implements IDataSourceListener, ILabelProviderListener {
+			private ILabelProvider delegate;
+
+			private final CopyOnWriteArrayList<ILabelProviderListener> listeners = new CopyOnWriteArrayList<ILabelProviderListener>();
+
+			{
+				DataSource.this.addDataSourceListener(this);
+			}
+
+			@Override
+			public void dispose() {
+				disposeDelegate();
+				super.dispose();
+			}
+
+			private void disposeDelegate() {
+				if (delegate != null) {
+					delegate.removeListener(this);
+					delegate.dispose();
+					delegate = null;
+				}
+			}
+
+			public void dataSourceChanged(DataSourceChangedEvent event) {
+				disposeDelegate();
+			}
+
+			@Override
+			public void addListener(ILabelProviderListener listener) {
+				listeners.addIfAbsent(listener);
+			}
+
+			@Override
+			public void removeListener(ILabelProviderListener listener) {
+				listeners.remove(listener);
+			}
+
+			public void labelProviderChanged(LabelProviderChangedEvent event) {
+				if (!listeners.isEmpty()) {
+					LabelProviderChangedEvent forward = new LabelProviderChangedEvent(this, event.getElements());
+					for (ILabelProviderListener next : listeners) {
+						try {
+							next.labelProviderChanged(forward);
+						} catch (Exception e) {
+							Activator.log.error("Uncaught exception in label provider listener.", e); //$NON-NLS-1$
+						}
+					}
+				}
+			}
+
+			ILabelProvider getDelegate() {
+				if (delegate == null) {
+					delegate = doGetLabelProvider(propertyPath);
+					if (delegate == null) {
+						delegate = new LabelProvider();
+					}
+					delegate.addListener(this);
+				}
+
+				return delegate;
+			}
+
+			@Override
+			public Image getImage(Object element) {
+				return getDelegate().getImage(element);
+			}
+
+			@Override
+			public String getText(Object element) {
+				return getDelegate().getText(element);
+			}
+
+			@Override
+			public boolean isLabelProperty(Object element, String property) {
+				return getDelegate().isLabelProperty(element, property);
+			}
+		}
+
+		return new Delegator();
+	}
+
+	protected ILabelProvider doGetLabelProvider(String propertyPath) {
 		ModelElement element = getModelElement(propertyPath);
 		if (element == null) {
 			return null;

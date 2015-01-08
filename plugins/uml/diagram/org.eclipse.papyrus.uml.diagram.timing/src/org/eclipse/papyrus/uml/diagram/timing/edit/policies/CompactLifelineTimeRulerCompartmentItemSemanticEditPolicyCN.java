@@ -37,6 +37,8 @@ public class CompactLifelineTimeRulerCompartmentItemSemanticEditPolicyCN extends
 		if (requestElementType == null) {
 			return super.getCreateCommand(req);
 		}
+
+
 		return super.getCreateCommand(req);
 	}
 }

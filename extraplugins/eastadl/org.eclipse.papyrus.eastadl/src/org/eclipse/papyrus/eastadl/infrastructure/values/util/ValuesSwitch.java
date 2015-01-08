@@ -79,86 +79,71 @@ public class ValuesSwitch<T> extends Switch<T> {
 		case ValuesPackage.EA_ARRAY_VALUE: {
 			EAArrayValue eaArrayValue = (EAArrayValue) theEObject;
 			T result = caseEAArrayValue(eaArrayValue);
-			if (result == null) {
+			if (result == null)
 				result = caseEAValue(eaArrayValue);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case ValuesPackage.EA_VALUE: {
 			EAValue eaValue = (EAValue) theEObject;
 			T result = caseEAValue(eaValue);
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case ValuesPackage.EA_BOOLEAN_VALUE: {
 			EABooleanValue eaBooleanValue = (EABooleanValue) theEObject;
 			T result = caseEABooleanValue(eaBooleanValue);
-			if (result == null) {
+			if (result == null)
 				result = caseEAValue(eaBooleanValue);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case ValuesPackage.EA_COMPOSITE_VALUE: {
 			EACompositeValue eaCompositeValue = (EACompositeValue) theEObject;
 			T result = caseEACompositeValue(eaCompositeValue);
-			if (result == null) {
+			if (result == null)
 				result = caseEAValue(eaCompositeValue);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case ValuesPackage.EA_ENUMERATION_VALUE: {
 			EAEnumerationValue eaEnumerationValue = (EAEnumerationValue) theEObject;
 			T result = caseEAEnumerationValue(eaEnumerationValue);
-			if (result == null) {
+			if (result == null)
 				result = caseEAValue(eaEnumerationValue);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case ValuesPackage.EA_EXPRESSION: {
 			EAExpression eaExpression = (EAExpression) theEObject;
 			T result = caseEAExpression(eaExpression);
-			if (result == null) {
+			if (result == null)
 				result = caseEAValue(eaExpression);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case ValuesPackage.EA_NUMERICAL_VALUE: {
 			EANumericalValue eaNumericalValue = (EANumericalValue) theEObject;
 			T result = caseEANumericalValue(eaNumericalValue);
-			if (result == null) {
+			if (result == null)
 				result = caseEAValue(eaNumericalValue);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case ValuesPackage.EA_STRING_VALUE: {
 			EAStringValue eaStringValue = (EAStringValue) theEObject;
 			T result = caseEAStringValue(eaStringValue);
-			if (result == null) {
+			if (result == null)
 				result = caseEAValue(eaStringValue);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		default:

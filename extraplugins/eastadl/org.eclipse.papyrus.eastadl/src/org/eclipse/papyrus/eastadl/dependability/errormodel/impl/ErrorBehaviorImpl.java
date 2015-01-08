@@ -185,9 +185,8 @@ public class ErrorBehaviorImpl extends EAElementImpl implements ErrorBehavior {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case ErrormodelPackage.ERROR_BEHAVIOR__BASE_BEHAVIOR:
-			if (resolve) {
+			if (resolve)
 				return getBase_Behavior();
-			}
 			return basicGetBase_Behavior();
 		case ErrormodelPackage.ERROR_BEHAVIOR__FAILURE_LOGIC:
 			return getFailureLogic();
@@ -202,9 +201,8 @@ public class ErrorBehaviorImpl extends EAElementImpl implements ErrorBehavior {
 		case ErrormodelPackage.ERROR_BEHAVIOR__PROCESS_FAULT:
 			return getProcessFault();
 		case ErrormodelPackage.ERROR_BEHAVIOR__INTERNAL_FAILURE:
-			if (resolve) {
+			if (resolve)
 				return getInternalFailure();
-			}
 			return basicGetInternalFailure();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -304,9 +302,8 @@ public class ErrorBehaviorImpl extends EAElementImpl implements ErrorBehavior {
 			InternalEObject oldBase_Behavior = (InternalEObject) base_Behavior;
 			base_Behavior = (Behavior) eResolveProxy(oldBase_Behavior);
 			if (base_Behavior != oldBase_Behavior) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ErrormodelPackage.ERROR_BEHAVIOR__BASE_BEHAVIOR, oldBase_Behavior, base_Behavior));
-				}
 			}
 		}
 		return base_Behavior;
@@ -332,9 +329,8 @@ public class ErrorBehaviorImpl extends EAElementImpl implements ErrorBehavior {
 	public void setBase_Behavior(Behavior newBase_Behavior) {
 		Behavior oldBase_Behavior = base_Behavior;
 		base_Behavior = newBase_Behavior;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ErrormodelPackage.ERROR_BEHAVIOR__BASE_BEHAVIOR, oldBase_Behavior, base_Behavior));
-		}
 	}
 
 	/**
@@ -423,9 +419,8 @@ public class ErrorBehaviorImpl extends EAElementImpl implements ErrorBehavior {
 	public void setFailureLogic(String newFailureLogic) {
 		String oldFailureLogic = failureLogic;
 		failureLogic = newFailureLogic;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ErrormodelPackage.ERROR_BEHAVIOR__FAILURE_LOGIC, oldFailureLogic, failureLogic));
-		}
 	}
 
 	/**
@@ -468,9 +463,8 @@ public class ErrorBehaviorImpl extends EAElementImpl implements ErrorBehavior {
 			InternalEObject oldInternalFailure = (InternalEObject) internalFailure;
 			internalFailure = (FailureOutPort) eResolveProxy(oldInternalFailure);
 			if (internalFailure != oldInternalFailure) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ErrormodelPackage.ERROR_BEHAVIOR__INTERNAL_FAILURE, oldInternalFailure, internalFailure));
-				}
 			}
 		}
 		return internalFailure;
@@ -496,9 +490,8 @@ public class ErrorBehaviorImpl extends EAElementImpl implements ErrorBehavior {
 	public void setInternalFailure(FailureOutPort newInternalFailure) {
 		FailureOutPort oldInternalFailure = internalFailure;
 		internalFailure = newInternalFailure;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ErrormodelPackage.ERROR_BEHAVIOR__INTERNAL_FAILURE, oldInternalFailure, internalFailure));
-		}
 	}
 
 	/**
@@ -522,9 +515,8 @@ public class ErrorBehaviorImpl extends EAElementImpl implements ErrorBehavior {
 	public void setType(ErrorBehaviorKind newType) {
 		ErrorBehaviorKind oldType = type;
 		type = newType == null ? TYPE_EDEFAULT : newType;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ErrormodelPackage.ERROR_BEHAVIOR__TYPE, oldType, type));
-		}
 	}
 
 	/**
@@ -535,14 +527,13 @@ public class ErrorBehaviorImpl extends EAElementImpl implements ErrorBehavior {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
+		if (eIsProxy())
 			return super.toString();
-		}
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (failureLogic: ");
+		result.append(" (failureLogic: "); //$NON-NLS-1$
 		result.append(failureLogic);
-		result.append(", type: ");
+		result.append(", type: "); //$NON-NLS-1$
 		result.append(type);
 		result.append(')');
 		return result.toString();

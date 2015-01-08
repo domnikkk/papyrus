@@ -162,9 +162,8 @@ public class LogicalTimeConditionImpl extends EAElementImpl implements LogicalTi
 	public void setIsLogicalTimeSuspended(boolean newIsLogicalTimeSuspended) {
 		boolean oldIsLogicalTimeSuspended = isLogicalTimeSuspended;
 		isLogicalTimeSuspended = newIsLogicalTimeSuspended;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TemporalconstraintPackage.LOGICAL_TIME_CONDITION__IS_LOGICAL_TIME_SUSPENDED, oldIsLogicalTimeSuspended, isLogicalTimeSuspended));
-		}
 	}
 
 	/**
@@ -179,9 +178,8 @@ public class LogicalTimeConditionImpl extends EAElementImpl implements LogicalTi
 			InternalEObject oldEndPointReference = (InternalEObject) endPointReference;
 			endPointReference = (TransitionEvent) eResolveProxy(oldEndPointReference);
 			if (endPointReference != oldEndPointReference) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TemporalconstraintPackage.LOGICAL_TIME_CONDITION__END_POINT_REFERENCE, oldEndPointReference, endPointReference));
-				}
 			}
 		}
 		return endPointReference;
@@ -207,9 +205,8 @@ public class LogicalTimeConditionImpl extends EAElementImpl implements LogicalTi
 	public void setEndPointReference(TransitionEvent newEndPointReference) {
 		TransitionEvent oldEndPointReference = endPointReference;
 		endPointReference = newEndPointReference;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TemporalconstraintPackage.LOGICAL_TIME_CONDITION__END_POINT_REFERENCE, oldEndPointReference, endPointReference));
-		}
 	}
 
 	/**
@@ -224,9 +221,8 @@ public class LogicalTimeConditionImpl extends EAElementImpl implements LogicalTi
 			InternalEObject oldStartPointReference = (InternalEObject) startPointReference;
 			startPointReference = (TransitionEvent) eResolveProxy(oldStartPointReference);
 			if (startPointReference != oldStartPointReference) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TemporalconstraintPackage.LOGICAL_TIME_CONDITION__START_POINT_REFERENCE, oldStartPointReference, startPointReference));
-				}
 			}
 		}
 		return startPointReference;
@@ -252,9 +248,8 @@ public class LogicalTimeConditionImpl extends EAElementImpl implements LogicalTi
 	public void setStartPointReference(TransitionEvent newStartPointReference) {
 		TransitionEvent oldStartPointReference = startPointReference;
 		startPointReference = newStartPointReference;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TemporalconstraintPackage.LOGICAL_TIME_CONDITION__START_POINT_REFERENCE, oldStartPointReference, startPointReference));
-		}
 	}
 
 	/**
@@ -269,9 +264,8 @@ public class LogicalTimeConditionImpl extends EAElementImpl implements LogicalTi
 			InternalEObject oldWidth = (InternalEObject) width;
 			width = (EAValue) eResolveProxy(oldWidth);
 			if (width != oldWidth) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TemporalconstraintPackage.LOGICAL_TIME_CONDITION__WIDTH, oldWidth, width));
-				}
 			}
 		}
 		return width;
@@ -297,9 +291,8 @@ public class LogicalTimeConditionImpl extends EAElementImpl implements LogicalTi
 	public void setWidth(EAValue newWidth) {
 		EAValue oldWidth = width;
 		width = newWidth;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TemporalconstraintPackage.LOGICAL_TIME_CONDITION__WIDTH, oldWidth, width));
-		}
 	}
 
 	/**
@@ -314,9 +307,8 @@ public class LogicalTimeConditionImpl extends EAElementImpl implements LogicalTi
 			InternalEObject oldLower = (InternalEObject) lower;
 			lower = (EAValue) eResolveProxy(oldLower);
 			if (lower != oldLower) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TemporalconstraintPackage.LOGICAL_TIME_CONDITION__LOWER, oldLower, lower));
-				}
 			}
 		}
 		return lower;
@@ -342,9 +334,8 @@ public class LogicalTimeConditionImpl extends EAElementImpl implements LogicalTi
 	public void setLower(EAValue newLower) {
 		EAValue oldLower = lower;
 		lower = newLower;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TemporalconstraintPackage.LOGICAL_TIME_CONDITION__LOWER, oldLower, lower));
-		}
 	}
 
 	/**
@@ -359,9 +350,8 @@ public class LogicalTimeConditionImpl extends EAElementImpl implements LogicalTi
 			InternalEObject oldUpper = (InternalEObject) upper;
 			upper = (EAValue) eResolveProxy(oldUpper);
 			if (upper != oldUpper) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TemporalconstraintPackage.LOGICAL_TIME_CONDITION__UPPER, oldUpper, upper));
-				}
 			}
 		}
 		return upper;
@@ -387,9 +377,8 @@ public class LogicalTimeConditionImpl extends EAElementImpl implements LogicalTi
 	public void setUpper(EAValue newUpper) {
 		EAValue oldUpper = upper;
 		upper = newUpper;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TemporalconstraintPackage.LOGICAL_TIME_CONDITION__UPPER, oldUpper, upper));
-		}
 	}
 
 	/**
@@ -404,9 +393,8 @@ public class LogicalTimeConditionImpl extends EAElementImpl implements LogicalTi
 			InternalEObject oldConsecutiveTimeCondition = (InternalEObject) consecutiveTimeCondition;
 			consecutiveTimeCondition = (LogicalTimeCondition) eResolveProxy(oldConsecutiveTimeCondition);
 			if (consecutiveTimeCondition != oldConsecutiveTimeCondition) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TemporalconstraintPackage.LOGICAL_TIME_CONDITION__CONSECUTIVE_TIME_CONDITION, oldConsecutiveTimeCondition, consecutiveTimeCondition));
-				}
 			}
 		}
 		return consecutiveTimeCondition;
@@ -432,9 +420,8 @@ public class LogicalTimeConditionImpl extends EAElementImpl implements LogicalTi
 	public void setConsecutiveTimeCondition(LogicalTimeCondition newConsecutiveTimeCondition) {
 		LogicalTimeCondition oldConsecutiveTimeCondition = consecutiveTimeCondition;
 		consecutiveTimeCondition = newConsecutiveTimeCondition;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TemporalconstraintPackage.LOGICAL_TIME_CONDITION__CONSECUTIVE_TIME_CONDITION, oldConsecutiveTimeCondition, consecutiveTimeCondition));
-		}
 	}
 
 	/**
@@ -449,34 +436,28 @@ public class LogicalTimeConditionImpl extends EAElementImpl implements LogicalTi
 		case TemporalconstraintPackage.LOGICAL_TIME_CONDITION__IS_LOGICAL_TIME_SUSPENDED:
 			return isIsLogicalTimeSuspended();
 		case TemporalconstraintPackage.LOGICAL_TIME_CONDITION__END_POINT_REFERENCE:
-			if (resolve) {
+			if (resolve)
 				return getEndPointReference();
-			}
 			return basicGetEndPointReference();
 		case TemporalconstraintPackage.LOGICAL_TIME_CONDITION__START_POINT_REFERENCE:
-			if (resolve) {
+			if (resolve)
 				return getStartPointReference();
-			}
 			return basicGetStartPointReference();
 		case TemporalconstraintPackage.LOGICAL_TIME_CONDITION__WIDTH:
-			if (resolve) {
+			if (resolve)
 				return getWidth();
-			}
 			return basicGetWidth();
 		case TemporalconstraintPackage.LOGICAL_TIME_CONDITION__LOWER:
-			if (resolve) {
+			if (resolve)
 				return getLower();
-			}
 			return basicGetLower();
 		case TemporalconstraintPackage.LOGICAL_TIME_CONDITION__UPPER:
-			if (resolve) {
+			if (resolve)
 				return getUpper();
-			}
 			return basicGetUpper();
 		case TemporalconstraintPackage.LOGICAL_TIME_CONDITION__CONSECUTIVE_TIME_CONDITION:
-			if (resolve) {
+			if (resolve)
 				return getConsecutiveTimeCondition();
-			}
 			return basicGetConsecutiveTimeCondition();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -585,12 +566,11 @@ public class LogicalTimeConditionImpl extends EAElementImpl implements LogicalTi
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
+		if (eIsProxy())
 			return super.toString();
-		}
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (isLogicalTimeSuspended: ");
+		result.append(" (isLogicalTimeSuspended: "); //$NON-NLS-1$
 		result.append(isLogicalTimeSuspended);
 		result.append(')');
 		return result.toString();

@@ -14,7 +14,6 @@
 package org.eclipse.papyrus.uml.diagram.sequence.edit.parts;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
@@ -31,12 +30,10 @@ import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
-import org.eclipse.gef.GraphicalEditPart;
 import org.eclipse.gef.Request;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
 import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
-import org.eclipse.gef.handles.MoveHandle;
 import org.eclipse.gef.requests.ChangeBoundsRequest;
 import org.eclipse.gef.requests.CreateRequest;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
@@ -59,6 +56,7 @@ import org.eclipse.papyrus.uml.diagram.common.figure.node.NodeNamedElementFigure
 import org.eclipse.papyrus.uml.diagram.common.helper.NotificationHelper;
 import org.eclipse.papyrus.uml.diagram.common.locator.ExternalLabelPositionLocator;
 import org.eclipse.papyrus.uml.diagram.common.providers.UIAdapterImpl;
+import org.eclipse.papyrus.uml.diagram.sequence.edit.policies.ExternalLabelPrimaryDragRoleEditPolicy;
 import org.eclipse.papyrus.uml.diagram.sequence.edit.policies.GateGraphicalNodeEditPolicy;
 import org.eclipse.papyrus.uml.diagram.sequence.edit.policies.semantic.GateItemSemanticEditPolicy;
 import org.eclipse.papyrus.uml.diagram.sequence.util.GateHelper;
@@ -198,15 +196,7 @@ public class GateEditPart extends AbstractBorderEditPart implements IBorderItemE
 			@Override
 			protected EditPolicy createChildEditPolicy(EditPart child) {
 				if (child instanceof GateNameEditPart) {
-					return new BorderItemSelectionEditPolicy() {
-
-						@Override
-						protected List createSelectionHandles() {
-							MoveHandle mh = new MoveHandle((GraphicalEditPart) getHost());
-							mh.setBorder(null);
-							return Collections.singletonList(mh);
-						}
-					};
+					return new ExternalLabelPrimaryDragRoleEditPolicy();
 				}
 				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 				if (result == null) {
@@ -397,6 +387,18 @@ public class GateEditPart extends AbstractBorderEditPart implements IBorderItemE
 			labelEditPart.refreshBounds();
 		}
 	}
+
+    /**
+     * this method will return the primary child EditPart inside this edit part
+     * 
+     * @return the primary child view inside this edit part
+     */
+    public EditPart getPrimaryChildEditPart() {
+        if (getChildren().size() > 0) {
+            return (EditPart) getChildren().get(0);
+        }
+        return super.getPrimaryChildEditPart();
+    }
 
 	public GateNameEditPart getLabelEditPart() {
 		IGraphicalEditPart labelEditPart = getChildBySemanticHint(GateNameEditPart.GATE_NAME_TYPE);

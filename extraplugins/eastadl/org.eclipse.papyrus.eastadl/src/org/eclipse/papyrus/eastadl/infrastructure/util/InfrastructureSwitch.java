@@ -101,328 +101,269 @@ public class InfrastructureSwitch<T> extends Switch<T> {
 		case InfrastructurePackage.INSTANCE_REF: {
 			InstanceRef instanceRef = (InstanceRef) theEObject;
 			T result = caseInstanceRef(instanceRef);
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case InfrastructurePackage.TARGET_INSTANCE_REF: {
 			TargetInstanceRef targetInstanceRef = (TargetInstanceRef) theEObject;
 			T result = caseTargetInstanceRef(targetInstanceRef);
-			if (result == null) {
+			if (result == null)
 				result = caseInstanceRef(targetInstanceRef);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case InfrastructurePackage.FUNCTION_CONNECTOR_PORT_INSTANCE_REF: {
 			FunctionConnectorPortInstanceRef functionConnectorPortInstanceRef = (FunctionConnectorPortInstanceRef) theEObject;
 			T result = caseFunctionConnectorPortInstanceRef(functionConnectorPortInstanceRef);
-			if (result == null) {
+			if (result == null)
 				result = caseInstanceRef(functionConnectorPortInstanceRef);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case InfrastructurePackage.HARDWARE_CONNECTOR_INSTANCE_REF: {
 			HardwareConnectorInstanceRef hardwareConnectorInstanceRef = (HardwareConnectorInstanceRef) theEObject;
 			T result = caseHardwareConnectorInstanceRef(hardwareConnectorInstanceRef);
-			if (result == null) {
+			if (result == null)
 				result = caseInstanceRef(hardwareConnectorInstanceRef);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case InfrastructurePackage.HARDWARE_PORT_CONNECTOR_INSTANCE_REF: {
 			HardwarePortConnectorInstanceRef hardwarePortConnectorInstanceRef = (HardwarePortConnectorInstanceRef) theEObject;
 			T result = caseHardwarePortConnectorInstanceRef(hardwarePortConnectorInstanceRef);
-			if (result == null) {
+			if (result == null)
 				result = caseInstanceRef(hardwarePortConnectorInstanceRef);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case InfrastructurePackage.ALLOCATED_ELEMENT_INSTANCE_REF: {
 			AllocatedElementInstanceRef allocatedElementInstanceRef = (AllocatedElementInstanceRef) theEObject;
 			T result = caseAllocatedElementInstanceRef(allocatedElementInstanceRef);
-			if (result == null) {
+			if (result == null)
 				result = caseInstanceRef(allocatedElementInstanceRef);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case InfrastructurePackage.CLAMP_CONNECTOR_INSTANCE_REF: {
 			ClampConnectorInstanceRef clampConnectorInstanceRef = (ClampConnectorInstanceRef) theEObject;
 			T result = caseClampConnectorInstanceRef(clampConnectorInstanceRef);
-			if (result == null) {
+			if (result == null)
 				result = caseInstanceRef(clampConnectorInstanceRef);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case InfrastructurePackage.REFINE_INSTANCE_REF: {
 			RefineInstanceRef refineInstanceRef = (RefineInstanceRef) theEObject;
 			T result = caseRefineInstanceRef(refineInstanceRef);
-			if (result == null) {
+			if (result == null)
 				result = caseInstanceRef(refineInstanceRef);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case InfrastructurePackage.SATISFY_INSTANCE_REF: {
 			SatisfyInstanceRef satisfyInstanceRef = (SatisfyInstanceRef) theEObject;
 			T result = caseSatisfyInstanceRef(satisfyInstanceRef);
-			if (result == null) {
+			if (result == null)
 				result = caseInstanceRef(satisfyInstanceRef);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case InfrastructurePackage.VV_CASE_INSTANCE_REF: {
 			VVCaseInstanceRef vvCaseInstanceRef = (VVCaseInstanceRef) theEObject;
 			T result = caseVVCaseInstanceRef(vvCaseInstanceRef);
-			if (result == null) {
+			if (result == null)
 				result = caseInstanceRef(vvCaseInstanceRef);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case InfrastructurePackage.VV_TARGET_INSTANCE_REF: {
 			VVTargetInstanceRef vvTargetInstanceRef = (VVTargetInstanceRef) theEObject;
 			T result = caseVVTargetInstanceRef(vvTargetInstanceRef);
-			if (result == null) {
+			if (result == null)
 				result = caseInstanceRef(vvTargetInstanceRef);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case InfrastructurePackage.REALIZATION_REALIZED_INSTANCE_REF: {
 			Realization_realizedInstanceRef realization_realizedInstanceRef = (Realization_realizedInstanceRef) theEObject;
 			T result = caseRealization_realizedInstanceRef(realization_realizedInstanceRef);
-			if (result == null) {
+			if (result == null)
 				result = caseInstanceRef(realization_realizedInstanceRef);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case InfrastructurePackage.REALIZATION_REALIZED_BY_INSTANCE_REF: {
 			Realization_realizedByInstanceRef realization_realizedByInstanceRef = (Realization_realizedByInstanceRef) theEObject;
 			T result = caseRealization_realizedByInstanceRef(realization_realizedByInstanceRef);
-			if (result == null) {
+			if (result == null)
 				result = caseInstanceRef(realization_realizedByInstanceRef);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case InfrastructurePackage.EVENT_FUNCTION_INSTANCE_REF: {
 			EventFunctionInstanceRef eventFunctionInstanceRef = (EventFunctionInstanceRef) theEObject;
 			T result = caseEventFunctionInstanceRef(eventFunctionInstanceRef);
-			if (result == null) {
+			if (result == null)
 				result = caseInstanceRef(eventFunctionInstanceRef);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case InfrastructurePackage.EVENT_FUNCTION_CLIENT_SERVER_PORT_INSTANCE_REF: {
 			EventFunctionClientServerPortInstanceRef eventFunctionClientServerPortInstanceRef = (EventFunctionClientServerPortInstanceRef) theEObject;
 			T result = caseEventFunctionClientServerPortInstanceRef(eventFunctionClientServerPortInstanceRef);
-			if (result == null) {
+			if (result == null)
 				result = caseInstanceRef(eventFunctionClientServerPortInstanceRef);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case InfrastructurePackage.EVENT_FUNCTION_FLOW_PORT_INSTANCE_REF: {
 			EventFunctionFlowPortInstanceRef eventFunctionFlowPortInstanceRef = (EventFunctionFlowPortInstanceRef) theEObject;
 			T result = caseEventFunctionFlowPortInstanceRef(eventFunctionFlowPortInstanceRef);
-			if (result == null) {
+			if (result == null)
 				result = caseInstanceRef(eventFunctionFlowPortInstanceRef);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case InfrastructurePackage.PRECEDENCE_CONSTRAINT_PRECEDING_INSTANCE_REF: {
 			PrecedenceConstraint_precedingInstanceRef precedenceConstraint_precedingInstanceRef = (PrecedenceConstraint_precedingInstanceRef) theEObject;
 			T result = casePrecedenceConstraint_precedingInstanceRef(precedenceConstraint_precedingInstanceRef);
-			if (result == null) {
+			if (result == null)
 				result = caseInstanceRef(precedenceConstraint_precedingInstanceRef);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case InfrastructurePackage.PRECEDENCE_CONSTRAINT_SUCCESSIVE_INSTANCE_REF: {
 			PrecedenceConstraint_successiveInstanceRef precedenceConstraint_successiveInstanceRef = (PrecedenceConstraint_successiveInstanceRef) theEObject;
 			T result = casePrecedenceConstraint_successiveInstanceRef(precedenceConstraint_successiveInstanceRef);
-			if (result == null) {
+			if (result == null)
 				result = caseInstanceRef(precedenceConstraint_successiveInstanceRef);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case InfrastructurePackage.ERROR_MODEL_PROTOTYPE_FUNCTION_TARGET_INSTANCE_REF: {
 			ErrorModelPrototype_functionTargetInstanceRef errorModelPrototype_functionTargetInstanceRef = (ErrorModelPrototype_functionTargetInstanceRef) theEObject;
 			T result = caseErrorModelPrototype_functionTargetInstanceRef(errorModelPrototype_functionTargetInstanceRef);
-			if (result == null) {
+			if (result == null)
 				result = caseInstanceRef(errorModelPrototype_functionTargetInstanceRef);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case InfrastructurePackage.ERROR_MODEL_PROTOTYPE_HW_TARGET_INSTANCE_REF: {
 			ErrorModelPrototype_hwTargetInstanceRef errorModelPrototype_hwTargetInstanceRef = (ErrorModelPrototype_hwTargetInstanceRef) theEObject;
 			T result = caseErrorModelPrototype_hwTargetInstanceRef(errorModelPrototype_hwTargetInstanceRef);
-			if (result == null) {
+			if (result == null)
 				result = caseInstanceRef(errorModelPrototype_hwTargetInstanceRef);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case InfrastructurePackage.FAULT_FAILURE_PORT_HW_TARGET_INSTANCE_REF: {
 			FaultFailurePort_hwTargetInstanceRef faultFailurePort_hwTargetInstanceRef = (FaultFailurePort_hwTargetInstanceRef) theEObject;
 			T result = caseFaultFailurePort_hwTargetInstanceRef(faultFailurePort_hwTargetInstanceRef);
-			if (result == null) {
+			if (result == null)
 				result = caseInstanceRef(faultFailurePort_hwTargetInstanceRef);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case InfrastructurePackage.FAULT_FAILURE_PORT_FUNCTION_TARGET_INSTANCE_REF: {
 			FaultFailurePort_functionTargetInstanceRef faultFailurePort_functionTargetInstanceRef = (FaultFailurePort_functionTargetInstanceRef) theEObject;
 			T result = caseFaultFailurePort_functionTargetInstanceRef(faultFailurePort_functionTargetInstanceRef);
-			if (result == null) {
+			if (result == null)
 				result = caseInstanceRef(faultFailurePort_functionTargetInstanceRef);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case InfrastructurePackage.FAULT_FAILURE_PROPAGATION_LINK_FROM_PORT_INSTANCE_REF: {
 			FaultFailurePropagationLink_fromPortInstanceRef faultFailurePropagationLink_fromPortInstanceRef = (FaultFailurePropagationLink_fromPortInstanceRef) theEObject;
 			T result = caseFaultFailurePropagationLink_fromPortInstanceRef(faultFailurePropagationLink_fromPortInstanceRef);
-			if (result == null) {
+			if (result == null)
 				result = caseInstanceRef(faultFailurePropagationLink_fromPortInstanceRef);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case InfrastructurePackage.FAULT_FAILURE_ANOMALY_INSTANCE_REF: {
 			FaultFailure_anomalyInstanceRef faultFailure_anomalyInstanceRef = (FaultFailure_anomalyInstanceRef) theEObject;
 			T result = caseFaultFailure_anomalyInstanceRef(faultFailure_anomalyInstanceRef);
-			if (result == null) {
+			if (result == null)
 				result = caseInstanceRef(faultFailure_anomalyInstanceRef);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case InfrastructurePackage.FAULT_FAILURE_PROPAGATION_LINK_TO_PORT_INSTANCE_REF: {
 			FaultFailurePropagationLink_toPortInstanceRef faultFailurePropagationLink_toPortInstanceRef = (FaultFailurePropagationLink_toPortInstanceRef) theEObject;
 			T result = caseFaultFailurePropagationLink_toPortInstanceRef(faultFailurePropagationLink_toPortInstanceRef);
-			if (result == null) {
+			if (result == null)
 				result = caseInstanceRef(faultFailurePropagationLink_toPortInstanceRef);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case InfrastructurePackage.BEHAVIOR_CONSTRAINT_INTERNAL_BINDING_THROUGH_FUNCTION_CONNECTOR_INSTANCE_REF: {
 			BehaviorConstraintInternalBinding_throughFunctionConnectorInstanceRef behaviorConstraintInternalBinding_throughFunctionConnectorInstanceRef = (BehaviorConstraintInternalBinding_throughFunctionConnectorInstanceRef) theEObject;
 			T result = caseBehaviorConstraintInternalBinding_throughFunctionConnectorInstanceRef(behaviorConstraintInternalBinding_throughFunctionConnectorInstanceRef);
-			if (result == null) {
+			if (result == null)
 				result = caseInstanceRef(behaviorConstraintInternalBinding_throughFunctionConnectorInstanceRef);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case InfrastructurePackage.BEHAVIOR_CONSTRAINT_INTERNAL_BINDING_THROUGH_HARDWARE_CONNECTOR_INSTANCE_REF: {
 			BehaviorConstraintInternalBinding_throughHardwareConnectorInstanceRef behaviorConstraintInternalBinding_throughHardwareConnectorInstanceRef = (BehaviorConstraintInternalBinding_throughHardwareConnectorInstanceRef) theEObject;
 			T result = caseBehaviorConstraintInternalBinding_throughHardwareConnectorInstanceRef(behaviorConstraintInternalBinding_throughHardwareConnectorInstanceRef);
-			if (result == null) {
+			if (result == null)
 				result = caseInstanceRef(behaviorConstraintInternalBinding_throughHardwareConnectorInstanceRef);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case InfrastructurePackage.BEHAVIOR_CONSTRAINT_PROTOTYPE_FUNCTION_TARGET_INSTANCE_REF: {
 			BehaviorConstraintPrototype_functionTargetInstanceRef behaviorConstraintPrototype_functionTargetInstanceRef = (BehaviorConstraintPrototype_functionTargetInstanceRef) theEObject;
 			T result = caseBehaviorConstraintPrototype_functionTargetInstanceRef(behaviorConstraintPrototype_functionTargetInstanceRef);
-			if (result == null) {
+			if (result == null)
 				result = caseInstanceRef(behaviorConstraintPrototype_functionTargetInstanceRef);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case InfrastructurePackage.BEHAVIOR_CONSTRAINT_PROTOTYPE_HARDWARE_COMPONENT_TARGET_INSTANCE_REF: {
 			BehaviorConstraintPrototype_hardwareComponentTargetInstanceRef behaviorConstraintPrototype_hardwareComponentTargetInstanceRef = (BehaviorConstraintPrototype_hardwareComponentTargetInstanceRef) theEObject;
 			T result = caseBehaviorConstraintPrototype_hardwareComponentTargetInstanceRef(behaviorConstraintPrototype_hardwareComponentTargetInstanceRef);
-			if (result == null) {
+			if (result == null)
 				result = caseInstanceRef(behaviorConstraintPrototype_hardwareComponentTargetInstanceRef);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case InfrastructurePackage.BEHAVIOR_CONSTRAINT_PROTOTYPE_ERROR_MODEL_TARGET_INSTANCE_REF: {
 			BehaviorConstraintPrototype_errorModelTargetInstanceRef behaviorConstraintPrototype_errorModelTargetInstanceRef = (BehaviorConstraintPrototype_errorModelTargetInstanceRef) theEObject;
 			T result = caseBehaviorConstraintPrototype_errorModelTargetInstanceRef(behaviorConstraintPrototype_errorModelTargetInstanceRef);
-			if (result == null) {
+			if (result == null)
 				result = caseInstanceRef(behaviorConstraintPrototype_errorModelTargetInstanceRef);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		default:

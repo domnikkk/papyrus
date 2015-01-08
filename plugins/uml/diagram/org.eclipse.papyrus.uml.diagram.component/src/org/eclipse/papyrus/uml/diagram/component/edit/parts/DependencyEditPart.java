@@ -59,10 +59,12 @@ public class DependencyEditPart extends UMLConnectionNodeEditPart implements ITr
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof DependencyNameEditPart) {
-			((DependencyNameEditPart) childEditPart).setLabel(getPrimaryShape().getNameLabel());
+			((DependencyNameEditPart) childEditPart).setLabel(
+					getPrimaryShape().getNameLabel());
 		}
 		if (childEditPart instanceof DependencyAppliedStereotypeEditPart) {
-			((DependencyAppliedStereotypeEditPart) childEditPart).setLabel(getPrimaryShape().getAppliedStereotypeLabel());
+			((DependencyAppliedStereotypeEditPart) childEditPart).setLabel(
+					getPrimaryShape().getAppliedStereotypeLabel());
 		}
 		return false;
 	}

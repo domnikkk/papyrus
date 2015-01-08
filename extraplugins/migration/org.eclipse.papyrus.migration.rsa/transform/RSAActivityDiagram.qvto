@@ -147,6 +147,8 @@ mapping Node::toNode() : Node disjuncts
 ;
 
 mapping Edge::toEdge() : Edge disjuncts
+	UMLConnector::toCommentLink,
+	UMLConnector::toConstraintLink,
 	UMLConnector::toPapyrusConnector
 	//TODO: Disjunct edges mapping
 ;
@@ -366,6 +368,29 @@ mapping UMLConnector::toPapyrusConnector() : Connector inherits Connector::toPap
 }{
 	result.styles := self.map toFontStyle();
 }
+
+mapping UMLConnector::toCommentLink() : Connector inherits Connector::toCommentLink when{
+	self.type='Reference' and ( 
+	 	self.source.element.oclIsTypeOf(Comment) or 
+	 	self.target.element.oclIsKindOf(Comment)
+	)
+}{
+	result.type :='4006';
+	result.bendpoints := self.bendpoints.map toBendpoint(self.diagram);
+	result.sourceAnchor := object IdentityAnchor{};		
+}
+
+mapping UMLConnector::toConstraintLink() : Connector inherits Connector::toPapyrusConnector when{
+	self.type='Reference' and ( 
+	 	self.source.element.oclIsTypeOf(Constraint) or 
+	 	self.target.element.oclIsKindOf(Constraint)
+	)
+}{	
+	result.type :='4007';
+	result.bendpoints := self.bendpoints.map toBendpoint(self.diagram);
+	result.sourceAnchor := object IdentityAnchor{};		
+}
+
 
 /****** Element Type queries ******/
 
@@ -745,7 +770,8 @@ query View::doGetDecorationType(element : Element) : String{
 
 query View::getEdgeType(element : Element) : String {
 	return
-		if element.oclIsTypeOf(ObjectFlow) then '4003'
+		if self.type = 'Reference' then '' /* Constraint/Comment links handled separately */
+		elif element.oclIsTypeOf(ObjectFlow) then '4003'
 		elif element.oclIsTypeOf(ControlFlow) then '4004'
 		elif element.oclIsTypeOf(ExceptionHandler) then '4005'
 		else self.fail()

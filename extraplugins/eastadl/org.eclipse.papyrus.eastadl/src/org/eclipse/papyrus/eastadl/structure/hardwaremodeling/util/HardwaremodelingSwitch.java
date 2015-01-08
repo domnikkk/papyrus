@@ -481,254 +481,193 @@ public class HardwaremodelingSwitch<T> extends Switch<T> {
 		case HardwaremodelingPackage.HARDWARE_COMPONENT_TYPE: {
 			HardwareComponentType hardwareComponentType = (HardwareComponentType) theEObject;
 			T result = caseHardwareComponentType(hardwareComponentType);
-			if (result == null) {
+			if (result == null)
 				result = caseContext(hardwareComponentType);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAType(hardwareComponentType);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPackageableElement(hardwareComponentType);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(hardwareComponentType);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case HardwaremodelingPackage.HARDWARE_CONNECTOR: {
 			HardwareConnector hardwareConnector = (HardwareConnector) theEObject;
 			T result = caseHardwareConnector(hardwareConnector);
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(hardwareConnector);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAConnector(hardwareConnector);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case HardwaremodelingPackage.HARDWARE_PIN: {
 			HardwarePin hardwarePin = (HardwarePin) theEObject;
 			T result = caseHardwarePin(hardwarePin);
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(hardwarePin);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPort(hardwarePin);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case HardwaremodelingPackage.HARDWARE_COMPONENT_PROTOTYPE: {
 			HardwareComponentPrototype hardwareComponentPrototype = (HardwareComponentPrototype) theEObject;
 			T result = caseHardwareComponentPrototype(hardwareComponentPrototype);
-			if (result == null) {
+			if (result == null)
 				result = caseAllocationTarget(hardwareComponentPrototype);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPrototype(hardwareComponentPrototype);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(hardwareComponentPrototype);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case HardwaremodelingPackage.HARDWARE_PORT_CONNECTOR: {
 			HardwarePortConnector hardwarePortConnector = (HardwarePortConnector) theEObject;
 			T result = caseHardwarePortConnector(hardwarePortConnector);
-			if (result == null) {
+			if (result == null)
 				result = caseAllocationTarget(hardwarePortConnector);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAConnector(hardwarePortConnector);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(hardwarePortConnector);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case HardwaremodelingPackage.HARDWARE_PORT: {
 			HardwarePort hardwarePort = (HardwarePort) theEObject;
 			T result = caseHardwarePort(hardwarePort);
-			if (result == null) {
+			if (result == null)
 				result = caseAllocationTarget(hardwarePort);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPort(hardwarePort);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(hardwarePort);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case HardwaremodelingPackage.IO_HARDWARE_PIN: {
 			IOHardwarePin ioHardwarePin = (IOHardwarePin) theEObject;
 			T result = caseIOHardwarePin(ioHardwarePin);
-			if (result == null) {
+			if (result == null)
 				result = caseHardwarePin(ioHardwarePin);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(ioHardwarePin);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPort(ioHardwarePin);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case HardwaremodelingPackage.POWER_HARDWARE_PIN: {
 			PowerHardwarePin powerHardwarePin = (PowerHardwarePin) theEObject;
 			T result = casePowerHardwarePin(powerHardwarePin);
-			if (result == null) {
+			if (result == null)
 				result = caseHardwarePin(powerHardwarePin);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(powerHardwarePin);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPort(powerHardwarePin);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case HardwaremodelingPackage.COMMUNICATION_HARDWARE_PIN: {
 			CommunicationHardwarePin communicationHardwarePin = (CommunicationHardwarePin) theEObject;
 			T result = caseCommunicationHardwarePin(communicationHardwarePin);
-			if (result == null) {
+			if (result == null)
 				result = caseHardwarePin(communicationHardwarePin);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(communicationHardwarePin);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPort(communicationHardwarePin);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case HardwaremodelingPackage.NODE: {
 			Node node = (Node) theEObject;
 			T result = caseNode(node);
-			if (result == null) {
+			if (result == null)
 				result = caseHardwareComponentType(node);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseContext(node);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAType(node);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPackageableElement(node);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(node);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case HardwaremodelingPackage.ELECTRICAL_COMPONENT: {
 			ElectricalComponent electricalComponent = (ElectricalComponent) theEObject;
 			T result = caseElectricalComponent(electricalComponent);
-			if (result == null) {
+			if (result == null)
 				result = caseHardwareComponentType(electricalComponent);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseContext(electricalComponent);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAType(electricalComponent);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPackageableElement(electricalComponent);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(electricalComponent);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case HardwaremodelingPackage.SENSOR: {
 			Sensor sensor = (Sensor) theEObject;
 			T result = caseSensor(sensor);
-			if (result == null) {
+			if (result == null)
 				result = caseHardwareComponentType(sensor);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseContext(sensor);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAType(sensor);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPackageableElement(sensor);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(sensor);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case HardwaremodelingPackage.ACTUATOR: {
 			Actuator actuator = (Actuator) theEObject;
 			T result = caseActuator(actuator);
-			if (result == null) {
+			if (result == null)
 				result = caseHardwareComponentType(actuator);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseContext(actuator);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAType(actuator);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPackageableElement(actuator);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(actuator);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case HardwaremodelingPackage.ALLOCATION_TARGET: {
 			AllocationTarget allocationTarget = (AllocationTarget) theEObject;
 			T result = caseAllocationTarget(allocationTarget);
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(allocationTarget);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		default:

@@ -69,9 +69,8 @@ public class ProcessFaultPrototypeImpl extends AnomalyImpl implements ProcessFau
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case ErrormodelPackage.PROCESS_FAULT_PROTOTYPE__BASE_EVENT:
-			if (resolve) {
+			if (resolve)
 				return getBase_Event();
-			}
 			return basicGetBase_Event();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -131,9 +130,8 @@ public class ProcessFaultPrototypeImpl extends AnomalyImpl implements ProcessFau
 			InternalEObject oldBase_Event = (InternalEObject) base_Event;
 			base_Event = (Event) eResolveProxy(oldBase_Event);
 			if (base_Event != oldBase_Event) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ErrormodelPackage.PROCESS_FAULT_PROTOTYPE__BASE_EVENT, oldBase_Event, base_Event));
-				}
 			}
 		}
 		return base_Event;
@@ -159,9 +157,8 @@ public class ProcessFaultPrototypeImpl extends AnomalyImpl implements ProcessFau
 	public void setBase_Event(Event newBase_Event) {
 		Event oldBase_Event = base_Event;
 		base_Event = newBase_Event;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ErrormodelPackage.PROCESS_FAULT_PROTOTYPE__BASE_EVENT, oldBase_Event, base_Event));
-		}
 	}
 
 	/**

@@ -85,9 +85,8 @@ public class EventFunctionClientServerPortInstanceRefImpl extends InstanceRefImp
 			InternalEObject oldFunctionClientServerPort = (InternalEObject) functionClientServerPort;
 			functionClientServerPort = (FunctionClientServerPort) eResolveProxy(oldFunctionClientServerPort);
 			if (functionClientServerPort != oldFunctionClientServerPort) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InfrastructurePackage.EVENT_FUNCTION_CLIENT_SERVER_PORT_INSTANCE_REF__FUNCTION_CLIENT_SERVER_PORT, oldFunctionClientServerPort, functionClientServerPort));
-				}
 			}
 		}
 		return functionClientServerPort;
@@ -113,9 +112,8 @@ public class EventFunctionClientServerPortInstanceRefImpl extends InstanceRefImp
 	public void setFunctionClientServerPort(FunctionClientServerPort newFunctionClientServerPort) {
 		FunctionClientServerPort oldFunctionClientServerPort = functionClientServerPort;
 		functionClientServerPort = newFunctionClientServerPort;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, InfrastructurePackage.EVENT_FUNCTION_CLIENT_SERVER_PORT_INSTANCE_REF__FUNCTION_CLIENT_SERVER_PORT, oldFunctionClientServerPort, functionClientServerPort));
-		}
 	}
 
 	/**
@@ -142,9 +140,8 @@ public class EventFunctionClientServerPortInstanceRefImpl extends InstanceRefImp
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case InfrastructurePackage.EVENT_FUNCTION_CLIENT_SERVER_PORT_INSTANCE_REF__FUNCTION_CLIENT_SERVER_PORT:
-			if (resolve) {
+			if (resolve)
 				return getFunctionClientServerPort();
-			}
 			return basicGetFunctionClientServerPort();
 		case InfrastructurePackage.EVENT_FUNCTION_CLIENT_SERVER_PORT_INSTANCE_REF__FUNCTION_PROTOTYPE:
 			return getFunctionPrototype();

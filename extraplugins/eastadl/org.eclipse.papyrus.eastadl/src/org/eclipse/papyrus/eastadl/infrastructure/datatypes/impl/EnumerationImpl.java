@@ -132,9 +132,8 @@ public class EnumerationImpl extends EADatatypeImpl implements Enumeration {
 	public void setIsMultiValued(boolean newIsMultiValued) {
 		boolean oldIsMultiValued = isMultiValued;
 		isMultiValued = newIsMultiValued;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.ENUMERATION__IS_MULTI_VALUED, oldIsMultiValued, isMultiValued));
-		}
 	}
 
 	/**
@@ -234,12 +233,11 @@ public class EnumerationImpl extends EADatatypeImpl implements Enumeration {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
+		if (eIsProxy())
 			return super.toString();
-		}
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (isMultiValued: ");
+		result.append(" (isMultiValued: "); //$NON-NLS-1$
 		result.append(isMultiValued);
 		result.append(')');
 		return result.toString();

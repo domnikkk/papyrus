@@ -4372,7 +4372,7 @@
               href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
           <viewmap
               xsi:type="gmfgen:FigureViewmap"
-              figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
+              figureQualifiedClassName="org.eclipse.papyrus.infra.gmfdiag.common.figure.node.PapyrusWrappingLabel">
             <attributes
                 xsi:type="gmfgen:LabelOffsetAttributes"
                 x="25"
@@ -4476,7 +4476,7 @@
               href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
           <viewmap
               xsi:type="gmfgen:FigureViewmap"
-              figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
+              figureQualifiedClassName="org.eclipse.papyrus.infra.gmfdiag.common.figure.node.PapyrusWrappingLabel">
             <attributes
                 xsi:type="gmfgen:LabelOffsetAttributes"
                 x="25"
@@ -6223,7 +6223,7 @@
               key="org.eclipse.papyrus.uml.diagram.clazz.custom.policies.InstanceSpecificationRoleDisplayEditPolicy.INSTANCE_SPECIFICATION_ROLE_DISPLAY"
               editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.clazz.custom.policies.ISRoleTargetDisplayEditPolicy"/>
           <modelFacet
-              parser="/0/@labelParsers/@implementations.11"/>
+              parser="/0/@labelParsers/@implementations.12"/>
         </labels>
       </links>
       <links
@@ -7920,7 +7920,8 @@
     </diagram>
     <plugin
         iD="org.eclipse.papyrus.uml.diagram.clazz"
-        name="PapyrusUMLClassDiagram"/>
+        name="PapyrusUMLClassDiagram"
+        version="1.0.1.qualifier"/>
     <editor/>
     <navigator/>
     <diagramUpdater/>
@@ -8027,8 +8028,12 @@
           qualifiedName="org.eclipse.papyrus.uml.diagram.clazz.custom.parsers.TemplateBindingParser"/>
       <implementations
           xsi:type="gmfgen:CustomParser"
-          uses="/0/@diagram/@links.20/@labels.0/@modelFacet /0/@diagram/@links.20/@labels.1/@modelFacet"
-          qualifiedName="org.eclipse.papyrus.uml.diagram.clazz.custom.parsers.RoleInstanceSpecificationLinkParser"/>
+          uses="/0/@diagram/@links.20/@labels.0/@modelFacet"
+          qualifiedName="org.eclipse.papyrus.uml.diagram.clazz.custom.parsers.RoleInstanceSpecificationSourceLinkParser"/>
+      <implementations
+          xsi:type="gmfgen:CustomParser"
+          uses="/0/@diagram/@links.20/@labels.1/@modelFacet"
+          qualifiedName="org.eclipse.papyrus.uml.diagram.clazz.custom.parsers.RoleInstanceSpecificationTargetLinkParser"/>
     </labelParsers>
     <contextMenus
         context="/0/@diagram">
@@ -8182,6 +8187,56 @@
         comment="Hidden Compartments Title"
         visibleByDefault="false"
         compartments="/0/@diagram/@compartments.0 /0/@diagram/@compartments.1 /0/@diagram/@compartments.2 /0/@diagram/@compartments.3 /0/@diagram/@compartments.4 /0/@diagram/@compartments.5 /0/@diagram/@compartments.6 /0/@diagram/@compartments.7 /0/@diagram/@compartments.8 /0/@diagram/@compartments.9 /0/@diagram/@compartments.12 /0/@diagram/@compartments.13 /0/@diagram/@compartments.14 /0/@diagram/@compartments.15 /0/@diagram/@compartments.16 /0/@diagram/@compartments.17 /0/@diagram/@compartments.18 /0/@diagram/@compartments.19 /0/@diagram/@compartments.20 /0/@diagram/@compartments.21 /0/@diagram/@compartments.22 /0/@diagram/@compartments.23 /0/@diagram/@compartments.24 /0/@diagram/@compartments.25 /0/@diagram/@compartments.26 /0/@diagram/@compartments.29 /0/@diagram/@compartments.30 /0/@diagram/@compartments.31 /0/@diagram/@compartments.32 /0/@diagram/@compartments.33 /0/@diagram/@compartments.34 /0/@diagram/@compartments.35 /0/@diagram/@compartments.36 /0/@diagram/@compartments.37 /0/@diagram/@compartments.38 /0/@diagram/@compartments.39 /0/@diagram/@compartments.40 /0/@diagram/@compartments.10 /0/@diagram/@compartments.11 /0/@diagram/@compartments.27 /0/@diagram/@compartments.28"/>
+    <extensionNodes
+        xsi:type="papyrusgmfgenextension:LabelVisibilityPreference"
+        comment="Stereotype"
+        role="Stereotype"
+        iconPathRole="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Stereotype.gif"
+        linkLabels="/0/@diagram/@links.2/@labels.0 /0/@diagram/@links.4/@labels.0 /0/@diagram/@links.5/@labels.0 /0/@diagram/@links.6/@labels.0 /0/@diagram/@links.7/@labels.0 /0/@diagram/@links.8/@labels.1 /0/@diagram/@links.9/@labels.1 /0/@diagram/@links.10/@labels.1 /0/@diagram/@links.12/@labels.1 /0/@diagram/@links.13/@labels.0 /0/@diagram/@links.14/@labels.0 /0/@diagram/@links.18/@labels.1 /0/@diagram/@links.19/@labels.1 /0/@diagram/@links.25/@labels.1"
+        externalNodeLabels="/0/@diagram/@topLevelNodes.18/@labels.1 /0/@diagram/@topLevelNodes.17/@labels.1"/>
+    <extensionNodes
+        xsi:type="papyrusgmfgenextension:LabelVisibilityPreference"
+        comment="Name"
+        role="Name"
+        iconPathRole="platform:/plugin/org.eclipse.papyrus.uml.diagram.common/icons/label_role/name.png"
+        linkLabels="/0/@diagram/@links.2/@labels.1 /0/@diagram/@links.5/@labels.1 /0/@diagram/@links.6/@labels.1 /0/@diagram/@links.7/@labels.1 /0/@diagram/@links.8/@labels.0 /0/@diagram/@links.9/@labels.0 /0/@diagram/@links.10/@labels.0"
+        externalNodeLabels="/0/@diagram/@topLevelNodes.17/@labels.0 /0/@diagram/@topLevelNodes.18/@labels.0 /0/@diagram/@topLevelNodes.16/@labels.0 /0/@diagram/@topLevelNodes.0/@labels.0"/>
+    <extensionNodes
+        xsi:type="papyrusgmfgenextension:LabelVisibilityPreference"
+        comment="Alias"
+        role="Alias"
+        iconPathRole="platform:/plugin/org.eclipse.papyrus.uml.diagram.common/icons/label_role/alias.png"
+        linkLabels="/0/@diagram/@links.12/@labels.0"/>
+    <extensionNodes
+        xsi:type="papyrusgmfgenextension:LabelVisibilityPreference"
+        comment="TargetRole"
+        role="TargetRole"
+        iconPathRole="platform:/plugin/org.eclipse.papyrus.uml.diagram.common/icons/label_role/role.gif"
+        linkLabels="/0/@diagram/@links.1/@labels.1 /0/@diagram/@links.2/@labels.2 /0/@diagram/@links.20/@labels.1 /0/@diagram/@links.3/@labels.0"/>
+    <extensionNodes
+        xsi:type="papyrusgmfgenextension:LabelVisibilityPreference"
+        comment="SourceRole"
+        role="SourceRole"
+        iconPathRole="platform:/plugin/org.eclipse.papyrus.uml.diagram.common/icons/label_role/role.gif"
+        linkLabels="/0/@diagram/@links.1/@labels.0 /0/@diagram/@links.2/@labels.3 /0/@diagram/@links.20/@labels.0"/>
+    <extensionNodes
+        xsi:type="papyrusgmfgenextension:LabelVisibilityPreference"
+        comment="TemplateParameterSubstitution"
+        role="TemplateParameterSubstitution"
+        iconPathRole="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/TemplateParameterSubstitution.gif"
+        linkLabels="/0/@diagram/@links.18/@labels.0"/>
+    <extensionNodes
+        xsi:type="papyrusgmfgenextension:LabelVisibilityPreference"
+        comment="TargetMultiplicity"
+        role="TargetMultiplicity"
+        iconPathRole="platform:/plugin/org.eclipse.papyrus.uml.diagram.common/icons/label_role/MultiplicityHandler.gif"
+        linkLabels="/0/@diagram/@links.3/@labels.1 /0/@diagram/@links.2/@labels.5"/>
+    <extensionNodes
+        xsi:type="papyrusgmfgenextension:LabelVisibilityPreference"
+        comment="SourceMultiplicity"
+        role="SourceMultiplicity"
+        iconPathRole="platform:/plugin/org.eclipse.papyrus.uml.diagram.common/icons/label_role/MultiplicityHandler.gif"
+        linkLabels="/0/@diagram/@links.2/@labels.4"/>
     <extensionNodes
         xsi:type="papyrusgmfgenextension:ExtendedGenView"
         comment="This edit part allow double click on this XYlayout compartment"

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014 CEA and others.
+ * Copyright (c) 2014 CEA, Christian W. Damus, and others.
  * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,6 +8,7 @@
  *
  * Contributors:
  *   Christian W. Damus (CEA) - Initial API and implementation
+ *   Christian W. Damus - bug 451013
  *
  */
 package org.eclipse.papyrus.junit.framework.classification.rules;
@@ -51,6 +52,7 @@ import com.google.common.collect.Lists;
  * @see SoftReferenceSensitive
  */
 public class MemoryLeakRule extends TestWatcher {
+	private static final boolean DEBUG = Boolean.getBoolean("MemoryLeakRule.debug");
 
 	private static final int DEQUEUE_REF_ITERATIONS = 3;
 
@@ -83,7 +85,7 @@ public class MemoryLeakRule extends TestWatcher {
 	public void add(Object leak) {
 		assertThat("Cannot track null references for memory leaks.", leak, notNullValue());
 
-		if(queue == null) {
+		if (queue == null) {
 			queue = new ReferenceQueue<Object>();
 			tracker = Lists.newArrayList();
 			factory = new ComposedAdapterFactory(ComposedAdapterFactory.Descriptor.Registry.INSTANCE);
@@ -103,7 +105,7 @@ public class MemoryLeakRule extends TestWatcher {
 
 		isSoftReferenceSensitive = description.getAnnotation(SoftReferenceSensitive.class) != null;
 
-		if(isSoftReferenceSensitive && !isWarmedUp() && !warmingUp) {
+		if (isSoftReferenceSensitive && !isWarmedUp() && !warmingUp) {
 			// Warm up the soft-reference sensitive tests by running this one up-front, first,
 			// because the first such test to execute always results in a spurious failure
 			// (at least, such is the case on the Mac build of JRE 1.6)
@@ -119,16 +121,16 @@ public class MemoryLeakRule extends TestWatcher {
 	@Override
 	protected void succeeded(Description description) {
 		// If the test's assertions (if any) all succeeded, then check for leaks on the way out
-		if(tracker == null) {
+		if (tracker == null) {
 			// No leaks to assert
 			return;
 		}
 
 		// Assert that our tracked objects are now all unreachable
-		while(!tracker.isEmpty()) {
+		while (!tracker.isEmpty()) {
 			Reference<?> ref = dequeueTracker();
 
-			for(int i = 0; ((ref == null) && isSoftReferenceSensitive) && (i < CLEAR_SOFT_REFS_ITERATIONS); i++) {
+			for (int i = 0; ((ref == null) && isSoftReferenceSensitive) && (i < CLEAR_SOFT_REFS_ITERATIONS); i++) {
 				// Maybe there are soft references retaining our objects? Desperation move.
 				// On some platforms, our simulated OOME doesn't actually purge all soft
 				// references (contrary to Java spec!), so we have to repeat
@@ -138,9 +140,13 @@ public class MemoryLeakRule extends TestWatcher {
 				ref = dequeueTracker();
 			}
 
-			if(!tracker.remove(ref) && !tracker.isEmpty()) {
+			if (!tracker.remove(ref) && !tracker.isEmpty()) {
 				// The remaining tracked elements are leaked
-				fail("One or more objects leaked:\n" + Joiner.on('\n').join(Iterables.transform(tracker, label())));
+				final String leaks = Joiner.on('\n').join(Iterables.transform(tracker, label()));
+				if (warmingUp) {
+					debug("Warm-up detected leaks: %s%n", leaks.replace('\n', ' '));
+				}
+				fail("One or more objects leaked:\n" + leaks);
 				break; // Unreachable
 			}
 		}
@@ -155,7 +161,7 @@ public class MemoryLeakRule extends TestWatcher {
 	}
 
 	void disposeFactory() {
-		if(factory != null) {
+		if (factory != null) {
 			factory.dispose();
 			factory = null;
 		}
@@ -165,7 +171,7 @@ public class MemoryLeakRule extends TestWatcher {
 		Reference<?> result = null;
 
 		try {
-			for(int i = 0; (result == null) && (i < DEQUEUE_REF_ITERATIONS); i++) {
+			for (int i = 0; (result == null) && (i < DEQUEUE_REF_ITERATIONS); i++) {
 				// Try to force GC
 				collectGarbage();
 
@@ -182,6 +188,7 @@ public class MemoryLeakRule extends TestWatcher {
 	Function<WeakReference<?>, String> label() {
 		return new Function<WeakReference<?>, String>() {
 
+			@Override
 			public String apply(WeakReference<?> input) {
 				return label(input.get());
 			}
@@ -189,10 +196,10 @@ public class MemoryLeakRule extends TestWatcher {
 	}
 
 	String label(Object input) {
-		IItemLabelProvider provider = (IItemLabelProvider)factory.adapt(input, IItemLabelProvider.class);
+		IItemLabelProvider provider = (IItemLabelProvider) factory.adapt(input, IItemLabelProvider.class);
 		String result = (provider == null) ? String.valueOf(input) : provider.getText(input);
 
-		if(Strings.isNullOrEmpty(result)) {
+		if (Strings.isNullOrEmpty(result)) {
 			result = String.valueOf(input);
 		}
 
@@ -206,7 +213,7 @@ public class MemoryLeakRule extends TestWatcher {
 		Long usedMem = rt.totalMemory() - rt.freeMemory();
 		Long prevUsedMem = usedMem;
 
-		for(int i = 0; (prevUsedMem <= usedMem) && (i < GC_ITERATIONS); i++) {
+		for (int i = 0; (prevUsedMem <= usedMem) && (i < GC_ITERATIONS); i++) {
 			rt.gc();
 			Thread.yield();
 
@@ -217,21 +224,21 @@ public class MemoryLeakRule extends TestWatcher {
 
 	void forceClearSoftReferenceCaches() {
 		// There are components in the Eclipse workbench that maintain soft references to objects for
-		// performance caches.  For example, the the Common Navigator Framework used by Model Explorer
+		// performance caches. For example, the the Common Navigator Framework used by Model Explorer
 		// caches mappings of elements in the tree to the content extensions that provided them using
 		// EvalutationReferences [sic] that are SoftReferences
 
 		// This is a really gross HACK and runs the risk that some other thread(s) also may see OOMEs!
 		try {
 			List<Object[]> hog = Lists.newLinkedList();
-			for(;;) {
+			for (;;) {
 				hog.add(new Object[getLargeMemorySize()]);
 			}
 		} catch (OutOfMemoryError e) {
-			// Good!  The JVM guarantees that all soft references are cleared before throwing OOME,
+			// Good! The JVM guarantees that all soft references are cleared before throwing OOME,
 			// so we can be assured that they are now cleared
 		} finally {
-			if(warmingUp) {
+			if (warmingUp) {
 				// We have successfully warmed up the soft-references hack
 				WARMED_UP_SUITES.put(testClass, true);
 			}
@@ -252,10 +259,17 @@ public class MemoryLeakRule extends TestWatcher {
 		// always fail, so run such a test once up-front. Call this a metahack
 
 		try {
+			debug("Warming up test suite: %s (%s)%n", testClass.getName(), testName);
 			new JUnitCore().run(Request.method(testClass, testName));
 		} catch (Exception e) {
 			// Fine, so the warm-up didn't work
 			e.printStackTrace();
+		}
+	}
+
+	private static void debug(String format, Object... args) {
+		if (DEBUG) {
+			System.err.printf("[MEM] " + format, args);
 		}
 	}
 

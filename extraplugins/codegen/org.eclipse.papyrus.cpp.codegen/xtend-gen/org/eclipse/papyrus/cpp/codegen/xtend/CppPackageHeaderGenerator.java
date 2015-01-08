@@ -1,14 +1,11 @@
 package org.eclipse.papyrus.cpp.codegen.xtend;
 
-import com.google.common.base.Objects;
-import org.eclipse.core.resources.IContainer;
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.papyrus.acceleo.GenUtils;
+import org.eclipse.papyrus.codegen.base.GenUtils;
 import org.eclipse.papyrus.cpp.codegen.preferences.CppCodeGenUtils;
 import org.eclipse.papyrus.cpp.codegen.utils.CppGenUtils;
 import org.eclipse.papyrus.cpp.codegen.xtend.CppClassIncludeClassDeclaration;
 import org.eclipse.papyrus.cpp.codegen.xtend.CppClassTypeAndEnum;
-import org.eclipse.papyrus.cpp.codegen.xtend.CppFileGenerator;
 import org.eclipse.papyrus.cpp.codegen.xtend.CppIncludeUtil;
 import org.eclipse.xtend2.lib.StringConcatenation;
 
@@ -16,18 +13,8 @@ import org.eclipse.xtend2.lib.StringConcatenation;
  * @author Önder GÜRCAN (onder.gurcan@cea.fr)
  */
 @SuppressWarnings("all")
-public class CppPackageHeaderGenerator extends CppFileGenerator {
-  public static void generate(final IContainer packageContainer, final org.eclipse.uml2.uml.Package pkg) {
-    String _name = pkg.getName();
-    String _plus = ("Pkg_" + _name);
-    String _plus_1 = (_plus + ".");
-    String _headerSuffix = CppCodeGenUtils.getHeaderSuffix();
-    final String fileName = (_plus_1 + _headerSuffix);
-    String _generateCode = CppPackageHeaderGenerator.generateCode(pkg);
-    CppFileGenerator.generateFile(packageContainer, fileName, _generateCode, true);
-  }
-  
-  public static String generateCode(final org.eclipse.uml2.uml.Package pkg) {
+public class CppPackageHeaderGenerator {
+  public static CharSequence generateCode(final org.eclipse.uml2.uml.Package pkg) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("#ifndef PKG_");
     String _fullNameUC = GenUtils.getFullNameUC(pkg);
@@ -105,14 +92,6 @@ public class CppPackageHeaderGenerator extends CppFileGenerator {
     _builder.newLine();
     _builder.append("// Types defined within the package");
     _builder.newLine();
-    {
-      String _name_2 = pkg.getName();
-      boolean _equals = Objects.equal(_name_2, "root");
-      if (_equals) {
-        int x = 0;
-        _builder.newLineIfNotEmpty();
-      }
-    }
     CharSequence _CppClassTypeAndEnumPackage = CppClassTypeAndEnum.CppClassTypeAndEnumPackage(pkg);
     _builder.append(_CppClassTypeAndEnumPackage, "");
     _builder.newLineIfNotEmpty();
@@ -124,8 +103,8 @@ public class CppPackageHeaderGenerator extends CppFileGenerator {
     _builder.newLine();
     _builder.append("              ");
     _builder.append("End of Pkg_");
-    String _name_3 = pkg.getName();
-    _builder.append(_name_3, "              ");
+    String _name_2 = pkg.getName();
+    _builder.append(_name_2, "              ");
     _builder.append(" package header");
     _builder.newLineIfNotEmpty();
     _builder.append(" ");
@@ -133,7 +112,7 @@ public class CppPackageHeaderGenerator extends CppFileGenerator {
     _builder.newLine();
     _builder.newLine();
     _builder.append("#endif");
-    final String code = _builder.toString();
-    return code;
+    _builder.newLine();
+    return _builder;
   }
 }

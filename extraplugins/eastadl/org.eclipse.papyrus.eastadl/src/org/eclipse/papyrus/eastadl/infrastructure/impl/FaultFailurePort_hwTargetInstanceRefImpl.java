@@ -85,9 +85,8 @@ public class FaultFailurePort_hwTargetInstanceRefImpl extends InstanceRefImpl im
 			InternalEObject oldHardwarePort = (InternalEObject) hardwarePort;
 			hardwarePort = (HardwarePin) eResolveProxy(oldHardwarePort);
 			if (hardwarePort != oldHardwarePort) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InfrastructurePackage.FAULT_FAILURE_PORT_HW_TARGET_INSTANCE_REF__HARDWARE_PORT, oldHardwarePort, hardwarePort));
-				}
 			}
 		}
 		return hardwarePort;
@@ -113,9 +112,8 @@ public class FaultFailurePort_hwTargetInstanceRefImpl extends InstanceRefImpl im
 	public void setHardwarePort(HardwarePin newHardwarePort) {
 		HardwarePin oldHardwarePort = hardwarePort;
 		hardwarePort = newHardwarePort;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, InfrastructurePackage.FAULT_FAILURE_PORT_HW_TARGET_INSTANCE_REF__HARDWARE_PORT, oldHardwarePort, hardwarePort));
-		}
 	}
 
 	/**
@@ -142,9 +140,8 @@ public class FaultFailurePort_hwTargetInstanceRefImpl extends InstanceRefImpl im
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case InfrastructurePackage.FAULT_FAILURE_PORT_HW_TARGET_INSTANCE_REF__HARDWARE_PORT:
-			if (resolve) {
+			if (resolve)
 				return getHardwarePort();
-			}
 			return basicGetHardwarePort();
 		case InfrastructurePackage.FAULT_FAILURE_PORT_HW_TARGET_INSTANCE_REF__HARDWARE_COMPONENT_PROTYPE:
 			return getHardwareComponentProtype();

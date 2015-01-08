@@ -294,80 +294,62 @@ public class BehaviorSwitch<T> extends Switch<T> {
 		case BehaviorPackage.FUNCTION_BEHAVIOR: {
 			FunctionBehavior functionBehavior = (FunctionBehavior) theEObject;
 			T result = caseFunctionBehavior(functionBehavior);
-			if (result == null) {
+			if (result == null)
 				result = caseContext(functionBehavior);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPackageableElement(functionBehavior);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(functionBehavior);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case BehaviorPackage.BEHAVIOR: {
 			Behavior behavior = (Behavior) theEObject;
 			T result = caseBehavior(behavior);
-			if (result == null) {
+			if (result == null)
 				result = caseContext(behavior);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPackageableElement(behavior);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(behavior);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case BehaviorPackage.FUNCTION_TRIGGER: {
 			FunctionTrigger functionTrigger = (FunctionTrigger) theEObject;
 			T result = caseFunctionTrigger(functionTrigger);
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(functionTrigger);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAExpression(functionTrigger);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAValue(functionTrigger);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case BehaviorPackage.MODE_GROUP: {
 			ModeGroup modeGroup = (ModeGroup) theEObject;
 			T result = caseModeGroup(modeGroup);
-			if (result == null) {
+			if (result == null)
 				result = caseTraceableSpecification(modeGroup);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPackageableElement(modeGroup);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(modeGroup);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case BehaviorPackage.MODE: {
 			Mode mode = (Mode) theEObject;
 			T result = caseMode(mode);
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(mode);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		default:

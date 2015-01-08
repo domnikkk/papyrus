@@ -30,6 +30,7 @@ import org.eclipse.uml2.uml.Profile;
  *
  *
  */
+@SuppressWarnings("restriction")
 public class CreateEMFValidationProject extends NewPluginProjectWizard {
 
 	private static final String GENERATION_MESSAGE = "Generation of EMF Validation Plugin";

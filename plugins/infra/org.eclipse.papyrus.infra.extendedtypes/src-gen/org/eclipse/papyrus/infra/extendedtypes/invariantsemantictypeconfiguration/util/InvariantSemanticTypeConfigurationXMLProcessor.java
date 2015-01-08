@@ -23,7 +23,6 @@ import org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguratio
  * This class contains helper methods to serialize and deserialize XML documents
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- *
  * @generated
  */
 public class InvariantSemanticTypeConfigurationXMLProcessor extends XMLProcessor {
@@ -32,7 +31,6 @@ public class InvariantSemanticTypeConfigurationXMLProcessor extends XMLProcessor
 	 * Public constructor to instantiate the helper.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public InvariantSemanticTypeConfigurationXMLProcessor() {
@@ -44,7 +42,6 @@ public class InvariantSemanticTypeConfigurationXMLProcessor extends XMLProcessor
 	 * Register for "*" and "xml" file extensions the InvariantSemanticTypeConfigurationResourceFactoryImpl factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override

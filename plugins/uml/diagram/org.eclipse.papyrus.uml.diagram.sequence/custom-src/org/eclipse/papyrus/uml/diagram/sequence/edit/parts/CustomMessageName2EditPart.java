@@ -21,6 +21,7 @@ import org.eclipse.gmf.runtime.notation.FontStyle;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.IMaskManagedLabelEditPolicy;
+import org.eclipse.papyrus.uml.diagram.common.editpolicies.IDirectEdition;
 import org.eclipse.papyrus.uml.diagram.common.helper.NotificationHelper;
 import org.eclipse.papyrus.uml.diagram.common.providers.UIAdapterImpl;
 import org.eclipse.papyrus.uml.diagram.sequence.edit.policies.MessageLabelEditPolicy.ICustomMessageLabel;
@@ -57,6 +58,11 @@ public class CustomMessageName2EditPart extends MessageName2EditPart implements 
 	 */
 	public CustomMessageName2EditPart(View view) {
 		super(view);
+	}
+
+	@Override
+	public int getDirectEditionType() {
+		return IDirectEdition.DEFAULT_DIRECT_EDITOR;
 	}
 
 	/**

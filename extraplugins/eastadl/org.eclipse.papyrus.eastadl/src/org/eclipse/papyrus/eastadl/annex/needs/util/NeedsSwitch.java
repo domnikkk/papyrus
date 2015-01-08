@@ -355,167 +355,130 @@ public class NeedsSwitch<T> extends Switch<T> {
 		case NeedsPackage.STAKEHOLDER: {
 			Stakeholder stakeholder = (Stakeholder) theEObject;
 			T result = caseStakeholder(stakeholder);
-			if (result == null) {
+			if (result == null)
 				result = caseTraceableSpecification(stakeholder);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPackageableElement(stakeholder);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(stakeholder);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case NeedsPackage.STAKEHOLDER_NEED: {
 			StakeholderNeed stakeholderNeed = (StakeholderNeed) theEObject;
 			T result = caseStakeholderNeed(stakeholderNeed);
-			if (result == null) {
+			if (result == null)
 				result = caseTraceableSpecification(stakeholderNeed);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPackageableElement(stakeholderNeed);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(stakeholderNeed);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case NeedsPackage.PROBLEM_STATEMENT: {
 			ProblemStatement problemStatement = (ProblemStatement) theEObject;
 			T result = caseProblemStatement(problemStatement);
-			if (result == null) {
+			if (result == null)
 				result = caseTraceableSpecification(problemStatement);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPackageableElement(problemStatement);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(problemStatement);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case NeedsPackage.PRODUCT_POSITIONING: {
 			ProductPositioning productPositioning = (ProductPositioning) theEObject;
 			T result = caseProductPositioning(productPositioning);
-			if (result == null) {
+			if (result == null)
 				result = caseTraceableSpecification(productPositioning);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPackageableElement(productPositioning);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(productPositioning);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case NeedsPackage.BUSINESS_OPPORTUNITY: {
 			BusinessOpportunity businessOpportunity = (BusinessOpportunity) theEObject;
 			T result = caseBusinessOpportunity(businessOpportunity);
-			if (result == null) {
+			if (result == null)
 				result = caseTraceableSpecification(businessOpportunity);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPackageableElement(businessOpportunity);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(businessOpportunity);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case NeedsPackage.CONCEPT: {
 			Concept concept = (Concept) theEObject;
 			T result = caseConcept(concept);
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(concept);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case NeedsPackage.MISSION: {
 			Mission mission = (Mission) theEObject;
 			T result = caseMission(mission);
-			if (result == null) {
+			if (result == null)
 				result = caseConcept(mission);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(mission);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case NeedsPackage.VEHICLE_SYSTEM: {
 			VehicleSystem vehicleSystem = (VehicleSystem) theEObject;
 			T result = caseVehicleSystem(vehicleSystem);
-			if (result == null) {
+			if (result == null)
 				result = caseConcept(vehicleSystem);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(vehicleSystem);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case NeedsPackage.ARCHITECTURE: {
 			Architecture architecture = (Architecture) theEObject;
 			T result = caseArchitecture(architecture);
-			if (result == null) {
+			if (result == null)
 				result = caseConcept(architecture);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(architecture);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case NeedsPackage.ARCHITECTURAL_DESCRIPTION: {
 			ArchitecturalDescription architecturalDescription = (ArchitecturalDescription) theEObject;
 			T result = caseArchitecturalDescription(architecturalDescription);
-			if (result == null) {
+			if (result == null)
 				result = caseConcept(architecturalDescription);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(architecturalDescription);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case NeedsPackage.ARCHITECTURAL_MODEL: {
 			ArchitecturalModel architecturalModel = (ArchitecturalModel) theEObject;
 			T result = caseArchitecturalModel(architecturalModel);
-			if (result == null) {
+			if (result == null)
 				result = caseConcept(architecturalModel);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(architecturalModel);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		default:

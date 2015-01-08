@@ -91,7 +91,7 @@ public class SafetyconstraintsFactoryImpl extends EFactoryImpl implements Safety
 		case SafetyconstraintsPackage.ASIL_KIND:
 			return convertASILKindToString(eDataType, instanceValue);
 		default:
-			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 	}
 
@@ -111,7 +111,7 @@ public class SafetyconstraintsFactoryImpl extends EFactoryImpl implements Safety
 		case SafetyconstraintsPackage.QUANTITATIVE_SAFETY_CONSTRAINT:
 			return createQuantitativeSafetyConstraint();
 		default:
-			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 	}
 
@@ -139,7 +139,7 @@ public class SafetyconstraintsFactoryImpl extends EFactoryImpl implements Safety
 		case SafetyconstraintsPackage.ASIL_KIND:
 			return createASILKindFromString(eDataType, initialValue);
 		default:
-			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 	}
 
@@ -163,9 +163,8 @@ public class SafetyconstraintsFactoryImpl extends EFactoryImpl implements Safety
 	 */
 	public ASILKind createASILKindFromString(EDataType eDataType, String initialValue) {
 		ASILKind result = ASILKind.get(initialValue);
-		if (result == null) {
-			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		}
+		if (result == null)
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 		return result;
 	}
 

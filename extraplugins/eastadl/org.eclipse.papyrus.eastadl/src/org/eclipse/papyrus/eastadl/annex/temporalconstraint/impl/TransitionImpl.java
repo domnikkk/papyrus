@@ -124,9 +124,8 @@ public class TransitionImpl extends EAElementImpl implements Transition {
 			InternalEObject oldFrom = (InternalEObject) from;
 			from = (State) eResolveProxy(oldFrom);
 			if (from != oldFrom) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TemporalconstraintPackage.TRANSITION__FROM, oldFrom, from));
-				}
 			}
 		}
 		return from;
@@ -152,9 +151,8 @@ public class TransitionImpl extends EAElementImpl implements Transition {
 	public void setFrom(State newFrom) {
 		State oldFrom = from;
 		from = newFrom;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TemporalconstraintPackage.TRANSITION__FROM, oldFrom, from));
-		}
 	}
 
 	/**
@@ -169,9 +167,8 @@ public class TransitionImpl extends EAElementImpl implements Transition {
 			InternalEObject oldTo = (InternalEObject) to;
 			to = (State) eResolveProxy(oldTo);
 			if (to != oldTo) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TemporalconstraintPackage.TRANSITION__TO, oldTo, to));
-				}
 			}
 		}
 		return to;
@@ -197,9 +194,8 @@ public class TransitionImpl extends EAElementImpl implements Transition {
 	public void setTo(State newTo) {
 		State oldTo = to;
 		to = newTo;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TemporalconstraintPackage.TRANSITION__TO, oldTo, to));
-		}
 	}
 
 	/**
@@ -242,9 +238,8 @@ public class TransitionImpl extends EAElementImpl implements Transition {
 			InternalEObject oldEffect = (InternalEObject) effect;
 			effect = (TransformationOccurrence) eResolveProxy(oldEffect);
 			if (effect != oldEffect) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TemporalconstraintPackage.TRANSITION__EFFECT, oldEffect, effect));
-				}
 			}
 		}
 		return effect;
@@ -270,9 +265,8 @@ public class TransitionImpl extends EAElementImpl implements Transition {
 	public void setEffect(TransformationOccurrence newEffect) {
 		TransformationOccurrence oldEffect = effect;
 		effect = newEffect;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TemporalconstraintPackage.TRANSITION__EFFECT, oldEffect, effect));
-		}
 	}
 
 	/**
@@ -285,23 +279,20 @@ public class TransitionImpl extends EAElementImpl implements Transition {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case TemporalconstraintPackage.TRANSITION__FROM:
-			if (resolve) {
+			if (resolve)
 				return getFrom();
-			}
 			return basicGetFrom();
 		case TemporalconstraintPackage.TRANSITION__TO:
-			if (resolve) {
+			if (resolve)
 				return getTo();
-			}
 			return basicGetTo();
 		case TemporalconstraintPackage.TRANSITION__QUANTIFICATION_GUARD:
 			return getQuantificationGuard();
 		case TemporalconstraintPackage.TRANSITION__TIME_GUARD:
 			return getTimeGuard();
 		case TemporalconstraintPackage.TRANSITION__EFFECT:
-			if (resolve) {
+			if (resolve)
 				return getEffect();
-			}
 			return basicGetEffect();
 		}
 		return super.eGet(featureID, resolve, coreType);

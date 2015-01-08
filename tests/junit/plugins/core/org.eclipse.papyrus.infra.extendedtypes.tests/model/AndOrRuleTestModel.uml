@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ActionLanguage="http://www.omg.org/spec/ALF/20120827/ActionLanguage-Profile" xmlns:Profile="http:///schemas/Profile/_vZYQEFkzEeSvI-EAf9X-tw/0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http://www.omg.org/spec/ALF/20120827/ActionLanguage-Profile pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#_sYse0YZLEeKyw49uR6nx3g http:///schemas/Profile/_vZYQEFkzEeSvI-EAf9X-tw/0 AndOrRuleTestProfile.profile.uml#_vZYQElkzEeSvI-EAf9X-tw">
+  <uml:Model xmi:id="_34Gv4FkzEeSvI-EAf9X-tw" name="AndOrRuleTestModel">
+    <packagedElement xmi:type="uml:Class" xmi:id="_-hmMYFkzEeSvI-EAf9X-tw" name="ClassA">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_CulxQFk0EeSvI-EAf9X-tw" name="myPropertyInA" visibility="public" type="_AItUIFk0EeSvI-EAf9X-tw"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_IVbd8Fk0EeSvI-EAf9X-tw" name="myPropertyInANoSt" visibility="public" type="_AItUIFk0EeSvI-EAf9X-tw" isUnique="false">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_LZEOEFk0EeSvI-EAf9X-tw" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_LZEOEVk0EeSvI-EAf9X-tw" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_M0aKsFk0EeSvI-EAf9X-tw" name="myPropertyInAnoB" visibility="public" type="_RcLAAFk0EeSvI-EAf9X-tw" isUnique="false">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_VBb2gFk0EeSvI-EAf9X-tw" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_VBb2gVk0EeSvI-EAf9X-tw" value="1"/>
+      </ownedAttribute>
+      <nestedClassifier xmi:type="uml:Class" xmi:id="_lA9tsFnWEeShvc2PeK4eQw" name="ClassB1"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_RcLAAFk0EeSvI-EAf9X-tw" name="ClassC"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_lEvUEFnOEeS64p-znwuxpQ" name="ClassA1"/>
+    <packagedElement xmi:type="uml:Package" xmi:id="_ZzleAFnQEeS64p-znwuxpQ" name="Package1"/>
+    <packagedElement xmi:type="uml:Model" xmi:id="_epL7AFnQEeS64p-znwuxpQ" name="Model1">
+      <packagedElement xmi:type="uml:Class" xmi:id="_qKg7EFnOEeS64p-znwuxpQ" name="ClassA2">
+        <nestedClassifier xmi:type="uml:Class" xmi:id="_AItUIFk0EeSvI-EAf9X-tw" name="ClassB"/>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_oGZKYFnSEeS69P7whn9NKQ" name="ClassA3"/>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_8wrBUFkzEeSvI-EAf9X-tw">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_8xReQVkzEeSvI-EAf9X-tw" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_8xReQlkzEeSvI-EAf9X-tw" key="Version" value="0.0.1"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_8xReQ1kzEeSvI-EAf9X-tw" key="Comment" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_8xReRFkzEeSvI-EAf9X-tw" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_8xReRVkzEeSvI-EAf9X-tw" key="Date" value="2014-10-21"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_8xReRlkzEeSvI-EAf9X-tw" key="Author" value=""/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_8xReQFkzEeSvI-EAf9X-tw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="AndOrRuleTestProfile.profile.uml#_vZYQElkzEeSvI-EAf9X-tw"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="AndOrRuleTestProfile.profile.uml#_iyu4oFkzEeSvI-EAf9X-tw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_QNBsUFk0EeSvI-EAf9X-tw">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_QNniMFk0EeSvI-EAf9X-tw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#_sYse0YZLEeKyw49uR6nx3g"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#ActionLanguage"/>
+    </profileApplication>
+  </uml:Model>
+  <Profile:ClassA xmi:id="__Tb5AFkzEeSvI-EAf9X-tw" base_Class="_-hmMYFkzEeSvI-EAf9X-tw"/>
+  <Profile:ClassB xmi:id="_BSyhoFk0EeSvI-EAf9X-tw" base_Class="_AItUIFk0EeSvI-EAf9X-tw"/>
+  <Profile:MyPropertyInA xmi:id="_FL_n0Fk0EeSvI-EAf9X-tw" base_Property="_CulxQFk0EeSvI-EAf9X-tw"/>
+  <ActionLanguage:TextualRepresentation xmi:id="_QNniMVk0EeSvI-EAf9X-tw" language="org.eclipse.papyrus.uml.textedit.property.xtext.UmlProperty"/>
+  <Profile:MyPropertyInA xmi:id="_XiHDgFk0EeSvI-EAf9X-tw" base_Property="_M0aKsFk0EeSvI-EAf9X-tw"/>
+  <Profile:ClassA xmi:id="_oc-bMFnOEeS64p-znwuxpQ" base_Class="_lEvUEFnOEeS64p-znwuxpQ"/>
+  <Profile:ClassA xmi:id="_qKqsEFnOEeS64p-znwuxpQ" base_Class="_qKg7EFnOEeS64p-znwuxpQ"/>
+  <Profile:ClassA xmi:id="_oSDn0FnSEeS69P7whn9NKQ" base_Class="_oGZKYFnSEeS69P7whn9NKQ"/>
+  <Profile:ClassB xmi:id="_lv-v0FnWEeShvc2PeK4eQw" base_Class="_lA9tsFnWEeShvc2PeK4eQw"/>
+  <Profile:ClassB xmi:id="_v2QcQFnWEeShvc2PeK4eQw" base_Class="_RcLAAFk0EeSvI-EAf9X-tw"/>
+</xmi:XMI>

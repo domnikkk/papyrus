@@ -17,6 +17,9 @@
       <menuCreationModel
             model="model/TestMenu.xmi">
       </menuCreationModel>
+      <menuCreationModel
+            model="model/AndOrRuleTestMenu.xmi">
+      </menuCreationModel>
    </extension>
    <!--
    <extension

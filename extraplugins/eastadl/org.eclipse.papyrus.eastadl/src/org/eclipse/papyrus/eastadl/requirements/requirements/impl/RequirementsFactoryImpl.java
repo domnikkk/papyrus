@@ -90,7 +90,7 @@ public class RequirementsFactoryImpl extends EFactoryImpl implements Requirement
 		case RequirementsPackage.REQUIREMENTS_HIERARCHY:
 			return createRequirementsHierarchy();
 		default:
-			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 	}
 
@@ -106,7 +106,7 @@ public class RequirementsFactoryImpl extends EFactoryImpl implements Requirement
 		case RequirementsPackage.QUALITY_REQUIREMENT_KIND:
 			return createQualityRequirementKindFromString(eDataType, initialValue);
 		default:
-			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 	}
 
@@ -122,7 +122,7 @@ public class RequirementsFactoryImpl extends EFactoryImpl implements Requirement
 		case RequirementsPackage.QUALITY_REQUIREMENT_KIND:
 			return convertQualityRequirementKindToString(eDataType, instanceValue);
 		default:
-			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 	}
 
@@ -254,9 +254,8 @@ public class RequirementsFactoryImpl extends EFactoryImpl implements Requirement
 	 */
 	public QualityRequirementKind createQualityRequirementKindFromString(EDataType eDataType, String initialValue) {
 		QualityRequirementKind result = QualityRequirementKind.get(initialValue);
-		if (result == null) {
-			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		}
+		if (result == null)
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 		return result;
 	}
 

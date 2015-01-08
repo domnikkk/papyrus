@@ -42,6 +42,9 @@
   <modelElementFactories
       name="Profile definitions"
       factoryClass="org.eclipse.papyrus.uml.properties.modelelement.ProfileDefinitionModelElementFactory"/>
+  <modelElementFactories
+      name="Imported Package Model Element Factory"
+      factoryClass="org.eclipse.papyrus.uml.properties.modelelement.ImportedPackageModelElementFactory"/>
   <propertyEditorTypes
       label="ExpressionEditor"
       widgetClass="ExpressionEditor"

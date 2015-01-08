@@ -84,9 +84,8 @@ public class ErrorModelPrototype_functionTargetInstanceRefImpl extends InstanceR
 			InternalEObject oldFunctionPrototype = (InternalEObject) functionPrototype;
 			functionPrototype = (FunctionPrototype) eResolveProxy(oldFunctionPrototype);
 			if (functionPrototype != oldFunctionPrototype) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InfrastructurePackage.ERROR_MODEL_PROTOTYPE_FUNCTION_TARGET_INSTANCE_REF__FUNCTION_PROTOTYPE, oldFunctionPrototype, functionPrototype));
-				}
 			}
 		}
 		return functionPrototype;
@@ -112,9 +111,8 @@ public class ErrorModelPrototype_functionTargetInstanceRefImpl extends InstanceR
 	public void setFunctionPrototype(FunctionPrototype newFunctionPrototype) {
 		FunctionPrototype oldFunctionPrototype = functionPrototype;
 		functionPrototype = newFunctionPrototype;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, InfrastructurePackage.ERROR_MODEL_PROTOTYPE_FUNCTION_TARGET_INSTANCE_REF__FUNCTION_PROTOTYPE, oldFunctionPrototype, functionPrototype));
-		}
 	}
 
 	/**
@@ -141,9 +139,8 @@ public class ErrorModelPrototype_functionTargetInstanceRefImpl extends InstanceR
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case InfrastructurePackage.ERROR_MODEL_PROTOTYPE_FUNCTION_TARGET_INSTANCE_REF__FUNCTION_PROTOTYPE:
-			if (resolve) {
+			if (resolve)
 				return getFunctionPrototype();
-			}
 			return basicGetFunctionPrototype();
 		case InfrastructurePackage.ERROR_MODEL_PROTOTYPE_FUNCTION_TARGET_INSTANCE_REF__FUNCTION_PROTOTYPE_CONTEXT:
 			return getFunctionPrototype_context();

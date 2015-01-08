@@ -17,10 +17,8 @@ Bundle-ClassPath: .
 Bundle-Version: 1.0.1.qualifier
 Bundle-Localization: plugin
 Bundle-Name: %pluginName
-Bundle-Activator: org.eclipse.papyrus.infra.extendedtypes.provider.Ext
- endedTypesEditPlugin$Implementation
+Bundle-Activator: org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.provider.InvariantSemanticTypeConfigurationEditPlugin$Implementation
 Bundle-ManifestVersion: 2
-Bundle-SymbolicName: org.eclipse.papyrus.infra.extendedtypes.edit;sing
- leton:=true
+Bundle-SymbolicName: org.eclipse.papyrus.infra.extendedtypes.edit;singleton:=true
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 

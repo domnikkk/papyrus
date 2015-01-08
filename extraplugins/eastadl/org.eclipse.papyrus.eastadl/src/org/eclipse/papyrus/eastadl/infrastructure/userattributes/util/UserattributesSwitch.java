@@ -193,42 +193,35 @@ public class UserattributesSwitch<T> extends Switch<T> {
 		case UserattributesPackage.USER_ATTRIBUTE_ELEMENT_TYPE: {
 			UserAttributeElementType userAttributeElementType = (UserAttributeElementType) theEObject;
 			T result = caseUserAttributeElementType(userAttributeElementType);
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(userAttributeElementType);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case UserattributesPackage.USER_ATTRIBUTE_DEFINITION: {
 			UserAttributeDefinition userAttributeDefinition = (UserAttributeDefinition) theEObject;
 			T result = caseUserAttributeDefinition(userAttributeDefinition);
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(userAttributeDefinition);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case UserattributesPackage.USER_ATTRIBUTEABLE_ELEMENT: {
 			UserAttributeableElement userAttributeableElement = (UserAttributeableElement) theEObject;
 			T result = caseUserAttributeableElement(userAttributeableElement);
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case UserattributesPackage.USER_ATTRIBUTE_VALUE: {
 			UserAttributeValue userAttributeValue = (UserAttributeValue) theEObject;
 			T result = caseUserAttributeValue(userAttributeValue);
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(userAttributeValue);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		default:

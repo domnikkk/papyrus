@@ -40,11 +40,17 @@ public class StateCompartmentItemSemanticEditPolicy extends UMLBaseItemSemanticE
 		if (requestElementType == null) {
 			return super.getCreateCommand(req);
 		}
+
+
 		if (UMLElementTypes.Region_3000 == requestElementType) {
+
 			return getGEFWrapper(new RegionCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
+
 		}
 		if (UMLElementTypes.ConnectionPointReference_18000 == requestElementType) {
+
 			return getGEFWrapper(new ConnectionPointReferenceCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
+
 		}
 		return super.getCreateCommand(req);
 	}

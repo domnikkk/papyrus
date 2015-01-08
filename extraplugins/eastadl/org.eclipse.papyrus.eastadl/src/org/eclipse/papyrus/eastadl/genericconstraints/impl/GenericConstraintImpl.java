@@ -143,23 +143,20 @@ public class GenericConstraintImpl extends TraceableSpecificationImpl implements
 		case GenericconstraintsPackage.GENERIC_CONSTRAINT__KIND:
 			return getKind();
 		case GenericconstraintsPackage.GENERIC_CONSTRAINT__BASE_CONSTRAINT:
-			if (resolve) {
+			if (resolve)
 				return getBase_Constraint();
-			}
 			return basicGetBase_Constraint();
 		case GenericconstraintsPackage.GENERIC_CONSTRAINT__BASE_CLASS:
-			if (resolve) {
+			if (resolve)
 				return getBase_Class();
-			}
 			return basicGetBase_Class();
 		case GenericconstraintsPackage.GENERIC_CONSTRAINT__TARGET:
 			return getTarget();
 		case GenericconstraintsPackage.GENERIC_CONSTRAINT__MODE:
 			return getMode();
 		case GenericconstraintsPackage.GENERIC_CONSTRAINT__VALUE:
-			if (resolve) {
+			if (resolve)
 				return getValue();
-			}
 			return basicGetValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -253,9 +250,8 @@ public class GenericConstraintImpl extends TraceableSpecificationImpl implements
 	public void setKind(GenericConstraintKind newKind) {
 		GenericConstraintKind oldKind = kind;
 		kind = newKind == null ? KIND_EDEFAULT : newKind;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, GenericconstraintsPackage.GENERIC_CONSTRAINT__KIND, oldKind, kind));
-		}
 	}
 
 	/**
@@ -361,9 +357,8 @@ public class GenericConstraintImpl extends TraceableSpecificationImpl implements
 			InternalEObject oldBase_Constraint = (InternalEObject) base_Constraint;
 			base_Constraint = (Constraint) eResolveProxy(oldBase_Constraint);
 			if (base_Constraint != oldBase_Constraint) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, GenericconstraintsPackage.GENERIC_CONSTRAINT__BASE_CONSTRAINT, oldBase_Constraint, base_Constraint));
-				}
 			}
 		}
 		return base_Constraint;
@@ -389,9 +384,8 @@ public class GenericConstraintImpl extends TraceableSpecificationImpl implements
 	public void setBase_Constraint(Constraint newBase_Constraint) {
 		Constraint oldBase_Constraint = base_Constraint;
 		base_Constraint = newBase_Constraint;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, GenericconstraintsPackage.GENERIC_CONSTRAINT__BASE_CONSTRAINT, oldBase_Constraint, base_Constraint));
-		}
 	}
 
 	/**
@@ -406,9 +400,8 @@ public class GenericConstraintImpl extends TraceableSpecificationImpl implements
 			InternalEObject oldBase_Class = (InternalEObject) base_Class;
 			base_Class = (org.eclipse.uml2.uml.Class) eResolveProxy(oldBase_Class);
 			if (base_Class != oldBase_Class) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, GenericconstraintsPackage.GENERIC_CONSTRAINT__BASE_CLASS, oldBase_Class, base_Class));
-				}
 			}
 		}
 		return base_Class;
@@ -434,9 +427,8 @@ public class GenericConstraintImpl extends TraceableSpecificationImpl implements
 	public void setBase_Class(org.eclipse.uml2.uml.Class newBase_Class) {
 		org.eclipse.uml2.uml.Class oldBase_Class = base_Class;
 		base_Class = newBase_Class;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, GenericconstraintsPackage.GENERIC_CONSTRAINT__BASE_CLASS, oldBase_Class, base_Class));
-		}
 	}
 
 	/**
@@ -447,12 +439,11 @@ public class GenericConstraintImpl extends TraceableSpecificationImpl implements
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
+		if (eIsProxy())
 			return super.toString();
-		}
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (kind: ");
+		result.append(" (kind: "); //$NON-NLS-1$
 		result.append(kind);
 		result.append(')');
 		return result.toString();

@@ -142,7 +142,7 @@ public class DependabilityFactoryImpl extends EFactoryImpl implements Dependabil
 		case DependabilityPackage.DEVELOPMENT_CATEGORY_KIND:
 			return convertDevelopmentCategoryKindToString(eDataType, instanceValue);
 		default:
-			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 	}
 
@@ -166,7 +166,7 @@ public class DependabilityFactoryImpl extends EFactoryImpl implements Dependabil
 		case DependabilityPackage.DEPENDABILITY:
 			return createDependability();
 		default:
-			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 	}
 
@@ -178,9 +178,8 @@ public class DependabilityFactoryImpl extends EFactoryImpl implements Dependabil
 	 */
 	public ControllabilityClassKind createControllabilityClassKindFromString(EDataType eDataType, String initialValue) {
 		ControllabilityClassKind result = ControllabilityClassKind.get(initialValue);
-		if (result == null) {
-			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		}
+		if (result == null)
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 		return result;
 	}
 
@@ -204,9 +203,8 @@ public class DependabilityFactoryImpl extends EFactoryImpl implements Dependabil
 	 */
 	public DevelopmentCategoryKind createDevelopmentCategoryKindFromString(EDataType eDataType, String initialValue) {
 		DevelopmentCategoryKind result = DevelopmentCategoryKind.get(initialValue);
-		if (result == null) {
-			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		}
+		if (result == null)
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 		return result;
 	}
 
@@ -218,9 +216,8 @@ public class DependabilityFactoryImpl extends EFactoryImpl implements Dependabil
 	 */
 	public ExposureClassKind createExposureClassKindFromString(EDataType eDataType, String initialValue) {
 		ExposureClassKind result = ExposureClassKind.get(initialValue);
-		if (result == null) {
-			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		}
+		if (result == null)
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 		return result;
 	}
 
@@ -254,7 +251,7 @@ public class DependabilityFactoryImpl extends EFactoryImpl implements Dependabil
 		case DependabilityPackage.DEVELOPMENT_CATEGORY_KIND:
 			return createDevelopmentCategoryKindFromString(eDataType, initialValue);
 		default:
-			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 	}
 
@@ -302,9 +299,8 @@ public class DependabilityFactoryImpl extends EFactoryImpl implements Dependabil
 	 */
 	public SeverityClassKind createSeverityClassKindFromString(EDataType eDataType, String initialValue) {
 		SeverityClassKind result = SeverityClassKind.get(initialValue);
-		if (result == null) {
-			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		}
+		if (result == null)
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 		return result;
 	}
 

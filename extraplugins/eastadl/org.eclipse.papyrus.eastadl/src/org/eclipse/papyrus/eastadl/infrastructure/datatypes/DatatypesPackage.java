@@ -42,6 +42,7 @@ import org.eclipse.papyrus.eastadl.infrastructure.elements.ElementsPackage;
  *
  * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.DatatypesFactory
  * @model kind="package"
+ *        annotation="http://www.eclipse.org/uml2/2.0.0/UML originalName='Datatypes'"
  * @generated
  */
 public interface DatatypesPackage extends EPackage {
@@ -2258,6 +2259,7 @@ public interface DatatypesPackage extends EPackage {
 	 * @return the meta object for data type '<em>javalang Float</em>'.
 	 * @see java.lang.Float
 	 * @model instanceClass="java.lang.Float"
+	 *        annotation="http://www.eclipse.org/uml2/2.0.0/UML originalName='java.lang.Float'"
 	 * @generated
 	 */
 	EDataType getjavalangFloat();

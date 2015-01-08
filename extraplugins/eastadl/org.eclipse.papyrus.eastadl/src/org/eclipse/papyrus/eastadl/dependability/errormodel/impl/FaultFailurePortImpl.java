@@ -103,9 +103,8 @@ public abstract class FaultFailurePortImpl extends AnomalyImpl implements FaultF
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case ErrormodelPackage.FAULT_FAILURE_PORT__BASE_PORT:
-			if (resolve) {
+			if (resolve)
 				return getBase_Port();
-			}
 			return basicGetBase_Port();
 		case ErrormodelPackage.FAULT_FAILURE_PORT__FUNCTION_TARGET:
 			return getFunctionTarget();
@@ -220,9 +219,8 @@ public abstract class FaultFailurePortImpl extends AnomalyImpl implements FaultF
 			InternalEObject oldBase_Port = (InternalEObject) base_Port;
 			base_Port = (Port) eResolveProxy(oldBase_Port);
 			if (base_Port != oldBase_Port) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ErrormodelPackage.FAULT_FAILURE_PORT__BASE_PORT, oldBase_Port, base_Port));
-				}
 			}
 		}
 		return base_Port;
@@ -248,9 +246,8 @@ public abstract class FaultFailurePortImpl extends AnomalyImpl implements FaultF
 	public void setBase_Port(Port newBase_Port) {
 		Port oldBase_Port = base_Port;
 		base_Port = newBase_Port;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ErrormodelPackage.FAULT_FAILURE_PORT__BASE_PORT, oldBase_Port, base_Port));
-		}
 	}
 
 	/**

@@ -83,9 +83,8 @@ public class AnalysisFunctionPrototypeImpl extends FunctionPrototypeImpl impleme
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case FunctionmodelingPackage.ANALYSIS_FUNCTION_PROTOTYPE__TYPE:
-			if (resolve) {
+			if (resolve)
 				return getType();
-			}
 			return basicGetType();
 		}
 		return super.eGet(featureID, resolve, coreType);

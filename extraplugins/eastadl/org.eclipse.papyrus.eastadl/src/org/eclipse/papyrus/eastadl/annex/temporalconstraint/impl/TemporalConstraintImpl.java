@@ -193,9 +193,8 @@ public class TemporalConstraintImpl extends EAElementImpl implements TemporalCon
 			InternalEObject oldInitState = (InternalEObject) initState;
 			initState = (State) eResolveProxy(oldInitState);
 			if (initState != oldInitState) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TemporalconstraintPackage.TEMPORAL_CONSTRAINT__INIT_STATE, oldInitState, initState));
-				}
 			}
 		}
 		return initState;
@@ -221,9 +220,8 @@ public class TemporalConstraintImpl extends EAElementImpl implements TemporalCon
 	public void setInitState(State newInitState) {
 		State oldInitState = initState;
 		initState = newInitState;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TemporalconstraintPackage.TEMPORAL_CONSTRAINT__INIT_STATE, oldInitState, initState));
-		}
 	}
 
 	/**
@@ -238,9 +236,8 @@ public class TemporalConstraintImpl extends EAElementImpl implements TemporalCon
 			InternalEObject oldAssertion = (InternalEObject) assertion;
 			assertion = (EAExpression) eResolveProxy(oldAssertion);
 			if (assertion != oldAssertion) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TemporalconstraintPackage.TEMPORAL_CONSTRAINT__ASSERTION, oldAssertion, assertion));
-				}
 			}
 		}
 		return assertion;
@@ -266,9 +263,8 @@ public class TemporalConstraintImpl extends EAElementImpl implements TemporalCon
 	public void setAssertion(EAExpression newAssertion) {
 		EAExpression oldAssertion = assertion;
 		assertion = newAssertion;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TemporalconstraintPackage.TEMPORAL_CONSTRAINT__ASSERTION, oldAssertion, assertion));
-		}
 	}
 
 	/**
@@ -289,14 +285,12 @@ public class TemporalConstraintImpl extends EAElementImpl implements TemporalCon
 		case TemporalconstraintPackage.TEMPORAL_CONSTRAINT__STATE:
 			return getState();
 		case TemporalconstraintPackage.TEMPORAL_CONSTRAINT__INIT_STATE:
-			if (resolve) {
+			if (resolve)
 				return getInitState();
-			}
 			return basicGetInitState();
 		case TemporalconstraintPackage.TEMPORAL_CONSTRAINT__ASSERTION:
-			if (resolve) {
+			if (resolve)
 				return getAssertion();
-			}
 			return basicGetAssertion();
 		}
 		return super.eGet(featureID, resolve, coreType);

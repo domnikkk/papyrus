@@ -69,9 +69,8 @@ public class EventFaultFailureImpl extends EventImpl implements EventFaultFailur
 			InternalEObject oldFaultFailure = (InternalEObject) faultFailure;
 			faultFailure = (FaultFailure) eResolveProxy(oldFaultFailure);
 			if (faultFailure != oldFaultFailure) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EventsPackage.EVENT_FAULT_FAILURE__FAULT_FAILURE, oldFaultFailure, faultFailure));
-				}
 			}
 		}
 		return faultFailure;
@@ -97,9 +96,8 @@ public class EventFaultFailureImpl extends EventImpl implements EventFaultFailur
 	public void setFaultFailure(FaultFailure newFaultFailure) {
 		FaultFailure oldFaultFailure = faultFailure;
 		faultFailure = newFaultFailure;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EventsPackage.EVENT_FAULT_FAILURE__FAULT_FAILURE, oldFaultFailure, faultFailure));
-		}
 	}
 
 	/**
@@ -112,9 +110,8 @@ public class EventFaultFailureImpl extends EventImpl implements EventFaultFailur
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case EventsPackage.EVENT_FAULT_FAILURE__FAULT_FAILURE:
-			if (resolve) {
+			if (resolve)
 				return getFaultFailure();
-			}
 			return basicGetFaultFailure();
 		}
 		return super.eGet(featureID, resolve, coreType);

@@ -30,13 +30,11 @@ import org.eclipse.core.databinding.validation.IValidator;
 import org.eclipse.emf.databinding.EMFProperties;
 import org.eclipse.emf.databinding.FeaturePath;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.edit.domain.EditingDomain;
-import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.papyrus.infra.emf.providers.EMFGraphicalContentProvider;
 import org.eclipse.papyrus.infra.emf.providers.EMFLabelProvider;
@@ -168,15 +166,6 @@ public class UMLModelElement extends EMFModelElement {
 		}
 
 		return new UMLContentProvider(source, feature);
-	}
-
-	@Override
-	public ILabelProvider getLabelProvider(String propertyPath) {
-		EStructuralFeature feature = getFeature(propertyPath);
-		if (feature != null && feature.getEType() instanceof EEnum) {
-			return super.getLabelProvider(propertyPath);
-		}
-		return new UMLFilteredLabelProvider();
 	}
 
 	@Override

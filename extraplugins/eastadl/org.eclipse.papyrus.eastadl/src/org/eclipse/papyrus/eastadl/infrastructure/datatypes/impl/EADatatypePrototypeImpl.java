@@ -126,19 +126,16 @@ public class EADatatypePrototypeImpl extends EAElementImpl implements EADatatype
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case DatatypesPackage.EA_DATATYPE_PROTOTYPE__TYPE:
-			if (resolve) {
+			if (resolve)
 				return getType();
-			}
 			return basicGetType();
 		case DatatypesPackage.EA_DATATYPE_PROTOTYPE__BASE_PROPERTY:
-			if (resolve) {
+			if (resolve)
 				return getBase_Property();
-			}
 			return basicGetBase_Property();
 		case DatatypesPackage.EA_DATATYPE_PROTOTYPE__BASE_PARAMETER:
-			if (resolve) {
+			if (resolve)
 				return getBase_Parameter();
-			}
 			return basicGetBase_Parameter();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -230,9 +227,8 @@ public class EADatatypePrototypeImpl extends EAElementImpl implements EADatatype
 			InternalEObject oldBase_Parameter = (InternalEObject) base_Parameter;
 			base_Parameter = (Parameter) eResolveProxy(oldBase_Parameter);
 			if (base_Parameter != oldBase_Parameter) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DatatypesPackage.EA_DATATYPE_PROTOTYPE__BASE_PARAMETER, oldBase_Parameter, base_Parameter));
-				}
 			}
 		}
 		return base_Parameter;
@@ -250,9 +246,8 @@ public class EADatatypePrototypeImpl extends EAElementImpl implements EADatatype
 			InternalEObject oldBase_Property = (InternalEObject) base_Property;
 			base_Property = (Property) eResolveProxy(oldBase_Property);
 			if (base_Property != oldBase_Property) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DatatypesPackage.EA_DATATYPE_PROTOTYPE__BASE_PROPERTY, oldBase_Property, base_Property));
-				}
 			}
 		}
 		return base_Property;
@@ -270,9 +265,8 @@ public class EADatatypePrototypeImpl extends EAElementImpl implements EADatatype
 			InternalEObject oldType = (InternalEObject) type;
 			type = (EADatatype) eResolveProxy(oldType);
 			if (type != oldType) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DatatypesPackage.EA_DATATYPE_PROTOTYPE__TYPE, oldType, type));
-				}
 			}
 		}
 		return type;
@@ -288,9 +282,8 @@ public class EADatatypePrototypeImpl extends EAElementImpl implements EADatatype
 	public void setBase_Parameter(Parameter newBase_Parameter) {
 		Parameter oldBase_Parameter = base_Parameter;
 		base_Parameter = newBase_Parameter;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.EA_DATATYPE_PROTOTYPE__BASE_PARAMETER, oldBase_Parameter, base_Parameter));
-		}
 	}
 
 	/**
@@ -303,9 +296,8 @@ public class EADatatypePrototypeImpl extends EAElementImpl implements EADatatype
 	public void setBase_Property(Property newBase_Property) {
 		Property oldBase_Property = base_Property;
 		base_Property = newBase_Property;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.EA_DATATYPE_PROTOTYPE__BASE_PROPERTY, oldBase_Property, base_Property));
-		}
 	}
 
 	/**
@@ -318,9 +310,8 @@ public class EADatatypePrototypeImpl extends EAElementImpl implements EADatatype
 	public void setType(EADatatype newType) {
 		EADatatype oldType = type;
 		type = newType;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.EA_DATATYPE_PROTOTYPE__TYPE, oldType, type));
-		}
 	}
 
 } // EADatatypePrototypeImpl

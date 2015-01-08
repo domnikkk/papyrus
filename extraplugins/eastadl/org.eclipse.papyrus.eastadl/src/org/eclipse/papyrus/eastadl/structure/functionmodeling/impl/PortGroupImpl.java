@@ -105,14 +105,12 @@ public class PortGroupImpl extends EAElementImpl implements PortGroup {
 		case FunctionmodelingPackage.PORT_GROUP__PORT:
 			return getPort();
 		case FunctionmodelingPackage.PORT_GROUP__BASE_CLASS:
-			if (resolve) {
+			if (resolve)
 				return getBase_Class();
-			}
 			return basicGetBase_Class();
 		case FunctionmodelingPackage.PORT_GROUP__BASE_PORT:
-			if (resolve) {
+			if (resolve)
 				return getBase_Port();
-			}
 			return basicGetBase_Port();
 		case FunctionmodelingPackage.PORT_GROUP__PORT_GROUP:
 			return getPortGroup();
@@ -251,9 +249,8 @@ public class PortGroupImpl extends EAElementImpl implements PortGroup {
 			InternalEObject oldBase_Class = (InternalEObject) base_Class;
 			base_Class = (org.eclipse.uml2.uml.Class) eResolveProxy(oldBase_Class);
 			if (base_Class != oldBase_Class) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FunctionmodelingPackage.PORT_GROUP__BASE_CLASS, oldBase_Class, base_Class));
-				}
 			}
 		}
 		return base_Class;
@@ -279,9 +276,8 @@ public class PortGroupImpl extends EAElementImpl implements PortGroup {
 	public void setBase_Class(org.eclipse.uml2.uml.Class newBase_Class) {
 		org.eclipse.uml2.uml.Class oldBase_Class = base_Class;
 		base_Class = newBase_Class;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FunctionmodelingPackage.PORT_GROUP__BASE_CLASS, oldBase_Class, base_Class));
-		}
 	}
 
 	/**
@@ -296,9 +292,8 @@ public class PortGroupImpl extends EAElementImpl implements PortGroup {
 			InternalEObject oldBase_Port = (InternalEObject) base_Port;
 			base_Port = (Port) eResolveProxy(oldBase_Port);
 			if (base_Port != oldBase_Port) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FunctionmodelingPackage.PORT_GROUP__BASE_PORT, oldBase_Port, base_Port));
-				}
 			}
 		}
 		return base_Port;
@@ -324,9 +319,8 @@ public class PortGroupImpl extends EAElementImpl implements PortGroup {
 	public void setBase_Port(Port newBase_Port) {
 		Port oldBase_Port = base_Port;
 		base_Port = newBase_Port;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FunctionmodelingPackage.PORT_GROUP__BASE_PORT, oldBase_Port, base_Port));
-		}
 	}
 
 	/**

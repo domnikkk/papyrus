@@ -110,9 +110,8 @@ public class SatisfyImpl extends RequirementsRelationshipImpl implements Satisfy
 			InternalEObject oldBase_Abstraction = (InternalEObject) base_Abstraction;
 			base_Abstraction = (Abstraction) eResolveProxy(oldBase_Abstraction);
 			if (base_Abstraction != oldBase_Abstraction) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequirementsPackage.SATISFY__BASE_ABSTRACTION, oldBase_Abstraction, base_Abstraction));
-				}
 			}
 		}
 		return base_Abstraction;
@@ -138,9 +137,8 @@ public class SatisfyImpl extends RequirementsRelationshipImpl implements Satisfy
 	public void setBase_Abstraction(Abstraction newBase_Abstraction) {
 		Abstraction oldBase_Abstraction = base_Abstraction;
 		base_Abstraction = newBase_Abstraction;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RequirementsPackage.SATISFY__BASE_ABSTRACTION, oldBase_Abstraction, base_Abstraction));
-		}
 	}
 
 	/**
@@ -228,9 +226,8 @@ public class SatisfyImpl extends RequirementsRelationshipImpl implements Satisfy
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case RequirementsPackage.SATISFY__BASE_ABSTRACTION:
-			if (resolve) {
+			if (resolve)
 				return getBase_Abstraction();
-			}
 			return basicGetBase_Abstraction();
 		case RequirementsPackage.SATISFY__SATISFIED_REQUIREMENT:
 			return getSatisfiedRequirement();

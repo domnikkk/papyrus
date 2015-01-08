@@ -40,5 +40,7 @@ http://www.eclipse.org/legal/epl-v10.html
    <plugin download-size="0" id="org.eclipse.papyrus.layers.documentation" install-size="0" version="0.0.0"/>
 
    <plugin download-size="0" id="org.eclipse.papyrus.infra.gmfdiag.common.doc" install-size="0" version="0.0.0"/>
+   
+   <plugin download-size="0" id="org.eclipse.papyrus.codegen.doc" install-size="0" version="0.0.0"/>
 
 </feature>

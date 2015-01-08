@@ -40,6 +40,7 @@ import org.eclipse.papyrus.eastadl.timing.TimingPackage;
  *
  * @see org.eclipse.papyrus.eastadl.timing.timingconstraints.TimingconstraintsFactory
  * @model kind="package"
+ *        annotation="http://www.eclipse.org/uml2/2.0.0/UML originalName='TimingConstraints'"
  * @generated
  */
 public interface TimingconstraintsPackage extends EPackage {

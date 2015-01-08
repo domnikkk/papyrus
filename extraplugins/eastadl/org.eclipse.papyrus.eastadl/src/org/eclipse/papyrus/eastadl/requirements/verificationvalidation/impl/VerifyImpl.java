@@ -97,9 +97,8 @@ public class VerifyImpl extends RequirementsRelationshipImpl implements Verify {
 			InternalEObject oldBase_Abstraction = (InternalEObject) base_Abstraction;
 			base_Abstraction = (Abstraction) eResolveProxy(oldBase_Abstraction);
 			if (base_Abstraction != oldBase_Abstraction) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, VerificationvalidationPackage.VERIFY__BASE_ABSTRACTION, oldBase_Abstraction, base_Abstraction));
-				}
 			}
 		}
 		return base_Abstraction;
@@ -125,9 +124,8 @@ public class VerifyImpl extends RequirementsRelationshipImpl implements Verify {
 	public void setBase_Abstraction(Abstraction newBase_Abstraction) {
 		Abstraction oldBase_Abstraction = base_Abstraction;
 		base_Abstraction = newBase_Abstraction;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VerificationvalidationPackage.VERIFY__BASE_ABSTRACTION, oldBase_Abstraction, base_Abstraction));
-		}
 	}
 
 	/**
@@ -214,9 +212,8 @@ public class VerifyImpl extends RequirementsRelationshipImpl implements Verify {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case VerificationvalidationPackage.VERIFY__BASE_ABSTRACTION:
-			if (resolve) {
+			if (resolve)
 				return getBase_Abstraction();
-			}
 			return basicGetBase_Abstraction();
 		case VerificationvalidationPackage.VERIFY__VERIFIED_BY_PROCEDURE:
 			return getVerifiedByProcedure();

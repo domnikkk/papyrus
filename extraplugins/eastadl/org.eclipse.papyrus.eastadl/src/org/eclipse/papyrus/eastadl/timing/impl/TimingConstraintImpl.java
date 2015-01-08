@@ -95,19 +95,16 @@ public abstract class TimingConstraintImpl extends EAElementImpl implements Timi
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case TimingPackage.TIMING_CONSTRAINT__MODE:
-			if (resolve) {
+			if (resolve)
 				return getMode();
-			}
 			return basicGetMode();
 		case TimingPackage.TIMING_CONSTRAINT__BASE_CLASS:
-			if (resolve) {
+			if (resolve)
 				return getBase_Class();
-			}
 			return basicGetBase_Class();
 		case TimingPackage.TIMING_CONSTRAINT__BASE_CONSTRAINT:
-			if (resolve) {
+			if (resolve)
 				return getBase_Constraint();
-			}
 			return basicGetBase_Constraint();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -200,9 +197,8 @@ public abstract class TimingConstraintImpl extends EAElementImpl implements Timi
 			InternalEObject oldMode = (InternalEObject) mode;
 			mode = (Mode) eResolveProxy(oldMode);
 			if (mode != oldMode) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TimingPackage.TIMING_CONSTRAINT__MODE, oldMode, mode));
-				}
 			}
 		}
 		return mode;
@@ -228,9 +224,8 @@ public abstract class TimingConstraintImpl extends EAElementImpl implements Timi
 	public void setMode(Mode newMode) {
 		Mode oldMode = mode;
 		mode = newMode;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TimingPackage.TIMING_CONSTRAINT__MODE, oldMode, mode));
-		}
 	}
 
 	/**
@@ -245,9 +240,8 @@ public abstract class TimingConstraintImpl extends EAElementImpl implements Timi
 			InternalEObject oldBase_Class = (InternalEObject) base_Class;
 			base_Class = (org.eclipse.uml2.uml.Class) eResolveProxy(oldBase_Class);
 			if (base_Class != oldBase_Class) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TimingPackage.TIMING_CONSTRAINT__BASE_CLASS, oldBase_Class, base_Class));
-				}
 			}
 		}
 		return base_Class;
@@ -273,9 +267,8 @@ public abstract class TimingConstraintImpl extends EAElementImpl implements Timi
 	public void setBase_Class(org.eclipse.uml2.uml.Class newBase_Class) {
 		org.eclipse.uml2.uml.Class oldBase_Class = base_Class;
 		base_Class = newBase_Class;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TimingPackage.TIMING_CONSTRAINT__BASE_CLASS, oldBase_Class, base_Class));
-		}
 	}
 
 	/**
@@ -290,9 +283,8 @@ public abstract class TimingConstraintImpl extends EAElementImpl implements Timi
 			InternalEObject oldBase_Constraint = (InternalEObject) base_Constraint;
 			base_Constraint = (Constraint) eResolveProxy(oldBase_Constraint);
 			if (base_Constraint != oldBase_Constraint) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TimingPackage.TIMING_CONSTRAINT__BASE_CONSTRAINT, oldBase_Constraint, base_Constraint));
-				}
 			}
 		}
 		return base_Constraint;
@@ -318,9 +310,8 @@ public abstract class TimingConstraintImpl extends EAElementImpl implements Timi
 	public void setBase_Constraint(Constraint newBase_Constraint) {
 		Constraint oldBase_Constraint = base_Constraint;
 		base_Constraint = newBase_Constraint;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TimingPackage.TIMING_CONSTRAINT__BASE_CONSTRAINT, oldBase_Constraint, base_Constraint));
-		}
 	}
 
 } // TimingConstraintImpl

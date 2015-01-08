@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -41,6 +41,26 @@ public interface RSAToPapyrusParametersFactory extends EFactory {
 	 * @generated
 	 */
 	Config createConfig();
+
+	/**
+	 * Returns a new object of class '<em>Mapping Parameters</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return a new object of class '<em>Mapping Parameters</em>'.
+	 * @generated
+	 */
+	MappingParameters createMappingParameters();
+
+	/**
+	 * Returns a new object of class '<em>URI Mapping</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return a new object of class '<em>URI Mapping</em>'.
+	 * @generated
+	 */
+	URIMapping createURIMapping();
 
 	/**
 	 * Returns the package supported by this factory.

@@ -79,9 +79,8 @@ public class FeatureConfigurationImpl extends ConfigurationDecisionModelImpl imp
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case VariabilityPackage.FEATURE_CONFIGURATION__CONFIGURED_FEATURE_MODEL:
-			if (resolve) {
+			if (resolve)
 				return getConfiguredFeatureModel();
-			}
 			return basicGetConfiguredFeatureModel();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -157,9 +156,8 @@ public class FeatureConfigurationImpl extends ConfigurationDecisionModelImpl imp
 			InternalEObject oldConfiguredFeatureModel = (InternalEObject) configuredFeatureModel;
 			configuredFeatureModel = (FeatureModel) eResolveProxy(oldConfiguredFeatureModel);
 			if (configuredFeatureModel != oldConfiguredFeatureModel) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, VariabilityPackage.FEATURE_CONFIGURATION__CONFIGURED_FEATURE_MODEL, oldConfiguredFeatureModel, configuredFeatureModel));
-				}
 			}
 		}
 		return configuredFeatureModel;
@@ -175,9 +173,8 @@ public class FeatureConfigurationImpl extends ConfigurationDecisionModelImpl imp
 	public void setConfiguredFeatureModel(FeatureModel newConfiguredFeatureModel) {
 		FeatureModel oldConfiguredFeatureModel = configuredFeatureModel;
 		configuredFeatureModel = newConfiguredFeatureModel;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VariabilityPackage.FEATURE_CONFIGURATION__CONFIGURED_FEATURE_MODEL, oldConfiguredFeatureModel, configuredFeatureModel));
-		}
 	}
 
 } // FeatureConfigurationImpl

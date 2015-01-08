@@ -58,11 +58,11 @@ main() {
 mapping ProfileApplication::removeDeploymentProfile() when {
 	self.appliedProfile.oclAsType(EObject).getURI().startsWith('pathmap://UML2_MSL_PROFILES/Deployment.epx');
 }{
-	semantics.removeElement(self);
+	self.oclAsType(EObject).forceDelete(false);
 }
 
 mapping DefaultLanguage::delete() {
-	semantics.removeElement(self);
+	//semantics.removeElement(self);
 }
 
 query ProfileApplication::getDefinitionAnnotation() : EAnnotation {
@@ -96,7 +96,7 @@ mapping ProfileConstraint::toValidationRule() : ValidationRule {
 	//result._class := null;
 	//result.id := null;
 	
-	semantics.removeElement(self);
+	//semantics.removeElement(self); //To be deleted programatically
 }
 
 query defaultProfile::Severity::toSeverityCode() : validation::Severity{
@@ -138,7 +138,7 @@ mapping inout ProfileApplication::toPapyrusDocumentationProfile() when {
 mapping defaultProfile::Documentation::toDocumentation() : documentation::Documentation {
 	result.base_Comment := self.base_Comment;
 	
-	semantics.removeElement(self);
+	//semantics.removeElement(self);
 }
 
 query getDocumentationProfile() : Profile {
@@ -163,7 +163,7 @@ mapping inout URL::toHyperlink() {
 	commentDisplays.map createHyperlinkAnnotation(url);
 	
 	end {
-		semantics.removeElement(self);
+		//semantics.removeElement(self);
 	}
 }
 

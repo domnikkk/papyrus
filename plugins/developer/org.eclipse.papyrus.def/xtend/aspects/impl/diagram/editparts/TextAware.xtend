@@ -570,7 +570,7 @@ override refreshLabel(GenCommonBase it , GenDiagram diagram )'''
 			 maskLabelPolicy = getEditPolicy(org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.IndirectMaskLabelEditPolicy.INDRIRECT_MASK_MANAGED_LABEL);
 		}
 		if (maskLabelPolicy == null) {
-			View view = (View)getModel();
+			org.eclipse.gmf.runtime.notation.View view = (org.eclipse.gmf.runtime.notation.View)getModel();
 			if(view.isVisible()) {
 				setLabelTextHelper(getFigure(), getLabelText());
 				setLabelIconHelper(getFigure(), getLabelIcon());

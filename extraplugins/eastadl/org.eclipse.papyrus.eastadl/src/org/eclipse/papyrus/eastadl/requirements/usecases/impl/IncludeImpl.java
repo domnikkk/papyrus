@@ -81,9 +81,8 @@ public class IncludeImpl extends RelationshipImpl implements Include {
 			InternalEObject oldBase_Include = (InternalEObject) base_Include;
 			base_Include = (org.eclipse.uml2.uml.Include) eResolveProxy(oldBase_Include);
 			if (base_Include != oldBase_Include) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, UsecasesPackage.INCLUDE__BASE_INCLUDE, oldBase_Include, base_Include));
-				}
 			}
 		}
 		return base_Include;
@@ -109,9 +108,8 @@ public class IncludeImpl extends RelationshipImpl implements Include {
 	public void setBase_Include(org.eclipse.uml2.uml.Include newBase_Include) {
 		org.eclipse.uml2.uml.Include oldBase_Include = base_Include;
 		base_Include = newBase_Include;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, UsecasesPackage.INCLUDE__BASE_INCLUDE, oldBase_Include, base_Include));
-		}
 	}
 
 	/**
@@ -126,9 +124,8 @@ public class IncludeImpl extends RelationshipImpl implements Include {
 			InternalEObject oldAddition = (InternalEObject) addition;
 			addition = (UseCase) eResolveProxy(oldAddition);
 			if (addition != oldAddition) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, UsecasesPackage.INCLUDE__ADDITION, oldAddition, addition));
-				}
 			}
 		}
 		return addition;
@@ -154,9 +151,8 @@ public class IncludeImpl extends RelationshipImpl implements Include {
 	public void setAddition(UseCase newAddition) {
 		UseCase oldAddition = addition;
 		addition = newAddition;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, UsecasesPackage.INCLUDE__ADDITION, oldAddition, addition));
-		}
 	}
 
 	/**
@@ -169,14 +165,12 @@ public class IncludeImpl extends RelationshipImpl implements Include {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case UsecasesPackage.INCLUDE__BASE_INCLUDE:
-			if (resolve) {
+			if (resolve)
 				return getBase_Include();
-			}
 			return basicGetBase_Include();
 		case UsecasesPackage.INCLUDE__ADDITION:
-			if (resolve) {
+			if (resolve)
 				return getAddition();
-			}
 			return basicGetAddition();
 		}
 		return super.eGet(featureID, resolve, coreType);

@@ -82,9 +82,8 @@ public abstract class EAValueImpl extends MinimalEObjectImpl.Container implement
 			InternalEObject oldType = (InternalEObject) type;
 			type = (EADatatype) eResolveProxy(oldType);
 			if (type != oldType) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ValuesPackage.EA_VALUE__TYPE, oldType, type));
-				}
 			}
 		}
 		return type;
@@ -110,9 +109,8 @@ public abstract class EAValueImpl extends MinimalEObjectImpl.Container implement
 	public void setType(EADatatype newType) {
 		EADatatype oldType = type;
 		type = newType;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ValuesPackage.EA_VALUE__TYPE, oldType, type));
-		}
 	}
 
 	/**
@@ -127,9 +125,8 @@ public abstract class EAValueImpl extends MinimalEObjectImpl.Container implement
 			InternalEObject oldBase_ValueSpecification = (InternalEObject) base_ValueSpecification;
 			base_ValueSpecification = (ValueSpecification) eResolveProxy(oldBase_ValueSpecification);
 			if (base_ValueSpecification != oldBase_ValueSpecification) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ValuesPackage.EA_VALUE__BASE_VALUE_SPECIFICATION, oldBase_ValueSpecification, base_ValueSpecification));
-				}
 			}
 		}
 		return base_ValueSpecification;
@@ -155,9 +152,8 @@ public abstract class EAValueImpl extends MinimalEObjectImpl.Container implement
 	public void setBase_ValueSpecification(ValueSpecification newBase_ValueSpecification) {
 		ValueSpecification oldBase_ValueSpecification = base_ValueSpecification;
 		base_ValueSpecification = newBase_ValueSpecification;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ValuesPackage.EA_VALUE__BASE_VALUE_SPECIFICATION, oldBase_ValueSpecification, base_ValueSpecification));
-		}
 	}
 
 	/**
@@ -170,14 +166,12 @@ public abstract class EAValueImpl extends MinimalEObjectImpl.Container implement
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case ValuesPackage.EA_VALUE__TYPE:
-			if (resolve) {
+			if (resolve)
 				return getType();
-			}
 			return basicGetType();
 		case ValuesPackage.EA_VALUE__BASE_VALUE_SPECIFICATION:
-			if (resolve) {
+			if (resolve)
 				return getBase_ValueSpecification();
-			}
 			return basicGetBase_ValueSpecification();
 		}
 		return super.eGet(featureID, resolve, coreType);

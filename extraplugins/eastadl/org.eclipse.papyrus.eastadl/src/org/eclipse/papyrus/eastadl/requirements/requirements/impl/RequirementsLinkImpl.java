@@ -110,9 +110,8 @@ public class RequirementsLinkImpl extends RequirementsRelationshipImpl implement
 	public void setIsBidirectional(boolean newIsBidirectional) {
 		boolean oldIsBidirectional = isBidirectional;
 		isBidirectional = newIsBidirectional;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RequirementsPackage.REQUIREMENTS_LINK__IS_BIDIRECTIONAL, oldIsBidirectional, isBidirectional));
-		}
 	}
 
 	/**
@@ -177,9 +176,8 @@ public class RequirementsLinkImpl extends RequirementsRelationshipImpl implement
 			InternalEObject oldBase_Dependency = (InternalEObject) base_Dependency;
 			base_Dependency = (Dependency) eResolveProxy(oldBase_Dependency);
 			if (base_Dependency != oldBase_Dependency) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequirementsPackage.REQUIREMENTS_LINK__BASE_DEPENDENCY, oldBase_Dependency, base_Dependency));
-				}
 			}
 		}
 		return base_Dependency;
@@ -205,9 +203,8 @@ public class RequirementsLinkImpl extends RequirementsRelationshipImpl implement
 	public void setBase_Dependency(Dependency newBase_Dependency) {
 		Dependency oldBase_Dependency = base_Dependency;
 		base_Dependency = newBase_Dependency;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RequirementsPackage.REQUIREMENTS_LINK__BASE_DEPENDENCY, oldBase_Dependency, base_Dependency));
-		}
 	}
 
 	/**
@@ -226,9 +223,8 @@ public class RequirementsLinkImpl extends RequirementsRelationshipImpl implement
 		case RequirementsPackage.REQUIREMENTS_LINK__TARGET:
 			return getTarget();
 		case RequirementsPackage.REQUIREMENTS_LINK__BASE_DEPENDENCY:
-			if (resolve) {
+			if (resolve)
 				return getBase_Dependency();
-			}
 			return basicGetBase_Dependency();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -301,12 +297,11 @@ public class RequirementsLinkImpl extends RequirementsRelationshipImpl implement
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
+		if (eIsProxy())
 			return super.toString();
-		}
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (isBidirectional: ");
+		result.append(" (isBidirectional: "); //$NON-NLS-1$
 		result.append(isBidirectional);
 		result.append(')');
 		return result.toString();

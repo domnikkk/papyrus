@@ -73,7 +73,7 @@ public class BehaviordescriptionFactoryImpl extends EFactoryImpl implements Beha
 		case BehaviordescriptionPackage.BEHAVIOR_CONSTRAINT_TARGET_BINDING:
 			return createBehaviorConstraintTargetBinding();
 		default:
-			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 	}
 

@@ -17,6 +17,7 @@ package org.eclipse.papyrus.uml.diagram.composite.custom.edit.policies;
 import java.util.Collections;
 import java.util.List;
 
+import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.geometry.PrecisionRectangle;
 import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.gef.GraphicalEditPart;
@@ -32,6 +33,7 @@ import org.eclipse.gmf.runtime.diagram.ui.internal.figures.BorderItemContainerFi
 import org.eclipse.gmf.runtime.diagram.ui.l10n.DiagramUIMessages;
 import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.papyrus.infra.gmfdiag.common.editpart.PapyrusLabelEditPart;
 
 /**
  * This policy provides the selection handles, feedback and move command for
@@ -52,31 +54,39 @@ public class ExternalLabelPrimaryDragRoleEditPolicy extends NonResizableLabelEdi
 	protected Command getMoveCommand(ChangeBoundsRequest request) {
 		LabelEditPart editPart = (LabelEditPart) getHost();
 
-		// FeedBack - Port + Delta
+		// FeedBack - Parent + Delta
 		Rectangle updatedRect = new Rectangle();
 		PrecisionRectangle initialRect = new PrecisionRectangle(getInitialFeedbackBounds().getCopy());
 		// in case of bordered item figure bounds is 1x1, real parent figure is then the grandParent
-		if (getHostFigure().getParent() instanceof BorderItemContainerFigure){
+		if (getHostFigure().getParent() instanceof BorderItemContainerFigure) {
 			updatedRect = initialRect.getTranslated(getHostFigure().getParent().getParent().getBounds().getLocation().getNegated());
-		}else{
+		} else {
 			updatedRect = initialRect.getTranslated(getHostFigure().getParent().getBounds().getLocation().getNegated());
 		}
 		updatedRect = updatedRect.getTranslated(request.getMoveDelta());
-	
 
-		// translate the feedback figure
-		PrecisionRectangle rect = new PrecisionRectangle(getInitialFeedbackBounds().getCopy());
-		getHostFigure().translateToAbsolute(rect);
-		rect.translate(request.getMoveDelta());
-		rect.resize(request.getSizeDelta());
-		getHostFigure().translateToRelative(rect);
+		// translate according to the text alignments
+		if (editPart instanceof PapyrusLabelEditPart) {
+			switch (((PapyrusLabelEditPart) editPart).getTextAlignment()) {
+			case PositionConstants.LEFT:
+				break;
+			case PositionConstants.CENTER:
+				updatedRect.translate(getHostFigure().getBounds().width / 2, 0);
+				break;
+			case PositionConstants.RIGHT:
+				updatedRect.translate(getHostFigure().getBounds().width, 0);
+				break;
+			default:
+				break;
+			}
+		}
 
 		ICommand moveCommand = new SetBoundsCommand(editPart.getEditingDomain(), DiagramUIMessages.MoveLabelCommand_Label_Location, new EObjectAdapter((View) editPart.getModel()), updatedRect);
-			
+
 		return new ICommandProxy(moveCommand);
-		
+
 	}
 
 
-	
+
 }

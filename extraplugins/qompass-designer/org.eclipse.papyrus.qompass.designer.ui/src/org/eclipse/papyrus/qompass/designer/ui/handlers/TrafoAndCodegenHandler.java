@@ -9,6 +9,7 @@ import org.eclipse.core.runtime.Status;
 import org.eclipse.core.runtime.jobs.Job;
 import org.eclipse.papyrus.qompass.designer.core.ProjectManagement;
 import org.eclipse.papyrus.qompass.designer.core.transformations.TrafoAndCodegenPackage;
+import org.eclipse.papyrus.uml.diagram.common.handlers.CmdHandler;
 import org.eclipse.uml2.uml.Package;
 
 public class TrafoAndCodegenHandler extends CmdHandler {

@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2014 CEA LIST and others.
+ * Copyright (c) 2014 CEA LIST, Christian W. Damus, and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -11,6 +11,7 @@
  *  Christian W. Damus (CEA) - bug 429826
  *  Christian W. Damus (CEA) - bug 408491
  *  Christian W. Damus (CEA) - bug 433320
+ *  Christian W. Damus - bug 451557
  *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.core.utils;
@@ -21,6 +22,7 @@ import java.util.Map;
 import java.util.Set;
 
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.OperationCanceledException;
 import org.eclipse.emf.common.util.WrappedException;
 import org.eclipse.emf.transaction.Transaction;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
@@ -231,6 +233,8 @@ public class TransactionHelper extends org.eclipse.papyrus.infra.core.sasheditor
 			public void run() {
 				try {
 					runnable.run(monitorHolder[0]);
+				} catch (RuntimeException e) {
+					throw e;
 				} catch (Exception e) {
 					throw new WrappedException(e);
 				}
@@ -245,6 +249,8 @@ public class TransactionHelper extends org.eclipse.papyrus.infra.core.sasheditor
 
 				try {
 					privileged.run();
+				} catch (OperationCanceledException e) {
+					throw new InterruptedException(e.getLocalizedMessage());
 				} catch (WrappedException e) {
 					Exception unwrapped = e.exception();
 					if (unwrapped instanceof InvocationTargetException) {

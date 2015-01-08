@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2010, 2014 CEA LIST and others.
+ * Copyright (c) 2010, 2014 CEA LIST, Christian W. Damus, and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -11,6 +11,8 @@
  *  Christian W. Damus (CEA) - Use URIs to support non-URL-compatible storage (CDO)
  *  Christian W. Damus (CEA) - bug 417409
  *  Christian W. Damus (CEA) - bug 444227
+ *  Christian W. Damus - bug 450478
+ *  Christian W. Damus - bug 454536
  *
  *****************************************************************************/
 package org.eclipse.papyrus.views.properties.runtime;
@@ -19,6 +21,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -27,6 +30,8 @@ import java.util.Set;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 import org.eclipse.papyrus.views.properties.Activator;
 import org.eclipse.papyrus.views.properties.catalog.PropertiesURIHandler;
 import org.eclipse.papyrus.views.properties.contexts.Context;
@@ -134,6 +139,22 @@ public class DefaultDisplayEngine implements DisplayEngine {
 	}
 
 	/**
+	 * Disposes the controls created by this DisplayEngine for the specified section.
+	 * This should not dispose the engine itself, which can be reused.
+	 */
+	protected void disposeControls(Section section) {
+		Control control = controls.remove(section);
+		if (control != null) {
+			control.dispose();
+		}
+
+		DataSource dataSource = displayedSections.remove(section);
+		if (dataSource != null) {
+			dataSource.dispose();
+		}
+	}
+
+	/**
 	 * Disposes the controls created by this DisplayEngine for the specified tab ID.
 	 * This should not dispose the engine itself, which can be reused.
 	 */
@@ -176,10 +197,18 @@ public class DefaultDisplayEngine implements DisplayEngine {
 
 		DataSource existing = getDataSource(section);
 		if (!allowDuplicate && (existing != null)) {
-			// Update the data source and fire the bindings
-			existing.setSelection(source.getSelection());
+			if (isUnloaded(existing) || conflictingArity(existing.getSelection(), source.getSelection())) {
+				// If it's a left-over from an unloaded resource, then rebuild the properties UI because
+				// element-browser widgets and other things may remember the previous (now invalid)
+				// resource-set context. Also, cannot reuse a multiple-selection data source for
+				// single-selection and vice-versa
+				disposeControls(section);
+			} else {
+				// Update the data source and fire the bindings
+				existing.setSelection(source.getSelection());
 
-			return null;
+				return null;
+			}
 		}
 
 		Control control = createSection(parent, section, loadXWTFile(section), source);
@@ -195,6 +224,28 @@ public class DefaultDisplayEngine implements DisplayEngine {
 
 	protected DataSource getDataSource(Section section) {
 		return displayedSections.get(section);
+	}
+
+	/**
+	 * Queries whether any object selected in a data source is unloaded (now an EMF proxy object).
+	 * 
+	 * @param dataSource
+	 *            a data source
+	 * @return whether it contains an unloaded model element
+	 */
+	protected boolean isUnloaded(DataSource dataSource) {
+		boolean result = false;
+
+		for (Iterator<?> iter = dataSource.getSelection().iterator(); !result && iter.hasNext();) {
+			EObject next = EMFHelper.getEObject(iter.next());
+			result = (next != null) && ((EObject) next).eIsProxy();
+		}
+
+		return result;
+	}
+
+	protected boolean conflictingArity(IStructuredSelection selection1, IStructuredSelection selection2) {
+		return (selection1.size() <= 1) != (selection2.size() <= 1);
 	}
 
 	/**

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014 CEA and others.
+ * Copyright (c) 2014 CEA, Christian W. Damus, and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,12 +8,14 @@
  *
  * Contributors:
  *   Christian W. Damus (CEA) - Initial API and implementation
+ *   Christian W. Damus - bug 451557
  *
  */
 package org.eclipse.papyrus.infra.tools.util;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
@@ -28,8 +30,14 @@ import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
+import org.eclipse.emf.common.util.AbstractTreeIterator;
+import org.eclipse.emf.common.util.TreeIterator;
+import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.IMemento;
+
+import com.google.common.collect.Iterators;
 
 
 /**
@@ -130,6 +138,38 @@ public class UIUtil {
 	 */
 	public static <V> Future<V> asyncCall(Callable<V> callable) {
 		return asyncCall(Display.getDefault(), callable);
+	}
+
+	/**
+	 * Obtains a tree iterator over all of the controls contained within a given {@code root} control, not including that {@code root}.
+	 * 
+	 * @param root
+	 *            a control to iterate
+	 * @return an unmodifiable iterator over all of its nested controls, which naturally will be empty if the {@code root} is not a {@link Composite}
+	 */
+	public static TreeIterator<Control> allChildren(Control root) {
+		return new AbstractTreeIterator<Control>(root, false) {
+			private static final long serialVersionUID = 1L;
+
+			@Override
+			protected Iterator<? extends Control> getChildren(Object object) {
+				return (object instanceof Composite) ? Iterators.forArray(((Composite) object).getChildren()) : Iterators.<Control> emptyIterator();
+			}
+		};
+	}
+
+	/**
+	 * Obtains a tree iterator over all of the controls of a particular type contained within a given {@code root} control, not including that {@code root}.
+	 * 
+	 * @param root
+	 *            a control to iterate
+	 * @param type
+	 *            the type of children to include in the iteration
+	 * 
+	 * @return an unmodifiable iterator over all of its nested controls, which naturally will be empty if the {@code root} is not a {@link Composite}
+	 */
+	public static <C extends Control> TreeIterator<C> allChildren(Control root, final Class<C> type) {
+		return Iterators2.filter(allChildren(root), type);
 	}
 
 	//

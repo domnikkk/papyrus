@@ -1,8 +1,18 @@
 package org.eclipse.papyrus.cpp.codegen.xtend
 
-import org.eclipse.papyrus.C_Cpp.Inline
+/*******************************************************************************
+ * Copyright (c) 2014 CEA LIST.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *     CEA LIST - initial API and implementation
+ *******************************************************************************/
+ 
+ import org.eclipse.papyrus.C_Cpp.Inline
 import org.eclipse.papyrus.C_Cpp.Virtual
-import org.eclipse.papyrus.acceleo.GenUtils
 import org.eclipse.papyrus.cpp.codegen.utils.CppGenUtils
 import org.eclipse.papyrus.cpp.codegen.utils.Modifier
 import org.eclipse.uml2.uml.Behavior
@@ -17,17 +27,19 @@ import org.eclipse.uml2.uml.profile.standard.Create
 import org.eclipse.uml2.uml.profile.standard.Destroy
 import org.eclipse.papyrus.C_Cpp.ConstInit
 import org.eclipse.uml2.uml.util.UMLUtil
+import org.eclipse.papyrus.cpp.codegen.Constants
+import org.eclipse.papyrus.codegen.base.GenUtils
 
 class CppOperations {
 	static def CppOperationImplementation(Operation operation) '''
 		«CppDocumentation.CppOperationDoc(operation)»
 		«IF (operation.name == 'main')»
 			«CppReturnSpec(operation)»«operation.name»(«CppParameter.CppOperationParameters(operation,false)») {
-				«GenUtils.getBody(operation, 'C/C++')»
+				«GenUtils.getBody(operation, Constants.supportedLanguages)»
 			} 
 		«ELSE»
 			«CppTemplates.templateSignature(operation)»«InlineTxt(operation)»«CppReturnSpec(operation)»«operation.featuringClassifiers.get(0).name»«CppTemplates.templateShortSignature(operation)»::«destructor(operation)»«operation.name»(«CppParameter.CppOperationParameters(operation, false)»)«throwss(operation)»«Modifier.modCVQualifier(operation)»«CppConstInit(operation)» {
-				«GenUtils.getBody(operation, 'C/C++')»
+				«GenUtils.getBody(operation, Constants.supportedLanguages)»
 			}
 		«ENDIF»
 	'''	
@@ -67,9 +79,20 @@ class CppOperations {
 			(UMLUtil.getStereotypeApplication(operation, ConstInit) as ConstInit).initialisation
 		}
 	}
-	
-	// return a list of owned operations, since this is not supported directly on a classifier/]
+
+	// return a list of owned operations, return emptyset, if null
 	static def getOwnedOperations(Classifier cl) {
+		val operations = getOwnedOperationsWNull(cl)
+		if (operations == null) {
+			emptySet
+		}
+		else {
+			operations
+		} 
+	}
+	
+	// return a list of owned operations, since this is not supported directly on a classifier
+	static def getOwnedOperationsWNull(Classifier cl) {
 		if (cl instanceof Class) {
 			(cl as Class).ownedOperations
 		} else {
@@ -88,7 +111,7 @@ class CppOperations {
 	static def CppBehaviorImplementation(OpaqueBehavior behavior) '''
 		«CppDocumentation.CppBehaviorDoc(behavior)»
 		«CppReturnSpec(behavior)»«behavior.context.name»::«behavior.name»(«CppParameter.CppBehaviorParameters(behavior, false)»)«Modifier.modCVQualifier(behavior)» {
-			«GenUtils.getBodyFromOB(behavior, 'C/C++')»
+			«GenUtils.getBodyFromOB(behavior, Constants.supportedLanguages)»
 		}
 	'''
 	

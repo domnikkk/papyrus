@@ -5,6 +5,29 @@
       <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
     </packageImport>
     <packagedElement xmi:type="uml:Class" xmi:id="_tKu0kEL1EeSSlqpbHKLCqA" name="Config">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_slkewHZKEeSwiJkQAQl2Jg" name="mappingParameters" type="_erBPcHZKEeSwiJkQAQl2Jg" aggregation="composite" association="_slkew3ZKEeSwiJkQAQl2Jg">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_slkewXZKEeSwiJkQAQl2Jg" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_slkewnZKEeSwiJkQAQl2Jg" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_AYwUoFOJEeSGbsrkEkSKIA" name="maxThreads" visibility="public" isUnique="false">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_W1iDAGW5EeS5_vjAduszYQ" annotatedElement="_AYwUoFOJEeSGbsrkEkSKIA">
+          <body>The maximum number of threads to use during the migration.&#xD;
+More threads will provide faster results, at the cost of memory consumption.</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_DhmU4FOJEeSGbsrkEkSKIA" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_DhwF4FOJEeSGbsrkEkSKIA" value="1"/>
+        <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_E7A-4FOJEeSGbsrkEkSKIA" value="2"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_Wt4XkEL2EeSSlqpbHKLCqA" name="removeUnmappedDiagrams" visibility="public" isUnique="false">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_YchfIEMAEeSX267OQHSClQ" annotatedElement="_Wt4XkEL2EeSSlqpbHKLCqA">
+          <body>If true, the diagrams which were not migrated will be removed. Otherwise, only the successfully imported diagrams will be removed</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Yj3BwEL2EeSSlqpbHKLCqA" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Yj3BwUL2EeSSlqpbHKLCqA" value="1"/>
+        <defaultValue xmi:type="uml:LiteralBoolean" xmi:id="_Zf9doEL2EeSSlqpbHKLCqA"/>
+      </ownedAttribute>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_t42e0EL1EeSSlqpbHKLCqA" name="convertOpaqueExpressionToLiteralString" visibility="public" isUnique="false">
         <ownedComment xmi:type="uml:Comment" xmi:id="_sSSQAEL9EeSX267OQHSClQ" annotatedElement="_t42e0EL1EeSSlqpbHKLCqA">
           <body>If true, the Opaque Expressions with a single body and no language (or a single empty language) will be converted to LiteralString</body>
@@ -32,15 +55,49 @@
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_S39O4UL2EeSSlqpbHKLCqA" value="1"/>
         <defaultValue xmi:type="uml:LiteralBoolean" xmi:id="_UQehAEL2EeSSlqpbHKLCqA"/>
       </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_Wt4XkEL2EeSSlqpbHKLCqA" name="removeUnmappedDiagrams" visibility="public" isUnique="false">
-        <ownedComment xmi:type="uml:Comment" xmi:id="_YchfIEMAEeSX267OQHSClQ" annotatedElement="_Wt4XkEL2EeSSlqpbHKLCqA">
-          <body>If true, the diagrams which were not migrated will be removed. Otherwise, only the successfully imported diagrams will be removed</body>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_JWjgUHcbEeSwiJkQAQl2Jg" name="alwaysAcceptSuggestedMappings" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_aOft0HcbEeSwiJkQAQl2Jg" annotatedElement="_JWjgUHcbEeSwiJkQAQl2Jg">
+          <body>If true, the Transformation will not open a dialog to ask user-confirmation for the dependency mappings. The tool will automatically keep going by &quot;guessing&quot; the proper mapping</body>
         </ownedComment>
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Yj3BwEL2EeSSlqpbHKLCqA" value="1"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Yj3BwUL2EeSSlqpbHKLCqA" value="1"/>
-        <defaultValue xmi:type="uml:LiteralBoolean" xmi:id="_Zf9doEL2EeSSlqpbHKLCqA"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_P_5L0HcbEeSwiJkQAQl2Jg" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_P_5L0XcbEeSwiJkQAQl2Jg" value="1"/>
+        <defaultValue xmi:type="uml:LiteralBoolean" xmi:id="_P_5L0ncbEeSwiJkQAQl2Jg"/>
       </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_MDmyMFOJEeSGbsrkEkSKIA" name="URIMapping">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_MiP2AFOJEeSGbsrkEkSKIA" name="sourceURI" visibility="public" isUnique="false">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OrbJAFOJEeSGbsrkEkSKIA" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OrbJAVOJEeSGbsrkEkSKIA" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_O-dZwFOJEeSGbsrkEkSKIA" name="targetURI" visibility="public" isUnique="false">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_RAos4FOJEeSGbsrkEkSKIA" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_RAos4VOJEeSGbsrkEkSKIA" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_erBPcHZKEeSwiJkQAQl2Jg" name="MappingParameters">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_LgpPEFOJEeSGbsrkEkSKIA" name="uriMappings" visibility="public" type="_MDmyMFOJEeSGbsrkEkSKIA" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_iBwD0GW5EeS5_vjAduszYQ" annotatedElement="_LgpPEFOJEeSGbsrkEkSKIA">
+          <body>When models/libraries have been migrated separately, maps the libraries imported from RSA to their Papyrus equivalent</body>
+        </ownedComment>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_T5kB0FOJEeSGbsrkEkSKIA"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_T5kB0VOJEeSGbsrkEkSKIA" value="*"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_pR2YYIQ5EeSC0ajaKNekyw" name="profileUriMappings" visibility="public" type="_MDmyMFOJEeSGbsrkEkSKIA" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_49zT4IQ5EeSC0ajaKNekyw" annotatedElement="_pR2YYIQ5EeSC0ajaKNekyw">
+          <body>When profiles have been migrated separately, maps the profiles imported from RSA to their Papyrus equivalent</body>
+        </ownedComment>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qweSgIQ5EeSC0ajaKNekyw"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qwfgoIQ5EeSC0ajaKNekyw" value="*"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_slkew3ZKEeSwiJkQAQl2Jg" memberEnd="_slkexHZKEeSwiJkQAQl2Jg _slkewHZKEeSwiJkQAQl2Jg">
+      <ownedEnd xmi:type="uml:Property" xmi:id="_slkexHZKEeSwiJkQAQl2Jg" name="config" type="_tKu0kEL1EeSSlqpbHKLCqA" association="_slkew3ZKEeSwiJkQAQl2Jg">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_slkexXZKEeSwiJkQAQl2Jg" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_slkexnZKEeSwiJkQAQl2Jg" value="1"/>
+      </ownedEnd>
     </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_zg2CEEL1EeSSlqpbHKLCqA">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_zhSuAEL1EeSSlqpbHKLCqA" source="http://www.eclipse.org/uml2/2.0.0/UML">
@@ -51,4 +108,5 @@
   </uml:Model>
   <ActionLanguage:TextualRepresentation xmi:id="_zhuy4EL1EeSSlqpbHKLCqA" language="org.eclipse.papyrus.uml.textedit.property.xtext.UmlProperty"/>
   <ActionLanguage:TextualRepresentation xmi:id="_8D4aIUL1EeSSlqpbHKLCqA" language="org.eclipse.papyrus.uml.textedit.property.xtext.UmlProperty"/>
+  <ActionLanguage:TextualRepresentation xmi:id="_Pp6KgFOJEeSGbsrkEkSKIA" language="org.eclipse.papyrus.uml.textedit.property.xtext.UmlProperty"/>
 </xmi:XMI>

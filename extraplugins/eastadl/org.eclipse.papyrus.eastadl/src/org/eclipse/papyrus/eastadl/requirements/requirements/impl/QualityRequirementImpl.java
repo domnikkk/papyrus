@@ -87,9 +87,8 @@ public class QualityRequirementImpl extends RequirementImpl implements QualityRe
 	public void setKind(QualityRequirementKind newKind) {
 		QualityRequirementKind oldKind = kind;
 		kind = newKind == null ? KIND_EDEFAULT : newKind;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RequirementsPackage.QUALITY_REQUIREMENT__KIND, oldKind, kind));
-		}
 	}
 
 	/**
@@ -162,12 +161,11 @@ public class QualityRequirementImpl extends RequirementImpl implements QualityRe
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
+		if (eIsProxy())
 			return super.toString();
-		}
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (kind: ");
+		result.append(" (kind: "); //$NON-NLS-1$
 		result.append(kind);
 		result.append(')');
 		return result.toString();

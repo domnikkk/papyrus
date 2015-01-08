@@ -77,9 +77,8 @@ public class InputSynchronizationConstraintImpl extends TimingConstraintImpl imp
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case TimingconstraintsPackage.INPUT_SYNCHRONIZATION_CONSTRAINT__TOLERANCE:
-			if (resolve) {
+			if (resolve)
 				return getTolerance();
-			}
 			return basicGetTolerance();
 		case TimingconstraintsPackage.INPUT_SYNCHRONIZATION_CONSTRAINT__SCOPE:
 			return getScope();

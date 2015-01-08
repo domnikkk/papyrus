@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2013, 2014 CEA and others.
+ * Copyright (c) 2013, 2014 CEA, Christian W. Damus, and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -9,6 +9,8 @@
  * Contributors:
  *   CEA - Initial API and implementation
  *   Christian W. Damus (CEA) - bug 431953 (adapted from SwitchProfileDialog)
+ *   Christian W. Damus - bug 451338
+ *   Christian W. Damus - bug 451557
  *
  */
 package org.eclipse.papyrus.uml.modelrepair.ui;
@@ -16,6 +18,7 @@ package org.eclipse.papyrus.uml.modelrepair.ui;
 import java.lang.reflect.InvocationTargetException;
 import java.util.AbstractCollection;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
@@ -29,6 +32,9 @@ import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.transaction.RecordingCommand;
+import org.eclipse.emf.transaction.RollbackException;
+import org.eclipse.emf.transaction.Transaction;
+import org.eclipse.emf.transaction.TransactionalCommandStack;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.jface.dialogs.IDialogConstants;
 import org.eclipse.jface.dialogs.MessageDialog;
@@ -56,6 +62,7 @@ import org.eclipse.papyrus.infra.core.utils.TransactionHelper;
 import org.eclipse.papyrus.infra.emf.utils.ServiceUtilsForResourceSet;
 import org.eclipse.papyrus.infra.services.labelprovider.service.LabelProviderService;
 import org.eclipse.papyrus.infra.services.markerlistener.dialogs.DiagnosticDialog;
+import org.eclipse.papyrus.infra.tools.util.UIUtil;
 import org.eclipse.papyrus.uml.modelrepair.Activator;
 import org.eclipse.papyrus.uml.modelrepair.internal.stereotypes.IRepairAction;
 import org.eclipse.papyrus.uml.modelrepair.internal.stereotypes.ZombieStereotypesDescriptor;
@@ -63,6 +70,7 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Cursor;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
+import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Label;
@@ -189,7 +197,7 @@ public class ZombieStereotypesDialog extends TrayDialog {
 		table.setLabelProvider(new ZombiesLabelProvider());
 		table.setInput(getMissingSchemas());
 
-		progress = new ProgressMonitorPart(self, null);
+		progress = new ProgressMonitorPart(self, null, true);
 		progress.setLayoutData(new GridData(SWT.FILL, SWT.LEAD, true, false));
 		progress.setVisible(false);
 
@@ -227,55 +235,69 @@ public class ZombieStereotypesDialog extends TrayDialog {
 		}
 
 		final List<MissingSchema> repairActions = Lists.newArrayList(actionsToApply);
-		editingDomain.getCommandStack().execute(new RecordingCommand(editingDomain, "Repair stereotypes") {
+		try {
+			((TransactionalCommandStack) editingDomain.getCommandStack()).execute(new RecordingCommand(editingDomain, "Repair stereotypes") {
 
-			@Override
-			protected void doExecute() {
+				@Override
+				protected void doExecute() {
 
-				final BasicDiagnostic diagnostics = new BasicDiagnostic(Activator.PLUGIN_ID, 0, "Problems in repairing stereotypes", null);
+					final BasicDiagnostic diagnostics = new BasicDiagnostic(Activator.PLUGIN_ID, 0, "Problems in repairing stereotypes", null);
 
-				IRunnableWithProgress runnable = TransactionHelper.createPrivilegedRunnableWithProgress(editingDomain, new IRunnableWithProgress() {
+					IRunnableWithProgress runnable = TransactionHelper.createPrivilegedRunnableWithProgress(editingDomain, new IRunnableWithProgress() {
 
-					public void run(IProgressMonitor monitor) {
-						SubMonitor subMonitor = SubMonitor.convert(monitor, actionsToApply.size());
+						public void run(IProgressMonitor monitor) {
+							SubMonitor subMonitor = SubMonitor.convert(monitor, actionsToApply.size());
 
-						for (Iterator<MissingSchema> iter = repairActions.iterator(); iter.hasNext();) {
-							if (!iter.next().apply(diagnostics, subMonitor.newChild(1, SubMonitor.SUPPRESS_NONE))) {
-								// Leave this one to try it again
-								iter.remove();
+							for (Iterator<MissingSchema> iter = repairActions.iterator(); iter.hasNext();) {
+								if (!iter.next().apply(diagnostics, subMonitor.newChild(1, SubMonitor.SUPPRESS_NONE))) {
+									// Leave this one to try it again
+									iter.remove();
+								}
 							}
+
+							subMonitor.done();
 						}
+					});
 
-						subMonitor.done();
+					final Cursor previousCursor = getShell().getCursor();
+					Cursor waitCursor = getShell().getDisplay().getSystemCursor(SWT.CURSOR_WAIT);
+					try {
+						getShell().setCursor(waitCursor);
+						progress.setVisible(true);
+						progress.attachToCancelComponent(null); // Enable the stop button
+						enableButtons(false);
+						ModalContext.run(runnable, true, progress, getShell().getDisplay());
+					} catch (InterruptedException e) {
+						// User cancelled. That's normal
+					} catch (Exception e) {
+						getShell().setCursor(previousCursor);
+						Throwable t = e;
+						if (e instanceof InvocationTargetException) {
+							t = ((InvocationTargetException) e).getTargetException();
+						}
+						StatusManager.getManager().handle(new Status(IStatus.ERROR, Activator.PLUGIN_ID, "Failed to repair stereotypes.", t), StatusManager.BLOCK | StatusManager.LOG);
+					} finally {
+						enableButtons(true);
+						getShell().setCursor(previousCursor);
+						progress.setVisible(false);
 					}
-				});
 
-				Cursor waitCursor = new Cursor(getShell().getDisplay(), SWT.CURSOR_WAIT);
-				try {
-					getShell().setCursor(waitCursor);
-					progress.setVisible(true);
-					ModalContext.run(runnable, true, progress, getShell().getDisplay());
-				} catch (Exception e) {
-					getShell().setCursor(null);
-					Throwable t = e;
-					if (e instanceof InvocationTargetException) {
-						t = ((InvocationTargetException) e).getTargetException();
+					if (diagnostics.getSeverity() > Diagnostic.OK) {
+						DiagnosticDialog dialog = new DiagnosticDialog(getShell(), "Problems in Repairing Stereotypes",
+								"Some repair actions could not be completed normally. Please review the specific details and take any corrective action that may be required.",
+								diagnostics, Diagnostic.ERROR | Diagnostic.WARNING);
+						dialog.setBlockOnOpen(true);
+						dialog.open();
 					}
-					StatusManager.getManager().handle(new Status(IStatus.ERROR, Activator.PLUGIN_ID, "Failed to repair stereotypes.", t), StatusManager.BLOCK | StatusManager.LOG);
-				} finally {
-					getShell().setCursor(null);
-					waitCursor.dispose();
-					progress.setVisible(false);
 				}
-
-				if (diagnostics.getSeverity() > Diagnostic.OK) {
-					DiagnosticDialog dialog = new DiagnosticDialog(getShell(), "Problems in Repairing Stereotypes", "Some repair actions could not be completed normally. Please review the specific details and take any corrective action that may be required.",
-							diagnostics, Diagnostic.ERROR | Diagnostic.WARNING);
-					dialog.setBlockOnOpen(true);
-					dialog.open();
-				}
-			}
-		});
+			}, Collections.singletonMap(Transaction.OPTION_NO_VALIDATION, true));
+		} catch (RollbackException e) {
+			// Shouldn't happen without validation!
+			Activator.log.error(e);
+		} catch (InterruptedException e) {
+			IStatus status = new Status(IStatus.ERROR, Activator.PLUGIN_ID, "Repair operation was cancelled.", e);
+			StatusManager.getManager().handle(status, StatusManager.SHOW | StatusManager.LOG);
+		}
 
 		getMissingSchemas().removeAll(repairActions);
 		updateControls();
@@ -304,6 +326,12 @@ public class ZombieStereotypesDialog extends TrayDialog {
 		super.buttonPressed(buttonId);
 	}
 
+	void enableButtons(boolean enable) {
+		for (Iterator<Button> iter = UIUtil.allChildren(getButtonBar(), Button.class); iter.hasNext();) {
+			iter.next().setEnabled(enable);
+		}
+	}
+
 	@Override
 	public void create() {
 		super.create();
@@ -329,7 +357,12 @@ public class ZombieStereotypesDialog extends TrayDialog {
 	protected void okPressed() {
 		applyPressed();
 
-		super.okPressed();
+		updateControls();
+
+		// Maybe the user cancelled the work
+		if (!getButton(APPLY_ID).isEnabled()) {
+			super.okPressed();
+		}
 	}
 
 	@Override

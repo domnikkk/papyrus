@@ -169,9 +169,8 @@ public class BehaviorConstraintPrototypeImpl extends TraceableSpecificationImpl 
 			InternalEObject oldType = (InternalEObject) type;
 			type = (BehaviorConstraintType) eResolveProxy(oldType);
 			if (type != oldType) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BehaviordescriptionPackage.BEHAVIOR_CONSTRAINT_PROTOTYPE__TYPE, oldType, type));
-				}
 			}
 		}
 		return type;
@@ -197,9 +196,8 @@ public class BehaviorConstraintPrototypeImpl extends TraceableSpecificationImpl 
 	public void setType(BehaviorConstraintType newType) {
 		BehaviorConstraintType oldType = type;
 		type = newType;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BehaviordescriptionPackage.BEHAVIOR_CONSTRAINT_PROTOTYPE__TYPE, oldType, type));
-		}
 	}
 
 	/**
@@ -279,9 +277,8 @@ public class BehaviorConstraintPrototypeImpl extends TraceableSpecificationImpl 
 		case BehaviordescriptionPackage.BEHAVIOR_CONSTRAINT_PROTOTYPE__TARGET_VEHICLE_FEATURE_ELEMENT:
 			return getTargetVehicleFeatureElement();
 		case BehaviordescriptionPackage.BEHAVIOR_CONSTRAINT_PROTOTYPE__TYPE:
-			if (resolve) {
+			if (resolve)
 				return getType();
-			}
 			return basicGetType();
 		case BehaviordescriptionPackage.BEHAVIOR_CONSTRAINT_PROTOTYPE__FUNCTION_TARGET:
 			return getFunctionTarget();

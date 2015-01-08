@@ -507,24 +507,7 @@
 	   
 	   
       
-	      <extension point="org.eclipse.ui.commands" id="update-cmd">
-      <?gmfgen generated="true"?>
-      <command
-         categoryId="org.eclipse.ui.category.edit"
-         defaultHandler="org.eclipse.papyrus.uml.diagram.statemachine.part.UMLDiagramUpdateCommand"
-         description="%update.diagram.description"
-         id="org.eclipse.papyrus.uml.diagram.statemachine.updateDiagram"
-         name="%update.diagram.name"/>
-   </extension>
    
-   <extension point="org.eclipse.ui.bindings" id="update-cmd-binding">
-      <?gmfgen generated="true"?>
-      <key 
-         commandId="org.eclipse.papyrus.uml.diagram.statemachine.updateDiagram"
-         contextId="org.eclipse.papyrus.uml.diagram.statemachine.ui.diagramContext"
-         schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
-         sequence="F5"/>
-   </extension>
 
    <extension point="org.eclipse.ui.menus" id="context-menus">
       <?gmfgen generated="true"?>
@@ -1097,6 +1080,18 @@
 		
 </extension>
 
-
-
+	<extension point="org.eclipse.ui.preferencePages">
+		<page
+			category="org.eclipse.papyrus.infra.gmfdiag.preferences.diagrams.PapyrusUMLStateMachineDiagram"
+			class="org.eclipse.papyrus.uml.diagram.statemachine.custom.preferences.CustomTransitionPreferencePage"
+			id="org.eclipse.papyrus.uml.diagram.statemachine.custom.preferences.CustomTransitionPreferencePage_ID"
+			name="Transition options">
+      </page>
+	</extension>
+ 
+	<extension point="org.eclipse.core.runtime.preferences">
+		<initializer
+			class="org.eclipse.papyrus.uml.diagram.statemachine.custom.preferences.CustomTransitionPreferenceInitializer">
+		</initializer>
+	</extension>
 </plugin>

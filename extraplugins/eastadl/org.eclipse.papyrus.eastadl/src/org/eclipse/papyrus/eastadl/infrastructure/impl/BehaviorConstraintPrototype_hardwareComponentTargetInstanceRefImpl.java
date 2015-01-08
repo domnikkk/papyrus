@@ -84,10 +84,9 @@ public class BehaviorConstraintPrototype_hardwareComponentTargetInstanceRefImpl 
 			InternalEObject oldHardwareComponentProtype_target = (InternalEObject) hardwareComponentProtype_target;
 			hardwareComponentProtype_target = (HardwareComponentPrototype) eResolveProxy(oldHardwareComponentProtype_target);
 			if (hardwareComponentProtype_target != oldHardwareComponentProtype_target) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InfrastructurePackage.BEHAVIOR_CONSTRAINT_PROTOTYPE_HARDWARE_COMPONENT_TARGET_INSTANCE_REF__HARDWARE_COMPONENT_PROTYPE_TARGET, oldHardwareComponentProtype_target,
 							hardwareComponentProtype_target));
-				}
 			}
 		}
 		return hardwareComponentProtype_target;
@@ -113,10 +112,9 @@ public class BehaviorConstraintPrototype_hardwareComponentTargetInstanceRefImpl 
 	public void setHardwareComponentProtype_target(HardwareComponentPrototype newHardwareComponentProtype_target) {
 		HardwareComponentPrototype oldHardwareComponentProtype_target = hardwareComponentProtype_target;
 		hardwareComponentProtype_target = newHardwareComponentProtype_target;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, InfrastructurePackage.BEHAVIOR_CONSTRAINT_PROTOTYPE_HARDWARE_COMPONENT_TARGET_INSTANCE_REF__HARDWARE_COMPONENT_PROTYPE_TARGET, oldHardwareComponentProtype_target,
 					hardwareComponentProtype_target));
-		}
 	}
 
 	/**
@@ -144,9 +142,8 @@ public class BehaviorConstraintPrototype_hardwareComponentTargetInstanceRefImpl 
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case InfrastructurePackage.BEHAVIOR_CONSTRAINT_PROTOTYPE_HARDWARE_COMPONENT_TARGET_INSTANCE_REF__HARDWARE_COMPONENT_PROTYPE_TARGET:
-			if (resolve) {
+			if (resolve)
 				return getHardwareComponentProtype_target();
-			}
 			return basicGetHardwareComponentProtype_target();
 		case InfrastructurePackage.BEHAVIOR_CONSTRAINT_PROTOTYPE_HARDWARE_COMPONENT_TARGET_INSTANCE_REF__HARDWARE_COMPONENT_PROTOTYPE_CONTEXT:
 			return getHardwareComponentPrototype_context();

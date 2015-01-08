@@ -2,7 +2,7 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="eastadl" nsURI="http://www.papyrusuml.org/EAST-ADL2/1" nsPrefix="EAST-ADL2">
   <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
-    <details key="originalName" value="EAST-ADL2"/>
+    <details key="originalName" value="EASTADL2"/>
   </eAnnotations>
   <eClassifiers xsi:type="ecore:EDataType" name="Dummy" instanceClassName="java.lang.String">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -13,6 +13,9 @@
       nsPrefix="Variability">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="This package contains elements to express variability in the analysis architecture, design architecture and implementation architecture. These abstraction levels in EAST-ADL2 will sometimes be called the artifact levels."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
+      <details key="originalName" value="Variability"/>
     </eAnnotations>
     <eClassifiers xsi:type="ecore:EClass" name="VariationGroup" eSuperTypes="#//infrastructure/elements/EAElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -242,6 +245,9 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="This section contains the UML-profile specification, specifying stereotypes in the UML-profile, defined from the metaclasses in the ADLCoreConstructs package. It includes specification details for each stereotype. If the stereotype has properties, which may be referred to as tag definitions, or if the stereotype has constraints, this section also includes specification details for these properties and constraints.&#xD;&#xA;&#xD;&#xA;Overview:&#xD;&#xA;This subprofile defines a set of abstract stereotypes which provide basic constructs to the other subprofiles. Two subprofiles are also defined, ADLTypes and ADLRelationshipModeling which are described in the following sections."/>
     </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
+      <details key="originalName" value="Infrastructure"/>
+    </eAnnotations>
     <eClassifiers xsi:type="ecore:EClass" name="InstanceRef">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The InstanceRef DataType will be used to type attributes of type &lt;&lt;instanceRef>> (FaultFailure, ErrorModelPrototype, etc). "/>
@@ -447,6 +453,9 @@
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The Datatypes subpackage of EAST-ADL2 defines EAST-ADL2 general-purpose datatypes that may be used to type structural constructs in several different modeling diagrams.&#xD;&#xA;&#xD;&#xA;The purpose of the metaclasses in the Datatypes subpackage is to specify the concepts for the specific domain."/>
       </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <details key="originalName" value="Datatypes"/>
+      </eAnnotations>
       <eClassifiers xsi:type="ecore:EClass" name="EADatatype" abstract="true" eSuperTypes="#//infrastructure/elements/TraceableSpecification">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The EADatatype is a metaclass, which signifies a type whose instances are identified only by their value. The EADatatype metaclass represents the description of the value set for some variable, parameter etc. without a description of how these possible values are represented on implementation level. The implementation representation is defined on implementation level by the AUTOSAR concept PrimitiveTypeWithSemantics, and the implemented datatype shall be associated with a Realization relationship. The realizing datatype must match the EADatatype regarding range, resolution, unit, and dimension.&#xA;&#xA;Semantics:&#xA;EADatatype metaclass is a special kind of classifier, similar to a class. It differs from the class in that instances of a data type are identified only by their value.&#xA;&#xA;Constraints:&#xA;[1] In the case of an AR implementation, an EADatatype is realized generally by PrimitiveTypeWithSemantics, which has to be consistent w.r.t. range, resolution, etc.&#xA;&#xA;Notation:&#xA;The EADatatype is denoted using the rectangle symbol with keyword «Datatype»."/>
@@ -492,6 +501,9 @@
       <eClassifiers xsi:type="ecore:EDataType" name="javalangFloat" instanceClassName="java.lang.Float">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="An instance of Float is an element from the set of real numbers. The value must comply with IEEE 754 and is limited to what can be expressed by a 64 bit binary representation.&#xD;&#xA;&#xD;&#xA;Semantics:&#xD;&#xA;Float has the semantics of the Float datatype as defined by IEEE Standard for Floating-Point Arithmetic (IEEE 754).&#xD;&#xA;&#xD;&#xA;Notation:&#xD;&#xA;The datatype Float is denoted using the rectangle symbol with keyword «Datatype Float».&#xD;&#xA;&#xD;&#xA;Extension: UML PrimitiveType"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
+          <details key="originalName" value="java.lang.Float"/>
         </eAnnotations>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="Quantity" eSuperTypes="#//infrastructure/elements/EAPackageableElement">
@@ -561,6 +573,9 @@
         nsPrefix="UserAttributes">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="User attributes in EAST-ADL2 are primarily intended to provide a mechanism for augmenting the elements of an EAST-ADL2 model with customized meta-information.  All instances of metaclass ADLEntity can have user attributes attached to them.  The scope and structuring of this meta-information can be defined on a per-project basis by defining user attributes for certain types of EAST-ADL2 elements within UATemplates.&#xD;&#xA;Since EAST-ADL2 requirements are in their most general form simple objects with all information contained in user-customized, project-specific attributes, the concept of user attributes is also perfectly suitable to define those attributes of requirements.  In that sense, basic requirements in EAST-ADL2 can be seen as &quot;empty&quot; elements which only provide a node to which user attributes can be attached in order to supply the requirement with all necessary information, including its main textual description.  However, in case of requirements the context in which the available user attributes are defined is different: here the container of the requirements is the point where user attribute definitions are store and these are then applicable only within this container.&#xD;&#xA;The role of user attributes within the overall EAST-ADL2 is thus twofold: they (1) provide a means to customize the language to specific company and project needs and (2) constitute an important part of the requirements support of the language.&#xD;&#xA;The mechanism of user attributes was optimized for flexibility and simplicity.  In particular, the actual attributes attached to an element and/or their values may well conflict the attribute definitions in effect for this element.  For example, it is perfectly legal to not provide an attribute value if an attribute definition was specified or, the other way round, to provide a value for an undefined attribute.  The attribute definitions are merely meant as a guideline for the engineer and as a basis for optionally checking if all attribute values are correct with respect to attribute definitions (by way of appropriate tool support).  With this conception of attribute values and definitions, many intricacies and difficult situations during the creation and evolution of a model are circumvented and complex interdependencies between parts of the model are avoided.  For example, it is made sure that a model and all its user attribute values can be safely viewed and edited even if the attribute definitions (i.e. UATemplates) for the model are temporarily unavailable or permanently lost.&#xD;&#xA;&#xD;&#xA;Overview:&#xD;&#xA;The stereotypes defined in this subprofile provide a set of constructs to help user define their own attributes. The core construct in EAST-ADL2, the ADLEntity, inherits from UserAttributableElement stereotype so that virtually any types of EAST-ADL2 entities might be enhanced with user-defined attributes. Of course in a UML model one is allowed to add attributes to the classes and UML elements on which stereotypes are applied, yet this mechanism enables to distinguish between attributes meant to be interpreted as compliant with EASt-ADL2 language and other if any."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <details key="originalName" value="UserAttributes"/>
       </eAnnotations>
       <eClassifiers xsi:type="ecore:EClass" name="UserAttributeElementType" eSuperTypes="#//infrastructure/elements/EAElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -633,6 +648,9 @@
     </eSubpackages>
     <eSubpackages name="values" nsURI="http://www.papyrusuml.org/EAST-ADL2/Infrastructure/Values/1"
         nsPrefix="Values">
+      <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <details key="originalName" value="Values"/>
+      </eAnnotations>
       <eClassifiers xsi:type="ecore:EClass" name="EAArrayValue" eSuperTypes="#//infrastructure/values/EAValue">
         <eStructuralFeatures xsi:type="ecore:EReference" name="value" ordered="false"
             upperBound="-1" eType="#//infrastructure/values/EAValue"/>
@@ -669,6 +687,9 @@
         nsPrefix="Elements">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="This section contains the UML-profile specification, specifying stereotypes in the UML-profile, defined from the metaclasses in the Infrastructure::Elements subprofile. It includes specification details for each stereotype. If the stereotype has properties, which may be referred to as tag definitions, or if the stereotype has constraints, this section also includes specification details for these properties and constraints.&#xD;&#xA;&#xD;&#xA;Overview:&#xD;&#xA;The Infrastructure::Elements subprofile of EAST-ADL2 defines general-purpose relationship constructs that may be used to model dependencies between structural constructs.&#xD;&#xA;The purpose of the stereotypes in this subprofile is to specify rigorously (&quot;formally&quot;) the various relationships that may exist between basic constructs."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <details key="originalName" value="Elements"/>
       </eAnnotations>
       <eClassifiers xsi:type="ecore:EClass" name="TraceableSpecification" abstract="true"
           eSuperTypes="#//infrastructure/elements/EAPackageableElement">
@@ -787,6 +808,9 @@
   </eSubpackages>
   <eSubpackages name="structure" nsURI="http://www.papyrusuml.org/EAST-ADL2/Structure/1"
       nsPrefix="Structure">
+    <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
+      <details key="originalName" value="Structure"/>
+    </eAnnotations>
     <eClassifiers xsi:type="ecore:EDataType" name="Dummy" instanceClassName="java.lang.String">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Dummy DataType, just added for code generation purpose.&#xD;&#xA;In other words, this data type for EMF generation of SysmlPackage and SysmlFactory&#xD;&#xA;java classes in the model code.&#xD;&#xA;&#xD;&#xA;Do not remove this !!!"/>
@@ -796,6 +820,9 @@
         nsPrefix="FunctionModeling">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The function modeling is performed in the FunctionalAnalysisArchitecture (in the AnalysisLevel) and the FunctionalDesignArchitecture (in the DesignLevel). The root component of the function compositional hierarchy on AnalysisLevel is the FunctionalAnalysisArchitecture (FAA); the root component of the function compositional hierarchy on DesignLevel is the FunctionalDesignArchitecture (FDA), see the diagram for SystemModeling. &#xA;&#xA;The main modeling concept applied here is functional component modeling: Functions interact with one another via ports that are connected by connectors owned by the composing function. Occurrences of functions are modeled by typed prototypes in the composing function. These occurrences are typed by types. This naming convention of the type-prototype pattern is from AUTOSAR, however the concept of types and typed elements is also available in e.g. UML2."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <details key="originalName" value="FunctionModeling"/>
       </eAnnotations>
       <eClassifiers xsi:type="ecore:EClass" name="LocalDeviceManager" eSuperTypes="#//structure/functionmodeling/DesignFunctionType">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1020,6 +1047,9 @@
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="This package describes the basic feature modeling that is employed on the vehicle level as well as on the artifact levels, i.e. on AnalysisLevel and below. Details of feature modeling that are specific to the vehicle level are factored out and documented separately in the package VehicleFeatureModeling."/>
       </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <details key="originalName" value="FeatureModeling"/>
+      </eAnnotations>
       <eClassifiers xsi:type="ecore:EClass" name="FeatureTreeNode" abstract="true"
           eSuperTypes="#//infrastructure/elements/Context">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1210,6 +1240,9 @@
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The ADLSystemModel is the top level container of an EAST-ADL2 model. It represents the electronics &amp; software of the vehicle, and its environment, and concepts related to the various abstraction level of models used in EAST-ADL2. It is mainly based on both concepts: Models and architectures.&#xD;&#xA;VehicleFeatureModel represents the features of the vehicle, i.e. the externally visible properties&#xD;&#xA;The AnalysisArchitecture is the abstract functional description of the vehicle electronics&#xD;&#xA;The DesignArchitecture contains the functional specification and hardware architecture of the vehicle electronics&#xD;&#xA;The Implementation Architecture contains the software architecture and components and the hardware architecture of the vehicle&#xD;&#xA;The Operational Architecture represents the actual software and electronics in the manufactured vehicle&#xD;&#xA;The word model vs. architecture is chosen rather informally. Architecture is used where this term is often used in practice, and where the construct is a complete (in some sense) reflection of the aspects that it captures. Model is used in other cases.&#xD;&#xA;These models/architectures contain further elements in a hierarchy.. Relations between these elements over the boundaries between the models/architectures are contained in the ADLSystemModel. This is possible because the SystemModel is a specialization of the ADLContext, and is thus able to contain relations. Typical relations are described in the sub-package CoreConstructs (see definition of ADLRelationship, ADLRealization and ADLSatisfy).&#xD;&#xA;&#xD;&#xA;Overview:&#xD;&#xA;The ADLSystemModel is the top level container of an EAST-ADL2 model. It represents the electronics &amp; software of the vehicle, and its environment, and concepts related to the various abstraction level of models used in EAST-ADL2. It is mainly based on both concepts: Models and architectures."/>
       </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <details key="originalName" value="SystemModeling"/>
+      </eAnnotations>
       <eClassifiers xsi:type="ecore:EClass" name="SystemModel" eSuperTypes="#//infrastructure/elements/Context">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="SystemModel is used to organize models/architectures according to their abstraction level; it can also hold with relationships between the different levels.&#xA;&#xA;Semantics:&#xA;The SystemModel represents the EE system of the vehicle, and concepts related to the various abstraction levels.&#xA;&#xA;Notation:&#xA;The default notation for a SystemModel is a solid-outline rectangle containing the SystemModel's name, and with compartments separating by horizontal lines containing features or other members of the SystemModel. Contained entities may also be shown with its connectors (White-box view).&#xA;&#xA;Changes: New class in EAST-ADL2&#xA;&#xA;Extension: Class"/>
@@ -1306,6 +1339,9 @@
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="At the highest abstraction level, i.e. the vehicle level, EAST-ADL2 provides support for classification and definition of product lines (the entire vehicle for a car maker or some of its sub-systems for suppliers). The different possible configurations of the embedded electronic architecture are captured on a high abstraction level in terms of features. A feature in this sense is a characteristic or trait that individual variants of the vehicle may or may not have.&#xA;&#xA;The specification of the features themselves, together with their forms of realization, the dependencies between them and the requirements to be respected for their realization is performed at the vehicle level and it should be done independently of any product line. This would be the basis for a consistent reuse of features in different product lines and projects. At this level, a feature represents particular high level requirements to be realized in all product line members that respect some conditions, e.g., US cars with elegance trim and engine size higher than 2.4."/>
       </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <details key="originalName" value="VehicleFeatureModeling"/>
+      </eAnnotations>
       <eClassifiers xsi:type="ecore:EClass" name="DeviationAttributeSet" eSuperTypes="#//infrastructure/elements/EAElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="DeviationAttributeSet specifies the set of rules of allowed deviations from the reference model in a referring model. These rules are important, because they make sure that the different FeatureModels, referring to one reference model, follow specific rules for deviation, so a later integration into one FeatureModel might be possible.&#xA;&#xA;Extension:&#xA;DataType"/>
@@ -1389,6 +1425,9 @@
         nsPrefix="HardwareModeling">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The package HardwareModeling contains the elements to model physical entities of the embedded EE system. These elements allow capturing the hardware in sufficient detail to allow preliminary allocation decisions. &#xA;&#xA;The allocation decisions are based on requirements on timing, storage, data throughput, processing power, etc. that are defined in the Functional Analysis Architecture and the Functional Design Architecture.&#xA;&#xA;Conversely, the Functional Analysis Architecture and the Functional Design Architecture may be revised based on analysis using information from the Hardware Design Architecture. An example is control law design, where algorithms may be modified for expected computational and communication delays. Thus, the Hardware Design Architecture contains information about properties in order to support, e.g., timing analysis and performance in these respects."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <details key="originalName" value="HardwareModeling"/>
       </eAnnotations>
       <eClassifiers xsi:type="ecore:EClass" name="HardwareComponentType" eSuperTypes="#//infrastructure/elements/Context #//infrastructure/elements/EAType">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1605,6 +1644,9 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Dependability of a system is the ability to avoid service failures that are more frequent and more severe than is acceptable. Dependability includes several aspects, namely Availability, Reliability, Safety, Integrity and Maintainability. The Dependability package includes support for defining and classifying safety requirements through preliminary Hazard Analysis Risk Assessment, tracing and categorizing safety requirements according to role in safety life-cycle, formalizing safety requirements using safety constraints, formalizing and assessing fault propagation through error models and organizing evidence of safety in a Safety Case.&#xA;The support for safety is designed to support the automotive standard for Functional Safety, ISO/DIS 26262."/>
     </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
+      <details key="originalName" value="Dependability"/>
+    </eAnnotations>
     <eClassifiers xsi:type="ecore:EClass" name="HazardousEvent" eSuperTypes="#//infrastructure/elements/TraceableSpecification">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The HazardousEvent metaclass represents a combination of a Hazard and a specific situation, the latter being characterized by operating mode and operational situation in terms of a particular use case, environment and traffic. &#xA;&#xA;Semantics:&#xA;The HazardousEvent denotes a combination of a Hazard and an operational situation. The controllability and severity attributes shall be consistent with the operational situation and operational scenario, and the Exposure shall reflect the likelihood of the operational situation and scenario.&#xA;&#xA;Notation:&#xA;The Hazard is shown as a solid-outline rectangle with &quot;Haz&quot; at the top right. It contains the name of the Hazard and optionally the name of the source entity.&#xA;&#xA;Extension: &#xA;UML::Class"/>
@@ -1811,6 +1853,9 @@
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="This subprofile defines a set of stereotypes concerning the definition of safety requirements inked to ISO26262 norm.&#xD;&#xA;&#xD;&#xA;Overview:&#xD;&#xA;This subprofile defines a set of stereotypes concerning the definition of safety requirements linked to the ISO26262 norm."/>
       </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <details key="originalName" value="SafetyRequirement"/>
+      </eAnnotations>
       <eClassifiers xsi:type="ecore:EClass" name="FunctionalSafetyConcept" eSuperTypes="#//requirements/requirements/RequirementsHierarchy">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="FunctionalSafetyConcept represents the set of functional safety requirements that together fulfils a SafetyGoal in accordance with ISO 26262.&#xA;&#xA;To comply with the SafetyGoals, the FunctionalSafetyConcept specifies the basic safety mechanisms and safety measures in the form of functional safety requirements.&#xA;&#xA;Constraints:&#xA;[1] Contained functionalSafetyRequirements shall not be of type SafetyGoal.&#xA;&#xA;Semantics:&#xA;The collection of requirements in the FunctionalSafetyConcept defines the requirements necessary to make the Item safe. The requirements are abstract and do not specify technical details."/>
@@ -1847,6 +1892,9 @@
     </eSubpackages>
     <eSubpackages name="safetyconstraints" nsURI="http://www.papyrusuml.org/EAST-ADL2/Dependability/SafetyConstraints/1"
         nsPrefix="SafetyConstraints">
+      <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <details key="originalName" value="SafetyConstraints"/>
+      </eAnnotations>
       <eClassifiers xsi:type="ecore:EClass" name="FaultFailure" eSuperTypes="#//infrastructure/elements/TraceableSpecification">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The FaultFailure represents a certain fault or failure on its referenced Anomaly. The faultFailureValue specifies the value of the Anomaly that the FaultFailure corresponds to, i.e. one of the possible values of the Anomaly. &#xA;&#xA;Semantics:&#xA;A FaultFailure is defined as a certain value, faultFailureValue, occurring at the referenced Anomaly."/>
@@ -1923,6 +1971,9 @@
         nsPrefix="SafetyCase">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Safety is a property of a system that is difficult to verify quantitatively since no clear measurement method exists that can be applied during the development. Not even exhaustive testing is feasible, as faults in electronics can have an intensity of 10^-9 faults/hour and still pose an unacceptable risk. Hence, it is only when enough field data have been collected from a system used in a particular context that it can be said to be safe enough. Nonetheless, safety must be addressed and assessed during development; restricted to qualitative reasoning about the safety of a product. A structured engineering method is thus needed to approach this problem. One such method is the so called safety case, which came originally from the nuclear industry."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <details key="originalName" value="SafetyCase"/>
       </eAnnotations>
       <eClassifiers xsi:type="ecore:EClass" name="SafetyCase" eSuperTypes="#//infrastructure/elements/TraceableSpecification">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -2013,6 +2064,9 @@
         nsPrefix="ErrorModel">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The EAST-ADL2 sub-package for error modeling provides support for safety engineering by representing possible, incorrect behaviors of a system in its operation (e.g., component errors and their propagations).&#xA;Abnormal behaviors of architectural elements as well as their instantiations in a particular product context can be represented, forming a basis for safety analysis through external techniques and tools. Through the integration with other language constructs, definitions of error behaviors and hazards can be traced to the specifications of safety requirements, and further to the subsequent functional and non-functional requirements on error handing and hazard mitigations as well as to the necessary V&amp;V efforts. &#xA;Error behaviors are treated as a separated view, orthogonal to the nominal architecture model. This separation of concern in modeling is considered necessary in order to avoid some undesired effects of error modeling, such as the risk of mixing nominal and erroneous behavior in regards to the comprehension, reuse, and system synthesis (e.g., code generation)."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <details key="originalName" value="ErrorModel"/>
       </eAnnotations>
       <eClassifiers xsi:type="ecore:EClass" name="Anomaly" eSuperTypes="#//infrastructure/elements/EAElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -2179,9 +2233,15 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="A requirement expresses a condition or capability that must be met or possessed by a system or system component to satisfy a contract, standard, specification or other formally imposed properties.&#xA;&#xA;Requirements can be introduced in different phases of the development process for different reasons. They could be introduced by marketing people, control engineers, system engineers, software engineers, Driver/OS developers, basic software developers or hardware engineers. This leads to the fact that requirements have many sources, and requirements are of many types (at different level of detail) and have several relations between them. Under these conditions the number of requirements can become quickly unmanageable if appropriate management does not exist. Note that, requirements can change during the project development and the changes should be taken into account. Requirements are organized hierarchically through several kinds of refinement relations.&#xA;&#xA;EAST-ADL2 has constructs that deal with these problems. Some of these constructs deals with general issues in software development and have been already addressed in the past by general processes. As done for the structure part of EAST-ADL2, the requirements part will be compliant with UML2. The EAST-ADL2 adapts existing concepts whenever possible and develops new ones otherwise. Support for requirements modeling is provided by the EAST-ADL2 on two levels: a generic level and specializing levels (e.g. Dependability.SafetyRequirement) where specialized requirement entities are provided which are intended for certain special uses.&#xA;&#xA;Elements inspired by SysML are Requirement, Satisfy, Refine, DeriveRequirement, (Verify)"/>
     </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
+      <details key="originalName" value="Requirements"/>
+    </eAnnotations>
     <eClassifiers xsi:type="ecore:EDataType" name="Dummy" instanceClassName="java.lang.String"/>
     <eSubpackages name="usecases" nsURI="http://www.papyrusuml.org/EAST-ADL2/Requirements/UseCase/1"
         nsPrefix="UseCases">
+      <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <details key="originalName" value="UseCases"/>
+      </eAnnotations>
       <eClassifiers xsi:type="ecore:EClass" name="Extend" eSuperTypes="#//infrastructure/elements/Relationship">
         <eStructuralFeatures xsi:type="ecore:EReference" name="base_Extend" ordered="false"
             lowerBound="1" eType="ecore:EClass ../../org.eclipse.uml2.uml/model/UML.ecore#//Extend"/>
@@ -2225,6 +2285,9 @@
         nsPrefix="VerificationValidation">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="A multitude of different verification and validation (V&amp;V) techniques, methods and tools are applied during the development of EE-Systems. Different techniques are applicable at different abstraction levels. Also, the technique of choice depends on the properties to validate and/or verify. Furthermore, each partner in a project may develop and employ his own V&amp;V processes and activities. Hence it is impossible to introduce in the EAST-ADL2 a way to model all the objects that can be required by all the possible V&amp;V techniques. As a consequence, EAST-ADL2 furnishes just the means for planning, organizing and describing V&amp;V activities on a fairly abstract level, and for defining the links between those V&amp;V activities, the satisfied and verified requirements, and the objects modeling the system (Functional Analysis Architecture, Functional components, Logical Tasks, etc.). The common parts of all V&amp;V techniques are described by the EAST-ADL2, which includes: the results expected from the V&amp;V activities, the actual results which were obtained when applying the V&amp;V techniques, how the V&amp;V activities are constrained. Information that is specific to an individual V&amp;V technique is not described in EAST-ADL2, but a place for storing this information is provided.&#xA;&#xA;Single V&amp;V techniques may be used only once or at several stages during an overall V&amp;V effort. Some of them are specific to one modeling design stage; others can be applied at various design stages.&#xA;&#xA;A set of V&amp;V techniques and activities is necessary in order to achieve a complete verification and validation of a given system. Often these techniques and activities are employed and performed by many different teams and departments, frequently even by different companies. This raises the demand for an overall planning and organization of all V&amp;V related information.&#xA;&#xA;A very important notion of V&amp;V support in EAST-ADL2 is the distinction of abstract and concrete V&amp;V information:&#xA;&#xA;(1) On the abstract level, verification and validation information is defined without referring to a concrete testing environment and without specifying stimuli and the expected outcome of a particular VVProcedure on a detailed technical level.&#xA;&#xA;(2) On the concrete level, verification and validation information specifies a concrete testing environment and provides all necessary details for testing, e.g. stimuli and expected outcomes, on a concrete technical level applicable to that testing environment.&#xA;&#xA;In accordance to the &quot;what vs. how&quot; definition of requirements one could say: the abstract level defines what needs to be done to verify and validate a certain system, but not precisely how this is done. Conversely, the concrete level defines the precise technical details for particular testing environments. So all abstract VVCases and VVProcedures for a certain system together form sort of a &quot;to-do&quot;-list, which describes what needs to be done when actually testing the system with a concrete testing environment, but in a form applicable to all conceivable testing environments to all conceivable testing environments."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <details key="originalName" value="VerificationValidation"/>
       </eAnnotations>
       <eClassifiers xsi:type="ecore:EClass" name="VVStimuli" eSuperTypes="#//infrastructure/elements/TraceableSpecification">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -2371,6 +2434,9 @@
     </eSubpackages>
     <eSubpackages name="requirements" nsURI="http://www.papyrusuml.org/EAST-ADL2/Requirements/Requirements/1"
         nsPrefix="Requirements">
+      <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <details key="originalName" value="Requirements"/>
+      </eAnnotations>
       <eClassifiers xsi:type="ecore:EClass" name="RequirementsRelationship" abstract="true"
           eSuperTypes="#//infrastructure/elements/Relationship">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -2555,6 +2621,9 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="This chapter describes the behavioral constructs of the EAST-ADL2 language. What we mean by behavior here is either a function performing some computation on provided data (FlowPort interaction) or the execution of a service called upon by another function (in a ClientServer interaction).&#xA;&#xA;The execution of the behavior assumes a strict run-to-completion, single buffer-overwrite management of data. That is each execution starts with the reading of data, which are not stored locally and are constantly replaced by fresher data arriving on ports. The function then performs some calculation and finally outputs some data on the output ports. The execution is non-concurrent: only one behavior is active at any point in time and not preemptable.&#xA;&#xA;A FunctionBehavior in EAST-ADL2 is mainly a reference point to some description provided else where in a tool-dependent format, as depicted in the Diagram for FunctionBehavior below. This enables to re-use current behavior descriptions contained in the tools currently used by automotive companies and suppliers. Given that, requirement and traceability information can be provided for behavior in relation to the rest of the EAST-ADL2 model. A list of typical tool format is provided as an enumeration, FunctionBehaviorKind. Depending on the EAST-ADL2 language implementation such a behavior description can be provided in the model itself, for instance when using a UML-implementation of the EAST-ADL2, UML behaviors can be used. Yet it shall be noted that the behavior described shall be compliant with the execution semantics of an EAST-ADL2 function.&#xA;&#xA;The rest of the behavioral constructs (see the first following Diagram of the behavior of a function) relate to the organization of the triggering of behaviors attached to functions. At a high level one can define activation Modes which may span across the whole architecture. Such Modes can be regrouped in exclusive sets. Whenever a FunctionTrigger or a FunctionBehavior refers to a Mode, this means its activation is dependent on the Mode being active or not. Thus different execution configurations can be defined.&#xA;&#xA;The triggering of behavior itself, defined by FunctionTrigger, can be either time or event-based and be either type-wise or prototype-wise to allow further adjustments of functions in a particular context. Events and timing constraint that are defined in separate sections of the language (see Events, Time and TimingConstraints sections)."/>
     </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
+      <details key="originalName" value="Behavior"/>
+    </eAnnotations>
     <eClassifiers xsi:type="ecore:EClass" name="FunctionBehavior" eSuperTypes="#//infrastructure/elements/Context">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="FunctionBehavior represents the behavior of a particular FunctionType - referred to by the association to FunctionType. What is meant by behavior is a transfer function performing some data computation (in case of FlowPort interaction) or an operation that can be called by another function (in case of ClientServer interaction). The representation property indicates the kind of representation used to describe the behavior (see FunctionBehaviorKind). The representation itself (e.g defined in an external model file) is identified by a URL String in the path property. If the representation is provided in the same model file as the system itself, the path property is not used. It is merely a placeholder with the purpose of containing information about and links to the external behavioral model.&#xA;&#xA;FunctionBehavior may refer to execution modes - by the association to the element Mode. This is not mandatory, however when provided, the relation indicates the list of execution Modes in which the FunctionBehavior can potentially be executed (see element Mode).&#xA;&#xA;The triggering of a FunctionBehavior is unknown to the behavior. It is defined by FunctionTriggers (see this element).&#xA;&#xA;Note that the association between FunctionBehavior and FunctionType is specified as a one-way navigable link from FunctionBehavior to FunctionType: what this means is that the EAST-ADL2 language specification does not require that a FunctionType be aware of the FunctionBehavior it is assigned to. Only the navigation from behavior to function is mandatory, the implementation of a reverse link might however be provided depending on the tool support.&#xA;&#xA;Although each FunctionBehavior can refer to at most one FunctionType, note that several FunctionBehaviors can be referring to the same FunctionType. In this case when a FunctionType has several behaviors, only one behavior shall be active at any given time instant, i.e. no concurrent behaviors are allowed in EAST-ADL2 functions. For instance we cannot have one active behavior in Simulink and one in Modelica. Both can be referenced in the same function but at any given time, only one is executable. Conditions such as modes, etc. must prevent two behaviors being potentially active.&#xA;&#xA;Note also that FunctionBehaviors are assigned to FunctionTypes and not to FunctionPrototypes. This means that among a set of FunctionPrototypes, which share the same type, behaviors are also shared. However when a FunctionBehavior refer to Modes, which are referred to by different FunctionTriggers, different triggering conditions can be provided among a set of FunctionPrototypes for the same set of behaviors - see FunctionTrigger.&#xA;&#xA;In the case where the identified FunctionType is decomposed in parts, the behavior is a specification for the composed behavior of the FunctionType. &#xA;&#xA;&#xA;Semantics:&#xA;Though the representation provided to a FunctionBehavior follows the semantics of the behavioral representation used (for instance SIMULINK, ASCET, etc.). Externally, in relation to the EAST-ADL2 model, however, the FunctionBehavior has synchronous execution semantics:&#xA;1. Read inputs from input ports&#xA;2. Execute Behavior with fixed inputs (run to completion)&#xA;3. Provide outputs to output ports&#xA;&#xA;The data transfer between the EAST-ADL2 ports and the FunctionBehavior is representation specific and considered part of the execution of the FunctionBehavior.&#xA;&#xA;&#xA;&#xA;Notation:&#xA;FunctionBehavior appears, if shown in a diagram, as a solid-outline rectangle with &quot;Behavior&quot; at the top right. The rectangle contains the name. &#xA;&#xA;&#xA;Extension: Behavior"/>
@@ -2670,6 +2739,9 @@
   </eSubpackages>
   <eSubpackages name="timing" nsURI="http://www.papyrusuml.org/EAST-ADL2/Timing/1"
       nsPrefix="Timing">
+    <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
+      <details key="originalName" value="Timing"/>
+    </eAnnotations>
     <eClassifiers xsi:type="ecore:EClass" name="TimingDescription" abstract="true"
         eSuperTypes="#//infrastructure/elements/EAElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -2750,6 +2822,9 @@
         nsPrefix="TimingConstraints">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="This section describes the timing constraints."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <details key="originalName" value="TimingConstraints"/>
       </eAnnotations>
       <eClassifiers xsi:type="ecore:EClass" name="DelayConstraint" eSuperTypes="#//timing/TimingConstraint">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -2993,6 +3068,9 @@
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="This section describes the concept of events for EAST-ADL2."/>
       </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <details key="originalName" value="Events"/>
+      </eAnnotations>
       <eClassifiers xsi:type="ecore:EClass" name="EventFunctionFlowPort" eSuperTypes="#//timing/Event #//infrastructure/values/EAExpression">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="Event that refers to the triggering of the Function at a flow port, i.e., when data is sent or received."/>
@@ -3055,6 +3133,9 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="The Environment model is used to describe the environment of the vehicle electric and electronic architecture. It is modeled by continuous functions representing the system environment."/>
     </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
+      <details key="originalName" value="Environment"/>
+    </eAnnotations>
     <eClassifiers xsi:type="ecore:EClass" name="Environment" eSuperTypes="#//infrastructure/elements/Context">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The collection of the environment functional description. This collection can be done across the EAST-ADL2 abstraction levels.&#xA;&#xA;An environment model can contain functionPrototypes given by either AnalysisFunction or DesignFunction. The environment model does not have abstraction levels as in the system model (e.g., analysisLevel, designLevel).&#xA;&#xA;A functionPrototype of the environment model can have interactions with FAA FunctionalDevice and an FDA HardwareFunction through the ClampConnector."/>
@@ -3082,6 +3163,9 @@
     </eClassifiers>
   </eSubpackages>
   <eSubpackages name="annex" nsURI="http://www.papyrusuml.org/EAST-ADL2/Annex/1" nsPrefix="Annex">
+    <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
+      <details key="originalName" value="Annex"/>
+    </eAnnotations>
     <eClassifiers xsi:type="ecore:EDataType" name="Dummy" instanceClassName="java.lang.String">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Dummy DataType, just added for code generation purpose.&#xD;&#xA;In other words, this data type for EMF generation of SysmlPackage and SysmlFactory&#xD;&#xA;java classes in the model code.&#xD;&#xA;&#xD;&#xA;Do not remove this !!!"/>
@@ -3089,6 +3173,9 @@
     </eClassifiers>
     <eSubpackages name="needs" nsURI="http://www.papyrusuml.org/EAST-ADL2/Annex/Needs/1"
         nsPrefix="Needs">
+      <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <details key="originalName" value="Needs"/>
+      </eAnnotations>
       <eClassifiers xsi:type="ecore:EClass" name="Stakeholder" eSuperTypes="#//infrastructure/elements/TraceableSpecification">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The stakeholder represents various roles with regard to the creation and use of architectural descriptions. Stakeholders include clients, users, the architect, developers, and evaluators. [IEEE 1471]"/>
@@ -3215,6 +3302,9 @@
     </eSubpackages>
     <eSubpackages name="behaviordescription" nsURI="http://www.papyrusuml.org/EAST-ADL2/Annex/BehaviorDescription/1"
         nsPrefix="BehaviorDescription">
+      <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <details key="originalName" value="BehaviorDescription"/>
+      </eAnnotations>
       <eClassifiers xsi:type="ecore:EClass" name="BehaviorConstraintBindingAttribute"
           eSuperTypes="#//annex/attributequantificationconstraint/Attribute #//annex/behaviordescription/BehaviorConstraintInternalBinding"/>
       <eClassifiers xsi:type="ecore:EClass" name="BehaviorConstraintParameter" abstract="true"/>
@@ -3284,6 +3374,9 @@
     </eSubpackages>
     <eSubpackages name="attributequantificationconstraint" nsURI="http://www.papyrusuml.org/EAST-ADL2/Annex/AttributeQuantificationConstraint/1"
         nsPrefix="AttributeQuantificationConstraint">
+      <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <details key="originalName" value="AttributeQuantificationConstraint"/>
+      </eAnnotations>
       <eClassifiers xsi:type="ecore:EClass" name="AttributeQuantificationconstraint"
           eSuperTypes="#//infrastructure/elements/EAElement #//annex/behaviordescription/BehaviorConstraintParameter">
         <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" ordered="false"
@@ -3324,6 +3417,9 @@
     </eSubpackages>
     <eSubpackages name="temporalconstraint" nsURI="http://www.papyrusuml.org/EAST-ADL2/Annex/TemporalConstraint/1"
         nsPrefix="TemporalConstraint">
+      <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <details key="originalName" value="TemporalConstraint"/>
+      </eAnnotations>
       <eClassifiers xsi:type="ecore:EClass" name="TemporalConstraint" eSuperTypes="#//infrastructure/elements/EAElement">
         <eStructuralFeatures xsi:type="ecore:EReference" name="transitionEvent" ordered="false"
             upperBound="-1" eType="#//annex/temporalconstraint/TransitionEvent"/>
@@ -3416,6 +3512,9 @@
     </eSubpackages>
     <eSubpackages name="computationconstraint" nsURI="http://www.papyrusuml.org/EAST-ADL2/Annex/ComputationConstraint/1"
         nsPrefix="ComputationConstraint">
+      <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <details key="originalName" value="ComputationConstraint"/>
+      </eAnnotations>
       <eClassifiers xsi:type="ecore:EClass" name="ComputationConstraint" eSuperTypes="#//infrastructure/elements/EAElement">
         <eStructuralFeatures xsi:type="ecore:EReference" name="logicalPath" ordered="false"
             upperBound="-1" eType="#//annex/computationconstraint/LogicalPath"/>
@@ -3477,6 +3576,9 @@
   </eSubpackages>
   <eSubpackages name="genericconstraints" nsURI="http://www.papyrusuml.org/EAST-ADL2/GenericConstraints/1"
       nsPrefix="GenericConstraints">
+    <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
+      <details key="originalName" value="GenericConstraints"/>
+    </eAnnotations>
     <eClassifiers xsi:type="ecore:EClass" name="GenericConstraint" eSuperTypes="#//infrastructure/elements/TraceableSpecification">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The GenericConstraint denotes a property, requirement, or a validation result for the identified element of the model. The kind of GenericConstraint is described as one of the GenericConstraintKind literals.&#xA;&#xA;Example: If the attribute genericConstraintType is cableLength, the genericConstraintValue could be &quot;5 meters&quot; (value of a numerical datatype with unit &quot;meters&quot;).&#xA;&#xA;Semantics:&#xA;The GenericConstraint does not describe what is classically referred to as a design constraint but has the role of a property, requirement, or a validation result. It is a requirement if this GenericConstraint refines a Requirement (by the Refine relationship). The GenericConstraint is a validation result if it realizes a VVActualOutcome, it is an intended validation result if it realizes a VVIntendedOutcome, and in other cases it denotes a property.&#xA;&#xA;&#xA;&#xA;Extension: Class, Constraint"/>

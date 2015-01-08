@@ -15,17 +15,11 @@ package org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfigurati
 
 import java.util.Collection;
 import java.util.List;
-
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.InvariantSemanticTypeConfiguration;
 import org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.InvariantSemanticTypeConfigurationFactory;
@@ -36,22 +30,14 @@ import org.eclipse.papyrus.infra.extendedtypes.provider.SemanticTypeConfiguratio
  * This is the item provider adapter for a {@link org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.InvariantSemanticTypeConfiguration} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- *
  * @generated
  */
 public class InvariantSemanticTypeConfigurationItemProvider
-		extends SemanticTypeConfigurationItemProvider
-		implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+		extends SemanticTypeConfigurationItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public InvariantSemanticTypeConfigurationItemProvider(AdapterFactory adapterFactory) {
@@ -62,7 +48,6 @@ public class InvariantSemanticTypeConfigurationItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -75,11 +60,11 @@ public class InvariantSemanticTypeConfigurationItemProvider
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -94,7 +79,6 @@ public class InvariantSemanticTypeConfigurationItemProvider
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -109,7 +93,6 @@ public class InvariantSemanticTypeConfigurationItemProvider
 	 * This returns InvariantSemanticTypeConfiguration.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -121,15 +104,14 @@ public class InvariantSemanticTypeConfigurationItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((InvariantSemanticTypeConfiguration) object).getName();
+		String label = ((InvariantSemanticTypeConfiguration)object).getName();
 		return label == null || label.length() == 0 ?
-				getString("_UI_InvariantSemanticTypeConfiguration_type") :
-				getString("_UI_InvariantSemanticTypeConfiguration_type") + " " + label;
+			getString("_UI_InvariantSemanticTypeConfiguration_type") :
+			getString("_UI_InvariantSemanticTypeConfiguration_type") + " " + label;
 	}
 
 
@@ -138,7 +120,6 @@ public class InvariantSemanticTypeConfigurationItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -146,9 +127,9 @@ public class InvariantSemanticTypeConfigurationItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(InvariantSemanticTypeConfiguration.class)) {
-		case InvariantSemanticTypeConfigurationPackage.INVARIANT_SEMANTIC_TYPE_CONFIGURATION__INVARIANT_RULE_CONFIGURATION:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-			return;
+			case InvariantSemanticTypeConfigurationPackage.INVARIANT_SEMANTIC_TYPE_CONFIGURATION__INVARIANT_RULE_CONFIGURATION:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+				return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -158,7 +139,6 @@ public class InvariantSemanticTypeConfigurationItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -166,21 +146,20 @@ public class InvariantSemanticTypeConfigurationItemProvider
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
 		newChildDescriptors.add
-				(createChildParameter
+			(createChildParameter
 				(InvariantSemanticTypeConfigurationPackage.Literals.INVARIANT_SEMANTIC_TYPE_CONFIGURATION__INVARIANT_RULE_CONFIGURATION,
-						InvariantSemanticTypeConfigurationFactory.eINSTANCE.createAndRule()));
+				 InvariantSemanticTypeConfigurationFactory.eINSTANCE.createAndRule()));
 
 		newChildDescriptors.add
-				(createChildParameter
+			(createChildParameter
 				(InvariantSemanticTypeConfigurationPackage.Literals.INVARIANT_SEMANTIC_TYPE_CONFIGURATION__INVARIANT_RULE_CONFIGURATION,
-						InvariantSemanticTypeConfigurationFactory.eINSTANCE.createOrRule()));
+				 InvariantSemanticTypeConfigurationFactory.eINSTANCE.createOrRule()));
 	}
 
 	/**
 	 * Return the resource locator for this item provider's resources.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override

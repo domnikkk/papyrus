@@ -31,6 +31,7 @@ import org.eclipse.emf.ecore.EPackage;
  *
  * @see org.eclipse.papyrus.eastadl.structure.StructureFactory
  * @model kind="package"
+ *        annotation="http://www.eclipse.org/uml2/2.0.0/UML originalName='Structure'"
  * @generated
  */
 public interface StructurePackage extends EPackage {
