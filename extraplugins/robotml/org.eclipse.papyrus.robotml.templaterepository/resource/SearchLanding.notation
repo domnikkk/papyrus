@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:RobotML="http://Papyrus/RobotML/1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML">
-  <notation:Diagram xmi:id="_mthk8DidEeK2K5cKvwDFDw" type="DatatypeDef" name="DataType" measurementUnit="Pixel">
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:RobotML="http://Papyrus/RobotML/1" xmlns:configuration="http://www.eclipse.org/papyrus/infra/viewpoints/configuration" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/papyrus/infra/viewpoints/policy/style" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
+  <notation:Diagram xmi:id="_mthk8DidEeK2K5cKvwDFDw" type="PapyrusUMLClassDiagram" name="DataType" measurementUnit="Pixel">
     <children xmi:type="notation:Shape" xmi:id="__FWZgDifEeK2K5cKvwDFDw" type="2009" fontName="Ubuntu" fontHeight="11" lineColor="0">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="__FXAkDifEeK2K5cKvwDFDw" source="ShadowFigure">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="__FXAkTifEeK2K5cKvwDFDw" key="ShadowFigure_Value" value="false"/>
@@ -44,13 +44,21 @@
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="__k-igTikEeK2K5cKvwDFDw" x="430" y="210"/>
     </children>
     <styles xmi:type="notation:DiagramStyle" xmi:id="_mthk8TidEeK2K5cKvwDFDw"/>
+    <styles xmi:type="style:PapyrusViewStyle" xmi:id="_x6rVAH7LEeSFyNbnLYDCkw">
+      <owner xmi:type="uml:Model" href="SearchLanding.uml#_mtbeUDidEeK2K5cKvwDFDw"/>
+      <configuration xmi:type="configuration:PapyrusDiagram" href="platform:/plugin/org.eclipse.papyrus.robotml.diagram.common/viewpoints/robotml.configuration#_0kzWCvL_EeONXPQ2mbw9vA"/>
+    </styles>
     <element xmi:type="uml:Model" href="SearchLanding.uml#_mtbeUDidEeK2K5cKvwDFDw"/>
   </notation:Diagram>
-  <notation:Diagram xmi:id="_mtjaIDidEeK2K5cKvwDFDw" type="InterfaceDef" name="Interface" measurementUnit="Pixel">
+  <notation:Diagram xmi:id="_mtjaIDidEeK2K5cKvwDFDw" type="PapyrusUMLClassDiagram" name="Interface" measurementUnit="Pixel">
     <styles xmi:type="notation:DiagramStyle" xmi:id="_mtjaITidEeK2K5cKvwDFDw"/>
+    <styles xmi:type="style:PapyrusViewStyle" xmi:id="_x6rVAX7LEeSFyNbnLYDCkw">
+      <owner xmi:type="uml:Model" href="SearchLanding.uml#_mtbeUDidEeK2K5cKvwDFDw"/>
+      <configuration xmi:type="configuration:PapyrusDiagram" href="platform:/plugin/org.eclipse.papyrus.robotml.diagram.common/viewpoints/robotml.configuration#_0kz9EvL_EeONXPQ2mbw9vA"/>
+    </styles>
     <element xmi:type="uml:Model" href="SearchLanding.uml#_mtbeUDidEeK2K5cKvwDFDw"/>
   </notation:Diagram>
-  <notation:Diagram xmi:id="_mtl2YDidEeK2K5cKvwDFDw" type="componentdef" name="Component" measurementUnit="Pixel">
+  <notation:Diagram xmi:id="_mtl2YDidEeK2K5cKvwDFDw" type="CompositeStructure" name="Component" measurementUnit="Pixel">
     <children xmi:type="notation:Shape" xmi:id="_InAA0DieEeK2K5cKvwDFDw" type="2073" fontName="Ubuntu" fontHeight="11" lineColor="0">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_InAn4DieEeK2K5cKvwDFDw" source="ShadowFigure">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_InAn4TieEeK2K5cKvwDFDw" key="ShadowFigure_Value" value="false"/>
@@ -197,6 +205,10 @@
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_InAA0TieEeK2K5cKvwDFDw" x="288" y="84" width="391" height="231"/>
     </children>
     <styles xmi:type="notation:DiagramStyle" xmi:id="_mtl2YTidEeK2K5cKvwDFDw"/>
+    <styles xmi:type="style:PapyrusViewStyle" xmi:id="_x6rVAn7LEeSFyNbnLYDCkw">
+      <owner xmi:type="uml:Model" href="SearchLanding.uml#_mtbeUDidEeK2K5cKvwDFDw"/>
+      <configuration xmi:type="configuration:PapyrusDiagram" href="platform:/plugin/org.eclipse.papyrus.robotml.diagram.common/viewpoints/robotml.configuration#_0kzWBfL_EeONXPQ2mbw9vA"/>
+    </styles>
     <element xmi:type="uml:Model" href="SearchLanding.uml#_mtbeUDidEeK2K5cKvwDFDw"/>
   </notation:Diagram>
   <notation:Diagram xmi:id="_-oZNMDieEeK2K5cKvwDFDw" type="PapyrusUMLStateMachineDiagram" name="StateMachine" measurementUnit="Pixel">
@@ -646,7 +658,7 @@
     <styles xmi:type="notation:DiagramStyle" xmi:id="_vWaeoTijEeK2K5cKvwDFDw"/>
     <element xmi:type="uml:Model" href="SearchLanding.uml#_mtbeUDidEeK2K5cKvwDFDw"/>
   </notation:Diagram>
-  <notation:Diagram xmi:id="_mtsnUGZAEeK8vedwRu2M7w" type="componentdef" name="sensorDiagram" measurementUnit="Pixel">
+  <notation:Diagram xmi:id="_mtsnUGZAEeK8vedwRu2M7w" type="CompositeStructure" name="sensorDiagram" measurementUnit="Pixel">
     <children xmi:type="notation:Shape" xmi:id="_obkeYGZAEeK8vedwRu2M7w" type="2073" fontName="Ubuntu" fontHeight="11" lineColor="0">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_oblsgGZAEeK8vedwRu2M7w" source="ShadowFigure">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_oblsgWZAEeK8vedwRu2M7w" key="ShadowFigure_Value" value="false"/>
@@ -760,9 +772,13 @@
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_6HLIAWZBEeK8vedwRu2M7w" x="560" y="52"/>
     </children>
     <styles xmi:type="notation:DiagramStyle" xmi:id="_mtsnUWZAEeK8vedwRu2M7w"/>
+    <styles xmi:type="style:PapyrusViewStyle" xmi:id="_x6rVA37LEeSFyNbnLYDCkw">
+      <owner xmi:type="uml:Model" href="SearchLanding.uml#_mtbeUDidEeK2K5cKvwDFDw"/>
+      <configuration xmi:type="configuration:PapyrusDiagram" href="platform:/plugin/org.eclipse.papyrus.robotml.diagram.common/viewpoints/robotml.configuration#_0kzWBfL_EeONXPQ2mbw9vA"/>
+    </styles>
     <element xmi:type="uml:Model" href="SearchLanding.uml#_mtbeUDidEeK2K5cKvwDFDw"/>
   </notation:Diagram>
-  <notation:Diagram xmi:id="_MdMdEGZCEeK8vedwRu2M7w" type="componentdef" name="actuatorDiagram" measurementUnit="Pixel">
+  <notation:Diagram xmi:id="_MdMdEGZCEeK8vedwRu2M7w" type="CompositeStructure" name="actuatorDiagram" measurementUnit="Pixel">
     <children xmi:type="notation:Shape" xmi:id="_NPQMIGZCEeK8vedwRu2M7w" type="2073" fontName="Ubuntu" fontHeight="11" lineColor="0">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_NPQzMGZCEeK8vedwRu2M7w" source="ShadowFigure">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_NPQzMWZCEeK8vedwRu2M7w" key="ShadowFigure_Value" value="false"/>
@@ -820,9 +836,13 @@
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_NPQMIWZCEeK8vedwRu2M7w" x="411" y="114"/>
     </children>
     <styles xmi:type="notation:DiagramStyle" xmi:id="_MdMdEWZCEeK8vedwRu2M7w"/>
+    <styles xmi:type="style:PapyrusViewStyle" xmi:id="_x6rVBH7LEeSFyNbnLYDCkw">
+      <owner xmi:type="uml:Model" href="SearchLanding.uml#_mtbeUDidEeK2K5cKvwDFDw"/>
+      <configuration xmi:type="configuration:PapyrusDiagram" href="platform:/plugin/org.eclipse.papyrus.robotml.diagram.common/viewpoints/robotml.configuration#_0kzWBfL_EeONXPQ2mbw9vA"/>
+    </styles>
     <element xmi:type="uml:Model" href="SearchLanding.uml#_mtbeUDidEeK2K5cKvwDFDw"/>
   </notation:Diagram>
-  <notation:Diagram xmi:id="_0NNY0HCmEeKfLd758TNm-w" type="architecture" name="ArchitectureDiagram" measurementUnit="Pixel">
+  <notation:Diagram xmi:id="_0NNY0HCmEeKfLd758TNm-w" type="CompositeStructure" name="ArchitectureDiagram" measurementUnit="Pixel">
     <children xmi:type="notation:Shape" xmi:id="_14ufcHCmEeKfLd758TNm-w" type="2073" fontName="Ubuntu" fontHeight="11" lineColor="0">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_14vGgXCmEeKfLd758TNm-w" source="ShadowFigure">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_14vGgnCmEeKfLd758TNm-w" key="ShadowFigure_Value" value="false"/>
@@ -1049,6 +1069,10 @@
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_14vGgHCmEeKfLd758TNm-w" x="24" y="34" width="1045" height="363"/>
     </children>
     <styles xmi:type="notation:DiagramStyle" xmi:id="_0NNY0XCmEeKfLd758TNm-w"/>
+    <styles xmi:type="style:PapyrusViewStyle" xmi:id="_x6rVBX7LEeSFyNbnLYDCkw">
+      <owner xmi:type="uml:Model" href="SearchLanding.uml#_mtbeUDidEeK2K5cKvwDFDw"/>
+      <configuration xmi:type="configuration:PapyrusDiagram" href="platform:/plugin/org.eclipse.papyrus.robotml.diagram.common/viewpoints/robotml.configuration#_0kzWAPL_EeONXPQ2mbw9vA"/>
+    </styles>
     <element xmi:type="uml:Model" href="SearchLanding.uml#_mtbeUDidEeK2K5cKvwDFDw"/>
     <edges xmi:type="notation:Connector" xmi:id="_C5BtAHCnEeKfLd758TNm-w" type="4013" source="_-I8CIHCmEeKfLd758TNm-w" target="_BnArgHCnEeKfLd758TNm-w" lineColor="0">
       <children xmi:type="notation:DecorationNode" xmi:id="_C5CUEHCnEeKfLd758TNm-w" visible="false" type="6025">
@@ -1102,7 +1126,7 @@
       <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_-BuKYnCnEeKfLd758TNm-w" points="[10, -6, -135, 78]$[148, -94, 3, -10]"/>
     </edges>
   </notation:Diagram>
-  <notation:Diagram xmi:id="_P1cgIHCnEeKfLd758TNm-w" type="componentdef" name="SensorsDiagram" measurementUnit="Pixel">
+  <notation:Diagram xmi:id="_P1cgIHCnEeKfLd758TNm-w" type="CompositeStructure" name="SensorsDiagram" measurementUnit="Pixel">
     <children xmi:type="notation:Shape" xmi:id="_RIJeIHCnEeKfLd758TNm-w" type="2073" fontName="Ubuntu" fontHeight="11" lineColor="0">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_RIKFMHCnEeKfLd758TNm-w" source="ShadowFigure">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_RIKFMXCnEeKfLd758TNm-w" key="ShadowFigure_Value" value="false"/>
@@ -1202,6 +1226,10 @@
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Xh840XCnEeKfLd758TNm-w" x="305" y="218"/>
     </children>
     <styles xmi:type="notation:DiagramStyle" xmi:id="_P1cgIXCnEeKfLd758TNm-w"/>
+    <styles xmi:type="style:PapyrusViewStyle" xmi:id="_x6rVBn7LEeSFyNbnLYDCkw">
+      <owner xmi:type="uml:Model" href="SearchLanding.uml#_mtbeUDidEeK2K5cKvwDFDw"/>
+      <configuration xmi:type="configuration:PapyrusDiagram" href="platform:/plugin/org.eclipse.papyrus.robotml.diagram.common/viewpoints/robotml.configuration#_0kzWBfL_EeONXPQ2mbw9vA"/>
+    </styles>
     <element xmi:type="uml:Model" href="SearchLanding.uml#_mtbeUDidEeK2K5cKvwDFDw"/>
   </notation:Diagram>
 </xmi:XMI>

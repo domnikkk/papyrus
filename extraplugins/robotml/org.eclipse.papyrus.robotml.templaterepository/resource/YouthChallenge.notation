@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:RobotML="http://Papyrus/RobotML/1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML">
-  <notation:Diagram xmi:id="_k0VVHjiAEeKDAMEjnOLmPA" type="DatatypeDef" name="DataTypesDiagram" measurementUnit="Pixel">
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:RobotML="http://Papyrus/RobotML/1" xmlns:configuration="http://www.eclipse.org/papyrus/infra/viewpoints/configuration" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/papyrus/infra/viewpoints/policy/style" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
+  <notation:Diagram xmi:id="_k0VVHjiAEeKDAMEjnOLmPA" type="PapyrusUMLClassDiagram" name="DataTypesDiagram" measurementUnit="Pixel">
     <children xmi:type="notation:Shape" xmi:id="_k0VVHziAEeKDAMEjnOLmPA" type="2006" fontHeight="8" fillColor="8905185" lineColor="0">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_k0VVIDiAEeKDAMEjnOLmPA" source="ShadowFigure">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_k0VVITiAEeKDAMEjnOLmPA" key="ShadowFigure_Value" value="false"/>
@@ -620,17 +620,29 @@
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k0VYAjiAEeKDAMEjnOLmPA" x="35" y="195" height="82"/>
     </children>
     <styles xmi:type="notation:DiagramStyle" xmi:id="_k0VYAziAEeKDAMEjnOLmPA"/>
+    <styles xmi:type="style:PapyrusViewStyle" xmi:id="_jBITkH7bEeSFyNbnLYDCkw">
+      <owner xmi:type="uml:Package" href="YouthChallenge.uml#_k0Lj4jiAEeKDAMEjnOLmPA"/>
+      <configuration xmi:type="configuration:PapyrusDiagram" href="platform:/plugin/org.eclipse.papyrus.robotml.diagram.common/viewpoints/robotml.configuration#_0kzWCvL_EeONXPQ2mbw9vA"/>
+    </styles>
     <element xmi:type="uml:Package" href="YouthChallenge.uml#_k0Lj4jiAEeKDAMEjnOLmPA"/>
   </notation:Diagram>
-  <notation:Diagram xmi:id="_k0VYBDiAEeKDAMEjnOLmPA" type="InterfaceDef" name="InterfacesDiagram" measurementUnit="Pixel">
+  <notation:Diagram xmi:id="_k0VYBDiAEeKDAMEjnOLmPA" type="PapyrusUMLClassDiagram" name="InterfacesDiagram" measurementUnit="Pixel">
     <styles xmi:type="notation:DiagramStyle" xmi:id="_k0VYBTiAEeKDAMEjnOLmPA"/>
+    <styles xmi:type="style:PapyrusViewStyle" xmi:id="_jBITkX7bEeSFyNbnLYDCkw">
+      <owner xmi:type="uml:Package" href="YouthChallenge.uml#_k0LlEjiAEeKDAMEjnOLmPA"/>
+      <configuration xmi:type="configuration:PapyrusDiagram" href="platform:/plugin/org.eclipse.papyrus.robotml.diagram.common/viewpoints/robotml.configuration#_0kz9EvL_EeONXPQ2mbw9vA"/>
+    </styles>
     <element xmi:type="uml:Package" href="YouthChallenge.uml#_k0LlEjiAEeKDAMEjnOLmPA"/>
   </notation:Diagram>
-  <notation:Diagram xmi:id="_k0VYBjiAEeKDAMEjnOLmPA" type="componentdef" name="SubSystemsDiagram" measurementUnit="Pixel">
+  <notation:Diagram xmi:id="_k0VYBjiAEeKDAMEjnOLmPA" type="CompositeStructure" name="SubSystemsDiagram" measurementUnit="Pixel">
     <styles xmi:type="notation:DiagramStyle" xmi:id="_k0VYBziAEeKDAMEjnOLmPA"/>
+    <styles xmi:type="style:PapyrusViewStyle" xmi:id="_jBITkn7bEeSFyNbnLYDCkw">
+      <owner xmi:type="uml:Package" href="YouthChallenge.uml#_k0LlEziAEeKDAMEjnOLmPA"/>
+      <configuration xmi:type="configuration:PapyrusDiagram" href="platform:/plugin/org.eclipse.papyrus.robotml.diagram.common/viewpoints/robotml.configuration#_0kzWBfL_EeONXPQ2mbw9vA"/>
+    </styles>
     <element xmi:type="uml:Package" href="YouthChallenge.uml#_k0LlEziAEeKDAMEjnOLmPA"/>
   </notation:Diagram>
-  <notation:Diagram xmi:id="_k0VYCDiAEeKDAMEjnOLmPA" type="architecture" name="P2-Proximetrie" measurementUnit="Pixel">
+  <notation:Diagram xmi:id="_k0VYCDiAEeKDAMEjnOLmPA" type="CompositeStructure" name="P2-Proximetrie" measurementUnit="Pixel">
     <children xmi:type="notation:Shape" xmi:id="_k0VYCTiAEeKDAMEjnOLmPA" type="2073" fontName="Segoe UI" lineColor="0">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_k0VYCjiAEeKDAMEjnOLmPA" source="ShadowFigure">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_k0VYCziAEeKDAMEjnOLmPA" key="ShadowFigure_Value" value="false"/>
@@ -1308,6 +1320,10 @@
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k0VZ1jiAEeKDAMEjnOLmPA" x="110" y="-15" width="836" height="551"/>
     </children>
     <styles xmi:type="notation:DiagramStyle" xmi:id="_k0VZ1ziAEeKDAMEjnOLmPA"/>
+    <styles xmi:type="style:PapyrusViewStyle" xmi:id="_jBITk37bEeSFyNbnLYDCkw">
+      <owner xmi:type="uml:Package" href="YouthChallenge.uml#_k0LmkDiAEeKDAMEjnOLmPA"/>
+      <configuration xmi:type="configuration:PapyrusDiagram" href="platform:/plugin/org.eclipse.papyrus.robotml.diagram.common/viewpoints/robotml.configuration#_0kzWAPL_EeONXPQ2mbw9vA"/>
+    </styles>
     <element xmi:type="uml:Package" href="YouthChallenge.uml#_k0LmkDiAEeKDAMEjnOLmPA"/>
     <edges xmi:type="notation:Connector" xmi:id="_k0VZ2DiAEeKDAMEjnOLmPA" type="4013" source="_k0VZRjiAEeKDAMEjnOLmPA" target="_k0VYpTiAEeKDAMEjnOLmPA" lineColor="0">
       <children xmi:type="notation:DecorationNode" xmi:id="_k0VZ2TiAEeKDAMEjnOLmPA" visible="false" type="6025">
@@ -1520,7 +1536,7 @@
       <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_k0VaYTiAEeKDAMEjnOLmPA" points="[10, -1, -315, 0]$[39, -1, -286, 0]$[315, -1, -10, 0]"/>
     </edges>
   </notation:Diagram>
-  <notation:Diagram xmi:id="_k0VaYjiAEeKDAMEjnOLmPA" type="architecture" name="WifiBot" measurementUnit="Pixel">
+  <notation:Diagram xmi:id="_k0VaYjiAEeKDAMEjnOLmPA" type="CompositeStructure" name="WifiBot" measurementUnit="Pixel">
     <children xmi:type="notation:Shape" xmi:id="_k0VaYziAEeKDAMEjnOLmPA" type="2073" fontName="Segoe UI" fontHeight="12" lineColor="0">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_k0VaZDiAEeKDAMEjnOLmPA" source="ShadowFigure">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_k0VaZTiAEeKDAMEjnOLmPA" key="ShadowFigure_Value" value="false"/>
@@ -2846,6 +2862,10 @@
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k0VdsjiAEeKDAMEjnOLmPA" x="30" y="75" width="1841" height="1323"/>
     </children>
     <styles xmi:type="notation:DiagramStyle" xmi:id="_k0VdsziAEeKDAMEjnOLmPA"/>
+    <styles xmi:type="style:PapyrusViewStyle" xmi:id="_jBRdgH7bEeSFyNbnLYDCkw">
+      <owner xmi:type="uml:Model" href="YouthChallenge.uml#_k0Lj4DiAEeKDAMEjnOLmPA"/>
+      <configuration xmi:type="configuration:PapyrusDiagram" href="platform:/plugin/org.eclipse.papyrus.robotml.diagram.common/viewpoints/robotml.configuration#_0kzWAPL_EeONXPQ2mbw9vA"/>
+    </styles>
     <element xmi:type="uml:Model" href="YouthChallenge.uml#_k0Lj4DiAEeKDAMEjnOLmPA"/>
     <edges xmi:type="notation:Connector" xmi:id="_k0VdtDiAEeKDAMEjnOLmPA" type="4013" source="_k0VavziAEeKDAMEjnOLmPA" target="_k0ValziAEeKDAMEjnOLmPA" lineColor="0">
       <children xmi:type="notation:DecorationNode" xmi:id="_k0VdtTiAEeKDAMEjnOLmPA" visible="false" type="6025">
@@ -3349,7 +3369,7 @@
       <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_k0VfFziAEeKDAMEjnOLmPA" points="[15, 3, -351, 3]$[364, 15, -2, 15]"/>
     </edges>
   </notation:Diagram>
-  <notation:Diagram xmi:id="_k0VfGDiAEeKDAMEjnOLmPA" type="architecture" name="A1-Servoings" measurementUnit="Pixel">
+  <notation:Diagram xmi:id="_k0VfGDiAEeKDAMEjnOLmPA" type="CompositeStructure" name="A1-Servoings" measurementUnit="Pixel">
     <children xmi:type="notation:Shape" xmi:id="_k0VfGTiAEeKDAMEjnOLmPA" type="2073" fontName="Segoe UI" lineColor="0">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_k0VfGjiAEeKDAMEjnOLmPA" source="ShadowFigure">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_k0VfGziAEeKDAMEjnOLmPA" key="ShadowFigure_Value" value="false"/>
@@ -3514,6 +3534,10 @@
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k0VfiDiAEeKDAMEjnOLmPA" x="70" y="40" width="796" height="196"/>
     </children>
     <styles xmi:type="notation:DiagramStyle" xmi:id="_k0VfiTiAEeKDAMEjnOLmPA"/>
+    <styles xmi:type="style:PapyrusViewStyle" xmi:id="_jBRdgX7bEeSFyNbnLYDCkw">
+      <owner xmi:type="uml:Package" href="YouthChallenge.uml#_k0Lo6ziAEeKDAMEjnOLmPA"/>
+      <configuration xmi:type="configuration:PapyrusDiagram" href="platform:/plugin/org.eclipse.papyrus.robotml.diagram.common/viewpoints/robotml.configuration#_0kzWAPL_EeONXPQ2mbw9vA"/>
+    </styles>
     <element xmi:type="uml:Package" href="YouthChallenge.uml#_k0Lo6ziAEeKDAMEjnOLmPA"/>
     <edges xmi:type="notation:Connector" xmi:id="_k0VfijiAEeKDAMEjnOLmPA" type="4013" source="_k0VfYTiAEeKDAMEjnOLmPA" target="_k0VfQziAEeKDAMEjnOLmPA" lineColor="0">
       <children xmi:type="notation:DecorationNode" xmi:id="_k0VfiziAEeKDAMEjnOLmPA" visible="false" type="6025">
@@ -3552,7 +3576,7 @@
       <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_k0VfoTiAEeKDAMEjnOLmPA" points="[3, 10, -27, -88]$[32, 108, 2, 10]"/>
     </edges>
   </notation:Diagram>
-  <notation:Diagram xmi:id="_k0VfojiAEeKDAMEjnOLmPA" type="architecture" name="A2-Pilot" measurementUnit="Pixel">
+  <notation:Diagram xmi:id="_k0VfojiAEeKDAMEjnOLmPA" type="CompositeStructure" name="A2-Pilot" measurementUnit="Pixel">
     <children xmi:type="notation:Shape" xmi:id="_k0VfoziAEeKDAMEjnOLmPA" type="2073" fontName="Segoe UI" lineColor="0">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_k0VfpDiAEeKDAMEjnOLmPA" source="ShadowFigure">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_k0VfpTiAEeKDAMEjnOLmPA" key="ShadowFigure_Value" value="false"/>
@@ -3938,6 +3962,10 @@
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_XIPaAaBXEeKY66-xYT6OCw" x="545" y="415"/>
     </children>
     <styles xmi:type="notation:DiagramStyle" xmi:id="_k0VgxTiAEeKDAMEjnOLmPA"/>
+    <styles xmi:type="style:PapyrusViewStyle" xmi:id="_jBRdgn7bEeSFyNbnLYDCkw">
+      <owner xmi:type="uml:Package" href="YouthChallenge.uml#_k0LohjiAEeKDAMEjnOLmPA"/>
+      <configuration xmi:type="configuration:PapyrusDiagram" href="platform:/plugin/org.eclipse.papyrus.robotml.diagram.common/viewpoints/robotml.configuration#_0kzWAPL_EeONXPQ2mbw9vA"/>
+    </styles>
     <element xmi:type="uml:Package" href="YouthChallenge.uml#_k0LohjiAEeKDAMEjnOLmPA"/>
     <edges xmi:type="notation:Connector" xmi:id="_k0VgxjiAEeKDAMEjnOLmPA" type="4013" source="_k0Vf3TiAEeKDAMEjnOLmPA" target="_k0VgQziAEeKDAMEjnOLmPA" lineColor="0">
       <children xmi:type="notation:DecorationNode" xmi:id="_k0VgxziAEeKDAMEjnOLmPA" visible="false" type="6025">
@@ -4025,7 +4053,7 @@
       <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_k0VhEjiAEeKDAMEjnOLmPA" points="[10, -2, -156, 28]$[164, -40, -2, -10]"/>
     </edges>
   </notation:Diagram>
-  <notation:Diagram xmi:id="_k0VhEziAEeKDAMEjnOLmPA" type="architecture" name="A3-Navigator" measurementUnit="Pixel">
+  <notation:Diagram xmi:id="_k0VhEziAEeKDAMEjnOLmPA" type="CompositeStructure" name="A3-Navigator" measurementUnit="Pixel">
     <children xmi:type="notation:Shape" xmi:id="_k0VhFDiAEeKDAMEjnOLmPA" type="2073" fontName="Segoe UI" lineColor="0">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_k0VhFTiAEeKDAMEjnOLmPA" source="ShadowFigure">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_k0VhFjiAEeKDAMEjnOLmPA" key="ShadowFigure_Value" value="false"/>
@@ -4328,6 +4356,10 @@
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k0Vh3ziAEeKDAMEjnOLmPA" x="55" y="35" width="631" height="256"/>
     </children>
     <styles xmi:type="notation:DiagramStyle" xmi:id="_k0Vh4DiAEeKDAMEjnOLmPA"/>
+    <styles xmi:type="style:PapyrusViewStyle" xmi:id="_jBRdg37bEeSFyNbnLYDCkw">
+      <owner xmi:type="uml:Package" href="YouthChallenge.uml#_k0LoPziAEeKDAMEjnOLmPA"/>
+      <configuration xmi:type="configuration:PapyrusDiagram" href="platform:/plugin/org.eclipse.papyrus.robotml.diagram.common/viewpoints/robotml.configuration#_0kzWAPL_EeONXPQ2mbw9vA"/>
+    </styles>
     <element xmi:type="uml:Package" href="YouthChallenge.uml#_k0LoPziAEeKDAMEjnOLmPA"/>
     <edges xmi:type="notation:Connector" xmi:id="_k0Vh4TiAEeKDAMEjnOLmPA" type="4013" source="_k0VhOjiAEeKDAMEjnOLmPA" target="_k0VhlziAEeKDAMEjnOLmPA" lineColor="0">
       <children xmi:type="notation:DecorationNode" xmi:id="_k0Vh4jiAEeKDAMEjnOLmPA" visible="false" type="6025">
@@ -4415,7 +4447,7 @@
       <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_k0ViFziAEeKDAMEjnOLmPA" points="[10, -3, -140, -4]$[154, -9, 4, -10]"/>
     </edges>
   </notation:Diagram>
-  <notation:Diagram xmi:id="_k0ee0DiAEeKDAMEjnOLmPA" type="architecture" name="A4-PathPlanner" measurementUnit="Pixel">
+  <notation:Diagram xmi:id="_k0ee0DiAEeKDAMEjnOLmPA" type="CompositeStructure" name="A4-PathPlanner" measurementUnit="Pixel">
     <children xmi:type="notation:Shape" xmi:id="_k0ee0TiAEeKDAMEjnOLmPA" type="2073" fontName="Segoe UI" lineColor="0">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_k0ee0jiAEeKDAMEjnOLmPA" source="ShadowFigure">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_k0ee0ziAEeKDAMEjnOLmPA" key="ShadowFigure_Value" value="false"/>
@@ -4654,6 +4686,10 @@
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k0efcjiAEeKDAMEjnOLmPA" x="65" y="55" width="591" height="241"/>
     </children>
     <styles xmi:type="notation:DiagramStyle" xmi:id="_k0efcziAEeKDAMEjnOLmPA"/>
+    <styles xmi:type="style:PapyrusViewStyle" xmi:id="_jBRdhH7bEeSFyNbnLYDCkw">
+      <owner xmi:type="uml:Package" href="YouthChallenge.uml#_k0LoBDiAEeKDAMEjnOLmPA"/>
+      <configuration xmi:type="configuration:PapyrusDiagram" href="platform:/plugin/org.eclipse.papyrus.robotml.diagram.common/viewpoints/robotml.configuration#_0kzWAPL_EeONXPQ2mbw9vA"/>
+    </styles>
     <element xmi:type="uml:Package" href="YouthChallenge.uml#_k0LoBDiAEeKDAMEjnOLmPA"/>
     <edges xmi:type="notation:Connector" xmi:id="_k0efdDiAEeKDAMEjnOLmPA" type="4013" source="_k0efTjiAEeKDAMEjnOLmPA" target="_k0ee5TiAEeKDAMEjnOLmPA" lineColor="0">
       <children xmi:type="notation:DecorationNode" xmi:id="_k0efdTiAEeKDAMEjnOLmPA" visible="false" type="6025">
@@ -4724,7 +4760,7 @@
       <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_k0efnziAEeKDAMEjnOLmPA" points="[10, -1, -190, 14]$[198, -5, -2, 10]"/>
     </edges>
   </notation:Diagram>
-  <notation:Diagram xmi:id="_k0efoDiAEeKDAMEjnOLmPA" type="architecture" name="A5-MissionGenerator" measurementUnit="Pixel">
+  <notation:Diagram xmi:id="_k0efoDiAEeKDAMEjnOLmPA" type="CompositeStructure" name="A5-MissionGenerator" measurementUnit="Pixel">
     <children xmi:type="notation:Shape" xmi:id="_k0efoTiAEeKDAMEjnOLmPA" type="2073" fontName="Segoe UI" lineColor="0">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_k0efojiAEeKDAMEjnOLmPA" source="ShadowFigure">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_k0efoziAEeKDAMEjnOLmPA" key="ShadowFigure_Value" value="false"/>
@@ -4819,6 +4855,10 @@
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k0ef3DiAEeKDAMEjnOLmPA" x="90" y="35" width="541" height="246"/>
     </children>
     <styles xmi:type="notation:DiagramStyle" xmi:id="_k0ef3TiAEeKDAMEjnOLmPA"/>
+    <styles xmi:type="style:PapyrusViewStyle" xmi:id="_jBRdhX7bEeSFyNbnLYDCkw">
+      <owner xmi:type="uml:Package" href="YouthChallenge.uml#_k0Ln8TiAEeKDAMEjnOLmPA"/>
+      <configuration xmi:type="configuration:PapyrusDiagram" href="platform:/plugin/org.eclipse.papyrus.robotml.diagram.common/viewpoints/robotml.configuration#_0kzWAPL_EeONXPQ2mbw9vA"/>
+    </styles>
     <element xmi:type="uml:Package" href="YouthChallenge.uml#_k0Ln8TiAEeKDAMEjnOLmPA"/>
     <edges xmi:type="notation:Connector" xmi:id="_k0ef3jiAEeKDAMEjnOLmPA" type="4013" source="_k0eftTiAEeKDAMEjnOLmPA" target="_k0efyjiAEeKDAMEjnOLmPA" lineColor="0">
       <children xmi:type="notation:DecorationNode" xmi:id="_k0ef3ziAEeKDAMEjnOLmPA" visible="false" type="6025">
@@ -4838,7 +4878,7 @@
       <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_k0ef6DiAEeKDAMEjnOLmPA" points="[10, 1, -284, -49]$[284, 50, -10, 0]"/>
     </edges>
   </notation:Diagram>
-  <notation:Diagram xmi:id="_k0ef6TiAEeKDAMEjnOLmPA" type="architecture" name="P3-Local" measurementUnit="Pixel">
+  <notation:Diagram xmi:id="_k0ef6TiAEeKDAMEjnOLmPA" type="CompositeStructure" name="P3-Local" measurementUnit="Pixel">
     <children xmi:type="notation:Shape" xmi:id="_k0ef6jiAEeKDAMEjnOLmPA" type="2073" fontName="Segoe UI" lineColor="0">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_k0ef6ziAEeKDAMEjnOLmPA" source="ShadowFigure">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_k0ef7DiAEeKDAMEjnOLmPA" key="ShadowFigure_Value" value="false"/>
@@ -5322,6 +5362,10 @@
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k0ehNziAEeKDAMEjnOLmPA" x="15" y="5" width="891" height="416"/>
     </children>
     <styles xmi:type="notation:DiagramStyle" xmi:id="_k0ehODiAEeKDAMEjnOLmPA"/>
+    <styles xmi:type="style:PapyrusViewStyle" xmi:id="_jBRdhn7bEeSFyNbnLYDCkw">
+      <owner xmi:type="uml:Package" href="YouthChallenge.uml#_k0LmJjiAEeKDAMEjnOLmPA"/>
+      <configuration xmi:type="configuration:PapyrusDiagram" href="platform:/plugin/org.eclipse.papyrus.robotml.diagram.common/viewpoints/robotml.configuration#_0kzWAPL_EeONXPQ2mbw9vA"/>
+    </styles>
     <element xmi:type="uml:Package" href="YouthChallenge.uml#_k0LmJjiAEeKDAMEjnOLmPA"/>
     <edges xmi:type="notation:Connector" xmi:id="_k0ehOTiAEeKDAMEjnOLmPA" type="4013" source="_k0egGjiAEeKDAMEjnOLmPA" target="_k0egpDiAEeKDAMEjnOLmPA" lineColor="0">
       <children xmi:type="notation:DecorationNode" xmi:id="_k0ehOjiAEeKDAMEjnOLmPA" visible="false" type="6025">
@@ -5463,7 +5507,7 @@
       <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_k0ehkziAEeKDAMEjnOLmPA" points="[10, 0, -45, 40]$[31, 0, -24, 40]$[31, -40, -24, 0]$[45, -40, -10, 0]"/>
     </edges>
   </notation:Diagram>
-  <notation:Diagram xmi:id="_k0ehlDiAEeKDAMEjnOLmPA" type="architecture" name="P4-Global" measurementUnit="Pixel">
+  <notation:Diagram xmi:id="_k0ehlDiAEeKDAMEjnOLmPA" type="CompositeStructure" name="P4-Global" measurementUnit="Pixel">
     <children xmi:type="notation:Shape" xmi:id="_k0ehlTiAEeKDAMEjnOLmPA" type="2073" fontName="Segoe UI" lineColor="0">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_k0ehljiAEeKDAMEjnOLmPA" source="ShadowFigure">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_k0ehlziAEeKDAMEjnOLmPA" key="ShadowFigure_Value" value="false"/>
@@ -5721,6 +5765,10 @@
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k0eiQjiAEeKDAMEjnOLmPA" x="105" y="45" width="756" height="396"/>
     </children>
     <styles xmi:type="notation:DiagramStyle" xmi:id="_k0eiQziAEeKDAMEjnOLmPA"/>
+    <styles xmi:type="style:PapyrusViewStyle" xmi:id="_jBRdh37bEeSFyNbnLYDCkw">
+      <owner xmi:type="uml:Package" href="YouthChallenge.uml#_k0Ll8TiAEeKDAMEjnOLmPA"/>
+      <configuration xmi:type="configuration:PapyrusDiagram" href="platform:/plugin/org.eclipse.papyrus.robotml.diagram.common/viewpoints/robotml.configuration#_0kzWAPL_EeONXPQ2mbw9vA"/>
+    </styles>
     <element xmi:type="uml:Package" href="YouthChallenge.uml#_k0Ll8TiAEeKDAMEjnOLmPA"/>
     <edges xmi:type="notation:Connector" xmi:id="_k0eiRDiAEeKDAMEjnOLmPA" type="4013" source="_k0eh-jiAEeKDAMEjnOLmPA" target="_k0ehwTiAEeKDAMEjnOLmPA" lineColor="0">
       <children xmi:type="notation:DecorationNode" xmi:id="_k0eiRTiAEeKDAMEjnOLmPA" visible="false" type="6025">
@@ -5791,7 +5839,7 @@
       <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_k0eibziAEeKDAMEjnOLmPA" points="[10, -6, -110, -4]$[123, -12, 3, -10]"/>
     </edges>
   </notation:Diagram>
-  <notation:Diagram xmi:id="_k0eicDiAEeKDAMEjnOLmPA" type="architecture" name="P1-Sensors" measurementUnit="Pixel">
+  <notation:Diagram xmi:id="_k0eicDiAEeKDAMEjnOLmPA" type="CompositeStructure" name="P1-Sensors" measurementUnit="Pixel">
     <children xmi:type="notation:Shape" xmi:id="_k0eicTiAEeKDAMEjnOLmPA" type="2073" fontName="Segoe UI" lineColor="0">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_k0eicjiAEeKDAMEjnOLmPA" source="ShadowFigure">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_k0eicziAEeKDAMEjnOLmPA" key="ShadowFigure_Value" value="false"/>
@@ -6600,6 +6648,10 @@
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k0eknDiAEeKDAMEjnOLmPA" x="-320" y="20" width="846" height="851"/>
     </children>
     <styles xmi:type="notation:DiagramStyle" xmi:id="_k0eknTiAEeKDAMEjnOLmPA"/>
+    <styles xmi:type="style:PapyrusViewStyle" xmi:id="_jBRdiH7bEeSFyNbnLYDCkw">
+      <owner xmi:type="uml:Package" href="YouthChallenge.uml#_k0LnODiAEeKDAMEjnOLmPA"/>
+      <configuration xmi:type="configuration:PapyrusDiagram" href="platform:/plugin/org.eclipse.papyrus.robotml.diagram.common/viewpoints/robotml.configuration#_0kzWAPL_EeONXPQ2mbw9vA"/>
+    </styles>
     <element xmi:type="uml:Package" href="YouthChallenge.uml#_k0LnODiAEeKDAMEjnOLmPA"/>
     <edges xmi:type="notation:Connector" xmi:id="_k0eknjiAEeKDAMEjnOLmPA" type="4013" source="_k0ejQziAEeKDAMEjnOLmPA" target="_k0ej6DiAEeKDAMEjnOLmPA" lineColor="0">
       <children xmi:type="notation:DecorationNode" xmi:id="_k0eknziAEeKDAMEjnOLmPA" visible="false" type="6025">
@@ -6828,7 +6880,7 @@
       <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_k0elMTiAEeKDAMEjnOLmPA" points="[10, -3, -375, 1]$[385, 6, 0, 10]"/>
     </edges>
   </notation:Diagram>
-  <notation:Diagram xmi:id="_k0elMjiAEeKDAMEjnOLmPA" type="componentdef" name="P2_Proximetry_Systems" measurementUnit="Pixel">
+  <notation:Diagram xmi:id="_k0elMjiAEeKDAMEjnOLmPA" type="CompositeStructure" name="P2_Proximetry_Systems" measurementUnit="Pixel">
     <children xmi:type="notation:Shape" xmi:id="_k0elMziAEeKDAMEjnOLmPA" type="2073" fontHeight="8" lineColor="0">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_k0elNDiAEeKDAMEjnOLmPA" source="ShadowFigure">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_k0elNTiAEeKDAMEjnOLmPA" key="ShadowFigure_Value" value="false"/>
@@ -7432,6 +7484,10 @@
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k0emsjiAEeKDAMEjnOLmPA" x="530" y="795"/>
     </children>
     <styles xmi:type="notation:DiagramStyle" xmi:id="_k0emsziAEeKDAMEjnOLmPA"/>
+    <styles xmi:type="style:PapyrusViewStyle" xmi:id="_jBRdiX7bEeSFyNbnLYDCkw">
+      <owner xmi:type="uml:Package" href="YouthChallenge.uml#_k0LmkDiAEeKDAMEjnOLmPA"/>
+      <configuration xmi:type="configuration:PapyrusDiagram" href="platform:/plugin/org.eclipse.papyrus.robotml.diagram.common/viewpoints/robotml.configuration#_0kzWBfL_EeONXPQ2mbw9vA"/>
+    </styles>
     <element xmi:type="uml:Package" href="YouthChallenge.uml#_k0LmkDiAEeKDAMEjnOLmPA"/>
     <edges xmi:type="notation:Connector" xmi:id="_k0emtDiAEeKDAMEjnOLmPA" type="4002" source="_k0elkziAEeKDAMEjnOLmPA" target="_k0elMziAEeKDAMEjnOLmPA" lineColor="0">
       <styles xmi:type="notation:FontStyle" xmi:id="_k0emtTiAEeKDAMEjnOLmPA" fontHeight="8"/>
@@ -7462,7 +7518,7 @@
       <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_k0emxziAEeKDAMEjnOLmPA" id="(0.946843853820598,0.594855305466238)"/>
     </edges>
   </notation:Diagram>
-  <notation:Diagram xmi:id="_k0emyDiAEeKDAMEjnOLmPA" type="componentdef" name="P3_Local_Systems" measurementUnit="Pixel">
+  <notation:Diagram xmi:id="_k0emyDiAEeKDAMEjnOLmPA" type="CompositeStructure" name="P3_Local_Systems" measurementUnit="Pixel">
     <children xmi:type="notation:Shape" xmi:id="_k0emyTiAEeKDAMEjnOLmPA" type="2073" fontHeight="8" lineColor="0">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_k0emyjiAEeKDAMEjnOLmPA" source="ShadowFigure">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_k0emyziAEeKDAMEjnOLmPA" key="ShadowFigure_Value" value="false"/>
@@ -7629,6 +7685,10 @@
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k0enMTiAEeKDAMEjnOLmPA" x="444" y="118" width="472"/>
     </children>
     <styles xmi:type="notation:DiagramStyle" xmi:id="_k0enMjiAEeKDAMEjnOLmPA"/>
+    <styles xmi:type="style:PapyrusViewStyle" xmi:id="_jBRdin7bEeSFyNbnLYDCkw">
+      <owner xmi:type="uml:Package" href="YouthChallenge.uml#_k0LmJjiAEeKDAMEjnOLmPA"/>
+      <configuration xmi:type="configuration:PapyrusDiagram" href="platform:/plugin/org.eclipse.papyrus.robotml.diagram.common/viewpoints/robotml.configuration#_0kzWBfL_EeONXPQ2mbw9vA"/>
+    </styles>
     <element xmi:type="uml:Package" href="YouthChallenge.uml#_k0LmJjiAEeKDAMEjnOLmPA"/>
     <edges xmi:type="notation:Connector" xmi:id="_k0enMziAEeKDAMEjnOLmPA" type="4002" source="_k0enKTiAEeKDAMEjnOLmPA" target="_k0emyTiAEeKDAMEjnOLmPA" lineColor="0">
       <styles xmi:type="notation:FontStyle" xmi:id="_k0enNDiAEeKDAMEjnOLmPA" fontHeight="8"/>
@@ -7638,7 +7698,7 @@
       <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_k0enNziAEeKDAMEjnOLmPA" id="(0.8131868131868132,0.5418326693227091)"/>
     </edges>
   </notation:Diagram>
-  <notation:Diagram xmi:id="_k0enODiAEeKDAMEjnOLmPA" type="componentdef" name="P4_Globa_Systems" measurementUnit="Pixel">
+  <notation:Diagram xmi:id="_k0enODiAEeKDAMEjnOLmPA" type="CompositeStructure" name="P4_Globa_Systems" measurementUnit="Pixel">
     <children xmi:type="notation:Shape" xmi:id="_k0enOTiAEeKDAMEjnOLmPA" type="2073" fontHeight="8" lineColor="0">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_k0enOjiAEeKDAMEjnOLmPA" source="ShadowFigure">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_k0enOziAEeKDAMEjnOLmPA" key="ShadowFigure_Value" value="false"/>
@@ -7748,6 +7808,10 @@
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k0enfTiAEeKDAMEjnOLmPA" x="392" y="203" width="329"/>
     </children>
     <styles xmi:type="notation:DiagramStyle" xmi:id="_k0enfjiAEeKDAMEjnOLmPA"/>
+    <styles xmi:type="style:PapyrusViewStyle" xmi:id="_jBRdi37bEeSFyNbnLYDCkw">
+      <owner xmi:type="uml:Package" href="YouthChallenge.uml#_k0Ll8TiAEeKDAMEjnOLmPA"/>
+      <configuration xmi:type="configuration:PapyrusDiagram" href="platform:/plugin/org.eclipse.papyrus.robotml.diagram.common/viewpoints/robotml.configuration#_0kzWBfL_EeONXPQ2mbw9vA"/>
+    </styles>
     <element xmi:type="uml:Package" href="YouthChallenge.uml#_k0Ll8TiAEeKDAMEjnOLmPA"/>
     <edges xmi:type="notation:Connector" xmi:id="_k0enfziAEeKDAMEjnOLmPA" type="4002" source="_k0endTiAEeKDAMEjnOLmPA" target="_k0enOTiAEeKDAMEjnOLmPA" lineColor="0">
       <styles xmi:type="notation:FontStyle" xmi:id="_k0engDiAEeKDAMEjnOLmPA" fontHeight="8"/>
@@ -7757,7 +7821,7 @@
       <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_k0engziAEeKDAMEjnOLmPA" id="(0.9202453987730062,0.5492227979274611)"/>
     </edges>
   </notation:Diagram>
-  <notation:Diagram xmi:id="_k0enhDiAEeKDAMEjnOLmPA" type="componentdef" name="A4_PathPlanning_Systems" measurementUnit="Pixel">
+  <notation:Diagram xmi:id="_k0enhDiAEeKDAMEjnOLmPA" type="CompositeStructure" name="A4_PathPlanning_Systems" measurementUnit="Pixel">
     <children xmi:type="notation:Shape" xmi:id="_k0enhTiAEeKDAMEjnOLmPA" type="2073" fontHeight="8" lineColor="0">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_k0enhjiAEeKDAMEjnOLmPA" source="ShadowFigure">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_k0enhziAEeKDAMEjnOLmPA" key="ShadowFigure_Value" value="false"/>
@@ -7968,6 +8032,10 @@
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k0eoCziAEeKDAMEjnOLmPA" x="340" y="150" width="291"/>
     </children>
     <styles xmi:type="notation:DiagramStyle" xmi:id="_k0eoDDiAEeKDAMEjnOLmPA"/>
+    <styles xmi:type="style:PapyrusViewStyle" xmi:id="_jBRdjH7bEeSFyNbnLYDCkw">
+      <owner xmi:type="uml:Package" href="YouthChallenge.uml#_k0LoBDiAEeKDAMEjnOLmPA"/>
+      <configuration xmi:type="configuration:PapyrusDiagram" href="platform:/plugin/org.eclipse.papyrus.robotml.diagram.common/viewpoints/robotml.configuration#_0kzWBfL_EeONXPQ2mbw9vA"/>
+    </styles>
     <element xmi:type="uml:Package" href="YouthChallenge.uml#_k0LoBDiAEeKDAMEjnOLmPA"/>
     <edges xmi:type="notation:Connector" xmi:id="_k0eoDTiAEeKDAMEjnOLmPA" type="4002" source="_k0eoAziAEeKDAMEjnOLmPA" target="_k0enhTiAEeKDAMEjnOLmPA" lineColor="0">
       <styles xmi:type="notation:FontStyle" xmi:id="_k0eoDjiAEeKDAMEjnOLmPA" fontHeight="8"/>
@@ -7977,7 +8045,7 @@
       <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_k0eoETiAEeKDAMEjnOLmPA" id="(0.9426751592356688,0.49044585987261147)"/>
     </edges>
   </notation:Diagram>
-  <notation:Diagram xmi:id="_k0eoEjiAEeKDAMEjnOLmPA" type="componentdef" name="A2_pilot_Systems" measurementUnit="Pixel">
+  <notation:Diagram xmi:id="_k0eoEjiAEeKDAMEjnOLmPA" type="CompositeStructure" name="A2_pilot_Systems" measurementUnit="Pixel">
     <children xmi:type="notation:Shape" xmi:id="_k0eoEziAEeKDAMEjnOLmPA" type="2073" fontHeight="8" lineColor="0">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_k0eoFDiAEeKDAMEjnOLmPA" source="ShadowFigure">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_k0eoFTiAEeKDAMEjnOLmPA" key="ShadowFigure_Value" value="false"/>
@@ -8195,6 +8263,10 @@
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k0eonDiAEeKDAMEjnOLmPA" x="435" y="305" width="341"/>
     </children>
     <styles xmi:type="notation:DiagramStyle" xmi:id="_k0eonTiAEeKDAMEjnOLmPA"/>
+    <styles xmi:type="style:PapyrusViewStyle" xmi:id="_jBRdjX7bEeSFyNbnLYDCkw">
+      <owner xmi:type="uml:Package" href="YouthChallenge.uml#_k0LohjiAEeKDAMEjnOLmPA"/>
+      <configuration xmi:type="configuration:PapyrusDiagram" href="platform:/plugin/org.eclipse.papyrus.robotml.diagram.common/viewpoints/robotml.configuration#_0kzWBfL_EeONXPQ2mbw9vA"/>
+    </styles>
     <element xmi:type="uml:Package" href="YouthChallenge.uml#_k0LohjiAEeKDAMEjnOLmPA"/>
     <edges xmi:type="notation:Connector" xmi:id="_k0eonjiAEeKDAMEjnOLmPA" type="4002" source="_k0eoiziAEeKDAMEjnOLmPA" target="_k0eoEziAEeKDAMEjnOLmPA" lineColor="0">
       <styles xmi:type="notation:FontStyle" xmi:id="_k0eonziAEeKDAMEjnOLmPA" fontHeight="8"/>
@@ -8211,7 +8283,7 @@
       <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_k0eopziAEeKDAMEjnOLmPA" id="(0.9276018099547512,0.41)"/>
     </edges>
   </notation:Diagram>
-  <notation:Diagram xmi:id="_k0eoqDiAEeKDAMEjnOLmPA" type="componentdef" name="A3_Navigator_Systems" measurementUnit="Pixel">
+  <notation:Diagram xmi:id="_k0eoqDiAEeKDAMEjnOLmPA" type="CompositeStructure" name="A3_Navigator_Systems" measurementUnit="Pixel">
     <children xmi:type="notation:Shape" xmi:id="_k0eoqTiAEeKDAMEjnOLmPA" type="2073" fontHeight="8" lineColor="0">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_k0eoqjiAEeKDAMEjnOLmPA" source="ShadowFigure">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_k0eoqziAEeKDAMEjnOLmPA" key="ShadowFigure_Value" value="false"/>
@@ -8340,6 +8412,10 @@
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k0eo-TiAEeKDAMEjnOLmPA" x="429" y="217" width="262"/>
     </children>
     <styles xmi:type="notation:DiagramStyle" xmi:id="_k0eo-jiAEeKDAMEjnOLmPA"/>
+    <styles xmi:type="style:PapyrusViewStyle" xmi:id="_jBRdjn7bEeSFyNbnLYDCkw">
+      <owner xmi:type="uml:Package" href="YouthChallenge.uml#_k0LoPziAEeKDAMEjnOLmPA"/>
+      <configuration xmi:type="configuration:PapyrusDiagram" href="platform:/plugin/org.eclipse.papyrus.robotml.diagram.common/viewpoints/robotml.configuration#_0kzWBfL_EeONXPQ2mbw9vA"/>
+    </styles>
     <element xmi:type="uml:Package" href="YouthChallenge.uml#_k0LoPziAEeKDAMEjnOLmPA"/>
     <edges xmi:type="notation:Connector" xmi:id="_k0eo-ziAEeKDAMEjnOLmPA" type="4002" source="_k0eo8TiAEeKDAMEjnOLmPA" target="_k0eoqTiAEeKDAMEjnOLmPA" lineColor="0">
       <styles xmi:type="notation:FontStyle" xmi:id="_k0eo_DiAEeKDAMEjnOLmPA" fontHeight="8"/>
@@ -8349,7 +8425,7 @@
       <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_k0eo_ziAEeKDAMEjnOLmPA" id="(0.7967032967032966,0.7176470588235294)"/>
     </edges>
   </notation:Diagram>
-  <notation:Diagram xmi:id="_WaH_MDiuEeKFHpsdOC1X1Q" type="componentdef" name="PlatformsDiagram" measurementUnit="Pixel">
+  <notation:Diagram xmi:id="_WaH_MDiuEeKFHpsdOC1X1Q" type="CompositeStructure" name="PlatformsDiagram" measurementUnit="Pixel">
     <children xmi:type="notation:Shape" xmi:id="_iCSVIDiuEeKFHpsdOC1X1Q" type="2073" fontName="Segoe UI" lineColor="0">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_iCSVIjiuEeKFHpsdOC1X1Q" source="ShadowFigure">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_iCSVIziuEeKFHpsdOC1X1Q" key="ShadowFigure_Value" value="false"/>
@@ -8426,9 +8502,13 @@
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HSZVoTivEeKFHpsdOC1X1Q" x="145" y="225" width="326" height="136"/>
     </children>
     <styles xmi:type="notation:DiagramStyle" xmi:id="_WaH_MTiuEeKFHpsdOC1X1Q"/>
+    <styles xmi:type="style:PapyrusViewStyle" xmi:id="_jBRdj37bEeSFyNbnLYDCkw">
+      <owner xmi:type="uml:Package" href="YouthChallenge.uml#_O0YV0DiuEeKFHpsdOC1X1Q"/>
+      <configuration xmi:type="configuration:PapyrusDiagram" href="platform:/plugin/org.eclipse.papyrus.robotml.diagram.common/viewpoints/robotml.configuration#_0kzWBfL_EeONXPQ2mbw9vA"/>
+    </styles>
     <element xmi:type="uml:Package" href="YouthChallenge.uml#_O0YV0DiuEeKFHpsdOC1X1Q"/>
   </notation:Diagram>
-  <notation:Diagram xmi:id="_NzHQoDivEeKFHpsdOC1X1Q" type="architecture" name="ArchitectureDiagram" measurementUnit="Pixel">
+  <notation:Diagram xmi:id="_NzHQoDivEeKFHpsdOC1X1Q" type="CompositeStructure" name="ArchitectureDiagram" measurementUnit="Pixel">
     <children xmi:type="notation:Shape" xmi:id="_OxmSIDivEeKFHpsdOC1X1Q" type="2073" fontName="Segoe UI" lineColor="0">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_OxmSIjivEeKFHpsdOC1X1Q" source="ShadowFigure">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_OxmSIzivEeKFHpsdOC1X1Q" key="ShadowFigure_Value" value="false"/>
@@ -8484,9 +8564,13 @@
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_OxmSITivEeKFHpsdOC1X1Q" x="155" y="94" width="591" height="202"/>
     </children>
     <styles xmi:type="notation:DiagramStyle" xmi:id="_NzHQoTivEeKFHpsdOC1X1Q"/>
+    <styles xmi:type="style:PapyrusViewStyle" xmi:id="_jBRdkH7bEeSFyNbnLYDCkw">
+      <owner xmi:type="uml:Package" href="YouthChallenge.uml#_O0YV0DiuEeKFHpsdOC1X1Q"/>
+      <configuration xmi:type="configuration:PapyrusDiagram" href="platform:/plugin/org.eclipse.papyrus.robotml.diagram.common/viewpoints/robotml.configuration#_0kzWAPL_EeONXPQ2mbw9vA"/>
+    </styles>
     <element xmi:type="uml:Package" href="YouthChallenge.uml#_O0YV0DiuEeKFHpsdOC1X1Q"/>
   </notation:Diagram>
-  <notation:Diagram xmi:id="_LuVHIHBiEeKpO-l0NGAU9Q" type="componentdef" name="Sensors_def" measurementUnit="Pixel">
+  <notation:Diagram xmi:id="_LuVHIHBiEeKpO-l0NGAU9Q" type="CompositeStructure" name="Sensors_def" measurementUnit="Pixel">
     <children xmi:type="notation:Shape" xmi:id="_MbKX8HBiEeKpO-l0NGAU9Q" type="2073" fontName="Segoe UI" lineColor="0">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_MbXMQHBiEeKpO-l0NGAU9Q" source="ShadowFigure">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_MbXMQXBiEeKpO-l0NGAU9Q" key="ShadowFigure_Value" value="false"/>
@@ -8620,9 +8704,13 @@
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Nq3sUXBiEeKpO-l0NGAU9Q" x="525" y="397"/>
     </children>
     <styles xmi:type="notation:DiagramStyle" xmi:id="_LuVHIXBiEeKpO-l0NGAU9Q"/>
+    <styles xmi:type="style:PapyrusViewStyle" xmi:id="_jBRdkX7bEeSFyNbnLYDCkw">
+      <owner xmi:type="uml:Package" href="YouthChallenge.uml#_k0LnODiAEeKDAMEjnOLmPA"/>
+      <configuration xmi:type="configuration:PapyrusDiagram" href="platform:/plugin/org.eclipse.papyrus.robotml.diagram.common/viewpoints/robotml.configuration#_0kzWBfL_EeONXPQ2mbw9vA"/>
+    </styles>
     <element xmi:type="uml:Package" href="YouthChallenge.uml#_k0LnODiAEeKDAMEjnOLmPA"/>
   </notation:Diagram>
-  <notation:Diagram xmi:id="_rc51sKEKEeKLUqX9IJq2Gg" type="architecture" name="WifibotEnvironmentDiagram" measurementUnit="Pixel">
+  <notation:Diagram xmi:id="_rc51sKEKEeKLUqX9IJq2Gg" type="CompositeStructure" name="WifibotEnvironmentDiagram" measurementUnit="Pixel">
     <children xmi:type="notation:Shape" xmi:id="_sAx-0KEKEeKLUqX9IJq2Gg" type="2073" gradient="8905185, 16777215, 0">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_sG4m0KEKEeKLUqX9IJq2Gg" source="Stereotype_Annotation">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_sJHbcKEKEeKLUqX9IJq2Gg" key="StereotypeWithQualifiedNameList" value=""/>
@@ -8670,6 +8758,10 @@
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sAx-0aEKEeKLUqX9IJq2Gg" x="137" y="70" width="449" height="381"/>
     </children>
     <styles xmi:type="notation:DiagramStyle" xmi:id="_rc51saEKEeKLUqX9IJq2Gg"/>
+    <styles xmi:type="style:PapyrusViewStyle" xmi:id="_jBRdkn7bEeSFyNbnLYDCkw">
+      <owner xmi:type="uml:Model" href="YouthChallenge.uml#_k0Lj4DiAEeKDAMEjnOLmPA"/>
+      <configuration xmi:type="configuration:PapyrusDiagram" href="platform:/plugin/org.eclipse.papyrus.robotml.diagram.common/viewpoints/robotml.configuration#_0kzWAPL_EeONXPQ2mbw9vA"/>
+    </styles>
     <element xmi:type="uml:Model" href="YouthChallenge.uml#_k0Lj4DiAEeKDAMEjnOLmPA"/>
   </notation:Diagram>
 </xmi:XMI>

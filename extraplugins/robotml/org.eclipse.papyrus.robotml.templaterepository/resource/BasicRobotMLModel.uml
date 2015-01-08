@@ -1,17 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xmi:id="_P3Vb3SY6EeG5htLAfvhNWA" name="RobotMLModel">
-  <packageImport xmi:id="_P3Vb3iY6EeG5htLAfvhNWA">
-    <importedPackage href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_dt_y4AHtEeCQQOKrhO_fIQ"/>
-  </packageImport>
-  <packagedElement xmi:type="uml:Package" xmi:id="_P3Vb3yY6EeG5htLAfvhNWA" name="Specific Datatypes"/>
-  <packagedElement xmi:type="uml:Package" xmi:id="_P3Vb4CY6EeG5htLAfvhNWA" name="Interfaces"/>
-  <packagedElement xmi:type="uml:Package" xmi:id="_P3Vb4SY6EeG5htLAfvhNWA" name="Sensors "/>
-  <packagedElement xmi:type="uml:Package" xmi:id="_P3Vb4iY6EeG5htLAfvhNWA" name="Actuators"/>
-  <packagedElement xmi:type="uml:Package" xmi:id="_P3Vb4yY6EeG5htLAfvhNWA" name="Robotic SubSystems"/>
-  <profileApplication xmi:id="_I3ftECG3EeKBc8qhxlvO_Q">
-    <eAnnotations xmi:id="_I6xqkCG3EeKBc8qhxlvO_Q" source="http://www.eclipse.org/uml2/2.0.0/UML">
-      <references xmi:type="ecore:EPackage" href="http://Papyrus/RobotML/1#/"/>
-    </eAnnotations>
-    <appliedProfile href="pathmap://Robotml_PROFILES/RobotMLProfile.profile.uml#_3QOHEPcEEd-J06U5HM_o-Q"/>
-  </profileApplication>
-</uml:Model>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:RobotML="http://Papyrus/RobotML/1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
+  <uml:Model xmi:id="_P3Vb3SY6EeG5htLAfvhNWA" name="RobotMLModel">
+    <packagedElement xmi:type="uml:Package" xmi:id="_P3Vb3yY6EeG5htLAfvhNWA" name="Specific Datatypes">
+      <packagedElement xmi:type="uml:Class" xmi:id="_pZSHAIRCEeSd5a-41sWQ0Q" name="Robot1"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_sx8E4IRCEeSd5a-41sWQ0Q" name="Robot2"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_P3Vb4CY6EeG5htLAfvhNWA" name="Interfaces">
+      <packagedElement xmi:type="uml:Interface" xmi:id="_NlL8sIQ8EeSd5a-41sWQ0Q" name="CameraData">
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_PU8qIIQ8EeSd5a-41sWQ0Q" name="getImage"/>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_P3Vb4SY6EeG5htLAfvhNWA" name="Sensors ">
+      <packagedElement xmi:type="uml:Class" xmi:id="_0yW8QIQ7EeSd5a-41sWQ0Q" name="Robot1">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_-IXpYIQ7EeSd5a-41sWQ0Q" name="DataFlowPort1" aggregation="composite"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="__jzsoIQ7EeSd5a-41sWQ0Q" name="DataFlowPort2" aggregation="composite"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_aFPj8IQ8EeSd5a-41sWQ0Q" name="camera" type="_CGFcIIQ8EeSd5a-41sWQ0Q"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_cWMS4IQ8EeSd5a-41sWQ0Q" name="traitementImage" type="_L4-5kIQ8EeSd5a-41sWQ0Q"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_d6P0sIQ-EeSd5a-41sWQ0Q" name="DataFlowPort3" aggregation="composite"/>
+        <ownedConnector xmi:type="uml:Connector" xmi:id="_g0554IQ8EeSd5a-41sWQ0Q" name="Connector1">
+          <end xmi:type="uml:ConnectorEnd" xmi:id="_g1IjYIQ8EeSd5a-41sWQ0Q" partWithPort="_aFPj8IQ8EeSd5a-41sWQ0Q" role="_IMfZsIQ8EeSd5a-41sWQ0Q">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_g1IjYYQ8EeSd5a-41sWQ0Q" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_g1IjYoQ8EeSd5a-41sWQ0Q" value="1"/>
+          </end>
+          <end xmi:type="uml:ConnectorEnd" xmi:id="_g1KYkIQ8EeSd5a-41sWQ0Q" partWithPort="_cWMS4IQ8EeSd5a-41sWQ0Q" role="_M4EYAIQ8EeSd5a-41sWQ0Q">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_g1KYkYQ8EeSd5a-41sWQ0Q" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_g1KYkoQ8EeSd5a-41sWQ0Q" value="1"/>
+          </end>
+        </ownedConnector>
+        <ownedConnector xmi:type="uml:Connector" xmi:id="_fegcwIQ-EeSd5a-41sWQ0Q" name="Connector2">
+          <end xmi:type="uml:ConnectorEnd" xmi:id="_fehq4IQ-EeSd5a-41sWQ0Q" partWithPort="_cWMS4IQ8EeSd5a-41sWQ0Q" role="_eqyg0IQ-EeSd5a-41sWQ0Q">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_fehq4YQ-EeSd5a-41sWQ0Q" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_fehq4oQ-EeSd5a-41sWQ0Q" value="1"/>
+          </end>
+          <end xmi:type="uml:ConnectorEnd" xmi:id="_feiR8IQ-EeSd5a-41sWQ0Q" role="_d6P0sIQ-EeSd5a-41sWQ0Q">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_feiR8YQ-EeSd5a-41sWQ0Q" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_feiR8oQ-EeSd5a-41sWQ0Q" value="1"/>
+          </end>
+        </ownedConnector>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_CGFcIIQ8EeSd5a-41sWQ0Q" name="Camera">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_IMfZsIQ8EeSd5a-41sWQ0Q" name="ServicePort1" type="_NlL8sIQ8EeSd5a-41sWQ0Q" aggregation="composite"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_L4-5kIQ8EeSd5a-41sWQ0Q" name="TraitementImage">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_M4EYAIQ8EeSd5a-41sWQ0Q" name="ServicePort1" type="_NlL8sIQ8EeSd5a-41sWQ0Q" aggregation="composite"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_eqyg0IQ-EeSd5a-41sWQ0Q" name="DataFlowPort1" aggregation="composite"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_uLAtcIQ-EeSd5a-41sWQ0Q" name="Class1">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_vaJaEIQ-EeSd5a-41sWQ0Q" name="Attribute1">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_yjyrkIQ-EeSd5a-41sWQ0Q" annotatedElement="_vaJaEIQ-EeSd5a-41sWQ0Q">
+            <body>ssdfqdsqf</body>
+          </ownedComment>
+        </ownedAttribute>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_P3Vb4iY6EeG5htLAfvhNWA" name="Actuators"/>
+    <packagedElement xmi:type="uml:Package" xmi:id="_P3Vb4yY6EeG5htLAfvhNWA" name="Robotic SubSystems"/>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_I3ftECG3EeKBc8qhxlvO_Q">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_I6xqkCG3EeKBc8qhxlvO_Q" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://Papyrus/RobotML/1#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://Robotml_PROFILES/RobotMLProfile.profile.uml#_3QOHEPcEEd-J06U5HM_o-Q"/>
+    </profileApplication>
+  </uml:Model>
+  <RobotML:Robot xmi:id="_1aAyIIQ7EeSd5a-41sWQ0Q" base_Class="_0yW8QIQ7EeSd5a-41sWQ0Q"/>
+  <RobotML:DataFlowPort xmi:id="_-LG0UIQ7EeSd5a-41sWQ0Q" base_Port="_-IXpYIQ7EeSd5a-41sWQ0Q"/>
+  <RobotML:DataFlowPort xmi:id="__kMuMIQ7EeSd5a-41sWQ0Q" base_Port="__jzsoIQ7EeSd5a-41sWQ0Q" direction="out"/>
+  <RobotML:SensorSystem xmi:id="_CHGv0IQ8EeSd5a-41sWQ0Q" base_Class="_CGFcIIQ8EeSd5a-41sWQ0Q"/>
+  <RobotML:ServicePort xmi:id="_IM-h4IQ8EeSd5a-41sWQ0Q" base_Port="_IMfZsIQ8EeSd5a-41sWQ0Q"/>
+  <RobotML:RoboticSystem xmi:id="_L52cQIQ8EeSd5a-41sWQ0Q" base_Class="_L4-5kIQ8EeSd5a-41sWQ0Q"/>
+  <RobotML:ServicePort xmi:id="_M4cLcIQ8EeSd5a-41sWQ0Q" base_Port="_M4EYAIQ8EeSd5a-41sWQ0Q"/>
+  <RobotML:DataFlowPort xmi:id="_d6u84IQ-EeSd5a-41sWQ0Q" base_Port="_d6P0sIQ-EeSd5a-41sWQ0Q" direction="out"/>
+  <RobotML:DataFlowPort xmi:id="_erUsUIQ-EeSd5a-41sWQ0Q" base_Port="_eqyg0IQ-EeSd5a-41sWQ0Q" direction="out"/>
+  <RobotML:Robot xmi:id="_paBt4IRCEeSd5a-41sWQ0Q" base_Class="_pZSHAIRCEeSd5a-41sWQ0Q"/>
+  <RobotML:Robot xmi:id="_syh6wIRCEeSd5a-41sWQ0Q" base_Class="_sx8E4IRCEeSd5a-41sWQ0Q"/>
+</xmi:XMI>

@@ -1,27 +1,431 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML">
-  <notation:Diagram xmi:id="_P3Vb5iY6EeG5htLAfvhNWA" type="architecture" name="ArchitectureDiagram" measurementUnit="Pixel">
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:RobotML="http://Papyrus/RobotML/1" xmlns:configuration="http://www.eclipse.org/papyrus/infra/viewpoints/configuration" xmlns:css="http://www.eclipse.org/papyrus/infra/gmfdiag/css" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/papyrus/infra/viewpoints/policy/style" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
+  <notation:Diagram xmi:id="_P3Vb5iY6EeG5htLAfvhNWA" type="CompositeStructure" name="ArchitectureDiagram" measurementUnit="Pixel">
+    <children xmi:type="notation:Shape" xmi:id="_ZDJ00IQ8EeSd5a-41sWQ0Q" type="2073">
+      <children xmi:type="notation:DecorationNode" xmi:id="_ZDKb4IQ8EeSd5a-41sWQ0Q" type="5156"/>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_ZDKb4YQ8EeSd5a-41sWQ0Q" type="7073">
+        <children xmi:type="notation:Shape" xmi:id="_aFSnQIQ8EeSd5a-41sWQ0Q" type="3070">
+          <children xmi:type="notation:DecorationNode" xmi:id="_aFSnQoQ8EeSd5a-41sWQ0Q" type="5126"/>
+          <children xmi:type="notation:BasicCompartment" xmi:id="_aFTOUIQ8EeSd5a-41sWQ0Q" type="7077">
+            <styles xmi:type="notation:TitleStyle" xmi:id="_aFTOUYQ8EeSd5a-41sWQ0Q"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aFTOUoQ8EeSd5a-41sWQ0Q"/>
+          </children>
+          <children xmi:type="notation:BasicCompartment" xmi:id="_aF98sIQ8EeSd5a-41sWQ0Q" type="compartment_shape_display">
+            <styles xmi:type="notation:TitleStyle" xmi:id="_aF98sYQ8EeSd5a-41sWQ0Q"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aF98soQ8EeSd5a-41sWQ0Q"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_dbuXkIQ8EeSd5a-41sWQ0Q" type="3069">
+            <children xmi:type="notation:DecorationNode" xmi:id="_dbu-oIQ8EeSd5a-41sWQ0Q" type="5125">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_dbvlsIQ8EeSd5a-41sWQ0Q" x="-169"/>
+            </children>
+            <children xmi:type="notation:DecorationNode" xmi:id="_dbwMwIQ8EeSd5a-41sWQ0Q" type="6029">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_dbwz0IQ8EeSd5a-41sWQ0Q" x="-62" y="41"/>
+            </children>
+            <element xmi:type="uml:Port" href="BasicRobotMLModel.uml#_IMfZsIQ8EeSd5a-41sWQ0Q"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dbuXkYQ8EeSd5a-41sWQ0Q" x="83" y="26"/>
+          </children>
+          <element xmi:type="uml:Property" href="BasicRobotMLModel.uml#_aFPj8IQ8EeSd5a-41sWQ0Q"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aFSnQYQ8EeSd5a-41sWQ0Q" x="101" y="57"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_cWOvIIQ8EeSd5a-41sWQ0Q" type="3070">
+          <children xmi:type="notation:DecorationNode" xmi:id="_cWOvIoQ8EeSd5a-41sWQ0Q" type="5126"/>
+          <children xmi:type="notation:BasicCompartment" xmi:id="_cWPWMIQ8EeSd5a-41sWQ0Q" type="7077">
+            <styles xmi:type="notation:TitleStyle" xmi:id="_cWPWMYQ8EeSd5a-41sWQ0Q"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_cWPWMoQ8EeSd5a-41sWQ0Q"/>
+          </children>
+          <children xmi:type="notation:BasicCompartment" xmi:id="_cWTnoIQ8EeSd5a-41sWQ0Q" type="compartment_shape_display">
+            <styles xmi:type="notation:TitleStyle" xmi:id="_cWTnoYQ8EeSd5a-41sWQ0Q"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_cWTnooQ8EeSd5a-41sWQ0Q"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_ewH-sIQ8EeSd5a-41sWQ0Q" type="3069">
+            <children xmi:type="notation:DecorationNode" xmi:id="_ewIlwIQ8EeSd5a-41sWQ0Q" type="5125">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_ewIlwYQ8EeSd5a-41sWQ0Q" x="17" y="18"/>
+            </children>
+            <children xmi:type="notation:DecorationNode" xmi:id="_ewJM0IQ8EeSd5a-41sWQ0Q" visible="false" type="6029">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_ewJz4IQ8EeSd5a-41sWQ0Q" x="25" y="-10"/>
+            </children>
+            <element xmi:type="uml:Port" href="BasicRobotMLModel.uml#_M4EYAIQ8EeSd5a-41sWQ0Q"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ewH-sYQ8EeSd5a-41sWQ0Q" x="-10" y="17"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_eq3ZUIQ-EeSd5a-41sWQ0Q" type="3069">
+            <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_erWhgIQ-EeSd5a-41sWQ0Q" source="Stereotype_Annotation">
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_erkj8IQ-EeSd5a-41sWQ0Q" key="StereotypeWithQualifiedNameList" value=""/>
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_erlLAIQ-EeSd5a-41sWQ0Q" key="StereotypeList" value="RobotML::DataFlowPort"/>
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_erlyEIQ-EeSd5a-41sWQ0Q" key="Stereotype_Presentation_Kind" value="IconStereotype"/>
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_ermZIIQ-EeSd5a-41sWQ0Q" key="PropStereoDisplay" value=""/>
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_ernAMIQ-EeSd5a-41sWQ0Q" key="StereotypePropertyLocation" value="Compartment"/>
+            </eAnnotations>
+            <children xmi:type="notation:DecorationNode" xmi:id="_eq4AYIQ-EeSd5a-41sWQ0Q" type="5125">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_eq4ncIQ-EeSd5a-41sWQ0Q" x="25" y="3"/>
+            </children>
+            <children xmi:type="notation:DecorationNode" xmi:id="_eq5OgIQ-EeSd5a-41sWQ0Q" type="6029">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_eq5OgYQ-EeSd5a-41sWQ0Q" x="25" y="-10"/>
+            </children>
+            <element xmi:type="uml:Port" href="BasicRobotMLModel.uml#_eqyg0IQ-EeSd5a-41sWQ0Q"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_eq3ZUYQ-EeSd5a-41sWQ0Q" x="182" y="48" width="20" height="20"/>
+          </children>
+          <element xmi:type="uml:Property" href="BasicRobotMLModel.uml#_cWMS4IQ8EeSd5a-41sWQ0Q"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_cWOvIYQ8EeSd5a-41sWQ0Q" x="459" y="63" height="97"/>
+        </children>
+        <styles xmi:type="notation:TitleStyle" xmi:id="_ZDKb4oQ8EeSd5a-41sWQ0Q"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ZDKb44Q8EeSd5a-41sWQ0Q"/>
+      </children>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_ZDS-wIQ8EeSd5a-41sWQ0Q" visible="false" type="AppliedStereotypeCompartment">
+        <styles xmi:type="notation:TitleStyle" xmi:id="_ZDS-wYQ8EeSd5a-41sWQ0Q" showTitle="true"/>
+        <element xmi:type="RobotML:Robot" href="BasicRobotMLModel.uml#_1aAyIIQ7EeSd5a-41sWQ0Q"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ZDS-woQ8EeSd5a-41sWQ0Q"/>
+      </children>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_ZDmgwIQ8EeSd5a-41sWQ0Q" type="compartment_shape_display">
+        <styles xmi:type="notation:TitleStyle" xmi:id="_ZDmgwYQ8EeSd5a-41sWQ0Q"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ZDnH0IQ8EeSd5a-41sWQ0Q"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_d6VUQIQ-EeSd5a-41sWQ0Q" type="3069">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_d6wyEIQ-EeSd5a-41sWQ0Q" source="Stereotype_Annotation">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_d64t4IQ-EeSd5a-41sWQ0Q" key="StereotypeWithQualifiedNameList" value=""/>
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_d64t4YQ-EeSd5a-41sWQ0Q" key="StereotypeList" value="RobotML::DataFlowPort"/>
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_d65U8IQ-EeSd5a-41sWQ0Q" key="Stereotype_Presentation_Kind" value="IconStereotype"/>
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_d65U8YQ-EeSd5a-41sWQ0Q" key="PropStereoDisplay" value=""/>
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_d658AIQ-EeSd5a-41sWQ0Q" key="StereotypePropertyLocation" value="Compartment"/>
+        </eAnnotations>
+        <children xmi:type="notation:DecorationNode" xmi:id="_d6V7UIQ-EeSd5a-41sWQ0Q" type="5125">
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_d6V7UYQ-EeSd5a-41sWQ0Q" x="25" y="3"/>
+        </children>
+        <children xmi:type="notation:DecorationNode" xmi:id="_d6WiYIQ-EeSd5a-41sWQ0Q" type="6029">
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_d6WiYYQ-EeSd5a-41sWQ0Q" x="25" y="-10"/>
+        </children>
+        <element xmi:type="uml:Port" href="BasicRobotMLModel.uml#_d6P0sIQ-EeSd5a-41sWQ0Q"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_d6VUQYQ-EeSd5a-41sWQ0Q" x="783" y="122" width="20" height="20"/>
+      </children>
+      <element xmi:type="uml:Class" href="BasicRobotMLModel.uml#_0yW8QIQ7EeSd5a-41sWQ0Q"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ZDJ00YQ8EeSd5a-41sWQ0Q" x="200" y="243" width="793" height="230"/>
+    </children>
     <styles xmi:type="notation:DiagramStyle" xmi:id="_P3Vb5yY6EeG5htLAfvhNWA"/>
+    <styles xmi:type="style:PapyrusViewStyle" xmi:id="_WtubgH7LEeSFyNbnLYDCkw">
+      <owner xmi:type="uml:Model" href="BasicRobotMLModel.uml#_P3Vb3SY6EeG5htLAfvhNWA"/>
+      <configuration xmi:type="configuration:PapyrusDiagram" href="platform:/plugin/org.eclipse.papyrus.robotml.diagram.common/viewpoints/robotml.configuration#_0kzWAPL_EeONXPQ2mbw9vA"/>
+    </styles>
     <element xmi:type="uml:Model" href="BasicRobotMLModel.uml#_P3Vb3SY6EeG5htLAfvhNWA"/>
+    <edges xmi:type="notation:Connector" xmi:id="_g1hk8IQ8EeSd5a-41sWQ0Q" type="4013" source="_dbuXkIQ8EeSd5a-41sWQ0Q" target="_ewH-sIQ8EeSd5a-41sWQ0Q">
+      <children xmi:type="notation:DecorationNode" xmi:id="_g1jaIIQ8EeSd5a-41sWQ0Q" type="6025">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_g1kBMIQ8EeSd5a-41sWQ0Q" y="60"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_g1koQIQ8EeSd5a-41sWQ0Q" type="6050">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_g1lPUIQ8EeSd5a-41sWQ0Q" y="-20"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_g1mdcIQ8EeSd5a-41sWQ0Q" type="6051">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_g1mdcYQ8EeSd5a-41sWQ0Q" y="20"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_g1nrkIQ8EeSd5a-41sWQ0Q" type="6052">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_g1nrkYQ8EeSd5a-41sWQ0Q" y="20"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_g1hk8YQ8EeSd5a-41sWQ0Q"/>
+      <element xmi:type="uml:Connector" href="BasicRobotMLModel.uml#_g0554IQ8EeSd5a-41sWQ0Q"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_g1hk8oQ8EeSd5a-41sWQ0Q" points="[3, -6, -255, 1]$[259, 3, 1, 10]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_g4zicIQ8EeSd5a-41sWQ0Q" id="(0.85,0.7)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_fel8UIQ-EeSd5a-41sWQ0Q" type="4013" source="_eq3ZUIQ-EeSd5a-41sWQ0Q" target="_d6VUQIQ-EeSd5a-41sWQ0Q">
+      <children xmi:type="notation:DecorationNode" xmi:id="_femjYIQ-EeSd5a-41sWQ0Q" type="6025">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_femjYYQ-EeSd5a-41sWQ0Q" y="60"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_fenKcIQ-EeSd5a-41sWQ0Q" type="6050">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_fenKcYQ-EeSd5a-41sWQ0Q" y="-20"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_fenxgIQ-EeSd5a-41sWQ0Q" type="6051">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_feoYkIQ-EeSd5a-41sWQ0Q" y="20"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_feo_oIQ-EeSd5a-41sWQ0Q" type="6052">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_feo_oYQ-EeSd5a-41sWQ0Q" y="20"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_fel8UYQ-EeSd5a-41sWQ0Q"/>
+      <element xmi:type="uml:Connector" href="BasicRobotMLModel.uml#_fegcwIQ-EeSd5a-41sWQ0Q"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_fel8UoQ-EeSd5a-41sWQ0Q" points="[10, -2, -126, 12]$[135, -24, -1, -10]"/>
+    </edges>
   </notation:Diagram>
-  <notation:Diagram xmi:id="_P3Vb6CY6EeG5htLAfvhNWA" type="componentdef" name="SensorsDiagram" measurementUnit="Pixel">
+  <notation:Diagram xmi:id="_P3Vb6CY6EeG5htLAfvhNWA" type="CompositeStructure" name="SensorsDiagram" measurementUnit="Pixel">
+    <children xmi:type="notation:Shape" xmi:id="_0-_DAIQ7EeSd5a-41sWQ0Q" type="2073">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_1aM_YIQ7EeSd5a-41sWQ0Q" source="Stereotype_Annotation">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_1bA3sIQ7EeSd5a-41sWQ0Q" key="StereotypeWithQualifiedNameList" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_1bBewIQ7EeSd5a-41sWQ0Q" key="StereotypeList" value="RobotML::Robot"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_1bBewYQ7EeSd5a-41sWQ0Q" key="Stereotype_Presentation_Kind" value="IconStereotype"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_1bCF0IQ7EeSd5a-41sWQ0Q" key="PropStereoDisplay" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_1bCs4IQ7EeSd5a-41sWQ0Q" key="StereotypePropertyLocation" value="Compartment"/>
+      </eAnnotations>
+      <children xmi:type="notation:DecorationNode" xmi:id="_0_L3UIQ7EeSd5a-41sWQ0Q" type="5156"/>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_0_MeYIQ7EeSd5a-41sWQ0Q" type="7073">
+        <styles xmi:type="notation:TitleStyle" xmi:id="_0_MeYYQ7EeSd5a-41sWQ0Q"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0_MeYoQ7EeSd5a-41sWQ0Q"/>
+      </children>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_1JRAYIQ7EeSd5a-41sWQ0Q" type="compartment_shape_display">
+        <styles xmi:type="notation:TitleStyle" xmi:id="_1JRAYYQ7EeSd5a-41sWQ0Q"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_1JRAYoQ7EeSd5a-41sWQ0Q"/>
+      </children>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_1awZAIQ7EeSd5a-41sWQ0Q" visible="false" type="AppliedStereotypeCompartment">
+        <styles xmi:type="notation:TitleStyle" xmi:id="_1awZAYQ7EeSd5a-41sWQ0Q" showTitle="true"/>
+        <element xmi:type="RobotML:Robot" href="BasicRobotMLModel.uml#_1aAyIIQ7EeSd5a-41sWQ0Q"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_1awZAoQ7EeSd5a-41sWQ0Q"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_-Iwq8IQ7EeSd5a-41sWQ0Q" type="3069">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_-LJ3oIQ7EeSd5a-41sWQ0Q" source="Stereotype_Annotation">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_-LfO0IQ7EeSd5a-41sWQ0Q" key="StereotypeWithQualifiedNameList" value=""/>
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_-Lgc8IQ7EeSd5a-41sWQ0Q" key="StereotypeList" value="RobotML::DataFlowPort"/>
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_-LhEAIQ7EeSd5a-41sWQ0Q" key="Stereotype_Presentation_Kind" value="IconStereotype"/>
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_-LhrEIQ7EeSd5a-41sWQ0Q" key="PropStereoDisplay" value=""/>
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_-LiSIIQ7EeSd5a-41sWQ0Q" key="StereotypePropertyLocation" value="Compartment"/>
+        </eAnnotations>
+        <children xmi:type="notation:DecorationNode" xmi:id="_-IxSAIQ7EeSd5a-41sWQ0Q" type="5125">
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_-IxSAYQ7EeSd5a-41sWQ0Q" x="25" y="3"/>
+        </children>
+        <children xmi:type="notation:DecorationNode" xmi:id="_-IygIIQ7EeSd5a-41sWQ0Q" type="6029">
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_-IygIYQ7EeSd5a-41sWQ0Q" x="25" y="-10"/>
+        </children>
+        <element xmi:type="uml:Port" href="BasicRobotMLModel.uml#_-IXpYIQ7EeSd5a-41sWQ0Q"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-Iwq8YQ7EeSd5a-41sWQ0Q" x="336" y="126" width="20" height="20"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="__j2v8IQ7EeSd5a-41sWQ0Q" type="3069">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="__kYUYIQ7EeSd5a-41sWQ0Q" source="Stereotype_Annotation">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="__kgQMIQ7EeSd5a-41sWQ0Q" key="StereotypeWithQualifiedNameList" value=""/>
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="__kg3QIQ7EeSd5a-41sWQ0Q" key="StereotypeList" value="RobotML::DataFlowPort"/>
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="__kg3QYQ7EeSd5a-41sWQ0Q" key="Stereotype_Presentation_Kind" value="IconStereotype"/>
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="__kheUIQ7EeSd5a-41sWQ0Q" key="PropStereoDisplay" value=""/>
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="__kheUYQ7EeSd5a-41sWQ0Q" key="StereotypePropertyLocation" value="Compartment"/>
+        </eAnnotations>
+        <children xmi:type="notation:DecorationNode" xmi:id="__j2v8oQ7EeSd5a-41sWQ0Q" type="5125">
+          <layoutConstraint xmi:type="notation:Location" xmi:id="__j3XAIQ7EeSd5a-41sWQ0Q" x="25" y="3"/>
+        </children>
+        <children xmi:type="notation:DecorationNode" xmi:id="__j3-EIQ7EeSd5a-41sWQ0Q" type="6029">
+          <layoutConstraint xmi:type="notation:Location" xmi:id="__j3-EYQ7EeSd5a-41sWQ0Q" x="25" y="-10"/>
+        </children>
+        <element xmi:type="uml:Port" href="BasicRobotMLModel.uml#__jzsoIQ7EeSd5a-41sWQ0Q"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="__j2v8YQ7EeSd5a-41sWQ0Q" x="336" y="199" width="20" height="20"/>
+      </children>
+      <element xmi:type="uml:Class" href="BasicRobotMLModel.uml#_0yW8QIQ7EeSd5a-41sWQ0Q"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0-_DAYQ7EeSd5a-41sWQ0Q" x="497" y="193" width="346" height="242"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_CGJGgIQ8EeSd5a-41sWQ0Q" type="2073">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_CHP5wIQ8EeSd5a-41sWQ0Q" source="Stereotype_Annotation">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_CIOxMIQ8EeSd5a-41sWQ0Q" key="StereotypeWithQualifiedNameList" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_CIPYQIQ8EeSd5a-41sWQ0Q" key="StereotypeList" value="RobotML::SensorSystem"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_CIP_UIQ8EeSd5a-41sWQ0Q" key="Stereotype_Presentation_Kind" value="IconStereotype"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_CIRNcIQ8EeSd5a-41sWQ0Q" key="PropStereoDisplay" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_CIR0gIQ8EeSd5a-41sWQ0Q" key="StereotypePropertyLocation" value="Compartment"/>
+      </eAnnotations>
+      <children xmi:type="notation:DecorationNode" xmi:id="_CGMw4IQ8EeSd5a-41sWQ0Q" type="5156"/>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_CGNX8IQ8EeSd5a-41sWQ0Q" type="7073">
+        <styles xmi:type="notation:TitleStyle" xmi:id="_CGNX8YQ8EeSd5a-41sWQ0Q"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CGNX8oQ8EeSd5a-41sWQ0Q"/>
+      </children>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_CGiIEIQ8EeSd5a-41sWQ0Q" type="compartment_shape_display">
+        <styles xmi:type="notation:TitleStyle" xmi:id="_CGiIEYQ8EeSd5a-41sWQ0Q"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CGiIEoQ8EeSd5a-41sWQ0Q"/>
+      </children>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_CHa44IQ8EeSd5a-41sWQ0Q" visible="false" type="AppliedStereotypeCompartment">
+        <styles xmi:type="notation:TitleStyle" xmi:id="_CHa44YQ8EeSd5a-41sWQ0Q" showTitle="true"/>
+        <element xmi:type="RobotML:SensorSystem" href="BasicRobotMLModel.uml#_CHGv0IQ8EeSd5a-41sWQ0Q"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CHa44oQ8EeSd5a-41sWQ0Q"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_IMkSMIQ8EeSd5a-41sWQ0Q" type="3069">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_INAXEIQ8EeSd5a-41sWQ0Q" source="Stereotype_Annotation">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_INJhAIQ8EeSd5a-41sWQ0Q" key="StereotypeWithQualifiedNameList" value=""/>
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_INKIEIQ8EeSd5a-41sWQ0Q" key="StereotypeList" value="RobotML::ServicePort"/>
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_INKIEYQ8EeSd5a-41sWQ0Q" key="Stereotype_Presentation_Kind" value="IconStereotype"/>
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_INKvIIQ8EeSd5a-41sWQ0Q" key="PropStereoDisplay" value=""/>
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_INKvIYQ8EeSd5a-41sWQ0Q" key="StereotypePropertyLocation" value="Compartment"/>
+        </eAnnotations>
+        <children xmi:type="notation:DecorationNode" xmi:id="_IMk5QIQ8EeSd5a-41sWQ0Q" type="5125">
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_IMk5QYQ8EeSd5a-41sWQ0Q" x="25" y="3"/>
+        </children>
+        <children xmi:type="notation:DecorationNode" xmi:id="_IMlgUIQ8EeSd5a-41sWQ0Q" type="6029">
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_IMlgUYQ8EeSd5a-41sWQ0Q" x="25" y="-10"/>
+        </children>
+        <element xmi:type="uml:Port" href="BasicRobotMLModel.uml#_IMfZsIQ8EeSd5a-41sWQ0Q"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IMkSMYQ8EeSd5a-41sWQ0Q" x="76" y="50" width="20" height="20"/>
+      </children>
+      <element xmi:type="uml:Class" href="BasicRobotMLModel.uml#_CGFcIIQ8EeSd5a-41sWQ0Q"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CGJGgYQ8EeSd5a-41sWQ0Q" x="984" y="125"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_L5DyEIQ8EeSd5a-41sWQ0Q" type="2073">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_L5-YEIQ8EeSd5a-41sWQ0Q" source="Stereotype_Annotation">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_L6i_0IQ8EeSd5a-41sWQ0Q" key="StereotypeWithQualifiedNameList" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_L6kN8IQ8EeSd5a-41sWQ0Q" key="StereotypeList" value="RobotML::RoboticSystem"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_L6lcEIQ8EeSd5a-41sWQ0Q" key="Stereotype_Presentation_Kind" value="IconStereotype"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_L6mDIIQ8EeSd5a-41sWQ0Q" key="PropStereoDisplay" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_L6nRQIQ8EeSd5a-41sWQ0Q" key="StereotypePropertyLocation" value="Compartment"/>
+      </eAnnotations>
+      <children xmi:type="notation:DecorationNode" xmi:id="_L5FAMIQ8EeSd5a-41sWQ0Q" type="5156"/>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_L5FAMYQ8EeSd5a-41sWQ0Q" type="7073">
+        <styles xmi:type="notation:TitleStyle" xmi:id="_L5FAMoQ8EeSd5a-41sWQ0Q"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_L5FnQIQ8EeSd5a-41sWQ0Q"/>
+      </children>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_L5X7IIQ8EeSd5a-41sWQ0Q" type="compartment_shape_display">
+        <styles xmi:type="notation:TitleStyle" xmi:id="_L5X7IYQ8EeSd5a-41sWQ0Q"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_L5X7IoQ8EeSd5a-41sWQ0Q"/>
+      </children>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_L6LzcIQ8EeSd5a-41sWQ0Q" visible="false" type="AppliedStereotypeCompartment">
+        <styles xmi:type="notation:TitleStyle" xmi:id="_L6LzcYQ8EeSd5a-41sWQ0Q" showTitle="true"/>
+        <element xmi:type="RobotML:RoboticSystem" href="BasicRobotMLModel.uml#_L52cQIQ8EeSd5a-41sWQ0Q"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_L6LzcoQ8EeSd5a-41sWQ0Q"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_M4HbUIQ8EeSd5a-41sWQ0Q" type="3069">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_M4dZkIQ8EeSd5a-41sWQ0Q" source="Stereotype_Annotation">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_M4kHQIQ8EeSd5a-41sWQ0Q" key="StereotypeWithQualifiedNameList" value=""/>
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_M4kuUIQ8EeSd5a-41sWQ0Q" key="StereotypeList" value="RobotML::ServicePort"/>
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_M4kuUYQ8EeSd5a-41sWQ0Q" key="Stereotype_Presentation_Kind" value="IconStereotype"/>
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_M4lVYIQ8EeSd5a-41sWQ0Q" key="PropStereoDisplay" value=""/>
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_M4lVYYQ8EeSd5a-41sWQ0Q" key="StereotypePropertyLocation" value="Compartment"/>
+        </eAnnotations>
+        <children xmi:type="notation:DecorationNode" xmi:id="_M4ICYIQ8EeSd5a-41sWQ0Q" type="5125">
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_M4ICYYQ8EeSd5a-41sWQ0Q" x="25" y="3"/>
+        </children>
+        <children xmi:type="notation:DecorationNode" xmi:id="_M4IpcIQ8EeSd5a-41sWQ0Q" type="6029">
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_M4IpcYQ8EeSd5a-41sWQ0Q" x="25" y="-10"/>
+        </children>
+        <element xmi:type="uml:Port" href="BasicRobotMLModel.uml#_M4EYAIQ8EeSd5a-41sWQ0Q"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_M4HbUYQ8EeSd5a-41sWQ0Q" x="-10" y="48" width="20" height="20"/>
+      </children>
+      <element xmi:type="uml:Class" href="BasicRobotMLModel.uml#_L4-5kIQ8EeSd5a-41sWQ0Q"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_L5DyEYQ8EeSd5a-41sWQ0Q" x="1154" y="237"/>
+    </children>
     <styles xmi:type="notation:DiagramStyle" xmi:id="_P3Vb6SY6EeG5htLAfvhNWA"/>
+    <styles xmi:type="style:PapyrusViewStyle" xmi:id="_WtubgX7LEeSFyNbnLYDCkw">
+      <owner xmi:type="uml:Package" href="BasicRobotMLModel.uml#_P3Vb3yY6EeG5htLAfvhNWA"/>
+      <configuration xmi:type="configuration:PapyrusDiagram" href="platform:/plugin/org.eclipse.papyrus.robotml.diagram.common/viewpoints/robotml.configuration#_0kzWBfL_EeONXPQ2mbw9vA"/>
+    </styles>
     <element xmi:type="uml:Package" href="BasicRobotMLModel.uml#_P3Vb4SY6EeG5htLAfvhNWA"/>
   </notation:Diagram>
-  <notation:Diagram xmi:id="_P3Vb6iY6EeG5htLAfvhNWA" type="DatatypeDef" name="DataTypesDiagram" measurementUnit="Pixel">
+  <notation:Diagram xmi:id="_P3Vb6iY6EeG5htLAfvhNWA" type="PapyrusUMLClassDiagram" name="DataTypesDiagram" measurementUnit="Pixel">
     <styles xmi:type="notation:DiagramStyle" xmi:id="_P3Vb6yY6EeG5htLAfvhNWA"/>
+    <styles xmi:type="style:PapyrusViewStyle" xmi:id="_Wtubgn7LEeSFyNbnLYDCkw">
+      <owner xmi:type="uml:Package" href="BasicRobotMLModel.uml#_P3Vb3yY6EeG5htLAfvhNWA"/>
+      <configuration xmi:type="configuration:PapyrusDiagram" href="platform:/plugin/org.eclipse.papyrus.robotml.diagram.common/viewpoints/robotml.configuration#_0kzWCvL_EeONXPQ2mbw9vA"/>
+    </styles>
     <element xmi:type="uml:Package" href="BasicRobotMLModel.uml#_P3Vb3yY6EeG5htLAfvhNWA"/>
   </notation:Diagram>
-  <notation:Diagram xmi:id="_P3Vb7CY6EeG5htLAfvhNWA" type="componentdef" name="ActuatorsDiagram" measurementUnit="Pixel">
+  <notation:Diagram xmi:id="_P3Vb7CY6EeG5htLAfvhNWA" type="CompositeStructure" name="ActuatorsDiagram" measurementUnit="Pixel">
     <styles xmi:type="notation:DiagramStyle" xmi:id="_P3Vb7SY6EeG5htLAfvhNWA"/>
+    <styles xmi:type="style:PapyrusViewStyle" xmi:id="_Wtubg37LEeSFyNbnLYDCkw">
+      <owner xmi:type="uml:Package" href="BasicRobotMLModel.uml#_P3Vb4iY6EeG5htLAfvhNWA"/>
+      <configuration xmi:type="configuration:PapyrusDiagram" href="platform:/plugin/org.eclipse.papyrus.robotml.diagram.common/viewpoints/robotml.configuration#_0kzWBfL_EeONXPQ2mbw9vA"/>
+    </styles>
     <element xmi:type="uml:Package" href="BasicRobotMLModel.uml#_P3Vb4iY6EeG5htLAfvhNWA"/>
   </notation:Diagram>
-  <notation:Diagram xmi:id="_P3Vb7iY6EeG5htLAfvhNWA" type="componentdef" name="SubSystemsDiagram" measurementUnit="Pixel">
+  <notation:Diagram xmi:id="_P3Vb7iY6EeG5htLAfvhNWA" type="CompositeStructure" name="SubSystemsDiagram" measurementUnit="Pixel">
     <styles xmi:type="notation:DiagramStyle" xmi:id="_P3Vb7yY6EeG5htLAfvhNWA"/>
+    <styles xmi:type="style:PapyrusViewStyle" xmi:id="_WtubhH7LEeSFyNbnLYDCkw">
+      <owner xmi:type="uml:Package" href="BasicRobotMLModel.uml#_P3Vb4yY6EeG5htLAfvhNWA"/>
+      <configuration xmi:type="configuration:PapyrusDiagram" href="platform:/plugin/org.eclipse.papyrus.robotml.diagram.common/viewpoints/robotml.configuration#_0kzWBfL_EeONXPQ2mbw9vA"/>
+    </styles>
     <element xmi:type="uml:Package" href="BasicRobotMLModel.uml#_P3Vb4yY6EeG5htLAfvhNWA"/>
   </notation:Diagram>
-  <notation:Diagram xmi:id="_P3Vb8CY6EeG5htLAfvhNWA" type="InterfaceDef" name="InterfacesDiagram" measurementUnit="Pixel">
+  <notation:Diagram xmi:id="_P3Vb8CY6EeG5htLAfvhNWA" type="PapyrusUMLClassDiagram" name="InterfacesDiagram" measurementUnit="Pixel">
+    <children xmi:type="notation:Shape" xmi:id="_NlVtsIQ8EeSd5a-41sWQ0Q" type="2004">
+      <children xmi:type="notation:DecorationNode" xmi:id="_NlWUwIQ8EeSd5a-41sWQ0Q" type="5011"/>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_NlWUwYQ8EeSd5a-41sWQ0Q" type="7006">
+        <styles xmi:type="notation:TitleStyle" xmi:id="_NlW70IQ8EeSd5a-41sWQ0Q"/>
+        <styles xmi:type="notation:SortingStyle" xmi:id="_NlW70YQ8EeSd5a-41sWQ0Q"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_NlW70oQ8EeSd5a-41sWQ0Q"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_NlW704Q8EeSd5a-41sWQ0Q"/>
+      </children>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_NlW71IQ8EeSd5a-41sWQ0Q" type="7007">
+        <children xmi:type="notation:Shape" xmi:id="_PVZWEIQ8EeSd5a-41sWQ0Q" type="3007">
+          <element xmi:type="uml:Operation" href="BasicRobotMLModel.uml#_PU8qIIQ8EeSd5a-41sWQ0Q"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_PVZWEYQ8EeSd5a-41sWQ0Q"/>
+        </children>
+        <styles xmi:type="notation:TitleStyle" xmi:id="_NlW71YQ8EeSd5a-41sWQ0Q"/>
+        <styles xmi:type="notation:SortingStyle" xmi:id="_NlW71oQ8EeSd5a-41sWQ0Q"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_NlW714Q8EeSd5a-41sWQ0Q"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_NlW72IQ8EeSd5a-41sWQ0Q"/>
+      </children>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_NlW72YQ8EeSd5a-41sWQ0Q" type="7008">
+        <styles xmi:type="notation:TitleStyle" xmi:id="_NlW72oQ8EeSd5a-41sWQ0Q"/>
+        <styles xmi:type="notation:SortingStyle" xmi:id="_NlW724Q8EeSd5a-41sWQ0Q"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_NlW73IQ8EeSd5a-41sWQ0Q"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_NlW73YQ8EeSd5a-41sWQ0Q"/>
+      </children>
+      <element xmi:type="uml:Interface" href="BasicRobotMLModel.uml#_NlL8sIQ8EeSd5a-41sWQ0Q"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_NlVtsYQ8EeSd5a-41sWQ0Q" x="693" y="149"/>
+    </children>
     <styles xmi:type="notation:DiagramStyle" xmi:id="_P3Vb8SY6EeG5htLAfvhNWA"/>
+    <styles xmi:type="style:PapyrusViewStyle" xmi:id="_WtubhX7LEeSFyNbnLYDCkw">
+      <owner xmi:type="uml:Package" href="BasicRobotMLModel.uml#_P3Vb4CY6EeG5htLAfvhNWA"/>
+      <configuration xmi:type="configuration:PapyrusDiagram" href="platform:/plugin/org.eclipse.papyrus.robotml.diagram.common/viewpoints/robotml.configuration#_0kz9EvL_EeONXPQ2mbw9vA"/>
+    </styles>
     <element xmi:type="uml:Package" href="BasicRobotMLModel.uml#_P3Vb4CY6EeG5htLAfvhNWA"/>
+  </notation:Diagram>
+  <notation:Diagram xmi:id="_trHFYIQ-EeSd5a-41sWQ0Q" type="PapyrusUMLClassDiagram" name="ClassDiagram" measurementUnit="Pixel">
+    <children xmi:type="notation:Shape" xmi:id="_uLG0EIQ-EeSd5a-41sWQ0Q" type="2008">
+      <children xmi:type="notation:DecorationNode" xmi:id="_uLICMIQ-EeSd5a-41sWQ0Q" type="5029"/>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_uLIpQIQ-EeSd5a-41sWQ0Q" type="7017">
+        <children xmi:type="notation:Shape" xmi:id="_vaOSkIQ-EeSd5a-41sWQ0Q" type="3012">
+          <element xmi:type="uml:Property" href="BasicRobotMLModel.uml#_vaJaEIQ-EeSd5a-41sWQ0Q"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_vaOSkYQ-EeSd5a-41sWQ0Q"/>
+        </children>
+        <styles xmi:type="notation:TitleStyle" xmi:id="_uLIpQYQ-EeSd5a-41sWQ0Q"/>
+        <styles xmi:type="notation:SortingStyle" xmi:id="_uLIpQoQ-EeSd5a-41sWQ0Q"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_uLIpQ4Q-EeSd5a-41sWQ0Q"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uLIpRIQ-EeSd5a-41sWQ0Q"/>
+      </children>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_uLIpRYQ-EeSd5a-41sWQ0Q" type="7018">
+        <styles xmi:type="notation:TitleStyle" xmi:id="_uLIpRoQ-EeSd5a-41sWQ0Q"/>
+        <styles xmi:type="notation:SortingStyle" xmi:id="_uLIpR4Q-EeSd5a-41sWQ0Q"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_uLIpSIQ-EeSd5a-41sWQ0Q"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uLIpSYQ-EeSd5a-41sWQ0Q"/>
+      </children>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_uLJQUIQ-EeSd5a-41sWQ0Q" type="7019">
+        <styles xmi:type="notation:TitleStyle" xmi:id="_uLJQUYQ-EeSd5a-41sWQ0Q"/>
+        <styles xmi:type="notation:SortingStyle" xmi:id="_uLJQUoQ-EeSd5a-41sWQ0Q"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_uLJQU4Q-EeSd5a-41sWQ0Q"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uLJQVIQ-EeSd5a-41sWQ0Q"/>
+      </children>
+      <element xmi:type="uml:Class" href="BasicRobotMLModel.uml#_uLAtcIQ-EeSd5a-41sWQ0Q"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uLG0EYQ-EeSd5a-41sWQ0Q" x="427" y="177"/>
+    </children>
+    <styles xmi:type="notation:StringValueStyle" xmi:id="_trHFYYQ-EeSd5a-41sWQ0Q" name="diagram_compatibility_version" stringValue="1.0.0"/>
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_trHFYoQ-EeSd5a-41sWQ0Q"/>
+    <styles xmi:type="style:PapyrusViewStyle" xmi:id="_trHFY4Q-EeSd5a-41sWQ0Q">
+      <owner xmi:type="uml:Package" href="BasicRobotMLModel.uml#_P3Vb4SY6EeG5htLAfvhNWA"/>
+    </styles>
+    <element xmi:type="uml:Package" href="BasicRobotMLModel.uml#_P3Vb4SY6EeG5htLAfvhNWA"/>
+  </notation:Diagram>
+  <css:ModelStyleSheets xmi:id="_eQRyQIRCEeSd5a-41sWQ0Q"/>
+  <notation:Diagram xmi:id="_nTNLUIRCEeSd5a-41sWQ0Q" type="CompositeStructure" name="customDiagram" measurementUnit="Pixel">
+    <children xmi:type="notation:Shape" xmi:id="_pZb4AIRCEeSd5a-41sWQ0Q" type="2073">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_paBt4YRCEeSd5a-41sWQ0Q" source="Stereotype_Annotation">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_paVP4IRCEeSd5a-41sWQ0Q" key="StereotypeWithQualifiedNameList" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_paVP4YRCEeSd5a-41sWQ0Q" key="StereotypeList" value="RobotML::Robot"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_paVP4oRCEeSd5a-41sWQ0Q" key="Stereotype_Presentation_Kind" value="IconStereotype"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_paVP44RCEeSd5a-41sWQ0Q" key="PropStereoDisplay" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_paVP5IRCEeSd5a-41sWQ0Q" key="StereotypePropertyLocation" value="Compartment"/>
+      </eAnnotations>
+      <children xmi:type="notation:DecorationNode" xmi:id="_pZb4AoRCEeSd5a-41sWQ0Q" type="5156"/>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_pZb4A4RCEeSd5a-41sWQ0Q" type="7073">
+        <styles xmi:type="notation:TitleStyle" xmi:id="_pZb4BIRCEeSd5a-41sWQ0Q"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_pZb4BYRCEeSd5a-41sWQ0Q"/>
+      </children>
+      <element xmi:type="uml:Class" href="BasicRobotMLModel.uml#_pZSHAIRCEeSd5a-41sWQ0Q"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_pZb4AYRCEeSd5a-41sWQ0Q" x="366" y="153"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_syFO0IRCEeSd5a-41sWQ0Q" type="2073">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_syrrwIRCEeSd5a-41sWQ0Q" source="Stereotype_Annotation">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_sy01sIRCEeSd5a-41sWQ0Q" key="StereotypeWithQualifiedNameList" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_sy-msIRCEeSd5a-41sWQ0Q" key="StereotypeList" value="RobotML::Robot"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_sy-msYRCEeSd5a-41sWQ0Q" key="Stereotype_Presentation_Kind" value="IconStereotype"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_sy-msoRCEeSd5a-41sWQ0Q" key="PropStereoDisplay" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_sy-ms4RCEeSd5a-41sWQ0Q" key="StereotypePropertyLocation" value="Compartment"/>
+      </eAnnotations>
+      <children xmi:type="notation:DecorationNode" xmi:id="_syFO0oRCEeSd5a-41sWQ0Q" type="5156"/>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_syFO04RCEeSd5a-41sWQ0Q" type="7073">
+        <styles xmi:type="notation:TitleStyle" xmi:id="_syFO1IRCEeSd5a-41sWQ0Q"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_syFO1YRCEeSd5a-41sWQ0Q"/>
+      </children>
+      <element xmi:type="uml:Class" href="BasicRobotMLModel.uml#_sx8E4IRCEeSd5a-41sWQ0Q"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_syFO0YRCEeSd5a-41sWQ0Q" x="657" y="189"/>
+    </children>
+    <styles xmi:type="notation:StringValueStyle" xmi:id="_nTNLUYRCEeSd5a-41sWQ0Q" name="diagram_compatibility_version" stringValue="1.0.0"/>
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_nTNLUoRCEeSd5a-41sWQ0Q"/>
+    <styles xmi:type="style:PapyrusViewStyle" xmi:id="_nTNLU4RCEeSd5a-41sWQ0Q">
+      <owner xmi:type="uml:Package" href="BasicRobotMLModel.uml#_P3Vb4CY6EeG5htLAfvhNWA"/>
+      <configuration xmi:type="configuration:PapyrusDiagram" href="platform:/plugin/org.eclipse.papyrus.robotml.diagram.common/viewpoints/robotml.configuration#_0kzWBfL_EeONXPQ2mbw9vA"/>
+    </styles>
+    <element xmi:type="uml:Package" href="BasicRobotMLModel.uml#_P3Vb3yY6EeG5htLAfvhNWA"/>
   </notation:Diagram>
 </xmi:XMI>
