@@ -1961,25 +1961,6 @@
           </predicate>
         </workingSet>
       </setupTask>
-      <setupTask
-          xsi:type="setup.targlets:TargletTask">
-        <targlet
-            name="Papyrus Releng Dependencies"
-            activeRepositoryList="${eclipse.target.platform}">
-          <requirement
-              name="org.eclipse.b3.aggregator.engine.feature.feature.group"/>
-          <repositoryList
-              name="Mars">
-            <repository
-                url="http://download.eclipse.org/modeling/emft/b3/updates-4.3/"/>
-          </repositoryList>
-          <repositoryList
-              name="Luna">
-            <repository
-                url="http://download.eclipse.org/modeling/emft/b3/updates-4.3/"/>
-          </repositoryList>
-        </targlet>
-      </setupTask>
       <stream
           name="master"
           label="master (Mars/1.1)">
@@ -2647,6 +2628,9 @@
             <operand
                 xsi:type="predicates:NamePredicate"
                 pattern="org\.eclipse\.papyrus\.diagramdev\.modelexplorer"/>
+            <operand
+                xsi:type="predicates:NamePredicate"
+                pattern="org\.eclipse\.papyrus\.releng\.tools"/>
           </operand>
         </predicate>
       </sourceLocator>
@@ -2686,16 +2670,6 @@
           name="Papyrus Developer Tools Dependencies">
         <requirement
             name="org.eclipse.gmf.tooling.codegen.xtend2.feature.group"/>
-        <requirement
-            name="org.eclipse.oomph.setup.targlets.feature.group"
-            optional="true"/>
-        <requirement
-            name="org.eclipse.oomph.setup.feature.group"
-            optional="true"/>
-        <repositoryList>
-          <repository
-              url="${oomph.update.url}"/>
-        </repositoryList>
       </targlet>
     </setupTask>
     <setupTask
@@ -2721,6 +2695,49 @@
             value="1.0.0&amp;version=1.0.1&amp;version=1.0.2&amp;version=1.1.0"/>
       </stream>
       <description>Additional configuration for developing and testing the Oomph setup model.</description>
+    </project>
+    <project
+        name="relengtools"
+        label="Releng Tools">
+      <setupTask
+          xsi:type="setup.targlets:TargletTask">
+        <targlet
+            name="Papyrus Releng Tools Dependencies">
+          <requirement
+              name="org.eclipse.oomph.setup.targlets.feature.group"
+              optional="true"/>
+          <requirement
+              name="org.eclipse.oomph.setup.feature.group"
+              optional="true"/>
+          <requirement
+              name="org.eclipse.b3.aggregator.engine.feature.feature.group"/>
+          <repositoryList>
+            <repository
+                url="${oomph.update.url}"/>
+            <repository
+                url="http://download.eclipse.org/modeling/emft/b3/updates-4.3/"/>
+          </repositoryList>
+        </targlet>
+      </setupTask>
+      <setupTask
+          xsi:type="projects:ProjectsImportTask">
+        <sourceLocator
+            rootFolder="${papyrus.git.clone.location/plugins/developer}"
+            locateNestedProjects="true">
+          <predicate
+              xsi:type="predicates:NamePredicate"
+              pattern="org\.eclipse\.papyrus\.releng\.tools"/>
+        </sourceLocator>
+      </setupTask>
+      <stream
+          name="master"
+          label="master (Mars/1.1)">
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="papyrus.bugzilla.version"
+            value="1.0.0&amp;version=1.0.1&amp;version=1.0.2&amp;version=1.1.0"/>
+      </stream>
+      <description>Release engineering tools, including the POM and Oomph Setup dependencies updater actions.</description>
     </project>
     <stream
         name="master"
