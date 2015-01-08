@@ -14,7 +14,6 @@ package org.eclipse.papyrus.migration.rsa.transformation.ui;
 import java.text.Collator;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -192,20 +191,49 @@ public class URIMappingDialog extends SelectionDialog {
 		return self;
 	}
 
+	/**
+	 * Remove duplicate mappings. Mappings are duplicate if they have the same SourceURI.
+	 * Less specific mappings will be discarded (Usually, the ones with the same Source and Target URI)
+	 */
 	protected void removeDuplicates(List<URIMapping> allMappings) {
-		Iterator<URIMapping> iterator = allMappings.iterator();
-		while (iterator.hasNext()) {
-			URIMapping mapping = iterator.next();
+		List<URIMapping> mappingsCopy = new LinkedList<URIMapping>(allMappings);
+		for (URIMapping mapping : mappingsCopy) {
 			for (URIMapping m : allMappings) {
-				if (m == mapping) { // Don't compare an object with itself
+				if (m == mapping) {
 					continue;
 				}
+
 				if (mapping.getSourceURI().equals(m.getSourceURI())) {
-					iterator.remove(); // Remove from the merged list
+					URIMapping mappingToRemove = findLessSpecificMapping(mapping, m);
+					allMappings.remove(mappingToRemove);
 					break;
 				}
 			}
 		}
+	}
+
+	/**
+	 * If 2 mappings have the same sourceURI but different targetURI, returns the less pertinent one
+	 * (Usually, the one with the same Source and Target)
+	 *
+	 * @param mapping1
+	 * @param mapping2
+	 * @return
+	 */
+	protected URIMapping findLessSpecificMapping(URIMapping mapping1, URIMapping mapping2) {
+		if (!isUsefulMapping(mapping1)) {
+			return mapping1;
+		}
+
+		return mapping2;
+	}
+
+	protected boolean isUsefulMapping(URIMapping mapping) {
+		if (mapping.getTargetURI() == null || "".equals(mapping.getTargetURI()) || mapping.getTargetURI().equals(mapping.getSourceURI())) {
+			return false;
+		}
+
+		return true;
 	}
 
 	@Override
