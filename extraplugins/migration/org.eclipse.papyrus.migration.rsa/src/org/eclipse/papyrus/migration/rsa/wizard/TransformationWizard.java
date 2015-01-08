@@ -11,7 +11,6 @@
  *****************************************************************************/
 package org.eclipse.papyrus.migration.rsa.wizard;
 
-import java.util.Collection;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
@@ -23,23 +22,35 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.wizard.IWizardPage;
 import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.Config;
+import org.eclipse.papyrus.migration.rsa.messages.Messages;
 import org.eclipse.papyrus.migration.rsa.transformation.ImportTransformationLauncher;
 import org.eclipse.papyrus.migration.rsa.wizard.pages.TransformationConfigPage;
 import org.eclipse.papyrus.migration.rsa.wizard.pages.TransformationSelectionPage;
+import org.eclipse.papyrus.migration.rsa.wizard.pages.DialogData;
+import org.eclipse.swt.SWT;
 import org.eclipse.ui.IImportWizard;
 import org.eclipse.ui.IWorkbench;
 
+/**
+ * 
+ * Wizard handling the selection and transformation of .emx/.epx files
+ * 
+ * @author Quentin Le Menez
+ *
+ */
 public class TransformationWizard extends Wizard implements IImportWizard {
 
-	private TransformationSelectionPage selectionPage = new TransformationSelectionPage();
+	protected IWizardPage currentPage;
 
-	private TransformationConfigPage configPage = new TransformationConfigPage();
+	protected DialogData dialogData = new DialogData();
 
-	IWizardPage currentPage;
+	protected TransformationSelectionPage selectionPage = new TransformationSelectionPage(dialogData);
+
+	protected TransformationConfigPage configPage = new TransformationConfigPage(dialogData);
+
 
 	public TransformationWizard() {
-		setWindowTitle("RSA transformation wizard"); //$NON-NLS-1$ 
-
+		setWindowTitle(Messages.TransformationWizard_Title);
 	}
 
 	@Override
@@ -53,8 +64,8 @@ public class TransformationWizard extends Wizard implements IImportWizard {
 	public IWizardPage getNextPage(IWizardPage currentPage) {
 		if (currentPage == selectionPage) {
 			this.currentPage = configPage;
-			Collection<Object> selectedFiles = selectionPage.getSelectedFiles();
-			configPage.setViewerInput(selectedFiles);
+			// Reset the viewer input in order to show the newly selected elements from the selectionPage
+			configPage.resetViewerInput();
 			return configPage;
 		}
 		if (this.currentPage == configPage) {
@@ -71,25 +82,30 @@ public class TransformationWizard extends Wizard implements IImportWizard {
 		return false;
 	}
 
+
 	@Override
 	public boolean performFinish() {
+		// Set or update the unchecked elements for future executions of the plugin
+		dialogData.setSelectionMap();
 		importFiles();
+
 		return true;
 	}
 
+
 	/**
 	 *
-	 * Launches the transformation with the previously selected files and configuration parameters
+	 * Launch the transformation with the previously selected files and configuration parameters
 	 *
 	 */
-	public void importFiles() {
-		Config config = configPage.getConfig();
+	protected void importFiles() {
+		Config config = dialogData.getConfig();
 		if (config == null) {
 			return;
 		}
 
 		Set<IFile> selectedFiles = new HashSet<IFile>();
-		for (Object file : configPage.getTransformationFiles()) {
+		for (Object file : dialogData.getTransformationFiles()) {
 			if (file instanceof IFile) {
 				selectedFiles.add((IFile) file);
 			}
