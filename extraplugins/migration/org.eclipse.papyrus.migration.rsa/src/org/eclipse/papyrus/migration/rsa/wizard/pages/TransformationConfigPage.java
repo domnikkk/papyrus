@@ -11,41 +11,43 @@
  *****************************************************************************/
 package org.eclipse.papyrus.migration.rsa.wizard.pages;
 
-import java.util.Collection;
-import java.util.LinkedList;
-
 import org.eclipse.jface.wizard.WizardPage;
-import org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.Config;
-import org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.RSAToPapyrusParametersFactory;
+import org.eclipse.papyrus.migration.rsa.messages.Messages;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 
-
+/**
+ * 
+ * Page displaying the selected elements and the migration's configuration options
+ * 
+ * @author Quentin Le Menez
+ *
+ */
 public class TransformationConfigPage extends WizardPage {
 
-	protected Config config;
+	protected ConfigurationComposite configComposite;
 
-	protected Collection<Object> transformationFiles;
-
-	ConfigurationComposite configComposite;
+	protected DialogData dialogData;
 
 
 	/**
 	 *
 	 * Constructor.
 	 * 
-	 * @param selectedFiles
+	 * @param dialogData
+	 *            The instance used to get the previously selected files from both the settings file and the previous page selection,
+	 *            as well as the configuration used to display the transformation options
 	 */
-	public TransformationConfigPage() {
-		super("Parameters selection"); //$NON-NLS-1$
-		setTitle("Define the transformation parameters"); //$NON-NLS-1$
-		setDescription("Select the files and the configuration options for the transformation"); //$NON-NLS-1$
+	public TransformationConfigPage(DialogData dialogData) {
+		super(Messages.TransformationConfigPage_Name);
+		setTitle(Messages.TransformationConfigPage_Title);
+		setDescription(Messages.TransformationConfigPage_Description);
 		// String iconPath = "icons/import_wiz_75x66.png"; //$NON-NLS-1$
 		// ImageDescriptor imgDescriptior = Activator.getDefault().getImageDescriptor(iconPath);
 		// setImageDescriptor(imgDescriptior);
-		transformationFiles = new LinkedList<Object>();
-		config = RSAToPapyrusParametersFactory.eINSTANCE.createConfig();
+
+		this.dialogData = dialogData;
 	}
 
 	@Override
@@ -54,22 +56,18 @@ public class TransformationConfigPage extends WizardPage {
 		Composite pageComposite = new Composite(parent, SWT.NONE);
 		pageComposite.setLayout(new GridLayout());
 
-		configComposite = new ConfigurationComposite(pageComposite, SWT.NONE, config);
+		configComposite = new ConfigurationComposite(pageComposite, SWT.NONE, dialogData);
 
 		setControl(pageComposite);
 	}
 
-	public Collection<Object> getTransformationFiles() {
-		return configComposite.getTransformationFiles();
+	/**
+	 * 
+	 * Used to update the input of the nested composite's viewer
+	 * 
+	 */
+	public void resetViewerInput() {
+		configComposite.setViewerInput(dialogData.getSelectedFiles());
 	}
-
-	public Config getConfig() {
-		return configComposite.getConfig();
-	}
-
-	public void setViewerInput(Collection<Object> selectedFiles) {
-		configComposite.setViewerInput(selectedFiles);
-	}
-
 
 }

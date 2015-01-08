@@ -28,16 +28,17 @@ import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
+import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.jface.viewers.ViewerFilter;
 import org.eclipse.papyrus.infra.core.services.ServiceException;
 import org.eclipse.papyrus.infra.services.labelprovider.service.LabelProviderService;
 import org.eclipse.papyrus.infra.services.labelprovider.service.impl.LabelProviderServiceImpl;
-import org.eclipse.papyrus.infra.widgets.messages.Messages;
 import org.eclipse.papyrus.infra.widgets.providers.IGraphicalContentProvider;
 import org.eclipse.papyrus.infra.widgets.providers.PatternViewerFilter;
 import org.eclipse.papyrus.infra.widgets.providers.WorkspaceContentProvider;
 import org.eclipse.papyrus.migration.rsa.Activator;
+import org.eclipse.papyrus.migration.rsa.messages.Messages;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
@@ -50,31 +51,54 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.dialogs.PatternFilter;
 
+/**
+ * 
+ * Actual composite used to display the workspace and select the wanted elements
+ * 
+ * @author Quentin Le Menez
+ *
+ */
 public class SelectionTreeComposite extends Composite {
 
 	protected TreeViewer treeViewer;
 
-	private LabelProviderService labelProviderService;
+	protected LabelProviderService labelProviderService;
 
-	private ILabelProvider labelProvider;
+	protected ILabelProvider labelProvider;
 
-	private WorkspaceContentProvider contentProvider;
+	protected WorkspaceContentProvider contentProvider;
+
+	protected ISelectionChangedListener listListener;
 
 	protected final List<String> filterNames;
 
 	protected final List<String> filterExtensions;
 
-	private Button selectAll;
+	protected Button selectAll;
 
-	private Button deselectAll;
+	protected Button deselectAll;
 
 	protected SelectionListener buttonListener;
 
 	protected Collection<Object> selectedFiles;
 
-	FillLayout layout;
+	protected FillLayout layout;
 
+	protected DialogData dialogData;
 
+	/**
+	 * 
+	 * Constructor.
+	 *
+	 * @param parent
+	 *            The parent composite
+	 * @param style
+	 *            The swt style used for this ConfigurationComposite
+	 * @param extensions
+	 *            The default extensions used to filter the displayed results
+	 * @param extensionsNames
+	 *            The displayed names of those filters
+	 */
 	public SelectionTreeComposite(Composite parent, int style, String[] extensions, String[] extensionsNames) {
 		super(parent, style);
 		this.setLayout(new GridLayout(2, false));
@@ -89,7 +113,37 @@ public class SelectionTreeComposite extends Composite {
 		createSelectionButtons(this);
 	}
 
+	/**
+	 * 
+	 * Constructor used when a DialogData class is employed to store the different informations of the dialog
+	 *
+	 * @param parent
+	 *            The parent composite
+	 * @param style
+	 *            The swt style used for this ConfigurationComposite
+	 * @param dialogData
+	 *            The DialogData in which is stored all the necessary informations
+	 */
+	public SelectionTreeComposite(Composite parent, int style, DialogData dialogData) {
+		this(parent, style, dialogData.getExtensions(), dialogData.getExtensionsNames());
+		this.dialogData = dialogData;
+		ISelection treeSelection = treeViewer.getSelection();
+		if (treeSelection instanceof StructuredSelection) {
+			setSelectedFiles(((StructuredSelection) treeSelection).toArray());
+			this.dialogData.setSelectedFiles(getSelectedFiles());
+		}
 
+	}
+
+	/**
+	 * 
+	 * Creates the visual representation of the workspace
+	 * 
+	 * @param extensions
+	 *            The default extensions used to filter the displayed results
+	 * @param extensionsNames
+	 *            The displayed names of those filters
+	 */
 	private void createTreeViewerComposite(String[] extensions, String[] extensionsNames) {
 		Composite treeViewerComposite = new Composite(this, SWT.NONE);
 		treeViewerComposite.setLayout(new GridLayout(1, true));
@@ -125,7 +179,7 @@ public class SelectionTreeComposite extends Composite {
 		treeViewer.setContentProvider(contentProvider);
 		treeViewer.setLabelProvider(labelProvider);
 
-		treeViewer.addSelectionChangedListener(new ISelectionChangedListener() {
+		listListener = new ISelectionChangedListener() {
 
 			@Override
 			public void selectionChanged(SelectionChangedEvent event) {
@@ -135,14 +189,23 @@ public class SelectionTreeComposite extends Composite {
 					selectedFiles.clear();
 					IStructuredSelection sSelection = (IStructuredSelection) selection;
 					setSelectedFiles(sSelection.toArray());
+
+					if (dialogData != null) {
+						dialogData.setSelectedFiles(selectedFiles);
+					}
 				}
 			}
-		});
+		};
+
+		treeViewer.addSelectionChangedListener(listListener);
 
 		treeViewer.setInput(File.listRoots());
 
+		// get the selection in the workspace at the time of the launch
 		ISelection workbenchSelection = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getSelectionService().getSelection();
+		// set the first selection of the treeviewer from the selection in the workspace
 		treeViewer.setSelection(workbenchSelection, true);
+		// treeViewer.setSelection(new StructuredSelection(dialogData), true);
 
 		if (contentProvider instanceof IGraphicalContentProvider) {
 			IGraphicalContentProvider graphicalContentProvider = contentProvider;
@@ -166,12 +229,7 @@ public class SelectionTreeComposite extends Composite {
 
 	}
 
-	public TreeViewer getTreeViewer() {
-		return treeViewer;
-	}
-
-
-	public void setFilters(String[] filterExtensions, String[] filterNames) {
+	protected void setFilters(String[] filterExtensions, String[] filterNames) {
 		if (filterExtensions.length != filterNames.length) {
 			// This is a simple warning. Only valid filters will be retained.
 			Activator.log.warn(Messages.MultipleStringFileEditor_2);
@@ -190,21 +248,26 @@ public class SelectionTreeComposite extends Composite {
 		return filters;
 	}
 
-	public void setFilterExtensions(String[] filterExtensions) {
+	protected void setFilterExtensions(String[] filterExtensions) {
 		this.filterExtensions.clear();
 		this.filterExtensions.addAll(Arrays.asList(filterExtensions));
 	}
 
-	public void setFilterNames(String[] filterNames) {
+	protected void setFilterNames(String[] filterNames) {
 		this.filterNames.clear();
 		this.filterNames.addAll(Arrays.asList(filterNames));
 	}
 
+	public TreeViewer getTreeViewer() {
+		return treeViewer;
+	}
+
 	/**
 	 *
-	 * Fill the composite with the selection buttons
+	 * Fills the composite with the selection buttons
 	 *
 	 * @param parent
+	 *            The parent composite
 	 */
 	public void createSelectionButtons(Composite parent) {
 		Composite buttonsComposite = new Composite(parent, SWT.NONE);
@@ -217,27 +280,35 @@ public class SelectionTreeComposite extends Composite {
 			public void widgetSelected(SelectionEvent event) {
 				if ((Boolean) ((Button) event.widget).getData()) {
 					treeViewer.getTree().selectAll();
+					// updates the selectedFiles collection
 					getNestedFiles(((IStructuredSelection) treeViewer.getSelection()).toArray());
+
+					if (dialogData != null) {
+						dialogData.setSelectedFiles(selectedFiles);
+					}
 				} else {
 					treeViewer.getTree().deselectAll();
 					selectedFiles.clear();
+
+					if (dialogData != null) {
+						dialogData.setSelectedFiles(selectedFiles);
+					}
 				}
 			}
 		};
 
 		selectAll = new Button(buttonsComposite, SWT.PUSH);
-		selectAll.setText("Select All");
+		selectAll.setText(Messages.Button_SelectAll);
 		selectAll.setData(true);
 		selectAll.addSelectionListener(buttonListener);
 		selectAll.setLayoutData(new GridData(SWT.FILL, SWT.BEGINNING, true, false));
 
 		deselectAll = new Button(buttonsComposite, SWT.PUSH);
-		deselectAll.setText("Deselect All");
+		deselectAll.setText(Messages.Button_DeselectAll);
 		deselectAll.setData(false);
 		deselectAll.addSelectionListener(buttonListener);
 		deselectAll.setLayoutData(new GridData(SWT.FILL, SWT.BEGINNING, true, false));
 	}
-
 
 	public void setSelectedFiles(Object[] elements) {
 		// get the viewer selection to obtain the filtered files
@@ -250,11 +321,11 @@ public class SelectionTreeComposite extends Composite {
 
 	/**
 	 *
-	 * Get all the files from the user's selection in the viewer
+	 * Gets all the files from the user's selection in the viewer
 	 *
 	 * @param nestedElements
 	 */
-	public void getNestedFiles(Object[] nestedElements) {
+	protected void getNestedFiles(Object[] nestedElements) {
 		Collection<Object> projectList = new LinkedList<Object>();
 		Collection<Object> folderList = new LinkedList<Object>();
 		List<PatternViewerFilter> currentFilters = new ArrayList<PatternViewerFilter>();
@@ -315,6 +386,9 @@ public class SelectionTreeComposite extends Composite {
 		if (buttonListener != null) {
 			selectAll.removeSelectionListener(buttonListener);
 			deselectAll.removeSelectionListener(buttonListener);
+		}
+		if (listListener != null) {
+			treeViewer.removeSelectionChangedListener(listListener);
 		}
 		super.dispose();
 	}
