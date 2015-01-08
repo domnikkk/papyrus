@@ -108,9 +108,8 @@ public class RefineImpl extends RequirementsRelationshipImpl implements Refine {
 			InternalEObject oldBase_Abstraction = (InternalEObject) base_Abstraction;
 			base_Abstraction = (Abstraction) eResolveProxy(oldBase_Abstraction);
 			if (base_Abstraction != oldBase_Abstraction) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequirementsPackage.REFINE__BASE_ABSTRACTION, oldBase_Abstraction, base_Abstraction));
-				}
 			}
 		}
 		return base_Abstraction;
@@ -136,9 +135,8 @@ public class RefineImpl extends RequirementsRelationshipImpl implements Refine {
 	public void setBase_Abstraction(Abstraction newBase_Abstraction) {
 		Abstraction oldBase_Abstraction = base_Abstraction;
 		base_Abstraction = newBase_Abstraction;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RequirementsPackage.REFINE__BASE_ABSTRACTION, oldBase_Abstraction, base_Abstraction));
-		}
 	}
 
 	/**
@@ -197,9 +195,8 @@ public class RefineImpl extends RequirementsRelationshipImpl implements Refine {
 			InternalEObject oldBase_Dependency = (InternalEObject) base_Dependency;
 			base_Dependency = (Dependency) eResolveProxy(oldBase_Dependency);
 			if (base_Dependency != oldBase_Dependency) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequirementsPackage.REFINE__BASE_DEPENDENCY, oldBase_Dependency, base_Dependency));
-				}
 			}
 		}
 		return base_Dependency;
@@ -225,9 +222,8 @@ public class RefineImpl extends RequirementsRelationshipImpl implements Refine {
 	public void setBase_Dependency(Dependency newBase_Dependency) {
 		Dependency oldBase_Dependency = base_Dependency;
 		base_Dependency = newBase_Dependency;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RequirementsPackage.REFINE__BASE_DEPENDENCY, oldBase_Dependency, base_Dependency));
-		}
 	}
 
 	/**
@@ -255,16 +251,14 @@ public class RefineImpl extends RequirementsRelationshipImpl implements Refine {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case RequirementsPackage.REFINE__BASE_ABSTRACTION:
-			if (resolve) {
+			if (resolve)
 				return getBase_Abstraction();
-			}
 			return basicGetBase_Abstraction();
 		case RequirementsPackage.REFINE__REFINED_REQUIREMENT:
 			return getRefinedRequirement();
 		case RequirementsPackage.REFINE__BASE_DEPENDENCY:
-			if (resolve) {
+			if (resolve)
 				return getBase_Dependency();
-			}
 			return basicGetBase_Dependency();
 		case RequirementsPackage.REFINE__REFINED_BY:
 			return getRefinedBy();

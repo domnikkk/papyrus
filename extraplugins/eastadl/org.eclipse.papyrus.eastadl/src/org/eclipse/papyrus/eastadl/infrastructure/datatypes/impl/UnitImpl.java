@@ -159,9 +159,8 @@ public class UnitImpl extends EAPackageableElementImpl implements Unit {
 	public void setFactor(Float newFactor) {
 		Float oldFactor = factor;
 		factor = newFactor;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.UNIT__FACTOR, oldFactor, factor));
-		}
 	}
 
 	/**
@@ -185,9 +184,8 @@ public class UnitImpl extends EAPackageableElementImpl implements Unit {
 	public void setOffset(Float newOffset) {
 		Float oldOffset = offset;
 		offset = newOffset;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.UNIT__OFFSET, oldOffset, offset));
-		}
 	}
 
 	/**
@@ -211,9 +209,8 @@ public class UnitImpl extends EAPackageableElementImpl implements Unit {
 	public void setSymbol(String newSymbol) {
 		String oldSymbol = symbol;
 		symbol = newSymbol;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.UNIT__SYMBOL, oldSymbol, symbol));
-		}
 	}
 
 	/**
@@ -228,9 +225,8 @@ public class UnitImpl extends EAPackageableElementImpl implements Unit {
 			InternalEObject oldQuantity = (InternalEObject) quantity;
 			quantity = (Quantity) eResolveProxy(oldQuantity);
 			if (quantity != oldQuantity) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DatatypesPackage.UNIT__QUANTITY, oldQuantity, quantity));
-				}
 			}
 		}
 		return quantity;
@@ -256,9 +252,8 @@ public class UnitImpl extends EAPackageableElementImpl implements Unit {
 	public void setQuantity(Quantity newQuantity) {
 		Quantity oldQuantity = quantity;
 		quantity = newQuantity;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.UNIT__QUANTITY, oldQuantity, quantity));
-		}
 	}
 
 	/**
@@ -273,9 +268,8 @@ public class UnitImpl extends EAPackageableElementImpl implements Unit {
 			InternalEObject oldReference = (InternalEObject) reference;
 			reference = (Unit) eResolveProxy(oldReference);
 			if (reference != oldReference) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DatatypesPackage.UNIT__REFERENCE, oldReference, reference));
-				}
 			}
 		}
 		return reference;
@@ -301,9 +295,8 @@ public class UnitImpl extends EAPackageableElementImpl implements Unit {
 	public void setReference(Unit newReference) {
 		Unit oldReference = reference;
 		reference = newReference;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.UNIT__REFERENCE, oldReference, reference));
-		}
 	}
 
 	/**
@@ -322,14 +315,12 @@ public class UnitImpl extends EAPackageableElementImpl implements Unit {
 		case DatatypesPackage.UNIT__SYMBOL:
 			return getSymbol();
 		case DatatypesPackage.UNIT__QUANTITY:
-			if (resolve) {
+			if (resolve)
 				return getQuantity();
-			}
 			return basicGetQuantity();
 		case DatatypesPackage.UNIT__REFERENCE:
-			if (resolve) {
+			if (resolve)
 				return getReference();
-			}
 			return basicGetReference();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -422,16 +413,15 @@ public class UnitImpl extends EAPackageableElementImpl implements Unit {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
+		if (eIsProxy())
 			return super.toString();
-		}
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (factor: ");
+		result.append(" (factor: "); //$NON-NLS-1$
 		result.append(factor);
-		result.append(", offset: ");
+		result.append(", offset: "); //$NON-NLS-1$
 		result.append(offset);
-		result.append(", symbol: ");
+		result.append(", symbol: "); //$NON-NLS-1$
 		result.append(symbol);
 		result.append(')');
 		return result.toString();

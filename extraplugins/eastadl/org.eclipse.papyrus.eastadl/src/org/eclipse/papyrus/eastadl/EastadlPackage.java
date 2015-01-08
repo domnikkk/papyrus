@@ -31,7 +31,7 @@ import org.eclipse.emf.ecore.EPackage;
  *
  * @see org.eclipse.papyrus.eastadl.EastadlFactory
  * @model kind="package"
- *        annotation="http://www.eclipse.org/uml2/2.0.0/UML originalName='EAST-ADL2'"
+ *        annotation="http://www.eclipse.org/uml2/2.0.0/UML originalName='EASTADL2'"
  * @generated
  */
 public interface EastadlPackage extends EPackage {

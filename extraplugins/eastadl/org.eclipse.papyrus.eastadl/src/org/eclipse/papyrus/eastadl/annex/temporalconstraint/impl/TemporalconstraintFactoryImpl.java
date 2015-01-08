@@ -79,7 +79,7 @@ public class TemporalconstraintFactoryImpl extends EFactoryImpl implements Tempo
 		case TemporalconstraintPackage.TRANSITION_EVENT:
 			return createTransitionEvent();
 		default:
-			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 	}
 

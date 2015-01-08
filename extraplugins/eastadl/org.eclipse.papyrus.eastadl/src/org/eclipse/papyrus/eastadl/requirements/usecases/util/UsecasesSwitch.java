@@ -81,88 +81,69 @@ public class UsecasesSwitch<T> extends Switch<T> {
 		case UsecasesPackage.EXTEND: {
 			Extend extend = (Extend) theEObject;
 			T result = caseExtend(extend);
-			if (result == null) {
+			if (result == null)
 				result = caseRelationship(extend);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(extend);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case UsecasesPackage.EXTENSION_POINT: {
 			ExtensionPoint extensionPoint = (ExtensionPoint) theEObject;
 			T result = caseExtensionPoint(extensionPoint);
-			if (result == null) {
+			if (result == null)
 				result = caseRedefinableElement(extensionPoint);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(extensionPoint);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case UsecasesPackage.REDEFINABLE_ELEMENT: {
 			RedefinableElement redefinableElement = (RedefinableElement) theEObject;
 			T result = caseRedefinableElement(redefinableElement);
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(redefinableElement);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case UsecasesPackage.USE_CASE: {
 			UseCase useCase = (UseCase) theEObject;
 			T result = caseUseCase(useCase);
-			if (result == null) {
+			if (result == null)
 				result = caseTraceableSpecification(useCase);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPackageableElement(useCase);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(useCase);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case UsecasesPackage.INCLUDE: {
 			Include include = (Include) theEObject;
 			T result = caseInclude(include);
-			if (result == null) {
+			if (result == null)
 				result = caseRelationship(include);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(include);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case UsecasesPackage.ACTOR: {
 			Actor actor = (Actor) theEObject;
 			T result = caseActor(actor);
-			if (result == null) {
+			if (result == null)
 				result = caseTraceableSpecification(actor);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPackageableElement(actor);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(actor);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		default:

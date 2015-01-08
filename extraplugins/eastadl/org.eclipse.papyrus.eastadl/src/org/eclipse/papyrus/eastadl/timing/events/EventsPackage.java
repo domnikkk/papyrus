@@ -40,6 +40,7 @@ import org.eclipse.papyrus.eastadl.timing.TimingPackage;
  *
  * @see org.eclipse.papyrus.eastadl.timing.events.EventsFactory
  * @model kind="package"
+ *        annotation="http://www.eclipse.org/uml2/2.0.0/UML originalName='Events'"
  * @generated
  */
 public interface EventsPackage extends EPackage {

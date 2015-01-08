@@ -101,9 +101,8 @@ public class AttributeImpl extends EAElementImpl implements Attribute {
 	public void setIsExternVisible(boolean newIsExternVisible) {
 		boolean oldIsExternVisible = isExternVisible;
 		isExternVisible = newIsExternVisible;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, AttributequantificationconstraintPackage.ATTRIBUTE__IS_EXTERN_VISIBLE, oldIsExternVisible, isExternVisible));
-		}
 	}
 
 	/**
@@ -118,9 +117,8 @@ public class AttributeImpl extends EAElementImpl implements Attribute {
 			InternalEObject oldType = (InternalEObject) type;
 			type = (EADatatype) eResolveProxy(oldType);
 			if (type != oldType) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AttributequantificationconstraintPackage.ATTRIBUTE__TYPE, oldType, type));
-				}
 			}
 		}
 		return type;
@@ -146,9 +144,8 @@ public class AttributeImpl extends EAElementImpl implements Attribute {
 	public void setType(EADatatype newType) {
 		EADatatype oldType = type;
 		type = newType;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, AttributequantificationconstraintPackage.ATTRIBUTE__TYPE, oldType, type));
-		}
 	}
 
 	/**
@@ -163,9 +160,8 @@ public class AttributeImpl extends EAElementImpl implements Attribute {
 		case AttributequantificationconstraintPackage.ATTRIBUTE__IS_EXTERN_VISIBLE:
 			return isIsExternVisible();
 		case AttributequantificationconstraintPackage.ATTRIBUTE__TYPE:
-			if (resolve) {
+			if (resolve)
 				return getType();
-			}
 			return basicGetType();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -234,12 +230,11 @@ public class AttributeImpl extends EAElementImpl implements Attribute {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
+		if (eIsProxy())
 			return super.toString();
-		}
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (isExternVisible: ");
+		result.append(" (isExternVisible: "); //$NON-NLS-1$
 		result.append(isExternVisible);
 		result.append(')');
 		return result.toString();

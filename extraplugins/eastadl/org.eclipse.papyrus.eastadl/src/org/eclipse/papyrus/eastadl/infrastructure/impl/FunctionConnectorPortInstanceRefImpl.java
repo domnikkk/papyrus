@@ -81,9 +81,8 @@ public class FunctionConnectorPortInstanceRefImpl extends InstanceRefImpl implem
 			InternalEObject oldFunctionPort = (InternalEObject) functionPort;
 			functionPort = (FunctionPort) eResolveProxy(oldFunctionPort);
 			if (functionPort != oldFunctionPort) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InfrastructurePackage.FUNCTION_CONNECTOR_PORT_INSTANCE_REF__FUNCTION_PORT, oldFunctionPort, functionPort));
-				}
 			}
 		}
 		return functionPort;
@@ -109,9 +108,8 @@ public class FunctionConnectorPortInstanceRefImpl extends InstanceRefImpl implem
 	public void setFunctionPort(FunctionPort newFunctionPort) {
 		FunctionPort oldFunctionPort = functionPort;
 		functionPort = newFunctionPort;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, InfrastructurePackage.FUNCTION_CONNECTOR_PORT_INSTANCE_REF__FUNCTION_PORT, oldFunctionPort, functionPort));
-		}
 	}
 
 	/**
@@ -126,9 +124,8 @@ public class FunctionConnectorPortInstanceRefImpl extends InstanceRefImpl implem
 			InternalEObject oldFunctionPrototype = (InternalEObject) functionPrototype;
 			functionPrototype = (FunctionPrototype) eResolveProxy(oldFunctionPrototype);
 			if (functionPrototype != oldFunctionPrototype) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InfrastructurePackage.FUNCTION_CONNECTOR_PORT_INSTANCE_REF__FUNCTION_PROTOTYPE, oldFunctionPrototype, functionPrototype));
-				}
 			}
 		}
 		return functionPrototype;
@@ -154,9 +151,8 @@ public class FunctionConnectorPortInstanceRefImpl extends InstanceRefImpl implem
 	public void setFunctionPrototype(FunctionPrototype newFunctionPrototype) {
 		FunctionPrototype oldFunctionPrototype = functionPrototype;
 		functionPrototype = newFunctionPrototype;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, InfrastructurePackage.FUNCTION_CONNECTOR_PORT_INSTANCE_REF__FUNCTION_PROTOTYPE, oldFunctionPrototype, functionPrototype));
-		}
 	}
 
 	/**
@@ -169,14 +165,12 @@ public class FunctionConnectorPortInstanceRefImpl extends InstanceRefImpl implem
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case InfrastructurePackage.FUNCTION_CONNECTOR_PORT_INSTANCE_REF__FUNCTION_PORT:
-			if (resolve) {
+			if (resolve)
 				return getFunctionPort();
-			}
 			return basicGetFunctionPort();
 		case InfrastructurePackage.FUNCTION_CONNECTOR_PORT_INSTANCE_REF__FUNCTION_PROTOTYPE:
-			if (resolve) {
+			if (resolve)
 				return getFunctionPrototype();
-			}
 			return basicGetFunctionPrototype();
 		}
 		return super.eGet(featureID, resolve, coreType);

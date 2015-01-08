@@ -104,14 +104,12 @@ public class FeatureModelImpl extends ContextImpl implements FeatureModel {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case FeaturemodelingPackage.FEATURE_MODEL__BASE_PACKAGE:
-			if (resolve) {
+			if (resolve)
 				return getBase_Package();
-			}
 			return basicGetBase_Package();
 		case FeaturemodelingPackage.FEATURE_MODEL__BASE_CLASS:
-			if (resolve) {
+			if (resolve)
 				return getBase_Class();
-			}
 			return basicGetBase_Class();
 		case FeaturemodelingPackage.FEATURE_MODEL__ROOT_FEATURE:
 			return getRootFeature();
@@ -198,9 +196,8 @@ public class FeatureModelImpl extends ContextImpl implements FeatureModel {
 			InternalEObject oldBase_Package = (InternalEObject) base_Package;
 			base_Package = (org.eclipse.uml2.uml.Package) eResolveProxy(oldBase_Package);
 			if (base_Package != oldBase_Package) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FeaturemodelingPackage.FEATURE_MODEL__BASE_PACKAGE, oldBase_Package, base_Package));
-				}
 			}
 		}
 		return base_Package;
@@ -226,9 +223,8 @@ public class FeatureModelImpl extends ContextImpl implements FeatureModel {
 	public void setBase_Package(org.eclipse.uml2.uml.Package newBase_Package) {
 		org.eclipse.uml2.uml.Package oldBase_Package = base_Package;
 		base_Package = newBase_Package;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FeaturemodelingPackage.FEATURE_MODEL__BASE_PACKAGE, oldBase_Package, base_Package));
-		}
 	}
 
 	/**
@@ -243,9 +239,8 @@ public class FeatureModelImpl extends ContextImpl implements FeatureModel {
 			InternalEObject oldBase_Class = (InternalEObject) base_Class;
 			base_Class = (org.eclipse.uml2.uml.Class) eResolveProxy(oldBase_Class);
 			if (base_Class != oldBase_Class) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FeaturemodelingPackage.FEATURE_MODEL__BASE_CLASS, oldBase_Class, base_Class));
-				}
 			}
 		}
 		return base_Class;
@@ -271,9 +266,8 @@ public class FeatureModelImpl extends ContextImpl implements FeatureModel {
 	public void setBase_Class(org.eclipse.uml2.uml.Class newBase_Class) {
 		org.eclipse.uml2.uml.Class oldBase_Class = base_Class;
 		base_Class = newBase_Class;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FeaturemodelingPackage.FEATURE_MODEL__BASE_CLASS, oldBase_Class, base_Class));
-		}
 	}
 
 	/**

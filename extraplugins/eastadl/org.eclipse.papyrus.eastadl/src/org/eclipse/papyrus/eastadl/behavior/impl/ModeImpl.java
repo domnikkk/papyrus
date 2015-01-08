@@ -94,9 +94,8 @@ public class ModeImpl extends EAElementImpl implements Mode {
 		case BehaviorPackage.MODE__CONDITION:
 			return getCondition();
 		case BehaviorPackage.MODE__BASE_CLASS:
-			if (resolve) {
+			if (resolve)
 				return getBase_Class();
-			}
 			return basicGetBase_Class();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -189,9 +188,8 @@ public class ModeImpl extends EAElementImpl implements Mode {
 	public void setCondition(String newCondition) {
 		String oldCondition = condition;
 		condition = newCondition;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BehaviorPackage.MODE__CONDITION, oldCondition, condition));
-		}
 	}
 
 	/**
@@ -206,9 +204,8 @@ public class ModeImpl extends EAElementImpl implements Mode {
 			InternalEObject oldBase_Class = (InternalEObject) base_Class;
 			base_Class = (org.eclipse.uml2.uml.Class) eResolveProxy(oldBase_Class);
 			if (base_Class != oldBase_Class) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BehaviorPackage.MODE__BASE_CLASS, oldBase_Class, base_Class));
-				}
 			}
 		}
 		return base_Class;
@@ -234,9 +231,8 @@ public class ModeImpl extends EAElementImpl implements Mode {
 	public void setBase_Class(org.eclipse.uml2.uml.Class newBase_Class) {
 		org.eclipse.uml2.uml.Class oldBase_Class = base_Class;
 		base_Class = newBase_Class;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BehaviorPackage.MODE__BASE_CLASS, oldBase_Class, base_Class));
-		}
 	}
 
 	/**
@@ -247,12 +243,11 @@ public class ModeImpl extends EAElementImpl implements Mode {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
+		if (eIsProxy())
 			return super.toString();
-		}
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (condition: ");
+		result.append(" (condition: "); //$NON-NLS-1$
 		result.append(condition);
 		result.append(')');
 		return result.toString();

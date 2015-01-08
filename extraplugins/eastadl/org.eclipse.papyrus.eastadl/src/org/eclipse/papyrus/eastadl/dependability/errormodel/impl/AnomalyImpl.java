@@ -93,9 +93,8 @@ public class AnomalyImpl extends EAElementImpl implements Anomaly {
 	public void setType(EADatatype newType) {
 		EADatatype oldType = type;
 		type = newType;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ErrormodelPackage.ANOMALY__TYPE, oldType, type));
-		}
 	}
 
 	/**
@@ -108,14 +107,12 @@ public class AnomalyImpl extends EAElementImpl implements Anomaly {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case ErrormodelPackage.ANOMALY__BASE_PROPERTY:
-			if (resolve) {
+			if (resolve)
 				return getBase_Property();
-			}
 			return basicGetBase_Property();
 		case ErrormodelPackage.ANOMALY__TYPE:
-			if (resolve) {
+			if (resolve)
 				return getType();
-			}
 			return basicGetType();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -199,9 +196,8 @@ public class AnomalyImpl extends EAElementImpl implements Anomaly {
 			InternalEObject oldType = (InternalEObject) type;
 			type = (EADatatype) eResolveProxy(oldType);
 			if (type != oldType) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ErrormodelPackage.ANOMALY__TYPE, oldType, type));
-				}
 			}
 		}
 		return type;
@@ -219,9 +215,8 @@ public class AnomalyImpl extends EAElementImpl implements Anomaly {
 			InternalEObject oldBase_Property = (InternalEObject) base_Property;
 			base_Property = (Property) eResolveProxy(oldBase_Property);
 			if (base_Property != oldBase_Property) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ErrormodelPackage.ANOMALY__BASE_PROPERTY, oldBase_Property, base_Property));
-				}
 			}
 		}
 		return base_Property;
@@ -247,9 +242,8 @@ public class AnomalyImpl extends EAElementImpl implements Anomaly {
 	public void setBase_Property(Property newBase_Property) {
 		Property oldBase_Property = base_Property;
 		base_Property = newBase_Property;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ErrormodelPackage.ANOMALY__BASE_PROPERTY, oldBase_Property, base_Property));
-		}
 	}
 
 } // AnomalyImpl

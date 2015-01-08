@@ -118,9 +118,8 @@ public class SporadicConstraintImpl extends TimingConstraintImpl implements Spor
 			InternalEObject oldEvent = (InternalEObject) event;
 			event = (Event) eResolveProxy(oldEvent);
 			if (event != oldEvent) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TimingconstraintsPackage.SPORADIC_CONSTRAINT__EVENT, oldEvent, event));
-				}
 			}
 		}
 		return event;
@@ -146,9 +145,8 @@ public class SporadicConstraintImpl extends TimingConstraintImpl implements Spor
 	public void setEvent(Event newEvent) {
 		Event oldEvent = event;
 		event = newEvent;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TimingconstraintsPackage.SPORADIC_CONSTRAINT__EVENT, oldEvent, event));
-		}
 	}
 
 	/**
@@ -163,9 +161,8 @@ public class SporadicConstraintImpl extends TimingConstraintImpl implements Spor
 			InternalEObject oldLower = (InternalEObject) lower;
 			lower = (TimingExpression) eResolveProxy(oldLower);
 			if (lower != oldLower) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TimingconstraintsPackage.SPORADIC_CONSTRAINT__LOWER, oldLower, lower));
-				}
 			}
 		}
 		return lower;
@@ -191,9 +188,8 @@ public class SporadicConstraintImpl extends TimingConstraintImpl implements Spor
 	public void setLower(TimingExpression newLower) {
 		TimingExpression oldLower = lower;
 		lower = newLower;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TimingconstraintsPackage.SPORADIC_CONSTRAINT__LOWER, oldLower, lower));
-		}
 	}
 
 	/**
@@ -208,9 +204,8 @@ public class SporadicConstraintImpl extends TimingConstraintImpl implements Spor
 			InternalEObject oldUpper = (InternalEObject) upper;
 			upper = (TimingExpression) eResolveProxy(oldUpper);
 			if (upper != oldUpper) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TimingconstraintsPackage.SPORADIC_CONSTRAINT__UPPER, oldUpper, upper));
-				}
 			}
 		}
 		return upper;
@@ -236,9 +231,8 @@ public class SporadicConstraintImpl extends TimingConstraintImpl implements Spor
 	public void setUpper(TimingExpression newUpper) {
 		TimingExpression oldUpper = upper;
 		upper = newUpper;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TimingconstraintsPackage.SPORADIC_CONSTRAINT__UPPER, oldUpper, upper));
-		}
 	}
 
 	/**
@@ -253,9 +247,8 @@ public class SporadicConstraintImpl extends TimingConstraintImpl implements Spor
 			InternalEObject oldJitter = (InternalEObject) jitter;
 			jitter = (TimingExpression) eResolveProxy(oldJitter);
 			if (jitter != oldJitter) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TimingconstraintsPackage.SPORADIC_CONSTRAINT__JITTER, oldJitter, jitter));
-				}
 			}
 		}
 		return jitter;
@@ -281,9 +274,8 @@ public class SporadicConstraintImpl extends TimingConstraintImpl implements Spor
 	public void setJitter(TimingExpression newJitter) {
 		TimingExpression oldJitter = jitter;
 		jitter = newJitter;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TimingconstraintsPackage.SPORADIC_CONSTRAINT__JITTER, oldJitter, jitter));
-		}
 	}
 
 	/**
@@ -298,9 +290,8 @@ public class SporadicConstraintImpl extends TimingConstraintImpl implements Spor
 			InternalEObject oldMinimum = (InternalEObject) minimum;
 			minimum = (TimingExpression) eResolveProxy(oldMinimum);
 			if (minimum != oldMinimum) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TimingconstraintsPackage.SPORADIC_CONSTRAINT__MINIMUM, oldMinimum, minimum));
-				}
 			}
 		}
 		return minimum;
@@ -326,9 +317,8 @@ public class SporadicConstraintImpl extends TimingConstraintImpl implements Spor
 	public void setMinimum(TimingExpression newMinimum) {
 		TimingExpression oldMinimum = minimum;
 		minimum = newMinimum;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TimingconstraintsPackage.SPORADIC_CONSTRAINT__MINIMUM, oldMinimum, minimum));
-		}
 	}
 
 	/**
@@ -341,29 +331,24 @@ public class SporadicConstraintImpl extends TimingConstraintImpl implements Spor
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case TimingconstraintsPackage.SPORADIC_CONSTRAINT__EVENT:
-			if (resolve) {
+			if (resolve)
 				return getEvent();
-			}
 			return basicGetEvent();
 		case TimingconstraintsPackage.SPORADIC_CONSTRAINT__LOWER:
-			if (resolve) {
+			if (resolve)
 				return getLower();
-			}
 			return basicGetLower();
 		case TimingconstraintsPackage.SPORADIC_CONSTRAINT__UPPER:
-			if (resolve) {
+			if (resolve)
 				return getUpper();
-			}
 			return basicGetUpper();
 		case TimingconstraintsPackage.SPORADIC_CONSTRAINT__JITTER:
-			if (resolve) {
+			if (resolve)
 				return getJitter();
-			}
 			return basicGetJitter();
 		case TimingconstraintsPackage.SPORADIC_CONSTRAINT__MINIMUM:
-			if (resolve) {
+			if (resolve)
 				return getMinimum();
-			}
 			return basicGetMinimum();
 		}
 		return super.eGet(featureID, resolve, coreType);

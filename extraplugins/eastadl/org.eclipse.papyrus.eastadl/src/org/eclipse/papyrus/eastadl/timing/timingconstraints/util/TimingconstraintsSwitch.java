@@ -445,239 +445,188 @@ public class TimingconstraintsSwitch<T> extends Switch<T> {
 		case TimingconstraintsPackage.DELAY_CONSTRAINT: {
 			DelayConstraint delayConstraint = (DelayConstraint) theEObject;
 			T result = caseDelayConstraint(delayConstraint);
-			if (result == null) {
+			if (result == null)
 				result = caseTimingConstraint(delayConstraint);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(delayConstraint);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case TimingconstraintsPackage.AGE_CONSTRAINT: {
 			AgeConstraint ageConstraint = (AgeConstraint) theEObject;
 			T result = caseAgeConstraint(ageConstraint);
-			if (result == null) {
+			if (result == null)
 				result = caseTimingConstraint(ageConstraint);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(ageConstraint);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case TimingconstraintsPackage.INPUT_SYNCHRONIZATION_CONSTRAINT: {
 			InputSynchronizationConstraint inputSynchronizationConstraint = (InputSynchronizationConstraint) theEObject;
 			T result = caseInputSynchronizationConstraint(inputSynchronizationConstraint);
-			if (result == null) {
+			if (result == null)
 				result = caseTimingConstraint(inputSynchronizationConstraint);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(inputSynchronizationConstraint);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case TimingconstraintsPackage.OUTPUT_SYNCHRONIZATION_CONSTRAINT: {
 			OutputSynchronizationConstraint outputSynchronizationConstraint = (OutputSynchronizationConstraint) theEObject;
 			T result = caseOutputSynchronizationConstraint(outputSynchronizationConstraint);
-			if (result == null) {
+			if (result == null)
 				result = caseTimingConstraint(outputSynchronizationConstraint);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(outputSynchronizationConstraint);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case TimingconstraintsPackage.REACTION_CONSTRAINT: {
 			ReactionConstraint reactionConstraint = (ReactionConstraint) theEObject;
 			T result = caseReactionConstraint(reactionConstraint);
-			if (result == null) {
+			if (result == null)
 				result = caseTimingConstraint(reactionConstraint);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(reactionConstraint);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case TimingconstraintsPackage.SPORADIC_CONSTRAINT: {
 			SporadicConstraint sporadicConstraint = (SporadicConstraint) theEObject;
 			T result = caseSporadicConstraint(sporadicConstraint);
-			if (result == null) {
+			if (result == null)
 				result = caseTimingConstraint(sporadicConstraint);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(sporadicConstraint);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case TimingconstraintsPackage.PERIODIC_CONSTRAINT: {
 			PeriodicConstraint periodicConstraint = (PeriodicConstraint) theEObject;
 			T result = casePeriodicConstraint(periodicConstraint);
-			if (result == null) {
+			if (result == null)
 				result = caseTimingConstraint(periodicConstraint);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(periodicConstraint);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case TimingconstraintsPackage.PATTERN_CONSTRAINT: {
 			PatternConstraint patternConstraint = (PatternConstraint) theEObject;
 			T result = casePatternConstraint(patternConstraint);
-			if (result == null) {
+			if (result == null)
 				result = caseTimingConstraint(patternConstraint);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(patternConstraint);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case TimingconstraintsPackage.ARBITRARY_CONSTRAINT: {
 			ArbitraryConstraint arbitraryConstraint = (ArbitraryConstraint) theEObject;
 			T result = caseArbitraryConstraint(arbitraryConstraint);
-			if (result == null) {
+			if (result == null)
 				result = caseTimingConstraint(arbitraryConstraint);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(arbitraryConstraint);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case TimingconstraintsPackage.EXECUTION_TIME_CONSTRAINT: {
 			ExecutionTimeConstraint executionTimeConstraint = (ExecutionTimeConstraint) theEObject;
 			T result = caseExecutionTimeConstraint(executionTimeConstraint);
-			if (result == null) {
+			if (result == null)
 				result = caseTimingConstraint(executionTimeConstraint);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(executionTimeConstraint);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case TimingconstraintsPackage.BURST_CONSTRAINT: {
 			BurstConstraint burstConstraint = (BurstConstraint) theEObject;
 			T result = caseBurstConstraint(burstConstraint);
-			if (result == null) {
+			if (result == null)
 				result = caseTimingConstraint(burstConstraint);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(burstConstraint);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case TimingconstraintsPackage.COMPARISON_CONSTRAINT: {
 			ComparisonConstraint comparisonConstraint = (ComparisonConstraint) theEObject;
 			T result = caseComparisonConstraint(comparisonConstraint);
-			if (result == null) {
+			if (result == null)
 				result = caseTimingConstraint(comparisonConstraint);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(comparisonConstraint);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case TimingconstraintsPackage.ORDER_CONSTRAINT: {
 			OrderConstraint orderConstraint = (OrderConstraint) theEObject;
 			T result = caseOrderConstraint(orderConstraint);
-			if (result == null) {
+			if (result == null)
 				result = caseTimingConstraint(orderConstraint);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(orderConstraint);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case TimingconstraintsPackage.REPETITION_CONSTRAINT: {
 			RepetitionConstraint repetitionConstraint = (RepetitionConstraint) theEObject;
 			T result = caseRepetitionConstraint(repetitionConstraint);
-			if (result == null) {
+			if (result == null)
 				result = caseTimingConstraint(repetitionConstraint);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(repetitionConstraint);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case TimingconstraintsPackage.STRONG_DELAY_CONSTRAINT: {
 			StrongDelayConstraint strongDelayConstraint = (StrongDelayConstraint) theEObject;
 			T result = caseStrongDelayConstraint(strongDelayConstraint);
-			if (result == null) {
+			if (result == null)
 				result = caseTimingConstraint(strongDelayConstraint);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(strongDelayConstraint);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case TimingconstraintsPackage.STRONG_SYNCHRONIZATION_CONSTRAINT: {
 			StrongSynchronizationConstraint strongSynchronizationConstraint = (StrongSynchronizationConstraint) theEObject;
 			T result = caseStrongSynchronizationConstraint(strongSynchronizationConstraint);
-			if (result == null) {
+			if (result == null)
 				result = caseTimingConstraint(strongSynchronizationConstraint);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(strongSynchronizationConstraint);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case TimingconstraintsPackage.SYNCHRONIZATION_CONSTRAINT: {
 			SynchronizationConstraint synchronizationConstraint = (SynchronizationConstraint) theEObject;
 			T result = caseSynchronizationConstraint(synchronizationConstraint);
-			if (result == null) {
+			if (result == null)
 				result = caseTimingConstraint(synchronizationConstraint);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(synchronizationConstraint);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		default:

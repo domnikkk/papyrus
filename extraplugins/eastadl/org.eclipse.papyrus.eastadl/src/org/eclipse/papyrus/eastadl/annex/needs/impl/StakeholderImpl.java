@@ -115,9 +115,8 @@ public class StakeholderImpl extends TraceableSpecificationImpl implements Stake
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case NeedsPackage.STAKEHOLDER__BASE_CLASS:
-			if (resolve) {
+			if (resolve)
 				return getBase_Class();
-			}
 			return basicGetBase_Class();
 		case NeedsPackage.STAKEHOLDER__RESPONSIBILITIES:
 			return getResponsibilities();
@@ -191,9 +190,8 @@ public class StakeholderImpl extends TraceableSpecificationImpl implements Stake
 			InternalEObject oldBase_Class = (InternalEObject) base_Class;
 			base_Class = (org.eclipse.uml2.uml.Class) eResolveProxy(oldBase_Class);
 			if (base_Class != oldBase_Class) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, NeedsPackage.STAKEHOLDER__BASE_CLASS, oldBase_Class, base_Class));
-				}
 			}
 		}
 		return base_Class;
@@ -219,9 +217,8 @@ public class StakeholderImpl extends TraceableSpecificationImpl implements Stake
 	public void setBase_Class(org.eclipse.uml2.uml.Class newBase_Class) {
 		org.eclipse.uml2.uml.Class oldBase_Class = base_Class;
 		base_Class = newBase_Class;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, NeedsPackage.STAKEHOLDER__BASE_CLASS, oldBase_Class, base_Class));
-		}
 	}
 
 	/**
@@ -278,9 +275,8 @@ public class StakeholderImpl extends TraceableSpecificationImpl implements Stake
 	public void setResponsibilities(String newResponsibilities) {
 		String oldResponsibilities = responsibilities;
 		responsibilities = newResponsibilities;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, NeedsPackage.STAKEHOLDER__RESPONSIBILITIES, oldResponsibilities, responsibilities));
-		}
 	}
 
 	/**
@@ -293,9 +289,8 @@ public class StakeholderImpl extends TraceableSpecificationImpl implements Stake
 	public void setSuccessCriteria(String newSuccessCriteria) {
 		String oldSuccessCriteria = successCriteria;
 		successCriteria = newSuccessCriteria;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, NeedsPackage.STAKEHOLDER__SUCCESS_CRITERIA, oldSuccessCriteria, successCriteria));
-		}
 	}
 
 	/**
@@ -306,14 +301,13 @@ public class StakeholderImpl extends TraceableSpecificationImpl implements Stake
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
+		if (eIsProxy())
 			return super.toString();
-		}
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (responsibilities: ");
+		result.append(" (responsibilities: "); //$NON-NLS-1$
 		result.append(responsibilities);
-		result.append(", successCriteria: ");
+		result.append(", successCriteria: "); //$NON-NLS-1$
 		result.append(successCriteria);
 		result.append(')');
 		return result.toString();

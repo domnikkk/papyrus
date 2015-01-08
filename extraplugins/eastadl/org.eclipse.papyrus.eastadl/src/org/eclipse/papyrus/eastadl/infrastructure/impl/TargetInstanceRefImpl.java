@@ -107,9 +107,8 @@ public class TargetInstanceRefImpl extends InstanceRefImpl implements TargetInst
 			InternalEObject oldAllocationTarget = (InternalEObject) allocationTarget;
 			allocationTarget = (AllocationTarget) eResolveProxy(oldAllocationTarget);
 			if (allocationTarget != oldAllocationTarget) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InfrastructurePackage.TARGET_INSTANCE_REF__ALLOCATION_TARGET, oldAllocationTarget, allocationTarget));
-				}
 			}
 		}
 		return allocationTarget;
@@ -135,9 +134,8 @@ public class TargetInstanceRefImpl extends InstanceRefImpl implements TargetInst
 	public void setAllocationTarget(AllocationTarget newAllocationTarget) {
 		AllocationTarget oldAllocationTarget = allocationTarget;
 		allocationTarget = newAllocationTarget;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, InfrastructurePackage.TARGET_INSTANCE_REF__ALLOCATION_TARGET, oldAllocationTarget, allocationTarget));
-		}
 	}
 
 	/**
@@ -175,9 +173,8 @@ public class TargetInstanceRefImpl extends InstanceRefImpl implements TargetInst
 	public void setIntAttribute(int newIntAttribute) {
 		int oldIntAttribute = intAttribute;
 		intAttribute = newIntAttribute;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, InfrastructurePackage.TARGET_INSTANCE_REF__INT_ATTRIBUTE, oldIntAttribute, intAttribute));
-		}
 	}
 
 	/**
@@ -190,9 +187,8 @@ public class TargetInstanceRefImpl extends InstanceRefImpl implements TargetInst
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case InfrastructurePackage.TARGET_INSTANCE_REF__ALLOCATION_TARGET:
-			if (resolve) {
+			if (resolve)
 				return getAllocationTarget();
-			}
 			return basicGetAllocationTarget();
 		case InfrastructurePackage.TARGET_INSTANCE_REF__ALLOCATION_TARGET_CONTEXT:
 			return getAllocationTarget_context();
@@ -275,12 +271,11 @@ public class TargetInstanceRefImpl extends InstanceRefImpl implements TargetInst
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
+		if (eIsProxy())
 			return super.toString();
-		}
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (intAttribute: ");
+		result.append(" (intAttribute: "); //$NON-NLS-1$
 		result.append(intAttribute);
 		result.append(')');
 		return result.toString();

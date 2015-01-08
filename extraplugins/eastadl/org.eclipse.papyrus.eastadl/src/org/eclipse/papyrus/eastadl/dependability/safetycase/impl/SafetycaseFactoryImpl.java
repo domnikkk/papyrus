@@ -102,7 +102,7 @@ public class SafetycaseFactoryImpl extends EFactoryImpl implements SafetycaseFac
 		case SafetycasePackage.LIFECYCLE_STAGE_KIND:
 			return convertLifecycleStageKindToString(eDataType, instanceValue);
 		default:
-			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 	}
 
@@ -124,7 +124,7 @@ public class SafetycaseFactoryImpl extends EFactoryImpl implements SafetycaseFac
 		case SafetycasePackage.CLAIM:
 			return createClaim();
 		default:
-			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 	}
 
@@ -152,7 +152,7 @@ public class SafetycaseFactoryImpl extends EFactoryImpl implements SafetycaseFac
 		case SafetycasePackage.LIFECYCLE_STAGE_KIND:
 			return createLifecycleStageKindFromString(eDataType, initialValue);
 		default:
-			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 	}
 
@@ -176,9 +176,8 @@ public class SafetycaseFactoryImpl extends EFactoryImpl implements SafetycaseFac
 	 */
 	public LifecycleStageKind createLifecycleStageKindFromString(EDataType eDataType, String initialValue) {
 		LifecycleStageKind result = LifecycleStageKind.get(initialValue);
-		if (result == null) {
-			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		}
+		if (result == null)
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 		return result;
 	}
 

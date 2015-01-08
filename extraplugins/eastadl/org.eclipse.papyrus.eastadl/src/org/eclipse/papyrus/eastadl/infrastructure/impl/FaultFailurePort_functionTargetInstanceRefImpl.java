@@ -85,9 +85,8 @@ public class FaultFailurePort_functionTargetInstanceRefImpl extends InstanceRefI
 			InternalEObject oldFunctionPort = (InternalEObject) functionPort;
 			functionPort = (FunctionPort) eResolveProxy(oldFunctionPort);
 			if (functionPort != oldFunctionPort) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InfrastructurePackage.FAULT_FAILURE_PORT_FUNCTION_TARGET_INSTANCE_REF__FUNCTION_PORT, oldFunctionPort, functionPort));
-				}
 			}
 		}
 		return functionPort;
@@ -113,9 +112,8 @@ public class FaultFailurePort_functionTargetInstanceRefImpl extends InstanceRefI
 	public void setFunctionPort(FunctionPort newFunctionPort) {
 		FunctionPort oldFunctionPort = functionPort;
 		functionPort = newFunctionPort;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, InfrastructurePackage.FAULT_FAILURE_PORT_FUNCTION_TARGET_INSTANCE_REF__FUNCTION_PORT, oldFunctionPort, functionPort));
-		}
 	}
 
 	/**
@@ -142,9 +140,8 @@ public class FaultFailurePort_functionTargetInstanceRefImpl extends InstanceRefI
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case InfrastructurePackage.FAULT_FAILURE_PORT_FUNCTION_TARGET_INSTANCE_REF__FUNCTION_PORT:
-			if (resolve) {
+			if (resolve)
 				return getFunctionPort();
-			}
 			return basicGetFunctionPort();
 		case InfrastructurePackage.FAULT_FAILURE_PORT_FUNCTION_TARGET_INSTANCE_REF__FUNCTION_PROTOTYPE:
 			return getFunctionPrototype();

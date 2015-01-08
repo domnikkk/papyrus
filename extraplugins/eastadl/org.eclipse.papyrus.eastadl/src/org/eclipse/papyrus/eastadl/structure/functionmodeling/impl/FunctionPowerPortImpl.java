@@ -74,9 +74,8 @@ public class FunctionPowerPortImpl extends FunctionPortImpl implements FunctionP
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case FunctionmodelingPackage.FUNCTION_POWER_PORT__TYPE:
-			if (resolve) {
+			if (resolve)
 				return getType();
-			}
 			return basicGetType();
 		}
 		return super.eGet(featureID, resolve, coreType);

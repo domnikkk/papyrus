@@ -178,9 +178,8 @@ public class ConfigurationDecisionImpl extends ConfigurationDecisionModelEntryIm
 		case VariabilityPackage.CONFIGURATION_DECISION__TARGET:
 			return getTarget();
 		case VariabilityPackage.CONFIGURATION_DECISION__SELECTION_CRITERION:
-			if (resolve) {
+			if (resolve)
 				return getSelectionCriterion();
-			}
 			return basicGetSelectionCriterion();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -341,9 +340,8 @@ public class ConfigurationDecisionImpl extends ConfigurationDecisionModelEntryIm
 	public void setCriterion(String newCriterion) {
 		String oldCriterion = criterion;
 		criterion = newCriterion;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VariabilityPackage.CONFIGURATION_DECISION__CRITERION, oldCriterion, criterion));
-		}
 	}
 
 	/**
@@ -356,9 +354,8 @@ public class ConfigurationDecisionImpl extends ConfigurationDecisionModelEntryIm
 	public void setEffect(String newEffect) {
 		String oldEffect = effect;
 		effect = newEffect;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VariabilityPackage.CONFIGURATION_DECISION__EFFECT, oldEffect, effect));
-		}
 	}
 
 	/**
@@ -371,9 +368,8 @@ public class ConfigurationDecisionImpl extends ConfigurationDecisionModelEntryIm
 	public void setIsEquivalence(boolean newIsEquivalence) {
 		boolean oldIsEquivalence = isEquivalence;
 		isEquivalence = newIsEquivalence;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VariabilityPackage.CONFIGURATION_DECISION__IS_EQUIVALENCE, oldIsEquivalence, isEquivalence));
-		}
 	}
 
 	/**
@@ -384,16 +380,15 @@ public class ConfigurationDecisionImpl extends ConfigurationDecisionModelEntryIm
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
+		if (eIsProxy())
 			return super.toString();
-		}
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (effect: ");
+		result.append(" (effect: "); //$NON-NLS-1$
 		result.append(effect);
-		result.append(", criterion: ");
+		result.append(", criterion: "); //$NON-NLS-1$
 		result.append(criterion);
-		result.append(", isEquivalence: ");
+		result.append(", isEquivalence: "); //$NON-NLS-1$
 		result.append(isEquivalence);
 		result.append(')');
 		return result.toString();

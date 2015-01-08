@@ -85,9 +85,8 @@ public class BehaviorConstraintInternalBinding_throughFunctionConnectorInstanceR
 			InternalEObject oldFunctionConnector = (InternalEObject) functionConnector;
 			functionConnector = (FunctionConnector) eResolveProxy(oldFunctionConnector);
 			if (functionConnector != oldFunctionConnector) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InfrastructurePackage.BEHAVIOR_CONSTRAINT_INTERNAL_BINDING_THROUGH_FUNCTION_CONNECTOR_INSTANCE_REF__FUNCTION_CONNECTOR, oldFunctionConnector, functionConnector));
-				}
 			}
 		}
 		return functionConnector;
@@ -113,9 +112,8 @@ public class BehaviorConstraintInternalBinding_throughFunctionConnectorInstanceR
 	public void setFunctionConnector(FunctionConnector newFunctionConnector) {
 		FunctionConnector oldFunctionConnector = functionConnector;
 		functionConnector = newFunctionConnector;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, InfrastructurePackage.BEHAVIOR_CONSTRAINT_INTERNAL_BINDING_THROUGH_FUNCTION_CONNECTOR_INSTANCE_REF__FUNCTION_CONNECTOR, oldFunctionConnector, functionConnector));
-		}
 	}
 
 	/**
@@ -142,9 +140,8 @@ public class BehaviorConstraintInternalBinding_throughFunctionConnectorInstanceR
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case InfrastructurePackage.BEHAVIOR_CONSTRAINT_INTERNAL_BINDING_THROUGH_FUNCTION_CONNECTOR_INSTANCE_REF__FUNCTION_CONNECTOR:
-			if (resolve) {
+			if (resolve)
 				return getFunctionConnector();
-			}
 			return basicGetFunctionConnector();
 		case InfrastructurePackage.BEHAVIOR_CONSTRAINT_INTERNAL_BINDING_THROUGH_FUNCTION_CONNECTOR_INSTANCE_REF__FUNCTION_PROTOTYPE:
 			return getFunctionPrototype();

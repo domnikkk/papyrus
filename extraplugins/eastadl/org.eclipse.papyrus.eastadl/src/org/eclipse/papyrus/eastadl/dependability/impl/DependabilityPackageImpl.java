@@ -203,9 +203,8 @@ public class DependabilityPackageImpl extends EPackageImpl implements Dependabil
 	 * @generated
 	 */
 	public static DependabilityPackage init() {
-		if (isInited) {
+		if (isInited)
 			return (DependabilityPackage) EPackage.Registry.INSTANCE.getEPackage(DependabilityPackage.eNS_URI);
-		}
 
 		// Obtain or create and register package
 		DependabilityPackageImpl theDependabilityPackage = (DependabilityPackageImpl) (EPackage.Registry.INSTANCE.get(eNS_URI) instanceof DependabilityPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new DependabilityPackageImpl());
@@ -237,8 +236,7 @@ public class DependabilityPackageImpl extends EPackageImpl implements Dependabil
 		SystemmodelingPackageImpl theSystemmodelingPackage = (SystemmodelingPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(SystemmodelingPackage.eNS_URI) instanceof SystemmodelingPackageImpl ? EPackage.Registry.INSTANCE
 				.getEPackage(SystemmodelingPackage.eNS_URI) : SystemmodelingPackage.eINSTANCE);
 		VehiclefeaturemodelingPackageImpl theVehiclefeaturemodelingPackage = (VehiclefeaturemodelingPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(VehiclefeaturemodelingPackage.eNS_URI) instanceof VehiclefeaturemodelingPackageImpl ? EPackage.Registry.INSTANCE
-				.getEPackage(VehiclefeaturemodelingPackage.eNS_URI)
-				: VehiclefeaturemodelingPackage.eINSTANCE);
+				.getEPackage(VehiclefeaturemodelingPackage.eNS_URI) : VehiclefeaturemodelingPackage.eINSTANCE);
 		HardwaremodelingPackageImpl theHardwaremodelingPackage = (HardwaremodelingPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(HardwaremodelingPackage.eNS_URI) instanceof HardwaremodelingPackageImpl ? EPackage.Registry.INSTANCE
 				.getEPackage(HardwaremodelingPackage.eNS_URI) : HardwaremodelingPackage.eINSTANCE);
 		SafetyrequirementPackageImpl theSafetyrequirementPackage = (SafetyrequirementPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(SafetyrequirementPackage.eNS_URI) instanceof SafetyrequirementPackageImpl ? EPackage.Registry.INSTANCE
@@ -254,8 +252,7 @@ public class DependabilityPackageImpl extends EPackageImpl implements Dependabil
 		UsecasesPackageImpl theUsecasesPackage = (UsecasesPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(UsecasesPackage.eNS_URI) instanceof UsecasesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(UsecasesPackage.eNS_URI)
 				: UsecasesPackage.eINSTANCE);
 		VerificationvalidationPackageImpl theVerificationvalidationPackage = (VerificationvalidationPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(VerificationvalidationPackage.eNS_URI) instanceof VerificationvalidationPackageImpl ? EPackage.Registry.INSTANCE
-				.getEPackage(VerificationvalidationPackage.eNS_URI)
-				: VerificationvalidationPackage.eINSTANCE);
+				.getEPackage(VerificationvalidationPackage.eNS_URI) : VerificationvalidationPackage.eINSTANCE);
 		org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsPackageImpl theRequirementsPackage_1 = (org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsPackageImpl) (EPackage.Registry.INSTANCE
 				.getEPackage(org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsPackage.eNS_URI) instanceof org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsPackageImpl ? EPackage.Registry.INSTANCE
 				.getEPackage(org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsPackage.eNS_URI) : org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsPackage.eINSTANCE);
@@ -272,13 +269,11 @@ public class DependabilityPackageImpl extends EPackageImpl implements Dependabil
 		BehaviordescriptionPackageImpl theBehaviordescriptionPackage = (BehaviordescriptionPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(BehaviordescriptionPackage.eNS_URI) instanceof BehaviordescriptionPackageImpl ? EPackage.Registry.INSTANCE
 				.getEPackage(BehaviordescriptionPackage.eNS_URI) : BehaviordescriptionPackage.eINSTANCE);
 		AttributequantificationconstraintPackageImpl theAttributequantificationconstraintPackage = (AttributequantificationconstraintPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(AttributequantificationconstraintPackage.eNS_URI) instanceof AttributequantificationconstraintPackageImpl ? EPackage.Registry.INSTANCE
-				.getEPackage(AttributequantificationconstraintPackage.eNS_URI)
-				: AttributequantificationconstraintPackage.eINSTANCE);
+				.getEPackage(AttributequantificationconstraintPackage.eNS_URI) : AttributequantificationconstraintPackage.eINSTANCE);
 		TemporalconstraintPackageImpl theTemporalconstraintPackage = (TemporalconstraintPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(TemporalconstraintPackage.eNS_URI) instanceof TemporalconstraintPackageImpl ? EPackage.Registry.INSTANCE
 				.getEPackage(TemporalconstraintPackage.eNS_URI) : TemporalconstraintPackage.eINSTANCE);
 		ComputationconstraintPackageImpl theComputationconstraintPackage = (ComputationconstraintPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(ComputationconstraintPackage.eNS_URI) instanceof ComputationconstraintPackageImpl ? EPackage.Registry.INSTANCE
-				.getEPackage(ComputationconstraintPackage.eNS_URI)
-				: ComputationconstraintPackage.eINSTANCE);
+				.getEPackage(ComputationconstraintPackage.eNS_URI) : ComputationconstraintPackage.eINSTANCE);
 		GenericconstraintsPackageImpl theGenericconstraintsPackage = (GenericconstraintsPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(GenericconstraintsPackage.eNS_URI) instanceof GenericconstraintsPackageImpl ? EPackage.Registry.INSTANCE
 				.getEPackage(GenericconstraintsPackage.eNS_URI) : GenericconstraintsPackage.eINSTANCE);
 
@@ -403,9 +398,8 @@ public class DependabilityPackageImpl extends EPackageImpl implements Dependabil
 	 * @generated
 	 */
 	public void createPackageContents() {
-		if (isCreated) {
+		if (isCreated)
 			return;
-		}
 		isCreated = true;
 
 		// Create classes and their features
@@ -977,9 +971,8 @@ public class DependabilityPackageImpl extends EPackageImpl implements Dependabil
 	 * @generated
 	 */
 	public void initializePackageContents() {
-		if (isInitialized) {
+		if (isInitialized)
 			return;
-		}
 		isInitialized = true;
 
 		// Initialize package
@@ -1020,98 +1013,117 @@ public class DependabilityPackageImpl extends EPackageImpl implements Dependabil
 		dependabilityEClass.getESuperTypes().add(theElementsPackage.getContext());
 
 		// Initialize classes, features, and operations; add parameters
-		initEClass(hazardousEventEClass, HazardousEvent.class, "HazardousEvent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getHazardousEvent_Base_Class(), theUMLPackage.getClass_(), null, "base_Class", null, 1, 1, HazardousEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED,
-				!IS_ORDERED);
-		initEAttribute(getHazardousEvent_Controllability(), this.getControllabilityClassKind(), "controllability", null, 1, 1, HazardousEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getHazardousEvent_Exposure(), this.getExposureClassKind(), "exposure", null, 1, 1, HazardousEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getHazardousEvent_HazardClassification(), theSafetyconstraintsPackage.getASILKind(), "hazardClassification", null, 1, 1, HazardousEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED,
-				!IS_ORDERED);
-		initEAttribute(getHazardousEvent_Severity(), this.getSeverityClassKind(), "severity", null, 1, 1, HazardousEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getHazardousEvent_ClassificationAssumptions(), theTypesPackage.getString(), "classificationAssumptions", null, 0, 1, HazardousEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED,
-				!IS_ORDERED);
-		initEReference(getHazardousEvent_Hazard(), this.getHazard(), null, "hazard", null, 1, -1, HazardousEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getHazardousEvent_Traffic(), theRequirementsPackage_1.getOperationalSituation(), null, "traffic", null, 0, -1, HazardousEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				!IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getHazardousEvent_Environment(), theRequirementsPackage_1.getOperationalSituation(), null, "environment", null, 0, -1, HazardousEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				!IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getHazardousEvent_OperationalSituationUseCase(), theUsecasesPackage.getUseCase(), null, "operationalSituationUseCase", null, 1, -1, HazardousEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getHazardousEvent_OperatingMode(), theBehaviorPackage.getMode(), null, "operatingMode", null, 0, -1, HazardousEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE,
-				!IS_DERIVED, !IS_ORDERED);
-		initEReference(getHazardousEvent_ExternalMeasures(), theRequirementsPackage_1.getRequirementsRelationship(), null, "externalMeasures", null, 0, -1, HazardousEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(hazardousEventEClass, HazardousEvent.class, "HazardousEvent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(getHazardousEvent_Base_Class(), theUMLPackage.getClass_(), null,
+				"base_Class", null, 1, 1, HazardousEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEAttribute(getHazardousEvent_Controllability(), this.getControllabilityClassKind(), "controllability", null, 1, 1, HazardousEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEAttribute(getHazardousEvent_Exposure(), this.getExposureClassKind(), "exposure", null, 1, 1, HazardousEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEAttribute(getHazardousEvent_HazardClassification(), theSafetyconstraintsPackage.getASILKind(),
+				"hazardClassification", null, 1, 1, HazardousEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEAttribute(getHazardousEvent_Severity(), this.getSeverityClassKind(), "severity", null, 1, 1, HazardousEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEAttribute(getHazardousEvent_ClassificationAssumptions(), theTypesPackage.getString(),
+				"classificationAssumptions", null, 0, 1, HazardousEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getHazardousEvent_Hazard(), this.getHazard(), null, "hazard", null, 1, -1, HazardousEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getHazardousEvent_Traffic(), theRequirementsPackage_1.getOperationalSituation(), null,
+				"traffic", null, 0, -1, HazardousEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getHazardousEvent_Environment(), theRequirementsPackage_1.getOperationalSituation(), null,
+				"environment", null, 0, -1, HazardousEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getHazardousEvent_OperationalSituationUseCase(), theUsecasesPackage.getUseCase(), null,
+				"operationalSituationUseCase", null, 1, -1, HazardousEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getHazardousEvent_OperatingMode(), theBehaviorPackage.getMode(), null,
+				"operatingMode", null, 0, -1, HazardousEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getHazardousEvent_ExternalMeasures(), theRequirementsPackage_1.getRequirementsRelationship(), null,
+				"externalMeasures", null, 0, -1, HazardousEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 
-		initEClass(hazardEClass, Hazard.class, "Hazard", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getHazard_Base_Class(), theUMLPackage.getClass_(), null, "base_Class", null, 1, 1, Hazard.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getHazard_Malfunction(), this.getFeatureFlaw(), null, "malfunction", null, 1, -1, Hazard.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getHazard_Item(), this.getItem(), null, "item", null, 1, -1, Hazard.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(hazardEClass, Hazard.class, "Hazard", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(getHazard_Base_Class(), theUMLPackage.getClass_(), null, "base_Class", null, 1, 1, Hazard.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getHazard_Malfunction(), this.getFeatureFlaw(), null, "malfunction", null, 1, -1, Hazard.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getHazard_Item(), this.getItem(), null, "item", null, 1, -1, Hazard.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 
-		initEClass(featureFlawEClass, FeatureFlaw.class, "FeatureFlaw", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getFeatureFlaw_Base_Class(), theUMLPackage.getClass_(), null, "base_Class", null, 1, 1, FeatureFlaw.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED,
-				!IS_ORDERED);
-		initEReference(getFeatureFlaw_Item(), this.getItem(), null, "item", null, 1, -1, FeatureFlaw.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getFeatureFlaw_NonFulfilledRequirement(), theRequirementsPackage_1.getRequirement(), null, "nonFulfilledRequirement", null, 0, -1, FeatureFlaw.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(featureFlawEClass, FeatureFlaw.class, "FeatureFlaw", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(getFeatureFlaw_Base_Class(), theUMLPackage.getClass_(), null,
+				"base_Class", null, 1, 1, FeatureFlaw.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getFeatureFlaw_Item(), this.getItem(), null, "item", null, 1, -1, FeatureFlaw.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getFeatureFlaw_NonFulfilledRequirement(), theRequirementsPackage_1.getRequirement(), null,
+				"nonFulfilledRequirement", null, 0, -1, FeatureFlaw.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 
-		initEClass(itemEClass, Item.class, "Item", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getItem_Base_Class(), theUMLPackage.getClass_(), null, "base_Class", null, 1, 1, Item.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getItem_DevelopmentCategory(), this.getDevelopmentCategoryKind(), "developmentCategory", null, 1, 1, Item.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getItem_VehicleFeature(), theVehiclefeaturemodelingPackage.getVehicleFeature(), null, "vehicleFeature", null, 1, -1, Item.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE,
-				!IS_DERIVED, !IS_ORDERED);
+		initEClass(itemEClass, Item.class, "Item", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(getItem_Base_Class(), theUMLPackage.getClass_(), null, "base_Class", null, 1, 1, Item.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEAttribute(getItem_DevelopmentCategory(), this.getDevelopmentCategoryKind(), "developmentCategory", null, 1, 1, Item.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getItem_VehicleFeature(), theVehiclefeaturemodelingPackage.getVehicleFeature(), null,
+				"vehicleFeature", null, 1, -1, Item.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 
-		initEClass(dependabilityEClass, Dependability.class, "Dependability", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getDependability_Base_Class(), theUMLPackage.getClass_(), null, "base_Class", null, 0, 1, Dependability.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED,
-				!IS_ORDERED);
-		initEReference(getDependability_Base_Package(), theUMLPackage.getPackage(), null, "base_Package", null, 0, 1, Dependability.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED,
-				!IS_ORDERED);
-		initEReference(getDependability_FunctionalSafetyConcept(), theSafetyrequirementPackage.getFunctionalSafetyConcept(), null, "functionalSafetyConcept", null, 0, -1, Dependability.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE,
-				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
-		initEReference(getDependability_SafetyGoal(), theSafetyrequirementPackage.getSafetyGoal(), null, "safetyGoal", null, 0, -1, Dependability.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE,
-				IS_DERIVED, !IS_ORDERED);
-		initEReference(getDependability_TechnicalSafetyConcept(), theSafetyrequirementPackage.getTechnicalSafetyConcept(), null, "technicalSafetyConcept", null, 0, -1, Dependability.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE,
-				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
-		initEReference(getDependability_HazardousEvent(), this.getHazardousEvent(), null, "hazardousEvent", null, 0, -1, Dependability.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, IS_DERIVED,
-				!IS_ORDERED);
-		initEReference(getDependability_FeatureFlaw(), this.getFeatureFlaw(), null, "featureFlaw", null, 0, -1, Dependability.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, IS_DERIVED,
-				!IS_ORDERED);
-		initEReference(getDependability_Item(), this.getItem(), null, "item", null, 0, -1, Dependability.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
-		initEReference(getDependability_EADatatype(), theDatatypesPackage.getEADatatype(), null, "eADatatype", null, 0, -1, Dependability.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE,
-				IS_DERIVED, !IS_ORDERED);
-		initEReference(getDependability_FaultFailure(), theSafetyconstraintsPackage.getFaultFailure(), null, "faultFailure", null, 0, -1, Dependability.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				!IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
-		initEReference(getDependability_QuantitativeSafetyConstraint(), theSafetyconstraintsPackage.getQuantitativeSafetyConstraint(), null, "quantitativeSafetyConstraint", null, 0, -1, Dependability.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE,
-				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
-		initEReference(getDependability_SafetyConstraint(), theSafetyconstraintsPackage.getSafetyConstraint(), null, "safetyConstraint", null, 0, -1, Dependability.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, !IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
-		initEReference(getDependability_SafetyCase(), theSafetycasePackage.getSafetyCase(), null, "safetyCase", null, 0, -1, Dependability.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE,
-				IS_DERIVED, !IS_ORDERED);
-		initEReference(getDependability_ErrorModelType(), theErrormodelPackage.getErrorModelType(), null, "errorModelType", null, 0, -1, Dependability.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				!IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
-		initEReference(getDependability_Hazard(), this.getHazard(), null, "hazard", null, 0, -1, Dependability.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
+		initEClass(dependabilityEClass, Dependability.class, "Dependability", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(getDependability_Base_Class(), theUMLPackage.getClass_(), null,
+				"base_Class", null, 0, 1, Dependability.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getDependability_Base_Package(), theUMLPackage.getPackage(), null,
+				"base_Package", null, 0, 1, Dependability.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getDependability_FunctionalSafetyConcept(), theSafetyrequirementPackage.getFunctionalSafetyConcept(), null,
+				"functionalSafetyConcept", null, 0, -1, Dependability.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getDependability_SafetyGoal(), theSafetyrequirementPackage.getSafetyGoal(), null,
+				"safetyGoal", null, 0, -1, Dependability.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getDependability_TechnicalSafetyConcept(), theSafetyrequirementPackage.getTechnicalSafetyConcept(), null,
+				"technicalSafetyConcept", null, 0, -1, Dependability.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getDependability_HazardousEvent(), this.getHazardousEvent(), null,
+				"hazardousEvent", null, 0, -1, Dependability.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getDependability_FeatureFlaw(), this.getFeatureFlaw(), null,
+				"featureFlaw", null, 0, -1, Dependability.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getDependability_Item(), this.getItem(), null, "item", null, 0, -1, Dependability.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getDependability_EADatatype(), theDatatypesPackage.getEADatatype(), null,
+				"eADatatype", null, 0, -1, Dependability.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getDependability_FaultFailure(), theSafetyconstraintsPackage.getFaultFailure(), null,
+				"faultFailure", null, 0, -1, Dependability.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getDependability_QuantitativeSafetyConstraint(), theSafetyconstraintsPackage.getQuantitativeSafetyConstraint(), null,
+				"quantitativeSafetyConstraint", null, 0, -1, Dependability.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getDependability_SafetyConstraint(), theSafetyconstraintsPackage.getSafetyConstraint(), null,
+				"safetyConstraint", null, 0, -1, Dependability.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getDependability_SafetyCase(), theSafetycasePackage.getSafetyCase(), null,
+				"safetyCase", null, 0, -1, Dependability.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getDependability_ErrorModelType(), theErrormodelPackage.getErrorModelType(), null,
+				"errorModelType", null, 0, -1, Dependability.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getDependability_Hazard(), this.getHazard(), null, "hazard", null, 0, -1, Dependability.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 
 		// Initialize enums and add enum literals
-		initEEnum(controllabilityClassKindEEnum, ControllabilityClassKind.class, "ControllabilityClassKind");
+		initEEnum(controllabilityClassKindEEnum, ControllabilityClassKind.class, "ControllabilityClassKind"); //$NON-NLS-1$
 		addEEnumLiteral(controllabilityClassKindEEnum, ControllabilityClassKind.C1);
 		addEEnumLiteral(controllabilityClassKindEEnum, ControllabilityClassKind.C2);
 		addEEnumLiteral(controllabilityClassKindEEnum, ControllabilityClassKind.C3);
 		addEEnumLiteral(controllabilityClassKindEEnum, ControllabilityClassKind.C0);
 
-		initEEnum(exposureClassKindEEnum, ExposureClassKind.class, "ExposureClassKind");
+		initEEnum(exposureClassKindEEnum, ExposureClassKind.class, "ExposureClassKind"); //$NON-NLS-1$
 		addEEnumLiteral(exposureClassKindEEnum, ExposureClassKind.E1);
 		addEEnumLiteral(exposureClassKindEEnum, ExposureClassKind.E2);
 		addEEnumLiteral(exposureClassKindEEnum, ExposureClassKind.E3);
 		addEEnumLiteral(exposureClassKindEEnum, ExposureClassKind.E4);
 
-		initEEnum(severityClassKindEEnum, SeverityClassKind.class, "SeverityClassKind");
+		initEEnum(severityClassKindEEnum, SeverityClassKind.class, "SeverityClassKind"); //$NON-NLS-1$
 		addEEnumLiteral(severityClassKindEEnum, SeverityClassKind.S0);
 		addEEnumLiteral(severityClassKindEEnum, SeverityClassKind.S1);
 		addEEnumLiteral(severityClassKindEEnum, SeverityClassKind.S2);
 		addEEnumLiteral(severityClassKindEEnum, SeverityClassKind.S3);
 
-		initEEnum(developmentCategoryKindEEnum, DevelopmentCategoryKind.class, "DevelopmentCategoryKind");
+		initEEnum(developmentCategoryKindEEnum, DevelopmentCategoryKind.class, "DevelopmentCategoryKind"); //$NON-NLS-1$
 		addEEnumLiteral(developmentCategoryKindEEnum, DevelopmentCategoryKind.MODIFICATION_OF_EXISTING_ITEM);
 		addEEnumLiteral(developmentCategoryKindEEnum, DevelopmentCategoryKind.NEW_ITEM_DEVELOPMENT);
+
+		// Create annotations
+		// http://www.eclipse.org/uml2/2.0.0/UML
+		createUMLAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/uml2/2.0.0/UML</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	protected void createUMLAnnotations() {
+		String source = "http://www.eclipse.org/uml2/2.0.0/UML"; //$NON-NLS-1$
+		addAnnotation(this,
+				source,
+				new String[] { "originalName", "Dependability" //$NON-NLS-1$ //$NON-NLS-2$
+				});
 	}
 
 } // DependabilityPackageImpl

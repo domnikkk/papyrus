@@ -69,9 +69,8 @@ public class EventFeatureFlawImpl extends EventImpl implements EventFeatureFlaw 
 			InternalEObject oldFeatureFlaw = (InternalEObject) featureFlaw;
 			featureFlaw = (FeatureFlaw) eResolveProxy(oldFeatureFlaw);
 			if (featureFlaw != oldFeatureFlaw) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EventsPackage.EVENT_FEATURE_FLAW__FEATURE_FLAW, oldFeatureFlaw, featureFlaw));
-				}
 			}
 		}
 		return featureFlaw;
@@ -97,9 +96,8 @@ public class EventFeatureFlawImpl extends EventImpl implements EventFeatureFlaw 
 	public void setFeatureFlaw(FeatureFlaw newFeatureFlaw) {
 		FeatureFlaw oldFeatureFlaw = featureFlaw;
 		featureFlaw = newFeatureFlaw;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EventsPackage.EVENT_FEATURE_FLAW__FEATURE_FLAW, oldFeatureFlaw, featureFlaw));
-		}
 	}
 
 	/**
@@ -112,9 +110,8 @@ public class EventFeatureFlawImpl extends EventImpl implements EventFeatureFlaw 
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case EventsPackage.EVENT_FEATURE_FLAW__FEATURE_FLAW:
-			if (resolve) {
+			if (resolve)
 				return getFeatureFlaw();
-			}
 			return basicGetFeatureFlaw();
 		}
 		return super.eGet(featureID, resolve, coreType);

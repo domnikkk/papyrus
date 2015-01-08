@@ -337,132 +337,110 @@ public class ElementsSwitch<T> extends Switch<T> {
 		case ElementsPackage.TRACEABLE_SPECIFICATION: {
 			TraceableSpecification traceableSpecification = (TraceableSpecification) theEObject;
 			T result = caseTraceableSpecification(traceableSpecification);
-			if (result == null) {
+			if (result == null)
 				result = caseEAPackageableElement(traceableSpecification);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(traceableSpecification);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case ElementsPackage.EA_PACKAGEABLE_ELEMENT: {
 			EAPackageableElement eaPackageableElement = (EAPackageableElement) theEObject;
 			T result = caseEAPackageableElement(eaPackageableElement);
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(eaPackageableElement);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case ElementsPackage.CONTEXT: {
 			Context context = (Context) theEObject;
 			T result = caseContext(context);
-			if (result == null) {
+			if (result == null)
 				result = caseEAPackageableElement(context);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(context);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case ElementsPackage.RELATIONSHIP: {
 			Relationship relationship = (Relationship) theEObject;
 			T result = caseRelationship(relationship);
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(relationship);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case ElementsPackage.EA_TYPE: {
 			EAType eaType = (EAType) theEObject;
 			T result = caseEAType(eaType);
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case ElementsPackage.EA_PORT: {
 			EAPort eaPort = (EAPort) theEObject;
 			T result = caseEAPort(eaPort);
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case ElementsPackage.EA_CONNECTOR: {
 			EAConnector eaConnector = (EAConnector) theEObject;
 			T result = caseEAConnector(eaConnector);
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case ElementsPackage.EA_PROTOTYPE: {
 			EAPrototype eaPrototype = (EAPrototype) theEObject;
 			T result = caseEAPrototype(eaPrototype);
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case ElementsPackage.REALIZATION: {
 			Realization realization = (Realization) theEObject;
 			T result = caseRealization(realization);
-			if (result == null) {
+			if (result == null)
 				result = caseRelationship(realization);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(realization);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case ElementsPackage.RATIONALE: {
 			Rationale rationale = (Rationale) theEObject;
 			T result = caseRationale(rationale);
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case ElementsPackage.EA_PACKAGE: {
 			EAPackage eaPackage = (EAPackage) theEObject;
 			T result = caseEAPackage(eaPackage);
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(eaPackage);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case ElementsPackage.EAXML: {
 			EAXML eaxml = (EAXML) theEObject;
 			T result = caseEAXML(eaxml);
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case ElementsPackage.EA_ELEMENT: {
 			EAElement eaElement = (EAElement) theEObject;
 			T result = caseEAElement(eaElement);
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		default:

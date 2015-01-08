@@ -198,24 +198,20 @@ public class FeatureLinkImpl extends RelationshipImpl implements FeatureLink {
 		case FeaturemodelingPackage.FEATURE_LINK__CUSTOM_TYPE:
 			return getCustomType();
 		case FeaturemodelingPackage.FEATURE_LINK__BASE_DEPENDENCY:
-			if (resolve) {
+			if (resolve)
 				return getBase_Dependency();
-			}
 			return basicGetBase_Dependency();
 		case FeaturemodelingPackage.FEATURE_LINK__START:
-			if (resolve) {
+			if (resolve)
 				return getStart();
-			}
 			return basicGetStart();
 		case FeaturemodelingPackage.FEATURE_LINK__END:
-			if (resolve) {
+			if (resolve)
 				return getEnd();
-			}
 			return basicGetEnd();
 		case FeaturemodelingPackage.FEATURE_LINK__BASE_ASSOCIATION_CLASS:
-			if (resolve) {
+			if (resolve)
 				return getBase_AssociationClass();
-			}
 			return basicGetBase_AssociationClass();
 		case FeaturemodelingPackage.FEATURE_LINK__KIND:
 			return getKind();
@@ -386,9 +382,8 @@ public class FeatureLinkImpl extends RelationshipImpl implements FeatureLink {
 	public void setCustomType(String newCustomType) {
 		String oldCustomType = customType;
 		customType = newCustomType;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FeaturemodelingPackage.FEATURE_LINK__CUSTOM_TYPE, oldCustomType, customType));
-		}
 	}
 
 	/**
@@ -403,9 +398,8 @@ public class FeatureLinkImpl extends RelationshipImpl implements FeatureLink {
 			InternalEObject oldBase_Dependency = (InternalEObject) base_Dependency;
 			base_Dependency = (Dependency) eResolveProxy(oldBase_Dependency);
 			if (base_Dependency != oldBase_Dependency) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FeaturemodelingPackage.FEATURE_LINK__BASE_DEPENDENCY, oldBase_Dependency, base_Dependency));
-				}
 			}
 		}
 		return base_Dependency;
@@ -431,9 +425,8 @@ public class FeatureLinkImpl extends RelationshipImpl implements FeatureLink {
 	public void setBase_Dependency(Dependency newBase_Dependency) {
 		Dependency oldBase_Dependency = base_Dependency;
 		base_Dependency = newBase_Dependency;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FeaturemodelingPackage.FEATURE_LINK__BASE_DEPENDENCY, oldBase_Dependency, base_Dependency));
-		}
 	}
 
 	/**
@@ -460,9 +453,8 @@ public class FeatureLinkImpl extends RelationshipImpl implements FeatureLink {
 			InternalEObject oldBase_AssociationClass = (InternalEObject) base_AssociationClass;
 			base_AssociationClass = (AssociationClass) eResolveProxy(oldBase_AssociationClass);
 			if (base_AssociationClass != oldBase_AssociationClass) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FeaturemodelingPackage.FEATURE_LINK__BASE_ASSOCIATION_CLASS, oldBase_AssociationClass, base_AssociationClass));
-				}
 			}
 		}
 		return base_AssociationClass;
@@ -488,9 +480,8 @@ public class FeatureLinkImpl extends RelationshipImpl implements FeatureLink {
 	public void setBase_AssociationClass(AssociationClass newBase_AssociationClass) {
 		AssociationClass oldBase_AssociationClass = base_AssociationClass;
 		base_AssociationClass = newBase_AssociationClass;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FeaturemodelingPackage.FEATURE_LINK__BASE_ASSOCIATION_CLASS, oldBase_AssociationClass, base_AssociationClass));
-		}
 	}
 
 	/**
@@ -502,9 +493,8 @@ public class FeatureLinkImpl extends RelationshipImpl implements FeatureLink {
 	public void setIsBidirectional(boolean newIsBidirectional) {
 		boolean oldIsBidirectional = isBidirectional;
 		isBidirectional = newIsBidirectional;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FeaturemodelingPackage.FEATURE_LINK__IS_BIDIRECTIONAL, oldIsBidirectional, isBidirectional));
-		}
 	}
 
 	/**
@@ -516,9 +506,8 @@ public class FeatureLinkImpl extends RelationshipImpl implements FeatureLink {
 	public void setKind(VariabilityDependencyKind newKind) {
 		VariabilityDependencyKind oldKind = kind;
 		kind = newKind == null ? KIND_EDEFAULT : newKind;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FeaturemodelingPackage.FEATURE_LINK__KIND, oldKind, kind));
-		}
 	}
 
 	/**
@@ -540,16 +529,15 @@ public class FeatureLinkImpl extends RelationshipImpl implements FeatureLink {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
+		if (eIsProxy())
 			return super.toString();
-		}
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (isBidirectional: ");
+		result.append(" (isBidirectional: "); //$NON-NLS-1$
 		result.append(isBidirectional);
-		result.append(", customType: ");
+		result.append(", customType: "); //$NON-NLS-1$
 		result.append(customType);
-		result.append(", kind: ");
+		result.append(", kind: "); //$NON-NLS-1$
 		result.append(kind);
 		result.append(')');
 		return result.toString();

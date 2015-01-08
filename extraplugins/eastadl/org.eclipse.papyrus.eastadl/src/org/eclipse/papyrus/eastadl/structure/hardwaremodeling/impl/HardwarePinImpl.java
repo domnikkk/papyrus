@@ -113,9 +113,8 @@ public abstract class HardwarePinImpl extends EAElementImpl implements HardwareP
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case HardwaremodelingPackage.HARDWARE_PIN__BASE_PORT:
-			if (resolve) {
+			if (resolve)
 				return getBase_Port();
-			}
 			return basicGetBase_Port();
 		case HardwaremodelingPackage.HARDWARE_PIN__IS_GROUND:
 			return isIsGround();
@@ -224,9 +223,8 @@ public abstract class HardwarePinImpl extends EAElementImpl implements HardwareP
 			InternalEObject oldBase_Port = (InternalEObject) base_Port;
 			base_Port = (Port) eResolveProxy(oldBase_Port);
 			if (base_Port != oldBase_Port) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, HardwaremodelingPackage.HARDWARE_PIN__BASE_PORT, oldBase_Port, base_Port));
-				}
 			}
 		}
 		return base_Port;
@@ -252,9 +250,8 @@ public abstract class HardwarePinImpl extends EAElementImpl implements HardwareP
 	public void setBase_Port(Port newBase_Port) {
 		Port oldBase_Port = base_Port;
 		base_Port = newBase_Port;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, HardwaremodelingPackage.HARDWARE_PIN__BASE_PORT, oldBase_Port, base_Port));
-		}
 	}
 
 	/**
@@ -298,9 +295,8 @@ public abstract class HardwarePinImpl extends EAElementImpl implements HardwareP
 	public void setDirection(EADirectionKind newDirection) {
 		EADirectionKind oldDirection = direction;
 		direction = newDirection == null ? DIRECTION_EDEFAULT : newDirection;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, HardwaremodelingPackage.HARDWARE_PIN__DIRECTION, oldDirection, direction));
-		}
 	}
 
 	/**
@@ -322,9 +318,8 @@ public abstract class HardwarePinImpl extends EAElementImpl implements HardwareP
 	public void setIsGround(boolean newIsGround) {
 		boolean oldIsGround = isGround;
 		isGround = newIsGround;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, HardwaremodelingPackage.HARDWARE_PIN__IS_GROUND, oldIsGround, isGround));
-		}
 	}
 
 	/**
@@ -334,14 +329,13 @@ public abstract class HardwarePinImpl extends EAElementImpl implements HardwareP
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
+		if (eIsProxy())
 			return super.toString();
-		}
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (isGround: ");
+		result.append(" (isGround: "); //$NON-NLS-1$
 		result.append(isGround);
-		result.append(", direction: ");
+		result.append(", direction: "); //$NON-NLS-1$
 		result.append(direction);
 		result.append(')');
 		return result.toString();

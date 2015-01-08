@@ -269,9 +269,8 @@ public class HazardousEventImpl extends TraceableSpecificationImpl implements Ha
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case DependabilityPackage.HAZARDOUS_EVENT__BASE_CLASS:
-			if (resolve) {
+			if (resolve)
 				return getBase_Class();
-			}
 			return basicGetBase_Class();
 		case DependabilityPackage.HAZARDOUS_EVENT__CONTROLLABILITY:
 			return getControllability();
@@ -415,9 +414,8 @@ public class HazardousEventImpl extends TraceableSpecificationImpl implements Ha
 			InternalEObject oldBase_Class = (InternalEObject) base_Class;
 			base_Class = (org.eclipse.uml2.uml.Class) eResolveProxy(oldBase_Class);
 			if (base_Class != oldBase_Class) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DependabilityPackage.HAZARDOUS_EVENT__BASE_CLASS, oldBase_Class, base_Class));
-				}
 			}
 		}
 		return base_Class;
@@ -443,9 +441,8 @@ public class HazardousEventImpl extends TraceableSpecificationImpl implements Ha
 	public void setBase_Class(org.eclipse.uml2.uml.Class newBase_Class) {
 		org.eclipse.uml2.uml.Class oldBase_Class = base_Class;
 		base_Class = newBase_Class;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DependabilityPackage.HAZARDOUS_EVENT__BASE_CLASS, oldBase_Class, base_Class));
-		}
 	}
 
 	/**
@@ -593,9 +590,8 @@ public class HazardousEventImpl extends TraceableSpecificationImpl implements Ha
 	public void setHazardClassification(ASILKind newHazardClassification) {
 		ASILKind oldHazardClassification = hazardClassification;
 		hazardClassification = newHazardClassification == null ? HAZARD_CLASSIFICATION_EDEFAULT : newHazardClassification;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DependabilityPackage.HAZARDOUS_EVENT__HAZARD_CLASSIFICATION, oldHazardClassification, hazardClassification));
-		}
 	}
 
 	/**
@@ -661,9 +657,8 @@ public class HazardousEventImpl extends TraceableSpecificationImpl implements Ha
 	public void setClassificationAssumptions(String newClassificationAssumptions) {
 		String oldClassificationAssumptions = classificationAssumptions;
 		classificationAssumptions = newClassificationAssumptions;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DependabilityPackage.HAZARDOUS_EVENT__CLASSIFICATION_ASSUMPTIONS, oldClassificationAssumptions, classificationAssumptions));
-		}
 	}
 
 	/**
@@ -676,9 +671,8 @@ public class HazardousEventImpl extends TraceableSpecificationImpl implements Ha
 	public void setControllability(ControllabilityClassKind newControllability) {
 		ControllabilityClassKind oldControllability = controllability;
 		controllability = newControllability == null ? CONTROLLABILITY_EDEFAULT : newControllability;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DependabilityPackage.HAZARDOUS_EVENT__CONTROLLABILITY, oldControllability, controllability));
-		}
 	}
 
 	/**
@@ -691,9 +685,8 @@ public class HazardousEventImpl extends TraceableSpecificationImpl implements Ha
 	public void setExposure(ExposureClassKind newExposure) {
 		ExposureClassKind oldExposure = exposure;
 		exposure = newExposure == null ? EXPOSURE_EDEFAULT : newExposure;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DependabilityPackage.HAZARDOUS_EVENT__EXPOSURE, oldExposure, exposure));
-		}
 	}
 
 	/**
@@ -706,9 +699,8 @@ public class HazardousEventImpl extends TraceableSpecificationImpl implements Ha
 	public void setSeverity(SeverityClassKind newSeverity) {
 		SeverityClassKind oldSeverity = severity;
 		severity = newSeverity == null ? SEVERITY_EDEFAULT : newSeverity;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DependabilityPackage.HAZARDOUS_EVENT__SEVERITY, oldSeverity, severity));
-		}
 	}
 
 	/**
@@ -719,20 +711,19 @@ public class HazardousEventImpl extends TraceableSpecificationImpl implements Ha
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
+		if (eIsProxy())
 			return super.toString();
-		}
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (controllability: ");
+		result.append(" (controllability: "); //$NON-NLS-1$
 		result.append(controllability);
-		result.append(", exposure: ");
+		result.append(", exposure: "); //$NON-NLS-1$
 		result.append(exposure);
-		result.append(", hazardClassification: ");
+		result.append(", hazardClassification: "); //$NON-NLS-1$
 		result.append(hazardClassification);
-		result.append(", severity: ");
+		result.append(", severity: "); //$NON-NLS-1$
 		result.append(severity);
-		result.append(", classificationAssumptions: ");
+		result.append(", classificationAssumptions: "); //$NON-NLS-1$
 		result.append(classificationAssumptions);
 		result.append(')');
 		return result.toString();

@@ -84,9 +84,8 @@ public class ErrorModelPrototype_hwTargetInstanceRefImpl extends InstanceRefImpl
 			InternalEObject oldHardwareComponentProtype = (InternalEObject) hardwareComponentProtype;
 			hardwareComponentProtype = (HardwareComponentPrototype) eResolveProxy(oldHardwareComponentProtype);
 			if (hardwareComponentProtype != oldHardwareComponentProtype) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InfrastructurePackage.ERROR_MODEL_PROTOTYPE_HW_TARGET_INSTANCE_REF__HARDWARE_COMPONENT_PROTYPE, oldHardwareComponentProtype, hardwareComponentProtype));
-				}
 			}
 		}
 		return hardwareComponentProtype;
@@ -112,9 +111,8 @@ public class ErrorModelPrototype_hwTargetInstanceRefImpl extends InstanceRefImpl
 	public void setHardwareComponentProtype(HardwareComponentPrototype newHardwareComponentProtype) {
 		HardwareComponentPrototype oldHardwareComponentProtype = hardwareComponentProtype;
 		hardwareComponentProtype = newHardwareComponentProtype;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, InfrastructurePackage.ERROR_MODEL_PROTOTYPE_HW_TARGET_INSTANCE_REF__HARDWARE_COMPONENT_PROTYPE, oldHardwareComponentProtype, hardwareComponentProtype));
-		}
 	}
 
 	/**
@@ -141,9 +139,8 @@ public class ErrorModelPrototype_hwTargetInstanceRefImpl extends InstanceRefImpl
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case InfrastructurePackage.ERROR_MODEL_PROTOTYPE_HW_TARGET_INSTANCE_REF__HARDWARE_COMPONENT_PROTYPE:
-			if (resolve) {
+			if (resolve)
 				return getHardwareComponentProtype();
-			}
 			return basicGetHardwareComponentProtype();
 		case InfrastructurePackage.ERROR_MODEL_PROTOTYPE_HW_TARGET_INSTANCE_REF__HARDWARE_COMPONENT_PROTYPE_CONTEXT:
 			return getHardwareComponentProtype_context();

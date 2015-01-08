@@ -123,9 +123,8 @@ public class ArrayDataTypeImpl extends EADatatypeImpl implements ArrayDataType {
 	public void setMaxLenght(int newMaxLenght) {
 		int oldMaxLenght = maxLenght;
 		maxLenght = newMaxLenght;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.ARRAY_DATA_TYPE__MAX_LENGHT, oldMaxLenght, maxLenght));
-		}
 	}
 
 	/**
@@ -149,9 +148,8 @@ public class ArrayDataTypeImpl extends EADatatypeImpl implements ArrayDataType {
 	public void setMinLenght(int newMinLenght) {
 		int oldMinLenght = minLenght;
 		minLenght = newMinLenght;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.ARRAY_DATA_TYPE__MIN_LENGHT, oldMinLenght, minLenght));
-		}
 	}
 
 	/**
@@ -166,9 +164,8 @@ public class ArrayDataTypeImpl extends EADatatypeImpl implements ArrayDataType {
 			InternalEObject oldElementType = (InternalEObject) elementType;
 			elementType = (EADatatype) eResolveProxy(oldElementType);
 			if (elementType != oldElementType) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DatatypesPackage.ARRAY_DATA_TYPE__ELEMENT_TYPE, oldElementType, elementType));
-				}
 			}
 		}
 		return elementType;
@@ -194,9 +191,8 @@ public class ArrayDataTypeImpl extends EADatatypeImpl implements ArrayDataType {
 	public void setElementType(EADatatype newElementType) {
 		EADatatype oldElementType = elementType;
 		elementType = newElementType;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.ARRAY_DATA_TYPE__ELEMENT_TYPE, oldElementType, elementType));
-		}
 	}
 
 	/**
@@ -213,9 +209,8 @@ public class ArrayDataTypeImpl extends EADatatypeImpl implements ArrayDataType {
 		case DatatypesPackage.ARRAY_DATA_TYPE__MIN_LENGHT:
 			return getMinLenght();
 		case DatatypesPackage.ARRAY_DATA_TYPE__ELEMENT_TYPE:
-			if (resolve) {
+			if (resolve)
 				return getElementType();
-			}
 			return basicGetElementType();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -292,14 +287,13 @@ public class ArrayDataTypeImpl extends EADatatypeImpl implements ArrayDataType {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
+		if (eIsProxy())
 			return super.toString();
-		}
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (maxLenght: ");
+		result.append(" (maxLenght: "); //$NON-NLS-1$
 		result.append(maxLenght);
-		result.append(", minLenght: ");
+		result.append(", minLenght: "); //$NON-NLS-1$
 		result.append(minLenght);
 		result.append(')');
 		return result.toString();

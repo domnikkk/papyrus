@@ -116,9 +116,8 @@ public class WarrantImpl extends TraceableSpecificationImpl implements Warrant {
 		case SafetycasePackage.WARRANT__EVIDENCE:
 			return getEvidence();
 		case SafetycasePackage.WARRANT__BASE_CLASS:
-			if (resolve) {
+			if (resolve)
 				return getBase_Class();
-			}
 			return basicGetBase_Class();
 		case SafetycasePackage.WARRANT__JUSTIFICATION:
 			return getJustification();
@@ -252,9 +251,8 @@ public class WarrantImpl extends TraceableSpecificationImpl implements Warrant {
 			InternalEObject oldBase_Class = (InternalEObject) base_Class;
 			base_Class = (org.eclipse.uml2.uml.Class) eResolveProxy(oldBase_Class);
 			if (base_Class != oldBase_Class) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SafetycasePackage.WARRANT__BASE_CLASS, oldBase_Class, base_Class));
-				}
 			}
 		}
 		return base_Class;
@@ -280,9 +278,8 @@ public class WarrantImpl extends TraceableSpecificationImpl implements Warrant {
 	public void setBase_Class(org.eclipse.uml2.uml.Class newBase_Class) {
 		org.eclipse.uml2.uml.Class oldBase_Class = base_Class;
 		base_Class = newBase_Class;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SafetycasePackage.WARRANT__BASE_CLASS, oldBase_Class, base_Class));
-		}
 	}
 
 	/**

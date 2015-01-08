@@ -85,9 +85,8 @@ public class BehaviorConstraintInternalBinding_throughHardwareConnectorInstanceR
 			InternalEObject oldHardwareConnector = (InternalEObject) hardwareConnector;
 			hardwareConnector = (HardwareConnector) eResolveProxy(oldHardwareConnector);
 			if (hardwareConnector != oldHardwareConnector) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InfrastructurePackage.BEHAVIOR_CONSTRAINT_INTERNAL_BINDING_THROUGH_HARDWARE_CONNECTOR_INSTANCE_REF__HARDWARE_CONNECTOR, oldHardwareConnector, hardwareConnector));
-				}
 			}
 		}
 		return hardwareConnector;
@@ -113,9 +112,8 @@ public class BehaviorConstraintInternalBinding_throughHardwareConnectorInstanceR
 	public void setHardwareConnector(HardwareConnector newHardwareConnector) {
 		HardwareConnector oldHardwareConnector = hardwareConnector;
 		hardwareConnector = newHardwareConnector;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, InfrastructurePackage.BEHAVIOR_CONSTRAINT_INTERNAL_BINDING_THROUGH_HARDWARE_CONNECTOR_INSTANCE_REF__HARDWARE_CONNECTOR, oldHardwareConnector, hardwareConnector));
-		}
 	}
 
 	/**
@@ -143,9 +141,8 @@ public class BehaviorConstraintInternalBinding_throughHardwareConnectorInstanceR
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case InfrastructurePackage.BEHAVIOR_CONSTRAINT_INTERNAL_BINDING_THROUGH_HARDWARE_CONNECTOR_INSTANCE_REF__HARDWARE_CONNECTOR:
-			if (resolve) {
+			if (resolve)
 				return getHardwareConnector();
-			}
 			return basicGetHardwareConnector();
 		case InfrastructurePackage.BEHAVIOR_CONSTRAINT_INTERNAL_BINDING_THROUGH_HARDWARE_CONNECTOR_INSTANCE_REF__HARDWARE_COMPONENT_PROTOTYPE:
 			return getHardwareComponentPrototype();

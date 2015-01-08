@@ -69,9 +69,8 @@ public abstract class EAPortImpl extends MinimalEObjectImpl.Container implements
 			InternalEObject oldBase_Port = (InternalEObject) base_Port;
 			base_Port = (Port) eResolveProxy(oldBase_Port);
 			if (base_Port != oldBase_Port) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ElementsPackage.EA_PORT__BASE_PORT, oldBase_Port, base_Port));
-				}
 			}
 		}
 		return base_Port;
@@ -97,9 +96,8 @@ public abstract class EAPortImpl extends MinimalEObjectImpl.Container implements
 	public void setBase_Port(Port newBase_Port) {
 		Port oldBase_Port = base_Port;
 		base_Port = newBase_Port;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ElementsPackage.EA_PORT__BASE_PORT, oldBase_Port, base_Port));
-		}
 	}
 
 	/**
@@ -112,9 +110,8 @@ public abstract class EAPortImpl extends MinimalEObjectImpl.Container implements
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case ElementsPackage.EA_PORT__BASE_PORT:
-			if (resolve) {
+			if (resolve)
 				return getBase_Port();
-			}
 			return basicGetBase_Port();
 		}
 		return super.eGet(featureID, resolve, coreType);

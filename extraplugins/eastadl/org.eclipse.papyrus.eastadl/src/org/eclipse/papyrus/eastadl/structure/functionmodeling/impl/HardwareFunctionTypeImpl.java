@@ -79,9 +79,8 @@ public class HardwareFunctionTypeImpl extends DesignFunctionTypeImpl implements 
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case FunctionmodelingPackage.HARDWARE_FUNCTION_TYPE__HARDWARE_COMPONENT:
-			if (resolve) {
+			if (resolve)
 				return getHardwareComponent();
-			}
 			return basicGetHardwareComponent();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -157,9 +156,8 @@ public class HardwareFunctionTypeImpl extends DesignFunctionTypeImpl implements 
 			InternalEObject oldHardwareComponent = (InternalEObject) hardwareComponent;
 			hardwareComponent = (HardwareComponentType) eResolveProxy(oldHardwareComponent);
 			if (hardwareComponent != oldHardwareComponent) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FunctionmodelingPackage.HARDWARE_FUNCTION_TYPE__HARDWARE_COMPONENT, oldHardwareComponent, hardwareComponent));
-				}
 			}
 		}
 		return hardwareComponent;
@@ -175,9 +173,8 @@ public class HardwareFunctionTypeImpl extends DesignFunctionTypeImpl implements 
 	public void setHardwareComponent(HardwareComponentType newHardwareComponent) {
 		HardwareComponentType oldHardwareComponent = hardwareComponent;
 		hardwareComponent = newHardwareComponent;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FunctionmodelingPackage.HARDWARE_FUNCTION_TYPE__HARDWARE_COMPONENT, oldHardwareComponent, hardwareComponent));
-		}
 	}
 
 } // HardwareFunctionTypeImpl

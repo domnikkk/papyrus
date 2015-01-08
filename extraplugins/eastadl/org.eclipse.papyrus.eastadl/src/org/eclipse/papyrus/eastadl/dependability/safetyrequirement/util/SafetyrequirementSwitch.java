@@ -229,52 +229,40 @@ public class SafetyrequirementSwitch<T> extends Switch<T> {
 		case SafetyrequirementPackage.FUNCTIONAL_SAFETY_CONCEPT: {
 			FunctionalSafetyConcept functionalSafetyConcept = (FunctionalSafetyConcept) theEObject;
 			T result = caseFunctionalSafetyConcept(functionalSafetyConcept);
-			if (result == null) {
+			if (result == null)
 				result = caseRequirementsHierarchy(functionalSafetyConcept);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseTraceableSpecification(functionalSafetyConcept);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPackageableElement(functionalSafetyConcept);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(functionalSafetyConcept);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case SafetyrequirementPackage.SAFETY_GOAL: {
 			SafetyGoal safetyGoal = (SafetyGoal) theEObject;
 			T result = caseSafetyGoal(safetyGoal);
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(safetyGoal);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case SafetyrequirementPackage.TECHNICAL_SAFETY_CONCEPT: {
 			TechnicalSafetyConcept technicalSafetyConcept = (TechnicalSafetyConcept) theEObject;
 			T result = caseTechnicalSafetyConcept(technicalSafetyConcept);
-			if (result == null) {
+			if (result == null)
 				result = caseRequirementsHierarchy(technicalSafetyConcept);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseTraceableSpecification(technicalSafetyConcept);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPackageableElement(technicalSafetyConcept);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(technicalSafetyConcept);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		default:

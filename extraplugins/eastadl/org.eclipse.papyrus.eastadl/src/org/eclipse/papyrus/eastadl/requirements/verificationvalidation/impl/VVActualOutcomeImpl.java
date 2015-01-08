@@ -81,9 +81,8 @@ public class VVActualOutcomeImpl extends TraceableSpecificationImpl implements V
 			InternalEObject oldBase_Class = (InternalEObject) base_Class;
 			base_Class = (org.eclipse.uml2.uml.Class) eResolveProxy(oldBase_Class);
 			if (base_Class != oldBase_Class) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, VerificationvalidationPackage.VV_ACTUAL_OUTCOME__BASE_CLASS, oldBase_Class, base_Class));
-				}
 			}
 		}
 		return base_Class;
@@ -109,9 +108,8 @@ public class VVActualOutcomeImpl extends TraceableSpecificationImpl implements V
 	public void setBase_Class(org.eclipse.uml2.uml.Class newBase_Class) {
 		org.eclipse.uml2.uml.Class oldBase_Class = base_Class;
 		base_Class = newBase_Class;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VerificationvalidationPackage.VV_ACTUAL_OUTCOME__BASE_CLASS, oldBase_Class, base_Class));
-		}
 	}
 
 	/**
@@ -126,9 +124,8 @@ public class VVActualOutcomeImpl extends TraceableSpecificationImpl implements V
 			InternalEObject oldIntendedOutcome = (InternalEObject) intendedOutcome;
 			intendedOutcome = (VVIntendedOutcome) eResolveProxy(oldIntendedOutcome);
 			if (intendedOutcome != oldIntendedOutcome) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, VerificationvalidationPackage.VV_ACTUAL_OUTCOME__INTENDED_OUTCOME, oldIntendedOutcome, intendedOutcome));
-				}
 			}
 		}
 		return intendedOutcome;
@@ -154,9 +151,8 @@ public class VVActualOutcomeImpl extends TraceableSpecificationImpl implements V
 	public void setIntendedOutcome(VVIntendedOutcome newIntendedOutcome) {
 		VVIntendedOutcome oldIntendedOutcome = intendedOutcome;
 		intendedOutcome = newIntendedOutcome;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VerificationvalidationPackage.VV_ACTUAL_OUTCOME__INTENDED_OUTCOME, oldIntendedOutcome, intendedOutcome));
-		}
 	}
 
 	/**
@@ -169,14 +165,12 @@ public class VVActualOutcomeImpl extends TraceableSpecificationImpl implements V
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case VerificationvalidationPackage.VV_ACTUAL_OUTCOME__BASE_CLASS:
-			if (resolve) {
+			if (resolve)
 				return getBase_Class();
-			}
 			return basicGetBase_Class();
 		case VerificationvalidationPackage.VV_ACTUAL_OUTCOME__INTENDED_OUTCOME:
-			if (resolve) {
+			if (resolve)
 				return getIntendedOutcome();
-			}
 			return basicGetIntendedOutcome();
 		}
 		return super.eGet(featureID, resolve, coreType);

@@ -138,9 +138,8 @@ public abstract class EAPackageImpl extends EAElementImpl implements EAPackage {
 			InternalEObject oldBase_Package = (InternalEObject) base_Package;
 			base_Package = (org.eclipse.uml2.uml.Package) eResolveProxy(oldBase_Package);
 			if (base_Package != oldBase_Package) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ElementsPackage.EA_PACKAGE__BASE_PACKAGE, oldBase_Package, base_Package));
-				}
 			}
 		}
 		return base_Package;
@@ -166,9 +165,8 @@ public abstract class EAPackageImpl extends EAElementImpl implements EAPackage {
 	public void setBase_Package(org.eclipse.uml2.uml.Package newBase_Package) {
 		org.eclipse.uml2.uml.Package oldBase_Package = base_Package;
 		base_Package = newBase_Package;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ElementsPackage.EA_PACKAGE__BASE_PACKAGE, oldBase_Package, base_Package));
-		}
 	}
 
 	/**
@@ -185,9 +183,8 @@ public abstract class EAPackageImpl extends EAElementImpl implements EAPackage {
 		case ElementsPackage.EA_PACKAGE__ELEMENT:
 			return getElement();
 		case ElementsPackage.EA_PACKAGE__BASE_PACKAGE:
-			if (resolve) {
+			if (resolve)
 				return getBase_Package();
-			}
 			return basicGetBase_Package();
 		}
 		return super.eGet(featureID, resolve, coreType);

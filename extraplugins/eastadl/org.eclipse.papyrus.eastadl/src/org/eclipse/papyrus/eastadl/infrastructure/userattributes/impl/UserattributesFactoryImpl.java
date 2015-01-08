@@ -96,7 +96,7 @@ public class UserattributesFactoryImpl extends EFactoryImpl implements Userattri
 		case UserattributesPackage.USER_ATTRIBUTE_VALUE:
 			return createUserAttributeValue();
 		default:
-			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 	}
 

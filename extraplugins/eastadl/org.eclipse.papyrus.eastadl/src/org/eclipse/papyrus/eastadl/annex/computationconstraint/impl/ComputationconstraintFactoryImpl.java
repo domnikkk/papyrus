@@ -70,7 +70,7 @@ public class ComputationconstraintFactoryImpl extends EFactoryImpl implements Co
 		case ComputationconstraintPackage.TRANSFORMATION_OCCURRENCE:
 			return createTransformationOccurrence();
 		default:
-			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 	}
 

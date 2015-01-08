@@ -43,6 +43,7 @@ import org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsPackage
  *
  * @see org.eclipse.papyrus.eastadl.dependability.safetyrequirement.SafetyrequirementFactory
  * @model kind="package"
+ *        annotation="http://www.eclipse.org/uml2/2.0.0/UML originalName='SafetyRequirement'"
  * @generated
  */
 public interface SafetyrequirementPackage extends EPackage {

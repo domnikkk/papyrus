@@ -265,86 +265,66 @@ public class DependabilitySwitch<T> extends Switch<T> {
 		case DependabilityPackage.HAZARDOUS_EVENT: {
 			HazardousEvent hazardousEvent = (HazardousEvent) theEObject;
 			T result = caseHazardousEvent(hazardousEvent);
-			if (result == null) {
+			if (result == null)
 				result = caseTraceableSpecification(hazardousEvent);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPackageableElement(hazardousEvent);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(hazardousEvent);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case DependabilityPackage.HAZARD: {
 			Hazard hazard = (Hazard) theEObject;
 			T result = caseHazard(hazard);
-			if (result == null) {
+			if (result == null)
 				result = caseTraceableSpecification(hazard);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPackageableElement(hazard);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(hazard);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case DependabilityPackage.FEATURE_FLAW: {
 			FeatureFlaw featureFlaw = (FeatureFlaw) theEObject;
 			T result = caseFeatureFlaw(featureFlaw);
-			if (result == null) {
+			if (result == null)
 				result = caseTraceableSpecification(featureFlaw);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPackageableElement(featureFlaw);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(featureFlaw);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case DependabilityPackage.ITEM: {
 			Item item = (Item) theEObject;
 			T result = caseItem(item);
-			if (result == null) {
+			if (result == null)
 				result = caseTraceableSpecification(item);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPackageableElement(item);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(item);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case DependabilityPackage.DEPENDABILITY: {
 			Dependability dependability = (Dependability) theEObject;
 			T result = caseDependability(dependability);
-			if (result == null) {
+			if (result == null)
 				result = caseContext(dependability);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPackageableElement(dependability);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(dependability);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		default:

@@ -126,9 +126,8 @@ public class ArbitraryConstraintImpl extends TimingConstraintImpl implements Arb
 			InternalEObject oldEvent = (InternalEObject) event;
 			event = (Event) eResolveProxy(oldEvent);
 			if (event != oldEvent) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TimingconstraintsPackage.ARBITRARY_CONSTRAINT__EVENT, oldEvent, event));
-				}
 			}
 		}
 		return event;
@@ -154,9 +153,8 @@ public class ArbitraryConstraintImpl extends TimingConstraintImpl implements Arb
 	public void setEvent(Event newEvent) {
 		Event oldEvent = event;
 		event = newEvent;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TimingconstraintsPackage.ARBITRARY_CONSTRAINT__EVENT, oldEvent, event));
-		}
 	}
 
 	/**
@@ -173,9 +171,8 @@ public class ArbitraryConstraintImpl extends TimingConstraintImpl implements Arb
 		case TimingconstraintsPackage.ARBITRARY_CONSTRAINT__MAXIMUM:
 			return getMaximum();
 		case TimingconstraintsPackage.ARBITRARY_CONSTRAINT__EVENT:
-			if (resolve) {
+			if (resolve)
 				return getEvent();
-			}
 			return basicGetEvent();
 		}
 		return super.eGet(featureID, resolve, coreType);

@@ -80,9 +80,8 @@ public class SynchronoustransitionImpl extends TransitionImpl implements Synchro
 			InternalEObject oldReadTransitionEvent = (InternalEObject) readTransitionEvent;
 			readTransitionEvent = (TransitionEvent) eResolveProxy(oldReadTransitionEvent);
 			if (readTransitionEvent != oldReadTransitionEvent) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TemporalconstraintPackage.SYNCHRONOUSTRANSITION__READ_TRANSITION_EVENT, oldReadTransitionEvent, readTransitionEvent));
-				}
 			}
 		}
 		return readTransitionEvent;
@@ -108,9 +107,8 @@ public class SynchronoustransitionImpl extends TransitionImpl implements Synchro
 	public void setReadTransitionEvent(TransitionEvent newReadTransitionEvent) {
 		TransitionEvent oldReadTransitionEvent = readTransitionEvent;
 		readTransitionEvent = newReadTransitionEvent;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TemporalconstraintPackage.SYNCHRONOUSTRANSITION__READ_TRANSITION_EVENT, oldReadTransitionEvent, readTransitionEvent));
-		}
 	}
 
 	/**
@@ -125,9 +123,8 @@ public class SynchronoustransitionImpl extends TransitionImpl implements Synchro
 			InternalEObject oldWriteTransitionEvent = (InternalEObject) writeTransitionEvent;
 			writeTransitionEvent = (TransitionEvent) eResolveProxy(oldWriteTransitionEvent);
 			if (writeTransitionEvent != oldWriteTransitionEvent) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TemporalconstraintPackage.SYNCHRONOUSTRANSITION__WRITE_TRANSITION_EVENT, oldWriteTransitionEvent, writeTransitionEvent));
-				}
 			}
 		}
 		return writeTransitionEvent;
@@ -153,9 +150,8 @@ public class SynchronoustransitionImpl extends TransitionImpl implements Synchro
 	public void setWriteTransitionEvent(TransitionEvent newWriteTransitionEvent) {
 		TransitionEvent oldWriteTransitionEvent = writeTransitionEvent;
 		writeTransitionEvent = newWriteTransitionEvent;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TemporalconstraintPackage.SYNCHRONOUSTRANSITION__WRITE_TRANSITION_EVENT, oldWriteTransitionEvent, writeTransitionEvent));
-		}
 	}
 
 	/**
@@ -168,14 +164,12 @@ public class SynchronoustransitionImpl extends TransitionImpl implements Synchro
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case TemporalconstraintPackage.SYNCHRONOUSTRANSITION__READ_TRANSITION_EVENT:
-			if (resolve) {
+			if (resolve)
 				return getReadTransitionEvent();
-			}
 			return basicGetReadTransitionEvent();
 		case TemporalconstraintPackage.SYNCHRONOUSTRANSITION__WRITE_TRANSITION_EVENT:
-			if (resolve) {
+			if (resolve)
 				return getWriteTransitionEvent();
-			}
 			return basicGetWriteTransitionEvent();
 		}
 		return super.eGet(featureID, resolve, coreType);

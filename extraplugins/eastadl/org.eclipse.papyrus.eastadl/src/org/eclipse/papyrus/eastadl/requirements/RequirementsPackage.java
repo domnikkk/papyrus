@@ -33,6 +33,7 @@ import org.eclipse.emf.ecore.EPackage;
  *
  * @see org.eclipse.papyrus.eastadl.requirements.RequirementsFactory
  * @model kind="package"
+ *        annotation="http://www.eclipse.org/uml2/2.0.0/UML originalName='Requirements'"
  * @generated
  */
 public interface RequirementsPackage extends EPackage {

@@ -337,149 +337,113 @@ public class EventsSwitch<T> extends Switch<T> {
 		case EventsPackage.EVENT_FUNCTION_FLOW_PORT: {
 			EventFunctionFlowPort eventFunctionFlowPort = (EventFunctionFlowPort) theEObject;
 			T result = caseEventFunctionFlowPort(eventFunctionFlowPort);
-			if (result == null) {
+			if (result == null)
 				result = caseEvent(eventFunctionFlowPort);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAExpression(eventFunctionFlowPort);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseTimingDescription(eventFunctionFlowPort);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAValue(eventFunctionFlowPort);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(eventFunctionFlowPort);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case EventsPackage.EVENT_FUNCTION_CLIENT_SERVER_PORT: {
 			EventFunctionClientServerPort eventFunctionClientServerPort = (EventFunctionClientServerPort) theEObject;
 			T result = caseEventFunctionClientServerPort(eventFunctionClientServerPort);
-			if (result == null) {
+			if (result == null)
 				result = caseEvent(eventFunctionClientServerPort);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAExpression(eventFunctionClientServerPort);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseTimingDescription(eventFunctionClientServerPort);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAValue(eventFunctionClientServerPort);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(eventFunctionClientServerPort);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case EventsPackage.EVENT_FUNCTION: {
 			EventFunction eventFunction = (EventFunction) theEObject;
 			T result = caseEventFunction(eventFunction);
-			if (result == null) {
+			if (result == null)
 				result = caseEvent(eventFunction);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseTimingDescription(eventFunction);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(eventFunction);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case EventsPackage.AUTOSAR_EVENT: {
 			AUTOSAREvent autosarEvent = (AUTOSAREvent) theEObject;
 			T result = caseAUTOSAREvent(autosarEvent);
-			if (result == null) {
+			if (result == null)
 				result = caseEvent(autosarEvent);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseTimingDescription(autosarEvent);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(autosarEvent);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case EventsPackage.EVENT_FAULT_FAILURE: {
 			EventFaultFailure eventFaultFailure = (EventFaultFailure) theEObject;
 			T result = caseEventFaultFailure(eventFaultFailure);
-			if (result == null) {
+			if (result == null)
 				result = caseEvent(eventFaultFailure);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseTimingDescription(eventFaultFailure);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(eventFaultFailure);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case EventsPackage.EVENT_FEATURE_FLAW: {
 			EventFeatureFlaw eventFeatureFlaw = (EventFeatureFlaw) theEObject;
 			T result = caseEventFeatureFlaw(eventFeatureFlaw);
-			if (result == null) {
+			if (result == null)
 				result = caseEvent(eventFeatureFlaw);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseTimingDescription(eventFeatureFlaw);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(eventFeatureFlaw);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case EventsPackage.EXTERNAL_EVENT: {
 			ExternalEvent externalEvent = (ExternalEvent) theEObject;
 			T result = caseExternalEvent(externalEvent);
-			if (result == null) {
+			if (result == null)
 				result = caseEvent(externalEvent);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseTimingDescription(externalEvent);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(externalEvent);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case EventsPackage.MODE_EVENT: {
 			ModeEvent modeEvent = (ModeEvent) theEObject;
 			T result = caseModeEvent(modeEvent);
-			if (result == null) {
+			if (result == null)
 				result = caseEvent(modeEvent);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseTimingDescription(modeEvent);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(modeEvent);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		default:

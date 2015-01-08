@@ -161,9 +161,8 @@ public class NodeImpl extends HardwareComponentTypeImpl implements Node {
 	public void setExecutionRate(Float newExecutionRate) {
 		Float oldExecutionRate = executionRate;
 		executionRate = newExecutionRate;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, HardwaremodelingPackage.NODE__EXECUTION_RATE, oldExecutionRate, executionRate));
-		}
 	}
 
 	/**
@@ -174,12 +173,11 @@ public class NodeImpl extends HardwareComponentTypeImpl implements Node {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
+		if (eIsProxy())
 			return super.toString();
-		}
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (executionRate: ");
+		result.append(" (executionRate: "); //$NON-NLS-1$
 		result.append(executionRate);
 		result.append(')');
 		return result.toString();

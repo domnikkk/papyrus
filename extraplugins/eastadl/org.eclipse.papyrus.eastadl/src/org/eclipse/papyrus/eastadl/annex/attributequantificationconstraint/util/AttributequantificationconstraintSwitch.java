@@ -81,80 +81,62 @@ public class AttributequantificationconstraintSwitch<T> extends Switch<T> {
 		case AttributequantificationconstraintPackage.ATTRIBUTE_QUANTIFICATIONCONSTRAINT: {
 			AttributeQuantificationconstraint attributeQuantificationconstraint = (AttributeQuantificationconstraint) theEObject;
 			T result = caseAttributeQuantificationconstraint(attributeQuantificationconstraint);
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(attributeQuantificationconstraint);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseBehaviorConstraintParameter(attributeQuantificationconstraint);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case AttributequantificationconstraintPackage.QUANTIFICATION: {
 			Quantification quantification = (Quantification) theEObject;
 			T result = caseQuantification(quantification);
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(quantification);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAExpression(quantification);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAValue(quantification);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case AttributequantificationconstraintPackage.BEHAVIOR_ATTRIBUTE_BINDING: {
 			BehaviorAttributeBinding behaviorAttributeBinding = (BehaviorAttributeBinding) theEObject;
 			T result = caseBehaviorAttributeBinding(behaviorAttributeBinding);
-			if (result == null) {
+			if (result == null)
 				result = caseRelationship(behaviorAttributeBinding);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(behaviorAttributeBinding);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case AttributequantificationconstraintPackage.LOGICAL_EVENT: {
 			LogicalEvent logicalEvent = (LogicalEvent) theEObject;
 			T result = caseLogicalEvent(logicalEvent);
-			if (result == null) {
+			if (result == null)
 				result = caseQuantification(logicalEvent);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(logicalEvent);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAExpression(logicalEvent);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAValue(logicalEvent);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case AttributequantificationconstraintPackage.ATTRIBUTE: {
 			Attribute attribute = (Attribute) theEObject;
 			T result = caseAttribute(attribute);
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(attribute);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseBehaviorConstraintParameter(attribute);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		default:

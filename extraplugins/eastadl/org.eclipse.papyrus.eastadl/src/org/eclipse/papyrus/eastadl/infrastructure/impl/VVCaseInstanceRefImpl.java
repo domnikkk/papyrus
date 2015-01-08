@@ -84,9 +84,8 @@ public class VVCaseInstanceRefImpl extends InstanceRefImpl implements VVCaseInst
 			InternalEObject oldIdentifiable_target = (InternalEObject) identifiable_target;
 			identifiable_target = (NamedElement) eResolveProxy(oldIdentifiable_target);
 			if (identifiable_target != oldIdentifiable_target) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InfrastructurePackage.VV_CASE_INSTANCE_REF__IDENTIFIABLE_TARGET, oldIdentifiable_target, identifiable_target));
-				}
 			}
 		}
 		return identifiable_target;
@@ -112,9 +111,8 @@ public class VVCaseInstanceRefImpl extends InstanceRefImpl implements VVCaseInst
 	public void setIdentifiable_target(NamedElement newIdentifiable_target) {
 		NamedElement oldIdentifiable_target = identifiable_target;
 		identifiable_target = newIdentifiable_target;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, InfrastructurePackage.VV_CASE_INSTANCE_REF__IDENTIFIABLE_TARGET, oldIdentifiable_target, identifiable_target));
-		}
 	}
 
 	/**
@@ -141,9 +139,8 @@ public class VVCaseInstanceRefImpl extends InstanceRefImpl implements VVCaseInst
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case InfrastructurePackage.VV_CASE_INSTANCE_REF__IDENTIFIABLE_TARGET:
-			if (resolve) {
+			if (resolve)
 				return getIdentifiable_target();
-			}
 			return basicGetIdentifiable_target();
 		case InfrastructurePackage.VV_CASE_INSTANCE_REF__IDENTIFIABLE_CONTEXT:
 			return getIdentifiable_context();

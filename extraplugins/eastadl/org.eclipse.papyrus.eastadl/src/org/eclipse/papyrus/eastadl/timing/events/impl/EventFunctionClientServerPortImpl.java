@@ -124,14 +124,12 @@ public class EventFunctionClientServerPortImpl extends EventImpl implements Even
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case EventsPackage.EVENT_FUNCTION_CLIENT_SERVER_PORT__TYPE:
-			if (resolve) {
+			if (resolve)
 				return getType();
-			}
 			return basicGetType();
 		case EventsPackage.EVENT_FUNCTION_CLIENT_SERVER_PORT__BASE_VALUE_SPECIFICATION:
-			if (resolve) {
+			if (resolve)
 				return getBase_ValueSpecification();
-			}
 			return basicGetBase_ValueSpecification();
 		case EventsPackage.EVENT_FUNCTION_CLIENT_SERVER_PORT__EVENT_KIND:
 			return getEventKind();
@@ -264,9 +262,8 @@ public class EventFunctionClientServerPortImpl extends EventImpl implements Even
 			InternalEObject oldType = (InternalEObject) type;
 			type = (EADatatype) eResolveProxy(oldType);
 			if (type != oldType) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EventsPackage.EVENT_FUNCTION_CLIENT_SERVER_PORT__TYPE, oldType, type));
-				}
 			}
 		}
 		return type;
@@ -292,9 +289,8 @@ public class EventFunctionClientServerPortImpl extends EventImpl implements Even
 	public void setType(EADatatype newType) {
 		EADatatype oldType = type;
 		type = newType;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EventsPackage.EVENT_FUNCTION_CLIENT_SERVER_PORT__TYPE, oldType, type));
-		}
 	}
 
 	/**
@@ -309,9 +305,8 @@ public class EventFunctionClientServerPortImpl extends EventImpl implements Even
 			InternalEObject oldBase_ValueSpecification = (InternalEObject) base_ValueSpecification;
 			base_ValueSpecification = (ValueSpecification) eResolveProxy(oldBase_ValueSpecification);
 			if (base_ValueSpecification != oldBase_ValueSpecification) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EventsPackage.EVENT_FUNCTION_CLIENT_SERVER_PORT__BASE_VALUE_SPECIFICATION, oldBase_ValueSpecification, base_ValueSpecification));
-				}
 			}
 		}
 		return base_ValueSpecification;
@@ -337,9 +332,8 @@ public class EventFunctionClientServerPortImpl extends EventImpl implements Even
 	public void setBase_ValueSpecification(ValueSpecification newBase_ValueSpecification) {
 		ValueSpecification oldBase_ValueSpecification = base_ValueSpecification;
 		base_ValueSpecification = newBase_ValueSpecification;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EventsPackage.EVENT_FUNCTION_CLIENT_SERVER_PORT__BASE_VALUE_SPECIFICATION, oldBase_ValueSpecification, base_ValueSpecification));
-		}
 	}
 
 	/**
@@ -400,11 +394,10 @@ public class EventFunctionClientServerPortImpl extends EventImpl implements Even
 		port = newPort;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EventsPackage.EVENT_FUNCTION_CLIENT_SERVER_PORT__PORT, oldPort, newPort);
-			if (msgs == null) {
+			if (msgs == null)
 				msgs = notification;
-			} else {
+			else
 				msgs.add(notification);
-			}
 		}
 		return msgs;
 	}
@@ -419,20 +412,16 @@ public class EventFunctionClientServerPortImpl extends EventImpl implements Even
 	public void setPort(EventFunctionClientServerPortInstanceRef newPort) {
 		if (newPort != port) {
 			NotificationChain msgs = null;
-			if (port != null) {
+			if (port != null)
 				msgs = ((InternalEObject) port).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EventsPackage.EVENT_FUNCTION_CLIENT_SERVER_PORT__PORT, null, msgs);
-			}
-			if (newPort != null) {
+			if (newPort != null)
 				msgs = ((InternalEObject) newPort).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EventsPackage.EVENT_FUNCTION_CLIENT_SERVER_PORT__PORT, null, msgs);
-			}
 			msgs = basicSetPort(newPort, msgs);
-			if (msgs != null) {
+			if (msgs != null)
 				msgs.dispatch();
-			}
 		}
-		else if (eNotificationRequired()) {
+		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EventsPackage.EVENT_FUNCTION_CLIENT_SERVER_PORT__PORT, newPort, newPort));
-		}
 	}
 
 	/**
@@ -460,9 +449,8 @@ public class EventFunctionClientServerPortImpl extends EventImpl implements Even
 	public void setEventKind(EventFunctionClientServerPortKind newEventKind) {
 		EventFunctionClientServerPortKind oldEventKind = eventKind;
 		eventKind = newEventKind == null ? EVENT_KIND_EDEFAULT : newEventKind;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EventsPackage.EVENT_FUNCTION_CLIENT_SERVER_PORT__EVENT_KIND, oldEventKind, eventKind));
-		}
 	}
 
 	/**
@@ -473,12 +461,11 @@ public class EventFunctionClientServerPortImpl extends EventImpl implements Even
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
+		if (eIsProxy())
 			return super.toString();
-		}
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (eventKind: ");
+		result.append(" (eventKind: "); //$NON-NLS-1$
 		result.append(eventKind);
 		result.append(')');
 		return result.toString();

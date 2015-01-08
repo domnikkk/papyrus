@@ -101,9 +101,8 @@ public class GroundImpl extends TraceableSpecificationImpl implements Ground {
 		case SafetycasePackage.GROUND__SAFETY_EVIDENCE:
 			return getSafetyEvidence();
 		case SafetycasePackage.GROUND__BASE_CLASS:
-			if (resolve) {
+			if (resolve)
 				return getBase_Class();
-			}
 			return basicGetBase_Class();
 		case SafetycasePackage.GROUND__JUSTIFICATION:
 			return getJustification();
@@ -228,9 +227,8 @@ public class GroundImpl extends TraceableSpecificationImpl implements Ground {
 			InternalEObject oldBase_Class = (InternalEObject) base_Class;
 			base_Class = (org.eclipse.uml2.uml.Class) eResolveProxy(oldBase_Class);
 			if (base_Class != oldBase_Class) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SafetycasePackage.GROUND__BASE_CLASS, oldBase_Class, base_Class));
-				}
 			}
 		}
 		return base_Class;
@@ -256,9 +254,8 @@ public class GroundImpl extends TraceableSpecificationImpl implements Ground {
 	public void setBase_Class(org.eclipse.uml2.uml.Class newBase_Class) {
 		org.eclipse.uml2.uml.Class oldBase_Class = base_Class;
 		base_Class = newBase_Class;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SafetycasePackage.GROUND__BASE_CLASS, oldBase_Class, base_Class));
-		}
 	}
 
 } // GroundImpl

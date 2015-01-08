@@ -90,7 +90,7 @@ public class EnvironmentFactoryImpl extends EFactoryImpl implements EnvironmentF
 		case EnvironmentPackage.CLAMP_CONNECTOR:
 			return createClampConnector();
 		default:
-			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 	}
 

@@ -146,9 +146,8 @@ public class BusinessOpportunityImpl extends TraceableSpecificationImpl implemen
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case NeedsPackage.BUSINESS_OPPORTUNITY__BASE_CLASS:
-			if (resolve) {
+			if (resolve)
 				return getBase_Class();
-			}
 			return basicGetBase_Class();
 		case NeedsPackage.BUSINESS_OPPORTUNITY__PROBLEM_STATEMENT:
 			return getProblemStatement();
@@ -240,9 +239,8 @@ public class BusinessOpportunityImpl extends TraceableSpecificationImpl implemen
 			InternalEObject oldBase_Class = (InternalEObject) base_Class;
 			base_Class = (org.eclipse.uml2.uml.Class) eResolveProxy(oldBase_Class);
 			if (base_Class != oldBase_Class) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, NeedsPackage.BUSINESS_OPPORTUNITY__BASE_CLASS, oldBase_Class, base_Class));
-				}
 			}
 		}
 		return base_Class;
@@ -268,9 +266,8 @@ public class BusinessOpportunityImpl extends TraceableSpecificationImpl implemen
 	public void setBase_Class(org.eclipse.uml2.uml.Class newBase_Class) {
 		org.eclipse.uml2.uml.Class oldBase_Class = base_Class;
 		base_Class = newBase_Class;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, NeedsPackage.BUSINESS_OPPORTUNITY__BASE_CLASS, oldBase_Class, base_Class));
-		}
 	}
 
 	/**
@@ -350,9 +347,8 @@ public class BusinessOpportunityImpl extends TraceableSpecificationImpl implemen
 	public void setBusinessOpportunity(String newBusinessOpportunity) {
 		String oldBusinessOpportunity = businessOpportunity;
 		businessOpportunity = newBusinessOpportunity;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, NeedsPackage.BUSINESS_OPPORTUNITY__BUSINESS_OPPORTUNITY, oldBusinessOpportunity, businessOpportunity));
-		}
 	}
 
 	/**
@@ -377,12 +373,11 @@ public class BusinessOpportunityImpl extends TraceableSpecificationImpl implemen
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
+		if (eIsProxy())
 			return super.toString();
-		}
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (businessOpportunity: ");
+		result.append(" (businessOpportunity: "); //$NON-NLS-1$
 		result.append(businessOpportunity);
 		result.append(')');
 		return result.toString();

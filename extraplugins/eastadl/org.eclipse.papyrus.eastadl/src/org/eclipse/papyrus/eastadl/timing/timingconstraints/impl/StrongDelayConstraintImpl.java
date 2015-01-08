@@ -106,9 +106,8 @@ public class StrongDelayConstraintImpl extends TimingConstraintImpl implements S
 			InternalEObject oldSource = (InternalEObject) source;
 			source = (Event) eResolveProxy(oldSource);
 			if (source != oldSource) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TimingconstraintsPackage.STRONG_DELAY_CONSTRAINT__SOURCE, oldSource, source));
-				}
 			}
 		}
 		return source;
@@ -134,9 +133,8 @@ public class StrongDelayConstraintImpl extends TimingConstraintImpl implements S
 	public void setSource(Event newSource) {
 		Event oldSource = source;
 		source = newSource;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TimingconstraintsPackage.STRONG_DELAY_CONSTRAINT__SOURCE, oldSource, source));
-		}
 	}
 
 	/**
@@ -151,9 +149,8 @@ public class StrongDelayConstraintImpl extends TimingConstraintImpl implements S
 			InternalEObject oldTarget = (InternalEObject) target;
 			target = (Event) eResolveProxy(oldTarget);
 			if (target != oldTarget) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TimingconstraintsPackage.STRONG_DELAY_CONSTRAINT__TARGET, oldTarget, target));
-				}
 			}
 		}
 		return target;
@@ -179,9 +176,8 @@ public class StrongDelayConstraintImpl extends TimingConstraintImpl implements S
 	public void setTarget(Event newTarget) {
 		Event oldTarget = target;
 		target = newTarget;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TimingconstraintsPackage.STRONG_DELAY_CONSTRAINT__TARGET, oldTarget, target));
-		}
 	}
 
 	/**
@@ -196,9 +192,8 @@ public class StrongDelayConstraintImpl extends TimingConstraintImpl implements S
 			InternalEObject oldLower = (InternalEObject) lower;
 			lower = (TimingExpression) eResolveProxy(oldLower);
 			if (lower != oldLower) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TimingconstraintsPackage.STRONG_DELAY_CONSTRAINT__LOWER, oldLower, lower));
-				}
 			}
 		}
 		return lower;
@@ -224,9 +219,8 @@ public class StrongDelayConstraintImpl extends TimingConstraintImpl implements S
 	public void setLower(TimingExpression newLower) {
 		TimingExpression oldLower = lower;
 		lower = newLower;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TimingconstraintsPackage.STRONG_DELAY_CONSTRAINT__LOWER, oldLower, lower));
-		}
 	}
 
 	/**
@@ -241,9 +235,8 @@ public class StrongDelayConstraintImpl extends TimingConstraintImpl implements S
 			InternalEObject oldUpper = (InternalEObject) upper;
 			upper = (TimingExpression) eResolveProxy(oldUpper);
 			if (upper != oldUpper) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TimingconstraintsPackage.STRONG_DELAY_CONSTRAINT__UPPER, oldUpper, upper));
-				}
 			}
 		}
 		return upper;
@@ -269,9 +262,8 @@ public class StrongDelayConstraintImpl extends TimingConstraintImpl implements S
 	public void setUpper(TimingExpression newUpper) {
 		TimingExpression oldUpper = upper;
 		upper = newUpper;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TimingconstraintsPackage.STRONG_DELAY_CONSTRAINT__UPPER, oldUpper, upper));
-		}
 	}
 
 	/**
@@ -284,24 +276,20 @@ public class StrongDelayConstraintImpl extends TimingConstraintImpl implements S
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case TimingconstraintsPackage.STRONG_DELAY_CONSTRAINT__SOURCE:
-			if (resolve) {
+			if (resolve)
 				return getSource();
-			}
 			return basicGetSource();
 		case TimingconstraintsPackage.STRONG_DELAY_CONSTRAINT__TARGET:
-			if (resolve) {
+			if (resolve)
 				return getTarget();
-			}
 			return basicGetTarget();
 		case TimingconstraintsPackage.STRONG_DELAY_CONSTRAINT__LOWER:
-			if (resolve) {
+			if (resolve)
 				return getLower();
-			}
 			return basicGetLower();
 		case TimingconstraintsPackage.STRONG_DELAY_CONSTRAINT__UPPER:
-			if (resolve) {
+			if (resolve)
 				return getUpper();
-			}
 			return basicGetUpper();
 		}
 		return super.eGet(featureID, resolve, coreType);

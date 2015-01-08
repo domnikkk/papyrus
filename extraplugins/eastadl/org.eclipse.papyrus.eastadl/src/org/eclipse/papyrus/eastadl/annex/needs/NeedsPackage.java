@@ -36,6 +36,7 @@ import org.eclipse.papyrus.eastadl.infrastructure.elements.ElementsPackage;
  *
  * @see org.eclipse.papyrus.eastadl.annex.needs.NeedsFactory
  * @model kind="package"
+ *        annotation="http://www.eclipse.org/uml2/2.0.0/UML originalName='Needs'"
  * @generated
  */
 public interface NeedsPackage extends EPackage {

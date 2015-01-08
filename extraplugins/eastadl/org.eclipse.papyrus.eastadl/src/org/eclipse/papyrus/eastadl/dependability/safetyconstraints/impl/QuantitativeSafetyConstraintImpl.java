@@ -151,14 +151,12 @@ public class QuantitativeSafetyConstraintImpl extends TraceableSpecificationImpl
 		case SafetyconstraintsPackage.QUANTITATIVE_SAFETY_CONSTRAINT__REPAIR_RATE:
 			return getRepairRate();
 		case SafetyconstraintsPackage.QUANTITATIVE_SAFETY_CONSTRAINT__BASE_CLASS:
-			if (resolve) {
+			if (resolve)
 				return getBase_Class();
-			}
 			return basicGetBase_Class();
 		case SafetyconstraintsPackage.QUANTITATIVE_SAFETY_CONSTRAINT__BASE_CONSTRAINT:
-			if (resolve) {
+			if (resolve)
 				return getBase_Constraint();
-			}
 			return basicGetBase_Constraint();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -302,9 +300,8 @@ public class QuantitativeSafetyConstraintImpl extends TraceableSpecificationImpl
 	public void setFailureRate(Float newFailureRate) {
 		Float oldFailureRate = failureRate;
 		failureRate = newFailureRate;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SafetyconstraintsPackage.QUANTITATIVE_SAFETY_CONSTRAINT__FAILURE_RATE, oldFailureRate, failureRate));
-		}
 	}
 
 	/**
@@ -317,9 +314,8 @@ public class QuantitativeSafetyConstraintImpl extends TraceableSpecificationImpl
 	public void setRepairRate(Float newRepairRate) {
 		Float oldRepairRate = repairRate;
 		repairRate = newRepairRate;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SafetyconstraintsPackage.QUANTITATIVE_SAFETY_CONSTRAINT__REPAIR_RATE, oldRepairRate, repairRate));
-		}
 	}
 
 	/**
@@ -334,9 +330,8 @@ public class QuantitativeSafetyConstraintImpl extends TraceableSpecificationImpl
 			InternalEObject oldBase_Class = (InternalEObject) base_Class;
 			base_Class = (org.eclipse.uml2.uml.Class) eResolveProxy(oldBase_Class);
 			if (base_Class != oldBase_Class) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SafetyconstraintsPackage.QUANTITATIVE_SAFETY_CONSTRAINT__BASE_CLASS, oldBase_Class, base_Class));
-				}
 			}
 		}
 		return base_Class;
@@ -362,9 +357,8 @@ public class QuantitativeSafetyConstraintImpl extends TraceableSpecificationImpl
 	public void setBase_Class(org.eclipse.uml2.uml.Class newBase_Class) {
 		org.eclipse.uml2.uml.Class oldBase_Class = base_Class;
 		base_Class = newBase_Class;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SafetyconstraintsPackage.QUANTITATIVE_SAFETY_CONSTRAINT__BASE_CLASS, oldBase_Class, base_Class));
-		}
 	}
 
 	/**
@@ -379,9 +373,8 @@ public class QuantitativeSafetyConstraintImpl extends TraceableSpecificationImpl
 			InternalEObject oldBase_Constraint = (InternalEObject) base_Constraint;
 			base_Constraint = (Constraint) eResolveProxy(oldBase_Constraint);
 			if (base_Constraint != oldBase_Constraint) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SafetyconstraintsPackage.QUANTITATIVE_SAFETY_CONSTRAINT__BASE_CONSTRAINT, oldBase_Constraint, base_Constraint));
-				}
 			}
 		}
 		return base_Constraint;
@@ -407,9 +400,8 @@ public class QuantitativeSafetyConstraintImpl extends TraceableSpecificationImpl
 	public void setBase_Constraint(Constraint newBase_Constraint) {
 		Constraint oldBase_Constraint = base_Constraint;
 		base_Constraint = newBase_Constraint;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SafetyconstraintsPackage.QUANTITATIVE_SAFETY_CONSTRAINT__BASE_CONSTRAINT, oldBase_Constraint, base_Constraint));
-		}
 	}
 
 	/**
@@ -420,14 +412,13 @@ public class QuantitativeSafetyConstraintImpl extends TraceableSpecificationImpl
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
+		if (eIsProxy())
 			return super.toString();
-		}
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (failureRate: ");
+		result.append(" (failureRate: "); //$NON-NLS-1$
 		result.append(failureRate);
-		result.append(", repairRate: ");
+		result.append(", repairRate: "); //$NON-NLS-1$
 		result.append(repairRate);
 		result.append(')');
 		return result.toString();

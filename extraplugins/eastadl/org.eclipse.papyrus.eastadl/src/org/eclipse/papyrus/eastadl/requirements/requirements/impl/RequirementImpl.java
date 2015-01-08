@@ -205,9 +205,8 @@ public class RequirementImpl extends org.eclipse.papyrus.sysml.requirements.inte
 			InternalEObject oldBase_NamedElement = (InternalEObject) base_NamedElement;
 			base_NamedElement = (NamedElement) eResolveProxy(oldBase_NamedElement);
 			if (base_NamedElement != oldBase_NamedElement) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequirementsPackage.REQUIREMENT__BASE_NAMED_ELEMENT, oldBase_NamedElement, base_NamedElement));
-				}
 			}
 		}
 		return base_NamedElement;
@@ -233,9 +232,8 @@ public class RequirementImpl extends org.eclipse.papyrus.sysml.requirements.inte
 	public void setBase_NamedElement(NamedElement newBase_NamedElement) {
 		NamedElement oldBase_NamedElement = base_NamedElement;
 		base_NamedElement = newBase_NamedElement;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RequirementsPackage.REQUIREMENT__BASE_NAMED_ELEMENT, oldBase_NamedElement, base_NamedElement));
-		}
 	}
 
 	/**
@@ -286,9 +284,8 @@ public class RequirementImpl extends org.eclipse.papyrus.sysml.requirements.inte
 			InternalEObject oldBase_PackageableElement = (InternalEObject) base_PackageableElement;
 			base_PackageableElement = (PackageableElement) eResolveProxy(oldBase_PackageableElement);
 			if (base_PackageableElement != oldBase_PackageableElement) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequirementsPackage.REQUIREMENT__BASE_PACKAGEABLE_ELEMENT, oldBase_PackageableElement, base_PackageableElement));
-				}
 			}
 		}
 		return base_PackageableElement;
@@ -314,9 +311,8 @@ public class RequirementImpl extends org.eclipse.papyrus.sysml.requirements.inte
 	public void setBase_PackageableElement(PackageableElement newBase_PackageableElement) {
 		PackageableElement oldBase_PackageableElement = base_PackageableElement;
 		base_PackageableElement = newBase_PackageableElement;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RequirementsPackage.REQUIREMENT__BASE_PACKAGEABLE_ELEMENT, oldBase_PackageableElement, base_PackageableElement));
-		}
 	}
 
 	/**
@@ -340,9 +336,8 @@ public class RequirementImpl extends org.eclipse.papyrus.sysml.requirements.inte
 	public void setNote(String newNote) {
 		String oldNote = note;
 		note = newNote;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RequirementsPackage.REQUIREMENT__NOTE, oldNote, note));
-		}
 	}
 
 	/**
@@ -366,9 +361,8 @@ public class RequirementImpl extends org.eclipse.papyrus.sysml.requirements.inte
 	public void setFormalism(String newFormalism) {
 		String oldFormalism = formalism;
 		formalism = newFormalism;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RequirementsPackage.REQUIREMENT__FORMALISM, oldFormalism, formalism));
-		}
 	}
 
 	/**
@@ -392,9 +386,8 @@ public class RequirementImpl extends org.eclipse.papyrus.sysml.requirements.inte
 	public void setUrl(String newUrl) {
 		String oldUrl = url;
 		url = newUrl;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RequirementsPackage.REQUIREMENT__URL, oldUrl, url));
-		}
 	}
 
 	/**
@@ -421,18 +414,16 @@ public class RequirementImpl extends org.eclipse.papyrus.sysml.requirements.inte
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case RequirementsPackage.REQUIREMENT__BASE_NAMED_ELEMENT:
-			if (resolve) {
+			if (resolve)
 				return getBase_NamedElement();
-			}
 			return basicGetBase_NamedElement();
 		case RequirementsPackage.REQUIREMENT__NAME:
 			return getName();
 		case RequirementsPackage.REQUIREMENT__OWNED_COMMENT:
 			return getOwnedComment();
 		case RequirementsPackage.REQUIREMENT__BASE_PACKAGEABLE_ELEMENT:
-			if (resolve) {
+			if (resolve)
 				return getBase_PackageableElement();
-			}
 			return basicGetBase_PackageableElement();
 		case RequirementsPackage.REQUIREMENT__NOTE:
 			return getNote();
@@ -741,16 +732,15 @@ public class RequirementImpl extends org.eclipse.papyrus.sysml.requirements.inte
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
+		if (eIsProxy())
 			return super.toString();
-		}
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (note: ");
+		result.append(" (note: "); //$NON-NLS-1$
 		result.append(note);
-		result.append(", formalism: ");
+		result.append(", formalism: "); //$NON-NLS-1$
 		result.append(formalism);
-		result.append(", url: ");
+		result.append(", url: "); //$NON-NLS-1$
 		result.append(url);
 		result.append(')');
 		return result.toString();

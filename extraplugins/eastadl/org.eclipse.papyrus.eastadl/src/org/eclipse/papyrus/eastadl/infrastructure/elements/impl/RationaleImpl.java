@@ -83,9 +83,8 @@ public class RationaleImpl extends MinimalEObjectImpl.Container implements Ratio
 			InternalEObject oldBase_Comment = (InternalEObject) base_Comment;
 			base_Comment = (Comment) eResolveProxy(oldBase_Comment);
 			if (base_Comment != oldBase_Comment) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ElementsPackage.RATIONALE__BASE_COMMENT, oldBase_Comment, base_Comment));
-				}
 			}
 		}
 		return base_Comment;
@@ -111,9 +110,8 @@ public class RationaleImpl extends MinimalEObjectImpl.Container implements Ratio
 	public void setBase_Comment(Comment newBase_Comment) {
 		Comment oldBase_Comment = base_Comment;
 		base_Comment = newBase_Comment;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ElementsPackage.RATIONALE__BASE_COMMENT, oldBase_Comment, base_Comment));
-		}
 	}
 
 	/**
@@ -126,9 +124,8 @@ public class RationaleImpl extends MinimalEObjectImpl.Container implements Ratio
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case ElementsPackage.RATIONALE__BASE_COMMENT:
-			if (resolve) {
+			if (resolve)
 				return getBase_Comment();
-			}
 			return basicGetBase_Comment();
 		}
 		return super.eGet(featureID, resolve, coreType);

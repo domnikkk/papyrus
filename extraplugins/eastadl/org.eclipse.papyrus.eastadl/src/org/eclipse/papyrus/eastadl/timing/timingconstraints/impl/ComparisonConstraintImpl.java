@@ -105,9 +105,8 @@ public class ComparisonConstraintImpl extends TimingConstraintImpl implements Co
 			InternalEObject oldRightOperand = (InternalEObject) rightOperand;
 			rightOperand = (TimingExpression) eResolveProxy(oldRightOperand);
 			if (rightOperand != oldRightOperand) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TimingconstraintsPackage.COMPARISON_CONSTRAINT__RIGHT_OPERAND, oldRightOperand, rightOperand));
-				}
 			}
 		}
 		return rightOperand;
@@ -133,9 +132,8 @@ public class ComparisonConstraintImpl extends TimingConstraintImpl implements Co
 	public void setRightOperand(TimingExpression newRightOperand) {
 		TimingExpression oldRightOperand = rightOperand;
 		rightOperand = newRightOperand;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TimingconstraintsPackage.COMPARISON_CONSTRAINT__RIGHT_OPERAND, oldRightOperand, rightOperand));
-		}
 	}
 
 	/**
@@ -150,9 +148,8 @@ public class ComparisonConstraintImpl extends TimingConstraintImpl implements Co
 			InternalEObject oldLeftOperand = (InternalEObject) leftOperand;
 			leftOperand = (TimingExpression) eResolveProxy(oldLeftOperand);
 			if (leftOperand != oldLeftOperand) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TimingconstraintsPackage.COMPARISON_CONSTRAINT__LEFT_OPERAND, oldLeftOperand, leftOperand));
-				}
 			}
 		}
 		return leftOperand;
@@ -178,9 +175,8 @@ public class ComparisonConstraintImpl extends TimingConstraintImpl implements Co
 	public void setLeftOperand(TimingExpression newLeftOperand) {
 		TimingExpression oldLeftOperand = leftOperand;
 		leftOperand = newLeftOperand;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TimingconstraintsPackage.COMPARISON_CONSTRAINT__LEFT_OPERAND, oldLeftOperand, leftOperand));
-		}
 	}
 
 	/**
@@ -204,9 +200,8 @@ public class ComparisonConstraintImpl extends TimingConstraintImpl implements Co
 	public void setOperator(ComparisonKind newOperator) {
 		ComparisonKind oldOperator = operator;
 		operator = newOperator == null ? OPERATOR_EDEFAULT : newOperator;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TimingconstraintsPackage.COMPARISON_CONSTRAINT__OPERATOR, oldOperator, operator));
-		}
 	}
 
 	/**
@@ -219,14 +214,12 @@ public class ComparisonConstraintImpl extends TimingConstraintImpl implements Co
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case TimingconstraintsPackage.COMPARISON_CONSTRAINT__RIGHT_OPERAND:
-			if (resolve) {
+			if (resolve)
 				return getRightOperand();
-			}
 			return basicGetRightOperand();
 		case TimingconstraintsPackage.COMPARISON_CONSTRAINT__LEFT_OPERAND:
-			if (resolve) {
+			if (resolve)
 				return getLeftOperand();
-			}
 			return basicGetLeftOperand();
 		case TimingconstraintsPackage.COMPARISON_CONSTRAINT__OPERATOR:
 			return getOperator();
@@ -305,12 +298,11 @@ public class ComparisonConstraintImpl extends TimingConstraintImpl implements Co
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
+		if (eIsProxy())
 			return super.toString();
-		}
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (operator: ");
+		result.append(" (operator: "); //$NON-NLS-1$
 		result.append(operator);
 		result.append(')');
 		return result.toString();

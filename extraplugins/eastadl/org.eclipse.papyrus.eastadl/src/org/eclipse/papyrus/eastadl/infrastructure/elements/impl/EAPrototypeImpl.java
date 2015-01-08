@@ -69,9 +69,8 @@ public abstract class EAPrototypeImpl extends MinimalEObjectImpl.Container imple
 			InternalEObject oldBase_Property = (InternalEObject) base_Property;
 			base_Property = (Property) eResolveProxy(oldBase_Property);
 			if (base_Property != oldBase_Property) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ElementsPackage.EA_PROTOTYPE__BASE_PROPERTY, oldBase_Property, base_Property));
-				}
 			}
 		}
 		return base_Property;
@@ -97,9 +96,8 @@ public abstract class EAPrototypeImpl extends MinimalEObjectImpl.Container imple
 	public void setBase_Property(Property newBase_Property) {
 		Property oldBase_Property = base_Property;
 		base_Property = newBase_Property;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ElementsPackage.EA_PROTOTYPE__BASE_PROPERTY, oldBase_Property, base_Property));
-		}
 	}
 
 	/**
@@ -112,9 +110,8 @@ public abstract class EAPrototypeImpl extends MinimalEObjectImpl.Container imple
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case ElementsPackage.EA_PROTOTYPE__BASE_PROPERTY:
-			if (resolve) {
+			if (resolve)
 				return getBase_Property();
-			}
 			return basicGetBase_Property();
 		}
 		return super.eGet(featureID, resolve, coreType);

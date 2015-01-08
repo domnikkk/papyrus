@@ -81,9 +81,8 @@ public class HardwareConnectorInstanceRefImpl extends InstanceRefImpl implements
 			InternalEObject oldHardwarePin = (InternalEObject) hardwarePin;
 			hardwarePin = (HardwarePin) eResolveProxy(oldHardwarePin);
 			if (hardwarePin != oldHardwarePin) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InfrastructurePackage.HARDWARE_CONNECTOR_INSTANCE_REF__HARDWARE_PIN, oldHardwarePin, hardwarePin));
-				}
 			}
 		}
 		return hardwarePin;
@@ -109,9 +108,8 @@ public class HardwareConnectorInstanceRefImpl extends InstanceRefImpl implements
 	public void setHardwarePin(HardwarePin newHardwarePin) {
 		HardwarePin oldHardwarePin = hardwarePin;
 		hardwarePin = newHardwarePin;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, InfrastructurePackage.HARDWARE_CONNECTOR_INSTANCE_REF__HARDWARE_PIN, oldHardwarePin, hardwarePin));
-		}
 	}
 
 	/**
@@ -126,9 +124,8 @@ public class HardwareConnectorInstanceRefImpl extends InstanceRefImpl implements
 			InternalEObject oldHardwareComponentPrototype = (InternalEObject) hardwareComponentPrototype;
 			hardwareComponentPrototype = (HardwareComponentPrototype) eResolveProxy(oldHardwareComponentPrototype);
 			if (hardwareComponentPrototype != oldHardwareComponentPrototype) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InfrastructurePackage.HARDWARE_CONNECTOR_INSTANCE_REF__HARDWARE_COMPONENT_PROTOTYPE, oldHardwareComponentPrototype, hardwareComponentPrototype));
-				}
 			}
 		}
 		return hardwareComponentPrototype;
@@ -154,9 +151,8 @@ public class HardwareConnectorInstanceRefImpl extends InstanceRefImpl implements
 	public void setHardwareComponentPrototype(HardwareComponentPrototype newHardwareComponentPrototype) {
 		HardwareComponentPrototype oldHardwareComponentPrototype = hardwareComponentPrototype;
 		hardwareComponentPrototype = newHardwareComponentPrototype;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, InfrastructurePackage.HARDWARE_CONNECTOR_INSTANCE_REF__HARDWARE_COMPONENT_PROTOTYPE, oldHardwareComponentPrototype, hardwareComponentPrototype));
-		}
 	}
 
 	/**
@@ -169,14 +165,12 @@ public class HardwareConnectorInstanceRefImpl extends InstanceRefImpl implements
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case InfrastructurePackage.HARDWARE_CONNECTOR_INSTANCE_REF__HARDWARE_PIN:
-			if (resolve) {
+			if (resolve)
 				return getHardwarePin();
-			}
 			return basicGetHardwarePin();
 		case InfrastructurePackage.HARDWARE_CONNECTOR_INSTANCE_REF__HARDWARE_COMPONENT_PROTOTYPE:
-			if (resolve) {
+			if (resolve)
 				return getHardwareComponentPrototype();
-			}
 			return basicGetHardwareComponentPrototype();
 		}
 		return super.eGet(featureID, resolve, coreType);

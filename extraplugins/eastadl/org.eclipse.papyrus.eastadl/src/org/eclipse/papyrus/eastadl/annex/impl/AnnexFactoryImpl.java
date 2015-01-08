@@ -97,7 +97,7 @@ public class AnnexFactoryImpl extends EFactoryImpl implements AnnexFactory {
 		case AnnexPackage.DUMMY:
 			return convertDummyToString(eDataType, instanceValue);
 		default:
-			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 	}
 
@@ -111,7 +111,7 @@ public class AnnexFactoryImpl extends EFactoryImpl implements AnnexFactory {
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 		default:
-			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 	}
 
@@ -137,7 +137,7 @@ public class AnnexFactoryImpl extends EFactoryImpl implements AnnexFactory {
 		case AnnexPackage.DUMMY:
 			return createDummyFromString(eDataType, initialValue);
 		default:
-			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 	}
 

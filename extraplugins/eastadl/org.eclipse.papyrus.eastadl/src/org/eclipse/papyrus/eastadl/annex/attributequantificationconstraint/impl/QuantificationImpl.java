@@ -102,9 +102,8 @@ public class QuantificationImpl extends EAElementImpl implements Quantification 
 			InternalEObject oldType = (InternalEObject) type;
 			type = (EADatatype) eResolveProxy(oldType);
 			if (type != oldType) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AttributequantificationconstraintPackage.QUANTIFICATION__TYPE, oldType, type));
-				}
 			}
 		}
 		return type;
@@ -130,9 +129,8 @@ public class QuantificationImpl extends EAElementImpl implements Quantification 
 	public void setType(EADatatype newType) {
 		EADatatype oldType = type;
 		type = newType;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, AttributequantificationconstraintPackage.QUANTIFICATION__TYPE, oldType, type));
-		}
 	}
 
 	/**
@@ -147,9 +145,8 @@ public class QuantificationImpl extends EAElementImpl implements Quantification 
 			InternalEObject oldBase_ValueSpecification = (InternalEObject) base_ValueSpecification;
 			base_ValueSpecification = (ValueSpecification) eResolveProxy(oldBase_ValueSpecification);
 			if (base_ValueSpecification != oldBase_ValueSpecification) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AttributequantificationconstraintPackage.QUANTIFICATION__BASE_VALUE_SPECIFICATION, oldBase_ValueSpecification, base_ValueSpecification));
-				}
 			}
 		}
 		return base_ValueSpecification;
@@ -175,9 +172,8 @@ public class QuantificationImpl extends EAElementImpl implements Quantification 
 	public void setBase_ValueSpecification(ValueSpecification newBase_ValueSpecification) {
 		ValueSpecification oldBase_ValueSpecification = base_ValueSpecification;
 		base_ValueSpecification = newBase_ValueSpecification;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, AttributequantificationconstraintPackage.QUANTIFICATION__BASE_VALUE_SPECIFICATION, oldBase_ValueSpecification, base_ValueSpecification));
-		}
 	}
 
 	/**
@@ -204,14 +200,12 @@ public class QuantificationImpl extends EAElementImpl implements Quantification 
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case AttributequantificationconstraintPackage.QUANTIFICATION__TYPE:
-			if (resolve) {
+			if (resolve)
 				return getType();
-			}
 			return basicGetType();
 		case AttributequantificationconstraintPackage.QUANTIFICATION__BASE_VALUE_SPECIFICATION:
-			if (resolve) {
+			if (resolve)
 				return getBase_ValueSpecification();
-			}
 			return basicGetBase_ValueSpecification();
 		case AttributequantificationconstraintPackage.QUANTIFICATION__OPERAND:
 			return getOperand();

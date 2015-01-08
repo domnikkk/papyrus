@@ -81,9 +81,8 @@ public class StateEventImpl extends EventImpl implements StateEvent {
 			InternalEObject oldEnd = (InternalEObject) end;
 			end = (State) eResolveProxy(oldEnd);
 			if (end != oldEnd) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TemporalconstraintPackage.STATE_EVENT__END, oldEnd, end));
-				}
 			}
 		}
 		return end;
@@ -109,9 +108,8 @@ public class StateEventImpl extends EventImpl implements StateEvent {
 	public void setEnd(State newEnd) {
 		State oldEnd = end;
 		end = newEnd;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TemporalconstraintPackage.STATE_EVENT__END, oldEnd, end));
-		}
 	}
 
 	/**
@@ -126,9 +124,8 @@ public class StateEventImpl extends EventImpl implements StateEvent {
 			InternalEObject oldStart = (InternalEObject) start;
 			start = (State) eResolveProxy(oldStart);
 			if (start != oldStart) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TemporalconstraintPackage.STATE_EVENT__START, oldStart, start));
-				}
 			}
 		}
 		return start;
@@ -154,9 +151,8 @@ public class StateEventImpl extends EventImpl implements StateEvent {
 	public void setStart(State newStart) {
 		State oldStart = start;
 		start = newStart;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TemporalconstraintPackage.STATE_EVENT__START, oldStart, start));
-		}
 	}
 
 	/**
@@ -169,14 +165,12 @@ public class StateEventImpl extends EventImpl implements StateEvent {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case TemporalconstraintPackage.STATE_EVENT__END:
-			if (resolve) {
+			if (resolve)
 				return getEnd();
-			}
 			return basicGetEnd();
 		case TemporalconstraintPackage.STATE_EVENT__START:
-			if (resolve) {
+			if (resolve)
 				return getStart();
-			}
 			return basicGetStart();
 		}
 		return super.eGet(featureID, resolve, coreType);

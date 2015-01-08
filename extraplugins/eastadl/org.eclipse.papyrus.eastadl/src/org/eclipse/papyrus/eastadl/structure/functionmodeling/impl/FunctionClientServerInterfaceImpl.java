@@ -75,9 +75,8 @@ public class FunctionClientServerInterfaceImpl extends TraceableSpecificationImp
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case FunctionmodelingPackage.FUNCTION_CLIENT_SERVER_INTERFACE__BASE_INTERFACE:
-			if (resolve) {
+			if (resolve)
 				return getBase_Interface();
-			}
 			return basicGetBase_Interface();
 		case FunctionmodelingPackage.FUNCTION_CLIENT_SERVER_INTERFACE__OPERATION:
 			return getOperation();
@@ -138,9 +137,8 @@ public class FunctionClientServerInterfaceImpl extends TraceableSpecificationImp
 			InternalEObject oldBase_Interface = (InternalEObject) base_Interface;
 			base_Interface = (Interface) eResolveProxy(oldBase_Interface);
 			if (base_Interface != oldBase_Interface) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FunctionmodelingPackage.FUNCTION_CLIENT_SERVER_INTERFACE__BASE_INTERFACE, oldBase_Interface, base_Interface));
-				}
 			}
 		}
 		return base_Interface;
@@ -166,9 +164,8 @@ public class FunctionClientServerInterfaceImpl extends TraceableSpecificationImp
 	public void setBase_Interface(Interface newBase_Interface) {
 		Interface oldBase_Interface = base_Interface;
 		base_Interface = newBase_Interface;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FunctionmodelingPackage.FUNCTION_CLIENT_SERVER_INTERFACE__BASE_INTERFACE, oldBase_Interface, base_Interface));
-		}
 	}
 
 	/**

@@ -86,9 +86,8 @@ public class ElectricalComponentImpl extends HardwareComponentTypeImpl implement
 	public void setIsActive(boolean newIsActive) {
 		boolean oldIsActive = isActive;
 		isActive = newIsActive;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, HardwaremodelingPackage.ELECTRICAL_COMPONENT__IS_ACTIVE, oldIsActive, isActive));
-		}
 	}
 
 	/**
@@ -161,12 +160,11 @@ public class ElectricalComponentImpl extends HardwareComponentTypeImpl implement
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
+		if (eIsProxy())
 			return super.toString();
-		}
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (isActive: ");
+		result.append(" (isActive: "); //$NON-NLS-1$
 		result.append(isActive);
 		result.append(')');
 		return result.toString();

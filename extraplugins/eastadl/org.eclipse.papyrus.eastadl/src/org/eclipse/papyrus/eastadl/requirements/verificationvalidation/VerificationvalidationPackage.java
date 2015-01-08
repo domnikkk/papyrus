@@ -48,6 +48,7 @@ import org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsPackage
  *
  * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VerificationvalidationFactory
  * @model kind="package"
+ *        annotation="http://www.eclipse.org/uml2/2.0.0/UML originalName='VerificationValidation'"
  * @generated
  */
 public interface VerificationvalidationPackage extends EPackage {

@@ -94,7 +94,7 @@ public class VehiclefeaturemodelingFactoryImpl extends EFactoryImpl implements V
 		case VehiclefeaturemodelingPackage.DEVIATION_PERMISSION_KIND:
 			return convertDeviationPermissionKindToString(eDataType, instanceValue);
 		default:
-			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 	}
 
@@ -111,7 +111,7 @@ public class VehiclefeaturemodelingFactoryImpl extends EFactoryImpl implements V
 		case VehiclefeaturemodelingPackage.VEHICLE_FEATURE:
 			return createVehicleFeature();
 		default:
-			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 	}
 
@@ -133,9 +133,8 @@ public class VehiclefeaturemodelingFactoryImpl extends EFactoryImpl implements V
 	 */
 	public DeviationPermissionKind createDeviationPermissionKindFromString(EDataType eDataType, String initialValue) {
 		DeviationPermissionKind result = DeviationPermissionKind.get(initialValue);
-		if (result == null) {
-			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		}
+		if (result == null)
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 		return result;
 	}
 
@@ -150,7 +149,7 @@ public class VehiclefeaturemodelingFactoryImpl extends EFactoryImpl implements V
 		case VehiclefeaturemodelingPackage.DEVIATION_PERMISSION_KIND:
 			return createDeviationPermissionKindFromString(eDataType, initialValue);
 		default:
-			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 	}
 

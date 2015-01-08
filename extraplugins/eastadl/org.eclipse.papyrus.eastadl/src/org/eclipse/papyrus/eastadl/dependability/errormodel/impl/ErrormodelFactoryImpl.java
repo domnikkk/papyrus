@@ -107,7 +107,7 @@ public class ErrormodelFactoryImpl extends EFactoryImpl implements ErrormodelFac
 		case ErrormodelPackage.ERROR_BEHAVIOR_KIND:
 			return convertErrorBehaviorKindToString(eDataType, instanceValue);
 		default:
-			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 	}
 
@@ -139,7 +139,7 @@ public class ErrormodelFactoryImpl extends EFactoryImpl implements ErrormodelFac
 		case ErrormodelPackage.PROCESS_FAULT_PROTOTYPE:
 			return createProcessFaultPrototype();
 		default:
-			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 	}
 
@@ -175,9 +175,8 @@ public class ErrormodelFactoryImpl extends EFactoryImpl implements ErrormodelFac
 	 */
 	public ErrorBehaviorKind createErrorBehaviorKindFromString(EDataType eDataType, String initialValue) {
 		ErrorBehaviorKind result = ErrorBehaviorKind.get(initialValue);
-		if (result == null) {
-			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		}
+		if (result == null)
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 		return result;
 	}
 
@@ -253,7 +252,7 @@ public class ErrormodelFactoryImpl extends EFactoryImpl implements ErrormodelFac
 		case ErrormodelPackage.ERROR_BEHAVIOR_KIND:
 			return createErrorBehaviorKindFromString(eDataType, initialValue);
 		default:
-			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 	}
 

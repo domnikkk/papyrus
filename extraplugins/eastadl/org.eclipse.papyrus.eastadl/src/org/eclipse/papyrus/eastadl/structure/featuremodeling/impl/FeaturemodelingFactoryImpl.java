@@ -101,7 +101,7 @@ public class FeaturemodelingFactoryImpl extends EFactoryImpl implements Featurem
 		case FeaturemodelingPackage.VARIABILITY_DEPENDENCY_KIND:
 			return convertVariabilityDependencyKindToString(eDataType, instanceValue);
 		default:
-			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 	}
 
@@ -136,7 +136,7 @@ public class FeaturemodelingFactoryImpl extends EFactoryImpl implements Featurem
 		case FeaturemodelingPackage.FEATURE_GROUP:
 			return createFeatureGroup();
 		default:
-			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 	}
 
@@ -158,9 +158,8 @@ public class FeaturemodelingFactoryImpl extends EFactoryImpl implements Featurem
 	 */
 	public BindingTimeKind createBindingTimeKindFromString(EDataType eDataType, String initialValue) {
 		BindingTimeKind result = BindingTimeKind.get(initialValue);
-		if (result == null) {
-			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		}
+		if (result == null)
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 		return result;
 	}
 
@@ -233,7 +232,7 @@ public class FeaturemodelingFactoryImpl extends EFactoryImpl implements Featurem
 		case FeaturemodelingPackage.VARIABILITY_DEPENDENCY_KIND:
 			return createVariabilityDependencyKindFromString(eDataType, initialValue);
 		default:
-			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 	}
 
@@ -245,9 +244,8 @@ public class FeaturemodelingFactoryImpl extends EFactoryImpl implements Featurem
 	 */
 	public VariabilityDependencyKind createVariabilityDependencyKindFromString(EDataType eDataType, String initialValue) {
 		VariabilityDependencyKind result = VariabilityDependencyKind.get(initialValue);
-		if (result == null) {
-			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		}
+		if (result == null)
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 		return result;
 	}
 

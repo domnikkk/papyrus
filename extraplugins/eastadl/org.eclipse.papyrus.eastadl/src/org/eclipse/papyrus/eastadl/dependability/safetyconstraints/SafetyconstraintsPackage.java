@@ -37,6 +37,7 @@ import org.eclipse.papyrus.eastadl.infrastructure.elements.ElementsPackage;
  *
  * @see org.eclipse.papyrus.eastadl.dependability.safetyconstraints.SafetyconstraintsFactory
  * @model kind="package"
+ *        annotation="http://www.eclipse.org/uml2/2.0.0/UML originalName='SafetyConstraints'"
  * @generated
  */
 public interface SafetyconstraintsPackage extends EPackage {

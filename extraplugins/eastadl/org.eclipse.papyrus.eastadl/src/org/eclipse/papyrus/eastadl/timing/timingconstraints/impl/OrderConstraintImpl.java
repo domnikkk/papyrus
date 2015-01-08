@@ -81,9 +81,8 @@ public class OrderConstraintImpl extends TimingConstraintImpl implements OrderCo
 			InternalEObject oldSource = (InternalEObject) source;
 			source = (Event) eResolveProxy(oldSource);
 			if (source != oldSource) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TimingconstraintsPackage.ORDER_CONSTRAINT__SOURCE, oldSource, source));
-				}
 			}
 		}
 		return source;
@@ -109,9 +108,8 @@ public class OrderConstraintImpl extends TimingConstraintImpl implements OrderCo
 	public void setSource(Event newSource) {
 		Event oldSource = source;
 		source = newSource;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TimingconstraintsPackage.ORDER_CONSTRAINT__SOURCE, oldSource, source));
-		}
 	}
 
 	/**
@@ -126,9 +124,8 @@ public class OrderConstraintImpl extends TimingConstraintImpl implements OrderCo
 			InternalEObject oldTarget = (InternalEObject) target;
 			target = (Event) eResolveProxy(oldTarget);
 			if (target != oldTarget) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TimingconstraintsPackage.ORDER_CONSTRAINT__TARGET, oldTarget, target));
-				}
 			}
 		}
 		return target;
@@ -154,9 +151,8 @@ public class OrderConstraintImpl extends TimingConstraintImpl implements OrderCo
 	public void setTarget(Event newTarget) {
 		Event oldTarget = target;
 		target = newTarget;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TimingconstraintsPackage.ORDER_CONSTRAINT__TARGET, oldTarget, target));
-		}
 	}
 
 	/**
@@ -169,14 +165,12 @@ public class OrderConstraintImpl extends TimingConstraintImpl implements OrderCo
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case TimingconstraintsPackage.ORDER_CONSTRAINT__SOURCE:
-			if (resolve) {
+			if (resolve)
 				return getSource();
-			}
 			return basicGetSource();
 		case TimingconstraintsPackage.ORDER_CONSTRAINT__TARGET:
-			if (resolve) {
+			if (resolve)
 				return getTarget();
-			}
 			return basicGetTarget();
 		}
 		return super.eGet(featureID, resolve, coreType);

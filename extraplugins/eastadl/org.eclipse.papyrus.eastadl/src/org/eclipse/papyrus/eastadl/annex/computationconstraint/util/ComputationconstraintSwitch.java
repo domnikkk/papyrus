@@ -76,45 +76,37 @@ public class ComputationconstraintSwitch<T> extends Switch<T> {
 		case ComputationconstraintPackage.COMPUTATION_CONSTRAINT: {
 			ComputationConstraint computationConstraint = (ComputationConstraint) theEObject;
 			T result = caseComputationConstraint(computationConstraint);
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(computationConstraint);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case ComputationconstraintPackage.LOGICAL_PATH: {
 			LogicalPath logicalPath = (LogicalPath) theEObject;
 			T result = caseLogicalPath(logicalPath);
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(logicalPath);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case ComputationconstraintPackage.LOGICAL_TRANSFORMATION: {
 			LogicalTransformation logicalTransformation = (LogicalTransformation) theEObject;
 			T result = caseLogicalTransformation(logicalTransformation);
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(logicalTransformation);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case ComputationconstraintPackage.TRANSFORMATION_OCCURRENCE: {
 			TransformationOccurrence transformationOccurrence = (TransformationOccurrence) theEObject;
 			T result = caseTransformationOccurrence(transformationOccurrence);
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(transformationOccurrence);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		default:

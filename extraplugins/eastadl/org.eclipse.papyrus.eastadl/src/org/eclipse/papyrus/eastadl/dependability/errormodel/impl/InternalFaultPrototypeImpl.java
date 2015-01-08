@@ -81,14 +81,12 @@ public class InternalFaultPrototypeImpl extends AnomalyImpl implements InternalF
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case ErrormodelPackage.INTERNAL_FAULT_PROTOTYPE__BASE_CLASS:
-			if (resolve) {
+			if (resolve)
 				return getBase_Class();
-			}
 			return basicGetBase_Class();
 		case ErrormodelPackage.INTERNAL_FAULT_PROTOTYPE__BASE_EVENT:
-			if (resolve) {
+			if (resolve)
 				return getBase_Event();
-			}
 			return basicGetBase_Event();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -153,9 +151,8 @@ public class InternalFaultPrototypeImpl extends AnomalyImpl implements InternalF
 			InternalEObject oldBase_Class = (InternalEObject) base_Class;
 			base_Class = (org.eclipse.uml2.uml.Class) eResolveProxy(oldBase_Class);
 			if (base_Class != oldBase_Class) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ErrormodelPackage.INTERNAL_FAULT_PROTOTYPE__BASE_CLASS, oldBase_Class, base_Class));
-				}
 			}
 		}
 		return base_Class;
@@ -181,9 +178,8 @@ public class InternalFaultPrototypeImpl extends AnomalyImpl implements InternalF
 	public void setBase_Class(org.eclipse.uml2.uml.Class newBase_Class) {
 		org.eclipse.uml2.uml.Class oldBase_Class = base_Class;
 		base_Class = newBase_Class;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ErrormodelPackage.INTERNAL_FAULT_PROTOTYPE__BASE_CLASS, oldBase_Class, base_Class));
-		}
 	}
 
 	/**
@@ -198,9 +194,8 @@ public class InternalFaultPrototypeImpl extends AnomalyImpl implements InternalF
 			InternalEObject oldBase_Event = (InternalEObject) base_Event;
 			base_Event = (Event) eResolveProxy(oldBase_Event);
 			if (base_Event != oldBase_Event) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ErrormodelPackage.INTERNAL_FAULT_PROTOTYPE__BASE_EVENT, oldBase_Event, base_Event));
-				}
 			}
 		}
 		return base_Event;
@@ -226,9 +221,8 @@ public class InternalFaultPrototypeImpl extends AnomalyImpl implements InternalF
 	public void setBase_Event(Event newBase_Event) {
 		Event oldBase_Event = base_Event;
 		base_Event = newBase_Event;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ErrormodelPackage.INTERNAL_FAULT_PROTOTYPE__BASE_EVENT, oldBase_Event, base_Event));
-		}
 	}
 
 	/**

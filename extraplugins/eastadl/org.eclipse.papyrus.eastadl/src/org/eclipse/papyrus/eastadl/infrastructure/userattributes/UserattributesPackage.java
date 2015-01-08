@@ -55,6 +55,7 @@ import org.eclipse.papyrus.eastadl.infrastructure.elements.ElementsPackage;
  *
  * @see org.eclipse.papyrus.eastadl.infrastructure.userattributes.UserattributesFactory
  * @model kind="package"
+ *        annotation="http://www.eclipse.org/uml2/2.0.0/UML originalName='UserAttributes'"
  * @generated
  */
 public interface UserattributesPackage extends EPackage {

@@ -79,9 +79,8 @@ public class OutputSynchronizationConstraintImpl extends TimingConstraintImpl im
 		case TimingconstraintsPackage.OUTPUT_SYNCHRONIZATION_CONSTRAINT__SCOPE:
 			return getScope();
 		case TimingconstraintsPackage.OUTPUT_SYNCHRONIZATION_CONSTRAINT__TOLERANCE:
-			if (resolve) {
+			if (resolve)
 				return getTolerance();
-			}
 			return basicGetTolerance();
 		}
 		return super.eGet(featureID, resolve, coreType);

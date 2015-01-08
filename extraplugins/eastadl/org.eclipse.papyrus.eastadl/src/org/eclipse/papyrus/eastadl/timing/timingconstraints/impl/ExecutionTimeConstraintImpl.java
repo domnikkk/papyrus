@@ -134,9 +134,8 @@ public class ExecutionTimeConstraintImpl extends TimingConstraintImpl implements
 			InternalEObject oldStart = (InternalEObject) start;
 			start = (Event) eResolveProxy(oldStart);
 			if (start != oldStart) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TimingconstraintsPackage.EXECUTION_TIME_CONSTRAINT__START, oldStart, start));
-				}
 			}
 		}
 		return start;
@@ -162,9 +161,8 @@ public class ExecutionTimeConstraintImpl extends TimingConstraintImpl implements
 	public void setStart(Event newStart) {
 		Event oldStart = start;
 		start = newStart;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TimingconstraintsPackage.EXECUTION_TIME_CONSTRAINT__START, oldStart, start));
-		}
 	}
 
 	/**
@@ -179,9 +177,8 @@ public class ExecutionTimeConstraintImpl extends TimingConstraintImpl implements
 			InternalEObject oldStop = (InternalEObject) stop;
 			stop = (Event) eResolveProxy(oldStop);
 			if (stop != oldStop) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TimingconstraintsPackage.EXECUTION_TIME_CONSTRAINT__STOP, oldStop, stop));
-				}
 			}
 		}
 		return stop;
@@ -207,9 +204,8 @@ public class ExecutionTimeConstraintImpl extends TimingConstraintImpl implements
 	public void setStop(Event newStop) {
 		Event oldStop = stop;
 		stop = newStop;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TimingconstraintsPackage.EXECUTION_TIME_CONSTRAINT__STOP, oldStop, stop));
-		}
 	}
 
 	/**
@@ -252,9 +248,8 @@ public class ExecutionTimeConstraintImpl extends TimingConstraintImpl implements
 			InternalEObject oldUpper = (InternalEObject) upper;
 			upper = (TimingExpression) eResolveProxy(oldUpper);
 			if (upper != oldUpper) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TimingconstraintsPackage.EXECUTION_TIME_CONSTRAINT__UPPER, oldUpper, upper));
-				}
 			}
 		}
 		return upper;
@@ -280,9 +275,8 @@ public class ExecutionTimeConstraintImpl extends TimingConstraintImpl implements
 	public void setUpper(TimingExpression newUpper) {
 		TimingExpression oldUpper = upper;
 		upper = newUpper;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TimingconstraintsPackage.EXECUTION_TIME_CONSTRAINT__UPPER, oldUpper, upper));
-		}
 	}
 
 	/**
@@ -297,9 +291,8 @@ public class ExecutionTimeConstraintImpl extends TimingConstraintImpl implements
 			InternalEObject oldLower = (InternalEObject) lower;
 			lower = (TimingExpression) eResolveProxy(oldLower);
 			if (lower != oldLower) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TimingconstraintsPackage.EXECUTION_TIME_CONSTRAINT__LOWER, oldLower, lower));
-				}
 			}
 		}
 		return lower;
@@ -325,9 +318,8 @@ public class ExecutionTimeConstraintImpl extends TimingConstraintImpl implements
 	public void setLower(TimingExpression newLower) {
 		TimingExpression oldLower = lower;
 		lower = newLower;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TimingconstraintsPackage.EXECUTION_TIME_CONSTRAINT__LOWER, oldLower, lower));
-		}
 	}
 
 	/**
@@ -340,28 +332,24 @@ public class ExecutionTimeConstraintImpl extends TimingConstraintImpl implements
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case TimingconstraintsPackage.EXECUTION_TIME_CONSTRAINT__START:
-			if (resolve) {
+			if (resolve)
 				return getStart();
-			}
 			return basicGetStart();
 		case TimingconstraintsPackage.EXECUTION_TIME_CONSTRAINT__STOP:
-			if (resolve) {
+			if (resolve)
 				return getStop();
-			}
 			return basicGetStop();
 		case TimingconstraintsPackage.EXECUTION_TIME_CONSTRAINT__PREEMPTION:
 			return getPreemption();
 		case TimingconstraintsPackage.EXECUTION_TIME_CONSTRAINT__RESUME:
 			return getResume();
 		case TimingconstraintsPackage.EXECUTION_TIME_CONSTRAINT__UPPER:
-			if (resolve) {
+			if (resolve)
 				return getUpper();
-			}
 			return basicGetUpper();
 		case TimingconstraintsPackage.EXECUTION_TIME_CONSTRAINT__LOWER:
-			if (resolve) {
+			if (resolve)
 				return getLower();
-			}
 			return basicGetLower();
 		}
 		return super.eGet(featureID, resolve, coreType);

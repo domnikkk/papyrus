@@ -409,156 +409,121 @@ public class ErrormodelSwitch<T> extends Switch<T> {
 		case ErrormodelPackage.ANOMALY: {
 			Anomaly anomaly = (Anomaly) theEObject;
 			T result = caseAnomaly(anomaly);
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(anomaly);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case ErrormodelPackage.ERROR_MODEL_PROTOTYPE: {
 			ErrorModelPrototype errorModelPrototype = (ErrorModelPrototype) theEObject;
 			T result = caseErrorModelPrototype(errorModelPrototype);
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(errorModelPrototype);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPrototype(errorModelPrototype);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case ErrormodelPackage.ERROR_MODEL_TYPE: {
 			ErrorModelType errorModelType = (ErrorModelType) theEObject;
 			T result = caseErrorModelType(errorModelType);
-			if (result == null) {
+			if (result == null)
 				result = caseTraceableSpecification(errorModelType);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAType(errorModelType);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPackageableElement(errorModelType);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(errorModelType);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case ErrormodelPackage.FAULT_FAILURE_PROPAGATION_LINK: {
 			FaultFailurePropagationLink faultFailurePropagationLink = (FaultFailurePropagationLink) theEObject;
 			T result = caseFaultFailurePropagationLink(faultFailurePropagationLink);
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(faultFailurePropagationLink);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAConnector(faultFailurePropagationLink);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case ErrormodelPackage.ERROR_BEHAVIOR: {
 			ErrorBehavior errorBehavior = (ErrorBehavior) theEObject;
 			T result = caseErrorBehavior(errorBehavior);
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(errorBehavior);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case ErrormodelPackage.INTERNAL_FAULT_PROTOTYPE: {
 			InternalFaultPrototype internalFaultPrototype = (InternalFaultPrototype) theEObject;
 			T result = caseInternalFaultPrototype(internalFaultPrototype);
-			if (result == null) {
+			if (result == null)
 				result = caseAnomaly(internalFaultPrototype);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(internalFaultPrototype);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case ErrormodelPackage.FAILURE_OUT_PORT: {
 			FailureOutPort failureOutPort = (FailureOutPort) theEObject;
 			T result = caseFailureOutPort(failureOutPort);
-			if (result == null) {
+			if (result == null)
 				result = caseFaultFailurePort(failureOutPort);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseAnomaly(failureOutPort);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPort(failureOutPort);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(failureOutPort);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case ErrormodelPackage.FAULT_IN_PORT: {
 			FaultInPort faultInPort = (FaultInPort) theEObject;
 			T result = caseFaultInPort(faultInPort);
-			if (result == null) {
+			if (result == null)
 				result = caseFaultFailurePort(faultInPort);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseAnomaly(faultInPort);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPort(faultInPort);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(faultInPort);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case ErrormodelPackage.PROCESS_FAULT_PROTOTYPE: {
 			ProcessFaultPrototype processFaultPrototype = (ProcessFaultPrototype) theEObject;
 			T result = caseProcessFaultPrototype(processFaultPrototype);
-			if (result == null) {
+			if (result == null)
 				result = caseAnomaly(processFaultPrototype);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(processFaultPrototype);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case ErrormodelPackage.FAULT_FAILURE_PORT: {
 			FaultFailurePort faultFailurePort = (FaultFailurePort) theEObject;
 			T result = caseFaultFailurePort(faultFailurePort);
-			if (result == null) {
+			if (result == null)
 				result = caseAnomaly(faultFailurePort);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPort(faultFailurePort);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(faultFailurePort);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		default:

@@ -145,9 +145,8 @@ public class StakeholderNeedImpl extends TraceableSpecificationImpl implements S
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case NeedsPackage.STAKEHOLDER_NEED__BASE_CLASS:
-			if (resolve) {
+			if (resolve)
 				return getBase_Class();
-			}
 			return basicGetBase_Class();
 		case NeedsPackage.STAKEHOLDER_NEED__NEED:
 			return getNeed();
@@ -238,9 +237,8 @@ public class StakeholderNeedImpl extends TraceableSpecificationImpl implements S
 			InternalEObject oldBase_Class = (InternalEObject) base_Class;
 			base_Class = (org.eclipse.uml2.uml.Class) eResolveProxy(oldBase_Class);
 			if (base_Class != oldBase_Class) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, NeedsPackage.STAKEHOLDER_NEED__BASE_CLASS, oldBase_Class, base_Class));
-				}
 			}
 		}
 		return base_Class;
@@ -266,9 +264,8 @@ public class StakeholderNeedImpl extends TraceableSpecificationImpl implements S
 	public void setBase_Class(org.eclipse.uml2.uml.Class newBase_Class) {
 		org.eclipse.uml2.uml.Class oldBase_Class = base_Class;
 		base_Class = newBase_Class;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, NeedsPackage.STAKEHOLDER_NEED__BASE_CLASS, oldBase_Class, base_Class));
-		}
 	}
 
 	/**
@@ -359,9 +356,8 @@ public class StakeholderNeedImpl extends TraceableSpecificationImpl implements S
 	public void setNeed(String newNeed) {
 		String oldNeed = need;
 		need = newNeed;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, NeedsPackage.STAKEHOLDER_NEED__NEED, oldNeed, need));
-		}
 	}
 
 	/**
@@ -374,9 +370,8 @@ public class StakeholderNeedImpl extends TraceableSpecificationImpl implements S
 	public void setPriority(int newPriority) {
 		int oldPriority = priority;
 		priority = newPriority;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, NeedsPackage.STAKEHOLDER_NEED__PRIORITY, oldPriority, priority));
-		}
 	}
 
 	/**
@@ -387,14 +382,13 @@ public class StakeholderNeedImpl extends TraceableSpecificationImpl implements S
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
+		if (eIsProxy())
 			return super.toString();
-		}
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (need: ");
+		result.append(" (need: "); //$NON-NLS-1$
 		result.append(need);
-		result.append(", priority: ");
+		result.append(", priority: "); //$NON-NLS-1$
 		result.append(priority);
 		result.append(')');
 		return result.toString();

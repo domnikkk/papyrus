@@ -400,9 +400,8 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	 * @generated
 	 */
 	public static InfrastructurePackage init() {
-		if (isInited) {
+		if (isInited)
 			return (InfrastructurePackage) EPackage.Registry.INSTANCE.getEPackage(InfrastructurePackage.eNS_URI);
-		}
 
 		// Obtain or create and register package
 		InfrastructurePackageImpl theInfrastructurePackage = (InfrastructurePackageImpl) (EPackage.Registry.INSTANCE.get(eNS_URI) instanceof InfrastructurePackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new InfrastructurePackageImpl());
@@ -432,8 +431,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 		SystemmodelingPackageImpl theSystemmodelingPackage = (SystemmodelingPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(SystemmodelingPackage.eNS_URI) instanceof SystemmodelingPackageImpl ? EPackage.Registry.INSTANCE
 				.getEPackage(SystemmodelingPackage.eNS_URI) : SystemmodelingPackage.eINSTANCE);
 		VehiclefeaturemodelingPackageImpl theVehiclefeaturemodelingPackage = (VehiclefeaturemodelingPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(VehiclefeaturemodelingPackage.eNS_URI) instanceof VehiclefeaturemodelingPackageImpl ? EPackage.Registry.INSTANCE
-				.getEPackage(VehiclefeaturemodelingPackage.eNS_URI)
-				: VehiclefeaturemodelingPackage.eINSTANCE);
+				.getEPackage(VehiclefeaturemodelingPackage.eNS_URI) : VehiclefeaturemodelingPackage.eINSTANCE);
 		HardwaremodelingPackageImpl theHardwaremodelingPackage = (HardwaremodelingPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(HardwaremodelingPackage.eNS_URI) instanceof HardwaremodelingPackageImpl ? EPackage.Registry.INSTANCE
 				.getEPackage(HardwaremodelingPackage.eNS_URI) : HardwaremodelingPackage.eINSTANCE);
 		DependabilityPackageImpl theDependabilityPackage = (DependabilityPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(DependabilityPackage.eNS_URI) instanceof DependabilityPackageImpl ? EPackage.Registry.INSTANCE
@@ -451,8 +449,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 		UsecasesPackageImpl theUsecasesPackage = (UsecasesPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(UsecasesPackage.eNS_URI) instanceof UsecasesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(UsecasesPackage.eNS_URI)
 				: UsecasesPackage.eINSTANCE);
 		VerificationvalidationPackageImpl theVerificationvalidationPackage = (VerificationvalidationPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(VerificationvalidationPackage.eNS_URI) instanceof VerificationvalidationPackageImpl ? EPackage.Registry.INSTANCE
-				.getEPackage(VerificationvalidationPackage.eNS_URI)
-				: VerificationvalidationPackage.eINSTANCE);
+				.getEPackage(VerificationvalidationPackage.eNS_URI) : VerificationvalidationPackage.eINSTANCE);
 		org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsPackageImpl theRequirementsPackage_1 = (org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsPackageImpl) (EPackage.Registry.INSTANCE
 				.getEPackage(org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsPackage.eNS_URI) instanceof org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsPackageImpl ? EPackage.Registry.INSTANCE
 				.getEPackage(org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsPackage.eNS_URI) : org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsPackage.eINSTANCE);
@@ -469,13 +466,11 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 		BehaviordescriptionPackageImpl theBehaviordescriptionPackage = (BehaviordescriptionPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(BehaviordescriptionPackage.eNS_URI) instanceof BehaviordescriptionPackageImpl ? EPackage.Registry.INSTANCE
 				.getEPackage(BehaviordescriptionPackage.eNS_URI) : BehaviordescriptionPackage.eINSTANCE);
 		AttributequantificationconstraintPackageImpl theAttributequantificationconstraintPackage = (AttributequantificationconstraintPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(AttributequantificationconstraintPackage.eNS_URI) instanceof AttributequantificationconstraintPackageImpl ? EPackage.Registry.INSTANCE
-				.getEPackage(AttributequantificationconstraintPackage.eNS_URI)
-				: AttributequantificationconstraintPackage.eINSTANCE);
+				.getEPackage(AttributequantificationconstraintPackage.eNS_URI) : AttributequantificationconstraintPackage.eINSTANCE);
 		TemporalconstraintPackageImpl theTemporalconstraintPackage = (TemporalconstraintPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(TemporalconstraintPackage.eNS_URI) instanceof TemporalconstraintPackageImpl ? EPackage.Registry.INSTANCE
 				.getEPackage(TemporalconstraintPackage.eNS_URI) : TemporalconstraintPackage.eINSTANCE);
 		ComputationconstraintPackageImpl theComputationconstraintPackage = (ComputationconstraintPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(ComputationconstraintPackage.eNS_URI) instanceof ComputationconstraintPackageImpl ? EPackage.Registry.INSTANCE
-				.getEPackage(ComputationconstraintPackage.eNS_URI)
-				: ComputationconstraintPackage.eINSTANCE);
+				.getEPackage(ComputationconstraintPackage.eNS_URI) : ComputationconstraintPackage.eINSTANCE);
 		GenericconstraintsPackageImpl theGenericconstraintsPackage = (GenericconstraintsPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(GenericconstraintsPackage.eNS_URI) instanceof GenericconstraintsPackageImpl ? EPackage.Registry.INSTANCE
 				.getEPackage(GenericconstraintsPackage.eNS_URI) : GenericconstraintsPackage.eINSTANCE);
 
@@ -1579,9 +1574,8 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	 * @generated
 	 */
 	public void createPackageContents() {
-		if (isCreated) {
+		if (isCreated)
 			return;
-		}
 		isCreated = true;
 
 		// Create classes and their features
@@ -1739,9 +1733,8 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	 * @generated
 	 */
 	public void initializePackageContents() {
-		if (isInitialized) {
+		if (isInitialized)
 			return;
-		}
 		isInitialized = true;
 
 		// Initialize package
@@ -1802,189 +1795,217 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 		behaviorConstraintPrototype_errorModelTargetInstanceRefEClass.getESuperTypes().add(this.getInstanceRef());
 
 		// Initialize classes, features, and operations; add parameters
-		initEClass(instanceRefEClass, InstanceRef.class, "InstanceRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(instanceRefEClass, InstanceRef.class, "InstanceRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 
-		initEClass(targetInstanceRefEClass, TargetInstanceRef.class, "TargetInstanceRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getTargetInstanceRef_AllocationTarget(), theHardwaremodelingPackage.getAllocationTarget(), null, "allocationTarget", null, 1, 1, TargetInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getTargetInstanceRef_AllocationTarget_context(), theHardwaremodelingPackage.getAllocationTarget(), null, "allocationTarget_context", null, 0, -1, TargetInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
-				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getTargetInstanceRef_IntAttribute(), theTypesPackage.getInteger(), "intAttribute", null, 1, 1, TargetInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(targetInstanceRefEClass, TargetInstanceRef.class, "TargetInstanceRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(getTargetInstanceRef_AllocationTarget(), theHardwaremodelingPackage.getAllocationTarget(), null,
+				"allocationTarget", null, 1, 1, TargetInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getTargetInstanceRef_AllocationTarget_context(), theHardwaremodelingPackage.getAllocationTarget(), null,
+				"allocationTarget_context", null, 0, -1, TargetInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEAttribute(getTargetInstanceRef_IntAttribute(), theTypesPackage.getInteger(), "intAttribute", null, 1, 1, TargetInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 
-		initEClass(functionConnectorPortInstanceRefEClass, FunctionConnectorPortInstanceRef.class, "FunctionConnectorPortInstanceRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getFunctionConnectorPortInstanceRef_FunctionPort(), theFunctionmodelingPackage.getFunctionPort(), null, "functionPort", null, 1, 1, FunctionConnectorPortInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
-				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getFunctionConnectorPortInstanceRef_FunctionPrototype(), theFunctionmodelingPackage.getFunctionPrototype(), null, "functionPrototype", null, 1, 1, FunctionConnectorPortInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
-				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(functionConnectorPortInstanceRefEClass, FunctionConnectorPortInstanceRef.class, "FunctionConnectorPortInstanceRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(getFunctionConnectorPortInstanceRef_FunctionPort(), theFunctionmodelingPackage.getFunctionPort(), null,
+				"functionPort", null, 1, 1, FunctionConnectorPortInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getFunctionConnectorPortInstanceRef_FunctionPrototype(), theFunctionmodelingPackage.getFunctionPrototype(), null,
+				"functionPrototype", null, 1, 1, FunctionConnectorPortInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 
-		initEClass(hardwareConnectorInstanceRefEClass, HardwareConnectorInstanceRef.class, "HardwareConnectorInstanceRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getHardwareConnectorInstanceRef_HardwarePin(), theHardwaremodelingPackage.getHardwarePin(), null, "hardwarePin", null, 1, 1, HardwareConnectorInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
-				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getHardwareConnectorInstanceRef_HardwareComponentPrototype(), theHardwaremodelingPackage.getHardwareComponentPrototype(), null, "hardwareComponentPrototype", null, 1, 1, HardwareConnectorInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE,
-				IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(hardwareConnectorInstanceRefEClass, HardwareConnectorInstanceRef.class, "HardwareConnectorInstanceRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(getHardwareConnectorInstanceRef_HardwarePin(), theHardwaremodelingPackage.getHardwarePin(), null,
+				"hardwarePin", null, 1, 1, HardwareConnectorInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getHardwareConnectorInstanceRef_HardwareComponentPrototype(), theHardwaremodelingPackage.getHardwareComponentPrototype(), null,
+				"hardwareComponentPrototype", null, 1, 1, HardwareConnectorInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 
-		initEClass(hardwarePortConnectorInstanceRefEClass, HardwarePortConnectorInstanceRef.class, "HardwarePortConnectorInstanceRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getHardwarePortConnectorInstanceRef_HardwarePort(), theHardwaremodelingPackage.getHardwarePort(), null, "hardwarePort", null, 1, 1, HardwarePortConnectorInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
-				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getHardwarePortConnectorInstanceRef_HardwareComponentPrototype(), theHardwaremodelingPackage.getHardwareComponentPrototype(), null, "hardwareComponentPrototype", null, 1, 1, HardwarePortConnectorInstanceRef.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(hardwarePortConnectorInstanceRefEClass, HardwarePortConnectorInstanceRef.class, "HardwarePortConnectorInstanceRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(getHardwarePortConnectorInstanceRef_HardwarePort(), theHardwaremodelingPackage.getHardwarePort(), null,
+				"hardwarePort", null, 1, 1, HardwarePortConnectorInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getHardwarePortConnectorInstanceRef_HardwareComponentPrototype(), theHardwaremodelingPackage.getHardwareComponentPrototype(), null,
+				"hardwareComponentPrototype", null, 1, 1, HardwarePortConnectorInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 
-		initEClass(allocatedElementInstanceRefEClass, AllocatedElementInstanceRef.class, "AllocatedElementInstanceRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAllocatedElementInstanceRef_AllocateableElement(), theFunctionmodelingPackage.getAllocateableElement(), null, "allocateableElement", null, 1, 1, AllocatedElementInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
-				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getAllocatedElementInstanceRef_AllocateableElement_context(), theFunctionmodelingPackage.getAllocateableElement(), null, "allocateableElement_context", null, 0, -1, AllocatedElementInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE,
-				IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(allocatedElementInstanceRefEClass, AllocatedElementInstanceRef.class, "AllocatedElementInstanceRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(getAllocatedElementInstanceRef_AllocateableElement(), theFunctionmodelingPackage.getAllocateableElement(), null,
+				"allocateableElement", null, 1, 1, AllocatedElementInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getAllocatedElementInstanceRef_AllocateableElement_context(), theFunctionmodelingPackage.getAllocateableElement(), null,
+				"allocateableElement_context", null, 0, -1, AllocatedElementInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 
-		initEClass(clampConnectorInstanceRefEClass, ClampConnectorInstanceRef.class, "ClampConnectorInstanceRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getClampConnectorInstanceRef_FunctionPort(), theFunctionmodelingPackage.getFunctionPort(), null, "functionPort", null, 1, 1, ClampConnectorInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getClampConnectorInstanceRef_FunctionPrototype(), theFunctionmodelingPackage.getFunctionPrototype(), null, "functionPrototype", null, 0, -1, ClampConnectorInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
-				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(clampConnectorInstanceRefEClass, ClampConnectorInstanceRef.class, "ClampConnectorInstanceRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(getClampConnectorInstanceRef_FunctionPort(), theFunctionmodelingPackage.getFunctionPort(), null,
+				"functionPort", null, 1, 1, ClampConnectorInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getClampConnectorInstanceRef_FunctionPrototype(), theFunctionmodelingPackage.getFunctionPrototype(), null,
+				"functionPrototype", null, 0, -1, ClampConnectorInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 
-		initEClass(refineInstanceRefEClass, RefineInstanceRef.class, "RefineInstanceRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getRefineInstanceRef_Identifiable_target(), theUMLPackage.getNamedElement(), null, "identifiable_target", null, 1, 1, RefineInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getRefineInstanceRef_Identifiable_context(), theUMLPackage.getNamedElement(), null, "identifiable_context", null, 0, -1, RefineInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(refineInstanceRefEClass, RefineInstanceRef.class, "RefineInstanceRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(getRefineInstanceRef_Identifiable_target(), theUMLPackage.getNamedElement(), null,
+				"identifiable_target", null, 1, 1, RefineInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getRefineInstanceRef_Identifiable_context(), theUMLPackage.getNamedElement(), null,
+				"identifiable_context", null, 0, -1, RefineInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 
-		initEClass(satisfyInstanceRefEClass, SatisfyInstanceRef.class, "SatisfyInstanceRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getSatisfyInstanceRef_Identifiable_target(), theUMLPackage.getNamedElement(), null, "identifiable_target", null, 1, 1, SatisfyInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getSatisfyInstanceRef_Identifiable_context(), theUMLPackage.getNamedElement(), null, "identifiable_context", null, 0, -1, SatisfyInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(satisfyInstanceRefEClass, SatisfyInstanceRef.class, "SatisfyInstanceRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(getSatisfyInstanceRef_Identifiable_target(), theUMLPackage.getNamedElement(), null,
+				"identifiable_target", null, 1, 1, SatisfyInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getSatisfyInstanceRef_Identifiable_context(), theUMLPackage.getNamedElement(), null,
+				"identifiable_context", null, 0, -1, SatisfyInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 
-		initEClass(vvCaseInstanceRefEClass, VVCaseInstanceRef.class, "VVCaseInstanceRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getVVCaseInstanceRef_Identifiable_target(), theUMLPackage.getNamedElement(), null, "identifiable_target", null, 1, 1, VVCaseInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getVVCaseInstanceRef_Identifiable_context(), theUMLPackage.getNamedElement(), null, "identifiable_context", null, 0, -1, VVCaseInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(vvCaseInstanceRefEClass, VVCaseInstanceRef.class, "VVCaseInstanceRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(getVVCaseInstanceRef_Identifiable_target(), theUMLPackage.getNamedElement(), null,
+				"identifiable_target", null, 1, 1, VVCaseInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getVVCaseInstanceRef_Identifiable_context(), theUMLPackage.getNamedElement(), null,
+				"identifiable_context", null, 0, -1, VVCaseInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 
-		initEClass(vvTargetInstanceRefEClass, VVTargetInstanceRef.class, "VVTargetInstanceRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getVVTargetInstanceRef_Identifiable_target(), theUMLPackage.getNamedElement(), null, "identifiable_target", null, 1, 1, VVTargetInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getVVTargetInstanceRef_Identifiable_context(), theUMLPackage.getNamedElement(), null, "identifiable_context", null, 0, -1, VVTargetInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(vvTargetInstanceRefEClass, VVTargetInstanceRef.class, "VVTargetInstanceRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(getVVTargetInstanceRef_Identifiable_target(), theUMLPackage.getNamedElement(), null,
+				"identifiable_target", null, 1, 1, VVTargetInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getVVTargetInstanceRef_Identifiable_context(), theUMLPackage.getNamedElement(), null,
+				"identifiable_context", null, 0, -1, VVTargetInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 
-		initEClass(realization_realizedInstanceRefEClass, Realization_realizedInstanceRef.class, "Realization_realizedInstanceRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getRealization_realizedInstanceRef_Identifiable_target(), theUMLPackage.getNamedElement(), null, "identifiable_target", null, 1, 1, Realization_realizedInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
-				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getRealization_realizedInstanceRef_Identifiable_context(), theUMLPackage.getNamedElement(), null, "identifiable_context", null, 0, -1, Realization_realizedInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
-				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(realization_realizedInstanceRefEClass, Realization_realizedInstanceRef.class, "Realization_realizedInstanceRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(getRealization_realizedInstanceRef_Identifiable_target(), theUMLPackage.getNamedElement(), null,
+				"identifiable_target", null, 1, 1, Realization_realizedInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getRealization_realizedInstanceRef_Identifiable_context(), theUMLPackage.getNamedElement(), null,
+				"identifiable_context", null, 0, -1, Realization_realizedInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 
-		initEClass(realization_realizedByInstanceRefEClass, Realization_realizedByInstanceRef.class, "Realization_realizedByInstanceRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getRealization_realizedByInstanceRef_Identifiable_target(), theUMLPackage.getNamedElement(), null, "identifiable_target", null, 1, 1, Realization_realizedByInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
-				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getRealization_realizedByInstanceRef_Identifiable_context(), theUMLPackage.getNamedElement(), null, "identifiable_context", null, 0, -1, Realization_realizedByInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
-				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(realization_realizedByInstanceRefEClass, Realization_realizedByInstanceRef.class, "Realization_realizedByInstanceRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(getRealization_realizedByInstanceRef_Identifiable_target(), theUMLPackage.getNamedElement(), null,
+				"identifiable_target", null, 1, 1, Realization_realizedByInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getRealization_realizedByInstanceRef_Identifiable_context(), theUMLPackage.getNamedElement(), null,
+				"identifiable_context", null, 0, -1, Realization_realizedByInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 
-		initEClass(eventFunctionInstanceRefEClass, EventFunctionInstanceRef.class, "EventFunctionInstanceRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getEventFunctionInstanceRef_FunctionPrototype_target(), theFunctionmodelingPackage.getFunctionPrototype(), null, "functionPrototype_target", null, 1, 1, EventFunctionInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
-				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getEventFunctionInstanceRef_FunctionPrototype_context(), theFunctionmodelingPackage.getFunctionPrototype(), null, "functionPrototype_context", null, 0, -1, EventFunctionInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
-				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(eventFunctionInstanceRefEClass, EventFunctionInstanceRef.class, "EventFunctionInstanceRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(getEventFunctionInstanceRef_FunctionPrototype_target(), theFunctionmodelingPackage.getFunctionPrototype(), null,
+				"functionPrototype_target", null, 1, 1, EventFunctionInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getEventFunctionInstanceRef_FunctionPrototype_context(), theFunctionmodelingPackage.getFunctionPrototype(), null,
+				"functionPrototype_context", null, 0, -1, EventFunctionInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 
-		initEClass(eventFunctionClientServerPortInstanceRefEClass, EventFunctionClientServerPortInstanceRef.class, "EventFunctionClientServerPortInstanceRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getEventFunctionClientServerPortInstanceRef_FunctionClientServerPort(), theFunctionmodelingPackage.getFunctionClientServerPort(), null, "functionClientServerPort", null, 1, 1, EventFunctionClientServerPortInstanceRef.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getEventFunctionClientServerPortInstanceRef_FunctionPrototype(), theFunctionmodelingPackage.getFunctionPrototype(), null, "functionPrototype", null, 0, -1, EventFunctionClientServerPortInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE,
-				IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(eventFunctionClientServerPortInstanceRefEClass, EventFunctionClientServerPortInstanceRef.class, "EventFunctionClientServerPortInstanceRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(getEventFunctionClientServerPortInstanceRef_FunctionClientServerPort(), theFunctionmodelingPackage.getFunctionClientServerPort(), null,
+				"functionClientServerPort", null, 1, 1, EventFunctionClientServerPortInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getEventFunctionClientServerPortInstanceRef_FunctionPrototype(), theFunctionmodelingPackage.getFunctionPrototype(), null,
+				"functionPrototype", null, 0, -1, EventFunctionClientServerPortInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 
-		initEClass(eventFunctionFlowPortInstanceRefEClass, EventFunctionFlowPortInstanceRef.class, "EventFunctionFlowPortInstanceRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getEventFunctionFlowPortInstanceRef_FunctionFlowPort(), theFunctionmodelingPackage.getFunctionFlowPort(), null, "functionFlowPort", null, 1, 1, EventFunctionFlowPortInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
-				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getEventFunctionFlowPortInstanceRef_FunctionPrototype(), theFunctionmodelingPackage.getFunctionPrototype(), null, "functionPrototype", null, 0, -1, EventFunctionFlowPortInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
-				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(eventFunctionFlowPortInstanceRefEClass, EventFunctionFlowPortInstanceRef.class, "EventFunctionFlowPortInstanceRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(getEventFunctionFlowPortInstanceRef_FunctionFlowPort(), theFunctionmodelingPackage.getFunctionFlowPort(), null,
+				"functionFlowPort", null, 1, 1, EventFunctionFlowPortInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getEventFunctionFlowPortInstanceRef_FunctionPrototype(), theFunctionmodelingPackage.getFunctionPrototype(), null,
+				"functionPrototype", null, 0, -1, EventFunctionFlowPortInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 
-		initEClass(precedenceConstraint_precedingInstanceRefEClass, PrecedenceConstraint_precedingInstanceRef.class, "PrecedenceConstraint_precedingInstanceRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getPrecedenceConstraint_precedingInstanceRef_FunctionPrototype_target(), theFunctionmodelingPackage.getFunctionPrototype(), null, "functionPrototype_target", null, 1, 1, PrecedenceConstraint_precedingInstanceRef.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getPrecedenceConstraint_precedingInstanceRef_FunctionPrototype_context(), theFunctionmodelingPackage.getFunctionPrototype(), null, "functionPrototype_context", null, 0, -1, PrecedenceConstraint_precedingInstanceRef.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(precedenceConstraint_precedingInstanceRefEClass, PrecedenceConstraint_precedingInstanceRef.class, "PrecedenceConstraint_precedingInstanceRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(getPrecedenceConstraint_precedingInstanceRef_FunctionPrototype_target(), theFunctionmodelingPackage.getFunctionPrototype(), null,
+				"functionPrototype_target", null, 1, 1, PrecedenceConstraint_precedingInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getPrecedenceConstraint_precedingInstanceRef_FunctionPrototype_context(), theFunctionmodelingPackage.getFunctionPrototype(), null,
+				"functionPrototype_context", null, 0, -1, PrecedenceConstraint_precedingInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 
-		initEClass(precedenceConstraint_successiveInstanceRefEClass, PrecedenceConstraint_successiveInstanceRef.class, "PrecedenceConstraint_successiveInstanceRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getPrecedenceConstraint_successiveInstanceRef_FunctionPrototype_target(), theFunctionmodelingPackage.getFunctionPrototype(), null, "functionPrototype_target", null, 1, 1, PrecedenceConstraint_successiveInstanceRef.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getPrecedenceConstraint_successiveInstanceRef_FunctionPrototype_context(), theFunctionmodelingPackage.getFunctionPrototype(), null, "functionPrototype_context", null, 0, -1, PrecedenceConstraint_successiveInstanceRef.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(precedenceConstraint_successiveInstanceRefEClass, PrecedenceConstraint_successiveInstanceRef.class, "PrecedenceConstraint_successiveInstanceRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(getPrecedenceConstraint_successiveInstanceRef_FunctionPrototype_target(), theFunctionmodelingPackage.getFunctionPrototype(), null,
+				"functionPrototype_target", null, 1, 1, PrecedenceConstraint_successiveInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getPrecedenceConstraint_successiveInstanceRef_FunctionPrototype_context(), theFunctionmodelingPackage.getFunctionPrototype(), null,
+				"functionPrototype_context", null, 0, -1, PrecedenceConstraint_successiveInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 
-		initEClass(errorModelPrototype_functionTargetInstanceRefEClass, ErrorModelPrototype_functionTargetInstanceRef.class, "ErrorModelPrototype_functionTargetInstanceRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getErrorModelPrototype_functionTargetInstanceRef_FunctionPrototype(), theFunctionmodelingPackage.getFunctionPrototype(), null, "functionPrototype", null, 1, 1, ErrorModelPrototype_functionTargetInstanceRef.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getErrorModelPrototype_functionTargetInstanceRef_FunctionPrototype_context(), theFunctionmodelingPackage.getFunctionPrototype(), null, "functionPrototype_context", null, 0, -1, ErrorModelPrototype_functionTargetInstanceRef.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(errorModelPrototype_functionTargetInstanceRefEClass, ErrorModelPrototype_functionTargetInstanceRef.class, "ErrorModelPrototype_functionTargetInstanceRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(getErrorModelPrototype_functionTargetInstanceRef_FunctionPrototype(), theFunctionmodelingPackage.getFunctionPrototype(), null,
+				"functionPrototype", null, 1, 1, ErrorModelPrototype_functionTargetInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getErrorModelPrototype_functionTargetInstanceRef_FunctionPrototype_context(), theFunctionmodelingPackage.getFunctionPrototype(), null,
+				"functionPrototype_context", null, 0, -1, ErrorModelPrototype_functionTargetInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 
-		initEClass(errorModelPrototype_hwTargetInstanceRefEClass, ErrorModelPrototype_hwTargetInstanceRef.class, "ErrorModelPrototype_hwTargetInstanceRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getErrorModelPrototype_hwTargetInstanceRef_HardwareComponentProtype(), theHardwaremodelingPackage.getHardwareComponentPrototype(), null, "hardwareComponentProtype", null, 1, 1, ErrorModelPrototype_hwTargetInstanceRef.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getErrorModelPrototype_hwTargetInstanceRef_HardwareComponentProtype_context(), theHardwaremodelingPackage.getHardwareComponentPrototype(), null, "hardwareComponentProtype_context", null, 0, -1,
-				ErrorModelPrototype_hwTargetInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(errorModelPrototype_hwTargetInstanceRefEClass, ErrorModelPrototype_hwTargetInstanceRef.class, "ErrorModelPrototype_hwTargetInstanceRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(getErrorModelPrototype_hwTargetInstanceRef_HardwareComponentProtype(), theHardwaremodelingPackage.getHardwareComponentPrototype(), null,
+				"hardwareComponentProtype", null, 1, 1, ErrorModelPrototype_hwTargetInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getErrorModelPrototype_hwTargetInstanceRef_HardwareComponentProtype_context(), theHardwaremodelingPackage.getHardwareComponentPrototype(), null,
+				"hardwareComponentProtype_context", null, 0, -1, ErrorModelPrototype_hwTargetInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 
-		initEClass(faultFailurePort_hwTargetInstanceRefEClass, FaultFailurePort_hwTargetInstanceRef.class, "FaultFailurePort_hwTargetInstanceRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getFaultFailurePort_hwTargetInstanceRef_HardwarePort(), theHardwaremodelingPackage.getHardwarePin(), null, "hardwarePort", null, 1, 1, FaultFailurePort_hwTargetInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
-				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getFaultFailurePort_hwTargetInstanceRef_HardwareComponentProtype(), theHardwaremodelingPackage.getHardwareComponentPrototype(), null, "hardwareComponentProtype", null, 0, -1, FaultFailurePort_hwTargetInstanceRef.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(faultFailurePort_hwTargetInstanceRefEClass, FaultFailurePort_hwTargetInstanceRef.class, "FaultFailurePort_hwTargetInstanceRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(getFaultFailurePort_hwTargetInstanceRef_HardwarePort(), theHardwaremodelingPackage.getHardwarePin(), null,
+				"hardwarePort", null, 1, 1, FaultFailurePort_hwTargetInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getFaultFailurePort_hwTargetInstanceRef_HardwareComponentProtype(), theHardwaremodelingPackage.getHardwareComponentPrototype(), null,
+				"hardwareComponentProtype", null, 0, -1, FaultFailurePort_hwTargetInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 
-		initEClass(faultFailurePort_functionTargetInstanceRefEClass, FaultFailurePort_functionTargetInstanceRef.class, "FaultFailurePort_functionTargetInstanceRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getFaultFailurePort_functionTargetInstanceRef_FunctionPort(), theFunctionmodelingPackage.getFunctionPort(), null, "functionPort", null, 1, 1, FaultFailurePort_functionTargetInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
-				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getFaultFailurePort_functionTargetInstanceRef_FunctionPrototype(), theFunctionmodelingPackage.getFunctionPrototype(), null, "functionPrototype", null, 0, -1, FaultFailurePort_functionTargetInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE,
-				IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(faultFailurePort_functionTargetInstanceRefEClass, FaultFailurePort_functionTargetInstanceRef.class, "FaultFailurePort_functionTargetInstanceRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(getFaultFailurePort_functionTargetInstanceRef_FunctionPort(), theFunctionmodelingPackage.getFunctionPort(), null,
+				"functionPort", null, 1, 1, FaultFailurePort_functionTargetInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getFaultFailurePort_functionTargetInstanceRef_FunctionPrototype(), theFunctionmodelingPackage.getFunctionPrototype(), null,
+				"functionPrototype", null, 0, -1, FaultFailurePort_functionTargetInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 
-		initEClass(faultFailurePropagationLink_fromPortInstanceRefEClass, FaultFailurePropagationLink_fromPortInstanceRef.class, "FaultFailurePropagationLink_fromPortInstanceRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getFaultFailurePropagationLink_fromPortInstanceRef_FaultFairelurePort(), theErrormodelPackage.getFaultFailurePort(), null, "faultFairelurePort", null, 1, 1, FaultFailurePropagationLink_fromPortInstanceRef.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getFaultFailurePropagationLink_fromPortInstanceRef_ErrorModelPrototype(), theErrormodelPackage.getErrorModelPrototype(), null, "errorModelPrototype", null, 0, -1, FaultFailurePropagationLink_fromPortInstanceRef.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(faultFailurePropagationLink_fromPortInstanceRefEClass, FaultFailurePropagationLink_fromPortInstanceRef.class, "FaultFailurePropagationLink_fromPortInstanceRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(getFaultFailurePropagationLink_fromPortInstanceRef_FaultFairelurePort(), theErrormodelPackage.getFaultFailurePort(), null,
+				"faultFairelurePort", null, 1, 1, FaultFailurePropagationLink_fromPortInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getFaultFailurePropagationLink_fromPortInstanceRef_ErrorModelPrototype(), theErrormodelPackage.getErrorModelPrototype(), null,
+				"errorModelPrototype", null, 0, -1, FaultFailurePropagationLink_fromPortInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 
-		initEClass(faultFailure_anomalyInstanceRefEClass, FaultFailure_anomalyInstanceRef.class, "FaultFailure_anomalyInstanceRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getFaultFailure_anomalyInstanceRef_Anomaly(), theErrormodelPackage.getAnomaly(), null, "anomaly", null, 1, 1, FaultFailure_anomalyInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getFaultFailure_anomalyInstanceRef_ErrorModelPrototype(), theErrormodelPackage.getErrorModelPrototype(), null, "errorModelPrototype", null, 0, -1, FaultFailure_anomalyInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
-				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(faultFailure_anomalyInstanceRefEClass, FaultFailure_anomalyInstanceRef.class, "FaultFailure_anomalyInstanceRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(getFaultFailure_anomalyInstanceRef_Anomaly(), theErrormodelPackage.getAnomaly(), null,
+				"anomaly", null, 1, 1, FaultFailure_anomalyInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getFaultFailure_anomalyInstanceRef_ErrorModelPrototype(), theErrormodelPackage.getErrorModelPrototype(), null,
+				"errorModelPrototype", null, 0, -1, FaultFailure_anomalyInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 
-		initEClass(faultFailurePropagationLink_toPortInstanceRefEClass, FaultFailurePropagationLink_toPortInstanceRef.class, "FaultFailurePropagationLink_toPortInstanceRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getFaultFailurePropagationLink_toPortInstanceRef_FaultFairelurePort(), theErrormodelPackage.getFaultFailurePort(), null, "faultFairelurePort", null, 1, 1, FaultFailurePropagationLink_toPortInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE,
-				IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getFaultFailurePropagationLink_toPortInstanceRef_ErrorModelPrototype(), theErrormodelPackage.getErrorModelPrototype(), null, "errorModelPrototype", null, 0, -1, FaultFailurePropagationLink_toPortInstanceRef.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(faultFailurePropagationLink_toPortInstanceRefEClass, FaultFailurePropagationLink_toPortInstanceRef.class, "FaultFailurePropagationLink_toPortInstanceRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(getFaultFailurePropagationLink_toPortInstanceRef_FaultFairelurePort(), theErrormodelPackage.getFaultFailurePort(), null,
+				"faultFairelurePort", null, 1, 1, FaultFailurePropagationLink_toPortInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getFaultFailurePropagationLink_toPortInstanceRef_ErrorModelPrototype(), theErrormodelPackage.getErrorModelPrototype(), null,
+				"errorModelPrototype", null, 0, -1, FaultFailurePropagationLink_toPortInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 
-		initEClass(behaviorConstraintInternalBinding_throughFunctionConnectorInstanceRefEClass, BehaviorConstraintInternalBinding_throughFunctionConnectorInstanceRef.class, "BehaviorConstraintInternalBinding_throughFunctionConnectorInstanceRef", !IS_ABSTRACT,
-				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getBehaviorConstraintInternalBinding_throughFunctionConnectorInstanceRef_FunctionConnector(), theFunctionmodelingPackage.getFunctionConnector(), null, "functionConnector", null, 1, 1,
-				BehaviorConstraintInternalBinding_throughFunctionConnectorInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getBehaviorConstraintInternalBinding_throughFunctionConnectorInstanceRef_FunctionPrototype(), theFunctionmodelingPackage.getFunctionPrototype(), null, "functionPrototype", null, 0, -1,
-				BehaviorConstraintInternalBinding_throughFunctionConnectorInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(behaviorConstraintInternalBinding_throughFunctionConnectorInstanceRefEClass, BehaviorConstraintInternalBinding_throughFunctionConnectorInstanceRef.class,
+				"BehaviorConstraintInternalBinding_throughFunctionConnectorInstanceRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(getBehaviorConstraintInternalBinding_throughFunctionConnectorInstanceRef_FunctionConnector(), theFunctionmodelingPackage.getFunctionConnector(), null,
+				"functionConnector", null, 1, 1, BehaviorConstraintInternalBinding_throughFunctionConnectorInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getBehaviorConstraintInternalBinding_throughFunctionConnectorInstanceRef_FunctionPrototype(), theFunctionmodelingPackage.getFunctionPrototype(), null,
+				"functionPrototype", null, 0, -1, BehaviorConstraintInternalBinding_throughFunctionConnectorInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 
-		initEClass(behaviorConstraintInternalBinding_throughHardwareConnectorInstanceRefEClass, BehaviorConstraintInternalBinding_throughHardwareConnectorInstanceRef.class, "BehaviorConstraintInternalBinding_throughHardwareConnectorInstanceRef", !IS_ABSTRACT,
-				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getBehaviorConstraintInternalBinding_throughHardwareConnectorInstanceRef_HardwareConnector(), theHardwaremodelingPackage.getHardwareConnector(), null, "hardwareConnector", null, 1, 1,
-				BehaviorConstraintInternalBinding_throughHardwareConnectorInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getBehaviorConstraintInternalBinding_throughHardwareConnectorInstanceRef_HardwareComponentPrototype(), theHardwaremodelingPackage.getHardwareComponentPrototype(), null, "hardwareComponentPrototype", null, 0, -1,
-				BehaviorConstraintInternalBinding_throughHardwareConnectorInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(behaviorConstraintInternalBinding_throughHardwareConnectorInstanceRefEClass, BehaviorConstraintInternalBinding_throughHardwareConnectorInstanceRef.class,
+				"BehaviorConstraintInternalBinding_throughHardwareConnectorInstanceRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(getBehaviorConstraintInternalBinding_throughHardwareConnectorInstanceRef_HardwareConnector(), theHardwaremodelingPackage.getHardwareConnector(), null,
+				"hardwareConnector", null, 1, 1, BehaviorConstraintInternalBinding_throughHardwareConnectorInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(
+				getBehaviorConstraintInternalBinding_throughHardwareConnectorInstanceRef_HardwareComponentPrototype(),
+				theHardwaremodelingPackage.getHardwareComponentPrototype(),
+				null,
+				"hardwareComponentPrototype", null, 0, -1, BehaviorConstraintInternalBinding_throughHardwareConnectorInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 
-		initEClass(behaviorConstraintPrototype_functionTargetInstanceRefEClass, BehaviorConstraintPrototype_functionTargetInstanceRef.class, "BehaviorConstraintPrototype_functionTargetInstanceRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getBehaviorConstraintPrototype_functionTargetInstanceRef_FunctionPrototype_target(), theFunctionmodelingPackage.getFunctionPrototype(), null, "functionPrototype_target", null, 1, 1,
-				BehaviorConstraintPrototype_functionTargetInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getBehaviorConstraintPrototype_functionTargetInstanceRef_FunctionPrototype_context(), theFunctionmodelingPackage.getFunctionPrototype(), null, "functionPrototype_context", null, 0, -1,
-				BehaviorConstraintPrototype_functionTargetInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(behaviorConstraintPrototype_functionTargetInstanceRefEClass, BehaviorConstraintPrototype_functionTargetInstanceRef.class, "BehaviorConstraintPrototype_functionTargetInstanceRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(getBehaviorConstraintPrototype_functionTargetInstanceRef_FunctionPrototype_target(), theFunctionmodelingPackage.getFunctionPrototype(), null,
+				"functionPrototype_target", null, 1, 1, BehaviorConstraintPrototype_functionTargetInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getBehaviorConstraintPrototype_functionTargetInstanceRef_FunctionPrototype_context(), theFunctionmodelingPackage.getFunctionPrototype(), null,
+				"functionPrototype_context", null, 0, -1, BehaviorConstraintPrototype_functionTargetInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 
-		initEClass(behaviorConstraintPrototype_hardwareComponentTargetInstanceRefEClass, BehaviorConstraintPrototype_hardwareComponentTargetInstanceRef.class, "BehaviorConstraintPrototype_hardwareComponentTargetInstanceRef", !IS_ABSTRACT, !IS_INTERFACE,
-				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getBehaviorConstraintPrototype_hardwareComponentTargetInstanceRef_HardwareComponentProtype_target(), theHardwaremodelingPackage.getHardwareComponentPrototype(), null, "hardwareComponentProtype_target", null, 1, 1,
-				BehaviorConstraintPrototype_hardwareComponentTargetInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getBehaviorConstraintPrototype_hardwareComponentTargetInstanceRef_HardwareComponentPrototype_context(), theHardwaremodelingPackage.getHardwareComponentPrototype(), null, "hardwareComponentPrototype_context", null, 0, -1,
-				BehaviorConstraintPrototype_hardwareComponentTargetInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(behaviorConstraintPrototype_hardwareComponentTargetInstanceRefEClass, BehaviorConstraintPrototype_hardwareComponentTargetInstanceRef.class,
+				"BehaviorConstraintPrototype_hardwareComponentTargetInstanceRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(
+				getBehaviorConstraintPrototype_hardwareComponentTargetInstanceRef_HardwareComponentProtype_target(),
+				theHardwaremodelingPackage.getHardwareComponentPrototype(),
+				null,
+				"hardwareComponentProtype_target", null, 1, 1, BehaviorConstraintPrototype_hardwareComponentTargetInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(
+				getBehaviorConstraintPrototype_hardwareComponentTargetInstanceRef_HardwareComponentPrototype_context(),
+				theHardwaremodelingPackage.getHardwareComponentPrototype(),
+				null,
+				"hardwareComponentPrototype_context", null, 0, -1, BehaviorConstraintPrototype_hardwareComponentTargetInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 
-		initEClass(behaviorConstraintPrototype_errorModelTargetInstanceRefEClass, BehaviorConstraintPrototype_errorModelTargetInstanceRef.class, "BehaviorConstraintPrototype_errorModelTargetInstanceRef", !IS_ABSTRACT, !IS_INTERFACE,
-				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getBehaviorConstraintPrototype_errorModelTargetInstanceRef_ErrorModelPrototype_target(), theErrormodelPackage.getErrorModelPrototype(), null, "errorModelPrototype_target", null, 1, 1,
-				BehaviorConstraintPrototype_errorModelTargetInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getBehaviorConstraintPrototype_errorModelTargetInstanceRef_ErrorModelPrototype_context(), theErrormodelPackage.getErrorModelPrototype(), null, "errorModelPrototype_context", null, 0, -1,
-				BehaviorConstraintPrototype_errorModelTargetInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(behaviorConstraintPrototype_errorModelTargetInstanceRefEClass, BehaviorConstraintPrototype_errorModelTargetInstanceRef.class,
+				"BehaviorConstraintPrototype_errorModelTargetInstanceRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(getBehaviorConstraintPrototype_errorModelTargetInstanceRef_ErrorModelPrototype_target(), theErrormodelPackage.getErrorModelPrototype(), null,
+				"errorModelPrototype_target", null, 1, 1, BehaviorConstraintPrototype_errorModelTargetInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getBehaviorConstraintPrototype_errorModelTargetInstanceRef_ErrorModelPrototype_context(), theErrormodelPackage.getErrorModelPrototype(), null,
+				"errorModelPrototype_context", null, 0, -1, BehaviorConstraintPrototype_errorModelTargetInstanceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 
 		// Initialize data types
-		initEDataType(dummyEDataType, String.class, "Dummy", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(dummyEDataType, String.class, "Dummy", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+
+		// Create annotations
+		// http://www.eclipse.org/uml2/2.0.0/UML
+		createUMLAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/uml2/2.0.0/UML</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	protected void createUMLAnnotations() {
+		String source = "http://www.eclipse.org/uml2/2.0.0/UML"; //$NON-NLS-1$
+		addAnnotation(this,
+				source,
+				new String[] { "originalName", "Infrastructure" //$NON-NLS-1$ //$NON-NLS-2$
+				});
 	}
 
 } // InfrastructurePackageImpl

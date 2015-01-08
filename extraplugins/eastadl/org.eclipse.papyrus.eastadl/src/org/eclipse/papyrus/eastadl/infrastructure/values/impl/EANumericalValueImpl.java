@@ -86,9 +86,8 @@ public class EANumericalValueImpl extends EAValueImpl implements EANumericalValu
 	public void setValue(Float newValue) {
 		Float oldValue = value;
 		value = newValue;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ValuesPackage.EA_NUMERICAL_VALUE__VALUE, oldValue, value));
-		}
 	}
 
 	/**
@@ -161,12 +160,11 @@ public class EANumericalValueImpl extends EAValueImpl implements EANumericalValu
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
+		if (eIsProxy())
 			return super.toString();
-		}
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (value: ");
+		result.append(" (value: "); //$NON-NLS-1$
 		result.append(value);
 		result.append(')');
 		return result.toString();

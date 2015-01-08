@@ -212,9 +212,8 @@ public class StateImpl extends EAElementImpl implements State {
 	public void setIsErrorState(boolean newIsErrorState) {
 		boolean oldIsErrorState = isErrorState;
 		isErrorState = newIsErrorState;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TemporalconstraintPackage.STATE__IS_ERROR_STATE, oldIsErrorState, isErrorState));
-		}
 	}
 
 	/**
@@ -238,9 +237,8 @@ public class StateImpl extends EAElementImpl implements State {
 	public void setIsHazard(boolean newIsHazard) {
 		boolean oldIsHazard = isHazard;
 		isHazard = newIsHazard;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TemporalconstraintPackage.STATE__IS_HAZARD, oldIsHazard, isHazard));
-		}
 	}
 
 	/**
@@ -264,9 +262,8 @@ public class StateImpl extends EAElementImpl implements State {
 	public void setIsInitState(boolean newIsInitState) {
 		boolean oldIsInitState = isInitState;
 		isInitState = newIsInitState;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TemporalconstraintPackage.STATE__IS_INIT_STATE, oldIsInitState, isInitState));
-		}
 	}
 
 	/**
@@ -290,9 +287,8 @@ public class StateImpl extends EAElementImpl implements State {
 	public void setIsMode(boolean newIsMode) {
 		boolean oldIsMode = isMode;
 		isMode = newIsMode;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TemporalconstraintPackage.STATE__IS_MODE, oldIsMode, isMode));
-		}
 	}
 
 	/**
@@ -496,18 +492,17 @@ public class StateImpl extends EAElementImpl implements State {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
+		if (eIsProxy())
 			return super.toString();
-		}
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (isErrorState: ");
+		result.append(" (isErrorState: "); //$NON-NLS-1$
 		result.append(isErrorState);
-		result.append(", isHazard: ");
+		result.append(", isHazard: "); //$NON-NLS-1$
 		result.append(isHazard);
-		result.append(", isInitState: ");
+		result.append(", isInitState: "); //$NON-NLS-1$
 		result.append(isInitState);
-		result.append(", isMode: ");
+		result.append(", isMode: "); //$NON-NLS-1$
 		result.append(isMode);
 		result.append(')');
 		return result.toString();

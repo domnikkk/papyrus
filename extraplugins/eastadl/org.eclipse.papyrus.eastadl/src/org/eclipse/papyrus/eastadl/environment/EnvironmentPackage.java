@@ -38,6 +38,7 @@ import org.eclipse.papyrus.eastadl.infrastructure.elements.ElementsPackage;
  *
  * @see org.eclipse.papyrus.eastadl.environment.EnvironmentFactory
  * @model kind="package"
+ *        annotation="http://www.eclipse.org/uml2/2.0.0/UML originalName='Environment'"
  * @generated
  */
 public interface EnvironmentPackage extends EPackage {

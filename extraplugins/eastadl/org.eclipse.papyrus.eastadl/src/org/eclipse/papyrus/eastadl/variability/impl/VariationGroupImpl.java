@@ -132,9 +132,8 @@ public class VariationGroupImpl extends EAElementImpl implements VariationGroup 
 		case VariabilityPackage.VARIATION_GROUP__KIND:
 			return getKind();
 		case VariabilityPackage.VARIATION_GROUP__BASE_CLASS:
-			if (resolve) {
+			if (resolve)
 				return getBase_Class();
-			}
 			return basicGetBase_Class();
 		case VariabilityPackage.VARIATION_GROUP__VARIABLE_ELEMENT:
 			return getVariableElement();
@@ -264,9 +263,8 @@ public class VariationGroupImpl extends EAElementImpl implements VariationGroup 
 	public void setConstraint(String newConstraint) {
 		String oldConstraint = constraint;
 		constraint = newConstraint;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VariabilityPackage.VARIATION_GROUP__CONSTRAINT, oldConstraint, constraint));
-		}
 	}
 
 	/**
@@ -279,9 +277,8 @@ public class VariationGroupImpl extends EAElementImpl implements VariationGroup 
 	public void setKind(VariabilityDependencyKind newKind) {
 		VariabilityDependencyKind oldKind = kind;
 		kind = newKind == null ? KIND_EDEFAULT : newKind;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VariabilityPackage.VARIATION_GROUP__KIND, oldKind, kind));
-		}
 	}
 
 	/**
@@ -296,9 +293,8 @@ public class VariationGroupImpl extends EAElementImpl implements VariationGroup 
 			InternalEObject oldBase_Class = (InternalEObject) base_Class;
 			base_Class = (org.eclipse.uml2.uml.Class) eResolveProxy(oldBase_Class);
 			if (base_Class != oldBase_Class) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, VariabilityPackage.VARIATION_GROUP__BASE_CLASS, oldBase_Class, base_Class));
-				}
 			}
 		}
 		return base_Class;
@@ -324,9 +320,8 @@ public class VariationGroupImpl extends EAElementImpl implements VariationGroup 
 	public void setBase_Class(org.eclipse.uml2.uml.Class newBase_Class) {
 		org.eclipse.uml2.uml.Class oldBase_Class = base_Class;
 		base_Class = newBase_Class;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VariabilityPackage.VARIATION_GROUP__BASE_CLASS, oldBase_Class, base_Class));
-		}
 	}
 
 	/**
@@ -336,14 +331,13 @@ public class VariationGroupImpl extends EAElementImpl implements VariationGroup 
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
+		if (eIsProxy())
 			return super.toString();
-		}
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (constraint: ");
+		result.append(" (constraint: "); //$NON-NLS-1$
 		result.append(constraint);
-		result.append(", kind: ");
+		result.append(", kind: "); //$NON-NLS-1$
 		result.append(kind);
 		result.append(')');
 		return result.toString();

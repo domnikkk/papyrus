@@ -122,9 +122,8 @@ public class PatternConstraintImpl extends TimingConstraintImpl implements Patte
 			InternalEObject oldPeriod = (InternalEObject) period;
 			period = (TimingExpression) eResolveProxy(oldPeriod);
 			if (period != oldPeriod) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TimingconstraintsPackage.PATTERN_CONSTRAINT__PERIOD, oldPeriod, period));
-				}
 			}
 		}
 		return period;
@@ -150,9 +149,8 @@ public class PatternConstraintImpl extends TimingConstraintImpl implements Patte
 	public void setPeriod(TimingExpression newPeriod) {
 		TimingExpression oldPeriod = period;
 		period = newPeriod;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TimingconstraintsPackage.PATTERN_CONSTRAINT__PERIOD, oldPeriod, period));
-		}
 	}
 
 	/**
@@ -167,9 +165,8 @@ public class PatternConstraintImpl extends TimingConstraintImpl implements Patte
 			InternalEObject oldMinimum = (InternalEObject) minimum;
 			minimum = (TimingExpression) eResolveProxy(oldMinimum);
 			if (minimum != oldMinimum) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TimingconstraintsPackage.PATTERN_CONSTRAINT__MINIMUM, oldMinimum, minimum));
-				}
 			}
 		}
 		return minimum;
@@ -195,9 +192,8 @@ public class PatternConstraintImpl extends TimingConstraintImpl implements Patte
 	public void setMinimum(TimingExpression newMinimum) {
 		TimingExpression oldMinimum = minimum;
 		minimum = newMinimum;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TimingconstraintsPackage.PATTERN_CONSTRAINT__MINIMUM, oldMinimum, minimum));
-		}
 	}
 
 	/**
@@ -226,9 +222,8 @@ public class PatternConstraintImpl extends TimingConstraintImpl implements Patte
 			InternalEObject oldJitter = (InternalEObject) jitter;
 			jitter = (TimingExpression) eResolveProxy(oldJitter);
 			if (jitter != oldJitter) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TimingconstraintsPackage.PATTERN_CONSTRAINT__JITTER, oldJitter, jitter));
-				}
 			}
 		}
 		return jitter;
@@ -254,9 +249,8 @@ public class PatternConstraintImpl extends TimingConstraintImpl implements Patte
 	public void setJitter(TimingExpression newJitter) {
 		TimingExpression oldJitter = jitter;
 		jitter = newJitter;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TimingconstraintsPackage.PATTERN_CONSTRAINT__JITTER, oldJitter, jitter));
-		}
 	}
 
 	/**
@@ -271,9 +265,8 @@ public class PatternConstraintImpl extends TimingConstraintImpl implements Patte
 			InternalEObject oldEvent = (InternalEObject) event;
 			event = (Event) eResolveProxy(oldEvent);
 			if (event != oldEvent) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TimingconstraintsPackage.PATTERN_CONSTRAINT__EVENT, oldEvent, event));
-				}
 			}
 		}
 		return event;
@@ -299,9 +292,8 @@ public class PatternConstraintImpl extends TimingConstraintImpl implements Patte
 	public void setEvent(Event newEvent) {
 		Event oldEvent = event;
 		event = newEvent;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TimingconstraintsPackage.PATTERN_CONSTRAINT__EVENT, oldEvent, event));
-		}
 	}
 
 	/**
@@ -314,26 +306,22 @@ public class PatternConstraintImpl extends TimingConstraintImpl implements Patte
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case TimingconstraintsPackage.PATTERN_CONSTRAINT__PERIOD:
-			if (resolve) {
+			if (resolve)
 				return getPeriod();
-			}
 			return basicGetPeriod();
 		case TimingconstraintsPackage.PATTERN_CONSTRAINT__MINIMUM:
-			if (resolve) {
+			if (resolve)
 				return getMinimum();
-			}
 			return basicGetMinimum();
 		case TimingconstraintsPackage.PATTERN_CONSTRAINT__OFFSET:
 			return getOffset();
 		case TimingconstraintsPackage.PATTERN_CONSTRAINT__JITTER:
-			if (resolve) {
+			if (resolve)
 				return getJitter();
-			}
 			return basicGetJitter();
 		case TimingconstraintsPackage.PATTERN_CONSTRAINT__EVENT:
-			if (resolve) {
+			if (resolve)
 				return getEvent();
-			}
 			return basicGetEvent();
 		}
 		return super.eGet(featureID, resolve, coreType);

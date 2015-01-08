@@ -69,9 +69,8 @@ public class AUTOSAREventImpl extends EventImpl implements AUTOSAREvent {
 			InternalEObject oldRef = (InternalEObject) ref;
 			ref = (TimeEvent) eResolveProxy(oldRef);
 			if (ref != oldRef) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EventsPackage.AUTOSAR_EVENT__REF, oldRef, ref));
-				}
 			}
 		}
 		return ref;
@@ -97,9 +96,8 @@ public class AUTOSAREventImpl extends EventImpl implements AUTOSAREvent {
 	public void setRef(TimeEvent newRef) {
 		TimeEvent oldRef = ref;
 		ref = newRef;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EventsPackage.AUTOSAR_EVENT__REF, oldRef, ref));
-		}
 	}
 
 	/**
@@ -112,9 +110,8 @@ public class AUTOSAREventImpl extends EventImpl implements AUTOSAREvent {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case EventsPackage.AUTOSAR_EVENT__REF:
-			if (resolve) {
+			if (resolve)
 				return getRef();
-			}
 			return basicGetRef();
 		}
 		return super.eGet(featureID, resolve, coreType);

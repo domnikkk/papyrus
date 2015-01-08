@@ -81,9 +81,8 @@ public class HardwarePortConnectorInstanceRefImpl extends InstanceRefImpl implem
 			InternalEObject oldHardwarePort = (InternalEObject) hardwarePort;
 			hardwarePort = (HardwarePort) eResolveProxy(oldHardwarePort);
 			if (hardwarePort != oldHardwarePort) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InfrastructurePackage.HARDWARE_PORT_CONNECTOR_INSTANCE_REF__HARDWARE_PORT, oldHardwarePort, hardwarePort));
-				}
 			}
 		}
 		return hardwarePort;
@@ -109,9 +108,8 @@ public class HardwarePortConnectorInstanceRefImpl extends InstanceRefImpl implem
 	public void setHardwarePort(HardwarePort newHardwarePort) {
 		HardwarePort oldHardwarePort = hardwarePort;
 		hardwarePort = newHardwarePort;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, InfrastructurePackage.HARDWARE_PORT_CONNECTOR_INSTANCE_REF__HARDWARE_PORT, oldHardwarePort, hardwarePort));
-		}
 	}
 
 	/**
@@ -126,9 +124,8 @@ public class HardwarePortConnectorInstanceRefImpl extends InstanceRefImpl implem
 			InternalEObject oldHardwareComponentPrototype = (InternalEObject) hardwareComponentPrototype;
 			hardwareComponentPrototype = (HardwareComponentPrototype) eResolveProxy(oldHardwareComponentPrototype);
 			if (hardwareComponentPrototype != oldHardwareComponentPrototype) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InfrastructurePackage.HARDWARE_PORT_CONNECTOR_INSTANCE_REF__HARDWARE_COMPONENT_PROTOTYPE, oldHardwareComponentPrototype, hardwareComponentPrototype));
-				}
 			}
 		}
 		return hardwareComponentPrototype;
@@ -154,9 +151,8 @@ public class HardwarePortConnectorInstanceRefImpl extends InstanceRefImpl implem
 	public void setHardwareComponentPrototype(HardwareComponentPrototype newHardwareComponentPrototype) {
 		HardwareComponentPrototype oldHardwareComponentPrototype = hardwareComponentPrototype;
 		hardwareComponentPrototype = newHardwareComponentPrototype;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, InfrastructurePackage.HARDWARE_PORT_CONNECTOR_INSTANCE_REF__HARDWARE_COMPONENT_PROTOTYPE, oldHardwareComponentPrototype, hardwareComponentPrototype));
-		}
 	}
 
 	/**
@@ -169,14 +165,12 @@ public class HardwarePortConnectorInstanceRefImpl extends InstanceRefImpl implem
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case InfrastructurePackage.HARDWARE_PORT_CONNECTOR_INSTANCE_REF__HARDWARE_PORT:
-			if (resolve) {
+			if (resolve)
 				return getHardwarePort();
-			}
 			return basicGetHardwarePort();
 		case InfrastructurePackage.HARDWARE_PORT_CONNECTOR_INSTANCE_REF__HARDWARE_COMPONENT_PROTOTYPE:
-			if (resolve) {
+			if (resolve)
 				return getHardwareComponentPrototype();
-			}
 			return basicGetHardwareComponentPrototype();
 		}
 		return super.eGet(featureID, resolve, coreType);

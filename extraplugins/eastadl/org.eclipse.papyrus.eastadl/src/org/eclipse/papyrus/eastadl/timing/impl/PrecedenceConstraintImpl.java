@@ -177,11 +177,10 @@ public class PrecedenceConstraintImpl extends TimingConstraintImpl implements Pr
 		preceding = newPreceding;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, TimingPackage.PRECEDENCE_CONSTRAINT__PRECEDING, oldPreceding, newPreceding);
-			if (msgs == null) {
+			if (msgs == null)
 				msgs = notification;
-			} else {
+			else
 				msgs.add(notification);
-			}
 		}
 		return msgs;
 	}
@@ -196,20 +195,16 @@ public class PrecedenceConstraintImpl extends TimingConstraintImpl implements Pr
 	public void setPreceding(PrecedenceConstraint_precedingInstanceRef newPreceding) {
 		if (newPreceding != preceding) {
 			NotificationChain msgs = null;
-			if (preceding != null) {
+			if (preceding != null)
 				msgs = ((InternalEObject) preceding).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - TimingPackage.PRECEDENCE_CONSTRAINT__PRECEDING, null, msgs);
-			}
-			if (newPreceding != null) {
+			if (newPreceding != null)
 				msgs = ((InternalEObject) newPreceding).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - TimingPackage.PRECEDENCE_CONSTRAINT__PRECEDING, null, msgs);
-			}
 			msgs = basicSetPreceding(newPreceding, msgs);
-			if (msgs != null) {
+			if (msgs != null)
 				msgs.dispatch();
-			}
 		}
-		else if (eNotificationRequired()) {
+		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TimingPackage.PRECEDENCE_CONSTRAINT__PRECEDING, newPreceding, newPreceding));
-		}
 	}
 
 	/**

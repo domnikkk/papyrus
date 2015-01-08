@@ -82,90 +82,72 @@ public class TemporalconstraintSwitch<T> extends Switch<T> {
 		case TemporalconstraintPackage.TEMPORAL_CONSTRAINT: {
 			TemporalConstraint temporalConstraint = (TemporalConstraint) theEObject;
 			T result = caseTemporalConstraint(temporalConstraint);
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(temporalConstraint);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case TemporalconstraintPackage.LOGICAL_TIME_CONDITION: {
 			LogicalTimeCondition logicalTimeCondition = (LogicalTimeCondition) theEObject;
 			T result = caseLogicalTimeCondition(logicalTimeCondition);
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(logicalTimeCondition);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case TemporalconstraintPackage.TRANSITION: {
 			Transition transition = (Transition) theEObject;
 			T result = caseTransition(transition);
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(transition);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case TemporalconstraintPackage.STATE: {
 			State state = (State) theEObject;
 			T result = caseState(state);
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(state);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case TemporalconstraintPackage.STATE_EVENT: {
 			StateEvent stateEvent = (StateEvent) theEObject;
 			T result = caseStateEvent(stateEvent);
-			if (result == null) {
+			if (result == null)
 				result = caseEvent(stateEvent);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseTimingDescription(stateEvent);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(stateEvent);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case TemporalconstraintPackage.SYNCHRONOUSTRANSITION: {
 			Synchronoustransition synchronoustransition = (Synchronoustransition) theEObject;
 			T result = caseSynchronoustransition(synchronoustransition);
-			if (result == null) {
+			if (result == null)
 				result = caseTransition(synchronoustransition);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(synchronoustransition);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case TemporalconstraintPackage.TRANSITION_EVENT: {
 			TransitionEvent transitionEvent = (TransitionEvent) theEObject;
 			T result = caseTransitionEvent(transitionEvent);
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(transitionEvent);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseBehaviorConstraintParameter(transitionEvent);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		default:

@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.EReference;
  *
  * @see org.eclipse.papyrus.eastadl.infrastructure.values.ValuesFactory
  * @model kind="package"
+ *        annotation="http://www.eclipse.org/uml2/2.0.0/UML originalName='Values'"
  * @generated
  */
 public interface ValuesPackage extends EPackage {

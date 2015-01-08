@@ -32,6 +32,7 @@ import org.eclipse.emf.ecore.EPackage;
  *
  * @see org.eclipse.papyrus.eastadl.annex.AnnexFactory
  * @model kind="package"
+ *        annotation="http://www.eclipse.org/uml2/2.0.0/UML originalName='Annex'"
  * @generated
  */
 public interface AnnexPackage extends EPackage {

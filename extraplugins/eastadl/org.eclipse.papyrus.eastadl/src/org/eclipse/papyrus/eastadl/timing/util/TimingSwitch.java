@@ -302,96 +302,76 @@ public class TimingSwitch<T> extends Switch<T> {
 		case TimingPackage.TIMING_DESCRIPTION: {
 			TimingDescription timingDescription = (TimingDescription) theEObject;
 			T result = caseTimingDescription(timingDescription);
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(timingDescription);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case TimingPackage.TIMING_CONSTRAINT: {
 			TimingConstraint timingConstraint = (TimingConstraint) theEObject;
 			T result = caseTimingConstraint(timingConstraint);
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(timingConstraint);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case TimingPackage.TIMING: {
 			Timing timing = (Timing) theEObject;
 			T result = caseTiming(timing);
-			if (result == null) {
+			if (result == null)
 				result = caseContext(timing);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPackageableElement(timing);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(timing);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case TimingPackage.EVENT_CHAIN: {
 			EventChain eventChain = (EventChain) theEObject;
 			T result = caseEventChain(eventChain);
-			if (result == null) {
+			if (result == null)
 				result = caseTimingDescription(eventChain);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(eventChain);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case TimingPackage.EVENT: {
 			Event event = (Event) theEObject;
 			T result = caseEvent(event);
-			if (result == null) {
+			if (result == null)
 				result = caseTimingDescription(event);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(event);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case TimingPackage.TIMING_EXPRESSION: {
 			TimingExpression timingExpression = (TimingExpression) theEObject;
 			T result = caseTimingExpression(timingExpression);
-			if (result == null) {
+			if (result == null)
 				result = caseEAExpression(timingExpression);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAValue(timingExpression);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case TimingPackage.PRECEDENCE_CONSTRAINT: {
 			PrecedenceConstraint precedenceConstraint = (PrecedenceConstraint) theEObject;
 			T result = casePrecedenceConstraint(precedenceConstraint);
-			if (result == null) {
+			if (result == null)
 				result = caseTimingConstraint(precedenceConstraint);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(precedenceConstraint);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		default:

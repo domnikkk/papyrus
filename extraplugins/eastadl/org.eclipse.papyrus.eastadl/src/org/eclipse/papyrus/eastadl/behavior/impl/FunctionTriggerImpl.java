@@ -198,35 +198,30 @@ public class FunctionTriggerImpl extends EAElementImpl implements FunctionTrigge
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case BehaviorPackage.FUNCTION_TRIGGER__TYPE:
-			if (resolve) {
+			if (resolve)
 				return getType();
-			}
 			return basicGetType();
 		case BehaviorPackage.FUNCTION_TRIGGER__BASE_VALUE_SPECIFICATION:
-			if (resolve) {
+			if (resolve)
 				return getBase_ValueSpecification();
-			}
 			return basicGetBase_ValueSpecification();
 		case BehaviorPackage.FUNCTION_TRIGGER__BASE_CLASS:
-			if (resolve) {
+			if (resolve)
 				return getBase_Class();
-			}
 			return basicGetBase_Class();
 		case BehaviorPackage.FUNCTION_TRIGGER__TRIGGER_POLICY:
 			return getTriggerPolicy();
 		case BehaviorPackage.FUNCTION_TRIGGER__MODE:
 			return getMode();
 		case BehaviorPackage.FUNCTION_TRIGGER__FUNCTION:
-			if (resolve) {
+			if (resolve)
 				return getFunction();
-			}
 			return basicGetFunction();
 		case BehaviorPackage.FUNCTION_TRIGGER__PORT:
 			return getPort();
 		case BehaviorPackage.FUNCTION_TRIGGER__FUNCTION_PROTOTYPE:
-			if (resolve) {
+			if (resolve)
 				return getFunctionPrototype();
-			}
 			return basicGetFunctionPrototype();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -378,9 +373,8 @@ public class FunctionTriggerImpl extends EAElementImpl implements FunctionTrigge
 			InternalEObject oldType = (InternalEObject) type;
 			type = (EADatatype) eResolveProxy(oldType);
 			if (type != oldType) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BehaviorPackage.FUNCTION_TRIGGER__TYPE, oldType, type));
-				}
 			}
 		}
 		return type;
@@ -406,9 +400,8 @@ public class FunctionTriggerImpl extends EAElementImpl implements FunctionTrigge
 	public void setType(EADatatype newType) {
 		EADatatype oldType = type;
 		type = newType;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BehaviorPackage.FUNCTION_TRIGGER__TYPE, oldType, type));
-		}
 	}
 
 	/**
@@ -423,9 +416,8 @@ public class FunctionTriggerImpl extends EAElementImpl implements FunctionTrigge
 			InternalEObject oldBase_ValueSpecification = (InternalEObject) base_ValueSpecification;
 			base_ValueSpecification = (ValueSpecification) eResolveProxy(oldBase_ValueSpecification);
 			if (base_ValueSpecification != oldBase_ValueSpecification) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BehaviorPackage.FUNCTION_TRIGGER__BASE_VALUE_SPECIFICATION, oldBase_ValueSpecification, base_ValueSpecification));
-				}
 			}
 		}
 		return base_ValueSpecification;
@@ -451,9 +443,8 @@ public class FunctionTriggerImpl extends EAElementImpl implements FunctionTrigge
 	public void setBase_ValueSpecification(ValueSpecification newBase_ValueSpecification) {
 		ValueSpecification oldBase_ValueSpecification = base_ValueSpecification;
 		base_ValueSpecification = newBase_ValueSpecification;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BehaviorPackage.FUNCTION_TRIGGER__BASE_VALUE_SPECIFICATION, oldBase_ValueSpecification, base_ValueSpecification));
-		}
 	}
 
 	/**
@@ -505,9 +496,8 @@ public class FunctionTriggerImpl extends EAElementImpl implements FunctionTrigge
 			InternalEObject oldFunction = (InternalEObject) function;
 			function = (FunctionType) eResolveProxy(oldFunction);
 			if (function != oldFunction) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BehaviorPackage.FUNCTION_TRIGGER__FUNCTION, oldFunction, function));
-				}
 			}
 		}
 		return function;
@@ -525,9 +515,8 @@ public class FunctionTriggerImpl extends EAElementImpl implements FunctionTrigge
 			InternalEObject oldFunctionPrototype = (InternalEObject) functionPrototype;
 			functionPrototype = (FunctionPrototype) eResolveProxy(oldFunctionPrototype);
 			if (functionPrototype != oldFunctionPrototype) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BehaviorPackage.FUNCTION_TRIGGER__FUNCTION_PROTOTYPE, oldFunctionPrototype, functionPrototype));
-				}
 			}
 		}
 		return functionPrototype;
@@ -582,9 +571,8 @@ public class FunctionTriggerImpl extends EAElementImpl implements FunctionTrigge
 	public void setFunction(FunctionType newFunction) {
 		FunctionType oldFunction = function;
 		function = newFunction;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BehaviorPackage.FUNCTION_TRIGGER__FUNCTION, oldFunction, function));
-		}
 	}
 
 	/**
@@ -597,9 +585,8 @@ public class FunctionTriggerImpl extends EAElementImpl implements FunctionTrigge
 	public void setFunctionPrototype(FunctionPrototype newFunctionPrototype) {
 		FunctionPrototype oldFunctionPrototype = functionPrototype;
 		functionPrototype = newFunctionPrototype;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BehaviorPackage.FUNCTION_TRIGGER__FUNCTION_PROTOTYPE, oldFunctionPrototype, functionPrototype));
-		}
 	}
 
 	/**
@@ -614,9 +601,8 @@ public class FunctionTriggerImpl extends EAElementImpl implements FunctionTrigge
 			InternalEObject oldBase_Class = (InternalEObject) base_Class;
 			base_Class = (org.eclipse.uml2.uml.Class) eResolveProxy(oldBase_Class);
 			if (base_Class != oldBase_Class) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BehaviorPackage.FUNCTION_TRIGGER__BASE_CLASS, oldBase_Class, base_Class));
-				}
 			}
 		}
 		return base_Class;
@@ -642,9 +628,8 @@ public class FunctionTriggerImpl extends EAElementImpl implements FunctionTrigge
 	public void setBase_Class(org.eclipse.uml2.uml.Class newBase_Class) {
 		org.eclipse.uml2.uml.Class oldBase_Class = base_Class;
 		base_Class = newBase_Class;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BehaviorPackage.FUNCTION_TRIGGER__BASE_CLASS, oldBase_Class, base_Class));
-		}
 	}
 
 	/**
@@ -657,9 +642,8 @@ public class FunctionTriggerImpl extends EAElementImpl implements FunctionTrigge
 	public void setTriggerPolicy(TriggerPolicyKind newTriggerPolicy) {
 		TriggerPolicyKind oldTriggerPolicy = triggerPolicy;
 		triggerPolicy = newTriggerPolicy == null ? TRIGGER_POLICY_EDEFAULT : newTriggerPolicy;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BehaviorPackage.FUNCTION_TRIGGER__TRIGGER_POLICY, oldTriggerPolicy, triggerPolicy));
-		}
 	}
 
 	/**
@@ -670,12 +654,11 @@ public class FunctionTriggerImpl extends EAElementImpl implements FunctionTrigge
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
+		if (eIsProxy())
 			return super.toString();
-		}
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (triggerPolicy: ");
+		result.append(" (triggerPolicy: "); //$NON-NLS-1$
 		result.append(triggerPolicy);
 		result.append(')');
 		return result.toString();

@@ -277,9 +277,8 @@ public class DeviationAttributeSetImpl extends EAElementImpl implements Deviatio
 		case VehiclefeaturemodelingPackage.DEVIATION_ATTRIBUTE_SET__ALLOW_REMOVAL:
 			return getAllowRemoval();
 		case VehiclefeaturemodelingPackage.DEVIATION_ATTRIBUTE_SET__BASE_DATA_TYPE:
-			if (resolve) {
+			if (resolve)
 				return getBase_DataType();
-			}
 			return basicGetBase_DataType();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -511,9 +510,8 @@ public class DeviationAttributeSetImpl extends EAElementImpl implements Deviatio
 	public void setAllowChangeAttribute(DeviationPermissionKind newAllowChangeAttribute) {
 		DeviationPermissionKind oldAllowChangeAttribute = allowChangeAttribute;
 		allowChangeAttribute = newAllowChangeAttribute == null ? ALLOW_CHANGE_ATTRIBUTE_EDEFAULT : newAllowChangeAttribute;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VehiclefeaturemodelingPackage.DEVIATION_ATTRIBUTE_SET__ALLOW_CHANGE_ATTRIBUTE, oldAllowChangeAttribute, allowChangeAttribute));
-		}
 	}
 
 	/**
@@ -525,9 +523,8 @@ public class DeviationAttributeSetImpl extends EAElementImpl implements Deviatio
 	public void setAllowChangeCardinality(DeviationPermissionKind newAllowChangeCardinality) {
 		DeviationPermissionKind oldAllowChangeCardinality = allowChangeCardinality;
 		allowChangeCardinality = newAllowChangeCardinality == null ? ALLOW_CHANGE_CARDINALITY_EDEFAULT : newAllowChangeCardinality;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VehiclefeaturemodelingPackage.DEVIATION_ATTRIBUTE_SET__ALLOW_CHANGE_CARDINALITY, oldAllowChangeCardinality, allowChangeCardinality));
-		}
 	}
 
 	/**
@@ -540,9 +537,8 @@ public class DeviationAttributeSetImpl extends EAElementImpl implements Deviatio
 	public void setAllowChangeDescription(DeviationPermissionKind newAllowChangeDescription) {
 		DeviationPermissionKind oldAllowChangeDescription = allowChangeDescription;
 		allowChangeDescription = newAllowChangeDescription == null ? ALLOW_CHANGE_DESCRIPTION_EDEFAULT : newAllowChangeDescription;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VehiclefeaturemodelingPackage.DEVIATION_ATTRIBUTE_SET__ALLOW_CHANGE_DESCRIPTION, oldAllowChangeDescription, allowChangeDescription));
-		}
 	}
 
 	/**
@@ -554,9 +550,8 @@ public class DeviationAttributeSetImpl extends EAElementImpl implements Deviatio
 	public void setAllowChangeName(DeviationPermissionKind newAllowChangeName) {
 		DeviationPermissionKind oldAllowChangeName = allowChangeName;
 		allowChangeName = newAllowChangeName == null ? ALLOW_CHANGE_NAME_EDEFAULT : newAllowChangeName;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VehiclefeaturemodelingPackage.DEVIATION_ATTRIBUTE_SET__ALLOW_CHANGE_NAME, oldAllowChangeName, allowChangeName));
-		}
 	}
 
 	/**
@@ -568,9 +563,8 @@ public class DeviationAttributeSetImpl extends EAElementImpl implements Deviatio
 	public void setAllowMove(DeviationPermissionKind newAllowMove) {
 		DeviationPermissionKind oldAllowMove = allowMove;
 		allowMove = newAllowMove == null ? ALLOW_MOVE_EDEFAULT : newAllowMove;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VehiclefeaturemodelingPackage.DEVIATION_ATTRIBUTE_SET__ALLOW_MOVE, oldAllowMove, allowMove));
-		}
 	}
 
 	/**
@@ -582,9 +576,8 @@ public class DeviationAttributeSetImpl extends EAElementImpl implements Deviatio
 	public void setAllowReduction(DeviationPermissionKind newAllowReduction) {
 		DeviationPermissionKind oldAllowReduction = allowReduction;
 		allowReduction = newAllowReduction == null ? ALLOW_REDUCTION_EDEFAULT : newAllowReduction;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VehiclefeaturemodelingPackage.DEVIATION_ATTRIBUTE_SET__ALLOW_REDUCTION, oldAllowReduction, allowReduction));
-		}
 	}
 
 	/**
@@ -596,9 +589,8 @@ public class DeviationAttributeSetImpl extends EAElementImpl implements Deviatio
 	public void setAllowRefinement(DeviationPermissionKind newAllowRefinement) {
 		DeviationPermissionKind oldAllowRefinement = allowRefinement;
 		allowRefinement = newAllowRefinement == null ? ALLOW_REFINEMENT_EDEFAULT : newAllowRefinement;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VehiclefeaturemodelingPackage.DEVIATION_ATTRIBUTE_SET__ALLOW_REFINEMENT, oldAllowRefinement, allowRefinement));
-		}
 	}
 
 	/**
@@ -610,9 +602,8 @@ public class DeviationAttributeSetImpl extends EAElementImpl implements Deviatio
 	public void setAllowRegrouping(DeviationPermissionKind newAllowRegrouping) {
 		DeviationPermissionKind oldAllowRegrouping = allowRegrouping;
 		allowRegrouping = newAllowRegrouping == null ? ALLOW_REGROUPING_EDEFAULT : newAllowRegrouping;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VehiclefeaturemodelingPackage.DEVIATION_ATTRIBUTE_SET__ALLOW_REGROUPING, oldAllowRegrouping, allowRegrouping));
-		}
 	}
 
 	/**
@@ -624,9 +615,8 @@ public class DeviationAttributeSetImpl extends EAElementImpl implements Deviatio
 	public void setAllowRemoval(DeviationPermissionKind newAllowRemoval) {
 		DeviationPermissionKind oldAllowRemoval = allowRemoval;
 		allowRemoval = newAllowRemoval == null ? ALLOW_REMOVAL_EDEFAULT : newAllowRemoval;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VehiclefeaturemodelingPackage.DEVIATION_ATTRIBUTE_SET__ALLOW_REMOVAL, oldAllowRemoval, allowRemoval));
-		}
 	}
 
 	/**
@@ -641,9 +631,8 @@ public class DeviationAttributeSetImpl extends EAElementImpl implements Deviatio
 			InternalEObject oldBase_DataType = (InternalEObject) base_DataType;
 			base_DataType = (DataType) eResolveProxy(oldBase_DataType);
 			if (base_DataType != oldBase_DataType) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, VehiclefeaturemodelingPackage.DEVIATION_ATTRIBUTE_SET__BASE_DATA_TYPE, oldBase_DataType, base_DataType));
-				}
 			}
 		}
 		return base_DataType;
@@ -669,9 +658,8 @@ public class DeviationAttributeSetImpl extends EAElementImpl implements Deviatio
 	public void setBase_DataType(DataType newBase_DataType) {
 		DataType oldBase_DataType = base_DataType;
 		base_DataType = newBase_DataType;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VehiclefeaturemodelingPackage.DEVIATION_ATTRIBUTE_SET__BASE_DATA_TYPE, oldBase_DataType, base_DataType));
-		}
 	}
 
 	/**
@@ -681,28 +669,27 @@ public class DeviationAttributeSetImpl extends EAElementImpl implements Deviatio
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
+		if (eIsProxy())
 			return super.toString();
-		}
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (allowChangeAttribute: ");
+		result.append(" (allowChangeAttribute: "); //$NON-NLS-1$
 		result.append(allowChangeAttribute);
-		result.append(", allowChangeCardinality: ");
+		result.append(", allowChangeCardinality: "); //$NON-NLS-1$
 		result.append(allowChangeCardinality);
-		result.append(", allowChangeDescription: ");
+		result.append(", allowChangeDescription: "); //$NON-NLS-1$
 		result.append(allowChangeDescription);
-		result.append(", allowChangeName: ");
+		result.append(", allowChangeName: "); //$NON-NLS-1$
 		result.append(allowChangeName);
-		result.append(", allowMove: ");
+		result.append(", allowMove: "); //$NON-NLS-1$
 		result.append(allowMove);
-		result.append(", allowReduction: ");
+		result.append(", allowReduction: "); //$NON-NLS-1$
 		result.append(allowReduction);
-		result.append(", allowRefinement: ");
+		result.append(", allowRefinement: "); //$NON-NLS-1$
 		result.append(allowRefinement);
-		result.append(", allowRegrouping: ");
+		result.append(", allowRegrouping: "); //$NON-NLS-1$
 		result.append(allowRegrouping);
-		result.append(", allowRemoval: ");
+		result.append(", allowRemoval: "); //$NON-NLS-1$
 		result.append(allowRemoval);
 		result.append(')');
 		return result.toString();

@@ -111,9 +111,8 @@ public class VehicleSystemImpl extends ConceptImpl implements VehicleSystem {
 		case NeedsPackage.VEHICLE_SYSTEM__FULFILLS:
 			return getFulfills();
 		case NeedsPackage.VEHICLE_SYSTEM__HAS_AN:
-			if (resolve) {
+			if (resolve)
 				return getHasAn();
-			}
 			return basicGetHasAn();
 		case NeedsPackage.VEHICLE_SYSTEM__HAS:
 			return getHas();
@@ -238,9 +237,8 @@ public class VehicleSystemImpl extends ConceptImpl implements VehicleSystem {
 			InternalEObject oldHasAn = (InternalEObject) hasAn;
 			hasAn = (Architecture) eResolveProxy(oldHasAn);
 			if (hasAn != oldHasAn) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, NeedsPackage.VEHICLE_SYSTEM__HAS_AN, oldHasAn, hasAn));
-				}
 			}
 		}
 		return hasAn;
@@ -256,9 +254,8 @@ public class VehicleSystemImpl extends ConceptImpl implements VehicleSystem {
 	public void setHasAn(Architecture newHasAn) {
 		Architecture oldHasAn = hasAn;
 		hasAn = newHasAn;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, NeedsPackage.VEHICLE_SYSTEM__HAS_AN, oldHasAn, hasAn));
-		}
 	}
 
 } // VehicleSystemImpl

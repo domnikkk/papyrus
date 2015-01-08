@@ -122,9 +122,8 @@ public class VehiclefeaturemodelingPackageImpl extends EPackageImpl implements V
 	 * @generated
 	 */
 	public static VehiclefeaturemodelingPackage init() {
-		if (isInited) {
+		if (isInited)
 			return (VehiclefeaturemodelingPackage) EPackage.Registry.INSTANCE.getEPackage(VehiclefeaturemodelingPackage.eNS_URI);
-		}
 
 		// Obtain or create and register package
 		VehiclefeaturemodelingPackageImpl theVehiclefeaturemodelingPackage = (VehiclefeaturemodelingPackageImpl) (EPackage.Registry.INSTANCE.get(eNS_URI) instanceof VehiclefeaturemodelingPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI)
@@ -173,8 +172,7 @@ public class VehiclefeaturemodelingPackageImpl extends EPackageImpl implements V
 		UsecasesPackageImpl theUsecasesPackage = (UsecasesPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(UsecasesPackage.eNS_URI) instanceof UsecasesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(UsecasesPackage.eNS_URI)
 				: UsecasesPackage.eINSTANCE);
 		VerificationvalidationPackageImpl theVerificationvalidationPackage = (VerificationvalidationPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(VerificationvalidationPackage.eNS_URI) instanceof VerificationvalidationPackageImpl ? EPackage.Registry.INSTANCE
-				.getEPackage(VerificationvalidationPackage.eNS_URI)
-				: VerificationvalidationPackage.eINSTANCE);
+				.getEPackage(VerificationvalidationPackage.eNS_URI) : VerificationvalidationPackage.eINSTANCE);
 		org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsPackageImpl theRequirementsPackage_1 = (org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsPackageImpl) (EPackage.Registry.INSTANCE
 				.getEPackage(org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsPackage.eNS_URI) instanceof org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsPackageImpl ? EPackage.Registry.INSTANCE
 				.getEPackage(org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsPackage.eNS_URI) : org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsPackage.eINSTANCE);
@@ -191,13 +189,11 @@ public class VehiclefeaturemodelingPackageImpl extends EPackageImpl implements V
 		BehaviordescriptionPackageImpl theBehaviordescriptionPackage = (BehaviordescriptionPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(BehaviordescriptionPackage.eNS_URI) instanceof BehaviordescriptionPackageImpl ? EPackage.Registry.INSTANCE
 				.getEPackage(BehaviordescriptionPackage.eNS_URI) : BehaviordescriptionPackage.eINSTANCE);
 		AttributequantificationconstraintPackageImpl theAttributequantificationconstraintPackage = (AttributequantificationconstraintPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(AttributequantificationconstraintPackage.eNS_URI) instanceof AttributequantificationconstraintPackageImpl ? EPackage.Registry.INSTANCE
-				.getEPackage(AttributequantificationconstraintPackage.eNS_URI)
-				: AttributequantificationconstraintPackage.eINSTANCE);
+				.getEPackage(AttributequantificationconstraintPackage.eNS_URI) : AttributequantificationconstraintPackage.eINSTANCE);
 		TemporalconstraintPackageImpl theTemporalconstraintPackage = (TemporalconstraintPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(TemporalconstraintPackage.eNS_URI) instanceof TemporalconstraintPackageImpl ? EPackage.Registry.INSTANCE
 				.getEPackage(TemporalconstraintPackage.eNS_URI) : TemporalconstraintPackage.eINSTANCE);
 		ComputationconstraintPackageImpl theComputationconstraintPackage = (ComputationconstraintPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(ComputationconstraintPackage.eNS_URI) instanceof ComputationconstraintPackageImpl ? EPackage.Registry.INSTANCE
-				.getEPackage(ComputationconstraintPackage.eNS_URI)
-				: ComputationconstraintPackage.eINSTANCE);
+				.getEPackage(ComputationconstraintPackage.eNS_URI) : ComputationconstraintPackage.eINSTANCE);
 		GenericconstraintsPackageImpl theGenericconstraintsPackage = (GenericconstraintsPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(GenericconstraintsPackage.eNS_URI) instanceof GenericconstraintsPackageImpl ? EPackage.Registry.INSTANCE
 				.getEPackage(GenericconstraintsPackage.eNS_URI) : GenericconstraintsPackage.eINSTANCE);
 
@@ -340,9 +336,8 @@ public class VehiclefeaturemodelingPackageImpl extends EPackageImpl implements V
 	 * @generated
 	 */
 	public void createPackageContents() {
-		if (isCreated) {
+		if (isCreated)
 			return;
-		}
 		isCreated = true;
 
 		// Create classes and their features
@@ -558,9 +553,8 @@ public class VehiclefeaturemodelingPackageImpl extends EPackageImpl implements V
 	 * @generated
 	 */
 	public void initializePackageContents() {
-		if (isInitialized) {
+		if (isInitialized)
 			return;
-		}
 		isInitialized = true;
 
 		// Initialize package
@@ -583,42 +577,61 @@ public class VehiclefeaturemodelingPackageImpl extends EPackageImpl implements V
 		vehicleFeatureEClass.getESuperTypes().add(theFeaturemodelingPackage.getFeature());
 
 		// Initialize classes, features, and operations; add parameters
-		initEClass(deviationAttributeSetEClass, DeviationAttributeSet.class, "DeviationAttributeSet", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getDeviationAttributeSet_AllowChangeAttribute(), this.getDeviationPermissionKind(), "allowChangeAttribute", null, 1, 1, DeviationAttributeSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
-				!IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getDeviationAttributeSet_AllowChangeCardinality(), this.getDeviationPermissionKind(), "allowChangeCardinality", null, 1, 1, DeviationAttributeSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
-				!IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getDeviationAttributeSet_AllowChangeDescription(), this.getDeviationPermissionKind(), "allowChangeDescription", null, 1, 1, DeviationAttributeSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
-				!IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getDeviationAttributeSet_AllowChangeName(), this.getDeviationPermissionKind(), "allowChangeName", null, 1, 1, DeviationAttributeSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
-				!IS_ORDERED);
-		initEAttribute(getDeviationAttributeSet_AllowMove(), this.getDeviationPermissionKind(), "allowMove", null, 1, 1, DeviationAttributeSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getDeviationAttributeSet_AllowReduction(), this.getDeviationPermissionKind(), "allowReduction", null, 1, 1, DeviationAttributeSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
-				!IS_ORDERED);
-		initEAttribute(getDeviationAttributeSet_AllowRefinement(), this.getDeviationPermissionKind(), "allowRefinement", null, 1, 1, DeviationAttributeSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
-				!IS_ORDERED);
-		initEAttribute(getDeviationAttributeSet_AllowRegrouping(), this.getDeviationPermissionKind(), "allowRegrouping", null, 1, 1, DeviationAttributeSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
-				!IS_ORDERED);
-		initEAttribute(getDeviationAttributeSet_AllowRemoval(), this.getDeviationPermissionKind(), "allowRemoval", null, 1, 1, DeviationAttributeSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getDeviationAttributeSet_Base_DataType(), theUMLPackage.getDataType(), null, "base_DataType", null, 1, 1, DeviationAttributeSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				!IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(deviationAttributeSetEClass, DeviationAttributeSet.class, "DeviationAttributeSet", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEAttribute(getDeviationAttributeSet_AllowChangeAttribute(), this.getDeviationPermissionKind(),
+				"allowChangeAttribute", null, 1, 1, DeviationAttributeSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEAttribute(getDeviationAttributeSet_AllowChangeCardinality(), this.getDeviationPermissionKind(),
+				"allowChangeCardinality", null, 1, 1, DeviationAttributeSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEAttribute(getDeviationAttributeSet_AllowChangeDescription(), this.getDeviationPermissionKind(),
+				"allowChangeDescription", null, 1, 1, DeviationAttributeSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEAttribute(getDeviationAttributeSet_AllowChangeName(), this.getDeviationPermissionKind(),
+				"allowChangeName", null, 1, 1, DeviationAttributeSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEAttribute(getDeviationAttributeSet_AllowMove(), this.getDeviationPermissionKind(), "allowMove", null, 1, 1, DeviationAttributeSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEAttribute(getDeviationAttributeSet_AllowReduction(), this.getDeviationPermissionKind(),
+				"allowReduction", null, 1, 1, DeviationAttributeSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEAttribute(getDeviationAttributeSet_AllowRefinement(), this.getDeviationPermissionKind(),
+				"allowRefinement", null, 1, 1, DeviationAttributeSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEAttribute(getDeviationAttributeSet_AllowRegrouping(), this.getDeviationPermissionKind(),
+				"allowRegrouping", null, 1, 1, DeviationAttributeSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEAttribute(getDeviationAttributeSet_AllowRemoval(), this.getDeviationPermissionKind(), "allowRemoval", null, 1, 1, DeviationAttributeSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getDeviationAttributeSet_Base_DataType(), theUMLPackage.getDataType(), null,
+				"base_DataType", null, 1, 1, DeviationAttributeSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 
-		initEClass(vehicleFeatureEClass, VehicleFeature.class, "VehicleFeature", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getVehicleFeature_IsDesignVariabilityRationale(), theTypesPackage.getBoolean(), "isDesignVariabilityRationale", null, 1, 1, VehicleFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
-				!IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getVehicleFeature_IsCustomerVisible(), theTypesPackage.getBoolean(), "isCustomerVisible", null, 1, 1, VehicleFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getVehicleFeature_IsRemoved(), theTypesPackage.getBoolean(), "isRemoved", null, 1, 1, VehicleFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getVehicleFeature_DeviationAttributeSet(), this.getDeviationAttributeSet(), null, "deviationAttributeSet", null, 0, 1, VehicleFeature.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
+		initEClass(vehicleFeatureEClass, VehicleFeature.class, "VehicleFeature", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEAttribute(getVehicleFeature_IsDesignVariabilityRationale(), theTypesPackage.getBoolean(),
+				"isDesignVariabilityRationale", null, 1, 1, VehicleFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEAttribute(getVehicleFeature_IsCustomerVisible(), theTypesPackage.getBoolean(), "isCustomerVisible", null, 1, 1, VehicleFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEAttribute(getVehicleFeature_IsRemoved(), theTypesPackage.getBoolean(), "isRemoved", null, 1, 1, VehicleFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getVehicleFeature_DeviationAttributeSet(), this.getDeviationAttributeSet(), null,
+				"deviationAttributeSet", null, 0, 1, VehicleFeature.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 
 		// Initialize enums and add enum literals
-		initEEnum(deviationPermissionKindEEnum, DeviationPermissionKind.class, "DeviationPermissionKind");
+		initEEnum(deviationPermissionKindEEnum, DeviationPermissionKind.class, "DeviationPermissionKind"); //$NON-NLS-1$
 		addEEnumLiteral(deviationPermissionKindEEnum, DeviationPermissionKind.YES);
 		addEEnumLiteral(deviationPermissionKindEEnum, DeviationPermissionKind.NO);
 		addEEnumLiteral(deviationPermissionKindEEnum, DeviationPermissionKind.SUBTREE);
 		addEEnumLiteral(deviationPermissionKindEEnum, DeviationPermissionKind.APPEND);
 		addEEnumLiteral(deviationPermissionKindEEnum, DeviationPermissionKind.SUBSET);
 		addEEnumLiteral(deviationPermissionKindEEnum, DeviationPermissionKind.WIDEN);
+
+		// Create annotations
+		// http://www.eclipse.org/uml2/2.0.0/UML
+		createUMLAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/uml2/2.0.0/UML</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	protected void createUMLAnnotations() {
+		String source = "http://www.eclipse.org/uml2/2.0.0/UML"; //$NON-NLS-1$
+		addAnnotation(this,
+				source,
+				new String[] { "originalName", "VehicleFeatureModeling" //$NON-NLS-1$ //$NON-NLS-2$
+				});
 	}
 
 } // VehiclefeaturemodelingPackageImpl

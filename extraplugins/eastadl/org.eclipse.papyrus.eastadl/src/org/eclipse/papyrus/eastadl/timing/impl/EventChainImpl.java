@@ -94,14 +94,12 @@ public class EventChainImpl extends TimingDescriptionImpl implements EventChain 
 		case TimingPackage.EVENT_CHAIN__SEGMENT:
 			return getSegment();
 		case TimingPackage.EVENT_CHAIN__RESPONSE:
-			if (resolve) {
+			if (resolve)
 				return getResponse();
-			}
 			return basicGetResponse();
 		case TimingPackage.EVENT_CHAIN__STIMULUS:
-			if (resolve) {
+			if (resolve)
 				return getStimulus();
-			}
 			return basicGetStimulus();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -190,9 +188,8 @@ public class EventChainImpl extends TimingDescriptionImpl implements EventChain 
 			InternalEObject oldResponse = (InternalEObject) response;
 			response = (Event) eResolveProxy(oldResponse);
 			if (response != oldResponse) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TimingPackage.EVENT_CHAIN__RESPONSE, oldResponse, response));
-				}
 			}
 		}
 		return response;
@@ -218,9 +215,8 @@ public class EventChainImpl extends TimingDescriptionImpl implements EventChain 
 	public void setResponse(Event newResponse) {
 		Event oldResponse = response;
 		response = newResponse;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TimingPackage.EVENT_CHAIN__RESPONSE, oldResponse, response));
-		}
 	}
 
 	/**
@@ -247,9 +243,8 @@ public class EventChainImpl extends TimingDescriptionImpl implements EventChain 
 			InternalEObject oldStimulus = (InternalEObject) stimulus;
 			stimulus = (Event) eResolveProxy(oldStimulus);
 			if (stimulus != oldStimulus) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TimingPackage.EVENT_CHAIN__STIMULUS, oldStimulus, stimulus));
-				}
 			}
 		}
 		return stimulus;
@@ -275,9 +270,8 @@ public class EventChainImpl extends TimingDescriptionImpl implements EventChain 
 	public void setStimulus(Event newStimulus) {
 		Event oldStimulus = stimulus;
 		stimulus = newStimulus;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TimingPackage.EVENT_CHAIN__STIMULUS, oldStimulus, stimulus));
-		}
 	}
 
 } // EventChainImpl

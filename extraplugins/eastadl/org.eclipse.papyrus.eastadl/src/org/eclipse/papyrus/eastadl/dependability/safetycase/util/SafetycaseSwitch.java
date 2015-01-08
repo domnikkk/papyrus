@@ -229,69 +229,53 @@ public class SafetycaseSwitch<T> extends Switch<T> {
 		case SafetycasePackage.SAFETY_CASE: {
 			SafetyCase safetyCase = (SafetyCase) theEObject;
 			T result = caseSafetyCase(safetyCase);
-			if (result == null) {
+			if (result == null)
 				result = caseTraceableSpecification(safetyCase);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPackageableElement(safetyCase);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(safetyCase);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case SafetycasePackage.GROUND: {
 			Ground ground = (Ground) theEObject;
 			T result = caseGround(ground);
-			if (result == null) {
+			if (result == null)
 				result = caseTraceableSpecification(ground);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPackageableElement(ground);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(ground);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case SafetycasePackage.WARRANT: {
 			Warrant warrant = (Warrant) theEObject;
 			T result = caseWarrant(warrant);
-			if (result == null) {
+			if (result == null)
 				result = caseTraceableSpecification(warrant);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPackageableElement(warrant);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(warrant);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case SafetycasePackage.CLAIM: {
 			Claim claim = (Claim) theEObject;
 			T result = caseClaim(claim);
-			if (result == null) {
+			if (result == null)
 				result = caseTraceableSpecification(claim);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPackageableElement(claim);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(claim);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		default:

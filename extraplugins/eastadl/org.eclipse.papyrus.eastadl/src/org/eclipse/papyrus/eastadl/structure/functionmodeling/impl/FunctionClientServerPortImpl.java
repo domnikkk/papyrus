@@ -115,9 +115,8 @@ public class FunctionClientServerPortImpl extends FunctionPortImpl implements Fu
 	public void setClientServerKind(ClientServerKind newClientServerKind) {
 		ClientServerKind oldClientServerKind = clientServerKind;
 		clientServerKind = newClientServerKind == null ? CLIENT_SERVER_KIND_EDEFAULT : newClientServerKind;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FunctionmodelingPackage.FUNCTION_CLIENT_SERVER_PORT__CLIENT_SERVER_KIND, oldClientServerKind, clientServerKind));
-		}
 	}
 
 	/**
@@ -129,9 +128,8 @@ public class FunctionClientServerPortImpl extends FunctionPortImpl implements Fu
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case FunctionmodelingPackage.FUNCTION_CLIENT_SERVER_PORT__TYPE:
-			if (resolve) {
+			if (resolve)
 				return getType();
-			}
 			return basicGetType();
 		case FunctionmodelingPackage.FUNCTION_CLIENT_SERVER_PORT__CLIENT_SERVER_KIND:
 			return getClientServerKind();
@@ -214,12 +212,11 @@ public class FunctionClientServerPortImpl extends FunctionPortImpl implements Fu
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
+		if (eIsProxy())
 			return super.toString();
-		}
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (clientServerKind: ");
+		result.append(" (clientServerKind: "); //$NON-NLS-1$
 		result.append(clientServerKind);
 		result.append(')');
 		return result.toString();

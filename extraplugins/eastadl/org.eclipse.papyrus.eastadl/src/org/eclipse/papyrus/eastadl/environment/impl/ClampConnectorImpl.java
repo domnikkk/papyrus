@@ -87,9 +87,8 @@ public class ClampConnectorImpl extends EAElementImpl implements ClampConnector 
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case EnvironmentPackage.CLAMP_CONNECTOR__BASE_CONNECTOR:
-			if (resolve) {
+			if (resolve)
 				return getBase_Connector();
-			}
 			return basicGetBase_Connector();
 		case EnvironmentPackage.CLAMP_CONNECTOR__PORT:
 			return getPort();
@@ -186,9 +185,8 @@ public class ClampConnectorImpl extends EAElementImpl implements ClampConnector 
 			InternalEObject oldBase_Connector = (InternalEObject) base_Connector;
 			base_Connector = (Connector) eResolveProxy(oldBase_Connector);
 			if (base_Connector != oldBase_Connector) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EnvironmentPackage.CLAMP_CONNECTOR__BASE_CONNECTOR, oldBase_Connector, base_Connector));
-				}
 			}
 		}
 		return base_Connector;
@@ -214,9 +212,8 @@ public class ClampConnectorImpl extends EAElementImpl implements ClampConnector 
 	public void setBase_Connector(Connector newBase_Connector) {
 		Connector oldBase_Connector = base_Connector;
 		base_Connector = newBase_Connector;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EnvironmentPackage.CLAMP_CONNECTOR__BASE_CONNECTOR, oldBase_Connector, base_Connector));
-		}
 	}
 
 	/**

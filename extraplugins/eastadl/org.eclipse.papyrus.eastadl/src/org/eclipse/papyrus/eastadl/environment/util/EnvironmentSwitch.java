@@ -193,29 +193,23 @@ public class EnvironmentSwitch<T> extends Switch<T> {
 		case EnvironmentPackage.ENVIRONMENT: {
 			Environment environment = (Environment) theEObject;
 			T result = caseEnvironment(environment);
-			if (result == null) {
+			if (result == null)
 				result = caseContext(environment);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAPackageableElement(environment);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(environment);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case EnvironmentPackage.CLAMP_CONNECTOR: {
 			ClampConnector clampConnector = (ClampConnector) theEObject;
 			T result = caseClampConnector(clampConnector);
-			if (result == null) {
+			if (result == null)
 				result = caseEAElement(clampConnector);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		default:

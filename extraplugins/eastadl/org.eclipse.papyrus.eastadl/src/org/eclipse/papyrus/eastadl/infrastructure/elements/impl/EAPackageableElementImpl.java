@@ -81,9 +81,8 @@ public abstract class EAPackageableElementImpl extends EAElementImpl implements 
 			InternalEObject oldBase_PackageableElement = (InternalEObject) base_PackageableElement;
 			base_PackageableElement = (PackageableElement) eResolveProxy(oldBase_PackageableElement);
 			if (base_PackageableElement != oldBase_PackageableElement) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ElementsPackage.EA_PACKAGEABLE_ELEMENT__BASE_PACKAGEABLE_ELEMENT, oldBase_PackageableElement, base_PackageableElement));
-				}
 			}
 		}
 		return base_PackageableElement;
@@ -109,9 +108,8 @@ public abstract class EAPackageableElementImpl extends EAElementImpl implements 
 	public void setBase_PackageableElement(PackageableElement newBase_PackageableElement) {
 		PackageableElement oldBase_PackageableElement = base_PackageableElement;
 		base_PackageableElement = newBase_PackageableElement;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ElementsPackage.EA_PACKAGEABLE_ELEMENT__BASE_PACKAGEABLE_ELEMENT, oldBase_PackageableElement, base_PackageableElement));
-		}
 	}
 
 	/**
@@ -124,9 +122,8 @@ public abstract class EAPackageableElementImpl extends EAElementImpl implements 
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case ElementsPackage.EA_PACKAGEABLE_ELEMENT__BASE_PACKAGEABLE_ELEMENT:
-			if (resolve) {
+			if (resolve)
 				return getBase_PackageableElement();
-			}
 			return basicGetBase_PackageableElement();
 		}
 		return super.eGet(featureID, resolve, coreType);

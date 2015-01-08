@@ -80,9 +80,8 @@ public abstract class EADatatypeImpl extends TraceableSpecificationImpl implemen
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case DatatypesPackage.EA_DATATYPE__BASE_DATA_TYPE:
-			if (resolve) {
+			if (resolve)
 				return getBase_DataType();
-			}
 			return basicGetBase_DataType();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -158,9 +157,8 @@ public abstract class EADatatypeImpl extends TraceableSpecificationImpl implemen
 			InternalEObject oldBase_DataType = (InternalEObject) base_DataType;
 			base_DataType = (DataType) eResolveProxy(oldBase_DataType);
 			if (base_DataType != oldBase_DataType) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DatatypesPackage.EA_DATATYPE__BASE_DATA_TYPE, oldBase_DataType, base_DataType));
-				}
 			}
 		}
 		return base_DataType;
@@ -176,9 +174,8 @@ public abstract class EADatatypeImpl extends TraceableSpecificationImpl implemen
 	public void setBase_DataType(DataType newBase_DataType) {
 		DataType oldBase_DataType = base_DataType;
 		base_DataType = newBase_DataType;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.EA_DATATYPE__BASE_DATA_TYPE, oldBase_DataType, base_DataType));
-		}
 	}
 
 } // EADatatypeImpl

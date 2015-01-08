@@ -123,9 +123,8 @@ public class EANumericalImpl extends EADatatypeImpl implements EANumerical {
 	public void setMax(Float newMax) {
 		Float oldMax = max;
 		max = newMax;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.EA_NUMERICAL__MAX, oldMax, max));
-		}
 	}
 
 	/**
@@ -149,9 +148,8 @@ public class EANumericalImpl extends EADatatypeImpl implements EANumerical {
 	public void setMin(Float newMin) {
 		Float oldMin = min;
 		min = newMin;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.EA_NUMERICAL__MIN, oldMin, min));
-		}
 	}
 
 	/**
@@ -166,9 +164,8 @@ public class EANumericalImpl extends EADatatypeImpl implements EANumerical {
 			InternalEObject oldUnit = (InternalEObject) unit;
 			unit = (Unit) eResolveProxy(oldUnit);
 			if (unit != oldUnit) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DatatypesPackage.EA_NUMERICAL__UNIT, oldUnit, unit));
-				}
 			}
 		}
 		return unit;
@@ -194,9 +191,8 @@ public class EANumericalImpl extends EADatatypeImpl implements EANumerical {
 	public void setUnit(Unit newUnit) {
 		Unit oldUnit = unit;
 		unit = newUnit;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.EA_NUMERICAL__UNIT, oldUnit, unit));
-		}
 	}
 
 	/**
@@ -213,9 +209,8 @@ public class EANumericalImpl extends EADatatypeImpl implements EANumerical {
 		case DatatypesPackage.EA_NUMERICAL__MIN:
 			return getMin();
 		case DatatypesPackage.EA_NUMERICAL__UNIT:
-			if (resolve) {
+			if (resolve)
 				return getUnit();
-			}
 			return basicGetUnit();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -292,14 +287,13 @@ public class EANumericalImpl extends EADatatypeImpl implements EANumerical {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
+		if (eIsProxy())
 			return super.toString();
-		}
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (max: ");
+		result.append(" (max: "); //$NON-NLS-1$
 		result.append(max);
-		result.append(", min: ");
+		result.append(", min: "); //$NON-NLS-1$
 		result.append(min);
 		result.append(')');
 		return result.toString();

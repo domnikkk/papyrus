@@ -29,8 +29,8 @@ package org.eclipse.papyrus.eastadl.structure.hardwaremodeling;
  * Semantics:
  * The Node element represents an ECU, i.e. an Electronic Control Unit and an allocation target of FunctionPrototypes.
  *
- * The Node executes its allocated FunctionPrototypes at the specified executionRate. The executionRate denotes how many execution seconds of an allocated functionPrototype´s execution time that is processed each real-time second. Actual execution time is
- * thus found by dividing the parameters of the ExecutionTimeConstraint with executionRate.
+ * The Node executes its allocated FunctionPrototypes at the specified executionRate. The executionRate denotes how many execution seconds of an allocated functionPrototype´s execution time that is processed each real-time second. Actual execution time is thus
+ * found by dividing the parameters of the ExecutionTimeConstraint with executionRate.
  *
  * Example: If an ECU is 25% faster than a standard ECU (e.g., in a certain context, execution times are given assuming a nominal speed of 100 MHz; Our CPU is then 125 MHz), the executionRate is 1.25. An execution time of 5 ms would then become 4 ms on this
  * ECU.

@@ -150,9 +150,8 @@ public abstract class EAXMLImpl extends MinimalEObjectImpl.Container implements 
 	public void setAdmindocumentVersion(String newAdmindocumentVersion) {
 		String oldAdmindocumentVersion = admindocumentVersion;
 		admindocumentVersion = newAdmindocumentVersion;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ElementsPackage.EAXML__ADMINDOCUMENT_VERSION, oldAdmindocumentVersion, admindocumentVersion));
-		}
 	}
 
 	/**
@@ -176,9 +175,8 @@ public abstract class EAXMLImpl extends MinimalEObjectImpl.Container implements 
 	public void setAutosardocumentVersion(String newAutosardocumentVersion) {
 		String oldAutosardocumentVersion = autosardocumentVersion;
 		autosardocumentVersion = newAutosardocumentVersion;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ElementsPackage.EAXML__AUTOSARDOCUMENT_VERSION, oldAutosardocumentVersion, autosardocumentVersion));
-		}
 	}
 
 	/**
@@ -202,9 +200,8 @@ public abstract class EAXMLImpl extends MinimalEObjectImpl.Container implements 
 	public void setXmlglobalelement(boolean newXmlglobalelement) {
 		boolean oldXmlglobalelement = xmlglobalelement;
 		xmlglobalelement = newXmlglobalelement;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ElementsPackage.EAXML__XMLGLOBALELEMENT, oldXmlglobalelement, xmlglobalelement));
-		}
 	}
 
 	/**
@@ -323,16 +320,15 @@ public abstract class EAXMLImpl extends MinimalEObjectImpl.Container implements 
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
+		if (eIsProxy())
 			return super.toString();
-		}
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (admindocumentVersion: ");
+		result.append(" (admindocumentVersion: "); //$NON-NLS-1$
 		result.append(admindocumentVersion);
-		result.append(", autosardocumentVersion: ");
+		result.append(", autosardocumentVersion: "); //$NON-NLS-1$
 		result.append(autosardocumentVersion);
-		result.append(", xmlglobalelement: ");
+		result.append(", xmlglobalelement: "); //$NON-NLS-1$
 		result.append(xmlglobalelement);
 		result.append(')');
 		return result.toString();

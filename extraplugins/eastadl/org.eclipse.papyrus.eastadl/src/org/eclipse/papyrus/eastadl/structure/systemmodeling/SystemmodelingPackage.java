@@ -51,6 +51,7 @@ import org.eclipse.papyrus.eastadl.infrastructure.elements.ElementsPackage;
  *
  * @see org.eclipse.papyrus.eastadl.structure.systemmodeling.SystemmodelingFactory
  * @model kind="package"
+ *        annotation="http://www.eclipse.org/uml2/2.0.0/UML originalName='SystemModeling'"
  * @generated
  */
 public interface SystemmodelingPackage extends EPackage {

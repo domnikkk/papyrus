@@ -35,6 +35,7 @@ import org.eclipse.papyrus.eastadl.infrastructure.values.ValuesPackage;
  *
  * @see org.eclipse.papyrus.eastadl.timing.TimingFactory
  * @model kind="package"
+ *        annotation="http://www.eclipse.org/uml2/2.0.0/UML originalName='Timing'"
  * @generated
  */
 public interface TimingPackage extends EPackage {

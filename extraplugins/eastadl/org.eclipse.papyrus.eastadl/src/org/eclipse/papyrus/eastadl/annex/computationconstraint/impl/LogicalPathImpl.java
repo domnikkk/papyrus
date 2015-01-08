@@ -187,9 +187,8 @@ public class LogicalPathImpl extends EAElementImpl implements LogicalPath {
 			InternalEObject oldTransformationOccurrence = (InternalEObject) transformationOccurrence;
 			transformationOccurrence = (TransformationOccurrence) eResolveProxy(oldTransformationOccurrence);
 			if (transformationOccurrence != oldTransformationOccurrence) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComputationconstraintPackage.LOGICAL_PATH__TRANSFORMATION_OCCURRENCE, oldTransformationOccurrence, transformationOccurrence));
-				}
 			}
 		}
 		return transformationOccurrence;
@@ -215,9 +214,8 @@ public class LogicalPathImpl extends EAElementImpl implements LogicalPath {
 	public void setTransformationOccurrence(TransformationOccurrence newTransformationOccurrence) {
 		TransformationOccurrence oldTransformationOccurrence = transformationOccurrence;
 		transformationOccurrence = newTransformationOccurrence;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ComputationconstraintPackage.LOGICAL_PATH__TRANSFORMATION_OCCURRENCE, oldTransformationOccurrence, transformationOccurrence));
-		}
 	}
 
 	/**
@@ -304,9 +302,8 @@ public class LogicalPathImpl extends EAElementImpl implements LogicalPath {
 		case ComputationconstraintPackage.LOGICAL_PATH__SEGMENT:
 			return getSegment();
 		case ComputationconstraintPackage.LOGICAL_PATH__TRANSFORMATION_OCCURRENCE:
-			if (resolve) {
+			if (resolve)
 				return getTransformationOccurrence();
-			}
 			return basicGetTransformationOccurrence();
 		case ComputationconstraintPackage.LOGICAL_PATH__PRECEDING_EXECUTION_EVENT_CHAIN:
 			return getPrecedingExecutionEventChain();

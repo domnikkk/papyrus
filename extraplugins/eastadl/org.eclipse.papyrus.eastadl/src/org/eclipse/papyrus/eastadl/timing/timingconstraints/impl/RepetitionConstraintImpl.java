@@ -138,9 +138,8 @@ public class RepetitionConstraintImpl extends TimingConstraintImpl implements Re
 	public void setSpan(int newSpan) {
 		int oldSpan = span;
 		span = newSpan;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TimingconstraintsPackage.REPETITION_CONSTRAINT__SPAN, oldSpan, span));
-		}
 	}
 
 	/**
@@ -155,9 +154,8 @@ public class RepetitionConstraintImpl extends TimingConstraintImpl implements Re
 			InternalEObject oldLower = (InternalEObject) lower;
 			lower = (TimingExpression) eResolveProxy(oldLower);
 			if (lower != oldLower) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TimingconstraintsPackage.REPETITION_CONSTRAINT__LOWER, oldLower, lower));
-				}
 			}
 		}
 		return lower;
@@ -183,9 +181,8 @@ public class RepetitionConstraintImpl extends TimingConstraintImpl implements Re
 	public void setLower(TimingExpression newLower) {
 		TimingExpression oldLower = lower;
 		lower = newLower;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TimingconstraintsPackage.REPETITION_CONSTRAINT__LOWER, oldLower, lower));
-		}
 	}
 
 	/**
@@ -200,9 +197,8 @@ public class RepetitionConstraintImpl extends TimingConstraintImpl implements Re
 			InternalEObject oldUpper = (InternalEObject) upper;
 			upper = (TimingExpression) eResolveProxy(oldUpper);
 			if (upper != oldUpper) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TimingconstraintsPackage.REPETITION_CONSTRAINT__UPPER, oldUpper, upper));
-				}
 			}
 		}
 		return upper;
@@ -228,9 +224,8 @@ public class RepetitionConstraintImpl extends TimingConstraintImpl implements Re
 	public void setUpper(TimingExpression newUpper) {
 		TimingExpression oldUpper = upper;
 		upper = newUpper;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TimingconstraintsPackage.REPETITION_CONSTRAINT__UPPER, oldUpper, upper));
-		}
 	}
 
 	/**
@@ -245,9 +240,8 @@ public class RepetitionConstraintImpl extends TimingConstraintImpl implements Re
 			InternalEObject oldJitter = (InternalEObject) jitter;
 			jitter = (TimingExpression) eResolveProxy(oldJitter);
 			if (jitter != oldJitter) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TimingconstraintsPackage.REPETITION_CONSTRAINT__JITTER, oldJitter, jitter));
-				}
 			}
 		}
 		return jitter;
@@ -273,9 +267,8 @@ public class RepetitionConstraintImpl extends TimingConstraintImpl implements Re
 	public void setJitter(TimingExpression newJitter) {
 		TimingExpression oldJitter = jitter;
 		jitter = newJitter;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TimingconstraintsPackage.REPETITION_CONSTRAINT__JITTER, oldJitter, jitter));
-		}
 	}
 
 	/**
@@ -290,9 +283,8 @@ public class RepetitionConstraintImpl extends TimingConstraintImpl implements Re
 			InternalEObject oldEvent = (InternalEObject) event;
 			event = (Event) eResolveProxy(oldEvent);
 			if (event != oldEvent) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TimingconstraintsPackage.REPETITION_CONSTRAINT__EVENT, oldEvent, event));
-				}
 			}
 		}
 		return event;
@@ -318,9 +310,8 @@ public class RepetitionConstraintImpl extends TimingConstraintImpl implements Re
 	public void setEvent(Event newEvent) {
 		Event oldEvent = event;
 		event = newEvent;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TimingconstraintsPackage.REPETITION_CONSTRAINT__EVENT, oldEvent, event));
-		}
 	}
 
 	/**
@@ -335,24 +326,20 @@ public class RepetitionConstraintImpl extends TimingConstraintImpl implements Re
 		case TimingconstraintsPackage.REPETITION_CONSTRAINT__SPAN:
 			return getSpan();
 		case TimingconstraintsPackage.REPETITION_CONSTRAINT__LOWER:
-			if (resolve) {
+			if (resolve)
 				return getLower();
-			}
 			return basicGetLower();
 		case TimingconstraintsPackage.REPETITION_CONSTRAINT__UPPER:
-			if (resolve) {
+			if (resolve)
 				return getUpper();
-			}
 			return basicGetUpper();
 		case TimingconstraintsPackage.REPETITION_CONSTRAINT__JITTER:
-			if (resolve) {
+			if (resolve)
 				return getJitter();
-			}
 			return basicGetJitter();
 		case TimingconstraintsPackage.REPETITION_CONSTRAINT__EVENT:
-			if (resolve) {
+			if (resolve)
 				return getEvent();
-			}
 			return basicGetEvent();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -445,12 +432,11 @@ public class RepetitionConstraintImpl extends TimingConstraintImpl implements Re
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
+		if (eIsProxy())
 			return super.toString();
-		}
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (span: ");
+		result.append(" (span: "); //$NON-NLS-1$
 		result.append(span);
 		result.append(')');
 		return result.toString();

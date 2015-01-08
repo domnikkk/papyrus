@@ -97,16 +97,14 @@ public class OperationImpl extends EAElementImpl implements Operation {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case FunctionmodelingPackage.OPERATION__BASE_OPERATION:
-			if (resolve) {
+			if (resolve)
 				return getBase_Operation();
-			}
 			return basicGetBase_Operation();
 		case FunctionmodelingPackage.OPERATION__ARGUMENT:
 			return getArgument();
 		case FunctionmodelingPackage.OPERATION__RETURN:
-			if (resolve) {
+			if (resolve)
 				return getReturn();
-			}
 			return basicGetReturn();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -167,9 +165,8 @@ public class OperationImpl extends EAElementImpl implements Operation {
 			InternalEObject oldBase_Operation = (InternalEObject) base_Operation;
 			base_Operation = (org.eclipse.uml2.uml.Operation) eResolveProxy(oldBase_Operation);
 			if (base_Operation != oldBase_Operation) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FunctionmodelingPackage.OPERATION__BASE_OPERATION, oldBase_Operation, base_Operation));
-				}
 			}
 		}
 		return base_Operation;
@@ -195,9 +192,8 @@ public class OperationImpl extends EAElementImpl implements Operation {
 	public void setBase_Operation(org.eclipse.uml2.uml.Operation newBase_Operation) {
 		org.eclipse.uml2.uml.Operation oldBase_Operation = base_Operation;
 		base_Operation = newBase_Operation;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FunctionmodelingPackage.OPERATION__BASE_OPERATION, oldBase_Operation, base_Operation));
-		}
 	}
 
 	/**

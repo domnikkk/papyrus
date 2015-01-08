@@ -164,9 +164,8 @@ public class RequirementsModelImpl extends ContextImpl implements RequirementsMo
 			InternalEObject oldBase_Package = (InternalEObject) base_Package;
 			base_Package = (org.eclipse.uml2.uml.Package) eResolveProxy(oldBase_Package);
 			if (base_Package != oldBase_Package) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequirementsPackage.REQUIREMENTS_MODEL__BASE_PACKAGE, oldBase_Package, base_Package));
-				}
 			}
 		}
 		return base_Package;
@@ -192,9 +191,8 @@ public class RequirementsModelImpl extends ContextImpl implements RequirementsMo
 	public void setBase_Package(org.eclipse.uml2.uml.Package newBase_Package) {
 		org.eclipse.uml2.uml.Package oldBase_Package = base_Package;
 		base_Package = newBase_Package;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RequirementsPackage.REQUIREMENTS_MODEL__BASE_PACKAGE, oldBase_Package, base_Package));
-		}
 	}
 
 	/**
@@ -267,9 +265,8 @@ public class RequirementsModelImpl extends ContextImpl implements RequirementsMo
 		case RequirementsPackage.REQUIREMENTS_MODEL__OPERATIONAL_SITUATION:
 			return getOperationalSituation();
 		case RequirementsPackage.REQUIREMENTS_MODEL__BASE_PACKAGE:
-			if (resolve) {
+			if (resolve)
 				return getBase_Package();
-			}
 			return basicGetBase_Package();
 		case RequirementsPackage.REQUIREMENTS_MODEL__REQUIREMENTS_RELATIONSHIP_GROUP:
 			return getRequirementsRelationshipGroup();

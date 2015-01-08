@@ -79,9 +79,8 @@ public class ArchitectureImpl extends ConceptImpl implements Architecture {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case NeedsPackage.ARCHITECTURE__DESCRIBED_BY:
-			if (resolve) {
+			if (resolve)
 				return getDescribedBy();
-			}
 			return basicGetDescribedBy();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -157,9 +156,8 @@ public class ArchitectureImpl extends ConceptImpl implements Architecture {
 			InternalEObject oldDescribedBy = (InternalEObject) describedBy;
 			describedBy = (ArchitecturalDescription) eResolveProxy(oldDescribedBy);
 			if (describedBy != oldDescribedBy) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, NeedsPackage.ARCHITECTURE__DESCRIBED_BY, oldDescribedBy, describedBy));
-				}
 			}
 		}
 		return describedBy;
@@ -175,9 +173,8 @@ public class ArchitectureImpl extends ConceptImpl implements Architecture {
 	public void setDescribedBy(ArchitecturalDescription newDescribedBy) {
 		ArchitecturalDescription oldDescribedBy = describedBy;
 		describedBy = newDescribedBy;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, NeedsPackage.ARCHITECTURE__DESCRIBED_BY, oldDescribedBy, describedBy));
-		}
 	}
 
 } // ArchitectureImpl
