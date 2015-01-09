@@ -135,6 +135,7 @@
 		<module>../extraplugins/uml/org.eclipse.papyrus.uml.export</module>
 		<module>../extraplugins/umlrt/org.eclipse.papyrus.umlrt</module>
 		<module>../extraplugins/umlrt/org.eclipse.papyrus.umlrt.properties</module>
+		<module>../extraplugins/umlrt/org.eclipse.papyrus.umlrt.ui</module>
 		<module>../extraplugins/umlrt/org.eclipse.papyrus.umlrt.validation</module>
 		<module>../extraplugins/umlrt/org.eclipse.papyrus.umlrt.wizard</module>
 		<module>../extraplugins/migration/org.eclipse.papyrus.m2m.qvto</module>
