@@ -2518,7 +2518,8 @@
           canonicalEditPolicyClassName="NestedInterfaceForClassCanonicalEditPolicy"
           graphicalNodeEditPolicyClassName="NestedInterfaceForClassGraphicalNodeEditPolicy"
           createCommandClassName="NestedInterfaceForClassCreateCommand"
-          containers="/0/@diagram/@compartments.20 /0/@diagram/@compartments.2">
+          containers="/0/@diagram/@compartments.20 /0/@diagram/@compartments.2"
+          labelElementIcon="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <elementType
@@ -2566,7 +2567,8 @@
           canonicalEditPolicyClassName="NestedInterfaceForComponentCanonicalEditPolicy"
           graphicalNodeEditPolicyClassName="NestedInterfaceForComponentGraphicalNodeEditPolicy"
           createCommandClassName="NestedInterfaceForComponentCreateCommand"
-          containers="/0/@diagram/@compartments.23 /0/@diagram/@compartments.5">
+          containers="/0/@diagram/@compartments.23 /0/@diagram/@compartments.5"
+          labelElementIcon="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <elementType
@@ -2612,7 +2614,8 @@
           canonicalEditPolicyClassName="NestedInterfaceForInterfaceCanonicalEditPolicy"
           graphicalNodeEditPolicyClassName="NestedInterfaceForInterfaceGraphicalNodeEditPolicy"
           createCommandClassName="NestedInterfaceForInterfaceCreateCommand"
-          containers="/0/@diagram/@compartments.26 /0/@diagram/@compartments.9">
+          containers="/0/@diagram/@compartments.26 /0/@diagram/@compartments.9"
+          labelElementIcon="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <elementType
@@ -2658,7 +2661,8 @@
           canonicalEditPolicyClassName="NestedEnumerationForClassCanonicalEditPolicy"
           graphicalNodeEditPolicyClassName="NestedEnumerationForClassGraphicalNodeEditPolicy"
           createCommandClassName="NestedEnumerationForClassCreateCommand"
-          containers="/0/@diagram/@compartments.2 /0/@diagram/@compartments.20">
+          containers="/0/@diagram/@compartments.2 /0/@diagram/@compartments.20"
+          labelElementIcon="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <elementType
@@ -2708,7 +2712,8 @@
           canonicalEditPolicyClassName="NestedEnumerationForComponentCanonicalEditPolicy"
           graphicalNodeEditPolicyClassName="NestedEnumerationForComponentGraphicalNodeEditPolicy"
           createCommandClassName="NestedEnumerationForComponentCreateCommand"
-          containers="/0/@diagram/@compartments.5 /0/@diagram/@compartments.23">
+          containers="/0/@diagram/@compartments.5 /0/@diagram/@compartments.23"
+          labelElementIcon="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <elementType
@@ -2758,7 +2763,8 @@
           canonicalEditPolicyClassName="NestedEnumerationForInterfaceCanonicalEditPolicy"
           graphicalNodeEditPolicyClassName="NestedEnumerationForInterfaceGraphicalNodeEditPolicy"
           createCommandClassName="NestedEnumerationForInterfaceCreateCommand"
-          containers="/0/@diagram/@compartments.9 /0/@diagram/@compartments.26">
+          containers="/0/@diagram/@compartments.9 /0/@diagram/@compartments.26"
+          labelElementIcon="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <elementType
@@ -2808,7 +2814,8 @@
           canonicalEditPolicyClassName="NestedPrimitiveTypeForClassCanonicalEditPolicy"
           graphicalNodeEditPolicyClassName="NestedPrimitiveTypeForClassGraphicalNodeEditPolicy"
           createCommandClassName="NestedPrimitiveTypeForClassCreateCommand"
-          containers="/0/@diagram/@compartments.2 /0/@diagram/@compartments.20">
+          containers="/0/@diagram/@compartments.2 /0/@diagram/@compartments.20"
+          labelElementIcon="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <elementType
@@ -2862,7 +2869,8 @@
           canonicalEditPolicyClassName="NestedPrimitiveTypeForComponentCanonicalEditPolicy"
           graphicalNodeEditPolicyClassName="NestedPrimitiveTypeForComponentGraphicalNodeEditPolicy"
           createCommandClassName="NestedPrimitiveTypeForComponentCreateCommand"
-          containers="/0/@diagram/@compartments.5 /0/@diagram/@compartments.23">
+          containers="/0/@diagram/@compartments.5 /0/@diagram/@compartments.23"
+          labelElementIcon="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <elementType
@@ -2912,7 +2920,8 @@
           canonicalEditPolicyClassName="NestedPrimitiveTypeForInterfaceCanonicalEditPolicy"
           graphicalNodeEditPolicyClassName="NestedPrimitiveTypeForInterfaceGraphicalNodeEditPolicy"
           createCommandClassName="NestedPrimitiveTypeForInterfaceCreateCommand"
-          containers="/0/@diagram/@compartments.9 /0/@diagram/@compartments.26">
+          containers="/0/@diagram/@compartments.9 /0/@diagram/@compartments.26"
+          labelElementIcon="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <elementType
@@ -2962,7 +2971,8 @@
           canonicalEditPolicyClassName="NestedDataTypeForClassCanonicalEditPolicy"
           graphicalNodeEditPolicyClassName="NestedDataTypeForClassGraphicalNodeEditPolicy"
           createCommandClassName="NestedDataTypeForClassCreateCommand"
-          containers="/0/@diagram/@compartments.2 /0/@diagram/@compartments.20">
+          containers="/0/@diagram/@compartments.2 /0/@diagram/@compartments.20"
+          labelElementIcon="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <elementType
@@ -3012,7 +3022,8 @@
           canonicalEditPolicyClassName="NestedDataTypeForComponentCanonicalEditPolicy"
           graphicalNodeEditPolicyClassName="NestedDataTypeForComponentGraphicalNodeEditPolicy"
           createCommandClassName="NestedDataTypeForComponentCreateCommand"
-          containers="/0/@diagram/@compartments.5 /0/@diagram/@compartments.23">
+          containers="/0/@diagram/@compartments.5 /0/@diagram/@compartments.23"
+          labelElementIcon="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <elementType
@@ -3058,7 +3069,8 @@
           canonicalEditPolicyClassName="NestedDataTypeForInterfaceCanonicalEditPolicy"
           graphicalNodeEditPolicyClassName="NestedDataTypeForInterfaceGraphicalNodeEditPolicy"
           createCommandClassName="NestedDataTypeForInterfaceCreateCommand"
-          containers="/0/@diagram/@compartments.9 /0/@diagram/@compartments.26">
+          containers="/0/@diagram/@compartments.9 /0/@diagram/@compartments.26"
+          labelElementIcon="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <elementType
@@ -3104,7 +3116,8 @@
           canonicalEditPolicyClassName="NestedSignalForClassCanonicalEditPolicy"
           graphicalNodeEditPolicyClassName="NestedSignalForClassGraphicalNodeEditPolicy"
           createCommandClassName="NestedSignalForClassCreateCommand"
-          containers="/0/@diagram/@compartments.2 /0/@diagram/@compartments.20">
+          containers="/0/@diagram/@compartments.2 /0/@diagram/@compartments.20"
+          labelElementIcon="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <elementType
@@ -3154,7 +3167,8 @@
           canonicalEditPolicyClassName="NestedSignalForComponentCanonicalEditPolicy"
           graphicalNodeEditPolicyClassName="NestedSignalForComponentGraphicalNodeEditPolicy"
           createCommandClassName="NestedSignalForComponentCreateCommand"
-          containers="/0/@diagram/@compartments.5 /0/@diagram/@compartments.23">
+          containers="/0/@diagram/@compartments.5 /0/@diagram/@compartments.23"
+          labelElementIcon="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <elementType
@@ -3200,7 +3214,8 @@
           canonicalEditPolicyClassName="NestedSignalForInterfaceCanonicalEditPolicy"
           graphicalNodeEditPolicyClassName="NestedSignalForInterfaceGraphicalNodeEditPolicy"
           createCommandClassName="NestedSignalForInterfaceCreateCommand"
-          containers="/0/@diagram/@compartments.9 /0/@diagram/@compartments.26">
+          containers="/0/@diagram/@compartments.9 /0/@diagram/@compartments.26"
+          labelElementIcon="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <elementType

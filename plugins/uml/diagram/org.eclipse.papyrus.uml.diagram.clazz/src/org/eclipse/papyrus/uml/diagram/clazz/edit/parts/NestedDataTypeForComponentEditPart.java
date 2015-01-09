@@ -62,6 +62,7 @@ import org.eclipse.papyrus.extensionpoints.editors.ui.ILabelEditorDialog;
 import org.eclipse.papyrus.extensionpoints.editors.ui.IPopupEditorHelper;
 import org.eclipse.papyrus.extensionpoints.editors.utils.DirectEditorsUtil;
 import org.eclipse.papyrus.extensionpoints.editors.utils.IDirectEditorsIds;
+import org.eclipse.papyrus.infra.emf.appearance.helper.AppearanceHelper;
 import org.eclipse.papyrus.infra.gmfdiag.common.editpart.IControlParserForDirectEdit;
 import org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.IMaskManagedLabelEditPolicy;
 import org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.IndirectMaskLabelEditPolicy;
@@ -75,6 +76,7 @@ import org.eclipse.papyrus.uml.diagram.common.directedit.MultilineLabelDirectEdi
 import org.eclipse.papyrus.uml.diagram.common.editparts.UMLCompartmentEditPart;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.IDirectEdition;
 import org.eclipse.papyrus.uml.diagram.common.figure.node.ILabelFigure;
+import org.eclipse.papyrus.uml.diagram.common.util.DiagramEditPartsUtil;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.accessibility.AccessibleEvent;
 import org.eclipse.swt.custom.BusyIndicator;
@@ -259,6 +261,16 @@ public class NestedDataTypeForComponentEditPart extends UMLCompartmentEditPart i
 	 * @generated
 	 */
 	protected Image getLabelIcon() {
+		EObject parserElement = getParserElement();
+		if (parserElement == null) {
+			return null;
+		}
+		List<View> views = DiagramEditPartsUtil.findViews(parserElement, getViewer());
+		for (View view : views) {
+			if (AppearanceHelper.showElementIcon(view)) {
+				return UMLElementTypes.getImage(parserElement.eClass());
+			}
+		}
 		return null;
 	}
 
