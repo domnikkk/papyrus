@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Behavior="http://www.papyrusuml.org/EAST-ADL2/Behavior/1" xmlns:Dependability="http://www.papyrusuml.org/EAST-ADL2/Dependability/1" xmlns:Elements="http://www.papyrusuml.org/EAST-ADL2/Infrastructure/Elements/1" xmlns:ErrorModel="http://www.papyrusuml.org/EAST-ADL2/Dependability/ErrorModel/1" xmlns:FeatureModeling="http://www.papyrusuml.org/EAST-ADL2/Structure/FeatureModeling/1" xmlns:FunctionModeling="http://www.papyrusuml.org/EAST-ADL2/Structure/FunctionModeling/1" xmlns:GenericConstraints="http://www.papyrusuml.org/EAST-ADL2/GenericConstraints/1" xmlns:HardwareModeling="http://www.papyrusuml.org/EAST-ADL2/Structure/HardwareModeling/1" xmlns:Requirements="http://www.papyrusuml.org/EAST-ADL2/Requirements/Requirements/1" xmlns:SystemModeling="http://www.papyrusuml.org/EAST-ADL2/Structure/SystemModeling/1" xmlns:Timing="http://www.papyrusuml.org/EAST-ADL2/Timing/1" xmlns:UseCases="http://www.papyrusuml.org/EAST-ADL2/Requirements/UseCase/1" xmlns:Variability="http://www.papyrusuml.org/EAST-ADL2/Variability/1" xmlns:VerificationValidation="http://www.papyrusuml.org/EAST-ADL2/Requirements/VerificationValidation/1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xsi:schemaLocation="http://www.papyrusuml.org/EAST-ADL2/Behavior/1 http://www.papyrusuml.org/EAST-ADL2/1#//behavior http://www.papyrusuml.org/EAST-ADL2/Dependability/1 http://www.papyrusuml.org/EAST-ADL2/1#//dependability http://www.papyrusuml.org/EAST-ADL2/Infrastructure/Elements/1 http://www.papyrusuml.org/EAST-ADL2/1#//infrastructure/elements http://www.papyrusuml.org/EAST-ADL2/Dependability/ErrorModel/1 http://www.papyrusuml.org/EAST-ADL2/1#//dependability/errormodel http://www.papyrusuml.org/EAST-ADL2/Structure/FeatureModeling/1 http://www.papyrusuml.org/EAST-ADL2/1#//structure/featuremodeling http://www.papyrusuml.org/EAST-ADL2/Structure/FunctionModeling/1 http://www.papyrusuml.org/EAST-ADL2/1#//structure/functionmodeling http://www.papyrusuml.org/EAST-ADL2/GenericConstraints/1 http://www.papyrusuml.org/EAST-ADL2/1#//genericconstraints http://www.papyrusuml.org/EAST-ADL2/Structure/HardwareModeling/1 http://www.papyrusuml.org/EAST-ADL2/1#//structure/hardwaremodeling http://www.papyrusuml.org/EAST-ADL2/Requirements/Requirements/1 http://www.papyrusuml.org/EAST-ADL2/1#//requirements/requirements http://www.papyrusuml.org/EAST-ADL2/Structure/SystemModeling/1 http://www.papyrusuml.org/EAST-ADL2/1#//structure/systemmodeling http://www.papyrusuml.org/EAST-ADL2/Timing/1 http://www.papyrusuml.org/EAST-ADL2/1#//timing http://www.papyrusuml.org/EAST-ADL2/Requirements/UseCase/1 http://www.papyrusuml.org/EAST-ADL2/1#//requirements/usecases http://www.papyrusuml.org/EAST-ADL2/Variability/1 http://www.papyrusuml.org/EAST-ADL2/1#//variability http://www.papyrusuml.org/EAST-ADL2/Requirements/VerificationValidation/1 http://www.papyrusuml.org/EAST-ADL2/1#//requirements/verificationvalidation">
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Behavior="http://www.papyrusuml.org/EAST-ADL2/Behavior/1" xmlns:Dependability="http://www.papyrusuml.org/EAST-ADL2/Dependability/1" xmlns:ErrorModel="http://www.papyrusuml.org/EAST-ADL2/Dependability/ErrorModel/1" xmlns:FeatureModeling="http://www.papyrusuml.org/EAST-ADL2/Structure/FeatureModeling/1" xmlns:FunctionModeling="http://www.papyrusuml.org/EAST-ADL2/Structure/FunctionModeling/1" xmlns:GenericConstraints="http://www.papyrusuml.org/EAST-ADL2/GenericConstraints/1" xmlns:HardwareModeling="http://www.papyrusuml.org/EAST-ADL2/Structure/HardwareModeling/1" xmlns:Requirements="http://www.papyrusuml.org/EAST-ADL2/Requirements/Requirements/1" xmlns:SystemModeling="http://www.papyrusuml.org/EAST-ADL2/Structure/SystemModeling/1" xmlns:Timing="http://www.papyrusuml.org/EAST-ADL2/Timing/1" xmlns:UseCases="http://www.papyrusuml.org/EAST-ADL2/Requirements/UseCase/1" xmlns:Variability="http://www.papyrusuml.org/EAST-ADL2/Variability/1" xmlns:VerificationValidation="http://www.papyrusuml.org/EAST-ADL2/Requirements/VerificationValidation/1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http://www.papyrusuml.org/EAST-ADL2/Behavior/1 http://www.papyrusuml.org/EAST-ADL2/1#//behavior http://www.papyrusuml.org/EAST-ADL2/Dependability/1 http://www.papyrusuml.org/EAST-ADL2/1#//dependability http://www.papyrusuml.org/EAST-ADL2/Dependability/ErrorModel/1 http://www.papyrusuml.org/EAST-ADL2/1#//dependability/errormodel http://www.papyrusuml.org/EAST-ADL2/Structure/FeatureModeling/1 http://www.papyrusuml.org/EAST-ADL2/1#//structure/featuremodeling http://www.papyrusuml.org/EAST-ADL2/Structure/FunctionModeling/1 http://www.papyrusuml.org/EAST-ADL2/1#//structure/functionmodeling http://www.papyrusuml.org/EAST-ADL2/GenericConstraints/1 http://www.papyrusuml.org/EAST-ADL2/1#//genericconstraints http://www.papyrusuml.org/EAST-ADL2/Structure/HardwareModeling/1 http://www.papyrusuml.org/EAST-ADL2/1#//structure/hardwaremodeling http://www.papyrusuml.org/EAST-ADL2/Requirements/Requirements/1 http://www.papyrusuml.org/EAST-ADL2/1#//requirements/requirements http://www.papyrusuml.org/EAST-ADL2/Structure/SystemModeling/1 http://www.papyrusuml.org/EAST-ADL2/1#//structure/systemmodeling http://www.papyrusuml.org/EAST-ADL2/Timing/1 http://www.papyrusuml.org/EAST-ADL2/1#//timing http://www.papyrusuml.org/EAST-ADL2/Requirements/UseCase/1 http://www.papyrusuml.org/EAST-ADL2/1#//requirements/usecases http://www.papyrusuml.org/EAST-ADL2/Variability/1 http://www.papyrusuml.org/EAST-ADL2/1#//variability http://www.papyrusuml.org/EAST-ADL2/Requirements/VerificationValidation/1 http://www.papyrusuml.org/EAST-ADL2/1#//requirements/verificationvalidation">
   <uml:Model xmi:id="_QOV6JJDGEeCiKJG1YPqrlA" name="InitialModel">
     <packageImport xmi:type="uml:PackageImport" xmi:id="_QOV6JZDGEeCiKJG1YPqrlA">
       <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
@@ -15,25 +15,16 @@
           <ownedAttribute xmi:type="uml:Property" xmi:id="_QOV6KJDGEeCiKJG1YPqrlA" name="faa" visibility="public" type="_QOV6NpDGEeCiKJG1YPqrlA">
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_QOV6KpDGEeCiKJG1YPqrlA" value="1"/>
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_QOV6KZDGEeCiKJG1YPqrlA" value="1"/>
-            <defaultValue xmi:type="uml:LiteralString" xmi:id="_QOV6K5DGEeCiKJG1YPqrlA">
-              <value xsi:nil="true"/>
-            </defaultValue>
           </ownedAttribute>
         </packagedElement>
         <packagedElement xmi:type="uml:Class" xmi:id="_QOV6LJDGEeCiKJG1YPqrlA" name="MyDesignLevel">
           <ownedAttribute xmi:type="uml:Property" xmi:id="_QOV6LZDGEeCiKJG1YPqrlA" name="fda" visibility="public" type="_v1rzkJNcEeOPDK0XezNgFg">
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_QOV6L5DGEeCiKJG1YPqrlA" value="1"/>
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_QOV6LpDGEeCiKJG1YPqrlA" value="1"/>
-            <defaultValue xmi:type="uml:LiteralString" xmi:id="_QOV6MJDGEeCiKJG1YPqrlA">
-              <value xsi:nil="true"/>
-            </defaultValue>
           </ownedAttribute>
           <ownedAttribute xmi:type="uml:Property" xmi:id="_QOV6MZDGEeCiKJG1YPqrlA" name="hda" visibility="public" type="_1PS8kJNcEeOPDK0XezNgFg">
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_QOV6M5DGEeCiKJG1YPqrlA" value="1"/>
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_QOV6MpDGEeCiKJG1YPqrlA" value="1"/>
-            <defaultValue xmi:type="uml:LiteralString" xmi:id="_QOV6NJDGEeCiKJG1YPqrlA">
-              <value xsi:nil="true"/>
-            </defaultValue>
           </ownedAttribute>
           <nestedClassifier xmi:type="uml:Component" xmi:id="_7u2qgJMbEeOqf7Mq_dKPIQ" name="Allocation"/>
         </packagedElement>
@@ -260,7 +251,7 @@
     <packagedElement xmi:type="uml:Package" xmi:id="_CqR4MJKYEeCSSNvmR1q1Ag" name="EAST-ADLExtensionElements">
       <packagedElement xmi:type="uml:Package" xmi:id="__9D5cJKWEeCSSNvmR1q1Ag" name="RequirementsElements">
         <packagedElement xmi:type="uml:Package" xmi:id="_tYg3kBfLEeOqiZCcgnSrbg" name="MyRequirements">
-          <packagedElement xmi:type="uml:Class" xmi:id="_76uD8BoUEeOT07IJoxipWQ" clientDependency="_NQWEQBobEeOT07IJoxipWQ" name="Requirement1"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_76uD8BoUEeOT07IJoxipWQ" name="Requirement1"/>
           <packagedElement xmi:type="uml:Class" xmi:id="_KpogsBobEeOT07IJoxipWQ" name="Requirement2"/>
           <packagedElement xmi:type="uml:Dependency" xmi:id="_NQWEQBobEeOT07IJoxipWQ" name="Refine1" client="_76uD8BoUEeOT07IJoxipWQ" supplier="_KpogsBobEeOT07IJoxipWQ"/>
         </packagedElement>
@@ -393,12 +384,6 @@
       </eAnnotations>
       <appliedProfile xmi:type="uml:Profile" href="platform:/plugin/org.eclipse.papyrus.eastadl/model/eastadl.profile.uml#_N7DvcNjgEd6wXIBypQTswA"/>
     </profileApplication>
-    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_QOfD8JDGEeCiKJG1YPqrlA">
-      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_QOfD8ZDGEeCiKJG1YPqrlA" source="http://www.eclipse.org/uml2/2.0.0/UML">
-        <references xmi:type="ecore:EPackage" href="http://www.papyrusuml.org/EAST-ADL2/1#//interchange"/>
-      </eAnnotations>
-      <appliedProfile xmi:type="uml:Profile" href="platform:/plugin/org.eclipse.papyrus.eastadl/model/eastadl.profile.uml#_f0woANj4Ed6rlulM-6rbhg"/>
-    </profileApplication>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_QOfD8pDGEeCiKJG1YPqrlA">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_QOfD85DGEeCiKJG1YPqrlA" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="http://www.papyrusuml.org/EAST-ADL2/1#//environment"/>
@@ -503,26 +488,6 @@
   <FunctionModeling:DesignFunctionPrototype xmi:id="_QOfEC5DGEeCiKJG1YPqrlA" base_NamedElement="_QOV6LZDGEeCiKJG1YPqrlA" base_Property="_QOV6LZDGEeCiKJG1YPqrlA"/>
   <HardwareModeling:HardwareComponentPrototype xmi:id="_QOfEDJDGEeCiKJG1YPqrlA" base_NamedElement="_QOV6MZDGEeCiKJG1YPqrlA" base_Property="_QOV6MZDGEeCiKJG1YPqrlA"/>
   <FunctionModeling:AnalysisFunctionPrototype xmi:id="_QOfEDZDGEeCiKJG1YPqrlA" base_NamedElement="_QOV6KJDGEeCiKJG1YPqrlA" base_Property="_QOV6KJDGEeCiKJG1YPqrlA"/>
-  <Elements:EAPackage xmi:id="_LTIW4LbsEeGj_4Ff6T2dHw" name="model" base_NamedElement="_QOV6JJDGEeCiKJG1YPqrlA" subPackages="_LU870LbsEeGj_4Ff6T2dHw _LU-xALbsEeGj_4Ff6T2dHw _LU_YELbsEeGj_4Ff6T2dHw _LVBNQLbsEeGj_4Ff6T2dHw _LVB0ULbsEeGj_4Ff6T2dHw _LVDCcLbsEeGj_4Ff6T2dHw _LVGs0LbsEeGj_4Ff6T2dHw" base_Package="_QOV6JJDGEeCiKJG1YPqrlA"/>
-  <Elements:EAPackage xmi:id="_LU870LbsEeGj_4Ff6T2dHw" name="2_VehicleLevelElements" base_NamedElement="_Veu1cJDGEeCiKJG1YPqrlA" base_Package="_Veu1cJDGEeCiKJG1YPqrlA"/>
-  <Elements:EAPackage xmi:id="_LU-xALbsEeGj_4Ff6T2dHw" name="3_AnalysisLevelElements" base_NamedElement="_Xv4_wJDGEeCiKJG1YPqrlA" base_Package="_Xv4_wJDGEeCiKJG1YPqrlA"/>
-  <Elements:EAPackage xmi:id="_LU_YELbsEeGj_4Ff6T2dHw" name="4_DesignLevelElements" base_NamedElement="_YFD-gJDGEeCiKJG1YPqrlA" subPackages="_LU__ILbsEeGj_4Ff6T2dHw _LVAmMLbsEeGj_4Ff6T2dHw" base_Package="_YFD-gJDGEeCiKJG1YPqrlA"/>
-  <Elements:EAPackage xmi:id="_LU__ILbsEeGj_4Ff6T2dHw" name="FunctionalElements" base_NamedElement="_hRBXwJDGEeCiKJG1YPqrlA" base_Package="_hRBXwJDGEeCiKJG1YPqrlA"/>
-  <Elements:EAPackage xmi:id="_LVAmMLbsEeGj_4Ff6T2dHw" name="HardwareElements" base_NamedElement="_h6dWUJDGEeCiKJG1YPqrlA" base_Package="_h6dWUJDGEeCiKJG1YPqrlA"/>
-  <Elements:EAPackage xmi:id="_LVBNQLbsEeGj_4Ff6T2dHw" name="1_CommonDatatypes" base_NamedElement="_Yf45UJDGEeCiKJG1YPqrlA" base_Package="_Yf45UJDGEeCiKJG1YPqrlA"/>
-  <Elements:EAPackage xmi:id="_LVB0ULbsEeGj_4Ff6T2dHw" name="5_ImplementationLevelElements" base_NamedElement="_wy1f0JDGEeCiKJG1YPqrlA" subPackages="_LVCbYLbsEeGj_4Ff6T2dHw _LVCbYbbsEeGj_4Ff6T2dHw" base_Package="_wy1f0JDGEeCiKJG1YPqrlA"/>
-  <Elements:EAPackage xmi:id="_LVCbYLbsEeGj_4Ff6T2dHw" name="FunctionalElements" base_NamedElement="_wy1f0ZDGEeCiKJG1YPqrlA" base_Package="_wy1f0ZDGEeCiKJG1YPqrlA"/>
-  <Elements:EAPackage xmi:id="_LVCbYbbsEeGj_4Ff6T2dHw" name="HardwareElements" base_NamedElement="_wy1f05DGEeCiKJG1YPqrlA" base_Package="_wy1f05DGEeCiKJG1YPqrlA"/>
-  <Elements:EAPackage xmi:id="_LVDCcLbsEeGj_4Ff6T2dHw" name="6_EAST-ADLExtensionElements" base_NamedElement="_CqR4MJKYEeCSSNvmR1q1Ag" subPackages="_LVDpgLbsEeGj_4Ff6T2dHw _LVDpgbbsEeGj_4Ff6T2dHw _LVEQkLbsEeGj_4Ff6T2dHw _LVE3oLbsEeGj_4Ff6T2dHw _LVE3obbsEeGj_4Ff6T2dHw _LVFesLbsEeGj_4Ff6T2dHw _LVGFwLbsEeGj_4Ff6T2dHw _LVGFwbbsEeGj_4Ff6T2dHw" base_Package="_CqR4MJKYEeCSSNvmR1q1Ag"/>
-  <Elements:EAPackage xmi:id="_LVDpgLbsEeGj_4Ff6T2dHw" name="GenericConstraints" base_NamedElement="_KNXHwJKbEeCSSNvmR1q1Ag" base_Package="_KNXHwJKbEeCSSNvmR1q1Ag"/>
-  <Elements:EAPackage xmi:id="_LVDpgbbsEeGj_4Ff6T2dHw" name="Interchange" base_NamedElement="_-ATKcJKZEeCSSNvmR1q1Ag" base_Package="_-ATKcJKZEeCSSNvmR1q1Ag"/>
-  <Elements:EAPackage xmi:id="_LVEQkLbsEeGj_4Ff6T2dHw" name="TimingElements" base_NamedElement="_-Dr9AJKWEeCSSNvmR1q1Ag" base_Package="_-Dr9AJKWEeCSSNvmR1q1Ag"/>
-  <Elements:EAPackage xmi:id="_LVE3oLbsEeGj_4Ff6T2dHw" name="VariabilityElements" base_NamedElement="_-jVGYJKWEeCSSNvmR1q1Ag" base_Package="_-jVGYJKWEeCSSNvmR1q1Ag"/>
-  <Elements:EAPackage xmi:id="_LVE3obbsEeGj_4Ff6T2dHw" name="DependabilityElements" base_NamedElement="_-9KisJKWEeCSSNvmR1q1Ag" base_Package="_-9KisJKWEeCSSNvmR1q1Ag"/>
-  <Elements:EAPackage xmi:id="_LVFesLbsEeGj_4Ff6T2dHw" name="RequirementsElements" base_NamedElement="__9D5cJKWEeCSSNvmR1q1Ag" base_Package="__9D5cJKWEeCSSNvmR1q1Ag"/>
-  <Elements:EAPackage xmi:id="_LVGFwLbsEeGj_4Ff6T2dHw" name="BehavioralElements" base_NamedElement="_DgI-oJKXEeCSSNvmR1q1Ag" base_Package="_DgI-oJKXEeCSSNvmR1q1Ag"/>
-  <Elements:EAPackage xmi:id="_LVGFwbbsEeGj_4Ff6T2dHw" name="VerificationValidationElements" base_NamedElement="_D1C3oJKXEeCSSNvmR1q1Ag" base_Package="_D1C3oJKXEeCSSNvmR1q1Ag"/>
-  <Elements:EAPackage xmi:id="_LVGs0LbsEeGj_4Ff6T2dHw" name="0_TopPackage" base_NamedElement="_y64qUJKbEeCSSNvmR1q1Ag" base_Package="_y64qUJKbEeCSSNvmR1q1Ag"/>
   <UseCases:UseCase xmi:id="_75yTMBfMEeOqiZCcgnSrbg"/>
   <UseCases:UseCase xmi:id="_8DK4sBfMEeOqiZCcgnSrbg"/>
   <UseCases:UseCase xmi:id="_8Vy5wBfMEeOqiZCcgnSrbg"/>
