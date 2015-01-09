@@ -21,6 +21,7 @@ import org.eclipse.jface.viewers.CheckboxTableViewer;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.papyrus.infra.widgets.util.FileUtil;
+import org.eclipse.papyrus.migration.rsa.messages.Messages;
 import org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.Config;
 import org.eclipse.papyrus.views.properties.runtime.DisplayEngine;
 import org.eclipse.papyrus.views.properties.util.PropertiesDisplayHelper;
@@ -35,7 +36,13 @@ import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.model.WorkbenchLabelProvider;
 
-
+/**
+ * 
+ * Actual composite used to display the previously selected elements and the migration options
+ * 
+ * @author Quentin Le Menez
+ *
+ */
 public class ConfigurationComposite extends Composite {
 
 	protected Config config;
@@ -50,11 +57,25 @@ public class ConfigurationComposite extends Composite {
 
 	protected SelectionListener buttonListener;
 
-	private Button selectAll;
+	protected Button selectAll;
 
-	private Button deselectAll;
+	protected Button deselectAll;
 
+	protected DialogData dialogData;
 
+	protected Collection<Object> uncheckedFiles;
+
+	/**
+	 * 
+	 * Constructor.
+	 *
+	 * @param parent
+	 *            The parent composite
+	 * @param style
+	 *            The swt style used for this ConfigurationComposite
+	 * @param config
+	 *            The configuration used to display the transformation options
+	 */
 	public ConfigurationComposite(Composite parent, int style, Config config) {
 		super(parent, style);
 		this.setLayout(new GridLayout(1, false));
@@ -75,8 +96,26 @@ public class ConfigurationComposite extends Composite {
 	}
 
 	/**
+	 * 
+	 * Constructor used when a DialogData class is employed to store the different informations of the dialog
 	 *
-	 * Fill the selection area with all the files selected previously
+	 * @param parent
+	 *            The parent composite
+	 * @param style
+	 *            The swt style used for this ConfigurationComposite
+	 * @param dialogData
+	 *            The DialogData in which is stored all the necessary informations
+	 */
+	public ConfigurationComposite(Composite parent, int style, DialogData dialogData) {
+		this(parent, style, dialogData.getConfig());
+		this.dialogData = dialogData;
+		this.setViewerInput(dialogData.getSelectedFiles());
+	}
+
+
+	/**
+	 *
+	 * Fills the selection area with all the files selected previously
 	 *
 	 * @param parent
 	 * @param selectedFiles
@@ -93,8 +132,12 @@ public class ConfigurationComposite extends Composite {
 		listViewer.setLabelProvider(new WorkbenchLabelProvider() {
 			@Override
 			protected String decorateText(String input, Object element) {
-				// there are only IFiles in the received list
-				return FileUtil.getPath((IFile) element, true);
+				// there should only be IFiles in the received list
+				if (element instanceof IFile) {
+					return FileUtil.getPath((IFile) element, true);
+				} else {
+					return Messages.WrongFileType;
+				}
 			}
 		});
 
@@ -104,29 +147,72 @@ public class ConfigurationComposite extends Composite {
 			@Override
 			public void selectionChanged(SelectionChangedEvent event) {
 				transformationFiles = new LinkedList<Object>(Arrays.asList(listViewer.getCheckedElements()));
+				setUncheckedFiles();
+
+				if (dialogData != null) {
+					dialogData.setTransformationFiles(transformationFiles);
+					dialogData.setUncheckedFiles(uncheckedFiles);
+				}
 			}
 		};
 
 		listViewer.addSelectionChangedListener(listListener);
 
-		listViewer.setAllChecked(true);
 		setTransformationFiles();
 
 		createSelectionButtons(listComposite);
 
 	}
 
+	public CheckboxTableViewer getCheckboxTreeViewer() {
+		return listViewer;
+	}
+
+	/**
+	 * 
+	 * Used to update the display from a changed selection in the ConfigPage
+	 * 
+	 * @param selectedFiles
+	 */
 	public void setViewerInput(Collection<Object> selectedFiles) {
 		listViewer.setInput(selectedFiles);
-		listViewer.setAllChecked(true);
-		setTransformationFiles();
+
+		if (dialogData != null) {
+			if (dialogData.getUnSelectionArray() == null) {
+				// Default selection when opening the viewer without previous executions
+				listViewer.setAllChecked(true);
+			}
+			else {
+				// Recall the last unselected files to update the display
+				Collection<String> previousUnSelection = Arrays.asList(dialogData.getUnSelectionArray());
+				for (Object object : selectedFiles) {
+					if (object instanceof IFile) {
+						IFile file = (IFile) object;
+						String filePath = FileUtil.getPath(file, true);
+						if (previousUnSelection.contains(filePath)) {
+							listViewer.setChecked(object, false);
+						}
+						else {
+							listViewer.setChecked(object, true);
+						}
+					}
+				}
+			}
+
+			setTransformationFiles();
+			setUncheckedFiles();
+
+			dialogData.setTransformationFiles(transformationFiles);
+			dialogData.setUncheckedFiles(uncheckedFiles);
+		}
 	}
 
 	/**
 	 *
-	 * Fill the composite with the selection buttons
+	 * Fills the composite with the selection buttons
 	 *
 	 * @param parent
+	 *            The parent composite
 	 */
 	public void createSelectionButtons(Composite parent) {
 		Composite buttonsComposite = new Composite(parent, SWT.NONE);
@@ -137,33 +223,57 @@ public class ConfigurationComposite extends Composite {
 			public void widgetSelected(SelectionEvent event) {
 				listViewer.setAllChecked((Boolean) ((Button) event.widget).getData());
 				setTransformationFiles();
+				setUncheckedFiles();
+
+				if (dialogData != null) {
+					dialogData.setTransformationFiles(transformationFiles);
+					dialogData.setUncheckedFiles(uncheckedFiles);
+				}
 			}
 		};
 
 		selectAll = new Button(buttonsComposite, SWT.PUSH);
 		selectAll.setData(true);
-		selectAll.setText("Select All"); //$NON-NLS-1$
+		selectAll.setText(Messages.Button_SelectAll);
 		selectAll.addSelectionListener(buttonListener);
 		selectAll.setLayoutData(new GridData(SWT.FILL, SWT.BEGINNING, true, false));
 
 		deselectAll = new Button(buttonsComposite, SWT.PUSH);
 		deselectAll.setData(false);
-		deselectAll.setText("Deselect All"); //$NON-NLS-1$
+		deselectAll.setText(Messages.Button_DeselectAll);
 		deselectAll.addSelectionListener(buttonListener);
 		deselectAll.setLayoutData(new GridData(SWT.FILL, SWT.BEGINNING, true, false));
 
 	}
 
+	/**
+	 * 
+	 * Updates the list of files to be transformed
+	 * 
+	 */
 	public void setTransformationFiles() {
 		transformationFiles = new LinkedList<Object>(Arrays.asList(listViewer.getCheckedElements()));
+	}
+
+	public void setUncheckedFiles() {
+		if (dialogData != null) {
+			uncheckedFiles = new LinkedList<Object>();
+			for (Object object : dialogData.getSelectedFiles()) {
+				if (!transformationFiles.contains(object)) {
+					uncheckedFiles.add(object);
+				}
+			}
+			dialogData.setUncheckedFiles(uncheckedFiles);
+		}
 	}
 
 
 	/**
 	 *
-	 * Fill the composite with the parameters buttons
+	 * Fills the composite with the configuration parameters
 	 *
 	 * @param parent
+	 *            The parent composite
 	 */
 	public void createParamComposite(Composite parent) {
 		displayEngine = PropertiesDisplayHelper.display(config, parent);
