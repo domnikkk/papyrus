@@ -102,22 +102,6 @@ public class LabelPrimarySelectionEditPolicy extends SelectionHandlesEditPolicy 
 			return getOwner().getSelected() == EditPart.SELECTED_PRIMARY;
 		}
 
-		/**
-		 * Paint figure.
-		 *
-		 * @param graphics
-		 *            the graphics
-		 * @see org.eclipse.draw2d.Figure#paintFigure(org.eclipse.draw2d.Graphics)
-		 */
-		@Override
-		protected void paintFigure(Graphics graphics) {
-
-			// Change border according to selection state of owner
-			setBorder(getStyleLine());
-
-			super.paintFigure(graphics);
-		}
-
 	}
 
 }
