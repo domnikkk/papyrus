@@ -1,17 +1,25 @@
+/*****************************************************************************
+ * Copyright (c) 2014 CEA LIST & other.
+ *
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Benoit Maggi (CEA LIST) benoit.maggi@cea.fr - Bug 445097
+ *****************************************************************************/
 package org.eclipse.papyrus.example.diagram.simplediagram;
 
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.emf.common.ui.URIEditorInput;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.jface.dialogs.ErrorDialog;
 import org.eclipse.jface.resource.ImageDescriptor;
-import org.eclipse.papyrus.core.editor.BackboneException;
-import org.eclipse.papyrus.core.services.ServiceException;
-import org.eclipse.papyrus.core.services.ServicesRegistry;
 import org.eclipse.papyrus.example.diagram.simplediagram.part.UMLDiagramEditor;
 import org.eclipse.papyrus.example.diagram.simplediagram.part.UMLDiagramEditorPlugin;
-
+import org.eclipse.papyrus.infra.core.editor.BackboneException;
+import org.eclipse.papyrus.infra.core.services.ServiceException;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IEditorInput;
@@ -42,8 +50,8 @@ public class UmlDiagramForMultiEditor extends UMLDiagramEditor {
 	 * @throws ServiceException
 	 * 
 	 */
-	public UmlDiagramForMultiEditor(ServicesRegistry servicesRegistry, Diagram diagram) throws BackboneException, ServiceException {
-		super(servicesRegistry, diagram);
+	public UmlDiagramForMultiEditor() throws BackboneException, ServiceException {
+		super();
 	}
 
 	@Override
@@ -64,7 +72,6 @@ public class UmlDiagramForMultiEditor extends UMLDiagramEditor {
 	@Override
 	public void init(IEditorSite site, IEditorInput input)
 			throws PartInitException {
-		// TODO Auto-generated method stub
 		super.init(site, input);
 		setPartName(getDiagram().getName());
 		setTitleImage(DIAG_IMG_DESC.createImage());
@@ -72,7 +79,6 @@ public class UmlDiagramForMultiEditor extends UMLDiagramEditor {
 
 	@Override
 	protected String getEditingDomainID() {
-		// TODO Auto-generated method stub
 		return "org.eclipse.papyrus.diagram.newdiagram.EditingDomain";
 	}
 

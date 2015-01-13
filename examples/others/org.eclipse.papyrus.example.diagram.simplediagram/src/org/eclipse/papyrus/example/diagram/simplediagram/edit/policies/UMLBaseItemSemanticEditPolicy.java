@@ -16,7 +16,6 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.SemanticEditPolicy;
 import org.eclipse.gmf.runtime.emf.commands.core.command.CompositeTransactionalCommand;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
-import org.eclipse.gmf.runtime.emf.type.core.commands.MoveElementsCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
@@ -31,7 +30,7 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelations
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.papyrus.example.diagram.simplediagram.edit.helpers.UMLBaseEditHelper;
+import org.eclipse.gmf.tooling.runtime.edit.helpers.GeneratedEditHelperBase;
 import org.eclipse.papyrus.example.diagram.simplediagram.part.UMLVisualIDRegistry;
 import org.eclipse.papyrus.example.diagram.simplediagram.providers.UMLElementTypes;
 
@@ -39,16 +38,13 @@ import org.eclipse.papyrus.example.diagram.simplediagram.providers.UMLElementTyp
  * @generated
  */
 public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
+
 	/**
 	 * Extended request data key to hold editpart visual id.
 	 * @generated
 	 */
 	public static final String VISUAL_ID_KEY = "visual_id"; //$NON-NLS-1$
-	/**
-	 * Extended request data key to hold the edge view during a reconnect request.
-	 * @generated
-	 */
-	public static final String GRAPHICAL_RECONNECTED_EDGE = "graphical_edge"; //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
@@ -67,13 +63,9 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	 * so command switch can decide what kind of diagram element is being edited.
 	 * It is done in those cases when it's not possible to deduce diagram
 	 * element kind from domain element.
-	 * Add the reoriented view to the request extended data so that the view
-	 *  currently edited can be distinguished from other views of the same element
-	 *  and these latter possibly removed if they become inconsistent after reconnect
 	 * 
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	public Command getCommand(Request request) {
 		if (request instanceof ReconnectRequest) {
 			Object view = ((ReconnectRequest) request).getConnectionEditPart()
@@ -82,8 +74,6 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				Integer id = new Integer(
 						UMLVisualIDRegistry.getVisualID((View) view));
 				request.getExtendedData().put(VISUAL_ID_KEY, id);
-				request.getExtendedData().put(GRAPHICAL_RECONNECTED_EDGE,
-						(View) view);
 			}
 		}
 		return super.getCommand(request);
@@ -133,14 +123,15 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		if (editPolicyCommand != null) {
 			ICommand command = editPolicyCommand instanceof ICommandProxy ? ((ICommandProxy) editPolicyCommand)
 					.getICommand() : new CommandProxy(editPolicyCommand);
-			request.setParameter(UMLBaseEditHelper.EDIT_POLICY_COMMAND, command);
+			request.setParameter(GeneratedEditHelperBase.EDIT_POLICY_COMMAND,
+					command);
 		}
 		IElementType requestContextElementType = getContextElementType(request);
-		request.setParameter(UMLBaseEditHelper.CONTEXT_ELEMENT_TYPE,
+		request.setParameter(GeneratedEditHelperBase.CONTEXT_ELEMENT_TYPE,
 				requestContextElementType);
 		ICommand command = requestContextElementType.getEditCommand(request);
-		request.setParameter(UMLBaseEditHelper.EDIT_POLICY_COMMAND, null);
-		request.setParameter(UMLBaseEditHelper.CONTEXT_ELEMENT_TYPE, null);
+		request.setParameter(GeneratedEditHelperBase.EDIT_POLICY_COMMAND, null);
+		request.setParameter(GeneratedEditHelperBase.CONTEXT_ELEMENT_TYPE, null);
 		if (command != null) {
 			if (!(command instanceof CompositeTransactionalCommand)) {
 				command = new CompositeTransactionalCommand(getEditingDomain(),
@@ -154,7 +145,7 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	/**
 	 * @generated
 	 */
-	protected IElementType getContextElementType(IEditCommandRequest request) {
+	private IElementType getContextElementType(IEditCommandRequest request) {
 		IElementType requestContextElementType = UMLElementTypes
 				.getElementType(getVisualID(request));
 		return requestContextElementType != null ? requestContextElementType
@@ -251,9 +242,7 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	 * @generated
 	 */
 	protected Command getMoveCommand(MoveRequest req) {
-
-		return getGEFWrapper(new MoveElementsCommand(req));
-
+		return null;
 	}
 
 	/**

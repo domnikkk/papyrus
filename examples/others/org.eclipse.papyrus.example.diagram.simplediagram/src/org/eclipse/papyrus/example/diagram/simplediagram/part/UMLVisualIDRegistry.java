@@ -5,8 +5,7 @@ import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.papyrus.diagram.common.providers.BaseViewInfo;
-import org.eclipse.papyrus.diagram.common.providers.ViewInfo;
+import org.eclipse.gmf.tooling.runtime.structure.DiagramStructure;
 import org.eclipse.papyrus.example.diagram.simplediagram.edit.parts.ComponentEditPart;
 import org.eclipse.papyrus.example.diagram.simplediagram.edit.parts.ComponentNameEditPart;
 import org.eclipse.papyrus.example.diagram.simplediagram.edit.parts.ModelEditPart;
@@ -93,7 +92,6 @@ public class UMLVisualIDRegistry {
 				&& isDiagram((Model) domainElement)) {
 			return ModelEditPart.VISUAL_ID;
 		}
-
 		return -1;
 	}
 
@@ -123,9 +121,7 @@ public class UMLVisualIDRegistry {
 		switch (containerVisualID) {
 		case ModelEditPart.VISUAL_ID:
 			if (UMLPackage.eINSTANCE.getComponent().isSuperTypeOf(
-					domainElement.eClass())
-
-			) {
+					domainElement.eClass())) {
 				return ComponentEditPart.VISUAL_ID;
 			}
 			break;
@@ -179,7 +175,9 @@ public class UMLVisualIDRegistry {
 	}
 
 	/**
-	 * "User can change implementation of this method to handle some specific\n""situations not covered by default logic.\n"
+	 * User can change implementation of this method to handle some specific
+	 * situations not covered by default logic.
+	 * 
 	 * @generated
 	 */
 	private static boolean isDiagram(Model element) {
@@ -189,29 +187,96 @@ public class UMLVisualIDRegistry {
 	/**
 	 * @generated
 	 */
-	private static ViewInfo diagramViewInfo = null;
-
-	/**
-	 * @generated
-	 */
-	public static ViewInfo getDiagramViewInfo() {
-		if (diagramViewInfo == null) {
-			diagramViewInfo = getModel_1000ViewInfo();
+	public static boolean checkNodeVisualID(View containerView,
+			EObject domainElement, int candidate) {
+		if (candidate == -1) {
+			//unrecognized id is always bad
+			return false;
 		}
-		return diagramViewInfo;
+		int basic = getNodeVisualID(containerView, domainElement);
+		return basic == candidate;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected static ViewInfo getModel_1000ViewInfo() {
-		ViewInfo root = new BaseViewInfo(1000, ViewInfo.Head, "", null, null);
-		ViewInfo viewInfo = null;
-		ViewInfo labelInfo = null;
-
-		viewInfo = new BaseViewInfo(2001, ViewInfo.Node, "Component");
-		root.addNode(1000, viewInfo);
-		return root;
+	public static boolean isCompartmentVisualID(int visualID) {
+		return false;
 	}
+
+	/**
+	 * @generated
+	 */
+	public static boolean isSemanticLeafVisualID(int visualID) {
+		switch (visualID) {
+		case ModelEditPart.VISUAL_ID:
+			return false;
+		case ComponentEditPart.VISUAL_ID:
+			return true;
+		default:
+			break;
+		}
+		return false;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static final DiagramStructure TYPED_INSTANCE = new DiagramStructure() {
+		/**
+		 * @generated
+		 */
+
+		public int getVisualID(View view) {
+			return org.eclipse.papyrus.example.diagram.simplediagram.part.UMLVisualIDRegistry
+					.getVisualID(view);
+		}
+
+		/**
+		 * @generated
+		 */
+
+		public String getModelID(View view) {
+			return org.eclipse.papyrus.example.diagram.simplediagram.part.UMLVisualIDRegistry
+					.getModelID(view);
+		}
+
+		/**
+		 * @generated
+		 */
+
+		public int getNodeVisualID(View containerView, EObject domainElement) {
+			return org.eclipse.papyrus.example.diagram.simplediagram.part.UMLVisualIDRegistry
+					.getNodeVisualID(containerView, domainElement);
+		}
+
+		/**
+		 * @generated
+		 */
+
+		public boolean checkNodeVisualID(View containerView,
+				EObject domainElement, int candidate) {
+			return org.eclipse.papyrus.example.diagram.simplediagram.part.UMLVisualIDRegistry
+					.checkNodeVisualID(containerView, domainElement, candidate);
+		}
+
+		/**
+		 * @generated
+		 */
+
+		public boolean isCompartmentVisualID(int visualID) {
+			return org.eclipse.papyrus.example.diagram.simplediagram.part.UMLVisualIDRegistry
+					.isCompartmentVisualID(visualID);
+		}
+
+		/**
+		 * @generated
+		 */
+
+		public boolean isSemanticLeafVisualID(int visualID) {
+			return org.eclipse.papyrus.example.diagram.simplediagram.part.UMLVisualIDRegistry
+					.isSemanticLeafVisualID(visualID);
+		}
+	};
 
 }

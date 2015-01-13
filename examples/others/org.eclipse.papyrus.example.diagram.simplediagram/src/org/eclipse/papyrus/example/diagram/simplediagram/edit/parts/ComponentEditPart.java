@@ -5,7 +5,6 @@ import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
-import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.commands.Command;
@@ -16,28 +15,18 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.FlowLayoutEditPolicy;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
-import org.eclipse.gmf.runtime.draw2d.ui.figures.FigureUtilities;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
-import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.jface.preference.IPreferenceStore;
-import org.eclipse.jface.preference.PreferenceConverter;
-import org.eclipse.papyrus.diagram.common.helper.PreferenceInitializerForElementHelper;
 import org.eclipse.papyrus.example.diagram.simplediagram.edit.policies.ComponentItemSemanticEditPolicy;
-import org.eclipse.papyrus.example.diagram.simplediagram.part.UMLDiagramEditorPlugin;
 import org.eclipse.papyrus.example.diagram.simplediagram.part.UMLVisualIDRegistry;
-import org.eclipse.papyrus.preferences.utils.GradientPreferenceConverter;
-import org.eclipse.papyrus.preferences.utils.PreferenceConstantHelper;
 import org.eclipse.swt.graphics.Color;
 
 /**
  * @generated
  */
-public class ComponentEditPart extends
-
-ShapeNodeEditPart {
+public class ComponentEditPart extends ShapeNodeEditPart {
 
 	/**
 	 * @generated
@@ -104,6 +93,7 @@ ShapeNodeEditPart {
 	}
 
 	/**
+	 * ComponentFigure
 	 * @generated
 	 */
 	public ComponentFigure getPrimaryShape() {
@@ -119,7 +109,6 @@ ShapeNodeEditPart {
 					.getFigureComponentNameFigure());
 			return true;
 		}
-
 		return false;
 	}
 
@@ -164,19 +153,7 @@ ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected NodeFigure createNodePlate() {
-		String prefElementId = "Component";
-		IPreferenceStore store = UMLDiagramEditorPlugin.getInstance()
-				.getPreferenceStore();
-		String preferenceConstantWitdh = PreferenceInitializerForElementHelper
-				.getpreferenceKey(getNotationView(), prefElementId,
-						PreferenceConstantHelper.WIDTH);
-		String preferenceConstantHeight = PreferenceInitializerForElementHelper
-				.getpreferenceKey(getNotationView(), prefElementId,
-						PreferenceConstantHelper.HEIGHT);
-		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(
-				store.getInt(preferenceConstantWitdh),
-				store.getInt(preferenceConstantHeight));
-
+		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(40, 40);
 		return result;
 	}
 
@@ -228,6 +205,15 @@ ShapeNodeEditPart {
 	protected void setForegroundColor(Color color) {
 		if (primaryShape != null) {
 			primaryShape.setForegroundColor(color);
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void setBackgroundColor(Color color) {
+		if (primaryShape != null) {
+			primaryShape.setBackgroundColor(color);
 		}
 	}
 
@@ -307,55 +293,4 @@ ShapeNodeEditPart {
 
 	}
 
-	/**
-	 * @generated
-	 */
-	@Override
-	public Object getPreferredValue(EStructuralFeature feature) {
-		IPreferenceStore preferenceStore = (IPreferenceStore) getDiagramPreferencesHint()
-				.getPreferenceStore();
-		Object result = null;
-
-		if (feature == NotationPackage.eINSTANCE.getLineStyle_LineColor()
-				|| feature == NotationPackage.eINSTANCE
-						.getFontStyle_FontColor()
-				|| feature == NotationPackage.eINSTANCE
-						.getFillStyle_FillColor()) {
-			String prefColor = null;
-			if (feature == NotationPackage.eINSTANCE.getLineStyle_LineColor()) {
-				prefColor = PreferenceConstantHelper.getElementConstant(
-						"Component", PreferenceConstantHelper.COLOR_LINE);
-			} else if (feature == NotationPackage.eINSTANCE
-					.getFontStyle_FontColor()) {
-				prefColor = PreferenceConstantHelper.getElementConstant(
-						"Component", PreferenceConstantHelper.COLOR_FONT);
-			} else if (feature == NotationPackage.eINSTANCE
-					.getFillStyle_FillColor()) {
-				prefColor = PreferenceConstantHelper.getElementConstant(
-						"Component", PreferenceConstantHelper.COLOR_FILL);
-			}
-			result = FigureUtilities.RGBToInteger(PreferenceConverter.getColor(
-					(IPreferenceStore) preferenceStore, prefColor));
-		} else if (feature == NotationPackage.eINSTANCE
-				.getFillStyle_Transparency()
-				|| feature == NotationPackage.eINSTANCE.getFillStyle_Gradient()) {
-			String prefGradient = PreferenceConstantHelper.getElementConstant(
-					"Component", PreferenceConstantHelper.COLOR_GRADIENT);
-			GradientPreferenceConverter gradientPreferenceConverter = new GradientPreferenceConverter(
-					preferenceStore.getString(prefGradient));
-			if (feature == NotationPackage.eINSTANCE
-					.getFillStyle_Transparency()) {
-				result = new Integer(
-						gradientPreferenceConverter.getTransparency());
-			} else if (feature == NotationPackage.eINSTANCE
-					.getFillStyle_Gradient()) {
-				result = gradientPreferenceConverter.getGradientData();
-			}
-		}
-
-		if (result == null) {
-			result = getStructuralFeatureValue(feature);
-		}
-		return result;
-	}
 }

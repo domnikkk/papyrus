@@ -1,13 +1,12 @@
 package org.eclipse.papyrus.example.diagram.simplediagram.preferences;
 
-import org.eclipse.papyrus.example.diagram.simplediagram.edit.parts.ModelEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.preferences.DiagramsPreferencePage;
 import org.eclipse.papyrus.example.diagram.simplediagram.part.UMLDiagramEditorPlugin;
-import org.eclipse.papyrus.preferences.pages.DiagramPreferencePage;
 
 /**
  * @generated
  */
-public class DiagramGeneralPreferencePage extends DiagramPreferencePage {
+public class DiagramGeneralPreferencePage extends DiagramsPreferencePage {
 
 	/**
 	 * @generated
@@ -15,7 +14,5 @@ public class DiagramGeneralPreferencePage extends DiagramPreferencePage {
 	public DiagramGeneralPreferencePage() {
 		setPreferenceStore(UMLDiagramEditorPlugin.getInstance()
 				.getPreferenceStore());
-		setPreferenceKey(ModelEditPart.MODEL_ID);
-
 	}
 }
