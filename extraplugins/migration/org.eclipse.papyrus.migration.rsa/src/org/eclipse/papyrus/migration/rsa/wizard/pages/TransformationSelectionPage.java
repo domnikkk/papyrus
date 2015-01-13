@@ -11,33 +11,39 @@
  *****************************************************************************/
 package org.eclipse.papyrus.migration.rsa.wizard.pages;
 
-import java.util.Collection;
-import java.util.LinkedList;
-
-import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.jface.wizard.WizardPage;
+import org.eclipse.papyrus.migration.rsa.messages.Messages;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 
+/**
+ * 
+ * Page displaying the workspace and its elements
+ * 
+ * @author Quentin Le Menez
+ *
+ */
 public class TransformationSelectionPage extends WizardPage {
 
-	SelectionTreeComposite treeComposite;
+	protected DialogData dialogData;
 
-	Collection<Object> selectedFiles;
-
-	String[] extensions = { "*", "*.emx", "*.epx", "*.epx;*.emx" }; //$NON-NLS-1$  //$NON-NLS-2$  //$NON-NLS-3$
-	String[] extensionsNames = { "All", "*.emx", "*.epx", "*.epx and *.emx" }; //$NON-NLS-1$  //$NON-NLS-2$  //$NON-NLS-3$
-
-	public TransformationSelectionPage() {
-		super("Workspace selection");
-		setTitle("Select a scope for the transformation");
-		setDescription("Select the folders or files for the transformation");
+	/**
+	 *
+	 * Constructor.
+	 * 
+	 * @param dialogData
+	 *            The instance used to get the selection from the workspace and the filters
+	 */
+	public TransformationSelectionPage(DialogData dialogData) {
+		super(Messages.TransformationSelectionPage_Name);
+		setTitle(Messages.TransformationSelectionPage_Title);
+		setDescription(Messages.TransformationSelectionPage_Description);
 		// String iconPath = "icons/import_wiz_75x66.png"; //$NON-NLS-1$
 		// ImageDescriptor imgDescriptior = Activator.getDefault().getImageDescriptor(iconPath);
 		// setImageDescriptor(imgDescriptior);
 
-		selectedFiles = new LinkedList<Object>();
+		this.dialogData = dialogData;
 	}
 
 	@Override
@@ -46,17 +52,9 @@ public class TransformationSelectionPage extends WizardPage {
 		Composite pageComposite = new Composite(parent, SWT.NONE);
 		pageComposite.setLayout(new GridLayout());
 
-		treeComposite = new SelectionTreeComposite(pageComposite, SWT.NONE, extensions, extensionsNames);
+		new SelectionTreeComposite(pageComposite, SWT.NONE, dialogData);
 
 		setControl(pageComposite);
-	}
-
-	public TreeViewer getTreeViewer() {
-		return treeComposite.getTreeViewer();
-	}
-
-	public Collection<Object> getSelectedFiles() {
-		return treeComposite.getSelectedFiles();
 	}
 
 }

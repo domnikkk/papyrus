@@ -1,0 +1,650 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Profile xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="SysMLNonNormativeExtensions" name="SysMLNonNormativeExtensions" URI="http://www.omg.org/spec/SysML/20131201/SysML" metamodelReference="SysMLNonNormativeExtensions-packageImport1">
+  <packageImport xmi:id="SysMLNonNormativeExtensions-packageImport1">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_METAMODELS/UML.metamodel.uml#_0"/>
+  </packageImport>
+  <packageImport xmi:id="SysMLNonNormativeExtensions-packageImport2">
+    <importedPackage xmi:type="uml:Profile" href="pathmap://UML_PROFILES/Standard.profile.uml#_0"/>
+  </packageImport>
+  <packageImport xmi:id="SysMLNonNormativeExtensions-packageImport3">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Package" xmi:id="SysMLNonNormativeExtensions-Block" name="Block" URI="">
+    <packagedElement xmi:type="uml:Stereotype" xmi:id="SysMLNonNormativeExtensions-Block-System" name="System">
+      <ownedComment xmi:id="SysMLNonNormativeExtensions-Block-System-ownedComment" annotatedElement="SysMLNonNormativeExtensions-Block-System">
+        <body>A System is an artificial artifact consisting of blocks that pursue a common goal that cannot be achieved by the system's individual elements. A block can be software, hardware, a person, or an arbitrary unit.</body>
+      </ownedComment>
+      <generalization xmi:id="SysMLNonNormativeExtensions-Block-System-generalization" isSubstitutable="false">
+        <general xmi:type="uml:Stereotype" href="SysML.profile.uml#SysML-Blocks-Block"/>
+      </generalization>
+      <ownedAttribute xmi:id="SysMLNonNormativeExtensions-Block-System-base_Class" name="base_Class" visibility="public" association="SysMLNonNormativeExtensions-Block-E_extension_System_base_Class">
+        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Class"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Stereotype" xmi:id="SysMLNonNormativeExtensions-Block-Domain" name="Domain">
+      <ownedComment xmi:id="SysMLNonNormativeExtensions-Block-Domain-ownedComment" annotatedElement="SysMLNonNormativeExtensions-Block-Domain">
+        <body>A Domain block represents an entity, a concept, a location, or a person from the real-world domain. A domain block is part of the system knowledge.</body>
+      </ownedComment>
+      <generalization xmi:id="SysMLNonNormativeExtensions-Block-Domain-generalization" isSubstitutable="false">
+        <general xmi:type="uml:Stereotype" href="SysML.profile.uml#SysML-Blocks-Block"/>
+      </generalization>
+      <ownedAttribute xmi:id="SysMLNonNormativeExtensions-Block-Domain-base_Class" name="base_Class" visibility="public" association="SysMLNonNormativeExtensions-Block-E_extension_Domain_base_Class">
+        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Class"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Extension" xmi:id="SysMLNonNormativeExtensions-Block-E_extension_System_context_base_Class" name="E_extension_System_context_base_Class" memberEnd="SysMLNonNormativeExtensions-Block-E_extension_System_context_base_Class-extension_ SysMLNonNormativeExtensions-Block-System_context-base_Class" navigableOwnedEnd="SysMLNonNormativeExtensions-Block-E_extension_System_context_base_Class-extension_">
+      <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="SysMLNonNormativeExtensions-Block-E_extension_System_context_base_Class-extension_" name="extension_" visibility="public" type="SysMLNonNormativeExtensions-Block-System_context" aggregation="composite" association="SysMLNonNormativeExtensions-Block-E_extension_System_context_base_Class">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="SysMLNonNormativeExtensions-Block-E_extension_System_context_base_Class-extension_-lowerValue" name=""/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="SysMLNonNormativeExtensions-Block-E_extension_System_context_base_Class-extension_-upperValue" name="" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Stereotype" xmi:id="SysMLNonNormativeExtensions-Block-System_context" name="System context">
+      <ownedComment xmi:id="SysMLNonNormativeExtensions-Block-System_context-ownedComment" annotatedElement="SysMLNonNormativeExtensions-Block-System_context">
+        <body>A System context element is a virtual container that includes the entire system and its actors.</body>
+      </ownedComment>
+      <generalization xmi:id="SysMLNonNormativeExtensions-Block-System_context-generalization" isSubstitutable="false">
+        <general xmi:type="uml:Stereotype" href="SysML.profile.uml#SysML-Blocks-Block"/>
+      </generalization>
+      <ownedAttribute xmi:id="SysMLNonNormativeExtensions-Block-System_context-base_Class" name="base_Class" visibility="public" association="SysMLNonNormativeExtensions-Block-E_extension_System_context_base_Class">
+        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Class"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Extension" xmi:id="SysMLNonNormativeExtensions-Block-E_extension_Subsystem_base_Class" name="E_extension_Subsystem_base_Class" memberEnd="SysMLNonNormativeExtensions-Block-E_extension_Subsystem_base_Class-extension_ SysMLNonNormativeExtensions-Block-Subsystem-base_Class" navigableOwnedEnd="SysMLNonNormativeExtensions-Block-E_extension_Subsystem_base_Class-extension_">
+      <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="SysMLNonNormativeExtensions-Block-E_extension_Subsystem_base_Class-extension_" name="extension_" visibility="public" type="SysMLNonNormativeExtensions-Block-Subsystem" aggregation="composite" association="SysMLNonNormativeExtensions-Block-E_extension_Subsystem_base_Class">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="SysMLNonNormativeExtensions-Block-E_extension_Subsystem_base_Class-extension_-lowerValue" name=""/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="SysMLNonNormativeExtensions-Block-E_extension_Subsystem_base_Class-extension_-upperValue" name="" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Extension" xmi:id="SysMLNonNormativeExtensions-Block-E_extension_External_base_Class" name="E_extension_External_base_Class" memberEnd="SysMLNonNormativeExtensions-Block-E_extension_External_base_Class-extension_External SysMLNonNormativeExtensions-Block-External-base_Class" navigableOwnedEnd="SysMLNonNormativeExtensions-Block-E_extension_External_base_Class-extension_External">
+      <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="SysMLNonNormativeExtensions-Block-E_extension_External_base_Class-extension_External" name="extension_External" visibility="public" type="SysMLNonNormativeExtensions-Block-External" aggregation="composite" association="SysMLNonNormativeExtensions-Block-E_extension_External_base_Class">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="SysMLNonNormativeExtensions-Block-E_extension_External_base_Class-extension_External-lowerValue" name=""/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="SysMLNonNormativeExtensions-Block-E_extension_External_base_Class-extension_External-upperValue" name="" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Stereotype" xmi:id="SysMLNonNormativeExtensions-Block-Subsystem" name="Subsystem">
+      <ownedComment xmi:id="SysMLNonNormativeExtensions-Block-Subsystem-ownedComment" annotatedElement="SysMLNonNormativeExtensions-Block-Subsystem">
+        <body>A Subsystem is a - typically large - encapsulated block within a larger system.</body>
+      </ownedComment>
+      <generalization xmi:id="SysMLNonNormativeExtensions-Block-Subsystem-generalization" isSubstitutable="false">
+        <general xmi:type="uml:Stereotype" href="SysML.profile.uml#SysML-Blocks-Block"/>
+      </generalization>
+      <ownedAttribute xmi:id="SysMLNonNormativeExtensions-Block-Subsystem-base_Class" name="base_Class" visibility="public" association="SysMLNonNormativeExtensions-Block-E_extension_Subsystem_base_Class">
+        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Class"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Extension" xmi:id="SysMLNonNormativeExtensions-Block-E_extension_Domain_base_Class" name="E_extension_Domain_base_Class" memberEnd="SysMLNonNormativeExtensions-Block-E_extension_Domain_base_Class-extension_ SysMLNonNormativeExtensions-Block-Domain-base_Class" navigableOwnedEnd="SysMLNonNormativeExtensions-Block-E_extension_Domain_base_Class-extension_">
+      <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="SysMLNonNormativeExtensions-Block-E_extension_Domain_base_Class-extension_" name="extension_" visibility="public" type="SysMLNonNormativeExtensions-Block-Domain" aggregation="composite" association="SysMLNonNormativeExtensions-Block-E_extension_Domain_base_Class">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="SysMLNonNormativeExtensions-Block-E_extension_Domain_base_Class-extension_-lowerValue" name=""/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="SysMLNonNormativeExtensions-Block-E_extension_Domain_base_Class-extension_-upperValue" name="" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Stereotype" xmi:id="SysMLNonNormativeExtensions-Block-External" name="External">
+      <ownedComment xmi:id="SysMLNonNormativeExtensions-Block-External-ownedComment" annotatedElement="SysMLNonNormativeExtensions-Block-External">
+        <body>An External block is a block that represents an actor. It facilitates a more detailed modeling of actors like ports or internal structure.</body>
+      </ownedComment>
+      <generalization xmi:id="SysMLNonNormativeExtensions-Block-External-generalization" isSubstitutable="false">
+        <general xmi:type="uml:Stereotype" href="SysML.profile.uml#SysML-Blocks-Block"/>
+      </generalization>
+      <ownedAttribute xmi:id="SysMLNonNormativeExtensions-Block-External-base_Class" name="base_Class" visibility="public" association="SysMLNonNormativeExtensions-Block-E_extension_External_base_Class">
+        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Class"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Extension" xmi:id="SysMLNonNormativeExtensions-Block-E_extension_System_base_Class" name="E_extension_System_base_Class" memberEnd="SysMLNonNormativeExtensions-Block-E_extension_System_base_Class-extension_ SysMLNonNormativeExtensions-Block-System-base_Class" navigableOwnedEnd="SysMLNonNormativeExtensions-Block-E_extension_System_base_Class-extension_">
+      <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="SysMLNonNormativeExtensions-Block-E_extension_System_base_Class-extension_" name="extension_" visibility="public" type="SysMLNonNormativeExtensions-Block-System" aggregation="composite" association="SysMLNonNormativeExtensions-Block-E_extension_System_base_Class">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="SysMLNonNormativeExtensions-Block-E_extension_System_base_Class-extension_-lowerValue" name=""/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="SysMLNonNormativeExtensions-Block-E_extension_System_base_Class-extension_-upperValue" name="" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="SysMLNonNormativeExtensions-Requirement" name="Requirement" URI="">
+    <packagedElement xmi:type="uml:Stereotype" xmi:id="SysMLNonNormativeExtensions-Requirement-functionalRequirement" name="functionalRequirement">
+      <ownedComment xmi:id="SysMLNonNormativeExtensions-Requirement-functionalRequirement-ownedComment" annotatedElement="SysMLNonNormativeExtensions-Requirement-functionalRequirement">
+        <body>Requirement that specifies an operation or behavior that a system, or part of a system, must perform.</body>
+      </ownedComment>
+      <generalization xmi:id="SysMLNonNormativeExtensions-Requirement-functionalRequirement-generalization" general="SysMLNonNormativeExtensions-Requirement-extendedRequirement" isSubstitutable="false"/>
+      <ownedAttribute xmi:id="SysMLNonNormativeExtensions-Requirement-functionalRequirement-base_Class" name="base_Class" visibility="public" association="SysMLNonNormativeExtensions-Requirement-E_extension_functionalRequirement_base_Class">
+        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Class"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Stereotype" xmi:id="SysMLNonNormativeExtensions-Requirement-performanceRequirement" name="performanceRequirement">
+      <ownedComment xmi:id="SysMLNonNormativeExtensions-Requirement-performanceRequirement-ownedComment" annotatedElement="SysMLNonNormativeExtensions-Requirement-performanceRequirement">
+        <body>Requirement that quantitatively measures the extent to which a system, or a system part, satisfies a required capability or condition.</body>
+      </ownedComment>
+      <generalization xmi:id="SysMLNonNormativeExtensions-Requirement-performanceRequirement-generalization" general="SysMLNonNormativeExtensions-Requirement-extendedRequirement" isSubstitutable="false"/>
+      <ownedAttribute xmi:id="SysMLNonNormativeExtensions-Requirement-performanceRequirement-base_Class" name="base_Class" visibility="public" association="SysMLNonNormativeExtensions-Requirement-E_extension_performanceRequirement_base_Class">
+        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Class"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Stereotype" xmi:id="SysMLNonNormativeExtensions-Requirement-extendedRequirement" name="extendedRequirement">
+      <ownedComment xmi:id="SysMLNonNormativeExtensions-Requirement-extendedRequirement-ownedComment" annotatedElement="SysMLNonNormativeExtensions-Requirement-extendedRequirement">
+        <body>A mix-in stereotype that contains generally useful attributes for requirements</body>
+      </ownedComment>
+      <generalization xmi:id="SysMLNonNormativeExtensions-Requirement-extendedRequirement-generalization" isSubstitutable="false">
+        <general xmi:type="uml:Stereotype" href="SysML.profile.uml#SysML-Requirements-Requirement"/>
+      </generalization>
+      <ownedAttribute xmi:id="SysMLNonNormativeExtensions-Requirement-extendedRequirement-base_Class" name="base_Class" visibility="public" association="SysMLNonNormativeExtensions-Requirement-E_extension_extendedRequirement_base_Class">
+        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Class"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="SysMLNonNormativeExtensions-Requirement-extendedRequirement-source" name="source" visibility="public">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="SysMLNonNormativeExtensions-Requirement-extendedRequirement-risk" name="risk" visibility="public" type="SysMLNonNormativeExtensions-Requirement-RiskKind">
+        <defaultValue xmi:type="uml:InstanceValue" xmi:id="SysMLNonNormativeExtensions-Requirement-extendedRequirement-risk-defaultValue" name="" instance="SysMLNonNormativeExtensions-Requirement-RiskKind-Medium"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="SysMLNonNormativeExtensions-Requirement-extendedRequirement-verifyMethod" name="verifyMethod" visibility="public" type="SysMLNonNormativeExtensions-Requirement-VerificationMethodKind">
+        <defaultValue xmi:type="uml:InstanceValue" xmi:id="SysMLNonNormativeExtensions-Requirement-extendedRequirement-verifyMethod-defaultValue" name="" instance="SysMLNonNormativeExtensions-Requirement-VerificationMethodKind-Test"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Extension" xmi:id="SysMLNonNormativeExtensions-Requirement-E_extension_physicalRequirement_base_Class" name="E_extension_physicalRequirement_base_Class" memberEnd="SysMLNonNormativeExtensions-Requirement-E_extension_physicalRequirement_base_Class-extension_functionalRequirement SysMLNonNormativeExtensions-Requirement-physicalRequirement-base_Class" navigableOwnedEnd="SysMLNonNormativeExtensions-Requirement-E_extension_physicalRequirement_base_Class-extension_functionalRequirement">
+      <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="SysMLNonNormativeExtensions-Requirement-E_extension_physicalRequirement_base_Class-extension_functionalRequirement" name="extension_functionalRequirement" visibility="public" type="SysMLNonNormativeExtensions-Requirement-physicalRequirement" aggregation="composite" association="SysMLNonNormativeExtensions-Requirement-E_extension_physicalRequirement_base_Class">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="SysMLNonNormativeExtensions-Requirement-E_extension_physicalRequirement_base_Class-extension_functionalRequirement-lowerValue" name=""/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="SysMLNonNormativeExtensions-Requirement-E_extension_physicalRequirement_base_Class-extension_functionalRequirement-upperValue" name="" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Extension" xmi:id="SysMLNonNormativeExtensions-Requirement-E_extension_businessRequirement_base_Class" name="E_extension_businessRequirement_base_Class" memberEnd="SysMLNonNormativeExtensions-Requirement-E_extension_businessRequirement_base_Class-extension_designConstraint SysMLNonNormativeExtensions-Requirement-businessRequirement-base_Class" navigableOwnedEnd="SysMLNonNormativeExtensions-Requirement-E_extension_businessRequirement_base_Class-extension_designConstraint">
+      <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="SysMLNonNormativeExtensions-Requirement-E_extension_businessRequirement_base_Class-extension_designConstraint" name="extension_designConstraint" visibility="public" type="SysMLNonNormativeExtensions-Requirement-businessRequirement" aggregation="composite" association="SysMLNonNormativeExtensions-Requirement-E_extension_businessRequirement_base_Class">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="SysMLNonNormativeExtensions-Requirement-E_extension_businessRequirement_base_Class-extension_designConstraint-lowerValue" name=""/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="SysMLNonNormativeExtensions-Requirement-E_extension_businessRequirement_base_Class-extension_designConstraint-upperValue" name="" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Extension" xmi:id="SysMLNonNormativeExtensions-Requirement-E_extension_usabilityRequirement_base_Class" name="E_extension_usabilityRequirement_base_Class" memberEnd="SysMLNonNormativeExtensions-Requirement-E_extension_usabilityRequirement_base_Class-extension_designConstraint SysMLNonNormativeExtensions-Requirement-usabilityRequirement-base_Class" navigableOwnedEnd="SysMLNonNormativeExtensions-Requirement-E_extension_usabilityRequirement_base_Class-extension_designConstraint">
+      <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="SysMLNonNormativeExtensions-Requirement-E_extension_usabilityRequirement_base_Class-extension_designConstraint" name="extension_designConstraint" visibility="public" type="SysMLNonNormativeExtensions-Requirement-usabilityRequirement" aggregation="composite" association="SysMLNonNormativeExtensions-Requirement-E_extension_usabilityRequirement_base_Class">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="SysMLNonNormativeExtensions-Requirement-E_extension_usabilityRequirement_base_Class-extension_designConstraint-lowerValue" name=""/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="SysMLNonNormativeExtensions-Requirement-E_extension_usabilityRequirement_base_Class-extension_designConstraint-upperValue" name="" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Stereotype" xmi:id="SysMLNonNormativeExtensions-Requirement-usabilityRequirement" name="usabilityRequirement">
+      <ownedComment xmi:id="SysMLNonNormativeExtensions-Requirement-usabilityRequirement-ownedComment" annotatedElement="SysMLNonNormativeExtensions-Requirement-usabilityRequirement">
+        <body>Requirement about usability.</body>
+      </ownedComment>
+      <generalization xmi:id="SysMLNonNormativeExtensions-Requirement-usabilityRequirement-generalization" general="SysMLNonNormativeExtensions-Requirement-extendedRequirement" isSubstitutable="false"/>
+      <ownedAttribute xmi:id="SysMLNonNormativeExtensions-Requirement-usabilityRequirement-base_Class" name="base_Class" visibility="public" association="SysMLNonNormativeExtensions-Requirement-E_extension_usabilityRequirement_base_Class">
+        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Class"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Stereotype" xmi:id="SysMLNonNormativeExtensions-Requirement-designConstraint" name="designConstraint">
+      <ownedComment xmi:id="SysMLNonNormativeExtensions-Requirement-designConstraint-ownedComment" annotatedElement="SysMLNonNormativeExtensions-Requirement-designConstraint">
+        <body>Requirement that specifies a constraint on the implementation of the system or system part, such as the system must use a commercial off the shelf component.</body>
+      </ownedComment>
+      <generalization xmi:id="SysMLNonNormativeExtensions-Requirement-designConstraint-generalization" general="SysMLNonNormativeExtensions-Requirement-extendedRequirement" isSubstitutable="false"/>
+      <ownedAttribute xmi:id="SysMLNonNormativeExtensions-Requirement-designConstraint-base_Class" name="base_Class" visibility="public" association="SysMLNonNormativeExtensions-Requirement-E_extension_designConstraint_base_Class">
+        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Class"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Extension" xmi:id="SysMLNonNormativeExtensions-Requirement-E_extension_designConstraint_base_Class" name="E_extension_designConstraint_base_Class" memberEnd="SysMLNonNormativeExtensions-Requirement-E_extension_designConstraint_base_Class-extension_functionalRequirement3 SysMLNonNormativeExtensions-Requirement-designConstraint-base_Class" navigableOwnedEnd="SysMLNonNormativeExtensions-Requirement-E_extension_designConstraint_base_Class-extension_functionalRequirement3">
+      <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="SysMLNonNormativeExtensions-Requirement-E_extension_designConstraint_base_Class-extension_functionalRequirement3" name="extension_functionalRequirement3" visibility="public" type="SysMLNonNormativeExtensions-Requirement-designConstraint" aggregation="composite" association="SysMLNonNormativeExtensions-Requirement-E_extension_designConstraint_base_Class">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="SysMLNonNormativeExtensions-Requirement-E_extension_designConstraint_base_Class-extension_functionalRequirement3-lowerValue" name=""/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="SysMLNonNormativeExtensions-Requirement-E_extension_designConstraint_base_Class-extension_functionalRequirement3-upperValue" name="" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Extension" xmi:id="SysMLNonNormativeExtensions-Requirement-E_extension_performanceRequirement_base_Class" name="E_extension_performanceRequirement_base_Class" memberEnd="SysMLNonNormativeExtensions-Requirement-E_extension_performanceRequirement_base_Class-extension_functionalRequirement SysMLNonNormativeExtensions-Requirement-performanceRequirement-base_Class" navigableOwnedEnd="SysMLNonNormativeExtensions-Requirement-E_extension_performanceRequirement_base_Class-extension_functionalRequirement">
+      <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="SysMLNonNormativeExtensions-Requirement-E_extension_performanceRequirement_base_Class-extension_functionalRequirement" name="extension_functionalRequirement" visibility="public" type="SysMLNonNormativeExtensions-Requirement-performanceRequirement" aggregation="composite" association="SysMLNonNormativeExtensions-Requirement-E_extension_performanceRequirement_base_Class">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="SysMLNonNormativeExtensions-Requirement-E_extension_performanceRequirement_base_Class-extension_functionalRequirement-lowerValue" name=""/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="SysMLNonNormativeExtensions-Requirement-E_extension_performanceRequirement_base_Class-extension_functionalRequirement-upperValue" name="" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Stereotype" xmi:id="SysMLNonNormativeExtensions-Requirement-interfaceRequirement" name="interfaceRequirement">
+      <ownedComment xmi:id="SysMLNonNormativeExtensions-Requirement-interfaceRequirement-ownedComment" annotatedElement="SysMLNonNormativeExtensions-Requirement-interfaceRequirement">
+        <body>Requirement that specifies the ports for connecting systems and system parts and the optionally may include the item flows across the connector and/or Interface constraints.</body>
+      </ownedComment>
+      <generalization xmi:id="SysMLNonNormativeExtensions-Requirement-interfaceRequirement-generalization" general="SysMLNonNormativeExtensions-Requirement-extendedRequirement" isSubstitutable="false"/>
+      <ownedAttribute xmi:id="SysMLNonNormativeExtensions-Requirement-interfaceRequirement-base_Class" name="base_Class" visibility="public" association="SysMLNonNormativeExtensions-Requirement-E_extension_interfaceRequirement_base_Class">
+        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Class"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Extension" xmi:id="SysMLNonNormativeExtensions-Requirement-E_extension_functionalRequirement_base_Class" name="E_extension_functionalRequirement_base_Class" memberEnd="SysMLNonNormativeExtensions-Requirement-E_extension_functionalRequirement_base_Class-extension_ SysMLNonNormativeExtensions-Requirement-functionalRequirement-base_Class" navigableOwnedEnd="SysMLNonNormativeExtensions-Requirement-E_extension_functionalRequirement_base_Class-extension_">
+      <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="SysMLNonNormativeExtensions-Requirement-E_extension_functionalRequirement_base_Class-extension_" name="extension_" visibility="public" type="SysMLNonNormativeExtensions-Requirement-functionalRequirement" aggregation="composite" association="SysMLNonNormativeExtensions-Requirement-E_extension_functionalRequirement_base_Class">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="SysMLNonNormativeExtensions-Requirement-E_extension_functionalRequirement_base_Class-extension_-lowerValue" name=""/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="SysMLNonNormativeExtensions-Requirement-E_extension_functionalRequirement_base_Class-extension_-upperValue" name="" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Extension" xmi:id="SysMLNonNormativeExtensions-Requirement-E_extension_interfaceRequirement_base_Class" name="E_extension_interfaceRequirement_base_Class" memberEnd="SysMLNonNormativeExtensions-Requirement-E_extension_interfaceRequirement_base_Class-extension_functionalRequirement SysMLNonNormativeExtensions-Requirement-interfaceRequirement-base_Class" navigableOwnedEnd="SysMLNonNormativeExtensions-Requirement-E_extension_interfaceRequirement_base_Class-extension_functionalRequirement">
+      <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="SysMLNonNormativeExtensions-Requirement-E_extension_interfaceRequirement_base_Class-extension_functionalRequirement" name="extension_functionalRequirement" visibility="public" type="SysMLNonNormativeExtensions-Requirement-interfaceRequirement" aggregation="composite" association="SysMLNonNormativeExtensions-Requirement-E_extension_interfaceRequirement_base_Class">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="SysMLNonNormativeExtensions-Requirement-E_extension_interfaceRequirement_base_Class-extension_functionalRequirement-lowerValue" name=""/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="SysMLNonNormativeExtensions-Requirement-E_extension_interfaceRequirement_base_Class-extension_functionalRequirement-upperValue" name="" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Stereotype" xmi:id="SysMLNonNormativeExtensions-Requirement-physicalRequirement" name="physicalRequirement">
+      <ownedComment xmi:id="SysMLNonNormativeExtensions-Requirement-physicalRequirement-ownedComment" annotatedElement="SysMLNonNormativeExtensions-Requirement-physicalRequirement">
+        <body>Requirement that specifies physical characteristics and/or physical constraints of the system, or a system part.</body>
+      </ownedComment>
+      <generalization xmi:id="SysMLNonNormativeExtensions-Requirement-physicalRequirement-generalization" general="SysMLNonNormativeExtensions-Requirement-extendedRequirement" isSubstitutable="false"/>
+      <ownedAttribute xmi:id="SysMLNonNormativeExtensions-Requirement-physicalRequirement-base_Class" name="base_Class" visibility="public" association="SysMLNonNormativeExtensions-Requirement-E_extension_physicalRequirement_base_Class">
+        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Class"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Extension" xmi:id="SysMLNonNormativeExtensions-Requirement-E_extension_extendedRequirement_base_Class" name="E_extension_extendedRequirement_base_Class" memberEnd="SysMLNonNormativeExtensions-Requirement-E_extension_extendedRequirement_base_Class-extension_ SysMLNonNormativeExtensions-Requirement-extendedRequirement-base_Class" navigableOwnedEnd="SysMLNonNormativeExtensions-Requirement-E_extension_extendedRequirement_base_Class-extension_">
+      <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="SysMLNonNormativeExtensions-Requirement-E_extension_extendedRequirement_base_Class-extension_" name="extension_" visibility="public" type="SysMLNonNormativeExtensions-Requirement-extendedRequirement" aggregation="composite" association="SysMLNonNormativeExtensions-Requirement-E_extension_extendedRequirement_base_Class">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="SysMLNonNormativeExtensions-Requirement-E_extension_extendedRequirement_base_Class-extension_-lowerValue" name=""/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="SysMLNonNormativeExtensions-Requirement-E_extension_extendedRequirement_base_Class-extension_-upperValue" name="" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Stereotype" xmi:id="SysMLNonNormativeExtensions-Requirement-businessRequirement" name="businessRequirement">
+      <ownedComment xmi:id="SysMLNonNormativeExtensions-Requirement-businessRequirement-ownedComment" annotatedElement="SysMLNonNormativeExtensions-Requirement-businessRequirement">
+        <body>High-level business requirement.</body>
+      </ownedComment>
+      <generalization xmi:id="SysMLNonNormativeExtensions-Requirement-businessRequirement-generalization" general="SysMLNonNormativeExtensions-Requirement-extendedRequirement" isSubstitutable="false"/>
+      <ownedAttribute xmi:id="SysMLNonNormativeExtensions-Requirement-businessRequirement-base_Class" name="base_Class" visibility="public" association="SysMLNonNormativeExtensions-Requirement-E_extension_businessRequirement_base_Class">
+        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Class"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="SysMLNonNormativeExtensions-Requirement-RiskKind" name="RiskKind">
+      <ownedComment xmi:id="SysMLNonNormativeExtensions-Requirement-RiskKind-ownedComment" annotatedElement="SysMLNonNormativeExtensions-Requirement-RiskKind">
+        <body>1) High indicates an unacceptable level of risk, 
+2) Medium indicates an acceptable level of risk, and
+3) Low indicates a minimal level of risk or no risk</body>
+      </ownedComment>
+      <ownedLiteral xmi:id="SysMLNonNormativeExtensions-Requirement-RiskKind-High" name="High">
+        <ownedComment xmi:id="SysMLNonNormativeExtensions-Requirement-RiskKind-High-ownedComment" annotatedElement="SysMLNonNormativeExtensions-Requirement-RiskKind-High">
+          <body>High indicates an unacceptable level of risk</body>
+        </ownedComment>
+      </ownedLiteral>
+      <ownedLiteral xmi:id="SysMLNonNormativeExtensions-Requirement-RiskKind-Medium" name="Medium">
+        <ownedComment xmi:id="SysMLNonNormativeExtensions-Requirement-RiskKind-Medium-ownedComment" annotatedElement="SysMLNonNormativeExtensions-Requirement-RiskKind-Medium">
+          <body>Medium indicates an acceptable level of risk</body>
+        </ownedComment>
+      </ownedLiteral>
+      <ownedLiteral xmi:id="SysMLNonNormativeExtensions-Requirement-RiskKind-Low" name="Low">
+        <ownedComment xmi:id="SysMLNonNormativeExtensions-Requirement-RiskKind-Low-ownedComment" annotatedElement="SysMLNonNormativeExtensions-Requirement-RiskKind-Low">
+          <body>Low indicates a minimal level of risk or no risk</body>
+        </ownedComment>
+      </ownedLiteral>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="SysMLNonNormativeExtensions-Requirement-VerificationMethodKind" name="VerificationMethodKind">
+      <ownedComment xmi:id="SysMLNonNormativeExtensions-Requirement-VerificationMethodKind-ownedComment" annotatedElement="SysMLNonNormativeExtensions-Requirement-VerificationMethodKind">
+        <body>1) Analysis indicates that verification will be performed by technical evaluation using mathematical representations, charts, graphs, circuit diagrams, data reduction, or representative data. Analysis also includes the verification of requirements under conditions, which are simulated or modeled; where the results are derived from the analysis of the results produced by the model,
+2) Demonstration indicates that verification will be performed by operation, movement or adjustment of the item under specific conditions to perform the design functions without recording of quantitative data. Demonstration is typically considered the least restrictive of the verification types,
+3) Inspection indicates that verification will be performed by examination of the item, reviewing descriptive documentation, and comparing the appropriate characteristics with a predetermined standard to determine conformance to requirements without the use of special laboratory equipment or procedures, and
+4) Test indicates that verification will be performed through systematic exercising of the applicable item under appropriate conditions with instrumentation to measure required parameters and the collection, analysis, and evaluation of quantitative data to show that measured parameters equal or exceed specified requirements.</body>
+      </ownedComment>
+      <ownedLiteral xmi:id="SysMLNonNormativeExtensions-Requirement-VerificationMethodKind-Analysis" name="Analysis">
+        <ownedComment xmi:id="SysMLNonNormativeExtensions-Requirement-VerificationMethodKind-Analysis-ownedComment" annotatedElement="SysMLNonNormativeExtensions-Requirement-VerificationMethodKind-Analysis">
+          <body>Analysis indicates that verification will be performed by technical evaluation using mathematical representations, charts, graphs, circuit diagrams, data reduction, or representative data. Analysis also includes the verification of requirements under conditions, which are simulated or modeled; where the results are derived from the analysis of the results produced by the model</body>
+        </ownedComment>
+      </ownedLiteral>
+      <ownedLiteral xmi:id="SysMLNonNormativeExtensions-Requirement-VerificationMethodKind-Demonstration" name="Demonstration">
+        <ownedComment xmi:id="SysMLNonNormativeExtensions-Requirement-VerificationMethodKind-Demonstration-ownedComment" annotatedElement="SysMLNonNormativeExtensions-Requirement-VerificationMethodKind-Demonstration">
+          <body>Demonstration indicates that verification will be performed by operation, movement or adjustment of the item under specific conditions to perform the design functions without recording of quantitative data. Demonstration is typically considered the least restrictive of the verification types</body>
+        </ownedComment>
+      </ownedLiteral>
+      <ownedLiteral xmi:id="SysMLNonNormativeExtensions-Requirement-VerificationMethodKind-Inspection" name="Inspection">
+        <ownedComment xmi:id="SysMLNonNormativeExtensions-Requirement-VerificationMethodKind-Inspection-ownedComment" annotatedElement="SysMLNonNormativeExtensions-Requirement-VerificationMethodKind-Inspection">
+          <body>Inspection indicates that verification will be performed by examination of the item, reviewing descriptive documentation, and comparing the appropriate characteristics with a predetermined standard to determine conformance to requirements without the use of special laboratory equipment or procedures</body>
+        </ownedComment>
+      </ownedLiteral>
+      <ownedLiteral xmi:id="SysMLNonNormativeExtensions-Requirement-VerificationMethodKind-Test" name="Test">
+        <ownedComment xmi:id="SysMLNonNormativeExtensions-Requirement-VerificationMethodKind-Test-ownedComment" annotatedElement="SysMLNonNormativeExtensions-Requirement-VerificationMethodKind-Test">
+          <body>Test indicates that verification will be performed through systematic exercising of the applicable item under appropriate conditions with instrumentation to measure required parameters and the collection, analysis, and evaluation of quantitative data to show that measured parameters equal or exceed specified requirements</body>
+        </ownedComment>
+      </ownedLiteral>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="SysMLNonNormativeExtensions-Actors" name="Actors" URI="">
+    <packagedElement xmi:type="uml:Stereotype" xmi:id="SysMLNonNormativeExtensions-Actors-External_system" name="External system">
+      <ownedComment xmi:id="SysMLNonNormativeExtensions-Actors-External_system-ownedComment" annotatedElement="SysMLNonNormativeExtensions-Actors-External_system">
+        <body>An External system is a system that interacts with the system under development. For example an Information server or a Monitoring system.
+</body>
+      </ownedComment>
+      <ownedAttribute xmi:id="SysMLNonNormativeExtensions-Actors-External_system-base_Actor" name="base_Actor" visibility="public" association="SysMLNonNormativeExtensions-Actors-E_extension_External_system_base_Actor">
+        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Actor"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Stereotype" xmi:id="SysMLNonNormativeExtensions-Actors-Sensor" name="Sensor">
+      <ownedComment xmi:id="SysMLNonNormativeExtensions-Actors-Sensor-ownedComment" annotatedElement="SysMLNonNormativeExtensions-Actors-Sensor">
+        <body>A Sensor is a special external system that forwards information from the environment to the system under development. For example a Temperature sensor.</body>
+      </ownedComment>
+      <generalization xmi:id="SysMLNonNormativeExtensions-Actors-Sensor-generalization" general="SysMLNonNormativeExtensions-Actors-External_system" isSubstitutable="false"/>
+      <ownedAttribute xmi:id="SysMLNonNormativeExtensions-Actors-Sensor-base_Actor" name="base_Actor" visibility="public" association="SysMLNonNormativeExtensions-Actors-E_extension_Sensor_base_Actor">
+        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Actor"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Stereotype" xmi:id="SysMLNonNormativeExtensions-Actors-Boundary_system" name="Boundary system">
+      <ownedComment xmi:id="SysMLNonNormativeExtensions-Actors-Boundary_system-ownedComment" annotatedElement="SysMLNonNormativeExtensions-Actors-Boundary_system">
+        <body>A Boundary system is a special external system that serves as medium between another system and the system under development without having own interests in the communication. For example Bus system or Communication system.
+</body>
+      </ownedComment>
+      <generalization xmi:id="SysMLNonNormativeExtensions-Actors-Boundary_system-generalization" general="SysMLNonNormativeExtensions-Actors-External_system" isSubstitutable="false"/>
+      <ownedAttribute xmi:id="SysMLNonNormativeExtensions-Actors-Boundary_system-base_Actor" name="base_Actor" visibility="public" association="SysMLNonNormativeExtensions-Actors-E_extension_Boundary_system_base_Actor">
+        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Actor"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Extension" xmi:id="SysMLNonNormativeExtensions-Actors-E_extension_Sensor_base_Actor" name="E_extension_Sensor_base_Actor" memberEnd="SysMLNonNormativeExtensions-Actors-E_extension_Sensor_base_Actor-extension_User_system SysMLNonNormativeExtensions-Actors-Sensor-base_Actor" navigableOwnedEnd="SysMLNonNormativeExtensions-Actors-E_extension_Sensor_base_Actor-extension_User_system">
+      <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="SysMLNonNormativeExtensions-Actors-E_extension_Sensor_base_Actor-extension_User_system" name="extension_User system" visibility="public" type="SysMLNonNormativeExtensions-Actors-Sensor" aggregation="composite" association="SysMLNonNormativeExtensions-Actors-E_extension_Sensor_base_Actor">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="SysMLNonNormativeExtensions-Actors-E_extension_Sensor_base_Actor-extension_User_system-lowerValue" name=""/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="SysMLNonNormativeExtensions-Actors-E_extension_Sensor_base_Actor-extension_User_system-upperValue" name="" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Extension" xmi:id="SysMLNonNormativeExtensions-Actors-E_extension_User_system_base_Actor" name="E_extension_User_system_base_Actor" memberEnd="SysMLNonNormativeExtensions-Actors-E_extension_User_system_base_Actor-extension_External_system SysMLNonNormativeExtensions-Actors-User_system-base_Actor" navigableOwnedEnd="SysMLNonNormativeExtensions-Actors-E_extension_User_system_base_Actor-extension_External_system">
+      <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="SysMLNonNormativeExtensions-Actors-E_extension_User_system_base_Actor-extension_External_system" name="extension_External system" visibility="public" type="SysMLNonNormativeExtensions-Actors-User_system" aggregation="composite" association="SysMLNonNormativeExtensions-Actors-E_extension_User_system_base_Actor">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="SysMLNonNormativeExtensions-Actors-E_extension_User_system_base_Actor-extension_External_system-lowerValue" name=""/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="SysMLNonNormativeExtensions-Actors-E_extension_User_system_base_Actor-extension_External_system-upperValue" name="" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Stereotype" xmi:id="SysMLNonNormativeExtensions-Actors-Environmental_effect" name="Environmental effect">
+      <ownedComment xmi:id="SysMLNonNormativeExtensions-Actors-Environmental_effect-ownedComment" annotatedElement="SysMLNonNormativeExtensions-Actors-Environmental_effect">
+        <body>An Environmental effect is an influence on the system from the environment without communicating with it directly. For example Temperature or Humidity.
+</body>
+      </ownedComment>
+      <ownedAttribute xmi:id="SysMLNonNormativeExtensions-Actors-Environmental_effect-base_Actor" name="base_Actor" visibility="public" association="SysMLNonNormativeExtensions-Actors-E_extension_Environmental_effect_base_Actor">
+        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Actor"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Stereotype" xmi:id="SysMLNonNormativeExtensions-Actors-User_system" name="User system">
+      <ownedComment xmi:id="SysMLNonNormativeExtensions-Actors-User_system-ownedComment" annotatedElement="SysMLNonNormativeExtensions-Actors-User_system">
+        <body>An User system is a special external system that serves as medium between a user and the system without having
+own interests in the communication. For example Input device or Display.</body>
+      </ownedComment>
+      <generalization xmi:id="SysMLNonNormativeExtensions-Actors-User_system-generalization" general="SysMLNonNormativeExtensions-Actors-External_system" isSubstitutable="false"/>
+      <ownedAttribute xmi:id="SysMLNonNormativeExtensions-Actors-User_system-base_Actor" name="base_Actor" visibility="public" association="SysMLNonNormativeExtensions-Actors-E_extension_User_system_base_Actor">
+        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Actor"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Extension" xmi:id="SysMLNonNormativeExtensions-Actors-E_extension_Environmental_effect_base_Actor" name="E_extension_Environmental_effect_base_Actor" memberEnd="SysMLNonNormativeExtensions-Actors-E_extension_Environmental_effect_base_Actor-extension_External_system SysMLNonNormativeExtensions-Actors-Environmental_effect-base_Actor" navigableOwnedEnd="SysMLNonNormativeExtensions-Actors-E_extension_Environmental_effect_base_Actor-extension_External_system">
+      <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="SysMLNonNormativeExtensions-Actors-E_extension_Environmental_effect_base_Actor-extension_External_system" name="extension_External system" visibility="public" type="SysMLNonNormativeExtensions-Actors-Environmental_effect" aggregation="composite" association="SysMLNonNormativeExtensions-Actors-E_extension_Environmental_effect_base_Actor">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="SysMLNonNormativeExtensions-Actors-E_extension_Environmental_effect_base_Actor-extension_External_system-lowerValue" name=""/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="SysMLNonNormativeExtensions-Actors-E_extension_Environmental_effect_base_Actor-extension_External_system-upperValue" name="" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Extension" xmi:id="SysMLNonNormativeExtensions-Actors-E_extension_External_system_base_Actor" name="E_extension_External_system_base_Actor" memberEnd="SysMLNonNormativeExtensions-Actors-E_extension_External_system_base_Actor-extension_ SysMLNonNormativeExtensions-Actors-External_system-base_Actor" navigableOwnedEnd="SysMLNonNormativeExtensions-Actors-E_extension_External_system_base_Actor-extension_">
+      <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="SysMLNonNormativeExtensions-Actors-E_extension_External_system_base_Actor-extension_" name="extension_" visibility="public" type="SysMLNonNormativeExtensions-Actors-External_system" aggregation="composite" association="SysMLNonNormativeExtensions-Actors-E_extension_External_system_base_Actor">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="SysMLNonNormativeExtensions-Actors-E_extension_External_system_base_Actor-extension_-lowerValue" name=""/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="SysMLNonNormativeExtensions-Actors-E_extension_External_system_base_Actor-extension_-upperValue" name="" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Extension" xmi:id="SysMLNonNormativeExtensions-Actors-E_extension_Boundary_system_base_Actor" name="E_extension_Boundary_system_base_Actor" memberEnd="SysMLNonNormativeExtensions-Actors-E_extension_Boundary_system_base_Actor-extension_External_system SysMLNonNormativeExtensions-Actors-Boundary_system-base_Actor" navigableOwnedEnd="SysMLNonNormativeExtensions-Actors-E_extension_Boundary_system_base_Actor-extension_External_system">
+      <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="SysMLNonNormativeExtensions-Actors-E_extension_Boundary_system_base_Actor-extension_External_system" name="extension_External system" visibility="public" type="SysMLNonNormativeExtensions-Actors-Boundary_system" aggregation="composite" association="SysMLNonNormativeExtensions-Actors-E_extension_Boundary_system_base_Actor">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="SysMLNonNormativeExtensions-Actors-E_extension_Boundary_system_base_Actor-extension_External_system-lowerValue" name=""/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="SysMLNonNormativeExtensions-Actors-E_extension_Boundary_system_base_Actor-extension_External_system-upperValue" name="" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Stereotype" xmi:id="SysMLNonNormativeExtensions-Actors-Actuator" name="Actuator">
+      <ownedComment xmi:id="SysMLNonNormativeExtensions-Actors-Actuator-ownedComment" annotatedElement="SysMLNonNormativeExtensions-Actors-Actuator">
+        <body>An Actuator is a special external system that influences the environment of the system under development. For example a Heater assembly or a Central locking system of a car.
+</body>
+      </ownedComment>
+      <generalization xmi:id="SysMLNonNormativeExtensions-Actors-Actuator-generalization" general="SysMLNonNormativeExtensions-Actors-External_system" isSubstitutable="false"/>
+      <ownedAttribute xmi:id="SysMLNonNormativeExtensions-Actors-Actuator-base_Actor" name="base_Actor" visibility="public" association="SysMLNonNormativeExtensions-Actors-E_extension_Actuator_base_Actor">
+        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Actor"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Extension" xmi:id="SysMLNonNormativeExtensions-Actors-E_extension_Actuator_base_Actor" name="E_extension_Actuator_base_Actor" memberEnd="SysMLNonNormativeExtensions-Actors-E_extension_Actuator_base_Actor-extension_User_system SysMLNonNormativeExtensions-Actors-Actuator-base_Actor" navigableOwnedEnd="SysMLNonNormativeExtensions-Actors-E_extension_Actuator_base_Actor-extension_User_system">
+      <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="SysMLNonNormativeExtensions-Actors-E_extension_Actuator_base_Actor-extension_User_system" name="extension_User system" visibility="public" type="SysMLNonNormativeExtensions-Actors-Actuator" aggregation="composite" association="SysMLNonNormativeExtensions-Actors-E_extension_Actuator_base_Actor">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="SysMLNonNormativeExtensions-Actors-E_extension_Actuator_base_Actor-extension_User_system-lowerValue" name=""/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="SysMLNonNormativeExtensions-Actors-E_extension_Actuator_base_Actor-extension_User_system-upperValue" name="" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="SysMLNonNormativeExtensions-Distributions" name="Distributions" URI="">
+    <packagedElement xmi:type="uml:Extension" xmi:id="SysMLNonNormativeExtensions-Distributions-E_extension_Normal_base_Property" name="E_extension_Normal_base_Property" memberEnd="SysMLNonNormativeExtensions-Distributions-E_extension_Normal_base_Property-extension_ SysMLNonNormativeExtensions-Distributions-Normal-base_Property" navigableOwnedEnd="SysMLNonNormativeExtensions-Distributions-E_extension_Normal_base_Property-extension_">
+      <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="SysMLNonNormativeExtensions-Distributions-E_extension_Normal_base_Property-extension_" name="extension_" visibility="public" type="SysMLNonNormativeExtensions-Distributions-Normal" aggregation="composite" association="SysMLNonNormativeExtensions-Distributions-E_extension_Normal_base_Property">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="SysMLNonNormativeExtensions-Distributions-E_extension_Normal_base_Property-extension_-lowerValue" name=""/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="SysMLNonNormativeExtensions-Distributions-E_extension_Normal_base_Property-extension_-upperValue" name="" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Stereotype" xmi:id="SysMLNonNormativeExtensions-Distributions-Uniform" name="Uniform">
+      <ownedComment xmi:id="SysMLNonNormativeExtensions-Distributions-Uniform-ownedComment" annotatedElement="SysMLNonNormativeExtensions-Distributions-Uniform">
+        <body>Uniform distribution - constant probability between min and max</body>
+      </ownedComment>
+      <generalization xmi:id="SysMLNonNormativeExtensions-Distributions-Uniform-generalization" general="SysMLNonNormativeExtensions-Distributions-BasicInterval" isSubstitutable="false"/>
+      <ownedAttribute xmi:id="SysMLNonNormativeExtensions-Distributions-Uniform-base_Property" name="base_Property" visibility="public" association="SysMLNonNormativeExtensions-Distributions-E_extension_Uniform_base_Property">
+        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Property"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Stereotype" xmi:id="SysMLNonNormativeExtensions-Distributions-Normal" name="Normal">
+      <ownedComment xmi:id="SysMLNonNormativeExtensions-Distributions-Normal-ownedComment" annotatedElement="SysMLNonNormativeExtensions-Distributions-Normal">
+        <body>Normal distribution - constant probability between min and max</body>
+      </ownedComment>
+      <generalization xmi:id="SysMLNonNormativeExtensions-Distributions-Normal-generalization">
+        <general xmi:type="uml:Stereotype" href="SysML.profile.uml#SysML-Blocks-DistributedProperty"/>
+      </generalization>
+      <ownedAttribute xmi:id="SysMLNonNormativeExtensions-Distributions-Normal-base_Property" name="base_Property" visibility="public" association="SysMLNonNormativeExtensions-Distributions-E_extension_Normal_base_Property">
+        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Property"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="SysMLNonNormativeExtensions-Distributions-Normal-mean" name="mean" visibility="public">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="SysMLNonNormativeExtensions-Distributions-Normal-standardDeviation" name="standardDeviation" visibility="public">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Extension" xmi:id="SysMLNonNormativeExtensions-Distributions-E_extension_Interval_base_Property" name="E_extension_Interval_base_Property" memberEnd="SysMLNonNormativeExtensions-Distributions-E_extension_Interval_base_Property-extension_ SysMLNonNormativeExtensions-Distributions-Interval-base_Property" navigableOwnedEnd="SysMLNonNormativeExtensions-Distributions-E_extension_Interval_base_Property-extension_">
+      <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="SysMLNonNormativeExtensions-Distributions-E_extension_Interval_base_Property-extension_" name="extension_" visibility="public" type="SysMLNonNormativeExtensions-Distributions-Interval" aggregation="composite" association="SysMLNonNormativeExtensions-Distributions-E_extension_Interval_base_Property">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="SysMLNonNormativeExtensions-Distributions-E_extension_Interval_base_Property-extension_-lowerValue" name=""/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="SysMLNonNormativeExtensions-Distributions-E_extension_Interval_base_Property-extension_-upperValue" name="" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Extension" xmi:id="SysMLNonNormativeExtensions-Distributions-E_extension_Uniform_base_Property" name="E_extension_Uniform_base_Property" memberEnd="SysMLNonNormativeExtensions-Distributions-E_extension_Uniform_base_Property-extension_ SysMLNonNormativeExtensions-Distributions-Uniform-base_Property" navigableOwnedEnd="SysMLNonNormativeExtensions-Distributions-E_extension_Uniform_base_Property-extension_">
+      <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="SysMLNonNormativeExtensions-Distributions-E_extension_Uniform_base_Property-extension_" name="extension_" visibility="public" type="SysMLNonNormativeExtensions-Distributions-Uniform" aggregation="composite" association="SysMLNonNormativeExtensions-Distributions-E_extension_Uniform_base_Property">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="SysMLNonNormativeExtensions-Distributions-E_extension_Uniform_base_Property-extension_-lowerValue" name=""/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="SysMLNonNormativeExtensions-Distributions-E_extension_Uniform_base_Property-extension_-upperValue" name="" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Extension" xmi:id="SysMLNonNormativeExtensions-Distributions-E_extension_BasicInterval_base_Property" name="E_extension_BasicInterval_base_Property" memberEnd="SysMLNonNormativeExtensions-Distributions-E_extension_BasicInterval_base_Property-extension_ SysMLNonNormativeExtensions-Distributions-BasicInterval-base_Property" navigableOwnedEnd="SysMLNonNormativeExtensions-Distributions-E_extension_BasicInterval_base_Property-extension_">
+      <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="SysMLNonNormativeExtensions-Distributions-E_extension_BasicInterval_base_Property-extension_" name="extension_" visibility="public" type="SysMLNonNormativeExtensions-Distributions-BasicInterval" aggregation="composite" association="SysMLNonNormativeExtensions-Distributions-E_extension_BasicInterval_base_Property">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="SysMLNonNormativeExtensions-Distributions-E_extension_BasicInterval_base_Property-extension_-lowerValue" name=""/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="SysMLNonNormativeExtensions-Distributions-E_extension_BasicInterval_base_Property-extension_-upperValue" name="" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Stereotype" xmi:id="SysMLNonNormativeExtensions-Distributions-BasicInterval" name="BasicInterval">
+      <ownedComment xmi:id="SysMLNonNormativeExtensions-Distributions-BasicInterval-ownedComment" annotatedElement="SysMLNonNormativeExtensions-Distributions-BasicInterval">
+        <body>Basic Interval distribution - value between min and max inclusive</body>
+      </ownedComment>
+      <generalization xmi:id="SysMLNonNormativeExtensions-Distributions-BasicInterval-generalization">
+        <general xmi:type="uml:Stereotype" href="SysML.profile.uml#SysML-Blocks-DistributedProperty"/>
+      </generalization>
+      <ownedAttribute xmi:id="SysMLNonNormativeExtensions-Distributions-BasicInterval-base_Property" name="base_Property" visibility="public" association="SysMLNonNormativeExtensions-Distributions-E_extension_BasicInterval_base_Property">
+        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Property"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="SysMLNonNormativeExtensions-Distributions-BasicInterval-min" name="min" visibility="public">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="SysMLNonNormativeExtensions-Distributions-BasicInterval-max" name="max" visibility="public">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Stereotype" xmi:id="SysMLNonNormativeExtensions-Distributions-Interval" name="Interval">
+      <ownedComment xmi:id="SysMLNonNormativeExtensions-Distributions-Interval-ownedComment" annotatedElement="SysMLNonNormativeExtensions-Distributions-Interval">
+        <body>Interval distribution - unknown probability between min and max</body>
+      </ownedComment>
+      <generalization xmi:id="SysMLNonNormativeExtensions-Distributions-Interval-generalization" general="SysMLNonNormativeExtensions-Distributions-BasicInterval" isSubstitutable="false"/>
+      <ownedAttribute xmi:id="SysMLNonNormativeExtensions-Distributions-Interval-base_Property" name="base_Property" visibility="public" association="SysMLNonNormativeExtensions-Distributions-E_extension_Interval_base_Property">
+        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Property"/>
+      </ownedAttribute>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="SysMLNonNormativeExtensions-Diagrams" name="Diagrams" URI="">
+    <packagedElement xmi:type="uml:Stereotype" xmi:id="SysMLNonNormativeExtensions-Diagrams-BlockHierarchy" name="BlockHierarchy">
+      <ownedComment xmi:id="SysMLNonNormativeExtensions-Diagrams-BlockHierarchy-ownedComment" annotatedElement="SysMLNonNormativeExtensions-Diagrams-BlockHierarchy">
+        <body>Block definition diagram usage for a block hierarchy - Block Hierarchy where block can be replaced by system, item, activity, etc.</body>
+      </ownedComment>
+      <ownedAttribute xmi:id="SysMLNonNormativeExtensions-Diagrams-BlockHierarchy-base_Diagram" name="base_Diagram" visibility="public" association="SysMLNonNormativeExtensions-Diagrams-E_extension_BlockHierarchy_base_Diagram">
+        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Element"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Extension" xmi:id="SysMLNonNormativeExtensions-Diagrams-E_extension_BlockHierarchy_base_Diagram" name="E_extension_BlockHierarchy_base_Diagram" memberEnd="SysMLNonNormativeExtensions-Diagrams-E_extension_BlockHierarchy_base_Diagram-extension_ SysMLNonNormativeExtensions-Diagrams-BlockHierarchy-base_Diagram" navigableOwnedEnd="SysMLNonNormativeExtensions-Diagrams-E_extension_BlockHierarchy_base_Diagram-extension_">
+      <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="SysMLNonNormativeExtensions-Diagrams-E_extension_BlockHierarchy_base_Diagram-extension_" name="extension_" visibility="public" type="SysMLNonNormativeExtensions-Diagrams-BlockHierarchy" aggregation="composite" association="SysMLNonNormativeExtensions-Diagrams-E_extension_BlockHierarchy_base_Diagram">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="SysMLNonNormativeExtensions-Diagrams-E_extension_BlockHierarchy_base_Diagram-extension_-lowerValue" name=""/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="SysMLNonNormativeExtensions-Diagrams-E_extension_BlockHierarchy_base_Diagram-extension_-upperValue" name="" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Stereotype" xmi:id="SysMLNonNormativeExtensions-Diagrams-Diagram_Description" name="Diagram Description">
+      <ownedAttribute xmi:id="SysMLNonNormativeExtensions-Diagrams-Diagram_Description-base_Diagram" name="base_Diagram" visibility="public" association="SysMLNonNormativeExtensions-Diagrams-E_extension_Diagram_Description_base_Diagram">
+        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Element"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="SysMLNonNormativeExtensions-Diagrams-Diagram_Description-Version" name="Version" visibility="public">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="SysMLNonNormativeExtensions-Diagrams-Diagram_Description-Description" name="Description" visibility="public">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="SysMLNonNormativeExtensions-Diagrams-Diagram_Description-Completion_status" name="Completion status" visibility="public">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="SysMLNonNormativeExtensions-Diagrams-Diagram_Description-Reference" name="Reference" visibility="public">
+        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Element"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Extension" xmi:id="SysMLNonNormativeExtensions-Diagrams-E_extension_ContextDiagram_base_Diagram" name="E_extension_ContextDiagram_base_Diagram" memberEnd="SysMLNonNormativeExtensions-Diagrams-E_extension_ContextDiagram_base_Diagram-extension_ SysMLNonNormativeExtensions-Diagrams-ContextDiagram-base_Diagram" navigableOwnedEnd="SysMLNonNormativeExtensions-Diagrams-E_extension_ContextDiagram_base_Diagram-extension_">
+      <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="SysMLNonNormativeExtensions-Diagrams-E_extension_ContextDiagram_base_Diagram-extension_" name="extension_" visibility="public" type="SysMLNonNormativeExtensions-Diagrams-ContextDiagram" aggregation="composite" association="SysMLNonNormativeExtensions-Diagrams-E_extension_ContextDiagram_base_Diagram">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="SysMLNonNormativeExtensions-Diagrams-E_extension_ContextDiagram_base_Diagram-extension_-lowerValue" name=""/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="SysMLNonNormativeExtensions-Diagrams-E_extension_ContextDiagram_base_Diagram-extension_-upperValue" name="" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Extension" xmi:id="SysMLNonNormativeExtensions-Diagrams-E_extension_SwimLaneDiagram_base_Diagram" name="E_extension_SwimLaneDiagram_base_Diagram" memberEnd="SysMLNonNormativeExtensions-Diagrams-E_extension_SwimLaneDiagram_base_Diagram-extension_ SysMLNonNormativeExtensions-Diagrams-SwimLaneDiagram-base_Diagram" navigableOwnedEnd="SysMLNonNormativeExtensions-Diagrams-E_extension_SwimLaneDiagram_base_Diagram-extension_">
+      <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="SysMLNonNormativeExtensions-Diagrams-E_extension_SwimLaneDiagram_base_Diagram-extension_" name="extension_" visibility="public" type="SysMLNonNormativeExtensions-Diagrams-SwimLaneDiagram" aggregation="composite" association="SysMLNonNormativeExtensions-Diagrams-E_extension_SwimLaneDiagram_base_Diagram">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="SysMLNonNormativeExtensions-Diagrams-E_extension_SwimLaneDiagram_base_Diagram-extension_-lowerValue" name=""/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="SysMLNonNormativeExtensions-Diagrams-E_extension_SwimLaneDiagram_base_Diagram-extension_-upperValue" name="" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Extension" xmi:id="SysMLNonNormativeExtensions-Diagrams-E_extension_diagramUsage_base_Diagram" name="E_extension_diagramUsage_base_Diagram" memberEnd="SysMLNonNormativeExtensions-Diagrams-E_extension_diagramUsage_base_Diagram-extension_diagramUsage SysMLNonNormativeExtensions-Diagrams-diagramUsage-base_Diagram" navigableOwnedEnd="SysMLNonNormativeExtensions-Diagrams-E_extension_diagramUsage_base_Diagram-extension_diagramUsage">
+      <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="SysMLNonNormativeExtensions-Diagrams-E_extension_diagramUsage_base_Diagram-extension_diagramUsage" name="extension_diagramUsage" visibility="public" type="SysMLNonNormativeExtensions-Diagrams-diagramUsage" aggregation="composite" association="SysMLNonNormativeExtensions-Diagrams-E_extension_diagramUsage_base_Diagram">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="SysMLNonNormativeExtensions-Diagrams-E_extension_diagramUsage_base_Diagram-extension_diagramUsage-lowerValue" name=""/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="SysMLNonNormativeExtensions-Diagrams-E_extension_diagramUsage_base_Diagram-extension_diagramUsage-upperValue" name="" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Stereotype" xmi:id="SysMLNonNormativeExtensions-Diagrams-SwimLaneDiagram" name="SwimLaneDiagram">
+      <ownedComment xmi:id="SysMLNonNormativeExtensions-Diagrams-SwimLaneDiagram-ownedComment" annotatedElement="SysMLNonNormativeExtensions-Diagrams-SwimLaneDiagram">
+        <body>Activity diagram usage with swim lanes.</body>
+      </ownedComment>
+      <ownedAttribute xmi:id="SysMLNonNormativeExtensions-Diagrams-SwimLaneDiagram-base_Diagram" name="base_Diagram" visibility="public" association="SysMLNonNormativeExtensions-Diagrams-E_extension_SwimLaneDiagram_base_Diagram">
+        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Element"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Stereotype" xmi:id="SysMLNonNormativeExtensions-Diagrams-diagramUsage" name="diagramUsage">
+      <ownedComment xmi:id="SysMLNonNormativeExtensions-Diagrams-diagramUsage-ownedComment" annotatedElement="SysMLNonNormativeExtensions-Diagrams-diagramUsage">
+        <body>SysML also introduces the concept of a diagram usage. This represents a unique usage of a particular diagram type, such as a context diagram as a usage of an block definition diagram, internal block diagram, or use case diagram. The diagram usage can be identified in the header above the diagramKind as «diagramUsage».</body>
+      </ownedComment>
+      <ownedAttribute xmi:id="SysMLNonNormativeExtensions-Diagrams-diagramUsage-base_Diagram" name="base_Diagram" visibility="public" association="SysMLNonNormativeExtensions-Diagrams-E_extension_diagramUsage_base_Diagram">
+        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Element"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Stereotype" xmi:id="SysMLNonNormativeExtensions-Diagrams-ContextDiagram" name="ContextDiagram">
+      <ownedComment xmi:id="SysMLNonNormativeExtensions-Diagrams-ContextDiagram-ownedComment" annotatedElement="SysMLNonNormativeExtensions-Diagrams-ContextDiagram">
+        <body>A user defined usage of an internal block diagram, which depicts some of the top level entities in the overall enterprise and their relationships.</body>
+      </ownedComment>
+      <ownedAttribute xmi:id="SysMLNonNormativeExtensions-Diagrams-ContextDiagram-base_Diagram" name="base_Diagram" visibility="public" association="SysMLNonNormativeExtensions-Diagrams-E_extension_ContextDiagram_base_Diagram">
+        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Element"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Extension" xmi:id="SysMLNonNormativeExtensions-Diagrams-E_extension_Diagram_Description_base_Diagram" name="E_extension_Diagram_Description_base_Diagram" memberEnd="SysMLNonNormativeExtensions-Diagrams-E_extension_Diagram_Description_base_Diagram-extension_diagramDesription SysMLNonNormativeExtensions-Diagrams-Diagram_Description-base_Diagram" navigableOwnedEnd="SysMLNonNormativeExtensions-Diagrams-E_extension_Diagram_Description_base_Diagram-extension_diagramDesription">
+      <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="SysMLNonNormativeExtensions-Diagrams-E_extension_Diagram_Description_base_Diagram-extension_diagramDesription" name="extension_diagramDesription" visibility="public" type="SysMLNonNormativeExtensions-Diagrams-Diagram_Description" aggregation="composite" association="SysMLNonNormativeExtensions-Diagrams-E_extension_Diagram_Description_base_Diagram">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="SysMLNonNormativeExtensions-Diagrams-E_extension_Diagram_Description_base_Diagram-extension_diagramDesription-lowerValue" name=""/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="SysMLNonNormativeExtensions-Diagrams-E_extension_Diagram_Description_base_Diagram-extension_diagramDesription-upperValue" name="" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="SysMLNonNormativeExtensions-Parametric" name="Parametric" URI="">
+    <packagedElement xmi:type="uml:Extension" xmi:id="SysMLNonNormativeExtensions-Parametric-E_extension_objectiveFunction_base_Property" name="E_extension_objectiveFunction_base_Property" memberEnd="SysMLNonNormativeExtensions-Parametric-E_extension_objectiveFunction_base_Property-extension_objectiveFunction SysMLNonNormativeExtensions-Parametric-objectiveFunction-base_Property" navigableOwnedEnd="SysMLNonNormativeExtensions-Parametric-E_extension_objectiveFunction_base_Property-extension_objectiveFunction">
+      <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="SysMLNonNormativeExtensions-Parametric-E_extension_objectiveFunction_base_Property-extension_objectiveFunction" name="extension_objectiveFunction" visibility="public" type="SysMLNonNormativeExtensions-Parametric-objectiveFunction" aggregation="composite" association="SysMLNonNormativeExtensions-Parametric-E_extension_objectiveFunction_base_Property">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="SysMLNonNormativeExtensions-Parametric-E_extension_objectiveFunction_base_Property-extension_objectiveFunction-lowerValue" name=""/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="SysMLNonNormativeExtensions-Parametric-E_extension_objectiveFunction_base_Property-extension_objectiveFunction-upperValue" name="" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Extension" xmi:id="SysMLNonNormativeExtensions-Parametric-E_extension_objectiveFunction_base_Class" name="E_extension_objectiveFunction_base_Class" memberEnd="SysMLNonNormativeExtensions-Parametric-E_extension_objectiveFunction_base_Class-extension_ SysMLNonNormativeExtensions-Parametric-objectiveFunction-base_Class" navigableOwnedEnd="SysMLNonNormativeExtensions-Parametric-E_extension_objectiveFunction_base_Class-extension_">
+      <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="SysMLNonNormativeExtensions-Parametric-E_extension_objectiveFunction_base_Class-extension_" name="extension_" visibility="public" type="SysMLNonNormativeExtensions-Parametric-objectiveFunction" aggregation="composite" association="SysMLNonNormativeExtensions-Parametric-E_extension_objectiveFunction_base_Class">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="SysMLNonNormativeExtensions-Parametric-E_extension_objectiveFunction_base_Class-extension_-lowerValue" name=""/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="SysMLNonNormativeExtensions-Parametric-E_extension_objectiveFunction_base_Class-extension_-upperValue" name="" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Stereotype" xmi:id="SysMLNonNormativeExtensions-Parametric-moe" name="moe">
+      <ownedComment xmi:id="SysMLNonNormativeExtensions-Parametric-moe-ownedComment" annotatedElement="SysMLNonNormativeExtensions-Parametric-moe">
+        <body>A measure of effectiveness (moe) represents a parameter whose value is critical for achieving the desired mission cost effectiveness.</body>
+      </ownedComment>
+      <ownedAttribute xmi:id="SysMLNonNormativeExtensions-Parametric-moe-base_Property" name="base_Property" visibility="public" association="SysMLNonNormativeExtensions-Parametric-E_extension_moe_base_Property">
+        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Property"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Extension" xmi:id="SysMLNonNormativeExtensions-Parametric-E_extension_moe_base_Property" name="E_extension_moe_base_Property" memberEnd="SysMLNonNormativeExtensions-Parametric-E_extension_moe_base_Property-extension_ SysMLNonNormativeExtensions-Parametric-moe-base_Property" navigableOwnedEnd="SysMLNonNormativeExtensions-Parametric-E_extension_moe_base_Property-extension_">
+      <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="SysMLNonNormativeExtensions-Parametric-E_extension_moe_base_Property-extension_" name="extension_" visibility="public" type="SysMLNonNormativeExtensions-Parametric-moe" aggregation="composite" association="SysMLNonNormativeExtensions-Parametric-E_extension_moe_base_Property">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="SysMLNonNormativeExtensions-Parametric-E_extension_moe_base_Property-extension_-lowerValue" name=""/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="SysMLNonNormativeExtensions-Parametric-E_extension_moe_base_Property-extension_-upperValue" name="" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Stereotype" xmi:id="SysMLNonNormativeExtensions-Parametric-objectiveFunction" name="objectiveFunction">
+      <ownedComment xmi:id="SysMLNonNormativeExtensions-Parametric-objectiveFunction-ownedComment" annotatedElement="SysMLNonNormativeExtensions-Parametric-objectiveFunction">
+        <body>An objective function (aka optimization or cost function) is used to determine the overall value of an alternative in terms of weighted criteria and/or moe’s.</body>
+      </ownedComment>
+      <ownedAttribute xmi:id="SysMLNonNormativeExtensions-Parametric-objectiveFunction-base_Class" name="base_Class" visibility="public" association="SysMLNonNormativeExtensions-Parametric-E_extension_objectiveFunction_base_Class">
+        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Class"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="SysMLNonNormativeExtensions-Parametric-objectiveFunction-base_Property" name="base_Property" visibility="public" association="SysMLNonNormativeExtensions-Parametric-E_extension_objectiveFunction_base_Property">
+        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Property"/>
+      </ownedAttribute>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="SysMLNonNormativeExtensions-Activity" name="Activity" URI="">
+    <packagedElement xmi:type="uml:Extension" xmi:id="SysMLNonNormativeExtensions-Activity-E_extension_nonStreaming_base_Activity" name="E_extension_nonStreaming_base_Activity" memberEnd="SysMLNonNormativeExtensions-Activity-E_extension_nonStreaming_base_Activity-extension_Streaming SysMLNonNormativeExtensions-Activity-nonStreaming-base_Activity" navigableOwnedEnd="SysMLNonNormativeExtensions-Activity-E_extension_nonStreaming_base_Activity-extension_Streaming">
+      <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="SysMLNonNormativeExtensions-Activity-E_extension_nonStreaming_base_Activity-extension_Streaming" name="extension_Streaming" visibility="public" type="SysMLNonNormativeExtensions-Activity-nonStreaming" aggregation="composite" association="SysMLNonNormativeExtensions-Activity-E_extension_nonStreaming_base_Activity">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="SysMLNonNormativeExtensions-Activity-E_extension_nonStreaming_base_Activity-extension_Streaming-lowerValue" name=""/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="SysMLNonNormativeExtensions-Activity-E_extension_nonStreaming_base_Activity-extension_Streaming-upperValue" name="" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Stereotype" xmi:id="SysMLNonNormativeExtensions-Activity-nonStreaming" name="nonStreaming">
+      <ownedComment xmi:id="SysMLNonNormativeExtensions-Activity-nonStreaming-ownedComment" annotatedElement="SysMLNonNormativeExtensions-Activity-nonStreaming">
+        <body>Used for activities that accept inputs only when they start, and provide outputs only when they finish.</body>
+      </ownedComment>
+      <ownedAttribute xmi:id="SysMLNonNormativeExtensions-Activity-nonStreaming-base_Activity" name="base_Activity" visibility="public" association="SysMLNonNormativeExtensions-Activity-E_extension_nonStreaming_base_Activity">
+        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Activity"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Extension" xmi:id="SysMLNonNormativeExtensions-Activity-E_extension_System_process_base_Activity" name="E_extension_System_process_base_Activity" memberEnd="SysMLNonNormativeExtensions-Activity-E_extension_System_process_base_Activity-extension_ SysMLNonNormativeExtensions-Activity-System_process-base_Activity" navigableOwnedEnd="SysMLNonNormativeExtensions-Activity-E_extension_System_process_base_Activity-extension_">
+      <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="SysMLNonNormativeExtensions-Activity-E_extension_System_process_base_Activity-extension_" name="extension_" visibility="public" type="SysMLNonNormativeExtensions-Activity-System_process" aggregation="composite" association="SysMLNonNormativeExtensions-Activity-E_extension_System_process_base_Activity">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="SysMLNonNormativeExtensions-Activity-E_extension_System_process_base_Activity-extension_-lowerValue" name=""/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="SysMLNonNormativeExtensions-Activity-E_extension_System_process_base_Activity-extension_-upperValue" name="" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Stereotype" xmi:id="SysMLNonNormativeExtensions-Activity-streaming" name="streaming">
+      <ownedComment xmi:id="SysMLNonNormativeExtensions-Activity-streaming-ownedComment" annotatedElement="SysMLNonNormativeExtensions-Activity-streaming">
+        <body>Used for activities that can accept inputs or provide outputs after they start and before they finish.</body>
+      </ownedComment>
+      <ownedAttribute xmi:id="SysMLNonNormativeExtensions-Activity-streaming-base_Activity" name="base_Activity" visibility="public" association="SysMLNonNormativeExtensions-Activity-E_extension_streaming_base_Activity">
+        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Activity"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Extension" xmi:id="SysMLNonNormativeExtensions-Activity-E_extension_effbd_base_Activity" name="E_extension_effbd_base_Activity" memberEnd="SysMLNonNormativeExtensions-Activity-E_extension_effbd_base_Activity-extension_ SysMLNonNormativeExtensions-Activity-effbd-base_Activity" navigableOwnedEnd="SysMLNonNormativeExtensions-Activity-E_extension_effbd_base_Activity-extension_">
+      <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="SysMLNonNormativeExtensions-Activity-E_extension_effbd_base_Activity-extension_" name="extension_" visibility="public" type="SysMLNonNormativeExtensions-Activity-effbd" aggregation="composite" association="SysMLNonNormativeExtensions-Activity-E_extension_effbd_base_Activity">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="SysMLNonNormativeExtensions-Activity-E_extension_effbd_base_Activity-extension_-lowerValue" name=""/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="SysMLNonNormativeExtensions-Activity-E_extension_effbd_base_Activity-extension_-upperValue" name="" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Extension" xmi:id="SysMLNonNormativeExtensions-Activity-E_extension_streaming_base_Activity" name="E_extension_streaming_base_Activity" memberEnd="SysMLNonNormativeExtensions-Activity-E_extension_streaming_base_Activity-extension_ SysMLNonNormativeExtensions-Activity-streaming-base_Activity" navigableOwnedEnd="SysMLNonNormativeExtensions-Activity-E_extension_streaming_base_Activity-extension_">
+      <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="SysMLNonNormativeExtensions-Activity-E_extension_streaming_base_Activity-extension_" name="extension_" visibility="public" type="SysMLNonNormativeExtensions-Activity-streaming" aggregation="composite" association="SysMLNonNormativeExtensions-Activity-E_extension_streaming_base_Activity">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="SysMLNonNormativeExtensions-Activity-E_extension_streaming_base_Activity-extension_-lowerValue" name=""/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="SysMLNonNormativeExtensions-Activity-E_extension_streaming_base_Activity-extension_-upperValue" name="" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Stereotype" xmi:id="SysMLNonNormativeExtensions-Activity-Essential" name="Essential">
+      <ownedAttribute xmi:id="SysMLNonNormativeExtensions-Activity-Essential-base_Activity" name="base_Activity" visibility="public" association="SysMLNonNormativeExtensions-Activity-E_extension_Essential_base_Activity">
+        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Activity"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Stereotype" xmi:id="SysMLNonNormativeExtensions-Activity-effbd" name="effbd">
+      <ownedComment xmi:id="SysMLNonNormativeExtensions-Activity-effbd-ownedComment" annotatedElement="SysMLNonNormativeExtensions-Activity-effbd">
+        <body>Enhanced Functional Flow Block Diagrams (EFFBD) are a widely-used systems engineering diagram, also called a behavior diagram. Most of its functionality is a constrained use of UML activities. EFFBD specifies that the activity conforms to the constraints necessary for EFFBD.</body>
+      </ownedComment>
+      <ownedAttribute xmi:id="SysMLNonNormativeExtensions-Activity-effbd-base_Activity" name="base_Activity" visibility="public" association="SysMLNonNormativeExtensions-Activity-E_extension_effbd_base_Activity">
+        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Activity"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Extension" xmi:id="SysMLNonNormativeExtensions-Activity-E_extension_Essential_base_Activity" name="E_extension_Essential_base_Activity" memberEnd="SysMLNonNormativeExtensions-Activity-E_extension_Essential_base_Activity-extension_Essential SysMLNonNormativeExtensions-Activity-Essential-base_Activity" navigableOwnedEnd="SysMLNonNormativeExtensions-Activity-E_extension_Essential_base_Activity-extension_Essential">
+      <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="SysMLNonNormativeExtensions-Activity-E_extension_Essential_base_Activity-extension_Essential" name="extension_Essential" visibility="public" type="SysMLNonNormativeExtensions-Activity-Essential" aggregation="composite" association="SysMLNonNormativeExtensions-Activity-E_extension_Essential_base_Activity">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="SysMLNonNormativeExtensions-Activity-E_extension_Essential_base_Activity-extension_Essential-lowerValue" name=""/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="SysMLNonNormativeExtensions-Activity-E_extension_Essential_base_Activity-extension_Essential-upperValue" name="" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Extension" xmi:id="SysMLNonNormativeExtensions-Activity-E_extension_System_process_base_UseCase" name="E_extension_System_process_base_UseCase" memberEnd="SysMLNonNormativeExtensions-Activity-E_extension_System_process_base_UseCase-extension_ SysMLNonNormativeExtensions-Activity-System_process-base_UseCase" navigableOwnedEnd="SysMLNonNormativeExtensions-Activity-E_extension_System_process_base_UseCase-extension_">
+      <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="SysMLNonNormativeExtensions-Activity-E_extension_System_process_base_UseCase-extension_" name="extension_" visibility="public" type="SysMLNonNormativeExtensions-Activity-System_process" aggregation="composite" association="SysMLNonNormativeExtensions-Activity-E_extension_System_process_base_UseCase">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="SysMLNonNormativeExtensions-Activity-E_extension_System_process_base_UseCase-extension_-lowerValue" name=""/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="SysMLNonNormativeExtensions-Activity-E_extension_System_process_base_UseCase-extension_-upperValue" name="" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Stereotype" xmi:id="SysMLNonNormativeExtensions-Activity-System_process" name="System process">
+      <ownedAttribute xmi:id="SysMLNonNormativeExtensions-Activity-System_process-base_Activity" name="base_Activity" visibility="public" association="SysMLNonNormativeExtensions-Activity-E_extension_System_process_base_Activity">
+        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Activity"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="SysMLNonNormativeExtensions-Activity-System_process-base_UseCase" name="base_UseCase" visibility="public" association="SysMLNonNormativeExtensions-Activity-E_extension_System_process_base_UseCase">
+        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#UseCase"/>
+      </ownedAttribute>
+    </packagedElement>
+  </packagedElement>
+</uml:Profile>

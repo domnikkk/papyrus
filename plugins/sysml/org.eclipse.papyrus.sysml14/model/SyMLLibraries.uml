@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SysML.Blocks="http:///SysML/Blocks.ecore" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///SysML/Blocks.ecore SysML.profile.uml#ProfileDefinition-SysML-Blocks">
+  <uml:Package xmi:id="SysMLLibraries" name="SysMLLibraries" URI="http://www.omg.org/spec/SysML/20131201/SysML">
+    <packagedElement xmi:type="uml:Package" xmi:id="SysMLLibraries-PrimitiveValueTypes" name="PrimitiveValueTypes" URI="">
+      <packagedElement xmi:type="uml:PrimitiveType" xmi:id="SysMLLibraries-PrimitiveValueTypes-Boolean" name="Boolean"/>
+      <packagedElement xmi:type="uml:PrimitiveType" xmi:id="SysMLLibraries-PrimitiveValueTypes-Complex" name="Complex">
+        <ownedComment xmi:id="SysMLLibraries-PrimitiveValueTypes-Complex-ownedComment" annotatedElement="SysMLLibraries-PrimitiveValueTypes-Complex">
+          <body>A Complex value type represents the mathematical concept of a complex number. A complex number consists of a real part defined by a real number, and an imaginary part defined by a real number multiplied by the square root of -1. Complex numbers are used to express solutions to various forms of mathematical equations.</body>
+        </ownedComment>
+        <generalization xmi:id="SysMLLibraries-PrimitiveValueTypes-Complex-generalization" general="SysMLLibraries-PrimitiveValueTypes-Number"/>
+        <ownedAttribute xmi:id="SysMLLibraries-PrimitiveValueTypes-Complex-realPart" name="realPart" visibility="public" type="SysMLLibraries-PrimitiveValueTypes-Real">
+          <ownedComment xmi:id="SysMLLibraries-PrimitiveValueTypes-Complex-realPart-ownedComment" annotatedElement="SysMLLibraries-PrimitiveValueTypes-Complex-realPart">
+            <body>A real number used to express the real part of a complex number.</body>
+          </ownedComment>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="SysMLLibraries-PrimitiveValueTypes-Complex-imaginaryPart" name="imaginaryPart" visibility="public" type="SysMLLibraries-PrimitiveValueTypes-Real">
+          <ownedComment xmi:id="SysMLLibraries-PrimitiveValueTypes-Complex-imaginaryPart-ownedComment" annotatedElement="SysMLLibraries-PrimitiveValueTypes-Complex-imaginaryPart">
+            <body>A real number used to express the imaginary part of a complex number.</body>
+          </ownedComment>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:PrimitiveType" xmi:id="SysMLLibraries-PrimitiveValueTypes-Integer" name="Integer">
+        <generalization xmi:id="SysMLLibraries-PrimitiveValueTypes-Integer-generalization" general="SysMLLibraries-PrimitiveValueTypes-Number"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:PrimitiveType" xmi:id="SysMLLibraries-PrimitiveValueTypes-Number" name="Number" isAbstract="true"/>
+      <packagedElement xmi:type="uml:PrimitiveType" xmi:id="SysMLLibraries-PrimitiveValueTypes-Real" name="Real">
+        <ownedComment xmi:id="SysMLLibraries-PrimitiveValueTypes-Real-ownedComment" annotatedElement="SysMLLibraries-PrimitiveValueTypes-Real">
+          <body>A Real value type represents the mathematical concept of a real number. A Real value type may be used to type values that hold continuous quantities, without committing a specific representation such as a floating point data type with restrictions on precision and scale.</body>
+        </ownedComment>
+        <generalization xmi:id="SysMLLibraries-PrimitiveValueTypes-Real-generalization" general="SysMLLibraries-PrimitiveValueTypes-Number"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:PrimitiveType" xmi:id="SysMLLibraries-PrimitiveValueTypes-String" name="String"/>
+      <packagedElement xmi:type="uml:Package" xmi:id="SysMLLibraries-PrimitiveValueTypes-Deprecated" name="Deprecated" URI="">
+        <packagedElement xmi:type="uml:PrimitiveType" xmi:id="SysMLLibraries-PrimitiveValueTypes-Deprecated-UnlimitedNatural" name="UnlimitedNatural">
+          <generalization xmi:id="SysMLLibraries-PrimitiveValueTypes-Deprecated-UnlimitedNatural-generalization" general="SysMLLibraries-PrimitiveValueTypes-Number"/>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="SysMLLibraries-ControlValues" name="ControlValues" URI="">
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="SysMLLibraries-ControlValues-ControlValue" name="ControlValue">
+        <ownedComment xmi:id="SysMLLibraries-ControlValues-ControlValue-ownedComment" annotatedElement="SysMLLibraries-ControlValues-ControlValue">
+          <body>The ControlValue enumeration is a type for treating control values as data and for UML control pins. It can be used as the type of behavior and operation parameters, object nodes, and attributes, and so on. The possible runtime values are given as enumeration literals. Modelers can extend the enumeration with additional literals, such as suspend, resume, with their own semantics.</body>
+        </ownedComment>
+        <ownedLiteral xmi:id="SysMLLibraries-ControlValues-ControlValue-disable" name="disable">
+          <ownedComment xmi:id="SysMLLibraries-ControlValues-ControlValue-disable-ownedComment" annotatedElement="SysMLLibraries-ControlValues-ControlValue-disable">
+            <body>The disable literal means a termination of an executing behavior that can only be started again from the beginning (compare to suspend).</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:id="SysMLLibraries-ControlValues-ControlValue-enable" name="enable">
+          <ownedComment xmi:id="SysMLLibraries-ControlValues-ControlValue-enable-ownedComment" annotatedElement="SysMLLibraries-ControlValues-ControlValue-enable">
+            <body>The enable literal means to start a new execution of a behavior (compare to resume).</body>
+          </ownedComment>
+        </ownedLiteral>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="SysMLLibraries-UnitAndQuantityKind" name="UnitAndQuantityKind" URI="">
+      <packagedElement xmi:type="uml:Package" xmi:id="SysMLLibraries-UnitAndQuantityKind-Deprecated" name="Deprecated" URI="">
+        <packagedElement xmi:type="uml:Class" xmi:id="SysMLLibraries-UnitAndQuantityKind-Deprecated-ScaleValueDefinition" name="ScaleValueDefinition">
+          <ownedAttribute xmi:id="SysMLLibraries-UnitAndQuantityKind-Deprecated-ScaleValueDefinition-description" name="description" visibility="public" aggregation="composite">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="SysMLLibraries-UnitAndQuantityKind-Deprecated-ScaleValueDefinition-description-lowerValue" name="" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="SysMLLibraries-UnitAndQuantityKind-Deprecated-ScaleValueDefinition-description-upperValue" name="" value="1"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:id="SysMLLibraries-UnitAndQuantityKind-Deprecated-ScaleValueDefinition-value" name="value" visibility="public" type="SysMLLibraries-PrimitiveValueTypes-Number" aggregation="composite">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="SysMLLibraries-UnitAndQuantityKind-Deprecated-ScaleValueDefinition-value-lowerValue" name="" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="SysMLLibraries-UnitAndQuantityKind-Deprecated-ScaleValueDefinition-value-upperValue" name="" value="1"/>
+          </ownedAttribute>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="SysMLLibraries-UnitAndQuantityKind-Deprecated-Scale" name="Scale">
+          <ownedRule xmi:id="SysMLLibraries-UnitAndQuantityKind-Deprecated-Scale-mustHaveQuantityKind" name="mustHaveQuantityKind" constrainedElement="SysMLLibraries-UnitAndQuantityKind-Deprecated-Scale">
+            <specification xmi:type="uml:OpaqueExpression" xmi:id="SysMLLibraries-UnitAndQuantityKind-Deprecated-Scale-mustHaveQuantityKind-specification" name="">
+              <language>OCL2.0</language>
+              <body>unit->isEmpty() or unit.quantityKind=self.quantityKind</body>
+            </specification>
+          </ownedRule>
+          <ownedAttribute xmi:id="SysMLLibraries-UnitAndQuantityKind-Deprecated-Scale-valueDefinition" name="valueDefinition" visibility="public" type="SysMLLibraries-UnitAndQuantityKind-Deprecated-ScaleValueDefinition" isOrdered="true" association="SysMLLibraries-UnitAndQuantityKind-Deprecated-A_scale_valueDefinition">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="SysMLLibraries-UnitAndQuantityKind-Deprecated-Scale-valueDefinition-lowerValue" name=""/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="SysMLLibraries-UnitAndQuantityKind-Deprecated-Scale-valueDefinition-upperValue" name="" value="*"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:id="SysMLLibraries-UnitAndQuantityKind-Deprecated-Scale-unit" name="unit" visibility="public" type="SysMLLibraries-UnitAndQuantityKind-Unit" association="SysMLLibraries-UnitAndQuantityKind-Deprecated-A_scale_unit">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="SysMLLibraries-UnitAndQuantityKind-Deprecated-Scale-unit-lowerValue" name=""/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="SysMLLibraries-UnitAndQuantityKind-Deprecated-Scale-unit-upperValue" name="" value="1"/>
+          </ownedAttribute>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="SysMLLibraries-UnitAndQuantityKind-Deprecated-A_scale_unit" name="A_scale_unit" memberEnd="SysMLLibraries-UnitAndQuantityKind-Deprecated-A_scale_unit-scale SysMLLibraries-UnitAndQuantityKind-Deprecated-Scale-unit">
+          <ownedEnd xmi:id="SysMLLibraries-UnitAndQuantityKind-Deprecated-A_scale_unit-scale" name="scale" visibility="public" type="SysMLLibraries-UnitAndQuantityKind-Deprecated-Scale" association="SysMLLibraries-UnitAndQuantityKind-Deprecated-A_scale_unit">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="SysMLLibraries-UnitAndQuantityKind-Deprecated-A_scale_unit-scale-lowerValue" name=""/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="SysMLLibraries-UnitAndQuantityKind-Deprecated-A_scale_unit-scale-upperValue" name="" value="*"/>
+          </ownedEnd>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="SysMLLibraries-UnitAndQuantityKind-Deprecated-A_scale_valueDefinition" name="A_scale_valueDefinition" memberEnd="SysMLLibraries-UnitAndQuantityKind-Deprecated-A_scale_valueDefinition-scale SysMLLibraries-UnitAndQuantityKind-Deprecated-Scale-valueDefinition">
+          <ownedEnd xmi:id="SysMLLibraries-UnitAndQuantityKind-Deprecated-A_scale_valueDefinition-scale" name="scale" visibility="public" type="SysMLLibraries-UnitAndQuantityKind-Deprecated-Scale" association="SysMLLibraries-UnitAndQuantityKind-Deprecated-A_scale_valueDefinition">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="SysMLLibraries-UnitAndQuantityKind-Deprecated-A_scale_valueDefinition-scale-lowerValue" name="" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="SysMLLibraries-UnitAndQuantityKind-Deprecated-A_scale_valueDefinition-scale-upperValue" name="" value="1"/>
+          </ownedEnd>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="SysMLLibraries-UnitAndQuantityKind-Deprecated-A_quantityKind_scale" name="A_quantityKind_scale" memberEnd="SysMLLibraries-UnitAndQuantityKind-QuantityKind-scale SysMLLibraries-UnitAndQuantityKind-Deprecated-A_quantityKind_scale-quantityKind">
+          <ownedEnd xmi:id="SysMLLibraries-UnitAndQuantityKind-Deprecated-A_quantityKind_scale-quantityKind" name="quantityKind" visibility="public" type="SysMLLibraries-UnitAndQuantityKind-QuantityKind" association="SysMLLibraries-UnitAndQuantityKind-Deprecated-A_quantityKind_scale">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="SysMLLibraries-UnitAndQuantityKind-Deprecated-A_quantityKind_scale-quantityKind-lowerValue" name="" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="SysMLLibraries-UnitAndQuantityKind-Deprecated-A_quantityKind_scale-quantityKind-upperValue" name="" value="1"/>
+          </ownedEnd>
+        </packagedElement>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="SysMLLibraries-UnitAndQuantityKind-Unit" name="Unit">
+        <ownedAttribute xmi:id="SysMLLibraries-UnitAndQuantityKind-Unit-name" name="name" visibility="public" aggregation="composite">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="SysMLLibraries-UnitAndQuantityKind-Unit-name-lowerValue" name=""/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="SysMLLibraries-UnitAndQuantityKind-Unit-name-upperValue" name="" value="1"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="SysMLLibraries-UnitAndQuantityKind-Unit-symbol" name="symbol" visibility="public" aggregation="composite">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="SysMLLibraries-UnitAndQuantityKind-Unit-symbol-lowerValue" name=""/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="SysMLLibraries-UnitAndQuantityKind-Unit-symbol-upperValue" name="" value="1"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="SysMLLibraries-UnitAndQuantityKind-Unit-description" name="description" visibility="public" aggregation="composite">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="SysMLLibraries-UnitAndQuantityKind-Unit-description-lowerValue" name=""/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="SysMLLibraries-UnitAndQuantityKind-Unit-description-upperValue" name="" value="1"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="SysMLLibraries-UnitAndQuantityKind-Unit-definitionURI" name="definitionURI" visibility="public" aggregation="composite">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="SysMLLibraries-UnitAndQuantityKind-Unit-definitionURI-lowerValue" name=""/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="SysMLLibraries-UnitAndQuantityKind-Unit-definitionURI-upperValue" name="" value="1"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="SysMLLibraries-UnitAndQuantityKind-Unit-quantityKind" name="quantityKind" visibility="public" type="SysMLLibraries-UnitAndQuantityKind-QuantityKind" association="SysMLLibraries-UnitAndQuantityKind-A_quantityKind_unit">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="SysMLLibraries-UnitAndQuantityKind-Unit-quantityKind-lowerValue" name=""/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="SysMLLibraries-UnitAndQuantityKind-Unit-quantityKind-upperValue" name="" value="*"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="SysMLLibraries-UnitAndQuantityKind-QuantityKind" name="QuantityKind">
+        <ownedAttribute xmi:id="SysMLLibraries-UnitAndQuantityKind-QuantityKind-scale" name="scale" visibility="public" type="SysMLLibraries-UnitAndQuantityKind-Deprecated-Scale" association="SysMLLibraries-UnitAndQuantityKind-Deprecated-A_quantityKind_scale">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="SysMLLibraries-UnitAndQuantityKind-QuantityKind-scale-lowerValue" name=""/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="SysMLLibraries-UnitAndQuantityKind-QuantityKind-scale-upperValue" name="" value="1"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="SysMLLibraries-UnitAndQuantityKind-QuantityKind-name" name="name" visibility="public" aggregation="composite">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="SysMLLibraries-UnitAndQuantityKind-QuantityKind-name-lowerValue" name=""/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="SysMLLibraries-UnitAndQuantityKind-QuantityKind-name-upperValue" name="" value="1"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="SysMLLibraries-UnitAndQuantityKind-QuantityKind-symbol" name="symbol" visibility="public" aggregation="composite">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="SysMLLibraries-UnitAndQuantityKind-QuantityKind-symbol-lowerValue" name=""/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="SysMLLibraries-UnitAndQuantityKind-QuantityKind-symbol-upperValue" name="" value="1"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="SysMLLibraries-UnitAndQuantityKind-QuantityKind-description" name="description" visibility="public" aggregation="composite">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="SysMLLibraries-UnitAndQuantityKind-QuantityKind-description-lowerValue" name=""/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="SysMLLibraries-UnitAndQuantityKind-QuantityKind-description-upperValue" name="" value="1"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="SysMLLibraries-UnitAndQuantityKind-QuantityKind-definitionURI" name="definitionURI" visibility="public" aggregation="composite">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="SysMLLibraries-UnitAndQuantityKind-QuantityKind-definitionURI-lowerValue" name=""/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="SysMLLibraries-UnitAndQuantityKind-QuantityKind-definitionURI-upperValue" name="" value="1"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="SysMLLibraries-UnitAndQuantityKind-A_quantityKind_unit" name="A_quantityKind_unit" memberEnd="SysMLLibraries-UnitAndQuantityKind-Unit-quantityKind SysMLLibraries-UnitAndQuantityKind-A_quantityKind_unit-unit">
+        <ownedEnd xmi:id="SysMLLibraries-UnitAndQuantityKind-A_quantityKind_unit-unit" name="unit" visibility="public" type="SysMLLibraries-UnitAndQuantityKind-Unit" association="SysMLLibraries-UnitAndQuantityKind-A_quantityKind_unit">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="SysMLLibraries-UnitAndQuantityKind-A_quantityKind_unit-unit-lowerValue" name=""/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="SysMLLibraries-UnitAndQuantityKind-A_quantityKind_unit-unit-upperValue" name="" value="*"/>
+        </ownedEnd>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="SysMLLibraries-Requirements" name="Requirements" URI="">
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="SysMLLibraries-Requirements-VerdictKind" name="VerdictKind">
+        <ownedComment xmi:id="SysMLLibraries-Requirements-VerdictKind-ownedComment" annotatedElement="SysMLLibraries-Requirements-VerdictKind">
+          <body>Type of a return parameter of a TestCase must be VerdictKind, consistent with the UML Testing Profile.</body>
+        </ownedComment>
+        <ownedLiteral xmi:id="SysMLLibraries-Requirements-VerdictKind-pass" name="pass"/>
+        <ownedLiteral xmi:id="SysMLLibraries-Requirements-VerdictKind-fail" name="fail"/>
+        <ownedLiteral xmi:id="SysMLLibraries-Requirements-VerdictKind-inconclusive" name="inconclusive"/>
+        <ownedLiteral xmi:id="SysMLLibraries-Requirements-VerdictKind-error" name="error"/>
+      </packagedElement>
+    </packagedElement>
+    <profileApplication xmi:id="SysMLLibraries-profileApplication">
+      <eAnnotations xmi:id="SysMLLibraries-profileApplication-eAnnotations" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="SysML.profile.uml#ProfileDefinition-SysML"/>
+      </eAnnotations>
+      <appliedProfile href="SysML.profile.uml#SysML"/>
+    </profileApplication>
+  </uml:Package>
+  <SysML.Blocks:ValueType xmi:id="SysMLLibraries-ControlValues-ControlValue-ValueTypeApplication" base_DataType="SysMLLibraries-ControlValues-ControlValue"/>
+  <SysML.Blocks:ValueType xmi:id="SysMLLibraries-PrimitiveValueTypes-Boolean-ValueTypeApplication" base_DataType="SysMLLibraries-PrimitiveValueTypes-Boolean"/>
+  <SysML.Blocks:ValueType xmi:id="SysMLLibraries-PrimitiveValueTypes-Complex-ValueTypeApplication" base_DataType="SysMLLibraries-PrimitiveValueTypes-Complex"/>
+  <SysML.Blocks:ValueType xmi:id="SysMLLibraries-PrimitiveValueTypes-Integer-ValueTypeApplication" base_DataType="SysMLLibraries-PrimitiveValueTypes-Integer"/>
+  <SysML.Blocks:ValueType xmi:id="SysMLLibraries-PrimitiveValueTypes-Number-ValueTypeApplication" base_DataType="SysMLLibraries-PrimitiveValueTypes-Number"/>
+  <SysML.Blocks:ValueType xmi:id="SysMLLibraries-PrimitiveValueTypes-Real-ValueTypeApplication" base_DataType="SysMLLibraries-PrimitiveValueTypes-Real"/>
+  <SysML.Blocks:ValueType xmi:id="SysMLLibraries-PrimitiveValueTypes-String-ValueTypeApplication" base_DataType="SysMLLibraries-PrimitiveValueTypes-String"/>
+  <SysML.Blocks:ValueType xmi:id="SysMLLibraries-Requirements-VerdictKind-ValueTypeApplication" base_DataType="SysMLLibraries-Requirements-VerdictKind"/>
+  <SysML.Blocks:Block xmi:id="SysMLLibraries-UnitAndQuantityKind-Deprecated-ScaleValueDefinition-BlockApplication" base_Class="SysMLLibraries-UnitAndQuantityKind-Deprecated-ScaleValueDefinition"/>
+  <SysML.Blocks:Block xmi:id="SysMLLibraries-UnitAndQuantityKind-Deprecated-Scale-BlockApplication" base_Class="SysMLLibraries-UnitAndQuantityKind-Deprecated-Scale"/>
+  <SysML.Blocks:Block xmi:id="SysMLLibraries-UnitAndQuantityKind-Unit-BlockApplication" base_Class="SysMLLibraries-UnitAndQuantityKind-Unit"/>
+  <SysML.Blocks:Block xmi:id="SysMLLibraries-UnitAndQuantityKind-QuantityKind-BlockApplication" base_Class="SysMLLibraries-UnitAndQuantityKind-QuantityKind"/>
+  
+</xmi:XMI>
