@@ -30,10 +30,12 @@ public class UMLDomainNavigatorItem extends PlatformObject {
 	 * @generated
 	 */
 	static {
+		@SuppressWarnings("rawtypes")
 		final Class[] supportedTypes = new Class[] { EObject.class, IPropertySource.class };
 		Platform.getAdapterManager().registerAdapters(new IAdapterFactory() {
 
 			@Override
+			@SuppressWarnings("rawtypes")
 			public Object getAdapter(Object adaptableObject, Class adapterType) {
 				if (adaptableObject instanceof org.eclipse.papyrus.uml.diagram.activity.navigator.UMLDomainNavigatorItem) {
 					org.eclipse.papyrus.uml.diagram.activity.navigator.UMLDomainNavigatorItem domainNavigatorItem = (org.eclipse.papyrus.uml.diagram.activity.navigator.UMLDomainNavigatorItem) adaptableObject;
@@ -49,6 +51,7 @@ public class UMLDomainNavigatorItem extends PlatformObject {
 			}
 
 			@Override
+			@SuppressWarnings("rawtypes")
 			public Class[] getAdapterList() {
 				return supportedTypes;
 			}

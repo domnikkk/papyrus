@@ -47,27 +47,6 @@ public class InputPinInAddStructuralFeatureValueActionAsValueCreateCommand exten
 	/**
 	 * @generated
 	 */
-	private EObject eObject = null;
-
-	/**
-	 * @generated
-	 */
-	public InputPinInAddStructuralFeatureValueActionAsValueCreateCommand(CreateElementRequest req, EObject eObject, Diagram diagram) {
-		super(req.getLabel(), null, req);
-		this.eObject = eObject;
-		this.diagram = diagram;
-	}
-
-	/**
-	 * @generated
-	 */
-	public static InputPinInAddStructuralFeatureValueActionAsValueCreateCommand create(CreateElementRequest req, EObject eObject, Diagram diagram) {
-		return new InputPinInAddStructuralFeatureValueActionAsValueCreateCommand(req, eObject, diagram);
-	}
-
-	/**
-	 * @generated
-	 */
 	public InputPinInAddStructuralFeatureValueActionAsValueCreateCommand(CreateElementRequest req, Diagram diagram) {
 		super(req.getLabel(), null, req);
 		this.diagram = diagram;
@@ -84,10 +63,7 @@ public class InputPinInAddStructuralFeatureValueActionAsValueCreateCommand exten
 		if (container instanceof View) {
 			container = ((View) container).getElement();
 		}
-		if (container != null) {
-			return container;
-		}
-		return eObject;
+		return container;
 	}
 
 	/**

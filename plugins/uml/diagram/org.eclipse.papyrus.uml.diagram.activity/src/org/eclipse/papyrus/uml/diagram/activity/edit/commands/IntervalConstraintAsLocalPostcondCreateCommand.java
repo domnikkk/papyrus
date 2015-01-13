@@ -47,27 +47,6 @@ public class IntervalConstraintAsLocalPostcondCreateCommand extends EditElementC
 	/**
 	 * @generated
 	 */
-	private EObject eObject = null;
-
-	/**
-	 * @generated
-	 */
-	public IntervalConstraintAsLocalPostcondCreateCommand(CreateElementRequest req, EObject eObject, Diagram diagram) {
-		super(req.getLabel(), null, req);
-		this.eObject = eObject;
-		this.diagram = diagram;
-	}
-
-	/**
-	 * @generated
-	 */
-	public static IntervalConstraintAsLocalPostcondCreateCommand create(CreateElementRequest req, EObject eObject, Diagram diagram) {
-		return new IntervalConstraintAsLocalPostcondCreateCommand(req, eObject, diagram);
-	}
-
-	/**
-	 * @generated
-	 */
 	public IntervalConstraintAsLocalPostcondCreateCommand(CreateElementRequest req, Diagram diagram) {
 		super(req.getLabel(), null, req);
 		this.diagram = diagram;
@@ -84,10 +63,7 @@ public class IntervalConstraintAsLocalPostcondCreateCommand extends EditElementC
 		if (container instanceof View) {
 			container = ((View) container).getElement();
 		}
-		if (container != null) {
-			return container;
-		}
-		return eObject;
+		return container;
 	}
 
 	/**

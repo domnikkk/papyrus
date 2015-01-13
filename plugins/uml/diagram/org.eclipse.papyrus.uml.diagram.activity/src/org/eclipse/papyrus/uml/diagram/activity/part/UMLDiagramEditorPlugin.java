@@ -15,16 +15,15 @@
 package org.eclipse.papyrus.uml.diagram.activity.part;
 
 import org.eclipse.core.runtime.IPath;
-import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Platform;
-import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.ui.provider.ExtendedImageRegistry;
 import org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint;
 import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.resource.ImageDescriptor;
+import org.eclipse.papyrus.infra.core.log.LogHelper;
 import org.eclipse.papyrus.infra.gmfdiag.preferences.Activator;
 import org.eclipse.papyrus.uml.diagram.activity.edit.policies.UMLBaseItemSemanticEditPolicy;
 import org.eclipse.papyrus.uml.diagram.activity.expressions.UMLOCLFactory;
@@ -44,6 +43,11 @@ public class UMLDiagramEditorPlugin extends AbstractUIPlugin {
 	 * @generated
 	 */
 	public static final String ID = "org.eclipse.papyrus.uml.diagram.activity"; //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	private LogHelper myLogHelper;
 
 	/**
 	 * @generated
@@ -264,50 +268,34 @@ public class UMLDiagramEditorPlugin extends AbstractUIPlugin {
 	 * @generated
 	 */
 	public void logError(String error) {
-		logError(error, null);
+		getLogHelper().warn(error);
 	}
 
 	/**
 	 * @generated
 	 */
 	public void logError(String error, Throwable throwable) {
-		if (error == null && throwable != null) {
-			error = throwable.getMessage();
-		}
-		getLog().log(new Status(IStatus.ERROR, UMLDiagramEditorPlugin.ID, IStatus.OK, error, throwable));
-		debug(error, throwable);
+		getLogHelper().error(error, throwable);
 	}
 
 	/**
 	 * @generated
 	 */
 	public void logInfo(String message) {
-		logInfo(message, null);
+		getLogHelper().info(message);
 	}
 
 	/**
 	 * @generated
 	 */
 	public void logInfo(String message, Throwable throwable) {
-		if (message == null && throwable != null) {
-			message = throwable.getMessage();
-		}
-		getLog().log(new Status(IStatus.INFO, UMLDiagramEditorPlugin.ID, IStatus.OK, message, throwable));
-		debug(message, throwable);
+		getLogHelper().error(message, throwable);
 	}
 
 	/**
 	 * @generated
 	 */
-	private void debug(String message, Throwable throwable) {
-		if (!isDebugging()) {
-			return;
-		}
-		if (message != null) {
-			System.err.println(message);
-		}
-		if (throwable != null) {
-			throwable.printStackTrace();
-		}
+	public LogHelper getLogHelper() {
+		return myLogHelper;
 	}
 }

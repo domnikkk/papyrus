@@ -60,8 +60,11 @@ import org.eclipse.papyrus.extensionpoints.editors.ui.ExtendedDirectEditionDialo
 import org.eclipse.papyrus.extensionpoints.editors.ui.ILabelEditorDialog;
 import org.eclipse.papyrus.extensionpoints.editors.utils.DirectEditorsUtil;
 import org.eclipse.papyrus.extensionpoints.editors.utils.IDirectEditorsIds;
+import org.eclipse.papyrus.infra.gmfdiag.common.editpart.IControlParserForDirectEdit;
 import org.eclipse.papyrus.infra.gmfdiag.common.editpart.PapyrusLabelEditPart;
 import org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.IMaskManagedLabelEditPolicy;
+import org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.IndirectMaskLabelEditPolicy;
+import org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.PapyrusLinkLabelDragPolicy;
 import org.eclipse.papyrus.uml.diagram.activity.edit.policies.UMLTextSelectionEditPolicy;
 import org.eclipse.papyrus.uml.diagram.activity.figures.SimpleLabel;
 import org.eclipse.papyrus.uml.diagram.activity.part.UMLDiagramEditorPlugin;
@@ -70,7 +73,6 @@ import org.eclipse.papyrus.uml.diagram.activity.preferences.IActivityPreferenceC
 import org.eclipse.papyrus.uml.diagram.activity.providers.UMLElementTypes;
 import org.eclipse.papyrus.uml.diagram.activity.providers.UMLParserProvider;
 import org.eclipse.papyrus.uml.diagram.common.directedit.MultilineLabelDirectEditManager;
-import org.eclipse.papyrus.uml.diagram.common.editparts.ILabelRoleProvider;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.IDirectEdition;
 import org.eclipse.papyrus.uml.diagram.common.figure.node.ILabelFigure;
 import org.eclipse.swt.SWT;
@@ -84,7 +86,7 @@ import org.eclipse.uml2.uml.Feature;
 /**
  * @generated
  */
-public class ControlFlowNameEditPart extends PapyrusLabelEditPart implements ITextAwareEditPart, ILabelRoleProvider {
+public class ControlFlowNameEditPart extends PapyrusLabelEditPart implements ITextAwareEditPart, IControlParserForDirectEdit {
 
 	/**
 	 * @generated
@@ -125,7 +127,6 @@ public class ControlFlowNameEditPart extends PapyrusLabelEditPart implements ITe
 	private final IPreferenceStore preferenceStore = UMLDiagramEditorPlugin.getInstance().getPreferenceStore();
 
 	private IPropertyChangeListener preferenceListener;
-
 	/**
 	 * @generated
 	 */
@@ -138,7 +139,6 @@ public class ControlFlowNameEditPart extends PapyrusLabelEditPart implements ITe
 	 */
 	public ControlFlowNameEditPart(View view) {
 		super(view);
-
 		// a preference listener to enable/disable the label
 		preferenceListener = new IPropertyChangeListener() {
 
@@ -154,14 +154,12 @@ public class ControlFlowNameEditPart extends PapyrusLabelEditPart implements ITe
 	@Override
 	public void activate() {
 		super.activate();
-
 		preferenceStore.addPropertyChangeListener(preferenceListener);
 	}
 
 	@Override
 	public void deactivate() {
 		preferenceStore.removePropertyChangeListener(preferenceListener);
-
 		super.deactivate();
 	}
 
@@ -173,7 +171,7 @@ public class ControlFlowNameEditPart extends PapyrusLabelEditPart implements ITe
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicy.DIRECT_EDIT_ROLE, new LabelDirectEditPolicy());
 		installEditPolicy(EditPolicy.SELECTION_FEEDBACK_ROLE, new UMLTextSelectionEditPolicy());
-		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, new ActivityDiagramEditPart.LinkLabelDragPolicy());
+		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, new PapyrusLinkLabelDragPolicy());
 	}
 
 	/**
@@ -252,7 +250,7 @@ public class ControlFlowNameEditPart extends PapyrusLabelEditPart implements ITe
 	 */
 	@Override
 	@SuppressWarnings("rawtypes")
-	protected List getModelChildren() {
+	protected List<?> getModelChildren() {
 		return Collections.EMPTY_LIST;
 	}
 
@@ -262,6 +260,13 @@ public class ControlFlowNameEditPart extends PapyrusLabelEditPart implements ITe
 	@Override
 	public IGraphicalEditPart getChildBySemanticHint(String semanticHint) {
 		return null;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void setParser(IParser parser) {
+		this.parser = parser;
 	}
 
 	/**
@@ -348,7 +353,7 @@ public class ControlFlowNameEditPart extends PapyrusLabelEditPart implements ITe
 					final EObject element = getParserElement();
 					final IParser parser = getParser();
 					try {
-						IParserEditStatus valid = (IParserEditStatus) getEditingDomain().runExclusive(new RunnableWithResult.Impl() {
+						IParserEditStatus valid = (IParserEditStatus) getEditingDomain().runExclusive(new RunnableWithResult.Impl<java.lang.Object>() {
 
 							@Override
 							public void run() {
@@ -526,6 +531,31 @@ public class ControlFlowNameEditPart extends PapyrusLabelEditPart implements ITe
 	/**
 	 * @generated
 	 */
+	protected void initializeDirectEditManager(final Request request) {
+		// initialize the direct edit manager
+		try {
+			getEditingDomain().runExclusive(new Runnable() {
+
+				@Override
+				public void run() {
+					if (isActive() && isEditable()) {
+						if (request.getExtendedData().get(RequestConstants.REQ_DIRECTEDIT_EXTENDEDDATA_INITIAL_CHAR) instanceof Character) {
+							Character initialChar = (Character) request.getExtendedData().get(RequestConstants.REQ_DIRECTEDIT_EXTENDEDDATA_INITIAL_CHAR);
+							performDirectEdit(initialChar.charValue());
+						} else {
+							performDirectEdit();
+						}
+					}
+				}
+			});
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
+
+	/**
+	 * @generated
+	 */
 	@Override
 	protected void refreshVisuals() {
 		super.refreshVisuals();
@@ -541,6 +571,9 @@ public class ControlFlowNameEditPart extends PapyrusLabelEditPart implements ITe
 	 */
 	protected void refreshLabel() {
 		EditPolicy maskLabelPolicy = getEditPolicy(IMaskManagedLabelEditPolicy.MASK_MANAGED_LABEL_EDIT_POLICY);
+		if (maskLabelPolicy == null) {
+			maskLabelPolicy = getEditPolicy(IndirectMaskLabelEditPolicy.INDRIRECT_MASK_MANAGED_LABEL);
+		}
 		if (maskLabelPolicy == null) {
 			setLabelTextHelper(getFigure(), getLabelText());
 			setLabelIconHelper(getFigure(), getLabelIcon());
@@ -805,21 +838,5 @@ public class ControlFlowNameEditPart extends PapyrusLabelEditPart implements ITe
 	 */
 	protected IFigure createFigurePrim() {
 		return new SimpleLabel();
-	}
-
-	/**
-	 * @generated
-	 */
-	@Override
-	public String getLabelRole() {
-		return "Name";//$NON-NLS-1$
-	}
-
-	/**
-	 * @generated
-	 */
-	@Override
-	public String getIconPathRole() {
-		return "platform:/plugin/org.eclipse.papyrus.uml.diagram.common/icons/label_role/name.png";//$NON-NLS-1$
 	}
 }

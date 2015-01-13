@@ -16,14 +16,14 @@
 <plugin>
 
    <extension point="org.eclipse.ui.contexts" id="ui-context">
-      <?gmfgen generated="true"?>
-      <context
-         description="%context.description"
-         id="org.eclipse.papyrus.uml.diagram.activity.ui.diagramContext"
-         name="%context.name"
-         parentId="org.eclipse.gmf.runtime.diagram.ui.diagramContext">
-      </context>
-   </extension>
+				      <?gmfgen generated="true"?>
+				      <context
+				         description="%context.description"
+				         id="org.eclipse.papyrus.uml.diagram.activity.ui.diagramContext"
+				         name="%context.name"
+				         parentId="org.eclipse.gmf.runtime.diagram.ui.diagramContext">
+				      </context>
+				   </extension>
    
    <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
       <contributionItemProvider checkPluginLoaded="false" class="org.eclipse.papyrus.uml.diagram.activity.providers.ActivityDiagramContributionItemProvider">
@@ -81,29 +81,24 @@
 
    <extension point="org.eclipse.ui.preferencePages" id="prefpages">
       <?gmfgen generated="true"?>
-      <page
-            id="org.eclipse.papyrus.infra.gmfdiag.preferences.diagrams.PapyrusUMLActivityDiagram"
-            name="PapyrusUMLActivityDiagram Diagram"
-            category="org.eclipse.papyrus.infra.gmfdiag.preferences.diagrams"
-            class="org.eclipse.papyrus.uml.diagram.activity.preferences.DiagramGeneralPreferencePage">
-      </page>
-      
-
-
-      <page
-            id="org.eclipse.papyrus.uml.diagram.activity.preferences.DiagramPrintingPreferencePage"
-            name="%prefpage.org.eclipse.uml2.uml.diagram.printing"
-            category="org.eclipse.papyrus.infra.gmfdiag.preferences.diagrams.PapyrusUMLActivityDiagram"
-            class="org.eclipse.papyrus.uml.diagram.activity.preferences.DiagramPrintingPreferencePage">
-      </page>
-
-      <page
-            id="org.eclipse.papyrus.uml.diagram.activity.preferences.DiagramRulersAndGridPreferencePage"
-            name="%prefpage.org.eclipse.uml2.uml.diagram.rulersAndGrid"
-            category="org.eclipse.papyrus.infra.gmfdiag.preferences.diagrams.PapyrusUMLActivityDiagram"
-            class="org.eclipse.papyrus.uml.diagram.activity.preferences.DiagramRulersAndGridPreferencePage">
-      </page>
-
+<page
+      id="org.eclipse.papyrus.infra.gmfdiag.preferences.diagrams.PapyrusUMLActivityDiagram"
+      name="PapyrusUMLActivityDiagram Diagram"
+      category="org.eclipse.papyrus.infra.gmfdiag.preferences.diagrams"
+      class="org.eclipse.papyrus.uml.diagram.activity.preferences.DiagramGeneralPreferencePage">
+</page>
+<page
+      id="org.eclipse.papyrus.uml.diagram.activity.preferences.DiagramPrintingPreferencePage"
+      name="%prefpage.org.eclipse.uml2.uml.diagram.printing"
+      category="org.eclipse.papyrus.infra.gmfdiag.preferences.diagrams.PapyrusUMLActivityDiagram"
+      class="org.eclipse.papyrus.uml.diagram.activity.preferences.DiagramPrintingPreferencePage">
+</page>
+<page
+      id="org.eclipse.papyrus.uml.diagram.activity.preferences.DiagramRulersAndGridPreferencePage"
+      name="%prefpage.org.eclipse.uml2.uml.diagram.rulersAndGrid"
+      category="org.eclipse.papyrus.infra.gmfdiag.preferences.diagrams.PapyrusUMLActivityDiagram"
+      class="org.eclipse.papyrus.uml.diagram.activity.preferences.DiagramRulersAndGridPreferencePage">
+</page>
    </extension>
 
    <extension point="org.eclipse.ui.views.properties.tabbed.propertyContributor" id="prop-contrib">
@@ -172,10 +167,10 @@
 
 <?gmfgen generated="true"?>
 
-	<extension point="org.eclipse.core.runtime.preferences">
-		<?gmfgen generated="true"?>
-		<initializer class="org.eclipse.papyrus.uml.diagram.activity.preferences.DiagramPreferenceInitializer"/>
-	</extension>
+	<extension point="org.eclipse.core.runtime.preferences" id="prefs">
+      <?gmfgen generated="true"?>
+      <initializer class="org.eclipse.papyrus.uml.diagram.activity.preferences.DiagramPreferenceInitializer"/>
+   </extension>
 	<extension point="org.eclipse.core.runtime.preferences">
 		<?gmfgen generated="false"?>
 		<initializer class="org.eclipse.papyrus.uml.diagram.activity.preferences.DiagramSpecificPreferenceInitializer"/>
@@ -204,7 +199,7 @@
             <method name="getType()" value="4001,4002,4003,4004,4005,4006,4007"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
-            <method name="getType()" value="5001,5002,6031,6032,6033,6034,6035,6036,6037,6038,6039,6016,6017,6018,6019,6020,6021,6022,6023,6024,6025,6026,6027,6028,6029,5080,5081,5082,5003,5011,5024,5083,5012,5025,5084,5009,5085,5010,5086,5004,5013,5026,5087,5014,5027,5088,5015,5089,5016,5090,5006,5017,5028,5091,5018,5029,5092,5019,5093,5020,5094,5021,5030,5095,5022,5031,5096,5023,5097,5038,5130,5039,5131,5040,5132,5041,5133,5036,5134,5037,5135,5007,5136,5008,5137,5043,5098,5099,5100,5042,5101,5127,5128,5059,5049,5050,5102,5051,5052,5103,5053,5104,5054,5055,5105,5056,5057,5106,5058,5107,5060,5061,5062,5108,5063,5064,5109,5065,5110,5072,5073,5111,5074,5075,5112,5076,5113,5071,5078,5079,5115,5077,5114,5126,5124,5125,5119,5120,5121,5184,5185,5186,5183,5187,5188,5123,5117,5178,5179,5118,5138,5139,5144,5145,5142,5143,5148,5146,5147,5129,5153,5149,5150,5151,5152,5160,5154,5155,5156,5157,5158,5159,5163,5161,5162,5166,5164,5165,5171,6030,5167,5168,5169,5170,5175,5172,5173,5174,5176,5177,5189,5190"/>
+            <method name="getType()" value="5001,5002,6034,5080,6033,5081,6035,5082,5003,6028,5011,5024,5083,5012,5025,5084,5009,5085,5010,5086,5004,6029,5013,5026,5087,5014,5027,5088,5015,5089,5016,5090,5006,6020,5017,5028,5091,5018,5029,5092,5019,5093,5020,5094,5021,5030,5095,5022,5031,5096,5023,5097,5038,5130,5039,5131,5040,5132,5041,5133,5036,5134,5037,5135,5007,5136,5008,5137,6036,5043,5098,6037,5099,6038,5100,5042,6039,5101,5127,5128,6031,5059,6027,5049,5050,5102,5051,5052,5103,5053,5104,5054,5055,5105,5056,5057,5106,5058,5107,5060,6032,5061,5062,5108,5063,5064,5109,5065,5110,5072,5073,5111,5074,5075,5112,5076,5113,5071,5078,5079,5115,6040,5077,5114,5126,6026,5124,5125,5119,5120,5121,5184,5185,5186,5183,5187,5188,5123,5117,5178,5179,5118,6016,5138,5139,6025,5144,5145,5142,5143,5148,6024,5146,5147,5129,5153,6023,5149,5150,5151,5152,5160,6019,5154,5155,5156,5157,5158,5159,5163,6022,5161,5162,5166,6021,5164,5165,5171,6018,5167,5168,5169,5170,5175,6017,5172,5173,5174,5176,5177,6030,5189,5190"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-compartments">
             <method name="getType()" value="7001,7002,7003,7004,7008,7009,7010,7012,7005,7006,7007,7014,7015,7016,7013"/>
@@ -213,110 +208,7 @@
       </editpartProvider>
    </extension>
 
-   <extension point="org.eclipse.gmf.runtime.emf.ui.modelingAssistantProviders" id="modelassist-provider">
-      <?gmfgen generated="true"?>
-      <modelingAssistantProvider class="org.eclipse.papyrus.uml.diagram.activity.providers.UMLModelingAssistantProvider">
-         <Priority name="Lowest"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.ActivityDiagramEditPart" id="Package_1000"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.ActivityEditPart" id="Activity_2001"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.ParameterEditPart" id="Parameter_3001"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.ConstraintInActivityAsPrecondEditPart" id="Constraint_3002"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.ConstraintInActivityAsPostcondEditPart" id="Constraint_3003"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.InitialNodeEditPart" id="InitialNode_3004"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.ActivityFinalNodeEditPart" id="ActivityFinalNode_3005"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.FlowFinalNodeEditPart" id="FlowFinalNode_3006"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.OpaqueActionEditPart" id="OpaqueAction_3007"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.ValuePinInOpaqueActEditPart" id="ValuePin_3015"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.ActionInputPinInOpaqueActEditPart" id="ActionInputPin_3016"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.InputPinInOpaqueActEditPart" id="InputPin_3013"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.OutputPinInOpaqueActEditPart" id="OutputPin_3014"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.CallBehaviorActionEditPart" id="CallBehaviorAction_3008"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.ValuePinInCallBeActEditPart" id="ValuePin_3017"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.ActionInputPinInCallBeActEditPart" id="ActionInputPin_3018"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.InputPinInCallBeActEditPart" id="InputPin_3019"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.OutputPinInCallBeActEditPart" id="OutputPin_3020"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.CallOperationActionEditPart" id="CallOperationAction_3010"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.ActionInputPinInCallOpActEditPart" id="ActionInputPin_3021"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.ValuePinInCallOpActEditPart" id="ValuePin_3022"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.InputPinInCallOpActEditPart" id="InputPin_3023"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.OutputPinInCallOpActEditPart" id="OutputPin_3024"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.ValuePinInCallOpActAsTargetEditPart" id="ValuePin_3025"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.ActionInputPinInCallOpActAsTargetEditPart" id="ActionInputPin_3026"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.InputPinInCallOpActAsTargetEditPart" id="InputPin_3027"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.DurationConstraintAsLocalPrecondEditPart" id="DurationConstraint_3034"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.DurationConstraintAsLocalPostcondEditPart" id="DurationConstraint_3035"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.TimeConstraintAsLocalPrecondEditPart" id="TimeConstraint_3036"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.TimeConstraintAsLocalPostcondEditPart" id="TimeConstraint_3037"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.IntervalConstraintAsLocalPrecondEditPart" id="IntervalConstraint_3032"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.IntervalConstraintAsLocalPostcondEditPart" id="IntervalConstraint_3033"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.ConstraintAsLocalPrecondEditPart" id="Constraint_3011"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.ConstraintAsLocalPostcondEditPart" id="Constraint_3012"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.DecisionNodeEditPart" id="DecisionNode_3038"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.MergeNodeEditPart" id="MergeNode_3039"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.ForkNodeEditPart" id="ForkNode_3040"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.JoinNodeEditPart" id="JoinNode_3041"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.DataStoreNodeEditPart" id="DataStoreNode_3078"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.SendObjectActionEditPart" id="SendObjectAction_3042"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.ValuePinInSendObjActAsReqEditPart" id="ValuePin_3046"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.ActionInputPinInSendObjActAsReqEditPart" id="ActionInputPin_3047"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.InputPinInSendObjActAsReqEditPart" id="InputPin_3048"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.ValuePinInSendObjActAsTargetEditPart" id="ValuePin_3049"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.ActionInputPinInSendObjActAsTargetEditPart" id="ActionInputPin_3050"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.InputPinInSendObjActAsTargetEditPart" id="InputPin_3051"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.SendSignalActionEditPart" id="SendSignalAction_3052"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.ActionInputPinInSendSigActEditPart" id="ActionInputPin_3053"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.ValuePinInSendSigActEditPart" id="ValuePin_3054"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.InputPinInSendSigActEditPart" id="InputPin_3055"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.ValuePinInSendSigActAsTargetEditPart" id="ValuePin_3060"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.ActionInputPinInSendSigActAsTargetEditPart" id="ActionInputPin_3061"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.InputPinInSendSigActAsTargetEditPart" id="InputPin_3062"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.ActivityParameterNodeEditPart" id="ActivityParameterNode_3059"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.AcceptEventActionEditPart" id="AcceptEventAction_3063"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.OutputPinInAcceptEventActionEditPart" id="OutputPin_3064"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.ValueSpecificationActionEditPart" id="ValueSpecificationAction_3076"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.OutputPinInValSpecActEditPart" id="OutputPin_3077"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.ConditionalNodeEditPart" id="ConditionalNode_3069"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.ExpansionRegionEditPart" id="ExpansionRegion_3070"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.ExpansionNodeAsInEditPart" id="ExpansionNode_3074"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.ExpansionNodeAsOutEditPart" id="ExpansionNode_3075"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.LoopNodeEditPart" id="LoopNode_3071"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.OutputPinInLoopNodeAsBodyOutputEditPart" id="OutputPin_3109"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.OutputPinInLoopNodeAsLoopVariableEditPart" id="OutputPin_3110"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.OutputPinInLoopNodeAsResultEditPart" id="OutputPin_3111"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.SequenceNodeEditPart" id="SequenceNode_3073"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.StructuredActivityNodeEditPart" id="StructuredActivityNode_3065"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.InputPinInLoopNodeAsVariableEditPart" id="InputPin_3105"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.ActivityPartitionEditPart" id="ActivityPartition_3067"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.InterruptibleActivityRegionEditPart" id="InterruptibleActivityRegion_3068"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.CommentEditPartCN" id="Comment_3080"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.ReadSelfActionEditPart" id="ReadSelfAction_3081"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.ReadSelfActionOutputPinEditPart" id="OutputPin_3084"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.ActivityEditPartCN" id="Activity_3083"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.CreateObjectActionEditPart" id="CreateObjectAction_3086"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.OutputPinInCreateObjectActionAsResultEditPart" id="OutputPin_3087"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.ShapeNamedElementEditPart" id="NamedElement_3085"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.ReadStructuralFeatureActionEditPart" id="ReadStructuralFeatureAction_3088"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.InputPinInReadStructuralFeatureAsObjectEditPart" id="InputPin_3089"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.OutputPinInReadStructuralFeatureAsResultEditPart" id="OutputPin_3090"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.AddStructuralFeatureValueActionEditPart" id="AddStructuralFeatureValueAction_3091"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.InputPinInAddStructuralFeatureValueActionAsObjectEditPart" id="InputPin_3092"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.InputPinInAddStructuralFeatureValueActionAsValueEditPart" id="InputPin_3093"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.OutputPinInAddStructuralFeatureValueActionAsResultEditPart" id="OutputPin_3094"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.DestroyObjectActionEditPart" id="DestroyObjectAction_3095"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.InputPinInDestroyObjectActionEditPart" id="InputPin_3096"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.ReadVariableActionEditPart" id="ReadVariableAction_3097"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.OutputPinInReadVariableActionAsResultEditPart" id="OutputPin_3098"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.AddVariableValueActionEditPart" id="AddVariableValueAction_3099"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.InputPinInAddVariableValueActionAsInsertAtEditPart" id="InputPin_3100"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.InputPinInAddVariableValueActionAsValueEditPart" id="InputPin_3101"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.BroadcastSignalActionEditPart" id="BroadcastSignalAction_3102"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.InputPinInBroadcastSignalActionEditPart" id="InputPin_3103"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.CentralBufferNodeEditPart" id="CentralBufferNode_3104"/>
-         <object class="org.eclipse.papyrus.uml.diagram.activity.edit.parts.ConstraintEditPartCN" id="Constraint_3112"/>
-         <context elements="Package_1000,Activity_2001,Parameter_3001,Constraint_3002,Constraint_3003,InitialNode_3004,ActivityFinalNode_3005,FlowFinalNode_3006,OpaqueAction_3007,ValuePin_3015,ActionInputPin_3016,InputPin_3013,OutputPin_3014,CallBehaviorAction_3008,ValuePin_3017,ActionInputPin_3018,InputPin_3019,OutputPin_3020,CallOperationAction_3010,ActionInputPin_3021,ValuePin_3022,InputPin_3023,OutputPin_3024,ValuePin_3025,ActionInputPin_3026,InputPin_3027,DurationConstraint_3034,DurationConstraint_3035,TimeConstraint_3036,TimeConstraint_3037,IntervalConstraint_3032,IntervalConstraint_3033,Constraint_3011,Constraint_3012,DecisionNode_3038,MergeNode_3039,ForkNode_3040,JoinNode_3041,DataStoreNode_3078,SendObjectAction_3042,ValuePin_3046,ActionInputPin_3047,InputPin_3048,ValuePin_3049,ActionInputPin_3050,InputPin_3051,SendSignalAction_3052,ActionInputPin_3053,ValuePin_3054,InputPin_3055,ValuePin_3060,ActionInputPin_3061,InputPin_3062,ActivityParameterNode_3059,AcceptEventAction_3063,OutputPin_3064,ValueSpecificationAction_3076,OutputPin_3077,ConditionalNode_3069,ExpansionRegion_3070,ExpansionNode_3074,ExpansionNode_3075,LoopNode_3071,OutputPin_3109,OutputPin_3110,OutputPin_3111,SequenceNode_3073,StructuredActivityNode_3065,InputPin_3105,ActivityPartition_3067,InterruptibleActivityRegion_3068,Comment_3080,ReadSelfAction_3081,OutputPin_3084,Activity_3083,CreateObjectAction_3086,OutputPin_3087,NamedElement_3085,ReadStructuralFeatureAction_3088,InputPin_3089,OutputPin_3090,AddStructuralFeatureValueAction_3091,InputPin_3092,InputPin_3093,OutputPin_3094,DestroyObjectAction_3095,InputPin_3096,ReadVariableAction_3097,OutputPin_3098,AddVariableValueAction_3099,InputPin_3100,InputPin_3101,BroadcastSignalAction_3102,InputPin_3103,CentralBufferNode_3104,Constraint_3112"/>
-      </modelingAssistantProvider>
-   </extension>
-
+   
    <extension point="org.eclipse.gmf.runtime.common.ui.services.iconProviders" id="icon-provider">
       <?gmfgen generated="true"?>
       <IconProvider class="org.eclipse.papyrus.uml.diagram.activity.providers.UMLIconProvider">
@@ -1253,10 +1145,8 @@
 
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
       <?gmfgen generated="true"?>
-      
-      
-       <binding context="org.eclipse.papyrus.infra.services.edit.TypeContext">
-      
+
+<binding context="org.eclipse.papyrus.infra.services.edit.TypeContext">
          <elementType ref="org.eclipse.papyrus.uml.diagram.activity.Package_1000"/>
          <elementType ref="org.eclipse.papyrus.uml.diagram.activity.Activity_2001"/>
          <elementType ref="org.eclipse.papyrus.uml.diagram.activity.Parameter_3001"/>
@@ -1361,18 +1251,17 @@
          <elementType ref="org.eclipse.papyrus.uml.diagram.activity.CommentAnnotatedElement_4006"/>
          <elementType ref="org.eclipse.papyrus.uml.diagram.activity.ConstraintConstrainedElement_4007"/>
          <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
-         <advice ref="org.eclipse.papyrus.infra.emf.readOnlyAdvice"/>
       </binding>
    </extension>
 	   <extension point="org.eclipse.core.expressions.propertyTesters" id="navigator-proptest.isURIEditorInput">
       <?gmfgen generated="true"?>
-       <propertyTester
-           id="org.eclipse.papyrus.uml.diagram.activity.URIEditorInputPropertyTester"
-           type="org.eclipse.emf.common.ui.URIEditorInput"
-           namespace="org.eclipse.papyrus.uml.diagram.activity"
-           properties="isURIEditorInput"
-           class="org.eclipse.papyrus.uml.diagram.activity.part.UMLUriEditorInputTester">
-       </propertyTester>
+      <propertyTester
+            id="org.eclipse.papyrus.uml.diagram.activity.URIEditorInputPropertyTester"
+            type="org.eclipse.emf.common.ui.URIEditorInput"
+            namespace="org.eclipse.papyrus.uml.diagram.activity"
+            properties="isURIEditorInput"
+            class="org.eclipse.papyrus.uml.diagram.activity.part.UMLUriEditorInputTester">
+      </propertyTester>
    </extension>
 
 	   <extension point="org.eclipse.ui.navigator.viewer" id="navigator-viewbinding">
@@ -1380,7 +1269,7 @@
       <viewerContentBinding viewerId="org.eclipse.ui.navigator.ProjectExplorer">
          <includes>
             <contentExtension pattern="org.eclipse.papyrus.uml.diagram.activity.resourceContent"/>
-			<contentExtension pattern="org.eclipse.papyrus.uml.diagram.activity.domainResourceContent"/>
+            <contentExtension pattern="org.eclipse.papyrus.uml.diagram.activity.domainResourceContent"/>
             <contentExtension pattern="org.eclipse.papyrus.uml.diagram.activity.navigatorLinkHelper"/>
          </includes>
       </viewerContentBinding>
@@ -1403,16 +1292,16 @@
             activeByDefault="true">
          <triggerPoints>
             <or>
-	           <and>
-    	          <instanceof value="org.eclipse.core.resources.IFile"/>
-        	      <test property="org.eclipse.core.resources.extension" value="PapyrusUMLActivity_diagram"/>
+               <and>
+                  <instanceof value="org.eclipse.core.resources.IFile"/>
+                  <test property="org.eclipse.core.resources.extension" value="PapyrusUMLActivity_diagram"/>
                </and>
                <instanceof value="org.eclipse.papyrus.uml.diagram.activity.navigator.UMLAbstractNavigatorItem"/>
             </or>
          </triggerPoints>
          <possibleChildren>
             <or>
-         	   <instanceof value="org.eclipse.papyrus.uml.diagram.activity.navigator.UMLAbstractNavigatorItem"/>
+               <instanceof value="org.eclipse.papyrus.uml.diagram.activity.navigator.UMLAbstractNavigatorItem"/>
             </or>
          </possibleChildren>
          <commonSorter 
@@ -1420,9 +1309,9 @@
                class="org.eclipse.papyrus.uml.diagram.activity.navigator.UMLNavigatorSorter">
             <parentExpression>
                <or>
-	              <and>
-    	             <instanceof value="org.eclipse.core.resources.IFile"/>
-        	         <test property="org.eclipse.core.resources.extension" value="PapyrusUMLActivity_diagram"/>
+                  <and>
+                     <instanceof value="org.eclipse.core.resources.IFile"/>
+                     <test property="org.eclipse.core.resources.extension" value="PapyrusUMLActivity_diagram"/>
                   </and>
                   <instanceof value="org.eclipse.papyrus.uml.diagram.activity.navigator.UMLAbstractNavigatorItem"/>
                </or>
@@ -1439,9 +1328,9 @@
             activeByDefault="true">
          <triggerPoints>
             <or>
-	           <and>
-    	          <instanceof value="org.eclipse.core.resources.IFile"/>
-        	      <test property="org.eclipse.core.resources.extension" value="PapyrusUMLActivity"/>
+               <and>
+                  <instanceof value="org.eclipse.core.resources.IFile"/>
+                  <test property="org.eclipse.core.resources.extension" value="PapyrusUMLActivity"/>
                </and>
                <instanceof value="org.eclipse.papyrus.uml.diagram.activity.navigator.UMLDomainNavigatorItem"/>
             </or>
@@ -1512,143 +1401,143 @@
       <?gmfgen generated="true"?>
    </extension>
 <extension point="org.eclipse.gmf.runtime.common.ui.services.markerNavigationProviders" id="markers-navigation">
-      <?gmfgen generated="true"?>
-      <MarkerNavigationProvider class="org.eclipse.papyrus.uml.diagram.activity.providers.UMLMarkerNavigationProvider">
-         <MarkerType name="org.eclipse.papyrus.uml.diagram.activity.diagnostic"/>
-         <Priority name="Lowest"/>
-      </MarkerNavigationProvider>
-   </extension>
+				      <?gmfgen generated="true"?>
+				      <MarkerNavigationProvider class="org.eclipse.papyrus.uml.diagram.activity.providers.UMLMarkerNavigationProvider">
+				         <MarkerType name="org.eclipse.papyrus.uml.diagram.activity.diagnostic"/>
+				         <Priority name="Lowest"/>
+				      </MarkerNavigationProvider>
+				   </extension>
 
 <extension id="diagnostic" name="Papyrus activity editor Plugin problems" point="org.eclipse.core.resources.markers">
-      <?gmfgen generated="true"?>
-      <super type="org.eclipse.core.resources.problemmarker"/>
-      <super type="org.eclipse.gmf.runtime.common.ui.services.marker"/>
-      <persistent value="true"/>
-   </extension><extension point="org.eclipse.emf.validation.constraintProviders">
+				      <?gmfgen generated="true"?>
+				      <super type="org.eclipse.core.resources.problemmarker"/>
+				      <super type="org.eclipse.gmf.runtime.common.ui.services.marker"/>
+				      <persistent value="true"/>
+				   </extension><extension point="org.eclipse.emf.validation.constraintProviders">
       <?gmfgen generated="true"?>
             <category id="org.eclipse.uml2.uml.util.UMLValidator.validate" mandatory="false" name="validateUMLModel">
          <![CDATA[Validate the UML model]]>
       </category>
-      <category id="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateInitialNode" mandatory="false" name="validateInitialNode">
+            <category id="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateInitialNode" mandatory="false" name="validateInitialNode">
          <![CDATA[Validate an initial node]]>
       </category>
-      <category id="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateFinalNode" mandatory="false" name="validateFinalNode">
+            <category id="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateFinalNode" mandatory="false" name="validateFinalNode">
          <![CDATA[Validate a final node]]>
       </category>
-      <category id="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateCallBehaviorAction" mandatory="false" name="validateCallBehaviorAction">
+            <category id="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateCallBehaviorAction" mandatory="false" name="validateCallBehaviorAction">
          <![CDATA[Validate a call behavior action]]>
       </category>
-      <category id="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateCallOperationAction" mandatory="false" name="validateCallOperationAction">
+            <category id="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateCallOperationAction" mandatory="false" name="validateCallOperationAction">
          <![CDATA[Validate a call operation action]]>
       </category>
-      <category id="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateCallAction" mandatory="false" name="validateCallAction">
+            <category id="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateCallAction" mandatory="false" name="validateCallAction">
          <![CDATA[Validate a call action]]>
       </category>
-      <category id="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateInvocationAction" mandatory="false" name="validateInvocationAction">
+            <category id="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateInvocationAction" mandatory="false" name="validateInvocationAction">
          <![CDATA[Validate an invocation action]]>
       </category>
-      <category id="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateActivityNode" mandatory="false" name="validateActivityNode">
+            <category id="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateActivityNode" mandatory="false" name="validateActivityNode">
          <![CDATA[Validate an activity node]]>
       </category>
-      <category id="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateRedefinableElement" mandatory="false" name="validateRedefinableElement">
+            <category id="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateRedefinableElement" mandatory="false" name="validateRedefinableElement">
          <![CDATA[Validate a redefineable element]]>
       </category>
-      <category id="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateNamedElement" mandatory="false" name="validateNamedElement">
+            <category id="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateNamedElement" mandatory="false" name="validateNamedElement">
          <![CDATA[Validate a named element]]>
       </category>
-      <category id="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateElement" mandatory="false" name="validateElement">
+            <category id="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateElement" mandatory="false" name="validateElement">
          <![CDATA[Validate an element]]>
       </category>
-      <category id="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateObjectNode" mandatory="false" name="validateObjectNode">
+            <category id="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateObjectNode" mandatory="false" name="validateObjectNode">
          <![CDATA[Validate an object node]]>
       </category>
-      <category id="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateMultiplicityElement" mandatory="false" name="validateMultiplicityElement">
+            <category id="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateMultiplicityElement" mandatory="false" name="validateMultiplicityElement">
          <![CDATA[Validate a multilicity element]]>
       </category>
-      <category id="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validatePin" mandatory="false" name="validatePin">
+            <category id="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validatePin" mandatory="false" name="validatePin">
          <![CDATA[Validate a pin]]>
       </category>
-      <category id="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateInputPin" mandatory="false" name="validateInputPin">
+            <category id="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateInputPin" mandatory="false" name="validateInputPin">
          <![CDATA[Validate an input pin]]>
       </category>
-      <category id="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateActionInputPin" mandatory="false" name="validateActionInputPin">
+            <category id="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateActionInputPin" mandatory="false" name="validateActionInputPin">
          <![CDATA[Validate an action input pin]]>
       </category>
-      <category id="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateValuePin" mandatory="false" name="validateValuePin">
+            <category id="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateValuePin" mandatory="false" name="validateValuePin">
          <![CDATA[Validate a value pin]]>
       </category>
-      <category id="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateOutputPin" mandatory="false" name="validateOutputPin">
+            <category id="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateOutputPin" mandatory="false" name="validateOutputPin">
          <![CDATA[Validate an output pin]]>
       </category>
-      <category id="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateActivityEdge" mandatory="false" name="validateActivityEdge">
+            <category id="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateActivityEdge" mandatory="false" name="validateActivityEdge">
          <![CDATA[Validate an activity edge]]>
       </category>
-      <category id="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateObjectFlow" mandatory="false" name="validateObjectFlow">
+            <category id="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateObjectFlow" mandatory="false" name="validateObjectFlow">
          <![CDATA[Validate an object flow]]>
       </category>
-      <category id="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateControlFlow" mandatory="false" name="validateControlFlow">
+            <category id="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateControlFlow" mandatory="false" name="validateControlFlow">
          <![CDATA[Validate a control flow]]>
       </category>
-      <category id="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateDecisionNode" mandatory="false" name="validateDecisionNode">
+            <category id="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateDecisionNode" mandatory="false" name="validateDecisionNode">
          <![CDATA[Validate a decision node]]>
       </category>
-      <category id="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateMergeNode" mandatory="false" name="validateMergeNode">
+            <category id="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateMergeNode" mandatory="false" name="validateMergeNode">
          <![CDATA[Validate a merge node]]>
       </category>
-      <category id="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateForkNode" mandatory="false" name="validateForkNode">
+            <category id="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateForkNode" mandatory="false" name="validateForkNode">
          <![CDATA[Validate a fork node]]>
       </category>
-      <category id="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateJoinNode" mandatory="false" name="validateJoinNode">
+            <category id="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateJoinNode" mandatory="false" name="validateJoinNode">
          <![CDATA[Validate a join node]]>
       </category>
-      <category id="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateActivityParameterNode" mandatory="false" name="validateActivityParameterNode">
+            <category id="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateActivityParameterNode" mandatory="false" name="validateActivityParameterNode">
          <![CDATA[Validate an activity parameter node]]>
       </category>
-      <category id="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateCreateObjectActionClassifier" mandatory="false" name="validateCreateObjectActionClassifier">
+            <category id="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateCreateObjectActionClassifier" mandatory="false" name="validateCreateObjectActionClassifier">
          <![CDATA[Valide classifier for CreateObjectAction]]>
       </category>
-      <category id="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validaterReadStructuralFeatureAction" mandatory="false" name="validateReadStructuralfeatureAction">
+            <category id="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validaterReadStructuralFeatureAction" mandatory="false" name="validateReadStructuralfeatureAction">
          <![CDATA[Constraints for Structural Feature Action]]>
       </category>
-      <category id="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateAddStructuralFeatureValueAction" mandatory="false" name="validateAddStructuralFeatureValueAction">
+            <category id="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateAddStructuralFeatureValueAction" mandatory="false" name="validateAddStructuralFeatureValueAction">
          <![CDATA[Constraint for AddStructuralFeatureValueAction]]>
       </category>
-      <category id="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateDestroyObjectAction" mandatory="false" name="validateDestroyObjectAction">
+            <category id="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateDestroyObjectAction" mandatory="false" name="validateDestroyObjectAction">
          <![CDATA[Constraint for DestroyObjectAction]]>
       </category>
-      <category id="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateStructuralFeatureAction" mandatory="false" name="validateStructuralfeatureAction">
+            <category id="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateStructuralFeatureAction" mandatory="false" name="validateStructuralfeatureAction">
          <![CDATA[Constraint for StructuralFeatureAction]]>
       </category>
-      <category id="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateAddVariableValueAction" mandatory="false" name="validateAddvariablevalueAction">
+            <category id="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateAddVariableValueAction" mandatory="false" name="validateAddvariablevalueAction">
          <![CDATA[Constraint for AddVariableValueAction]]>
       </category>
-      <category id="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateWriteVariableAction" mandatory="false" name="validateWriteVariableAction">
+            <category id="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateWriteVariableAction" mandatory="false" name="validateWriteVariableAction">
          <![CDATA[Constraint for WriteVariableAction]]>
       </category>
-      <category id="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateVariableAction" mandatory="false" name="validateVariableAction">
+            <category id="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateVariableAction" mandatory="false" name="validateVariableAction">
          <![CDATA[Constraint for VariableAction]]>
       </category>
-      <category id="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateReadVariableAction" mandatory="false" name="validateReadVariableAction">
+            <category id="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateReadVariableAction" mandatory="false" name="validateReadVariableAction">
          <![CDATA[Constraint for ReadVariableAction]]>
       </category>
-      <category id="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateBroacastSignalAction" mandatory="false" name="validateBroadcastSignalActionTODO">
+            <category id="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateBroacastSignalAction" mandatory="false" name="validateBroadcastSignalActionTODO">
          <![CDATA[Constraint for BraodcastSignalAction]]>
       </category>
-      <category id="org.eclipse.uml2.uml.util.UMLValidator.validateElement" mandatory="false" name="validateExceptionHandler">
+            <category id="org.eclipse.uml2.uml.util.UMLValidator.validateElement" mandatory="false" name="validateExceptionHandler">
          <![CDATA[Constraint Exception Handler]]>
       </category>
-      <category id="org.eclipse.uml2.uml.util.UMLValidator.validateElement" mandatory="false" name="validateInterruptibleEdge">
+            <category id="org.eclipse.uml2.uml.util.UMLValidator.validateElement" mandatory="false" name="validateInterruptibleEdge">
          <![CDATA[Constraint for interruptible Edge]]>
       </category>
       <constraintProvider cache="true">
          <package namespaceUri="http://www.eclipse.org/uml2/5.0.0/UML"/>
                <constraints categories="org.eclipse.uml2.uml.util.UMLValidator.validate">
                   </constraints>
-         <constraints categories="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateInitialNode">
+            <constraints categories="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateInitialNode">
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateInitialNode_validateNoIncomingEdges"
             lang="OCL"
             name="validateNoIncomingEdges"
-            mode="Batch"
+            mode="Live"
             severity="ERROR" statusCode="200">
             <![CDATA[self.incoming->isEmpty()]]>
             <description><![CDATA[An initial node has no incoming edge]]></description>
@@ -1658,7 +1547,7 @@
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateInitialNode_validateControlEdges"
             lang="OCL"
             name="validateControlEdges"
-            mode="Batch"
+            mode="Live"
             severity="ERROR" statusCode="200">
             <![CDATA[not self.source.oclIsKindOf(InitialNode)]]>
             <description><![CDATA[Only control edges can have initial nodes as source]]></description>
@@ -1666,11 +1555,11 @@
             <target class="uml.ObjectFlow"/>
          </constraint>
                   </constraints>
-         <constraints categories="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateFinalNode">
+            <constraints categories="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateFinalNode">
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateFinalNode_validateNoOutgoingEdges"
             lang="OCL"
             name="validateNoOutgoingEdges"
-            mode="Batch"
+            mode="Live"
             severity="ERROR" statusCode="200">
             <![CDATA[self.outgoing->isEmpty()]]>
             <description><![CDATA[A fianl node has no outgoing edge]]></description>
@@ -1678,27 +1567,27 @@
             <target class="uml.FinalNode"/>
          </constraint>
                   </constraints>
-         <constraints categories="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateCallBehaviorAction">
+            <constraints categories="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateCallBehaviorAction">
                   </constraints>
-         <constraints categories="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateCallOperationAction">
+            <constraints categories="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateCallOperationAction">
                   </constraints>
-         <constraints categories="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateCallAction">
+            <constraints categories="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateCallAction">
                   </constraints>
-         <constraints categories="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateInvocationAction">
+            <constraints categories="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateInvocationAction">
                   </constraints>
-         <constraints categories="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateActivityNode">
+            <constraints categories="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateActivityNode">
                   </constraints>
-         <constraints categories="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateRedefinableElement">
+            <constraints categories="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateRedefinableElement">
                   </constraints>
-         <constraints categories="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateNamedElement">
+            <constraints categories="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateNamedElement">
                   </constraints>
-         <constraints categories="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateElement">
+            <constraints categories="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateElement">
                   </constraints>
-         <constraints categories="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateObjectNode">
+            <constraints categories="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateObjectNode">
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateObjectNode_validateNotUnique"
             lang="OCL"
             name="validateNotUnique"
-            mode="Batch"
+            mode="Live"
             severity="ERROR" statusCode="200">
             <![CDATA[-- must be applied on corresponding parameter, if only it exists
 true
@@ -1742,13 +1631,13 @@ true
             <target class="uml.ObjectNode"/>
          </constraint>
                   </constraints>
-         <constraints categories="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateMultiplicityElement">
+            <constraints categories="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateMultiplicityElement">
                   </constraints>
-         <constraints categories="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validatePin">
+            <constraints categories="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validatePin">
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validatePin_validateControlPins"
             lang="OCL"
             name="validateControlPins"
-            mode="Batch"
+            mode="Live"
             severity="ERROR" statusCode="200">
             <![CDATA[self.isControl implies self.isControlType]]>
             <description><![CDATA[Control pins have a control type]]></description>
@@ -1756,11 +1645,11 @@ true
             <target class="uml.Pin"/>
          </constraint>
                   </constraints>
-         <constraints categories="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateInputPin">
+            <constraints categories="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateInputPin">
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateInputPin_validateOutgoingEdgesStructuredOnly"
             lang="OCL"
             name="validateOutgoingEdgesStructuredOnly"
-            mode="Batch"
+            mode="Live"
             severity="ERROR" statusCode="200">
             <![CDATA[self.outgoing.target->forAll(inStructuredNode=self.owner)]]>
             <description><![CDATA[Input pins may have outgoing edges only when they are on actions that are structured nodes, and these edges must target a node contained by the structured node.]]></description>
@@ -1768,11 +1657,11 @@ true
             <target class="uml.InputPin"/>
          </constraint>
                   </constraints>
-         <constraints categories="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateActionInputPin">
+            <constraints categories="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateActionInputPin">
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateActionInputPin_validateOneOutputPin"
             lang="OCL"
             name="validateOneOutputPin"
-            mode="Batch"
+            mode="Live"
             severity="ERROR" statusCode="200">
             <![CDATA[(not self.fromAction.oclIsUndefined()) implies
 self.fromAction.output->size() = 1]]>
@@ -1783,7 +1672,7 @@ self.fromAction.output->size() = 1]]>
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateActionInputPin_validateInputPin"
             lang="OCL"
             name="validateInputPin"
-            mode="Batch"
+            mode="Live"
             severity="ERROR" statusCode="200">
             <![CDATA[(not self.fromAction.oclIsUndefined()) implies
 self.fromAction.input->forAll(oclIsKindOf(ActionInputPin))]]>
@@ -1794,7 +1683,7 @@ self.fromAction.input->forAll(oclIsKindOf(ActionInputPin))]]>
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateActionInputPin_validateNoControlOrDataFlow"
             lang="OCL"
             name="validateNoControlOrDataFlow"
-            mode="Batch"
+            mode="Live"
             severity="ERROR" statusCode="200">
             <![CDATA[(not self.fromAction.oclIsUndefined()) implies
 (self.fromAction.incoming->isEmpty() and self.fromAction.outgoing->isEmpty()
@@ -1805,11 +1694,11 @@ and self.fromAction.output->forAll(incoming->isEmpty() and outgoing->isEmpty()))
             <target class="uml.ActionInputPin"/>
          </constraint>
                   </constraints>
-         <constraints categories="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateValuePin">
+            <constraints categories="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateValuePin">
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateValuePin_validateCompatibleType"
             lang="Java" class="org.eclipse.papyrus.uml.diagram.activity.providers.UMLValidationProvider$Adapter13"
             name="validateCompatibleType"
-            mode="Batch"
+            mode="Live"
             severity="ERROR" statusCode="200">
             
             <description><![CDATA[The type of value specification must be compatible with the type of the value pin.]]></description>
@@ -1819,7 +1708,7 @@ and self.fromAction.output->forAll(incoming->isEmpty() and outgoing->isEmpty()))
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateValuePin_validateNoIncomingEdges"
             lang="OCL"
             name="validateNoIncomingEdges"
-            mode="Batch"
+            mode="Live"
             severity="ERROR" statusCode="200">
             <![CDATA[self.incoming->isEmpty()]]>
             <description><![CDATA[Value pins have no incoming edges.]]></description>
@@ -1827,11 +1716,11 @@ and self.fromAction.output->forAll(incoming->isEmpty() and outgoing->isEmpty()))
             <target class="uml.ValuePin"/>
          </constraint>
                   </constraints>
-         <constraints categories="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateOutputPin">
+            <constraints categories="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateOutputPin">
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateOutputPin_validateIncomingEdgesStructuredOnly"
             lang="OCL"
             name="validateIncomingEdgesStructuredOnly"
-            mode="Batch"
+            mode="Live"
             severity="ERROR" statusCode="200">
             <![CDATA[self.incoming.source->forAll(inStructuredNode=self.owner)]]>
             <description><![CDATA[Output pins may have incoming edges only when they are on actions that are structured nodes, and these edges may not target a node contained by the structured node.]]></description>
@@ -1839,11 +1728,11 @@ and self.fromAction.output->forAll(incoming->isEmpty() and outgoing->isEmpty()))
             <target class="uml.OutputPin"/>
          </constraint>
                   </constraints>
-         <constraints categories="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateActivityEdge">
+            <constraints categories="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateActivityEdge">
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateActivityEdge_validateSourceAndTarget"
             lang="Java" class="org.eclipse.papyrus.uml.diagram.activity.providers.UMLValidationProvider$Adapter16"
             name="validateSourceAndTarget"
-            mode="Batch"
+            mode="Live"
             severity="ERROR" statusCode="200">
             
             <description><![CDATA[The source and target of an edge must be in the same activity as the edge.]]></description>
@@ -1853,7 +1742,7 @@ and self.fromAction.output->forAll(incoming->isEmpty() and outgoing->isEmpty()))
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateActivityEdge_validateOwned"
             lang="OCL"
             name="validateOwned"
-            mode="Batch"
+            mode="Live"
             severity="ERROR" statusCode="200">
             <![CDATA[self.owner.oclIsKindOf(Activity)
 or self.owner.oclIsKindOf(ActivityGroup)]]>
@@ -1864,7 +1753,7 @@ or self.owner.oclIsKindOf(ActivityGroup)]]>
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateActivityEdge_validateStructuredNode"
             lang="OCL"
             name="validateStructuredNode"
-            mode="Batch"
+            mode="Live"
             severity="ERROR" statusCode="200">
             <![CDATA[true
 -- constraint is checked by the model structure]]>
@@ -1895,11 +1784,11 @@ not self.source.oclIsUndefined() and not self.target.oclIsUndefined()]]>
             <target class="uml.ActivityEdge"/>
          </constraint>
                   </constraints>
-         <constraints categories="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateObjectFlow">
+            <constraints categories="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateObjectFlow">
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateObjectFlow_validateNoActions"
             lang="OCL"
             name="validateNoActions"
-            mode="Batch"
+            mode="Live"
             severity="ERROR" statusCode="200">
             <![CDATA[(self.source.oclIsUndefined() or not self.source.oclIsKindOf(Action))
 and (self.target.oclIsUndefined() or not self.target.oclIsKindOf(Action))]]>
@@ -1910,7 +1799,7 @@ and (self.target.oclIsUndefined() or not self.target.oclIsKindOf(Action))]]>
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateObjectFlow_validateCompatibleTypes"
             lang="Java" class="org.eclipse.papyrus.uml.diagram.activity.providers.UMLValidationProvider$Adapter21"
             name="validateCompatibleTypes"
-            mode="Batch"
+            mode="Live"
             severity="ERROR" statusCode="200">
             
             <description><![CDATA[Object nodes connected by an object flow, with optionally intervening control nodes, must have compatible types. In particular, the downstream object node type must be the same or a supertype of the upstream object node type]]></description>
@@ -1920,7 +1809,7 @@ and (self.target.oclIsUndefined() or not self.target.oclIsKindOf(Action))]]>
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateObjectFlow_validateSameUpperBounds"
             lang="Java" class="org.eclipse.papyrus.uml.diagram.activity.providers.UMLValidationProvider$Adapter22"
             name="validateSameUpperBounds"
-            mode="Batch"
+            mode="Live"
             severity="ERROR" statusCode="200">
             
             <description><![CDATA[Object nodes connected by an object flow, with optionally intervening control nodes, must have the same upper bounds.]]></description>
@@ -1930,7 +1819,7 @@ and (self.target.oclIsUndefined() or not self.target.oclIsKindOf(Action))]]>
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateObjectFlow_validateTarget"
             lang="Java" class="org.eclipse.papyrus.uml.diagram.activity.providers.UMLValidationProvider$Adapter23"
             name="validateTarget"
-            mode="Batch"
+            mode="Live"
             severity="ERROR" statusCode="200">
             
             <description><![CDATA[An edge with constant weight may not target an object node, or lead to an object node downstream with no intervening actions, that has an upper bound less than the weight.]]></description>
@@ -1940,7 +1829,7 @@ and (self.target.oclIsUndefined() or not self.target.oclIsKindOf(Action))]]>
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateObjectFlow_validateTransformationBehaviour"
             lang="Java" class="org.eclipse.papyrus.uml.diagram.activity.providers.UMLValidationProvider$Adapter24"
             name="validateTransformationBehaviour"
-            mode="Batch"
+            mode="Live"
             severity="ERROR" statusCode="200">
             
             <description><![CDATA[A transformation behavior has one input parameter and one output parameter. The input parameter must be the same as or a supertype of the type of object token coming from the source end. The output parameter must be the same or a subtype of the type of object token expected downstream. The behavior cannot have side effects.]]></description>
@@ -1950,7 +1839,7 @@ and (self.target.oclIsUndefined() or not self.target.oclIsKindOf(Action))]]>
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateObjectFlow_validateSelectionBehaviour"
             lang="OCL"
             name="validateSelectionBehaviour"
-            mode="Batch"
+            mode="Live"
             severity="ERROR" statusCode="200">
             <![CDATA[(not self.selection.oclIsUndefined()) implies self.source.oclIsKindOf(ObjectNode)]]>
             <description><![CDATA[An object flow may have a selection behavior only if it has an object node as a source.]]></description>
@@ -1960,7 +1849,7 @@ and (self.target.oclIsUndefined() or not self.target.oclIsKindOf(Action))]]>
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateObjectFlow_validateInputAndOutputParameter"
             lang="Java" class="org.eclipse.papyrus.uml.diagram.activity.providers.UMLValidationProvider$Adapter26"
             name="validateInputAndOutputParameter"
-            mode="Batch"
+            mode="Live"
             severity="ERROR" statusCode="200">
             
             <description><![CDATA[A selection behavior has one input parameter and one output parameter. The input parameter must be a bag of elements of the same as or a supertype of the type of source object node. The output parameter must be the same or a subtype of the type of source object node. The behavior cannot have side effects.]]></description>
@@ -1970,7 +1859,7 @@ and (self.target.oclIsUndefined() or not self.target.oclIsKindOf(Action))]]>
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateObjectFlow_validateIsMulticastOrIsMultireceive"
             lang="OCL"
             name="validateIsMulticastOrIsMultireceive"
-            mode="Batch"
+            mode="Live"
             severity="ERROR" statusCode="200">
             <![CDATA[self.isMulticast implies not self.isMultireceive]]>
             <description><![CDATA[isMulticast and isMultireceive cannot both be true.]]></description>
@@ -1978,11 +1867,11 @@ and (self.target.oclIsUndefined() or not self.target.oclIsKindOf(Action))]]>
             <target class="uml.ObjectFlow"/>
          </constraint>
                   </constraints>
-         <constraints categories="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateControlFlow">
+            <constraints categories="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateControlFlow">
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateControlFlow_validateObjectNodes"
             lang="OCL"
             name="validateObjectNodes"
-            mode="Batch"
+            mode="Live"
             severity="ERROR" statusCode="200">
             <![CDATA[(self.source.oclIsUndefined() or
 	(self.source.oclIsKindOf(ObjectNode) implies
@@ -1997,7 +1886,7 @@ and (self.target.oclIsUndefined() or not self.target.oclIsKindOf(Action))]]>
             <target class="uml.ControlFlow"/>
          </constraint>
                   </constraints>
-         <constraints categories="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateDecisionNode">
+            <constraints categories="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateDecisionNode">
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateDecisionNode_validateIncomingOutgoingEdges"
             lang="OCL"
             name="validateIncomingOutgoingEdges"
@@ -2026,7 +1915,7 @@ self.incoming->size() <= 2]]>
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateDecisionNode_validateDecisionInputFlowIncoming"
             lang="OCL"
             name="validateDecisionInputFlowIncoming"
-            mode="Batch"
+            mode="Live"
             severity="ERROR" statusCode="200">
             <![CDATA[(not self.decisionInputFlow.oclIsUndefined()) implies
 self.incoming->includes(self.decisionInputFlow)]]>
@@ -2037,7 +1926,7 @@ self.incoming->includes(self.decisionInputFlow)]]>
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateDecisionNode_validateParameters"
             lang="OCL"
             name="validateParameters"
-            mode="Batch"
+            mode="Live"
             severity="ERROR" statusCode="200">
             <![CDATA[(not self.decisionInput.oclIsUndefined()) implies (
 self.decisionInput.ownedParameter->select(
@@ -2097,7 +1986,7 @@ and self.decisionInput.ownedParameter->select(
             <target class="uml.DecisionNode"/>
          </constraint>
                   </constraints>
-         <constraints categories="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateMergeNode">
+            <constraints categories="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateMergeNode">
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateMergeNode_validateOneOutgoingEdge"
             lang="OCL"
             name="validateOneOutgoingEdge"
@@ -2122,7 +2011,7 @@ and self.decisionInput.ownedParameter->select(
             <target class="uml.MergeNode"/>
          </constraint>
                   </constraints>
-         <constraints categories="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateForkNode">
+            <constraints categories="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateForkNode">
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateForkNode_validateOneIncomingEdge"
             lang="OCL"
             name="validateOneIncomingEdge"
@@ -2147,7 +2036,7 @@ and self.decisionInput.ownedParameter->select(
             <target class="uml.ForkNode"/>
          </constraint>
                   </constraints>
-         <constraints categories="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateJoinNode">
+            <constraints categories="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateJoinNode">
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateJoinNode_validateOneOutgoingEdge"
             lang="OCL"
             name="validateOneOutgoingEdge"
@@ -2172,11 +2061,11 @@ and self.decisionInput.ownedParameter->select(
             <target class="uml.JoinNode"/>
          </constraint>
                   </constraints>
-         <constraints categories="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateActivityParameterNode">
+            <constraints categories="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateActivityParameterNode">
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateActivityParameterNode_validateIncomingOrOutgoing"
             lang="OCL"
             name="validateIncomingOrOutgoing"
-            mode="Batch"
+            mode="Live"
             severity="ERROR" statusCode="200">
             <![CDATA[(self.incoming->notEmpty() implies self.outgoing->isEmpty()) and
 (self.outgoing->notEmpty() implies self.incoming->isEmpty())]]>
@@ -2185,11 +2074,11 @@ and self.decisionInput.ownedParameter->select(
             <target class="uml.ActivityParameterNode"/>
          </constraint>
                   </constraints>
-         <constraints categories="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateCreateObjectActionClassifier">
+            <constraints categories="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateCreateObjectActionClassifier">
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateCreateObjectActionClassifier_notAbstract"
             lang="OCL"
             name="validateNotAbstract"
-            mode="Batch"
+            mode="Live"
             severity="ERROR" statusCode="200">
             <![CDATA[(not self.classifier.oclIsUndefined()) implies (self.classifier.isAbstract = false)]]>
             <description><![CDATA[Check that the classifier is not abstract]]></description>
@@ -2199,7 +2088,7 @@ and self.decisionInput.ownedParameter->select(
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateCreateObjectActionClassifier_notClassifier"
             lang="OCL"
             name="valideNotAssociationClass"
-            mode="Batch"
+            mode="Live"
             severity="ERROR" statusCode="200">
             <![CDATA[(not self.classifier.oclIsUndefined()) implies (not self.classifier.oclIsKindOf(uml::AssociationClass))]]>
             <description><![CDATA[Check that the classifier is not an association class]]></description>
@@ -2207,7 +2096,7 @@ and self.decisionInput.ownedParameter->select(
             <target class="uml.CreateObjectAction"/>
          </constraint>
                   </constraints>
-         <constraints categories="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validaterReadStructuralFeatureAction">
+            <constraints categories="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validaterReadStructuralFeatureAction">
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateReadStructuralFeatureAction_onlyOneClassifier"
             lang="OCL"
             name="validateOnlyOneClassifier"
@@ -2219,7 +2108,7 @@ and self.decisionInput.ownedParameter->select(
             <target class="uml.ReadStructuralFeatureAction"/>
          </constraint>
                   </constraints>
-         <constraints categories="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateAddStructuralFeatureValueAction">
+            <constraints categories="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateAddStructuralFeatureValueAction">
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateAddStructuralFeatureValueAction_ValidInputPinType"
             lang="OCL"
             name="validateInputPinType"
@@ -2261,11 +2150,11 @@ and self.decisionInput.ownedParameter->select(
             <target class="uml.AddStructuralFeatureValueAction"/>
          </constraint>
                   </constraints>
-         <constraints categories="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateDestroyObjectAction">
+            <constraints categories="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateDestroyObjectAction">
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateDestroyObjectAction_InputPinHasNotType"
             lang="OCL"
             name="validateInputPinHasNoType"
-            mode="Batch"
+            mode="Live"
             severity="ERROR" statusCode="200">
             <![CDATA[self.target.type->size() = 0]]>
             <description><![CDATA[Check that the input pin has no type]]></description>
@@ -2273,11 +2162,11 @@ and self.decisionInput.ownedParameter->select(
             <target class="uml.DestroyObjectAction"/>
          </constraint>
                   </constraints>
-         <constraints categories="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateStructuralFeatureAction">
+            <constraints categories="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateStructuralFeatureAction">
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateStructuralFeatureAction_FeatureNotStatic"
             lang="OCL"
             name="validateFeatureNotStatic"
-            mode="Batch"
+            mode="Live"
             severity="ERROR" statusCode="200">
             <![CDATA[(not self.structuralFeature.oclIsUndefined()) implies (self.structuralFeature.isStatic = false)]]>
             <description><![CDATA[Check that the structural feature must not be static.]]></description>
@@ -2316,7 +2205,7 @@ self.structuralFeature.oclAsType(Property).opposite.type = self.object.type]]>
             <target class="uml.StructuralFeatureAction"/>
          </constraint>
                   </constraints>
-         <constraints categories="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateAddVariableValueAction">
+            <constraints categories="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateAddVariableValueAction">
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateAddVariableValueAction_AsAtLeastOneInputPin"
             lang="OCL"
             name="validateInputPinAsValueAsAtLeastOneInputPin"
@@ -2328,7 +2217,7 @@ self.structuralFeature.oclAsType(Property).opposite.type = self.object.type]]>
             <target class="uml.AddVariableValueAction"/>
          </constraint>
                   </constraints>
-         <constraints categories="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateWriteVariableAction">
+            <constraints categories="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateWriteVariableAction">
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateWriteVariableAction_InputPinValidePin"
             lang="OCL"
             name="valideInputPinType"
@@ -2350,7 +2239,7 @@ self.structuralFeature.oclAsType(Property).opposite.type = self.object.type]]>
             <target class="uml.WriteVariableAction"/>
          </constraint>
                   </constraints>
-         <constraints categories="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateVariableAction">
+            <constraints categories="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateVariableAction">
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateVariableAction_VariableScope"
             lang="OCL"
             name="validateVariableScope"
@@ -2362,7 +2251,7 @@ self.structuralFeature.oclAsType(Property).opposite.type = self.object.type]]>
             <target class="uml.VariableAction"/>
          </constraint>
                   </constraints>
-         <constraints categories="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateReadVariableAction">
+            <constraints categories="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateReadVariableAction">
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateReadVariableAction_OutputPinType"
             lang="OCL"
             name="validateOutputPinType"
@@ -2384,13 +2273,13 @@ self.structuralFeature.oclAsType(Property).opposite.type = self.object.type]]>
             <target class="uml.ReadVariableAction"/>
          </constraint>
                   </constraints>
-         <constraints categories="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateBroacastSignalAction">
+            <constraints categories="org.eclipse.uml2.uml.util.UMLValidator.validate/org.eclipse.uml2.uml.util.UMLValidator.validateBroacastSignalAction">
                   </constraints>
-         <constraints categories="org.eclipse.uml2.uml.util.UMLValidator.validateElement">
+            <constraints categories="org.eclipse.uml2.uml.util.UMLValidator.validateElement">
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateExceptionHandler_validateException_HandlerBody_Constraint4"
             lang="Java" class="org.eclipse.papyrus.uml.diagram.activity.providers.UMLValidationProvider$Adapter62"
             name="validateException_HandlerBody_Constraint4"
-            mode="Batch"
+            mode="Live"
             severity="ERROR" statusCode="200">
             
             <description><![CDATA[The handler body has one input, and that input is the same as the exception input.]]></description>
@@ -2400,7 +2289,7 @@ self.structuralFeature.oclAsType(Property).opposite.type = self.object.type]]>
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateExceptionHandler_validateException_StructuredActivityNode_Constraint3"
             lang="Java" class="org.eclipse.papyrus.uml.diagram.activity.providers.UMLValidationProvider$Adapter64"
             name="validateException_StructuredActivityNode_Constraint3"
-            mode="Batch"
+            mode="Live"
             severity="ERROR" statusCode="200">
             
             <description><![CDATA[If the protected node is a StructuredActivityNode with output pins, then the exception handler body must also be a StructuredActivityNode with output pins that correspond in number and types to those of the protected node.]]></description>
@@ -2410,7 +2299,7 @@ self.structuralFeature.oclAsType(Property).opposite.type = self.object.type]]>
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateExceptionHandler_validateException_SourceAndTargetEdge_Constraint1"
             lang="Java" class="org.eclipse.papyrus.uml.diagram.activity.providers.UMLValidationProvider$Adapter65"
             name="validateException_SourceAndTargetEdge_Constraint1"
-            mode="Batch"
+            mode="Live"
             severity="ERROR" statusCode="200">
             
             <description><![CDATA[The exception handler and its input object node are not the source or target of any edge.]]></description>
@@ -2418,11 +2307,11 @@ self.structuralFeature.oclAsType(Property).opposite.type = self.object.type]]>
             <target class="uml.ExceptionHandler"/>
          </constraint>
                   </constraints>
-         <constraints categories="org.eclipse.uml2.uml.util.UMLValidator.validateElement">
+            <constraints categories="org.eclipse.uml2.uml.util.UMLValidator.validateElement">
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateInterruptibleEdge_validateEdge"
             lang="Java" class="org.eclipse.papyrus.uml.diagram.activity.providers.UMLValidationProvider$Adapter63"
             name="validateInterruptibleEdge"
-            mode="Batch"
+            mode="Live"
             severity="ERROR" statusCode="200">
             
             <description><![CDATA[Validate the constraint for interruptible Edge]]></description>
@@ -2632,588 +2521,579 @@ self.structuralFeature.oclAsType(Property).opposite.type = self.object.type]]>
    </extension>
    -->
 <extension id="validationDecoratorProvider" name="ValidationDecorations" point="org.eclipse.gmf.runtime.diagram.ui.decoratorProviders">
-      <?gmfgen generated="true"?>
-      <decoratorProvider class="org.eclipse.papyrus.uml.diagram.activity.providers.UMLValidationDecoratorProvider">
-         <Priority name="Lowest"/>
-         <object class="org.eclipse.gmf.runtime.diagram.ui.editparts.IPrimaryEditPart(org.eclipse.gmf.runtime.diagram.ui)" id="PRIMARY_VIEW"/>
-         <context decoratorTargets="PRIMARY_VIEW"/>
-      </decoratorProvider>
-   </extension>
+				      <?gmfgen generated="true"?>
+				      <decoratorProvider class="org.eclipse.papyrus.uml.diagram.activity.providers.UMLValidationDecoratorProvider">
+				         <Priority name="Lowest"/>
+				         <object class="org.eclipse.gmf.runtime.diagram.ui.editparts.IPrimaryEditPart(org.eclipse.gmf.runtime.diagram.ui)" id="PRIMARY_VIEW"/>
+				         <context decoratorTargets="PRIMARY_VIEW"/>
+				      </decoratorProvider>
+				   </extension>
 
 <extension point="org.eclipse.emf.validation.ui.UIRegisteredClientContext">
       <?gmfgen generated="true"?>
-      <clientContext id="org.eclipse.papyrus.uml.diagram.activityDefaultCtx"/>
-   </extension>
+         <clientContext id="org.eclipse.papyrus.uml.diagram.activityDefaultCtx"/>
+      </extension>
 
 
 <extension
-		id="Papyrus activity editor Plugin.palettedefinition"
-		name="Papyrus activity editor Plugin Predefined Entries"
-		point="org.eclipse.gmf.runtime.diagram.ui.paletteProviders"> 
-		
-		<?gmfgen generated="true"?>	
-		<paletteProvider class="org.eclipse.gmf.runtime.diagram.ui.providers.DefaultPaletteProvider">
-			<Priority name="Lowest"/>
-      		<contribution
-            	factoryClass="org.eclipse.papyrus.uml.diagram.activity.part.UMLPaletteFactory">
-     			<predefinedEntry id="standardGroup/noteStack/noteTool" remove="true"/> 
+			id="Papyrus activity editor Plugin.palettedefinition"
+			name="Papyrus activity editor Plugin Predefined Entries"
+			point="org.eclipse.gmf.runtime.diagram.ui.paletteProviders"> 
+			
+			<?gmfgen generated="true"?>	
+			<paletteProvider class="org.eclipse.gmf.runtime.diagram.ui.providers.DefaultPaletteProvider">
+				<Priority name="Lowest"/>
+				   		<contribution
+				   		    	factoryClass="org.eclipse.papyrus.uml.diagram.activity.part.UMLPaletteFactory">
+				   		<predefinedEntry id="standardGroup/noteStack/noteTool" remove="true"/> 
 				<predefinedEntry id="standardGroup/noteStack/textTool" remove="true"/> 
 				<predefinedEntry id="standardGroup/noteStack/noteattachmentTool" remove="true"/>
-					<entry
-       defineOnly="true"
-       description="Create an Activity Partition"
-       id="createActivityPartition1CreationTool"
-       kind="tool"
-       label="Activity Partition"
-       large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ActivityPartition.gif"
-       path=""
-       small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ActivityPartition.gif">
- 	</entry>
-	<entry
-       defineOnly="true"
-       description="Create an Interruptible Activity Region"
-       id="createInterruptibleActivityRegion2CreationTool"
-       kind="tool"
-       label="Interruptible Activity Region"
-       large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/InterruptibleActivityRegion.gif"
-       path=""
-       small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/InterruptibleActivityRegion.gif">
- 	</entry>
-	<entry
-       defineOnly="true"
-       description="Create an Initial node"
-       id="createInitialnode1CreationTool"
-       kind="tool"
-       label="Initial node"
-       large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/InitialNode.gif"
-       path=""
-       small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/InitialNode.gif">
- 	</entry>
-	<entry
-       defineOnly="true"
-       description="Create an Activity final node"
-       id="createActivityfinal2CreationTool"
-       kind="tool"
-       label="Activity final"
-       large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ActivityFinalNode.gif"
-       path=""
-       small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ActivityFinalNode.gif">
- 	</entry>
-	<entry
-       defineOnly="true"
-       description="Create a Flow final node"
-       id="createFlowfinal3CreationTool"
-       kind="tool"
-       label="Flow final"
-       large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/FlowFinalNode.gif"
-       path=""
-       small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/FlowFinalNode.gif">
- 	</entry>
-	<entry
-       defineOnly="true"
-       description="Create a Decision node"
-       id="createDecisionnode4CreationTool"
-       kind="tool"
-       label="Decision node"
-       large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/DecisionNode.gif"
-       path=""
-       small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/DecisionNode.gif">
- 	</entry>
-	<entry
-       defineOnly="true"
-       description="Create a Merge node"
-       id="createMergenode5CreationTool"
-       kind="tool"
-       label="Merge node"
-       large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/MergeNode.gif"
-       path=""
-       small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/MergeNode.gif">
- 	</entry>
-	<entry
-       defineOnly="true"
-       description="Create a Merge node"
-       id="createJoinnode6CreationTool"
-       kind="tool"
-       label="Join node"
-       large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/JoinNode.gif"
-       path=""
-       small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/JoinNode.gif">
- 	</entry>
-	<entry
-       defineOnly="true"
-       description="Create a Fork node"
-       id="createForknode7CreationTool"
-       kind="tool"
-       label="Fork node"
-       large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ForkNode.gif"
-       path=""
-       small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ForkNode.gif">
- 	</entry>
-	<entry
-       defineOnly="true"
-       description="Create an Activity"
-       id="createActivity1CreationTool"
-       kind="tool"
-       label="Activity"
-       large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Activity.gif"
-       path=""
-       small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Activity.gif">
- 	</entry>
-	<entry
-       defineOnly="true"
-       description="Create an Activity Parameter Node"
-       id="createActivityParameterNode2CreationTool"
-       kind="tool"
-       label="Activity Parameter Node"
-       large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ActivityParameterNode.gif"
-       path=""
-       small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ActivityParameterNode.gif">
- 	</entry>
-	<entry
-       defineOnly="true"
-       description="Create a Central Buffer Node"
-       id="createCentralBufferNode3CreationTool"
-       kind="tool"
-       label="Central Buffer Node"
-       large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/DataStoreNode.gif"
-       path=""
-       small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/DataStoreNode.gif">
- 	</entry>
-	<entry
-       defineOnly="true"
-       description="Create a Data Store Node"
-       id="createDataStoreNode4CreationTool"
-       kind="tool"
-       label="Data Store Node"
-       large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/DataStoreNode.gif"
-       path=""
-       small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/DataStoreNode.gif">
- 	</entry>
-	<entry
-       defineOnly="true"
-       description="Create a Comment"
-       id="createComment5CreationTool"
-       kind="tool"
-       label="Comment"
-       large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Comment.gif"
-       path=""
-       small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Comment.gif">
- 	</entry>
-	<entry
-       defineOnly="true"
-       description="Create a Cosntraint"
-       id="createConstraint6CreationTool"
-       kind="tool"
-       label="Constraint"
-       large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Constraint.gif"
-       path=""
-       small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Constraint.gif">
- 	</entry>
-	<entry
-       defineOnly="true"
-       description="Create a Control Flow"
-       id="createControlFlow1CreationTool"
-       kind="tool"
-       label="Control Flow"
-       large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ControlFlow.gif"
-       path=""
-       small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ControlFlow.gif">
- 	</entry>
-	<entry
-       defineOnly="true"
-       description="Create an Exception Handler"
-       id="createExceptionHandler2CreationTool"
-       kind="tool"
-       label="Exception Handler"
-       large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ExceptionHandler.gif"
-       path=""
-       small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ExceptionHandler.gif">
- 	</entry>
-	<entry
-       defineOnly="true"
-       description="Create an Object Flow"
-       id="createObjectFlow3CreationTool"
-       kind="tool"
-       label="Object Flow"
-       large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ObjectFlow.gif"
-       path=""
-       small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ObjectFlow.gif">
- 	</entry>
-	<entry
-       defineOnly="true"
-       description="Create of a link for comment"
-       id="createLink4CreationTool"
-       kind="tool"
-       label="Link"
-       large_icon="icons/obj16/Link.gif"
-       path=""
-       small_icon="icons/obj16/Link.gif">
- 	</entry>
-	<entry
-       defineOnly="true"
-       description="Create a Constraint as Local Precondition for an Action"
-       id="createLocalPreconditionConstraint1CreationTool"
-       kind="tool"
-       label="Local Precondition Constraint"
-       large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Constraint.gif"
-       path=""
-       small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Constraint.gif">
- 	</entry>
-	<entry
-       defineOnly="true"
-       description="Create an Interval Constraint as Local Precondition for an Action"
-       id="createLocalPreconditionIntervalConstraint3CreationTool"
-       kind="tool"
-       label="Local Precondition Interval Constraint"
-       large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/IntervalConstraint.gif"
-       path=""
-       small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/IntervalConstraint.gif">
- 	</entry>
-	<entry
-       defineOnly="true"
-       description="Create a Duration Constraint as Local Precondition for an Action"
-       id="createLocalPreconditionDurationConstraint4CreationTool"
-       kind="tool"
-       label="Local Precondition Duration Constraint"
-       large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/DurationConstraint.gif"
-       path=""
-       small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/DurationConstraint.gif">
- 	</entry>
-	<entry
-       defineOnly="true"
-       description="Create a Time Constraint as Local Precondition for an Action"
-       id="createLocalPreconditionTimeConstraint5CreationTool"
-       kind="tool"
-       label="Local Precondition Time Constraint"
-       large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/TimeConstraint.gif"
-       path=""
-       small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/TimeConstraint.gif">
- 	</entry>
-	<entry
-       defineOnly="true"
-       description="Create a Constraint as Local Postcondition for an Action"
-       id="createLocalPostconditionConstraint6CreationTool"
-       kind="tool"
-       label="Local Postcondition Constraint"
-       large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Constraint.gif"
-       path=""
-       small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Constraint.gif">
- 	</entry>
-	<entry
-       defineOnly="true"
-       description="Create an Interval Constraint as Local Postcondition for an Action"
-       id="createLocalPostconditionIntervalConstraint8CreationTool"
-       kind="tool"
-       label="Local Postcondition Interval Constraint"
-       large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/IntervalConstraint.gif"
-       path=""
-       small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/IntervalConstraint.gif">
- 	</entry>
-	<entry
-       defineOnly="true"
-       description="Create a Duration Constraint as Local Postcondition for an Action"
-       id="createLocalPostconditionDurationConstraint9CreationTool"
-       kind="tool"
-       label="Local Postcondition Duration Constraint"
-       large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/DurationConstraint.gif"
-       path=""
-       small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/DurationConstraint.gif">
- 	</entry>
-	<entry
-       defineOnly="true"
-       description="Create a Time Constraint as Local Postcondition for an Action"
-       id="createLocalPostconditionTimeConstraint10CreationTool"
-       kind="tool"
-       label="Local Postcondition Time Constraint"
-       large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/TimeConstraint.gif"
-       path=""
-       small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/TimeConstraint.gif">
- 	</entry>
-	<entry
-       defineOnly="true"
-       description="Create an Output Pin"
-       id="createOutputPin1CreationTool"
-       kind="tool"
-       label="Output Pin"
-       large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/OutputPin.gif"
-       path=""
-       small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/OutputPin.gif">
- 	</entry>
-	<entry
-       defineOnly="true"
-       description="Create an Input Pin"
-       id="createInputPin2CreationTool"
-       kind="tool"
-       label="Input Pin"
-       large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/InputPin.gif"
-       path=""
-       small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/InputPin.gif">
- 	</entry>
-	<entry
-       defineOnly="true"
-       description="Create an Action Input Pin"
-       id="createActionInputPin3CreationTool"
-       kind="tool"
-       label="Action Input Pin"
-       large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ActionInputPin.gif"
-       path=""
-       small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ActionInputPin.gif">
- 	</entry>
-	<entry
-       defineOnly="true"
-       description="Create a Value Pin"
-       id="createValuePin4CreationTool"
-       kind="tool"
-       label="Value Pin"
-       large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ValuePin.gif"
-       path=""
-       small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ValuePin.gif">
- 	</entry>
-	<entry
-       defineOnly="true"
-       description="Create an Expansion Region"
-       id="createExpansionRegion1CreationTool"
-       kind="tool"
-       label="Expansion Region"
-       large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ExpansionRegion.gif"
-       path=""
-       small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ExpansionRegion.gif">
- 	</entry>
-	<entry
-       defineOnly="true"
-       description="Create an Expansion Node as Input of an Expansion Region"
-       id="createInputExpansionNode2CreationTool"
-       kind="tool"
-       label="Input Expansion Node"
-       large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ExpansionNode.gif"
-       path=""
-       small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ExpansionNode.gif">
- 	</entry>
-	<entry
-       defineOnly="true"
-       description="Create an Expansion Node as Output of an Expansion Region"
-       id="createOutputExpansionNode3CreationTool"
-       kind="tool"
-       label="Output Expansion Node"
-       large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ExpansionNode.gif"
-       path=""
-       small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ExpansionNode.gif">
- 	</entry>
-	<entry
-       defineOnly="true"
-       description="Create a Broadcast Signal Action"
-       id="createBroadcastSignalAction1CreationTool"
-       kind="tool"
-       label="Broadcast Signal Action"
-       large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/BroadcastSignalAction.gif"
-       path=""
-       small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/BroadcastSignalAction.gif">
- 	</entry>
-	<entry
-       defineOnly="true"
-       description="Create an Call Behavior Action node"
-       id="createCallBehaviorAction2CreationTool"
-       kind="tool"
-       label="Call Behavior Action"
-       large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/CallBehaviorAction.gif"
-       path=""
-       small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/CallBehaviorAction.gif">
- 	</entry>
-	<entry
-       defineOnly="true"
-       description="Create a Call Operation Action node"
-       id="createCallOperationAction3CreationTool"
-       kind="tool"
-       label="Call Operation Action"
-       large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/CallOperationAction.gif"
-       path=""
-       small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/CallOperationAction.gif">
- 	</entry>
-	<entry
-       defineOnly="true"
-       description="Create a Send Object Action node"
-       id="createSendObjectAction4CreationTool"
-       kind="tool"
-       label="Send Object Action"
-       large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/SendObjectAction.gif"
-       path=""
-       small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/SendObjectAction.gif">
- 	</entry>
-	<entry
-       defineOnly="true"
-       description="Create a Send Signal Action node"
-       id="createSendSignalAction5CreationTool"
-       kind="tool"
-       label="Send Signal Action"
-       large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/SendSignalAction.gif"
-       path=""
-       small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/SendSignalAction.gif">
- 	</entry>
-	<entry
-       defineOnly="true"
-       description="Create a Create Object Action"
-       id="createCreateObjectAction1CreationTool"
-       kind="tool"
-       label="Create Object Action"
-       large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/CreateObjectAction.gif"
-       path=""
-       small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/CreateObjectAction.gif">
- 	</entry>
-	<entry
-       defineOnly="true"
-       description="Create a Destroy Object Action"
-       id="createDestroyObjectAction2CreationTool"
-       kind="tool"
-       label="Destroy Object Action"
-       large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/DestroyObjectAction.gif"
-       path=""
-       small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/DestroyObjectAction.gif">
- 	</entry>
-	<entry
-       defineOnly="true"
-       description="Create a ReadSelfAction"
-       id="createReadSelfAction3CreationTool"
-       kind="tool"
-       label="ReadSelfAction"
-       large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ReadSelfAction.gif"
-       path=""
-       small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ReadSelfAction.gif">
- 	</entry>
-	<entry
-       defineOnly="true"
-       description="Create a Structured Activity Node"
-       id="createStructuredActivityNode1CreationTool"
-       kind="tool"
-       label="Structured Activity Node"
-       large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/StructuredActivityNode.gif"
-       path=""
-       small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/StructuredActivityNode.gif">
- 	</entry>
-	<entry
-       defineOnly="true"
-       description="Create a Loop Node"
-       id="createLoopNode2CreationTool"
-       kind="tool"
-       label="Loop Node"
-       large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/LoopNode.gif"
-       path=""
-       small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/LoopNode.gif">
- 	</entry>
-	<entry
-       defineOnly="true"
-       description="Create a Sequence Node"
-       id="createSequenceNode3CreationTool"
-       kind="tool"
-       label="Sequence Node"
-       large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/SequenceNode.gif"
-       path=""
-       small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/SequenceNode.gif">
- 	</entry>
-	<entry
-       defineOnly="true"
-       description="Create a Conditional Node"
-       id="createConditionalNode4CreationTool"
-       kind="tool"
-       label="Conditional Node"
-       large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ConditionalNode.gif"
-       path=""
-       small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ConditionalNode.gif">
- 	</entry>
-	<entry
-       defineOnly="true"
-       description="Create Read Structural Feature Action"
-       id="createReadStructuralFeatureAction1CreationTool"
-       kind="tool"
-       label="Read Structural Feature Action"
-       large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ReadStructuralFeatureAction.gif"
-       path=""
-       small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ReadStructuralFeatureAction.gif">
- 	</entry>
-	<entry
-       defineOnly="true"
-       description="Create Add Structural Feature Value Action"
-       id="createAddStructuralFeatureValueAction2CreationTool"
-       kind="tool"
-       label="Add Structural Feature Value Action"
-       large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/AddStructuralFeatureValueAction.gif"
-       path=""
-       small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/AddStructuralFeatureValueAction.gif">
- 	</entry>
-	<entry
-       defineOnly="true"
-       description="Create Add Structural Feature Value Action"
-       id="createAddStructuralFeatureValueAction3CreationTool"
-       kind="tool"
-       label="Add Structural Feature Value Action"
-       large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/AddStructuralFeatureValueAction.gif"
-       path=""
-       small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/AddStructuralFeatureValueAction.gif">
- 	</entry>
-	<entry
-       defineOnly="true"
-       description="Create Read Structural Feature Action"
-       id="createReadStructuralFeatureAction4CreationTool"
-       kind="tool"
-       label="Read Structural Feature Action"
-       large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ReadStructuralFeatureAction.gif"
-       path=""
-       small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ReadStructuralFeatureAction.gif">
- 	</entry>
-	<entry
-       defineOnly="true"
-       description="Create Add Variable Value Action"
-       id="createAddVariableValueAction1CreationTool"
-       kind="tool"
-       label="Add Variable Value Action"
-       large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/AddVariableValueAction.gif"
-       path=""
-       small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/AddVariableValueAction.gif">
- 	</entry>
-	<entry
-       defineOnly="true"
-       description="Create a Read Variable Action"
-       id="createReadVariableAction2CreationTool"
-       kind="tool"
-       label="Read Variable Action"
-       large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ReadVariableAction.gif"
-       path=""
-       small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ReadVariableAction.gif">
- 	</entry>
-	<entry
-       defineOnly="true"
-       description="Create an Opaque Action node"
-       id="createOpaqueAction1CreationTool"
-       kind="tool"
-       label="Opaque Action"
-       large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/OpaqueAction.gif"
-       path=""
-       small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/OpaqueAction.gif">
- 	</entry>
-	<entry
-       defineOnly="true"
-       description="Create a Value Specification Action node"
-       id="createValueSpecificationAction2CreationTool"
-       kind="tool"
-       label="Value Specification Action"
-       large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ValueSpecificationAction.gif"
-       path=""
-       small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ValueSpecificationAction.gif">
- 	</entry>
-	<entry
-       defineOnly="true"
-       description="Create an Accept Event Action node"
-       id="createAcceptEventAction1CreationTool"
-       kind="tool"
-       label="Accept Event Action"
-       large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/AcceptEventAction.gif"
-       path=""
-       small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/AcceptEventAction.gif">
- 	</entry>
-
-			</contribution>
-		</paletteProvider>	
-			
-	</extension>
+				
+				<entry
+				      defineOnly="true"
+				      description="Create an Accept Event Action node"
+				      id="createAcceptEventAction13CreationTool"
+				      kind="tool"
+				      label="Accept Event Action"
+				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/AcceptEventAction.gif"
+				      path=""
+				      small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/AcceptEventAction.gif">
+					</entry>
+				<entry
+				      defineOnly="true"
+				      description="Create an Activity"
+				      id="createActivity14CreationTool"
+				      kind="tool"
+				      label="Activity"
+				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Activity.gif"
+				      path=""
+				      small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Activity.gif">
+					</entry>
+				<entry
+				      defineOnly="true"
+				      description="Create an Activity Parameter Node"
+				      id="createActivityParameterNode15CreationTool"
+				      kind="tool"
+				      label="Activity Parameter Node"
+				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ActivityParameterNode.gif"
+				      path=""
+				      small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ActivityParameterNode.gif">
+					</entry>
+				<entry
+				      defineOnly="true"
+				      description="Create a Central Buffer Node"
+				      id="createCentralBufferNode16CreationTool"
+				      kind="tool"
+				      label="Central Buffer Node"
+				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/DataStoreNode.gif"
+				      path=""
+				      small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/DataStoreNode.gif">
+					</entry>
+				<entry
+				      defineOnly="true"
+				      description="Create a Data Store Node"
+				      id="createDataStoreNode17CreationTool"
+				      kind="tool"
+				      label="Data Store Node"
+				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/DataStoreNode.gif"
+				      path=""
+				      small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/DataStoreNode.gif">
+					</entry>
+				<entry
+				      defineOnly="true"
+				      description="Create a Comment"
+				      id="createComment18CreationTool"
+				      kind="tool"
+				      label="Comment"
+				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Comment.gif"
+				      path=""
+				      small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Comment.gif">
+					</entry>
+				<entry
+				      defineOnly="true"
+				      description="Create a Control Flow"
+				      id="createControlFlow1CreationTool"
+				      kind="tool"
+				      label="Control Flow"
+				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ControlFlow.gif"
+				      path=""
+				      small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ControlFlow.gif">
+					</entry>
+				<entry
+				      defineOnly="true"
+				      description="Create an Exception Handler"
+				      id="createExceptionHandler2CreationTool"
+				      kind="tool"
+				      label="Exception Handler"
+				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ExceptionHandler.gif"
+				      path=""
+				      small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ExceptionHandler.gif">
+					</entry>
+				<entry
+				      defineOnly="true"
+				      description="Create an Object Flow"
+				      id="createObjectFlow3CreationTool"
+				      kind="tool"
+				      label="Object Flow"
+				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ObjectFlow.gif"
+				      path=""
+				      small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ObjectFlow.gif">
+					</entry>
+				<entry
+				      defineOnly="true"
+				      description="Create of a link for comment"
+				      id="createLink4CreationTool"
+				      kind="tool"
+				      label="Link"
+				      large_icon="icons/obj16/Link.gif"
+				      path=""
+				      small_icon="icons/obj16/Link.gif">
+					</entry>
+				<entry
+				      defineOnly="true"
+				      description="Create an Activity Partition"
+				      id="createActivityPartition1CreationTool"
+				      kind="tool"
+				      label="Activity Partition"
+				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ActivityPartition.gif"
+				      path=""
+				      small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ActivityPartition.gif">
+					</entry>
+				<entry
+				      defineOnly="true"
+				      description="Create an Interruptible Activity Region"
+				      id="createInterruptibleActivityRegion2CreationTool"
+				      kind="tool"
+				      label="Interruptible Activity Region"
+				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/InterruptibleActivityRegion.gif"
+				      path=""
+				      small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/InterruptibleActivityRegion.gif">
+					</entry>
+				<entry
+				      defineOnly="true"
+				      description="Create an Initial node"
+				      id="createInitialnode1CreationTool"
+				      kind="tool"
+				      label="Initial node"
+				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/InitialNode.gif"
+				      path=""
+				      small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/InitialNode.gif">
+					</entry>
+				<entry
+				      defineOnly="true"
+				      description="Create an Activity final node"
+				      id="createActivityfinal2CreationTool"
+				      kind="tool"
+				      label="Activity final"
+				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ActivityFinalNode.gif"
+				      path=""
+				      small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ActivityFinalNode.gif">
+					</entry>
+				<entry
+				      defineOnly="true"
+				      description="Create a Flow final node"
+				      id="createFlowfinal3CreationTool"
+				      kind="tool"
+				      label="Flow final"
+				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/FlowFinalNode.gif"
+				      path=""
+				      small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/FlowFinalNode.gif">
+					</entry>
+				<entry
+				      defineOnly="true"
+				      description="Create a Decision node"
+				      id="createDecisionnode4CreationTool"
+				      kind="tool"
+				      label="Decision node"
+				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/DecisionNode.gif"
+				      path=""
+				      small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/DecisionNode.gif">
+					</entry>
+				<entry
+				      defineOnly="true"
+				      description="Create a Merge node"
+				      id="createMergenode5CreationTool"
+				      kind="tool"
+				      label="Merge node"
+				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/MergeNode.gif"
+				      path=""
+				      small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/MergeNode.gif">
+					</entry>
+				<entry
+				      defineOnly="true"
+				      description="Create a Merge node"
+				      id="createJoinnode6CreationTool"
+				      kind="tool"
+				      label="Join node"
+				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/JoinNode.gif"
+				      path=""
+				      small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/JoinNode.gif">
+					</entry>
+				<entry
+				      defineOnly="true"
+				      description="Create a Fork node"
+				      id="createForknode7CreationTool"
+				      kind="tool"
+				      label="Fork node"
+				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ForkNode.gif"
+				      path=""
+				      small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ForkNode.gif">
+					</entry>
+				<entry
+				      defineOnly="true"
+				      description="Create a Constraint as Local Precondition for an Action"
+				      id="createLocalPreconditionConstraint1CreationTool"
+				      kind="tool"
+				      label="Local Precondition Constraint"
+				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Constraint.gif"
+				      path=""
+				      small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Constraint.gif">
+					</entry>
+				<entry
+				      defineOnly="true"
+				      description="Create an Interval Constraint as Local Precondition for an Action"
+				      id="createLocalPreconditionIntervalConstraint3CreationTool"
+				      kind="tool"
+				      label="Local Precondition Interval Constraint"
+				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/IntervalConstraint.gif"
+				      path=""
+				      small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/IntervalConstraint.gif">
+					</entry>
+				<entry
+				      defineOnly="true"
+				      description="Create a Duration Constraint as Local Precondition for an Action"
+				      id="createLocalPreconditionDurationConstraint4CreationTool"
+				      kind="tool"
+				      label="Local Precondition Duration Constraint"
+				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/DurationConstraint.gif"
+				      path=""
+				      small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/DurationConstraint.gif">
+					</entry>
+				<entry
+				      defineOnly="true"
+				      description="Create a Time Constraint as Local Precondition for an Action"
+				      id="createLocalPreconditionTimeConstraint5CreationTool"
+				      kind="tool"
+				      label="Local Precondition Time Constraint"
+				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/TimeConstraint.gif"
+				      path=""
+				      small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/TimeConstraint.gif">
+					</entry>
+				<entry
+				      defineOnly="true"
+				      description="Create a Constraint as Local Postcondition for an Action"
+				      id="createLocalPostconditionConstraint6CreationTool"
+				      kind="tool"
+				      label="Local Postcondition Constraint"
+				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Constraint.gif"
+				      path=""
+				      small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Constraint.gif">
+					</entry>
+				<entry
+				      defineOnly="true"
+				      description="Create an Interval Constraint as Local Postcondition for an Action"
+				      id="createLocalPostconditionIntervalConstraint8CreationTool"
+				      kind="tool"
+				      label="Local Postcondition Interval Constraint"
+				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/IntervalConstraint.gif"
+				      path=""
+				      small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/IntervalConstraint.gif">
+					</entry>
+				<entry
+				      defineOnly="true"
+				      description="Create a Duration Constraint as Local Postcondition for an Action"
+				      id="createLocalPostconditionDurationConstraint9CreationTool"
+				      kind="tool"
+				      label="Local Postcondition Duration Constraint"
+				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/DurationConstraint.gif"
+				      path=""
+				      small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/DurationConstraint.gif">
+					</entry>
+				<entry
+				      defineOnly="true"
+				      description="Create a Time Constraint as Local Postcondition for an Action"
+				      id="createLocalPostconditionTimeConstraint10CreationTool"
+				      kind="tool"
+				      label="Local Postcondition Time Constraint"
+				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/TimeConstraint.gif"
+				      path=""
+				      small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/TimeConstraint.gif">
+					</entry>
+				<entry
+				      defineOnly="true"
+				      description="Create an Output Pin"
+				      id="createOutputPin1CreationTool"
+				      kind="tool"
+				      label="Output Pin"
+				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/OutputPin.gif"
+				      path=""
+				      small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/OutputPin.gif">
+					</entry>
+				<entry
+				      defineOnly="true"
+				      description="Create an Input Pin"
+				      id="createInputPin2CreationTool"
+				      kind="tool"
+				      label="Input Pin"
+				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/InputPin.gif"
+				      path=""
+				      small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/InputPin.gif">
+					</entry>
+				<entry
+				      defineOnly="true"
+				      description="Create an Action Input Pin"
+				      id="createActionInputPin3CreationTool"
+				      kind="tool"
+				      label="Action Input Pin"
+				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ActionInputPin.gif"
+				      path=""
+				      small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ActionInputPin.gif">
+					</entry>
+				<entry
+				      defineOnly="true"
+				      description="Create a Value Pin"
+				      id="createValuePin4CreationTool"
+				      kind="tool"
+				      label="Value Pin"
+				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ValuePin.gif"
+				      path=""
+				      small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ValuePin.gif">
+					</entry>
+				<entry
+				      defineOnly="true"
+				      description="Create an Expansion Region"
+				      id="createExpansionRegion1CreationTool"
+				      kind="tool"
+				      label="Expansion Region"
+				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ExpansionRegion.gif"
+				      path=""
+				      small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ExpansionRegion.gif">
+					</entry>
+				<entry
+				      defineOnly="true"
+				      description="Create an Expansion Node as Input of an Expansion Region"
+				      id="createInputExpansionNode2CreationTool"
+				      kind="tool"
+				      label="Input Expansion Node"
+				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ExpansionNode.gif"
+				      path=""
+				      small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ExpansionNode.gif">
+					</entry>
+				<entry
+				      defineOnly="true"
+				      description="Create an Expansion Node as Output of an Expansion Region"
+				      id="createOutputExpansionNode3CreationTool"
+				      kind="tool"
+				      label="Output Expansion Node"
+				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ExpansionNode.gif"
+				      path=""
+				      small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ExpansionNode.gif">
+					</entry>
+				<entry
+				      defineOnly="true"
+				      description="Create a Broadcast Signal Action"
+				      id="createBroadcastSignalAction1CreationTool"
+				      kind="tool"
+				      label="Broadcast Signal Action"
+				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/BroadcastSignalAction.gif"
+				      path=""
+				      small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/BroadcastSignalAction.gif">
+					</entry>
+				<entry
+				      defineOnly="true"
+				      description="Create an Call Behavior Action node"
+				      id="createCallBehaviorAction2CreationTool"
+				      kind="tool"
+				      label="Call Behavior Action"
+				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/CallBehaviorAction.gif"
+				      path=""
+				      small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/CallBehaviorAction.gif">
+					</entry>
+				<entry
+				      defineOnly="true"
+				      description="Create a Call Operation Action node"
+				      id="createCallOperationAction3CreationTool"
+				      kind="tool"
+				      label="Call Operation Action"
+				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/CallOperationAction.gif"
+				      path=""
+				      small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/CallOperationAction.gif">
+					</entry>
+				<entry
+				      defineOnly="true"
+				      description="Create a Send Object Action node"
+				      id="createSendObjectAction4CreationTool"
+				      kind="tool"
+				      label="Send Object Action"
+				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/SendObjectAction.gif"
+				      path=""
+				      small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/SendObjectAction.gif">
+					</entry>
+				<entry
+				      defineOnly="true"
+				      description="Create a Send Signal Action node"
+				      id="createSendSignalAction5CreationTool"
+				      kind="tool"
+				      label="Send Signal Action"
+				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/SendSignalAction.gif"
+				      path=""
+				      small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/SendSignalAction.gif">
+					</entry>
+				<entry
+				      defineOnly="true"
+				      description="Create a Create Object Action"
+				      id="createCreateObjectAction1CreationTool"
+				      kind="tool"
+				      label="Create Object Action"
+				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/CreateObjectAction.gif"
+				      path=""
+				      small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/CreateObjectAction.gif">
+					</entry>
+				<entry
+				      defineOnly="true"
+				      description="Create a Destroy Object Action"
+				      id="createDestroyObjectAction2CreationTool"
+				      kind="tool"
+				      label="Destroy Object Action"
+				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/DestroyObjectAction.gif"
+				      path=""
+				      small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/DestroyObjectAction.gif">
+					</entry>
+				<entry
+				      defineOnly="true"
+				      description="Create a ReadSelfAction"
+				      id="createReadSelfAction3CreationTool"
+				      kind="tool"
+				      label="ReadSelfAction"
+				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ReadSelfAction.gif"
+				      path=""
+				      small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ReadSelfAction.gif">
+					</entry>
+				<entry
+				      defineOnly="true"
+				      description="Create a Structured Activity Node"
+				      id="createStructuredActivityNode1CreationTool"
+				      kind="tool"
+				      label="Structured Activity Node"
+				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/StructuredActivityNode.gif"
+				      path=""
+				      small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/StructuredActivityNode.gif">
+					</entry>
+				<entry
+				      defineOnly="true"
+				      description="Create a Loop Node"
+				      id="createLoopNode2CreationTool"
+				      kind="tool"
+				      label="Loop Node"
+				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/LoopNode.gif"
+				      path=""
+				      small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/LoopNode.gif">
+					</entry>
+				<entry
+				      defineOnly="true"
+				      description="Create a Sequence Node"
+				      id="createSequenceNode3CreationTool"
+				      kind="tool"
+				      label="Sequence Node"
+				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/SequenceNode.gif"
+				      path=""
+				      small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/SequenceNode.gif">
+					</entry>
+				<entry
+				      defineOnly="true"
+				      description="Create a Conditional Node"
+				      id="createConditionalNode4CreationTool"
+				      kind="tool"
+				      label="Conditional Node"
+				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ConditionalNode.gif"
+				      path=""
+				      small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ConditionalNode.gif">
+					</entry>
+				<entry
+				      defineOnly="true"
+				      description="Create Read Structural Feature Action"
+				      id="createReadStructuralFeatureAction1CreationTool"
+				      kind="tool"
+				      label="Read Structural Feature Action"
+				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ReadStructuralFeatureAction.gif"
+				      path=""
+				      small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ReadStructuralFeatureAction.gif">
+					</entry>
+				<entry
+				      defineOnly="true"
+				      description="Create Add Structural Feature Value Action"
+				      id="createAddStructuralFeatureValueAction2CreationTool"
+				      kind="tool"
+				      label="Add Structural Feature Value Action"
+				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/AddStructuralFeatureValueAction.gif"
+				      path=""
+				      small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/AddStructuralFeatureValueAction.gif">
+					</entry>
+				<entry
+				      defineOnly="true"
+				      description="Create Add Structural Feature Value Action"
+				      id="createAddStructuralFeatureValueAction3CreationTool"
+				      kind="tool"
+				      label="Add Structural Feature Value Action"
+				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/AddStructuralFeatureValueAction.gif"
+				      path=""
+				      small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/AddStructuralFeatureValueAction.gif">
+					</entry>
+				<entry
+				      defineOnly="true"
+				      description="Create Read Structural Feature Action"
+				      id="createReadStructuralFeatureAction4CreationTool"
+				      kind="tool"
+				      label="Read Structural Feature Action"
+				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ReadStructuralFeatureAction.gif"
+				      path=""
+				      small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ReadStructuralFeatureAction.gif">
+					</entry>
+				<entry
+				      defineOnly="true"
+				      description="Create Add Variable Value Action"
+				      id="createAddVariableValueAction1CreationTool"
+				      kind="tool"
+				      label="Add Variable Value Action"
+				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/AddVariableValueAction.gif"
+				      path=""
+				      small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/AddVariableValueAction.gif">
+					</entry>
+				<entry
+				      defineOnly="true"
+				      description="Create a Read Variable Action"
+				      id="createReadVariableAction2CreationTool"
+				      kind="tool"
+				      label="Read Variable Action"
+				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ReadVariableAction.gif"
+				      path=""
+				      small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ReadVariableAction.gif">
+					</entry>
+				<entry
+				      defineOnly="true"
+				      description="Create an Opaque Action node"
+				      id="createOpaqueAction1CreationTool"
+				      kind="tool"
+				      label="Opaque Action"
+				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/OpaqueAction.gif"
+				      path=""
+				      small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/OpaqueAction.gif">
+					</entry>
+				<entry
+				      defineOnly="true"
+				      description="Create a Value Specification Action node"
+				      id="createValueSpecificationAction2CreationTool"
+				      kind="tool"
+				      label="Value Specification Action"
+				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ValueSpecificationAction.gif"
+				      path=""
+				      small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ValueSpecificationAction.gif">
+					</entry>
+				
+				</contribution>
+			</paletteProvider>	
+				
+		</extension>
 
 
 <extension
@@ -3442,434 +3322,416 @@ self.structuralFeature.oclAsType(Property).opposite.type = self.object.type]]>
    <!-- optionally, specify keybindings -->
    <!--specific palette-->
 <extension
-		id="Papyrus activity editor Plugin.standard"
-		name="Papyrus activity editor Plugin Standard Palette"
-		point="org.eclipse.gmf.runtime.diagram.ui.paletteProviders"> 
-		
-		<?gmfgen generated="true"?>	
-		<paletteProvider class="org.eclipse.gmf.runtime.diagram.ui.providers.DefaultPaletteProvider">
-			<Priority name="Low"/>
-      		<contribution
-            	factoryClass="org.eclipse.papyrus.uml.diagram.activity.part.UMLPaletteFactory">
-     			<predefinedEntry id="standardGroup/noteStack/noteTool" remove="true"/> 
-				<predefinedEntry id="standardGroup/noteStack/textTool" remove="true"/> 
-				<predefinedEntry id="standardGroup/noteStack/noteattachmentTool" remove="true"/>
-    <entry
-          id="createNodes3Group"
-          kind="drawer"
-          label="Nodes"
-          large_icon="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
-          path="/"
-          small_icon="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif">
-       <expand
-             force="true">
-       </expand>
-    </entry>
-    <predefinedEntry
-          id="createAcceptEventAction1CreationTool"
-          path="/createNodes3Group">
-    </predefinedEntry>
-    <predefinedEntry
-          id="createActivity1CreationTool"
-          path="/createNodes3Group">
-    </predefinedEntry>
-    <predefinedEntry
-          id="createActivityParameterNode2CreationTool"
-          path="/createNodes3Group">
-    </predefinedEntry>
-    <predefinedEntry
-          id="createCentralBufferNode3CreationTool"
-          path="/createNodes3Group">
-    </predefinedEntry>
-    <predefinedEntry
-          id="createDataStoreNode4CreationTool"
-          path="/createNodes3Group">
-    </predefinedEntry>
-    <predefinedEntry
-          id="createComment5CreationTool"
-          path="/createNodes3Group">
-    </predefinedEntry>
-					<entry
-       description="ActivityGroup"
-       id="createActivityGroupGroup"
-       kind="stack"
-       label="ActivityGroup"
-       large_icon="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
-       path="/createNodes3Group"
-       small_icon="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif">
-       <expand
-              force="true">
-       </expand>
- 	</entry>
- 	 
- 	 	<predefinedEntry
-          id="createActivityPartition1CreationTool"
-          path="/createNodes3Group/createActivityGroupGroup">
-    </predefinedEntry>
- 	<predefinedEntry
-          id="createInterruptibleActivityRegion2CreationTool"
-          path="/createNodes3Group/createActivityGroupGroup">
-    </predefinedEntry>
-
-	<entry
-       description="ControlNodes"
-       id="createControlNodesGroup"
-       kind="stack"
-       label="ControlNodes"
-       large_icon="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
-       path="/createNodes3Group"
-       small_icon="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif">
-       <expand
-              force="true">
-       </expand>
- 	</entry>
- 	 
- 	 	<predefinedEntry
-          id="createInitialnode1CreationTool"
-          path="/createNodes3Group/createControlNodesGroup">
-    </predefinedEntry>
- 	<predefinedEntry
-          id="createActivityfinal2CreationTool"
-          path="/createNodes3Group/createControlNodesGroup">
-    </predefinedEntry>
- 	<predefinedEntry
-          id="createFlowfinal3CreationTool"
-          path="/createNodes3Group/createControlNodesGroup">
-    </predefinedEntry>
- 	<predefinedEntry
-          id="createDecisionnode4CreationTool"
-          path="/createNodes3Group/createControlNodesGroup">
-    </predefinedEntry>
- 	<predefinedEntry
-          id="createMergenode5CreationTool"
-          path="/createNodes3Group/createControlNodesGroup">
-    </predefinedEntry>
- 	<predefinedEntry
-          id="createJoinnode6CreationTool"
-          path="/createNodes3Group/createControlNodesGroup">
-    </predefinedEntry>
- 	<predefinedEntry
-          id="createForknode7CreationTool"
-          path="/createNodes3Group/createControlNodesGroup">
-    </predefinedEntry>
-
- 	 
-
-	<entry
-       description=""
-       id="createEdges4Group"
-       kind="drawer"
-       label="Edges"
-       large_icon="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
-       path="/"
-       small_icon="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif">
-       <expand
-              force="true">
-       </expand>
- 	</entry>
- 	 
- 	 	<predefinedEntry
-          id="createControlFlow1CreationTool"
-          path="/createEdges4Group">
-    </predefinedEntry>
- 	<predefinedEntry
-          id="createExceptionHandler2CreationTool"
-          path="/createEdges4Group">
-    </predefinedEntry>
- 	<predefinedEntry
-          id="createObjectFlow3CreationTool"
-          path="/createEdges4Group">
-    </predefinedEntry>
- 	<predefinedEntry
-          id="createLink4CreationTool"
-          path="/createEdges4Group">
-    </predefinedEntry>
-
-	<entry
-       description="Constraints"
-       id="createConstraintsGroup"
-       kind="stack"
-       label="Constraints"
-       large_icon="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
-       path="/createNodes3Group"
-       small_icon="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif">
-       <expand
-              force="false">
-       </expand>
- 	</entry>
- 	<entry
-       description="Pins"
-       id="createPinsGroup"
-       kind="stack"
-       label="Pins"
-       large_icon="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
-       path="/createNodes3Group"
-       small_icon="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif">
-       <expand
-              force="true">
-       </expand>
- 	</entry>
- 	 
- 	 	<predefinedEntry
-          id="createOutputPin1CreationTool"
-          path="/createNodes3Group/createPinsGroup">
-    </predefinedEntry>
- 	<predefinedEntry
-          id="createInputPin2CreationTool"
-          path="/createNodes3Group/createPinsGroup">
-    </predefinedEntry>
- 	<predefinedEntry
-          id="createActionInputPin3CreationTool"
-          path="/createNodes3Group/createPinsGroup">
-    </predefinedEntry>
- 	<predefinedEntry
-          id="createValuePin4CreationTool"
-          path="/createNodes3Group/createPinsGroup">
-    </predefinedEntry>
-
-	<entry
-       description="ExpansionRegions"
-       id="createExpansionRegionsGroup"
-       kind="stack"
-       label="ExpansionRegions"
-       large_icon="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
-       path="/createNodes3Group"
-       small_icon="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif">
-       <expand
-              force="true">
-       </expand>
- 	</entry>
- 	 
- 	 	<predefinedEntry
-          id="createExpansionRegion1CreationTool"
-          path="/createNodes3Group/createExpansionRegionsGroup">
-    </predefinedEntry>
- 	<predefinedEntry
-          id="createInputExpansionNode2CreationTool"
-          path="/createNodes3Group/createExpansionRegionsGroup">
-    </predefinedEntry>
- 	<predefinedEntry
-          id="createOutputExpansionNode3CreationTool"
-          path="/createNodes3Group/createExpansionRegionsGroup">
-    </predefinedEntry>
-
-	<entry
-       description="InvocationActions"
-       id="InvocationActionsGroup"
-       kind="stack"
-       label="InvocationActions"
-       large_icon="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
-       path="/createNodes3Group"
-       small_icon="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif">
-       <expand
-              force="true">
-       </expand>
- 	</entry>
- 	 
- 	 	<predefinedEntry
-          id="createBroadcastSignalAction1CreationTool"
-          path="/createNodes3Group/InvocationActionsGroup">
-    </predefinedEntry>
- 	<predefinedEntry
-          id="createCallBehaviorAction2CreationTool"
-          path="/createNodes3Group/InvocationActionsGroup">
-    </predefinedEntry>
- 	<predefinedEntry
-          id="createCallOperationAction3CreationTool"
-          path="/createNodes3Group/InvocationActionsGroup">
-    </predefinedEntry>
- 	<predefinedEntry
-          id="createSendObjectAction4CreationTool"
-          path="/createNodes3Group/InvocationActionsGroup">
-    </predefinedEntry>
- 	<predefinedEntry
-          id="createSendSignalAction5CreationTool"
-          path="/createNodes3Group/InvocationActionsGroup">
-    </predefinedEntry>
-
-	<entry
-       description="ObjectActions"
-       id="createObjectActionsGroup"
-       kind="stack"
-       label="ObjectActions"
-       large_icon="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
-       path="/createNodes3Group"
-       small_icon="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif">
-       <expand
-              force="true">
-       </expand>
- 	</entry>
- 	 
- 	 	<predefinedEntry
-          id="createCreateObjectAction1CreationTool"
-          path="/createNodes3Group/createObjectActionsGroup">
-    </predefinedEntry>
- 	<predefinedEntry
-          id="createDestroyObjectAction2CreationTool"
-          path="/createNodes3Group/createObjectActionsGroup">
-    </predefinedEntry>
- 	<predefinedEntry
-          id="createReadSelfAction3CreationTool"
-          path="/createNodes3Group/createObjectActionsGroup">
-    </predefinedEntry>
-
-	<entry
-       description="StructuredActions"
-       id="createStructuredActionsGroup"
-       kind="stack"
-       label="StructuredActions"
-       large_icon="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
-       path="/createNodes3Group"
-       small_icon="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif">
-       <expand
-              force="true">
-       </expand>
- 	</entry>
- 	 
- 	 	<predefinedEntry
-          id="createStructuredActivityNode1CreationTool"
-          path="/createNodes3Group/createStructuredActionsGroup">
-    </predefinedEntry>
- 	<predefinedEntry
-          id="createLoopNode2CreationTool"
-          path="/createNodes3Group/createStructuredActionsGroup">
-    </predefinedEntry>
- 	<predefinedEntry
-          id="createSequenceNode3CreationTool"
-          path="/createNodes3Group/createStructuredActionsGroup">
-    </predefinedEntry>
- 	<predefinedEntry
-          id="createConditionalNode4CreationTool"
-          path="/createNodes3Group/createStructuredActionsGroup">
-    </predefinedEntry>
-
-	<entry
-       description="StructuralFeatureActions"
-       id="createStructuralFeatureActionsGroup"
-       kind="stack"
-       label="StructuralFeatureActions"
-       large_icon="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
-       path="/createNodes3Group"
-       small_icon="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif">
-       <expand
-              force="true">
-       </expand>
- 	</entry>
- 	 
- 	 	<predefinedEntry
-          id="createReadStructuralFeatureAction1CreationTool"
-          path="/createNodes3Group/createStructuralFeatureActionsGroup">
-    </predefinedEntry>
- 	<predefinedEntry
-          id="createAddStructuralFeatureValueAction2CreationTool"
-          path="/createNodes3Group/createStructuralFeatureActionsGroup">
-    </predefinedEntry>
- 	<predefinedEntry
-          id="createAddStructuralFeatureValueAction3CreationTool"
-          path="/createNodes3Group/createStructuralFeatureActionsGroup">
-    </predefinedEntry>
- 	<predefinedEntry
-          id="createReadStructuralFeatureAction4CreationTool"
-          path="/createNodes3Group/createStructuralFeatureActionsGroup">
-    </predefinedEntry>
-
-	<entry
-       description="VariableActions"
-       id="createVariableActionsGroup"
-       kind="stack"
-       label="VariableActions"
-       large_icon="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
-       path="/createNodes3Group"
-       small_icon="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif">
-       <expand
-              force="true">
-       </expand>
- 	</entry>
- 	 
- 	 	<predefinedEntry
-          id="createAddVariableValueAction1CreationTool"
-          path="/createNodes3Group/createVariableActionsGroup">
-    </predefinedEntry>
- 	<predefinedEntry
-          id="createReadVariableAction2CreationTool"
-          path="/createNodes3Group/createVariableActionsGroup">
-    </predefinedEntry>
-
-	<entry
-       description="MiscellaneousActions"
-       id="createOtherActionsGroup"
-       kind="stack"
-       label="MiscellaneousActions"
-       large_icon="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
-       path="/createNodes3Group"
-       small_icon="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif">
-       <expand
-              force="true">
-       </expand>
- 	</entry>
- 	 
- 	 	<predefinedEntry
-          id="createOpaqueAction1CreationTool"
-          path="/createNodes3Group/createOtherActionsGroup">
-    </predefinedEntry>
- 	<predefinedEntry
-          id="createValueSpecificationAction2CreationTool"
-          path="/createNodes3Group/createOtherActionsGroup">
-    </predefinedEntry>
- <predefinedEntry
-       id="createConstraint6CreationTool"
-       path="/createNodes3Group/createConstraintsGroup">
- </predefinedEntry>
- 	 
- 	 	<predefinedEntry
-          id="createLocalPreconditionConstraint1CreationTool"
-          path="/createNodes3Group/createConstraintsGroup">
-    </predefinedEntry>
- 	<predefinedEntry
-          id="createLocalPreconditionInteractionConstraint2CreationTool"
-          path="/createNodes3Group/createConstraintsGroup">
-    </predefinedEntry>
- 	<predefinedEntry
-          id="createLocalPreconditionIntervalConstraint3CreationTool"
-          path="/createNodes3Group/createConstraintsGroup">
-    </predefinedEntry>
- 	<predefinedEntry
-          id="createLocalPreconditionDurationConstraint4CreationTool"
-          path="/createNodes3Group/createConstraintsGroup">
-    </predefinedEntry>
- 	<predefinedEntry
-          id="createLocalPreconditionTimeConstraint5CreationTool"
-          path="/createNodes3Group/createConstraintsGroup">
-    </predefinedEntry>
- 	<predefinedEntry
-          id="createLocalPostconditionConstraint6CreationTool"
-          path="/createNodes3Group/createConstraintsGroup">
-    </predefinedEntry>
- 	<predefinedEntry
-          id="createLocalPostconditionInteractionConstraint7CreationTool"
-          path="/createNodes3Group/createConstraintsGroup">
-    </predefinedEntry>
- 	<predefinedEntry
-          id="createLocalPostconditionIntervalConstraint8CreationTool"
-          path="/createNodes3Group/createConstraintsGroup">
-    </predefinedEntry>
- 	<predefinedEntry
-          id="createLocalPostconditionDurationConstraint9CreationTool"
-          path="/createNodes3Group/createConstraintsGroup">
-    </predefinedEntry>
- 	<predefinedEntry
-          id="createLocalPostconditionTimeConstraint10CreationTool"
-          path="/createNodes3Group/createConstraintsGroup">
-    </predefinedEntry>
-
+	id="Papyrus activity editor Plugin.standard"
+	name="Papyrus activity editor Plugin Standard Palette"
+	point="org.eclipse.gmf.runtime.diagram.ui.paletteProviders"> 
 	
-
-
-			</contribution>
-			<editor id="org.eclipse.papyrus.uml.diagram.activity"/>
-		</paletteProvider>	
-			
-	</extension>
+	<?gmfgen generated="true"?>	
+	<paletteProvider class="org.eclipse.gmf.runtime.diagram.ui.providers.DefaultPaletteProvider">
+		<Priority name="Low"/>
+		   		<contribution
+		   		    	factoryClass="org.eclipse.papyrus.uml.diagram.activity.part.UMLPaletteFactory">
+		   		<predefinedEntry id="standardGroup/noteStack/noteTool" remove="true"/> 
+		<predefinedEntry id="standardGroup/noteStack/textTool" remove="true"/> 
+		<predefinedEntry id="standardGroup/noteStack/noteattachmentTool" remove="true"/>
+		
+		<entry
+		      description=""
+		      id="createNodes1Group"
+		      kind="drawer"
+		      label="Nodes"
+		      large_icon="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
+		      path="/"
+		      small_icon="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif">
+		   <expand
+		         force="true">
+		   </expand>
+		</entry>
+		<predefinedEntry
+		        id="createAcceptEventAction13CreationTool"
+				path="/createNodes1Group">
+		  </predefinedEntry>
+		<predefinedEntry
+		        id="createActivity14CreationTool"
+				path="/createNodes1Group">
+		  </predefinedEntry>
+		<predefinedEntry
+		        id="createActivityParameterNode15CreationTool"
+				path="/createNodes1Group">
+		  </predefinedEntry>
+		<predefinedEntry
+		        id="createCentralBufferNode16CreationTool"
+				path="/createNodes1Group">
+		  </predefinedEntry>
+		<predefinedEntry
+		        id="createDataStoreNode17CreationTool"
+				path="/createNodes1Group">
+		  </predefinedEntry>
+		<predefinedEntry
+		        id="createComment18CreationTool"
+				path="/createNodes1Group">
+		  </predefinedEntry>
+		<entry
+		      description="ActivityGroup"
+		      id="createActivityGroupGroup"
+		      kind="stack"
+		      label="ActivityGroup"
+		      large_icon="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
+		      path="/createNodes1Group"
+		      small_icon="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif">
+		   <expand
+		         force="true">
+		   </expand>
+		</entry>
+		<predefinedEntry
+		        id="createActivityPartition1CreationTool"
+				path="/createNodes1Group/createActivityGroupGroup">
+		  </predefinedEntry>
+		<predefinedEntry
+		        id="createInterruptibleActivityRegion2CreationTool"
+				path="/createNodes1Group/createActivityGroupGroup">
+		  </predefinedEntry>
+		<entry
+		      description="ControlNodes"
+		      id="createControlNodesGroup"
+		      kind="stack"
+		      label="ControlNodes"
+		      large_icon="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
+		      path="/createNodes1Group"
+		      small_icon="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif">
+		   <expand
+		         force="true">
+		   </expand>
+		</entry>
+		<predefinedEntry
+		        id="createInitialnode1CreationTool"
+				path="/createNodes1Group/createControlNodesGroup">
+		  </predefinedEntry>
+		<predefinedEntry
+		        id="createActivityfinal2CreationTool"
+				path="/createNodes1Group/createControlNodesGroup">
+		  </predefinedEntry>
+		<predefinedEntry
+		        id="createFlowfinal3CreationTool"
+				path="/createNodes1Group/createControlNodesGroup">
+		  </predefinedEntry>
+		<predefinedEntry
+		        id="createDecisionnode4CreationTool"
+				path="/createNodes1Group/createControlNodesGroup">
+		  </predefinedEntry>
+		<predefinedEntry
+		        id="createMergenode5CreationTool"
+				path="/createNodes1Group/createControlNodesGroup">
+		  </predefinedEntry>
+		<predefinedEntry
+		        id="createJoinnode6CreationTool"
+				path="/createNodes1Group/createControlNodesGroup">
+		  </predefinedEntry>
+		<predefinedEntry
+		        id="createForknode7CreationTool"
+				path="/createNodes1Group/createControlNodesGroup">
+		  </predefinedEntry>
+		<entry
+		      description="Constraints"
+		      id="createConstraintsGroup"
+		      kind="stack"
+		      label="Constraints"
+		      large_icon="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
+		      path="/createNodes1Group"
+		      small_icon="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif">
+		   <expand
+		         force="true">
+		   </expand>
+		</entry>
+		<predefinedEntry
+		        id="createLocalPreconditionConstraint1CreationTool"
+				path="/createNodes1Group/createConstraintsGroup">
+		  </predefinedEntry>
+		<predefinedEntry
+		        id="createLocalPreconditionInteractionConstraint2CreationTool"
+				path="/createNodes1Group/createConstraintsGroup">
+		  </predefinedEntry>
+		<predefinedEntry
+		        id="createLocalPreconditionIntervalConstraint3CreationTool"
+				path="/createNodes1Group/createConstraintsGroup">
+		  </predefinedEntry>
+		<predefinedEntry
+		        id="createLocalPreconditionDurationConstraint4CreationTool"
+				path="/createNodes1Group/createConstraintsGroup">
+		  </predefinedEntry>
+		<predefinedEntry
+		        id="createLocalPreconditionTimeConstraint5CreationTool"
+				path="/createNodes1Group/createConstraintsGroup">
+		  </predefinedEntry>
+		<predefinedEntry
+		        id="createLocalPostconditionConstraint6CreationTool"
+				path="/createNodes1Group/createConstraintsGroup">
+		  </predefinedEntry>
+		<predefinedEntry
+		        id="createLocalPostconditionInteractionConstraint7CreationTool"
+				path="/createNodes1Group/createConstraintsGroup">
+		  </predefinedEntry>
+		<predefinedEntry
+		        id="createLocalPostconditionIntervalConstraint8CreationTool"
+				path="/createNodes1Group/createConstraintsGroup">
+		  </predefinedEntry>
+		<predefinedEntry
+		        id="createLocalPostconditionDurationConstraint9CreationTool"
+				path="/createNodes1Group/createConstraintsGroup">
+		  </predefinedEntry>
+		<predefinedEntry
+		        id="createLocalPostconditionTimeConstraint10CreationTool"
+				path="/createNodes1Group/createConstraintsGroup">
+		  </predefinedEntry>
+		<entry
+		      description="Pins"
+		      id="createPinsGroup"
+		      kind="stack"
+		      label="Pins"
+		      large_icon="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
+		      path="/createNodes1Group"
+		      small_icon="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif">
+		   <expand
+		         force="true">
+		   </expand>
+		</entry>
+		<predefinedEntry
+		        id="createOutputPin1CreationTool"
+				path="/createNodes1Group/createPinsGroup">
+		  </predefinedEntry>
+		<predefinedEntry
+		        id="createInputPin2CreationTool"
+				path="/createNodes1Group/createPinsGroup">
+		  </predefinedEntry>
+		<predefinedEntry
+		        id="createActionInputPin3CreationTool"
+				path="/createNodes1Group/createPinsGroup">
+		  </predefinedEntry>
+		<predefinedEntry
+		        id="createValuePin4CreationTool"
+				path="/createNodes1Group/createPinsGroup">
+		  </predefinedEntry>
+		<entry
+		      description="ExpansionRegions"
+		      id="createExpansionRegionsGroup"
+		      kind="stack"
+		      label="ExpansionRegions"
+		      large_icon="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
+		      path="/createNodes1Group"
+		      small_icon="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif">
+		   <expand
+		         force="true">
+		   </expand>
+		</entry>
+		<predefinedEntry
+		        id="createExpansionRegion1CreationTool"
+				path="/createNodes1Group/createExpansionRegionsGroup">
+		  </predefinedEntry>
+		<predefinedEntry
+		        id="createInputExpansionNode2CreationTool"
+				path="/createNodes1Group/createExpansionRegionsGroup">
+		  </predefinedEntry>
+		<predefinedEntry
+		        id="createOutputExpansionNode3CreationTool"
+				path="/createNodes1Group/createExpansionRegionsGroup">
+		  </predefinedEntry>
+		<entry
+		      description="InvocationActions"
+		      id="InvocationActionsGroup"
+		      kind="stack"
+		      label="InvocationActions"
+		      large_icon="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
+		      path="/createNodes1Group"
+		      small_icon="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif">
+		   <expand
+		         force="true">
+		   </expand>
+		</entry>
+		<predefinedEntry
+		        id="createBroadcastSignalAction1CreationTool"
+				path="/createNodes1Group/InvocationActionsGroup">
+		  </predefinedEntry>
+		<predefinedEntry
+		        id="createCallBehaviorAction2CreationTool"
+				path="/createNodes1Group/InvocationActionsGroup">
+		  </predefinedEntry>
+		<predefinedEntry
+		        id="createCallOperationAction3CreationTool"
+				path="/createNodes1Group/InvocationActionsGroup">
+		  </predefinedEntry>
+		<predefinedEntry
+		        id="createSendObjectAction4CreationTool"
+				path="/createNodes1Group/InvocationActionsGroup">
+		  </predefinedEntry>
+		<predefinedEntry
+		        id="createSendSignalAction5CreationTool"
+				path="/createNodes1Group/InvocationActionsGroup">
+		  </predefinedEntry>
+		<entry
+		      description="ObjectActions"
+		      id="createObjectActionsGroup"
+		      kind="stack"
+		      label="ObjectActions"
+		      large_icon="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
+		      path="/createNodes1Group"
+		      small_icon="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif">
+		   <expand
+		         force="true">
+		   </expand>
+		</entry>
+		<predefinedEntry
+		        id="createCreateObjectAction1CreationTool"
+				path="/createNodes1Group/createObjectActionsGroup">
+		  </predefinedEntry>
+		<predefinedEntry
+		        id="createDestroyObjectAction2CreationTool"
+				path="/createNodes1Group/createObjectActionsGroup">
+		  </predefinedEntry>
+		<predefinedEntry
+		        id="createReadSelfAction3CreationTool"
+				path="/createNodes1Group/createObjectActionsGroup">
+		  </predefinedEntry>
+		<entry
+		      description="StructuredActions"
+		      id="createStructuredActionsGroup"
+		      kind="stack"
+		      label="StructuredActions"
+		      large_icon="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
+		      path="/createNodes1Group"
+		      small_icon="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif">
+		   <expand
+		         force="true">
+		   </expand>
+		</entry>
+		<predefinedEntry
+		        id="createStructuredActivityNode1CreationTool"
+				path="/createNodes1Group/createStructuredActionsGroup">
+		  </predefinedEntry>
+		<predefinedEntry
+		        id="createLoopNode2CreationTool"
+				path="/createNodes1Group/createStructuredActionsGroup">
+		  </predefinedEntry>
+		<predefinedEntry
+		        id="createSequenceNode3CreationTool"
+				path="/createNodes1Group/createStructuredActionsGroup">
+		  </predefinedEntry>
+		<predefinedEntry
+		        id="createConditionalNode4CreationTool"
+				path="/createNodes1Group/createStructuredActionsGroup">
+		  </predefinedEntry>
+		<entry
+		      description="StructuralFeatureActions"
+		      id="createStructuralFeatureActionsGroup"
+		      kind="stack"
+		      label="StructuralFeatureActions"
+		      large_icon="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
+		      path="/createNodes1Group"
+		      small_icon="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif">
+		   <expand
+		         force="true">
+		   </expand>
+		</entry>
+		<predefinedEntry
+		        id="createReadStructuralFeatureAction1CreationTool"
+				path="/createNodes1Group/createStructuralFeatureActionsGroup">
+		  </predefinedEntry>
+		<predefinedEntry
+		        id="createAddStructuralFeatureValueAction2CreationTool"
+				path="/createNodes1Group/createStructuralFeatureActionsGroup">
+		  </predefinedEntry>
+		<predefinedEntry
+		        id="createAddStructuralFeatureValueAction3CreationTool"
+				path="/createNodes1Group/createStructuralFeatureActionsGroup">
+		  </predefinedEntry>
+		<predefinedEntry
+		        id="createReadStructuralFeatureAction4CreationTool"
+				path="/createNodes1Group/createStructuralFeatureActionsGroup">
+		  </predefinedEntry>
+		<entry
+		      description="VariableActions"
+		      id="createVariableActionsGroup"
+		      kind="stack"
+		      label="VariableActions"
+		      large_icon="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
+		      path="/createNodes1Group"
+		      small_icon="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif">
+		   <expand
+		         force="true">
+		   </expand>
+		</entry>
+		<predefinedEntry
+		        id="createAddVariableValueAction1CreationTool"
+				path="/createNodes1Group/createVariableActionsGroup">
+		  </predefinedEntry>
+		<predefinedEntry
+		        id="createReadVariableAction2CreationTool"
+				path="/createNodes1Group/createVariableActionsGroup">
+		  </predefinedEntry>
+		<entry
+		      description="MiscellaneousActions"
+		      id="createOtherActionsGroup"
+		      kind="stack"
+		      label="MiscellaneousActions"
+		      large_icon="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
+		      path="/createNodes1Group"
+		      small_icon="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif">
+		   <expand
+		         force="true">
+		   </expand>
+		</entry>
+		<predefinedEntry
+		        id="createOpaqueAction1CreationTool"
+				path="/createNodes1Group/createOtherActionsGroup">
+		  </predefinedEntry>
+		<predefinedEntry
+		        id="createValueSpecificationAction2CreationTool"
+				path="/createNodes1Group/createOtherActionsGroup">
+		  </predefinedEntry>
+		<entry
+		      description="AcceptEventActions"
+		      id="createAcceptEventActions12Group"
+		      kind="stack"
+		      label="AcceptEventActions"
+		      large_icon="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
+		      path="/createNodes1Group"
+		      small_icon="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif">
+		   <expand
+		         force="true">
+		   </expand>
+		</entry>
+		<entry
+		      description=""
+		      id="createEdges2Group"
+		      kind="drawer"
+		      label="Edges"
+		      large_icon="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
+		      path="/"
+		      small_icon="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif">
+		   <expand
+		         force="true">
+		   </expand>
+		</entry>
+		<predefinedEntry
+		        id="createControlFlow1CreationTool"
+				path="/createEdges2Group">
+		  </predefinedEntry>
+		<predefinedEntry
+		        id="createExceptionHandler2CreationTool"
+				path="/createEdges2Group">
+		  </predefinedEntry>
+		<predefinedEntry
+		        id="createObjectFlow3CreationTool"
+				path="/createEdges2Group">
+		  </predefinedEntry>
+		<predefinedEntry
+		        id="createLink4CreationTool"
+				path="/createEdges2Group">
+		  </predefinedEntry>
+		</contribution>
+		<editor id="org.eclipse.papyrus.uml.diagram.activity"/>
+	</paletteProvider>	
+		
+</extension>
 	
 	
 	<!-- Diagram specific advices -->

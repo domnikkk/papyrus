@@ -79,7 +79,7 @@ public class UMLDocumentProvider extends AbstractDocumentProvider implements IDi
 	protected ElementInfo createElementInfo(Object element) throws CoreException {
 		if (false == element instanceof FileEditorInput && false == element instanceof URIEditorInput) {
 			throw new CoreException(new Status(IStatus.ERROR, UMLDiagramEditorPlugin.ID, 0,
-					NLS.bind(Messages.UMLDocumentProvider_IncorrectInputError, new Object[] { element, "org.eclipse.ui.part.FileEditorInput", "org.eclipse.emf.common.ui.URIEditorInput" }), //$NON-NLS-1$ //$NON-NLS-2$
+					NLS.bind(Messages.UMLDocumentProvider_IncorrectInputError, new Object[] { element, "org.eclipse.ui.part.FileEditorInput", "org.eclipse.emf.common.ui.URIEditorInput" }), //$NON-NLS-1$ //$NON-NLS-2$ 
 					null));
 		}
 		IEditorInput editorInput = (IEditorInput) element;
@@ -97,7 +97,7 @@ public class UMLDocumentProvider extends AbstractDocumentProvider implements IDi
 	protected IDocument createDocument(Object element) throws CoreException {
 		if (false == element instanceof FileEditorInput && false == element instanceof URIEditorInput) {
 			throw new CoreException(new Status(IStatus.ERROR, UMLDiagramEditorPlugin.ID, 0,
-					NLS.bind(Messages.UMLDocumentProvider_IncorrectInputError, new Object[] { element, "org.eclipse.ui.part.FileEditorInput", "org.eclipse.emf.common.ui.URIEditorInput" }), //$NON-NLS-1$ //$NON-NLS-2$
+					NLS.bind(Messages.UMLDocumentProvider_IncorrectInputError, new Object[] { element, "org.eclipse.ui.part.FileEditorInput", "org.eclipse.emf.common.ui.URIEditorInput" }), //$NON-NLS-1$ //$NON-NLS-2$ 
 					null));
 		}
 		IDocument document = createEmptyDocument();
@@ -210,7 +210,8 @@ public class UMLDocumentProvider extends AbstractDocumentProvider implements IDi
 				}
 				if (!resource.isLoaded()) {
 					try {
-						Map options = new HashMap(GMFResourceFactory.getDefaultLoadOptions());
+						@SuppressWarnings({ "rawtypes", "unchecked" })
+						Map<?, ?> options = new HashMap(GMFResourceFactory.getDefaultLoadOptions());
 						// @see 171060
 						// options.put(org.eclipse.emf.ecore.xmi.XMLResource.OPTION_RECORD_UNKNOWN_FEATURE, Boolean.TRUE);
 						resource.load(options);
@@ -226,7 +227,7 @@ public class UMLDocumentProvider extends AbstractDocumentProvider implements IDi
 						return;
 					}
 				} else {
-					for (Iterator it = resource.getContents().iterator(); it.hasNext();) {
+					for (Iterator<EObject> it = resource.getContents().iterator(); it.hasNext();) {
 						Object rootElement = it.next();
 						if (rootElement instanceof Diagram) {
 							document.setContent(rootElement);
@@ -247,7 +248,7 @@ public class UMLDocumentProvider extends AbstractDocumentProvider implements IDi
 			}
 		} else {
 			throw new CoreException(new Status(IStatus.ERROR, UMLDiagramEditorPlugin.ID, 0,
-					NLS.bind(Messages.UMLDocumentProvider_IncorrectInputError, new Object[] { element, "org.eclipse.ui.part.FileEditorInput", "org.eclipse.emf.common.ui.URIEditorInput" }), //$NON-NLS-1$ //$NON-NLS-2$
+					NLS.bind(Messages.UMLDocumentProvider_IncorrectInputError, new Object[] { element, "org.eclipse.ui.part.FileEditorInput", "org.eclipse.emf.common.ui.URIEditorInput" }), //$NON-NLS-1$ //$NON-NLS-2$ 
 					null));
 		}
 	}
@@ -573,7 +574,7 @@ public class UMLDocumentProvider extends AbstractDocumentProvider implements IDi
 			} else {
 				fireElementStateChangeFailed(element);
 				throw new CoreException(new Status(IStatus.ERROR, UMLDiagramEditorPlugin.ID, 0, NLS.bind(Messages.UMLDocumentProvider_IncorrectInputError, new Object[] { element,
-						"org.eclipse.ui.part.FileEditorInput", "org.eclipse.emf.common.ui.URIEditorInput" }), //$NON-NLS-1$ //$NON-NLS-2$
+						"org.eclipse.ui.part.FileEditorInput", "org.eclipse.emf.common.ui.URIEditorInput" }), //$NON-NLS-1$ //$NON-NLS-2$ 
 						null));
 			}
 			if (false == document instanceof IDiagramDocument) {
@@ -986,8 +987,8 @@ public class UMLDocumentProvider extends AbstractDocumentProvider implements IDi
 					Resource resource = (Resource) notification.getNotifier();
 					if (resource.isLoaded()) {
 						boolean modified = false;
-						for (Iterator/* <org.eclipse.emf.ecore.resource.Resource> */it = myInfo.getLoadedResourcesIterator(); it.hasNext() && !modified;) {
-							Resource nextResource = (Resource) it.next();
+						for (Iterator<Resource> it = myInfo.getLoadedResourcesIterator(); it.hasNext() && !modified;) {
+							Resource nextResource = it.next();
 							if (nextResource.isLoaded()) {
 								modified = nextResource.isModified();
 							}

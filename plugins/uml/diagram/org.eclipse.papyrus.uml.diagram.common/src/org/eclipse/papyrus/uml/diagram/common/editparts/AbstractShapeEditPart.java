@@ -36,7 +36,7 @@ import org.eclipse.uml2.uml.Stereotype;
  * image in the associated stereotype
  *
  */
-public abstract class AbstractShapeEditPart extends AbstractBorderedShapeEditPart implements IPapyrusEditPart {
+public abstract class AbstractShapeEditPart extends UMLNodeEditPart implements IPapyrusEditPart {
 
 	private static final String SHAPE_CONSTANT = "shape";
 
@@ -97,7 +97,7 @@ public abstract class AbstractShapeEditPart extends AbstractBorderedShapeEditPar
 	@Override
 	public abstract ShapeNamedElementFigure getPrimaryShape();
 
-	protected Element getUMLElement() {
+	public Element getUMLElement() {
 		return (Element) resolveSemanticElement();
 	}
 

@@ -74,79 +74,46 @@ public class CallOperationActionItemSemanticEditPolicy extends UMLBaseItemSemant
 		if (requestElementType == null) {
 			return super.getCreateCommand(req);
 		}
-		IElementType baseElementType = requestElementType;
-		boolean isExtendedType = false;
-		if (requestElementType instanceof IExtendedHintedElementType) {
-			baseElementType = ElementTypeUtils.getClosestDiagramType(requestElementType);
-			if (baseElementType != null) {
-				isExtendedType = true;
-			} else {
-				// no reference element type ID. using the closest super element type to give more opportunities, but can lead to bugs.
-				baseElementType = ElementTypeUtils.findClosestNonExtendedElementType((IExtendedHintedElementType) requestElementType);
-				isExtendedType = true;
-			}
-		}
-		if (UMLElementTypes.ActionInputPin_3021 == baseElementType) {
+		if (UMLElementTypes.ActionInputPin_3021 == requestElementType) {
 			// adjust the containment feature
 			EReference containmentFeature = UMLPackage.eINSTANCE.getInvocationAction_Argument();
 			req.setContainmentFeature(containmentFeature);
-			if (isExtendedType) {
-				return getExtendedTypeCreationCommand(req, (IExtendedHintedElementType) requestElementType);
-			}
 			return getGEFWrapper(getSemanticCreationCommand(req));
 		}
-		if (UMLElementTypes.ValuePin_3022 == baseElementType) {
+		if (UMLElementTypes.ValuePin_3022 == requestElementType) {
 			// adjust the containment feature
 			EReference containmentFeature = UMLPackage.eINSTANCE.getInvocationAction_Argument();
 			req.setContainmentFeature(containmentFeature);
-			if (isExtendedType) {
-				return getExtendedTypeCreationCommand(req, (IExtendedHintedElementType) requestElementType);
-			}
 			return getGEFWrapper(getSemanticCreationCommand(req));
 		}
-		if (UMLElementTypes.InputPin_3023 == baseElementType) {
+		if (UMLElementTypes.InputPin_3023 == requestElementType) {
 			// adjust the containment feature
 			EReference containmentFeature = UMLPackage.eINSTANCE.getInvocationAction_Argument();
 			req.setContainmentFeature(containmentFeature);
-			if (isExtendedType) {
-				return getExtendedTypeCreationCommand(req, (IExtendedHintedElementType) requestElementType);
-			}
 			return getGEFWrapper(getSemanticCreationCommand(req));
 		}
-		if (UMLElementTypes.OutputPin_3024 == baseElementType) {
+		if (UMLElementTypes.OutputPin_3024 == requestElementType) {
 			// adjust the containment feature
 			EReference containmentFeature = UMLPackage.eINSTANCE.getCallAction_Result();
 			req.setContainmentFeature(containmentFeature);
-			if (isExtendedType) {
-				return getExtendedTypeCreationCommand(req, (IExtendedHintedElementType) requestElementType);
-			}
 			return getGEFWrapper(getSemanticCreationCommand(req));
 		}
-		if (UMLElementTypes.ValuePin_3025 == baseElementType) {
+		if (UMLElementTypes.ValuePin_3025 == requestElementType) {
 			// adjust the containment feature
 			EReference containmentFeature = UMLPackage.eINSTANCE.getCallOperationAction_Target();
 			req.setContainmentFeature(containmentFeature);
-			if (isExtendedType) {
-				return getExtendedTypeCreationCommand(req, (IExtendedHintedElementType) requestElementType);
-			}
 			return getGEFWrapper(getSemanticCreationCommand(req));
 		}
-		if (UMLElementTypes.ActionInputPin_3026 == baseElementType) {
+		if (UMLElementTypes.ActionInputPin_3026 == requestElementType) {
 			// adjust the containment feature
 			EReference containmentFeature = UMLPackage.eINSTANCE.getCallOperationAction_Target();
 			req.setContainmentFeature(containmentFeature);
-			if (isExtendedType) {
-				return getExtendedTypeCreationCommand(req, (IExtendedHintedElementType) requestElementType);
-			}
 			return getGEFWrapper(getSemanticCreationCommand(req));
 		}
-		if (UMLElementTypes.InputPin_3027 == baseElementType) {
+		if (UMLElementTypes.InputPin_3027 == requestElementType) {
 			// adjust the containment feature
 			EReference containmentFeature = UMLPackage.eINSTANCE.getCallOperationAction_Target();
 			req.setContainmentFeature(containmentFeature);
-			if (isExtendedType) {
-				return getExtendedTypeCreationCommand(req, (IExtendedHintedElementType) requestElementType);
-			}
 			return getGEFWrapper(getSemanticCreationCommand(req));
 		}
 		return super.getCreateCommand(req);

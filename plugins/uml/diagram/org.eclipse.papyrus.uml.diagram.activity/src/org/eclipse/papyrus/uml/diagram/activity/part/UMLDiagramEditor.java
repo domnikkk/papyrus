@@ -325,7 +325,6 @@ public class UMLDiagramEditor extends UmlGmfDiagramEditor implements IProviderCh
 			dirtyState.dispose();
 			dirtyState = null;
 		}
-
 		super.setUndoContext(context);
 	}
 
@@ -356,12 +355,10 @@ public class UMLDiagramEditor extends UmlGmfDiagramEditor implements IProviderCh
 		// remove palette service listener
 		// remove preference listener
 		PapyrusPaletteService.getInstance().removeProviderChangeListener(this);
-
 		if (dirtyState != null) {
 			dirtyState.dispose();
 			dirtyState = null;
 		}
-
 		super.dispose();
 	}
 
@@ -431,7 +428,7 @@ public class UMLDiagramEditor extends UmlGmfDiagramEditor implements IProviderCh
 						 * whenever a key is released, and the Tool is in the proper state. Override
 						 * to support pressing the enter key to create a shape or connection
 						 * (between two selected shapes)
-						 *
+						 * 
 						 * @param event
 						 *            the KeyEvent
 						 * @return <code>true</code> if KeyEvent was handled in some way
@@ -470,7 +467,7 @@ public class UMLDiagramEditor extends UmlGmfDiagramEditor implements IProviderCh
 						/**
 						 * Override to support double-clicking a palette tool entry to create a
 						 * shape or connection (between two selected shapes).
-						 *
+						 * 
 						 * @see MouseListener#mouseDoubleClick(MouseEvent)
 						 */
 						@Override
@@ -528,6 +525,7 @@ public class UMLDiagramEditor extends UmlGmfDiagramEditor implements IProviderCh
 
 			@Override
 			protected Object getJavaObject(TransferData data) {
+				// It is usual for the transfer data not to be set because it is available locally
 				return LocalSelectionTransfer.getTransfer().getSelection();
 			}
 

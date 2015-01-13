@@ -66,7 +66,7 @@ public class AddVariableValueActionCanonicalEditPolicy extends CanonicalEditPoli
 	 * @generated
 	 */
 	@Override
-	protected Set getFeaturesToSynchronize() {
+	protected Set<EStructuralFeature> getFeaturesToSynchronize() {
 		if (myFeaturesToSynchronize == null) {
 			myFeaturesToSynchronize = new HashSet<EStructuralFeature>();
 			myFeaturesToSynchronize.add(UMLPackage.eINSTANCE.getAddVariableValueAction_InsertAt());
@@ -80,10 +80,10 @@ public class AddVariableValueActionCanonicalEditPolicy extends CanonicalEditPoli
 	 */
 	@Override
 	@SuppressWarnings("rawtypes")
-	protected List getSemanticChildrenList() {
+	protected List<EObject> getSemanticChildrenList() {
 		View viewObject = (View) getHost().getModel();
 		LinkedList<EObject> result = new LinkedList<EObject>();
-		List<UMLNodeDescriptor> childDescriptors = UMLDiagramUpdater.getAddVariableValueAction_3099SemanticChildren(viewObject);
+		List<UMLNodeDescriptor> childDescriptors = UMLDiagramUpdater.INSTANCE.getAddVariableValueAction_3099SemanticChildren(viewObject);
 		for (UMLNodeDescriptor d : childDescriptors) {
 			result.add(d.getModelElement());
 		}
@@ -115,7 +115,7 @@ public class AddVariableValueActionCanonicalEditPolicy extends CanonicalEditPoli
 			return;
 		}
 		LinkedList<IAdaptable> createdViews = new LinkedList<IAdaptable>();
-		List<UMLNodeDescriptor> childDescriptors = UMLDiagramUpdater.getAddVariableValueAction_3099SemanticChildren((View) getHost().getModel());
+		List<UMLNodeDescriptor> childDescriptors = UMLDiagramUpdater.INSTANCE.getAddVariableValueAction_3099SemanticChildren((View) getHost().getModel());
 		LinkedList<View> orphaned = new LinkedList<View>();
 		// we care to check only views we recognize as ours
 		LinkedList<View> knownViewChildren = new LinkedList<View>();

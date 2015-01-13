@@ -58,25 +58,10 @@ public class ActivityItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolic
 		if (requestElementType == null) {
 			return super.getCreateCommand(req);
 		}
-		IElementType baseElementType = requestElementType;
-		boolean isExtendedType = false;
-		if (requestElementType instanceof IExtendedHintedElementType) {
-			baseElementType = ElementTypeUtils.getClosestDiagramType(requestElementType);
-			if (baseElementType != null) {
-				isExtendedType = true;
-			} else {
-				// no reference element type ID. using the closest super element type to give more opportunities, but can lead to bugs.
-				baseElementType = ElementTypeUtils.findClosestNonExtendedElementType((IExtendedHintedElementType) requestElementType);
-				isExtendedType = true;
-			}
-		}
-		if (UMLElementTypes.ActivityParameterNode_3059 == baseElementType) {
+		if (UMLElementTypes.ActivityParameterNode_3059 == requestElementType) {
 			// adjust the containment feature
 			EReference containmentFeature = UMLPackage.eINSTANCE.getActivity_OwnedNode();
 			req.setContainmentFeature(containmentFeature);
-			if (isExtendedType) {
-				return getExtendedTypeCreationCommand(req, (IExtendedHintedElementType) requestElementType);
-			}
 			return getGEFWrapper(getSemanticCreationCommand(req));
 		}
 		return super.getCreateCommand(req);
@@ -108,15 +93,12 @@ public class ActivityItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolic
 			return null;
 		}
 		IElementType baseElementType = requestElementType;
-		boolean isExtendedType = false;
 		if (requestElementType instanceof IExtendedHintedElementType) {
 			baseElementType = ElementTypeUtils.getClosestDiagramType(requestElementType);
 			if (baseElementType != null) {
-				isExtendedType = true;
 			} else {
 				// no reference element type ID. using the closest super element type to give more opportunities, but can lead to bugs.
 				baseElementType = ElementTypeUtils.findClosestNonExtendedElementType((IExtendedHintedElementType) requestElementType);
-				isExtendedType = true;
 			}
 		}
 		if (UMLElementTypes.CommentAnnotatedElement_4006 == baseElementType) {

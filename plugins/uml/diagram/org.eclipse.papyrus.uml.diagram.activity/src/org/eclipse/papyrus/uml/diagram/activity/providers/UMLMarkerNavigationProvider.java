@@ -48,7 +48,7 @@ public class UMLMarkerNavigationProvider extends AbstractModelMarkerNavigationPr
 			return;
 		}
 		DiagramEditor editor = (DiagramEditor) getEditor();
-		Map editPartRegistry = editor.getDiagramGraphicalViewer().getEditPartRegistry();
+		Map<?, ?> editPartRegistry = editor.getDiagramGraphicalViewer().getEditPartRegistry();
 		EObject targetView = editor.getDiagram().eResource().getEObject(elementId);
 		if (targetView == null) {
 			return;

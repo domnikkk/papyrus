@@ -47,27 +47,6 @@ public class OutputPinInReadVariableActionAsResultCreateCommand extends EditElem
 	/**
 	 * @generated
 	 */
-	private EObject eObject = null;
-
-	/**
-	 * @generated
-	 */
-	public OutputPinInReadVariableActionAsResultCreateCommand(CreateElementRequest req, EObject eObject, Diagram diagram) {
-		super(req.getLabel(), null, req);
-		this.eObject = eObject;
-		this.diagram = diagram;
-	}
-
-	/**
-	 * @generated
-	 */
-	public static OutputPinInReadVariableActionAsResultCreateCommand create(CreateElementRequest req, EObject eObject, Diagram diagram) {
-		return new OutputPinInReadVariableActionAsResultCreateCommand(req, eObject, diagram);
-	}
-
-	/**
-	 * @generated
-	 */
 	public OutputPinInReadVariableActionAsResultCreateCommand(CreateElementRequest req, Diagram diagram) {
 		super(req.getLabel(), null, req);
 		this.diagram = diagram;
@@ -84,10 +63,7 @@ public class OutputPinInReadVariableActionAsResultCreateCommand extends EditElem
 		if (container instanceof View) {
 			container = ((View) container).getElement();
 		}
-		if (container != null) {
-			return container;
-		}
-		return eObject;
+		return container;
 	}
 
 	/**

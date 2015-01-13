@@ -47,27 +47,6 @@ public class InputPinInAddVariableValueActionAsValueCreateCommand extends EditEl
 	/**
 	 * @generated
 	 */
-	private EObject eObject = null;
-
-	/**
-	 * @generated
-	 */
-	public InputPinInAddVariableValueActionAsValueCreateCommand(CreateElementRequest req, EObject eObject, Diagram diagram) {
-		super(req.getLabel(), null, req);
-		this.eObject = eObject;
-		this.diagram = diagram;
-	}
-
-	/**
-	 * @generated
-	 */
-	public static InputPinInAddVariableValueActionAsValueCreateCommand create(CreateElementRequest req, EObject eObject, Diagram diagram) {
-		return new InputPinInAddVariableValueActionAsValueCreateCommand(req, eObject, diagram);
-	}
-
-	/**
-	 * @generated
-	 */
 	public InputPinInAddVariableValueActionAsValueCreateCommand(CreateElementRequest req, Diagram diagram) {
 		super(req.getLabel(), null, req);
 		this.diagram = diagram;
@@ -84,10 +63,7 @@ public class InputPinInAddVariableValueActionAsValueCreateCommand extends EditEl
 		if (container instanceof View) {
 			container = ((View) container).getElement();
 		}
-		if (container != null) {
-			return container;
-		}
-		return eObject;
+		return container;
 	}
 
 	/**
