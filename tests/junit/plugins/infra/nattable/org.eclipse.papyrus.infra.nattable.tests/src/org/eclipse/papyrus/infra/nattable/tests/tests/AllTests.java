@@ -19,7 +19,7 @@ import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
 @RunWith(Suite.class)
-@SuiteClasses({ TableSelectionProviderTest.class })
+@SuiteClasses({ TableSelectionProviderTest.class , PasteTreeUtils_Tests.class})
 public class AllTests {
 	// JUnit 4 test suite
 }

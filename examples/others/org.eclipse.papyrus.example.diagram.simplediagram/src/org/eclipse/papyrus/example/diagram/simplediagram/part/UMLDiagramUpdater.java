@@ -6,6 +6,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.gmf.tooling.runtime.update.DiagramUpdater;
 import org.eclipse.papyrus.example.diagram.simplediagram.edit.parts.ComponentEditPart;
 import org.eclipse.papyrus.example.diagram.simplediagram.edit.parts.ModelEditPart;
 import org.eclipse.uml2.uml.Model;
@@ -33,7 +34,7 @@ public class UMLDiagramUpdater {
 	public static List<UMLNodeDescriptor> getModel_1000SemanticChildren(
 			View view) {
 		if (!view.isSetElement()) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		Model modelElement = (Model) view.getElement();
 		LinkedList<UMLNodeDescriptor> result = new LinkedList<UMLNodeDescriptor>();
@@ -115,5 +116,42 @@ public class UMLDiagramUpdater {
 			View view) {
 		return Collections.emptyList();
 	}
+
+	/**
+	 * @generated
+	 */
+	public static final DiagramUpdater TYPED_INSTANCE = new DiagramUpdater() {
+		/**
+		 * @generated
+		 */
+
+		public List<UMLNodeDescriptor> getSemanticChildren(View view) {
+			return UMLDiagramUpdater.getSemanticChildren(view);
+		}
+
+		/**
+		 * @generated
+		 */
+
+		public List<UMLLinkDescriptor> getContainedLinks(View view) {
+			return UMLDiagramUpdater.getContainedLinks(view);
+		}
+
+		/**
+		 * @generated
+		 */
+
+		public List<UMLLinkDescriptor> getIncomingLinks(View view) {
+			return UMLDiagramUpdater.getIncomingLinks(view);
+		}
+
+		/**
+		 * @generated
+		 */
+
+		public List<UMLLinkDescriptor> getOutgoingLinks(View view) {
+			return UMLDiagramUpdater.getOutgoingLinks(view);
+		}
+	};
 
 }

@@ -250,6 +250,7 @@
 		<module>../plugins/uml/nattable/org.eclipse.papyrus.uml.nattable</module>
 		<module>../plugins/uml/nattable/org.eclipse.papyrus.uml.nattable.generic</module>
 		<module>../plugins/uml/nattable/org.eclipse.papyrus.uml.nattable.generic.config</module>
+		<module>../plugins/uml/nattable/org.eclipse.papyrus.uml.nattable.clazz.config</module>
 		<module>../plugins/uml/nattable/org.eclipse.papyrus.uml.nattable.menu</module>
 		<module>../plugins/uml/nattable/org.eclipse.papyrus.uml.nattable.xtext.integration</module>
 		<module>../plugins/uml/org.eclipse.papyrus.uml.navigation</module>

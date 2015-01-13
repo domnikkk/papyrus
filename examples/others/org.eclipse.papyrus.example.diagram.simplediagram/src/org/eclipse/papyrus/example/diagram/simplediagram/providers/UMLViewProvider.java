@@ -15,6 +15,7 @@ import org.eclipse.gmf.runtime.diagram.core.services.view.CreateNodeViewOperatio
 import org.eclipse.gmf.runtime.diagram.core.services.view.CreateViewForKindOperation;
 import org.eclipse.gmf.runtime.diagram.core.services.view.CreateViewOperation;
 import org.eclipse.gmf.runtime.diagram.core.util.ViewUtil;
+import org.eclipse.gmf.runtime.diagram.ui.preferences.IPreferenceConstants;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.FigureUtilities;
 import org.eclipse.gmf.runtime.emf.core.util.EMFCoreUtil;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
@@ -22,7 +23,6 @@ import org.eclipse.gmf.runtime.emf.type.core.IHintedType;
 import org.eclipse.gmf.runtime.notation.DecorationNode;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.Edge;
-import org.eclipse.gmf.runtime.notation.FillStyle;
 import org.eclipse.gmf.runtime.notation.FontStyle;
 import org.eclipse.gmf.runtime.notation.MeasurementUnit;
 import org.eclipse.gmf.runtime.notation.Node;
@@ -32,13 +32,10 @@ import org.eclipse.gmf.runtime.notation.Shape;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.preference.PreferenceConverter;
-import org.eclipse.papyrus.diagram.common.helper.PreferenceInitializerForElementHelper;
 import org.eclipse.papyrus.example.diagram.simplediagram.edit.parts.ComponentEditPart;
 import org.eclipse.papyrus.example.diagram.simplediagram.edit.parts.ComponentNameEditPart;
 import org.eclipse.papyrus.example.diagram.simplediagram.edit.parts.ModelEditPart;
 import org.eclipse.papyrus.example.diagram.simplediagram.part.UMLVisualIDRegistry;
-import org.eclipse.papyrus.preferences.utils.GradientPreferenceConverter;
-import org.eclipse.papyrus.preferences.utils.PreferenceConstantHelper;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.FontData;
 
@@ -236,25 +233,39 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint
 				.getPreferenceStore();
 
-		PreferenceInitializerForElementHelper.initForegroundFromPrefs(node,
-				prefStore, "Component");
-
-		PreferenceInitializerForElementHelper.initFontStyleFromPrefs(node,
-				prefStore, "Component");
-
-		PreferenceInitializerForElementHelper.initBackgroundFromPrefs(node,
-				prefStore, "Component");
-
+		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(
+				prefStore, IPreferenceConstants.PREF_LINE_COLOR);
+		ViewUtil.setStructuralFeatureValue(node,
+				NotationPackage.eINSTANCE.getLineStyle_LineColor(),
+				FigureUtilities.RGBToInteger(lineRGB));
+		FontStyle nodeFontStyle = (FontStyle) node
+				.getStyle(NotationPackage.Literals.FONT_STYLE);
+		if (nodeFontStyle != null) {
+			FontData fontData = PreferenceConverter.getFontData(prefStore,
+					IPreferenceConstants.PREF_DEFAULT_FONT);
+			nodeFontStyle.setFontName(fontData.getName());
+			nodeFontStyle.setFontHeight(fontData.getHeight());
+			nodeFontStyle.setBold((fontData.getStyle() & SWT.BOLD) != 0);
+			nodeFontStyle.setItalic((fontData.getStyle() & SWT.ITALIC) != 0);
+			org.eclipse.swt.graphics.RGB fontRGB = PreferenceConverter
+					.getColor(prefStore, IPreferenceConstants.PREF_FONT_COLOR);
+			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB)
+					.intValue());
+		}
+		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(
+				prefStore, IPreferenceConstants.PREF_FILL_COLOR);
+		ViewUtil.setStructuralFeatureValue(node,
+				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
+				FigureUtilities.RGBToInteger(fillRGB));
 		Node label5001 = createLabel(node,
 				UMLVisualIDRegistry.getType(ComponentNameEditPart.VISUAL_ID));
-
 		return node;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected void stampShortcut(View containerView, Node target) {
+	private void stampShortcut(View containerView, Node target) {
 		if (!ModelEditPart.MODEL_ID.equals(UMLVisualIDRegistry
 				.getModelID(containerView))) {
 			EAnnotation shortcutAnnotation = EcoreFactory.eINSTANCE
@@ -269,7 +280,7 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 	/**
 	 * @generated
 	 */
-	protected Node createLabel(View owner, String hint) {
+	private Node createLabel(View owner, String hint) {
 		DecorationNode rv = NotationFactory.eINSTANCE.createDecorationNode();
 		rv.setType(hint);
 		ViewUtil.insertChildView(owner, rv, ViewUtil.APPEND, true);
@@ -279,7 +290,7 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 	/**
 	 * @generated
 	 */
-	protected EObject getSemanticElement(IAdaptable semanticAdapter) {
+	private EObject getSemanticElement(IAdaptable semanticAdapter) {
 		if (semanticAdapter == null) {
 			return null;
 		}
@@ -294,88 +305,10 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 	/**
 	 * @generated
 	 */
-	protected IElementType getSemanticElementType(IAdaptable semanticAdapter) {
+	private IElementType getSemanticElementType(IAdaptable semanticAdapter) {
 		if (semanticAdapter == null) {
 			return null;
 		}
 		return (IElementType) semanticAdapter.getAdapter(IElementType.class);
 	}
-
-	/**
-	 * @generated
-	 */
-	private void initFontStyleFromPrefs(View view,
-			final IPreferenceStore store, String elementName) {
-		String fontConstant = PreferenceConstantHelper.getElementConstant(
-				elementName, PreferenceConstantHelper.FONT);
-		String fontColorConstant = PreferenceConstantHelper.getElementConstant(
-				elementName, PreferenceConstantHelper.COLOR_FONT);
-
-		FontStyle viewFontStyle = (FontStyle) view
-				.getStyle(NotationPackage.Literals.FONT_STYLE);
-		if (viewFontStyle != null) {
-			FontData fontData = PreferenceConverter.getFontData(store,
-					fontConstant);
-			viewFontStyle.setFontName(fontData.getName());
-			viewFontStyle.setFontHeight(fontData.getHeight());
-			viewFontStyle.setBold((fontData.getStyle() & SWT.BOLD) != 0);
-			viewFontStyle.setItalic((fontData.getStyle() & SWT.ITALIC) != 0);
-
-			org.eclipse.swt.graphics.RGB fontRGB = PreferenceConverter
-					.getColor(store, fontColorConstant);
-			viewFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB)
-					.intValue());
-		}
-	}
-
-	/**
-	 * @generated
-	 */
-	private void initForegroundFromPrefs(View view,
-			final IPreferenceStore store, String elementName) {
-		String lineColorConstant = PreferenceConstantHelper.getElementConstant(
-				elementName, PreferenceConstantHelper.COLOR_LINE);
-		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(
-				store, lineColorConstant);
-		ViewUtil.setStructuralFeatureValue(view,
-				NotationPackage.eINSTANCE.getLineStyle_LineColor(),
-				FigureUtilities.RGBToInteger(lineRGB));
-	}
-
-	/**
-	 * @generated
-	 */
-	private void initBackgroundFromPrefs(View view,
-			final IPreferenceStore store, String elementName) {
-		String fillColorConstant = PreferenceConstantHelper.getElementConstant(
-				elementName, PreferenceConstantHelper.COLOR_FILL);
-		String gradientColorConstant = PreferenceConstantHelper
-				.getElementConstant(elementName,
-						PreferenceConstantHelper.COLOR_GRADIENT);
-		String gradientPolicyConstant = PreferenceConstantHelper
-				.getElementConstant(elementName,
-						PreferenceConstantHelper.GRADIENT_POLICY);
-
-		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(
-				store, fillColorConstant);
-		ViewUtil.setStructuralFeatureValue(view,
-				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
-				FigureUtilities.RGBToInteger(fillRGB));
-
-		FillStyle fillStyle = (FillStyle) view
-				.getStyle(NotationPackage.Literals.FILL_STYLE);
-		fillStyle
-				.setFillColor(FigureUtilities.RGBToInteger(fillRGB).intValue());
-
-		;
-		if (store.getBoolean(gradientPolicyConstant)) {
-			GradientPreferenceConverter gradientPreferenceConverter = new GradientPreferenceConverter(
-					store.getString(gradientColorConstant));
-			fillStyle
-					.setGradient(gradientPreferenceConverter.getGradientData());
-			fillStyle.setTransparency(gradientPreferenceConverter
-					.getTransparency());
-		}
-	}
-
 }

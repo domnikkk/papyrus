@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2013 CEA LIST.
+ * Copyright (c) 2013, 2014 CEA LIST, Christian W. Damus, and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,11 +8,15 @@
  *
  * Contributors:
  *   CEA LIST - Initial API and implementation
+ *   Christian W. Damus - bug 399859
+ *   
  *****************************************************************************/
 package org.eclipse.papyrus.infra.widgets.providers;
 
 import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.jface.viewers.ILabelProviderListener;
+import org.eclipse.jface.viewers.LabelProvider;
+import org.eclipse.jface.viewers.LabelProviderChangedEvent;
 import org.eclipse.swt.graphics.Image;
 
 /**
@@ -20,14 +24,17 @@ import org.eclipse.swt.graphics.Image;
  * possibility of overriding certain labels.
  */
 public class DelegatingLabelProvider
-		implements ILabelProvider {
+		extends LabelProvider {
 
 	private final ILabelProvider delegate;
+	private ILabelProviderListener forwardingListener;
 
 	public DelegatingLabelProvider(ILabelProvider delegate) {
 		super();
 
 		this.delegate = delegate;
+
+		delegate.addListener(getForwardingListener());
 	}
 
 	@Override
@@ -98,7 +105,21 @@ public class DelegatingLabelProvider
 	 */
 	@Override
 	public void dispose() {
+		delegate.removeListener(getForwardingListener());
 		delegate.dispose();
 	}
 
+	private ILabelProviderListener getForwardingListener() {
+		if (forwardingListener == null) {
+			forwardingListener = new ILabelProviderListener() {
+
+				@Override
+				public void labelProviderChanged(LabelProviderChangedEvent event) {
+					fireLabelProviderChanged(new LabelProviderChangedEvent(DelegatingLabelProvider.this, event.getElements()));
+				}
+			};
+		}
+
+		return forwardingListener;
+	}
 }

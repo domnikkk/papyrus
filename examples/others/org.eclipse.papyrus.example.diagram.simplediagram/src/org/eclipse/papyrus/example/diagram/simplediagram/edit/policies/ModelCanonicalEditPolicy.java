@@ -2,6 +2,7 @@ package org.eclipse.papyrus.example.diagram.simplediagram.edit.policies;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
@@ -9,6 +10,7 @@ import java.util.List;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.gef.EditPart;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gmf.runtime.diagram.core.util.ViewUtil;
 import org.eclipse.gmf.runtime.diagram.ui.commands.DeferredLayoutCommand;
@@ -29,6 +31,18 @@ import org.eclipse.uml2.uml.UMLPackage;
  * @generated
  */
 public class ModelCanonicalEditPolicy extends CanonicalEditPolicy {
+
+	/**
+	 * @generated
+	 */
+	protected void refreshOnActivate() {
+		// Need to activate editpart children before invoking the canonical refresh for EditParts to add event listeners
+		List<?> c = getHost().getChildren();
+		for (int i = 0; i < c.size(); i++) {
+			((EditPart) c.get(i)).activate();
+		}
+		super.refreshOnActivate();
+	}
 
 	/**
 	 * @generated
@@ -154,5 +168,35 @@ public class ModelCanonicalEditPolicy extends CanonicalEditPolicy {
 		}
 
 		makeViewsImmutable(createdViews);
+	}
+
+	/**
+	 * @generated
+	 */
+	@SuppressWarnings("serial")
+	protected static class Domain2Notation extends HashMap<EObject, View> {
+		/**
+		 * @generated
+		 */
+		public boolean containsDomainElement(EObject domainElement) {
+			return this.containsKey(domainElement);
+		}
+
+		/**
+		 * @generated
+		 */
+		public View getHinted(EObject domainEObject, String hint) {
+			return this.get(domainEObject);
+		}
+
+		/**
+		 * @generated
+		 */
+		public void putView(EObject domainElement, View view) {
+			if (!containsKey(view.getElement())) {
+				this.put(domainElement, view);
+			}
+		}
+
 	}
 }

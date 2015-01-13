@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2010, 2014 CEA LIST and others.
+ * Copyright (c) 2010, 2014 CEA LIST, Christian W. Damus, and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -9,6 +9,7 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 402525
+ *  Christian W. Damus - bug 399859
  *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.widgets.editors;
@@ -21,6 +22,7 @@ import org.eclipse.core.databinding.observable.IChangeListener;
 import org.eclipse.core.databinding.observable.list.IObservableList;
 import org.eclipse.core.runtime.Assert;
 import org.eclipse.core.runtime.OperationCanceledException;
+import org.eclipse.jface.viewers.IBaseLabelProvider;
 import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.IStructuredSelection;
@@ -246,8 +248,10 @@ public class MultipleValueEditor extends AbstractListEditor implements Selection
 		remove.setEnabled(!readOnly);
 		up.setEnabled(ordered && !readOnly);
 		down.setEnabled(ordered && !readOnly);
-		edit.setEnabled(this.referenceFactory != null && referenceFactory.canEdit() && !readOnly);
 
+		if (edit != null) {
+			edit.setEnabled(this.referenceFactory != null && referenceFactory.canEdit() && !readOnly);
+		}
 
 		if (modelProperty != null && this.upperBound != MANY) {
 			if (modelProperty.size() >= this.upperBound) {
@@ -312,7 +316,7 @@ public class MultipleValueEditor extends AbstractListEditor implements Selection
 	 * @param labelProvider
 	 *            The label provider for this editor
 	 */
-	public void setLabelProvider(ILabelProvider labelProvider) {
+	public void setLabelProvider(IBaseLabelProvider labelProvider) {
 		treeViewer.setLabelProvider(labelProvider);
 	}
 
@@ -578,7 +582,7 @@ public class MultipleValueEditor extends AbstractListEditor implements Selection
 	 */
 	@Override
 	public void widgetDefaultSelected(SelectionEvent e) {
-		if (e.widget == tree && edit.isEnabled()) {
+		if ((e.widget == tree) && (edit != null) && edit.isEnabled()) {
 			editAction();
 		}
 	}

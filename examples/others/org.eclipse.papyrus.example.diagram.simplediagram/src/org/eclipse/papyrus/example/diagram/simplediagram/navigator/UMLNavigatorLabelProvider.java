@@ -85,10 +85,10 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements
 		switch (UMLVisualIDRegistry.getVisualID(view)) {
 		case ModelEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Diagram?http://www.eclipse.org/uml2/3.0.0/UML?Model", UMLElementTypes.Model_1000); //$NON-NLS-1$
+					"Navigator?Diagram?http://www.eclipse.org/uml2/5.0.0/UML?Model", UMLElementTypes.Model_1000); //$NON-NLS-1$
 		case ComponentEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?TopLevelNode?http://www.eclipse.org/uml2/3.0.0/UML?Component", UMLElementTypes.Component_2001); //$NON-NLS-1$
+					"Navigator?TopLevelNode?http://www.eclipse.org/uml2/5.0.0/UML?Component", UMLElementTypes.Component_2001); //$NON-NLS-1$
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
 	}

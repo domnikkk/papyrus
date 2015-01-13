@@ -82,10 +82,9 @@
       </menuContribution>
    </extension>
    <extension
-         point="org.eclipse.papyrus.core.papyrusDiagram">
+         point="org.eclipse.papyrus.infra.core.papyrusDiagram">
       <editorDiagram
             actionBarContributorId="org.eclipse.papyrus.diagram.common.part.UMLDiagramActionBarContributor"
-            contextId="com.cea.papyrus.gmf.editor.context"
             factoryClass="org.eclipse.papyrus.example.diagram.simplediagram.DiagramEditorFactory"
             icon="icons/obj16/newDiagramFile.gif">
       </editorDiagram>
@@ -104,7 +103,7 @@
       <?gmfgen generated="true"?>
       <context
          description="%context.description"
-         id="org.eclipse.papyrus.diagram.newdiagram.ui.diagramContext"
+         id="org.eclipse.papyrus.example.diagram.simplediagram.ui.diagramContext"
          name="%context.name"
          parentId="org.eclipse.gmf.runtime.diagram.ui.diagramContext">
       </context>
@@ -114,33 +113,37 @@
    <extension point="org.eclipse.gmf.runtime.common.ui.services.action.globalActionHandlerProviders" id="global-actions">
       <?gmfgen generated="true"?>
       <GlobalActionHandlerProvider
-         class="org.eclipse.papyrus.diagram.common.providers.PapyrusGlobalActionHandlerProvider"
+         class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramGlobalActionHandlerProvider"
          id="PapyrusNewDiagramPresentation">
-         <Priority name="Highest"/>
-         <ViewId id="org.eclipse.papyrus.core.papyrusEditor">
+         <Priority name="Lowest"/>
+         <ViewId id="org.eclipse.papyrus.example.diagram.simplediagram.part.UMLDiagramEditorID">
             <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
                <GlobalActionId actionId="delete"/>
             </ElementType>
             <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart">
                <GlobalActionId actionId="save"/>
             </ElementType>
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="save">
+               </GlobalActionId>
+            </ElementType>        
          </ViewId>
       </GlobalActionHandlerProvider>
       <GlobalActionHandlerProvider
          class="org.eclipse.gmf.runtime.diagram.ui.providers.ide.providers.DiagramIDEGlobalActionHandlerProvider"
          id="PapyrusNewDiagramPresentationIDE">
-         <Priority name="Low"/>
-         <ViewId id="org.eclipse.papyrus.core.papyrusEditor">
+         <Priority name="Lowest"/>
+         <ViewId id="org.eclipse.papyrus.example.diagram.simplediagram.part.UMLDiagramEditorID">
             <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
                <GlobalActionId actionId="bookmark"/>
             </ElementType>
          </ViewId>
       </GlobalActionHandlerProvider>
       <GlobalActionHandlerProvider
-            class="org.eclipse.papyrus.diagram.common.providers.PapyrusGlobalActionHandlerProvider"
+            class="org.eclipse.gmf.runtime.diagram.ui.render.providers.DiagramUIRenderGlobalActionHandlerProvider"
             id="PapyrusNewDiagramRender">
-         <Priority name="Highest"/>
-         <ViewId id="org.eclipse.papyrus.core.papyrusEditor">
+         <Priority name="Lowest"/>
+         <ViewId id="org.eclipse.papyrus.example.diagram.simplediagram.part.UMLDiagramEditorID">
             <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
                <GlobalActionId actionId="cut"/>
                <GlobalActionId actionId="copy"/>
@@ -159,28 +162,34 @@
    <extension point="org.eclipse.ui.preferencePages" id="prefpages">
       <?gmfgen generated="true"?>
       <page
-            id="org.eclipse.papyrus.preferences.diagrams.PapyrusNewDiagram"
-            name="PapyrusNewDiagram Diagram"
-            category="org.eclipse.papyrus.preferences.diagrams"
+            id="org.eclipse.uml2.uml.diagram.general"
+            name="%prefpage.org.eclipse.uml2.uml.diagram.general"
             class="org.eclipse.papyrus.example.diagram.simplediagram.preferences.DiagramGeneralPreferencePage">
       </page>
-      
-
-
       <page
-            id="org.eclipse.papyrus.diagram.newdiagram.preferences.DiagramPrintingPreferencePage"
+            id="org.eclipse.uml2.uml.diagram.appearance"
+            name="%prefpage.org.eclipse.uml2.uml.diagram.appearance"
+            category="org.eclipse.uml2.uml.diagram.general"
+            class="org.eclipse.papyrus.example.diagram.simplediagram.preferences.DiagramAppearancePreferencePage">
+      </page>
+      <page
+            id="org.eclipse.uml2.uml.diagram.connections"
+            name="%prefpage.org.eclipse.uml2.uml.diagram.connections"
+            category="org.eclipse.uml2.uml.diagram.general"
+            class="org.eclipse.papyrus.example.diagram.simplediagram.preferences.DiagramConnectionsPreferencePage">
+      </page>
+      <page
+            id="org.eclipse.uml2.uml.diagram.printing"
             name="%prefpage.org.eclipse.uml2.uml.diagram.printing"
-            category="org.eclipse.papyrus.preferences.diagrams.PapyrusNewDiagram"
+            category="org.eclipse.uml2.uml.diagram.general"
             class="org.eclipse.papyrus.example.diagram.simplediagram.preferences.DiagramPrintingPreferencePage">
       </page>
-
       <page
-            id="org.eclipse.papyrus.diagram.newdiagram.preferences.DiagramRulersAndGridPreferencePage"
+            id="org.eclipse.uml2.uml.diagram.rulersAndGrid"
             name="%prefpage.org.eclipse.uml2.uml.diagram.rulersAndGrid"
-            category="org.eclipse.papyrus.preferences.diagrams.PapyrusNewDiagram"
+            category="org.eclipse.uml2.uml.diagram.general"
             class="org.eclipse.papyrus.example.diagram.simplediagram.preferences.DiagramRulersAndGridPreferencePage">
       </page>
-
    </extension>
 
    <extension point="org.eclipse.ui.views.properties.tabbed.propertyContributor" id="prop-contrib">
@@ -249,10 +258,10 @@
 
 <?gmfgen generated="true"?>
 
-	<extension point="org.eclipse.core.runtime.preferences">
-		<?gmfgen generated="true"?>
-		<initializer class="org.eclipse.papyrus.example.diagram.simplediagram.preferences.DiagramPreferenceInitializer"/>
-	</extension>
+	<extension point="org.eclipse.core.runtime.preferences" id="prefs">
+      <?gmfgen generated="true"?>
+      <initializer class="org.eclipse.papyrus.example.diagram.simplediagram.preferences.DiagramPreferenceInitializer"/>
+   </extension>
 
    <extension point="org.eclipse.gmf.runtime.diagram.core.viewProviders" id="view-provider">
       <?gmfgen generated="true"?>
@@ -287,14 +296,18 @@
    </extension>
 
    <extension point="org.eclipse.gmf.runtime.emf.ui.modelingAssistantProviders" id="modelassist-provider">
-      <?gmfgen generated="true"?>
-      <modelingAssistantProvider class="org.eclipse.papyrus.example.diagram.simplediagram.providers.UMLModelingAssistantProvider">
-         <Priority name="Lowest"/>
-         <object class="org.eclipse.papyrus.example.diagram.simplediagram.edit.parts.ModelEditPart" id="Model_1000"/>
-         <object class="org.eclipse.papyrus.example.diagram.simplediagram.edit.parts.ComponentEditPart" id="Component_2001"/>
-         <context elements="Model_1000,Component_2001"/>
-      </modelingAssistantProvider>
-   </extension>
+	<?gmfgen generated="true"?>
+	<modelingAssistantProvider class="org.eclipse.papyrus.example.diagram.simplediagram.providers.assistants.UMLModelingAssistantProviderOfModelEditPart">
+		<Priority name="Lowest"/>
+		<object class="org.eclipse.papyrus.example.diagram.simplediagram.edit.parts.ModelEditPart" id="Model_1000"/>
+		<context elements="Model_1000"/>
+	</modelingAssistantProvider>
+	<modelingAssistantProvider class="org.eclipse.papyrus.example.diagram.simplediagram.providers.assistants.UMLModelingAssistantProviderOfComponentEditPart">
+		<Priority name="Lowest"/>
+		<object class="org.eclipse.papyrus.example.diagram.simplediagram.edit.parts.ComponentEditPart" id="Component_2001"/>
+		<context elements="Component_2001"/>
+	</modelingAssistantProvider>
+</extension>
 
    <extension point="org.eclipse.gmf.runtime.common.ui.services.iconProviders" id="icon-provider">
       <?gmfgen generated="true"?>
@@ -312,7 +325,7 @@
 
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
       <?gmfgen generated="true"?>
-      <metamodel nsURI="http://www.eclipse.org/uml2/3.0.0/UML">
+      <metamodel nsURI="http://www.eclipse.org/uml2/5.0.0/UML">
          <metamodelType
                id="org.eclipse.uml2.uml.diagram.Model_1000"
                name="%metatype.name.Model_1000"
@@ -322,7 +335,7 @@
             <param name="semanticHint" value="1000"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.eclipse.org/uml2/3.0.0/UML">
+      <metamodel nsURI="http://www.eclipse.org/uml2/5.0.0/UML">
          <metamodelType
                id="org.eclipse.uml2.uml.diagram.Component_2001"
                name="%metatype.name.Component_2001"
@@ -351,13 +364,13 @@
    </extension>
 	   <extension point="org.eclipse.core.expressions.propertyTesters" id="navigator-proptest.isURIEditorInput">
       <?gmfgen generated="true"?>
-       <propertyTester
-           id="org.eclipse.uml2.uml.diagram.URIEditorInputPropertyTester"
-           type="org.eclipse.emf.common.ui.URIEditorInput"
-           namespace="org.eclipse.uml2.uml.diagram"
-           properties="isURIEditorInput"
-           class="org.eclipse.papyrus.example.diagram.simplediagram.part.UMLUriEditorInputTester">
-       </propertyTester>
+      <propertyTester
+            id="org.eclipse.uml2.uml.diagram.URIEditorInputPropertyTester"
+            type="org.eclipse.emf.common.ui.URIEditorInput"
+            namespace="org.eclipse.uml2.uml.diagram"
+            properties="isURIEditorInput"
+            class="org.eclipse.papyrus.example.diagram.simplediagram.part.UMLUriEditorInputTester">
+      </propertyTester>
    </extension>
 
 	   <extension point="org.eclipse.ui.navigator.viewer" id="navigator-viewbinding">
@@ -365,7 +378,7 @@
       <viewerContentBinding viewerId="org.eclipse.ui.navigator.ProjectExplorer">
          <includes>
             <contentExtension pattern="org.eclipse.uml2.uml.diagram.resourceContent"/>
-			<contentExtension pattern="org.eclipse.uml2.uml.diagram.domainResourceContent"/>
+            <contentExtension pattern="org.eclipse.uml2.uml.diagram.domainResourceContent"/>
             <contentExtension pattern="org.eclipse.uml2.uml.diagram.navigatorLinkHelper"/>
          </includes>
       </viewerContentBinding>
@@ -388,16 +401,16 @@
             activeByDefault="true">
          <triggerPoints>
             <or>
-	           <and>
-    	          <instanceof value="org.eclipse.core.resources.IFile"/>
-        	      <test property="org.eclipse.core.resources.extension" value="PapyrusNewDiagram_diagram"/>
+               <and>
+                  <instanceof value="org.eclipse.core.resources.IFile"/>
+                  <test property="org.eclipse.core.resources.extension" value="PapyrusNewDiagram_diagram"/>
                </and>
                <instanceof value="org.eclipse.papyrus.example.diagram.simplediagram.navigator.UMLAbstractNavigatorItem"/>
             </or>
          </triggerPoints>
          <possibleChildren>
             <or>
-         	   <instanceof value="org.eclipse.papyrus.example.diagram.simplediagram.navigator.UMLAbstractNavigatorItem"/>
+               <instanceof value="org.eclipse.papyrus.example.diagram.simplediagram.navigator.UMLAbstractNavigatorItem"/>
             </or>
          </possibleChildren>
          <commonSorter 
@@ -405,9 +418,9 @@
                class="org.eclipse.papyrus.example.diagram.simplediagram.navigator.UMLNavigatorSorter">
             <parentExpression>
                <or>
-	              <and>
-    	             <instanceof value="org.eclipse.core.resources.IFile"/>
-        	         <test property="org.eclipse.core.resources.extension" value="PapyrusNewDiagram_diagram"/>
+                  <and>
+                     <instanceof value="org.eclipse.core.resources.IFile"/>
+                     <test property="org.eclipse.core.resources.extension" value="PapyrusNewDiagram_diagram"/>
                   </and>
                   <instanceof value="org.eclipse.papyrus.example.diagram.simplediagram.navigator.UMLAbstractNavigatorItem"/>
                </or>
@@ -424,9 +437,9 @@
             activeByDefault="true">
          <triggerPoints>
             <or>
-	           <and>
-    	          <instanceof value="org.eclipse.core.resources.IFile"/>
-        	      <test property="org.eclipse.core.resources.extension" value="PapyrusNewDiagram"/>
+               <and>
+                  <instanceof value="org.eclipse.core.resources.IFile"/>
+                  <test property="org.eclipse.core.resources.extension" value="PapyrusNewDiagram"/>
                </and>
                <instanceof value="org.eclipse.papyrus.example.diagram.simplediagram.navigator.UMLDomainNavigatorItem"/>
             </or>
@@ -468,15 +481,15 @@
          categoryId="org.eclipse.ui.category.edit"
          defaultHandler="org.eclipse.papyrus.example.diagram.simplediagram.part.UMLDiagramUpdateCommand"
          description="%update.diagram.description"
-         id="org.eclipse.papyrus.diagram.newdiagram.updateDiagram"
+         id="org.eclipse.papyrus.example.diagram.simplediagram.updateDiagram"
          name="%update.diagram.name"/>
    </extension>
    
    <extension point="org.eclipse.ui.bindings" id="update-cmd-binding">
       <?gmfgen generated="true"?>
       <key 
-         commandId="org.eclipse.papyrus.diagram.newdiagram.updateDiagram"
-         contextId="org.eclipse.papyrus.diagram.newdiagram.ui.diagramContext"
+         commandId="org.eclipse.papyrus.example.diagram.simplediagram.updateDiagram"
+         contextId="org.eclipse.papyrus.example.diagram.simplediagram.ui.diagramContext"
          schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
          sequence="F5"/>
    </extension>
@@ -491,7 +504,7 @@
          <command commandId="org.eclipse.uml2.uml.diagram.LoadResourceAction">
             <visibleWhen>
                <and>
-                  <with variable="activePartId"><equals value="org.eclipse.papyrus.diagram.newdiagram.part.UMLDiagramEditorID"/></with>
+                  <with variable="activePartId"><equals value="org.eclipse.papyrus.example.diagram.simplediagram.part.UMLDiagramEditorID"/></with>
                   <with variable="selection"><iterate ifEmpty="false"> 
                      <instanceof value="org.eclipse.papyrus.example.diagram.simplediagram.edit.parts.ModelEditPart"/>
                   </iterate></with>
@@ -503,10 +516,10 @@
 
    <extension point="org.eclipse.ui.commands" id="menu-commands">
       <?gmfgen generated="true"?>
-      <category id="org.eclipse.papyrus.diagram.newdiagram.part.UMLDiagramEditorID" name="%cmdcategory.name" description="%cmdcategory.desc"/>
+      <category id="org.eclipse.papyrus.example.diagram.simplediagram.part.UMLDiagramEditorID" name="%cmdcategory.name" description="%cmdcategory.desc"/>
       <command id="org.eclipse.uml2.uml.diagram.LoadResourceAction"
          name="Load Resource"
-         categoryId="org.eclipse.papyrus.diagram.newdiagram.part.UMLDiagramEditorID"
+         categoryId="org.eclipse.papyrus.example.diagram.simplediagram.part.UMLDiagramEditorID"
          defaultHandler="org.eclipse.papyrus.example.diagram.simplediagram.part.LoadResourceAction"/>
    </extension>
 
@@ -517,87 +530,63 @@
 
 
 
-<extension
-		id="UML Plugin.palettedefinition"
-		name="UML Plugin Predefined Entries"
-		point="org.eclipse.gmf.runtime.diagram.ui.paletteProviders"> 
-		
-		<?gmfgen generated="true"?>	
-		<paletteProvider class="org.eclipse.gmf.runtime.diagram.ui.providers.DefaultPaletteProvider">
-			<Priority name="Lowest"/>
-      		<contribution
-            	factoryClass="org.eclipse.papyrus.example.diagram.simplediagram.part.UMLPaletteFactory">
-     			<predefinedEntry id="standardGroup/noteStack/noteTool" remove="true"/> 
-				<predefinedEntry id="standardGroup/noteStack/textTool" remove="true"/> 
-				<predefinedEntry id="standardGroup/noteStack/noteattachmentTool" remove="true"/>
-					<entry
-       defineOnly="true"
-       description="Create new Component"
-       id="createComponent1CreationTool"
-       kind="tool"
-       label="Component"
-       large_icon="icons/obj16/Component.gif"
-       path=""
-       small_icon="icons/obj16/Component.gif">
- 	</entry>
-
-			</contribution>
-		</paletteProvider>	
-			
-	</extension>
-
-<extension
-		id="UML Plugin.standard"
-		name="UML Plugin Standard Palette"
-		point="org.eclipse.gmf.runtime.diagram.ui.paletteProviders"> 
-		
-		<?gmfgen generated="true"?>	
-		<paletteProvider class="org.eclipse.gmf.runtime.diagram.ui.providers.DefaultPaletteProvider">
-			<Priority name="Low"/>
-      		<contribution
-            	factoryClass="org.eclipse.papyrus.example.diagram.simplediagram.part.UMLPaletteFactory">
-     			<predefinedEntry id="standardGroup/noteStack/noteTool" remove="true"/> 
-				<predefinedEntry id="standardGroup/noteStack/textTool" remove="true"/> 
-				<predefinedEntry id="standardGroup/noteStack/noteattachmentTool" remove="true"/>
-					<entry
-       description=""
-       id="createUml1Group"
-       kind="drawer"
-       label="uml"
-       large_icon="icons/obj16/Diagram_UML.gif"
-       path="/"
-       small_icon="icons/obj16/Diagram_UML.gif">
-       <expand
-              force="true">
-       </expand>
- 	</entry>
- 	 
- 	 	<predefinedEntry
-          id="createComponent1CreationTool"
-          path="/createUml1Group">
-    </predefinedEntry>
 
 
-			</contribution>
-			<editor id="org.eclipse.uml2.uml.diagram"/>
-		</paletteProvider>	
-			
-	</extension>
+<extension point="org.eclipse.team.core.fileTypes" id="repo-ftype">
+      <?gmfgen generated="true"?>
+      <fileTypes type="text" extension="PapyrusNewDiagram_diagram"/>
+   </extension>
 
-<extension point="org.eclipse.ui.preferencePages">
+<extension point="org.eclipse.emf.ecore.extension_parser" id="resource-factory">
+      <?gmfgen generated="true"?>
+      <parser
+         type="PapyrusNewDiagram_diagram"
+         class="org.eclipse.gmf.runtime.emf.core.resources.GMFResourceFactory">
+      </parser>
+   </extension>
 
+<extension point="org.eclipse.ui.editors" id="gmf-editor">
+      <?gmfgen generated="true"?>
+      <editor
+         id="org.eclipse.papyrus.example.diagram.simplediagram.part.UMLDiagramEditorID"
+         name="%editorName"
+         icon="icons/obj16/UMLDiagramFile.gif"
+         extensions="PapyrusNewDiagram_diagram"
+         default="true"
+         class="org.eclipse.papyrus.example.diagram.simplediagram.part.UMLDiagramEditor"
+         matchingStrategy="org.eclipse.papyrus.example.diagram.simplediagram.part.UMLMatchingStrategy"
+         contributorClass="org.eclipse.papyrus.example.diagram.simplediagram.part.UMLDiagramActionBarContributor">
+      </editor>
+   </extension>
 
-		
-	<?gmfgen generated="true"?>
-	<page  	category="org.eclipse.papyrus.preferences.diagrams.PapyrusNewDiagram"
-			class="org.eclipse.papyrus.example.diagram.simplediagram.preferences.ComponentPreferencePage"
-            id="org.eclipse.papyrus.diagram.newdiagram.preferences.ComponentPreferencePage"
-            name="Component Node" />
-	
+<extension point="org.eclipse.ui.newWizards" id="creation-wizard">
+      <?gmfgen generated="true"?>
+      <wizard
+         name="%newWizardName"
+         icon="icons/obj16/UMLDiagramFile.gif"
+         category="org.eclipse.ui.Examples"
+         class="org.eclipse.papyrus.example.diagram.simplediagram.part.UMLCreationWizard"
+         id="org.eclipse.papyrus.example.diagram.simplediagram.part.UMLCreationWizardID">
+         <description>%newWizardDesc</description>  
+      </wizard>
+   </extension>
 
+<extension point="org.eclipse.ui.popupMenus" id="init-diagram-action">
+      <?gmfgen generated="true"?>
+      <objectContribution
+            id="org.eclipse.uml2.uml.diagram.InitDiagram"
+            nameFilter="*.PapyrusNewDiagram"
+            objectClass="org.eclipse.core.resources.IFile">
+         <action
+               label="%initDiagramActionLabel"
+               class="org.eclipse.papyrus.example.diagram.simplediagram.part.UMLInitDiagramFileAction"
+               menubarPath="additions"
+               enablesFor="1"
+               id="org.eclipse.uml2.uml.diagram.InitDiagramAction">
+         </action>
+      </objectContribution>
+   </extension>
 
-
-</extension>
 
 
 

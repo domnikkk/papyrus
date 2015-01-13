@@ -36,6 +36,7 @@
 		<module>../tests/junit/plugins/infra/gmfdiag/org.eclipse.papyrus.infra.gmfdiag.common.tests</module>
 		<module>../tests/junit/plugins/infra/gmfdiag/org.eclipse.papyrus.infra.gmfdiag.css.tests</module>
     <module>../tests/junit/plugins/infra/gmfdiag/org.eclipse.papyrus.infra.gmfdiag.menu.tests</module>
+        <module>../tests/junit/plugins/infra/nattable/org.eclipse.papyrus.infra.nattable.model.tests</module>
 		<module>../tests/junit/plugins/infra/nattable/org.eclipse.papyrus.infra.nattable.model.editor.tests</module>
 		<module>../tests/junit/plugins/infra/nattable/org.eclipse.papyrus.infra.nattable.tests</module>
 		<module>../tests/junit/plugins/infra/nattable/org.eclipse.papyrus.infra.nattable.views.tests</module>
@@ -75,6 +76,7 @@
 		<module>../tests/junit/plugins/uml/modelexplorer/org.eclipse.papyrus.uml.modelexplorer.tests</module>
 		<module>../tests/junit/plugins/uml/nattable/org.eclipse.papyrus.uml.nattable.tests</module>
 		<module>../tests/junit/plugins/uml/nattable/org.eclipse.papyrus.uml.nattable.generic.tests</module>
+		<module>../tests/junit/plugins/uml/nattable/org.eclipse.papyrus.uml.nattable.clazz.config.tests</module>
 		<module>../tests/junit/plugins/uml/org.eclipse.papyrus.search.tests</module>
 		<module>../tests/junit/plugins/uml/org.eclipse.papyrus.uml.modelrepair.tests</module>
 		<module>../tests/junit/plugins/uml/org.eclipse.papyrus.uml.service.types.tests</module>
