@@ -47,6 +47,10 @@ import org.eclipse.papyrus.migration.rsa.Activator;
 import org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.Config;
 import org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.MappingParameters;
 import org.eclipse.papyrus.migration.rsa.RSAToPapyrusParameters.URIMapping;
+import org.eclipse.papyrus.migration.rsa.internal.schedule.JobWrapper;
+import org.eclipse.papyrus.migration.rsa.internal.schedule.Schedulable;
+import org.eclipse.papyrus.migration.rsa.internal.schedule.Scheduler;
+import org.eclipse.papyrus.migration.rsa.internal.schedule.TransformationWrapper;
 import org.eclipse.papyrus.migration.rsa.transformation.ui.URIMappingDialog;
 import org.eclipse.papyrus.uml.tools.model.UmlModel;
 import org.eclipse.swt.widgets.Control;
@@ -113,36 +117,44 @@ public class ImportTransformationLauncher {
 		}
 
 		// Always use the batch launcher, even if there is only 1 transformation (Bug 455012)
-		importModelDependencies(transformations);
+		importModels(transformations);
 	}
 
-	protected void importModelDependencies(final List<ImportTransformation> transformations) {
+	/**
+	 * Start a Job and delegate to {@link #importModels(IProgressMonitor, List)}
+	 *
+	 * @param transformations
+	 */
+	protected void importModels(final List<ImportTransformation> transformations) {
 		Job importDependencies = new Job("Import Models") {
 
 			@Override
 			protected IStatus run(IProgressMonitor monitor) {
-				IStatus result = ImportTransformationLauncher.this.run(monitor, transformations);
+				IStatus result = ImportTransformationLauncher.this.importModels(monitor, transformations);
 
 				long totalLoadingTime = 0L;
-				long totalTransformationTime = 0L;
+				long cumulatedTransformationTime = 0L;
 				for (ImportTransformation transformation : transformations) {
-					totalTransformationTime += transformation.getExecutionTime();
+					cumulatedTransformationTime += transformation.getExecutionTime();
 					totalLoadingTime += transformation.getLoadingTime();
 				}
 
-				int nbThreads = config.getMaxThreads();
-				System.out.println("--- First phase (0-50%) / Multi-threaded (" + nbThreads + ")---");
-				System.out.println("Cumulated Transformation Time: " + timeFormat(totalTransformationTime));
-				System.out.println("Total Transformation Time: " + timeFormat(transformationsExecutionTime));
-				System.out.println("Cumulated Loading Time: " + timeFormat(totalLoadingTime));
+				int nbThreads = Math.max(1, config.getMaxThreads());
+				System.out.println("First phase (0-50%) / " + nbThreads + " Threads");
+				System.out.println("\tCumulated Transformation Time: " + timeFormat(cumulatedTransformationTime));
+				System.out.println("\tCumulated Loading Time: " + timeFormat(totalLoadingTime));
+				System.out.println("\tTotal Transformation Time: " + timeFormat(transformationsExecutionTime));
 
-				System.out.println("--- Second phase (50-100%) / Single-threaded ---");
-				System.out.println("Total Loading Time: " + timeFormat(ownLoadingTime));
-				System.out.println("Total Fix Dependencies Time: " + timeFormat(ownExecutionTime));
+				System.out.println("Second phase (50-100%) / " + nbThreads + " Threads");
+				System.out.println("\tCumulated Loading Time: " + timeFormat(ownLoadingTime));
+				System.out.println("\tTotal Fix Dependencies Time: " + timeFormat(ownExecutionTime));
 
-				System.out.println("--- Total ---");
-				System.out.println("Cumulated Total time: " + timeFormat(ownExecutionTime + totalTransformationTime));
-				System.out.println("Total time: " + timeFormat(ownExecutionTime + transformationsExecutionTime));
+				System.out.println("Total");
+				System.out.println("\tCumulated Total time: " + timeFormat(ownExecutionTime + cumulatedTransformationTime));
+				System.out.println("\tTotal time: " + timeFormat(ownExecutionTime + transformationsExecutionTime));
+
+				System.out.println("Import Complete");
+				System.out.println();
 
 				return result;
 			}
@@ -216,7 +228,15 @@ public class ImportTransformationLauncher {
 		return String.format("%d:%02d:%02d", seconds / 3600, (seconds % 3600) / 60, (seconds % 60));
 	}
 
-	protected IStatus run(IProgressMonitor monitor, List<ImportTransformation> transformations) {
+	/**
+	 * Schedules all the individual transformations, wait for completion, then
+	 * call {@link #handleModelDependencies(List, IProgressMonitor)}
+	 *
+	 * @param monitor
+	 * @param transformations
+	 * @return
+	 */
+	protected IStatus importModels(IProgressMonitor monitor, List<ImportTransformation> transformations) {
 
 		long begin = System.nanoTime();
 
@@ -224,62 +244,14 @@ public class ImportTransformationLauncher {
 		int numTasks = transformations.size() * 2; // For each transformation: wait for completion, then handle dependencies
 		monitor.beginTask("Importing Models...", numTasks);
 
-		boolean runAsUserJob = false; // Never show individual progress-bar for transformations (Bug 455012)
+		List<Schedulable> tasks = new LinkedList<Schedulable>();
 
-		int maxThreads = Math.max(1, config.getMaxThreads());
-
-		List<ImportTransformation> remainingTransformations = new LinkedList<ImportTransformation>(transformations);
-		List<ImportTransformation> runningTransformations = new LinkedList<ImportTransformation>();
-
-		// Iterate on transformations
-		// Schedule maximum MAX_THREADS transformations at the same time (At least 1)
-		// When a transformation is complete, keep going. Otherwise, sleep
-		while (!remainingTransformations.isEmpty()) {
-			if (monitor.isCanceled()) {
-				monitor.subTask("Canceling remaining jobs...");
-				for (ImportTransformation transformation : runningTransformations) {
-					transformation.cancel();
-				}
-				remainingTransformations.clear(); // Don't start these transformations at all
-				// Keep waiting: the cancel operation is asynchronous, we still need to wait for the jobs to complete
-			}
-
-			// Schedule transformations if we have enough threads and they have not all been scheduled
-			while (runningTransformations.size() < maxThreads && !remainingTransformations.isEmpty()) {
-				ImportTransformation transformation = remainingTransformations.remove(0); // Get and remove
-				transformation.run(runAsUserJob);
-				runningTransformations.add(transformation);
-			}
-
-			if (!runningTransformations.isEmpty()) {
-				String waitFor = runningTransformations.get(0).getModelName();
-				monitor.subTask("Waiting for Import " + waitFor + " to complete...");
-			}
-
-			// We can continue if at least one transformation is complete (Leaving a free Thread)
-			boolean canContinue = false;
-
-			Iterator<ImportTransformation> iterator = runningTransformations.iterator();
-			while (iterator.hasNext()) {
-				ImportTransformation runningTransformation = iterator.next();
-				if (runningTransformation.isComplete()) {
-					canContinue = true;
-					iterator.remove();
-					monitor.worked(1);
-				}
-			}
-
-			if (!canContinue) {
-				try {
-					Thread.sleep(100);
-				} catch (InterruptedException ex) {
-					Activator.log.error(ex);
-				}
-			}
+		for (ImportTransformation transformation : transformations) {
+			tasks.add(new TransformationWrapper(transformation));
 		}
 
-		// All transformations have been scheduled (But not necessarily completed): wait for all of them to complete
-		wait(runningTransformations, monitor);
+		Scheduler scheduler = new Scheduler(config.getMaxThreads());
+		scheduler.schedule(monitor, tasks);
 
 		long end = System.nanoTime();
 		transformationsExecutionTime = end - begin;
@@ -293,48 +265,13 @@ public class ImportTransformationLauncher {
 		return Status.OK_STATUS;
 	}
 
-	// Wait for all (remaining) import transformations to complete
-	protected void wait(List<ImportTransformation> transformations, IProgressMonitor monitor) {
-
-		// Transformations still running
-		List<ImportTransformation> runningTransformations = new LinkedList<ImportTransformation>(transformations);
-
-		while (!runningTransformations.isEmpty()) {
-
-			if (monitor.isCanceled()) {
-				monitor.subTask("Canceling remaining jobs...");
-				for (ImportTransformation transformation : runningTransformations) {
-					transformation.cancel();
-				}
-				// Keep waiting: the cancel operation is asynchronous, we still need to wait for the jobs to complete
-			}
-
-			Iterator<ImportTransformation> iterator = runningTransformations.iterator();
-			while (iterator.hasNext()) {
-				ImportTransformation transformation = iterator.next();
-				if (transformation.isComplete()) {
-					iterator.remove();
-					monitor.worked(1);
-				}
-			}
-
-			if (!runningTransformations.isEmpty()) {
-				String waitFor = runningTransformations.get(0).getModelName();
-				monitor.subTask("Waiting for " + waitFor + " to complete...");
-
-				try {
-					Thread.sleep(100);
-				} catch (InterruptedException ex) {
-					Activator.log.error(ex);
-					return;
-				}
-			}
-		}
-
-	}
-
-
-	// Convert all model dependencies (For "imported model -> emx library" to "imported model -> imported library")
+	/**
+	 * Convert all model dependencies (For "imported model -> emx library" to "imported model -> imported library")
+	 * Also repairs profile and stereotype applications
+	 *
+	 * @param transformations
+	 * @param monitor
+	 */
 	protected void handleModelDependencies(List<ImportTransformation> transformations, IProgressMonitor monitor) {
 
 		long begin = System.nanoTime();
@@ -342,8 +279,8 @@ public class ImportTransformationLauncher {
 		long timeToIgnore = 0L;
 
 
-		Map<URI, URI> urisToReplace = new HashMap<URI, URI>();
-		Map<URI, URI> profileUrisToReplace = new HashMap<URI, URI>();
+		final Map<URI, URI> urisToReplace = new HashMap<URI, URI>();
+		final Map<URI, URI> profileUrisToReplace = new HashMap<URI, URI>();
 
 		for (ImportTransformation transformation : transformations) {
 			for (Map.Entry<URI, URI> mapping : transformation.getURIMappings().entrySet()) {
@@ -373,80 +310,88 @@ public class ImportTransformationLauncher {
 			populateURIMap(parameters.getProfileUriMappings(), profileUrisToReplace);
 		}
 
-		for (ImportTransformation transformation : transformations) {
 
-			if (monitor.isCanceled()) {
-				return;
-			}
+		List<Schedulable> tasks = new LinkedList<Schedulable>();
+		for (final ImportTransformation transformation : transformations) {
+			Job transformationJob = new Job("Importing dependencies for " + transformation.getModelName()) {
+				@Override
+				protected IStatus run(IProgressMonitor monitor) {
+					fixDependencies(transformation, monitor, urisToReplace, profileUrisToReplace);
 
-			try {
-
-				monitor.subTask("Importing dependencies for " + transformation.getModelName());
-				final ModelSet modelSet = new DiResourceSet();
-				UMLUtil.init(modelSet);
-
-				final Collection<Resource> resourcesToRepair;
-				try {
-					URI targetURI = transformation.getTargetURI();
-					if (targetURI == null) {
-						// The transformation didn't complete properly
-						monitor.worked(1);
-						continue;
-					}
-
-					long startLoading = System.nanoTime();
-					modelSet.loadModels(transformation.getTargetURI());
-					resourcesToRepair = resolveOwnResources(modelSet);
-					long endLoading = System.nanoTime();
-					ownLoadingTime += endLoading - startLoading;
-				} catch (ModelMultiException e) {
-					Activator.log.error(e);
-					monitor.worked(1);
-					continue;
+					return Status.OK_STATUS;
 				}
+			};
 
-				repairProxies(modelSet, resourcesToRepair, urisToReplace, monitor); // Repairing proxies first will change the Applied Profiles. This helps repairing stereotypes
-
-				RepairStereotypes repairStereotypesAction = new RepairStereotypes(modelSet, profileUrisToReplace);
-				repairStereotypesAction.execute();
-
-				try {
-
-					for (Resource resource : resourcesToRepair) {
-						resource.save(null);
-					}
-					monitor.worked(1);
-
-					final TransactionalEditingDomain domain = modelSet.getTransactionalEditingDomain();
-
-					GMFUnsafe.write(domain, new Runnable() {
-						@Override
-						public void run() {
-							EMFHelper.unload(modelSet);
-						}
-					});
-
-					domain.dispose();
-
-				} catch (IOException ex) {
-					Activator.log.error(ex);
-					continue;
-				} catch (RollbackException ex) {
-					Activator.log.error(ex);
-					continue;
-				} catch (InterruptedException ex) {
-					Activator.log.error(ex);
-					continue;
-				}
-			} catch (Exception ex) {
-				Activator.log.error(ex);
-				continue;
-			}
+			tasks.add(new JobWrapper(transformationJob));
 		}
+
+		Scheduler scheduler = new Scheduler(config.getMaxThreads());
+		scheduler.schedule(monitor, tasks);
 
 		long end = System.nanoTime();
 
 		ownExecutionTime = end - begin - timeToIgnore;
+	}
+
+	protected IStatus fixDependencies(ImportTransformation transformation, IProgressMonitor monitor, Map<URI, URI> urisToReplace, Map<URI, URI> profileUrisToReplace) {
+		monitor.subTask("Importing dependencies for " + transformation.getModelName());
+		final ModelSet modelSet = new DiResourceSet();
+		UMLUtil.init(modelSet);
+
+		final Collection<Resource> resourcesToRepair;
+		try {
+			URI targetURI = transformation.getTargetURI();
+			if (targetURI == null) {
+				// The transformation didn't complete properly
+				monitor.worked(1);
+				return Status.OK_STATUS;
+			}
+
+			long startLoading = System.nanoTime();
+			modelSet.loadModels(transformation.getTargetURI());
+			resourcesToRepair = resolveOwnResources(modelSet);
+			long endLoading = System.nanoTime();
+			synchronized (ImportTransformationLauncher.this) {
+				ownLoadingTime += endLoading - startLoading;
+			}
+		} catch (ModelMultiException e) {
+			Activator.log.error(e);
+			monitor.worked(1);
+			return Status.OK_STATUS;
+		}
+
+		repairProxies(modelSet, resourcesToRepair, urisToReplace, monitor); // Repairing proxies first will change the Applied Profiles. This helps repairing stereotypes
+
+		RepairStereotypes repairStereotypesAction = new RepairStereotypes(modelSet, profileUrisToReplace);
+		repairStereotypesAction.execute();
+
+		try {
+
+			for (Resource resource : resourcesToRepair) {
+				resource.save(null);
+			}
+			monitor.worked(1);
+
+			final TransactionalEditingDomain domain = modelSet.getTransactionalEditingDomain();
+
+			GMFUnsafe.write(domain, new Runnable() {
+				@Override
+				public void run() {
+					EMFHelper.unload(modelSet);
+				}
+			});
+
+			domain.dispose();
+
+		} catch (IOException ex) {
+			Activator.log.error(ex);
+		} catch (RollbackException ex) {
+			Activator.log.error(ex);
+		} catch (InterruptedException ex) {
+			Activator.log.error(ex);
+		}
+
+		return Status.OK_STATUS;
 	}
 
 	protected Collection<Resource> resolveOwnResources(ModelSet modelSet) {
