@@ -29,7 +29,7 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattableproblem.StringR
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableproblem.impl.StringResolutionProblemImpl#getValueAsString <em>Value As String </em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableproblem.impl.StringResolutionProblemImpl#getValueAsString <em>Value As String</em>}</li>
  * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableproblem.impl.StringResolutionProblemImpl#getUnresolvedString <em>Unresolved String</em>}</li>
  * </ul>
  * </p>
@@ -37,7 +37,6 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattableproblem.StringR
  * @generated
  */
 public class StringResolutionProblemImpl extends ProblemImpl implements StringResolutionProblem {
-
 	/**
 	 * The default value of the '{@link #getValueAsString() <em>Value As String</em>}' attribute.
 	 * <!-- begin-user-doc -->

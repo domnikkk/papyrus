@@ -10,8 +10,16 @@
  ******************************************************************************/
 package org.eclipse.papyrus.infra.nattable.dataprovider;
 
+import java.util.ArrayList;
+import java.util.Collection;
+
 import org.eclipse.papyrus.infra.nattable.manager.table.INattableModelManager;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxis.ITreeItemAxis;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AbstractHeaderAxisConfiguration;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AxisManagerRepresentation;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.IAxisConfiguration;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.TreeFillingConfiguration;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattableconfiguration.TableConfiguration;
 import org.eclipse.papyrus.infra.nattable.utils.HeaderAxisConfigurationManagementUtils;
 
 /**
@@ -20,6 +28,7 @@ import org.eclipse.papyrus.infra.nattable.utils.HeaderAxisConfigurationManagemen
  * a row header with 0,1 or 2 columns
  *
  */
+@Deprecated
 public class RowHeaderDataProvider extends AbstractHeaderDataProvider {
 
 	private int axisCount;
@@ -44,7 +53,30 @@ public class RowHeaderDataProvider extends AbstractHeaderDataProvider {
 	 */
 	@Override
 	public int getColumnCount() {
-		return this.axisCount;
+		TableConfiguration conf = this.manager.getTable().getTableConfiguration();
+		int nbHierarchicalColumn = 0;
+		for (AxisManagerRepresentation current : conf.getRowHeaderAxisConfiguration().getAxisManagers()) {
+			for (TreeFillingConfiguration curr : getHierarchicalFillingConfigurations(current)) {
+				if (curr.getDepth() > nbHierarchicalColumn) {
+					nbHierarchicalColumn = curr.getDepth();
+				}
+			}
+		}
+		nbHierarchicalColumn++;
+		return this.axisCount + nbHierarchicalColumn;
+	}
+
+	// FIXME : move me in common method
+	protected Collection<TreeFillingConfiguration> getHierarchicalFillingConfigurations(final AxisManagerRepresentation axisManagerRepresentation) {// FIXME : local configuration not yet managed
+		final Collection<TreeFillingConfiguration> configs = new ArrayList<TreeFillingConfiguration>();
+		for (final IAxisConfiguration current : axisManagerRepresentation.getSpecificAxisConfigurations()) {
+			if (current instanceof TreeFillingConfiguration) {
+				// if(((HierarchicalEStructuralFeatureFillingConfiguration)current).getHierarchicalLevel() == this.level) {
+				configs.add((TreeFillingConfiguration) current);
+				// }
+			}
+		}
+		return configs;
 	}
 
 	/**
@@ -73,8 +105,30 @@ public class RowHeaderDataProvider extends AbstractHeaderDataProvider {
 				if (columnIndex == 0) {
 					return getAxisIndex(rowIndex);
 				}
-				if (columnIndex == 1) {
-					return this.manager.getRowElement(rowIndex);
+				if (columnIndex >= 1) {
+					// AbstractAxisManager axisManager = (AbstractAxisManager)this.manager.getRowAxisManager();
+					// IAxisManager man = ((CompositeAxisManager)axisManager).getAxisManager();
+					Object curr = this.manager.getRowElement(rowIndex);
+
+					int depth = 0;
+
+					if (curr instanceof ITreeItemAxis) {
+						ITreeItemAxis parent = ((ITreeItemAxis) curr).getParent();
+						while (parent != null) {
+							depth++;
+							parent = parent.getParent();
+						}
+
+					}
+
+
+
+					if ((columnIndex - 1) == depth) {
+						return this.manager.getRowElement(rowIndex);
+					}
+
+					return "";
+					// return this.manager.getRowElement(rowIndex);
 				}
 			} else {
 				// TODO not tested
@@ -94,7 +148,7 @@ public class RowHeaderDataProvider extends AbstractHeaderDataProvider {
 			}
 			break;
 		}
-		return null;
+		return columnIndex;
 	}
 
 	/**
@@ -118,7 +172,7 @@ public class RowHeaderDataProvider extends AbstractHeaderDataProvider {
 	 */
 	@Override
 	protected AbstractHeaderAxisConfiguration getAxisConfiguration() {
-		return HeaderAxisConfigurationManagementUtils.getAbstractHeaderAxisConfigurationUsedInTable(this.manager.getTable());
+		return HeaderAxisConfigurationManagementUtils.getRowAbstractHeaderAxisConfigurationUsedInTable(this.manager.getTable());
 	}
 
 	/**

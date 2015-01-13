@@ -17,7 +17,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.ecore.EcorePackage;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattablestyle.NattablestylePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -39,7 +39,6 @@ import org.eclipse.emf.ecore.EcorePackage;
  * @generated
  */
 public interface NattableaxisconfigurationPackage extends EPackage {
-
 	/**
 	 * The package name.
 	 * <!-- begin-user-doc -->
@@ -77,8 +76,7 @@ public interface NattableaxisconfigurationPackage extends EPackage {
 	NattableaxisconfigurationPackage eINSTANCE = org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.impl.NattableaxisconfigurationPackageImpl.init();
 
 	/**
-	 * The meta object id for the ' {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.impl.AbstractHeaderAxisConfigurationImpl
-	 * <em>Abstract Header Axis Configuration</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.impl.AbstractHeaderAxisConfigurationImpl <em>Abstract Header Axis Configuration</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -96,7 +94,17 @@ public interface NattableaxisconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_HEADER_AXIS_CONFIGURATION__EANNOTATIONS = EcorePackage.EMODEL_ELEMENT__EANNOTATIONS;
+	int ABSTRACT_HEADER_AXIS_CONFIGURATION__EANNOTATIONS = NattablestylePackage.STYLED_ELEMENT__EANNOTATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Styles</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_HEADER_AXIS_CONFIGURATION__STYLES = NattablestylePackage.STYLED_ELEMENT__STYLES;
 
 	/**
 	 * The feature id for the '<em><b>Index Style</b></em>' attribute.
@@ -106,7 +114,7 @@ public interface NattableaxisconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_HEADER_AXIS_CONFIGURATION__INDEX_STYLE = EcorePackage.EMODEL_ELEMENT_FEATURE_COUNT + 0;
+	int ABSTRACT_HEADER_AXIS_CONFIGURATION__INDEX_STYLE = NattablestylePackage.STYLED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
@@ -116,7 +124,7 @@ public interface NattableaxisconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_HEADER_AXIS_CONFIGURATION__DISPLAY_LABEL = EcorePackage.EMODEL_ELEMENT_FEATURE_COUNT + 1;
+	int ABSTRACT_HEADER_AXIS_CONFIGURATION__DISPLAY_LABEL = NattablestylePackage.STYLED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Display Filter</b></em>' attribute.
@@ -126,7 +134,7 @@ public interface NattableaxisconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_HEADER_AXIS_CONFIGURATION__DISPLAY_FILTER = EcorePackage.EMODEL_ELEMENT_FEATURE_COUNT + 2;
+	int ABSTRACT_HEADER_AXIS_CONFIGURATION__DISPLAY_FILTER = NattablestylePackage.STYLED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Display Index</b></em>' attribute.
@@ -136,7 +144,7 @@ public interface NattableaxisconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_HEADER_AXIS_CONFIGURATION__DISPLAY_INDEX = EcorePackage.EMODEL_ELEMENT_FEATURE_COUNT + 3;
+	int ABSTRACT_HEADER_AXIS_CONFIGURATION__DISPLAY_INDEX = NattablestylePackage.STYLED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Owned Label Configurations</b></em>' containment reference list.
@@ -146,7 +154,7 @@ public interface NattableaxisconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_HEADER_AXIS_CONFIGURATION__OWNED_LABEL_CONFIGURATIONS = EcorePackage.EMODEL_ELEMENT_FEATURE_COUNT + 4;
+	int ABSTRACT_HEADER_AXIS_CONFIGURATION__OWNED_LABEL_CONFIGURATIONS = NattablestylePackage.STYLED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Owned Axis Configurations</b></em>' containment reference list.
@@ -156,7 +164,7 @@ public interface NattableaxisconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_HEADER_AXIS_CONFIGURATION__OWNED_AXIS_CONFIGURATIONS = EcorePackage.EMODEL_ELEMENT_FEATURE_COUNT + 5;
+	int ABSTRACT_HEADER_AXIS_CONFIGURATION__OWNED_AXIS_CONFIGURATIONS = NattablestylePackage.STYLED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Abstract Header Axis Configuration</em>' class.
@@ -166,7 +174,7 @@ public interface NattableaxisconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_HEADER_AXIS_CONFIGURATION_FEATURE_COUNT = EcorePackage.EMODEL_ELEMENT_FEATURE_COUNT + 6;
+	int ABSTRACT_HEADER_AXIS_CONFIGURATION_FEATURE_COUNT = NattablestylePackage.STYLED_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The operation id for the '<em>Get EAnnotation</em>' operation.
@@ -176,7 +184,37 @@ public interface NattableaxisconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_HEADER_AXIS_CONFIGURATION___GET_EANNOTATION__STRING = EcorePackage.EMODEL_ELEMENT___GET_EANNOTATION__STRING;
+	int ABSTRACT_HEADER_AXIS_CONFIGURATION___GET_EANNOTATION__STRING = NattablestylePackage.STYLED_ELEMENT___GET_EANNOTATION__STRING;
+
+	/**
+	 * The operation id for the '<em>Get Named Style</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_HEADER_AXIS_CONFIGURATION___GET_NAMED_STYLE__ECLASS_STRING = NattablestylePackage.STYLED_ELEMENT___GET_NAMED_STYLE__ECLASS_STRING;
+
+	/**
+	 * The operation id for the '<em>Get Style</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_HEADER_AXIS_CONFIGURATION___GET_STYLE__ECLASS = NattablestylePackage.STYLED_ELEMENT___GET_STYLE__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Create Style</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_HEADER_AXIS_CONFIGURATION___CREATE_STYLE__ECLASS = NattablestylePackage.STYLED_ELEMENT___CREATE_STYLE__ECLASS;
 
 	/**
 	 * The number of operations of the '<em>Abstract Header Axis Configuration</em>' class.
@@ -186,11 +224,10 @@ public interface NattableaxisconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_HEADER_AXIS_CONFIGURATION_OPERATION_COUNT = EcorePackage.EMODEL_ELEMENT_OPERATION_COUNT + 0;
+	int ABSTRACT_HEADER_AXIS_CONFIGURATION_OPERATION_COUNT = NattablestylePackage.STYLED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the ' {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.impl.AxisManagerRepresentationImpl
-	 * <em>Axis Manager Representation</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.impl.AxisManagerRepresentationImpl <em>Axis Manager Representation</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -201,6 +238,26 @@ public interface NattableaxisconfigurationPackage extends EPackage {
 	int AXIS_MANAGER_REPRESENTATION = 1;
 
 	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int AXIS_MANAGER_REPRESENTATION__EANNOTATIONS = NattablestylePackage.STYLED_ELEMENT__EANNOTATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Styles</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int AXIS_MANAGER_REPRESENTATION__STYLES = NattablestylePackage.STYLED_ELEMENT__STYLES;
+
+	/**
 	 * The feature id for the '<em><b>Axis Manager Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -208,7 +265,7 @@ public interface NattableaxisconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AXIS_MANAGER_REPRESENTATION__AXIS_MANAGER_ID = 0;
+	int AXIS_MANAGER_REPRESENTATION__AXIS_MANAGER_ID = NattablestylePackage.STYLED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Label Provider Context</b></em>' attribute.
@@ -218,7 +275,7 @@ public interface NattableaxisconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AXIS_MANAGER_REPRESENTATION__LABEL_PROVIDER_CONTEXT = 1;
+	int AXIS_MANAGER_REPRESENTATION__LABEL_PROVIDER_CONTEXT = NattablestylePackage.STYLED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Header Label Configuration</b></em>' reference.
@@ -228,7 +285,7 @@ public interface NattableaxisconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AXIS_MANAGER_REPRESENTATION__HEADER_LABEL_CONFIGURATION = 2;
+	int AXIS_MANAGER_REPRESENTATION__HEADER_LABEL_CONFIGURATION = NattablestylePackage.STYLED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Specific Axis Configurations</b></em>' reference list.
@@ -238,7 +295,7 @@ public interface NattableaxisconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AXIS_MANAGER_REPRESENTATION__SPECIFIC_AXIS_CONFIGURATIONS = 3;
+	int AXIS_MANAGER_REPRESENTATION__SPECIFIC_AXIS_CONFIGURATIONS = NattablestylePackage.STYLED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Axis Manager Representation</em>' class.
@@ -248,7 +305,47 @@ public interface NattableaxisconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AXIS_MANAGER_REPRESENTATION_FEATURE_COUNT = 4;
+	int AXIS_MANAGER_REPRESENTATION_FEATURE_COUNT = NattablestylePackage.STYLED_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int AXIS_MANAGER_REPRESENTATION___GET_EANNOTATION__STRING = NattablestylePackage.STYLED_ELEMENT___GET_EANNOTATION__STRING;
+
+	/**
+	 * The operation id for the '<em>Get Named Style</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int AXIS_MANAGER_REPRESENTATION___GET_NAMED_STYLE__ECLASS_STRING = NattablestylePackage.STYLED_ELEMENT___GET_NAMED_STYLE__ECLASS_STRING;
+
+	/**
+	 * The operation id for the '<em>Get Style</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int AXIS_MANAGER_REPRESENTATION___GET_STYLE__ECLASS = NattablestylePackage.STYLED_ELEMENT___GET_STYLE__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Create Style</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int AXIS_MANAGER_REPRESENTATION___CREATE_STYLE__ECLASS = NattablestylePackage.STYLED_ELEMENT___CREATE_STYLE__ECLASS;
 
 	/**
 	 * The number of operations of the '<em>Axis Manager Representation</em>' class.
@@ -258,11 +355,10 @@ public interface NattableaxisconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AXIS_MANAGER_REPRESENTATION_OPERATION_COUNT = 0;
+	int AXIS_MANAGER_REPRESENTATION_OPERATION_COUNT = NattablestylePackage.STYLED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the ' {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.impl.AxisManagerConfigurationImpl
-	 * <em>Axis Manager Configuration</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.impl.AxisManagerConfigurationImpl <em>Axis Manager Configuration</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -273,6 +369,26 @@ public interface NattableaxisconfigurationPackage extends EPackage {
 	int AXIS_MANAGER_CONFIGURATION = 2;
 
 	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int AXIS_MANAGER_CONFIGURATION__EANNOTATIONS = NattablestylePackage.STYLED_ELEMENT__EANNOTATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Styles</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int AXIS_MANAGER_CONFIGURATION__STYLES = NattablestylePackage.STYLED_ELEMENT__STYLES;
+
+	/**
 	 * The feature id for the '<em><b>Local Header Label Configuration</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -280,7 +396,7 @@ public interface NattableaxisconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AXIS_MANAGER_CONFIGURATION__LOCAL_HEADER_LABEL_CONFIGURATION = 0;
+	int AXIS_MANAGER_CONFIGURATION__LOCAL_HEADER_LABEL_CONFIGURATION = NattablestylePackage.STYLED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Axis Manager</b></em>' reference.
@@ -290,7 +406,7 @@ public interface NattableaxisconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AXIS_MANAGER_CONFIGURATION__AXIS_MANAGER = 1;
+	int AXIS_MANAGER_CONFIGURATION__AXIS_MANAGER = NattablestylePackage.STYLED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Local Specific Configurations</b></em>' reference list.
@@ -300,7 +416,7 @@ public interface NattableaxisconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AXIS_MANAGER_CONFIGURATION__LOCAL_SPECIFIC_CONFIGURATIONS = 2;
+	int AXIS_MANAGER_CONFIGURATION__LOCAL_SPECIFIC_CONFIGURATIONS = NattablestylePackage.STYLED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Axis Manager Configuration</em>' class.
@@ -310,7 +426,47 @@ public interface NattableaxisconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AXIS_MANAGER_CONFIGURATION_FEATURE_COUNT = 3;
+	int AXIS_MANAGER_CONFIGURATION_FEATURE_COUNT = NattablestylePackage.STYLED_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int AXIS_MANAGER_CONFIGURATION___GET_EANNOTATION__STRING = NattablestylePackage.STYLED_ELEMENT___GET_EANNOTATION__STRING;
+
+	/**
+	 * The operation id for the '<em>Get Named Style</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int AXIS_MANAGER_CONFIGURATION___GET_NAMED_STYLE__ECLASS_STRING = NattablestylePackage.STYLED_ELEMENT___GET_NAMED_STYLE__ECLASS_STRING;
+
+	/**
+	 * The operation id for the '<em>Get Style</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int AXIS_MANAGER_CONFIGURATION___GET_STYLE__ECLASS = NattablestylePackage.STYLED_ELEMENT___GET_STYLE__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Create Style</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int AXIS_MANAGER_CONFIGURATION___CREATE_STYLE__ECLASS = NattablestylePackage.STYLED_ELEMENT___CREATE_STYLE__ECLASS;
 
 	/**
 	 * The number of operations of the '<em>Axis Manager Configuration</em>' class.
@@ -320,11 +476,10 @@ public interface NattableaxisconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AXIS_MANAGER_CONFIGURATION_OPERATION_COUNT = 0;
+	int AXIS_MANAGER_CONFIGURATION_OPERATION_COUNT = NattablestylePackage.STYLED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the ' {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.impl.TableHeaderAxisConfigurationImpl
-	 * <em>Table Header Axis Configuration</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.impl.TableHeaderAxisConfigurationImpl <em>Table Header Axis Configuration</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -343,6 +498,16 @@ public interface NattableaxisconfigurationPackage extends EPackage {
 	 * @ordered
 	 */
 	int TABLE_HEADER_AXIS_CONFIGURATION__EANNOTATIONS = ABSTRACT_HEADER_AXIS_CONFIGURATION__EANNOTATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Styles</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int TABLE_HEADER_AXIS_CONFIGURATION__STYLES = ABSTRACT_HEADER_AXIS_CONFIGURATION__STYLES;
 
 	/**
 	 * The feature id for the '<em><b>Index Style</b></em>' attribute.
@@ -435,6 +600,36 @@ public interface NattableaxisconfigurationPackage extends EPackage {
 	int TABLE_HEADER_AXIS_CONFIGURATION___GET_EANNOTATION__STRING = ABSTRACT_HEADER_AXIS_CONFIGURATION___GET_EANNOTATION__STRING;
 
 	/**
+	 * The operation id for the '<em>Get Named Style</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int TABLE_HEADER_AXIS_CONFIGURATION___GET_NAMED_STYLE__ECLASS_STRING = ABSTRACT_HEADER_AXIS_CONFIGURATION___GET_NAMED_STYLE__ECLASS_STRING;
+
+	/**
+	 * The operation id for the '<em>Get Style</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int TABLE_HEADER_AXIS_CONFIGURATION___GET_STYLE__ECLASS = ABSTRACT_HEADER_AXIS_CONFIGURATION___GET_STYLE__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Create Style</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int TABLE_HEADER_AXIS_CONFIGURATION___CREATE_STYLE__ECLASS = ABSTRACT_HEADER_AXIS_CONFIGURATION___CREATE_STYLE__ECLASS;
+
+	/**
 	 * The number of operations of the '<em>Table Header Axis Configuration</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -445,8 +640,7 @@ public interface NattableaxisconfigurationPackage extends EPackage {
 	int TABLE_HEADER_AXIS_CONFIGURATION_OPERATION_COUNT = ABSTRACT_HEADER_AXIS_CONFIGURATION_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the ' {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.impl.LocalTableHeaderAxisConfigurationImpl
-	 * <em>Local Table Header Axis Configuration</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.impl.LocalTableHeaderAxisConfigurationImpl <em>Local Table Header Axis Configuration</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -465,6 +659,16 @@ public interface NattableaxisconfigurationPackage extends EPackage {
 	 * @ordered
 	 */
 	int LOCAL_TABLE_HEADER_AXIS_CONFIGURATION__EANNOTATIONS = ABSTRACT_HEADER_AXIS_CONFIGURATION__EANNOTATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Styles</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int LOCAL_TABLE_HEADER_AXIS_CONFIGURATION__STYLES = ABSTRACT_HEADER_AXIS_CONFIGURATION__STYLES;
 
 	/**
 	 * The feature id for the '<em><b>Index Style</b></em>' attribute.
@@ -557,6 +761,36 @@ public interface NattableaxisconfigurationPackage extends EPackage {
 	int LOCAL_TABLE_HEADER_AXIS_CONFIGURATION___GET_EANNOTATION__STRING = ABSTRACT_HEADER_AXIS_CONFIGURATION___GET_EANNOTATION__STRING;
 
 	/**
+	 * The operation id for the '<em>Get Named Style</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int LOCAL_TABLE_HEADER_AXIS_CONFIGURATION___GET_NAMED_STYLE__ECLASS_STRING = ABSTRACT_HEADER_AXIS_CONFIGURATION___GET_NAMED_STYLE__ECLASS_STRING;
+
+	/**
+	 * The operation id for the '<em>Get Style</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int LOCAL_TABLE_HEADER_AXIS_CONFIGURATION___GET_STYLE__ECLASS = ABSTRACT_HEADER_AXIS_CONFIGURATION___GET_STYLE__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Create Style</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int LOCAL_TABLE_HEADER_AXIS_CONFIGURATION___CREATE_STYLE__ECLASS = ABSTRACT_HEADER_AXIS_CONFIGURATION___CREATE_STYLE__ECLASS;
+
+	/**
 	 * The number of operations of the '<em>Local Table Header Axis Configuration</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -567,8 +801,7 @@ public interface NattableaxisconfigurationPackage extends EPackage {
 	int LOCAL_TABLE_HEADER_AXIS_CONFIGURATION_OPERATION_COUNT = ABSTRACT_HEADER_AXIS_CONFIGURATION_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.IAxisConfiguration
-	 * <em>IAxis Configuration</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.IAxisConfiguration <em>IAxis Configuration</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -579,6 +812,26 @@ public interface NattableaxisconfigurationPackage extends EPackage {
 	int IAXIS_CONFIGURATION = 5;
 
 	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int IAXIS_CONFIGURATION__EANNOTATIONS = NattablestylePackage.STYLED_ELEMENT__EANNOTATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Styles</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int IAXIS_CONFIGURATION__STYLES = NattablestylePackage.STYLED_ELEMENT__STYLES;
+
+	/**
 	 * The number of structural features of the '<em>IAxis Configuration</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -586,7 +839,47 @@ public interface NattableaxisconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IAXIS_CONFIGURATION_FEATURE_COUNT = 0;
+	int IAXIS_CONFIGURATION_FEATURE_COUNT = NattablestylePackage.STYLED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int IAXIS_CONFIGURATION___GET_EANNOTATION__STRING = NattablestylePackage.STYLED_ELEMENT___GET_EANNOTATION__STRING;
+
+	/**
+	 * The operation id for the '<em>Get Named Style</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int IAXIS_CONFIGURATION___GET_NAMED_STYLE__ECLASS_STRING = NattablestylePackage.STYLED_ELEMENT___GET_NAMED_STYLE__ECLASS_STRING;
+
+	/**
+	 * The operation id for the '<em>Get Style</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int IAXIS_CONFIGURATION___GET_STYLE__ECLASS = NattablestylePackage.STYLED_ELEMENT___GET_STYLE__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Create Style</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int IAXIS_CONFIGURATION___CREATE_STYLE__ECLASS = NattablestylePackage.STYLED_ELEMENT___CREATE_STYLE__ECLASS;
 
 	/**
 	 * The number of operations of the '<em>IAxis Configuration</em>' class.
@@ -596,11 +889,10 @@ public interface NattableaxisconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IAXIS_CONFIGURATION_OPERATION_COUNT = 0;
+	int IAXIS_CONFIGURATION_OPERATION_COUNT = NattablestylePackage.STYLED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the ' {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.impl.FeatureAxisConfigurationImpl
-	 * <em>Feature Axis Configuration</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.impl.FeatureAxisConfigurationImpl <em>Feature Axis Configuration</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -609,6 +901,26 @@ public interface NattableaxisconfigurationPackage extends EPackage {
 	 * @generated
 	 */
 	int FEATURE_AXIS_CONFIGURATION = 6;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_AXIS_CONFIGURATION__EANNOTATIONS = IAXIS_CONFIGURATION__EANNOTATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Styles</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_AXIS_CONFIGURATION__STYLES = IAXIS_CONFIGURATION__STYLES;
 
 	/**
 	 * The feature id for the '<em><b>Show Only Common Feature</b></em>' attribute.
@@ -631,6 +943,46 @@ public interface NattableaxisconfigurationPackage extends EPackage {
 	int FEATURE_AXIS_CONFIGURATION_FEATURE_COUNT = IAXIS_CONFIGURATION_FEATURE_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_AXIS_CONFIGURATION___GET_EANNOTATION__STRING = IAXIS_CONFIGURATION___GET_EANNOTATION__STRING;
+
+	/**
+	 * The operation id for the '<em>Get Named Style</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_AXIS_CONFIGURATION___GET_NAMED_STYLE__ECLASS_STRING = IAXIS_CONFIGURATION___GET_NAMED_STYLE__ECLASS_STRING;
+
+	/**
+	 * The operation id for the '<em>Get Style</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_AXIS_CONFIGURATION___GET_STYLE__ECLASS = IAXIS_CONFIGURATION___GET_STYLE__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Create Style</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_AXIS_CONFIGURATION___CREATE_STYLE__ECLASS = IAXIS_CONFIGURATION___CREATE_STYLE__ECLASS;
+
+	/**
 	 * The number of operations of the '<em>Feature Axis Configuration</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -641,8 +993,7 @@ public interface NattableaxisconfigurationPackage extends EPackage {
 	int FEATURE_AXIS_CONFIGURATION_OPERATION_COUNT = IAXIS_CONFIGURATION_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.IFillingConfiguration
-	 * <em>IFilling Configuration</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.IFillingConfiguration <em>IFilling Configuration</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -651,6 +1002,26 @@ public interface NattableaxisconfigurationPackage extends EPackage {
 	 * @generated
 	 */
 	int IFILLING_CONFIGURATION = 7;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int IFILLING_CONFIGURATION__EANNOTATIONS = IAXIS_CONFIGURATION__EANNOTATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Styles</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int IFILLING_CONFIGURATION__STYLES = IAXIS_CONFIGURATION__STYLES;
 
 	/**
 	 * The number of structural features of the '<em>IFilling Configuration</em>' class.
@@ -663,6 +1034,46 @@ public interface NattableaxisconfigurationPackage extends EPackage {
 	int IFILLING_CONFIGURATION_FEATURE_COUNT = IAXIS_CONFIGURATION_FEATURE_COUNT + 0;
 
 	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int IFILLING_CONFIGURATION___GET_EANNOTATION__STRING = IAXIS_CONFIGURATION___GET_EANNOTATION__STRING;
+
+	/**
+	 * The operation id for the '<em>Get Named Style</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int IFILLING_CONFIGURATION___GET_NAMED_STYLE__ECLASS_STRING = IAXIS_CONFIGURATION___GET_NAMED_STYLE__ECLASS_STRING;
+
+	/**
+	 * The operation id for the '<em>Get Style</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int IFILLING_CONFIGURATION___GET_STYLE__ECLASS = IAXIS_CONFIGURATION___GET_STYLE__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Create Style</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int IFILLING_CONFIGURATION___CREATE_STYLE__ECLASS = IAXIS_CONFIGURATION___CREATE_STYLE__ECLASS;
+
+	/**
 	 * The number of operations of the '<em>IFilling Configuration</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -673,8 +1084,7 @@ public interface NattableaxisconfigurationPackage extends EPackage {
 	int IFILLING_CONFIGURATION_OPERATION_COUNT = IAXIS_CONFIGURATION_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the ' {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.impl.EStructuralFeatureValueFillingConfigurationImpl
-	 * <em>EStructural Feature Value Filling Configuration</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.impl.EStructuralFeatureValueFillingConfigurationImpl <em>EStructural Feature Value Filling Configuration</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -683,6 +1093,26 @@ public interface NattableaxisconfigurationPackage extends EPackage {
 	 * @generated
 	 */
 	int ESTRUCTURAL_FEATURE_VALUE_FILLING_CONFIGURATION = 8;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ESTRUCTURAL_FEATURE_VALUE_FILLING_CONFIGURATION__EANNOTATIONS = IFILLING_CONFIGURATION__EANNOTATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Styles</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ESTRUCTURAL_FEATURE_VALUE_FILLING_CONFIGURATION__STYLES = IFILLING_CONFIGURATION__STYLES;
 
 	/**
 	 * The feature id for the '<em><b>Listen Feature</b></em>' reference.
@@ -705,6 +1135,46 @@ public interface NattableaxisconfigurationPackage extends EPackage {
 	int ESTRUCTURAL_FEATURE_VALUE_FILLING_CONFIGURATION_FEATURE_COUNT = IFILLING_CONFIGURATION_FEATURE_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ESTRUCTURAL_FEATURE_VALUE_FILLING_CONFIGURATION___GET_EANNOTATION__STRING = IFILLING_CONFIGURATION___GET_EANNOTATION__STRING;
+
+	/**
+	 * The operation id for the '<em>Get Named Style</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ESTRUCTURAL_FEATURE_VALUE_FILLING_CONFIGURATION___GET_NAMED_STYLE__ECLASS_STRING = IFILLING_CONFIGURATION___GET_NAMED_STYLE__ECLASS_STRING;
+
+	/**
+	 * The operation id for the '<em>Get Style</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ESTRUCTURAL_FEATURE_VALUE_FILLING_CONFIGURATION___GET_STYLE__ECLASS = IFILLING_CONFIGURATION___GET_STYLE__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Create Style</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ESTRUCTURAL_FEATURE_VALUE_FILLING_CONFIGURATION___CREATE_STYLE__ECLASS = IFILLING_CONFIGURATION___CREATE_STYLE__ECLASS;
+
+	/**
 	 * The number of operations of the '<em>EStructural Feature Value Filling Configuration</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -715,8 +1185,7 @@ public interface NattableaxisconfigurationPackage extends EPackage {
 	int ESTRUCTURAL_FEATURE_VALUE_FILLING_CONFIGURATION_OPERATION_COUNT = IFILLING_CONFIGURATION_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.impl.IPasteConfigurationImpl
-	 * <em>IPaste Configuration</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.impl.IPasteConfigurationImpl <em>IPaste Configuration</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -725,6 +1194,26 @@ public interface NattableaxisconfigurationPackage extends EPackage {
 	 * @generated
 	 */
 	int IPASTE_CONFIGURATION = 9;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int IPASTE_CONFIGURATION__EANNOTATIONS = IAXIS_CONFIGURATION__EANNOTATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Styles</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int IPASTE_CONFIGURATION__STYLES = IAXIS_CONFIGURATION__STYLES;
 
 	/**
 	 * The feature id for the '<em><b>Post Actions</b></em>' attribute list.
@@ -757,6 +1246,46 @@ public interface NattableaxisconfigurationPackage extends EPackage {
 	int IPASTE_CONFIGURATION_FEATURE_COUNT = IAXIS_CONFIGURATION_FEATURE_COUNT + 2;
 
 	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int IPASTE_CONFIGURATION___GET_EANNOTATION__STRING = IAXIS_CONFIGURATION___GET_EANNOTATION__STRING;
+
+	/**
+	 * The operation id for the '<em>Get Named Style</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int IPASTE_CONFIGURATION___GET_NAMED_STYLE__ECLASS_STRING = IAXIS_CONFIGURATION___GET_NAMED_STYLE__ECLASS_STRING;
+
+	/**
+	 * The operation id for the '<em>Get Style</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int IPASTE_CONFIGURATION___GET_STYLE__ECLASS = IAXIS_CONFIGURATION___GET_STYLE__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Create Style</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int IPASTE_CONFIGURATION___CREATE_STYLE__ECLASS = IAXIS_CONFIGURATION___CREATE_STYLE__ECLASS;
+
+	/**
 	 * The number of operations of the '<em>IPaste Configuration</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -767,8 +1296,7 @@ public interface NattableaxisconfigurationPackage extends EPackage {
 	int IPASTE_CONFIGURATION_OPERATION_COUNT = IAXIS_CONFIGURATION_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the ' {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.impl.PasteEObjectConfigurationImpl
-	 * <em>Paste EObject Configuration</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.impl.PasteEObjectConfigurationImpl <em>Paste EObject Configuration</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -777,6 +1305,26 @@ public interface NattableaxisconfigurationPackage extends EPackage {
 	 * @generated
 	 */
 	int PASTE_EOBJECT_CONFIGURATION = 10;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int PASTE_EOBJECT_CONFIGURATION__EANNOTATIONS = IPASTE_CONFIGURATION__EANNOTATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Styles</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int PASTE_EOBJECT_CONFIGURATION__STYLES = IPASTE_CONFIGURATION__STYLES;
 
 	/**
 	 * The feature id for the '<em><b>Post Actions</b></em>' attribute list.
@@ -829,6 +1377,46 @@ public interface NattableaxisconfigurationPackage extends EPackage {
 	int PASTE_EOBJECT_CONFIGURATION_FEATURE_COUNT = IPASTE_CONFIGURATION_FEATURE_COUNT + 2;
 
 	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int PASTE_EOBJECT_CONFIGURATION___GET_EANNOTATION__STRING = IPASTE_CONFIGURATION___GET_EANNOTATION__STRING;
+
+	/**
+	 * The operation id for the '<em>Get Named Style</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int PASTE_EOBJECT_CONFIGURATION___GET_NAMED_STYLE__ECLASS_STRING = IPASTE_CONFIGURATION___GET_NAMED_STYLE__ECLASS_STRING;
+
+	/**
+	 * The operation id for the '<em>Get Style</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int PASTE_EOBJECT_CONFIGURATION___GET_STYLE__ECLASS = IPASTE_CONFIGURATION___GET_STYLE__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Create Style</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int PASTE_EOBJECT_CONFIGURATION___CREATE_STYLE__ECLASS = IPASTE_CONFIGURATION___CREATE_STYLE__ECLASS;
+
+	/**
 	 * The number of operations of the '<em>Paste EObject Configuration</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -839,8 +1427,148 @@ public interface NattableaxisconfigurationPackage extends EPackage {
 	int PASTE_EOBJECT_CONFIGURATION_OPERATION_COUNT = IPASTE_CONFIGURATION_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AxisIndexStyle
-	 * <em>Axis Index Style</em>}' enum.
+	 * The meta object id for the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.impl.TreeFillingConfigurationImpl <em>Tree Filling Configuration</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.impl.TreeFillingConfigurationImpl
+	 * @see org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.impl.NattableaxisconfigurationPackageImpl#getTreeFillingConfiguration()
+	 * @generated
+	 */
+	int TREE_FILLING_CONFIGURATION = 11;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int TREE_FILLING_CONFIGURATION__EANNOTATIONS = IFILLING_CONFIGURATION__EANNOTATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Styles</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int TREE_FILLING_CONFIGURATION__STYLES = IFILLING_CONFIGURATION__STYLES;
+
+	/**
+	 * The feature id for the '<em><b>Axis Used As Axis Provider</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int TREE_FILLING_CONFIGURATION__AXIS_USED_AS_AXIS_PROVIDER = IFILLING_CONFIGURATION_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Paste Configuration</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int TREE_FILLING_CONFIGURATION__PASTE_CONFIGURATION = IFILLING_CONFIGURATION_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Depth</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int TREE_FILLING_CONFIGURATION__DEPTH = IFILLING_CONFIGURATION_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Label Provider</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int TREE_FILLING_CONFIGURATION__LABEL_PROVIDER = IFILLING_CONFIGURATION_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Label Provider Context</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int TREE_FILLING_CONFIGURATION__LABEL_PROVIDER_CONTEXT = IFILLING_CONFIGURATION_FEATURE_COUNT + 4;
+
+	/**
+	 * The number of structural features of the '<em>Tree Filling Configuration</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int TREE_FILLING_CONFIGURATION_FEATURE_COUNT = IFILLING_CONFIGURATION_FEATURE_COUNT + 5;
+
+	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int TREE_FILLING_CONFIGURATION___GET_EANNOTATION__STRING = IFILLING_CONFIGURATION___GET_EANNOTATION__STRING;
+
+	/**
+	 * The operation id for the '<em>Get Named Style</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int TREE_FILLING_CONFIGURATION___GET_NAMED_STYLE__ECLASS_STRING = IFILLING_CONFIGURATION___GET_NAMED_STYLE__ECLASS_STRING;
+
+	/**
+	 * The operation id for the '<em>Get Style</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int TREE_FILLING_CONFIGURATION___GET_STYLE__ECLASS = IFILLING_CONFIGURATION___GET_STYLE__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Create Style</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int TREE_FILLING_CONFIGURATION___CREATE_STYLE__ECLASS = IFILLING_CONFIGURATION___CREATE_STYLE__ECLASS;
+
+	/**
+	 * The number of operations of the '<em>Tree Filling Configuration</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int TREE_FILLING_CONFIGURATION_OPERATION_COUNT = IFILLING_CONFIGURATION_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AxisIndexStyle <em>Axis Index Style</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -848,12 +1576,11 @@ public interface NattableaxisconfigurationPackage extends EPackage {
 	 * @see org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.impl.NattableaxisconfigurationPackageImpl#getAxisIndexStyle()
 	 * @generated
 	 */
-	int AXIS_INDEX_STYLE = 11;
+	int AXIS_INDEX_STYLE = 12;
 
 
 	/**
-	 * Returns the meta object for class ' {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AbstractHeaderAxisConfiguration
-	 * <em>Abstract Header Axis Configuration</em>}'.
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AbstractHeaderAxisConfiguration <em>Abstract Header Axis Configuration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -864,8 +1591,7 @@ public interface NattableaxisconfigurationPackage extends EPackage {
 	EClass getAbstractHeaderAxisConfiguration();
 
 	/**
-	 * Returns the meta object for the attribute ' {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AbstractHeaderAxisConfiguration#getIndexStyle
-	 * <em>Index Style</em>}'.
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AbstractHeaderAxisConfiguration#getIndexStyle <em>Index Style</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -877,8 +1603,7 @@ public interface NattableaxisconfigurationPackage extends EPackage {
 	EAttribute getAbstractHeaderAxisConfiguration_IndexStyle();
 
 	/**
-	 * Returns the meta object for the attribute ' {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AbstractHeaderAxisConfiguration#isDisplayLabel
-	 * <em>Display Label</em>}'.
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AbstractHeaderAxisConfiguration#isDisplayLabel <em>Display Label</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -890,8 +1615,7 @@ public interface NattableaxisconfigurationPackage extends EPackage {
 	EAttribute getAbstractHeaderAxisConfiguration_DisplayLabel();
 
 	/**
-	 * Returns the meta object for the attribute ' {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AbstractHeaderAxisConfiguration#isDisplayFilter
-	 * <em>Display Filter</em>}'.
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AbstractHeaderAxisConfiguration#isDisplayFilter <em>Display Filter</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -903,8 +1627,7 @@ public interface NattableaxisconfigurationPackage extends EPackage {
 	EAttribute getAbstractHeaderAxisConfiguration_DisplayFilter();
 
 	/**
-	 * Returns the meta object for the attribute ' {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AbstractHeaderAxisConfiguration#isDisplayIndex
-	 * <em>Display Index</em>}'.
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AbstractHeaderAxisConfiguration#isDisplayIndex <em>Display Index</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -916,8 +1639,7 @@ public interface NattableaxisconfigurationPackage extends EPackage {
 	EAttribute getAbstractHeaderAxisConfiguration_DisplayIndex();
 
 	/**
-	 * Returns the meta object for the containment reference list ' {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AbstractHeaderAxisConfiguration#getOwnedLabelConfigurations
-	 * <em>Owned Label Configurations</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AbstractHeaderAxisConfiguration#getOwnedLabelConfigurations <em>Owned Label Configurations</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -929,8 +1651,7 @@ public interface NattableaxisconfigurationPackage extends EPackage {
 	EReference getAbstractHeaderAxisConfiguration_OwnedLabelConfigurations();
 
 	/**
-	 * Returns the meta object for the containment reference list ' {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AbstractHeaderAxisConfiguration#getOwnedAxisConfigurations
-	 * <em>Owned Axis Configurations</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AbstractHeaderAxisConfiguration#getOwnedAxisConfigurations <em>Owned Axis Configurations</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -942,8 +1663,7 @@ public interface NattableaxisconfigurationPackage extends EPackage {
 	EReference getAbstractHeaderAxisConfiguration_OwnedAxisConfigurations();
 
 	/**
-	 * Returns the meta object for class ' {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AxisManagerRepresentation
-	 * <em>Axis Manager Representation</em>}'.
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AxisManagerRepresentation <em>Axis Manager Representation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -954,8 +1674,7 @@ public interface NattableaxisconfigurationPackage extends EPackage {
 	EClass getAxisManagerRepresentation();
 
 	/**
-	 * Returns the meta object for the attribute ' {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AxisManagerRepresentation#getAxisManagerId
-	 * <em>Axis Manager Id</em>}'.
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AxisManagerRepresentation#getAxisManagerId <em>Axis Manager Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -967,8 +1686,7 @@ public interface NattableaxisconfigurationPackage extends EPackage {
 	EAttribute getAxisManagerRepresentation_AxisManagerId();
 
 	/**
-	 * Returns the meta object for the attribute ' {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AxisManagerRepresentation#getLabelProviderContext
-	 * <em>Label Provider Context</em>}'.
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AxisManagerRepresentation#getLabelProviderContext <em>Label Provider Context</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -980,8 +1698,7 @@ public interface NattableaxisconfigurationPackage extends EPackage {
 	EAttribute getAxisManagerRepresentation_LabelProviderContext();
 
 	/**
-	 * Returns the meta object for the reference ' {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AxisManagerRepresentation#getHeaderLabelConfiguration
-	 * <em>Header Label Configuration</em>}'.
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AxisManagerRepresentation#getHeaderLabelConfiguration <em>Header Label Configuration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -993,8 +1710,7 @@ public interface NattableaxisconfigurationPackage extends EPackage {
 	EReference getAxisManagerRepresentation_HeaderLabelConfiguration();
 
 	/**
-	 * Returns the meta object for the reference list ' {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AxisManagerRepresentation#getSpecificAxisConfigurations
-	 * <em>Specific Axis Configurations</em>}'.
+	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AxisManagerRepresentation#getSpecificAxisConfigurations <em>Specific Axis Configurations</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -1006,8 +1722,7 @@ public interface NattableaxisconfigurationPackage extends EPackage {
 	EReference getAxisManagerRepresentation_SpecificAxisConfigurations();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AxisManagerConfiguration
-	 * <em>Axis Manager Configuration</em>}'.
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AxisManagerConfiguration <em>Axis Manager Configuration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -1018,8 +1733,7 @@ public interface NattableaxisconfigurationPackage extends EPackage {
 	EClass getAxisManagerConfiguration();
 
 	/**
-	 * Returns the meta object for the reference ' {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AxisManagerConfiguration#getLocalHeaderLabelConfiguration
-	 * <em>Local Header Label Configuration</em>}'.
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AxisManagerConfiguration#getLocalHeaderLabelConfiguration <em>Local Header Label Configuration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -1031,8 +1745,7 @@ public interface NattableaxisconfigurationPackage extends EPackage {
 	EReference getAxisManagerConfiguration_LocalHeaderLabelConfiguration();
 
 	/**
-	 * Returns the meta object for the reference ' {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AxisManagerConfiguration#getAxisManager
-	 * <em>Axis Manager</em>}'.
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AxisManagerConfiguration#getAxisManager <em>Axis Manager</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -1044,8 +1757,7 @@ public interface NattableaxisconfigurationPackage extends EPackage {
 	EReference getAxisManagerConfiguration_AxisManager();
 
 	/**
-	 * Returns the meta object for the reference list ' {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AxisManagerConfiguration#getLocalSpecificConfigurations
-	 * <em>Local Specific Configurations</em>}'.
+	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AxisManagerConfiguration#getLocalSpecificConfigurations <em>Local Specific Configurations</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -1057,8 +1769,7 @@ public interface NattableaxisconfigurationPackage extends EPackage {
 	EReference getAxisManagerConfiguration_LocalSpecificConfigurations();
 
 	/**
-	 * Returns the meta object for class ' {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.TableHeaderAxisConfiguration
-	 * <em>Table Header Axis Configuration</em>}'.
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.TableHeaderAxisConfiguration <em>Table Header Axis Configuration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -1069,8 +1780,7 @@ public interface NattableaxisconfigurationPackage extends EPackage {
 	EClass getTableHeaderAxisConfiguration();
 
 	/**
-	 * Returns the meta object for the containment reference list ' {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.TableHeaderAxisConfiguration#getAxisManagers
-	 * <em>Axis Managers</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.TableHeaderAxisConfiguration#getAxisManagers <em>Axis Managers</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -1082,8 +1792,7 @@ public interface NattableaxisconfigurationPackage extends EPackage {
 	EReference getTableHeaderAxisConfiguration_AxisManagers();
 
 	/**
-	 * Returns the meta object for class ' {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.LocalTableHeaderAxisConfiguration
-	 * <em>Local Table Header Axis Configuration</em>}'.
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.LocalTableHeaderAxisConfiguration <em>Local Table Header Axis Configuration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -1094,8 +1803,7 @@ public interface NattableaxisconfigurationPackage extends EPackage {
 	EClass getLocalTableHeaderAxisConfiguration();
 
 	/**
-	 * Returns the meta object for the containment reference list ' {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.LocalTableHeaderAxisConfiguration#getAxisManagerConfigurations
-	 * <em>Axis Manager Configurations</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.LocalTableHeaderAxisConfiguration#getAxisManagerConfigurations <em>Axis Manager Configurations</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -1107,8 +1815,7 @@ public interface NattableaxisconfigurationPackage extends EPackage {
 	EReference getLocalTableHeaderAxisConfiguration_AxisManagerConfigurations();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.IAxisConfiguration
-	 * <em>IAxis Configuration</em>}'.
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.IAxisConfiguration <em>IAxis Configuration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -1119,8 +1826,7 @@ public interface NattableaxisconfigurationPackage extends EPackage {
 	EClass getIAxisConfiguration();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.FeatureAxisConfiguration
-	 * <em>Feature Axis Configuration</em>}'.
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.FeatureAxisConfiguration <em>Feature Axis Configuration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -1131,8 +1837,7 @@ public interface NattableaxisconfigurationPackage extends EPackage {
 	EClass getFeatureAxisConfiguration();
 
 	/**
-	 * Returns the meta object for the attribute ' {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.FeatureAxisConfiguration#isShowOnlyCommonFeature
-	 * <em>Show Only Common Feature</em>}'.
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.FeatureAxisConfiguration#isShowOnlyCommonFeature <em>Show Only Common Feature</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -1144,8 +1849,7 @@ public interface NattableaxisconfigurationPackage extends EPackage {
 	EAttribute getFeatureAxisConfiguration_ShowOnlyCommonFeature();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.IFillingConfiguration
-	 * <em>IFilling Configuration</em>}'.
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.IFillingConfiguration <em>IFilling Configuration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -1156,8 +1860,7 @@ public interface NattableaxisconfigurationPackage extends EPackage {
 	EClass getIFillingConfiguration();
 
 	/**
-	 * Returns the meta object for class ' {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.EStructuralFeatureValueFillingConfiguration
-	 * <em>EStructural Feature Value Filling Configuration</em>}'.
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.EStructuralFeatureValueFillingConfiguration <em>EStructural Feature Value Filling Configuration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -1168,8 +1871,7 @@ public interface NattableaxisconfigurationPackage extends EPackage {
 	EClass getEStructuralFeatureValueFillingConfiguration();
 
 	/**
-	 * Returns the meta object for the reference ' {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.EStructuralFeatureValueFillingConfiguration#getListenFeature
-	 * <em>Listen Feature</em>}'.
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.EStructuralFeatureValueFillingConfiguration#getListenFeature <em>Listen Feature</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -1181,8 +1883,7 @@ public interface NattableaxisconfigurationPackage extends EPackage {
 	EReference getEStructuralFeatureValueFillingConfiguration_ListenFeature();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.IPasteConfiguration
-	 * <em>IPaste Configuration</em>}'.
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.IPasteConfiguration <em>IPaste Configuration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -1193,7 +1894,7 @@ public interface NattableaxisconfigurationPackage extends EPackage {
 	EClass getIPasteConfiguration();
 
 	/**
-	 * Returns the meta object for the attribute list ' {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.IPasteConfiguration#getPostActions <em>Post Actions</em>}'.
+	 * Returns the meta object for the attribute list '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.IPasteConfiguration#getPostActions <em>Post Actions</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -1205,7 +1906,7 @@ public interface NattableaxisconfigurationPackage extends EPackage {
 	EAttribute getIPasteConfiguration_PostActions();
 
 	/**
-	 * Returns the meta object for the attribute ' {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.IPasteConfiguration#isDetachedMode <em>Detached Mode</em>}'.
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.IPasteConfiguration#isDetachedMode <em>Detached Mode</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -1217,8 +1918,7 @@ public interface NattableaxisconfigurationPackage extends EPackage {
 	EAttribute getIPasteConfiguration_DetachedMode();
 
 	/**
-	 * Returns the meta object for class ' {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.PasteEObjectConfiguration
-	 * <em>Paste EObject Configuration</em>}'.
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.PasteEObjectConfiguration <em>Paste EObject Configuration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -1229,8 +1929,7 @@ public interface NattableaxisconfigurationPackage extends EPackage {
 	EClass getPasteEObjectConfiguration();
 
 	/**
-	 * Returns the meta object for the attribute ' {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.PasteEObjectConfiguration#getPastedElementId
-	 * <em>Pasted Element Id</em>}'.
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.PasteEObjectConfiguration#getPastedElementId <em>Pasted Element Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -1242,8 +1941,7 @@ public interface NattableaxisconfigurationPackage extends EPackage {
 	EAttribute getPasteEObjectConfiguration_PastedElementId();
 
 	/**
-	 * Returns the meta object for the reference ' {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.PasteEObjectConfiguration#getPasteElementContainementFeature
-	 * <em>Paste Element Containement Feature</em>}'.
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.PasteEObjectConfiguration#getPasteElementContainementFeature <em>Paste Element Containement Feature</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -1255,8 +1953,78 @@ public interface NattableaxisconfigurationPackage extends EPackage {
 	EReference getPasteEObjectConfiguration_PasteElementContainementFeature();
 
 	/**
-	 * Returns the meta object for enum '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AxisIndexStyle
-	 * <em>Axis Index Style</em>}'.
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.TreeFillingConfiguration <em>Tree Filling Configuration</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>Tree Filling Configuration</em>'.
+	 * @see org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.TreeFillingConfiguration
+	 * @generated
+	 */
+	EClass getTreeFillingConfiguration();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.TreeFillingConfiguration#getAxisUsedAsAxisProvider <em>Axis Used As Axis Provider</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the containment reference '<em>Axis Used As Axis Provider</em>'.
+	 * @see org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.TreeFillingConfiguration#getAxisUsedAsAxisProvider()
+	 * @see #getTreeFillingConfiguration()
+	 * @generated
+	 */
+	EReference getTreeFillingConfiguration_AxisUsedAsAxisProvider();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.TreeFillingConfiguration#getPasteConfiguration <em>Paste Configuration</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the reference '<em>Paste Configuration</em>'.
+	 * @see org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.TreeFillingConfiguration#getPasteConfiguration()
+	 * @see #getTreeFillingConfiguration()
+	 * @generated
+	 */
+	EReference getTreeFillingConfiguration_PasteConfiguration();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.TreeFillingConfiguration#getDepth <em>Depth</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Depth</em>'.
+	 * @see org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.TreeFillingConfiguration#getDepth()
+	 * @see #getTreeFillingConfiguration()
+	 * @generated
+	 */
+	EAttribute getTreeFillingConfiguration_Depth();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.TreeFillingConfiguration#getLabelProvider <em>Label Provider</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the reference '<em>Label Provider</em>'.
+	 * @see org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.TreeFillingConfiguration#getLabelProvider()
+	 * @see #getTreeFillingConfiguration()
+	 * @generated
+	 */
+	EReference getTreeFillingConfiguration_LabelProvider();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.TreeFillingConfiguration#getLabelProviderContext <em>Label Provider Context</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Label Provider Context</em>'.
+	 * @see org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.TreeFillingConfiguration#getLabelProviderContext()
+	 * @see #getTreeFillingConfiguration()
+	 * @generated
+	 */
+	EAttribute getTreeFillingConfiguration_LabelProviderContext();
+
+	/**
+	 * Returns the meta object for enum '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AxisIndexStyle <em>Axis Index Style</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -1291,10 +2059,8 @@ public interface NattableaxisconfigurationPackage extends EPackage {
 	 * @generated
 	 */
 	interface Literals {
-
 		/**
-		 * The meta object literal for the ' {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.impl.AbstractHeaderAxisConfigurationImpl
-		 * <em>Abstract Header Axis Configuration</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.impl.AbstractHeaderAxisConfigurationImpl <em>Abstract Header Axis Configuration</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 *
@@ -1359,8 +2125,7 @@ public interface NattableaxisconfigurationPackage extends EPackage {
 		EReference ABSTRACT_HEADER_AXIS_CONFIGURATION__OWNED_AXIS_CONFIGURATIONS = eINSTANCE.getAbstractHeaderAxisConfiguration_OwnedAxisConfigurations();
 
 		/**
-		 * The meta object literal for the ' {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.impl.AxisManagerRepresentationImpl
-		 * <em>Axis Manager Representation</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.impl.AxisManagerRepresentationImpl <em>Axis Manager Representation</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 *
@@ -1407,8 +2172,7 @@ public interface NattableaxisconfigurationPackage extends EPackage {
 		EReference AXIS_MANAGER_REPRESENTATION__SPECIFIC_AXIS_CONFIGURATIONS = eINSTANCE.getAxisManagerRepresentation_SpecificAxisConfigurations();
 
 		/**
-		 * The meta object literal for the ' {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.impl.AxisManagerConfigurationImpl
-		 * <em>Axis Manager Configuration</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.impl.AxisManagerConfigurationImpl <em>Axis Manager Configuration</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 *
@@ -1446,8 +2210,7 @@ public interface NattableaxisconfigurationPackage extends EPackage {
 		EReference AXIS_MANAGER_CONFIGURATION__LOCAL_SPECIFIC_CONFIGURATIONS = eINSTANCE.getAxisManagerConfiguration_LocalSpecificConfigurations();
 
 		/**
-		 * The meta object literal for the ' {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.impl.TableHeaderAxisConfigurationImpl
-		 * <em>Table Header Axis Configuration</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.impl.TableHeaderAxisConfigurationImpl <em>Table Header Axis Configuration</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 *
@@ -1467,8 +2230,7 @@ public interface NattableaxisconfigurationPackage extends EPackage {
 		EReference TABLE_HEADER_AXIS_CONFIGURATION__AXIS_MANAGERS = eINSTANCE.getTableHeaderAxisConfiguration_AxisManagers();
 
 		/**
-		 * The meta object literal for the ' {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.impl.LocalTableHeaderAxisConfigurationImpl
-		 * <em>Local Table Header Axis Configuration</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.impl.LocalTableHeaderAxisConfigurationImpl <em>Local Table Header Axis Configuration</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 *
@@ -1488,8 +2250,7 @@ public interface NattableaxisconfigurationPackage extends EPackage {
 		EReference LOCAL_TABLE_HEADER_AXIS_CONFIGURATION__AXIS_MANAGER_CONFIGURATIONS = eINSTANCE.getLocalTableHeaderAxisConfiguration_AxisManagerConfigurations();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.IAxisConfiguration
-		 * <em>IAxis Configuration</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.IAxisConfiguration <em>IAxis Configuration</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 *
@@ -1500,8 +2261,7 @@ public interface NattableaxisconfigurationPackage extends EPackage {
 		EClass IAXIS_CONFIGURATION = eINSTANCE.getIAxisConfiguration();
 
 		/**
-		 * The meta object literal for the ' {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.impl.FeatureAxisConfigurationImpl
-		 * <em>Feature Axis Configuration</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.impl.FeatureAxisConfigurationImpl <em>Feature Axis Configuration</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 *
@@ -1521,8 +2281,7 @@ public interface NattableaxisconfigurationPackage extends EPackage {
 		EAttribute FEATURE_AXIS_CONFIGURATION__SHOW_ONLY_COMMON_FEATURE = eINSTANCE.getFeatureAxisConfiguration_ShowOnlyCommonFeature();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.IFillingConfiguration
-		 * <em>IFilling Configuration</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.IFillingConfiguration <em>IFilling Configuration</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 *
@@ -1533,8 +2292,7 @@ public interface NattableaxisconfigurationPackage extends EPackage {
 		EClass IFILLING_CONFIGURATION = eINSTANCE.getIFillingConfiguration();
 
 		/**
-		 * The meta object literal for the ' {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.impl.EStructuralFeatureValueFillingConfigurationImpl
-		 * <em>EStructural Feature Value Filling Configuration</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.impl.EStructuralFeatureValueFillingConfigurationImpl <em>EStructural Feature Value Filling Configuration</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 *
@@ -1554,8 +2312,7 @@ public interface NattableaxisconfigurationPackage extends EPackage {
 		EReference ESTRUCTURAL_FEATURE_VALUE_FILLING_CONFIGURATION__LISTEN_FEATURE = eINSTANCE.getEStructuralFeatureValueFillingConfiguration_ListenFeature();
 
 		/**
-		 * The meta object literal for the ' {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.impl.IPasteConfigurationImpl
-		 * <em>IPaste Configuration</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.impl.IPasteConfigurationImpl <em>IPaste Configuration</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 *
@@ -1584,8 +2341,7 @@ public interface NattableaxisconfigurationPackage extends EPackage {
 		EAttribute IPASTE_CONFIGURATION__DETACHED_MODE = eINSTANCE.getIPasteConfiguration_DetachedMode();
 
 		/**
-		 * The meta object literal for the ' {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.impl.PasteEObjectConfigurationImpl
-		 * <em>Paste EObject Configuration</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.impl.PasteEObjectConfigurationImpl <em>Paste EObject Configuration</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 *
@@ -1614,8 +2370,63 @@ public interface NattableaxisconfigurationPackage extends EPackage {
 		EReference PASTE_EOBJECT_CONFIGURATION__PASTE_ELEMENT_CONTAINEMENT_FEATURE = eINSTANCE.getPasteEObjectConfiguration_PasteElementContainementFeature();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AxisIndexStyle
-		 * <em>Axis Index Style</em>}' enum.
+		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.impl.TreeFillingConfigurationImpl <em>Tree Filling Configuration</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.impl.TreeFillingConfigurationImpl
+		 * @see org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.impl.NattableaxisconfigurationPackageImpl#getTreeFillingConfiguration()
+		 * @generated
+		 */
+		EClass TREE_FILLING_CONFIGURATION = eINSTANCE.getTreeFillingConfiguration();
+
+		/**
+		 * The meta object literal for the '<em><b>Axis Used As Axis Provider</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EReference TREE_FILLING_CONFIGURATION__AXIS_USED_AS_AXIS_PROVIDER = eINSTANCE.getTreeFillingConfiguration_AxisUsedAsAxisProvider();
+
+		/**
+		 * The meta object literal for the '<em><b>Paste Configuration</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EReference TREE_FILLING_CONFIGURATION__PASTE_CONFIGURATION = eINSTANCE.getTreeFillingConfiguration_PasteConfiguration();
+
+		/**
+		 * The meta object literal for the '<em><b>Depth</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute TREE_FILLING_CONFIGURATION__DEPTH = eINSTANCE.getTreeFillingConfiguration_Depth();
+
+		/**
+		 * The meta object literal for the '<em><b>Label Provider</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EReference TREE_FILLING_CONFIGURATION__LABEL_PROVIDER = eINSTANCE.getTreeFillingConfiguration_LabelProvider();
+
+		/**
+		 * The meta object literal for the '<em><b>Label Provider Context</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute TREE_FILLING_CONFIGURATION__LABEL_PROVIDER_CONTEXT = eINSTANCE.getTreeFillingConfiguration_LabelProviderContext();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AxisIndexStyle <em>Axis Index Style</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 *

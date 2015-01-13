@@ -30,7 +30,6 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattableproblem.StringR
  * @generated
  */
 public class NattableproblemFactoryImpl extends EFactoryImpl implements NattableproblemFactory {
-
 	/**
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->

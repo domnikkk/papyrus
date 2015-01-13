@@ -16,6 +16,7 @@ package org.eclipse.papyrus.infra.nattable.utils;
 import org.eclipse.core.expressions.PropertyTester;
 import org.eclipse.papyrus.infra.nattable.manager.table.INattableModelManager;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisprovider.ISlaveAxisProvider;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattablestyle.DisplayStyle;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.IWorkbenchPart;
@@ -37,6 +38,8 @@ public class NattableWidgetPropertyTester extends PropertyTester {
 
 	private static final String CAN_INVERT_AXIS = "canInvertAxis";//$NON-NLS-1$
 
+	private static final String IS_HIERARCHIC_TABLE = "isHierarchicTable"; //$NON-NLS-1$
+
 	@Override
 	public boolean test(final Object receiver, final String property, final Object[] args, final Object expectedValue) {
 		final INattableModelManager manager = getNattableModelManager();
@@ -55,9 +58,20 @@ public class NattableWidgetPropertyTester extends PropertyTester {
 				return expectedValue.equals(AxisUtils.getAxisProviderUsedForRows(manager) instanceof ISlaveAxisProvider);
 			} else if (CAN_INVERT_AXIS.equals(property)) {
 				return expectedValue.equals(manager.canInvertAxis());
+			} else if (IS_HIERARCHIC_TABLE.equals(property)) {
+				return expectedValue.equals(isHierarchicTable(manager));
 			}
 		}
 		return false;
+	}
+
+	/**
+	 * @param table
+	 * @return
+	 */
+	public static final boolean isHierarchicTable(final INattableModelManager tableManager) {
+		final DisplayStyle style = TableHelper.getTableDisplayStyle(tableManager);
+		return (DisplayStyle.HIERARCHIC_SINGLE_TREE_COLUMN.equals(style) || DisplayStyle.HIERARCHIC_MULTI_TREE_COLUMN.equals(style));
 	}
 
 	/**

@@ -281,6 +281,10 @@ public class StereotypePropertyCellManager extends UMLFeatureCellManager {
 		EStructuralFeature steApFeature = null;
 		if (prop != null) {
 			if (stereotypes.isEmpty()) {
+				if (newValue == null || newValue.isEmpty() || newValue.equalsIgnoreCase(org.eclipse.papyrus.infra.nattable.utils.Constants.NOT_AVALAIBLE)) { //$NON-NLS-1$
+					// Don't apply the stereotype if there's no value to set.
+					return null;
+				}
 				// Must first apply the stereotype
 				return new RecordingCommand(domain, "Set Value") { //$NON-NLS-1$
 
@@ -291,10 +295,14 @@ public class StereotypePropertyCellManager extends UMLFeatureCellManager {
 						} else {
 							// Now recursively execute the set-string-value command
 							Command command = getSetStringValueCommand(domain, columnElement, rowElement, newValue, valueSolver, tableManager);
-							if (command == null || !command.canExecute()) {
-								throw new OperationCanceledException();
+							if (command != null) {
+								if (!command.canExecute()) {
+									throw new OperationCanceledException();
+								} else {
+									domain.getCommandStack().execute(command);
+								}
 							} else {
-								domain.getCommandStack().execute(command);
+								// A null command is not an error, it just means there's nothing to set because the value is already correct.
 							}
 						}
 					}

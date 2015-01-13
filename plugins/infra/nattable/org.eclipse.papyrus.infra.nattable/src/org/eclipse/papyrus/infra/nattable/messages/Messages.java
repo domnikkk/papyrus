@@ -21,6 +21,10 @@ public class Messages extends NLS {
 
 	public static String CellManagerFactory_CellManagerNotFound;
 
+	public static String ChooseCategoriesSelectionWidget_EditAlias;
+
+	public static String ChooseCategoriesSelectionWidget_EnterAliasToUseForTheCategory;
+
 	public static String CompositeAxisManager_DestroyAxisCommand;
 
 	public static String AbstractAxisManager_InputDialogMessage;
@@ -237,6 +241,8 @@ public class Messages extends NLS {
 
 	public static String LoadCurrentAxisProvidersDialog_3;
 
+	public static String PapyrusPopupMenuAction_ShowCategoriesOnDepth;
+
 	public static String PasteConfigurationUtils_ContainementFeatureIsNotAReference;
 
 	public static String PasteConfigurationUtils_ContainmentFeatureIsNotAReferenceContainment;
@@ -319,6 +325,10 @@ public class Messages extends NLS {
 	public static String PasteSeparator_Space;
 
 	public static String PasteSeparator_Tabulation;
+
+	public static String SelectCategoriesWizardPage_SelectCategoriesPage;
+
+	public static String SelectCategoriesWizardPage_SelectCategoriesToListenInTheTreeTable;
 	static {
 		// initialize resource bundle
 		NLS.initializeMessages(BUNDLE_NAME, Messages.class);

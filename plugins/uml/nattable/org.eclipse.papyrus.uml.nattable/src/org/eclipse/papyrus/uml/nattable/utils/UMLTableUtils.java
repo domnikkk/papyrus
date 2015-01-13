@@ -18,6 +18,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
+import org.eclipse.core.runtime.Assert;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.papyrus.infra.nattable.utils.Constants;
 import org.eclipse.papyrus.uml.nattable.paste.StereotypeApplicationStructure;
@@ -52,7 +53,7 @@ public class UMLTableUtils {
 	 *         the UML::Property or <code>null</code> if we can't resolve it (the required profile is not applied)
 	 */
 	public static Property getRealStereotypeProperty(final EObject eobject, final String id) {
-		assert id.startsWith(PROPERTY_OF_STEREOTYPE_PREFIX);
+		Assert.isTrue(id.startsWith(PROPERTY_OF_STEREOTYPE_PREFIX));
 		if (eobject instanceof Element) {
 			final Element element = (Element) eobject;
 			if (element.getNearestPackage() != null) {

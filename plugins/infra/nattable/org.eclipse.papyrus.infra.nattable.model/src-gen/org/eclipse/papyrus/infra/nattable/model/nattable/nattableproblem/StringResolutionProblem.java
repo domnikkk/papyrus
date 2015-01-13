@@ -27,7 +27,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * <ul>
  * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableproblem.StringResolutionProblem#getValueAsString <em>Value As String</em>}</li>
- * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableproblem.StringResolutionProblem#getUnresolvedString <em>Unresolved String </em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableproblem.StringResolutionProblem#getUnresolvedString <em>Unresolved String</em>}</li>
  * </ul>
  * </p>
  *
@@ -36,7 +36,6 @@ import org.eclipse.emf.common.util.EList;
  * @generated
  */
 public interface StringResolutionProblem extends Problem {
-
 	/**
 	 * Returns the value of the '<em><b>Value As String</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -54,8 +53,7 @@ public interface StringResolutionProblem extends Problem {
 	String getValueAsString();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableproblem.StringResolutionProblem#getValueAsString
-	 * <em>Value As String</em>}' attribute.
+	 * Sets the value of the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableproblem.StringResolutionProblem#getValueAsString <em>Value As String</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *

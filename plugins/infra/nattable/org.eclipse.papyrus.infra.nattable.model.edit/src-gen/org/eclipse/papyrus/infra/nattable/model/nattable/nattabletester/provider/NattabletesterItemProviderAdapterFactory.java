@@ -42,7 +42,6 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattabletester.util.Nat
  * @generated
  */
 public class NattabletesterItemProviderAdapterFactory extends NattabletesterAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
-
 	/**
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->

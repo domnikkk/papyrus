@@ -32,6 +32,7 @@ import org.eclipse.papyrus.infra.emf.utils.ServiceUtilsForEObject;
 import org.eclipse.papyrus.infra.nattable.Activator;
 import org.eclipse.papyrus.infra.nattable.manager.cell.CellManagerFactory;
 import org.eclipse.papyrus.infra.nattable.manager.table.INattableModelManager;
+import org.eclipse.papyrus.infra.nattable.selection.ISelectionExtractor;
 import org.eclipse.papyrus.infra.nattable.utils.LocationValue;
 import org.eclipse.swt.dnd.DND;
 import org.eclipse.swt.dnd.DropTargetEvent;
@@ -50,6 +51,7 @@ public class NatTableDropListener implements DropTargetListener {
 	 */
 	private final INattableModelManager manager;
 
+	private final ISelectionExtractor selectionExtractor;
 	/**
 	 * the location value to use to drop the elements
 	 */
@@ -61,9 +63,11 @@ public class NatTableDropListener implements DropTargetListener {
 	 *
 	 * @param manager
 	 *            the table manager
+	 * @param selectionExtractor
 	 */
-	public NatTableDropListener(final INattableModelManager manager) {
+	public NatTableDropListener(final INattableModelManager manager, ISelectionExtractor selectionExtractor) {
 		this.manager = manager;
+		this.selectionExtractor = selectionExtractor;
 	}
 
 	/**
@@ -187,7 +191,7 @@ public class NatTableDropListener implements DropTargetListener {
 	}
 
 	protected Collection<?> extractSelectedObjects(IStructuredSelection structuredSelection) {
-		return structuredSelection.toList();
+		return this.selectionExtractor.extractSelectedObjects(structuredSelection);
 	}
 
 	/**

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_Wn-FQFz_EeSXB5lObuMx0Q" name="model">
+  <eAnnotations xmi:id="_dzUMcF-CEeSiC_8vQsLcmQ"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_ktkuAFz_EeSXB5lObuMx0Q" name="Class1">
+    <ownedAttribute xmi:id="_p8tFUFz_EeSXB5lObuMx0Q" name="Attribute1"/>
+    <ownedAttribute xmi:id="_VJ8yoF0AEeSXB5lObuMx0Q" name="Attribute2"/>
+    <ownedAttribute xmi:id="_XXDPIF57EeSGEoSIn-CQ9A" name="Attribute3"/>
+    <ownedOperation xmi:id="_XZqygF0AEeSXB5lObuMx0Q" name="Operation1">
+      <ownedParameter xmi:id="_Y_LXwF0AEeSXB5lObuMx0Q" name="Parameter1"/>
+      <ownedParameter xmi:id="_XfAz8GWwEeSE1IcRTuXCRQ" name="Parameter2"/>
+      <ownedParameter xmi:id="_XokYkGWwEeSE1IcRTuXCRQ" name="Parameter3"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_SdkTUGWwEeSE1IcRTuXCRQ" name="Operation2"/>
+    <ownedOperation xmi:id="_VYLDQGWwEeSE1IcRTuXCRQ" name="Operation3"/>
+    <nestedClassifier xmi:type="uml:Class" xmi:id="_m6Uc0F6IEeSkFutaog6joA" name="Class1"/>
+    <nestedClassifier xmi:type="uml:Class" xmi:id="_6Gzf0F6IEeSkFutaog6joA" name="Class2"/>
+    <nestedClassifier xmi:type="uml:Class" xmi:id="_sRfWAF6tEeSX9eTjVyEyYw" name="Class3"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_r-4YcFz_EeSXB5lObuMx0Q" name="Class2"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_VddQQF57EeSGEoSIn-CQ9A" name="Class3"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_u6xpEF6EEeSMz8JhP-zl5g" name="Class4"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_7Lw5kF6EEeSMz8JhP-zl5g" name="Class5"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_OvWYgF6GEeSMz8JhP-zl5g" name="Class6"/>
+</uml:Model>

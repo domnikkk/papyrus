@@ -19,12 +19,7 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.NattableaxisconfigurationPackage;
@@ -37,8 +32,7 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfigurati
  *
  * @generated
  */
-public class PasteEObjectConfigurationItemProvider extends IPasteConfigurationItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
-
+public class PasteEObjectConfigurationItemProvider extends IPasteConfigurationItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -76,9 +70,19 @@ public class PasteEObjectConfigurationItemProvider extends IPasteConfigurationIt
 	 * @generated
 	 */
 	protected void addPastedElementIdPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_PasteEObjectConfiguration_pastedElementId_feature"), //$NON-NLS-1$
-				getString("_UI_PropertyDescriptor_description", "_UI_PasteEObjectConfiguration_pastedElementId_feature", "_UI_PasteEObjectConfiguration_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				NattableaxisconfigurationPackage.Literals.PASTE_EOBJECT_CONFIGURATION__PASTED_ELEMENT_ID, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_PasteEObjectConfiguration_pastedElementId_feature"), //$NON-NLS-1$
+						getString("_UI_PropertyDescriptor_description", "_UI_PasteEObjectConfiguration_pastedElementId_feature", "_UI_PasteEObjectConfiguration_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+						NattableaxisconfigurationPackage.Literals.PASTE_EOBJECT_CONFIGURATION__PASTED_ELEMENT_ID,
+						true,
+						false,
+						false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+						null,
+						null));
 	}
 
 	/**
@@ -89,9 +93,19 @@ public class PasteEObjectConfigurationItemProvider extends IPasteConfigurationIt
 	 * @generated
 	 */
 	protected void addPasteElementContainementFeaturePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_PasteEObjectConfiguration_pasteElementContainementFeature_feature"), //$NON-NLS-1$
-				getString("_UI_PropertyDescriptor_description", "_UI_PasteEObjectConfiguration_pasteElementContainementFeature_feature", "_UI_PasteEObjectConfiguration_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				NattableaxisconfigurationPackage.Literals.PASTE_EOBJECT_CONFIGURATION__PASTE_ELEMENT_CONTAINEMENT_FEATURE, true, false, true, null, null, null));
+		itemPropertyDescriptors.add
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_PasteEObjectConfiguration_pasteElementContainementFeature_feature"), //$NON-NLS-1$
+						getString("_UI_PropertyDescriptor_description", "_UI_PasteEObjectConfiguration_pasteElementContainementFeature_feature", "_UI_PasteEObjectConfiguration_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+						NattableaxisconfigurationPackage.Literals.PASTE_EOBJECT_CONFIGURATION__PASTE_ELEMENT_CONTAINEMENT_FEATURE,
+						true,
+						false,
+						true,
+						null,
+						null,
+						null));
 	}
 
 	/**
@@ -118,6 +132,7 @@ public class PasteEObjectConfigurationItemProvider extends IPasteConfigurationIt
 		PasteEObjectConfiguration pasteEObjectConfiguration = (PasteEObjectConfiguration) object;
 		return getString("_UI_PasteEObjectConfiguration_type") + " " + pasteEObjectConfiguration.isDetachedMode(); //$NON-NLS-1$ //$NON-NLS-2$
 	}
+
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached

@@ -51,8 +51,9 @@ import org.eclipse.ui.PartInitException;
  *
  * @generated
  */
-public class NattableActionBarContributor extends EditingDomainActionBarContributor implements ISelectionChangedListener {
-
+public class NattableActionBarContributor
+		extends EditingDomainActionBarContributor
+		implements ISelectionChangedListener {
 	/**
 	 * This keeps track of the active editor.
 	 * <!-- begin-user-doc -->
@@ -78,18 +79,19 @@ public class NattableActionBarContributor extends EditingDomainActionBarContribu
 	 *
 	 * @generated
 	 */
-	protected IAction showPropertiesViewAction = new Action(NattableEditorPlugin.INSTANCE.getString("_UI_ShowPropertiesView_menu_item")) //$NON-NLS-1$
-	{
-
-		@Override
-		public void run() {
-			try {
-				getPage().showView("org.eclipse.ui.views.PropertySheet"); //$NON-NLS-1$
-			} catch (PartInitException exception) {
-				NattableEditorPlugin.INSTANCE.log(exception);
-			}
-		}
-	};
+	protected IAction showPropertiesViewAction =
+			new Action(NattableEditorPlugin.INSTANCE.getString("_UI_ShowPropertiesView_menu_item")) //$NON-NLS-1$
+			{
+				@Override
+				public void run() {
+					try {
+						getPage().showView("org.eclipse.ui.views.PropertySheet"); //$NON-NLS-1$
+					}
+					catch (PartInitException exception) {
+						NattableEditorPlugin.INSTANCE.log(exception);
+					}
+				}
+			};
 
 	/**
 	 * This action refreshes the viewer of the current editor if the editor
@@ -99,24 +101,24 @@ public class NattableActionBarContributor extends EditingDomainActionBarContribu
 	 *
 	 * @generated
 	 */
-	protected IAction refreshViewerAction = new Action(NattableEditorPlugin.INSTANCE.getString("_UI_RefreshViewer_menu_item")) //$NON-NLS-1$
-	{
-
-		@Override
-		public boolean isEnabled() {
-			return activeEditorPart instanceof IViewerProvider;
-		}
-
-		@Override
-		public void run() {
-			if (activeEditorPart instanceof IViewerProvider) {
-				Viewer viewer = ((IViewerProvider) activeEditorPart).getViewer();
-				if (viewer != null) {
-					viewer.refresh();
+	protected IAction refreshViewerAction =
+			new Action(NattableEditorPlugin.INSTANCE.getString("_UI_RefreshViewer_menu_item")) //$NON-NLS-1$
+			{
+				@Override
+				public boolean isEnabled() {
+					return activeEditorPart instanceof IViewerProvider;
 				}
-			}
-		}
-	};
+
+				@Override
+				public void run() {
+					if (activeEditorPart instanceof IViewerProvider) {
+						Viewer viewer = ((IViewerProvider) activeEditorPart).getViewer();
+						if (viewer != null) {
+							viewer.refresh();
+						}
+					}
+				}
+			};
 
 	/**
 	 * This will contain one {@link org.eclipse.emf.edit.ui.action.CreateChildAction} corresponding to each descriptor
@@ -214,13 +216,13 @@ public class NattableActionBarContributor extends EditingDomainActionBarContribu
 
 		// Force an update because Eclipse hides empty menus now.
 		//
-		submenuManager.addMenuListener(new IMenuListener() {
-
-			@Override
-			public void menuAboutToShow(IMenuManager menuManager) {
-				menuManager.updateAll(true);
-			}
-		});
+		submenuManager.addMenuListener
+				(new IMenuListener() {
+					@Override
+					public void menuAboutToShow(IMenuManager menuManager) {
+						menuManager.updateAll(true);
+					}
+				});
 
 		addGlobalActions(submenuManager);
 	}
@@ -244,7 +246,8 @@ public class NattableActionBarContributor extends EditingDomainActionBarContribu
 		}
 		if (part == null) {
 			selectionProvider = null;
-		} else {
+		}
+		else {
 			selectionProvider = part.getSite().getSelectionProvider();
 			selectionProvider.addSelectionChangedListener(this);
 
@@ -357,7 +360,8 @@ public class NattableActionBarContributor extends EditingDomainActionBarContribu
 			for (IAction action : actions) {
 				if (contributionID != null) {
 					manager.insertBefore(contributionID, action);
-				} else {
+				}
+				else {
 					manager.add(action);
 				}
 			}

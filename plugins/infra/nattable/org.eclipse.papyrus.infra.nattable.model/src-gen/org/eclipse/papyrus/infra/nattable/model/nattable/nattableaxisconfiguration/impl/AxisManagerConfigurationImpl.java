@@ -19,13 +19,13 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AxisManagerConfiguration;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AxisManagerRepresentation;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.IAxisConfiguration;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.NattableaxisconfigurationPackage;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.ILabelProviderConfiguration;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattablestyle.impl.StyledElementImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -34,20 +34,15 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.I
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>
- * {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.impl.AxisManagerConfigurationImpl#getLocalHeaderLabelConfiguration
- * <em>Local Header Label Configuration</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.impl.AxisManagerConfigurationImpl#getLocalHeaderLabelConfiguration <em>Local Header Label Configuration</em>}</li>
  * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.impl.AxisManagerConfigurationImpl#getAxisManager <em>Axis Manager</em>}</li>
- * <li>
- * {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.impl.AxisManagerConfigurationImpl#getLocalSpecificConfigurations
- * <em>Local Specific Configurations</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.impl.AxisManagerConfigurationImpl#getLocalSpecificConfigurations <em>Local Specific Configurations</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class AxisManagerConfigurationImpl extends MinimalEObjectImpl.Container implements AxisManagerConfiguration {
-
+public class AxisManagerConfigurationImpl extends StyledElementImpl implements AxisManagerConfiguration {
 	/**
 	 * The cached value of the '{@link #getLocalHeaderLabelConfiguration() <em>Local Header Label Configuration</em>}' reference.
 	 * <!-- begin-user-doc -->

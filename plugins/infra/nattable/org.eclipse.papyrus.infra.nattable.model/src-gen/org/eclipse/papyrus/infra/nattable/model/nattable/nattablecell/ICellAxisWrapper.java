@@ -13,7 +13,6 @@
 package org.eclipse.papyrus.infra.nattable.model.nattable.nattablecell;
 
 import org.eclipse.emf.ecore.EModelElement;
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,8 +28,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model interface="true" abstract="true"
  * @generated
  */
-public interface ICellAxisWrapper extends EObject, EModelElement {
-
+public interface ICellAxisWrapper extends EModelElement {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -20,22 +20,16 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AbstractHeaderAxisConfiguration;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AxisIndexStyle;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.NattableaxisconfigurationFactory;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.NattableaxisconfigurationPackage;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.NattablelabelproviderFactory;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattablestyle.provider.StyledElementItemProvider;
 import org.eclipse.papyrus.infra.nattable.model.nattable.provider.NattableEditPlugin;
 
 /**
@@ -45,8 +39,7 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.provider.NattableEditPl
  *
  * @generated
  */
-public class AbstractHeaderAxisConfigurationItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
-
+public class AbstractHeaderAxisConfigurationItemProvider extends StyledElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -86,9 +79,19 @@ public class AbstractHeaderAxisConfigurationItemProvider extends ItemProviderAda
 	 * @generated
 	 */
 	protected void addIndexStylePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_AbstractHeaderAxisConfiguration_indexStyle_feature"), //$NON-NLS-1$
-				getString("_UI_PropertyDescriptor_description", "_UI_AbstractHeaderAxisConfiguration_indexStyle_feature", "_UI_AbstractHeaderAxisConfiguration_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				NattableaxisconfigurationPackage.Literals.ABSTRACT_HEADER_AXIS_CONFIGURATION__INDEX_STYLE, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_AbstractHeaderAxisConfiguration_indexStyle_feature"), //$NON-NLS-1$
+						getString("_UI_PropertyDescriptor_description", "_UI_AbstractHeaderAxisConfiguration_indexStyle_feature", "_UI_AbstractHeaderAxisConfiguration_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+						NattableaxisconfigurationPackage.Literals.ABSTRACT_HEADER_AXIS_CONFIGURATION__INDEX_STYLE,
+						true,
+						false,
+						false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+						null,
+						null));
 	}
 
 	/**
@@ -99,9 +102,19 @@ public class AbstractHeaderAxisConfigurationItemProvider extends ItemProviderAda
 	 * @generated
 	 */
 	protected void addDisplayLabelPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_AbstractHeaderAxisConfiguration_displayLabel_feature"), //$NON-NLS-1$
-				getString("_UI_PropertyDescriptor_description", "_UI_AbstractHeaderAxisConfiguration_displayLabel_feature", "_UI_AbstractHeaderAxisConfiguration_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				NattableaxisconfigurationPackage.Literals.ABSTRACT_HEADER_AXIS_CONFIGURATION__DISPLAY_LABEL, true, false, false, ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_AbstractHeaderAxisConfiguration_displayLabel_feature"), //$NON-NLS-1$
+						getString("_UI_PropertyDescriptor_description", "_UI_AbstractHeaderAxisConfiguration_displayLabel_feature", "_UI_AbstractHeaderAxisConfiguration_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+						NattableaxisconfigurationPackage.Literals.ABSTRACT_HEADER_AXIS_CONFIGURATION__DISPLAY_LABEL,
+						true,
+						false,
+						false,
+						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+						null,
+						null));
 	}
 
 	/**
@@ -112,9 +125,19 @@ public class AbstractHeaderAxisConfigurationItemProvider extends ItemProviderAda
 	 * @generated
 	 */
 	protected void addDisplayFilterPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_AbstractHeaderAxisConfiguration_displayFilter_feature"), //$NON-NLS-1$
-				getString("_UI_PropertyDescriptor_description", "_UI_AbstractHeaderAxisConfiguration_displayFilter_feature", "_UI_AbstractHeaderAxisConfiguration_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				NattableaxisconfigurationPackage.Literals.ABSTRACT_HEADER_AXIS_CONFIGURATION__DISPLAY_FILTER, true, false, false, ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_AbstractHeaderAxisConfiguration_displayFilter_feature"), //$NON-NLS-1$
+						getString("_UI_PropertyDescriptor_description", "_UI_AbstractHeaderAxisConfiguration_displayFilter_feature", "_UI_AbstractHeaderAxisConfiguration_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+						NattableaxisconfigurationPackage.Literals.ABSTRACT_HEADER_AXIS_CONFIGURATION__DISPLAY_FILTER,
+						true,
+						false,
+						false,
+						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+						null,
+						null));
 	}
 
 	/**
@@ -125,9 +148,19 @@ public class AbstractHeaderAxisConfigurationItemProvider extends ItemProviderAda
 	 * @generated
 	 */
 	protected void addDisplayIndexPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_AbstractHeaderAxisConfiguration_displayIndex_feature"), //$NON-NLS-1$
-				getString("_UI_PropertyDescriptor_description", "_UI_AbstractHeaderAxisConfiguration_displayIndex_feature", "_UI_AbstractHeaderAxisConfiguration_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				NattableaxisconfigurationPackage.Literals.ABSTRACT_HEADER_AXIS_CONFIGURATION__DISPLAY_INDEX, true, false, false, ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_AbstractHeaderAxisConfiguration_displayIndex_feature"), //$NON-NLS-1$
+						getString("_UI_PropertyDescriptor_description", "_UI_AbstractHeaderAxisConfiguration_displayIndex_feature", "_UI_AbstractHeaderAxisConfiguration_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+						NattableaxisconfigurationPackage.Literals.ABSTRACT_HEADER_AXIS_CONFIGURATION__DISPLAY_INDEX,
+						true,
+						false,
+						false,
+						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+						null,
+						null));
 	}
 
 	/**
@@ -142,7 +175,6 @@ public class AbstractHeaderAxisConfigurationItemProvider extends ItemProviderAda
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(EcorePackage.Literals.EMODEL_ELEMENT__EANNOTATIONS);
 			childrenFeatures.add(NattableaxisconfigurationPackage.Literals.ABSTRACT_HEADER_AXIS_CONFIGURATION__OWNED_LABEL_CONFIGURATIONS);
 			childrenFeatures.add(NattableaxisconfigurationPackage.Literals.ABSTRACT_HEADER_AXIS_CONFIGURATION__OWNED_AXIS_CONFIGURATIONS);
 		}
@@ -174,9 +206,11 @@ public class AbstractHeaderAxisConfigurationItemProvider extends ItemProviderAda
 	public String getText(Object object) {
 		AxisIndexStyle labelValue = ((AbstractHeaderAxisConfiguration) object).getIndexStyle();
 		String label = labelValue == null ? null : labelValue.toString();
-		return label == null || label.length() == 0 ? getString("_UI_AbstractHeaderAxisConfiguration_type") : //$NON-NLS-1$
+		return label == null || label.length() == 0 ?
+				getString("_UI_AbstractHeaderAxisConfiguration_type") : //$NON-NLS-1$
 				getString("_UI_AbstractHeaderAxisConfiguration_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
+
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -197,7 +231,6 @@ public class AbstractHeaderAxisConfigurationItemProvider extends ItemProviderAda
 		case NattableaxisconfigurationPackage.ABSTRACT_HEADER_AXIS_CONFIGURATION__DISPLAY_INDEX:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
-		case NattableaxisconfigurationPackage.ABSTRACT_HEADER_AXIS_CONFIGURATION__EANNOTATIONS:
 		case NattableaxisconfigurationPackage.ABSTRACT_HEADER_AXIS_CONFIGURATION__OWNED_LABEL_CONFIGURATIONS:
 		case NattableaxisconfigurationPackage.ABSTRACT_HEADER_AXIS_CONFIGURATION__OWNED_AXIS_CONFIGURATIONS:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
@@ -218,17 +251,40 @@ public class AbstractHeaderAxisConfigurationItemProvider extends ItemProviderAda
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(NattableaxisconfigurationPackage.Literals.ABSTRACT_HEADER_AXIS_CONFIGURATION__OWNED_LABEL_CONFIGURATIONS, NattablelabelproviderFactory.eINSTANCE.createObjectLabelProviderConfiguration()));
+		newChildDescriptors.add
+				(createChildParameter
+				(NattableaxisconfigurationPackage.Literals.ABSTRACT_HEADER_AXIS_CONFIGURATION__OWNED_LABEL_CONFIGURATIONS,
+						NattablelabelproviderFactory.eINSTANCE.createObjectLabelProviderConfiguration()));
 
-		newChildDescriptors.add(createChildParameter(NattableaxisconfigurationPackage.Literals.ABSTRACT_HEADER_AXIS_CONFIGURATION__OWNED_LABEL_CONFIGURATIONS, NattablelabelproviderFactory.eINSTANCE.createFeatureLabelProviderConfiguration()));
+		newChildDescriptors.add
+				(createChildParameter
+				(NattableaxisconfigurationPackage.Literals.ABSTRACT_HEADER_AXIS_CONFIGURATION__OWNED_LABEL_CONFIGURATIONS,
+						NattablelabelproviderFactory.eINSTANCE.createFeatureLabelProviderConfiguration()));
 
-		newChildDescriptors.add(createChildParameter(NattableaxisconfigurationPackage.Literals.ABSTRACT_HEADER_AXIS_CONFIGURATION__OWNED_AXIS_CONFIGURATIONS, NattableaxisconfigurationFactory.eINSTANCE.createFeatureAxisConfiguration()));
+		newChildDescriptors.add
+				(createChildParameter
+				(NattableaxisconfigurationPackage.Literals.ABSTRACT_HEADER_AXIS_CONFIGURATION__OWNED_AXIS_CONFIGURATIONS,
+						NattableaxisconfigurationFactory.eINSTANCE.createFeatureAxisConfiguration()));
 
-		newChildDescriptors.add(createChildParameter(NattableaxisconfigurationPackage.Literals.ABSTRACT_HEADER_AXIS_CONFIGURATION__OWNED_AXIS_CONFIGURATIONS, NattableaxisconfigurationFactory.eINSTANCE.createEStructuralFeatureValueFillingConfiguration()));
+		newChildDescriptors.add
+				(createChildParameter
+				(NattableaxisconfigurationPackage.Literals.ABSTRACT_HEADER_AXIS_CONFIGURATION__OWNED_AXIS_CONFIGURATIONS,
+						NattableaxisconfigurationFactory.eINSTANCE.createEStructuralFeatureValueFillingConfiguration()));
 
-		newChildDescriptors.add(createChildParameter(NattableaxisconfigurationPackage.Literals.ABSTRACT_HEADER_AXIS_CONFIGURATION__OWNED_AXIS_CONFIGURATIONS, NattableaxisconfigurationFactory.eINSTANCE.createIPasteConfiguration()));
+		newChildDescriptors.add
+				(createChildParameter
+				(NattableaxisconfigurationPackage.Literals.ABSTRACT_HEADER_AXIS_CONFIGURATION__OWNED_AXIS_CONFIGURATIONS,
+						NattableaxisconfigurationFactory.eINSTANCE.createIPasteConfiguration()));
 
-		newChildDescriptors.add(createChildParameter(NattableaxisconfigurationPackage.Literals.ABSTRACT_HEADER_AXIS_CONFIGURATION__OWNED_AXIS_CONFIGURATIONS, NattableaxisconfigurationFactory.eINSTANCE.createPasteEObjectConfiguration()));
+		newChildDescriptors.add
+				(createChildParameter
+				(NattableaxisconfigurationPackage.Literals.ABSTRACT_HEADER_AXIS_CONFIGURATION__OWNED_AXIS_CONFIGURATIONS,
+						NattableaxisconfigurationFactory.eINSTANCE.createPasteEObjectConfiguration()));
+
+		newChildDescriptors.add
+				(createChildParameter
+				(NattableaxisconfigurationPackage.Literals.ABSTRACT_HEADER_AXIS_CONFIGURATION__OWNED_AXIS_CONFIGURATIONS,
+						NattableaxisconfigurationFactory.eINSTANCE.createTreeFillingConfiguration()));
 	}
 
 	/**

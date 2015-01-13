@@ -173,7 +173,6 @@ public class BooleanToggle extends AbstractValueEditor {
 
 	@Override
 	public void changeColorField() {
-		// TODO Auto-generated method stub
 
 	}
 

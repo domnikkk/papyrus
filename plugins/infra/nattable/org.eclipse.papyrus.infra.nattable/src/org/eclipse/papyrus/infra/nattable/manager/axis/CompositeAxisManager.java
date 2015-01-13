@@ -404,6 +404,7 @@ public class CompositeAxisManager extends AbstractAxisManager implements ICompos
 	 */
 	@Override
 	public List<Object> getAllManagedAxis() {
+		initializeManagedObjectList();
 		final List<Object> allExistingAxis = new ArrayList<Object>();
 		for (IAxisManager manager : this.subManagers) {
 			Collection<Object> managerPossibleElements = manager.getAllManagedAxis();

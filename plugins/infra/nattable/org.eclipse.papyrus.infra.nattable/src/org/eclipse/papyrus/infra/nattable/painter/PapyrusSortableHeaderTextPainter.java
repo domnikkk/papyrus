@@ -98,7 +98,7 @@ public class PapyrusSortableHeaderTextPainter extends SortableHeaderTextPainter 
 			int position = cell.getRowPosition();
 			if (position == 0) {
 				INattableModelManager manager = configRegistry.getConfigAttribute(NattableConfigAttributes.NATTABLE_MODEL_MANAGER_CONFIG_ATTRIBUTE, DisplayMode.NORMAL, NattableConfigAttributes.NATTABLE_MODEL_MANAGER_ID);
-				AbstractHeaderAxisConfiguration config = HeaderAxisConfigurationManagementUtils.getColumnAbstractHeaderAxisUsedInTable(manager.getTable());
+				AbstractHeaderAxisConfiguration config = HeaderAxisConfigurationManagementUtils.getColumnAbstractHeaderAxisConfigurationUsedInTable(manager.getTable());
 				if (config != null && config.isDisplayIndex()) {
 					return;
 				}

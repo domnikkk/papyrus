@@ -25,14 +25,13 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisprovider.Na
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisprovider.impl.MasterObjectAxisProviderImpl#isDisconnectSlave <em> Disconnect Slave</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisprovider.impl.MasterObjectAxisProviderImpl#isDisconnectSlave <em>Disconnect Slave</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
 public class MasterObjectAxisProviderImpl extends AxisProviderImpl implements MasterObjectAxisProvider {
-
 	/**
 	 * The default value of the '{@link #isDisconnectSlave() <em>Disconnect Slave</em>}' attribute.
 	 * <!-- begin-user-doc -->

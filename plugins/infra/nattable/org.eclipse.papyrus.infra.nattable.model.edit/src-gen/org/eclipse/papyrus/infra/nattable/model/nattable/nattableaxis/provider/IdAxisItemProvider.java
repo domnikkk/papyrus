@@ -20,17 +20,12 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxis.IdAxis;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxis.NattableaxisPackage;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattablestyle.provider.StyledElementItemProvider;
 import org.eclipse.papyrus.infra.nattable.model.nattable.provider.NattableEditPlugin;
 
 /**
@@ -40,8 +35,7 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.provider.NattableEditPl
  *
  * @generated
  */
-public class IdAxisItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
-
+public class IdAxisItemProvider extends StyledElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -80,9 +74,19 @@ public class IdAxisItemProvider extends ItemProviderAdapter implements IEditingD
 	 * @generated
 	 */
 	protected void addManagerPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_IAxis_manager_feature"), //$NON-NLS-1$
-				getString("_UI_PropertyDescriptor_description", "_UI_IAxis_manager_feature", "_UI_IAxis_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				NattableaxisPackage.Literals.IAXIS__MANAGER, true, false, true, null, null, null));
+		itemPropertyDescriptors.add
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_IAxis_manager_feature"), //$NON-NLS-1$
+						getString("_UI_PropertyDescriptor_description", "_UI_IAxis_manager_feature", "_UI_IAxis_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+						NattableaxisPackage.Literals.IAXIS__MANAGER,
+						true,
+						false,
+						true,
+						null,
+						null,
+						null));
 	}
 
 	/**
@@ -93,9 +97,19 @@ public class IdAxisItemProvider extends ItemProviderAdapter implements IEditingD
 	 * @generated
 	 */
 	protected void addAliasPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_IAxis_alias_feature"), //$NON-NLS-1$
-				getString("_UI_PropertyDescriptor_description", "_UI_IAxis_alias_feature", "_UI_IAxis_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				NattableaxisPackage.Literals.IAXIS__ALIAS, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_IAxis_alias_feature"), //$NON-NLS-1$
+						getString("_UI_PropertyDescriptor_description", "_UI_IAxis_alias_feature", "_UI_IAxis_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+						NattableaxisPackage.Literals.IAXIS__ALIAS,
+						true,
+						false,
+						false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+						null,
+						null));
 	}
 
 	/**
@@ -106,9 +120,19 @@ public class IdAxisItemProvider extends ItemProviderAdapter implements IEditingD
 	 * @generated
 	 */
 	protected void addElementPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_IdAxis_element_feature"), //$NON-NLS-1$
-				getString("_UI_PropertyDescriptor_description", "_UI_IdAxis_element_feature", "_UI_IdAxis_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				NattableaxisPackage.Literals.ID_AXIS__ELEMENT, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_IdAxis_element_feature"), //$NON-NLS-1$
+						getString("_UI_PropertyDescriptor_description", "_UI_IdAxis_element_feature", "_UI_IdAxis_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+						NattableaxisPackage.Literals.ID_AXIS__ELEMENT,
+						true,
+						false,
+						false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+						null,
+						null));
 	}
 
 	/**
@@ -121,9 +145,11 @@ public class IdAxisItemProvider extends ItemProviderAdapter implements IEditingD
 	@Override
 	public String getText(Object object) {
 		String label = ((IdAxis) object).getAlias();
-		return label == null || label.length() == 0 ? getString("_UI_IdAxis_type") : //$NON-NLS-1$
+		return label == null || label.length() == 0 ?
+				getString("_UI_IdAxis_type") : //$NON-NLS-1$
 				getString("_UI_IdAxis_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
+
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached

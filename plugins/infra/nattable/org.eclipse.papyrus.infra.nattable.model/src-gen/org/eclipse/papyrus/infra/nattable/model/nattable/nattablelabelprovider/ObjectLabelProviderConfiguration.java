@@ -29,7 +29,7 @@ package org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider;
  * <p>
  * The following features are supported:
  * <ul>
- * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.ObjectLabelProviderConfiguration#isDisplayIcon <em>Display Icon </em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.ObjectLabelProviderConfiguration#isDisplayIcon <em>Display Icon</em>}</li>
  * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.ObjectLabelProviderConfiguration#isDisplayLabel <em>Display Label</em>}</li>
  * </ul>
  * </p>
@@ -39,7 +39,6 @@ package org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider;
  * @generated
  */
 public interface ObjectLabelProviderConfiguration extends ILabelProviderConfiguration {
-
 	/**
 	 * Returns the value of the '<em><b>Display Icon</b></em>' attribute.
 	 * The default value is <code>"true"</code>.
@@ -58,8 +57,7 @@ public interface ObjectLabelProviderConfiguration extends ILabelProviderConfigur
 	boolean isDisplayIcon();
 
 	/**
-	 * Sets the value of the ' {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.ObjectLabelProviderConfiguration#isDisplayIcon
-	 * <em>Display Icon</em>}' attribute.
+	 * Sets the value of the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.ObjectLabelProviderConfiguration#isDisplayIcon <em>Display Icon</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -88,8 +86,7 @@ public interface ObjectLabelProviderConfiguration extends ILabelProviderConfigur
 	boolean isDisplayLabel();
 
 	/**
-	 * Sets the value of the ' {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.ObjectLabelProviderConfiguration#isDisplayLabel
-	 * <em>Display Label</em>}' attribute.
+	 * Sets the value of the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.ObjectLabelProviderConfiguration#isDisplayLabel <em>Display Label</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *

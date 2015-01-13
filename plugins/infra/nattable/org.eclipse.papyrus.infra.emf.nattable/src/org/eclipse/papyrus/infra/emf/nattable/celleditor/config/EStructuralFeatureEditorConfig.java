@@ -13,13 +13,9 @@
  *****************************************************************************/
 package org.eclipse.papyrus.infra.emf.nattable.celleditor.config;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EEnum;
-import org.eclipse.emf.ecore.EEnumLiteral;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.jface.viewers.ILabelProvider;
@@ -37,6 +33,7 @@ import org.eclipse.nebula.widgets.nattable.painter.cell.ComboBoxPainter;
 import org.eclipse.nebula.widgets.nattable.painter.cell.ICellPainter;
 import org.eclipse.nebula.widgets.nattable.painter.cell.TextPainter;
 import org.eclipse.nebula.widgets.nattable.style.DisplayMode;
+import org.eclipse.papyrus.infra.emf.nattable.dataprovider.EEnumComboBoxDataProvider;
 import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 import org.eclipse.papyrus.infra.nattable.celleditor.MultiLineTextCellEditorEx;
 import org.eclipse.papyrus.infra.nattable.celleditor.config.AbstractCellEditorConfiguration;
@@ -107,18 +104,7 @@ public class EStructuralFeatureEditorConfig extends AbstractCellEditorConfigurat
 			editor = new CheckBoxCellEditor();
 			break;
 		case SINGLE_EENUM_TYPE:
-			editor = new ComboBoxCellEditor(new IComboBoxDataProvider() {
-
-
-				@Override
-				public List<?> getValues(int columnIndex, int rowIndex) {
-					final List<Object> literals = new ArrayList<Object>();
-					for (final EEnumLiteral instances : ((EEnum) ((EStructuralFeature) axisElement).getEType()).getELiterals()) {
-						literals.add(instances.getInstance());
-					}
-					return literals;
-				}
-			});
+			editor = new ComboBoxCellEditor(new EEnumComboBoxDataProvider((EEnum) ((EStructuralFeature) axisElement).getEType()));
 			break;
 		default:
 		}

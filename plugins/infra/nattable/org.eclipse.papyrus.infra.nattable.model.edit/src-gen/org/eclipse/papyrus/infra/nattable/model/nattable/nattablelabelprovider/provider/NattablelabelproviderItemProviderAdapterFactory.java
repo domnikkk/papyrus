@@ -42,7 +42,6 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.u
  * @generated
  */
 public class NattablelabelproviderItemProviderAdapterFactory extends NattablelabelproviderAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
-
 	/**
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
@@ -95,7 +94,7 @@ public class NattablelabelproviderItemProviderAdapterFactory extends Nattablelab
 	protected FeatureLabelProviderConfigurationItemProvider featureLabelProviderConfigurationItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.FeatureLabelProviderConfiguration} .
+	 * This creates an adapter for a {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.FeatureLabelProviderConfiguration}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *

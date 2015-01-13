@@ -14,10 +14,10 @@ package org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.EModelElementImpl;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.NattablelabelproviderPackage;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.ObjectLabelProviderConfiguration;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattablestyle.impl.StyledElementImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,15 +26,14 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.O
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.impl.ObjectLabelProviderConfigurationImpl#isDisplayIcon <em> Display Icon</em>}</li>
- * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.impl.ObjectLabelProviderConfigurationImpl#isDisplayLabel <em> Display Label</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.impl.ObjectLabelProviderConfigurationImpl#isDisplayIcon <em>Display Icon</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.impl.ObjectLabelProviderConfigurationImpl#isDisplayLabel <em>Display Label</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ObjectLabelProviderConfigurationImpl extends EModelElementImpl implements ObjectLabelProviderConfiguration {
-
+public class ObjectLabelProviderConfigurationImpl extends StyledElementImpl implements ObjectLabelProviderConfiguration {
 	/**
 	 * The default value of the '{@link #isDisplayIcon() <em>Display Icon</em>}' attribute.
 	 * <!-- begin-user-doc -->

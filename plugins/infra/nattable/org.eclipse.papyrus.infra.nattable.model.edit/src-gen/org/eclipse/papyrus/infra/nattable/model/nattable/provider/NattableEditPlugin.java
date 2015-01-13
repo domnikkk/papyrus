@@ -51,7 +51,9 @@ public final class NattableEditPlugin extends EMFPlugin {
 	 * @generated
 	 */
 	public NattableEditPlugin() {
-		super(new ResourceLocator[] { EcoreEditPlugin.INSTANCE, });
+		super(new ResourceLocator[] {
+				EcoreEditPlugin.INSTANCE,
+		});
 	}
 
 	/**
@@ -103,5 +105,4 @@ public final class NattableEditPlugin extends EMFPlugin {
 			plugin = this;
 		}
 	}
-
 }

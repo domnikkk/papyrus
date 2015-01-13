@@ -96,7 +96,7 @@
       <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
     </eAnnotations>
     <eClassifiers xsi:type="ecore:EClass" name="TableNamedElement" abstract="true"
-        eSuperTypes="http://www.eclipse.org/emf/2002/Ecore#//EModelElement">
+        eSuperTypes="#//nattablestyle/StyledElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Abstract Element used in this metamodel for named element which have a description."/>
       </eAnnotations>
@@ -208,7 +208,7 @@
   <eSubpackages name="nattableaxisprovider" nsURI="http://www.eclipse.org/papyrus/nattable/model/table/nattableaxisprovider"
       nsPrefix="nattableaxisprovider">
     <eClassifiers xsi:type="ecore:EClass" name="AbstractAxisProvider" abstract="true"
-        eSuperTypes="http://www.eclipse.org/emf/2002/Ecore#//EModelElement #//nattableconfiguration/TableNamedElement">
+        eSuperTypes="#//nattableconfiguration/TableNamedElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Abstract Element for the AxisProvider. This one only provides a method getAxis()."/>
       </eAnnotations>
@@ -260,7 +260,7 @@
   <eSubpackages name="nattablelabelprovider" nsURI="http://www.eclipse.org/papyrus/nattable/model/table/nattablecontentprovider"
       nsPrefix="nattablelabelprovider">
     <eClassifiers xsi:type="ecore:EClass" name="ILabelProviderConfiguration" abstract="true"
-        interface="true" eSuperTypes="http://www.eclipse.org/emf/2002/Ecore#//EModelElement">
+        interface="true" eSuperTypes="#//nattablestyle/StyledElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Common Interface for LabelProviderConfiguration"/>
       </eAnnotations>
@@ -328,7 +328,7 @@
       <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
     </eAnnotations>
     <eClassifiers xsi:type="ecore:EClass" name="AbstractHeaderAxisConfiguration" abstract="true"
-        eSuperTypes="http://www.eclipse.org/emf/2002/Ecore#//EModelElement">
+        eSuperTypes="#//nattablestyle/StyledElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
         <details key="constraints" value="oneObjectLabelConfigurationTypes oneFeatureLabelConfigurationTypes"/>
       </eAnnotations>
@@ -381,7 +381,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="AxisManagerRepresentation">
+    <eClassifiers xsi:type="ecore:EClass" name="AxisManagerRepresentation" eSuperTypes="#//nattablestyle/StyledElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="This class is used to represents in the model the java Axis Manager."/>
       </eAnnotations>
@@ -416,7 +416,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="AxisManagerConfiguration">
+    <eClassifiers xsi:type="ecore:EClass" name="AxisManagerConfiguration" eSuperTypes="#//nattablestyle/StyledElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="This object allows to define and configure a Java AxisManager"/>
       </eAnnotations>
@@ -471,7 +471,7 @@
       </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="IAxisConfiguration" abstract="true"
-        interface="true">
+        interface="true" eSuperTypes="#//nattablestyle/StyledElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Comon Interface for axis configuration."/>
       </eAnnotations>
@@ -553,11 +553,25 @@
         </eAnnotations>
       </eLiterals>
     </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="TreeFillingConfiguration" eSuperTypes="#//nattableaxisconfiguration/IFillingConfiguration">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="axisUsedAsAxisProvider"
+          lowerBound="1" eType="#//nattableaxis/IAxis" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="pasteConfiguration" eType="#//nattableaxisconfiguration/PasteEObjectConfiguration"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="depth" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="labelProvider" lowerBound="1"
+          eType="#//nattablelabelprovider/ILabelProviderConfiguration">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="le label provider used to display string and image for this level in the tree"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="labelProviderContext"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
   </eSubpackages>
   <eSubpackages name="nattabletester" nsURI="http://www.eclipse.org/papyrus/nattable/model/table/nattabletester"
       nsPrefix="nattabletester">
     <eClassifiers xsi:type="ecore:EClass" name="AbstractTableTester" abstract="true"
-        eSuperTypes="http://www.eclipse.org/emf/2002/Ecore#//EModelElement">
+        eSuperTypes="#//nattablestyle/StyledElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Abstract class for the tester."/>
       </eAnnotations>
@@ -581,7 +595,8 @@
   </eSubpackages>
   <eSubpackages name="nattableaxis" nsURI="http://www.eclipse.org/papyrus/nattable/model/table/nattableaxis"
       nsPrefix="nattableaxis">
-    <eClassifiers xsi:type="ecore:EClass" name="IAxis" abstract="true" interface="true">
+    <eClassifiers xsi:type="ecore:EClass" name="IAxis" abstract="true" interface="true"
+        eSuperTypes="#//nattablestyle/StyledElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Common interface for the axis of the table. (An axis is a specific row or a specific column)"/>
       </eAnnotations>
@@ -607,6 +622,16 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ITreeItemAxis" abstract="true" interface="true"
+        eSuperTypes="#//nattableaxis/IAxis">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parent" eType="#//nattableaxis/ITreeItemAxis"
+          eOpposite="#//nattableaxis/ITreeItemAxis/children"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="expanded" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+          transient="true" defaultValueLiteral="false"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="children" upperBound="-1"
+          eType="#//nattableaxis/ITreeItemAxis" derived="true" eOpposite="#//nattableaxis/ITreeItemAxis/parent"/>
+    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="IdAxis" abstract="true" eSuperTypes="#//nattableaxis/IAxis">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="element" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
@@ -615,6 +640,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="IdTreeItemAxis" eSuperTypes="#//nattableaxis/IdAxis #//nattableaxis/ITreeItemAxis"/>
     <eClassifiers xsi:type="ecore:EClass" name="EObjectAxis" eSuperTypes="#//nattableaxis/ObjectAxis">
       <eStructuralFeatures xsi:type="ecore:EReference" name="element" lowerBound="1"
           eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject">
@@ -623,6 +649,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="EObjectTreeItemAxis" eSuperTypes="#//nattableaxis/EObjectAxis #//nattableaxis/ITreeItemAxis"/>
     <eClassifiers xsi:type="ecore:EClass" name="FeatureAxis" abstract="true" eSuperTypes="#//nattableaxis/IAxis">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Abstract class used to reference features."/>
@@ -634,6 +661,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="FeatureTreeItemAxis" eSuperTypes="#//nattableaxis/FeatureAxis #//nattableaxis/ITreeItemAxis"/>
     <eClassifiers xsi:type="ecore:EClass" name="ObjectAxis" abstract="true" eSuperTypes="#//nattableaxis/IAxis">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Abstract class used to reference object"/>
@@ -645,11 +673,13 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ObjectTreeItemAxis" eSuperTypes="#//nattableaxis/ObjectAxis #//nattableaxis/ITreeItemAxis"/>
     <eClassifiers xsi:type="ecore:EClass" name="FeatureIdAxis" eSuperTypes="#//nattableaxis/IdAxis #//nattableaxis/FeatureAxis">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="IAxis used to represent feature using a string."/>
       </eAnnotations>
     </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="FeatureIdTreeItemAxis" eSuperTypes="#//nattableaxis/FeatureIdAxis #//nattableaxis/ITreeItemAxis"/>
     <eClassifiers xsi:type="ecore:EClass" name="EStructuralFeatureAxis" eSuperTypes="#//nattableaxis/FeatureAxis">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="IAxis used to reference EMF EStructuralFeature."/>
@@ -661,15 +691,21 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="EStructuralFeatureTreeItemAxis" eSuperTypes="#//nattableaxis/EStructuralFeatureAxis #//nattableaxis/ITreeItemAxis"/>
     <eClassifiers xsi:type="ecore:EClass" name="ObjectIdAxis" eSuperTypes="#//nattableaxis/IdAxis #//nattableaxis/ObjectAxis">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="IAxis used to represent object using a string."/>
       </eAnnotations>
     </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ObjectIdTreeItemAxis" eSuperTypes="#//nattableaxis/ObjectIdAxis #//nattableaxis/ITreeItemAxis"/>
+    <eClassifiers xsi:type="ecore:EClass" name="AxisGroup" eSuperTypes="#//nattableaxis/IAxis">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="groupedAxis" upperBound="-1"
+          eType="#//nattableaxis/IAxis"/>
+    </eClassifiers>
   </eSubpackages>
   <eSubpackages name="nattablecell" nsURI="http://www.eclipse.org/papyrus/nattable/model/table/nattablecell"
       nsPrefix="nattablecell">
-    <eClassifiers xsi:type="ecore:EClass" name="Cell" eSuperTypes="http://www.eclipse.org/emf/2002/Ecore#//EModelElement">
+    <eClassifiers xsi:type="ecore:EClass" name="Cell" eSuperTypes="../../org.eclipse.emf.ecore/model/Ecore.ecore#//EModelElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Cell elements used to store specific information which can't be stored in the edited model"/>
       </eAnnotations>
@@ -693,7 +729,7 @@
       </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ICellAxisWrapper" abstract="true"
-        interface="true" eSuperTypes="http://www.eclipse.org/emf/2002/Ecore#//EModelElement">
+        interface="true" eSuperTypes="../../org.eclipse.emf.ecore/model/Ecore.ecore#//EModelElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="This class encapsulates the real axis object."/>
       </eAnnotations>
@@ -748,6 +784,136 @@
           <details key="documentation" value="the text or a substring of it, which is the source of the problem"/>
         </eAnnotations>
       </eStructuralFeatures>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="nattablestyle" nsURI="http://www.eclipse.org/papyrus/nattable/model/table/nattablestyle"
+      nsPrefix="nattablestyle">
+    <eClassifiers xsi:type="ecore:EClass" name="Style" abstract="true" interface="true"
+        eSuperTypes="../../org.eclipse.emf.ecore/model/Ecore.ecore#//EModelElement">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Style from which all substyles originate"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="NamedStyle" eSuperTypes="#//nattablestyle/Style">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="used to represent character and paragraph styles"/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="CellTextAlignment">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Alignment of the text inside its cell"/>
+      </eAnnotations>
+      <eLiterals name="TOP_LEFT" value="1" literal="TOP_LEFT"/>
+      <eLiterals name="TOP_CENTER" value="2" literal="TOP_CENTER"/>
+      <eLiterals name="TOP_RIGHT" value="3" literal="TOP_RIGHT"/>
+      <eLiterals name="MIDDLE_LEFT" value="4" literal="MIDDLE_LEFT"/>
+      <eLiterals name="MIDDLE_CENTER" value="5" literal="MIDDLE_CENTER"/>
+      <eLiterals name="MIDDLE_RIGHT" value="6" literal="MIDDLE_RIGHT"/>
+      <eLiterals name="BOTTOM_LEFT" value="7" literal="BOTTOM_LEFT"/>
+      <eLiterals name="BOTTOM_CENTER" value="8" literal="BOTTOM_CENTER"/>
+      <eLiterals name="BOTTOM_RIGHT" value="9" literal="BOTTOM_RIGHT"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="FontStyle" eSuperTypes="#//nattablestyle/Style">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Font style of the cell's text"/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="fontColor" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+          defaultValueLiteral="0"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="fontName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral="Tahoma"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="fontHeight" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+          defaultValueLiteral="9"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="bold" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+          defaultValueLiteral="false"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="italic" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+          defaultValueLiteral="false"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="underline" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+          defaultValueLiteral="false"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="strikeThrough" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+          defaultValueLiteral="false"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="CellTextStyle" eSuperTypes="#//nattablestyle/Style">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Text representation"/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="alignment" eType="#//nattablestyle/CellTextAlignment"
+          defaultValueLiteral="MIDDLE_LEFT"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="IntValueStyle" eSuperTypes="#//nattablestyle/NamedStyle">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Int representation"/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="intValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="IntListValueStyle" eSuperTypes="#//nattablestyle/NamedStyle">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Int lists representation"/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="intListValue" unique="false"
+          upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="BooleanValueStyle" eSuperTypes="#//nattablestyle/NamedStyle">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Boolean representation"/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="booleanValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="BooleanListValueStyle" eSuperTypes="#//nattablestyle/NamedStyle">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Boolean lists representation"/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="booleanListValue" unique="false"
+          upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="DoubleValueStyle" eSuperTypes="#//nattablestyle/NamedStyle">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Double representation"/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="doubleValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="DoubleListValueStyle" eSuperTypes="#//nattablestyle/NamedStyle">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Double lists representation"/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="doubleListValue" unique="false"
+          upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDoubleObject"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="StringValueStyle" eSuperTypes="#//nattablestyle/NamedStyle">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="String representation"/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="stringValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="StringListValueStyle" eSuperTypes="#//nattablestyle/NamedStyle">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="String lists representation"/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="stringListValue" unique="false"
+          upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="StyledElement" abstract="true" eSuperTypes="../../org.eclipse.emf.ecore/model/Ecore.ecore#//EModelElement">
+      <eOperations name="getNamedStyle" eType="#//nattablestyle/NamedStyle">
+        <eParameters name="eClass" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"/>
+        <eParameters name="name" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+      </eOperations>
+      <eOperations name="getStyle" eType="#//nattablestyle/Style">
+        <eParameters name="eClass" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"/>
+      </eOperations>
+      <eOperations name="createStyle" eType="#//nattablestyle/Style">
+        <eParameters name="eClass" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"/>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="styles" upperBound="-1"
+          eType="#//nattablestyle/Style" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="TableDisplayStyle" eSuperTypes="#//nattablestyle/Style">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="displayStyle" lowerBound="1"
+          eType="#//nattablestyle/DisplayStyle" defaultValueLiteral="NORMAL"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="DisplayStyle">
+      <eLiterals name="NORMAL" literal="NORMAL"/>
+      <eLiterals name="HIERARCHIC_SINGLE_TREE_COLUMN" value="1" literal="HIERARCHIC_SINGLE_TREE_COLUMN"/>
+      <eLiterals name="HIERARCHIC_MULTI_TREE_COLUMN" value="2" literal="HIERARCHIC_MULTI_TREE_COLUMN"/>
     </eClassifiers>
   </eSubpackages>
 </ecore:EPackage>

@@ -37,6 +37,8 @@ public class Messages extends NLS {
 
 	public static String MultipleStringFileEditor_2;
 
+	public static String MultipleValueEditAndSelectionWidget_EditSelectedElement;
+
 	/** The Multiple value editor_ add elements. */
 	public static String MultipleValueEditor_AddElements;
 

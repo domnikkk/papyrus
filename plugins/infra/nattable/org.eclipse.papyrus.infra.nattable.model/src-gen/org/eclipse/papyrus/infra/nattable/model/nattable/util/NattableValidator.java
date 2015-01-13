@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.EObjectValidator;
 import org.eclipse.papyrus.infra.nattable.model.nattable.NattablePackage;
 import org.eclipse.papyrus.infra.nattable.model.nattable.Table;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattableconfiguration.util.NattableconfigurationValidator;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,7 +32,6 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.Table;
  * @generated
  */
 public class NattableValidator extends EObjectValidator {
-
 	/**
 	 * The cached model package
 	 * <!-- begin-user-doc -->
@@ -71,6 +71,15 @@ public class NattableValidator extends EObjectValidator {
 	protected static final int DIAGNOSTIC_CODE_COUNT = GENERATED_DIAGNOSTIC_CODE_COUNT;
 
 	/**
+	 * The cached base package validator.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	protected NattableconfigurationValidator nattableconfigurationValidator;
+
+	/**
 	 * Creates an instance of the switch.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -79,6 +88,7 @@ public class NattableValidator extends EObjectValidator {
 	 */
 	public NattableValidator() {
 		super();
+		nattableconfigurationValidator = NattableconfigurationValidator.INSTANCE;
 	}
 
 	/**
@@ -143,10 +153,16 @@ public class NattableValidator extends EObjectValidator {
 			result &= validate_EveryMapEntryUnique(table, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
+			result &= nattableconfigurationValidator.validateTableNamedElement_nonEmptyName(table, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
 			result &= validateTable_currentRowAxisInHistory(table, diagnostics, context);
 		}
 		if (result || diagnostics != null) {
 			result &= validateTable_currentColumnAxisInHistory(table, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateTable_currentAxisProvidersTypes(table, diagnostics, context);
 		}
 		return result;
 	}
@@ -168,9 +184,15 @@ public class NattableValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateTable_currentRowAxisInHistory(Table table, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate(NattablePackage.Literals.TABLE, table, diagnostics, context, "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot", //$NON-NLS-1$
+		return validate(NattablePackage.Literals.TABLE,
+				table,
+				diagnostics,
+				context, "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot", //$NON-NLS-1$
 				"currentRowAxisInHistory", //$NON-NLS-1$
-				TABLE__CURRENT_ROW_AXIS_IN_HISTORY__EEXPRESSION, Diagnostic.ERROR, DIAGNOSTIC_SOURCE, 0);
+				TABLE__CURRENT_ROW_AXIS_IN_HISTORY__EEXPRESSION,
+				Diagnostic.ERROR,
+				DIAGNOSTIC_SOURCE,
+				0);
 	}
 
 	/**
@@ -190,9 +212,43 @@ public class NattableValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateTable_currentColumnAxisInHistory(Table table, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate(NattablePackage.Literals.TABLE, table, diagnostics, context, "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot", //$NON-NLS-1$
+		return validate(NattablePackage.Literals.TABLE,
+				table,
+				diagnostics,
+				context, "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot", //$NON-NLS-1$
 				"currentColumnAxisInHistory", //$NON-NLS-1$
-				TABLE__CURRENT_COLUMN_AXIS_IN_HISTORY__EEXPRESSION, Diagnostic.ERROR, DIAGNOSTIC_SOURCE, 0);
+				TABLE__CURRENT_COLUMN_AXIS_IN_HISTORY__EEXPRESSION,
+				Diagnostic.ERROR,
+				DIAGNOSTIC_SOURCE,
+				0);
+	}
+
+	/**
+	 * The cached validation expression for the currentAxisProvidersTypes constraint of '<em>Table</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	protected static final String TABLE__CURRENT_AXIS_PROVIDERS_TYPES__EEXPRESSION = "not (currentRowAxisProvider.oclIsKindOf(nattableaxisprovider::ISlaveAxisProvider) and currentColumnAxisProvider.oclIsKindOf(nattableaxisprovider::ISlaveAxisProvider))"; //$NON-NLS-1$
+
+	/**
+	 * Validates the currentAxisProvidersTypes constraint of '<em>Table</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	public boolean validateTable_currentAxisProvidersTypes(Table table, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate(NattablePackage.Literals.TABLE,
+				table,
+				diagnostics,
+				context, "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot", //$NON-NLS-1$
+				"currentAxisProvidersTypes", //$NON-NLS-1$
+				TABLE__CURRENT_AXIS_PROVIDERS_TYPES__EEXPRESSION,
+				Diagnostic.ERROR,
+				DIAGNOSTIC_SOURCE,
+				0);
 	}
 
 	/**

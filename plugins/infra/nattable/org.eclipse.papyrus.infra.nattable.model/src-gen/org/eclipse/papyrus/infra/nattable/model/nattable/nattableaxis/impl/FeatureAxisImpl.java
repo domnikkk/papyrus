@@ -20,11 +20,11 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxis.FeatureAxis;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxis.NattableaxisPackage;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AxisManagerRepresentation;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.FeatureLabelProviderConfiguration;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattablestyle.impl.StyledElementImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -41,8 +41,7 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.F
  *
  * @generated
  */
-public abstract class FeatureAxisImpl extends MinimalEObjectImpl.Container implements FeatureAxis {
-
+public abstract class FeatureAxisImpl extends StyledElementImpl implements FeatureAxis {
 	/**
 	 * The cached value of the '{@link #getManager() <em>Manager</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -230,7 +229,8 @@ public abstract class FeatureAxisImpl extends MinimalEObjectImpl.Container imple
 			if (msgs != null) {
 				msgs.dispatch();
 			}
-		} else if (eNotificationRequired()) {
+		}
+		else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, NattableaxisPackage.FEATURE_AXIS__LOCAL_LABEL_CONFIGURATION, newLocalLabelConfiguration, newLocalLabelConfiguration));
 		}
 	}

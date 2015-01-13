@@ -11,44 +11,264 @@
   <genPackages prefix="Nattable" basePackage="org.eclipse.papyrus.infra.nattable.model"
       disposableProviderFactory="true" ecorePackage="nattable.ecore#/">
     <genClasses ecoreClass="nattable.ecore#//Table">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nattable.ecore#//Table/name"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference nattable.ecore#//Table/context"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nattable.ecore#//Table/description"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference nattable.ecore#//Table/editorConfiguration"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference nattable.ecore#//Table/verticalContentProvider"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference nattable.ecore#//Table/horizontalContentProvider"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference nattable.ecore#//Table/owner"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference nattable.ecore#//Table/prototype"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference nattable.ecore#//Table/tableConfiguration"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nattable.ecore#//Table/invertAxis"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference nattable.ecore#//Table/columnAxisProvidersHistory"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference nattable.ecore#//Table/rowAxisProvidersHistory"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference nattable.ecore#//Table/localRowHeaderAxisConfiguration"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference nattable.ecore#//Table/localColumnHeaderAxisConfiguration"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference nattable.ecore#//Table/currentRowAxisProvider"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference nattable.ecore#//Table/currentColumnAxisProvider"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference nattable.ecore#//Table/cells"/>
     </genClasses>
-    <genClasses image="false" ecoreClass="nattable.ecore#//IAxisContentsProvider">
-      <genOperations ecoreOperation="nattable.ecore#//IAxisContentsProvider/getAxis"/>
-    </genClasses>
-    <genClasses ecoreClass="nattable.ecore#//DefaultContentProvider">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference nattable.ecore#//DefaultContentProvider/axis"/>
-    </genClasses>
-    <genClasses ecoreClass="nattable.ecore#//EObjectAxis">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference nattable.ecore#//EObjectAxis/element"/>
-    </genClasses>
-    <genClasses image="false" ecoreClass="nattable.ecore#//IAxis">
-      <genOperations ecoreOperation="nattable.ecore#//IAxis/getElement"/>
-    </genClasses>
-    <genClasses ecoreClass="nattable.ecore#//EMFFeatureContentProvider">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference nattable.ecore#//EMFFeatureContentProvider/feature"/>
-    </genClasses>
-    <genClasses image="false" ecoreClass="nattable.ecore#//ISynchronizedAxisContentProvider"/>
-    <nestedGenPackages prefix="Tableconfiguration" basePackage="org.eclipse.papyrus.infra.nattable.model"
-        disposableProviderFactory="true" ecorePackage="nattable.ecore#//tableconfiguration">
-      <genClasses ecoreClass="nattable.ecore#//tableconfiguration/TableEditorConfiguration">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nattable.ecore#//tableconfiguration/TableEditorConfiguration/pastedElementTypeId"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference nattable.ecore#//tableconfiguration/TableEditorConfiguration/pastedElementContainmentFeature"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nattable.ecore#//tableconfiguration/TableEditorConfiguration/javaVerticalContentProviderIds"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nattable.ecore#//tableconfiguration/TableEditorConfiguration/javaHorizontalContentProviderIds"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference nattable.ecore#//tableconfiguration/TableEditorConfiguration/defaultVerticalContentProvider"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference nattable.ecore#//tableconfiguration/TableEditorConfiguration/defaultHorizontalContentProvider"/>
+    <nestedGenPackages prefix="Nattableconfiguration" basePackage="org.eclipse.papyrus.infra.nattable.model.nattable"
+        disposableProviderFactory="true" ecorePackage="nattable.ecore#//nattableconfiguration">
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="nattable.ecore#//nattableconfiguration/CellEditorDeclaration">
+        <genEnumLiterals ecoreEnumLiteral="nattable.ecore#//nattableconfiguration/CellEditorDeclaration/COLUMN"/>
+        <genEnumLiterals ecoreEnumLiteral="nattable.ecore#//nattableconfiguration/CellEditorDeclaration/ROW"/>
+        <genEnumLiterals ecoreEnumLiteral="nattable.ecore#//nattableconfiguration/CellEditorDeclaration/CELL"/>
+      </genEnums>
+      <genClasses image="false" ecoreClass="nattable.ecore#//nattableconfiguration/TableNamedElement">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nattable.ecore#//nattableconfiguration/TableNamedElement/description"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nattable.ecore#//nattableconfiguration/TableNamedElement/name"/>
       </genClasses>
-      <genClasses ecoreClass="nattable.ecore#//tableconfiguration/LocalTableEditorConfiguration">
+      <genClasses ecoreClass="nattable.ecore#//nattableconfiguration/TableConfiguration">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nattable.ecore#//nattableconfiguration/TableConfiguration/type"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nattable.ecore#//nattableconfiguration/TableConfiguration/iconPath"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference nattable.ecore#//nattableconfiguration/TableConfiguration/creationTester"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nattable.ecore#//nattableconfiguration/TableConfiguration/cellEditorDeclaration"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference nattable.ecore#//nattableconfiguration/TableConfiguration/rowHeaderAxisConfiguration"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference nattable.ecore#//nattableconfiguration/TableConfiguration/columnHeaderAxisConfiguration"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference nattable.ecore#//nattableconfiguration/TableConfiguration/columnAxisProviders"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference nattable.ecore#//nattableconfiguration/TableConfiguration/rowAxisProviders"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference nattable.ecore#//tableconfiguration/LocalTableEditorConfiguration/defaultTableEditorConfiguration"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nattable.ecore#//tableconfiguration/LocalTableEditorConfiguration/type"/>
+            ecoreFeature="ecore:EReference nattable.ecore#//nattableconfiguration/TableConfiguration/defaultRowAxisProvider"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference nattable.ecore#//nattableconfiguration/TableConfiguration/defaultColumnAxisProvider"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Nattableaxisprovider" basePackage="org.eclipse.papyrus.infra.nattable.model.nattable"
+        disposableProviderFactory="true" ecorePackage="nattable.ecore#//nattableaxisprovider">
+      <genClasses image="false" ecoreClass="nattable.ecore#//nattableaxisprovider/AbstractAxisProvider">
+        <genOperations ecoreOperation="nattable.ecore#//nattableaxisprovider/AbstractAxisProvider/getAxis"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="nattable.ecore#//nattableaxisprovider/IMasterAxisProvider">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nattable.ecore#//nattableaxisprovider/IMasterAxisProvider/disconnectSlave"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="nattable.ecore#//nattableaxisprovider/ISlaveAxisProvider"/>
+      <genClasses image="false" ecoreClass="nattable.ecore#//nattableaxisprovider/AxisProvider">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference nattable.ecore#//nattableaxisprovider/AxisProvider/axis"/>
+      </genClasses>
+      <genClasses ecoreClass="nattable.ecore#//nattableaxisprovider/SlaveObjectAxisProvider"/>
+      <genClasses ecoreClass="nattable.ecore#//nattableaxisprovider/MasterObjectAxisProvider"/>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Nattablelabelprovider" basePackage="org.eclipse.papyrus.infra.nattable.model.nattable"
+        disposableProviderFactory="true" ecorePackage="nattable.ecore#//nattablelabelprovider">
+      <genClasses image="false" ecoreClass="nattable.ecore#//nattablelabelprovider/ILabelProviderConfiguration"/>
+      <genClasses ecoreClass="nattable.ecore#//nattablelabelprovider/FeatureLabelProviderConfiguration">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nattable.ecore#//nattablelabelprovider/FeatureLabelProviderConfiguration/displayIsDerived"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nattable.ecore#//nattablelabelprovider/FeatureLabelProviderConfiguration/displayType"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nattable.ecore#//nattablelabelprovider/FeatureLabelProviderConfiguration/displayMultiplicity"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nattable.ecore#//nattablelabelprovider/FeatureLabelProviderConfiguration/displayName"/>
+      </genClasses>
+      <genClasses ecoreClass="nattable.ecore#//nattablelabelprovider/ObjectLabelProviderConfiguration">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nattable.ecore#//nattablelabelprovider/ObjectLabelProviderConfiguration/displayIcon"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nattable.ecore#//nattablelabelprovider/ObjectLabelProviderConfiguration/displayLabel"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Nattableaxisconfiguration" basePackage="org.eclipse.papyrus.infra.nattable.model.nattable"
+        disposableProviderFactory="true" ecorePackage="nattable.ecore#//nattableaxisconfiguration">
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="nattable.ecore#//nattableaxisconfiguration/AxisIndexStyle">
+        <genEnumLiterals ecoreEnumLiteral="nattable.ecore#//nattableaxisconfiguration/AxisIndexStyle/ALPHABETIC"/>
+        <genEnumLiterals ecoreEnumLiteral="nattable.ecore#//nattableaxisconfiguration/AxisIndexStyle/NUMERIC"/>
+      </genEnums>
+      <genClasses image="false" ecoreClass="nattable.ecore#//nattableaxisconfiguration/AbstractHeaderAxisConfiguration">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nattable.ecore#//nattableaxisconfiguration/AbstractHeaderAxisConfiguration/indexStyle"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nattable.ecore#//nattableaxisconfiguration/AbstractHeaderAxisConfiguration/displayLabel"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nattable.ecore#//nattableaxisconfiguration/AbstractHeaderAxisConfiguration/displayFilter"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nattable.ecore#//nattableaxisconfiguration/AbstractHeaderAxisConfiguration/displayIndex"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference nattable.ecore#//nattableaxisconfiguration/AbstractHeaderAxisConfiguration/ownedLabelConfigurations"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference nattable.ecore#//nattableaxisconfiguration/AbstractHeaderAxisConfiguration/ownedAxisConfigurations"/>
+      </genClasses>
+      <genClasses ecoreClass="nattable.ecore#//nattableaxisconfiguration/AxisManagerRepresentation">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nattable.ecore#//nattableaxisconfiguration/AxisManagerRepresentation/axisManagerId"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nattable.ecore#//nattableaxisconfiguration/AxisManagerRepresentation/labelProviderContext"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference nattable.ecore#//nattableaxisconfiguration/AxisManagerRepresentation/headerLabelConfiguration"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference nattable.ecore#//nattableaxisconfiguration/AxisManagerRepresentation/specificAxisConfigurations"/>
+      </genClasses>
+      <genClasses ecoreClass="nattable.ecore#//nattableaxisconfiguration/AxisManagerConfiguration">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference nattable.ecore#//nattableaxisconfiguration/AxisManagerConfiguration/localHeaderLabelConfiguration"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference nattable.ecore#//nattableaxisconfiguration/AxisManagerConfiguration/axisManager"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference nattable.ecore#//nattableaxisconfiguration/AxisManagerConfiguration/localSpecificConfigurations"/>
+      </genClasses>
+      <genClasses ecoreClass="nattable.ecore#//nattableaxisconfiguration/TableHeaderAxisConfiguration">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference nattable.ecore#//nattableaxisconfiguration/TableHeaderAxisConfiguration/axisManagers"/>
+      </genClasses>
+      <genClasses ecoreClass="nattable.ecore#//nattableaxisconfiguration/LocalTableHeaderAxisConfiguration">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference nattable.ecore#//nattableaxisconfiguration/LocalTableHeaderAxisConfiguration/axisManagerConfigurations"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="nattable.ecore#//nattableaxisconfiguration/IAxisConfiguration"/>
+      <genClasses ecoreClass="nattable.ecore#//nattableaxisconfiguration/FeatureAxisConfiguration">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nattable.ecore#//nattableaxisconfiguration/FeatureAxisConfiguration/showOnlyCommonFeature"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="nattable.ecore#//nattableaxisconfiguration/IFillingConfiguration"/>
+      <genClasses ecoreClass="nattable.ecore#//nattableaxisconfiguration/EStructuralFeatureValueFillingConfiguration">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference nattable.ecore#//nattableaxisconfiguration/EStructuralFeatureValueFillingConfiguration/listenFeature"/>
+      </genClasses>
+      <genClasses ecoreClass="nattable.ecore#//nattableaxisconfiguration/IPasteConfiguration">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nattable.ecore#//nattableaxisconfiguration/IPasteConfiguration/postActions"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nattable.ecore#//nattableaxisconfiguration/IPasteConfiguration/detachedMode"/>
+      </genClasses>
+      <genClasses ecoreClass="nattable.ecore#//nattableaxisconfiguration/PasteEObjectConfiguration">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nattable.ecore#//nattableaxisconfiguration/PasteEObjectConfiguration/pastedElementId"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference nattable.ecore#//nattableaxisconfiguration/PasteEObjectConfiguration/pasteElementContainementFeature"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Nattabletester" basePackage="org.eclipse.papyrus.infra.nattable.model.nattable"
+        disposableProviderFactory="true" ecorePackage="nattable.ecore#//nattabletester">
+      <genClasses image="false" ecoreClass="nattable.ecore#//nattabletester/AbstractTableTester">
+        <genOperations ecoreOperation="nattable.ecore#//nattabletester/AbstractTableTester/getTester"/>
+      </genClasses>
+      <genClasses ecoreClass="nattable.ecore#//nattabletester/JavaTableTester">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nattable.ecore#//nattabletester/JavaTableTester/tester"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Nattableaxis" basePackage="org.eclipse.papyrus.infra.nattable.model.nattable"
+        disposableProviderFactory="true" ecorePackage="nattable.ecore#//nattableaxis">
+      <genClasses image="false" ecoreClass="nattable.ecore#//nattableaxis/IAxis">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference nattable.ecore#//nattableaxis/IAxis/manager"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nattable.ecore#//nattableaxis/IAxis/alias"/>
+        <genOperations ecoreOperation="nattable.ecore#//nattableaxis/IAxis/getElement"/>
+        <genOperations ecoreOperation="nattable.ecore#//nattableaxis/IAxis/getLocalLabelConfiguration"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="nattable.ecore#//nattableaxis/IdAxis">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nattable.ecore#//nattableaxis/IdAxis/element"/>
+      </genClasses>
+      <genClasses ecoreClass="nattable.ecore#//nattableaxis/EObjectAxis">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference nattable.ecore#//nattableaxis/EObjectAxis/element"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="nattable.ecore#//nattableaxis/FeatureAxis">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference nattable.ecore#//nattableaxis/FeatureAxis/localLabelConfiguration"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="nattable.ecore#//nattableaxis/ObjectAxis">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference nattable.ecore#//nattableaxis/ObjectAxis/localLabelConfiguration"/>
+      </genClasses>
+      <genClasses ecoreClass="nattable.ecore#//nattableaxis/FeatureIdAxis"/>
+      <genClasses ecoreClass="nattable.ecore#//nattableaxis/EStructuralFeatureAxis">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference nattable.ecore#//nattableaxis/EStructuralFeatureAxis/element"/>
+      </genClasses>
+      <genClasses ecoreClass="nattable.ecore#//nattableaxis/ObjectIdAxis"/>
+      <genClasses ecoreClass="nattable.ecore#//nattableaxis/IHierarchicalAxis">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference nattable.ecore#//nattableaxis/IHierarchicalAxis/parent"/>
+      </genClasses>
+      <genClasses ecoreClass="nattable.ecore#//nattableaxis/AxisGroup">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference nattable.ecore#//nattableaxis/AxisGroup/groupedAxis"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Nattablecell" basePackage="org.eclipse.papyrus.infra.nattable.model.nattable"
+        disposableProviderFactory="true" ecorePackage="nattable.ecore#//nattablecell">
+      <genClasses ecoreClass="nattable.ecore#//nattablecell/Cell">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference nattable.ecore#//nattablecell/Cell/columnWrapper"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference nattable.ecore#//nattablecell/Cell/rowWrapper"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference nattable.ecore#//nattablecell/Cell/problems"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="nattable.ecore#//nattablecell/ICellAxisWrapper">
+        <genOperations ecoreOperation="nattable.ecore#//nattablecell/ICellAxisWrapper/getElement"/>
+      </genClasses>
+      <genClasses ecoreClass="nattable.ecore#//nattablecell/EObjectAxisWrapper">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference nattable.ecore#//nattablecell/EObjectAxisWrapper/element"/>
+      </genClasses>
+      <genClasses ecoreClass="nattable.ecore#//nattablecell/IdAxisWrapper">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nattable.ecore#//nattablecell/IdAxisWrapper/element"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Nattableproblem" basePackage="org.eclipse.papyrus.infra.nattable.model.nattable"
+        disposableProviderFactory="true" ecorePackage="nattable.ecore#//nattableproblem">
+      <genClasses ecoreClass="nattable.ecore#//nattableproblem/Problem"/>
+      <genClasses ecoreClass="nattable.ecore#//nattableproblem/StringResolutionProblem">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nattable.ecore#//nattableproblem/StringResolutionProblem/valueAsString"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nattable.ecore#//nattableproblem/StringResolutionProblem/unresolvedString"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Nattablestyle" basePackage="org.eclipse.papyrus.infra.nattable.model.nattable"
+        disposableProviderFactory="true" ecorePackage="nattable.ecore#//nattablestyle">
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="nattable.ecore#//nattablestyle/CellTextAlignment">
+        <genEnumLiterals ecoreEnumLiteral="nattable.ecore#//nattablestyle/CellTextAlignment/TOP_LEFT"/>
+        <genEnumLiterals ecoreEnumLiteral="nattable.ecore#//nattablestyle/CellTextAlignment/TOP_CENTER"/>
+        <genEnumLiterals ecoreEnumLiteral="nattable.ecore#//nattablestyle/CellTextAlignment/TOP_RIGHT"/>
+        <genEnumLiterals ecoreEnumLiteral="nattable.ecore#//nattablestyle/CellTextAlignment/MIDDLE_LEFT"/>
+        <genEnumLiterals ecoreEnumLiteral="nattable.ecore#//nattablestyle/CellTextAlignment/MIDDLE_CENTER"/>
+        <genEnumLiterals ecoreEnumLiteral="nattable.ecore#//nattablestyle/CellTextAlignment/MIDDLE_RIGHT"/>
+        <genEnumLiterals ecoreEnumLiteral="nattable.ecore#//nattablestyle/CellTextAlignment/BOTTOM_LEFT"/>
+        <genEnumLiterals ecoreEnumLiteral="nattable.ecore#//nattablestyle/CellTextAlignment/BOTTOM_CENTER"/>
+        <genEnumLiterals ecoreEnumLiteral="nattable.ecore#//nattablestyle/CellTextAlignment/BOTTOM_RIGHT"/>
+      </genEnums>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="nattable.ecore#//nattablestyle/DisplayStyle">
+        <genEnumLiterals ecoreEnumLiteral="nattable.ecore#//nattablestyle/DisplayStyle/NORMAL"/>
+        <genEnumLiterals ecoreEnumLiteral="nattable.ecore#//nattablestyle/DisplayStyle/HIERARCHIC"/>
+        <genEnumLiterals ecoreEnumLiteral="nattable.ecore#//nattablestyle/DisplayStyle/TREE_COLUMN"/>
+      </genEnums>
+      <genClasses image="false" ecoreClass="nattable.ecore#//nattablestyle/Style"/>
+      <genClasses ecoreClass="nattable.ecore#//nattablestyle/NamedStyle">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nattable.ecore#//nattablestyle/NamedStyle/name"/>
+      </genClasses>
+      <genClasses ecoreClass="nattable.ecore#//nattablestyle/FontStyle">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nattable.ecore#//nattablestyle/FontStyle/fontColor"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nattable.ecore#//nattablestyle/FontStyle/fontName"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nattable.ecore#//nattablestyle/FontStyle/fontHeight"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nattable.ecore#//nattablestyle/FontStyle/bold"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nattable.ecore#//nattablestyle/FontStyle/italic"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nattable.ecore#//nattablestyle/FontStyle/underline"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nattable.ecore#//nattablestyle/FontStyle/strikeThrough"/>
+      </genClasses>
+      <genClasses ecoreClass="nattable.ecore#//nattablestyle/CellTextStyle">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nattable.ecore#//nattablestyle/CellTextStyle/alignment"/>
+      </genClasses>
+      <genClasses ecoreClass="nattable.ecore#//nattablestyle/IntValueStyle">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nattable.ecore#//nattablestyle/IntValueStyle/intValue"/>
+      </genClasses>
+      <genClasses ecoreClass="nattable.ecore#//nattablestyle/IntListValueStyle">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nattable.ecore#//nattablestyle/IntListValueStyle/intListValue"/>
+      </genClasses>
+      <genClasses ecoreClass="nattable.ecore#//nattablestyle/BooleanValueStyle">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nattable.ecore#//nattablestyle/BooleanValueStyle/booleanValue"/>
+      </genClasses>
+      <genClasses ecoreClass="nattable.ecore#//nattablestyle/BooleanListValueStyle">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nattable.ecore#//nattablestyle/BooleanListValueStyle/booleanListValue"/>
+      </genClasses>
+      <genClasses ecoreClass="nattable.ecore#//nattablestyle/DoubleValueStyle">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nattable.ecore#//nattablestyle/DoubleValueStyle/doubleValue"/>
+      </genClasses>
+      <genClasses ecoreClass="nattable.ecore#//nattablestyle/DoubleListValueStyle">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nattable.ecore#//nattablestyle/DoubleListValueStyle/doubleListValue"/>
+      </genClasses>
+      <genClasses ecoreClass="nattable.ecore#//nattablestyle/StringValueStyle">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nattable.ecore#//nattablestyle/StringValueStyle/stringValue"/>
+      </genClasses>
+      <genClasses ecoreClass="nattable.ecore#//nattablestyle/StringListValueStyle">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nattable.ecore#//nattablestyle/StringListValueStyle/stringListValue"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="nattable.ecore#//nattablestyle/StyledElement">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference nattable.ecore#//nattablestyle/StyledElement/styles"/>
+      </genClasses>
+      <genClasses ecoreClass="nattable.ecore#//nattablestyle/TableDisplayStyle">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nattable.ecore#//nattablestyle/TableDisplayStyle/displayStyle"/>
       </genClasses>
     </nestedGenPackages>
   </genPackages>

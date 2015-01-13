@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EModelElement;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattablestyle.StyledElement;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattabletester.AbstractTableTester;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattabletester.JavaTableTester;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattabletester.NattabletesterPackage;
@@ -34,7 +35,6 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattabletester.Nattable
  * @generated
  */
 public class NattabletesterSwitch<T> extends Switch<T> {
-
 	/**
 	 * The cached model package
 	 * <!-- begin-user-doc -->
@@ -86,6 +86,9 @@ public class NattabletesterSwitch<T> extends Switch<T> {
 			AbstractTableTester abstractTableTester = (AbstractTableTester) theEObject;
 			T result = caseAbstractTableTester(abstractTableTester);
 			if (result == null) {
+				result = caseStyledElement(abstractTableTester);
+			}
+			if (result == null) {
 				result = caseEModelElement(abstractTableTester);
 			}
 			if (result == null) {
@@ -98,6 +101,9 @@ public class NattabletesterSwitch<T> extends Switch<T> {
 			T result = caseJavaTableTester(javaTableTester);
 			if (result == null) {
 				result = caseAbstractTableTester(javaTableTester);
+			}
+			if (result == null) {
+				result = caseStyledElement(javaTableTester);
 			}
 			if (result == null) {
 				result = caseEModelElement(javaTableTester);
@@ -160,6 +166,23 @@ public class NattabletesterSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseEModelElement(EModelElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Styled Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Styled Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseStyledElement(StyledElement object) {
 		return null;
 	}
 

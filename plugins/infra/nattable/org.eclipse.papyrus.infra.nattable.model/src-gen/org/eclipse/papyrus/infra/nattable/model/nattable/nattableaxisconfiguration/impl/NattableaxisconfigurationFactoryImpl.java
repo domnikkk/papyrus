@@ -29,6 +29,7 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfigurati
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.NattableaxisconfigurationPackage;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.PasteEObjectConfiguration;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.TableHeaderAxisConfiguration;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.TreeFillingConfiguration;
 
 /**
  * <!-- begin-user-doc -->
@@ -38,7 +39,6 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfigurati
  * @generated
  */
 public class NattableaxisconfigurationFactoryImpl extends EFactoryImpl implements NattableaxisconfigurationFactory {
-
 	/**
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
@@ -94,6 +94,8 @@ public class NattableaxisconfigurationFactoryImpl extends EFactoryImpl implement
 			return createIPasteConfiguration();
 		case NattableaxisconfigurationPackage.PASTE_EOBJECT_CONFIGURATION:
 			return createPasteEObjectConfiguration();
+		case NattableaxisconfigurationPackage.TREE_FILLING_CONFIGURATION:
+			return createTreeFillingConfiguration();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
@@ -225,6 +227,18 @@ public class NattableaxisconfigurationFactoryImpl extends EFactoryImpl implement
 	public PasteEObjectConfiguration createPasteEObjectConfiguration() {
 		PasteEObjectConfigurationImpl pasteEObjectConfiguration = new PasteEObjectConfigurationImpl();
 		return pasteEObjectConfiguration;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public TreeFillingConfiguration createTreeFillingConfiguration() {
+		TreeFillingConfigurationImpl treeFillingConfiguration = new TreeFillingConfigurationImpl();
+		return treeFillingConfiguration;
 	}
 
 	/**

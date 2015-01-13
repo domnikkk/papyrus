@@ -20,11 +20,11 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxis.NattableaxisPackage;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxis.ObjectAxis;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AxisManagerRepresentation;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.ObjectLabelProviderConfiguration;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattablestyle.impl.StyledElementImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -41,8 +41,7 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.O
  *
  * @generated
  */
-public abstract class ObjectAxisImpl extends MinimalEObjectImpl.Container implements ObjectAxis {
-
+public abstract class ObjectAxisImpl extends StyledElementImpl implements ObjectAxis {
 	/**
 	 * The cached value of the '{@link #getManager() <em>Manager</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -230,7 +229,8 @@ public abstract class ObjectAxisImpl extends MinimalEObjectImpl.Container implem
 			if (msgs != null) {
 				msgs.dispatch();
 			}
-		} else if (eNotificationRequired()) {
+		}
+		else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, NattableaxisPackage.OBJECT_AXIS__LOCAL_LABEL_CONFIGURATION, newLocalLabelConfiguration, newLocalLabelConfiguration));
 		}
 	}

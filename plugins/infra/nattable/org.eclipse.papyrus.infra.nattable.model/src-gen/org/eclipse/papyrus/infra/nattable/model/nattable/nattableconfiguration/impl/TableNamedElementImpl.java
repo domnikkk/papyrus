@@ -14,10 +14,10 @@ package org.eclipse.papyrus.infra.nattable.model.nattable.nattableconfiguration.
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.EModelElementImpl;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableconfiguration.NattableconfigurationPackage;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableconfiguration.TableNamedElement;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattablestyle.impl.StyledElementImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -33,8 +33,7 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattableconfiguration.T
  *
  * @generated
  */
-public abstract class TableNamedElementImpl extends EModelElementImpl implements TableNamedElement {
-
+public abstract class TableNamedElementImpl extends StyledElementImpl implements TableNamedElement {
 	/**
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->

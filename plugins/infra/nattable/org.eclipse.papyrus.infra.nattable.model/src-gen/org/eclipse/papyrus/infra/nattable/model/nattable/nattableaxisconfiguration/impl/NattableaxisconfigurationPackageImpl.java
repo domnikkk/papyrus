@@ -38,6 +38,7 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfigurati
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.NattableaxisconfigurationPackage;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.PasteEObjectConfiguration;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.TableHeaderAxisConfiguration;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.TreeFillingConfiguration;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.util.NattableaxisconfigurationValidator;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisprovider.NattableaxisproviderPackage;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisprovider.impl.NattableaxisproviderPackageImpl;
@@ -49,6 +50,8 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.N
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.impl.NattablelabelproviderPackageImpl;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableproblem.NattableproblemPackage;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableproblem.impl.NattableproblemPackageImpl;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattablestyle.NattablestylePackage;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattablestyle.impl.NattablestylePackageImpl;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattabletester.NattabletesterPackage;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattabletester.impl.NattabletesterPackageImpl;
 
@@ -60,7 +63,6 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattabletester.impl.Nat
  * @generated
  */
 public class NattableaxisconfigurationPackageImpl extends EPackageImpl implements NattableaxisconfigurationPackage {
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -155,11 +157,18 @@ public class NattableaxisconfigurationPackageImpl extends EPackageImpl implement
 	 *
 	 * @generated
 	 */
+	private EClass treeFillingConfigurationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
 	private EEnum axisIndexStyleEEnum = null;
 
 	/**
-	 * Creates an instance of the model <b>Package</b>, registered with {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the
-	 * package
+	 * Creates an instance of the model <b>Package</b>, registered with {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
 	 * <p>
 	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -211,11 +220,13 @@ public class NattableaxisconfigurationPackageImpl extends EPackageImpl implement
 		NattablePackageImpl theNattablePackage = (NattablePackageImpl) (EPackage.Registry.INSTANCE.getEPackage(NattablePackage.eNS_URI) instanceof NattablePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(NattablePackage.eNS_URI)
 				: NattablePackage.eINSTANCE);
 		NattableconfigurationPackageImpl theNattableconfigurationPackage = (NattableconfigurationPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(NattableconfigurationPackage.eNS_URI) instanceof NattableconfigurationPackageImpl ? EPackage.Registry.INSTANCE
-				.getEPackage(NattableconfigurationPackage.eNS_URI) : NattableconfigurationPackage.eINSTANCE);
+				.getEPackage(NattableconfigurationPackage.eNS_URI)
+				: NattableconfigurationPackage.eINSTANCE);
 		NattableaxisproviderPackageImpl theNattableaxisproviderPackage = (NattableaxisproviderPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(NattableaxisproviderPackage.eNS_URI) instanceof NattableaxisproviderPackageImpl ? EPackage.Registry.INSTANCE
 				.getEPackage(NattableaxisproviderPackage.eNS_URI) : NattableaxisproviderPackage.eINSTANCE);
 		NattablelabelproviderPackageImpl theNattablelabelproviderPackage = (NattablelabelproviderPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(NattablelabelproviderPackage.eNS_URI) instanceof NattablelabelproviderPackageImpl ? EPackage.Registry.INSTANCE
-				.getEPackage(NattablelabelproviderPackage.eNS_URI) : NattablelabelproviderPackage.eINSTANCE);
+				.getEPackage(NattablelabelproviderPackage.eNS_URI)
+				: NattablelabelproviderPackage.eINSTANCE);
 		NattabletesterPackageImpl theNattabletesterPackage = (NattabletesterPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(NattabletesterPackage.eNS_URI) instanceof NattabletesterPackageImpl ? EPackage.Registry.INSTANCE
 				.getEPackage(NattabletesterPackage.eNS_URI) : NattabletesterPackage.eINSTANCE);
 		NattableaxisPackageImpl theNattableaxisPackage = (NattableaxisPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(NattableaxisPackage.eNS_URI) instanceof NattableaxisPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(NattableaxisPackage.eNS_URI)
@@ -224,6 +235,8 @@ public class NattableaxisconfigurationPackageImpl extends EPackageImpl implement
 				: NattablecellPackage.eINSTANCE);
 		NattableproblemPackageImpl theNattableproblemPackage = (NattableproblemPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(NattableproblemPackage.eNS_URI) instanceof NattableproblemPackageImpl ? EPackage.Registry.INSTANCE
 				.getEPackage(NattableproblemPackage.eNS_URI) : NattableproblemPackage.eINSTANCE);
+		NattablestylePackageImpl theNattablestylePackage = (NattablestylePackageImpl) (EPackage.Registry.INSTANCE.getEPackage(NattablestylePackage.eNS_URI) instanceof NattablestylePackageImpl ? EPackage.Registry.INSTANCE
+				.getEPackage(NattablestylePackage.eNS_URI) : NattablestylePackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theNattableaxisconfigurationPackage.createPackageContents();
@@ -235,6 +248,7 @@ public class NattableaxisconfigurationPackageImpl extends EPackageImpl implement
 		theNattableaxisPackage.createPackageContents();
 		theNattablecellPackage.createPackageContents();
 		theNattableproblemPackage.createPackageContents();
+		theNattablestylePackage.createPackageContents();
 
 		// Initialize created meta-data
 		theNattableaxisconfigurationPackage.initializePackageContents();
@@ -246,15 +260,17 @@ public class NattableaxisconfigurationPackageImpl extends EPackageImpl implement
 		theNattableaxisPackage.initializePackageContents();
 		theNattablecellPackage.initializePackageContents();
 		theNattableproblemPackage.initializePackageContents();
+		theNattablestylePackage.initializePackageContents();
 
 		// Register package validator
-		EValidator.Registry.INSTANCE.put(theNattableaxisconfigurationPackage, new EValidator.Descriptor() {
-
-			@Override
-			public EValidator getEValidator() {
-				return NattableaxisconfigurationValidator.INSTANCE;
-			}
-		});
+		EValidator.Registry.INSTANCE.put
+				(theNattableaxisconfigurationPackage,
+						new EValidator.Descriptor() {
+							@Override
+							public EValidator getEValidator() {
+								return NattableaxisconfigurationValidator.INSTANCE;
+							}
+						});
 
 		// Mark meta-data to indicate it can't be changed
 		theNattableaxisconfigurationPackage.freeze();
@@ -624,6 +640,72 @@ public class NattableaxisconfigurationPackageImpl extends EPackageImpl implement
 	 * @generated
 	 */
 	@Override
+	public EClass getTreeFillingConfiguration() {
+		return treeFillingConfigurationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EReference getTreeFillingConfiguration_AxisUsedAsAxisProvider() {
+		return (EReference) treeFillingConfigurationEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EReference getTreeFillingConfiguration_PasteConfiguration() {
+		return (EReference) treeFillingConfigurationEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getTreeFillingConfiguration_Depth() {
+		return (EAttribute) treeFillingConfigurationEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EReference getTreeFillingConfiguration_LabelProvider() {
+		return (EReference) treeFillingConfigurationEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getTreeFillingConfiguration_LabelProviderContext() {
+		return (EAttribute) treeFillingConfigurationEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public EEnum getAxisIndexStyle() {
 		return axisIndexStyleEEnum;
 	}
@@ -705,6 +787,13 @@ public class NattableaxisconfigurationPackageImpl extends EPackageImpl implement
 		createEAttribute(pasteEObjectConfigurationEClass, PASTE_EOBJECT_CONFIGURATION__PASTED_ELEMENT_ID);
 		createEReference(pasteEObjectConfigurationEClass, PASTE_EOBJECT_CONFIGURATION__PASTE_ELEMENT_CONTAINEMENT_FEATURE);
 
+		treeFillingConfigurationEClass = createEClass(TREE_FILLING_CONFIGURATION);
+		createEReference(treeFillingConfigurationEClass, TREE_FILLING_CONFIGURATION__AXIS_USED_AS_AXIS_PROVIDER);
+		createEReference(treeFillingConfigurationEClass, TREE_FILLING_CONFIGURATION__PASTE_CONFIGURATION);
+		createEAttribute(treeFillingConfigurationEClass, TREE_FILLING_CONFIGURATION__DEPTH);
+		createEReference(treeFillingConfigurationEClass, TREE_FILLING_CONFIGURATION__LABEL_PROVIDER);
+		createEAttribute(treeFillingConfigurationEClass, TREE_FILLING_CONFIGURATION__LABEL_PROVIDER_CONTEXT);
+
 		// Create enums
 		axisIndexStyleEEnum = createEEnum(AXIS_INDEX_STYLE);
 	}
@@ -737,21 +826,28 @@ public class NattableaxisconfigurationPackageImpl extends EPackageImpl implement
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
+		NattablestylePackage theNattablestylePackage = (NattablestylePackage) EPackage.Registry.INSTANCE.getEPackage(NattablestylePackage.eNS_URI);
 		NattablelabelproviderPackage theNattablelabelproviderPackage = (NattablelabelproviderPackage) EPackage.Registry.INSTANCE.getEPackage(NattablelabelproviderPackage.eNS_URI);
+		NattableaxisPackage theNattableaxisPackage = (NattableaxisPackage) EPackage.Registry.INSTANCE.getEPackage(NattableaxisPackage.eNS_URI);
+		EcorePackage theEcorePackage = (EcorePackage) EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
 
 		// Create type parameters
 
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		abstractHeaderAxisConfigurationEClass.getESuperTypes().add(ecorePackage.getEModelElement());
+		abstractHeaderAxisConfigurationEClass.getESuperTypes().add(theNattablestylePackage.getStyledElement());
+		axisManagerRepresentationEClass.getESuperTypes().add(theNattablestylePackage.getStyledElement());
+		axisManagerConfigurationEClass.getESuperTypes().add(theNattablestylePackage.getStyledElement());
 		tableHeaderAxisConfigurationEClass.getESuperTypes().add(this.getAbstractHeaderAxisConfiguration());
 		localTableHeaderAxisConfigurationEClass.getESuperTypes().add(this.getAbstractHeaderAxisConfiguration());
+		iAxisConfigurationEClass.getESuperTypes().add(theNattablestylePackage.getStyledElement());
 		featureAxisConfigurationEClass.getESuperTypes().add(this.getIAxisConfiguration());
 		iFillingConfigurationEClass.getESuperTypes().add(this.getIAxisConfiguration());
 		eStructuralFeatureValueFillingConfigurationEClass.getESuperTypes().add(this.getIFillingConfiguration());
 		iPasteConfigurationEClass.getESuperTypes().add(this.getIAxisConfiguration());
 		pasteEObjectConfigurationEClass.getESuperTypes().add(this.getIPasteConfiguration());
+		treeFillingConfigurationEClass.getESuperTypes().add(this.getIFillingConfiguration());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(abstractHeaderAxisConfigurationEClass, AbstractHeaderAxisConfiguration.class, "AbstractHeaderAxisConfiguration", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
@@ -816,6 +912,17 @@ public class NattableaxisconfigurationPackageImpl extends EPackageImpl implement
 		initEReference(getPasteEObjectConfiguration_PasteElementContainementFeature(), ecorePackage.getEStructuralFeature(), null,
 				"pasteElementContainementFeature", null, 0, 1, PasteEObjectConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
 
+		initEClass(treeFillingConfigurationEClass, TreeFillingConfiguration.class, "TreeFillingConfiguration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(getTreeFillingConfiguration_AxisUsedAsAxisProvider(), theNattableaxisPackage.getIAxis(), null,
+				"axisUsedAsAxisProvider", null, 1, 1, TreeFillingConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
+		initEReference(getTreeFillingConfiguration_PasteConfiguration(), this.getPasteEObjectConfiguration(), null,
+				"pasteConfiguration", null, 0, 1, TreeFillingConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
+		initEAttribute(getTreeFillingConfiguration_Depth(), theEcorePackage.getEInt(), "depth", null, 0, 1, TreeFillingConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
+		initEReference(getTreeFillingConfiguration_LabelProvider(), theNattablelabelproviderPackage.getILabelProviderConfiguration(), null,
+				"labelProvider", null, 1, 1, TreeFillingConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
+		initEAttribute(getTreeFillingConfiguration_LabelProviderContext(), ecorePackage.getEString(),
+				"labelProviderContext", null, 1, 1, TreeFillingConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
+
 		// Initialize enums and add enum literals
 		initEEnum(axisIndexStyleEEnum, AxisIndexStyle.class, "AxisIndexStyle"); //$NON-NLS-1$
 		addEEnumLiteral(axisIndexStyleEEnum, AxisIndexStyle.ALPHABETIC);
@@ -837,14 +944,24 @@ public class NattableaxisconfigurationPackageImpl extends EPackageImpl implement
 	 */
 	protected void createEcoreAnnotations() {
 		String source = "http://www.eclipse.org/emf/2002/Ecore"; //$NON-NLS-1$
-		addAnnotation(this, source, new String[] { "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot", //$NON-NLS-1$ //$NON-NLS-2$
-				"settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot", //$NON-NLS-1$ //$NON-NLS-2$
-				"validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot" //$NON-NLS-1$ //$NON-NLS-2$
-		});
-		addAnnotation(abstractHeaderAxisConfigurationEClass, source, new String[] { "constraints", "oneObjectLabelConfigurationTypes oneFeatureLabelConfigurationTypes" //$NON-NLS-1$ //$NON-NLS-2$
-		});
-		addAnnotation(tableHeaderAxisConfigurationEClass, source, new String[] { "constraints", "axisManagersIdUnique" //$NON-NLS-1$ //$NON-NLS-2$
-		});
+		addAnnotation(this,
+				source,
+				new String[] { "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot", //$NON-NLS-1$ //$NON-NLS-2$
+						"settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot", //$NON-NLS-1$ //$NON-NLS-2$
+						"validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot" //$NON-NLS-1$ //$NON-NLS-2$
+				});
+		addAnnotation(abstractHeaderAxisConfigurationEClass,
+				source,
+				new String[] { "constraints", "oneObjectLabelConfigurationTypes oneFeatureLabelConfigurationTypes" //$NON-NLS-1$ //$NON-NLS-2$
+				});
+		addAnnotation(axisManagerRepresentationEClass,
+				source,
+				new String[] { "constraints", "nonEmptyAxisManager" //$NON-NLS-1$ //$NON-NLS-2$
+				});
+		addAnnotation(tableHeaderAxisConfigurationEClass,
+				source,
+				new String[] { "constraints", "axisManagersIdUnique" //$NON-NLS-1$ //$NON-NLS-2$
+				});
 	}
 
 	/**
@@ -856,12 +973,21 @@ public class NattableaxisconfigurationPackageImpl extends EPackageImpl implement
 	 */
 	protected void createPivotAnnotations() {
 		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"; //$NON-NLS-1$
-		addAnnotation(abstractHeaderAxisConfigurationEClass, source, new String[] {
-				"oneObjectLabelConfigurationTypes", "ownedLabelConfigurations->collect(ilc : nattable::nattablelabelprovider::ILabelProviderConfiguration | ilc.oclAsType(nattable::nattablelabelprovider::ObjectLabelProviderConfiguration))->size() <= 1", //$NON-NLS-1$ //$NON-NLS-2$
-				"oneFeatureLabelConfigurationTypes", "ownedLabelConfigurations->collect(ilc : nattable::nattablelabelprovider::ILabelProviderConfiguration | ilc.oclAsType(nattable::nattablelabelprovider::FeatureLabelProviderConfiguration))->size() <= 1" //$NON-NLS-1$ //$NON-NLS-2$
-		});
-		addAnnotation(tableHeaderAxisConfigurationEClass, source, new String[] { "axisManagersIdUnique", "axisManagers->forAll(am1 : AxisManagerRepresentation, am2 : AxisManagerRepresentation | am1.axisManagerId <> am2.axisManagerId)" //$NON-NLS-1$ //$NON-NLS-2$
-		});
+		addAnnotation(
+				abstractHeaderAxisConfigurationEClass,
+				source,
+				new String[] {
+						"oneObjectLabelConfigurationTypes", "ownedLabelConfigurations->collect(ilc : nattable::nattablelabelprovider::ILabelProviderConfiguration | ilc.oclAsType(nattable::nattablelabelprovider::ObjectLabelProviderConfiguration))->size() <= 1", //$NON-NLS-1$ //$NON-NLS-2$
+						"oneFeatureLabelConfigurationTypes", "ownedLabelConfigurations->collect(ilc : nattable::nattablelabelprovider::ILabelProviderConfiguration | ilc.oclAsType(nattable::nattablelabelprovider::FeatureLabelProviderConfiguration))->size() <= 1" //$NON-NLS-1$ //$NON-NLS-2$
+				});
+		addAnnotation(axisManagerRepresentationEClass,
+				source,
+				new String[] { "nonEmptyAxisManager", "not (axisManagerId.oclIsUndefined() or axisManagerId = \'\')" //$NON-NLS-1$ //$NON-NLS-2$
+				});
+		addAnnotation(tableHeaderAxisConfigurationEClass,
+				source,
+				new String[] { "axisManagersIdUnique", "axisManagers->forAll(am1 : AxisManagerRepresentation, am2 : AxisManagerRepresentation | am1.axisManagerId <> am2.axisManagerId)" //$NON-NLS-1$ //$NON-NLS-2$
+				});
 	}
 
 } // NattableaxisconfigurationPackageImpl

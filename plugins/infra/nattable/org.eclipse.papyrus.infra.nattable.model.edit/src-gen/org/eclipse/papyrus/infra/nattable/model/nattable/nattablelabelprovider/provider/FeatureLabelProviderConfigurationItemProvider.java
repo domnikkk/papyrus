@@ -19,12 +19,7 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.FeatureLabelProviderConfiguration;
@@ -37,8 +32,7 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.N
  *
  * @generated
  */
-public class FeatureLabelProviderConfigurationItemProvider extends ObjectLabelProviderConfigurationItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
-
+public class FeatureLabelProviderConfigurationItemProvider extends ObjectLabelProviderConfigurationItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -78,9 +72,19 @@ public class FeatureLabelProviderConfigurationItemProvider extends ObjectLabelPr
 	 * @generated
 	 */
 	protected void addDisplayIsDerivedPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_FeatureLabelProviderConfiguration_displayIsDerived_feature"), //$NON-NLS-1$
-				getString("_UI_PropertyDescriptor_description", "_UI_FeatureLabelProviderConfiguration_displayIsDerived_feature", "_UI_FeatureLabelProviderConfiguration_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				NattablelabelproviderPackage.Literals.FEATURE_LABEL_PROVIDER_CONFIGURATION__DISPLAY_IS_DERIVED, true, false, false, ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_FeatureLabelProviderConfiguration_displayIsDerived_feature"), //$NON-NLS-1$
+						getString("_UI_PropertyDescriptor_description", "_UI_FeatureLabelProviderConfiguration_displayIsDerived_feature", "_UI_FeatureLabelProviderConfiguration_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+						NattablelabelproviderPackage.Literals.FEATURE_LABEL_PROVIDER_CONFIGURATION__DISPLAY_IS_DERIVED,
+						true,
+						false,
+						false,
+						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+						null,
+						null));
 	}
 
 	/**
@@ -91,9 +95,19 @@ public class FeatureLabelProviderConfigurationItemProvider extends ObjectLabelPr
 	 * @generated
 	 */
 	protected void addDisplayTypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_FeatureLabelProviderConfiguration_displayType_feature"), //$NON-NLS-1$
-				getString("_UI_PropertyDescriptor_description", "_UI_FeatureLabelProviderConfiguration_displayType_feature", "_UI_FeatureLabelProviderConfiguration_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				NattablelabelproviderPackage.Literals.FEATURE_LABEL_PROVIDER_CONFIGURATION__DISPLAY_TYPE, true, false, false, ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_FeatureLabelProviderConfiguration_displayType_feature"), //$NON-NLS-1$
+						getString("_UI_PropertyDescriptor_description", "_UI_FeatureLabelProviderConfiguration_displayType_feature", "_UI_FeatureLabelProviderConfiguration_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+						NattablelabelproviderPackage.Literals.FEATURE_LABEL_PROVIDER_CONFIGURATION__DISPLAY_TYPE,
+						true,
+						false,
+						false,
+						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+						null,
+						null));
 	}
 
 	/**
@@ -104,9 +118,19 @@ public class FeatureLabelProviderConfigurationItemProvider extends ObjectLabelPr
 	 * @generated
 	 */
 	protected void addDisplayMultiplicityPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_FeatureLabelProviderConfiguration_displayMultiplicity_feature"), //$NON-NLS-1$
-				getString("_UI_PropertyDescriptor_description", "_UI_FeatureLabelProviderConfiguration_displayMultiplicity_feature", "_UI_FeatureLabelProviderConfiguration_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				NattablelabelproviderPackage.Literals.FEATURE_LABEL_PROVIDER_CONFIGURATION__DISPLAY_MULTIPLICITY, true, false, false, ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_FeatureLabelProviderConfiguration_displayMultiplicity_feature"), //$NON-NLS-1$
+						getString("_UI_PropertyDescriptor_description", "_UI_FeatureLabelProviderConfiguration_displayMultiplicity_feature", "_UI_FeatureLabelProviderConfiguration_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+						NattablelabelproviderPackage.Literals.FEATURE_LABEL_PROVIDER_CONFIGURATION__DISPLAY_MULTIPLICITY,
+						true,
+						false,
+						false,
+						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+						null,
+						null));
 	}
 
 	/**
@@ -117,9 +141,19 @@ public class FeatureLabelProviderConfigurationItemProvider extends ObjectLabelPr
 	 * @generated
 	 */
 	protected void addDisplayNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_FeatureLabelProviderConfiguration_displayName_feature"), //$NON-NLS-1$
-				getString("_UI_PropertyDescriptor_description", "_UI_FeatureLabelProviderConfiguration_displayName_feature", "_UI_FeatureLabelProviderConfiguration_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				NattablelabelproviderPackage.Literals.FEATURE_LABEL_PROVIDER_CONFIGURATION__DISPLAY_NAME, true, false, false, ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_FeatureLabelProviderConfiguration_displayName_feature"), //$NON-NLS-1$
+						getString("_UI_PropertyDescriptor_description", "_UI_FeatureLabelProviderConfiguration_displayName_feature", "_UI_FeatureLabelProviderConfiguration_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+						NattablelabelproviderPackage.Literals.FEATURE_LABEL_PROVIDER_CONFIGURATION__DISPLAY_NAME,
+						true,
+						false,
+						false,
+						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+						null,
+						null));
 	}
 
 	/**
@@ -146,6 +180,7 @@ public class FeatureLabelProviderConfigurationItemProvider extends ObjectLabelPr
 		FeatureLabelProviderConfiguration featureLabelProviderConfiguration = (FeatureLabelProviderConfiguration) object;
 		return getString("_UI_FeatureLabelProviderConfiguration_type") + " " + featureLabelProviderConfiguration.isDisplayName(); //$NON-NLS-1$ //$NON-NLS-2$
 	}
+
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached

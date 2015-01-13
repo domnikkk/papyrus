@@ -33,7 +33,6 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattablecell.Nattablece
  * @generated
  */
 public class NattablecellAdapterFactory extends AdapterFactoryImpl {
-
 	/**
 	 * The cached model package.
 	 * <!-- begin-user-doc -->
@@ -83,38 +82,38 @@ public class NattablecellAdapterFactory extends AdapterFactoryImpl {
 	 *
 	 * @generated
 	 */
-	protected NattablecellSwitch<Adapter> modelSwitch = new NattablecellSwitch<Adapter>() {
+	protected NattablecellSwitch<Adapter> modelSwitch =
+			new NattablecellSwitch<Adapter>() {
+				@Override
+				public Adapter caseCell(Cell object) {
+					return createCellAdapter();
+				}
 
-		@Override
-		public Adapter caseCell(Cell object) {
-			return createCellAdapter();
-		}
+				@Override
+				public Adapter caseICellAxisWrapper(ICellAxisWrapper object) {
+					return createICellAxisWrapperAdapter();
+				}
 
-		@Override
-		public Adapter caseICellAxisWrapper(ICellAxisWrapper object) {
-			return createICellAxisWrapperAdapter();
-		}
+				@Override
+				public Adapter caseEObjectAxisWrapper(EObjectAxisWrapper object) {
+					return createEObjectAxisWrapperAdapter();
+				}
 
-		@Override
-		public Adapter caseEObjectAxisWrapper(EObjectAxisWrapper object) {
-			return createEObjectAxisWrapperAdapter();
-		}
+				@Override
+				public Adapter caseIdAxisWrapper(IdAxisWrapper object) {
+					return createIdAxisWrapperAdapter();
+				}
 
-		@Override
-		public Adapter caseIdAxisWrapper(IdAxisWrapper object) {
-			return createIdAxisWrapperAdapter();
-		}
+				@Override
+				public Adapter caseEModelElement(EModelElement object) {
+					return createEModelElementAdapter();
+				}
 
-		@Override
-		public Adapter caseEModelElement(EModelElement object) {
-			return createEModelElementAdapter();
-		}
-
-		@Override
-		public Adapter defaultCase(EObject object) {
-			return createEObjectAdapter();
-		}
-	};
+				@Override
+				public Adapter defaultCase(EObject object) {
+					return createEObjectAdapter();
+				}
+			};
 
 	/**
 	 * Creates an adapter for the <code>target</code>.
@@ -148,8 +147,7 @@ public class NattablecellAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablecell.ICellAxisWrapper
-	 * <em>ICell Axis Wrapper</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablecell.ICellAxisWrapper <em>ICell Axis Wrapper</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
@@ -164,8 +162,7 @@ public class NattablecellAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablecell.EObjectAxisWrapper
-	 * <em>EObject Axis Wrapper</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablecell.EObjectAxisWrapper <em>EObject Axis Wrapper</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
@@ -180,8 +177,7 @@ public class NattablecellAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablecell.IdAxisWrapper
-	 * <em>Id Axis Wrapper</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablecell.IdAxisWrapper <em>Id Axis Wrapper</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.

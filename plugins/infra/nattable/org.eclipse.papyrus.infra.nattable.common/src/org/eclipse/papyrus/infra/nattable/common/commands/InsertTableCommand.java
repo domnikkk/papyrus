@@ -50,6 +50,11 @@ public class InsertTableCommand extends RecordingCommand {
 
 	/*
 	 * (non-Javadoc)
+	 * <<<<<<< HEAD
+	 *
+	 * =======
+	 *
+	 * >>>>>>> refs/heads/master
 	 *
 	 * @see org.eclipse.emf.transaction.RecordingCommand#doExecute()
 	 */
