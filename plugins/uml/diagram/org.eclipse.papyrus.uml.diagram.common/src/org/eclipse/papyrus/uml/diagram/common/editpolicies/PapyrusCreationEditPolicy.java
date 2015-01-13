@@ -19,17 +19,21 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.commands.UnexecutableCommand;
 import org.eclipse.gmf.runtime.common.core.command.CompositeCommand;
+import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.gmf.runtime.diagram.core.edithelpers.CreateElementRequestAdapter;
 import org.eclipse.gmf.runtime.diagram.core.util.ViewUtil;
 import org.eclipse.gmf.runtime.diagram.ui.commands.CommandProxy;
 import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
 import org.eclipse.gmf.runtime.diagram.ui.commands.SemanticCreateCommand;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramRootEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CreationEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewAndElementRequest;
 import org.eclipse.gmf.runtime.diagram.ui.requests.EditCommandRequestWrapper;
 import org.eclipse.gmf.runtime.diagram.ui.requests.RefreshConnectionsRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.papyrus.infra.gmfdiag.common.editpart.ConnectionEditPart;
 
 /**
  * Specific creation edit policy for Papyrus. It checks that the view creation
@@ -102,5 +106,18 @@ public class PapyrusCreationEditPolicy extends CreationEditPolicy {
 		}
 
 		return new ICommandProxy(cc);
+	}
+
+	/**
+	 * @return the command to reparent the supplied non connectable editpart's view only
+	 *         or an {@link org.eclipse.papyrus.uml.diagram.common.editpolicies.PapyrusCreationEditPolicy.EmptyExecutableCommand} for all connectable editpart's.
+	 * 
+	 */
+	@Override
+	protected ICommand getReparentViewCommand(IGraphicalEditPart gep) {
+		if (gep instanceof ConnectionEditPart && gep.getParent() instanceof DiagramRootEditPart) {
+			return null;
+		}
+		return super.getReparentViewCommand(gep);
 	}
 }
