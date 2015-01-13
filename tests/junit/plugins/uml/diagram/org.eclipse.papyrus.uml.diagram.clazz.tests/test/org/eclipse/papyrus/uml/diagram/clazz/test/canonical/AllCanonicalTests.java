@@ -40,8 +40,11 @@ TestDropfunction.class,
 TestStaticFeatureRepresentation.class,
 //test nested classifier
 TestClassDiagramNestedClassifier.class,
-//test list-compartment child duplicates
+//List Compartment child duplicates
 TestListCompartmentNodesChildDuplicates.class,
+//List Compartment illegal elements
+TestListCompartmentIllegalElements.class,
+TestListCompartmentPropertiesOperationsDrop.class
 })
 public class AllCanonicalTests {
 }
