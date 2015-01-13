@@ -75,6 +75,7 @@
 		<module>../tests/junit/plugins/uml/modelexplorer/org.eclipse.papyrus.uml.modelexplorer.tests</module>
 		<module>../tests/junit/plugins/uml/nattable/org.eclipse.papyrus.uml.nattable.tests</module>
 		<module>../tests/junit/plugins/uml/nattable/org.eclipse.papyrus.uml.nattable.generic.tests</module>
+		<module>../tests/junit/plugins/uml/nattable/org.eclipse.papyrus.uml.nattable.clazz.config.tests</module>
 		<module>../tests/junit/plugins/uml/org.eclipse.papyrus.search.tests</module>
 		<module>../tests/junit/plugins/uml/org.eclipse.papyrus.uml.modelrepair.tests</module>
 		<module>../tests/junit/plugins/uml/org.eclipse.papyrus.uml.service.types.tests</module>

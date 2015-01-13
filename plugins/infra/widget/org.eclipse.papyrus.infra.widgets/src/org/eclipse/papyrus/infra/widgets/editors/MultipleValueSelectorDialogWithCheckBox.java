@@ -26,7 +26,7 @@ import org.eclipse.swt.widgets.Shell;
  * @author vl222926
  * 
  *  @deprecated use {@link MultipleValueSelectionWithCheckBoxDialog} instead
- *  @since Papyrus 1.0.2
+ *  @since Papyrus 1.1.0
  */
 @Deprecated 
 public class MultipleValueSelectorDialogWithCheckBox extends MultipleValueSelectorDialog {

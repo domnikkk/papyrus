@@ -60,7 +60,7 @@ import org.eclipse.ui.dialogs.SelectionDialog;
  * @see #setContextElement(Object)
  * 
  * @deprecated use MultipleValueSelectionDialog instead
- * @since Papyrus 1.0.2
+ * @since Papyrus 1.1
  */
 @Deprecated
 public class MultipleValueSelectorDialog extends SelectionDialog implements ISelectionChangedListener, IDoubleClickListener, IElementSelectionListener, SelectionListener {
