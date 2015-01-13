@@ -19,12 +19,7 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxis.NattableaxisFactory;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisprovider.AxisProvider;
@@ -37,8 +32,7 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisprovider.Na
  *
  * @generated
  */
-public class AxisProviderItemProvider extends AbstractAxisProviderItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
-
+public class AxisProviderItemProvider extends AbstractAxisProviderItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -107,9 +101,11 @@ public class AxisProviderItemProvider extends AbstractAxisProviderItemProvider i
 	@Override
 	public String getText(Object object) {
 		String label = ((AxisProvider) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_AxisProvider_type") : //$NON-NLS-1$
+		return label == null || label.length() == 0 ?
+				getString("_UI_AxisProvider_type") : //$NON-NLS-1$
 				getString("_UI_AxisProvider_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
+
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -143,13 +139,65 @@ public class AxisProviderItemProvider extends AbstractAxisProviderItemProvider i
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(NattableaxisproviderPackage.Literals.AXIS_PROVIDER__AXIS, NattableaxisFactory.eINSTANCE.createEObjectAxis()));
+		newChildDescriptors.add
+				(createChildParameter
+				(NattableaxisproviderPackage.Literals.AXIS_PROVIDER__AXIS,
+						NattableaxisFactory.eINSTANCE.createIdTreeItemAxis()));
 
-		newChildDescriptors.add(createChildParameter(NattableaxisproviderPackage.Literals.AXIS_PROVIDER__AXIS, NattableaxisFactory.eINSTANCE.createFeatureIdAxis()));
+		newChildDescriptors.add
+				(createChildParameter
+				(NattableaxisproviderPackage.Literals.AXIS_PROVIDER__AXIS,
+						NattableaxisFactory.eINSTANCE.createEObjectAxis()));
 
-		newChildDescriptors.add(createChildParameter(NattableaxisproviderPackage.Literals.AXIS_PROVIDER__AXIS, NattableaxisFactory.eINSTANCE.createEStructuralFeatureAxis()));
+		newChildDescriptors.add
+				(createChildParameter
+				(NattableaxisproviderPackage.Literals.AXIS_PROVIDER__AXIS,
+						NattableaxisFactory.eINSTANCE.createEObjectTreeItemAxis()));
 
-		newChildDescriptors.add(createChildParameter(NattableaxisproviderPackage.Literals.AXIS_PROVIDER__AXIS, NattableaxisFactory.eINSTANCE.createObjectIdAxis()));
+		newChildDescriptors.add
+				(createChildParameter
+				(NattableaxisproviderPackage.Literals.AXIS_PROVIDER__AXIS,
+						NattableaxisFactory.eINSTANCE.createFeatureTreeItemAxis()));
+
+		newChildDescriptors.add
+				(createChildParameter
+				(NattableaxisproviderPackage.Literals.AXIS_PROVIDER__AXIS,
+						NattableaxisFactory.eINSTANCE.createObjectTreeItemAxis()));
+
+		newChildDescriptors.add
+				(createChildParameter
+				(NattableaxisproviderPackage.Literals.AXIS_PROVIDER__AXIS,
+						NattableaxisFactory.eINSTANCE.createFeatureIdAxis()));
+
+		newChildDescriptors.add
+				(createChildParameter
+				(NattableaxisproviderPackage.Literals.AXIS_PROVIDER__AXIS,
+						NattableaxisFactory.eINSTANCE.createFeatureIdTreeItemAxis()));
+
+		newChildDescriptors.add
+				(createChildParameter
+				(NattableaxisproviderPackage.Literals.AXIS_PROVIDER__AXIS,
+						NattableaxisFactory.eINSTANCE.createEStructuralFeatureAxis()));
+
+		newChildDescriptors.add
+				(createChildParameter
+				(NattableaxisproviderPackage.Literals.AXIS_PROVIDER__AXIS,
+						NattableaxisFactory.eINSTANCE.createEStructuralFeatureTreeItemAxis()));
+
+		newChildDescriptors.add
+				(createChildParameter
+				(NattableaxisproviderPackage.Literals.AXIS_PROVIDER__AXIS,
+						NattableaxisFactory.eINSTANCE.createObjectIdAxis()));
+
+		newChildDescriptors.add
+				(createChildParameter
+				(NattableaxisproviderPackage.Literals.AXIS_PROVIDER__AXIS,
+						NattableaxisFactory.eINSTANCE.createObjectIdTreeItemAxis()));
+
+		newChildDescriptors.add
+				(createChildParameter
+				(NattableaxisproviderPackage.Literals.AXIS_PROVIDER__AXIS,
+						NattableaxisFactory.eINSTANCE.createAxisGroup()));
 	}
 
 }

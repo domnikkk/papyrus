@@ -12,9 +12,9 @@
  */
 package org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxis;
 
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AxisManagerRepresentation;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.ILabelProviderConfiguration;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattablestyle.StyledElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -37,8 +37,7 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.I
  * @model interface="true" abstract="true"
  * @generated
  */
-public interface IAxis extends EObject {
-
+public interface IAxis extends StyledElement {
 	/**
 	 * Returns the value of the '<em><b>Manager</b></em>' reference.
 	 * <!-- begin-user-doc -->

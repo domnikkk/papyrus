@@ -20,14 +20,9 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.NattableaxisconfigurationPackage;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattablestyle.provider.StyledElementItemProvider;
 import org.eclipse.papyrus.infra.nattable.model.nattable.provider.NattableEditPlugin;
 
 /**
@@ -37,8 +32,7 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.provider.NattableEditPl
  *
  * @generated
  */
-public class AxisManagerConfigurationItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
-
+public class AxisManagerConfigurationItemProvider extends StyledElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -77,9 +71,19 @@ public class AxisManagerConfigurationItemProvider extends ItemProviderAdapter im
 	 * @generated
 	 */
 	protected void addLocalHeaderLabelConfigurationPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_AxisManagerConfiguration_localHeaderLabelConfiguration_feature"), //$NON-NLS-1$
-				getString("_UI_PropertyDescriptor_description", "_UI_AxisManagerConfiguration_localHeaderLabelConfiguration_feature", "_UI_AxisManagerConfiguration_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				NattableaxisconfigurationPackage.Literals.AXIS_MANAGER_CONFIGURATION__LOCAL_HEADER_LABEL_CONFIGURATION, true, false, true, null, null, null));
+		itemPropertyDescriptors.add
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_AxisManagerConfiguration_localHeaderLabelConfiguration_feature"), //$NON-NLS-1$
+						getString("_UI_PropertyDescriptor_description", "_UI_AxisManagerConfiguration_localHeaderLabelConfiguration_feature", "_UI_AxisManagerConfiguration_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+						NattableaxisconfigurationPackage.Literals.AXIS_MANAGER_CONFIGURATION__LOCAL_HEADER_LABEL_CONFIGURATION,
+						true,
+						false,
+						true,
+						null,
+						null,
+						null));
 	}
 
 	/**
@@ -90,9 +94,19 @@ public class AxisManagerConfigurationItemProvider extends ItemProviderAdapter im
 	 * @generated
 	 */
 	protected void addAxisManagerPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_AxisManagerConfiguration_axisManager_feature"), //$NON-NLS-1$
-				getString("_UI_PropertyDescriptor_description", "_UI_AxisManagerConfiguration_axisManager_feature", "_UI_AxisManagerConfiguration_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				NattableaxisconfigurationPackage.Literals.AXIS_MANAGER_CONFIGURATION__AXIS_MANAGER, true, false, true, null, null, null));
+		itemPropertyDescriptors.add
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_AxisManagerConfiguration_axisManager_feature"), //$NON-NLS-1$
+						getString("_UI_PropertyDescriptor_description", "_UI_AxisManagerConfiguration_axisManager_feature", "_UI_AxisManagerConfiguration_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+						NattableaxisconfigurationPackage.Literals.AXIS_MANAGER_CONFIGURATION__AXIS_MANAGER,
+						true,
+						false,
+						true,
+						null,
+						null,
+						null));
 	}
 
 	/**
@@ -103,9 +117,19 @@ public class AxisManagerConfigurationItemProvider extends ItemProviderAdapter im
 	 * @generated
 	 */
 	protected void addLocalSpecificConfigurationsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_AxisManagerConfiguration_localSpecificConfigurations_feature"), //$NON-NLS-1$
-				getString("_UI_PropertyDescriptor_description", "_UI_AxisManagerConfiguration_localSpecificConfigurations_feature", "_UI_AxisManagerConfiguration_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				NattableaxisconfigurationPackage.Literals.AXIS_MANAGER_CONFIGURATION__LOCAL_SPECIFIC_CONFIGURATIONS, true, false, true, null, null, null));
+		itemPropertyDescriptors.add
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_AxisManagerConfiguration_localSpecificConfigurations_feature"), //$NON-NLS-1$
+						getString("_UI_PropertyDescriptor_description", "_UI_AxisManagerConfiguration_localSpecificConfigurations_feature", "_UI_AxisManagerConfiguration_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+						NattableaxisconfigurationPackage.Literals.AXIS_MANAGER_CONFIGURATION__LOCAL_SPECIFIC_CONFIGURATIONS,
+						true,
+						false,
+						true,
+						null,
+						null,
+						null));
 	}
 
 	/**
@@ -131,6 +155,7 @@ public class AxisManagerConfigurationItemProvider extends ItemProviderAdapter im
 	public String getText(Object object) {
 		return getString("_UI_AxisManagerConfiguration_type"); //$NON-NLS-1$
 	}
+
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached

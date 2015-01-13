@@ -19,12 +19,7 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AxisIndexStyle;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.NattableaxisconfigurationFactory;
@@ -38,8 +33,7 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfigurati
  *
  * @generated
  */
-public class TableHeaderAxisConfigurationItemProvider extends AbstractHeaderAxisConfigurationItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
-
+public class TableHeaderAxisConfigurationItemProvider extends AbstractHeaderAxisConfigurationItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -121,9 +115,11 @@ public class TableHeaderAxisConfigurationItemProvider extends AbstractHeaderAxis
 	public String getText(Object object) {
 		AxisIndexStyle labelValue = ((TableHeaderAxisConfiguration) object).getIndexStyle();
 		String label = labelValue == null ? null : labelValue.toString();
-		return label == null || label.length() == 0 ? getString("_UI_TableHeaderAxisConfiguration_type") : //$NON-NLS-1$
+		return label == null || label.length() == 0 ?
+				getString("_UI_TableHeaderAxisConfiguration_type") : //$NON-NLS-1$
 				getString("_UI_TableHeaderAxisConfiguration_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
+
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -157,7 +153,10 @@ public class TableHeaderAxisConfigurationItemProvider extends AbstractHeaderAxis
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(NattableaxisconfigurationPackage.Literals.TABLE_HEADER_AXIS_CONFIGURATION__AXIS_MANAGERS, NattableaxisconfigurationFactory.eINSTANCE.createAxisManagerRepresentation()));
+		newChildDescriptors.add
+				(createChildParameter
+				(NattableaxisconfigurationPackage.Literals.TABLE_HEADER_AXIS_CONFIGURATION__AXIS_MANAGERS,
+						NattableaxisconfigurationFactory.eINSTANCE.createAxisManagerRepresentation()));
 	}
 
 }

@@ -16,9 +16,11 @@ package org.eclipse.papyrus.infra.nattable.provider;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
@@ -165,7 +167,9 @@ public class TableSelectionProvider implements ISelectionProvider, IDisposable {
 			// 3- we add in the selection the contents of selected cell which are not included in the fully selected axis
 
 			final Collection<PositionCoordinate> selectedCells = Arrays.asList(this.selectionLayer.getSelectedCellPositions());
-			final TableSelectionWrapper wrapper = new TableSelectionWrapper(selectedCells);
+			final Map<Integer, Object> fullySelectedRows = new HashMap<Integer, Object>();
+			final Map<Integer, Object> fullySelectedColumns = new HashMap<Integer, Object>();
+
 
 
 			final List<Integer> selectedRowsIndexes = new ArrayList<Integer>();
@@ -173,6 +177,7 @@ public class TableSelectionProvider implements ISelectionProvider, IDisposable {
 				selectedRowsIndexes.add(new Integer(i));
 				Object el = this.manager.getRowElement(i);
 				if (el != null) {
+					fullySelectedRows.put(Integer.valueOf(i), el);
 					el = AxisUtils.getRepresentedElement(el);
 					selection.add(el);
 				}
@@ -182,6 +187,7 @@ public class TableSelectionProvider implements ISelectionProvider, IDisposable {
 				selectedColumnsIndexes.add(new Integer(i));
 				Object el = this.manager.getColumnElement(i);
 				if (el != null) {
+					fullySelectedColumns.put(Integer.valueOf(i), el);
 					el = AxisUtils.getRepresentedElement(el);
 					selection.add(el);
 				}
@@ -208,6 +214,7 @@ public class TableSelectionProvider implements ISelectionProvider, IDisposable {
 					}
 				}
 			}
+			final TableSelectionWrapper wrapper = new TableSelectionWrapper(selectedCells, fullySelectedRows, fullySelectedColumns);
 			newSelection = new TableStructuredSelection(selection.toArray(), wrapper);
 		} else {
 			newSelection = new StructuredSelection();

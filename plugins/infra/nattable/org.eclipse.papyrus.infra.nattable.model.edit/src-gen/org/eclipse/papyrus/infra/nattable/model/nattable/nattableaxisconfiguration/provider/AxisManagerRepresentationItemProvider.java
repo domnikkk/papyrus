@@ -20,17 +20,12 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AxisManagerRepresentation;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.NattableaxisconfigurationPackage;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattablestyle.provider.StyledElementItemProvider;
 import org.eclipse.papyrus.infra.nattable.model.nattable.provider.NattableEditPlugin;
 
 /**
@@ -40,8 +35,7 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.provider.NattableEditPl
  *
  * @generated
  */
-public class AxisManagerRepresentationItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
-
+public class AxisManagerRepresentationItemProvider extends StyledElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -81,9 +75,19 @@ public class AxisManagerRepresentationItemProvider extends ItemProviderAdapter i
 	 * @generated
 	 */
 	protected void addAxisManagerIdPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_AxisManagerRepresentation_axisManagerId_feature"), //$NON-NLS-1$
-				getString("_UI_PropertyDescriptor_description", "_UI_AxisManagerRepresentation_axisManagerId_feature", "_UI_AxisManagerRepresentation_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				NattableaxisconfigurationPackage.Literals.AXIS_MANAGER_REPRESENTATION__AXIS_MANAGER_ID, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_AxisManagerRepresentation_axisManagerId_feature"), //$NON-NLS-1$
+						getString("_UI_PropertyDescriptor_description", "_UI_AxisManagerRepresentation_axisManagerId_feature", "_UI_AxisManagerRepresentation_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+						NattableaxisconfigurationPackage.Literals.AXIS_MANAGER_REPRESENTATION__AXIS_MANAGER_ID,
+						true,
+						false,
+						false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+						null,
+						null));
 	}
 
 	/**
@@ -94,9 +98,19 @@ public class AxisManagerRepresentationItemProvider extends ItemProviderAdapter i
 	 * @generated
 	 */
 	protected void addLabelProviderContextPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_AxisManagerRepresentation_labelProviderContext_feature"), //$NON-NLS-1$
-				getString("_UI_PropertyDescriptor_description", "_UI_AxisManagerRepresentation_labelProviderContext_feature", "_UI_AxisManagerRepresentation_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				NattableaxisconfigurationPackage.Literals.AXIS_MANAGER_REPRESENTATION__LABEL_PROVIDER_CONTEXT, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_AxisManagerRepresentation_labelProviderContext_feature"), //$NON-NLS-1$
+						getString("_UI_PropertyDescriptor_description", "_UI_AxisManagerRepresentation_labelProviderContext_feature", "_UI_AxisManagerRepresentation_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+						NattableaxisconfigurationPackage.Literals.AXIS_MANAGER_REPRESENTATION__LABEL_PROVIDER_CONTEXT,
+						true,
+						false,
+						false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+						null,
+						null));
 	}
 
 	/**
@@ -107,9 +121,19 @@ public class AxisManagerRepresentationItemProvider extends ItemProviderAdapter i
 	 * @generated
 	 */
 	protected void addHeaderLabelConfigurationPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_AxisManagerRepresentation_headerLabelConfiguration_feature"), //$NON-NLS-1$
-				getString("_UI_PropertyDescriptor_description", "_UI_AxisManagerRepresentation_headerLabelConfiguration_feature", "_UI_AxisManagerRepresentation_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				NattableaxisconfigurationPackage.Literals.AXIS_MANAGER_REPRESENTATION__HEADER_LABEL_CONFIGURATION, true, false, true, null, null, null));
+		itemPropertyDescriptors.add
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_AxisManagerRepresentation_headerLabelConfiguration_feature"), //$NON-NLS-1$
+						getString("_UI_PropertyDescriptor_description", "_UI_AxisManagerRepresentation_headerLabelConfiguration_feature", "_UI_AxisManagerRepresentation_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+						NattableaxisconfigurationPackage.Literals.AXIS_MANAGER_REPRESENTATION__HEADER_LABEL_CONFIGURATION,
+						true,
+						false,
+						true,
+						null,
+						null,
+						null));
 	}
 
 	/**
@@ -120,9 +144,19 @@ public class AxisManagerRepresentationItemProvider extends ItemProviderAdapter i
 	 * @generated
 	 */
 	protected void addSpecificAxisConfigurationsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_AxisManagerRepresentation_specificAxisConfigurations_feature"), //$NON-NLS-1$
-				getString("_UI_PropertyDescriptor_description", "_UI_AxisManagerRepresentation_specificAxisConfigurations_feature", "_UI_AxisManagerRepresentation_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				NattableaxisconfigurationPackage.Literals.AXIS_MANAGER_REPRESENTATION__SPECIFIC_AXIS_CONFIGURATIONS, true, false, true, null, null, null));
+		itemPropertyDescriptors.add
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_AxisManagerRepresentation_specificAxisConfigurations_feature"), //$NON-NLS-1$
+						getString("_UI_PropertyDescriptor_description", "_UI_AxisManagerRepresentation_specificAxisConfigurations_feature", "_UI_AxisManagerRepresentation_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+						NattableaxisconfigurationPackage.Literals.AXIS_MANAGER_REPRESENTATION__SPECIFIC_AXIS_CONFIGURATIONS,
+						true,
+						false,
+						true,
+						null,
+						null,
+						null));
 	}
 
 	/**
@@ -147,9 +181,11 @@ public class AxisManagerRepresentationItemProvider extends ItemProviderAdapter i
 	@Override
 	public String getText(Object object) {
 		String label = ((AxisManagerRepresentation) object).getAxisManagerId();
-		return label == null || label.length() == 0 ? getString("_UI_AxisManagerRepresentation_type") : //$NON-NLS-1$
+		return label == null || label.length() == 0 ?
+				getString("_UI_AxisManagerRepresentation_type") : //$NON-NLS-1$
 				getString("_UI_AxisManagerRepresentation_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
+
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached

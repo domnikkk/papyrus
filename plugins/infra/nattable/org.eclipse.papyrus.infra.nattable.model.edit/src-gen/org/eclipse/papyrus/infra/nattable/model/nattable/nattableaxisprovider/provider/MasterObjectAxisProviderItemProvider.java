@@ -19,12 +19,7 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisprovider.MasterObjectAxisProvider;
@@ -37,8 +32,7 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisprovider.Na
  *
  * @generated
  */
-public class MasterObjectAxisProviderItemProvider extends AxisProviderItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
-
+public class MasterObjectAxisProviderItemProvider extends AxisProviderItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -75,9 +69,19 @@ public class MasterObjectAxisProviderItemProvider extends AxisProviderItemProvid
 	 * @generated
 	 */
 	protected void addDisconnectSlavePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_IMasterAxisProvider_disconnectSlave_feature"), //$NON-NLS-1$
-				getString("_UI_PropertyDescriptor_description", "_UI_IMasterAxisProvider_disconnectSlave_feature", "_UI_IMasterAxisProvider_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				NattableaxisproviderPackage.Literals.IMASTER_AXIS_PROVIDER__DISCONNECT_SLAVE, true, false, false, ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_IMasterAxisProvider_disconnectSlave_feature"), //$NON-NLS-1$
+						getString("_UI_PropertyDescriptor_description", "_UI_IMasterAxisProvider_disconnectSlave_feature", "_UI_IMasterAxisProvider_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+						NattableaxisproviderPackage.Literals.IMASTER_AXIS_PROVIDER__DISCONNECT_SLAVE,
+						true,
+						false,
+						false,
+						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+						null,
+						null));
 	}
 
 	/**
@@ -102,9 +106,11 @@ public class MasterObjectAxisProviderItemProvider extends AxisProviderItemProvid
 	@Override
 	public String getText(Object object) {
 		String label = ((MasterObjectAxisProvider) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_MasterObjectAxisProvider_type") : //$NON-NLS-1$
+		return label == null || label.length() == 0 ?
+				getString("_UI_MasterObjectAxisProvider_type") : //$NON-NLS-1$
 				getString("_UI_MasterObjectAxisProvider_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
+
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached

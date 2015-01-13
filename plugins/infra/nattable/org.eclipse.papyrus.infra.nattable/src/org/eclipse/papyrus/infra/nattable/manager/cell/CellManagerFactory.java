@@ -105,6 +105,7 @@ public final class CellManagerFactory {
 	 *            the column element as described in the model (you must ignore the invert axis)
 	 *
 	 * @param rowElement
+	 *            -
 	 *            the row element as described in the model (you must ignore the invert axis)
 	 *
 	 * @return

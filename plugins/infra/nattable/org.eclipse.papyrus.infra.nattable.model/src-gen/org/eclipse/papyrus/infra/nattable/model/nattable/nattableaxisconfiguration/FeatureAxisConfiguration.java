@@ -34,7 +34,6 @@ package org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfigurat
  * @generated
  */
 public interface FeatureAxisConfiguration extends IAxisConfiguration {
-
 	/**
 	 * Returns the value of the '<em><b>Show Only Common Feature</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -52,8 +51,7 @@ public interface FeatureAxisConfiguration extends IAxisConfiguration {
 	boolean isShowOnlyCommonFeature();
 
 	/**
-	 * Sets the value of the ' {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.FeatureAxisConfiguration#isShowOnlyCommonFeature
-	 * <em>Show Only Common Feature</em>}' attribute.
+	 * Sets the value of the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.FeatureAxisConfiguration#isShowOnlyCommonFeature <em>Show Only Common Feature</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *

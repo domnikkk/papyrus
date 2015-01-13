@@ -31,7 +31,6 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattableconfiguration.T
  * @generated
  */
 public class NattableconfigurationFactoryImpl extends EFactoryImpl implements NattableconfigurationFactory {
-
 	/**
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->

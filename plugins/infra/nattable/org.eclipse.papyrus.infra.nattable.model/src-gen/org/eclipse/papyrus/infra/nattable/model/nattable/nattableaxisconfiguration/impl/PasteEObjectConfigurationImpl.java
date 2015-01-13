@@ -27,17 +27,14 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfigurati
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.impl.PasteEObjectConfigurationImpl#getPastedElementId <em> Pasted Element Id</em>}</li>
- * <li>
- * {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.impl.PasteEObjectConfigurationImpl#getPasteElementContainementFeature
- * <em>Paste Element Containement Feature</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.impl.PasteEObjectConfigurationImpl#getPastedElementId <em>Pasted Element Id</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.impl.PasteEObjectConfigurationImpl#getPasteElementContainementFeature <em>Paste Element Containement Feature</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
 public class PasteEObjectConfigurationImpl extends IPasteConfigurationImpl implements PasteEObjectConfiguration {
-
 	/**
 	 * The default value of the '{@link #getPastedElementId() <em>Pasted Element Id</em>}' attribute.
 	 * <!-- begin-user-doc -->

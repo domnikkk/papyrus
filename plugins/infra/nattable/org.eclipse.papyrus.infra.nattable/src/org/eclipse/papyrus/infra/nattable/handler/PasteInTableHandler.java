@@ -15,9 +15,12 @@ package org.eclipse.papyrus.infra.nattable.handler;
 
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
+import org.eclipse.core.runtime.IStatus;
+import org.eclipse.papyrus.infra.nattable.dialog.PasteImportStatusDialog;
 import org.eclipse.papyrus.infra.nattable.manager.PasteAxisInNattableManager;
 import org.eclipse.papyrus.infra.nattable.utils.CSVPasteHelper;
 import org.eclipse.papyrus.infra.nattable.utils.TableClipboardUtils;
+import org.eclipse.swt.widgets.Display;
 
 /**
  * Paste Handler
@@ -27,6 +30,9 @@ import org.eclipse.papyrus.infra.nattable.utils.TableClipboardUtils;
  */
 public class PasteInTableHandler extends AbstractTableHandler {
 
+	public static final String OPEN_DIALOG_ON_FAIL_BOOLEAN_PARAMETER = "openDialogOnFail"; //$NON-NLS-1$
+
+	public static final String OPEN__PROGRESS_MONITOR_DIALOG = "openProgressMonitorDialog"; //$NON-NLS-1$
 	/**
 	 * this field is used to determine if we want open a dialog to prevent the user that the command creation and the command execution can take a
 	 * long time
@@ -45,9 +51,26 @@ public class PasteInTableHandler extends AbstractTableHandler {
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		CSVPasteHelper pasteHelper = new CSVPasteHelper();
-		PasteAxisInNattableManager pasteManager = new PasteAxisInNattableManager(getCurrentNattableModelManager(), pasteHelper, useProgressMonitorDialog, TableClipboardUtils.getClipboardContentsAsString());
-		pasteManager.doPaste();
-		return null;
+
+		boolean openProgressMonitor = useProgressMonitorDialog;
+		Object value = event.getParameters().get(OPEN__PROGRESS_MONITOR_DIALOG);
+		if (value instanceof Boolean) {
+			openProgressMonitor = ((Boolean) value).booleanValue();
+		}
+		PasteAxisInNattableManager pasteManager = new PasteAxisInNattableManager(getCurrentNattableModelManager(), pasteHelper, openProgressMonitor, TableClipboardUtils.getClipboardContentsAsString());
+		IStatus result = pasteManager.doPaste();
+		displayDialog(event, result);
+		// used in JUnit test for paste
+		return result;
+	}
+
+	private void displayDialog(ExecutionEvent event, IStatus result) {
+		if (!result.isOK()) {
+			Object res = event.getParameters().get(OPEN_DIALOG_ON_FAIL_BOOLEAN_PARAMETER);
+			if (res == null || Boolean.TRUE.equals(res)) {
+				new PasteImportStatusDialog(Display.getDefault().getActiveShell(), result).open();
+			}
+		}
 	}
 
 	/**

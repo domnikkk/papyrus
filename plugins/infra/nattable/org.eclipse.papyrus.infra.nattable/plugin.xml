@@ -90,6 +90,20 @@
              </with>
           </visibleWhen>
        </command>
+         <command
+             commandId="org.eclipse.papyrus.infra.nattable.row.categories.command"
+             style="push">
+          <visibleWhen>
+             <with
+                   variable="selection">
+                <test
+                      forcePluginActivation="true"
+                      property="org.eclipse.papyrus.infra.nattable.tester.isHierarchicTable"
+                      value="true">
+                </test>
+             </with>
+          </visibleWhen>
+       </command>
        <command
              commandId="org.eclipse.papyrus.infra.nattable.exporttoXLScommand"
              style="push">
@@ -104,6 +118,82 @@
              </with>
           </visibleWhen>
        </command>
+        <menu
+             label="Hierarchic Style">
+          <visibleWhen>
+             <with
+                   variable="selection">
+                <test
+                      forcePluginActivation="false"
+                      property="org.eclipse.papyrus.infra.nattable.tester.isHierarchicTable"
+                      value="true">
+                </test>
+             </with>
+          </visibleWhen>
+          <command
+                commandId="org.eclipse.papyrus.infra.nattable.table.hierarchic.style"
+                label="Tree Single Column Style"
+                style="radio">
+             <parameter
+                   name="org.eclipse.ui.commands.radioStateParameter"
+                   value="HIERARCHIC_SINGLE_TREE_COLUMN">
+             </parameter>
+          </command>
+          <command
+                commandId="org.eclipse.papyrus.infra.nattable.table.hierarchic.style"
+                label="Tree Multi Column Style"
+                style="radio">
+             <parameter
+                   name="org.eclipse.ui.commands.radioStateParameter"
+                   value="HIERARCHIC_MULTI_TREE_COLUMN">
+             </parameter>
+          </command>
+       </menu>
+       <menu
+       		icon="icons/mergeTable.gif"
+       		label="Merge Options">
+       		<visibleWhen>
+             <and>
+             	<with
+                   variable="selection">
+                	<test
+                      forcePluginActivation="true"
+                      property="org.eclipse.papyrus.infra.nattable.tester.isNattableWidget"
+                      value="true">
+                	</test>
+             	</with>
+             </and>
+          </visibleWhen>
+<!--          <command
+                commandId="org.eclipse.papyrus.infra.nattable.mergeTable"
+                label="Merge/UnMerge all Table Cells"
+                style="toggle"
+                tooltip="Merge/UnMerge all Table Cells option">
+             <visibleWhen
+             	checkEnabled="false">
+             </visibleWhen>
+          </command> -->
+          <command
+                commandId="org.eclipse.papyrus.infra.nattable.mergeRows"
+                label="Merge/UnMerge Rows Cells"
+                style="toggle">
+          </command>
+          <command
+                commandId="org.eclipse.papyrus.infra.nattable.mergeColumns"
+                label="Merge/UnMerge Columns Cells"
+                style="toggle">
+          </command>
+          <command
+                commandId="org.eclipse.papyrus.infra.nattable.mergeSelectedRows"
+                label="Merge/UnMerge Selected Rows' Cells"
+                style="toggle">
+          </command>
+          <command
+                commandId="org.eclipse.papyrus.infra.nattable.mergeSelectedColumns"
+                label="Merge/UnMerge Selected Columns' Cells"
+                style="toggle">
+          </command>
+       </menu>
        <menu
              icon="icons/tableColumnAction.gif"
              label="Columns">
@@ -566,6 +656,86 @@
                 </and>
              </activeWhen>
           </handler>
+<!--	<handler
+		class="org.eclipse.papyrus.infra.nattable.handler.MergeTableHandler"
+		commandId="org.eclipse.papyrus.infra.nattable.mergeTable">
+		<activeWhen>
+			<and>
+				<with
+					variable="selection">
+					<test
+						forcePluginActivation="true"
+						property="org.eclipse.papyrus.infra.nattable.mergeOptionTester.mergeTable"
+						value="true">
+					</test>
+				</with>
+			</and>
+		</activeWhen>
+	</handler> -->
+	<handler
+		class="org.eclipse.papyrus.infra.nattable.handler.MergeRowsHandler"
+		commandId="org.eclipse.papyrus.infra.nattable.mergeRows">
+		<activeWhen>
+			<and>
+				<with
+					variable="selection">
+					<test
+						forcePluginActivation="true"
+						property="org.eclipse.papyrus.infra.nattable.mergeOptionTester.mergeRows"
+						value="true">
+					</test>
+				</with>
+			</and>
+		</activeWhen>
+	</handler>
+	<handler
+		class="org.eclipse.papyrus.infra.nattable.handler.MergeColumnsHandler"
+		commandId="org.eclipse.papyrus.infra.nattable.mergeColumns">
+		<activeWhen>
+			<and>
+				<with
+					variable="selection">
+					<test
+						forcePluginActivation="true"
+						property="org.eclipse.papyrus.infra.nattable.mergeOptionTester.mergeColumns"
+						value="true">
+					</test>
+				</with>
+			</and>
+		</activeWhen>
+	</handler>
+	<handler
+		class="org.eclipse.papyrus.infra.nattable.handler.MergeSelectedRowsHandler"
+		commandId="org.eclipse.papyrus.infra.nattable.mergeSelectedRows">
+		<activeWhen>
+			<and>
+				<with
+					variable="selection">
+					<test
+						forcePluginActivation="true"
+						property="org.eclipse.papyrus.infra.nattable.mergeOptionTester.mergeSelectedRows"
+						value="true">
+					</test>
+				</with>
+			</and>
+		</activeWhen>
+	</handler>
+	<handler
+		class="org.eclipse.papyrus.infra.nattable.handler.MergeSelectedColumnsHandler"
+		commandId="org.eclipse.papyrus.infra.nattable.mergeSelectedColumns">
+		<activeWhen>
+			<and>
+				<with
+					variable="selection">
+					<test
+						forcePluginActivation="true"
+						property="org.eclipse.papyrus.infra.nattable.mergeOptionTester.mergeSelectedColumns"
+						value="true">
+					</test>
+				</with>
+			</and>
+		</activeWhen>
+	</handler>
  </extension>
  <extension
        point="org.eclipse.core.expressions.propertyTesters">
@@ -573,7 +743,14 @@
           class="org.eclipse.papyrus.infra.nattable.utils.NattableWidgetPropertyTester"
           id="org.eclipse.papyrus.infra.nattable.tester"
           namespace="org.eclipse.papyrus.infra.nattable.tester"
-          properties="isNattableWidget, hasFeatureRowHeaderConfiguration, hasFeatureColumnHeaderConfiguration, hasSlaveRowAxisProvider, hasSlaveColumnAxisProvider, canInvertAxis"
+          properties="isNattableWidget, hasFeatureRowHeaderConfiguration, hasFeatureColumnHeaderConfiguration, hasSlaveRowAxisProvider, hasSlaveColumnAxisProvider, canInvertAxis, isHierarchicTable"
+          type="org.eclipse.jface.viewers.IStructuredSelection">
+    </propertyTester>
+    <propertyTester
+          class="org.eclipse.papyrus.infra.nattable.utils.NattableMergePropertyTester"
+          id="org.eclipse.papyrus.infra.nattable.mergeOptionTester"
+          namespace="org.eclipse.papyrus.infra.nattable.mergeOptionTester"
+          properties="mergeRows, mergeColumns, mergeSelectedRows, mergeSelectedColumns, mergeTable"
           type="org.eclipse.jface.viewers.IStructuredSelection">
     </propertyTester>
  </extension>
@@ -619,6 +796,10 @@
                context="org.eclipse.papyrus.infra.nattable.body.labelprovider">
          </labelProviderContext>
       </labelProvider>
+     <context
+           description="Context used to display feature referenced by TreeFillingConfiguration"
+           id="org.eclipse.papyrus.infra.nattable.header.treefilling.feature.labelprovider">
+     </context>
  </extension>
  
  <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes">
@@ -656,14 +837,58 @@
          id="org.eclipse.papyrus.infra.nattable.exporttoXLScommand"
          name="Export to XLS">
    </command>
-
+<!--   <command
+         description="Merge all the Table"
+         id="org.eclipse.papyrus.infra.nattable.mergeTable"
+         name="Merge Table">
+      <state
+            class="org.eclipse.ui.handlers.RegistryToggleState:true"
+            id="org.eclipse.ui.commands.toggleState">
+      </state>
+   </command> -->
+   <command
+         description="Merge/UnMerge Row Cells option"
+         id="org.eclipse.papyrus.infra.nattable.mergeRows"
+         name="Merge/UnMerge Row Cells">
+      <state
+            class="org.eclipse.ui.handlers.RegistryToggleState:true"
+            id="org.eclipse.ui.commands.toggleState">
+      </state>
+   </command>
+   <command
+         description="Merge/UnMerge Column Cells option"
+         id="org.eclipse.papyrus.infra.nattable.mergeColumns"
+         name="Merge/UnMerge Column Cells">
+      <state
+            class="org.eclipse.ui.handlers.RegistryToggleState:true"
+            id="org.eclipse.ui.commands.toggleState">
+      </state>
+   </command>
+   <command
+         description="Merge/UnMerge Selected row Axis' Cells option"
+         id="org.eclipse.papyrus.infra.nattable.mergeSelectedRows"
+         name="Merge/UnMerge Row Axis Cells">
+      <state
+            class="org.eclipse.ui.handlers.RegistryToggleState:true"
+            id="org.eclipse.ui.commands.toggleState">
+      </state>
+   </command>
+   <command
+         description="Merge/UnMerge Selected column Axis' Cells option"
+         id="org.eclipse.papyrus.infra.nattable.mergeSelectedColumns"
+         name="Merge/UnMerge Column Axis Cells">
+      <state
+            class="org.eclipse.ui.handlers.RegistryToggleState:true"
+            id="org.eclipse.ui.commands.toggleState">
+      </state>
+   </command>      
    <command
          categoryId="org.eclipse.papyrus.editor.category"
          defaultHandler="org.eclipse.papyrus.infra.nattable.handler.SelectColumnsHandler"
          description="Open a dialog to select the columns to display"
          id="org.eclipse.papyrus.infra.nattable.createdestroycolumns"
          name="Select the columns to Show">
-      </command>
+   </command>
    <command
          categoryId="org.eclipse.papyrus.editor.category"
          defaultHandler="org.eclipse.papyrus.infra.nattable.handler.SelectRowsHandler"
@@ -992,6 +1217,13 @@
             id="org.eclipse.papyrus.infra.nattable.edit.column.header"
             name="Rename Header">
       </command>
+        <command
+            categoryId="org.eclipse.papyrus.infra.nattable.rows.command.category"
+            defaultHandler="org.eclipse.papyrus.infra.nattable.handler.ConfigureCategoriesHandler"
+            description="Allows to configure the categories to display in the Tree Table"
+            id="org.eclipse.papyrus.infra.nattable.row.categories.command"
+            name="Configure Categories">
+      </command>
       <command
             categoryId="org.eclipse.papyrus.infra.nattable.rows.command.category"
             defaultHandler="org.eclipse.papyrus.infra.nattable.handler.RowEditAliasHeaderHandler"
@@ -1097,7 +1329,7 @@
          point="org.eclipse.ui.importWizards">
       <wizard
             category="org.eclipse.papyrus.infra.core.importcategory"
-            class="org.eclipse.papyrus.infra.nattable.wizard.pages.ImportTableWizard"
+            class="org.eclipse.papyrus.infra.nattable.wizard.ImportTableWizard"
             icon="icons/import_wiz_16x16-papyrusColor.gif"
             id="org.eclipse.papyrus.infra.nattable.import.category"
             name="Import In Open Table">
@@ -1106,5 +1338,140 @@
          </description>
       </wizard>
    </extension>
+   <extension
+         point="org.eclipse.papyrus.infra.nattable.cellmanager">
+      <cellManager
+            id="org.eclipse.papyrus.infra.nattable.tree.filling.configuration"
+            manager="org.eclipse.papyrus.infra.nattable.manager.cell.TreeFillingConfigurationCellManager"
+            order="10">
+      </cellManager>
+   </extension>
+   <extension
+         name="commands for Tree table"
+         point="org.eclipse.ui.commands">
+      <command
+            categoryId="org.eclipse.papyrus.infra.nattable.category"
+            defaultHandler="org.eclipse.papyrus.infra.nattable.handler.ChangeHierarchicalTableStyle"
+            id="org.eclipse.papyrus.infra.nattable.table.hierarchic.style"
+            name="Change Display Style">
+         <commandParameter
+               id="org.eclipse.ui.commands.radioStateParameter"
+               name="HierarchicalStyleParameter"
+               optional="false">
+         </commandParameter>
+         <state
+               class="org.eclipse.ui.handlers.RadioState:HIERARCHIC_MULTI_TREE_COLUMN"
+               id="org.eclipse.ui.commands.radioState">
+         </state>
+      </command>
+      <command
+            categoryId="org.eclipse.papyrus.infra.nattable.rows.command.category"
+            defaultHandler="org.eclipse.papyrus.infra.nattable.handler.TreeRowHideAllCategoriesHandler"
+            description="This command allows to Hide all categories displayed in a table"
+            id="org.eclipse.papyrus.infra.nattable.row.hide.allcategories.command"
+            name="Hide All Categories Command">
+      </command>
+      <command
+            categoryId="org.eclipse.papyrus.infra.nattable.rows.command.category"
+            defaultHandler="org.eclipse.papyrus.infra.nattable.handler.TreeRowShowAllCategoriesHandler"
+            description="This command allows to Show all categories displayed in a table"
+            id="org.eclipse.papyrus.infra.nattable.row.show.allcategories.command"
+            name="Show All Categories Command">
+      </command>
+      <command
+            categoryId="org.eclipse.papyrus.infra.nattable.rows.command.category"
+            defaultHandler="org.eclipse.papyrus.infra.nattable.handler.TreeRowHideShowCategoryHandler"
+            description="This command allows to Show/hide the categories for a given depth"
+            id="org.eclipse.papyrus.infra.nattable.row.show.hide.category.command"
+            name="Show/Hide Category for a given depth command">
+      </command>
+      <command
+            categoryId="org.eclipse.papyrus.infra.nattable.rows.command.category"
+            description="This command allows to Expand All Node in the tree"
+            id="org.eclipse.papyrus.infra.nattable.row.expand.all.tree.command"
+            name="Expand All">
+         <defaultHandler
+               class="org.eclipse.papyrus.infra.nattable.handler.CollapseAndExpandTreeHandler">
+            <parameter
+                  name="treeAction"
+                  value="EXPAND_ALL">
+            </parameter>
+         </defaultHandler>
+      </command>
+      <command
+            categoryId="org.eclipse.papyrus.infra.nattable.rows.command.category"
+            description="This command allows to Expand Selection On 2 Levels"
+            id="org.eclipse.papyrus.infra.nattable.row.expand.selection.on.2.level.command"
+            name="Expand Selection On 2 Levels">
+         <defaultHandler
+               class="org.eclipse.papyrus.infra.nattable.handler.CollapseAndExpandTreeHandler">
+            <parameter
+                  name="treeAction"
+                  value="EXPAND_TWO_LEVEL">
+            </parameter>
+         </defaultHandler>
+      </command>
+      <command
+            categoryId="org.eclipse.papyrus.infra.nattable.rows.command.category"
+            description="This command allows to Expand All On Selection"
+            id="org.eclipse.papyrus.infra.nattable.row.expand.all.on.selection.command"
+            name="Expand All for selection">
+         <defaultHandler
+               class="org.eclipse.papyrus.infra.nattable.handler.CollapseAndExpandTreeHandler">
+            <parameter
+                  name="treeAction"
+                  value="EXPAND_ALL_FROM_SELECTION">
+            </parameter>
+         </defaultHandler>
+      </command>
+        <command
+            categoryId="org.eclipse.papyrus.infra.nattable.rows.command.category"
+            description="This command allows to Collapse All Tree"
+            id="org.eclipse.papyrus.infra.nattable.row.collapse.all.tree.command"
+            name="Collapse All">
+              <defaultHandler
+               class="org.eclipse.papyrus.infra.nattable.handler.CollapseAndExpandTreeHandler">
+            <parameter
+                  name="treeAction"
+                  value="COLLAPSE_ALL">
+            </parameter>
+         </defaultHandler>
+      </command>
+              <command
+            categoryId="org.eclipse.papyrus.infra.nattable.rows.command.category"
+            description="This command allows to Collapse All levels for selection"
+            id="org.eclipse.papyrus.infra.nattable.row.collapse.all.on.selection.command"
+            name="Collapse All for selection">
+              <defaultHandler
+               class="org.eclipse.papyrus.infra.nattable.handler.CollapseAndExpandTreeHandler">
+            <parameter
+                  name="treeAction"
+                  value="COLLAPSE_ALL_FROM_SELECTION">
+            </parameter>
+         </defaultHandler>
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commandImages">
+          <image
+            commandId="org.eclipse.papyrus.infra.nattable.row.expand.all.tree.command"
+            icon="icons/expandAll.png">
+      </image>
+       <image
+            commandId="org.eclipse.papyrus.infra.nattable.row.expand.selection.on.2.level.command"
+            icon="icons/expand2level.png">
+      </image>
+       <image
+            commandId="org.eclipse.papyrus.infra.nattable.row.expand.all.on.selection.command"
+            icon="icons/expandAllBranch.png">
+      </image>
+       <image
+            commandId="org.eclipse.papyrus.infra.nattable.row.collapse.all.tree.command"
+            icon="icons/collapseAll.png">
+      </image>
+       <image
+            commandId="org.eclipse.papyrus.infra.nattable.row.collapse.all.on.selection.command"
+            icon="icons/collapseAllBranch.png">
+      </image>
+   </extension>
 </plugin>
-

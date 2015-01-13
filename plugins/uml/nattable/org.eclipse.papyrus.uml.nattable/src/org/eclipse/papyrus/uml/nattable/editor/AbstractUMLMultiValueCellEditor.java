@@ -30,7 +30,7 @@ import org.eclipse.papyrus.infra.nattable.manager.table.ITableAxisElementProvide
 import org.eclipse.papyrus.infra.nattable.utils.AxisUtils;
 import org.eclipse.papyrus.infra.widgets.creation.ReferenceValueFactory;
 import org.eclipse.papyrus.infra.widgets.editors.IElementSelector;
-import org.eclipse.papyrus.infra.widgets.editors.MultipleValueSelectorDialog;
+import org.eclipse.papyrus.infra.widgets.editors.MultipleValueSelectionDialog;
 import org.eclipse.papyrus.infra.widgets.providers.IStaticContentProvider;
 import org.eclipse.papyrus.uml.nattable.utils.UMLTableUtils;
 import org.eclipse.papyrus.uml.tools.providers.UMLContentProvider;
@@ -83,7 +83,7 @@ public abstract class AbstractUMLMultiValueCellEditor extends AbstractDialogCell
 	 */
 	@Override
 	public int open() {
-		int result = ((MultipleValueSelectorDialog) this.dialog).open();
+		int result = ((MultipleValueSelectionDialog) this.dialog).open();
 		if (manager instanceof IAdaptable) {
 			NatTable nattable = (NatTable) ((IAdaptable) manager).getAdapter(NatTable.class);
 			if (nattable != null && !nattable.isDisposed()) {
@@ -161,7 +161,7 @@ public abstract class AbstractUMLMultiValueCellEditor extends AbstractDialogCell
 		final int upperBound = realFeature.getUpperBound();
 		final Object value = realEditedObject.eGet(realFeature);
 		IElementSelector selector = getElementSelector(unique, new UMLLabelProvider(), p);
-		final MultipleValueSelectorDialog dialog = new MultipleValueSelectorDialog(Display.getCurrent().getActiveShell(), selector, title, unique, ordered, upperBound) {
+		final MultipleValueSelectionDialog dialog = new MultipleValueSelectionDialog(Display.getCurrent().getActiveShell(), selector, title, unique, ordered, upperBound) {
 
 			@Override
 			protected void okPressed() {

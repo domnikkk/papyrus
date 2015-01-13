@@ -24,7 +24,6 @@ import org.eclipse.emf.ecore.EFactory;
  * @generated
  */
 public interface NattableaxisconfigurationFactory extends EFactory {
-
 	/**
 	 * The singleton instance of the factory.
 	 * <!-- begin-user-doc -->
@@ -113,6 +112,16 @@ public interface NattableaxisconfigurationFactory extends EFactory {
 	 * @generated
 	 */
 	PasteEObjectConfiguration createPasteEObjectConfiguration();
+
+	/**
+	 * Returns a new object of class '<em>Tree Filling Configuration</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return a new object of class '<em>Tree Filling Configuration</em>'.
+	 * @generated
+	 */
+	TreeFillingConfiguration createTreeFillingConfiguration();
 
 	/**
 	 * Returns the package supported by this factory.

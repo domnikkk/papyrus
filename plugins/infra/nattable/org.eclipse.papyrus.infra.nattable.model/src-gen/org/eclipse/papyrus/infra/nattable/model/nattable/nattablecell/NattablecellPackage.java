@@ -37,7 +37,6 @@ import org.eclipse.emf.ecore.EcorePackage;
  * @generated
  */
 public interface NattablecellPackage extends EPackage {
-
 	/**
 	 * The package name.
 	 * <!-- begin-user-doc -->
@@ -156,7 +155,7 @@ public interface NattablecellPackage extends EPackage {
 	int CELL_OPERATION_COUNT = EcorePackage.EMODEL_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablecell.ICellAxisWrapper <em>ICell Axis Wrapper</em>} ' class.
+	 * The meta object id for the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablecell.ICellAxisWrapper <em>ICell Axis Wrapper</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -217,8 +216,7 @@ public interface NattablecellPackage extends EPackage {
 	int ICELL_AXIS_WRAPPER_OPERATION_COUNT = EcorePackage.EMODEL_ELEMENT_OPERATION_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablecell.impl.EObjectAxisWrapperImpl
-	 * <em>EObject Axis Wrapper</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablecell.impl.EObjectAxisWrapperImpl <em>EObject Axis Wrapper</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -289,8 +287,7 @@ public interface NattablecellPackage extends EPackage {
 	int EOBJECT_AXIS_WRAPPER_OPERATION_COUNT = ICELL_AXIS_WRAPPER_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablecell.impl.IdAxisWrapperImpl
-	 * <em>Id Axis Wrapper</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablecell.impl.IdAxisWrapperImpl <em>Id Axis Wrapper</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -373,7 +370,7 @@ public interface NattablecellPackage extends EPackage {
 	EClass getCell();
 
 	/**
-	 * Returns the meta object for the containment reference ' {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablecell.Cell#getColumnWrapper <em>Column Wrapper</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablecell.Cell#getColumnWrapper <em>Column Wrapper</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -385,7 +382,7 @@ public interface NattablecellPackage extends EPackage {
 	EReference getCell_ColumnWrapper();
 
 	/**
-	 * Returns the meta object for the containment reference ' {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablecell.Cell#getRowWrapper <em>Row Wrapper</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablecell.Cell#getRowWrapper <em>Row Wrapper</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -397,7 +394,7 @@ public interface NattablecellPackage extends EPackage {
 	EReference getCell_RowWrapper();
 
 	/**
-	 * Returns the meta object for the containment reference list ' {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablecell.Cell#getProblems <em>Problems</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablecell.Cell#getProblems <em>Problems</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -409,8 +406,7 @@ public interface NattablecellPackage extends EPackage {
 	EReference getCell_Problems();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablecell.ICellAxisWrapper
-	 * <em>ICell Axis Wrapper</em>}'.
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablecell.ICellAxisWrapper <em>ICell Axis Wrapper</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -421,8 +417,7 @@ public interface NattablecellPackage extends EPackage {
 	EClass getICellAxisWrapper();
 
 	/**
-	 * Returns the meta object for the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablecell.ICellAxisWrapper#getElement()
-	 * <em>Get Element</em>}' operation.
+	 * Returns the meta object for the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablecell.ICellAxisWrapper#getElement() <em>Get Element</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -433,8 +428,7 @@ public interface NattablecellPackage extends EPackage {
 	EOperation getICellAxisWrapper__GetElement();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablecell.EObjectAxisWrapper
-	 * <em>EObject Axis Wrapper</em>}'.
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablecell.EObjectAxisWrapper <em>EObject Axis Wrapper</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -445,8 +439,7 @@ public interface NattablecellPackage extends EPackage {
 	EClass getEObjectAxisWrapper();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablecell.EObjectAxisWrapper#getElement
-	 * <em>Element</em>}'.
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablecell.EObjectAxisWrapper#getElement <em>Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -458,8 +451,7 @@ public interface NattablecellPackage extends EPackage {
 	EReference getEObjectAxisWrapper_Element();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablecell.IdAxisWrapper
-	 * <em>Id Axis Wrapper</em>}'.
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablecell.IdAxisWrapper <em>Id Axis Wrapper</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -470,8 +462,7 @@ public interface NattablecellPackage extends EPackage {
 	EClass getIdAxisWrapper();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablecell.IdAxisWrapper#getElement
-	 * <em>Element</em>}'.
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablecell.IdAxisWrapper#getElement <em>Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -507,7 +498,6 @@ public interface NattablecellPackage extends EPackage {
 	 * @generated
 	 */
 	interface Literals {
-
 		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablecell.impl.CellImpl <em>Cell</em>}' class.
 		 * <!-- begin-user-doc -->
@@ -547,8 +537,7 @@ public interface NattablecellPackage extends EPackage {
 		EReference CELL__PROBLEMS = eINSTANCE.getCell_Problems();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablecell.ICellAxisWrapper
-		 * <em>ICell Axis Wrapper</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablecell.ICellAxisWrapper <em>ICell Axis Wrapper</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 *
@@ -568,8 +557,7 @@ public interface NattablecellPackage extends EPackage {
 		EOperation ICELL_AXIS_WRAPPER___GET_ELEMENT = eINSTANCE.getICellAxisWrapper__GetElement();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablecell.impl.EObjectAxisWrapperImpl
-		 * <em>EObject Axis Wrapper</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablecell.impl.EObjectAxisWrapperImpl <em>EObject Axis Wrapper</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 *
@@ -589,8 +577,7 @@ public interface NattablecellPackage extends EPackage {
 		EReference EOBJECT_AXIS_WRAPPER__ELEMENT = eINSTANCE.getEObjectAxisWrapper_Element();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablecell.impl.IdAxisWrapperImpl
-		 * <em>Id Axis Wrapper</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablecell.impl.IdAxisWrapperImpl <em>Id Axis Wrapper</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 *

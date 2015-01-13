@@ -68,7 +68,7 @@ public class MultiLineTextCellEditorEx extends MultiLineTextCellEditor {
 	 */
 	@Override
 	public Text createEditorControl(Composite parent) {
-		IBindingService service = (IBindingService) PlatformUI.getWorkbench().getService(IBindingService.class);
+		IBindingService service = PlatformUI.getWorkbench().getService(IBindingService.class);
 		this.initialValueForFilteringKeyPress = service.isKeyFilterEnabled();
 		if (this.initialValueForFilteringKeyPress) {
 			service.setKeyFilterEnabled(false);
@@ -113,7 +113,7 @@ public class MultiLineTextCellEditorEx extends MultiLineTextCellEditor {
 	@Override
 	public void close() {
 		if (this.initialValueForFilteringKeyPress) {
-			IBindingService service = (IBindingService) PlatformUI.getWorkbench().getService(IBindingService.class);
+			IBindingService service = PlatformUI.getWorkbench().getService(IBindingService.class);
 			service.setKeyFilterEnabled(this.initialValueForFilteringKeyPress);
 		}
 		super.close();

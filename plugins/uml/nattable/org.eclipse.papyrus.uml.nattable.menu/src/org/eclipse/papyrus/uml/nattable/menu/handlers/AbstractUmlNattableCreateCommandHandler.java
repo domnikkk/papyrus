@@ -53,7 +53,7 @@ public abstract class AbstractUmlNattableCreateCommandHandler extends AbstractUm
 	 */
 	@Override
 	protected ICommandContext getCommandContext() {
-		return TableMenuUtils.getTableCommandContext(INattableModelManagerUtils.getTableManagerFromWorkbenchPart(getActiveWorkbenchPart()));
+		return TableMenuUtils.getTableCreateElementCommandContext(INattableModelManagerUtils.getTableManagerFromWorkbenchPart(getActiveWorkbenchPart()));
 
 	}
 

@@ -32,6 +32,7 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfigurati
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.NattableaxisconfigurationPackage;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.PasteEObjectConfiguration;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.TableHeaderAxisConfiguration;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.TreeFillingConfiguration;
 
 /**
  * <!-- begin-user-doc -->
@@ -42,7 +43,6 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfigurati
  * @generated
  */
 public class NattableaxisconfigurationValidator extends EObjectValidator {
-
 	/**
 	 * The cached model package
 	 * <!-- begin-user-doc -->
@@ -136,6 +136,8 @@ public class NattableaxisconfigurationValidator extends EObjectValidator {
 			return validateIPasteConfiguration((IPasteConfiguration) value, diagnostics, context);
 		case NattableaxisconfigurationPackage.PASTE_EOBJECT_CONFIGURATION:
 			return validatePasteEObjectConfiguration((PasteEObjectConfiguration) value, diagnostics, context);
+		case NattableaxisconfigurationPackage.TREE_FILLING_CONFIGURATION:
+			return validateTreeFillingConfiguration((TreeFillingConfiguration) value, diagnostics, context);
 		case NattableaxisconfigurationPackage.AXIS_INDEX_STYLE:
 			return validateAxisIndexStyle((AxisIndexStyle) value, diagnostics, context);
 		default:
@@ -201,9 +203,15 @@ public class NattableaxisconfigurationValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateAbstractHeaderAxisConfiguration_oneObjectLabelConfigurationTypes(AbstractHeaderAxisConfiguration abstractHeaderAxisConfiguration, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate(NattableaxisconfigurationPackage.Literals.ABSTRACT_HEADER_AXIS_CONFIGURATION, abstractHeaderAxisConfiguration, diagnostics, context, "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot", //$NON-NLS-1$
+		return validate(NattableaxisconfigurationPackage.Literals.ABSTRACT_HEADER_AXIS_CONFIGURATION,
+				abstractHeaderAxisConfiguration,
+				diagnostics,
+				context, "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot", //$NON-NLS-1$
 				"oneObjectLabelConfigurationTypes", //$NON-NLS-1$
-				ABSTRACT_HEADER_AXIS_CONFIGURATION__ONE_OBJECT_LABEL_CONFIGURATION_TYPES__EEXPRESSION, Diagnostic.ERROR, DIAGNOSTIC_SOURCE, 0);
+				ABSTRACT_HEADER_AXIS_CONFIGURATION__ONE_OBJECT_LABEL_CONFIGURATION_TYPES__EEXPRESSION,
+				Diagnostic.ERROR,
+				DIAGNOSTIC_SOURCE,
+				0);
 	}
 
 	/**
@@ -223,9 +231,15 @@ public class NattableaxisconfigurationValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateAbstractHeaderAxisConfiguration_oneFeatureLabelConfigurationTypes(AbstractHeaderAxisConfiguration abstractHeaderAxisConfiguration, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate(NattableaxisconfigurationPackage.Literals.ABSTRACT_HEADER_AXIS_CONFIGURATION, abstractHeaderAxisConfiguration, diagnostics, context, "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot", //$NON-NLS-1$
+		return validate(NattableaxisconfigurationPackage.Literals.ABSTRACT_HEADER_AXIS_CONFIGURATION,
+				abstractHeaderAxisConfiguration,
+				diagnostics,
+				context, "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot", //$NON-NLS-1$
 				"oneFeatureLabelConfigurationTypes", //$NON-NLS-1$
-				ABSTRACT_HEADER_AXIS_CONFIGURATION__ONE_FEATURE_LABEL_CONFIGURATION_TYPES__EEXPRESSION, Diagnostic.ERROR, DIAGNOSTIC_SOURCE, 0);
+				ABSTRACT_HEADER_AXIS_CONFIGURATION__ONE_FEATURE_LABEL_CONFIGURATION_TYPES__EEXPRESSION,
+				Diagnostic.ERROR,
+				DIAGNOSTIC_SOURCE,
+				0);
 	}
 
 	/**
@@ -235,7 +249,63 @@ public class NattableaxisconfigurationValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateAxisManagerRepresentation(AxisManagerRepresentation axisManagerRepresentation, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(axisManagerRepresentation, diagnostics, context);
+		if (!validate_NoCircularContainment(axisManagerRepresentation, diagnostics, context)) {
+			return false;
+		}
+		boolean result = validate_EveryMultiplicityConforms(axisManagerRepresentation, diagnostics, context);
+		if (result || diagnostics != null) {
+			result &= validate_EveryDataValueConforms(axisManagerRepresentation, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryReferenceIsContained(axisManagerRepresentation, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryBidirectionalReferenceIsPaired(axisManagerRepresentation, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryProxyResolves(axisManagerRepresentation, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_UniqueID(axisManagerRepresentation, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryKeyUnique(axisManagerRepresentation, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validate_EveryMapEntryUnique(axisManagerRepresentation, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateAxisManagerRepresentation_nonEmptyAxisManager(axisManagerRepresentation, diagnostics, context);
+		}
+		return result;
+	}
+
+	/**
+	 * The cached validation expression for the nonEmptyAxisManager constraint of '<em>Axis Manager Representation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	protected static final String AXIS_MANAGER_REPRESENTATION__NON_EMPTY_AXIS_MANAGER__EEXPRESSION = "not (axisManagerId.oclIsUndefined() or axisManagerId = '')"; //$NON-NLS-1$
+
+	/**
+	 * Validates the nonEmptyAxisManager constraint of '<em>Axis Manager Representation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	public boolean validateAxisManagerRepresentation_nonEmptyAxisManager(AxisManagerRepresentation axisManagerRepresentation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate(NattableaxisconfigurationPackage.Literals.AXIS_MANAGER_REPRESENTATION,
+				axisManagerRepresentation,
+				diagnostics,
+				context, "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot", //$NON-NLS-1$
+				"nonEmptyAxisManager", //$NON-NLS-1$
+				AXIS_MANAGER_REPRESENTATION__NON_EMPTY_AXIS_MANAGER__EEXPRESSION,
+				Diagnostic.ERROR,
+				DIAGNOSTIC_SOURCE,
+				0);
 	}
 
 	/**
@@ -309,9 +379,15 @@ public class NattableaxisconfigurationValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateTableHeaderAxisConfiguration_axisManagersIdUnique(TableHeaderAxisConfiguration tableHeaderAxisConfiguration, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate(NattableaxisconfigurationPackage.Literals.TABLE_HEADER_AXIS_CONFIGURATION, tableHeaderAxisConfiguration, diagnostics, context, "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot", //$NON-NLS-1$
+		return validate(NattableaxisconfigurationPackage.Literals.TABLE_HEADER_AXIS_CONFIGURATION,
+				tableHeaderAxisConfiguration,
+				diagnostics,
+				context, "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot", //$NON-NLS-1$
 				"axisManagersIdUnique", //$NON-NLS-1$
-				TABLE_HEADER_AXIS_CONFIGURATION__AXIS_MANAGERS_ID_UNIQUE__EEXPRESSION, Diagnostic.ERROR, DIAGNOSTIC_SOURCE, 0);
+				TABLE_HEADER_AXIS_CONFIGURATION__AXIS_MANAGERS_ID_UNIQUE__EEXPRESSION,
+				Diagnostic.ERROR,
+				DIAGNOSTIC_SOURCE,
+				0);
 	}
 
 	/**
@@ -413,6 +489,16 @@ public class NattableaxisconfigurationValidator extends EObjectValidator {
 	 */
 	public boolean validatePasteEObjectConfiguration(PasteEObjectConfiguration pasteEObjectConfiguration, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(pasteEObjectConfiguration, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	public boolean validateTreeFillingConfiguration(TreeFillingConfiguration treeFillingConfiguration, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(treeFillingConfiguration, diagnostics, context);
 	}
 
 	/**

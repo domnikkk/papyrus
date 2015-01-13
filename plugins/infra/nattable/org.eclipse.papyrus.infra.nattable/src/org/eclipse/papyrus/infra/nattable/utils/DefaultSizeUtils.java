@@ -26,7 +26,7 @@ public final class DefaultSizeUtils {
 
 	private static final float WIDTH_HEIGHT_RATIO = 8;
 
-	private static final float ROW_HEADER_RATIO = 2; // Row header width height ratio
+	private static final float ROW_HEADER_RATIO = 6; // Row header width height ratio
 
 	private static final float DEFAULT_DPI = 96;
 

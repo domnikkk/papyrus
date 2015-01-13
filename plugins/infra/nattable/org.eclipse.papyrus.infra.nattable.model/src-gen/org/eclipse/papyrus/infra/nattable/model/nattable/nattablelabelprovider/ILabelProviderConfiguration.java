@@ -12,8 +12,7 @@
  */
 package org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider;
 
-import org.eclipse.emf.ecore.EModelElement;
-import org.eclipse.emf.ecore.EObject;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattablestyle.StyledElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,5 +28,5 @@ import org.eclipse.emf.ecore.EObject;
  * @model interface="true" abstract="true"
  * @generated
  */
-public interface ILabelProviderConfiguration extends EObject, EModelElement {
+public interface ILabelProviderConfiguration extends StyledElement {
 } // ILabelProviderConfiguration

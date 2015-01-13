@@ -26,6 +26,8 @@ import org.eclipse.nebula.widgets.nattable.selection.SelectionLayer;
 import org.eclipse.nebula.widgets.nattable.ui.NatEventData;
 import org.eclipse.papyrus.infra.nattable.manager.axis.IAxisManager;
 import org.eclipse.papyrus.infra.nattable.manager.table.INattableModelManager;
+import org.eclipse.papyrus.infra.nattable.manager.table.NattableModelManager;
+import org.eclipse.papyrus.infra.nattable.model.nattable.Table;
 import org.eclipse.papyrus.infra.nattable.utils.TableEditingDomainUtils;
 import org.eclipse.papyrus.infra.nattable.utils.TableSelectionWrapper;
 import org.eclipse.papyrus.infra.tools.util.WorkbenchPartHelper;
@@ -52,7 +54,7 @@ public abstract class AbstractTableHandler extends AbstractHandler {
 	 * the event which have declenched the call to setEnable(Object evaluationContext. This event contains the location of the mouse pointer when
 	 * the popup menu for this handler have been created
 	 */
-	// TODO : should maybe be remove with the future usage of e4 and the Eclispe Context
+	// TODO : should maybe be removed with the future usage of e4 and the Eclipse Context
 	protected NatEventData eventData;
 
 	/**
@@ -239,5 +241,21 @@ public abstract class AbstractTableHandler extends AbstractHandler {
 				wrapper = (TableSelectionWrapper) ((IAdaptable) selection).getAdapter(TableSelectionWrapper.class);
 			}
 		}
+	}
+
+	/**
+	 *
+	 * @return
+	 *         the currently managed table
+	 */
+	protected final Table getTable() {
+		return getCurrentNattableModelManager().getTable();
+	}
+
+	/**
+	 * Refreshes the table
+	 */
+	protected final void refreshTable() {
+		((NattableModelManager) getCurrentNattableModelManager()).refreshNatTable();
 	}
 }

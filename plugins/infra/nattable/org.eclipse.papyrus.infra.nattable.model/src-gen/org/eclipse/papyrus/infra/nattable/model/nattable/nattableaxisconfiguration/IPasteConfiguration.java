@@ -14,7 +14,6 @@ package org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfigurat
 
 import org.eclipse.emf.common.util.EList;
 
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>IPaste Configuration</b></em>'.
@@ -37,7 +36,6 @@ import org.eclipse.emf.common.util.EList;
  * @generated
  */
 public interface IPasteConfiguration extends IAxisConfiguration {
-
 	/**
 	 * Returns the value of the '<em><b>Post Actions</b></em>' attribute list.
 	 * The list contents are of type {@link java.lang.String}.
@@ -73,8 +71,7 @@ public interface IPasteConfiguration extends IAxisConfiguration {
 	boolean isDetachedMode();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.IPasteConfiguration#isDetachedMode
-	 * <em>Detached Mode</em>}' attribute.
+	 * Sets the value of the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.IPasteConfiguration#isDetachedMode <em>Detached Mode</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -84,4 +81,5 @@ public interface IPasteConfiguration extends IAxisConfiguration {
 	 * @generated
 	 */
 	void setDetachedMode(boolean value);
+
 } // IPasteConfiguration

@@ -25,10 +25,6 @@ public class CommandIds {
 		// to prevent instanciation
 	}
 
-	public static final String TOGGLE_STATE = "org.eclipse.ui.commands.toggleState"; //$NON-NLS-1$
-
-	public static final String RADIO_STATE = "org.eclipse.ui.commands.radioState"; //$NON-NLS-1$
-
 	public static final String COMMAND_COLUMN_DISPLAY_INDEX_ID = "org.eclipse.papyrus.infra.nattable.column.display.index"; //$NON-NLS-1$
 
 	public static final String COMMAND_COLUMN_DISPLAY_LABEL_ID = "org.eclipse.papyrus.infra.nattable.column.display.label"; //$NON-NLS-1$
@@ -70,5 +66,17 @@ public class CommandIds {
 	public static final String COMMAND_COLUMN_DISCONNECT_SLAVE = "org.eclipse.papyrus.infra.nattable.column.disconnect.slave"; //$NON-NLS-1$
 
 	public static final String COMMAND_INVERT_AXIS = "org.eclipse.papyrus.infra.nattable.invert.axis"; //$NON-NLS-1$
+
+	public static final String COMMAND_MERGE_ROWS = "org.eclipse.papyrus.infra.nattable.mergeRows"; //$NON-NLS-1$
+
+	public static final String COMMAND_MERGE_COLUMNS = "org.eclipse.papyrus.infra.nattable.mergeColumns"; //$NON-NLS-1$
+
+	public static final String COMMAND_MERGE_SELECTED_ROWS = "org.eclipse.papyrus.infra.nattable.mergeSelectedRows"; //$NON-NLS-1$
+
+	public static final String COMMAND_MERGE_SELECTED_COLUMNS = "org.eclipse.papyrus.infra.nattable.mergeSelectedColumns"; //$NON-NLS-1$
+
+	//	public static final String COMMAND_MERGE_TABLE = "org.eclipse.papyrus.infra.nattable.mergeTable"; //$NON-NLS-1$
+
+	public static final String COMMAND_HIERARCHIC_DISPLAY_STYLE = "org.eclipse.papyrus.infra.nattable.table.hierarchic.style";////$NON-NLS-1$
 
 }

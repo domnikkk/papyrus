@@ -38,7 +38,6 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisprovider.Na
  * @generated
  */
 public abstract class AxisProviderImpl extends AbstractAxisProviderImpl implements AxisProvider {
-
 	/**
 	 * The cached value of the '{@link #getAxis() <em>Axis</em>}' containment reference list.
 	 * <!-- begin-user-doc -->

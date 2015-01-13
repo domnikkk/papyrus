@@ -23,6 +23,7 @@ import org.eclipse.papyrus.infra.nattable.utils.HeaderAxisConfigurationManagemen
  *
  *
  */
+@Deprecated
 public class ColumnHeaderDataProvider extends AbstractHeaderDataProvider {
 
 	private int rowCount;
@@ -108,7 +109,7 @@ public class ColumnHeaderDataProvider extends AbstractHeaderDataProvider {
 	 */
 	@Override
 	protected AbstractHeaderAxisConfiguration getAxisConfiguration() {
-		return HeaderAxisConfigurationManagementUtils.getColumnAbstractHeaderAxisUsedInTable(this.manager.getTable());
+		return HeaderAxisConfigurationManagementUtils.getColumnAbstractHeaderAxisConfigurationUsedInTable(this.manager.getTable());
 	}
 
 	/**

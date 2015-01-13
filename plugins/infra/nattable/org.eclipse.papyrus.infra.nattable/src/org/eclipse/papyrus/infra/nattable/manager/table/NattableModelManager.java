@@ -20,10 +20,9 @@ import java.util.Collections;
 import java.util.EventObject;
 import java.util.Iterator;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicBoolean;
 
-import org.eclipse.core.commands.State;
 import org.eclipse.core.runtime.Assert;
-import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
@@ -36,7 +35,12 @@ import org.eclipse.emf.common.command.CompoundCommand;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.impl.AdapterImpl;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.edit.command.SetCommand;
+import org.eclipse.emf.transaction.NotificationFilter;
+import org.eclipse.emf.transaction.ResourceSetChangeEvent;
+import org.eclipse.emf.transaction.ResourceSetListener;
+import org.eclipse.emf.transaction.RollbackException;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.IEditCommandRequest;
@@ -49,22 +53,43 @@ import org.eclipse.jface.window.Window;
 import org.eclipse.nebula.widgets.nattable.NatTable;
 import org.eclipse.nebula.widgets.nattable.command.VisualRefreshCommand;
 import org.eclipse.nebula.widgets.nattable.data.IDataProvider;
+import org.eclipse.nebula.widgets.nattable.hideshow.ColumnHideShowLayer;
+import org.eclipse.nebula.widgets.nattable.hideshow.command.MultiColumnHideCommand;
+import org.eclipse.nebula.widgets.nattable.hideshow.command.MultiColumnShowCommand;
+import org.eclipse.nebula.widgets.nattable.hideshow.command.ShowAllColumnsCommand;
+import org.eclipse.nebula.widgets.nattable.layer.ILayer;
+import org.eclipse.nebula.widgets.nattable.layer.ILayerListener;
+import org.eclipse.nebula.widgets.nattable.layer.event.ILayerEvent;
 import org.eclipse.nebula.widgets.nattable.style.DisplayMode;
 import org.eclipse.nebula.widgets.nattable.ui.NatEventData;
 import org.eclipse.papyrus.commands.wrappers.GMFtoEMFCommandWrapper;
 import org.eclipse.papyrus.infra.nattable.Activator;
 import org.eclipse.papyrus.infra.nattable.command.CommandIds;
 import org.eclipse.papyrus.infra.nattable.dialog.DisplayedAxisSelectorDialog;
+import org.eclipse.papyrus.infra.nattable.layerstack.RowHeaderHierarchicalLayerStack;
+import org.eclipse.papyrus.infra.nattable.layerstack.RowHeaderLayerStack;
+import org.eclipse.papyrus.infra.nattable.listener.HideShowCategoriesTableListener;
 import org.eclipse.papyrus.infra.nattable.manager.axis.AxisManagerFactory;
 import org.eclipse.papyrus.infra.nattable.manager.axis.CompositeAxisManager;
+import org.eclipse.papyrus.infra.nattable.manager.axis.CompositeAxisManagerForEventList;
+import org.eclipse.papyrus.infra.nattable.manager.axis.CompositeTreeAxisManagerForEventList;
 import org.eclipse.papyrus.infra.nattable.manager.axis.IAxisManager;
+import org.eclipse.papyrus.infra.nattable.manager.axis.IAxisManagerForEventList;
 import org.eclipse.papyrus.infra.nattable.manager.axis.ICompositeAxisManager;
+import org.eclipse.papyrus.infra.nattable.manager.axis.ITreeItemAxisManagerForEventList;
 import org.eclipse.papyrus.infra.nattable.manager.cell.CellManagerFactory;
 import org.eclipse.papyrus.infra.nattable.messages.Messages;
 import org.eclipse.papyrus.infra.nattable.model.nattable.NattablePackage;
 import org.eclipse.papyrus.infra.nattable.model.nattable.Table;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxis.EObjectAxis;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxis.EStructuralFeatureAxis;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxis.FeatureIdAxis;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxis.IAxis;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxis.ITreeItemAxis;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AbstractHeaderAxisConfiguration;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AxisManagerRepresentation;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.LocalTableHeaderAxisConfiguration;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.TreeFillingConfiguration;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisprovider.AbstractAxisProvider;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisprovider.IMasterAxisProvider;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisprovider.ISlaveAxisProvider;
@@ -75,15 +100,32 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattableconfiguration.N
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.FeatureLabelProviderConfiguration;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.ILabelProviderConfiguration;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.ObjectLabelProviderConfiguration;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattablestyle.BooleanValueStyle;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattablestyle.DisplayStyle;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattablestyle.IntValueStyle;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattablestyle.NattablestyleFactory;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattablestyle.NattablestylePackage;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattablestyle.TableDisplayStyle;
+import org.eclipse.papyrus.infra.nattable.selection.ISelectionExtractor;
+import org.eclipse.papyrus.infra.nattable.selection.ObjectsSelectionExtractor;
+import org.eclipse.papyrus.infra.nattable.sort.ColumnSortModel;
+import org.eclipse.papyrus.infra.nattable.tree.CollapseAndExpandActionsEnum;
+import org.eclipse.papyrus.infra.nattable.tree.DatumExpansionModel;
+import org.eclipse.papyrus.infra.nattable.tree.DatumTreeFormat;
 import org.eclipse.papyrus.infra.nattable.utils.AxisUtils;
 import org.eclipse.papyrus.infra.nattable.utils.CellMapKey;
+import org.eclipse.papyrus.infra.nattable.utils.CollapseExpandActionHelper;
+import org.eclipse.papyrus.infra.nattable.utils.FillingConfigurationUtils;
 import org.eclipse.papyrus.infra.nattable.utils.HeaderAxisConfigurationManagementUtils;
 import org.eclipse.papyrus.infra.nattable.utils.NattableConfigAttributes;
 import org.eclipse.papyrus.infra.nattable.utils.StringComparator;
+import org.eclipse.papyrus.infra.nattable.utils.StyleUtils;
 import org.eclipse.papyrus.infra.nattable.utils.TableEditingDomainUtils;
+import org.eclipse.papyrus.infra.nattable.utils.TableHelper;
 import org.eclipse.papyrus.infra.services.edit.service.ElementEditServiceUtils;
 import org.eclipse.papyrus.infra.services.edit.service.IElementEditService;
 import org.eclipse.papyrus.infra.services.labelprovider.service.LabelProviderService;
+import org.eclipse.papyrus.infra.tools.util.EclipseCommandUtils;
 import org.eclipse.papyrus.infra.widgets.providers.FlattenableRestrictedFilteredContentProvider;
 import org.eclipse.papyrus.infra.widgets.providers.IRestrictedContentProvider;
 import org.eclipse.papyrus.infra.widgets.providers.IStaticContentProvider;
@@ -91,15 +133,21 @@ import org.eclipse.papyrus.infra.widgets.selectors.ReferenceSelector;
 import org.eclipse.swt.events.FocusEvent;
 import org.eclipse.swt.events.FocusListener;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.IWorkbenchPartSite;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.commands.ICommandService;
 
+import ca.odell.glazedlists.EventList;
+import ca.odell.glazedlists.GlazedLists;
+import ca.odell.glazedlists.TreeList;
+import ca.odell.glazedlists.TreeList.Format;
+
 import com.google.common.collect.BiMap;
 import com.google.common.collect.HashBiMap;
 
-public class NattableModelManager extends AbstractNattableWidgetManager implements INattableModelManager, IAdaptable {
+public class NattableModelManager extends AbstractNattableWidgetManager implements INattableModelManager, ITreeNattableModelManager {
 
 	/**
 	 * the column manager
@@ -135,6 +183,16 @@ public class NattableModelManager extends AbstractNattableWidgetManager implemen
 	private FocusListener focusListener;
 
 	/**
+	 * the resourceSet listener
+	 */
+	private ResourceSetListener resourceSetListener;
+
+	/**
+	 * layerListener to update the toggles
+	 */
+	private ILayerListener layerListener;
+
+	/**
 	 * we need to keep it to be able to remove listener (required when we destroy the context of the table)
 	 */
 	private TransactionalEditingDomain contextEditingDomain;
@@ -145,6 +203,7 @@ public class NattableModelManager extends AbstractNattableWidgetManager implemen
 
 	private AdapterImpl changeAxisProviderHistory;
 
+	private ResourceSetListener hideShowCategoriesListener;
 	/**
 	 * the listener on the table cells
 	 */
@@ -157,20 +216,39 @@ public class NattableModelManager extends AbstractNattableWidgetManager implemen
 	 */
 	private PreferenceStore localPreferenceStore;
 
-	/**
-	 *
-	 * Constructor.
-	 *
-	 * @param rawModel
-	 *
-	 *            the model of the managed table
-	 */
-	public NattableModelManager(final Table rawModel) {
-		super(rawModel);
+	private TreeList treeList;
+
+	private List<Object> eventList;
+
+	private DatumTreeFormat treeFormat;
+
+	private DatumExpansionModel expansionModel;
+
+	// fields used for refresh
+	private Runnable refreshRunnable;
+	/** Flag to avoid reentrant call to refresh. */
+	private AtomicBoolean isRefreshing = new AtomicBoolean(false);
+
+	public NattableModelManager(final Table rawModel, final ISelectionExtractor selectionExtractor) {
+		super(rawModel, selectionExtractor);
+
+		this.tableEditingDomain = TableEditingDomainUtils.getTableEditingDomain(rawModel);
+		this.contextEditingDomain = TableEditingDomainUtils.getTableContextEditingDomain(rawModel);
+
 		this.rowProvider = rawModel.getCurrentRowAxisProvider();
 		this.columnProvider = rawModel.getCurrentColumnAxisProvider();
 		this.verticalElements = Collections.synchronizedList(new ArrayList<Object>());
-		this.horizontalElements = Collections.synchronizedList(new ArrayList<Object>());
+
+		if (TableHelper.isTreeTable(rawModel)) {
+			this.eventList = GlazedLists.eventList(new ArrayList<Object>());
+			// eventList = GlazedLists.threadSafeList(eventList);
+			treeFormat = new DatumTreeFormat(new ColumnSortModel(this));
+			this.expansionModel = new DatumExpansionModel();
+			this.treeList = new TreeList((EventList) eventList, treeFormat, expansionModel);
+			this.horizontalElements = this.treeList;// Collections.synchronizedList(this.treeList);
+		} else {
+			this.horizontalElements = Collections.synchronizedList(new ArrayList<Object>());
+		}
 		this.cellsMap = HashBiMap.create();
 
 		this.invertAxisListener = new AdapterImpl() {
@@ -184,6 +262,16 @@ public class NattableModelManager extends AbstractNattableWidgetManager implemen
 						if (msg.getFeature() == NattablePackage.eINSTANCE.getTable_InvertAxis()) {
 							invertJavaObject();
 
+							// use the method to refresh/merge the table using the appointed values saved in the model.notation
+							resizeAxis();
+							resizeHeader();
+							mergeTable();
+							// for the fun of it!
+							// in fact it is to fix the test org.eclipse.papyrus.sysml.nattable.requirement.tests.tests.RevealRequirementTableTest.test6SelectMultipleElementsInvertAxisAllColumns()
+							// it is a work around and not really a nice fix, because I don't undestand the bug...
+							getBodyLayerStack().getRowHideShowLayer().showAllRows();
+							getBodyLayerStack().getColumnHideShowLayer().showAllColumns();
+
 						}
 					}
 				}
@@ -192,9 +280,9 @@ public class NattableModelManager extends AbstractNattableWidgetManager implemen
 
 		rawModel.eAdapters().add(this.invertAxisListener);
 		init();
-		if (rawModel.isInvertAxis()) {
-			invertJavaObject();
-		}
+		// if(rawModel.isInvertAxis()) {
+		// invertJavaObject();
+		// }
 
 		changeAxisProvider = new AdapterImpl() {
 
@@ -245,10 +333,19 @@ public class NattableModelManager extends AbstractNattableWidgetManager implemen
 			}
 		};
 		rawModel.eAdapters().add(tableCellsListener);
-		this.tableEditingDomain = TableEditingDomainUtils.getTableEditingDomain(rawModel);
-		this.contextEditingDomain = TableEditingDomainUtils.getTableContextEditingDomain(rawModel);
 	}
 
+	/**
+	 *
+	 * Constructor.
+	 *
+	 * @param rawModel
+	 *
+	 *            the model of the managed table
+	 */
+	public NattableModelManager(final Table rawModel) {
+		this(rawModel, new ObjectsSelectionExtractor());
+	}
 
 	@Override
 	public NatTable createNattable(Composite parent, int style, IWorkbenchPartSite site) {
@@ -297,7 +394,29 @@ public class NattableModelManager extends AbstractNattableWidgetManager implemen
 			}
 		};
 		nattable.addFocusListener(this.focusListener);
+
+		this.layerListener = new ILayerListener() {
+
+			@Override
+			public void handleLayerEvent(ILayerEvent event) {
+				updateToggleActionState();
+			}
+		};
+		nattable.addLayerListener(layerListener);
+
 		updateToggleActionState();// required, because the focus listener is not notified just after the creation of the widget
+
+		// update the hidden categories
+		if (TableHelper.isTreeTable(this)) {
+			List<Integer> hiddenDepth = StyleUtils.getHiddenDepths(this);
+			if (hiddenDepth.size() > 0) {
+				hideShowCategories(hiddenDepth, null);
+			}
+			this.hideShowCategoriesListener = new HideShowCategoriesTableListener(this);
+			getTableEditingDomain().addResourceSetListener(this.hideShowCategoriesListener);
+		}
+
+
 		return nattable;
 	}
 
@@ -305,10 +424,10 @@ public class NattableModelManager extends AbstractNattableWidgetManager implemen
 	 * this command update the status of the toggle actions
 	 */
 	protected void updateToggleActionState() {
-		final ICommandService commandService = (ICommandService) PlatformUI.getWorkbench().getActiveWorkbenchWindow().getService(ICommandService.class);
+		final ICommandService commandService = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getService(ICommandService.class);
 		if (commandService != null) {
 
-			final AbstractHeaderAxisConfiguration columnAxisConfiguration = HeaderAxisConfigurationManagementUtils.getColumnAbstractHeaderAxisUsedInTable(getTable());
+			final AbstractHeaderAxisConfiguration columnAxisConfiguration = HeaderAxisConfigurationManagementUtils.getColumnAbstractHeaderAxisConfigurationUsedInTable(getTable());
 			final AbstractHeaderAxisConfiguration rowAxisConfiguration = HeaderAxisConfigurationManagementUtils.getRowAbstractHeaderAxisUsedInTable(getTable());
 			// update the header configuration
 			org.eclipse.core.commands.Command command = commandService.getCommand(CommandIds.COMMAND_COLUMN_DISPLAY_INDEX_ID);
@@ -402,6 +521,36 @@ public class NattableModelManager extends AbstractNattableWidgetManager implemen
 			command = commandService.getCommand(CommandIds.COMMAND_INVERT_AXIS);
 			updateToggleCommandState(command, getTable().isInvertAxis());
 
+			// updates the state of each merge actions commands
+			command = commandService.getCommand(CommandIds.COMMAND_MERGE_ROWS);
+			updateToggleCommandState(command, getToggleStateAllRows());
+
+			command = commandService.getCommand(CommandIds.COMMAND_MERGE_COLUMNS);
+			updateToggleCommandState(command, getToggleStateAllColumns());
+
+			command = commandService.getCommand(CommandIds.COMMAND_MERGE_SELECTED_ROWS);
+			updateToggleCommandState(command, getToggleStateSelectedRows());
+
+			command = commandService.getCommand(CommandIds.COMMAND_MERGE_SELECTED_COLUMNS);
+			updateToggleCommandState(command, getToggleStateSelectedColumns());
+
+			// the merge of all the elements in the table is not yet supported
+			// command = commandService.getCommand(CommandIds.COMMAND_MERGE_TABLE);
+			// BooleanValueStyle mergeTable = (BooleanValueStyle)getTable().getNamedStyle(NattablestylePackage.eINSTANCE.getBooleanValueStyle(), NamedStyleConstants.MERGE_TABLE);
+			// if(mergeTable != null) {
+			// updateToggleCommandState(command, mergeTable.isBooleanValue());
+			// } else {
+			// updateToggleCommandState(command, false);
+			// }
+
+
+			// update hierarchic table display style
+			DisplayStyle style = TableHelper.getTableDisplayStyle(this);
+			command = commandService.getCommand(CommandIds.COMMAND_HIERARCHIC_DISPLAY_STYLE);
+			if (!DisplayStyle.NORMAL.equals(style)) {
+				updateRadioCommandState(command, style.getLiteral());
+			}
+
 		} else {
 			throw new RuntimeException(String.format("The Eclipse service %s has not been found", ICommandService.class)); //$NON-NLS-1$
 		}
@@ -416,11 +565,30 @@ public class NattableModelManager extends AbstractNattableWidgetManager implemen
 	 *            the new boolean value to set to the state of this command
 	 */
 	private void updateToggleCommandState(final org.eclipse.core.commands.Command command, final boolean newValue) {
-		if (command != null) {
-			final State state = command.getState(CommandIds.TOGGLE_STATE);
-			if (state != null) {
-				state.setValue(newValue);
+		EclipseCommandUtils.updateToggleCommandState(command, newValue);
+	}
+
+
+	/**
+	 *
+	 * @param notification
+	 * @return
+	 *         The nearest table containing the style in order to verify the table's styled event's source
+	 */
+	private static Table findStyleTable(Notification notification) {
+		if (notification.getNotifier() instanceof Table) {
+			return (Table) notification.getNotifier();
+		}
+		else {
+			Object notifier = notification.getNotifier();
+			if (notifier instanceof EObject) {
+				EObject mergeContainer = ((EObject) notifier).eContainer();
+				while (!(mergeContainer instanceof Table) && mergeContainer != null) {
+					mergeContainer = mergeContainer.eContainer();
+				}
+				return (Table) mergeContainer;
 			}
+			return null;
 		}
 	}
 
@@ -432,12 +600,7 @@ public class NattableModelManager extends AbstractNattableWidgetManager implemen
 	 *            the new value to set to the state of this command
 	 */
 	private void updateRadioCommandState(final org.eclipse.core.commands.Command command, final Object newValue) {
-		if (command != null) {
-			final State state = command.getState(CommandIds.RADIO_STATE);
-			if (state != null) {
-				state.setValue(newValue);
-			}
-		}
+		EclipseCommandUtils.updateRadioCommandState(command, newValue);
 	}
 
 	public void invertJavaObject() {
@@ -465,6 +628,21 @@ public class NattableModelManager extends AbstractNattableWidgetManager implemen
 		refreshNatTable();
 	}
 
+	public void resizeAxis() {
+		initTableAxis();
+		refreshNatTable();
+	}
+
+	public void resizeHeader() {
+		initTableHeaders();
+		refreshNatTable();
+	}
+
+	public void mergeTable() {
+		initTableMerge();
+		refreshNatTable();
+	}
+
 	/**
 	 * create the line and the columns managers
 	 */
@@ -477,8 +655,8 @@ public class NattableModelManager extends AbstractNattableWidgetManager implemen
 		}
 		this.columnProvider = getTable().getCurrentColumnAxisProvider();
 		this.rowProvider = getTable().getCurrentRowAxisProvider();
-		this.columnManager = createAxisManager(getTable().getTableConfiguration().getColumnHeaderAxisConfiguration().getAxisManagers(), getTable().getCurrentColumnAxisProvider());
-		this.rowManager = createAxisManager(getTable().getTableConfiguration().getRowHeaderAxisConfiguration().getAxisManagers(), getTable().getCurrentRowAxisProvider());
+		this.columnManager = createAxisManager(getTable().getTableConfiguration().getColumnHeaderAxisConfiguration().getAxisManagers(), getTable().getCurrentColumnAxisProvider(), true);
+		this.rowManager = createAxisManager(getTable().getTableConfiguration().getRowHeaderAxisConfiguration().getAxisManagers(), getTable().getCurrentRowAxisProvider(), false);
 
 		boolean allIsSlave = this.columnManager.isSlave() && this.rowManager.isSlave();
 		Assert.isTrue(!allIsSlave, Messages.NattableModelManager_AtLeastOfOneTheAxisManagerMustBeAMaster);
@@ -492,17 +670,40 @@ public class NattableModelManager extends AbstractNattableWidgetManager implemen
 	 *            the content provider in the model
 	 * @return the created axis manager to use to manage the {@link IAxisContentsProvider}
 	 */
-	protected ICompositeAxisManager createAxisManager(final List<AxisManagerRepresentation> representations, final AbstractAxisProvider contentProvider) {
-		final List<IAxisManager> managers = new ArrayList<IAxisManager>();
-		for (AxisManagerRepresentation current : representations) {
-			final IAxisManager manager = AxisManagerFactory.INSTANCE.getAxisManager(current);
-			assert manager != null;
-			manager.init(this, current, contentProvider);
-			managers.add(manager);
+	protected ICompositeAxisManager createAxisManager(final List<AxisManagerRepresentation> representations, final AbstractAxisProvider contentProvider, final boolean columnAxisManager) {
+		TableDisplayStyle style = (TableDisplayStyle) getTable().getTableConfiguration().getStyle(NattablestylePackage.eINSTANCE.getTableDisplayStyle());
+		if (style == null) {
+			style = NattablestyleFactory.eINSTANCE.createTableDisplayStyle();
+			style.setDisplayStyle(DisplayStyle.NORMAL);
 		}
-		final ICompositeAxisManager compositeAxisManager = new CompositeAxisManager();
-		compositeAxisManager.init(this, null, contentProvider);
-		compositeAxisManager.setSubAxisManager(managers);
+		final ICompositeAxisManager compositeAxisManager;
+		if ((!columnAxisManager) && (DisplayStyle.HIERARCHIC_MULTI_TREE_COLUMN.equals(style.getDisplayStyle()) || DisplayStyle.HIERARCHIC_SINGLE_TREE_COLUMN.equals(style.getDisplayStyle()))) {
+			compositeAxisManager = new CompositeTreeAxisManagerForEventList((EventList<Object>) this.eventList);
+			final List<IAxisManagerForEventList> managers = new ArrayList<IAxisManagerForEventList>();
+			for (AxisManagerRepresentation current : representations) {
+				final IAxisManager manager = AxisManagerFactory.INSTANCE.getAxisManager(current);
+				Assert.isTrue(manager instanceof IAxisManagerForEventList);
+				manager.init(this, current, contentProvider);
+				managers.add((IAxisManagerForEventList) manager);
+
+			}
+			compositeAxisManager.init(this, null, contentProvider);
+			DatumTreeFormat treeFormat = getTreeFormat();
+			treeFormat.setTreeComparatorProvider((CompositeTreeAxisManagerForEventList) compositeAxisManager);
+			this.expansionModel.setAxisManager((CompositeTreeAxisManagerForEventList) compositeAxisManager);
+			((CompositeAxisManagerForEventList) compositeAxisManager).setSubManagers(managers);
+		} else {
+			compositeAxisManager = new CompositeAxisManager();
+			final List<IAxisManager> managers = new ArrayList<IAxisManager>();
+			for (AxisManagerRepresentation current : representations) {
+				final IAxisManager manager = AxisManagerFactory.INSTANCE.getAxisManager(current);
+				assert manager != null;
+				manager.init(this, current, contentProvider);
+				managers.add(manager);
+			}
+			compositeAxisManager.init(this, null, contentProvider);
+			compositeAxisManager.setSubAxisManager(managers);
+		}
 		return compositeAxisManager;
 	}
 
@@ -515,6 +716,9 @@ public class NattableModelManager extends AbstractNattableWidgetManager implemen
 	@Override
 	public void dispose() {
 		if (this.tableEditingDomain != null && this.contextEditingDomain != null) {
+			if (this.hideShowCategoriesListener != null) {
+				getTableEditingDomain().removeResourceSetListener(this.hideShowCategoriesListener);
+			}
 			if (this.tableEditingDomain.getCommandStack() != null) {
 				this.tableEditingDomain.getCommandStack().removeCommandStackListener(this.refreshListener);
 			}
@@ -530,7 +734,16 @@ public class NattableModelManager extends AbstractNattableWidgetManager implemen
 			if (this.cellsMap != null) {
 				this.cellsMap.clear();
 			}
+			if (this.natTable != null) {
+				natTable.removeLayerListener(layerListener);
+			}
+			if (this.tableEditingDomain != null) {
+				this.tableEditingDomain.removeResourceSetListener(resourceSetListener);
+			}
 			this.tableEditingDomain = null;
+			if (this.contextEditingDomain != null) {
+				this.contextEditingDomain.removeResourceSetListener(resourceSetListener);
+			}
 			this.contextEditingDomain = null;
 			super.dispose();
 		}
@@ -693,19 +906,72 @@ public class NattableModelManager extends AbstractNattableWidgetManager implemen
 	 * refresh NatTable (asyncExec)
 	 */
 	public void refreshNatTable() {
+		// This refresh code has been duplicated from the refresh of the ModelExplorer (class ModelExplorerView)
+		final Runnable schedule;
 		if (this.natTable != null && !this.natTable.isDisposed()) {
-			Display.getDefault().asyncExec(new Runnable() {
-
-				@Override
-				public void run() {
-					if (natTable != null && !natTable.isDisposed()) {
-						NattableModelManager.this.natTable.refresh();
-					}
+			synchronized (this) {
+				if (refreshRunnable == null) {
+					// No refresh is yet pending. Schedule one
+					schedule = createRefreshRunnable();
+					refreshRunnable = schedule;
+				} else {
+					schedule = null;
 				}
-			});
+			}
+
+			if (schedule != null) {
+				Control control = this.natTable;
+				Display display = ((control == null) || control.isDisposed()) ? null : control.getDisplay();
+
+				if (display != null) {
+					// Don't need to schedule a refresh if we have no control or it's disposed
+					display.asyncExec(schedule);
+				}
+			}
 		}
 	}
 
+	/**
+	 *
+	 * @return
+	 *         a new runnable for the refreash action
+	 */
+	private Runnable createRefreshRunnable() {
+		return new Runnable() {
+
+			@Override
+			public void run() {
+				// Only run if I'm still pending
+				synchronized (NattableModelManager.this) {
+					if (refreshRunnable != this) {
+						return;
+					}
+
+					refreshRunnable = null;
+				}
+
+				refreshInUIThread();
+			}
+		};
+	}
+
+	/**
+	 * refresh the view.
+	 */
+	protected void refreshInUIThread() {
+		// Need to refresh, even if (temporarily) invisible
+		// (Better alternative?: store refresh event and execute once visible again)
+		if (this.natTable != null && this.natTable.isDisposed()) {
+			return;
+		}
+
+		// avoid reentrant call
+		// Refresh only of we are not already refreshing.
+		if (isRefreshing.compareAndSet(false, true)) {
+			this.natTable.refresh();
+			isRefreshing.set(false);
+		}
+	}
 
 	/**
 	 *
@@ -801,7 +1067,12 @@ public class NattableModelManager extends AbstractNattableWidgetManager implemen
 
 	@Override
 	public List<Object> getRowElementsList() {
+		// return this.eventList;
 		return this.horizontalElements;
+	}
+
+	public List<Object> getEventList() {
+		return this.eventList;
 	}
 
 	@Override
@@ -837,7 +1108,7 @@ public class NattableModelManager extends AbstractNattableWidgetManager implemen
 
 	@Override
 	public Object getColumnElement(int index) {
-		if (index < 0 || index > this.verticalElements.size()) {
+		if (index < 0 || index >= this.verticalElements.size()) {
 			return null;
 		}
 		return this.verticalElements.get(index);
@@ -896,6 +1167,11 @@ public class NattableModelManager extends AbstractNattableWidgetManager implemen
 			cmd.append(tmp);
 			domain.getCommandStack().execute(cmd);
 		}
+
+		// use the method to refresh the table using the appointed values saved in the model.notation
+		initTableAxis();
+		initTableHeaders();
+		initTableMerge();
 	}
 
 	@Override
@@ -1272,7 +1548,7 @@ public class NattableModelManager extends AbstractNattableWidgetManager implemen
 		if (adapter == NatTable.class) {
 			return this.natTable;
 		}
-		return null;
+		return super.getAdapter(adapter);
 	}
 
 	private void updateCellMap(final Notification notification) {
@@ -1347,8 +1623,106 @@ public class NattableModelManager extends AbstractNattableWidgetManager implemen
 		job.schedule();
 
 
-	}
+		// resourceSetListener used to capture the event pertaining to the merge and resize actions
+		// these events can be used to undo/redo previous actions
+		resourceSetListener = new ResourceSetListener() {
 
+			@Override
+			public Command transactionAboutToCommit(ResourceSetChangeEvent event) throws RollbackException {
+				return null;
+			}
+
+			@Override
+			public void resourceSetChanged(ResourceSetChangeEvent event) {
+
+				for (final Notification notification : event.getNotifications()) {
+					// filter the events to only let through the changes on the current table resource
+					Table notifiedTable = findStyleTable(notification);
+					if (getTable().equals(notifiedTable)) {
+
+						Display.getDefault().asyncExec(new Runnable() {
+
+							@Override
+							public void run() {
+								// already created booleanValues and intValues
+								if (notification.getNotifier() instanceof BooleanValueStyle) {
+									// as the filter already prevented any nonBooleanValueStyle, and therefore any non EObject, it can be cast without verification
+									EObject mergeContainer = ((EObject) notification.getNotifier()).eContainer();
+									if (mergeContainer instanceof AbstractHeaderAxisConfiguration || mergeContainer instanceof IAxis) {
+										mergeTable();
+									}
+								}
+								if (notification.getNotifier() instanceof IntValueStyle) {
+									EObject resizeContainer = ((EObject) notification.getNotifier()).eContainer();
+									if (resizeContainer instanceof AbstractHeaderAxisConfiguration) {
+										resizeHeader();
+									}
+									if (resizeContainer instanceof IAxis) {
+										resizeAxis();
+									}
+								}
+								// newly created booleanValues and intValues
+								if (notification.getNewValue() instanceof BooleanValueStyle) {
+									mergeTable();
+								}
+								if (notification.getNewValue() instanceof IntValueStyle) {
+									if (notification.getNotifier() instanceof IAxis) {
+										resizeAxis();
+									}
+									if (notification.getNotifier() instanceof AbstractHeaderAxisConfiguration) {
+										resizeHeader();
+									}
+								}
+								// reset to the default state using ctrl+z
+								if (notification.getNewValue() == null && notification.getOldValue() != null) {
+									mergeTable();
+									resizeAxis();
+									resizeHeader();
+								}
+							}
+						});
+					}
+				}
+			}
+
+			@Override
+			public boolean isPrecommitOnly() {
+				return false;
+			}
+
+			@Override
+			public boolean isPostcommitOnly() {
+				return false;
+			}
+
+			@Override
+			public boolean isAggregatePrecommitListener() {
+				return false;
+			}
+
+			@Override
+			public NotificationFilter getFilter() {
+				// this filter only lets through the notifications pertaining to the table
+				// the first three conditions handle the modification, the add and the remove of styles
+				// the last seven handle the modified or created objects containing those styles
+				return ((NotificationFilter.createEventTypeFilter(Notification.SET))
+						.or(NotificationFilter.createEventTypeFilter(Notification.ADD))
+						.or(NotificationFilter.createEventTypeFilter(Notification.REMOVE)))
+						.and((NotificationFilter.createNotifierTypeFilter(BooleanValueStyle.class))
+								.or(NotificationFilter.createNotifierTypeFilter(IntValueStyle.class))
+								.or(NotificationFilter.createNotifierTypeFilter(EObjectAxis.class))
+								.or(NotificationFilter.createNotifierTypeFilter(FeatureIdAxis.class))
+								.or(NotificationFilter.createNotifierTypeFilter(EStructuralFeatureAxis.class))
+								.or(NotificationFilter.createNotifierTypeFilter(LocalTableHeaderAxisConfiguration.class))
+								.or(NotificationFilter.createNotifierTypeFilter(Table.class)));
+				// return NotificationFilter.createNotifierTypeFilter(EObject.class);
+			}
+		};
+
+		getContextEditingDomain().addResourceSetListener(resourceSetListener);
+		getTableEditingDomain().addResourceSetListener(resourceSetListener);
+
+	}
 
 
 	/**
@@ -1411,4 +1785,146 @@ public class NattableModelManager extends AbstractNattableWidgetManager implemen
 		this.localPreferenceStore = store;
 	}
 
+	/**
+	 * @see org.eclipse.papyrus.infra.nattable.manager.table.ITreeNattableModelManager#getTreeFormat()
+	 *
+	 * @return
+	 */
+	@Override
+	public DatumTreeFormat getTreeFormat() {
+		return this.treeFormat;
+	}
+
+	/**
+	 * @see org.eclipse.papyrus.infra.nattable.manager.table.ITreeNattableModelManager#getDepth()
+	 *
+	 * @return
+	 */
+	@Override
+	public int getTreeItemDepth(final ITreeItemAxis axis) {
+		Format<ITreeItemAxis> format = getTreeFormat();
+		if (format != null) {
+			List<ITreeItemAxis> path = new ArrayList<ITreeItemAxis>();
+			format.getPath(path, axis);
+			return path.size() - 1;
+		}
+		return 0;
+	}
+
+	/**
+	 * @see org.eclipse.papyrus.infra.nattable.manager.table.ITreeNattableModelManager#getSemanticDepth(org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxis.ITreeItemAxis)
+	 *
+	 * @param axis
+	 * @return
+	 */
+	@Override
+	public int getSemanticDepth(ITreeItemAxis axis) {
+		Object representedObject = axis.getElement();
+		if (representedObject instanceof TreeFillingConfiguration) {
+			return ((TreeFillingConfiguration) representedObject).getDepth();
+		} else {
+			ITreeItemAxis parent = axis.getParent();
+			if (parent == null) {
+				return 0;
+			}
+			representedObject = parent.getElement();
+			Assert.isTrue(representedObject instanceof TreeFillingConfiguration);
+			return ((TreeFillingConfiguration) representedObject).getDepth();
+		}
+	}
+
+	/**
+	 * @see org.eclipse.papyrus.infra.nattable.manager.table.ITreeNattableModelManager#hideShowCategories(java.util.List, java.util.List)
+	 *
+	 * @param depthToHide
+	 * @param depthToShow
+	 */
+	@Override
+	public void hideShowCategories(List<Integer> depthToHide, List<Integer> depthToShow) {
+		hideShowRowCategories(depthToHide, depthToShow);
+		hideShowColumnCategoriesInRowHeader(depthToHide, depthToShow);
+	}
+
+	/**
+	 * @see org.eclipse.papyrus.infra.nattable.manager.table.ITreeNattableModelManager#hideShowRowCategories(java.util.List, java.util.List)
+	 *
+	 * @param depthToHide
+	 * @param depthToShow
+	 */
+	@Override
+	public void hideShowRowCategories(List<Integer> depthToHide, List<Integer> depthToShow) {
+		// we hide the rows representing the categories
+		((ITreeItemAxisManagerForEventList) getRowAxisManager()).managedHideShowCategoriesForDepth(depthToHide, depthToShow);
+	}
+
+	/**
+	 * @see org.eclipse.papyrus.infra.nattable.manager.table.ITreeNattableModelManager#hideShowColumnCategoriesInRowHeader(java.util.List, java.util.List)
+	 *
+	 * @param depthToHide
+	 * @param depthToShow
+	 */
+	@Override
+	public void hideShowColumnCategoriesInRowHeader(List<Integer> depthToHide, List<Integer> depthToShow) {
+		this.natTable.refresh();
+		RowHeaderLayerStack rowHeaderLayerStack = getRowHeaderLayerStack();
+		if (rowHeaderLayerStack instanceof RowHeaderHierarchicalLayerStack) {
+			ColumnHideShowLayer layer = ((RowHeaderHierarchicalLayerStack) rowHeaderLayerStack).getRowHeaderColumnHideShowLayer();
+			ILayer subLayer = layer.getUnderlyingLayerByPosition(0, 0);
+			// we hide the columns representing the categories
+			if (TableHelper.isMultiColumnTreeTable(this)) {
+				boolean hasRootConfif = FillingConfigurationUtils.hasTreeFillingConfigurationForDepth(getTable(), 0);
+
+				if (depthToHide != null && depthToHide.size() > 0) {
+					int[] indexToHide = new int[depthToHide.size()];
+					for (int i = 0; i < depthToHide.size(); i++) {
+						Integer curr = depthToHide.get(i);
+						int tmp = -1;
+						if (hasRootConfif) {
+							tmp = curr * 2;
+						} else {
+							// TODO not yet tested
+							tmp = curr * 2 - 1;
+						}
+
+						// we need to convert the position
+						tmp = layer.underlyingToLocalColumnPosition(subLayer, tmp);
+						indexToHide[i] = tmp;
+					}
+					layer.doCommand(new MultiColumnHideCommand(layer, indexToHide));
+				}
+
+				if (depthToShow != null && depthToShow.size() > 0) {
+
+					List<Integer> indexToShow = new ArrayList<Integer>();
+					for (int i = 0; i < depthToShow.size(); i++) {
+						Integer curr = depthToShow.get(i);
+						int tmp = -1;
+						if (hasRootConfif) {
+							tmp = curr * 2;
+						} else {
+							// TODO not yet tested
+							tmp = curr * 2 - 1;
+						}
+						indexToShow.add(tmp);
+					}
+					layer.doCommand(new MultiColumnShowCommand(indexToShow));
+				}
+			} else {
+				layer.doCommand(new ShowAllColumnsCommand());
+			}
+		}
+
+	}
+
+	/**
+	 *
+	 * @see org.eclipse.papyrus.infra.nattable.manager.table.ITreeNattableModelManager#doCollapseExpandAction(org.eclipse.papyrus.infra.nattable.tree.CollapseAndExpandActionsEnum, java.util.List)
+	 *
+	 * @param actionId
+	 * @param selectedAxis
+	 */
+	@Override
+	public void doCollapseExpandAction(CollapseAndExpandActionsEnum actionId, List<ITreeItemAxis> selectedAxis) {
+		CollapseExpandActionHelper.doCollapseExpandAction(actionId, selectedAxis, getTableAxisElementProvider(), this.natTable);
+	}
 }

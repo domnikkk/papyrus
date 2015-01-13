@@ -25,7 +25,6 @@ import org.eclipse.emf.ecore.provider.EcoreEditPlugin;
  * @generated
  */
 public final class NattableEditorPlugin extends EMFPlugin {
-
 	/**
 	 * Keep track of the singleton.
 	 * <!-- begin-user-doc -->
@@ -52,7 +51,9 @@ public final class NattableEditorPlugin extends EMFPlugin {
 	 * @generated
 	 */
 	public NattableEditorPlugin() {
-		super(new ResourceLocator[] { EcoreEditPlugin.INSTANCE, });
+		super(new ResourceLocator[] {
+				EcoreEditPlugin.INSTANCE,
+		});
 	}
 
 	/**
@@ -88,7 +89,6 @@ public final class NattableEditorPlugin extends EMFPlugin {
 	 * @generated
 	 */
 	public static class Implementation extends EclipseUIPlugin {
-
 		/**
 		 * Creates an instance.
 		 * <!-- begin-user-doc -->

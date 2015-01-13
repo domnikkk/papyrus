@@ -35,6 +35,11 @@ public interface ICellManager {
 	public static final String NOT_AVALAIBLE = Messages.ICellManager_NotAvailable;
 
 	/**
+	 * the empty sting
+	 */
+	public static final String EMPTY_STRING = "";
+
+	/**
 	 *
 	 * @param columnElement
 	 *            the column element as described in the model (you must ignore the invert axis)

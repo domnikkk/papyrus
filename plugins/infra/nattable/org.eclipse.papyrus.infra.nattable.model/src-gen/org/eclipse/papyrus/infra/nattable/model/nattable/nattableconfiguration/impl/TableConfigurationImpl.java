@@ -40,20 +40,18 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattabletester.Abstract
  * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableconfiguration.impl.TableConfigurationImpl#getIconPath <em>Icon Path</em>}</li>
  * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableconfiguration.impl.TableConfigurationImpl#getCreationTester <em>Creation Tester</em>}</li>
  * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableconfiguration.impl.TableConfigurationImpl#getCellEditorDeclaration <em>Cell Editor Declaration</em>}</li>
- * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableconfiguration.impl.TableConfigurationImpl#getRowHeaderAxisConfiguration <em> Row Header Axis Configuration</em>}</li>
- * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableconfiguration.impl.TableConfigurationImpl#getColumnHeaderAxisConfiguration
- * <em>Column Header Axis Configuration</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableconfiguration.impl.TableConfigurationImpl#getRowHeaderAxisConfiguration <em>Row Header Axis Configuration</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableconfiguration.impl.TableConfigurationImpl#getColumnHeaderAxisConfiguration <em>Column Header Axis Configuration</em>}</li>
  * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableconfiguration.impl.TableConfigurationImpl#getColumnAxisProviders <em>Column Axis Providers</em>}</li>
  * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableconfiguration.impl.TableConfigurationImpl#getRowAxisProviders <em>Row Axis Providers</em>}</li>
- * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableconfiguration.impl.TableConfigurationImpl#getDefaultRowAxisProvider <em> Default Row Axis Provider</em>}</li>
- * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableconfiguration.impl.TableConfigurationImpl#getDefaultColumnAxisProvider <em> Default Column Axis Provider</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableconfiguration.impl.TableConfigurationImpl#getDefaultRowAxisProvider <em>Default Row Axis Provider</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableconfiguration.impl.TableConfigurationImpl#getDefaultColumnAxisProvider <em>Default Column Axis Provider</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
 public class TableConfigurationImpl extends TableNamedElementImpl implements TableConfiguration {
-
 	/**
 	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -321,7 +319,8 @@ public class TableConfigurationImpl extends TableNamedElementImpl implements Tab
 			if (msgs != null) {
 				msgs.dispatch();
 			}
-		} else if (eNotificationRequired()) {
+		}
+		else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, NattableconfigurationPackage.TABLE_CONFIGURATION__CREATION_TESTER, newCreationTester, newCreationTester));
 		}
 	}
@@ -403,7 +402,8 @@ public class TableConfigurationImpl extends TableNamedElementImpl implements Tab
 			if (msgs != null) {
 				msgs.dispatch();
 			}
-		} else if (eNotificationRequired()) {
+		}
+		else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, NattableconfigurationPackage.TABLE_CONFIGURATION__ROW_HEADER_AXIS_CONFIGURATION, newRowHeaderAxisConfiguration, newRowHeaderAxisConfiguration));
 		}
 	}
@@ -459,7 +459,8 @@ public class TableConfigurationImpl extends TableNamedElementImpl implements Tab
 			if (msgs != null) {
 				msgs.dispatch();
 			}
-		} else if (eNotificationRequired()) {
+		}
+		else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, NattableconfigurationPackage.TABLE_CONFIGURATION__COLUMN_HEADER_AXIS_CONFIGURATION, newColumnHeaderAxisConfiguration, newColumnHeaderAxisConfiguration));
 		}
 	}

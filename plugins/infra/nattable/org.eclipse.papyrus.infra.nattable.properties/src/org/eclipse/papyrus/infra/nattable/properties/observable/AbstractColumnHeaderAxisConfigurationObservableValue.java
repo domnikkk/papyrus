@@ -51,7 +51,7 @@ public abstract class AbstractColumnHeaderAxisConfigurationObservableValue exten
 	 */
 	@Override
 	protected final EObject getEditedEObject() {
-		return HeaderAxisConfigurationManagementUtils.getColumnAbstractHeaderAxisUsedInTable(getTable());
+		return HeaderAxisConfigurationManagementUtils.getColumnAbstractHeaderAxisConfigurationUsedInTable(getTable());
 	}
 
 	/**

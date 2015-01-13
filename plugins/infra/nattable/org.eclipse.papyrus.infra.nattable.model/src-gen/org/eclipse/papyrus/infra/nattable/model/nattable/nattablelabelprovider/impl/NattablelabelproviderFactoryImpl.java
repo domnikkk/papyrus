@@ -30,7 +30,6 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.O
  * @generated
  */
 public class NattablelabelproviderFactoryImpl extends EFactoryImpl implements NattablelabelproviderFactory {
-
 	/**
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->

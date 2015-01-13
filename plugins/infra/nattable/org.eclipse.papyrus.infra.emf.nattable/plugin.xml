@@ -27,6 +27,13 @@
                context="org.eclipse.papyrus.infra.nattable.header.labelprovider">
          </labelProviderContext>
       </labelProvider>
+      <labelProvider
+            priority="1300"
+            provider="org.eclipse.papyrus.infra.emf.nattable.provider.TreeFillingFeatureLabelProvider">
+         <labelProviderContext
+               context="org.eclipse.papyrus.infra.nattable.header.treefilling.feature.labelprovider">
+         </labelProviderContext>
+      </labelProvider>
    </extension>
 	<extension
        point="org.eclipse.papyrus.infra.nattable.axismanager">
@@ -37,6 +44,10 @@
     <axisManager
           id="org.eclipse.papyrus.infra.emf.nattable.feature.axis.manager"
           manager="org.eclipse.papyrus.infra.emf.nattable.manager.axis.EStructuralFeatureAxisManager">
+    </axisManager>
+    <axisManager
+          id="org.eclipse.papyrus.infra.emf.nattable.tree.axis.manager"
+          manager="org.eclipse.papyrus.infra.emf.nattable.manager.axis.EObjectTreeAxisManagerForEventList">
     </axisManager>
  </extension>
  <extension

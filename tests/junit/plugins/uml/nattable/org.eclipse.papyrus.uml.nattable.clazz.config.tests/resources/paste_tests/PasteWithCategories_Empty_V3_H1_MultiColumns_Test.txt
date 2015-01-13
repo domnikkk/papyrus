@@ -1,0 +1,44 @@
+Class0				Class0	public	false	N/A
+	ownedAttribute						
+		Property0		Property0	protected	true	N/A
+		Property1		Property1	protected	true	N/A
+		Property2		Property2	protected	true	N/A
+	nestedClassifier						
+		NestedClass0		NestedClass0	private	true	N/A
+		NestedClass1		NestedClass1	private	true	N/A
+		NestedClass2		NestedClass2	private	true	N/A
+	ownedOperation						
+		Operation0		Operation0	package	false	N/A
+			Param0	Param0	public	N/A	in
+			Param1	Param1	public	N/A	out
+			Param2	Param2	public	N/A	return
+		Operation1		Operation1	package	false	
+			Param0	Param0	private	N/A	in
+			Param1	Param1	private	N/A	out
+			Param2	Param2	private	N/A	return
+		Operation2		Operation2	package	false	
+			Param0	Param0	package	N/A	in
+			Param1	Param1	package	N/A	out
+			Param2	Param2	package	N/A	return
+Class1				Class1	public	false	N/A
+	ownedAttribute						
+		Property0		Property0	protected	true	N/A
+		Property1		Property1	protected	true	N/A
+		Property2		Property2	protected	true	N/A
+	nestedClassifier						
+		NestedClass0		NestedClass0	private	true	N/A
+		NestedClass1		NestedClass1	private	true	N/A
+		NestedClass2		NestedClass2	private	true	N/A
+	ownedOperation						
+		Operation0		Operation0	package	false	N/A
+			Param0	Param0	public	N/A	in
+			Param1	Param1	public	N/A	out
+			Param2	Param2	public	N/A	return
+		Operation1		Operation1	package	false	
+			Param0	Param0	private	N/A	in
+			Param1	Param1	private	N/A	out
+			Param2	Param2	private	N/A	return
+		Operation2		Operation2	package	false	
+			Param0	Param0	package	N/A	in
+			Param1	Param1	package	N/A	out
+			Param2	Param2	package	N/A	return

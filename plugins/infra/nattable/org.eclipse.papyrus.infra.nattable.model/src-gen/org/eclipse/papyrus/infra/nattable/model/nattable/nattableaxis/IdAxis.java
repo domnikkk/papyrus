@@ -30,7 +30,6 @@ package org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxis;
  * @generated
  */
 public interface IdAxis extends IAxis {
-
 	/**
 	 * Returns the value of the '<em><b>Element</b></em>' attribute.
 	 * <!-- begin-user-doc -->

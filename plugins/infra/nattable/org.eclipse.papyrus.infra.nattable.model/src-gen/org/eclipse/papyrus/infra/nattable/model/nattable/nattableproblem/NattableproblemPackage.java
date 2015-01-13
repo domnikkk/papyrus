@@ -35,7 +35,6 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattableconfiguration.N
  * @generated
  */
 public interface NattableproblemPackage extends EPackage {
-
 	/**
 	 * The package name.
 	 * <!-- begin-user-doc -->
@@ -94,6 +93,16 @@ public interface NattableproblemPackage extends EPackage {
 	int PROBLEM__EANNOTATIONS = NattableconfigurationPackage.TABLE_NAMED_ELEMENT__EANNOTATIONS;
 
 	/**
+	 * The feature id for the '<em><b>Styles</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int PROBLEM__STYLES = NattableconfigurationPackage.TABLE_NAMED_ELEMENT__STYLES;
+
+	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -134,6 +143,36 @@ public interface NattableproblemPackage extends EPackage {
 	int PROBLEM___GET_EANNOTATION__STRING = NattableconfigurationPackage.TABLE_NAMED_ELEMENT___GET_EANNOTATION__STRING;
 
 	/**
+	 * The operation id for the '<em>Get Named Style</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int PROBLEM___GET_NAMED_STYLE__ECLASS_STRING = NattableconfigurationPackage.TABLE_NAMED_ELEMENT___GET_NAMED_STYLE__ECLASS_STRING;
+
+	/**
+	 * The operation id for the '<em>Get Style</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int PROBLEM___GET_STYLE__ECLASS = NattableconfigurationPackage.TABLE_NAMED_ELEMENT___GET_STYLE__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Create Style</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int PROBLEM___CREATE_STYLE__ECLASS = NattableconfigurationPackage.TABLE_NAMED_ELEMENT___CREATE_STYLE__ECLASS;
+
+	/**
 	 * The number of operations of the '<em>Problem</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -144,8 +183,7 @@ public interface NattableproblemPackage extends EPackage {
 	int PROBLEM_OPERATION_COUNT = NattableconfigurationPackage.TABLE_NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableproblem.impl.StringResolutionProblemImpl
-	 * <em>String Resolution Problem</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableproblem.impl.StringResolutionProblemImpl <em>String Resolution Problem</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -164,6 +202,16 @@ public interface NattableproblemPackage extends EPackage {
 	 * @ordered
 	 */
 	int STRING_RESOLUTION_PROBLEM__EANNOTATIONS = PROBLEM__EANNOTATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Styles</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_RESOLUTION_PROBLEM__STYLES = PROBLEM__STYLES;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -226,6 +274,36 @@ public interface NattableproblemPackage extends EPackage {
 	int STRING_RESOLUTION_PROBLEM___GET_EANNOTATION__STRING = PROBLEM___GET_EANNOTATION__STRING;
 
 	/**
+	 * The operation id for the '<em>Get Named Style</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_RESOLUTION_PROBLEM___GET_NAMED_STYLE__ECLASS_STRING = PROBLEM___GET_NAMED_STYLE__ECLASS_STRING;
+
+	/**
+	 * The operation id for the '<em>Get Style</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_RESOLUTION_PROBLEM___GET_STYLE__ECLASS = PROBLEM___GET_STYLE__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Create Style</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_RESOLUTION_PROBLEM___CREATE_STYLE__ECLASS = PROBLEM___CREATE_STYLE__ECLASS;
+
+	/**
 	 * The number of operations of the '<em>String Resolution Problem</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -248,8 +326,7 @@ public interface NattableproblemPackage extends EPackage {
 	EClass getProblem();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableproblem.StringResolutionProblem
-	 * <em>String Resolution Problem</em>}'.
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableproblem.StringResolutionProblem <em>String Resolution Problem</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -260,7 +337,7 @@ public interface NattableproblemPackage extends EPackage {
 	EClass getStringResolutionProblem();
 
 	/**
-	 * Returns the meta object for the attribute ' {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableproblem.StringResolutionProblem#getValueAsString <em>Value As String</em>}'.
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableproblem.StringResolutionProblem#getValueAsString <em>Value As String</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -272,8 +349,7 @@ public interface NattableproblemPackage extends EPackage {
 	EAttribute getStringResolutionProblem_ValueAsString();
 
 	/**
-	 * Returns the meta object for the attribute list ' {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableproblem.StringResolutionProblem#getUnresolvedString
-	 * <em>Unresolved String</em>}'.
+	 * Returns the meta object for the attribute list '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableproblem.StringResolutionProblem#getUnresolvedString <em>Unresolved String</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -309,10 +385,8 @@ public interface NattableproblemPackage extends EPackage {
 	 * @generated
 	 */
 	interface Literals {
-
 		/**
-		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableproblem.impl.ProblemImpl
-		 * <em>Problem</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableproblem.impl.ProblemImpl <em>Problem</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 *
@@ -323,8 +397,7 @@ public interface NattableproblemPackage extends EPackage {
 		EClass PROBLEM = eINSTANCE.getProblem();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableproblem.impl.StringResolutionProblemImpl
-		 * <em>String Resolution Problem</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableproblem.impl.StringResolutionProblemImpl <em>String Resolution Problem</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 *

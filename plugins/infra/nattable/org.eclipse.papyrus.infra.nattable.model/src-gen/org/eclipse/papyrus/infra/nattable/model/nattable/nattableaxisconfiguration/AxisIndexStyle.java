@@ -91,7 +91,11 @@ public enum AxisIndexStyle implements Enumerator {
 	 *
 	 * @generated
 	 */
-	private static final AxisIndexStyle[] VALUES_ARRAY = new AxisIndexStyle[] { ALPHABETIC, NUMERIC, };
+	private static final AxisIndexStyle[] VALUES_ARRAY =
+			new AxisIndexStyle[] {
+					ALPHABETIC,
+					NUMERIC,
+			};
 
 	/**
 	 * A public read-only list of all the '<em><b>Axis Index Style</b></em>' enumerators.

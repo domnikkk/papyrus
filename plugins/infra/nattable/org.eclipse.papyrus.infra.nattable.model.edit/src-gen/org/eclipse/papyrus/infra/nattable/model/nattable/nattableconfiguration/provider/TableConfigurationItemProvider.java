@@ -20,12 +20,7 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.NattableaxisconfigurationFactory;
@@ -41,8 +36,7 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattabletester.Nattable
  *
  * @generated
  */
-public class TableConfigurationItemProvider extends TableNamedElementItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
-
+public class TableConfigurationItemProvider extends TableNamedElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -83,9 +77,19 @@ public class TableConfigurationItemProvider extends TableNamedElementItemProvide
 	 * @generated
 	 */
 	protected void addTypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_TableConfiguration_type_feature"), //$NON-NLS-1$
-				getString("_UI_PropertyDescriptor_description", "_UI_TableConfiguration_type_feature", "_UI_TableConfiguration_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				NattableconfigurationPackage.Literals.TABLE_CONFIGURATION__TYPE, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_TableConfiguration_type_feature"), //$NON-NLS-1$
+						getString("_UI_PropertyDescriptor_description", "_UI_TableConfiguration_type_feature", "_UI_TableConfiguration_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+						NattableconfigurationPackage.Literals.TABLE_CONFIGURATION__TYPE,
+						true,
+						false,
+						false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+						null,
+						null));
 	}
 
 	/**
@@ -96,9 +100,19 @@ public class TableConfigurationItemProvider extends TableNamedElementItemProvide
 	 * @generated
 	 */
 	protected void addIconPathPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_TableConfiguration_iconPath_feature"), //$NON-NLS-1$
-				getString("_UI_PropertyDescriptor_description", "_UI_TableConfiguration_iconPath_feature", "_UI_TableConfiguration_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				NattableconfigurationPackage.Literals.TABLE_CONFIGURATION__ICON_PATH, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_TableConfiguration_iconPath_feature"), //$NON-NLS-1$
+						getString("_UI_PropertyDescriptor_description", "_UI_TableConfiguration_iconPath_feature", "_UI_TableConfiguration_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+						NattableconfigurationPackage.Literals.TABLE_CONFIGURATION__ICON_PATH,
+						true,
+						false,
+						false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+						null,
+						null));
 	}
 
 	/**
@@ -109,9 +123,19 @@ public class TableConfigurationItemProvider extends TableNamedElementItemProvide
 	 * @generated
 	 */
 	protected void addCellEditorDeclarationPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_TableConfiguration_cellEditorDeclaration_feature"), //$NON-NLS-1$
-				getString("_UI_PropertyDescriptor_description", "_UI_TableConfiguration_cellEditorDeclaration_feature", "_UI_TableConfiguration_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				NattableconfigurationPackage.Literals.TABLE_CONFIGURATION__CELL_EDITOR_DECLARATION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_TableConfiguration_cellEditorDeclaration_feature"), //$NON-NLS-1$
+						getString("_UI_PropertyDescriptor_description", "_UI_TableConfiguration_cellEditorDeclaration_feature", "_UI_TableConfiguration_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+						NattableconfigurationPackage.Literals.TABLE_CONFIGURATION__CELL_EDITOR_DECLARATION,
+						true,
+						false,
+						false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+						null,
+						null));
 	}
 
 	/**
@@ -122,9 +146,19 @@ public class TableConfigurationItemProvider extends TableNamedElementItemProvide
 	 * @generated
 	 */
 	protected void addDefaultRowAxisProviderPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_TableConfiguration_defaultRowAxisProvider_feature"), //$NON-NLS-1$
-				getString("_UI_PropertyDescriptor_description", "_UI_TableConfiguration_defaultRowAxisProvider_feature", "_UI_TableConfiguration_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				NattableconfigurationPackage.Literals.TABLE_CONFIGURATION__DEFAULT_ROW_AXIS_PROVIDER, true, false, true, null, null, null));
+		itemPropertyDescriptors.add
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_TableConfiguration_defaultRowAxisProvider_feature"), //$NON-NLS-1$
+						getString("_UI_PropertyDescriptor_description", "_UI_TableConfiguration_defaultRowAxisProvider_feature", "_UI_TableConfiguration_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+						NattableconfigurationPackage.Literals.TABLE_CONFIGURATION__DEFAULT_ROW_AXIS_PROVIDER,
+						true,
+						false,
+						true,
+						null,
+						null,
+						null));
 	}
 
 	/**
@@ -135,9 +169,19 @@ public class TableConfigurationItemProvider extends TableNamedElementItemProvide
 	 * @generated
 	 */
 	protected void addDefaultColumnAxisProviderPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_TableConfiguration_defaultColumnAxisProvider_feature"), //$NON-NLS-1$
-				getString("_UI_PropertyDescriptor_description", "_UI_TableConfiguration_defaultColumnAxisProvider_feature", "_UI_TableConfiguration_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				NattableconfigurationPackage.Literals.TABLE_CONFIGURATION__DEFAULT_COLUMN_AXIS_PROVIDER, true, false, true, null, null, null));
+		itemPropertyDescriptors.add
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_TableConfiguration_defaultColumnAxisProvider_feature"), //$NON-NLS-1$
+						getString("_UI_PropertyDescriptor_description", "_UI_TableConfiguration_defaultColumnAxisProvider_feature", "_UI_TableConfiguration_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+						NattableconfigurationPackage.Literals.TABLE_CONFIGURATION__DEFAULT_COLUMN_AXIS_PROVIDER,
+						true,
+						false,
+						true,
+						null,
+						null,
+						null));
 	}
 
 	/**
@@ -197,9 +241,11 @@ public class TableConfigurationItemProvider extends TableNamedElementItemProvide
 	@Override
 	public String getText(Object object) {
 		String label = ((TableConfiguration) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_TableConfiguration_type") : //$NON-NLS-1$
+		return label == null || label.length() == 0 ?
+				getString("_UI_TableConfiguration_type") : //$NON-NLS-1$
 				getString("_UI_TableConfiguration_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
+
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -242,19 +288,40 @@ public class TableConfigurationItemProvider extends TableNamedElementItemProvide
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(NattableconfigurationPackage.Literals.TABLE_CONFIGURATION__CREATION_TESTER, NattabletesterFactory.eINSTANCE.createJavaTableTester()));
+		newChildDescriptors.add
+				(createChildParameter
+				(NattableconfigurationPackage.Literals.TABLE_CONFIGURATION__CREATION_TESTER,
+						NattabletesterFactory.eINSTANCE.createJavaTableTester()));
 
-		newChildDescriptors.add(createChildParameter(NattableconfigurationPackage.Literals.TABLE_CONFIGURATION__ROW_HEADER_AXIS_CONFIGURATION, NattableaxisconfigurationFactory.eINSTANCE.createTableHeaderAxisConfiguration()));
+		newChildDescriptors.add
+				(createChildParameter
+				(NattableconfigurationPackage.Literals.TABLE_CONFIGURATION__ROW_HEADER_AXIS_CONFIGURATION,
+						NattableaxisconfigurationFactory.eINSTANCE.createTableHeaderAxisConfiguration()));
 
-		newChildDescriptors.add(createChildParameter(NattableconfigurationPackage.Literals.TABLE_CONFIGURATION__COLUMN_HEADER_AXIS_CONFIGURATION, NattableaxisconfigurationFactory.eINSTANCE.createTableHeaderAxisConfiguration()));
+		newChildDescriptors.add
+				(createChildParameter
+				(NattableconfigurationPackage.Literals.TABLE_CONFIGURATION__COLUMN_HEADER_AXIS_CONFIGURATION,
+						NattableaxisconfigurationFactory.eINSTANCE.createTableHeaderAxisConfiguration()));
 
-		newChildDescriptors.add(createChildParameter(NattableconfigurationPackage.Literals.TABLE_CONFIGURATION__COLUMN_AXIS_PROVIDERS, NattableaxisproviderFactory.eINSTANCE.createSlaveObjectAxisProvider()));
+		newChildDescriptors.add
+				(createChildParameter
+				(NattableconfigurationPackage.Literals.TABLE_CONFIGURATION__COLUMN_AXIS_PROVIDERS,
+						NattableaxisproviderFactory.eINSTANCE.createSlaveObjectAxisProvider()));
 
-		newChildDescriptors.add(createChildParameter(NattableconfigurationPackage.Literals.TABLE_CONFIGURATION__COLUMN_AXIS_PROVIDERS, NattableaxisproviderFactory.eINSTANCE.createMasterObjectAxisProvider()));
+		newChildDescriptors.add
+				(createChildParameter
+				(NattableconfigurationPackage.Literals.TABLE_CONFIGURATION__COLUMN_AXIS_PROVIDERS,
+						NattableaxisproviderFactory.eINSTANCE.createMasterObjectAxisProvider()));
 
-		newChildDescriptors.add(createChildParameter(NattableconfigurationPackage.Literals.TABLE_CONFIGURATION__ROW_AXIS_PROVIDERS, NattableaxisproviderFactory.eINSTANCE.createSlaveObjectAxisProvider()));
+		newChildDescriptors.add
+				(createChildParameter
+				(NattableconfigurationPackage.Literals.TABLE_CONFIGURATION__ROW_AXIS_PROVIDERS,
+						NattableaxisproviderFactory.eINSTANCE.createSlaveObjectAxisProvider()));
 
-		newChildDescriptors.add(createChildParameter(NattableconfigurationPackage.Literals.TABLE_CONFIGURATION__ROW_AXIS_PROVIDERS, NattableaxisproviderFactory.eINSTANCE.createMasterObjectAxisProvider()));
+		newChildDescriptors.add
+				(createChildParameter
+				(NattableconfigurationPackage.Literals.TABLE_CONFIGURATION__ROW_AXIS_PROVIDERS,
+						NattableaxisproviderFactory.eINSTANCE.createMasterObjectAxisProvider()));
 	}
 
 	/**
@@ -269,8 +336,11 @@ public class TableConfigurationItemProvider extends TableNamedElementItemProvide
 		Object childFeature = feature;
 		Object childObject = child;
 
-		boolean qualify = childFeature == NattableconfigurationPackage.Literals.TABLE_CONFIGURATION__ROW_HEADER_AXIS_CONFIGURATION || childFeature == NattableconfigurationPackage.Literals.TABLE_CONFIGURATION__COLUMN_HEADER_AXIS_CONFIGURATION
-				|| childFeature == NattableconfigurationPackage.Literals.TABLE_CONFIGURATION__COLUMN_AXIS_PROVIDERS || childFeature == NattableconfigurationPackage.Literals.TABLE_CONFIGURATION__ROW_AXIS_PROVIDERS;
+		boolean qualify =
+				childFeature == NattableconfigurationPackage.Literals.TABLE_CONFIGURATION__ROW_HEADER_AXIS_CONFIGURATION ||
+						childFeature == NattableconfigurationPackage.Literals.TABLE_CONFIGURATION__COLUMN_HEADER_AXIS_CONFIGURATION ||
+						childFeature == NattableconfigurationPackage.Literals.TABLE_CONFIGURATION__COLUMN_AXIS_PROVIDERS ||
+						childFeature == NattableconfigurationPackage.Literals.TABLE_CONFIGURATION__ROW_AXIS_PROVIDERS;
 
 		if (qualify) {
 			return getString("_UI_CreateChild_text2", //$NON-NLS-1$

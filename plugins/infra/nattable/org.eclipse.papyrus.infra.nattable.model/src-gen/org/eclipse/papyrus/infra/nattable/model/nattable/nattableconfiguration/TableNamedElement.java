@@ -12,8 +12,7 @@
  */
 package org.eclipse.papyrus.infra.nattable.model.nattable.nattableconfiguration;
 
-import org.eclipse.emf.ecore.EModelElement;
-import org.eclipse.emf.ecore.EObject;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattablestyle.StyledElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -34,10 +33,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * @see org.eclipse.papyrus.infra.nattable.model.nattable.nattableconfiguration.NattableconfigurationPackage#getTableNamedElement()
  * @model abstract="true"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='nonEmptyName'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot nonEmptyName='not (name.oclIsUndefined() or name = \'\')'"
  * @generated
  */
-public interface TableNamedElement extends EObject, EModelElement {
-
+public interface TableNamedElement extends StyledElement {
 	/**
 	 * Returns the value of the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -55,8 +55,7 @@ public interface TableNamedElement extends EObject, EModelElement {
 	String getDescription();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableconfiguration.TableNamedElement#getDescription
-	 * <em>Description</em>}' attribute.
+	 * Sets the value of the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableconfiguration.TableNamedElement#getDescription <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -84,8 +83,7 @@ public interface TableNamedElement extends EObject, EModelElement {
 	String getName();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableconfiguration.TableNamedElement#getName <em>Name</em>}'
-	 * attribute.
+	 * Sets the value of the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableconfiguration.TableNamedElement#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *

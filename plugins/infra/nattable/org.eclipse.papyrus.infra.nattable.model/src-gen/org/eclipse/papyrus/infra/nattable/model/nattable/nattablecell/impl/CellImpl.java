@@ -44,7 +44,6 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattableproblem.Problem
  * @generated
  */
 public class CellImpl extends EModelElementImpl implements Cell {
-
 	/**
 	 * The cached value of the '{@link #getColumnWrapper() <em>Column Wrapper</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -150,7 +149,8 @@ public class CellImpl extends EModelElementImpl implements Cell {
 			if (msgs != null) {
 				msgs.dispatch();
 			}
-		} else if (eNotificationRequired()) {
+		}
+		else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, NattablecellPackage.CELL__COLUMN_WRAPPER, newColumnWrapper, newColumnWrapper));
 		}
 	}
@@ -206,7 +206,8 @@ public class CellImpl extends EModelElementImpl implements Cell {
 			if (msgs != null) {
 				msgs.dispatch();
 			}
-		} else if (eNotificationRequired()) {
+		}
+		else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, NattablecellPackage.CELL__ROW_WRAPPER, newRowWrapper, newRowWrapper));
 		}
 	}

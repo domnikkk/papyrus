@@ -107,7 +107,7 @@ public class TableCommands {
 	public static ICommand getSetColumnHeaderConfigurationValueCommand(final Table table, final EStructuralFeature feature, final Object newValue) {
 		final TransactionalEditingDomain domain = TableEditingDomainUtils.getTableEditingDomain(table);
 		final CompositeCommand compositeCommand = new CompositeCommand("SetColumnHeaderConfigurationCommand"); //$NON-NLS-1$
-		EObject elementToEdit = HeaderAxisConfigurationManagementUtils.getColumnAbstractHeaderAxisUsedInTable(table);
+		EObject elementToEdit = HeaderAxisConfigurationManagementUtils.getColumnAbstractHeaderAxisConfigurationUsedInTable(table);
 		if (elementToEdit instanceof TableHeaderAxisConfiguration) {
 			elementToEdit = HeaderAxisConfigurationManagementUtils.transformToLocalHeaderConfiguration((TableHeaderAxisConfiguration) elementToEdit);
 			SetRequest request = null;
@@ -202,7 +202,7 @@ public class TableCommands {
 	 *         the command to register the local column label configuration to the table
 	 */
 	private static final ICommand getRegisterLocalColumnLabelConfigurationCommand(final Table table, final ILabelProviderConfiguration tableLabelConfiguration, final ILabelProviderConfiguration localTableLabelConfiguration) {
-		final AbstractHeaderAxisConfiguration abstractHeaderAxisUsedInTable = HeaderAxisConfigurationManagementUtils.getColumnAbstractHeaderAxisUsedInTable(table);
+		final AbstractHeaderAxisConfiguration abstractHeaderAxisUsedInTable = HeaderAxisConfigurationManagementUtils.getColumnAbstractHeaderAxisConfigurationUsedInTable(table);
 
 		EStructuralFeature axisConfigurationFeature = NattablePackage.eINSTANCE.getTable_LocalColumnHeaderAxisConfiguration();
 		if (!table.isInvertAxis()) {

@@ -24,7 +24,6 @@ import org.eclipse.emf.ecore.EFactory;
  * @generated
  */
 public interface NattablelabelproviderFactory extends EFactory {
-
 	/**
 	 * The singleton instance of the factory.
 	 * <!-- begin-user-doc -->

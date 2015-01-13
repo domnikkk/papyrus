@@ -14,6 +14,8 @@
 package org.eclipse.papyrus.infra.nattable.utils;
 
 import java.util.Collection;
+import java.util.Collections;
+import java.util.Map;
 
 import org.eclipse.nebula.widgets.nattable.coordinate.PositionCoordinate;
 
@@ -31,15 +33,36 @@ public class TableSelectionWrapper {
 	final private Collection<PositionCoordinate> selectedCells;
 
 	/**
+	 * a map linking index of selected rows and the object in the selected row
+	 */
+	final private Map<Integer, Object> fullySelectedRowsObject;
+
+	/**
+	 * a map linking index of selected column and the object in the selected column
+	 */
+	final private Map<Integer, Object> fullySelectionColumnsObject;
+
+	/**
 	 *
 	 * Constructor.
 	 *
 	 * @param selectionCells
 	 */
 	public TableSelectionWrapper(final Collection<PositionCoordinate> selectionCells) {
-		this.selectedCells = selectionCells;
+		this(selectionCells, Collections.<Integer, Object> emptyMap(), Collections.<Integer, Object> emptyMap());
 	}
 
+	/**
+	 *
+	 * Constructor.
+	 *
+	 * @param selectionCells
+	 */
+	public TableSelectionWrapper(final Collection<PositionCoordinate> selectionCells, final Map<Integer, Object> fullySelectedRowObject, final Map<Integer, Object> fullySelectedColumnObject) {
+		this.selectedCells = selectionCells;
+		this.fullySelectedRowsObject = fullySelectedRowObject;
+		this.fullySelectionColumnsObject = fullySelectedColumnObject;
+	}
 
 	/**
 	 *
@@ -50,5 +73,22 @@ public class TableSelectionWrapper {
 		return selectedCells;
 	}
 
+	/**
+	 *
+	 * @return
+	 *         a map with the fully selected rows and their index
+	 */
+	public Map<Integer, Object> getFullySelectedRows() {
+		return this.fullySelectedRowsObject;
+	}
+
+	/**
+	 *
+	 * @return
+	 *         a map with the fully selected rows and their columns
+	 */
+	public Map<Integer, Object> getFullySelectedColumns() {
+		return this.fullySelectionColumnsObject;
+	}
 
 }

@@ -26,9 +26,7 @@ import org.eclipse.emf.ecore.EStructuralFeature;
  * <p>
  * The following features are supported:
  * <ul>
- * <li>
- * {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.EStructuralFeatureValueFillingConfiguration#getListenFeature
- * <em>Listen Feature</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.EStructuralFeatureValueFillingConfiguration#getListenFeature <em>Listen Feature</em>}</li>
  * </ul>
  * </p>
  *
@@ -37,7 +35,6 @@ import org.eclipse.emf.ecore.EStructuralFeature;
  * @generated
  */
 public interface EStructuralFeatureValueFillingConfiguration extends IFillingConfiguration {
-
 	/**
 	 * Returns the value of the '<em><b>Listen Feature</b></em>' reference.
 	 * <!-- begin-user-doc -->
@@ -56,8 +53,7 @@ public interface EStructuralFeatureValueFillingConfiguration extends IFillingCon
 	EStructuralFeature getListenFeature();
 
 	/**
-	 * Sets the value of the ' {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.EStructuralFeatureValueFillingConfiguration#getListenFeature
-	 * <em>Listen Feature</em>}' reference.
+	 * Sets the value of the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.EStructuralFeatureValueFillingConfiguration#getListenFeature <em>Listen Feature</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *

@@ -28,6 +28,8 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfigurati
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.NattableaxisconfigurationPackage;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.PasteEObjectConfiguration;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.TableHeaderAxisConfiguration;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.TreeFillingConfiguration;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattablestyle.StyledElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -43,7 +45,6 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfigurati
  * @generated
  */
 public class NattableaxisconfigurationSwitch<T> extends Switch<T> {
-
 	/**
 	 * The cached model package
 	 * <!-- begin-user-doc -->
@@ -95,6 +96,9 @@ public class NattableaxisconfigurationSwitch<T> extends Switch<T> {
 			AbstractHeaderAxisConfiguration abstractHeaderAxisConfiguration = (AbstractHeaderAxisConfiguration) theEObject;
 			T result = caseAbstractHeaderAxisConfiguration(abstractHeaderAxisConfiguration);
 			if (result == null) {
+				result = caseStyledElement(abstractHeaderAxisConfiguration);
+			}
+			if (result == null) {
 				result = caseEModelElement(abstractHeaderAxisConfiguration);
 			}
 			if (result == null) {
@@ -106,6 +110,12 @@ public class NattableaxisconfigurationSwitch<T> extends Switch<T> {
 			AxisManagerRepresentation axisManagerRepresentation = (AxisManagerRepresentation) theEObject;
 			T result = caseAxisManagerRepresentation(axisManagerRepresentation);
 			if (result == null) {
+				result = caseStyledElement(axisManagerRepresentation);
+			}
+			if (result == null) {
+				result = caseEModelElement(axisManagerRepresentation);
+			}
+			if (result == null) {
 				result = defaultCase(theEObject);
 			}
 			return result;
@@ -113,6 +123,12 @@ public class NattableaxisconfigurationSwitch<T> extends Switch<T> {
 		case NattableaxisconfigurationPackage.AXIS_MANAGER_CONFIGURATION: {
 			AxisManagerConfiguration axisManagerConfiguration = (AxisManagerConfiguration) theEObject;
 			T result = caseAxisManagerConfiguration(axisManagerConfiguration);
+			if (result == null) {
+				result = caseStyledElement(axisManagerConfiguration);
+			}
+			if (result == null) {
+				result = caseEModelElement(axisManagerConfiguration);
+			}
 			if (result == null) {
 				result = defaultCase(theEObject);
 			}
@@ -123,6 +139,9 @@ public class NattableaxisconfigurationSwitch<T> extends Switch<T> {
 			T result = caseTableHeaderAxisConfiguration(tableHeaderAxisConfiguration);
 			if (result == null) {
 				result = caseAbstractHeaderAxisConfiguration(tableHeaderAxisConfiguration);
+			}
+			if (result == null) {
+				result = caseStyledElement(tableHeaderAxisConfiguration);
 			}
 			if (result == null) {
 				result = caseEModelElement(tableHeaderAxisConfiguration);
@@ -139,6 +158,9 @@ public class NattableaxisconfigurationSwitch<T> extends Switch<T> {
 				result = caseAbstractHeaderAxisConfiguration(localTableHeaderAxisConfiguration);
 			}
 			if (result == null) {
+				result = caseStyledElement(localTableHeaderAxisConfiguration);
+			}
+			if (result == null) {
 				result = caseEModelElement(localTableHeaderAxisConfiguration);
 			}
 			if (result == null) {
@@ -149,6 +171,12 @@ public class NattableaxisconfigurationSwitch<T> extends Switch<T> {
 		case NattableaxisconfigurationPackage.IAXIS_CONFIGURATION: {
 			IAxisConfiguration iAxisConfiguration = (IAxisConfiguration) theEObject;
 			T result = caseIAxisConfiguration(iAxisConfiguration);
+			if (result == null) {
+				result = caseStyledElement(iAxisConfiguration);
+			}
+			if (result == null) {
+				result = caseEModelElement(iAxisConfiguration);
+			}
 			if (result == null) {
 				result = defaultCase(theEObject);
 			}
@@ -161,6 +189,12 @@ public class NattableaxisconfigurationSwitch<T> extends Switch<T> {
 				result = caseIAxisConfiguration(featureAxisConfiguration);
 			}
 			if (result == null) {
+				result = caseStyledElement(featureAxisConfiguration);
+			}
+			if (result == null) {
+				result = caseEModelElement(featureAxisConfiguration);
+			}
+			if (result == null) {
 				result = defaultCase(theEObject);
 			}
 			return result;
@@ -170,6 +204,12 @@ public class NattableaxisconfigurationSwitch<T> extends Switch<T> {
 			T result = caseIFillingConfiguration(iFillingConfiguration);
 			if (result == null) {
 				result = caseIAxisConfiguration(iFillingConfiguration);
+			}
+			if (result == null) {
+				result = caseStyledElement(iFillingConfiguration);
+			}
+			if (result == null) {
+				result = caseEModelElement(iFillingConfiguration);
 			}
 			if (result == null) {
 				result = defaultCase(theEObject);
@@ -186,6 +226,12 @@ public class NattableaxisconfigurationSwitch<T> extends Switch<T> {
 				result = caseIAxisConfiguration(eStructuralFeatureValueFillingConfiguration);
 			}
 			if (result == null) {
+				result = caseStyledElement(eStructuralFeatureValueFillingConfiguration);
+			}
+			if (result == null) {
+				result = caseEModelElement(eStructuralFeatureValueFillingConfiguration);
+			}
+			if (result == null) {
 				result = defaultCase(theEObject);
 			}
 			return result;
@@ -195,6 +241,12 @@ public class NattableaxisconfigurationSwitch<T> extends Switch<T> {
 			T result = caseIPasteConfiguration(iPasteConfiguration);
 			if (result == null) {
 				result = caseIAxisConfiguration(iPasteConfiguration);
+			}
+			if (result == null) {
+				result = caseStyledElement(iPasteConfiguration);
+			}
+			if (result == null) {
+				result = caseEModelElement(iPasteConfiguration);
 			}
 			if (result == null) {
 				result = defaultCase(theEObject);
@@ -209,6 +261,32 @@ public class NattableaxisconfigurationSwitch<T> extends Switch<T> {
 			}
 			if (result == null) {
 				result = caseIAxisConfiguration(pasteEObjectConfiguration);
+			}
+			if (result == null) {
+				result = caseStyledElement(pasteEObjectConfiguration);
+			}
+			if (result == null) {
+				result = caseEModelElement(pasteEObjectConfiguration);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case NattableaxisconfigurationPackage.TREE_FILLING_CONFIGURATION: {
+			TreeFillingConfiguration treeFillingConfiguration = (TreeFillingConfiguration) theEObject;
+			T result = caseTreeFillingConfiguration(treeFillingConfiguration);
+			if (result == null) {
+				result = caseIFillingConfiguration(treeFillingConfiguration);
+			}
+			if (result == null) {
+				result = caseIAxisConfiguration(treeFillingConfiguration);
+			}
+			if (result == null) {
+				result = caseStyledElement(treeFillingConfiguration);
+			}
+			if (result == null) {
+				result = caseEModelElement(treeFillingConfiguration);
 			}
 			if (result == null) {
 				result = defaultCase(theEObject);
@@ -408,6 +486,23 @@ public class NattableaxisconfigurationSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Tree Filling Configuration</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Tree Filling Configuration</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTreeFillingConfiguration(TreeFillingConfiguration object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>EModel Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -421,6 +516,23 @@ public class NattableaxisconfigurationSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseEModelElement(EModelElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Styled Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Styled Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseStyledElement(StyledElement object) {
 		return null;
 	}
 

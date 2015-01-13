@@ -34,7 +34,6 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxis.Nattableax
  * @generated
  */
 public class EStructuralFeatureAxisImpl extends FeatureAxisImpl implements EStructuralFeatureAxis {
-
 	/**
 	 * The cached value of the '{@link #getElement() <em>Element</em>}' reference.
 	 * <!-- begin-user-doc -->

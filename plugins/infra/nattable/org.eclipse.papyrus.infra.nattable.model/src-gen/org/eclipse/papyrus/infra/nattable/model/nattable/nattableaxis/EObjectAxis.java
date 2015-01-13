@@ -31,7 +31,6 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface EObjectAxis extends ObjectAxis {
-
 	/**
 	 * Returns the value of the '<em><b>Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
@@ -50,8 +49,7 @@ public interface EObjectAxis extends ObjectAxis {
 	EObject getElement();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxis.EObjectAxis#getElement <em>Element</em>}'
-	 * reference.
+	 * Sets the value of the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxis.EObjectAxis#getElement <em>Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *

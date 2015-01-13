@@ -13,11 +13,14 @@
  *****************************************************************************/
 package org.eclipse.papyrus.infra.nattable.utils;
 
+import org.eclipse.core.runtime.Assert;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.papyrus.infra.nattable.model.nattable.Table;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AbstractHeaderAxisConfiguration;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.LocalTableHeaderAxisConfiguration;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.NattableaxisconfigurationFactory;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.TableHeaderAxisConfiguration;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattablestyle.Style;
 
 /**
  * Utils class for AxisConfiguration
@@ -71,7 +74,7 @@ public class HeaderAxisConfigurationManagementUtils {
 	 * @return
 	 *         the header configuration used for rows in the table. The result can't be <code>null</code>
 	 */
-	public static final AbstractHeaderAxisConfiguration getAbstractHeaderAxisConfigurationUsedInTable(final Table table) {
+	public static final AbstractHeaderAxisConfiguration getRowAbstractHeaderAxisConfigurationUsedInTable(final Table table) {
 		AbstractHeaderAxisConfiguration config = getRowAbstractHeaderAxisInTable(table);
 		if (config == null) {
 			config = getRowAbstractHeaderAxisInTableConfiguration(table);
@@ -119,12 +122,12 @@ public class HeaderAxisConfigurationManagementUtils {
 	 * @return
 	 *         the header configuration used for columns in the table. The result can't be <code>null</code>
 	 */
-	public static final AbstractHeaderAxisConfiguration getColumnAbstractHeaderAxisUsedInTable(final Table table) {
+	public static final AbstractHeaderAxisConfiguration getColumnAbstractHeaderAxisConfigurationUsedInTable(final Table table) {
 		AbstractHeaderAxisConfiguration config = getColumnAbstractHeaderAxisInTable(table);
 		if (config == null) {
 			config = getColumnAbstractHeaderAxisInTableConfiguration(table);
 		}
-		assert config != null;
+		Assert.isNotNull(config);
 		return config;
 	}
 
@@ -140,7 +143,7 @@ public class HeaderAxisConfigurationManagementUtils {
 		if (config == null) {
 			config = getRowAbstractHeaderAxisInTableConfiguration(table);
 		}
-		assert config != null;
+		Assert.isNotNull(config);
 		return config;
 	}
 
@@ -157,6 +160,10 @@ public class HeaderAxisConfigurationManagementUtils {
 		conf.setDisplayIndex(configuration.isDisplayIndex());
 		conf.setDisplayLabel(configuration.isDisplayLabel());
 		conf.setIndexStyle(configuration.getIndexStyle());
+		for (Style current : configuration.getStyles()) {
+			Style copy = EcoreUtil.copy(current);
+			conf.getStyles().add(copy);
+		}
 		return conf;
 	}
 

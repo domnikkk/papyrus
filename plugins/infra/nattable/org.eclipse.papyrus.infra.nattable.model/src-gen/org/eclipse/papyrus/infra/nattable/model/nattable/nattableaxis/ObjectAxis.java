@@ -35,7 +35,6 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.O
  * @generated
  */
 public interface ObjectAxis extends IAxis {
-
 	/**
 	 * Returns the value of the '<em><b>Local Label Configuration</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
@@ -55,8 +54,7 @@ public interface ObjectAxis extends IAxis {
 	ObjectLabelProviderConfiguration getLocalLabelConfiguration();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxis.ObjectAxis#getLocalLabelConfiguration
-	 * <em>Local Label Configuration</em>}' containment reference.
+	 * Sets the value of the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxis.ObjectAxis#getLocalLabelConfiguration <em>Local Label Configuration</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
