@@ -1,6 +1,7 @@
 Manifest-Version: 1.0
 Export-Package: org.eclipse.papyrus.infra.emf.nattable,
  org.eclipse.papyrus.infra.emf.nattable.celleditor.config,
+ org.eclipse.papyrus.infra.emf.nattable.dataprovider,
  org.eclipse.papyrus.infra.emf.nattable.manager.axis,
  org.eclipse.papyrus.infra.emf.nattable.manager.cell,
  org.eclipse.papyrus.infra.emf.nattable.provider,

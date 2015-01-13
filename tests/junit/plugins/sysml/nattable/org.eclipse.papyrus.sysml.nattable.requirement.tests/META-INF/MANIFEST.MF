@@ -23,7 +23,11 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.papyrus.infra.gmfdiag.common;bundle-version="1.1.0",
  org.eclipse.papyrus.infra.widgets;bundle-version="1.1.0",
  org.eclipse.nebula.widgets.nattable.core;bundle-version="1.1.0",
- org.eclipse.papyrus.junit.utils;bundle-version="1.1.0"
+ org.eclipse.papyrus.junit.utils;bundle-version="1.1.0",
+ org.eclipse.papyrus.infra.tools;bundle-version="1.1.0",
+ org.eclipse.papyrus.uml.nattable;bundle-version="1.1.0",
+ org.eclipse.papyrus.infra.emf.nattable;bundle-version="1.1.0",
+ org.eclipse.papyrus.uml.extensionpoints;bundle-version="1.1.0"
 Export-Package: org.eclipse.papyrus.sysml.nattable.requirement.tests,
  org.eclipse.papyrus.sysml.nattable.requirement.tests.tests
 Bundle-Vendor: %providerName
@@ -34,7 +38,6 @@ Bundle-Localization: plugin
 Bundle-ManifestVersion: 2
 Bundle-Activator: org.eclipse.papyrus.sysml.nattable.requirement.tests
  .Activator
-Bundle-SymbolicName: org.eclipse.papyrus.sysml.nattable.requirement.te
- sts
+Bundle-SymbolicName: org.eclipse.papyrus.sysml.nattable.requirement.tests;singleton:=true
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 
