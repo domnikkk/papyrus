@@ -70,7 +70,7 @@ import xpt.Common
 				marker = file.createMarker(MARKER_TYPE);
 				marker.setAttribute(org.eclipse.core.resources.IMarker.MESSAGE, message);
 				marker.setAttribute(org.eclipse.core.resources.IMarker.LOCATION, location);
-				marker.setAttribute(org.eclipse.gmf.runtime.common.ui.resources.IMarker.ELEMENT_ID, elementId);
+				marker.setAttribute(org.eclipse.gmf.runtime.common.core.resources.IMarker.ELEMENT_ID, elementId);
 				int markerSeverity = org.eclipse.core.resources.IMarker.SEVERITY_INFO;
 				if (statusSeverity == org.eclipse.core.runtime.IStatus.WARNING) {
 					markerSeverity = org.eclipse.core.resources.IMarker.SEVERITY_WARNING;    						

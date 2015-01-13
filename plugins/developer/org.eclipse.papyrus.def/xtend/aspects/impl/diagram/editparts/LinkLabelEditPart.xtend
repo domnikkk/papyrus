@@ -38,10 +38,5 @@ import xpt.diagram.editparts.Common
 		ллл	End Papyrus Code
 		super.handleNotificationEvent(event);
 	'''
-	
-	override additionalEditPolicies(GenLinkLabel it)
-	'''
-	installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, new org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.PapyrusLinkLabelDragPolicy());
-    '''
 
 }

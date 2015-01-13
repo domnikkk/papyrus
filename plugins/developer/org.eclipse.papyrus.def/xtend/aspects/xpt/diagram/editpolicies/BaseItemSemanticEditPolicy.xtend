@@ -61,7 +61,7 @@ public class «className(it)» extends org.eclipse.gmf.runtime.diagram.ui.editpoli
 			if (view instanceof org.eclipse.gmf.runtime.notation.View) {
 				Integer id = new Integer(«getVisualIDMethodCall(it)»((org.eclipse.gmf.runtime.notation.View) view));
 				request.getExtendedData().put(VISUAL_ID_KEY, id);
-				request.getExtendedData().put(GRAPHICAL_RECONNECTED_EDGE, (org.eclipse.gmf.runtime.notation.View)view);
+				request.getExtendedData().put(GRAPHICAL_RECONNECTED_EDGE, view);
 			}
 		}
 		return super.getCommand(request);

@@ -25,7 +25,7 @@ import com.google.inject.Singleton
 			(if(editorGen.application == null) 'This method should be called within a workspace modify operation since it creates resources.' else ''))»
 		public static org.eclipse.emf.ecore.resource.Resource createDiagram(org.eclipse.emf.common.util.URI diagramURI,«IF standaloneDomainModel(
 			it)» org.eclipse.emf.common.util.URI modelURI,«ENDIF» org.eclipse.core.runtime.IProgressMonitor progressMonitor) {
-			org.eclipse.emf.transaction.TransactionalEditingDomain editingDomain = org.eclipse.gmf.runtime.emf.core.GMFEditingDomainFactory.INSTANCE.createEditingDomain();
+			org.eclipse.emf.transaction.TransactionalEditingDomain editingDomain = org.eclipse.emf.workspace.WorkspaceEditingDomainFactory.INSTANCE.createEditingDomain();
 			progressMonitor.beginTask(«xptExternalizer.accessorCall(editorGen, i18nKeyForCreateDiagramProgressTask(it))», 3);
 			final org.eclipse.emf.ecore.resource.Resource diagramResource = editingDomain.getResourceSet().createResource(diagramURI);
 			«IF standaloneDomainModel(it)»

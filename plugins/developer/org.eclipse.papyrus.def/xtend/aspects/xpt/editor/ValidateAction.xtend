@@ -92,7 +92,7 @@ import xpt.providers.ValidationProvider
 				diagramEditPart.getDiagramView(),
 				collectTargetElements(rootStatus, new java.util.HashSet<org.eclipse.emf.ecore.EObject>(), allDiagnostics));
 			for (java.util.Iterator<org.eclipse.emf.common.util.Diagnostic> it = emfValidationStatus.getChildren().iterator(); it.hasNext();) {
-			org.eclipse.emf.common.util.Diagnostic nextDiagnostic = (org.eclipse.emf.common.util.Diagnostic) it.next();
+			org.eclipse.emf.common.util.Diagnostic nextDiagnostic = it.next();
 			java.util.List<?> data = nextDiagnostic.getData();
 			if (data != null && !data.isEmpty() && data.get(0) instanceof org.eclipse.emf.ecore.EObject) {
 			org.eclipse.emf.ecore.EObject element = (org.eclipse.emf.ecore.EObject) data.get(0);
@@ -133,15 +133,14 @@ import xpt.providers.ValidationProvider
 			java.util.List<?> data = diagnostic.getData();
 			org.eclipse.emf.ecore.EObject target = null;
 			if (data != null && !data.isEmpty() && data.get(0) instanceof org.eclipse.emf.ecore.EObject) {
-			target = (org.eclipse.emf.ecore.EObject) data.get(0);
-			targetElementCollector.add(target);	
-			allDiagnostics.add(diagnostic);
+				target = (org.eclipse.emf.ecore.EObject) data.get(0);
+				targetElementCollector.add(target);	
+				allDiagnostics.add(diagnostic);
 			}
 			if (diagnostic.getChildren() != null && !diagnostic.getChildren().isEmpty()) {
-			for (java.util.Iterator<org.eclipse.emf.common.util.Diagnostic> it = diagnostic.getChildren().iterator(); it.hasNext();) {
-			collectTargetElements((org.eclipse.emf.common.util.Diagnostic) it.next(),
-				targetElementCollector, allDiagnostics);
-			}
+				for (java.util.Iterator<org.eclipse.emf.common.util.Diagnostic> it = diagnostic.getChildren().iterator(); it.hasNext();) {
+					collectTargetElements(it.next(), targetElementCollector, allDiagnostics);
+				}
 			}
 			return targetElementCollector;
 		}
