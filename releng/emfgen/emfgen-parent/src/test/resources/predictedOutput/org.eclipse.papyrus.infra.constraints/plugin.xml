@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin
+      name="%pluginName"
+      id="org.eclipse.papyrus.infra.constraints"
+      version="1.0.0"
+      provider-name="%providerName">
+
+   <requires>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eclipse.emf.ecore" export="true"/>
+   </requires>
+
+   <runtime>
+      <library name=".">
+         <export name="*"/>
+      </library>
+   </runtime>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Constraints -->
+      <package
+            uri="http://www.eclipse.org/papyrus/constraints/0.9"
+            class="org.eclipse.papyrus.infra.constraints.ConstraintsPackage"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Constraints -->
+      <package
+            uri="http://www.eclipse.org/papyrus/constraints/environment/0.9"
+            class="org.eclipse.papyrus.infra.constraints.environment.EnvironmentPackage"/>
+   </extension>
+
+</plugin>

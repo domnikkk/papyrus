@@ -1,0 +1,20 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+  
+<suite name="Suite1" verbose="1" >
+  <test name="extlibrary" >
+   	<parameter name="genModel" value="../emfgen-parent/src/test/resources/models/extlibrary/extlibrary.genmodel"/>
+    <parameter name="ecoreModel" value="../emfgen-parent/src/test/resources/models/extlibrary/extlibrary.ecore"/>
+    <parameter name="outputDirectory" value="${project.emfgen.outdir}/"/>
+    <classes>
+       <class name="fr.cea.list.lise.emfgen.core.test.EmfGenCoreTest" />
+    </classes>
+  </test>
+  <test name="StyleSheets" >
+   	<parameter name="genModel" value="../emfgen-parent/src/test/resources/models/stylesheets/StyleSheets.genmodel"/>
+    <parameter name="ecoreModel" value="../emfgen-parent/src/test/resources/models/stylesheets/StyleSheets.ecore"/>
+    <parameter name="outputDirectory" value="${project.emfgen.outdir}/"/>
+    <classes>
+       <class name="fr.cea.list.lise.emfgen.core.test.EmfGenCoreTest" />
+    </classes>
+  </test>
+</suite>

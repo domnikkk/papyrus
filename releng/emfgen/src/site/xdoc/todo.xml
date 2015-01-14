@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document xmlns="http://maven.apache.org/XDOC/2.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/XDOC/2.0 http://maven.apache.org/xsd/xdoc-2.0.xsd">
+
+  <properties>
+    <title>EMFGenerator</title>
+  </properties>
+
+  <body>
+    <section name="EMF support for ecore">
+	<p>understand if there is a difference between standalone mode and headless mode...</p>
+      <subsection name="Links">
+        <ul>
+        
+  			<li><a href="https://eclipse.googlesource.com/emf/org.eclipse.mwe/+/05e6820fac0fcfbf6870b1b2126d9da609399116/plugins/org.eclipse.emf.mwe.utils/src/org/eclipse/emf/mwe/utils/StandaloneSetup.java">https://eclipse.googlesource.com/emf/org.eclipse.mwe/+/05e6820fac0fcfbf6870b1b2126d9da609399116/plugins/org.eclipse.emf.mwe.utils/src/org/eclipse/emf/mwe/utils/StandaloneSetup.java</a></li>
+  			<li><a href="https://www.cct.lsu.edu/~rguidry/eclipse-doc36/src-html/org/eclipse/emf/mwe/utils/StandaloneSetup.html">standalaone</a></li>
+  			<li><a href="http://download.eclipse.org/modeling/emft/mwe/javadoc/2.3/org/eclipse/emf/mwe/utils/StandaloneSetup.html">uri mapping</a></li>
+		</ul>
+      </subsection>
+
+    </section>
+
+ 
+
+  </body>
+
+</document>
