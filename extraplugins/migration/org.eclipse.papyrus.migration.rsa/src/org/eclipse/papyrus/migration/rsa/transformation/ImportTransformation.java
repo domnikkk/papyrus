@@ -45,6 +45,7 @@ import org.eclipse.emf.common.util.WrappedException;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
@@ -80,6 +81,8 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.statushandlers.StatusManager;
 import org.eclipse.uml2.common.util.CacheAdapter;
+import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.Extension;
 import org.eclipse.uml2.uml.OpaqueExpression;
 import org.eclipse.uml2.uml.resource.UMLResource;
 
@@ -436,8 +439,9 @@ public class ImportTransformation {
 
 			umlResource = createUMLResource(resourceSet, sourceURI, targetURI);
 
+			// This list contains all the objects from the initial ModelExtent, plus all the ones
+			// which were created during the QVTo transformations.
 			List<EObject> outUMLObjects = getInOutUMLModel().getContents();
-
 			umlResource.getContents().addAll(outUMLObjects);
 
 			GMFResource notationResource = new GMFResource(notationModelURI); // GMF Resource content type?
@@ -791,6 +795,8 @@ public class ImportTransformation {
 			}
 		}
 
+		List<Resource> fragmentUMLResources = new LinkedList<Resource>();
+
 		for (Resource fragmentResource : fragmentResources) {
 			URI papyrusFragmentURI = convertToPapyrus(fragmentResource.getURI(), UMLResource.FILE_EXTENSION);
 
@@ -799,6 +805,8 @@ public class ImportTransformation {
 			Resource newResource = resourceSet.getResource(papyrusFragmentURI, false);
 			if (newResource == null) {
 				newResource = createUMLResource(resourceSet, fragmentResource.getURI(), papyrusFragmentURI);
+
+				fragmentUMLResources.add(newResource);
 
 				Resource fragmentNotationResource = new GMFResource(convertToPapyrus(papyrusFragmentURI, "notation"));
 				Resource fragmentDiResource = new XMIResourceImpl(convertToPapyrus(papyrusFragmentURI, "di"));
@@ -835,7 +843,46 @@ public class ImportTransformation {
 			}
 		}
 
+		handleFragmentStereotypes(umlResource, fragmentUMLResources);
+
 		return result;
+	}
+
+	/*
+	 * Bug 447097: [Model Import] Importing a fragmented model causes stereotype applications to be lost in resulting submodel
+	 * https://bugs.eclipse.org/bugs/show_bug.cgi?id=447097
+	 *
+	 * Before the transformation, We moved all root elements from the fragment resources to the main
+	 * resource, then we transformed some of them to Papyrus Stereotype Applications. We need to move
+	 * these stereotype applications back to the proper fragment resource
+	 */
+	protected void handleFragmentStereotypes(Resource mainUMLResource, List<Resource> umlResources) {
+		Iterator<EObject> rootElementIterator = mainUMLResource.getContents().iterator();
+		while (rootElementIterator.hasNext()) {
+			EObject rootElement = rootElementIterator.next();
+			if (rootElement instanceof Element) {
+				continue;
+			}
+
+			Resource targetStereotypeResource = getTargetStereotypeResource(rootElement, umlResources);
+			if (targetStereotypeResource != null && targetStereotypeResource != mainUMLResource) {
+				rootElementIterator.remove(); // To avoid ConcurrentModificationException when moving to the other resource
+				targetStereotypeResource.getContents().add(rootElement);
+			}
+		}
+	}
+
+	protected Resource getTargetStereotypeResource(EObject rootElement, List<Resource> umlResources) {
+		for (EReference eReference : rootElement.eClass().getEAllReferences()) {
+			if (eReference.getName().startsWith(Extension.METACLASS_ROLE_PREFIX)) {
+				Object value = rootElement.eGet(eReference);
+				if (value instanceof Element) {
+					return ((Element) value).eResource();
+				}
+			}
+		}
+
+		return null;
 	}
 
 	protected void deleteSourceRTStereotypes(Collection<Resource> fragmentResources) {
@@ -986,7 +1033,44 @@ public class ImportTransformation {
 		if (outUML == null) {
 			try {
 				Resource resource = resourceSet.getResource(sourceURI, true);
-				outUML = new BasicModelExtent(resource.getContents());
+
+				/*
+				 * Bug 447097: [Model Import] Importing a fragmented model causes stereotype applications to be lost in resulting submodel
+				 * https://bugs.eclipse.org/bugs/show_bug.cgi?id=447097
+				 * 
+				 * StereotypeApplications from Fragments are not considered "rootElements" by QVTo, and
+				 * there is no logical link between UML Elements and stereotype applications in fragments
+				 * We need to make all root Elements available to the QVTo ModelExtent (Including the ones
+				 * from fragments)
+				 */
+				List<EObject> allStereotypeApplications = new LinkedList<EObject>();
+				TreeIterator<EObject> allContents = resource.getAllContents();
+				Set<Resource> browsedResources = new HashSet<Resource>();
+				browsedResources.add(resource);
+				while (allContents.hasNext()) {
+					EObject next = allContents.next();
+					if (!(next instanceof Element)) { // Only navigate the UML hierarchy
+						allContents.prune();
+						continue;
+					}
+
+					Resource nextResource = next.eResource();
+					if (!browsedResources.contains(nextResource)) {
+						browsedResources.add(nextResource);
+						for (EObject rootElement : nextResource.getContents()) {
+							if (!(rootElement instanceof Element)) {
+								// We're interested in all objects which are not UML Elements
+								allStereotypeApplications.add(rootElement);
+							}
+						}
+					}
+				}
+
+				List<EObject> allRootElements = new LinkedList<EObject>(resource.getContents());
+				allRootElements.addAll(allStereotypeApplications);
+
+				// outUML = new BasicModelExtent(resource.getContents());
+				outUML = new BasicModelExtent(allRootElements);
 
 			} catch (Exception ex) {
 				Activator.log.error(ex);
