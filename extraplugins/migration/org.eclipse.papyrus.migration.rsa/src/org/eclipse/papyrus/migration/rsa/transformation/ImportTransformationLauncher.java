@@ -57,6 +57,11 @@ import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.PlatformUI;
+import org.eclipse.ui.console.ConsolePlugin;
+import org.eclipse.ui.console.IConsole;
+import org.eclipse.ui.console.IConsoleManager;
+import org.eclipse.ui.console.MessageConsole;
+import org.eclipse.ui.console.MessageConsoleStream;
 import org.eclipse.ui.dialogs.SelectionDialog;
 import org.eclipse.ui.statushandlers.StatusManager;
 import org.eclipse.uml2.uml.util.UMLUtil;
@@ -140,21 +145,21 @@ public class ImportTransformationLauncher {
 				}
 
 				int nbThreads = Math.max(1, config.getMaxThreads());
-				System.out.println("First phase (0-50%) / " + nbThreads + " Threads");
-				System.out.println("\tCumulated Transformation Time: " + timeFormat(cumulatedTransformationTime));
-				System.out.println("\tCumulated Loading Time: " + timeFormat(totalLoadingTime));
-				System.out.println("\tTotal Transformation Time: " + timeFormat(transformationsExecutionTime));
+				log("First phase (0-50%) / " + nbThreads + " Threads");
+				log("\tCumulated Transformation Time: " + timeFormat(cumulatedTransformationTime));
+				log("\tCumulated Loading Time: " + timeFormat(totalLoadingTime));
+				log("\tTotal Transformation Time: " + timeFormat(transformationsExecutionTime));
 
-				System.out.println("Second phase (50-100%) / " + nbThreads + " Threads");
-				System.out.println("\tCumulated Loading Time: " + timeFormat(ownLoadingTime));
-				System.out.println("\tTotal Fix Dependencies Time: " + timeFormat(ownExecutionTime));
+				log("Second phase (50-100%) / " + nbThreads + " Threads");
+				log("\tCumulated Loading Time: " + timeFormat(ownLoadingTime));
+				log("\tTotal Fix Dependencies Time: " + timeFormat(ownExecutionTime));
 
-				System.out.println("Total");
-				System.out.println("\tCumulated Total time: " + timeFormat(ownExecutionTime + cumulatedTransformationTime));
-				System.out.println("\tTotal time: " + timeFormat(ownExecutionTime + transformationsExecutionTime));
+				log("Total");
+				log("\tCumulated Total time: " + timeFormat(ownExecutionTime + cumulatedTransformationTime));
+				log("\tTotal time: " + timeFormat(ownExecutionTime + transformationsExecutionTime));
 
-				System.out.println("Import Complete");
-				System.out.println();
+				log("Import Complete");
+				log("");
 
 				return result;
 			}
@@ -221,6 +226,31 @@ public class ImportTransformationLauncher {
 
 		importDependencies.setUser(true);
 		importDependencies.schedule();
+	}
+
+	protected void log(String message) {
+		System.out.println(message);
+
+		MessageConsole console = getConsole();
+		MessageConsoleStream out = console.newMessageStream();
+		out.println(message);
+	}
+
+	protected static final String CONSOLE_NAME = "Model Import Results"; // The name is both the ID and the Label
+
+	protected MessageConsole getConsole() {
+		ConsolePlugin plugin = ConsolePlugin.getDefault();
+		IConsoleManager consoleManager = plugin.getConsoleManager();
+		IConsole[] existing = consoleManager.getConsoles();
+		for (int i = 0; i < existing.length; i++) {
+			if (CONSOLE_NAME.equals(existing[i].getName())) {
+				return (MessageConsole) existing[i];
+			}
+		}
+		// no console found, so create a new one
+		MessageConsole rsaConsole = new MessageConsole(CONSOLE_NAME, null);
+		consoleManager.addConsoles(new IConsole[] { rsaConsole });
+		return rsaConsole;
 	}
 
 	protected String timeFormat(long nano) {
