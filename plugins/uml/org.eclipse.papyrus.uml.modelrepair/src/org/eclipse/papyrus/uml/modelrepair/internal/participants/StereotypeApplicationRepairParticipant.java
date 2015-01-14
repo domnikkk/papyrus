@@ -14,6 +14,7 @@
 package org.eclipse.papyrus.uml.modelrepair.internal.participants;
 
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -721,6 +722,18 @@ public class StereotypeApplicationRepairParticipant extends PackageOperations im
 			}
 
 			return result;
+		}
+
+
+		protected Map<EClass, EClass> stereotypeDefinitionCache = new HashMap<EClass, EClass>();
+
+		@Override
+		protected EClass getTarget(EClass eClass) {
+			if (!stereotypeDefinitionCache.containsKey(eClass)) {
+				EClass result = super.getTarget(eClass);
+				stereotypeDefinitionCache.put(eClass, result);
+			}
+			return stereotypeDefinitionCache.get(eClass);
 		}
 	}
 }
