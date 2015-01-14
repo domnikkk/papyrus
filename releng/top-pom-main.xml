@@ -311,6 +311,9 @@
 		<tycho-version>0.22.0</tycho-version>
 		<tychoExtrasVersion>0.22.0</tychoExtrasVersion>
 		<findbugs.version>2.5.3</findbugs.version>
+		<xtext.version>2.7.3</xtext.version>
+		<java.source.version>1.6</java.source.version>
+		<java.target.version>1.6</java.target.version>
 	</properties>
 	<repositories>
 		<repository>
@@ -440,6 +443,39 @@
 		</pluginRepository>
 	</pluginRepositories>
 	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>3.2</version>
+					<configuration>
+						<source>${java.source.version}</source>
+						<target>${java.target.version}</target>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-clean-plugin</artifactId>
+					<version>2.6</version>
+				</plugin>
+				<plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>build-helper-maven-plugin</artifactId>
+					<version>1.9.1</version>
+				</plugin>
+				<plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>exec-maven-plugin</artifactId>
+					<version>1.2.1</version>
+				</plugin>
+				<plugin>
+					<groupId>org.eclipse.xtend</groupId>
+					<artifactId>xtend-maven-plugin</artifactId>
+					<version>${xtext.version}</version>
+				</plugin>
+			</plugins>
+		</pluginManagement>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -454,8 +490,8 @@
 				<artifactId>tycho-compiler-plugin</artifactId>
 				<version>${tycho-version}</version>
 				<configuration>
-					<source>1.6</source>
-					<target>1.6</target>
+					<source>${java.source.version}</source>
+					<target>${java.target.version}</target>
 					<optimize>true</optimize>
 					<showWarnings>true</showWarnings>
 				</configuration>
