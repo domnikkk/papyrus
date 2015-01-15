@@ -76,25 +76,39 @@ public class NotationModel extends EMFLogicalModel implements IModel {
 		getResource().getContents().add(newDiagram);
 	}
 
+	// Prevent infinite loop from 2 models delegating to each other.
+	private boolean checkingControlState = false;
+
 	/**
 	 * Notation resources are controlled if their base element is controlled
 	 * In case the notation resource is empty, we should look at the associated resources and see if one of them is controlled.
 	 */
 	@Override
 	public boolean isControlled(Resource resource) {
-		for (Resource resourceInModelSet : modelSet.getResources()) {
-			if (resource.getURI().trimFileExtension().equals(resourceInModelSet.getURI().trimFileExtension()) && !isRelatedResource(resourceInModelSet)) {
-				if (!resourceInModelSet.getContents().isEmpty()) {
-					EObject eObject = resourceInModelSet.getContents().get(0);
-					IModel iModel = modelSet.getModelFor(eObject);
-					if (iModel instanceof IEMFModel) {
-						if (((IEMFModel) iModel).isControlled(resourceInModelSet)) {
-							return true;
+		if (checkingControlState) {
+			return false;
+		}
+
+		try {
+			checkingControlState = true;
+
+			for (Resource resourceInModelSet : modelSet.getResources()) {
+				if (resource.getURI().trimFileExtension().equals(resourceInModelSet.getURI().trimFileExtension()) && !isRelatedResource(resourceInModelSet)) {
+					if (!resourceInModelSet.getContents().isEmpty()) {
+						EObject eObject = resourceInModelSet.getContents().get(0);
+						IModel iModel = modelSet.getModelFor(eObject);
+						if (iModel instanceof IEMFModel) {
+							if (((IEMFModel) iModel).isControlled(resourceInModelSet)) {
+								return true;
+							}
 						}
 					}
 				}
 			}
+		} finally {
+			checkingControlState = false;
 		}
+
 		return false;
 	}
 
