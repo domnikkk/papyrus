@@ -58,6 +58,7 @@ import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.type.core.IHintedType;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.papyrus.infra.gmfdiag.common.editpart.NodeEditPart;
 import org.eclipse.papyrus.infra.gmfdiag.common.preferences.ConnectionToolPreferences;
 import org.eclipse.papyrus.uml.diagram.common.layout.LayoutUtils;
 import org.eclipse.papyrus.uml.diagram.common.part.PaletteUtil;
@@ -179,6 +180,11 @@ public class AspectUnspecifiedTypeConnectionTool extends UnspecifiedTypeConnecti
 					if (sourceEditPart == targetEditPart) {
 						break;
 					}
+				}
+				
+				// do nothing if you have at least one edge element 
+				if( !(sourceEditPart instanceof NodeEditPart) || !(targetEditPart instanceof NodeEditPart)){
+					break;
 				}
 
 				CreateConnectionRequest connectionRequest = createTargetRequest();
