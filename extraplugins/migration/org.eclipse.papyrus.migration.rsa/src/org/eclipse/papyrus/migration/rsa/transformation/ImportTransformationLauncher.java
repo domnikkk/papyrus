@@ -37,6 +37,8 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.transaction.RollbackException;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.jface.dialogs.MessageDialog;
+import org.eclipse.papyrus.infra.core.resource.IEMFModel;
+import org.eclipse.papyrus.infra.core.resource.IModel;
 import org.eclipse.papyrus.infra.core.resource.ModelMultiException;
 import org.eclipse.papyrus.infra.core.resource.ModelSet;
 import org.eclipse.papyrus.infra.core.utils.DiResourceSet;
@@ -64,7 +66,6 @@ import org.eclipse.ui.console.MessageConsole;
 import org.eclipse.ui.console.MessageConsoleStream;
 import org.eclipse.ui.dialogs.SelectionDialog;
 import org.eclipse.ui.statushandlers.StatusManager;
-import org.eclipse.uml2.uml.util.UMLUtil;
 
 /**
  * Executes a batch of {@link ImportTransformation}s, then restores the dependencies (References)
@@ -366,7 +367,6 @@ public class ImportTransformationLauncher {
 	protected IStatus fixDependencies(ImportTransformation transformation, IProgressMonitor monitor, Map<URI, URI> urisToReplace, Map<URI, URI> profileUrisToReplace) {
 		monitor.subTask("Importing dependencies for " + transformation.getModelName());
 		final ModelSet modelSet = new DiResourceSet();
-		UMLUtil.init(modelSet);
 
 		final Collection<Resource> resourcesToRepair;
 		try {
@@ -445,11 +445,32 @@ public class ImportTransformationLauncher {
 
 		Set<Resource> resourcesToRepair = new HashSet<Resource>();
 		for (Resource resource : modelSet.getResources()) {
-			if (modelSet.isUserModelResource(resource.getURI())) {
+			if (isMainModelResource(modelSet, resource)) {
 				resourcesToRepair.add(resource);
 			}
 		}
 		return resourcesToRepair;
+	}
+
+	/**
+	 * A resource belongs to the main model if it is one of the 4-files model (Di, Notation, Uml, Sash), or if it is
+	 * a resource associated to a Sub-model of the main model (i.e. child of the main UML resource,
+	 * or resource associated to a child of the main UML resource)
+	 *
+	 * @param modelSet
+	 * @param resource
+	 * @return
+	 */
+	protected boolean isMainModelResource(ModelSet modelSet, Resource resource) {
+		IModel model = modelSet.getModelFor(resource);
+		if (model instanceof IEMFModel) {
+			IEMFModel logicalModel = (IEMFModel) model;
+			if (logicalModel.getResource() == resource || logicalModel.isControlled(resource)) {
+				return true;
+			}
+		}
+
+		return false;
 	}
 
 	protected void repairProxies(final ModelSet modelSet, final Collection<Resource> resourcesToRepair, Map<URI, URI> urisToReplace, IProgressMonitor monitor) {
