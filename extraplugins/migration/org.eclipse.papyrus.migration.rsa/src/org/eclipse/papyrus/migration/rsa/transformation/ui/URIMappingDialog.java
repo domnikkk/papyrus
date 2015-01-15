@@ -197,16 +197,22 @@ public class URIMappingDialog extends SelectionDialog {
 	 */
 	protected void removeDuplicates(List<URIMapping> allMappings) {
 		List<URIMapping> mappingsCopy = new LinkedList<URIMapping>(allMappings);
+
 		for (URIMapping mapping : mappingsCopy) {
 			for (URIMapping m : allMappings) {
 				if (m == mapping) {
 					continue;
 				}
 
+				// This is a duplicate
 				if (mapping.getSourceURI().equals(m.getSourceURI())) {
-					URIMapping mappingToRemove = findLessSpecificMapping(mapping, m);
-					allMappings.remove(mappingToRemove);
-					break;
+					// If both mappings are still present, remove one of them
+					if (allMappings.contains(mapping) && allMappings.contains(m)) {
+						URIMapping mappingToRemove = findLessSpecificMapping(mapping, m);
+
+						allMappings.remove(mappingToRemove);
+						break;
+					}
 				}
 			}
 		}
