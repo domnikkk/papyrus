@@ -13,8 +13,6 @@ package org.eclipse.papyrus.migration.rsa.transformation;
 
 import java.util.Collection;
 import java.util.Collections;
-import java.util.LinkedList;
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -61,10 +59,13 @@ public class RepairStereotypes {
 
 	private final ModelSet modelSet;
 
+	private final Collection<Resource> resourcesToRepair;
+
 	private final Map<URI, URI> profileMappings;
 
-	public RepairStereotypes(ModelSet modelSet, Map<URI, URI> profileMappings) {
+	public RepairStereotypes(ModelSet modelSet, Collection<Resource> resourcesToRepair, Map<URI, URI> profileMappings) {
 		this.modelSet = modelSet;
+		this.resourcesToRepair = resourcesToRepair;
 		this.profileMappings = profileMappings;
 	}
 
@@ -86,9 +87,7 @@ public class RepairStereotypes {
 
 		Function<? super EPackage, Profile> profileSupplier = getProfileSupplier();
 
-		List<Resource> allResources = new LinkedList<Resource>(modelSet.getResources());
-
-		for (Resource resource : allResources) {
+		for (Resource resource : resourcesToRepair) {
 			Element rootElement = (Element) EcoreUtil.getObjectByType(resource.getContents(), UMLPackage.Literals.ELEMENT);
 			if (!(rootElement instanceof Package)) {
 				continue;

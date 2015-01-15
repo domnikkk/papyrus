@@ -392,7 +392,7 @@ public class ImportTransformationLauncher {
 
 		repairProxies(modelSet, resourcesToRepair, urisToReplace, monitor); // Repairing proxies first will change the Applied Profiles. This helps repairing stereotypes
 
-		RepairStereotypes repairStereotypesAction = new RepairStereotypes(modelSet, profileUrisToReplace);
+		RepairStereotypes repairStereotypesAction = new RepairStereotypes(modelSet, resourcesToRepair, profileUrisToReplace);
 		repairStereotypesAction.execute();
 
 		try {
