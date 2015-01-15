@@ -30,6 +30,10 @@ import org.eclipse.uml2.uml.profile.standard.StandardPackage;
 import org.eclipse.uml2.uml.profile.standard.Trace;
 import org.eclipse.uml2.uml.util.UMLUtil;
 
+/**
+ * this class has been implemented in order to calculate derived properties of "RequirementRelated" stereotype see Requirement DerivedProperties Req0010 
+ *
+ */
 public class CustomRequirementRelatedImpl extends RequirementRelatedImpl implements RequirementRelated {
 
 

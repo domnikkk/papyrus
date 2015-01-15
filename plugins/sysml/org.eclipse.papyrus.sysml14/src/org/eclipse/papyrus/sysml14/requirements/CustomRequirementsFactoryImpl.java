@@ -15,6 +15,12 @@ package org.eclipse.papyrus.sysml14.requirements;
 
 import org.eclipse.papyrus.sysml14.requirements.internal.impl.RequirementsFactoryImpl;
 
+/**
+ * this class has been added in order to integrated specific implementation of Stereotypes: Requirement.
+ * Specific code has been added to calculate derived properties see Requirement Req0010 DerivedProperties
+ * 
+ *
+ */
 public class CustomRequirementsFactoryImpl extends RequirementsFactoryImpl implements RequirementsFactory {
 
 	@Override

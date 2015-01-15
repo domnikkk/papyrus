@@ -20,7 +20,10 @@ import org.eclipse.uml2.uml.Dependency;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.util.UMLUtil;
 
-
+/**
+ * this class has been implemented in order to calculate derived properties of "View" stereotype see Requirement DerivedProperties Req0010 
+ *
+ */
 public class CustomViewImpl extends ViewImpl implements View {
 
 

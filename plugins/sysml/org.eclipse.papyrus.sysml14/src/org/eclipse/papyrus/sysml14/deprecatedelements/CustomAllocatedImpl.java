@@ -26,6 +26,10 @@ import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.util.UMLUtil;
 
+/**
+ * this class has been implemented in order to calculate derived properties of "Allocated" stereotype see Requirement DerivedProperties Req0010 
+ *
+ */
 public class CustomAllocatedImpl extends AllocatedImpl implements Allocated {
 
 

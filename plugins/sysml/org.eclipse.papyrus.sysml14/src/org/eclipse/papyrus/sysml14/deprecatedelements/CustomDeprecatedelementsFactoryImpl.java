@@ -15,6 +15,13 @@ package org.eclipse.papyrus.sysml14.deprecatedelements;
 
 import org.eclipse.papyrus.sysml14.deprecatedelements.internal.impl.DeprecatedelementsFactoryImpl;
 
+
+/**
+ * this class has been added in order to integrated specific implementation of Stereotypes: FlowPort, Allocated, RequirementRelated.
+ * Specific code has been added to calculate derived properties see Requirement Req0010 DerivedProperties
+ * 
+ *
+ */
 public class CustomDeprecatedelementsFactoryImpl extends DeprecatedelementsFactoryImpl implements
 		DeprecatedelementsFactory {
 

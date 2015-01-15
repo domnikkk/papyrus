@@ -18,7 +18,10 @@ import org.eclipse.uml2.uml.Interface;
 import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.util.UMLUtil;
 
-
+/**
+ * this class has been implemented in order to calculate derived properties of "FlowPort" stereotype see Requirement DerivedProperties Req0010 
+ *
+ */
 public class CustomFlowPortImpl extends FlowPortImpl implements FlowPort {
 
 	@Override

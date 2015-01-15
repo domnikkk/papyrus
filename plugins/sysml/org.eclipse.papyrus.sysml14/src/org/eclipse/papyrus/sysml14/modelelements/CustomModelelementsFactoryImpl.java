@@ -15,6 +15,12 @@ package org.eclipse.papyrus.sysml14.modelelements;
 
 import org.eclipse.papyrus.sysml14.modelelements.internal.impl.ModelelementsFactoryImpl;
 
+/**
+ * this class has been added in order to integrated specific implementation of Stereotypes: View.
+ * Specific code has been added to calculate derived properties see Requirement Req0010 DerivedProperties
+ * 
+ *
+ */
 public class CustomModelelementsFactoryImpl extends ModelelementsFactoryImpl implements ModelelementsFactory {
 
 	@Override
