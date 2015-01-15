@@ -156,12 +156,14 @@ public class MaskManagedFloatingLabelEditPolicy extends AbstractMaskManagedEditP
 		// - the stereotype application list has changed
 		Object object = notification.getNotifier();
 		NamedElement property = getUMLElement();
-		if (object == null || property == null) {
+		Object feature = notification.getFeature();
+		if (object == null || property == null || feature == null) {
 			return;
 		}
-		if (notification.getFeature().equals(UMLPackage.eINSTANCE.getLiteralInteger_Value())) {
+
+		if (feature == UMLPackage.eINSTANCE.getLiteralInteger_Value()) {
 			refreshDisplay();
-		} else if (notification.getFeature().equals(UMLPackage.eINSTANCE.getLiteralUnlimitedNatural_Value())) {
+		} else if (feature == UMLPackage.eINSTANCE.getLiteralUnlimitedNatural_Value()) {
 			refreshDisplay();
 		}
 		if (object.equals(property)) {
