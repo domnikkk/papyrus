@@ -422,7 +422,7 @@ public class ImportTransformation {
 
 		if (generationStatus.getSeverity() <= Diagnostic.WARNING) {
 
-			monitor.subTask("Saving models...");
+			monitor.subTask("Cleaning-up target model...");
 			URI notationModelURI = null;
 			URI sashModelURI = null;
 			// ResourceSet resourceSet = new ResourceSetImpl();
@@ -494,6 +494,8 @@ public class ImportTransformation {
 				}
 			}
 
+			monitor.subTask("Handling fragments...");
+
 			Collection<Resource> resourcesToSave = handleFragments(umlResource, notationResource, sashResource);
 
 			for (Resource resource : resourcesToSave) {
@@ -506,7 +508,26 @@ public class ImportTransformation {
 				}
 			}
 
+			monitor.subTask("Deleting source diagrams...");
+
+			for (Diagram diagram : diagramsToDelete) {
+				EObject container = diagram.eContainer();
+				delete(diagram);
+				if (container instanceof EAnnotation) {
+					EAnnotation annotation = (EAnnotation) container;
+					if (annotation.getContents().isEmpty()) {
+						delete(annotation);
+					}
+				}
+			}
+
+			diagramsToDelete.clear();
+
+			monitor.subTask("Analyzing dangling references...");
+
 			handleDanglingURIs(resourcesToSave);
+
+			monitor.subTask("Saving models...");
 
 			for (Resource resource : resourcesToSave) {
 				try {
@@ -515,19 +536,9 @@ public class ImportTransformation {
 					Activator.log.error(ex);
 				}
 			}
-
-			for (Diagram diagram : diagramsToDelete) {
-				EObject container = diagram.eContainer();
-				delete(diagram);
-				if (container instanceof EAnnotation) {
-					delete(container);
-				}
-			}
-
-			diagramsToDelete.clear();
-
-			// unloadResourceSet(resourceSet);
 		}
+
+		monitor.subTask("Releasing memory...");
 
 		unloadResourceSet(this.resourceSet);
 
@@ -1037,7 +1048,7 @@ public class ImportTransformation {
 				/*
 				 * Bug 447097: [Model Import] Importing a fragmented model causes stereotype applications to be lost in resulting submodel
 				 * https://bugs.eclipse.org/bugs/show_bug.cgi?id=447097
-				 * 
+				 *
 				 * StereotypeApplications from Fragments are not considered "rootElements" by QVTo, and
 				 * there is no logical link between UML Elements and stereotype applications in fragments
 				 * We need to make all root Elements available to the QVTo ModelExtent (Including the ones
@@ -1152,14 +1163,27 @@ public class ImportTransformation {
 		job.cancel();
 	}
 
-	public void delete(EObject rootElement) {
-		CacheAdapter adapter = CacheAdapter.getCacheAdapter(rootElement);
+	public void delete(EObject elementToDelete) {
+		CacheAdapter adapter = CacheAdapter.getCacheAdapter(elementToDelete);
 		if (adapter == null) {
 			adapter = CacheAdapter.getInstance();
 		}
-		adapter.unsetTarget(rootElement);
-		if (rootElement.eResource() != null) {
-			rootElement.eResource().getContents().remove(rootElement);
+		adapter.unsetTarget(elementToDelete);
+		if (elementToDelete.eResource() != null) {
+			elementToDelete.eResource().getContents().remove(elementToDelete);
+		}
+
+		EObject parent = elementToDelete.eContainer();
+		if (parent == null) {
+			return;
+		}
+		EReference containmentFeature = elementToDelete.eContainmentFeature();
+
+		if (containmentFeature.getUpperBound() == 1) {
+			parent.eUnset(containmentFeature);
+		} else {
+			List<?> values = (List<?>) parent.eGet(containmentFeature);
+			values.remove(elementToDelete);
 		}
 	}
 }
