@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated SysML.profile -->
+      <package
+            uri="http://www.eclipse.org/papyrus/1.4/SysML/Blocks"
+            class="org.eclipse.papyrus.sysml14.blocks.BlocksPackage"
+            genModel="model/SysML.profile.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated SysML.profile -->
+      <package
+            uri="http://www.eclipse.org/papyrus/1.4/SysML/PortAndFlows"
+            class="org.eclipse.papyrus.sysml14.portandflows.PortandflowsPackage"
+            genModel="model/SysML.profile.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated SysML.profile -->
+      <package
+            uri="http://www.eclipse.org/papyrus/1.4/SysML/Activities"
+            class="org.eclipse.papyrus.sysml14.activities.ActivitiesPackage"
+            genModel="model/SysML.profile.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated SysML.profile -->
+      <package
+            uri="http://www.eclipse.org/papyrus/1.4/SysML/ModelElements"
+            class="org.eclipse.papyrus.sysml14.modelelements.ModelelementsPackage"
+            genModel="model/SysML.profile.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated SysML.profile -->
+      <package
+            uri="http://www.eclipse.org/papyrus/1.4/SysML/ConstraintBlocks"
+            class="org.eclipse.papyrus.sysml14.constraintblocks.ConstraintblocksPackage"
+            genModel="model/SysML.profile.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated SysML.profile -->
+      <package
+            uri="http://www.eclipse.org/papyrus/1.4/SysML/Allocations"
+            class="org.eclipse.papyrus.sysml14.allocations.AllocationsPackage"
+            genModel="model/SysML.profile.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated SysML.profile -->
+      <package
+            uri="http://www.eclipse.org/papyrus/1.4/SysML/Requirements"
+            class="org.eclipse.papyrus.sysml14.requirements.RequirementsPackage"
+            genModel="model/SysML.profile.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated SysML.profile -->
+      <package
+            uri="http://www.eclipse.org/papyrus/1.4/SysML/DeprecatedElements"
+            class="org.eclipse.papyrus.sysml14.deprecatedelements.DeprecatedelementsPackage"
+            genModel="model/SysML.profile.genmodel"/>
+   </extension>
+   <extension
+         point="org.eclipse.emf.ecore.factory_override">
+      <factory
+            class="org.eclipse.papyrus.sysml14.deprecatedelements.CustomDeprecatedelementsFactoryImpl"
+            uri="http://www.eclipse.org/papyrus/1.4/SysML/DeprecatedElements">
+      </factory>
+   </extension>
+   <extension
+         point="org.eclipse.emf.ecore.factory_override">
+      <factory
+            class="org.eclipse.papyrus.sysml14.requirements.CustomRequirementsFactoryImpl"
+            uri="http://www.eclipse.org/papyrus/1.4/SysML/Requirements">
+      </factory>
+   </extension>
+   <extension
+         point="org.eclipse.emf.ecore.factory_override">
+      <factory
+            class="org.eclipse.papyrus.sysml14.modelelements.CustomModelelementsFactoryImpl"
+            uri="http://www.eclipse.org/papyrus/1.4/SysML/ModelElements">
+      </factory>
+   </extension>
+</plugin>
