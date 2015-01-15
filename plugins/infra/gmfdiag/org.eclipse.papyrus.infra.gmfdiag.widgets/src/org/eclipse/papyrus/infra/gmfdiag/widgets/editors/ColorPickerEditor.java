@@ -77,6 +77,21 @@ public class ColorPickerEditor extends AbstractValueEditor implements IChangeLis
 		});
 	}
 
+	/**
+	 * 
+	 * Constructor. Allows to choose the default color of the button, else it be black.
+	 *
+	 * @param parent
+	 * @param style
+	 * @param defaultColor
+	 *            {@link FigureUtilities#colorToInteger(Color)}
+	 */
+	public ColorPickerEditor(Composite parent, int style, int defaultColor) {
+		this(parent, style);
+		this.defaultColor = defaultColor;
+		doSetColor(defaultColor);
+	}
+
 	@Override
 	protected void doBinding() {
 		// We don't do a real databinding here
