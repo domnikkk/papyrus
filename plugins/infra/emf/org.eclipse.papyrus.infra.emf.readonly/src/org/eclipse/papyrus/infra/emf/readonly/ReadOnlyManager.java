@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2011, 2014 Atos Origin, CEA, and others.
+ * Copyright (c) 2011, 2015 Atos Origin, CEA, Christian W. Damus, and others.
  *
  *
  * All rights reserved. This program and the accompanying materials
@@ -14,6 +14,7 @@
  *  Christian W. Damus (CEA) - bug 429826
  *  Christian W. Damus (CEA) - bug 422257
  *  Christian W. Damus (CEA) - bug 437217
+ *  Christian W. Damus - bug 457560
  *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.emf.readonly;
@@ -56,6 +57,7 @@ import org.eclipse.papyrus.infra.core.utils.AdapterUtils;
 import org.eclipse.papyrus.infra.emf.utils.ServiceUtilsForResourceSet;
 
 import com.google.common.base.Optional;
+import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.MapMaker;
 import com.google.common.collect.Maps;
 
@@ -66,6 +68,8 @@ public class ReadOnlyManager implements IReadOnlyHandler2, IEditorReloadListener
 	protected static final ConcurrentMap<EditingDomain, IReadOnlyHandler2> roHandlers = new MapMaker().weakKeys().weakValues().makeMap();
 
 	private final CopyOnWriteArrayList<IReadOnlyListener> listeners = new CopyOnWriteArrayList<IReadOnlyListener>();
+
+	private final ReadOnlyCache cache;
 
 	private IReadOnlyListener forwardingListener;
 
@@ -79,6 +83,7 @@ public class ReadOnlyManager implements IReadOnlyHandler2, IEditorReloadListener
 				IReadOnlyHandler2 existing = roHandlers.putIfAbsent(editingDomain, roHandler);
 				if (existing != null) {
 					// Another thread beat us to it since we checked for an existing instance
+					((ReadOnlyManager) roHandler).cache.dispose();
 					roHandler = existing;
 				}
 			}
@@ -203,23 +208,31 @@ public class ReadOnlyManager implements IReadOnlyHandler2, IEditorReloadListener
 
 	protected Map<ReadOnlyAxis, IReadOnlyHandler2[]> orderedHandlersByAxis;
 
-	public ReadOnlyManager(EditingDomain editingDomain) {
-		Map<ReadOnlyAxis, List<IReadOnlyHandler2>> handlers = new EnumMap<ReadOnlyAxis, List<IReadOnlyHandler2>>(ReadOnlyAxis.class);
-		for (Map.Entry<Class<?>, Set<ReadOnlyAxis>> roClass : orderedHandlerClasses.entrySet()) {
-			IReadOnlyHandler2 h = create(roClass.getKey(), editingDomain);
-			if (h != null) {
-				h.addReadOnlyListener(getForwardingListener());
+	public ReadOnlyManager(final EditingDomain editingDomain) {
+		// Create our transaction cache
+		cache = ReadOnlyCache.create(this, editingDomain);
 
-				for (ReadOnlyAxis axis : roClass.getValue()) {
-					List<IReadOnlyHandler2> list = handlers.get(axis);
-					if (list == null) {
-						list = new ArrayList<IReadOnlyHandler2>();
-						handlers.put(axis, list);
+		final Map<ReadOnlyAxis, List<IReadOnlyHandler2>> handlers = new EnumMap<ReadOnlyAxis, List<IReadOnlyHandler2>>(ReadOnlyAxis.class);
+		cache.run(new Runnable() {
+
+			public void run() {
+				for (Map.Entry<Class<?>, Set<ReadOnlyAxis>> roClass : orderedHandlerClasses.entrySet()) {
+					IReadOnlyHandler2 h = create(roClass.getKey(), editingDomain);
+					if (h != null) {
+						h.addReadOnlyListener(getForwardingListener());
+
+						for (ReadOnlyAxis axis : roClass.getValue()) {
+							List<IReadOnlyHandler2> list = handlers.get(axis);
+							if (list == null) {
+								list = new ArrayList<IReadOnlyHandler2>();
+								handlers.put(axis, list);
+							}
+							list.add(h);
+						}
 					}
-					list.add(h);
 				}
 			}
-		}
+		});
 
 		// Iterate the enumeration to make sure all axes are represented (even if only by an empty array)
 		orderedHandlersByAxis = new EnumMap<ReadOnlyAxis, IReadOnlyHandler2[]>(ReadOnlyAxis.class);
@@ -247,38 +260,55 @@ public class ReadOnlyManager implements IReadOnlyHandler2, IEditorReloadListener
 	}
 
 	public Optional<Boolean> anyReadOnly(Set<ReadOnlyAxis> axes, URI[] uris) {
-		Optional<Boolean> result = Optional.absent();
+		final Set<URI> uriSet = ImmutableSet.copyOf(uris);
+		Optional<Boolean> result = cache.getResources(axes, uriSet);
+		if (result == null) {
+			result = Optional.absent();
 
-		ReadOnlyAxis[] all = ReadOnlyAxis.values();
-		for (int i = 0; (i < all.length) && !result.or(Boolean.FALSE); i++) {
-			if (axes.contains(all[i])) {
-				result = anyReadOnly(all[i], uris);
+			ReadOnlyAxis[] all = ReadOnlyAxis.values();
+			for (int i = 0; (i < all.length) && !result.or(Boolean.FALSE); i++) {
+				if (axes.contains(all[i])) {
+					result = anyReadOnly(all[i], uris);
+				}
 			}
+
+			cache.putResources(axes, uriSet, result);
 		}
 
 		return result.isPresent() ? result : Optional.of(Boolean.FALSE);
 	}
 
 	private Optional<Boolean> anyReadOnly(ReadOnlyAxis axis, URI[] uris) {
+		final Set<URI> uriSet = ImmutableSet.copyOf(uris);
 		Set<ReadOnlyAxis> axes = axis.singleton();
-		Optional<Boolean> result = Optional.absent();
+		Optional<Boolean> result = cache.getResources(axes, uriSet);
+		if (result == null) {
+			result = Optional.absent();
 
-		IReadOnlyHandler2[] orderedHandlers = orderedHandlersByAxis.get(axis);
-		for (int i = 0; (i < orderedHandlers.length) && !result.isPresent(); i++) {
-			result = orderedHandlers[i].anyReadOnly(axes, uris);
+			IReadOnlyHandler2[] orderedHandlers = orderedHandlersByAxis.get(axis);
+			for (int i = 0; (i < orderedHandlers.length) && !result.isPresent(); i++) {
+				result = orderedHandlers[i].anyReadOnly(axes, uris);
+			}
+
+			cache.putResources(axes, uriSet, result);
 		}
 
 		return result.isPresent() ? result : Optional.of(Boolean.FALSE);
 	}
 
 	public Optional<Boolean> isReadOnly(Set<ReadOnlyAxis> axes, EObject eObject) {
-		Optional<Boolean> result = Optional.absent();
+		Optional<Boolean> result = cache.getObject(axes, eObject);
+		if (result == null) {
+			result = Optional.absent();
 
-		ReadOnlyAxis[] all = ReadOnlyAxis.values();
-		for (int i = 0; (i < all.length) && !result.or(Boolean.FALSE); i++) {
-			if (axes.contains(all[i])) {
-				result = isReadOnly(all[i], eObject);
+			ReadOnlyAxis[] all = ReadOnlyAxis.values();
+			for (int i = 0; (i < all.length) && !result.or(Boolean.FALSE); i++) {
+				if (axes.contains(all[i])) {
+					result = isReadOnly(all[i], eObject);
+				}
 			}
+
+			cache.putObject(axes, eObject, result);
 		}
 
 		return result.isPresent() ? result : Optional.of(Boolean.FALSE);
@@ -286,11 +316,16 @@ public class ReadOnlyManager implements IReadOnlyHandler2, IEditorReloadListener
 
 	private Optional<Boolean> isReadOnly(ReadOnlyAxis axis, EObject eObject) {
 		Set<ReadOnlyAxis> axes = axis.singleton();
-		Optional<Boolean> result = Optional.absent();
+		Optional<Boolean> result = cache.getObject(axes, eObject);
+		if (result == null) {
+			result = Optional.absent();
 
-		IReadOnlyHandler2[] orderedHandlers = orderedHandlersByAxis.get(axis);
-		for (int i = 0; (i < orderedHandlers.length) && !result.isPresent(); i++) {
-			result = orderedHandlers[i].isReadOnly(axes, eObject);
+			IReadOnlyHandler2[] orderedHandlers = orderedHandlersByAxis.get(axis);
+			for (int i = 0; (i < orderedHandlers.length) && !result.isPresent(); i++) {
+				result = orderedHandlers[i].isReadOnly(axes, eObject);
+			}
+
+			cache.putObject(axes, eObject, result);
 		}
 
 		return result.isPresent() ? result : Optional.of(Boolean.FALSE);
@@ -313,18 +348,22 @@ public class ReadOnlyManager implements IReadOnlyHandler2, IEditorReloadListener
 		Set<ReadOnlyAxis> axes = axis.singleton();
 		Boolean finalResult = true;
 
-		IReadOnlyHandler2[] orderedHandlers = orderedHandlersByAxis.get(axis);
-		for (int i = 0; (i < orderedHandlers.length); i++) {
-			Optional<Boolean> isRO = orderedHandlers[i].anyReadOnly(axes, uris);
-			if (isRO.or(Boolean.FALSE)) {
-				Optional<Boolean> result = orderedHandlers[i].makeWritable(axes, uris);
-				// makeWritable should provide an answer since anyReadOnly returned a positive value.
-				// If no answer consider it a failure
-				if (!result.or(Boolean.FALSE)) {
-					finalResult = false;
-					break;
+		try {
+			IReadOnlyHandler2[] orderedHandlers = orderedHandlersByAxis.get(axis);
+			for (int i = 0; (i < orderedHandlers.length); i++) {
+				Optional<Boolean> isRO = orderedHandlers[i].anyReadOnly(axes, uris);
+				if (isRO.or(Boolean.FALSE)) {
+					Optional<Boolean> result = orderedHandlers[i].makeWritable(axes, uris);
+					// makeWritable should provide an answer since anyReadOnly returned a positive value.
+					// If no answer consider it a failure
+					if (!result.or(Boolean.FALSE)) {
+						finalResult = false;
+						break;
+					}
 				}
 			}
+		} finally {
+			cache.clear();
 		}
 
 		return finalResult;
@@ -347,18 +386,22 @@ public class ReadOnlyManager implements IReadOnlyHandler2, IEditorReloadListener
 		Set<ReadOnlyAxis> axes = axis.singleton();
 		Boolean finalResult = true;
 
-		IReadOnlyHandler2[] orderedHandlers = orderedHandlersByAxis.get(axis);
-		for (int i = 0; (i < orderedHandlers.length); i++) {
-			Optional<Boolean> isRO = orderedHandlers[i].isReadOnly(axes, eObject);
-			if (isRO.or(Boolean.FALSE)) {
-				Optional<Boolean> result = orderedHandlers[i].makeWritable(axes, eObject);
-				// makeWritable should provide an answer since anyReadOnly returned a positive value
-				// if no answer consider it a failure
-				if (!result.or(Boolean.FALSE)) {
-					finalResult = false;
-					break;
+		try {
+			IReadOnlyHandler2[] orderedHandlers = orderedHandlersByAxis.get(axis);
+			for (int i = 0; (i < orderedHandlers.length); i++) {
+				Optional<Boolean> isRO = orderedHandlers[i].isReadOnly(axes, eObject);
+				if (isRO.or(Boolean.FALSE)) {
+					Optional<Boolean> result = orderedHandlers[i].makeWritable(axes, eObject);
+					// makeWritable should provide an answer since anyReadOnly returned a positive value
+					// if no answer consider it a failure
+					if (!result.or(Boolean.FALSE)) {
+						finalResult = false;
+						break;
+					}
 				}
 			}
+		} finally {
+			cache.clear();
 		}
 
 		return finalResult;
