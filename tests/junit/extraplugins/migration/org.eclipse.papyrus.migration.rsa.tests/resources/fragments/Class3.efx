@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--xtools2_universal_type_manager-->
+<?com.ibm.xtools.emf.core.signature <signature id="com.ibm.xtools.uml.msl.fragment" version="7.0.0"><feature description="" name="com.ibm.xtools.ruml.feature" url="" version="7.0.0"/></signature>?>
+<?com.ibm.xtools.emf.core.signature <signature id="com.ibm.xtools.mmi.ui.signatures.diagram" version="7.0.0"><feature description="" name="Rational Modeling Platform (com.ibm.xtools.rmp)" url="" version="7.0.0"/></signature>?>
+<uml:Class xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_ONlFkLZ8EeOu-9meM8ButQ" name="Class3">
+  <eAnnotations xmi:id="_D3Ad4LZ9EeOu-9meM8ButQ" source="com.ibm.xtools.uml.msl.fragmentContainer">
+    <references xmi:type="uml:Package" href="Package%20-%20Fragment.efx#_0OuW4LZ7EeOu-9meM8ButQ?Blank%20Package/Package%20-%20Fragment?"/>
+  </eAnnotations>
+  <generalization xmi:id="_OzOJQLZ8EeOu-9meM8ButQ">
+    <general xmi:type="uml:Class" href="Package%20-%20Fragment.efx#_ODdgQLZ8EeOu-9meM8ButQ?Blank%20Package/Package%20-%20Fragment/Class1?"/>
+  </generalization>
+  <ownedAttribute xmi:id="_OgVCcbZ8EeOu-9meM8ButQ" name="class2" visibility="private">
+    <type xmi:type="uml:Class" href="Package%20-%20Fragment.efx#_OHLioLZ8EeOu-9meM8ButQ?Blank%20Package/Package%20-%20Fragment/Class2?"/>
+    <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OgeMYbZ8EeOu-9meM8ButQ" value="1"/>
+    <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OgeMYLZ8EeOu-9meM8ButQ" value="1"/>
+    <association href="Package%20-%20Fragment.efx#_OgVCcLZ8EeOu-9meM8ButQ?Blank%20Package/Package%20-%20Fragment/%3CAssociation%3E?"/>
+  </ownedAttribute>
+  <ownedOperation xmi:id="_QeoiMLZ8EeOu-9meM8ButQ" name="Operation1" visibility="private">
+    <ownedParameter xmi:id="_Uw0wILZ8EeOu-9meM8ButQ" name="Parameter1" direction="return">
+      <type xmi:type="uml:Class" href="Blank%20Package.emx#_9XQosLZ7EeOu-9meM8ButQ?Blank%20Package/Package1/Class%20-%20Standard?"/>
+    </ownedParameter>
+  </ownedOperation>
+  <ownedOperation xmi:id="_QgHv8LZ8EeOu-9meM8ButQ" name="Operation2"/>
+  <ownedOperation xmi:id="_Qh54oLZ8EeOu-9meM8ButQ" name="Operation3"/>
+  <ownedOperation xmi:id="_QjsoYLZ8EeOu-9meM8ButQ" name="Operation4"/>
+  <ownedOperation xmi:id="_QlexELZ8EeOu-9meM8ButQ" name="Operation5"/>
+</uml:Class>

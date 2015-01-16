@@ -95,6 +95,11 @@ public class ImportTransformationLauncher {
 	protected long ownLoadingTime;
 
 	/**
+	 * The top-level job for this transformation
+	 */
+	protected Job importDependenciesJob;
+
+	/**
 	 * Total time for all invidivual transformations to complete. Since they are executed in parallel,
 	 * this may be different from their cumulated execution time (Unless a single thread is used)
 	 */
@@ -132,7 +137,7 @@ public class ImportTransformationLauncher {
 	 * @param transformations
 	 */
 	protected void importModels(final List<ImportTransformation> transformations) {
-		Job importDependencies = new Job("Import Models") {
+		importDependenciesJob = new Job("Import Models") {
 
 			@Override
 			protected IStatus run(IProgressMonitor monitor) {
@@ -167,7 +172,7 @@ public class ImportTransformationLauncher {
 
 		};
 
-		importDependencies.addJobChangeListener(new JobChangeAdapter() {
+		importDependenciesJob.addJobChangeListener(new JobChangeAdapter() {
 			@Override
 			public void done(IJobChangeEvent event) {
 
@@ -225,8 +230,8 @@ public class ImportTransformationLauncher {
 			}
 		});
 
-		importDependencies.setUser(true);
-		importDependencies.schedule();
+		importDependenciesJob.setUser(true);
+		importDependenciesJob.schedule();
 	}
 
 	protected void log(String message) {
@@ -593,5 +598,15 @@ public class ImportTransformationLauncher {
 
 		dialog.open();
 		return (MappingParameters) dialog.getResult()[0];
+	}
+
+	/** Mainly for test purpose */
+	public void waitForCompletion() throws Exception {
+		importDependenciesJob.join();
+	}
+
+	/** Mainly for test purpose */
+	public IStatus getResult() {
+		return importDependenciesJob.getResult();
 	}
 }
