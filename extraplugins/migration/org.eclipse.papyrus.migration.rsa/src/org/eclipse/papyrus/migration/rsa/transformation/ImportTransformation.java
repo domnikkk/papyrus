@@ -133,6 +133,16 @@ public class ImportTransformation {
 
 	protected static final ExecutorsPool executorsPool = new ExecutorsPool(4);
 
+	/** EPackages corresponding to source native profiles with specific support in the transformation */
+	protected static final Set<EPackage> sourceEPackages = new HashSet<EPackage>();
+
+
+	static {
+		sourceEPackages.add(org.eclipse.papyrus.migration.rsa.default_.DefaultPackage.eINSTANCE);
+		sourceEPackages.add(org.eclipse.papyrus.migration.rsa.profilebase.ProfileBasePackage.eINSTANCE);
+		sourceEPackages.add(org.eclipse.papyrus.migration.rsa.umlrt.UMLRealTimePackage.eINSTANCE);
+	}
+
 	public ImportTransformation(URI sourceURI) {
 		this(sourceURI, RSAToPapyrusParametersFactory.eINSTANCE.createConfig());
 	}
@@ -869,7 +879,7 @@ public class ImportTransformation {
 	/*
 	 * Bug 447097: [Model Import] Importing a fragmented model causes stereotype applications to be lost in resulting submodel
 	 * https://bugs.eclipse.org/bugs/show_bug.cgi?id=447097
-	 * 
+	 *
 	 * Before the transformation, We moved all root elements from the fragment resources to the main
 	 * resource, then we transformed some of them to Papyrus Stereotype Applications. We need to move
 	 * these stereotype applications back to the proper fragment resource
@@ -906,12 +916,6 @@ public class ImportTransformation {
 	protected void deleteSourceStereotypes(Collection<Resource> fragmentResources) {
 		Set<Resource> allResources = new HashSet<Resource>(fragmentResources);
 		allResources.add(umlResource);
-
-		Set<EPackage> sourceEPackages = new HashSet<EPackage>();
-		sourceEPackages.add(org.eclipse.papyrus.migration.rsa.default_.DefaultPackage.eINSTANCE);
-		sourceEPackages.add(org.eclipse.papyrus.migration.rsa.profilebase.ProfileBasePackage.eINSTANCE);
-		sourceEPackages.add(org.eclipse.papyrus.migration.rsa.umlrt.UMLRealTimePackage.eINSTANCE);
-
 
 		for (Resource resource : allResources) {
 
@@ -1061,7 +1065,7 @@ public class ImportTransformation {
 				/*
 				 * Bug 447097: [Model Import] Importing a fragmented model causes stereotype applications to be lost in resulting submodel
 				 * https://bugs.eclipse.org/bugs/show_bug.cgi?id=447097
-				 * 
+				 *
 				 * StereotypeApplications from Fragments are not considered "rootElements" by QVTo, and
 				 * there is no logical link between UML Elements and stereotype applications in fragments
 				 * We need to make all root Elements available to the QVTo ModelExtent (Including the ones
@@ -1082,8 +1086,9 @@ public class ImportTransformation {
 					if (!browsedResources.contains(nextResource)) {
 						browsedResources.add(nextResource);
 						for (EObject rootElement : nextResource.getContents()) {
-							if (!(rootElement instanceof Element)) {
-								// We're interested in all objects which are not UML Elements
+							EPackage rootElementPackage = rootElement.eClass().getEPackage();
+							if (sourceEPackages.contains(rootElementPackage)) {
+								// We're interested in all stereotype applications which require a specific support in the QVTo transformation
 								allStereotypeApplications.add(rootElement);
 							}
 						}
