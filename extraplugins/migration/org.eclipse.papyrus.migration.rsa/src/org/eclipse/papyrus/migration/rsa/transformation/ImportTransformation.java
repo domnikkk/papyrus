@@ -834,7 +834,7 @@ public class ImportTransformation {
 			result.add(newResource);
 		}
 
-		deleteSourceRTStereotypes(fragmentResources);
+		deleteSourceStereotypes(fragmentResources);
 
 		List<EObject> importedElements = new LinkedList<EObject>(notationResource.getContents());
 		for (EObject notationElement : importedElements) {
@@ -869,7 +869,7 @@ public class ImportTransformation {
 	/*
 	 * Bug 447097: [Model Import] Importing a fragmented model causes stereotype applications to be lost in resulting submodel
 	 * https://bugs.eclipse.org/bugs/show_bug.cgi?id=447097
-	 *
+	 * 
 	 * Before the transformation, We moved all root elements from the fragment resources to the main
 	 * resource, then we transformed some of them to Papyrus Stereotype Applications. We need to move
 	 * these stereotype applications back to the proper fragment resource
@@ -903,9 +903,15 @@ public class ImportTransformation {
 		return null;
 	}
 
-	protected void deleteSourceRTStereotypes(Collection<Resource> fragmentResources) {
+	protected void deleteSourceStereotypes(Collection<Resource> fragmentResources) {
 		Set<Resource> allResources = new HashSet<Resource>(fragmentResources);
 		allResources.add(umlResource);
+
+		Set<EPackage> sourceEPackages = new HashSet<EPackage>();
+		sourceEPackages.add(org.eclipse.papyrus.migration.rsa.default_.DefaultPackage.eINSTANCE);
+		sourceEPackages.add(org.eclipse.papyrus.migration.rsa.profilebase.ProfileBasePackage.eINSTANCE);
+		sourceEPackages.add(org.eclipse.papyrus.migration.rsa.umlrt.UMLRealTimePackage.eINSTANCE);
+
 
 		for (Resource resource : allResources) {
 
@@ -913,7 +919,7 @@ public class ImportTransformation {
 			// Delete them as a post-action. Iterate on all controlled models and delete the RealTime stereotypes at the root of each resource
 			List<EObject> resourceContents = new LinkedList<EObject>(resource.getContents());
 			for (EObject rootElement : resourceContents) {
-				if (rootElement.eClass().getEPackage() == org.eclipse.papyrus.migration.rsa.umlrt.UMLRealTimePackage.eINSTANCE) {
+				if (sourceEPackages.contains(rootElement.eClass().getEPackage())) {
 					delete(rootElement);
 				}
 			}
@@ -1055,7 +1061,7 @@ public class ImportTransformation {
 				/*
 				 * Bug 447097: [Model Import] Importing a fragmented model causes stereotype applications to be lost in resulting submodel
 				 * https://bugs.eclipse.org/bugs/show_bug.cgi?id=447097
-				 *
+				 * 
 				 * StereotypeApplications from Fragments are not considered "rootElements" by QVTo, and
 				 * there is no logical link between UML Elements and stereotype applications in fragments
 				 * We need to make all root Elements available to the QVTo ModelExtent (Including the ones
@@ -1170,6 +1176,7 @@ public class ImportTransformation {
 		job.cancel();
 	}
 
+	/** Lightweight delete operation, which only removes the object from its parent. Incoming references are not deleted */
 	public void delete(EObject elementToDelete) {
 		CacheAdapter adapter = CacheAdapter.getCacheAdapter(elementToDelete);
 		if (adapter == null) {
