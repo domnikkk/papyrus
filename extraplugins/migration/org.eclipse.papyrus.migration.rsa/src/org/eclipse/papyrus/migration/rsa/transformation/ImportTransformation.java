@@ -534,6 +534,7 @@ public class ImportTransformation {
 					resource.save(null);
 				} catch (Exception ex) {
 					Activator.log.error(ex);
+					generationStatus.add(new Status(IStatus.ERROR, Activator.PLUGIN_ID, "An exception occurred during save", ex));
 				}
 			}
 		}
@@ -855,6 +856,12 @@ public class ImportTransformation {
 		}
 
 		handleFragmentStereotypes(umlResource, fragmentUMLResources);
+
+		for (Resource resource : result) {
+			if (resource instanceof XMIResource) {
+				configureResource((XMIResource) resource);
+			}
+		}
 
 		return result;
 	}
